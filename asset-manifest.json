@@ -1,9 +1,9 @@
 {
   "files": {
     "main.css": "/static/css/main.ed9c0fe2.chunk.css",
-    "main.js": "/build/main.912c2519.js",
+    "main.js": "/build/main.047cdab7.js",
     "runtime-main.js": "/build/bundle.1bd5f418.js",
-    "build/2.03120c5f.js": "/build/2.03120c5f.js",
+    "build/2.cbaaa353.js": "/build/2.cbaaa353.js",
     "build/3.e3546e4a.js": "/build/3.e3546e4a.js",
     "build/4.c9d617c4.js": "/build/4.c9d617c4.js",
     "assets/png/Byggeklosser.png": "/assets/png/Byggeklosser.png",
@@ -21,7 +21,7 @@
     "favicon.ico": "/favicon.ico",
     "index.html": "/index.html",
     "manifest.json": "/manifest.json",
-    "precache-manifest.bff3ef3add80ac8ef7c70ac6b45eced6.js": "/precache-manifest.bff3ef3add80ac8ef7c70ac6b45eced6.js",
+    "precache-manifest.f187355b279d3dc27e1bed42fbfdf771.js": "/precache-manifest.f187355b279d3dc27e1bed42fbfdf771.js",
     "service-worker.js": "/service-worker.js",
     "static/css/main.ed9c0fe2.chunk.css.map": "/static/css/main.ed9c0fe2.chunk.css.map",
     "static/media/SkeIconfont.woff2": "/static/media/SkeIconfont.13bc202b.woff2",
