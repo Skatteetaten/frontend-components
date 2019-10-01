@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ErrorMessage komponent Skjuler komponent hvis showError er false 1`] = `null`;
+
+exports[`ErrorMessage komponent matcher snapshot 1`] = `
+<span
+  className="css-34"
+  role="alert"
+>
+   FeilMelding 
+</span>
+`;

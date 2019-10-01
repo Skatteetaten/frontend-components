@@ -1,0 +1,86 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Dropdown komponent matcher snapshot 1`] = `
+<div>
+  <div
+    className="labelArea-41"
+  >
+    <span
+      className="label-42"
+    />
+  </div>
+  <StyledWithResponsiveMode
+    calloutProps={
+      Object {
+        "className": "SkeDropdownValg-48",
+      }
+    }
+    className="SkeDropdown-47"
+    onRenderCaretDown={[Function]}
+    options={
+      Array [
+        Object {
+          "key": null,
+          "text": "",
+        },
+        Object {
+          "itemType": 2,
+          "key": "Header",
+          "text": "Actions",
+        },
+        Object {
+          "key": "A",
+          "text": "Option a",
+        },
+        Object {
+          "key": "B",
+          "text": "Option b",
+        },
+        Object {
+          "key": "C",
+          "text": "Option c",
+        },
+        Object {
+          "key": "D",
+          "text": "Option d",
+        },
+        Object {
+          "key": "E",
+          "text": "Option e",
+        },
+        Object {
+          "itemType": 1,
+          "key": "divider_2",
+          "text": "-",
+        },
+        Object {
+          "itemType": 2,
+          "key": "Header2",
+          "text": "People",
+        },
+        Object {
+          "key": "F",
+          "text": "Option f",
+        },
+        Object {
+          "key": "G",
+          "text": "Option g",
+        },
+        Object {
+          "key": "H",
+          "text": "Option h",
+        },
+        Object {
+          "key": "I",
+          "text": "Option i",
+        },
+        Object {
+          "key": "J",
+          "text": "Option j",
+        },
+      ]
+    }
+    placeholder="Select an option"
+  />
+</div>
+`;

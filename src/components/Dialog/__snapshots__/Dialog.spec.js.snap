@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Dialog komponent matcher snapshot 1`] = `
+<div>
+  <StyledWithResponsiveMode
+    dialogContentProps={
+      Object {
+        "closeButtonAriaLabel": "Lukk",
+        "subText": undefined,
+        "title": undefined,
+        "type": 0,
+      }
+    }
+    modalProps={
+      Object {
+        "className": "SkeDialog-40",
+        "isBlocking": undefined,
+      }
+    }
+    role="dialog"
+  />
+</div>
+`;

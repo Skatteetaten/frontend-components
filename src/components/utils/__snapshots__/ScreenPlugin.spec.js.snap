@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test av ScreenPlugin matcher snapshot 1`] = `
+<div>
+  <span>
+    Vises når skjermstørrelsen er mindre enn 'md'
+  </span>
+</div>
+`;

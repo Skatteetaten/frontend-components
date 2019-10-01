@@ -1,0 +1,85 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TopBanner komponent matcher snapshot  1`] = `
+<header
+  className="header-40"
+>
+  <div
+    className="headerLeftContainer-42"
+  >
+    <div
+      className="ms-Image headerLogo-47"
+      style={
+        Object {
+          "height": undefined,
+          "width": undefined,
+        }
+      }
+    >
+      <img
+        alt="Skatteetaten logo"
+        className="ms-Image-image ms-Image-image--portrait is-notLoaded is-fadeIn image-48"
+        onError={[Function]}
+        onLoad={[Function]}
+        src={
+          Object {
+            "ReactComponent": Object {
+              "$$typeof": Symbol(react.forward_ref),
+              "render": [Function],
+            },
+            "__esModule": true,
+            "default": "ske-logo-intern.svg",
+          }
+        }
+      />
+    </div>
+    <div
+      style={
+        Object {
+          "flexGrow": 1,
+          "textAlign": "center",
+        }
+      }
+    >
+      <button
+        aria-label="Til startsiden"
+        className="ms-Button ms-Button--action ms-Button--command Lenkeknapp-50"
+        data-is-focusable={true}
+        onClick={[Function]}
+        onKeyDown={[Function]}
+        onKeyPress={[Function]}
+        onKeyUp={[Function]}
+        onMouseDown={[Function]}
+        onMouseUp={[Function]}
+        role="button"
+        type="button"
+      >
+        <span
+          className="ms-Button-flexContainer flexContainer-51"
+          data-automationid="splitbuttonprimary"
+        >
+          <i
+            aria-hidden={true}
+            className="ms-Icon root-33 css-58 ms-Button-icon icon-53"
+            data-icon-name="Home"
+            role="presentation"
+          >
+            
+          </i>
+        </span>
+      </button>
+    </div>
+  </div>
+  <div
+    className="headerDiagonal-44"
+  />
+  <div
+    className="headerRightContainer-45"
+  >
+    <h1 />
+    <div
+      className="headerRightButtons-46"
+    />
+  </div>
+</header>
+`;

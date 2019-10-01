@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TextField komponent matcher snapshot 1`] = `
+<div
+  className="SkeTextField-40"
+>
+  <div
+    className="ms-TextField SkeTextField-42"
+  >
+    <div
+      className="ms-TextField-wrapper wrapper-43"
+    >
+      <div
+        className="labelArea-51"
+      >
+        <span
+          className="label-52"
+        />
+      </div>
+      <div
+        className="ms-TextField-fieldGroup fieldGroup-44"
+      >
+        <input
+          aria-invalid={false}
+          className="ms-TextField-field field-45"
+          id="TextField0"
+          onBlur={[Function]}
+          onChange={[Function]}
+          onFocus={[Function]}
+          onInput={[Function]}
+          type="text"
+          value=""
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;

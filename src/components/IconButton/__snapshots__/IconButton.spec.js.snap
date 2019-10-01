@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`IconButton komponent matcher snapshot 1`] = `
+<button
+  aria-label="Lagre"
+  className="ms-Button ms-Button--icon ske-icondefault-button-41"
+  data-is-focusable={true}
+  onClick={[Function]}
+  onKeyDown={[Function]}
+  onKeyPress={[Function]}
+  onKeyUp={[Function]}
+  onMouseDown={[Function]}
+  onMouseUp={[Function]}
+  role="button"
+  title="Lagre"
+  type="default"
+>
+  <span
+    className="ms-Button-flexContainer flexContainer-42"
+    data-automationid="splitbuttonprimary"
+  >
+    <i
+      aria-hidden={true}
+      className="ms-Icon root-33 css-49 ms-Button-icon icon-44"
+      data-icon-name="Save"
+      role="presentation"
+    >
+      
+    </i>
+  </span>
+</button>
+`;

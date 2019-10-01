@@ -1,0 +1,14 @@
+{
+  "docker": {
+    "maintainer": "Aurora OpenShift Utvikling <utvpaas@skatteetaten.no>",
+    "labels": {
+      "io.k8s.description": "Styleguide for Skatteetatens Frontend React Komponenter.",
+      "io.openshift.tags": "openshift,react,nodejs"
+    }
+  },
+  "web": {
+    "webapp": {
+      "content": "docs"
+    }
+  }
+}

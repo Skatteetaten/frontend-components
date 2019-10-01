@@ -1,0 +1,139 @@
+{
+  "name": "@skatteetaten/frontend-components",
+  "groupId": "no.skatteetaten.aurora",
+  "license": "Apache-2.0",
+  "version": "2.0.0",
+  "private": false,
+  "main": "./index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Skatteetaten/frontend-components.git"
+  },
+  "files": [
+    "docs",
+    "metadata"
+  ],
+  "publishConfig": {
+    "registry": "https://nexus-npm.aurora.skead.no/npm/repository/npm-internal/"
+  },
+  "peerDependencies": {
+    "react": ">=16.8.0 <17.0.0",
+    "react-dom": ">=16.8.0 <17.0.0"
+  },
+  "dependencies": {
+    "@uifabric/merge-styles": "7.6.0",
+    "@uifabric/styling": "7.7.0",
+    "@uifabric/utilities": "7.0.11",
+    "classnames": "2.2.6",
+    "material-design-icons": "3.0.1",
+    "moment": "2.24.0",
+    "office-ui-fabric-react": "7.37.0",
+    "prop-types": "15.7.2",
+    "react-transition-group": "4.3.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "7.6.0",
+    "@babel/core": "7.6.0",
+    "@babel/plugin-proposal-class-properties": "7.5.5",
+    "@babel/plugin-proposal-object-rest-spread": "7.5.5",
+    "@babel/preset-env": "7.6.0",
+    "@babel/preset-react": "7.0.0",
+    "@ctrl/tinycolor": "2.5.3",
+    "aurora-ci-scripts": "1.1.0",
+    "babel-jest": "24.9.0",
+    "cpx": "1.5.0",
+    "cross-env": "6.0.0",
+    "enzyme": "3.10.0",
+    "enzyme-adapter-react-16": "1.14.0",
+    "enzyme-to-json": "3.4.0",
+    "es6-promise": "4.2.8",
+    "eslint": "6.4.0",
+    "eslint-config-react-app": "5.0.2",
+    "isomorphic-fetch": "2.2.1",
+    "jest-junit": "8.0.0",
+    "lodash.find": "4.6.0",
+    "normalizr": "3.4.1",
+    "npm-run-all": "4.1.5",
+    "prettier": "^1.18.2",
+    "react": "16.9.0",
+    "react-dom": "16.9.0",
+    "react-router": "5.0.1",
+    "react-scripts": "3.1.2",
+    "react-styleguidist": "9.1.16",
+    "react-test-renderer": "16.9.0",
+    "rimraf": "3.0.0",
+    "sonar-scanner": "3.1.0",
+    "webfont": "9.0.0"
+  },
+  "scripts": {
+    "start": "REACT_APP_BUILD_VERSION=$(git rev-parse --abbrev-ref HEAD) styleguidist server",
+    "generate:icons": "webfont src/webfont/**/*.svg -d src/components/utils/assets",
+    "prebuild": "npm-run-all clean lint",
+    "build": "npm-run-all generate:icons build:lib build:docs",
+    "build:docs": "styleguidist build",
+    "build:lib": "npm-run-all --parallel build:commonjs build:assets",
+    "build:assets": "cpx \"./src/components/**/assets/**/*\" ./lib",
+    "build:copy-files": "node scripts/copyBuildFiles.js",
+    "build:commonjs": "cross-env NODE_ENV=production babel ./src/components --out-dir ./lib --ignore **/*.spec.js",
+    "lint": "npm-run-all -l lint:prettier lint:eslint",
+    "lint:ci": "eslint src/**/*.{js,jsx} -f checkstyle -o target/checkstyle-result.xml",
+    "lint:fix": "npm-run-all -l lint:prettier-fix lint:eslint-fix",
+    "lint:eslint": "eslint 'src/**/*{.js,.jsx}'",
+    "lint:prettier": "prettier -l 'src/**/*{.js,.jsx,.css,.md}'",
+    "lint:eslint-fix": "eslint --fix 'src/**/*{.js,.jsx}'",
+    "lint:prettier-fix": "prettier --write 'src/**/*{.js,.jsx,.css,.md}'",
+    "sonarqube": "sonar-scanner",
+    "test": "react-scripts test --env=jsdom --verbose=false",
+    "test:coverage": "CI=true react-scripts test --env=jsdom --coverage --testResultsProcessor jest-junit",
+    "postversion": "npm run build:copy-files",
+    "clean": "rimraf coverage lib docs *.tgz",
+    "eject": "react-scripts eject"
+  },
+  "engines": {
+    "npm": ">=6.0.0"
+  },
+  "webfont": {
+    "fontName": "SkeIconfont",
+    "normalize": true,
+    "round": false,
+    "centerHorizontally": true,
+    "template": "src/webfont/icons-ske.js.njk",
+    "templateFontPath": "../assets/",
+    "destTemplate": "src/components/utils/icons"
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "src/**/*.{js,jsx}",
+      "!src/**/index.js",
+      "!src/setupTests.js",
+      "!src/styleguide/**",
+      "!src/components/utils/icons/**",
+      "!src/components/utils/assets/**"
+    ]
+  },
+  "jest-junit": {
+    "suiteName": "Unit Tests",
+    "outputDirectory": "coverage/surefire-reports",
+    "outputName": "TEST-jest.xml",
+    "classNameTemplate": "{classname}-{title}",
+    "titleTemplate": "{classname}-{title}",
+    "ancestorSeparator": " › ",
+    "usePathForSuiteName": "true"
+  },
+  "babel": {
+    "presets": [
+      "@babel/preset-env",
+      "@babel/preset-react"
+    ],
+    "plugins": [
+      "@babel/plugin-proposal-class-properties",
+      "@babel/plugin-proposal-object-rest-spread"
+    ]
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "prettier": {
+    "singleQuote": true
+  }
+}

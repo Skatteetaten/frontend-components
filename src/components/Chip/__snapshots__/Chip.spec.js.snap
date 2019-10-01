@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Chip komponent matcher snapshot 1`] = `
+<Chip
+  size="standard"
+  type="beige"
+>
+  <div
+    className="ske-chip-33"
+    size="standard"
+    type="beige"
+  />
+</Chip>
+`;
