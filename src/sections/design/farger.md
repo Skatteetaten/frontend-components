@@ -6,8 +6,8 @@ Burgundy sammen med den lysere varianten burgundyLight brukes i header og footer
 Bokser, rammer, visuelle elementer på en side kan bruke green, lightGreen, brown, beige, pink og lightPink. Pink og lightPink brukes i hovedsak til feilmeldinger og markering av feil.
 
 ```js noeditor
-const { TinyColor } = require('@ctrl/tinycolor');
-const { SkeBasis } = require('../../components/SkeBasis/SkeBasis.js');
+import TinyColor from '@ctrl/tinycolor'
+import SkeBasis from '@skatteetaten/frontend-components/SkeBasis';
 
 palette = Object(SkeBasis.PALETTE);
 
@@ -66,8 +66,8 @@ function drawSwatch(colorCode) {
 BlackAlt brukes som fargen på tekster hvis bakgrunnen er lys. White brukes hvis det er tekst på mørk bakgrunn.
 
 ```js noeditor
-const { TinyColor } = require('@ctrl/tinycolor');
-const { SkeBasis } = require('../../components/SkeBasis/SkeBasis.js');
+import TinyColor from '@ctrl/tinycolor'
+import SkeBasis from '@skatteetaten/frontend-components/SkeBasis';
 palette = Object(SkeBasis.PALETTE);
 
 function drawSwatch(colorCode) {
@@ -100,7 +100,7 @@ Blue brukes på lenker og knapper som er klikkbare og som ligger på lys bakgrun
 
 ```js noeditor
 const { TinyColor } = require('@ctrl/tinycolor');
-const { SkeBasis } = require('../../components/SkeBasis/SkeBasis.js');
+import SkeBasis from '@skatteetaten/frontend-components/SkeBasis';
 
 palette = Object(SkeBasis.PALETTE);
 
@@ -131,8 +131,8 @@ function drawSwatch(colorCode) {
 ### Kun til interne løsninger
 
 ```js noeditor
-const { TinyColor } = require('@ctrl/tinycolor');
-const { SkeBasis } = require('../../components/SkeBasis/SkeBasis.js');
+import TinyColor from '@ctrl/tinycolor'
+import SkeBasis from '@skatteetaten/frontend-components/SkeBasis';
 
 palette = Object(SkeBasis.PALETTE);
 
@@ -166,7 +166,7 @@ Disse fargene brukes i løsninger som designet før det nye visuelle designet ko
 
 ```js noeditor
 const { TinyColor } = require('@ctrl/tinycolor');
-const { SkeBasis } = require('../../components/SkeBasis/SkeBasis.js');
+import SkeBasis from '@skatteetaten/frontend-components/SkeBasis';
 
 palette = Object(SkeBasis.PALETTE);
 

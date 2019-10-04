@@ -1,19 +1,19 @@
 import React from 'react';
 import { matches } from './../utils/test-utils';
 import { shallow } from 'enzyme';
-import Checkbox from './Checkbox';
+import CheckBox from './CheckBox';
 
 function oppsettShallow(props) {
-  return shallow(<Checkbox {...props} />);
+  return shallow(<CheckBox {...props} />);
 }
 
 describe('Checkbox komponent', () => {
   it('matcher snapshot', () => {
-    matches(<Checkbox>Sjekkboks</Checkbox>);
+    matches(<CheckBox>Sjekkboks</CheckBox>);
   });
 
   it('rendrer Checkbox med default props', () => {
-    const wrapper = shallow(<Checkbox />);
+    const wrapper = shallow(<CheckBox />);
     expect(wrapper.find('StyledCheckboxBase').prop('boxSide')).toEqual('end');
   });
 

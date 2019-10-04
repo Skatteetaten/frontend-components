@@ -14,7 +14,7 @@ import Icon from '@skatteetaten/frontend-components/Icon';
   </Chip>
   <span> </span>
   <Chip type={Chip.WARNING} ariaLabel="Unntatt offentlighet">
-    <a href="#gfs">Unntatt offentlighet</a>
+    Unntatt offentlighet
   </Chip>
 </div>;
 ```

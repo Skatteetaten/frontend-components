@@ -5,14 +5,14 @@ function generateComponentsGroup(groupName, components) {
   return {
     name: groupName,
     components: components.map(
-      component => `src/components/${component}/**/[A-Z]*.js`
+      component => `src/components/${component}/**/[A-Z]*.tsx`
     )
   };
 }
 
 module.exports = {
   title: 'Skatteetatens designsystem',
-  components: 'src/components/**/[A-Z]*.js',
+  components: 'src/components/**/[A-Z]*.tsx',
   exampleMode: 'collapse',
   moduleAliases: {
     '@skatteetaten/frontend-components': path.resolve(
@@ -53,7 +53,7 @@ module.exports = {
       'Button',
       'IconButton',
       'NavigationTile',
-      'ScrollToTopButton',
+      'ScrollToTopButton'
     ]),
     generateComponentsGroup('Oppsett av siden', [
       'FooterContent',
@@ -127,10 +127,10 @@ module.exports = {
     '**/*.spec.{js,jsx,ts,tsx}',
     '**/*.d.ts',
     '**/components/utils/**',
-    '**/*.classNames.js'
+    '**/*.classNames.ts'
   ],
   getComponentPathLine(componentPath) {
-    const name = path.basename(componentPath, '.js');
+    const name = path.basename(componentPath, '.tsx');
     const dir = path.dirname(componentPath).replace('src/components', '');
     if (dir.search('Layout') > 0) {
       return `import ${name} from '${pkg.name}${dir}/${name}';`;
@@ -139,7 +139,7 @@ module.exports = {
     }
   },
   getExampleFilename(componentPath) {
-    return componentPath.replace(/\.jsx?$/, '.md');
+    return componentPath.replace(/\.tsx?$/, '.md');
   },
   theme: {
     color: {
@@ -167,5 +167,15 @@ module.exports = {
       __dirname,
       'src/styleguide/slots/IsolateButton'
     )
-  }
+  },
+  resolver: require('react-docgen').resolver.findAllComponentDefinitions,
+  propsParser: require('react-docgen-typescript').withDefaultConfig({
+    propFilter: prop => {
+      if (prop.parent) {
+        // Fjerner arial html props fra API lista
+        return !prop.parent.fileName.includes('node_modules/@types/react');
+      }
+      return true;
+    }
+  }).parse
 };

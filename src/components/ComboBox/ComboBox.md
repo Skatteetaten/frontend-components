@@ -18,7 +18,7 @@ const initialState = {
   <Grid>
     <Grid.Row>
       <Grid.Col lg={4}>
-        <Combobox
+        <ComboBox
           label="Nedtrekksliste"
           help="Hjelpetekst"
           placeHolder="Velg"
@@ -29,7 +29,7 @@ const initialState = {
         />
       </Grid.Col>
       <Grid.Col lg={4}>
-        <Combobox
+        <ComboBox
           label="Med autoutfylling"
           help="Feltet foreslår en verdi når du begynner å skrive"
           options={state.options}
@@ -64,7 +64,7 @@ const initialState = {
   <Grid>
     <Grid.Row>
       <Grid.Col lg={4}>
-        <Combobox
+        <ComboBox
           label="Nedtrekksliste"
           help="Hjelpetekst"
           inputSize="large"
