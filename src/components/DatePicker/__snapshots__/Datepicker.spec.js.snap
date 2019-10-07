@@ -47,7 +47,6 @@ exports[`DatePicker komponent matcher snapshot 1`] = `
               className="ms-DatePicker-event--without-label msDatePickerDisabled icon-61"
               data-icon-name="Calendar"
               onClick={[Function]}
-              role="presentation"
             >
               
             </i>

@@ -13,7 +13,7 @@ function closeDialog() {
 
 <div>
   <Button
-    buttonType="secondary"
+    type="secondary"
     aria-haspopup="true"
     onClick={() => setState({ hideDialog: false })}
   >
@@ -67,7 +67,7 @@ const content1 = [
 
 <div>
   <Button
-    buttonType="secondary"
+    type="secondary"
     aria-haspopup="true"
     onClick={() => setState({ hideDialog: false })}
   >
@@ -112,7 +112,7 @@ function closeDialog() {
 
 <div>
   <Button
-    buttonType="secondary"
+    type="secondary"
     aria-haspopup="true"
     onClick={() => setState({ hideDialog: false })}
   >

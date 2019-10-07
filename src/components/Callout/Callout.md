@@ -21,7 +21,7 @@ function closeButton() {
 <div>
   <span ref={spanElement => (buttonElement = spanElement)}>
     <Button
-      buttonType="secondary"
+      type="secondary"
       aria-haspopup="true"
       icon="Info"
       onClick={() => setState({ isCalloutVisible: !state.isCalloutVisible })}
@@ -68,7 +68,7 @@ function closeButton() {
 <div>
   <span ref={spanElement => (buttonElement2 = spanElement)}>
     <Button
-      buttonType="secondary"
+      type="secondary"
       aria-haspopup="true"
       icon="Info"
       onClick={() => setState({ isCalloutVisible: !state.isCalloutVisible })}
@@ -106,7 +106,7 @@ function closeButton() {
 <div>
   <span ref={spanElement => (buttonElement4 = spanElement)}>
     <Button
-      buttonType="secondary"
+      type="secondary"
       aria-haspopup="true"
       icon="Info"
       onClick={() => setState({ isCalloutVisible: !state.isCalloutVisible })}

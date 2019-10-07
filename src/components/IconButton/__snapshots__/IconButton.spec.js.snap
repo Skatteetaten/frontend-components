@@ -2,7 +2,6 @@
 
 exports[`IconButton komponent matcher snapshot 1`] = `
 <button
-  aria-label="Lagre"
   className="ms-Button ms-Button--icon ske-icondefault-button-41"
   data-is-focusable={true}
   onClick={[Function]}

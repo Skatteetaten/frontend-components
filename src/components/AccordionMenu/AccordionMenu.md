@@ -89,7 +89,7 @@ const timeStampStyle = {
         <IconButton
           alt="Rediger"
           title="Redigerer parten"
-          buttonType="default"
+          type="default"
           icon="Edit"
         />
       </div>
@@ -104,7 +104,7 @@ const timeStampStyle = {
         <IconButton
           alt="Oppdater"
           title="Oppdaterer partsinfo"
-          buttonType="small"
+          type="small"
           icon="Update"
         />
       </div>

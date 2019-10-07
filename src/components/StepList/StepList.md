@@ -68,7 +68,7 @@ const titles = {
     />
   </Step>
   <Step stepType={'next'}>
-    <Button buttonType="primary">Neste</Button>
+    <Button type="primary">Neste</Button>
   </Step>
 </StepList>;
 ```
@@ -118,7 +118,7 @@ const titles = {
       arbeidsplass, kan du ha krav på reisefradrag. Det kan du sjekke i
       reisefradragskalkulatoren:
     </p>
-    <Button buttonType="primaryRounded">Beregn reisefradrag</Button>
+    <Button type="primaryRounded">Beregn reisefradrag</Button>
   </Step>
 </StepList>;
 ```
