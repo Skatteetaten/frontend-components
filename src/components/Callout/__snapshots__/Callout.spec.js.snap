@@ -30,6 +30,7 @@ exports[`Callout komponent matcher snapshot 1`] = `
         }
       >
         <button
+          aria-label="Lukk"
           className="ms-Button ms-Button--icon closeButton-48"
           data-is-focusable={true}
           onClick={[Function]}

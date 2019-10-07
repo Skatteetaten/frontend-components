@@ -1,35 +1,32 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`SearchField komponent matcher snapshot 1`] = `
-<div>
+<div
+  className="ms-SearchBox SkeSearchField-41"
+  onFocusCapture={[Function]}
+  role="search"
+>
   <div
-    className="ms-SearchBox SkeSearchField-41"
-    onFocusCapture={[Function]}
-    role="search"
+    aria-hidden={true}
+    className="ms-SearchBox-iconContainer iconContainer-42"
+    onClick={[Function]}
   >
-    <div
+    <i
       aria-hidden={true}
-      className="ms-SearchBox-iconContainer iconContainer-42"
-      onClick={[Function]}
+      className="ms-SearchBox-icon icon-47"
+      data-icon-name="Search"
     >
-      <i
-        aria-hidden={true}
-        className="ms-SearchBox-icon icon-47"
-        data-icon-name="Search"
-        role="presentation"
-      >
-        
-      </i>
-    </div>
-    <input
-      className="ms-SearchBox-field field-45"
-      id="SearchBox0"
-      onChange={[Function]}
-      onInput={[Function]}
-      onKeyDown={[Function]}
-      role="searchbox"
-      value=""
-    />
+      
+    </i>
   </div>
+  <input
+    className="ms-SearchBox-field field-45"
+    id="SearchBox0"
+    onChange={[Function]}
+    onInput={[Function]}
+    onKeyDown={[Function]}
+    role="searchbox"
+    value=""
+  />
 </div>
 `;

@@ -1,152 +1,149 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Tabs komponent matcher snapshot 1`] = `
-<div>
+<div
+  className="SkeTabs-40"
+>
   <div
-    className="SkeTabs-40"
+    className="ms-FocusZone css-48"
+    data-focuszone-id="FocusZone1"
+    onFocus={[Function]}
+    onKeyDown={[Function]}
+    onMouseDownCapture={[Function]}
   >
     <div
-      className="ms-FocusZone css-48"
-      data-focuszone-id="FocusZone1"
-      onFocus={[Function]}
-      onKeyDown={[Function]}
-      onMouseDownCapture={[Function]}
+      className="ms-Pivot ms-Pivot--large ms-Pivot--tabs root-41"
+      role="tablist"
     >
-      <div
-        className="ms-Pivot ms-Pivot--large ms-Pivot--tabs root-41"
-        role="tablist"
+      <button
+        aria-selected={true}
+        className="ms-Button ms-Button--action ms-Button--command ms-Pivot-link is-selected linkIsSelected-49"
+        data-content="Tilgjengelige oppgaver (23)"
+        data-is-focusable={true}
+        id="Pivot0-Tab0"
+        name="Tilgjengelige oppgaver"
+        onClick={[Function]}
+        onKeyDown={[Function]}
+        onKeyPress={[Function]}
+        onKeyUp={[Function]}
+        onMouseDown={[Function]}
+        onMouseUp={[Function]}
+        role="tab"
+        type="button"
       >
-        <button
-          aria-selected={true}
-          className="ms-Button ms-Button--action ms-Button--command ms-Pivot-link is-selected linkIsSelected-49"
-          data-content="Tilgjengelige oppgaver (23)"
-          data-is-focusable={true}
-          id="Pivot0-Tab0"
-          name="Tilgjengelige oppgaver"
-          onClick={[Function]}
-          onKeyDown={[Function]}
-          onKeyPress={[Function]}
-          onKeyUp={[Function]}
-          onMouseDown={[Function]}
-          onMouseUp={[Function]}
-          role="tab"
-          type="button"
+        <span
+          className="ms-Button-flexContainer flexContainer-50"
+          data-automationid="splitbuttonprimary"
         >
           <span
-            className="ms-Button-flexContainer flexContainer-50"
-            data-automationid="splitbuttonprimary"
+            className="ms-Pivot-linkContent linkContent-44"
           >
             <span
-              className="ms-Pivot-linkContent linkContent-44"
+              className="ms-Pivot-text text-45"
             >
-              <span
-                className="ms-Pivot-text text-45"
-              >
-                 
-                Tilgjengelige oppgaver
-              </span>
-              <span
-                className="ms-Pivot-count count-46"
-              >
-                 (
-                23
-                )
-              </span>
+               
+              Tilgjengelige oppgaver
+            </span>
+            <span
+              className="ms-Pivot-count count-46"
+            >
+               (
+              23
+              )
             </span>
           </span>
-        </button>
-        <button
-          aria-selected={false}
-          className="ms-Button ms-Button--action ms-Button--command ms-Pivot-link link-57"
-          data-content="Mine oppgaver (2)"
-          data-is-focusable={true}
-          id="Pivot0-Tab1"
-          name="Mine oppgaver"
-          onClick={[Function]}
-          onKeyDown={[Function]}
-          onKeyPress={[Function]}
-          onKeyUp={[Function]}
-          onMouseDown={[Function]}
-          onMouseUp={[Function]}
-          role="tab"
-          type="button"
+        </span>
+      </button>
+      <button
+        aria-selected={false}
+        className="ms-Button ms-Button--action ms-Button--command ms-Pivot-link link-57"
+        data-content="Mine oppgaver (2)"
+        data-is-focusable={true}
+        id="Pivot0-Tab1"
+        name="Mine oppgaver"
+        onClick={[Function]}
+        onKeyDown={[Function]}
+        onKeyPress={[Function]}
+        onKeyUp={[Function]}
+        onMouseDown={[Function]}
+        onMouseUp={[Function]}
+        role="tab"
+        type="button"
+      >
+        <span
+          className="ms-Button-flexContainer flexContainer-50"
+          data-automationid="splitbuttonprimary"
         >
           <span
-            className="ms-Button-flexContainer flexContainer-50"
-            data-automationid="splitbuttonprimary"
+            className="ms-Pivot-linkContent linkContent-44"
           >
             <span
-              className="ms-Pivot-linkContent linkContent-44"
+              className="ms-Pivot-text text-45"
             >
-              <span
-                className="ms-Pivot-text text-45"
-              >
-                 
-                Mine oppgaver
-              </span>
-              <span
-                className="ms-Pivot-count count-46"
-              >
-                 (
-                2
-                )
-              </span>
+               
+              Mine oppgaver
+            </span>
+            <span
+              className="ms-Pivot-count count-46"
+            >
+               (
+              2
+              )
             </span>
           </span>
-        </button>
-        <button
-          aria-selected={false}
-          className="ms-Button ms-Button--action ms-Button--command ms-Pivot-link link-57"
-          data-content="Andres oppgaver xx"
-          data-is-focusable={true}
-          id="Pivot0-Tab2"
-          name="Andres oppgaver"
-          onClick={[Function]}
-          onKeyDown={[Function]}
-          onKeyPress={[Function]}
-          onKeyUp={[Function]}
-          onMouseDown={[Function]}
-          onMouseUp={[Function]}
-          role="tab"
-          type="button"
+        </span>
+      </button>
+      <button
+        aria-selected={false}
+        className="ms-Button ms-Button--action ms-Button--command ms-Pivot-link link-57"
+        data-content="Andres oppgaver xx"
+        data-is-focusable={true}
+        id="Pivot0-Tab2"
+        name="Andres oppgaver"
+        onClick={[Function]}
+        onKeyDown={[Function]}
+        onKeyPress={[Function]}
+        onKeyUp={[Function]}
+        onMouseDown={[Function]}
+        onMouseUp={[Function]}
+        role="tab"
+        type="button"
+      >
+        <span
+          className="ms-Button-flexContainer flexContainer-50"
+          data-automationid="splitbuttonprimary"
         >
           <span
-            className="ms-Button-flexContainer flexContainer-50"
-            data-automationid="splitbuttonprimary"
+            className="ms-Pivot-linkContent linkContent-44"
           >
             <span
-              className="ms-Pivot-linkContent linkContent-44"
+              className="ms-Pivot-icon icon-47"
             >
-              <span
-                className="ms-Pivot-icon icon-47"
+              <i
+                aria-hidden={true}
+                className="root-59"
+                data-icon-name="Update"
               >
-                <i
-                  aria-hidden={true}
-                  className="root-59"
-                  data-icon-name="Update"
-                  role="presentation"
-                >
-                  
-                </i>
-              </span>
-              <span
-                className="ms-Pivot-text text-45"
-              >
-                 
-                Andres oppgaver
-              </span>
+                
+              </i>
+            </span>
+            <span
+              className="ms-Pivot-text text-45"
+            >
+               
+              Andres oppgaver
             </span>
           </span>
-        </button>
-      </div>
+        </span>
+      </button>
     </div>
-    <div
-      aria-labelledby="Pivot0-Tab0"
-      role="tabpanel"
-    >
-      <div>
-        Innhold #1
-      </div>
+  </div>
+  <div
+    aria-labelledby="Pivot0-Tab0"
+    role="tabpanel"
+  >
+    <div>
+      Innhold #1
     </div>
   </div>
 </div>

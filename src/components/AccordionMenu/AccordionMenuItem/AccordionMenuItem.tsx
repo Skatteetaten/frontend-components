@@ -1,29 +1,32 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-
+import * as React from 'react';
 import IconButton from '../../IconButton';
 import Icon from '../../Icon';
-
 import classnames from 'classnames';
 import { getClassNames } from '../AccordionMenu.classNames';
 
-export default class AccordionMenuItem extends React.PureComponent {
-  static propTypes = {
-    /** Ikon som benyttes for et menypunkt   */
-    icon: PropTypes.string,
-    /** ariaLabel for ikonet i et menypunkt  */
-    iconLabel: PropTypes.string,
-    /** Om et menypunkt skal være default åpen */
-    isOpen: PropTypes.bool,
-    /** Tittel på menypunkt */
-    title: PropTypes.object.isRequired,
-    /** Om man ønsker ytterligere aksjon når bruker åpner steget. Kalles KUN når steget åpnes, ikke når det lukkes. */
-    onClick: PropTypes.func,
-    /** Klasse som kan benyttes til overstyre stiler */
+interface AccordionMenuItemProps {
+  /** Ikon som benyttes for et menypunkt   */
+  icon?: string;
+  /** ariaLabel for ikonet i et menypunkt  */
+  iconLabel?: string;
+  /** Om et menypunkt skal være default åpen */
+  isOpen?: boolean;
+  /** Tittel på menypunkt */
+  title: object;
+  /** Om man ønsker ytterligere aksjon når bruker åpner steget. Kalles KUN når steget åpnes, ikke når det lukkes. */
+  onClick?: (...args: any[]) => any;
+  /** Klasse som kan benyttes til overstyre stiler */
+  className?: string;
+}
 
-    className: PropTypes.string
-  };
+type AccordionMenuItemState = {
+  isContentOpen: boolean;
+};
 
+export default class AccordionMenuItem extends React.PureComponent<
+  AccordionMenuItemProps,
+  AccordionMenuItemState
+> {
   constructor(props) {
     super(props);
     this.state = {
@@ -38,15 +41,7 @@ export default class AccordionMenuItem extends React.PureComponent {
   render() {
     const styles = getClassNames();
     const { isContentOpen } = this.state;
-    const {
-      title,
-      iconLabel,
-      icon,
-      onClick,
-      itemKey,
-      className,
-      children
-    } = this.props;
+    const { title, iconLabel, icon, onClick, className, children } = this.props;
 
     const clickHandler = () => {
       if (onClick && !isContentOpen) {
@@ -56,7 +51,7 @@ export default class AccordionMenuItem extends React.PureComponent {
     };
 
     return (
-      <li className={className} key={itemKey}>
+      <li className={className}>
         <header
           onClick={clickHandler}
           className={

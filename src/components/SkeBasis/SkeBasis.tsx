@@ -8,7 +8,7 @@ import {
 import palette from '../utils/palette';
 import fonts from '../utils/fonts';
 import * as icons from '../utils/icons';
-//TODO FIX
+
 interface SkeBasisProps extends IFabricProps {
   palette: object;
   fonts: object;
@@ -22,11 +22,10 @@ interface SkeBasisProps extends IFabricProps {
   }[];
 }
 
-class SkeBasis extends Fabric<SkeBasisProps> {
+class SkeBasis extends React.PureComponent<SkeBasisProps> {
   static PALETTE = palette;
   static FONTS = fonts;
   static ICONS = icons;
-
   static defaultProps = {
     palette: SkeBasis.PALETTE,
     fonts: SkeBasis.FONTS,
@@ -44,7 +43,7 @@ class SkeBasis extends Fabric<SkeBasisProps> {
     }
   }
   render() {
-    return super.render();
+    return <Fabric {...this.props}>{this.props.children}</Fabric>;
   }
 }
 

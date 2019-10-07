@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Dropdown komponent matcher snapshot 1`] = `
-<div>
+<Fragment>
   <div
     className="labelArea-41"
   >
@@ -82,5 +82,5 @@ exports[`Dropdown komponent matcher snapshot 1`] = `
     }
     placeholder="Select an option"
   />
-</div>
+</Fragment>
 `;

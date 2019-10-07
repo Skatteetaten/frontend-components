@@ -1,36 +1,36 @@
-export const FontSizes = {
-  mini: '10px',
-  xSmall: '12px',
-  small: '14px',
-  smallPlus: '15px',
-  medium: '16px',
-  mediumPlus: '17px',
-  icon: '20px',
-  large: '18px',
-  largePlus: '20px',
-  xLarge: '22px',
-  xxLarge: '28px',
-  superLarge: '42px',
-  mega: '72px'
-};
+export enum FontSizes {
+  mini = '10px',
+  xSmall = '12px',
+  small = '14px',
+  smallPlus = '15px',
+  medium = '16px',
+  mediumPlus = '17px',
+  icon = '20px',
+  large = '18px',
+  largePlus = '20px',
+  xLarge = '22px',
+  xxLarge = '28px',
+  superLarge = '42px',
+  mega = '72px'
+}
 
-export const FontWeights = {
-  light: 100,
-  semilight: 300,
-  regular: 400,
-  semibold: 600,
-  bold: 700
-};
+export enum FontWeights {
+  light = 100,
+  semilight = 300,
+  regular = 400,
+  semibold = 600,
+  bold = 700
+}
 
-export const IconFontSizes = {
-  xSmall: '10px',
-  small: '12px',
-  medium: '16px',
-  large: '20px',
-  xlarge: '24px',
-  xxlarge: '32px',
-  mega: '40px'
-};
+export enum IconFontSizes {
+  xSmall = '10px',
+  small = '12px',
+  medium = '16px',
+  large = '20px',
+  xlarge = '24px',
+  xxlarge = '32px',
+  mega = '40px'
+}
 
 export const createFont = (size, weight, localeCode = 'no') => {
   return {

@@ -1,6 +1,4 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-
+import * as React from 'react';
 import classnames from 'classnames';
 import Grid from '../../Grid/Grid';
 import Icon from '../../Icon/Icon';
@@ -51,28 +49,33 @@ const ToggleContent = ({
   );
 };
 
-export default class AccordionItem extends React.PureComponent {
-  static propTypes = {
-    /** Valg for å kunne vise/skjule innhold til et steg med en "vise/skjule" knapp */
-    toggleContent: PropTypes.bool,
-    /** Teksten for vise/skjule knappen for et steg */
-    toggleButtonText: PropTypes.string,
-    /** Om et steg skal være default åpen */
-    isOpen: PropTypes.bool,
-    /** Om skal vise spesifisert ikon istedet tall hvis Accordion er en processList  */
-    icon: PropTypes.string,
-    /** Tekst som er ønskelig at leses opp for skjermleser om man spesifiserer et ikon */
-    ariaLabel: PropTypes.string,
-    /** Om man ønsker ytterligere aksjon når bruker åpner steget. Kalles KUN når steget åpnes, ikke når det lukkes. */
-    onClick: PropTypes.func,
-    /**   Id som settes i aria-control på vise/skjule knapp som peker på innholdspanelet som knappen styrer */
-    stepId: PropTypes.string,
-    /** Tittel til innholdet */
-    title: PropTypes.string,
-    /** Subtittel som vises i accordionitem */
-    subtitle: PropTypes.string
-  };
-
+interface AccordionItemProps {
+  /** Valg for å kunne vise/skjule innhold til et steg med en "vise/skjule" knapp */
+  toggleContent?: boolean;
+  /** Teksten for vise/skjule knappen for et steg */
+  toggleButtonText?: string;
+  /** Om et steg skal være default åpen */
+  isOpen?: boolean;
+  /** Om skal vise spesifisert ikon istedet tall hvis Accordion er en processList  */
+  icon?: string;
+  /** Tekst som er ønskelig at leses opp for skjermleser om man spesifiserer et ikon */
+  ariaLabel?: string;
+  /** Om man ønsker ytterligere aksjon når bruker åpner steget. Kalles KUN når steget åpnes, ikke når det lukkes. */
+  onClick?: (...args: any[]) => any;
+  /**   Id som settes i aria-control på vise/skjule knapp som peker på innholdspanelet som knappen styrer */
+  stepId?: string;
+  /** Tittel til innholdet */
+  title?: string;
+  /** Subtittel som vises i accordionitem */
+  subtitle?: string;
+}
+type AccordionItemState = {
+  isContentOpen: boolean;
+};
+export default class AccordionItem extends React.PureComponent<
+  AccordionItemProps,
+  AccordionItemState
+> {
   constructor(props) {
     super(props);
     this.state = {
@@ -83,7 +86,7 @@ export default class AccordionItem extends React.PureComponent {
   render() {
     const { isContentOpen } = this.state;
     const styles = getClassNames(this.props);
-
+    //todo StepNumber, totalSteps, processList ?
     const {
       title,
       subtitle,

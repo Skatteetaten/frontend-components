@@ -7,7 +7,10 @@ import find from 'lodash.find';
 
 function createMenu(items, searchTerm) {
   return items.map(({ name, slug, components = [], sections = [] }) => {
-    const links = [...createMenu(sections), ...createMenu(components)];
+    const links = [
+      ...createMenu(sections, null),
+      ...createMenu(components, null)
+    ];
     const collapseByDefault = searchTerm
       ? find(items, e => e.key === searchTerm)
       : true;
@@ -23,7 +26,6 @@ function createMenu(items, searchTerm) {
 }
 const getStyles = props => {
   const { palette } = getTheme();
-
   return mergeStyleSets({
     root: {
       displayName: 'SkeNav'

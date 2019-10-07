@@ -1,13 +1,12 @@
 import * as React from 'react';
-import PropTypes from 'prop-types';
 import classnames from 'classnames';
 
 import {
+  IPivotProps,
   Pivot,
   PivotItem,
   PivotLinkFormat,
-  PivotLinkSize,
-  IPivotProps
+  PivotLinkSize
 } from 'office-ui-fabric-react/lib-commonjs/Pivot';
 
 import { getClassNames } from './Tabs.classNames';
@@ -26,9 +25,10 @@ export default class Tabs extends React.PureComponent<TabsProps, {}> {
         {...props}
         className={classnames(getClassNames(this.props), className)}
       >
-        {React.Children.map(this.props.children, child => (
-          <PivotItem {...child.props} />
-        ))}
+        {React.Children.map(this.props.children, child => {
+          //@ts-ignore //todo
+          return <PivotItem {...child.props} />;
+        })}
       </Pivot>
     );
   }

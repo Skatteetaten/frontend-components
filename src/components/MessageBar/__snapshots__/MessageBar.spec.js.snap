@@ -23,7 +23,6 @@ exports[`MessageBar komponent matcher snapshot 1`] = `
             aria-hidden={true}
             className="icon-54"
             data-icon-name="Info"
-            role="presentation"
           >
             
           </i>
