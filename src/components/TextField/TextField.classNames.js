@@ -2,6 +2,7 @@ import { mergeStyles } from '@uifabric/merge-styles';
 import { getTheme } from '@uifabric/styling';
 import { FontSizes, FontWeights } from '../utils/fonts';
 import { MdIcons } from '../utils/icons/';
+import { isUndefined } from 'util';
 
 function getFieldTypeStyles(props) {
   switch (props.inputSize) {
@@ -45,12 +46,13 @@ function getLabelSize(props) {
 
 export const getClassNames = props => {
   const {
-    errorMessage,
-    borderless,
-    underlined,
-    readonly,
     boldText,
-    editableWhenEmpty
+    borderless,
+    calloutFloating,
+    editableWhenEmpty,
+    errorMessage,
+    readonly,
+    underlined
   } = props;
   const { palette, semanticColors } = getTheme();
   const errorIcon = "'" + MdIcons.icons.Error + "'";
@@ -149,6 +151,10 @@ export const getClassNames = props => {
         border: '1px solid' + palette.skeColor.blackAlt,
         backgroundColor: palette.skeColor.white
       },
+      '& .ms-Callout-main': !isUndefined(calloutFloating) &&
+        !calloutFloating && {
+          display: 'inline-block'
+        },
       '.ms-TextField-suffix': !props.editMode &&
         props.readonly && {
           display: 'none'

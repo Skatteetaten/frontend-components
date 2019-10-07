@@ -27,17 +27,14 @@ export const getClassNames = props => {
       ...getCalloutBorder(props),
       selectors: {
         '.ms-Callout-main': {
-          maxWidth: 400,
+          maxWidth: 600,
           backgroundColor: theme.palette.skeColor[props.color],
           boxShadow: 'none',
           border: 'none',
           padding: '10px 20px 10px 10px',
           selectors: {
-            '@media (min-width: 480px)': {
-              maxWidth: '600px'
-            },
-            '@media (min-width: 1024px)': {
-              maxWidth: '900px'
+            '@media  only screen and (max-width: 479px)': {
+              maxWidth: 300
             },
             '& h3': {
               padding: '10px 10px 0 10px'
@@ -57,6 +54,9 @@ export const getClassNames = props => {
           fontSize: FontSizes.large
         }
       }
+    },
+    calloutWrapper: {
+      width: '100%'
     },
     closeButton: {
       backgroundColor: 'transparent',

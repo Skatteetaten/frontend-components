@@ -69,7 +69,7 @@ export default class Callout extends React.PureComponent {
     const styles = getClassNames(props);
 
     return (
-      <div id={id}>
+      <div id={id} className={classnames(styles.calloutWrapper, className)}>
         <FabricCallout
           {...props}
           className={classnames(styles.main, className)}

@@ -2,8 +2,51 @@ import { mergeStyles, mergeStyleSets } from '@uifabric/merge-styles';
 import { getTheme } from '@uifabric/styling';
 import { FontSizes, FontWeights } from '../utils/fonts';
 import { MdIcons } from '../utils/icons/';
+import { isUndefined } from 'util';
 
 const errorIcon = "'" + MdIcons.icons.Error + "'";
+function getCalloutStyles(props) {
+  const calloutFloating = props.calloutFloating;
+
+  //inline callout layout
+  if (!isUndefined(calloutFloating) && !calloutFloating) {
+    return {
+      '& .ms-Callout-container': {
+        width: '100%',
+        position: 'inherit',
+        margin: '10px 0'
+      },
+      '& .ms-Callout': {
+        left: '0 !important',
+        top: '0 !important',
+        position: 'inherit'
+      },
+      '& .ms-Callout-beak': {
+        left: '20px !important',
+        top: '-8px !important'
+      },
+      '& .ms-Callout-main': {
+        maxWidth: '100%'
+      }
+    };
+  } else {
+    return {
+      '& .ms-Callout-container': {
+        width: '100%',
+        position: 'relative',
+        display: 'block'
+      },
+      '& .ms-Callout': {
+        width: '100%',
+        maxWidth: '300px'
+      },
+      '& .ms-Callout-main': {
+        width: '100%'
+      }
+    };
+  }
+}
+
 function getFieldTypeStyles(props) {
   switch (props.inputSize) {
     case 'large':
@@ -143,11 +186,9 @@ export const getLabelClassNames = props => {
       display: 'flex',
       alignItems: 'center',
       position: 'relative',
+      flexWrap: 'wrap',
       selectors: {
-        '& .ms-Callout-container': {
-          width: '100%',
-          position: 'absolute'
-        }
+        ...getCalloutStyles(props)
       }
     },
     label: {
@@ -173,10 +214,6 @@ export const getLabelClassNames = props => {
           outline: 'none'
         }
       }
-    },
-    callOut: {
-      padding: '10px',
-      maxWidth: '300px'
     }
   });
 };

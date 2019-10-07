@@ -56,18 +56,19 @@ describe('RadioButtonGroup komponent', () => {
         .prop('id')
     ).toEqual('radiobuttongroup-id');
     expect(wrapper.prop('className')).toEqual('radiobuttongroup-class');
-    expect(wrapper.find('StyledChoiceGroupBase').prop('label')).toEqual(
-      'Velg en'
-    );
+    expect(
+      wrapper.find('StyledChoiceGroupBase').props().ariaLabelledBy
+    ).toEqual('Velg en');
     expect(wrapper.find('StyledChoiceGroupBase').prop('required')).toEqual(
       true
     );
-    expect(wrapper.find('input#ChoiceGroup2-B').prop('checked')).toEqual(true);
-    expect(wrapper.find('input#ChoiceGroup2-B').prop('disabled')).toEqual(
+    expect(wrapper.exists('#ChoiceGroup3-B')).toEqual(true);
+    expect(wrapper.find('input#ChoiceGroup3-B').prop('checked')).toEqual(true);
+    expect(wrapper.find('input#ChoiceGroup3-B').prop('disabled')).toEqual(
       undefined
     );
-    expect(wrapper.find('input#ChoiceGroup2-C').prop('checked')).toEqual(false);
-    expect(wrapper.find('input#ChoiceGroup2-C').prop('disabled')).toEqual(true);
+    expect(wrapper.find('input#ChoiceGroup3-C').prop('checked')).toEqual(false);
+    expect(wrapper.find('input#ChoiceGroup3-C').prop('disabled')).toEqual(true);
   });
 
   it('rendrer RadioButtonGroup med riktig antall valg og innhold', () => {
