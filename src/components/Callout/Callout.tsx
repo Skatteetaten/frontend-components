@@ -95,7 +95,7 @@ export default class Callout extends React.PureComponent<CalloutProps, CalloutSt
             aria-label="Lukk"
             icon="Cancel"
             className={styles.closeButton}
-            buttonType="default"
+            type="default"
             onClick={props.onClose}
           />
         </FabricCallout>

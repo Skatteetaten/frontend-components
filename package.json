@@ -71,7 +71,8 @@
     "react-test-renderer": "16.9.0",
     "rimraf": "3.0.0",
     "sonar-scanner": "3.1.0",
-    "ts-lint": "4.5.1",
+    "tslint": "5.18.0",
+    "tslint-react": "4.0.0",
     "ts-loader": "^5.4.5",
     "typescript": "^3.6.3",
     "webfont": "9.0.0"

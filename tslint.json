@@ -1,15 +1,16 @@
 {
-    "defaultSeverity": "error",
-    "extends": [
-        "tslint:recommended"
-    ],
-    "jsRules": {},
-    "rules": {
-      "member-access": false,
-      "trailing-comma": [true, {"multiline": "never", "singleline": "never"}],
-      "interface-name": false,
-      "quotemark": [true, "single"],
-      "arrow-parens": false
-    },
-    "rulesDirectory": []
+  "defaultSeverity": "error",
+  "extends": ["tslint-react", "tslint:recommended"],
+  "jsRules": {},
+  "rules": {
+    "member-access": false,
+    "trailing-comma": [true, { "multiline": "never", "singleline": "never" }],
+    "interface-name": false,
+    "quotemark": [true, "single"],
+    "arrow-parens": false
+  },
+  "rulesDirectory": [],
+  "linterOptions": {
+    "exclude": ["node_modules/**/*.ts"]
+  }
 }

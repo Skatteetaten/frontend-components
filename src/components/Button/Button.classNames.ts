@@ -7,7 +7,7 @@ function getTypeColor(props) {
   const { palette } = getTheme();
   const radius = '20px';
 
-  switch (props.buttonType) {
+  switch (props.type) {
     case 'primary':
       return {
         borderRadius: '6px',
@@ -82,7 +82,7 @@ function getTypeColor(props) {
 
 function getTypeFocusColor(props) {
   const { palette } = getTheme();
-  switch (props.buttonType) {
+  switch (props.type) {
     case 'warning':
       return {
         borderColor: palette.skeColor.blue,
@@ -105,7 +105,7 @@ function getTypeFocusColor(props) {
 
 function getTypeActiveColor(props) {
   const { palette } = getTheme();
-  switch (props.buttonType) {
+  switch (props.type) {
     case 'warning':
       return {
         borderColor: palette.skeColor.pink,
@@ -127,7 +127,7 @@ function getTypeActiveColor(props) {
 }
 
 function getDisabledColor(props) {
-  switch (props.buttonType) {
+  switch (props.type) {
     case 'primary':
       return {
         boxShadow: `none`
@@ -142,7 +142,7 @@ function getDisabledColor(props) {
 }
 
 function getLabelStyles(props) {
-  switch (props.buttonType) {
+  switch (props.type) {
     case 'secondary':
       return {
         textDecoration: 'underline'
@@ -153,10 +153,10 @@ function getLabelStyles(props) {
 }
 
 function setFocusRadius(props) {
-  if (props.buttonType === 'primary' || props.buttonType === 'warning') {
+  if (props.type === 'primary' || props.type === 'warning') {
     return '6px';
   }
-  if (props.buttonType === 'primaryLarge') {
+  if (props.type === 'primaryLarge') {
     return '7px';
   } else {
     return '20px';
@@ -164,7 +164,7 @@ function setFocusRadius(props) {
 }
 
 function setInset(props) {
-  if (props.buttonType === 'primary' || props.buttonType === 'warning') {
+  if (props.type === 'primary' || props.type === 'warning') {
     return -3;
   } else {
     return -4;
@@ -179,7 +179,7 @@ export var getClassNames = function getClassNames(props) {
   return mergeStyles([
     getFocusStyle(theme, inset, 'relative', radius),
     {
-      displayName: `ske-${props.buttonType}-button`,
+      displayName: `ske-${props.type}-button`,
       selectors: {
         '&.ms-Button': {
           borderWidth: '3px',

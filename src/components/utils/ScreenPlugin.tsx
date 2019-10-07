@@ -50,7 +50,9 @@ export const UseScreen = () => {
     const getSizes = () => {
       const newSizes = {
         gt: {},
-        lt: {}
+        lt: {},
+        height: 0,
+        width: 0
       };
       if (window.innerHeight !== size.height) {
         newSizes.height = window.innerHeight;

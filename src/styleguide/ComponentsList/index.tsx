@@ -1,5 +1,5 @@
 import React from 'react';
-import { withRouter } from 'react-router';
+import { match, withRouter } from 'react-router';
 import { Nav } from 'office-ui-fabric-react/lib-commonjs/Nav';
 import { getTheme, FontSizes, FontWeights } from '@uifabric/styling';
 import { mergeStyleSets } from '@uifabric/merge-styles';
@@ -51,7 +51,20 @@ const getStyles = props => {
   });
 };
 
-export class ComponentsListRenderer extends React.Component {
+interface ComponentsListRendererProps {
+  items: object[];
+  history: object;
+  searchTerm: string;
+  match: match;
+}
+
+interface ComponentsListRendererState {
+  selectedKey: any;
+}
+export class ComponentsListRenderer extends React.Component<
+  ComponentsListRendererProps,
+  ComponentsListRendererState
+> {
   constructor(props) {
     super(props);
     const {

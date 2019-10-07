@@ -84,7 +84,7 @@ export default class Dialog extends React.PureComponent<
               ref={menuButton => (this._iconButtonElement = menuButton)}
             >
               <IconButton
-                buttonType={'large'}
+                type={'large'}
                 icon={'HelpOutline'}
                 iconProps={{ iconName: 'Calendar' }}
                 onClick={this._onClick}

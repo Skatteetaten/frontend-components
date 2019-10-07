@@ -8,13 +8,13 @@ import IconButton from '@skatteetaten/frontend-components/IconButton';
     alt={'Sky med sirkel rundt'}
     title="Skriv ut"
     circle
-    buttonType="large"
+    type="large"
     icon="Print"
   />
   <IconButton
     alt={'Sky med sirkel rundt'}
     title="Skriv ut"
-    buttonType="large"
+    type="large"
     icon="Print"
   />
   <br />
@@ -22,13 +22,13 @@ import IconButton from '@skatteetaten/frontend-components/IconButton';
     alt={'Sky med sirkel rundt'}
     title="Skriv ut"
     circle
-    buttonType="default"
+    type="default"
     icon="Print"
   />
   <IconButton
     alt={'Sky med sirkel rundt'}
     title="Skriv ut"
-    buttonType="default"
+    type="default"
     icon="Print"
   />
 </div>;

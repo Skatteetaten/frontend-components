@@ -13,6 +13,8 @@ interface IconButtonProps extends IButtonProps {
   circle?: boolean;
   /** Ikon som skal vises foran teksten på knappen */
   icon?: string;
+  /** Gjør knappen til hovedknapp med fylt farge */
+  type?: 'default' | 'small' | 'medium' | 'large' | 'xLarge';
 }
 /**
  * @visibleName IconButton (Ikonknapp)
@@ -22,7 +24,7 @@ export default class IconButton extends React.PureComponent<
   {}
 > {
   static defaultProps = {
-    buttonType: 'default',
+    type: 'default',
     circle: false,
     icon: undefined,
     title: undefined,

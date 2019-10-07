@@ -298,8 +298,8 @@ Noen komponenter blir nå wrappet i en div for å kunne sette id
 
 #### **v1.0.8 - Juni 20, 2018**
 
-– Endret Button propTypes "type" --> "buttonType"  
-– Endret IconButton propTypes "type" --> "buttonType"
+– Endret Button propTypes "type" --> "type"  
+– Endret IconButton propTypes "type" --> "type"
 
 #### **v1.0.7 - Juni 20, 2018**
 

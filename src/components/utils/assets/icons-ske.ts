@@ -1,4 +1,4 @@
-const fontUrls = [];
+const fontUrls: string[] = [];
 
 fontUrls.push('url("' + require('./SkeIconfont.eot') + '")');
 fontUrls.push(

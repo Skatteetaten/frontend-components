@@ -16,7 +16,7 @@ describe('Button komponent ', () => {
     const wrapper = oppsettFullDOM();
     const label = wrapper.find('.ms-Button-label');
 
-    expect(wrapper.prop('buttonType')).toEqual('primaryRounded');
+    expect(wrapper.prop('type')).toEqual('primaryRounded');
     expect(wrapper.prop('disabled')).toEqual(false);
     expect(wrapper.prop('primary')).toEqual(false);
     expect(wrapper.prop('icon')).toEqual(undefined);
@@ -25,12 +25,12 @@ describe('Button komponent ', () => {
 
   it('setter Button med riktige props', () => {
     const wrapper = oppsettFullDOM({
-      buttonType: 'secondary',
+      type: 'secondary',
       icon: 'Add',
       disabled: true
     });
 
-    expect(wrapper.prop('buttonType')).toEqual('secondary');
+    expect(wrapper.prop('type')).toEqual('secondary');
     expect(wrapper.prop('disabled')).toEqual(true);
     expect(wrapper.prop('primary')).toEqual(false);
     expect(wrapper.prop('icon')).toEqual('Add');

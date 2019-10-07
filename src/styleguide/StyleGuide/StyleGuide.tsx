@@ -15,16 +15,22 @@ const history = createHashHistory({
   getUserConfirmation: (message, callback) => callback(window.confirm(message))
 });
 
-export class StyleGuide extends React.Component {
-  static propTypes = {
-    codeRevision: PropTypes.number.isRequired,
-    config: PropTypes.object.isRequired,
-    slots: PropTypes.object.isRequired,
-    sections: PropTypes.array.isRequired,
-    patterns: PropTypes.array,
-    displayMode: PropTypes.string
-  };
-
+interface StyleGuideProps {
+  codeRevision: number;
+  config: object;
+  slots: object;
+  sections: any[];
+  patterns?: any[];
+  displayMode?: string;
+}
+interface StyleGuideState {
+  info: any;
+  error: boolean;
+}
+export class StyleGuide extends React.Component<
+  StyleGuideProps,
+  StyleGuideState
+> {
   static childContextTypes = {
     codeRevision: PropTypes.number.isRequired,
     config: PropTypes.object.isRequired,

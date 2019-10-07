@@ -17,7 +17,7 @@ const initialState = {
 
 <>
   <Button
-    buttonType="primary"
+    type="primary"
     onClick={() => setState({ hasError: !state.hasError })}
   >
     {state.hasError ? 'Skjul feil' : 'Vis Feil'}

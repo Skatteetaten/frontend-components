@@ -4,7 +4,7 @@ import { FontSizes } from '../utils/fonts';
 import { getFocusStyle } from '../utils/getFocusStyle';
 
 function getTypeColor(props) {
-  switch (props.buttonType) {
+  switch (props.type) {
     case 'small':
       return {
         width: '35px',
@@ -82,7 +82,7 @@ function getCircleFocusrStyles(props) {
 }
 
 function getIconSize(props) {
-  switch (props.buttonType) {
+  switch (props.type) {
     case 'small':
       return {
         fontSize: FontSizes.mediumPlus
@@ -114,7 +114,7 @@ export var getClassNames = function getClassNames(props) {
   return mergeStyles([
     getFocusStyle({ palette }, inset, 'relative', radius),
     {
-      displayName: `ske-icon${props.buttonType}-button`,
+      displayName: `ske-icon${props.type}-button`,
       selectors: {
         '&.ms-Button--icon': {
           width: '40px',

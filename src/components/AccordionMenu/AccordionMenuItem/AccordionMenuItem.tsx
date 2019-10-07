@@ -82,7 +82,7 @@ export default class AccordionMenuItem extends React.PureComponent<
             <IconButton
               alt={'Åpne og lukke knapp'}
               title="Skriv ut"
-              buttonType="large"
+              type="primaryLarge"
               icon="ChevronDown"
             />
           </div>
