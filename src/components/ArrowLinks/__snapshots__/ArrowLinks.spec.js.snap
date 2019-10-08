@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Link komponent matcher snapshot 1`] = `
+<ArrowLinks
+  links={
+    Array [
+      Object {
+        "path": "#",
+        "text": "Dette er en link",
+      },
+    ]
+  }
+>
+  <ul>
+    <li
+      className="arrowLink-36"
+      key="0"
+    >
+      <a
+        className="arrowLinkA-37"
+        href="#"
+      >
+        Dette er en link
+      </a>
+    </li>
+  </ul>
+</ArrowLinks>
+`;

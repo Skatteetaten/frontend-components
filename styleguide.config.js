@@ -52,6 +52,7 @@ module.exports = {
       'ActionButton',
       'Button',
       'IconButton',
+      'Link',
       'NavigationTile',
       'ScrollToTopButton',
     ]),
@@ -75,6 +76,7 @@ module.exports = {
     generateComponentsGroup('Bokser og gruppering', [
       'Accordion',
       'AccordionMenu',
+      'ArrowLinks',
       'Card',
       'CommandBar',
       'StepList',
