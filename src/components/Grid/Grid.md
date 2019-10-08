@@ -82,7 +82,7 @@ import AccordionItem from '@skatteetaten/frontend-components/Accordion/Accordion
     <ul>
       <li>Small (sm): maks 479px</li>
       <li>Medium (md): 480px-639px</li>
-      <li>Large (md): 640px-1023px</li>
+      <li>Large (lg): 640px-1023px</li>
       <li>X-large (xl): 1024px-1365px</li>
       <li>Xx-large (xxl): 1366px-1919px</li>
       <li>Xxx-large (xxxl): min 1920px</li>

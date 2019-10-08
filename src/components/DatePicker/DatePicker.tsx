@@ -17,7 +17,7 @@ import {
 } from 'office-ui-fabric-react/lib-commonjs/DatePicker';
 import { FirstWeekOfYear } from 'office-ui-fabric-react/lib-commonjs/utilities/dateValues/DateValues';
 import ErrorMessage from '../ErrorMessage';
-
+import { isUndefined } from 'util';
 import { getClassNames, getLabelClassNames } from './DatePicker.classNames';
 
 const DEFAULT_DATE_FORMAT = 'DD.MM.YYYY';
@@ -155,7 +155,7 @@ export default class DatePicker extends React.Component<
   }
 
   _onRenderLabel = props => {
-    const { label, info, componentId } = props;
+    const { label, info, componentId, calloutFloating } = props;
     const styles = getLabelClassNames(props);
     let { isCalloutVisible } = this.state;
 
@@ -188,13 +188,17 @@ export default class DatePicker extends React.Component<
           <Callout
             role="tooltip"
             color={Callout.HELP}
-            directionalHint={Callout.POS_TOP_LEFT}
+            directionalHint={
+              !calloutFloating && !isUndefined(calloutFloating)
+                ? Callout.POS_BOTTOM_LEFT
+                : Callout.POS_TOP_LEFT
+            }
             ariaLabel={'Help information'}
             isBeakVisible={true}
             target={this._iconButtonElement}
             onClose={this._onDismiss}
           >
-            <div className={styles.callOut}>{info}</div>
+            <p>{info}</p>
           </Callout>
         )}
       </div>
@@ -215,21 +219,22 @@ export default class DatePicker extends React.Component<
 
   render() {
     const {
+      disabled,
+      calloutFloating,
       children,
       className,
-      label,
-      info,
-      onRenderLabel,
       errorMessage = null,
-      disabled,
-      isRequiredErrorMessage,
-      isOutOfBoundsErrorMessage,
-      invalidInputErrorMessage,
       id,
+      info,
       inputSize,
+      invalidInputErrorMessage,
+      isOutOfBoundsErrorMessage,
+      isRequiredErrorMessage,
+      label,
+      onRenderLabel,
       ...props
     } = this.props;
-    const labelProps = { label, info };
+    const labelProps = { label, info, calloutFloating };
     const classNames = getClassNames(this.props);
 
     return (

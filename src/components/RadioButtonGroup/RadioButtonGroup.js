@@ -1,10 +1,8 @@
 import * as React from 'react';
+import PropTypes from 'prop-types';
 import classnames from 'classnames';
 
-import {
-  ChoiceGroup as FabricChoiceGroup,
-  IChoiceGroupProps
-} from 'office-ui-fabric-react/lib-commonjs/ChoiceGroup';
+import { ChoiceGroup as FabricChoiceGroup } from 'office-ui-fabric-react/lib-commonjs/ChoiceGroup';
 import { getClassNames } from './RadioButtonGroup.classNames';
 import ErrorMessage from '../ErrorMessage/ErrorMessage';
 import { IconButton, Label } from 'office-ui-fabric-react/lib-commonjs';
@@ -12,19 +10,11 @@ import { getClassNames as getLabelClassNames } from '../TextField/TextFieldLabel
 import Callout from '../Callout';
 import { isUndefined } from 'util';
 
-interface RadioButtonGroupProps extends IChoiceGroupProps {
-  calloutFloating?: boolean;
-  className?: string;
-  errorMessage?: JSX.Element | string;
-  help?: JSX.Element | string;
-  warning: JSX.Element | string;
-}
-
 /**
  * @visibleName RadioButtonGroup (Radioknapper)
  */
 
-const RadioButtonGroup = (props: RadioButtonGroupProps) => {
+const RadioButtonGroup = props => {
   const {
     calloutFloating,
     children,
@@ -110,9 +100,25 @@ const RadioButtonGroup = (props: RadioButtonGroupProps) => {
       >
         {children}
       </FabricChoiceGroup>
-      <ErrorMessage showError={!!errorMessage}>{errorMessage}</ErrorMessage>
+      {errorMessage && <ErrorMessage>{errorMessage}</ErrorMessage>}
     </>
   );
+};
+RadioButtonGroup.propTypes = {
+  /** Bestemmer om hjelptekst/varseltekst skal legge seg mellom label og tekstfelt eller flytende over innhold */
+  calloutFloating: PropTypes.bool,
+  /** Klassenavn **/
+  className: PropTypes.string,
+  /** Feilmelding **/
+  errorMessage: PropTypes.oneOfType([PropTypes.element, PropTypes.string]),
+  /** Tilhørende hjelpetekst */
+  help: PropTypes.oneOfType([PropTypes.element, PropTypes.string]),
+  /** Global attributt som må være unik for hele HTML dokumentet */
+  id: PropTypes.string,
+  /** Label */
+  label: PropTypes.string,
+  /** Tilhørende varseltekst */
+  warning: PropTypes.oneOfType([PropTypes.element, PropTypes.string])
 };
 
 export default RadioButtonGroup;

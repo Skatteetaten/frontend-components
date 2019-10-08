@@ -1,6 +1,7 @@
 import { mergeStyles } from '@uifabric/merge-styles';
 import { getTheme } from '@uifabric/styling';
 import { FontSizes, FontWeights } from '../utils/fonts';
+import { isUndefined } from 'util';
 
 export const getClassNames = props => {
   const theme = getTheme();
@@ -62,7 +63,11 @@ export const getClassNames = props => {
       'span.ms-Label': {
         fontSize: FontSizes.medium,
         fontWeight: FontWeights.regular
-      }
+      },
+      '& .ms-Callout-main': !isUndefined(props.calloutFloating) &&
+        !props.calloutFloating && {
+          display: 'inline-block'
+        }
     }
   });
 };
