@@ -1,78 +1,45 @@
-import * as React from 'react';
-import PropTypes from 'prop-types';
 import classnames from 'classnames';
-import { default as MessageBarButton } from '../Button/Button';
 import {
+  IMessageBarProps,
   MessageBar as FabricMessageBar,
-  MessageBarType,
-  IMessageBarProps
+  MessageBarType
 } from 'office-ui-fabric-react/lib-commonjs/MessageBar';
-
-import { getClassNames } from './MessageBar.classNames';
+import * as React from 'react';
 import { CSSTransition } from 'react-transition-group';
+import { default as MessageBarButton } from '../Button/Button';
+import { getClassNames } from './MessageBar.classNames';
 
+interface MessageBarProps extends IMessageBarProps {
+  type?: MessageBarType;
+  size?: 'default' | 'large';
+  /** Antall sekunder som boksen skal være synlig */
+  duration?: number;
+  /** (resetDuration: () => void, setShowAlways: () => void) => JSXElement
+   */
+  onRenderAfterDuration?: (...args: any[]) => any;
+  /** Callback for klikk på knappen */
+  onClick?: (...args: any[]) => any;
+}
 
-//todo string.replace error
-interface MessageBarProps extends IMessageBarProps{
-  // actions?: JSX.Element,
-  // onDismiss?: (...args: any[]) => any,
-  // isMultiline?: boolean,
-  // type?: any,
-  // size?: 'default' | 'large',
-  // className?: string,
-  // id?: string,
-  // duration?: number,
-  // onRenderAfterDuration?: (...args: any[]) => any,
-  // onClick?: (...args: any[]) => any
-};
-type MessageBarState = {
-  hideMessageBar: boolean,
-  hideMessageBar: boolean,
-  showMessage: boolean
-};
+interface MessageBarState {
+  hideMessageBar: boolean;
+  showMessage: boolean;
+}
 /**
  * @visibleName MessageBar (Varsler)
  */
 export class MessageBar extends React.PureComponent<
   MessageBarProps,
   MessageBarState
-  > {
+> {
   static Type = MessageBarType;
   static Button = MessageBarButton;
-  static propTypes = {
-    /** Handlinger inni MessageBar */
-    actions: PropTypes.element,
-    /** Om MessageBar skal kunne lukkes - tilhørende funksjon */
-    onDismiss: PropTypes.func,
-    /** Om MessageBar består av flere linjer tekst */
-    isMultiline: PropTypes.bool,
-    type: PropTypes.oneOf([
-      MessageBar.Type.info,
-      MessageBar.Type.error,
-      MessageBar.Type.warning,
-      MessageBar.Type.severeWarning,
-      MessageBar.Type.success,
-      MessageBar.Type.blocked
-    ]),
-    size: PropTypes.oneOf(['default', 'large']),
-    className: PropTypes.string,
-    /** Global attributt som må være unik for hele HTML dokumentet */
-    id: PropTypes.string,
-    /** Antall sekunder som boksen skal være synlig */
-    duration: PropTypes.number,
-    /**
-     * (resetDuration: () => void, setShowAlways: () => void) => JSXElement
-     */
-    onRenderAfterDuration: PropTypes.func,
-    /** Callback for klikk på knappen */
-    onClick: PropTypes.func
-  };
   static defaultProps = {
     actions: undefined,
-    size: 'default',
-    type: MessageBar.Type.info,
     isMultiline: true,
-    onClick: undefined
+    onClick: undefined,
+    size: 'default',
+    type: MessageBar.Type.info
   };
 
   state = {
@@ -82,10 +49,11 @@ export class MessageBar extends React.PureComponent<
 
   componentDidMount() {
     const { duration } = this.props;
-    if (duration)
+    if (duration) {
       setTimeout(() => {
         this.setState({ hideMessageBar: true });
       }, Number(duration) * 1000);
+    }
     this.baseState = this.state;
   }
 

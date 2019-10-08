@@ -1,6 +1,5 @@
 import * as React from 'react';
 import classnames from 'classnames';
-
 import {
   DetailsList as FabricDetailsList,
   DetailsListLayoutMode,
@@ -30,11 +29,11 @@ export class DetailsList extends React.PureComponent<DetailsListProps, {}> {
 
   static defaultProps = {
     background: 'white',
+    checkboxVisibility: DetailsList.CheckboxVisibility.hidden,
+    constrainMode: DetailsList.ConstrainMode.unconstrained,
     items: [],
     layoutMode: DetailsList.DetailsListLayoutMode.justified,
-    checkboxVisibility: DetailsList.CheckboxVisibility.hidden,
-    selectionMode: DetailsList.SelectionMode.none,
-    constrainMode: DetailsList.ConstrainMode.unconstrained
+    selectionMode: DetailsList.SelectionMode.none
   };
 
   sortColumn = sortItems => (ev, column) => {

@@ -1,11 +1,9 @@
-import * as React from 'react';
 import classnames from 'classnames';
-
 import {
-  SearchBox,
-  ISearchBoxProps
+  ISearchBoxProps,
+  SearchBox
 } from 'office-ui-fabric-react/lib-commonjs/SearchBox';
-
+import * as React from 'react';
 import { getClassNames } from './SearchField.classNames';
 
 interface SearchFieldProps extends ISearchBoxProps {
@@ -23,8 +21,8 @@ export default class SearchField extends React.PureComponent<
   {}
 > {
   static defaultProps = {
-    searchFieldSize: 'standard',
-    border: 'default'
+    border: 'default',
+    searchFieldSize: 'standard'
   };
 
   render() {

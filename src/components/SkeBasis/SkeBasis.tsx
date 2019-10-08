@@ -1,25 +1,24 @@
-import * as React from 'react';
-import { registerIcons, loadTheme, createTheme } from '@uifabric/styling';
+import { createTheme, loadTheme, registerIcons } from '@uifabric/styling';
 import {
   Fabric,
   IFabricProps
 } from 'office-ui-fabric-react/lib-commonjs/Fabric';
-
-import palette from '../utils/palette';
+import * as React from 'react';
 import fonts from '../utils/fonts';
 import * as icons from '../utils/icons';
+import palette from '../utils/palette';
 
 interface SkeBasisProps extends IFabricProps {
   palette: object;
   fonts: object;
-  icons?: {
+  icons?: Array<{
     style: object;
     fontFace: {
       fontFamily: string;
       src: string;
     };
     icons: object;
-  }[];
+  }>;
 }
 
 class SkeBasis extends React.PureComponent<SkeBasisProps> {

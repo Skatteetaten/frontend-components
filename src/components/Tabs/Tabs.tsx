@@ -1,6 +1,4 @@
-import * as React from 'react';
 import classnames from 'classnames';
-
 import {
   IPivotProps,
   Pivot,
@@ -8,14 +6,13 @@ import {
   PivotLinkFormat,
   PivotLinkSize
 } from 'office-ui-fabric-react/lib-commonjs/Pivot';
-
+import * as React from 'react';
 import { getClassNames } from './Tabs.classNames';
 
-interface TabsProps extends IPivotProps {}
 /**
  * @visibleName Tabs (Arkfane)
  */
-export default class Tabs extends React.PureComponent<TabsProps, {}> {
+export default class Tabs extends React.PureComponent<IPivotProps, {}> {
   render() {
     const { children, className, ...props } = this.props;
     return (

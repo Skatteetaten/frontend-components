@@ -1,16 +1,15 @@
-import * as React from 'react';
 import classnames from 'classnames';
-
+import { IconButton, Label } from 'office-ui-fabric-react/lib-commonjs';
 import {
   ChoiceGroup as FabricChoiceGroup,
   IChoiceGroupProps
 } from 'office-ui-fabric-react/lib-commonjs/ChoiceGroup';
-import { getClassNames } from './RadioButtonGroup.classNames';
-import ErrorMessage from '../ErrorMessage/ErrorMessage';
-import { IconButton, Label } from 'office-ui-fabric-react/lib-commonjs';
-import { getClassNames as getLabelClassNames } from '../TextField/TextFieldLabel.classNames';
-import Callout from '../Callout';
+import * as React from 'react';
 import { isUndefined } from 'util';
+import Callout from '../Callout';
+import ErrorMessage from '../ErrorMessage/ErrorMessage';
+import { getClassNames as getLabelClassNames } from '../TextField/TextFieldLabel.classNames';
+import { getClassNames } from './RadioButtonGroup.classNames';
 
 interface RadioButtonGroupProps extends IChoiceGroupProps {
   calloutFloating?: boolean;

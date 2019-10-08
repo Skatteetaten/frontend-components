@@ -1,30 +1,27 @@
-import * as React from 'react';
 import classnames from 'classnames';
-
+import {
+  IProgressIndicatorProps,
+  ProgressIndicator
+} from 'office-ui-fabric-react/lib-commonjs/ProgressIndicator';
+import * as React from 'react';
 import { getClassNames } from './ProgressBar.classNames';
 
-import {
-  ProgressIndicator,
-  IProgressIndicatorProps
-} from 'office-ui-fabric-react/lib-commonjs/ProgressIndicator';
-
-interface ProgressBarProps extends IProgressIndicatorProps {}
 /**
  * @visibleName ProgressBar (Innlasting)
  */
 export default class ProgressBar extends React.PureComponent<
-  ProgressBarProps,
+  IProgressIndicatorProps,
   {}
 > {
   static defaultProps = {
-    /** Emne som vises over fremdriftsindikatoren */
-    label: undefined,
+    /** Overstyring av stiler */
+    className: undefined,
     /** Beskrivelse som vises under fremdriftsindikatoren */
     description: undefined,
+    /** Emne som vises over fremdriftsindikatoren */
+    label: undefined,
     /** Prosent fullført (fra 0.00 til 1.00) */
-    percentComplete: undefined,
-    /** Overstyring av stiler */
-    className: undefined
+    percentComplete: undefined
   };
 
   render() {

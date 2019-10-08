@@ -1,19 +1,17 @@
-import React, { isValidElement } from 'react';
-import PropTypes from 'prop-types';
 import classnames from 'classnames';
-
-import { Label } from 'office-ui-fabric-react/lib-commonjs/Label';
 import { IconButton } from 'office-ui-fabric-react/lib-commonjs/Button';
-//import { Callout, DirectionalHint } from 'office-ui-fabric-react/lib-commonjs/Callout';
-import Callout from '../Callout/Callout';
+import { Label } from 'office-ui-fabric-react/lib-commonjs/Label';
 import {
-  TextField as FabricTextField,
-  MaskedTextField as FabricMaskedTextField
+  ITextFieldProps,
+  MaskedTextField as FabricMaskedTextField,
+  TextField as FabricTextField
 } from 'office-ui-fabric-react/lib-commonjs/TextField';
+import * as React from 'react';
+import { isUndefined } from 'util';
+import Callout from '../Callout/Callout';
+import ErrorMessage from '../ErrorMessage/ErrorMessage';
 import { getClassNames } from './TextField.classNames';
 import { getClassNames as getLabelClassNames } from './TextFieldLabel.classNames';
-import { isUndefined } from 'util';
-import ErrorMessage from '../ErrorMessage/ErrorMessage';
 
 class MaskedTextField extends FabricMaskedTextField {
   constructor(props) {
@@ -24,56 +22,42 @@ class MaskedTextField extends FabricMaskedTextField {
 /**
  * @visibleName TextField (Tekstfelt)
  */
-export default class TextField extends React.PureComponent {
-  static propTypes = {
-    /** Beskrivende informasjon til skjermlesere */
-    ariaLabel: PropTypes.string,
-    /** Automatisk utvide høyde (ved multiline) */
-    autoAdjustHeight: PropTypes.bool,
-    /** Benyttes når teksten for et readonly tekstfelt skal fremheves  */
-    boldText: PropTypes.bool,
-    /** Fjerne rammen rundt feltet */
-    borderless: PropTypes.bool,
-    /** Bestemmer om hjelptekst/varseltekst skal legge seg mellom label og tekstfelt eller flytende over innhold */
-    calloutFloating: PropTypes.bool,
-    /** For ytterligere stiling */
-    className: PropTypes.string,
-    /** Bestemmer om ett readonly felt skal være alltid redigerbart om det er tomt */
-    editableWhenEmpty: PropTypes.bool,
-    /** Benyttes når et readonly felt skal være redigertbart  */
-    editable: PropTypes.bool,
-    /** Tilhørende feilmelding */
-    errorMessage: PropTypes.oneOfType([PropTypes.element, PropTypes.string]),
-    /** Tilhørende hjelpetekst */
-    help: PropTypes.oneOfType([PropTypes.element, PropTypes.string]),
-    /** Størrelse på tekstfelt som skal benyttes */
-    inputSize: PropTypes.oneOf(['normal', 'large']),
-    /** Emnet over feltet */
-    label: PropTypes.string,
-    /** Størrelse på label */
-    labelSize: PropTypes.oneOf(['small', 'large']),
-    /** Felt med flere linjer */
-    multiline: PropTypes.bool,
-    /** Callback når input endres  */
-    onChange: PropTypes.func,
-    /** Tekst inni feltet som vises før man skriver */
-    placeholder: PropTypes.string,
-    /** Tekst inni feltet som alltid legges til foran, f.eks. www */
-    prefix: PropTypes.string,
-    /** Om feltet er inaktivt */
-    readonly: PropTypes.bool,
-    /** Tekst inni feltet som alltid legges til bak, f.eks. kr */
-    suffix: PropTypes.string,
-    /** Label på linje med verdi */
-    underlined: PropTypes.bool,
-    /** Tilhørende varseltekst */
-    warning: PropTypes.oneOfType([PropTypes.element, PropTypes.string]),
-    /** Formateringstreng som definerer oppførsel. Backslash vil escape et tegn. Spesialformat er:  '9': [0-9] 'a': [a-zA-Z] '*': [a-zA-Z0-9]. Eksempel tlf.nr 999 99 999 */
-    mask: PropTypes.string,
-    /** Antall rader som skal vises i feltet når multiline er satt */
-    rows: PropTypes.number
-  };
-
+interface TextFieldProps extends ITextFieldProps {
+  /** Benyttes når teksten for et readonly tekstfelt skal fremheves  */
+  boldText?: boolean;
+  /** Bestemmer om hjelptekst/varseltekst skal legge seg mellom label og tekstfelt eller flytende over innhold */
+  calloutFloating?: boolean;
+  /** Bestemmer om ett readonly felt skal være alltid redigerbart om det er tomt */
+  editableWhenEmpty?: boolean;
+  /** Benyttes når et readonly felt skal være redigertbart  */
+  editable?: boolean;
+  /** Tilhørende hjelpetekst */
+  help?: JSX.Element | string;
+  /** Størrelse på tekstfelt som skal benyttes */
+  inputSize?: 'normal' | 'large';
+  /** Størrelse på label */
+  labelSize?: 'small' | 'large';
+  /** Tekst inni feltet som vises før man skriver */
+  placeholder?: string;
+  /** Tilhørende varseltekst */
+  warning?: JSX.Element | string;
+  /** Antall rader som skal vises i feltet når multiline er satt */
+  rows?: number;
+}
+interface TextFieldState {
+  isCalloutVisible: boolean;
+  editMode: boolean;
+  value: string;
+  activeCallout: string;
+  lineBreak: boolean;
+}
+/**
+ * @visibleName TextField (Tekstfelt)
+ */
+export default class TextField extends React.PureComponent<
+  TextFieldProps,
+  TextFieldState
+> {
   static defaultProps = {
     inputSize: 'normal',
     editableWhenEmpty: false,
@@ -97,7 +81,7 @@ export default class TextField extends React.PureComponent {
     const {
       children,
       onRenderLabel,
-      readonly,
+      readOnly,
       disabled,
       inputSize,
       boldText,
@@ -114,7 +98,7 @@ export default class TextField extends React.PureComponent {
     }
 
     const setValue = () => {
-      if (this.props.suffix && this.props.readonly && !this.state.editMode) {
+      if (this.props.suffix && this.props.readOnly && !this.state.editMode) {
         return value + ' ' + this.props.suffix;
       }
       return value;
@@ -128,7 +112,7 @@ export default class TextField extends React.PureComponent {
           value={setValue()}
           ariaLabel={props.label}
           disabled={disabled}
-          readOnly={this.state.editMode ? '' : readonly}
+          readOnly={this.state.editMode ? '' : readOnly}
           className={classnames(
             getClassNames({ ...this.props, editMode: this.state.editMode }),
             className
@@ -163,9 +147,13 @@ export default class TextField extends React.PureComponent {
     const inputSizeLarge = inputSize === 'large';
 
     let { isCalloutVisible, activeCallout } = this.state;
-    const helpElement = isValidElement(help) ? help : <p>{help}</p>;
+    const helpElement = React.isValidElement(help) ? help : <p>{help}</p>;
 
-    let warningElement = isValidElement(warning) ? warning : <p>{warning}</p>;
+    let warningElement = React.isValidElement(warning) ? (
+      warning
+    ) : (
+      <p>{warning}</p>
+    );
 
     return (
       <div className={styles.labelArea}>

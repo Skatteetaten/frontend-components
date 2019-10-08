@@ -1,5 +1,5 @@
-import * as React from 'react';
 import classnames from 'classnames';
+import * as React from 'react';
 
 import {
   IconButton as FabricIconButton,
@@ -24,13 +24,13 @@ export default class IconButton extends React.PureComponent<
   {}
 > {
   static defaultProps = {
-    type: 'default',
+    alt: ' ',
     circle: false,
-    icon: undefined,
-    title: undefined,
     disabled: undefined,
+    icon: undefined,
     onClick: undefined,
-    alt: ' '
+    title: undefined,
+    type: 'default'
   };
 
   render() {

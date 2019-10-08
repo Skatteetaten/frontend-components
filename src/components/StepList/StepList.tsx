@@ -1,12 +1,12 @@
+import classnames from 'classnames';
 import React from 'react';
 import Grid from '../Grid/Grid';
 import { getClassNames } from './StepList.classNames';
-import classnames from 'classnames';
 
-type StepListProps = {
+interface StepListProps {
   /** Klassenavn som kan benyttes for å overstyre css */
   className?: string;
-};
+}
 /**
  * @visibleName StepList (Prosessviser)
  */

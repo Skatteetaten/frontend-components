@@ -1,5 +1,4 @@
 import * as React from 'react';
-import PropTypes from 'prop-types';
 import moment from 'moment';
 import 'moment/locale/nb';
 import { Label } from 'office-ui-fabric-react/lib-commonjs/Label';
@@ -8,7 +7,8 @@ import Callout from '../Callout/Callout';
 import { css } from '@uifabric/utilities';
 import {
   DayOfWeek,
-  DatePicker as FabricDatePicker
+  DatePicker as FabricDatePicker,
+  IDatePickerProps
 } from 'office-ui-fabric-react/lib-commonjs/DatePicker';
 import { FirstWeekOfYear } from 'office-ui-fabric-react/lib-commonjs/utilities/dateValues/DateValues';
 import ErrorMessage from '../ErrorMessage';
@@ -33,9 +33,20 @@ const DEFAULT_STRINGS = {
   isRequiredErrorMessage: 'Dette feltet er påkrevd'
 };
 
-// TODO extends IDatePickerProps string.replace error
-interface DatePickerProps {}
-
+interface DatePickerProps extends IDatePickerProps {
+  /** Tilstand som kan benyttes når datovelger skal vises i lesemodus */
+  readonlyMode?: boolean;
+  /** Kan overstyre standard feilmelding hvis felt er påkrevd */
+  isRequiredErrorMessage?: string;
+  /** Kan overstyre standard feilmelding hvis dato er satt utenfor gyldig periode */
+  isOutOfBoundsErrorMessage?: string;
+  /** Kan overstyre standard feilmelding hvis ikke gyldig dato er satt */
+  invalidInputErrorMessage?: string;
+  /** Tilhørende feilmelding */
+  errorMessage?: JSX.Element | string;
+  /** Størrelse på inputfelt som skal benyttes */
+  inputSize?: 'normal' | 'large';
+}
 interface DatePickerState {
   isCalloutVisible: boolean;
 }
@@ -46,48 +57,6 @@ export default class DatePicker extends React.Component<
   DatePickerProps,
   DatePickerState
 > {
-  static propTypes = {
-    /** Placeholder tekst for tekstfelt  */
-    placeholder: PropTypes.string,
-    /** Label for tekstfeltet til datovelgeren som benyttes av skjermleser  */
-    ariaLabel: PropTypes.string,
-    /** Om datovelger godtar input som tekst eller ikke */
-    allowTextInput: PropTypes.bool,
-    /** Label for datovelger popoup som benyttes av skjermlesere */
-    pickerAriaLabel: PropTypes.string,
-    /** Om inputfelt for datovelger skal ha ramme eller ikke */
-    borderless: PropTypes.bool,
-    /** Tilstand som kan benyttes når datovelger skal vises i lesemodus */
-    readonlyMode: PropTypes.bool,
-    /** Viser datofelt som inaktiv */
-    disabled: PropTypes.bool,
-    /** Viser ukenummer */
-    showWeekNumbers: PropTypes.bool,
-    /** Om datofelt er påkrevd */
-    isRequired: PropTypes.bool,
-    /** Om månedsvelger vises ved siden av datovelger */
-    isMonthPickerVisible: PropTypes.bool,
-    /** Om månedsvelger vises som piler i datovelger */
-    showMonthPickerAsOverlay: PropTypes.bool,
-    /** Om månedsvelger viser valgt måned som aktiv */
-    highlightCurrentMonth: PropTypes.bool,
-    /** Om en lenken "I dag" skal vises og som velger dagens dato */
-    showGoToToday: PropTypes.bool,
-    className: PropTypes.string,
-    /** Kan overstyre standard feilmelding hvis felt er påkrevd */
-    isRequiredErrorMessage: PropTypes.string,
-    /** Kan overstyre standard feilmelding hvis dato er satt utenfor gyldig periode */
-    isOutOfBoundsErrorMessage: PropTypes.string,
-    /** Kan overstyre standard feilmelding hvis ikke gyldig dato er satt */
-    invalidInputErrorMessage: PropTypes.string,
-    /** Tilhørende feilmelding */
-    errorMessage: PropTypes.oneOfType([PropTypes.element, PropTypes.string]),
-    /** Global attributt som må være unik for hele HTML dokumentet */
-    id: PropTypes.string,
-    /** Størrelse på inputfelt som skal benyttes */
-    inputSize: PropTypes.oneOf(['normal', 'large'])
-  };
-
   static DefaultDateFormat = DEFAULT_DATE_FORMAT;
   static DefaultStrings = DEFAULT_STRINGS;
   static DefaultFormatDate = date => {
@@ -105,21 +74,21 @@ export default class DatePicker extends React.Component<
 
   static defaultProps = {
     allowTextInput: true,
-    formatDate: DatePicker.DefaultFormatDate,
-    parseDateFromString: DatePicker.DefaultParseDateFromString,
-    firstDayOfWeek: DayOfWeek.Monday,
-    initialPickerDate: new Date(),
-    isRequired: false,
-    isMonthPickerVisible: true,
-    showMonthPickerAsOverlay: false,
-    strings: DatePicker.DefaultStrings,
-    highlightCurrentMonth: true,
-    pickerAriaLabel: 'Kalender',
-    showWeekNumbers: false,
-    firstWeekOfYear: 0, // FirstDay = 0, FirstFullWeek = 1, FirstFourDayWeek = 2
-    showGoToToday: true,
     dateTimeFormatter: undefined,
-    disabled: false
+    disabled: false,
+    firstDayOfWeek: DayOfWeek.Monday,
+    firstWeekOfYear: 0, // FirstDay = 0, FirstFullWeek = 1, FirstFourDayWeek = 2
+    formatDate: DatePicker.DefaultFormatDate,
+    highlightCurrentMonth: true,
+    initialPickerDate: new Date(),
+    isMonthPickerVisible: true,
+    isRequired: false,
+    parseDateFromString: DatePicker.DefaultParseDateFromString,
+    pickerAriaLabel: 'Kalender',
+    showGoToToday: true,
+    showMonthPickerAsOverlay: false,
+    showWeekNumbers: false,
+    strings: DatePicker.DefaultStrings
   };
 
   constructor(props) {

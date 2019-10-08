@@ -1,11 +1,9 @@
-import * as React from 'react';
 import classnames from 'classnames';
-
-import { getClassNames } from './NavigationTile.classNames';
-
+import * as React from 'react';
 import NavigationContent, {
   ContentProps
 } from './NavigationContent/NavigationContent';
+import { getClassNames } from './NavigationTile.classNames';
 
 interface NavigationTileProps {
   /**
@@ -13,13 +11,13 @@ interface NavigationTileProps {
    */
   renderContent?: (...args: any[]) => any;
   contents: ContentProps[];
-  /** Type av NavigationTile, default er sentrert*/
+  /** Type av NavigationTile, default er sentrert */
   type?: 'center' | 'left';
-  /** Ikon plassering, default er sentrert*/
+  /** Ikon plassering, default er sentrert */
   alignIcon?: 'center' | 'right';
   /** Tittel plassering, default er sentrert  */
   alignTitle?: 'center' | 'left';
-  /** Beskrivelse plassering, default er sentrert*/
+  /** Beskrivelse plassering, default er sentrert */
   alignDescription?: 'center' | 'left';
   className?: string;
 }
@@ -32,10 +30,10 @@ export default class NavigationTile extends React.PureComponent<
   {}
 > {
   static defaultProps = {
-    type: 'center',
+    alignDescription: 'center',
     alignIcon: 'center',
     alignTitle: 'center',
-    alignDescription: 'center'
+    type: 'center'
   };
 
   render() {

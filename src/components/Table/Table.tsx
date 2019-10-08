@@ -1,11 +1,11 @@
+import classnames from 'classnames';
 import * as React from 'react';
 import Icon from '../Icon/Icon';
-import classnames from 'classnames';
 import { getClassNames } from './Table.classNames';
 
 import TableRow from './TableRow';
 
-type TableProps = {
+interface TableProps {
   /** Mulighet for å legge inn egen klasse for å overstyre stiling */
   className?: string;
   /** Global attributt som må være unik for hele HTML dokumentet */
@@ -29,15 +29,17 @@ type TableProps = {
     /** Overskriv sorteringsfunksjonen */
     sortingFunction?: (...args: any[]) => any;
     /** Vis ikon for sortering kun ved hover på kolonne (vises alltid for mobil). Default true,
-     * sett false om ønsker at ikon for sortering alltid skal vises. */
+     * sett false om ønsker at ikon for sortering alltid skal vises.
+     */
     autohideSorting?: boolean;
   }[];
-};
-type TableState = {
+}
+
+interface TableState {
   editModeActive: boolean;
   tableIsScrollable: boolean;
   sort: { ascending: null; columnFieldName: null };
-};
+}
 /**
  * @visibleName Table (Tabell)
  */

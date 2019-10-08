@@ -1,5 +1,5 @@
-import * as React from 'react';
 import { css } from '@uifabric/utilities';
+import * as React from 'react';
 import { getClassNames } from './ErrorMessage.classNames';
 
 interface ErrorMessageProps {
@@ -10,7 +10,9 @@ interface ErrorMessageProps {
 const ErrorMessage = (props: ErrorMessageProps) => {
   const errorClassNames = getClassNames(props);
   const showError = props.showError !== undefined ? props.showError : true;
-  if (!showError) return null;
+  if (!showError) {
+    return null;
+  }
   return (
     <span role="alert" className={css(errorClassNames)}>
       {props.children}

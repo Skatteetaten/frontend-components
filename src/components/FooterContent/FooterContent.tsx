@@ -1,7 +1,7 @@
 import * as React from 'react';
 import Image from '../Image/Image';
-import FooterDekor from './footerDekor';
 import { getClassNames, getLogoClassNames } from './FooterContent.classNames';
+import FooterDekor from './footerDekor';
 
 const logo = require('./assets/ske-logo.svg');
 

@@ -1,11 +1,9 @@
-import * as React from 'react';
 import classnames from 'classnames';
-
-import Image from '../Image/Image';
+import * as React from 'react';
 import ActionButton from '../ActionButton/ActionButton';
-
-import { getClassNames as getInternalClassNames } from './Internal.classNames';
+import Image from '../Image/Image';
 import { getClassNames as getExternalClassNames } from './External.classNames';
+import { getClassNames as getInternalClassNames } from './Internal.classNames';
 
 const InternalHeader = props => {
   const styles = getInternalClassNames(props);

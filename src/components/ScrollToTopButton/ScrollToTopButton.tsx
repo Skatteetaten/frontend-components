@@ -1,8 +1,7 @@
-import * as React from 'react';
 import classnames from 'classnames';
+import * as React from 'react';
 import ActionButton from '../ActionButton/ActionButton';
 import Icon from '../Icon/Icon';
-
 import { getClassNames } from './ScrollToTopButton.classNames';
 
 interface ScrollToTopButtonProps {
@@ -12,9 +11,9 @@ interface ScrollToTopButtonProps {
   id?: string;
 }
 
-type ScrollToTopButtonState = {
+interface ScrollToTopButtonState {
   skjult: boolean;
-};
+}
 
 export class ScrollToTopButton extends React.PureComponent<
   ScrollToTopButtonProps,

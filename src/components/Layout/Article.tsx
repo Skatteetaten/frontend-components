@@ -1,6 +1,23 @@
 import PropTypes from 'prop-types';
 import Grid from '../Grid/Grid';
 
+// tag?: string,
+//   sm?: number,
+//   lg?: number,
+//   xl?: number,
+//   xxl?: number,
+//   xxxl?: number,
+//   smPush?: number,
+//   lgPush?: number,
+//   xlPush?: number,
+//   xxlPush?: number,
+//   xxxlPush?: number,
+//   smPull?: number,
+//   lgPull?: number,
+//   xlPull?: number,
+//   xxlPull?: number,
+//   xxxlPull?: number
+
 export class Article extends Grid.Col {
   static displayName = 'Article';
   static propTypes = {

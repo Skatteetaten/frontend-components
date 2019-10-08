@@ -1,7 +1,7 @@
-import * as React from 'react';
-import { getClassNames } from './Dialog.classNames';
-import Callout from '../Callout/Callout';
 import classnames from 'classnames';
+import * as React from 'react';
+import Callout from '../Callout/Callout';
+import { getClassNames } from './Dialog.classNames';
 
 import {
   DialogType,
@@ -31,11 +31,9 @@ export default class Dialog extends React.PureComponent<
   static Footer = DialogFooter;
   static Type = DialogType;
 
-  //TODO finpuss
-
   static defaultProps = {
-    type: Dialog.Type.normal,
-    layoutStyle: 'normal'
+    layoutStyle: 'normal',
+    type: Dialog.Type.normal
   };
 
   constructor(props) {

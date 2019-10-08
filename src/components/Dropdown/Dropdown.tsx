@@ -1,19 +1,19 @@
-import * as React from 'react';
 import classnames from 'classnames';
+import { IconButton } from 'office-ui-fabric-react/lib-commonjs/Button';
 import {
-  DropdownMenuItemType,
   Dropdown as FabricDropdown,
+  DropdownMenuItemType,
   IDropdownProps
 } from 'office-ui-fabric-react/lib-commonjs/Dropdown';
 import { Label } from 'office-ui-fabric-react/lib-commonjs/Label';
-import { IconButton } from 'office-ui-fabric-react/lib-commonjs/Button';
+import * as React from 'react';
 import Callout from '../Callout/Callout';
 import Icon from '../Icon/Icon';
 import {
-  getClassNames,
   getCalloutClassNames,
-  getLabelClassNames,
-  getErrorClassNames
+  getClassNames,
+  getErrorClassNames,
+  getLabelClassNames
 } from './Dropdown.classNames';
 
 interface DropdownProps extends IDropdownProps {
@@ -23,9 +23,9 @@ interface DropdownProps extends IDropdownProps {
   inputSize?: 'normal' | 'large';
 }
 
-type DropdownState = {
+interface DropdownState {
   isCalloutVisible: boolean;
-};
+}
 /**
  * @visibleName Dropdown (Nedtrekksliste)
  */

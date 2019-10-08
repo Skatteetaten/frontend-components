@@ -1,11 +1,10 @@
-import * as React from 'react';
 import {
   Icon as FabricIcon,
   IIconProps
 } from 'office-ui-fabric-react/lib-commonjs/Icon';
+import * as React from 'react';
 
-interface IconProps extends IIconProps {}
-export default class Icon extends React.PureComponent<IconProps, {}> {
+export default class Icon extends React.PureComponent<IIconProps, {}> {
   static defaultProps = {
     iconName: undefined,
     imageProps: undefined
