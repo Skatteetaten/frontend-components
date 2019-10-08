@@ -1,23 +1,19 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import * as React from 'react';
 import Grid from '../Grid/Grid';
 import { getClassNames } from './Accordion.classNames';
 
+interface AccordionProps {
+  /** Benyttes når man skal ta brukeren gjennom en sekvens av trinnvise steg. */
+  processList?: boolean;
+  stepId?: string;
+}
 /**
  * @visibleName Accordion (Ekspanderende panel)
  */
-export default class Accordion extends React.PureComponent {
-  static propTypes = {
-    /** Klassenavn som kan benyttes for å overstyre css */
-    className: PropTypes.string,
-    /** Benyttes når man skal ta brukeren gjennom en sekvens av trinnvise steg. */
-    processList: PropTypes.bool
-  };
-
+export default class Accordion extends React.PureComponent<AccordionProps, {}> {
   render() {
     const { processList, stepId, children } = this.props;
     const styles = getClassNames(this.props);
-
     return (
       <div className={styles.accordion}>
         <Grid>

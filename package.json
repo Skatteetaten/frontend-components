@@ -34,7 +34,6 @@
     "react-transition-group": "4.3.0"
   },
   "devDependencies": {
-    "@types/classnames": "^2.2.9",
     "@babel/cli": "7.6.0",
     "@babel/core": "7.6.0",
     "@babel/plugin-proposal-class-properties": "7.5.5",
@@ -42,11 +41,12 @@
     "@babel/preset-env": "7.6.0",
     "@babel/preset-react": "7.0.0",
     "@ctrl/tinycolor": "2.5.3",
+    "@types/classnames": "^2.2.9",
     "@types/node": "12.7.8",
     "@types/react": "16.9.4",
     "@types/react-dom": "16.9.1",
     "@types/react-router": "^5.1.1",
-    "aurora-ci-scripts": "1.1.0",
+    "acorn": "6.3.0",
     "babel-jest": "24.9.0",
     "cpx": "1.5.0",
     "cross-env": "6.0.0",
@@ -71,9 +71,9 @@
     "react-test-renderer": "16.9.0",
     "rimraf": "3.0.0",
     "sonar-scanner": "3.1.0",
+    "ts-loader": "^5.4.5",
     "tslint": "5.18.0",
     "tslint-react": "4.0.0",
-    "ts-loader": "^5.4.5",
     "typescript": "^3.6.3",
     "webfont": "9.0.0"
   },

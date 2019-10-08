@@ -1,38 +1,43 @@
-import * as React from 'react';
-import PropTypes from 'prop-types';
 import classnames from 'classnames';
-
 import {
   Callout as FabricCallout,
   DirectionalHint,
   ICalloutProps
 } from 'office-ui-fabric-react/lib-commonjs/Callout';
-import { getClassNames } from './Callout.classNames';
+import * as React from 'react';
 import IconButton from '../IconButton/IconButton';
+import { getClassNames } from './Callout.classNames';
 
+enum CalloutColor {
+  HELP = 'lightGreen',
+  INFO = 'beige',
+  ERROR = 'lightPink',
+  WARNING = 'beige',
+  BASIC = 'white'
+}
 interface CalloutProps extends ICalloutProps {
-  //TODO String.Replace error
-  // gapSpace?: number,
-  // role?: 'dialog' | 'tooltip',
-  // calloutWidth?: number,
-  // className?: string,
-  // color?: any,
-  // directionalHint?: any,
-  // id?: string,
-  // autoDismiss?: boolean
-};
-type CalloutState = {
-  isCalloutVisible: boolean
-};
+  /** Avgjør om callout vinduet skal lukkes automatisk når området utenfor vinduet klikkes */
+  autoDismiss?: boolean;
+  /** Finnes fire bakgrunnfarger: grønn, rosa, beige eller hvit */
+  color?: CalloutColor;
+}
+
+interface CalloutState {
+  isCalloutVisible: boolean;
+}
+
 /**
  * @visibleName Callout (Utropsboks)
  */
-export default class Callout extends React.PureComponent<CalloutProps, CalloutState> {
-  static HELP = 'lightGreen';
-  static INFO = 'beige';
-  static ERROR = 'lightPink';
-  static WARNING = 'beige';
-  static BASIC = 'white';
+export default class Callout extends React.PureComponent<
+  CalloutProps,
+  CalloutState
+> {
+  static HELP = CalloutColor.HELP;
+  static INFO = CalloutColor.INFO;
+  static ERROR = CalloutColor.ERROR;
+  static WARNING = CalloutColor.WARNING;
+  static BASIC = CalloutColor.BASIC;
   static POS_TOP_CENTER = DirectionalHint.topCenter;
   static POS_TOP_LEFT = DirectionalHint.topLeftEdge;
   static POS_TOP_RIGHT = DirectionalHint.topRightEdge;
@@ -40,43 +45,12 @@ export default class Callout extends React.PureComponent<CalloutProps, CalloutSt
   static POS_BOTTOM_LEFT = DirectionalHint.bottomLeftEdge;
   static POS_BOTTOM_RIGHT = DirectionalHint.bottomRightEdge;
 
-  static propTypes = {
-    /** Avstand mellom callout og klikkbart element */
-    gapSpace: PropTypes.number,
-    /** Beskriver rollen til calloutboksen - hjelp til f.eks de som benytter skjermlesere */
-    role: PropTypes.oneOf(['dialog', 'tooltip']),
-    /** Kan sette en bestemt bredde hvis ønskelig */
-    calloutWidth: PropTypes.number,
-    className: PropTypes.string,
-    /** Finnes fire bakgrunnfarger: grønn, rosa, beige eller hvit */
-    color: PropTypes.oneOf([
-      Callout.HELP,
-      Callout.ERROR,
-      Callout.WARNING,
-      Callout.BASIC
-    ]),
-    /** Plassering av callout */
-    directionalHint: PropTypes.oneOf([
-      Callout.POS_TOP_CENTER,
-      Callout.POS_TOP_LEFT,
-      Callout.POS_TOP_RIGHT,
-      Callout.POS_BOTTOM_CENTER,
-      Callout.POS_BOTTOM_LEFT,
-      Callout.POS_BOTTOM_RIGHT
-    ]),
-    /** Global attributt som må være unik for hele HTML dokumentet */
-    id: PropTypes.string,
-
-    /** Avgjør om callout vinduet skal lukkes automatisk når området utenfor vinduet klikkes*/
-    autoDismiss: PropTypes.bool
-  };
-
   static defaultProps = {
+    autoDismiss: false,
     color: Callout.HELP,
-    role: 'dialog',
-    doNotLayer: true,
     directionalHint: Callout.POS_TOP_CENTER,
-    autoDismiss: false
+    doNotLayer: true,
+    role: 'dialog'
   };
 
   render() {
@@ -109,7 +83,7 @@ export default class Callout extends React.PureComponent<CalloutProps, CalloutSt
     });
 
     if (this.props.autoDismiss) {
-      this.props.onDismiss();
+      this.props.onDismiss && this.props.onDismiss();
     }
   }
 }

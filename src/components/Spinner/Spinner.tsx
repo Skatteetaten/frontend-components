@@ -1,13 +1,11 @@
-import * as React from 'react';
 import classnames from 'classnames';
-
-import { getClassNames } from './Spinner.classNames';
-
 import {
+  ISpinnerProps,
   Spinner as FabricSpinner,
-  SpinnerSize,
-  ISpinnerProps
+  SpinnerSize
 } from 'office-ui-fabric-react/lib-commonjs/Spinner';
+import * as React from 'react';
+import { getClassNames } from './Spinner.classNames';
 
 interface SpinnerProps extends ISpinnerProps {
   spinnerColor?: 'white' | 'black';
@@ -23,7 +21,6 @@ export default class Spinner extends React.PureComponent<SpinnerProps, {}> {
   };
   render() {
     const { className, ...props } = this.props;
-
     return (
       <FabricSpinner
         {...props}

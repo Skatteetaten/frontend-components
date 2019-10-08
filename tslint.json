@@ -4,9 +4,9 @@
   "jsRules": {},
   "rules": {
     "member-access": false,
-    "trailing-comma": [true, { "multiline": "never", "singleline": "never" }],
+    "trailing-comma": [false, { "multiline": "never", "singleline": "never" }],
     "interface-name": false,
-    "quotemark": [true, "single"],
+    "quotemark": [false, "single"],
     "arrow-parens": false
   },
   "rulesDirectory": [],

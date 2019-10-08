@@ -1,10 +1,9 @@
-import * as React from 'react';
 import classnames from 'classnames';
-
 import {
   Checkbox as FabricCheckbox,
   ICheckboxProps
 } from 'office-ui-fabric-react/lib-commonjs/Checkbox';
+import * as React from 'react';
 import { getClassNames } from './Checkbox.classNames';
 
 interface CheckboxProps extends ICheckboxProps {

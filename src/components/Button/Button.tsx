@@ -23,19 +23,19 @@ interface ButtonProps extends IButtonProps {
  */
 export default class Button extends React.PureComponent<ButtonProps, {}> {
   static defaultProps = {
-    primary: false,
-    type: 'primaryRounded',
     disabled: false,
     icon: undefined,
-    onClick: undefined
+    onClick: undefined,
+    primary: false,
+    type: 'primaryRounded'
   };
   render() {
-    const { children, icon, className, ...props } = this.props;
+    const { children, icon, className, iconProps, ...props } = this.props;
     return (
       <DefaultButton
         {...props}
         className={classnames(getStandardClassNames(this.props), className)}
-        iconProps={icon ? { iconName: icon } : undefined}
+        iconProps={icon ? { iconName: icon } : iconProps}
       >
         {children}
       </DefaultButton>

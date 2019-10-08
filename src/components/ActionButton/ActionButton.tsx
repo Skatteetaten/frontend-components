@@ -1,10 +1,9 @@
-import * as React from 'react';
 import classnames from 'classnames';
-
 import {
   ActionButton as FabricActionButton,
   IButtonProps
 } from 'office-ui-fabric-react/lib-commonjs/Button';
+import * as React from 'react';
 import { getClassNames } from './ActionButton.classNames';
 
 interface ActionButtonProps extends IButtonProps {
@@ -12,7 +11,7 @@ interface ActionButtonProps extends IButtonProps {
   icon?: string;
   /** Ikon størrelse, to tilgjengelige størrelser */
   iconSize?: any;
-  /** Fire forhåndsdefinerte farger, se eksempler*/
+  /** Fire forhåndsdefinerte farger, se eksempler */
   color?: 'blue' | 'black' | 'red' | 'green' | 'white';
 }
 /**
@@ -26,11 +25,11 @@ export default class ActionButton extends React.PureComponent<
   static LARGE = 'xxLarge';
 
   static defaultProps = {
-    onClick: undefined,
+    color: 'blue',
+    disabled: false,
     icon: undefined,
     iconSize: ActionButton.NORMAL,
-    color: 'blue',
-    disabled: false
+    onClick: undefined
   };
 
   render() {

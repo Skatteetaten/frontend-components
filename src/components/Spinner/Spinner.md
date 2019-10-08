@@ -7,7 +7,7 @@ import Button from '@skatteetaten/frontend-components/Button';
 <div style={{ textAlign: 'center' }}>
   <Button type="primary">
     {' '}
-    <Spinner spinnerColor="white" />{' '}
+    <Spinner label="kake" spinnerColor="white" />{' '}
   </Button>
   <br />
   <br />

@@ -1,10 +1,15 @@
-import React from 'react';
-import PropTypes from 'prop-types';
 import classnames from 'classnames';
+import * as React from 'react';
 
 import { getClassNames } from './AccordionMenu.classNames';
 
-const AccordionMenu = ({ className, children }) => {
+interface AccordionMenuProps {
+  className?: string;
+}
+const AccordionMenu: React.SFC<AccordionMenuProps> = ({
+  className,
+  children
+}) => {
   const styles = getClassNames();
   return (
     <ul className={classnames(styles.accordionMenu, className)}>
@@ -16,10 +21,6 @@ const AccordionMenu = ({ className, children }) => {
       )}
     </ul>
   );
-};
-
-AccordionMenu.propTypes = {
-  className: PropTypes.string
 };
 
 export default AccordionMenu;

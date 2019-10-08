@@ -49,7 +49,7 @@ const ToggleContent = ({
   );
 };
 
-interface AccordionItemProps {
+export interface AccordionItemProps {
   /** Valg for å kunne vise/skjule innhold til et steg med en "vise/skjule" knapp */
   toggleContent?: boolean;
   /** Teksten for vise/skjule knappen for et steg */
@@ -68,6 +68,8 @@ interface AccordionItemProps {
   title?: string;
   /** Subtittel som vises i accordionitem */
   subtitle?: string;
+  stepNumber?: number;
+  totalSteps?: number;
 }
 type AccordionItemState = {
   isContentOpen: boolean;

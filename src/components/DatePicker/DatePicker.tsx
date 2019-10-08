@@ -1,19 +1,14 @@
 import * as React from 'react';
 import PropTypes from 'prop-types';
-
 import moment from 'moment';
 import 'moment/locale/nb';
-
 import { Label } from 'office-ui-fabric-react/lib-commonjs/Label';
 import { IconButton } from 'office-ui-fabric-react/lib-commonjs/Button';
-
 import Callout from '../Callout/Callout';
 import { css } from '@uifabric/utilities';
-
 import {
   DayOfWeek,
-  DatePicker as FabricDatePicker,
-  IDatePickerProps
+  DatePicker as FabricDatePicker
 } from 'office-ui-fabric-react/lib-commonjs/DatePicker';
 import { FirstWeekOfYear } from 'office-ui-fabric-react/lib-commonjs/utilities/dateValues/DateValues';
 import ErrorMessage from '../ErrorMessage';
@@ -38,32 +33,12 @@ const DEFAULT_STRINGS = {
   isRequiredErrorMessage: 'Dette feltet er påkrevd'
 };
 
-//todo string.replace error
-interface DatePickerProps extends IDatePickerProps {
-  placeholder?: string;
-  ariaLabel?: string;
-  allowTextInput?: boolean;
-  pickerAriaLabel?: string;
-  borderless?: boolean;
-  readonlyMode?: boolean;
-  disabled?: boolean;
-  showWeekNumbers?: boolean;
-  isRequired?: boolean;
-  isMonthPickerVisible?: boolean;
-  showMonthPickerAsOverlay?: boolean;
-  highlightCurrentMonth?: boolean;
-  showGoToToday?: boolean;
-  className?: string;
-  isRequiredErrorMessage?: string;
-  isOutOfBoundsErrorMessage?: string;
-  invalidInputErrorMessage?: string;
-  errorMessage?: JSX.Element | string;
-  id?: string;
-  inputSize?: 'normal' | 'large';
-}
-type DatePickerState = {
+// TODO extends IDatePickerProps string.replace error
+interface DatePickerProps {}
+
+interface DatePickerState {
   isCalloutVisible: boolean;
-};
+}
 /**
  * @visibleName DatePicker (Datovelger)
  */

@@ -170,9 +170,10 @@ module.exports = {
   },
   resolver: require('react-docgen').resolver.findAllComponentDefinitions,
   propsParser: require('react-docgen-typescript').withDefaultConfig({
+    savePropValueAsString: true,
     propFilter: prop => {
       if (prop.parent) {
-        // Fjerner arial html props fra API lista
+        // Fjerner default html props fra API lista
         return !prop.parent.fileName.includes('node_modules/@types/react');
       }
       return true;

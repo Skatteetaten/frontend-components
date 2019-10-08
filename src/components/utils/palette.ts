@@ -1,5 +1,5 @@
 enum skeColor {
-  //LAGET MED GENEREATOR: https://developer.microsoft.com/en-us/fabric#/styles/themegenerator
+  // LAGET MED GENEREATOR: https://developer.microsoft.com/en-us/fabric#/styles/themegenerator
   internal = '#6F2C3F',
   internalLight = '#ECE6E8',
   black = '#000000',
@@ -61,7 +61,7 @@ enum palette {
 
 export default {
   ...palette,
-  //Egendefinerte farger fra Skatteetatens designmal
+  // Egendefinerte farger fra Skatteetatens designmal
   skeColor: skeColor
 
   /* OPPRINNELIG LISTE

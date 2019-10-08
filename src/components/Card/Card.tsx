@@ -1,8 +1,7 @@
-import * as React from 'react';
 import classnames from 'classnames';
-
-import { getClassNames } from './Card.classNames';
+import * as React from 'react';
 import IconButton from '../IconButton/IconButton';
+import { getClassNames } from './Card.classNames';
 
 enum CardColor {
   GREY = 'neutralGrey',
@@ -21,7 +20,6 @@ enum CardBorder {
 }
 
 interface CardProps {
-  //TODO string.replace type.error
   /** Teksten som vises i kortet */
   title?: string;
   /** Subtittel som vises i kortet */
@@ -58,15 +56,15 @@ interface CardProps {
   onChange?: (...args: any[]) => any;
   /** Global attributt som må være unik for hele HTML dokumentet */
   className?: string;
-  /** Call back som kjøres når man åpner/lukker tittel*/
+  /** Call back som kjøres når man åpner/lukker tittel */
   id?: string;
   /** onClick */
   onClick?: () => void;
 }
 
-type CardState = {
+interface CardState {
   isExpandedState: boolean;
-};
+}
 
 /**
  * @visibleName Card (Innholdskort)
