@@ -1,9 +1,10 @@
 import { mergeStyles } from '@uifabric/merge-styles';
 import { getTheme } from '@uifabric/styling';
-import { FontSizes } from '../utils/fonts';
+import { FontSizes } from '..';
+import { PaletteProps } from '..';
 
 export var getClassNames = function getClassNames(props) {
-  const { palette } = getTheme();
+  const palette = getTheme().palette as PaletteProps;
   const { border, searchFieldSize } = props;
   const largeSize = searchFieldSize === 'large';
   const standardSize = searchFieldSize === 'standard';

@@ -3,42 +3,42 @@ import { getTheme } from '@uifabric/styling';
 import { FontSizes, FontWeights } from '../utils/fonts';
 import { MdIcons } from '../utils/icons/';
 import { Animation } from '../utils/getAnimationStyles';
+import { PaletteProps } from '..';
 
 function getFieldTypeStyles(props) {
-  const { palette } = getTheme();
+  const palette = getTheme().palette as PaletteProps;
 
-  switch (props.inputSize) {
-    case 'large':
-      return {
-        '& .ms-ComboBox': {
-          borderWidth: '2px',
-          borderRadius: '0px',
-          height: '46px',
-          padding: '5px 12px',
-          borderColor: palette.skeColor.blackAlt
-        },
-        '& .ms-ComboBox-Input': {
-          fontSize: FontSizes.large
-        },
-        '& button.ms-ComboBox-CaretDown-button': {
-          top: '5px'
-        },
-        'i.ms-Button-icon': {
-          fontSize: FontSizes.large
-        }
-      };
-    default:
-      return {
-        '& .ms-ComboBox-Input': {
-          fontSize: FontSizes.small
-        }
-      };
+  if (props.inputSize === 'large') {
+    return {
+      '& .ms-ComboBox': {
+        borderWidth: '2px',
+        borderRadius: '0px',
+        height: '46px',
+        padding: '5px 12px',
+        borderColor: palette.skeColor.blackAlt
+      },
+      '& .ms-ComboBox-Input': {
+        fontSize: FontSizes.large
+      },
+      '& button.ms-ComboBox-CaretDown-button': {
+        top: '5px'
+      },
+      'i.ms-Button-icon': {
+        fontSize: FontSizes.large
+      }
+    };
+  } else {
+    return {
+      '& .ms-ComboBox-Input': {
+        fontSize: FontSizes.small
+      }
+    };
   }
 }
 
 export const getClassNames = props => {
   const { errorMessage } = props;
-  const { palette } = getTheme();
+  const palette = getTheme().palette as PaletteProps;
   const color = errorMessage
     ? palette.skeColor.error
     : palette.skeColor.blackAlt;
@@ -83,7 +83,7 @@ export const getClassNames = props => {
 
 export const getErrorClassNames = props => {
   const { errorMessage } = props;
-  const { palette } = getTheme();
+  const palette = getTheme().palette as PaletteProps;
   const color = errorMessage
     ? palette.skeColor.error
     : palette.skeColor.blackAlt;
@@ -115,7 +115,7 @@ export const getErrorClassNames = props => {
 };
 
 export const getOptionsClassNames = props => {
-  const { palette } = getTheme();
+  const palette = getTheme().palette as PaletteProps;
 
   return mergeStyles({
     displayName: 'SkeComboBoxOptions',
@@ -133,7 +133,7 @@ export const getOptionsClassNames = props => {
 };
 
 export const getLabelClassNames = props => {
-  const { palette } = getTheme();
+  const palette = getTheme().palette as PaletteProps;
 
   return mergeStyleSets({
     labelArea: {

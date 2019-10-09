@@ -1,6 +1,7 @@
 import { getTheme } from '@uifabric/styling';
 import { mergeStyleSets } from '@uifabric/merge-styles';
 import { FontSizes, FontWeights } from '../utils/fonts';
+import { PaletteProps } from '..';
 
 const dekor = require('./assets/footerDekor.svg');
 const logo = require('./assets/ske-logo.svg');
@@ -13,41 +14,39 @@ function setMinMaxWidth(props) {
 }
 
 function getMainBackgroundStyle(props) {
-  const { palette } = getTheme();
+  const palette = getTheme().palette as PaletteProps;
 
-  switch (props.layoutStyle) {
-    case 'important':
-      return {
-        background: `url(${dekor})`,
-        backgroundSize: 'calc(100% + 1px) 20px',
-        backgroundRepeat: 'no-repeat',
-        backgroundPosition: 'bottom left',
-        paddingBottom: 30,
-        backgroundColor: palette.white,
-        border: 'none !important'
-      };
-    default:
-      return {};
+  if (props.layoutStyle === 'important') {
+    return {
+      background: `url(${dekor})`,
+      backgroundSize: 'calc(100% + 1px) 20px',
+      backgroundRepeat: 'no-repeat',
+      backgroundPosition: 'bottom left',
+      paddingBottom: 30,
+      backgroundColor: palette.white,
+      border: 'none !important'
+    };
+  } else {
+    return {};
   }
 }
 
 function getHeaderBackgroundStyle(props) {
-  switch (props.layoutStyle) {
-    case 'important':
-      return {
-        backgroundImage: `url(${logo})`,
-        backgroundSize: '40px 100%',
-        backgroundRepeat: 'no-repeat',
-        backgroundPosition: 'top -30px left 20px',
-        paddingTop: 70
-      };
-    default:
-      return {};
+  if (props.layoutStyle === 'important') {
+    return {
+      backgroundImage: `url(${logo})`,
+      backgroundSize: '40px 100%',
+      backgroundRepeat: 'no-repeat',
+      backgroundPosition: 'top -30px left 20px',
+      paddingTop: 70
+    };
+  } else {
+    return {};
   }
 }
 
 export var getClassNames = function getClassNames(props) {
-  const { palette } = getTheme();
+  const palette = getTheme().palette as PaletteProps;
 
   return mergeStyleSets({
     main: {

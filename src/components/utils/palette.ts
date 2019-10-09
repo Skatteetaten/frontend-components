@@ -1,3 +1,64 @@
+import { IPalette } from '@uifabric/styling';
+interface skeColorProp {
+  internal: string;
+  internalLight: string;
+  black: string;
+  blackAlt: string;
+  darkGrey: string;
+  grey: string;
+  lightGrey: string;
+  neutralGrey: string;
+  whiteGrey: string;
+  white: string;
+  burgundy: string;
+  burgundyLight: string;
+  pink: string;
+  lightPink: string;
+  lightBrown: string;
+  brown: string;
+  lightBeige: string;
+  beige: string;
+  darkBeige: string;
+  green: string;
+  lightGreen: string;
+  darkBlue: string;
+  blue: string;
+  lightBlue: string;
+  mediumBlue: string;
+  error: string;
+}
+export interface PaletteProps extends IPalette {
+  skeColor: skeColorProp;
+  themePrimary: string;
+  themeLighterAlt: string;
+  themeLighter: string;
+  themeLight: string;
+  themeTertiary: string;
+  themeSecondary: string;
+  themeDarkAlt: string;
+  themeDark: string;
+  themeDarker: string;
+  neutralLighterAlt: string;
+  neutralLighter: string;
+  neutralLight: string;
+  neutralQuaternaryAlt: string;
+  neutralQuaternary: string;
+  neutralTertiaryAlt: string;
+  neutralTertiary: string;
+  neutralSecondary: string;
+  neutralPrimaryAlt: string;
+  neutralPrimary: string;
+  neutralDark: string;
+  black: string;
+  white: string;
+  primaryBackground: string;
+  primaryText: string;
+  bodyBackground: string;
+  bodyText: string;
+  disabledBackground: string;
+  disabledText: string;
+}
+
 enum skeColor {
   // LAGET MED GENEREATOR: https://developer.microsoft.com/en-us/fabric#/styles/themegenerator
   internal = '#6F2C3F',

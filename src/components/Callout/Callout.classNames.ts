@@ -1,18 +1,18 @@
 import { getTheme } from '@uifabric/styling';
 import { mergeStyleSets } from '@uifabric/merge-styles';
-import { FontSizes } from '../utils/fonts';
+import { FontSizes } from '..';
+import { PaletteProps } from '..';
 
 function getCalloutBorder(props) {
-  const { palette } = getTheme();
-  switch (props.color) {
-    case 'white':
-      return {
-        border: `2px solid ${palette.skeColor.blackAlt}`
-      };
-    default:
-      return {
-        border: 'none'
-      };
+  const palette = getTheme().palette as PaletteProps;
+  if (props.color === 'white') {
+    return {
+      border: `2px solid ${palette.skeColor.blackAlt}`
+    };
+  } else {
+    return {
+      border: 'none'
+    };
   }
 }
 

@@ -1,8 +1,9 @@
 import { mergeStyleSets } from '@uifabric/merge-styles';
 import { getTheme } from '@uifabric/styling';
+import { PaletteProps } from '..';
 
 export const getClassNames = props => {
-  const { palette } = getTheme();
+  const palette = getTheme().palette as PaletteProps;
   const whiteBackground = palette.skeColor.white;
   const hoverBackground = palette.skeColor.lightBlue;
   const color = palette.skeColor.blue;

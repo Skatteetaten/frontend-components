@@ -1,10 +1,11 @@
 import { mergeStyles } from '@uifabric/merge-styles';
 import { getTheme } from '@uifabric/styling';
-import { getFocusStyle } from '../utils/getFocusStyle';
-import { FontSizes, FontWeights } from '../utils/fonts';
+import { getFocusStyle } from '..';
+import { FontSizes, FontWeights } from '..';
+import { PaletteProps } from '..';
 
 function getTypeColor(props) {
-  const { palette } = getTheme();
+  const palette = getTheme().palette as PaletteProps;
   const radius = '20px';
 
   switch (props.type) {
@@ -104,7 +105,7 @@ function getTypeFocusColor(props) {
 }
 
 function getTypeActiveColor(props) {
-  const { palette } = getTheme();
+  const palette = getTheme().palette as PaletteProps;
   switch (props.type) {
     case 'warning':
       return {

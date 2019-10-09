@@ -1,9 +1,10 @@
 import { mergeStyleSets } from '@uifabric/merge-styles';
 import { getTheme } from '@uifabric/styling';
 import { FontSizes, FontWeights } from '../utils/fonts';
+import { PaletteProps } from '..';
 
 export const getClassNames = () => {
-  const { palette } = getTheme();
+  const palette = getTheme().palette as PaletteProps;
   const colorBackground = palette.skeColor.blackAlt;
   const colorForeground = palette.skeColor.white;
 

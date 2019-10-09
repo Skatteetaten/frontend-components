@@ -2,6 +2,7 @@ import { mergeStyles } from '@uifabric/merge-styles';
 import { getTheme } from '@uifabric/styling';
 import { FontSizes, FontWeights } from '../utils/fonts';
 import includes from 'lodash/includes';
+import { PaletteProps } from '..';
 
 const defaultMargin = '16px 0 4px 0';
 
@@ -202,7 +203,7 @@ const getAStyle = (props, palette) => {
 };
 
 export var getClassNames = function getClassNames(props) {
-  const { palette } = getTheme();
+  const palette = getTheme().palette as PaletteProps;
   return mergeStyles([
     {
       displayName: 'SkeTypography',

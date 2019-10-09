@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import ComponentsList from '../ComponentsList';
 import filterSectionsByName from 'react-styleguidist/lib/client/utils/filterSectionsByName';
 import SearchField from '../../components/SearchField';
@@ -18,11 +17,10 @@ function SokeBoks({ searchTerm, setSearchTerm, children }) {
     </>
   );
 }
-
-export class TableOfContents extends React.Component {
-  static propTypes = {
-    sections: PropTypes.array.isRequired
-  };
+interface TableOfContentsProps {
+  sections: [];
+}
+export class TableOfContents extends React.Component<TableOfContentsProps, {}> {
   state = {
     searchTerm: ''
   };

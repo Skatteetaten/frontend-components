@@ -2,14 +2,12 @@ import classnames from 'classnames';
 import * as React from 'react';
 import Callout from '../Callout/Callout';
 import { getClassNames } from './Dialog.classNames';
-
 import {
   DialogType,
   DialogFooter,
   Dialog as FabricDialog,
   IDialogProps
 } from 'office-ui-fabric-react/lib-commonjs/Dialog';
-
 import IconButton from '../IconButton/IconButton';
 
 interface DialogProps extends IDialogProps {

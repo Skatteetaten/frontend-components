@@ -1,10 +1,11 @@
 import { mergeStyles } from '@uifabric/merge-styles';
 import { getTheme } from '@uifabric/styling';
-import { FontSizes } from '../utils/fonts';
-import { getFocusStyle } from '../utils/getFocusStyle';
+import { FontSizes } from '..';
+import { getFocusStyle } from '..';
+import { PaletteProps } from '..';
 
 function getTypeColor(props) {
-  const { palette } = getTheme();
+  const palette = getTheme().palette as PaletteProps;
   switch (props.color) {
     case 'blue':
       return {
@@ -22,7 +23,7 @@ function getTypeColor(props) {
 }
 
 function getIconColor(props) {
-  const { palette } = getTheme();
+  const palette = getTheme().palette as PaletteProps;
   switch (props.color) {
     case 'black':
       return {
@@ -48,7 +49,7 @@ function getIconColor(props) {
 }
 
 function getHoverColor(props) {
-  const { palette } = getTheme();
+  const palette = getTheme().palette as PaletteProps;
   switch (props.color) {
     case 'black':
       return {
@@ -66,7 +67,7 @@ function getHoverColor(props) {
 }
 
 export var getClassNames = function getClassNames(props) {
-  const { palette } = getTheme();
+  const palette = getTheme().palette as PaletteProps;
   const inset = -4;
   const radius = 0;
 

@@ -5,11 +5,13 @@ import {
   getGlobalClassNames
 } from '@uifabric/styling';
 import { MdIcons } from '../utils/icons/';
+import { PaletteProps } from '..';
 
 const errorIcon = "'" + MdIcons.icons.Error + "'";
 export var getClassNames = function getClassNames(props) {
   const theme = getTheme();
-  const { palette, fonts } = theme;
+  const { fonts } = theme;
+  const palette = theme.palette as PaletteProps;
   const classNames = getGlobalClassNames({}, theme);
 
   return mergeStyles([

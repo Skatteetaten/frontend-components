@@ -2,6 +2,7 @@ import { mergeStyleSets } from '@uifabric/merge-styles';
 import { getTheme } from '@uifabric/styling';
 import { FontSizes, FontWeights } from '../utils/fonts';
 import { MdIcons } from '../utils/icons/';
+import { PaletteProps } from '..';
 
 const getStepContentPadding = stepType => {
   if (stepType === 'next') {
@@ -40,7 +41,7 @@ const getStepContentInner = (stepType, activeStep, palette) => {
 };
 
 export const getClassNames = props => {
-  const { palette } = getTheme();
+  const palette = getTheme().palette as PaletteProps;
   const arrowIcon = "'" + MdIcons.icons.Back + "'";
 
   return mergeStyleSets({

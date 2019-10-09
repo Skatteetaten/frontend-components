@@ -2,9 +2,10 @@ import { mergeStyles } from '@uifabric/merge-styles';
 import { getTheme } from '@uifabric/styling';
 import { FontSizes, FontWeights } from '../utils/fonts';
 import { isUndefined } from 'util';
+import { PaletteProps } from '..';
 
 export const getClassNames = props => {
-  const theme = getTheme();
+  const palette = getTheme().palette as PaletteProps;
   const inset = -6;
 
   return mergeStyles({
@@ -30,21 +31,21 @@ export const getClassNames = props => {
       '& .ms-ChoiceField-field::before': {
         content: '',
         display: 'inline-block',
-        border: '2px solid' + theme.palette.skeColor.black,
+        border: '2px solid' + palette.skeColor.black,
         position: 'absolute'
       },
       '.ms-ChoiceField-input': {
-        backgroundColor: theme.palette.skeColor.white,
-        border: '2px solid' + theme.palette.skeColor.blue
+        backgroundColor: palette.skeColor.white,
+        border: '2px solid' + palette.skeColor.blue
       },
       '.ms-ChoiceField-input:disabled + .ms-ChoiceField-field::before': {
-        color: theme.palette.skeColor.lightGrey,
-        backgroundColor: theme.palette.skeColor.white,
-        border: '2px solid' + theme.palette.skeColor.lightGrey
+        color: palette.skeColor.lightGrey,
+        backgroundColor: palette.skeColor.white,
+        border: '2px solid' + palette.skeColor.lightGrey
       },
       '.ms-ChoiceField-input:checked + .ms-ChoiceField-field::before': {
-        backgroundColor: theme.palette.skeColor.white,
-        border: '2px solid' + theme.palette.skeColor.blue
+        backgroundColor: palette.skeColor.white,
+        border: '2px solid' + palette.skeColor.blue
       },
       '.ms-Fabric.is-focusVisible.is-focusVisible & .ms-ChoiceField-wrapper.is-inFocus:after': {
         content: '""',

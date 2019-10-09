@@ -1,10 +1,10 @@
-import { mergeStyles } from '@uifabric/merge-styles';
+import { getFocusStyle } from '..';
 import { getTheme } from '@uifabric/styling';
-
-import { getFocusStyle } from '../utils/getFocusStyle';
+import { mergeStyles } from '@uifabric/merge-styles';
+import { PaletteProps } from '..';
 
 export var getClassNames = function getClassNames(props) {
-  const { palette } = getTheme();
+  const palette = getTheme().palette as PaletteProps;
   const inset = '-0.5rem';
   const radius = '3rem';
 

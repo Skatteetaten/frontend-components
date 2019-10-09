@@ -3,6 +3,7 @@ import { getTheme } from '@uifabric/styling';
 import { FontSizes, FontWeights } from '../utils/fonts';
 import { MdIcons } from '../utils/icons/';
 import { isUndefined } from 'util';
+import { PaletteProps } from '..';
 
 function getFieldTypeStyles(props) {
   switch (props.inputSize) {
@@ -54,7 +55,8 @@ export const getClassNames = props => {
     readonly,
     underlined
   } = props;
-  const { palette, semanticColors } = getTheme();
+  const { semanticColors } = getTheme();
+  const palette = getTheme().palette as PaletteProps;
   const errorIcon = "'" + MdIcons.icons.Error + "'";
   const color = errorMessage
     ? palette.skeColor.error

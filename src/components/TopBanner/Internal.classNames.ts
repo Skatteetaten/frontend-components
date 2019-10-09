@@ -1,11 +1,11 @@
 import { mergeStyleSets } from '@uifabric/merge-styles';
 import { getTheme } from '@uifabric/styling';
-import { FontSizes } from '../utils/fonts';
+import { FontSizes, PaletteProps } from '..';
 
 export var getClassNames = function getClassNames(props) {
   const { compact } = props;
   const sidebarWidth = '362px';
-  const { palette } = getTheme();
+  const palette = getTheme().palette as PaletteProps;
   return mergeStyleSets({
     header: {
       margin: '0',

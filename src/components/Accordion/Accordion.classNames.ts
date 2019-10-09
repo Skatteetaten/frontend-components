@@ -1,9 +1,10 @@
 import { mergeStyleSets } from '@uifabric/merge-styles';
 import { getTheme } from '@uifabric/styling';
 import { FontSizes, FontWeights, IconFontSizes } from '../utils/fonts';
+import { PaletteProps } from '..';
 
 export const getClassNames = props => {
-  const { palette } = getTheme();
+  const palette = getTheme().palette as PaletteProps;
   return mergeStyleSets({
     containerStep: {
       margin: '0 auto'

@@ -1,8 +1,9 @@
 import { mergeStyles, mergeStyleSets } from '@uifabric/merge-styles';
 import { getTheme } from '@uifabric/styling';
-import { FontSizes, FontWeights } from '../utils/fonts';
+import { FontSizes, FontWeights } from '..';
 import { MdIcons } from '../utils/icons/';
 import { isUndefined } from 'util';
+import { PaletteProps } from '..';
 
 const errorIcon = "'" + MdIcons.icons.Error + "'";
 function getCalloutStyles(props) {
@@ -96,7 +97,7 @@ function getTextFieldStyles(props) {
 
 export const getClassNames = props => {
   const { errorMessage, borderless, underlined, readonlyMode } = props;
-  const { palette } = getTheme();
+  const palette = getTheme().palette as PaletteProps;
   const color = errorMessage ? palette.skeColor.error : palette.skeColor.blue;
 
   return mergeStyles({
@@ -219,7 +220,7 @@ export const getLabelClassNames = props => {
 };
 
 export const getErrorClassNames = props => {
-  const { palette } = getTheme();
+  const palette = getTheme().palette as PaletteProps;
 
   return mergeStyles({
     color: palette.skeColor.error,

@@ -1,13 +1,14 @@
 import { mergeStyles } from '@uifabric/merge-styles';
-import { getTheme } from '@uifabric/styling';
-import { FontSizes, IconFontSizes } from '../utils/fonts';
-import { MessageBarType } from 'office-ui-fabric-react/lib-commonjs/MessageBar';
 import { Animation } from '../utils/getAnimationStyles';
+import { FontSizes, IconFontSizes } from '..';
+import { getTheme } from '@uifabric/styling';
+import { MessageBarType } from 'office-ui-fabric-react/lib-commonjs/MessageBar';
+import { PaletteProps } from '..';
 
 //import { transitionKeysAreEqual } from 'office-ui-fabric-react/lib/utilities/keytips/IKeytipTransitionKey';
 
 function getBackgroundColor(props) {
-  const { palette } = getTheme();
+  const palette = getTheme().palette as PaletteProps;
 
   switch (props) {
     case MessageBarType.error:
@@ -35,7 +36,7 @@ function getBackgroundColor(props) {
 }
 
 export const getClassNames = props => {
-  const { palette } = getTheme();
+  const palette = getTheme().palette as PaletteProps;
   const severe = props.type === MessageBarType.severeWarning;
   const fadeOut = Animation.fadeOutNormal;
   const { size } = props;

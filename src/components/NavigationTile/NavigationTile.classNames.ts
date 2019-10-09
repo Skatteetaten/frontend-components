@@ -1,5 +1,6 @@
 import { mergeStyleSets } from '@uifabric/merge-styles';
 import { getTheme } from '@uifabric/styling';
+import { PaletteProps } from '..';
 
 function getType(props) {
   switch (props.type) {
@@ -31,37 +32,35 @@ function getIcon(props) {
 }
 
 function getTitle(props) {
-  const { palette } = getTheme();
-  switch (props.alignTitle) {
-    case 'left':
-      return {
-        textAlign: 'left',
-        margin: 0,
-        marginBottom: '8px',
-        color: palette.skeColor.blue
-      };
-    default:
-      return;
+  const palette = getTheme().palette as PaletteProps;
+  if (props.alignTitle === 'left') {
+    return {
+      textAlign: 'left',
+      margin: 0,
+      marginBottom: '8px',
+      color: palette.skeColor.blue
+    };
+  } else {
+    return;
   }
 }
 
 function getDescription(props) {
-  const { palette } = getTheme();
-  switch (props.alignDescription) {
-    case 'left':
-      return {
-        margin: 0,
-        textAlign: 'left',
-        lineHeight: '25px',
-        color: palette.skeColor.blackAlt
-      };
-    default:
-      return;
+  const palette = getTheme().palette as PaletteProps;
+  if (props.alignDescription === 'left') {
+    return {
+      margin: 0,
+      textAlign: 'left',
+      lineHeight: '25px',
+      color: palette.skeColor.blackAlt
+    };
+  } else {
+    return;
   }
 }
 
 export const getClassNames = props => {
-  const { palette } = getTheme();
+  const palette = getTheme().palette as PaletteProps;
   return mergeStyleSets({
     content: {
       selectors: {

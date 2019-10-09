@@ -1,10 +1,10 @@
 import { mergeStyles } from '@uifabric/merge-styles';
 import { getTheme } from '@uifabric/styling';
-
-import { FontWeights } from '../utils/fonts';
+import { FontWeights } from '..';
+import { PaletteProps } from '..';
 
 export var getClassNames = function getClassNames(props) {
-  const { palette } = getTheme();
+  const palette = getTheme().palette as PaletteProps;
   return mergeStyles([
     {
       displayName: 'SkeTabs',

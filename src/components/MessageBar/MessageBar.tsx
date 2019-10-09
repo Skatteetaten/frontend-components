@@ -54,7 +54,6 @@ export class MessageBar extends React.PureComponent<
         this.setState({ hideMessageBar: true });
       }, Number(duration) * 1000);
     }
-    this.baseState = this.state;
   }
 
   setShowAlways = () => {

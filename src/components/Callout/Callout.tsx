@@ -20,6 +20,7 @@ interface CalloutProps extends ICalloutProps {
   autoDismiss?: boolean;
   /** Finnes fire bakgrunnfarger: grønn, rosa, beige eller hvit */
   color?: CalloutColor;
+  onClose?: () => void;
 }
 
 interface CalloutState {

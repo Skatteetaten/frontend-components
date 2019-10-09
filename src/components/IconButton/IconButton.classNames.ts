@@ -2,6 +2,7 @@ import { mergeStyles } from '@uifabric/merge-styles';
 import { getTheme } from '@uifabric/styling';
 import { FontSizes } from '../utils/fonts';
 import { getFocusStyle } from '../utils/getFocusStyle';
+import { PaletteProps } from '..';
 
 function getTypeColor(props) {
   switch (props.type) {
@@ -31,7 +32,7 @@ function getTypeColor(props) {
 }
 
 function getCircleStyles(props) {
-  const { palette } = getTheme();
+  const palette = getTheme().palette as PaletteProps;
 
   if (props.circle === true) {
     return {
@@ -47,7 +48,7 @@ function getCircleStyles(props) {
 }
 
 function getCircleHoverStyles(props) {
-  const { palette } = getTheme();
+  const palette = getTheme().palette as PaletteProps;
 
   if (props.circle === true) {
     return {
@@ -66,7 +67,7 @@ function getCircleHoverStyles(props) {
 }
 
 function getCircleFocusrStyles(props) {
-  const { palette } = getTheme();
+  const palette = getTheme().palette as PaletteProps;
 
   if (props.circle === true) {
     return {
@@ -107,7 +108,7 @@ function getIconSize(props) {
 }
 
 export var getClassNames = function getClassNames(props) {
-  const { palette } = getTheme();
+  const palette = getTheme().palette as PaletteProps;
   const inset = -4;
   const radius = 0;
 

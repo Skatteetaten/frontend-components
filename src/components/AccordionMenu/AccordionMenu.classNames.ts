@@ -1,8 +1,9 @@
 import { mergeStyleSets } from '@uifabric/merge-styles';
 import { getTheme } from '@uifabric/styling';
+import { PaletteProps } from '..';
 
 export const getClassNames = () => {
-  const { palette } = getTheme();
+  const palette = getTheme().palette as PaletteProps;
   return mergeStyleSets({
     accordionMenu: {
       padding: 0,

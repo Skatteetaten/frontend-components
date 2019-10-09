@@ -3,35 +3,35 @@ import { getTheme } from '@uifabric/styling';
 import { FontSizes, FontWeights } from '../utils/fonts';
 import { MdIcons } from '../utils/icons/';
 import { Animation } from '../utils/getAnimationStyles';
+import { PaletteProps } from '..';
 
 function getFieldTypeStyles(props) {
-  switch (props.inputSize) {
-    case 'large':
-      return {
-        '.ms-Dropdown-title': {
-          borderWidth: 2,
-          padding: '5px 12px',
-          borderRadius: '0px',
-          fontSize: FontSizes.large,
-          height: '46px'
-        },
-        '& span.ms-Dropdown-caretDownWrapper': {
-          top: '8px',
-          fontSize: FontSizes.large
-        }
-      };
-    default:
-      return {
-        '.ms-Dropdown-title': {
-          fontSize: FontSizes.small
-        }
-      };
+  if (props.inputSize === 'large') {
+    return {
+      '.ms-Dropdown-title': {
+        borderWidth: 2,
+        padding: '5px 12px',
+        borderRadius: '0px',
+        fontSize: FontSizes.large,
+        height: '46px'
+      },
+      '& span.ms-Dropdown-caretDownWrapper': {
+        top: '8px',
+        fontSize: FontSizes.large
+      }
+    };
+  } else {
+    return {
+      '.ms-Dropdown-title': {
+        fontSize: FontSizes.small
+      }
+    };
   }
 }
 
 export const getClassNames = props => {
   const { errorMessage } = props;
-  const { palette } = getTheme();
+  const palette = getTheme().palette as PaletteProps;
   const color = errorMessage
     ? palette.skeColor.error
     : palette.skeColor.blackAlt;
@@ -85,7 +85,7 @@ export const getClassNames = props => {
 
 export const getErrorClassNames = props => {
   const { errorMessage } = props;
-  const { palette } = getTheme();
+  const palette = getTheme().palette as PaletteProps;
   const color = errorMessage
     ? palette.skeColor.error
     : palette.skeColor.blackAlt;
@@ -117,7 +117,7 @@ export const getErrorClassNames = props => {
 };
 
 export const getCalloutClassNames = props => {
-  const { palette } = getTheme();
+  const palette = getTheme().palette as PaletteProps;
   const inset = 0;
   const radius = '0';
 
@@ -144,7 +144,7 @@ export const getCalloutClassNames = props => {
 };
 
 export const getLabelClassNames = props => {
-  const { palette } = getTheme();
+  const palette = getTheme().palette as PaletteProps;
   return mergeStyleSets({
     labelArea: {
       display: 'flex',

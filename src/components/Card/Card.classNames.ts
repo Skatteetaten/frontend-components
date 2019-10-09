@@ -1,7 +1,8 @@
-import { keyframes, mergeStyleSets } from '@uifabric/merge-styles';
-import { getTheme } from '@uifabric/styling';
-import { FontSizes, FontWeights } from '../utils/fonts';
 import Card from './Card';
+import { FontSizes, FontWeights } from '..';
+import { getTheme } from '@uifabric/styling';
+import { keyframes, mergeStyleSets } from '@uifabric/merge-styles';
+import { PaletteProps } from '..';
 
 const fadeIn = keyframes({
   from: {
@@ -13,39 +14,38 @@ const fadeIn = keyframes({
 });
 
 function getDefaultBorder(props) {
-  const theme = getTheme();
-  switch (props.color) {
-    case Card.WHITE:
-      return {
-        border: `3px solid ${theme.palette.skeColor.green}`
-      };
-    default:
-      return {};
+  const palette = getTheme().palette as PaletteProps;
+  if (props.color === Card.WHITE) {
+    return {
+      border: `3px solid ${palette.skeColor.green}`
+    };
+  } else {
+    return {};
   }
 }
 
 function getCardBorder(props) {
-  const theme = getTheme();
+  const palette = getTheme().palette as PaletteProps;
   switch (props.border) {
     case Card.YELLOW_BORDER:
       return {
-        border: `3px solid ${theme.palette.skeColor.brown}`
+        border: `3px solid ${palette.skeColor.brown}`
       };
     case Card.GREEN_BORDER:
       return {
-        border: `3px solid ${theme.palette.skeColor.green}`
+        border: `3px solid ${palette.skeColor.green}`
       };
     case Card.RED_BORDER:
       return {
-        border: `3px solid ${theme.palette.skeColor.pink}`
+        border: `3px solid ${palette.skeColor.pink}`
       };
     case Card.GREY_BORDER:
       return {
-        border: `3px solid ${theme.palette.skeColor.grey}`
+        border: `3px solid ${palette.skeColor.grey}`
       };
     case Card.WHITE_BORDER:
       return {
-        border: `3px solid ${theme.palette.skeColor.white}`
+        border: `3px solid ${palette.skeColor.white}`
       };
     default:
       return {};
@@ -69,6 +69,7 @@ function getMargin(props) {
 
 export const getClassNames = (props, state) => {
   const theme = getTheme();
+  const palette = theme.palette as PaletteProps;
   const { isExpandedState } = state;
   const { titlesize } = props;
 
@@ -76,7 +77,7 @@ export const getClassNames = (props, state) => {
     root: {
       displayName: 'SkeCard',
       color: theme.semanticColors.bodyText,
-      backgroundColor: theme.palette.skeColor[props.color],
+      backgroundColor: palette.skeColor[props.color],
       padding: '16px',
       marginBottom: props.marginbottom,
       ...getDefaultBorder(props),

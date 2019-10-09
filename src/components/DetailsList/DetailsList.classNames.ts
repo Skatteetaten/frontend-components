@@ -1,9 +1,10 @@
 import { mergeStyles } from '@uifabric/merge-styles';
 import { getTheme } from '@uifabric/styling';
-import { FontSizes, FontWeights } from '../utils/fonts';
+import { FontSizes, FontWeights } from '..';
+import { PaletteProps } from '..';
 
 function getBackgroundColor(props) {
-  const { palette } = getTheme();
+  const palette = getTheme().palette as PaletteProps;
 
   if (props.background === 'white') {
     return palette.skeColor.white;
@@ -33,7 +34,7 @@ function getHoverColor(props) {
 }
 
 export const getClassNames = (props, col) => {
-  const { palette } = getTheme();
+  const palette = getTheme().palette as PaletteProps;
   const inset = 0;
   const position = 'relative';
   const radius = '0';
@@ -153,6 +154,7 @@ export const getClassNames = (props, col) => {
         }
       },
       '& .ms-DetailsRow.is-selected': {
+        //todo finnes ikke?
         background: palette.skeColor.neutralQuaternaryAlt
       },
       '& .ms-FocusZone .ms-DetailsRow.is-selected': {
