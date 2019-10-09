@@ -144,6 +144,14 @@ button.ms-Nav-chevronButton:not(:hover) {
   min-height: 100vh;
 }
 
+.footer {
+  flex-shrink: 0;
+}
+
+.mainLayout {
+  flex: 1 0 auto;
+}
+
 .mainLayout2 {
   flex: 1;
   display: flex;

@@ -117,11 +117,11 @@ export class StyleGuideRenderer extends React.Component {
                 </Grid.Row>
               </Grid>
             </div>
-            <div className="footer">
-              <FooterContent>
-                <p>Versjon {this.state.version}</p>
-              </FooterContent>
-            </div>
+          </div>
+          <div className="footer">
+            <FooterContent>
+              <p>Versjon {this.state.version}</p>
+            </FooterContent>
           </div>
         </div>
       </ScrollToTop>
