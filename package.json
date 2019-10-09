@@ -46,6 +46,8 @@
     "@types/react": "16.9.4",
     "@types/react-dom": "16.9.1",
     "@types/react-router": "^5.1.1",
+    "@typescript-eslint/eslint-plugin": "2.3.3",
+    "@typescript-eslint/parser": "2.3.3",
     "acorn": "6.3.0",
     "babel-jest": "24.9.0",
     "cpx": "1.5.0",
@@ -72,8 +74,6 @@
     "rimraf": "3.0.0",
     "sonar-scanner": "3.1.0",
     "ts-loader": "^5.4.5",
-    "tslint": "5.18.0",
-    "tslint-react": "4.0.0",
     "typescript": "^3.6.3",
     "webfont": "9.0.0"
   },
@@ -90,10 +90,10 @@
     "lint": "npm-run-all -l lint:prettier lint:eslint",
     "lint:ci": "eslint src/**/*.{js,jsx} -f checkstyle -o target/checkstyle-result.xml",
     "lint:fix": "npm-run-all -l lint:prettier-fix lint:eslint-fix",
-    "lint:eslint": "eslint 'src/**/*{.js,.jsx}'",
-    "lint:prettier": "prettier -l 'src/**/*{.js,.jsx,.css,.md}'",
-    "lint:eslint-fix": "eslint --fix 'src/**/*{.js,.jsx}'",
-    "lint:prettier-fix": "prettier --write 'src/**/*{.js,.jsx,.css,.md}'",
+    "lint:eslint": "eslint 'src/**/*{.ts,.tsx,.js,.jsx}'",
+    "lint:prettier": "prettier --check 'src/**/*{.ts,.tsx,.js,.jsx,.css,.md}'",
+    "lint:eslint-fix": "eslint --fix 'src/**/*{.ts,.tsx,.js,.jsx}'",
+    "lint:prettier-fix": "prettier --write 'src/**/*{.ts,.tsx,.js,.jsx,.css,.md}'",
     "sonarqube": "sonar-scanner",
     "test": "react-scripts test --env=jsdom --verbose=false",
     "test:coverage": "CI=true react-scripts test --env=jsdom --coverage --testResultsProcessor jest-junit",
@@ -115,7 +115,7 @@
   },
   "jest": {
     "collectCoverageFrom": [
-      "src/**/*.{js,jsx}",
+      "src/**/*.{ts,tsx}",
       "!src/**/index.js",
       "!src/setupTests.js",
       "!src/styleguide/**",
@@ -143,7 +143,22 @@
     ]
   },
   "eslintConfig": {
-    "extends": "react-app"
+    "extends": [
+      "react-app"
+    ],
+    "parser": "@typescript-eslint/parser",
+    "plugins": [
+      "@typescript-eslint"
+    ],
+    "rules": {
+      "@typescript-eslint/explicit-function-return-type": "off",
+      "@typescript-eslint/explicit-member-accessibility": "off",
+      "@typescript-eslint/member-ordering": "error",
+      "@typescript-eslint/no-explicit-any": "off",
+      "@typescript-eslint/no-unused-vars": "off",
+      "@typescript-eslint/prefer-interface": "off",
+      "no-console": "off"
+    }
   },
   "prettier": {
     "singleQuote": true

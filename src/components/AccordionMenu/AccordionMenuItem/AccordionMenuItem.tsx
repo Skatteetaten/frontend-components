@@ -27,16 +27,15 @@ export default class AccordionMenuItem extends React.PureComponent<
   AccordionMenuItemProps,
   AccordionMenuItemState
 > {
+  static defaultProps = {
+    title: null
+  };
   constructor(props) {
     super(props);
     this.state = {
       isContentOpen: props.isOpen
     };
   }
-
-  static defaultProps = {
-    title: null
-  };
 
   render() {
     const styles = getClassNames();

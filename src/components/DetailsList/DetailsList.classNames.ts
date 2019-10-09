@@ -51,27 +51,27 @@ export const getClassNames = (props, col) => {
         color: palette.white
       },
       '.ms-Fabric.is-focusVisible.is-focusVisible & .ms-DetailsRow:focus:after': {
-        content: '""',
-        position: 'absolute',
-        left: inset + 1,
-        top: inset + 1,
-        bottom: inset + 1,
-        right: inset + 1,
         border: '2px solid ' + palette.themePrimary,
         borderRadius: radius,
+        bottom: inset + 1,
+        content: '""',
+        left: inset + 1,
         outline: 'transparent',
+        position: 'absolute',
+        right: inset + 1,
+        top: inset + 1,
         zIndex: 1
       },
       '.ms-Fabric.is-focusVisible.is-focusVisible & .ms-DetailsHeader-cellTitle:focus:after': {
-        content: '""',
-        position: 'absolute',
-        left: inset + 1,
-        top: inset + 1,
-        bottom: inset + 1,
-        right: inset + 1,
         border: '2px solid ' + palette.themePrimary,
         borderRadius: radius,
+        bottom: inset + 1,
+        content: '""',
+        left: inset + 1,
         outline: 'transparent',
+        position: 'absolute',
+        right: inset + 1,
+        top: inset + 1,
         zIndex: 1
       },
       '.ms-GroupHeader': {
@@ -83,12 +83,12 @@ export const getClassNames = (props, col) => {
         }
       },
       '.ms-GroupHeader .ms-GroupHeader-expand': {
-        width: 20,
-        height: 20,
-        color: palette.blue,
         border: '1px solid ' + palette.blue,
         borderRadius: '50%',
-        position: 'relative'
+        color: palette.blue,
+        height: 20,
+        position: 'relative',
+        width: 20
       },
       '.ms-GroupHeader .ms-GroupHeader-expand i': {
         position: 'absolute',
@@ -98,16 +98,16 @@ export const getClassNames = (props, col) => {
         color: palette.skeColor.blue
       },
       '&.ms-DetailsList': {
-        fontSize: FontSizes.medium,
-        background: 'none'
+        background: 'none',
+        fontSize: FontSizes.medium
       },
       '.ms-GroupHeader-title': {
         fontSize: FontSizes.medium,
         fontWeight: FontWeights.semibold
       },
       '& .ms-DetailsHeader-cell [data-icon-name="SortDown"], & .ms-DetailsHeader-cell [data-icon-name="SortUp"]': {
-        fontSize: FontSizes.icon,
-        color: palette.skeColor.blue
+        color: palette.skeColor.blue,
+        fontSize: FontSizes.icon
       },
       '& .ms-DetailsHeader-cell': {
         fontSize: FontSizes.medium,
@@ -124,14 +124,14 @@ export const getClassNames = (props, col) => {
       },
       //row
       '& .ms-FocusZone.ms-DetailsHeader': {
-        paddingBottom: 0,
+        background: getBackgroundColor(props),
         borderBottom: '2px solid' + getBorderColor(props),
-        background: getBackgroundColor(props)
+        paddingBottom: 0
       },
       '& .ms-FocusZone.ms-DetailsRow': {
-        minHeight: 26,
-        borderBottom: '2px solid' + getBorderColor(props),
         background: getBackgroundColor(props),
+        borderBottom: '2px solid' + getBorderColor(props),
+        minHeight: 26,
         selectors: {
           ':hover': {
             background: getHoverColor(props)
@@ -144,8 +144,8 @@ export const getClassNames = (props, col) => {
       //cell
       '& .ms-DetailsRow-cell': {
         fontSize: FontSizes.medium,
-        padding: '8px',
         minHeight: '32px',
+        padding: '8px',
         selectors: {
           '& .ms-DetailsRow-cellCheck': {
             padding: 0

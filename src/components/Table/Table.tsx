@@ -44,6 +44,9 @@ interface TableState {
  * @visibleName Table (Tabell)
  */
 export default class Table extends React.PureComponent<TableProps, TableState> {
+  static defaultProps = {
+    data: []
+  };
   constructor(props) {
     super(props);
     this.wrapperRef = React.createRef();
@@ -57,10 +60,6 @@ export default class Table extends React.PureComponent<TableProps, TableState> {
       }
     };
   }
-
-  static defaultProps = {
-    data: []
-  };
 
   componentDidMount() {
     const tableWidth = this.tableRef.current.clientWidth;

@@ -1,4 +1,9 @@
-import { registerIcons, loadTheme, createTheme, IRawStyle } from '@uifabric/styling';
+import {
+  registerIcons,
+  loadTheme,
+  createTheme,
+  IRawStyle
+} from '@uifabric/styling';
 
 import palette from './palette';
 import fonts from './fonts';

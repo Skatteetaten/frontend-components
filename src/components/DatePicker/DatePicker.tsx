@@ -33,6 +33,18 @@ const DEFAULT_STRINGS = {
   isRequiredErrorMessage: 'Dette feltet er påkrevd'
 };
 
+const DEFAULTFORMATDATE = date => {
+  if (date) {
+    return moment(date).format(DatePicker.DefaultDateFormat);
+  }
+  return null;
+};
+const DEFAULTPARSEDATEFROMSTRING = dateStr => {
+  if (dateStr) {
+    return moment(dateStr, DatePicker.DefaultDateFormat).toDate();
+  }
+  return null;
+};
 interface DatePickerProps extends IDatePickerProps {
   /** Tilstand som kan benyttes når datovelger skal vises i lesemodus */
   readonlyMode?: boolean;
@@ -59,18 +71,8 @@ export default class DatePicker extends React.Component<
 > {
   static DefaultDateFormat = DEFAULT_DATE_FORMAT;
   static DefaultStrings = DEFAULT_STRINGS;
-  static DefaultFormatDate = date => {
-    if (date) {
-      return moment(date).format(DatePicker.DefaultDateFormat);
-    }
-    return null;
-  };
-  static DefaultParseDateFromString = dateStr => {
-    if (dateStr) {
-      return moment(dateStr, DatePicker.DefaultDateFormat).toDate();
-    }
-    return null;
-  };
+  static DefaultFormatDate = DEFAULTFORMATDATE;
+  static DefaultParseDateFromString = DEFAULTPARSEDATEFROMSTRING;
 
   static defaultProps = {
     allowTextInput: true,
