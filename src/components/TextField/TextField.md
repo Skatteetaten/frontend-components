@@ -100,7 +100,7 @@ const initialState = {
 <div style={{ width: '300px' }}>
   <TextField
     id={'my-readonlyfield'}
-    readonly
+    readOnly
     editable
     box
     label="Saksbehandler"
@@ -111,7 +111,7 @@ const initialState = {
   <p>Med suffix:</p>
   <TextField
     id={'vektVare'}
-    readonly
+    readOnly
     editable
     box
     label="Vekt på vare"

@@ -12,10 +12,10 @@ export var getClassNames = function getClassNames(props) {
     {
       displayName: 'SkeAvkrysningsboks',
       selectors: {
-        '&.ms-Checkbox': {
+        '&.ms-CheckBox': {
           padding: '4px'
         },
-        '&.is-enabled .ms-Checkbox-checkbox': {
+        '&.is-enabled .ms-CheckBox-checkbox': {
           borderRadius: '0px',
           content: '',
           display: 'inline-block',
@@ -23,28 +23,28 @@ export var getClassNames = function getClassNames(props) {
           cursor: 'pointer',
           fontSize: FontSizes.medium
         },
-        'span.ms-Checkbox-text': {
+        'span.ms-CheckBox-text': {
           fontSize: FontSizes.medium
         },
-        '&.is-checked .ms-Checkbox-checkbox': {
+        '&.is-checked .ms-CheckBox-checkbox': {
           border: 'none',
           fontSize: FontSizes.medium
         },
-        'i.ms-Checkbox-checkmark': {
+        'i.ms-CheckBox-checkmark': {
           paddingLeft: '1.5px',
           paddingTop: '1.5px',
           fontSize: FontSizes.medium
         },
-        '&:hover .ms-Checkbox-checkmark': {
+        '&:hover .ms-CheckBox-checkmark': {
           opacity: 0
         },
-        '&.is-checked:hover .ms-Checkbox-checkmark': {
+        '&.is-checked:hover .ms-CheckBox-checkmark': {
           opacity: 1
         },
         '& i': {
           fontWeight: FontWeights.bold
         },
-        '.ms-Checkbox-label:hover i': {
+        '.ms-CheckBox-label:hover i': {
           opacity: 0
         }
       }

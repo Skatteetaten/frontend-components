@@ -1,17 +1,17 @@
+import React, { isValidElement } from 'react';
 import classnames from 'classnames';
-import { IconButton } from 'office-ui-fabric-react/lib-commonjs/Button';
 import { Label } from 'office-ui-fabric-react/lib-commonjs/Label';
-import {
-  ITextFieldProps,
-  MaskedTextField as FabricMaskedTextField,
-  TextField as FabricTextField
-} from 'office-ui-fabric-react/lib-commonjs/TextField';
-import * as React from 'react';
-import { isUndefined } from 'util';
+import { IconButton } from 'office-ui-fabric-react/lib-commonjs/Button';
 import Callout from '../Callout/Callout';
-import ErrorMessage from '../ErrorMessage/ErrorMessage';
+import {
+  TextField as FabricTextField,
+  MaskedTextField as FabricMaskedTextField,
+  ITextFieldProps
+} from 'office-ui-fabric-react/lib-commonjs/TextField';
 import { getClassNames } from './TextField.classNames';
 import { getClassNames as getLabelClassNames } from './TextFieldLabel.classNames';
+import { isUndefined } from 'util';
+import ErrorMessage from '../ErrorMessage/ErrorMessage';
 
 class MaskedTextField extends FabricMaskedTextField {
   constructor(props) {
@@ -19,17 +19,14 @@ class MaskedTextField extends FabricMaskedTextField {
     this._skipComponentRefResolution = false;
   }
 }
-/**
- * @visibleName TextField (Tekstfelt)
- */
 interface TextFieldProps extends ITextFieldProps {
-  /** Benyttes når teksten for et readonly tekstfelt skal fremheves  */
+  /** Benyttes når teksten for et readOnly tekstfelt skal fremheves  */
   boldText?: boolean;
   /** Bestemmer om hjelptekst/varseltekst skal legge seg mellom label og tekstfelt eller flytende over innhold */
   calloutFloating?: boolean;
-  /** Bestemmer om ett readonly felt skal være alltid redigerbart om det er tomt */
+  /** Bestemmer om ett readOnly felt skal være alltid redigerbart om det er tomt */
   editableWhenEmpty?: boolean;
-  /** Benyttes når et readonly felt skal være redigertbart  */
+  /** Benyttes når et readOnly felt skal være redigertbart  */
   editable?: boolean;
   /** Tilhørende hjelpetekst */
   help?: JSX.Element | string;
@@ -104,7 +101,6 @@ export default class TextField extends React.PureComponent<
       return value;
     };
     const { errorMessage, ...filteredProps } = this.props;
-
     return (
       <div className={classnames(getClassNames(this.props), className)}>
         <TextFieldType
@@ -147,13 +143,9 @@ export default class TextField extends React.PureComponent<
     const inputSizeLarge = inputSize === 'large';
 
     let { isCalloutVisible, activeCallout } = this.state;
-    const helpElement = React.isValidElement(help) ? help : <p>{help}</p>;
+    const helpElement = isValidElement(help) ? help : <p>{help}</p>;
 
-    let warningElement = React.isValidElement(warning) ? (
-      warning
-    ) : (
-      <p>{warning}</p>
-    );
+    let warningElement = isValidElement(warning) ? warning : <p>{warning}</p>;
 
     return (
       <div className={styles.labelArea}>

@@ -64,7 +64,7 @@ module.exports = {
       'Typography'
     ]),
     generateComponentsGroup('Inputfelt', [
-      'Checkbox',
+      'CheckBox',
       'ComboBox',
       'DatePicker',
       'Dropdown',

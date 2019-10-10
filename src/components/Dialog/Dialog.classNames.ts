@@ -8,8 +8,8 @@ const logo = require('./assets/ske-logo.svg');
 
 function setMinMaxWidth(props) {
   return {
-    minWidth: props.dialogMinWidth,
-    maxWidth: props.dialogMaxWidth
+    minWidth: props.minWidth,
+    maxWidth: props.maxWidth
   };
 }
 

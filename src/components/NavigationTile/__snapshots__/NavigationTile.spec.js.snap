@@ -16,7 +16,7 @@ exports[`NavigationTile komponent matcher snapshot 1`] = `
         <a
           href="something/#"
         >
-          <Content
+          <NavigationContent
             description="Skattekort, skattemelding (selvangivelse), skatteoppgjør, tema og fradrag som hjelper deg til få riktig skatt. "
             icon="person"
             title="Skatt"

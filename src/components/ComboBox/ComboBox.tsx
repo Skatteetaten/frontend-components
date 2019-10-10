@@ -131,13 +131,10 @@ export default class Combobox extends React.PureComponent<
       children,
       errorMessage,
       label,
-      autoComplete,
-      allowFreeform,
       help,
       onRenderLabel,
       className,
       id,
-      inputSize,
       ...props
     } = this.props;
     const labelProps = { label, help };

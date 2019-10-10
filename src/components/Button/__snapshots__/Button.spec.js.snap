@@ -10,7 +10,7 @@ exports[`Button komponent  matcher snapshot 1`] = `
   onKeyUp={[Function]}
   onMouseDown={[Function]}
   onMouseUp={[Function]}
-  type="button"
+  type="primaryRounded"
 >
   <span
     className="ms-Button-flexContainer flexContainer-42"

@@ -23,13 +23,13 @@ interface DetailsListProps extends IDetailsListProps {
 export class DetailsList extends React.PureComponent<DetailsListProps, {}> {
   static ConstrainMode = ConstrainMode;
   static SelectionMode = SelectionMode;
-  static CheckboxVisibility = CheckboxVisibility;
+  static CheckBoxVisibility = CheckboxVisibility;
   static DetailsListLayoutMode = DetailsListLayoutMode;
   static Selection = Selection;
 
   static defaultProps = {
     background: 'white',
-    checkboxVisibility: DetailsList.CheckboxVisibility.hidden,
+    checkboxVisibility: DetailsList.CheckBoxVisibility.hidden,
     constrainMode: DetailsList.ConstrainMode.unconstrained,
     items: [],
     layoutMode: DetailsList.DetailsListLayoutMode.justified,
@@ -89,7 +89,7 @@ export class DetailsList extends React.PureComponent<DetailsListProps, {}> {
         className={classnames(getClassNames(this.props), className)}
         setKey="set"
         columns={enhancedColumns}
-        checkboxCellClassName={'DetailsListCheckbox'}
+        checkboxCellClassName={'DetailsListCheckBox'}
       />
     );
   }

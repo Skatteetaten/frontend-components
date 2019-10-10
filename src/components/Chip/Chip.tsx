@@ -21,7 +21,6 @@ export default class Chip extends React.PureComponent<ChipProps, {}> {
   static OK = ChipType.OK;
   static NEUTRAL = ChipType.NEUTRAL;
   static defaultProps = {
-    ariaLabel: undefined,
     size: 'standard',
     type: Chip.NEUTRAL
   };

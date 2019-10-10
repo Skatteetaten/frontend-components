@@ -52,7 +52,7 @@ export const getClassNames = props => {
     calloutFloating,
     editableWhenEmpty,
     errorMessage,
-    readonly,
+    readOnly,
     underlined
   } = props;
   const { semanticColors } = getTheme();
@@ -74,7 +74,7 @@ export const getClassNames = props => {
         borderColor: color,
         borderRadius: '0px'
       },
-      '& .ms-TextField-fieldGroup': readonly && {
+      '& .ms-TextField-fieldGroup': readOnly && {
         border: 'none',
         outline: 'none',
         background: 'transparent'
@@ -84,7 +84,7 @@ export const getClassNames = props => {
       },
       '&.is-active .ms-TextField-fieldGroup': !borderless &&
         !underlined &&
-        !readonly && {
+        !readOnly && {
           border: `2px solid ${palette.skeColor.blue}`
         },
       // style customization for underlined model
@@ -100,7 +100,7 @@ export const getClassNames = props => {
         outlineWidth: '1px',
         outlineStyle: 'solid'
       },
-      '& .ms-TextField-field[readonly]': {
+      '& .ms-TextField-field[readOnly]': {
         paddingLeft: '1px',
         cursor: 'default',
         fontWeight: boldText ? FontWeights.bold : FontWeights.regular,
@@ -108,14 +108,14 @@ export const getClassNames = props => {
         outline: 'none',
         background: 'transparent'
       },
-      '& .ms-TextField-field[readonly]:focus': {
+      '& .ms-TextField-field[readOnly]:focus': {
         fontWeight: boldText ? FontWeights.bold : FontWeights.regular
       },
-      '&.is-active .ms-TextField-field': readonly && {
+      '&.is-active .ms-TextField-field': readOnly && {
         border: `2px solid ${palette.skeColor.blue}`,
         backgroundColor: palette.skeColor.white
       },
-      '&.is-active .ms-TextField-field[readonly]:focus': readonly && {
+      '&.is-active .ms-TextField-field[readOnly]:focus': readOnly && {
         border: `none`,
         background: 'transparent'
       },
@@ -158,7 +158,7 @@ export const getClassNames = props => {
           display: 'inline-block'
         },
       '.ms-TextField-suffix': !props.editMode &&
-        props.readonly && {
+        props.readOnly && {
           display: 'none'
         }
     }

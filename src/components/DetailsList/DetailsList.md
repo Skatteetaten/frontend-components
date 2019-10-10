@@ -562,7 +562,7 @@ function chooseRow() {
     columns={state.columns}
     items={state.items}
     selectionMode={DetailsList.SelectionMode.single}
-    checkboxVisibility={DetailsList.CheckboxVisibility.always}
+    checkboxVisibility={DetailsList.CheckBoxVisibility.always}
   />
 </div>;
 ```

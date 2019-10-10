@@ -37,7 +37,6 @@ describe('SearchField komponent', () => {
     const StyledSearchBoxBase = wrapper.find('StyledSearchBoxBase');
     expect(
       wrapper
-        .find('div')
         .first()
         .prop('id')
     ).toEqual('searchfield-id');

@@ -141,7 +141,7 @@ describe('TextField komponent', () => {
 
   it('rendrer TextFiled i lesemodus', () => {
     const wrapper = oppsettFullDOM({
-      readonly: true,
+      readOnly: true,
       editable: true
     });
     const editButton = wrapper.find('button.ms-Button--icon');

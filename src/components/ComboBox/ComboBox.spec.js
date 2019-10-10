@@ -19,7 +19,6 @@ describe('Combobox komponent', () => {
   it('rendrer Combobox med default props', () => {
     const wrapper = oppsettShallow();
     const combobox = wrapper.find('SkeCombobox');
-
     expect(combobox.prop('autoComplete')).toEqual('on');
     expect(combobox.prop('expandOnFocus')).toEqual(false);
     expect(combobox.prop('allowFreeform')).toEqual(false);

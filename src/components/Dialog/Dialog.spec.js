@@ -42,8 +42,8 @@ describe('Dialog komponent', () => {
       type: Dialog.Type.largeHeader,
       title: 'Tekst tittel',
       subText: 'Denne teksten vil vises i dialogen under tittelen',
-      dialogMinWidth: '400px',
-      dialogMaxWidth: '600px',
+      minWidth: '400px',
+      maxWidth: '600px',
       hidden: false
     });
 

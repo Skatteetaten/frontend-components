@@ -1,14 +1,14 @@
 ** Avkrysningsboks brukes for eksempel i skjemaer til å bekrefte et eller flere valg. **
 
 ```js
-import Checkbox from '@skatteetaten/frontend-components/Checkbox';
+import CheckBox from '@skatteetaten/frontend-components/CheckBox';
 
 <div>
   <fieldset style={{ border: 'none' }}>
     <legend style={{ fontSize: '14px' }}>Velg aktuelle lover</legend>
-    <Checkbox boxSide={'start'} label="Skatteloven" />
-    <Checkbox boxSide={'start'} label="Skattebetalingsloven" />
-    <Checkbox boxSide={'start'} label="Skatteforvaltningsloven" />
+    <CheckBox boxSide={'start'} label="Skatteloven" />
+    <CheckBox boxSide={'start'} label="Skattebetalingsloven" />
+    <CheckBox boxSide={'start'} label="Skatteforvaltningsloven" />
   </fieldset>
 </div>;
 ```
