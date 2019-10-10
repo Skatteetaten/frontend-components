@@ -1,17 +1,17 @@
-import React, { isValidElement } from 'react';
-import classnames from 'classnames';
-import { Label } from 'office-ui-fabric-react/lib-commonjs/Label';
-import { IconButton } from 'office-ui-fabric-react/lib-commonjs/Button';
+import * as React from 'react';
 import Callout from '../Callout/Callout';
-import {
-  TextField as FabricTextField,
-  MaskedTextField as FabricMaskedTextField,
-  ITextFieldProps
-} from 'office-ui-fabric-react/lib-commonjs/TextField';
-import { getClassNames } from './TextField.classNames';
-import { getClassNames as getLabelClassNames } from './TextFieldLabel.classNames';
-import { isUndefined } from 'util';
+import classnames from 'classnames';
 import ErrorMessage from '../ErrorMessage/ErrorMessage';
+import {
+  ITextFieldProps,
+  MaskedTextField as FabricMaskedTextField,
+  TextField as FabricTextField
+} from 'office-ui-fabric-react/lib-commonjs/TextField';
+import { getClassNames as getLabelClassNames } from './TextFieldLabel.classNames';
+import { getClassNames } from './TextField.classNames';
+import { IconButton } from 'office-ui-fabric-react/lib-commonjs/Button';
+import { isUndefined } from 'util';
+import { Label } from 'office-ui-fabric-react/lib-commonjs/Label';
 
 class MaskedTextField extends FabricMaskedTextField {
   constructor(props) {
@@ -108,7 +108,7 @@ export default class TextField extends React.PureComponent<
           value={setValue()}
           ariaLabel={props.label}
           disabled={disabled}
-          readOnly={this.state.editMode ? '' : readOnly}
+          readOnly={this.state.editMode ? false : readOnly}
           className={classnames(
             getClassNames({ ...this.props, editMode: this.state.editMode }),
             className
@@ -143,9 +143,13 @@ export default class TextField extends React.PureComponent<
     const inputSizeLarge = inputSize === 'large';
 
     let { isCalloutVisible, activeCallout } = this.state;
-    const helpElement = isValidElement(help) ? help : <p>{help}</p>;
+    const helpElement = React.isValidElement(help) ? help : <p>{help}</p>;
 
-    let warningElement = isValidElement(warning) ? warning : <p>{warning}</p>;
+    let warningElement = React.isValidElement(warning) ? (
+      warning
+    ) : (
+      <p>{warning}</p>
+    );
 
     return (
       <div className={styles.labelArea}>

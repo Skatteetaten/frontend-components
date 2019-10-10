@@ -57,6 +57,7 @@
     "enzyme-to-json": "3.4.0",
     "es6-promise": "4.2.8",
     "eslint": "6.4.0",
+    "eslint-config-prettier": "6.4.0",
     "eslint-config-react-app": "5.0.2",
     "isomorphic-fetch": "2.2.1",
     "jest-junit": "8.0.0",
@@ -144,20 +145,25 @@
   },
   "eslintConfig": {
     "extends": [
-      "react-app"
+      "react-app",
+      "prettier",
+      "eslint:recommended",
+      "plugin:@typescript-eslint/eslint-recommended",
+      "plugin:@typescript-eslint/recommended",
+      "plugin:@typescript-eslint/recommended-requiring-type-checking"
     ],
     "parser": "@typescript-eslint/parser",
-    "plugins": [
-      "@typescript-eslint"
-    ],
+    "parserOptions": {
+      "project": "./tsconfig.json"
+    },
     "rules": {
-      "@typescript-eslint/explicit-function-return-type": "off",
-      "@typescript-eslint/explicit-member-accessibility": "off",
-      "@typescript-eslint/member-ordering": "error",
-      "@typescript-eslint/no-explicit-any": "off",
-      "@typescript-eslint/no-unused-vars": "off",
-      "@typescript-eslint/prefer-interface": "off",
-      "no-console": "off"
+      "no-console": "error",
+      "sort-imports": ["error", {
+        "ignoreCase": true,
+        "ignoreDeclarationSort": true,
+        "ignoreMemberSort": true,
+        "memberSyntaxSortOrder": ["all", "single", "multiple", "none"]
+      }]
     }
   },
   "prettier": {

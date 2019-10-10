@@ -1,8 +1,8 @@
-import { mergeStyleSets } from '@uifabric/merge-styles';
-import { getTheme } from '@uifabric/styling';
 import { FontSizes, PaletteProps } from '..';
+import { getTheme } from '@uifabric/styling';
+import { mergeStyleSets } from '@uifabric/merge-styles';
 
-export var getClassNames = function getClassNames(props) {
+export const getClassNames = function getClassNames(props) {
   const { compact } = props;
   const sidebarWidth = '362px';
   const palette = getTheme().palette as PaletteProps;

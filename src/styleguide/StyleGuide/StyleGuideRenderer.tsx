@@ -1,11 +1,11 @@
 import 'isomorphic-fetch';
-import React from 'react';
 import { withRouter } from 'react-router';
 import TopBanner from '../../components/TopBanner';
 import FooterContent from '../../components/FooterContent';
 import Grid from '../../components/Grid';
 import ActionButton from '../../components/ActionButton';
 import { getClassNames } from './classNames';
+import React from 'react';
 import Typography from '../../components/Typography';
 import './style.css';
 
@@ -46,6 +46,7 @@ export class StyleGuideRenderer extends React.Component {
 
   render() {
     const { title, children, toc } = this.props;
+    console.log(this.props);
     const styles = getClassNames(this.props, this.state);
     return (
       <ScrollToTop>
