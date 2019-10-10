@@ -1,15 +1,9 @@
-import {
-  registerIcons,
-  loadTheme,
-  createTheme,
-  IRawStyle
-} from '@uifabric/styling';
+import { registerIcons, loadTheme, createTheme } from '@uifabric/styling';
 
 import palette from './palette';
 import fonts from './fonts';
 import * as icons from './icons';
 
-//TODO IRawStyle kompatibel?
 const theme = createTheme({ palette, fonts, isInverted: false });
 loadTheme(theme);
 

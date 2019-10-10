@@ -5,7 +5,7 @@ import { PaletteProps } from '..';
 
 const separator = require('./assets/separator.png');
 
-export const getClassNames = function getClassNames(props) {
+export function getClassNames(props): string {
   const { compact } = props;
   const palette = getTheme().palette as PaletteProps;
 
@@ -87,4 +87,4 @@ export const getClassNames = function getClassNames(props) {
       }
     }
   });
-};
+}

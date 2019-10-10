@@ -91,10 +91,10 @@
     "lint": "npm-run-all -l lint:prettier lint:eslint",
     "lint:ci": "eslint src/**/*.{js,jsx} -f checkstyle -o target/checkstyle-result.xml",
     "lint:fix": "npm-run-all -l lint:prettier-fix lint:eslint-fix",
-    "lint:eslint": "eslint 'src/**/*{.ts,.tsx,.js,.jsx}'",
-    "lint:prettier": "prettier --check 'src/**/*{.ts,.tsx,.js,.jsx,.css,.md}'",
+    "lint:eslint": "eslint src/**/*{.ts,.tsx,.js,.jsx}",
+    "lint:prettier": "prettier --check src/**/*{.ts,.tsx,.js,.jsx,.css,.md}",
     "lint:eslint-fix": "eslint --fix 'src/**/*{.ts,.tsx,.js,.jsx}'",
-    "lint:prettier-fix": "prettier --write 'src/**/*{.ts,.tsx,.js,.jsx,.css,.md}'",
+    "lint:prettier-fix": "prettier --write src/**/*{.ts,.tsx,.js,.jsx,.css,.md}",
     "sonarqube": "sonar-scanner",
     "test": "react-scripts test --env=jsdom --verbose=false",
     "test:coverage": "CI=true react-scripts test --env=jsdom --coverage --testResultsProcessor jest-junit",
@@ -148,22 +148,28 @@
       "react-app",
       "prettier",
       "eslint:recommended",
-      "plugin:@typescript-eslint/eslint-recommended",
-      "plugin:@typescript-eslint/recommended",
-      "plugin:@typescript-eslint/recommended-requiring-type-checking"
+      "plugin:@typescript-eslint/eslint-recommended"
     ],
     "parser": "@typescript-eslint/parser",
     "parserOptions": {
       "project": "./tsconfig.json"
     },
     "rules": {
-      "no-console": "error",
-      "sort-imports": ["error", {
-        "ignoreCase": true,
-        "ignoreDeclarationSort": true,
-        "ignoreMemberSort": true,
-        "memberSyntaxSortOrder": ["all", "single", "multiple", "none"]
-      }]
+      "no-console": "warn",
+      "sort-imports": [
+        "warn",
+        {
+          "ignoreCase": true,
+          "ignoreDeclarationSort": true,
+          "ignoreMemberSort": true,
+          "memberSyntaxSortOrder": [
+            "all",
+            "single",
+            "multiple",
+            "none"
+          ]
+        }
+      ]
     }
   },
   "prettier": {
