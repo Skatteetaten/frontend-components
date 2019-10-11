@@ -3,7 +3,7 @@ import { getTheme } from '@uifabric/styling';
 import { FontSizes, FontWeights, IconFontSizes } from '../utils/fonts';
 import { PaletteProps } from '..';
 
-export const getClassNames = props => {
+export function getClassNames(): string {
   const palette = getTheme().palette as PaletteProps;
   return mergeStyleSets({
     containerStep: {
@@ -115,4 +115,4 @@ export const getClassNames = props => {
       }
     }
   });
-};
+}

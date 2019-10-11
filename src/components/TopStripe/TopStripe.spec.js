@@ -18,7 +18,7 @@ const meny = [
         key: 'no',
         label: 'Bokmål',
         onClick: () => {
-          console.log('Bokmål');
+          console.warn('Bokmål');
         },
         selected: true
       },
@@ -26,14 +26,14 @@ const meny = [
         key: 'en',
         label: 'English',
         onClick: () => {
-          console.log('English');
+          console.warn('English');
         }
       },
       {
         key: 'nn',
         label: 'Nynorsk',
         onClick: () => {
-          console.log('Nynorsk');
+          console.warn('Nynorsk');
         },
         selected: false
       }
@@ -62,7 +62,7 @@ const meny = [
         label: 'Favoritter',
         icon: 'Favorite',
         onClick: () => {
-          console.log('Favoritter');
+          console.warn('Favoritter');
         }
       }
     ]

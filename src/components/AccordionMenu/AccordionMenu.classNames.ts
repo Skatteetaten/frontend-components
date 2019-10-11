@@ -2,7 +2,7 @@ import { mergeStyleSets } from '@uifabric/merge-styles';
 import { getTheme } from '@uifabric/styling';
 import { PaletteProps } from '..';
 
-export const getClassNames = () => {
+export function getClassNames(): string {
   const palette = getTheme().palette as PaletteProps;
   return mergeStyleSets({
     accordionMenu: {
@@ -71,4 +71,4 @@ export const getClassNames = () => {
       display: 'block'
     }
   });
-};
+}

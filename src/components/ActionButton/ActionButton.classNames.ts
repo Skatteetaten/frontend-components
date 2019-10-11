@@ -4,7 +4,7 @@ import { FontSizes } from '..';
 import { getFocusStyle } from '..';
 import { PaletteProps } from '..';
 
-function getTypeColor(props) {
+function getTypeColor(props): string {
   const palette = getTheme().palette as PaletteProps;
   switch (props.color) {
     case 'blue':
@@ -22,7 +22,7 @@ function getTypeColor(props) {
   }
 }
 
-function getIconColor(props) {
+function getIconColor(props): string {
   const palette = getTheme().palette as PaletteProps;
   switch (props.color) {
     case 'black':
@@ -48,7 +48,7 @@ function getIconColor(props) {
   }
 }
 
-function getHoverColor(props) {
+function getHoverColor(props): object {
   const palette = getTheme().palette as PaletteProps;
   switch (props.color) {
     case 'black':
@@ -66,7 +66,7 @@ function getHoverColor(props) {
   }
 }
 
-export var getClassNames = function getClassNames(props) {
+export function getClassNames(props): string {
   const palette = getTheme().palette as PaletteProps;
   const inset = -4;
   const radius = 0;
@@ -98,4 +98,4 @@ export var getClassNames = function getClassNames(props) {
       }
     }
   ]);
-};
+}

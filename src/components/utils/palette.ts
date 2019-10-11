@@ -1,5 +1,5 @@
 import { IPalette } from '@uifabric/styling';
-interface skeColorProp {
+interface SkeColorProp {
   internal: string;
   internalLight: string;
   black: string;
@@ -28,7 +28,7 @@ interface skeColorProp {
   error: string;
 }
 export interface PaletteProps extends IPalette {
-  skeColor: skeColorProp;
+  skeColor: SkeColorProp;
   themePrimary: string;
   themeLighterAlt: string;
   themeLighter: string;

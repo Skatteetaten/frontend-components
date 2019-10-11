@@ -4,7 +4,7 @@ import { getFocusStyle } from '..';
 import { FontSizes, FontWeights } from '..';
 import { PaletteProps } from '..';
 
-function getTypeColor(props) {
+function getTypeColor(props): string {
   const palette = getTheme().palette as PaletteProps;
   const radius = '20px';
 
@@ -81,8 +81,8 @@ function getTypeColor(props) {
   }
 }
 
-function getTypeFocusColor(props) {
-  const { palette } = getTheme();
+function getTypeFocusColor(props): object {
+  const palette = getTheme().palette as PaletteProps;
   switch (props.type) {
     case 'warning':
       return {
@@ -172,8 +172,9 @@ function setInset(props) {
   }
 }
 
-export var getClassNames = function getClassNames(props) {
+export function getClassNames(props): string {
   const theme = getTheme();
+  const palette = theme.palette as PaletteProps;
   const inset = setInset(props);
   const radius = setFocusRadius(props);
 
@@ -199,9 +200,9 @@ export var getClassNames = function getClassNames(props) {
           ...getTypeActiveColor(props)
         },
         '&.ms-Button:disabled': {
-          background: theme.palette.skeColor.whiteGrey,
-          borderColor: theme.palette.skeColor.lightGrey,
-          color: theme.palette.skeColor.lightGrey,
+          background: palette.skeColor.whiteGrey,
+          borderColor: palette.skeColor.lightGrey,
+          color: palette.skeColor.lightGrey,
           ...getDisabledColor(props)
         },
         '&.ms-Button i': {
@@ -210,4 +211,4 @@ export var getClassNames = function getClassNames(props) {
       }
     }
   ]);
-};
+}
