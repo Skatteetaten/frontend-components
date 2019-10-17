@@ -4,10 +4,11 @@ import { getClassNames } from './ErrorMessage.classNames';
 
 interface ErrorMessageProps {
   children: JSX.Element | string;
-  showError: boolean;
+  showError?: boolean;
 }
 
 const ErrorMessage = (props: ErrorMessageProps) => {
+  // @ts-ignore TODO
   const errorClassNames = getClassNames(props);
   const showError = props.showError !== undefined ? props.showError : true;
   if (!showError) {

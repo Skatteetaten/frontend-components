@@ -2,7 +2,7 @@ import { mergeStyles, mergeStyleSets } from '@uifabric/merge-styles';
 import { getTheme } from '@uifabric/styling';
 import { PaletteProps } from '..';
 
-export const getClassNames = props => {
+export const getClassNames = () => {
   const palette = getTheme().palette as PaletteProps;
 
   return mergeStyleSets({

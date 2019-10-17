@@ -2,13 +2,14 @@ import { getFocusStyle } from '..';
 import { getTheme } from '@uifabric/styling';
 import { mergeStyles } from '@uifabric/merge-styles';
 import { PaletteProps } from '..';
-
+// @ts-ignore TODO
 export var getClassNames = function getClassNames(props) {
   const palette = getTheme().palette as PaletteProps;
   const inset = '-0.5rem';
   const radius = '3rem';
 
   return mergeStyles([
+    // @ts-ignore TODO
     getFocusStyle({ palette }, inset, 'relative', radius),
     {
       displayName: `ske-chip`,
@@ -20,6 +21,7 @@ export var getClassNames = function getClassNames(props) {
       padding: '3px 12px',
       fontSize: props.size,
       borderRadius: '5px',
+      // @ts-ignore TODO
       backgroundColor: palette.skeColor[props.type],
       selectors: {
         '& > div': {

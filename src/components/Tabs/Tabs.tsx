@@ -20,6 +20,7 @@ export default class Tabs extends React.PureComponent<IPivotProps, {}> {
         linkFormat={PivotLinkFormat.tabs}
         linkSize={PivotLinkSize.large}
         {...props}
+        // @ts-ignore TODO
         className={classnames(getClassNames(this.props), className)}
       >
         {React.Children.map(this.props.children, child => {

@@ -1,25 +1,25 @@
 import { mergeStyles } from '@uifabric/merge-styles';
 import { getTheme } from '@uifabric/styling';
 import { FontSizes, FontWeights } from '../utils/fonts';
+// @ts-ignore TODO
 import includes from 'lodash/includes';
 import { PaletteProps } from '..';
 
 const defaultMargin = '16px 0 4px 0';
-
+// @ts-ignore TODO
 function hideCSSProp(tag, cssProp) {
   if (typeof cssProp === 'undefined') return false;
   else if (typeof cssProp !== 'object') return false;
-  else if (includes(cssProp, tag)) return true;
-  else return false;
+  else return !!includes(cssProp, tag);
 }
-
+// @ts-ignore TODO
 const getTagStyle = (tag, { noMargin, noColor, noSize, noBorder }) => ({
   showMargin: !hideCSSProp(tag, noMargin),
   showColor: !hideCSSProp(tag, noColor),
   showSize: !hideCSSProp(tag, noSize),
   showBorder: !hideCSSProp(tag, noBorder)
 });
-
+// @ts-ignore TODO
 const getH1Style = (props, palette) => {
   const { showSize, showMargin, showColor } = getTagStyle('h1', props);
   return {
@@ -42,7 +42,7 @@ const getH1Style = (props, palette) => {
     }
   };
 };
-
+// @ts-ignore TODO
 const getH2Style = (props, palette) => {
   const { showColor, showMargin, showSize } = getTagStyle('h2', props);
   return {
@@ -65,7 +65,7 @@ const getH2Style = (props, palette) => {
     }
   };
 };
-
+// @ts-ignore TODO
 const getH3Style = (props, palette) => {
   const { showSize, showMargin, showColor } = getTagStyle('h3', props);
   return {
@@ -85,7 +85,7 @@ const getH3Style = (props, palette) => {
     }
   };
 };
-
+// @ts-ignore TODO
 const getH4Style = (props, palette) => {
   const { showSize, showMargin, showColor } = getTagStyle('h4', props);
   return {
@@ -105,7 +105,7 @@ const getH4Style = (props, palette) => {
     }
   };
 };
-
+// @ts-ignore TODO
 const getPStyle = (props, palette) => {
   const { showSize, showMargin, showColor } = getTagStyle('p', props);
   return {
@@ -126,7 +126,7 @@ const getPStyle = (props, palette) => {
     }
   };
 };
-
+// @ts-ignore TODO
 const getUlStyle = (props, palette) => {
   const { showSize, showMargin, showColor } = getTagStyle('ul', props);
   return {
@@ -147,7 +147,7 @@ const getUlStyle = (props, palette) => {
     }
   };
 };
-
+// @ts-ignore TODO
 const getOlStyle = (props, palette) => {
   const { showSize, showMargin, showColor } = getTagStyle('ol', props);
   return {
@@ -167,7 +167,7 @@ const getOlStyle = (props, palette) => {
     }
   };
 };
-
+// @ts-ignore TODO
 const getBlockqouteStyle = (props, palette) => {
   const { showSize, showMargin, showColor } = getTagStyle('blockquote', props);
   return {
@@ -190,7 +190,7 @@ const getBlockqouteStyle = (props, palette) => {
     }
   };
 };
-
+// @ts-ignore TODO
 const getAStyle = (props, palette) => {
   const { showColor, showBorder } = getTagStyle('a', props);
   return {
@@ -201,9 +201,10 @@ const getAStyle = (props, palette) => {
     transition: 'border-color .5s'
   };
 };
-
+// @ts-ignore TODO
 export var getClassNames = function getClassNames(props) {
   const palette = getTheme().palette as PaletteProps;
+  // @ts-ignore TODO
   return mergeStyles([
     {
       displayName: 'SkeTypography',

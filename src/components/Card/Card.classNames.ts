@@ -12,7 +12,7 @@ const fadeIn = keyframes({
     opacity: 1
   }
 });
-
+// @ts-ignore TODO
 function getDefaultBorder(props) {
   const palette = getTheme().palette as PaletteProps;
   if (props.color === Card.WHITE) {
@@ -23,7 +23,7 @@ function getDefaultBorder(props) {
     return {};
   }
 }
-
+// @ts-ignore TODO
 function getCardBorder(props) {
   const palette = getTheme().palette as PaletteProps;
   switch (props.border) {
@@ -51,7 +51,7 @@ function getCardBorder(props) {
       return {};
   }
 }
-
+// @ts-ignore TODO
 function getMargin(props) {
   switch (props.margin) {
     case 'large':
@@ -66,7 +66,7 @@ function getMargin(props) {
       return {};
   }
 }
-
+// @ts-ignore TODO
 export const getClassNames = (props, state) => {
   const theme = getTheme();
   const palette = theme.palette as PaletteProps;
@@ -77,6 +77,7 @@ export const getClassNames = (props, state) => {
     root: {
       displayName: 'SkeCard',
       color: theme.semanticColors.bodyText,
+      // @ts-ignore TODO
       backgroundColor: palette.skeColor[props.color],
       padding: '16px',
       marginBottom: props.marginbottom,

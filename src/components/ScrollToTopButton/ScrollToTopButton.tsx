@@ -46,7 +46,7 @@ export class ScrollToTopButton extends React.PureComponent<
 
   render() {
     const { id, label } = this.props;
-
+    // @ts-ignore TODO
     const styles = getClassNames(this.props);
 
     const visKlasse = this.state.skjult ? '' : styles.vis;

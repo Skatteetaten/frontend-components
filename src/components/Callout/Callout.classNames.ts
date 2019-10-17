@@ -2,7 +2,7 @@ import { getTheme } from '@uifabric/styling';
 import { mergeStyleSets } from '@uifabric/merge-styles';
 import { FontSizes } from '..';
 import { PaletteProps } from '..';
-
+// @ts-ignore TODO
 function getCalloutBorder(props) {
   const palette = getTheme().palette as PaletteProps;
   if (props.color === 'white') {
@@ -15,10 +15,10 @@ function getCalloutBorder(props) {
     };
   }
 }
-
+// @ts-ignore TODO
 export const getClassNames = props => {
   const theme = getTheme();
-
+  // @ts-ignore TODO
   return mergeStyleSets({
     main: {
       displayName: 'SkeCallout',
@@ -28,6 +28,7 @@ export const getClassNames = props => {
       selectors: {
         '.ms-Callout-main': {
           maxWidth: 600,
+          // @ts-ignore TODO
           backgroundColor: theme.palette.skeColor[props.color],
           boxShadow: 'none',
           border: 'none',
@@ -45,6 +46,7 @@ export const getClassNames = props => {
           }
         },
         '.ms-Callout-beak': {
+          // @ts-ignore TODO
           backgroundColor: theme.palette.skeColor[props.color]
         },
         '&& h3': {
@@ -61,6 +63,7 @@ export const getClassNames = props => {
       backgroundColor: 'transparent',
       border: 'none',
       position: 'absolute !important',
+      // @ts-ignore TODO
       color: `${theme.palette.skeColor.blackAlt} !important`,
       right: 0,
       top: 0,

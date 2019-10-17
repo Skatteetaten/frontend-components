@@ -2,11 +2,12 @@ import { mergeStyles } from '@uifabric/merge-styles';
 import { getTheme } from '@uifabric/styling';
 import { getFocusStyle } from '../utils/getFocusStyle';
 import { FontWeights, FontSizes } from '../utils/fonts';
-
+// @ts-ignore TODO
 export var getClassNames = function getClassNames(props) {
   const theme = getTheme();
   const inset = -4;
   const radius = '0';
+  // @ts-ignore TODO
   return mergeStyles([
     getFocusStyle(theme, inset, 'relative', radius),
     {

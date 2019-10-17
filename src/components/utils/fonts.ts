@@ -31,7 +31,7 @@ export enum IconFontSizes {
   xxlarge = '32px',
   mega = '40px'
 }
-
+// @ts-ignore TODO
 export const createFont = (size, weight, localeCode = 'no') => {
   return {
     fontFamily: "'Helvetica Neue', Helvetica , Arial, sans-serif",

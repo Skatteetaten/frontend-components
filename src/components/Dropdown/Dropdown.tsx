@@ -34,7 +34,7 @@ export default class Dropdown extends React.PureComponent<
   DropdownState
 > {
   static ItemType = DropdownMenuItemType;
-
+  // @ts-ignore TODO
   constructor(props) {
     super(props);
     this.state = {
@@ -44,7 +44,7 @@ export default class Dropdown extends React.PureComponent<
     this._onClick = this._onClick.bind(this);
     this._onDismiss = this._onDismiss.bind(this);
   }
-
+  // @ts-ignore TODO
   _onRenderLabel(props) {
     const { label, info, componentId } = props;
 
@@ -66,6 +66,7 @@ export default class Dropdown extends React.PureComponent<
         {info && (
           <span
             className={styles.labelIconArea}
+            // @ts-ignore TODO
             ref={menuButton => (this._iconButtonElement = menuButton)}
           >
             <IconButton
@@ -85,6 +86,7 @@ export default class Dropdown extends React.PureComponent<
             color={Callout.HELP}
             ariaLabel={'Hjelpetekst'}
             role="dialog"
+            // @ts-ignore TODO
             target={this._iconButtonElement}
             onClose={this._onDismiss}
           >
@@ -120,9 +122,7 @@ export default class Dropdown extends React.PureComponent<
     const labelProps = { label, info };
     return (
       <>
-        {onRenderLabel
-          ? onRenderLabel(labelProps)
-          : this._onRenderLabel(labelProps)}
+        {this._onRenderLabel(labelProps)}
         <FabricDropdown
           {...props}
           className={classnames(getClassNames(this.props), className)}

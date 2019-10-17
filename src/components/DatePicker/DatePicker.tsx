@@ -32,13 +32,14 @@ const DEFAULT_STRINGS = {
   isOutOfBoundsErrorMessage: 'Datoen er ikke innenfor gyldig periode',
   isRequiredErrorMessage: 'Dette feltet er påkrevd'
 };
-
+// @ts-ignore TODO
 const DEFAULTFORMATDATE = date => {
   if (date) {
     return moment(date).format(DatePicker.DefaultDateFormat);
   }
   return null;
 };
+// @ts-ignore TODO
 const DEFAULTPARSEDATEFROMSTRING = dateStr => {
   if (dateStr) {
     return moment(dateStr, DatePicker.DefaultDateFormat).toDate();
@@ -92,14 +93,14 @@ export default class DatePicker extends React.Component<
     showWeekNumbers: false,
     strings: DatePicker.DefaultStrings
   };
-
+  // @ts-ignore TODO
   constructor(props) {
     super(props);
     this.state = {
       isCalloutVisible: false
     };
   }
-
+  // @ts-ignore TODO
   _onRenderLabel = props => {
     const { label, info, componentId, calloutFloating } = props;
     const styles = getLabelClassNames(props);
@@ -118,6 +119,7 @@ export default class DatePicker extends React.Component<
         {info && (
           <span
             className={styles.labelIconArea}
+            // @ts-ignore TODO
             ref={infoButton => (this._iconButtonElement = infoButton)}
           >
             <IconButton
@@ -141,6 +143,7 @@ export default class DatePicker extends React.Component<
             }
             ariaLabel={'Help information'}
             isBeakVisible={true}
+            // @ts-ignore TODO
             target={this._iconButtonElement}
             onClose={this._onDismiss}
           >
@@ -166,17 +169,20 @@ export default class DatePicker extends React.Component<
   render() {
     const {
       disabled,
+      // @ts-ignore TODO
       calloutFloating,
       children,
       className,
       errorMessage = null,
       id,
+      // @ts-ignore TODO
       info,
       inputSize,
       invalidInputErrorMessage,
       isOutOfBoundsErrorMessage,
       isRequiredErrorMessage,
       label,
+      // @ts-ignore TODO
       onRenderLabel,
       ...props
     } = this.props;
@@ -191,6 +197,7 @@ export default class DatePicker extends React.Component<
         <FabricDatePicker
           {...props}
           className={css(classNames, className)}
+          // @ts-ignore TODO
           disabled={props.readonlyMode ? 'disabled' : disabled}
           strings={{
             ...DatePicker.DefaultStrings,

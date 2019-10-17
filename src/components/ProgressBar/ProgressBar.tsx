@@ -29,6 +29,7 @@ export default class ProgressBar extends React.PureComponent<
     return (
       <ProgressIndicator
         {...props}
+        // @ts-ignore TODO
         className={classnames(getClassNames(this.props), className)}
       />
     );

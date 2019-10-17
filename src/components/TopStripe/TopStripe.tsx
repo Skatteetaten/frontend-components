@@ -57,9 +57,9 @@ export class TopStripe extends React.PureComponent {
   state = {
     activeMenu: null
   };
-
+  // @ts-ignore TODO
   styles = getClassNames(this.props);
-
+  // @ts-ignore TODO
   selectMenu(id) {
     this.setState({ activeMenu: id });
   }
@@ -67,7 +67,7 @@ export class TopStripe extends React.PureComponent {
   closeMenu() {
     this.setState({ activeMenu: null });
   }
-
+  // @ts-ignore TODO
   buildDropdownInfo(key, info, show) {
     const classes = [
       this.styles.dropdownContainer,
@@ -85,16 +85,20 @@ export class TopStripe extends React.PureComponent {
           <ActionButton
             id={key + '-choice'}
             icon={'ChevronUp'}
+            // @ts-ignore TODO
             ariaLabel={this.props.closeMenuText}
           />
           <span className={this.styles.hiddenText}>
-            {this.props.closeMenuText}
+            {
+              // @ts-ignore TODO
+              this.props.closeMenuText
+            }
           </span>
         </div>
       </div>
     );
   }
-
+  // @ts-ignore TODO
   buildDropdownMenuLinkChoice(children, href) {
     return (
       <Link
@@ -106,7 +110,7 @@ export class TopStripe extends React.PureComponent {
       </Link>
     );
   }
-
+  // @ts-ignore TODO
   buildDropdownMenuChoice(choice, context) {
     const liClasses = [this.styles.dropdownMenuchoice];
     const buttonClasses = [this.styles.dropdownMenuchoiceButton];
@@ -131,6 +135,7 @@ export class TopStripe extends React.PureComponent {
     };
 
     if (choice.href) {
+      // @ts-ignore TODO
       clikkFunction = undefined;
     }
 
@@ -158,7 +163,7 @@ export class TopStripe extends React.PureComponent {
       </li>
     );
   }
-
+  // @ts-ignore TODO
   buildDropdownMenuCloseChoice(key, closeLabel, context) {
     return (
       <li className={this.styles.dropdownMenuchoiceClose} key={key + '-close'}>
@@ -172,7 +177,7 @@ export class TopStripe extends React.PureComponent {
       </li>
     );
   }
-
+  // @ts-ignore TODO
   buildDropdownMenu(key, menuitems, show, rightFixed) {
     const classes = [
       this.styles.dropdownContainer,
@@ -186,12 +191,13 @@ export class TopStripe extends React.PureComponent {
     if (rightFixed) {
       classes.push(this.styles.dropdownContainerRight);
     }
-
+    // @ts-ignore TODO
     let menuchoice = menuitems.map(valg =>
       this.buildDropdownMenuChoice(valg, this)
     );
 
     menuchoice.push(
+      // @ts-ignore TODO
       this.buildDropdownMenuCloseChoice(key, this.props.closeMenuText, this)
     );
 
@@ -201,7 +207,7 @@ export class TopStripe extends React.PureComponent {
       </div>
     );
   }
-
+  // @ts-ignore TODO
   buidNavMenuLinkChoice(children, href) {
     return (
       <Link href={href} className={this.styles.navMenuchoiceLink} tabIndex={-1}>
@@ -211,8 +217,9 @@ export class TopStripe extends React.PureComponent {
   }
 
   buildNavMenu() {
+    // @ts-ignore TODO
     const itemsLength = this.props.items.length;
-
+    // @ts-ignore TODO
     return this.props.items.map((valg, idx) => {
       const menuChoiceIsActive = this.state.activeMenu === valg.key;
       const classes = [this.styles.navMenuchoice];

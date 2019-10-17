@@ -7,7 +7,7 @@ export const getClassNames = () => {
   const palette = getTheme().palette as PaletteProps;
   const colorBackground = palette.skeColor.blackAlt;
   const colorForeground = palette.skeColor.white;
-
+  // @ts-ignore TODO
   return mergeStyleSets({
     overlay: {
       position: 'fixed',

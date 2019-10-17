@@ -1,7 +1,7 @@
 import { FontSizes, PaletteProps } from '..';
 import { getTheme } from '@uifabric/styling';
 import { mergeStyleSets } from '@uifabric/merge-styles';
-
+// @ts-ignore TODO
 export const getClassNames = function getClassNames(props) {
   const { compact } = props;
   const sidebarWidth = '362px';
@@ -37,6 +37,7 @@ export const getClassNames = function getClassNames(props) {
       }
     },
     headerLeftContainer: {
+      // @ts-ignore TODO
       width: `${sidebarWidth - 40}px`,
       background: palette.skeColor.internal,
       display: 'block',

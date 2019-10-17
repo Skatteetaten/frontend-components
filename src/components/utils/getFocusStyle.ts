@@ -1,4 +1,5 @@
 export function getFocusStyle(
+  // @ts-ignore TODO
   theme,
   inset = 0,
   position = 'relative',

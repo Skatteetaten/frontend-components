@@ -5,6 +5,8 @@ interface RowProps {
   rowSpacing?: string;
   rowInset?: boolean;
   centered?: boolean;
+  className?: string;
+  tag?: string;
 }
 
 class Row extends React.Component<RowProps, {}> {
@@ -26,6 +28,26 @@ class Row extends React.Component<RowProps, {}> {
 
 interface ColProps {
   noSpacing?: boolean;
+  className?: string;
+  tag?: string;
+  sm?: number;
+  md?: number;
+  lg?: number;
+  xl?: number;
+  xxl?: number;
+  xxxl?: number;
+  smPush?: number;
+  mdPush?: number;
+  lgPush?: number;
+  xlPush?: number;
+  xxlPush?: number;
+  xxxlPush?: number;
+  smPull?: number;
+  mdPull?: number;
+  lgPull?: number;
+  xlPull?: number;
+  xxlPull?: number;
+  xxxlPull?: number;
 }
 class Col extends React.Component<ColProps, {}> {
   static displayName = 'GridCol';
@@ -39,13 +61,16 @@ class Col extends React.Component<ColProps, {}> {
   }
 }
 
+interface GridProps {
+  className?: string;
+  tag?: string;
+}
 /**
  * @visibleName Grid (Rutenett)
  */
-export class Grid extends React.Component {
+export class Grid extends React.Component<GridProps, {}> {
   static Col = Col;
   static Row = Row;
-
   static SPACE_NONE = '0px';
   static SPACE_SMALL = '8px';
   static SPACE_MEDIUM = '16px';

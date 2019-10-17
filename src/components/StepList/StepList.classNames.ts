@@ -1,9 +1,10 @@
 import { mergeStyleSets } from '@uifabric/merge-styles';
 import { getTheme } from '@uifabric/styling';
-import { FontSizes, FontWeights } from '../utils/fonts';
+import { FontSizes, FontWeights } from '..';
 import { MdIcons } from '../utils/icons/';
 import { PaletteProps } from '..';
 
+// @ts-ignore TODO
 const getStepContentPadding = stepType => {
   if (stepType === 'next') {
     return '10px 0';
@@ -13,7 +14,7 @@ const getStepContentPadding = stepType => {
     return '0';
   }
 };
-
+// @ts-ignore TODO
 const getStepContentInner = (stepType, activeStep, palette) => {
   if (stepType !== 'result') {
     return {
@@ -39,11 +40,11 @@ const getStepContentInner = (stepType, activeStep, palette) => {
     };
   }
 };
-
+// @ts-ignore TODO
 export const getClassNames = props => {
   const palette = getTheme().palette as PaletteProps;
   const arrowIcon = "'" + MdIcons.icons.Back + "'";
-
+  // @ts-ignore TODO
   return mergeStyleSets({
     containerStep: {
       margin: '0 auto'

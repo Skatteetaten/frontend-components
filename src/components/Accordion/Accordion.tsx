@@ -13,20 +13,28 @@ interface AccordionProps {
 export default class Accordion extends React.PureComponent<AccordionProps, {}> {
   render() {
     const { processList, stepId, children } = this.props;
+    // @ts-ignore TODO
     const styles = getClassNames(this.props);
     return (
-      <div className={styles.accordion}>
-        <Grid>
-          {React.Children.map(children, (child, index) =>
-            React.cloneElement(child, {
-              stepNumber: index + 1,
-              id: stepId + index + 1,
-              totalSteps: children.length,
-              processList: processList
-            })
-          )}
-        </Grid>
-      </div>
+      <>
+        {/*
+          // @ts-ignore TODO */}
+        <div className={styles.accordion}>
+          <Grid>
+            {React.Children.map(children, (child, index) =>
+              // @ts-ignore TODO
+              React.cloneElement(child, {
+                stepNumber: index + 1,
+                // @ts-ignore TODO
+                id: stepId + index + 1,
+                // @ts-ignore TODO
+                totalSteps: children.length,
+                processList: processList
+              })
+            )}
+          </Grid>
+        </div>
+      </>
     );
   }
 }

@@ -30,6 +30,7 @@ class SkeBasis extends React.PureComponent<SkeBasisProps> {
     fonts: SkeBasis.FONTS,
     icons: [SkeBasis.ICONS.SkeIcons, SkeBasis.ICONS.MdIcons]
   };
+  // @ts-ignore TODO
   constructor(props) {
     super(props);
     const { palette, fonts } = props;
@@ -38,6 +39,7 @@ class SkeBasis extends React.PureComponent<SkeBasisProps> {
       loadTheme(theme);
     }
     if (props.icons) {
+      // @ts-ignore TODO
       props.icons.forEach(iconFont => registerIcons(iconFont));
     }
   }

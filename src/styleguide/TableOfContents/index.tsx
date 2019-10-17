@@ -1,9 +1,16 @@
 import React from 'react';
 import ComponentsList from '../ComponentsList';
+// @ts-ignore
 import filterSectionsByName from 'react-styleguidist/lib/client/utils/filterSectionsByName';
 import SearchField from '../../components/SearchField';
 
-function SokeBoks({ searchTerm, setSearchTerm, children }) {
+interface SokeBoksProps {
+  searchTerm: string;
+  setSearchTerm: (arg0: string) => void;
+  children: JSX.Element;
+}
+
+function SokeBoks({ searchTerm, setSearchTerm, children }: SokeBoksProps) {
   return (
     <>
       <SearchField
@@ -11,7 +18,7 @@ function SokeBoks({ searchTerm, setSearchTerm, children }) {
         ariaLabel="Søkefelt"
         value={searchTerm}
         className="searchField"
-        onChange={(e, value) => setSearchTerm(value)}
+        onChange={(e, value) => setSearchTerm(value || '')}
       />
       {children}
     </>
@@ -24,33 +31,19 @@ export class TableOfContents extends React.Component<TableOfContentsProps, {}> {
   state = {
     searchTerm: ''
   };
-
-  renderLevel(
-    sections,
-    useRouterLinks = false,
-    hashPath = [],
-    useHashId = false
-  ) {
-    const items = sections.map(section => {
-      const children = [
-        ...(section.sections || []),
-        ...(section.components || [])
-      ];
-      const sectionDepth = section.sectionDepth || 0;
-      const childHashPath =
-        sectionDepth === 0 && useHashId
-          ? hashPath
-          : [...hashPath, section.name];
+  renderLevel(sections: any) {
+    const _this2 = this;
+    const items = sections.map(function(section: object) {
+      const children = [].concat(
+        // @ts-ignore TODO
+        section.sections || [],
+        // @ts-ignore TODO
+        section.components || []
+      );
       return Object.assign({}, section, {
+        // @ts-ignore TODO
         heading: !!section.name && children.length > 0,
-        content:
-          children.length > 0 &&
-          this.renderLevel(
-            children,
-            useRouterLinks,
-            childHashPath,
-            sectionDepth === 0
-          )
+        content: children.length > 0 && _this2.renderLevel(children)
       });
     });
     return <ComponentsList items={items} searchTerm={this.state.searchTerm} />;
@@ -62,6 +55,7 @@ export class TableOfContents extends React.Component<TableOfContentsProps, {}> {
     // If there is only one section, we treat it as a root section
     // In this case the name of the section won't be rendered and it won't get left padding
     const firstLevel =
+      // @ts-ignore TODO
       sections.length === 1 ? sections[0].components : sections;
     const filtered = filterSectionsByName(firstLevel, searchTerm);
     return this.renderLevel(filtered);
@@ -69,6 +63,7 @@ export class TableOfContents extends React.Component<TableOfContentsProps, {}> {
 
   render() {
     const { searchTerm } = this.state;
+    // @ts-ignore TODO
     const setSearchTerm = searchTerm => this.setState({ searchTerm });
     return (
       <SokeBoks searchTerm={searchTerm} setSearchTerm={setSearchTerm}>

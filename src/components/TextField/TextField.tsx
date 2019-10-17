@@ -14,6 +14,7 @@ import { isUndefined } from 'util';
 import { Label } from 'office-ui-fabric-react/lib-commonjs/Label';
 
 class MaskedTextField extends FabricMaskedTextField {
+  // @ts-ignore TODO
   constructor(props) {
     super(props);
     this._skipComponentRefResolution = false;
@@ -62,7 +63,7 @@ export default class TextField extends React.PureComponent<
     boldText: true,
     calloutFloating: false
   };
-
+  // @ts-ignore TODO
   constructor(props) {
     super(props);
     this.state = {
@@ -90,6 +91,7 @@ export default class TextField extends React.PureComponent<
     let TextFieldType = FabricTextField;
     let value = props.value;
     if (mask) {
+      // @ts-ignore TODO
       TextFieldType = MaskedTextField;
       value = value ? value : '';
     }
@@ -103,6 +105,8 @@ export default class TextField extends React.PureComponent<
     const { errorMessage, ...filteredProps } = this.props;
     return (
       <div className={classnames(getClassNames(this.props), className)}>
+        {/*
+  // @ts-ignore  TODO */}
         <TextFieldType
           {...filteredProps}
           value={setValue()}
@@ -116,7 +120,9 @@ export default class TextField extends React.PureComponent<
           onRenderLabel={onRenderLabel || this._onRenderLabel}
           onBlur={this._onBlur}
           componentRef={inputField => {
+            // @ts-ignore TODO
             this.props.componentRef && this.props.componentRef(inputField);
+            // @ts-ignore TODO
             this._textFieldElement = inputField;
           }}
           inputSize={inputSize}
@@ -127,7 +133,7 @@ export default class TextField extends React.PureComponent<
       </div>
     );
   }
-
+  // @ts-ignore TODO
   _onRenderLabel = props => {
     const {
       label,
@@ -174,6 +180,7 @@ export default class TextField extends React.PureComponent<
         {help && (
           <span
             className={styles.labelIconArea}
+            // @ts-ignore TODO
             ref={helpButton => (this._iconButtonElement = helpButton)}
           >
             <IconButton
@@ -189,6 +196,7 @@ export default class TextField extends React.PureComponent<
         {warning && (
           <span
             className={styles.labelIconArea}
+            // @ts-ignore TODO
             ref={warningButton => (this._iconButtonElement = warningButton)}
           >
             <IconButton
@@ -215,6 +223,7 @@ export default class TextField extends React.PureComponent<
             ariaLabel={
               activeCallout === 'helpCallout' ? 'Hjelpetekst' : 'Varseltekst'
             }
+            // @ts-ignore TODO
             target={this._iconButtonElement}
             onClose={this._onDismiss}
           >
@@ -224,7 +233,7 @@ export default class TextField extends React.PureComponent<
       </div>
     );
   };
-
+  // @ts-ignore TODO
   _onClick = type => {
     let { isCalloutVisible, activeCallout } = this.state;
 
@@ -247,10 +256,11 @@ export default class TextField extends React.PureComponent<
   };
 
   _onEdit = () => {
+    // @ts-ignore TODO
     this._textFieldElement.focus();
     this.setState({ editMode: true });
   };
-
+  // @ts-ignore TODO
   _onBlur = e => {
     this.props.onBlur && this.props.onBlur(e);
     if (this.state.editMode === true) {
@@ -262,6 +272,7 @@ export default class TextField extends React.PureComponent<
 
   editMode() {
     if (this.props.editableWhenEmpty && !this.props.value) {
+      // @ts-ignore TODO
       return this.props.value === '' || this.props.length === 0;
     }
     return false;

@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 
+// @ts-ignore TODO
 const getValuesForComparison = sizeObj => ({
   gt: sizeObj.gt,
   lt: sizeObj.lt,
@@ -65,23 +66,39 @@ export const UseScreen = () => {
       }
 
       const s = size.sizes;
-
+      // @ts-ignore TODO
       newSizes.gt.sm = w >= s.sm;
+      // @ts-ignore TODO
       newSizes.gt.md = w >= s.md;
+      // @ts-ignore TODO
       newSizes.gt.lg = w >= s.lg;
+      // @ts-ignore TODO
       newSizes.gt.xl = w >= s.xl;
+      // @ts-ignore TODO
       newSizes.gt.xxl = w >= s.xxl;
+      // @ts-ignore TODO
       newSizes.lt.sm = false;
+      // @ts-ignore TODO
       newSizes.lt.md = w < s.sm;
+      // @ts-ignore TODO
       newSizes.lt.lg = w < s.md;
+      // @ts-ignore TODO
       newSizes.lt.xl = w < s.lg;
+      // @ts-ignore TODO
       newSizes.lt.xxl = w < s.xl;
+      // @ts-ignore TODO
       newSizes.lt.xxxl = w < s.xxl;
+      // @ts-ignore TODO
       newSizes.sm = !newSizes.gt.sm;
+      // @ts-ignore TODO
       newSizes.md = newSizes.gt.sm && newSizes.lt.lg;
+      // @ts-ignore TODO
       newSizes.lg = newSizes.gt.md && newSizes.lt.xl;
+      // @ts-ignore TODO
       newSizes.xl = newSizes.gt.lg && newSizes.lt.xxl;
+      // @ts-ignore TODO
       newSizes.xxl = newSizes.gt.xl && newSizes.lt.xxxl;
+      // @ts-ignore TODO
       newSizes.xxxl = newSizes.gt.xxl;
 
       const sizeHasChanged =
@@ -94,6 +111,7 @@ export const UseScreen = () => {
     function updateSizes() {
       const [sizeHasChanged, sizes] = getSizes();
       if (sizeHasChanged) {
+        // @ts-ignore TODO
         setSize(sizes);
       }
     }

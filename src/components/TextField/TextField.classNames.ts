@@ -4,47 +4,45 @@ import { FontSizes, FontWeights } from '../utils/fonts';
 import { MdIcons } from '../utils/icons/';
 import { isUndefined } from 'util';
 import { PaletteProps } from '..';
-
+// @ts-ignore TODO
 function getFieldTypeStyles(props) {
-  switch (props.inputSize) {
-    case 'large':
-      return {
-        '.ms-TextField-fieldGroup': {
-          borderWidth: 2,
-          height: 42
-        },
-        '& .ms-TextField-field': {
-          fontSize: FontSizes.large
-        },
-        '& .ms-Label': {
-          fontSize: FontSizes.mediumPlus
-        }
-      };
-    default:
-      return {
-        '& .ms-TextField-field': {
-          fontSize: FontSizes.medium
-        },
-        '& .ms-Label': {
-          fontSize: FontSizes.small
-        }
-      };
-  }
-}
-
-function getLabelSize(props) {
-  switch (props.labelSize) {
-    case 'small':
-      return {
-        fontSize: FontSizes.small
-      };
-    default:
-      return {
+  if (props.inputSize === 'large') {
+    return {
+      '.ms-TextField-fieldGroup': {
+        borderWidth: 2,
+        height: 42
+      },
+      '& .ms-TextField-field': {
+        fontSize: FontSizes.large
+      },
+      '& .ms-Label': {
+        fontSize: FontSizes.mediumPlus
+      }
+    };
+  } else {
+    return {
+      '& .ms-TextField-field': {
         fontSize: FontSizes.medium
-      };
+      },
+      '& .ms-Label': {
+        fontSize: FontSizes.small
+      }
+    };
   }
 }
-
+// @ts-ignore TODO
+function getLabelSize(props) {
+  if (props.labelSize === 'small') {
+    return {
+      fontSize: FontSizes.small
+    };
+  } else {
+    return {
+      fontSize: FontSizes.medium
+    };
+  }
+}
+// @ts-ignore TODO
 export const getClassNames = props => {
   const {
     boldText,
@@ -61,7 +59,7 @@ export const getClassNames = props => {
   const color = errorMessage
     ? palette.skeColor.error
     : palette.skeColor.blackAlt;
-
+  // @ts-ignore TODO
   return mergeStyles({
     displayName: 'SkeTextField',
     selectors: {

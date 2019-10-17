@@ -4,7 +4,7 @@ import { getClassNames, getLogoClassNames } from './FooterContent.classNames';
 import FooterDekor from './footerDekor';
 
 const logo = require('./assets/ske-logo.svg');
-
+// @ts-ignore TODO
 const Logo = props => {
   return (
     <div>
@@ -34,6 +34,7 @@ export default class FooterContent extends React.PureComponent<
 
   render() {
     const { children, className } = this.props;
+    // @ts-ignore TODO
     const styles = getClassNames(this.props);
     return (
       <div className={className}>

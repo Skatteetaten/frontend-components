@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import TableOfContents from '../TableOfContents';
+// @ts-ignore todo
 import Error from 'react-styleguidist/lib/client/rsg-components/Error';
 import StyleGuideRenderer from './StyleGuideRenderer';
 import SkeBasis from '../../components/SkeBasis/SkeBasis';
@@ -51,7 +52,7 @@ export class StyleGuide extends React.Component<
       displayMode: this.props.displayMode
     };
   }
-
+  // @ts-ignore todo
   componentDidCatch(error, info) {
     this.setState({
       error,
@@ -60,22 +61,19 @@ export class StyleGuide extends React.Component<
   }
 
   render() {
-    const { config, allSections, pagePerSection, sections } = this.props;
+    // @ts-ignore todo
+    const { config, allSections, sections } = this.props;
     if (this.state.error) {
       return <Error error={this.state.error} info={this.state.info} />;
     }
     return (
       <SkeBasis>
-        <Router history={history} hashType={'noslash'}>
+        <Router history={history}>
           <StyleGuideRenderer
+            // @ts-ignore todo
             title={config.title}
             homepageUrl={''}
-            toc={
-              <TableOfContents
-                sections={allSections}
-                useRouterLinks={pagePerSection}
-              />
-            }
+            toc={<TableOfContents sections={allSections} />}
           >
             <React.Suspense
               fallback={
@@ -83,7 +81,7 @@ export class StyleGuide extends React.Component<
               }
             >
               {sections.length ? (
-                <Sections sections={sections} depth={1} />
+                <Sections sections={sections} />
               ) : (
                 <>Not found </>
               )}

@@ -3,13 +3,14 @@ import { getTheme } from '@uifabric/styling';
 import { getFocusStyle } from '..';
 import { FontSizes, FontWeights } from '..';
 import { PaletteProps } from '..';
-
+// @ts-ignore TODO
 function getTypeColor(props): string {
   const palette = getTheme().palette as PaletteProps;
   const radius = '20px';
 
   switch (props.type) {
     case 'primary':
+      // @ts-ignore TODO
       return {
         borderRadius: '6px',
         borderColor: palette.skeColor.blue,
@@ -24,6 +25,7 @@ function getTypeColor(props): string {
         }
       };
     case 'primaryLarge':
+      // @ts-ignore TODO
       return {
         borderColor: palette.skeColor.blue,
         background: palette.skeColor.blue,
@@ -38,6 +40,7 @@ function getTypeColor(props): string {
         maxWidth: 'calc((75*550px)/100)'
       };
     case 'primaryRounded':
+      // @ts-ignore TODO
       return {
         borderRadius: radius,
         borderColor: palette.skeColor.blue,
@@ -45,6 +48,7 @@ function getTypeColor(props): string {
         color: palette.skeColor.blue
       };
     case 'primaryRoundedFilled':
+      // @ts-ignore TODO
       return {
         borderRadius: radius,
         borderColor: palette.skeColor.blue,
@@ -52,6 +56,7 @@ function getTypeColor(props): string {
         color: palette.skeColor.white
       };
     case 'warning':
+      // @ts-ignore TODO
       return {
         borderRadius: '6px',
         borderColor: palette.skeColor.lightPink,
@@ -65,6 +70,7 @@ function getTypeColor(props): string {
         }
       };
     case 'secondary':
+      // @ts-ignore TODO
       return {
         padding: 0,
         borderWidth: 0,
@@ -72,6 +78,7 @@ function getTypeColor(props): string {
         color: palette.skeColor.blue
       };
     default:
+      // @ts-ignore TODO
       return {
         borderRadius: radius,
         borderColor: palette.skeColor.blue,
@@ -80,7 +87,7 @@ function getTypeColor(props): string {
       };
   }
 }
-
+// @ts-ignore TODO
 function getTypeFocusColor(props): object {
   const palette = getTheme().palette as PaletteProps;
   switch (props.type) {
@@ -103,7 +110,7 @@ function getTypeFocusColor(props): object {
       };
   }
 }
-
+// @ts-ignore TODO
 function getTypeActiveColor(props) {
   const palette = getTheme().palette as PaletteProps;
   switch (props.type) {
@@ -126,7 +133,7 @@ function getTypeActiveColor(props) {
       };
   }
 }
-
+// @ts-ignore TODO
 function getDisabledColor(props) {
   switch (props.type) {
     case 'primary':
@@ -141,7 +148,7 @@ function getDisabledColor(props) {
       return;
   }
 }
-
+// @ts-ignore TODO
 function getLabelStyles(props) {
   switch (props.type) {
     case 'secondary':
@@ -152,7 +159,7 @@ function getLabelStyles(props) {
       return;
   }
 }
-
+// @ts-ignore TODO
 function setFocusRadius(props) {
   if (props.type === 'primary' || props.type === 'warning') {
     return '6px';
@@ -163,7 +170,7 @@ function setFocusRadius(props) {
     return '20px';
   }
 }
-
+// @ts-ignore TODO
 function setInset(props) {
   if (props.type === 'primary' || props.type === 'warning') {
     return -3;
@@ -171,13 +178,13 @@ function setInset(props) {
     return -4;
   }
 }
-
+// @ts-ignore TODO
 export function getClassNames(props): string {
   const theme = getTheme();
   const palette = theme.palette as PaletteProps;
   const inset = setInset(props);
   const radius = setFocusRadius(props);
-
+  // @ts-ignore TODO
   return mergeStyles([
     getFocusStyle(theme, inset, 'relative', radius),
     {
@@ -188,6 +195,7 @@ export function getClassNames(props): string {
           fontWeight: 'normal',
           padding: '15px',
           transition: 'background 0.3s',
+          // @ts-ignore TODO
           ...getTypeColor(props)
         },
         '&.ms-Button:hover, &.ms-Button:focus': {

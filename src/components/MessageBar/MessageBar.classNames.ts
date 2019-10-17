@@ -6,7 +6,7 @@ import { MessageBarType } from 'office-ui-fabric-react/lib-commonjs/MessageBar';
 import { PaletteProps } from '..';
 
 //import { transitionKeysAreEqual } from 'office-ui-fabric-react/lib/utilities/keytips/IKeytipTransitionKey';
-
+// @ts-ignore TODO
 function getBackgroundColor(props) {
   const palette = getTheme().palette as PaletteProps;
 
@@ -34,15 +34,16 @@ function getBackgroundColor(props) {
       };
   }
 }
-
+// @ts-ignore TODO
 export const getClassNames = props => {
   const palette = getTheme().palette as PaletteProps;
   const severe = props.type === MessageBarType.severeWarning;
+  // @ts-ignore TODO
   const fadeOut = Animation.fadeOutNormal;
   const { size } = props;
   //const largeSize = size === 'large';
   //const defaultSize = size === 'default';
-
+  // @ts-ignore TODO
   return mergeStyles([
     {
       //opacity: props.hideMessageBar ? 0 : 1,

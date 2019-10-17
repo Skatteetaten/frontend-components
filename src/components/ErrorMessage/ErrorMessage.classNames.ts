@@ -8,13 +8,14 @@ import { MdIcons } from '../utils/icons/';
 import { PaletteProps } from '..';
 
 const errorIcon = "'" + MdIcons.icons.Error + "'";
-export var getClassNames = function getClassNames(props) {
+export var getClassNames = function getClassNames() {
   const theme = getTheme();
   const { fonts } = theme;
   const palette = theme.palette as PaletteProps;
   const classNames = getGlobalClassNames({}, theme);
 
   return mergeStyles([
+    // @ts-ignore TODO
     classNames.error,
     AnimationClassNames.slideDownIn20,
     fonts.small,

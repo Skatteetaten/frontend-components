@@ -2,7 +2,7 @@ import { mergeStyles } from '@uifabric/merge-styles';
 import { getTheme } from '@uifabric/styling';
 import { FontSizes, FontWeights } from '..';
 import { PaletteProps } from '..';
-
+// @ts-ignore TODO
 function getBackgroundColor(props) {
   const palette = getTheme().palette as PaletteProps;
 
@@ -12,9 +12,9 @@ function getBackgroundColor(props) {
     return 'none';
   }
 }
-
+// @ts-ignore TODO
 function getBorderColor(props) {
-  const { palette } = getTheme();
+  const palette = getTheme().palette as PaletteProps;
 
   if (props.background === 'white') {
     return palette.skeColor.white;
@@ -22,9 +22,9 @@ function getBorderColor(props) {
     return palette.skeColor.lightGrey;
   }
 }
-
+// @ts-ignore TODO
 function getHoverColor(props) {
-  const { palette } = getTheme();
+  const palette = getTheme().palette as PaletteProps;
 
   if (props.background === 'white') {
     return palette.skeColor.neutralGrey;
@@ -32,7 +32,7 @@ function getHoverColor(props) {
     return palette.skeColor.lightGrey;
   }
 }
-
+// @ts-ignore TODO
 export const getClassNames = (props, col) => {
   const palette = getTheme().palette as PaletteProps;
   const inset = 0;
@@ -154,10 +154,11 @@ export const getClassNames = (props, col) => {
         }
       },
       '& .ms-DetailsRow.is-selected': {
-        //todo finnes ikke?
+        // @ts-ignore todo finnes ikke?
         background: palette.skeColor.neutralQuaternaryAlt
       },
       '& .ms-FocusZone .ms-DetailsRow.is-selected': {
+        // @ts-ignore todo finnes ikke?
         background: palette.skeColor.neutralQuaternaryAlt
       },
       // hack to overrride checkbox style used in Fabric detaillist

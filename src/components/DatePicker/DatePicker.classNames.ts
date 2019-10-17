@@ -6,6 +6,7 @@ import { isUndefined } from 'util';
 import { PaletteProps } from '..';
 
 const errorIcon = "'" + MdIcons.icons.Error + "'";
+// @ts-ignore TODO
 function getCalloutStyles(props) {
   const calloutFloating = props.calloutFloating;
 
@@ -47,7 +48,7 @@ function getCalloutStyles(props) {
     };
   }
 }
-
+// @ts-ignore TODO
 function getFieldTypeStyles(props) {
   switch (props.inputSize) {
     case 'large':
@@ -74,7 +75,7 @@ function getFieldTypeStyles(props) {
       };
   }
 }
-
+// @ts-ignore TODO
 function getTextFieldStyles(props) {
   switch (props.readonlyMode) {
     case true:
@@ -94,12 +95,12 @@ function getTextFieldStyles(props) {
       return {};
   }
 }
-
+// @ts-ignore TODO
 export const getClassNames = props => {
   const { errorMessage, borderless, underlined, readonlyMode } = props;
   const palette = getTheme().palette as PaletteProps;
   const color = errorMessage ? palette.skeColor.error : palette.skeColor.blue;
-
+  // @ts-ignore TODO
   return mergeStyles({
     displayName: 'SkeDatePicker',
     outline: 'transparent',
@@ -179,9 +180,10 @@ export const getClassNames = props => {
     }
   });
 };
-
+// @ts-ignore TODO
 export const getLabelClassNames = props => {
-  const { palette } = getTheme();
+  const palette = getTheme().palette as PaletteProps;
+  // @ts-ignore TODO
   return mergeStyleSets({
     labelArea: {
       display: 'flex',
@@ -218,7 +220,7 @@ export const getLabelClassNames = props => {
     }
   });
 };
-
+// @ts-ignore TODO
 export const getErrorClassNames = props => {
   const palette = getTheme().palette as PaletteProps;
 

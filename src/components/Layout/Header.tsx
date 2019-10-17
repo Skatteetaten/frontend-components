@@ -3,7 +3,7 @@ import Grid from '../Grid/Grid';
 import { withResponsiveMode } from 'office-ui-fabric-react/lib-commonjs/utilities/decorators/withResponsiveMode';
 import { mergeStyles } from '@uifabric/merge-styles';
 
-const getClassNames = props => {
+const getClassNames = () => {
   return mergeStyles({
     displayName: 'SkeHeader',
     marginBottom: '16px'
@@ -18,12 +18,16 @@ export class Header extends React.Component {
   };
   render() {
     const {
+      // @ts-ignore TODO
       tag,
+      // @ts-ignore TODO
       responsiveMode,
+      // @ts-ignore TODO
       className = '',
       children,
       ...props
     } = this.props;
+    // @ts-ignore TODO
     const classNames = getClassNames(this.props);
 
     return (

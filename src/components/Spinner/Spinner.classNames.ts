@@ -1,7 +1,7 @@
 import { mergeStyles } from '@uifabric/merge-styles';
 import { getTheme } from '@uifabric/styling';
 import { PaletteProps } from '..';
-
+// @ts-ignore TODO
 export var getClassNames = function getClassNames(props) {
   const palette = getTheme().palette as PaletteProps;
 

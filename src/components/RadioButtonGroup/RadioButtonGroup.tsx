@@ -51,6 +51,7 @@ const RadioButtonGroup = (props: RadioButtonGroupProps) => {
         {help && (
           <span
             className={styles.labelIconArea}
+            // @ts-ignore TODO
             ref={helpButton => set_iconButtonElement(helpButton)}
           >
             <IconButton
@@ -68,6 +69,7 @@ const RadioButtonGroup = (props: RadioButtonGroupProps) => {
         {warning && (
           <span
             className={styles.labelIconArea}
+            // @ts-ignore TODO
             ref={warningButton => set_iconButtonElement(warningButton)}
           >
             <IconButton
@@ -109,6 +111,8 @@ const RadioButtonGroup = (props: RadioButtonGroupProps) => {
       >
         {children}
       </FabricChoiceGroup>
+      {/* 
+      // @ts-ignore TODO */}
       <ErrorMessage showError={!!errorMessage}>{errorMessage}</ErrorMessage>
     </>
   );

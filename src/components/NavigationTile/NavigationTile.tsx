@@ -50,6 +50,8 @@ export default class NavigationTile extends React.PureComponent<
     const styles = getClassNames(this.props);
     return (
       <div>
+        {/*
+         // @ts-ignore TODO */}
         <nav
           {...props}
           className={classnames(
@@ -68,9 +70,12 @@ export default class NavigationTile extends React.PureComponent<
                 aria-describedby={id}
               >
                 {renderContent ? (
+                  // @ts-ignore TODO
                   renderContent(to, <NavigationContent {...rest} />)
                 ) : (
                   <a href={to}>
+                    {/*
+                    // @ts-ignore TODO */}
                     <NavigationContent {...rest} />
                   </a>
                 )}

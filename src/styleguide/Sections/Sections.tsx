@@ -1,11 +1,13 @@
 import React from 'react';
 import { Route, Switch } from 'react-router';
 import { normalize, schema } from 'normalizr';
-
+// @ts-ignore todo
 import RSGSection from 'react-styleguidist/lib/client/rsg-components/Section/Section';
+// @ts-ignore todo
 import RSGReactComponent from 'react-styleguidist/lib/client/rsg-components/ReactComponent/ReactComponent';
 
-/* Normalize recursive content */
+/* Normalize recursive content  */
+// @ts-ignore todo
 const slugId = { idAttribute: value => value.slug };
 const component = new schema.Entity('components', undefined, slugId);
 const section = new schema.Entity('sections', undefined, slugId);
@@ -19,7 +21,8 @@ const mySchema = new schema.Entity(
 );
 const usageMode = 'collapse';
 
-export class Sections extends React.Component {
+export class Sections extends React.Component<{ sections?: any[] }> {
+  // @ts-ignore todo
   renderSection = props => {
     const params = props.match && props.match.params;
     let slug = params && params.slug ? params.slug.toLowerCase() : '';

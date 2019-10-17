@@ -30,6 +30,7 @@ export default class AccordionMenuItem extends React.PureComponent<
   static defaultProps = {
     title: null
   };
+  // @ts-ignore TODO
   constructor(props) {
     super(props);
     this.state = {
@@ -48,19 +49,35 @@ export default class AccordionMenuItem extends React.PureComponent<
       }
       this._toggleVisibility();
     };
-
+    // @ts-ignore TODO
+    const {
+      // @ts-ignore TODO
+      menuItem,
+      // @ts-ignore TODO
+      menuItemIsOpen,
+      // @ts-ignore TODO
+      menuItemTitle,
+      // @ts-ignore TODO
+      iconWrapper,
+      // @ts-ignore TODO
+      toggleButton,
+      // @ts-ignore TODO
+      toggleButtonOpen,
+      // @ts-ignore TODO
+      content
+    } = styles;
+    // @ts-ignore TODO
+    const styleTitle = styles.title;
     return (
       <li className={className}>
         <header
           onClick={clickHandler}
           className={
-            isContentOpen
-              ? classnames(styles.menuItem, styles.menuItemIsOpen)
-              : styles.menuItem
+            isContentOpen ? classnames(menuItem, menuItemIsOpen) : menuItem
           }
         >
-          <div className={styles.menuItemTitle}>
-            <div className={styles.iconWrapper}>
+          <div className={menuItemTitle}>
+            <div className={iconWrapper}>
               <div>
                 <Icon
                   iconName={icon}
@@ -69,13 +86,13 @@ export default class AccordionMenuItem extends React.PureComponent<
                 />
               </div>
             </div>
-            <div className={styles.title}>{title}</div>
+            <div className={styleTitle}>{title}</div>
           </div>
           <div
             className={
               isContentOpen
-                ? classnames(styles.toggleButton, styles.toggleButtonOpen)
-                : styles.toggleButton
+                ? classnames(toggleButton, toggleButtonOpen)
+                : toggleButton
             }
           >
             <IconButton
@@ -85,9 +102,7 @@ export default class AccordionMenuItem extends React.PureComponent<
             />
           </div>
         </header>
-        {isContentOpen && (
-          <section className={styles.content}>{children}</section>
-        )}
+        {isContentOpen && <section className={content}>{children}</section>}
       </li>
     );
   }

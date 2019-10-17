@@ -12,14 +12,20 @@ const AccordionMenu: React.SFC<AccordionMenuProps> = ({
 }) => {
   const styles = getClassNames();
   return (
-    <ul className={classnames(styles.accordionMenu, className)}>
-      {React.Children.map(children, (child, index) =>
-        React.cloneElement(child, {
-          itemKey: index + 1,
-          totalSteps: children.length
-        })
-      )}
-    </ul>
+    <>
+      {/*
+          // @ts-ignore TODO */}
+      <ul className={classnames(styles.accordionMenu, className)}>
+        {React.Children.map(children, (child, index) =>
+          // @ts-ignore TODO
+          React.cloneElement(child, {
+            itemKey: index + 1,
+            // @ts-ignore TODO
+            totalSteps: children.length
+          })
+        )}
+      </ul>
+    </>
   );
 };
 

@@ -1,6 +1,6 @@
 import { mergeStyleSets } from '@uifabric/merge-styles';
-
-export const getClassNames = (props, state) => {
+// @ts-ignore TODO
+export const getClassNames = props => {
   const {
     noSpacing,
     rowSpacing,
@@ -38,7 +38,7 @@ export const getClassNames = (props, state) => {
     hiddenXxlDown,
     hiddenXxxl
   } = props;
-
+  // @ts-ignore TODO
   return mergeStyleSets({
     grid: {
       displayName: 'ske-Grid',

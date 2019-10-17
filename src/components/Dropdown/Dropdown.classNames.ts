@@ -4,7 +4,7 @@ import { FontSizes, FontWeights } from '../utils/fonts';
 import { MdIcons } from '../utils/icons/';
 import { Animation } from '../utils/getAnimationStyles';
 import { PaletteProps } from '..';
-
+// @ts-ignore TODO
 function getFieldTypeStyles(props) {
   if (props.inputSize === 'large') {
     return {
@@ -28,7 +28,7 @@ function getFieldTypeStyles(props) {
     };
   }
 }
-
+// @ts-ignore TODO
 export const getClassNames = props => {
   const { errorMessage } = props;
   const palette = getTheme().palette as PaletteProps;
@@ -82,7 +82,7 @@ export const getClassNames = props => {
     }
   });
 };
-
+// @ts-ignore TODO
 export const getErrorClassNames = props => {
   const { errorMessage } = props;
   const palette = getTheme().palette as PaletteProps;
@@ -115,7 +115,7 @@ export const getErrorClassNames = props => {
     }
   });
 };
-
+// @ts-ignore TODO
 export const getCalloutClassNames = props => {
   const palette = getTheme().palette as PaletteProps;
   const inset = 0;
@@ -142,7 +142,7 @@ export const getCalloutClassNames = props => {
     }
   });
 };
-
+// @ts-ignore TODO
 export const getLabelClassNames = props => {
   const palette = getTheme().palette as PaletteProps;
   return mergeStyleSets({

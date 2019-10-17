@@ -94,13 +94,13 @@ export default class Card extends React.PureComponent<CardProps, CardState> {
     margin: 'medium',
     circleOnIcon: true
   };
-
+  // @ts-ignore TODO
   constructor(props) {
     super(props);
     const { isExpanded } = props;
     this.state = { isExpandedState: isExpanded };
   }
-
+  // @ts-ignore TODO
   componentDidUpdate(prevProps, prevState) {
     if (this.state.isExpandedState !== prevState.isExpandedState) {
       this.props.onChange && this.props.onChange(this.state.isExpandedState);
@@ -114,6 +114,7 @@ export default class Card extends React.PureComponent<CardProps, CardState> {
       title,
       subtitle,
       expand,
+      // @ts-ignore TODO
       actions,
       isExpanded,
       className,
@@ -123,6 +124,8 @@ export default class Card extends React.PureComponent<CardProps, CardState> {
     } = this.props;
 
     const styles = getClassNames(this.props, this.state);
+    // @ts-ignore TODO
+    const { styleActions } = styles;
     return (
       <div id={id} className={classnames(styles.root, className)}>
         {title || subtitle || expand ? (
@@ -147,7 +150,9 @@ export default class Card extends React.PureComponent<CardProps, CardState> {
                   {title}
                 </div>
               )}
-              {actions && <div className={styles.actions}>{actions}</div>}
+              {/*
+               // @ts-ignore TODO */}
+              {actions && <div className={styleActions}>{actions}</div>}
               {<div className={styles.subtitle}>{subtitle}</div>}
             </div>
             {expand && (

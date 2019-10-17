@@ -35,14 +35,14 @@ export class DetailsList extends React.PureComponent<DetailsListProps, {}> {
     layoutMode: DetailsList.DetailsListLayoutMode.justified,
     selectionMode: DetailsList.SelectionMode.none
   };
-
+  // @ts-ignore TODO
   sortColumn = sortItems => (ev, column) => {
     const { items, columns } = this.props;
-
+    // @ts-ignore TODO
     const currentColumn = columns.filter(currCol => {
       return currCol.key === column.key;
     })[0];
-
+    // @ts-ignore TODO
     const newColumns = columns.map(newCol => {
       if (newCol === currentColumn) {
         return {
@@ -73,12 +73,14 @@ export class DetailsList extends React.PureComponent<DetailsListProps, {}> {
 
   render() {
     const { background, columns, className, ...props } = this.props;
-
+    // @ts-ignore TODO
     const enhancedColumns = columns.map(col =>
+      // @ts-ignore TODO
       !col.sortItems
         ? col
         : {
             ...col,
+            // @ts-ignore TODO
             onColumnClick: this.sortColumn(col.sortItems)
           }
     );
@@ -86,6 +88,7 @@ export class DetailsList extends React.PureComponent<DetailsListProps, {}> {
     return (
       <FabricDetailsList
         {...props}
+        // @ts-ignore TODO
         className={classnames(getClassNames(this.props), className)}
         setKey="set"
         columns={enhancedColumns}

@@ -2,7 +2,8 @@ import { mergeStyleSets } from '@uifabric/merge-styles';
 import { getTheme } from '@uifabric/styling';
 import { FontSizes } from '../utils/fonts';
 import { isUndefined } from 'util';
-
+import { PaletteProps } from '..';
+// @ts-ignore TODO
 function getCalloutStyles(props) {
   const inputSizeLarge = props.inputSize === 'large';
   const calloutFloating = props.calloutFloating;
@@ -40,10 +41,11 @@ function getCalloutStyles(props) {
     };
   }
 }
-
+// @ts-ignore TODO
 export const getClassNames = props => {
-  const { palette } = getTheme();
+  const palette = getTheme().palette as PaletteProps;
 
+  // @ts-ignore TODO
   return mergeStyleSets({
     labelArea: {
       position: 'relative',

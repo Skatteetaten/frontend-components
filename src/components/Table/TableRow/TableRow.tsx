@@ -6,6 +6,7 @@ import classnames from 'classnames';
  * @visibleName TableRow (Tabellrad)
  */
 export default class TableRow extends React.PureComponent {
+  // @ts-ignore TODO
   constructor(props) {
     super(props);
     this.state = {
@@ -14,14 +15,22 @@ export default class TableRow extends React.PureComponent {
   }
 
   render() {
+    // @ts-ignore TODO
     const { isEditableRowOpen } = this.state;
     const {
+      // @ts-ignore TODO
       data,
+      // @ts-ignore TODO
       rowIndex,
+      // @ts-ignore TODO
       editableRows,
+      // @ts-ignore TODO
       editableContent,
+      // @ts-ignore TODO
       columns,
+      // @ts-ignore TODO
       editModeActive,
+      // @ts-ignore TODO
       tableHasScroll
     } = this.props;
     const numberOfItems = Object.keys(data).length + 1;
@@ -68,12 +77,14 @@ export default class TableRow extends React.PureComponent {
       </>
     );
   }
-
+  // @ts-ignore TODO
   _renderRow = (data, columns, rowKey) => {
+    // @ts-ignore TODO
     return columns.map((column, cellIndex) => {
       return (
         <td
           className={classnames(
+            // @ts-ignore TODO
             !this.props.isEditableRowOpen ? 'is-closed' : '',
             column.alignment
           )}
@@ -87,8 +98,10 @@ export default class TableRow extends React.PureComponent {
 
   _editRow = () => {
     this.setState({
+      // @ts-ignore TODO
       isEditableRowOpen: !this.state.isEditableRowOpen
     });
+    // @ts-ignore TODO
     this.props.setEditMode();
   };
 
@@ -96,6 +109,7 @@ export default class TableRow extends React.PureComponent {
     this.setState({
       isEditableRowOpen: false
     });
+    // @ts-ignore TODO
     this.props.setEditMode();
   };
 }

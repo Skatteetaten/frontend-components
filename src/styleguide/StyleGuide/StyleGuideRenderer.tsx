@@ -10,8 +10,11 @@ import Typography from '../../components/Typography';
 import './style.css';
 
 const ScrollToTop = withRouter(
+  // @ts-ignore
   class ScrollToTop extends React.Component {
+    // @ts-ignore TODO
     componentDidUpdate(prevProps) {
+      // @ts-ignore TODO
       if (this.props.location !== prevProps.location) {
         window.scrollTo(0, 0);
       }
@@ -23,9 +26,12 @@ const ScrollToTop = withRouter(
   }
 );
 
-export class StyleGuideRenderer extends React.Component {
+export class StyleGuideRenderer extends React.Component<
+  { title?: string; homepageUrl?: string; toc?: object },
+  { isHidden: boolean; version: string }
+> {
   static displayName = 'StyleGuideRenderer';
-
+  // @ts-ignore TODO
   constructor(props) {
     super(props);
     this.state = {
@@ -36,17 +42,20 @@ export class StyleGuideRenderer extends React.Component {
 
   _toggleMenuVisibility() {
     this.setState({
+      // @ts-ignore TODO
       isHidden: !this.state.isHidden
     });
   }
 
   componentDidMount() {
+    // @ts-ignore TODO
     this.setState({ version: process.env.REACT_APP_BUILD_VERSION });
   }
 
   render() {
+    // @ts-ignore TODO
     const { title, children, toc } = this.props;
-    console.log(this.props);
+    const { version } = this.state;
     const styles = getClassNames(this.props, this.state);
     return (
       <ScrollToTop>
@@ -121,7 +130,7 @@ export class StyleGuideRenderer extends React.Component {
           </div>
           <div className="footer">
             <FooterContent>
-              <p>Versjon {this.state.version}</p>
+              <p>Versjon {version}</p>
             </FooterContent>
           </div>
         </div>

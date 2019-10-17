@@ -6,7 +6,7 @@ import Grid from '../../Grid/Grid';
 import Icon from '../../Icon';
 import { getClassNames } from '../StepList.classNames';
 import { UseScreen } from '../../utils/ScreenPlugin';
-
+// @ts-ignore //TODO
 const NumberIcon = props => {
   return (
     <div className={props.styles.numberWrapper}>
@@ -22,7 +22,7 @@ const NumberIcon = props => {
     </div>
   );
 };
-
+// @ts-ignore //TODO
 const Step = props => {
   const {
     stepTitle,

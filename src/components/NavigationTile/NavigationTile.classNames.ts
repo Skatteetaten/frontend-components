@@ -1,7 +1,7 @@
 import { mergeStyleSets } from '@uifabric/merge-styles';
 import { getTheme } from '@uifabric/styling';
 import { PaletteProps } from '..';
-
+// @ts-ignore TODO
 function getType(props) {
   switch (props.type) {
     case 'left':
@@ -12,7 +12,7 @@ function getType(props) {
       return;
   }
 }
-
+// @ts-ignore TODO
 function getIcon(props) {
   switch (props.alignIcon) {
     case 'right':
@@ -30,7 +30,7 @@ function getIcon(props) {
       };
   }
 }
-
+// @ts-ignore TODO
 function getTitle(props) {
   const palette = getTheme().palette as PaletteProps;
   if (props.alignTitle === 'left') {
@@ -44,7 +44,7 @@ function getTitle(props) {
     return;
   }
 }
-
+// @ts-ignore TODO
 function getDescription(props) {
   const palette = getTheme().palette as PaletteProps;
   if (props.alignDescription === 'left') {
@@ -58,9 +58,10 @@ function getDescription(props) {
     return;
   }
 }
-
+// @ts-ignore TODO
 export const getClassNames = props => {
   const palette = getTheme().palette as PaletteProps;
+  // @ts-ignore TODO
   return mergeStyleSets({
     content: {
       selectors: {

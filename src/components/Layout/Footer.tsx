@@ -2,7 +2,7 @@ import React from 'react';
 import Grid from '../Grid/Grid';
 import { mergeStyles } from '@uifabric/merge-styles';
 
-const getClassNames = props => {
+const getClassNames = () => {
   return mergeStyles({
     displayName: 'SkeFooter',
     paddingLeft: '0',
@@ -17,7 +17,9 @@ export class Footer extends React.Component {
     tag: 'footer'
   };
   render() {
+    // @ts-ignore TODO
     const { tag, className = '', children, ...props } = this.props;
+    // @ts-ignore TODO
     const classNames = getClassNames(this.props);
     return (
       <Grid.Row>

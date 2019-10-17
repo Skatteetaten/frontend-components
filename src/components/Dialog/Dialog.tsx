@@ -33,7 +33,7 @@ export default class Dialog extends React.PureComponent<
     layoutStyle: 'normal',
     type: Dialog.Type.normal
   };
-
+  // @ts-ignore TODO
   constructor(props) {
     super(props);
     this.state = {
@@ -60,6 +60,8 @@ export default class Dialog extends React.PureComponent<
 
     return (
       <div>
+        {/*
+        // @ts-ignore */}
         <FabricDialog
           {...props}
           role="dialog"
@@ -77,6 +79,7 @@ export default class Dialog extends React.PureComponent<
           {helpText && (
             <span
               className={styles.helpButton}
+              // @ts-ignore TODO
               ref={menuButton => (this._iconButtonElement = menuButton)}
             >
               <IconButton
@@ -94,6 +97,7 @@ export default class Dialog extends React.PureComponent<
               directionalHint={Callout.POS_TOP_LEFT}
               color={Callout.HELP}
               ariaLabel={'Hjelpetekst'}
+              // @ts-ignore TODO
               target={this._iconButtonElement}
               onClose={this._onDismiss}
             >

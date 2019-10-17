@@ -3,7 +3,7 @@ import { getTheme } from '@uifabric/styling';
 import { FontSizes, FontWeights } from '../utils/fonts';
 import { isUndefined } from 'util';
 import { PaletteProps } from '..';
-
+// @ts-ignore TODO
 export const getClassNames = props => {
   const palette = getTheme().palette as PaletteProps;
   const inset = -6;

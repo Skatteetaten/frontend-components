@@ -1,5 +1,5 @@
 import React from 'react';
 
-const IsolateButton = props => <div />;
+const IsolateButton = () => <div />;
 
 export default IsolateButton;

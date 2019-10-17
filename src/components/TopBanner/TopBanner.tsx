@@ -5,7 +5,7 @@ import Image from '../Image/Image';
 import logo from './assets/ske-logo-intern.svg';
 import { getClassNames as getExternalClassNames } from './External.classNames';
 import { getClassNames as getInternalClassNames } from './Internal.classNames';
-
+// @ts-ignore TODO
 const InternalHeader = props => {
   const styles = getInternalClassNames(props);
   return (
@@ -39,7 +39,7 @@ const InternalHeader = props => {
     </header>
   );
 };
-
+// @ts-ignore TODO
 const ExternalHeaderContent = ({ styles, ...props }) => {
   if (props.children) {
     return props.children;
@@ -64,9 +64,11 @@ const ExternalHeaderContent = ({ styles, ...props }) => {
     </>
   );
 };
-
+// @ts-ignore TODO
 const ExternalHeader = props => {
   const styles = getExternalClassNames(props);
+  // @ts-ignore TODO
+  const { header, headerMain, logoWrapper, contentWrapper } = styles;
   const logo = require('./assets/ske-logo.svg');
   const compactHeight = props.compact ? 55 : 68;
 
@@ -75,12 +77,9 @@ const ExternalHeader = props => {
   );
 
   return (
-    <header
-      className={classnames(styles.header, props.className)}
-      id={props.id}
-    >
-      <div className={styles.headerMain}>
-        <div className={styles.logoWrapper}>
+    <header className={classnames(header, props.className)} id={props.id}>
+      <div className={headerMain}>
+        <div className={logoWrapper}>
           <div>
             {props.logoLink ? (
               <a href="https://www.skatteetaten.no">{imageElement}</a>
@@ -89,7 +88,7 @@ const ExternalHeader = props => {
             )}
           </div>
         </div>
-        <div className={styles.contentWrapper}>
+        <div className={contentWrapper}>
           <ExternalHeaderContent styles={styles} {...props} />
         </div>
       </div>

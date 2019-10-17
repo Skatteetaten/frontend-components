@@ -5,14 +5,14 @@ import { PaletteProps } from '..';
 
 const dekor = require('./assets/footerDekor.svg');
 const logo = require('./assets/ske-logo.svg');
-
+// @ts-ignore TODO
 function setMinMaxWidth(props) {
   return {
     minWidth: props.minWidth,
     maxWidth: props.maxWidth
   };
 }
-
+// @ts-ignore TODO
 function getMainBackgroundStyle(props) {
   const palette = getTheme().palette as PaletteProps;
 
@@ -30,7 +30,7 @@ function getMainBackgroundStyle(props) {
     return {};
   }
 }
-
+// @ts-ignore TODO
 function getHeaderBackgroundStyle(props) {
   if (props.layoutStyle === 'important') {
     return {
@@ -44,7 +44,7 @@ function getHeaderBackgroundStyle(props) {
     return {};
   }
 }
-
+// @ts-ignore TODO
 export var getClassNames = function getClassNames(props) {
   const palette = getTheme().palette as PaletteProps;
 

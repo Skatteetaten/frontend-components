@@ -3,7 +3,7 @@ import { getTheme } from '@uifabric/styling';
 import { FontSizes } from '../utils/fonts';
 import { getFocusStyle } from '../utils/getFocusStyle';
 import { PaletteProps } from '..';
-
+// @ts-ignore TODO
 function getTypeColor(props) {
   switch (props.type) {
     case 'small':
@@ -30,7 +30,7 @@ function getTypeColor(props) {
       return {};
   }
 }
-
+// @ts-ignore TODO
 function getCircleStyles(props) {
   const palette = getTheme().palette as PaletteProps;
 
@@ -46,7 +46,7 @@ function getCircleStyles(props) {
     };
   }
 }
-
+// @ts-ignore TODO
 function getCircleHoverStyles(props) {
   const palette = getTheme().palette as PaletteProps;
 
@@ -65,7 +65,7 @@ function getCircleHoverStyles(props) {
     };
   }
 }
-
+// @ts-ignore TODO
 function getCircleFocusrStyles(props) {
   const palette = getTheme().palette as PaletteProps;
 
@@ -81,7 +81,7 @@ function getCircleFocusrStyles(props) {
     };
   }
 }
-
+// @ts-ignore TODO
 function getIconSize(props) {
   switch (props.type) {
     case 'small':
@@ -106,13 +106,14 @@ function getIconSize(props) {
       };
   }
 }
-
+// @ts-ignore TODO
 export var getClassNames = function getClassNames(props) {
   const palette = getTheme().palette as PaletteProps;
   const inset = -4;
   const radius = 0;
 
   return mergeStyles([
+    // @ts-ignore TODO
     getFocusStyle({ palette }, inset, 'relative', radius),
     {
       displayName: `ske-icon${props.type}-button`,
@@ -145,6 +146,7 @@ export var getClassNames = function getClassNames(props) {
         },
         '&.ms-Button--icon:disabled': {
           ...getCircleStyles(props),
+          // @ts-ignore TODO
           color: palette.skeLysGraa,
           borderColor: palette.skeColor.lightGrey
         },

@@ -4,11 +4,11 @@ import { FontSizes } from '..';
 import { PaletteProps } from '..';
 
 const separator = require('./assets/separator.png');
-
+// @ts-ignore TODO
 export function getClassNames(props): string {
   const { compact } = props;
   const palette = getTheme().palette as PaletteProps;
-
+  // @ts-ignore TODO
   return mergeStyleSets({
     header: {
       selectors: {
