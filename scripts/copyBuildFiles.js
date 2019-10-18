@@ -1,4 +1,4 @@
-var { resolve, basename } = require('path');
+const { resolve, basename } = require('path');
 var {
   existsSync,
   readFileSync,

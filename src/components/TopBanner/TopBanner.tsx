@@ -2,6 +2,7 @@ import * as React from 'react';
 import ActionButton from '../ActionButton/ActionButton';
 import classnames from 'classnames';
 import Image from '../Image/Image';
+// @ts-ignore TODO
 import logo from './assets/ske-logo-intern.svg';
 import { getClassNames as getExternalClassNames } from './External.classNames';
 import { getClassNames as getInternalClassNames } from './Internal.classNames';
