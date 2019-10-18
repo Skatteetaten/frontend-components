@@ -64,7 +64,7 @@ exports[`Accordion komponent matcher snapshot 1`] = `
                             <div
                               className="content-39"
                               role="region"
-                              tabIndex="0"
+                              tabIndex={0}
                             >
                               <h1 />
                               <p>

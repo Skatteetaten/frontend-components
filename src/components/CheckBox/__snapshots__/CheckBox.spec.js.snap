@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Checkbox komponent matcher snapshot 1`] = `
+<div
+  className="ms-Checkbox reversed is-enabled SkeAvkrysningsboks-37"
+>
+  <input
+    aria-checked="false"
+    className="input-38"
+    id="checkbox-0"
+    onBlur={[Function]}
+    onChange={[Function]}
+    onFocus={[Function]}
+    type="checkbox"
+  />
+  <label
+    className="ms-Checkbox-label label-39"
+    htmlFor="checkbox-0"
+  >
+    <div
+      className="ms-Checkbox-checkbox checkbox-40"
+    >
+      <i
+        aria-hidden={true}
+        className="ms-Checkbox-checkmark checkmark-44"
+        data-icon-name="CheckMark"
+      >
+        
+      </i>
+    </div>
+  </label>
+</div>
+`;
