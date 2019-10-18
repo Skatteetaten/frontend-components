@@ -6,6 +6,7 @@ exports[`Checkbox komponent matcher snapshot 1`] = `
 >
   <input
     aria-checked="false"
+    checked={false}
     className="input-38"
     id="checkbox-0"
     onBlur={[Function]}
