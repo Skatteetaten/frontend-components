@@ -1,5 +1,5 @@
 import { IPalette } from '@uifabric/styling';
-interface SkeColorProp {
+export interface SkeColorProp {
   internal: string;
   internalLight: string;
   black: string;
@@ -59,7 +59,7 @@ export interface PaletteProps extends IPalette {
   disabledText: string;
 }
 
-enum skeColor {
+export enum skeColor {
   // LAGET MED GENEREATOR: https://developer.microsoft.com/en-us/fabric#/styles/themegenerator
   internal = '#6F2C3F',
   internalLight = '#ECE6E8',
@@ -89,7 +89,7 @@ enum skeColor {
   error = '#b25c62'
 }
 
-enum palette {
+export enum skePalette {
   themePrimary = '#1362ae',
   themeLighterAlt = '#ebf4fd',
   themeLighter = '#cce3f9',
@@ -121,7 +121,7 @@ enum palette {
 }
 
 export default {
-  ...palette,
+  ...skePalette,
   // Egendefinerte farger fra Skatteetatens designmal
   skeColor: skeColor
 
