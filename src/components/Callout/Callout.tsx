@@ -15,7 +15,7 @@ enum CalloutColor {
   WARNING = 'beige',
   BASIC = 'white'
 }
-interface CalloutProps extends ICalloutProps {
+export interface CalloutProps extends ICalloutProps {
   /** Avgjør om callout vinduet skal lukkes automatisk når området utenfor vinduet klikkes */
   autoDismiss?: boolean;
   /** Finnes fire bakgrunnfarger: grønn, rosa, beige eller hvit */
@@ -70,7 +70,6 @@ export default class Callout extends React.PureComponent<
             aria-label="Lukk"
             icon="Cancel"
             className={styles.closeButton}
-            type="default"
             onClick={props.onClose}
           />
         </FabricCallout>

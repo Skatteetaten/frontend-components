@@ -2,8 +2,8 @@ import { getTheme } from '@uifabric/styling';
 import { mergeStyleSets } from '@uifabric/merge-styles';
 import { FontSizes } from '..';
 import { PaletteProps } from '..';
-// @ts-ignore TODO
-function getCalloutBorder(props) {
+import { CalloutProps } from './Callout';
+function getCalloutBorder(props: CalloutProps) {
   const palette = getTheme().palette as PaletteProps;
   if (props.color === 'white') {
     return {
@@ -15,8 +15,7 @@ function getCalloutBorder(props) {
     };
   }
 }
-// @ts-ignore TODO
-export const getClassNames = props => {
+export const getClassNames = (props: CalloutProps) => {
   const theme = getTheme();
   // @ts-ignore TODO
   return mergeStyleSets({
