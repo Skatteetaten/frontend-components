@@ -1,4 +1,4 @@
-import Card from './Card';
+import Card, { CardProps, CardState } from './Card';
 import { FontSizes, FontWeights } from '..';
 import { getTheme } from '@uifabric/styling';
 import { keyframes, mergeStyleSets } from '@uifabric/merge-styles';
@@ -12,8 +12,8 @@ const fadeIn = keyframes({
     opacity: 1
   }
 });
-// @ts-ignore TODO
-function getDefaultBorder(props) {
+
+function getDefaultBorder(props: CardProps) {
   const palette = getTheme().palette as PaletteProps;
   if (props.color === Card.WHITE) {
     return {
@@ -23,8 +23,8 @@ function getDefaultBorder(props) {
     return {};
   }
 }
-// @ts-ignore TODO
-function getCardBorder(props) {
+
+function getCardBorder(props: CardProps) {
   const palette = getTheme().palette as PaletteProps;
   switch (props.border) {
     case Card.YELLOW_BORDER:
@@ -51,8 +51,8 @@ function getCardBorder(props) {
       return {};
   }
 }
-// @ts-ignore TODO
-function getMargin(props) {
+
+function getMargin(props: CardProps) {
   switch (props.margin) {
     case 'large':
       return {
@@ -66,13 +66,12 @@ function getMargin(props) {
       return {};
   }
 }
-// @ts-ignore TODO
-export const getClassNames = (props, state) => {
+
+export const getClassNames = (props: CardProps, state: CardState) => {
   const theme = getTheme();
   const palette = theme.palette as PaletteProps;
   const { isExpandedState } = state;
   const { titlesize } = props;
-
   return mergeStyleSets({
     root: {
       displayName: 'SkeCard',

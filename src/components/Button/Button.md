@@ -6,7 +6,7 @@ Tydelig knapp:
 import Button from '@skatteetaten/frontend-components/Button';
 
 <div className="ExampleSpacing8">
-  <Button type="primary">Godkjenn</Button>{' '}
+  <Button buttonStyle="primary">Godkjenn</Button>{' '}
 </div>;
 ```
 
@@ -16,7 +16,7 @@ Noe nedtonet hovedhandling:
 import Button from '@skatteetaten/frontend-components/Button';
 
 <div className="ExampleSpacing8">
-  <Button type="primaryRoundedFilled">Send inn uendret</Button>
+  <Button buttonStyle="primaryRoundedFilled">Send inn uendret</Button>
   <Button icon="edit" type="primaryRounded">
     Endre
   </Button>
@@ -29,7 +29,7 @@ Advarsel:
 import Button from '@skatteetaten/frontend-components/Button';
 
 <div className="ExampleSpacing8">
-  <Button type="warning">Avvis</Button>
+  <Button buttonStyle="warning">Avvis</Button>
 </div>;
 ```
 
@@ -39,7 +39,7 @@ Ekstra fremtredende hovedhandling
 import Button from '@skatteetaten/frontend-components/Button';
 
 <div className="ExampleSpacing8">
-  <Button type="primaryLarge">Send inn meldingen</Button>
+  <Button buttonStyle="primaryLarge">Send inn meldingen</Button>
 </div>;
 ```
 

@@ -57,6 +57,7 @@ const ToggleContent = ({
 };
 
 export interface AccordionItemProps {
+  id?: string;
   /** Valg for å kunne vise/skjule innhold til et steg med en "vise/skjule" knapp */
   toggleContent?: boolean;
   /** Teksten for vise/skjule knappen for et steg */
@@ -77,6 +78,7 @@ export interface AccordionItemProps {
   subtitle?: string;
   stepNumber?: number;
   totalSteps?: number;
+  processList?: boolean;
 }
 type AccordionItemState = {
   isContentOpen: boolean;
@@ -88,16 +90,13 @@ export default class AccordionItem extends React.PureComponent<
   constructor(props: AccordionItemProps) {
     super(props);
     this.state = {
-      // @ts-ignore TODO
-      isContentOpen: props.isOpen
+      isContentOpen: props.isOpen || false
     };
   }
 
   render() {
     const { isContentOpen } = this.state;
-    // @ts-ignore TODO
-    const styles = getClassNames(this.props);
-    //todo StepNumber, totalSteps, processList ?
+    const styles = getClassNames();
     const {
       title,
       subtitle,
@@ -109,7 +108,6 @@ export default class AccordionItem extends React.PureComponent<
       children,
       totalSteps,
       stepId,
-      // @ts-ignore TODO
       processList
     } = this.props;
 

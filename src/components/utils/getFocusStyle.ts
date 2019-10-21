@@ -21,8 +21,7 @@ export function getFocusStyle(
         top: inset + 1,
         bottom: inset + 1,
         right: inset + 1,
-        border:
-          '2px solid ' + theme.palette.skeColor && theme.palette.skeColor.blue,
+        border: '2px solid ' + theme.palette.skeColor.blue,
         borderRadius: radius,
         outline: 'transparent',
         zIndex: 1

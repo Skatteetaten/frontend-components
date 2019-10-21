@@ -19,7 +19,7 @@ enum CardBorder {
   WHITE_BORDER = 'white'
 }
 
-interface CardProps {
+export interface CardProps {
   /** Teksten som vises i kortet */
   title?: string;
   /** Subtittel som vises i kortet */
@@ -62,7 +62,7 @@ interface CardProps {
   onClick?: () => void;
 }
 
-interface CardState {
+export interface CardState {
   isExpandedState: boolean;
 }
 
@@ -94,14 +94,13 @@ export default class Card extends React.PureComponent<CardProps, CardState> {
     margin: 'medium',
     circleOnIcon: true
   };
-  // @ts-ignore TODO
-  constructor(props) {
+
+  constructor(props: CardProps) {
     super(props);
     const { isExpanded } = props;
-    this.state = { isExpandedState: isExpanded };
+    this.state = { isExpandedState: isExpanded || false };
   }
-  // @ts-ignore TODO
-  componentDidUpdate(prevProps, prevState) {
+  componentDidUpdate(prevProps : CardProps, prevState : CardState) {
     if (this.state.isExpandedState !== prevState.isExpandedState) {
       this.props.onChange && this.props.onChange(this.state.isExpandedState);
     }
@@ -114,7 +113,6 @@ export default class Card extends React.PureComponent<CardProps, CardState> {
       title,
       subtitle,
       expand,
-      // @ts-ignore TODO
       actions,
       isExpanded,
       className,
@@ -150,8 +148,6 @@ export default class Card extends React.PureComponent<CardProps, CardState> {
                   {title}
                 </div>
               )}
-              {/*
-               // @ts-ignore TODO */}
               {actions && <div className={styleActions}>{actions}</div>}
               {<div className={styles.subtitle}>{subtitle}</div>}
             </div>

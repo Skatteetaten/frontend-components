@@ -3,7 +3,7 @@ import { getTheme } from '@uifabric/styling';
 import { FontSizes, FontWeights, IconFontSizes } from '../utils/fonts';
 import { PaletteProps } from '..';
 
-export function getClassNames(): string {
+export function getClassNames() {
   const palette = getTheme().palette as PaletteProps;
   // @ts-ignore TODO
   return mergeStyleSets({

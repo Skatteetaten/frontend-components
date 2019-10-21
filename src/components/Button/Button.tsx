@@ -6,11 +6,11 @@ import {
 import * as React from 'react';
 import { getClassNames as getStandardClassNames } from './Button.classNames';
 
-interface ButtonProps extends IButtonProps {
+export interface ButtonProps extends IButtonProps {
   /** Ikon som skal vises foran teksten på knappen */
   icon?: string;
   /** Benyttes for å definere type knapp som skal benyttes */
-  type?:
+  buttonStyle?:
     | 'primary'
     | 'primaryRounded'
     | 'primaryRoundedFilled'
@@ -21,13 +21,14 @@ interface ButtonProps extends IButtonProps {
 /**
  * @visibleName Button (Knapp)
  */
+
 export default class Button extends React.PureComponent<ButtonProps, {}> {
   static defaultProps = {
     disabled: false,
     icon: undefined,
     onClick: undefined,
     primary: false,
-    type: 'primaryRounded'
+    buttonStyle: 'primaryRounded'
   };
   render() {
     const { children, icon, className, iconProps, ...props } = this.props;
