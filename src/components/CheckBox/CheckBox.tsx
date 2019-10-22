@@ -23,7 +23,7 @@ export default class CheckBox extends React.PureComponent<CheckBoxProps, {}> {
     return (
       <FabricCheckBox
         {...props}
-        className={classnames(getClassNames(this.props), className)}
+        className={classnames(getClassNames(), className)}
         role="checkbox"
         {...checkedProps}
       />

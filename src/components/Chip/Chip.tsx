@@ -7,11 +7,13 @@ enum ChipType {
   NEUTRAL = 'beige'
 }
 
-interface ChipProps {
+export interface ChipProps {
   /** Bruksområde som avgir hvilken farge chip-en får */
   type?: ChipType;
   /** Størrelse på Chip */
   size?: 'standard' | 'large';
+  /** Bold tekst */
+  bold?: boolean;
 }
 /**
  * @visibleName Chip (Merkelapp)
