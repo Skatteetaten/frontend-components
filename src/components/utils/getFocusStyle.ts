@@ -7,16 +7,12 @@ export function getFocusStyle(
 ) {
   return {
     outline: 'transparent',
-    position,
-
     selectors: {
       '::-moz-focus-inner': {
         border: '0'
       },
-
       '.ms-Fabric.is-focusVisible.is-focusVisible &:focus:after': {
         content: '""',
-        position: 'absolute',
         left: inset + 1,
         top: inset + 1,
         bottom: inset + 1,

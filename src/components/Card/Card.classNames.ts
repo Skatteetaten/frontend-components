@@ -1,4 +1,4 @@
-import Card, { CardProps, CardState } from './Card';
+import Card, { CardColor, CardProps, CardState } from './Card';
 import { FontSizes, FontWeights } from '..';
 import { getTheme } from '@uifabric/styling';
 import { keyframes, mergeStyleSets } from '@uifabric/merge-styles';
@@ -76,8 +76,7 @@ export const getClassNames = (props: CardProps, state: CardState) => {
     root: {
       displayName: 'SkeCard',
       color: theme.semanticColors.bodyText,
-      // @ts-ignore TODO
-      backgroundColor: palette.skeColor[props.color],
+      backgroundColor: palette.skeColor[props.color as CardColor],
       padding: '16px',
       marginBottom: props.marginbottom,
       ...getDefaultBorder(props),

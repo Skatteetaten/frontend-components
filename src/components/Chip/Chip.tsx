@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { getClassNames } from './Chip.classNames';
 
-enum ChipType {
+export enum ChipType {
   WARNING = 'lightPink',
   OK = 'lightGreen',
   NEUTRAL = 'beige'

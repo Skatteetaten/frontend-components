@@ -16,7 +16,6 @@ interface AccordionProps {
 export default class Accordion extends React.PureComponent<AccordionProps, {}> {
   render() {
     const { processList, stepId, children } = this.props;
-    // @ts-ignore TODO
     const { accordion } = getClassNames();
     const totalSteps = React.Children.count(children);
     return (

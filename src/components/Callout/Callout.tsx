@@ -8,7 +8,7 @@ import * as React from 'react';
 import IconButton from '../IconButton/IconButton';
 import { getClassNames } from './Callout.classNames';
 
-enum CalloutColor {
+export enum CalloutColor {
   HELP = 'lightGreen',
   INFO = 'beige',
   ERROR = 'lightPink',

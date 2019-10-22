@@ -2,18 +2,19 @@ import { getTheme } from '@uifabric/styling';
 import { mergeStyleSets } from '@uifabric/merge-styles';
 import { FontSizes, FontWeights } from '../utils/fonts';
 import { PaletteProps } from '..';
+import { DialogProps } from './Dialog';
 
 const dekor = require('./assets/footerDekor.svg');
 const logo = require('./assets/ske-logo.svg');
-// @ts-ignore TODO
-function setMinMaxWidth(props) {
+
+function setMinMaxWidth(props: DialogProps) {
   return {
     minWidth: props.minWidth,
     maxWidth: props.maxWidth
   };
 }
-// @ts-ignore TODO
-function getMainBackgroundStyle(props) {
+
+function getMainBackgroundStyle(props: DialogProps) {
   const palette = getTheme().palette as PaletteProps;
 
   if (props.layoutStyle === 'important') {
@@ -30,8 +31,8 @@ function getMainBackgroundStyle(props) {
     return {};
   }
 }
-// @ts-ignore TODO
-function getHeaderBackgroundStyle(props) {
+
+function getHeaderBackgroundStyle(props: DialogProps) {
   if (props.layoutStyle === 'important') {
     return {
       backgroundImage: `url(${logo})`,
@@ -44,8 +45,8 @@ function getHeaderBackgroundStyle(props) {
     return {};
   }
 }
-// @ts-ignore TODO
-export var getClassNames = function getClassNames(props) {
+
+export var getClassNames = function getClassNames(props: DialogProps) {
   const palette = getTheme().palette as PaletteProps;
 
   return mergeStyleSets({

@@ -7,13 +7,13 @@ import Chip from '@skatteetaten/frontend-components/Chip';
 import Icon from '@skatteetaten/frontend-components/Icon';
 
 <div>
-  <Chip ariaLabel="Klagesak">Klagesak </Chip>
+  <Chip aria-label="Klagesak">Klagesak </Chip>
   <span> </span>
-  <Chip type={Chip.OK} size="standard" ariaLabel="Godkjent">
+  <Chip type={Chip.OK} size="standard" aria-label="Godkjent">
     <Icon iconName="Check" /> Godkjent
   </Chip>
   <span> </span>
-  <Chip type={Chip.WARNING} ariaLabel="Unntatt offentlighet">
+  <Chip type={Chip.WARNING} aria-label="Unntatt offentlighet">
     Unntatt offentlighet
   </Chip>
 </div>;
@@ -31,9 +31,9 @@ import Chip from '@skatteetaten/frontend-components/Chip';
     nr. 24 om ligningsforvalgning (likningsloven) §9-11 etter at skattekontoret
     omgjorde endringsvedtak for 2005 om internprising og tilleggsskatt.
   </p>
-  <Chip ariaLabel="Tilleggsskatt">Tilleggsskatt</Chip> <span> </span>
-  <Chip ariaLabel="Internprising">Internprising</Chip> <span> </span>
-  <Chip ariaLabel="Skatteklagenemnda">Skatteklagenemnda</Chip> <span> </span>
+  <Chip aria-label="Tilleggsskatt">Tilleggsskatt</Chip> <span> </span>
+  <Chip aria-label="Internprising">Internprising</Chip> <span> </span>
+  <Chip aria-label="Skatteklagenemnda">Skatteklagenemnda</Chip> <span> </span>
 </div>;
 ```
 

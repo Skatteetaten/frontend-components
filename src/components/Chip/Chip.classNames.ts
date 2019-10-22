@@ -2,7 +2,7 @@ import { getFocusStyle } from '..';
 import { getTheme } from '@uifabric/styling';
 import { mergeStyles } from '@uifabric/merge-styles';
 import { PaletteProps } from '..';
-import { ChipProps } from './Chip';
+import { ChipProps, ChipType } from './Chip';
 
 export var getClassNames = function getClassNames(props: ChipProps) {
   const palette = getTheme().palette as PaletteProps;
@@ -17,8 +17,7 @@ export var getClassNames = function getClassNames(props: ChipProps) {
     padding: '3px 12px',
     fontSize: props.size,
     borderRadius: '5px',
-    // @ts-ignore TODO
-    backgroundColor: palette.skeColor[props.type],
+    backgroundColor: palette.skeColor[props.type as ChipType],
     selectors: {
       '& > div': {
         display: 'flex',

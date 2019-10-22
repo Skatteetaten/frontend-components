@@ -88,7 +88,7 @@ import TextField from '@skatteetaten/frontend-components/TextField';
         <Grid.Col noSpacing xl={2} md={8}>
           <TextField
             id={'my-readonlyfield-1'}
-            readonly
+            readOnly
             label="Beløp"
             value={'3600'}
             inputSize={'large'}
@@ -98,7 +98,7 @@ import TextField from '@skatteetaten/frontend-components/TextField';
         <Grid.Col noSpacing xl={4} md={8}>
           <TextField
             id={'my-readonlyfield-2'}
-            readonly
+            readOnly
             label="KID"
             value={'4432 1233 4324 5425'}
             inputSize={'large'}
@@ -108,7 +108,7 @@ import TextField from '@skatteetaten/frontend-components/TextField';
         <Grid.Col noSpacing xl={3} md={8}>
           <TextField
             id={'my-readonlyfield-3'}
-            readonly
+            readOnly
             label="Kontonummer"
             value={'9484 12 31435'}
             inputSize={'large'}

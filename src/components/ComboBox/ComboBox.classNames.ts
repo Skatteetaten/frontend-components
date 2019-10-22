@@ -4,8 +4,9 @@ import { FontSizes, FontWeights } from '../utils/fonts';
 import { MdIcons } from '../utils/icons/';
 import { Animation } from '../utils/getAnimationStyles';
 import { PaletteProps } from '..';
-// @ts-ignore TODO
-function getFieldTypeStyles(props) {
+import { ComboboxProps } from './ComboBox';
+
+function getFieldTypeStyles(props: ComboboxProps) {
   const palette = getTheme().palette as PaletteProps;
 
   if (props.inputSize === 'large') {
@@ -35,8 +36,8 @@ function getFieldTypeStyles(props) {
     };
   }
 }
-// @ts-ignore TODO
-export const getClassNames = props => {
+
+export const getClassNames = (props: ComboboxProps) => {
   const { errorMessage } = props;
   const palette = getTheme().palette as PaletteProps;
   const color = errorMessage
@@ -80,8 +81,8 @@ export const getClassNames = props => {
     }
   });
 };
-// @ts-ignore TODO
-export const getErrorClassNames = props => {
+
+export const getErrorClassNames = (props: ComboboxProps) => {
   const { errorMessage } = props;
   const palette = getTheme().palette as PaletteProps;
   const color = errorMessage
@@ -113,8 +114,8 @@ export const getErrorClassNames = props => {
     }
   });
 };
-// @ts-ignore TODO
-export const getOptionsClassNames = props => {
+
+export const getOptionsClassNames = (props: ComboboxProps) => {
   const palette = getTheme().palette as PaletteProps;
 
   return mergeStyles({
@@ -131,8 +132,8 @@ export const getOptionsClassNames = props => {
     }
   });
 };
-// @ts-ignore TODO
-export const getLabelClassNames = props => {
+
+export const getLabelClassNames = (props: ComboboxProps) => {
   const palette = getTheme().palette as PaletteProps;
 
   return mergeStyleSets({

@@ -3,7 +3,7 @@ import * as React from 'react';
 import IconButton from '../IconButton/IconButton';
 import { getClassNames } from './Card.classNames';
 
-enum CardColor {
+export enum CardColor {
   GREY = 'neutralGrey',
   GREEN = 'lightGreen',
   BEIGE = 'beige',
@@ -100,7 +100,7 @@ export default class Card extends React.PureComponent<CardProps, CardState> {
     const { isExpanded } = props;
     this.state = { isExpandedState: isExpanded || false };
   }
-  componentDidUpdate(prevProps : CardProps, prevState : CardState) {
+  componentDidUpdate(prevProps: CardProps, prevState: CardState) {
     if (this.state.isExpandedState !== prevState.isExpandedState) {
       this.props.onChange && this.props.onChange(this.state.isExpandedState);
     }
@@ -122,8 +122,6 @@ export default class Card extends React.PureComponent<CardProps, CardState> {
     } = this.props;
 
     const styles = getClassNames(this.props, this.state);
-    // @ts-ignore TODO
-    const { styleActions } = styles;
     return (
       <div id={id} className={classnames(styles.root, className)}>
         {title || subtitle || expand ? (
@@ -148,7 +146,7 @@ export default class Card extends React.PureComponent<CardProps, CardState> {
                   {title}
                 </div>
               )}
-              {actions && <div className={styleActions}>{actions}</div>}
+              {actions && <div>{actions}</div>}
               {<div className={styles.subtitle}>{subtitle}</div>}
             </div>
             {expand && (

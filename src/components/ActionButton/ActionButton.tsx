@@ -6,7 +6,7 @@ import {
 import * as React from 'react';
 import { getClassNames } from './ActionButton.classNames';
 
-interface ActionButtonProps extends IButtonProps {
+export interface ActionButtonProps extends IButtonProps {
   /** Ikon som skal vises foran lenketeksten */
   icon?: string;
   /** Ikon størrelse, to tilgjengelige størrelser */

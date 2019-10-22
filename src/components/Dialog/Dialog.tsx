@@ -10,7 +10,7 @@ import {
 } from 'office-ui-fabric-react/lib-commonjs/Dialog';
 import IconButton from '../IconButton/IconButton';
 
-interface DialogProps extends IDialogProps {
+export interface DialogProps extends IDialogProps {
   /** Om dialog skal ha mer padding for et luftigere uttrykk */
   layoutStyle?: 'normal' | 'airy' | 'important';
   /** Hjelpetekst som skal vises i Callout */
@@ -33,8 +33,8 @@ export default class Dialog extends React.PureComponent<
     layoutStyle: 'normal',
     type: Dialog.Type.normal
   };
-  // @ts-ignore TODO
-  constructor(props) {
+
+  constructor(props: DialogProps) {
     super(props);
     this.state = {
       isCalloutVisible: false

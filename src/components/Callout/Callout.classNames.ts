@@ -2,7 +2,7 @@ import { getTheme } from '@uifabric/styling';
 import { mergeStyleSets } from '@uifabric/merge-styles';
 import { FontSizes } from '..';
 import { PaletteProps } from '..';
-import { CalloutProps } from './Callout';
+import { CalloutColor, CalloutProps } from './Callout';
 function getCalloutBorder(props: CalloutProps) {
   const palette = getTheme().palette as PaletteProps;
   if (props.color === 'white') {
@@ -27,8 +27,7 @@ export const getClassNames = (props: CalloutProps) => {
       selectors: {
         '.ms-Callout-main': {
           maxWidth: 600,
-          // @ts-ignore TODO
-          backgroundColor: palette.skeColor[props.color],
+          backgroundColor: palette.skeColor[props.color as CalloutColor],
           boxShadow: 'none',
           border: 'none',
           padding: '10px 20px 10px 10px',
@@ -45,8 +44,7 @@ export const getClassNames = (props: CalloutProps) => {
           }
         },
         '.ms-Callout-beak': {
-          // @ts-ignore TODO
-          backgroundColor: palette.skeColor[props.color]
+          backgroundColor: palette.skeColor[props.color as CalloutColor]
         },
         '&& h3': {
           marginTop: '5px',

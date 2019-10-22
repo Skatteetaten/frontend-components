@@ -5,7 +5,6 @@ import { PaletteProps } from '..';
 
 export function getClassNames() {
   const palette = getTheme().palette as PaletteProps;
-  // @ts-ignore TODO
   return mergeStyleSets({
     containerStep: {
       margin: '0 auto'

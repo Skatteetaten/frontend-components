@@ -11,7 +11,7 @@ import {
 } from 'office-ui-fabric-react/lib-commonjs/DetailsList';
 import { getClassNames } from './DetailsList.classNames';
 
-interface DetailsListProps extends IDetailsListProps {
+export interface DetailsListProps extends IDetailsListProps {
   background?: 'white' | 'transparent';
   isSorted?: boolean;
   isSortedDescending?: boolean;

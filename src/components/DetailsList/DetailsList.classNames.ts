@@ -2,8 +2,9 @@ import { mergeStyles } from '@uifabric/merge-styles';
 import { getTheme } from '@uifabric/styling';
 import { FontSizes, FontWeights } from '..';
 import { PaletteProps } from '..';
-// @ts-ignore TODO
-function getBackgroundColor(props) {
+import { DetailsListProps } from './DetailsList';
+
+function getBackgroundColor(props: DetailsListProps) {
   const palette = getTheme().palette as PaletteProps;
 
   if (props.background === 'white') {
@@ -12,8 +13,8 @@ function getBackgroundColor(props) {
     return 'none';
   }
 }
-// @ts-ignore TODO
-function getBorderColor(props) {
+
+function getBorderColor(props: DetailsListProps) {
   const palette = getTheme().palette as PaletteProps;
 
   if (props.background === 'white') {
@@ -22,8 +23,8 @@ function getBorderColor(props) {
     return palette.skeColor.lightGrey;
   }
 }
-// @ts-ignore TODO
-function getHoverColor(props) {
+
+function getHoverColor(props: DetailsListProps) {
   const palette = getTheme().palette as PaletteProps;
 
   if (props.background === 'white') {
@@ -32,8 +33,8 @@ function getHoverColor(props) {
     return palette.skeColor.lightGrey;
   }
 }
-// @ts-ignore TODO
-export const getClassNames = (props, col) => {
+
+export const getClassNames = (props: DetailsListProps) => {
   const palette = getTheme().palette as PaletteProps;
   const inset = 0;
   const position = 'relative';

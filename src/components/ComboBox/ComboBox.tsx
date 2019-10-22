@@ -1,6 +1,6 @@
 import * as React from 'react';
 import {
-  VirtualizedComboBox as FabricComboBox,
+  VirtualizedComboBox,
   IComboBoxProps
 } from 'office-ui-fabric-react/lib-commonjs/ComboBox';
 import Callout from '../Callout/Callout';
@@ -16,7 +16,7 @@ import {
 } from './ComboBox.classNames';
 
 // This is just a workaround so that the combobox opens on focus.
-class SkeCombobox extends FabricComboBox {
+class SkeCombobox extends VirtualizedComboBox {
   focus = () => {
     if (
       // @ts-ignore TODO
@@ -33,7 +33,7 @@ class SkeCombobox extends FabricComboBox {
   };
 }
 
-interface ComboboxProps extends IComboBoxProps {
+export interface ComboboxProps extends IComboBoxProps {
   /** Angir om valgene automatisk skal vises når feltet har focus */
   expandOnFocus?: boolean;
   /** Hjelpetekst */
