@@ -22,8 +22,18 @@ const NumberIcon = props => {
     </div>
   );
 };
-// @ts-ignore //TODO
-const Step = props => {
+
+export interface StepProps {
+  stepTitle?: string;
+  stepType?: 'passive' | 'active' | 'result' | 'next';
+  showStep?: boolean;
+  stepId?: string;
+  resultIcon?: string;
+  className?: string;
+  stepNumber?: number;
+}
+
+const Step: React.FC<StepProps> = props => {
   const {
     stepTitle,
     stepNumber,
@@ -49,7 +59,7 @@ const Step = props => {
   return (
     <div
       key={stepNumber}
-      aria-describedby={stepNumber}
+      aria-describedby={'step' + stepNumber}
       role="region"
       className={classnames(styles.wrapperStep, className)}
     >
@@ -57,7 +67,7 @@ const Step = props => {
         <Grid.Col>
           <Grid.Row rowSpacing={Grid.SPACE_NONE}>
             <Grid.Col sm={12}>
-              {stepNumber > 1 && (
+              {stepNumber && stepNumber > 1 && (
                 <span
                   className={classnames({ [styles.stepLineTop]: size.gt.sm })}
                 />

@@ -4,7 +4,7 @@ import { IconButton as FabricIconButton } from 'office-ui-fabric-react/lib-commo
 import { getClassNames } from './IconButton.classNames';
 import { ButtonProps } from '../Button/Button';
 
-interface IconButtonProps extends ButtonProps {
+export interface IconButtonProps extends ButtonProps {
   /** Om sirkel skal vises eller ikke. Sirkel vil typisk benyttes når ikon fra material-design ikke har egen sirkel  */
   circle?: boolean;
   /** Ikon som skal vises foran teksten på knappen */

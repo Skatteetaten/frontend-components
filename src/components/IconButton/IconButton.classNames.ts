@@ -3,8 +3,9 @@ import { getTheme } from '@uifabric/styling';
 import { FontSizes } from '../utils/fonts';
 import { getFocusStyle } from '../utils/getFocusStyle';
 import { PaletteProps } from '..';
-// @ts-ignore TODO
-function getTypeColor(props) {
+import { IconButtonProps } from './IconButton';
+
+function getTypeColor(props: IconButtonProps) {
   switch (props.type) {
     case 'small':
       return {
@@ -30,8 +31,8 @@ function getTypeColor(props) {
       return {};
   }
 }
-// @ts-ignore TODO
-function getCircleStyles(props) {
+
+function getCircleStyles(props: IconButtonProps) {
   const palette = getTheme().palette as PaletteProps;
 
   if (props.circle === true) {
@@ -46,8 +47,8 @@ function getCircleStyles(props) {
     };
   }
 }
-// @ts-ignore TODO
-function getCircleHoverStyles(props) {
+
+function getCircleHoverStyles(props: IconButtonProps) {
   const palette = getTheme().palette as PaletteProps;
 
   if (props.circle === true) {
@@ -65,8 +66,8 @@ function getCircleHoverStyles(props) {
     };
   }
 }
-// @ts-ignore TODO
-function getCircleFocusrStyles(props) {
+
+function getCircleFocusStyles(props: IconButtonProps) {
   const palette = getTheme().palette as PaletteProps;
 
   if (props.circle === true) {
@@ -81,8 +82,8 @@ function getCircleFocusrStyles(props) {
     };
   }
 }
-// @ts-ignore TODO
-function getIconSize(props) {
+
+function getIconSize(props: IconButtonProps) {
   switch (props.type) {
     case 'small':
       return {
@@ -106,14 +107,14 @@ function getIconSize(props) {
       };
   }
 }
-// @ts-ignore TODO
-export var getClassNames = function getClassNames(props) {
+
+export var getClassNames = function getClassNames(props: IconButtonProps) {
   const palette = getTheme().palette as PaletteProps;
   const inset = -4;
-  const radius = 0;
+  const radius = "0";
 
   return mergeStyles([
-    // @ts-ignore TODO
+
     getFocusStyle({ palette }, inset, 'relative', radius),
     {
       displayName: `ske-icon${props.type}-button`,
@@ -142,11 +143,11 @@ export var getClassNames = function getClassNames(props) {
         },
         '&.ms-Button--icon:active': {
           color: palette.white,
-          ...getCircleFocusrStyles(props)
+          ...getCircleFocusStyles(props)
         },
         '&.ms-Button--icon:disabled': {
           ...getCircleStyles(props),
-          // @ts-ignore TODO
+          // @ts-ignore TODO Finnes ikke?
           color: palette.skeLysGraa,
           borderColor: palette.skeColor.lightGrey
         },
