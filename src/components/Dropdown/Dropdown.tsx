@@ -16,7 +16,7 @@ import {
   getLabelClassNames
 } from './Dropdown.classNames';
 
-interface DropdownProps extends IDropdownProps {
+export interface DropdownProps extends IDropdownProps {
   /** Hjelpetekst */
   info?: string;
   /** Størrelse på inputfelt som skal benyttes */
@@ -34,8 +34,8 @@ export default class Dropdown extends React.PureComponent<
   DropdownState
 > {
   static ItemType = DropdownMenuItemType;
-  // @ts-ignore TODO
-  constructor(props) {
+
+  constructor(props: DropdownProps) {
     super(props);
     this.state = {
       isCalloutVisible: false
@@ -44,9 +44,9 @@ export default class Dropdown extends React.PureComponent<
     this._onClick = this._onClick.bind(this);
     this._onDismiss = this._onDismiss.bind(this);
   }
-  // @ts-ignore TODO
-  _onRenderLabel(props) {
-    const { label, info, componentId } = props;
+
+  _onRenderLabel(props: DropdownProps) {
+    const { label, info, id } = props;
 
     const styles = getLabelClassNames(props);
     let { isCalloutVisible } = this.state;
@@ -54,11 +54,7 @@ export default class Dropdown extends React.PureComponent<
       <div className={styles.labelArea}>
         <span className={styles.label}>
           {label ? (
-            <Label
-              className={styles.labelText}
-              htmlFor={componentId}
-              aria-label={label}
-            >
+            <Label className={styles.labelText} htmlFor={id} aria-label={label}>
               {label}
             </Label>
           ) : null}

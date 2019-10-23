@@ -22,7 +22,7 @@ export interface ButtonProps extends IButtonProps {
  * @visibleName Button (Knapp)
  */
 
-const Button = (props: ButtonProps) => {
+const Button: React.FC<ButtonProps> = props => {
   const { children, icon, className, iconProps, ...rest } = props;
   return (
     <DefaultButton

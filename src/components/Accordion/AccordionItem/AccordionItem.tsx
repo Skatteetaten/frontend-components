@@ -35,7 +35,7 @@ interface ToggleContentInterface extends AccordionItemProps {
   isContentOpen: boolean;
   styles: any;
 }
-const ToggleContent = (props: ToggleContentInterface) => {
+const ToggleContent: React.FC<ToggleContentInterface> = props => {
   const {
     toggleContent,
     isContentOpen,
@@ -80,7 +80,7 @@ const ToggleContent = (props: ToggleContentInterface) => {
   );
 };
 
-const AccordionItem = (props: AccordionItemProps) => {
+const AccordionItem: React.FC<AccordionItemProps> = props => {
   const [isContentOpen, setContentOpen] = React.useState<boolean>(
     props.isOpen || false
   );

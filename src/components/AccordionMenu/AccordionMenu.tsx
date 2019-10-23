@@ -2,30 +2,27 @@ import classnames from 'classnames';
 import * as React from 'react';
 
 import { getClassNames } from './AccordionMenu.classNames';
+import { AccordionItemProps } from '../Accordion/AccordionItem/AccordionItem';
 
 interface AccordionMenuProps {
   className?: string;
+  children?: React.ReactNode;
 }
-const AccordionMenu: React.SFC<AccordionMenuProps> = ({
+const AccordionMenu: React.FC<AccordionMenuProps> = ({
   className,
   children
 }) => {
   const styles = getClassNames();
+  const totalSteps = React.Children.count(children);
   return (
-    <>
-      {/*
-          // @ts-ignore TODO */}
-      <ul className={classnames(styles.accordionMenu, className)}>
-        {React.Children.map(children, (child, index) =>
-          // @ts-ignore TODO
-          React.cloneElement(child, {
-            itemKey: index + 1,
-            // @ts-ignore TODO
-            totalSteps: children.length
-          })
-        )}
-      </ul>
-    </>
+    <ul className={classnames(styles.accordionMenu, className)}>
+      {React.Children.map(children, child => {
+        if (React.isValidElement<AccordionItemProps>(child))
+          return React.cloneElement(child, {
+            totalSteps
+          });
+      })}
+    </ul>
   );
 };
 

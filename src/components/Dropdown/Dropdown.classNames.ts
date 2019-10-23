@@ -4,8 +4,9 @@ import { FontSizes, FontWeights } from '../utils/fonts';
 import { MdIcons } from '../utils/icons/';
 import { Animation } from '../utils/getAnimationStyles';
 import { PaletteProps } from '..';
-// @ts-ignore TODO
-function getFieldTypeStyles(props) {
+import { DropdownProps } from './Dropdown';
+
+function getFieldTypeStyles(props: DropdownProps) {
   if (props.inputSize === 'large') {
     return {
       '.ms-Dropdown-title': {
@@ -28,8 +29,8 @@ function getFieldTypeStyles(props) {
     };
   }
 }
-// @ts-ignore TODO
-export const getClassNames = props => {
+
+export const getClassNames = (props: DropdownProps) => {
   const { errorMessage } = props;
   const palette = getTheme().palette as PaletteProps;
   const color = errorMessage
@@ -82,8 +83,8 @@ export const getClassNames = props => {
     }
   });
 };
-// @ts-ignore TODO
-export const getErrorClassNames = props => {
+
+export const getErrorClassNames = (props: DropdownProps) => {
   const { errorMessage } = props;
   const palette = getTheme().palette as PaletteProps;
   const color = errorMessage
@@ -115,8 +116,8 @@ export const getErrorClassNames = props => {
     }
   });
 };
-// @ts-ignore TODO
-export const getCalloutClassNames = props => {
+
+export const getCalloutClassNames = () => {
   const palette = getTheme().palette as PaletteProps;
   const inset = 0;
   const radius = '0';
@@ -142,8 +143,8 @@ export const getCalloutClassNames = props => {
     }
   });
 };
-// @ts-ignore TODO
-export const getLabelClassNames = props => {
+
+export const getLabelClassNames = () => {
   const palette = getTheme().palette as PaletteProps;
   return mergeStyleSets({
     labelArea: {

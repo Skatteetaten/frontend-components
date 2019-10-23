@@ -14,7 +14,7 @@ interface AccordionProps {
  * @visibleName Accordion (Ekspanderende panel)
  */
 
-const Accordion = (props: AccordionProps) => {
+const Accordion: React.FC<AccordionProps> = props => {
   const { processList, stepId, children } = props;
   const { accordion } = getClassNames();
   const totalSteps = React.Children.count(children);
