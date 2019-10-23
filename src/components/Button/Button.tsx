@@ -22,24 +22,25 @@ export interface ButtonProps extends IButtonProps {
  * @visibleName Button (Knapp)
  */
 
-export default class Button extends React.PureComponent<ButtonProps, {}> {
-  static defaultProps = {
-    disabled: false,
-    icon: undefined,
-    onClick: undefined,
-    primary: false,
-    buttonStyle: 'primaryRounded'
-  };
-  render() {
-    const { children, icon, className, iconProps, ...props } = this.props;
-    return (
-      <DefaultButton
-        {...props}
-        className={classnames(getStandardClassNames(this.props), className)}
-        iconProps={icon ? { iconName: icon } : iconProps}
-      >
-        {children}
-      </DefaultButton>
-    );
-  }
-}
+const Button = (props: ButtonProps) => {
+  const { children, icon, className, iconProps, ...rest } = props;
+  return (
+    <DefaultButton
+      {...rest}
+      className={classnames(getStandardClassNames(props), className)}
+      iconProps={icon ? { iconName: icon } : iconProps}
+    >
+      {children}
+    </DefaultButton>
+  );
+};
+
+Button.defaultProps = {
+  disabled: false,
+  icon: undefined,
+  onClick: undefined,
+  primary: false,
+  buttonStyle: 'primaryRounded'
+};
+
+export default Button;

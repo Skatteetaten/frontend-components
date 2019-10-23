@@ -5,57 +5,6 @@ import Icon from '../../Icon/Icon';
 
 import { getClassNames } from '../Accordion.classNames';
 
-const ToggleContent = ({
-  // @ts-ignore TODO
-  styles,
-  // @ts-ignore TODO
-  toggleContent,
-  // @ts-ignore TODO
-  toggleButtonText,
-  // @ts-ignore TODO
-  stepId,
-  // @ts-ignore TODO
-  isContentOpen,
-  // @ts-ignore TODO
-  subtitle,
-  // @ts-ignore TODO
-  onClick
-}) => {
-  if (!toggleContent) {
-    return null;
-  }
-
-  return (
-    <button
-      className={
-        isContentOpen
-          ? classnames(styles.toggleButton, styles.toggleButtonOpen)
-          : styles.toggleButton
-      }
-      aria-expanded={!!isContentOpen}
-      aria-controls={stepId}
-      aria-label={toggleButtonText}
-      onClick={onClick}
-    >
-      <label>
-        {toggleButtonText}
-
-        <Icon iconName={'ChevronDown'} />
-
-        {subtitle && (
-          <p
-            className={styles.subtitle}
-            aria-labelledby={subtitle}
-            tabIndex={0}
-          >
-            {subtitle}
-          </p>
-        )}
-      </label>
-    </button>
-  );
-};
-
 export interface AccordionItemProps {
   id?: string;
   /** Valg for å kunne vise/skjule innhold til et steg med en "vise/skjule" knapp */
@@ -79,120 +28,145 @@ export interface AccordionItemProps {
   stepNumber?: number;
   totalSteps?: number;
   processList?: boolean;
+  children?: JSX.Element;
 }
-type AccordionItemState = {
+
+interface ToggleContentInterface extends AccordionItemProps {
   isContentOpen: boolean;
-};
-export default class AccordionItem extends React.PureComponent<
-  AccordionItemProps,
-  AccordionItemState
-> {
-  constructor(props: AccordionItemProps) {
-    super(props);
-    this.state = {
-      isContentOpen: props.isOpen || false
-    };
+  styles: any;
+}
+const ToggleContent = (props: ToggleContentInterface) => {
+  const {
+    toggleContent,
+    isContentOpen,
+    styles,
+    stepId,
+    toggleButtonText,
+    onClick,
+    subtitle
+  } = props;
+  if (!toggleContent) {
+    return null;
   }
 
-  render() {
-    const { isContentOpen } = this.state;
-    const styles = getClassNames();
-    const {
-      title,
-      subtitle,
-      toggleContent,
-      toggleButtonText,
-      stepNumber,
-      icon,
-      ariaLabel,
-      children,
-      totalSteps,
-      stepId,
-      processList
-    } = this.props;
+  return (
+    <button
+      className={
+        isContentOpen
+          ? classnames(styles.toggleButton, styles.toggleButtonOpen)
+          : styles.toggleButton
+      }
+      aria-expanded={isContentOpen}
+      aria-controls={stepId}
+      aria-label={toggleButtonText}
+      onClick={onClick}
+    >
+      <label>
+        {toggleButtonText}
 
-    return (
-      <div
-        key={stepNumber}
-        // @ts-ignore TODO
-        aria-describedby={stepNumber}
-        // @ts-ignore TODO
-        aria-label={stepNumber}
-        // @ts-ignore TODO
-        className={styles.wrapperStep}
-      >
-        {processList && stepNumber !== totalSteps && (
-          // @ts-ignore TODO
-          <span className={styles.stepLine} />
+        <Icon iconName={'ChevronDown'} />
+
+        {subtitle && (
+          <p
+            className={styles.subtitle}
+            aria-labelledby={subtitle}
+            tabIndex={0}
+          >
+            {subtitle}
+          </p>
         )}
-        <Grid.Row rowSpacing={Grid.SPACE_NONE}>
-          <Grid.Col>
-            <Grid.Row rowSpacing={Grid.SPACE_NONE}>
-              {processList && (
-                <Grid.Col sm={3} md={2} xl={1}>
-                  {/*
-                      // @ts-ignore TODO */}
-                  <div className={styles.stepNumber}>
-                    <span aria-label={ariaLabel ? ariaLabel : ''}>
-                      {icon ? <Icon iconName={icon} /> : stepNumber}
-                    </span>
-                  </div>
-                </Grid.Col>
-              )}
-              <Grid.Col
-                sm={processList ? 9 : 12}
-                md={processList ? 10 : 12}
-                xl={processList ? 11 : 12}
-              >
-                {/*
-                      // @ts-ignore TODO */}
-                <hr className={styles.hr1} />
-                <ToggleContent
-                  styles={styles}
-                  toggleContent={toggleContent}
-                  toggleButtonText={toggleButtonText}
-                  stepId={stepId}
-                  isContentOpen={isContentOpen}
-                  subtitle={subtitle}
-                  onClick={this._clickHandler}
-                />
-                {(isContentOpen || !toggleContent) && (
-                  <div
-                    // @ts-ignore TODO
-                    className={styles.content}
-                    id={stepId}
-                    role={'region'}
-                    tabIndex={0}
-                  >
-                    {/*
-                      // @ts-ignore TODO */}
-                    <h1 className={styles.title}>{title}</h1>
-                    {children}
-                  </div>
-                )}
-                {/*
-                      // @ts-ignore TODO */}
-                {stepNumber === totalSteps && <hr className={styles.hr1} />}
-              </Grid.Col>
-            </Grid.Row>
-          </Grid.Col>
-        </Grid.Row>
-      </div>
-    );
-  }
+      </label>
+    </button>
+  );
+};
 
-  _clickHandler = () => {
-    const { isContentOpen } = this.state;
-    const { onClick } = this.props;
+const AccordionItem = (props: AccordionItemProps) => {
+  const [isContentOpen, setContentOpen] = React.useState<boolean>(
+    props.isOpen || false
+  );
+
+  const toggleVisibility = () => {
+    setContentOpen(!isContentOpen);
+  };
+
+  const clickHandler = () => {
+    const { onClick } = props;
     if (onClick && !isContentOpen) {
       onClick();
     }
-    this._toggleVisibility();
+    toggleVisibility();
   };
 
-  _toggleVisibility = () => {
-    this.setState({
-      isContentOpen: !this.state.isContentOpen
-    });
-  };
-}
+  const styles = getClassNames();
+  const {
+    title,
+    subtitle,
+    toggleContent,
+    toggleButtonText,
+    stepNumber,
+    icon,
+    ariaLabel,
+    children,
+    totalSteps,
+    stepId,
+    processList
+  } = props;
+
+  return (
+    <div
+      key={stepNumber}
+      aria-describedby={'step' + stepNumber}
+      aria-label={'step' + stepNumber}
+      className={styles.wrapperStep}
+    >
+      {processList && stepNumber !== totalSteps && (
+        <span className={styles.stepLine} />
+      )}
+      <Grid.Row rowSpacing={Grid.SPACE_NONE}>
+        <Grid.Col>
+          <Grid.Row rowSpacing={Grid.SPACE_NONE}>
+            {processList && (
+              <Grid.Col sm={3} md={2} xl={1}>
+                <div className={styles.stepNumber}>
+                  <span aria-label={ariaLabel ? ariaLabel : ''}>
+                    {icon ? <Icon iconName={icon} /> : stepNumber}
+                  </span>
+                </div>
+              </Grid.Col>
+            )}
+            <Grid.Col
+              sm={processList ? 9 : 12}
+              md={processList ? 10 : 12}
+              xl={processList ? 11 : 12}
+            >
+              <hr />
+              <ToggleContent
+                styles={styles}
+                toggleContent={toggleContent}
+                toggleButtonText={toggleButtonText}
+                stepId={stepId}
+                isContentOpen={isContentOpen}
+                subtitle={subtitle}
+                onClick={clickHandler}
+              />
+              {(isContentOpen || !toggleContent) && (
+                <div
+                  className={styles.content}
+                  id={stepId}
+                  role={'region'}
+                  tabIndex={0}
+                >
+                  <h1>{title}</h1>
+                  {children}
+                </div>
+              )}
+              {stepNumber === totalSteps && <hr />}
+            </Grid.Col>
+          </Grid.Row>
+        </Grid.Col>
+      </Grid.Row>
+    </div>
+  );
+};
+
+export default AccordionItem;

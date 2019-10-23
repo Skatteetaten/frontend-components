@@ -17,99 +17,81 @@ interface AccordionMenuItemProps {
   onClick?: (...args: any[]) => any;
   /** Klasse som kan benyttes til overstyre stiler */
   className?: string;
+  children?: JSX.Element;
 }
 
 type AccordionMenuItemState = {
   isContentOpen: boolean;
 };
 
-export default class AccordionMenuItem extends React.PureComponent<
-  AccordionMenuItemProps,
-  AccordionMenuItemState
-> {
-  static defaultProps = {
-    title: null
+const AccordionMenuItem = (props: AccordionMenuItemProps) => {
+  const [isContentOpen, setContentOpen] = React.useState<boolean>(
+    props.isOpen || false
+  );
+
+  const styles = getClassNames();
+  const { title, iconLabel, icon, onClick, className, children } = props;
+
+  const toggleVisibility = () => {
+    setContentOpen(!isContentOpen);
   };
-  // @ts-ignore TODO
-  constructor(props) {
-    super(props);
-    this.state = {
-      isContentOpen: props.isOpen
-    };
-  }
 
-  render() {
-    const styles = getClassNames();
-    const { isContentOpen } = this.state;
-    const { title, iconLabel, icon, onClick, className, children } = this.props;
+  const clickHandler = () => {
+    if (onClick && !isContentOpen) {
+      onClick();
+    }
+    toggleVisibility();
+  };
 
-    const clickHandler = () => {
-      if (onClick && !isContentOpen) {
-        onClick();
-      }
-      this._toggleVisibility();
-    };
-    // @ts-ignore TODO
-    const {
-      // @ts-ignore TODO
-      menuItem,
-      // @ts-ignore TODO
-      menuItemIsOpen,
-      // @ts-ignore TODO
-      menuItemTitle,
-      // @ts-ignore TODO
-      iconWrapper,
-      // @ts-ignore TODO
-      toggleButton,
-      // @ts-ignore TODO
-      toggleButtonOpen,
-      // @ts-ignore TODO
-      content
-    } = styles;
-    // @ts-ignore TODO
-    const styleTitle = styles.title;
-    return (
-      <li className={className}>
-        <header
-          onClick={clickHandler}
+  const {
+    menuItem,
+    menuItemIsOpen,
+    menuItemTitle,
+    iconWrapper,
+    toggleButton,
+    toggleButtonOpen,
+    content
+  } = styles;
+
+  const styleTitle = styles.title;
+
+  return (
+    <li className={className}>
+      <header
+        onClick={clickHandler}
+        className={
+          isContentOpen ? classnames(menuItem, menuItemIsOpen) : menuItem
+        }
+      >
+        <div className={menuItemTitle}>
+          <div className={iconWrapper}>
+            <div>
+              <Icon
+                iconName={icon}
+                style={{ fontSize: '28px' }}
+                ariaLabel={iconLabel}
+              />
+            </div>
+          </div>
+          <div className={styleTitle}>{title}</div>
+        </div>
+        <div
           className={
-            isContentOpen ? classnames(menuItem, menuItemIsOpen) : menuItem
+            isContentOpen
+              ? classnames(toggleButton, toggleButtonOpen)
+              : toggleButton
           }
         >
-          <div className={menuItemTitle}>
-            <div className={iconWrapper}>
-              <div>
-                <Icon
-                  iconName={icon}
-                  style={{ fontSize: '28px' }}
-                  ariaLabel={iconLabel}
-                />
-              </div>
-            </div>
-            <div className={styleTitle}>{title}</div>
-          </div>
-          <div
-            className={
-              isContentOpen
-                ? classnames(toggleButton, toggleButtonOpen)
-                : toggleButton
-            }
-          >
-            <IconButton
-              alt={'Åpne og lukke knapp'}
-              icon="ChevronDown"
-              title="Skriv ut"
-            />
-          </div>
-        </header>
-        {isContentOpen && <section className={content}>{children}</section>}
-      </li>
-    );
-  }
+          <IconButton
+            alt={'Åpne og lukke knapp'}
+            icon="ChevronDown"
+            title="Skriv ut"
+          />
+        </div>
+      </header>
+      {isContentOpen && <section className={content}>{children}</section>}
+    </li>
+  );
+};
 
-  _toggleVisibility = () => {
-    this.setState({
-      isContentOpen: !this.state.isContentOpen
-    });
-  };
-}
+export default AccordionMenuItem;

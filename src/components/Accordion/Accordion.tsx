@@ -13,25 +13,26 @@ interface AccordionProps {
 /**
  * @visibleName Accordion (Ekspanderende panel)
  */
-export default class Accordion extends React.PureComponent<AccordionProps, {}> {
-  render() {
-    const { processList, stepId, children } = this.props;
-    const { accordion } = getClassNames();
-    const totalSteps = React.Children.count(children);
-    return (
-      <div className={accordion}>
-        <Grid>
-          {React.Children.map(children, (child, index) => {
-            if (React.isValidElement<AccordionItemProps>(child))
-              return React.cloneElement(child, {
-                stepNumber: index + 1,
-                id: stepId && stepId + index + 1,
-                totalSteps,
-                processList
-              });
-          })}
-        </Grid>
-      </div>
-    );
-  }
-}
+
+const Accordion = (props: AccordionProps) => {
+  const { processList, stepId, children } = props;
+  const { accordion } = getClassNames();
+  const totalSteps = React.Children.count(children);
+  return (
+    <div className={accordion}>
+      <Grid>
+        {React.Children.map(children, (child, index) => {
+          if (React.isValidElement<AccordionItemProps>(child))
+            return React.cloneElement(child, {
+              stepNumber: index + 1,
+              id: stepId && stepId + index + 1,
+              totalSteps,
+              processList
+            });
+        })}
+      </Grid>
+    </div>
+  );
+};
+
+export default Accordion;
