@@ -8,13 +8,13 @@ interface ImageProps extends IImageProps {}
 /**
  * @visibleName Image (Bilde)
  */
-export default class Image extends React.PureComponent<ImageProps, {}> {
-  render() {
-    const { children, className, ...props } = this.props;
-    return (
-      <FabricImage {...props} className={className}>
-        {children}
-      </FabricImage>
-    );
-  }
-}
+const Image: React.FC<ImageProps> = props => {
+  const { children, className, ...rest } = props;
+  return (
+    <FabricImage {...rest} className={className}>
+      {children}
+    </FabricImage>
+  );
+};
+
+export default Image;

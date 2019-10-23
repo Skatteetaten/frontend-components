@@ -7,9 +7,8 @@ interface ErrorMessageProps {
   showError?: boolean;
 }
 
-const ErrorMessage = (props: ErrorMessageProps) => {
-  // @ts-ignore TODO
-  const errorClassNames = getClassNames(props);
+const ErrorMessage: React.FC<ErrorMessageProps> = props => {
+  const errorClassNames = getClassNames();
   const showError = props.showError !== undefined ? props.showError : true;
   if (!showError) {
     return null;

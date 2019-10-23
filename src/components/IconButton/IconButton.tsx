@@ -1,10 +1,6 @@
 import classnames from 'classnames';
 import * as React from 'react';
-
-import {
-  IconButton as FabricIconButton
-} from 'office-ui-fabric-react/lib-commonjs/Button';
-
+import { IconButton as FabricIconButton } from 'office-ui-fabric-react/lib-commonjs/Button';
 import { getClassNames } from './IconButton.classNames';
 import { ButtonProps } from '../Button/Button';
 
@@ -19,29 +15,26 @@ interface IconButtonProps extends ButtonProps {
 /**
  * @visibleName IconButton (Ikonknapp)
  */
-export default class IconButton extends React.PureComponent<
-  IconButtonProps,
-  {}
-> {
-  static defaultProps = {
-    alt: ' ',
-    circle: false,
-    disabled: undefined,
-    icon: undefined,
-    onClick: undefined,
-    title: undefined,
-    type: 'default'
-  };
+const IconButton: React.FC<IconButtonProps> = props => {
+  const { icon, className, ...rest } = props;
+  return (
+    <FabricIconButton
+      {...rest}
+      className={classnames(getClassNames(props), className)}
+      role="button"
+      iconProps={{ iconName: icon }}
+    />
+  );
+};
 
-  render() {
-    const { icon, className, ...props } = this.props;
-    return (
-      <FabricIconButton
-        {...props}
-        className={classnames(getClassNames(this.props), className)}
-        role="button"
-        iconProps={{ iconName: icon }}
-      />
-    );
-  }
-}
+IconButton.defaultProps = {
+  alt: ' ',
+  circle: false,
+  disabled: undefined,
+  icon: undefined,
+  onClick: undefined,
+  title: undefined,
+  type: 'default'
+};
+
+export default IconButton;

@@ -1,4 +1,3 @@
-import { getFocusStyle } from '..';
 import { getTheme } from '@uifabric/styling';
 import { mergeStyles } from '@uifabric/merge-styles';
 import { PaletteProps } from '..';

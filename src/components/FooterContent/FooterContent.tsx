@@ -4,18 +4,14 @@ import { getClassNames, getLogoClassNames } from './FooterContent.classNames';
 import FooterDekor from './footerDekor';
 
 const logo = require('./assets/ske-logo.svg');
-// @ts-ignore TODO
-const Logo = props => {
+const Logo = () => {
   return (
-    <div>
-      <Image
-        src={logo}
-        {...props}
-        className={getLogoClassNames()}
-        height="74px"
-        alt="Skatteetaten logo"
-      />
-    </div>
+    <Image
+      src={logo}
+      className={getLogoClassNames()}
+      height="74px"
+      alt="Skatteetaten logo"
+    />
   );
 };
 
@@ -27,24 +23,22 @@ interface FooterContentProps {
 /**
  * @visibleName FooterContent (Bunn)
  */
-export default class FooterContent extends React.PureComponent<
-  FooterContentProps
-> {
-  static Logo = Logo;
-
-  render() {
-    const { children, className } = this.props;
-    // @ts-ignore TODO
-    const styles = getClassNames(this.props);
-    return (
-      <div className={className}>
-        <div className={styles.footerDecorContainer} role="contentinfo">
-          <FooterDekor />
-        </div>
-        <footer className={styles.footerWrapper}>
-          <div className={styles.footerContent}>{children}</div>
-        </footer>
+const FooterContent: React.FC<FooterContentProps> = props => {
+  const { children, className } = props;
+  const styles = getClassNames();
+  return (
+    <div className={className}>
+      <div className={styles.footerDecorContainer} role="contentinfo">
+        <FooterDekor />
       </div>
-    );
-  }
-}
+      <footer className={styles.footerWrapper}>
+        <div className={styles.footerContent}>{children}</div>
+      </footer>
+    </div>
+  );
+};
+
+// @ts-ignore
+FooterContent.Logo = Logo;
+
+export default FooterContent;
