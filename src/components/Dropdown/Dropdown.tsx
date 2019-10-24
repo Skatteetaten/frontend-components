@@ -38,7 +38,7 @@ const Dropdown: React.FC<DropdownProps> = props => {
   } = props;
   return (
     <>
-      <RenderLabel label={label} info={info}  />
+      <RenderLabel label={label} info={info} />
       <FabricDropdown
         {...rest}
         className={classnames(getClassNames(props), className)}

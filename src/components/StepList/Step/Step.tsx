@@ -1,13 +1,11 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-
 import classnames from 'classnames';
 import Grid from '../../Grid/Grid';
 import Icon from '../../Icon';
 import { getClassNames } from '../StepList.classNames';
 import { UseScreen } from '../../utils/ScreenPlugin';
-// @ts-ignore //TODO
-const NumberIcon = props => {
+
+const NumberIcon = (props: any) => {
   return (
     <div className={props.styles.numberWrapper}>
       <div className={props.styles.stepNumber}>
@@ -24,16 +22,22 @@ const NumberIcon = props => {
 };
 
 export interface StepProps {
+  /** Overskrift for et steg */
   stepTitle?: string;
+  /** Benyttes for å definere type steg som skal vises */
   stepType?: 'passive' | 'active' | 'result' | 'next';
+  /** Om et steg skal være synlig eller ikke */
   showStep?: boolean;
+  /**  Id som settes i aria-control på vise/skjule knapp som peker på innholdspanelet som knappen styrer */
   stepId?: string;
+  /** Ikon som skal vises i resultat steg */
   resultIcon?: string;
   className?: string;
   stepNumber?: number;
+  children?: React.ReactElement;
 }
 
-const Step: React.FC<StepProps> = props => {
+const Step = (props: StepProps) => {
   const {
     stepTitle,
     stepNumber,
@@ -59,7 +63,7 @@ const Step: React.FC<StepProps> = props => {
   return (
     <div
       key={stepNumber}
-      aria-describedby={'step' + stepNumber}
+      aria-describedby={'step-' + stepNumber}
       role="region"
       className={classnames(styles.wrapperStep, className)}
     >
@@ -111,18 +115,3 @@ const Step: React.FC<StepProps> = props => {
   );
 };
 export default Step;
-
-Step.propTypes = {
-  /** Overskrift for et steg */
-  stepTitle: PropTypes.string,
-  /** Benyttes for å definere type steg som skal vises */
-  stepType: PropTypes.oneOf(['passive', 'active', 'result', 'next']),
-  /** Om et steg skal være synlig eller ikke */
-  showStep: PropTypes.bool,
-  /**  Id som settes i aria-control på vise/skjule knapp som peker på innholdspanelet som knappen styrer */
-  stepId: PropTypes.string,
-  /** Ikon som skal vises i resultat steg */
-  resultIcon: PropTypes.string,
-  /** Mulighet for å legge inn egen klasse for å overstyre stiling */
-  className: PropTypes.string
-};

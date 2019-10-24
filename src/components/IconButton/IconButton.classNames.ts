@@ -111,10 +111,9 @@ function getIconSize(props: IconButtonProps) {
 export var getClassNames = function getClassNames(props: IconButtonProps) {
   const palette = getTheme().palette as PaletteProps;
   const inset = -4;
-  const radius = "0";
+  const radius = '0';
 
   return mergeStyles([
-
     getFocusStyle({ palette }, inset, 'relative', radius),
     {
       displayName: `ske-icon${props.type}-button`,

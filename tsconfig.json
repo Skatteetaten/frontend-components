@@ -22,8 +22,7 @@
     "forceConsistentCasingInFileNames": true,
     "moduleResolution": "node",
     "resolveJsonModule": true,
-    "noEmit": true,
-    "isolatedModules": true
+    "noEmit": true
   },
   "include": [
     "src/components/**/*"
