@@ -16,23 +16,20 @@ interface SearchFieldProps extends ISearchBoxProps {
 /**
  * @visibleName SearchField (Søkefelt)
  */
-export default class SearchField extends React.PureComponent<
-  SearchFieldProps,
-  {}
-> {
-  static defaultProps = {
-    border: 'default',
-    searchFieldSize: 'standard'
-  };
+const SearchField: React.FC<SearchFieldProps> = props => {
+  const { className, ...rest } = props;
 
-  render() {
-    const { className, ...props } = this.props;
+  return (
+    <SearchBox
+      {...rest}
+      className={classnames(getClassNames(props), className)}
+    />
+  );
+};
 
-    return (
-      <SearchBox
-        {...props}
-        className={classnames(getClassNames(this.props), className)}
-      />
-    );
-  }
-}
+SearchField.defaultProps = {
+  border: 'default',
+  searchFieldSize: 'standard'
+};
+
+export default SearchField;

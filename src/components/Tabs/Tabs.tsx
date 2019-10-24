@@ -1,5 +1,6 @@
 import classnames from 'classnames';
 import {
+  IPivotItemProps,
   IPivotProps,
   Pivot,
   PivotItem,
@@ -12,22 +13,21 @@ import { getClassNames } from './Tabs.classNames';
 /**
  * @visibleName Tabs (Arkfane)
  */
-export default class Tabs extends React.PureComponent<IPivotProps, {}> {
-  render() {
-    const { children, className, ...props } = this.props;
-    return (
-      <Pivot
-        linkFormat={PivotLinkFormat.tabs}
-        linkSize={PivotLinkSize.large}
-        {...props}
-        // @ts-ignore TODO
-        className={classnames(getClassNames(this.props), className)}
-      >
-        {React.Children.map(this.props.children, child => {
-          //@ts-ignore //todo
+const Tabs: React.FC<IPivotProps> = props => {
+  const { children, className, ...rest } = props;
+  return (
+    <Pivot
+      {...rest}
+      linkFormat={PivotLinkFormat.tabs}
+      linkSize={PivotLinkSize.large}
+      className={classnames(getClassNames(), className)}
+    >
+      {React.Children.map(props.children, child => {
+        if (React.isValidElement<IPivotItemProps>(child))
           return <PivotItem {...child.props} />;
-        })}
-      </Pivot>
-    );
-  }
-}
+      })}
+    </Pivot>
+  );
+};
+
+export default Tabs;

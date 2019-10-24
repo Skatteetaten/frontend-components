@@ -1,8 +1,9 @@
 import { mergeStyleSets } from '@uifabric/merge-styles';
 import { getTheme } from '@uifabric/styling';
 import { PaletteProps } from '..';
-// @ts-ignore TODO
-function getType(props) {
+import { NavigationTileProps } from './NavigationTile';
+
+function getType(props: NavigationTileProps) {
   switch (props.type) {
     case 'left':
       return {
@@ -12,8 +13,8 @@ function getType(props) {
       return;
   }
 }
-// @ts-ignore TODO
-function getIcon(props) {
+
+function getIcon(props: NavigationTileProps) {
   switch (props.alignIcon) {
     case 'right':
       return {
@@ -30,8 +31,8 @@ function getIcon(props) {
       };
   }
 }
-// @ts-ignore TODO
-function getTitle(props) {
+
+function getTitle(props: NavigationTileProps) {
   const palette = getTheme().palette as PaletteProps;
   if (props.alignTitle === 'left') {
     return {
@@ -44,8 +45,8 @@ function getTitle(props) {
     return;
   }
 }
-// @ts-ignore TODO
-function getDescription(props) {
+
+function getDescription(props: NavigationTileProps) {
   const palette = getTheme().palette as PaletteProps;
   if (props.alignDescription === 'left') {
     return {
@@ -58,8 +59,8 @@ function getDescription(props) {
     return;
   }
 }
-// @ts-ignore TODO
-export const getClassNames = props => {
+
+export const getClassNames = (props: NavigationTileProps) => {
   const palette = getTheme().palette as PaletteProps;
   // @ts-ignore TODO
   return mergeStyleSets({

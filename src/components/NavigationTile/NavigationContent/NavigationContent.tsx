@@ -12,7 +12,7 @@ export interface ContentProps {
 /**
  * @visibleName NavigationContent (Innhold til forsideknapp)
  */
-const NavigationContent = (props: ContentProps) => (
+const NavigationContent: React.FC<ContentProps> = props => (
   <div {...props}>
     <Icon iconName={props.icon} />
     <h2>{props.title}</h2>

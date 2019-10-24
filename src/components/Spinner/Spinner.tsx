@@ -7,25 +7,27 @@ import {
 import * as React from 'react';
 import { getClassNames } from './Spinner.classNames';
 
-interface SpinnerProps extends ISpinnerProps {
+export interface SpinnerProps extends ISpinnerProps {
   spinnerColor?: 'white' | 'black';
 }
 /**
  * @visibleName Spinner (Innlasting)
  */
-export default class Spinner extends React.PureComponent<SpinnerProps, {}> {
-  static Size = SpinnerSize;
-  static defaultProps = {
-    size: Spinner.Size.medium,
-    spinnerColor: 'black'
-  };
-  render() {
-    const { className, ...props } = this.props;
-    return (
-      <FabricSpinner
-        {...props}
-        className={classnames(getClassNames(this.props), className)}
-      />
-    );
-  }
-}
+const Spinner: React.FC<SpinnerProps> = props => {
+  const { className, ...rest } = props;
+  return (
+    <FabricSpinner
+      {...rest}
+      className={classnames(getClassNames(props), className)}
+    />
+  );
+};
+// @ts-ignore TODO
+Spinner.Size = SpinnerSize;
+Spinner.defaultProps = {
+  // @ts-ignore TODO
+  size: Spinner.Size.medium,
+  spinnerColor: 'black'
+};
+
+export default Spinner;

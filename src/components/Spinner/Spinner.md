@@ -5,9 +5,9 @@ import Spinner from '@skatteetaten/frontend-components/Spinner';
 import Button from '@skatteetaten/frontend-components/Button';
 
 <div style={{ textAlign: 'center' }}>
-  <Button type="primary">
+  <Button buttonStyle="primary">
     {' '}
-    <Spinner label="kake" spinnerColor="white" />{' '}
+    <Spinner spinnerColor="white" />{' '}
   </Button>
   <br />
   <br />

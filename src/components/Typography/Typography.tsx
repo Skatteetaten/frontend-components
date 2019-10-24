@@ -19,24 +19,21 @@ interface TypographyProps {
 /**
  * @visibleName Typography (Fontstørrelse)
  */
-export class Typography extends React.Component<TypographyProps, {}> {
-  static defaultProps = {
-    className: undefined,
-    noBorder: undefined,
-    noColor: undefined,
-    noMargin: undefined,
-    noSize: undefined
-  };
+const Typography: React.FC<TypographyProps> = props => {
+  const { children, className } = props;
 
-  render() {
-    const { children, className } = this.props;
+  return (
+    <div className={classnames(getClassNames(props), className)}>
+      {children}
+    </div>
+  );
+};
 
-    return (
-      <div className={classnames(getClassNames(this.props), className)}>
-        {children}
-      </div>
-    );
-  }
-}
-
+Typography.defaultProps = {
+  className: undefined,
+  noBorder: undefined,
+  noColor: undefined,
+  noMargin: undefined,
+  noSize: undefined
+};
 export default Typography;

@@ -2,20 +2,14 @@
 
 exports[`Dropdown komponent matcher snapshot 1`] = `
 <Fragment>
-  <div
-    className="labelArea-41"
-  >
-    <span
-      className="label-42"
-    />
-  </div>
+  <RenderLabel />
   <StyledWithResponsiveMode
     calloutProps={
       Object {
-        "className": "SkeDropdownValg-48",
+        "className": "SkeDropdownValg-51",
       }
     }
-    className="SkeDropdown-47"
+    className="SkeDropdown-50"
     onRenderCaretDown={[Function]}
     options={
       Array [

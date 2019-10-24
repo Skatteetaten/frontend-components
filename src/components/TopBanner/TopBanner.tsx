@@ -65,8 +65,8 @@ const ExternalHeaderContent = ({ styles, ...props }) => {
     </>
   );
 };
-// @ts-ignore TODO
-const ExternalHeader = props => {
+
+const ExternalHeader: React.FC<TopBannerProps> = props => {
   const styles = getExternalClassNames(props);
   // @ts-ignore TODO
   const { header, headerMain, logoWrapper, contentWrapper } = styles;
@@ -118,22 +118,18 @@ interface TopBannerProps {
 /**
  * @visibleName TopBanner (Topp)
  */
-export default class TopBanner extends React.PureComponent<TopBannerProps, {}> {
-  static defaultProps = {
-    title: undefined,
-    homeUrl: undefined,
-    homeText: undefined,
-    external: false,
-    compact: false,
-    logoLink: false
-  };
+const TopBanner: React.FC<TopBannerProps> = props => {
+  const { external, ...rest } = props;
+  return external ? <ExternalHeader {...rest} /> : <InternalHeader {...rest} />;
+};
 
-  render() {
-    const { external, ...props } = this.props;
-    return external ? (
-      <ExternalHeader {...props} />
-    ) : (
-      <InternalHeader {...props} />
-    );
-  }
-}
+TopBanner.defaultProps = {
+  title: undefined,
+  homeUrl: undefined,
+  homeText: undefined,
+  external: false,
+  compact: false,
+  logoLink: false
+};
+
+export default TopBanner;

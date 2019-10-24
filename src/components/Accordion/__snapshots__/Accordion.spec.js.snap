@@ -10,13 +10,13 @@ exports[`Accordion komponent matcher snapshot 1`] = `
         className="ske-Grid-44 "
       >
         <AccordionItem
-          id={NaN}
           key=".0"
           stepNumber={1}
+          totalSteps={1}
         >
           <div
-            aria-describedby={1}
-            aria-label={1}
+            aria-describedby="step1"
+            aria-label="step1"
             className="wrapperStep-37"
             key="1"
           >
@@ -46,6 +46,7 @@ exports[`Accordion komponent matcher snapshot 1`] = `
                           >
                             <hr />
                             <ToggleContent
+                              isContentOpen={false}
                               onClick={[Function]}
                               styles={
                                 Object {
@@ -71,6 +72,7 @@ exports[`Accordion komponent matcher snapshot 1`] = `
                                 Her vises innhold
                               </p>
                             </div>
+                            <hr />
                           </div>
                         </GridCol>
                       </div>
