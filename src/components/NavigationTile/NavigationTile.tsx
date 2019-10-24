@@ -38,37 +38,29 @@ const NavigationTile: React.FC<NavigationTileProps> = props => {
   } = props;
   const styles = getClassNames(props);
   return (
-    <div>
-      {/*
-         // @ts-ignore TODO */}
-      <nav
-        {...rest}
-        className={classnames(styles.nav, getClassNames(props), className)}
-        type={type}
-      >
-        <ul>
-          {contents.map(({ to, id, ...rest }, index) => (
-            <li
-              key={`${to}-${index}`}
-              id={id}
-              className={styles.content}
-              aria-describedby={id}
-            >
-              {renderContent ? (
-                // @ts-ignore TODO
-                renderContent(to, <NavigationContent {...rest} />)
-              ) : (
-                <a href={to}>
-                  {/*
-                    // @ts-ignore TODO */}
-                  <NavigationContent {...rest} />
-                </a>
-              )}
-            </li>
-          ))}
-        </ul>
-      </nav>
-    </div>
+    <nav
+      {...rest}
+      className={classnames(styles.nav, getClassNames(props), className)}
+    >
+      <ul>
+        {contents.map(({ to, id, ...rest }, index) => (
+          <li
+            key={`${to}-${index}`}
+            id={id}
+            className={styles.content}
+            aria-describedby={id}
+          >
+            {renderContent ? (
+              renderContent(to, <NavigationContent to={to} {...rest} />)
+            ) : (
+              <a href={to}>
+                <NavigationContent to={to} {...rest} />
+              </a>
+            )}
+          </li>
+        ))}
+      </ul>
+    </nav>
   );
 };
 

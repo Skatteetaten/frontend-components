@@ -16,7 +16,7 @@ describe('Button komponent ', () => {
     const wrapper = oppsettFullDOM();
     const label = wrapper.find('.ms-Button-label');
 
-    expect(wrapper.prop('type')).toEqual('primaryRounded');
+    expect(wrapper.prop('buttonStyle')).toEqual('primaryRounded');
     expect(wrapper.prop('disabled')).toEqual(false);
     expect(wrapper.prop('primary')).toEqual(false);
     expect(wrapper.prop('icon')).toEqual(undefined);
