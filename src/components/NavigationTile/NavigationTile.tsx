@@ -27,8 +27,8 @@ export interface NavigationTileProps {
  */
 const NavigationTile: React.FC<NavigationTileProps> = props => {
   const {
+    children,
     contents,
-    renderContent,
     className,
     type,
     alignIcon,
@@ -43,22 +43,26 @@ const NavigationTile: React.FC<NavigationTileProps> = props => {
       className={classnames(styles.nav, getClassNames(props), className)}
     >
       <ul>
-        {contents.map(({ to, id, ...rest }, index) => (
-          <li
-            key={`${to}-${index}`}
-            id={id}
-            className={styles.content}
-            aria-describedby={id}
-          >
-            {renderContent ? (
-              renderContent(to, <NavigationContent to={to} {...rest} />)
-            ) : (
-              <a href={to}>
-                <NavigationContent to={to} {...rest} />
-              </a>
-            )}
-          </li>
-        ))}
+        {contents &&
+          contents.map(({ ...rest }, index) => (
+            <NavigationContent
+              key={index}
+              className={styles.content}
+              {...rest}
+            />
+          ))}
+        {React.Children.map(children, (child, index) => {
+          if (React.isValidElement<ContentProps>(child))
+            return (
+              <NavigationContent
+                key={index}
+                className={styles.content}
+                {...child.props}
+              >
+                {child.props.children}
+              </NavigationContent>
+            );
+        })}
       </ul>
     </nav>
   );

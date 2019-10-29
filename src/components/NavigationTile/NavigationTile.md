@@ -24,6 +24,19 @@ const contents = [
 <NavigationTile contents={contents} />;
 ```
 
+** Ny kodestil **
+
+```js
+import NavigationTile from '@skatteetaten/frontend-components/NavigationTile';
+import NavigationContent from '@skatteetaten/frontend-components/NavigationTile/NavigationContent';
+
+<NavigationTile>
+  <NavigationContent to={'#navigationtile'} title={'Bedrift'} icon={'Company'}>
+    asd
+  </NavigationContent>
+</NavigationTile>;
+```
+
 ```js
 import NavigationTile from '@skatteetaten/frontend-components/NavigationTile';
 

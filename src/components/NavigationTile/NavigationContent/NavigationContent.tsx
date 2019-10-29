@@ -7,17 +7,22 @@ export interface ContentProps {
   description?: string;
   to: string;
   id?: string;
+  className?: string;
+  key: number | string;
+  children?: string | JSX.Element
 }
 
 /**
  * @visibleName NavigationContent (Innhold til forsideknapp)
  */
 const NavigationContent: React.FC<ContentProps> = props => (
-  <div {...props}>
-    <Icon iconName={props.icon} />
-    <h2>{props.title}</h2>
-    <p>{props.description}</p>
-  </div>
+  <li {...props}>
+    <a href={props.to}>
+      <Icon iconName={props.icon} />
+      <h2>{props.title}</h2>
+      <p>{props.description || props.children}</p>
+    </a>
+  </li>
 );
 
 export default NavigationContent;
