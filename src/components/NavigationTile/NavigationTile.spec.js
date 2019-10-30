@@ -66,7 +66,6 @@ describe('NavigationTile komponent', () => {
       alignIcon: 'right',
       alignTitle: 'left',
       contents: contents,
-      renderContent: (to, content) => <a href={'something/' + to}>{content}</a>
     });
 
     const tile = wrapper.find('nav');

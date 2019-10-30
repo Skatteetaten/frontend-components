@@ -38,7 +38,7 @@ interface TableProps {
 interface TableState {
   editModeActive: boolean;
   tableIsScrollable: boolean;
-  sort: { ascending: null; columnFieldName: null };
+  sort: { ascending: boolean; columnFieldName: string };
 }
 /**
  * @visibleName Table (Tabell)
@@ -47,28 +47,28 @@ export default class Table extends React.PureComponent<TableProps, TableState> {
   static defaultProps = {
     data: []
   };
-  // @ts-ignore TODO
-  constructor(props) {
+  private readonly wrapperRef: React.RefObject<HTMLDivElement>;
+  private readonly tableRef: React.RefObject<HTMLDivElement>;
+
+  constructor(props: TableProps) {
     super(props);
-    // @ts-ignore TODO
     this.wrapperRef = React.createRef();
-    // @ts-ignore TODO
     this.tableRef = React.createRef();
     this.state = {
       editModeActive: false,
       tableIsScrollable: false,
       sort: {
-        ascending: null,
-        columnFieldName: null
+        ascending: false,
+        columnFieldName: ''
       }
     };
   }
 
   componentDidMount() {
-    // @ts-ignore TODO
-    const tableWidth = this.tableRef.current.clientWidth;
-    // @ts-ignore TODO
-    const wrapperWidth = this.wrapperRef.current.clientWidth;
+    const tableWidth =
+      this.tableRef.current && this.tableRef.current.clientWidth;
+    const wrapperWidth =
+      this.wrapperRef.current && this.wrapperRef.current.clientWidth;
 
     this._setScrollBarState(wrapperWidth, tableWidth);
 
@@ -82,15 +82,11 @@ export default class Table extends React.PureComponent<TableProps, TableState> {
 
     return (
       <div
-        // @ts-ignore TODO
         ref={this.wrapperRef}
         id={id}
-        // @ts-ignore TODO
-        className={classnames(getClassNames(this.props), className)}
+        className={classnames(getClassNames(), className)}
       >
-        {/*
-        // @ts-ignore TODO */}
-        <table ref={this.tableRef}>
+        <table>
           <thead>
             <tr>
               {tableIsScrollable && editableRows && <th />}
@@ -106,16 +102,18 @@ export default class Table extends React.PureComponent<TableProps, TableState> {
   }
 
   _updateDimensions = () => {
-    // @ts-ignore TODO
-    let tableWidth = this.tableRef.current.clientWidth;
-    // @ts-ignore TODO
-    let wrapperWidth = this.wrapperRef.current.clientWidth;
+    let tableWidth = this.tableRef.current && this.tableRef.current.clientWidth;
+    let wrapperWidth =
+      this.wrapperRef.current && this.wrapperRef.current.clientWidth;
 
     this._setScrollBarState(wrapperWidth, tableWidth);
   };
-  // @ts-ignore TODO
-  _setScrollBarState = (wrapperWidth, tableWidth) => {
-    if (tableWidth > wrapperWidth) {
+
+  _setScrollBarState = (
+    wrapperWidth: number | null,
+    tableWidth: number | null
+  ) => {
+    if (tableWidth && wrapperWidth && tableWidth > wrapperWidth) {
       this.setState({
         tableIsScrollable: true
       });
@@ -125,46 +123,47 @@ export default class Table extends React.PureComponent<TableProps, TableState> {
       });
     }
   };
-  // @ts-ignore TODO
-  _getHeader = columns => {
-    // @ts-ignore TODO
-    return columns.map(key => {
-      if (key.sortable) {
-        const isSorted = this.state.sort.columnFieldName === key.fieldName;
-        const isSortedAscending = this.state.sort.ascending;
-        const iconName = isSorted
-          ? isSortedAscending
-            ? 'ArrowDown'
-            : 'ArrowUp'
-          : 'ArrowUpDown';
-        return (
-          <th
-            key={key.fieldName}
-            onClick={() => this._setSortingState(key.fieldName)}
-            className="sortable"
-            // @ts-ignore TODO
-            tabIndex="0"
-            onKeyDown={e => {
-              return e.key === 'Enter'
-                ? this._setSortingState(key.fieldName)
-                : null;
-            }}
-          >
-            {key.name}
-            <Icon
-              // @ts-ignore TODO
-              className={key.autohideSorting === false ? 'noAutoHide' : null}
-              iconName={iconName}
-            />
-          </th>
-        );
-      }
-      return <th key={key.fieldName}>{key.name}</th>;
-    });
+
+  _getHeader = (columns: TableProps['columns']) => {
+    return (
+      columns &&
+      columns.map(key => {
+        if (key.sortable) {
+          const isSorted = this.state.sort.columnFieldName === key.fieldName;
+          const isSortedAscending = this.state.sort.ascending;
+          const iconName = isSorted
+            ? isSortedAscending
+              ? 'ArrowDown'
+              : 'ArrowUp'
+            : 'ArrowUpDown';
+          return (
+            <th
+              key={key.fieldName}
+              onClick={() => this._setSortingState(key.fieldName)}
+              className="sortable"
+              tabIndex={0}
+              onKeyDown={e => {
+                return e.key === 'Enter'
+                  ? this._setSortingState(key.fieldName)
+                  : null;
+              }}
+            >
+              {key.name}
+              <Icon
+                className={
+                  key.autohideSorting === false ? 'noAutoHide' : undefined
+                }
+                iconName={iconName}
+              />
+            </th>
+          );
+        }
+        return <th key={key.fieldName}>{key.name}</th>;
+      })
+    );
   };
-  // @ts-ignore TODO
-  _setSortingState = columnFieldName => {
-    // @ts-ignore TODO
+
+  _setSortingState = (columnFieldName: string) =>
     this.setState({
       sort: {
         ascending:
@@ -174,55 +173,47 @@ export default class Table extends React.PureComponent<TableProps, TableState> {
         columnFieldName: columnFieldName
       }
     });
-  };
 
   _setEditMode = () => {
     this.setState({
       editModeActive: !this.state.editModeActive
     });
   };
-  // @ts-ignore TODO
-  _getRowData = columns => {
+
+  _getRowData = (columns: TableProps['columns']) => {
     const items = this._sortRowData(this.props.data);
-    // @ts-ignore TODO
     return items.map((row, index) => {
       return (
-        <>
-          {/*
-          // @ts-ignore TODO */}
-          <TableRow
-            data={row}
-            key={index}
-            rowIndex={index}
-            columns={columns}
-            editableContent={this.props.editableContent}
-            editableRows={this.props.editableRows}
-            setEditMode={this._setEditMode}
-            editModeActive={this.state.editModeActive}
-            tableHasScroll={this.state.tableIsScrollable}
-          />
-        </>
+        <TableRow
+          data={row}
+          key={index}
+          rowIndex={index}
+          columns={columns}
+          editableContent={this.props.editableContent}
+          editableRows={this.props.editableRows}
+          setEditMode={this._setEditMode}
+          editModeActive={this.state.editModeActive}
+          tableHasScroll={this.state.tableIsScrollable}
+        />
       );
     });
   };
-  // @ts-ignore TODO
-  _sortRowData = rows => {
+
+  _sortRowData = (rows: any[]) => {
     const sortingKey = this.state.sort.columnFieldName;
     if (sortingKey) {
       const copiedArray = [...rows];
       const sortDescending = !this.state.sort.ascending;
-      // @ts-ignore TODO
-      const sortingFunction = this.props.columns.filter(
-        column => column.fieldName === sortingKey
-      )[0].sortingFunction;
+      const sortingFunction =
+        this.props.columns &&
+        this.props.columns.filter(column => column.fieldName === sortingKey)[0]
+          .sortingFunction;
       if (sortingFunction) {
         copiedArray.sort((a, b) =>
-          // @ts-ignore TODO
           sortingFunction(a[sortingKey], b[sortingKey])
         );
       } else {
         copiedArray.sort(function(a, b) {
-          // @ts-ignore TODO
           return a[sortingKey] < b[sortingKey] ? -1 : 1;
         });
       }

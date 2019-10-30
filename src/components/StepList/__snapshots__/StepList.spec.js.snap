@@ -14,7 +14,7 @@ exports[`StepList komponent matcher snapshot 1`] = `
           stepNumber={1}
         >
           <div
-            aria-describedby="step1"
+            aria-describedby="step-1"
             className="wrapperStep-55"
             key="1"
             role="region"

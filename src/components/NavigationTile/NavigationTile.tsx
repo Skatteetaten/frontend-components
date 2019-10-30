@@ -9,7 +9,6 @@ export interface NavigationTileProps {
   /**
    * (to: String, content: JSXElement) => JSXElement
    */
-  renderContent?: (...args: any[]) => any;
   contents: ContentProps[];
   /** Type av NavigationTile, default er sentrert */
   type?: 'center' | 'left';

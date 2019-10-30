@@ -1,11 +1,7 @@
 {
   "compilerOptions": {
     "module": "esnext",
-    "lib": [
-      "es5",
-      "es6",
-      "dom"
-    ],
+    "lib": ["es5", "es6", "dom"],
     "target": "es5",
     "declaration": true,
     "allowSyntheticDefaultImports": true,
@@ -13,18 +9,13 @@
     "sourceMap": true,
     "outDir": "lib",
     "jsx": "react",
-    "typeRoots": [
-      "node_modules/@types"
-    ],
+    "typeRoots": ["node_modules/@types"],
     "allowJs": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "moduleResolution": "node",
-    "resolveJsonModule": true,
-    "noEmit": true
+    "resolveJsonModule": true
   },
-  "include": [
-    "src/components/**/*"
-  ]
+  "include": ["src/components/**/*"]
 }
