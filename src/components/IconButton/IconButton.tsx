@@ -10,7 +10,12 @@ export interface IconButtonProps extends ButtonProps {
   /** Ikon som skal vises foran teksten på knappen */
   icon?: string;
   /** Gjør knappen til hovedknapp med fylt farge */
-  type?: 'default' | 'small' | 'medium' | 'large' | 'xLarge';
+  buttonSize?: 'default' | 'small' | 'medium' | 'large' | 'xLarge';
+  /**
+   * Fjerne Prop
+   * @ignore
+   */
+  buttonStyle?: ButtonProps['buttonStyle'];
 }
 /**
  * @visibleName IconButton (Ikonknapp)

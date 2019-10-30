@@ -1,36 +1,16 @@
 import classnames from 'classnames';
-import {
-  ActionButton as FabricActionButton,
-  IButtonProps
-} from 'office-ui-fabric-react/lib-commonjs/Button';
+import { ActionButton as FabricActionButton } from 'office-ui-fabric-react/lib-commonjs/Button';
 import * as React from 'react';
 import { getClassNames } from './ActionButton.classNames';
-import { ISplitButtonClassNames } from 'office-ui-fabric-react/lib/components/Button/SplitButton/SplitButton.classNames';
+import { ButtonProps } from '../Button/Button';
 
-export interface ActionButtonProps extends IButtonProps {
+export interface ActionButtonProps extends ButtonProps {
   /** Ikon som skal vises foran lenketeksten */
   icon?: string;
   /** Ikon størrelse, to tilgjengelige størrelser */
   iconSize?: any;
   /** Fire forhåndsdefinerte farger, se eksempler */
   color?: 'blue' | 'black' | 'red' | 'green' | 'white';
-  /**
-   * Skjulte props
-   */
-  /** @ignore */
-  allowDisabledFocus?: IButtonProps['allowDisabledFocus'];
-  /** @ignore */
-  checked?: IButtonProps['checked'];
-  /** @ignore */
-  disabled?: IButtonProps['disabled'];
-  /** @ignore */
-  split?: IButtonProps['split'];
-  /** @ignore */
-  getSplitButtonClassNames?: IButtonProps['getSplitButtonClassNames'];
-  /** @ignore */
-  splitButtonAriaLabel?: IButtonProps['splitButtonAriaLabel'];
-  /** @ignore */
-  splitButtonMenuProps?: IButtonProps['splitButtonMenuProps'];
 }
 /**
  * @visibleName ActionButton (Aksjonsknapp)

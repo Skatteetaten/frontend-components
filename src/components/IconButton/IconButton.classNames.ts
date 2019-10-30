@@ -6,7 +6,7 @@ import { PaletteProps } from '..';
 import { IconButtonProps } from './IconButton';
 
 function getTypeColor(props: IconButtonProps) {
-  switch (props.type) {
+  switch (props.buttonSize) {
     case 'small':
       return {
         width: '35px',
@@ -84,7 +84,7 @@ function getCircleFocusStyles(props: IconButtonProps) {
 }
 
 function getIconSize(props: IconButtonProps) {
-  switch (props.type) {
+  switch (props.buttonSize) {
     case 'small':
       return {
         fontSize: FontSizes.mediumPlus
@@ -116,7 +116,7 @@ export var getClassNames = function getClassNames(props: IconButtonProps) {
   return mergeStyles([
     getFocusStyle({ palette }, inset, 'relative', radius),
     {
-      displayName: `ske-icon${props.type}-button`,
+      displayName: `ske-icon${props.buttonSize}-button`,
       selectors: {
         '&.ms-Button--icon': {
           width: '40px',
