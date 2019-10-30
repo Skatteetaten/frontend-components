@@ -17,6 +17,35 @@ export interface ButtonProps extends IButtonProps {
     | 'warning'
     | 'secondary'
     | 'primaryLarge';
+  /**
+   * Skjulte props
+   */
+  /** @ignore */
+  allowDisabledFocus?: IButtonProps['allowDisabledFocus'];
+  /** @ignore */
+  checked?: IButtonProps['checked'];
+  /** @ignore */
+  disabled?: IButtonProps['disabled'];
+  /** @ignore */
+  split?: IButtonProps['split'];
+  /** @ignore */
+  getSplitButtonClassNames?: IButtonProps['getSplitButtonClassNames'];
+  /** @ignore */
+  splitButtonAriaLabel?: IButtonProps['splitButtonAriaLabel'];
+  /** @ignore */
+  splitButtonMenuProps?: IButtonProps['splitButtonMenuProps'];
+  /** @ignore */
+  toggle?: IButtonProps['toggle'];
+  /** @ignore */
+  primary?: IButtonProps['primary'];
+  /** @ignore */
+  primaryActionButtonProps?: IButtonProps['primaryActionButtonProps'];
+  /** @ignore */
+  primaryDisabled?: IButtonProps['primaryDisabled'];
+  /** @ignore */
+  secondaryText?: IButtonProps['secondaryText'];
+  /** @ignore */
+  toggeled?: boolean;
 }
 /**
  * @visibleName Button (Knapp)

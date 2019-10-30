@@ -5,6 +5,7 @@ import {
 } from 'office-ui-fabric-react/lib-commonjs/Button';
 import * as React from 'react';
 import { getClassNames } from './ActionButton.classNames';
+import { ISplitButtonClassNames } from 'office-ui-fabric-react/lib/components/Button/SplitButton/SplitButton.classNames';
 
 export interface ActionButtonProps extends IButtonProps {
   /** Ikon som skal vises foran lenketeksten */
@@ -17,25 +18,19 @@ export interface ActionButtonProps extends IButtonProps {
    * Skjulte props
    */
   /** @ignore */
-  allowDisabledFocus?: boolean;
+  allowDisabledFocus?: IButtonProps['allowDisabledFocus'];
   /** @ignore */
-  checked?: boolean;
+  checked?: IButtonProps['checked'];
   /** @ignore */
-  disabled?: boolean;
+  disabled?: IButtonProps['disabled'];
   /** @ignore */
-  split?: boolean;
+  split?: IButtonProps['split'];
   /** @ignore */
-  getSplitButtonClassNames?: (
-    disabled: boolean,
-    expanded: boolean,
-    checked: boolean,
-    allowDisabledFocus: boolean
-  ) => void;
+  getSplitButtonClassNames?: IButtonProps['getSplitButtonClassNames'];
   /** @ignore */
-  splitButtonAriaLabel?: string;
+  splitButtonAriaLabel?: IButtonProps['splitButtonAriaLabel'];
   /** @ignore */
-  splitButtonMenuProps?: IButtonProps;
-
+  splitButtonMenuProps?: IButtonProps['splitButtonMenuProps'];
 }
 /**
  * @visibleName ActionButton (Aksjonsknapp)

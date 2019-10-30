@@ -3,6 +3,7 @@ import { getTheme } from '@uifabric/styling';
 import { FontSizes, FontWeights } from '..';
 import { PaletteProps } from '..';
 import { ButtonProps } from './Button';
+import { getFocusStyle } from '../utils/getFocusStyle';
 
 function getTypeColor(props: ButtonProps): object {
   const palette = getTheme().palette as PaletteProps;
@@ -152,37 +153,61 @@ function getLabelStyles(props: ButtonProps) {
   }
 }
 
+function setFocusRadius(props: ButtonProps) {
+  if (props.buttonStyle === 'primary' || props.buttonStyle === 'warning') {
+    return '6px';
+  }
+  if (props.buttonStyle === 'primaryLarge') {
+    return '7px';
+  } else {
+    return '20px';
+  }
+}
+
+function setInset(props: ButtonProps) {
+  if (props.buttonStyle === 'primary' || props.buttonStyle === 'warning') {
+    return -3;
+  } else {
+    return -4;
+  }
+}
+
 export function getClassNames(props: ButtonProps): string {
   const theme = getTheme();
   const palette = theme.palette as PaletteProps;
-  return mergeStyles({
-    displayName: `ske-${props.buttonStyle}-button`,
-    selectors: {
-      '&.ms-Button': {
-        borderWidth: '3px',
-        fontWeight: 'normal',
-        padding: '15px',
-        transition: 'background 0.3s',
-        ...getTypeColor(props)
-      },
-      '&.ms-Button:hover, &.ms-Button:focus': {
-        ...getTypeFocusColor(props)
-      },
-      '&.ms-Button:hover .ms-Button-label': {
-        ...getLabelStyles(props)
-      },
-      '&.ms-Button:active': {
-        ...getTypeActiveColor(props)
-      },
-      '&.ms-Button:disabled': {
-        background: palette.skeColor.whiteGrey,
-        borderColor: palette.skeColor.lightGrey,
-        color: palette.skeColor.lightGrey,
-        ...getDisabledColor(props)
-      },
-      '&.ms-Button i': {
-        fontSize: FontSizes.icon
+  const inset = setInset(props);
+  const radius = setFocusRadius(props);
+  return mergeStyles([
+    getFocusStyle(theme, inset, 'relative', radius),
+    {
+      displayName: `ske-${props.buttonStyle}-button`,
+      selectors: {
+        '&.ms-Button': {
+          borderWidth: '3px',
+          fontWeight: 'normal',
+          padding: '15px',
+          transition: 'background 0.3s',
+          ...getTypeColor(props)
+        },
+        '&.ms-Button:hover, &.ms-Button:focus': {
+          ...getTypeFocusColor(props)
+        },
+        '&.ms-Button:hover .ms-Button-label': {
+          ...getLabelStyles(props)
+        },
+        '&.ms-Button:active': {
+          ...getTypeActiveColor(props)
+        },
+        '&.ms-Button:disabled': {
+          background: palette.skeColor.whiteGrey,
+          borderColor: palette.skeColor.lightGrey,
+          color: palette.skeColor.lightGrey,
+          ...getDisabledColor(props)
+        },
+        '&.ms-Button i': {
+          fontSize: FontSizes.icon
+        }
       }
     }
-  });
+  ]);
 }
