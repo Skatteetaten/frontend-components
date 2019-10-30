@@ -13,6 +13,29 @@ export interface ActionButtonProps extends IButtonProps {
   iconSize?: any;
   /** Fire forhåndsdefinerte farger, se eksempler */
   color?: 'blue' | 'black' | 'red' | 'green' | 'white';
+  /**
+   * Skjulte props
+   */
+  /** @ignore */
+  allowDisabledFocus?: boolean;
+  /** @ignore */
+  checked?: boolean;
+  /** @ignore */
+  disabled?: boolean;
+  /** @ignore */
+  split?: boolean;
+  /** @ignore */
+  getSplitButtonClassNames?: (
+    disabled: boolean,
+    expanded: boolean,
+    checked: boolean,
+    allowDisabledFocus: boolean
+  ) => void;
+  /** @ignore */
+  splitButtonAriaLabel?: string;
+  /** @ignore */
+  splitButtonMenuProps?: IButtonProps;
+
 }
 /**
  * @visibleName ActionButton (Aksjonsknapp)
