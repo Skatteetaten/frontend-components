@@ -146,8 +146,7 @@ export var getClassNames = function getClassNames(props: IconButtonProps) {
         },
         '&.ms-Button--icon:disabled': {
           ...getCircleStyles(props),
-          // @ts-ignore TODO Finnes ikke?
-          color: palette.skeLysGraa,
+          color: palette.skeColor.lightGrey,
           borderColor: palette.skeColor.lightGrey
         },
         '&.ms-Button--icon:disabled i': {
