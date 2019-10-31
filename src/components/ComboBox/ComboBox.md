@@ -80,6 +80,43 @@ const initialState = {
 </div>;
 ```
 
+Med Feilmelding:
+
+```js
+import ComboBox from '@skatteetaten/frontend-components/ComboBox';
+import Grid from '@skatteetaten/frontend-components/Grid';
+
+const initialState = {
+  options: [
+    { key: 'A', text: 'alfa', value: 'Alfa' },
+    { key: 'B', text: 'beta', value: 'Alfa' },
+    { key: 'C', text: 'gamma', value: 'Alfa' },
+    { key: 'D', text: 'delta', value: 'Alfa' },
+    { key: 'E', text: 'echo', value: 'Alfa' }
+  ]
+};
+let error = 'En feil';
+
+<div>
+  <Grid>
+    <Grid.Row>
+      <Grid.Col lg={4}>
+        <ComboBox
+          label="Nedtrekksliste"
+          help="Hjelpetekst"
+          placeHolder="Velg"
+          options={state.options}
+          allowFreeform={false}
+          ariaLabel="Eksempel ComboBox"
+          useComboBoxAsMenuWidth
+          errorMessage={"Vis med feil"}
+        />
+      </Grid.Col>
+    </Grid.Row>
+  </Grid>
+</div>;
+```
+
 ```js noeditor
 import Accordion from '@skatteetaten/frontend-components/Accordion';
 import AccordionItem from '@skatteetaten/frontend-components/Accordion/AccordionItem';

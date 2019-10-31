@@ -3,6 +3,7 @@ import * as React from 'react';
 import { getClassNames } from './ErrorMessage.classNames';
 
 interface ErrorMessageProps {
+  /** Feilmelding */
   children: JSX.Element | string;
   showError?: boolean;
 }

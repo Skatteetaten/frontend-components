@@ -9,7 +9,7 @@ export interface NavigationTileProps {
   /**
    * (to: String, content: JSXElement) => JSXElement
    */
-  contents: ContentProps[];
+  contents?: ContentProps[];
   /** Type av NavigationTile, default er sentrert */
   type?: 'center' | 'left';
   /** Ikon plassering, default er sentrert */
@@ -19,6 +19,7 @@ export interface NavigationTileProps {
   /** Beskrivelse plassering, default er sentrert */
   alignDescription?: 'center' | 'left';
   className?: string;
+  children?: JSX.Element;
 }
 
 /**

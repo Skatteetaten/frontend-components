@@ -10,30 +10,14 @@ import { Label } from 'office-ui-fabric-react/lib-commonjs/Label';
 import { IconButton } from 'office-ui-fabric-react/lib-commonjs/Button';
 import {
   getClassNames,
-  getErrorClassNames,
   getLabelClassNames,
   getOptionsClassNames
 } from './ComboBox.classNames';
-
-// This is just a workaround so that the combobox opens on focus.
-class SkeCombobox extends VirtualizedComboBox {
-  focus = () => {
-    if (
-      // @ts-ignore TODO
-      this.props.expandOnFocus === true &&
-      // @ts-ignore TODO
-      this._comboBox.value &&
-      this.props.disabled === false
-    ) {
-      // @ts-ignore TODO
-      this._comboBox.value.focus(this.props.shouldOpenOnFocus);
-      return true;
-    }
-    return false;
-  };
-}
+import ErrorMessage from '../ErrorMessage';
 
 export interface ComboboxProps extends IComboBoxProps {
+  /** Egendefinert feilmelding */
+  errorMessage?: IComboBoxProps['errorMessage'];
   /** Angir om valgene automatisk skal vises når feltet har focus */
   expandOnFocus?: boolean;
   /** Hjelpetekst */
@@ -61,18 +45,19 @@ export default class Combobox extends React.PureComponent<
     disabled: false,
     shouldOpenOnFocus: true
   };
-  // @ts-ignore TODO
-  constructor(props) {
+  private readonly _iconButtonElement: React.RefObject<HTMLDivElement>;
+  constructor(props: ComboboxProps) {
     super(props);
     this.state = {
       isCalloutVisible: false
     };
+    this._iconButtonElement = React.createRef();
     this._onRenderLabel = this._onRenderLabel.bind(this);
     this._onClick = this._onClick.bind(this);
     this._onDismiss = this._onDismiss.bind(this);
   }
-  // @ts-ignore TODO
-  _onRenderLabel(props) {
+
+  _onRenderLabel(props: any) {
     const { label, help, componentId } = props;
 
     const styles = getLabelClassNames(props);
@@ -88,11 +73,7 @@ export default class Combobox extends React.PureComponent<
           ) : null}
         </span>
         {help && (
-          <span
-            className={styles.labelIconArea}
-            // @ts-ignore TODO
-            ref={menuButton => (this._iconButtonElement = menuButton)}
-          >
+          <span className={styles.labelIconArea} ref={this._iconButtonElement}>
             <IconButton
               iconProps={{ iconName: 'HelpOutline' }}
               title="HelpOutline"
@@ -108,7 +89,6 @@ export default class Combobox extends React.PureComponent<
             directionalHint={Callout.POS_TOP_LEFT}
             color={Callout.HELP}
             ariaLabel={'Hjelpetekst'}
-            // @ts-ignore TODO
             target={this._iconButtonElement}
             onClose={this._onDismiss}
           >
@@ -137,49 +117,25 @@ export default class Combobox extends React.PureComponent<
       errorMessage,
       label,
       help,
-      // @ts-ignore TODO
-      onRenderLabel,
       className,
       id,
-      ...props
+      ...rest
     } = this.props;
-    const labelProps = { label, help };
     return (
       <div id={id}>
-        {onRenderLabel
-          ? onRenderLabel(labelProps)
-          : this._onRenderLabel(labelProps)}
-        <SkeCombobox
-          {...props}
+        {this._onRenderLabel(this.props)}
+        <VirtualizedComboBox
+          {...rest}
           role="combobox"
           className={classnames(getClassNames(this.props), className)}
-          onFocus={this._basicComboBoxOnClick}
-          componentRef={this._basicComboBoxComponentRef}
           calloutProps={{
             className: getOptionsClassNames(this.props)
           }}
         >
           {children}
-        </SkeCombobox>
-        {errorMessage && (
-          <label className={getErrorClassNames(this.props)}>
-            {errorMessage}
-          </label>
-        )}
+        </VirtualizedComboBox>
+        {errorMessage && <ErrorMessage>{errorMessage}</ErrorMessage>}
       </div>
     );
   }
-  // @ts-ignore TODO
-  _basicComboBoxComponentRef = component => {
-    // @ts-ignore TODO
-    this._basicCombobox = component;
-  };
-
-  _basicComboBoxOnClick = () => {
-    // @ts-ignore TODO
-    this._basicCombobox.focus();
-    const { onFocus } = this.props;
-    // @ts-ignore TODO
-    onFocus && onFocus();
-  };
 }
