@@ -39,6 +39,7 @@
     "@babel/preset-env": "7.6.0",
     "@babel/preset-react": "7.0.0",
     "@ctrl/tinycolor": "2.5.3",
+    "@skatteetaten/ci-scripts": "2.0.2",
     "aurora-ci-scripts": "1.1.0",
     "babel-jest": "24.9.0",
     "cpx": "1.5.0",
