@@ -109,7 +109,7 @@ let error = 'En feil';
           allowFreeform={false}
           ariaLabel="Eksempel ComboBox"
           useComboBoxAsMenuWidth
-          errorMessage={"Vis med feil"}
+          errorMessage={'Vis med feil'}
         />
       </Grid.Col>
     </Grid.Row>

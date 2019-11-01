@@ -11,6 +11,8 @@ interface SearchFieldProps extends ISearchBoxProps {
   searchFieldSize?: 'standard' | 'large';
   /** Størrelsen på rammen */
   border?: 'default' | 'slim';
+  /** @ignore */
+  underlined?: ISearchBoxProps['underlined']
 }
 
 /**

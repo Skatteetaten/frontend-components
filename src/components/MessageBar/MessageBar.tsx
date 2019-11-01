@@ -11,7 +11,13 @@ import { default as MessageBarButton } from '../Button/Button';
 import { getClassNames } from './MessageBar.classNames';
 
 interface MessageBarProps extends IMessageBarProps {
-  type?: MessageBarType;
+  type?:
+    | MessageBarType.success
+    | MessageBarType.blocked
+    | MessageBarType.severeWarning
+    | MessageBarType.error
+    | MessageBarType.info
+    | MessageBarType.warning;
   size?: 'default' | 'large';
   /** Antall sekunder som boksen skal være synlig */
   duration?: number;

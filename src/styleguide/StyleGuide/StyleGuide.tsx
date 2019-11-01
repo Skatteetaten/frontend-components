@@ -77,6 +77,7 @@ export class StyleGuide extends React.Component<
           >
             <React.Suspense
               fallback={
+                //@ts-ignore
                 <Spinner size={Spinner.Size.large} spinnerColor="black" />
               }
             >

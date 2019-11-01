@@ -31,7 +31,9 @@ import NavigationTile from '@skatteetaten/frontend-components/NavigationTile';
 import NavigationContent from '@skatteetaten/frontend-components/NavigationTile/NavigationContent';
 
 <NavigationTile>
-s
+  <NavigationContent to={'#navigationtile'} title={'Bedrift'} icon={'Company'}>
+    A-melding, særavgift og veiledere som hjelper å rapportere riktig.
+  </NavigationContent>
 </NavigationTile>;
 ```
 

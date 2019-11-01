@@ -22,7 +22,8 @@ const Spinner: React.FC<SpinnerProps> = props => {
     />
   );
 };
-// @ts-ignore TODO
+
+// @ts-ignore
 Spinner.Size = SpinnerSize;
 Spinner.defaultProps = {
   // @ts-ignore TODO

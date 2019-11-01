@@ -1,7 +1,9 @@
 import React from 'react';
 import Button from '../../components/Button/Button';
 
-// @ts-ignore todo
-const UsageTabButton = props => <Button {...props}>Se API</Button>;
+const UsageTabButton = (props: any) => {
+  if (props.active) return <Button {...props}>Skjul API</Button>;
+  return <Button {...props}>Se API</Button>;
+};
 
 export default UsageTabButton;

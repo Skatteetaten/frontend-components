@@ -9,7 +9,7 @@ export interface ContentProps {
   id?: string;
   className?: string;
   key: number | string;
-  children?: string | JSX.Element
+  children?: string | JSX.Element;
 }
 
 /**

@@ -13,7 +13,7 @@ function closeDialog() {
 
 <div>
   <Button
-    type="secondary"
+    buttonStyle="secondary"
     aria-haspopup="true"
     onClick={() => setState({ hideDialog: false })}
   >
@@ -25,8 +25,8 @@ function closeDialog() {
     type={Dialog.Type.normal}
     onDismiss={closeDialog}
     title="Kansellere arbeidsoppgaven?"
-    dialogMinWidth="400px"
-    dialogMaxWidth="600px"
+    minWidth="400px"
+    maxWidth="600px"
   >
     <p>Er du sikker på at du vil kansellere arbeidsoppgaven?</p>
 
@@ -67,7 +67,7 @@ const content1 = [
 
 <div>
   <Button
-    type="secondary"
+    buttonStyle="secondary"
     aria-haspopup="true"
     onClick={() => setState({ hideDialog: false })}
   >
@@ -78,8 +78,8 @@ const content1 = [
     type={Dialog.Type.normal}
     onDismiss={closeDialog}
     title="Velg den inngangen som passer for deg"
-    dialogMinWidth="500px"
-    dialogMaxWidth="600px"
+    minWidth="500px"
+    maxWidth="600px"
     layoutStyle={'airy'}
   >
     <p>
@@ -112,7 +112,7 @@ function closeDialog() {
 
 <div>
   <Button
-    type="secondary"
+    buttonStyle="secondary"
     aria-haspopup="true"
     onClick={() => setState({ hideDialog: false })}
   >
@@ -125,8 +125,8 @@ function closeDialog() {
     layoutStyle={'important'}
     onDismiss={closeDialog}
     title="Viktig melding!"
-    dialogMinWidth="400px"
-    dialogMaxWidth="600px"
+    minWidth="400px"
+    maxWidth="600px"
   >
     <p>Løsning er ikke kommet i drift ennå eller tatt ned for vedlikehold</p>
     <Dialog.Footer>

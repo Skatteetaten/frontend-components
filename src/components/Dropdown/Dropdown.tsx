@@ -11,13 +11,17 @@ import {
   getClassNames,
   getErrorClassNames
 } from './Dropdown.classNames';
-import RenderLabel from './RenderLabel';
+import LabelWithCallout from '../LabelWithCallout';
 
 export interface DropdownProps extends IDropdownProps {
   /** Hjelpetekst */
   info?: string;
   /** Størrelse på inputfelt som skal benyttes */
   inputSize?: 'normal' | 'large';
+  /** @ignore */
+  multiSelect?: IDropdownProps['multiSelect'];
+  /** @ignore */
+  multiSelectDelimiter?: IDropdownProps['multiSelectDelimiter'];
 }
 
 interface DropdownState {
@@ -34,11 +38,12 @@ const Dropdown: React.FC<DropdownProps> = props => {
     info,
     onRenderLabel,
     className,
+    id,
     ...rest
   } = props;
   return (
-    <>
-      <RenderLabel label={label} info={info} />
+    <div id={id}>
+      <LabelWithCallout label={label} help={info} />
       <FabricDropdown
         {...rest}
         className={classnames(getClassNames(props), className)}
@@ -52,7 +57,7 @@ const Dropdown: React.FC<DropdownProps> = props => {
       {errorMessage && (
         <div className={getErrorClassNames(props)}>{errorMessage}</div>
       )}
-    </>
+    </div>
   );
 };
 
