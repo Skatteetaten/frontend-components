@@ -19,8 +19,15 @@ export interface CalloutProps extends ICalloutProps {
   /** Avgjør om callout vinduet skal lukkes automatisk når området utenfor vinduet klikkes */
   autoDismiss?: boolean;
   /** Finnes fire bakgrunnfarger: grønn, rosa, beige eller hvit */
-  color?: CalloutColor;
+  color?:
+    | CalloutColor.HELP
+    | CalloutColor.INFO
+    | CalloutColor.ERROR
+    | CalloutColor.WARNING
+    | CalloutColor.BASIC;
   onClose?: () => void;
+  /** dir */
+
 }
 
 interface CalloutState {

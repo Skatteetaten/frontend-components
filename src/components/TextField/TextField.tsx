@@ -10,7 +10,7 @@ import { getClassNames } from './TextField.classNames';
 import LabelWithCallout from '../LabelWithCallout';
 import { ITextField } from 'office-ui-fabric-react';
 
-interface TextFieldProps extends ITextFieldProps {
+export interface TextFieldProps extends ITextFieldProps {
   /** Benyttes når teksten for et readOnly tekstfelt skal fremheves  */
   boldText?: boolean;
   /** Bestemmer om hjelptekst/varseltekst skal legge seg mellom label og tekstfelt eller flytende over innhold */
@@ -31,6 +31,10 @@ interface TextFieldProps extends ITextFieldProps {
   warning?: JSX.Element | string;
   /** Antall rader som skal vises i feltet når multiline er satt */
   rows?: number;
+  /** @ignore */
+  borderless?: ITextFieldProps['borderless'];
+  /** @ignore */
+  underlined?: ITextFieldProps['underlined'];
 }
 interface TextFieldState {
   isCalloutVisible: boolean;
@@ -69,11 +73,13 @@ export default class TextField extends React.PureComponent<
     const {
       children,
       onRenderLabel,
-      readOnly,
       className,
       mask,
       editable,
       errorMessage,
+      readOnly,
+      value,
+      label,
       ...rest
     } = this.props;
     let TextFieldType;
@@ -82,14 +88,29 @@ export default class TextField extends React.PureComponent<
     } else {
       TextFieldType = FabricTextField;
     }
+    const setValue = () => {
+      if (this.props.suffix && readOnly && !this.state.editMode) {
+        return value + ' ' + this.props.suffix;
+      }
+      return value;
+    };
 
     return (
       <div className={classnames(getClassNames(this.props), className)}>
         {!onRenderLabel && (
-          <LabelWithCallout {...this.props} editFunction={this._onEdit} />
+          <LabelWithCallout
+            label={label}
+            editFunction={this._onEdit}
+            warning={this.props.warning}
+            help={this.props.help}
+            readOnly={this.props.readOnly}
+            editable={this.props.editable}
+            inputSize={this.props.inputSize}
+          />
         )}
         <TextFieldType
           {...rest}
+          value={setValue()}
           readOnly={this.state.editMode ? false : readOnly}
           className={classnames(
             getClassNames({ ...this.props, editMode: this.state.editMode }),
@@ -98,6 +119,7 @@ export default class TextField extends React.PureComponent<
           onRenderLabel={onRenderLabel ? onRenderLabel : () => null}
           onBlur={this._onBlur}
           componentRef={this._textField}
+          mask={mask}
         >
           {children}
         </TextFieldType>

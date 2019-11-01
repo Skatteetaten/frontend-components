@@ -8,12 +8,11 @@ import {
   Dialog as FabricDialog,
   IDialogProps
 } from 'office-ui-fabric-react/lib-commonjs/Dialog';
-import IconButton from '../IconButton/IconButton';
 
 export interface DialogProps extends IDialogProps {
   /** Om dialog skal ha mer padding for et luftigere uttrykk */
   layoutStyle?: 'normal' | 'airy' | 'important';
-  /** Hjelpetekst som skal vises i Callout */
+  /** @deprecated Hjelpetekst som skal vises i Callout */
   helpText?: string;
 }
 type DialogState = {
@@ -33,12 +32,14 @@ export default class Dialog extends React.PureComponent<
     layoutStyle: 'normal',
     type: Dialog.Type.normal
   };
+  private readonly _iconButtonElement: React.RefObject<HTMLDivElement>;
 
   constructor(props: DialogProps) {
     super(props);
     this.state = {
       isCalloutVisible: false
     };
+    this._iconButtonElement = React.createRef();
     this._onClick = this._onClick.bind(this);
     this._onDismiss = this._onDismiss.bind(this);
   }
@@ -50,7 +51,6 @@ export default class Dialog extends React.PureComponent<
       subText,
       isBlocking,
       type,
-      helpText,
       className,
       layoutStyle,
       ...props
@@ -76,33 +76,14 @@ export default class Dialog extends React.PureComponent<
             className: classnames(styles.main, className)
           }}
         >
-          {helpText && (
-            <span
-              className={styles.helpButton}
-              // @ts-ignore TODO
-              ref={menuButton => (this._iconButtonElement = menuButton)}
-            >
-              <IconButton
-                type={'large'}
-                icon={'HelpOutline'}
-                iconProps={{ iconName: 'Calendar' }}
-                onClick={this._onClick}
-                title="Hjelp"
-                aria-label="Hjelp"
-              />
-            </span>
-          )}
           {isCalloutVisible && (
             <Callout
               directionalHint={Callout.POS_TOP_LEFT}
               color={Callout.HELP}
               ariaLabel={'Hjelpetekst'}
-              // @ts-ignore TODO
               target={this._iconButtonElement}
               onClose={this._onDismiss}
-            >
-              <p>{helpText}</p>
-            </Callout>
+            />
           )}
           {children}
         </FabricDialog>

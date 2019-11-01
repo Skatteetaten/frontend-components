@@ -53,7 +53,6 @@ export const getClassNames = props => {
     readOnly,
     underlined
   } = props;
-  console.log(props)
   const { semanticColors } = getTheme();
   const palette = getTheme().palette as PaletteProps;
   const errorIcon = "'" + MdIcons.icons.Error + "'";

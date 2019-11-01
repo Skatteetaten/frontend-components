@@ -6,7 +6,19 @@ import { isUndefined } from 'util';
 import classnames from 'classnames';
 import { Label } from 'office-ui-fabric-react';
 
-const LabelWithCallout = (props: any) => {
+export interface LabelWithCalloutProps {
+  calloutFloating?: boolean;
+  className?: string | undefined;
+  editable?: boolean;
+  editFunction?: () => void;
+  help?: string | JSX.Element | undefined;
+  inputSize?: 'small' | 'normal' | 'large';
+  label?: string | JSX.Element | undefined;
+  readOnly?: boolean;
+  warning?: string | JSX.Element | undefined;
+  id?: any;
+}
+const LabelWithCallout = (props: LabelWithCalloutProps) => {
   const {
     calloutFloating,
     className,
@@ -19,7 +31,6 @@ const LabelWithCallout = (props: any) => {
     readOnly,
     warning
   } = props;
-
   const styles = getClassNames(props);
   const [activeCallout, setActiveCallout] = React.useState('');
   const [isCalloutVisible, setIsCalloutVisible] = React.useState(false);
@@ -32,7 +43,6 @@ const LabelWithCallout = (props: any) => {
   ) : (
     <p>{warning}</p>
   );
-
   return (
     <div id={id} className={classnames(styles.labelArea, className)}>
       <span className={styles.label}>
@@ -43,7 +53,7 @@ const LabelWithCallout = (props: any) => {
           <IconButton
             iconProps={{ iconName: 'HelpOutline' }}
             title="Hjelp"
-            ariaLabel={help}
+            ariaLabel={"help"}
             onClick={() => {
               setIsCalloutVisible(!isCalloutVisible);
               setActiveCallout('helpCallout');
@@ -57,7 +67,7 @@ const LabelWithCallout = (props: any) => {
           <IconButton
             iconProps={{ iconName: 'WarningOutline' }}
             title="Varsel"
-            ariaLabel={warning}
+            ariaLabel={'warning'}
             onClick={() => {
               setIsCalloutVisible(!isCalloutVisible);
               setActiveCallout('warningCallout');
@@ -72,7 +82,7 @@ const LabelWithCallout = (props: any) => {
             <IconButton
               iconProps={{ iconName: 'Edit' }}
               title="Rediger"
-              ariaLabel={props.label}
+              ariaLabel={'edit'}
               onClick={editFunction}
               className={styles.icon}
             />
@@ -81,6 +91,7 @@ const LabelWithCallout = (props: any) => {
       )}
       {isCalloutVisible && (
         <Callout
+          className={styles.calloutContext}
           directionalHint={
             (inputSizeLarge && isUndefined(calloutFloating)) ||
             (!isUndefined(calloutFloating) && !calloutFloating)

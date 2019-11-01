@@ -1,12 +1,18 @@
 import { FontSizes, FontWeights, PaletteProps } from '..';
 import { mergeStyleSets } from '@uifabric/merge-styles';
 import { getTheme } from '@uifabric/styling';
+import { isUndefined } from 'util';
+import { LabelWithCalloutProps } from './LabelWithCallout';
 
-function getLabelSize(props: any) {
-  switch (props.labelSize) {
+function getLabelSize(props: LabelWithCalloutProps) {
+  switch (props.inputSize) {
     case 'small':
       return {
         fontSize: FontSizes.small
+      };
+    case 'large':
+      return {
+        fontSize: FontSizes.large
       };
     default:
       return {
@@ -15,10 +21,37 @@ function getLabelSize(props: any) {
   }
 }
 
-export const getClassNames = (props: any) => {
+export const getClassNames = (props: LabelWithCalloutProps) => {
   const palette = getTheme().palette as PaletteProps;
-  console.log(props.boldText);
+  const inputSizeLarge = props.inputSize === 'large';
+  const isFloating =
+    (inputSizeLarge && isUndefined(props.calloutFloating)) ||
+    (!isUndefined(props.calloutFloating) && !props.calloutFloating);
+
+  // @ts-ignore //TODO merge
   return mergeStyleSets({
+    calloutContext: {
+      selectors: {
+        '& .ms-Callout-container': {
+          position: isFloating && 'inherit',
+          margin: isFloating ? '10px 0' : 0,
+          width: '100%'
+        },
+        '& .ms-Callout': isFloating && {
+          left: '0 !important',
+          top: '0 !important',
+          position: 'inherit'
+        },
+        '& .ms-Callout-main': isFloating && {
+          maxWidth: '100%',
+          display: 'inline-block'
+        },
+        '& .ms-Callout-beak': isFloating && {
+          left: '20px !important',
+          top: '-8px !important'
+        }
+      }
+    },
     labelArea: {
       position: 'relative',
       display: 'flex',
@@ -29,9 +62,10 @@ export const getClassNames = (props: any) => {
     label: {
       selectors: {
         color: palette.skeColor.blackAlt,
+        fontWeight: FontWeights.regular,
         ...getLabelSize(props),
         '& .ms-Label': {
-          fontWeight: props.boldText ? FontWeights.bold : FontWeights.regular
+          fontWeight: FontWeights.regular
         }
       }
     },

@@ -10,7 +10,7 @@ import TextField from '@skatteetaten/frontend-components/TextField';
     id={'my-input-1'}
     label={'Navn'}
     placeholder={'For- og etternavn'}
-    value={state.value1}
+    value={state.value}
     onChange={(e, value) => setState({ value1: value })}
   />
 </div>;
@@ -27,8 +27,8 @@ import TextField from '@skatteetaten/frontend-components/TextField';
     label={'Navn'}
     inputSize={'large'}
     placeholder={'For- og etternavn'}
-    value={state.value1}
-    onChange={(e, value) => setState({ value1: value })}
+    value={state.value}
+    onChange={(e, value) => setState({ value })}
   />
 </div>;
 ```
@@ -42,29 +42,23 @@ import TextField from '@skatteetaten/frontend-components/TextField';
   <div style={{ width: '300px' }}>
     <TextField
       id={'my-helpfield-1'}
-      box
-      withLeadingIcon="search"
       label="Fullt navn"
-      calloutFloating={false}
       placeholder={''}
-      value={state.value4}
-      onChange={(e, value) => setState({ value4: value })}
+      value={state.value1}
+      onChange={(e, value) => setState({ value1: value })}
       help="Vi trenger å vite navnet ditt dersom vi skal kontakte deg senere."
-      calloutFloating={false}
     />
   </div>
   <br />
   <div style={{ width: '150px' }}>
     <TextField
       id={'my-helpfield-2'}
-      box
-      withLeadingIcon="search"
       label="Antall barn"
       placeholder={''}
       value={'23'}
-      calloutFloating={false}
       warning="Er du sikker på at antall barn er riktig?"
-      calloutFloating={false}
+      value={state.value2}
+      onChange={(e, value) => setState({ value2: value })}
     />
   </div>
 </>;
@@ -78,11 +72,12 @@ import TextField from '@skatteetaten/frontend-components/TextField';
 <div style={{ width: '160px' }}>
   <TextField
     id={'my-errorfield-2'}
-    box
-    withLeadingIcon="search"
     label="Inntektsår"
-    value={'0218'}
-    errorMessage="Inntekståret må være etter 2008."
+    value={state.value}
+    onChange={(e, value) => setState({ value })}
+    errorMessage={
+      state.value !== '2008' ? 'Inntekståret må være etter 2008.' : null
+    }
   />
 </div>;
 ```
@@ -102,7 +97,6 @@ const initialState = {
     id={'my-readonlyfield'}
     readOnly
     editable
-    box
     label="Saksbehandler"
     value={state.value}
     onChange={(e, value) => setState({ value: value })}
@@ -113,10 +107,9 @@ const initialState = {
     id={'vektVare'}
     readOnly
     editable
-    box
     label="Vekt på vare"
     value={state.vekt}
-    onChange={(e, value) => setState({ vekt: value })}
+    onChange={(e, value) => setState({ value2: vekt })}
     boldText={true}
     suffix={'kg'}
   />
@@ -131,10 +124,10 @@ import TextField from '@skatteetaten/frontend-components/TextField';
 <div style={{ width: '300px' }}>
   <TextField
     id={'my-input-1'}
-    onChange={(e, val) => console.log(val)}
+    value={state.value}
+    onChange={(e, value) => setState({ value })}
     label={'Org.nummer'}
     placeholder={'999 999 999'}
-    value={''}
     mask={'999 999 999'}
     maskChar={''}
   />

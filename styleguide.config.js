@@ -166,6 +166,10 @@ module.exports = {
     'slots/IsolateButton': path.join(
       __dirname,
       'src/styleguide/slots/IsolateButton'
+    ),
+    'Table': path.join(
+      __dirname,
+      'src/styleguide/Table'
     )
   },
   resolver: require('react-docgen').resolver.findAllComponentDefinitions,
