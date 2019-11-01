@@ -53,6 +53,7 @@ export const getClassNames = props => {
     readOnly,
     underlined
   } = props;
+  console.log(props)
   const { semanticColors } = getTheme();
   const palette = getTheme().palette as PaletteProps;
   const errorIcon = "'" + MdIcons.icons.Error + "'";
@@ -98,6 +99,7 @@ export const getClassNames = props => {
         outlineWidth: '1px',
         outlineStyle: 'solid'
       },
+      // Ikke lengre i bruk
       '& .ms-TextField-field[readOnly]': {
         paddingLeft: '1px',
         cursor: 'default',

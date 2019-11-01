@@ -12,7 +12,7 @@ interface SearchFieldProps extends ISearchBoxProps {
   /** Størrelsen på rammen */
   border?: 'default' | 'slim';
   /** @ignore */
-  underlined?: ISearchBoxProps['underlined']
+  underlined?: ISearchBoxProps['underlined'];
 }
 
 /**

@@ -17,7 +17,7 @@ function getLabelSize(props: any) {
 
 export const getClassNames = (props: any) => {
   const palette = getTheme().palette as PaletteProps;
-
+  console.log(props.boldText);
   return mergeStyleSets({
     labelArea: {
       position: 'relative',
@@ -31,7 +31,7 @@ export const getClassNames = (props: any) => {
         color: palette.skeColor.blackAlt,
         ...getLabelSize(props),
         '& .ms-Label': {
-          fontWeight: FontWeights.regular
+          fontWeight: props.boldText ? FontWeights.bold : FontWeights.regular
         }
       }
     },

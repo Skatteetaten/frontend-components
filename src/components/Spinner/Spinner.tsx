@@ -10,10 +10,21 @@ import { getClassNames } from './Spinner.classNames';
 export interface SpinnerProps extends ISpinnerProps {
   spinnerColor?: 'white' | 'black';
 }
+
+interface Spinner extends React.FC<SpinnerProps> {
+  Size?:
+    | SpinnerSize
+    | {
+        xSmall: 0;
+        small: 1;
+        medium: 2;
+        large: 3;
+      };
+}
 /**
  * @visibleName Spinner (Innlasting)
  */
-const Spinner: React.FC<SpinnerProps> = props => {
+const Spinner: Spinner = props => {
   const { className, ...rest } = props;
   return (
     <FabricSpinner
@@ -23,10 +34,8 @@ const Spinner: React.FC<SpinnerProps> = props => {
   );
 };
 
-// @ts-ignore
 Spinner.Size = SpinnerSize;
 Spinner.defaultProps = {
-  // @ts-ignore TODO
   size: Spinner.Size.medium,
   spinnerColor: 'black'
 };

@@ -1,25 +1,15 @@
 import * as React from 'react';
-import Callout from '../Callout/Callout';
 import classnames from 'classnames';
 import ErrorMessage from '../ErrorMessage/ErrorMessage';
 import {
   ITextFieldProps,
-  MaskedTextField as FabricMaskedTextField,
+  MaskedTextField,
   TextField as FabricTextField
 } from 'office-ui-fabric-react/lib-commonjs/TextField';
-import { getClassNames as getLabelClassNames } from './TextFieldLabel.classNames';
 import { getClassNames } from './TextField.classNames';
-import { IconButton } from 'office-ui-fabric-react/lib-commonjs/Button';
-import { isUndefined } from 'util';
-import { Label } from 'office-ui-fabric-react/lib-commonjs/Label';
+import LabelWithCallout from '../LabelWithCallout';
+import { ITextField } from 'office-ui-fabric-react';
 
-class MaskedTextField extends FabricMaskedTextField {
-  // @ts-ignore TODO
-  constructor(props) {
-    super(props);
-    this._skipComponentRefResolution = false;
-  }
-}
 interface TextFieldProps extends ITextFieldProps {
   /** Benyttes når teksten for et readOnly tekstfelt skal fremheves  */
   boldText?: boolean;
@@ -56,16 +46,11 @@ export default class TextField extends React.PureComponent<
   TextFieldProps,
   TextFieldState
 > {
-  static defaultProps = {
-    inputSize: 'normal',
-    editableWhenEmpty: false,
-    labelSize: 'small',
-    boldText: true,
-    calloutFloating: false
-  };
-  // @ts-ignore TODO
-  constructor(props) {
+  private readonly _textField: React.RefObject<ITextField>;
+
+  constructor(props: TextFieldProps) {
     super(props);
+    this._textField = React.createRef();
     this.state = {
       isCalloutVisible: false,
       editMode: this.editMode(),
@@ -74,58 +59,45 @@ export default class TextField extends React.PureComponent<
       lineBreak: false
     };
   }
-
+  static defaultProps = {
+    inputSize: 'normal',
+    editableWhenEmpty: false,
+    labelSize: 'small',
+    calloutFloating: false
+  };
   render() {
     const {
       children,
       onRenderLabel,
       readOnly,
-      disabled,
-      inputSize,
-      boldText,
       className,
       mask,
-      ...props
+      editable,
+      errorMessage,
+      ...rest
     } = this.props;
-
-    let TextFieldType = FabricTextField;
-    let value = props.value;
+    let TextFieldType;
     if (mask) {
-      // @ts-ignore TODO
       TextFieldType = MaskedTextField;
-      value = value ? value : '';
+    } else {
+      TextFieldType = FabricTextField;
     }
 
-    const setValue = () => {
-      if (this.props.suffix && this.props.readOnly && !this.state.editMode) {
-        return value + ' ' + this.props.suffix;
-      }
-      return value;
-    };
-    const { errorMessage, ...filteredProps } = this.props;
     return (
       <div className={classnames(getClassNames(this.props), className)}>
-        {/*
-  // @ts-ignore  TODO */}
+        {!onRenderLabel && (
+          <LabelWithCallout {...this.props} editFunction={this._onEdit} />
+        )}
         <TextFieldType
-          {...filteredProps}
-          value={setValue()}
-          ariaLabel={props.label}
-          disabled={disabled}
+          {...rest}
           readOnly={this.state.editMode ? false : readOnly}
           className={classnames(
             getClassNames({ ...this.props, editMode: this.state.editMode }),
             className
           )}
-          onRenderLabel={onRenderLabel || this._onRenderLabel}
+          onRenderLabel={onRenderLabel ? onRenderLabel : () => null}
           onBlur={this._onBlur}
-          componentRef={inputField => {
-            // @ts-ignore TODO
-            this.props.componentRef && this.props.componentRef(inputField);
-            // @ts-ignore TODO
-            this._textFieldElement = inputField;
-          }}
-          inputSize={inputSize}
+          componentRef={this._textField}
         >
           {children}
         </TextFieldType>
@@ -133,137 +105,17 @@ export default class TextField extends React.PureComponent<
       </div>
     );
   }
-  // @ts-ignore TODO
-  _onRenderLabel = props => {
-    const {
-      label,
-      help,
-      warning,
-      componentId,
-      readOnly,
-      editable,
-      calloutFloating,
-      inputSize
-    } = props;
-    const styles = getLabelClassNames(props);
-    const inputSizeLarge = inputSize === 'large';
-
-    let { isCalloutVisible, activeCallout } = this.state;
-    const helpElement = React.isValidElement(help) ? help : <p>{help}</p>;
-
-    let warningElement = React.isValidElement(warning) ? (
-      warning
-    ) : (
-      <p>{warning}</p>
-    );
-
-    return (
-      <div className={styles.labelArea}>
-        <span className={styles.label}>
-          {label ? <Label htmlFor={componentId}>{label}</Label> : null}
-        </span>
-
-        {readOnly && (
-          <span className={styles.labelIconArea}>
-            {editable && (
-              <IconButton
-                iconProps={{ iconName: 'Edit' }}
-                title="Rediger"
-                ariaLabel={'Rediger feltet ' + props.label}
-                onClick={this._onEdit}
-                className={styles.icon}
-              />
-            )}
-          </span>
-        )}
-
-        {help && (
-          <span
-            className={styles.labelIconArea}
-            // @ts-ignore TODO
-            ref={helpButton => (this._iconButtonElement = helpButton)}
-          >
-            <IconButton
-              iconProps={{ iconName: 'HelpOutline' }}
-              title="Hjelp"
-              ariaLabel={'Hjelpetekst til feltet ' + props.label}
-              onClick={() => this._onClick('helpCallout')}
-              className={styles.icon}
-            />
-          </span>
-        )}
-
-        {warning && (
-          <span
-            className={styles.labelIconArea}
-            // @ts-ignore TODO
-            ref={warningButton => (this._iconButtonElement = warningButton)}
-          >
-            <IconButton
-              iconProps={{ iconName: 'WarningOutline' }}
-              title="Varsel"
-              ariaLabel={'Varseltekst til feltet ' + props.label}
-              onClick={() => this._onClick('warningCallout')}
-              className={styles.icon}
-            />
-          </span>
-        )}
-
-        {isCalloutVisible && (
-          <Callout
-            directionalHint={
-              (inputSizeLarge && isUndefined(calloutFloating)) ||
-              (!isUndefined(calloutFloating) && !calloutFloating)
-                ? Callout.POS_BOTTOM_LEFT
-                : Callout.POS_TOP_LEFT
-            }
-            color={
-              activeCallout === 'helpCallout' ? Callout.HELP : Callout.WARNING
-            }
-            ariaLabel={
-              activeCallout === 'helpCallout' ? 'Hjelpetekst' : 'Varseltekst'
-            }
-            // @ts-ignore TODO
-            target={this._iconButtonElement}
-            onClose={this._onDismiss}
-          >
-            {activeCallout === 'helpCallout' ? helpElement : warningElement}
-          </Callout>
-        )}
-      </div>
-    );
-  };
-  // @ts-ignore TODO
-  _onClick = type => {
-    let { isCalloutVisible, activeCallout } = this.state;
-
-    if (activeCallout !== type && isCalloutVisible) {
-      this.setState({
-        activeCallout: type
-      });
-    } else {
-      this.setState({
-        activeCallout: type,
-        isCalloutVisible: !isCalloutVisible
-      });
-    }
-  };
-
-  _onDismiss = () => {
-    this.setState({
-      isCalloutVisible: false
-    });
-  };
 
   _onEdit = () => {
-    // @ts-ignore TODO
-    this._textFieldElement.focus();
+    this._textField &&
+      this._textField.current &&
+      this._textField.current.focus();
     this.setState({ editMode: true });
   };
-  // @ts-ignore TODO
-  _onBlur = e => {
+
+  _onBlur = (e: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     this.props.onBlur && this.props.onBlur(e);
-    if (this.state.editMode === true) {
+    if (this.state.editMode) {
       this.setState({
         editMode: this.editMode()
       });
@@ -272,8 +124,7 @@ export default class TextField extends React.PureComponent<
 
   editMode() {
     if (this.props.editableWhenEmpty && !this.props.value) {
-      // @ts-ignore TODO
-      return this.props.value === '' || this.props.length === 0;
+      return this.props.value === '';
     }
     return false;
   }
