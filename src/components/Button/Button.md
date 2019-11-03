@@ -43,7 +43,7 @@ import Button from '@skatteetaten/frontend-components/Button';
 </div>;
 ```
 
-```js noeditor
+```js noeditor beskrivelse
 import Accordion from '../Accordion';
 import AccordionItem from '../Accordion/AccordionItem';
 <Accordion>

@@ -24,11 +24,12 @@ export var getClassNames = function getClassNames() {
           width: '100%',
           display: 'inline-block'
         },
-        '& .ms-Button-flexContainer': {
-          display: 'block',
-          justifyContent: 'center',
-          margin: '0 auto'
-        },
+        // TODO gjør at komponenter blir offset i tableitem
+        // '& .ms-Button-flexContainer': {
+        //   display: 'block',
+        //   justifyContent: 'center',
+        //   margin: '0 auto'
+        // },
         '& .ms-Pivot-link.is-selected': {
           background: palette.skeColor.burgundy,
           fontWeight: FontWeights.regular,

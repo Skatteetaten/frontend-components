@@ -2,8 +2,8 @@ import React from 'react';
 import { Route, Switch } from 'react-router';
 import { normalize, schema } from 'normalizr';
 import RSGSection from 'react-styleguidist/lib/client/rsg-components/Section/Section';
-// @ts-ignore todo
-import RSGReactComponent from 'react-styleguidist/lib/client/rsg-components/ReactComponent/ReactComponent';
+import ReactComponent from '../ReactComponent/ReactComponent';
+// import RSGReactComponent from 'react-styleguidist/lib/client/rsg-components/ReactComponent/ReactComponent';
 
 /* Normalize recursive content  */
 const slugId = { idAttribute: value => value.slug };
@@ -17,7 +17,6 @@ const mySchema = new schema.Entity(
   { sections, components },
   slugId
 );
-const usageMode = 'collapse';
 
 export class Sections extends React.Component<> {
   renderSection = props => {
@@ -34,10 +33,11 @@ export class Sections extends React.Component<> {
       );
     }
     if (slug && entities.components && entities.components[slug]) {
+      console.log(props);
       return (
-        <RSGReactComponent
-          exampleMode={usageMode}
-          usageMode={usageMode}
+        <ReactComponent
+          exampleMode={entities.components[slug].exampleMode || 'collapse'}
+          usageMode={entities.components[slug].usageMode || 'collapse'}
           component={entities.components[slug]}
           depth={2}
         />

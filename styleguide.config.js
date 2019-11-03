@@ -14,6 +14,7 @@ module.exports = {
   title: 'Skatteetatens designsystem',
   components: 'src/components/**/[A-Z]*.tsx',
   exampleMode: 'collapse',
+  usageMode: 'collapse',
   moduleAliases: {
     '@skatteetaten/frontend-components': path.resolve(
       __dirname,
@@ -119,7 +120,6 @@ module.exports = {
   },
   styleguideDir: 'docs',
   defaultExample: false,
-  usageMode: 'collapse',
   showSidebar: true,
   ignore: [
     '**/__tests__/**',
@@ -164,11 +164,11 @@ module.exports = {
     'slots/IsolateButton': path.join(
       __dirname,
       'src/styleguide/slots/IsolateButton'
-    ),
-    'Table': path.join(
-      __dirname,
-      'src/styleguide/Table'
     )
+    // 'Table': path.join(
+    //   __dirname,
+    //   'src/styleguide/Table'
+    // )
   },
   resolver: require('react-docgen').resolver.findAllComponentDefinitions,
   propsParser: require('react-docgen-typescript').withDefaultConfig({
