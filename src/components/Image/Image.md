@@ -7,7 +7,7 @@ import Image from '@skatteetaten/frontend-components/Image';
     <Image src='http://placehold.it/350x150' alt='Beskriv innholdet i bildet' />
 ```
 
-```js noeditor
+```js noeditor beskrivelse
 import Accordion from '@skatteetaten/frontend-components/Accordion';
 import AccordionItem from '@skatteetaten/frontend-components/Accordion/AccordionItem';
 

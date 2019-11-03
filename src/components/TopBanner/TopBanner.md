@@ -34,7 +34,7 @@ import TopBanner from '@skatteetaten/frontend-components/TopBanner';
 />;
 ```
 
-```js noeditor
+```js noeditor beskrivelse
 import Accordion from '@skatteetaten/frontend-components/Accordion';
 import AccordionItem from '@skatteetaten/frontend-components/Accordion/AccordionItem';
 

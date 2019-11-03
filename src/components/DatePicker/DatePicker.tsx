@@ -93,15 +93,13 @@ export default class DatePicker extends React.Component<
     showWeekNumbers: false,
     strings: DatePicker.DefaultStrings
   };
-  // @ts-ignore TODO
-  constructor(props) {
+  constructor(props: DatePickerProps) {
     super(props);
     this.state = {
       isCalloutVisible: false
     };
   }
-  // @ts-ignore TODO
-  _onRenderLabel = props => {
+  _onRenderLabel = (props: any) => {
     const { label, info, componentId, calloutFloating } = props;
     const styles = getLabelClassNames(props);
     let { isCalloutVisible } = this.state;

@@ -13,7 +13,7 @@ import ActionButton from '@skatteetaten/frontend-components/ActionButton';
 </div>;
 ```
 
-```js noeditor
+```js noeditor beskrivelse
 import Accordion from '../Accordion';
 import AccordionItem from '../Accordion/AccordionItem';
 

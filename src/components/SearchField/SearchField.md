@@ -19,7 +19,7 @@ import SearchField from '@skatteetaten/frontend-components/SearchField';
 </div>;
 ```
 
-```js noeditor
+```js noeditor beskrivelse
 import Accordion from '@skatteetaten/frontend-components/Accordion';
 import AccordionItem from '@skatteetaten/frontend-components/Accordion/AccordionItem';
 

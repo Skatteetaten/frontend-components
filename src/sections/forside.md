@@ -1,4 +1,4 @@
-```js noeditor
+```js noeditor beskrivelse
 import Card from '@skatteetaten/frontend-components/Card';
 import Grid from '@skatteetaten/frontend-components/Grid';
 import Icon from '@skatteetaten/frontend-components/Icon';
@@ -48,7 +48,7 @@ import NavigationTile from '@skatteetaten/frontend-components/NavigationTile';
 </div>;
 ```
 
-```js noeditor
+```js noeditor beskrivelse
 import NavigationTile from '@skatteetaten/frontend-components/NavigationTile';
 
 const contents = [

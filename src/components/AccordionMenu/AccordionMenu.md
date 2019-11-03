@@ -1,4 +1,4 @@
-```js noeditor
+```js noeditor beskrivelse
 import MessageBar from '@skatteetaten/frontend-components/MessageBar';
 
 <MessageBar type={MessageBar.Type.info}>
@@ -150,7 +150,7 @@ const timeStampStyle = {
 </div>;
 ```
 
-```js noeditor
+```js noeditor beskrivelse
 import Accordion from '@skatteetaten/frontend-components/Accordion';
 import AccordionItem from '@skatteetaten/frontend-components/Accordion/AccordionItem';
 

@@ -1,6 +1,6 @@
 ** Grid er en komponent som brukes til å plassere komponenter og annet innhold på siden, og hjelper til med å justere plasseringen for ulike skjermbredder. **
 
-```js noeditor
+```js noeditor beskrivelse
 DemoBlock = ({ children }) => (
   <div
     style={{
@@ -55,7 +55,7 @@ import Grid from '@skatteetaten/frontend-components/Grid';
 </Grid>;
 ```
 
-```js noeditor
+```js noeditor beskrivelse
 import Accordion from '@skatteetaten/frontend-components/Accordion';
 import AccordionItem from '@skatteetaten/frontend-components/Accordion/AccordionItem';
 <Accordion>

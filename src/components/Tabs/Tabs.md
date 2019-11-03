@@ -1,4 +1,4 @@
-```js noeditor
+```js noeditor beskrivelse
 import MessageBar from '@skatteetaten/frontend-components/MessageBar';
 
 <MessageBar>
@@ -30,7 +30,7 @@ import TabItem from '@skatteetaten/frontend-components/Tabs/TabItem';
 </Tabs>;
 ```
 
-```js noeditor
+```js noeditor beskrivelse
 import Accordion from '@skatteetaten/frontend-components/Accordion';
 import AccordionItem from '@skatteetaten/frontend-components/Accordion/AccordionItem';
 

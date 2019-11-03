@@ -1,4 +1,4 @@
-```js noeditor
+```js noeditor beskrivelse
 import MessageBar from '@skatteetaten/frontend-components/MessageBar';
 
 <MessageBar>

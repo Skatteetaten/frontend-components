@@ -13,7 +13,7 @@ Vi benytter oss av seks sett med brekkpunkter:
 
 Eksempel på responsiv sidelayout:
 
-```js noeditor
+```js noeditor beskrivelse
 DemoBlock = ({ children }) => (
   <div
     style={{
