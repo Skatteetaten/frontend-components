@@ -26,13 +26,12 @@
     "@uifabric/merge-styles": "^7.7.0",
     "@uifabric/styling": "^7.7.2",
     "@uifabric/utilities": "^7.4.0",
-    "aurora-ci-scripts": "1.2.0",
     "classnames": "2.2.6",
     "install": "0.13.0",
     "material-design-icons": "3.0.1",
     "moment": "2.24.0",
     "npm": "6.11.3",
-    "office-ui-fabric-react": "^7.43.1",
+    "office-ui-fabric-react": "^7.56.3",
     "prop-types": "15.7.2",
     "react-transition-group": "4.3.0"
   },
@@ -73,7 +72,7 @@
     "react-dom": "16.9.0",
     "react-router": "5.0.1",
     "react-scripts": "3.1.2",
-    "react-styleguidist": "9.1.16",
+    "react-styleguidist": "^10.1.0",
     "react-test-renderer": "16.9.0",
     "rimraf": "3.0.0",
     "sonar-scanner": "3.1.0",
@@ -82,7 +81,7 @@
     "webfont": "9.0.0"
   },
   "scripts": {
-    "start": "REACT_APP_BUILD_VERSION=$(git rev-parse --abbrev-ref HEAD) styleguidist server",
+    "start": "styleguidist server",
     "generate:icons": "webfont src/webfont/**/*.svg -d src/components/utils/assets",
     "prebuild": "npm-run-all clean lint",
     "build": "npm-run-all generate:icons build:lib build:docs",

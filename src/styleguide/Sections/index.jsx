@@ -1,13 +1,11 @@
 import React from 'react';
 import { Route, Switch } from 'react-router';
 import { normalize, schema } from 'normalizr';
-// @ts-ignore todo
 import RSGSection from 'react-styleguidist/lib/client/rsg-components/Section/Section';
 // @ts-ignore todo
 import RSGReactComponent from 'react-styleguidist/lib/client/rsg-components/ReactComponent/ReactComponent';
 
 /* Normalize recursive content  */
-// @ts-ignore todo
 const slugId = { idAttribute: value => value.slug };
 const component = new schema.Entity('components', undefined, slugId);
 const section = new schema.Entity('sections', undefined, slugId);
@@ -21,8 +19,7 @@ const mySchema = new schema.Entity(
 );
 const usageMode = 'collapse';
 
-export class Sections extends React.Component<{ sections?: any[] }> {
-  // @ts-ignore todo
+export class Sections extends React.Component<> {
   renderSection = props => {
     const params = props.match && props.match.params;
     let slug = params && params.slug ? params.slug.toLowerCase() : '';
@@ -36,7 +33,7 @@ export class Sections extends React.Component<{ sections?: any[] }> {
         />
       );
     }
-    if (entities.components[slug]) {
+    if (slug && entities.components && entities.components[slug]) {
       return (
         <RSGReactComponent
           exampleMode={usageMode}
@@ -46,11 +43,11 @@ export class Sections extends React.Component<{ sections?: any[] }> {
         />
       );
     }
-    if (entities.sections[slug]) {
+    if (slug && entities.sections && entities.sections[slug]) {
       return <RSGSection section={entities.sections[slug]} depth={2} />;
     }
 
-    return <div> 404 </div>;
+    return <div> Feil under lasting av komponent. </div>;
   };
 
   render() {

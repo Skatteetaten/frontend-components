@@ -1,16 +1,9 @@
 import React from 'react';
 import ComponentsList from '../ComponentsList';
-// @ts-ignore
 import filterSectionsByName from 'react-styleguidist/lib/client/utils/filterSectionsByName';
 import SearchField from '../../components/SearchField';
 
-interface SokeBoksProps {
-  searchTerm: string;
-  setSearchTerm: (arg0: string) => void;
-  children: JSX.Element;
-}
-
-function SokeBoks({ searchTerm, setSearchTerm, children }: SokeBoksProps) {
+function SokeBoks({ searchTerm, setSearchTerm, children }) {
   return (
     <>
       <SearchField
@@ -24,24 +17,19 @@ function SokeBoks({ searchTerm, setSearchTerm, children }: SokeBoksProps) {
     </>
   );
 }
-interface TableOfContentsProps {
-  sections: [];
-}
-export class TableOfContents extends React.Component<TableOfContentsProps, {}> {
+
+export class TableOfContent extends React.Component<> {
   state = {
     searchTerm: ''
   };
-  renderLevel(sections: any) {
+  renderLevel(sections) {
     const _this2 = this;
-    const items = sections.map(function(section: object) {
+    const items = sections.map(function(section) {
       const children = [].concat(
-        // @ts-ignore TODO
         section.sections || [],
-        // @ts-ignore TODO
         section.components || []
       );
       return Object.assign({}, section, {
-        // @ts-ignore TODO
         heading: !!section.name && children.length > 0,
         content: children.length > 0 && _this2.renderLevel(children)
       });
@@ -55,7 +43,6 @@ export class TableOfContents extends React.Component<TableOfContentsProps, {}> {
     // If there is only one section, we treat it as a root section
     // In this case the name of the section won't be rendered and it won't get left padding
     const firstLevel =
-      // @ts-ignore TODO
       sections.length === 1 ? sections[0].components : sections;
     const filtered = filterSectionsByName(firstLevel, searchTerm);
     return this.renderLevel(filtered);
@@ -63,7 +50,6 @@ export class TableOfContents extends React.Component<TableOfContentsProps, {}> {
 
   render() {
     const { searchTerm } = this.state;
-    // @ts-ignore TODO
     const setSearchTerm = searchTerm => this.setState({ searchTerm });
     return (
       <SokeBoks searchTerm={searchTerm} setSearchTerm={setSearchTerm}>
@@ -73,4 +59,4 @@ export class TableOfContents extends React.Component<TableOfContentsProps, {}> {
   }
 }
 
-export default TableOfContents;
+export default TableOfContent;

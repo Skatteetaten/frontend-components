@@ -138,9 +138,7 @@ module.exports = {
       return `import ${name} from '${pkg.name}${dir}';`;
     }
   },
-  getExampleFilename(componentPath) {
-    return componentPath.replace(/\.tsx?$/, '.md');
-  },
+
   theme: {
     color: {
       linkHover: '#6F2C3F',

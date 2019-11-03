@@ -10,11 +10,8 @@ import Typography from '../../components/Typography';
 import './style.css';
 
 const ScrollToTop = withRouter(
-  // @ts-ignore
   class ScrollToTop extends React.Component {
-    // @ts-ignore TODO
     componentDidUpdate(prevProps) {
-      // @ts-ignore TODO
       if (this.props.location !== prevProps.location) {
         window.scrollTo(0, 0);
       }
@@ -26,12 +23,9 @@ const ScrollToTop = withRouter(
   }
 );
 
-export class StyleGuideRenderer extends React.Component<
-  { title?: string; homepageUrl?: string; toc?: object },
-  { isHidden: boolean; version: string }
-> {
+export class StyleGuideRenderer extends React.Component<> {
   static displayName = 'StyleGuideRenderer';
-  // @ts-ignore TODO
+
   constructor(props) {
     super(props);
     this.state = {
@@ -42,7 +36,6 @@ export class StyleGuideRenderer extends React.Component<
 
   _toggleMenuVisibility() {
     this.setState({
-      // @ts-ignore TODO
       isHidden: !this.state.isHidden
     });
   }

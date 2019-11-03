@@ -1,7 +1,7 @@
 import React from 'react';
 import Table from '../../components/Table';
 
-export function TableRenderer(_ref2: any) {
+export function TableRenderer(_ref2) {
   const columns = [
     {
       name: 'Prop type',
@@ -34,19 +34,12 @@ export function TableRenderer(_ref2: any) {
   ];
   const rows =
     _ref2.rows &&
-    _ref2.rows.map(
-      (item: {
-        name: any;
-        type: { name: any };
-        defaultValue: { value: any };
-        description: any;
-      }) => ({
-        prop: item.name,
-        type: item.type.name,
-        default: (item.defaultValue && item.defaultValue.value) || '',
-        description: item.description
-      })
-    );
+    _ref2.rows.map(item => ({
+      prop: item.name,
+      type: item.type.name,
+      default: (item.defaultValue && item.defaultValue.value) || '',
+      description: item.description
+    }));
   return <Table data={rows} columns={columns} />;
 }
 

@@ -1,14 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import TableOfContents from '../TableOfContents';
-// @ts-ignore todo
+import TableOfContent from '../TableOfContents';
 import Error from 'react-styleguidist/lib/client/rsg-components/Error';
+import Sections from '../Sections';
+import Context from 'react-styleguidist/lib/client/rsg-components/Context';
 import StyleGuideRenderer from './StyleGuideRenderer';
 import SkeBasis from '../../components/SkeBasis/SkeBasis';
 import { createHashHistory } from 'history';
 import { Router } from 'react-router';
-import Spinner from '../../components/Spinner';
-const Sections = React.lazy(() => import('../Sections/Sections'));
 
 const history = createHashHistory({
   basename: '',
@@ -16,22 +15,7 @@ const history = createHashHistory({
   getUserConfirmation: (message, callback) => callback(window.confirm(message))
 });
 
-interface StyleGuideProps {
-  codeRevision: number;
-  config: object;
-  slots: object;
-  sections: any[];
-  patterns?: any[];
-  displayMode?: string;
-}
-interface StyleGuideState {
-  info: any;
-  error: boolean;
-}
-export class StyleGuide extends React.Component<
-  StyleGuideProps,
-  StyleGuideState
-> {
+export class StyleGuide extends React.Component<> {
   static childContextTypes = {
     codeRevision: PropTypes.number.isRequired,
     config: PropTypes.object.isRequired,
@@ -52,7 +36,6 @@ export class StyleGuide extends React.Component<
       displayMode: this.props.displayMode
     };
   }
-  // @ts-ignore todo
   componentDidCatch(error, info) {
     this.setState({
       error,
@@ -61,35 +44,48 @@ export class StyleGuide extends React.Component<
   }
 
   render() {
-    // @ts-ignore todo
-    const { config, allSections, sections } = this.props;
+    const {
+      config,
+      sections,
+      displayMode,
+      allSections,
+      pagePerSection,
+      codeRevision,
+      slots
+    } = this.props;
     if (this.state.error) {
       return <Error error={this.state.error} info={this.state.info} />;
     }
     return (
-      <SkeBasis>
-        <Router history={history}>
-          <StyleGuideRenderer
-            // @ts-ignore todo
-            title={config.title}
-            homepageUrl={''}
-            toc={<TableOfContents sections={allSections} />}
-          >
-            <React.Suspense
-              fallback={
-                //@ts-ignore
-                <Spinner size={Spinner.Size.large} spinnerColor="black" />
+      <Context.Provider
+        value={{
+          codeRevision,
+          config,
+          slots,
+          displayMode
+        }}
+      >
+        <SkeBasis>
+          <Router history={history}>
+            <StyleGuideRenderer
+              title={config.title}
+              homepageUrl={''}
+              toc={
+                <TableOfContent
+                  sections={allSections}
+                  useRouterLinks={pagePerSection}
+                />
               }
             >
               {sections.length ? (
-                <Sections sections={sections} />
+                <Sections sections={sections} depth={1} />
               ) : (
-                <>Not found </>
+                <div>Not Found </div>
               )}
-            </React.Suspense>
-          </StyleGuideRenderer>
-        </Router>
-      </SkeBasis>
+            </StyleGuideRenderer>
+          </Router>
+        </SkeBasis>
+      </Context.Provider>
     );
   }
 }
