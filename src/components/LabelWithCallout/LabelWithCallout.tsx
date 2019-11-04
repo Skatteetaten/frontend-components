@@ -43,6 +43,7 @@ const LabelWithCallout = (props: LabelWithCalloutProps) => {
   ) : (
     <p>{warning}</p>
   );
+
   return (
     <div id={id} className={classnames(styles.labelArea, className)}>
       <span className={styles.label}>
