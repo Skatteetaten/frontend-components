@@ -27,7 +27,6 @@ export interface CalloutProps extends ICalloutProps {
     | CalloutColor.BASIC;
   onClose?: () => void;
   /** dir */
-
 }
 
 interface CalloutState {

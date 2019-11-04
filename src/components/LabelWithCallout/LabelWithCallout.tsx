@@ -53,7 +53,7 @@ const LabelWithCallout = (props: LabelWithCalloutProps) => {
           <IconButton
             iconProps={{ iconName: 'HelpOutline' }}
             title="Hjelp"
-            ariaLabel={"help"}
+            ariaLabel={'help'}
             onClick={() => {
               setIsCalloutVisible(!isCalloutVisible);
               setActiveCallout('helpCallout');

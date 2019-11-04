@@ -3,7 +3,7 @@ import { Route, Switch } from 'react-router';
 import { normalize, schema } from 'normalizr';
 import RSGSection from 'react-styleguidist/lib/client/rsg-components/Section/Section';
 import ReactComponent from '../ReactComponent/ReactComponent';
-import Forside from '../Forside';
+import Forside from '../Forside/forside';
 /* Normalize recursive content  */
 const slugId = { idAttribute: value => value.slug };
 const component = new schema.Entity('components', undefined, slugId);

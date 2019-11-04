@@ -69,13 +69,7 @@ export default class ReactComponent extends Component {
             />
           )
         }
-        tabBody={
-          <Slot
-            name="docsTabs"
-            active={activeTab}
-            props={component}
-          />
-        }
+        tabBody={<Slot name="docsTabs" active={activeTab} props={component} />}
       />
     );
   }

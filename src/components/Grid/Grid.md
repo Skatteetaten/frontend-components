@@ -1,6 +1,6 @@
 ** Grid er en komponent som brukes til å plassere komponenter og annet innhold på siden, og hjelper til med å justere plasseringen for ulike skjermbredder. **
 
-```js noeditor beskrivelse
+```js noeditor
 DemoBlock = ({ children }) => (
   <div
     style={{

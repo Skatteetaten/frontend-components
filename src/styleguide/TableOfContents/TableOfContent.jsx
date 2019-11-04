@@ -1,5 +1,5 @@
 import React from 'react';
-import ComponentsList from '../ComponentsList';
+import ComponentsListRenderer from '../ComponentsList/ComponentsListRenderer';
 import filterSectionsByName from 'react-styleguidist/lib/client/utils/filterSectionsByName';
 import SearchField from '../../components/SearchField';
 
@@ -34,7 +34,12 @@ export class TableOfContent extends React.Component<> {
         content: children.length > 0 && _this2.renderLevel(children)
       });
     });
-    return <ComponentsList items={items} searchTerm={this.state.searchTerm} />;
+    return (
+      <ComponentsListRenderer
+        items={items}
+        searchTerm={this.state.searchTerm}
+      />
+    );
   }
 
   renderSections() {

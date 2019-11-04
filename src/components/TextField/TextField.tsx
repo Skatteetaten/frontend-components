@@ -35,7 +35,10 @@ export interface TextFieldProps extends ITextFieldProps {
   borderless?: ITextFieldProps['borderless'];
   /** @ignore */
   underlined?: ITextFieldProps['underlined'];
+  /** @ignore */
+  editMode?: boolean;
 }
+
 interface TextFieldState {
   isCalloutVisible: boolean;
   editMode: boolean;

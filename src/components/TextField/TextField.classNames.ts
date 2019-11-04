@@ -4,8 +4,9 @@ import { FontSizes, FontWeights } from '../utils/fonts';
 import { MdIcons } from '../utils/icons/';
 import { isUndefined } from 'util';
 import { PaletteProps } from '..';
-// @ts-ignore TODO
-function getFieldTypeStyles(props) {
+import { TextFieldProps } from './TextField';
+
+function getFieldTypeStyles(props: TextFieldProps) {
   if (props.inputSize === 'large') {
     return {
       '.ms-TextField-fieldGroup': {
@@ -30,8 +31,7 @@ function getFieldTypeStyles(props) {
     };
   }
 }
-// @ts-ignore TODO
-function getLabelSize(props) {
+function getLabelSize(props: TextFieldProps) {
   if (props.labelSize === 'small') {
     return {
       fontSize: FontSizes.small
@@ -42,8 +42,8 @@ function getLabelSize(props) {
     };
   }
 }
-// @ts-ignore TODO
-export const getClassNames = props => {
+
+export const getClassNames = (props: TextFieldProps) => {
   const {
     boldText,
     borderless,
@@ -59,6 +59,7 @@ export const getClassNames = props => {
   const color = errorMessage
     ? palette.skeColor.error
     : palette.skeColor.blackAlt;
+
   // @ts-ignore TODO
   return mergeStyles({
     displayName: 'SkeTextField',
