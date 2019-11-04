@@ -43,11 +43,17 @@ export function ReactComponentRenderer({
 }) {
   // Splitter opp kode og beskrivelse
   const code = examples.filter(
-    item => !item.settings || (item.settings && !item.settings.beskrivelse)
+    item =>
+      !item.settings ||
+      (item.settings && !item.settings.beskrivelse && !item.settings.uu)
   );
   const exampleDescription = examples.filter(
     item => item.settings && item.settings.beskrivelse
   );
+  const exampleAccessibility = examples.filter(
+    item => item.settings && item.settings.uu
+  );
+
   return (
     <div className={classes.root} data-testid={`${name}-container`}>
       <header className={classes.header}>
@@ -62,22 +68,15 @@ export function ReactComponentRenderer({
       )}
       <Tabs>
         {code.length > 0 && (
-          <TabItem itemKey="examples" headerText={'Komponent eksempel'}>
-            <div style={{ marginTop: '10px' }}>
+          <TabItem itemKey="examples" headerText={'Eksempler'}>
+            <div style={{ marginTop: '16px' }}>
               <Examples examples={code} name={name} exampleMode={exampleMode} />
             </div>
           </TabItem>
         )}
-        <TabItem headerText="Komponent API" itemKey="API">
-          <div style={{ marginTop: '10px' }}>
-            <div className={classes.tabs}>
-              <div className={classes.tabBody}>{tabBody}</div>
-            </div>
-          </div>
-        </TabItem>
         {exampleDescription.length > 0 && (
-          <TabItem headerText="Komponent beskrivelse" itemKey="om-komponent">
-            <div style={{ marginTop: '10px' }}>
+          <TabItem headerText="Bruk og innhold" itemKey="usage">
+            <div style={{ marginTop: '16px' }}>
               <Examples
                 examples={exampleDescription}
                 name={name}
@@ -86,6 +85,24 @@ export function ReactComponentRenderer({
             </div>
           </TabItem>
         )}
+        {exampleAccessibility.length > 0 && (
+          <TabItem headerText="Universell utforming" itemKey="accessibility">
+            <div style={{ marginTop: '16px' }}>
+              <Examples
+                examples={exampleAccessibility}
+                name={name}
+                exampleMode={exampleMode}
+              />
+            </div>
+          </TabItem>
+        )}
+        <TabItem headerText="API" itemKey="api">
+          <div style={{ marginTop: '16px' }}>
+            <div className={classes.tabs}>
+              <div className={classes.tabBody}>{tabBody}</div>
+            </div>
+          </div>
+        </TabItem>
       </Tabs>
     </div>
   );
