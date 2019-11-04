@@ -40,7 +40,8 @@ const InternalHeader = props => {
     </header>
   );
 };
-// @ts-ignore TODO
+
+// @ts-ignore
 const ExternalHeaderContent = ({ styles, ...props }) => {
   if (props.children) {
     return props.children;
@@ -68,7 +69,6 @@ const ExternalHeaderContent = ({ styles, ...props }) => {
 
 const ExternalHeader: React.FC<TopBannerProps> = props => {
   const styles = getExternalClassNames(props);
-  // @ts-ignore TODO
   const { header, headerMain, logoWrapper, contentWrapper } = styles;
   const logo = require('./assets/ske-logo.svg');
   const compactHeight = props.compact ? 55 : 68;
@@ -97,7 +97,7 @@ const ExternalHeader: React.FC<TopBannerProps> = props => {
   );
 };
 
-interface TopBannerProps {
+export interface TopBannerProps {
   /** Tittelen på banneren */
   title?: string;
   /** Teksten som vises ved siden av home-knapp */

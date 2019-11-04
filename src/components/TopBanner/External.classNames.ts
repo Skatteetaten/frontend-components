@@ -2,10 +2,10 @@ import { mergeStyleSets } from '@uifabric/merge-styles';
 import { getTheme } from '@uifabric/styling';
 import { FontSizes } from '..';
 import { PaletteProps } from '..';
+import { TopBannerProps } from './TopBanner';
 
 const separator = require('./assets/separator.png');
-// @ts-ignore TODO
-export function getClassNames(props): string {
+export function getClassNames(props: TopBannerProps) {
   const { compact } = props;
   const palette = getTheme().palette as PaletteProps;
   // @ts-ignore TODO
