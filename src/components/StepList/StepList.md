@@ -124,37 +124,28 @@ const titles = {
 ```
 
 ```js noeditor beskrivelse
-import Accordion from '@skatteetaten/frontend-components/Accordion';
-import AccordionItem from '@skatteetaten/frontend-components/Accordion/AccordionItem';
+  <p>StepList brukes når vi ønsker å veilede brukeren gjennom en rekke steg.
+  Komponenten kan brukes til å dele opp et skjema i porsjoner, eller som en
+  veiviser med spørsmål som ender opp i et svar eller en konklusjon.</p>
 
-<Accordion>
-  <AccordionItem
-    toggleContent
-    isOpen
-    toggleButtonText={'Bruk'}
-    stepId={'step-1-1'}
-  >
-    <p>
-      StepList brukes når vi ønsker å veilede brukeren gjennom en rekke steg.
-    </p>
-    <p>Stegene kan være aktive eller fullførte.</p>
-  </AccordionItem>
-  <AccordionItem
-    toggleContent
-    toggleButtonText={'Universell utforming'}
-    stepId={'step-1-2'}
-  >
-    <p>Dette seksjonen er foreløpig tom.</p>
-  </AccordionItem>
-  <AccordionItem
-    toggleContent
-    toggleButtonText={'Tekniske detaljer'}
-    stepId={'step-1-3'}
-  >
-    <p>
-      Dette er en egenutviklet komponent, så det finnes ingen flere props
-      tilgjengelig.
-    </p>
-  </AccordionItem>
-</Accordion>;
+  <p>Hvis du skal bruke komponenten til å lage et skjema, bør det som
+  hovedregel være med et oppsummeringssteg til slutt. (Elmer-standarden sier
+  at bruker skal ha mulighet til å se over skjemaet før innsending.)
+  Oppsummeringssteget skal være et eget steg og knappen endrer da navn til
+  «Send inn» eller tilsvarende. Her kan du ha eventuelt ha med mulighet for
+  at bruker godkjenner opplysningene.</p>
+
+  <p>Når et steg inneholder feil, plasserer vi oppsummering av feilen(e) i en
+  MessageBar i toppen av steget. Denne dukker opp når bruker klikker Neste.
+  Fokus settes til overskriften i MessageBar.</p>
+
+  <p>I noen tilfeller bør en kunne hoppe inn midt i liste med steg. Et eksempel
+  er dersom man har fylt inn opplysninger i en veiviser på skatteetaten.no,
+  og deretter sendes til en innlogget tjeneste – så bør opplysningene man
+  allerede har registrert være forhåndsutfylt i den innloggede tjenesten.</p>
+
+  <p>Hvis du gjør en endring i et tidlig steg og det ikke er avhengigheter,
+  husker skjemaet det du har skrevet inn på senere steg. Hvis det er
+  avhengigheter, nullstilles senere steg.</p>
+
 ```

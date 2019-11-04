@@ -44,16 +44,6 @@ import Typography from '@skatteetaten/frontend-components/Typography';
 ```
 
 ```js noeditor beskrivelse
-import Accordion from '@skatteetaten/frontend-components/Accordion';
-import AccordionItem from '@skatteetaten/frontend-components/Accordion/AccordionItem';
-
-<Accordion>
-  <AccordionItem
-    isOpen
-    toggleContent
-    toggleButtonText={'Bruk'}
-    stepId={'step-1-1'}
-  >
     <p>
       Typography er en teknisk hjelpekomponent som brukes til å legge på
       tekst-stiler til vanlige typografi-elementer, f.eks. overskrifter, lister
@@ -72,21 +62,8 @@ import AccordionItem from '@skatteetaten/frontend-components/Accordion/Accordion
       potensielle ringvirkninger, og da gir det mening å bruke komponenten på et
       lavere nivå, og stile deler av løsningen (lokalt).
     </p>
-
     <p>
       Se <a href="#section-om-skrifttype">typografi</a> for detaljer rundt
       skriftstørrelse.
     </p>
-  </AccordionItem>
-  <AccordionItem
-    toggleContent
-    toggleButtonText={'Tekniske detaljer'}
-    stepId={'step-1-2'}
-  >
-    <p>
-      Dersom du bruker to nøstede Typography-komponenter, kan du måtte sette
-      props i begge komponentene for at disse skal fungere.
-    </p>
-  </AccordionItem>
-</Accordion>;
 ```

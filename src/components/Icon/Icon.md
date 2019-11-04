@@ -522,18 +522,26 @@ Object.keys(iconGroup).forEach(name => {
 </div>;
 ```
 
-```js noeditor beskrivelse
-import Accordion from '@skatteetaten/frontend-components/Accordion';
-import AccordionItem from '@skatteetaten/frontend-components/Accordion/AccordionItem';
+```js noeditor uu
+<ul>
+  <li>
+    Meningsbærende ikoner skal forholde seg til WCAG 2.0 med AA 4.5
+    kontrastverdi som minimum.
+  </li>
+  <li>
+    Ikoner som er til «pynt» eller brukes som støtte til tekst, kan vises med en
+    3.0 kontrastverdi.
+  </li>
+  <li>
+    Pass på at ikoner som ikke skal leses opp av skjermleser får aria-attributt
+    «role='presentation'». Dette hindrer at skjermelser vil forsøke å lese opp
+    unicode-tegnet knyttet til symbolet.
+  </li>
+</ul>
+```
 
-<Accordion>
-  <AccordionItem
-    isOpen
-    toggleContent
-    toggleButtonText={'Bruk'}
-    stepId={'step-1-1'}
-  >
-    <p>
+```js noeditor beskrivelse
+<p>
       Ikoner er en viktig del av visuell kommunikasjon på digitale platformer
       fordi det bidrar blant annet ved å simplifisere navigasjon, optimalisere
       interaksjon, visualisere ideer og støtte tekstlig innhold.
@@ -544,43 +552,4 @@ import AccordionItem from '@skatteetaten/frontend-components/Accordion/Accordion
       Material design icons (https://materialdesignicons.com), utvidet med noen
       egendesignede ikoner (i SVG)
     </p>
-  </AccordionItem>
-  <AccordionItem
-    toggleContent
-    toggleButtonText={'Universell utforming'}
-    stepId={'step-1-2'}
-  >
-    <ul>
-      <li>
-        Meningsbærende ikoner skal forholde seg til WCAG 2.0 med AA 4.5
-        kontrastverdi som minimum.
-      </li>
-      <li>
-        Ikoner som er til «pynt» eller brukes som støtte til tekst, kan vises
-        med en 3.0 kontrastverdi.
-      </li>
-      <li>
-        Pass på at ikoner som ikke skal leses opp av skjermleser får
-        aria-attributt «role='presentation'». Dette hindrer at skjermelser vil
-        forsøke å lese opp unicode-tegnet knyttet til symbolet.
-      </li>
-    </ul>
-  </AccordionItem>
-  <AccordionItem
-    toggleContent
-    toggleButtonText={'Tekniske detaljer'}
-    stepId={'step-1-3'}
-  >
-    <p>
-      <a
-        href="https://developer.microsoft.com/en-us/fabric#/components/icon#Implementation"
-        target="_blank"
-      >
-        Se flere tilgjengelige props i Fabric dokumentasjonen
-      </a>
-    </p>
-  </AccordionItem>
-</Accordion>;
 ```
-
-<br/>

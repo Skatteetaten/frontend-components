@@ -161,53 +161,23 @@ import TextField from '@skatteetaten/frontend-components/TextField';
 </div>;
 ```
 
-```js noeditor beskrivelse
-import Accordion from '@skatteetaten/frontend-components/Accordion';
-import AccordionItem from '@skatteetaten/frontend-components/Accordion/AccordionItem';
+```js noeditor uu
+  <p>
+    Det skal alltid være en programatisk kobling mellom tekstfelt og label,
+    slik at skjermleser kan lese opp beskrivelsen av feltet når det er i
+    fokus.
+  </p>
+  <p>
+    I publikumsløsninger viser i advarsel- og hjelpetekst mellom label og
+    verdi (sett calloutFloating til false). Hjelpetekster i Callout fanges
+    ikke like enkelt opp av skjermlesere.
+  </p>
+```
 
-<Accordion>
-  <AccordionItem
-    isOpen
-    toggleContent
-    toggleButtonText={'Bruk'}
-    stepId={'step-1-1'}
-  >
-    <p>
-      I Designsystemet finnes det mange ulike varisjoner av tekstfelt. Vi har
-      med og uten hjelpetekst, feilmeldinger eller lese- og skrivemodus. Vi har
-      også mulighet til å bestemme formatering, for eksempel ved
-      organiasasjonsnummer.
-    </p>
-  </AccordionItem>
-  <AccordionItem
-    toggleContent
-    toggleButtonText={'Universell utforming'}
-    stepId={'step-1-2'}
-  >
-    <p>
-      Det skal alltid være en programatisk kobling mellom tekstfelt og label,
-      slik at skjermleser kan lese opp beskrivelsen av feltet når det er i
-      fokus.
-    </p>
-    <p>
-      I publikumsløsninger viser i advarsel- og hjelpetekst mellom label og
-      verdi (sett calloutFloating til false). Hjelpetekster i Callout fanges
-      ikke like enkelt opp av skjermlesere.
-    </p>
-  </AccordionItem>
-  <AccordionItem
-    toggleContent
-    toggleButtonText={'Tekniske detaljer'}
-    stepId={'step-1-3'}
-  >
-    <p>
-      <a
-        href="https://developer.microsoft.com/en-us/fabric#/components/textfield#Implementation"
-        target="_blank"
-      >
-        Se flere tilgjengelige props i Fabric dokumentasjonen
-      </a>
-    </p>
-  </AccordionItem>
-</Accordion>;
+```js noeditor beskrivelse
+<p>
+  I Designsystemet finnes det mange ulike varisjoner av tekstfelt. Vi har med og
+  uten hjelpetekst, feilmeldinger eller lese- og skrivemodus. Vi har også
+  mulighet til å bestemme formatering, for eksempel ved organiasasjonsnummer.
+</p>
 ```

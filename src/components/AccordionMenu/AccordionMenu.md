@@ -150,40 +150,15 @@ const timeStampStyle = {
 </div>;
 ```
 
-```js noeditor beskrivelse
-import Accordion from '@skatteetaten/frontend-components/Accordion';
-import AccordionItem from '@skatteetaten/frontend-components/Accordion/AccordionItem';
+```js noeditor uu
+<p>
+  <a href="https://www.w3.org/TR/wai-aria-practices-1.1/#accordion">
+    Mer om WAI-ARIA for accordion.
+  </a>
+</p>
+```
 
-<Accordion>
-  <AccordionItem
-    isOpen
-    toggleContent
-    toggleButtonText={'Bruk'}
-    stepId={'step-1-1'}
-  >
+```js noeditor beskrivelse
     <p>AccordionMenu brukes primæret som venstremeny i saksbehandling</p>
     <p>Det er mulig å vise vilkårlig innhold inne i et ekspanderbart område.</p>
-  </AccordionItem>
-  <AccordionItem
-    toggleContent
-    toggleButtonText={'Universell utforming'}
-    stepId={'step-1-2'}
-  >
-    <p>
-      <a href="https://www.w3.org/TR/wai-aria-practices-1.1/#accordion">
-        Mer om WAI-ARIA for accordion.
-      </a>
-    </p>
-  </AccordionItem>
-  <AccordionItem
-    toggleContent
-    toggleButtonText={'Tekniske detaljer'}
-    stepId={'step-1-3'}
-  >
-    <p>
-      Dette er en komponent vi har laget selv fra bunnen av, og det finnes
-      derfor ikke flere props enn de som listes på denne siden.
-    </p>
-  </AccordionItem>
-</Accordion>;
 ```

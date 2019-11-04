@@ -217,45 +217,16 @@ const meny = [
 ```
 
 ```js noeditor beskrivelse
-import Accordion from '@skatteetaten/frontend-components/Accordion';
-import AccordionItem from '@skatteetaten/frontend-components/Accordion/AccordionItem';
-
-<Accordion>
-  <AccordionItem
-    isOpen
-    toggleContent
-    toggleButtonText={'Bruk'}
-    stepId={'step-1-1'}
-  >
-    <p>
-      TopStripe er den svarte, horisontale stripen helt i toppen. Dette er etter
-      DIFIs anbefaling om en felles markering av innloggede tjenester som
-      benytter MinID for innlogging. Alle innloggede publikumsløsninger skal ha
-      en slik toppbar. Den skal inneholde et ikon for person, samt navnet på den
-      som er logget inn. I tillegg skal det finnes en Logg ut lenke helt til
-      høyre.
-    </p>
-    <p>
-      På skatteetaten.no er det i tillegg overordnede lenker og funksjoner for
-      nettstedet der, for eksempel «Kontakt oss» og «Endre skriftstørrelse».
-    </p>
-  </AccordionItem>
-  <AccordionItem
-    toggleContent
-    toggleButtonText={'Universell utforming'}
-    stepId={'step-1-2'}
-  >
-    <p>Dette seksjonen er foreløpig tom.</p>
-  </AccordionItem>
-  <AccordionItem
-    toggleContent
-    toggleButtonText={'Tekniske detaljer'}
-    stepId={'step-1-3'}
-  >
-    <p>
-      Denne komponenten har vi laget selv fra bunnen av, så ingen flere props er
-      tilgjengelig.
-    </p>
-  </AccordionItem>
-</Accordion>;
+  <p>
+    TopStripe er den svarte, horisontale stripen helt i toppen. Dette er etter
+    DIFIs anbefaling om en felles markering av innloggede tjenester som
+    benytter MinID for innlogging. Alle innloggede publikumsløsninger skal ha
+    en slik toppbar. Den skal inneholde et ikon for person, samt navnet på den
+    som er logget inn. I tillegg skal det finnes en Logg ut lenke helt til
+    høyre.
+  </p>
+  <p>
+    På skatteetaten.no er det i tillegg overordnede lenker og funksjoner for
+    nettstedet der, for eksempel «Kontakt oss» og «Endre skriftstørrelse».
+  </p>
 ```

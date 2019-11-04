@@ -82,59 +82,28 @@ const initialState = {
 </div>;
 ```
 
-```js noeditor beskrivelse
-import Accordion from '@skatteetaten/frontend-components/Accordion';
-import AccordionItem from '@skatteetaten/frontend-components/Accordion/AccordionItem';
+```js noeditor uu
+<ul>
+  <li>
+    Test at det er mulig å nå alle funksjoner med tastatur. Datovelgeren er satt
+    opp slik at man kan skrive datoer med tastaturet når man tab-er til feltet.
+    Hvis man klikker med mus på feltet åpnes kalendervisning først og man må
+    klikke i feltet for å kunne skrive med tastatur.
+  </li>
+  <li>
+    Sjekk at fokus settes i kalenderen etter åpning - slik at en eventuell
+    skjermleser fanger opp at den vises på skjermen.
+  </li>
+  <li>Test at skjermleser leser opp fornuftige tekster i kalenderen.</li>
+</ul>
+```
 
-<Accordion>
-  <AccordionItem
-    isOpen
-    toggleContent
-    toggleButtonText={'Bruk'}
-    stepId={'step-1-1'}
-  >
-    <p>
-      {' '}
-      Ta hensyn til hvor langt frem eller tilbake brukeren pleier å velge dato.
-      Hvis man vanligvis velger en dato noen dager frem i tid, er det kanskje
-      ikke behov å vise månedsoversikten. I andre tilfeller er det fornuftig å
-      vise månedoversikt og ukenummer. Datofeltet har også en lesemodus for når
-      man har behov for å gå fra en tilstand der man kan endre datoen til bare å
-      vise den.
-    </p>
-  </AccordionItem>
-  <AccordionItem
-    toggleContent
-    toggleButtonText={'Universell utforming'}
-    stepId={'step-1-2'}
-  >
-    <ul>
-      <li>
-        Test at det er mulig å nå alle funksjoner med tastatur. Datovelgeren er
-        satt opp slik at man kan skrive datoer med tastaturet når man tab-er til
-        feltet. Hvis man klikker med mus på feltet åpnes kalendervisning først
-        og man må klikke i feltet for å kunne skrive med tastatur.
-      </li>
-      <li>
-        Sjekk at fokus settes i kalenderen etter åpning - slik at en eventuell
-        skjermleser fanger opp at den vises på skjermen.
-      </li>
-      <li>Test at skjermleser leser opp fornuftige tekster i kalenderen.</li>
-    </ul>
-  </AccordionItem>
-  <AccordionItem
-    toggleContent
-    toggleButtonText={'Tekniske detaljer'}
-    stepId={'step-1-3'}
-  >
-    <p>
-      <a
-        href="https://developer.microsoft.com/en-us/fabric#/components/datepicker#Implementation"
-        target="_blank"
-      >
-        Se flere tilgjengelige props i Fabric dokumentasjonen
-      </a>
-    </p>
-  </AccordionItem>
-</Accordion>;
+```js noeditor beskrivelse
+<p>
+  Ta hensyn til hvor langt frem eller tilbake brukeren pleier å velge dato. Hvis
+  man vanligvis velger en dato noen dager frem i tid, er det kanskje ikke behov
+  å vise månedsoversikten. I andre tilfeller er det fornuftig å vise
+  månedoversikt og ukenummer. Datofeltet har også en lesemodus for når man har
+  behov for å gå fra en tilstand der man kan endre datoen til bare å vise den.
+</p>
 ```

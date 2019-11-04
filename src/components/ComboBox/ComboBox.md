@@ -117,57 +117,28 @@ let error = 'En feil';
 </div>;
 ```
 
-```js noeditor beskrivelse
-import Accordion from '@skatteetaten/frontend-components/Accordion';
-import AccordionItem from '@skatteetaten/frontend-components/Accordion/AccordionItem';
+```js noeditor uu
+<ul>
+  <li>Sjekk at alle funksjoner kan nås ved hjelp av tastaturet. </li>
+  <li>
+    Vær spesielt oppmerksom dersom man bruker <b>autoExpand</b>. Brukere av
+    skjermleser forventer å aktivt aktivere elementene på skjermen, og dersom de
+    åpnes automatisk kan det være vanskelig å orientere seg.
+  </li>
+</ul>
+```
 
-<Accordion>
-  <AccordionItem
-    isOpen
-    toggleContent
-    toggleButtonText={'Bruk'}
-    stepId={'step-1-1'}
-  >
-    <p>
-      ComboBoxen er en fleksibel nedtrekksliste som kan tilpasses til ulike
-      sitasjoner:
-    </p>
-    <ul>
-      <li>Kun velge eller skrive fra et sett gyldige verdier.</li>
-      <li>
-        Velge eller skrive blant et sett med verdier, eller skrive inn nye
-      </li>
-      <li>Som en nedtrekksliste, uten mulighet til å skrive</li>
-      <li>Automatisk vise meny når feltet får fokus.</li>
-    </ul>
-  </AccordionItem>
-  <AccordionItem
-    toggleContent
-    toggleButtonText={'Universell utforming'}
-    stepId={'step-1-2'}
-  >
-    <ul>
-      <li>Sjekk at alle funksjoner kan nås ved hjelp av tastaturet. </li>
-      <li>
-        Vær spesielt oppmerksom dersom man bruker <b>autoExpand</b>. Brukere av
-        skjermleser forventer å aktivt aktivere elementene på skjermen, og
-        dersom de åpnes automatisk kan det være vanskelig å orientere seg.
-      </li>
-    </ul>
-  </AccordionItem>
-  <AccordionItem
-    toggleContent
-    toggleButtonText={'Tekniske detaljer'}
-    stepId={'step-1-3'}
-  >
-    <p>
-      <a
-        href="https://developer.microsoft.com/en-us/fabric#/components/ComboBox#Implementation"
-        target="_blank"
-      >
-        Se flere tilgjengelige props i Fabric dokumentasjonen
-      </a>
-    </p>
-  </AccordionItem>
-</Accordion>;
+```js noeditor beskrivelse
+  <p>
+    ComboBoxen er en fleksibel nedtrekksliste som kan tilpasses til ulike
+    sitasjoner:
+  </p>
+  <ul>
+    <li>Kun velge eller skrive fra et sett gyldige verdier.</li>
+    <li>
+      Velge eller skrive blant et sett med verdier, eller skrive inn nye
+    </li>
+    <li>Som en nedtrekksliste, uten mulighet til å skrive</li>
+    <li>Automatisk vise meny når feltet får fokus.</li>
+  </ul>
 ```

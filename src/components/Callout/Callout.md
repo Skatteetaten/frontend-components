@@ -134,82 +134,54 @@ function closeButton() {
 </div>;
 ```
 
+```js noeditor uu
+  <p>
+    En Callout vil teknisk legges til slutt i koden. Dette betyr at eventuelle
+    hjelpeverktøy, som for eksempel skjermlesere, vil lese opp teksten inni
+    Callouten helt til slutt. Av denne grunn anbefaler vi ikke å bruke
+    komponenten i publikumsløsninger.
+  </p>
+  <ul>
+    <li>
+      Callout skal kun brukes i interne løsninger på grunn av utfordringer
+      rundt universell utforming. Innholdet i Callout vil teknisk lastet inn i
+      bunnen av siden, slik at en skjermleser ofte vil lese innholdet til
+      slutt.
+    </li>
+    <li>
+      <b>aria-haspopup</b> indikerer at knappen åpner et element for
+      skjermlesere.
+    </li>
+    <li>
+      Kontroller at det er mulig å åpne/lukke Callout-en både med mus og
+      tastatur.
+    </li>
+  </ul>
+```
+
 ```js noeditor beskrivelse
-import Accordion from '@skatteetaten/frontend-components/Accordion';
-import AccordionItem from '@skatteetaten/frontend-components/Accordion/AccordionItem';
-<Accordion>
-  <AccordionItem
-    toggleContent
-    isOpen
-    toggleButtonText={'Bruk av komponenten'}
-    stepId={'step-1-1'}
-  >
-    <p>
-      Merk at Callout kun skal brukes i interne løsninger. Se universell
-      utforming for begrunnelse.
-    </p>
-    <h4>Farger</h4>
-    <ul>
-      <li>Grønn til hjelpetekster</li>
-      <li>Gul til informasjon og opplysning.</li>
-    </ul>
-    <h4>Farger som brukes med forsiktighet</h4>
-    <ul>
-      <li>
-        Rød til feil og advarsler. Denne skal i utgangspunktet ikke brukes. Hvis
-        det er feil, skal det vises brukeren uten at hun trenger å klikke den
-        frem.
-      </li>
-      <li>
-        Blå for or å støtte gammel visuell profil (saksbehandlingsløsninger som
-        allerede har blå informasjonsbokser). Brukes ikke i nye løsninger.
-      </li>
-      <li>
-        Hvit i unntaktstilfeller der de andre fargene gir for lav lesekontrast
-      </li>
-    </ul>
-  </AccordionItem>
-  <AccordionItem
-    toggleContent
-    toggleButtonText={'Universell utforming'}
-    stepId={'step-1-2'}
-  >
-    <p>
-      En Callout vil teknisk legges til slutt i koden. Dette betyr at eventuelle
-      hjelpeverktøy, som for eksempel skjermlesere, vil lese opp teksten inni
-      Callouten helt til slutt. Av denne grunn anbefaler vi ikke å bruke
-      komponenten i publikumsløsninger.
-    </p>
-    <ul>
-      <li>
-        Callout skal kun brukes i interne løsninger på grunn av utfordringer
-        rundt universell utforming. Innholdet i Callout vil teknisk lastet inn i
-        bunnen av siden, slik at en skjermleser ofte vil lese innholdet til
-        slutt.
-      </li>
-      <li>
-        <b>aria-haspopup</b> indikerer at knappen åpner et element for
-        skjermlesere.
-      </li>
-      <li>
-        Kontroller at det er mulig å åpne/lukke Callout-en både med mus og
-        tastatur.
-      </li>
-    </ul>
-  </AccordionItem>
-  <AccordionItem
-    toggleContent
-    toggleButtonText={'Tekniske detaljer'}
-    stepId={'step-1-3'}
-  >
-    <p>
-      <a
-        href="https://developer.microsoft.com/en-us/fabric#/components/callout#Implementation"
-        target="_blank"
-      >
-        Se flere tilgjengelige props i Fabric dokumentasjonen
-      </a>
-    </p>
-  </AccordionItem>
-</Accordion>;
+  <p>
+    Merk at Callout kun skal brukes i interne løsninger. Se universell
+    utforming for begrunnelse.
+  </p>
+  <h4>Farger</h4>
+  <ul>
+    <li>Grønn til hjelpetekster</li>
+    <li>Gul til informasjon og opplysning.</li>
+  </ul>
+  <h4>Farger som brukes med forsiktighet</h4>
+  <ul>
+    <li>
+      Rød til feil og advarsler. Denne skal i utgangspunktet ikke brukes. Hvis
+      det er feil, skal det vises brukeren uten at hun trenger å klikke den
+      frem.
+    </li>
+    <li>
+      Blå for or å støtte gammel visuell profil (saksbehandlingsløsninger som
+      allerede har blå informasjonsbokser). Brukes ikke i nye løsninger.
+    </li>
+    <li>
+      Hvit i unntaktstilfeller der de andre fargene gir for lav lesekontrast
+    </li>
+</ul>
 ```

@@ -122,51 +122,26 @@ import TextField from '@skatteetaten/frontend-components/TextField';
 ```
 
 ```js noeditor beskrivelse
-import Accordion from '@skatteetaten/frontend-components/Accordion';
-import AccordionItem from '@skatteetaten/frontend-components/Accordion/AccordionItem';
+<p>
+  Innholdskort kan inneholde mange andre komponenter. Husk å sjekke
+  «Tilgjengelighet» hvis du skal bruke flere komponenter fra Designsystemet i
+  innholdskortet.
+</p>
+```
 
-<Accordion>
-  <AccordionItem
-    isOpen
-    toggleContent
-    toggleButtonText={'Bruk'}
-    stepId={'step-1-1'}
-  >
-    <p>
+```js noeditor beskrivelse
+  <p>
       Hvis man har mange innholdskort på skjermen kan det være nyttig å kollapse
       dem, slik at brukeren ikke ser så mye informasjon på en gang. Handlinger
       knyttet til informasjonen inni kortet kan legges i handlingsknapper i
       toppen av kortet.
-    </p>
-    <ul>
-      <li>Grå: Standard bakgrunnsfarge for interne løsninger</li>
-      <li>Grønn: Brukers til hjelp</li>
-      <li>Gul: Brukes til informasjon og opplysning.</li>
-      <li>
-        Hvit med grønn ramme: Brukes til konklusjoner og betalingsopplysninger
-      </li>
-    </ul>
-  </AccordionItem>
-  <AccordionItem
-    toggleContent
-    toggleButtonText={'Universell utforming'}
-    stepId={'step-1-2'}
-  >
-    <p>
-      Innholdskort kan inneholde mange andre komponenter. Husk å sjekke
-      «Tilgjengelighet» hvis du skal bruke flere komponenter fra Designsystemet
-      i innholdskortet.
-    </p>
-  </AccordionItem>
-  <AccordionItem
-    toggleContent
-    toggleButtonText={'Tekniske detaljer'}
-    stepId={'step-1-3'}
-  >
-    <p>
-      Denne komponenten har vi laget selv fra bunnen av, så det finnes ikke
-      flere props enn de som vises i listen over.
-    </p>
-  </AccordionItem>
-</Accordion>;
+  </p>
+  <ul>
+    <li>Grå: Standard bakgrunnsfarge for interne løsninger</li>
+    <li>Grønn: Brukers til hjelp</li>
+    <li>Gul: Brukes til informasjon og opplysning.</li>
+    <li>
+      Hvit med grønn ramme: Brukes til konklusjoner og betalingsopplysninger
+    </li>
+  </ul>
 ```

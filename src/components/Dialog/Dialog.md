@@ -138,68 +138,40 @@ function closeDialog() {
 </div>;
 ```
 
+```js noeditor uu
+<ul>
+  <li>
+    Bruk <b>aria-haspopup</b> for å indikere at en dialog åpnes ved klikk på en
+    knapp.{' '}
+  </li>
+  <li>
+    Sjekk at dialogen får fokus etter at den åpnes. Dette gjør det enkelere for
+    en skjermleser å oppdage og lese opp innholdet.
+  </li>
+</ul>
+```
+
 ```js noeditor beskrivelse
-import Accordion from '@skatteetaten/frontend-components/Accordion';
-import AccordionItem from '@skatteetaten/frontend-components/Accordion/AccordionItem';
-<Accordion>
-  <AccordionItem
-    toggleContent
-    isOpen
-    toggleButtonText={'Bruk'}
-    stepId={'step-1-1'}
-  >
-    <p>
-      En dialogboks (modal) brukes gjerne til å gi brukeren et valg samtidig som
-      konteksten beholdes.
+  <p>
+    En dialogboks (modal) brukes gjerne til å gi brukeren et valg samtidig som
+    konteksten beholdes.
+  </p>
+  <p>
+    Hvis brukeren skal ta stilling til et valg i dialogen bør den settes opp
+    slik at annen brukerinput blir blokkert.{' '}
+  </p>
+  <p>
+    Dialogen finnes i tre varianter; «standard», «luftig» eller «viktig»:
+    Luftig kan brukes hvor du ønsker å at dialogen skal tiltrekke seg ektra
+    oppmerksomhet, mens viktig brukes dersom vi ønsker å formidle en viktig
+    melding der Skatteetaten er avsender.
+  </p>
+  <p>Dialogen kan inneholde tekst, inputfelt, hjelpeikoner osv.</p>
+  <p>
+    Se{' '}
+    <a href="https://www.skatteetaten.no/stilogtone/skrive/">
+      Skatteetatens stil og tone
+    </a>{' '}
+    for hjelp til å skrive gode tekster.
     </p>
-    <p>
-      Hvis brukeren skal ta stilling til et valg i dialogen bør den settes opp
-      slik at annen brukerinput blir blokkert.{' '}
-    </p>
-    <p>
-      Dialogen finnes i tre varianter; «standard», «luftig» eller «viktig»:
-      Luftig kan brukes hvor du ønsker å at dialogen skal tiltrekke seg ektra
-      oppmerksomhet, mens viktig brukes dersom vi ønsker å formidle en viktig
-      melding der Skatteetaten er avsender.
-    </p>
-    <p>Dialogen kan inneholde tekst, inputfelt, hjelpeikoner osv.</p>
-    <p>
-      Se{' '}
-      <a href="https://www.skatteetaten.no/stilogtone/skrive/">
-        Skatteetatens stil og tone
-      </a>{' '}
-      for hjelp til å skrive gode tekster.
-    </p>
-  </AccordionItem>
-  <AccordionItem
-    toggleContent
-    toggleButtonText={'Universell utforming'}
-    stepId={'step-1-2'}
-  >
-    <ul>
-      <li>
-        Bruk <b>aria-haspopup</b> for å indikere at en dialog åpnes ved klikk på
-        en knapp.{' '}
-      </li>
-      <li>
-        Sjekk at dialogen får fokus etter at den åpnes. Dette gjør det enkelere
-        for en skjermleser å oppdage og lese opp innholdet.
-      </li>
-    </ul>
-  </AccordionItem>
-  <AccordionItem
-    toggleContent
-    toggleButtonText={'Tekniske detaljer'}
-    stepId={'step-1-3'}
-  >
-    <p>
-      <a
-        href="https://developer.microsoft.com/en-us/fabric#/components/dialog#Implementation"
-        target="_blank"
-      >
-        Se flere tilgjengelige props i Fabric dokumentasjonen
-      </a>
-    </p>
-  </AccordionItem>
-</Accordion>;
 ```
