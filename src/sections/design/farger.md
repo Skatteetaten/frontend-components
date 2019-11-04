@@ -32,18 +32,18 @@ function drawSwatch(colorCode) {
 
 <div>
   <div style={{ display: 'flex', flexFlow: 'row wrap' }}>
-    {(drawSwatch('burgundy'), drawSwatch('burgundyLight'))}
+    {drawSwatch('burgundy'), drawSwatch('burgundyLight')}
   </div>
   <div style={{ display: 'flex', flexFlow: 'row wrap' }}>
-    {(drawSwatch('green'), drawSwatch('lightGreen'))}
+    {drawSwatch('green'), drawSwatch('lightGreen')}
   </div>
   <div style={{ display: 'flex', flexFlow: 'row wrap' }}>{}</div>
   <div style={{ display: 'flex', flexFlow: 'row wrap' }}>
     {
-      (drawSwatch('brown'),
+      drawSwatch('brown'),
       drawSwatch('darkBeige'),
       drawSwatch('beige'),
-      drawSwatch('lightBeige'))
+      drawSwatch('lightBeige')
     }
   </div>
   <div style={{ display: 'flex', flexFlow: 'row wrap' }}>
@@ -52,10 +52,10 @@ function drawSwatch(colorCode) {
   <h3>Gråtoner</h3>
   <div style={{ display: 'flex', flexFlow: 'row wrap' }}>
     {
-      (drawSwatch('darkGrey'),
+      drawSwatch('darkGrey'),
       drawSwatch('grey'),
       drawSwatch('lightGrey'),
-      drawSwatch('whiteGrey'))
+      drawSwatch('whiteGrey')
     }
   </div>
 </div>;
@@ -90,7 +90,7 @@ function drawSwatch(colorCode) {
 }
 
 <div style={{ display: 'flex', flexFlow: 'row wrap' }}>
-  {(drawSwatch('blackAlt'), drawSwatch('white'))}
+  {drawSwatch('blackAlt'), drawSwatch('white'), drawSwatch('error')}
 </div>;
 ```
 
@@ -124,72 +124,7 @@ function drawSwatch(colorCode) {
 }
 
 <div style={{ display: 'flex', flexFlow: 'row wrap' }}>
-  {(drawSwatch('darkBlue'), drawSwatch('blue'), drawSwatch('lightBlue'))}
+  {drawSwatch('darkBlue'), drawSwatch('blue'), drawSwatch('lightBlue') }
 </div>;
 ```
 
-### Kun til interne løsninger
-
-```js noeditor beskrivelse
-import TinyColor from '@ctrl/tinycolor';
-import SkeBasis from '@skatteetaten/frontend-components/SkeBasis';
-
-palette = Object(SkeBasis.PALETTE);
-
-function drawSwatch(colorCode) {
-  const color = new TinyColor(palette.skeColor[colorCode]);
-
-  return (
-    <div
-      class="swatch"
-      style={{
-        backgroundColor: palette.skeColor[colorCode],
-        color: color.isDark()
-          ? palette.skeColor.white
-          : palette.skeColor.blackAlt
-      }}
-    >
-      <p>skeColor.{colorCode}</p>
-      <p>{palette.skeColor[colorCode]}</p>
-    </div>
-  );
-}
-
-<div style={{ display: 'flex', flexFlow: 'row wrap' }}>
-  {(drawSwatch('internal'), drawSwatch('internalLight'))}
-</div>;
-```
-
-### Støttefarger
-
-Disse fargene brukes i løsninger som designet før det nye visuelle designet kom, og skal derfor fases ut. Ikke bruk disse fargene i nye løsninger som lages.
-
-```js noeditor beskrivelse
-const { TinyColor } = require('@ctrl/tinycolor');
-import SkeBasis from '@skatteetaten/frontend-components/SkeBasis';
-
-palette = Object(SkeBasis.PALETTE);
-
-function drawSwatch(colorCode) {
-  const color = new TinyColor(palette.skeColor[colorCode]);
-
-  return (
-    <div
-      class="swatch"
-      style={{
-        backgroundColor: palette.skeColor[colorCode],
-        color: color.isDark()
-          ? palette.skeColor.white
-          : palette.skeColor.blackAlt
-      }}
-    >
-      <p>skeColor.{colorCode}</p>
-      <p>{palette.skeColor[colorCode]}</p>
-    </div>
-  );
-}
-
-<div style={{ display: 'flex', flexFlow: 'row wrap' }}>
-  {(drawSwatch('mediumBlue'), drawSwatch('neutralGrey'), drawSwatch('black'))}
-</div>;
-```
