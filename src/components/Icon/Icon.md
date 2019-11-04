@@ -11,7 +11,7 @@ import Icon from '@skatteetaten/frontend-components/Icon';
 
 ### Liste over alle ikoner
 
-```js noeditor beskrivelse
+```js noeditor
 import Icon from '@skatteetaten/frontend-components/Icon';
 import Accordion from '@skatteetaten/frontend-components/Accordion';
 import AccordionItem from '@skatteetaten/frontend-components/Accordion/AccordionItem';

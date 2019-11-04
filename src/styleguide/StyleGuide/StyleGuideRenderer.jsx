@@ -41,12 +41,10 @@ export class StyleGuideRenderer extends React.Component<> {
   }
 
   componentDidMount() {
-    // @ts-ignore TODO
     this.setState({ version: process.env.REACT_APP_BUILD_VERSION });
   }
 
   render() {
-    // @ts-ignore TODO
     const { title, children, toc } = this.props;
     const { version } = this.state;
     const styles = getClassNames(this.props, this.state);

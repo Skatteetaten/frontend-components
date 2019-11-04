@@ -25,7 +25,6 @@ module.exports = {
   sections: [
     {
       name: 'Designe og utvikle',
-      content: 'src/sections/forside.md',
       sections: [
         {
           name: 'Kom i gang for utviklere',

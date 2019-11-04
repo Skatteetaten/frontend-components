@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 import SectionHeading from 'react-styleguidist/lib/client/rsg-components/SectionHeading';
 import JsDoc from 'react-styleguidist/lib/client/rsg-components/JsDoc';
 import Markdown from 'react-styleguidist/lib/client/rsg-components/Markdown';
@@ -10,14 +9,7 @@ import UsageTabButton from '../slots/UsageTabButton';
 import ReactComponentRenderer from './ReactComponentRenderer';
 
 export default class ReactComponent extends Component {
-  static propTypes = {
-    component: PropTypes.object.isRequired,
-    depth: PropTypes.number.isRequired,
-    exampleMode: PropTypes.string.isRequired,
-    usageMode: PropTypes.string.isRequired
-  };
   static contextType = Context;
-
   state = {
     activeTab:
       this.props.usageMode === UsageModes.expand ? UsageTabButton : undefined

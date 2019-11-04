@@ -3,8 +3,7 @@ import { Route, Switch } from 'react-router';
 import { normalize, schema } from 'normalizr';
 import RSGSection from 'react-styleguidist/lib/client/rsg-components/Section/Section';
 import ReactComponent from '../ReactComponent/ReactComponent';
-// import RSGReactComponent from 'react-styleguidist/lib/client/rsg-components/ReactComponent/ReactComponent';
-
+import Forside from '../Forside';
 /* Normalize recursive content  */
 const slugId = { idAttribute: value => value.slug };
 const component = new schema.Entity('components', undefined, slugId);
@@ -24,16 +23,7 @@ export class Sections extends React.Component<> {
     let slug = params && params.slug ? params.slug.toLowerCase() : '';
     const { entities } = normalize(props.sections, [mySchema]);
 
-    if (!slug && entities.sections['section-designe-og-utvikle']) {
-      return (
-        <RSGSection
-          section={entities.sections['section-designe-og-utvikle']}
-          depth={2}
-        />
-      );
-    }
     if (slug && entities.components && entities.components[slug]) {
-      console.log(props);
       return (
         <ReactComponent
           exampleMode={entities.components[slug].exampleMode || 'collapse'}
@@ -43,11 +33,14 @@ export class Sections extends React.Component<> {
         />
       );
     }
-    if (slug && entities.sections && entities.sections[slug]) {
+    if (entities.sections && entities.sections[slug]) {
       return <RSGSection section={entities.sections[slug]} depth={2} />;
     }
 
-    return <div> Feil under lasting av komponent. </div>;
+    if (!slug) {
+      return <Forside />;
+    }
+    return <div> Fant ikke siden du leter etter.</div>;
   };
 
   render() {

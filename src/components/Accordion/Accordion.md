@@ -1,4 +1,4 @@
-```js noeditor beskrivelse
+```js noeditor
 import MessageBar from '@skatteetaten/frontend-components/MessageBar';
 
 <MessageBar type={MessageBar.Type.info}>
