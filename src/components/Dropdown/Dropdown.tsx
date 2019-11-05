@@ -6,10 +6,7 @@ import {
 } from 'office-ui-fabric-react/lib-commonjs/Dropdown';
 import * as React from 'react';
 import Icon from '../Icon/Icon';
-import {
-  getCalloutClassNames,
-  getClassNames,
-} from './Dropdown.classNames';
+import { getCalloutClassNames, getClassNames } from './Dropdown.classNames';
 import LabelWithCallout from '../LabelWithCallout';
 import { LabelWithCalloutProps } from '../LabelWithCallout/LabelWithCallout';
 import ErrorMessage from '../ErrorMessage';
@@ -47,7 +44,7 @@ const Dropdown: React.FC<DropdownProps> = props => {
   } = props;
   return (
     <div id={id}>
-      <LabelWithCallout label={label} help={help} {...labelCallout}  />
+      <LabelWithCallout label={label} help={help} {...labelCallout} />
       <FabricDropdown
         {...rest}
         className={classnames(getClassNames(props), className)}

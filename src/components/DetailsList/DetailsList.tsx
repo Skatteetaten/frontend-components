@@ -38,23 +38,27 @@ export class DetailsList extends React.PureComponent<DetailsListProps, {}> {
   // @ts-ignore TODO
   sortColumn = sortItems => (ev, column) => {
     const { items, columns } = this.props;
-    const currentColumn = columns && columns.filter(currCol => {
-      return currCol.key === column.key;
-    })[0];
-    const newColumns = columns && columns.map(newCol => {
-      if (newCol === currentColumn) {
+    const currentColumn =
+      columns &&
+      columns.filter(currCol => {
+        return currCol.key === column.key;
+      })[0];
+    const newColumns =
+      columns &&
+      columns.map(newCol => {
+        if (newCol === currentColumn) {
+          return {
+            ...newCol,
+            isSorted: true,
+            isSortedDescending: !currentColumn.isSortedDescending
+          };
+        }
         return {
           ...newCol,
-          isSorted: true,
-          isSortedDescending: !currentColumn.isSortedDescending
+          isSorted: false,
+          isSortedDescending: true
         };
-      }
-      return {
-        ...newCol,
-        isSorted: false,
-        isSortedDescending: true
-      };
-    });
+      });
 
     const sortedItems = sortItems({
       isDescending: currentColumn.isSortedDescending,
@@ -71,16 +75,18 @@ export class DetailsList extends React.PureComponent<DetailsListProps, {}> {
 
   render() {
     const { background, columns, className, ...props } = this.props;
-    const enhancedColumns = columns && columns.map(col =>
-      // @ts-ignore TODO
-      !col.sortItems
-        ? col
-        : {
-            ...col,
-            // @ts-ignore TODO
-            onColumnClick: this.sortColumn(col.sortItems)
-          }
-    );
+    const enhancedColumns =
+      columns &&
+      columns.map(col =>
+        // @ts-ignore TODO
+        !col.sortItems
+          ? col
+          : {
+              ...col,
+              // @ts-ignore TODO
+              onColumnClick: this.sortColumn(col.sortItems)
+            }
+      );
 
     return (
       <FabricDetailsList

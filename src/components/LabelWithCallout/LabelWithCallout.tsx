@@ -100,12 +100,8 @@ const LabelWithCallout = (props: LabelWithCalloutProps) => {
               ? Callout.POS_BOTTOM_LEFT
               : Callout.POS_TOP_LEFT
           }
-          color={
-            help && !warning ? Callout.HELP : Callout.WARNING
-          }
-          ariaLabel={
-            help && !warning ? 'Hjelpetekst' : 'Varseltekst'
-          }
+          color={help && !warning ? Callout.HELP : Callout.WARNING}
+          ariaLabel={help && !warning ? 'Hjelpetekst' : 'Varseltekst'}
           target={iconButtonElementRef.current}
           onClose={() => setIsCalloutVisible(false)}
         >
