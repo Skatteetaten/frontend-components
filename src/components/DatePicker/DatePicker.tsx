@@ -4,8 +4,8 @@ import 'moment/locale/nb';
 
 import { css } from '@uifabric/utilities';
 import {
-  DayOfWeek,
   DatePicker as FabricDatePicker,
+  DayOfWeek,
   IDatePickerProps
 } from 'office-ui-fabric-react/lib-commonjs/DatePicker';
 import { FirstWeekOfYear } from 'office-ui-fabric-react/lib-commonjs/utilities/dateValues/DateValues';
@@ -31,21 +31,22 @@ const DEFAULT_STRINGS = {
   isOutOfBoundsErrorMessage: 'Datoen er ikke innenfor gyldig periode',
   isRequiredErrorMessage: 'Dette feltet er påkrevd'
 };
-// @ts-ignore TODO
-const DEFAULTFORMATDATE = date => {
+const DEFAULTFORMATDATE = (date: Date | null | undefined): String => {
   if (date) {
     return moment(date).format(DatePicker.DefaultDateFormat);
   }
-  return null;
+  return '';
 };
-// @ts-ignore TODO
-const DEFAULTPARSEDATEFROMSTRING = dateStr => {
-  if (dateStr) {
-    return moment(dateStr, DatePicker.DefaultDateFormat).toDate();
+
+const DEFAULTPARSEDATEFROMSTRING = (
+  date: Date | null | undefined
+): Date | null => {
+  if (date) {
+    return moment(date, DatePicker.DefaultDateFormat).toDate();
   }
   return null;
 };
-interface DatePickerProps extends IDatePickerProps {
+export interface DatePickerProps extends IDatePickerProps {
   /** Tilstand som kan benyttes når datovelger skal vises i lesemodus */
   readonlyMode?: boolean;
   /** Kan overstyre standard feilmelding hvis felt er påkrevd */
@@ -66,6 +67,7 @@ interface DatePickerProps extends IDatePickerProps {
 }
 interface DatePickerState {
   isCalloutVisible: boolean;
+  value?: Date | null;
 }
 /**
  * @visibleName DatePicker (Datovelger)
@@ -100,7 +102,8 @@ export default class DatePicker extends React.Component<
   constructor(props: DatePickerProps) {
     super(props);
     this.state = {
-      isCalloutVisible: false
+      isCalloutVisible: false,
+      value: null
     };
   }
 
@@ -130,12 +133,13 @@ export default class DatePicker extends React.Component<
       isOutOfBoundsErrorMessage,
       isRequiredErrorMessage,
       label,
-
       labelCallout,
-      ...props
+      ...rest
     } = this.props;
     const classNames = getClassNames(this.props);
-
+    const _onSelectDate = (date: Date | null | undefined): void => {
+      this.setState({ value: date });
+    };
     return (
       <div id={id}>
         <LabelWithCallout
@@ -145,10 +149,11 @@ export default class DatePicker extends React.Component<
           {...labelCallout}
         />
         <FabricDatePicker
-          {...props}
+          {...rest}
+          value={this.state.value!}
+          onSelectDate={_onSelectDate}
           className={css(classNames, className)}
-          // @ts-ignore TODO
-          disabled={props.readonlyMode ? 'disabled' : disabled}
+          disabled={rest.readonlyMode ? true : disabled}
           strings={{
             ...DatePicker.DefaultStrings,
             isRequiredErrorMessage: isRequiredErrorMessage
@@ -161,7 +166,6 @@ export default class DatePicker extends React.Component<
               ? invalidInputErrorMessage
               : DatePicker.DefaultStrings.invalidInputErrorMessage
           }}
-          inputSize={inputSize}
         >
           {children}
         </FabricDatePicker>

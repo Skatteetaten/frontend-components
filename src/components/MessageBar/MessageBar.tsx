@@ -10,7 +10,7 @@ import { CSSTransition } from 'react-transition-group';
 import { default as MessageBarButton } from '../Button/Button';
 import { getClassNames } from './MessageBar.classNames';
 
-interface MessageBarProps extends IMessageBarProps {
+export interface MessageBarProps extends IMessageBarProps {
   type?:
     | MessageBarType.success
     | MessageBarType.blocked

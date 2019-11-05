@@ -1,102 +1,58 @@
-import { mergeStyles, mergeStyleSets } from '@uifabric/merge-styles';
+import { mergeStyles } from '@uifabric/merge-styles';
 import { getTheme } from '@uifabric/styling';
 import { FontSizes, FontWeights } from '..';
 import { MdIcons } from '../utils/icons/';
-import { isUndefined } from 'util';
 import { PaletteProps } from '..';
+import { DatePickerProps } from './DatePicker';
 
 const errorIcon = "'" + MdIcons.icons.Error + "'";
-// @ts-ignore TODO
-function getCalloutStyles(props) {
-  const calloutFloating = props.calloutFloating;
 
-  //inline callout layout
-  if (!isUndefined(calloutFloating) && !calloutFloating) {
+function getFieldTypeStyles(props: DatePickerProps) {
+  if (props.inputSize === 'large') {
     return {
-      '& .ms-Callout-container': {
-        width: '100%',
-        position: 'inherit',
-        margin: '10px 0'
+      '& .ms-TextField-fieldGroup': {
+        borderWidth: '2px',
+        height: '46px',
+        padding: '5px 0',
+        fontSize: FontSizes.large
       },
-      '& .ms-Callout': {
-        left: '0 !important',
-        top: '0 !important',
-        position: 'inherit'
+      '& input.ms-TextField-field': {
+        fontSize: FontSizes.large + ' !important'
       },
-      '& .ms-Callout-beak': {
-        left: '20px !important',
-        top: '-8px !important'
-      },
-      '& .ms-Callout-main': {
-        maxWidth: '100%'
+      'i.ms-DatePicker-event--without-label': {
+        marginTop: '5px',
+        fontSize: FontSizes.large
       }
     };
   } else {
     return {
-      '& .ms-Callout-container': {
-        width: '100%',
-        position: 'relative',
-        display: 'block'
-      },
-      '& .ms-Callout': {
-        width: '100%',
-        maxWidth: '300px'
-      },
-      '& .ms-Callout-main': {
-        width: '100%'
+      '& .ms-TextField-fieldGroup': {
+        fontSize: FontSizes.small
       }
     };
   }
 }
-// @ts-ignore TODO
-function getFieldTypeStyles(props) {
-  switch (props.inputSize) {
-    case 'large':
-      return {
-        '& .ms-TextField-fieldGroup': {
-          borderWidth: '2px',
-          height: '46px',
-          padding: '5px 0',
-          fontSize: FontSizes.large
-        },
-        '& input.ms-TextField-field': {
-          fontSize: FontSizes.large + ' !important'
-        },
-        'i.ms-DatePicker-event--without-label': {
-          marginTop: '5px',
-          fontSize: FontSizes.large
-        }
-      };
-    default:
-      return {
-        '& .ms-TextField-fieldGroup': {
-          fontSize: FontSizes.small
-        }
-      };
+
+function getTextFieldStyles(props: DatePickerProps) {
+  if (props.readonlyMode === true) {
+    return {
+      '& .ms-TextField-fieldGroup': {
+        border: 'none'
+      },
+      '& .ms-TextField-fieldGroup:focus .ms-TextField-field': {
+        cursor: 'not-allowed'
+      },
+      '& .ms-TextField-field': {
+        paddingLeft: 0,
+        pointerEvents: 'none'
+      }
+    };
+  } else {
+    return {};
   }
 }
-// @ts-ignore TODO
-function getTextFieldStyles(props) {
-  switch (props.readonlyMode) {
-    case true:
-      return {
-        '& .ms-TextField-fieldGroup': {
-          border: 'none'
-        },
-        '& .ms-TextField-fieldGroup:focus .ms-TextField-field': {
-          cursor: 'not-allowed'
-        },
-        '& .ms-TextField-field': {
-          paddingLeft: 0,
-          pointerEvents: 'none'
-        }
-      };
-    default:
-      return {};
-  }
-}
-// @ts-ignore TODO
-export const getClassNames = props => {
+
+export const getClassNames = (props: DatePickerProps) => {
   const { errorMessage, borderless, underlined, readonlyMode } = props;
   const palette = getTheme().palette as PaletteProps;
   const color = errorMessage ? palette.skeColor.error : palette.skeColor.blue;
@@ -177,71 +133,6 @@ export const getClassNames = props => {
       },
       ...getFieldTypeStyles(props),
       ...getTextFieldStyles(props)
-    }
-  });
-};
-// @ts-ignore TODO
-export const getLabelClassNames = props => {
-  const palette = getTheme().palette as PaletteProps;
-  // @ts-ignore TODO
-  return mergeStyleSets({
-    labelArea: {
-      display: 'flex',
-      alignItems: 'center',
-      position: 'relative',
-      flexWrap: 'wrap',
-      selectors: {
-        ...getCalloutStyles(props)
-      }
-    },
-    label: {
-      //flexGrow: 1,
-    },
-    labelText: {
-      fontSize: FontSizes.small,
-      color: palette.skeColor.blackAlt,
-      fontWeight: FontWeights.regular
-    },
-    labelIconArea: {
-      height: '26px',
-      marginTop: '-5px'
-    },
-    icon: {
-      color: palette.skeColor.blue,
-      selectors: {
-        '& i': {
-          fontSize: 'large'
-        },
-        '&:focus&:after': {
-          border: `2px solid ${palette.skeColor.blue}`,
-          outline: 'none'
-        }
-      }
-    }
-  });
-};
-// @ts-ignore TODO
-export const getErrorClassNames = props => {
-  const palette = getTheme().palette as PaletteProps;
-
-  return mergeStyles({
-    color: palette.skeColor.error,
-    fontSize: FontSizes.small,
-    fontWeight: FontWeights.regular,
-    position: 'relative',
-    display: 'block',
-    paddingLeft: '20px',
-    paddingTop: 5,
-    selectors: {
-      '&::before': {
-        fontFamily: MdIcons.fontFace.fontFamily,
-        fontSize: 18,
-        display: 'block',
-        content: errorIcon,
-        marginRight: 3,
-        position: 'absolute',
-        left: 0
-      }
     }
   });
 };

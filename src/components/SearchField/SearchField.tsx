@@ -6,7 +6,7 @@ import {
 import * as React from 'react';
 import { getClassNames } from './SearchField.classNames';
 
-interface SearchFieldProps extends ISearchBoxProps {
+export interface SearchFieldProps extends ISearchBoxProps {
   /** Størrelsen på søkefeltet */
   searchFieldSize?: 'standard' | 'large';
   /** Størrelsen på rammen */

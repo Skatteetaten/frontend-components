@@ -2,8 +2,9 @@ import { mergeStyles } from '@uifabric/merge-styles';
 import { getTheme } from '@uifabric/styling';
 import { FontSizes } from '..';
 import { PaletteProps } from '..';
-// @ts-ignore TODO
-export var getClassNames = function getClassNames(props) {
+import { SearchFieldProps } from './SearchField';
+
+export var getClassNames = function getClassNames(props: SearchFieldProps) {
   const palette = getTheme().palette as PaletteProps;
   const { border, searchFieldSize } = props;
   const largeSize = searchFieldSize === 'large';

@@ -4,10 +4,10 @@ import { FontSizes, IconFontSizes } from '..';
 import { getTheme } from '@uifabric/styling';
 import { MessageBarType } from 'office-ui-fabric-react/lib-commonjs/MessageBar';
 import { PaletteProps } from '..';
+import { MessageBarProps } from './MessageBar';
 
 //import { transitionKeysAreEqual } from 'office-ui-fabric-react/lib/utilities/keytips/IKeytipTransitionKey';
-// @ts-ignore TODO
-function getBackgroundColor(props) {
+function getBackgroundColor(props : MessageBarProps) {
   const palette = getTheme().palette as PaletteProps;
 
   switch (props) {
