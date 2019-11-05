@@ -1,7 +1,8 @@
 import React from 'react';
 import ComponentsListRenderer from '../ComponentsList/ComponentsListRenderer';
-import filterSectionsByName from 'react-styleguidist/lib/client/utils/filterSectionsByName';
 import SearchField from '../../components/SearchField';
+import getFilterRegExp from 'react-styleguidist/lib/client/utils/getFilterRegExp';
+// import filterComponentsByName from 'react-styleguidist/lib/client/utils/filterComponentsByName';
 
 function SokeBoks({ searchTerm, setSearchTerm, children }) {
   return (
@@ -16,6 +17,36 @@ function SokeBoks({ searchTerm, setSearchTerm, children }) {
       {children}
     </>
   );
+}
+
+function filterComponentsByName(components, query) {
+  let regExp = getFilterRegExp(query);
+  return components.filter(function(_ref) {
+    let name = _ref.name;
+    let visibleName = _ref.visibleName;
+    return regExp.test(name) || regExp.test(visibleName);
+  });
+}
+
+function filterSectionsByName(sections, query) {
+  const regExp = getFilterRegExp(query);
+  return sections
+    .map(section => ({
+      ...section,
+      sections: section.sections
+        ? filterSectionsByName(section.sections, query)
+        : [],
+      components: section.components
+        ? filterComponentsByName(section.components, query)
+        : []
+    }))
+    .filter(
+      section =>
+        section.components.length > 0 ||
+        section.sections.length > 0 ||
+        regExp.test(section.name) ||
+        regExp.test(section.visibleName)
+    );
 }
 
 export class TableOfContent extends React.Component<> {
