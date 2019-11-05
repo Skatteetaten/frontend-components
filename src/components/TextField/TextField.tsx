@@ -101,7 +101,6 @@ export default class TextField extends React.PureComponent<
 
     return (
       <div className={classnames(getClassNames(this.props), className)}>
-        {!onRenderLabel && (
           <LabelWithCallout
             label={label}
             editFunction={this._onEdit}
@@ -111,8 +110,8 @@ export default class TextField extends React.PureComponent<
             editable={this.props.editable}
             inputSize={this.props.inputSize}
             calloutFloating={calloutFloating}
+            onRenderLabel={onRenderLabel}
           />
-        )}
         <TextFieldType
           {...rest}
           value={setValue()}
@@ -121,7 +120,6 @@ export default class TextField extends React.PureComponent<
             getClassNames({ ...this.props, editMode: this.state.editMode }),
             className
           )}
-          onRenderLabel={onRenderLabel ? onRenderLabel : () => null}
           onBlur={this._onBlur}
           componentRef={this._textField}
           mask={mask}

@@ -38,12 +38,10 @@ export class DetailsList extends React.PureComponent<DetailsListProps, {}> {
   // @ts-ignore TODO
   sortColumn = sortItems => (ev, column) => {
     const { items, columns } = this.props;
-    // @ts-ignore TODO
-    const currentColumn = columns.filter(currCol => {
+    const currentColumn = columns && columns.filter(currCol => {
       return currCol.key === column.key;
     })[0];
-    // @ts-ignore TODO
-    const newColumns = columns.map(newCol => {
+    const newColumns = columns && columns.map(newCol => {
       if (newCol === currentColumn) {
         return {
           ...newCol,
@@ -73,8 +71,7 @@ export class DetailsList extends React.PureComponent<DetailsListProps, {}> {
 
   render() {
     const { background, columns, className, ...props } = this.props;
-    // @ts-ignore TODO
-    const enhancedColumns = columns.map(col =>
+    const enhancedColumns = columns && columns.map(col =>
       // @ts-ignore TODO
       !col.sortItems
         ? col

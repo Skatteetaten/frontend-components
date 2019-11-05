@@ -86,6 +86,7 @@ module.exports = {
       'Callout',
       'Dialog',
       'MessageBar',
+      'LabelWithCallout',
       'ErrorMessage'
     ]),
     generateComponentsGroup('Innlasting', ['ProgressBar', 'Spinner']),

@@ -9,15 +9,18 @@ import Icon from '../Icon/Icon';
 import {
   getCalloutClassNames,
   getClassNames,
-  getErrorClassNames
 } from './Dropdown.classNames';
 import LabelWithCallout from '../LabelWithCallout';
+import { LabelWithCalloutProps } from '../LabelWithCallout/LabelWithCallout';
+import ErrorMessage from '../ErrorMessage';
 
 export interface DropdownProps extends IDropdownProps {
   /** Hjelpetekst */
-  info?: string;
+  help?: string;
   /** Størrelse på inputfelt som skal benyttes */
   inputSize?: 'normal' | 'large';
+  /** Overstyr label, se LabelWithCallout komponent */
+  labelCallout?: LabelWithCalloutProps;
   /** @ignore */
   multiSelect?: IDropdownProps['multiSelect'];
   /** @ignore */
@@ -35,15 +38,16 @@ const Dropdown: React.FC<DropdownProps> = props => {
     children,
     errorMessage,
     label,
-    info,
+    help,
     onRenderLabel,
     className,
     id,
+    labelCallout,
     ...rest
   } = props;
   return (
     <div id={id}>
-      <LabelWithCallout label={label} help={info} />
+      <LabelWithCallout label={label} help={help} {...labelCallout}  />
       <FabricDropdown
         {...rest}
         className={classnames(getClassNames(props), className)}
@@ -54,9 +58,7 @@ const Dropdown: React.FC<DropdownProps> = props => {
       >
         {children}
       </FabricDropdown>
-      {errorMessage && (
-        <div className={getErrorClassNames(props)}>{errorMessage}</div>
-      )}
+      {errorMessage && <ErrorMessage>{errorMessage}</ErrorMessage>}
     </div>
   );
 };

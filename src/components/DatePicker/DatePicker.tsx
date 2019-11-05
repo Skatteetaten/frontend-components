@@ -1,9 +1,7 @@
 import * as React from 'react';
 import moment from 'moment';
 import 'moment/locale/nb';
-import { Label } from 'office-ui-fabric-react/lib-commonjs/Label';
-import { IconButton } from 'office-ui-fabric-react/lib-commonjs/Button';
-import Callout from '../Callout/Callout';
+
 import { css } from '@uifabric/utilities';
 import {
   DayOfWeek,
@@ -12,8 +10,9 @@ import {
 } from 'office-ui-fabric-react/lib-commonjs/DatePicker';
 import { FirstWeekOfYear } from 'office-ui-fabric-react/lib-commonjs/utilities/dateValues/DateValues';
 import ErrorMessage from '../ErrorMessage';
-import { isUndefined } from 'util';
-import { getClassNames, getLabelClassNames } from './DatePicker.classNames';
+import { getClassNames } from './DatePicker.classNames';
+import LabelWithCallout from '../LabelWithCallout';
+import { LabelWithCalloutProps } from '../LabelWithCallout/LabelWithCallout';
 
 const DEFAULT_DATE_FORMAT = 'DD.MM.YYYY';
 const DEFAULT_STRINGS = {
@@ -59,6 +58,11 @@ interface DatePickerProps extends IDatePickerProps {
   errorMessage?: JSX.Element | string;
   /** Størrelse på inputfelt som skal benyttes */
   inputSize?: 'normal' | 'large';
+  /** Hjelpetekst */
+  help?: JSX.Element | string;
+  /** Overstyr label, se LabelWithCallout komponent */
+  labelCallout?: LabelWithCalloutProps;
+  calloutFloating: LabelWithCalloutProps['calloutFloating'];
 }
 interface DatePickerState {
   isCalloutVisible: boolean;
@@ -99,58 +103,6 @@ export default class DatePicker extends React.Component<
       isCalloutVisible: false
     };
   }
-  _onRenderLabel = (props: any) => {
-    const { label, info, componentId, calloutFloating } = props;
-    const styles = getLabelClassNames(props);
-    let { isCalloutVisible } = this.state;
-
-    return (
-      <div className={styles.labelArea}>
-        <span className={styles.label}>
-          {label ? (
-            <Label className={styles.labelText} htmlFor={componentId}>
-              {label}
-            </Label>
-          ) : null}
-        </span>
-
-        {info && (
-          <span
-            className={styles.labelIconArea}
-            // @ts-ignore TODO
-            ref={infoButton => (this._iconButtonElement = infoButton)}
-          >
-            <IconButton
-              iconProps={{ iconName: 'HelpOutline' }}
-              title="Info"
-              ariaLabel="Info"
-              onClick={this._onClick}
-              className={styles.icon}
-            />
-          </span>
-        )}
-
-        {isCalloutVisible && (
-          <Callout
-            role="tooltip"
-            color={Callout.HELP}
-            directionalHint={
-              !calloutFloating && !isUndefined(calloutFloating)
-                ? Callout.POS_BOTTOM_LEFT
-                : Callout.POS_TOP_LEFT
-            }
-            ariaLabel={'Help information'}
-            isBeakVisible={true}
-            // @ts-ignore TODO
-            target={this._iconButtonElement}
-            onClose={this._onDismiss}
-          >
-            <p>{info}</p>
-          </Callout>
-        )}
-      </div>
-    );
-  };
 
   _onClick = () => {
     this.setState({
@@ -167,31 +119,31 @@ export default class DatePicker extends React.Component<
   render() {
     const {
       disabled,
-      // @ts-ignore TODO
       calloutFloating,
       children,
       className,
       errorMessage = null,
       id,
-      // @ts-ignore TODO
-      info,
+      help,
       inputSize,
       invalidInputErrorMessage,
       isOutOfBoundsErrorMessage,
       isRequiredErrorMessage,
       label,
-      // @ts-ignore TODO
-      onRenderLabel,
+
+      labelCallout,
       ...props
     } = this.props;
-    const labelProps = { label, info, calloutFloating };
     const classNames = getClassNames(this.props);
 
     return (
       <div id={id}>
-        {onRenderLabel
-          ? onRenderLabel(labelProps)
-          : this._onRenderLabel(labelProps)}
+        <LabelWithCallout
+          label={label}
+          help={help}
+          calloutFloating={calloutFloating}
+          {...labelCallout}
+        />
         <FabricDatePicker
           {...props}
           className={css(classNames, className)}

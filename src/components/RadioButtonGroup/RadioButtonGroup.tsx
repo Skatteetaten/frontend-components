@@ -1,22 +1,25 @@
 import classnames from 'classnames';
-import { IconButton, Label } from 'office-ui-fabric-react/lib-commonjs';
 import {
   ChoiceGroup as FabricChoiceGroup,
   IChoiceGroupProps
 } from 'office-ui-fabric-react/lib-commonjs/ChoiceGroup';
 import * as React from 'react';
-import { isUndefined } from 'util';
-import Callout from '../Callout';
 import ErrorMessage from '../ErrorMessage/ErrorMessage';
-import { getClassNames as getLabelClassNames } from '../TextField/TextFieldLabel.classNames';
 import { getClassNames } from './RadioButtonGroup.classNames';
+import LabelWithCallout from '../LabelWithCallout';
+import { LabelWithCalloutProps } from '../LabelWithCallout/LabelWithCallout';
 
 interface RadioButtonGroupProps extends IChoiceGroupProps {
   calloutFloating?: boolean;
   className?: string;
-  errorMessage?: JSX.Element | string;
+  /** Hjelpetekst */
   help?: JSX.Element | string;
+  /** Feilmelding */
+  errorMessage: JSX.Element | string;
+    /** Callout warning */
   warning: JSX.Element | string;
+  /** Overstyr label, se LabelWithCallout komponent */
+  labelCallout?: LabelWithCalloutProps;
 }
 
 /**
@@ -30,80 +33,22 @@ const RadioButtonGroup = (props: RadioButtonGroupProps) => {
     className,
     errorMessage,
     help,
+    warning,
     id,
     label,
-    warning,
+    labelCallout,
     ...rest
   } = props;
-  const [activeCallout, setActiveCallout] = React.useState('');
-  const [isCalloutVisible, setIsCalloutVisible] = React.useState(false);
-  const [_iconButtonElement, set_iconButtonElement] = React.useState('');
-  const styles = getLabelClassNames(props);
-  const helpElement = <p>{help}</p>;
-  let warningElement = <p>{warning}</p>;
 
   return (
     <>
-      <div id={id} className={styles.labelArea}>
-        <span className={styles.label}>
-          {label ? <Label>{label}</Label> : null}
-        </span>
-        {help && (
-          <span
-            className={styles.labelIconArea}
-            // @ts-ignore TODO
-            ref={helpButton => set_iconButtonElement(helpButton)}
-          >
-            <IconButton
-              iconProps={{ iconName: 'HelpOutline' }}
-              title="Hjelp"
-              ariaLabel={'Hjelpetekst til feltet ' + label}
-              onClick={() => {
-                setIsCalloutVisible(!isCalloutVisible);
-                setActiveCallout('helpCallout');
-              }}
-              className={styles.icon}
-            />
-          </span>
-        )}
-        {warning && (
-          <span
-            className={styles.labelIconArea}
-            // @ts-ignore TODO
-            ref={warningButton => set_iconButtonElement(warningButton)}
-          >
-            <IconButton
-              iconProps={{ iconName: 'WarningOutline' }}
-              title="Varsel"
-              ariaLabel={'Varseltekst til feltet ' + label}
-              onClick={() => {
-                setIsCalloutVisible(!isCalloutVisible);
-                setActiveCallout('warningCallout');
-              }}
-              className={styles.icon}
-            />
-          </span>
-        )}
-        {isCalloutVisible && (
-          <Callout
-            directionalHint={
-              !isUndefined(calloutFloating) && !calloutFloating
-                ? Callout.POS_BOTTOM_LEFT
-                : Callout.POS_TOP_LEFT
-            }
-            color={
-              activeCallout === 'helpCallout' ? Callout.HELP : Callout.WARNING
-            }
-            ariaLabel={
-              activeCallout === 'helpCallout' ? 'Hjelpetekst' : 'Varseltekst'
-            }
-            target={_iconButtonElement}
-            onClose={() => setIsCalloutVisible(false)}
-          >
-            {activeCallout === 'helpCallout' ? helpElement : warningElement}
-          </Callout>
-        )}
-      </div>
+      <LabelWithCallout
+        label={label}
+        help={help}
+        warning={warning}
+        calloutFloating={calloutFloating}
+        {...labelCallout}
+      />
       <FabricChoiceGroup
         {...rest}
         className={classnames(getClassNames(props), className)}
@@ -111,9 +56,7 @@ const RadioButtonGroup = (props: RadioButtonGroupProps) => {
       >
         {children}
       </FabricChoiceGroup>
-      {/* 
-      // @ts-ignore TODO */}
-      <ErrorMessage showError={!!errorMessage}>{errorMessage}</ErrorMessage>
+      {errorMessage && <ErrorMessage>{errorMessage}</ErrorMessage>}
     </>
   );
 };

@@ -17,6 +17,7 @@ export interface LabelWithCalloutProps {
   readOnly?: boolean;
   warning?: string | JSX.Element | undefined;
   id?: any;
+  onRenderLabel?: any;
 }
 const LabelWithCallout = (props: LabelWithCalloutProps) => {
   const {
@@ -29,7 +30,8 @@ const LabelWithCallout = (props: LabelWithCalloutProps) => {
     inputSize,
     label,
     readOnly,
-    warning
+    warning,
+    onRenderLabel
   } = props;
   const styles = getClassNames(props);
   const [activeCallout, setActiveCallout] = React.useState('');
@@ -44,7 +46,9 @@ const LabelWithCallout = (props: LabelWithCalloutProps) => {
     <p>{warning}</p>
   );
 
-  return (
+  return onRenderLabel ? (
+    onRenderLabel
+  ) : (
     <div id={id} className={classnames(styles.labelArea, className)}>
       <span className={styles.label}>
         {label ? <Label>{label}</Label> : null}
