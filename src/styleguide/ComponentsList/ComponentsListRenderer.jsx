@@ -11,9 +11,7 @@ function createMenu(items, searchTerm) {
       ...createMenu(sections, null),
       ...createMenu(components, null)
     ];
-    const collapseByDefault = searchTerm
-      ? find(items, e => e.key === searchTerm)
-      : true;
+    const collapseByDefault = searchTerm === '';
     const mainLink = find(links, l => l.name === name);
     return {
       name,
@@ -76,7 +74,6 @@ export class ComponentsListRenderer extends React.Component<> {
     const groups = createMenu(items, searchTerm);
     groups.forEach(group => {
       if (group.name === 'Designe og utvikle') {
-        // @ts-ignore TODO
         group.links.sort((l1, l2) => l1.name.localeCompare(l2.name));
       }
     });

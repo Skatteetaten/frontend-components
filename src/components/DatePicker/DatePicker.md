@@ -15,7 +15,7 @@ const initialState = {
       id={'my-date1'}
       label={'Velg en dato'}
       placeholder={'Velg en dato...'}
-      info={
+      help={
         'Du kan skrive inn dato i feltet, eller velge en dato ved hjelp av datovelgeren, enten med mus eller bruk tastaturet'
       }
       value={state.value1}
@@ -30,7 +30,7 @@ const initialState = {
       id={'my-date'}
       label={'Ukenummer'}
       placeholder={'dd.mm.åååå'}
-      info={
+      help={
         'Du kan skrive inn dato i feltet, eller velge en dato ved hjelp av datovelgeren, enten med mus eller bruk tastaturet'
       }
       value={state.value2}

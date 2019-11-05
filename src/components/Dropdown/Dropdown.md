@@ -25,7 +25,7 @@ const initialState = {
 <div style={{ width: '300px' }}>
   <Dropdown
     label="Velg favoritt"
-    info="Hjelpetekst"
+    help="Hjelpetekst"
     options={state.options}
     onChange={console.log}
   />
@@ -59,7 +59,7 @@ const initialState = {
 <div style={{ width: '300px' }}>
   <Dropdown
     label="Velg favoritt"
-    info="Hjelpetekst"
+    help="Hjelpetekst"
     inputSize="large"
     options={state.options}
     onChange={console.log}

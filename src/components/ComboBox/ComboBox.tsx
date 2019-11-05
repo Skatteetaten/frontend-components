@@ -8,6 +8,7 @@ import classnames from 'classnames';
 import { getClassNames, getOptionsClassNames } from './ComboBox.classNames';
 import ErrorMessage from '../ErrorMessage';
 import LabelWithCallout from '../LabelWithCallout';
+import { LabelWithCalloutProps } from '../LabelWithCallout/LabelWithCallout';
 
 export interface ComboboxProps extends IComboBoxProps {
   /** Egendefinert feilmelding */
@@ -16,16 +17,27 @@ export interface ComboboxProps extends IComboBoxProps {
   help?: JSX.Element | string;
   /** Størrelse på inputfelt som skal benyttes */
   inputSize?: 'normal' | 'large';
+  /** Overstyr label, se LabelWithCallout komponent */
+  labelCallout?: LabelWithCalloutProps;
 }
 
 /**
  * @visibleName ComboBox (Nedtrekksliste med skriving)
  */
 const Combobox: React.FC<ComboboxProps> = props => {
-  const { children, errorMessage, label, help, className, id, ...rest } = props;
+  const {
+    children,
+    errorMessage,
+    label,
+    help,
+    className,
+    id,
+    labelCallout,
+    ...rest
+  } = props;
   return (
     <div id={id}>
-      <LabelWithCallout label={label} help={help} />
+      <LabelWithCallout label={label} help={help} {...labelCallout} />
       <VirtualizedComboBox
         {...rest}
         role="combobox"
