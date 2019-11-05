@@ -86,13 +86,15 @@ export const getClassNames = (props, col) => {
         width: 20,
         height: 20,
         color: palette.blue,
-        border: '1px solid ' + palette.blue,
+        border: '2px solid ' + palette.blue,
         borderRadius: '50%',
-        position: 'relative'
+        position: 'relative',
+        margin: 9
       },
       '.ms-GroupHeader .ms-GroupHeader-expand i': {
         position: 'absolute',
-        transformOrigin: 'center center'
+        transformOrigin: 'center center',
+        fontWeight: FontWeights.bold
       },
       '.ms-DetailsHeader-collapseButton': {
         color: palette.skeColor.blue
@@ -103,7 +105,8 @@ export const getClassNames = (props, col) => {
       },
       '.ms-GroupHeader-title': {
         fontSize: FontSizes.medium,
-        fontWeight: FontWeights.semibold
+        fontWeight: FontWeights.semibold,
+        paddingLeft: '6px'
       },
       '& .ms-DetailsHeader-cell [data-icon-name="SortDown"], & .ms-DetailsHeader-cell [data-icon-name="SortUp"]': {
         fontSize: FontSizes.icon,
@@ -118,6 +121,9 @@ export const getClassNames = (props, col) => {
             background: getHoverColor(props)
           }
         }
+      },
+      '& .ms-DetailsHeader-cellTitle': {
+        paddingLeft: '8px'
       },
       '.ms-List-cell': {
         minHeight: 32 // + 2px border
@@ -181,7 +187,8 @@ export const getClassNames = (props, col) => {
             fontSize: 0,
             height: 20,
             width: 20,
-            border: '1px solid #000'
+            border: '1px solid #000',
+            marginTop: 1
           },
           '.ms-Check-check': {
             margin: '3px 0 0 1px'
