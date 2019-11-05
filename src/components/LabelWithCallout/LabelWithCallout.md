@@ -4,15 +4,22 @@ Kan brukes for å gi label med callout til komponenter
 
 ```js
 import LabelWithCallout from '@skatteetaten/frontend-components/LabelWithCallout';
+import Button from '@skatteetaten/frontend-components/Button';
+
 <>
   <LabelWithCallout
     label={'Dette er en label med hjelpetekst'}
-    help={'Dette er en warning'}
+    help={'Dette er en hjelpetekst'}
   />
+  <hr />
   <LabelWithCallout
-    label={'Dette er en label med warning tekst'}
-    warning={'Dette er en warning'}
+    label={'Dette er en label med hjelpe- og advarsel tekst'}
+    help={'Dette er hjelpetekst'}
+    warning={state.warning && 'Dette er en advarsel'}
   />
+  <Button onClick={() => setState({ warning: !state.warning })}>
+    {state.warning ? 'Vis med hjelpetekst' : 'Vis med advarsel'}
+  </Button>
 </>;
 ```
 

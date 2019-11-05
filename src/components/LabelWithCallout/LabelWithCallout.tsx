@@ -53,7 +53,7 @@ const LabelWithCallout = (props: LabelWithCalloutProps) => {
       <span className={styles.label}>
         {label ? <Label>{label}</Label> : null}
       </span>
-      {help && (
+      {help && !warning && (
         <span className={styles.labelIconArea} ref={iconButtonElementRef}>
           <IconButton
             iconProps={{ iconName: 'HelpOutline' }}
