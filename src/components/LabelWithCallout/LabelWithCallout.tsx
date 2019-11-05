@@ -34,7 +34,7 @@ const LabelWithCallout = (props: LabelWithCalloutProps) => {
     onRenderLabel
   } = props;
   const styles = getClassNames(props);
-  const [activeCallout, setActiveCallout] = React.useState('');
+
   const [isCalloutVisible, setIsCalloutVisible] = React.useState(false);
   const iconButtonElementRef = React.useRef<HTMLSpanElement>(null);
   const inputSizeLarge = inputSize === 'large';
@@ -45,7 +45,6 @@ const LabelWithCallout = (props: LabelWithCalloutProps) => {
   ) : (
     <p>{warning}</p>
   );
-
   return onRenderLabel ? (
     onRenderLabel
   ) : (
@@ -61,7 +60,6 @@ const LabelWithCallout = (props: LabelWithCalloutProps) => {
             ariaLabel={'help'}
             onClick={() => {
               setIsCalloutVisible(!isCalloutVisible);
-              setActiveCallout('helpCallout');
             }}
             className={styles.icon}
           />
@@ -75,7 +73,6 @@ const LabelWithCallout = (props: LabelWithCalloutProps) => {
             ariaLabel={'warning'}
             onClick={() => {
               setIsCalloutVisible(!isCalloutVisible);
-              setActiveCallout('warningCallout');
             }}
             className={styles.icon}
           />
@@ -104,15 +101,15 @@ const LabelWithCallout = (props: LabelWithCalloutProps) => {
               : Callout.POS_TOP_LEFT
           }
           color={
-            activeCallout === 'helpCallout' ? Callout.HELP : Callout.WARNING
+            help && !warning ? Callout.HELP : Callout.WARNING
           }
           ariaLabel={
-            activeCallout === 'helpCallout' ? 'Hjelpetekst' : 'Varseltekst'
+            help && !warning ? 'Hjelpetekst' : 'Varseltekst'
           }
           target={iconButtonElementRef.current}
           onClose={() => setIsCalloutVisible(false)}
         >
-          {activeCallout === 'helpCallout' ? helpElement : warningElement}
+          {help && !warning ? helpElement : warningElement}
         </Callout>
       )}
     </div>
