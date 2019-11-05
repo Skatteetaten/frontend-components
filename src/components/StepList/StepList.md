@@ -9,11 +9,10 @@ import MessageBar from '@skatteetaten/frontend-components/MessageBar';
 ** StepList benyttes for å veilede brukeren gjennom en sekvens av trinnvise steg **
 
 ```js
-import StepList from '@skatteetaten/frontend-components/StepList';
-import Step from '@skatteetaten/frontend-components/StepList/Step';
-import ActionButton from '@skatteetaten/frontend-components/ActionButton';
-import RadioButtonGroup from '@skatteetaten/frontend-components/RadioButtonGroup';
 import Button from '@skatteetaten/frontend-components/Button';
+import RadioButtonGroup from '@skatteetaten/frontend-components/RadioButtonGroup';
+import Step from '@skatteetaten/frontend-components/StepList/Step';
+import StepList from '@skatteetaten/frontend-components/StepList';
 
 const initialState = {
   options: [
@@ -42,33 +41,138 @@ const titles = {
     en: 'Where is your home?'
   }
 };
+const showFirstStep = true;
+const testFunc = () => {
+  console.log('Hei fra ActionButton');
+};
 
 <StepList>
-  <Step stepTitle={titles.step1.no} stepId={'step-1-1'}>
+  {showFirstStep && (
+    <Step
+      stepTitle={titles.step1.no}
+      stepId={'step-1-1'}
+      actionBtn={{ text: 'Endre', event: testFunc }}
+    >
+      <div>
+        <p>Jeg jobber</p>
+      </div>
+    </Step>
+  )}
+  <Step
+    stepTitle={titles.step2.no}
+    stepId={'step-1-2'}
+    actionBtn={{ text: 'Endre' }}
+  >
     <div>
-      <p>Jeg jobber</p>
-    </div>
-    <div style={{ marginLeft: 'auto' }}>
-      <ActionButton>Endre</ActionButton>
-    </div>
-  </Step>
-  <Step stepTitle={titles.step2.no} stepId={'step-1-2'}>
-    <p>Ja, jeg overnatter et annet sted enn hjemme på grunn av jobb</p>
-    <div style={{ marginLeft: 'auto' }}>
-      <ActionButton>Endre</ActionButton>
+      <p>Ja, jeg overnatter et annet sted enn hjemme på grunn av jobb</p>
     </div>
   </Step>
   <Step stepTitle={titles.step3.no} stepId={'step-1-3'} activeStep={true}>
-    <p>Hvor er hjemmet ditt?</p>
+    <p style={{ marginBottom: '5px' }}>Hvor er hjemmet ditt?</p>
     <RadioButtonGroup
       required
       defaultSelectedKey="A"
       options={state.options}
       id="RadiobuttonGroup"
     />
+    <br />
   </Step>
   <Step stepType={'next'}>
-    <Button type="primary">Neste</Button>
+    <Button buttonStyle="primary">Neste</Button>
+  </Step>
+</StepList>;
+```
+
+Oppsummering før innsending:
+
+```js
+import Button from '@skatteetaten/frontend-components/Button';
+import RadioButtonGroup from '@skatteetaten/frontend-components/RadioButtonGroup';
+import Step from '@skatteetaten/frontend-components/StepList/Step';
+import StepList from '@skatteetaten/frontend-components/StepList';
+import CheckBox from '@skatteetaten/frontend-components/CheckBox';
+import Card from '@skatteetaten/frontend-components/Card';
+
+const initialState = {
+  options: [
+    {
+      key: 'A',
+      text: 'Jeg bor i Norge'
+    },
+    {
+      key: 'B',
+      text: 'Ikke i Norge'
+    }
+  ]
+};
+
+const titles = {
+  step1: {
+    no: 'Jobber du?',
+    en: 'Are you a wage earner doing paid work?'
+  },
+  step2: {
+    no: 'Overnatting',
+    en: 'Spend the night somewhere else than at home?'
+  },
+  step3: {
+    no: 'Bor i Norge',
+    en: 'Where is your home?'
+  },
+  step4: {
+    no: 'Oppsummering før innsending',
+    en: 'Summary before submit'
+  }
+};
+const showFirstStep = true;
+
+const testFunc = () => {
+  console.log('Hei fra ActionButton');
+};
+
+<StepList>
+  {showFirstStep && (
+    <Step
+      stepTitle={titles.step1.no}
+      stepId={'step-1-1'}
+      actionBtn={{ text: 'Endre', event: testFunc }}
+    >
+      <div>
+        <p>Jeg jobber</p>
+      </div>
+    </Step>
+  )}
+  <Step
+    stepTitle={titles.step2.no}
+    stepId={'step-1-2'}
+    actionBtn={{ text: 'Endre' }}
+  >
+    <div>
+      <p>Ja, jeg overnatter et annet sted enn hjemme på grunn av jobb</p>
+    </div>
+  </Step>
+  <Step stepTitle={titles.step3.no} stepId={'step-1-3'}>
+    <p>Jeg bor i Norge</p>
+  </Step>
+  <Step stepTitle={titles.step4.no} stepId={'step-1-4'} activeStep={true}>
+    <Card color={Card.BEIGE} margin={'large'}>
+      <p style={{ fontWeight: '700' }}>
+        Følgende opplysninger er klare til innsending:
+      </p>
+      <ul>
+        <li>Du jobber</li>
+        <li>Du overnatter et annet sted enn hjemme på grunn av jobb</li>
+        <li>Du bor i Norge</li>
+      </ul>
+      <CheckBox
+        boxSide={'start'}
+        label="Jeg bekrefter at opplysningene over stemmer."
+      />
+    </Card>
+    <br />
+  </Step>
+  <Step stepType={'next'}>
+    <Button buttonStyle="primary">Send inn</Button>
   </Step>
 </StepList>;
 ```
@@ -76,10 +180,9 @@ const titles = {
 StepList som er fullført og viser et resultat i i siste steg
 
 ```js
-import StepList from '@skatteetaten/frontend-components/StepList';
-import Step from '@skatteetaten/frontend-components/StepList/Step';
-import ActionButton from '@skatteetaten/frontend-components/ActionButton';
 import Button from '@skatteetaten/frontend-components/Button';
+import Step from '@skatteetaten/frontend-components/StepList/Step';
+import StepList from '@skatteetaten/frontend-components/StepList';
 
 const titles = {
   step1: {
@@ -97,28 +200,30 @@ const titles = {
 };
 
 <StepList>
-  <Step stepTitle={titles.step1.no} stepId={'step-1-1'}>
+  <Step
+    stepTitle={titles.step1.no}
+    stepId={'step-1-1'}
+    actionBtn={{ text: 'Endre' }}
+  >
     <div>
       <p>Jeg er fulltidsstudent eller vernepliktig i militæret </p>
     </div>
-    <div style={{ marginLeft: 'auto' }}>
-      <ActionButton icon="Edit">Endre</ActionButton>
-    </div>
   </Step>
-  <Step stepTitle={titles.step2.no} stepId={'step-1-2'} activeStep={false}>
+  <Step
+    stepTitle={titles.step2.no}
+    stepId={'step-1-2'}
+    activeStep={false}
+    actionBtn={{ text: 'Endre' }}
+  >
     <p>Nei</p>
-    <div style={{ marginLeft: 'auto' }}>
-      <ActionButton icon="Edit">Endre</ActionButton>
-    </div>
   </Step>
   <Step stepTitle={titles.step3.no} stepType={'result'} resultIcon={'Check'}>
     <p>
       Er du fulltidsstudent eller i militæret, regnes du ikke som pendler hvis
       du ikke har sommerjobb. Hvis du har lang reisevei mellom hjem og
       arbeidsplass, kan du ha krav på reisefradrag. Det kan du sjekke i
-      reisefradragskalkulatoren:
+      reisefradragskalkulatoren.
     </p>
-    <Button type="primaryRounded">Beregn reisefradrag</Button>
   </Step>
 </StepList>;
 ```

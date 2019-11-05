@@ -89,7 +89,8 @@ const columns = [
     name: 'Måned',
     fieldName: 'month',
     sortable: true,
-    sortingFunction: sortMonths
+    sortingFunction: sortMonths,
+    autohideSorting: false
   },
   {
     name: 'Beløp',
