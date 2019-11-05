@@ -83,6 +83,7 @@ export default class TextField extends React.PureComponent<
       readOnly,
       value,
       label,
+      calloutFloating,
       ...rest
     } = this.props;
     let TextFieldType;
