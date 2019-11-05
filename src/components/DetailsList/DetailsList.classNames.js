@@ -11,7 +11,7 @@ function getBackgroundColor(props) {
     return 'none';
   }
 }
-
+/*
 function getBorderColor(props) {
   const { palette } = getTheme();
 
@@ -20,7 +20,7 @@ function getBorderColor(props) {
   } else {
     return palette.skeColor.lightGrey;
   }
-}
+}*/
 
 function getHoverColor(props) {
   const { palette } = getTheme();
@@ -125,12 +125,12 @@ export const getClassNames = (props, col) => {
       //row
       '& .ms-FocusZone.ms-DetailsHeader': {
         paddingBottom: 0,
-        borderBottom: '2px solid' + getBorderColor(props),
+        borderBottom: '2px solid' + palette.skeColor.black,
         background: getBackgroundColor(props)
       },
       '& .ms-FocusZone.ms-DetailsRow': {
         minHeight: 26,
-        borderBottom: '2px solid' + getBorderColor(props),
+        borderBottom: '1px solid' + palette.skeColor.lightGrey,
         background: getBackgroundColor(props),
         selectors: {
           ':hover': {
