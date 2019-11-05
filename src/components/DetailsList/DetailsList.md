@@ -561,7 +561,7 @@ function chooseRow() {
     marqueeSelection
     columns={state.columns}
     items={state.items}
-    selectionMode={DetailsList.SelectionMode.single}
+    selectionMode={DetailsList.SelectionMode.multiple}
     checkboxVisibility={DetailsList.CheckboxVisibility.always}
   />
 </div>;
