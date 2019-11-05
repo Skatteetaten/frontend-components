@@ -14,7 +14,23 @@ export var getClassNames = function getClassNames() {
           marginRight: 10,
           display: 'inline-block',
           minWidth: '10%',
-          maxWidth: '100%'
+          maxWidth: '100%',
+          selectors: {
+            ':focus': {
+              outline: `2px solid ${palette.skeColor.blue} !important`
+            },
+            ':hover': {
+              background: palette.skeColor.lightBlue,
+              color: palette.skeColor.blackAlt
+            },
+            ':active': {
+              background: palette.skeColor.darkBlue,
+              color: palette.skeColor.white
+            }
+          }
+        },
+        '& .ms-Pivot-link .link:focus': {
+          outline: 'none'
         },
         '&.ms-Pivot-text .ms-Pivot-count': {
           color: palette.skeColor.black
@@ -37,6 +53,9 @@ export var getClassNames = function getClassNames() {
           selectors: {
             ':before': {
               borderBottom: 'none'
+            },
+            ':hover': {
+              color: palette.skeColor.white
             }
           }
         }
