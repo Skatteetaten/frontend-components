@@ -221,3 +221,4 @@ export default class Table extends React.PureComponent {
     return rows;
   };
 }
+
