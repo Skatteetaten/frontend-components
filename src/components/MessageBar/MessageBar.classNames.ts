@@ -7,7 +7,7 @@ import { PaletteProps } from '..';
 import { MessageBarProps } from './MessageBar';
 
 //import { transitionKeysAreEqual } from 'office-ui-fabric-react/lib/utilities/keytips/IKeytipTransitionKey';
-function getBackgroundColor(props : MessageBarProps) {
+function getBackgroundColor(props: MessageBarProps) {
   const palette = getTheme().palette as PaletteProps;
 
   switch (props) {

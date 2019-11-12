@@ -61,8 +61,8 @@ export class DetailsList extends React.PureComponent<DetailsListProps, {}> {
       });
 
     const sortedItems = sortItems({
-      isDescending: currentColumn.isSortedDescending,
-      fieldName: currentColumn.fieldName,
+      isDescending: currentColumn && currentColumn.isSortedDescending,
+      fieldName: currentColumn && currentColumn.fieldName,
       items: items
     });
 

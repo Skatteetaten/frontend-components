@@ -24,7 +24,7 @@ function getLabelSize(props: LabelWithCalloutProps) {
 export const getClassNames = (props: LabelWithCalloutProps) => {
   const palette = getTheme().palette as PaletteProps;
   const inputSizeLarge = props.inputSize === 'large';
-  const {calloutFloating = false} = props;
+  const { calloutFloating = false } = props;
   const isFloating =
     (inputSizeLarge && isUndefined(calloutFloating)) ||
     (!isUndefined(calloutFloating) && !calloutFloating);

@@ -34,9 +34,6 @@ export default {
         'Company': '\uea08', 
         'Folkeregister': '\uea09', 
         'Kroner': '\uea0a', 
-        'Skattetrekk': '\uea0b',
-        'Down': '\uea02', 
-        'Up': '\uea04', 
-
+        'Skattetrekk': '\uea0b' 
     }
 };
