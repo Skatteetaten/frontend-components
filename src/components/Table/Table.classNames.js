@@ -25,6 +25,14 @@ export var getClassNames = function getClassNames(props) {
             'td.editableCell': {
               padding: 0
             },
+            'th.hideOnMobile, td.hideOnMobile': {
+              display: 'none',
+              selectors: {
+                '@media (min-width: 640px)': {
+                  display: 'table-cell'
+                }
+              }
+            },
             th: {
               verticalAlign: 'bottom',
               fontWeight: FontWeights.bold,

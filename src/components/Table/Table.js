@@ -30,6 +30,8 @@ export default class Table extends React.PureComponent {
         fieldName: PropTypes.string.isRequired,
         /** Overstyre venstrejustering inni cellen: 'right' eller 'center'. */
         alignment: PropTypes.oneOf(['right', 'center']),
+        /** Ikke vis kolonnen på mobil (breakpoint på 640px)*/
+        hideOnMobile: PropTypes.bool,
         /** Bruker kan sortere på kolonnen alfabetisk og på tall (men ikke på tall som er strenger) */
         sortable: PropTypes.bool,
         /** Overskriv sorteringsfunksjonen */
@@ -127,7 +129,10 @@ export default class Table extends React.PureComponent {
           <th
             key={key.fieldName}
             onClick={() => this._setSortingState(key.fieldName)}
-            className="sortable"
+            className={classnames(
+              'sortable',
+              key.hideOnMobile ? 'hideOnMobile' : ''
+            )}
             tabIndex="0"
             onKeyDown={e => {
               return e.key === 'Enter'
@@ -143,7 +148,14 @@ export default class Table extends React.PureComponent {
           </th>
         );
       }
-      return <th key={key.fieldName}>{key.name}</th>;
+      return (
+        <th
+          key={key.fieldName}
+          className={key.hideOnMobile ? 'hideOnMobile' : ''}
+        >
+          {key.name}
+        </th>
+      );
     });
   };
 

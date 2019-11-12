@@ -75,7 +75,8 @@ export default class TableRow extends React.PureComponent {
         <td
           className={classnames(
             !this.props.isEditableRowOpen ? 'is-closed' : '',
-            column.alignment
+            column.alignment,
+            column.hideOnMobile ? 'hideOnMobile' : ''
           )}
           key={rowKey + '_' + cellIndex}
         >

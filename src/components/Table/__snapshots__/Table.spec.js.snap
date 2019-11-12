@@ -61,21 +61,25 @@ exports[`Table komponent matcher snapshot 1`] = `
       <thead>
         <tr>
           <th
+            className=""
             key="month"
           >
             Måned
           </th>
           <th
+            className=""
             key="amount"
           >
             Beløp
           </th>
           <th
+            className=""
             key="coverage"
           >
             Dekningsgrad
           </th>
           <th
+            className=""
             key="revenue"
           >
             Avkastning
