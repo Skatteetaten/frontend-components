@@ -89,7 +89,7 @@
     "build:docs": "styleguidist build",
     "build:lib": "npm-run-all --parallel build:commonjs build:assets",
     "build:assets": "cpx \"./src/components/**/assets/**/*\" ./lib",
-    "build:copy-files": "node scripts/copnpmyBuildFiles.js",
+    "build:copy-files": "node scripts/copyBuildFiles.js",
     "build:commonjs": "cross-env NODE_ENV=production tsc",
     "lint": "npm-run-all -l lint:prettier lint:eslint",
     "lint:ci": "eslint src/**/*.{js,jsx} -f checkstyle -o target/checkstyle-result.xml",
