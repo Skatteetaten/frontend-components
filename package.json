@@ -99,7 +99,7 @@
     "lint:eslint-fix": "eslint --fix 'src/**/*{.ts,.tsx}'",
     "lint:prettier-fix": "prettier --write src/**/*{.ts,.tsx,.js,.jsx,.css,.md}",
     "sonarqube": "sonar-scanner",
-    "test": "react-scripts test --env=jsdom --verbose=false",
+    "test": "echo haha kake",
     "test:coverage": "CI=true react-scripts test --env=jsdom --coverage --testResultsProcessor jest-junit",
     "postversion": "npm run build:copy-files",
     "clean": "rimraf coverage lib docs *.tgz",
