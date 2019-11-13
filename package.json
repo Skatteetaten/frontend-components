@@ -21,6 +21,7 @@
     "react-dom": ">=16.8.0 <17.0.0"
   },
   "dependencies": {
+    "@skatteetaten/ci-scripts": "2.0.2",
     "@uifabric/merge-styles": "7.6.0",
     "@uifabric/styling": "7.7.0",
     "@uifabric/utilities": "7.0.11",
@@ -39,7 +40,6 @@
     "@babel/preset-env": "7.6.0",
     "@babel/preset-react": "7.0.0",
     "@ctrl/tinycolor": "2.5.3",
-    "aurora-ci-scripts": "1.1.0",
     "babel-jest": "24.9.0",
     "cpx": "1.5.0",
     "cross-env": "6.0.0",
