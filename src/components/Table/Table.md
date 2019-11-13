@@ -172,7 +172,7 @@ const columns = [
 const data = [
   {
     navn: 'Sven Lundquist',
-    dato: '23.11.19',
+    dato: '23.10.19',
     kanSlettes: (
       <ActionButton
         icon="Delete"
