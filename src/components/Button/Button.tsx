@@ -20,6 +20,8 @@ export interface ButtonProps extends IButtonProps {
   /**
    * Skjulte props
    */
+  /** @ignore Fjernet til fordel for buttonStyle */
+  buttonType?: IButtonProps['buttonType'];
   /** @ignore */
   allowDisabledFocus?: IButtonProps['allowDisabledFocus'];
   /** @ignore */
@@ -52,7 +54,7 @@ export interface ButtonProps extends IButtonProps {
  */
 
 const Button: React.FC<ButtonProps> = props => {
-  const { children, icon, className, iconProps, ...rest } = props;
+  const { children, icon, className, iconProps, buttonType, ...rest } = props;
   return (
     <DefaultButton
       {...rest}
