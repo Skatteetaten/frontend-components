@@ -7,6 +7,7 @@ interface RowProps {
   centered?: boolean;
   className?: string;
   tag?: string;
+  padding?: string;
 }
 
 class Row extends React.Component<RowProps, {}> {
