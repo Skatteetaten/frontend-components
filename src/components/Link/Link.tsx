@@ -12,7 +12,7 @@ export interface LinkProps {
 }
 
 const Link: React.FC<LinkProps> = props => {
-  const [styles] = React.useState(getClassNames(props));
+  const styles = getClassNames();
   return (
     <p className={classnames(styles.linkContainer, props.className)}>
       {props.placement === 'before' && (

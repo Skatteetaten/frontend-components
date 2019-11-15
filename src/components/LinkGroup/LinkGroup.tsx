@@ -7,7 +7,7 @@ export interface LinkGroupProps {
   className?: string;
 }
 const LinkGroup: React.FC<LinkGroupProps> = props => {
-  const [styles] = React.useState(getClassNames());
+  const styles = getClassNames();
   return (
     <ul className={classnames(styles.arrowLinkList)}>
       {props.links &&
