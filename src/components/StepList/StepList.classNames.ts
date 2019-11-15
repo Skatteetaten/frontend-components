@@ -137,7 +137,7 @@ export const getClassNames = props => {
     stepList: {
       counterReset: 'step-counter',
       position: 'relative',
-      backgroundColor: palette.skeColor.white,
+      backgroundColor: palette.skeColor.transparent,
       marginBottom: 20
     },
     stepNumber: {
