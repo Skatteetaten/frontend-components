@@ -8,8 +8,7 @@ import {
   CheckboxVisibility,
   Selection,
   IDetailsListProps,
-  IColumn as FabricIColumn,
-  DetailsRow as FabricDetailsRow
+  IColumn as FabricIColumn
 } from 'office-ui-fabric-react/lib-commonjs/DetailsList';
 import { getClassNames } from './DetailsList.classNames';
 
