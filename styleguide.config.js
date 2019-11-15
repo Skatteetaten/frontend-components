@@ -52,6 +52,8 @@ module.exports = {
       'ActionButton',
       'Button',
       'IconButton',
+      'Link',
+      'LinkGroup',
       'NavigationTile',
       'ScrollToTopButton'
     ]),
