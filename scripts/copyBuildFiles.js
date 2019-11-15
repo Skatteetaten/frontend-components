@@ -35,7 +35,9 @@ const {
   bugs,
   homepage,
   peerDependencies,
-  dependencies
+  dependencies,
+  types,
+  main
 } = JSON.parse(pkgjson);
 
 const minimalPackage = {
@@ -45,7 +47,8 @@ const minimalPackage = {
   version,
   publishConfig,
   description,
-  main: './icons.js',
+  main,
+  types,
   keywords,
   repository,
   license,

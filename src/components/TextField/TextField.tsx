@@ -4,11 +4,11 @@ import ErrorMessage from '../ErrorMessage/ErrorMessage';
 import {
   ITextFieldProps,
   MaskedTextField,
-  TextField as FabricTextField
+  TextField as FabricTextField,
+  ITextField
 } from 'office-ui-fabric-react/lib-commonjs/TextField';
 import { getClassNames } from './TextField.classNames';
 import LabelWithCallout from '../LabelWithCallout';
-import { ITextField } from 'office-ui-fabric-react';
 
 export interface TextFieldProps extends ITextFieldProps {
   /** Benyttes når teksten for et readOnly tekstfelt skal fremheves  */
@@ -39,118 +39,85 @@ export interface TextFieldProps extends ITextFieldProps {
   editMode?: boolean;
 }
 
-interface TextFieldState {
-  isCalloutVisible: boolean;
-  editMode: boolean;
-  value: string;
-  activeCallout: string;
-  lineBreak: boolean;
-}
 /**
  * @visibleName TextField (Tekstfelt)
  */
-export default class TextField extends React.PureComponent<
-  TextFieldProps,
-  TextFieldState
-> {
-  private readonly _textField: React.RefObject<ITextField>;
+export const TextField: React.FC<TextFieldProps> = ({
+  children,
+  onRenderLabel,
+  className,
+  mask,
+  editable,
+  errorMessage,
+  readOnly,
+  value,
+  label,
+  calloutFloating,
+  ...rest
+}) => {
+  const shouldEditWhenEmpty = rest.editableWhenEmpty ? value === '' : false;
 
-  constructor(props: TextFieldProps) {
-    super(props);
-    this._textField = React.createRef();
-    this.state = {
-      isCalloutVisible: false,
-      editMode: this.editMode(),
-      value: '',
-      activeCallout: '',
-      lineBreak: false
-    };
-  }
-  static defaultProps = {
-    inputSize: 'normal',
-    editableWhenEmpty: false,
-    labelSize: 'small',
-    calloutFloating: false
-  };
-  render() {
-    const {
-      children,
-      onRenderLabel,
-      className,
-      mask,
-      editable,
-      errorMessage,
-      readOnly,
-      value,
-      label,
-      calloutFloating,
-      ...rest
-    } = this.props;
-    let TextFieldType;
-    if (mask) {
-      TextFieldType = MaskedTextField;
-    } else {
-      TextFieldType = FabricTextField;
-    }
-    const setValue = () => {
-      if (this.props.suffix && readOnly && !this.state.editMode) {
-        return value + ' ' + this.props.suffix;
-      }
-      return value;
-    };
+  const textField = React.useRef<ITextField | null>();
+  const [editMode, setEditMode] = React.useState(shouldEditWhenEmpty);
 
-    return (
-      <div className={classnames(getClassNames(this.props), className)}>
-        <LabelWithCallout
-          label={label}
-          editFunction={this._onEdit}
-          warning={this.props.warning}
-          help={this.props.help}
-          readOnly={this.props.readOnly}
-          editable={this.props.editable}
-          inputSize={this.props.inputSize}
-          calloutFloating={calloutFloating}
-          onRenderLabel={onRenderLabel}
-        />
-        <TextFieldType
-          {...rest}
-          value={setValue()}
-          readOnly={this.state.editMode ? false : readOnly}
-          className={classnames(
-            getClassNames({ ...this.props, editMode: this.state.editMode }),
-            className
-          )}
-          onBlur={this._onBlur}
-          componentRef={this._textField}
-          mask={mask}
-        >
-          {children}
-        </TextFieldType>
-        {errorMessage && <ErrorMessage>{errorMessage}</ErrorMessage>}
-      </div>
-    );
-  }
-
-  _onEdit = () => {
-    this._textField &&
-      this._textField.current &&
-      this._textField.current.focus();
-    this.setState({ editMode: true });
+  const onEdit = () => {
+    textField.current && textField.current.focus();
+    setEditMode(true);
   };
 
-  _onBlur = (e: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    this.props.onBlur && this.props.onBlur(e);
-    if (this.state.editMode) {
-      this.setState({
-        editMode: this.editMode()
-      });
+  const onBlur: ITextFieldProps['onBlur'] = e => {
+    rest.onBlur && rest.onBlur(e);
+    if (editMode) {
+      setEditMode(shouldEditWhenEmpty);
     }
   };
 
-  editMode() {
-    if (this.props.editableWhenEmpty && !this.props.value) {
-      return this.props.value === '';
+  const setValue = () => {
+    if (rest.suffix && readOnly && !editMode) {
+      return value + ' ' + rest.suffix;
     }
-    return false;
+    return value;
+  };
+
+  let TextFieldType: React.ComponentType<ITextFieldProps>;
+  if (mask) {
+    TextFieldType = MaskedTextField;
+  } else {
+    TextFieldType = FabricTextField;
   }
-}
+
+  return (
+    <div className={classnames(getClassNames(rest), className)}>
+      <LabelWithCallout
+        label={label}
+        editFunction={onEdit}
+        warning={rest.warning}
+        help={rest.help}
+        readOnly={readOnly}
+        editable={editable}
+        inputSize={rest.inputSize}
+        calloutFloating={calloutFloating}
+        onRenderLabel={onRenderLabel}
+      />
+      <TextFieldType
+        {...rest}
+        value={setValue()}
+        readOnly={editMode ? false : readOnly}
+        className={classnames(getClassNames({ ...rest, editMode }), className)}
+        onBlur={onBlur}
+        componentRef={ref => {
+          if (rest.componentRef && typeof rest.componentRef === 'function') {
+            rest.componentRef(ref);
+          }
+          textField.current = ref;
+        }}
+        mask={mask}
+      >
+        {children}
+      </TextFieldType>
+      {errorMessage && <ErrorMessage>{errorMessage}</ErrorMessage>}
+    </div>
+  );
+};
+
+export default TextField;

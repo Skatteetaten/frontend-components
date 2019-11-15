@@ -1,10 +1,10 @@
 import * as React from 'react';
 import { getClassNames } from './LabelWithCallout.classNames';
-import { IconButton } from 'office-ui-fabric-react/lib-commonjs';
+import { IconButton } from 'office-ui-fabric-react/lib-commonjs/Button';
+import { Label } from 'office-ui-fabric-react/lib-commonjs/Label';
 import Callout from '../Callout';
 import { isUndefined } from 'util';
 import classnames from 'classnames';
-import { Label } from 'office-ui-fabric-react';
 
 export interface LabelWithCalloutProps {
   calloutFloating?: boolean;

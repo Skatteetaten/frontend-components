@@ -57,10 +57,9 @@ export class TopStripe extends React.PureComponent {
   state = {
     activeMenu: null
   };
-  // @ts-ignore TODO
-  styles = getClassNames(this.props);
-  // @ts-ignore TODO
-  selectMenu(id) {
+  styles = getClassNames();
+
+  selectMenu(id?: string) {
     this.setState({ activeMenu: id });
   }
 
@@ -223,8 +222,8 @@ export class TopStripe extends React.PureComponent {
     return this.props.items.map((valg, idx) => {
       const menuChoiceIsActive = this.state.activeMenu === valg.key;
       const classes = [this.styles.navMenuchoice];
-      let dropdown = undefined;
-      let click = undefined;
+      let dropdown: JSX.Element | undefined;
+      let click: (() => void) | undefined;
       let choiceContent = valg.noLabel ? null : valg.label;
 
       if (menuChoiceIsActive) {
@@ -287,7 +286,7 @@ export class TopStripe extends React.PureComponent {
         <div
           id={'topStripeOverlay'}
           className={classnames(this.styles.overlay, showOverlay)}
-          onClick={() => this.selectMenu(null)}
+          onClick={() => this.selectMenu()}
         />
 
         <div className={this.styles.container}>

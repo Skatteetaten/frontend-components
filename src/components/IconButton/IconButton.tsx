@@ -2,7 +2,7 @@ import classnames from 'classnames';
 import * as React from 'react';
 import { IconButton as FabricIconButton } from 'office-ui-fabric-react/lib-commonjs/Button';
 import { getClassNames } from './IconButton.classNames';
-import { ButtonProps } from '../Button/Button';
+import { ButtonProps } from '../Button';
 
 export interface IconButtonProps extends ButtonProps {
   /** Om sirkel skal vises eller ikke. Sirkel vil typisk benyttes når ikon fra material-design ikke har egen sirkel  */

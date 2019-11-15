@@ -62,7 +62,10 @@ describe('DetailsList komponent', () => {
   });
 
   it('should sort items when clicked on column', () => {
-    const items = [{ name: 'Foo', age: 21 }, { name: 'Bar', age: 22 }];
+    const items = [
+      { name: 'Foo', age: 21 },
+      { name: 'Bar', age: 22 }
+    ];
 
     const wrapper = mount(
       <DetailsList

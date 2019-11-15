@@ -14,6 +14,8 @@ export enum FontSizes {
   mega = '72px'
 }
 
+export type FontSizeType = keyof typeof FontSizes;
+
 export enum FontWeights {
   light = 100,
   semilight = 300,

@@ -9,7 +9,7 @@ import { getClassNames } from './RadioButtonGroup.classNames';
 import LabelWithCallout from '../LabelWithCallout';
 import { LabelWithCalloutProps } from '../LabelWithCallout/LabelWithCallout';
 
-interface RadioButtonGroupProps extends IChoiceGroupProps {
+export interface RadioButtonGroupProps extends IChoiceGroupProps {
   calloutFloating?: boolean;
   className?: string;
   /** Hjelpetekst */

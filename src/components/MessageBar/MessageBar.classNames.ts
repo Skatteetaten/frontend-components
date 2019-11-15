@@ -6,7 +6,7 @@ import { MessageBarType } from 'office-ui-fabric-react/lib-commonjs/MessageBar';
 import { PaletteProps } from '..';
 import { MessageBarProps } from './MessageBar';
 
-//import { transitionKeysAreEqual } from 'office-ui-fabric-react/lib/utilities/keytips/IKeytipTransitionKey';
+//import { transitionKeysAreEqual } from 'office-ui-fabric-react/lib-commonjs/utilities/keytips/IKeytipTransitionKey';
 function getBackgroundColor(props: MessageBarProps) {
   const palette = getTheme().palette as PaletteProps;
 

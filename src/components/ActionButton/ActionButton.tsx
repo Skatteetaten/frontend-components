@@ -2,7 +2,7 @@ import classnames from 'classnames';
 import { ActionButton as FabricActionButton } from 'office-ui-fabric-react/lib-commonjs/Button';
 import * as React from 'react';
 import { getClassNames } from './ActionButton.classNames';
-import { ButtonProps } from '../Button/Button';
+import { ButtonProps } from '../Button';
 
 export interface ActionButtonProps extends ButtonProps {
   /** Ikon som skal vises foran lenketeksten */

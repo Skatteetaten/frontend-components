@@ -50,7 +50,7 @@ export class DetailsList extends React.PureComponent<DetailsListProps, {}> {
           return {
             ...newCol,
             isSorted: true,
-            isSortedDescending: !currentColumn.isSortedDescending
+            isSortedDescending: currentColumn.isSortedDescending
           };
         }
         return {

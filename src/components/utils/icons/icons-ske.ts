@@ -1,4 +1,4 @@
-const fontUrls = [];
+const fontUrls: string[] = [];
 
 fontUrls.push('url("' + require('../assets/SkeIconfont.eot') + '")');
 fontUrls.push('url("' + require('../assets/SkeIconfont.eot') + '?#iefix") format("embedded-opentype")');

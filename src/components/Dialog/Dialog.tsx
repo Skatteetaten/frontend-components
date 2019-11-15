@@ -64,7 +64,6 @@ export default class Dialog extends React.PureComponent<
         // @ts-ignore */}
         <FabricDialog
           {...props}
-          role="dialog"
           dialogContentProps={{
             type: type,
             title,
