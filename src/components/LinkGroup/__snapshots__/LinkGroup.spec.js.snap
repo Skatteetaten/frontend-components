@@ -202,6 +202,7 @@ exports[`Link komponent matcher snapshot 1`] = `
                     "mediumBlue": "#8accff",
                     "neutralGrey": "#f4f4f4",
                     "pink": "#df4661",
+                    "transparent": "transparent",
                     "white": "#ffffff",
                     "whiteGrey": "#e8e8e8",
                   },
