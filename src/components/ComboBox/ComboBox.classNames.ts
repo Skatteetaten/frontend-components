@@ -121,6 +121,9 @@ export const getOptionsClassNames = (props: ComboboxProps) => {
   return mergeStyles({
     displayName: 'SkeComboBoxOptions',
     selectors: {
+      '& .ms-ComboBox-option': {
+        border: `2px solid ${palette.skeColor.transparent}`
+      },
       '& .ms-ComboBox-option.is-checked': {
         border: '2px solid' + palette.skeColor.blue,
         outline: 'none'
