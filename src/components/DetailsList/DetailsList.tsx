@@ -7,15 +7,20 @@ import {
   ConstrainMode,
   CheckboxVisibility,
   Selection,
-  IDetailsListProps
+  IDetailsListProps,
+  IColumn as FabricIColumn,
+  DetailsRow as FabricDetailsRow
 } from 'office-ui-fabric-react/lib-commonjs/DetailsList';
 import { getClassNames } from './DetailsList.classNames';
+
+export interface IColumn extends FabricIColumn {}
 
 export interface DetailsListProps extends IDetailsListProps {
   background?: 'white' | 'transparent';
   isSorted?: boolean;
   isSortedDescending?: boolean;
   onSortUpdate?: (...args: any[]) => any;
+  columns?: Array<IColumn>;
 }
 /**
  * @visibleName DetailsList (Sammensatt tabell)
