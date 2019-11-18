@@ -18,16 +18,18 @@ const Logo = () => {
 interface FooterContentProps extends React.HTMLAttributes<HTMLDivElement> {
   children: React.ReactNode;
   className?: string;
+  /** aria-label */
+  ariaLabel?: string;
 }
 
 /**
  * @visibleName FooterContent (Bunn)
  */
 const FooterContent: React.FC<FooterContentProps> = props => {
-  const { children, className } = props;
+  const { children, className, ariaLabel } = props;
   const styles = getClassNames();
   return (
-    <div className={className}>
+    <div className={className} aria-label={ariaLabel}>
       <div className={styles.footerDecorContainer} role="contentinfo">
         <FooterDekor />
       </div>

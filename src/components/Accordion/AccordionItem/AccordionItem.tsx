@@ -29,7 +29,6 @@ export interface AccordionItemProps {
   totalSteps?: number;
   processList?: boolean;
   children?: JSX.Element;
-
 }
 
 interface ToggleContentInterface extends AccordionItemProps {

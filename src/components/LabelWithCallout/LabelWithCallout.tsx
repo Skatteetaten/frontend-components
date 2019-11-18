@@ -19,6 +19,8 @@ export interface LabelWithCalloutProps
   warning?: string | JSX.Element | undefined;
   id?: any;
   onRenderLabel?: any;
+  /** aria-label */
+  ariaLabel?: string;
 }
 const LabelWithCallout = (props: LabelWithCalloutProps) => {
   const {
@@ -32,7 +34,8 @@ const LabelWithCallout = (props: LabelWithCalloutProps) => {
     label,
     readOnly,
     warning,
-    onRenderLabel
+    onRenderLabel,
+    ariaLabel
   } = props;
   const styles = getClassNames(props);
 
@@ -49,7 +52,11 @@ const LabelWithCallout = (props: LabelWithCalloutProps) => {
   return onRenderLabel ? (
     onRenderLabel
   ) : (
-    <div id={id} className={classnames(styles.labelArea, className)}>
+    <div
+      id={id}
+      aria-label={ariaLabel}
+      className={classnames(styles.labelArea, className)}
+    >
       <span className={styles.label}>
         {label ? <Label>{label}</Label> : null}
       </span>
