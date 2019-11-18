@@ -1,6 +1,5 @@
 import * as React from 'react';
 import { getClassNames } from './Chip.classNames';
-import { AriaAttributes } from 'react';
 
 export enum ChipType {
   WARNING = 'lightPink',
