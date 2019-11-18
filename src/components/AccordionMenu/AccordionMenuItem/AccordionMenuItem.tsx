@@ -30,7 +30,7 @@ const AccordionMenuItem = (props: AccordionMenuItemProps) => {
   );
 
   const styles = getClassNames();
-  const { title, iconLabel, icon, onClick, className, children } = props;
+  const { heading, iconLabel, icon, onClick, className, children } = props;
 
   const toggleVisibility = () => {
     setContentOpen(!isContentOpen);
@@ -73,7 +73,7 @@ const AccordionMenuItem = (props: AccordionMenuItemProps) => {
               />
             </div>
           </div>
-          <div className={styleTitle}>{title}</div>
+          <div className={styleTitle}>{heading}</div>
         </div>
         <div
           className={

@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { getClassNames } from './Chip.classNames';
+import { AriaAttributes } from 'react';
 
 export enum ChipType {
   WARNING = 'lightPink',
@@ -7,7 +8,9 @@ export enum ChipType {
   NEUTRAL = 'beige'
 }
 
-export interface ChipProps extends React.HTMLAttributes<HTMLDivElement> {
+export interface ChipProps
+  extends React.HTMLAttributes<HTMLDivElement>,
+    AriaAttributes {
   /** Bruksområde som avgir hvilken farge chip-en får */
   type?: ChipType;
   /** Størrelse på Chip */
