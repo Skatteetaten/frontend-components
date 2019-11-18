@@ -3,7 +3,16 @@ import classnames from 'classnames';
 import { getClassNames } from './LinkGroup.classNames';
 import Icon from '../Icon';
 export interface LinkGroupProps {
-  links?: object[];
+  links?: {
+    text: string;
+    path: string;
+    /** Som standard rendres lenkene som a-elementer. Dette gir mulighet for å overstyre implementasjonen. */
+    renderContent?: (
+      path: string,
+      text: string,
+      classNames: string
+    ) => JSX.Element;
+  }[];
   className?: string;
 }
 const LinkGroup: React.FC<LinkGroupProps> = props => {
@@ -21,9 +30,17 @@ const LinkGroup: React.FC<LinkGroupProps> = props => {
               className={styles.icon}
               role="presentation"
             />
-            <a href={link.path} className={classnames(styles.arrowLinkA)}>
-              {link.text}
-            </a>
+            {link.renderContent ? (
+              link.renderContent(
+                link.path,
+                link.text,
+                classnames(styles.arrowLinkA)
+              )
+            ) : (
+              <a href={link.path} className={classnames(styles.arrowLinkA)}>
+                {link.text}
+              </a>
+            )}
           </li>
         ))}
     </ul>

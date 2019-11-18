@@ -5,6 +5,8 @@ import { getClassNames } from './Link.classNames';
 
 export interface LinkProps {
   className?: string;
+  /** Som standard rendres lenkene som a-elementer. Dette gir mulighet for å overstyre implementasjonen. */
+  renderContent?: (classNames: string) => JSX.Element;
   icon?: string;
   path?: string;
   placement?: 'after' | 'before';
@@ -22,9 +24,14 @@ const Link: React.FC<LinkProps> = props => {
           role="presentation"
         />
       )}
-      <a href={props.path} className={classnames(styles.iconLink)}>
-        {props.text}
-      </a>
+      {props.renderContent ? (
+        props.renderContent(classnames(styles.iconLink))
+      ) : (
+        <a href={props.path} className={classnames(styles.iconLink)}>
+          {props.text}
+        </a>
+      )}
+
       {props.placement === 'after' && (
         <Icon
           iconName={props.icon}

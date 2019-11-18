@@ -15,27 +15,67 @@ import NavigationContent from '@skatteetaten/frontend-components/NavigationTile/
 </NavigationTile>;
 ```
 
+** Eksempel på egendefinert lenke-implmentasjon ved bruk av react-router **
+
 ```js
 import NavigationTile from '@skatteetaten/frontend-components/NavigationTile';
+import NavigationContent from '@skatteetaten/frontend-components/NavigationTile/NavigationContent';
+import { BrowserRouter, Link as RRLink } from 'react-router-dom';
+
+<BrowserRouter>
+  <NavigationTile>
+    <NavigationContent
+      title={'Bedrift'}
+      icon={'Company'}
+      renderContent={children => {
+        return <RRLink to={'/link-one'}>{children}</RRLink>;
+      }}
+    >
+      A-melding, særavgift og veiledere som hjelper å rapportere riktig.
+    </NavigationContent>
+    <NavigationContent
+      title={'Person'}
+      icon={'Person'}
+      renderContent={children => {
+        return <RRLink to={'/linkTo'}>{children}</RRLink>;
+      }}
+    >
+      Skattekort, skattemelding (selvangivelse), skatteoppgjør, tema og fradrag
+      som hjelper deg til få riktig skatt.
+    </NavigationContent>
+  </NavigationTile>
+</BrowserRouter>;
+```
+
+** Eksempel på NavigationTile definert via JSON-struktur **
+
+```js
+import NavigationTile from '@skatteetaten/frontend-components/NavigationTile';
+import NavigationContent from '@skatteetaten/frontend-components/NavigationTile/NavigationContent';
+import { BrowserRouter, Link as RRLink } from 'react-router-dom';
 
 const contents = [
   {
-    to: '#navigationtile',
+    title: 'Person',
+    icon: 'ArrowForward',
+    description:
+      'Skattekort, skattemelding (selvangivelse), skatteoppgjør, tema og fradrag som hjelper deg til få riktig skatt.',
+    renderContent: children => {
+      return <RRLink to={'/linkTo'}>{children}</RRLink>;
+    }
+  },
+  {
+    to: '#navigationtile2',
     title: 'Lag KID-nummer',
     icon: 'ArrowForward',
     description:
-      'Lag KID for forskuddsskatt, tilleggsforskudd, restskatt, kildeskatt på aksjeutbytte. '
+      'Lag KID for forskuddsskatt, tilleggsforskudd, restskatt, kildeskatt på aksjeutbytte.'
   }
 ];
 
-<NavigationTile
-  type="left"
-  alignIcon="right"
-  alignTitle="left"
-  alignDescription="left"
-  contents={contents}
-  renderContent={(to, content) => <a href={to}>{content}</a>}
-/>;
+<BrowserRouter>
+  <NavigationTile contents={contents} />
+</BrowserRouter>;
 ```
 
 ```js noeditor beskrivelse
