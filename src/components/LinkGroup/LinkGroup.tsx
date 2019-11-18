@@ -2,10 +2,12 @@ import * as React from 'react';
 import classnames from 'classnames';
 import { getClassNames } from './LinkGroup.classNames';
 import Icon from '../Icon';
+
 export interface LinkGroupProps {
   links?: object[];
   className?: string;
 }
+
 const LinkGroup: React.FC<LinkGroupProps> = props => {
   const styles = getClassNames();
   return (

@@ -4,7 +4,7 @@ import Icon from '../Icon';
 import { getClassNames } from './Link.classNames';
 
 export interface LinkProps {
-  to: React.Component,
+  to: React.Component;
   className?: string;
   icon?: string;
   path?: string;
