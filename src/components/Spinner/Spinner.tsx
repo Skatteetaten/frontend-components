@@ -9,11 +9,6 @@ import { getClassNames } from './Spinner.classNames';
 
 export interface SpinnerProps extends ISpinnerProps {
   spinnerColor?: 'white' | 'black';
-  Size?:
-    | SpinnerSize.xSmall
-    | SpinnerSize.small
-    | SpinnerSize.medium
-    | SpinnerSize.large;
 }
 
 /**
