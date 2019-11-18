@@ -8,15 +8,15 @@ export enum ChipType {
   NEUTRAL = 'beige'
 }
 
-export interface ChipProps
-  extends React.HTMLAttributes<HTMLDivElement>,
-    AriaAttributes {
+export interface ChipProps extends React.HTMLAttributes<HTMLDivElement> {
   /** Bruksområde som avgir hvilken farge chip-en får */
   type?: ChipType;
   /** Størrelse på Chip */
   size?: 'standard' | 'large';
   /** Bold tekst */
   bold?: boolean;
+  /** aria-label */
+  ariaLabel?: string;
 }
 /**
  * @visibleName Chip (Merkelapp)
