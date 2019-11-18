@@ -6,7 +6,8 @@ import Callout from '../Callout';
 import { isUndefined } from 'util';
 import classnames from 'classnames';
 
-export interface LabelWithCalloutProps {
+export interface LabelWithCalloutProps
+  extends React.HTMLAttributes<HTMLDivElement> {
   calloutFloating?: boolean;
   className?: string | undefined;
   editable?: boolean;

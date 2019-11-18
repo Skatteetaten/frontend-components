@@ -4,7 +4,7 @@ import * as React from 'react';
 import { getClassNames } from './AccordionMenu.classNames';
 import { AccordionItemProps } from '../Accordion/AccordionItem/AccordionItem';
 
-interface AccordionMenuProps {
+interface AccordionMenuProps extends React.HTMLAttributes<HTMLDivElement> {
   className?: string;
   children?: React.ReactNode;
 }

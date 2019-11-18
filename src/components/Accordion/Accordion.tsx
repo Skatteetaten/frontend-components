@@ -3,7 +3,7 @@ import Grid from '../Grid/Grid';
 import { getClassNames } from './Accordion.classNames';
 import { AccordionItemProps } from './AccordionItem/AccordionItem';
 
-interface AccordionProps {
+interface AccordionProps extends React.HTMLAttributes<HTMLDivElement> {
   /** Benyttes når man skal ta brukeren gjennom en sekvens av trinnvise steg. */
   children?: React.ReactNode;
   processList?: boolean;
