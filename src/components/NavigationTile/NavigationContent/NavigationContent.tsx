@@ -1,9 +1,10 @@
 import * as React from 'react';
 import Icon from '../../Icon/Icon';
 
-export interface ContentProps {
+export interface NavigationContentProps
+  extends React.HTMLAttributes<HTMLAnchorElement> {
   icon: string;
-  title: string | JSX.Element;
+  heading: string | JSX.Element;
   description?: string;
   to: string;
   id?: string;
@@ -14,13 +15,20 @@ export interface ContentProps {
   renderContent?: (children: JSX.Element) => JSX.Element;
 }
 
-const Content = (
-  props: Pick<ContentProps, 'icon' | 'title' | 'description' | 'children'>
-) => {
+type ContentProps = Pick<
+  NavigationContentProps,
+  'icon' | 'heading' | 'description' | 'children'
+>;
+
+const Content = (props: ContentProps) => {
   return (
     <>
       <Icon iconName={props.icon} />
-      {React.isValidElement(props.title) ? props.title : <h2>{props.title}</h2>}
+      {React.isValidElement(props.heading) ? (
+        props.heading
+      ) : (
+        <h2>{props.heading}</h2>
+      )}
       <p>{props.description || props.children}</p>
     </>
   );
@@ -29,15 +37,33 @@ const Content = (
 /**
  * @visibleName NavigationContent (Innhold til forsideknapp)
  */
-const NavigationContent: React.FC<ContentProps> = props => {
-  const { renderContent, id, key, className, ...rest } = props;
+const NavigationContent: React.FC<NavigationContentProps> = props => {
+  const {
+    renderContent,
+    id,
+    key,
+    className,
+    icon,
+    heading,
+    description,
+    children,
+    ...htmlAttributes
+  } = props;
+
+  const contentProps = {
+    icon,
+    heading,
+    description,
+    children
+  };
+
   return (
     <li id={id} key={key} className={className}>
       {renderContent ? (
-        renderContent(<Content {...rest} />)
+        renderContent(<Content {...contentProps} />)
       ) : (
-        <a href={props.to}>
-          <Content {...rest} />
+        <a href={props.to} {...htmlAttributes}>
+          <Content {...contentProps} />
         </a>
       )}
     </li>
