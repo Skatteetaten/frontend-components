@@ -48,7 +48,7 @@ const timeStampStyle = {
     <AccordionMenuItem
       icon="Company"
       iconLabel="Selskap"
-      title={
+      heading={
         <>
           <span>
             <strong>987 654 321 </strong>
@@ -78,7 +78,7 @@ const timeStampStyle = {
     <AccordionMenuItem
       icon="Briefcase"
       iconLabel={'Arbeidsgiver'}
-      title={
+      heading={
         <span>
           <strong>Kommentar</strong>
         </span>
@@ -112,7 +112,7 @@ const timeStampStyle = {
     <AccordionMenuItem
       icon="Briefcase"
       iconLabel={'Arbeidsgiver'}
-      title={
+      heading={
         <>
           <span>
             <strong>Saksbehandling</strong>

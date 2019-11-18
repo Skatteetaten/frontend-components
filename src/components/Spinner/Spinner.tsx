@@ -2,7 +2,7 @@ import classnames from 'classnames';
 import {
   ISpinnerProps,
   Spinner as FabricSpinner,
-  SpinnerSize
+  SpinnerSize as FabricSpinnerSize
 } from 'office-ui-fabric-react/lib-commonjs/Spinner';
 import * as React from 'react';
 import { getClassNames } from './Spinner.classNames';
@@ -10,6 +10,12 @@ import { getClassNames } from './Spinner.classNames';
 export interface SpinnerProps extends ISpinnerProps {
   spinnerColor?: 'white' | 'black';
 }
+
+type SpinnerSize = typeof FabricSpinnerSize[keyof typeof FabricSpinnerSize];
+
+export const Size = {
+  ...FabricSpinnerSize
+};
 
 interface Spinner extends React.FC<SpinnerProps> {
   Size?:
@@ -34,9 +40,9 @@ const Spinner: Spinner = props => {
   );
 };
 
-Spinner.Size = SpinnerSize;
+Spinner.Size = Size;
 Spinner.defaultProps = {
-  size: Spinner.Size.medium,
+  size: Size.medium,
   spinnerColor: 'black'
 };
 
