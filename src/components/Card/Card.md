@@ -7,7 +7,7 @@ const initialState = { title: 'Skatteoppgjøret for 2017' };
 
 <div>
   <Card
-    color={Card.BEIGE}
+    color={Card.Color.BEIGE}
     title={initialState.title}
     circleOnIcon={false}
     isExpanded={false}
@@ -22,7 +22,7 @@ const initialState = { title: 'Skatteoppgjøret for 2017' };
   </Card>
   <br />
   <Card
-    color={Card.GREEN}
+    color={Card.Color.GREEN}
     title="Skatteoppgjøret for 2018"
     circleOnIcon={false}
     isExpanded={false}
@@ -53,7 +53,7 @@ function onChange(isExpanded) {
 
 <div>
   <Card
-    color={Card.BEIGE}
+    color={Card.Color.BEIGE}
     title={state.title}
     circleOnIcon={false}
     isExpanded={false}
@@ -79,7 +79,7 @@ import TextField from '@skatteetaten/frontend-components/TextField';
 
 <div>
   <Card
-    color={Card.WHITE}
+    color={Card.Color.WHITE}
     title="Du må betale omregistreringsavgift"
     subtitle="Gjelder kjøretøyet PR 12345"
   >

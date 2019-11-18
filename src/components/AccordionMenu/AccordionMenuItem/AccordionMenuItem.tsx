@@ -18,6 +18,8 @@ interface AccordionMenuItemProps extends React.HTMLAttributes<HTMLDivElement> {
   /** Klasse som kan benyttes til overstyre stiler */
   className?: string;
   children?: JSX.Element;
+  /** aria-label */
+  ariaLabel?: string;
 }
 
 type AccordionMenuItemState = {
@@ -30,7 +32,15 @@ const AccordionMenuItem = (props: AccordionMenuItemProps) => {
   );
 
   const styles = getClassNames();
-  const { heading, iconLabel, icon, onClick, className, children } = props;
+  const {
+    heading,
+    iconLabel,
+    icon,
+    onClick,
+    className,
+    children,
+    ariaLabel
+  } = props;
 
   const toggleVisibility = () => {
     setContentOpen(!isContentOpen);
@@ -56,7 +66,7 @@ const AccordionMenuItem = (props: AccordionMenuItemProps) => {
   const styleTitle = styles.title;
 
   return (
-    <li className={className}>
+    <li className={className} aria-label={ariaLabel}>
       <header
         onClick={clickHandler}
         className={

@@ -60,6 +60,8 @@ export interface CardProps extends React.HTMLAttributes<HTMLDivElement> {
   id?: string;
   /** onClick */
   onClick?: () => void;
+  /** aria-label */
+  ariaLabel?: string;
 }
 
 export interface CardState {
@@ -70,17 +72,8 @@ export interface CardState {
  * @visibleName Card (Innholdskort)
  */
 export default class Card extends React.PureComponent<CardProps, CardState> {
-  static GREY = CardColor.GREY;
-  static GREEN = CardColor.GREEN;
-  static BEIGE = CardColor.BEIGE;
-  static WHITE = CardColor.WHITE;
-  static RED = CardColor.RED;
-
-  static GREEN_BORDER = CardBorder.GREEN_BORDER;
-  static RED_BORDER = CardBorder.RED_BORDER;
-  static YELLOW_BORDER = CardBorder.YELLOW_BORDER;
-  static GREY_BORDER = CardBorder.GREY_BORDER;
-  static WHITE_BORDER = CardBorder.WHITE_BORDER;
+  static Color = CardColor;
+  static Border = CardBorder;
 
   static defaultProps = {
     title: undefined,
@@ -88,7 +81,7 @@ export default class Card extends React.PureComponent<CardProps, CardState> {
     titlesize: 'x-large',
     expand: false,
     isExpanded: true,
-    color: Card.GREY,
+    color: Card.Color.GREY,
     actions: null,
     marginbottom: '2px',
     margin: 'medium',

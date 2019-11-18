@@ -30,9 +30,13 @@ export default class Chip extends React.PureComponent<ChipProps, {}> {
   };
 
   render() {
-    const { children, ...props } = this.props;
+    const { children, ariaLabel, ...props } = this.props;
     return (
-      <div className={getClassNames(this.props)} {...props}>
+      <div
+        className={getClassNames(this.props)}
+        aria-label={ariaLabel}
+        {...props}
+      >
         {children}
       </div>
     );

@@ -8,6 +8,8 @@ interface AccordionProps extends React.HTMLAttributes<HTMLDivElement> {
   children?: React.ReactNode;
   processList?: boolean;
   stepId?: string;
+  /** aria-label */
+  ariaLabel?: string;
 }
 
 /**
@@ -15,11 +17,11 @@ interface AccordionProps extends React.HTMLAttributes<HTMLDivElement> {
  */
 
 const Accordion: React.FC<AccordionProps> = props => {
-  const { processList, stepId, children } = props;
+  const { processList, stepId, children, ariaLabel } = props;
   const { accordion } = getClassNames();
   const totalSteps = React.Children.count(children);
   return (
-    <div className={accordion}>
+    <div className={accordion} aria-label={ariaLabel}>
       <Grid>
         {React.Children.map(children, (child, index) => {
           if (React.isValidElement<AccordionItemProps>(child))
