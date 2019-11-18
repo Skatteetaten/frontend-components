@@ -4,7 +4,7 @@ import Icon from '../../Icon';
 import classnames from 'classnames';
 import { getClassNames } from '../AccordionMenu.classNames';
 
-interface AccordionMenuItemProps extends React.HTMLAttributes<HTMLDivElement> {
+interface AccordionMenuItemProps extends React.ReactHTMLElement<HTMLDivElement> {
   /** Ikon som benyttes for et menypunkt   */
   icon?: string;
   /** ariaLabel for ikonet i et menypunkt  */
@@ -12,7 +12,7 @@ interface AccordionMenuItemProps extends React.HTMLAttributes<HTMLDivElement> {
   /** Om et menypunkt skal være default åpen */
   isOpen?: boolean;
   /** Tittel på menypunkt */
-  title: string | undefined;
+  title: string | JSX.Element | undefined;
   /** Om man ønsker ytterligere aksjon når bruker åpner steget. Kalles KUN når steget åpnes, ikke når det lukkes. */
   onClick?: (...args: any[]) => any;
   /** Klasse som kan benyttes til overstyre stiler */

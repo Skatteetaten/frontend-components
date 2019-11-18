@@ -15,7 +15,7 @@ const Logo = () => {
   );
 };
 
-interface FooterContentProps extends React.HTMLAttributes<HTMLDivElement> {
+interface FooterContentProps extends React.ReactHTMLElement<HTMLDivElement> {
   children: React.ReactNode;
   className?: string;
 }

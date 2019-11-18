@@ -4,7 +4,7 @@ import Grid from '../Grid/Grid';
 import { getClassNames } from './StepList.classNames';
 import { StepProps } from './Step/Step';
 
-interface StepListProps extends React.HTMLAttributes<HTMLDivElement> {
+interface StepListProps extends React.ReactHTMLElement<HTMLDivElement> {
   /** Klassenavn som kan benyttes for å overstyre css */
   className?: string;
   children?: React.ReactNode;

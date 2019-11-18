@@ -7,7 +7,7 @@ import { isUndefined } from 'util';
 import classnames from 'classnames';
 
 export interface LabelWithCalloutProps
-  extends React.HTMLAttributes<HTMLDivElement> {
+  extends React.ReactHTMLElement<HTMLDivElement> {
   calloutFloating?: boolean;
   className?: string | undefined;
   editable?: boolean;
