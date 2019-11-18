@@ -5,8 +5,7 @@ import Icon from '../../Icon/Icon';
 
 import { getClassNames } from '../Accordion.classNames';
 
-export interface AccordionItemProps
-  extends React.ReactHTMLElement<HTMLDivElement> {
+export interface AccordionItemProps {
   id?: string;
   /** Valg for å kunne vise/skjule innhold til et steg med en "vise/skjule" knapp */
   toggleContent?: boolean;

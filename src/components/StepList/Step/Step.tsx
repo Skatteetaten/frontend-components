@@ -21,7 +21,7 @@ const NumberIcon = (props: any) => {
   );
 };
 
-export interface StepProps extends React.ReactHTMLElement<HTMLDivElement> {
+export interface StepProps extends React.HTMLAttributes<HTMLDivElement> {
   /** Overskrift for et steg */
   stepTitle?: string;
   /** Benyttes for å definere type steg som skal vises */

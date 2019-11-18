@@ -19,7 +19,7 @@ enum CardBorder {
   WHITE_BORDER = 'white'
 }
 
-export interface CardProps extends React.ReactHTMLElement<HTMLDivElement> {
+export interface CardProps extends React.HTMLAttributes<HTMLDivElement> {
   /** Teksten som vises i kortet */
   title?: string;
   /** Subtittel som vises i kortet */
