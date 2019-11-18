@@ -63,7 +63,7 @@ export interface DatePickerProps extends IDatePickerProps {
   help?: JSX.Element | string;
   /** Overstyr label, se LabelWithCallout komponent */
   labelCallout?: LabelWithCalloutProps;
-  calloutFloating: LabelWithCalloutProps['calloutFloating'];
+  calloutFloating?: LabelWithCalloutProps['calloutFloating'];
 }
 interface DatePickerState {
   isCalloutVisible: boolean;

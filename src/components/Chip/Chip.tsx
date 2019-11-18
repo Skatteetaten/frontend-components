@@ -7,7 +7,7 @@ export enum ChipType {
   NEUTRAL = 'beige'
 }
 
-export interface ChipProps {
+export interface ChipProps extends React.HTMLAttributes<HTMLDivElement> {
   /** Bruksområde som avgir hvilken farge chip-en får */
   type?: ChipType;
   /** Størrelse på Chip */
