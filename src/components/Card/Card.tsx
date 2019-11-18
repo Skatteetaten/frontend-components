@@ -11,7 +11,7 @@ export enum CardColor {
   RED = 'lightPink'
 }
 
-enum CardBorder {
+export enum CardBorder {
   GREEN_BORDER = 'green',
   RED_BORDER = 'pink',
   YELLOW_BORDER = 'brown',
