@@ -2,48 +2,38 @@ import classnames from 'classnames';
 import {
   ISpinnerProps,
   Spinner as FabricSpinner,
-  SpinnerSize as FabricSpinnerSize
+  SpinnerSize
 } from 'office-ui-fabric-react/lib-commonjs/Spinner';
 import * as React from 'react';
 import { getClassNames } from './Spinner.classNames';
 
 export interface SpinnerProps extends ISpinnerProps {
   spinnerColor?: 'white' | 'black';
-}
-
-type SpinnerSize = typeof FabricSpinnerSize[keyof typeof FabricSpinnerSize];
-
-export const Size = {
-  ...FabricSpinnerSize
-};
-
-interface Spinner extends React.FC<SpinnerProps> {
   Size?:
-    | SpinnerSize
-    | {
-        xSmall: 0;
-        small: 1;
-        medium: 2;
-        large: 3;
-      };
+    | SpinnerSize.xSmall
+    | SpinnerSize.small
+    | SpinnerSize.medium
+    | SpinnerSize.large;
 }
+
 /**
  * @visibleName Spinner (Innlasting)
  */
-const Spinner: Spinner = props => {
-  const { className, ...rest } = props;
-  return (
-    <FabricSpinner
-      {...rest}
-      className={classnames(getClassNames(props), className)}
-    />
-  );
-};
-
-Spinner.Size = Size;
-Spinner.defaultProps = {
-  size: Size.medium,
-  spinnerColor: 'black'
-};
+class Spinner extends React.PureComponent<SpinnerProps> {
+  static Size = SpinnerSize;
+  static defaultProps = {
+    size: SpinnerSize.medium,
+    spinnerColor: 'black'
+  };
+  render() {
+    const { className, ...rest } = this.props;
+    return (
+      <FabricSpinner
+        {...rest}
+        className={classnames(getClassNames(this.props), className)}
+      />
+    );
+  }
+}
 
 export default Spinner;
