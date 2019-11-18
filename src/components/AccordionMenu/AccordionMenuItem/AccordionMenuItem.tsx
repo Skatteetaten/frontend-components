@@ -4,7 +4,8 @@ import Icon from '../../Icon';
 import classnames from 'classnames';
 import { getClassNames } from '../AccordionMenu.classNames';
 
-interface AccordionMenuItemProps extends React.ReactHTMLElement<HTMLDivElement> {
+interface AccordionMenuItemProps
+  extends React.ReactHTMLElement<HTMLDivElement> {
   /** Ikon som benyttes for et menypunkt   */
   icon?: string;
   /** ariaLabel for ikonet i et menypunkt  */
