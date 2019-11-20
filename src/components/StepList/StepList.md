@@ -155,7 +155,7 @@ const testFunc = () => {
     <p>Jeg bor i Norge</p>
   </Step>
   <Step stepTitle={titles.step4.no} stepId={'step-1-4'} activeStep={true}>
-    <Card color={Card.BEIGE} margin={'large'}>
+    <Card color={Card.Color.BEIGE} margin={'large'}>
       <p style={{ fontWeight: '700' }}>
         Følgende opplysninger er klare til innsending:
       </p>

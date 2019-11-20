@@ -8,7 +8,7 @@ import NavigationContent from '../../components/NavigationTile/NavigationContent
 function Forside(props) {
   return (
     <div style={{ marginBottom: '60px', marginTop: '30px' }}>
-      <Card margin="large" color={Card.BEIGE}>
+      <Card margin="large" color={Card.Color.BEIGE}>
         <Grid>
           <Grid.Row>
             <Grid.Col lg={1} />
