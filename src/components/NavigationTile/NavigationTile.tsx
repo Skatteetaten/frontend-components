@@ -20,6 +20,8 @@ export interface NavigationTileProps {
   alignDescription?: 'center' | 'left';
   className?: string;
   children?: JSX.Element;
+  /** aria-label */
+  ariaLabel?: string;
 }
 
 /**
@@ -34,11 +36,13 @@ const NavigationTile: React.FC<NavigationTileProps> = props => {
     alignIcon,
     alignTitle,
     alignDescription,
+    ariaLabel,
     ...rest
   } = props;
   const styles = getClassNames(props);
   return (
     <nav
+      aria-label={ariaLabel}
       {...rest}
       className={classnames(styles.nav, getClassNames(props), className)}
     >

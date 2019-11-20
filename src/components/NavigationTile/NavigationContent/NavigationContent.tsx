@@ -10,13 +10,15 @@ export interface ContentProps {
   className?: string;
   key: number | string;
   children?: string | JSX.Element;
+  /** aria-label */
+  ariaLabel?: string;
 }
 
 /**
  * @visibleName NavigationContent (Innhold til forsideknapp)
  */
 const NavigationContent: React.FC<ContentProps> = props => (
-  <li {...props}>
+  <li aria-label={props.ariaLabel} {...props}>
     <a href={props.to}>
       <Icon iconName={props.icon} />
       <h2>{props.title}</h2>

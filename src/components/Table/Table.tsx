@@ -5,7 +5,7 @@ import { getClassNames } from './Table.classNames';
 
 import TableRow from './TableRow';
 
-interface TableProps {
+interface TableProps extends React.HTMLAttributes<HTMLDivElement> {
   /** Mulighet for å legge inn egen klasse for å overstyre stiling */
   className?: string;
   /** Global attributt som må være unik for hele HTML dokumentet */

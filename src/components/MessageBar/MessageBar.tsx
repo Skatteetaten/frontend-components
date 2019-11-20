@@ -28,7 +28,7 @@ export interface MessageBarProps extends IMessageBarProps {
   onClick?: (...args: any[]) => any;
 }
 
-interface MessageBarState {
+interface MessageBarState extends React.HTMLAttributes<HTMLDivElement> {
   hideMessageBar: boolean;
   showMessage: boolean;
 }

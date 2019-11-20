@@ -7,13 +7,15 @@ export enum ChipType {
   NEUTRAL = 'beige'
 }
 
-export interface ChipProps {
+export interface ChipProps extends React.HTMLAttributes<HTMLDivElement> {
   /** Bruksområde som avgir hvilken farge chip-en får */
   type?: ChipType;
   /** Størrelse på Chip */
   size?: 'standard' | 'large';
   /** Bold tekst */
   bold?: boolean;
+  /** aria-label */
+  ariaLabel?: string;
 }
 /**
  * @visibleName Chip (Merkelapp)
@@ -28,9 +30,13 @@ export default class Chip extends React.PureComponent<ChipProps, {}> {
   };
 
   render() {
-    const { children, ...props } = this.props;
+    const { children, ariaLabel, ...props } = this.props;
     return (
-      <div className={getClassNames(this.props)} {...props}>
+      <div
+        className={getClassNames(this.props)}
+        aria-label={ariaLabel}
+        {...props}
+      >
         {children}
       </div>
     );
