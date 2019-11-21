@@ -33,12 +33,7 @@ export interface CardProps extends React.HTMLAttributes<HTMLDivElement> {
   /** Om kortet er utvidet eller ikke */
   isExpanded?: boolean;
   /** Finnes fire bakgrunnfarger: graa, gronn, rod eller beige */
-  color?:
-    | CardColor.BEIGE
-    | CardColor.GREEN
-    | CardColor.BEIGE
-    | CardColor.WHITE
-    | CardColor.RED;
+  color?: CardColor.BEIGE | CardColor.GREEN | CardColor.WHITE | CardColor.RED;
   /** Ramme rundt kortet */
   border?:
     | CardBorder.WHITE_BORDER

@@ -72,10 +72,11 @@ export class MessageBar extends React.PureComponent<
 
   resetDurationMessage = () => {
     const { duration } = this.props;
-    if (duration)
+    if (duration) {
       this.setState({
         showMessage: true
       });
+    }
     setTimeout(() => {
       this.setState({ hideMessageBar: true, showMessage: false });
     }, Number(duration) * 1000);

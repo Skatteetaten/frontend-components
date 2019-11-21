@@ -46,7 +46,7 @@ function getHeaderBackgroundStyle(props: DialogProps) {
   }
 }
 
-export var getClassNames = function getClassNames(props: DialogProps) {
+export const getClassNames = function getClassNames(props: DialogProps) {
   const palette = getTheme().palette as PaletteProps;
 
   return mergeStyleSets({

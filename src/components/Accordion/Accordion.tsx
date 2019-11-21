@@ -24,13 +24,14 @@ const Accordion: React.FC<AccordionProps> = props => {
     <div className={accordion} aria-label={ariaLabel}>
       <Grid>
         {React.Children.map(children, (child, index) => {
-          if (React.isValidElement<AccordionItemProps>(child))
+          if (React.isValidElement<AccordionItemProps>(child)) {
             return React.cloneElement(child, {
               stepNumber: index + 1,
               id: stepId && stepId + index + 1,
               totalSteps,
               processList
             });
+          }
         })}
       </Grid>
     </div>
