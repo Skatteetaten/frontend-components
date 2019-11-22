@@ -51,7 +51,7 @@ export default {
     ArrowDropDown: '\uf140',
     NavigateBefore: '\uf04d',
     NavigateNext: '\uf054',
-    MoveUp: '\uf060',
+    MoveUp: '\ufcbe',
 
     //Info
     Blocked: '\uf0ad',
