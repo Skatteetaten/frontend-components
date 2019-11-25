@@ -6,7 +6,7 @@ import {
 import * as React from 'react';
 import { getClassNames as getStandardClassNames } from './Button.classNames';
 
-enum ButtonStyle {
+export enum ButtonStyle {
   primary = 'primary',
   primaryRounded = 'primaryRounded',
   primaryRoundedFilled = 'primaryRoundedFilled',

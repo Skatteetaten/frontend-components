@@ -4,7 +4,7 @@ import * as React from 'react';
 import { getClassNames } from './ActionButton.classNames';
 import { ButtonProps } from '../Button';
 
-enum ActionButtonColor {
+export enum ActionButtonColor {
   blue = 'blue',
   black = 'black',
   red = 'red',
