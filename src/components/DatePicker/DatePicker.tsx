@@ -64,6 +64,8 @@ export interface DatePickerProps extends IDatePickerProps {
   /** Overstyr label, se LabelWithCallout komponent */
   labelCallout?: LabelWithCalloutProps;
   calloutFloating?: LabelWithCalloutProps['calloutFloating'];
+  /** Brukerspesifisert event for callout **/
+  userDefinedCalloutEvent?: () => void;
 }
 interface DatePickerState {
   isCalloutVisible: boolean;
@@ -134,6 +136,7 @@ export default class DatePicker extends React.Component<
       isRequiredErrorMessage,
       label,
       labelCallout,
+      userDefinedCalloutEvent,
       ...rest
     } = this.props;
     const classNames = getClassNames(this.props);
@@ -146,6 +149,7 @@ export default class DatePicker extends React.Component<
           label={label}
           help={help}
           calloutFloating={calloutFloating}
+          userDefinedEvent={userDefinedCalloutEvent}
           {...labelCallout}
         />
         <FabricDatePicker

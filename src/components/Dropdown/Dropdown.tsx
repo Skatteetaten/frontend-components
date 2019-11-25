@@ -22,6 +22,8 @@ export interface DropdownProps extends IDropdownProps {
   multiSelect?: IDropdownProps['multiSelect'];
   /** @ignore */
   multiSelectDelimiter?: IDropdownProps['multiSelectDelimiter'];
+  /** Brukerspesifisert event for callout **/
+  userDefinedCalloutEvent?: () => void;
 }
 
 interface DropdownState {
@@ -40,11 +42,17 @@ const Dropdown: React.FC<DropdownProps> = props => {
     className,
     id,
     labelCallout,
+    userDefinedCalloutEvent,
     ...rest
   } = props;
   return (
     <div id={id}>
-      <LabelWithCallout label={label} help={help} {...labelCallout} />
+      <LabelWithCallout
+        label={label}
+        help={help}
+        userDefinedEvent={userDefinedCalloutEvent}
+        {...labelCallout}
+      />
       <FabricDropdown
         {...rest}
         className={classnames(getClassNames(props), className)}

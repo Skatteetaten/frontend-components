@@ -21,6 +21,8 @@ export interface LabelWithCalloutProps
   onRenderLabel?: any;
   /** aria-label */
   ariaLabel?: string;
+  /** Brukerspesifisert event for callout **/
+  userDefinedEvent?: () => void;
 }
 const LabelWithCallout = (props: LabelWithCalloutProps) => {
   const {
@@ -35,7 +37,8 @@ const LabelWithCallout = (props: LabelWithCalloutProps) => {
     readOnly,
     warning,
     onRenderLabel,
-    ariaLabel
+    ariaLabel,
+    userDefinedEvent
   } = props;
   const styles = getClassNames(props);
 
@@ -49,6 +52,7 @@ const LabelWithCallout = (props: LabelWithCalloutProps) => {
   ) : (
     <p>{warning}</p>
   );
+
   return onRenderLabel ? (
     onRenderLabel
   ) : (
@@ -68,6 +72,9 @@ const LabelWithCallout = (props: LabelWithCalloutProps) => {
             ariaLabel={'help'}
             onClick={() => {
               setIsCalloutVisible(!isCalloutVisible);
+              if (userDefinedEvent) {
+                userDefinedEvent();
+              }
             }}
             className={styles.icon}
           />

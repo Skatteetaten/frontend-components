@@ -19,7 +19,7 @@ export interface ButtonProps extends IButtonProps {
   /** Ikon som skal vises foran teksten på knappen */
   icon?: string;
   /** Benyttes for å definere type knapp som skal benyttes */
-  buttonStyle?: ButtonStyle
+  buttonStyle?: ButtonStyle;
   /**
    * Skjulte props
    */

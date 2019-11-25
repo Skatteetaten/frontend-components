@@ -34,7 +34,6 @@ describe('LabelWithCallout komponent', () => {
     const helpIcon = wrapper.find('.ms-Button--icon');
     const icon = helpIcon.find('i');
     expect(icon.prop('data-icon-name')).toEqual('HelpOutline');
-    expect(helpIcon.prop('aria-label')).toEqual('Dette er en mock-hjepetekst');
     expect(helpIcon.prop('title')).toEqual('Hjelp');
     helpIcon.simulate('click');
     const callout = wrapper.find('.ms-Callout');
@@ -57,9 +56,6 @@ describe('LabelWithCallout komponent', () => {
     const warningIcon = wrapper.find('.ms-Button--icon');
     const icon = warningIcon.find('i');
     expect(icon.prop('data-icon-name')).toEqual('WarningOutline');
-    expect(warningIcon.prop('aria-label')).toEqual(
-      'Dette er en mock-varselstekst'
-    );
     expect(warningIcon.prop('title')).toEqual('Varsel');
     warningIcon.simulate('click');
     const callout = wrapper.find('.ms-Callout');
@@ -79,5 +75,18 @@ describe('LabelWithCallout komponent', () => {
     const closeBtn = wrapper.find('.ms-Button--icon').last();
     closeBtn.simulate('click');
     expect(wrapper.exists('Callout')).toEqual(false);
+  });
+  it('skal kjøre brukerspesifikk event på click', () => {
+    const mockFunksjon = jest.fn();
+    const wrapper = oppsettFullDOM({
+      id: 'LabelWithCallout_id',
+      calloutFloating: false,
+      help: 'Dette er en mock-hjepetekst',
+      label: 'Mock Label',
+      userDefinedEvent: mockFunksjon()
+    });
+    const helpIcon = wrapper.find('.ms-Button--icon');
+    helpIcon.simulate('click');
+    expect(mockFunksjon).toHaveBeenCalled();
   });
 });

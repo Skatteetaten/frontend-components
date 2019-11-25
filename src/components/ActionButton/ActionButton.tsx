@@ -10,7 +10,7 @@ enum ActionButtonColor {
   red = 'red',
   green = 'green',
   white = 'white'
-};
+}
 export interface ActionButtonProps extends ButtonProps {
   /** Ikon som skal vises foran lenketeksten */
   icon?: string;

@@ -20,6 +20,8 @@ export interface RadioButtonGroupProps extends IChoiceGroupProps {
   warning?: JSX.Element | string;
   /** Overstyr label, se LabelWithCallout komponent */
   labelCallout?: LabelWithCalloutProps;
+  /** Brukerspesifisert event for callout **/
+  userDefinedCalloutEvent?: () => void;
 }
 
 /**
@@ -37,6 +39,7 @@ const RadioButtonGroup = (props: RadioButtonGroupProps) => {
     id,
     label,
     labelCallout,
+    userDefinedCalloutEvent,
     ...rest
   } = props;
 
@@ -47,6 +50,7 @@ const RadioButtonGroup = (props: RadioButtonGroupProps) => {
         help={help}
         warning={warning}
         calloutFloating={calloutFloating}
+        userDefinedEvent={userDefinedCalloutEvent}
         {...labelCallout}
       />
       <FabricChoiceGroup
