@@ -4,20 +4,13 @@ import * as React from 'react';
 import { getClassNames } from './ActionButton.classNames';
 import { ButtonProps } from '../Button';
 
-export enum ActionButtonColor {
-  blue = 'blue',
-  black = 'black',
-  red = 'red',
-  green = 'green',
-  white = 'white'
-}
 export interface ActionButtonProps extends ButtonProps {
   /** Ikon som skal vises foran lenketeksten */
   icon?: string;
   /** Ikon størrelse, to tilgjengelige størrelser */
   iconSize?: any;
   /** Fire forhåndsdefinerte farger, se eksempler */
-  color?: ActionButtonColor;
+  color?: 'blue' | 'black' | 'red' | 'green' | 'white';
 }
 /**
  * @visibleName ActionButton (Aksjonsknapp)

@@ -6,20 +6,17 @@ import {
 import * as React from 'react';
 import { getClassNames as getStandardClassNames } from './Button.classNames';
 
-export enum ButtonStyle {
-  primary = 'primary',
-  primaryRounded = 'primaryRounded',
-  primaryRoundedFilled = 'primaryRoundedFilled',
-  warning = 'warning',
-  secondary = 'secondary',
-  primaryLarge = 'primaryLarge'
-}
-
 export interface ButtonProps extends IButtonProps {
   /** Ikon som skal vises foran teksten på knappen */
   icon?: string;
   /** Benyttes for å definere type knapp som skal benyttes */
-  buttonStyle?: ButtonStyle;
+  buttonStyle?:
+    | 'primary'
+    | 'primaryRounded'
+    | 'primaryRoundedFilled'
+    | 'warning'
+    | 'secondary'
+    | 'primaryLarge';
   /**
    * Skjulte props
    */
@@ -74,7 +71,7 @@ Button.defaultProps = {
   icon: undefined,
   onClick: undefined,
   primary: false,
-  buttonStyle: ButtonStyle.primaryRounded
+  buttonStyle: 'primaryRounded'
 };
 
 export default Button;

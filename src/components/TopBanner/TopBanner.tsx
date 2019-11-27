@@ -1,5 +1,5 @@
 import * as React from 'react';
-import ActionButton, { ActionButtonColor } from '../ActionButton/ActionButton';
+import ActionButton from '../ActionButton/ActionButton';
 import classnames from 'classnames';
 import Image from '../Image/Image';
 // @ts-ignore TODO
@@ -25,7 +25,7 @@ const InternalHeader = props => {
             href={props.homeUrl}
             className={styles.headerActionButton}
             icon="Home"
-            color={ActionButtonColor.white}
+            color="white"
             ariaLabel="Til startsiden"
           >
             {props.homeText}
