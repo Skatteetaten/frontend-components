@@ -56,7 +56,7 @@ const NavigationTile: React.FC<NavigationTileProps> = props => {
             />
           ))}
         {React.Children.map(children, (child, index) => {
-          if (React.isValidElement<ContentProps>(child))
+          if (React.isValidElement<ContentProps>(child)) {
             return (
               <NavigationContent
                 key={index}
@@ -66,6 +66,7 @@ const NavigationTile: React.FC<NavigationTileProps> = props => {
                 {child.props.children}
               </NavigationContent>
             );
+          }
         })}
       </ul>
     </nav>

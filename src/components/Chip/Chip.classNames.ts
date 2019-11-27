@@ -3,7 +3,7 @@ import { mergeStyles } from '@uifabric/merge-styles';
 import { PaletteProps } from '..';
 import { ChipProps, ChipType } from './Chip';
 
-export var getClassNames = function getClassNames(props: ChipProps) {
+export const getClassNames = function getClassNames(props: ChipProps) {
   const palette = getTheme().palette as PaletteProps;
 
   return mergeStyles({

@@ -4,7 +4,7 @@ import { FontSizes } from '..';
 import { PaletteProps } from '..';
 import { SearchFieldProps } from './SearchField';
 
-export var getClassNames = function getClassNames(props: SearchFieldProps) {
+export const getClassNames = function getClassNames(props: SearchFieldProps) {
   const palette = getTheme().palette as PaletteProps;
   const { border, searchFieldSize } = props;
   const largeSize = searchFieldSize === 'large';

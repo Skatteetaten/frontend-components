@@ -56,7 +56,7 @@ export default class Dialog extends React.PureComponent<
       ...props
     } = this.props;
     const styles = getClassNames(this.props);
-    let { isCalloutVisible } = this.state;
+    const { isCalloutVisible } = this.state;
 
     return (
       <div>

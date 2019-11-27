@@ -38,13 +38,6 @@ function getTypeColor(props: ButtonProps): object {
         height: '80px',
         maxWidth: 'calc((75*550px)/100)'
       };
-    case 'primaryRounded':
-      return {
-        borderRadius: radius,
-        borderColor: palette.skeColor.blue,
-        background: palette.skeColor.white,
-        color: palette.skeColor.blue
-      };
     case 'primaryRoundedFilled':
       return {
         borderRadius: radius,
@@ -73,6 +66,7 @@ function getTypeColor(props: ButtonProps): object {
         color: palette.skeColor.blue
       };
     default:
+      // primaryRounded
       return {
         borderRadius: radius,
         borderColor: palette.skeColor.blue,

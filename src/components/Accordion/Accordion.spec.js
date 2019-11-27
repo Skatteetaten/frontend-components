@@ -61,7 +61,6 @@ describe('Accordion komponent', () => {
     );
 
     const accordionItem = wrapper.find('AccordionItem');
-    const stepLine = accordionItem.find('span').first();
     expect(accordionItem.html()).toContain('stepNumber');
     expect(accordionItem.html()).not.toContain('toggleButton');
   });

@@ -23,10 +23,11 @@ const AccordionMenu: React.FC<AccordionMenuProps> = ({
       aria-label={ariaLabel}
     >
       {React.Children.map(children, child => {
-        if (React.isValidElement<AccordionItemProps>(child))
+        if (React.isValidElement<AccordionItemProps>(child)) {
           return React.cloneElement(child, {
             totalSteps
           });
+        }
       })}
     </ul>
   );

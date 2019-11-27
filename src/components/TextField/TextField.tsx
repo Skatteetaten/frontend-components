@@ -37,6 +37,8 @@ export interface TextFieldProps extends ITextFieldProps {
   underlined?: ITextFieldProps['underlined'];
   /** @ignore */
   editMode?: boolean;
+  /** Brukerspesifisert event for callout **/
+  onCalloutToggle?: () => void;
 }
 
 /**
@@ -53,6 +55,7 @@ export const TextField: React.FC<TextFieldProps> = ({
   value,
   label,
   calloutFloating,
+  onCalloutToggle,
   ...rest
 }) => {
   const shouldEditWhenEmpty = rest.editableWhenEmpty ? value === '' : false;
@@ -98,6 +101,7 @@ export const TextField: React.FC<TextFieldProps> = ({
         inputSize={rest.inputSize}
         calloutFloating={calloutFloating}
         onRenderLabel={onRenderLabel}
+        onCalloutToggle={onCalloutToggle}
       />
       <TextFieldType
         {...rest}

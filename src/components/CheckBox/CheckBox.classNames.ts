@@ -3,7 +3,7 @@ import { getTheme } from '@uifabric/styling';
 import { getFocusStyle } from '..';
 import { FontWeights, FontSizes } from '..';
 
-export var getClassNames = function getClassNames() {
+export const getClassNames = function getClassNames() {
   const theme = getTheme();
   const inset = -4;
   const radius = '0';

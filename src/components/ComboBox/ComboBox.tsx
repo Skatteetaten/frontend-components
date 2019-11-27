@@ -19,6 +19,8 @@ export interface ComboboxProps extends IComboBoxProps {
   inputSize?: 'normal' | 'large';
   /** Overstyr label, se LabelWithCallout komponent */
   labelCallout?: LabelWithCalloutProps;
+  /** Brukerspesifisert event for callout **/
+  onCalloutToggle?: () => void;
 }
 
 /**
@@ -33,11 +35,17 @@ const Combobox: React.FC<ComboboxProps> = props => {
     className,
     id,
     labelCallout,
+    onCalloutToggle,
     ...rest
   } = props;
   return (
     <div id={id}>
-      <LabelWithCallout label={label} help={help} {...labelCallout} />
+      <LabelWithCallout
+        label={label}
+        help={help}
+        onCalloutToggle={onCalloutToggle}
+        {...labelCallout}
+      />
       <VirtualizedComboBox
         {...rest}
         role="combobox"
