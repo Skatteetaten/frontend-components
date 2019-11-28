@@ -107,7 +107,10 @@ export const TextField: React.FC<TextFieldProps> = ({
         {...rest}
         value={setValue()}
         readOnly={editMode ? false : readOnly}
-        className={classnames(getClassNames({ ...rest, editMode }), className)}
+        className={classnames(
+          getClassNames({ ...rest, editMode, readOnly }),
+          className
+        )}
         onBlur={onBlur}
         componentRef={ref => {
           if (rest.componentRef && typeof rest.componentRef === 'function') {

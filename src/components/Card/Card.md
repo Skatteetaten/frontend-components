@@ -80,6 +80,7 @@ import TextField from '@skatteetaten/frontend-components/TextField';
 <div>
   <Card
     color={Card.Color.WHITE}
+    border={Card.Border.GREEN_BORDER}
     title="Du må betale omregistreringsavgift"
     subtitle="Gjelder kjøretøyet PR 12345"
   >
