@@ -60,18 +60,10 @@ function getCircleHoverStyles(props: IconButtonProps) {
 
 function getCircleFocusStyles(props: IconButtonProps) {
   const palette = getTheme().palette as PaletteProps;
-
-  if (props.circle === true) {
-    return {
-      borderColor: palette.skeColor.darkBlue,
-      backgroundColor: palette.skeColor.darkBlue
-    };
-  } else {
-    return {
-      borderColor: palette.skeColor.darkBlue,
-      backgroundColor: palette.skeColor.darkBlue
-    };
-  }
+  return {
+    borderColor: palette.skeColor.darkBlue,
+    backgroundColor: palette.skeColor.darkBlue
+  };
 }
 
 function getIconSize(props: IconButtonProps) {
