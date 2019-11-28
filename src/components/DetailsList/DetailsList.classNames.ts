@@ -28,9 +28,9 @@ function getHoverColor(props: DetailsListProps) {
   const palette = getTheme().palette as PaletteProps;
 
   if (props.background === 'white') {
-    return palette.skeColor.neutralGrey;
+    return palette.skeColor.lightBlue;
   } else {
-    return palette.skeColor.lightGrey;
+    return palette.skeColor.lightBlue;
   }
 }
 
@@ -77,12 +77,7 @@ export const getClassNames = (props: DetailsListProps) => {
         zIndex: 1
       },
       '.ms-GroupHeader': {
-        background: getBackgroundColor(props),
-        selectors: {
-          ':hover': {
-            background: getHoverColor(props)
-          }
-        }
+        background: getBackgroundColor(props)
       },
       '.ms-GroupHeader .ms-GroupHeader-expand': {
         border: '1px solid ' + palette.blue,
@@ -105,7 +100,7 @@ export const getClassNames = (props: DetailsListProps) => {
       },
       '.ms-GroupHeader-title': {
         fontSize: FontSizes.medium,
-        fontWeight: FontWeights.semibold
+        fontWeight: FontWeights.semibold,
       },
       '& .ms-DetailsHeader-cell [data-icon-name="SortDown"], & .ms-DetailsHeader-cell [data-icon-name="SortUp"]': {
         color: palette.skeColor.blue,
@@ -151,6 +146,9 @@ export const getClassNames = (props: DetailsListProps) => {
         selectors: {
           '& .ms-DetailsRow-cellCheck': {
             padding: 0
+          },
+          ':hover': {
+            textDecoration: 'underline'
           }
         }
       },
