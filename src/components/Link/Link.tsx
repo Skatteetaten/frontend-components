@@ -26,7 +26,7 @@ const Link: React.FC<LinkProps> = props => {
   } = props;
   const styles = getClassNames();
   return (
-    <p className={classnames(styles.linkContainer, props.className)}>
+    <span className={classnames(styles.linkContainer, props.className)}>
       {props.placement === 'before' && (
         <Icon
           iconName={props.icon}
@@ -53,7 +53,7 @@ const Link: React.FC<LinkProps> = props => {
           role="presentation"
         />
       )}
-    </p>
+    </span>
   );
 };
 export default Link;

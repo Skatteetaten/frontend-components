@@ -3,6 +3,94 @@
 Standard bruk på skatteetaten.no:
 
 ```js
+import TopStripe, {
+  TopStripeMenu,
+  TopStripeMenuItem,
+  TopStripeMenuLink
+} from '@skatteetaten/frontend-components/TopStripe';
+import TopBanner from '@skatteetaten/frontend-components/TopBanner';
+import Link from '@skatteetaten/frontend-components/Link';
+import Button from '@skatteetaten/frontend-components/Button';
+
+<div>
+  <TopStripe>
+    <TopStripeMenu defaultSelected={1}>
+      <Link
+        color={'white'}
+        path={'#link'}
+        text={'Kontakt oss'}
+        onClick={() => console.log('KOKO')}
+        renderContent={() => {
+          return <div>kake</div>;
+        }}
+        placement="before"
+      />
+      <Link
+        color={'white'}
+        icon={'ArrowForward'}
+        text={'Kontakt oss'}
+        placement="before"
+      />
+      <Link
+        color={'white'}
+        path={'#topstripe'}
+        onClick={() => console.log('KOKO')}
+        text={'Kontakt oss'}
+        placement="before"
+      />
+    </TopStripeMenu>
+    <Link
+      color={'white'}
+      path={'#link'}
+      text={'Kontakt oss'}
+      placement="before"
+    />
+  </TopStripe>
+  <TopBanner
+    external
+    title={'Side for publikum'}
+    homeText={'Tilbake til skatteetaten.no'}
+  />
+</div>;
+```
+
+```js
+import TopStripe, {
+  TopStripeMenu,
+  TopStripeMenuItem,
+  TopStripeMenuLink
+} from '@skatteetaten/frontend-components/TopStripe';
+import TopBanner from '@skatteetaten/frontend-components/TopBanner';
+import Link from '@skatteetaten/frontend-components/Link';
+import Button from '@skatteetaten/frontend-components/Button';
+
+<div>
+  <TopStripe>
+    <TopStripeMenu>
+      <TopStripeMenuItem>
+        <Button buttonStyle="primary" onClick={() => console.log('HALL')}>
+          Godkjenn
+        </Button>
+      </TopStripeMenuItem>
+      <TopStripeMenuLink text={'HALLO'} />
+    </TopStripeMenu>
+
+    <Link
+      color={'white'}
+      path={'#link'}
+      text={'Kontakt oss'}
+      placement="before"
+    />
+  </TopStripe>
+  <TopBanner
+    external
+    title={'Side for publikum'}
+    homeText={'Tilbake til skatteetaten.no'}
+  />
+</div>;
+```
+
+```js
 import TopStripe from '@skatteetaten/frontend-components/TopStripe';
 import TopBanner from '@skatteetaten/frontend-components/TopBanner';
 
