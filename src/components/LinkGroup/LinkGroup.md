@@ -2,6 +2,8 @@
 
 ```js
 import LinkGroup from '@skatteetaten/frontend-components/LinkGroup';
+import { Link as RRLink, BrowserRouter as Router } from 'react-router-dom';
+
 const links = [
   {
     text: 'Dette er en link',
@@ -13,7 +15,44 @@ const links = [
   }
 ];
 
-<LinkGroup links={links} />;
+<div>
+  <LinkGroup links={links} />
+</div>;
+```
+
+** Eksempel på egendefinert link-implementasjon vha. react-router **
+
+```js
+import LinkGroup from '@skatteetaten/frontend-components/LinkGroup';
+import { Link as RRLink, BrowserRouter as Router } from 'react-router-dom';
+
+const links = [
+  {
+    text: 'Dette er en link',
+    path: '#linkgroup'
+  },
+  {
+    text: 'En annen  link',
+    path: '#linkgroup'
+  }
+];
+
+<div>
+  <div>
+    <Router>
+      <LinkGroup
+        links={links}
+        renderContent={(path, text, classNames) => {
+          return (
+            <RRLink to={path} className={classNames}>
+              {text}
+            </RRLink>
+          );
+        }}
+      />
+    </Router>
+  </div>
+</div>;
 ```
 
 ```js noeditor uu

@@ -2,6 +2,7 @@
 
 ```js
 import Link from '@skatteetaten/frontend-components/Link';
+import { Link as RRLink, BrowserRouter as Router } from 'react-router-dom';
 
 <div className="ExampleSpacing8">
   <Link
@@ -24,6 +25,22 @@ import Link from '@skatteetaten/frontend-components/Link';
     icon={'OpenInNew'}
     placement="after"
   />
+  <div>
+    <Router>
+      <Link
+        icon={'OpenInNew'}
+        placement="after"
+        renderContent={classNames => {
+          return (
+            <RRLink to="/" className={classNames}>
+              Egendefinert lenkeimplementasjon. Eksempel gitt ved bruk av
+              react-router
+            </RRLink>
+          );
+        }}
+      />
+    </Router>
+  </div>
 </div>;
 ```
 
