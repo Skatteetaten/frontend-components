@@ -50,37 +50,20 @@ function getCircleStyles(props: IconButtonProps) {
 
 function getCircleHoverStyles(props: IconButtonProps) {
   const palette = getTheme().palette as PaletteProps;
-
-  if (props.circle === true) {
-    return {
-      borderWidth: '3px',
-      background: palette.skeColor.lightBlue,
-      color: palette.skeColor.blue
-    };
-  } else {
-    return {
-      color: palette.skeColor.blue,
-      borderWidth: '3px',
-      borderColor: palette.skeColor.blue,
-      background: palette.skeColor.lightBlue
-    };
-  }
+  return {
+    color: palette.skeColor.blue,
+    borderWidth: '3px',
+    borderColor: palette.skeColor.blue,
+    background: palette.skeColor.lightBlue
+  };
 }
 
 function getCircleFocusStyles(props: IconButtonProps) {
   const palette = getTheme().palette as PaletteProps;
-
-  if (props.circle === true) {
-    return {
-      borderColor: palette.skeColor.darkBlue,
-      backgroundColor: palette.skeColor.darkBlue
-    };
-  } else {
-    return {
-      borderColor: palette.skeColor.darkBlue,
-      backgroundColor: palette.skeColor.darkBlue
-    };
-  }
+  return {
+    borderColor: palette.skeColor.darkBlue,
+    backgroundColor: palette.skeColor.darkBlue
+  };
 }
 
 function getIconSize(props: IconButtonProps) {
