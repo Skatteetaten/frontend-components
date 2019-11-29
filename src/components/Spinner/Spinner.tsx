@@ -11,33 +11,24 @@ export interface SpinnerProps extends ISpinnerProps {
   spinnerColor?: 'white' | 'black';
 }
 
-interface Spinner extends React.FC<SpinnerProps> {
-  Size?:
-    | SpinnerSize
-    | {
-        xSmall: 0;
-        small: 1;
-        medium: 2;
-        large: 3;
-      };
-}
 /**
  * @visibleName Spinner (Innlasting)
  */
-const Spinner: Spinner = props => {
-  const { className, ...rest } = props;
-  return (
-    <FabricSpinner
-      {...rest}
-      className={classnames(getClassNames(props), className)}
-    />
-  );
-};
-
-Spinner.Size = SpinnerSize;
-Spinner.defaultProps = {
-  size: Spinner.Size.medium,
-  spinnerColor: 'black'
-};
+class Spinner extends React.PureComponent<SpinnerProps> {
+  static Size = SpinnerSize;
+  static defaultProps = {
+    size: SpinnerSize.medium,
+    spinnerColor: 'black'
+  };
+  render() {
+    const { className, ...rest } = this.props;
+    return (
+      <FabricSpinner
+        {...rest}
+        className={classnames(getClassNames(this.props), className)}
+      />
+    );
+  }
+}
 
 export default Spinner;

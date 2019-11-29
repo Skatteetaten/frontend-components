@@ -202,7 +202,7 @@ const getAStyle = (props, palette) => {
   };
 };
 // @ts-ignore TODO
-export var getClassNames = function getClassNames(props) {
+export const getClassNames = function getClassNames(props) {
   const palette = getTheme().palette as PaletteProps;
   // @ts-ignore TODO
   return mergeStyles([

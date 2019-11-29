@@ -8,11 +8,16 @@ import {
   CheckboxVisibility,
   Selection,
   IDetailsListProps,
-  IColumn as FabricIColumn
+  IColumn as FabricIColumn,
+  DetailsRow
 } from 'office-ui-fabric-react/lib-commonjs/DetailsList';
 import { getClassNames } from './DetailsList.classNames';
 
-export interface IColumn extends FabricIColumn {}
+export interface IColumn extends FabricIColumn {
+  sortItems?: any;
+}
+
+export { DetailsRow };
 
 export interface DetailsListProps extends IDetailsListProps {
   background?: 'white' | 'transparent';
@@ -39,7 +44,7 @@ export class DetailsList extends React.PureComponent<DetailsListProps, {}> {
     layoutMode: DetailsList.DetailsListLayoutMode.justified,
     selectionMode: DetailsList.SelectionMode.none
   };
-  // @ts-ignore TODO
+
   sortColumn = sortItems => (ev, column) => {
     const { items, columns } = this.props;
     const currentColumn =
@@ -81,13 +86,11 @@ export class DetailsList extends React.PureComponent<DetailsListProps, {}> {
     const { background, columns, className, ...props } = this.props;
     const enhancedColumns =
       columns &&
-      columns.map(col =>
-        // @ts-ignore TODO
+      columns.map((col: IColumn) =>
         !col.sortItems
           ? col
           : {
               ...col,
-              // @ts-ignore TODO
               onColumnClick: this.sortColumn(col.sortItems)
             }
       );
@@ -95,7 +98,6 @@ export class DetailsList extends React.PureComponent<DetailsListProps, {}> {
     return (
       <FabricDetailsList
         {...props}
-        // @ts-ignore TODO
         className={classnames(getClassNames(this.props), className)}
         setKey="set"
         columns={enhancedColumns}

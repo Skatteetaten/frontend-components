@@ -12,15 +12,20 @@ export interface NavigationContentProps
   key: number | string;
   children?: string | JSX.Element;
   /** Som standard brukes a-elementet for å lage lenker. Denne gir mulighet for å lage en egen link implementasjon som omslutter innholdet i NavigationContent */
-  renderContent?: (children: JSX.Element) => JSX.Element;
+  renderContent?: (to: string, children: JSX.Element) => JSX.Element;
 }
 
-type ContentProps = Pick<
+export type ContentProps = Pick<
+  NavigationContentProps,
+  'icon' | 'heading' | 'description' | 'children' | 'to'
+>;
+
+type _InternalContentProps = Pick<
   NavigationContentProps,
   'icon' | 'heading' | 'description' | 'children'
 >;
 
-const Content = (props: ContentProps) => {
+const Content = (props: _InternalContentProps) => {
   return (
     <>
       <Icon iconName={props.icon} />
@@ -60,7 +65,7 @@ const NavigationContent: React.FC<NavigationContentProps> = props => {
   return (
     <li id={id} key={key} className={className}>
       {renderContent ? (
-        renderContent(<Content {...contentProps} />)
+        renderContent(props.to, <Content {...contentProps} />)
       ) : (
         <a href={props.to} {...htmlAttributes}>
           <Content {...contentProps} />

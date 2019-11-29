@@ -28,7 +28,7 @@ export interface MessageBarProps extends IMessageBarProps {
   onClick?: (...args: any[]) => any;
 }
 
-interface MessageBarState {
+interface MessageBarState extends React.HTMLAttributes<HTMLDivElement> {
   hideMessageBar: boolean;
   showMessage: boolean;
 }
@@ -72,10 +72,11 @@ export class MessageBar extends React.PureComponent<
 
   resetDurationMessage = () => {
     const { duration } = this.props;
-    if (duration)
+    if (duration) {
       this.setState({
         showMessage: true
       });
+    }
     setTimeout(() => {
       this.setState({ hideMessageBar: true, showMessage: false });
     }, Number(duration) * 1000);

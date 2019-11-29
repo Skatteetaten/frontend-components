@@ -15,7 +15,7 @@ const fadeIn = keyframes({
 
 function getDefaultBorder(props: CardProps) {
   const palette = getTheme().palette as PaletteProps;
-  if (props.color === Card.WHITE) {
+  if (props.color === Card.Color.WHITE) {
     return {
       border: `3px solid ${palette.skeColor.green}`
     };
@@ -27,23 +27,23 @@ function getDefaultBorder(props: CardProps) {
 function getCardBorder(props: CardProps) {
   const palette = getTheme().palette as PaletteProps;
   switch (props.border) {
-    case Card.YELLOW_BORDER:
+    case Card.Border.YELLOW_BORDER:
       return {
         border: `3px solid ${palette.skeColor.brown}`
       };
-    case Card.GREEN_BORDER:
+    case Card.Border.GREEN_BORDER:
       return {
         border: `3px solid ${palette.skeColor.green}`
       };
-    case Card.RED_BORDER:
+    case Card.Border.RED_BORDER:
       return {
         border: `3px solid ${palette.skeColor.pink}`
       };
-    case Card.GREY_BORDER:
+    case Card.Border.GREY_BORDER:
       return {
         border: `3px solid ${palette.skeColor.grey}`
       };
-    case Card.WHITE_BORDER:
+    case Card.Border.WHITE_BORDER:
       return {
         border: `3px solid ${palette.skeColor.white}`
       };

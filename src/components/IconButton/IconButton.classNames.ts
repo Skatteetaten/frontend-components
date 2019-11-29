@@ -108,7 +108,7 @@ function getIconSize(props: IconButtonProps) {
   }
 }
 
-export var getClassNames = function getClassNames(props: IconButtonProps) {
+export const getClassNames = function getClassNames(props: IconButtonProps) {
   const palette = getTheme().palette as PaletteProps;
   const inset = -4;
   const radius = '0';

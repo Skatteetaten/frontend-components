@@ -11,7 +11,7 @@ export enum CardColor {
   RED = 'lightPink'
 }
 
-enum CardBorder {
+export enum CardBorder {
   GREEN_BORDER = 'green',
   RED_BORDER = 'pink',
   YELLOW_BORDER = 'brown',
@@ -19,7 +19,7 @@ enum CardBorder {
   WHITE_BORDER = 'white'
 }
 
-export interface CardProps {
+export interface CardProps extends React.HTMLAttributes<HTMLDivElement> {
   /** Teksten som vises i kortet */
   title?: string;
   /** Subtittel som vises i kortet */
@@ -33,12 +33,7 @@ export interface CardProps {
   /** Om kortet er utvidet eller ikke */
   isExpanded?: boolean;
   /** Finnes fire bakgrunnfarger: graa, gronn, rod eller beige */
-  color?:
-    | CardColor.BEIGE
-    | CardColor.GREEN
-    | CardColor.BEIGE
-    | CardColor.WHITE
-    | CardColor.RED;
+  color?: CardColor.BEIGE | CardColor.GREEN | CardColor.WHITE | CardColor.RED;
   /** Ramme rundt kortet */
   border?:
     | CardBorder.WHITE_BORDER
@@ -60,6 +55,8 @@ export interface CardProps {
   id?: string;
   /** onClick */
   onClick?: () => void;
+  /** aria-label */
+  ariaLabel?: string;
 }
 
 export interface CardState {
@@ -70,17 +67,8 @@ export interface CardState {
  * @visibleName Card (Innholdskort)
  */
 export default class Card extends React.PureComponent<CardProps, CardState> {
-  static GREY = CardColor.GREY;
-  static GREEN = CardColor.GREEN;
-  static BEIGE = CardColor.BEIGE;
-  static WHITE = CardColor.WHITE;
-  static RED = CardColor.RED;
-
-  static GREEN_BORDER = CardBorder.GREEN_BORDER;
-  static RED_BORDER = CardBorder.RED_BORDER;
-  static YELLOW_BORDER = CardBorder.YELLOW_BORDER;
-  static GREY_BORDER = CardBorder.GREY_BORDER;
-  static WHITE_BORDER = CardBorder.WHITE_BORDER;
+  static Color = CardColor;
+  static Border = CardBorder;
 
   static defaultProps = {
     title: undefined,
@@ -88,7 +76,7 @@ export default class Card extends React.PureComponent<CardProps, CardState> {
     titlesize: 'x-large',
     expand: false,
     isExpanded: true,
-    color: Card.GREY,
+    color: Card.Color.GREY,
     actions: null,
     marginbottom: '2px',
     margin: 'medium',

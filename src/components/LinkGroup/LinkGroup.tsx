@@ -16,20 +16,10 @@ export interface Link extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
 }
 
 export interface LinkGroupProps {
-  /** interface Link extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
-  text: string;
-  path: string;
-  
-  renderContent?: (
-    path: string,
-    text: string,
-    classNames: string,
-    htmlAttributes
-  ) => JSX.Element;
-} */
   links?: Link[];
   className?: string;
 }
+
 const LinkGroup: React.FC<LinkGroupProps> = props => {
   const styles = getClassNames();
   return (

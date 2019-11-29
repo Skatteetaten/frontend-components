@@ -46,7 +46,7 @@ function getHeaderBackgroundStyle(props: DialogProps) {
   }
 }
 
-export var getClassNames = function getClassNames(props: DialogProps) {
+export const getClassNames = function getClassNames(props: DialogProps) {
   const palette = getTheme().palette as PaletteProps;
 
   return mergeStyleSets({
@@ -82,7 +82,10 @@ export var getClassNames = function getClassNames(props: DialogProps) {
         '& .ms-Dialog-title': {
           fontSize: FontSizes.xLarge,
           fontWeight: FontWeights.semibold,
-          padding: props.layoutStyle === 'airy' ? '128px 64px 0 64px' : 20
+          padding:
+            props.layoutStyle === 'airy'
+              ? '128px 64px 0 64px'
+              : '20px 50px 20px 20px'
         },
         '& .ms-Dialog-subText': {
           fontSize: FontSizes.medium

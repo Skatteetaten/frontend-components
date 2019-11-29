@@ -8,7 +8,7 @@ import { MdIcons } from '../utils/icons/';
 import { PaletteProps } from '..';
 
 const errorIcon = "'" + MdIcons.icons.Error + "'";
-export var getClassNames = function getClassNames() {
+export const getClassNames = function getClassNames() {
   const theme = getTheme();
   const { fonts } = theme;
   const palette = theme.palette as PaletteProps;

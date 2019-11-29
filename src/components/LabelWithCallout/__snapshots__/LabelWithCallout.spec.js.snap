@@ -1,0 +1,49 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LabelWithCallout komponent matcher snapshot 1`] = `
+<div
+  className="labelArea-41"
+  id="LabelWithCallout_id"
+>
+  <span
+    className="label-42"
+  >
+    <label
+      className="ms-Label root-46"
+    >
+      Mock Label
+    </label>
+  </span>
+  <span
+    className="labelIconArea-43"
+  >
+    <button
+      aria-label="help"
+      className="ms-Button ms-Button--icon icon-47"
+      data-is-focusable={true}
+      onClick={[Function]}
+      onKeyDown={[Function]}
+      onKeyPress={[Function]}
+      onKeyUp={[Function]}
+      onMouseDown={[Function]}
+      onMouseUp={[Function]}
+      title="Hjelp"
+      type="button"
+    >
+      <span
+        className="ms-Button-flexContainer flexContainer-48"
+        data-automationid="splitbuttonprimary"
+      >
+        <i
+          aria-hidden={true}
+          className="ms-Icon root-33 css-55 ms-Button-icon icon-50"
+          data-icon-name="HelpOutline"
+          role="presentation"
+        >
+          
+        </i>
+      </span>
+    </button>
+  </span>
+</div>
+`;

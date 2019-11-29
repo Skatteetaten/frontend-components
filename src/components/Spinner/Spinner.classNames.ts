@@ -3,7 +3,7 @@ import { getTheme } from '@uifabric/styling';
 import { PaletteProps } from '..';
 import { SpinnerProps } from './Spinner';
 
-export var getClassNames = function getClassNames(props: SpinnerProps) {
+export const getClassNames = function getClassNames(props: SpinnerProps) {
   const palette = getTheme().palette as PaletteProps;
 
   return mergeStyles([

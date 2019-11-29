@@ -25,19 +25,21 @@ import { BrowserRouter, Link as RRLink } from 'react-router-dom';
 <BrowserRouter>
   <NavigationTile>
     <NavigationContent
+      to="/link-one"
       title={'Bedrift'}
       icon={'Company'}
-      renderContent={children => {
-        return <RRLink to={'/link-one'}>{children}</RRLink>;
+      renderContent={(to, children) => {
+        return <RRLink to={to}>{children}</RRLink>;
       }}
     >
       A-melding, særavgift og veiledere som hjelper å rapportere riktig.
     </NavigationContent>
     <NavigationContent
+      to="/linkTo"
       title={'Person'}
       icon={'Person'}
-      renderContent={children => {
-        return <RRLink to={'/linkTo'}>{children}</RRLink>;
+      renderContent={(to, children) => {
+        return <RRLink to={to}>{children}</RRLink>;
       }}
     >
       Skattekort, skattemelding (selvangivelse), skatteoppgjør, tema og fradrag
@@ -57,11 +59,12 @@ import { BrowserRouter, Link as RRLink } from 'react-router-dom';
 const contents = [
   {
     title: 'Person',
+    to: '#navigationtile1',
     icon: 'ArrowForward',
     description:
       'Skattekort, skattemelding (selvangivelse), skatteoppgjør, tema og fradrag som hjelper deg til få riktig skatt.',
-    renderContent: children => {
-      return <RRLink to={'/linkTo'}>{children}</RRLink>;
+    renderContent: (to, children) => {
+      return <RRLink to={to}>{children}</RRLink>;
     }
   },
   {
