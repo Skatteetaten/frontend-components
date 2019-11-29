@@ -43,19 +43,19 @@ describe('NavigationTile komponent', () => {
     const contents = [
       {
         to: '#',
-        title: 'Navigationtile tittel 1',
+        heading: 'Navigationtile tittel 1',
         icon: 'ArrowForward',
         description: 'Navigationtile beskrivelse 1'
       },
       {
         to: '#',
-        title: 'Navigationtile tittel 2',
+        heading: 'Navigationtile tittel 2',
         icon: 'person',
         description: 'Navigationtile beskrivelse 2'
       },
       {
         to: '#',
-        title: 'Navigationtile tittel 3',
+        heading: 'Navigationtile tittel 3',
         icon: 'ArrowForward',
         description: 'Navigationtile beskrivelse 3'
       }
