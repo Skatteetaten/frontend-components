@@ -19,7 +19,7 @@ export const TopStripeLanguageSelector: React.FC = props => {
       onRender={
         options &&
         options.map(item => {
-          if (!selected && item.default) {
+          if (!selected && item.defaultSelected) {
             setSelected(item.language);
           }
           const isSelected = selected === item.language;

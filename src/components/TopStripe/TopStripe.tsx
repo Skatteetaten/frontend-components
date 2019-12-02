@@ -22,18 +22,20 @@ const TopStripe: React.FC<TopStripeProps> = props => {
   const styles = getClassNames();
   const { children, ...rest } = props;
   return (
-    <TopStripeContext.Provider
-      value={{
-        open: open,
-        setOpen: setOpen
-      }}
-    >
-      <ul className={styles.container} {...rest}>
-        {React.Children.map(children, (child, index) => {
-          return <li>{React.cloneElement(child, { index })}</li>;
-        })}
-      </ul>
-    </TopStripeContext.Provider>
+    <div className={styles.topStripe}>
+      <TopStripeContext.Provider
+        value={{
+          open: open,
+          setOpen: setOpen
+        }}
+      >
+        <ul className={styles.topStripeContainer} {...rest}>
+          {React.Children.map(children, (child, index) => {
+            return <li>{React.cloneElement(child, { index })}</li>;
+          })}
+        </ul>
+      </TopStripeContext.Provider>
+    </div>
   );
 };
 export default TopStripe;
