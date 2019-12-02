@@ -55,7 +55,7 @@ function Forside(props) {
       <NavigationTile>
         <NavigationContent
           icon={'hammer'}
-          title={'For utviklere'}
+          heading={'For utviklere'}
           to={'#section-kom-i-gang-for-utviklere'}
           key={'for-utviklere'}
         >
@@ -63,7 +63,7 @@ function Forside(props) {
         </NavigationContent>
         <NavigationContent
           icon={'bookOpen'}
-          title={'For utviklere'}
+          heading={'For utviklere'}
           to={'#section-kom-i-gang-for-designere'}
           key={'for-designere'}
         >
