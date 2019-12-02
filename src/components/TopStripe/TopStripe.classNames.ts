@@ -5,30 +5,18 @@ import { PaletteProps } from '..';
 
 export const getClassNames = () => {
   const palette = getTheme().palette as PaletteProps;
-  // @ts-ignore TODO
   return mergeStyleSets({
-    container: {
-      whiteSpace: 'pre',
-      backgroundColor: palette.skeColor.blackAlt,
-      color: palette.skeColor.white + '!important',
-      height: '30px',
-      fontSize: FontSizes.small,
-      justifyContent: 'flex-end',
-      position: 'relative',
+    topStripeContainer: {
       display: 'flex',
+      justifyContent: 'center',
       alignItems: 'center',
-      paddingRight: '16px',
-      zIndex: 200,
-      listStyleType: 'none',
-      fontFamily:
-        'Arial,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif',
+      backgroundColor: palette.skeColor.black,
+      color: palette.skeColor.white,
+      fontSize: FontSizes.small,
+      height: 30,
       fontWeight: FontWeights.regular,
       selectors: {
-        li: {
-          listStyleType: 'none',
-          margin: 0,
-          padding: 0
-        },
+        li: { listStyleType: 'none' },
         'li:not(:first-child)': {
           marginLeft: 32
         },

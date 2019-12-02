@@ -12,13 +12,13 @@ export interface TopStripeMenuProps extends LinkProps {
 }
 
 export const TopStripeMenu: React.FC<TopStripeMenuProps> = props => {
-  const [selected, setSelected] = React.useState(props.defaultSelected);
+  const [selected, setSelected] = React.useState();
   const styles = getClassNames();
   const { children, onRender, title, index, ...rest } = props;
   return (
     <TopStripeConsumer>
       {({ open, setOpen }) => (
-        <div className={styles.menu} {...rest}>
+        <div {...rest}>
           <ActionButton
             className={styles.menuButton}
             onClick={() => setOpen(index)}
@@ -30,6 +30,13 @@ export const TopStripeMenu: React.FC<TopStripeMenuProps> = props => {
               {onRender
                 ? onRender
                 : React.Children.map(children, (child, index) => {
+                    if (
+                      !selected &&
+                      child.props &&
+                      child.props.defaultSelected
+                    ) {
+                      setSelected(index);
+                    }
                     const isSelected = selected === index;
                     if (React.isValidElement<LinkProps>(child)) {
                       return (

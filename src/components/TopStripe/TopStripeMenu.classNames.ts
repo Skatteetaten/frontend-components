@@ -1,15 +1,11 @@
 import { mergeStyleSets } from '@uifabric/merge-styles';
 import { getTheme } from '@uifabric/styling';
-import { FontSizes } from '../utils/fonts';
-import { PaletteProps } from '..';
+import { FontSizes, FontWeights } from '../utils/fonts';
+import { PaletteProps, skeColor } from '..';
 
 export const getClassNames = () => {
   const palette = getTheme().palette as PaletteProps;
-  // @ts-ignore TODO
   return mergeStyleSets({
-    menu: {
-      position: 'relative'
-    },
     menuButton: {
       selectors: {
         '.ms-Button-label': {
@@ -34,23 +30,22 @@ export const getClassNames = () => {
         }
       }
     },
-    menuButtonButtom: {
-      textAlign: 'center'
-    },
+    menuButtonButtom: {},
+
     dropdownContainer: {
-      position: 'absolute',
-      zIndex: 1000,
-      backgroundColor: 'black',
-      margin: 0,
-      padding: 0,
+      position: 'relative',
+      display: 'flex',
+      justifyContent: 'center',
+      alignItems: 'center',
+      backgroundColor: palette.skeColor.black,
+      color: palette.skeColor.white,
+      fontSize: FontSizes.small,
+      height: 30,
+      fontWeight: FontWeights.regular,
       selectors: {
-        'ul, li': {
-          margin: 0,
-          padding: 0
-        },
+        li: {},
         'li:not(:first-child)': {
-          margin: 0,
-          padding: 0
+          marginLeft: 32
         }
       }
     }
