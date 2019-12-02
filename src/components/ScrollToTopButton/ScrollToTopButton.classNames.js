@@ -86,7 +86,8 @@ export const getClassNames = props => {
       backgroundColor: 'white !important',
       borderRadius: '10px',
       color: color,
-      padding: '2px 15px'
+      padding: '2px 15px',
+      zIndex: 1
     },
     vis: {
       visibility: 'visible',
