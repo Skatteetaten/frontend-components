@@ -1,6 +1,5 @@
 export { default } from './TopStripe';
 export * from './TopStripeZoom';
 export * from './TopStripeMenu';
-export * from './TopStripeMenuItem';
-export * from './TopStripeMenuLink';
+export * from './TopStripeLanguageSelector';
 export * from './TopStripe';

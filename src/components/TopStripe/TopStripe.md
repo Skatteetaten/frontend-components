@@ -5,24 +5,30 @@ Standard bruk på skatteetaten.no:
 ```js
 import TopStripe, {
   TopStripeMenu,
-  TopStripeMenuItem,
-  TopStripeMenuLink
+  TopStripeZoom,
+  TopStripeLanguageSelector
 } from '@skatteetaten/frontend-components/TopStripe';
 import TopBanner from '@skatteetaten/frontend-components/TopBanner';
 import Link from '@skatteetaten/frontend-components/Link';
-import Button from '@skatteetaten/frontend-components/Button';
 
 <div>
   <TopStripe>
-    <TopStripeMenu defaultSelected={1}>
+    <TopStripeZoom />
+    <TopStripeLanguageSelector
+      options={[
+        {
+          language: 'Norsk',
+          onClick: () => console.log('NORSK'),
+          default: true
+        },
+        { language: 'Engelsk', onClick: () => console.log('Engelsk') }
+      ]}
+    />
+    <TopStripeMenu title={'En rar meny'} defaultSelected={1}>
       <Link
         color={'white'}
         path={'#link'}
         text={'Kontakt oss'}
-        onClick={() => console.log('KOKO')}
-        renderContent={() => {
-          return <div>kake</div>;
-        }}
         placement="before"
       />
       <Link
@@ -34,7 +40,6 @@ import Button from '@skatteetaten/frontend-components/Button';
       <Link
         color={'white'}
         path={'#topstripe'}
-        onClick={() => console.log('KOKO')}
         text={'Kontakt oss'}
         placement="before"
       />
