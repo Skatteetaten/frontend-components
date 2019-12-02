@@ -33,8 +33,7 @@ import { Link as RRLink, BrowserRouter as Router } from 'react-router-dom';
         renderContent={classNames => {
           return (
             <RRLink to="/" className={classNames}>
-              Egendefinert lenkeimplementasjon. Eksempel gitt ved bruk av
-              react-router
+              Egendefinert lenke
             </RRLink>
           );
         }}
@@ -45,27 +44,30 @@ import { Link as RRLink, BrowserRouter as Router } from 'react-router-dom';
 ```
 
 ```js noeditor beskrivelse
-   <p>Link kan brukes til å lenke til filer eller nettsider.</p>
-    <p>
-      Standarden vi bruker i tekst er blå skrift og understrekning. Hvis
-      bakgrunnen krever en annen farge enn blå for å være leselig og oppfylle
-      kontrastkravet, brukes en annen farge; for eksempel hvit på svart bakgrunn
-      som i innlogget header eller hvit på burgunder i footer.
-    </p>
+<h3>Link eller knapp</h3>
+   <p>Link brukes til å lenke til filer eller nettsider. Når brukeren klikker på lenken hentes enten filen eller nettsiden frem.</p>
+   <p>Har du derimot en handling som påvirker siden du er på, for eksempel «Lagre» eller «Send inn», bør du normalt bruke en knapp i stedet.</p>
 
     <p>
-      Se{' '}
+      Se også {' '}
       <a href="https://www.skatteetaten.no/stilogtone/produkt/skatteetatenno/lenker/">
         Skatteetatens skriveregler
       </a>{' '}
-      for hjelp til å lage gode lenker.
+      for hjelp til å lage gode lenketekster.
     </p>
 ```
 
 ```js noeditor uu
-<ul>
-  <li>
+  <h3>Visuelle markeringer</h3>
+  <p>
     Alle lenker skal ha minst 2 ulike markeringer for å vise at det er lenke.
-  </li>
-</ul>
+  </p>
+  <h3>Lesekontrast</h3>
+  <p>
+    Standarden vi bruker i tekst er blå skrift og understrekning. Hvis
+    bakgrunnen krever en annen farge enn blå for å være leselig og oppfylle
+    kontrastkravet, brukes en annen farge; for eksempel hvit på svart bakgrunn
+    som i innlogget header eller hvit på burgunder i footer.
+  </p>
+
 ```
