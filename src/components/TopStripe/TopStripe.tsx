@@ -31,7 +31,7 @@ const TopStripe: React.FC<TopStripeProps> = props => {
         }}
       >
         <ul className={styles.topStripeContainer} {...rest}>
-          {React.Children.map(children, (child, index) => {
+          {React.Children.map(children, (child: any, index) => {
             return <li>{React.cloneElement(child, { index })}</li>;
           })}
         </ul>

@@ -27,7 +27,7 @@ const Link: React.FC<LinkProps> = props => {
   const styles = getClassNames();
   return (
     <span className={classnames(styles.linkContainer, props.className)}>
-      {props.placement === 'before' && (
+      {props.placement === 'before' && props.icon && (
         <Icon
           iconName={props.icon}
           className={styles.icon}
@@ -46,7 +46,7 @@ const Link: React.FC<LinkProps> = props => {
         </a>
       )}
 
-      {props.placement === 'after' && (
+      {props.placement === 'after' && props.icon && (
         <Icon
           iconName={props.icon}
           className={styles.icon}
