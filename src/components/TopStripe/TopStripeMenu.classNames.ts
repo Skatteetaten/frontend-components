@@ -1,8 +1,7 @@
 import { mergeStyleSets } from '@uifabric/merge-styles';
 import { getTheme } from '@uifabric/styling';
-import { FontSizes, FontWeights } from '../utils/fonts';
+import { FontSizes } from '../utils/fonts';
 import { PaletteProps } from '..';
-import React from 'react';
 
 export const getClassNames = () => {
   const palette = getTheme().palette as PaletteProps;
@@ -34,6 +33,9 @@ export const getClassNames = () => {
           transition: 'none'
         }
       }
+    },
+    menuButtonButtom: {
+      textAlign: 'center'
     },
     dropdownContainer: {
       position: 'absolute',
