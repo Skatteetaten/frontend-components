@@ -33,19 +33,25 @@ const initialState = {
   Sjekk at den røde teksten plasseres på en flate som gir tilstrekkelig god
   lesekontrast.
 </p>
+<p>
+  Feilmeldingen skal vises i umiddelbar nærhet til elementet den hører til.
+</p>
 ```
 
 ```js noeditor beskrivelse
+<h3>Generell feilmelding</h3>
   <p>
     Dersom komponentene ikke har noen innebygget mekanisme for feilmeldinger,
-    kan ErrorMessage brukes for å vise feilmeldinger knyttet til et mindre
+    kan ErrorMessage brukes for å vise feilmeldinger knyttet til et annet
     element. Typiske situasjoner er felt eller knapper i skjemaer.
     Feilmeldingen skal vises i umiddelbar nærhet til elementet den hører til.
   </p>
+    <p>For feil eller varsler som gjelder hele siden, bruk MessageBar.</p>
+
+  <h3>Teksten i feilmeldingen</h3>
   <p>
     Teksten i feilmeldingen bør hjelpe brukeren å komme videre, fremfor å peke
     på hva han/hun har gjort feil. Du kan for eksempel skrive: "Skriv datoen
     slik: 17.05.2019" i stedet for "Du har brukt feil datoformat."
   </p>
-  <p>For feil eller varsler som gjelder hele siden, bruk MessageBar.</p>
 ```
