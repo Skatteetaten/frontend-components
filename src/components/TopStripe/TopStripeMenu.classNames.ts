@@ -30,22 +30,25 @@ export const getClassNames = () => {
         }
       }
     },
-    menuButtonButtom: {},
+    menuButtonButtom: {
+      alignContent: 'center'
+    },
 
     dropdownContainer: {
-      position: 'relative',
-      display: 'flex',
-      justifyContent: 'center',
-      alignItems: 'center',
+      position: 'absolute',
       backgroundColor: palette.skeColor.black,
       color: palette.skeColor.white,
       fontSize: FontSizes.small,
-      height: 30,
       fontWeight: FontWeights.regular,
+      margin: 0,
+      padding: 0,
+      zIndex: 1,
       selectors: {
-        li: {},
+        li: {
+          display: 'block'
+        },
         'li:not(:first-child)': {
-          marginLeft: 32
+          margin: 0
         }
       }
     }

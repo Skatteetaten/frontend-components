@@ -3,33 +3,6 @@
 Standard bruk på skatteetaten.no:
 
 ```js
-import { TopStripeMenu } from '@skatteetaten/frontend-components/TopStripe';
-import Link from '@skatteetaten/frontend-components/Link';
-
-<TopStripeMenu title={'En rar meny'}>
-  <Link
-    color={'white'}
-    path={'#link'}
-    text={'Kontakt oss'}
-    placement="before"
-  />
-  <Link
-    color={'white'}
-    icon={'ArrowForward'}
-    text={'Kontakt oss'}
-    placement="before"
-    defaultSelected={true}
-  />
-  <Link
-    color={'white'}
-    path={'#topstripe'}
-    text={'Kontakt oss'}
-    placement="before"
-  />
-</TopStripeMenu>;
-```
-
-```js
 import TopStripe, {
   TopStripeMenu,
   TopStripeZoom,
