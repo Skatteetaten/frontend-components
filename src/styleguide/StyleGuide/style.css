@@ -55,6 +55,30 @@
   display: grid;
 }
 
+.dodont {
+  display: flex;
+}
+
+.dodont p {
+  font-weight: 600;
+}
+
+.do {
+  display: block;
+  width: 45%;
+  border: 2px solid #91d6ac;
+  padding: 8px 24px 24px 24px;
+  margin-right: 16px;
+}
+
+.dont {
+  display: block;
+  width: 45%;
+  border: 2px solid #b25c62;
+  padding: 8px 24px 24px 24px;
+  margin-right: 16px;
+}
+
 q {
   font-style: italic;
   font-size: 36px;
