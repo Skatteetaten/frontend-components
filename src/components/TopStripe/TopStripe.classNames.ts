@@ -8,7 +8,7 @@ export const getClassNames = () => {
   return mergeStyleSets({
     topStripeContainer: {
       display: 'flex',
-      justifyContent: 'center',
+      justifyContent: 'flex-end',
       alignItems: 'center',
       backgroundColor: palette.skeColor.black,
       color: palette.skeColor.white,
@@ -16,10 +16,7 @@ export const getClassNames = () => {
       height: 30,
       fontWeight: FontWeights.regular,
       selectors: {
-        li: { listStyleType: 'none' },
-        'li:not(:first-child)': {
-          marginLeft: 32
-        },
+        li: { listStyleType: 'none', padding: 20 },
         'a,i': {
           fontWeight: FontWeights.regular,
           borderWidth: 2,
@@ -35,6 +32,10 @@ export const getClassNames = () => {
           borderColor: palette.skeColor.white,
           backgroundColor: palette.skeColor.lightBlue,
           outline: 'none'
+        },
+        'a:active,a:active i': {
+          color: palette.skeColor.black,
+          backgroundColor: palette.skeColor.white
         },
         '@media (min-width: 900px)': {
           height: '40px',

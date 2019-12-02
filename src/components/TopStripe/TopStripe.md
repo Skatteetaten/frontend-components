@@ -5,25 +5,40 @@ Standard bruk på skatteetaten.no:
 ```js
 import TopStripe, {
   TopStripeMenu,
-  TopStripeZoom,
-  TopStripeLanguageSelector
+  TopStripeButton
 } from '@skatteetaten/frontend-components/TopStripe';
 import TopBanner from '@skatteetaten/frontend-components/TopBanner';
 import Link from '@skatteetaten/frontend-components/Link';
 
 <div>
   <TopStripe>
-    <TopStripeZoom />
-    <TopStripeLanguageSelector
-      options={[
-        {
-          language: 'Norsk',
-          onClick: () => console.log('NORSK'),
-          defaultSelected: true
-        },
-        { language: 'Engelsk', onClick: () => console.log('Engelsk') }
-      ]}
-    />
+    <TopStripeMenu title={'SpråkValg'}>
+      <TopStripeButton
+        ariaLabel={'legg-til'}
+        onClick={() => console.log('NORSK')}
+      >
+        Norsk
+      </TopStripeButton>
+      <TopStripeButton
+        icon={'check'}
+        ariaLabel={'legg-til'}
+        onClick={() => console.log('NORSK')}
+      >
+        Engelsk
+      </TopStripeButton>
+      <TopStripeButton
+        ariaLabel={'legg-til'}
+        onClick={() => console.log('NORSK')}
+      >
+        Fransk
+      </TopStripeButton>
+      <TopStripeButton
+        ariaLabel={'legg-til'}
+        onClick={() => console.log('NORSK')}
+      >
+        Norsk
+      </TopStripeButton>
+    </TopStripeMenu>
     <TopStripeMenu title={'En rar meny'}>
       <Link
         color={'white'}
@@ -36,7 +51,6 @@ import Link from '@skatteetaten/frontend-components/Link';
         icon={'ArrowForward'}
         text={'Kontakt oss'}
         placement="before"
-        defaultSelected={true}
       />
       <Link
         color={'white'}

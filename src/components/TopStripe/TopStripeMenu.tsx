@@ -1,9 +1,11 @@
 import React from 'react';
-import ActionButton from 'components/ActionButton';
+import ActionButton, { ActionButtonProps } from 'components/ActionButton';
 import { getClassNames } from './TopStripeMenu.classNames';
 import { LinkProps } from '../Link';
 import { TopStripeContext } from './TopStripe';
 import classnames from 'classnames';
+import { TopStripeButtonProps } from './TopStripeButton';
+import Icon from '../Icon';
 export interface TopStripeMenuProps extends LinkProps {
   defaultSelected?: number;
   onRender?: any;
@@ -12,14 +14,14 @@ export interface TopStripeMenuProps extends LinkProps {
 }
 
 export const TopStripeMenu: React.FC<TopStripeMenuProps> = props => {
-  const [selected, setSelected] = React.useState();
   const styles = getClassNames();
   const { children, onRender, title, index, ...rest } = props;
   const { open, setOpen } = React.useContext(TopStripeContext);
+  console.log(open);
   return (
     <div {...rest}>
       <ActionButton
-        className={styles.menuButton}
+        className={open === index ? styles.menuButtonActive : styles.menuButton}
         onClick={() => setOpen(index)}
       >
         {title}
@@ -29,18 +31,20 @@ export const TopStripeMenu: React.FC<TopStripeMenuProps> = props => {
           {onRender
             ? onRender
             : React.Children.map(children, (child, index) => {
-                if (!selected && child.props && child.props.defaultSelected) {
-                  setSelected(index);
-                }
-                const isSelected = selected === index;
                 if (React.isValidElement<LinkProps>(child)) {
                   return (
-                    <li onClick={() => setSelected(index)}>
+                    <li className={styles.dropDownLink}>
+                      <Icon
+                        iconName={child.props.icon || undefined}
+                        className={styles.icon}
+                      />
                       {React.cloneElement(child, {
-                        icon: isSelected ? 'Check' : undefined
+                        icon: undefined
                       })}
                     </li>
                   );
+                } else {
+                  return <li className={styles.dropDownLink}>{children}</li>;
                 }
               })}
           <li>
