@@ -3,12 +3,13 @@ import { getClassNames } from './TopStripe.classNames';
 
 interface TopStripeProps {
   children?: JSX.Element;
-  open?: () => void;
+  open?: number;
   setOpen?: any;
 }
 
-const TopStripeContext = React.createContext<TopStripeProps>({});
-export const TopStripeConsumer = TopStripeContext.Consumer;
+export const TopStripeContext = React.createContext<TopStripeProps>({
+  open: -1
+});
 
 const TopStripe: React.FC<TopStripeProps> = props => {
   const [open, setOpenIndex] = React.useState();
