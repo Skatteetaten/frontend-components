@@ -1,12 +1,8 @@
 import React from 'react';
-import Icon from '../Icon';
-
-export interface TopStripeButtonProps {}
+export interface TopStripeButtonProps {
+  style: string;
+}
 
 export const TopStripeButton: React.FC<TopStripeButtonProps> = props => {
-  return (
-    <>
-      <button>{props.children}</button>
-    </>
-  );
+  return <button className={props.style}>{props.children}</button>;
 };

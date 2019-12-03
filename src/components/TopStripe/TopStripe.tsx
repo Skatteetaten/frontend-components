@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { getClassNames } from './TopStripe.classNames';
 import classnames from 'classnames';
+import { TopStripeButton } from './TopStripeButton';
 
 interface TopStripeProps {
   children?: JSX.Element;
@@ -24,7 +25,6 @@ const TopStripe: React.FC<TopStripeProps> = props => {
   };
   const styles = getClassNames();
   const { children, ...rest } = props;
-  console.log(open);
   const showOverlay = open !== notOpen ? styles.overlayShow : '';
   return (
     <>
@@ -37,7 +37,15 @@ const TopStripe: React.FC<TopStripeProps> = props => {
       >
         <ul className={styles.topStripeContainer} {...rest}>
           {React.Children.map(children, (child: any, index) => {
-            return <li>{React.cloneElement(child, { index })}</li>;
+            if (child.type === TopStripeButton) {
+              return (
+                <li>
+                  {React.cloneElement(child, { style: styles.plainButton })}
+                </li>
+              );
+            } else {
+              return <li>{React.cloneElement(child, { index })}</li>;
+            }
           })}
         </ul>
       </TopStripeContext.Provider>

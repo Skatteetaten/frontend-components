@@ -77,15 +77,20 @@ export const getClassNames = () => {
       position: 'absolute',
       left: 0
     },
-    menuButtonButtom: {
+    menuCloseButton: {
       display: 'block',
-      margin: 'auto'
-    },
-    menuButtonButtomActive: {
-      color: palette.skeColor.black
+      margin: '0 auto',
+      selectors: {
+        i: {
+          color: palette.skeColor.white + '!important'
+        },
+        'i:hover': {
+          backgroundColor: palette.skeColor.white,
+          color: palette.skeColor.black + '!important'
+        }
+      }
     },
     dropdownContainer: {
-      zIndex: 3,
       position: 'absolute',
       backgroundColor: palette.skeColor.black,
       color: palette.skeColor.white,
@@ -95,11 +100,11 @@ export const getClassNames = () => {
       paddingInlineStart: 40,
       paddingInlineEnd: 40,
       selectors: {
-        li: {
-          display: 'block'
-        },
-        'li:hover': {
+        'li:hover:not(:last-child)': {
           backgroundColor: 'white',
+          color: 'black'
+        },
+        'li:hover a': {
           color: 'black'
         },
         'a,i': { borderWidth: 0 }
