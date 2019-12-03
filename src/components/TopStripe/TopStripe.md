@@ -12,6 +12,10 @@ import Link from '@skatteetaten/frontend-components/Link';
 
 <div>
   <TopStripe>
+    <TopStripeMenu title={'Endre skriftstørrelse'}>
+      Hold Ctrl-tasten nede (Cmd-tasten på Mac). Trykk på + for å forstørre
+      eller - for å forminske.
+    </TopStripeMenu>
     <TopStripeMenu title={'SpråkValg'}>
       <TopStripeButton
         ariaLabel={'legg-til'}

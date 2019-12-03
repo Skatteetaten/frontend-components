@@ -1,10 +1,9 @@
 import React from 'react';
-import ActionButton, { ActionButtonProps } from 'components/ActionButton';
+import ActionButton from 'components/ActionButton';
 import { getClassNames } from './TopStripeMenu.classNames';
 import { LinkProps } from '../Link';
 import { TopStripeContext } from './TopStripe';
 import classnames from 'classnames';
-import { TopStripeButtonProps } from './TopStripeButton';
 import Icon from '../Icon';
 export interface TopStripeMenuProps extends LinkProps {
   defaultSelected?: number;
@@ -15,11 +14,11 @@ export interface TopStripeMenuProps extends LinkProps {
 
 export const TopStripeMenu: React.FC<TopStripeMenuProps> = props => {
   const styles = getClassNames();
-  const { children, onRender, title, index, ...rest } = props;
+  const { children, onRender, title, index } = props;
   const { open, setOpen } = React.useContext(TopStripeContext);
-  console.log(open);
+
   return (
-    <div {...rest}>
+    <>
       <ActionButton
         className={open === index ? styles.menuButtonActive : styles.menuButton}
         onClick={() => setOpen(index)}
@@ -56,6 +55,6 @@ export const TopStripeMenu: React.FC<TopStripeMenuProps> = props => {
           </li>
         </ul>
       )}
-    </div>
+    </>
   );
 };

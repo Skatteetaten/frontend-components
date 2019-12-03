@@ -6,7 +6,23 @@ import { PaletteProps } from '..';
 export const getClassNames = () => {
   const palette = getTheme().palette as PaletteProps;
   return mergeStyleSets({
+    overlay: {
+      position: 'fixed',
+      top: 0,
+      right: 0,
+      left: 0,
+      bottom: 0,
+      zIndex: 1,
+      minHeight: '200px',
+      backgroundColor: 'rgba(255, 255, 255, 0.8)',
+      transition: '0.3s ease-out',
+      display: 'none'
+    },
+    overlayShow: {
+      display: 'block'
+    },
     topStripeContainer: {
+      zIndex: 2,
       display: 'flex',
       justifyContent: 'flex-end',
       alignItems: 'center',
