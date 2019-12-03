@@ -3,7 +3,6 @@ import ActionButton from 'components/ActionButton';
 import { getClassNames } from './TopStripeMenu.classNames';
 import { LinkProps } from '../Link';
 import { TopStripeContext } from './TopStripe';
-import classnames from 'classnames';
 import Icon from '../Icon';
 export interface TopStripeMenuProps extends LinkProps {
   defaultSelected?: number;
@@ -16,7 +15,6 @@ export const TopStripeMenu: React.FC<TopStripeMenuProps> = props => {
   const styles = getClassNames();
   const { children, onRender, title, index } = props;
   const { open, setOpen } = React.useContext(TopStripeContext);
-
   return (
     <>
       <ActionButton
@@ -48,7 +46,7 @@ export const TopStripeMenu: React.FC<TopStripeMenuProps> = props => {
               })}
           <li>
             <ActionButton
-              className={classnames(styles.menuButton, styles.menuButtonButtom)}
+              className={styles.menuCloseButton}
               icon={'ChevronUp'}
               onClick={() => setOpen(index)}
             />
