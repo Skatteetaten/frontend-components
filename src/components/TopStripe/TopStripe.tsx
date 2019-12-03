@@ -5,7 +5,9 @@ import { TopStripeButton } from './TopStripeButton';
 
 interface TopStripeProps {
   children?: JSX.Element;
+  /** @ignore */
   open?: number;
+  /** @ignore */
   setOpen?: any;
 }
 

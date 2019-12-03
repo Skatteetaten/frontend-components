@@ -10,7 +10,6 @@ import TopStripe, {
 import TopBanner from '@skatteetaten/frontend-components/TopBanner';
 import Link from '@skatteetaten/frontend-components/Link';
 import Button from '@skatteetaten/frontend-components/Button';
-
 <div>
   <TopStripe>
     <TopStripeButton
@@ -46,6 +45,7 @@ import Button from '@skatteetaten/frontend-components/Button';
     </TopStripeMenu>
     <TopStripeMenu title={'En rar meny'}>
       <Button> Hei </Button>
+
       <Link path={'#link'} text={'abc'} placement="before" />
       <Link
         path={'#link'}

@@ -86,13 +86,13 @@ export const getClassNames = () => {
         },
         'i:hover': {
           backgroundColor: palette.skeColor.white,
-          color: palette.skeColor.black + '!important'
+          color: palette.skeColor.blackAlt + '!important'
         }
       }
     },
     dropdownContainer: {
       position: 'absolute',
-      backgroundColor: palette.skeColor.black,
+      backgroundColor: palette.skeColor.blackAlt,
       color: palette.skeColor.white,
       fontSize: FontSizes.small,
       fontWeight: FontWeights.regular,

@@ -4,5 +4,9 @@ export interface TopStripeButtonProps {
 }
 
 export const TopStripeButton: React.FC<TopStripeButtonProps> = props => {
-  return <button className={props.style}>{props.children}</button>;
+  return (
+    <button className={props.style} style={{ cursor: 'pointer' }}>
+      {props.children}
+    </button>
+  );
 };
