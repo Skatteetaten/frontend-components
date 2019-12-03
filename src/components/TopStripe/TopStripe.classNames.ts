@@ -42,12 +42,12 @@ export const getClassNames = () => {
       }
     },
     topStripeContainer: {
-      zIndex: 110,
+      zIndex: 150,
       position: 'relative',
       display: 'flex',
       justifyContent: 'flex-end',
       alignItems: 'center',
-      backgroundColor: palette.skeColor.black,
+      backgroundColor: palette.skeColor.blackAlt,
       color: palette.skeColor.white,
       fontSize: FontSizes.small,
       height: 30,
@@ -71,7 +71,7 @@ export const getClassNames = () => {
           outline: 'none'
         },
         'a:active,a:active i': {
-          color: palette.skeColor.black,
+          color: palette.skeColor.blackAlt,
           backgroundColor: palette.skeColor.white
         },
         '@media (min-width: 900px)': {
