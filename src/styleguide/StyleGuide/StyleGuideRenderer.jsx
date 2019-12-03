@@ -3,6 +3,7 @@ import { withRouter } from 'react-router';
 import TopBanner from '../../components/TopBanner';
 import FooterContent from '../../components/FooterContent';
 import Grid from '../../components/Grid';
+import Link from '../../components/Link';
 import ActionButton from '../../components/ActionButton';
 import { getClassNames } from './classNames';
 import React from 'react';
@@ -60,7 +61,12 @@ export class StyleGuideRenderer extends React.Component<> {
               className="banner"
             >
               <div className="slogan">
-                Språk, design og utvikling i Skatteetaten
+                <Link
+                  path={'https://www.skatteetaten.no/stilogtone/'}
+                  text={'Språk, design og utvikling i Skatteetaten'}
+                  icon={'ArrowBack'}
+                  placement="before"
+                />
               </div>
               <ul className="navigation">
                 <li>
