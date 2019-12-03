@@ -85,6 +85,7 @@ export const getClassNames = () => {
       color: palette.skeColor.black
     },
     dropdownContainer: {
+      zIndex: 3,
       position: 'absolute',
       backgroundColor: palette.skeColor.black,
       color: palette.skeColor.white,
@@ -93,7 +94,6 @@ export const getClassNames = () => {
       margin: 0,
       paddingInlineStart: 40,
       paddingInlineEnd: 40,
-      zIndex: 1,
       selectors: {
         li: {
           display: 'block'
