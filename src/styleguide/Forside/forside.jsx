@@ -12,7 +12,7 @@ function Forside(props) {
         <Grid>
           <Grid.Row>
             <Grid.Col lg={1} />
-            <Grid.Col hiddenMdDown lg={1}>
+            <Grid.Col hiddenLgDown lg={1}>
               <Icon
                 iconName="Forum"
                 ariaLabel="Ikon med snakkebobler"
@@ -23,7 +23,7 @@ function Forside(props) {
                 }}
               />
             </Grid.Col>
-            <Grid.Col lg={8}>
+            <Grid.Col lg={9}>
               <p
                 style={{
                   marginBottom: '10px',
@@ -48,7 +48,7 @@ function Forside(props) {
                 – utvikler i Skatteetaten
               </p>
             </Grid.Col>
-            <Grid.Col lg={2} />
+            <Grid.Col sm={1} lg={2} />
           </Grid.Row>
         </Grid>
       </Card>

@@ -4,6 +4,7 @@ import Styled from 'react-styleguidist/lib/client/rsg-components/Styled';
 import Tabs from '../../components/Tabs';
 import TabItem from '../../components/Tabs/TabItem';
 import Examples from 'react-styleguidist/lib/client/rsg-components/Examples';
+import { UseScreen } from '../../components/utils/ScreenPlugin';
 
 const styles = ({ color, fontSize, space }) => ({
   root: {
@@ -54,6 +55,8 @@ export function ReactComponentRenderer({
     item => item.settings && item.settings.uu
   );
 
+  const size = UseScreen();
+
   return (
     <div className={classes.root} data-testid={`${name}-container`}>
       <header className={classes.header}>
@@ -75,7 +78,10 @@ export function ReactComponentRenderer({
           </TabItem>
         )}
         {exampleDescription.length > 0 && (
-          <TabItem headerText="Bruk og innhold" itemKey="usage">
+          <TabItem
+            headerText={size.gt.md ? 'Bruk og innhold' : 'Bruk'}
+            itemKey="usage"
+          >
             <div style={{ marginTop: '16px' }}>
               <Examples
                 examples={exampleDescription}
@@ -86,7 +92,10 @@ export function ReactComponentRenderer({
           </TabItem>
         )}
         {exampleAccessibility.length > 0 && (
-          <TabItem headerText="Universell utforming" itemKey="accessibility">
+          <TabItem
+            headerText={size.gt.md ? 'Universell utforming' : 'UU'}
+            itemKey="accessibility"
+          >
             <div style={{ marginTop: '16px' }}>
               <Examples
                 examples={exampleAccessibility}

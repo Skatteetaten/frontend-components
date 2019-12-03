@@ -246,3 +246,40 @@ ul.navigation li:hover {
 ul.navigation li.underline {
   border-bottom: 6px solid #6f2c3f;
 }
+
+@media (max-width: 1024px) {
+  ul.navigation {
+    list-style-type: none;
+    margin-left: -40px;
+  }
+
+  ul.navigation li {
+    list-style-type: none;
+    display: block;
+    margin-bottom: 0px;
+    margin-right: 30px;
+    line-height: 30px;
+    word-break: keep-all;
+    padding-top: 3px;
+    border-bottom: 1px solid #cccccc;
+  }
+
+  ul.navigation a {
+    text-decoration: none;
+    font-weight: 400;
+    color: #1d1d1d;
+    font-size: 18px;
+  }
+
+  ul.navigation li:hover {
+    transition: 0.15s;
+    text-decoration: underline;
+    padding-top: 3px;
+    border-bottom: 1px solid #cccccc;
+  }
+
+  ul.navigation li.underline {
+    border-bottom: 2px solid #6f2c3f;
+    font-weight: 700;
+  }
+}
