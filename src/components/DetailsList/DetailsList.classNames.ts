@@ -87,8 +87,8 @@ export const getClassNames = (props: DetailsListProps) => {
       '.ms-GroupHeader .ms-GroupHeader-expand': {
         width: 20,
         height: 20,
-        color: palette.blue,
-        border: '2px solid ' + palette.blue,
+        color: palette.skeColor.blue,
+        border: '2px solid ' + palette.skeColor.blue,
         borderRadius: '50%',
         position: 'relative',
         margin: 9
@@ -185,7 +185,7 @@ export const getClassNames = (props: DetailsListProps) => {
             height: 20
           },
           '.ms-Check.is-checked:before': {
-            background: palette.blue
+            background: palette.skeColor.blue
           },
           '.ms-Check-circle': {
             fontFamily: 'none',
