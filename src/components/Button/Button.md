@@ -69,17 +69,17 @@ import ErrorMessage from '@skatteetaten/frontend-components/ErrorMessage';
     Etterstreb å bruke samme type Button i løsningen for å sikre konsistens.
   </p>
   <div className="dodont">
-    <div className="dont">
-      <p>Ikke gjør slik:</p>
-      <Button buttonStyle="primary">Send inn</Button>
-      <Button>Avbryt</Button>
-    </div>
     <div className="do">
       <p>Gjør slik:</p>
       <Button buttonStyle="primary">Send inn</Button>
       <Button buttonStyle="secondary">Avbryt</Button>
       <p>Eller slik:</p>
       <Button buttonStyle="primaryRoundedFilled">Send inn</Button>
+      <Button>Avbryt</Button>
+    </div>
+    <div className="dont">
+      <p>Ikke gjør slik:</p>
+      <Button buttonStyle="primary">Send inn</Button>
       <Button>Avbryt</Button>
     </div>
   </div>
@@ -103,16 +103,16 @@ import ErrorMessage from '@skatteetaten/frontend-components/ErrorMessage';
     vise fornuftige feilmeldinger når den klikkes på.
   </p>
   <div className="dodont">
+    <div className="do">
+      <p>Gjør slik:</p>
+      <Button buttonStyle="primary">Send inn</Button>
+      <ErrorMessage>Du må bekrefte beløpet før du kan sende inn</ErrorMessage>
+    </div>
     <div className="dont">
       <p>Ikke gjør slik:</p>
       <Button disabled buttonStyle="primary">
         Send inn
       </Button>
-    </div>
-    <div className="do">
-      <p>Gjør slik:</p>
-      <Button buttonStyle="primary">Send inn</Button>
-      <ErrorMessage>Du må bekrefte beløpet for du kan sende inn</ErrorMessage>
     </div>
   </div>
 </div>;

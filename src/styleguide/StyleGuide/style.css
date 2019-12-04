@@ -57,26 +57,34 @@
 
 .dodont {
   display: flex;
+  flex-wrap: wrap;
 }
 
 .dodont p {
   font-weight: 600;
+  font-size: 18px;
 }
 
 .do {
   display: block;
-  width: 45%;
+  min-width: 300px;
   border: 2px solid #91d6ac;
-  padding: 8px 24px 24px 24px;
+  border-top: 8px solid #91d6ac;
+  padding: 0px 16px 24px 16px;
   margin-right: 16px;
+  margin-bottom: 16px;
+  flex-grow: 1;
 }
 
 .dont {
   display: block;
-  width: 45%;
+  min-width: 300px;
   border: 2px solid #b25c62;
-  padding: 8px 24px 24px 24px;
+  border-top: 8px solid #b25c62;
+  padding: 0px 16px 24px 16px;
   margin-right: 16px;
+  margin-bottom: 16px;
+  flex-grow: 1;
 }
 
 q {
