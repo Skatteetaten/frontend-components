@@ -11,7 +11,7 @@ function getFieldTypeStyles(props: TextFieldProps) {
     return {
       '.ms-TextField-fieldGroup': {
         borderWidth: 2,
-        height: 42
+        minHeight: 42
       },
       '& .ms-TextField-field': {
         fontSize: FontSizes.large
