@@ -26,7 +26,7 @@ export const getClassNames = () => {
       background: 'inherit',
       border: 'inherit',
       borderWidth: 2,
-      borderBottom: '2px solid rgba(255, 255, 255, 0.5)',
+      borderBottom: '2px solid rgba(255, 255, 255, 0.3)',
       color: palette.skeColor.white,
       textDecoration: 'none !important',
       transition: 'none',
@@ -52,8 +52,9 @@ export const getClassNames = () => {
       fontSize: FontSizes.small,
       height: 30,
       fontWeight: FontWeights.regular,
+      padding: '0 8px',
       selectors: {
-        li: { listStyleType: 'none', padding: 20 },
+        li: { listStyleType: 'none', padding: 16 },
         'a,i': {
           fontWeight: FontWeights.regular,
           borderWidth: 2,

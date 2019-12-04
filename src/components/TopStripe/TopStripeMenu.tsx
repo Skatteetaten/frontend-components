@@ -4,6 +4,7 @@ import { getClassNames } from './TopStripeMenu.classNames';
 import { LinkProps } from '../Link';
 import { TopStripeContext } from './TopStripe';
 import Icon from '../Icon';
+
 export interface TopStripeMenuProps extends LinkProps {
   defaultSelected?: number;
   onRender?: any;
