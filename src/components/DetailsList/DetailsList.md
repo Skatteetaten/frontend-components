@@ -562,68 +562,39 @@ function chooseRow() {
     columns={state.columns}
     items={state.items}
     selectionMode={DetailsList.SelectionMode.single}
-    checkboxVisibility={DetailsList.CheckboxVisibility.always}
+    checkboxVisibility={DetailsList.CheckBoxVisibility.always}
   />
 </div>;
 ```
 
-```js noeditor
-import Accordion from '@skatteetaten/frontend-components/Accordion';
-import AccordionItem from '@skatteetaten/frontend-components/Accordion/AccordionItem';
+```js noeditor uu
+<ul>
+  <li>Ikke bruk listen til å vise kommandoer eller innstillinger.</li>
+  <li>Ikke ha for mye data slik at brukeren på scrolle horisontalt.</li>
+  <li>
+    Listen bør ha en vilkårlig størrelse slik at informasjonen ikke blir trykt
+    sammen og uoversiktelig.
+  </li>
+  <li>
+    Sørg for at listen har fokusmarkering slik at brukere med skjermleser kan
+    tabbe seg igjennom listen.
+  </li>
+</ul>
+```
 
-<Accordion>
-  <AccordionItem
-    isOpen
-    toggleContent
-    toggleButtonText={'Bruk'}
-    stepId={'step-1-1'}
-  >
-    <p>
-      DetailsList brukes når du har liste av mange repterende rader, og samtidig
-      har behov for:
-    </p>
-    <ul>
-      <li>Gruppere rader</li>
-      <li>Velge/markere en eller flere rader</li>
-      <li>Sortere kolonner</li>
-    </ul>
-    <p>
-      Sørg for å ha den viktigste kolonnen først til venstre, og at det
-      tilstrekkelig kolonnebredde til å vise innholdet. Dersom innholdet er tar
-      mye plass - vurder å bruke variabel høyde på radene.
-    </p>
-  </AccordionItem>
-  <AccordionItem
-    toggleContent
-    toggleButtonText={'Universell utforming'}
-    stepId={'step-1-2'}
-  >
-    <ul>
-      <li>Ikke bruk listen til å vise kommandoer eller innstillinger.</li>
-      <li>Ikke ha for mye data slik at brukeren på scrolle horisontalt.</li>
-      <li>
-        Listen bør ha en vilkårlig størrelse slik at informasjonen ikke blir
-        trykt sammen og uoversiktelig.
-      </li>
-      <li>
-        Sørg for at listen har fokusmarkering slik at brukere med skjermleser
-        kan tabbe seg igjennom listen.
-      </li>
-    </ul>
-  </AccordionItem>
-  <AccordionItem
-    toggleContent
-    toggleButtonText={'Tekniske detaljer'}
-    stepId={'step-1-3'}
-  >
-    <p>
-      <a
-        href="https://developer.microsoft.com/en-us/fabric#/components/detailslist#Implementation"
-        target="_blank"
-      >
-        Se flere tilgjengelige props i Fabric dokumentasjonen
-      </a>
-    </p>
-  </AccordionItem>
-</Accordion>;
+```js noeditor beskrivelse
+  <p>
+    DetailsList brukes når du har liste av mange repterende rader, og samtidig
+    har behov for:
+  </p>
+  <ul>
+    <li>Gruppere rader</li>
+    <li>Velge/markere en eller flere rader</li>
+    <li>Sortere kolonner</li>
+  </ul>
+  <p>
+    Sørg for å ha den viktigste kolonnen først til venstre, og at det
+    tilstrekkelig kolonnebredde til å vise innholdet. Dersom innholdet er tar
+    mye plass - vurder å bruke variabel høyde på radene.
+  </p>
 ```

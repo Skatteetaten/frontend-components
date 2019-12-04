@@ -1,8 +1,8 @@
 import { mergeStyleSets } from '@uifabric/merge-styles';
 import { getTheme } from '@uifabric/styling';
 
-export var getClassNames = function getClassNames(props, state) {
-  const { palette } = getTheme();
+export const getClassNames = function getClassNames(props, state) {
+  const palette = getTheme().palette;
 
   return mergeStyleSets({
     main: {

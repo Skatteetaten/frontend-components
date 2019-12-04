@@ -23,17 +23,17 @@ exports[`MessageBar komponent matcher snapshot 1`] = `
             aria-hidden={true}
             className="icon-54"
             data-icon-name="Info"
-            role="presentation"
           >
             
           </i>
         </div>
         <div
+          aria-live="polite"
           className="ms-MessageBar-text text-46"
           id="MessageBar0"
+          role="status"
         >
           <span
-            aria-live="polite"
             className="ms-MessageBar-innerText innerText-47"
             role="status"
           />

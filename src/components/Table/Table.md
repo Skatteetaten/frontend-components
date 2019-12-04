@@ -89,7 +89,8 @@ const columns = [
     name: 'Måned',
     fieldName: 'month',
     sortable: true,
-    sortingFunction: sortMonths
+    sortingFunction: sortMonths,
+    autohideSorting: false
   },
   {
     name: 'Beløp',
@@ -146,48 +147,23 @@ const data = [
 />;
 ```
 
-```js noeditor
-import Accordion from '@skatteetaten/frontend-components/Accordion';
-import AccordionItem from '@skatteetaten/frontend-components/Accordion/AccordionItem';
+```js noeditor uu
+<p>
+  På små skjermer vil endre-ikon flyttes til venstre, og tabellen har horisontal
+  skrolling ved behov.
+</p>
+```
 
-<Accordion>
-  <AccordionItem
-    isOpen
-    toggleContent
-    toggleButtonText={'Bruk'}
-    stepId={'step-1-1'}
-  >
-    <p>
-      Table-komponenten kan med fordel brukes ved mindre datamengder. (Har du
-      store mengder data og/eller behov for avansert funksjonalitet - vurderer
-      DetailsList i stedet).
-    </p>
-    <p>
-      Komponenten har to tilstander; visningtilstand som bare viser data, og
-      redigering av enkeltrad. Man må fullføre redigering av raden før man kan
-      redigere en annen.
-    </p>
-    <p>Det er også mulig å bruke komponenten uten redigering.</p>
-  </AccordionItem>
-  <AccordionItem
-    toggleContent
-    toggleButtonText={'Universell utforming'}
-    stepId={'step-1-2'}
-  >
-    <p>
-      På små skjermer vil endre-ikon flyttes til venstre, og tabellen har
-      horisontal skrolling ved behov.
-    </p>
-  </AccordionItem>
-  <AccordionItem
-    toggleContent
-    toggleButtonText={'Tekniske detaljer'}
-    stepId={'step-1-3'}
-  >
-    <p>
-      Dette er en egenutviklet komponent, så det finnes ingen flere props
-      tilgjengelig. Komponenten vil rendres som standard table-element (html).
-    </p>
-  </AccordionItem>
-</Accordion>;
+```js noeditor beskrivelse
+  <p>
+    Table-komponenten kan med fordel brukes ved mindre datamengder. (Har du
+    store mengder data og/eller behov for avansert funksjonalitet - vurderer
+    DetailsList i stedet).
+  </p>
+  <p>
+    Komponenten har to tilstander; visningtilstand som bare viser data, og
+    redigering av enkeltrad. Man må fullføre redigering av raden før man kan
+    redigere en annen.
+  </p>
+  <p>Det er også mulig å bruke komponenten uten redigering.</p>
 ```

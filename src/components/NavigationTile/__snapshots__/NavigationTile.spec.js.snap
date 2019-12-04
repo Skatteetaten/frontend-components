@@ -1,29 +1,20 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`NavigationTile komponent matcher snapshot 1`] = `
-<div>
-  <nav
-    className="nav-37 subComponentStyles content nav"
-    type="center"
-  >
-    <ul>
-      <li
-        aria-describedby="my-id-1"
-        className="content-36"
-        id="my-id-1"
-        key="#-0"
-      >
-        <a
-          href="something/#"
-        >
-          <Content
-            description="Skattekort, skattemelding (selvangivelse), skatteoppgjør, tema og fradrag som hjelper deg til få riktig skatt. "
-            icon="person"
-            title="Skatt"
-          />
-        </a>
-      </li>
-    </ul>
-  </nav>
-</div>
+<nav
+  className="nav-37 subComponentStyles content nav"
+  renderContent={[Function]}
+>
+  <ul>
+    <NavigationContent
+      className="content-36"
+      description="Skattekort, skattemelding (selvangivelse), skatteoppgjør, tema og fradrag som hjelper deg til få riktig skatt. "
+      icon="person"
+      id="my-id-1"
+      key="0.#"
+      title="Skatt"
+      to="#"
+    />
+  </ul>
+</nav>
 `;
