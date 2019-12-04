@@ -26,12 +26,7 @@ function getBorderColor(props: DetailsListProps) {
 
 function getHoverColor(props: DetailsListProps) {
   const palette = getTheme().palette as PaletteProps;
-
-  if (props.background === 'white') {
-    return palette.skeColor.neutralGrey;
-  } else {
-    return palette.skeColor.lightGrey;
-  }
+  return palette.skeColor.lightBlue;
 }
 
 export const getClassNames = (props: DetailsListProps) => {
@@ -128,7 +123,8 @@ export const getClassNames = (props: DetailsListProps) => {
         paddingLeft: '8px'
       },
       '.ms-List-cell': {
-        minHeight: 32 // + 2px border
+        minHeight: 32, // + 2px border
+        borderBottom: '1px solid' + palette.skeColor.lightGrey
       },
       //row
       '& .ms-FocusZone.ms-DetailsHeader': {
@@ -140,7 +136,6 @@ export const getClassNames = (props: DetailsListProps) => {
         minHeight: 26,
         //borderBottom: '1px solid' + palette.skeColor.lightGrey,
         background: getBackgroundColor(props),
-        borderBottom: '2px solid' + getBorderColor(props),
         selectors: {
           ':hover': {
             background: getHoverColor(props)
