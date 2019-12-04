@@ -5,6 +5,7 @@ import { PaletteProps } from '..';
 
 export const getClassNames = () => {
   const palette = getTheme().palette as PaletteProps;
+
   return mergeStyleSets({
     menuButton: {
       selectors: {
@@ -12,9 +13,11 @@ export const getClassNames = () => {
           fontSize: FontSizes.small,
           color: palette.skeColor.white,
           textDecoration: 'none !important',
-          padding: '1px 5px 0 5px',
-          borderBottom: '2px solid rgba(255, 255, 255, 0.5)',
-          transition: 'border-bottom 0.3s'
+          padding: '2px 0px 2px 0px',
+          borderBottom: '2px solid rgba(255, 255, 255, 0.7)',
+          transition: 'border-bottom 0.3s',
+          borderLeftWidth: 0,
+          borderRightWidth: 0
         },
         '&.ms-Button--action:hover .ms-Button-label': {
           color: palette.skeColor.white,
@@ -38,8 +41,8 @@ export const getClassNames = () => {
           fontSize: FontSizes.small,
           color: palette.skeColor.blackAlt,
           textDecoration: 'none !important',
-          padding: '1px 5px 0 5px',
-          borderBottom: '2px solid rgba(255, 255, 255, 0.5)',
+          padding: '1px 0px 0 0px',
+          borderBottom: '2px solid rgba(255, 255, 255, 0.7)',
           transition: 'border-bottom 0.3s'
         },
         '&.ms-Button--action:hover .ms-Button-label': {
@@ -67,9 +70,9 @@ export const getClassNames = () => {
           textDecoration: 'none !important',
           transition: 'none',
           paddingTop: 1,
-          paddingRight: 5,
+          paddingRight: 0,
           paddingBottom: 0,
-          paddingLeft: 5
+          paddingLeft: 0
         }
       }
     },
@@ -97,8 +100,8 @@ export const getClassNames = () => {
       fontSize: FontSizes.small,
       fontWeight: FontWeights.regular,
       margin: 0,
-      paddingInlineStart: 40,
-      paddingInlineEnd: 40,
+      paddingInlineStart: 10,
+      paddingInlineEnd: 10,
       selectors: {
         'li:hover:not(:last-child)': {
           backgroundColor: 'white',
@@ -107,7 +110,9 @@ export const getClassNames = () => {
         'li:hover a': {
           color: 'black'
         },
-        'a,i': { borderWidth: 0 }
+        'a,i': {
+          borderWidth: 0
+        }
       }
     }
   });
