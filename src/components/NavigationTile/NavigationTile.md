@@ -2,87 +2,93 @@
 
 ```js
 import NavigationTile from '@skatteetaten/frontend-components/NavigationTile';
+import NavigationContent from '@skatteetaten/frontend-components/NavigationTile/NavigationContent';
 
-const contents = [
-  {
-    id: 'my-id-1',
-    to: '#navigationtile',
-    title: 'Skatt',
-    description:
-      'Skattekort, skattemelding (selvangivelse), skatteoppgjør, tema og fradrag som hjelper deg til få riktig skatt. ',
-    icon: 'person'
-  },
-  {
-    id: 'my-id-2',
-    to: '#navigationtile',
-    title: 'Bedrift',
-    description:
-      'A-melding, særavgift og veiledere som hjelper å rapportere riktig. ',
-    icon: 'Company'
-  }
-];
-<NavigationTile contents={contents} />;
+<NavigationTile>
+  <NavigationContent to={'#navigationtile'} title={'Bedrift'} icon={'Company'}>
+    A-melding, særavgift og veiledere som hjelper å rapportere riktig.
+  </NavigationContent>
+  <NavigationContent to={'#navigationtile'} title={'Person'} icon={'Person'}>
+    Skattekort, skattemelding (selvangivelse), skatteoppgjør, tema og fradrag
+    som hjelper deg til få riktig skatt.
+  </NavigationContent>
+</NavigationTile>;
 ```
+
+** Eksempel på egendefinert lenke-implmentasjon ved bruk av react-router **
 
 ```js
 import NavigationTile from '@skatteetaten/frontend-components/NavigationTile';
+import NavigationContent from '@skatteetaten/frontend-components/NavigationTile/NavigationContent';
+import { BrowserRouter, Link as RRLink } from 'react-router-dom';
+
+<BrowserRouter>
+  <NavigationTile>
+    <NavigationContent
+      to="/link-one"
+      title={'Bedrift'}
+      icon={'Company'}
+      renderContent={(to, children) => {
+        return <RRLink to={to}>{children}</RRLink>;
+      }}
+    >
+      A-melding, særavgift og veiledere som hjelper å rapportere riktig.
+    </NavigationContent>
+    <NavigationContent
+      to="/linkTo"
+      title={'Person'}
+      icon={'Person'}
+      renderContent={(to, children) => {
+        return <RRLink to={to}>{children}</RRLink>;
+      }}
+    >
+      Skattekort, skattemelding (selvangivelse), skatteoppgjør, tema og fradrag
+      som hjelper deg til få riktig skatt.
+    </NavigationContent>
+  </NavigationTile>
+</BrowserRouter>;
+```
+
+** Eksempel på NavigationTile definert via JSON-struktur **
+
+```js
+import NavigationTile from '@skatteetaten/frontend-components/NavigationTile';
+import NavigationContent from '@skatteetaten/frontend-components/NavigationTile/NavigationContent';
+import { BrowserRouter, Link as RRLink } from 'react-router-dom';
 
 const contents = [
   {
-    to: '#navigationtile',
+    title: 'Person',
+    to: '#navigationtile1',
+    icon: 'ArrowForward',
+    description:
+      'Skattekort, skattemelding (selvangivelse), skatteoppgjør, tema og fradrag som hjelper deg til få riktig skatt.',
+    renderContent: (to, children) => {
+      return <RRLink to={to}>{children}</RRLink>;
+    }
+  },
+  {
+    to: '#navigationtile2',
     title: 'Lag KID-nummer',
     icon: 'ArrowForward',
     description:
-      'Lag KID for forskuddsskatt, tilleggsforskudd, restskatt, kildeskatt på aksjeutbytte. '
+      'Lag KID for forskuddsskatt, tilleggsforskudd, restskatt, kildeskatt på aksjeutbytte.'
   }
 ];
 
-<NavigationTile
-  type="left"
-  alignIcon="right"
-  alignTitle="left"
-  alignDescription="left"
-  contents={contents}
-  renderContent={(to, content) => <a href={to}>{content}</a>}
-/>;
+<BrowserRouter>
+  <NavigationTile contents={contents} />
+</BrowserRouter>;
 ```
 
-```js noeditor
-import Accordion from '@skatteetaten/frontend-components/Accordion';
-import AccordionItem from '@skatteetaten/frontend-components/Accordion/AccordionItem';
-<Accordion>
-  <AccordionItem
-    isOpen
-    toggleContent
-    toggleButtonText={'Bruk'}
-    stepId={'step-1-1'}
-  >
-    <p>
-      NavigationTile brukes for eksempel på transportsider/navigasjonssider.
-      Transportsider er landingssider med primær hensikt å sende brukeren videre
-      nedover i sidestrukturen.
-    </p>
-    <p>
-      Komponentene har alltid en tittel, men kan brukes uten ikon og beskrivende
-      tekst.
-    </p>
-  </AccordionItem>
-  <AccordionItem
-    toggleContent
-    toggleButtonText={'Universell utforming'}
-    stepId={'step-1-2'}
-  >
-    <p>Dette seksjonen er foreløpig tom.</p>
-  </AccordionItem>
-  <AccordionItem
-    toggleContent
-    toggleButtonText={'Tekniske detaljer'}
-    stepId={'step-1-3'}
-  >
-    <p>
-      Ved bruk av renderContent er det mulig å legge til egen link-komponent
-      rundt innholdet. Dette er nyttig ved bruk av f.eks React-Router.
-    </p>
-  </AccordionItem>
-</Accordion>;
+```js noeditor beskrivelse
+  <p>
+    NavigationTile brukes for eksempel på transportsider/navigasjonssider.
+    Transportsider er landingssider med primær hensikt å sende brukeren videre
+    nedover i sidestrukturen.
+  </p>
+  <p>
+    Komponentene har alltid en tittel, men kan brukes uten ikon og beskrivende
+    tekst.
+  </p>
 ```

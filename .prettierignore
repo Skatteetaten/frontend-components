@@ -1,4 +1,5 @@
 src/components/utils/icons
+src/sections/design/farger.md
 **/node_modules/**
 **/lib/**
 **/coverage/**

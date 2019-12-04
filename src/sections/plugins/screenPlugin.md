@@ -1,6 +1,6 @@
 ### ScreenPlugin
 
-```js noeditor
+```js noeditor beskrivelse
 import { UseScreen } from '@skatteetaten/frontend-components/utils/ScreenPlugin';
 ```
 

@@ -30,7 +30,7 @@ describe('Card komponent', () => {
 
   it('setter Card med riktige props', () => {
     const wrapper = oppsettFullDOM({
-      color: Card.BEIGE,
+      color: Card.Color.BEIGE,
       title: 'Ikke fullført arbeidsoppgave',
       titlesize: 'large',
       marginbottom: '10px',

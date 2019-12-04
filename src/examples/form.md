@@ -57,10 +57,10 @@ const initialState = {
     </Grid.Row>
     <Grid.Row>
       <div style={{ float: 'right' }}>
-        <Button buttonType="secondary" style={{ marginRight: '8px' }}>
+        <Button type="secondary" style={{ marginRight: '8px' }}>
           Avbryt
         </Button>
-        <Button buttonType="primaryRoundedFilled">Fullfør</Button>
+        <Button type="primaryRoundedFilled">Fullfør</Button>
       </div>
     </Grid.Row>
   </Grid>

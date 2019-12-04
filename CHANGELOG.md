@@ -237,7 +237,7 @@ Noen komponenter blir nå wrappet i en div for å kunne sette id
 
 #### **v1.0.26 - Nov 9, 2018**
 
-– Ramme på disablet Checkbox, DatePicker og Dropdown
+– Ramme på disablet CheckBox, DatePicker og Dropdown
 
 #### **v1.0.25 - Nov 7, 2018**
 
@@ -298,8 +298,8 @@ Noen komponenter blir nå wrappet i en div for å kunne sette id
 
 #### **v1.0.8 - Juni 20, 2018**
 
-– Endret Button propTypes "type" --> "buttonType"  
-– Endret IconButton propTypes "type" --> "buttonType"
+– Endret Button propTypes "type" --> "type"  
+– Endret IconButton propTypes "type" --> "type"
 
 #### **v1.0.7 - Juni 20, 2018**
 
@@ -317,7 +317,7 @@ Noen komponenter blir nå wrappet i en div for å kunne sette id
   - Button
   - Callout
   - Card
-  - Checkbox
+  - CheckBox
   - ComboBox
   - DatePicker
   - DetailsList
