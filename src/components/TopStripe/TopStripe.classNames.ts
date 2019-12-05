@@ -26,14 +26,12 @@ export const getClassNames = () => {
       background: 'inherit',
       border: 'inherit',
       borderWidth: 2,
-      borderBottom: '2px solid rgba(255, 255, 255, 0.3)',
+      borderBottom: '2px solid ' + palette.skeColor.lightGrey,
       color: palette.skeColor.white,
       textDecoration: 'none !important',
       transition: 'none',
       paddingTop: 1,
-      paddingRight: 5,
       paddingBottom: 0,
-      paddingLeft: 5,
       selectors: {
         ':hover': {
           cursor: 'pointer',

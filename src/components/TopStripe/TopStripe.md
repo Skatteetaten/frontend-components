@@ -1,5 +1,43 @@
 ** TopStripe er en svart menystripe øverst på innloggede sider for publikum. **
 
+Eksempel:
+
+```js
+import TopStripe, {
+  TopStripeMenu,
+  TopStripeButton
+} from '@skatteetaten/frontend-components/TopStripe';
+import Link from '@skatteetaten/frontend-components/Link';
+
+<TopStripe>
+  <div>Ren tekst </div>
+  <TopStripeButton onClick={() => console.log('Knappetrykk')}>
+    Knapp
+  </TopStripeButton>
+  <Link path={'#link'} text={'Lenke'} />
+  <TopStripeMenu title={'Meny med tekst'} closeOnClick={false}>
+    <div style={{ fontSize: '20px' }}>Prop closeOnClick=false</div>
+  </TopStripeMenu>
+  <TopStripeMenu title={'Meny med Knapper'}>
+    <TopStripeButton ariaLabel={'Norsk'} onClick={() => console.log('NB')}>
+      Norsk
+    </TopStripeButton>
+    <TopStripeButton
+      icon={'check'}
+      ariaLabel={'Nynorsk'}
+      onClick={() => console.log('NN')}
+    >
+      Nynorsk
+    </TopStripeButton>
+  </TopStripeMenu>
+  <TopStripeMenu title={'Meny med Lenker'}>
+    <Link path={'#link'} icon={'Check'} text={'Lenke'} />
+    <Link path={'#link'} text={'Lenke'} />
+    <Link path={'#link'} text={'Lenke'} />
+  </TopStripeMenu>
+</TopStripe>;
+```
+
 Ikke innlogget ennå:
 
 ```js
@@ -9,16 +47,10 @@ import TopStripe, {
 } from '@skatteetaten/frontend-components/TopStripe';
 import TopBanner from '@skatteetaten/frontend-components/TopBanner';
 import Link from '@skatteetaten/frontend-components/Link';
-import Button from '@skatteetaten/frontend-components/Button';
 
 <div>
   <TopStripe>
-    <Link
-      path={'#link'}
-      text={'Kontakt oss'}
-      placement="before"
-      style={{ marginRight: '8px' }}
-    />
+    <Link path={'#link'} text={'Kontakt oss'} placement="before" />
 
     <TopStripeMenu title={'Endre skriftstørrelse'}>
       <div style={{ fontSize: '20px' }}>
@@ -72,17 +104,11 @@ import TopStripe, {
 } from '@skatteetaten/frontend-components/TopStripe';
 import TopBanner from '@skatteetaten/frontend-components/TopBanner';
 import Link from '@skatteetaten/frontend-components/Link';
-import Button from '@skatteetaten/frontend-components/Button';
 import Icon from '@skatteetaten/frontend-components/Icon';
 
 <div>
   <TopStripe>
-    <Link
-      path={'#topstripe'}
-      text={'Kontakt oss'}
-      placement="before"
-      style={{ marginRight: '8px' }}
-    />
+    <Link path={'#topstripe'} text={'Kontakt oss'} placement="before" />
 
     <TopStripeMenu title={'Endre skriftstørrelse'}>
       <div style={{ fontSize: '20px' }}>
@@ -142,7 +168,6 @@ import TopStripe, {
 } from '@skatteetaten/frontend-components/TopStripe';
 import TopBanner from '@skatteetaten/frontend-components/TopBanner';
 import Link from '@skatteetaten/frontend-components/Link';
-import Button from '@skatteetaten/frontend-components/Button';
 
 <div>
   <TopStripe>

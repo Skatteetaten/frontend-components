@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import ActionButton from 'components/ActionButton';
 import { getClassNames } from './TopStripeMenu.classNames';
 import { LinkProps } from '../Link';
@@ -6,6 +6,8 @@ import { TopStripeContext } from './TopStripe';
 import Icon from '../Icon';
 
 export interface TopStripeMenuProps extends LinkProps {
+  /** @param {defaultSelected=true} Close menu when clicking item  */
+  closeOnClick?: boolean;
   defaultSelected?: number;
   onRender?: any;
   title: string;
@@ -14,8 +16,8 @@ export interface TopStripeMenuProps extends LinkProps {
 
 export const TopStripeMenu: React.FC<TopStripeMenuProps> = props => {
   const styles = getClassNames();
-  const { children, onRender, title, index } = props;
-  const { open, setOpen } = React.useContext(TopStripeContext);
+  const { children, onRender, title, index, closeOnClick = true } = props;
+  const { open, setOpen, closeMenu } = React.useContext(TopStripeContext);
   return (
     <>
       <ActionButton
@@ -31,13 +33,22 @@ export const TopStripeMenu: React.FC<TopStripeMenuProps> = props => {
             : React.Children.map(children, (child, index) => {
                 if (React.isValidElement<LinkProps>(child)) {
                   return (
-                    <li className={styles.dropDownLink}>
+                    <li
+                      onClick={(e: any) => {
+                        child.props &&
+                          child.props.onClick &&
+                          child.props.onClick(e);
+                        closeOnClick && closeMenu && closeMenu();
+                      }}
+                      className={styles.dropDownLink}
+                    >
                       <Icon
                         iconName={child.props.icon || undefined}
                         className={styles.icon}
                       />
                       {React.cloneElement(child, {
-                        icon: undefined
+                        icon: undefined,
+                        onClick: undefined
                       })}
                     </li>
                   );

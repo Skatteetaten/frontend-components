@@ -10,10 +10,11 @@ export const getClassNames = () => {
     menuButton: {
       selectors: {
         '.ms-Button-label': {
+          margin: 0,
+          padding: 0,
           fontSize: FontSizes.small,
           color: palette.skeColor.white,
           textDecoration: 'none !important',
-          padding: '2px 0px 2px 0px',
           borderBottom: '2px solid rgba(255, 255, 255, 0.7)',
           transition: 'border-bottom 0.3s',
           borderLeftWidth: 0,
@@ -94,6 +95,7 @@ export const getClassNames = () => {
       }
     },
     dropdownContainer: {
+      width: 'auto !important',
       position: 'absolute',
       backgroundColor: palette.skeColor.blackAlt,
       color: palette.skeColor.white,

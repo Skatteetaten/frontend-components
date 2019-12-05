@@ -1,11 +1,19 @@
-import React from 'react';
+import * as React from 'react';
 export interface TopStripeButtonProps {
-  style: string;
+  /** @ignore Får ekstra stil fra toppstripe */
+  topStripeStyle?: string;
+  ariaLabel?: string;
 }
 
 export const TopStripeButton: React.FC<TopStripeButtonProps> = props => {
+  const { topStripeStyle, ariaLabel, ...rest } = props;
   return (
-    <button className={props.style} style={{ cursor: 'pointer' }}>
+    <button
+      aria-label={ariaLabel}
+      className={topStripeStyle}
+      style={{ cursor: 'pointer' }}
+      {...rest}
+    >
       {props.children}
     </button>
   );
