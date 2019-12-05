@@ -3,6 +3,7 @@ import { withRouter } from 'react-router';
 import TopBanner from '../../components/TopBanner';
 import FooterContent from '../../components/FooterContent';
 import Grid from '../../components/Grid';
+import Link from '../../components/Link';
 import ActionButton from '../../components/ActionButton';
 import { getClassNames } from './classNames';
 import React from 'react';
@@ -30,11 +31,18 @@ export class StyleGuideRenderer extends React.Component<> {
     super(props);
     this.state = {
       isHidden: true,
+      showNavigation: false,
       version: ''
     };
   }
 
-  _toggleMenuVisibility() {
+  _toggleMainNavigation() {
+    this.setState({
+      showNavigation: !this.state.showNavigation
+    });
+  }
+
+  _toggleComponentVisibility() {
     this.setState({
       isHidden: !this.state.isHidden
     });
@@ -60,44 +68,72 @@ export class StyleGuideRenderer extends React.Component<> {
               className="banner"
             >
               <div className="slogan">
-                Språk, design og utvikling i Skatteetaten
+                <Link
+                  path={'https://www.skatteetaten.no/stilogtone/'}
+                  text={'Språk, design og utvikling i Skatteetaten'}
+                  icon={'ArrowBack'}
+                  placement="before"
+                />
               </div>
-              <ul className="navigation">
-                <li>
-                  <a href="https://www.skatteetaten.no/stilogtone/skrive/">
-                    Skrive
-                  </a>
-                </li>
-                <li className="underline">
-                  <a href="/">Designe og utvikle</a>
-                </li>
-                <li>
-                  <a href="https://www.skatteetaten.no/stilogtone/universell-utforming/">
-                    Universell utforming
-                  </a>
-                </li>
-                <li>
-                  <a href="https://www.skatteetaten.no/stilogtone/visuell-identitet/">
-                    Visuell identitet
-                  </a>
-                </li>
-              </ul>
+              <nav>
+                <div
+                  aria-expanded={
+                    this.state.showNavigation === true ? 'true' : 'false'
+                  }
+                  className={styles.navMobileButton}
+                >
+                  <ActionButton
+                    onClick={() => this._toggleMainNavigation()}
+                    iconSize={ActionButton.LARGE}
+                    color="black"
+                    icon={'Menu'}
+                  >
+                    Meny
+                  </ActionButton>
+                </div>
+                <div className={styles.mainNav}>
+                  <ul className="navigation">
+                    <li>
+                      <a href="https://www.skatteetaten.no/stilogtone/skrive/">
+                        Skrive
+                      </a>
+                    </li>
+                    <li className="underline">
+                      <a href="/">Designe og utvikle</a>
+                    </li>
+                    <li>
+                      <a href="https://www.skatteetaten.no/stilogtone/universell-utforming/">
+                        Universell utforming
+                      </a>
+                    </li>
+                    <li>
+                      <a href="https://www.skatteetaten.no/stilogtone/visuell-identitet/">
+                        Visuell identitet
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </nav>
             </TopBanner>
             <div className="mainContent">
               <Grid className={styles.main}>
                 <Grid.Row>
                   <Grid.Col md={12} xl={3}>
-                    <nav className={styles.nav}>
+                    <nav className={styles.navComponents}>
                       <div className={styles.navMobile}>
                         <ActionButton
-                          onClick={() => this._toggleMenuVisibility()}
+                          onClick={() => this._toggleComponentVisibility()}
                           iconSize={ActionButton.LARGE}
                           color="black"
                           icon={
-                            this.state.isHidden === true ? 'Menu' : 'Cancel'
+                            this.state.isHidden === true
+                              ? 'ChevronDown'
+                              : 'ChevronUp'
                           }
                         >
-                          {this.state.isHidden === true ? 'Meny' : 'Lukk'}
+                          {this.state.isHidden === true
+                            ? 'Vis komponenter'
+                            : 'Skjul komponenter'}
                         </ActionButton>
                       </div>
                       {toc}

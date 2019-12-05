@@ -19,7 +19,7 @@ DemoBlock = ({ children }) => (
 ```js
 import Grid from '@skatteetaten/frontend-components/Grid';
 
-<Grid>
+<Grid padding="0px">
   <Grid.Row>
     <Grid.Col lg={4}>
       <DemoBlock>4</DemoBlock>
@@ -47,8 +47,49 @@ import Grid from '@skatteetaten/frontend-components/Grid';
       <DemoBlock>6</DemoBlock>
     </Grid.Col>
   </Grid.Row>
-  <Grid.Row rowSpacing={Grid.SPACE_LARGE}>
+  <Grid.Row>
     <Grid.Col lg={12}>
+      <DemoBlock>12</DemoBlock>
+    </Grid.Col>
+  </Grid.Row>
+</Grid>;
+```
+
+Grid uten padding:
+
+```js
+import Grid from '@skatteetaten/frontend-components/Grid';
+
+<Grid padding="0">
+  <Grid.Row rowSpacing={Grid.SPACE_NONE}>
+    <Grid.Col noSpacing lg={4}>
+      <DemoBlock>4</DemoBlock>
+    </Grid.Col>
+    <Grid.Col noSpacing lg={4}>
+      <DemoBlock>4</DemoBlock>
+    </Grid.Col>
+    <Grid.Col noSpacing lg={4}>
+      <DemoBlock>4</DemoBlock>
+    </Grid.Col>
+  </Grid.Row>
+  <Grid.Row rowSpacing={Grid.SPACE_NONE}>
+    <Grid.Col noSpacing lg={8}>
+      <DemoBlock>8</DemoBlock>
+    </Grid.Col>
+    <Grid.Col noSpacing lg={4}>
+      <DemoBlock>4</DemoBlock>
+    </Grid.Col>
+  </Grid.Row>
+  <Grid.Row rowSpacing={Grid.SPACE_NONE}>
+    <Grid.Col noSpacing lg={6}>
+      <DemoBlock>6</DemoBlock>
+    </Grid.Col>
+    <Grid.Col noSpacing lg={6}>
+      <DemoBlock>6</DemoBlock>
+    </Grid.Col>
+  </Grid.Row>
+  <Grid.Row rowSpacing={Grid.SPACE_NONE}>
+    <Grid.Col noSpacing lg={12}>
       <DemoBlock>12</DemoBlock>
     </Grid.Col>
   </Grid.Row>

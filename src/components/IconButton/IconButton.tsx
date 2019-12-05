@@ -9,6 +9,8 @@ export interface IconButtonProps extends ButtonProps {
   circle?: boolean;
   /** Ikon som skal vises foran teksten på knappen */
   icon?: string;
+  /** Beskrivelse av hva knappen gjør (f.eks. til skjermlesere) */
+  title?: string;
   /** Gjør knappen til hovedknapp med fylt farge */
   buttonSize?: 'default' | 'small' | 'medium' | 'large' | 'xLarge';
   /**
