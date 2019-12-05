@@ -1,1 +1,1 @@
-** TopStripeMenu **
+** TopStripeMenu brukes i TopStripe**

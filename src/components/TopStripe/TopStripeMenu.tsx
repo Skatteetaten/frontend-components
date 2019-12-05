@@ -6,7 +6,10 @@ import { TopStripeContext } from './TopStripe';
 import Icon from '../Icon';
 
 export interface TopStripeMenuProps extends LinkProps {
-  /** @param {defaultSelected=true} Close menu when clicking item  */
+  /**
+   * Close menu on item click
+   * @default true
+   */
   closeOnClick?: boolean;
   defaultSelected?: number;
   onRender?: any;
