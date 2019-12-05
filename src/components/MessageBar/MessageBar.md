@@ -52,60 +52,32 @@ const afterDurationComponent = (resetDuration, setShowAlways) => (
 </MessageBar>;
 ```
 
-```js noeditor
-import Accordion from '@skatteetaten/frontend-components/Accordion';
-import AccordionItem from '@skatteetaten/frontend-components/Accordion/AccordionItem';
-<Accordion>
-  <AccordionItem
-    isOpen
-    toggleContent
-    toggleButtonText={'Bruk'}
-    stepId={'step-1-1'}
-  >
-    <p>Varselbokser kan være med eller uten lukkekryss.</p>{' '}
-    <p>Fargebruk skal signalisere:</p>
-    <ul>
-      <li>Gul/beige (standard): Nøytral </li>
-      <li>Grønn: Ok, vellykket handling</li>
-      <li>Lys rød: Feil, advarsel</li>
-      <li>Mørk rød: Fortrolige opplysninger, sterk advarsel </li>
-    </ul>
-    <p>
-      Det er ok å variere størrelse på boksen. Ulike bakgrunnsfarger kan
-      kombineres på samme side. Dersom på skjermen handler om sensitive
-      opplysninger (KODE 6), brukes en ekstra uthevet meldingsboks.
-    </p>
-    <p>
-      Se{' '}
-      <a href="https://www.skatteetaten.no/stilogtone/skrive/">
-        Skatteetatens skriveregler
-      </a>{' '}
-      for hjelp til å skrive gode tekster inni boksen.
-    </p>
-  </AccordionItem>
-  <AccordionItem
-    toggleContent
-    toggleButtonText={'Universell utforming'}
-    stepId={'step-1-2'}
-  >
-    <ul>
-      <li>Innholdet bør være kort og presist.</li>
-      <li>Husk å bruke riktig type av MessageBar til riktig type melding.</li>
-    </ul>
-  </AccordionItem>
-  <AccordionItem
-    toggleContent
-    toggleButtonText={'Tekniske detaljer'}
-    stepId={'step-1-3'}
-  >
-    <p>
-      <a
-        href="https://developer.microsoft.com/en-us/fabric#/components/messagebar#Implementation"
-        target="_blank"
-      >
-        Se flere tilgjengelige props i Fabric dokumentasjonen
-      </a>
-    </p>
-  </AccordionItem>
-</Accordion>;
+```js noeditor uu
+<ul>
+  <li>Innholdet bør være kort og presist.</li>
+  <li>Husk å bruke riktig type av MessageBar til riktig type melding.</li>
+</ul>
+```
+
+```js noeditor beskrivelse
+  <p>Varselbokser kan være med eller uten lukkekryss.</p>{' '}
+  <p>Fargebruk skal signalisere:</p>
+  <ul>
+    <li>Gul/beige (standard): Nøytral </li>
+    <li>Grønn: Ok, vellykket handling</li>
+    <li>Lys rød: Feil, advarsel</li>
+    <li>Mørk rød: Fortrolige opplysninger, sterk advarsel </li>
+  </ul>
+  <p>
+    Det er ok å variere størrelse på boksen. Ulike bakgrunnsfarger kan
+    kombineres på samme side. Dersom på skjermen handler om sensitive
+    opplysninger (KODE 6), brukes en ekstra uthevet meldingsboks.
+  </p>
+  <p>
+    Se{' '}
+    <a href="https://www.skatteetaten.no/stilogtone/skrive/">
+      Skatteetatens skriveregler
+    </a>{' '}
+    for hjelp til å skrive gode tekster inni boksen.
+  </p>
 ```

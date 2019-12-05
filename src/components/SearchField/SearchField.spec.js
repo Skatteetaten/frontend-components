@@ -35,12 +35,7 @@ describe('SearchField komponent', () => {
 
     const searchField = wrapper.find('input.ms-SearchBox-field');
     const StyledSearchBoxBase = wrapper.find('StyledSearchBoxBase');
-    expect(
-      wrapper
-        .find('div')
-        .first()
-        .prop('id')
-    ).toEqual('searchfield-id');
+    expect(wrapper.first().prop('id')).toEqual('searchfield-id');
     expect(StyledSearchBoxBase.prop('className')).toContain(
       'searchfield-classname'
     );

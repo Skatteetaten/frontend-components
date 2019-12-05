@@ -21,16 +21,7 @@ exports[`TopBanner komponent matcher snapshot  1`] = `
         className="ms-Image-image ms-Image-image--portrait is-notLoaded is-fadeIn image-48"
         onError={[Function]}
         onLoad={[Function]}
-        src={
-          Object {
-            "ReactComponent": Object {
-              "$$typeof": Symbol(react.forward_ref),
-              "render": [Function],
-            },
-            "__esModule": true,
-            "default": "ske-logo-intern.svg",
-          }
-        }
+        src="ske-logo-intern.svg"
       />
     </div>
     <div
