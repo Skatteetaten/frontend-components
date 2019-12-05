@@ -42,6 +42,7 @@ import Button from '@skatteetaten/frontend-components/Button';
 ```
 
 ```js noeditor uu
+<h3>Bruk og innhold</h3>
 <ul>
   <li>
     Bruk én linje med tekst inne i knappen. For mye tekst kan virke forvirrende
@@ -53,6 +54,30 @@ import Button from '@skatteetaten/frontend-components/Button';
   </li>
   <li>Ikke putt et ikon inne i selve knappen. Bruk heller IconButton.</li>
 </ul>
+<h3>Unngå inaktiv (disabled) knapp</h3>
+<p>Inaktiv knapp har flere utfordringer, og de fleste er knyttet til universell utforming: </p>
+    <ul>
+      <li>
+        De har lav lesekontrast, så det er vanskeligere å lese teksten i den.
+      </li>
+      <li>
+        Personer som bruker forstørrelse - f.eks. zoomer inn 500 % for å se
+        innholdet på siden - vil normalt ikke oppdage at en disablet knapp
+        endrer tilstand.
+      </li>
+      <li>
+        En del skjermlesere og leselister vil ikke lese opp innholdet i
+        elementer som disablet.
+      </li>
+      <li>
+        De gir ingen feedback - så brukerne har en tendens til å gjette om/når
+        den skal trykkes på. (Og når de prøver uten resultat kan de ble
+        frustrerte.)
+      </li>
+    </ul>
+    <p>
+      I stedet for inaktiv knapp bør vi alltid ha knappen aktiv (blå) og, dersom skjemaet inneholder feil, vise fornuftige feilmeldinger når den klikkes på.
+    </p>
 ```
 
 ```js noeditor beskrivelse
