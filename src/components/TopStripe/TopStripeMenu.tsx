@@ -1,5 +1,5 @@
 import * as React from 'react';
-import ActionButton from 'components/ActionButton';
+import ActionButton from '../ActionButton';
 import { getClassNames } from './TopStripeMenu.classNames';
 import { LinkProps } from '../Link';
 import { TopStripeContext } from './TopStripe';
