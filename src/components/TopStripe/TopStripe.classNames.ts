@@ -40,6 +40,7 @@ export const getClassNames = () => {
       }
     },
     topStripeContainer: {
+      margin: 0,
       zIndex: 150,
       position: 'relative',
       display: 'flex',
