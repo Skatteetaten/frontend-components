@@ -22,7 +22,7 @@ describe('IconButton komponent', () => {
     const wrapper = oppsettShallow({});
 
     expect(wrapper.prop('circle')).toEqual(false);
-    expect(wrapper.prop('buttonType')).toEqual('default');
+    expect(wrapper.prop('type')).toEqual('default');
     expect(wrapper.prop('icon')).toEqual(undefined);
     expect(wrapper.prop('title')).toEqual(undefined);
     expect(wrapper.prop('disabled')).toEqual(undefined);
@@ -33,13 +33,13 @@ describe('IconButton komponent', () => {
     const wrapper = oppsettFullDOM({
       title: 'Lagre',
       circle: true,
-      buttonType: 'large',
+      type: 'large',
       icon: 'Save'
     });
 
     expect(wrapper.prop('title')).toEqual('Lagre');
     expect(wrapper.prop('circle')).toEqual(true);
-    expect(wrapper.prop('buttonType')).toEqual('large');
+    expect(wrapper.prop('type')).toEqual('large');
     const icon = wrapper.find('.ms-Icon');
     expect(icon.prop('data-icon-name')).toEqual('Save');
   });

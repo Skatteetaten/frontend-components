@@ -6,6 +6,6 @@ import MessageBar from '@skatteetaten/frontend-components/MessageBar';
 
 <MessageBar type={MessageBar.Type.info}>
   Det finnes ikke et eget eksempel på AccordionItem, se eksempel på bruk
-  <a href="/#accordion-1">Accordion</a>
+  <a href="/#accordion">Accordion</a>
 </MessageBar>;
 ```

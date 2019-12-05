@@ -18,7 +18,7 @@ const meny = [
         key: 'no',
         label: 'Bokmål',
         onClick: () => {
-          console.log('Bokmål');
+          jest.fn('Bokmål');
         },
         selected: true
       },
@@ -26,14 +26,14 @@ const meny = [
         key: 'en',
         label: 'English',
         onClick: () => {
-          console.log('English');
+          jest.fn('English');
         }
       },
       {
         key: 'nn',
         label: 'Nynorsk',
         onClick: () => {
-          console.log('Nynorsk');
+          jest.fn('Nynorsk');
         },
         selected: false
       }
@@ -62,7 +62,7 @@ const meny = [
         label: 'Favoritter',
         icon: 'Favorite',
         onClick: () => {
-          console.log('Favoritter');
+          jest.fn('Favoritter');
         }
       }
     ]

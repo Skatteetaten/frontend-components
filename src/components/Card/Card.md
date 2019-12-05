@@ -7,7 +7,7 @@ const initialState = { title: 'Skatteoppgjøret for 2017' };
 
 <div>
   <Card
-    color={Card.BEIGE}
+    color={Card.Color.BEIGE}
     title={initialState.title}
     circleOnIcon={false}
     isExpanded={false}
@@ -22,7 +22,7 @@ const initialState = { title: 'Skatteoppgjøret for 2017' };
   </Card>
   <br />
   <Card
-    color={Card.GREEN}
+    color={Card.Color.GREEN}
     title="Skatteoppgjøret for 2018"
     circleOnIcon={false}
     isExpanded={false}
@@ -53,7 +53,7 @@ function onChange(isExpanded) {
 
 <div>
   <Card
-    color={Card.BEIGE}
+    color={Card.Color.BEIGE}
     title={state.title}
     circleOnIcon={false}
     isExpanded={false}
@@ -79,7 +79,8 @@ import TextField from '@skatteetaten/frontend-components/TextField';
 
 <div>
   <Card
-    color={Card.WHITE}
+    color={Card.Color.WHITE}
+    border={Card.Border.GREEN_BORDER}
     title="Du må betale omregistreringsavgift"
     subtitle="Gjelder kjøretøyet PR 12345"
   >
@@ -88,7 +89,7 @@ import TextField from '@skatteetaten/frontend-components/TextField';
         <Grid.Col noSpacing xl={2} md={8}>
           <TextField
             id={'my-readonlyfield-1'}
-            readonly
+            readOnly
             label="Beløp"
             value={'3600'}
             inputSize={'large'}
@@ -98,7 +99,7 @@ import TextField from '@skatteetaten/frontend-components/TextField';
         <Grid.Col noSpacing xl={4} md={8}>
           <TextField
             id={'my-readonlyfield-2'}
-            readonly
+            readOnly
             label="KID"
             value={'4432 1233 4324 5425'}
             inputSize={'large'}
@@ -108,7 +109,7 @@ import TextField from '@skatteetaten/frontend-components/TextField';
         <Grid.Col noSpacing xl={3} md={8}>
           <TextField
             id={'my-readonlyfield-3'}
-            readonly
+            readOnly
             label="Kontonummer"
             value={'9484 12 31435'}
             inputSize={'large'}
@@ -121,52 +122,27 @@ import TextField from '@skatteetaten/frontend-components/TextField';
 </div>;
 ```
 
-```js noeditor
-import Accordion from '@skatteetaten/frontend-components/Accordion';
-import AccordionItem from '@skatteetaten/frontend-components/Accordion/AccordionItem';
+```js noeditor beskrivelse
+<p>
+  Innholdskort kan inneholde mange andre komponenter. Husk å sjekke
+  «Tilgjengelighet» hvis du skal bruke flere komponenter fra Designsystemet i
+  innholdskortet.
+</p>
+```
 
-<Accordion>
-  <AccordionItem
-    isOpen
-    toggleContent
-    toggleButtonText={'Bruk'}
-    stepId={'step-1-1'}
-  >
-    <p>
+```js noeditor beskrivelse
+  <p>
       Hvis man har mange innholdskort på skjermen kan det være nyttig å kollapse
       dem, slik at brukeren ikke ser så mye informasjon på en gang. Handlinger
       knyttet til informasjonen inni kortet kan legges i handlingsknapper i
       toppen av kortet.
-    </p>
-    <ul>
-      <li>Grå: Standard bakgrunnsfarge for interne løsninger</li>
-      <li>Grønn: Brukers til hjelp</li>
-      <li>Gul: Brukes til informasjon og opplysning.</li>
-      <li>
-        Hvit med grønn ramme: Brukes til konklusjoner og betalingsopplysninger
-      </li>
-    </ul>
-  </AccordionItem>
-  <AccordionItem
-    toggleContent
-    toggleButtonText={'Universell utforming'}
-    stepId={'step-1-2'}
-  >
-    <p>
-      Innholdskort kan inneholde mange andre komponenter. Husk å sjekke
-      «Tilgjengelighet» hvis du skal bruke flere komponenter fra Designsystemet
-      i innholdskortet.
-    </p>
-  </AccordionItem>
-  <AccordionItem
-    toggleContent
-    toggleButtonText={'Tekniske detaljer'}
-    stepId={'step-1-3'}
-  >
-    <p>
-      Denne komponenten har vi laget selv fra bunnen av, så det finnes ikke
-      flere props enn de som vises i listen over.
-    </p>
-  </AccordionItem>
-</Accordion>;
+  </p>
+  <ul>
+    <li>Grå: Standard bakgrunnsfarge for interne løsninger</li>
+    <li>Grønn: Brukers til hjelp</li>
+    <li>Gul: Brukes til informasjon og opplysning.</li>
+    <li>
+      Hvit med grønn ramme: Brukes til konklusjoner og betalingsopplysninger
+    </li>
+  </ul>
 ```
