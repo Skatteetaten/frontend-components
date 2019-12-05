@@ -25,15 +25,13 @@ describe('Chip komponent', () => {
     expect(wrapper.prop('size')).toEqual('standard');
   });
 
-  it('setter Checkbox med riktige props', () => {
+  it('setter CheckBox med riktige props', () => {
     const wrapper = oppsettShallow({
-      ariaLabel: 'chip-label',
       size: 'large',
       type: Chip.OK
     });
 
     expect(wrapper.prop('type')).toEqual('lightGreen');
-    expect(wrapper.prop('aria-label')).toEqual('chip-label');
     expect(wrapper.prop('size')).toEqual('large');
   });
 });

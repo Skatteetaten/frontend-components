@@ -1,6 +1,6 @@
 Vi blir veldig glade dersom du vil bidra med nye komponenter, feilfikser eller annet designrelatert som kan være til glede for andre. Her har vi laget en oversikt for å hjelpe deg i gang.
 
-```js noeditor
+```js noeditor beskrivelse
 import Accordion from '@skatteetaten/frontend-components/Accordion';
 import AccordionItem from '@skatteetaten/frontend-components/Accordion/AccordionItem';
 

@@ -34,7 +34,7 @@ exports[`ScrollToTopButton komponent matcher snapshot 1`] = `
               className="iconFixate-46"
             >
               <i
-                aria-label="MoveUp icon"
+                aria-hidden={true}
                 className="icon-59"
                 data-icon-name="MoveUp"
               >

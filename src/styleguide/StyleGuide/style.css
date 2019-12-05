@@ -3,6 +3,12 @@
   color: inherit;
 }
 
+.comp-header {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 32px;
+}
+
 .ExampleSpacing4 > * {
   margin: 4px;
 }
@@ -142,6 +148,14 @@ button.ms-Nav-chevronButton:not(:hover) {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+}
+
+.footer {
+  flex-shrink: 0;
+}
+
+.mainLayout {
+  flex: 1 0 auto;
 }
 
 .mainLayout2 {
