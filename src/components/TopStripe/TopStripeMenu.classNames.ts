@@ -10,8 +10,9 @@ export const getClassNames = () => {
     menuButton: {
       selectors: {
         '.ms-Button-label': {
-          margin: 0,
+          margin: '2px 0 0 0',
           padding: 0,
+
           fontSize: FontSizes.small,
           color: palette.skeColor.white,
           textDecoration: 'none !important',

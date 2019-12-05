@@ -53,7 +53,7 @@ export const getClassNames = () => {
       fontWeight: FontWeights.regular,
       padding: '0 8px',
       selectors: {
-        li: { listStyleType: 'none', padding: 16 },
+        li: { listStyleType: 'none', padding: '14px 16px 16px 16px' },
         'a,i': {
           fontWeight: FontWeights.regular,
           borderWidth: 2,
@@ -65,9 +65,9 @@ export const getClassNames = () => {
           borderColor: palette.skeColor.white
         },
         'a:focus, a:focus i': {
-          color: palette.skeColor.darkBlue,
-          borderColor: palette.skeColor.white,
-          backgroundColor: palette.skeColor.lightBlue,
+          color: palette.skeColor.blackAlt,
+          borderColor: palette.skeColor.darkGrey,
+          backgroundColor: palette.skeColor.white,
           outline: 'none'
         },
         'a:active,a:active i': {
