@@ -11,7 +11,7 @@ exports[`NavigationTile komponent matcher snapshot 1`] = `
       description="Skattekort, skattemelding (selvangivelse), skatteoppgjør, tema og fradrag som hjelper deg til få riktig skatt. "
       icon="person"
       id="my-id-1"
-      key="0"
+      key="0.#"
       title="Skatt"
       to="#"
     />

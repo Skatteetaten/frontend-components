@@ -50,7 +50,7 @@ const NavigationTile: React.FC<NavigationTileProps> = props => {
         {contents &&
           contents.map(({ ...rest }, index) => (
             <NavigationContent
-              key={index}
+              key={index + '.' + rest.to}
               className={styles.content}
               {...rest}
             />
@@ -59,7 +59,7 @@ const NavigationTile: React.FC<NavigationTileProps> = props => {
           if (React.isValidElement<ContentProps>(child)) {
             return (
               <NavigationContent
-                key={index}
+                key={index + '.' + child.props.to}
                 className={styles.content}
                 {...child.props}
               >

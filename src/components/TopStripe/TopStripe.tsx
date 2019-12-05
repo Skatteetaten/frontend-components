@@ -9,6 +9,8 @@ interface TopStripeProps {
   open?: number;
   /** @ignore */
   setOpen?: any;
+  /** @ignore */
+  closeMenu?: () => void;
 }
 
 export const TopStripeContext = React.createContext<TopStripeProps>({
@@ -17,6 +19,7 @@ export const TopStripeContext = React.createContext<TopStripeProps>({
 
 const TopStripe: React.FC<TopStripeProps> = props => {
   const notOpen = -1;
+  const topRef = React.createRef<HTMLUListElement>();
   const [open, setOpenIndex] = React.useState(notOpen);
   const setOpen = num => {
     if (open === num) {
@@ -28,21 +31,42 @@ const TopStripe: React.FC<TopStripeProps> = props => {
   const styles = getClassNames();
   const { children, ...rest } = props;
   const showOverlay = open !== notOpen ? styles.overlayShow : '';
+
+  const handleClickOutside = (e: any) => {
+    const node = topRef.current;
+    if (node && node.contains(e.target)) {
+      // inside click
+      return;
+    }
+    // outside click
+    setOpen(notOpen);
+  };
+
+  React.useEffect(() => {
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  });
+
   return (
     <>
       <div className={classnames(styles.overlay, showOverlay)} />
       <TopStripeContext.Provider
         value={{
           open: open,
-          setOpen: setOpen
+          setOpen: setOpen,
+          closeMenu: () => setOpenIndex(notOpen)
         }}
       >
-        <ul className={styles.topStripeContainer} {...rest}>
+        <ul ref={topRef} className={styles.topStripeContainer} {...rest}>
           {React.Children.map(children, (child: any, index) => {
             if (child.type === TopStripeButton) {
               return (
                 <li>
-                  {React.cloneElement(child, { style: styles.plainButton })}
+                  {React.cloneElement(child, {
+                    topStripeStyle: styles.plainButton
+                  })}
                 </li>
               );
             } else {

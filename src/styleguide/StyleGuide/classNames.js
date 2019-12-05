@@ -6,13 +6,41 @@ export const getClassNames = function getClassNames(props, state) {
 
   return mergeStyleSets({
     main: {
-      margin: '16px'
+      margin: '16px',
+      selectors: {
+        '@media (max-width: 1024px)': {
+          marginLeft: '0px',
+          marginRight: '0px'
+        }
+      }
     },
     article: {
       minWidth: '400px',
-      marginLeft: '16px'
+      marginLeft: '16px',
+      selectors: {
+        '@media (max-width: 1023px)': {
+          marginLeft: '0'
+        }
+      }
     },
-    nav: {
+    navMobileButton: {
+      marginBottom: '24px',
+      textAlign: 'right',
+      selectors: {
+        '@media (min-width: 1024px)': {
+          display: 'none'
+        }
+      }
+    },
+    mainNav: {
+      display: state.showNavigation === true ? 'block' : 'none',
+      selectors: {
+        '@media (min-width: 1024px)': {
+          display: 'block'
+        }
+      }
+    },
+    navComponents: {
       width: '100%',
       margin: '-20px 16px 24px 0',
       borderLeft: `1px solid ${palette.skeColor.lightGrey}`,

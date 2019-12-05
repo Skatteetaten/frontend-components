@@ -55,7 +55,8 @@ export const getClassNames = props => {
         bottom: inset,
         right: inset,
         outline: 'none',
-        zIndex: 1
+        zIndex: 1,
+        border: '2px solid' + palette.skeColor.blue
       },
       '& label.ms-Label': {
         fontSize: FontSizes.medium,
