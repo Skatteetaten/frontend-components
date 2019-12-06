@@ -20,23 +20,25 @@ const initialState = {
       <Grid.Col lg={4}>
         <ComboBox
           label="Nedtrekksliste"
-          help="Hjelpetekst"
+          help="Tekst som hjelper brukeren til å fylle ut feltet."
           placeHolder="Velg"
           options={state.options}
           allowFreeform={false}
           ariaLabel="Eksempel ComboBox"
           useComboBoxAsMenuWidth
+          calloutFloating={false}
         />
       </Grid.Col>
       <Grid.Col lg={4}>
         <ComboBox
           label="Med autoutfylling"
-          help="Feltet foreslår en verdi når du begynner å skrive"
+          help="Feltet foreslår en verdi når du begynner å skrive."
           options={state.options}
           allowFreeform={true}
           autoComplete={'on'}
           ariaLabel="Eksempel ComboBox"
           useComboBoxAsMenuWidth
+          calloutFloating={false}
         />
       </Grid.Col>
     </Grid.Row>
@@ -66,13 +68,14 @@ const initialState = {
       <Grid.Col lg={4}>
         <ComboBox
           label="Nedtrekksliste"
-          help="Hjelpetekst"
+          help="Tekst som hjelper brukeren til å fylle ut feltet."
           inputSize="large"
           placeHolder="Velg"
           options={state.options}
           allowFreeform={false}
           ariaLabel="Eksempel ComboBox"
           useComboBoxAsMenuWidth
+          calloutFloating={false}
         />
       </Grid.Col>
     </Grid.Row>

@@ -5,8 +5,11 @@ import {
 } from 'office-ui-fabric-react/lib-commonjs/ComboBox';
 import classnames from 'classnames';
 
-import { getClassNames, getOptionsClassNames } from './ComboBox.classNames';
-import ErrorMessage from '../ErrorMessage';
+import {
+  getClassNames,
+  getOptionsClassNames,
+  getErrorClassNames
+} from './ComboBox.classNames';
 import LabelWithCallout, { calloutState } from '../LabelWithCallout';
 import { LabelWithCalloutProps } from '../LabelWithCallout/LabelWithCallout';
 
@@ -59,7 +62,9 @@ const Combobox: React.FC<ComboboxProps> = props => {
       >
         {children}
       </VirtualizedComboBox>
-      {errorMessage && <ErrorMessage>{errorMessage}</ErrorMessage>}
+      {errorMessage && (
+        <label className={getErrorClassNames(props)}>{errorMessage}</label>
+      )}
     </div>
   );
 };
