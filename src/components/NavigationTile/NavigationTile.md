@@ -53,12 +53,12 @@ import NavigationTile from '@skatteetaten/frontend-components/NavigationTile';
 const contents = [
   {
     to: '#navigationtile',
-    title: 'Lag kontonummer',
+    heading: 'Lag kontonummer',
     icon: 'ArrowForward'
   },
   {
     to: '#navigationtile',
-    title: 'Lag KID-nummer',
+    heading: 'Lag KID-nummer',
     icon: 'ArrowForward'
   }
 ];
