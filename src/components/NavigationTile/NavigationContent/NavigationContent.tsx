@@ -16,7 +16,7 @@ export interface NavigationContentProps
 
 export type ContentProps = Pick<
   NavigationContentProps,
-  'icon' | 'heading' | 'description' | 'children' | 'to'
+  'icon' | 'heading' | 'description' | 'children' | 'to' | 'renderContent'
 >;
 
 type _InternalContentProps = Pick<
