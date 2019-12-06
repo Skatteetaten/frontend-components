@@ -19,7 +19,6 @@ export interface NavigationTileProps {
   /** Beskrivelse plassering, default er sentrert */
   alignDescription?: 'center' | 'left';
   className?: string;
-  children?: JSX.Element;
   /** aria-label */
   ariaLabel?: string;
 }
