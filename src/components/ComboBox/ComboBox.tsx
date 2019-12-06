@@ -7,7 +7,7 @@ import classnames from 'classnames';
 
 import { getClassNames, getOptionsClassNames } from './ComboBox.classNames';
 import ErrorMessage from '../ErrorMessage';
-import LabelWithCallout from '../LabelWithCallout';
+import LabelWithCallout, { calloutState } from '../LabelWithCallout';
 import { LabelWithCalloutProps } from '../LabelWithCallout/LabelWithCallout';
 
 export interface ComboboxProps extends IComboBoxProps {
@@ -20,7 +20,10 @@ export interface ComboboxProps extends IComboBoxProps {
   /** Overstyr label, se LabelWithCallout komponent */
   labelCallout?: LabelWithCalloutProps;
   /** Brukerspesifisert event for callout **/
-  onCalloutToggle?: () => void;
+  onCalloutToggle?: (
+    oldCalloutState: calloutState,
+    newCalloutState: calloutState
+  ) => void;
 }
 
 /**

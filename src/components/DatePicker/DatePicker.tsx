@@ -67,17 +67,10 @@ export interface DatePickerProps extends IDatePickerProps {
   /** Brukerspesifisert event for callout **/
   onCalloutToggle?: () => void;
 }
-interface DatePickerState {
-  isCalloutVisible: boolean;
-  value?: Date | null;
-}
 /**
  * @visibleName DatePicker (Datovelger)
  */
-export default class DatePicker extends React.Component<
-  DatePickerProps,
-  DatePickerState
-> {
+export default class DatePicker extends React.Component<DatePickerProps> {
   static DefaultDateFormat = DEFAULT_DATE_FORMAT;
   static DefaultStrings = DEFAULT_STRINGS;
   static DefaultFormatDate = DEFAULTFORMATDATE;
@@ -101,25 +94,6 @@ export default class DatePicker extends React.Component<
     showWeekNumbers: false,
     strings: DatePicker.DefaultStrings
   };
-  constructor(props: DatePickerProps) {
-    super(props);
-    this.state = {
-      isCalloutVisible: false,
-      value: null
-    };
-  }
-
-  _onClick = () => {
-    this.setState({
-      isCalloutVisible: !this.state.isCalloutVisible
-    });
-  };
-
-  _onDismiss = () => {
-    this.setState({
-      isCalloutVisible: false
-    });
-  };
 
   render() {
     const {
@@ -140,9 +114,7 @@ export default class DatePicker extends React.Component<
       ...rest
     } = this.props;
     const classNames = getClassNames(this.props);
-    const _onSelectDate = (date: Date | null | undefined): void => {
-      this.setState({ value: date });
-    };
+
     return (
       <div id={id}>
         <LabelWithCallout
@@ -154,8 +126,6 @@ export default class DatePicker extends React.Component<
         />
         <FabricDatePicker
           {...rest}
-          value={this.state.value!}
-          onSelectDate={_onSelectDate}
           className={css(classNames, className)}
           disabled={rest.readonlyMode ? true : disabled}
           strings={{

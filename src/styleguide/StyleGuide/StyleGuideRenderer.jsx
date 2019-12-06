@@ -7,7 +7,6 @@ import Link from '../../components/Link';
 import ActionButton from '../../components/ActionButton';
 import { getClassNames } from './classNames';
 import React from 'react';
-import Typography from '../../components/Typography';
 import './style.css';
 
 const ScrollToTop = withRouter(
@@ -140,16 +139,7 @@ export class StyleGuideRenderer extends React.Component<> {
                     </nav>
                   </Grid.Col>
                   <Grid.Col xl={9}>
-                    <article className={styles.article}>
-                      <Typography
-                        noBorder={['a']}
-                        noSize={['h1', 'h2']}
-                        noMargin={['h1', 'h2', 'p']}
-                        noColor={['p', 'h2', 'a']}
-                      >
-                        {children}
-                      </Typography>
-                    </article>
+                    <article className={styles.article}>{children}</article>
                   </Grid.Col>
                 </Grid.Row>
               </Grid>

@@ -8,7 +8,7 @@ import {
   ITextField
 } from 'office-ui-fabric-react/lib-commonjs/TextField';
 import { getClassNames } from './TextField.classNames';
-import LabelWithCallout from '../LabelWithCallout';
+import LabelWithCallout, { calloutState } from '../LabelWithCallout';
 
 export interface TextFieldProps extends ITextFieldProps {
   /** Benyttes når teksten for et readOnly tekstfelt skal fremheves  */
@@ -38,7 +38,10 @@ export interface TextFieldProps extends ITextFieldProps {
   /** @ignore */
   editMode?: boolean;
   /** Brukerspesifisert event for callout **/
-  onCalloutToggle?: () => void;
+  onCalloutToggle?: (
+    oldCalloutState: calloutState,
+    newCalloutState: calloutState
+  ) => void;
 }
 
 /**
