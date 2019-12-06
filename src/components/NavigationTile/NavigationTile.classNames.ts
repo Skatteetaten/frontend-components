@@ -4,32 +4,27 @@ import { PaletteProps } from '..';
 import { NavigationTileProps } from './NavigationTile';
 
 function getType(props: NavigationTileProps) {
-  switch (props.type) {
-    case 'left':
-      return {
-        display: 'block'
-      };
-    default:
-      return;
+  if (props.type === 'left') {
+    return {
+      display: 'block'
+    };
   }
 }
 
 function getIcon(props: NavigationTileProps) {
-  switch (props.alignIcon) {
-    case 'right':
-      return {
-        fontSize: '28px',
-        float: 'right'
-      };
-    default:
-      return {
-        fontSize: '42px',
-        display: 'inherit',
-        margin: `16px 0`,
-        textAlign: 'center',
-        color: 'black'
-      };
+  if (props.alignIcon === 'right') {
+    return {
+      fontSize: '28px',
+      float: 'right'
+    };
   }
+  return {
+    fontSize: '42px',
+    display: 'inherit',
+    margin: `16px 0`,
+    textAlign: 'center',
+    color: 'black'
+  };
 }
 
 function getTitle(props: NavigationTileProps) {
@@ -41,8 +36,6 @@ function getTitle(props: NavigationTileProps) {
       marginBottom: '8px',
       color: palette.skeColor.blue
     };
-  } else {
-    return;
   }
 }
 
@@ -55,8 +48,6 @@ function getDescription(props: NavigationTileProps) {
       lineHeight: '25px',
       color: palette.skeColor.blackAlt
     };
-  } else {
-    return;
   }
 }
 
@@ -76,7 +67,7 @@ export const getClassNames = (props: NavigationTileProps) => {
           color: palette.skeColor.blackAlt,
           ...getDescription(props)
         },
-        '& h2': {
+        '& h2, h3, h4, h5, h6': {
           textAlign: 'center',
           margin: 0,
           marginBottom: '8px',
@@ -95,9 +86,13 @@ export const getClassNames = (props: NavigationTileProps) => {
     },
     nav: {
       selectors: {
-        '& a': {
+        '& a, & button': {
           border: '0',
           margin: 'auto'
+        },
+        '& button': {
+          backgroundColor: 'inherit',
+          ...getTitle(props)
         },
         '& ul': {
           display: 'flex',
@@ -115,7 +110,7 @@ export const getClassNames = (props: NavigationTileProps) => {
           marginBottom: '32px',
           flexBasis: '46%'
         },
-        '& ul li > a': {
+        '& ul li > a, & ul li > button': {
           color: palette.skeColor.darkBlue,
           textDecoration: 'none',
           paddingBottom: '16px',
@@ -125,12 +120,12 @@ export const getClassNames = (props: NavigationTileProps) => {
           width: '100%',
           transition: 'all 0.2s ease'
         },
-        '& ul li > a:active, & ul li > a:focus, & ul li > a:hover': {
+        '& ul li > a:active, & ul li > a:focus, & ul li > a:hover, & ul li > button:active, & ul li > button:focus, & ul li > button:hover': {
           backgroundColor: palette.skeColor.lightBlue,
           outline: 'none',
           transition: 'background-color .2s'
         },
-        '& ul li > a::after': {
+        '& ul li > a::after, & ul li > button::after': {
           content: '""',
           position: 'absolute',
           display: 'inline-block',
@@ -141,7 +136,7 @@ export const getClassNames = (props: NavigationTileProps) => {
           width: '100%',
           height: 0
         },
-        '& ul li > a:focus:after, & ul li > a:hover:after': {
+        '& ul li > a:focus:after, & ul li > a:hover:after, & ul li > button:focus:after, & ul li > button:hover:after': {
           height: 2
         },
         '@media (max-width: 1023px)': {
