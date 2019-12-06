@@ -27,11 +27,11 @@ export const getClassNames = () => {
       textDecoration: 'none',
       fontWeight: 700,
       borderBottom: '2px solid ' + hex2rgba(palette.skeColor.blue, 0.25),
-      paddingLeft: '3px',
       selectors: {
         '&:hover': {
           color: palette.skeColor.darkBlue,
-          borderBottom: '2px solid ' + palette.skeColor.darkBlue
+          borderBottom: '2px solid ' + palette.skeColor.darkBlue,
+          transition: 'border-bottom 0.3s'
         },
         '&:focus': {
           color: palette.skeColor.darkBlue,

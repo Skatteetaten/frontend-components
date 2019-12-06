@@ -63,6 +63,8 @@ module.exports = {
       'SkeBasis',
       'TopBanner',
       'TopStripe',
+      'TopStripeMenu',
+      'TopStripeButton',
       'Typography'
     ]),
     generateComponentsGroup('Inputfelt', [
