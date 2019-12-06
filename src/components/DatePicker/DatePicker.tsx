@@ -11,7 +11,7 @@ import {
 import { FirstWeekOfYear } from 'office-ui-fabric-react/lib-commonjs/utilities/dateValues/DateValues';
 import ErrorMessage from '../ErrorMessage';
 import { getClassNames } from './DatePicker.classNames';
-import LabelWithCallout from '../LabelWithCallout';
+import LabelWithCallout, { calloutState } from '../LabelWithCallout';
 import { LabelWithCalloutProps } from '../LabelWithCallout/LabelWithCallout';
 
 const DEFAULT_DATE_FORMAT = 'DD.MM.YYYY';
@@ -65,7 +65,10 @@ export interface DatePickerProps extends IDatePickerProps {
   labelCallout?: LabelWithCalloutProps;
   calloutFloating?: LabelWithCalloutProps['calloutFloating'];
   /** Brukerspesifisert event for callout **/
-  onCalloutToggle?: () => void;
+  onCalloutToggle?: (
+    oldCalloutState: calloutState,
+    newCalloutState: calloutState
+  ) => void;
 }
 /**
  * @visibleName DatePicker (Datovelger)

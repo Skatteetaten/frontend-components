@@ -4,7 +4,7 @@ import classnames from 'classnames';
 import { TopStripeButton } from './TopStripeButton';
 
 interface TopStripeProps {
-  children?: JSX.Element[];
+  children?: JSX.Element | JSX.Element[];
   /** @ignore */
   open?: number;
   /** @ignore */
