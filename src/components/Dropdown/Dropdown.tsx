@@ -7,7 +7,7 @@ import {
 import * as React from 'react';
 import Icon from '../Icon/Icon';
 import { getCalloutClassNames, getClassNames } from './Dropdown.classNames';
-import LabelWithCallout from '../LabelWithCallout';
+import LabelWithCallout, { calloutState } from '../LabelWithCallout';
 import { LabelWithCalloutProps } from '../LabelWithCallout/LabelWithCallout';
 import ErrorMessage from '../ErrorMessage';
 
@@ -23,7 +23,10 @@ export interface DropdownProps extends IDropdownProps {
   /** @ignore */
   multiSelectDelimiter?: IDropdownProps['multiSelectDelimiter'];
   /** Brukerspesifisert event for callout **/
-  onCalloutToggle?: () => void;
+  onCalloutToggle?: (
+    oldCalloutState: calloutState,
+    newCalloutState: calloutState
+  ) => void;
 }
 
 interface DropdownState {
