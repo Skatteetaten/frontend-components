@@ -48,7 +48,7 @@ module.exports = {
         }
       ]
     },
-    generateComponentsGroup('Knapper', [
+    generateComponentsGroup('Knapper og lenker', [
       'ActionButton',
       'Button',
       'IconButton',
