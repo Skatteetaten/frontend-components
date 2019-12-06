@@ -66,6 +66,10 @@ export interface DatePickerProps extends IDatePickerProps {
   calloutFloating?: LabelWithCalloutProps['calloutFloating'];
   /** Brukerspesifisert event for callout **/
   onCalloutToggle?: () => void;
+  /** @ignore */
+  borderless?: IDatePickerProps['borderless'];
+  /** @ignore */
+  underlined?: IDatePickerProps['underlined'];
 }
 /**
  * @visibleName DatePicker (Datovelger)

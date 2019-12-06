@@ -20,7 +20,6 @@ const initialState = {
       }
       value={state.value1}
       onChange={(e, value1) => setState({ value1 })}
-      isRequired={true}
       isRequiredErrorMessage={'Dato må fylles ut'}
     />
   </div>
@@ -30,25 +29,11 @@ const initialState = {
       id={'my-date'}
       label={'Ukenummer'}
       placeholder={'dd.mm.åååå'}
-      help={
-        'Du kan skrive inn dato i feltet, eller velge en dato ved hjelp av datovelgeren, enten med mus eller bruk tastaturet'
-      }
+      help={'Denne datovelgeren viser ukenummer i kalender'}
       value={state.value2}
       onChange={({ target: { value2 } }) => setState({ value2 })}
       showMonthPickerAsOverlay={true}
       showWeekNumbers={true}
-    />
-  </div>
-  <br />
-  <div className="ExampleFlexContainer-200">
-    <DatePicker
-      id={'my-date'}
-      label={'Lesemodus'}
-      ariaLabel={'Datovelger'}
-      placeholder={DatePicker.DefaultDateFormat}
-      value={state.value3}
-      onChange={({ target: { value3 } }) => setState({ value3 })}
-      readonlyMode
     />
   </div>
 </div>;
@@ -76,7 +61,6 @@ const initialState = {
     }
     value={state.value1}
     onChange={(e, value1) => setState({ value1 })}
-    isRequired={true}
     isRequiredErrorMessage={'Dato må fylles ut'}
   />
 </div>;
