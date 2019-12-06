@@ -15,8 +15,6 @@ exports[`Accordion komponent matcher snapshot 1`] = `
           totalSteps={1}
         >
           <div
-            aria-describedby="step1"
-            aria-label="step1"
             className="wrapperStep-37"
             key="1"
           >
