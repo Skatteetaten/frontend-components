@@ -100,11 +100,11 @@ import Grid from '@skatteetaten/frontend-components/Grid';
   <p>
     Et grid/rutenett hjelper til med å plassere komponenter på skjermen. Det
     er først og fremst nyttig i utvikling, men kan være lurt for designere å
-    tenke på hvordan komponenter enkelt plasseres
+    tenke på hvordan komponenter enkelt plasseres.
   </p>
   <p>
     Et grid består av rader og kolonner, hvor en rad kan maksimalt ha 12
-    kolonner, men man trenger ikke bruke alle 12
+    kolonner, men man trenger ikke bruke alle 12.
   </p>
   <p>
     Griden kan settes opp slik at antall kolonner som vises er avhengig av
@@ -118,5 +118,19 @@ import Grid from '@skatteetaten/frontend-components/Grid';
     <li>X-large (xl): 1024px-1365px</li>
     <li>Xx-large (xxl): 1366px-1919px</li>
     <li>Xxx-large (xxxl): min 1920px</li>
+  </ul>
+  <p>Man kan fjerne luft rundt kolonner ved å sette noPadding. </p>
+  <p>
+    Det anbefalt å bruke luft/anstander til å fortelle om i hvor stor grad en
+    seksjon er knyttet til en annen. Du kan bruke avstander mellom radene i
+    griden for oppnå det:
+  </p>
+  <ul>
+    <li>
+      Når innholdet hører sammen: Grid.SPACE_NONE (0px) eller Grid.SPACE_SMALL
+      (8px)
+    </li>
+    <li>For ny seksjon, med samme type innhold: Grid.SPACE_MEDIUM (16px)</li>
+    <li>Nytt type innhold eller tydelig skille: Grid.SPACE_LARGE (24px)</li>
   </ul>
 ```
