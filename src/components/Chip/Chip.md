@@ -48,10 +48,15 @@ import Chip from '@skatteetaten/frontend-components/Chip';
     Bruk <b>aria-label</b> attributten slik at skjermlesere kan fange opp
     teksten.
   </li>
+  <li>
+    Blå tekst (lenke) på rød bakgrunn har ikke tilstrekkelig lesekontrast for å
+    nå kravene til universell utforming.
+  </li>
 </ul>
 ```
 
 ```js noeditor beskrivelse
+  <h3>Bruk med varsomhet</h3>
   <p>
     Det er viktig å bruke dette med varsomhet slik at ikke informasjonen
     drukner i merkelapper.
@@ -60,12 +65,13 @@ import Chip from '@skatteetaten/frontend-components/Chip';
     En chip er liten i sin natur, men dersom du ønsker et kraftigere visuelt
     uttrykk finnes den i en stor variant.
   </p>
+  <h3>Farger</h3>
   <p>
     Standard farge på chip er beige/gul, men vi har et par varianter for i
     grønn og rød dersom du trenger å skille chips fra hverandre. Bruk rød til
     obs/advarsel og grønn for å signalisere ok.
   </p>
   <p>
-    Chips kan inneholde lenker dersom de er klikkbare. Lenkene skal være blå.
+    Chips kan inneholde lenker dersom de er klikkbare. Lenkene skal være blå. (Merk at blå lenkefarge på rød bakgrunn ikke har god nok lesekontrast.)
   </p>
 ```

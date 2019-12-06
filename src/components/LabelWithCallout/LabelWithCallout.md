@@ -15,7 +15,7 @@ import LabelWithCallout from '@skatteetaten/frontend-components/LabelWithCallout
 </>;
 ```
 
-Basert på "state"
+Kan endre visning ut ifra tilstand:
 
 ```js
 import LabelWithCallout from '@skatteetaten/frontend-components/LabelWithCallout';
@@ -30,7 +30,7 @@ import Button from '@skatteetaten/frontend-components/Button';
     }
   />
   <Button onClick={() => setState({ warning: !state.warning })}>
-    {state.warning ? 'Vis med hjelpetekst' : 'Vis med advarsel'}
+    {state.warning ? 'Vis med hjelpetekst' : 'Vis med varsel'}
   </Button>
 </>;
 ```

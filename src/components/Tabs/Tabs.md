@@ -35,17 +35,19 @@ import TabItem from '@skatteetaten/frontend-components/Tabs/TabItem';
 ```
 
 ```js noeditor beskrivelse
-<ul>
-  <li>
+<h3>Innhold</h3>
+  <p>
     Etterstreb logisk inndeling av innholdet slik at brukerne enkelt kan forutse
-    hva som er innholdet i en fane.
-  </li>
-  <li>
-    Bruk kun én rad med faner om gangen - det er lett å miste oversikten når man
+    hva som er innholdet i en fane. Bruk korte tekster på titlene - og unngå kun STORE BOKSTAVER.
+  </p>
+  <h3>Plassering</h3>
+
+  <p>
+    Plasser Tabs oppe på siden, ikke nede eller på siden. Bruk kun én rad med faner om gangen - det er lett å miste oversikten når man
     har Tabs over flere rader.
-  </li>
-  <li>Bruk korte tekster på titlene - og unngå kun STORE BOKSTAVER.</li>
-  <li>Plasser Tabs oppe på siden, ikke nede eller på siden.</li>
-  <li>Ikke bruk Tabs til å navigere til mellom ulike sider.</li>
-</ul>
+  </p>
+
+  <h3>Ikke som navigasjon</h3>
+  <p>Ikke bruk Tabs-komponentent til å navigere til mellom ulike sider. Den er laget for å bytte visning innad på en side.</p>
+
 ```

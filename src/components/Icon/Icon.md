@@ -459,6 +459,10 @@ const iconGroup = {
       usage: 'Generell fil'
     },
     {
+      name: 'PreviewFile',
+      usage: 'Forhåndsvisning'
+    },
+    {
       name: 'ExcelFile',
       usage: 'Excel-fil'
     },

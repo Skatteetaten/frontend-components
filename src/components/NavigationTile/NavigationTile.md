@@ -5,51 +5,45 @@ import NavigationTile from '@skatteetaten/frontend-components/NavigationTile';
 import NavigationContent from '@skatteetaten/frontend-components/NavigationTile/NavigationContent';
 
 <NavigationTile>
-  <NavigationContent to={'#navigationtile'} title={'Bedrift'} icon={'Company'}>
+  <NavigationContent
+    to={'#navigationtile'}
+    heading={'Bedrift'}
+    icon={'Company'}
+  >
     A-melding, særavgift og veiledere som hjelper å rapportere riktig.
   </NavigationContent>
-  <NavigationContent to={'#navigationtile'} title={'Person'} icon={'Person'}>
+  <NavigationContent to={'#navigationtile'} heading={'Person'} icon={'Person'}>
     Skattekort, skattemelding (selvangivelse), skatteoppgjør, tema og fradrag
     som hjelper deg til få riktig skatt.
   </NavigationContent>
 </NavigationTile>;
 ```
 
-** Eksempel på egendefinert lenke-implmentasjon ved bruk av react-router **
+Uten beskrivende tekst:
 
 ```js
 import NavigationTile from '@skatteetaten/frontend-components/NavigationTile';
 import NavigationContent from '@skatteetaten/frontend-components/NavigationTile/NavigationContent';
-import { BrowserRouter, Link as RRLink } from 'react-router-dom';
 
-<BrowserRouter>
-  <NavigationTile>
-    <NavigationContent
-      to="/link-one"
-      title={'Bedrift'}
-      icon={'Company'}
-      renderContent={(to, children) => {
-        return <RRLink to={to}>{children}</RRLink>;
-      }}
-    >
-      A-melding, særavgift og veiledere som hjelper å rapportere riktig.
-    </NavigationContent>
-    <NavigationContent
-      to="/linkTo"
-      title={'Person'}
-      icon={'Person'}
-      renderContent={(to, children) => {
-        return <RRLink to={to}>{children}</RRLink>;
-      }}
-    >
-      Skattekort, skattemelding (selvangivelse), skatteoppgjør, tema og fradrag
-      som hjelper deg til få riktig skatt.
-    </NavigationContent>
-  </NavigationTile>
-</BrowserRouter>;
+<NavigationTile
+  alignTitle={'left'}
+  alignDescription={'left'}
+  alignIcon={'right'}
+>
+  <NavigationContent
+    to={'#navigationtile'}
+    icon={'arrowForward'}
+    heading={'Bedrift'}
+  />
+  <NavigationContent
+    to={'#navigationtile'}
+    heading={'Person'}
+    icon={'arrowForward'}
+  />
+</NavigationTile>;
 ```
 
-** Eksempel på NavigationTile definert via JSON-struktur **
+Eksempel med bruk av JSON-format på dataene:
 
 ```js
 import NavigationTile from '@skatteetaten/frontend-components/NavigationTile';
@@ -58,9 +52,9 @@ import { BrowserRouter, Link as RRLink } from 'react-router-dom';
 
 const contents = [
   {
-    title: 'Person',
+    heading: 'Person',
     to: '#navigationtile1',
-    icon: 'ArrowForward',
+    icon: 'Person',
     description:
       'Skattekort, skattemelding (selvangivelse), skatteoppgjør, tema og fradrag som hjelper deg til få riktig skatt.',
     renderContent: (to, children) => {
@@ -69,8 +63,8 @@ const contents = [
   },
   {
     to: '#navigationtile2',
-    title: 'Lag KID-nummer',
-    icon: 'ArrowForward',
+    heading: 'Lag KID-nummer',
+    icon: 'Calculator',
     description:
       'Lag KID for forskuddsskatt, tilleggsforskudd, restskatt, kildeskatt på aksjeutbytte.'
   }
@@ -82,13 +76,15 @@ const contents = [
 ```
 
 ```js noeditor beskrivelse
+<h3>Bruker på navigasjonssider</h3>
   <p>
     NavigationTile brukes for eksempel på transportsider/navigasjonssider.
     Transportsider er landingssider med primær hensikt å sende brukeren videre
     nedover i sidestrukturen.
   </p>
+  <h3>Kan ha varierende innhold</h3>
   <p>
     Komponentene har alltid en tittel, men kan brukes uten ikon og beskrivende
-    tekst.
+    tekst. I tillegg kan innholdet midtstilles eller høyre og venstrejusteres.
   </p>
 ```
