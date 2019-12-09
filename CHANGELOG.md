@@ -1,4 +1,18 @@
-Denne CHANGELOG-filen inneholder de viktigste oppdateringene for Skatteetatens Designssystem
+#### **v.2.1.0 - November 7, 2019**
+
+- New components; Link and LinkGroup
+- Fixed an issue when displaying help text in a wide TextField
+- Added inline help text (CalloutFloating) on ComboBox, Datepicker, Dropdown
+- RadioButtonGroup: Added help text and updated style on errorMessage.
+- Grid: Added possibility to specify padding
+- StepList: Supports conditional rendering of steps, and transparent background color instead of white.
+- AccordionItem can now show a subtitle
+- Table: open row can be triggerd with prop.
+- NavigationTile: Can now render different h2-tags.
+- Demopage: mobile navigation and updated documentation.
+- Minor updates to Sketch-components
+
+NOTE: The code behind this version is not yet made visble in the github-repo, due to a process of moving between repositories. The changes will be made available in the next release.
 
 ### **v.2.0.0 - Oktober 1, 2019**
 
