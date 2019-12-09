@@ -3,7 +3,6 @@ import { getClassNames } from './LabelWithCallout.classNames';
 import { IconButton } from 'office-ui-fabric-react/lib-commonjs/Button';
 import { Label } from 'office-ui-fabric-react/lib-commonjs/Label';
 import Callout from '../Callout';
-import { isUndefined } from 'util';
 import classnames from 'classnames';
 
 export enum calloutState {
@@ -39,7 +38,6 @@ const LabelWithCallout = (props: LabelWithCalloutProps) => {
     editFunction,
     help,
     id,
-    inputSize,
     label,
     readOnly,
     warning,
@@ -47,14 +45,14 @@ const LabelWithCallout = (props: LabelWithCalloutProps) => {
     ariaLabel,
     onCalloutToggle
   } = props;
-  const calloutFloating = typeof props.calloutFloating === 'undefined' ? true : props.calloutFloating;
-  const styles = getClassNames({calloutFloating, ...props});
+  const calloutFloating =
+    typeof props.calloutFloating === 'undefined' ? true : props.calloutFloating;
+  const styles = getClassNames({ calloutFloating, ...props });
   const [isCalloutVisible, setIsCalloutVisible] = React.useState(false);
   const [currentCalloutState, setCurrentCalloutState] = React.useState(
     calloutState.CLOSED
   );
   const iconButtonElementRef = React.useRef<HTMLSpanElement>(null);
-  const inputSizeLarge = inputSize === 'large';
   const helpElement = React.isValidElement(help) ? help : <p>{help}</p>;
   const warningElement = React.isValidElement(warning) ? (
     warning
@@ -130,9 +128,8 @@ const LabelWithCallout = (props: LabelWithCalloutProps) => {
       {isCalloutVisible && (
         <Callout
           className={styles.calloutContext}
-          directionalHint={calloutFloating
-              ? Callout.POS_BOTTOM_LEFT
-              : Callout.POS_TOP_LEFT
+          directionalHint={
+            calloutFloating ? Callout.POS_BOTTOM_LEFT : Callout.POS_TOP_LEFT
           }
           color={help && !warning ? Callout.HELP : Callout.WARNING}
           ariaLabel={help && !warning ? 'Hjelpetekst' : 'Varseltekst'}

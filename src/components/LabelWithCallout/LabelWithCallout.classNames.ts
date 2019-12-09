@@ -1,7 +1,6 @@
 import { FontSizes, FontWeights, PaletteProps } from '..';
 import { mergeStyleSets } from '@uifabric/merge-styles';
 import { getTheme } from '@uifabric/styling';
-import { isUndefined } from 'util';
 import { LabelWithCalloutProps } from './LabelWithCallout';
 
 function getLabelSize(props: LabelWithCalloutProps) {
@@ -23,8 +22,8 @@ function getLabelSize(props: LabelWithCalloutProps) {
 
 export const getClassNames = (props: LabelWithCalloutProps) => {
   const palette = getTheme().palette as PaletteProps;
-  const inputSizeLarge = props.inputSize === 'large';
-  const calloutFloating = typeof props.calloutFloating === 'undefined' ? true : props.calloutFloating;
+  const calloutFloating =
+    typeof props.calloutFloating === 'undefined' ? true : props.calloutFloating;
 
   // @ts-ignore //TODO merge
   return mergeStyleSets({
