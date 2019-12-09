@@ -73,12 +73,10 @@ export const getClassNames = function getClassNames(props, state) {
         '& .ms-Nav-chevronButton:hover': {
           backgroundColor: palette.skeColor.lightBlue,
           color: palette.skeColor.blackAlt
-          //border: 'none'
         },
         '.ms-Nav-chevronButton i': {
           color: palette.skeColor.blackAlt,
           fontSize: '18px'
-          //borderBottomWidth: '0'
         },
         '.is-selected .ms-Nav-link': {
           backgroundColor: palette.skeColor.lightBrown,
@@ -106,9 +104,8 @@ export const getClassNames = function getClassNames(props, state) {
           display: state.isHidden === true ? 'none' : 'block',
           backgroundColor: palette.skeColor.white,
 
-          //minWidth: '195px',
           selectors: {
-            '@media (min-width: 1023px)': {
+            '@media (min-width: 1024px)': {
               display: 'block'
             }
           }
@@ -127,7 +124,7 @@ export const getClassNames = function getClassNames(props, state) {
         '& .ms-Button-flexContainer': {
           justifyContent: 'flex-end'
         },
-        '@media (min-width: 1022px)': {
+        '@media (min-width: 1024px)': {
           display: 'none'
         }
       }

@@ -48,7 +48,7 @@ module.exports = {
         }
       ]
     },
-    generateComponentsGroup('Knapper', [
+    generateComponentsGroup('Knapper og lenker', [
       'ActionButton',
       'Button',
       'IconButton',
@@ -81,6 +81,7 @@ module.exports = {
       'AccordionMenu',
       'Card',
       'CommandBar',
+      'LinkGroup',
       'StepList',
       'Step',
       'Tabs'

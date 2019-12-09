@@ -2,18 +2,21 @@ import React from 'react';
 import ComponentsListRenderer from '../ComponentsList/ComponentsListRenderer';
 import SearchField from '../../components/SearchField';
 import getFilterRegExp from 'react-styleguidist/lib/client/utils/getFilterRegExp';
-// import filterComponentsByName from 'react-styleguidist/lib/client/utils/filterComponentsByName';
+import { UseScreen } from '../../components/utils/ScreenPlugin';
 
 function SokeBoks({ searchTerm, setSearchTerm, children }) {
+  const size = UseScreen();
   return (
     <>
-      <SearchField
-        placeholder={'Vis meg...'}
-        ariaLabel="Søkefelt"
-        value={searchTerm}
-        className="searchField"
-        onChange={(e, value) => setSearchTerm(value || '')}
-      />
+      {size.gt.lg && (
+        <SearchField
+          placeholder={'Vis meg...'}
+          ariaLabel="Søkefelt"
+          value={searchTerm}
+          className="searchField"
+          onChange={(e, value) => setSearchTerm(value || '')}
+        />
+      )}
       {children}
     </>
   );
