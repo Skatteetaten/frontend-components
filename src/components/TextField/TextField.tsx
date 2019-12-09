@@ -61,6 +61,7 @@ export const TextField: React.FC<TextFieldProps> = ({
   onCalloutToggle,
   ...rest
 }) => {
+  rest.inputSize = rest.inputSize || 'normal';
   const shouldEditWhenEmpty = rest.editableWhenEmpty ? value === '' : false;
 
   const textField = React.useRef<ITextField | null>();
@@ -81,6 +82,8 @@ export const TextField: React.FC<TextFieldProps> = ({
   const setValue = () => {
     if (rest.suffix && readOnly && !editMode) {
       return value + ' ' + rest.suffix;
+    } else if (value === null) {
+      return undefined;
     }
     return value;
   };
