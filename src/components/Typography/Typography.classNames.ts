@@ -6,6 +6,12 @@ import includes from 'lodash/includes';
 import { PaletteProps } from '..';
 
 const defaultMargin = '16px 0 4px 0';
+
+export const hex2rgba = (hex, alpha = 1) => {
+  const [r, g, b] = hex.match(/\w\w/g).map(x => parseInt(x, 16));
+  return `rgba(${r},${g},${b},${alpha})`;
+};
+
 // @ts-ignore TODO
 function hideCSSProp(tag, cssProp) {
   if (typeof cssProp === 'undefined') return false;
@@ -197,8 +203,21 @@ const getAStyle = (props, palette) => {
     color: showColor && palette.skeColor.blue,
     textDecoration: 'none',
     paddingBottom: '1px',
-    borderBottom: showBorder && `2px solid ${palette.skeColor.blue}`,
-    transition: 'border-color .5s'
+    borderBottom:
+      showBorder && `2px solid ` + hex2rgba(palette.skeColor.blue, 0.25),
+    transition: 'border-color .5s',
+    selectors: {
+      ':hover': {
+        color: palette.skeColor.darkBlue,
+        borderBottom: '2px solid ' + palette.skeColor.darkBlue
+      },
+      ':focus': {
+        color: palette.skeColor.darkBlue,
+        borderBottom: '2px solid ' + palette.skeColor.darkBlue,
+        backgroundColor: palette.skeColor.lightBlue,
+        outline: 'none'
+      }
+    }
   };
 };
 // @ts-ignore TODO
