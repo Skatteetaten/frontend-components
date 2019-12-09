@@ -54,10 +54,7 @@ export const getClassNames = (props: LabelWithCalloutProps) => {
       display: 'flex',
       flexWrap: 'wrap',
       alignItems: 'center',
-      fontSize: FontSizes.small,
-      '& button': {
-        position: 'relative'
-      }
+      fontSize: FontSizes.small
     },
     label: {
       selectors: {
@@ -71,7 +68,12 @@ export const getClassNames = (props: LabelWithCalloutProps) => {
     },
     labelIconArea: {
       height: '26px',
-      marginTop: '-5px'
+      marginTop: '-5px',
+      selectors: {
+        '& button': {
+          position: 'relative'
+        }
+      }
     },
     icon: {
       color: palette.skeColor.blue,
