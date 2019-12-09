@@ -19,7 +19,7 @@ const StepList = (props: StepListProps) => {
 
   return (
     <div className={classnames(styles.stepList, className)}>
-      <Grid>
+      <Grid padding="0">
         {React.Children.map(children, (child, index) => {
           if (React.isValidElement<StepProps>(child))
             return React.cloneElement(child, {
