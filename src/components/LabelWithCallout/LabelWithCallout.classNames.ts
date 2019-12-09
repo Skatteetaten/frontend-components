@@ -22,8 +22,7 @@ function getLabelSize(props: LabelWithCalloutProps) {
 
 export const getClassNames = (props: LabelWithCalloutProps) => {
   const palette = getTheme().palette as PaletteProps;
-  const calloutFloating =
-    typeof props.calloutFloating === 'undefined' ? true : props.calloutFloating;
+  const { calloutFloating } = props;
 
   // @ts-ignore //TODO merge
   return mergeStyleSets({

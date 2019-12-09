@@ -22,7 +22,6 @@ const initialState = {
       onChange={(e, value1) => setState({ value1 })}
       isRequired={true}
       isRequiredErrorMessage={'Dato må fylles ut'}
-      calloutFloating={false}
     />
   </div>
   <br />
@@ -79,7 +78,6 @@ const initialState = {
     onChange={(e, value1) => setState({ value1 })}
     isRequired={true}
     isRequiredErrorMessage={'Dato må fylles ut'}
-    calloutFloating={false}
   />
 </div>;
 ```
