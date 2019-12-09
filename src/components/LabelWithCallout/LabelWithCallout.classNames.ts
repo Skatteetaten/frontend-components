@@ -24,30 +24,27 @@ function getLabelSize(props: LabelWithCalloutProps) {
 export const getClassNames = (props: LabelWithCalloutProps) => {
   const palette = getTheme().palette as PaletteProps;
   const inputSizeLarge = props.inputSize === 'large';
-  const { calloutFloating = false } = props;
-  const isFloating =
-    (inputSizeLarge && isUndefined(calloutFloating)) ||
-    (!isUndefined(calloutFloating) && !calloutFloating);
+  const calloutFloating = typeof props.calloutFloating === 'undefined' ? true : props.calloutFloating;
 
   // @ts-ignore //TODO merge
   return mergeStyleSets({
     calloutContext: {
       selectors: {
         '& .ms-Callout-container': {
-          position: isFloating && 'inherit',
-          margin: isFloating ? '10px 0' : 0,
+          position: !calloutFloating && 'inherit',
+          margin: !calloutFloating ? '10px 0' : 0,
           width: '100%'
         },
-        '& .ms-Callout': isFloating && {
+        '& .ms-Callout': !calloutFloating && {
           left: '0 !important',
           top: '0 !important',
           position: 'inherit'
         },
-        '& .ms-Callout-main': isFloating && {
+        '& .ms-Callout-main': !calloutFloating && {
           maxWidth: '100%',
           display: 'inline-block'
         },
-        '& .ms-Callout-beak': isFloating && {
+        '& .ms-Callout-beak': !calloutFloating && {
           left: '20px !important',
           top: '-8px !important'
         }

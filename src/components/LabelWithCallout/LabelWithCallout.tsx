@@ -34,7 +34,6 @@ export interface LabelWithCalloutProps
 }
 const LabelWithCallout = (props: LabelWithCalloutProps) => {
   const {
-    calloutFloating,
     className,
     editable,
     editFunction,
@@ -48,7 +47,8 @@ const LabelWithCallout = (props: LabelWithCalloutProps) => {
     ariaLabel,
     onCalloutToggle
   } = props;
-  const styles = getClassNames(props);
+  const calloutFloating = typeof props.calloutFloating === 'undefined' ? true : props.calloutFloating;
+  const styles = getClassNames({calloutFloating, ...props});
   const [isCalloutVisible, setIsCalloutVisible] = React.useState(false);
   const [currentCalloutState, setCurrentCalloutState] = React.useState(
     calloutState.CLOSED
@@ -130,9 +130,7 @@ const LabelWithCallout = (props: LabelWithCalloutProps) => {
       {isCalloutVisible && (
         <Callout
           className={styles.calloutContext}
-          directionalHint={
-            (inputSizeLarge && isUndefined(calloutFloating)) ||
-            (!isUndefined(calloutFloating) && !calloutFloating)
+          directionalHint={calloutFloating
               ? Callout.POS_BOTTOM_LEFT
               : Callout.POS_TOP_LEFT
           }
