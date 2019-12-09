@@ -64,6 +64,10 @@ export interface DatePickerProps extends IDatePickerProps {
   /** Overstyr label, se LabelWithCallout komponent */
   labelCallout?: LabelWithCalloutProps;
   calloutFloating?: LabelWithCalloutProps['calloutFloating'];
+  /** @ignore */
+  borderless?: IDatePickerProps['borderless'];
+  /** @ignore */
+  underlined?: IDatePickerProps['underlined'];
   /** Brukerspesifisert event for callout **/
   onCalloutToggle?: (
     oldCalloutState: calloutState,

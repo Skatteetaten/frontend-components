@@ -18,28 +18,27 @@ import { Link as RRLink, BrowserRouter as Router } from 'react-router-dom';
     icon={'ArrowForward'}
     placement="before"
   />
-
-  <Link
-    path={'#link'}
-    text={'Åpne i nytt vindu'}
-    icon={'OpenInNew'}
-    placement="after"
-  />
-  <div>
-    <Router>
-      <Link
-        icon={'OpenInNew'}
-        placement="after"
-        renderContent={classNames => {
-          return (
-            <RRLink to="/" className={classNames}>
-              Egendefinert lenke
-            </RRLink>
-          );
-        }}
-      />
-    </Router>
-  </div>
+  <Router>
+    <Link
+      path={'#link'}
+      text={'Åpne i nytt vindu'}
+      icon={'OpenInNew'}
+      placement="after"
+      renderContent={classNames => {
+        return (
+          <RRLink target="_blank" to="/" className={classNames}>
+            Åpne i nytt vindu
+          </RRLink>
+        );
+      }}
+    />
+  </Router>
+  <br />
+  <br />
+  <p>
+    Det er også mulig å bruke en
+    <Link path={'#link'} text={'link'} /> inni et avsnitt med tekst.
+  </p>
 </div>;
 ```
 

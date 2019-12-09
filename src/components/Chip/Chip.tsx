@@ -12,8 +12,6 @@ export interface ChipProps extends React.HTMLAttributes<HTMLDivElement> {
   type?: ChipType;
   /** Størrelse på Chip */
   size?: 'standard' | 'large';
-  /** Bold tekst */
-  bold?: boolean;
   /** aria-label */
   ariaLabel?: string;
 }

@@ -20,10 +20,10 @@ const initialState = {
     type="primary"
     onClick={() => setState({ hasError: !state.hasError })}
   >
-    {state.hasError ? 'Skjul feil' : 'Vis Feil'}
+    Neste
   </Button>
   <ErrorMessage showError={state.hasError}>
-    Du har 3 valideringsfeil.
+    Skjemaet inneholder tre feil som må rettes før du kan gå videre.
   </ErrorMessage>
 </>;
 ```
