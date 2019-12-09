@@ -5,7 +5,9 @@ exports[`Accordion komponent matcher snapshot 1`] = `
   <div
     className="accordion-38"
   >
-    <Grid>
+    <Grid
+      padding="0 8px"
+    >
       <div
         className="ske-Grid-44 "
       >

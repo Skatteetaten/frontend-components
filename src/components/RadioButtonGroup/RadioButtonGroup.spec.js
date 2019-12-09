@@ -49,7 +49,6 @@ describe('RadioButtonGroup komponent', () => {
       defaultSelectedKey: 'B',
       options: options
     });
-    console.log(wrapper.debug());
     expect(
       wrapper
         .find(RadioButtonGroup)
