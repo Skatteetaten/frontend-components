@@ -5,22 +5,31 @@ import { getClassNames } from './Table.classNames';
 
 import TableRow from './TableRow';
 
-interface TableProps extends React.HTMLAttributes<HTMLDivElement> {
+interface TableProps<P> extends React.HTMLAttributes<HTMLDivElement> {
   /** Mulighet for å legge inn egen klasse for å overstyre stiling */
   className?: string;
   /** Global attributt som må være unik for hele HTML dokumentet */
   id?: string;
   /** Innholdselementer i tabellen */
-  data: any[];
+  data: P[];
   /**  Gjør det mulig å redigere rader i tabellen */
   editableRows?: boolean;
+  /**  Indeks til rad som skal åpnes i redigeringsmodus */
+  openEditableRowIndex?: number;
+  /**  Blir kalt ved åpning eller lukking av rad, om man ønsker å styre 'openEditableRowIndex' state utenfra */
+  /**  Ved 'undefined' styrer komponenten dette selv  */
+  setOpenEditableRowIndex?: (index?: number) => void;
   /**  Innhold som skal vises når en rad er i editeringsmodus */
-  editableContent?: any;
+  editableContent?: (
+    data: P,
+    onCloseRow: () => void,
+    rowIndex: number
+  ) => React.ReactNode;
   /**  Konfigurasjon for kolonnenavn og rekkefølge */
   columns?: {
     /** Navnet på kolonnen */
     name: string;
-    /** Nøkklen i objektet */
+    /** Nøkkelen i objektet */
     fieldName: string;
     /** Overstyre venstrejustering inni cellen: 'right' eller 'center'. */
     alignment?: 'right' | 'center';
@@ -36,6 +45,7 @@ interface TableProps extends React.HTMLAttributes<HTMLDivElement> {
 }
 
 interface TableState {
+  openEditableRowIndex?: number;
   editModeActive: boolean;
   tableIsScrollable: boolean;
   sort: { ascending: boolean; columnFieldName: string };
@@ -43,25 +53,35 @@ interface TableState {
 /**
  * @visibleName Table (Tabell)
  */
-export default class Table extends React.PureComponent<TableProps, TableState> {
+export default class Table<P> extends React.PureComponent<
+  TableProps<P>,
+  TableState
+> {
   static defaultProps = {
     data: []
   };
   private readonly wrapperRef: React.RefObject<HTMLDivElement>;
   private readonly tableRef: React.RefObject<HTMLDivElement>;
 
-  constructor(props: TableProps) {
+  constructor(props: TableProps<P>) {
     super(props);
     this.wrapperRef = React.createRef();
     this.tableRef = React.createRef();
     this.state = {
       editModeActive: false,
       tableIsScrollable: false,
+      openEditableRowIndex: props.openEditableRowIndex,
       sort: {
         ascending: false,
         columnFieldName: ''
       }
     };
+  }
+
+  componentDidUpdate(prevProps: TableProps<P>) {
+    if (this.props.openEditableRowIndex !== prevProps.openEditableRowIndex) {
+      this.setState({ openEditableRowIndex: this.props.openEditableRowIndex });
+    }
   }
 
   componentDidMount() {
@@ -124,7 +144,7 @@ export default class Table extends React.PureComponent<TableProps, TableState> {
     }
   };
 
-  _getHeader = (columns: TableProps['columns']) => {
+  _getHeader = (columns: TableProps<P>['columns']) => {
     return (
       columns &&
       columns.map(key => {
@@ -174,13 +194,7 @@ export default class Table extends React.PureComponent<TableProps, TableState> {
       }
     });
 
-  _setEditMode = () => {
-    this.setState({
-      editModeActive: !this.state.editModeActive
-    });
-  };
-
-  _getRowData = (columns: TableProps['columns']) => {
+  _getRowData = (columns: TableProps<P>['columns']) => {
     const items = this._sortRowData(this.props.data);
     return items.map((row, index) => {
       return (
@@ -191,15 +205,17 @@ export default class Table extends React.PureComponent<TableProps, TableState> {
           columns={columns}
           editableContent={this.props.editableContent}
           editableRows={this.props.editableRows}
-          setEditMode={this._setEditMode}
-          editModeActive={this.state.editModeActive}
+          editModeActive={this.state.openEditableRowIndex !== undefined}
           tableHasScroll={this.state.tableIsScrollable}
+          isEditableRowOpen={this.state.openEditableRowIndex === index}
+          onEditRow={() => this._handleEditRow(index)}
+          onCloseRow={this._handleCloseRow}
         />
       );
     });
   };
 
-  _sortRowData = (rows: any[]) => {
+  _sortRowData = (rows: P[]) => {
     const sortingKey = this.state.sort.columnFieldName;
     if (sortingKey) {
       const copiedArray = [...rows];
@@ -223,5 +239,21 @@ export default class Table extends React.PureComponent<TableProps, TableState> {
       return copiedArray;
     }
     return rows;
+  };
+
+  _setOpenEditableRowIndex = (index?: number) => {
+    if (this.props.setOpenEditableRowIndex) {
+      this.props.setOpenEditableRowIndex(index);
+    } else {
+      this.setState({ openEditableRowIndex: index });
+    }
+  };
+
+  _handleEditRow = (index?: number) => {
+    this._setOpenEditableRowIndex(index);
+  };
+
+  _handleCloseRow = () => {
+    this._setOpenEditableRowIndex(undefined);
   };
 }

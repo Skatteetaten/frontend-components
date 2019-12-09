@@ -2,28 +2,28 @@ import * as React from 'react';
 import IconButton from '../../IconButton';
 import classnames from 'classnames';
 
-interface TableRowProps {
-  data: object;
+interface TableRowProps<P> {
+  data: P;
   rowIndex: number;
   editableRows: boolean | undefined;
-  editableContent: any;
+  editableContent?: (
+    data: P,
+    onCloseRow: () => void,
+    rowIndex: number
+  ) => React.ReactNode;
   columns: any;
   editModeActive: boolean;
   tableHasScroll: boolean;
-  setEditMode: () => void;
+  isEditableRowOpen: boolean;
+  onEditRow: (index?: number) => void;
+  onCloseRow: () => void;
 }
 
-interface TableRowState {
-  isEditableRowOpen: boolean;
-}
 /**
  * @visibleName TableRow (Tabellrad)
  */
-export default class TableRow extends React.PureComponent<
-  TableRowProps,
-  TableRowState
-> {
-  constructor(props: TableRowProps) {
+export default class TableRow<P> extends React.PureComponent<TableRowProps<P>> {
+  constructor(props: TableRowProps<P>) {
     super(props);
     this.state = {
       isEditableRowOpen: false
@@ -31,7 +31,6 @@ export default class TableRow extends React.PureComponent<
   }
 
   render() {
-    const { isEditableRowOpen } = this.state;
     const {
       data,
       rowIndex,
@@ -39,13 +38,16 @@ export default class TableRow extends React.PureComponent<
       editableContent,
       columns,
       editModeActive,
-      tableHasScroll
+      tableHasScroll,
+      isEditableRowOpen,
+      onCloseRow,
+      onEditRow
     } = this.props;
     const numberOfItems = Object.keys(data).length + 1;
     const editButton = (
       <IconButton
         className={'editButton'}
-        onClick={() => this._editRow()}
+        onClick={() => onEditRow(rowIndex)}
         title="Rediger rad"
         icon="Edit"
         disabled={editModeActive}
@@ -74,7 +76,8 @@ export default class TableRow extends React.PureComponent<
                   className="editableCell"
                   colSpan={numberOfItems}
                 >
-                  {editableContent(data, this._handleCloseRow, rowIndex)}
+                  {editableContent &&
+                    editableContent(data, onCloseRow, rowIndex)}
                 </td>
               </tr>
             )}
@@ -96,19 +99,5 @@ export default class TableRow extends React.PureComponent<
         </td>
       );
     });
-  };
-
-  _editRow = () => {
-    this.setState({
-      isEditableRowOpen: !this.state.isEditableRowOpen
-    });
-    this.props.setEditMode();
-  };
-
-  _handleCloseRow = () => {
-    this.setState({
-      isEditableRowOpen: false
-    });
-    this.props.setEditMode();
   };
 }
