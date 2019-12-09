@@ -20,7 +20,7 @@ New major release - this is a big one. All components have been rewritten to typ
 - IconButton: Prop alt removed. Use ariaLabel or ariaDescription instead
 - IconButton: Prop buttonType has been renamed to buttonSize
 - Link: Link is now an inline element (span) instead of block.
-- MessageBar: type is now written on the form: type={MessageBarType.info}
+- MessageBar: type is now written on the form: type={MessageBar.Type.info}
 - NavigationTile: title prop renamed to heading
 - Spinner: size is now written on the form: size={SpinnerSize.medium}
 - TopStripe: Rewritten with new API and subcomponents.
