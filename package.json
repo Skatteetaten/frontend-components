@@ -99,7 +99,7 @@
     "lint:fix": "npm-run-all -l lint:prettier-fix lint:eslint-fix",
     "lint:eslint": "eslint 'src/**/*{.ts,.tsx}'",
     "lint:prettier": "prettier --check src/**/*{.ts,.tsx,.js,.jsx,.css,.md}",
-    "lint:eslint-fix": "eslint --fix 'src/**/*{.ts,.tsxnpm}'",
+    "lint:eslint-fix": "eslint --fix 'src/**/*{.ts,.tsx}'",
     "lint:prettier-fix": "prettier --write src/**/*{.ts,.tsx,.js,.jsx,.css,.md}",
     "sonarqube": "sonar-scanner",
     "test": "react-scripts test --env=jsdom --verbose=false",
