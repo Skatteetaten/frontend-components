@@ -56,7 +56,7 @@ const initialState = {
     label={'Velg en dato'}
     inputSize={'large'}
     placeholder={'Velg en dato...'}
-    info={
+    help={
       'Du kan skrive inn dato i feltet, eller velge en dato ved hjelp av datovelgeren, enten med mus eller bruk tastaturet'
     }
     value={state.value1}
