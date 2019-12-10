@@ -4,8 +4,17 @@
 import Icon from '@skatteetaten/frontend-components/Icon';
 
 <div>
-  <Icon iconName="AddOutline" style={{ fontSize: '32px', color: '#1362ae' }} />
-  <Icon iconName="Settings" style={{ fontSize: '32px' }} />
+  <Icon iconName="ArrowUp" style={{ fontSize: '32px', color: '#1362ae' }} />
+  <Icon iconName="ArrowDown" style={{ fontSize: '32px', color: '#1362ae' }} />
+  <Icon
+    iconName="ArrowForward"
+    style={{ fontSize: '32px', color: '#1362ae' }}
+  />
+  <Icon iconName="ArrowBack" style={{ fontSize: '32px', color: '#1362ae' }} />
+  <Icon iconName="Search" style={{ fontSize: '32px', color: '#1362ae' }} />
+  <Icon iconName="Copy" style={{ fontSize: '32px', color: '#1362ae' }} />
+  <Icon iconName="Edit" style={{ fontSize: '32px', color: '#1362ae' }} />
+  <Icon iconName="AttachFile" style={{ fontSize: '32px', color: '#1362ae' }} />
 </div>;
 ```
 
@@ -527,33 +536,38 @@ Object.keys(iconGroup).forEach(name => {
 ```
 
 ```js noeditor uu
-<ul>
-  <li>
-    Meningsbærende ikoner skal forholde seg til WCAG 2.0 med AA 4.5
-    kontrastverdi som minimum.
-  </li>
-  <li>
-    Ikoner som er til «pynt» eller brukes som støtte til tekst, kan vises med en
-    3.0 kontrastverdi.
-  </li>
-  <li>
-    Pass på at ikoner som ikke skal leses opp av skjermleser får aria-attributt
-    «role='presentation'». Dette hindrer at skjermelser vil forsøke å lese opp
-    unicode-tegnet knyttet til symbolet.
-  </li>
-</ul>
+<div>
+  <h3>Huskeliste</h3>
+  <ul>
+    <li>
+      Hvis ikonet er viktig for bruk eller forståelse skal det være tydelig
+      kontrast mellom ikonfarge og bakgrunn. WCAG-kravet er da 4.5 kontrastverdi
+      som minimum. Ikoner som er til «pynt» eller brukes som støtte til tekst,
+      kan vises med minimum 3.0 i kontrastverdi.
+    </li>
+    <li>
+      Pass på at ikoner som ikke skal leses opp av skjermleser får
+      aria-attributt «role='presentation'». Dette hindrer at skjermelser vil
+      forsøke å lese opp unicode-tegnet knyttet til symbolet.
+    </li>
+  </ul>
+</div>
 ```
 
 ```js noeditor beskrivelse
-<p>
-      Ikoner er en viktig del av visuell kommunikasjon på digitale platformer
-      fordi det bidrar blant annet ved å simplifisere navigasjon, optimalisere
-      interaksjon, visualisere ideer og støtte tekstlig innhold.
-    </p>
+<div>
+  <h3>Ikoner er viktige i digitale flater</h3>
 
-    <p>
-      Ikonene i Skatteetatens designsystem er en kombinasjon av ikoner fra
-      Material design icons (https://materialdesignicons.com), utvidet med noen
-      egendesignede ikoner (i SVG)
-    </p>
+  <p>
+    Ikoner er en viktig del av visuell kommunikasjon på digitale platformer
+    fordi det bidrar blant annet ved å simplifisere navigasjon, optimalisere
+    interaksjon, visualisere ideer og støtte tekstlig innhold.
+  </p>
+
+  <p>
+    Ikonene i Skatteetatens designsystem er en kombinasjon av ikoner fra
+    Material design icons (https://materialdesignicons.com), utvidet med noen
+    egendesignede ikoner (i SVG)
+  </p>
+</div>
 ```
