@@ -62,12 +62,11 @@ const LabelWithCallout = (props: LabelWithCalloutProps) => {
   const toggleEvent = () => {
     if (onCalloutToggle) {
       const oldCalloutState = currentCalloutState;
-      const newCalloutState =
-        currentCalloutState === calloutState.OPEN
-          ? calloutState.CLOSED
-          : calloutState.OPEN;
+      const newCalloutState = isCalloutVisible
+        ? calloutState.CLOSED
+        : calloutState.OPEN;
       setCurrentCalloutState(newCalloutState);
-      return onCalloutToggle(oldCalloutState, newCalloutState);
+      onCalloutToggle(oldCalloutState, newCalloutState);
     }
     return;
   };
@@ -133,7 +132,10 @@ const LabelWithCallout = (props: LabelWithCalloutProps) => {
           color={help && !warning ? Callout.HELP : Callout.WARNING}
           ariaLabel={help && !warning ? 'Hjelpetekst' : 'Varseltekst'}
           target={iconButtonElementRef.current}
-          onClose={() => setIsCalloutVisible(false)}
+          onClose={() => {
+            setIsCalloutVisible(false);
+            toggleEvent();
+          }}
         >
           {help && !warning ? helpElement : warningElement}
         </Callout>
