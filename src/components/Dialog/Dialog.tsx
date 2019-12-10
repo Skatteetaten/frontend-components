@@ -12,8 +12,6 @@ import {
 export interface DialogProps extends IDialogProps {
   /** Om dialog skal ha mer padding for et luftigere uttrykk */
   layoutStyle?: 'normal' | 'airy' | 'important';
-  /** @deprecated Hjelpetekst som skal vises i Callout */
-  helpText?: string;
 }
 type DialogState = {
   isCalloutVisible: boolean;
