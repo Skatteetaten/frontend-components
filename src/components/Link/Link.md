@@ -43,7 +43,7 @@ import { Link as RRLink, BrowserRouter as Router } from 'react-router-dom';
 ```
 
 ```js noeditor beskrivelse
-<h3>Link eller knapp</h3>
+<h3>Velge link eller knapp</h3>
    <p>Link brukes til å lenke til filer eller nettsider. Når brukeren klikker på lenken hentes enten filen eller nettsiden frem.</p>
    <p>Har du derimot en handling som påvirker siden du er på, for eksempel «Lagre» eller «Send inn», bør du normalt bruke en knapp i stedet.</p>
 
@@ -57,9 +57,9 @@ import { Link as RRLink, BrowserRouter as Router } from 'react-router-dom';
 ```
 
 ```js noeditor uu
-  <h3>Visuelle markeringer</h3>
+  <h3>Farge og understrekning</h3>
   <p>
-    Alle lenker skal ha minst 2 ulike markeringer for å vise at det er lenke.
+    Alle lenker skal ha minst 2 ulike markeringer for å vise at det er lenke. Lenkene i Designsystemet har derfor både blå farge og understrekning.
   </p>
   <h3>Lesekontrast</h3>
   <p>

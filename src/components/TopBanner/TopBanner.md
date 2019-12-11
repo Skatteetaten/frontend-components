@@ -35,10 +35,12 @@ import TopBanner from '@skatteetaten/frontend-components/TopBanner';
 ```
 
 ```js noeditor beskrivelse
+<h3>Forskjell på interne- og ublikumsløsninger</h3>
   <p>
     Interne løsninger bruker toppbanner med skrå strek, mens eksterne bruker
     den som er tilnærmet lik skatteetaten.no
   </p>
+    <h3>Klikkbar logo</h3>
   <p>
     For alle publikumsløsninger, hvis logoen er klikkbar skal det ta brukeren
     til forsiden på www.skatteetaten.no.
@@ -48,7 +50,7 @@ import TopBanner from '@skatteetaten/frontend-components/TopBanner';
     bruken må være konsekvent i løsningen.
   </p>
   <p>
-    Se{' '}
+    Se også {' '}
     <a href="https://www.skatteetaten.no/stilogtone/visuell-identitet/">
       visuell identitet
     </a>{' '}
