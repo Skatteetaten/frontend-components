@@ -49,6 +49,7 @@ const RadioButtonGroup = (props: RadioButtonGroupProps) => {
   return (
     <>
       <LabelWithCallout
+        id={id}
         label={label}
         help={help}
         warning={warning}

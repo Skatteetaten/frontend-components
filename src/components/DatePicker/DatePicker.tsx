@@ -125,6 +125,7 @@ export default class DatePicker extends React.Component<DatePickerProps> {
     return (
       <div id={id}>
         <LabelWithCallout
+          id={id}
           label={label}
           help={help}
           calloutFloating={calloutFloating}

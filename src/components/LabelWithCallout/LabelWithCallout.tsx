@@ -70,13 +70,13 @@ const LabelWithCallout = (props: LabelWithCalloutProps) => {
     }
     return;
   };
-
+  const arialabelName = id ? id.concat(' ', label) : label;
   return onRenderLabel ? (
     onRenderLabel
   ) : (
     <div
       id={id}
-      aria-label={ariaLabel}
+      aria-labelledby={arialabelName}
       className={classnames(styles.labelArea, className)}
     >
       <span className={styles.label}>
@@ -87,7 +87,7 @@ const LabelWithCallout = (props: LabelWithCalloutProps) => {
           <IconButton
             iconProps={{ iconName: 'HelpOutline' }}
             title="Hjelp"
-            ariaLabel={'help'}
+            aria-labelledby={arialabelName + ' Hjelp'}
             onClick={() => {
               setIsCalloutVisible(!isCalloutVisible);
               toggleEvent();
@@ -101,7 +101,7 @@ const LabelWithCallout = (props: LabelWithCalloutProps) => {
           <IconButton
             iconProps={{ iconName: 'WarningOutline' }}
             title="Varsel"
-            ariaLabel={'warning'}
+            aria-labelledby={arialabelName + ' Varsel'}
             onClick={() => {
               setIsCalloutVisible(!isCalloutVisible);
               toggleEvent();
@@ -116,7 +116,7 @@ const LabelWithCallout = (props: LabelWithCalloutProps) => {
             <IconButton
               iconProps={{ iconName: 'Edit' }}
               title="Rediger"
-              ariaLabel={'edit'}
+              aria-labelledby={arialabelName + ' Edit'}
               onClick={editFunction}
               className={styles.icon}
             />
@@ -130,7 +130,7 @@ const LabelWithCallout = (props: LabelWithCalloutProps) => {
             calloutFloating ? Callout.POS_BOTTOM_LEFT : Callout.POS_TOP_LEFT
           }
           color={help && !warning ? Callout.HELP : Callout.WARNING}
-          ariaLabel={help && !warning ? 'Hjelpetekst' : 'Varseltekst'}
+          aria-labelledby={arialabelName + (help && !warning ? ' Hjelpetekst' : ' Varseltekst')}
           target={iconButtonElementRef.current}
           onClose={() => {
             setIsCalloutVisible(false);

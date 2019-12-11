@@ -3,6 +3,7 @@
 exports[`RadioButtonGroup komponent matcher snapshot 1`] = `
 Array [
   <div
+    aria-labelledby="Velg en"
     className="labelArea-42"
   >
     <span

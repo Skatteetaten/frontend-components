@@ -51,6 +51,7 @@ const Dropdown: React.FC<DropdownProps> = props => {
   return (
     <div id={id}>
       <LabelWithCallout
+        id={id}
         label={label}
         help={help}
         onCalloutToggle={onCalloutToggle}
