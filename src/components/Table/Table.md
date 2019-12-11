@@ -1,4 +1,4 @@
-** Tabeller brukes til å liste ut strukturerte data**
+** Tabeller brukes til å liste ut strukturerte data.**
 
 ```js
 import Table from '@skatteetaten/frontend-components/Table';
@@ -145,6 +145,59 @@ const data = [
   editableRows
   columns={columns}
 />;
+```
+
+** Man kan styre hvilke kolonner som skal vises på mobil med _hideOnMobile_-attributtet:**
+
+```js
+import Table from '@skatteetaten/frontend-components/Table';
+import ActionButton from '@skatteetaten/frontend-components/ActionButton';
+
+const columns = [
+  {
+    name: 'Navn',
+    fieldName: 'navn'
+  },
+  {
+    name: 'Tilgang gitt',
+    fieldName: 'dato',
+    alignment: 'right',
+    hideOnMobile: true
+  },
+  {
+    name: '',
+    fieldName: 'kanSlettes'
+  }
+];
+
+const data = [
+  {
+    navn: 'Sven Lundquist',
+    dato: '23.10.19',
+    kanSlettes: (
+      <ActionButton
+        icon="Delete"
+        onClick={() => console.log('Do what you got to do')}
+      >
+        Slett tilgang
+      </ActionButton>
+    )
+  },
+  {
+    navn: 'Kai Mossige',
+    dato: '25.11.19',
+    kanSlettes: (
+      <ActionButton
+        icon="Delete"
+        onClick={() => console.log('Do what you got to do')}
+      >
+        Slett tilgang
+      </ActionButton>
+    )
+  }
+];
+
+<Table data={data} columns={columns} />;
 ```
 
 ```js noeditor uu
