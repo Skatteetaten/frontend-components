@@ -176,8 +176,7 @@ export const getClassNames = (props: DetailsListProps) => {
             fontSize: 0,
             height: 20,
             width: 20,
-            border: '1px solid #000',
-            marginTop: 1
+            border: '1px solid #000'
           },
           '.ms-Check-check': {
             margin: '3px 0 0 1px'
