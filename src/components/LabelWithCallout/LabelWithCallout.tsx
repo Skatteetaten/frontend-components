@@ -15,13 +15,13 @@ export interface LabelWithCalloutProps
   /** aria-label */
   ariaLabel?: string;
   calloutFloating?: boolean;
-  className?: string | undefined;
+  className?: string;
   editable?: boolean;
   editFunction?: () => void;
-  help?: string | JSX.Element | undefined;
+  help?: string | JSX.Element;
   id?: any;
   inputSize?: 'small' | 'normal' | 'large';
-  label?: string | JSX.Element | undefined;
+  label?: string | JSX.Element;
   /** Brukerspesifisert event for callout **/
   onCalloutToggle?: (
     oldCalloutState: calloutState,
