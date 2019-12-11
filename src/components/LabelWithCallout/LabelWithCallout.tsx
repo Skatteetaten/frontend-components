@@ -43,7 +43,6 @@ const LabelWithCallout = (props: LabelWithCalloutProps) => {
     readOnly,
     warning,
     onRenderLabel,
-    ariaLabel,
     onCalloutToggle
   } = props;
   const styles = getClassNames({ calloutFloating, ...props });
@@ -130,7 +129,9 @@ const LabelWithCallout = (props: LabelWithCalloutProps) => {
             calloutFloating ? Callout.POS_BOTTOM_LEFT : Callout.POS_TOP_LEFT
           }
           color={help && !warning ? Callout.HELP : Callout.WARNING}
-          aria-labelledby={arialabelName + (help && !warning ? ' Hjelpetekst' : ' Varseltekst')}
+          aria-labelledby={
+            arialabelName + (help && !warning ? ' Hjelpetekst' : ' Varseltekst')
+          }
           target={iconButtonElementRef.current}
           onClose={() => {
             setIsCalloutVisible(false);

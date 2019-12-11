@@ -67,7 +67,9 @@ describe('TextField komponent', () => {
     const callout = wrapper.find('StyledCalloutContentBase');
     expect(callout).toHaveLength(1);
     expect(callout.prop('color')).toEqual('lightGreen');
-    expect(callout.prop('aria-labelledby')).toEqual('Tekstfelt Fullt navn Hjelpetekst');
+    expect(callout.prop('aria-labelledby')).toEqual(
+      'Tekstfelt Fullt navn Hjelpetekst'
+    );
     expect(callout.find('Popup').html()).toContain(
       'Vi trenger å vite navnet ditt dersom vi skal kontakte deg senere'
     );
@@ -110,7 +112,9 @@ describe('TextField komponent', () => {
     const callout = wrapper.find('StyledCalloutContentBase');
     expect(callout).toHaveLength(1);
     expect(callout.prop('color')).toEqual('beige');
-    expect(callout.prop('aria-labelledby')).toEqual('Tekstfelt Antall barn Varseltekst');
+    expect(callout.prop('aria-labelledby')).toEqual(
+      'Tekstfelt Antall barn Varseltekst'
+    );
     expect(callout.find('Popup').html()).toContain(
       'Er du sikker på at antall barn er riktig?'
     );
