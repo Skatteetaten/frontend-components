@@ -118,17 +118,19 @@ let error = 'En feil';
 ```
 
 ```js noeditor uu
-<ul>
-  <li>Sjekk at alle funksjoner kan nås ved hjelp av tastaturet. </li>
-  <li>
-    Vær spesielt oppmerksom dersom man bruker <b>autoExpand</b>. Brukere av
-    skjermleser forventer å aktivt aktivere elementene på skjermen, og dersom de
-    åpnes automatisk kan det være vanskelig å orientere seg.
-  </li>
-</ul>
+  <h3>Huskeliste</h3>
+  <ul>
+    <li>Sjekk at alle funksjoner kan nås ved hjelp av tastaturet. </li>
+    <li>
+      Vær spesielt oppmerksom dersom man bruker <b>autoExpand</b>. Brukere av
+      skjermleser forventer å aktivt aktivere elementene på skjermen, og dersom de
+      åpnes automatisk kan det være vanskelig å orientere seg.
+    </li>
+  </ul>
 ```
 
 ```js noeditor beskrivelse
+  <h3>Til ulike situasjoner</h3>
   <p>
     ComboBoxen er en fleksibel nedtrekksliste som kan tilpasses til ulike
     sitasjoner:
