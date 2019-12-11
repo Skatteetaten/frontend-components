@@ -267,7 +267,7 @@ exports[`Link komponent matcher snapshot 1`] = `
                   "inputBackground": "#ffffff",
                   "inputBackgroundChecked": "#1362ae",
                   "inputBackgroundCheckedHovered": "#0c3f6f",
-                  "inputBorder": "#8a8886",
+                  "inputBorder": "rgba(55, 55, 55, 0.95)",
                   "inputBorderHovered": "rgba(0, 0, 0, 0.95)",
                   "inputFocusBorderAlt": "#1362ae",
                   "inputForegroundChecked": "#ffffff",
