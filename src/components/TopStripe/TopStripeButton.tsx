@@ -1,12 +1,14 @@
 import * as React from 'react';
-export interface TopStripeButtonProps {
+export interface TopStripeButtonProps
+  extends React.HTMLAttributes<HTMLButtonElement> {
   /** @ignore Får ekstra stil fra toppstripe */
   topStripeStyle?: string;
   ariaLabel?: string;
+  text?: string;
 }
 
 export const TopStripeButton: React.FC<TopStripeButtonProps> = props => {
-  const { topStripeStyle, ariaLabel, ...rest } = props;
+  const { topStripeStyle, ariaLabel, text, ...rest } = props;
   return (
     <button
       aria-label={ariaLabel}
@@ -14,7 +16,7 @@ export const TopStripeButton: React.FC<TopStripeButtonProps> = props => {
       style={{ cursor: 'pointer' }}
       {...rest}
     >
-      {props.children}
+      {text || props.children}
     </button>
   );
 };
