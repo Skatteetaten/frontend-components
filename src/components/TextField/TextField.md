@@ -23,7 +23,7 @@ import TextField from '@skatteetaten/frontend-components/TextField';
 
 <div style={{ width: '300px' }}>
   <TextField
-    id={'my-input-1'}
+    id={'my-input-2'}
     label={'Navn'}
     inputSize={'large'}
     placeholder={'For- og etternavn'}

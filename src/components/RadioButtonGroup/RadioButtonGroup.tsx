@@ -6,7 +6,7 @@ import {
 import * as React from 'react';
 import ErrorMessage from '../ErrorMessage/ErrorMessage';
 import { getClassNames } from './RadioButtonGroup.classNames';
-import LabelWithCallout from '../LabelWithCallout';
+import LabelWithCallout, { calloutState } from '../LabelWithCallout';
 import { LabelWithCalloutProps } from '../LabelWithCallout/LabelWithCallout';
 
 export interface RadioButtonGroupProps extends IChoiceGroupProps {
@@ -21,7 +21,10 @@ export interface RadioButtonGroupProps extends IChoiceGroupProps {
   /** Overstyr label, se LabelWithCallout komponent */
   labelCallout?: LabelWithCalloutProps;
   /** Brukerspesifisert event for callout **/
-  onCalloutToggle?: () => void;
+  onCalloutToggle?: (
+    oldCalloutState: calloutState,
+    newCalloutState: calloutState
+  ) => void;
 }
 
 /**

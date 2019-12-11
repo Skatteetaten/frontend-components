@@ -10,7 +10,6 @@ export default () => (
     viewBox="0 0 1440 100"
     version="1.1"
   >
-    <title>footer/desktop/standard</title>
     <desc />
     <defs />
     <g stroke="none" strokeWidth="0" fill="none" fillRule="evenodd">

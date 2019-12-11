@@ -63,7 +63,7 @@ function Forside(props) {
         </NavigationContent>
         <NavigationContent
           icon={'bookOpen'}
-          heading={'For utviklere'}
+          heading={'For designere'}
           to={'#section-kom-i-gang-for-designere'}
           key={'for-designere'}
         >
