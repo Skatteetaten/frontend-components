@@ -35,6 +35,8 @@ interface TableProps<P> extends React.HTMLAttributes<HTMLDivElement> {
     alignment?: 'right' | 'center';
     /** Bruker kan sortere på kolonnen alfabetisk og på tall (men ikke på tall som er strenger) */
     sortable?: boolean;
+    /** Ikke vis kolonnen på mobil (breakpoint på 640px) */
+    hideOnMobile?: boolean;
     /** Overskriv sorteringsfunksjonen */
     sortingFunction?: (...args: any[]) => any;
     /** Vis ikon for sortering kun ved hover på kolonne (vises alltid for mobil). Default true,
@@ -160,7 +162,10 @@ export default class Table<P> extends React.PureComponent<
             <th
               key={key.fieldName}
               onClick={() => this._setSortingState(key.fieldName)}
-              className="sortable"
+              className={classnames(
+                'sortable',
+                key.hideOnMobile ? 'hideOnMobile' : ''
+              )}
               tabIndex={0}
               onKeyDown={e => {
                 return e.key === 'Enter'
@@ -178,7 +183,14 @@ export default class Table<P> extends React.PureComponent<
             </th>
           );
         }
-        return <th key={key.fieldName}>{key.name}</th>;
+        return (
+          <th
+            className={key.hideOnMobile ? 'hideOnMobile' : ''}
+            key={key.fieldName}
+          >
+            {key.name}
+          </th>
+        );
       })
     );
   };

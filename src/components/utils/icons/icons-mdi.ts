@@ -127,6 +127,7 @@ export default {
     PersonOutline: '\uf013',
     PersonMore: '\uf014',
     PersonMoreOutline: '\uf800',
+    AccountChild: '\ufa88',
     Search: '\uf349',
     Settings: '\uf493',
     Earth: '\uf1e7',

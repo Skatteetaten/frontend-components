@@ -31,11 +31,13 @@ import TabItem from '@skatteetaten/frontend-components/Tabs/TabItem';
 ```
 
 ```js noeditor uu
-<p>Ikke bruk tabs for å linke til andre nye sider.</p>
+<h3>Huskeliste</h3>
+
+<p>Ikke bruk tabs til å linke til andre sider.</p>
 ```
 
 ```js noeditor beskrivelse
-<h3>Innhold</h3>
+  <h3>Innhold</h3>
   <p>
     Etterstreb logisk inndeling av innholdet slik at brukerne enkelt kan forutse
     hva som er innholdet i en fane. Bruk korte tekster på titlene - og unngå kun STORE BOKSTAVER.

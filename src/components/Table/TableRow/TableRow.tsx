@@ -92,7 +92,11 @@ export default class TableRow<P> extends React.PureComponent<TableRowProps<P>> {
     return columns.map((column, cellIndex) => {
       return (
         <td
-          className={classnames(column.alignment)}
+          className={classnames(
+            !this.props.isEditableRowOpen ? 'is-closed' : '',
+            column.alignment,
+            column.hideOnMobile ? 'hideOnMobile' : ''
+          )}
           key={rowKey + '_' + cellIndex}
         >
           {data[column.fieldName]}

@@ -20,10 +20,12 @@ import SearchField from '@skatteetaten/frontend-components/SearchField';
 ```
 
 ```js noeditor beskrivelse
+  <h3>Markeres med ikon eller tekst</h3>
   <p>
     Et søkefelt skal alltid ha en markering i form av et søkeikon eller
     alternativt en knapp med «Søk».
   </p>
+  <h3>Plassering og bredde</h3>
   <p>
     Søkefeltet skal kun ta en del av bredden på skjermen eller området for
     tekst. Hvis feltet blir for stort, oppfatter brukeren det som en banner.
