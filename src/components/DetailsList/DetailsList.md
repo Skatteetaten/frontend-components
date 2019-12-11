@@ -352,6 +352,7 @@ function chooseRow() {
 ```
 
 ```js noeditor uu
+<h3>Huskeliste</h3>
 <ul>
   <li>Ikke bruk listen til å vise kommandoer eller innstillinger.</li>
   <li>Ikke ha for mye data slik at brukeren på scrolle horisontalt.</li>
@@ -367,6 +368,7 @@ function chooseRow() {
 ```
 
 ```js noeditor beskrivelse
+  <h3>Avansert tabell</h3>
   <p>
     DetailsList brukes når du har liste av mange repterende rader, og samtidig
     har behov for:

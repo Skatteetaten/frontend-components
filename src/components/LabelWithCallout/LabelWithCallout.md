@@ -55,13 +55,15 @@ import SearchField from '@skatteetaten/frontend-components/SearchField';
 ```
 
 ```js noeditor beskrivelse
+<h3>Hjelpekomponent</h3>
 <p>Dette er i hovedsak en hjelpekomponent som brukes av input-komponentene. Det er for eksempel denne som brukes til å vise label og hjelpetekst og i toppen av TextField og DatePicker.</p>
 <p>Bruk denne komponenten i tilfeller hvor det er ønskelig samme med utseende og funksjonalitet på label og hjelpetekst som for de øvrige inputkomponentene, for eksempel seksjoner eller knapperader.</p>
 ```
 
 ```js noeditor uu
-<p>
-  Merk at flytende Callout (Calloutfloating=true) kun kan brukes i interne
-  løsninger.
-</p>
+  <h3>Huskeliste</h3>
+  <p>
+    Merk at flytende Callout (Calloutfloating=true) kun kan brukes i interne
+    løsninger.
+  </p>
 ```

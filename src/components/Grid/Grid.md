@@ -97,11 +97,13 @@ import Grid from '@skatteetaten/frontend-components/Grid';
 ```
 
 ```js noeditor beskrivelse
+  <h3>For plassering av elementer</h3>
   <p>
     Et grid/rutenett hjelper til med å plassere komponenter på skjermen. Det
     er først og fremst nyttig i utvikling, men kan være lurt for designere å
     tenke på hvordan komponenter enkelt plasseres.
   </p>
+  <h3>Kolonner og brekkpunkter</h3>
   <p>
     Et grid består av rader og kolonner, hvor en rad kan maksimalt ha 12
     kolonner, men man trenger ikke bruke alle 12.

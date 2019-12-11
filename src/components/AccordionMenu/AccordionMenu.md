@@ -159,6 +159,7 @@ const timeStampStyle = {
 ```
 
 ```js noeditor beskrivelse
-    <p>AccordionMenu brukes primæret som venstremeny i saksbehandling</p>
-    <p>Det er mulig å vise vilkårlig innhold inne i et ekspanderbart område.</p>
+  <h3>Først og fremst til saksbehandling</h3>
+  <p>AccordionMenu brukes primæret som venstremeny i saksbehandling</p>
+  <p>Det er mulig å vise vilkårlig innhold inne i et ekspanderbart område.</p>
 ```

@@ -16,6 +16,7 @@ import Button from '@skatteetaten/frontend-components/Button';
 ```
 
 ```js noeditor uu
+<h3>Huskeliste</h3>
 <ul>
   <li>
     Bruk bare spinner når du har en handling eller oppgave med innlasting.{' '}
@@ -35,11 +36,13 @@ import Button from '@skatteetaten/frontend-components/Button';
 ```
 
 ```js noeditor beskrivelse
+  <h3>Tidsgrenser</h3>
   <p>
     Dersom brukeren må vente mellom ett og ti sekunder vil dette oppleves som
     en forsinkelse. I slike tilfeller er det nyttig å kunne bruke en spinner
     for å vise at systemet jobber.
   </p>
+  <h3>Farge</h3>
   <p>
     Spinneren kommer i svart og hvit, der svart er standardfarge. Den hvite
     spinneren kan brukes i knapper.
