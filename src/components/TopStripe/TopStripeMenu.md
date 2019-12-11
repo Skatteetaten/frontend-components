@@ -8,7 +8,7 @@ import MessageBar from '@skatteetaten/frontend-components/MessageBar';
 
 ```js noeditor beskrivelse
 <div>
-  <h3>Teknisk komponent for TopStripeMenu</h3>
+  <h3>Teknisk komponent for TopStripe</h3>
   <p>
     TopStripeMenu er en hjelpekomponent til TopStripe som kan brukes til å lage
     en meny inni stripen.
