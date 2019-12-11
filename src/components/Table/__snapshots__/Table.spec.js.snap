@@ -131,19 +131,19 @@ exports[`Table komponent matcher snapshot 1`] = `
             key="0"
           >
             <td
-              className=""
+              className="is-closed"
               key="0_0"
             />
             <td
-              className="right"
+              className="is-closed right"
               key="0_1"
             />
             <td
-              className="right"
+              className="is-closed right"
               key="0_2"
             />
             <td
-              className="right"
+              className="is-closed right"
               key="0_3"
             />
           </tr>
@@ -192,19 +192,19 @@ exports[`Table komponent matcher snapshot 1`] = `
             key="1"
           >
             <td
-              className=""
+              className="is-closed"
               key="1_0"
             />
             <td
-              className="right"
+              className="is-closed right"
               key="1_1"
             />
             <td
-              className="right"
+              className="is-closed right"
               key="1_2"
             />
             <td
-              className="right"
+              className="is-closed right"
               key="1_3"
             />
           </tr>
@@ -253,19 +253,19 @@ exports[`Table komponent matcher snapshot 1`] = `
             key="2"
           >
             <td
-              className=""
+              className="is-closed"
               key="2_0"
             />
             <td
-              className="right"
+              className="is-closed right"
               key="2_1"
             />
             <td
-              className="right"
+              className="is-closed right"
               key="2_2"
             />
             <td
-              className="right"
+              className="is-closed right"
               key="2_3"
             />
           </tr>
@@ -314,19 +314,19 @@ exports[`Table komponent matcher snapshot 1`] = `
             key="3"
           >
             <td
-              className=""
+              className="is-closed"
               key="3_0"
             />
             <td
-              className="right"
+              className="is-closed right"
               key="3_1"
             />
             <td
-              className="right"
+              className="is-closed right"
               key="3_2"
             />
             <td
-              className="right"
+              className="is-closed right"
               key="3_3"
             />
           </tr>
