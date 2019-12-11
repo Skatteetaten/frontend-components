@@ -183,6 +183,18 @@ StepList som er fullført og viser et resultat i i siste steg
 import Button from '@skatteetaten/frontend-components/Button';
 import Step from '@skatteetaten/frontend-components/StepList/Step';
 import StepList from '@skatteetaten/frontend-components/StepList';
+import LinkGroup from '@skatteetaten/frontend-components/LinkGroup';
+
+const links = [
+  {
+    text: 'Beregn reisefradrag',
+    path: '#stepList'
+  },
+  {
+    text: 'Oversikt over alle fradrag',
+    path: '#stepList'
+  }
+];
 
 const titles = {
   step1: {
@@ -224,6 +236,7 @@ const titles = {
       arbeidsplass, kan du ha krav på reisefradrag. Det kan du sjekke i
       reisefradragskalkulatoren.
     </p>
+    <LinkGroup links={links} />
   </Step>
 </StepList>;
 ```

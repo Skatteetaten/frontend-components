@@ -7,24 +7,20 @@ const initialState = {
   options: [
     {
       key: 'A',
-      text: 'Epler'
+      text: 'Enkeltpersonsforetak'
     },
     {
       key: 'B',
-      text: 'Pærer'
-    },
-    {
-      key: 'C',
-      text: 'Druer'
+      text: 'Aksjeselskap'
     }
   ]
 };
 <>
   <RadioButtonGroup
-    label="Ta et valg"
-    defaultSelectedKey="B"
+    label="Type virksomhet"
     options={state.options}
     onChange={(e, option) => console.log(option)}
+    help="Type virksomhet vil påvirke hva du må rapportere til oss."
     id="radio"
   />
 </>;

@@ -114,7 +114,7 @@ export default class Card extends React.PureComponent<CardProps, CardState> {
       <div id={id} className={classnames(styles.root, className)}>
         {title || subtitle || expand ? (
           <div className={styles.header}>
-            <div className={styles.titlecontainer}>
+            <div className={styles.titlecontainer} tabIndex={0}>
               {expand && (
                 <div
                   aria-label={title}
@@ -135,15 +135,18 @@ export default class Card extends React.PureComponent<CardProps, CardState> {
                 </div>
               )}
               {actions && <div>{actions}</div>}
-              {<div className={styles.subtitle}>{subtitle}</div>}
+              {
+                <div className={styles.subtitle} aria-label={subtitle}>
+                  {subtitle}
+                </div>
+              }
             </div>
             {expand && (
               <div className={styles.expandIcon}>
                 <IconButton
                   aria-expanded={isExpandedState ? true : false}
                   icon={'ChevronDown'}
-                  title={isExpanded ? 'Kollaps innhold' : 'Utvid innhold'}
-                  aria-label="Kollaps innhold"
+                  ariaLabel={title}
                   circle={circleOnIcon ? true : false}
                   onClick={() => {
                     this.setState({
@@ -157,7 +160,7 @@ export default class Card extends React.PureComponent<CardProps, CardState> {
           </div>
         ) : null}
         {isExpandedState && (
-          <div {...props} className={styles.body}>
+          <div {...props} className={styles.body} tabIndex={0}>
             {children}
           </div>
         )}

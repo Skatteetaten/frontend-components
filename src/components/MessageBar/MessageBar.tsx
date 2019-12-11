@@ -130,6 +130,7 @@ export class MessageBar extends React.PureComponent<
               isMultiline={isMultiline}
               aria-describedby={id}
               role="status"
+              tabIndex={0}
             >
               {children}
             </FabricMessageBar>
