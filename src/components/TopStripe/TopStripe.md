@@ -1,62 +1,5 @@
 ** TopStripe er en svart menystripe øverst på innloggede sider for publikum. **
 
-Bruk av komponenter:
-
-```js
-import TopStripe, {
-  TopStripeMenu,
-  TopStripeButton
-} from '@skatteetaten/frontend-components/TopStripe';
-import TopBanner from '@skatteetaten/frontend-components/TopBanner';
-import Link from '@skatteetaten/frontend-components/Link';
-
-<div>
-  <TopStripe>
-    <Link path={'#topstripe'} text={'Link komponent'} placement="before" />
-    <TopStripeMenu title={'Meny med tekst'}>
-      <div style={{ fontSize: '20px' }}>
-        Hold Ctrl-tasten nede (Cmd-tasten på Mac). Trykk på + for å forstørre
-        eller - for å forminske.
-      </div>
-    </TopStripeMenu>
-    <TopStripeMenu title={'Knapp meny'}>
-      <TopStripeButton ariaLabel={'Norsk'} onClick={() => console.log('NB')}>
-        Norsk
-      </TopStripeButton>
-      <TopStripeButton
-        icon={'check'}
-        ariaLabel={'Nynorsk'}
-        onClick={() => console.log('NN')}
-      >
-        Nynorsk
-      </TopStripeButton>
-      <TopStripeButton ariaLabel={'Engelsk'} onClick={() => console.log('EN')}>
-        Engelsk
-      </TopStripeButton>
-    </TopStripeMenu>
-    <TopStripeMenu title={'Link meny'}>
-      <Link
-        path={'#topstripe'}
-        icon="Check"
-        text={'Link komponent'}
-        placement="before"
-      />
-      <Link path={'#topstripe'} text={'Link komponent'} placement="before" />
-      <Link path={'#topstripe'} text={'Link komponent'} placement="before" />
-    </TopStripeMenu>
-    <TopStripeButton
-      text={'TopStripeButton'}
-      onClick={() => console.log('TopStripeButton')}
-    />
-  </TopStripe>
-  <TopBanner
-    external
-    title={'Side for publikum'}
-    homeText={'Tilbake til skatteetaten.no'}
-  />
-</div>;
-```
-
 Ikke innlogget ennå:
 
 ```js
@@ -225,6 +168,63 @@ import Link from '@skatteetaten/frontend-components/Link';
     </TopStripeMenu>
 
     <Link path={'#topstripe'} text={'Logg ut'} placement="before" />
+  </TopStripe>
+  <TopBanner
+    external
+    title={'Side for publikum'}
+    homeText={'Tilbake til skatteetaten.no'}
+  />
+</div>;
+```
+
+Bruk av komponenter:
+
+```js
+import TopStripe, {
+  TopStripeMenu,
+  TopStripeButton
+} from '@skatteetaten/frontend-components/TopStripe';
+import TopBanner from '@skatteetaten/frontend-components/TopBanner';
+import Link from '@skatteetaten/frontend-components/Link';
+
+<div>
+  <TopStripe>
+    <Link path={'#topstripe'} text={'Link komponent'} placement="before" />
+    <TopStripeMenu title={'Meny med tekst'}>
+      <div style={{ fontSize: '20px' }}>
+        Hold Ctrl-tasten nede (Cmd-tasten på Mac). Trykk på + for å forstørre
+        eller - for å forminske.
+      </div>
+    </TopStripeMenu>
+    <TopStripeMenu title={'Knapp meny'}>
+      <TopStripeButton ariaLabel={'Norsk'} onClick={() => console.log('NB')}>
+        Norsk
+      </TopStripeButton>
+      <TopStripeButton
+        icon={'check'}
+        ariaLabel={'Nynorsk'}
+        onClick={() => console.log('NN')}
+      >
+        Nynorsk
+      </TopStripeButton>
+      <TopStripeButton ariaLabel={'Engelsk'} onClick={() => console.log('EN')}>
+        Engelsk
+      </TopStripeButton>
+    </TopStripeMenu>
+    <TopStripeMenu title={'Link meny'}>
+      <Link
+        path={'#topstripe'}
+        icon="Check"
+        text={'Link komponent'}
+        placement="before"
+      />
+      <Link path={'#topstripe'} text={'Link komponent'} placement="before" />
+      <Link path={'#topstripe'} text={'Link komponent'} placement="before" />
+    </TopStripeMenu>
+    <TopStripeButton
+      text={'TopStripeButton'}
+      onClick={() => console.log('TopStripeButton')}
+    />
   </TopStripe>
   <TopBanner
     external
