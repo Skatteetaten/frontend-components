@@ -66,7 +66,7 @@ export const getClassNames = (props: CardProps, state: CardState) => {
       displayName: 'SkeCard',
       color: theme.semanticColors.bodyText,
       backgroundColor: palette.skeColor[props.color as CardColor],
-      padding: '16px',
+      padding: '8px 16px',
       marginBottom: props.marginbottom,
       ...getCardBorder(props),
       ...getMargin(props)
@@ -86,10 +86,17 @@ export const getClassNames = (props: CardProps, state: CardState) => {
       display: 'flex',
       flexWrap: 'wrap',
       justifyContent: 'flex-start',
-      alignItems: 'center'
+      alignItems: 'center',
+      outline: 'none',
+      selectors: {
+        ':focus': {
+          textDecoration: 'underline'
+        }
+      }
     },
     header: {
       //display: 'flex',
+      marginTop: '5px',
       justifyContent: 'space-between',
       alignItems: 'center',
       position: 'relative'

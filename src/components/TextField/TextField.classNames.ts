@@ -12,33 +12,13 @@ function getFieldTypeStyles(props: TextFieldProps) {
       '.ms-TextField-fieldGroup': {
         borderWidth: 2,
         minHeight: 42
-      },
-      '& .ms-TextField-field': {
-        fontSize: FontSizes.large
-      },
-      '& .ms-Label': {
-        fontSize: FontSizes.mediumPlus
       }
     };
   } else {
     return {
       '& .ms-TextField-field': {
         fontSize: FontSizes.medium
-      },
-      '& .ms-Label': {
-        fontSize: FontSizes.small
       }
-    };
-  }
-}
-function getLabelSize(props: TextFieldProps) {
-  if (props.labelSize === 'small') {
-    return {
-      fontSize: FontSizes.small
-    };
-  } else {
-    return {
-      fontSize: FontSizes.medium
     };
   }
 }
@@ -121,11 +101,6 @@ export const getClassNames = (props: TextFieldProps) => {
       },
       '& .ms-TextField-field[disabled]': {
         color: palette.skeColor.darkGrey
-      },
-      '.ms-Label': {
-        color: palette.skeColor.blackAlt,
-        fontWeight: FontWeights.regular,
-        ...getLabelSize(props)
       },
       '.ms-Button-icon': {
         paddingBottom: '4px',

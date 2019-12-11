@@ -35,7 +35,7 @@ function closeDialog() {
       <ActionButton onClick={closeDialog}>Avbryt</ActionButton>
       <Button onClick={closeDialog} hoved>
         Kanseller
-      </Button>l
+      </Button>
     </Dialog.Footer>
   </Dialog>
 </div>;

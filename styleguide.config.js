@@ -81,6 +81,7 @@ module.exports = {
       'AccordionMenu',
       'Card',
       'CommandBar',
+      'LinkGroup',
       'StepList',
       'Step',
       'Tabs'

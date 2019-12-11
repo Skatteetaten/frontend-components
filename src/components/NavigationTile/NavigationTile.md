@@ -43,6 +43,35 @@ import NavigationContent from '@skatteetaten/frontend-components/NavigationTile/
 </NavigationTile>;
 ```
 
+<h4>Overskriftsnivå inni NavigationTile</h4>
+By default får tittelen som gis i hver navigation tile en <h2\>-tag.
+<br>Om dette ikke passer inn i din sidestruktur kan det overskrives. Eksempelvis gir _headingLevel_ 4 en <h4\>-tag.
+
+```js
+import NavigationTile from '@skatteetaten/frontend-components/NavigationTile';
+
+const contents = [
+  {
+    to: '#navigationtile',
+    heading: 'Lag kontonummer',
+    icon: 'ArrowForward'
+  },
+  {
+    to: '#navigationtile',
+    heading: 'Lag KID-nummer',
+    icon: 'ArrowForward'
+  }
+];
+
+<NavigationTile
+  type="left"
+  alignTitle="left"
+  alignIcon="right"
+  contents={contents}
+  headingLevel={4}
+/>;
+```
+
 Eksempel med bruk av JSON-format på dataene:
 
 ```js
