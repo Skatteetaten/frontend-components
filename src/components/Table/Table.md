@@ -148,18 +148,21 @@ const data = [
 ```
 
 ```js noeditor uu
-<p>
-  På små skjermer vil endre-ikon flyttes til venstre, og tabellen har horisontal
-  skrolling ved behov.
-</p>
+  <h3>Huskeliste</h3>
+  <p>
+    På små skjermer vil endre-ikon flyttes til venstre, og tabellen har horisontal
+    skrolling ved behov.
+  </p>
 ```
 
 ```js noeditor beskrivelse
+  <h3>Enkel tabell</h3>
   <p>
     Table-komponenten kan med fordel brukes ved mindre datamengder. (Har du
     store mengder data og/eller behov for avansert funksjonalitet - vurderer
     DetailsList i stedet).
   </p>
+  <h3>Vise eller redigere enkeltrad</h3>
   <p>
     Komponenten har to tilstander; visningtilstand som bare viser data, og
     redigering av enkeltrad. Man må fullføre redigering av raden før man kan

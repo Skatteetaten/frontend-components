@@ -29,13 +29,14 @@ const initialState = {
 ```
 
 ```js noeditor uu
-<p>
-  Sjekk at den røde teksten plasseres på en flate som gir tilstrekkelig god
-  lesekontrast.
-</p>
-<p>
-  Feilmeldingen skal vises i umiddelbar nærhet til elementet den hører til.
-</p>
+  <h3>Huskeliste</h3>
+  <p>
+    Sjekk at den røde teksten plasseres på en flate som gir tilstrekkelig god
+    lesekontrast.
+  </p>
+  <p>
+    Feilmeldingen skal vises i umiddelbar nærhet til elementet den hører til.
+  </p>
 ```
 
 ```js noeditor beskrivelse

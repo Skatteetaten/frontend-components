@@ -5,6 +5,8 @@ import Image from '@skatteetaten/frontend-components/Image';
 ```
 
 ```js noeditor uu
+<h3>Huskeliste</h3>
+
 <ul>
   <li>Innholdet i bilder må beskrives i en tilhørende alt-tag</li>
   <li>Unngå bilder av tekst.</li>

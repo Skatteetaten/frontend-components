@@ -76,6 +76,7 @@ const initialState = {
 ```
 
 ```js noeditor uu
+<h3>Huskeliste</h3>
 <ul>
   <li>RadioButtonGroup egner seg best når det er 2–7 valg.</li>
   <li>Hvis det er mer enn 7 valg, bruk heller komponenten Dropdown.</li>
@@ -83,6 +84,8 @@ const initialState = {
 ```
 
 ```js noeditor beskrivelse
+  <h3>Velge kun ett valg</h3>
+
   <p>
     Radioknapper bruker vi når ber brukeren om å velge nøyaktig ett valg i en
     liste.
