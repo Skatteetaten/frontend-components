@@ -107,7 +107,8 @@ describe('RadioButtonGroup komponent', () => {
           key: 'B',
           text: 'Valg B',
           description: 'Beskrivelse til B'
-        }]
+        }
+      ]
     });
     const radiobutton = wrapper.find('StyledChoiceGroupOptionBase');
     expect(
