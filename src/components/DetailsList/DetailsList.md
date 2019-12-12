@@ -217,219 +217,6 @@ const initialState = {
 />;
 ```
 
-Listen er delt opp i rader som er gruppert
-
-```js
-import DetailsList from '@skatteetaten/frontend-components/DetailsList';
-
-const initialState = {
-  columns: [
-    {
-      key: 'column1',
-      name: 'Fastsatt',
-      fieldName: 'fastsatt',
-      minWidth: 50,
-      maxWidth: 200,
-      isResizable: true
-    },
-    {
-      key: 'column2',
-      name: 'Avgiftstype',
-      fieldName: 'avgiftstype',
-      minWidth: 50,
-      maxWidth: 150,
-      isResizable: true
-    },
-    {
-      key: 'column3',
-      name: 'Avgiftsgruppe',
-      fieldName: 'avgiftsgruppe',
-      minWidth: 50,
-      maxWidth: 150,
-      isResizable: true
-    },
-    {
-      key: 'column4',
-      name: 'Beløp',
-      fieldName: 'beloep',
-      minWidth: 100,
-      maxWidth: 200,
-      isResizable: true
-    },
-    {
-      key: 'column5',
-      name: 'Fritak',
-      fieldName: 'fritak',
-      minWidth: 50,
-      maxWidth: 150,
-      isResizable: true
-    },
-    {
-      key: 'column6',
-      name: 'Status',
-      fieldName: 'status',
-      minWidth: 100,
-      maxWidth: 200,
-      isResizable: true
-    }
-  ],
-  items: [
-    {
-      fastsatt: '31.01.2018',
-      avgiftstype: 'OR',
-      avgiftsgruppe: '525',
-      beloep: '6064.00',
-      fritak: '',
-      status: 'Iverksatt',
-      kravgrunnlag: null,
-      links: null
-    },
-    {
-      fastsatt: '31.01.2018',
-      avgiftstype: 'OR',
-      avgiftsgruppe: '525',
-      beloep: '6064.00',
-      fritak: '',
-      status: 'Iverksatt',
-      kravgrunnlag: null,
-      links: null
-    },
-    {
-      fastsatt: '31.01.2018',
-      avgiftstype: 'OR',
-      avgiftsgruppe: '525',
-      beloep: '6064.00',
-      fritak: '',
-      status: 'Under arbeid',
-      kravgrunnlag: null,
-      links: null
-    },
-    {
-      fastsatt: '31.01.2018',
-      avgiftstype: 'OR',
-      avgiftsgruppe: '525',
-      beloep: '6064.00',
-      fritak: '',
-      status: 'Under arbeid',
-      kravgrunnlag: null,
-      links: null
-    },
-    {
-      fastsatt: '31.01.2018',
-      avgiftstype: 'OR',
-      avgiftsgruppe: '525',
-      beloep: '6064.00',
-      fritak: '',
-      status: 'Under arbeid',
-      kravgrunnlag: null,
-      links: null
-    },
-    {
-      fastsatt: '31.01.2018',
-      avgiftstype: 'OR',
-      avgiftsgruppe: '525',
-      beloep: '6064.00',
-      fritak: '',
-      status: 'Iverksatt',
-      kravgrunnlag: null,
-      links: null
-    },
-    {
-      fastsatt: '31.01.2018',
-      avgiftstype: 'OR',
-      avgiftsgruppe: '525',
-      beloep: '6064.00',
-      fritak: '',
-      status: 'Påbegynt',
-      kravgrunnlag: null,
-      links: null
-    },
-    {
-      fastsatt: '31.01.2018',
-      avgiftstype: 'OR',
-      avgiftsgruppe: '525',
-      beloep: '6064.00',
-      fritak: '',
-      status: 'Påbegynt',
-      kravgrunnlag: null,
-      links: null
-    },
-    {
-      fastsatt: '31.01.2018',
-      avgiftstype: 'OR',
-      avgiftsgruppe: '525',
-      beloep: '6064.00',
-      fritak: '',
-      status: 'Påbeynt',
-      kravgrunnlag: null,
-      links: null
-    },
-    {
-      fastsatt: '31.01.2018',
-      avgiftstype: 'OR',
-      avgiftsgruppe: '525',
-      beloep: '6064.00',
-      fritak: '',
-      status: 'Ny',
-      kravgrunnlag: null,
-      links: null
-    },
-    {
-      fastsatt: '31.01.2018',
-      avgiftstype: 'OR',
-      avgiftsgruppe: '525',
-      beloep: '6064.00',
-      fritak: '',
-      status: 'Iverksatt',
-      kravgrunnlag: null,
-      links: null
-    },
-    {
-      fastsatt: '31.01.2018',
-      avgiftstype: 'OR',
-      avgiftsgruppe: '525',
-      beloep: '6064.00',
-      fritak: '',
-      status: 'Ny',
-      kravgrunnlag: null,
-      links: null
-    },
-    {
-      fastsatt: '31.01.2018',
-      avgiftstype: 'OR',
-      avgiftsgruppe: '525',
-      beloep: '6064.00',
-      fritak: '',
-      status: 'Iverksatt',
-      kravgrunnlag: null,
-      links: null
-    }
-  ]
-};
-<div className="ExampleSpacing8">
-  <h3>Ekspanderbare rader</h3>
-  <DetailsList
-    columns={state.columns}
-    items={state.items}
-    groups={[
-      {
-        key: 'Ekspanderbar gruppe - 1',
-        name: 'Gruppeoverskrift',
-        startIndex: 0,
-        count: 2,
-        fastsatt: '31.01.2018'
-      },
-      {
-        key: 'Ekspanderbar gruppe - 2',
-        name: 'Gruppeoverskrift',
-        startIndex: 2,
-        count: 2
-      }
-    ]}
-  />
-</div>;
-```
-
 Brukeren kan velge en eller flere rader vha av sjekkbokser.
 
 ```js
@@ -555,19 +342,17 @@ function chooseRow() {
   console.log('chooseRow');
 }
 
-<div className="ExampleSpacing8">
-  <h3>Valgbare rader</h3>
-  <DetailsList
-    marqueeSelection
-    columns={state.columns}
-    items={state.items}
-    selectionMode={DetailsList.SelectionMode.single}
-    checkboxVisibility={DetailsList.CheckBoxVisibility.always}
-  />
-</div>;
+<DetailsList
+  marqueeSelection
+  columns={state.columns}
+  items={state.items}
+  selectionMode={DetailsList.SelectionMode.multiple}
+  checkboxVisibility={DetailsList.CheckBoxVisibility.always}
+/>;
 ```
 
 ```js noeditor uu
+<h3>Huskeliste</h3>
 <ul>
   <li>Ikke bruk listen til å vise kommandoer eller innstillinger.</li>
   <li>Ikke ha for mye data slik at brukeren på scrolle horisontalt.</li>
@@ -583,6 +368,7 @@ function chooseRow() {
 ```
 
 ```js noeditor beskrivelse
+  <h3>Avansert tabell</h3>
   <p>
     DetailsList brukes når du har liste av mange repterende rader, og samtidig
     har behov for:

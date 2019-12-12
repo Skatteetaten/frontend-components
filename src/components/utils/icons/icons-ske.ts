@@ -1,4 +1,4 @@
-const fontUrls = [];
+const fontUrls: string[] = [];
 
 fontUrls.push('url("' + require('../assets/SkeIconfont.eot') + '")');
 fontUrls.push('url("' + require('../assets/SkeIconfont.eot') + '?#iefix") format("embedded-opentype")');
@@ -34,6 +34,8 @@ export default {
         'Company': '\uea08', 
         'Folkeregister': '\uea09', 
         'Kroner': '\uea0a', 
-        'Skattetrekk': '\uea0b' 
+        'Skattetrekk': '\uea0b',
+        'Up': '\uea04',
+        'Down': '\uea02'
     }
 };

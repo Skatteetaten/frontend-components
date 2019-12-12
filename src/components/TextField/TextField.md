@@ -23,7 +23,7 @@ import TextField from '@skatteetaten/frontend-components/TextField';
 
 <div style={{ width: '300px' }}>
   <TextField
-    id={'my-input-1'}
+    id={'my-input-2'}
     label={'Navn'}
     inputSize={'large'}
     placeholder={'For- og etternavn'}
@@ -89,7 +89,8 @@ import TextField from '@skatteetaten/frontend-components/TextField';
 
 const initialState = {
   value: 'Siri Saksbehandler',
-  vekt: '4'
+  vekt: '4',
+  empty: ''
 };
 
 <div style={{ width: '300px' }}>
@@ -99,7 +100,7 @@ const initialState = {
     editable
     label="Saksbehandler"
     value={state.value}
-    onChange={(e, value) => setState({ value: value })}
+    onChange={(e, value) => setState({ value })}
     boldText={true}
   />
   <p>Med suffix:</p>
@@ -109,9 +110,20 @@ const initialState = {
     editable
     label="Vekt på vare"
     value={state.vekt}
-    onChange={(e, value) => setState({ value2: vekt })}
+    onChange={(e, value) => setState({ vekt: value })}
     boldText={true}
     suffix={'kg'}
+  />
+  <p>Rediger når tekstfeltet er tomt:</p>
+  <TextField
+    id={'my-readonlyfield'}
+    readOnly
+    editable
+    editableWhenEmpty
+    label="Saksbehandler"
+    value={state.empty}
+    onChange={(e, value) => setState({ empty: value })}
+    boldText={true}
   />
 </div>;
 ```
@@ -162,19 +174,23 @@ import TextField from '@skatteetaten/frontend-components/TextField';
 ```
 
 ```js noeditor uu
+  <h3>Kobling mellom label og felt</h3>
   <p>
     Det skal alltid være en programatisk kobling mellom tekstfelt og label,
     slik at skjermleser kan lese opp beskrivelsen av feltet når det er i
     fokus.
   </p>
+  <h3>Hjelpetekster</h3>
   <p>
     I publikumsløsninger viser i advarsel- og hjelpetekst mellom label og
-    verdi (sett calloutFloating til false). Hjelpetekster i Callout fanges
+    verdi ( alloutFloating til false). Hjelpetekster i Callout fanges
     ikke like enkelt opp av skjermlesere.
   </p>
 ```
 
 ```js noeditor beskrivelse
+  <h3>Mange ulike kombinasjoner</h3>
+
 <p>
   I Designsystemet finnes det mange ulike varisjoner av tekstfelt. Vi har med og
   uten hjelpetekst, feilmeldinger eller lese- og skrivemodus. Vi har også

@@ -20,23 +20,25 @@ const initialState = {
       <Grid.Col lg={4}>
         <ComboBox
           label="Nedtrekksliste"
-          help="Hjelpetekst"
+          help="Tekst som hjelper brukeren til å fylle ut feltet."
           placeHolder="Velg"
           options={state.options}
           allowFreeform={false}
           ariaLabel="Eksempel ComboBox"
           useComboBoxAsMenuWidth
+          calloutFloating={false}
         />
       </Grid.Col>
       <Grid.Col lg={4}>
         <ComboBox
           label="Med autoutfylling"
-          help="Feltet foreslår en verdi når du begynner å skrive"
+          help="Feltet foreslår en verdi når du begynner å skrive."
           options={state.options}
           allowFreeform={true}
           autoComplete={'on'}
           ariaLabel="Eksempel ComboBox"
           useComboBoxAsMenuWidth
+          calloutFloating={false}
         />
       </Grid.Col>
     </Grid.Row>
@@ -66,13 +68,14 @@ const initialState = {
       <Grid.Col lg={4}>
         <ComboBox
           label="Nedtrekksliste"
-          help="Hjelpetekst"
+          help="Tekst som hjelper brukeren til å fylle ut feltet."
           inputSize="large"
           placeHolder="Velg"
           options={state.options}
           allowFreeform={false}
           ariaLabel="Eksempel ComboBox"
           useComboBoxAsMenuWidth
+          calloutFloating={false}
         />
       </Grid.Col>
     </Grid.Row>
@@ -118,17 +121,19 @@ let error = 'En feil';
 ```
 
 ```js noeditor uu
-<ul>
-  <li>Sjekk at alle funksjoner kan nås ved hjelp av tastaturet. </li>
-  <li>
-    Vær spesielt oppmerksom dersom man bruker <b>autoExpand</b>. Brukere av
-    skjermleser forventer å aktivt aktivere elementene på skjermen, og dersom de
-    åpnes automatisk kan det være vanskelig å orientere seg.
-  </li>
-</ul>
+  <h3>Huskeliste</h3>
+  <ul>
+    <li>Sjekk at alle funksjoner kan nås ved hjelp av tastaturet. </li>
+    <li>
+      Vær spesielt oppmerksom dersom man bruker <b>autoExpand</b>. Brukere av
+      skjermleser forventer å aktivt aktivere elementene på skjermen, og dersom de
+      åpnes automatisk kan det være vanskelig å orientere seg.
+    </li>
+  </ul>
 ```
 
 ```js noeditor beskrivelse
+  <h3>Til ulike situasjoner</h3>
   <p>
     ComboBoxen er en fleksibel nedtrekksliste som kan tilpasses til ulike
     sitasjoner:

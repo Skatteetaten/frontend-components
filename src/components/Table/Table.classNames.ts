@@ -4,7 +4,7 @@ import { getTheme } from '@uifabric/styling';
 import { FontWeights } from '..';
 import { PaletteProps } from '..';
 
-export var getClassNames = function getClassNames() {
+export const getClassNames = function getClassNames() {
   const palette = getTheme().palette as PaletteProps;
 
   return mergeStyles([
@@ -25,6 +25,14 @@ export var getClassNames = function getClassNames() {
             },
             'td.editableCell': {
               padding: 0
+            },
+            'th.hideOnMobile, td.hideOnMobile': {
+              display: 'none',
+              selectors: {
+                '@media (min-width: 640px)': {
+                  display: 'table-cell'
+                }
+              }
             },
             th: {
               verticalAlign: 'bottom',

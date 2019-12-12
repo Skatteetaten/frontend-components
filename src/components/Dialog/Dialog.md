@@ -35,7 +35,7 @@ function closeDialog() {
       <ActionButton onClick={closeDialog}>Avbryt</ActionButton>
       <Button onClick={closeDialog} hoved>
         Kanseller
-      </Button>l
+      </Button>
     </Dialog.Footer>
   </Dialog>
 </div>;
@@ -139,6 +139,7 @@ function closeDialog() {
 ```
 
 ```js noeditor uu
+<h3>Huskeliste</h3>
 <ul>
   <li>
     Bruk <b>aria-haspopup</b> for å indikere at en dialog åpnes ved klikk på en
@@ -152,6 +153,7 @@ function closeDialog() {
 ```
 
 ```js noeditor beskrivelse
+  <h3>Vise valg innenfor kontekst</h3>
   <p>
     En dialogboks (modal) brukes gjerne til å gi brukeren et valg samtidig som
     konteksten beholdes.
@@ -160,6 +162,7 @@ function closeDialog() {
     Hvis brukeren skal ta stilling til et valg i dialogen bør den settes opp
     slik at annen brukerinput blir blokkert.{' '}
   </p>
+  <h3>Tre varianter</h3>
   <p>
     Dialogen finnes i tre varianter; «standard», «luftig» eller «viktig»:
     Luftig kan brukes hvor du ønsker å at dialogen skal tiltrekke seg ektra

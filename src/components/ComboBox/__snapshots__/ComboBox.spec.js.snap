@@ -1,0 +1,88 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Combobox komponent matcher med snapshot 1`] = `
+<div>
+  <div
+    className="labelArea-43"
+  >
+    <span
+      className="label-44"
+    />
+  </div>
+  <div
+    className="ms-ComboBox-container SkeCombobox-40"
+    role="combobox"
+  >
+    <div
+      className="ms-ComboBox css-48"
+      id="ComboBox0wrapper"
+    >
+      <input
+        aria-autocomplete="both"
+        aria-disabled={false}
+        aria-expanded={false}
+        autoCapitalize="off"
+        autoComplete="off"
+        className="ms-ComboBox-Input css-49"
+        data-is-interactable={true}
+        data-lpignore={true}
+        id="ComboBox0-input"
+        onBlur={[Function]}
+        onChange={[Function]}
+        onClick={[Function]}
+        onCompositionEnd={[Function]}
+        onCompositionStart={[Function]}
+        onCompositionUpdate={[Function]}
+        onFocus={[Function]}
+        onInput={[Function]}
+        onKeyDown={[Function]}
+        onKeyUp={[Function]}
+        onTouchStart={[Function]}
+        readOnly={true}
+        role="combobox"
+        spellCheck={false}
+        type="text"
+        value=""
+      />
+      <button
+        aria-hidden={true}
+        className="ms-Button ms-Button--icon ms-ComboBox-CaretDown-button root-55"
+        data-is-focusable={false}
+        onBlur={[Function]}
+        onClick={[Function]}
+        onKeyDown={[Function]}
+        onKeyPress={[Function]}
+        onKeyUp={[Function]}
+        onMouseDown={[Function]}
+        onMouseUp={[Function]}
+        role="presentation"
+        tabIndex={-1}
+        type="button"
+      >
+        <span
+          className="ms-Button-flexContainer flexContainer-56"
+          data-automationid="splitbuttonprimary"
+        >
+          <i
+            aria-hidden={true}
+            className="ms-Icon root-37 css-63 ms-Button-icon icon-58"
+            data-icon-name="ChevronDown"
+            role="presentation"
+          >
+            
+          </i>
+        </span>
+      </button>
+    </div>
+    <div
+      aria-atomic="true"
+      aria-live="polite"
+      className=""
+      id="ComboBox0-error"
+      role="region"
+    >
+      
+    </div>
+  </div>
+</div>
+`;

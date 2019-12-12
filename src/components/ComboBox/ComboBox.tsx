@@ -6,9 +6,9 @@ import {
 import classnames from 'classnames';
 
 import { getClassNames, getOptionsClassNames } from './ComboBox.classNames';
-import ErrorMessage from '../ErrorMessage';
-import LabelWithCallout from '../LabelWithCallout';
+import LabelWithCallout, { calloutState } from '../LabelWithCallout';
 import { LabelWithCalloutProps } from '../LabelWithCallout/LabelWithCallout';
+import ErrorMessage from 'components/ErrorMessage';
 
 export interface ComboboxProps extends IComboBoxProps {
   /** Egendefinert feilmelding */
@@ -19,6 +19,11 @@ export interface ComboboxProps extends IComboBoxProps {
   inputSize?: 'normal' | 'large';
   /** Overstyr label, se LabelWithCallout komponent */
   labelCallout?: LabelWithCalloutProps;
+  /** Brukerspesifisert event for callout **/
+  onCalloutToggle?: (
+    oldCalloutState: calloutState,
+    newCalloutState: calloutState
+  ) => void;
 }
 
 /**
@@ -33,11 +38,17 @@ const Combobox: React.FC<ComboboxProps> = props => {
     className,
     id,
     labelCallout,
+    onCalloutToggle,
     ...rest
   } = props;
   return (
     <div id={id}>
-      <LabelWithCallout label={label} help={help} {...labelCallout} />
+      <LabelWithCallout
+        label={label}
+        help={help}
+        onCalloutToggle={onCalloutToggle}
+        {...labelCallout}
+      />
       <VirtualizedComboBox
         {...rest}
         role="combobox"

@@ -6,11 +6,8 @@ import {
 } from 'office-ui-fabric-react/lib-commonjs/Dropdown';
 import * as React from 'react';
 import Icon from '../Icon/Icon';
-import {
-  getCalloutClassNames,
-  getClassNames,
-} from './Dropdown.classNames';
-import LabelWithCallout from '../LabelWithCallout';
+import { getCalloutClassNames, getClassNames } from './Dropdown.classNames';
+import LabelWithCallout, { calloutState } from '../LabelWithCallout';
 import { LabelWithCalloutProps } from '../LabelWithCallout/LabelWithCallout';
 import ErrorMessage from '../ErrorMessage';
 
@@ -25,6 +22,11 @@ export interface DropdownProps extends IDropdownProps {
   multiSelect?: IDropdownProps['multiSelect'];
   /** @ignore */
   multiSelectDelimiter?: IDropdownProps['multiSelectDelimiter'];
+  /** Brukerspesifisert event for callout **/
+  onCalloutToggle?: (
+    oldCalloutState: calloutState,
+    newCalloutState: calloutState
+  ) => void;
 }
 
 interface DropdownState {
@@ -43,11 +45,17 @@ const Dropdown: React.FC<DropdownProps> = props => {
     className,
     id,
     labelCallout,
+    onCalloutToggle,
     ...rest
   } = props;
   return (
     <div id={id}>
-      <LabelWithCallout label={label} help={help} {...labelCallout}  />
+      <LabelWithCallout
+        label={label}
+        help={help}
+        onCalloutToggle={onCalloutToggle}
+        {...labelCallout}
+      />
       <FabricDropdown
         {...rest}
         className={classnames(getClassNames(props), className)}

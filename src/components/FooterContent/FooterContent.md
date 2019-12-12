@@ -24,6 +24,7 @@ import Grid from '@skatteetaten/frontend-components/Grid';
 ```
 
 ```js noeditor beskrivelse
+  <h3>Type innhold i footer</h3>
   <p>
     Footeren i løsningene våre inneholder typisk lenker for deling,
     kontaktopplysniger, personvernopplysninger og liknende.

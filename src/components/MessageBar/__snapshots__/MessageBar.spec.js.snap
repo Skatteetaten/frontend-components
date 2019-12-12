@@ -36,6 +36,7 @@ exports[`MessageBar komponent matcher snapshot 1`] = `
           <span
             className="ms-MessageBar-innerText innerText-47"
             role="status"
+            tabIndex={0}
           />
         </div>
       </div>

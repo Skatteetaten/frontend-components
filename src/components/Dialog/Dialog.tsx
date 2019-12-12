@@ -12,8 +12,6 @@ import {
 export interface DialogProps extends IDialogProps {
   /** Om dialog skal ha mer padding for et luftigere uttrykk */
   layoutStyle?: 'normal' | 'airy' | 'important';
-  /** @deprecated Hjelpetekst som skal vises i Callout */
-  helpText?: string;
 }
 type DialogState = {
   isCalloutVisible: boolean;
@@ -56,7 +54,7 @@ export default class Dialog extends React.PureComponent<
       ...props
     } = this.props;
     const styles = getClassNames(this.props);
-    let { isCalloutVisible } = this.state;
+    const { isCalloutVisible } = this.state;
 
     return (
       <div>
@@ -64,7 +62,6 @@ export default class Dialog extends React.PureComponent<
         // @ts-ignore */}
         <FabricDialog
           {...props}
-          role="dialog"
           dialogContentProps={{
             type: type,
             title,

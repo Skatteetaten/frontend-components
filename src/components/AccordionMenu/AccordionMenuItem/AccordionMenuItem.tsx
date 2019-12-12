@@ -4,20 +4,20 @@ import Icon from '../../Icon';
 import classnames from 'classnames';
 import { getClassNames } from '../AccordionMenu.classNames';
 
-interface AccordionMenuItemProps {
+interface AccordionMenuItemProps extends React.HTMLAttributes<HTMLDivElement> {
   /** Ikon som benyttes for et menypunkt   */
   icon?: string;
-  /** ariaLabel for ikonet i et menypunkt  */
-  iconLabel?: string;
   /** Om et menypunkt skal være default åpen */
   isOpen?: boolean;
   /** Tittel på menypunkt */
-  title: object;
+  heading: string | JSX.Element | undefined;
   /** Om man ønsker ytterligere aksjon når bruker åpner steget. Kalles KUN når steget åpnes, ikke når det lukkes. */
   onClick?: (...args: any[]) => any;
   /** Klasse som kan benyttes til overstyre stiler */
   className?: string;
   children?: JSX.Element;
+  /** aria-label */
+  ariaLabel?: string;
 }
 
 type AccordionMenuItemState = {
@@ -30,7 +30,7 @@ const AccordionMenuItem = (props: AccordionMenuItemProps) => {
   );
 
   const styles = getClassNames();
-  const { title, iconLabel, icon, onClick, className, children } = props;
+  const { heading, icon, onClick, className, children, ariaLabel } = props;
 
   const toggleVisibility = () => {
     setContentOpen(!isContentOpen);
@@ -56,7 +56,7 @@ const AccordionMenuItem = (props: AccordionMenuItemProps) => {
   const styleTitle = styles.title;
 
   return (
-    <li className={className}>
+    <li className={className} aria-label={ariaLabel}>
       <header
         onClick={clickHandler}
         className={
@@ -66,14 +66,12 @@ const AccordionMenuItem = (props: AccordionMenuItemProps) => {
         <div className={menuItemTitle}>
           <div className={iconWrapper}>
             <div>
-              <Icon
-                iconName={icon}
-                style={{ fontSize: '28px' }}
-                ariaLabel={iconLabel}
-              />
+              <Icon iconName={icon} style={{ fontSize: '28px' }} />
             </div>
           </div>
-          <div className={styleTitle}>{title}</div>
+          <div className={styleTitle} tabIndex={0}>
+            {heading}
+          </div>
         </div>
         <div
           className={
@@ -85,11 +83,15 @@ const AccordionMenuItem = (props: AccordionMenuItemProps) => {
           <IconButton
             alt={'Åpne og lukke knapp'}
             icon="ChevronDown"
-            title="Skriv ut"
+            aria-expanded={isContentOpen ? true : false}
           />
         </div>
       </header>
-      {isContentOpen && <section className={content}>{children}</section>}
+      {isContentOpen && (
+        <section className={content} tabIndex={0}>
+          {children}
+        </section>
+      )}
     </li>
   );
 };

@@ -3,7 +3,7 @@ import { getTheme } from '@uifabric/styling';
 import { FontSizes } from '..';
 import { PaletteProps } from '..';
 
-export var getClassNames = function getClassNames() {
+export const getClassNames = function getClassNames() {
   const palette = getTheme().palette as PaletteProps;
 
   return mergeStyles([
@@ -11,10 +11,15 @@ export var getClassNames = function getClassNames() {
       displayName: 'SkeProgressBar',
       selectors: {
         '& .ms-ProgressIndicator-progressBar': {
-          background: palette.skeColor.brown
+          background: palette.skeColor.burgundyLight,
+          height: '5px'
+        },
+        '& .ms-ProgressIndicator-progressTrack': {
+          background: palette.skeColor.whiteGrey,
+          height: '5px'
         },
         '& .ms-ProgressIndicator-itemDescription': {
-          fontSize: FontSizes.xSmall
+          fontSize: FontSizes.small
         }
       }
     }

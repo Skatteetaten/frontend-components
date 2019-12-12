@@ -20,7 +20,6 @@ const initialState = {
       }
       value={state.value1}
       onChange={(e, value1) => setState({ value1 })}
-      isRequired={true}
       isRequiredErrorMessage={'Dato må fylles ut'}
     />
   </div>
@@ -30,25 +29,11 @@ const initialState = {
       id={'my-date'}
       label={'Ukenummer'}
       placeholder={'dd.mm.åååå'}
-      help={
-        'Du kan skrive inn dato i feltet, eller velge en dato ved hjelp av datovelgeren, enten med mus eller bruk tastaturet'
-      }
+      help={'Denne datovelgeren viser ukenummer i kalender'}
       value={state.value2}
       onChange={({ target: { value2 } }) => setState({ value2 })}
       showMonthPickerAsOverlay={true}
       showWeekNumbers={true}
-    />
-  </div>
-  <br />
-  <div className="ExampleFlexContainer-200">
-    <DatePicker
-      id={'my-date'}
-      label={'Lesemodus'}
-      ariaLabel={'Datovelger'}
-      placeholder={DatePicker.DefaultDateFormat}
-      value={state.value3}
-      onChange={({ target: { value3 } }) => setState({ value3 })}
-      readonlyMode
     />
   </div>
 </div>;
@@ -71,18 +56,18 @@ const initialState = {
     label={'Velg en dato'}
     inputSize={'large'}
     placeholder={'Velg en dato...'}
-    info={
+    help={
       'Du kan skrive inn dato i feltet, eller velge en dato ved hjelp av datovelgeren, enten med mus eller bruk tastaturet'
     }
     value={state.value1}
     onChange={(e, value1) => setState({ value1 })}
-    isRequired={true}
     isRequiredErrorMessage={'Dato må fylles ut'}
   />
 </div>;
 ```
 
 ```js noeditor uu
+<h3>Huskeliste</h3>
 <ul>
   <li>
     Test at det er mulig å nå alle funksjoner med tastatur. Datovelgeren er satt
@@ -99,11 +84,9 @@ const initialState = {
 ```
 
 ```js noeditor beskrivelse
-<p>
-  Ta hensyn til hvor langt frem eller tilbake brukeren pleier å velge dato. Hvis
-  man vanligvis velger en dato noen dager frem i tid, er det kanskje ikke behov
-  å vise månedsoversikten. I andre tilfeller er det fornuftig å vise
-  månedoversikt og ukenummer. Datofeltet har også en lesemodus for når man har
-  behov for å gå fra en tilstand der man kan endre datoen til bare å vise den.
+<h3>Månedsoversikt og ukenummer</h3>
+<p>DatePicker-komponenten kan konfigureres på mange måter. For eksemepel kan man velge å vise månedvelger og ukenummer. Ta hensyn til hvor langt frem eller tilbake brukeren pleier å velge dato. Hvis man vanligvis velger en dato noen dager frem i tid, er det kanskje ikke behov å vise månedsoversikten. I andre tilfeller er det fornuftig å vise både månedoversikt og ukenummer samtidig.</p>
+<h3>Lesemodus</h3>
+<p>Datofeltet har også en lesemodus for når man har behov for å gå fra en tilstand der man kan endre datoen til bare å vise den.
 </p>
 ```

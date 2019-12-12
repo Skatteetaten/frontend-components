@@ -1,4 +1,5 @@
 import React from 'react';
+import ActionButton from '../../ActionButton';
 import classnames from 'classnames';
 import Grid from '../../Grid/Grid';
 import Icon from '../../Icon';
@@ -21,7 +22,13 @@ const NumberIcon = (props: any) => {
   );
 };
 
-export interface StepProps {
+export interface StepProps extends React.HTMLAttributes<HTMLDivElement> {
+  /** Action Button for endre **/
+  actionBtn?: {
+    icon?: string;
+    event?: () => void;
+    text: string;
+  };
   /** Overskrift for et steg */
   stepTitle?: string;
   /** Benyttes for å definere type steg som skal vises */
@@ -45,7 +52,8 @@ const Step = (props: StepProps) => {
     stepId,
     resultIcon,
     className,
-    stepType
+    stepType,
+    actionBtn
   } = props;
   const [styles, setStyles] = React.useState(getClassNames(props));
   const size = UseScreen();
@@ -63,20 +71,23 @@ const Step = (props: StepProps) => {
   return (
     <div
       key={stepNumber}
-      aria-describedby={'step-' + stepNumber}
       role="region"
       className={classnames(styles.wrapperStep, className)}
+      tabIndex={0}
     >
       <Grid.Row rowSpacing={Grid.SPACE_NONE}>
-        <Grid.Col>
+        <Grid.Col noSpacing={true}>
           <Grid.Row rowSpacing={Grid.SPACE_NONE}>
             <Grid.Col sm={12}>
               {stepNumber && stepNumber > 1 && (
-                <span
-                  className={classnames({ [styles.stepLineTop]: size.gt.sm })}
-                />
+                <span className={classnames(styles.stepLineTop)} />
               )}
-              <span className={classnames({ [styles.stepLine]: size.gt.sm })} />
+              <span className={classnames(styles.stepLine)} />
+              <span
+                className={classnames({
+                  [styles.arrowLine]: stepType === 'next'
+                })}
+              />
               {size.gt.sm && stepType !== 'next' && (
                 <NumberIcon
                   styles={styles}
@@ -104,7 +115,18 @@ const Step = (props: StepProps) => {
                       </span>
                     </h2>
                   )}
-                  <div className={styles.stepContentInner}>{children}</div>
+                  <div className={styles.stepContentInner}>
+                    {children}
+                    {actionBtn && (
+                      <ActionButton
+                        icon={actionBtn.icon}
+                        className={styles.stepAction}
+                        onClick={actionBtn.event}
+                      >
+                        {actionBtn.text}
+                      </ActionButton>
+                    )}
+                  </div>
                 </div>
               </div>
             </Grid.Col>

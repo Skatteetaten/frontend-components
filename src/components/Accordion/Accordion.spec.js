@@ -61,7 +61,6 @@ describe('Accordion komponent', () => {
     );
 
     const accordionItem = wrapper.find('AccordionItem');
-    const stepLine = accordionItem.find('span').first();
     expect(accordionItem.html()).toContain('stepNumber');
     expect(accordionItem.html()).not.toContain('toggleButton');
   });
@@ -98,7 +97,7 @@ describe('Accordion komponent', () => {
     );
 
     const accordionItem = wrapper.find('AccordionItem');
-    let Button = accordionItem.find('button[aria-controls]');
+    let Button = accordionItem.find('button');
 
     Button.simulate('click');
     Button = wrapper.find('button');

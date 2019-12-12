@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
-import { matches } from './../utils/test-utils';
+import { matches } from '../utils/test-utils';
 import TextField from './TextField';
 
 function oppsettShallow(props) {
@@ -21,7 +21,7 @@ describe('TextField komponent', () => {
 
     var input = wrapper.find('StyledTextFieldBase');
     expect(input.prop('inputSize')).toEqual('normal');
-    expect(input.prop('editableWhenEmpty')).toEqual(false);
+    expect(input.prop('editableWhenEmpty')).toEqual(undefined);
   });
 
   it('rendrer TextFiled med riktig props', () => {
@@ -151,17 +151,14 @@ describe('TextField komponent', () => {
     const icon = editButton.find('.ms-Icon');
     expect(icon.prop('data-icon-name')).toEqual('Edit');
     expect(input.prop('readOnly')).toEqual(true);
-    expect(wrapper.state('editMode')).toEqual(false);
 
     editButton.simulate('click');
     input = wrapper.find('input');
-    expect(wrapper.state('editMode')).toEqual(true);
     expect(input.prop('readOnly')).toEqual(false);
 
     input.simulate('blur');
     input = wrapper.find('input');
     expect(input.prop('readOnly')).toEqual(true);
-    expect(wrapper.state('editMode')).toEqual(false);
   });
 
   it('rendrer TextFiled med feilmelding', () => {

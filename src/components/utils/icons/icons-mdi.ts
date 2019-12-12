@@ -1,4 +1,4 @@
-const fontUrls = [];
+const fontUrls: string[] = [];
 fontUrls.push(
   'url("' + require('../assets/materialdesignicons-webfont.eot') + '")'
 );
@@ -51,7 +51,7 @@ export default {
     ArrowDropDown: '\uf140',
     NavigateBefore: '\uf04d',
     NavigateNext: '\uf054',
-    MoveUp: '\uf060',
+    MoveUp: '\ufcbe',
 
     //Info
     Blocked: '\uf0ad',
@@ -127,6 +127,7 @@ export default {
     PersonOutline: '\uf013',
     PersonMore: '\uf014',
     PersonMoreOutline: '\uf800',
+    AccountChild: '\ufa88',
     Search: '\uf349',
     Settings: '\uf493',
     Earth: '\uf1e7',

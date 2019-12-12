@@ -7,24 +7,20 @@ const initialState = {
   options: [
     {
       key: 'A',
-      text: 'Epler'
+      text: 'Enkeltpersonsforetak'
     },
     {
       key: 'B',
-      text: 'Pærer'
-    },
-    {
-      key: 'C',
-      text: 'Druer'
+      text: 'Aksjeselskap'
     }
   ]
 };
 <>
   <RadioButtonGroup
-    label="Ta et valg"
-    defaultSelectedKey="B"
+    label="Type virksomhet"
     options={state.options}
     onChange={(e, option) => console.log(option)}
+    help="Type virksomhet vil påvirke hva du må rapportere til oss."
     id="radio"
   />
 </>;
@@ -76,6 +72,7 @@ const initialState = {
 ```
 
 ```js noeditor uu
+<h3>Huskeliste</h3>
 <ul>
   <li>RadioButtonGroup egner seg best når det er 2–7 valg.</li>
   <li>Hvis det er mer enn 7 valg, bruk heller komponenten Dropdown.</li>
@@ -83,6 +80,8 @@ const initialState = {
 ```
 
 ```js noeditor beskrivelse
+  <h3>Velge kun ett valg</h3>
+
   <p>
     Radioknapper bruker vi når ber brukeren om å velge nøyaktig ett valg i en
     liste.

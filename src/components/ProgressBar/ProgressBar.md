@@ -11,10 +11,12 @@ import ProgressBar from '@skatteetaten/frontend-components/ProgressBar';
 ```
 
 ```js noeditor uu
-<p>Verdien i baren skal alltid være i readonly modus.</p>
+  <h3>Huskeliste</h3>
+  <p>Verdien i baren skal alltid være i readonly modus.</p>
 ```
 
 ```js noeditor beskrivelse
+  <h3>Tidsgrenser</h3>
   <p>
     Dersom innlasting av data tar mer enn ti seunder og vi kan forutsi
     fremdriften, kan vi vise dette med med denne komponenten.

@@ -6,20 +6,25 @@ import {
 import * as React from 'react';
 import ErrorMessage from '../ErrorMessage/ErrorMessage';
 import { getClassNames } from './RadioButtonGroup.classNames';
-import LabelWithCallout from '../LabelWithCallout';
+import LabelWithCallout, { calloutState } from '../LabelWithCallout';
 import { LabelWithCalloutProps } from '../LabelWithCallout/LabelWithCallout';
 
-interface RadioButtonGroupProps extends IChoiceGroupProps {
+export interface RadioButtonGroupProps extends IChoiceGroupProps {
   calloutFloating?: boolean;
   className?: string;
   /** Hjelpetekst */
   help?: JSX.Element | string;
   /** Feilmelding */
-  errorMessage: JSX.Element | string;
-    /** Callout warning */
-  warning: JSX.Element | string;
+  errorMessage?: JSX.Element | string;
+  /** Callout warning */
+  warning?: JSX.Element | string;
   /** Overstyr label, se LabelWithCallout komponent */
   labelCallout?: LabelWithCalloutProps;
+  /** Brukerspesifisert event for callout **/
+  onCalloutToggle?: (
+    oldCalloutState: calloutState,
+    newCalloutState: calloutState
+  ) => void;
 }
 
 /**
@@ -37,6 +42,7 @@ const RadioButtonGroup = (props: RadioButtonGroupProps) => {
     id,
     label,
     labelCallout,
+    onCalloutToggle,
     ...rest
   } = props;
 
@@ -47,6 +53,7 @@ const RadioButtonGroup = (props: RadioButtonGroupProps) => {
         help={help}
         warning={warning}
         calloutFloating={calloutFloating}
+        onCalloutToggle={onCalloutToggle}
         {...labelCallout}
       />
       <FabricChoiceGroup

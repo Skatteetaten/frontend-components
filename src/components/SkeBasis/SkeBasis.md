@@ -7,16 +7,20 @@ import MessageBar from '@skatteetaten/frontend-components/MessageBar';
 ```
 
 ```js noeditor beskrivelse
+import MessageBar from '@skatteetaten/frontend-components/MessageBar';
+<div>
+  <h3>Teknisk komponent for oppsett</h3>
   <p>
-    Teknisk komponent som aktiverer skatteetaten-utseende på komponentene i
+    SkeBasis henter inn korrekte farger, fonter og ikoner på komponentene i
     dette biblioteket. Sørg for at denne komponenten ligger øverste nivå og
-    underliggende komponenter vil hente riktige farger, fonter og ikoner. Den
-    vil også tilgjengeligegjøre fonter, farger og ikoner for stiling av nye
-    komponenter.
+    underliggende komponenter slik at komponentene blir stilet i henhold til
+    visuell profil.
   </p>
-  <p>
-    Dersom man ikke bruker denne komponenten er det mulig at standard-ikoner
-    og fonter brukes i stedet - og å bruke disse kan være et brudd på
-    lisensbetingelsene.
-  </p>
+  <p></p>
+  <MessageBar>
+    Dersom man ikke bruker denne komponenten er det sannsynlig at
+    standard-ikoner og fonter brukes i stedet - og å bruke disse kan være et
+    brudd på lisensbetingelsene.
+  </MessageBar>
+</div>;
 ```

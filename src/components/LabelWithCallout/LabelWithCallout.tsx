@@ -1,44 +1,57 @@
 import * as React from 'react';
 import { getClassNames } from './LabelWithCallout.classNames';
-import { IconButton } from 'office-ui-fabric-react/lib-commonjs';
+import { IconButton } from 'office-ui-fabric-react/lib-commonjs/Button';
+import { Label } from 'office-ui-fabric-react/lib-commonjs/Label';
 import Callout from '../Callout';
-import { isUndefined } from 'util';
 import classnames from 'classnames';
-import { Label } from 'office-ui-fabric-react';
 
-export interface LabelWithCalloutProps {
+export enum calloutState {
+  OPEN = 'OPEN',
+  CLOSED = 'CLOSED'
+}
+
+export interface LabelWithCalloutProps
+  extends React.HTMLAttributes<HTMLDivElement> {
+  /** aria-label */
+  ariaLabel?: string;
   calloutFloating?: boolean;
   className?: string | undefined;
   editable?: boolean;
   editFunction?: () => void;
   help?: string | JSX.Element | undefined;
+  id?: any;
   inputSize?: 'small' | 'normal' | 'large';
   label?: string | JSX.Element | undefined;
+  /** Brukerspesifisert event for callout **/
+  onCalloutToggle?: (
+    oldCalloutState: calloutState,
+    newCalloutState: calloutState
+  ) => void;
+  onRenderLabel?: any;
   readOnly?: boolean;
   warning?: string | JSX.Element | undefined;
-  id?: any;
-  onRenderLabel?: any;
 }
 const LabelWithCallout = (props: LabelWithCalloutProps) => {
   const {
-    calloutFloating,
+    calloutFloating = false,
     className,
     editable,
     editFunction,
     help,
     id,
-    inputSize,
     label,
     readOnly,
     warning,
-    onRenderLabel
+    onRenderLabel,
+    ariaLabel,
+    onCalloutToggle
   } = props;
-  const styles = getClassNames(props);
-  const [activeCallout, setActiveCallout] = React.useState('');
+  const styles = getClassNames({ calloutFloating, ...props });
   const [isCalloutVisible, setIsCalloutVisible] = React.useState(false);
+  const [currentCalloutState, setCurrentCalloutState] = React.useState(
+    calloutState.CLOSED
+  );
   const iconButtonElementRef = React.useRef<HTMLSpanElement>(null);
-  const inputSizeLarge = inputSize === 'large';
-
   const helpElement = React.isValidElement(help) ? help : <p>{help}</p>;
   const warningElement = React.isValidElement(warning) ? (
     warning
@@ -46,10 +59,26 @@ const LabelWithCallout = (props: LabelWithCalloutProps) => {
     <p>{warning}</p>
   );
 
+  const toggleEvent = () => {
+    if (onCalloutToggle) {
+      const oldCalloutState = currentCalloutState;
+      const newCalloutState = isCalloutVisible
+        ? calloutState.CLOSED
+        : calloutState.OPEN;
+      setCurrentCalloutState(newCalloutState);
+      onCalloutToggle(oldCalloutState, newCalloutState);
+    }
+    return;
+  };
+
   return onRenderLabel ? (
     onRenderLabel
   ) : (
-    <div id={id} className={classnames(styles.labelArea, className)}>
+    <div
+      id={id}
+      aria-label={ariaLabel}
+      className={classnames(styles.labelArea, className)}
+    >
       <span className={styles.label}>
         {label ? <Label>{label}</Label> : null}
       </span>
@@ -61,7 +90,7 @@ const LabelWithCallout = (props: LabelWithCalloutProps) => {
             ariaLabel={'help'}
             onClick={() => {
               setIsCalloutVisible(!isCalloutVisible);
-              setActiveCallout('helpCallout');
+              toggleEvent();
             }}
             className={styles.icon}
           />
@@ -75,7 +104,7 @@ const LabelWithCallout = (props: LabelWithCalloutProps) => {
             ariaLabel={'warning'}
             onClick={() => {
               setIsCalloutVisible(!isCalloutVisible);
-              setActiveCallout('warningCallout');
+              toggleEvent();
             }}
             className={styles.icon}
           />
@@ -98,21 +127,17 @@ const LabelWithCallout = (props: LabelWithCalloutProps) => {
         <Callout
           className={styles.calloutContext}
           directionalHint={
-            (inputSizeLarge && isUndefined(calloutFloating)) ||
-            (!isUndefined(calloutFloating) && !calloutFloating)
-              ? Callout.POS_BOTTOM_LEFT
-              : Callout.POS_TOP_LEFT
+            calloutFloating ? Callout.POS_BOTTOM_LEFT : Callout.POS_TOP_LEFT
           }
-          color={
-            activeCallout === 'helpCallout' ? Callout.HELP : Callout.WARNING
-          }
-          ariaLabel={
-            activeCallout === 'helpCallout' ? 'Hjelpetekst' : 'Varseltekst'
-          }
+          color={help && !warning ? Callout.HELP : Callout.WARNING}
+          ariaLabel={help && !warning ? 'Hjelpetekst' : 'Varseltekst'}
           target={iconButtonElementRef.current}
-          onClose={() => setIsCalloutVisible(false)}
+          onClose={() => {
+            setIsCalloutVisible(false);
+            toggleEvent();
+          }}
         >
-          {activeCallout === 'helpCallout' ? helpElement : warningElement}
+          {help && !warning ? helpElement : warningElement}
         </Callout>
       )}
     </div>

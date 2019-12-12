@@ -5,6 +5,7 @@ export const getClassNames = props => {
     noSpacing,
     rowSpacing,
     centered,
+    padding,
     sm,
     md,
     lg,
@@ -44,7 +45,7 @@ export const getClassNames = props => {
       displayName: 'ske-Grid',
       boxSizing: 'border-box',
       zoom: 1,
-      padding: '0 8px',
+      padding: padding || '0 8px',
       selectors: {
         '&::before, &::after': {
           display: 'table',

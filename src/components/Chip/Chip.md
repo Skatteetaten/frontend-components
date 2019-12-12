@@ -1,4 +1,4 @@
-** Chip brukes til å markere eller utheve noe - som en merkelapp. Et typisk tilfelle er dersom man har en liste med opplysninger, og ett at elementene i listen er et unntak som brukeren bør raskt få øye på. Chips kan også brukes for å vise markere aktive filtre i et søk eller kategorier i artikler.**
+** Chip brukes til å markere eller utheve noe - som en merkelapp. **
 
 Variasjon i utheving, størrelse og farge:
 
@@ -38,20 +38,27 @@ import Chip from '@skatteetaten/frontend-components/Chip';
 ```
 
 ```js noeditor uu
-<ul>
-  <li>
-    Pass på at fargen og teksten på merkelappen alltid samsvarer med hverandre.
-    Da forhindrer du at brukere med dårlig fargesyn, eller en dårlig skjerm, går
-    glipp av informasjon.
-  </li>
-  <li>
-    Bruk <b>aria-label</b> attributten slik at skjermlesere kan fange opp
-    teksten.
-  </li>
-</ul>
+  <h3>Huskeliste</h3>
+  <ul>
+    <li>
+      Pass på at fargen og teksten på merkelappen alltid samsvarer med hverandre.
+      Da forhindrer du at brukere med dårlig fargesyn, eller en dårlig skjerm, går
+      glipp av informasjon.
+    </li>
+    <li>
+      Bruk <b>aria-label</b> attributten slik at skjermlesere kan fange opp
+      teksten.
+    </li>
+    <li>
+      Ikke bruk blå tekst (lenke) på rød bakgrunn. Denne kombinasjonen har ikke tilstrekkelig lesekontrast for å nå kravene til universell utforming.
+    </li>
+  </ul>
 ```
 
 ```js noeditor beskrivelse
+  <h3>Typisk bruk</h3>
+  <p>Et typisk tilfelle er dersom man har en liste med opplysninger, og ett at elementene i listen er et unntak som brukeren bør raskt få øye på. Chips kan også brukes for å vise markere aktive filtre i et søk eller kategorier i artikler.</p>
+  <h3>Bruk med varsomhet</h3>
   <p>
     Det er viktig å bruke dette med varsomhet slik at ikke informasjonen
     drukner i merkelapper.
@@ -60,12 +67,13 @@ import Chip from '@skatteetaten/frontend-components/Chip';
     En chip er liten i sin natur, men dersom du ønsker et kraftigere visuelt
     uttrykk finnes den i en stor variant.
   </p>
+  <h3>Farger</h3>
   <p>
     Standard farge på chip er beige/gul, men vi har et par varianter for i
-    grønn og rød dersom du trenger å skille chips fra hverandre. Bruk rød til
+    grønn og rød dersom du trenger å skille dem fra hverandre. Bruk rød til
     obs/advarsel og grønn for å signalisere ok.
   </p>
   <p>
-    Chips kan inneholde lenker dersom de er klikkbare. Lenkene skal være blå.
+    Chips kan inneholde lenker dersom de er klikkbare. Lenkene skal være blå. (Merk at blå lenkefarge på rød bakgrunn ikke har god nok lesekontrast.)
   </p>
 ```

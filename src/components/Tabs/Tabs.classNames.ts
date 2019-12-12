@@ -3,7 +3,7 @@ import { getTheme } from '@uifabric/styling';
 import { FontWeights } from '..';
 import { PaletteProps } from '..';
 
-export var getClassNames = function getClassNames() {
+export const getClassNames = function getClassNames() {
   const palette = getTheme().palette as PaletteProps;
   return mergeStyles([
     {

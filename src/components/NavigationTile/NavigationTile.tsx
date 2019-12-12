@@ -19,7 +19,14 @@ export interface NavigationTileProps {
   /** Beskrivelse plassering, default er sentrert */
   alignDescription?: 'center' | 'left';
   className?: string;
-  children?: JSX.Element;
+  /** aria-label */
+  ariaLabel?: string;
+  /** Hver title som sendes inn rendres som en h2. Hvis dette ikke passer inn i din sidestruktur, kan nivå på headingen overskrives.
+   * Velg _headingLevel_ 3 f.eks. om ønsker \<h3\>-tag, velg false om _title_ ikke skal få heading-tag i det hele tatt, men rendres som vanlig tekst. */
+  headingLevel?: number | boolean;
+  /** Hvis NavigationTile brukes til noe utover det primære bruksområde (som er navigasjon videre nedover i sidestrukturen), bør det vurderes
+   * om hver tile bør rendres som en knapp. Se avsnitt om universell utforming under.*/
+  useButtons?: boolean;
 }
 
 /**
@@ -34,11 +41,15 @@ const NavigationTile: React.FC<NavigationTileProps> = props => {
     alignIcon,
     alignTitle,
     alignDescription,
+    ariaLabel,
+    headingLevel,
+    useButtons,
     ...rest
   } = props;
   const styles = getClassNames(props);
   return (
     <nav
+      aria-label={ariaLabel}
       {...rest}
       className={classnames(styles.nav, getClassNames(props), className)}
     >
@@ -46,22 +57,27 @@ const NavigationTile: React.FC<NavigationTileProps> = props => {
         {contents &&
           contents.map(({ ...rest }, index) => (
             <NavigationContent
-              key={index}
+              key={index + '.' + rest.to}
               className={styles.content}
+              headingLevel={headingLevel}
+              useButtons={useButtons}
               {...rest}
             />
           ))}
         {React.Children.map(children, (child, index) => {
-          if (React.isValidElement<ContentProps>(child))
+          if (React.isValidElement<ContentProps>(child)) {
             return (
               <NavigationContent
-                key={index}
+                key={index + '.' + child.props.to}
                 className={styles.content}
+                headingLevel={headingLevel}
+                useButtons={useButtons}
                 {...child.props}
               >
                 {child.props.children}
               </NavigationContent>
             );
+          }
         })}
       </ul>
     </nav>

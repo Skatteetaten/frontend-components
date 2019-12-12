@@ -13,37 +13,26 @@ const fadeIn = keyframes({
   }
 });
 
-function getDefaultBorder(props: CardProps) {
-  const palette = getTheme().palette as PaletteProps;
-  if (props.color === Card.WHITE) {
-    return {
-      border: `3px solid ${palette.skeColor.green}`
-    };
-  } else {
-    return {};
-  }
-}
-
 function getCardBorder(props: CardProps) {
   const palette = getTheme().palette as PaletteProps;
   switch (props.border) {
-    case Card.YELLOW_BORDER:
+    case Card.Border.YELLOW_BORDER:
       return {
         border: `3px solid ${palette.skeColor.brown}`
       };
-    case Card.GREEN_BORDER:
+    case Card.Border.GREEN_BORDER:
       return {
         border: `3px solid ${palette.skeColor.green}`
       };
-    case Card.RED_BORDER:
+    case Card.Border.RED_BORDER:
       return {
         border: `3px solid ${palette.skeColor.pink}`
       };
-    case Card.GREY_BORDER:
+    case Card.Border.GREY_BORDER:
       return {
         border: `3px solid ${palette.skeColor.grey}`
       };
-    case Card.WHITE_BORDER:
+    case Card.Border.WHITE_BORDER:
       return {
         border: `3px solid ${palette.skeColor.white}`
       };
@@ -77,9 +66,8 @@ export const getClassNames = (props: CardProps, state: CardState) => {
       displayName: 'SkeCard',
       color: theme.semanticColors.bodyText,
       backgroundColor: palette.skeColor[props.color as CardColor],
-      padding: '16px',
+      padding: '8px 16px',
       marginBottom: props.marginbottom,
-      ...getDefaultBorder(props),
       ...getCardBorder(props),
       ...getMargin(props)
     },
@@ -98,10 +86,17 @@ export const getClassNames = (props: CardProps, state: CardState) => {
       display: 'flex',
       flexWrap: 'wrap',
       justifyContent: 'flex-start',
-      alignItems: 'center'
+      alignItems: 'center',
+      outline: 'none',
+      selectors: {
+        ':focus': {
+          textDecoration: 'underline'
+        }
+      }
     },
     header: {
       //display: 'flex',
+      marginTop: '5px',
       justifyContent: 'space-between',
       alignItems: 'center',
       position: 'relative'

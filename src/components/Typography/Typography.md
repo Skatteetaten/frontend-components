@@ -44,6 +44,7 @@ import Typography from '@skatteetaten/frontend-components/Typography';
 ```
 
 ```js noeditor beskrivelse
+    <h3>Legger til tekst-stiler</h3>
     <p>
       Typography er en teknisk hjelpekomponent som brukes til å legge på
       tekst-stiler til vanlige typografi-elementer, f.eks. overskrifter, lister
@@ -55,6 +56,7 @@ import Typography from '@skatteetaten/frontend-components/Typography';
       <li>Lister (ol og ul)</li>
       <li>Sitat (blockqoute)</li>
     </ul>
+    <h3>Plassering i koden</h3>
     <p>
       Denne komponenten kan brukes på de fleste nivåer i koden. Tidlig i et
       prosjekt kan man legge Typography på et høyt nivå, for å sikre konsekvent

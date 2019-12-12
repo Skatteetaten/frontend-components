@@ -7,6 +7,7 @@ interface RowProps {
   centered?: boolean;
   className?: string;
   tag?: string;
+  padding?: string;
 }
 
 class Row extends React.Component<RowProps, {}> {
@@ -64,6 +65,7 @@ class Col extends React.Component<ColProps, {}> {
 interface GridProps {
   className?: string;
   tag?: string;
+  padding?: string;
 }
 /**
  * @visibleName Grid (Rutenett)
@@ -75,6 +77,10 @@ export class Grid extends React.Component<GridProps, {}> {
   static SPACE_SMALL = '8px';
   static SPACE_MEDIUM = '16px';
   static SPACE_LARGE = '24px';
+
+  static defaultProps = {
+    padding: '0 8px'
+  };
 
   render() {
     const { children, className = '', tag = 'div' } = this.props;

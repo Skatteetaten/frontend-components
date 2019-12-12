@@ -7,7 +7,7 @@ const initialState = { title: 'Skatteoppgjøret for 2017' };
 
 <div>
   <Card
-    color={Card.BEIGE}
+    color={Card.Color.BEIGE}
     title={initialState.title}
     circleOnIcon={false}
     isExpanded={false}
@@ -22,7 +22,7 @@ const initialState = { title: 'Skatteoppgjøret for 2017' };
   </Card>
   <br />
   <Card
-    color={Card.GREEN}
+    color={Card.Color.GREEN}
     title="Skatteoppgjøret for 2018"
     circleOnIcon={false}
     isExpanded={false}
@@ -53,7 +53,7 @@ function onChange(isExpanded) {
 
 <div>
   <Card
-    color={Card.BEIGE}
+    color={Card.Color.BEIGE}
     title={state.title}
     circleOnIcon={false}
     isExpanded={false}
@@ -79,11 +79,12 @@ import TextField from '@skatteetaten/frontend-components/TextField';
 
 <div>
   <Card
-    color={Card.WHITE}
+    color={Card.Color.WHITE}
+    border={Card.Border.GREEN_BORDER}
     title="Du må betale omregistreringsavgift"
     subtitle="Gjelder kjøretøyet PR 12345"
   >
-    <Grid>
+    <Grid padding={'10px 5px 0px 1px'}>
       <Grid.Row>
         <Grid.Col noSpacing xl={2} md={8}>
           <TextField
@@ -122,22 +123,16 @@ import TextField from '@skatteetaten/frontend-components/TextField';
 ```
 
 ```js noeditor beskrivelse
-<p>
-  Innholdskort kan inneholde mange andre komponenter. Husk å sjekke
-  «Tilgjengelighet» hvis du skal bruke flere komponenter fra Designsystemet i
-  innholdskortet.
-</p>
-```
-
-```js noeditor beskrivelse
-  <p>
+  <h3>Gruppering av innhold</h3>
+  <p> Card-komponenten er laget for å gruppere informasjon.
       Hvis man har mange innholdskort på skjermen kan det være nyttig å kollapse
       dem, slik at brukeren ikke ser så mye informasjon på en gang. Handlinger
       knyttet til informasjonen inni kortet kan legges i handlingsknapper i
       toppen av kortet.
   </p>
+  <h3>Ulike farger har ulike betydninger</h3>
   <ul>
-    <li>Grå: Standard bakgrunnsfarge for interne løsninger</li>
+    <li>Grå: Ofte bruk bakgrunnsfarge for interne løsninger</li>
     <li>Grønn: Brukers til hjelp</li>
     <li>Gul: Brukes til informasjon og opplysning.</li>
     <li>

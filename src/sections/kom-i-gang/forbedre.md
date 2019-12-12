@@ -1,27 +1,27 @@
-Vi blir veldig glade dersom du vil bidra med nye komponenter, feilfikser eller annet designrelatert som kan være til glede for andre. Her har vi laget en oversikt for å hjelpe deg i gang.
+Vi har lagt opp til at alle som jobber med design og utvikling kan bidra til å forbedre komponentene. Her har vi laget en oversikt for å hjelpe deg i gang.
 
 ```js noeditor beskrivelse
 import Accordion from '@skatteetaten/frontend-components/Accordion';
 import AccordionItem from '@skatteetaten/frontend-components/Accordion/AccordionItem';
 
-<Accordion>
+<Accordion processList>
   <AccordionItem
     toggleContent
     toggleButtonText={'Tilpasse eksisterende mønster'}
     stepId={'step-1-1'}
   >
     <p>
-      Vi liker å forbedre eksisterende komponenter, så sjekk om det er mulig å
-      tilpasse det finnes før du lager noe helt nytt.
+      Sjekk alle først om det er mulig å tilpasse en komponent som finnes fra
+      før du lager noe helt nytt.
     </p>
     <p>
       Spør også brukskvalitet/designeren i ditt prosjekt om vedkommende er enig
       i løsningen din.
     </p>
     <p>
-      Endringer i Designsystemet skal knyttes til en sak i GitHub. Hvis det ikke
-      finnes en sak, vil en i Designsystem-teamet opprette en, slik at du kan
-      følge med på fremdriften.
+      Endringer i Designsystemet skal knyttes til en sak. Hvis det ikke finnes
+      en sak, vil en i Designsystem-teamet opprette en, slik at du kan følge med
+      på fremdriften.
     </p>
   </AccordionItem>
   <AccordionItem

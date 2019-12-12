@@ -10,7 +10,7 @@ import { CSSTransition } from 'react-transition-group';
 import { default as MessageBarButton } from '../Button/Button';
 import { getClassNames } from './MessageBar.classNames';
 
-interface MessageBarProps extends IMessageBarProps {
+export interface MessageBarProps extends IMessageBarProps {
   type?:
     | MessageBarType.success
     | MessageBarType.blocked
@@ -28,7 +28,7 @@ interface MessageBarProps extends IMessageBarProps {
   onClick?: (...args: any[]) => any;
 }
 
-interface MessageBarState {
+interface MessageBarState extends React.HTMLAttributes<HTMLDivElement> {
   hideMessageBar: boolean;
   showMessage: boolean;
 }
@@ -72,10 +72,11 @@ export class MessageBar extends React.PureComponent<
 
   resetDurationMessage = () => {
     const { duration } = this.props;
-    if (duration)
+    if (duration) {
       this.setState({
         showMessage: true
       });
+    }
     setTimeout(() => {
       this.setState({ hideMessageBar: true, showMessage: false });
     }, Number(duration) * 1000);
@@ -129,6 +130,7 @@ export class MessageBar extends React.PureComponent<
               isMultiline={isMultiline}
               aria-describedby={id}
               role="status"
+              tabIndex={0}
             >
               {children}
             </FabricMessageBar>

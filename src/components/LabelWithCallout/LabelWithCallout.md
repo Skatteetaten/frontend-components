@@ -8,14 +8,13 @@ import Button from '@skatteetaten/frontend-components/Button';
   <LabelWithCallout
     label={'Omregistreringsavgift'}
     help={'Avgiften du må betale for å registrere kjøretøyet på en ny person.'}
-    calloutFloating={false}
+    warning={
+      state.warning && 'Du ser ut til å være fritatt for omregistreringsavgift.'
+    }
   />
-  <br />
-  <LabelWithCallout
-    label={'Omregistreringsavgift'}
-    warning={'Du ser ut til å være fritatt for omregistreringsavgift.'}
-    calloutFloating={false}
-  />
+  <Button onClick={() => setState({ warning: !state.warning })}>
+    {state.warning ? 'Vis med hjelpetekst' : 'Vis med varsel'}
+  </Button>
 </>;
 ```
 
@@ -28,7 +27,6 @@ import SearchField from '@skatteetaten/frontend-components/SearchField';
   <LabelWithCallout
     label={'Søk'}
     help={'Her kan du søke etter personer og virksomheter'}
-    calloutFloating={false}
   />
   <SearchField
     searchFieldSize="standard"
@@ -40,13 +38,15 @@ import SearchField from '@skatteetaten/frontend-components/SearchField';
 ```
 
 ```js noeditor beskrivelse
+<h3>Hjelpekomponent</h3>
 <p>Dette er i hovedsak en hjelpekomponent som brukes av input-komponentene. Det er for eksempel denne som brukes til å vise label og hjelpetekst og i toppen av TextField og DatePicker.</p>
 <p>Bruk denne komponenten i tilfeller hvor det er ønskelig samme med utseende og funksjonalitet på label og hjelpetekst som for de øvrige inputkomponentene, for eksempel seksjoner eller knapperader.</p>
 ```
 
 ```js noeditor uu
-<p>
-  Merk at flytende Callout (Calloutfloating=true) kun kan brukes i interne
-  løsninger.
-</p>
+  <h3>Huskeliste</h3>
+  <p>
+    Merk at flytende Callout (Calloutfloating=true) kun kan brukes i interne
+    løsninger.
+  </p>
 ```

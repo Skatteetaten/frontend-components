@@ -7,6 +7,7 @@ import { PaletteProps } from '..';
 export const getClassNames = props => {
   const palette = getTheme().palette as PaletteProps;
   const inset = -6;
+  const { errorMessage } = props;
 
   return mergeStyles({
     selectors: {
@@ -55,15 +56,25 @@ export const getClassNames = props => {
         bottom: inset,
         right: inset,
         outline: 'none',
-        zIndex: 1
+        zIndex: 1,
+        border: '2px solid' + palette.skeColor.blue
       },
       '& label.ms-Label': {
-        fontSize: FontSizes.medium,
+        fontSize: FontSizes.small,
         fontWeight: FontWeights.regular
       },
       'span.ms-Label': {
         fontSize: FontSizes.medium,
         fontWeight: FontWeights.regular
+      },
+      '.ms-ChoiceFieldLabel': errorMessage && {
+        color: palette.skeColor.error
+      },
+      '.ms-ChoiceField-field::before': errorMessage && {
+        content: '',
+        display: 'inline-block',
+        border: '2px solid' + palette.skeColor.error,
+        position: 'absolute'
       },
       '& .ms-Callout-main': !isUndefined(props.calloutFloating) &&
         !props.calloutFloating && {
