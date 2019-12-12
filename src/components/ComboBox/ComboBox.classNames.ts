@@ -87,11 +87,26 @@ export const getOptionsClassNames = (props: ComboboxProps) => {
     displayName: 'SkeComboBoxOptions',
     selectors: {
       '& .ms-ComboBox-option': {
-        border: `2px solid ${palette.skeColor.transparent}`
+        border: `2px solid ${palette.skeColor.transparent}`,
+        selectors: {
+          ':hover': {
+            background: palette.skeColor.lightBlue,
+            textDecoration: 'underline'
+          }
+        }
       },
       '& .ms-ComboBox-option.is-checked': {
-        border: '2px solid' + palette.skeColor.blue,
-        outline: 'none'
+        //border: '2px solid' + palette.skeColor.blue,
+        background: palette.skeColor.lightBlue,
+        textDecoration: 'underline',
+        outline: 'none',
+        selectors: {
+          ':active': {
+            background: `${palette.skeColor.lightBlue} !important`,
+            border: `2px solid ${palette.skeColor.blue}`,
+            textDecoration: 'none'
+          }
+        }
       },
       '& .ms-ComboBox-option.is-checked:after': {
         border: 'none',

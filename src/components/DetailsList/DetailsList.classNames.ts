@@ -62,12 +62,7 @@ export const getClassNames = (props: DetailsListProps) => {
         zIndex: 1
       },
       '.ms-GroupHeader': {
-        background: getBackgroundColor(props),
-        selectors: {
-          ':hover': {
-            background: getHoverColor(props)
-          }
-        }
+        background: getBackgroundColor(props)
       },
       '.ms-GroupHeader .ms-GroupHeader-expand': {
         width: 20,
@@ -142,6 +137,9 @@ export const getClassNames = (props: DetailsListProps) => {
         selectors: {
           '& .ms-DetailsRow-cellCheck': {
             padding: 0
+          },
+          ':hover': {
+            textDecoration: 'underline'
           }
         }
       },
