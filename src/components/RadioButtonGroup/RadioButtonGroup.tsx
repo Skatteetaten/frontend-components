@@ -1,6 +1,7 @@
 import classnames from 'classnames';
 import {
   ChoiceGroup as FabricChoiceGroup,
+  IChoiceGroupOption,
   IChoiceGroupProps
 } from 'office-ui-fabric-react/lib-commonjs/ChoiceGroup';
 import * as React from 'react';
@@ -8,6 +9,10 @@ import ErrorMessage from '../ErrorMessage/ErrorMessage';
 import { getClassNames } from './RadioButtonGroup.classNames';
 import LabelWithCallout, { calloutState } from '../LabelWithCallout';
 import { LabelWithCalloutProps } from '../LabelWithCallout/LabelWithCallout';
+
+export interface IRadioButtonGroupOptions extends IChoiceGroupOption {
+  description: string;
+}
 
 export interface RadioButtonGroupProps extends IChoiceGroupProps {
   calloutFloating?: boolean;
@@ -25,6 +30,7 @@ export interface RadioButtonGroupProps extends IChoiceGroupProps {
     oldCalloutState: calloutState,
     newCalloutState: calloutState
   ) => void;
+  options: IRadioButtonGroupOptions[];
 }
 
 /**
@@ -43,8 +49,19 @@ const RadioButtonGroup = (props: RadioButtonGroupProps) => {
     label,
     labelCallout,
     onCalloutToggle,
+    options,
     ...rest
   } = props;
+  let tempOptions = options;
+
+  if (options) {
+    options.forEach(option => {
+      if (option.description) {
+        option.onRenderLabel = DescriptionRender(option.description);
+      }
+    });
+    tempOptions = options;
+  }
 
   return (
     <>
@@ -57,6 +74,7 @@ const RadioButtonGroup = (props: RadioButtonGroupProps) => {
         {...labelCallout}
       />
       <FabricChoiceGroup
+        options={tempOptions}
         {...rest}
         className={classnames(getClassNames(props), className)}
         ariaLabelledBy={label}
@@ -65,6 +83,29 @@ const RadioButtonGroup = (props: RadioButtonGroupProps) => {
       </FabricChoiceGroup>
       {errorMessage && <ErrorMessage>{errorMessage}</ErrorMessage>}
     </>
+  );
+};
+
+const DescriptionRender = (description: string) => (p: any) => {
+  const classNames = getClassNames({});
+  return (
+    <div
+      style={{
+        display: 'flex',
+        flexDirection: 'column'
+      }}
+    >
+      <span id={p.labelId} className="ms-ChoiceFieldLabel">
+        {' '}
+        {p.text}{' '}
+      </span>
+      <span
+        className={classNames.radioButtonDescription + ' ms-ChoiceFieldLabel'}
+      >
+        {' '}
+        {description}{' '}
+      </span>
+    </div>
   );
 };
 
