@@ -3,9 +3,11 @@ import classnames from 'classnames';
 import Icon from '../Icon';
 import { getClassNames } from './Link.classNames';
 
-export interface LinkProps {
-  to: React.Component;
+export interface LinkProps
+  extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
   className?: string;
+  /** Som standard rendres lenkene som a-elementer. Dette gir mulighet for å overstyre implementasjonen. */
+  renderContent?: (classNames: string) => JSX.Element;
   icon?: string;
   path?: string;
   placement?: 'after' | 'before';
@@ -13,27 +15,45 @@ export interface LinkProps {
 }
 
 const Link: React.FC<LinkProps> = props => {
+  const {
+    className,
+    placement,
+    icon,
+    path,
+    text,
+    renderContent,
+    ...htmlAttributes
+  } = props;
   const styles = getClassNames();
   return (
-    <p className={classnames(styles.linkContainer, props.className)}>
-      {props.placement === 'before' && (
+    <span className={classnames(styles.linkContainer, props.className)}>
+      {props.placement === 'before' && props.icon && (
         <Icon
           iconName={props.icon}
           className={styles.icon}
           role="presentation"
         />
       )}
-      <a href={props.path} className={classnames(styles.iconLink)}>
-        {props.text}
-      </a>
-      {props.placement === 'after' && (
+      {renderContent ? (
+        renderContent(classnames(styles.iconLink))
+      ) : (
+        <a
+          href={props.path}
+          className={classnames(styles.iconLink)}
+          {...htmlAttributes}
+        >
+          {props.text}
+        </a>
+      )}
+
+      {props.placement === 'after' && props.icon && (
         <Icon
           iconName={props.icon}
           className={styles.icon}
           role="presentation"
         />
       )}
-    </p>
+    </span>
   );
 };
 export default Link;

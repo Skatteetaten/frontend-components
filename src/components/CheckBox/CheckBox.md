@@ -14,19 +14,21 @@ import CheckBox from '@skatteetaten/frontend-components/CheckBox';
 ```
 
 ```js noeditor uu
-<ul>
-  <li>
-    Sjekk at tilstand på avhuking (valgt/ikke valgt) leses opp av skjermleser
-  </li>
-  <li>
-    Bruk <b>fieldset</b> og <b>legend</b>-elementer for å gi kontekstinformasjon
-    til skjermleser (hvilke elementer hører sammen, og hva er overordnet tittel
-    eller emne).
-  </li>
-</ul>
+  <h3>Huskeliste</h3>
+  <ul>
+    <li>
+      Sjekk at tilstand på avhuking (valgt/ikke valgt) leses opp av skjermleser
+    </li>
+    <li>
+      Bruk <b>fieldset</b> og <b>legend</b>-elementer for å gi kontekstinformasjon
+      til skjermleser (hvilke elementer hører sammen, og hva er overordnet tittel
+      eller emne).
+    </li>
+  </ul>
 ```
 
 ```js noeditor beskrivelse
+  <h3>Velge vilkårlig antall elementer</h3>
   <p>
     Avhukingsbokser brukes når det er liste med valg og brukeren kan velge et
     vilkårlig antall av dem, inkludert null, ett eller flere. En avhukingsboks

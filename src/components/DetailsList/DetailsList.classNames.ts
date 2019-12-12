@@ -14,24 +14,9 @@ function getBackgroundColor(props: DetailsListProps) {
   }
 }
 
-function getBorderColor(props: DetailsListProps) {
-  const palette = getTheme().palette as PaletteProps;
-
-  if (props.background === 'white') {
-    return palette.skeColor.white;
-  } else {
-    return palette.skeColor.lightGrey;
-  }
-}
-
 function getHoverColor(props: DetailsListProps) {
   const palette = getTheme().palette as PaletteProps;
-
-  if (props.background === 'white') {
-    return palette.skeColor.lightBlue;
-  } else {
-    return palette.skeColor.lightBlue;
-  }
+  return palette.skeColor.lightBlue;
 }
 
 export const getClassNames = (props: DetailsListProps) => {
@@ -80,16 +65,18 @@ export const getClassNames = (props: DetailsListProps) => {
         background: getBackgroundColor(props)
       },
       '.ms-GroupHeader .ms-GroupHeader-expand': {
-        border: '1px solid ' + palette.blue,
-        borderRadius: '50%',
-        color: palette.blue,
+        width: 20,
         height: 20,
+        color: palette.skeColor.blue,
+        border: '2px solid ' + palette.skeColor.blue,
+        borderRadius: '50%',
         position: 'relative',
-        width: 20
+        margin: 9
       },
       '.ms-GroupHeader .ms-GroupHeader-expand i': {
         position: 'absolute',
-        transformOrigin: 'center center'
+        transformOrigin: 'center center',
+        fontWeight: FontWeights.bold
       },
       '.ms-DetailsHeader-collapseButton': {
         color: palette.skeColor.blue
@@ -101,6 +88,7 @@ export const getClassNames = (props: DetailsListProps) => {
       '.ms-GroupHeader-title': {
         fontSize: FontSizes.medium,
         fontWeight: FontWeights.semibold,
+        paddingLeft: '6px'
       },
       '& .ms-DetailsHeader-cell [data-icon-name="SortDown"], & .ms-DetailsHeader-cell [data-icon-name="SortUp"]': {
         color: palette.skeColor.blue,
@@ -116,19 +104,22 @@ export const getClassNames = (props: DetailsListProps) => {
           }
         }
       },
+      '& .ms-DetailsHeader-cellTitle': {
+        paddingLeft: '8px'
+      },
       '.ms-List-cell': {
-        minHeight: 32 // + 2px border
+        minHeight: 32, // + 2px border
+        borderBottom: '1px solid' + palette.skeColor.lightGrey
       },
       //row
       '& .ms-FocusZone.ms-DetailsHeader': {
-        background: getBackgroundColor(props),
-        borderBottom: '2px solid' + getBorderColor(props),
-        paddingBottom: 0
+        paddingBottom: 0,
+        borderBottom: '2px solid' + palette.skeColor.black,
+        background: getBackgroundColor(props)
       },
       '& .ms-FocusZone.ms-DetailsRow': {
-        background: getBackgroundColor(props),
-        borderBottom: '2px solid' + getBorderColor(props),
         minHeight: 26,
+        background: getBackgroundColor(props),
         selectors: {
           ':hover': {
             background: getHoverColor(props)
@@ -176,7 +167,7 @@ export const getClassNames = (props: DetailsListProps) => {
             height: 20
           },
           '.ms-Check.is-checked:before': {
-            background: palette.blue
+            background: palette.skeColor.blue
           },
           '.ms-Check-circle': {
             fontFamily: 'none',

@@ -109,6 +109,7 @@ import AccordionItem from '@skatteetaten/frontend-components/Accordion/Accordion
 ```
 
 ```js noeditor beskrivelse
+  <h3>Vise og skjule informasjon</h3>
   <p>Accordion brukes for å gruppevis vise og skjule utdypende informasjon,
       eller for å veilede brukeren gjennom en sekvens av trinnvise steg.{' '}
     </p>

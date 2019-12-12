@@ -61,21 +61,25 @@ exports[`Table komponent matcher snapshot 1`] = `
       <thead>
         <tr>
           <th
+            className=""
             key="month"
           >
             Måned
           </th>
           <th
+            className=""
             key="amount"
           >
             Beløp
           </th>
           <th
+            className=""
             key="coverage"
           >
             Dekningsgrad
           </th>
           <th
+            className=""
             key="revenue"
           >
             Avkastning
@@ -116,28 +120,30 @@ exports[`Table komponent matcher snapshot 1`] = `
             }
           }
           editModeActive={false}
+          isEditableRowOpen={false}
           key="0"
+          onCloseRow={[Function]}
+          onEditRow={[Function]}
           rowIndex={0}
-          setEditMode={[Function]}
           tableHasScroll={false}
         >
           <tr
             key="0"
           >
             <td
-              className=""
+              className="is-closed"
               key="0_0"
             />
             <td
-              className="right"
+              className="is-closed right"
               key="0_1"
             />
             <td
-              className="right"
+              className="is-closed right"
               key="0_2"
             />
             <td
-              className="right"
+              className="is-closed right"
               key="0_3"
             />
           </tr>
@@ -175,28 +181,30 @@ exports[`Table komponent matcher snapshot 1`] = `
             }
           }
           editModeActive={false}
+          isEditableRowOpen={false}
           key="1"
+          onCloseRow={[Function]}
+          onEditRow={[Function]}
           rowIndex={1}
-          setEditMode={[Function]}
           tableHasScroll={false}
         >
           <tr
             key="1"
           >
             <td
-              className=""
+              className="is-closed"
               key="1_0"
             />
             <td
-              className="right"
+              className="is-closed right"
               key="1_1"
             />
             <td
-              className="right"
+              className="is-closed right"
               key="1_2"
             />
             <td
-              className="right"
+              className="is-closed right"
               key="1_3"
             />
           </tr>
@@ -234,28 +242,30 @@ exports[`Table komponent matcher snapshot 1`] = `
             }
           }
           editModeActive={false}
+          isEditableRowOpen={false}
           key="2"
+          onCloseRow={[Function]}
+          onEditRow={[Function]}
           rowIndex={2}
-          setEditMode={[Function]}
           tableHasScroll={false}
         >
           <tr
             key="2"
           >
             <td
-              className=""
+              className="is-closed"
               key="2_0"
             />
             <td
-              className="right"
+              className="is-closed right"
               key="2_1"
             />
             <td
-              className="right"
+              className="is-closed right"
               key="2_2"
             />
             <td
-              className="right"
+              className="is-closed right"
               key="2_3"
             />
           </tr>
@@ -293,28 +303,30 @@ exports[`Table komponent matcher snapshot 1`] = `
             }
           }
           editModeActive={false}
+          isEditableRowOpen={false}
           key="3"
+          onCloseRow={[Function]}
+          onEditRow={[Function]}
           rowIndex={3}
-          setEditMode={[Function]}
           tableHasScroll={false}
         >
           <tr
             key="3"
           >
             <td
-              className=""
+              className="is-closed"
               key="3_0"
             />
             <td
-              className="right"
+              className="is-closed right"
               key="3_1"
             />
             <td
-              className="right"
+              className="is-closed right"
               key="3_2"
             />
             <td
-              className="right"
+              className="is-closed right"
               key="3_3"
             />
           </tr>

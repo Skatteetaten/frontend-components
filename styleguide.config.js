@@ -48,7 +48,7 @@ module.exports = {
         }
       ]
     },
-    generateComponentsGroup('Knapper', [
+    generateComponentsGroup('Knapper og lenker', [
       'ActionButton',
       'Button',
       'IconButton',
@@ -63,6 +63,8 @@ module.exports = {
       'SkeBasis',
       'TopBanner',
       'TopStripe',
+      'TopStripeMenu',
+      'TopStripeButton',
       'Typography'
     ]),
     generateComponentsGroup('Inputfelt', [
@@ -79,6 +81,7 @@ module.exports = {
       'AccordionMenu',
       'Card',
       'CommandBar',
+      'LinkGroup',
       'StepList',
       'Step',
       'Tabs'

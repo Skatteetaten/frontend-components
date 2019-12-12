@@ -40,7 +40,6 @@ const ToggleContent: React.FC<ToggleContentInterface> = props => {
     toggleContent,
     isContentOpen,
     styles,
-    stepId,
     toggleButtonText,
     onClick,
     subtitle
@@ -57,8 +56,6 @@ const ToggleContent: React.FC<ToggleContentInterface> = props => {
           : styles.toggleButton
       }
       aria-expanded={isContentOpen}
-      aria-controls={stepId}
-      aria-label={toggleButtonText}
       onClick={onClick}
     >
       <label>
@@ -67,11 +64,7 @@ const ToggleContent: React.FC<ToggleContentInterface> = props => {
         <Icon iconName={'ChevronDown'} />
 
         {subtitle && (
-          <p
-            className={styles.subtitle}
-            aria-labelledby={subtitle}
-            tabIndex={0}
-          >
+          <p className={styles.subtitle} aria-label={subtitle} tabIndex={0}>
             {subtitle}
           </p>
         )}
@@ -113,12 +106,7 @@ const AccordionItem: React.FC<AccordionItemProps> = props => {
   } = props;
 
   return (
-    <div
-      key={stepNumber}
-      aria-describedby={'step' + stepNumber}
-      aria-label={'step' + stepNumber}
-      className={styles.wrapperStep}
-    >
+    <div key={stepNumber} className={styles.wrapperStep} aria-controls={stepId}>
       {processList && stepNumber !== totalSteps && (
         <span className={styles.stepLine} />
       )}

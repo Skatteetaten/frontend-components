@@ -1,6 +1,6 @@
-import { mergeStyles, mergeStyleSets } from '@uifabric/merge-styles';
+import { mergeStyles } from '@uifabric/merge-styles';
 import { getTheme } from '@uifabric/styling';
-import { FontSizes, FontWeights } from '../utils/fonts';
+import { FontSizes } from '../utils/fonts';
 import { MdIcons } from '../utils/icons/';
 import { Animation } from '../utils/getAnimationStyles';
 import { PaletteProps } from '..';
@@ -130,8 +130,8 @@ export const getCalloutClassNames = () => {
         selectors: {
           '.dropdownItemSelected': {
             background: palette.skeColor.burgundy
-        },
-      }
+          }
+        }
       },
       '.ms-Fabric.is-focusVisible.is-focusVisible & .ms-Dropdown-item:focus:after, .ms-Dropdown-item:hover:after': {
         content: '""',
@@ -144,60 +144,22 @@ export const getCalloutClassNames = () => {
         borderRadius: radius,
         outline: 'transparent',
         zIndex: 1,
-        color: palette.skeColor.blackAlt,
+        color: palette.skeColor.blackAlt
       },
       '.ms-Dropdown-item:hover': {
         color: palette.skeColor.blackAlt,
         selectors: {
-        ':hover': {
-          background: palette.skeColor.lightBlue,
-          textDecoration: 'underline'
-        },
-        ':active': {
-          background: palette.skeColor.lightBlue,
-          border: `2px solid ${palette.skeColor.blue}`,
-          textDecoration: 'none'
-        },
-      }
-    }
-  }
-  });
-};
-
-export const getLabelClassNames = () => {
-  const palette = getTheme().palette as PaletteProps;
-  return mergeStyleSets({
-    labelArea: {
-      display: 'flex',
-      alignItems: 'center'
-    },
-    label: {
-      //flexGrow: 1,
-    },
-    labelText: {
-      fontSize: FontSizes.small,
-      color: palette.skeColor.blackAlt,
-      fontWeight: FontWeights.regular
-    },
-    labelIconArea: {
-      height: '26px',
-      marginTop: '-5px'
-    },
-    icon: {
-      color: palette.skeColor.blue,
-      selectors: {
-        '& i': {
-          fontSize: 'large'
-        },
-        '&:focus&:after': {
-          border: `2px solid ${palette.skeColor.blue}`,
-          outline: 'none'
+          ':hover': {
+            background: palette.skeColor.lightBlue,
+            textDecoration: 'underline'
+          },
+          ':active': {
+            background: palette.skeColor.lightBlue,
+            border: `2px solid ${palette.skeColor.blue}`,
+            textDecoration: 'none'
+          }
         }
       }
-    },
-    callOut: {
-      padding: '10px',
-      maxWidth: '300px'
     }
   });
 };

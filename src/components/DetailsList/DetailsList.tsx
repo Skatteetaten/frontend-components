@@ -8,13 +8,16 @@ import {
   CheckboxVisibility,
   Selection,
   IDetailsListProps,
-  IColumn as FabricIColumn
+  IColumn as FabricIColumn,
+  DetailsRow
 } from 'office-ui-fabric-react/lib-commonjs/DetailsList';
 import { getClassNames } from './DetailsList.classNames';
 
 export interface IColumn extends FabricIColumn {
   sortItems?: any;
 }
+
+export { DetailsRow };
 
 export interface DetailsListProps extends IDetailsListProps {
   background?: 'white' | 'transparent';
@@ -56,7 +59,7 @@ export class DetailsList extends React.PureComponent<DetailsListProps, {}> {
           return {
             ...newCol,
             isSorted: true,
-            isSortedDescending: currentColumn.isSortedDescending
+            isSortedDescending: !currentColumn.isSortedDescending
           };
         }
         return {

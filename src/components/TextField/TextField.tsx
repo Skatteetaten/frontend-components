@@ -8,7 +8,7 @@ import {
   ITextField
 } from 'office-ui-fabric-react/lib-commonjs/TextField';
 import { getClassNames } from './TextField.classNames';
-import LabelWithCallout from '../LabelWithCallout';
+import LabelWithCallout, { calloutState } from '../LabelWithCallout';
 
 export interface TextFieldProps extends ITextFieldProps {
   /** Benyttes når teksten for et readOnly tekstfelt skal fremheves  */
@@ -38,7 +38,10 @@ export interface TextFieldProps extends ITextFieldProps {
   /** @ignore */
   editMode?: boolean;
   /** Brukerspesifisert event for callout **/
-  onCalloutToggle?: () => void;
+  onCalloutToggle?: (
+    oldCalloutState: calloutState,
+    newCalloutState: calloutState
+  ) => void;
 }
 
 /**
@@ -58,6 +61,7 @@ export const TextField: React.FC<TextFieldProps> = ({
   onCalloutToggle,
   ...rest
 }) => {
+  rest.inputSize = rest.inputSize || 'normal';
   const shouldEditWhenEmpty = rest.editableWhenEmpty ? value === '' : false;
 
   const textField = React.useRef<ITextField | null>();
@@ -78,6 +82,8 @@ export const TextField: React.FC<TextFieldProps> = ({
   const setValue = () => {
     if (rest.suffix && readOnly && !editMode) {
       return value + ' ' + rest.suffix;
+    } else if (value === null) {
+      return undefined;
     }
     return value;
   };
@@ -107,7 +113,10 @@ export const TextField: React.FC<TextFieldProps> = ({
         {...rest}
         value={setValue()}
         readOnly={editMode ? false : readOnly}
-        className={classnames(getClassNames({ ...rest, editMode }), className)}
+        className={classnames(
+          getClassNames({ ...rest, editMode, readOnly }),
+          className
+        )}
         onBlur={onBlur}
         componentRef={ref => {
           if (rest.componentRef && typeof rest.componentRef === 'function') {

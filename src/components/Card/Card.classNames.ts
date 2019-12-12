@@ -13,17 +13,6 @@ const fadeIn = keyframes({
   }
 });
 
-function getDefaultBorder(props: CardProps) {
-  const palette = getTheme().palette as PaletteProps;
-  if (props.color === Card.Color.WHITE) {
-    return {
-      border: `3px solid ${palette.skeColor.green}`
-    };
-  } else {
-    return {};
-  }
-}
-
 function getCardBorder(props: CardProps) {
   const palette = getTheme().palette as PaletteProps;
   switch (props.border) {
@@ -77,9 +66,8 @@ export const getClassNames = (props: CardProps, state: CardState) => {
       displayName: 'SkeCard',
       color: theme.semanticColors.bodyText,
       backgroundColor: palette.skeColor[props.color as CardColor],
-      padding: '16px',
+      padding: '8px 16px',
       marginBottom: props.marginbottom,
-      ...getDefaultBorder(props),
       ...getCardBorder(props),
       ...getMargin(props)
     },
@@ -98,10 +86,17 @@ export const getClassNames = (props: CardProps, state: CardState) => {
       display: 'flex',
       flexWrap: 'wrap',
       justifyContent: 'flex-start',
-      alignItems: 'center'
+      alignItems: 'center',
+      outline: 'none',
+      selectors: {
+        ':focus': {
+          textDecoration: 'underline'
+        }
+      }
     },
     header: {
       //display: 'flex',
+      marginTop: '5px',
       justifyContent: 'space-between',
       alignItems: 'center',
       position: 'relative'

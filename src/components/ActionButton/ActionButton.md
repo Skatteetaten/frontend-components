@@ -14,25 +14,26 @@ import ActionButton from '@skatteetaten/frontend-components/ActionButton';
 ```
 
 ```js noeditor uu
+<h3>Huskeliste</h3>
+
 <ul>
-  <li>Legg ikonet ved siden av teksten.</li>
+  <li>Sjekke av ikonet alltid er plassert ved siden av teksten.</li>
   <li>Bruk korte tekster i knappen.</li>
 </ul>
 ```
 
 ```js noeditor beskrivelse
+<h3>En mindre fremtredende knapp</h3>
   <p>
     ActionButton bruker vi for mindre fremtredende og selvstendige funksjoner
     på siden. Den tar mindre plass og er mer plasseringsvennlig enn Button.
   </p>
+  <h3>Varianter</h3>
   <p>
     Normalt bruker vi blå farge for alle klikkbare elementer, også
     aksjonsknapper, men dersom er mange blå elementer på skjermen kan det
     oppleves som støyende. I slike tilfeller kan vi benytte sorte (nedtonede)
-    aksjonsknapper.
-  </p>
-  <p>
-    Dersom aksjonsknappen skal være mer synlig kan man øke ikonstørrelsen.
+    aksjonsknapper. Dersom aksjonsknappen skal være mer synlig kan man øke ikonstørrelsen.
   </p>
   <p>
     Ikonet kan gis farge hvis en vil understreke en mening, for eksempel grønn

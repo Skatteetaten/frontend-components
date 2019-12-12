@@ -32,8 +32,11 @@ export default {
         'Avgift': '\uea06', 
         'AvgiftBedrift': '\uea07', 
         'Company': '\uea08', 
-        'Folkeregister': '\uea09', 
-        'Kroner': '\uea0a', 
-        'Skattetrekk': '\uea0b' 
+        'Down': '\uea09', 
+        'Folkeregister': '\uea0a', 
+        'Kroner': '\uea0b', 
+        'PreviewFile': '\uea0c', 
+        'Skattetrekk': '\uea0d', 
+        'Up': '\uea0e' 
     }
 };

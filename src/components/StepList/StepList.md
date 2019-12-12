@@ -183,6 +183,18 @@ StepList som er fullført og viser et resultat i i siste steg
 import Button from '@skatteetaten/frontend-components/Button';
 import Step from '@skatteetaten/frontend-components/StepList/Step';
 import StepList from '@skatteetaten/frontend-components/StepList';
+import LinkGroup from '@skatteetaten/frontend-components/LinkGroup';
+
+const links = [
+  {
+    text: 'Beregn reisefradrag',
+    path: '#stepList'
+  },
+  {
+    text: 'Oversikt over alle fradrag',
+    path: '#stepList'
+  }
+];
 
 const titles = {
   step1: {
@@ -224,11 +236,13 @@ const titles = {
       arbeidsplass, kan du ha krav på reisefradrag. Det kan du sjekke i
       reisefradragskalkulatoren.
     </p>
+    <LinkGroup links={links} />
   </Step>
 </StepList>;
 ```
 
 ```js noeditor beskrivelse
+  <h3>Veileder eller skjema</h3>
   <p>StepList brukes når vi ønsker å veilede brukeren gjennom en rekke steg.
   Komponenten kan brukes til å dele opp et skjema i porsjoner, eller som en
   veiviser med spørsmål som ender opp i et svar eller en konklusjon.</p>
@@ -240,9 +254,13 @@ const titles = {
   «Send inn» eller tilsvarende. Her kan du ha eventuelt ha med mulighet for
   at bruker godkjenner opplysningene.</p>
 
+  <h3>Feilhåndtering i steget</h3>
+
   <p>Når et steg inneholder feil, plasserer vi oppsummering av feilen(e) i en
   MessageBar i toppen av steget. Denne dukker opp når bruker klikker Neste.
   Fokus settes til overskriften i MessageBar.</p>
+
+  <h3>Stegliste som del av en større prosess</h3>
 
   <p>I noen tilfeller bør en kunne hoppe inn midt i liste med steg. Et eksempel
   er dersom man har fylt inn opplysninger i en veiviser på skatteetaten.no,

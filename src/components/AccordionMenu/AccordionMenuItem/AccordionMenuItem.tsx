@@ -7,8 +7,6 @@ import { getClassNames } from '../AccordionMenu.classNames';
 interface AccordionMenuItemProps extends React.HTMLAttributes<HTMLDivElement> {
   /** Ikon som benyttes for et menypunkt   */
   icon?: string;
-  /** ariaLabel for ikonet i et menypunkt  */
-  iconLabel?: string;
   /** Om et menypunkt skal være default åpen */
   isOpen?: boolean;
   /** Tittel på menypunkt */
@@ -32,15 +30,7 @@ const AccordionMenuItem = (props: AccordionMenuItemProps) => {
   );
 
   const styles = getClassNames();
-  const {
-    heading,
-    iconLabel,
-    icon,
-    onClick,
-    className,
-    children,
-    ariaLabel
-  } = props;
+  const { heading, icon, onClick, className, children, ariaLabel } = props;
 
   const toggleVisibility = () => {
     setContentOpen(!isContentOpen);
@@ -76,14 +66,12 @@ const AccordionMenuItem = (props: AccordionMenuItemProps) => {
         <div className={menuItemTitle}>
           <div className={iconWrapper}>
             <div>
-              <Icon
-                iconName={icon}
-                style={{ fontSize: '28px' }}
-                ariaLabel={iconLabel}
-              />
+              <Icon iconName={icon} style={{ fontSize: '28px' }} />
             </div>
           </div>
-          <div className={styleTitle}>{heading}</div>
+          <div className={styleTitle} tabIndex={0}>
+            {heading}
+          </div>
         </div>
         <div
           className={
@@ -95,11 +83,15 @@ const AccordionMenuItem = (props: AccordionMenuItemProps) => {
           <IconButton
             alt={'Åpne og lukke knapp'}
             icon="ChevronDown"
-            title="Skriv ut"
+            aria-expanded={isContentOpen ? true : false}
           />
         </div>
       </header>
-      {isContentOpen && <section className={content}>{children}</section>}
+      {isContentOpen && (
+        <section className={content} tabIndex={0}>
+          {children}
+        </section>
+      )}
     </li>
   );
 };

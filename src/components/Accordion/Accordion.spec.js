@@ -97,7 +97,7 @@ describe('Accordion komponent', () => {
     );
 
     const accordionItem = wrapper.find('AccordionItem');
-    let Button = accordionItem.find('button[aria-controls]');
+    let Button = accordionItem.find('button');
 
     Button.simulate('click');
     Button = wrapper.find('button');
