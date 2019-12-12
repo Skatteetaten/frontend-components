@@ -266,6 +266,6 @@ export default class Table<P> extends React.PureComponent<
   };
 
   _handleCloseRow = () => {
-    this._setOpenEditableRowIndex(undefined);
+    this._setOpenEditableRowIndex();
   };
 }
