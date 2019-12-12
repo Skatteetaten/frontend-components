@@ -85,7 +85,7 @@ const LabelWithCallout = (props: LabelWithCalloutProps) => {
           <IconButton
             iconProps={{ iconName: 'HelpOutline' }}
             title="Hjelp"
-            aria-labelledby={'åpne hjelp'}
+            ariaLabel={'Åpne hjelp'}
             onClick={() => {
               setIsCalloutVisible(!isCalloutVisible);
               toggleEvent();
@@ -99,7 +99,7 @@ const LabelWithCallout = (props: LabelWithCalloutProps) => {
           <IconButton
             iconProps={{ iconName: 'WarningOutline' }}
             title="Varsel"
-            aria-labelledby={'åpne varsel'}
+            ariaLabel={'Åpne varsel'}
             onClick={() => {
               setIsCalloutVisible(!isCalloutVisible);
               toggleEvent();

@@ -60,6 +60,7 @@ const Dropdown: React.FC<DropdownProps> = props => {
       <FabricDropdown
         {...rest}
         className={classnames(getClassNames(props), className)}
+        ariaLabel={label}
         calloutProps={{
           className: getCalloutClassNames()
         }}

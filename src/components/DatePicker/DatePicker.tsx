@@ -135,6 +135,7 @@ export default class DatePicker extends React.Component<DatePickerProps> {
         <FabricDatePicker
           {...rest}
           className={css(classNames, className)}
+          ariaLabel={label}
           disabled={rest.readonlyMode ? true : disabled}
           strings={{
             ...DatePicker.DefaultStrings,
