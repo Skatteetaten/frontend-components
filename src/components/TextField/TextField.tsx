@@ -114,6 +114,7 @@ export const TextField: React.FC<TextFieldProps> = ({
       />
       <TextFieldType
         {...rest}
+        aria-labelledby={label}
         value={setValue()}
         readOnly={editMode ? false : readOnly}
         className={classnames(

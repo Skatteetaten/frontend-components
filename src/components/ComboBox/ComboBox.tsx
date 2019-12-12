@@ -55,6 +55,7 @@ const Combobox: React.FC<ComboboxProps> = props => {
       />
       <VirtualizedComboBox
         {...rest}
+        aria-labelledby={label}
         role="combobox"
         className={classnames(getClassNames(props), className)}
         calloutProps={{

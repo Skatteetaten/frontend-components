@@ -69,13 +69,12 @@ const LabelWithCallout = (props: LabelWithCalloutProps) => {
     }
     return;
   };
-  const arialabelName = id ? id.concat(' ', label) : label;
   return onRenderLabel ? (
     onRenderLabel
   ) : (
     <div
       id={id}
-      aria-labelledby={arialabelName}
+      aria-Label={label}
       className={classnames(styles.labelArea, className)}
     >
       <span className={styles.label}>
@@ -86,7 +85,7 @@ const LabelWithCallout = (props: LabelWithCalloutProps) => {
           <IconButton
             iconProps={{ iconName: 'HelpOutline' }}
             title="Hjelp"
-            aria-labelledby={arialabelName + ' Hjelp'}
+            aria-labelledby={'åpne hjelp'}
             onClick={() => {
               setIsCalloutVisible(!isCalloutVisible);
               toggleEvent();
@@ -100,7 +99,7 @@ const LabelWithCallout = (props: LabelWithCalloutProps) => {
           <IconButton
             iconProps={{ iconName: 'WarningOutline' }}
             title="Varsel"
-            aria-labelledby={arialabelName + ' Varsel'}
+            aria-labelledby={'åpne varsel'}
             onClick={() => {
               setIsCalloutVisible(!isCalloutVisible);
               toggleEvent();
@@ -115,7 +114,7 @@ const LabelWithCallout = (props: LabelWithCalloutProps) => {
             <IconButton
               iconProps={{ iconName: 'Edit' }}
               title="Rediger"
-              aria-labelledby={arialabelName + ' Edit'}
+              aria-labelledby={label + ' endre'}
               onClick={editFunction}
               className={styles.icon}
             />
@@ -130,7 +129,7 @@ const LabelWithCallout = (props: LabelWithCalloutProps) => {
           }
           color={help && !warning ? Callout.HELP : Callout.WARNING}
           aria-labelledby={
-            arialabelName + (help && !warning ? ' Hjelpetekst' : ' Varseltekst')
+            label + (help && !warning ? ' hjelpetekst' : ' varseltekst')
           }
           target={iconButtonElementRef.current}
           onClose={() => {
