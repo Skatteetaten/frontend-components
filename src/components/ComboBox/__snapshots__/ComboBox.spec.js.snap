@@ -77,7 +77,7 @@ exports[`Combobox komponent matcher med snapshot 1`] = `
     <div
       aria-atomic="true"
       aria-live="polite"
-      className=""
+      className="css-51"
       id="ComboBox0-error"
       role="region"
     >
