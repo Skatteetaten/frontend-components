@@ -1,3 +1,41 @@
+### **v.3.0.0 - December 2019**
+
+New major release - this is a big one. All components have been rewritten to typescript. We are now able to expose the full API for the components that are based on Fabric components.
+
+#### **Breaking changes**
+
+- All input field now has calloutFloating set to false as default.
+- All input field now has same props for help and warning messages (help, warning).
+- AccordtionMenu: Prop title has been renamed to heading.
+- Button: Prop buttonType has been renamed to buttonStyle.
+- Card: Color and border now written on the form: color={Card.Color.WHITE} border={Card.Border.GREEN_BORDER}.
+- ComboBox: removed prop expandOnFocus.
+- CheckBox: component renamed to from Checkbox to CheckBox.
+- CheckBox: remove id-prop.
+- DatePicker: Prop info has been renamed to help.
+- Dialog: Prop helpText has been removed.
+- DropDown: Prop info has been renamed to help.
+- FooterContent: Removed id-prop.
+- IconButton: Prop alt removed. Use ariaLabel or ariaDescription instead.
+- IconButton: Prop buttonType has been renamed to buttonSize.
+- Link: Link is now an inline element (span) instead of block.
+- MessageBar: type is now written on the form: type={MessageBar.Type.info}.
+- NavigationTile: title prop renamed to heading.
+- Spinner: size is now written on the form: size={SpinnerSize.medium}.
+- TopStripe: Rewritten with new API and subcomponents (TopStripeButton and TopStripeMenu).
+
+#### **Added and fixes**
+
+- NavigationTile: Can now be rendered with subcomponent, NavigationContent.
+- LabelWithCallout: New component.
+- FooterContent: added ariaLabel-prop.
+- Grid: added className and tag-props.
+- Demopage: updated documentation and component template page.
+- TextField: Fixes a bug where a large multiline text field was not rendered correcly.
+- Table: added the prop hideOnMobile to hide colums on mobile.
+- ScrollToTopButton: Fixes a bug where the text on the button was not renderen in safari.
+- Various accessibility improvements
+
 #### **v.2.1.0 - November 7, 2019**
 
 - New components; Link and LinkGroup
