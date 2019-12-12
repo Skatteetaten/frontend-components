@@ -104,6 +104,7 @@ export default class DatePicker extends React.Component<DatePickerProps> {
 
   render() {
     const {
+      ariaLabel,
       disabled,
       calloutFloating,
       children,
@@ -135,7 +136,7 @@ export default class DatePicker extends React.Component<DatePickerProps> {
         <FabricDatePicker
           {...rest}
           className={css(classNames, className)}
-          ariaLabel={label}
+          ariaLabel={ariaLabel ? ariaLabel : label}
           disabled={rest.readonlyMode ? true : disabled}
           strings={{
             ...DatePicker.DefaultStrings,

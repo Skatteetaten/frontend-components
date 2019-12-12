@@ -74,7 +74,7 @@ const LabelWithCallout = (props: LabelWithCalloutProps) => {
   ) : (
     <div
       id={id}
-      aria-Label={label}
+      ariaLabel={label}
       className={classnames(styles.labelArea, className)}
     >
       <span className={styles.label}>
