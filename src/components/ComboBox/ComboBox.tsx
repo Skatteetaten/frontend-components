@@ -8,7 +8,7 @@ import classnames from 'classnames';
 import { getClassNames, getOptionsClassNames } from './ComboBox.classNames';
 import LabelWithCallout, { calloutState } from '../LabelWithCallout';
 import { LabelWithCalloutProps } from '../LabelWithCallout/LabelWithCallout';
-import ErrorMessage from 'components/ErrorMessage';
+import ErrorMessage from '../ErrorMessage';
 
 export interface ComboboxProps extends IComboBoxProps {
   /** Egendefinert feilmelding */
