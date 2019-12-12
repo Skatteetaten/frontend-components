@@ -37,6 +37,6 @@ export default {
         'Kroner': '\uea0b', 
         'PreviewFile': '\uea0c', 
         'Skattetrekk': '\uea0d', 
-        'Up': '\uea04'
+        'Up': '\uea0e' 
     }
 };
