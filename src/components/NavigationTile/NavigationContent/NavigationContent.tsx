@@ -6,7 +6,7 @@ export interface NavigationContentProps
   icon: string;
   heading: string | JSX.Element;
   description?: string;
-  to: () => void | string;
+  to: (() => void) | string;
   id?: string;
   className?: string;
   children?: string | JSX.Element;
