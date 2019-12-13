@@ -5,15 +5,16 @@ function generateComponentsGroup(groupName, components) {
   return {
     name: groupName,
     components: components.map(
-      component => `src/components/${component}/**/[A-Z]*.js`
+      component => `src/components/${component}/**/[A-Z]*.tsx`
     )
   };
 }
 
 module.exports = {
   title: 'Skatteetatens designsystem',
-  components: 'src/components/**/[A-Z]*.js',
+  components: 'src/components/**/[A-Z]*.tsx',
   exampleMode: 'collapse',
+  usageMode: 'collapse',
   moduleAliases: {
     '@skatteetaten/frontend-components': path.resolve(
       __dirname,
@@ -24,7 +25,6 @@ module.exports = {
   sections: [
     {
       name: 'Designe og utvikle',
-      content: 'src/sections/forside.md',
       sections: [
         {
           name: 'Kom i gang for utviklere',
@@ -48,12 +48,14 @@ module.exports = {
         }
       ]
     },
-    generateComponentsGroup('Knapper', [
+    generateComponentsGroup('Knapper og lenker', [
       'ActionButton',
       'Button',
       'IconButton',
+      'Link',
+      'LinkGroup',
       'NavigationTile',
-      'ScrollToTopButton',
+      'ScrollToTopButton'
     ]),
     generateComponentsGroup('Oppsett av siden', [
       'FooterContent',
@@ -61,10 +63,12 @@ module.exports = {
       'SkeBasis',
       'TopBanner',
       'TopStripe',
+      'TopStripeMenu',
+      'TopStripeButton',
       'Typography'
     ]),
     generateComponentsGroup('Inputfelt', [
-      'Checkbox',
+      'CheckBox',
       'ComboBox',
       'DatePicker',
       'Dropdown',
@@ -77,6 +81,7 @@ module.exports = {
       'AccordionMenu',
       'Card',
       'CommandBar',
+      'LinkGroup',
       'StepList',
       'Step',
       'Tabs'
@@ -86,6 +91,7 @@ module.exports = {
       'Callout',
       'Dialog',
       'MessageBar',
+      'LabelWithCallout',
       'ErrorMessage'
     ]),
     generateComponentsGroup('Innlasting', ['ProgressBar', 'Spinner']),
@@ -119,7 +125,6 @@ module.exports = {
   },
   styleguideDir: 'docs',
   defaultExample: false,
-  usageMode: 'collapse',
   showSidebar: true,
   ignore: [
     '**/__tests__/**',
@@ -127,10 +132,10 @@ module.exports = {
     '**/*.spec.{js,jsx,ts,tsx}',
     '**/*.d.ts',
     '**/components/utils/**',
-    '**/*.classNames.js'
+    '**/*.classNames.ts'
   ],
   getComponentPathLine(componentPath) {
-    const name = path.basename(componentPath, '.js');
+    const name = path.basename(componentPath, '.tsx');
     const dir = path.dirname(componentPath).replace('src/components', '');
     if (dir.search('Layout') > 0) {
       return `import ${name} from '${pkg.name}${dir}/${name}';`;
@@ -138,9 +143,7 @@ module.exports = {
       return `import ${name} from '${pkg.name}${dir}';`;
     }
   },
-  getExampleFilename(componentPath) {
-    return componentPath.replace(/\.jsx?$/, '.md');
-  },
+
   theme: {
     color: {
       linkHover: '#6F2C3F',
@@ -167,5 +170,20 @@ module.exports = {
       __dirname,
       'src/styleguide/slots/IsolateButton'
     )
-  }
+    // 'Table': path.join(
+    //   __dirname,
+    //   'src/styleguide/Table'
+    // )
+  },
+  resolver: require('react-docgen').resolver.findAllComponentDefinitions,
+  propsParser: require('react-docgen-typescript').withDefaultConfig({
+    savePropValueAsString: true,
+    propFilter: prop => {
+      if (prop.parent) {
+        // Fjerner default html props fra API lista
+        return !prop.parent.fileName.includes('node_modules/@types/react');
+      }
+      return true;
+    }
+  }).parse
 };

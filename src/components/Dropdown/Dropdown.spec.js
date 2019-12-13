@@ -37,32 +37,6 @@ describe('Dropdown komponent', () => {
     expect(toJson(wrapper)).toMatchSnapshot();
   });
 
-  it('rendrer Dropdown label', () => {
-    const wrapper = oppsettShallow({
-      label: 'Nedtrekksliste'
-    });
-    const label = wrapper.find('StyledLabelBase');
-
-    expect(label.html()).toContain('labelText');
-    expect(label.html()).toContain('Nedtrekksliste');
-  });
-
-  it('rendrer Dropdown med hjelpetekst', () => {
-    const wrapper = oppsettShallow({
-      info: 'Hjelpetekst'
-    });
-    const helpIcon = wrapper.find('CustomizedIconButton');
-    expect(helpIcon.prop('ariaLabel')).toEqual('Info');
-    expect(helpIcon.prop('title')).toEqual('Info');
-
-    helpIcon.simulate('click');
-    const callout = wrapper.find('Callout');
-    expect(wrapper.exists('Callout')).toEqual(true);
-    expect(callout.html()).toContain('Hjelpetekst');
-    expect(callout.prop('color')).toEqual('lightGreen');
-    expect(callout.prop('ariaLabel')).toEqual('Hjelpetekst');
-  });
-
   it('rendrer feilmelding under Dropdown ', () => {
     const wrapper = oppsettShallow({
       errorMessage: 'Feilmelding'

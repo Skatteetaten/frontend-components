@@ -1,6 +1,6 @@
 import React from 'react';
 import { mount } from 'enzyme';
-import { matches } from './../utils/test-utils';
+import { matches } from '../utils/test-utils';
 import RadioButtonGroup from './RadioButtonGroup';
 
 const options = [
@@ -51,17 +51,18 @@ describe('RadioButtonGroup komponent', () => {
     });
     expect(
       wrapper
-        .find('div')
+        .find(RadioButtonGroup)
         .first()
         .prop('id')
     ).toEqual('radiobuttongroup-id');
     expect(wrapper.prop('className')).toEqual('radiobuttongroup-class');
-    expect(wrapper.find('StyledChoiceGroupBase').prop('label')).toEqual(
-      'Velg en'
-    );
+    expect(
+      wrapper.find('StyledChoiceGroupBase').props().ariaLabelledBy
+    ).toEqual('Velg en');
     expect(wrapper.find('StyledChoiceGroupBase').prop('required')).toEqual(
       true
     );
+    expect(wrapper.exists('#ChoiceGroup2-B')).toEqual(true);
     expect(wrapper.find('input#ChoiceGroup2-B').prop('checked')).toEqual(true);
     expect(wrapper.find('input#ChoiceGroup2-B').prop('disabled')).toEqual(
       undefined

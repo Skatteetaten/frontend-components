@@ -25,7 +25,7 @@ const initialState = {
 <div style={{ width: '300px' }}>
   <Dropdown
     label="Velg favoritt"
-    info="Hjelpetekst"
+    help="Tekst som hjelper brukeren å fylle ut feltet."
     options={state.options}
     onChange={console.log}
   />
@@ -59,7 +59,7 @@ const initialState = {
 <div style={{ width: '300px' }}>
   <Dropdown
     label="Velg favoritt"
-    info="Hjelpetekst"
+    help="Tekst som hjelper brukeren å fylle ut feltet."
     inputSize="large"
     options={state.options}
     onChange={console.log}
@@ -67,59 +67,42 @@ const initialState = {
 </div>;
 ```
 
-```js noeditor
-import Accordion from '@skatteetaten/frontend-components/Accordion';
-import AccordionItem from '@skatteetaten/frontend-components/Accordion/AccordionItem';
+```js noeditor uu
+<ul>
+  <li>
+    Nedtrekklisten bør ikke åpnes automatisk på fokus. Sjekk at det er mulig å
+    åpne og lukke menyen ved hjelp av tastatur
+  </li>
+  <li>
+    Sjekk også at brukeren kan navigere seg gjennom menyen og velge et element i
+    listen.
+  </li>
+  <li>Ikke bruk lange setninger som valg.</li>
+</ul>
+```
 
-<Accordion>
-  <AccordionItem
-    toggleContent
-    isOpen
-    toggleButtonText={'Bruk'}
-    stepId={'step-1-1'}
-  >
-    <p>
-      Nedtrekkslister er fine å bruke når en har lite tilgjenlig plass på
-      skjermen, og når brukeren skal velge fra en liste med relativt få
-      elementer (mindre enn 10). Det er lurt å sortere inneholdet i
-      nedtrekkslisten på en logisk måte, for eksempel alfabetisk.
-    </p>
-    <p>
-      Hvis man har to ulike typer data i samme nedtrekksliste kan det være
-      hensiktmessig å lage en egen overskrift inni listen. Da blir den enklere å
-      lete i.
-    </p>
-  </AccordionItem>
-  <AccordionItem
-    toggleContent
-    toggleButtonText={'Universell utforming'}
-    stepId={'step-1-2'}
-  >
-    <ul>
-      <li>
-        Nedtrekklisten bør ikke åpnes automatisk på fokus. Sjekk at det er mulig
-        å åpne og lukke menyen ved hjelp av tastatur
-      </li>
-      <li>
-        Sjekk også at brukeren kan navigere seg gjennom menyen og velge et
-        element i listen.
-      </li>
-      <li>Ikke bruk lange setninger som valg.</li>
-    </ul>
-  </AccordionItem>
-  <AccordionItem
-    toggleContent
-    toggleButtonText={'Tekniske detaljer'}
-    stepId={'step-1-3'}
-  >
-    <p>
-      <a
-        href="https://developer.microsoft.com/en-us/fabric#/components/dropdown#Implementation"
-        target="_blank"
-      >
-        Se flere tilgjengelige props i Fabric dokumentasjonen
-      </a>
-    </p>
-  </AccordionItem>
-</Accordion>;
+```js noeditor beskrivelse
+
+
+  <h3>Fin ved lite plass</h3>
+  <p>
+    Nedtrekkslister er fine å bruke når en har lite tilgjenlig plass på
+    skjermen, og når brukeren skal velge fra en liste med relativt få
+    elementer (mindre enn 10). Det er lurt å sortere inneholdet i
+    nedtrekkslisten på en logisk måte, for eksempel alfabetisk.
+  </p>
+
+  <h3>Unngå dynamisk innhold</h3>
+  <p>Brukere kan bli forvirret dersom valgene en nedtrekksmenyen dynmisk endrer seg ut ifra andre valg på samme side. </p>
+
+  <h3>Sortering av listen</h3>
+  <p>Listen av elementer bør sorteres på en fornuftig måte, slik at den er lettere å lete.</p>
+  <p>
+    Hvis man har to ulike typer data i samme nedtrekksliste kan det være
+    hensiktmessig å lage en egen overskrift inni listen. Da blir den enklere å
+    lete i.
+  </p>
+  <p>
+    Hvis en har flere enn 10 elementer i nedtrekkslisten bør en vurdere å velge
+  </p>
 ```

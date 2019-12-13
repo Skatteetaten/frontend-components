@@ -17,59 +17,42 @@ const initialState = {
 
 <>
   <Button
-    buttonType="primary"
+    type="primary"
     onClick={() => setState({ hasError: !state.hasError })}
   >
-    {state.hasError ? 'Skjul feil' : 'Vis Feil'}
+    Neste
   </Button>
   <ErrorMessage showError={state.hasError}>
-    Du har 3 valideringsfeil.
+    Skjemaet inneholder tre feil som må rettes før du kan gå videre.
   </ErrorMessage>
 </>;
 ```
 
-```js noeditor
-import Accordion from '@skatteetaten/frontend-components/Accordion';
-import AccordionItem from '@skatteetaten/frontend-components/Accordion/AccordionItem';
+```js noeditor uu
+  <h3>Huskeliste</h3>
+  <p>
+    Sjekk at den røde teksten plasseres på en flate som gir tilstrekkelig god
+    lesekontrast.
+  </p>
+  <p>
+    Feilmeldingen skal vises i umiddelbar nærhet til elementet den hører til.
+  </p>
+```
 
-<Accordion>
-  <AccordionItem
-    isOpen
-    toggleContent
-    toggleButtonText={'Bruk'}
-    stepId={'step-1-1'}
-  >
-    <p>
-      Dersom komponentene ikke har noen innebygget mekanisme for feilmeldinger,
-      kan ErrorMessage brukes for å vise feilmeldinger knyttet til et mindre
-      element. Typiske situasjoner er felt eller knapper i skjemaer.
-      Feilmeldingen skal vises i umiddelbar nærhet til elementet den hører til.
-    </p>
-    <p>
-      Teksten i feilmeldingen bør hjelpe brukeren å komme videre, fremfor å peke
-      på hva han/hun har gjort feil. Du kan for eksempel skrive: "Skriv datoen
-      slik: 17.05.2019" i stedet for "Du har brukt feil datoformat."
-    </p>
+```js noeditor beskrivelse
+<h3>Generell feilmelding</h3>
+  <p>
+    Dersom komponentene ikke har noen innebygget mekanisme for feilmeldinger,
+    kan ErrorMessage brukes for å vise feilmeldinger knyttet til et annet
+    element. Typiske situasjoner er felt eller knapper i skjemaer.
+    Feilmeldingen skal vises i umiddelbar nærhet til elementet den hører til.
+  </p>
     <p>For feil eller varsler som gjelder hele siden, bruk MessageBar.</p>
-  </AccordionItem>
-  <AccordionItem
-    toggleContent
-    toggleButtonText={'Universell utforming'}
-    stepId={'step-1-2'}
-  >
-    <p>
-      Sjekk at den røde teksten plasseres på en flate som gir tilstrekkelig god
-      lesekontrast.
-    </p>
-  </AccordionItem>
-  <AccordionItem
-    toggleContent
-    toggleButtonText={'Tekniske detaljer'}
-    stepId={'step-1-3'}
-  >
-    <p>
-      Dette er en egenutviklet komponent, så ingen flere props er tilgjengelig.
-    </p>
-  </AccordionItem>
-</Accordion>;
+
+  <h3>Teksten i feilmeldingen</h3>
+  <p>
+    Teksten i feilmeldingen bør hjelpe brukeren å komme videre, fremfor å peke
+    på hva han/hun har gjort feil. Du kan for eksempel skrive: "Skriv datoen
+    slik: 17.05.2019" i stedet for "Du har brukt feil datoformat."
+  </p>
 ```

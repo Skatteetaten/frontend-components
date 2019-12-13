@@ -4,8 +4,17 @@
 import Icon from '@skatteetaten/frontend-components/Icon';
 
 <div>
-  <Icon iconName="AddOutline" style={{ fontSize: '32px', color: '#1362ae' }} />
-  <Icon iconName="Settings" style={{ fontSize: '32px' }} />
+  <Icon iconName="ArrowUp" style={{ fontSize: '32px', color: '#1362ae' }} />
+  <Icon iconName="ArrowDown" style={{ fontSize: '32px', color: '#1362ae' }} />
+  <Icon
+    iconName="ArrowForward"
+    style={{ fontSize: '32px', color: '#1362ae' }}
+  />
+  <Icon iconName="ArrowBack" style={{ fontSize: '32px', color: '#1362ae' }} />
+  <Icon iconName="Search" style={{ fontSize: '32px', color: '#1362ae' }} />
+  <Icon iconName="Copy" style={{ fontSize: '32px', color: '#1362ae' }} />
+  <Icon iconName="Edit" style={{ fontSize: '32px', color: '#1362ae' }} />
+  <Icon iconName="AttachFile" style={{ fontSize: '32px', color: '#1362ae' }} />
 </div>;
 ```
 
@@ -279,6 +288,10 @@ const iconGroup = {
       usage: 'Flere enn én person'
     },
     {
+      name: 'AccountChild',
+      usage: 'Familie'
+    },
+    {
       name: 'Search',
       usage: 'Søk'
     },
@@ -369,6 +382,14 @@ const iconGroup = {
     {
       name: 'LanPending',
       usage: 'Skattkort'
+    },
+    {
+      name: 'Familie',
+      usage: 'Familie'
+    },
+    {
+      name: 'Ekteskap',
+      usage: 'Ekteskap'
     }
   ],
   manipulate: [
@@ -455,6 +476,10 @@ const iconGroup = {
       usage: 'Generell fil'
     },
     {
+      name: 'PreviewFile',
+      usage: 'Forhåndsvisning'
+    },
+    {
       name: 'ExcelFile',
       usage: 'Excel-fil'
     },
@@ -522,65 +547,39 @@ Object.keys(iconGroup).forEach(name => {
 </div>;
 ```
 
-```js noeditor
-import Accordion from '@skatteetaten/frontend-components/Accordion';
-import AccordionItem from '@skatteetaten/frontend-components/Accordion/AccordionItem';
-
-<Accordion>
-  <AccordionItem
-    isOpen
-    toggleContent
-    toggleButtonText={'Bruk'}
-    stepId={'step-1-1'}
-  >
-    <p>
-      Ikoner er en viktig del av visuell kommunikasjon på digitale platformer
-      fordi det bidrar blant annet ved å simplifisere navigasjon, optimalisere
-      interaksjon, visualisere ideer og støtte tekstlig innhold.
-    </p>
-
-    <p>
-      Ikonene i Skatteetatens designsystem er en kombinasjon av ikoner fra
-      Material design icons (https://materialdesignicons.com), utvidet med noen
-      egendesignede ikoner (i SVG)
-    </p>
-  </AccordionItem>
-  <AccordionItem
-    toggleContent
-    toggleButtonText={'Universell utforming'}
-    stepId={'step-1-2'}
-  >
-    <ul>
-      <li>
-        Meningsbærende ikoner skal forholde seg til WCAG 2.0 med AA 4.5
-        kontrastverdi som minimum.
-      </li>
-      <li>
-        Ikoner som er til «pynt» eller brukes som støtte til tekst, kan vises
-        med en 3.0 kontrastverdi.
-      </li>
-      <li>
-        Pass på at ikoner som ikke skal leses opp av skjermleser får
-        aria-attributt «role='presentation'». Dette hindrer at skjermelser vil
-        forsøke å lese opp unicode-tegnet knyttet til symbolet.
-      </li>
-    </ul>
-  </AccordionItem>
-  <AccordionItem
-    toggleContent
-    toggleButtonText={'Tekniske detaljer'}
-    stepId={'step-1-3'}
-  >
-    <p>
-      <a
-        href="https://developer.microsoft.com/en-us/fabric#/components/icon#Implementation"
-        target="_blank"
-      >
-        Se flere tilgjengelige props i Fabric dokumentasjonen
-      </a>
-    </p>
-  </AccordionItem>
-</Accordion>;
+```js noeditor uu
+<div>
+  <h3>Huskeliste</h3>
+  <ul>
+    <li>
+      Hvis ikonet er viktig for bruk eller forståelse skal det være tydelig
+      kontrast mellom ikonfarge og bakgrunn. WCAG-kravet er da 4.5 kontrastverdi
+      som minimum. Ikoner som er til «pynt» eller brukes som støtte til tekst,
+      kan vises med minimum 3.0 i kontrastverdi.
+    </li>
+    <li>
+      Pass på at ikoner som ikke skal leses opp av skjermleser får
+      aria-attributt «role='presentation'». Dette hindrer at skjermelser vil
+      forsøke å lese opp unicode-tegnet knyttet til symbolet.
+    </li>
+  </ul>
+</div>
 ```
 
-<br/>
+```js noeditor beskrivelse
+<div>
+  <h3>Ikoner er viktige i digitale flater</h3>
+
+  <p>
+    Ikoner er en viktig del av visuell kommunikasjon på digitale platformer
+    fordi det bidrar blant annet ved å simplifisere navigasjon, optimalisere
+    interaksjon, visualisere ideer og støtte tekstlig innhold.
+  </p>
+
+  <p>
+    Ikonene i Skatteetatens designsystem er en kombinasjon av ikoner fra
+    Material design icons (https://materialdesignicons.com), utvidet med noen
+    egendesignede ikoner (i SVG)
+  </p>
+</div>
+```

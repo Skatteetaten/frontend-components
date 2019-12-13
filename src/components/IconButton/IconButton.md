@@ -4,85 +4,39 @@
 import IconButton from '@skatteetaten/frontend-components/IconButton';
 
 <div className="ExampleSpacing8">
-  <IconButton
-    alt={'Sky med sirkel rundt'}
-    title="Skriv ut"
-    circle
-    buttonType="large"
-    icon="Print"
-  />
-  <IconButton
-    alt={'Sky med sirkel rundt'}
-    title="Skriv ut"
-    buttonType="large"
-    icon="Print"
-  />
+  <IconButton title="Skriv ut" circle buttonSize="large" icon="Print" />
+  <IconButton title="Skriv ut" buttonSize="large" icon="Print" />
   <br />
-  <IconButton
-    alt={'Sky med sirkel rundt'}
-    title="Skriv ut"
-    circle
-    buttonType="default"
-    icon="Print"
-  />
-  <IconButton
-    alt={'Sky med sirkel rundt'}
-    title="Skriv ut"
-    buttonType="default"
-    icon="Print"
-  />
+  <IconButton title="Skriv ut" circle buttonSize="default" icon="Print" />
+  <IconButton title="Skriv ut" buttonSize="default" icon="Print" />
 </div>;
 ```
 
-```js noeditor
-import Accordion from '@skatteetaten/frontend-components/Accordion';
-import AccordionItem from '@skatteetaten/frontend-components/Accordion/AccordionItem';
+```js noeditor uu
+<h3>Ha alltid en beskrivende tittel</h3>
+<p>
+  En ikonknapp skal alltid ha en tittel som beskriver funksjonen til knappen. For eksempel kan blind og svaksynte være avhengige av hjelpeverktøy for å lese opp knappens funksjonalitet.
+</p>
+<h3>Ikke bruk inaktiv knapp</h3>
+<p>
+  Unngå å bruke IconButton i disabled. La knappen alltid være aktiv, og vis heller gode feilmeldinger dersom ikke alle kriterier for å utføre handlingen er oppfylt.
+</p>
+```
 
-<Accordion>
-  <AccordionItem
-    isOpen
-    toggleContent
-    toggleButtonText={'Bruk'}
-    stepId={'step-1-1'}
-  >
-    <p>
-      Knapper bør i størst mulig grad ha den beskrivende teksten synlig, men
-      ikonknapper kan brukes i situasjoner der man ikke har anleding til å vise
-      den. Det skal alltid være en tekst som kommer ved mouseover som forklarer
-      hva ikonet gjør.
-    </p>
-    <p>Ikonknapper bør brukes med varsomhet i publikumsløsninger.</p>
-    <p>
-      Ikonknapper kan være små eller store, med eller uten sirkel. Sirkelen
-      benyttes for å fremheve ikonknappen.
-    </p>
-  </AccordionItem>
-  <AccordionItem
-    toggleContent
-    toggleButtonText={'Universell utforming'}
-    stepId={'step-1-2'}
-  >
-    <ul>
-      <li>Tittel på knappen bør beskrive dens funksjon.</li>
-      <li>
-        Husk å bruke gi ikonknappen en label slik at skjermlesere kan lese opp
-        funksjonen
-      </li>
-    </ul>
-  </AccordionItem>
-  <AccordionItem
-    toggleContent
-    toggleButtonText={'Tekniske detaljer'}
-    stepId={'step-1-3'}
-  >
-    <p>
-      <a
-        href="https://developer.microsoft.com/en-us/fabric#/components/button#Implementation"
-        target="_blank"
-      >
-        Se flere tilgjengelige props i Fabric dokumentasjonen
-      </a>
-    </p>
-  </AccordionItem>
-</Accordion>;
+```js noeditor beskrivelse
+  <h3>Vurder knapp med tekst</h3>
+  <p>
+    Knapper bør i størst mulig grad ha den beskrivende teksten synlig, men
+    ikonknapper kan brukes i situasjoner der man ikke har anleding til å vise
+    den. Det skal alltid være en tekst som kommer ved mouseover som forklarer
+    hva ikonet gjør.
+  </p>
+  <p>Ikonknapper bør brukes med varsomhet i publikumsløsninger.</p>
+
+  <h3>Kan ha ulik fremheving</h3>
+
+  <p>
+    Ikonknapper kan være små eller store, med eller uten sirkel. Sirkelen
+    benyttes for å fremheve ikonknappen.
+  </p>
 ```

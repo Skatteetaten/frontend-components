@@ -1,13 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Spinner komponent matcher snapshot 1`] = `
-<div>
+<div
+  className="ms-Spinner root-35"
+>
   <div
-    className="ms-Spinner root-35"
-  >
-    <div
-      className="ms-Spinner-circle ms-Spinner--medium circle-36"
-    />
-  </div>
+    className="ms-Spinner-circle ms-Spinner--medium circle-36"
+  />
 </div>
 `;

@@ -1,5 +1,5 @@
 import React from 'react';
-import { matches } from './../utils/test-utils';
+import { matches } from '../utils/test-utils';
 import { shallow, mount } from 'enzyme';
 
 import DatePicker from './DatePicker';
@@ -28,27 +28,10 @@ describe('DatePicker komponent', () => {
     });
 
     const styledDatePickerBase = wrapper.find('StyledDatePickerBase');
-    const StyledLabelBase = wrapper.find('StyledLabelBase');
 
     expect(styledDatePickerBase.prop('ariaLabel')).toEqual('Datovelger');
     expect(styledDatePickerBase.prop('placeholder')).toEqual('dd.mm.åååå');
-    expect(wrapper.find('CustomizedIconButton').length).toBe(1);
     expect(wrapper.first().prop('id')).toEqual('my-id');
-    expect(StyledLabelBase.containsMatchingElement('Ukenummer')).toBeTruthy();
-  });
-
-  it('rendrer en hjeletekst når hjelpeikon blir klikket', () => {
-    const wrapper = oppsettShallow({
-      info: 'Hjelpetekst'
-    });
-
-    const helpIcon = wrapper.find('CustomizedIconButton');
-
-    helpIcon.simulate('click');
-
-    expect(
-      wrapper.find('Callout').containsMatchingElement('Hjelpetekst')
-    ).toBeTruthy();
   });
 
   it('sender inn egendefinerete feilmeldinger når disse er satt ', () => {
@@ -94,6 +77,6 @@ describe('DatePicker komponent', () => {
         .find('TextFieldBase')
         .find('input')
         .prop('disabled')
-    ).toEqual('disabled');
+    ).toEqual(true);
   });
 });

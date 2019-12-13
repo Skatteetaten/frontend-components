@@ -44,12 +44,12 @@ const DemoBlock = ({ children }) => (
       <Card
         titlesize="large"
         title="Tittel 1"
-        color={Card.BEIGE}
+        color={Card.Color.BEIGE}
         marginbottom="16px"
       >
         Innhold
       </Card>
-      <Card color={Card.WHITE} marginbottom="16px">
+      <Card color={Card.Color.WHITE} marginbottom="16px">
         <p style={{ marginTop: '-16px', marginBottom: '0' }}>
           Innhold uten tittel
         </p>

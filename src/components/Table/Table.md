@@ -1,4 +1,4 @@
-** Tabeller brukes til å liste ut strukturerte data**
+** Tabeller brukes til å liste ut strukturerte data.**
 
 ```js
 import Table from '@skatteetaten/frontend-components/Table';
@@ -89,7 +89,8 @@ const columns = [
     name: 'Måned',
     fieldName: 'month',
     sortable: true,
-    sortingFunction: sortMonths
+    sortingFunction: sortMonths,
+    autohideSorting: false
   },
   {
     name: 'Beløp',
@@ -146,48 +147,79 @@ const data = [
 />;
 ```
 
-```js noeditor
-import Accordion from '@skatteetaten/frontend-components/Accordion';
-import AccordionItem from '@skatteetaten/frontend-components/Accordion/AccordionItem';
+** Man kan styre hvilke kolonner som skal vises på mobil med _hideOnMobile_-attributtet:**
 
-<Accordion>
-  <AccordionItem
-    isOpen
-    toggleContent
-    toggleButtonText={'Bruk'}
-    stepId={'step-1-1'}
-  >
-    <p>
-      Table-komponenten kan med fordel brukes ved mindre datamengder. (Har du
-      store mengder data og/eller behov for avansert funksjonalitet - vurderer
-      DetailsList i stedet).
-    </p>
-    <p>
-      Komponenten har to tilstander; visningtilstand som bare viser data, og
-      redigering av enkeltrad. Man må fullføre redigering av raden før man kan
-      redigere en annen.
-    </p>
-    <p>Det er også mulig å bruke komponenten uten redigering.</p>
-  </AccordionItem>
-  <AccordionItem
-    toggleContent
-    toggleButtonText={'Universell utforming'}
-    stepId={'step-1-2'}
-  >
-    <p>
-      På små skjermer vil endre-ikon flyttes til venstre, og tabellen har
-      horisontal skrolling ved behov.
-    </p>
-  </AccordionItem>
-  <AccordionItem
-    toggleContent
-    toggleButtonText={'Tekniske detaljer'}
-    stepId={'step-1-3'}
-  >
-    <p>
-      Dette er en egenutviklet komponent, så det finnes ingen flere props
-      tilgjengelig. Komponenten vil rendres som standard table-element (html).
-    </p>
-  </AccordionItem>
-</Accordion>;
+```js
+import Table from '@skatteetaten/frontend-components/Table';
+import ActionButton from '@skatteetaten/frontend-components/ActionButton';
+
+const columns = [
+  {
+    name: 'Navn',
+    fieldName: 'navn'
+  },
+  {
+    name: 'Tilgang gitt',
+    fieldName: 'dato',
+    alignment: 'right',
+    hideOnMobile: true
+  },
+  {
+    name: '',
+    fieldName: 'kanSlettes'
+  }
+];
+
+const data = [
+  {
+    navn: 'Sven Lundquist',
+    dato: '23.10.19',
+    kanSlettes: (
+      <ActionButton
+        icon="Delete"
+        onClick={() => console.log('Do what you got to do')}
+      >
+        Slett tilgang
+      </ActionButton>
+    )
+  },
+  {
+    navn: 'Kai Mossige',
+    dato: '25.11.19',
+    kanSlettes: (
+      <ActionButton
+        icon="Delete"
+        onClick={() => console.log('Do what you got to do')}
+      >
+        Slett tilgang
+      </ActionButton>
+    )
+  }
+];
+
+<Table data={data} columns={columns} />;
+```
+
+```js noeditor uu
+  <h3>Huskeliste</h3>
+  <p>
+    På små skjermer vil endre-ikon flyttes til venstre, og tabellen har horisontal
+    skrolling ved behov.
+  </p>
+```
+
+```js noeditor beskrivelse
+  <h3>Enkel tabell</h3>
+  <p>
+    Table-komponenten kan med fordel brukes ved mindre datamengder. (Har du
+    store mengder data og/eller behov for avansert funksjonalitet - vurderer
+    DetailsList i stedet).
+  </p>
+  <h3>Vise eller redigere enkeltrad</h3>
+  <p>
+    Komponenten har to tilstander; visningtilstand som bare viser data, og
+    redigering av enkeltrad. Man må fullføre redigering av raden før man kan
+    redigere en annen.
+  </p>
+  <p>Det er også mulig å bruke komponenten uten redigering.</p>
 ```

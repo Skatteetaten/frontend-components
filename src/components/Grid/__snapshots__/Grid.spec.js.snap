@@ -1,7 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Grid komponent matcher snapshot  1`] = `
-<Grid>
+<Grid
+  padding="0 8px"
+>
   <div
     className="ske-Grid-33 "
   >

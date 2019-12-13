@@ -17,33 +17,14 @@ describe('Dialog komponent', () => {
     expect(toJson(wrapper)).toMatchSnapshot();
   });
 
-  it('rendrer Dialog med hjelpetekst', () => {
-    const wrapper = oppsettShallow({
-      helpText: 'Hjelpetekst'
-    });
-
-    const button = wrapper.find('IconButton');
-    expect(button.prop('icon')).toEqual('HelpOutline');
-    expect(button.prop('title')).toEqual('Hjelp');
-
-    button.simulate('click');
-    const callout = wrapper.find('Callout');
-    expect(wrapper.exists('Callout')).toEqual(true);
-    expect(callout.html()).toContain('Hjelpetekst');
-    expect(callout.prop('color')).toEqual('lightGreen');
-    expect(callout.prop('ariaLabel')).toEqual('Hjelpetekst');
-    callout.simulate('close');
-    expect(wrapper.exists('Callout')).toEqual(false);
-  });
-
   it('rendrer Dialog med riktige props', () => {
     const wrapper = oppsettFullDOM({
       layoutStyle: 'important',
       type: Dialog.Type.largeHeader,
       title: 'Tekst tittel',
       subText: 'Denne teksten vil vises i dialogen under tittelen',
-      dialogMinWidth: '400px',
-      dialogMaxWidth: '600px',
+      minWidth: '400px',
+      maxWidth: '600px',
       hidden: false
     });
 

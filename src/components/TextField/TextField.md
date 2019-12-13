@@ -10,7 +10,7 @@ import TextField from '@skatteetaten/frontend-components/TextField';
     id={'my-input-1'}
     label={'Navn'}
     placeholder={'For- og etternavn'}
-    value={state.value1}
+    value={state.value}
     onChange={(e, value) => setState({ value1: value })}
   />
 </div>;
@@ -23,12 +23,12 @@ import TextField from '@skatteetaten/frontend-components/TextField';
 
 <div style={{ width: '300px' }}>
   <TextField
-    id={'my-input-1'}
+    id={'my-input-2'}
     label={'Navn'}
     inputSize={'large'}
     placeholder={'For- og etternavn'}
-    value={state.value1}
-    onChange={(e, value) => setState({ value1: value })}
+    value={state.value}
+    onChange={(e, value) => setState({ value })}
   />
 </div>;
 ```
@@ -42,29 +42,23 @@ import TextField from '@skatteetaten/frontend-components/TextField';
   <div style={{ width: '300px' }}>
     <TextField
       id={'my-helpfield-1'}
-      box
-      withLeadingIcon="search"
       label="Fullt navn"
-      calloutFloating={false}
       placeholder={''}
-      value={state.value4}
-      onChange={(e, value) => setState({ value4: value })}
+      value={state.value1}
+      onChange={(e, value) => setState({ value1: value })}
       help="Vi trenger å vite navnet ditt dersom vi skal kontakte deg senere."
-      calloutFloating={false}
     />
   </div>
   <br />
   <div style={{ width: '150px' }}>
     <TextField
       id={'my-helpfield-2'}
-      box
-      withLeadingIcon="search"
       label="Antall barn"
       placeholder={''}
       value={'23'}
-      calloutFloating={false}
       warning="Er du sikker på at antall barn er riktig?"
-      calloutFloating={false}
+      value={state.value2}
+      onChange={(e, value) => setState({ value2: value })}
     />
   </div>
 </>;
@@ -78,11 +72,12 @@ import TextField from '@skatteetaten/frontend-components/TextField';
 <div style={{ width: '160px' }}>
   <TextField
     id={'my-errorfield-2'}
-    box
-    withLeadingIcon="search"
     label="Inntektsår"
-    value={'0218'}
-    errorMessage="Inntekståret må være etter 2008."
+    value={state.value}
+    onChange={(e, value) => setState({ value })}
+    errorMessage={
+      state.value !== '2008' ? 'Inntekståret må være etter 2008.' : null
+    }
   />
 </div>;
 ```
@@ -94,31 +89,41 @@ import TextField from '@skatteetaten/frontend-components/TextField';
 
 const initialState = {
   value: 'Siri Saksbehandler',
-  vekt: '4'
+  vekt: '4',
+  empty: ''
 };
 
 <div style={{ width: '300px' }}>
   <TextField
     id={'my-readonlyfield'}
-    readonly
+    readOnly
     editable
-    box
     label="Saksbehandler"
     value={state.value}
-    onChange={(e, value) => setState({ value: value })}
+    onChange={(e, value) => setState({ value })}
     boldText={true}
   />
   <p>Med suffix:</p>
   <TextField
     id={'vektVare'}
-    readonly
+    readOnly
     editable
-    box
     label="Vekt på vare"
     value={state.vekt}
     onChange={(e, value) => setState({ vekt: value })}
     boldText={true}
     suffix={'kg'}
+  />
+  <p>Rediger når tekstfeltet er tomt:</p>
+  <TextField
+    id={'my-readonlyfield'}
+    readOnly
+    editable
+    editableWhenEmpty
+    label="Saksbehandler"
+    value={state.empty}
+    onChange={(e, value) => setState({ empty: value })}
+    boldText={true}
   />
 </div>;
 ```
@@ -131,10 +136,10 @@ import TextField from '@skatteetaten/frontend-components/TextField';
 <div style={{ width: '300px' }}>
   <TextField
     id={'my-input-1'}
-    onChange={(e, val) => console.log(val)}
+    value={state.value}
+    onChange={(e, value) => setState({ value })}
     label={'Org.nummer'}
     placeholder={'999 999 999'}
-    value={''}
     mask={'999 999 999'}
     maskChar={''}
   />
@@ -168,53 +173,27 @@ import TextField from '@skatteetaten/frontend-components/TextField';
 </div>;
 ```
 
-```js noeditor
-import Accordion from '@skatteetaten/frontend-components/Accordion';
-import AccordionItem from '@skatteetaten/frontend-components/Accordion/AccordionItem';
+```js noeditor uu
+  <h3>Kobling mellom label og felt</h3>
+  <p>
+    Det skal alltid være en programatisk kobling mellom tekstfelt og label,
+    slik at skjermleser kan lese opp beskrivelsen av feltet når det er i
+    fokus.
+  </p>
+  <h3>Hjelpetekster</h3>
+  <p>
+    I publikumsløsninger viser i advarsel- og hjelpetekst mellom label og
+    verdi ( alloutFloating til false). Hjelpetekster i Callout fanges
+    ikke like enkelt opp av skjermlesere.
+  </p>
+```
 
-<Accordion>
-  <AccordionItem
-    isOpen
-    toggleContent
-    toggleButtonText={'Bruk'}
-    stepId={'step-1-1'}
-  >
-    <p>
-      I Designsystemet finnes det mange ulike varisjoner av tekstfelt. Vi har
-      med og uten hjelpetekst, feilmeldinger eller lese- og skrivemodus. Vi har
-      også mulighet til å bestemme formatering, for eksempel ved
-      organiasasjonsnummer.
-    </p>
-  </AccordionItem>
-  <AccordionItem
-    toggleContent
-    toggleButtonText={'Universell utforming'}
-    stepId={'step-1-2'}
-  >
-    <p>
-      Det skal alltid være en programatisk kobling mellom tekstfelt og label,
-      slik at skjermleser kan lese opp beskrivelsen av feltet når det er i
-      fokus.
-    </p>
-    <p>
-      I publikumsløsninger viser i advarsel- og hjelpetekst mellom label og
-      verdi (sett calloutFloating til false). Hjelpetekster i Callout fanges
-      ikke like enkelt opp av skjermlesere.
-    </p>
-  </AccordionItem>
-  <AccordionItem
-    toggleContent
-    toggleButtonText={'Tekniske detaljer'}
-    stepId={'step-1-3'}
-  >
-    <p>
-      <a
-        href="https://developer.microsoft.com/en-us/fabric#/components/textfield#Implementation"
-        target="_blank"
-      >
-        Se flere tilgjengelige props i Fabric dokumentasjonen
-      </a>
-    </p>
-  </AccordionItem>
-</Accordion>;
+```js noeditor beskrivelse
+  <h3>Mange ulike kombinasjoner</h3>
+
+<p>
+  I Designsystemet finnes det mange ulike varisjoner av tekstfelt. Vi har med og
+  uten hjelpetekst, feilmeldinger eller lese- og skrivemodus. Vi har også
+  mulighet til å bestemme formatering, for eksempel ved organiasasjonsnummer.
+</p>
 ```

@@ -3,10 +3,10 @@
 exports[`DatePicker komponent matcher snapshot 1`] = `
 <div>
   <div
-    className="labelArea-41"
+    className="labelArea-42"
   >
     <span
-      className="label-42"
+      className="label-43"
     />
   </div>
   <div
@@ -47,7 +47,6 @@ exports[`DatePicker komponent matcher snapshot 1`] = `
               className="ms-DatePicker-event--without-label msDatePickerDisabled icon-62"
               data-icon-name="Calendar"
               onClick={[Function]}
-              role="presentation"
             >
               
             </i>

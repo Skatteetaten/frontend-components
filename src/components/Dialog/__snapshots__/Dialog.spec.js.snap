@@ -17,7 +17,6 @@ exports[`Dialog komponent matcher snapshot 1`] = `
         "isBlocking": undefined,
       }
     }
-    role="dialog"
   />
 </div>
 `;

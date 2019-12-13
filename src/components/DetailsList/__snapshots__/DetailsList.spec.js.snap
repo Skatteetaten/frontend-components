@@ -1,45 +1,43 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`DetailsList komponent matcher snapshot 1`] = `
-<div>
-  <StyledWithViewportComponent
-    checkboxCellClassName="DetailsListCheckbox"
-    checkboxVisibility={2}
-    className="css-37"
-    columns={
-      Array [
-        Object {
-          "fieldName": "name",
-          "isSorted": true,
-          "isSortedDescending": false,
-          "key": "column1",
-          "name": "Name",
-          "onColumnClick": [Function],
-          "sortItems": [Function],
-        },
-        Object {
-          "fieldName": "age",
-          "isSorted": false,
-          "isSortedDescending": false,
-          "key": "column2",
-          "name": "Age",
-          "onColumnClick": [Function],
-          "sortItems": [Function],
-        },
-      ]
-    }
-    constrainMode={0}
-    items={
-      Array [
-        Object {
-          "age": 21,
-          "name": "Foo",
-        },
-      ]
-    }
-    layoutMode={1}
-    selectionMode={0}
-    setKey="set"
-  />
-</div>
+<StyledWithViewportComponent
+  checkboxCellClassName="DetailsListCheckBox"
+  checkboxVisibility={2}
+  className="css-37"
+  columns={
+    Array [
+      Object {
+        "fieldName": "name",
+        "isSorted": true,
+        "isSortedDescending": false,
+        "key": "column1",
+        "name": "Name",
+        "onColumnClick": [Function],
+        "sortItems": [Function],
+      },
+      Object {
+        "fieldName": "age",
+        "isSorted": false,
+        "isSortedDescending": false,
+        "key": "column2",
+        "name": "Age",
+        "onColumnClick": [Function],
+        "sortItems": [Function],
+      },
+    ]
+  }
+  constrainMode={0}
+  items={
+    Array [
+      Object {
+        "age": 21,
+        "name": "Foo",
+      },
+    ]
+  }
+  layoutMode={1}
+  selectionMode={0}
+  setKey="set"
+/>
 `;

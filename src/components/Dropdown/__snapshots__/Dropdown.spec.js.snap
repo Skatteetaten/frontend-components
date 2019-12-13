@@ -2,20 +2,14 @@
 
 exports[`Dropdown komponent matcher snapshot 1`] = `
 <div>
-  <div
-    className="labelArea-41"
-  >
-    <span
-      className="label-42"
-    />
-  </div>
+  <LabelWithCallout />
   <StyledWithResponsiveMode
     calloutProps={
       Object {
-        "className": "SkeDropdownValg-48",
+        "className": "SkeDropdownValg-42",
       }
     }
-    className="SkeDropdown-47"
+    className="SkeDropdown-41"
     onRenderCaretDown={[Function]}
     options={
       Array [

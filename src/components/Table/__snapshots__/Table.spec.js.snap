@@ -61,21 +61,25 @@ exports[`Table komponent matcher snapshot 1`] = `
       <thead>
         <tr>
           <th
+            className=""
             key="month"
           >
             Måned
           </th>
           <th
+            className=""
             key="amount"
           >
             Beløp
           </th>
           <th
+            className=""
             key="coverage"
           >
             Dekningsgrad
           </th>
           <th
+            className=""
             key="revenue"
           >
             Avkastning
@@ -116,9 +120,11 @@ exports[`Table komponent matcher snapshot 1`] = `
             }
           }
           editModeActive={false}
+          isEditableRowOpen={false}
           key="0"
+          onCloseRow={[Function]}
+          onEditRow={[Function]}
           rowIndex={0}
-          setEditMode={[Function]}
           tableHasScroll={false}
         >
           <tr
@@ -175,9 +181,11 @@ exports[`Table komponent matcher snapshot 1`] = `
             }
           }
           editModeActive={false}
+          isEditableRowOpen={false}
           key="1"
+          onCloseRow={[Function]}
+          onEditRow={[Function]}
           rowIndex={1}
-          setEditMode={[Function]}
           tableHasScroll={false}
         >
           <tr
@@ -234,9 +242,11 @@ exports[`Table komponent matcher snapshot 1`] = `
             }
           }
           editModeActive={false}
+          isEditableRowOpen={false}
           key="2"
+          onCloseRow={[Function]}
+          onEditRow={[Function]}
           rowIndex={2}
-          setEditMode={[Function]}
           tableHasScroll={false}
         >
           <tr
@@ -293,9 +303,11 @@ exports[`Table komponent matcher snapshot 1`] = `
             }
           }
           editModeActive={false}
+          isEditableRowOpen={false}
           key="3"
+          onCloseRow={[Function]}
+          onEditRow={[Function]}
           rowIndex={3}
-          setEditMode={[Function]}
           tableHasScroll={false}
         >
           <tr

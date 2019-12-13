@@ -1,33 +1,40 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`RadioButtonGroup komponent matcher snapshot 1`] = `
-<div>
+Array [
   <div
-    className="applicationRole-37"
+    className="labelArea-42"
   >
-    <div
-      aria-labelledby="Velg en"
-      className="ms-ChoiceFieldGroup root-38"
-      role="radiogroup"
+    <span
+      className="label-43"
     >
       <label
-        className="ms-Label root-40"
-        id="ChoiceGroup0-label"
+        className="ms-Label root-47"
       >
         Velg en
       </label>
+    </span>
+  </div>,
+  <div
+    className="applicationRole-48"
+  >
+    <div
+      aria-labelledby="Velg en"
+      className="ms-ChoiceFieldGroup root-49"
+      role="radiogroup"
+    >
       <div
-        className="ms-ChoiceFieldGroup-flexContainer flexContainer-39"
+        className="ms-ChoiceFieldGroup-flexContainer flexContainer-50"
       >
         <div
-          className="ms-ChoiceField root-41"
+          className="ms-ChoiceField root-51"
         >
           <div
-            className="ms-ChoiceField-wrapper choiceFieldWrapper-42"
+            className="ms-ChoiceField-wrapper choiceFieldWrapper-52"
           >
             <input
               checked={false}
-              className="ms-ChoiceField-input input-43"
+              className="ms-ChoiceField-input input-53"
               id="ChoiceGroup0-A"
               name="ChoiceGroup0"
               onBlur={[Function]}
@@ -37,7 +44,7 @@ exports[`RadioButtonGroup komponent matcher snapshot 1`] = `
               type="radio"
             />
             <label
-              className="ms-ChoiceField-field field-44"
+              className="ms-ChoiceField-field field-54"
               htmlFor="ChoiceGroup0-A"
             >
               <span
@@ -50,14 +57,14 @@ exports[`RadioButtonGroup komponent matcher snapshot 1`] = `
           </div>
         </div>
         <div
-          className="ms-ChoiceField root-41"
+          className="ms-ChoiceField root-51"
         >
           <div
-            className="ms-ChoiceField-wrapper choiceFieldWrapper-42"
+            className="ms-ChoiceField-wrapper choiceFieldWrapper-52"
           >
             <input
               checked={true}
-              className="ms-ChoiceField-input input-43"
+              className="ms-ChoiceField-input input-53"
               id="ChoiceGroup0-B"
               name="ChoiceGroup0"
               onBlur={[Function]}
@@ -67,7 +74,7 @@ exports[`RadioButtonGroup komponent matcher snapshot 1`] = `
               type="radio"
             />
             <label
-              className="ms-ChoiceField-field is-checked field-50"
+              className="ms-ChoiceField-field is-checked field-60"
               htmlFor="ChoiceGroup0-B"
             >
               <span
@@ -80,14 +87,14 @@ exports[`RadioButtonGroup komponent matcher snapshot 1`] = `
           </div>
         </div>
         <div
-          className="ms-ChoiceField root-41"
+          className="ms-ChoiceField root-51"
         >
           <div
-            className="ms-ChoiceField-wrapper choiceFieldWrapper-42"
+            className="ms-ChoiceField-wrapper choiceFieldWrapper-52"
           >
             <input
               checked={false}
-              className="ms-ChoiceField-input is-disabled input-43"
+              className="ms-ChoiceField-input is-disabled input-53"
               disabled={true}
               id="ChoiceGroup0-C"
               name="ChoiceGroup0"
@@ -98,7 +105,7 @@ exports[`RadioButtonGroup komponent matcher snapshot 1`] = `
               type="radio"
             />
             <label
-              className="ms-ChoiceField-field field-53"
+              className="ms-ChoiceField-field field-63"
               htmlFor="ChoiceGroup0-C"
             >
               <span
@@ -111,14 +118,14 @@ exports[`RadioButtonGroup komponent matcher snapshot 1`] = `
           </div>
         </div>
         <div
-          className="ms-ChoiceField root-41"
+          className="ms-ChoiceField root-51"
         >
           <div
-            className="ms-ChoiceField-wrapper choiceFieldWrapper-42"
+            className="ms-ChoiceField-wrapper choiceFieldWrapper-52"
           >
             <input
               checked={false}
-              className="ms-ChoiceField-input is-disabled input-43"
+              className="ms-ChoiceField-input is-disabled input-53"
               disabled={true}
               id="ChoiceGroup0-D"
               name="ChoiceGroup0"
@@ -129,7 +136,7 @@ exports[`RadioButtonGroup komponent matcher snapshot 1`] = `
               type="radio"
             />
             <label
-              className="ms-ChoiceField-field field-53"
+              className="ms-ChoiceField-field field-63"
               htmlFor="ChoiceGroup0-D"
             >
               <span
@@ -143,6 +150,6 @@ exports[`RadioButtonGroup komponent matcher snapshot 1`] = `
         </div>
       </div>
     </div>
-  </div>
-</div>
+  </div>,
+]
 `;

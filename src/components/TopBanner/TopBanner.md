@@ -34,53 +34,26 @@ import TopBanner from '@skatteetaten/frontend-components/TopBanner';
 />;
 ```
 
-```js noeditor
-import Accordion from '@skatteetaten/frontend-components/Accordion';
-import AccordionItem from '@skatteetaten/frontend-components/Accordion/AccordionItem';
-
-<Accordion>
-  <AccordionItem
-    isOpen
-    toggleContent
-    toggleButtonText={'Bruk'}
-    stepId={'step-1-1'}
-  >
-    <p>
-      Interne løsninger bruker toppbanner med skrå strek, mens eksterne bruker
-      den som er tilnærmet lik skatteetaten.no
-    </p>
-    <p>
-      For alle publikumsløsninger, hvis logoen er klikkbar skal det ta brukeren
-      til forsiden på www.skatteetaten.no.
-    </p>
-    <p>
-      Det er valgfritt å bruke kompakt eller standard utgave av banneren, men
-      bruken må være konsekvent i løsningen.
-    </p>
-    <p>
-      Se{' '}
-      <a href="https://www.skatteetaten.no/stilogtone/visuell-identitet/">
-        visuell identitet
-      </a>{' '}
-      for detaljer rundt bruk av logoen.
-    </p>
-  </AccordionItem>
-  <AccordionItem
-    toggleContent
-    toggleButtonText={'Universell utforming'}
-    stepId={'step-1-2'}
-  >
-    <p>Dette seksjonen er foreløpig tom.</p>
-  </AccordionItem>
-  <AccordionItem
-    toggleContent
-    toggleButtonText={'Tekniske detaljer'}
-    stepId={'step-1-3'}
-  >
-    <p>
-      Denne komponenten har vi laget selv fra bunnen av, så ingen flere props er
-      tilgjengelig.
-    </p>
-  </AccordionItem>
-</Accordion>;
+```js noeditor beskrivelse
+<h3>Forskjell på interne- og ublikumsløsninger</h3>
+  <p>
+    Interne løsninger bruker toppbanner med skrå strek, mens eksterne bruker
+    den som er tilnærmet lik skatteetaten.no
+  </p>
+    <h3>Klikkbar logo</h3>
+  <p>
+    For alle publikumsløsninger, hvis logoen er klikkbar skal det ta brukeren
+    til forsiden på www.skatteetaten.no.
+  </p>
+  <p>
+    Det er valgfritt å bruke kompakt eller standard utgave av banneren, men
+    bruken må være konsekvent i løsningen.
+  </p>
+  <p>
+    Se også {' '}
+    <a href="https://www.skatteetaten.no/stilogtone/visuell-identitet/">
+      visuell identitet
+    </a>{' '}
+    for detaljer rundt bruk av logoen.
+  </p>
 ```

@@ -13,7 +13,7 @@ function closeDialog() {
 
 <div>
   <Button
-    buttonType="secondary"
+    buttonStyle="secondary"
     aria-haspopup="true"
     onClick={() => setState({ hideDialog: false })}
   >
@@ -25,8 +25,8 @@ function closeDialog() {
     type={Dialog.Type.normal}
     onDismiss={closeDialog}
     title="Kansellere arbeidsoppgaven?"
-    dialogMinWidth="400px"
-    dialogMaxWidth="600px"
+    minWidth="400px"
+    maxWidth="600px"
   >
     <p>Er du sikker på at du vil kansellere arbeidsoppgaven?</p>
 
@@ -35,7 +35,7 @@ function closeDialog() {
       <ActionButton onClick={closeDialog}>Avbryt</ActionButton>
       <Button onClick={closeDialog} hoved>
         Kanseller
-      </Button>l
+      </Button>
     </Dialog.Footer>
   </Dialog>
 </div>;
@@ -55,19 +55,19 @@ function closeDialog() {
 const content1 = [
   {
     to: '#',
-    title: 'Næringsrapport skatt AS',
+    heading: 'Næringsrapport skatt AS',
     icon: 'ArrowForward'
   },
   {
     to: '#',
-    title: 'Næringsrapport skatt ENK',
+    heading: 'Næringsrapport skatt ENK',
     icon: 'ArrowForward'
   }
 ];
 
 <div>
   <Button
-    buttonType="secondary"
+    buttonStyle="secondary"
     aria-haspopup="true"
     onClick={() => setState({ hideDialog: false })}
   >
@@ -78,8 +78,8 @@ const content1 = [
     type={Dialog.Type.normal}
     onDismiss={closeDialog}
     title="Velg den inngangen som passer for deg"
-    dialogMinWidth="500px"
-    dialogMaxWidth="600px"
+    minWidth="500px"
+    maxWidth="600px"
     layoutStyle={'airy'}
   >
     <p>
@@ -112,7 +112,7 @@ function closeDialog() {
 
 <div>
   <Button
-    buttonType="secondary"
+    buttonStyle="secondary"
     aria-haspopup="true"
     onClick={() => setState({ hideDialog: false })}
   >
@@ -125,8 +125,8 @@ function closeDialog() {
     layoutStyle={'important'}
     onDismiss={closeDialog}
     title="Viktig melding!"
-    dialogMinWidth="400px"
-    dialogMaxWidth="600px"
+    minWidth="400px"
+    maxWidth="600px"
   >
     <p>Løsning er ikke kommet i drift ennå eller tatt ned for vedlikehold</p>
     <Dialog.Footer>
@@ -138,68 +138,43 @@ function closeDialog() {
 </div>;
 ```
 
-```js noeditor
-import Accordion from '@skatteetaten/frontend-components/Accordion';
-import AccordionItem from '@skatteetaten/frontend-components/Accordion/AccordionItem';
-<Accordion>
-  <AccordionItem
-    toggleContent
-    isOpen
-    toggleButtonText={'Bruk'}
-    stepId={'step-1-1'}
-  >
-    <p>
-      En dialogboks (modal) brukes gjerne til å gi brukeren et valg samtidig som
-      konteksten beholdes.
+```js noeditor uu
+<h3>Huskeliste</h3>
+<ul>
+  <li>
+    Bruk <b>aria-haspopup</b> for å indikere at en dialog åpnes ved klikk på en
+    knapp.{' '}
+  </li>
+  <li>
+    Sjekk at dialogen får fokus etter at den åpnes. Dette gjør det enkelere for
+    en skjermleser å oppdage og lese opp innholdet.
+  </li>
+</ul>
+```
+
+```js noeditor beskrivelse
+  <h3>Vise valg innenfor kontekst</h3>
+  <p>
+    En dialogboks (modal) brukes gjerne til å gi brukeren et valg samtidig som
+    konteksten beholdes.
+  </p>
+  <p>
+    Hvis brukeren skal ta stilling til et valg i dialogen bør den settes opp
+    slik at annen brukerinput blir blokkert.{' '}
+  </p>
+  <h3>Tre varianter</h3>
+  <p>
+    Dialogen finnes i tre varianter; «standard», «luftig» eller «viktig»:
+    Luftig kan brukes hvor du ønsker å at dialogen skal tiltrekke seg ektra
+    oppmerksomhet, mens viktig brukes dersom vi ønsker å formidle en viktig
+    melding der Skatteetaten er avsender.
+  </p>
+  <p>Dialogen kan inneholde tekst, inputfelt, hjelpeikoner osv.</p>
+  <p>
+    Se{' '}
+    <a href="https://www.skatteetaten.no/stilogtone/skrive/">
+      Skatteetatens stil og tone
+    </a>{' '}
+    for hjelp til å skrive gode tekster.
     </p>
-    <p>
-      Hvis brukeren skal ta stilling til et valg i dialogen bør den settes opp
-      slik at annen brukerinput blir blokkert.{' '}
-    </p>
-    <p>
-      Dialogen finnes i tre varianter; «standard», «luftig» eller «viktig»:
-      Luftig kan brukes hvor du ønsker å at dialogen skal tiltrekke seg ektra
-      oppmerksomhet, mens viktig brukes dersom vi ønsker å formidle en viktig
-      melding der Skatteetaten er avsender.
-    </p>
-    <p>Dialogen kan inneholde tekst, inputfelt, hjelpeikoner osv.</p>
-    <p>
-      Se{' '}
-      <a href="https://www.skatteetaten.no/stilogtone/skrive/">
-        Skatteetatens stil og tone
-      </a>{' '}
-      for hjelp til å skrive gode tekster.
-    </p>
-  </AccordionItem>
-  <AccordionItem
-    toggleContent
-    toggleButtonText={'Universell utforming'}
-    stepId={'step-1-2'}
-  >
-    <ul>
-      <li>
-        Bruk <b>aria-haspopup</b> for å indikere at en dialog åpnes ved klikk på
-        en knapp.{' '}
-      </li>
-      <li>
-        Sjekk at dialogen får fokus etter at den åpnes. Dette gjør det enkelere
-        for en skjermleser å oppdage og lese opp innholdet.
-      </li>
-    </ul>
-  </AccordionItem>
-  <AccordionItem
-    toggleContent
-    toggleButtonText={'Tekniske detaljer'}
-    stepId={'step-1-3'}
-  >
-    <p>
-      <a
-        href="https://developer.microsoft.com/en-us/fabric#/components/dialog#Implementation"
-        target="_blank"
-      >
-        Se flere tilgjengelige props i Fabric dokumentasjonen
-      </a>
-    </p>
-  </AccordionItem>
-</Accordion>;
 ```
