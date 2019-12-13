@@ -59,7 +59,9 @@ export const getClassNames = (props: TextFieldProps) => {
         background: 'transparent'
       },
       '&& .ms-TextField-fieldGroup:focus': {
-        border: palette.skeColor.blue
+        border: props.errorMessage
+          ? palette.skeColor.blue
+          : palette.skeColor.error
       },
       '&.is-active .ms-TextField-fieldGroup': !borderless &&
         !underlined &&

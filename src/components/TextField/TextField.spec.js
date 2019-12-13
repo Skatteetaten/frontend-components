@@ -56,6 +56,7 @@ describe('TextField komponent', () => {
 
   it('rendrer TextFiled med hjelpetekst', () => {
     const wrapper = oppsettFullDOM({
+      id: 'Tekstfelt',
       label: 'Fullt navn',
       help: 'Vi trenger å vite navnet ditt dersom vi skal kontakte deg senere'
     });
@@ -66,7 +67,7 @@ describe('TextField komponent', () => {
     const callout = wrapper.find('StyledCalloutContentBase');
     expect(callout).toHaveLength(1);
     expect(callout.prop('color')).toEqual('lightGreen');
-    expect(callout.prop('ariaLabel')).toEqual('Hjelpetekst');
+    expect(callout.prop('aria-labelledby')).toEqual('Fullt navn hjelpetekst');
     expect(callout.find('Popup').html()).toContain(
       'Vi trenger å vite navnet ditt dersom vi skal kontakte deg senere'
     );
@@ -97,6 +98,7 @@ describe('TextField komponent', () => {
 
   it('rendrer TextFiled med varseltekst', () => {
     const wrapper = oppsettFullDOM({
+      id: 'Tekstfelt',
       label: 'Antall barn',
       warning: 'Er du sikker på at antall barn er riktig?'
     });
@@ -108,7 +110,7 @@ describe('TextField komponent', () => {
     const callout = wrapper.find('StyledCalloutContentBase');
     expect(callout).toHaveLength(1);
     expect(callout.prop('color')).toEqual('beige');
-    expect(callout.prop('ariaLabel')).toEqual('Varseltekst');
+    expect(callout.prop('aria-labelledby')).toEqual('Antall barn varseltekst');
     expect(callout.find('Popup').html()).toContain(
       'Er du sikker på at antall barn er riktig?'
     );
