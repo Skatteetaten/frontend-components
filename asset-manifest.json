@@ -1,11 +1,9 @@
 {
   "files": {
-    "main.css": "/static/css/main.04ac3c7e.chunk.css",
-    "main.js": "/build/main.03ad1ea3.js",
-    "runtime-main.js": "/build/bundle.bee8fad3.js",
-    "build/2.958d75fb.js": "/build/2.958d75fb.js",
-    "build/3.0a0d51b1.js": "/build/3.0a0d51b1.js",
-    "build/4.2e55996a.js": "/build/4.2e55996a.js",
+    "main.css": "/static/css/main.7d0accb7.chunk.css",
+    "main.js": "/build/main.e97f0401.js",
+    "runtime-main.js": "/build/bundle.e4650bfa.js",
+    "build/2.beddeb4f.js": "/build/2.beddeb4f.js",
     "assets/png/Byggeklosser.png": "/assets/png/Byggeklosser.png",
     "assets/png/Byggeklosser_skisse.png": "/assets/png/Byggeklosser_skisse.png",
     "assets/png/designer.png": "/assets/png/designer.png",
@@ -18,16 +16,17 @@
     "assets/svg/ske-logo-intern-kopi.svg": "/assets/svg/ske-logo-intern-kopi.svg",
     "assets/svg/ske-logo-intern.svg": "/assets/svg/ske-logo-intern.svg",
     "assets/svg/ske-logo.svg": "/assets/svg/ske-logo.svg",
+    "build/2.beddeb4f.js.LICENSE": "/build/2.beddeb4f.js.LICENSE",
     "favicon.ico": "/favicon.ico",
     "index.html": "/index.html",
     "manifest.json": "/manifest.json",
-    "precache-manifest.3487e284592089709ab9b13992f72091.js": "/precache-manifest.3487e284592089709ab9b13992f72091.js",
+    "precache-manifest.2e1c20521443b7f29349b559577463b3.js": "/precache-manifest.2e1c20521443b7f29349b559577463b3.js",
     "service-worker.js": "/service-worker.js",
-    "static/css/main.04ac3c7e.chunk.css.map": "/static/css/main.04ac3c7e.chunk.css.map",
-    "static/media/SkeIconfont.woff2": "/static/media/SkeIconfont.13bc202b.woff2",
-    "static/media/SkeIconfont.woff": "/static/media/SkeIconfont.40ba468d.woff",
-    "static/media/SkeIconfont.eot": "/static/media/SkeIconfont.4f436da4.eot",
-    "static/media/SkeIconfont.ttf": "/static/media/SkeIconfont.b8e31a19.ttf",
+    "static/css/main.7d0accb7.chunk.css.map": "/static/css/main.7d0accb7.chunk.css.map",
+    "static/media/SkeIconfont.woff2": "/static/media/SkeIconfont.68ddaf57.woff2",
+    "static/media/SkeIconfont.ttf": "/static/media/SkeIconfont.a906c4ce.ttf",
+    "static/media/SkeIconfont.woff": "/static/media/SkeIconfont.af3e0ee8.woff",
+    "static/media/SkeIconfont.eot": "/static/media/SkeIconfont.ec3e564e.eot",
     "static/media/footerDekor.svg": "/static/media/footerDekor.dc63d6fb.svg",
     "static/media/materialdesignicons-webfont.woff": "/static/media/materialdesignicons-webfont.1a95531b.woff",
     "static/media/materialdesignicons-webfont.ttf": "/static/media/materialdesignicons-webfont.6acc7d6c.ttf",
@@ -35,5 +34,11 @@
     "static/media/materialdesignicons-webfont.eot": "/static/media/materialdesignicons-webfont.be7691c1.eot",
     "static/media/ske-logo-intern.svg": "/static/media/ske-logo-intern.ae1b7625.svg",
     "static/media/ske-logo.svg": "/static/media/ske-logo.ca57a7bd.svg"
-  }
+  },
+  "entrypoints": [
+    "build/bundle.e4650bfa.js",
+    "build/2.beddeb4f.js",
+    "static/css/main.7d0accb7.chunk.css",
+    "build/main.e97f0401.js"
+  ]
 }
