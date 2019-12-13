@@ -24,17 +24,19 @@ New major release - this is a big one. All components have been rewritten to typ
 - Spinner: size is now written on the form: size={SpinnerSize.medium}.
 - TopStripe: Rewritten with new API and subcomponents (TopStripeButton and TopStripeMenu).
 
-#### **Added and fixes**
+#### **Additions and fixes**
 
 - NavigationTile: Can now be rendered with subcomponent, NavigationContent.
 - LabelWithCallout: New component.
 - FooterContent: added ariaLabel-prop.
 - Grid: added className and tag-props.
-- Demopage: updated documentation and component template page.
 - TextField: Fixes a bug where a large multiline text field was not rendered correcly.
 - Table: added the prop hideOnMobile to hide colums on mobile.
 - ScrollToTopButton: Fixes a bug where the text on the button was not renderen in safari.
-- Various accessibility improvements
+- Changed error color to improve contrast.
+- Added icons for preview, marriage and family.
+- Various accessibility improvements.
+- Demopage: updated documentation and component template page.
 
 #### **v.2.1.0 - November 7, 2019**
 
