@@ -55,12 +55,12 @@ function closeDialog() {
 const content1 = [
   {
     to: '#',
-    title: 'Næringsrapport skatt AS',
+    heading: 'Næringsrapport skatt AS',
     icon: 'ArrowForward'
   },
   {
     to: '#',
-    title: 'Næringsrapport skatt ENK',
+    heading: 'Næringsrapport skatt ENK',
     icon: 'ArrowForward'
   }
 ];
