@@ -21,7 +21,7 @@ export interface LabelWithCalloutProps
   help?: string | JSX.Element;
   id?: any;
   inputSize?: 'small' | 'normal' | 'large';
-  label?: string | JSX.Element;
+  label?: string;
   /** Brukerspesifisert event for callout **/
   onCalloutToggle?: (
     oldCalloutState: calloutState,
@@ -33,6 +33,7 @@ export interface LabelWithCalloutProps
 }
 const LabelWithCallout = (props: LabelWithCalloutProps) => {
   const {
+    ariaLabel,
     calloutFloating = false,
     className,
     editable,
@@ -74,7 +75,7 @@ const LabelWithCallout = (props: LabelWithCalloutProps) => {
   ) : (
     <div
       id={id}
-      aria-label={label}
+      aria-label={ariaLabel}
       className={classnames(styles.labelArea, className)}
     >
       <span className={styles.label}>
