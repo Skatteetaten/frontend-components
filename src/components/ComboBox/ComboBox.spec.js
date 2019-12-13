@@ -49,7 +49,6 @@ describe('Combobox komponent', () => {
       errorMessage: 'Feilmelding'
     });
 
-    expect(wrapper.html()).toContain('SkeComboBoxError');
     expect(wrapper.html()).toContain('Feilmelding');
   });
 });

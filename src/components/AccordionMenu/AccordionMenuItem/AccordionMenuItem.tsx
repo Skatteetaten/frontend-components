@@ -20,10 +20,6 @@ interface AccordionMenuItemProps extends React.HTMLAttributes<HTMLDivElement> {
   ariaLabel?: string;
 }
 
-type AccordionMenuItemState = {
-  isContentOpen: boolean;
-};
-
 const AccordionMenuItem = (props: AccordionMenuItemProps) => {
   const [isContentOpen, setContentOpen] = React.useState<boolean>(
     props.isOpen || false
@@ -83,7 +79,7 @@ const AccordionMenuItem = (props: AccordionMenuItemProps) => {
           <IconButton
             alt={'Åpne og lukke knapp'}
             icon="ChevronDown"
-            aria-expanded={isContentOpen ? true : false}
+            aria-expanded={isContentOpen}
           />
         </div>
       </header>

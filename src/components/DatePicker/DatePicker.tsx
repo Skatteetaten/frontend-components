@@ -31,7 +31,7 @@ const DEFAULT_STRINGS = {
   isOutOfBoundsErrorMessage: 'Datoen er ikke innenfor gyldig periode',
   isRequiredErrorMessage: 'Dette feltet er påkrevd'
 };
-const DEFAULTFORMATDATE = (date: Date | null | undefined): String => {
+const DEFAULTFORMATDATE = (date: Date | null | undefined): string => {
   if (date) {
     return moment(date).format(DatePicker.DefaultDateFormat);
   }

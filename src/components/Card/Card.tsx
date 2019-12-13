@@ -119,12 +119,7 @@ export default class Card extends React.PureComponent<CardProps, CardState> {
                 <div
                   aria-label={title}
                   className={styles.titleExpand}
-                  onClick={() => {
-                    this.setState({
-                      isExpandedState: !this.state.isExpandedState
-                    });
-                    this.props.onClick && this.props.onClick();
-                  }}
+                  onClick={this._toggleExpand}
                 >
                   {title}
                 </div>
@@ -144,16 +139,11 @@ export default class Card extends React.PureComponent<CardProps, CardState> {
             {expand && (
               <div className={styles.expandIcon}>
                 <IconButton
-                  aria-expanded={isExpandedState ? true : false}
+                  aria-expanded={isExpandedState}
                   icon={'ChevronDown'}
                   ariaLabel={title}
-                  circle={circleOnIcon ? true : false}
-                  onClick={() => {
-                    this.setState({
-                      isExpandedState: !this.state.isExpandedState
-                    });
-                    this.props.onClick && this.props.onClick();
-                  }}
+                  circle={circleOnIcon}
+                  onClick={this._toggleExpand}
                 />
               </div>
             )}
@@ -167,4 +157,11 @@ export default class Card extends React.PureComponent<CardProps, CardState> {
       </div>
     );
   }
+
+  _toggleExpand = () => {
+    this.setState({
+      isExpandedState: !this.state.isExpandedState
+    });
+    this.props.onClick && this.props.onClick();
+  };
 }
