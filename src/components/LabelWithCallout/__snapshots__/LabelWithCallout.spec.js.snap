@@ -2,7 +2,6 @@
 
 exports[`LabelWithCallout komponent matcher snapshot 1`] = `
 <div
-  aria-label="Mock Label"
   className="labelArea-41"
   id="LabelWithCallout_id"
 >
