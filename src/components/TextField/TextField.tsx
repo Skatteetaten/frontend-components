@@ -96,7 +96,12 @@ export const TextField: React.FC<TextFieldProps> = ({
   }
 
   return (
-    <div className={classnames(getClassNames(rest), className)}>
+    <div
+      className={classnames(
+        getClassNames({ errorMessage, ...rest }),
+        className
+      )}
+    >
       <LabelWithCallout
         label={label}
         editFunction={onEdit}
