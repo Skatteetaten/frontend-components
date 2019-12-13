@@ -52,7 +52,9 @@ export const getClassNames = (props: ComboboxProps) => {
         borderRadius: '0px',
         height: '30px',
         padding: '1px 32px 1px 12px',
-        borderColor: palette.skeColor.blackAlt
+        borderColor: errorMessage
+          ? palette.skeColor.error
+          : palette.skeColor.blackAlt
       },
       '& .ms-ComboBox:active, & .ms-ComboBox:focus, & .ms-ComboBox::after, &.is-active.ms-ComboBox, .ms-ComboBox.is-open': {
         border: `2px solid ${palette.skeColor.blue}`
