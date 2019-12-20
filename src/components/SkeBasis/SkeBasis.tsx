@@ -14,8 +14,8 @@ const palette = {
 };
 
 interface SkeBasisProps extends IFabricProps {
-  palette: object;
-  fonts: object;
+  palette?: object;
+  fonts?: object;
   icons?: Array<{
     style: object;
     fontFace: {

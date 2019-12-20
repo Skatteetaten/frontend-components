@@ -1,3 +1,8 @@
+### **v.3.0.1 - 20.12.2019**
+
+- Added missing icons (Ekteskap, Familie, PreviewFile).
+- SkeBasis: Set properties palette and fonts as optional.
+
 ### **v.3.0.0 - December 2019**
 
 New major release - this is a big one. All components have been rewritten to typescript. We are now able to expose the full API for the components that are based on Fabric components.
