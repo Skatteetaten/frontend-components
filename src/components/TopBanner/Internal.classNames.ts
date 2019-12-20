@@ -4,7 +4,7 @@ import { mergeStyleSets } from '@uifabric/merge-styles';
 // @ts-ignore TODO
 export const getClassNames = function getClassNames(props) {
   const { compact } = props;
-  const sidebarWidth = '362px';
+  const sidebarWidth = props.slantedAreaWidth ? props.slantedAreaWidth : 252;
   const palette = getTheme().palette as PaletteProps;
   return mergeStyleSets({
     header: {
@@ -15,49 +15,49 @@ export const getClassNames = function getClassNames(props) {
       background: palette.skeColor.internalLight,
       color: palette.skeColor.white,
       alignItems: 'stretch',
+      height: compact ? '72px' : '120px',
+
       selectors: {
-        '@media (min-width: 640px)': {
-          height: compact ? '72px' : '120px'
+        '@media (max-width: 640px)': {
+          height: '72px'
         }
       }
+    },
+    headerLink: {
+      flexGrow: 1,
+      textAlign: 'center',
+      color: palette.skeColor.white
     },
     headerActionButton: {
       displayName: 'Lenkeknapp',
       marginLeft: '8px',
+      fontWeight: '600',
       selectors: {
-        ':hover': {
-          backgroundColor: 'rgba(255,255,255,.1)'
-        },
-        '&& i, &&:hover i, &&:focus i, &&:active i': {
-          color: palette.skeColor.white
-        },
-        '& .ms-Button-flexContainer': {
-          color: palette.skeColor.white
+        ':hover i, :hover span': {
+          backgroundColor: palette.skeColor.white,
+          color: `${palette.skeColor.blackAlt} !important`,
+          borderRadius: 0
         }
       }
     },
     headerLeftContainer: {
       // @ts-ignore TODO
-      width: `${sidebarWidth - 40}px`,
+      width: props.slantedAreaWidth ? sidebarWidth : 'auto',
       background: palette.skeColor.internal,
-      display: 'block',
+      display: 'flex',
       alignItems: 'center',
-      paddingLeft: 16,
-      selectors: {
-        '@media (min-width: 640px)': {
-          display: 'flex'
-        }
-      }
+      paddingLeft: 16
     },
     headerLogo: {
+      height: compact ? '50px' : '90px',
       selectors: {
         img: {
           margin: '16px auto 0 auto',
-          height: 50,
+          height: compact ? '50px' : '90px',
+
           selectors: {
             '@media (min-width: 640px)': {
-              margin: 0,
-              height: compact ? 50 : 90
+              margin: 0
             }
           }
         }

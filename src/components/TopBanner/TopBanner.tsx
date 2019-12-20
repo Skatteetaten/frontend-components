@@ -6,25 +6,36 @@ import Image from '../Image/Image';
 import logo from './assets/ske-logo-intern.svg';
 import { getClassNames as getExternalClassNames } from './External.classNames';
 import { getClassNames as getInternalClassNames } from './Internal.classNames';
+import { UseScreen } from './../utils/ScreenPlugin';
+
 // @ts-ignore TODO
 const InternalHeader = props => {
   const styles = getInternalClassNames(props);
+  const size = UseScreen();
+
   return (
     <header
       className={classnames(styles.header, props.className)}
       id={props.id}
     >
-      <div className={styles.headerLeftContainer}>
-        <Image
-          className={styles.headerLogo}
-          src={logo}
-          alt="Skatteetaten logo"
-        />
-        <div style={{ flexGrow: 1, textAlign: 'center' }}>
+      <div
+        className={classnames(
+          styles.headerLeftContainer,
+          props.slantedAreaClassName
+        )}
+      >
+        {size.gt.md && (
+          <Image
+            className={styles.headerLogo}
+            src={logo}
+            alt="Skatteetaten logo"
+          />
+        )}
+        <div className={styles.headerLink}>
           <ActionButton
             href={props.homeUrl}
             className={styles.headerActionButton}
-            icon="Home"
+            icon={props.icon}
             color="white"
             ariaLabel="Til startsiden"
           >
@@ -35,7 +46,7 @@ const InternalHeader = props => {
       <div className={styles.headerDiagonal} />
       <div className={styles.headerRightContainer}>
         <h1>{props.title}</h1>
-        <div className={styles.headerRightButtons}>{props.children}</div>
+        <div>{props.children}</div>
       </div>
     </header>
   );
@@ -104,12 +115,16 @@ export interface TopBannerProps {
   homeText?: string;
   /** URLen på homeknappen */
   homeUrl?: string;
+  /** Ikon på intern toppbanner */
+  icon?: string;
   /** Om banneren er ment for en intern eller ekstern løsning */
   external?: boolean;
   /** Om banneren skal ta mindre plass vertikalt  */
   compact?: boolean;
   /** Overstyring av stiler */
   className?: string;
+  /** Mulighet til å sette bredde på skrått område i toppen (kun intern) */
+  slantedAreaWidth?: number | string;
   /** Global attributt som må være unik for hele HTML dokumentet */
   id?: string;
   /** Om logoen skal lenke til skatteetaten.no eller ikke (kun ekstern) */
@@ -127,6 +142,8 @@ TopBanner.defaultProps = {
   title: undefined,
   homeUrl: undefined,
   homeText: undefined,
+  slantedAreaWidth: undefined,
+  icon: 'home',
   external: false,
   compact: false,
   logoLink: false
