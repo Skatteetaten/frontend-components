@@ -31,7 +31,7 @@ export function getClassNames(props: TopBannerProps) {
       marginLeft: 'auto',
       marginTop: 'auto',
       height: 'auto',
-      padding: compact ? '8px' : '16px 16px 0 16px',
+      padding: compact ? '8px' : '16px 16px 4px 16px',
       display: 'flex',
       //flexDirection: 'column',
       background: palette.skeColor.white,
@@ -57,7 +57,7 @@ export function getClassNames(props: TopBannerProps) {
       }
     },
     title: {
-      marginTop: '4px',
+      marginTop: compact ? '12px' : '4px',
       fontSize: FontSizes.large,
       selectors: {
         '@media (min-width: 640px)': {

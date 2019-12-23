@@ -2,6 +2,8 @@ import * as React from 'react';
 import ActionButton from '../ActionButton/ActionButton';
 import classnames from 'classnames';
 import Image from '../Image/Image';
+import Icon from '../Icon/Icon';
+
 // @ts-ignore TODO
 import logo from './assets/ske-logo-intern.svg';
 import { getClassNames as getExternalClassNames } from './External.classNames';
@@ -24,24 +26,18 @@ const InternalHeader = props => {
           props.slantedAreaClassName
         )}
       >
-        {size.gt.md && (
-          <Image
-            className={styles.headerLogo}
-            src={logo}
-            alt="Skatteetaten logo"
-          />
-        )}
-        <div className={styles.headerLink}>
-          <ActionButton
-            href={props.homeUrl}
-            className={styles.headerActionButton}
-            icon={props.icon}
-            color="white"
-            ariaLabel="Til startsiden"
-          >
-            {props.homeText}
-          </ActionButton>
-        </div>
+        <a className={styles.headerLinkContainer} href={props.homeUrl}>
+          {size.gt.md && (
+            <Image
+              className={styles.headerLogo}
+              src={logo}
+              alt="Skatteetaten logo"
+            />
+          )}
+          <Icon className={styles.headerIcon} iconName={props.icon} />
+
+          <div className={styles.headerLink}>{props.homeText}</div>
+        </a>
       </div>
       <div className={styles.headerDiagonal} />
       <div className={styles.headerRightContainer}>

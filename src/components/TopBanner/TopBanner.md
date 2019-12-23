@@ -1,17 +1,99 @@
 ** Toppbanner vises på toppen i løsningene og skiller interne og eksterne løsninger fra hverandre **
 
+Brukt i en ikke-innlogget publikumsløsning:
+
+```js
+import TopBanner from '@skatteetaten/frontend-components/TopBanner';
+
+<TopBanner
+  external
+  homeText="Til skatteetaten.no"
+  title="Ekstern publikumsløsning"
+  logoLink
+/>;
+```
+
+Brukt sammen med TopStripe i en innlogget publikumsløsning:
+
+```js
+import TopStripe, {
+  TopStripeMenu,
+  TopStripeButton
+} from '@skatteetaten/frontend-components/TopStripe';
+import TopBanner from '@skatteetaten/frontend-components/TopBanner';
+import Link from '@skatteetaten/frontend-components/Link';
+import Icon from '@skatteetaten/frontend-components/Icon';
+
+<div>
+  <TopStripe>
+    <Link path={'#topbanner'} text={'Kontakt oss'} placement="before" />
+
+    <TopStripeMenu title={'Endre skriftstørrelse'}>
+      <div style={{ fontSize: '20px' }}>
+        Hold Ctrl-tasten nede (Cmd-tasten på Mac). Trykk på + for å forstørre
+        eller - for å forminske.
+      </div>
+    </TopStripeMenu>
+    <TopStripeMenu title={'Language / Språk'}>
+      <TopStripeButton ariaLabel={'Norsk'} onClick={() => console.log('NB')}>
+        Norsk
+      </TopStripeButton>
+      <TopStripeButton
+        icon={'check'}
+        ariaLabel={'Nynorsk'}
+        onClick={() => console.log('NN')}
+      >
+        Nynorsk
+      </TopStripeButton>
+      <TopStripeButton ariaLabel={'Engelsk'} onClick={() => console.log('EN')}>
+        Engelsk
+      </TopStripeButton>
+      <TopStripeButton
+        ariaLabel={'Sørsamisk'}
+        onClick={() => console.log('SMA')}
+      >
+        Sørsamisk
+      </TopStripeButton>
+      <TopStripeButton
+        ariaLabel={'Nordsamisk'}
+        onClick={() => console.log('SME')}
+      >
+        Nordsamisk
+      </TopStripeButton>
+    </TopStripeMenu>
+
+    <span>
+      <Icon iconName="person" />
+      Vegard Sandli
+    </span>
+
+    <Link path={'#topbanner'} text={'Logg ut'} placement="before" />
+  </TopStripe>
+  <TopBanner
+    external
+    title={'Side for publikum'}
+    homeText={'Tilbake til skatteetaten.no'}
+  />
+</div>;
+```
+
 Brukt på startsiden i et fagsystem:
 
 ```js
 import TopBanner from '@skatteetaten/frontend-components/TopBanner';
 import IconButton from '@skatteetaten/frontend-components/IconButton';
 <div>
-  <TopBanner icon="Systemnavn" icon="Home" homeText="Systemnavn">
+  <TopBanner
+    icon="Systemnavn"
+    icon="Home"
+    homeUrl="#topbanner"
+    homeText="Systemnavn"
+  >
     <IconButton title="Innlogget bruker" buttonSize="large" icon="Person" />
     <IconButton title="Meny" buttonSize="large" icon="Menu" />
   </TopBanner>
   <br />
-  <TopBanner compact icon="Home" homeText="Systemnavn">
+  <TopBanner compact icon="Home" homeText="Systemnavn" homeUrl="#topbanner">
     <IconButton title="Innlogget bruker" buttonSize="large" icon="Person" />
     <IconButton title="Meny" buttonSize="large" icon="Menu" />
   </TopBanner>
@@ -30,6 +112,7 @@ import Button from '@skatteetaten/frontend-components/Button';
     icon="arrowBack"
     homeText="Systemnavn"
     title="Navn som setter konteksten"
+    homeUrl="#topbanner"
   >
     <IconButton title="Søk" buttonSize="large" icon="Search" />
   </TopBanner>
@@ -39,30 +122,9 @@ import Button from '@skatteetaten/frontend-components/Button';
     icon="arrowBack"
     homeText="Systemnavn"
     title="Navn som setter konteksten"
+    homeUrl="#topbanner"
   ></TopBanner>
 </div>;
-```
-
-```js
-import TopBanner from '@skatteetaten/frontend-components/TopBanner';
-
-<TopBanner
-  external
-  homeText="Til skatteetaten.no"
-  title="Ekstern publikumsløsning"
-  logoLink
-/>;
-```
-
-```js
-import TopBanner from '@skatteetaten/frontend-components/TopBanner';
-
-<TopBanner
-  external
-  compact
-  homeText="Til skatteetaten.no"
-  title="Ekstern publikumsløsning"
-/>;
 ```
 
 ```js noeditor beskrivelse

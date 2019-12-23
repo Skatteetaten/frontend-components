@@ -26,19 +26,30 @@ export const getClassNames = function getClassNames(props) {
     headerLink: {
       flexGrow: 1,
       textAlign: 'center',
-      color: palette.skeColor.white
-    },
-    headerActionButton: {
-      displayName: 'Lenkeknapp',
-      marginLeft: '8px',
-      fontWeight: '600',
+      color: palette.skeColor.white,
+      marginLeft: '4px',
       selectors: {
-        ':hover i, :hover span': {
-          backgroundColor: palette.skeColor.white,
-          color: `${palette.skeColor.blackAlt} !important`,
-          borderRadius: 0
+        ':hover': {
+          textDecoration: 'underline'
+        },
+        ':active': {
+          textDecoration: 'none'
         }
       }
+    },
+    headerIcon: {
+      color: palette.skeColor.white,
+      fontSize: '20px',
+      marginLeft: '10px',
+      fontWeight: '700'
+    },
+    headerLinkContainer: {
+      alignItems: 'center',
+      display: 'flex',
+      fontSize: '18px',
+      fontWeight: '700',
+      textDecorationColor: palette.skeColor.white,
+      textDecoration: 'none'
     },
     headerLeftContainer: {
       // @ts-ignore TODO
@@ -46,7 +57,8 @@ export const getClassNames = function getClassNames(props) {
       background: palette.skeColor.internal,
       display: 'flex',
       alignItems: 'center',
-      paddingLeft: 16
+      paddingLeft: 16,
+      paddingRight: 8
     },
     headerLogo: {
       height: compact ? '50px' : '90px',
