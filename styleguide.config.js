@@ -67,14 +67,15 @@ module.exports = {
       'TopStripeButton',
       'Typography'
     ]),
-    generateComponentsGroup('Inputfelt', [
+    generateComponentsGroup('Inputfelt og skjema', [
       'CheckBox',
       'ComboBox',
       'DatePicker',
       'Dropdown',
       'RadioButtonGroup',
       'SearchField',
-      'TextField'
+      'TextField',
+      'ListMenu'
     ]),
     generateComponentsGroup('Bokser og gruppering', [
       'Accordion',
