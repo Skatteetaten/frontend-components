@@ -83,18 +83,7 @@ Brukt på startsiden i et fagsystem:
 import TopBanner from '@skatteetaten/frontend-components/TopBanner';
 import IconButton from '@skatteetaten/frontend-components/IconButton';
 <div>
-  <TopBanner
-    icon="Systemnavn"
-    icon="Home"
-    homeUrl="#topbanner"
-    homeText="Systemnavn"
-  >
-    <IconButton title="Innlogget bruker" buttonSize="large" icon="Person" />
-    <IconButton title="Meny" buttonSize="large" icon="Menu" />
-  </TopBanner>
-  <br />
-  <TopBanner compact icon="Home" homeText="Systemnavn" homeUrl="#topbanner">
-    <IconButton title="Innlogget bruker" buttonSize="large" icon="Person" />
+  <TopBanner compact homeText="Systemnavn" homeUrl="#topbanner">
     <IconButton title="Meny" buttonSize="large" icon="Menu" />
   </TopBanner>
 </div>;
@@ -106,24 +95,17 @@ Brukt på en underside i et fagsystem:
 import TopBanner from '@skatteetaten/frontend-components/TopBanner';
 import IconButton from '@skatteetaten/frontend-components/IconButton';
 import Button from '@skatteetaten/frontend-components/Button';
+import ActionButton from '@skatteetaten/frontend-components/ActionButton';
 
 <div>
   <TopBanner
-    icon="arrowBack"
+    compact
     homeText="Systemnavn"
-    title="Navn som setter konteksten"
+    title="Sak eller arbeidsoppgave"
     homeUrl="#topbanner"
   >
-    <IconButton title="Søk" buttonSize="large" icon="Search" />
+    <IconButton title="Meny" buttonSize="large" icon="Menu" />
   </TopBanner>
-  <br />
-  <TopBanner
-    compact
-    icon="arrowBack"
-    homeText="Systemnavn"
-    title="Navn som setter konteksten"
-    homeUrl="#topbanner"
-  ></TopBanner>
 </div>;
 ```
 

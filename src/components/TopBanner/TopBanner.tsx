@@ -41,7 +41,11 @@ const InternalHeader = props => {
       </div>
       <div className={styles.headerDiagonal} />
       <div className={styles.headerRightContainer}>
-        <h1>{props.title}</h1>
+        {typeof props.title === 'string' ? (
+          <h1>{props.title}</h1>
+        ) : (
+          <div className={styles.elementTitle}>{props.title}</div>
+        )}
         <div>{props.children}</div>
       </div>
     </header>
@@ -106,7 +110,7 @@ const ExternalHeader: React.FC<TopBannerProps> = props => {
 
 export interface TopBannerProps {
   /** Tittelen på banneren */
-  title?: string;
+  title?: string | JSX.Element | undefined;
   /** Teksten som vises ved siden av home-knapp */
   homeText?: string;
   /** URLen på homeknappen */

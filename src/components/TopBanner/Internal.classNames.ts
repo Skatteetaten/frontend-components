@@ -99,6 +99,10 @@ export const getClassNames = function getClassNames(props) {
         }
       }
     },
+    elementTitle: {
+      flexGrow: 1,
+      fontSize: FontSizes.large
+    },
     headerRightButtons: {
       display: 'flex',
       alignSelf: 'flex-end'
