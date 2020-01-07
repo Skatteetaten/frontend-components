@@ -80,11 +80,62 @@ import Icon from '@skatteetaten/frontend-components/Icon';
 Brukt på startsiden i et fagsystem:
 
 ```js
+import ListMenu from '@skatteetaten/frontend-components/ListMenu';
+import ActionButton from '@skatteetaten/frontend-components/ActionButton';
+import { useConstCallback } from '@uifabric/react-hooks';
 import TopBanner from '@skatteetaten/frontend-components/TopBanner';
-import IconButton from '@skatteetaten/frontend-components/IconButton';
+
+const menuItems = [
+  {
+    key: 'Home',
+    text: 'Hjem',
+    onClick: () => console.log('Hjem klikket')
+  },
+  {
+    key: 'settings',
+    text: 'Mine innstillinger',
+    onClick: () => console.log('Innstillinger klikket')
+  },
+  {
+    key: 'reports',
+    text: 'Rapporter',
+    onClick: () => console.log('Rapporter klikket')
+  },
+  {
+    key: 'maintenance',
+    text: 'Satser og vedlikehold',
+    onClick: () => console.log('Satser og vedlikehold klikket')
+  }
+];
+const myRef = React.useRef(null);
+const [showContextualMenu, setShowContextualMenu] = React.useState(false);
+const onShowContextualMenu = useConstCallback(() =>
+  setShowContextualMenu(true)
+);
+const onHideContextualMenu = useConstCallback(() =>
+  setShowContextualMenu(false)
+);
+
 <div>
   <TopBanner compact homeText="Systemnavn" homeUrl="#topbanner">
-    <IconButton title="Meny" buttonSize="large" icon="Menu" />
+    <div>
+      <span ref={myRef}>
+        <ActionButton
+          buttonStyle="primary"
+          icon="menu"
+          onClick={onShowContextualMenu}
+          aria-haspopup="true"
+          ariaLabel="Meny"
+        ></ActionButton>
+      </span>
+      <ListMenu
+        hidden={!showContextualMenu}
+        target={myRef}
+        items={menuItems}
+        onItemClick={onHideContextualMenu}
+        onDismiss={onHideContextualMenu}
+      />
+    </div>
   </TopBanner>
 </div>;
 ```
@@ -92,10 +143,42 @@ import IconButton from '@skatteetaten/frontend-components/IconButton';
 Brukt på en underside i et fagsystem:
 
 ```js
-import TopBanner from '@skatteetaten/frontend-components/TopBanner';
-import IconButton from '@skatteetaten/frontend-components/IconButton';
-import Button from '@skatteetaten/frontend-components/Button';
+import ListMenu from '@skatteetaten/frontend-components/ListMenu';
 import ActionButton from '@skatteetaten/frontend-components/ActionButton';
+import { useConstCallback } from '@uifabric/react-hooks';
+import TopBanner from '@skatteetaten/frontend-components/TopBanner';
+import { DirectionalHint } from 'office-ui-fabric-react/lib/ContextualMenu';
+
+const menuItems = [
+  {
+    key: 'Home',
+    text: 'Hjem',
+    onClick: () => console.log('Hjem klikket')
+  },
+  {
+    key: 'settings',
+    text: 'Mine innstillinger',
+    onClick: () => console.log('Innstillinger klikket')
+  },
+  {
+    key: 'reports',
+    text: 'Rapporter',
+    onClick: () => console.log('Rapporter klikket')
+  },
+  {
+    key: 'maintenance',
+    text: 'Satser og vedlikehold',
+    onClick: () => console.log('Satser og vedlikehold klikket')
+  }
+];
+const myRef = React.useRef(null);
+const [showContextualMenu, setShowContextualMenu] = React.useState(false);
+const onShowContextualMenu = useConstCallback(() =>
+  setShowContextualMenu(true)
+);
+const onHideContextualMenu = useConstCallback(() =>
+  setShowContextualMenu(false)
+);
 
 <div>
   <TopBanner
@@ -104,21 +187,39 @@ import ActionButton from '@skatteetaten/frontend-components/ActionButton';
     title="Sak eller arbeidsoppgave"
     homeUrl="#topbanner"
   >
-    <IconButton title="Meny" buttonSize="large" icon="Menu" />
+    <div>
+      <span ref={myRef}>
+        <ActionButton
+          buttonStyle="primary"
+          icon="menu"
+          onClick={onShowContextualMenu}
+          aria-haspopup="true"
+          ariaLabel="Meny"
+        ></ActionButton>
+      </span>
+      <ListMenu
+        hidden={!showContextualMenu}
+        target={myRef}
+        items={menuItems}
+        onItemClick={onHideContextualMenu}
+        onDismiss={onHideContextualMenu}
+      />
+    </div>
   </TopBanner>
 </div>;
 ```
 
 ```js noeditor beskrivelse
-<h3>Forskjell på interne- og publikumsløsninger</h3>
+<h3>Forskjell på interne systemer og publikumsløsninger</h3>
   <p>
-    Vi ønsker å skille intere og eksterne løsninger visuelt fra hverandre. Interne løsninger bruker fylt toppbanner med skrå strek, mens eksterne bruker
-    den som ligner mer på den som brukes på skatteetaten.no.
+    Vi ønsker å skille interne og eksterne løsninger visuelt fra hverandre. Interne løsninger bruker fylt toppbanner med skrå strek, mens eksterne bruker
+    den som ligner mer på den som brukes på skatteetaten.no, for en smidig overgang fra skatteetaten.no til en tilnyttet løsning.
   </p>
   <h3>Startsider på interne løsinger</h3>
   <p>Interne fagsystemer har gjerne en hovedside hvor en finner arbeidsoppgaver eller søker etter opplysninger. Her kan TopBanneren holdes enkel, og kun inneholde navn på logo og navn på applikasjonen. Det er ikke nødvendig å skrive «Hjemmeside», «Startside»,  «Velkommen» i toppbanneren her. TopBanner kan inneholde meny til rapporter og «løse sider», eller personlige innstillinger.</p>
   <h3>Undersider på interne løsinger</h3>
-   <p>De fleste interne systemer har en eller flere sett med undersider. TopBanner bør da inneholde en tydelig markert snarvei tilbake til hovedsiden. I tillegg bør banneren få en tittelen som setter kontektsen til det som utføres i skjermbildet nedenfor, for eksempel en sakstype eller arbeidsoppgave. Høyre side av topBanner kan inneholde funksjoner knyttet til konteksten.</p>
+   <p>De fleste interne systemer har en eller flere sett med undersider. I tillegg bør banneren få en tittel som setter kontektsen til det som utføres i skjermbildet nedenfor, for eksempel en sakstype eller arbeidsoppgave. Dersom arbeidoppgaven står i toppbanneret skal også arbeidsliste-funksjonene «Gjør tilgjengelig», «Sett på vent» og «Fordel» bør stå i umiddelbar nærhet.
+   </p>
     <h3>Klikkbar logo</h3>
   <p>
     For alle publikumsløsninger, hvis logoen er klikkbar skal det ta brukeren
