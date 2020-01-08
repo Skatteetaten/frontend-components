@@ -110,7 +110,7 @@ const ExternalHeader: React.FC<TopBannerProps> = props => {
 
 export interface TopBannerProps {
   /** Tittelen på banneren */
-  title?: string | JSX.Element | undefined;
+  title?: string | JSX.Element;
   /** Teksten som vises ved siden av home-knapp */
   homeText?: string;
   /** URLen på homeknappen */

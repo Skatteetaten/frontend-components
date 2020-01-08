@@ -1,6 +1,6 @@
 import React from 'react';
 import { mount } from 'enzyme';
-import { matches } from './../utils/test-utils';
+import { matches } from '../utils/test-utils';
 import TopBanner from './TopBanner';
 
 function oppsettFullDOM(props) {
