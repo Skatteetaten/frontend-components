@@ -143,7 +143,7 @@ TopBanner.defaultProps = {
   homeUrl: undefined,
   homeText: undefined,
   slantedAreaWidth: undefined,
-  icon: 'home',
+  icon: 'Home',
   external: false,
   compact: false,
   logoLink: false
