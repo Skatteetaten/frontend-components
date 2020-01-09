@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TopBanner komponent matcher snapshot  1`] = `
+<header
+  className="header-40"
+>
+  <div
+    className="headerLeftContainer-44"
+  >
+    <a
+      className="headerLinkContainer-43"
+    >
+      <i
+        aria-hidden={true}
+        className="headerIcon-51"
+        data-icon-name="Home"
+      >
+        
+      </i>
+      <div
+        className="headerLink-41"
+      />
+    </a>
+  </div>
+  <div
+    className="headerDiagonal-46"
+  />
+  <div
+    className="headerRightContainer-47"
+  >
+    <div
+      className="elementTitle-48"
+    />
+    <div />
+  </div>
+</header>
+`;
