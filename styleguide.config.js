@@ -74,8 +74,7 @@ module.exports = {
       'Dropdown',
       'RadioButtonGroup',
       'SearchField',
-      'TextField',
-      'ListMenu'
+      'TextField'
     ]),
     generateComponentsGroup('Bokser og gruppering', [
       'Accordion',

@@ -1,6 +1,8 @@
 ** Toppbanner vises på toppen i løsningene og skiller interne og eksterne løsninger fra hverandre **
 
-Brukt i en ikke-innlogget publikumsløsning:
+### Publikumsløsninger
+
+Ikke-innlogget publikumsløsning:
 
 ```js
 import TopBanner from '@skatteetaten/frontend-components/TopBanner';
@@ -13,7 +15,7 @@ import TopBanner from '@skatteetaten/frontend-components/TopBanner';
 />;
 ```
 
-Brukt sammen med TopStripe i en innlogget publikumsløsning:
+Innlogget publikumsløsning:
 
 ```js
 import TopStripe, {
@@ -77,108 +79,24 @@ import Icon from '@skatteetaten/frontend-components/Icon';
 </div>;
 ```
 
-Brukt på startsiden i et fagsystem:
+### Interne løsninger
+
+På startsiden i et fagsystem:
 
 ```js
-import ListMenu from '@skatteetaten/frontend-components/ListMenu';
-import ActionButton from '@skatteetaten/frontend-components/ActionButton';
-import { useConstCallback } from '@uifabric/react-hooks';
 import TopBanner from '@skatteetaten/frontend-components/TopBanner';
-
-const menuItems = [
-  {
-    key: 'Home',
-    text: 'Hjem',
-    onClick: () => console.log('Hjem klikket')
-  },
-  {
-    key: 'settings',
-    text: 'Mine innstillinger',
-    onClick: () => console.log('Innstillinger klikket')
-  },
-  {
-    key: 'reports',
-    text: 'Rapporter',
-    onClick: () => console.log('Rapporter klikket')
-  },
-  {
-    key: 'maintenance',
-    text: 'Satser og vedlikehold',
-    onClick: () => console.log('Satser og vedlikehold klikket')
-  }
-];
-const myRef = React.useRef(null);
-const [showContextualMenu, setShowContextualMenu] = React.useState(false);
-const onShowContextualMenu = useConstCallback(() =>
-  setShowContextualMenu(true)
-);
-const onHideContextualMenu = useConstCallback(() =>
-  setShowContextualMenu(false)
-);
 
 <div>
   <TopBanner compact homeText="Systemnavn" homeUrl="#topbanner">
-    <div>
-      <span ref={myRef}>
-        <ActionButton
-          buttonStyle="primary"
-          icon="menu"
-          onClick={onShowContextualMenu}
-          aria-haspopup="true"
-          ariaLabel="Meny"
-        ></ActionButton>
-      </span>
-      <ListMenu
-        hidden={!showContextualMenu}
-        target={myRef}
-        items={menuItems}
-        onItemClick={onHideContextualMenu}
-        onDismiss={onHideContextualMenu}
-      />
-    </div>
+    <div></div>
   </TopBanner>
 </div>;
 ```
 
-Brukt på en underside i et fagsystem:
+På en underside i et fagsystem:
 
 ```js
-import ListMenu from '@skatteetaten/frontend-components/ListMenu';
-import ActionButton from '@skatteetaten/frontend-components/ActionButton';
-import { useConstCallback } from '@uifabric/react-hooks';
 import TopBanner from '@skatteetaten/frontend-components/TopBanner';
-import { DirectionalHint } from 'office-ui-fabric-react/lib/ContextualMenu';
-
-const menuItems = [
-  {
-    key: 'Home',
-    text: 'Hjem',
-    onClick: () => console.log('Hjem klikket')
-  },
-  {
-    key: 'settings',
-    text: 'Mine innstillinger',
-    onClick: () => console.log('Innstillinger klikket')
-  },
-  {
-    key: 'reports',
-    text: 'Rapporter',
-    onClick: () => console.log('Rapporter klikket')
-  },
-  {
-    key: 'maintenance',
-    text: 'Satser og vedlikehold',
-    onClick: () => console.log('Satser og vedlikehold klikket')
-  }
-];
-const myRef = React.useRef(null);
-const [showContextualMenu, setShowContextualMenu] = React.useState(false);
-const onShowContextualMenu = useConstCallback(() =>
-  setShowContextualMenu(true)
-);
-const onHideContextualMenu = useConstCallback(() =>
-  setShowContextualMenu(false)
-);
 
 <div>
   <TopBanner
@@ -187,24 +105,7 @@ const onHideContextualMenu = useConstCallback(() =>
     title="Sak eller arbeidsoppgave"
     homeUrl="#topbanner"
   >
-    <div>
-      <span ref={myRef}>
-        <ActionButton
-          buttonStyle="primary"
-          icon="menu"
-          onClick={onShowContextualMenu}
-          aria-haspopup="true"
-          ariaLabel="Meny"
-        ></ActionButton>
-      </span>
-      <ListMenu
-        hidden={!showContextualMenu}
-        target={myRef}
-        items={menuItems}
-        onItemClick={onHideContextualMenu}
-        onDismiss={onHideContextualMenu}
-      />
-    </div>
+    <div></div>
   </TopBanner>
 </div>;
 ```
@@ -222,8 +123,8 @@ const onHideContextualMenu = useConstCallback(() =>
    </p>
     <h3>Klikkbar logo</h3>
   <p>
-    For alle publikumsløsninger, hvis logoen er klikkbar skal det ta brukeren
-    til forsiden på www.skatteetaten.no.
+    For alle publikumsløsninger skal logoen som hovedregel være klikkbar skal det ta deg
+    til forsiden av www.skatteetaten.no.
   </p>
   <p>
     Det er valgfritt å bruke kompakt eller standard utgave av banneren, men
