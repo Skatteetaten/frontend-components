@@ -100,6 +100,47 @@ import AccordionItem from '@skatteetaten/frontend-components/Accordion/Accordion
 </Accordion>;
 ```
 
+Du kan gjøre teksten i knappen som toggler AccordionItem til en overskrift (h-tag), så du på korrekt vis kan legge de
+inn som en del av sidehierarkiet: 
+
+```js
+import Accordion from '@skatteetaten/frontend-components/Accordion';
+import AccordionItem from '@skatteetaten/frontend-components/Accordion/AccordionItem';
+
+<Accordion
+  headingLevel={3}
+>
+  <AccordionItem
+    toggleContent
+    toggleButtonText={'En knappetittel i <h3>'}
+    stepId={'step-1-1'}
+    title="En tittel i en AccordionItem får h-tag på nivå headingLevel-1, her er dette en <h4>"
+  >
+    <p>Man trenger ikke benytte <i>title</i> for å lage en overskrift i en AccordionItem:</p>
+    <h4>En overskrift uten å benytte <i>title</i>-attributtet (kanskje en bedre løsning?)</h4>
+  </AccordionItem>
+  <AccordionItem
+    toggleContent
+    toggleButtonText={'En knappetittel i <h3>'}
+    stepId={'step-1-2'}
+  >
+    <p>
+      En brukertest inkluderer planlegging, deltakere, forbedredelse,
+      gjennomføring og oppsummering.
+    </p>
+  </AccordionItem>
+  <AccordionItem
+    headingLevel={1}
+    toggleContent
+    toggleButtonText={'Man kan overskrive h-tagen for hvert AccordionItem, dette er en <h1>'}
+    stepId={'step-1-3'}
+    title="Jeg er da en <h2>"
+  >
+    <p>Beregn omkring 3 dager for planlegging og gjennomføring.</p>
+  </AccordionItem>
+</Accordion>;
+```
+
 ```js noeditor uu
 <p>
   <a href="https://www.w3.org/TR/wai-aria-practices-1.1/#accordion">

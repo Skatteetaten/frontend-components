@@ -93,10 +93,12 @@ export function getClassNames() {
           margin: 0,
           padding: '5px 5px 5px 0px'
         },
-        '& i': {
-          position: 'absolute',
-          right: 14,
-          top: 14,
+        '& label': {
+          display: 'flex',
+          flexDirection: 'row',
+          justifyContent: 'space-between',
+        }, '& i': {
+          alignSelf: 'center',
           transition: '.2s',
           fontSize: IconFontSizes.xlarge,
           selectors: {
