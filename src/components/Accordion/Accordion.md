@@ -100,24 +100,34 @@ import AccordionItem from '@skatteetaten/frontend-components/Accordion/Accordion
 </Accordion>;
 ```
 
-Du kan gjøre teksten i knappen som toggler AccordionItem til en overskrift (h-tag), så du på korrekt vis kan legge de
-inn som en del av sidehierarkiet: 
+```js noeditor uu
+<p>
+  <a href="https://www.w3.org/TR/wai-aria-practices-1.1/#accordion">
+    Mer om WAI-ARIA for accordion.
+  </a>
+</p>
+<h3>Riktig overskriftsnivå</h3>
+<p>En Accordion kan brukes på mange ulike nivåer på siden. Komponenten produserer som standard  tekst inni label-tag for det blå klikkbare elementet, men det det i enkelte tilfeller være ønskelig å angi dette som et bestemt overskriftsnivå, for eksempel h3 eller h4. Det gjør du slik:</p>
+```
 
-```js
+```js uu
 import Accordion from '@skatteetaten/frontend-components/Accordion';
 import AccordionItem from '@skatteetaten/frontend-components/Accordion/AccordionItem';
 
-<Accordion
-  headingLevel={3}
->
+<Accordion headingLevel={3}>
   <AccordionItem
     toggleContent
     toggleButtonText={'En knappetittel i <h3>'}
     stepId={'step-1-1'}
-    title="En tittel i en AccordionItem får h-tag på nivå headingLevel-1, her er dette en <h4>"
+    title="Dette blir automatisk en <h4>"
   >
-    <p>Man trenger ikke benytte <i>title</i> for å lage en overskrift i en AccordionItem:</p>
-    <h4>En overskrift uten å benytte <i>title</i>-attributtet (kanskje en bedre løsning?)</h4>
+    <p>
+      Man trenger ikke benytte <i>title</i> for å lage en overskrift i en
+      AccordionItem:
+    </p>
+    <h4>
+      En overskrift uten å benytte <i>title</i>-attributtet
+    </h4>
   </AccordionItem>
   <AccordionItem
     toggleContent
@@ -132,21 +142,15 @@ import AccordionItem from '@skatteetaten/frontend-components/Accordion/Accordion
   <AccordionItem
     headingLevel={1}
     toggleContent
-    toggleButtonText={'Man kan overskrive h-tagen for hvert AccordionItem, dette er en <h1>'}
+    toggleButtonText={
+      'Man kan overskrive h-tagen for hvert AccordionItem, dette er en <h1>'
+    }
     stepId={'step-1-3'}
-    title="Jeg er da en <h2>"
+    title="Dette er en <h2>"
   >
     <p>Beregn omkring 3 dager for planlegging og gjennomføring.</p>
   </AccordionItem>
 </Accordion>;
-```
-
-```js noeditor uu
-<p>
-  <a href="https://www.w3.org/TR/wai-aria-practices-1.1/#accordion">
-    Mer om WAI-ARIA for accordion.
-  </a>
-</p>
 ```
 
 ```js noeditor beskrivelse
