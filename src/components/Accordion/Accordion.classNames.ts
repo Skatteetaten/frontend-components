@@ -66,7 +66,7 @@ export function getClassNames() {
       color: palette.skeColor.blue,
       fontSize: FontSizes.medium,
       fontWeight: FontWeights.bold,
-      padding: '20px 24px 16px 8px',
+      padding: '16px 24px 16px 8px',
       background: 'none',
       position: 'relative',
       cursor: 'pointer',
@@ -93,10 +93,18 @@ export function getClassNames() {
           margin: 0,
           padding: '5px 5px 5px 0px'
         },
+        '& h1, h2, h3, h4, h5, h6': {
+          fontSize: FontSizes.largePlus,
+          margin: '0'
+        },
+        '& label': {
+          display: 'flex',
+          flexDirection: 'row',
+          justifyContent: 'space-between',
+          alignItems: 'center'
+        },
         '& i': {
-          position: 'absolute',
-          right: 14,
-          top: 14,
+          alignSelf: 'center',
           transition: '.2s',
           fontSize: IconFontSizes.xlarge,
           selectors: {

@@ -4,6 +4,7 @@ import Grid from '../../Grid/Grid';
 import Icon from '../../Icon/Icon';
 
 import { getClassNames } from '../Accordion.classNames';
+import Heading from '../../utils/Heading';
 
 export interface AccordionItemProps {
   id?: string;
@@ -23,6 +24,8 @@ export interface AccordionItemProps {
   stepId?: string;
   /** Tittel til innholdet */
   title?: string;
+  /** Om man ønsker at toggleButtonText skal være en del av heading tag-hierarkiet. Verdi 1-6.*/
+  headingLevel?: number;
   /** Subtittel som vises i accordionitem */
   subtitle?: string;
   stepNumber?: number;
@@ -42,7 +45,8 @@ const ToggleContent: React.FC<ToggleContentInterface> = props => {
     styles,
     toggleButtonText,
     onClick,
-    subtitle
+    subtitle,
+    headingLevel
   } = props;
   if (!toggleContent) {
     return null;
@@ -59,7 +63,11 @@ const ToggleContent: React.FC<ToggleContentInterface> = props => {
       onClick={onClick}
     >
       <label>
-        {toggleButtonText}
+        {headingLevel && toggleButtonText ? (
+          <Heading text={toggleButtonText} level={headingLevel} />
+        ) : (
+          toggleButtonText
+        )}
 
         <Icon iconName={'ChevronDown'} />
 
@@ -102,7 +110,8 @@ const AccordionItem: React.FC<AccordionItemProps> = props => {
     children,
     totalSteps,
     stepId,
-    processList
+    processList,
+    headingLevel
   } = props;
 
   return (
@@ -136,6 +145,7 @@ const AccordionItem: React.FC<AccordionItemProps> = props => {
                 isContentOpen={isContentOpen}
                 subtitle={subtitle}
                 onClick={clickHandler}
+                headingLevel={headingLevel}
               />
               {(isContentOpen || !toggleContent) && (
                 <div
@@ -144,7 +154,15 @@ const AccordionItem: React.FC<AccordionItemProps> = props => {
                   role={'region'}
                   tabIndex={0}
                 >
-                  <h1>{title}</h1>
+                  {headingLevel && title ? (
+                    headingLevel <= 5 ? (
+                      <Heading text={title} level={headingLevel + 1} />
+                    ) : (
+                      { title }
+                    )
+                  ) : (
+                    <h1>{title}</h1>
+                  )}
                   {children}
                 </div>
               )}
