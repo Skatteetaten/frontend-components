@@ -32,7 +32,6 @@ export interface AccordionItemProps {
   totalSteps?: number;
   processList?: boolean;
   children?: JSX.Element;
-
 }
 
 interface ToggleContentInterface extends AccordionItemProps {
@@ -64,10 +63,11 @@ const ToggleContent: React.FC<ToggleContentInterface> = props => {
       onClick={onClick}
     >
       <label>
-        {headingLevel && toggleButtonText
-          ? <Heading text={toggleButtonText} level={headingLevel} />
-          : toggleButtonText
-        }
+        {headingLevel && toggleButtonText ? (
+          <Heading text={toggleButtonText} level={headingLevel} />
+        ) : (
+          toggleButtonText
+        )}
 
         <Icon iconName={'ChevronDown'} />
 
@@ -154,12 +154,15 @@ const AccordionItem: React.FC<AccordionItemProps> = props => {
                   role={'region'}
                   tabIndex={0}
                 >
-                  {(headingLevel && title)
-                    ? headingLevel <= 5
-                      ? <Heading text={title} level={headingLevel+1} />
-                      : {title}
-                    : <h1>{title}</h1>
-                  }
+                  {headingLevel && title ? (
+                    headingLevel <= 5 ? (
+                      <Heading text={title} level={headingLevel + 1} />
+                    ) : (
+                      { title }
+                    )
+                  ) : (
+                    <h1>{title}</h1>
+                  )}
                   {children}
                 </div>
               )}

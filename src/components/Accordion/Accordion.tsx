@@ -21,7 +21,7 @@ interface AccordionProps extends React.HTMLAttributes<HTMLDivElement> {
  */
 
 const Accordion: React.FC<AccordionProps> = props => {
-  const { processList, stepId, children, ariaLabel, headingLevel} = props;
+  const { processList, stepId, children, ariaLabel, headingLevel } = props;
   const { accordion } = getClassNames();
   const totalSteps = React.Children.count(children);
   return (
@@ -34,7 +34,9 @@ const Accordion: React.FC<AccordionProps> = props => {
               id: stepId && stepId + index + 1,
               totalSteps,
               processList,
-              headingLevel: child.props.headingLevel ? child.props.headingLevel : headingLevel
+              headingLevel: child.props.headingLevel
+                ? child.props.headingLevel
+                : headingLevel
             });
           }
         })}
