@@ -1,3 +1,7 @@
+### **v.3.0.2 **
+- Internal TopBanner can now render children-elements. Added slantedAreaWidth prop to set width to slanted area.
+- Accordion: added ability to specify h-tag level
+
 ### **v.3.0.1 - 20.12.2019**
 
 - Added missing icons (Ekteskap, Familie, PreviewFile).
