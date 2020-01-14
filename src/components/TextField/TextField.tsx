@@ -24,6 +24,8 @@ export interface TextFieldProps extends ITextFieldProps {
   id?: string;
   /** Størrelse på tekstfelt som skal benyttes */
   inputSize?: 'normal' | 'large';
+  /** Setter inputmode (html 5) på tekstefeltet */
+  inputMode?: ITextFieldProps['inputMode'];
   /** Størrelse på label */
   labelSize?: 'small' | 'large';
   /** Tekst inni feltet som vises før man skriver */
@@ -57,6 +59,7 @@ export const TextField: React.FC<TextFieldProps> = ({
   id,
   label,
   mask,
+  inputMode,
   onCalloutToggle,
   onRenderLabel,
   readOnly,
@@ -120,6 +123,7 @@ export const TextField: React.FC<TextFieldProps> = ({
       <TextFieldType
         {...rest}
         ariaLabel={label}
+        inputMode={inputMode}
         value={setValue()}
         readOnly={editMode ? false : readOnly}
         className={classnames(
