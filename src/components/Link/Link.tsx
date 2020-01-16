@@ -9,6 +9,8 @@ export interface LinkProps
   /** Som standard rendres lenkene som a-elementer. Dette gir mulighet for å overstyre implementasjonen. */
   renderContent?: (classNames: string) => JSX.Element;
   icon?: string;
+  /** Om lenken skal åpnes i nytt vindu (target=blank) */
+  openInNew?: boolean;
   path?: string;
   placement?: 'after' | 'before';
   text?: string;
@@ -21,6 +23,7 @@ const Link: React.FC<LinkProps> = props => {
     icon,
     path,
     text,
+    openInNew,
     renderContent,
     ...htmlAttributes
   } = props;
@@ -36,6 +39,16 @@ const Link: React.FC<LinkProps> = props => {
       )}
       {renderContent ? (
         renderContent(classnames(styles.iconLink))
+      ) : openInNew ? (
+        <a
+          href={props.path}
+          className={classnames(styles.iconLink)}
+          target="_blank"
+          rel="noopener noreferrer"
+          {...htmlAttributes}
+        >
+          {props.text}
+        </a>
       ) : (
         <a
           href={props.path}
