@@ -255,7 +255,7 @@ ul.navigation li.underline {
   border-bottom: 6px solid #6f2c3f;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1023px) {
   ul.navigation {
     list-style-type: none;
     margin-left: -40px;
