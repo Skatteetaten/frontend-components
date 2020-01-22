@@ -69,3 +69,8 @@ import Typography from '@skatteetaten/frontend-components/Typography';
       skriftstørrelse.
     </p>
 ```
+```js noeditor uu
+<p>
+Ingen informasjon
+</p>
+```
