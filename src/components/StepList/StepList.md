@@ -272,3 +272,8 @@ const titles = {
   avhengigheter, nullstilles senere steg.</p>
 
 ```
+```js noeditor uu
+<p>
+Ingen informasjon
+</p>
+```
