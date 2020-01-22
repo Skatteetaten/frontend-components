@@ -117,3 +117,8 @@ const contents = [
     tekst. I tillegg kan innholdet midtstilles eller høyre og venstrejusteres.
   </p>
 ```
+```js noeditor uu
+<p>
+Ingen informasjon
+</p>
+```
