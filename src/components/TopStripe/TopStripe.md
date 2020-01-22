@@ -251,3 +251,9 @@ import Link from '@skatteetaten/frontend-components/Link';
 
 
 ```
+
+```js noeditor uu
+<p>
+Ingen informasjon
+</p>
+```
