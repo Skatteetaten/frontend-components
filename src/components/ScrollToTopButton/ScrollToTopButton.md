@@ -23,3 +23,8 @@ import ScrollToTopButton from '@skatteetaten/frontend-components/ScrollToTopButt
   til høyre som overlay. Er skjermbredden mindre vises den sentrert.
 </p>
 ```
+```js noeditor uu
+<p>
+Ingen informasjon
+</p>
+```
