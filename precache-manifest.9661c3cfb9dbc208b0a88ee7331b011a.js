@@ -48,12 +48,12 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "assets/svg/ske-logo.svg"
   },
   {
-    "revision": "748449867ef8dc494032",
-    "url": "build/2.74844986.js"
+    "revision": "aa22be8607c05b16dbc1",
+    "url": "build/2.aa22be86.js"
   },
   {
-    "revision": "ad078ab7c63d1d12eb77b75e47f9b380",
-    "url": "build/2.74844986.js.LICENSE"
+    "revision": "517c2a31f656a073babd7f774963f51b",
+    "url": "build/2.aa22be86.js.LICENSE"
   },
   {
     "revision": "e4650bfa7ec4b66a1129",
@@ -68,7 +68,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "favicon.ico"
   },
   {
-    "revision": "5e8e1683a8e5f21589b604917db78d4d",
+    "revision": "289654cd064ef1215710a9631670637d",
     "url": "index.html"
   },
   {
