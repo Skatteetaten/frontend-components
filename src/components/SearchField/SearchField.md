@@ -35,3 +35,8 @@ import SearchField from '@skatteetaten/frontend-components/SearchField';
     deretter.
   </p>
 ```
+```js noeditor uu
+<p>
+Ingen informasjon
+</p>
+```
