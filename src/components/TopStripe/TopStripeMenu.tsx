@@ -3,8 +3,8 @@ import ActionButton from '../ActionButton';
 import { getClassNames } from './TopStripe.classNames';
 import { LinkProps } from '../Link';
 import { TopStripeContext } from './TopStripe';
-import Icon from '../Icon';
 import { TopStripeButton } from './TopStripeButton';
+import Icon from '../Icon/Icon';
 
 export interface TopStripeMenuProps extends LinkProps {
   /**
@@ -16,15 +16,19 @@ export interface TopStripeMenuProps extends LinkProps {
   onRender?: any;
   title: string;
   index?: number;
+  icon?: string;
+  showChevron?: boolean;
 }
 
 export const TopStripeMenu: React.FC<TopStripeMenuProps> = props => {
   const styles = getClassNames();
-  const { children, onRender, title, index, closeOnClick = true } = props;
+  const { children, icon, onRender, title, index, closeOnClick = true } = props;
   const { open, setOpen, closeMenu } = React.useContext(TopStripeContext);
 
   return (
     <>
+      {props.icon ? <Icon className={styles.menuIcon} iconName={icon} /> : ''}
+
       <TopStripeButton
         className={styles.plainButton}
         onClick={() => setOpen(index)}
@@ -70,6 +74,7 @@ export const TopStripeMenu: React.FC<TopStripeMenuProps> = props => {
           </li>
         </ul>
       )}
+      {props.showChevron ? <Icon iconName={'ChevronDown'} /> : ''}
     </>
   );
 };

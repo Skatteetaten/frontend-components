@@ -1,6 +1,8 @@
 ** TopStripe er en svart menystripe øverst på innloggede sider for publikum. **
 
-Ikke innlogget ennå:
+### Ikke innlogget
+
+Viser Kontakt oss, endre skriftsstørrelse, språk og logg inn.
 
 ```js
 import TopStripe, {
@@ -57,7 +59,9 @@ import Link from '@skatteetaten/frontend-components/Link';
 </div>;
 ```
 
-Innlogget:
+### Innlogget og kan kun representere seg selv
+
+Viser Kontakt oss, endre skriftsstørrelse, språk, partsvalg og logg ut.
 
 ```js
 import TopStripe, {
@@ -121,7 +125,9 @@ import Icon from '@skatteetaten/frontend-components/Icon';
 </div>;
 ```
 
-Innlogget på mobil:
+### Innlogget og kan representere flere
+
+Viser Kontakt oss, endre skriftsstørrelse, språk, partsvalg og logg ut.
 
 ```js
 import TopStripe, {
@@ -130,9 +136,16 @@ import TopStripe, {
 } from '@skatteetaten/frontend-components/TopStripe';
 import TopBanner from '@skatteetaten/frontend-components/TopBanner';
 import Link from '@skatteetaten/frontend-components/Link';
+import Icon from '@skatteetaten/frontend-components/Icon';
+
+import { UseScreen } from '@skatteetaten/frontend-components/utils/ScreenPlugin';
+
+const size = UseScreen();
 
 <div>
   <TopStripe>
+    <Link path={'#topstripe'} text={'Kontakt oss'} placement="before" />
+
     <TopStripeMenu title={'Endre skriftstørrelse'}>
       <div style={{ fontSize: '20px' }}>
         Hold Ctrl-tasten nede (Cmd-tasten på Mac). Trykk på + for å forstørre
@@ -167,6 +180,39 @@ import Link from '@skatteetaten/frontend-components/Link';
       </TopStripeButton>
     </TopStripeMenu>
 
+    <TopStripeMenu showChevron icon="person" title={'Vegard Sandli'}>
+      <TopStripeButton
+        ariaLabel={'Jenny Sandli'}
+        onClick={() => console.log('NB')}
+      >
+        Jenny Sandli
+      </TopStripeButton>
+      <TopStripeButton
+        ariaLabel={'987654321 Eplepress AS'}
+        onClick={() => console.log('Eple')}
+      >
+        987654321 Eplepress AS
+      </TopStripeButton>
+      <TopStripeButton
+        ariaLabel={'987654322 Pærepress AS'}
+        onClick={() => console.log('Pære')}
+      >
+        987654322 Pærepress AS
+      </TopStripeButton>
+      <TopStripeButton
+        ariaLabel={'987654323 Druepress AS'}
+        onClick={() => console.log('Drue')}
+      >
+        987654323 Druepress AS
+      </TopStripeButton>
+      <TopStripeButton
+        ariaLabel={'Se alle virksomheter'}
+        onClick={() => console.log('Se alle')}
+      >
+        Se alle virksomheter
+      </TopStripeButton>
+    </TopStripeMenu>
+
     <Link path={'#topstripe'} text={'Logg ut'} placement="before" />
   </TopStripe>
   <TopBanner
@@ -177,7 +223,9 @@ import Link from '@skatteetaten/frontend-components/Link';
 </div>;
 ```
 
-Bruk av komponenter:
+### På mobil
+
+På mobil flyttes valgene for kontakt oss, skriftsstørrelse og språk til footeren.
 
 ```js
 import TopStripe, {
@@ -189,42 +237,39 @@ import Link from '@skatteetaten/frontend-components/Link';
 
 <div>
   <TopStripe>
-    <Link path={'#topstripe'} text={'Link komponent'} placement="before" />
-    <TopStripeMenu title={'Meny med tekst'}>
-      <div style={{ fontSize: '20px' }}>
-        Hold Ctrl-tasten nede (Cmd-tasten på Mac). Trykk på + for å forstørre
-        eller - for å forminske.
-      </div>
-    </TopStripeMenu>
-    <TopStripeMenu title={'Knapp meny'}>
-      <TopStripeButton ariaLabel={'Norsk'} onClick={() => console.log('NB')}>
-        Norsk
+    <TopStripeMenu showChevron icon="person" title={'Vegard Sandli'}>
+      <TopStripeButton
+        ariaLabel={'Jenny Sandli'}
+        onClick={() => console.log('NB')}
+      >
+        Jenny Sandli
       </TopStripeButton>
       <TopStripeButton
-        icon={'check'}
-        ariaLabel={'Nynorsk'}
-        onClick={() => console.log('NN')}
+        ariaLabel={'987654321 Eplepress AS'}
+        onClick={() => console.log('Eple')}
       >
-        Nynorsk
+        987654321 Eplepress AS
       </TopStripeButton>
-      <TopStripeButton ariaLabel={'Engelsk'} onClick={() => console.log('EN')}>
-        Engelsk
+      <TopStripeButton
+        ariaLabel={'987654322 Pærepress AS'}
+        onClick={() => console.log('Pære')}
+      >
+        987654322 Pærepress AS
+      </TopStripeButton>
+      <TopStripeButton
+        ariaLabel={'987654323 Druepress AS'}
+        onClick={() => console.log('Drue')}
+      >
+        987654323 Druepress AS
+      </TopStripeButton>
+      <TopStripeButton
+        ariaLabel={'Se alle virksomheter'}
+        onClick={() => console.log('Se alle')}
+      >
+        Se alle virksomheter
       </TopStripeButton>
     </TopStripeMenu>
-    <TopStripeMenu title={'Link meny'}>
-      <Link
-        path={'#topstripe'}
-        icon="Check"
-        text={'Link komponent'}
-        placement="before"
-      />
-      <Link path={'#topstripe'} text={'Link komponent'} placement="before" />
-      <Link path={'#topstripe'} text={'Link komponent'} placement="before" />
-    </TopStripeMenu>
-    <TopStripeButton
-      text={'TopStripeButton'}
-      onClick={() => console.log('TopStripeButton')}
-    />
+    <Link path={'#topstripe'} text={'Logg ut'} placement="before" />
   </TopStripe>
   <TopBanner
     external
@@ -244,9 +289,14 @@ import Link from '@skatteetaten/frontend-components/Link';
   </p>
   <h3>Overordnede lenker og funksjoner</h3>
   <p>
-    TopStripe er også stedet å legge overordnede lenker og funksjoner for
-    løsningen, for eksempel «Kontakt oss», «Språk» og «Endre skriftstørrelse». På mobil/nettbrett kan det være aktuelt å skjule enkelte av funksjonene eller legge lenker i en meny.
+    Vi legger de overordede funksjonene «Kontakt oss», «Language / Språk» og «Endre skriftstørrelse» i TopStripe. På mobil flytter vi disse funksjonene ned til footeren.
   </p>
+  <h3>Endre bruker</h3>
+  <p>
+    Av og til kan den innloggende brukeren ha rettighet til å se eller sende inn opplysninger på vegne av andre (personer eller virksomheter). Rett ved siden av logg ut-knappen har vi derfor en partsvelger som lar deg bytte til hvem du ønsker å representere. Partsvelgeren vises alltid når brukeren er innlogget, også på mobil.
+  </p>
+
+
 
 
 

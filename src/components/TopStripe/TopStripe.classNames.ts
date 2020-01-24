@@ -30,6 +30,8 @@ export const getClassNames = () => {
       color: palette.skeColor.white,
       textDecoration: 'none !important',
       transition: 'none',
+      paddingLeft: 0,
+      paddingRight: 0,
       paddingTop: 1,
       paddingBottom: 0,
       selectors: {
@@ -62,7 +64,7 @@ export const getClassNames = () => {
         'a,i': {
           fontWeight: FontWeights.regular,
           borderWidth: 2,
-          padding: '0px 6px 0px 6px',
+          //padding: '0px 6px 0px 6px',
           color: palette.skeColor.white,
           borderColor: palette.skeColor.lightGrey
         },
@@ -182,6 +184,10 @@ export const getClassNames = () => {
     icon: {
       position: 'absolute',
       left: 0
+    },
+    menuIcon: {
+      fontSize: '16px',
+      verticalAlign: 'middle'
     },
     menuCloseButton: {
       display: 'block',

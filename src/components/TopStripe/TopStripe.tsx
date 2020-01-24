@@ -29,6 +29,7 @@ const TopStripe: React.FC<TopStripeProps> = props => {
     }
   };
   const styles = getClassNames();
+
   const { children, ...rest } = props;
   const showOverlay = open !== notOpen ? styles.overlayShow : '';
 
