@@ -84,7 +84,7 @@
   },
   "scripts": {
     "start": "REACT_APP_BUILD_VERSION=$(git rev-parse --abbrev-ref HEAD) styleguidist server",
-    "generate:icons": "webfont src/webfont/**/*.svg -d src/components/utils/assets",
+    "generate:icons": "webfont --normalize --fontHeight 600 src/webfont/**/*.svg -d src/components/utils/assets",
     "prebuild": "npm-run-all clean lint",
     "build": "npm-run-all generate:icons build:lib build:docs",
     "build:docs": "styleguidist build",
