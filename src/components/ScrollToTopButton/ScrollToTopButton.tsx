@@ -9,6 +9,8 @@ interface ScrollToTopButtonProps {
   label?: string;
   /** Global attributt som må være unik for hele HTML dokumentet */
   id?: string;
+  /** Overstyring av stiler */
+  className?: string;
 }
 
 interface ScrollToTopButtonState {
@@ -45,7 +47,7 @@ export class ScrollToTopButton extends React.PureComponent<
   }
 
   render() {
-    const { id, label } = this.props;
+    const { id, className, label } = this.props;
     // @ts-ignore TODO
     const styles = getClassNames(this.props);
 
@@ -53,7 +55,7 @@ export class ScrollToTopButton extends React.PureComponent<
 
     return (
       <div id={id} className={styles.topcontainer}>
-        <div className={classnames(styles.container, visKlasse)}>
+        <div className={classnames(styles.container, visKlasse, className)}>
           <div className={styles.box}>
             <ActionButton
               className={styles.actionButton}

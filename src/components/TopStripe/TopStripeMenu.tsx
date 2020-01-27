@@ -1,6 +1,7 @@
 import * as React from 'react';
 import ActionButton from '../ActionButton';
 import { getClassNames } from './TopStripe.classNames';
+import classnames from 'classnames';
 import { LinkProps } from '../Link';
 import { TopStripeContext } from './TopStripe';
 import { TopStripeButton } from './TopStripeButton';
@@ -15,6 +16,7 @@ export interface TopStripeMenuProps extends LinkProps {
   defaultSelected?: number;
   onRender?: any;
   title: string;
+  className?: string;
   index?: number;
   icon?: string;
   showChevron?: boolean;
@@ -22,7 +24,15 @@ export interface TopStripeMenuProps extends LinkProps {
 
 export const TopStripeMenu: React.FC<TopStripeMenuProps> = props => {
   const styles = getClassNames();
-  const { children, icon, onRender, title, index, closeOnClick = true } = props;
+  const {
+    children,
+    className,
+    onRender,
+    icon,
+    title,
+    index,
+    closeOnClick = true
+  } = props;
   const { open, setOpen, closeMenu } = React.useContext(TopStripeContext);
 
   return (
@@ -31,7 +41,7 @@ export const TopStripeMenu: React.FC<TopStripeMenuProps> = props => {
 
       <TopStripeButton
         aria-haspopup
-        className={styles.plainButton}
+        className={classnames(styles.plainButton, className)}
         onClick={() => setOpen(index)}
       >
         {title}
