@@ -1,10 +1,14 @@
-### **v.3.0.2 - 21.01.2020 **
+### **v.3.1.0 - 28.01.2020 **
 
 - Internal TopBanner can now render children-elements. Added slantedAreaWidth prop to set width to slanted area.
 - Accordion: added ability to specify h-tag level
 - Link: new prop OpenInNew
+- Added missing className support to Accordion, TopStripe, Chip, ErrorMessage
+- TopStripe: Updated example and some styling fixes.
+- Dialog: ability to change tooltip/aria-label om close-button.
 - Input: ability to use inputMode=numeric
-- Some reposonsive improvements
+- Some improvements to responsive layout
+- Icons are now being generated in better quality.
 
 ### **v.3.0.1 - 20.12.2019**
 
