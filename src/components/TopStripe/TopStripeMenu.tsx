@@ -59,7 +59,7 @@ export const TopStripeMenu: React.FC<TopStripeMenuProps> = props => {
         <ul className={styles.dropdownContainer}>
           {onRender
             ? onRender
-            : React.Children.map(children, (child, index) => {
+            : React.Children.map(children, child => {
                 if (React.isValidElement<LinkProps>(child)) {
                   return (
                     <li
