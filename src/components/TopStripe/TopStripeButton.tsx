@@ -1,4 +1,6 @@
 import * as React from 'react';
+import { getClassNames } from './TopStripe.classNames';
+
 export interface TopStripeButtonProps
   extends React.HTMLAttributes<HTMLButtonElement> {
   /** @ignore Får ekstra stil fra toppstripe */
@@ -9,10 +11,12 @@ export interface TopStripeButtonProps
 
 export const TopStripeButton: React.FC<TopStripeButtonProps> = props => {
   const { topStripeStyle, ariaLabel, text, ...rest } = props;
+  const styles = getClassNames();
+
   return (
     <button
       aria-label={ariaLabel}
-      className={topStripeStyle}
+      className={styles.topStripeButton}
       style={{ cursor: 'pointer' }}
       {...rest}
     >

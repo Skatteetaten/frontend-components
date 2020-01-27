@@ -34,6 +34,7 @@ export const getClassNames = () => {
       paddingRight: 0,
       paddingTop: 1,
       paddingBottom: 0,
+      marginRight: '10px',
       selectors: {
         ':hover': {
           cursor: 'pointer',
@@ -45,6 +46,11 @@ export const getClassNames = () => {
           transition: 'none'
         }
       }
+    },
+    chevronIcon: {
+      position: 'absolute',
+      color: 'red',
+      padding: '3px 3px'
     },
     topStripeContainer: {
       margin: 0,
@@ -60,7 +66,7 @@ export const getClassNames = () => {
       fontWeight: FontWeights.regular,
       padding: '0 8px',
       selectors: {
-        li: { listStyleType: 'none', padding: '14px 16px 16px 16px' },
+        li: { listStyleType: 'none', padding: '6px 16px 8px 16px' },
         'a,i': {
           fontWeight: FontWeights.regular,
           borderWidth: 2,
@@ -87,6 +93,10 @@ export const getClassNames = () => {
           fontSize: FontSizes.small
         }
       }
+    },
+    topStripeButton: {
+      textAlign: 'left',
+      lineHeight: '20px'
     },
     menuButton: {
       selectors: {
@@ -149,8 +159,9 @@ export const getClassNames = () => {
       color: palette.skeColor.white,
       fontSize: FontSizes.small,
       fontWeight: FontWeights.regular,
-      paddingInlineStart: 10,
-      paddingInlineEnd: 10,
+      paddingInlineStart: 4,
+      paddingInlineEnd: 4,
+      margin: 0,
       selectors: {
         'li:hover:not(:last-child)': {
           backgroundColor: 'white',
@@ -173,17 +184,14 @@ export const getClassNames = () => {
           border: 'none',
           color: 'inherit',
           textDecoration: 'none !important',
-          transition: 'none',
-          paddingTop: 1,
-          paddingRight: 0,
-          paddingBottom: 0,
-          paddingLeft: 0
+          transition: 'none'
         }
       }
     },
     icon: {
       position: 'absolute',
-      left: 0
+      top: 14,
+      left: 4
     },
     menuIcon: {
       fontSize: '16px',

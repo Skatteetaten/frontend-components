@@ -30,10 +30,20 @@ export const TopStripeMenu: React.FC<TopStripeMenuProps> = props => {
       {props.icon ? <Icon className={styles.menuIcon} iconName={icon} /> : ''}
 
       <TopStripeButton
+        aria-haspopup
         className={styles.plainButton}
         onClick={() => setOpen(index)}
       >
         {title}
+        {props.showChevron ? (
+          <Icon
+            className={styles.chevronIcon}
+            aria-hidden
+            iconName={'ChevronDown'}
+          />
+        ) : (
+          ''
+        )}
       </TopStripeButton>
       {open === index && (
         <ul className={styles.dropdownContainer}>
@@ -74,7 +84,6 @@ export const TopStripeMenu: React.FC<TopStripeMenuProps> = props => {
           </li>
         </ul>
       )}
-      {props.showChevron ? <Icon iconName={'ChevronDown'} /> : ''}
     </>
   );
 };
