@@ -113,6 +113,7 @@ module.exports = {
   ],
   assetsDir: 'assets',
   template: {
+    lang: 'no',
     favicon: './favicon.ico',
     head: {
       links: [
