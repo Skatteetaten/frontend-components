@@ -28,6 +28,7 @@ export interface StepProps extends React.HTMLAttributes<HTMLDivElement> {
     icon?: string;
     event?: () => void;
     text: string;
+    ariaLabel?: string;
   };
   /** Overskrift for et steg */
   stepTitle?: string;
@@ -69,12 +70,7 @@ const Step = (props: StepProps) => {
   }, [props]);
 
   return (
-    <div
-      key={stepNumber}
-      role="region"
-      className={classnames(styles.wrapperStep, className)}
-      tabIndex={0}
-    >
+    <div key={stepNumber} className={classnames(styles.wrapperStep, className)}>
       <Grid.Row rowSpacing={Grid.SPACE_NONE}>
         <Grid.Col noSpacing={true}>
           <Grid.Row rowSpacing={Grid.SPACE_NONE}>
@@ -102,7 +98,7 @@ const Step = (props: StepProps) => {
               <div id={stepId}>
                 <div className={styles.stepContent}>
                   {stepTitle && (
-                    <h2 className={styles.title} aria-label={stepTitle}>
+                    <h2 className={styles.title}>
                       {!size.gt.sm && stepType !== 'next' && (
                         <NumberIcon
                           styles={styles}
@@ -122,6 +118,7 @@ const Step = (props: StepProps) => {
                         icon={actionBtn.icon}
                         className={styles.stepAction}
                         onClick={actionBtn.event}
+                        ariaLabel={actionBtn.ariaLabel}
                       >
                         {actionBtn.text}
                       </ActionButton>

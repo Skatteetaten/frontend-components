@@ -96,10 +96,6 @@ export const getClassNames = props => {
       marginLeft: 'auto',
       height: '50%',
       selectors: {
-        span: {
-          display: 'inline-block',
-          float: 'right'
-        },
         '@media only screen and (max-width: 479px)': {
           position: 'absolute',
           height: 'auto',
