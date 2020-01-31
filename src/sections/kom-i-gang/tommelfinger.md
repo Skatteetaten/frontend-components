@@ -129,7 +129,7 @@ const titles = {
       tydelig «nødutgang» for å komme seg ut av den uønskede sitausjonen.{' '}
     </p>
     <p>
-      I stegveiviseren har vi endre-knapper dersom brukeren vil gå tilbake å
+      I stegveiviseren har vi endre-knapper dersom brukeren vil gå tilbake og
       endre noe, selv etter han har sendt inn.
     </p>
     <p>I toppbanner har vi en lenke dersom brukeren vi gå tilbake til start:</p>
@@ -146,9 +146,9 @@ const titles = {
     stepId={'step-4'}
   >
     <p style={{ fontWeight: 'bold' }}>
-      Brukere bruker mer tid på andre sider enn i din løsning. Det betyr at det
-      meste av opplæringen de har fått fra andre sider enn den du jobber med.
-      Derfor er det lurt å følge allerede kjente konvensjoner.
+      Brukere bruker mer tid på andre sider enn i din løsning. Det betyr at
+      brukerne har mest erfaring med hvordan ting virker fra andre sider enn
+      dine. Derfor er det lurt å følge allerede kjente konvensjoner.
     </p>
     <p>
       Hvis du for eksempel lager en løsning for betaling på nett, kan du med
@@ -199,8 +199,7 @@ const titles = {
     stepId={'step-6'}
   >
     <p style={{ fontWeight: 'bold' }}>
-      La brukeren måtte huske minst mulig ved å gjøre det hun trenger på
-      skjermen synlig.
+      Gjør ting synlig på skjermen for å avlaste brukers hukommelse.
     </p>
     <p>
       Det bør ikke være nødvendig å huske informasjon fra et vindu eller dialog
@@ -223,6 +222,12 @@ const titles = {
               </ActionButton>
             </Grid.Col>
           </Grid.Row>
+          <Grid.Row rowSpacing={Grid.SPACE_NONE}>
+            <Grid.Col noSpacing lg={12}>
+              <p>Vise funksjoner:</p>{' '}
+              <IconButton title={'Skriv ut'} icon="Print" />
+            </Grid.Col>
+          </Grid.Row>
         </Grid>
       </div>
       <div className="dont">
@@ -241,6 +246,14 @@ const titles = {
                 icon="Upload"
               />
             </Grid.Col>
+            <Grid.Row rowSpacing={Grid.SPACE_NONE}>
+              <Grid.Col noSpacing lg={12}>
+                <p>Skjule funksjoner:</p>{' '}
+                <p style={{ fontWeight: 'normal' }}>
+                  (må huske høyreklikke + skriv ut)
+                </p>
+              </Grid.Col>
+            </Grid.Row>
           </Grid.Row>
         </Grid>
       </div>
@@ -327,7 +340,7 @@ const titles = {
       Selv om det er best om et system kan brukes uten dokumentasjon - av og til
       er det nødvendig å tilby hjelp og dokumentasjon. Slik informasjon bør være
       enkel å søke i, være fokusert på brukerens oppgaver, liste opp steg som
-      brukeren må følge og ikke være for stor.
+      brukeren må følge og ikke være for omfattende.
     </p>
     <p>
       Slik dokumenterer skatteetaten.no hvordan man kan levere forlovererklæring
