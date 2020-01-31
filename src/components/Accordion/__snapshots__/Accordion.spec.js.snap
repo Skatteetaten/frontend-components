@@ -9,7 +9,7 @@ exports[`Accordion komponent matcher snapshot 1`] = `
       padding="0 8px"
     >
       <div
-        className="ske-Grid-44 "
+        className="ske-Grid-45 "
       >
         <AccordionItem
           key=".0"
@@ -24,17 +24,17 @@ exports[`Accordion komponent matcher snapshot 1`] = `
               rowSpacing="0px"
             >
               <div
-                className="ske-Grid-row-47 "
+                className="ske-Grid-row-48 "
               >
                 <GridCol>
                   <div
-                    className="ske-Grid-col-46 "
+                    className="ske-Grid-col-47 "
                   >
                     <GridRow
                       rowSpacing="0px"
                     >
                       <div
-                        className="ske-Grid-row-47 "
+                        className="ske-Grid-row-48 "
                       >
                         <GridCol
                           md={12}
@@ -42,7 +42,7 @@ exports[`Accordion komponent matcher snapshot 1`] = `
                           xl={12}
                         >
                           <div
-                            className="ske-Grid-col-48 "
+                            className="ske-Grid-col-49 "
                           >
                             <hr />
                             <ToggleContent
@@ -53,11 +53,12 @@ exports[`Accordion komponent matcher snapshot 1`] = `
                                   "accordion": "accordion-38",
                                   "containerStep": "containerStep-36",
                                   "content": "content-39",
-                                  "stepLine": "stepLine-41",
-                                  "stepNumber": "stepNumber-40",
+                                  "heading": "heading-40",
+                                  "stepLine": "stepLine-42",
+                                  "stepNumber": "stepNumber-41",
                                   "subComponentStyles": Object {},
-                                  "toggleButton": "toggleButton-42",
-                                  "toggleButtonOpen": "toggleButtonOpen-43",
+                                  "toggleButton": "toggleButton-43",
+                                  "toggleButtonOpen": "toggleButtonOpen-44",
                                   "wrapperStep": "wrapperStep-37",
                                 }
                               }
@@ -65,9 +66,7 @@ exports[`Accordion komponent matcher snapshot 1`] = `
                             <div
                               className="content-39"
                               role="region"
-                              tabIndex={0}
                             >
-                              <h1 />
                               <p>
                                 Her vises innhold
                               </p>

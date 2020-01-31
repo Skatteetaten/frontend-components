@@ -34,6 +34,10 @@ export function getClassNames() {
         }
       }
     },
+    heading: {
+      fontSize: FontSizes.largePlus,
+      margin: '0'
+    },
     stepNumber: {
       display: 'flex',
       alignItems: 'center',

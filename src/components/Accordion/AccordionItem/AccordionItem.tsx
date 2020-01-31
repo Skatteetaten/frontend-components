@@ -73,7 +73,7 @@ const ToggleContent: React.FC<ToggleContentInterface> = props => {
         <Icon iconName={'ChevronDown'} />
 
         {subtitle && (
-          <p className={styles.subtitle} aria-label={subtitle} tabIndex={0}>
+          <p className={styles.subtitle} aria-label={subtitle}>
             {subtitle}
           </p>
         )}
@@ -154,20 +154,17 @@ const AccordionItem: React.FC<AccordionItemProps> = props => {
                 headingLevel={headingLevel}
               />
               {(isContentOpen || !toggleContent) && (
-                <div
-                  className={styles.content}
-                  id={stepId}
-                  role={'region'}
-                  tabIndex={0}
-                >
+                <div className={styles.content} id={stepId} role={'region'}>
                   {headingLevel && title ? (
                     headingLevel <= 5 ? (
                       <Heading text={title} level={headingLevel + 1} />
                     ) : (
                       { title }
                     )
+                  ) : title ? (
+                    <h2 className={styles.heading}>{title}</h2>
                   ) : (
-                    <h1>{title}</h1>
+                    ''
                   )}
                   {children}
                 </div>

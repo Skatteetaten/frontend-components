@@ -39,6 +39,10 @@ module.exports = {
           content: 'src/sections/kom-i-gang/forbedre.md'
         },
         {
+          name: 'Tommelfingerregler for design',
+          content: 'src/sections/kom-i-gang/tommelfinger.md'
+        },
+        {
           name: 'Teknisk',
           content: 'src/sections/kom-i-gang/utviklere.md'
         },
