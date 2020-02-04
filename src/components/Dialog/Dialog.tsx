@@ -28,7 +28,8 @@ export default class Dialog extends React.PureComponent<
 
   static defaultProps = {
     layoutStyle: 'normal',
-    type: Dialog.Type.normal
+    type: Dialog.Type.normal,
+    closeButtonAriaLabel: 'Lukk'
   };
   private readonly _iconButtonElement: React.RefObject<HTMLDivElement>;
 
@@ -51,6 +52,7 @@ export default class Dialog extends React.PureComponent<
       type,
       className,
       layoutStyle,
+      closeButtonAriaLabel,
       ...props
     } = this.props;
     const styles = getClassNames(this.props);
@@ -66,7 +68,7 @@ export default class Dialog extends React.PureComponent<
             type: type,
             title,
             subText,
-            closeButtonAriaLabel: 'Lukk'
+            closeButtonAriaLabel: closeButtonAriaLabel
           }}
           modalProps={{
             isBlocking,

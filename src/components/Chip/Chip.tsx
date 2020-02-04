@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { getClassNames } from './Chip.classNames';
+import classnames from 'classnames';
 
 export enum ChipType {
   WARNING = 'lightPink',
@@ -14,6 +15,8 @@ export interface ChipProps extends React.HTMLAttributes<HTMLDivElement> {
   size?: 'standard' | 'large';
   /** aria-label */
   ariaLabel?: string;
+  /** Overstyring av stiler */
+  className?: string;
 }
 /**
  * @visibleName Chip (Merkelapp)
@@ -28,10 +31,11 @@ export default class Chip extends React.PureComponent<ChipProps, {}> {
   };
 
   render() {
-    const { children, ariaLabel, ...props } = this.props;
+    const { children, className, ariaLabel, ...props } = this.props;
+    const styles = getClassNames(this.props);
     return (
       <div
-        className={getClassNames(this.props)}
+        className={classnames(styles, className)}
         aria-label={ariaLabel}
         {...props}
       >

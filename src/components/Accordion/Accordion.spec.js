@@ -105,7 +105,34 @@ describe('Accordion komponent', () => {
     expect(accordionItem.html()).toContain('Her vises innhold');
     expect(Button.prop('aria-expanded')).toBe(true);
     expect(Button.html()).toContain('toggleButtonOpen');
-    expect(wrapper.find('h1').text()).toContain('Tittel');
+    expect(wrapper.find('h2').text()).toContain('Tittel');
+    expect(wrapper.text()).toContain('Undertittel');
+  });
+
+  it('Man kan overstyre h-tag for toggleButtonText og title', () => {
+    const wrapper = oppsettMount(
+      {},
+      {
+        toggleContent: true,
+        toggleButtonText: 'Åpne steg',
+        stepId: 'step-2-1',
+        title: 'Tittel',
+        subtitle: 'Undertittel',
+        headingLevel: 1
+      }
+    );
+
+    const accordionItem = wrapper.find('AccordionItem');
+    let Button = accordionItem.find('button');
+
+    Button.simulate('click');
+    Button = wrapper.find('button');
+
+    expect(accordionItem.html()).toContain('Her vises innhold');
+    expect(Button.prop('aria-expanded')).toBe(true);
+    expect(Button.html()).toContain('toggleButtonOpen');
+    expect(wrapper.find('h1').text()).toContain('Åpne steg');
+    expect(wrapper.find('h2').text()).toContain('Tittel');
     expect(wrapper.text()).toContain('Undertittel');
   });
 });

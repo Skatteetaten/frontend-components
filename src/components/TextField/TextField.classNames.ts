@@ -66,7 +66,7 @@ export const getClassNames = (props: TextFieldProps) => {
       '&.is-active .ms-TextField-fieldGroup': !borderless &&
         !underlined &&
         !readOnly && {
-          border: `2px solid ${palette.skeColor.blue}`
+          border: `1px solid ${palette.skeColor.blue}`
         },
       // style customization for underlined model
       '&.ms-TextField--underlined .ms-TextField-wrapper': {
@@ -94,7 +94,7 @@ export const getClassNames = (props: TextFieldProps) => {
         fontWeight: boldText ? FontWeights.bold : FontWeights.regular
       },
       '&.is-active .ms-TextField-field': readOnly && {
-        border: `2px solid ${palette.skeColor.blue}`,
+        border: `1px solid ${palette.skeColor.blue}`,
         backgroundColor: palette.skeColor.white
       },
       '&.is-active .ms-TextField-field[readOnly]:focus': readOnly && {

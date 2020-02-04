@@ -1,6 +1,6 @@
 import React from 'react';
 import { mount } from 'enzyme';
-import { matches } from './../utils/test-utils';
+import { matches } from '../utils/test-utils';
 import TopBanner from './TopBanner';
 
 function oppsettFullDOM(props) {
@@ -56,18 +56,47 @@ describe('TopBanner komponent', () => {
     expect(wrapper.find('StyledIconBase')).toHaveLength(0);
   });
 
-  it('rendrer TopBanner med kompakt visning for eksterne arbeidsflater ', () => {
+  it('rendrer TopBanner med kompakt visning for interne arbeidsflater ', () => {
     const wrapper = oppsettFullDOM({
       external: false,
-      homeText: 'Til skatteetaten.no',
+      compact: true,
       title: 'Intern løsning'
     });
 
+    expect(wrapper.find('header'));
     expect(wrapper.find('h1').html()).toContain('Intern løsning');
-    expect(wrapper.find('.ms-Icon').prop('data-icon-name')).toEqual('Home');
+    expect(wrapper.find('i').prop('data-icon-name')).toEqual('Home');
     expect(wrapper.html()).toContain('headerDiagonal');
     expect(wrapper.html()).toContain('headerRightContainer');
-    expect(wrapper.html()).toContain('headerRightButtons');
+    expect(wrapper.find('img').prop('alt')).toEqual('Skatteetaten logo');
+  });
+
+  it('rendrer intern TopBanner med annet ikon', () => {
+    const wrapper = oppsettFullDOM({
+      external: false,
+      icon: 'ArrowBack',
+      title: 'Intern løsning'
+    });
+
+    expect(wrapper.find('header'));
+    expect(wrapper.find('h1').html()).toContain('Intern løsning');
+    expect(wrapper.find('i').prop('data-icon-name')).toEqual('ArrowBack');
+    expect(wrapper.html()).toContain('headerDiagonal');
+    expect(wrapper.html()).toContain('headerRightContainer');
+    expect(wrapper.find('img').prop('alt')).toEqual('Skatteetaten logo');
+  });
+
+  it('rendrer intern TopBanner uten tittel', () => {
+    const wrapper = oppsettFullDOM({
+      external: false,
+      title: 'Intern løsning'
+    });
+
+    expect(wrapper.find('header'));
+    expect(wrapper.contains('h1')).toBe(false);
+    expect(wrapper.find('i').prop('data-icon-name')).toEqual('Home');
+    expect(wrapper.html()).toContain('headerDiagonal');
+    expect(wrapper.html()).toContain('headerRightContainer');
     expect(wrapper.find('img').prop('alt')).toEqual('Skatteetaten logo');
   });
 });

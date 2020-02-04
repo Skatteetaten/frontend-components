@@ -39,6 +39,10 @@ module.exports = {
           content: 'src/sections/kom-i-gang/forbedre.md'
         },
         {
+          name: 'Tommelfingerregler for design',
+          content: 'src/sections/kom-i-gang/tommelfinger.md'
+        },
+        {
           name: 'Teknisk',
           content: 'src/sections/kom-i-gang/utviklere.md'
         },
@@ -67,7 +71,7 @@ module.exports = {
       'TopStripeButton',
       'Typography'
     ]),
-    generateComponentsGroup('Inputfelt', [
+    generateComponentsGroup('Inputfelt og skjema', [
       'CheckBox',
       'ComboBox',
       'DatePicker',
@@ -113,6 +117,7 @@ module.exports = {
   ],
   assetsDir: 'assets',
   template: {
+    lang: 'no',
     favicon: './favicon.ico',
     head: {
       links: [

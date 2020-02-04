@@ -11,7 +11,6 @@ exports[`ActionButton komponent matcher snapshot 1`] = `
   onKeyUp={[Function]}
   onMouseDown={[Function]}
   onMouseUp={[Function]}
-  role="button"
   type="button"
 >
   <span
