@@ -61,6 +61,7 @@
     "eslint": "6.7.2",
     "eslint-config-prettier": "6.7.0",
     "eslint-config-react-app": "5.1.0",
+    "gh-pages": "2.2.0",
     "husky": "3.1.0",
     "isomorphic-fetch": "2.2.1",
     "jest-junit": "10.0.0",
@@ -105,6 +106,7 @@
     "test:coverage": "CI=true react-scripts test --env=jsdom --coverage --testResultsProcessor jest-junit",
     "postversion": "npm run build:copy-files",
     "clean": "rimraf coverage lib docs *.tgz",
+    "deploy:gh-pages": "gh-pages -d docs -p 0 -r https://github.com/Skatteetaten/frontend-components.git",
     "eject": "react-scripts eject"
   },
   "engines": {
