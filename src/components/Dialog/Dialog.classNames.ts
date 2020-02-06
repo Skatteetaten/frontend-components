@@ -63,7 +63,11 @@ export const getClassNames = function getClassNames(props: DialogProps) {
               borderWidth: '4px'
             }
           },
+
           ...getMainBackgroundStyle(props)
+        },
+        '& .ms-Modal-scrollableContent': {
+          overflowY: 'visible'
         },
         '& .ms-Dialog-header': {
           ...getHeaderBackgroundStyle(props)
