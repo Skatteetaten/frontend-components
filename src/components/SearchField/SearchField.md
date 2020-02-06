@@ -19,6 +19,32 @@ import SearchField from '@skatteetaten/frontend-components/SearchField';
 </div>;
 ```
 
+Søkefelt med resultat i dropdown:
+
+```js
+import SearchField from '@skatteetaten/frontend-components/SearchField';
+const options = [
+  { key: '1', text: 'Banan' },
+  { key: '2', text: 'Ananas' },
+  { key: '3', text: 'Eple' },
+  { key: '4', text: 'Pære' },
+  { key: '5', text: 'Appelsin' },
+  { key: '6', text: 'Fersken' }
+];
+
+<div style={{ width: '300px' }}>
+  <SearchField
+    label={'Søk etter tilgjengelige frukter'}
+    searchFieldSize="standard"
+    border="slim"
+    placeholder="Skriv søkeord her"
+    ariaLabel="Søkefelt"
+    help="Tekst som hjelper brukeren å fylle ut feltet."
+    options={options}
+  />
+</div>;
+```
+
 ```js noeditor beskrivelse
   <h3>Markeres med ikon eller tekst</h3>
   <p>

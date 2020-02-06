@@ -1,17 +1,29 @@
-import { mergeStyles } from '@uifabric/merge-styles';
+import { mergeStyleSets } from '@uifabric/merge-styles';
 import { getTheme } from '@uifabric/styling';
 import { FontSizes } from '..';
 import { PaletteProps } from '..';
 import { SearchFieldProps } from './SearchField';
 
-export const getClassNames = function getClassNames(props: SearchFieldProps) {
+export const getClassNames = (props: SearchFieldProps) => {
   const palette = getTheme().palette as PaletteProps;
   const { border, searchFieldSize } = props;
   const largeSize = searchFieldSize === 'large';
   const standardSize = searchFieldSize === 'standard';
 
-  return mergeStyles([
-    {
+  return mergeStyleSets({
+    searchBoxWrapper: {},
+    searchList: {
+      listStyleType: 'none',
+      padding: '0px',
+      marginTop: '11px',
+      marginBottom: '11px'
+    },
+    searchListDropdown: {
+      width: '100% - 2px',
+      top: '-13px',
+      border: `1px solid ${palette.skeColor.black}`
+    },
+    main: {
       displayName: 'SkeSearchField',
       selectors: {
         '&.ms-SearchBox': {
@@ -71,5 +83,5 @@ export const getClassNames = function getClassNames(props: SearchFieldProps) {
         }
       }
     }
-  ]);
+  });
 };
