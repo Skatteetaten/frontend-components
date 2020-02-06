@@ -15,13 +15,14 @@ export const getClassNames = (props: SearchFieldProps) => {
     searchList: {
       listStyleType: 'none',
       padding: '0px',
-      marginTop: '11px',
+      marginTop: '0px',
       marginBottom: '11px'
     },
     searchListDropdown: {
       width: '100% - 2px',
       top: '-13px',
-      border: `1px solid ${palette.skeColor.black}`
+      border: `1px solid ${palette.skeColor.black}`,
+      borderTop: 0
     },
     main: {
       displayName: 'SkeSearchField',
