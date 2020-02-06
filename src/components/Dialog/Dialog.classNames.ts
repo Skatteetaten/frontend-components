@@ -34,11 +34,12 @@ function getMainBackgroundStyle(props: DialogProps) {
 
 function getHeaderBackgroundStyle(props: DialogProps) {
   if (props.layoutStyle === 'important') {
+    const logoPlacement = props.title ? '-30px' : '-18px';
     return {
       backgroundImage: `url(${logo})`,
       backgroundSize: '40px 100%',
       backgroundRepeat: 'no-repeat',
-      backgroundPosition: 'top -30px left 20px',
+      backgroundPosition: `top ${logoPlacement} left 20px`,
       paddingTop: 70
     };
   } else {
@@ -67,7 +68,9 @@ export const getClassNames = function getClassNames(props: DialogProps) {
           ...getMainBackgroundStyle(props)
         },
         '& .ms-Modal-scrollableContent': {
-          overflowY: 'visible'
+          overflowY: 'scroll',
+          overflowX: 'hidden',
+          WebkitOverflowScrolling: 'touch'
         },
         '& .ms-Dialog-header': {
           ...getHeaderBackgroundStyle(props)
