@@ -59,7 +59,7 @@ const SearchField: React.FC<SearchFieldProps> = props => {
   const _searchBoxElement = React.createRef<HTMLDivElement>();
   const [dropdownVisible, setDropdownVisible] = React.useState<boolean>(false);
   const [searchResultList, setSearchResultList] = React.useState(options);
-  const [value, setValue] = React.useState(undefined);
+  const [value, setValue] = React.useState<string | undefined>(undefined);
   const styles = getClassNames(props);
 
   const renderSuggestions = list => {
@@ -104,6 +104,7 @@ const SearchField: React.FC<SearchFieldProps> = props => {
                 const newList = searchInList(options, newValue);
                 setSearchResultList(newList);
                 setDropdownVisible(newList.length > 0);
+                setValue(newValue);
               }
             }}
             value={value}
