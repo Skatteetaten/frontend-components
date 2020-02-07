@@ -57,7 +57,7 @@ const SearchField: React.FC<SearchFieldProps> = props => {
     ...rest
   } = props;
   const _searchBoxElement = React.createRef<HTMLDivElement>();
-  const [calloutVisible, setCalloutVisible] = React.useState<boolean>(false);
+  const [dropdownVisible, setDropdownVisible] = React.useState<boolean>(false);
   const [searchResultList, setSearchResultList] = React.useState(options);
   const [value, setValue] = React.useState(undefined);
   const styles = getClassNames(props);
@@ -73,7 +73,7 @@ const SearchField: React.FC<SearchFieldProps> = props => {
                 color={'black'}
                 onClick={() => {
                   setValue(listItem.text);
-                  setCalloutVisible(false);
+                  setDropdownVisible(false);
                 }}
               >
                 {listItem.text}
@@ -103,12 +103,12 @@ const SearchField: React.FC<SearchFieldProps> = props => {
               if (newValue) {
                 const newList = searchInList(options, newValue);
                 setSearchResultList(newList);
-                setCalloutVisible(newList.length > 0);
+                setDropdownVisible(newList.length > 0);
               }
             }}
             value={value}
           />
-          {calloutVisible && renderSuggestions(searchResultList)}
+          {dropdownVisible && renderSuggestions(searchResultList)}
         </div>
       ) : (
         <SearchBox {...rest} className={classnames(styles.main, className)} />

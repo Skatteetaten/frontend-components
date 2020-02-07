@@ -13,7 +13,7 @@ export const getClassNames = (props: SearchFieldProps) => {
   return mergeStyleSets({
     searchBoxWrapper: {},
     searchList: {
-      listStyleType: 'none',
+      listStyleType: 'none !important',
       padding: '0px',
       marginTop: '0px',
       marginBottom: '11px'
