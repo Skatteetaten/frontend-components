@@ -7,6 +7,8 @@ import { StepProps } from './Step/Step';
 interface StepListProps extends React.HTMLAttributes<HTMLDivElement> {
   /** Klassenavn som kan benyttes for å overstyre css */
   className?: string;
+  /** Label som kan settes for hele steplisten */
+  ariaLabel?: string;
   children?: React.ReactNode;
 }
 /**
@@ -14,11 +16,15 @@ interface StepListProps extends React.HTMLAttributes<HTMLDivElement> {
  */
 
 const StepList = (props: StepListProps) => {
-  const { children, className } = props;
+  const { children, ariaLabel, className } = props;
   const styles = getClassNames(props);
 
   return (
-    <div className={classnames(styles.stepList, className)}>
+    <div
+      role="region"
+      aria-label={ariaLabel}
+      className={classnames(styles.stepList, className)}
+    >
       <Grid padding="0">
         {React.Children.map(children, (child, index) => {
           if (React.isValidElement<StepProps>(child))

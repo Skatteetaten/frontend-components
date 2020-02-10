@@ -15,18 +15,19 @@ const initialState = {
     }
   ]
 };
-<>
+<fieldset style={{ border: 'none' }}>
   <RadioButtonGroup
     label="Type virksomhet"
+    renderAsLegend
     options={state.options}
     onChange={(e, option) => console.log(option)}
     help="Type virksomhet vil påvirke hva du må rapportere til oss."
     id="radio"
   />
-</>;
+</fieldset>;
 ```
 
-Beskrivelse:
+Med beskrivelse på hvert steg:
 
 ```js
 import RadioButtonGroup from '@skatteetaten/frontend-components/RadioButtonGroup';
@@ -55,51 +56,6 @@ const initialState = {
     id="radio"
   />
 </>;
-```
-
-Hjelpetekster og advarsel:
-
-```js
-import RadioButtonGroup from '@skatteetaten/frontend-components/RadioButtonGroup';
-
-const initialState = {
-  options: [
-    {
-      key: 'A',
-      text: 'Bananer'
-    },
-    {
-      key: 'B',
-      text: 'Pærer'
-    },
-    {
-      key: 'C',
-      text: 'Appelsiner'
-    }
-  ]
-};
-
-<div style={{ width: '300px' }}>
-  <RadioButtonGroup
-    label="Velg en frukt"
-    defaultSelectedKey="B"
-    options={state.options}
-    onChange={(e, option) => console.log(option)}
-    help={'Velg en frukt'}
-    id="medHjelp"
-    calloutFloating={false}
-  />
-  <br />
-  <RadioButtonGroup
-    label="Velg enda en frukt"
-    defaultSelectedKey="B"
-    options={state.options}
-    onChange={(e, option) => console.log(option)}
-    warning={'Er du sikker på at pærer er det riktige valget for deg?'}
-    id="medVarsel"
-    calloutFloating={false}
-  />
-</div>;
 ```
 
 ```js noeditor uu

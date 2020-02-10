@@ -382,6 +382,14 @@ const iconGroup = {
     {
       name: 'LanPending',
       usage: 'Skattkort'
+    },
+    {
+      name: 'Familie',
+      usage: 'Familie'
+    },
+    {
+      name: 'Ekteskap',
+      usage: 'Ekteskap'
     }
   ],
   manipulate: [

@@ -14,14 +14,16 @@ export interface LabelWithCalloutProps
   extends React.HTMLAttributes<HTMLDivElement> {
   /** aria-label */
   ariaLabel?: string;
+  /** Dersom komponenten skal som brukes tittel inni et fieldset **/
+  renderAsLegend?: boolean;
   calloutFloating?: boolean;
-  className?: string | undefined;
+  className?: string;
   editable?: boolean;
   editFunction?: () => void;
-  help?: string | JSX.Element | undefined;
+  help?: string | JSX.Element;
   id?: any;
   inputSize?: 'small' | 'normal' | 'large';
-  label?: string | JSX.Element | undefined;
+  label?: string;
   /** Brukerspesifisert event for callout **/
   onCalloutToggle?: (
     oldCalloutState: calloutState,
@@ -33,17 +35,18 @@ export interface LabelWithCalloutProps
 }
 const LabelWithCallout = (props: LabelWithCalloutProps) => {
   const {
+    ariaLabel,
     calloutFloating = false,
     className,
     editable,
     editFunction,
     help,
+    renderAsLegend,
     id,
     label,
     readOnly,
     warning,
     onRenderLabel,
-    ariaLabel,
     onCalloutToggle
   } = props;
   const styles = getClassNames({ calloutFloating, ...props });
@@ -70,7 +73,6 @@ const LabelWithCallout = (props: LabelWithCalloutProps) => {
     }
     return;
   };
-
   return onRenderLabel ? (
     onRenderLabel
   ) : (
@@ -80,14 +82,20 @@ const LabelWithCallout = (props: LabelWithCalloutProps) => {
       className={classnames(styles.labelArea, className)}
     >
       <span className={styles.label}>
-        {label ? <Label>{label}</Label> : null}
+        {label ? (
+          renderAsLegend ? (
+            <legend>{label}</legend>
+          ) : (
+            <Label>{label}</Label>
+          )
+        ) : null}
       </span>
       {help && !warning && (
         <span className={styles.labelIconArea} ref={iconButtonElementRef}>
           <IconButton
             iconProps={{ iconName: 'HelpOutline' }}
             title="Hjelp"
-            ariaLabel={'help'}
+            ariaLabel={'Åpne hjelp'}
             onClick={() => {
               setIsCalloutVisible(!isCalloutVisible);
               toggleEvent();
@@ -101,7 +109,7 @@ const LabelWithCallout = (props: LabelWithCalloutProps) => {
           <IconButton
             iconProps={{ iconName: 'WarningOutline' }}
             title="Varsel"
-            ariaLabel={'warning'}
+            ariaLabel={'Åpne varsel'}
             onClick={() => {
               setIsCalloutVisible(!isCalloutVisible);
               toggleEvent();
@@ -116,7 +124,7 @@ const LabelWithCallout = (props: LabelWithCalloutProps) => {
             <IconButton
               iconProps={{ iconName: 'Edit' }}
               title="Rediger"
-              ariaLabel={'edit'}
+              aria-labelledby={label + ' endre'}
               onClick={editFunction}
               className={styles.icon}
             />
@@ -130,7 +138,9 @@ const LabelWithCallout = (props: LabelWithCalloutProps) => {
             calloutFloating ? Callout.POS_BOTTOM_LEFT : Callout.POS_TOP_LEFT
           }
           color={help && !warning ? Callout.HELP : Callout.WARNING}
-          ariaLabel={help && !warning ? 'Hjelpetekst' : 'Varseltekst'}
+          aria-labelledby={
+            label + (help && !warning ? ' hjelpetekst' : ' varseltekst')
+          }
           target={iconButtonElementRef.current}
           onClose={() => {
             setIsCalloutVisible(false);

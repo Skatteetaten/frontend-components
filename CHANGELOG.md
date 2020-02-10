@@ -1,3 +1,62 @@
+### **v.3.1.0 - 04.02.2020 **
+
+- Internal TopBanner can now render children-elements. Added slantedAreaWidth prop to set width to slanted area.
+- Accordion: added ability to specify h-tag level
+- Link: new prop OpenInNew
+- Added missing className support to Accordion, TopStripe, Chip, ErrorMessage
+- TopStripe: Updated example and some styling fixes.
+- Dialog: ability to change tooltip/aria-label on close-button.
+- Callout: Added focus style to close button.
+- Input: ability to use inputMode=numeric
+- Icons are now being generated in better quality.
+- StepList accessibility improvements
+- Website improvements on responsive layout and accessibility
+
+### **v.3.0.1 - 20.12.2019**
+
+- Added missing icons (Ekteskap, Familie, PreviewFile).
+- SkeBasis: Set properties palette and fonts as optional.
+
+### **v.3.0.0 - December 2019**
+
+New major release - this is a big one. All components have been rewritten to typescript. We are now able to expose the full API for the components that are based on Fabric components.
+
+#### **Breaking changes**
+
+- All input field now has calloutFloating set to false as default.
+- All input field now has same props for help and warning messages (help, warning).
+- AccordtionMenu: Prop title has been renamed to heading.
+- Button: Prop buttonType has been renamed to buttonStyle.
+- Card: Color and border now written on the form: color={Card.Color.WHITE} border={Card.Border.GREEN_BORDER}.
+- ComboBox: removed prop expandOnFocus.
+- CheckBox: component renamed to from Checkbox to CheckBox.
+- CheckBox: remove id-prop.
+- DatePicker: Prop info has been renamed to help.
+- Dialog: Prop helpText has been removed.
+- DropDown: Prop info has been renamed to help.
+- FooterContent: Removed id-prop.
+- IconButton: Prop alt removed. Use ariaLabel or ariaDescription instead.
+- IconButton: Prop buttonType has been renamed to buttonSize.
+- Link: Link is now an inline element (span) instead of block.
+- MessageBar: type is now written on the form: type={MessageBar.Type.info}.
+- NavigationTile: title prop renamed to heading.
+- Spinner: size is now written on the form: size={SpinnerSize.medium}.
+- TopStripe: Rewritten with new API and subcomponents (TopStripeButton and TopStripeMenu).
+
+#### **Additions and fixes**
+
+- NavigationTile: Can now be rendered with subcomponent, NavigationContent.
+- LabelWithCallout: New component.
+- FooterContent: added ariaLabel-prop.
+- Grid: added className and tag-props.
+- TextField: Fixes a bug where a large multiline text field was not rendered correcly.
+- Table: added the prop hideOnMobile to hide colums on mobile.
+- ScrollToTopButton: Fixes a bug where the text on the button was not renderen in safari.
+- Changed error color to improve contrast.
+- Added icons for preview, marriage and family.
+- Various accessibility improvements.
+- Demopage: updated documentation and component template page.
+
 #### **v.2.1.0 - November 7, 2019**
 
 - New components; Link and LinkGroup
@@ -13,54 +72,6 @@
 - Minor updates to Sketch-components
 
 NOTE: The code behind this version is not yet made visble in the github-repo, due to a process of moving between repositories. The changes will be made available in the next release.
-
-### **v.3.0.0 - Desember 2019**
-
-New major release - this is a big one. All components have been rewritten to typescript. We are now able to expose the full API for the components that are based on Fabric components.
-
-#### Breaking changes
-
-- All input field now has calloutFloating set to false as default.
-- All input field now has same props for help and warning messages (help, warning)
-- AccordtionMenu: Prop title has been renamed to heading
-- Button: Prop buttonType has been renamed to buttonStyle
-- Card: Color and border now written on the form: color={Card.Color.WHITE} border={Card.Border.GREEN_BORDER}
-- ComboBox: removed prop expandOnFocus
-- CheckBox: component renamed to from Checkbox to CheckBox
-- CheckBox: remove id-prop
-- DatePicker: Prop info has been renamed to help
-- DropDown: Prop info has been renamed to help
-- FooterContent: Removed id-prop
-- IconButton: Prop alt removed. Use ariaLabel or ariaDescription instead
-- IconButton: Prop buttonType has been renamed to buttonSize
-- Link: Link is now an inline element (span) instead of block.
-- MessageBar: type is now written on the form: type={MessageBar.Type.info}
-- NavigationTile: title prop renamed to heading
-- Spinner: size is now written on the form: size={SpinnerSize.medium}
-- TopStripe: Rewritten with new API and subcomponents.
-
-#### Added and fixes
-
-- NavigationTile: Can now be rendered with subcomponent, NavigationContent
-- FooterContent: added ariaLabel-prop
-- Grid: added className and tag-props
-- Demopage: updated documentation and component template page
-- TextField: Fixes a bug where a large multiline text field was not rendered correcly.
-- ScrollToTopButton: Fixes a bug where the text on the button was not renderen in safari.
-
-#### **v.2.1.0 - November 7, 2019**
-
-- New components; Link and LinkGroup
-- Fixed an issue when displaying help text in a wide TextField
-- Added inline help text (CalloutFloating) on ComboBox, Datepicker, Dropdown
-- RadioButtonGroup: Added help text and updated style on errorMessage.
-- Grid: Added possibility to specify padding
-- StepList: Supports conditional rendering of steps, and transparent background color instead of white.
-- AccordionItem can now show a subtitle
-- Table: open row can be triggerd with prop.
-- NavigationTile: Can now render different h2-tags.
-- Demopage: mobile navigation and updated documentation.
-- Minor updates to Sketch-components
 
 ### **v.2.0.0 - Oktober 1, 2019**
 

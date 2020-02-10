@@ -21,8 +21,11 @@ export interface TextFieldProps extends ITextFieldProps {
   editable?: boolean;
   /** Tilhørende hjelpetekst */
   help?: JSX.Element | string;
+  id?: string;
   /** Størrelse på tekstfelt som skal benyttes */
   inputSize?: 'normal' | 'large';
+  /** Setter inputmode (html 5) på tekstefeltet */
+  inputMode?: ITextFieldProps['inputMode'];
   /** Størrelse på label */
   labelSize?: 'small' | 'large';
   /** Tekst inni feltet som vises før man skriver */
@@ -48,17 +51,19 @@ export interface TextFieldProps extends ITextFieldProps {
  * @visibleName TextField (Tekstfelt)
  */
 export const TextField: React.FC<TextFieldProps> = ({
+  calloutFloating,
   children,
-  onRenderLabel,
   className,
-  mask,
   editable,
   errorMessage,
+  id,
+  label,
+  mask,
+  inputMode,
+  onCalloutToggle,
+  onRenderLabel,
   readOnly,
   value,
-  label,
-  calloutFloating,
-  onCalloutToggle,
   ...rest
 }) => {
   rest.inputSize = rest.inputSize || 'normal';
@@ -96,8 +101,14 @@ export const TextField: React.FC<TextFieldProps> = ({
   }
 
   return (
-    <div className={classnames(getClassNames(rest), className)}>
+    <div
+      className={classnames(
+        getClassNames({ errorMessage, ...rest }),
+        className
+      )}
+    >
       <LabelWithCallout
+        id={id}
         label={label}
         editFunction={onEdit}
         warning={rest.warning}
@@ -111,6 +122,8 @@ export const TextField: React.FC<TextFieldProps> = ({
       />
       <TextFieldType
         {...rest}
+        ariaLabel={label}
+        inputMode={inputMode}
         value={setValue()}
         readOnly={editMode ? false : readOnly}
         className={classnames(

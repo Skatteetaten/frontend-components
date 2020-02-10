@@ -87,7 +87,7 @@ export enum skeColor {
   blue = '#1362ae',
   lightBlue = '#cde1f9',
   mediumBlue = '#8accff',
-  error = '#b25c62',
+  error = '#a82e39',
   transparent = 'transparent'
 }
 

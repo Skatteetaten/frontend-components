@@ -31,7 +31,7 @@ const DEFAULT_STRINGS = {
   isOutOfBoundsErrorMessage: 'Datoen er ikke innenfor gyldig periode',
   isRequiredErrorMessage: 'Dette feltet er påkrevd'
 };
-const DEFAULTFORMATDATE = (date: Date | null | undefined): String => {
+const DEFAULTFORMATDATE = (date: Date | null | undefined): string => {
   if (date) {
     return moment(date).format(DatePicker.DefaultDateFormat);
   }
@@ -104,6 +104,7 @@ export default class DatePicker extends React.Component<DatePickerProps> {
 
   render() {
     const {
+      ariaLabel,
       disabled,
       calloutFloating,
       children,
@@ -125,6 +126,7 @@ export default class DatePicker extends React.Component<DatePickerProps> {
     return (
       <div id={id}>
         <LabelWithCallout
+          id={id}
           label={label}
           help={help}
           calloutFloating={calloutFloating}
@@ -134,6 +136,7 @@ export default class DatePicker extends React.Component<DatePickerProps> {
         <FabricDatePicker
           {...rest}
           className={css(classNames, className)}
+          ariaLabel={ariaLabel ? ariaLabel : label}
           disabled={rest.readonlyMode ? true : disabled}
           strings={{
             ...DatePicker.DefaultStrings,

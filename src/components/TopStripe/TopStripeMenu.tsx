@@ -1,10 +1,11 @@
 import * as React from 'react';
 import ActionButton from '../ActionButton';
 import { getClassNames } from './TopStripe.classNames';
+import classnames from 'classnames';
 import { LinkProps } from '../Link';
 import { TopStripeContext } from './TopStripe';
-import Icon from '../Icon';
 import { TopStripeButton } from './TopStripeButton';
+import Icon from '../Icon/Icon';
 
 export interface TopStripeMenuProps extends LinkProps {
   /**
@@ -15,27 +16,50 @@ export interface TopStripeMenuProps extends LinkProps {
   defaultSelected?: number;
   onRender?: any;
   title: string;
+  className?: string;
   index?: number;
+  icon?: string;
+  showChevron?: boolean;
 }
 
 export const TopStripeMenu: React.FC<TopStripeMenuProps> = props => {
   const styles = getClassNames();
-  const { children, onRender, title, index, closeOnClick = true } = props;
+  const {
+    children,
+    className,
+    onRender,
+    icon,
+    title,
+    index,
+    closeOnClick = true
+  } = props;
   const { open, setOpen, closeMenu } = React.useContext(TopStripeContext);
 
   return (
     <>
+      {props.icon ? <Icon className={styles.menuIcon} iconName={icon} /> : ''}
+
       <TopStripeButton
-        className={styles.plainButton}
+        aria-haspopup
+        className={classnames(styles.plainButton, className)}
         onClick={() => setOpen(index)}
       >
         {title}
+        {props.showChevron ? (
+          <Icon
+            className={styles.chevronIcon}
+            aria-hidden
+            iconName={'ChevronDown'}
+          />
+        ) : (
+          ''
+        )}
       </TopStripeButton>
       {open === index && (
         <ul className={styles.dropdownContainer}>
           {onRender
             ? onRender
-            : React.Children.map(children, (child, index) => {
+            : React.Children.map(children, child => {
                 if (React.isValidElement<LinkProps>(child)) {
                   return (
                     <li

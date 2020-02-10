@@ -9,8 +9,15 @@ def config = [
     publishSnapshotToNpm	 : true,
     npmPublishFolder	     : 'lib',
     nodeVersion            : '10',
-    versionStrategy	       : [[ branch : 'master', versionHint:'2' ]],
-    createBuildEnvs        : { props -> "REACT_APP_BUILD_VERSION=${props.version}" }
+    versionStrategy	       : [[ branch : 'master', versionHint:'3' ]],
+    createBuildEnvs        : { props -> "REACT_APP_BUILD_VERSION=${props.version}" },
+    github                 : [
+      enabled              : true,
+      push                 : env.BRANCH_NAME == "master",
+      repoUrl              : "https://github.com/Skatteetaten/frontend-components.git",
+      deployToGHPagesCmd   : "npm run deploy:gh-pages"
+    ]
+
 ]
 
 fileLoader.withGit(config.pipelineScript, config.scriptVersion) {

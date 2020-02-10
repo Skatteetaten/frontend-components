@@ -5,13 +5,10 @@ import {
 } from 'office-ui-fabric-react/lib-commonjs/ComboBox';
 import classnames from 'classnames';
 
-import {
-  getClassNames,
-  getOptionsClassNames,
-  getErrorClassNames
-} from './ComboBox.classNames';
+import { getClassNames, getOptionsClassNames } from './ComboBox.classNames';
 import LabelWithCallout, { calloutState } from '../LabelWithCallout';
 import { LabelWithCalloutProps } from '../LabelWithCallout/LabelWithCallout';
+import ErrorMessage from '../ErrorMessage';
 
 export interface ComboboxProps extends IComboBoxProps {
   /** Egendefinert feilmelding */
@@ -47,6 +44,7 @@ const Combobox: React.FC<ComboboxProps> = props => {
   return (
     <div id={id}>
       <LabelWithCallout
+        id={id}
         label={label}
         help={help}
         onCalloutToggle={onCalloutToggle}
@@ -54,7 +52,7 @@ const Combobox: React.FC<ComboboxProps> = props => {
       />
       <VirtualizedComboBox
         {...rest}
-        role="combobox"
+        ariaLabel={label}
         className={classnames(getClassNames(props), className)}
         calloutProps={{
           className: getOptionsClassNames(props)
@@ -62,9 +60,7 @@ const Combobox: React.FC<ComboboxProps> = props => {
       >
         {children}
       </VirtualizedComboBox>
-      {errorMessage && (
-        <label className={getErrorClassNames(props)}>{errorMessage}</label>
-      )}
+      {errorMessage && <ErrorMessage>{errorMessage}</ErrorMessage>}
     </div>
   );
 };

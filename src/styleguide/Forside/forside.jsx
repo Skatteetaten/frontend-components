@@ -7,7 +7,10 @@ import NavigationContent from '../../components/NavigationTile/NavigationContent
 
 function Forside(props) {
   return (
-    <div style={{ marginBottom: '60px', marginTop: '30px' }}>
+    <div style={{ marginBottom: '56px', marginTop: '30px' }}>
+      <h1 style={{ textAlign: 'center', marginBottom: '56px' }}>
+        Designe og utvikle
+      </h1>
       <Card margin="large" color={Card.Color.BEIGE}>
         <Grid>
           <Grid.Row>

@@ -2,23 +2,6 @@
 
 ```js
 import LabelWithCallout from '@skatteetaten/frontend-components/LabelWithCallout';
-<>
-  <LabelWithCallout
-    label={'Omregistreringsavgift'}
-    help={'Avgiften du må betale for å registrere kjøretøyet på en ny person.'}
-  />
-  <br />
-  <LabelWithCallout
-    label={'Omregistreringsavgift'}
-    warning={'Du ser ut til å være fritatt for omregistreringsavgift.'}
-  />
-</>;
-```
-
-Kan endre visning ut ifra tilstand:
-
-```js
-import LabelWithCallout from '@skatteetaten/frontend-components/LabelWithCallout';
 import Button from '@skatteetaten/frontend-components/Button';
 
 <>

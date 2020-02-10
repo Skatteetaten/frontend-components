@@ -1,8 +1,6 @@
 import { mergeStyles, mergeStyleSets } from '@uifabric/merge-styles';
 import { getTheme } from '@uifabric/styling';
 import { FontSizes, FontWeights } from '../utils/fonts';
-import { MdIcons } from '../utils/icons/';
-import { Animation } from '../utils/getAnimationStyles';
 import { PaletteProps } from '..';
 import { ComboboxProps } from './ComboBox';
 
@@ -31,7 +29,7 @@ function getFieldTypeStyles(props: ComboboxProps) {
   } else {
     return {
       '& .ms-ComboBox-Input': {
-        fontSize: FontSizes.small
+        fontSize: FontSizes.medium
       }
     };
   }
@@ -53,8 +51,10 @@ export const getClassNames = (props: ComboboxProps) => {
       '& .ms-ComboBox': {
         borderRadius: '0px',
         height: '30px',
-        padding: '1px 32px 1px 12px',
-        borderColor: palette.skeColor.blackAlt
+        padding: '0px 32px 1px 8px',
+        borderColor: errorMessage
+          ? palette.skeColor.error
+          : palette.skeColor.blackAlt
       },
       '& .ms-ComboBox:active, & .ms-ComboBox:focus, & .ms-ComboBox::after, &.is-active.ms-ComboBox, .ms-ComboBox.is-open': {
         border: `2px solid ${palette.skeColor.blue}`
@@ -82,39 +82,6 @@ export const getClassNames = (props: ComboboxProps) => {
   });
 };
 
-export const getErrorClassNames = (props: ComboboxProps) => {
-  const { errorMessage } = props;
-  const palette = getTheme().palette as PaletteProps;
-  const color = errorMessage
-    ? palette.skeColor.error
-    : palette.skeColor.blackAlt;
-  const errorIcon = "'" + MdIcons.icons.Error + "'";
-
-  return mergeStyles(Animation.errorMessage, {
-    displayName: 'SkeComboBoxError',
-    color,
-    fontSize: FontSizes.small,
-    fontWeight: '400',
-    paddingTop: '5px',
-    display: 'flex',
-    alignItems: 'center',
-    paddingLeft: 20,
-    position: 'relative',
-    selectors: {
-      '&:before': {
-        fontFamily: MdIcons.fontFace.fontFamily,
-        fontSize: 18,
-        display: 'block',
-        content: errorIcon,
-        marginRight: 3,
-        position: 'absolute',
-        top: 5,
-        left: 0
-      }
-    }
-  });
-};
-
 export const getOptionsClassNames = (props: ComboboxProps) => {
   const palette = getTheme().palette as PaletteProps;
 
@@ -122,11 +89,25 @@ export const getOptionsClassNames = (props: ComboboxProps) => {
     displayName: 'SkeComboBoxOptions',
     selectors: {
       '& .ms-ComboBox-option': {
-        border: `2px solid ${palette.skeColor.transparent}`
+        border: `2px solid ${palette.skeColor.transparent}`,
+        selectors: {
+          ':hover': {
+            background: palette.skeColor.lightBlue,
+            textDecoration: 'underline'
+          }
+        }
       },
       '& .ms-ComboBox-option.is-checked': {
-        border: '2px solid' + palette.skeColor.blue,
-        outline: 'none'
+        background: palette.skeColor.lightBlue,
+        textDecoration: 'underline',
+        outline: 'none',
+        selectors: {
+          ':active': {
+            background: `${palette.skeColor.lightBlue} !important`,
+            border: `2px solid ${palette.skeColor.blue}`,
+            textDecoration: 'none'
+          }
+        }
       },
       '& .ms-ComboBox-option.is-checked:after': {
         border: 'none',

@@ -16,6 +16,8 @@ export interface IRadioButtonGroupOptions extends IChoiceGroupOption {
 
 export interface RadioButtonGroupProps extends IChoiceGroupProps {
   calloutFloating?: boolean;
+  /** Rendrer labelen som legend til bruk i et fieldset */
+  renderAsLegend?: boolean;
   className?: string;
   /** Hjelpetekst */
   help?: JSX.Element | string;
@@ -43,6 +45,7 @@ const RadioButtonGroup = (props: RadioButtonGroupProps) => {
     children,
     className,
     errorMessage,
+    renderAsLegend,
     help,
     warning,
     id,
@@ -66,7 +69,9 @@ const RadioButtonGroup = (props: RadioButtonGroupProps) => {
   return (
     <>
       <LabelWithCallout
+        id={id}
         label={label}
+        renderAsLegend={renderAsLegend}
         help={help}
         warning={warning}
         calloutFloating={calloutFloating}
@@ -87,7 +92,6 @@ const RadioButtonGroup = (props: RadioButtonGroupProps) => {
 };
 
 const DescriptionRender = (description: string) => (p: any) => {
-  const classNames = getClassNames({});
   return (
     <div
       style={{
@@ -99,9 +103,7 @@ const DescriptionRender = (description: string) => (p: any) => {
         {' '}
         {p.text}{' '}
       </span>
-      <span
-        className={classNames.radioButtonDescription + ' ms-ChoiceFieldLabel'}
-      >
+      <span className={'descriptionLabel ms-ChoiceFieldLabel'}>
         {' '}
         {description}{' '}
       </span>

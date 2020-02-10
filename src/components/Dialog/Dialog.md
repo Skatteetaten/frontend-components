@@ -20,11 +20,11 @@ function closeDialog() {
     Vis standard dialog
   </Button>
   <Dialog
-    id="hipp"
     hidden={state.hideDialog}
     type={Dialog.Type.normal}
     onDismiss={closeDialog}
     title="Kansellere arbeidsoppgaven?"
+    forceFocusInsideTrap
     minWidth="400px"
     maxWidth="600px"
   >
@@ -55,12 +55,12 @@ function closeDialog() {
 const content1 = [
   {
     to: '#',
-    title: 'Næringsrapport skatt AS',
+    heading: 'Næringsrapport skatt AS',
     icon: 'ArrowForward'
   },
   {
     to: '#',
-    title: 'Næringsrapport skatt ENK',
+    heading: 'Næringsrapport skatt ENK',
     icon: 'ArrowForward'
   }
 ];
@@ -77,6 +77,7 @@ const content1 = [
     hidden={state.hideDialog}
     type={Dialog.Type.normal}
     onDismiss={closeDialog}
+    forceFocusInsideTrap
     title="Velg den inngangen som passer for deg"
     minWidth="500px"
     maxWidth="600px"
@@ -119,10 +120,10 @@ function closeDialog() {
     Vis viktig dialog
   </Button>
   <Dialog
-    id="hipp"
     hidden={state.hideDialog}
     type={Dialog.Type.normal}
     layoutStyle={'important'}
+    forceFocusInsideTrap
     onDismiss={closeDialog}
     title="Viktig melding!"
     minWidth="400px"

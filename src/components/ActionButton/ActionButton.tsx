@@ -36,7 +36,6 @@ export default class ActionButton extends React.PureComponent<
       <FabricActionButton
         {...props}
         className={classnames(getClassNames(this.props), className)}
-        role="button"
         color={color}
         iconProps={{
           iconName: icon

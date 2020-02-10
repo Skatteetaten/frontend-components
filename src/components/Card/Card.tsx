@@ -114,17 +114,12 @@ export default class Card extends React.PureComponent<CardProps, CardState> {
       <div id={id} className={classnames(styles.root, className)}>
         {title || subtitle || expand ? (
           <div className={styles.header}>
-            <div className={styles.titlecontainer} tabIndex={0}>
+            <div className={styles.titlecontainer}>
               {expand && (
                 <div
                   aria-label={title}
                   className={styles.titleExpand}
-                  onClick={() => {
-                    this.setState({
-                      isExpandedState: !this.state.isExpandedState
-                    });
-                    this.props.onClick && this.props.onClick();
-                  }}
+                  onClick={this._toggleExpand}
                 >
                   {title}
                 </div>
@@ -144,27 +139,29 @@ export default class Card extends React.PureComponent<CardProps, CardState> {
             {expand && (
               <div className={styles.expandIcon}>
                 <IconButton
-                  aria-expanded={isExpandedState ? true : false}
+                  aria-expanded={isExpandedState}
                   icon={'ChevronDown'}
                   ariaLabel={title}
-                  circle={circleOnIcon ? true : false}
-                  onClick={() => {
-                    this.setState({
-                      isExpandedState: !this.state.isExpandedState
-                    });
-                    this.props.onClick && this.props.onClick();
-                  }}
+                  circle={circleOnIcon}
+                  onClick={this._toggleExpand}
                 />
               </div>
             )}
           </div>
         ) : null}
         {isExpandedState && (
-          <div {...props} className={styles.body} tabIndex={0}>
+          <div {...props} className={styles.body}>
             {children}
           </div>
         )}
       </div>
     );
   }
+
+  _toggleExpand = () => {
+    this.setState({
+      isExpandedState: !this.state.isExpandedState
+    });
+    this.props.onClick && this.props.onClick();
+  };
 }

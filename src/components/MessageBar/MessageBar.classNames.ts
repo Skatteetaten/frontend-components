@@ -6,7 +6,6 @@ import { MessageBarType } from 'office-ui-fabric-react/lib-commonjs/MessageBar';
 import { PaletteProps } from '..';
 import { MessageBarProps } from './MessageBar';
 
-//import { transitionKeysAreEqual } from 'office-ui-fabric-react/lib-commonjs/utilities/keytips/IKeytipTransitionKey';
 function getBackgroundColor(props: MessageBarProps) {
   const palette = getTheme().palette as PaletteProps;
 
@@ -20,14 +19,11 @@ function getBackgroundColor(props: MessageBarProps) {
       return {
         backgroundColor: palette.skeColor.pink
       };
-    case MessageBarType.info:
-      return {
-        backgroundColor: palette.skeColor.beige
-      };
     case MessageBarType.success:
       return {
         backgroundColor: palette.skeColor.lightGreen
       };
+    case MessageBarType.info:
     default:
       return {
         backgroundColor: palette.skeColor.beige

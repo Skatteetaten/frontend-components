@@ -18,21 +18,14 @@ import { Link as RRLink, BrowserRouter as Router } from 'react-router-dom';
     icon={'ArrowForward'}
     placement="before"
   />
-  <Router>
-    <Link
-      path={'#link'}
-      text={'Åpne i nytt vindu'}
-      icon={'OpenInNew'}
-      placement="after"
-      renderContent={classNames => {
-        return (
-          <RRLink target="_blank" to="/" className={classNames}>
-            Åpne i nytt vindu
-          </RRLink>
-        );
-      }}
-    />
-  </Router>
+  <Link
+    path={'#link'}
+    text={'Åpne i nytt vindu'}
+    icon={'OpenInNew'}
+    openInNew={true}
+    placement="after"
+  />
+
   <br />
   <br />
   <p>
@@ -54,6 +47,9 @@ import { Link as RRLink, BrowserRouter as Router } from 'react-router-dom';
       </a>{' '}
       for hjelp til å lage gode lenketekster.
     </p>
+<h3>Åpne i nytt vindu eller fane</h3>
+<p>Når man velger å åpne i nytt vindu/fane legges det til to egenskaper til lenken. Den første (target) åpner i nytt vindu, og den andre (rel) er en sikkerhetsfunksjon som bryter koblingen mellom kallende vindu og nytt vindu: dersom den åpnede fanen inneholder ondsinnet kode, kan den uten denne funksjonen få tilgang til vinduet lenken klikket fra. Dette er spesielt viktig  å ta hensyn til dersom vi lenker til eksterne sider eller sider med innhold som er brukergenerert.</p>
+
 ```
 
 ```js noeditor uu
