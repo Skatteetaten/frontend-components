@@ -1,6 +1,6 @@
 ** SearchMenu er en komponent som filtrer menyvalg **
 
-SearchMenu
+SearchMenu er basert på at de søkbare elementene er pakket inn i en ul og at de har en [ref](https://reactjs.org/docs/refs-and-the-dom.html)
 ```js
 import React from 'react';
 import ActionButton from '@skatteetaten/frontend-components/ActionButton';
