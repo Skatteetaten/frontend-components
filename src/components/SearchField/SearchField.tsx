@@ -60,11 +60,11 @@ const SearchField: React.FC<SearchFieldProps> = props => {
   const _searchBoxElement = React.createRef<HTMLDivElement>();
   const [dropdownVisible, setDropdownVisible] = React.useState<boolean>(false);
   const [searchResultList, setSearchResultList] = React.useState(options);
-  const [value, setValue] = React.useState<string | undefined>(undefined);
+  const [value, setValue] = React.useState<string | undefined>(props.value);
   const styles = getClassNames(props);
 
   const renderSuggestions = list => {
-    //@ts-ignore
+    //@ts-ignore TODO
     const event: React.ChangeEvent<HTMLInputElement> = {};
     return (
       <div className={styles.searchListDropdown}>
