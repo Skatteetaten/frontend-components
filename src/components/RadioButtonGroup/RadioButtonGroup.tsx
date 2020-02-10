@@ -16,8 +16,6 @@ export interface IRadioButtonGroupOptions extends IChoiceGroupOption {
 
 export interface RadioButtonGroupProps extends IChoiceGroupProps {
   calloutFloating?: boolean;
-  /** Rendrer labelen som legend til bruk i et fieldset */
-  renderAsLegend?: boolean;
   className?: string;
   /** Hjelpetekst */
   help?: JSX.Element | string;
@@ -45,7 +43,6 @@ const RadioButtonGroup = (props: RadioButtonGroupProps) => {
     children,
     className,
     errorMessage,
-    renderAsLegend,
     help,
     warning,
     id,
@@ -71,7 +68,6 @@ const RadioButtonGroup = (props: RadioButtonGroupProps) => {
       <LabelWithCallout
         id={id}
         label={label}
-        renderAsLegend={renderAsLegend}
         help={help}
         warning={warning}
         calloutFloating={calloutFloating}

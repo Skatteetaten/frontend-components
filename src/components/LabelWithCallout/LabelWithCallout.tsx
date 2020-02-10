@@ -14,8 +14,6 @@ export interface LabelWithCalloutProps
   extends React.HTMLAttributes<HTMLDivElement> {
   /** aria-label */
   ariaLabel?: string;
-  /** Dersom komponenten skal som brukes tittel inni et fieldset **/
-  renderAsLegend?: boolean;
   calloutFloating?: boolean;
   className?: string;
   editable?: boolean;
@@ -41,7 +39,6 @@ const LabelWithCallout = (props: LabelWithCalloutProps) => {
     editable,
     editFunction,
     help,
-    renderAsLegend,
     id,
     label,
     readOnly,
@@ -82,13 +79,7 @@ const LabelWithCallout = (props: LabelWithCalloutProps) => {
       className={classnames(styles.labelArea, className)}
     >
       <span className={styles.label}>
-        {label ? (
-          renderAsLegend ? (
-            <legend>{label}</legend>
-          ) : (
-            <Label>{label}</Label>
-          )
-        ) : null}
+        {label ? <Label>{label}</Label> : null}
       </span>
       {help && !warning && (
         <span className={styles.labelIconArea} ref={iconButtonElementRef}>
