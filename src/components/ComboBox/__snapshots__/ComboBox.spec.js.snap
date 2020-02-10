@@ -11,7 +11,6 @@ exports[`Combobox komponent matcher med snapshot 1`] = `
   </div>
   <div
     className="ms-ComboBox-container SkeCombobox-40"
-    role="combobox"
   >
     <div
       className="ms-ComboBox css-48"

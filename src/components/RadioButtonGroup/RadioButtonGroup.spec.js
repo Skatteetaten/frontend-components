@@ -90,4 +90,40 @@ describe('RadioButtonGroup komponent', () => {
         .html()
     ).toContain('Valg C');
   });
+  it('rendrer RadioButtonGroup med beskrivelse', () => {
+    const wrapper = oppsettFullDOM({
+      required: true,
+      id: 'radiobuttongroup-id',
+      className: 'radiobuttongroup-class',
+      label: 'Velg en',
+      defaultSelectedKey: 'B',
+      options: [
+        {
+          key: 'A',
+          text: 'Valg A',
+          description: 'Beskrivelse til A'
+        },
+        {
+          key: 'B',
+          text: 'Valg B',
+          description: 'Beskrivelse til B'
+        }
+      ]
+    });
+    const radiobutton = wrapper.find('StyledChoiceGroupOptionBase');
+    expect(
+      radiobutton
+        .at(1)
+        .find('.ms-ChoiceFieldLabel')
+        .first()
+        .html()
+    ).toContain('Valg B');
+    expect(
+      radiobutton
+        .at(1)
+        .find('.ms-ChoiceFieldLabel')
+        .last()
+        .html()
+    ).toContain('Beskrivelse til B');
+  });
 });
