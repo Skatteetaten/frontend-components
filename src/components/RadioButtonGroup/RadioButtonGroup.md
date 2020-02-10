@@ -18,13 +18,43 @@ const initialState = {
 <fieldset style={{ border: 'none' }}>
   <RadioButtonGroup
     label="Type virksomhet"
-    renderAsLegend
     options={state.options}
     onChange={(e, option) => console.log(option)}
     help="Type virksomhet vil påvirke hva du må rapportere til oss."
     id="radio"
   />
 </fieldset>;
+```
+
+Med beskrivelse på hvert steg:
+
+```js
+import RadioButtonGroup from '@skatteetaten/frontend-components/RadioButtonGroup';
+
+const initialState = {
+  options: [
+    {
+      key: 'A',
+      text: 'Sparekonto',
+      description:
+        'Dette er egentlig bare en brukskonto, med et annet navn. Du har ubegrenset uttak i året'
+    },
+    {
+      key: 'B',
+      text: 'Sparekonto pluss',
+      description:
+        'Hvis du er veldig glad i å spare uten renter er dette kontoen for deg. Uttak fra denne kontoen kommer med gebyr'
+    }
+  ]
+};
+<>
+  <RadioButtonGroup
+    label="Type sparekonto"
+    options={state.options}
+    onChange={(e, option) => console.log(option)}
+    id="radio"
+  />
+</>;
 ```
 
 ```js noeditor uu

@@ -53,7 +53,12 @@ export const getClassNames = (props: LabelWithCalloutProps) => {
       display: 'flex',
       flexWrap: 'wrap',
       alignItems: 'center',
-      fontSize: FontSizes.medium
+      fontSize: FontSizes.medium,
+      selectors: {
+        '& legend': {
+          paddingLeft: 0
+        }
+      }
     },
     label: {
       selectors: {

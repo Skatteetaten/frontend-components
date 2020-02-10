@@ -3,7 +3,7 @@ import { getTheme } from '@uifabric/styling';
 import { FontSizes, FontWeights } from '../utils/fonts';
 import { isUndefined } from 'util';
 import { PaletteProps } from '..';
-// @ts-ignore TODO
+
 export const getClassNames = props => {
   const palette = getTheme().palette as PaletteProps;
   const inset = -6;
@@ -14,20 +14,25 @@ export const getClassNames = props => {
       '::-moz-focus-inner': {
         border: '0'
       },
-      ' & .ms-ChoiceField-wrapper': {
+      '& .ms-ChoiceField-wrapper': {
         position: 'relative'
       },
       '& .ms-ChoiceField-field': {
         display: 'inline-block',
-        marginTop: '8px',
+        marginTop: '4px',
+        marginBottom: '4px',
         position: 'relative',
         outline: 0,
-        verticalAlign: 'top'
+        verticalAlign: 'middle'
       },
       'span.ms-ChoiceFieldLabel': {
         fontSize: FontSizes.medium,
         display: 'inline-block',
         paddingLeft: '26px'
+      },
+      'span.descriptionLabel': {
+        fontSize: FontSizes.smallPlus,
+        color: palette.skeColor.darkGrey
       },
       '& .ms-ChoiceField-field::before': {
         content: '',
