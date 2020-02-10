@@ -24,7 +24,7 @@ export const getClassNames = (props: SearchFieldProps) => {
       border: `1px solid ${palette.skeColor.black}`,
       borderTop: 0,
       selectors: {
-        'ul': {
+        ul: {
           margin: 0
         }
       }
