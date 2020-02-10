@@ -20,7 +20,7 @@ export const getClassNames = (props: SearchFieldProps) => {
     },
     searchListDropdown: {
       width: '100% - 2px',
-      top: '-13px',
+      top: '-13px !important',
       border: `1px solid ${palette.skeColor.black}`,
       borderTop: 0
     },

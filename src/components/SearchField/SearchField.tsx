@@ -84,7 +84,6 @@ const SearchField: React.FC<SearchFieldProps> = props => {
       </div>
     );
   };
-
   return (
     <>
       <LabelWithCallout
@@ -100,12 +99,14 @@ const SearchField: React.FC<SearchFieldProps> = props => {
             {...rest}
             className={classnames(styles.main, className)}
             onChange={(ev, newValue) => {
-              if (newValue) {
+              if (!newValue) {
+                setDropdownVisible(false);
+              } else {
                 const newList = searchInList(options, newValue);
                 setSearchResultList(newList);
                 setDropdownVisible(newList.length > 0);
-                setValue(newValue);
               }
+              setValue(newValue);
             }}
             value={value}
           />
