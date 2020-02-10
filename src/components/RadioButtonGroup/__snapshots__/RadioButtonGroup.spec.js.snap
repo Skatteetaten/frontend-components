@@ -3,38 +3,38 @@
 exports[`RadioButtonGroup komponent matcher snapshot 1`] = `
 Array [
   <div
-    className="labelArea-43"
+    className="labelArea-42"
   >
     <span
-      className="label-44"
+      className="label-43"
     >
       <label
-        className="ms-Label root-48"
+        className="ms-Label root-47"
       >
         Velg en
       </label>
     </span>
   </div>,
   <div
-    className="subComponentStyles radioButtonDescription selectors applicationRole-49"
+    className="applicationRole-48"
   >
     <div
       aria-labelledby="Velg en"
-      className="ms-ChoiceFieldGroup root-50"
+      className="ms-ChoiceFieldGroup root-49"
       role="radiogroup"
     >
       <div
-        className="ms-ChoiceFieldGroup-flexContainer flexContainer-51"
+        className="ms-ChoiceFieldGroup-flexContainer flexContainer-50"
       >
         <div
-          className="ms-ChoiceField root-52"
+          className="ms-ChoiceField root-51"
         >
           <div
-            className="ms-ChoiceField-wrapper choiceFieldWrapper-53"
+            className="ms-ChoiceField-wrapper choiceFieldWrapper-52"
           >
             <input
               checked={false}
-              className="ms-ChoiceField-input input-54"
+              className="ms-ChoiceField-input input-53"
               id="ChoiceGroup0-A"
               name="ChoiceGroup0"
               onBlur={[Function]}
@@ -44,7 +44,7 @@ Array [
               type="radio"
             />
             <label
-              className="ms-ChoiceField-field field-55"
+              className="ms-ChoiceField-field field-54"
               htmlFor="ChoiceGroup0-A"
             >
               <span
@@ -57,14 +57,14 @@ Array [
           </div>
         </div>
         <div
-          className="ms-ChoiceField root-52"
+          className="ms-ChoiceField root-51"
         >
           <div
-            className="ms-ChoiceField-wrapper choiceFieldWrapper-53"
+            className="ms-ChoiceField-wrapper choiceFieldWrapper-52"
           >
             <input
               checked={true}
-              className="ms-ChoiceField-input input-54"
+              className="ms-ChoiceField-input input-53"
               id="ChoiceGroup0-B"
               name="ChoiceGroup0"
               onBlur={[Function]}
@@ -74,7 +74,7 @@ Array [
               type="radio"
             />
             <label
-              className="ms-ChoiceField-field is-checked field-61"
+              className="ms-ChoiceField-field is-checked field-60"
               htmlFor="ChoiceGroup0-B"
             >
               <span
@@ -87,14 +87,14 @@ Array [
           </div>
         </div>
         <div
-          className="ms-ChoiceField root-52"
+          className="ms-ChoiceField root-51"
         >
           <div
-            className="ms-ChoiceField-wrapper choiceFieldWrapper-53"
+            className="ms-ChoiceField-wrapper choiceFieldWrapper-52"
           >
             <input
               checked={false}
-              className="ms-ChoiceField-input is-disabled input-54"
+              className="ms-ChoiceField-input is-disabled input-53"
               disabled={true}
               id="ChoiceGroup0-C"
               name="ChoiceGroup0"
@@ -105,7 +105,7 @@ Array [
               type="radio"
             />
             <label
-              className="ms-ChoiceField-field field-64"
+              className="ms-ChoiceField-field field-63"
               htmlFor="ChoiceGroup0-C"
             >
               <span
@@ -118,14 +118,14 @@ Array [
           </div>
         </div>
         <div
-          className="ms-ChoiceField root-52"
+          className="ms-ChoiceField root-51"
         >
           <div
-            className="ms-ChoiceField-wrapper choiceFieldWrapper-53"
+            className="ms-ChoiceField-wrapper choiceFieldWrapper-52"
           >
             <input
               checked={false}
-              className="ms-ChoiceField-input is-disabled input-54"
+              className="ms-ChoiceField-input is-disabled input-53"
               disabled={true}
               id="ChoiceGroup0-D"
               name="ChoiceGroup0"
@@ -136,7 +136,7 @@ Array [
               type="radio"
             />
             <label
-              className="ms-ChoiceField-field field-64"
+              className="ms-ChoiceField-field field-63"
               htmlFor="ChoiceGroup0-D"
             >
               <span
