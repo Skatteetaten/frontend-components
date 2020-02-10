@@ -22,7 +22,12 @@ export const getClassNames = (props: SearchFieldProps) => {
       width: '100% - 2px',
       top: '-13px',
       border: `1px solid ${palette.skeColor.black}`,
-      borderTop: 0
+      borderTop: 0,
+      selectors: {
+        ul: {
+          margin: 0
+        }
+      }
     },
     main: {
       displayName: 'SkeSearchField',

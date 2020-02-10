@@ -53,6 +53,7 @@ const SearchField: React.FC<SearchFieldProps> = props => {
     label,
     labelCallout,
     onCalloutToggle,
+    onChange,
     options,
     ...rest
   } = props;
@@ -63,6 +64,8 @@ const SearchField: React.FC<SearchFieldProps> = props => {
   const styles = getClassNames(props);
 
   const renderSuggestions = list => {
+    //@ts-ignore
+    const event: React.ChangeEvent<HTMLInputElement> = {};
     return (
       <div className={styles.searchListDropdown}>
         <ul className={styles.searchList}>
@@ -73,6 +76,7 @@ const SearchField: React.FC<SearchFieldProps> = props => {
                 color={'black'}
                 onClick={() => {
                   setValue(listItem.text);
+                  onChange && onChange(event, listItem.text);
                   setDropdownVisible(false);
                 }}
               >
@@ -84,7 +88,6 @@ const SearchField: React.FC<SearchFieldProps> = props => {
       </div>
     );
   };
-
   return (
     <>
       <LabelWithCallout
@@ -100,12 +103,15 @@ const SearchField: React.FC<SearchFieldProps> = props => {
             {...rest}
             className={classnames(styles.main, className)}
             onChange={(ev, newValue) => {
-              if (newValue) {
+              if (!newValue) {
+                setDropdownVisible(false);
+              } else {
                 const newList = searchInList(options, newValue);
                 setSearchResultList(newList);
                 setDropdownVisible(newList.length > 0);
-                setValue(newValue);
               }
+              setValue(newValue);
+              onChange && onChange(ev, newValue);
             }}
             value={value}
           />
