@@ -8,7 +8,27 @@ import { ReactElement } from 'react';
 export interface SearchMenuProps extends ISearchBoxProps {
   /** Boolean for om dropdownlisten skal vises initielt */
   dropdownVisible?: boolean;
+  children: Array<ReactElement>;
 }
+const filterChildren = (children: Array<ReactElement>, value) => {
+  const tempFilteredChildren: Array<ReactElement> = [];
+
+  children.forEach((child: ReactElement) => {
+    if (child.type === 'ul') {
+      child.props.children.filter((grandchild) => {
+        if (grandchild.ref.current.innerText.toLowerCase().indexOf(value.toLowerCase()) === -1) {
+          grandchild.ref.current.style.display = 'none';
+        } else {
+          grandchild.ref.current.style.display = '';
+        }
+        return grandchild;
+      });
+    }
+    tempFilteredChildren.push(child);
+
+  });
+  return tempFilteredChildren;
+};
 
 const SearchMenu: React.FC<SearchMenuProps> = props => {
   const {
@@ -21,54 +41,27 @@ const SearchMenu: React.FC<SearchMenuProps> = props => {
   const styles = getClassNames(props);
   const [value, setValue] = React.useState<string | undefined>(valueFromProp);
   const [dropdownVisible, setDropDownVisible] = React.useState<boolean>(dropdownVisibleFromProp !== undefined ? dropdownVisibleFromProp : true);
-
-  const renderChildrenBasedOnSearch = (children, value: string | undefined) => {
-    const filteredChildren: Array<ReactElement> = [];
-    const filterChildren = (children: Array<ReactElement>) => {
-      children.forEach((child: ReactElement) => {
-        if (child.type === 'ul') {
-          const filteredGrandChildren: Array<ReactElement> = [];
-          child.props.children.forEach(listItem => {
-            if (
-              listItem.ref.current && listItem.ref.current.innerText
-                .toString()
-                .toLowerCase()
-                .indexOf(value?.toLowerCase()) > -1
-            ) {
-              filteredGrandChildren.push(listItem);
-            }
-          });
-          const clone = React.cloneElement(child, {
-            children: filteredGrandChildren
-          });
-          filteredChildren.push(clone);
-        } else {
-          filteredChildren.push(child);
-        }
-      });
-      return filteredChildren;
-    };
-
-    return (
-      <div
-        className={classnames(
-          searchFieldClasses(props).searchListDropdown,
-          styles.searchMenuDropdown
-        )}
-      >
-        {value ? filterChildren(children) : children}
-      </div>
-    );
-  };
-  const [filteredChildren, setFilteredChildren] = React.useState<Array<ReactElement>>(renderChildrenBasedOnSearch(children, valueFromProp));
+  const [filteredChildren, setFilteredChildren] = React.useState<Array<ReactElement>>([]);
 
   React.useEffect(() => {
     setValue(valueFromProp);
-    setFilteredChildren(renderChildrenBasedOnSearch(children, valueFromProp))
+    setFilteredChildren(renderChildrenBasedOnSearch(children, valueFromProp));
   }, [valueFromProp]);
 
-  const ShowChildren = filteredChildren.map((child, key: string) => {
-    return child
+  const renderChildrenBasedOnSearch = (
+    children: Array<ReactElement>,
+    value: string | undefined
+  ) => {
+    const returnedList = value ? filterChildren(children, value) : children;
+    return returnedList ;
+  };
+
+  const mappedChildren = filteredChildren.map((child: ReactElement, key: number) => {
+    return (
+      <div key={child.type.toString().concat(key.toString())}>
+        {child}
+      </div>
+    );
   });
 
   return (
@@ -80,10 +73,20 @@ const SearchMenu: React.FC<SearchMenuProps> = props => {
           value={value}
           onChange={(ev, newValue: string | undefined) => {
             setValue(newValue);
+            setFilteredChildren(renderChildrenBasedOnSearch(children, newValue));
           }}
         />
       </div>
-      {dropdownVisible && <ShowChildren />}
+      {dropdownVisible &&
+      <div
+        className={classnames(
+          searchFieldClasses(props).searchListDropdown,
+          styles.searchMenuDropdown
+        )}
+      >
+        {mappedChildren}
+      </div>
+      }
     </>
   );
 };
