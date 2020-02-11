@@ -63,6 +63,10 @@ const SearchField: React.FC<SearchFieldProps> = props => {
   const [value, setValue] = React.useState<string | undefined>(props.value);
   const styles = getClassNames(props);
 
+  React.useEffect(() => {
+    setSearchResultList(options);
+  }, [options]);
+
   const renderSuggestions = list => {
     //@ts-ignore TODO
     const event: React.ChangeEvent<HTMLInputElement> = {};
