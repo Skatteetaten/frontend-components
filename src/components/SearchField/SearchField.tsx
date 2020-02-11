@@ -74,15 +74,19 @@ const SearchField: React.FC<SearchFieldProps> = props => {
       <div className={styles.searchListDropdown}>
         <ul className={styles.searchList}>
           {list.map(listItem => (
-            <li key={listItem.key}>
+            <li
+              aria-label={listItem.text}
+              key={listItem.key}
+              onClick={() => {
+                setValue(listItem.text);
+                onChange && onChange(event, listItem.text);
+                setDropdownVisible(false);
+              }}
+            >
               <ActionButton
                 ariaLabel={listItem.text}
-                color={'black'}
-                onClick={() => {
-                  setValue(listItem.text);
-                  onChange && onChange(event, listItem.text);
-                  setDropdownVisible(false);
-                }}
+                className={styles.blackAlt}
+                title={listItem.text}
               >
                 {listItem.text}
               </ActionButton>
@@ -102,7 +106,7 @@ const SearchField: React.FC<SearchFieldProps> = props => {
         {...labelCallout}
       />
       {options ? (
-        <div ref={_searchBoxElement} className={styles.searchBoxWrapper}>
+        <div ref={_searchBoxElement}>
           <SearchBox
             {...rest}
             className={classnames(styles.main, className)}
