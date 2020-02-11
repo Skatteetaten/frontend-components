@@ -67,9 +67,15 @@ const SearchField: React.FC<SearchFieldProps> = props => {
     setSearchResultList(options);
   }, [options]);
 
-  const renderSuggestions = list => {
+  const changeEvent = (text: string) => {
     //@ts-ignore TODO
     const event: React.ChangeEvent<HTMLInputElement> = {};
+    setValue(text);
+    onChange && onChange(event, text);
+    setDropdownVisible(false);
+  };
+
+  const renderSuggestions = list => {
     return (
       <div className={styles.searchListDropdown}>
         <ul className={styles.searchList}>
@@ -77,16 +83,19 @@ const SearchField: React.FC<SearchFieldProps> = props => {
             <li
               aria-label={listItem.text}
               key={listItem.key}
-              onClick={() => {
-                setValue(listItem.text);
-                onChange && onChange(event, listItem.text);
-                setDropdownVisible(false);
+              onClick={() => changeEvent(listItem.text)}
+              onKeyPress={ev => {
+                if (ev.key === 'Enter') {
+                  changeEvent(listItem.text);
+                }
               }}
+              tabIndex={0}
             >
               <ActionButton
                 ariaLabel={listItem.text}
                 className={styles.blackAlt}
                 title={listItem.text}
+                tabIndex={-1}
               >
                 {listItem.text}
               </ActionButton>
