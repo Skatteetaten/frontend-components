@@ -33,19 +33,17 @@ export const getClassNames = (props: SearchFieldProps) => {
           cursor: 'pointer',
           color: palette.skeColor.blackAlt,
           selectors: {
-            ':hover': {
+            ':hover:': {
               background: palette.skeColor.lightBlue,
               textDecoration: 'underline'
             },
             ':active': {
               background: palette.skeColor.lightBlue,
-              border: `2px solid ${palette.skeColor.blue}`,
               textDecoration: 'none'
             },
             ':focus': {
               background: palette.skeColor.lightBlue,
-              border: `2px solid ${palette.skeColor.blue}`,
-              textDecoration: 'none'
+              textDecoration: 'underline'
             }
           }
         }

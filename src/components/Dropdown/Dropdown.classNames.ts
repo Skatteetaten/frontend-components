@@ -155,10 +155,13 @@ export const getCalloutClassNames = () => {
           },
           ':active': {
             background: palette.skeColor.lightBlue,
-            border: `2px solid ${palette.skeColor.blue}`,
             textDecoration: 'none'
           }
         }
+      },
+      '.ms-Dropdown-item:focus': {
+        background: palette.skeColor.lightBlue,
+        textDecoration: 'underline'
       }
     }
   });

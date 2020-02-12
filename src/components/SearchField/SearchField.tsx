@@ -66,11 +66,14 @@ const SearchField: React.FC<SearchFieldProps> = props => {
   const [dropdownVisible, setDropdownVisible] = React.useState<boolean>(false);
   const [searchResultList, setSearchResultList] = React.useState(options);
   const [value, setValue] = React.useState<string | undefined>(props.value);
+  const [focus, setFocus] = React.useState<number>(-1);
   const styles = getClassNames(props);
+  const listRefs = React.useRef<(HTMLLIElement | null)[]>([]);
 
   React.useEffect(() => {
     setSearchResultList(options);
-  }, [options]);
+    setValue(props.value);
+  }, [options, props.value]);
 
   const changeEvent = (text: string) => {
     //@ts-ignore TODO
@@ -78,34 +81,64 @@ const SearchField: React.FC<SearchFieldProps> = props => {
     setValue(text);
     onChange && onChange(event, text);
     setDropdownVisible(false);
+    setFocus(-1);
+    listRefs.current = [];
+  };
+
+  const handleOnKeyDown = (ev: React.KeyboardEvent<HTMLElement>) => {
+    if (dropdownVisible && listRefs.current) {
+      let newFocus = focus;
+      if (ev.keyCode === 38) {
+        newFocus--;
+      } else if (ev.keyCode === 40) {
+        newFocus++;
+      }
+      if (newFocus <= listRefs.current.length - 1) {
+        const focusItem = listRefs.current[newFocus];
+        focusItem && focusItem.focus();
+        setFocus(newFocus);
+      }
+    }
   };
 
   const renderSuggestions = list => {
+    if (list.length === 0) {
+      setDropdownVisible(false);
+      listRefs.current = [];
+    }
     return (
       <div className={styles.searchListDropdown}>
         <ul className={styles.searchList}>
-          {list.map(listItem => (
-            <li
-              aria-label={listItem.text}
-              key={listItem.key}
-              onClick={() => changeEvent(listItem.text)}
-              onKeyPress={ev => {
-                if (ev.key === 'Enter') {
-                  changeEvent(listItem.text);
-                }
-              }}
-              tabIndex={0}
-            >
-              <ActionButton
-                ariaLabel={listItem.text}
-                className={styles.blackAlt}
-                title={listItem.text}
-                tabIndex={-1}
+          {list.map((listItem, key: number) => {
+            return (
+              <li
+                aria-label={listItem.text}
+                key={listItem.key}
+                onClick={() => changeEvent(listItem.text)}
+                onKeyPress={ev => {
+                  if (ev.keyCode === 0) {
+                    changeEvent(listItem.text);
+                  }
+                }}
+                onKeyDown={ev => handleOnKeyDown(ev)}
+                ref={(ref: HTMLLIElement | null) => {
+                  if (ref && listRefs.current.indexOf(ref) === -1) {
+                    listRefs.current.splice(key, 0, ref);
+                  }
+                }}
+                tabIndex={0}
               >
-                {listItem.text}
-              </ActionButton>
-            </li>
-          ))}
+                <ActionButton
+                  ariaLabel={listItem.text}
+                  className={styles.blackAlt}
+                  title={listItem.text}
+                  tabIndex={-1}
+                >
+                  {listItem.text}
+                </ActionButton>
+              </li>
+            );
+          })}
         </ul>
       </div>
     );
@@ -135,6 +168,7 @@ const SearchField: React.FC<SearchFieldProps> = props => {
               setValue(newValue);
               onChange && onChange(ev, newValue);
             }}
+            onKeyDown={ev => handleOnKeyDown(ev)}
             value={value}
           />
           {dropdownVisible && renderSuggestions(searchResultList)}
