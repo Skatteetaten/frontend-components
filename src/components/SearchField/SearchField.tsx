@@ -37,7 +37,12 @@ export interface SearchFieldProps extends ISearchBoxProps {
 const searchInList = (options: Array<IDropdownOption>, filterText: string) => {
   return options
     .filter(option => {
-      return option.text.toLowerCase().indexOf(filterText.toLowerCase()) > -1;
+      return (
+        option.text
+          .replace(/\s/g, '')
+          .toLowerCase()
+          .indexOf(filterText.replace(/\s/g, '').toLowerCase()) > -1
+      );
     })
     .map(option => option);
 };
