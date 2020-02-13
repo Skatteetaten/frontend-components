@@ -50,6 +50,8 @@ export const getClassNames = (props: LabelWithCalloutProps) => {
     },
     label: {
       paddingBottom: 4,
+      paddingLeft: 0,
+
       display: 'inline-block',
       selectors: {
         color: palette.skeColor.blackAlt,
@@ -62,7 +64,7 @@ export const getClassNames = (props: LabelWithCalloutProps) => {
     },
     labelAsLegend: {
       paddingLeft: 0,
-      paddingBottom: 2,
+      paddingBottom: 4,
       display: 'inline-block',
       selectors: {
         color: palette.skeColor.blackAlt,
@@ -83,12 +85,24 @@ export const getClassNames = (props: LabelWithCalloutProps) => {
 
       selectors: {
         '& button ': {
-          top: '-1px',
-          height: '22px'
+          height: '22px',
+          marginTop: '-2px'
         }
       }
     },
     icon: {
+      color: palette.skeColor.blue,
+      selectors: {
+        '& i': {
+          fontSize: 'large'
+        },
+        '&:focus&:after': {
+          border: `2px solid ${palette.skeColor.blue}`,
+          outline: 'none'
+        }
+      }
+    },
+    warningicon: {
       color: palette.skeColor.blue,
       selectors: {
         '& i': {

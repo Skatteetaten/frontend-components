@@ -1,7 +1,6 @@
 import * as React from 'react';
 import { getClassNames } from './LabelWithCallout.classNames';
 import { IconButton } from 'office-ui-fabric-react/lib-commonjs/Button';
-import { Label } from 'office-ui-fabric-react/lib-commonjs/Label';
 import Callout from '../Callout';
 import classnames from 'classnames';
 
@@ -78,11 +77,19 @@ const LabelWithCallout = (props: LabelWithCalloutProps) => {
   ) : (
     <>
       {inFieldset ? (
-        <legend id={id} className={classnames(styles.labelAsLegend, className)}>
+        <legend
+          aria-label={ariaLabel}
+          id={id}
+          className={classnames(styles.labelAsLegend, className)}
+        >
           {label}
         </legend>
       ) : (
-        <label id={id} className={classnames(styles.label, className)}>
+        <label
+          aria-label={ariaLabel}
+          id={id}
+          className={classnames(styles.label, className)}
+        >
           {label}
         </label>
       )}
@@ -104,14 +111,14 @@ const LabelWithCallout = (props: LabelWithCalloutProps) => {
       {warning && (
         <span className={styles.labelIconArea} ref={iconButtonElementRef}>
           <IconButton
-            iconProps={{ iconName: 'WarningOutline' }}
+            iconProps={{ iconName: 'warningOutline' }}
             title="Varsel"
             ariaLabel={'Åpne varsel'}
             onClick={() => {
               setIsCalloutVisible(!isCalloutVisible);
               toggleEvent();
             }}
-            className={styles.icon}
+            className={styles.warningicon}
           />
         </span>
       )}
