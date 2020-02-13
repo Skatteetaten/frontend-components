@@ -48,19 +48,9 @@ export const getClassNames = (props: LabelWithCalloutProps) => {
         }
       }
     },
-    labelArea: {
-      position: 'relative',
-      display: 'flex',
-      flexWrap: 'wrap',
-      alignItems: 'center',
-      fontSize: FontSizes.medium,
-      selectors: {
-        '& legend': {
-          paddingLeft: 0
-        }
-      }
-    },
     label: {
+      paddingBottom: 4,
+      display: 'inline-block',
       selectors: {
         color: palette.skeColor.blackAlt,
         fontWeight: FontWeights.regular,
@@ -70,12 +60,31 @@ export const getClassNames = (props: LabelWithCalloutProps) => {
         }
       }
     },
-    labelIconArea: {
-      height: '26px',
-      marginTop: '-5px',
+    labelAsLegend: {
+      paddingLeft: 0,
+      paddingBottom: 2,
+      display: 'inline-block',
       selectors: {
-        '& button': {
-          position: 'relative'
+        color: palette.skeColor.blackAlt,
+        fontWeight: FontWeights.regular,
+        ...getLabelSize(props),
+        '& .ms-Label': {
+          fontWeight: FontWeights.regular
+        },
+
+        '@supports (display: contents)': {
+          display: 'contents'
+        }
+      }
+    },
+    labelIconArea: {
+      height: '22px',
+      display: 'inline-block',
+
+      selectors: {
+        '& button ': {
+          top: '-1px',
+          height: '22px'
         }
       }
     },
