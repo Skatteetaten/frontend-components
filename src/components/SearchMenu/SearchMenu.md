@@ -77,3 +77,39 @@ let ref = [];
     </SearchMenu>
 </div>;
 ```
+
+Med Checkboxer:
+```js
+import React from 'react';
+import SearchMenu from '@skatteetaten/frontend-components/SearchMenu';
+import CheckBox from '@skatteetaten/frontend-components/CheckBox';
+
+
+const checkBoxList = [
+  {key: 1, text: 'Forskuddsskatt'},
+  {key: 2, text: 'Skattemelding'},
+  {key: 3, text: 'Skatteoppgjør'}
+];
+const [value, setValue] = React.useState(undefined);
+const [visible, setVisible] = React.useState(true);
+let ref = [];
+
+<div style={{ width: '350px' }}>
+    <SearchMenu
+      value={value}
+      dropdownVisible={visible}
+    >
+      <div></div>
+      <ul>
+        {checkBoxList.map(listItem => {
+          ref[listItem.text] = React.useRef();
+          return (
+            <li key={listItem.key} ref={ref[listItem.text]}>
+              <CheckBox boxSide={'start'} label={listItem.text} />
+            </li>
+          );
+        })}
+      </ul>
+    </SearchMenu>
+</div>;
+```

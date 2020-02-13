@@ -1,5 +1,8 @@
 import * as React from 'react';
-import { ISearchBoxProps, SearchBox } from 'office-ui-fabric-react/lib-commonjs/SearchBox';
+import {
+  ISearchBoxProps,
+  SearchBox
+} from 'office-ui-fabric-react/lib-commonjs/SearchBox';
 import classnames from 'classnames';
 import { getClassNames } from './SearchMenu.classNames';
 import { getClassNames as searchFieldClasses } from '../SearchField/SearchField.classNames';
@@ -15,17 +18,22 @@ const filterChildren = (children: Array<ReactElement>, value) => {
 
   children.forEach((child: ReactElement) => {
     if (child.type === 'ul') {
-      child.props.children.filter((grandchild) => {
-        if (grandchild.ref.current.innerText.toLowerCase().indexOf(value.toLowerCase()) === -1) {
+      child.props.children.filter(grandchild => {
+        if (
+          grandchild.ref.current.innerText
+            .toLowerCase()
+            .indexOf(value.toLowerCase()) === -1
+        ) {
           grandchild.ref.current.style.display = 'none';
+          grandchild.ref.current.setAttribute('tabindex', 0);
         } else {
           grandchild.ref.current.style.display = '';
+          grandchild.ref.current.setAttribute('tabindex', -1);
         }
         return grandchild;
       });
     }
     tempFilteredChildren.push(child);
-
   });
   return tempFilteredChildren;
 };
@@ -40,8 +48,12 @@ const SearchMenu: React.FC<SearchMenuProps> = props => {
   } = props;
   const styles = getClassNames(props);
   const [value, setValue] = React.useState<string | undefined>(valueFromProp);
-  const [dropdownVisible, setDropDownVisible] = React.useState<boolean>(dropdownVisibleFromProp !== undefined ? dropdownVisibleFromProp : true);
-  const [filteredChildren, setFilteredChildren] = React.useState<Array<ReactElement>>([]);
+  const [dropdownVisible, setDropDownVisible] = React.useState<boolean>(
+    dropdownVisibleFromProp !== undefined ? dropdownVisibleFromProp : true
+  );
+  const [filteredChildren, setFilteredChildren] = React.useState<
+    Array<ReactElement>
+  >([]);
 
   React.useEffect(() => {
     setValue(valueFromProp);
@@ -53,16 +65,16 @@ const SearchMenu: React.FC<SearchMenuProps> = props => {
     value: string | undefined
   ) => {
     const returnedList = value ? filterChildren(children, value) : children;
-    return returnedList ;
+    return returnedList;
   };
 
-  const mappedChildren = filteredChildren.map((child: ReactElement, key: number) => {
-    return (
-      <div key={child.type.toString().concat(key.toString())}>
-        {child}
-      </div>
-    );
-  });
+  const mappedChildren = filteredChildren.map(
+    (child: ReactElement, key: number) => {
+      return (
+        <div key={child.type.toString().concat(key.toString())}>{child}</div>
+      );
+    }
+  );
 
   return (
     <>
@@ -73,20 +85,22 @@ const SearchMenu: React.FC<SearchMenuProps> = props => {
           value={value}
           onChange={(ev, newValue: string | undefined) => {
             setValue(newValue);
-            setFilteredChildren(renderChildrenBasedOnSearch(children, newValue));
+            setFilteredChildren(
+              renderChildrenBasedOnSearch(children, newValue)
+            );
           }}
         />
       </div>
-      {dropdownVisible &&
-      <div
-        className={classnames(
-          searchFieldClasses(props).searchListDropdown,
-          styles.searchMenuDropdown
-        )}
-      >
-        {mappedChildren}
-      </div>
-      }
+      {dropdownVisible && (
+        <div
+          className={classnames(
+            searchFieldClasses(props).searchListDropdown,
+            styles.searchMenuDropdown
+          )}
+        >
+          {mappedChildren}
+        </div>
+      )}
     </>
   );
 };
