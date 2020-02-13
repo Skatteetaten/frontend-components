@@ -72,8 +72,7 @@ const SearchField: React.FC<SearchFieldProps> = props => {
 
   React.useEffect(() => {
     setSearchResultList(options);
-    setValue(props.value);
-  }, [options, props.value]);
+  }, [options]);
 
   const changeEvent = (text: string) => {
     //@ts-ignore TODO
