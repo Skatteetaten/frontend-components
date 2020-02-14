@@ -72,6 +72,7 @@ const SearchField: React.FC<SearchFieldProps> = props => {
 
   React.useEffect(() => {
     setSearchResultList(options);
+    setSearchResult(value ? value : '');
   }, [options]);
 
   React.useEffect(() => {
@@ -101,6 +102,14 @@ const SearchField: React.FC<SearchFieldProps> = props => {
         focusItem && focusItem.focus();
         setFocus(newFocus);
       }
+    }
+  };
+
+  const setSearchResult = (newValue: string) => {
+    if (options && newValue) {
+      const newList = searchInList(options, newValue);
+      setSearchResultList(newList);
+      setDropdownVisible(newList.length > 0);
     }
   };
 
@@ -164,9 +173,7 @@ const SearchField: React.FC<SearchFieldProps> = props => {
               if (!newValue) {
                 setDropdownVisible(false);
               } else {
-                const newList = searchInList(options, newValue);
-                setSearchResultList(newList);
-                setDropdownVisible(newList.length > 0);
+                setSearchResult(newValue);
               }
               setValue(newValue);
               onChange && onChange(ev, newValue);
