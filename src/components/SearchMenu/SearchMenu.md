@@ -90,22 +90,32 @@ const checkBoxList = [
   {key: 2, text: 'Skattemelding'},
   {key: 3, text: 'Skatteoppgjør'}
 ];
-const [value, setValue] = React.useState(undefined);
+const [value] = React.useState(undefined);
 const [visible, setVisible] = React.useState(true);
+const [list, setList] = React.useState([]);
 let ref = [];
+
 
 <div style={{ width: '350px' }}>
     <SearchMenu
       value={value}
       dropdownVisible={visible}
     >
-      <div></div>
       <ul>
         {checkBoxList.map(listItem => {
           ref[listItem.text] = React.useRef();
           return (
             <li key={listItem.key} ref={ref[listItem.text]}>
-              <CheckBox boxSide={'start'} label={listItem.text} />
+              <CheckBox 
+                boxSide={'start'} 
+                label={listItem.text} 
+                onChange={(ev, checked) => {
+                  const tempList = list;                 
+                  checked ? tempList.push(listItem.text) : tempList.splice(list.indexOf(listItem.text), 1);
+                  setList(tempList);
+                  console.log(list);
+                }}
+              />
             </li>
           );
         })}

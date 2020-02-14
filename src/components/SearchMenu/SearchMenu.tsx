@@ -61,9 +61,12 @@ const SearchMenu: React.FC<SearchMenuProps> = props => {
   }, [valueFromProp]);
 
   const renderChildrenBasedOnSearch = (
-    children: Array<ReactElement>,
+    children: Array<ReactElement> | ReactElement,
     value: string | undefined
   ) => {
+    if (!Array.isArray(children)) {
+      children = [children]
+    }
     const returnedList = value ? filterChildren(children, value) : children;
     return returnedList;
   };
