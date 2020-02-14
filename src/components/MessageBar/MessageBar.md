@@ -4,7 +4,9 @@
 import MessageBar from '@skatteetaten/frontend-components/MessageBar';
 
 <>
-  <MessageBar type={MessageBar.Type.success}>Filen ble lastet opp.</MessageBar>
+  <MessageBar type={MessageBar.Type.success} onDismiss={() => null}>
+    Filen ble lastet opp.
+  </MessageBar>
   <br />
   <MessageBar type={MessageBar.Type.warning}>
     Det finnes feil i kjøretøydata. Sjekk at dette ikke har avgiftsmessige
@@ -56,6 +58,10 @@ const afterDurationComponent = (resetDuration, setShowAlways) => (
 <ul>
   <li>Innholdet bør være kort og presist.</li>
   <li>Husk å bruke riktig type av MessageBar til riktig type melding.</li>
+  <li>
+    Ved messageBar som forsvinner må fokus på siden settes tilbake til samme
+    sted som brukeren stod før boksen dukket opp og forsvant igjen.
+  </li>
 </ul>
 ```
 

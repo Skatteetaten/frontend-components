@@ -17,7 +17,7 @@ function getBackgroundColor(props: MessageBarProps) {
       };
     case MessageBarType.severeWarning:
       return {
-        backgroundColor: palette.skeColor.pink
+        backgroundColor: palette.skeColor.lightPink
       };
     case MessageBarType.success:
       return {
@@ -37,17 +37,13 @@ export const getClassNames = props => {
   // @ts-ignore TODO
   const fadeOut = Animation.fadeOutNormal;
   const { size } = props;
-  //const largeSize = size === 'large';
-  //const defaultSize = size === 'default';
   // @ts-ignore TODO
   return mergeStyles([
     {
-      //opacity: props.hideMessageBar ? 0 : 1,
       selectors: {
         '&.ms-MessageBar': {
           ...getBackgroundColor(props.type),
-          border: 'none',
-          padding: size === 'large' ? '25px 25px 25px 30px' : '',
+          color: palette.skeColor.blackAlt,
           selectors: {
             '&.fade-exit': {
               opacity: 1
@@ -57,24 +53,45 @@ export const getClassNames = props => {
             }
           }
         },
+        '.ms-MessageBar-content': {
+          border: severe ? `4px solid ${palette.skeColor.pink}` : 'none',
+          padding: size === 'large' ? '25px 25px 25px 30px' : '',
+          width: 'auto',
+          selectors: {
+            '@media (max-width: 640px)': {
+              padding: size === 'large' ? '12px 12px 12px 0px' : ''
+            }
+          }
+        },
+
         '.ms-MessageBar-icon i': {
-          color: severe ? palette.skeColor.white : palette.skeColor.blackAlt,
-          fontSize: size === 'large' ? IconFontSizes.mega : IconFontSizes.large
+          color: palette.skeColor.blackAlt,
+          fontSize: size === 'large' ? IconFontSizes.mega : IconFontSizes.large,
+          selectors: {
+            '@media (max-width: 640px)': {
+              fontSize: size === 'large' && IconFontSizes.large,
+              margin: size === 'large' ? '10px 0 0 10px' : ''
+            }
+          }
         },
         '.ms-MessageBar-innerText': {
           fontSize: size === 'large' ? FontSizes.large : FontSizes.medium,
-          color: severe ? palette.skeColor.white : palette.skeColor.blackAlt,
-          lineHeight: size === 'large' ? '40px' : '22px',
-          padding: size === 'large' ? '-2px 0px 0px 30px' : '-2px 0px 0px 0px'
+          color: palette.skeColor.blackAlt,
+          lineHeight: size === 'large' ? '28px' : '22px',
+          padding: size === 'large' ? '7px 0px 0px 30px' : '-2px 0px 0px 0px',
+          selectors: {
+            '@media (max-width: 640px)': {
+              fontSize: size === 'large' && IconFontSizes.large,
+              padding: size === 'large' ? '7px 0px 0px 8px' : '-2px 0px 0px 0px'
+            }
+          }
+        },
+        '.ms-MessageBar-dismissal': {
+          marginTop: size === 'large' ? '12px ' : '4px'
         },
         '.ms-MessageBar-dismissal i': {
-          marginTop: size === 'large' ? '' : '6px',
-          position: size === 'large' ? 'absolute' : '',
-          top: size === 'large' ? '-8px' : '',
-          right: size === 'large' ? '-15px' : '',
           fontSize:
-            size === 'large' ? IconFontSizes.xlarge : IconFontSizes.large,
-          color: severe ? palette.skeColor.white : palette.skeColor.blackAlt
+            size === 'large' ? IconFontSizes.xlarge : IconFontSizes.large
         }
       }
     }
