@@ -51,8 +51,7 @@ export const getClassNames = (props: LabelWithCalloutProps) => {
     label: {
       paddingBottom: 4,
       paddingLeft: 0,
-
-      display: 'inline-block',
+      display: 'initial',
       selectors: {
         color: palette.skeColor.blackAlt,
         fontWeight: FontWeights.regular,
