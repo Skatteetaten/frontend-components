@@ -111,7 +111,7 @@ const LabelWithCallout = (props: LabelWithCalloutProps) => {
       {warning && (
         <span className={styles.labelIconArea} ref={iconButtonElementRef}>
           <IconButton
-            iconProps={{ iconName: 'warningOutline' }}
+            iconProps={{ iconName: 'WarningOutline' }}
             title="Varsel"
             ariaLabel={'Åpne varsel'}
             onClick={() => {
