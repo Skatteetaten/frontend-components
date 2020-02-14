@@ -11,7 +11,9 @@ export const getClassNames = (props: SearchFieldProps) => {
   const standardSize = searchFieldSize === 'standard';
 
   return mergeStyleSets({
-    searchBoxWrapper: {},
+    blackAlt: {
+      color: `${palette.skeColor.blackAlt} !important`
+    },
     searchList: {
       listStyleType: 'none !important',
       padding: '0px',
@@ -26,6 +28,24 @@ export const getClassNames = (props: SearchFieldProps) => {
       selectors: {
         ul: {
           margin: 0
+        },
+        li: {
+          cursor: 'pointer',
+          color: palette.skeColor.blackAlt,
+          selectors: {
+            ':hover:': {
+              background: palette.skeColor.lightBlue,
+              textDecoration: 'underline'
+            },
+            ':active': {
+              background: palette.skeColor.lightBlue,
+              textDecoration: 'none'
+            },
+            ':focus': {
+              background: palette.skeColor.lightBlue,
+              textDecoration: 'underline'
+            }
+          }
         }
       }
     },
