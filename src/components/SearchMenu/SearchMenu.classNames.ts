@@ -21,10 +21,33 @@ export const getClassNames = (props: SearchMenuProps) => {
       marginTop: '-16px',
       paddingTop: '16px',
       selectors: {
-        'ul': {
-          listStyleType: 'none'
+        ul: {
+          listStyleType: 'none',
+          padding: 0
+        },
+        li: {
+          paddingLeft: '30px',
+          cursor: 'pointer',
+          color:  `${palette.skeColor.blackAlt} !important`,
+          selectors: {
+            ':hover': {
+              background: palette.skeColor.lightBlue,
+              textDecoration: 'underline'
+            },
+            ':active': {
+              background: palette.skeColor.lightBlue,
+              textDecoration: 'none'
+            },
+            ':focus': {
+              background: palette.skeColor.lightBlue,
+              textDecoration: 'underline'
+            }
+          }
         }
       }
+    },
+    typeCheckbox: {
+      cursor: 'default !important',
     }
   });
 };

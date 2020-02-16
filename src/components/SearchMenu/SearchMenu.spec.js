@@ -4,6 +4,15 @@ import SearchMenu from './SearchMenu';
 
 describe('SearchMenu komponent', () => {
   it('matcher snapshot', () => {
-    matches(<SearchMenu />);
+    matches(
+      <SearchMenu>
+        <ul>
+          <li>skatt</li>
+          <li>annen ting</li>
+          <li>listeelement</li>
+          <li>noe helt annet</li>
+        </ul>
+      </SearchMenu>
+    );
   });
 });

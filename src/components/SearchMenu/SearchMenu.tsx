@@ -11,73 +11,118 @@ import { ReactElement } from 'react';
 export interface SearchMenuProps extends ISearchBoxProps {
   /** Boolean for om dropdownlisten skal vises initielt */
   dropdownVisible?: boolean;
-  children: Array<ReactElement>;
+  children: Array<ReactElement> | ReactElement;
+  /** Boolean for on om listeelementene er av type checkbox */
+  checkbox?: boolean;
 }
-const filterChildren = (children: Array<ReactElement>, value) => {
-  const tempFilteredChildren: Array<ReactElement> = [];
-
-  children.forEach((child: ReactElement) => {
-    if (child.type === 'ul') {
-      child.props.children.filter(grandchild => {
-        if (
-          grandchild.ref.current.innerText
-            .toLowerCase()
-            .indexOf(value.toLowerCase()) === -1
-        ) {
-          grandchild.ref.current.style.display = 'none';
-          grandchild.ref.current.setAttribute('tabindex', 0);
-        } else {
-          grandchild.ref.current.style.display = '';
-          grandchild.ref.current.setAttribute('tabindex', -1);
-        }
-        return grandchild;
-      });
-    }
-    tempFilteredChildren.push(child);
-  });
-  return tempFilteredChildren;
-};
 
 const SearchMenu: React.FC<SearchMenuProps> = props => {
   const {
+    checkbox,
     children,
     className,
     dropdownVisible: dropdownVisibleFromProp,
+    onChange,
     value: valueFromProp,
     ...rest
   } = props;
   const styles = getClassNames(props);
   const [value, setValue] = React.useState<string | undefined>(valueFromProp);
-  const [dropdownVisible, setDropDownVisible] = React.useState<boolean>(
+  const [dropdownVisible, setDropdownVisible] = React.useState<boolean>(
     dropdownVisibleFromProp !== undefined ? dropdownVisibleFromProp : true
   );
-  const [filteredChildren, setFilteredChildren] = React.useState<
-    Array<ReactElement>
-  >([]);
+  const [focus, setFocus] = React.useState<number>(-1);
+  const listRefs = React.useRef<(HTMLLIElement | null)[]>([]);
 
-  React.useEffect(() => {
-    setValue(valueFromProp);
-    setFilteredChildren(renderChildrenBasedOnSearch(children, valueFromProp));
-  }, [valueFromProp]);
-
-  const renderChildrenBasedOnSearch = (
-    children: Array<ReactElement> | ReactElement,
-    value: string | undefined
-  ) => {
-    if (!Array.isArray(children)) {
-      children = [children]
-    }
-    const returnedList = value ? filterChildren(children, value) : children;
-    return returnedList;
+  const changeEvent = (text: string | undefined) => {
+    //@ts-ignore TODO
+    const event: React.ChangeEvent<HTMLInputElement> = {};
+    setValue(text);
+    onChange && onChange(event, text);
+    setDropdownVisible(false);
+    setFocus(-1);
+    listRefs.current = [];
   };
 
-  const mappedChildren = filteredChildren.map(
-    (child: ReactElement, key: number) => {
-      return (
-        <div key={child.type.toString().concat(key.toString())}>{child}</div>
-      );
+  const findListItems = (children: Array<ReactElement> | ReactElement) => {
+    if (!Array.isArray(children)) {
+      children = [children];
     }
-  );
+    const filtered = children.map((child: ReactElement, key: number) => {
+      if (child.type === 'ul') {
+        const grandchildrenList: Array<ReactElement> = [];
+        child.props.children.map((grandchildren: ReactElement, key: number) => {
+          const editedGrandchild = (
+            <li
+              key={grandchildren.key ? grandchildren.key : key}
+              ref={(ref: HTMLLIElement | null) => {
+                listRefs.current.push(ref);
+              }}
+              className={classnames(checkbox && styles.typeCheckbox)}
+              onClick={() => {
+                if (!checkbox) {
+                  changeEvent(listRefs.current[key]?.innerText);
+                }
+              }}
+              onKeyPress={ev => {
+                if (ev.keyCode === 0) {
+                  changeEvent(listRefs.current[key]?.innerText);
+                }
+              }}
+              onKeyDown={ev => handleOnKeyDown(ev)}
+              tabIndex={0}
+            >
+              {grandchildren.props.children}
+            </li>
+          );
+          grandchildrenList.push(editedGrandchild);
+        });
+        const clone = React.cloneElement(child, {
+          children: grandchildrenList,
+          key: child.type.toString().concat(key.toString())
+        });
+        return clone;
+      }
+      return child;
+    });
+    return filtered;
+  };
+
+  const searchInList = (filterText: string) => {
+    listRefs.current.filter(item => {
+      if (item) {
+        if (
+          item.innerText
+            .replace(/\s/g, '')
+            .toLowerCase()
+            .indexOf(filterText.replace(/\s/g, '').toLowerCase()) > -1
+        ) {
+          item.style.display = '';
+        } else {
+          item.style.display = 'none';
+        }
+        return item;
+      }
+    });
+  };
+
+  const handleOnKeyDown = (ev: React.KeyboardEvent<HTMLElement>) => {
+    if (dropdownVisible && listRefs.current) {
+      let newFocus = focus;
+      if (ev.keyCode === 38) {
+        newFocus--;
+      } else if (ev.keyCode === 40) {
+        newFocus++;
+      }
+      if (newFocus <= listRefs.current.length - 1) {
+        const focusItem = listRefs.current[newFocus];
+        focusItem && focusItem.focus();
+        setFocus(newFocus);
+      }
+    }
+  };
+
+  const [filteredChildren] = React.useState(findListItems(children));
 
   return (
     <>
@@ -86,12 +131,14 @@ const SearchMenu: React.FC<SearchMenuProps> = props => {
           {...rest}
           className={classnames(searchFieldClasses(props).main, className)}
           value={value}
-          onChange={(ev, newValue: string | undefined) => {
+          onChange={(ev, newValue) => {
+            if (newValue) {
+              searchInList(newValue);
+            }
             setValue(newValue);
-            setFilteredChildren(
-              renderChildrenBasedOnSearch(children, newValue)
-            );
+            onChange && onChange(ev, newValue);
           }}
+          onKeyDown={ev => handleOnKeyDown(ev)}
         />
       </div>
       {dropdownVisible && (
@@ -101,7 +148,7 @@ const SearchMenu: React.FC<SearchMenuProps> = props => {
             styles.searchMenuDropdown
           )}
         >
-          {mappedChildren}
+          {filteredChildren}
         </div>
       )}
     </>

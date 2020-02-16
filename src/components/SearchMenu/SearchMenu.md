@@ -1,6 +1,6 @@
 ** SearchMenu er en komponent som filtrer menyvalg **
 
-SearchMenu er basert på at de søkbare elementene er pakket inn i en ul og at de har en [ref](https://reactjs.org/docs/refs-and-the-dom.html)
+SearchMenu er basert på at de søkbare elementene er pakket inn i en ul
 ```js
 import React from 'react';
 import ActionButton from '@skatteetaten/frontend-components/ActionButton';
@@ -21,7 +21,6 @@ const list_2 = [
 ];
 const [value, setValue] = React.useState(undefined);
 const [visible, setVisible] = React.useState(true);
-let ref = [];
 
 <div style={{ width: '350px' }}>
     <SearchMenu
@@ -33,9 +32,8 @@ let ref = [];
       </Typography>
       <ul>
         {list_1.map(listItem => {
-          ref[listItem.text] = React.useRef();
           return (
-            <li key={listItem.key} ref={ref[listItem.text]}>
+            <li key={listItem.key}>
               <ActionButton
                 ariaLabel={listItem.text}
                 color={'black'}
@@ -43,6 +41,7 @@ let ref = [];
                   setValue(listItem.text);
                   setVisible(false);
                 }}
+                tabIndex={-1}
               >
                 {listItem.text}
               </ActionButton>
@@ -57,9 +56,8 @@ let ref = [];
       </Typography>
       <ul>
         {list_2.map(listItem => {
-          ref[listItem.text] = React.useRef();
           return (
-            <li key={listItem.key} ref={ref[listItem.text]}>
+            <li key={listItem.key}>
               <ActionButton
                 ariaLabel={listItem.text}
                 color={'black'}
@@ -93,19 +91,18 @@ const checkBoxList = [
 const [value] = React.useState(undefined);
 const [visible, setVisible] = React.useState(true);
 const [list, setList] = React.useState([]);
-let ref = [];
 
 
 <div style={{ width: '350px' }}>
     <SearchMenu
       value={value}
       dropdownVisible={visible}
+      checkbox={true}
     >
       <ul>
         {checkBoxList.map(listItem => {
-          ref[listItem.text] = React.useRef();
           return (
-            <li key={listItem.key} ref={ref[listItem.text]}>
+            <li key={listItem.key}>
               <CheckBox 
                 boxSide={'start'} 
                 label={listItem.text} 
