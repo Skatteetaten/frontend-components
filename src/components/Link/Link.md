@@ -78,17 +78,4 @@ import { Link as RRLink, BrowserRouter as Router } from 'react-router-dom';
   <ul>
   <li>Aria-hidden="true" brukes for skjule ikonet for skjermleser.</li>
   </ul>
-
-  <h3>Farge og understrekning</h3>
-  <p>
-    Alle lenker skal ha minst 2 ulike markeringer for å vise at det er lenke. Lenkene i Designsystemet har derfor både blå farge og understrekning.
-  </p>
-  <h3>Lesekontrast</h3>
-  <p>
-    Standarden vi bruker i tekst er blå skrift og understrekning. Hvis
-    bakgrunnen krever en annen farge enn blå for å være leselig og oppfylle
-    kontrastkravet, brukes en annen farge; for eksempel hvit på svart bakgrunn
-    som i innlogget header eller hvit på burgunder i footer.
-  </p>
-
 ```
