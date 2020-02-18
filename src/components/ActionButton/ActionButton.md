@@ -14,11 +14,25 @@ import ActionButton from '@skatteetaten/frontend-components/ActionButton';
 ```
 
 ```js noeditor uu
-<h3>Huskeliste</h3>
+<h3>Tips</h3>
 
 <ul>
-  <li>Sjekke av ikonet alltid er plassert ved siden av teksten.</li>
-  <li>Bruk korte tekster i knappen.</li>
+  <li>Bruk korte, forståelige tekster i knappen. Det skal være lett å skjønne hva målet med knappen er. </li>
+  <li>Sjekk at ikonet er plassert ved siden av teksten</li>
+</ul>
+
+<h3>Mest relevante WCAG-krav</h3>
+
+<ul>
+  <li>3.3.2 A, Ledetekster eller instruksjoner</li>
+  <li>2.4.4 A, Formål med lenke (i kontekst)</li>
+</ul>
+
+<h3>WAI-ARIA</h3>
+
+<ul>
+  <li>Aria-hidden="true" brukes på ikonet for skjule det for skjermleser.</li>
+  <li>Aria-label kan benyttes på button-tag hvis det er behov for å tydeliggjøre hva knappen gjør.</li>
 </ul>
 ```
 
