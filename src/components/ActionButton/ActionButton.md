@@ -25,7 +25,7 @@ import ActionButton from '@skatteetaten/frontend-components/ActionButton';
 
 <ul>
   <li>3.3.2 A, Ledetekster eller instruksjoner</li>
-  <li>2.4.4 A, Formål med lenke (i kontekst)</li>
+  <li>4.1.2 A, Navn, rolle, verdi</li>
 </ul>
 
 <h3>WAI-ARIA</h3>
