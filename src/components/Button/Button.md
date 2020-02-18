@@ -64,7 +64,6 @@ import Button from '@skatteetaten/frontend-components/Button';
 <h3>Mest relevante WCAG-krav</h3>
 
     <ul>
-      <li>3.3.2 A, Ledetekster eller instruksjoner</li>
 	  <li>4.1.2 A, Navn, rolle, verdi</li>
     </ul>
 
