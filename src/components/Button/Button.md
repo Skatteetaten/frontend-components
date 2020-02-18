@@ -43,6 +43,7 @@ import Button from '@skatteetaten/frontend-components/Button';
 
 ```js noeditor uu
 <h3>Tips</h3>
+
 <ul>
   <li>Bruk én linje med tekst inne i knappen. For mye tekst kan virke forvirrende
     for skjermlesere.</li>
