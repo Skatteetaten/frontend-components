@@ -124,6 +124,7 @@ const contents = [
   <li>En lenke skal minst 2 ulike visuelle "hint" for å skille det fra vanlig tekst. Her er det blå farge og understreking.</li>
   <li>Tenk på kontrast hvis bakgrunnsfargen bak lenken endrer seg, for eksempel svart bakgrunn = hvit skrift</li>
   <li>Lenketeksten eller alternativ tekst (grafisk lenke) skal tydeliggjøre hva som er målet til lenken</li>
+  <li>Pass på at overskriften i en tile har riktig nivå</li>
   </ul>
 
   <h3>Mest relevante WCAG-krav</h3>
@@ -137,6 +138,7 @@ const contents = [
   <h3>WAI-ARIA</h3>
 
   <ul>
-  <li>Aria-hidden="true" brukes for skjule ikonet for skjermleser.</li>
+  <li>Aria-hidden="true" brukes for skjule ikoner for skjermleser.</li>
+  <li>Aria-label="xxx" brukes for å navngi nav-tag.</li>
   </ul>
 ```
