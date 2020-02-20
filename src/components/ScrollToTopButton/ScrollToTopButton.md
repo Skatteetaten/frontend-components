@@ -24,9 +24,25 @@ import ScrollToTopButton from '@skatteetaten/frontend-components/ScrollToTopButt
 </p>
 ```
 ```js noeditor uu
-<p>
-Denne vil brukes hovedsakelig av tastatur- og musebrukere. Nettleseren skal ikke bare rulle til toppen, men også tastaturfokus skal også flyttes til toppen. </p>
-<p>
-Skjermleserbrukere vil benytte andre metoder for å komme til toppen, f.eks. hurtigtaster, så denne funksjonaliteten anbefales skjult med aria-hidden="true". 
-</p>
+<h3>Tips</h3>
+
+  <ul>
+  <li>Må kunne brukes med tastatur og flytte tastaturfokus til toppen, ikke bare rulle.</li>
+  <li>Nettleseren skal ikke bare rulle til toppen, men også tastaturfokus skal også flyttes til toppen.</li>
+  <li>Skjermleserbrukere vil hovedsaklig bruke hurtigtaster for å flytte til toppen.</li>
+  <li>Det er ikke noe krav å ha slik funksjonalitet</li>
+  </ul>
+
+<h3>Mest relevante WCAG-krav</h3>
+
+  <ul>
+  <li>2.1.1 A, Tastatur</li>
+  </ul>
+
+<h3>WAI-ARIA</h3>
+
+  <ul>
+  <li>Aria-hidden="true" brukes for skjule funksjonaliteten for skjermlesere.</li>
+  <li>All annen aria-koding er overflødig pga. at hele knappen er skjult for skjermlesere.
+  </ul>
 ```
