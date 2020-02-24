@@ -20,6 +20,13 @@ function getLabelSize(props: LabelWithCalloutProps) {
   }
 }
 
+function getDisplay(props: LabelWithCalloutProps) {
+  const { help, warning } = props;
+  if (help !== undefined || warning !== undefined) {
+    return { display: 'initial' };
+  } else return { display: 'inline-block' };
+}
+
 export const getClassNames = (props: LabelWithCalloutProps) => {
   const palette = getTheme().palette as PaletteProps;
   const { calloutFloating } = props;
@@ -51,7 +58,7 @@ export const getClassNames = (props: LabelWithCalloutProps) => {
     label: {
       paddingBottom: 4,
       paddingLeft: 0,
-      display: 'initial',
+      ...getDisplay(props),
       selectors: {
         color: palette.skeColor.blackAlt,
         fontWeight: FontWeights.regular,
@@ -72,7 +79,6 @@ export const getClassNames = (props: LabelWithCalloutProps) => {
         '& .ms-Label': {
           fontWeight: FontWeights.regular
         },
-
         '@supports (display: contents)': {
           display: 'contents'
         }
