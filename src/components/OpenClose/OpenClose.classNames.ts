@@ -43,7 +43,8 @@ export function getClassNames() {
       }
     },
     content: {
-      padding: '10px 0 15px 10px'
+      padding: '8px 0 16px 8px',
+      marginLeft: '16px'
     },
     heading: {
       fontSize: FontSizes.largePlus,
