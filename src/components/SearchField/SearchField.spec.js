@@ -44,4 +44,31 @@ describe('SearchField komponent', () => {
     expect(searchField.prop('placeholder')).toEqual('searchfield-placeholder');
     expect(searchField.prop('value')).toEqual('searchfield-value');
   });
+
+  it('rendrer SearchField med dropdown dersom options eksisterer ', () => {
+    const wrapper = oppsettFullDOM({
+      ariaLabel: 'searchfield-label',
+      placeholder: 'searchfield-placeholder',
+      className: 'searchfield-classname',
+      id: 'searchfield-id',
+      searchFieldSize: 'standard',
+      options: [
+        { key: 1, text: 'en tekst' },
+        { key: 2, text: 'bil' },
+        { key: 3, text: 'Hypofyseregulator' },
+        { key: 4, text: 'katt' }
+      ]
+    });
+    const searchField = wrapper.find('input.ms-SearchBox-field');
+    searchField.simulate('change', { target: { name: 'change', value: 'e' } });
+    expect(wrapper.find('input.ms-SearchBox-field').prop('value')).toEqual('e');
+    expect(wrapper.find('ul').exists()).toEqual(true);
+    expect(wrapper.find('li').length).toEqual(2);
+    expect(
+      wrapper
+        .find('li')
+        .last()
+        .text()
+    ).toEqual('Hypofyseregulator');
+  });
 });
