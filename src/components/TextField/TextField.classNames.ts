@@ -105,7 +105,6 @@ export const getClassNames = (props: TextFieldProps) => {
         color: palette.skeColor.darkGrey
       },
       '.ms-Button-icon': {
-        paddingBottom: '4px',
         fontSize: 18
       },
       '& .ms-TextField-errorMessage': {

@@ -1,10 +1,13 @@
 import React from 'react';
-import { mount } from 'enzyme';
+import { mount, shallow } from 'enzyme';
 import { matches } from './../utils/test-utils';
 import LabelWithCallout from './LabelWithCallout';
 
 function oppsettFullDOM(props) {
   return mount(<LabelWithCallout {...props} />);
+}
+function oppsettShallow(props) {
+  return shallow(<LabelWithCallout {...props} />);
 }
 
 describe('LabelWithCallout komponent', () => {
@@ -27,7 +30,7 @@ describe('LabelWithCallout komponent', () => {
     });
     expect(
       wrapper
-        .find('div')
+        .find('label')
         .first()
         .prop('id')
     ).toEqual('LabelWithCallout_id');
@@ -49,7 +52,7 @@ describe('LabelWithCallout komponent', () => {
     });
     expect(
       wrapper
-        .find('div')
+        .find('label')
         .first()
         .prop('id')
     ).toEqual('LabelWithCallout_id');
@@ -90,5 +93,16 @@ describe('LabelWithCallout komponent', () => {
     helpIcon.simulate('click');
     expect(mockFunksjon).toHaveBeenCalled();
     expect(mockFunksjon.mock.calls[0]).toEqual(['CLOSED', 'OPEN']);
+  });
+  it('skal rendre legend dersom inFieldset er true', () => {
+    const wrapper = oppsettShallow({
+      id: 'LabelWithCallout_id',
+      calloutFloating: false,
+      help: 'Dette er en mock-hjepetekst',
+      label: 'Mock Label',
+      inFieldset: true
+    });
+    expect(wrapper.find('legend').exists()).toEqual(true);
+    expect(wrapper.find('label').exists()).toEqual(false);
   });
 });

@@ -63,13 +63,15 @@ const RadioButtonGroup = (props: RadioButtonGroupProps) => {
     tempOptions = options;
   }
 
+  const styles = getClassNames({ ...props });
+
   return (
-    <>
+    <fieldset id={id} className={styles.fieldset}>
       <LabelWithCallout
-        id={id}
         label={label}
         help={help}
         warning={warning}
+        inFieldset={true}
         calloutFloating={calloutFloating}
         onCalloutToggle={onCalloutToggle}
         {...labelCallout}
@@ -77,13 +79,13 @@ const RadioButtonGroup = (props: RadioButtonGroupProps) => {
       <FabricChoiceGroup
         options={tempOptions}
         {...rest}
-        className={classnames(getClassNames(props), className)}
+        className={classnames(styles.radioButtons, className)}
         ariaLabelledBy={label}
       >
         {children}
       </FabricChoiceGroup>
       {errorMessage && <ErrorMessage>{errorMessage}</ErrorMessage>}
-    </>
+    </fieldset>
   );
 };
 

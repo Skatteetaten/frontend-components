@@ -39,13 +39,11 @@ export const getClassNames = (props: SearchFieldProps) => {
             },
             ':active': {
               background: palette.skeColor.lightBlue,
-              border: `2px solid ${palette.skeColor.blue}`,
               textDecoration: 'none'
             },
             ':focus': {
               background: palette.skeColor.lightBlue,
-              border: `2px solid ${palette.skeColor.blue}`,
-              textDecoration: 'none'
+              textDecoration: 'underline'
             }
           }
         }

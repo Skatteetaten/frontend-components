@@ -1,19 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`LabelWithCallout komponent matcher snapshot 1`] = `
-<div
-  className="labelArea-41"
-  id="LabelWithCallout_id"
->
-  <span
-    className="label-42"
+Array [
+  <label
+    className="label-41"
+    id="LabelWithCallout_id"
   >
-    <label
-      className="ms-Label root-46"
-    >
-      Mock Label
-    </label>
-  </span>
+    Mock Label
+  </label>,
   <span
     className="labelIconArea-43"
   >
@@ -44,6 +38,6 @@ exports[`LabelWithCallout komponent matcher snapshot 1`] = `
         </i>
       </span>
     </button>
-  </span>
-</div>
+  </span>,
+]
 `;
