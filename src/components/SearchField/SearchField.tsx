@@ -73,6 +73,7 @@ const SearchField: React.FC<SearchFieldProps> = props => {
   React.useEffect(() => {
     setSearchResultList(options);
     setSearchResult(value ? value : '');
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [options]);
 
   React.useEffect(() => {
