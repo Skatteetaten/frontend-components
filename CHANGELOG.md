@@ -1,3 +1,14 @@
+### **v.3.1.2 - 12.02.2020 **
+
+- Added default button type to expand button inside Card
+
+### **v.3.1.1 - 10.02.2020 **
+
+- Dialog: Fixed and error where overflow content disappered on iOS.
+- Dialog: Fixed the logo placement when no title is used
+- RadioButtonGroup can now display description.
+- Combobox: accessbility improvement: remove aria-role
+
 ### **v.3.1.0 - 04.02.2020 **
 
 - Internal TopBanner can now render children-elements. Added slantedAreaWidth prop to set width to slanted area.
