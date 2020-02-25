@@ -1,7 +1,17 @@
+### **v.3.2.0 - 25.02.2020 **
+
+- OpenClose: new component
+- ActionButton: Icon can now be placed on right side.
+- Expand or collapse button in Card wont longer trigger sumbit if used inside a form.
+- SearchField can now show search results in a drop down.
+- The label in LabelWithCallout can now be rendered as legend (for use in a fieldset).
+- LabelWithCallout: fixed an issue where the help icon was incorrecly placed if the label went over multiple lines.
+- FooterContent: fixed a typescript error
+
 ### **v.3.1.1 - 10.02.2020 **
 
-- Dialog: Fixed and error where overflow content disappered on iOS.
-- Dialog: Fixed the logo placement when no title is used
+- Dialog: fixed an error where overflow content disappered on iOS.
+- Dialog: fixed the logo placement when no title is used
 - RadioButtonGroup can now display description.
 - Combobox: accessbility improvement: remove aria-role
 

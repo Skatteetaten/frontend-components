@@ -11,6 +11,8 @@ export interface ActionButtonProps extends ButtonProps {
   iconSize?: any;
   /** Fire forhåndsdefinerte farger, se eksempler */
   color?: 'blue' | 'black' | 'red' | 'green' | 'white';
+  /**  true hvis ikonet skal plasseres etter tekst, ellers rendres det foran. */
+  iconAfter?: boolean;
 }
 /**
  * @visibleName ActionButton (Aksjonsknapp)

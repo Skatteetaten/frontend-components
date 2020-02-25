@@ -20,6 +20,13 @@ function getLabelSize(props: LabelWithCalloutProps) {
   }
 }
 
+function getDisplay(props: LabelWithCalloutProps) {
+  const { help, warning } = props;
+  if (help !== undefined || warning !== undefined) {
+    return { display: 'initial' };
+  } else return { display: 'inline-block' };
+}
+
 export const getClassNames = (props: LabelWithCalloutProps) => {
   const palette = getTheme().palette as PaletteProps;
   const { calloutFloating } = props;
@@ -48,19 +55,10 @@ export const getClassNames = (props: LabelWithCalloutProps) => {
         }
       }
     },
-    labelArea: {
-      position: 'relative',
-      display: 'flex',
-      flexWrap: 'wrap',
-      alignItems: 'center',
-      fontSize: FontSizes.medium,
-      selectors: {
-        '& legend': {
-          paddingLeft: 0
-        }
-      }
-    },
     label: {
+      paddingBottom: 4,
+      paddingLeft: 0,
+      ...getDisplay(props),
       selectors: {
         color: palette.skeColor.blackAlt,
         fontWeight: FontWeights.regular,
@@ -70,16 +68,46 @@ export const getClassNames = (props: LabelWithCalloutProps) => {
         }
       }
     },
-    labelIconArea: {
-      height: '26px',
-      marginTop: '-5px',
+    labelAsLegend: {
+      paddingLeft: 0,
+      paddingBottom: 4,
+      display: 'inline-block',
       selectors: {
-        '& button': {
-          position: 'relative'
+        color: palette.skeColor.blackAlt,
+        fontWeight: FontWeights.regular,
+        ...getLabelSize(props),
+        '& .ms-Label': {
+          fontWeight: FontWeights.regular
+        },
+        '@supports (display: contents)': {
+          display: 'contents'
+        }
+      }
+    },
+    labelIconArea: {
+      height: '22px',
+      display: 'inline-block',
+
+      selectors: {
+        '& button ': {
+          height: '22px',
+          marginTop: '-2px'
         }
       }
     },
     icon: {
+      color: palette.skeColor.blue,
+      selectors: {
+        '& i': {
+          fontSize: 'large'
+        },
+        '&:focus&:after': {
+          border: `2px solid ${palette.skeColor.blue}`,
+          outline: 'none'
+        }
+      }
+    },
+    warningicon: {
       color: palette.skeColor.blue,
       selectors: {
         '& i': {
