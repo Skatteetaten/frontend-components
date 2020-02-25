@@ -5,7 +5,7 @@ import Spinner from '@skatteetaten/frontend-components/Spinner';
 import Button from '@skatteetaten/frontend-components/Button';
 
 <div style={{ textAlign: 'center' }}>
-  <Button buttonStyle="primary">
+  <Button ariaLabel="Laster" buttonStyle="primary">
     {' '}
     <Spinner spinnerColor="white" />{' '}
   </Button>
