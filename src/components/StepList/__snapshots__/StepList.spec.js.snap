@@ -4,6 +4,7 @@ exports[`StepList komponent matcher snapshot 1`] = `
 <StepList>
   <div
     className="stepList-51"
+    role="region"
   >
     <Grid
       padding="0"
@@ -18,8 +19,6 @@ exports[`StepList komponent matcher snapshot 1`] = `
           <div
             className="wrapperStep-63"
             key="1"
-            role="region"
-            tabIndex={0}
           >
             <GridRow
               rowSpacing="0px"

@@ -57,6 +57,8 @@ export interface CardProps extends React.HTMLAttributes<HTMLDivElement> {
   onClick?: () => void;
   /** aria-label */
   ariaLabel?: string;
+  /** Button type. Default er 'button' */
+  buttonType?: string;
 }
 
 export interface CardState {
@@ -80,7 +82,8 @@ export default class Card extends React.PureComponent<CardProps, CardState> {
     actions: null,
     marginbottom: '2px',
     margin: 'medium',
-    circleOnIcon: true
+    circleOnIcon: true,
+    buttonType: 'button'
   };
 
   constructor(props: CardProps) {
@@ -106,6 +109,7 @@ export default class Card extends React.PureComponent<CardProps, CardState> {
       className,
       circleOnIcon,
       id,
+      buttonType,
       ...props
     } = this.props;
 
@@ -114,7 +118,7 @@ export default class Card extends React.PureComponent<CardProps, CardState> {
       <div id={id} className={classnames(styles.root, className)}>
         {title || subtitle || expand ? (
           <div className={styles.header}>
-            <div className={styles.titlecontainer} tabIndex={0}>
+            <div className={styles.titlecontainer}>
               {expand && (
                 <div
                   aria-label={title}
@@ -144,13 +148,14 @@ export default class Card extends React.PureComponent<CardProps, CardState> {
                   ariaLabel={title}
                   circle={circleOnIcon}
                   onClick={this._toggleExpand}
+                  type={buttonType}
                 />
               </div>
             )}
           </div>
         ) : null}
         {isExpandedState && (
-          <div {...props} className={styles.body} tabIndex={0}>
+          <div {...props} className={styles.body}>
             {children}
           </div>
         )}

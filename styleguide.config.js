@@ -39,6 +39,10 @@ module.exports = {
           content: 'src/sections/kom-i-gang/forbedre.md'
         },
         {
+          name: 'Tommelfingerregler for design',
+          content: 'src/sections/kom-i-gang/tommelfinger.md'
+        },
+        {
           name: 'Teknisk',
           content: 'src/sections/kom-i-gang/utviklere.md'
         },
@@ -80,6 +84,7 @@ module.exports = {
       'Accordion',
       'AccordionMenu',
       'Card',
+      'OpenClose',
       'CommandBar',
       'LinkGroup',
       'StepList',
@@ -113,6 +118,7 @@ module.exports = {
   ],
   assetsDir: 'assets',
   template: {
+    lang: 'no',
     favicon: './favicon.ico',
     head: {
       links: [

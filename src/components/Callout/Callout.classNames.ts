@@ -69,11 +69,15 @@ export const getClassNames = (props: CalloutProps) => {
           fontWeight: 700
         },
         '&:hover i': {
-          opacity: 0.7,
-          transition: 'opacity 300ms ease-out'
+          transition: 'opacity 300ms ease-out',
+          backgroundColor: palette.skeColor.lightBlue
+        },
+        '&:focus i': {
+          backgroundColor: palette.skeColor.lightBlue,
+          borderRadius: 0
         },
         '&& .ms-Button-icon': {
-          padding: '10px 10px 10px 10px'
+          padding: '4px 4px 4px 4px'
         },
         '&.ms-Button': {
           border: 'none !important',

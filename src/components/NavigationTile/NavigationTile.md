@@ -4,7 +4,7 @@
 import NavigationTile from '@skatteetaten/frontend-components/NavigationTile';
 import NavigationContent from '@skatteetaten/frontend-components/NavigationTile/NavigationContent';
 
-<NavigationTile>
+<NavigationTile ariaLabel="Velge person eller bedrift">
   <NavigationContent
     to={'#navigationtile'}
     heading={'Bedrift'}
@@ -26,6 +26,7 @@ import NavigationTile from '@skatteetaten/frontend-components/NavigationTile';
 import NavigationContent from '@skatteetaten/frontend-components/NavigationTile/NavigationContent';
 
 <NavigationTile
+  ariaLabel="Velge person eller bedrift"
   alignTitle={'left'}
   alignDescription={'left'}
   alignIcon={'right'}
@@ -64,6 +65,7 @@ const contents = [
 ];
 
 <NavigationTile
+  ariaLabel="Lage kid- eller kontonummer"
   type="left"
   alignTitle="left"
   alignIcon="right"
@@ -100,7 +102,10 @@ const contents = [
 ];
 
 <BrowserRouter>
-  <NavigationTile contents={contents} />
+  <NavigationTile
+    contents={contents}
+    ariaLabel="Velge person eller kid-nummer"
+  />
 </BrowserRouter>;
 ```
 
@@ -117,6 +122,7 @@ const contents = [
     tekst. I tillegg kan innholdet midtstilles eller høyre og venstrejusteres.
   </p>
 ```
+
 ```js noeditor uu
 <h3>Tips</h3>
 

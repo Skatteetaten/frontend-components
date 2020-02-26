@@ -5,6 +5,7 @@ import { TopStripeButton } from './TopStripeButton';
 
 interface TopStripeProps {
   children?: JSX.Element | JSX.Element[];
+  className?: string;
   /** @ignore */
   open?: number;
   /** @ignore */
@@ -29,7 +30,7 @@ const TopStripe: React.FC<TopStripeProps> = props => {
     }
   };
   const styles = getClassNames();
-  const { children, ...rest } = props;
+  const { children, className, ...rest } = props;
   const showOverlay = open !== notOpen ? styles.overlayShow : '';
 
   const handleClickOutside = (e: any) => {
@@ -59,7 +60,11 @@ const TopStripe: React.FC<TopStripeProps> = props => {
           closeMenu: () => setOpenIndex(notOpen)
         }}
       >
-        <ul ref={topRef} className={styles.topStripeContainer} {...rest}>
+        <ul
+          ref={topRef}
+          className={classnames(styles.topStripeContainer, className)}
+          {...rest}
+        >
           {React.Children.map(children, (child: any, index) => {
             if (child.type === TopStripeButton) {
               return (

@@ -3,6 +3,7 @@
 exports[`Card komponent matcher snapshot 1`] = `
 <Card
   actions={null}
+  buttonType="button"
   circleOnIcon={true}
   color="neutralGrey"
   expand={false}
@@ -19,7 +20,6 @@ exports[`Card komponent matcher snapshot 1`] = `
       color="neutralGrey"
       margin="medium"
       marginbottom="2px"
-      tabIndex={0}
       titlesize="x-large"
     />
   </div>

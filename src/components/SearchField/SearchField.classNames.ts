@@ -1,17 +1,55 @@
-import { mergeStyles } from '@uifabric/merge-styles';
+import { mergeStyleSets } from '@uifabric/merge-styles';
 import { getTheme } from '@uifabric/styling';
 import { FontSizes } from '..';
 import { PaletteProps } from '..';
 import { SearchFieldProps } from './SearchField';
 
-export const getClassNames = function getClassNames(props: SearchFieldProps) {
+export const getClassNames = (props: SearchFieldProps) => {
   const palette = getTheme().palette as PaletteProps;
   const { border, searchFieldSize } = props;
   const largeSize = searchFieldSize === 'large';
   const standardSize = searchFieldSize === 'standard';
 
-  return mergeStyles([
-    {
+  return mergeStyleSets({
+    blackAlt: {
+      color: `${palette.skeColor.blackAlt} !important`
+    },
+    searchList: {
+      listStyleType: 'none !important',
+      padding: '0px',
+      marginTop: '0px',
+      marginBottom: '11px'
+    },
+    searchListDropdown: {
+      width: '100% - 2px',
+      top: '-13px',
+      border: `1px solid ${palette.skeColor.black}`,
+      borderTop: 0,
+      selectors: {
+        ul: {
+          margin: 0
+        },
+        li: {
+          cursor: 'pointer',
+          color: palette.skeColor.blackAlt,
+          selectors: {
+            ':hover': {
+              background: palette.skeColor.lightBlue,
+              textDecoration: 'underline'
+            },
+            ':active': {
+              background: palette.skeColor.lightBlue,
+              textDecoration: 'none'
+            },
+            ':focus': {
+              background: palette.skeColor.lightBlue,
+              textDecoration: 'underline'
+            }
+          }
+        }
+      }
+    },
+    main: {
       displayName: 'SkeSearchField',
       selectors: {
         '&.ms-SearchBox': {
@@ -71,5 +109,5 @@ export const getClassNames = function getClassNames(props: SearchFieldProps) {
         }
       }
     }
-  ]);
+  });
 };

@@ -58,10 +58,10 @@ export function getClassNames(props: TopBannerProps) {
     },
     title: {
       marginTop: compact ? '12px' : '4px',
-      fontSize: FontSizes.large,
+      fontSize: `${FontSizes.large} !important`,
       selectors: {
         '@media (min-width: 640px)': {
-          fontSize: FontSizes.xLarge
+          fontSize: `${FontSizes.xLarge} !important`
         }
       }
     },

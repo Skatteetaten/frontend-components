@@ -55,6 +55,7 @@ import TextField from '@skatteetaten/frontend-components/TextField';
       id={'my-helpfield-2'}
       label="Antall barn"
       placeholder={''}
+      inputMode={'numeric'}
       value={'23'}
       warning="Er du sikker på at antall barn er riktig?"
       value={state.value2}

@@ -13,6 +13,18 @@ import ActionButton from '@skatteetaten/frontend-components/ActionButton';
 </div>;
 ```
 
+Ikonet kan rendres til høyre for teksten med iconAfter=_true_:
+
+```js
+import ActionButton from '@skatteetaten/frontend-components/ActionButton';
+
+<div>
+  <ActionButton ariaLabel={'legg-til'} icon="delete" iconAfter={true}>
+    Fjern
+  </ActionButton>
+</div>;
+```
+
 ```js noeditor uu
 <h3>Tips</h3>
 

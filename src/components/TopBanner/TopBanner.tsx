@@ -5,7 +5,7 @@ import Image from '../Image/Image';
 import Icon from '../Icon/Icon';
 
 // @ts-ignore TODO
-import logo from './assets/ske-logo-intern.svg';
+import internlogo from './assets/ske-logo-intern.svg';
 import { getClassNames as getExternalClassNames } from './External.classNames';
 import { getClassNames as getInternalClassNames } from './Internal.classNames';
 import { UseScreen } from './../utils/ScreenPlugin';
@@ -30,7 +30,7 @@ const InternalHeader = props => {
           {size.gt.md && (
             <Image
               className={styles.headerLogo}
-              src={logo}
+              src={internlogo}
               alt="Skatteetaten logo"
             />
           )}
@@ -81,11 +81,11 @@ const ExternalHeaderContent = ({ styles, ...props }) => {
 const ExternalHeader: React.FC<TopBannerProps> = props => {
   const styles = getExternalClassNames(props);
   const { header, headerMain, logoWrapper, contentWrapper } = styles;
-  const logo = require('./assets/ske-logo.svg');
+  const externallogo = require('./assets/ske-logo.svg');
   const compactHeight = props.compact ? 55 : 68;
 
   const imageElement = (
-    <Image src={logo} height={compactHeight} alt="Skatteetaten logo" />
+    <Image src={externallogo} height={compactHeight} alt="Skatteetaten logo" />
   );
 
   return (

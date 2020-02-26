@@ -15,11 +15,18 @@ export const getClassNames = function getClassNames(props, state) {
       }
     },
     article: {
-      minWidth: '400px',
       marginLeft: '16px',
       selectors: {
         '@media (max-width: 1023px)': {
           marginLeft: '0'
+        },
+        h1: {
+          fontSize: '42px',
+          selectors: {
+            '@media (max-width: 640px)': {
+              fontSize: '24px'
+            }
+          }
         }
       }
     },

@@ -1,7 +1,6 @@
 import * as React from 'react';
 import { getClassNames } from './LabelWithCallout.classNames';
 import { IconButton } from 'office-ui-fabric-react/lib-commonjs/Button';
-import { Label } from 'office-ui-fabric-react/lib-commonjs/Label';
 import Callout from '../Callout';
 import classnames from 'classnames';
 
@@ -20,6 +19,8 @@ export interface LabelWithCalloutProps
   editFunction?: () => void;
   help?: string | JSX.Element;
   id?: any;
+  /** Når komponenten plasseres inni <fieldset> og skal få label inni en <legend>-element */
+  inFieldset?: boolean;
   inputSize?: 'small' | 'normal' | 'large';
   label?: string;
   /** Brukerspesifisert event for callout **/
@@ -40,6 +41,7 @@ const LabelWithCallout = (props: LabelWithCalloutProps) => {
     editFunction,
     help,
     id,
+    inFieldset,
     label,
     readOnly,
     warning,
@@ -73,14 +75,25 @@ const LabelWithCallout = (props: LabelWithCalloutProps) => {
   return onRenderLabel ? (
     onRenderLabel
   ) : (
-    <div
-      id={id}
-      aria-label={ariaLabel}
-      className={classnames(styles.labelArea, className)}
-    >
-      <span className={styles.label}>
-        {label ? <Label>{label}</Label> : null}
-      </span>
+    <>
+      {inFieldset ? (
+        <legend
+          aria-label={ariaLabel}
+          id={id}
+          className={classnames(styles.labelAsLegend, className)}
+        >
+          {label}
+        </legend>
+      ) : (
+        <label
+          aria-label={ariaLabel}
+          id={id}
+          className={classnames(styles.label, className)}
+        >
+          {label}
+        </label>
+      )}
+
       {help && !warning && (
         <span className={styles.labelIconArea} ref={iconButtonElementRef}>
           <IconButton
@@ -105,7 +118,7 @@ const LabelWithCallout = (props: LabelWithCalloutProps) => {
               setIsCalloutVisible(!isCalloutVisible);
               toggleEvent();
             }}
-            className={styles.icon}
+            className={styles.warningicon}
           />
         </span>
       )}
@@ -141,7 +154,24 @@ const LabelWithCallout = (props: LabelWithCalloutProps) => {
           {help && !warning ? helpElement : warningElement}
         </Callout>
       )}
-    </div>
+    </>
   );
+
+  /*  return onRenderLabel ? (
+    onRenderLabel
+  ) : inFieldset ? (
+    <legend className={styles.labelArea}>{label}</legend>
+  ) : (
+    <div
+      
+      aria-label={ariaLabel}
+      className={classnames(styles.labelArea, className)}
+    >
+      <span className={styles.label}>
+        {label ? <Label>{label}</Label> : null}
+      </span>
+      
+    </div>
+  ); */
 };
 export default LabelWithCallout;

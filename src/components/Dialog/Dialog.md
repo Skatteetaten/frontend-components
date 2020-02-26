@@ -14,17 +14,16 @@ function closeDialog() {
 <div>
   <Button
     buttonStyle="secondary"
-    aria-haspopup="true"
     onClick={() => setState({ hideDialog: false })}
   >
     Vis standard dialog
   </Button>
   <Dialog
-    id="hipp"
     hidden={state.hideDialog}
     type={Dialog.Type.normal}
     onDismiss={closeDialog}
     title="Kansellere arbeidsoppgaven?"
+    forceFocusInsideTrap
     minWidth="400px"
     maxWidth="600px"
   >
@@ -68,7 +67,6 @@ const content1 = [
 <div>
   <Button
     buttonStyle="secondary"
-    aria-haspopup="true"
     onClick={() => setState({ hideDialog: false })}
   >
     Vis luftig dialog
@@ -77,6 +75,7 @@ const content1 = [
     hidden={state.hideDialog}
     type={Dialog.Type.normal}
     onDismiss={closeDialog}
+    forceFocusInsideTrap
     title="Velg den inngangen som passer for deg"
     minWidth="500px"
     maxWidth="600px"
@@ -113,16 +112,15 @@ function closeDialog() {
 <div>
   <Button
     buttonStyle="secondary"
-    aria-haspopup="true"
     onClick={() => setState({ hideDialog: false })}
   >
     Vis viktig dialog
   </Button>
   <Dialog
-    id="hipp"
     hidden={state.hideDialog}
     type={Dialog.Type.normal}
     layoutStyle={'important'}
+    forceFocusInsideTrap
     onDismiss={closeDialog}
     title="Viktig melding!"
     minWidth="400px"
@@ -141,10 +139,6 @@ function closeDialog() {
 ```js noeditor uu
 <h3>Huskeliste</h3>
 <ul>
-  <li>
-    Bruk <b>aria-haspopup</b> for å indikere at en dialog åpnes ved klikk på en
-    knapp.{' '}
-  </li>
   <li>
     Sjekk at dialogen får fokus etter at den åpnes. Dette gjør det enkelere for
     en skjermleser å oppdage og lese opp innholdet.

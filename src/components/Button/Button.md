@@ -37,7 +37,9 @@ Ekstra fremtredende hovedhandling
 import Button from '@skatteetaten/frontend-components/Button';
 
 <div className="ExampleSpacing8">
-  <Button buttonStyle="primaryLarge">Send inn meldingen</Button>
+  <Button roleLink buttonStyle="primaryLarge">
+    Se eller endre skattekort
+  </Button>
 </div>;
 ```
 
@@ -48,7 +50,7 @@ import Button from '@skatteetaten/frontend-components/Button';
   <li>Bruk én linje med tekst inne i knappen. For mye tekst kan virke forvirrende
     for skjermlesere.</li>
   <li>Ikke bruk knappen for å navigere videre til et annet område.</li>
-  <li>Knappen skal se ut som en knapp, og ikke være en lenke.</li>
+  <li>Knappen skal se ut som en knapp, og ikke være en lenke. (Dersom du MÅ bruke knapp som lenke, bør du bruke roleLink-egenskapen for at skjermleser skal oppfatte dette riktig.)</li>
   <li>Ikke putt et ikon inne i selve knappen. Bruk heller IconButton.</li>
   <li>Unngå inaktiv (disabled) knapp pga:
     <ul>

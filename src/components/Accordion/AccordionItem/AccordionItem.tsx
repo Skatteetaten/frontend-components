@@ -2,7 +2,6 @@ import * as React from 'react';
 import classnames from 'classnames';
 import Grid from '../../Grid/Grid';
 import Icon from '../../Icon/Icon';
-
 import { getClassNames } from '../Accordion.classNames';
 import Heading from '../../utils/Heading';
 
@@ -28,6 +27,8 @@ export interface AccordionItemProps {
   headingLevel?: number;
   /** Subtittel som vises i accordionitem */
   subtitle?: string;
+  /** Overstyring av stiler */
+  className?: string;
   stepNumber?: number;
   totalSteps?: number;
   processList?: boolean;
@@ -46,12 +47,14 @@ const ToggleContent: React.FC<ToggleContentInterface> = props => {
     toggleButtonText,
     onClick,
     subtitle,
-    headingLevel
+    headingLevel,
+    stepId,
+    processList
   } = props;
+
   if (!toggleContent) {
     return null;
   }
-
   return (
     <button
       className={
@@ -61,8 +64,9 @@ const ToggleContent: React.FC<ToggleContentInterface> = props => {
       }
       aria-expanded={isContentOpen}
       onClick={onClick}
+      aria-describedby={processList ? 'StepId' + stepId : undefined}
     >
-      <label>
+      <span>
         {headingLevel && toggleButtonText ? (
           <Heading text={toggleButtonText} level={headingLevel} />
         ) : (
@@ -72,11 +76,11 @@ const ToggleContent: React.FC<ToggleContentInterface> = props => {
         <Icon iconName={'ChevronDown'} />
 
         {subtitle && (
-          <p className={styles.subtitle} aria-label={subtitle} tabIndex={0}>
+          <p className={styles.subtitle} aria-label={subtitle}>
             {subtitle}
           </p>
         )}
-      </label>
+      </span>
     </button>
   );
 };
@@ -105,6 +109,7 @@ const AccordionItem: React.FC<AccordionItemProps> = props => {
     toggleContent,
     toggleButtonText,
     stepNumber,
+    className,
     icon,
     ariaLabel,
     children,
@@ -115,7 +120,11 @@ const AccordionItem: React.FC<AccordionItemProps> = props => {
   } = props;
 
   return (
-    <div key={stepNumber} className={styles.wrapperStep} aria-controls={stepId}>
+    <div
+      key={stepNumber}
+      className={classnames(styles.wrapperStep, className)}
+      aria-controls={stepId}
+    >
       {processList && stepNumber !== totalSteps && (
         <span className={styles.stepLine} />
       )}
@@ -123,9 +132,12 @@ const AccordionItem: React.FC<AccordionItemProps> = props => {
         <Grid.Col>
           <Grid.Row rowSpacing={Grid.SPACE_NONE}>
             {processList && (
-              <Grid.Col sm={3} md={2} xl={1}>
+              <Grid.Col sm={2} md={1} xl={1}>
                 <div className={styles.stepNumber}>
-                  <span aria-label={ariaLabel ? ariaLabel : ''}>
+                  <span
+                    id={'StepId' + stepId}
+                    aria-label={ariaLabel ? ariaLabel : 'Steg ' + stepNumber}
+                  >
                     {icon ? <Icon iconName={icon} /> : stepNumber}
                   </span>
                 </div>
@@ -146,22 +158,20 @@ const AccordionItem: React.FC<AccordionItemProps> = props => {
                 subtitle={subtitle}
                 onClick={clickHandler}
                 headingLevel={headingLevel}
+                processList={processList}
               />
               {(isContentOpen || !toggleContent) && (
-                <div
-                  className={styles.content}
-                  id={stepId}
-                  role={'region'}
-                  tabIndex={0}
-                >
+                <div className={styles.content} id={stepId}>
                   {headingLevel && title ? (
                     headingLevel <= 5 ? (
                       <Heading text={title} level={headingLevel + 1} />
                     ) : (
                       { title }
                     )
+                  ) : title ? (
+                    <h2 className={styles.heading}>{title}</h2>
                   ) : (
-                    <h1>{title}</h1>
+                    ''
                   )}
                   {children}
                 </div>

@@ -46,12 +46,16 @@ const testFunc = () => {
   console.log('Hei fra ActionButton');
 };
 
-<StepList>
+<StepList ariaLabel="Liste med steg">
   {showFirstStep && (
     <Step
       stepTitle={titles.step1.no}
       stepId={'step-1-1'}
-      actionBtn={{ text: 'Endre', event: testFunc }}
+      actionBtn={{
+        text: 'Endre',
+        event: testFunc,
+        ariaLabel: 'Endre jobber du?'
+      }}
     >
       <div>
         <p>Jeg jobber</p>
@@ -61,7 +65,7 @@ const testFunc = () => {
   <Step
     stepTitle={titles.step2.no}
     stepId={'step-1-2'}
-    actionBtn={{ text: 'Endre' }}
+    actionBtn={{ text: 'Endre', ariaLabel: 'Endre overnatting' }}
   >
     <div>
       <p>Ja, jeg overnatter et annet sted enn hjemme på grunn av jobb</p>
@@ -135,7 +139,11 @@ const testFunc = () => {
     <Step
       stepTitle={titles.step1.no}
       stepId={'step-1-1'}
-      actionBtn={{ text: 'Endre', event: testFunc }}
+      actionBtn={{
+        text: 'Endre',
+        event: testFunc,
+        ariaLabel: 'Endre jobber du?'
+      }}
     >
       <div>
         <p>Jeg jobber</p>
@@ -145,7 +153,7 @@ const testFunc = () => {
   <Step
     stepTitle={titles.step2.no}
     stepId={'step-1-2'}
-    actionBtn={{ text: 'Endre' }}
+    actionBtn={{ text: 'Endre', ariaLabel: 'Endre overnatting' }}
   >
     <div>
       <p>Ja, jeg overnatter et annet sted enn hjemme på grunn av jobb</p>
@@ -215,7 +223,7 @@ const titles = {
   <Step
     stepTitle={titles.step1.no}
     stepId={'step-1-1'}
-    actionBtn={{ text: 'Endre' }}
+    actionBtn={{ text: 'Endre', ariaLabel: 'Endre jobber du?' }}
   >
     <div>
       <p>Jeg er fulltidsstudent eller vernepliktig i militæret </p>
@@ -225,7 +233,7 @@ const titles = {
     stepTitle={titles.step2.no}
     stepId={'step-1-2'}
     activeStep={false}
-    actionBtn={{ text: 'Endre' }}
+    actionBtn={{ text: 'Endre', ariaLabel: 'Endre sommerjobb?' }}
   >
     <p>Nei</p>
   </Step>
@@ -272,8 +280,7 @@ const titles = {
   avhengigheter, nullstilles senere steg.</p>
 
 ```
+
 ```js noeditor uu
-<p>
-Ingen informasjon
-</p>
+<p>Ingen informasjon</p>
 ```

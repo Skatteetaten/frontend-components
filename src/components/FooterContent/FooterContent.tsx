@@ -25,22 +25,22 @@ interface FooterContentProps extends React.HTMLAttributes<HTMLDivElement> {
 /**
  * @visibleName FooterContent (Bunn)
  */
-const FooterContent: React.FC<FooterContentProps> = props => {
-  const { children, className, ariaLabel } = props;
-  const styles = getClassNames();
-  return (
-    <div className={className} aria-label={ariaLabel}>
-      <div className={styles.footerDecorContainer} role="contentinfo">
-        <FooterDekor />
+class FooterContent extends React.PureComponent<FooterContentProps> {
+  static Logo = Logo;
+  render() {
+    const { children, className, ariaLabel } = this.props;
+    const styles = getClassNames();
+    return (
+      <div className={className} aria-label={ariaLabel}>
+        <div className={styles.footerDecorContainer} aria-hidden="true">
+          <FooterDekor />
+        </div>
+        <footer className={styles.footerWrapper}>
+          <div className={styles.footerContent}>{children}</div>
+        </footer>
       </div>
-      <footer className={styles.footerWrapper}>
-        <div className={styles.footerContent}>{children}</div>
-      </footer>
-    </div>
-  );
-};
-
-// @ts-ignore
-FooterContent.Logo = Logo;
+    );
+  }
+}
 
 export default FooterContent;
