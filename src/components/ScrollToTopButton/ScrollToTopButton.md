@@ -23,3 +23,26 @@ import ScrollToTopButton from '@skatteetaten/frontend-components/ScrollToTopButt
   til høyre som overlay. Er skjermbredden mindre vises den sentrert.
 </p>
 ```
+```js noeditor uu
+<h3>Tips</h3>
+
+  <ul>
+  <li>Må kunne brukes med tastatur og flytte tastaturfokus til toppen, ikke bare rulle.</li>
+  <li>Nettleseren skal ikke bare rulle til toppen, men også tastaturfokus skal også flyttes til toppen.</li>
+  <li>Skjermleserbrukere vil hovedsaklig bruke hurtigtaster for å flytte til toppen.</li>
+  <li>Det er ikke noe krav å ha slik funksjonalitet</li>
+  </ul>
+
+<h3>Mest relevante WCAG-krav</h3>
+
+  <ul>
+  <li>2.1.1 A, Tastatur</li>
+  </ul>
+
+<h3>WAI-ARIA</h3>
+
+  <ul>
+  <li>Aria-hidden="true" brukes for skjule funksjonaliteten for skjermlesere.</li>
+  <li>All annen aria-koding er overflødig pga. at hele knappen er skjult for skjermlesere.
+  </ul>
+```

@@ -107,7 +107,7 @@ import AccordionItem from '@skatteetaten/frontend-components/Accordion/Accordion
   </a>
 </p>
 <h3>Riktig overskriftsnivå</h3>
-<p>En Accordion kan brukes på mange ulike nivåer på siden. Komponenten produserer som standard  tekst inni label-tag for det blå klikkbare elementet, men det det i enkelte tilfeller være ønskelig å angi dette som et bestemt overskriftsnivå, for eksempel h3 eller h4. Det gjør du slik:</p>
+<p>En Accordion kan brukes på mange ulike nivåer på siden. .Komponenten produserer som standard  tekst inni label-tag for det blå klikkbare elementet, men det det i enkelte tilfeller være ønskelig å angi dette som et bestemt overskriftsnivå, for eksempel h3 eller h4. Det gjør du slik:</p>
 ```
 
 ```js uu

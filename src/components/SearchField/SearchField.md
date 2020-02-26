@@ -61,3 +61,7 @@ const options = [
     deretter.
   </p>
 ```
+
+```js noeditor uu
+<p>Ingen informasjon</p>
+```
