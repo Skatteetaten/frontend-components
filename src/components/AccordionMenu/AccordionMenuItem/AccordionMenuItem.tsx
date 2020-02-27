@@ -65,9 +65,7 @@ const AccordionMenuItem = (props: AccordionMenuItemProps) => {
               <Icon iconName={icon} style={{ fontSize: '28px' }} />
             </div>
           </div>
-          <div className={styleTitle} tabIndex={0}>
-            {heading}
-          </div>
+          <div className={styleTitle}>{heading}</div>
         </div>
         <div
           className={
