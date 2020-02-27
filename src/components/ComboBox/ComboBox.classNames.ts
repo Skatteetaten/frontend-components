@@ -112,6 +112,13 @@ export const getOptionsClassNames = (props: ComboboxProps) => {
       '& .ms-ComboBox-option.is-checked:after': {
         border: 'none',
         outline: 'none'
+      },
+      '& .ms-ComboBox-optionText': {
+        whiteSpace: 'normal !important'
+      },
+      'button.ms-ComboBox-option': {
+        marginTop: '4px',
+        marginBottom: '4px'
       }
     }
   });
