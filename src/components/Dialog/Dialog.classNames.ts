@@ -50,12 +50,15 @@ function getHeaderBackgroundStyle(props: DialogProps) {
 export const getClassNames = function getClassNames(props: DialogProps) {
   const palette = getTheme().palette as PaletteProps;
 
+  const overflows = props.tabletContentOverflows;
+
   return mergeStyleSets({
     main: {
       displayName: `SkeDialog`,
       position: 'absolute',
       selectors: {
         '& .ms-Dialog-main': {
+          height: overflows ? '100%' : '',
           selectors: {
             '@media (min-width: 480px)': {
               ...setMinMaxWidth(props),
@@ -64,13 +67,22 @@ export const getClassNames = function getClassNames(props: DialogProps) {
               borderWidth: '4px'
             }
           },
-
           ...getMainBackgroundStyle(props)
         },
         '& .ms-Modal-scrollableContent': {
           overflowY: 'scroll',
           overflowX: 'hidden',
-          WebkitOverflowScrolling: 'touch'
+          WebkitOverflowScrolling: 'touch',
+          selectors: {
+            '@media only screen and (min-device-width: 768px) and (max-device-width: 1024px)': {
+              //iPad scrolling fix
+              position: overflows ? 'absolute' : 'relative',
+              top: 0,
+              bottom: 0,
+              minWidth: props.minWidth,
+              maxWidth: props.maxWidth
+            }
+          }
         },
         '& .ms-Dialog-header': {
           ...getHeaderBackgroundStyle(props)

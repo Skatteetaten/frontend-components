@@ -12,6 +12,8 @@ import {
 export interface DialogProps extends IDialogProps {
   /** Om dialog skal ha mer padding for et luftigere uttrykk */
   layoutStyle?: 'normal' | 'airy' | 'important';
+  /** Om det er så mye innhold at det går over flere "sider" (fikser scroll inni dialog på ipad) */
+  tabletContentOverflows?: boolean;
 }
 type DialogState = {
   isCalloutVisible: boolean;
@@ -29,7 +31,8 @@ export default class Dialog extends React.PureComponent<
   static defaultProps = {
     layoutStyle: 'normal',
     type: Dialog.Type.normal,
-    closeButtonAriaLabel: 'Lukk'
+    closeButtonAriaLabel: 'Lukk',
+    tabletContentOverflows: false
   };
   private readonly _iconButtonElement: React.RefObject<HTMLDivElement>;
 

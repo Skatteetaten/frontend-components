@@ -17,6 +17,7 @@ exports[`Dialog komponent matcher snapshot 1`] = `
         "isBlocking": undefined,
       }
     }
+    tabletContentOverflows={false}
   />
 </div>
 `;
