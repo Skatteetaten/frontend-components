@@ -65,7 +65,6 @@ exports[`Accordion komponent matcher snapshot 1`] = `
                             />
                             <div
                               className="content-39"
-                              role="region"
                             >
                               <p>
                                 Her vises innhold

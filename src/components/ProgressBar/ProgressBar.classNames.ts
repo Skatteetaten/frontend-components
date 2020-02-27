@@ -11,12 +11,19 @@ export const getClassNames = function getClassNames() {
       displayName: 'SkeProgressBar',
       selectors: {
         '& .ms-ProgressIndicator-progressBar': {
-          background: palette.skeColor.burgundyLight,
-          height: '5px'
+          background: palette.skeColor.burgundy,
+          height: '16px'
+        },
+        '& .ms-ProgressIndicator-itemProgress': {
+          height: '16px',
+          padding: '0',
+          border: `1px solid ${palette.skeColor.blackAlt}`,
+          marginTop: '8px',
+          marginBottom: '8px'
         },
         '& .ms-ProgressIndicator-progressTrack': {
           background: palette.skeColor.whiteGrey,
-          height: '5px'
+          height: '16px'
         },
         '& .ms-ProgressIndicator-itemDescription': {
           fontSize: FontSizes.small

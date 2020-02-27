@@ -39,6 +39,13 @@ export default {
         'Kroner': '\uea0d', 
         'PreviewFile': '\uea0e', 
         'Skattetrekk': '\uea0f', 
-        'Up': '\uea10' 
+        'TemaArbeidTrygdPensjon': '\uea10', 
+        'TemaBankLaanForsikring': '\uea11', 
+        'TemaBoligEiendeler': '\uea12', 
+        'TemaFamilie': '\uea13', 
+        'TemaFinans': '\uea14', 
+        'TemaGaveArv': '\uea15', 
+        'TemaPersonligeForhold': '\uea16', 
+        'Up': '\uea17' 
     }
 };

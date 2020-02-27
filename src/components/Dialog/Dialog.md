@@ -14,7 +14,6 @@ function closeDialog() {
 <div>
   <Button
     buttonStyle="secondary"
-    aria-haspopup="true"
     onClick={() => setState({ hideDialog: false })}
   >
     Vis standard dialog
@@ -68,7 +67,6 @@ const content1 = [
 <div>
   <Button
     buttonStyle="secondary"
-    aria-haspopup="true"
     onClick={() => setState({ hideDialog: false })}
   >
     Vis luftig dialog
@@ -114,7 +112,6 @@ function closeDialog() {
 <div>
   <Button
     buttonStyle="secondary"
-    aria-haspopup="true"
     onClick={() => setState({ hideDialog: false })}
   >
     Vis viktig dialog
@@ -142,10 +139,6 @@ function closeDialog() {
 ```js noeditor uu
 <h3>Huskeliste</h3>
 <ul>
-  <li>
-    Bruk <b>aria-haspopup</b> for å indikere at en dialog åpnes ved klikk på en
-    knapp.{' '}
-  </li>
   <li>
     Sjekk at dialogen får fokus etter at den åpnes. Dette gjør det enkelere for
     en skjermleser å oppdage og lese opp innholdet.
