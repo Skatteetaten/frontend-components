@@ -185,7 +185,7 @@ const SearchField: React.FC<SearchFieldProps> = props => {
           {dropdownVisible && renderSuggestions(searchResultList)}
         </div>
       ) : (
-        <SearchBox {...rest} className={classnames(styles.main, className)} />
+        <SearchBox {...props} className={classnames(styles.main, className)} />
       )}
     </>
   );
