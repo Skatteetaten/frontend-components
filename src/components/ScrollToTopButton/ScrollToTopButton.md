@@ -23,6 +23,7 @@ import ScrollToTopButton from '@skatteetaten/frontend-components/ScrollToTopButt
   til høyre som overlay. Er skjermbredden mindre vises den sentrert.
 </p>
 ```
+
 ```js noeditor uu
 <h3>Tips</h3>
 
@@ -43,6 +44,6 @@ import ScrollToTopButton from '@skatteetaten/frontend-components/ScrollToTopButt
 
   <ul>
   <li>Aria-hidden="true" brukes for skjule funksjonaliteten for skjermlesere.</li>
-  <li>All annen aria-koding er overflødig pga. at hele knappen er skjult for skjermlesere.
+  <li>All annen aria-koding er overflødig pga. at hele knappen er skjult for skjermlesere.</li>
   </ul>
 ```
