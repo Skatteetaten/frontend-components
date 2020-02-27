@@ -1,3 +1,11 @@
+### **v.3.2.1 - 27.02.2020 **
+
+- Dialog: added prop tabletContentOverflows to address an issue when scrolling on iPad.
+- Icons: Added some bigger and more detailed theme-icons
+- ComboBox: Long options in list are no longer cut - wraps instead.
+- SearchField: Fixed a bug where not all props were sent
+- Description in RadioButtonGroup was incorrectly set to required
+
 ### **v.3.2.0 - 25.02.2020 **
 
 - OpenClose: new component
