@@ -81,11 +81,7 @@ const AccordionMenuItem = (props: AccordionMenuItemProps) => {
           />
         </div>
       </header>
-      {isContentOpen && (
-        <section className={content} tabIndex={0}>
-          {children}
-        </section>
-      )}
+      {isContentOpen && <section className={content}>{children}</section>}
     </li>
   );
 };
