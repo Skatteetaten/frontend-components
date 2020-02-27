@@ -17,6 +17,8 @@ export interface ButtonProps extends IButtonProps {
     | 'warning'
     | 'secondary'
     | 'primaryLarge';
+  /** Setter role=link på knappen for å hjelpe skjermleser-brukere dersom knappen brukes om en lenke. */
+  roleLink?: boolean;
   /**
    * Skjulte props
    */
@@ -54,10 +56,22 @@ export interface ButtonProps extends IButtonProps {
  */
 
 const Button: React.FC<ButtonProps> = props => {
-  const { children, icon, className, iconProps, buttonType, ...rest } = props;
+  const {
+    children,
+    icon,
+    className,
+    iconProps,
+    buttonType,
+    roleLink,
+    ...rest
+  } = props;
+
+  const buttonRole = roleLink ? 'link' : undefined;
+
   return (
     <DefaultButton
       {...rest}
+      role={buttonRole}
       className={classnames(getStandardClassNames(props), className)}
       iconProps={icon ? { iconName: icon } : iconProps}
     >

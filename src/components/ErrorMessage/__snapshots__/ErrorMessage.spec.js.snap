@@ -4,7 +4,7 @@ exports[`ErrorMessage komponent Skjuler komponent hvis showError er false 1`] = 
 
 exports[`ErrorMessage komponent matcher snapshot 1`] = `
 <span
-  aria-label="ErrorMessage"
+  aria-atomic="true"
   className="css-34"
   role="alert"
 >

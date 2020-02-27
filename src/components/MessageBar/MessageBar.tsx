@@ -46,7 +46,8 @@ export class MessageBar extends React.PureComponent<
     isMultiline: true,
     onClick: undefined,
     size: 'default',
-    type: MessageBar.Type.info
+    type: MessageBar.Type.info,
+    dismissButtonAriaLabel: 'Lukk'
   };
 
   state = {
@@ -94,6 +95,7 @@ export class MessageBar extends React.PureComponent<
       duration,
       type,
       onDismiss,
+      dismissButtonAriaLabel,
       isMultiline,
       className,
       id,
@@ -130,6 +132,7 @@ export class MessageBar extends React.PureComponent<
               isMultiline={isMultiline}
               aria-describedby={id}
               role="status"
+              dismissButtonAriaLabel={dismissButtonAriaLabel}
               tabIndex={0}
             >
               {children}

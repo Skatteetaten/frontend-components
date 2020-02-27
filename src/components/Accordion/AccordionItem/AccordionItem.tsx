@@ -47,12 +47,14 @@ const ToggleContent: React.FC<ToggleContentInterface> = props => {
     toggleButtonText,
     onClick,
     subtitle,
-    headingLevel
+    headingLevel,
+    stepId,
+    processList
   } = props;
+
   if (!toggleContent) {
     return null;
   }
-
   return (
     <button
       className={
@@ -62,8 +64,9 @@ const ToggleContent: React.FC<ToggleContentInterface> = props => {
       }
       aria-expanded={isContentOpen}
       onClick={onClick}
+      aria-describedby={processList ? 'StepId' + stepId : undefined}
     >
-      <label>
+      <span>
         {headingLevel && toggleButtonText ? (
           <Heading text={toggleButtonText} level={headingLevel} />
         ) : (
@@ -77,7 +80,7 @@ const ToggleContent: React.FC<ToggleContentInterface> = props => {
             {subtitle}
           </p>
         )}
-      </label>
+      </span>
     </button>
   );
 };
@@ -131,7 +134,10 @@ const AccordionItem: React.FC<AccordionItemProps> = props => {
             {processList && (
               <Grid.Col sm={2} md={1} xl={1}>
                 <div className={styles.stepNumber}>
-                  <span aria-label={ariaLabel ? ariaLabel : ''}>
+                  <span
+                    id={'StepId' + stepId}
+                    aria-label={ariaLabel ? ariaLabel : 'Steg ' + stepNumber}
+                  >
                     {icon ? <Icon iconName={icon} /> : stepNumber}
                   </span>
                 </div>
@@ -152,9 +158,10 @@ const AccordionItem: React.FC<AccordionItemProps> = props => {
                 subtitle={subtitle}
                 onClick={clickHandler}
                 headingLevel={headingLevel}
+                processList={processList}
               />
               {(isContentOpen || !toggleContent) && (
-                <div className={styles.content} id={stepId} role={'region'}>
+                <div className={styles.content} id={stepId}>
                   {headingLevel && title ? (
                     headingLevel <= 5 ? (
                       <Heading text={title} level={headingLevel + 1} />

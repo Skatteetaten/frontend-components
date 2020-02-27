@@ -101,7 +101,7 @@ export function getClassNames() {
           fontSize: FontSizes.largePlus,
           margin: '0'
         },
-        '& label': {
+        '& span': {
           display: 'flex',
           flexDirection: 'row',
           justifyContent: 'space-between',

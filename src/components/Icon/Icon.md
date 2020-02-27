@@ -547,6 +547,95 @@ Object.keys(iconGroup).forEach(name => {
 </div>;
 ```
 
+Store og mer detaljerte temaikoner:
+
+```js noeditor
+import Icon from '@skatteetaten/frontend-components/Icon';
+import Accordion from '@skatteetaten/frontend-components/Accordion';
+import AccordionItem from '@skatteetaten/frontend-components/Accordion/AccordionItem';
+import DetailsList from '@skatteetaten/frontend-components/DetailsList';
+const columns = [
+  {
+    key: 'column1',
+    name: 'Ikon',
+    fieldName: 'icon',
+    minWidth: 100,
+    maxWidth: 100,
+    isResizable: false
+  },
+  {
+    key: 'column2',
+    name: 'Navn',
+    fieldName: 'name',
+    minWidth: 100,
+    maxWidth: 270,
+    isResizable: true
+  },
+  {
+    key: 'column3',
+    name: 'Brukes til',
+    fieldName: 'usage',
+    minWidth: 50,
+    isResizable: true
+  }
+];
+
+const iconGroup = {
+  theme: [
+    {
+      name: 'TemaArbeidTrygdPensjon',
+      usage: 'Arbeid, trygd og pensjon'
+    },
+    {
+      name: 'TemaBankLaanForsikring',
+      usage: 'Bank, lån og forsikring'
+    },
+    {
+      name: 'TemaBoligEiendeler',
+      usage: 'Bolig og eiendeler '
+    },
+    {
+      name: 'TemaFamilie',
+      usage: 'Familie'
+    },
+    {
+      name: 'TemaFinans',
+      usage: 'Finans'
+    },
+    {
+      name: 'TemaGaveArv',
+      usage: 'Gave og arv'
+    },
+    {
+      name: 'TemaPersonligeForhold',
+      usage: 'Personlige forhold'
+    }
+  ]
+};
+
+const addIcon = icons => {
+  return icons.map(props => ({
+    ...props,
+    icon: <Icon iconName={props.name} style={{ fontSize: '64px' }} />
+  }));
+};
+
+// Add icon element to all icons
+Object.keys(iconGroup).forEach(name => {
+  iconGroup[name] = addIcon(iconGroup[name]);
+});
+
+<div>
+  <Accordion>
+    <AccordionItem toggleContent toggleButtonText={'Tema'}>
+      <DetailsList columns={columns} items={iconGroup.theme} />
+    </AccordionItem>
+  </Accordion>
+  <br />
+  <br />
+</div>;
+```
+
 ```js noeditor uu
 <div>
   <h3>Huskeliste</h3>

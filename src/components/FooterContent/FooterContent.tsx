@@ -32,7 +32,7 @@ class FooterContent extends React.PureComponent<FooterContentProps> {
     const styles = getClassNames();
     return (
       <div className={className} aria-label={ariaLabel}>
-        <div className={styles.footerDecorContainer} role="contentinfo">
+        <div className={styles.footerDecorContainer} aria-hidden="true">
           <FooterDekor />
         </div>
         <footer className={styles.footerWrapper}>
