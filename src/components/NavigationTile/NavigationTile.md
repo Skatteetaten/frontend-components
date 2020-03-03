@@ -122,3 +122,29 @@ const contents = [
     tekst. I tillegg kan innholdet midtstilles eller høyre og venstrejusteres.
   </p>
 ```
+
+```js noeditor uu
+<h3>Tips</h3>
+
+  <ul>
+  <li>En lenke skal minst 2 ulike visuelle "hint" for å skille det fra vanlig tekst. Her er det blå farge og understreking.</li>
+  <li>Tenk på kontrast hvis bakgrunnsfargen bak lenken endrer seg, for eksempel svart bakgrunn = hvit skrift</li>
+  <li>Lenketeksten eller alternativ tekst (grafisk lenke) skal tydeliggjøre hva som er målet til lenken</li>
+  <li>Pass på at overskriften i en tile har riktig nivå</li>
+  </ul>
+
+  <h3>Mest relevante WCAG-krav</h3>
+
+  <ul>
+  <li>1.4.1 A, Bruk av farge</li>
+  <li>1.4.3 AA, Kontrast (minimum)</li>
+  <li>2.4.4 A, Formål med lenke (i kontekst)</li>
+  </ul>
+
+  <h3>WAI-ARIA</h3>
+
+  <ul>
+  <li>Aria-hidden="true" brukes for skjule ikoner for skjermleser.</li>
+  <li>Aria-label="xxx" brukes for å navngi nav-tag.</li>
+  </ul>
+```

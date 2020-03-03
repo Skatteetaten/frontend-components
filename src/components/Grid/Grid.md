@@ -136,3 +136,8 @@ import Grid from '@skatteetaten/frontend-components/Grid';
     <li>Nytt type innhold eller tydelig skille: Grid.SPACE_LARGE (24px)</li>
   </ul>
 ```
+```js noeditor uu
+<p>
+Ingen informasjon
+</p>
+```
