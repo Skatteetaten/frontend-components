@@ -1,22 +1,16 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`RadioButtonGroup komponent matcher snapshot 1`] = `
-Array [
-  <div
-    className="labelArea-42"
+<fieldset
+  className="fieldset-40"
+>
+  <legend
+    className="labelAsLegend-44"
   >
-    <span
-      className="label-43"
-    >
-      <label
-        className="ms-Label root-47"
-      >
-        Velg en
-      </label>
-    </span>
-  </div>,
+    Velg en
+  </legend>
   <div
-    className="applicationRole-48"
+    className="radioButtons-41"
   >
     <div
       aria-labelledby="Velg en"
@@ -150,6 +144,6 @@ Array [
         </div>
       </div>
     </div>
-  </div>,
-]
+  </div>
+</fieldset>
 `;

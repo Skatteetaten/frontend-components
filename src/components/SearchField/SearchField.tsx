@@ -72,7 +72,21 @@ const SearchField: React.FC<SearchFieldProps> = props => {
 
   React.useEffect(() => {
     setSearchResultList(options);
+    setSearchResult(value ? value : '');
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [options]);
+
+  React.useEffect(() => {
+    setValue(props.value);
+  }, [props.value]);
+
+  React.useEffect(() => {
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      // Unbind the event listener on clean up
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  });
 
   const changeEvent = (text: string) => {
     //@ts-ignore TODO
@@ -100,6 +114,26 @@ const SearchField: React.FC<SearchFieldProps> = props => {
     }
   };
 
+  const handleClickOutside = event => {
+    const contains = listRefs.current.filter(
+      ref => ref && ref.contains(event.target)
+    );
+    if (
+      !contains.length &&
+      _searchBoxElement.current &&
+      !_searchBoxElement.current.contains(event.target)
+    ) {
+      setDropdownVisible(false);
+    }
+  };
+
+  const setSearchResult = (newValue: string) => {
+    if (options && newValue) {
+      const newList = searchInList(options, newValue);
+      setSearchResultList(newList);
+      setDropdownVisible(newList.length > 0);
+    }
+  };
   const renderSuggestions = list => {
     if (list.length === 0) {
       setDropdownVisible(false);
@@ -160,9 +194,7 @@ const SearchField: React.FC<SearchFieldProps> = props => {
               if (!newValue) {
                 setDropdownVisible(false);
               } else {
-                const newList = searchInList(options, newValue);
-                setSearchResultList(newList);
-                setDropdownVisible(newList.length > 0);
+                setSearchResult(newValue);
               }
               setValue(newValue);
               onChange && onChange(ev, newValue);
@@ -173,7 +205,7 @@ const SearchField: React.FC<SearchFieldProps> = props => {
           {dropdownVisible && renderSuggestions(searchResultList)}
         </div>
       ) : (
-        <SearchBox {...rest} className={classnames(styles.main, className)} />
+        <SearchBox {...props} className={classnames(styles.main, className)} />
       )}
     </>
   );

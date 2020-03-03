@@ -48,7 +48,7 @@ describe('TextField komponent', () => {
     const wrapper = oppsettFullDOM({
       label: 'textfied-label'
     });
-    const label = wrapper.find('LabelBase');
+    const label = wrapper.find('label');
 
     expect(label).toHaveLength(1);
     expect(label.html()).toContain('textfied-label');

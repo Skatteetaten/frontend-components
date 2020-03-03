@@ -3,8 +3,8 @@
 exports[`FooterContent komponent matcher snapshot  1`] = `
 <div>
   <div
+    aria-hidden="true"
     className="footerDecorContainer-35"
-    role="contentinfo"
   >
     <svg
       className="footer-decoration-svg"

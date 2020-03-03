@@ -71,6 +71,7 @@ export const getClassNames = (props: NavigationTileProps) => {
           textAlign: 'center',
           margin: 0,
           marginBottom: '8px',
+          fontSize: '24px',
           color: palette.skeColor.blue,
           ...getTitle(props)
         },

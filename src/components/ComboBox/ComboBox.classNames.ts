@@ -29,7 +29,7 @@ function getFieldTypeStyles(props: ComboboxProps) {
   } else {
     return {
       '& .ms-ComboBox-Input': {
-        fontSize: FontSizes.small
+        fontSize: FontSizes.medium
       }
     };
   }
@@ -51,7 +51,7 @@ export const getClassNames = (props: ComboboxProps) => {
       '& .ms-ComboBox': {
         borderRadius: '0px',
         height: '30px',
-        padding: '1px 32px 1px 12px',
+        padding: '0px 32px 1px 8px',
         borderColor: errorMessage
           ? palette.skeColor.error
           : palette.skeColor.blackAlt
@@ -98,7 +98,6 @@ export const getOptionsClassNames = (props: ComboboxProps) => {
         }
       },
       '& .ms-ComboBox-option.is-checked': {
-        //border: '2px solid' + palette.skeColor.blue,
         background: palette.skeColor.lightBlue,
         textDecoration: 'underline',
         outline: 'none',
@@ -113,6 +112,13 @@ export const getOptionsClassNames = (props: ComboboxProps) => {
       '& .ms-ComboBox-option.is-checked:after': {
         border: 'none',
         outline: 'none'
+      },
+      '& .ms-ComboBox-optionText': {
+        whiteSpace: 'normal !important'
+      },
+      'button.ms-ComboBox-option': {
+        marginTop: '4px',
+        marginBottom: '4px'
       }
     }
   });

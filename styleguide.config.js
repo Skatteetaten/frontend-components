@@ -85,6 +85,7 @@ module.exports = {
       'Accordion',
       'AccordionMenu',
       'Card',
+      'OpenClose',
       'CommandBar',
       'LinkGroup',
       'StepList',

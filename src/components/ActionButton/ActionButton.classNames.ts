@@ -73,6 +73,9 @@ export function getClassNames(props: ActionButtonProps): string {
   const radius = '0';
   return mergeStyles(getFocusStyle({ palette }, inset, 'relative', radius), {
     selectors: {
+      '& span': {
+        flexDirection: props.iconAfter ? 'row-reverse' : 'row'
+      },
       '&.ms-Button.ms-Button--action, &.ms-Button--action .ms-Button-icon': {
         ...getTypeColor(props)
       },

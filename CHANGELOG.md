@@ -1,3 +1,28 @@
+### **v.3.2.1 - 27.02.2020 **
+
+- Dialog: added prop tabletContentOverflows to address an issue when scrolling on iPad.
+- Icons: Added some bigger and more detailed theme-icons
+- ComboBox: Long options in list are no longer cut - wraps instead.
+- SearchField: Fixed a bug where not all props were sent
+- Description in RadioButtonGroup was incorrectly set to required
+
+### **v.3.2.0 - 25.02.2020 **
+
+- OpenClose: new component
+- ActionButton: Icon can now be placed on right side.
+- Expand or collapse button in Card wont longer trigger sumbit if used inside a form.
+- SearchField can now show search results in a drop down.
+- The label in LabelWithCallout can now be rendered as legend (for use in a fieldset).
+- LabelWithCallout: fixed an issue where the help icon was incorrecly placed if the label went over multiple lines.
+- FooterContent: fixed a typescript error
+
+### **v.3.1.1 - 10.02.2020 **
+
+- Dialog: fixed an error where overflow content disappered on iOS.
+- Dialog: fixed the logo placement when no title is used
+- RadioButtonGroup can now display description.
+- Combobox: accessbility improvement: remove aria-role
+
 ### **v.3.1.0 - 04.02.2020 **
 
 - Internal TopBanner can now render children-elements. Added slantedAreaWidth prop to set width to slanted area.

@@ -34,11 +34,12 @@ function getMainBackgroundStyle(props: DialogProps) {
 
 function getHeaderBackgroundStyle(props: DialogProps) {
   if (props.layoutStyle === 'important') {
+    const logoPlacement = props.title ? '-30px' : '-18px';
     return {
       backgroundImage: `url(${logo})`,
       backgroundSize: '40px 100%',
       backgroundRepeat: 'no-repeat',
-      backgroundPosition: 'top -30px left 20px',
+      backgroundPosition: `top ${logoPlacement} left 20px`,
       paddingTop: 70
     };
   } else {
@@ -49,12 +50,15 @@ function getHeaderBackgroundStyle(props: DialogProps) {
 export const getClassNames = function getClassNames(props: DialogProps) {
   const palette = getTheme().palette as PaletteProps;
 
+  const overflows = props.tabletContentOverflows;
+
   return mergeStyleSets({
     main: {
       displayName: `SkeDialog`,
       position: 'absolute',
       selectors: {
         '& .ms-Dialog-main': {
+          height: overflows ? '100%' : '',
           selectors: {
             '@media (min-width: 480px)': {
               ...setMinMaxWidth(props),
@@ -64,6 +68,21 @@ export const getClassNames = function getClassNames(props: DialogProps) {
             }
           },
           ...getMainBackgroundStyle(props)
+        },
+        '& .ms-Modal-scrollableContent': {
+          overflowY: 'scroll',
+          overflowX: 'hidden',
+          WebkitOverflowScrolling: 'touch',
+          selectors: {
+            '@media only screen and (min-device-width: 768px) and (max-device-width: 1024px)': {
+              //iPad scrolling fix
+              position: overflows ? 'absolute' : 'relative',
+              top: 0,
+              bottom: 0,
+              minWidth: props.minWidth,
+              maxWidth: props.maxWidth
+            }
+          }
         },
         '& .ms-Dialog-header': {
           ...getHeaderBackgroundStyle(props)
