@@ -34,6 +34,13 @@ const SearchMenu: React.FC<SearchMenuProps> = props => {
   const [focus, setFocus] = React.useState<number>(-1);
   const listRefs = React.useRef<(HTMLLIElement | null)[]>([]);
 
+  const setSearchResult = (newValue: string) => {
+    if (children && newValue) {
+      const newList = searchInList(newValue);
+      setDropdownVisible(newList.length > 0);
+    }
+  };
+
   const changeEvent = (text: string | undefined) => {
     //@ts-ignore TODO
     const event: React.ChangeEvent<HTMLInputElement> = {};
@@ -89,7 +96,7 @@ const SearchMenu: React.FC<SearchMenuProps> = props => {
   };
 
   const searchInList = (filterText: string) => {
-    listRefs.current.filter(item => {
+    return listRefs.current.filter(item => {
       if (item) {
         if (
           item.innerText
@@ -133,7 +140,7 @@ const SearchMenu: React.FC<SearchMenuProps> = props => {
           value={value}
           onChange={(ev, newValue) => {
             if (newValue) {
-              searchInList(newValue);
+              setSearchResult(newValue);
             }
             setValue(newValue);
             onChange && onChange(ev, newValue);

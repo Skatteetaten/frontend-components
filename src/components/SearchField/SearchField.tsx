@@ -134,6 +134,7 @@ const SearchField: React.FC<SearchFieldProps> = props => {
       setDropdownVisible(newList.length > 0);
     }
   };
+
   const renderSuggestions = list => {
     if (list.length === 0) {
       setDropdownVisible(false);
