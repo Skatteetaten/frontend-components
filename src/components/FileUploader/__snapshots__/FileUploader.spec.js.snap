@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FileUploader komponent matcher snapshot 1`] = `
+<div
+  className="main-45"
+>
+  <label
+    className="label-49"
+  />
+  <input
+    className="fileUploadInput-44"
+    id="fileupload"
+    onChange={[Function]}
+    type="file"
+  />
+  <label
+    aria-label="fileupload"
+    htmlFor="fileupload"
+  >
+    <div
+      className="uploadArea-46"
+      onDragEnter={[Function]}
+      onDragLeave={[Function]}
+      onDragOver={[Function]}
+      onDrop={[Function]}
+    >
+      <i
+        aria-hidden={true}
+        className="uploadAreaIcon-56"
+        data-icon-name="AttachFile"
+      >
+        
+      </i>
+      Legg til fil(er)
+    </div>
+  </label>
+  <ul
+    className="fileList-42"
+  />
+</div>
+`;

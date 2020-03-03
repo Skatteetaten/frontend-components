@@ -30,6 +30,7 @@ Array [
       onInput={[Function]}
       onKeyDown={[Function]}
       role="searchbox"
+      type="search"
       value=""
     />
   </div>,
