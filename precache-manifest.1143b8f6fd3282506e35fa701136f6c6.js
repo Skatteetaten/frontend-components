@@ -29,7 +29,11 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   },
   {
     "revision": "fb7b5b89780330a43f2e727e334fe84c",
-    "url": "assets/sketch/Designsystem.sketch"
+    "url": "assets/sketch/designsystem-1.0.sketch"
+  },
+  {
+    "revision": "0f26b565db88838ad506fb2be469f1e4",
+    "url": "assets/sketch/designsystem-1.1.sketch"
   },
   {
     "revision": "ddc8f627ee84168d91f0a0f65be4da36",
@@ -48,27 +52,27 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "assets/svg/ske-logo.svg"
   },
   {
-    "revision": "7b39235eed06b1ec8472",
-    "url": "build/2.7b39235e.js"
+    "revision": "6327d91af26999619074",
+    "url": "build/2.6327d91a.js"
   },
   {
-    "revision": "94e67b3f426c0da964fcf46117353b24",
-    "url": "build/2.7b39235e.js.LICENSE"
+    "revision": "ac7b1347c7f6aa763e2f483465902217",
+    "url": "build/2.6327d91a.js.LICENSE"
   },
   {
     "revision": "e4650bfa7ec4b66a1129",
     "url": "build/bundle.e4650bfa.js"
   },
   {
-    "revision": "f3dff303755aca8b7001",
-    "url": "build/main.f3dff303.js"
+    "revision": "eb0ca48eb87a6737308f",
+    "url": "build/main.eb0ca48e.js"
   },
   {
     "revision": "ad1c490ae23267ebf5c2ab3cede0877a",
     "url": "favicon.ico"
   },
   {
-    "revision": "b94c5308b089bbf5156fbd331b536e5e",
+    "revision": "a6788a9bb35fe89d0c0b94afef5ee6d1",
     "url": "index.html"
   },
   {
@@ -76,24 +80,24 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "manifest.json"
   },
   {
-    "revision": "f3dff303755aca8b7001",
-    "url": "static/css/main.65fc3eeb.chunk.css"
+    "revision": "eb0ca48eb87a6737308f",
+    "url": "static/css/main.58f5f21f.chunk.css"
   },
   {
-    "revision": "1983bc7bfb5a3a768fb1be66ba6e3eb9",
-    "url": "static/media/SkeIconfont.1983bc7b.ttf"
+    "revision": "002ab205a9a66e257d52b2095f493e92",
+    "url": "static/media/SkeIconfont.002ab205.ttf"
   },
   {
-    "revision": "577640936f0182d377546f514ac3acbb",
-    "url": "static/media/SkeIconfont.57764093.eot"
+    "revision": "154d0164ca282b6de84efbd4602a2b41",
+    "url": "static/media/SkeIconfont.154d0164.woff2"
   },
   {
-    "revision": "c8d079a17b27fa05764ee6e8aefce4a2",
-    "url": "static/media/SkeIconfont.c8d079a1.woff2"
+    "revision": "8c6d51136b9f1f6d231cc6e42f26aabb",
+    "url": "static/media/SkeIconfont.8c6d5113.woff"
   },
   {
-    "revision": "cde4715bba5a68ac3472c22ffc90efd2",
-    "url": "static/media/SkeIconfont.cde4715b.woff"
+    "revision": "a38465a8b11d8e4d7bad518301403ad5",
+    "url": "static/media/SkeIconfont.a38465a8.eot"
   },
   {
     "revision": "dc63d6fb282d1535e59f50962d23e55f",
