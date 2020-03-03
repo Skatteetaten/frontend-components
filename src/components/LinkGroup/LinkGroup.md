@@ -56,12 +56,27 @@ const links = [
 ```
 
 ```js noeditor uu
-<h3>Farge og understrekning</h3>
+<h3>Tips</h3>
 
-<p>
-  Alle lenker skal ha minst 2 ulike markeringer for å vise at det er lenke.
-  Lenkene i Designsystemet har derfor både blå farge og understrekning.
-</p>
+  <ul>
+  <li>En lenke skal minst 2 ulike visuelle "hint" for å skille det fra vanlig tekst. Her er det blå farge og understreking.</li>
+  <li>Tenk på kontrast hvis bakgrunnsfargen bak lenken endrer seg, for eksempel svart bakgrunn = hvit skrift</li>
+  <li>Lenketeksten eller alternativ tekst (grafisk lenke) skal tydeliggjøre hva som er målet til lenken</li>
+  </ul>
+
+<h3>Mest relevante WCAG-krav</h3>
+
+<ul>
+  <li>1.4.1 A, Bruk av farge</li>
+  <li>1.4.3 AA, Kontrast (minimum)</li>
+  <li>2.4.4 A, Formål med lenke (i kontekst)</li>
+  </ul>
+
+<h3>WAI-ARIA</h3>
+
+  <ul>
+  <li>Aria-hidden="true" brukes for skjule ikonet for skjermleser.</li>
+  </ul>
 ```
 
 ```js noeditor beskrivelse

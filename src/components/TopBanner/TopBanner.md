@@ -138,3 +138,8 @@ import TopBanner from '@skatteetaten/frontend-components/TopBanner';
     for detaljer rundt bruk av logoen.
   </p>
 ```
+```js noeditor uu
+<p>
+Ingen informasjon
+</p>
+```

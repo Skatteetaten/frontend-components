@@ -65,9 +65,7 @@ const AccordionMenuItem = (props: AccordionMenuItemProps) => {
               <Icon iconName={icon} style={{ fontSize: '28px' }} />
             </div>
           </div>
-          <div className={styleTitle} tabIndex={0}>
-            {heading}
-          </div>
+          <div className={styleTitle}>{heading}</div>
         </div>
         <div
           className={
@@ -83,11 +81,7 @@ const AccordionMenuItem = (props: AccordionMenuItemProps) => {
           />
         </div>
       </header>
-      {isContentOpen && (
-        <section className={content} tabIndex={0}>
-          {children}
-        </section>
-      )}
+      {isContentOpen && <section className={content}>{children}</section>}
     </li>
   );
 };

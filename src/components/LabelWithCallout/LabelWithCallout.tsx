@@ -19,7 +19,7 @@ export interface LabelWithCalloutProps
   editFunction?: () => void;
   help?: string | JSX.Element;
   id?: any;
-  /** Når komponenten plasseres inni <fieldset> og skal få label inni en <legend>-element */
+  /** Når komponenten plasseres inni fieldset (label vil rendres som et legend-element) */
   inFieldset?: boolean;
   inputSize?: 'small' | 'normal' | 'large';
   label?: string;

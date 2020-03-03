@@ -1,3 +1,7 @@
+### **v.3.2.2 - 03.03.2020 **
+
+- Accessibility improvements to Accordion, Dialog, MessageBar, ErrorMessage, Spinner, ProgressBar, NavigationTile and FooterContent.
+
 ### **v.3.2.1 - 27.02.2020 **
 
 - Dialog: added prop tabletContentOverflows to address an issue when scrolling on iPad.

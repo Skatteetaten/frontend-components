@@ -44,37 +44,37 @@ import Button from '@skatteetaten/frontend-components/Button';
 ```
 
 ```js noeditor uu
-<h3>Bruk og innhold</h3>
-<p>Bruk én linje med tekst inne i knappen. For mye tekst kan virke forvirrende
-    for skjermlesere. Vær også forsiktig å støtte seg for mye til ikoner inni knapper. Vi har ikke alltid mulighet til å gi samme informasjon som ikonet gir til skjermleserbrukere.
-</p>
+<h3>Tips</h3>
 
-<h3>Knapp som lenke</h3>
-<p>Som hovedsregel skal ikke knapper brukes som lenker. Av og til ønsker vi imidlertid å ha en stor primærknapp som tar brukeren inn i en ny løsning. I praksis fungerer knappen da som en lenke. I slike tilfeller bør vi bruke roleLink-egenskapen som vil sette riktige forventninger om navigasjon for skjermleser-brukere.</p>
-<h3>Unngå inaktiv (disabled) knapp</h3>
-<p>Inaktiv knapp har flere utfordringer, og de fleste er knyttet til universell utforming: </p>
+<ul>
+  <li>Bruk én linje med tekst inne i knappen. For mye tekst kan virke forvirrende
+    for skjermlesere.</li>
+  <li>Ikke bruk knappen for å navigere videre til et annet område.</li>
+  <li>Knappen skal se ut som en knapp, og ikke være en lenke. (Dersom du MÅ bruke knapp som lenke, bør du bruke roleLink-egenskapen for at skjermleser skal oppfatte dette riktig.)</li>
+  <li>Ikke putt et ikon inne i selve knappen. Bruk heller IconButton.</li>
+  <li>Unngå inaktiv (disabled) knapp pga:
     <ul>
-      <li>
-        De har lav lesekontrast, så det er vanskeligere å lese teksten i den.
-      </li>
-      <li>
-        Personer som bruker forstørrelse - f.eks. zoomer inn 500 % for å se
-        innholdet på siden - vil normalt ikke oppdage at en disablet knapp
-        endrer tilstand.
-      </li>
-      <li>
-        En del skjermlesere og leselister vil ikke lese opp innholdet i
-        elementer som disablet.
-      </li>
-      <li>
-        De gir ingen feedback - så brukerne har en tendens til å gjette om/når
-        den skal trykkes på. (Og når de prøver uten resultat kan de ble
-        frustrerte.)
-      </li>
+      <li>Dårlig kontrast</li>
+      <li>Forvirrende om/når den kan velges</li>
+	  <li>Brukere kan gå glipp av tilstandsendring</li>
+	  <li>Noen skjermlesere leser leser ikke elementer som er disabled</li>
+	  <li>Alternativ: Aktiv knapp (blå) med eventuelle feilmeldinger</li>
     </ul>
-    <p>
-      I stedet for inaktiv knapp bør vi alltid ha knappen aktiv (blå) og, dersom skjemaet inneholder feil, vise fornuftige feilmeldinger når den klikkes på.
-    </p>
+</li>
+</ul>
+
+<h3>Mest relevante WCAG-krav</h3>
+
+    <ul>
+	  <li>4.1.2 A, Navn, rolle, verdi</li>
+    </ul>
+
+<h3>WAI-ARIA</h3>
+
+    <ul>
+      <li>Aria-hidden="true" brukes der det er et ikon for å skjule det for skjermleser.</li>
+    </ul>
+
 ```
 
 ```js noeditor beskrivelse
