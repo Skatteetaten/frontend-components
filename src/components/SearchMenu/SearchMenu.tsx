@@ -59,21 +59,26 @@ const SearchMenu: React.FC<SearchMenuProps> = props => {
       if (child.type === 'ul') {
         const grandchildrenList: Array<ReactElement> = [];
         child.props.children.map((grandchildren: ReactElement, key: number) => {
+          const grandChildrenKey = grandchildren.key
+            ? (grandchildren.key as number) - 1
+            : key;
           const editedGrandchild = (
             <li
-              key={grandchildren.key ? grandchildren.key : key}
+              key={grandChildrenKey}
               ref={(ref: HTMLLIElement | null) => {
                 listRefs.current.push(ref);
               }}
               className={classnames(checkbox && styles.typeCheckbox)}
               onClick={() => {
-                if (!checkbox) {
-                  changeEvent(listRefs.current[key]?.innerText);
+                const currentKey = listRefs.current[grandChildrenKey];
+                if (!checkbox && currentKey) {
+                  changeEvent(currentKey.innerText);
                 }
               }}
               onKeyPress={ev => {
-                if (ev.keyCode === 0) {
-                  changeEvent(listRefs.current[key]?.innerText);
+                const currentKey = listRefs.current[grandChildrenKey];
+                if (ev.keyCode === 0 && currentKey) {
+                  changeEvent(currentKey.innerText);
                 }
               }}
               onKeyDown={ev => handleOnKeyDown(ev)}
