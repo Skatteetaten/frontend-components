@@ -134,7 +134,7 @@ const FileUploader: React.FC<FileUploaderProps> = props => {
           <span className={styles.acceptedFileFormats}>
             {acceptedFileFormats.map(
               (fileFormat: FileFormatTypes, index: number) => {
-                if (index === acceptedFileFormats?.length - 1) {
+                if (index === acceptedFileFormats.length - 1) {
                   return '.'.concat(fileFormat);
                 } else {
                   return '.'.concat(fileFormat, ', ');
