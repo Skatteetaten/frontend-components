@@ -53,14 +53,12 @@ const FileUploader: React.FC<FileUploaderProps> = props => {
     uploadFile
   } = props;
   const styles = getClassNames(props);
-  const [dragging, setDragging] = React.useState<boolean>(false);
   const [files, setFiles] = React.useState<Array<File>>([]);
 
   const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     event.preventDefault();
     event.stopPropagation();
     if (event.target.files && event.target.files.length > 0) {
-      setDragging(false);
       handleNewFiles(Array.from(event.target.files));
     }
   };
@@ -78,25 +76,11 @@ const FileUploader: React.FC<FileUploaderProps> = props => {
   ) => {
     event.preventDefault();
     event.stopPropagation();
-    if (
-      event.dataTransfer &&
-      event.dataTransfer.items &&
-      event.dataTransfer.items.length > 0
-    ) {
-      setDragging(true);
-    }
   };
 
   const handleDragLeave = (event: React.DragEvent<HTMLDivElement>) => {
     event.preventDefault();
     event.stopPropagation();
-    if (
-      event.dataTransfer &&
-      event.dataTransfer.items &&
-      event.dataTransfer.items.length > 0
-    ) {
-      setDragging(false);
-    }
   };
 
   const handleDrop = (event: React.DragEvent<HTMLDivElement>) => {
@@ -107,7 +91,6 @@ const FileUploader: React.FC<FileUploaderProps> = props => {
       event.dataTransfer.files &&
       event.dataTransfer.files.length > 0
     ) {
-      setDragging(false);
       handleNewFiles(Array.from(event.dataTransfer.files));
       event.dataTransfer.clearData();
     }

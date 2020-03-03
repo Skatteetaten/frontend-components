@@ -3,7 +3,6 @@ import { mergeStyleSets } from '@uifabric/merge-styles';
 import { getTheme } from '@uifabric/styling';
 import { PaletteProps } from '..';
 
-
 export const getClassNames = (props: SearchMenuProps) => {
   const palette = getTheme().palette as PaletteProps;
   return mergeStyleSets({
@@ -13,7 +12,7 @@ export const getClassNames = (props: SearchMenuProps) => {
       border: `1px solid ${palette.skeColor.black}`,
       selectors: {
         '.ms-SearchBox': {
-          border: 'inherit',
+          border: 'inherit'
         }
       }
     },
@@ -28,7 +27,7 @@ export const getClassNames = (props: SearchMenuProps) => {
         li: {
           paddingLeft: '30px',
           cursor: 'pointer',
-          color:  `${palette.skeColor.blackAlt} !important`,
+          color: `${palette.skeColor.blackAlt} !important`,
           selectors: {
             ':hover': {
               background: palette.skeColor.lightBlue,
@@ -47,7 +46,7 @@ export const getClassNames = (props: SearchMenuProps) => {
       }
     },
     typeCheckbox: {
-      cursor: 'default !important',
+      cursor: 'default !important'
     }
   });
 };

@@ -83,6 +83,7 @@ const SearchMenu: React.FC<SearchMenuProps> = props => {
             </li>
           );
           grandchildrenList.push(editedGrandchild);
+          return grandchildrenList;
         });
         const clone = React.cloneElement(child, {
           children: grandchildrenList,
@@ -108,8 +109,8 @@ const SearchMenu: React.FC<SearchMenuProps> = props => {
         } else {
           item.style.display = 'none';
         }
-        return item;
       }
+      return item;
     });
   };
 
