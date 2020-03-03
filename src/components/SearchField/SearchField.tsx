@@ -190,6 +190,7 @@ const SearchField: React.FC<SearchFieldProps> = props => {
         <div ref={_searchBoxElement}>
           <SearchBox
             {...rest}
+            type={'search'}
             className={classnames(styles.main, className)}
             onChange={(ev, newValue) => {
               if (!newValue) {
@@ -206,7 +207,11 @@ const SearchField: React.FC<SearchFieldProps> = props => {
           {dropdownVisible && renderSuggestions(searchResultList)}
         </div>
       ) : (
-        <SearchBox {...props} className={classnames(styles.main, className)} />
+        <SearchBox
+          type={'search'}
+          {...props}
+          className={classnames(styles.main, className)}
+        />
       )}
     </>
   );

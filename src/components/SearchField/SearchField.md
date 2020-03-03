@@ -8,13 +8,13 @@ import SearchField from '@skatteetaten/frontend-components/SearchField';
     searchFieldSize="standard"
     border="slim"
     placeholder="Skriv søkeord her"
-    ariaLabel="Søkefelt"
+    ariaLabel="Søk"
   />
   <br />
   <SearchField
     searchFieldSize="large"
     placeholder="Skriv søkeord her"
-    ariaLabel="Søkefelt"
+    ariaLabel="Søk"
   />
 </div>;
 ```
@@ -38,7 +38,7 @@ const options = [
     searchFieldSize="standard"
     border="slim"
     placeholder="Skriv søkeord her"
-    ariaLabel="Søkefelt"
+    ariaLabel="Søk"
     help="Tekst som hjelper brukeren å fylle ut feltet."
     options={options}
   />

@@ -136,6 +136,7 @@ const SearchMenu: React.FC<SearchMenuProps> = props => {
       <div className={styles.searchBoxWrapper}>
         <SearchBox
           {...rest}
+          type={'search'}
           className={classnames(searchFieldClasses(props).main, className)}
           value={value}
           onChange={(ev, newValue) => {
