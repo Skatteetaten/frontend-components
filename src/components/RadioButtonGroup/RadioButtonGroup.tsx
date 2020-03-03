@@ -11,7 +11,7 @@ import LabelWithCallout, { calloutState } from '../LabelWithCallout';
 import { LabelWithCalloutProps } from '../LabelWithCallout/LabelWithCallout';
 
 export interface IRadioButtonGroupOptions extends IChoiceGroupOption {
-  description: string;
+  description?: string;
 }
 
 export interface RadioButtonGroupProps extends IChoiceGroupProps {

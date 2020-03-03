@@ -12,6 +12,15 @@ function oppsettFullDOM(props) {
 }
 
 describe('SearchField komponent', () => {
+  let options;
+  beforeEach(() => {
+    options = [
+      { key: 1, text: 'en tekst' },
+      { key: 2, text: 'bil' },
+      { key: 3, text: 'Hypofyseregulator' },
+      { key: 4, text: 'katt' }
+    ];
+  });
   it('matcher snapshot', () => {
     matches(<SearchField />);
   });
@@ -52,12 +61,7 @@ describe('SearchField komponent', () => {
       className: 'searchfield-classname',
       id: 'searchfield-id',
       searchFieldSize: 'standard',
-      options: [
-        { key: 1, text: 'en tekst' },
-        { key: 2, text: 'bil' },
-        { key: 3, text: 'Hypofyseregulator' },
-        { key: 4, text: 'katt' }
-      ]
+      options
     });
     const searchField = wrapper.find('input.ms-SearchBox-field');
     searchField.simulate('change', { target: { name: 'change', value: 'e' } });
@@ -70,5 +74,25 @@ describe('SearchField komponent', () => {
         .last()
         .text()
     ).toEqual('Hypofyseregulator');
+  });
+  it('skal legge til valgt element i inputfelt, når det blir trykket på', () => {
+    const wrapper = oppsettFullDOM({
+      ariaLabel: 'searchfield-label',
+      placeholder: 'searchfield-placeholder',
+      className: 'searchfield-classname',
+      id: 'searchfield-id',
+      searchFieldSize: 'standard',
+      options
+    });
+    const searchField = wrapper.find('input.ms-SearchBox-field');
+    searchField.simulate('change', { target: { name: 'change', value: 'e' } });
+    expect(wrapper.find('li').length).toEqual(2);
+    wrapper
+      .find('li')
+      .first()
+      .simulate('click');
+    expect(wrapper.find('input.ms-SearchBox-field').prop('value')).toEqual(
+      'en tekst'
+    );
   });
 });
