@@ -16,6 +16,7 @@ export enum FileFormatTypes {
   txt = 'txt',
   xml = 'xml'
 }
+
 export interface FileUploaderProps {
   /** Akksepterte filformater */
   acceptedFileFormats?: Array<FileFormatTypes>;
@@ -27,6 +28,8 @@ export interface FileUploaderProps {
   className?: string;
   /** Funksjon for å slette opplastet fil */
   deleteFile?: (file: File) => void;
+  /** Opplastede filer */
+  files?: Array<any>;
   /** Hjelpetekst */
   help?: string;
   /** Id */
@@ -51,6 +54,7 @@ const FileUploader: React.FC<FileUploaderProps> = props => {
     ariaLabel,
     className,
     deleteFile,
+    files,
     help,
     id,
     label,
@@ -59,7 +63,15 @@ const FileUploader: React.FC<FileUploaderProps> = props => {
     uploadFile
   } = props;
   const styles = getClassNames(props);
-  const [files, setFiles] = React.useState<Array<File>>([]);
+  const [filesFromProps, setFilesFromProps] = React.useState<Array<any>>(
+    files ? files : []
+  );
+
+  React.useEffect(() => {
+    if (files) {
+      setFilesFromProps(files);
+    }
+  }, [files]);
 
   const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     event.preventDefault();
@@ -72,9 +84,6 @@ const FileUploader: React.FC<FileUploaderProps> = props => {
   const handleNewFiles = (fileList: File[]) => {
     // I denne versjonen støtte vi kun en fil om gangen
     uploadFile(fileList[0]);
-    const newList = [...files];
-    newList.push(fileList[0]);
-    setFiles(newList);
   };
 
   const handleDragOverAndDragEnter = (
@@ -103,11 +112,9 @@ const FileUploader: React.FC<FileUploaderProps> = props => {
   };
 
   const deleteFromList = (fileToBeDeleted: File) => {
-    const newList = files.filter(file => file !== fileToBeDeleted);
     if (deleteFile) {
       deleteFile(fileToBeDeleted);
     }
-    setFiles(newList);
   };
 
   return (
@@ -156,9 +163,9 @@ const FileUploader: React.FC<FileUploaderProps> = props => {
           </span>
         </span>
       )}
-      {files && (
+      {filesFromProps && (
         <ul className={styles.fileList}>
-          {files.map((file: File, index: number) => (
+          {filesFromProps.map((file: File, index: number) => (
             <li key={file.name.concat(index.toString())}>
               {file.name}
               <button
