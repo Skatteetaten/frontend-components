@@ -34,8 +34,6 @@ exports[`FileUploader komponent matcher snapshot 1`] = `
       Legg til fil(er)
     </div>
   </label>
-  <ul
-    className="fileList-42"
-  />
+  0
 </div>
 `;
