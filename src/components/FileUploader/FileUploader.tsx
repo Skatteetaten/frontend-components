@@ -21,8 +21,12 @@ export interface FileUploaderProps {
   acceptedFileFormats?: Array<FileFormatTypes>;
   /** Tekst for opplastingskomponenten */
   addFileString?: string;
+  /** aria-label */
+  ariaLabel?: string;
   /** CSS class */
   className?: string;
+  /** Funksjon for å slette opplastet fil */
+  deleteFile?: (file: File) => void;
   /** Hjelpetekst */
   help?: string;
   /** Id */
@@ -44,7 +48,9 @@ const FileUploader: React.FC<FileUploaderProps> = props => {
   const {
     acceptedFileFormats,
     addFileString,
+    ariaLabel,
     className,
+    deleteFile,
     help,
     id,
     label,
@@ -98,6 +104,9 @@ const FileUploader: React.FC<FileUploaderProps> = props => {
 
   const deleteFromList = (fileToBeDeleted: File) => {
     const newList = files.filter(file => file !== fileToBeDeleted);
+    if (deleteFile) {
+      deleteFile(fileToBeDeleted);
+    }
     setFiles(newList);
   };
 
@@ -116,7 +125,10 @@ const FileUploader: React.FC<FileUploaderProps> = props => {
         id="fileupload"
         onChange={handleFileChange}
       />
-      <label htmlFor="fileupload" aria-label={'fileupload'}>
+      <label
+        htmlFor="fileupload"
+        aria-label={ariaLabel ? ariaLabel : 'fileupload'}
+      >
         <div
           className={styles.uploadArea}
           onDragEnter={handleDragOverAndDragEnter}
