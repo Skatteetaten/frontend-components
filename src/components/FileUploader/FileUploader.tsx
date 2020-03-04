@@ -163,7 +163,7 @@ const FileUploader: React.FC<FileUploaderProps> = props => {
           </span>
         </span>
       )}
-      {filesFromProps.length && (
+      {filesFromProps.length > 0 && (
         <ul className={styles.fileList}>
           {filesFromProps.map((file, index: number) => (
             <li key={file.name.concat(index.toString())}>

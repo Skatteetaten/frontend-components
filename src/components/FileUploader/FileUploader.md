@@ -1,9 +1,11 @@
 ** FileUploader **
 
 ```js
+import React from 'react';
 import FileUploader, {
   FileFormatTypes
 } from '@skatteetaten/frontend-components/FileUploader';
+const [files, setFiles] = React.useState([]);
 
 <div style={{ width: '300px' }}>
   <FileUploader
@@ -14,8 +16,11 @@ import FileUploader, {
       FileFormatTypes.docx,
       FileFormatTypes.pdf
     ]}
+    files={files}
     uploadFile={file => {
-      console.log(file);
+      const newList = [...files];
+      newList.push(file);
+      setFiles(newList);
     }}
   />
 </div>;
