@@ -17,7 +17,7 @@ const [spinner, setSpinner] = React.useState(false);
     acceptedFileFormats={[
       FileFormatTypes.doc,
       FileFormatTypes.docx,
-      FileFormatTypes.pdf
+      FileFormatTypes.txt
     ]}
     files={files}
     uploadFile={file => {

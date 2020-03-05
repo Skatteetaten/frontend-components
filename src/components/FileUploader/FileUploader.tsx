@@ -11,15 +11,15 @@ import Spinner from '../Spinner';
 import ErrorMessage from '../ErrorMessage';
 
 export enum FileFormatTypes {
-  doc = 'doc',
-  docx = 'docx',
-  jpeg = 'jpeg',
-  jpg = 'jpg',
-  pdf = 'pdf',
-  png = 'png',
-  tif = 'tif',
-  txt = 'txt',
-  xml = 'xml'
+  doc = '.doc',
+  docx = '.docx',
+  jpeg = '.jpeg',
+  jpg = '.jpg',
+  pdf = '.pdf',
+  png = '.png',
+  tif = '.tif',
+  txt = '.txt',
+  xml = '.xml'
 }
 
 export interface AttachmentMetadata extends File {
@@ -61,6 +61,23 @@ export interface FileUploaderProps {
   /** Funksjon for filopplasting */
   uploadFile?: (file: File) => void;
 }
+
+export const isCorrectFileFormat = (
+  file: File,
+  acceptedFilformats: Array<FileFormatTypes> | undefined
+) => {
+  if (!acceptedFilformats) {
+    return true;
+  }
+  const fileExtention = file.name.match(/\.[0-9a-z]+$/i);
+  if (fileExtention && fileExtention[0]) {
+    console.log(fileExtention);
+    if (acceptedFilformats.indexOf(fileExtention[0] as FileFormatTypes) > -1) {
+      return true;
+    }
+  }
+  return false;
+};
 
 const FileUploader: React.FC<FileUploaderProps> = props => {
   const {
@@ -104,30 +121,38 @@ const FileUploader: React.FC<FileUploaderProps> = props => {
 
   const handleNewFiles = (fileList: File[]) => {
     // I denne versjonen støtte vi kun en fil om gangen
-    if (uploadFile) {
-      uploadFile(fileList[0]);
-    }
-    if (axiosPath) {
-      setInternalLoading(true);
-      const formData = new FormData();
-      formData.append('upload', fileList[0]);
-      axios
-        .post<FormData, AxiosResponse<AttachmentMetadata>>(
-          axiosPath,
-          formData,
-          { params: queryParams }
-        )
-        .then(res => {
-          setErrorMessage('');
-          setUploadedFiles([...uploadedFiles, res.data]);
-          setInternalFiles([...uploadedFiles, res.data]);
-        })
-        .catch(() => {
-          setErrorMessage('Kunne ikke laste opp fil');
-        })
-        .finally(() => {
-          setInternalLoading(false);
-        });
+    const correctFileFormat = isCorrectFileFormat(
+      fileList[0],
+      acceptedFileFormats
+    );
+    if (correctFileFormat) {
+      if (uploadFile) {
+        uploadFile(fileList[0]);
+      }
+      if (axiosPath) {
+        setInternalLoading(true);
+        const formData = new FormData();
+        formData.append('upload', fileList[0]);
+        axios
+          .post<FormData, AxiosResponse<AttachmentMetadata>>(
+            axiosPath,
+            formData,
+            { params: queryParams }
+          )
+          .then(res => {
+            setErrorMessage('');
+            setUploadedFiles([...uploadedFiles, res.data]);
+            setInternalFiles([...uploadedFiles, res.data]);
+          })
+          .catch(() => {
+            setErrorMessage('Kunne ikke laste opp fil');
+          })
+          .finally(() => {
+            setInternalLoading(false);
+          });
+      }
+    } else {
+      setErrorMessage('Dette filformatet er ikke godkjent');
     }
   };
 
@@ -167,7 +192,10 @@ const FileUploader: React.FC<FileUploaderProps> = props => {
           data: {} // kreves av BigIP
         })
         .then(() => {
-          internalFiles.filter(f => f.id !== fileToBeDeleted.id);
+          const newList = internalFiles.filter(
+            f => f.id !== fileToBeDeleted.id
+          );
+          setInternalFiles(newList);
         });
     }
   };
@@ -215,9 +243,9 @@ const FileUploader: React.FC<FileUploaderProps> = props => {
             {acceptedFileFormats.map(
               (fileFormat: FileFormatTypes, index: number) => {
                 if (index === acceptedFileFormats.length - 1) {
-                  return '.'.concat(fileFormat);
+                  return fileFormat;
                 } else {
-                  return '.'.concat(fileFormat, ', ');
+                  return fileFormat.concat(', ');
                 }
               }
             )}
