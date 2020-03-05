@@ -55,7 +55,7 @@ exports[`Table komponent matcher snapshot 1`] = `
   }
 >
   <div
-    className="SkeTable-40"
+    className="SkeTable-45"
   >
     <table>
       <thead>
