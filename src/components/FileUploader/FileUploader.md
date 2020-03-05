@@ -1,5 +1,7 @@
 ** FileUploader **
 
+Komponenten er basert på at du sender inn sti til API. Dersom ikke dette skulle passe er det mulighet for å bruke uploadFile og kjøre en egendefinert funksjon.
+
 ```js
 import React from 'react';
 import FileUploader, {

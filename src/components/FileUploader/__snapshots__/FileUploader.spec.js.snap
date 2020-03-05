@@ -36,5 +36,6 @@ exports[`FileUploader komponent matcher snapshot 1`] = `
       </u>
     </div>
   </label>
+  
 </div>
 `;
