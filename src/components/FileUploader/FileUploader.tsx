@@ -6,6 +6,7 @@ import LabelWithCallout, {
   calloutState,
   LabelWithCalloutProps
 } from '../LabelWithCallout';
+import Spinner from '../Spinner';
 
 export enum FileFormatTypes {
   doc = 'doc',
@@ -38,6 +39,8 @@ export interface FileUploaderProps {
   label?: string;
   /** Overstyr label, se LabelWithCallout komponent */
   labelCallout?: LabelWithCalloutProps;
+  /** Spinner når fil laster */
+  loading?: boolean;
   /** Brukerspesifisert event for callout **/
   onCalloutToggle?: (
     oldCalloutState: calloutState,
@@ -59,6 +62,7 @@ const FileUploader: React.FC<FileUploaderProps> = props => {
     id,
     label,
     labelCallout,
+    loading,
     onCalloutToggle,
     uploadFile
   } = props;
@@ -143,8 +147,14 @@ const FileUploader: React.FC<FileUploaderProps> = props => {
           onDragOver={handleDragOverAndDragEnter}
           onDrop={handleDrop}
         >
-          <Icon iconName={'AttachFile'} className={styles.uploadAreaIcon} />
-          <u>{addFileString ? addFileString : 'Legg til fil(er)'}</u>
+          {loading ? (
+            <Spinner />
+          ) : (
+            <>
+              <Icon iconName={'AttachFile'} className={styles.uploadAreaIcon} />
+              <u>{addFileString ? addFileString : 'Legg til fil(er)'}</u>
+            </>
+          )}
         </div>
       </label>
       {acceptedFileFormats && (

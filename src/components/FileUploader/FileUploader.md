@@ -6,6 +6,7 @@ import FileUploader, {
   FileFormatTypes
 } from '@skatteetaten/frontend-components/FileUploader';
 const [files, setFiles] = React.useState([]);
+const [spinner, setSpinner] = React.useState(false);
 
 <div style={{ width: '300px' }}>
   <FileUploader
@@ -18,14 +19,19 @@ const [files, setFiles] = React.useState([]);
     ]}
     files={files}
     uploadFile={file => {
-      const newList = [...files];
-      newList.push(file);
-      setFiles(newList);
+      setSpinner(true);
+      setTimeout(() => {
+        const newList = [...files];
+        newList.push(file);
+        setFiles(newList);
+        setSpinner(false);
+      }, 2000);
     }}
     deleteFile={file => {
       const newList = files.filter(fileInList => fileInList !== file);
       setFiles(newList);
     }}
+    loading={spinner}
   />
 </div>;
 ```

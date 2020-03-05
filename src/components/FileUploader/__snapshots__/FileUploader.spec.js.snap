@@ -2,13 +2,13 @@
 
 exports[`FileUploader komponent matcher snapshot 1`] = `
 <div
-  className="main-46"
+  className="main-47"
 >
   <label
-    className="label-50"
+    className="label-51"
   />
   <input
-    className="fileUploadInput-45"
+    className="fileUploadInput-46"
     id="fileupload"
     onChange={[Function]}
     type="file"
@@ -18,7 +18,7 @@ exports[`FileUploader komponent matcher snapshot 1`] = `
     htmlFor="fileupload"
   >
     <div
-      className="uploadArea-47"
+      className="uploadArea-48"
       onDragEnter={[Function]}
       onDragLeave={[Function]}
       onDragOver={[Function]}
@@ -26,7 +26,7 @@ exports[`FileUploader komponent matcher snapshot 1`] = `
     >
       <i
         aria-hidden={true}
-        className="uploadAreaIcon-57"
+        className="uploadAreaIcon-58"
         data-icon-name="AttachFile"
       >
         
