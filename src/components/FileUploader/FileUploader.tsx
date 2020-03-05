@@ -144,7 +144,7 @@ const FileUploader: React.FC<FileUploaderProps> = props => {
           onDrop={handleDrop}
         >
           <Icon iconName={'AttachFile'} className={styles.uploadAreaIcon} />
-          {addFileString ? addFileString : 'Legg til fil(er)'}
+          <u>{addFileString ? addFileString : 'Legg til fil(er)'}</u>
         </div>
       </label>
       {acceptedFileFormats && (
@@ -168,12 +168,16 @@ const FileUploader: React.FC<FileUploaderProps> = props => {
           {filesFromProps.map((file, index: number) => (
             <li key={file.name.concat(index.toString())}>
               {file.name}
-              <button
-                className={styles.fileListCancelBtn}
-                onClick={() => deleteFromList(file)}
-              >
-                <Icon iconName={'Cancel'} />
-              </button>
+              {file.error ? (
+                <Icon iconName={'Error'} className={styles.errorColor} />
+              ) : (
+                <button
+                  className={styles.fileListCancelBtn}
+                  onClick={() => deleteFromList(file)}
+                >
+                  <Icon iconName={'Cancel'} />
+                </button>
+              )}
             </li>
           ))}
         </ul>

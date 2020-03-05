@@ -22,6 +22,10 @@ const [files, setFiles] = React.useState([]);
       newList.push(file);
       setFiles(newList);
     }}
+    deleteFile={file => {
+      const newList = files.filter(fileInList => fileInList !== file);
+      setFiles(newList);
+    }}
   />
 </div>;
 ```

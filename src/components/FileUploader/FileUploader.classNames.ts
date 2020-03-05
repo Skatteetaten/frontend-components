@@ -15,6 +15,9 @@ export const getClassNames = (props: FileUploaderProps) => {
       fontSize: '12px',
       color: palette.skeColor.grey
     },
+    errorColor: {
+      color: `${palette.skeColor.error} !important`
+    },
     fileList: {
       listStyle: 'none',
       padding: 0,
