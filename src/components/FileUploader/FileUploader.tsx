@@ -102,6 +102,7 @@ const FileUploader: React.FC<FileUploaderProps> = props => {
   );
   const [errorMessage, setErrorMessage] = React.useState<string>('');
   const [internalLoading, setInternalLoading] = React.useState<boolean>(false);
+  const inputRef = React.useRef<HTMLInputElement | null>(null);
 
   React.useEffect(() => {
     if (files) {
@@ -118,6 +119,8 @@ const FileUploader: React.FC<FileUploaderProps> = props => {
   };
 
   const handleNewFiles = (fileList: File[]) => {
+    setErrorMessage('');
+
     // I denne versjonen støtte vi kun en fil om gangen
     const correctFileFormat = isCorrectFileFormat(
       fileList[0],
@@ -138,14 +141,12 @@ const FileUploader: React.FC<FileUploaderProps> = props => {
             { params: queryParams }
           )
           .then(res => {
-            console.log(res);
             if (res.data) {
               setErrorMessage('');
               setInternalFiles([...internalFiles, res.data]);
             }
           })
           .catch(error => {
-            console.log(error);
             setErrorMessage('Kunne ikke laste opp fil');
           })
           .finally(() => {
@@ -210,22 +211,25 @@ const FileUploader: React.FC<FileUploaderProps> = props => {
         onCalloutToggle={onCalloutToggle}
         {...labelCallout}
       />
-      <input
-        className={styles.fileUploadInput}
-        type="file"
-        id="fileupload"
-        onChange={handleFileChange}
-      />
       <label
         htmlFor="fileupload"
         aria-label={ariaLabel ? ariaLabel : 'fileupload'}
+        id="buttonLabel"
       >
         <div
           className={styles.uploadArea}
+          role="button"
+          aria-controls="filename"
+          tabIndex={0}
           onDragEnter={handleDragOverAndDragEnter}
           onDragLeave={handleDragLeave}
           onDragOver={handleDragOverAndDragEnter}
           onDrop={handleDrop}
+          onKeyPress={ev => {
+            if (ev.keyCode === 0 && inputRef.current) {
+              inputRef.current.click();
+            }
+          }}
         >
           {loading || internalLoading ? (
             <Spinner />
@@ -237,6 +241,13 @@ const FileUploader: React.FC<FileUploaderProps> = props => {
           )}
         </div>
       </label>
+      <input
+        className={styles.fileUploadInput}
+        type="file"
+        id="fileupload"
+        ref={inputRef}
+        onChange={handleFileChange}
+      />
       {acceptedFileFormats && (
         <span className={styles.acceptedFileTypesWrapper}>
           Aksepterte filformater:{' '}
