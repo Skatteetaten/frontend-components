@@ -71,7 +71,6 @@ export const isCorrectFileFormat = (
   }
   const fileExtention = file.name.match(/\.[0-9a-z]+$/i);
   if (fileExtention && fileExtention[0]) {
-    console.log(fileExtention);
     if (acceptedFilformats.indexOf(fileExtention[0] as FileFormatTypes) > -1) {
       return true;
     }
@@ -140,11 +139,13 @@ const FileUploader: React.FC<FileUploaderProps> = props => {
             { params: queryParams }
           )
           .then(res => {
+            console.log(res);
             setErrorMessage('');
             setUploadedFiles([...uploadedFiles, res.data]);
             setInternalFiles([...uploadedFiles, res.data]);
           })
-          .catch(() => {
+          .catch(error => {
+            console.log(error);
             setErrorMessage('Kunne ikke laste opp fil');
           })
           .finally(() => {
