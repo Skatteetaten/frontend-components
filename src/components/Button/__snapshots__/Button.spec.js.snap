@@ -2,7 +2,7 @@
 
 exports[`Button komponent  matcher snapshot 1`] = `
 <button
-  className="ms-Button ms-Button--default ske-primaryRounded-button-41"
+  className="ms-Button ms-Button--default ske-primaryRounded-button-73"
   data-is-focusable={true}
   onClick={[Function]}
   onKeyDown={[Function]}
@@ -13,14 +13,14 @@ exports[`Button komponent  matcher snapshot 1`] = `
   type="button"
 >
   <span
-    className="ms-Button-flexContainer flexContainer-42"
+    className="ms-Button-flexContainer flexContainer-74"
     data-automationid="splitbuttonprimary"
   >
     <span
-      className="ms-Button-textContainer textContainer-43"
+      className="ms-Button-textContainer textContainer-75"
     >
       <span
-        className="ms-Button-label label-45"
+        className="ms-Button-label label-77"
         id="id__0"
       >
         Knapptekst
