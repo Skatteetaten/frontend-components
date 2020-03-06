@@ -101,7 +101,6 @@ const FileUploader: React.FC<FileUploaderProps> = props => {
     files ? files : []
   );
   const [errorMessage, setErrorMessage] = React.useState<string>('');
-  const [uploadedFiles, setUploadedFiles] = React.useState();
   const [internalLoading, setInternalLoading] = React.useState<boolean>(false);
 
   React.useEffect(() => {
@@ -140,9 +139,10 @@ const FileUploader: React.FC<FileUploaderProps> = props => {
           )
           .then(res => {
             console.log(res);
-            setErrorMessage('');
-            setUploadedFiles([...uploadedFiles, res.data]);
-            setInternalFiles([...uploadedFiles, res.data]);
+            if (res.data) {
+              setErrorMessage('');
+              setInternalFiles([...internalFiles, res.data]);
+            }
           })
           .catch(error => {
             console.log(error);
