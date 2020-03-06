@@ -79,7 +79,6 @@ module.exports = {
       'FileUploader',
       'RadioButtonGroup',
       'SearchField',
-      'SearchMenu',
       'TextField'
     ]),
     generateComponentsGroup('Bokser og gruppering', [
