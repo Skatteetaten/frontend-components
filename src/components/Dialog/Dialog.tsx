@@ -77,7 +77,7 @@ export default class Dialog extends React.PureComponent<
           modalProps={{
             isBlocking,
             className: classnames(styles.main, className),
-              ...modalProps
+            ...modalProps
           }}
         >
           {isCalloutVisible && (
