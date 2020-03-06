@@ -13,14 +13,26 @@ import IconButton from '@skatteetaten/frontend-components/IconButton';
 ```
 
 ```js noeditor uu
-<h3>Ha alltid en beskrivende tittel</h3>
-<p>
-  En ikonknapp skal alltid ha en tittel som beskriver funksjonen til knappen. For eksempel kan blind og svaksynte være avhengige av hjelpeverktøy for å lese opp knappens funksjonalitet.
-</p>
-<h3>Ikke bruk inaktiv knapp</h3>
-<p>
-  Unngå å bruke IconButton i disabled. La knappen alltid være aktiv, og vis heller gode feilmeldinger dersom ikke alle kriterier for å utføre handlingen er oppfylt.
-</p>
+<h3>Tips</h3>
+
+<ul>
+  <li>Bruk title-attributtet for å beskrive knappens funksjon (leses av hjelpemidler)</li>
+  <li>Unngå bruk av inaktiv (disabled) knapp. Bruk heller aktiv knapp med eventuelle feilmeldinger</li>
+</ul>
+
+<h3>Mest relevante WCAG-krav</h3>
+
+<ul>
+  <li>1.1.1 A, Ikke-tekstlig innhold</li>
+  <li>4.1.2 A, Navn, rolle, verdi</li>
+</ul>
+
+<h3>WAI-ARIA</h3>
+
+<ul>
+  <li>Aria-hidden="true" brukes på ikonet for skjule det for skjermleser.</li>
+</ul>
+
 ```
 
 ```js noeditor beskrivelse

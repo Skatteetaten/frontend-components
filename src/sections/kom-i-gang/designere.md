@@ -1,13 +1,64 @@
 Hvis vi skal få til en enhetlig brukeropplevelse på tvers, må alle løsninger i Skatteetaten bruke Designsystemet. Som designer må du blant annet hjelpe utviklerne i ditt prosjekt å følge prinsippene her.
 
-### Sketch
+### Last ned Sketch-komponenter
 
-Vi har laget Sketch-varianter av komponentenene, slik at skissene dine kan harmonere med de tekniske komponentene. [Last ned nyeste Sketch-komponenter](./assets/sketch/Designsystem.sketch)
+Vi har laget Sketch-varianter av komponentene, slik at skissene dine kan harmonere med de tekniske.
 
-### Hvordan bruke designsystemet?
+```js noeditor
+import OpenClose from '@skatteetaten/frontend-components/OpenClose';
+import Link from '@skatteetaten/frontend-components/Link';
+import Button from '@skatteetaten/frontend-components/Button';
 
-Håpet er Designsystemet kan frigjøre tiden din. Du bør bruke mindre tid på piksler, fargekoder og avstander, og heller støtte deg til at du får dette gratis fra komponentene.
+<div>
+  <p>
+    <Link
+      path={'./assets/sketch/designsystem-1.1.sketch'}
+      text={'Last ned nyeste Sketch-fil'}
+      icon={'Download'}
+      placement="before"
+    />
+  </p>
+  <br />
+</div>;
+```
 
-1. Vi anbefaler at du setter deg inn i de overordnede prinsippene, for å få en klar forståelse av hvordan vi bygger opp løsningene våre.
-2. Deretter bør du se gjennom komponentene og bli vant til begrepsbruken. Det er enklere for utviklere dersom du bruker navnene på komponentene når du snakker med dem.
-3. Designsystemet er aldri ferdig og er avhengig av å bli brukt og testet i reelle situasjoner. Mangler noe, så forbedrer vi eller legger til.
+### Sette opp Sketch
+
+```js noeditor
+import Accordion from '@skatteetaten/frontend-components/Accordion';
+import AccordionItem from '@skatteetaten/frontend-components/Accordion/AccordionItem';
+
+<Accordion processList>
+  <AccordionItem
+    toggleContent
+    toggleButtonText={'Lagre fil'}
+    stepId={'step-1-1'}
+  >
+    <p>
+      Last ned nyeste Sketch-fil og lagre på den ønsket sted på maskinen din.
+    </p>
+  </AccordionItem>
+  <AccordionItem
+    toggleContent
+    toggleButtonText={'Koble fil til Sketch'}
+    stepId={'step-1-2'}
+  >
+    <ol>
+      <li>Gå til Sketch > Preferences</li>
+      <li>Velg Libraries</li>
+      <li>Trykk på Add library</li>
+      <li>Bla gjennom og velg filen fra 1)</li>
+    </ol>
+  </AccordionItem>
+  <AccordionItem
+    toggleContent
+    toggleButtonText={'Lag skisse'}
+    stepId={'step-1-3'}
+  >
+    <p>
+      Når Sketch-filen er satt opp kan du bruke komponentene fra den ved å
+      trykke på +-ikonet i Sketch. I Sketch kalles komponentene symboler.
+    </p>
+  </AccordionItem>
+</Accordion>;
+```

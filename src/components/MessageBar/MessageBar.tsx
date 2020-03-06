@@ -133,7 +133,6 @@ export class MessageBar extends React.PureComponent<
               aria-describedby={id}
               role="status"
               dismissButtonAriaLabel={dismissButtonAriaLabel}
-              tabIndex={0}
             >
               {children}
             </FabricMessageBar>
