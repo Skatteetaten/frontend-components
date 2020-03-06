@@ -63,16 +63,17 @@ export const getClassNames = (props: SearchFieldProps) => {
           fontSize: largeSize ? FontSizes.large : FontSizes.medium
         },
         '&.is-active.ms-SearchBox': {
-          border: `2px solid ${palette.skeColor.blue}`,
+          border: `1px solid ${palette.skeColor.blue}`,
           outline: 'none',
           boxSizing: 'border-box',
           selectors: {
             '.ms-SearchBox-field': {
-              padding: border === 'slim' ? '4px 25px 4px 4px' : ''
+              padding:
+                border === 'slim' ? '5px 25px 5px 5px' : '5px 25px 5px 6px'
             },
             '.ms-SearchBox-iconContainer': {
-              right: standardSize ? -1 : '',
-              top: standardSize ? 6 : ''
+              right: standardSize ? 0 : 1,
+              top: standardSize ? 7 : 6
             }
           }
         },
@@ -93,6 +94,7 @@ export const getClassNames = (props: SearchFieldProps) => {
         },
         '& .ms-SearchBox-icon': {
           position: 'absolute',
+          color: palette.skeColor.blue,
           right: 10,
           top: largeSize ? 5 : 0,
           border: 'none',
