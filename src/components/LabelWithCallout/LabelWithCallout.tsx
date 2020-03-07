@@ -13,6 +13,10 @@ export interface LabelWithCalloutProps
   extends React.HTMLAttributes<HTMLDivElement> {
   /** aria-label */
   ariaLabel?: string;
+  /** aria-label for help/warning-knapp */
+  buttonAriaLabel?: string;
+  /** Tittel for help/warning-knapp */
+  buttonTitle?: string;
   calloutFloating?: boolean;
   className?: string;
   editable?: boolean;
@@ -37,6 +41,8 @@ export interface LabelWithCalloutProps
 const LabelWithCallout = (props: LabelWithCalloutProps) => {
   const {
     ariaLabel,
+    buttonAriaLabel,
+    buttonTitle,
     calloutFloating = false,
     className,
     editable,
@@ -89,9 +95,9 @@ const LabelWithCallout = (props: LabelWithCalloutProps) => {
         </legend>
       ) : (
         <label
+          id={id}
           htmlFor={inputId}
           aria-label={ariaLabel}
-          id={id}
           className={classnames(styles.label, className)}
         >
           {label}
@@ -102,8 +108,9 @@ const LabelWithCallout = (props: LabelWithCalloutProps) => {
         <span className={styles.labelIconArea} ref={iconButtonElementRef}>
           <IconButton
             iconProps={{ iconName: 'HelpOutline' }}
-            title="Hjelp"
-            ariaLabel={'Åpne hjelp'}
+            title={buttonTitle ? buttonTitle : 'Hjelp'}
+            aria-describedby={id}
+            ariaLabel={buttonAriaLabel}
             onClick={() => {
               setIsCalloutVisible(!isCalloutVisible);
               toggleEvent();
@@ -116,8 +123,9 @@ const LabelWithCallout = (props: LabelWithCalloutProps) => {
         <span className={styles.labelIconArea} ref={iconButtonElementRef}>
           <IconButton
             iconProps={{ iconName: 'WarningOutline' }}
-            title="Varsel"
-            ariaLabel={'Åpne varsel'}
+            title={buttonTitle ? buttonTitle : 'Varsel'}
+            aria-describedby={id}
+            ariaLabel={buttonAriaLabel}
             onClick={() => {
               setIsCalloutVisible(!isCalloutVisible);
               toggleEvent();
@@ -131,8 +139,9 @@ const LabelWithCallout = (props: LabelWithCalloutProps) => {
           {editable && (
             <IconButton
               iconProps={{ iconName: 'Edit' }}
-              title="Rediger"
-              aria-labelledby={label + ' endre'}
+              title={buttonTitle ? buttonTitle : 'Rediger'}
+              aria-describedby={id}
+              ariaLabel={buttonAriaLabel}
               onClick={editFunction}
               className={styles.icon}
             />
