@@ -44,7 +44,8 @@ const Combobox: React.FC<ComboboxProps> = props => {
   return (
     <div id={id}>
       <LabelWithCallout
-        id={id}
+        id={id + '-label'}
+        inputId={id + '-input'}
         label={label}
         help={help}
         onCalloutToggle={onCalloutToggle}
@@ -52,6 +53,7 @@ const Combobox: React.FC<ComboboxProps> = props => {
       />
       <VirtualizedComboBox
         {...rest}
+        id={id + '-input'}
         ariaLabel={label}
         className={classnames(getClassNames(props), className)}
         calloutProps={{

@@ -19,6 +19,7 @@ const initialState = {
     <Grid.Row>
       <Grid.Col lg={4}>
         <ComboBox
+          id="combobox1"
           label="Nedtrekksliste"
           help="Tekst som hjelper brukeren til å fylle ut feltet."
           placeHolder="Velg"
@@ -31,6 +32,7 @@ const initialState = {
       </Grid.Col>
       <Grid.Col lg={4}>
         <ComboBox
+          id="combobox2"
           label="Med autoutfylling"
           help="Feltet foreslår en verdi når du begynner å skrive."
           options={state.options}
@@ -67,6 +69,7 @@ const initialState = {
     <Grid.Row>
       <Grid.Col lg={4}>
         <ComboBox
+          id="combobox3"
           label="Nedtrekksliste"
           help="Tekst som hjelper brukeren til å fylle ut feltet."
           inputSize="large"
@@ -105,6 +108,7 @@ let error = 'En feil';
     <Grid.Row>
       <Grid.Col lg={4}>
         <ComboBox
+          id="combobox4"
           label="Nedtrekksliste"
           help="Hjelpetekst"
           placeHolder="Velg"
