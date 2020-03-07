@@ -19,6 +19,8 @@ export interface LabelWithCalloutProps
   editFunction?: () => void;
   help?: string | JSX.Element;
   id?: any;
+  /** Når komponenten skal knyttes til et inputfelt */
+  inputId?: any;
   /** Når komponenten plasseres inni fieldset (label vil rendres som et legend-element) */
   inFieldset?: boolean;
   inputSize?: 'small' | 'normal' | 'large';
@@ -41,6 +43,7 @@ const LabelWithCallout = (props: LabelWithCalloutProps) => {
     editFunction,
     help,
     id,
+    inputId,
     inFieldset,
     label,
     readOnly,
@@ -86,6 +89,7 @@ const LabelWithCallout = (props: LabelWithCalloutProps) => {
         </legend>
       ) : (
         <label
+          htmlFor={inputId}
           aria-label={ariaLabel}
           id={id}
           className={classnames(styles.label, className)}
