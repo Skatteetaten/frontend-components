@@ -108,7 +108,8 @@ export const TextField: React.FC<TextFieldProps> = ({
       )}
     >
       <LabelWithCallout
-        id={id}
+        id={id + '-label'}
+        inputId={id}
         label={label}
         editFunction={onEdit}
         warning={rest.warning}
@@ -122,7 +123,7 @@ export const TextField: React.FC<TextFieldProps> = ({
       />
       <TextFieldType
         {...rest}
-        ariaLabel={label}
+        id={id}
         inputMode={inputMode}
         value={setValue()}
         readOnly={editMode ? false : readOnly}

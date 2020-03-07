@@ -9,7 +9,6 @@ import TextField from '@skatteetaten/frontend-components/TextField';
   <TextField
     id={'my-input-1'}
     label={'Navn'}
-    placeholder={'For- og etternavn'}
     value={state.value}
     onChange={(e, value) => setState({ value1: value })}
   />
@@ -26,7 +25,6 @@ import TextField from '@skatteetaten/frontend-components/TextField';
     id={'my-input-2'}
     label={'Navn'}
     inputSize={'large'}
-    placeholder={'For- og etternavn'}
     value={state.value}
     onChange={(e, value) => setState({ value })}
   />
@@ -43,7 +41,6 @@ import TextField from '@skatteetaten/frontend-components/TextField';
     <TextField
       id={'my-helpfield-1'}
       label="Fullt navn"
-      placeholder={''}
       value={state.value1}
       onChange={(e, value) => setState({ value1: value })}
       help="Vi trenger å vite navnet ditt dersom vi skal kontakte deg senere."
@@ -139,8 +136,7 @@ import TextField from '@skatteetaten/frontend-components/TextField';
     id={'my-input-1'}
     value={state.value}
     onChange={(e, value) => setState({ value })}
-    label={'Org.nummer'}
-    placeholder={'999 999 999'}
+    label={'Org.nummer (9 siffer)'}
     mask={'999 999 999'}
     maskChar={''}
   />
