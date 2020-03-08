@@ -51,7 +51,8 @@ const Dropdown: React.FC<DropdownProps> = props => {
   return (
     <div id={id}>
       <LabelWithCallout
-        id={id}
+        id={id + '-label'}
+        inputId={id + '-input'}
         label={label}
         help={help}
         onCalloutToggle={onCalloutToggle}
@@ -59,6 +60,7 @@ const Dropdown: React.FC<DropdownProps> = props => {
       />
       <FabricDropdown
         {...rest}
+        id={id}
         className={classnames(getClassNames(props), className)}
         ariaLabel={label}
         calloutProps={{

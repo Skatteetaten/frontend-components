@@ -58,6 +58,7 @@ const initialState = {
 
 <div style={{ width: '300px' }}>
   <Dropdown
+    id={'dropdown2'}
     label="Velg favoritt"
     help="Tekst som hjelper brukeren å fylle ut feltet."
     inputSize="large"
