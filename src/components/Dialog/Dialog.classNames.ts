@@ -70,7 +70,7 @@ export const getClassNames = function getClassNames(props: DialogProps) {
           ...getMainBackgroundStyle(props)
         },
         '& .ms-Modal-scrollableContent': {
-          overflowY: 'scroll',
+          overflowY: 'auto',
           overflowX: 'hidden',
           WebkitOverflowScrolling: 'touch',
           selectors: {

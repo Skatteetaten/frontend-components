@@ -1,3 +1,7 @@
+### **v.3.2.3 **
+
+- Remove stuck scrollbar inside dialog
+
 ### **v.3.2.2 - 03.03.2020 **
 
 - Accessibility improvements to Accordion, Dialog, MessageBar, ErrorMessage, Spinner, ProgressBar, NavigationTile and FooterContent.
