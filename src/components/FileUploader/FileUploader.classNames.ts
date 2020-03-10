@@ -8,12 +8,11 @@ export const getClassNames = (props: FileUploaderProps) => {
 
   return mergeStyleSets({
     acceptedFileFormats: {
-      color: palette.skeColor.darkGrey,
       fontWeight: 'bold'
     },
     acceptedFileTypesWrapper: {
       fontSize: '12px',
-      color: palette.skeColor.grey
+      color: palette.skeColor.darkGrey
     },
     errorColor: {
       color: `${palette.skeColor.error} !important`
