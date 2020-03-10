@@ -105,6 +105,8 @@ const SearchField: React.FC<SearchFieldProps> = props => {
         newFocus--;
       } else if (ev.keyCode === 40) {
         newFocus++;
+      } else if (ev.keyCode === 27) {
+        setDropdownVisible(false);
       }
       if (newFocus <= listRefs.current.length - 1) {
         const focusItem = listRefs.current[newFocus];
@@ -134,6 +136,7 @@ const SearchField: React.FC<SearchFieldProps> = props => {
       setDropdownVisible(newList.length > 0);
     }
   };
+
   const renderSuggestions = list => {
     if (list.length === 0) {
       setDropdownVisible(false);
@@ -141,7 +144,7 @@ const SearchField: React.FC<SearchFieldProps> = props => {
     }
     return (
       <div className={styles.searchListDropdown}>
-        <ul className={styles.searchList}>
+        <ul id="results" role="listbox" className={styles.searchList}>
           {list.map((listItem, key: number) => {
             return (
               <li
@@ -160,6 +163,8 @@ const SearchField: React.FC<SearchFieldProps> = props => {
                   }
                 }}
                 tabIndex={0}
+                role="option"
+                aria-selected={key === focus}
               >
                 <ActionButton
                   ariaLabel={listItem.text}
@@ -189,6 +194,8 @@ const SearchField: React.FC<SearchFieldProps> = props => {
         <div ref={_searchBoxElement}>
           <SearchBox
             {...rest}
+            aria-expanded="false"
+            type={'search'}
             className={classnames(styles.main, className)}
             onChange={(ev, newValue) => {
               if (!newValue) {
@@ -205,7 +212,11 @@ const SearchField: React.FC<SearchFieldProps> = props => {
           {dropdownVisible && renderSuggestions(searchResultList)}
         </div>
       ) : (
-        <SearchBox {...props} className={classnames(styles.main, className)} />
+        <SearchBox
+          type={'search'}
+          {...props}
+          className={classnames(styles.main, className)}
+        />
       )}
     </>
   );

@@ -76,6 +76,7 @@ module.exports = {
       'ComboBox',
       'DatePicker',
       'Dropdown',
+      'FileUploader',
       'RadioButtonGroup',
       'SearchField',
       'TextField'
