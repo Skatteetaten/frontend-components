@@ -7,7 +7,7 @@ import TextField from '@skatteetaten/frontend-components/TextField';
 
 <div style={{ width: '300px' }}>
   <TextField
-    id={'my-input-1'}
+    id={'my-input'}
     label={'Navn'}
     value={state.value}
     onChange={(e, value) => setState({ value1: value })}
@@ -22,7 +22,6 @@ import TextField from '@skatteetaten/frontend-components/TextField';
 
 <div style={{ width: '300px' }}>
   <TextField
-    id={'my-input-2'}
     label={'Navn'}
     inputSize={'large'}
     value={state.value}
@@ -39,7 +38,6 @@ import TextField from '@skatteetaten/frontend-components/TextField';
 <>
   <div style={{ width: '300px' }}>
     <TextField
-      id={'my-helpfield-1'}
       label="Fullt navn"
       value={state.value1}
       onChange={(e, value) => setState({ value1: value })}
@@ -49,7 +47,6 @@ import TextField from '@skatteetaten/frontend-components/TextField';
   <br />
   <div style={{ width: '150px' }}>
     <TextField
-      id={'my-helpfield-2'}
       label="Antall barn"
       placeholder={''}
       inputMode={'numeric'}
@@ -69,7 +66,6 @@ import TextField from '@skatteetaten/frontend-components/TextField';
 
 <div style={{ width: '160px' }}>
   <TextField
-    id={'my-errorfield-2'}
     label="Inntektsår"
     value={state.value}
     onChange={(e, value) => setState({ value })}
@@ -93,7 +89,6 @@ const initialState = {
 
 <div style={{ width: '300px' }}>
   <TextField
-    id={'my-readonlyfield'}
     readOnly
     editable
     label="Saksbehandler"
@@ -103,7 +98,6 @@ const initialState = {
   />
   <p>Med suffix:</p>
   <TextField
-    id={'vektVare'}
     readOnly
     editable
     label="Vekt på vare"
@@ -114,7 +108,6 @@ const initialState = {
   />
   <p>Rediger når tekstfeltet er tomt:</p>
   <TextField
-    id={'my-readonlyfield'}
     readOnly
     editable
     editableWhenEmpty
@@ -133,7 +126,6 @@ import TextField from '@skatteetaten/frontend-components/TextField';
 
 <div style={{ width: '300px' }}>
   <TextField
-    id={'my-input-1'}
     value={state.value}
     onChange={(e, value) => setState({ value })}
     label={'Org.nummer (9 siffer)'}
