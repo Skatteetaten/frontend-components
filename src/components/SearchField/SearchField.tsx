@@ -11,6 +11,7 @@ import LabelWithCallout, {
   calloutState,
   LabelWithCalloutProps
 } from '../LabelWithCallout';
+import { useId } from '@reach/auto-id';
 
 export interface SearchFieldProps extends ISearchBoxProps {
   /** Størrelsen på rammen */
@@ -176,11 +177,18 @@ const SearchField: React.FC<SearchFieldProps> = props => {
       </div>
     );
   };
+
+  const genratedId = useId(id);
+  const mainId = id ? id : 'searchfield-' + genratedId;
+  const inputId = mainId + '-input';
+  const labelId = mainId + '-label';
+
   return (
-    <>
+    <div id={mainId}>
       <LabelWithCallout
-        id={id}
+        id={labelId}
         label={label}
+        inputId={inputId}
         help={help}
         onCalloutToggle={onCalloutToggle}
         {...labelCallout}
@@ -189,6 +197,7 @@ const SearchField: React.FC<SearchFieldProps> = props => {
         <div ref={_searchBoxElement}>
           <SearchBox
             {...rest}
+            id={inputId}
             className={classnames(styles.main, className)}
             onChange={(ev, newValue) => {
               if (!newValue) {
@@ -207,7 +216,7 @@ const SearchField: React.FC<SearchFieldProps> = props => {
       ) : (
         <SearchBox {...props} className={classnames(styles.main, className)} />
       )}
-    </>
+    </div>
   );
 };
 
