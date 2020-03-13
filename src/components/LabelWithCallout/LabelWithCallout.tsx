@@ -86,14 +86,16 @@ const LabelWithCallout = (props: LabelWithCalloutProps) => {
   ) : (
     <>
       {inFieldset ? (
-        <legend
-          aria-label={ariaLabel}
-          id={id}
-          className={classnames(styles.labelAsLegend, className)}
-        >
-          {label}
-        </legend>
-      ) : (
+        label ? (
+          <legend
+            aria-label={ariaLabel}
+            id={id}
+            className={classnames(styles.labelAsLegend, className)}
+          >
+            {label}
+          </legend>
+        ) : null
+      ) : label ? (
         <label
           id={id}
           htmlFor={inputId}
@@ -102,7 +104,7 @@ const LabelWithCallout = (props: LabelWithCalloutProps) => {
         >
           {label}
         </label>
-      )}
+      ) : null}
 
       {help && !warning && (
         <span className={styles.labelIconArea} ref={iconButtonElementRef}>
