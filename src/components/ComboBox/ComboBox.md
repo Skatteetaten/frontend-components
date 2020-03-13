@@ -19,7 +19,6 @@ const initialState = {
     <Grid.Row>
       <Grid.Col lg={4}>
         <ComboBox
-          id={'minTest'}
           label="Nedtrekksliste"
           help="Tekst som hjelper brukeren til å fylle ut feltet."
           placeHolder="Velg"
