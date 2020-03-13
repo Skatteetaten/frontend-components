@@ -48,12 +48,12 @@ const OpenClose: React.FC<OpenCloseProps> = props => {
         aria-expanded={isContentOpen}
         onClick={clickHandler}
       >
+        <Icon iconName={'ChevronDown'} />
         {headingLevel && title ? (
           <Heading text={title} level={headingLevel} />
         ) : (
           title
         )}
-        <Icon iconName={'ChevronDown'} />
       </button>
       {isContentOpen && <div className={styles.content}>{children}</div>}
     </div>
