@@ -63,6 +63,11 @@ exports[`Combobox komponent matcher med snapshot 1`] = `
             className="ms-Icon root-69 css-102 ms-Button-icon icon-97"
             data-icon-name="ChevronDown"
             role="presentation"
+            style={
+              Object {
+                "fontFamily": "\\"Material Icons\\"",
+              }
+            }
           >
             
           </i>

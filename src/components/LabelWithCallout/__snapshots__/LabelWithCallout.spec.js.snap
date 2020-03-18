@@ -33,6 +33,11 @@ Array [
           className="ms-Icon root-65 css-92 ms-Button-icon icon-87"
           data-icon-name="HelpOutline"
           role="presentation"
+          style={
+            Object {
+              "fontFamily": "\\"Material Icons\\"",
+            }
+          }
         >
           
         </i>

@@ -53,6 +53,11 @@ exports[`Callout komponent matcher snapshot 1`] = `
               className="ms-Icon root-69 css-94 ms-Button-icon icon-89"
               data-icon-name="Cancel"
               role="presentation"
+              style={
+                Object {
+                  "fontFamily": "\\"Material Icons\\"",
+                }
+              }
             >
               
             </i>
