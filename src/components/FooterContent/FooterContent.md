@@ -40,8 +40,7 @@ import Grid from '@skatteetaten/frontend-components/Grid';
     1024px som tilsvarer fra og med large i grid-systemet.
   </p>
 ```
+
 ```js noeditor uu
-<p>
-Ingen informasjon
-</p>
+<p>Ingen informasjon</p>
 ```

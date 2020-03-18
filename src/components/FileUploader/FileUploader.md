@@ -12,6 +12,7 @@ const [spinner, setSpinner] = React.useState(false);
 
 <div style={{ width: '300px' }}>
   <FileUploader
+    addFileString={'Last opp fil'}
     label={'Last opp vedlegg'}
     help="Tekst som hjelper brukeren å fylle ut feltet."
     acceptedFileFormats={[
@@ -34,6 +35,34 @@ const [spinner, setSpinner] = React.useState(false);
       setFiles(newList);
     }}
     loading={spinner}
+  />
+</div>;
+```
+
+Mulighet til å laste opp flere filer samtidig:
+
+```js
+import React from 'react';
+import FileUploader, {
+  FileFormatTypes
+} from '@skatteetaten/frontend-components/FileUploader';
+const files = [];
+const [filesToComponent, setFilesToComponent] = React.useState(files);
+
+<div style={{ width: '300px' }}>
+  <FileUploader
+    label={'Last opp bilde'}
+    acceptedFileFormats={[FileFormatTypes.png, FileFormatTypes.jpg]}
+    files={filesToComponent}
+    multipleFiles={true}
+    uploadFile={file => {
+      files.push(file);
+      setFilesToComponent([...files]);
+    }}
+    deleteFile={file => {
+      const newList = files.filter(fileInList => fileInList !== file);
+      setFiles(newList);
+    }}
   />
 </div>;
 ```
