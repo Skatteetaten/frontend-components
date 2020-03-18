@@ -13,6 +13,8 @@ export interface OpenCloseProps {
   title?: string;
   /** Om man ønsker at tittelen skal være en del av heading tag-hierarkiet. Verdi 1-6.*/
   headingLevel?: number;
+  /** By default er ikonet for åpning til venstre. Kan overstyres med iconRight: true. */
+  iconRight?: boolean;
   /** Overstyring av stiler */
   className?: string;
   /** Elementene som vises/skjules når bruker ekspanderer/kollapser.*/
@@ -20,7 +22,7 @@ export interface OpenCloseProps {
 }
 
 const OpenClose: React.FC<OpenCloseProps> = props => {
-  const { title, className, headingLevel, onClick, children } = props;
+  const { title, className, headingLevel, iconRight, onClick, children } = props;
 
   const [isContentOpen, setContentOpen] = React.useState<boolean>(
     props.isOpen || false
@@ -48,12 +50,13 @@ const OpenClose: React.FC<OpenCloseProps> = props => {
         aria-expanded={isContentOpen}
         onClick={clickHandler}
       >
-        <Icon iconName={'ChevronDown'} />
+        {!iconRight && <Icon iconName={'ChevronDown'} />}
         {headingLevel && title ? (
           <Heading text={title} level={headingLevel} />
         ) : (
           title
         )}
+        {iconRight && <Icon iconName={'ChevronDown'} />}
       </button>
       {isContentOpen && <div className={styles.content}>{children}</div>}
     </div>
