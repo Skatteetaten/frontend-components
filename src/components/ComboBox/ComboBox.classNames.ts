@@ -59,6 +59,9 @@ export const getClassNames = (props: ComboboxProps) => {
         height: '30px',
         padding: '0px 32px 1px 8px'
       },
+      '& .ms-ComboBox:focus': {
+        outline: `2px solid ${palette.skeColor.blue}`
+      },
       '& .ms-ComboBox:after': {
         borderRadius: '0px',
         borderColor: errorMessage && color
