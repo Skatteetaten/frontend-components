@@ -5,7 +5,11 @@ import { PaletteProps } from '..';
 import { ComboboxProps } from './ComboBox';
 
 function getFieldTypeStyles(props: ComboboxProps) {
+  const { errorMessage } = props;
   const palette = getTheme().palette as PaletteProps;
+  const color = errorMessage
+    ? palette.skeColor.error
+    : palette.skeColor.blackAlt;
 
   if (props.inputSize === 'large') {
     return {
@@ -16,11 +20,16 @@ function getFieldTypeStyles(props: ComboboxProps) {
         padding: '5px 12px',
         borderColor: palette.skeColor.blackAlt
       },
+      '& .ms-ComboBox:after': {
+        borderRadius: '0px',
+        borderWidth: '2px',
+        borderColor: errorMessage && color
+      },
+      '& .ms-ComboBox:focus': {
+        borderColor: `${palette.skeColor.blue} !important`
+      },
       '& .ms-ComboBox-Input': {
         fontSize: FontSizes.large
-      },
-      '& button.ms-ComboBox-CaretDown-button': {
-        top: '5px'
       },
       'i.ms-Button-icon': {
         fontSize: FontSizes.large
@@ -45,19 +54,14 @@ export const getClassNames = (props: ComboboxProps) => {
   return mergeStyles({
     displayName: 'SkeCombobox',
     selectors: {
-      '.ms-ComboBox': errorMessage && {
-        borderColor: color
-      },
       '& .ms-ComboBox': {
         borderRadius: '0px',
         height: '30px',
-        padding: '0px 32px 1px 8px',
-        borderColor: errorMessage
-          ? palette.skeColor.error
-          : palette.skeColor.blackAlt
+        padding: '0px 32px 1px 8px'
       },
-      '& .ms-ComboBox:active, & .ms-ComboBox:focus, & .ms-ComboBox::after, &.is-active.ms-ComboBox, .ms-ComboBox.is-open': {
-        border: `2px solid ${palette.skeColor.blue}`
+      '& .ms-ComboBox:after': {
+        borderRadius: '0px',
+        borderColor: errorMessage && color
       },
       '& .ms-ComboBox-Input': {
         paddingBottom: '1px',
@@ -74,8 +78,8 @@ export const getClassNames = (props: ComboboxProps) => {
       },
       '.ms-ComboBox-CaretDown-button': {
         // Negative positioning to account for the 2px border
-        right: '-2px',
-        top: '-2px'
+        right: '0',
+        top: '0'
       },
       ...getFieldTypeStyles(props)
     }

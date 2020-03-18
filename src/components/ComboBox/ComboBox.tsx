@@ -9,6 +9,7 @@ import { getClassNames, getOptionsClassNames } from './ComboBox.classNames';
 import LabelWithCallout, { calloutState } from '../LabelWithCallout';
 import { LabelWithCalloutProps } from '../LabelWithCallout/LabelWithCallout';
 import ErrorMessage from '../ErrorMessage';
+import { useId } from '@reach/auto-id';
 
 export interface ComboboxProps extends IComboBoxProps {
   /** Egendefinert feilmelding */
@@ -41,10 +42,16 @@ const Combobox: React.FC<ComboboxProps> = props => {
     onCalloutToggle,
     ...rest
   } = props;
+
+  const genratedId = useId(id);
+  const mainId = id ? id : 'combobox-' + genratedId;
+  const inputId = mainId + '-input';
+  const labelId = mainId + '-label';
   return (
-    <div id={id}>
+    <div id={mainId}>
       <LabelWithCallout
-        id={id}
+        id={labelId}
+        inputId={inputId + '-input'} //Fabric adds its own -input postfix
         label={label}
         help={help}
         onCalloutToggle={onCalloutToggle}
@@ -52,6 +59,7 @@ const Combobox: React.FC<ComboboxProps> = props => {
       />
       <VirtualizedComboBox
         {...rest}
+        id={inputId}
         ariaLabel={label}
         className={classnames(getClassNames(props), className)}
         calloutProps={{

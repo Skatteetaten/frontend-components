@@ -1,15 +1,21 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Dropdown komponent matcher snapshot 1`] = `
-<div>
-  <LabelWithCallout />
+<div
+  id="dropdown-undefined"
+>
+  <LabelWithCallout
+    id="dropdown-undefined-label"
+    inputId="dropdown-undefined-input-option"
+  />
   <StyledWithResponsiveMode
     calloutProps={
       Object {
-        "className": "SkeDropdownValg-46",
+        "className": "SkeDropdownValg-78",
       }
     }
-    className="SkeDropdown-45"
+    className="SkeDropdown-77"
+    id="dropdown-undefined-input"
     onRenderCaretDown={[Function]}
     options={
       Array [
