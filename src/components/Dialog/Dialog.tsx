@@ -56,6 +56,7 @@ export default class Dialog extends React.PureComponent<
       className,
       layoutStyle,
       closeButtonAriaLabel,
+      modalProps,
       ...props
     } = this.props;
     const styles = getClassNames(this.props);
@@ -75,7 +76,8 @@ export default class Dialog extends React.PureComponent<
           }}
           modalProps={{
             isBlocking,
-            className: classnames(styles.main, className)
+            className: classnames(styles.main, className),
+            ...modalProps
           }}
         >
           {isCalloutVisible && (

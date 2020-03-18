@@ -9,6 +9,7 @@ import {
 } from 'office-ui-fabric-react/lib-commonjs/TextField';
 import { getClassNames } from './TextField.classNames';
 import LabelWithCallout, { calloutState } from '../LabelWithCallout';
+import { useId } from '@reach/auto-id';
 
 export interface TextFieldProps extends ITextFieldProps {
   /** Benyttes når teksten for et readOnly tekstfelt skal fremheves  */
@@ -69,6 +70,11 @@ export const TextField: React.FC<TextFieldProps> = ({
   rest.inputSize = rest.inputSize || 'normal';
   const shouldEditWhenEmpty = rest.editableWhenEmpty ? value === '' : false;
 
+  const genratedId = useId(id);
+  const mainId = id ? id : 'textfield-' + genratedId;
+  const inputId = mainId + '-input';
+  const labelId = mainId + '-label';
+
   const textField = React.useRef<ITextField | null>();
   const [editMode, setEditMode] = React.useState(shouldEditWhenEmpty);
 
@@ -102,13 +108,15 @@ export const TextField: React.FC<TextFieldProps> = ({
 
   return (
     <div
+      id={mainId}
       className={classnames(
         getClassNames({ errorMessage, ...rest }),
         className
       )}
     >
       <LabelWithCallout
-        id={id}
+        id={labelId}
+        inputId={inputId}
         label={label}
         editFunction={onEdit}
         warning={rest.warning}
@@ -122,7 +130,7 @@ export const TextField: React.FC<TextFieldProps> = ({
       />
       <TextFieldType
         {...rest}
-        ariaLabel={label}
+        id={inputId}
         inputMode={inputMode}
         value={setValue()}
         readOnly={editMode ? false : readOnly}

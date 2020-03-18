@@ -10,18 +10,18 @@ exports[`MessageBar komponent matcher snapshot 1`] = `
     }
   >
     <div
-      className="ms-MessageBar ms-MessageBar-multiline entered root-46"
+      className="ms-MessageBar ms-MessageBar-multiline entered root-78"
     >
       <div
-        className="ms-MessageBar-content content-47"
+        className="ms-MessageBar-content content-79"
       >
         <div
           aria-hidden={true}
-          className="ms-MessageBar-icon iconContainer-48"
+          className="ms-MessageBar-icon iconContainer-80"
         >
           <i
             aria-hidden={true}
-            className="icon-58"
+            className="icon-90"
             data-icon-name="Info"
           >
             
@@ -29,12 +29,12 @@ exports[`MessageBar komponent matcher snapshot 1`] = `
         </div>
         <div
           aria-live="polite"
-          className="ms-MessageBar-text text-50"
+          className="ms-MessageBar-text text-82"
           id="MessageBar0"
           role="status"
         >
           <span
-            className="ms-MessageBar-innerText innerText-51"
+            className="ms-MessageBar-innerText innerText-83"
             role="status"
           />
         </div>
