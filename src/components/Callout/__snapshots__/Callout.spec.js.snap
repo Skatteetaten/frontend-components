@@ -2,13 +2,13 @@
 
 exports[`Callout komponent matcher snapshot 1`] = `
 <div
-  className="calloutWrapper-46"
+  className="calloutWrapper-78"
 >
   <div
-    className="ms-Callout-container container-48"
+    className="ms-Callout-container container-80"
   >
     <div
-      className="ms-Callout SkeCallout-49"
+      className="ms-Callout SkeCallout-81"
       style={
         Object {
           "filter": "opacity(0)",
@@ -18,7 +18,7 @@ exports[`Callout komponent matcher snapshot 1`] = `
       tabIndex={-1}
     >
       <div
-        className="ms-Callout-main calloutMain-52"
+        className="ms-Callout-main calloutMain-84"
         onKeyDown={[Function]}
         onMouseDown={[Function]}
         onMouseUp={[Function]}
@@ -33,7 +33,7 @@ exports[`Callout komponent matcher snapshot 1`] = `
       >
         <button
           aria-label="Lukk"
-          className="ms-Button ms-Button--icon closeButton-54"
+          className="ms-Button ms-Button--icon closeButton-86"
           data-is-focusable={true}
           onClick={[Function]}
           onKeyDown={[Function]}
@@ -45,12 +45,12 @@ exports[`Callout komponent matcher snapshot 1`] = `
           type="default"
         >
           <span
-            className="ms-Button-flexContainer flexContainer-55"
+            className="ms-Button-flexContainer flexContainer-87"
             data-automationid="splitbuttonprimary"
           >
             <i
               aria-hidden={true}
-              className="ms-Icon root-37 css-62 ms-Button-icon icon-57"
+              className="ms-Icon root-69 css-94 ms-Button-icon icon-89"
               data-icon-name="Cancel"
               role="presentation"
             >

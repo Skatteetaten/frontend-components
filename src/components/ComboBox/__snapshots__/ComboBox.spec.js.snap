@@ -1,16 +1,16 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Combobox komponent matcher med snapshot 1`] = `
-<div>
-  <label
-    className="label-48"
-  />
+<div
+  id="combobox-1"
+>
   <div
-    className="ms-ComboBox-container SkeCombobox-45"
+    className="ms-ComboBox-container SkeCombobox-77"
+    id="combobox-1-input"
   >
     <div
-      className="ms-ComboBox css-54"
-      id="ComboBox0wrapper"
+      className="ms-ComboBox css-86"
+      id="combobox-undefined-inputwrapper"
     >
       <input
         aria-autocomplete="both"
@@ -18,10 +18,10 @@ exports[`Combobox komponent matcher med snapshot 1`] = `
         aria-expanded={false}
         autoCapitalize="off"
         autoComplete="off"
-        className="ms-ComboBox-Input css-55"
+        className="ms-ComboBox-Input css-87"
         data-is-interactable={true}
         data-lpignore={true}
-        id="ComboBox0-input"
+        id="combobox-undefined-input-input"
         onBlur={[Function]}
         onChange={[Function]}
         onClick={[Function]}
@@ -41,7 +41,7 @@ exports[`Combobox komponent matcher med snapshot 1`] = `
       />
       <button
         aria-hidden={true}
-        className="ms-Button ms-Button--icon ms-ComboBox-CaretDown-button root-61"
+        className="ms-Button ms-Button--icon ms-ComboBox-CaretDown-button root-94"
         data-is-focusable={false}
         onBlur={[Function]}
         onClick={[Function]}
@@ -55,12 +55,12 @@ exports[`Combobox komponent matcher med snapshot 1`] = `
         type="button"
       >
         <span
-          className="ms-Button-flexContainer flexContainer-62"
+          className="ms-Button-flexContainer flexContainer-95"
           data-automationid="splitbuttonprimary"
         >
           <i
             aria-hidden={true}
-            className="ms-Icon root-37 css-69 ms-Button-icon icon-64"
+            className="ms-Icon root-69 css-102 ms-Button-icon icon-97"
             data-icon-name="ChevronDown"
             role="presentation"
           >
@@ -73,7 +73,7 @@ exports[`Combobox komponent matcher med snapshot 1`] = `
       aria-atomic="true"
       aria-live="polite"
       className=""
-      id="ComboBox0-error"
+      id="combobox-undefined-input-error"
       role="region"
     >
       

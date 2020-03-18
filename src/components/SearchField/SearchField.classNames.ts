@@ -10,6 +10,7 @@ export const getClassNames = (props: SearchFieldProps) => {
   const largeSize = searchFieldSize === 'large';
   const standardSize = searchFieldSize === 'standard';
 
+  //@ts-ignore
   return mergeStyleSets({
     blackAlt: {
       color: `${palette.skeColor.blackAlt} !important`
@@ -108,6 +109,9 @@ export const getClassNames = (props: SearchFieldProps) => {
         },
         '& .ms-Button': {
           display: 'none'
+        },
+        'input[type=search]': {
+          WebkitAppearance: 'textfield'
         }
       }
     }
