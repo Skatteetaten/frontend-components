@@ -22,7 +22,14 @@ export interface OpenCloseProps {
 }
 
 const OpenClose: React.FC<OpenCloseProps> = props => {
-  const { title, className, headingLevel, iconRight, onClick, children } = props;
+  const {
+    title,
+    className,
+    headingLevel,
+    iconRight,
+    onClick,
+    children
+  } = props;
 
   const [isContentOpen, setContentOpen] = React.useState<boolean>(
     props.isOpen || false
