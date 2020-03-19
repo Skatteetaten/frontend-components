@@ -140,8 +140,7 @@ import TextField from '@skatteetaten/frontend-components/TextField';
     </li>
   </ul>
 ```
+
 ```js noeditor uu
-<p>
-Ingen informasjon
-</p>
+<p>Ingen informasjon</p>
 ```
