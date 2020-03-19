@@ -1,5 +1,6 @@
-### **v.3.2.3 - 19.03.2020 **
+### **v.3.3.0 - 19.03.2020 **
 
+- New component - FileUploader
 - Remove stuck scrollbar inside dialog
 - Accessbility improvements to input-fields.
 - OpenClose: icons placement defaults to left
