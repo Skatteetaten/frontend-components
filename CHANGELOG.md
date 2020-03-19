@@ -1,6 +1,10 @@
-### **v.3.2.3 **
+### **v.3.2.3 - 19.03.2020 **
 
 - Remove stuck scrollbar inside dialog
+- Accessbility improvements to input-fields.
+- OpenClose: icons placement defaults to left
+- Combobox: fixed focus style
+- Upgraded to Fabric 7.82.1
 
 ### **v.3.2.2 - 03.03.2020 **
 
