@@ -6,7 +6,7 @@ import {
 import * as React from 'react';
 import fonts from '../utils/fonts';
 import * as icons from '../utils/icons';
-import { skePalette, skeColor } from '..';
+import { skeColor, skePalette } from '../utils/palette';
 
 const palette = {
   ...skePalette,
