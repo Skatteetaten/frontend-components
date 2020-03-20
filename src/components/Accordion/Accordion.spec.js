@@ -135,4 +135,28 @@ describe('Accordion komponent', () => {
     expect(wrapper.find('h2').text()).toContain('Tittel');
     expect(wrapper.text()).toContain('Undertittel');
   });
+
+  it('Man kan gi et object som subtitle', () => {
+    const wrapper = oppsettMount(
+      {},
+      {
+        toggleContent: true,
+        toggleButtonText: 'Åpne steg',
+        stepId: 'step-2-1',
+        title: 'Tittel',
+        subtitle: (
+          <ul>
+            <li>Hei</li>
+            <li>Hallo</li>
+          </ul>
+        ),
+        headingLevel: 1
+      }
+    );
+
+    const accordionItem = wrapper.find('AccordionItem');
+    expect(accordionItem.html()).toContain(
+      '<ul><li>Hei</li><li>Hallo</li></ul>'
+    );
+  });
 });

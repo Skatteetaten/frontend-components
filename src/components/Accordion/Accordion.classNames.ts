@@ -108,7 +108,7 @@ export function getClassNames() {
           alignItems: 'center'
         },
         '& i': {
-          alignSelf: 'center',
+          alignSelf: 'flex-start',
           transition: '.2s',
           fontSize: IconFontSizes.xlarge,
           selectors: {

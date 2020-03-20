@@ -26,7 +26,7 @@ export interface AccordionItemProps {
   /** Om man ønsker at toggleButtonText skal være en del av heading tag-hierarkiet. Verdi 1-6.*/
   headingLevel?: number;
   /** Subtittel som vises i accordionitem */
-  subtitle?: string;
+  subtitle?: string | JSX.Element;
   /** Overstyring av stiler */
   className?: string;
   stepNumber?: number;
@@ -67,19 +67,21 @@ const ToggleContent: React.FC<ToggleContentInterface> = props => {
       aria-describedby={processList ? 'StepId' + stepId : undefined}
     >
       <span>
-        {headingLevel && toggleButtonText ? (
-          <Heading text={toggleButtonText} level={headingLevel} />
-        ) : (
-          toggleButtonText
-        )}
-
+        <div>
+          {headingLevel && toggleButtonText ? (
+            <Heading text={toggleButtonText} level={headingLevel} />
+          ) : (
+            toggleButtonText
+          )}
+          {typeof subtitle === 'object' ? (
+            subtitle
+          ) : (
+            <p className={styles.subtitle} aria-label={subtitle}>
+              {subtitle}
+            </p>
+          )}
+        </div>
         <Icon iconName={'ChevronDown'} />
-
-        {subtitle && (
-          <p className={styles.subtitle} aria-label={subtitle}>
-            {subtitle}
-          </p>
-        )}
       </span>
     </button>
   );
