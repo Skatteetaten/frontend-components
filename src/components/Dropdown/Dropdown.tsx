@@ -10,6 +10,7 @@ import { getCalloutClassNames, getClassNames } from './Dropdown.classNames';
 import LabelWithCallout, { calloutState } from '../LabelWithCallout';
 import { LabelWithCalloutProps } from '../LabelWithCallout/LabelWithCallout';
 import ErrorMessage from '../ErrorMessage';
+import { useId } from '@reach/auto-id';
 
 export interface DropdownProps extends IDropdownProps {
   /** Hjelpetekst */
@@ -48,10 +49,17 @@ const Dropdown: React.FC<DropdownProps> = props => {
     onCalloutToggle,
     ...rest
   } = props;
+
+  const genratedId = useId(id);
+  const mainId = id ? id : 'dropdown-' + genratedId;
+  const inputId = mainId + '-input';
+  const labelId = mainId + '-label';
+
   return (
-    <div id={id}>
+    <div id={mainId}>
       <LabelWithCallout
-        id={id}
+        id={labelId}
+        inputId={inputId + '-option'}
         label={label}
         help={help}
         onCalloutToggle={onCalloutToggle}
@@ -59,8 +67,9 @@ const Dropdown: React.FC<DropdownProps> = props => {
       />
       <FabricDropdown
         {...rest}
-        className={classnames(getClassNames(props), className)}
         ariaLabel={label}
+        id={inputId}
+        className={classnames(getClassNames(props), className)}
         calloutProps={{
           className: getCalloutClassNames()
         }}

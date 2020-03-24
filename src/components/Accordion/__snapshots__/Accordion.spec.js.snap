@@ -3,13 +3,13 @@
 exports[`Accordion komponent matcher snapshot 1`] = `
 <Accordion>
   <div
-    className="accordion-38"
+    className="accordion-70"
   >
     <Grid
       padding="0 8px"
     >
       <div
-        className="ske-Grid-45 "
+        className="ske-Grid-77 "
       >
         <AccordionItem
           key=".0"
@@ -17,24 +17,24 @@ exports[`Accordion komponent matcher snapshot 1`] = `
           totalSteps={1}
         >
           <div
-            className="wrapperStep-37"
+            className="wrapperStep-69"
             key="1"
           >
             <GridRow
               rowSpacing="0px"
             >
               <div
-                className="ske-Grid-row-48 "
+                className="ske-Grid-row-80 "
               >
                 <GridCol>
                   <div
-                    className="ske-Grid-col-47 "
+                    className="ske-Grid-col-79 "
                   >
                     <GridRow
                       rowSpacing="0px"
                     >
                       <div
-                        className="ske-Grid-row-48 "
+                        className="ske-Grid-row-80 "
                       >
                         <GridCol
                           md={12}
@@ -42,7 +42,7 @@ exports[`Accordion komponent matcher snapshot 1`] = `
                           xl={12}
                         >
                           <div
-                            className="ske-Grid-col-49 "
+                            className="ske-Grid-col-81 "
                           >
                             <hr />
                             <ToggleContent
@@ -50,21 +50,21 @@ exports[`Accordion komponent matcher snapshot 1`] = `
                               onClick={[Function]}
                               styles={
                                 Object {
-                                  "accordion": "accordion-38",
-                                  "containerStep": "containerStep-36",
-                                  "content": "content-39",
-                                  "heading": "heading-40",
-                                  "stepLine": "stepLine-42",
-                                  "stepNumber": "stepNumber-41",
+                                  "accordion": "accordion-70",
+                                  "containerStep": "containerStep-68",
+                                  "content": "content-71",
+                                  "heading": "heading-72",
+                                  "stepLine": "stepLine-74",
+                                  "stepNumber": "stepNumber-73",
                                   "subComponentStyles": Object {},
-                                  "toggleButton": "toggleButton-43",
-                                  "toggleButtonOpen": "toggleButtonOpen-44",
-                                  "wrapperStep": "wrapperStep-37",
+                                  "toggleButton": "toggleButton-75",
+                                  "toggleButtonOpen": "toggleButtonOpen-76",
+                                  "wrapperStep": "wrapperStep-69",
                                 }
                               }
                             />
                             <div
-                              className="content-39"
+                              className="content-71"
                             >
                               <p>
                                 Her vises innhold
