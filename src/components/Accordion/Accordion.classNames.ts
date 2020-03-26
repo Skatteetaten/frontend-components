@@ -95,7 +95,7 @@ export function getClassNames() {
           fontSize: FontSizes.large,
           fontWeight: FontWeights.regular,
           margin: 0,
-          padding: '5px 5px 5px 0px'
+          padding: '8px 5px 0 0'
         },
         '& h1, h2, h3, h4, h5, h6': {
           fontSize: FontSizes.largePlus,
@@ -110,6 +110,7 @@ export function getClassNames() {
         '& i': {
           alignSelf: 'flex-start',
           transition: '.2s',
+          marginTop: '-7px',
           fontSize: IconFontSizes.xlarge,
           selectors: {
             '@media (min-width: 640px)': {

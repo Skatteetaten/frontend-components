@@ -74,7 +74,7 @@ const ToggleContent: React.FC<ToggleContentInterface> = props => {
             toggleButtonText
           )}
           {typeof subtitle === 'object' ? (
-            subtitle
+            <div className={styles.subtitle}>{subtitle}</div>
           ) : (
             <p className={styles.subtitle} aria-label={subtitle}>
               {subtitle}
