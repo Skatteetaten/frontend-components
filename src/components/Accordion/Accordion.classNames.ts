@@ -110,7 +110,7 @@ export function getClassNames() {
         '& i': {
           alignSelf: 'flex-start',
           transition: '.2s',
-          marginTop: '-7px',
+          marginTop: '-5px',
           fontSize: IconFontSizes.xlarge,
           selectors: {
             '@media (min-width: 640px)': {

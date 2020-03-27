@@ -73,13 +73,14 @@ const ToggleContent: React.FC<ToggleContentInterface> = props => {
           ) : (
             toggleButtonText
           )}
-          {typeof subtitle === 'object' ? (
-            <div className={styles.subtitle}>{subtitle}</div>
-          ) : (
-            <p className={styles.subtitle} aria-label={subtitle}>
-              {subtitle}
-            </p>
-          )}
+          {subtitle &&
+            (typeof subtitle === 'object' ? (
+              <div className={styles.subtitle}>{subtitle}</div>
+            ) : (
+              <p className={styles.subtitle} aria-label={subtitle}>
+                {subtitle}
+              </p>
+            ))}
         </div>
         <Icon iconName={'ChevronDown'} />
       </span>
