@@ -94,7 +94,7 @@ export const getClassNames = props => {
     },
     stepAction: {
       marginLeft: 'auto',
-      height: '50%',
+      height: 'calc(100% - 21px)',
       selectors: {
         '@media only screen and (max-width: 479px)': {
           position: 'absolute',
