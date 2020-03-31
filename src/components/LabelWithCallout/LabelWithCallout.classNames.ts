@@ -52,6 +52,9 @@ export const getClassNames = (props: LabelWithCalloutProps) => {
         '& .ms-Callout-beak': !calloutFloating && {
           left: '20px !important',
           top: '-8px !important'
+        },
+        '& .ms-Callout-beakCurtain': {
+          backgroundColor: 'transparent'
         }
       }
     },
