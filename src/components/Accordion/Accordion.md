@@ -100,6 +100,46 @@ import AccordionItem from '@skatteetaten/frontend-components/Accordion/Accordion
 </Accordion>;
 ```
 
+En accordion kan ha en subtitle, som vises under tittelen og kan være enten en string eller en react komponent.
+
+```js
+import Accordion from '@skatteetaten/frontend-components/Accordion';
+import AccordionItem from '@skatteetaten/frontend-components/Accordion/AccordionItem';
+
+const Lorem = () => (
+  <span style={{ fontWeight: 'bold', color: 'red' }}>Lorem ipsum dolor</span>
+);
+
+<Accordion>
+  <AccordionItem
+    toggleContent
+    toggleButtonText="Ferdig"
+    icon="Check"
+    ariaLabel="Fullført"
+    subtitle="Lorem ipsum dolor"
+  >
+    <p>
+      Lorem neque earum ad natus placeat Ut minus hic explicabo eveniet earum
+      ullam? At enim iure tempora excepturi dolores? Sed velit saepe qui
+      recusandae quaerat! Neque dolorem accusamus qui harum
+    </p>
+  </AccordionItem>
+  <AccordionItem
+    toggleContent
+    toggleButtonText="Ferdig"
+    icon="Check"
+    ariaLabel="Fullført"
+    subtitle={<Lorem />}
+  >
+    <p>
+      Lorem neque earum ad natus placeat Ut minus hic explicabo eveniet earum
+      ullam? At enim iure tempora excepturi dolores? Sed velit saepe qui
+      recusandae quaerat! Neque dolorem accusamus qui harum
+    </p>
+  </AccordionItem>
+</Accordion>;
+```
+
 ```js noeditor uu
 <p>
   <a href="https://www.w3.org/TR/wai-aria-practices-1.1/#accordion">
