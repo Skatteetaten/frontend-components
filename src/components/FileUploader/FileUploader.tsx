@@ -37,6 +37,8 @@ export interface FileUploaderProps {
   axiosPath?: string;
   /** CSS class */
   className?: string;
+  /** trigger funksjon til å slette alle filer */
+  deleteAllFiles?: boolean;
   /** Funksjon for å slette opplastet fil */
   deleteFile?: (file: File) => void;
   /** Opplastede filer */
@@ -51,6 +53,8 @@ export interface FileUploaderProps {
   labelCallout?: LabelWithCalloutProps;
   /** Spinner når fil laster */
   loading?: boolean;
+  /** Mulighet for å laste opp flere filer */
+  multipleFiles?: boolean;
   /** Brukerspesifisert event for callout **/
   onCalloutToggle?: (
     oldCalloutState: calloutState,
@@ -85,6 +89,7 @@ const FileUploader: React.FC<FileUploaderProps> = props => {
     ariaLabel,
     axiosPath,
     className,
+    deleteAllFiles,
     deleteFile,
     files,
     help,
@@ -92,6 +97,7 @@ const FileUploader: React.FC<FileUploaderProps> = props => {
     label,
     labelCallout,
     loading,
+    multipleFiles,
     onCalloutToggle,
     queryParams,
     uploadFile
@@ -120,42 +126,39 @@ const FileUploader: React.FC<FileUploaderProps> = props => {
 
   const handleNewFiles = (fileList: File[]) => {
     setErrorMessage('');
-
-    // I denne versjonen støtte vi kun en fil om gangen
-    const correctFileFormat = isCorrectFileFormat(
-      fileList[0],
-      acceptedFileFormats
-    );
-    if (correctFileFormat) {
-      if (uploadFile) {
-        uploadFile(fileList[0]);
+    fileList.forEach((file: File) => {
+      const correctFileFormat = isCorrectFileFormat(file, acceptedFileFormats);
+      if (correctFileFormat) {
+        if (uploadFile) {
+          uploadFile(file);
+        }
+        if (axiosPath) {
+          setInternalLoading(true);
+          const formData = new FormData();
+          formData.append('upload', file);
+          axios
+            .post<FormData, AxiosResponse<AttachmentMetadata>>(
+              axiosPath,
+              formData,
+              { params: queryParams }
+            )
+            .then(res => {
+              if (res.data) {
+                setErrorMessage('');
+                setInternalFiles([...internalFiles, res.data]);
+              }
+            })
+            .catch(error => {
+              setErrorMessage('Kunne ikke laste opp fil');
+            })
+            .finally(() => {
+              setInternalLoading(false);
+            });
+        }
+      } else {
+        setErrorMessage('Dette filformatet er ikke godkjent');
       }
-      if (axiosPath) {
-        setInternalLoading(true);
-        const formData = new FormData();
-        formData.append('upload', fileList[0]);
-        axios
-          .post<FormData, AxiosResponse<AttachmentMetadata>>(
-            axiosPath,
-            formData,
-            { params: queryParams }
-          )
-          .then(res => {
-            if (res.data) {
-              setErrorMessage('');
-              setInternalFiles([...internalFiles, res.data]);
-            }
-          })
-          .catch(error => {
-            setErrorMessage('Kunne ikke laste opp fil');
-          })
-          .finally(() => {
-            setInternalLoading(false);
-          });
-      }
-    } else {
-      setErrorMessage('Dette filformatet er ikke godkjent');
-    }
+    });
   };
 
   const handleDragOverAndDragEnter = (
@@ -201,6 +204,11 @@ const FileUploader: React.FC<FileUploaderProps> = props => {
         });
     }
   };
+  if (deleteAllFiles && files) {
+    files.forEach(file => {
+      deleteFromList(file);
+    });
+  }
 
   return (
     <div className={classnames(styles.main, className)}>
@@ -219,7 +227,7 @@ const FileUploader: React.FC<FileUploaderProps> = props => {
         <div
           className={styles.uploadArea}
           role="button"
-          aria-controls="filename"
+          aria-describedby="acceptedFileFormats"
           tabIndex={0}
           onDragEnter={handleDragOverAndDragEnter}
           onDragLeave={handleDragLeave}
@@ -246,10 +254,14 @@ const FileUploader: React.FC<FileUploaderProps> = props => {
         type="file"
         id="fileupload"
         ref={inputRef}
+        multiple={multipleFiles}
         onChange={handleFileChange}
       />
       {acceptedFileFormats && (
-        <span className={styles.acceptedFileTypesWrapper}>
+        <span
+          className={styles.acceptedFileTypesWrapper}
+          id="acceptedFileFormats"
+        >
           Aksepterte filformater:{' '}
           <span className={styles.acceptedFileFormats}>
             {acceptedFileFormats.map(

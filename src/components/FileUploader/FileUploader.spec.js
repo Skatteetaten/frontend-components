@@ -61,4 +61,27 @@ describe('FileUploader komponent', () => {
       'Dette filformatet er ikke godkjent'
     );
   });
+  it('skal kjøre deleteFile dersom bruker trykker kryss i liste', () => {
+    const mockFunc = jest.fn();
+    const mockFuncDelete = jest.fn();
+    const wrapper = oppsettFullDOM({
+      ariaLabel: 'Filopplaster',
+      uploadFile: () => mockFunc(),
+      files: [{ name: 'FilNavn.png', id: '123456789' }],
+      deleteFile: () => mockFuncDelete()
+    });
+    expect(wrapper.find('li').length).toEqual(1);
+    expect(
+      wrapper
+        .find('li')
+        .first()
+        .text()
+    ).toEqual('FilNavn.png');
+    wrapper
+      .find('li')
+      .first()
+      .find('button')
+      .simulate('click');
+    expect(mockFuncDelete).toHaveBeenCalled();
+  });
 });

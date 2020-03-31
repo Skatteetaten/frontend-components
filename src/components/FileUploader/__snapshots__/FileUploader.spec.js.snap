@@ -10,7 +10,7 @@ exports[`FileUploader komponent matcher snapshot 1`] = `
     id="buttonLabel"
   >
     <div
-      aria-controls="filename"
+      aria-describedby="acceptedFileFormats"
       className="uploadArea-84"
       onDragEnter={[Function]}
       onDragLeave={[Function]}
