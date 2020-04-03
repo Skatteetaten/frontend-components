@@ -112,6 +112,14 @@ export const getClassNames = (props: SearchFieldProps) => {
         },
         'input[type=search]': {
           WebkitAppearance: 'textfield'
+        },
+        'input[type=search]::-webkit-search-cancel-button': {
+          WebkitAppearance: 'none'
+        },
+        'input[type=search]::-ms-clear': {
+          display: 'none',
+          width: 0,
+          height: 0
         }
       }
     }
