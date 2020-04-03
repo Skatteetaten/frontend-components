@@ -99,6 +99,7 @@ const titles = {
           <Grid.Row rowSpacing={Grid.SPACE_NONE}>
             <Grid.Col noSpacing lg={12}>
               <LabelWithCallout label={'Mine saker'} />
+              <br />
               <LabelWithCallout label={'Innsendte skjema'} />
             </Grid.Col>
           </Grid.Row>
@@ -110,8 +111,11 @@ const titles = {
           <Grid.Row rowSpacing={Grid.SPACE_NONE}>
             <Grid.Col noSpacing lg={12}>
               <LabelWithCallout label={'Myndighetsfastsettinger'} />
+              <br />
               <LabelWithCallout label={'Saksmappe'} />
+              <br />
               <LabelWithCallout label={'Prosesser'} />
+              <br />
               <LabelWithCallout label={'Mottaksmeldinger'} />
             </Grid.Col>
           </Grid.Row>
