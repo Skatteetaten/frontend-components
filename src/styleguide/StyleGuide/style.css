@@ -17,6 +17,26 @@
   margin: 8px;
 }
 
+.ml8 {
+  margin-left: 8px;
+}
+
+.mr8 {
+  margin-right: 8px;
+}
+
+.mt8 {
+  margin-top: 8px;
+}
+
+.mb8 {
+  margin-bottom: 8px;
+}
+
+.m8 {
+  margin: 8px;
+}
+
 .backgroundTest-beige {
   background-color: #f9ede2;
 }

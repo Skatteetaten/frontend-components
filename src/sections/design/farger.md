@@ -37,7 +37,6 @@ function drawSwatch(colorCode) {
   <div style={{ display: 'flex', flexFlow: 'row wrap' }}>
     {drawSwatch('green'), drawSwatch('lightGreen')}
   </div>
-  <div style={{ display: 'flex', flexFlow: 'row wrap' }}>{}</div>
   <div style={{ display: 'flex', flexFlow: 'row wrap' }}>
     {
       drawSwatch('brown'),
@@ -47,7 +46,10 @@ function drawSwatch(colorCode) {
     }
   </div>
   <div style={{ display: 'flex', flexFlow: 'row wrap' }}>
-    {(drawSwatch('pink'), drawSwatch('lightPink'))}
+    {
+      drawSwatch('pink'), 
+      drawSwatch('lightPink')
+    }
   </div>
   <h3>Gråtoner</h3>
   <div style={{ display: 'flex', flexFlow: 'row wrap' }}>
