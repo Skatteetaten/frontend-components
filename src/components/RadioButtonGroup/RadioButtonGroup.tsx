@@ -21,6 +21,8 @@ export interface RadioButtonGroupProps extends IChoiceGroupProps {
   help?: JSX.Element | string;
   /** Feilmelding */
   errorMessage?: JSX.Element | string;
+  /** Horizontal layout */
+  horizontal?: boolean;
   /** Callout warning */
   warning?: JSX.Element | string;
   /** Overstyr label, se LabelWithCallout komponent */
