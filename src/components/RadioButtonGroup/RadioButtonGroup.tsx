@@ -81,7 +81,6 @@ const RadioButtonGroup = (props: RadioButtonGroupProps) => {
       <FabricChoiceGroup
         options={tempOptions}
         {...rest}
-        style={{ display: 'flex' }}
         className={classnames(styles.radioButtons, className)}
         ariaLabelledBy={label}
       >
