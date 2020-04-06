@@ -1,3 +1,16 @@
+### **v.3.3.1 - 06.04.2020 **
+
+- FileUploader now accepts multiple files.
+- Accordion subtitle now accepts object as prop.
+- Fixed at bug with placement of a subtitle in accordion.
+- RadiobuttonGroup has now an option for horizontal layout
+- SearchField no longer shows clear button on Webkit browsers.
+- StepList - change button is now correctry centered vertically
+- LabelWithCallout - fixes a styling bug visible on non-white backgrounds.
+- Added link to Axure components.
+- Fix styling bug in heuritics and examples.
+- Brought back pink in color list.
+
 ### **v.3.3.0 - 19.03.2020 **
 
 - New component - FileUploader

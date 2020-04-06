@@ -89,4 +89,5 @@ const initialState = {
 <h3>Lesemodus</h3>
 <p>Datofeltet har også en lesemodus for når man har behov for å gå fra en tilstand der man kan endre datoen til bare å vise den.
 </p>
+<p>Se <a href='https://www.skatteetaten.no/stilogtone/skrive/skriveregler/datoer/'>oppsett for hvordan vi skriver datoer</a> i Skatteetaten.</p>
 ```

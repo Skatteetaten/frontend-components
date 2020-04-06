@@ -94,15 +94,17 @@ import ErrorMessage from '@skatteetaten/frontend-components/ErrorMessage';
     <div className="do">
       <p>Gjør slik:</p>
       <Button buttonStyle="primary">Send inn</Button>
-      <Button buttonStyle="secondary">Avbryt</Button>
+      <Button className="ml8" buttonStyle="secondary">
+        Avbryt
+      </Button>
       <p>Eller slik:</p>
       <Button buttonStyle="primaryRoundedFilled">Send inn</Button>
-      <Button>Avbryt</Button>
+      <Button className="ml8">Avbryt</Button>
     </div>
     <div className="dont">
       <p>Ikke gjør slik:</p>
       <Button buttonStyle="primary">Send inn</Button>
-      <Button>Avbryt</Button>
+      <Button className="ml8">Avbryt</Button>
     </div>
   </div>
   <h3>Overordnet og underordnet</h3>

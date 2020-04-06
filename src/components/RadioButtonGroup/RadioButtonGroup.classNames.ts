@@ -7,7 +7,7 @@ import { PaletteProps } from '..';
 export const getClassNames = props => {
   const palette = getTheme().palette as PaletteProps;
   const inset = -6;
-  const { errorMessage } = props;
+  const { errorMessage, horizontal } = props;
 
   // @ts-ignore //TODO
   return mergeStyleSets({
@@ -29,9 +29,13 @@ export const getClassNames = props => {
           display: 'inline-block',
           marginTop: '4px',
           marginBottom: '4px',
+          marginRight: horizontal ? '10px' : '0',
           position: 'relative',
           outline: 0,
           verticalAlign: 'middle'
+        },
+        '& .ms-ChoiceFieldGroup-flexContainer': {
+          display: horizontal ? 'flex' : 'block'
         },
         'span.ms-ChoiceFieldLabel': {
           fontSize: FontSizes.medium,
