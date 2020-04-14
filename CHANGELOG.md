@@ -1,3 +1,7 @@
+### **v.3.3.2 - 07.04.2020 **
+
+- Changed to manual version strategy. This does not affect how the components are used, it is simply a change in the way we deploy changes.
+
 ### **v.3.3.1 - 06.04.2020 **
 
 - FileUploader now accepts multiple files.
