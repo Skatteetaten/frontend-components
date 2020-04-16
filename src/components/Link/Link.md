@@ -11,7 +11,6 @@ import { Link as RRLink, BrowserRouter as Router } from 'react-router-dom';
     icon={'Download'}
     placement="before"
   />
-
   <Link
     path={'#link'}
     text={'Gå til oversikt'}
@@ -25,13 +24,16 @@ import { Link as RRLink, BrowserRouter as Router } from 'react-router-dom';
     openInNew={true}
     placement="after"
   />
-
   <br />
   <br />
   <p>
     Det er også mulig å bruke en
     <Link path={'#link'} text={'link'} /> inni et avsnitt med tekst.
   </p>
+  Ekstra fremtredende lenker kan ut som en knapp, dette er et vedtatt
+  design-retninglinje i Skatteetaten (les mer under Button):
+  <br />
+  <Link path={'#link'} text={'Forsiktig med denne'} styleAsAButton={true} />
 </div>;
 ```
 
