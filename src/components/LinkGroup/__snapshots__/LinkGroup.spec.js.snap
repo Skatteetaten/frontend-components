@@ -12,24 +12,24 @@ exports[`Link komponent matcher snapshot 1`] = `
   }
 >
   <ul
-    className="arrowLinkList-70"
+    className="arrowLinkList-79"
   >
     <li
-      className="arrowLink-68"
+      className="arrowLink-77"
       key="0"
     >
       <Icon
-        className="icon-69"
+        className="icon-78"
         iconName="arrowForward"
         role="presentation"
       >
         <StyledIconBase
-          className="icon-69"
+          className="icon-78"
           iconName="arrowForward"
           role="presentation"
         >
           <IconBase
-            className="icon-69"
+            className="icon-78"
             iconName="arrowForward"
             role="presentation"
             styles={[Function]}
@@ -327,7 +327,7 @@ exports[`Link komponent matcher snapshot 1`] = `
           >
             <i
               aria-hidden={true}
-              className="icon-73"
+              className="icon-82"
               data-icon-name="arrowForward"
               role="presentation"
             >
@@ -337,7 +337,7 @@ exports[`Link komponent matcher snapshot 1`] = `
         </StyledIconBase>
       </Icon>
       <a
-        className="arrowLinkA-71"
+        className="arrowLinkA-80"
         href="#"
       >
         Dette er en link
