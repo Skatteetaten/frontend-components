@@ -43,6 +43,7 @@ const Link: React.FC<LinkProps> = props => {
     return (
       <a
         href={path}
+        role="button"
         className={classnames(styles.linkLookingLikeAButton)}
         {...htmlAttributes}
       >

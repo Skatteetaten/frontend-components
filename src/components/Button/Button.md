@@ -119,7 +119,6 @@ import ErrorMessage from '@skatteetaten/frontend-components/ErrorMessage';
     konskvens, typisk noe som ikke kan reverseres uten videre. (F.eks.
     Godkjenn/Avvis)
   </p>
-
   <h3>Ikke bruk inaktive knapper</h3>
   <p>
     Unngå å bruke knapper i inaktiv tilstand (disabled). I stedet bør knappen
@@ -140,14 +139,22 @@ import ErrorMessage from '@skatteetaten/frontend-components/ErrorMessage';
     </div>
   </div>
   <h3>Når hovedhandling er en lenke</h3>
-<p>
-Noen ganger er hovedhandlingen kun en lenke som tar bruker til en ny side, det er ikke en handling i tillegg. Et eksempel på dette er hovedhandlingen “Se og endre skattekort” på den innloggede siden Min skatt. Det beste alternativet vil da være å bruke en a-tag med role=“button” og style den som en hovedhandling. Dette vil sikre best mulig brukskvalitet for flest mulig brukergrupper.
-Lenker skal i utgangspunktet aldri styles som en knapp. Hovedhandling som lenke er unntaket. Trenger en lenke mer synlighet så bør andre tiltak vurderes før man setter lenken som hovedhandling.
-“Send inn” for et skjema er en hovedhandling som både sender inn og tar bruker til en ny side. Da skal du bruke <button> som vanlig.
-
-Benytt komponenten Link med property styleAsAButton={true} for å sikre at etaten er konsekvent i sin bruk av denne design-retningslinjen.
-
-</p>
-
+  <p>
+    Noen ganger er hovedhandlingen kun en lenke som tar bruker til en ny side,
+    det er ikke en handling i tillegg. Et eksempel på dette er hovedhandlingen
+    “Se og endre skattekort” på den innloggede siden Min skatt. Det beste
+    alternativet vil da være å bruke en a-tag med role=“button” og style den som
+    en hovedhandling. Dette vil sikre best mulig brukskvalitet for flest mulig
+    brukergrupper.
+  </p>
+  <p>
+    Lenker skal i utgangspunktet aldri styles som en knapp. Hovedhandling som
+    lenke er unntaket. Trenger en lenke mer synlighet så bør andre tiltak
+    vurderes før man setter lenken som hovedhandling. “Send inn” for et skjema
+    er en hovedhandling som både sender inn og tar bruker til en ny side. Da
+    skal du bruke &lt;button&gt; som vanlig.
+  </p>
+  Benytt komponenten Link med property styleAsAButton=&#123;true&#125; for å
+  sikre at etaten er konsekvent i sin bruk av denne design-retningslinjen.
 </div>;
 ```
