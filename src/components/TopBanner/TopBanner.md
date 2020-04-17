@@ -142,7 +142,6 @@ import TopBanner from '@skatteetaten/frontend-components/TopBanner';
 ```js noeditor uu
 <h3>Tips</h3>
 <ul>
-<li>Sjekk at Hopp til hovedinnhold-lenken fungerer med tastatur.</li>
 <li>Valgene i toppstripa som utvider innhold, bør ha et pilikon, for visuell indikasjon av funksjonaliteten. </li>
 <li>Interaktivt innhold i utvida innhold skal kunne velges med tastatur.</li>
 <li>Når du lukker utvidet innhold, f.eks. ved escape eller lukk-knappen, skal tastaturfokus være tilbake på hovedvalget.</li>
