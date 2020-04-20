@@ -44,38 +44,50 @@ import Button from '@skatteetaten/frontend-components/Button';
 ```
 
 ```js noeditor uu
-<h3>Tips</h3>
+import Link from '@skatteetaten/frontend-components/Link';
+<div>
+  <h3>Tips</h3>
 
-<ul>
-  <li>Bruk én linje med tekst inne i knappen. For mye tekst kan virke forvirrende
-    for skjermlesere.</li>
-  <li>Ikke bruk knappen for å navigere videre til et annet område.
-    Til det skal <Link path="/#buttonlink" text="ButtonLink" />-komponenten benyttes, og da kun hvis man er helt sikkert
-    på at man ønsker å ha en lenke som ser ut som en knapp.</li>
-  <li>Ikke putt et ikon inne i selve knappen. Bruk heller IconButton.</li>
-  <li>Unngå inaktiv (disabled) knapp pga:
-    <ul>
-      <li>Dårlig kontrast</li>
-      <li>Forvirrende om/når den kan velges</li>
-	  <li>Brukere kan gå glipp av tilstandsendring</li>
-	  <li>Noen skjermlesere leser leser ikke elementer som er disabled</li>
-	  <li>Alternativ: Aktiv knapp (blå) med eventuelle feilmeldinger</li>
-    </ul>
-</li>
-</ul>
+  <ul>
+    <li>
+      Bruk én linje med tekst inne i knappen. For mye tekst kan virke
+      forvirrende for skjermlesere.
+    </li>
+    <li>
+      Ikke bruk knappen for å navigere videre til et annet område.
+      <br />
+      Til det skal <Link path="/#buttonlink" text="ButtonLink" />
+      -komponenten benyttes, og da <i>kun</i> hvis man er helt sikker på at man ønsker
+      å ha en lenke som ser ut som en knapp.
+    </li>
+    <li>Ikke putt et ikon inne i selve knappen. Bruk heller IconButton.</li>
+    <li>
+      Unngå inaktiv (disabled) knapp pga:
+      <ul>
+        <li>Dårlig kontrast</li>
+        <li>Forvirrende om/når den kan velges</li>
+        <li>Brukere kan gå glipp av tilstandsendring</li>
+        <li>Noen skjermlesere leser leser ikke elementer som er disabled</li>
+        <li>Alternativ: Aktiv knapp (blå) med eventuelle feilmeldinger</li>
+      </ul>
+    </li>
+  </ul>
 
-<h3>Mest relevante WCAG-krav</h3>
+  <h3>Mest relevante WCAG-krav</h3>
 
-    <ul>
-	  <li>4.1.2 A, Navn, rolle, verdi</li>
-    </ul>
+  <ul>
+    <li>4.1.2 A, Navn, rolle, verdi</li>
+  </ul>
 
-<h3>WAI-ARIA</h3>
+  <h3>WAI-ARIA</h3>
 
-    <ul>
-      <li>Aria-hidden="true" brukes der det er et ikon for å skjule det for skjermleser.</li>
-    </ul>
-
+  <ul>
+    <li>
+      Aria-hidden="true" brukes der det er et ikon for å skjule det for
+      skjermleser.
+    </li>
+  </ul>
+</div>;
 ```
 
 ```js noeditor beskrivelse
@@ -142,12 +154,12 @@ import Link from '@skatteetaten/frontend-components/Link';
   </div>
   <h3>Når hovedhandlingen er navigasjon til et annet område</h3>
   <p>
-    Med "annet område", menes <i>ikke</i> navigasjon videre ned i egen
+    Med "annet område" menes <i>ikke</i> navigasjon videre ned i egen
     sidestruktur, men at klikk på knapp skal ta bruker til en annen side.
   </p>
   <p>
-    Noen ganger er hovedhandlingen kun at bruker skal videre til ny side, og det
-    skal ikke forekomme noen handling <i>i tillegg</i> til denne. Et eksempel er
+    Noen ganger er hovedhandlingen kun at bruker skal videre til ny side, og
+    ingen handling skal forekomme <i>i tillegg</i> til denne. Et eksempel er
     hovedhandlingen “Se og endre skattekort” på den innloggede siden Min skatt.
     Det beste alternativet er å bruke en a-tag med role=“button” og style den
     som en hovedhandling. Dette vil sikre best mulig brukskvalitet for flest
