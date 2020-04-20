@@ -18,7 +18,7 @@ import ButtonLink from '@skatteetaten/frontend-components/ButtonLink';
 ```js noeditor beskrivelse
 <p>
 En a-tag med role=button presenteres som en knapp for skjermleserbrukere,
-men selve funksjonen, altså at du kommer til en ny side, vil være som før.
+men selve funksjonen, at du kommer til en ny side, vil være som før.
 </p>
 
 <p>
@@ -33,9 +33,9 @@ import Link from '@skatteetaten/frontend-components/Link';
   <p>Role=button brukes fordi lenken visuelt ser ut en knapp.</p>
   <p>
     Med forbehold, når noe ser ut som en knapp visuelt, bør det også være en
-    knapp for skjermleserbrukere. Grunnen er at hvis f.eks. en synshemmet ringer
-    førstelinje og ønsker veiledning eller spør en kollega, så vil de mest
-    sannsynlig henvise til knappen &lt;insert knappetekst&gt;. Da kan en
+    knapp for skjermleserbrukere. Grunnen er hvis f.eks. en svaksynt ringer
+    førstelinje og ønsker veiledning eller spør en kollega, vil de mest
+    sannsynlig bli henvist til knappen &lt;insert knappetekst&gt;. Da kan en
     skjermleserbruker bruke hurtigtast for å gå til knapp. Med role="button" vil
     komponenten kun dukke opp som en knapp, og <i>ikke</i> i en liste over
     lenker.
