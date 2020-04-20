@@ -256,6 +256,7 @@ const FileUploader: React.FC<FileUploaderProps> = props => {
         ref={inputRef}
         multiple={multipleFiles}
         onChange={handleFileChange}
+        tabIndex={-1}
       />
       {acceptedFileFormats && (
         <span

@@ -36,6 +36,7 @@ exports[`FileUploader komponent matcher snapshot 1`] = `
     className="fileUploadInput-82"
     id="fileupload"
     onChange={[Function]}
+    tabIndex={-1}
     type="file"
   />
   
