@@ -1,6 +1,6 @@
 import { mergeStyleSets } from '@uifabric/merge-styles';
 import { getTheme } from '@uifabric/styling';
-import { hex2rgba, PaletteProps } from '..';
+import { PaletteProps } from '..';
 
 export const getClassNames = () => {
   const palette = getTheme().palette as PaletteProps;
@@ -37,4 +37,9 @@ export const getClassNames = () => {
       }
     }
   });
+};
+
+export const hex2rgba = (hex, alpha = 1) => {
+  const [r, g, b] = hex.match(/\w\w/g).map(x => parseInt(x, 16));
+  return `rgba(${r},${g},${b},${alpha})`;
 };
