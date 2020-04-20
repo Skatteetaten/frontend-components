@@ -42,20 +42,27 @@ import Grid from '@skatteetaten/frontend-components/Grid';
 ```
 
 ```js noeditor uu
-h3>Tips</h3>
-<ul>
-<li>Footer-innhold bør ligge wrapped i en footer-tag (eller eventuelt en tag med attributtet role=contentinfo).</li>
-<li>Tenk på struktur og overskriftshierarki. Det mest vanlige er å bruke <h2> på overskrifter i en footer.</li>
-</ul>
+<div>
+  <h3>Tips</h3>
+  <ul>
+    <li>
+      Footer-innhold bør ligge wrapped i en footer-tag (eller eventuelt en tag
+      med attributtet role=contentinfo).
+    </li>
+    <li>
+      Tenk på struktur og overskriftshierarki. Det mest vanlige er å bruke
+      &lt;h2&gt; på overskrifter i en footer.
+    </li>
+  </ul>
 
-<h3>Mest relevante WCAG-krav</h3>
-<ul>
-<li>1.3.1 A, Informasjon og relasjoner</li>
-</ul>
+  <h3>Mest relevante WCAG-krav</h3>
+  <ul>
+    <li>1.3.1 A, Informasjon og relasjoner</li>
+  </ul>
 
-<h3>WAI-ARIA</h3>
-<ul>
-<li>Aria-hidden brukes for skjule footer-grafikk for skjemleser. </li>
-</ul>
-
+  <h3>WAI-ARIA</h3>
+  <ul>
+    <li>Aria-hidden brukes for skjule footer-grafikk for skjemleser. </li>
+  </ul>
+</div>
 ```

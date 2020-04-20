@@ -71,24 +71,50 @@ import Typography from '@skatteetaten/frontend-components/Typography';
 ```
 
 ```js noeditor uu
-<h3>Tips</h3>
-<ul>
-<li>Bruk av overskrifter (h-tag) er veldig viktig for å strukturere og dele inn innhold. Det gir skjermleserbrukere bedre oversiktig og enklere navigering til innhold.</li>
-<li>Det er en fordel om <main> innledes med en <h1> (etter brødsmulestien der det finnes). Mange med skjermleser hopper rett til første <h1> for å komme til hovedinnholdet. Der det ikke hierarkisk passer med en <h1>, bør <h2> brukes.</li>
-<li>En <h2> skal alltid høre til en <h1>, <h3> til <h2> osv. Tenk på logisk hierarki.</li>
-<li>Vurder om innhold bør ha h-tag.</li>
-<li>I de fleste tilfeller bør sidetittel (title-tag) og <h1> være identiske. Hvis det lenkes til siden, bør lenkenavnet samsvare med dette, f.eks. Bil og andre kjøretøy (lenke), Bil og andre kjøretøy (tittel) og Bil og andre kjøretøy (overskrift).</li>
-<li>Modaler bør ha en overskrift i toppen som sier hva modalen inneholder. <h1> eller <h2> bør brukes her og bruk nivå konsekvent på hele nettstedet (<h2> på skatteetaten.no).</li>
-</ul>
+<div>
+  <h3>Tips</h3>
+  <ul>
+    <li>
+      Bruk av overskrifter (h-tag) er veldig viktig for å strukturere og dele
+      inn innhold. Det gir skjermleserbrukere bedre oversiktig og enklere
+      navigering til innhold.
+    </li>
+    <li>
+      Det er en fordel om &lt;main&gt; innledes med en &lt;h1&gt; (etter
+      brødsmulestien der det finnes). Mange med skjermleser hopper rett til
+      første &lt;h1&gt; for å komme til hovedinnholdet. Der det ikke hierarkisk
+      passer med en &lt;h1&gt;, bør &lt;h2&gt; brukes.
+    </li>
+    <li>
+      En &lt;h2&gt; skal alltid høre til en &lt;h1&gt;, &lt;h3&gt; til &lt;h2>
+      osv. Tenk på logisk hierarki.
+    </li>
+    <li>Vurder om innhold bør ha h-tag.</li>
+    <li>
+      I de fleste tilfeller bør sidetittel (title-tag) og &lt;h1&gt; være
+      identiske. Hvis det lenkes til siden, bør lenkenavnet samsvare med dette,
+      f.eks. Bil og andre kjøretøy (lenke), Bil og andre kjøretøy (tittel) og
+      Bil og andre kjøretøy (overskrift).
+    </li>
+    <li>
+      Modaler bør ha en overskrift i toppen som sier hva modalen inneholder.
+      &lt;h1&gt; eller &lt;h2&gt; bør brukes her og bruk nivå konsekvent på hele
+      nettstedet (&lt;h2&gt; på skatteetaten.no).
+    </li>
+  </ul>
 
-<h3>Mest relevante WCAG-krav</h3>
-<ul>
-<li>1.3.1 A, Informasjon og relasjoner</li>
-<li>2.4.6 AA, Overskrifter og ledetekster</li>
-</ul>
+  <h3>Mest relevante WCAG-krav</h3>
+  <ul>
+    <li>1.3.1 A, Informasjon og relasjoner</li>
+    <li>2.4.6 AA, Overskrifter og ledetekster</li>
+  </ul>
 
-<h3>WAI-ARIA</h3>
-<ul>
-<li>Hvis ikke vanlig h-tag kan brukes, vurder om du bør kode det med role=heading og aria-level (overkskriftsnivå) for skjermleser.</li>
-</ul>
+  <h3>WAI-ARIA</h3>
+  <ul>
+    <li>
+      Hvis ikke vanlig h-tag kan brukes, vurder om du bør kode det med
+      role=heading og aria-level (overkskriftsnivå) for skjermleser.
+    </li>
+  </ul>
+</div>
 ```

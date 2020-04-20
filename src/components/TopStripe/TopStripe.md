@@ -284,25 +284,46 @@ import Link from '@skatteetaten/frontend-components/Link';
 ```
 
 ```js noeditor uu
-<h3>Tips</h3>
-<ul>
-<li>Valgene i toppstripa som utvider innhold, bør ha et pilikon, for visuell indikasjon av funksjonaliteten. </li>
-<li>Interaktivt innhold i utvidet innhold skal kunne velges med tastatur.</li>
-<li>Når du lukker utvidet innhold, f.eks. ved escape eller lukk-knappen, skal tastaturfokus være tilbake på hovedvalget.</li>
+<div>
+  <h3>Tips</h3>
+  <ul>
+    <li>
+      Valgene i toppstripa som utvider innhold, bør ha et pilikon, for visuell
+      indikasjon av funksjonaliteten.{' '}
+    </li>
+    <li>
+      Interaktivt innhold i utvidet innhold skal kunne velges med tastatur.
+    </li>
+    <li>
+      Når du lukker utvidet innhold, f.eks. ved escape eller lukk-knappen, skal
+      tastaturfokus være tilbake på hovedvalget.
+    </li>
+  </ul>
 
-<h3>Mest relevante WCAG-krav</h3>
-<ul>
-<li>2.1.1 A, Tastatur</li>
-<li>2.4.1 A, Hoppe over blokker</li>
-<li>2.4.3 A, Fokusrekkefølge</li>
-<li>4.1.2 A, Navn, rolle, verdi</li>
-</ul>
+  <h3>Mest relevante WCAG-krav</h3>
+  <ul>
+    <li>2.1.1 A, Tastatur</li>
+    <li>2.4.1 A, Hoppe over blokker</li>
+    <li>2.4.3 A, Fokusrekkefølge</li>
+    <li>4.1.2 A, Navn, rolle, verdi</li>
+  </ul>
 
-<h3>WAI-ARIA</h3>
-<ul>
-<li>Role=link brukes på Tilbake til skattetaten.no-knappen fordi den visuelt ser ut som en lenke.</li>
-<li>Aria-expanded brukes der innhold utvides/minimeres, f.eks. Endre skriftstørrelse.</li>
-<li>Aria-expanded, aria-haspopup, aria-controls, aria-labelledby, role=menu, role=menuitem brukes på f.eks. på språkmenyen. Dette får skjermleser til å "bytte" modus og trigge menynavigering.</li>
-<li>Aria-hidden brukes for å skjule ikoner for skjermleser.</li>
-</ul>
+  <h3>WAI-ARIA</h3>
+  <ul>
+    <li>
+      Role=link brukes på Tilbake til skattetaten.no-knappen fordi den visuelt
+      ser ut som en lenke.
+    </li>
+    <li>
+      Aria-expanded brukes der innhold utvides/minimeres, f.eks. Endre
+      skriftstørrelse.
+    </li>
+    <li>
+      Aria-expanded, aria-haspopup, aria-controls, aria-labelledby, role=menu,
+      role=menuitem brukes på f.eks. på språkmenyen. Dette får skjermleser til å
+      "bytte" modus og trigge menynavigering.
+    </li>
+    <li>Aria-hidden brukes for å skjule ikoner for skjermleser.</li>
+  </ul>
+</div>
 ```

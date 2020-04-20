@@ -67,24 +67,34 @@ const initialState = {
 ```
 
 ```js noeditor uu
-<h3>Tips</h3>
-<ul>
-<li>Datovelgeren skal kunne åpnes og brukes med kun tastatur. Sjekk at tastaturfokus beholdes på feltet etter at dato er valgt.</li>
-<li>Datovelgeren skal kunne åpnes og brukes med skjermleser. Mange skjermleserbrukere vil nok foretrekke å skrive inn dato manuelt, men datovelgeren er ikke unntatt krav. Det betyr at navigering og riktig opplesing i kalenderen er viktig.</li>
-</ul>
+<div>
+  <h3>Tips</h3>
+  <ul>
+    <li>
+      Datovelgeren skal kunne åpnes og brukes med kun tastatur. Sjekk at
+      tastaturfokus beholdes på feltet etter at dato er valgt.
+    </li>
+    <li>
+      Datovelgeren skal kunne åpnes og brukes med skjermleser. Mange
+      skjermleserbrukere vil nok foretrekke å skrive inn dato manuelt, men
+      datovelgeren er ikke unntatt krav. Det betyr at navigering og riktig
+      opplesing i kalenderen er viktig.
+    </li>
+  </ul>
 
-<h3>Mest relevante WCAG-krav</h3>
-<ul>
-<li>1.3.1 A, Informasjon og relasjoner </li>
-<li>3.3.2 A, Ledetekster eller instruksjoner</li>
-<li>4.1.2 A, Navn, rolle, verdi</li>
-</ul>
+  <h3>Mest relevante WCAG-krav</h3>
+  <ul>
+    <li>1.3.1 A, Informasjon og relasjoner </li>
+    <li>3.3.2 A, Ledetekster eller instruksjoner</li>
+    <li>4.1.2 A, Navn, rolle, verdi</li>
+  </ul>
 
-<h3>WAI-ARIA</h3>
-<ul>
-<li>Aria-expanded brukes på hjelp/info knapp som utvides/minimeres.</li>
-<li>Aria-hidden brukes for å skjule hjelpeikon for skjermleser.</li>
-</ul>
+  <h3>WAI-ARIA</h3>
+  <ul>
+    <li>Aria-expanded brukes på hjelp/info knapp som utvides/minimeres.</li>
+    <li>Aria-hidden brukes for å skjule hjelpeikon for skjermleser.</li>
+  </ul>
+</div>
 ```
 
 ```js noeditor beskrivelse
