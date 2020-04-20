@@ -65,7 +65,13 @@ const OpenClose: React.FC<OpenCloseProps> = props => {
         )}
         {iconRight && <Icon iconName={'ChevronDown'} />}
       </button>
-      {isContentOpen && <div className={styles.content}>{children}</div>}
+      {isContentOpen && (
+        <div
+          className={!iconRight ? styles.content : styles.contentWhenIconRight}
+        >
+          {children}
+        </div>
+      )}
     </div>
   );
 };
