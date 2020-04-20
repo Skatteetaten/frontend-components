@@ -8,7 +8,6 @@ export interface LinkProps
   className?: string;
   /** Som standard rendres lenkene som a-elementer. Dette gir mulighet for å overstyre implementasjonen. */
   renderContent?: (classNames: string) => JSX.Element;
-  styleAsAButton?: boolean;
   icon?: string;
   /** Om lenken skal åpnes i nytt vindu (target=blank) */
   openInNew?: boolean;
@@ -26,31 +25,9 @@ const Link: React.FC<LinkProps> = props => {
     text,
     openInNew,
     renderContent,
-    styleAsAButton,
     ...htmlAttributes
   } = props;
   const styles = getClassNames();
-  // if(styleAsAButton) {
-  //   return (
-  //     <a href={path} {...htmlAttributes} role="button">
-  //       <Button buttonStyle="primaryLarge" tabIndex={-1}>
-  //         {text}
-  //       </Button>
-  //     </a>
-  //   )
-  // }
-  if (styleAsAButton) {
-    return (
-      <a
-        href={path}
-        role="button"
-        className={classnames(styles.linkLookingLikeAButton)}
-        {...htmlAttributes}
-      >
-        {text}
-      </a>
-    );
-  }
   return (
     <span className={classnames(styles.linkContainer, props.className)}>
       {props.placement === 'before' && props.icon && (

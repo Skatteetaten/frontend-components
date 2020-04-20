@@ -2,7 +2,6 @@
 
 ```js
 import Link from '@skatteetaten/frontend-components/Link';
-import { Link as RRLink, BrowserRouter as Router } from 'react-router-dom';
 
 <div className="ExampleSpacing8">
   <Link
@@ -30,12 +29,6 @@ import { Link as RRLink, BrowserRouter as Router } from 'react-router-dom';
     Det er også mulig å bruke en
     <Link path={'#link'} text={'link'} /> inni et avsnitt med tekst.
   </p>
-
-  <p>
-    Ekstra fremtredende lenker kan ut som en knapp, dette er et vedtatt
-    design-retninglinje i Skatteetaten (les mer under Button):
-  </p>
-  <Link path={'#link'} text={'Forsiktig med denne'} styleAsAButton={true} />
 </div>;
 ```
 

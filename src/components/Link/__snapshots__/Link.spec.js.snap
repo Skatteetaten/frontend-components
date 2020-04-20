@@ -12,7 +12,7 @@ exports[`Link komponent matcher snapshot 1`] = `
   </a>
   <i
     aria-hidden={true}
-    className="icon-82"
+    className="icon-81"
     data-icon-name="Download"
     role="presentation"
   >

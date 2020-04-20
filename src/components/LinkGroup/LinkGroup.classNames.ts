@@ -1,8 +1,7 @@
 import { mergeStyleSets } from '@uifabric/merge-styles';
 import { getTheme } from '@uifabric/styling';
 import { SkeIcons } from '../utils/icons';
-import { hex2rgba } from '../Link/Link.classNames';
-import { PaletteProps } from '..';
+import { hex2rgba, PaletteProps } from '..';
 
 export const getClassNames = () => {
   const palette = getTheme().palette as PaletteProps;

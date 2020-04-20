@@ -49,8 +49,9 @@ import Button from '@skatteetaten/frontend-components/Button';
 <ul>
   <li>Bruk én linje med tekst inne i knappen. For mye tekst kan virke forvirrende
     for skjermlesere.</li>
-  <li>Ikke bruk knappen for å navigere videre til et annet område.</li>
-  <li>Knappen skal se ut som en knapp, og ikke være en lenke. (Dersom du MÅ bruke knapp som lenke, bør du bruke roleLink-egenskapen for at skjermleser skal oppfatte dette riktig.)</li>
+  <li>Ikke bruk knappen for å navigere videre til et annet område.
+    Til det skal <Link path="/#buttonlink" text="ButtonLink" />-komponenten benyttes, og da kun hvis man er helt sikkert
+    på at man ønsker å ha en lenke som ser ut som en knapp.</li>
   <li>Ikke putt et ikon inne i selve knappen. Bruk heller IconButton.</li>
   <li>Unngå inaktiv (disabled) knapp pga:
     <ul>
@@ -79,8 +80,9 @@ import Button from '@skatteetaten/frontend-components/Button';
 
 ```js noeditor beskrivelse
 import ErrorMessage from '@skatteetaten/frontend-components/ErrorMessage';
+import Link from '@skatteetaten/frontend-components/Link';
 <div>
-  <h3>Variasjoner av knapper</h3>
+  <h3>Enten kun firkantede eller kun avrundede knapper</h3>
   <p>
     Button kan være firkantet eller avrundet, der den avrundede kan være fylt
     eller ikke fylt. Man skal ikke plassere avrundet og firkantet ved siden av
@@ -107,12 +109,12 @@ import ErrorMessage from '@skatteetaten/frontend-components/ErrorMessage';
       <Button className="ml8">Avbryt</Button>
     </div>
   </div>
-  <h3>Overordnet og underordnet</h3>
+  <h3>Egen knappestil for knapp med sekundær funksjon</h3>
   <p>
     Dersom du har en underordnet funksjon ved siden av en hovedfunksjon (for
-    eksempel «Avbryt») finnes det et egen stil for dette.
+    eksempel «Avbryt») finnes det et egen stil, 'secondary', for dette.
   </p>
-  <h3>Ikke-reverserbare handlinger</h3>
+  <h3>Advarselknappen for ikke-reverserbare handlinger</h3>
   <p>
     Advarselsknapp (Button med rød bakgrunn) brukes til en handling som er
     sidestilt med en annen primærhandling der du ønsker å signalisere en
@@ -138,23 +140,27 @@ import ErrorMessage from '@skatteetaten/frontend-components/ErrorMessage';
       </Button>
     </div>
   </div>
-  <h3>Når hovedhandling er en lenke</h3>
+  <h3>Når hovedhandlingen er navigasjon til et annet område</h3>
   <p>
-    Noen ganger er hovedhandlingen kun en lenke som tar bruker til en ny side,
-    det er ikke en handling i tillegg. Et eksempel på dette er hovedhandlingen
-    “Se og endre skattekort” på den innloggede siden Min skatt. Det beste
-    alternativet vil da være å bruke en a-tag med role=“button” og style den som
-    en hovedhandling. Dette vil sikre best mulig brukskvalitet for flest mulig
-    brukergrupper.
+    Med "annet område", menes <i>ikke</i> navigasjon videre ned i egen
+    sidestruktur, men at klikk på knapp skal ta bruker til en annen side.
+  </p>
+  <p>
+    Noen ganger er hovedhandlingen kun at bruker skal videre til ny side, og det
+    skal ikke forekomme noen handling <i>i tillegg</i> til denne. Et eksempel er
+    hovedhandlingen “Se og endre skattekort” på den innloggede siden Min skatt.
+    Det beste alternativet er å bruke en a-tag med role=“button” og style den
+    som en hovedhandling. Dette vil sikre best mulig brukskvalitet for flest
+    mulig brukergrupper. Komponenten{' '}
+    <Link path="/#buttonlink" text="ButtonLink" /> skal benyttes i disse
+    tilfellene.
   </p>
   <p>
     Lenker skal i utgangspunktet aldri styles som en knapp. Hovedhandling som
     lenke er unntaket. Trenger en lenke mer synlighet så bør andre tiltak
     vurderes før man setter lenken som hovedhandling. “Send inn” for et skjema
     er en hovedhandling som både sender inn og tar bruker til en ny side. Da
-    skal du bruke &lt;button&gt; som vanlig.
+    skal du bruke &lt;Button&gt; som vanlig.
   </p>
-  Benytt komponenten Link med property styleAsAButton=&#123;true&#125; for å
-  sikre at etaten er konsekvent i sin bruk av denne design-retningslinjen.
 </div>;
 ```
