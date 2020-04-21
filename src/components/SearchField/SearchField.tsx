@@ -17,7 +17,7 @@ export interface SearchFieldProps extends ISearchBoxProps {
   /** Størrelsen på rammen */
   border?: 'default' | 'slim';
   /** Hjelpetekst */
-  help?: string;
+  help?: string | JSX.Element;
   /** Descriptive label for SearchField */
   label?: string;
   /** Overstyr label, se LabelWithCallout komponent */

@@ -14,7 +14,7 @@ import { useId } from '@reach/auto-id';
 
 export interface DropdownProps extends IDropdownProps {
   /** Hjelpetekst */
-  help?: string;
+  help?: string | JSX.Element;
   /** Størrelse på inputfelt som skal benyttes */
   inputSize?: 'normal' | 'large';
   /** Overstyr label, se LabelWithCallout komponent */

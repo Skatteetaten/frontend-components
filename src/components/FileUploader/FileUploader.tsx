@@ -44,7 +44,7 @@ export interface FileUploaderProps {
   /** Opplastede filer */
   files?: Array<any>;
   /** Hjelpetekst */
-  help?: string;
+  help?: string | JSX.Element;
   /** Id */
   id?: string;
   /** Descriptive label for SearchField */
