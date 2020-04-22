@@ -206,6 +206,11 @@ import AccordionItem from '@skatteetaten/frontend-components/Accordion/Accordion
 <li>Aria-label brukes i kombinasjon med aria-describedby på trinnvise steg. Dette gjøres for at skjermleserbrukere skal høre hvilket steg de står på hvis de navigerer fra knapp til knapp (ikke piler seg gjennom sekvensen).</li>
 <li>Aria-hidden brukes for å skjule ikoner for skjermlesere.</li>
 </ul>
+<p>
+  <a href="https://www.w3.org/TR/wai-aria-practices-1.1/#accordion">
+    Mer om WAI-ARIA for accordion.
+  </a>
+</p>
 ```
 
 ```js noeditor beskrivelse
