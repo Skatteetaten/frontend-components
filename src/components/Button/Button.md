@@ -31,18 +31,6 @@ import Button from '@skatteetaten/frontend-components/Button';
 </div>;
 ```
 
-Ekstra fremtredende hovedhandling
-
-```js
-import Button from '@skatteetaten/frontend-components/Button';
-
-<div className="ExampleSpacing8">
-  <Button roleLink buttonStyle="primaryLarge">
-    Se eller endre skattekort
-  </Button>
-</div>;
-```
-
 ```js noeditor uu
 import Link from '@skatteetaten/frontend-components/Link';
 <div>
@@ -154,8 +142,8 @@ import Link from '@skatteetaten/frontend-components/Link';
   </div>
   <h3>Når hovedhandlingen er navigasjon til et annet område</h3>
   <p>
-    Med "annet område" menes <i>ikke</i> navigasjon videre ned i egen
-    sidestruktur, men at klikk på knapp skal ta bruker til en annen side.
+    Med «annet område» menes at klikk på knapp skal ta bruker til en annen side,
+    og <i>ikke</i> navigasjon videre ned i egen sidestruktur.
   </p>
   <p>
     Noen ganger er hovedhandlingen kun at bruker skal videre til ny side, og
