@@ -196,6 +196,7 @@ import AccordionItem from '@skatteetaten/frontend-components/Accordion/Accordion
 
 <h3>Mest relevante WCAG-krav</h3>
 <ul>
+<li>1.3.1 A, Informasjon og relasjoner</li>
 <li>4.1.2 A, Navn, rolle, verdi</li>
 </ul>
 
