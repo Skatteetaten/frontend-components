@@ -11,8 +11,24 @@ import ProgressBar from '@skatteetaten/frontend-components/ProgressBar';
 ```
 
 ```js noeditor uu
-  <h3>Huskeliste</h3>
-  <p>Verdien i baren skal alltid være i readonly modus.</p>
+<h3>Tips</h3>
+<ul>
+<li>Verdien i baren skal alltid være i readonly modus.</li>
+<li>Husk at både rammen rundt baren og fargen som fylles opp er meningsbærende og at kontrast på minst 3.0 gjelder.</li>
+<li>Sjekk at statusen i prosessen oppdateres og leses med skjermleser</li>
+</ul>
+
+<h3>Mest relevante WCAG-krav</h3>
+<ul>
+<li>1.4.11 AA, Kontrast for ikke-tekstlig innhold </li>
+<li>4.1.2 A, Navn, rolle, verdi</li>
+</ul>
+
+<h3>WAI-ARIA</h3>
+<ul>
+<li>Role=progressbar brukes for identifisere statusindikatoren for skjermleser.</li>
+<li>Aria-valuemin, aria-valuemax og aria-valuenow setter minimum, maksimum og nåværende verdi for indikatoren.
+</ul>
 ```
 
 ```js noeditor beskrivelse
