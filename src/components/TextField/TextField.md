@@ -187,7 +187,7 @@ import TextField from '@skatteetaten/frontend-components/TextField';
 <ul>
 <li>Role=alert brukes på feilmeldinger for at de skal leses opp av skjermleser</li>
 <li>Aria-atomic brukes på feilmeldinger for at hele innholdet skal leses av skjermleser hvis det skjer en oppdatering (feilmelding endrer seg).</li>
-<li>Aria-labelledby brukes på input for at skjermlesere skal lese suffix der det brukes.</li>
+<li>Aria-describedby brukes på input for at skjermlesere skal lese suffix der det brukes.</li>
 <li>Aria-expanded brukes på hjelp/infoknapper som utvides/minimeres.</li>
 <li>Aria-hidden brukes for å skjule hjelp/info-ikon for skjermleser.</li>
 </ul>
