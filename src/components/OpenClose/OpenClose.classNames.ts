@@ -44,6 +44,10 @@ export function getClassNames() {
     },
     content: {
       padding: '8px 0 16px 8px',
+      marginLeft: '2em'
+    },
+    contentWhenIconRight: {
+      padding: '8px 0 16px 8px',
       marginLeft: '16px'
     },
     heading: {
