@@ -38,21 +38,21 @@ import Chip from '@skatteetaten/frontend-components/Chip';
 ```
 
 ```js noeditor uu
-  <h3>Huskeliste</h3>
-  <ul>
-    <li>
-      Pass på at fargen og teksten på merkelappen alltid samsvarer med hverandre.
-      Da forhindrer du at brukere med dårlig fargesyn, eller en dårlig skjerm, går
-      glipp av informasjon.
-    </li>
-    <li>
-      Bruk <b>aria-label</b> attributten slik at skjermlesere kan fange opp
-      teksten.
-    </li>
-    <li>
-      Ikke bruk blå tekst (lenke) på rød bakgrunn. Denne kombinasjonen har ikke tilstrekkelig lesekontrast for å nå kravene til universell utforming.
-    </li>
-  </ul>
+<h3>Tips</h3>
+<ul>
+<li>Pass på at fargen og teksten på merkelappen alltid har god nok kontrast (minst 4.5). Da forhindrer du at brukere med dårlig fargesyn, eller en dårlig skjerm, går glipp av informasjon.</li>
+<li>Ikke bruk blå tekst (lenke) på rød bakgrunn. Denne kombinasjonen har ikke tilstrekkelig kontrast.</li>
+</ul>
+
+<h3>Mest relevante WCAG-krav</h3>
+<ul>
+<li>1.4.3 AA, Kontrast (minimum)</li>
+</ul>
+
+<h3>WAI-ARIA</h3>
+<ul>
+<li>Aria-hidden brukes for å skjule ikon for skjermleser.</li>
+</ul>
 ```
 
 ```js noeditor beskrivelse
