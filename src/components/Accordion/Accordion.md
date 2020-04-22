@@ -100,50 +100,11 @@ import AccordionItem from '@skatteetaten/frontend-components/Accordion/Accordion
 </Accordion>;
 ```
 
-En accordion kan ha en subtitle, som vises under tittelen og kan være enten en string eller en react komponent.
-
-```js
-import Accordion from '@skatteetaten/frontend-components/Accordion';
-import AccordionItem from '@skatteetaten/frontend-components/Accordion/AccordionItem';
-
-const Lorem = () => (
-  <span style={{ fontWeight: 'bold', color: 'red' }}>Lorem ipsum dolor</span>
-);
-
-<Accordion>
-  <AccordionItem
-    toggleContent
-    toggleButtonText="Ferdig"
-    icon="Check"
-    ariaLabel="Fullført"
-    subtitle="Lorem ipsum dolor"
-  >
-    <p>
-      Lorem neque earum ad natus placeat Ut minus hic explicabo eveniet earum
-      ullam? At enim iure tempora excepturi dolores? Sed velit saepe qui
-      recusandae quaerat! Neque dolorem accusamus qui harum
-    </p>
-  </AccordionItem>
-  <AccordionItem
-    toggleContent
-    toggleButtonText="Ferdig"
-    icon="Check"
-    ariaLabel="Fullført"
-    subtitle={<Lorem />}
-  >
-    <p>
-      Lorem neque earum ad natus placeat Ut minus hic explicabo eveniet earum
-      ullam? At enim iure tempora excepturi dolores? Sed velit saepe qui
-      recusandae quaerat! Neque dolorem accusamus qui harum
-    </p>
-  </AccordionItem>
-</Accordion>;
-```
-
 ```js noeditor uu
 <h3>Tips</h3>
 <ul>
 <li>Riktig overskriftsnivå: En Accordion (ekspander) kan brukes på mange ulike nivåer på siden. Komponenten kan være standard tekst (det blå klikkbare elementet), men det kan også i enkelte tilfeller være ønskelig å angi dette som et bestemt overskriftsnivå, for eksempel h3 eller h4. Det gjør du slik:</li>
+</ul>
 ```
 
 ```js uu
@@ -188,7 +149,9 @@ import AccordionItem from '@skatteetaten/frontend-components/Accordion/Accordion
   </AccordionItem>
 </Accordion>;
 ```
+
 ```js noeditor uu
+<ul>
 <li>Det skal kun være ett tabstopp pr ekspander.</li>
 <li>Ekspandere skal ha en visuell indikator på at innhold utvides/minimeres.</li>
 <li>Sjekk at elementet leses som en ekspander med skjermleser og at du beholder fokus når du utvider/minimerer den.</li>

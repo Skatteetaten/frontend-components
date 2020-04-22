@@ -34,8 +34,8 @@ import TabItem from '@skatteetaten/frontend-components/Tabs/TabItem';
 <h3>Tips</h3>
 <ul>
 <li>Ikke bruk tabs til å linke til andre sider.</li>
-<li>Standard fanefunksjonalitet skal kun ha ett tabstopp på fanevalgene. Piltastene skal brukes til å bytte fane.<li>
-<li>OBS: Faner SKAL kodes med WAI-ARIA for skjermlesere.
+<li>Standard fanefunksjonalitet skal kun ha ett tabstopp på fanevalgene. Piltastene skal brukes til å bytte fane.</li>
+<li>OBS: Faner SKAL kodes med WAI-ARIA for skjermlesere.</li>
 </ul>
 
 <h3>Mest relevante WCAG-krav</h3>

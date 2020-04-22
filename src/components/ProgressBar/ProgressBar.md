@@ -27,7 +27,7 @@ import ProgressBar from '@skatteetaten/frontend-components/ProgressBar';
 <h3>WAI-ARIA</h3>
 <ul>
 <li>Role=progressbar brukes for identifisere statusindikatoren for skjermleser.</li>
-<li>Aria-valuemin, aria-valuemax og aria-valuenow setter minimum, maksimum og nåværende verdi for indikatoren.
+<li>Aria-valuemin, aria-valuemax og aria-valuenow setter minimum, maksimum og nåværende verdi for indikatoren.</li>
 </ul>
 ```
 

@@ -59,6 +59,6 @@ import SearchField from '@skatteetaten/frontend-components/SearchField';
 <ul>
 <li>Aria-expanded brukes på knappene som utvides/minimeres.</li>
 <li>Aria-label brukes for å navngi lukk-ikon i dialogen.</li>
-<li>Aria-hidden brukes for skjule ikoner for skjermleser. /li>
+<li>Aria-hidden brukes for skjule ikoner for skjermleser. </li>
 </ul>
 ```

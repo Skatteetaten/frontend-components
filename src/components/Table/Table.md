@@ -205,7 +205,7 @@ const data = [
 <ul>
 <li>På små skjermer vil endre-ikon flyttes til venstre, og tabellen har horisontal skrolling ved behov.</li>
 <li>Husk at th-tags skal brukes på kolonneoverskrifter. Det kan også være fornuftig å bruke dette på radoverskrifter for å gjøre navigering i tabellen med skjermleser mer forståelig. Husk å bruke scope=row og scope=col for spesifisering.</li>
-<li>Tomme celler bør være td-tag.
+<li>Tomme celler bør være td-tag.</li>
 <li>Sjekk at du kan velge ulik sortering med tastatur.</li>
 <li>Test med skjermleser at du hører hva som er sorterbart og at du ikke mister fokus når du velger en sortering.</li>
 </ul>
@@ -219,7 +219,7 @@ const data = [
 <h3>WAI-ARIA</h3>
 <ul>
 <li>Aria-sort gir beskjed om noe er sorterbart og om det er sortert stigende eller synkende.</li>
-<li>Aria-hidden brukes for skjule ikoner for skjermleser. /li>
+<li>Aria-hidden brukes for skjule ikoner for skjermleser. </li>
 </ul>
 ```
 

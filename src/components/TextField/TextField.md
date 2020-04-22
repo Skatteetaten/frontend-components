@@ -166,7 +166,7 @@ import TextField from '@skatteetaten/frontend-components/TextField';
 <h3>Tips</h3>
 <ul>
 <li>For tekstfelt med synlig ledetekst, brukes input med label for-attributt. Tekstfelt uten synlig ledetekst kan bruke aria-label på input.</li>
-<li>Tydelige og forståelige ledetekster er viktig. Hvis formatet er viktig, f.eks. 9 siffer, er det en fordel om dette vises i ledeteksten. Eksempel: Organisasjonsnummer (9 siffer).
+<li>Tydelige og forståelige ledetekster er viktig. Hvis formatet er viktig, f.eks. 9 siffer, er det en fordel om dette vises i ledeteksten. Eksempel: Organisasjonsnummer (9 siffer).</li>
 <li>Kun placeholder-attributt er ikke tilstrekkelig for å bestå WCAG. Ledetekst (label/aria-label) og placeholder bør ikke være identiske. Placeholder-tekst er ment for å gi et hint om det som skal skrives i feltet.</li>
 <li>I publikumsløsninger vises advarsel- og hjelpetekst mellom label og verdi (CalloutFloating til false). Hjelpetekster i Callout fanges ikke like enkelt opp av skjermlesere.</li>
 <li>Sjekk at suffix og feilmeldinger leses opp av skjermlesere.</li>
