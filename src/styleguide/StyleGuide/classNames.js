@@ -27,6 +27,13 @@ export const getClassNames = function getClassNames(props, state) {
               fontSize: '24px'
             }
           }
+        },
+        h3: {
+          marginTop: '24px',
+          marginBottom: '4px'
+        },
+        ul: {
+          listStyleType: 'square'
         }
       }
     },
