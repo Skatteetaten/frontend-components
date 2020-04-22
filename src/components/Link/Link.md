@@ -2,7 +2,6 @@
 
 ```js
 import Link from '@skatteetaten/frontend-components/Link';
-import { Link as RRLink, BrowserRouter as Router } from 'react-router-dom';
 
 <div className="ExampleSpacing8">
   <Link
@@ -11,7 +10,6 @@ import { Link as RRLink, BrowserRouter as Router } from 'react-router-dom';
     icon={'Download'}
     placement="before"
   />
-
   <Link
     path={'#link'}
     text={'Gå til oversikt'}
@@ -25,7 +23,6 @@ import { Link as RRLink, BrowserRouter as Router } from 'react-router-dom';
     openInNew={true}
     placement="after"
   />
-
   <br />
   <br />
   <p>

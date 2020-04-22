@@ -31,56 +31,58 @@ import Button from '@skatteetaten/frontend-components/Button';
 </div>;
 ```
 
-Ekstra fremtredende hovedhandling
-
-```js
-import Button from '@skatteetaten/frontend-components/Button';
-
-<div className="ExampleSpacing8">
-  <Button roleLink buttonStyle="primaryLarge">
-    Se eller endre skattekort
-  </Button>
-</div>;
-```
-
 ```js noeditor uu
-<h3>Tips</h3>
+import Link from '@skatteetaten/frontend-components/Link';
+<div>
+  <h3>Tips</h3>
 
-<ul>
-  <li>Bruk én linje med tekst inne i knappen. For mye tekst kan virke forvirrende
-    for skjermlesere.</li>
-  <li>Ikke bruk knappen for å navigere videre til et annet område.</li>
-  <li>Knappen skal se ut som en knapp, og ikke være en lenke. (Dersom du MÅ bruke knapp som lenke, bør du bruke roleLink-egenskapen for at skjermleser skal oppfatte dette riktig.)</li>
-  <li>Ikke putt et ikon inne i selve knappen. Bruk heller IconButton.</li>
-  <li>Unngå inaktiv (disabled) knapp pga:
-    <ul>
-      <li>Dårlig kontrast</li>
-      <li>Forvirrende om/når den kan velges</li>
-	  <li>Brukere kan gå glipp av tilstandsendring</li>
-	  <li>Noen skjermlesere leser leser ikke elementer som er disabled</li>
-	  <li>Alternativ: Aktiv knapp (blå) med eventuelle feilmeldinger</li>
-    </ul>
-</li>
-</ul>
+  <ul>
+    <li>
+      Bruk én linje med tekst inne i knappen. For mye tekst kan virke
+      forvirrende for skjermlesere.
+    </li>
+    <li>
+      Ikke bruk knappen for å navigere videre til et annet område.
+      <br />
+      Til det skal <Link path="/#buttonlink" text="ButtonLink" />
+      -komponenten benyttes, og da <i>kun</i> hvis man er helt sikker på at man ønsker
+      å ha en lenke som ser ut som en knapp.
+    </li>
+    <li>Ikke putt et ikon inne i selve knappen. Bruk heller IconButton.</li>
+    <li>
+      Unngå inaktiv (disabled) knapp pga:
+      <ul>
+        <li>Dårlig kontrast</li>
+        <li>Forvirrende om/når den kan velges</li>
+        <li>Brukere kan gå glipp av tilstandsendring</li>
+        <li>Noen skjermlesere leser leser ikke elementer som er disabled</li>
+        <li>Alternativ: Aktiv knapp (blå) med eventuelle feilmeldinger</li>
+      </ul>
+    </li>
+  </ul>
 
-<h3>Mest relevante WCAG-krav</h3>
+  <h3>Mest relevante WCAG-krav</h3>
 
-    <ul>
-	  <li>4.1.2 A, Navn, rolle, verdi</li>
-    </ul>
+  <ul>
+    <li>4.1.2 A, Navn, rolle, verdi</li>
+  </ul>
 
-<h3>WAI-ARIA</h3>
+  <h3>WAI-ARIA</h3>
 
-    <ul>
-      <li>Aria-hidden="true" brukes der det er et ikon for å skjule det for skjermleser.</li>
-    </ul>
-
+  <ul>
+    <li>
+      Aria-hidden="true" brukes der det er et ikon for å skjule det for
+      skjermleser.
+    </li>
+  </ul>
+</div>;
 ```
 
 ```js noeditor beskrivelse
 import ErrorMessage from '@skatteetaten/frontend-components/ErrorMessage';
+import Link from '@skatteetaten/frontend-components/Link';
 <div>
-  <h3>Variasjoner av knapper</h3>
+  <h3>Enten kun firkantede eller kun avrundede knapper</h3>
   <p>
     Button kan være firkantet eller avrundet, der den avrundede kan være fylt
     eller ikke fylt. Man skal ikke plassere avrundet og firkantet ved siden av
@@ -107,19 +109,18 @@ import ErrorMessage from '@skatteetaten/frontend-components/ErrorMessage';
       <Button className="ml8">Avbryt</Button>
     </div>
   </div>
-  <h3>Overordnet og underordnet</h3>
+  <h3>Egen knappestil for knapp med sekundær funksjon</h3>
   <p>
     Dersom du har en underordnet funksjon ved siden av en hovedfunksjon (for
-    eksempel «Avbryt») finnes det et egen stil for dette.
+    eksempel «Avbryt») finnes det et egen stil, 'secondary', for dette.
   </p>
-  <h3>Ikke-reverserbare handlinger</h3>
+  <h3>Advarselknappen for ikke-reverserbare handlinger</h3>
   <p>
     Advarselsknapp (Button med rød bakgrunn) brukes til en handling som er
     sidestilt med en annen primærhandling der du ønsker å signalisere en
     konskvens, typisk noe som ikke kan reverseres uten videre. (F.eks.
     Godkjenn/Avvis)
   </p>
-
   <h3>Ikke bruk inaktive knapper</h3>
   <p>
     Unngå å bruke knapper i inaktiv tilstand (disabled). I stedet bør knappen
@@ -139,5 +140,27 @@ import ErrorMessage from '@skatteetaten/frontend-components/ErrorMessage';
       </Button>
     </div>
   </div>
+  <h3>Når hovedhandlingen er navigasjon til et annet område</h3>
+  <p>
+    Med «annet område» menes at klikk på knapp skal ta bruker til en annen side,
+    og <i>ikke</i> navigasjon videre ned i egen sidestruktur.
+  </p>
+  <p>
+    Noen ganger er hovedhandlingen kun at bruker skal videre til ny side, og
+    ingen handling skal forekomme <i>i tillegg</i> til denne. Et eksempel er
+    hovedhandlingen “Se og endre skattekort” på den innloggede siden Min skatt.
+    Det beste alternativet er å bruke en a-tag med role=“button” og style den
+    som en hovedhandling. Dette vil sikre best mulig brukskvalitet for flest
+    mulig brukergrupper. Komponenten{' '}
+    <Link path="/#buttonlink" text="ButtonLink" /> skal benyttes i disse
+    tilfellene.
+  </p>
+  <p>
+    Lenker skal i utgangspunktet aldri styles som en knapp. Hovedhandling som
+    lenke er unntaket. Trenger en lenke mer synlighet så bør andre tiltak
+    vurderes før man setter lenken som hovedhandling. “Send inn” for et skjema
+    er en hovedhandling som både sender inn og tar bruker til en ny side. Da
+    skal du bruke &lt;Button&gt; som vanlig.
+  </p>
 </div>;
 ```
