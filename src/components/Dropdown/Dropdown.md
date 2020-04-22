@@ -68,16 +68,26 @@ const initialState = {
 ```
 
 ```js noeditor uu
+<h3>Tips</h3>
 <ul>
-  <li>
-    Nedtrekklisten bør ikke åpnes automatisk på fokus. Sjekk at det er mulig å
-    åpne og lukke menyen ved hjelp av tastatur
-  </li>
-  <li>
-    Sjekk også at brukeren kan navigere seg gjennom menyen og velge et element i
-    listen.
-  </li>
-  <li>Ikke bruk lange setninger som valg.</li>
+<li>Standard HTML er tilstrekkelig for riktig koding: bruk av select og option, og label med for-attributt.</li>
+<li>Nedtrekklisten bør ikke åpnes automatisk på fokus. Sjekk at det er mulig å åpne, lukke, navigere og velge i menyen med kun tastatur. Test også at tastaturfokus beholdes på feltet etter at valg er foretatt.</li>
+<li>Ikke bruk lange setninger som valg.</li>
+<li>Sjekk med skjermleser at elementrekkefølge og navigering (pile ned/opp i listen når den åpen) er standard.</li>
+</ul>
+
+<h3>Mest relevante WCAG-krav</h3>
+<ul>
+<li>1.3.1 A, Informasjon og relasjoner </li>
+<li>3.3.2 A, Ledetekster eller instruksjoner</li>
+<li>4.1.2 A, Navn, rolle, verdi</li>
+</ul>
+
+<h3>WAI-ARIA</h3>
+<ul>
+<li>Role=button med aria-haspopup=listbox og aria-expanded brukes for å definere element, indikere at den har en liste med valg og og om listen er åpen eller ikke for skjermleser. </li>
+<li>Role=option og aria-selected brukes på valgene i listen for å definere element og si om noe er valgt eller ikke.</li>
+<li>Aria-expanded brukes på info/hjelp-knappene som utvides/minimeres</li>
 </ul>
 ```
 
