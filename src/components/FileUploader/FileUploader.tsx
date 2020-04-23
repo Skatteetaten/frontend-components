@@ -233,6 +233,12 @@ const FileUploader: React.FC<FileUploaderProps> = props => {
           onDragLeave={handleDragLeave}
           onDragOver={handleDragOverAndDragEnter}
           onDrop={handleDrop}
+          onClick={event => {
+            event.preventDefault();
+            if (inputRef.current) {
+              inputRef.current.click();
+            }
+          }}
           onKeyPress={ev => {
             if (ev.keyCode === 0 && inputRef.current) {
               inputRef.current.click();
@@ -256,6 +262,7 @@ const FileUploader: React.FC<FileUploaderProps> = props => {
         ref={inputRef}
         multiple={multipleFiles}
         onChange={handleFileChange}
+        tabIndex={-1}
       />
       {acceptedFileFormats && (
         <span
@@ -278,23 +285,26 @@ const FileUploader: React.FC<FileUploaderProps> = props => {
       )}
       {errorMessage && <ErrorMessage>{errorMessage}</ErrorMessage>}
       {internalFiles.length > 0 && (
-        <ul className={styles.fileList}>
-          {internalFiles.map((file, index: number) => (
-            <li key={file.name.concat(index.toString())}>
-              {file.name}
-              {file.error ? (
-                <Icon iconName={'Error'} className={styles.errorColor} />
-              ) : (
-                <button
-                  className={styles.fileListCancelBtn}
-                  onClick={() => deleteFromList(file)}
-                >
-                  <Icon iconName={'Cancel'} />
-                </button>
-              )}
-            </li>
-          ))}
-        </ul>
+        <div role="alert">
+          <ul className={styles.fileList}>
+            {internalFiles.map((file, index: number) => (
+              <li key={file.name.concat(index.toString())}>
+                {file.name}
+                {file.error ? (
+                  <Icon iconName={'Error'} className={styles.errorColor} />
+                ) : (
+                  <button
+                    className={styles.fileListCancelBtn}
+                    onClick={() => deleteFromList(file)}
+                    aria-label="Fjern fil"
+                  >
+                    <Icon iconName={'Cancel'} />
+                  </button>
+                )}
+              </li>
+            ))}
+          </ul>
+        </div>
       )}
     </div>
   );

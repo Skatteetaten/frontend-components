@@ -46,18 +46,17 @@ import React from 'react';
 import FileUploader, {
   FileFormatTypes
 } from '@skatteetaten/frontend-components/FileUploader';
-const files = [];
-const [filesToComponent, setFilesToComponent] = React.useState(files);
+const [files, setFiles] = React.useState([]);
 
 <div style={{ width: '300px' }}>
   <FileUploader
     label={'Last opp bilde'}
     acceptedFileFormats={[FileFormatTypes.png, FileFormatTypes.jpg]}
-    files={filesToComponent}
+    files={files}
     multipleFiles={true}
     uploadFile={file => {
       files.push(file);
-      setFilesToComponent([...files]);
+      setFiles([...files]);
     }}
     deleteFile={file => {
       const newList = files.filter(fileInList => fileInList !== file);
