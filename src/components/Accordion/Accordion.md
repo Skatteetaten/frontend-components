@@ -100,54 +100,11 @@ import AccordionItem from '@skatteetaten/frontend-components/Accordion/Accordion
 </Accordion>;
 ```
 
-En accordion kan ha en subtitle, som vises under tittelen og kan være enten en string eller en react komponent.
-
-```js
-import Accordion from '@skatteetaten/frontend-components/Accordion';
-import AccordionItem from '@skatteetaten/frontend-components/Accordion/AccordionItem';
-
-const Lorem = () => (
-  <span style={{ fontWeight: 'bold', color: 'red' }}>Lorem ipsum dolor</span>
-);
-
-<Accordion>
-  <AccordionItem
-    toggleContent
-    toggleButtonText="Ferdig"
-    icon="Check"
-    ariaLabel="Fullført"
-    subtitle="Lorem ipsum dolor"
-  >
-    <p>
-      Lorem neque earum ad natus placeat Ut minus hic explicabo eveniet earum
-      ullam? At enim iure tempora excepturi dolores? Sed velit saepe qui
-      recusandae quaerat! Neque dolorem accusamus qui harum
-    </p>
-  </AccordionItem>
-  <AccordionItem
-    toggleContent
-    toggleButtonText="Ferdig"
-    icon="Check"
-    ariaLabel="Fullført"
-    subtitle={<Lorem />}
-  >
-    <p>
-      Lorem neque earum ad natus placeat Ut minus hic explicabo eveniet earum
-      ullam? At enim iure tempora excepturi dolores? Sed velit saepe qui
-      recusandae quaerat! Neque dolorem accusamus qui harum
-    </p>
-  </AccordionItem>
-</Accordion>;
-```
-
 ```js noeditor uu
-<p>
-  <a href="https://www.w3.org/TR/wai-aria-practices-1.1/#accordion">
-    Mer om WAI-ARIA for accordion.
-  </a>
-</p>
-<h3>Riktig overskriftsnivå</h3>
-<p>En Accordion kan brukes på mange ulike nivåer på siden. .Komponenten produserer som standard  tekst inni label-tag for det blå klikkbare elementet, men det det i enkelte tilfeller være ønskelig å angi dette som et bestemt overskriftsnivå, for eksempel h3 eller h4. Det gjør du slik:</p>
+<h3>Tips</h3>
+<ul>
+<li>Riktig overskriftsnivå: En Accordion (ekspander) kan brukes på mange ulike nivåer på siden. Komponenten kan være standard tekst (det blå klikkbare elementet), men det kan også i enkelte tilfeller være ønskelig å angi dette som et bestemt overskriftsnivå, for eksempel h3 eller h4. Det gjør du slik:</li>
+</ul>
 ```
 
 ```js uu
@@ -191,6 +148,32 @@ import AccordionItem from '@skatteetaten/frontend-components/Accordion/Accordion
     <p>Beregn omkring 3 dager for planlegging og gjennomføring.</p>
   </AccordionItem>
 </Accordion>;
+```
+
+```js noeditor uu
+<ul>
+<li>Det skal kun være ett tabstopp pr ekspander.</li>
+<li>Ekspandere skal ha en visuell indikator på at innhold utvides/minimeres.</li>
+<li>Sjekk at elementet leses som en ekspander med skjermleser og at du beholder fokus når du utvider/minimerer den.</li>
+</ul>
+
+<h3>Mest relevante WCAG-krav</h3>
+<ul>
+<li>1.3.1 A, Informasjon og relasjoner</li>
+<li>4.1.2 A, Navn, rolle, verdi</li>
+</ul>
+
+<h3>WAI-ARIA</h3>
+<ul>
+<li>Aria-expanded brukes på knappene som utvides/minimeres.</li>
+<li>Aria-label brukes i kombinasjon med aria-describedby på trinnvise steg. Dette gjøres for at skjermleserbrukere skal høre hvilket steg de står på hvis de navigerer fra knapp til knapp (ikke piler seg gjennom sekvensen).</li>
+<li>Aria-hidden brukes for å skjule ikoner for skjermlesere.</li>
+</ul>
+<p>
+  <a href="https://www.w3.org/TR/wai-aria-practices-1.1/#accordion">
+    Mer om WAI-ARIA for accordion.
+  </a>
+</p>
 ```
 
 ```js noeditor beskrivelse

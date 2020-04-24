@@ -63,5 +63,22 @@ const options = [
 ```
 
 ```js noeditor uu
-<p>Ingen informasjon</p>
+<h3>Tips</h3>
+<ul>
+<li>Vanlige søkefelt skal ha tabstopp på søkeknapp (forstørrelsesglasset). Unntaket er søkefelt med forslag i dropdown.</li>
+<li>For søkefelt med synlig ledetekst, brukes input med label for-attributt. Søkefelt uten synlig ledetekst kan bruke aria-label på input.</li>
+<li>Kun placeholder-attributt er ikke tilstrekkelig for å bestå WCAG. Ledetekst (label/aria-label) og placeholder bør ikke være identiske. Placeholder-tekst er ment for å gi et hint om det som skal skrives i feltet.</li>
+</ul>
+
+<h3>Mest relevante WCAG-krav</h3>
+<ul>
+<li>1.3.1 A, Informasjon og relasjoner </li>
+<li>3.3.2 A, Ledetekster eller instruksjoner</li>
+<li>4.1.2 A, Navn, Rolle, verdi</li>
+</ul>
+
+<h3>WAI-ARIA</h3>
+<ul>
+<li>Aria-label brukes på søkeknapp for å navngi den for skjermlesere.</li>
+</ul>
 ```

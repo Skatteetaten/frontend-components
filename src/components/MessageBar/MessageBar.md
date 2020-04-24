@@ -55,13 +55,26 @@ const afterDurationComponent = (resetDuration, setShowAlways) => (
 ```
 
 ```js noeditor uu
+<h3>Tips</h3>
 <ul>
-  <li>Innholdet bør være kort og presist.</li>
-  <li>Husk å bruke riktig type av MessageBar til riktig type melding.</li>
-  <li>
-    Ved messageBar som forsvinner må fokus på siden settes tilbake til samme
-    sted som brukeren stod før boksen dukket opp og forsvant igjen.
-  </li>
+<li>Innholdet bør være kort og presist.</li>
+<li>Pass på tilstrekkelig kontrast (minst 4.5) mellom tekst og bakgrunn</li>
+<li>Husk å bruke riktig type av MessageBar til riktig type melding.</li>
+<li>Ved messageBar som forsvinner må fokus på siden settes tilbake til samme sted som brukeren stod før boksen dukket opp og forsvant igjen.</li>
+<li>Gi brukerne nok tid å få lese meldingen som forsvinner automatisk, selv om brukeren kan se meldingen igjen.</li>
+</ul>
+
+<h3>Mest relevante WCAG-krav</h3>
+<ul>
+<li>1.4.3 AA, Kontrast (minimum)</li>
+<li>2.2.1 A, Justerbar hastighet</li>
+<li>4.1.2 A, Navn, rolle, verdi</li>
+</ul>
+
+<h3>WAI-ARIA</h3>
+<ul>
+<li>Aria-label brukes for å navngi lukk-knapp for skjermlesere.</li>
+<li>Role= brukes for å gi beskjed til skjermlesere at meldingen skal leses opp (når den er synlig)</li>
 </ul>
 ```
 

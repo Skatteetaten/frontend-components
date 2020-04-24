@@ -282,5 +282,23 @@ const titles = {
 ```
 
 ```js noeditor uu
-<p>Ingen informasjon</p>
+<h3>Tips</h3>
+<ul>
+<li>Sjekk at du får tastaturfokus på riktig sted etter at du har valgt å endre.</li>
+<li>Skjemafelt skal være kodet riktig med bruk av fieldset og legend (gruppering av sjekkbokser og radioknapper), gode ledetekster med label for-attributt til input. </li>
+</ul>
+
+<h3>Mest relevante WCAG-krav</h3>
+<ul>
+<li>1.3.1 A, Informasjon og relasjoner</li>
+<li>2.4.6 AA, Overskrifter og ledetekster</li>
+<li>3.3.1 A, Identifikasjon av feil</li>
+<li>3.3.2 A, Ledetekster eller instruksjoner</li>
+<li>4.1.2 A, Navn, rolle, verdi</li>
+</ul>
+
+<h3>WAI-ARIA</h3>
+<ul>
+<li>Aria-label brukes for å tydeliggjøre hva du endrer hvis du navigerer på knappene med skjermleser (ikke piler gjennom hele prosessen).</li>
+</ul>
 ```

@@ -5,11 +5,21 @@ import Image from '@skatteetaten/frontend-components/Image';
 ```
 
 ```js noeditor uu
-<h3>Huskeliste</h3>
-
+<h3>Tips</h3>
 <ul>
-  <li>Innholdet i bilder må beskrives i en tilhørende alt-tag</li>
-  <li>Unngå bilder av tekst.</li>
+<li>Meningsbærende bilder må ha et tekstalternativ f.eks.med alt-attributtet. Alternativteksten skal være enkel og forståelig. Unngå å bruke "Bilde av …" som en del av teksten.</li>
+<li>Bilder som er pynt bør skjules for skjermlesere, f.eks, med bruk av aria-hidden eller role=presentation.</li>
+<li> Unngå bilder av tekst.</li>
+</ul>
+
+<h3>Mest relevante WCAG-krav</h3>
+<ul>
+<li>1.1.1 A, Ikke-tekstlig innhold</li>
+</ul>
+
+<h3>WAI-ARIA</h3>
+<ul>
+<li>N/A</li>
 </ul>
 ```
 

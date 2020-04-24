@@ -142,28 +142,25 @@ function closeButton() {
 ```
 
 ```js noeditor uu
-  <p>
-    En Callout vil teknisk legges til slutt i koden. Dette betyr at eventuelle
-    hjelpeverktøy, som for eksempel skjermlesere, vil lese opp teksten inni
-    Callouten helt til slutt. Av denne grunn anbefaler vi ikke å bruke
-    komponenten i publikumsløsninger.
-  </p>
-  <ul>
-    <li>
-      Callout skal kun brukes i interne løsninger på grunn av utfordringer
-      rundt universell utforming. Innholdet i Callout vil teknisk lastet inn i
-      bunnen av siden, slik at en skjermleser ofte vil lese innholdet til
-      slutt.
-    </li>
-    <li>
-      <b>aria-haspopup</b> indikerer at knappen åpner et element for
-      skjermlesere.
-    </li>
-    <li>
-      Kontroller at det er mulig å åpne/lukke Callout-en både med mus og
-      tastatur.
-    </li>
-  </ul>
+<h3>Tips</h3>
+<ul>
+<li>En Callout vil teknisk legges til slutt i koden. Dette betyr at eventuelle hjelpeverktøy, som for eksempel skjermlesere, vil lese opp teksten inni Callouten helt til slutt. Av denne grunn skal ikke komponenten brukes i publikumsløsninger.</li>
+<li>Kontroller at det er mulig å åpne/lukke Callout-en både med mus og tastatur.</li>
+</ul>
+
+<h3>Mest relevante WCAG-krav</h3>
+<ul>
+<li>1.3.1 A, Informasjon og relasjoner</li>
+<li>4.1.2 A, Navn, rolle, verdi</li>
+</ul>
+
+<h3>WAI-ARIA</h3>
+<ul>
+<li>Aria-haspopup brukes på knappene som viser melding/varsel.</li>
+<li>Role=dialog identifiserer dialogboksen for skjermleser</li>
+<li>Aria-label brukes for å navngi lukk-ikon i dialogen.</li>
+<li>Aria-hidden brukes for skjule ikoner for skjermleser. </li>
+</ul>
 ```
 
 ```js noeditor beskrivelse
