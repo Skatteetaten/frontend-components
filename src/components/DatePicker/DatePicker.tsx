@@ -61,6 +61,8 @@ export interface DatePickerProps extends IDatePickerProps {
   inputSize?: 'normal' | 'large';
   /** Hjelpetekst */
   help?: JSX.Element | string;
+  /** aria-label for knapp i label */
+  labelButtonAriaLabel?: string;
   /** Overstyr label, se LabelWithCallout komponent */
   labelCallout?: LabelWithCalloutProps;
   calloutFloating?: LabelWithCalloutProps['calloutFloating'];
@@ -117,6 +119,7 @@ export default class DatePicker extends React.Component<DatePickerProps> {
       isOutOfBoundsErrorMessage,
       isRequiredErrorMessage,
       label,
+      labelButtonAriaLabel,
       labelCallout,
       onCalloutToggle,
       ...rest
@@ -128,6 +131,7 @@ export default class DatePicker extends React.Component<DatePickerProps> {
         <LabelWithCallout
           id={id}
           label={label}
+          buttonAriaLabel={labelButtonAriaLabel}
           help={help}
           calloutFloating={calloutFloating}
           onCalloutToggle={onCalloutToggle}
