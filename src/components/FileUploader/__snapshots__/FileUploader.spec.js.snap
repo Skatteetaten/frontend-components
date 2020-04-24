@@ -5,7 +5,7 @@ exports[`FileUploader komponent matcher snapshot 1`] = `
   className="main-83"
 >
   <label
-    aria-label="fileupload"
+    aria-label="Filopplasting"
     htmlFor="fileupload"
     id="buttonLabel"
   >

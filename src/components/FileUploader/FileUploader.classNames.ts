@@ -24,6 +24,9 @@ export const getClassNames = (props: FileUploaderProps) => {
         i: {
           color: palette.skeColor.blue,
           float: 'right'
+        },
+        li: {
+          wordBreak: 'break-all'
         }
       }
     },

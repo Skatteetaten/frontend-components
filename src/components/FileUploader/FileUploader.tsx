@@ -39,6 +39,8 @@ export interface FileUploaderProps {
   className?: string;
   /** trigger funksjon til å slette alle filer */
   deleteAllFiles?: boolean;
+  /** Aria-label for "fjern fil"-knapp */
+  deleteButtonAriaLabel?: string;
   /** Funksjon for å slette opplastet fil */
   deleteFile?: (file: File) => void;
   /** Opplastede filer */
@@ -90,6 +92,7 @@ const FileUploader: React.FC<FileUploaderProps> = props => {
     axiosPath,
     className,
     deleteAllFiles,
+    deleteButtonAriaLabel,
     deleteFile,
     files,
     help,
@@ -221,7 +224,7 @@ const FileUploader: React.FC<FileUploaderProps> = props => {
       />
       <label
         htmlFor="fileupload"
-        aria-label={ariaLabel ? ariaLabel : 'fileupload'}
+        aria-label={ariaLabel ? ariaLabel : 'Filopplasting'}
         id="buttonLabel"
       >
         <div
@@ -296,7 +299,11 @@ const FileUploader: React.FC<FileUploaderProps> = props => {
                   <button
                     className={styles.fileListCancelBtn}
                     onClick={() => deleteFromList(file)}
-                    aria-label="Fjern fil"
+                    aria-label={
+                      deleteButtonAriaLabel
+                        ? deleteButtonAriaLabel
+                        : 'Fjern fil'
+                    }
                   >
                     <Icon iconName={'Cancel'} />
                   </button>
