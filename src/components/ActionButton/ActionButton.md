@@ -48,20 +48,20 @@ import ActionButton from '@skatteetaten/frontend-components/ActionButton';
 ```
 
 ```js noeditor beskrivelse
-<h3>En mindre fremtredende knapp</h3>
-  <p>
-    ActionButton bruker vi for mindre fremtredende og selvstendige funksjoner
-    på siden. Den tar mindre plass og er mer plasseringsvennlig enn Button.
-  </p>
-  <h3>Varianter</h3>
-  <p>
-    Normalt bruker vi blå farge for alle klikkbare elementer, også
-    aksjonsknapper, men dersom er mange blå elementer på skjermen kan det
-    oppleves som støyende. I slike tilfeller kan vi benytte sorte (nedtonede)
-    aksjonsknapper. Dersom aksjonsknappen skal være mer synlig kan man øke ikonstørrelsen.
-  </p>
-  <p>
-    Ikonet kan gis farge hvis en vil understreke en mening, for eksempel grønn
-    for godkjenn eller rød for avvis.
-  </p>
+
+<h3>En knapp for mindre fremtredende handlinger</h3>
+<p>
+  Aksjonsknapp bruker du for selvstendige og mindre fremtredende handlinger på siden, som for eksempel «Legg til» eller «Fjern». Knappen tar mindre plass og er mer plasseringsvennlig enn <a href='#button'>Button</a>.
+</p>
+<h3>Ulike varianter av aksjonsknapper</h3>
+<p>
+  Du skal normalt bruke blå farge på alle klikkbare elementer, også aksjonsknapper. Hvis det er mange blå elementer på siden, kan brukeren oppleve det støyende. Du kan da velge nedtonede aksjonsknapper i sort i stedet. Dersom aksjonsknappen skal være mer synlig kan du øke ikonstørrelsen.
+</p>
+<p>
+  Du kan gi ikonet farge hvis du vil understreke en mening, for eksempel grønn for godkjenn eller rød for avvis.
+</p>
+<p>
+  Se <a href='https://www.skatteetaten.no/stilogtone/skrive/skriveregler/knapper/'>skrivereglene</a> for hvordan skrive på knapper.
+</p>
+
 ```
