@@ -19,6 +19,8 @@ export interface LabelWithCalloutProps
   buttonTitle?: string;
   calloutFloating?: boolean;
   className?: string;
+  /** Lukk callout på blur */
+  closeOnBlur?: boolean;
   editable?: boolean;
   editFunction?: () => void;
   help?: string | JSX.Element;
@@ -45,6 +47,7 @@ const LabelWithCallout = (props: LabelWithCalloutProps) => {
     buttonTitle,
     calloutFloating = false,
     className,
+    closeOnBlur,
     editable,
     editFunction,
     help,
@@ -81,6 +84,13 @@ const LabelWithCallout = (props: LabelWithCalloutProps) => {
     }
     return;
   };
+  const onBlurEvent = () => {
+    if (closeOnBlur) {
+      setIsCalloutVisible(false);
+      toggleEvent();
+    }
+  };
+
   return onRenderLabel ? (
     onRenderLabel
   ) : (
@@ -118,6 +128,9 @@ const LabelWithCallout = (props: LabelWithCalloutProps) => {
               toggleEvent();
             }}
             className={styles.icon}
+            onBlur={() => {
+              onBlurEvent();
+            }}
           />
         </span>
       )}
@@ -133,6 +146,9 @@ const LabelWithCallout = (props: LabelWithCalloutProps) => {
               toggleEvent();
             }}
             className={styles.warningicon}
+            onBlur={() => {
+              onBlurEvent();
+            }}
           />
         </span>
       )}
@@ -146,6 +162,9 @@ const LabelWithCallout = (props: LabelWithCalloutProps) => {
               ariaLabel={buttonAriaLabel}
               onClick={editFunction}
               className={styles.icon}
+              onBlur={() => {
+                onBlurEvent();
+              }}
             />
           )}
         </span>
