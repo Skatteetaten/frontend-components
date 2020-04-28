@@ -66,6 +66,8 @@ export interface FileUploaderProps {
   queryParams?: any;
   /** Funksjon for filopplasting */
   uploadFile?: (file: File) => void;
+  /**forsinkelse før opplasting i millisekunder*/
+  forsinkelse?: number;
 }
 
 export const isCorrectFileFormat = (
@@ -139,24 +141,28 @@ const FileUploader: React.FC<FileUploaderProps> = props => {
           setInternalLoading(true);
           const formData = new FormData();
           formData.append('upload', file);
-          axios
-            .post<FormData, AxiosResponse<AttachmentMetadata>>(
-              axiosPath,
-              formData,
-              { params: queryParams }
-            )
-            .then(res => {
-              if (res.data) {
-                setErrorMessage('');
-                setInternalFiles([...internalFiles, res.data]);
-              }
-            })
-            .catch(error => {
-              setErrorMessage('Kunne ikke laste opp fil');
-            })
-            .finally(() => {
-              setInternalLoading(false);
-            });
+          setTimeout(
+            () =>
+              axios
+                .post<FormData, AxiosResponse<AttachmentMetadata>>(
+                  axiosPath,
+                  formData,
+                  { params: queryParams }
+                )
+                .then(res => {
+                  if (res.data) {
+                    setErrorMessage('');
+                    setInternalFiles([...internalFiles, res.data]);
+                  }
+                })
+                .catch(error => {
+                  setErrorMessage('Kunne ikke laste opp fil');
+                })
+                .finally(() => {
+                  setInternalLoading(false);
+                }),
+            props.forsinkelse || 0
+          );
         }
       } else {
         setErrorMessage('Dette filformatet er ikke godkjent');
