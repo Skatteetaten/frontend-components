@@ -110,17 +110,22 @@ const contents = [
 ```
 
 ```js noeditor beskrivelse
-<h3>Bruker på navigasjonssider</h3>
-  <p>
-    NavigationTile brukes for eksempel på transportsider/navigasjonssider.
-    Transportsider er landingssider med primær hensikt å sende brukeren videre
-    nedover i sidestrukturen.
-  </p>
-  <h3>Kan ha varierende innhold</h3>
-  <p>
-    Komponentene har alltid en tittel, men kan brukes uten ikon og beskrivende
-    tekst. I tillegg kan innholdet midtstilles eller høyre og venstrejusteres.
-  </p>
+<h3>
+  Forsideknapp for å gå videre i et spor i sidestrukturen
+</h3>
+<p>
+  NavigationTile bruker du for å veilede brukeren til å velge et spor i sidestrukturen for å komme videre. Knappen er vanlig å bruke på landings-sider. Et eksempel er <a href='https://www.skatteetaten.no/person'>skatteetaten.no/person</a> hvor brukeren velger mellom skatt, avgifter, folkeregister, utenlandsk og så videre.
+</p>
+<h3>
+  Knappen har alltid tittel og kan også ha ikon og beskrivende tekst
+</h3>
+<p>
+  Du kan velge mellom å midtstille, høyre- eller venstre-justere innholdet på knappen. For å stille opp innholdet på denne forsideknappen må du bruke <a href='#navigationcontent'>NavigationContent</a>.
+</p>
+<p>
+  Det er viktig at tekst og symbol på NavigationTile gjør målet med knappen tydelig for brukeren.
+</p>
+
 ```
 
 ```js noeditor uu
