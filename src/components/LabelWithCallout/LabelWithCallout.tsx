@@ -112,7 +112,8 @@ const LabelWithCallout = (props: LabelWithCalloutProps) => {
             iconProps={{ iconName: 'HelpOutline' }}
             title={buttonTitle ? buttonTitle : 'Hjelp'}
             aria-describedby={id}
-            ariaLabel={buttonAriaLabel}
+            ariaLabel={buttonAriaLabel ? buttonAriaLabel : 'Hjelp'}
+            aria-expanded={isCalloutVisible}
             onClick={() => {
               setIsCalloutVisible(!isCalloutVisible);
               toggleEvent();
@@ -127,7 +128,8 @@ const LabelWithCallout = (props: LabelWithCalloutProps) => {
             iconProps={{ iconName: 'WarningOutline' }}
             title={buttonTitle ? buttonTitle : 'Varsel'}
             aria-describedby={id}
-            ariaLabel={buttonAriaLabel}
+            ariaLabel={buttonAriaLabel ? buttonAriaLabel : 'Varsel'}
+            aria-expanded={isCalloutVisible}
             onClick={() => {
               setIsCalloutVisible(!isCalloutVisible);
               toggleEvent();
@@ -143,7 +145,8 @@ const LabelWithCallout = (props: LabelWithCalloutProps) => {
               iconProps={{ iconName: 'Edit' }}
               title={buttonTitle ? buttonTitle : 'Rediger'}
               aria-describedby={id}
-              ariaLabel={buttonAriaLabel}
+              ariaLabel={buttonAriaLabel ? buttonAriaLabel : 'Rediger'}
+              aria-expanded={isCalloutVisible}
               onClick={editFunction}
               className={styles.icon}
             />
@@ -157,9 +160,6 @@ const LabelWithCallout = (props: LabelWithCalloutProps) => {
             calloutFloating ? Callout.POS_BOTTOM_LEFT : Callout.POS_TOP_LEFT
           }
           color={help && !warning ? Callout.HELP : Callout.WARNING}
-          aria-labelledby={
-            label + (help && !warning ? ' hjelpetekst' : ' varseltekst')
-          }
           target={iconButtonElementRef.current}
           onClose={() => {
             setIsCalloutVisible(false);

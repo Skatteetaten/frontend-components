@@ -49,6 +49,8 @@ export interface FileUploaderProps {
   id?: string;
   /** Descriptive label for SearchField */
   label?: string;
+  /** aria-label for knapp i label */
+  labelButtonAriaLabel?: string;
   /** Overstyr label, se LabelWithCallout komponent */
   labelCallout?: LabelWithCalloutProps;
   /** Spinner når fil laster */
@@ -95,6 +97,7 @@ const FileUploader: React.FC<FileUploaderProps> = props => {
     help,
     id,
     label,
+    labelButtonAriaLabel,
     labelCallout,
     loading,
     multipleFiles,
@@ -215,6 +218,7 @@ const FileUploader: React.FC<FileUploaderProps> = props => {
       <LabelWithCallout
         id={id}
         label={label}
+        buttonAriaLabel={labelButtonAriaLabel}
         help={help}
         onCalloutToggle={onCalloutToggle}
         {...labelCallout}
@@ -256,6 +260,7 @@ const FileUploader: React.FC<FileUploaderProps> = props => {
         ref={inputRef}
         multiple={multipleFiles}
         onChange={handleFileChange}
+        tabIndex={-1}
       />
       {acceptedFileFormats && (
         <span

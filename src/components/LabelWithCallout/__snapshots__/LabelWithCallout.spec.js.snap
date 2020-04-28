@@ -13,6 +13,8 @@ Array [
   >
     <button
       aria-describedby="LabelWithCallout_id"
+      aria-expanded={false}
+      aria-label="Hjelp"
       className="ms-Button ms-Button--icon icon-84"
       data-is-focusable={true}
       onClick={[Function]}
