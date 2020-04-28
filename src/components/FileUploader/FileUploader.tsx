@@ -49,6 +49,8 @@ export interface FileUploaderProps {
   help?: string | JSX.Element;
   /** Id */
   id?: string;
+  /** Tilleggsinformasjon */
+  info?: string;
   /** Descriptive label for SearchField */
   label?: string;
   /** Overstyr label, se LabelWithCallout komponent */
@@ -97,6 +99,7 @@ const FileUploader: React.FC<FileUploaderProps> = props => {
     files,
     help,
     id,
+    info,
     label,
     labelCallout,
     loading,
@@ -267,11 +270,9 @@ const FileUploader: React.FC<FileUploaderProps> = props => {
         onChange={handleFileChange}
         tabIndex={-1}
       />
+
       {acceptedFileFormats && (
-        <span
-          className={styles.acceptedFileTypesWrapper}
-          id="acceptedFileFormats"
-        >
+        <span className={styles.informationWrapper} id="acceptedFileFormats">
           Aksepterte filformater:{' '}
           <span className={styles.acceptedFileFormats}>
             {acceptedFileFormats.map(
@@ -285,6 +286,15 @@ const FileUploader: React.FC<FileUploaderProps> = props => {
             )}
           </span>
         </span>
+      )}
+      {info && (
+        <div
+          className={styles.informationWrapper}
+          id="information"
+          aria-label={'informasjon'}
+        >
+          {info}
+        </div>
       )}
       {errorMessage && <ErrorMessage>{errorMessage}</ErrorMessage>}
       {internalFiles.length > 0 && (

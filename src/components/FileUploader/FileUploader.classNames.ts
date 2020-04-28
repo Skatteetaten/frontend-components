@@ -10,7 +10,8 @@ export const getClassNames = (props: FileUploaderProps) => {
     acceptedFileFormats: {
       fontWeight: 'bold'
     },
-    acceptedFileTypesWrapper: {
+    informationWrapper: {
+      marginTop: '8px',
       fontSize: '12px',
       color: palette.skeColor.darkGrey
     },
