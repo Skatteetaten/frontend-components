@@ -1,9 +1,9 @@
 {
   "files": {
     "main.css": "/static/css/main.3be3c6dc.chunk.css",
-    "main.js": "/build/main.073d51ac.js",
+    "main.js": "/build/main.7b9335e7.js",
     "runtime-main.js": "/build/bundle.e4650bfa.js",
-    "build/2.111f117b.js": "/build/2.111f117b.js",
+    "build/2.5ae8649d.js": "/build/2.5ae8649d.js",
     "assets/png/Byggeklosser.png": "/assets/png/Byggeklosser.png",
     "assets/png/Byggeklosser_skisse.png": "/assets/png/Byggeklosser_skisse.png",
     "assets/png/designer.png": "/assets/png/designer.png",
@@ -17,11 +17,11 @@
     "assets/svg/ske-logo-intern-kopi.svg": "/assets/svg/ske-logo-intern-kopi.svg",
     "assets/svg/ske-logo-intern.svg": "/assets/svg/ske-logo-intern.svg",
     "assets/svg/ske-logo.svg": "/assets/svg/ske-logo.svg",
-    "build/2.111f117b.js.LICENSE": "/build/2.111f117b.js.LICENSE",
+    "build/2.5ae8649d.js.LICENSE": "/build/2.5ae8649d.js.LICENSE",
     "favicon.ico": "/favicon.ico",
     "index.html": "/index.html",
     "manifest.json": "/manifest.json",
-    "precache-manifest.d7a449df05bcaa44a7ee43f4bc6f91ca.js": "/precache-manifest.d7a449df05bcaa44a7ee43f4bc6f91ca.js",
+    "precache-manifest.be02cb45fd7007f2a570278e3fb33b0a.js": "/precache-manifest.be02cb45fd7007f2a570278e3fb33b0a.js",
     "service-worker.js": "/service-worker.js",
     "static/css/main.3be3c6dc.chunk.css.map": "/static/css/main.3be3c6dc.chunk.css.map",
     "static/media/SkeIconfont.ttf": "/static/media/SkeIconfont.002ab205.ttf",
@@ -38,8 +38,8 @@
   },
   "entrypoints": [
     "build/bundle.e4650bfa.js",
-    "build/2.111f117b.js",
+    "build/2.5ae8649d.js",
     "static/css/main.3be3c6dc.chunk.css",
-    "build/main.073d51ac.js"
+    "build/main.7b9335e7.js"
   ]
 }
