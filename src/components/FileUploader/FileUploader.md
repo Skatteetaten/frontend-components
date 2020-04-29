@@ -46,23 +46,50 @@ import React from 'react';
 import FileUploader, {
   FileFormatTypes
 } from '@skatteetaten/frontend-components/FileUploader';
-const files = [];
-const [filesToComponent, setFilesToComponent] = React.useState(files);
+const [files, setFiles] = React.useState([]);
 
-<div style={{ width: '300px' }}>
+<div style={{ width: '400px' }}>
   <FileUploader
     label={'Last opp bilde'}
     acceptedFileFormats={[FileFormatTypes.png, FileFormatTypes.jpg]}
-    files={filesToComponent}
+    files={files}
     multipleFiles={true}
     uploadFile={file => {
       files.push(file);
-      setFilesToComponent([...files]);
+      setFiles([...files]);
     }}
     deleteFile={file => {
       const newList = files.filter(fileInList => fileInList !== file);
       setFiles(newList);
     }}
+    info={
+      'Husk at du bør sjekke dokumentene for sensitive personopplysninger, og eventuelt fjerne disse før dokumentene settes inn.'
+    }
   />
 </div>;
+```
+
+```js noeditor uu
+<h3>Tips</h3>
+<ul>
+<li>Feilmeldinger skal tilfredsstille kontrastkrav (minst 4.5)</li>
+<li>Sjekk at meldinger (opplastet dokument/feilmeldinger) leses med skjermleser.</li>
+</ul>
+
+<h3>Mest relevante WCAG-krav</h3>
+<ul>
+<li>1.3.1 A, Informasjon og relasjoner</li>
+<li>1.4.3 AA, Kontrast (minimum)</li>
+<li>3.3.1 A, Identifikasjon av feil</li>
+<li>3.3.2 A, Ledetekster eller instruksjoner</li>
+<li>4.1.2 A, Navn, rolle, verdi</li>
+</ul>
+
+<h3>WAI-ARIA</h3>
+<ul>
+<li>Role=alert og aria-atomic brukes på meldinger som skal leses av skjermleser.</li>
+<li>Aria-describedby brukes på input for at skjermlesere skal lese suffix der det brukes.</li>
+<li>Aria-expanded brukes på hjelp/infoknapper som utvides/minimeres.</li>
+<li>Aria-hidden brukes for å skjule ikoner for skjermleser.</li>
+</ul>
 ```

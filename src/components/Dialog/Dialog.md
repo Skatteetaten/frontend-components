@@ -137,12 +137,26 @@ function closeDialog() {
 ```
 
 ```js noeditor uu
-<h3>Huskeliste</h3>
+<h3>Tips</h3>
 <ul>
-  <li>
-    Sjekk at dialogen får fokus etter at den åpnes. Dette gjør det enkelere for
-    en skjermleser å oppdage og lese opp innholdet.
-  </li>
+<li>Sjekk at dialogen får fokus etter at den åpnes. Dette gjør det enklere for en skjermleser å oppdage og lese opp innholdet.</li>
+<li>Test med tastatur at du ikke kan navigere ut av dialogen. Sjekk også hvor tastaturfokuset er når du lukker dialogen. Tastaturfokuset skal være på knappen som åpner dialogen.</li>
+<li>Sjekk at alt innholdet bak dialogen "viskes" ut visuelt.</li>
+</ul>
+
+<h3>Mest relevante WCAG-krav</h3>
+<ul>
+<li>2.4.3 A, Fokusrekkefølge</li>
+<li>4.1.2 A, Navn, rolle, verdi</li>
+</ul>
+
+<h3>WAI-ARIA</h3>
+<ul>
+<li>Role=dialog identifiserer dialog-elementet for skjermlesere.</li>
+<li>Aria-modal gir beskjed til skjermlesere at det underliggende vinduet ikke er aktivt.</li>
+<li>Aria-labelledby brukes for navngi dialogen med bruk av overskriften.</li>
+<li>Role=heading og aria-level brukes for å sette overskrift med riktig nivå for skjermlesere.</li>
+<li>Aria-label brukes for å navngi lukk-ikon i dialogen. Aria-hidden brukes for å skjule selve ikonet for skjermlesere.</li>
 </ul>
 ```
 

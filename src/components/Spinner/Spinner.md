@@ -16,22 +16,22 @@ import Button from '@skatteetaten/frontend-components/Button';
 ```
 
 ```js noeditor uu
-<h3>Huskeliste</h3>
+<h3>Tips</h3>
 <ul>
-  <li>
-    Bruk bare spinner når du har en handling eller oppgave med innlasting.{' '}
-  </li>
-  <li>Vis bare én spinner om gangen.</li>
-  <li>
-    Spinneren kan gjerne ha en label slik at brukeren vet hva som foregår.
-  </li>
-  <li>
-    Bruk <b>aria-label</b> for å gi elementet riktige labels.
-  </li>
-  <li>
-    Spinneren kommer i svart og hvit, der svart er standardfarge. Den hvite
-    spinneren kan brukes i knapper.
-  </li>
+<li>Bruk bare spinner når du har en handling eller oppgave med innlasting.</li>
+<li>Vis bare én spinner om gangen.</li>
+<li>Spinneren skal ha et tekstalternativ for skjermlesere</li>
+<li>Spinneren kommer i svart og hvit, der svart er standardfarge. Den hvite spinneren kan brukes i knapper.</li>
+</ul>
+
+<h3>Mest relevante WCAG-krav</h3>
+<ul>
+<li>4.1.2 A, Navn, rolle, verdi</li>
+</ul>
+
+<h3>WAI-ARIA</h3>
+<ul>
+<li>Aria-label brukes for å navngi knappen for skjermlesere</li>
 </ul>
 ```
 

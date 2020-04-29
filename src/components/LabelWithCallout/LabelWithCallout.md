@@ -44,9 +44,21 @@ import SearchField from '@skatteetaten/frontend-components/SearchField';
 ```
 
 ```js noeditor uu
-  <h3>Huskeliste</h3>
-  <p>
-    Merk at flytende Callout (Calloutfloating=true) kun kan brukes i interne
-    løsninger.
-  </p>
+<h3>Tips</h3>
+<ul>
+<li>Merk at flytende Callout (Calloutfloating=true) kun kan brukes i interne løsninger.</li>
+</ul>
+
+<h3>Mest relevante WCAG-krav</h3>
+<ul>
+<li>1.3.1 A, Informasjon og relasjoner</li>
+<li>4.1.2 A, Navn, rolle, verdi</li>
+</ul>
+
+<h3>WAI-ARIA</h3>
+<ul>
+<li>Aria-expanded brukes på knappene som utvides/minimeres.</li>
+<li>Aria-label brukes for å navngi lukk-ikon i dialogen.</li>
+<li>Aria-hidden brukes for skjule ikoner for skjermleser. </li>
+</ul>
 ```

@@ -1,6 +1,11 @@
 import { mergeStyleSets } from '@uifabric/merge-styles';
 import { getTheme } from '@uifabric/styling';
 
+export const hex2rgba = (hex, alpha = 1) => {
+  const [r, g, b] = hex.match(/\w\w/g).map(x => parseInt(x, 16));
+  return `rgba(${r},${g},${b},${alpha})`;
+};
+
 export const getClassNames = function getClassNames(props, state) {
   const palette = getTheme().palette;
 
@@ -25,6 +30,33 @@ export const getClassNames = function getClassNames(props, state) {
           selectors: {
             '@media (max-width: 640px)': {
               fontSize: '24px'
+            }
+          }
+        },
+        h3: {
+          marginTop: '24px',
+          marginBottom: '4px'
+        },
+        ul: {
+          listStyleType: 'square'
+        },
+        'p > a': {
+          color: palette.skeColor.blue,
+          textDecoration: 'none',
+          fontWeight: 700,
+          paddingBottom: '1px',
+          borderBottom: `2px solid ` + hex2rgba(palette.skeColor.blue, 0.25),
+          transition: 'border-color .5s',
+          selectors: {
+            ':hover': {
+              color: palette.skeColor.darkBlue,
+              borderBottom: '2px solid ' + palette.skeColor.darkBlue
+            },
+            ':focus': {
+              color: palette.skeColor.darkBlue,
+              borderBottom: '2px solid ' + palette.skeColor.darkBlue,
+              backgroundColor: palette.skeColor.lightBlue,
+              outline: 'none'
             }
           }
         }

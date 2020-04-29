@@ -29,14 +29,24 @@ const initialState = {
 ```
 
 ```js noeditor uu
-  <h3>Huskeliste</h3>
-  <p>
-    Sjekk at den røde teksten plasseres på en flate som gir tilstrekkelig god
-    lesekontrast.
-  </p>
-  <p>
-    Feilmeldingen skal vises i umiddelbar nærhet til elementet den hører til.
-  </p>
+<h3>Tips</h3>
+<ul>
+<li>Husk at kontrastkravet (minst 4.5 i kontrast) også gjelder på feilmeldinger.</li>
+<li>Feilmeldingen skal vises i umiddelbar nærhet til elementet den hører til. I Skatteetaten vises meldingen under tilhørende felt.</li>
+</ul>
+
+<h3>Mest relevante WCAG-krav</h3>
+<ul>
+<li>1.4.3 AA, Kontrast (minimum)</li>
+<li>3.3.1 A, Identifikasjon av feil</li>
+<li>4.1.2 A, Navn, rolle, verdi</li>
+</ul>
+
+<h3>WAI-ARIA</h3>
+<ul>
+<li>Role=alert brukes på feilmeldinger for at de skal leses opp av skjermleser</li>
+<li>Aria-atomic brukes på feilmeldinger for at hele innholdet skal leses av skjermleser hvis det skjer en oppdatering (feilmelding endrer seg).</li>
+</ul>
 ```
 
 ```js noeditor beskrivelse

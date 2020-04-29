@@ -14,9 +14,11 @@ import { useId } from '@reach/auto-id';
 
 export interface DropdownProps extends IDropdownProps {
   /** Hjelpetekst */
-  help?: string;
+  help?: string | JSX.Element;
   /** Størrelse på inputfelt som skal benyttes */
   inputSize?: 'normal' | 'large';
+  /** aria-label for knapp i label */
+  labelButtonAriaLabel?: string;
   /** Overstyr label, se LabelWithCallout komponent */
   labelCallout?: LabelWithCalloutProps;
   /** @ignore */
@@ -41,6 +43,7 @@ const Dropdown: React.FC<DropdownProps> = props => {
     children,
     errorMessage,
     label,
+    labelButtonAriaLabel,
     help,
     onRenderLabel,
     className,
@@ -61,6 +64,7 @@ const Dropdown: React.FC<DropdownProps> = props => {
         id={labelId}
         inputId={inputId + '-option'}
         label={label}
+        buttonAriaLabel={labelButtonAriaLabel}
         help={help}
         onCalloutToggle={onCalloutToggle}
         {...labelCallout}

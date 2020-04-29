@@ -1,3 +1,12 @@
+### **v.3.3.3 - 29.04.2020 **
+
+- New component: ButtonLink. This component should be used when the "Call to action" is to navigate to another page.
+- Changed margins in OpenClose to match title
+- FileUploader: accessbility improvements and ability to display additional text.
+- New icon: account-multiple
+- LabelWithCallout: added ability to have aria label on help button.
+- Updated documentation: WCAG and ARIA-information, some CSS improvements and updated «Bruk og innhold» for buttons and links.
+
 ### **v.3.3.2 - 07.04.2020 **
 
 - Changed to manual version strategy. This does not affect how the components are used, it is simply a change in the way we deploy changes.

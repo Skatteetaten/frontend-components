@@ -288,6 +288,10 @@ const iconGroup = {
       usage: 'Flere enn én person'
     },
     {
+      name: 'AccountMultiple',
+      usage: 'To eller flere'
+    },
+    {
       name: 'AccountChild',
       usage: 'Familie'
     },
@@ -637,22 +641,22 @@ Object.keys(iconGroup).forEach(name => {
 ```
 
 ```js noeditor uu
-<div>
-  <h3>Huskeliste</h3>
-  <ul>
-    <li>
-      Hvis ikonet er viktig for bruk eller forståelse skal det være tydelig
-      kontrast mellom ikonfarge og bakgrunn. WCAG-kravet er da 4.5 kontrastverdi
-      som minimum. Ikoner som er til «pynt» eller brukes som støtte til tekst,
-      kan vises med minimum 3.0 i kontrastverdi.
-    </li>
-    <li>
-      Pass på at ikoner som ikke skal leses opp av skjermleser får
-      aria-attributt «role='presentation'». Dette hindrer at skjermelser vil
-      forsøke å lese opp unicode-tegnet knyttet til symbolet.
-    </li>
-  </ul>
-</div>
+<h3>Tips</h3>
+<ul>
+<li>Hvis ikonet er viktig for bruk eller forståelse skal det være tydelig kontrast mellom ikonfarge og bakgrunn. WCAG krever minst 3.0 i kontrast.</li>
+<li>Ikoner som kun er pynt bør skjules for skjermleser. Ikoner som er meningsbærende må gis et tekstalternativ, f.eks. med attributtene aria-label eller alt.</li>
+</ul>
+
+<h3>Mest relevante WCAG-krav</h3>
+<ul>
+<li>1.1.1 A, Ikke-tekstlig innhold</li>
+<li>1.4.11 AA, Kontrast for ikke-tekstlig innhold </li>
+</ul>
+
+<h3>WAI-ARIA</h3>
+<ul>
+<li>Aria-hidden brukes for å skjule ikoner for skjermleser.</li>
+</ul>
 ```
 
 ```js noeditor beskrivelse

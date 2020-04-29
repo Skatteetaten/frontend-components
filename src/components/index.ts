@@ -6,6 +6,7 @@ export * from './Accordion';
 export * from './AccordionMenu';
 export * from './ActionButton';
 export * from './Button';
+export * from './ButtonLink';
 export * from './Callout';
 export * from './Card';
 export * from './CheckBox';

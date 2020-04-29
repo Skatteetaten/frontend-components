@@ -31,9 +31,26 @@ import TabItem from '@skatteetaten/frontend-components/Tabs/TabItem';
 ```
 
 ```js noeditor uu
-<h3>Huskeliste</h3>
+<h3>Tips</h3>
+<ul>
+<li>Ikke bruk tabs til å linke til andre sider.</li>
+<li>Standard fanefunksjonalitet skal kun ha ett tabstopp på fanevalgene. Piltastene skal brukes til å bytte fane.</li>
+<li>OBS: Faner SKAL kodes med WAI-ARIA for skjermlesere.</li>
+</ul>
 
-<p>Ikke bruk tabs til å linke til andre sider.</p>
+<h3>Mest relevante WCAG-krav</h3>
+<ul>
+<li>1.3.1 A, Informasjon og relasjoner</li>
+<li>4.1.2 A, Navn, rolle, verdi</li>
+</ul>
+
+<h3>WAI-ARIA</h3>
+<ul>
+<li>Role=tablist, role=tab og role=tabpanel brukes for å definere faneelementene for skjermleser.</li>
+<li>Aria-selected brukes for gi indikere valgt fane for skjermleser.</li>
+<li>Aria-controls brukes for noen skjermlesere enkelt kan hoppe til faneinnholdet</li>
+<li>Aria-labelledby brukes for gi faneinnholdet en relasjon til fanetittel.</li>
+</ul>
 ```
 
 ```js noeditor beskrivelse

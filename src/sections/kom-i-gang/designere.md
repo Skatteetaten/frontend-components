@@ -18,7 +18,6 @@ import Button from '@skatteetaten/frontend-components/Button';
       placement="before"
     />
   </p>
-  <br />
 </div>;
 ```
 
@@ -61,7 +60,6 @@ import AccordionItem from '@skatteetaten/frontend-components/Accordion/Accordion
       </p>
     </AccordionItem>
   </Accordion>
-  <br />
 </div>;
 ```
 

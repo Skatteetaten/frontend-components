@@ -39,7 +39,7 @@ class App extends Component {
 export default App;
 ```
 
-## Tester
+### Tester
 
 Ved testing av komponenter som bruker @skatteetaten/frontend-components må temaet til Skatteetaten
 lastes inn før testene kjøres. Dette bør gjøres en gang før alle testene starter.

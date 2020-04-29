@@ -17,9 +17,11 @@ export interface SearchFieldProps extends ISearchBoxProps {
   /** Størrelsen på rammen */
   border?: 'default' | 'slim';
   /** Hjelpetekst */
-  help?: string;
+  help?: string | JSX.Element;
   /** Descriptive label for SearchField */
   label?: string;
+  /** aria-label for knapp i label */
+  labelButtonAriaLabel?: string;
   /** Overstyr label, se LabelWithCallout komponent */
   labelCallout?: LabelWithCalloutProps;
   /** Brukerspesifisert event for callout **/
@@ -57,6 +59,7 @@ const SearchField: React.FC<SearchFieldProps> = props => {
     help,
     id,
     label,
+    labelButtonAriaLabel,
     labelCallout,
     onCalloutToggle,
     onChange,
@@ -193,6 +196,7 @@ const SearchField: React.FC<SearchFieldProps> = props => {
       <LabelWithCallout
         id={labelId}
         label={label}
+        buttonAriaLabel={labelButtonAriaLabel}
         inputId={inputId}
         help={help}
         onCalloutToggle={onCalloutToggle}

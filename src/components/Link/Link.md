@@ -2,7 +2,6 @@
 
 ```js
 import Link from '@skatteetaten/frontend-components/Link';
-import { Link as RRLink, BrowserRouter as Router } from 'react-router-dom';
 
 <div className="ExampleSpacing8">
   <Link
@@ -11,7 +10,6 @@ import { Link as RRLink, BrowserRouter as Router } from 'react-router-dom';
     icon={'Download'}
     placement="before"
   />
-
   <Link
     path={'#link'}
     text={'Gå til oversikt'}
@@ -25,7 +23,6 @@ import { Link as RRLink, BrowserRouter as Router } from 'react-router-dom';
     openInNew={true}
     placement="after"
   />
-
   <br />
   <br />
   <p>
@@ -36,19 +33,31 @@ import { Link as RRLink, BrowserRouter as Router } from 'react-router-dom';
 ```
 
 ```js noeditor beskrivelse
-<h3>Velge link eller knapp</h3>
-   <p>Link brukes til å lenke til filer eller nettsider. Når brukeren klikker på lenken hentes enten filen eller nettsiden frem.</p>
-   <p>Har du derimot en handling som påvirker siden du er på, for eksempel «Lagre» eller «Send inn», bør du normalt bruke en knapp i stedet.</p>
-
-    <p>
+<h3>
+  Lenke til filer eller nettsider
+</h3>
+<p>
+  En link benytter du for å lenke til filer eller nettsider. Når brukeren klikker på lenken, kommer den aktuelle filen eller nettsiden frem.
+</p>
+<p>
+  Er lenken en handling som påvirker siden brukeren er på, for eksempel «Lagre» eller «Send inn», skal du normalt bruke en knapp i stedet. Se aksjonsknapp, knapp og ikonknapp for eksempler på knapper.
+</p>
+<p>
       Se også {' '}
       <a href="https://www.skatteetaten.no/stilogtone/produkt/skatteetatenno/lenker/">
         Skatteetatens skriveregler
       </a>{' '}
       for hjelp til å lage gode lenketekster.
     </p>
-<h3>Åpne i nytt vindu eller fane</h3>
-<p>Når man velger å åpne i nytt vindu/fane legges det til to egenskaper til lenken. Den første (target) åpner i nytt vindu, og den andre (rel) er en sikkerhetsfunksjon som bryter koblingen mellom kallende vindu og nytt vindu: dersom den åpnede fanen inneholder ondsinnet kode, kan den uten denne funksjonen få tilgang til vinduet lenken klikket fra. Dette er spesielt viktig  å ta hensyn til dersom vi lenker til eksterne sider eller sider med innhold som er brukergenerert.</p>
+<h3>
+  Åpne i nytt vindu eller fane
+</h3>
+<p>
+  Tenk gjennom hvilke egenskaper du gir lenken din. Du kan velge at innholdet i lenken din skal åpne seg i nytt vindu eller at navigeringen skal fortsette i det samme vinduet eller fanen. Som hovedregel bør lenkes åpnes i samme vindu, men dersom brukeren risikerer å miste innhold når man klikker på den, for eksempel ved utfylling av skjema, kan det være hensiktsmessig å åpne innholdet i ny fane.
+</p>
+<p>
+  Når du velger at lenken din skal åpne nettsiden eller filen i nytt vindu, legger du til to egenskaper til lenken. Den første, «target», åpner i nytt vindu, og den andre, «rel», er en sikkerhetsfunksjon som bryter koblingen mellom eksisterende vindu og nytt vindu. Dersom den åpnede fanen inneholder ondsinnet kode, kan den uten denne funksjonen, få tilgang til vinduet den var lenket fra. Dette er spesielt viktig å ta hensyn til dersom du lenker til eksterne sider eller sider med innhold som er laget av bruker.
+</p>
 
 ```
 

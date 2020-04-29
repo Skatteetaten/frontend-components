@@ -67,20 +67,34 @@ const initialState = {
 ```
 
 ```js noeditor uu
-<h3>Huskeliste</h3>
-<ul>
-  <li>
-    Test at det er mulig å nå alle funksjoner med tastatur. Datovelgeren er satt
-    opp slik at man kan skrive datoer med tastaturet når man tab-er til feltet.
-    Hvis man klikker med mus på feltet åpnes kalendervisning først og man må
-    klikke i feltet for å kunne skrive med tastatur.
-  </li>
-  <li>
-    Sjekk at fokus settes i kalenderen etter åpning - slik at en eventuell
-    skjermleser fanger opp at den vises på skjermen.
-  </li>
-  <li>Test at skjermleser leser opp fornuftige tekster i kalenderen.</li>
-</ul>
+<div>
+  <h3>Tips</h3>
+  <ul>
+    <li>
+      Datovelgeren skal kunne åpnes og brukes med kun tastatur. Sjekk at
+      tastaturfokus beholdes på feltet etter at dato er valgt.
+    </li>
+    <li>
+      Datovelgeren skal kunne åpnes og brukes med skjermleser. Mange
+      skjermleserbrukere vil nok foretrekke å skrive inn dato manuelt, men
+      datovelgeren er ikke unntatt krav. Det betyr at navigering og riktig
+      opplesing i kalenderen er viktig.
+    </li>
+  </ul>
+
+  <h3>Mest relevante WCAG-krav</h3>
+  <ul>
+    <li>1.3.1 A, Informasjon og relasjoner </li>
+    <li>3.3.2 A, Ledetekster eller instruksjoner</li>
+    <li>4.1.2 A, Navn, rolle, verdi</li>
+  </ul>
+
+  <h3>WAI-ARIA</h3>
+  <ul>
+    <li>Aria-expanded brukes på hjelp/info knapp som utvides/minimeres.</li>
+    <li>Aria-hidden brukes for å skjule hjelpeikon for skjermleser.</li>
+  </ul>
+</div>
 ```
 
 ```js noeditor beskrivelse

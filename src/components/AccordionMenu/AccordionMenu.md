@@ -151,6 +151,24 @@ const timeStampStyle = {
 ```
 
 ```js noeditor uu
+<h3>Tips</h3>
+<ul>
+<li>Det skal kun være ett tabstopp pr ekspander.</li>
+<li>Ekspandere skal ha en visuell indikator på at innhold utvides/minimeres.</li>
+<li>Sjekk at elementet leses som en ekspander med skjermleser og at du beholder fokus når du utvider/minimerer den.</li>
+</ul>
+
+<h3>Mest relevante WCAG-krav</h3>
+<ul>
+<li>1.3.1 A, Informasjon og relasjoner</li>
+<li>4.1.2 A, Navn, rolle, verdi</li>
+</ul>
+
+<h3>WAI-ARIA</h3>
+<ul>
+<li>Aria-expanded brukes på knappene som utvides/minimeres.</li>
+<li>Aria-hidden brukes for å skjule ikoner for skjermlesere.</li>
+</ul>
 <p>
   <a href="https://www.w3.org/TR/wai-aria-practices-1.1/#accordion">
     Mer om WAI-ARIA for accordion.

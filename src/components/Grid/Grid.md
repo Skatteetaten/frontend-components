@@ -138,5 +138,17 @@ import Grid from '@skatteetaten/frontend-components/Grid';
 ```
 
 ```js noeditor uu
-<p>Ingen informasjon</p>
+<h3>Tips</h3>
+<ul>
+<li>Tenk på logisk rekkefølge</li>
+</ul>
+
+<h3>Mest relevante WCAG-krav</h3>
+<ul>
+<li>1.3.2 A, Meningsfylt rekkefølge</li>
+</ul>
+
+<h3>WAI-ARIA</h3><ul>
+<li>N/A</li>
+</ul>
 ```

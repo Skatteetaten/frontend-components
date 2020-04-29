@@ -18,6 +18,8 @@ export interface ComboboxProps extends IComboBoxProps {
   help?: JSX.Element | string;
   /** Størrelse på inputfelt som skal benyttes */
   inputSize?: 'normal' | 'large';
+  /** aria-label for knapp i label */
+  labelButtonAriaLabel?: string;
   /** Overstyr label, se LabelWithCallout komponent */
   labelCallout?: LabelWithCalloutProps;
   /** Brukerspesifisert event for callout **/
@@ -38,6 +40,7 @@ const Combobox: React.FC<ComboboxProps> = props => {
     help,
     className,
     id,
+    labelButtonAriaLabel,
     labelCallout,
     onCalloutToggle,
     ...rest
@@ -53,6 +56,7 @@ const Combobox: React.FC<ComboboxProps> = props => {
         id={labelId}
         inputId={inputId + '-input'} //Fabric adds its own -input postfix
         label={label}
+        buttonAriaLabel={labelButtonAriaLabel}
         help={help}
         onCalloutToggle={onCalloutToggle}
         {...labelCallout}

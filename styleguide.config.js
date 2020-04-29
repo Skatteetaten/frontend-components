@@ -55,6 +55,7 @@ module.exports = {
     generateComponentsGroup('Knapper og lenker', [
       'ActionButton',
       'Button',
+      'ButtonLink',
       'IconButton',
       'Link',
       'LinkGroup',

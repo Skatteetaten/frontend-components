@@ -56,10 +56,24 @@ const initialState = {
 ```
 
 ```js noeditor uu
-<h3>Huskeliste</h3>
+<h3>Tips</h3>
 <ul>
-  <li>RadioButtonGroup egner seg best når det er 2–7 valg.</li>
-  <li>Hvis det er mer enn 7 valg, bruk heller komponenten Dropdown.</li>
+<li>RadioButtonGroup egner seg best når det er 2–7 valg. Hvis det er mer enn 7 valg, bruk heller komponenten Dropdown.</li>
+<li>Standard HTML er tilstrekkelig for riktig koding: bruk av fieldset og legend for gruppering av radioknapper under en ledetekst, og input med label for-attributt.</li>
+<li>Det skal kun være ett tabstopp på radioknappene med bruk av tastatur. For å bytte mellom valg av radioknapp skal piltast opp/ned brukes. Hvis du tabulerer vekk fra radioknappene og tilbake igjen, skal tastaturfokus være på valgt radioknapp.</li>
+<li>Sjekk at tilstand på avhuking (valgt/ikke valgt) leses opp av skjermleser.</li>
+</ul>
+
+<h3>Mest relevante WCAG-krav</h3>
+<ul>
+<li>1.3.1 A, Informasjon og relasjoner </li>
+<li>3.3.2 A, Ledetekster eller instruksjoner</li>
+<li>4.1.2 A, Navn, rolle, verdi</li>
+</ul>
+
+<h3>WAI-ARIA</h3>
+<ul>
+<li>N/A</li>
 </ul>
 ```
 

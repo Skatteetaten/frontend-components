@@ -39,16 +39,22 @@ export interface FileUploaderProps {
   className?: string;
   /** trigger funksjon til å slette alle filer */
   deleteAllFiles?: boolean;
+  /** Aria-label for "fjern fil"-knapp */
+  deleteButtonAriaLabel?: string;
   /** Funksjon for å slette opplastet fil */
   deleteFile?: (file: File) => void;
   /** Opplastede filer */
   files?: Array<any>;
   /** Hjelpetekst */
-  help?: string;
+  help?: string | JSX.Element;
   /** Id */
   id?: string;
+  /** Tilleggsinformasjon */
+  info?: string;
   /** Descriptive label for SearchField */
   label?: string;
+  /** aria-label for knapp i label */
+  labelButtonAriaLabel?: string;
   /** Overstyr label, se LabelWithCallout komponent */
   labelCallout?: LabelWithCalloutProps;
   /** Spinner når fil laster */
@@ -64,6 +70,8 @@ export interface FileUploaderProps {
   queryParams?: any;
   /** Funksjon for filopplasting */
   uploadFile?: (file: File) => void;
+  /**forsinkelse før opplasting i millisekunder*/
+  forsinkelse?: number;
 }
 
 export const isCorrectFileFormat = (
@@ -90,11 +98,14 @@ const FileUploader: React.FC<FileUploaderProps> = props => {
     axiosPath,
     className,
     deleteAllFiles,
+    deleteButtonAriaLabel,
     deleteFile,
     files,
     help,
     id,
+    info,
     label,
+    labelButtonAriaLabel,
     labelCallout,
     loading,
     multipleFiles,
@@ -136,24 +147,28 @@ const FileUploader: React.FC<FileUploaderProps> = props => {
           setInternalLoading(true);
           const formData = new FormData();
           formData.append('upload', file);
-          axios
-            .post<FormData, AxiosResponse<AttachmentMetadata>>(
-              axiosPath,
-              formData,
-              { params: queryParams }
-            )
-            .then(res => {
-              if (res.data) {
-                setErrorMessage('');
-                setInternalFiles([...internalFiles, res.data]);
-              }
-            })
-            .catch(error => {
-              setErrorMessage('Kunne ikke laste opp fil');
-            })
-            .finally(() => {
-              setInternalLoading(false);
-            });
+          setTimeout(
+            () =>
+              axios
+                .post<FormData, AxiosResponse<AttachmentMetadata>>(
+                  axiosPath,
+                  formData,
+                  { params: queryParams }
+                )
+                .then(res => {
+                  if (res.data) {
+                    setErrorMessage('');
+                    setInternalFiles([...internalFiles, res.data]);
+                  }
+                })
+                .catch(error => {
+                  setErrorMessage('Kunne ikke laste opp fil');
+                })
+                .finally(() => {
+                  setInternalLoading(false);
+                }),
+            props.forsinkelse || 0
+          );
         }
       } else {
         setErrorMessage('Dette filformatet er ikke godkjent');
@@ -215,13 +230,14 @@ const FileUploader: React.FC<FileUploaderProps> = props => {
       <LabelWithCallout
         id={id}
         label={label}
+        buttonAriaLabel={labelButtonAriaLabel}
         help={help}
         onCalloutToggle={onCalloutToggle}
         {...labelCallout}
       />
       <label
         htmlFor="fileupload"
-        aria-label={ariaLabel ? ariaLabel : 'fileupload'}
+        aria-label={ariaLabel ? ariaLabel : 'Filopplasting'}
         id="buttonLabel"
       >
         <div
@@ -233,6 +249,12 @@ const FileUploader: React.FC<FileUploaderProps> = props => {
           onDragLeave={handleDragLeave}
           onDragOver={handleDragOverAndDragEnter}
           onDrop={handleDrop}
+          onClick={event => {
+            event.preventDefault();
+            if (inputRef.current) {
+              inputRef.current.click();
+            }
+          }}
           onKeyPress={ev => {
             if (ev.keyCode === 0 && inputRef.current) {
               inputRef.current.click();
@@ -256,12 +278,11 @@ const FileUploader: React.FC<FileUploaderProps> = props => {
         ref={inputRef}
         multiple={multipleFiles}
         onChange={handleFileChange}
+        tabIndex={-1}
       />
+
       {acceptedFileFormats && (
-        <span
-          className={styles.acceptedFileTypesWrapper}
-          id="acceptedFileFormats"
-        >
+        <span className={styles.informationWrapper} id="acceptedFileFormats">
           Aksepterte filformater:{' '}
           <span className={styles.acceptedFileFormats}>
             {acceptedFileFormats.map(
@@ -276,25 +297,41 @@ const FileUploader: React.FC<FileUploaderProps> = props => {
           </span>
         </span>
       )}
+      {info && (
+        <div
+          className={styles.informationWrapper}
+          id="information"
+          aria-label={'informasjon'}
+        >
+          {info}
+        </div>
+      )}
       {errorMessage && <ErrorMessage>{errorMessage}</ErrorMessage>}
       {internalFiles.length > 0 && (
-        <ul className={styles.fileList}>
-          {internalFiles.map((file, index: number) => (
-            <li key={file.name.concat(index.toString())}>
-              {file.name}
-              {file.error ? (
-                <Icon iconName={'Error'} className={styles.errorColor} />
-              ) : (
-                <button
-                  className={styles.fileListCancelBtn}
-                  onClick={() => deleteFromList(file)}
-                >
-                  <Icon iconName={'Cancel'} />
-                </button>
-              )}
-            </li>
-          ))}
-        </ul>
+        <div role="alert">
+          <ul className={styles.fileList}>
+            {internalFiles.map((file, index: number) => (
+              <li key={file.name.concat(index.toString())}>
+                {file.name}
+                {file.error ? (
+                  <Icon iconName={'Error'} className={styles.errorColor} />
+                ) : (
+                  <button
+                    className={styles.fileListCancelBtn}
+                    onClick={() => deleteFromList(file)}
+                    aria-label={
+                      deleteButtonAriaLabel
+                        ? deleteButtonAriaLabel
+                        : 'Fjern fil'
+                    }
+                  >
+                    <Icon iconName={'Cancel'} />
+                  </button>
+                )}
+              </li>
+            ))}
+          </ul>
+        </div>
       )}
     </div>
   );
