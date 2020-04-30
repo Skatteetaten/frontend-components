@@ -2,12 +2,17 @@ import { mergeStyles, IStyle } from '@uifabric/merge-styles';
 import { getTheme } from '@uifabric/styling';
 import { FontSizes, FontWeights } from '../utils/fonts';
 import { PaletteProps } from '../utils/palette';
+import { takeIf } from '../utils/helpers';
 
+/**
+ * Each property contains a list of tags which should have their
+ * corresponding css style (margin, color, size, border) removed.
+ */
 interface TagStyleOptions {
-  noMargin?: Record<string, any>;
-  noColor?: Record<string, any>;
-  noSize?: Record<string, any>;
-  noBorder?: Record<string, any>;
+  noMargin?: string[];
+  noColor?: string[];
+  noSize?: string[];
+  noBorder?: string[];
 }
 
 interface TagStyle {
@@ -24,23 +29,22 @@ export const hex2rgba = (hex: string, alpha = 1): string => {
   return `rgba(${r},${g},${b},${alpha})`;
 };
 
-function hideCSSProp(tag: string, cssProp?: Record<string, any>): boolean {
-  if (typeof cssProp === 'undefined') return false;
-  else if (typeof cssProp !== 'object') return false;
-  else return cssProp[tag] !== undefined;
+function containsTag(tag: string, tags?: string[]): boolean {
+  if (Array.isArray(tags) && tags !== undefined) {
+    return tags.indexOf(tag) > -1;
+  }
+  return false;
 }
 
 const getTagStyle = (
   tag: string,
   { noMargin, noColor, noSize, noBorder }: TagStyleOptions
 ): TagStyle => ({
-  showMargin: !hideCSSProp(tag, noMargin),
-  showColor: !hideCSSProp(tag, noColor),
-  showSize: !hideCSSProp(tag, noSize),
-  showBorder: !hideCSSProp(tag, noBorder)
+  showMargin: !containsTag(tag, noMargin),
+  showColor: !containsTag(tag, noColor),
+  showSize: !containsTag(tag, noSize),
+  showBorder: !containsTag(tag, noBorder)
 });
-
-const takeIf = <T>(show: boolean, value: T) => (show ? value : undefined);
 
 const getH1Style = (
   options: TagStyleOptions,
