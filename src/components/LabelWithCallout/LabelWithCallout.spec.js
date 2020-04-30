@@ -106,45 +106,4 @@ describe('LabelWithCallout komponent', () => {
     expect(wrapper.find('legend').exists()).toEqual(true);
     expect(wrapper.find('label').exists()).toEqual(false);
   });
-  it('skal lukke callout på onBlur med closeOnBlur=true', () => {
-    const wrapper = mount(
-      <div>
-        <TextField
-          label="Fornavn"
-          value={''}
-          help="Vi trenger å vite fornavnet ditt dersom vi skal kontakte deg senere."
-          closeLabelWithCalloutOnBlur={true}
-        />
-        <TextField
-          label="Etternavn"
-          value={''}
-          help="Vi trenger å vite etternavnet ditt dersom vi skal kontakte deg senere."
-          closeLabelWithCalloutOnBlur={true}
-        />
-      </div>
-    );
-    const helpIconFirst = wrapper.find('.ms-Button--icon').first();
-    helpIconFirst.simulate('click');
-    expect(wrapper.exists('Callout')).toEqual(true);
-    expect(
-      wrapper
-        .find('Callout')
-        .first()
-        .text()
-    ).toEqual(
-      'Vi trenger å vite fornavnet ditt dersom vi skal kontakte deg senere.'
-    );
-    const helpIconLast = wrapper.find('.ms-Button--icon').last();
-    helpIconFirst.simulate('blur');
-    helpIconLast.simulate('click');
-    expect(wrapper.exists('Callout')).toEqual(true);
-    expect(
-      wrapper
-        .find('Callout')
-        .first()
-        .text()
-    ).toEqual(
-      'Vi trenger å vite etternavnet ditt dersom vi skal kontakte deg senere.'
-    );
-  });
 });

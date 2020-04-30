@@ -13,14 +13,14 @@ export interface LabelWithCalloutProps
   extends React.HTMLAttributes<HTMLDivElement> {
   /** aria-label */
   ariaLabel?: string;
+  /** Avgjør om callout vinduet skal lukkes automatisk når området utenfor vinduet klikkes */
+  autoDismiss?: boolean;
   /** aria-label for help/warning-knapp */
   buttonAriaLabel?: string;
   /** Tittel for help/warning-knapp */
   buttonTitle?: string;
   calloutFloating?: boolean;
   className?: string;
-  /** Lukk callout på blur */
-  closeOnBlur?: boolean;
   editable?: boolean;
   editFunction?: () => void;
   help?: string | JSX.Element;
@@ -43,11 +43,11 @@ export interface LabelWithCalloutProps
 const LabelWithCallout = (props: LabelWithCalloutProps) => {
   const {
     ariaLabel,
+    autoDismiss,
     buttonAriaLabel,
     buttonTitle,
     calloutFloating = false,
     className,
-    closeOnBlur,
     editable,
     editFunction,
     help,
@@ -83,12 +83,6 @@ const LabelWithCallout = (props: LabelWithCalloutProps) => {
       onCalloutToggle(oldCalloutState, newCalloutState);
     }
     return;
-  };
-  const onBlurEvent = () => {
-    if (closeOnBlur) {
-      setIsCalloutVisible(false);
-      toggleEvent();
-    }
   };
 
   return onRenderLabel ? (
@@ -128,9 +122,6 @@ const LabelWithCallout = (props: LabelWithCalloutProps) => {
               toggleEvent();
             }}
             className={styles.icon}
-            onBlur={() => {
-              onBlurEvent();
-            }}
           />
         </span>
       )}
@@ -146,9 +137,6 @@ const LabelWithCallout = (props: LabelWithCalloutProps) => {
               toggleEvent();
             }}
             className={styles.warningicon}
-            onBlur={() => {
-              onBlurEvent();
-            }}
           />
         </span>
       )}
@@ -162,9 +150,6 @@ const LabelWithCallout = (props: LabelWithCalloutProps) => {
               ariaLabel={buttonAriaLabel}
               onClick={editFunction}
               className={styles.icon}
-              onBlur={() => {
-                onBlurEvent();
-              }}
             />
           )}
         </span>
@@ -183,6 +168,13 @@ const LabelWithCallout = (props: LabelWithCalloutProps) => {
           onClose={() => {
             setIsCalloutVisible(false);
             toggleEvent();
+          }}
+          autoDismiss={autoDismiss}
+          onDismiss={() => {
+            if (autoDismiss) {
+              setIsCalloutVisible(false);
+              toggleEvent();
+            }
           }}
         >
           {help && !warning ? helpElement : warningElement}

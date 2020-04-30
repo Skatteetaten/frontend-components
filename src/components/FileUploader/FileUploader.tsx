@@ -38,7 +38,7 @@ export interface FileUploaderProps {
   /** CSS class */
   className?: string;
   /** Lukk callout på blur */
-  closeLabelWithCalloutOnBlur?: boolean;
+  labelWithCalloutAutoDismiss?: boolean;
   /** trigger funksjon til å slette alle filer */
   deleteAllFiles?: boolean;
   /** Funksjon for å slette opplastet fil */
@@ -91,7 +91,7 @@ const FileUploader: React.FC<FileUploaderProps> = props => {
     ariaLabel,
     axiosPath,
     className,
-    closeLabelWithCalloutOnBlur,
+    labelWithCalloutAutoDismiss,
     deleteAllFiles,
     deleteFile,
     files,
@@ -220,7 +220,7 @@ const FileUploader: React.FC<FileUploaderProps> = props => {
         label={label}
         help={help}
         onCalloutToggle={onCalloutToggle}
-        closeOnBlur={closeLabelWithCalloutOnBlur}
+        autoDismiss={labelWithCalloutAutoDismiss}
         {...labelCallout}
       />
       <label

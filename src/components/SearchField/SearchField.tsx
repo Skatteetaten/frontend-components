@@ -15,7 +15,7 @@ import { useId } from '@reach/auto-id';
 
 export interface SearchFieldProps extends ISearchBoxProps {
   /** Lukk callout på blur */
-  closeLabelWithCalloutOnBlur?: boolean;
+  labelWithCalloutAutoDismiss?: boolean;
   /** Størrelsen på rammen */
   border?: 'default' | 'slim';
   /** Hjelpetekst */
@@ -56,7 +56,7 @@ const searchInList = (options: Array<IDropdownOption>, filterText: string) => {
 const SearchField: React.FC<SearchFieldProps> = props => {
   const {
     className,
-    closeLabelWithCalloutOnBlur,
+    labelWithCalloutAutoDismiss,
     help,
     id,
     label,
@@ -199,7 +199,7 @@ const SearchField: React.FC<SearchFieldProps> = props => {
         inputId={inputId}
         help={help}
         onCalloutToggle={onCalloutToggle}
-        closeOnBlur={closeLabelWithCalloutOnBlur}
+        autoDismiss={labelWithCalloutAutoDismiss}
         {...labelCallout}
       />
       {options ? (

@@ -13,7 +13,7 @@ import { useId } from '@reach/auto-id';
 
 export interface ComboboxProps extends IComboBoxProps {
   /** Lukk callout på blur */
-  closeLabelWithCalloutOnBlur?: boolean;
+  labelWithCalloutAutoDismiss?: boolean;
   /** Egendefinert feilmelding */
   errorMessage?: IComboBoxProps['errorMessage'];
   /** Hjelpetekst */
@@ -35,7 +35,7 @@ export interface ComboboxProps extends IComboBoxProps {
 const Combobox: React.FC<ComboboxProps> = props => {
   const {
     children,
-    closeLabelWithCalloutOnBlur,
+    labelWithCalloutAutoDismiss,
     errorMessage,
     label,
     help,
@@ -58,7 +58,7 @@ const Combobox: React.FC<ComboboxProps> = props => {
         label={label}
         help={help}
         onCalloutToggle={onCalloutToggle}
-        closeOnBlur={closeLabelWithCalloutOnBlur}
+        autoDismiss={labelWithCalloutAutoDismiss}
         {...labelCallout}
       />
       <VirtualizedComboBox

@@ -14,7 +14,7 @@ import { useId } from '@reach/auto-id';
 
 export interface DropdownProps extends IDropdownProps {
   /** Lukk callout på blur */
-  closeLabelWithCalloutOnBlur?: boolean;
+  labelWithCalloutAutoDismiss?: boolean;
   /** Hjelpetekst */
   help?: string | JSX.Element;
   /** Størrelse på inputfelt som skal benyttes */
@@ -41,7 +41,7 @@ interface DropdownState {
 const Dropdown: React.FC<DropdownProps> = props => {
   const {
     children,
-    closeLabelWithCalloutOnBlur,
+    labelWithCalloutAutoDismiss,
     errorMessage,
     label,
     help,
@@ -66,7 +66,7 @@ const Dropdown: React.FC<DropdownProps> = props => {
         label={label}
         help={help}
         onCalloutToggle={onCalloutToggle}
-        closeOnBlur={closeLabelWithCalloutOnBlur}
+        autoDismiss={labelWithCalloutAutoDismiss}
         {...labelCallout}
       />
       <FabricDropdown

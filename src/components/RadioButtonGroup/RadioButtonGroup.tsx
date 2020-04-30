@@ -18,7 +18,7 @@ export interface RadioButtonGroupProps extends IChoiceGroupProps {
   calloutFloating?: boolean;
   className?: string;
   /** Lukk callout på blur */
-  closeLabelWithCalloutOnBlur?: boolean;
+  labelWithCalloutAutoDismiss?: boolean;
   /** Hjelpetekst */
   help?: JSX.Element | string;
   /** Feilmelding */
@@ -46,7 +46,7 @@ const RadioButtonGroup = (props: RadioButtonGroupProps) => {
     calloutFloating,
     children,
     className,
-    closeLabelWithCalloutOnBlur,
+    labelWithCalloutAutoDismiss,
     errorMessage,
     help,
     warning,
@@ -79,7 +79,7 @@ const RadioButtonGroup = (props: RadioButtonGroupProps) => {
         inFieldset={true}
         calloutFloating={calloutFloating}
         onCalloutToggle={onCalloutToggle}
-        closeOnBlur={closeLabelWithCalloutOnBlur}
+        autoDismiss={labelWithCalloutAutoDismiss}
         {...labelCallout}
       />
       <FabricChoiceGroup

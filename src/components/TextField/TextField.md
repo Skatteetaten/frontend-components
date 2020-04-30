@@ -4,14 +4,13 @@ Standard tekstfelt:
 
 ```js
 import TextField from '@skatteetaten/frontend-components/TextField';
-const [navn, setNavn] = React.useState('Bob Testbruker');
 
 <div style={{ width: '300px' }}>
   <TextField
     id={'my-input'}
     label={'Navn'}
-    value={navn}
-    onChange={(e, value) => setNavn(value)}
+    value={state.value}
+    onChange={(e, value) => setState({ value: value })}
   />
 </div>;
 ```
@@ -20,14 +19,13 @@ Stor variant av tekstfelt:
 
 ```js
 import TextField from '@skatteetaten/frontend-components/TextField';
-const [navn, setNavn] = React.useState('Bob Testbruker');
 
 <div style={{ width: '300px' }}>
   <TextField
     label={'Navn'}
     inputSize={'large'}
-    value={navn}
-    onChange={(e, value) => setNavn(value)}
+    value={state.value}
+    onChange={(e, value) => setState({ value })}
   />
 </div>;
 ```
@@ -36,17 +34,14 @@ Hjelpetekster og advarsel:
 
 ```js
 import TextField from '@skatteetaten/frontend-components/TextField';
-const [navn, setNavn] = React.useState('Alice Middleman');
-const [antBarn, setAntBarn] = React.useState('23');
 
 <>
   <div style={{ width: '300px' }}>
     <TextField
       label="Fullt navn"
-      value={navn}
-      onChange={(e, value) => setNavn(value)}
+      value={state.value1}
+      onChange={(e, value) => setState({ value1: value })}
       help="Vi trenger å vite navnet ditt dersom vi skal kontakte deg senere."
-      closeLabelWithCalloutOnBlur={true}
     />
   </div>
   <br />
@@ -55,10 +50,9 @@ const [antBarn, setAntBarn] = React.useState('23');
       label="Antall barn"
       placeholder={''}
       inputMode={'numeric'}
-      value={antBarn}
+      value={'23'}
       warning="Er du sikker på at antall barn er riktig?"
-      onChange={(e, value) => setAntBarn(value)}
-      closeLabelWithCalloutOnBlur={true}
+      onChange={(e, value) => setState({ value2: value })}
     />
   </div>
 </>;
@@ -68,12 +62,12 @@ Feilmelding vises i umiddelbar nærhet til feltet:
 
 ```js
 import TextField from '@skatteetaten/frontend-components/TextField';
-const [year, setYear] = React.useState('2007');
+
 <div style={{ width: '160px' }}>
   <TextField
     label="Inntektsår"
-    value={year}
-    onChange={(e, value) => setYear(value)}
+    value={state.value}
+    onChange={(e, value) => setState({ value })}
     errorMessage={
       state.value !== '2008' ? 'Inntekståret må være etter 2008.' : null
     }
@@ -128,11 +122,11 @@ Bestemt formatering:
 
 ```js
 import TextField from '@skatteetaten/frontend-components/TextField';
-const [orgNr, setOrgNr] = React.useState('123456789');
+
 <div style={{ width: '300px' }}>
   <TextField
-    value={orgNr}
-    onChange={(e, value) => setOrgNr(value)}
+    value={state.value}
+    onChange={(e, value) => setState({ value })}
     label={'Org.nummer (9 siffer)'}
     mask={'999 999 999'}
     maskChar={''}
@@ -144,14 +138,18 @@ Multiline tekstfelt:
 
 ```js
 import TextField from '@skatteetaten/frontend-components/TextField';
-const [lineBreak, setLineBreak] = React.useState(false);
+
 <div style={{ width: '300px' }}>
   <TextField
     label="Endres til multiline dersom teksten er lengre enn 50 tegn"
-    placeholder="Skriv en lang tekst"
-    multiline={lineBreak}
+    multiline={state.lineBreak}
     onChange={(e, value) => {
-      setLineBreak(value.length > 50);
+      const lineBreak = value.length > 50;
+      if (lineBreak !== state.lineBreak) {
+        setState({
+          lineBreak: lineBreak
+        });
+      }
     }}
   />
   <br />
