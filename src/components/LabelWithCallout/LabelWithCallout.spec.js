@@ -2,7 +2,6 @@ import React from 'react';
 import { mount, shallow } from 'enzyme';
 import { matches } from './../utils/test-utils';
 import LabelWithCallout from './LabelWithCallout';
-import TextField from '../TextField';
 
 function oppsettFullDOM(props) {
   return mount(<LabelWithCallout {...props} />);
