@@ -275,7 +275,7 @@ export const getClassNames = props => {
       }
     },
     wrapperStep: {
-      display: props.showStep ? 'block' : undefined,
+      display: props.showStep ? 'block' : 'none',
       counterIncrement: 'step-counter',
       position: 'relative',
       padding: props.stepType === 'result' ? '0 18px' : '0 20px',
