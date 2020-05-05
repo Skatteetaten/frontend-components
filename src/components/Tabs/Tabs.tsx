@@ -21,7 +21,7 @@ export interface TabProps extends IPivotProps {
  * @visibleName Tabs (Arkfane)
  */
 
-const Tabs: React.FC<IPivotProps> = props => {
+const Tabs: React.FC<TabProps> = props => {
   const { children, className, ...rest } = props;
   return (
     <Pivot

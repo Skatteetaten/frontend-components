@@ -27,8 +27,7 @@ export const getClassNames = function getClassNames(props: TabProps) {
             },
             ':active': {
               background: palette.skeColor.darkBlue,
-              color: palette.skeColor.white,
-              border: `2px solid ${palette.skeColor.darkBlue}`
+              color: palette.skeColor.white
             }
           }
         },
@@ -56,6 +55,9 @@ export const getClassNames = function getClassNames(props: TabProps) {
           background: palette.skeColor.burgundy,
           fontWeight: FontWeights.regular,
           borderBottom: 'none',
+          border: props.border
+            ? `2px solid ${palette.skeColor.burgundy}`
+            : 'none',
           selectors: {
             ':before': {
               borderBottom: 'none'
