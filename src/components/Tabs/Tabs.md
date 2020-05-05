@@ -30,6 +30,32 @@ import TabItem from '@skatteetaten/frontend-components/Tabs/TabItem';
 </Tabs>;
 ```
 
+Tabs med border og underline for å fremheve klikkbare elementer:
+
+```js
+import Card from '@skatteetaten/frontend-components/Card';
+import Tabs from '@skatteetaten/frontend-components/Tabs';
+import TabItem from '@skatteetaten/frontend-components/Tabs/TabItem';
+
+<Card>
+  <Tabs border={true} underline={true}>
+    <TabItem
+      headerText="Tilgjengelige oppgaver"
+      itemCount={23}
+      itemKey="itemKey-1"
+    >
+      Alle tilgjenlige oppgaver
+    </TabItem>
+    <TabItem headerText="Mine oppgaver" itemCount={2} itemKey="itemKey-2">
+      Mine oppgaver
+    </TabItem>
+    <TabItem headerText="Andres oppgaver" itemCount={67} itemKey="itemKey-3">
+      Andres oppgaver
+    </TabItem>
+  </Tabs>
+</Card>;
+```
+
 ```js noeditor uu
 <h3>Tips</h3>
 <ul>
