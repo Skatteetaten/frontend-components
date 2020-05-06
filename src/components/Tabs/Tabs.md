@@ -19,13 +19,13 @@ import TabItem from '@skatteetaten/frontend-components/Tabs/TabItem';
     itemCount={23}
     itemKey="itemKey-1"
   >
-    Innhold #1
+    Tilgjengelige oppgaver
   </TabItem>
   <TabItem headerText="Mine oppgaver" itemCount={2} itemKey="itemKey-2">
-    Innhold #2
+    Mine oppgaver
   </TabItem>
   <TabItem headerText="Andres oppgaver" itemCount={67} itemKey="itemKey-3">
-    Innhold #3
+    Andres oppgaver
   </TabItem>
 </Tabs>;
 ```
@@ -38,13 +38,37 @@ import Tabs from '@skatteetaten/frontend-components/Tabs';
 import TabItem from '@skatteetaten/frontend-components/Tabs/TabItem';
 
 <Card>
-  <Tabs border={true} underline={true}>
+  <Tabs border={true}>
     <TabItem
       headerText="Tilgjengelige oppgaver"
       itemCount={23}
       itemKey="itemKey-1"
     >
-      Alle tilgjenlige oppgaver
+      Alle tilgjengelige oppgaver
+    </TabItem>
+    <TabItem headerText="Mine oppgaver" itemCount={2} itemKey="itemKey-2">
+      Mine oppgaver
+    </TabItem>
+    <TabItem headerText="Andres oppgaver" itemCount={67} itemKey="itemKey-3">
+      Andres oppgaver
+    </TabItem>
+  </Tabs>
+</Card>;
+```
+
+```js
+import Card from '@skatteetaten/frontend-components/Card';
+import Tabs from '@skatteetaten/frontend-components/Tabs';
+import TabItem from '@skatteetaten/frontend-components/Tabs/TabItem';
+
+<Card>
+  <Tabs underline={true}>
+    <TabItem
+      headerText="Tilgjengelige oppgaver"
+      itemCount={23}
+      itemKey="itemKey-1"
+    >
+      Alle tilgjengelige oppgaver
     </TabItem>
     <TabItem headerText="Mine oppgaver" itemCount={2} itemKey="itemKey-2">
       Mine oppgaver
