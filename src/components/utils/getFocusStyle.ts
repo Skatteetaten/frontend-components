@@ -11,7 +11,7 @@ export function getFocusStyle(
       '::-moz-focus-inner': {
         border: '0'
       },
-      '.ms-Fabric.is-focusVisible.is-focusVisible &:focus:after': {
+      '.ms-Fabric--isFocusVisible &:focus:after': {
         content: '""',
         left: inset + 1,
         top: inset + 1,

@@ -43,7 +43,7 @@ import AccordionItem from '@skatteetaten/frontend-components/Accordion/Accordion
       stepId={'step-1-2'}
     >
       <ol>
-        <li>Gå til Sketch > Preferences</li>
+        <li>Gå til Sketch {'>'} Preferences</li>
         <li>Velg Libraries</li>
         <li>Trykk på Add library</li>
         <li>Bla gjennom og velg filen fra 1)</li>

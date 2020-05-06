@@ -1,17 +1,19 @@
-import { mergeStyleSets } from '@uifabric/merge-styles';
+import { mergeStyleSets, IRawStyle } from '@uifabric/merge-styles';
 import { getTheme } from '@uifabric/styling';
 import { PaletteProps } from '..';
 import { NavigationTileProps } from './NavigationTile';
 
-function getType(props: NavigationTileProps) {
+function getType(props: NavigationTileProps): IRawStyle {
   if (props.type === 'left') {
     return {
       display: 'block'
     };
+  } else {
+    return {};
   }
 }
 
-function getIcon(props: NavigationTileProps) {
+function getIcon(props: NavigationTileProps): IRawStyle {
   if (props.alignIcon === 'right') {
     return {
       fontSize: '28px',
@@ -27,7 +29,7 @@ function getIcon(props: NavigationTileProps) {
   };
 }
 
-function getTitle(props: NavigationTileProps) {
+function getTitle(props: NavigationTileProps): IRawStyle {
   const palette = getTheme().palette as PaletteProps;
   if (props.alignTitle === 'left') {
     return {
@@ -36,10 +38,12 @@ function getTitle(props: NavigationTileProps) {
       marginBottom: '8px',
       color: palette.skeColor.blue
     };
+  } else {
+    return {};
   }
 }
 
-function getDescription(props: NavigationTileProps) {
+function getDescription(props: NavigationTileProps): IRawStyle {
   const palette = getTheme().palette as PaletteProps;
   if (props.alignDescription === 'left') {
     return {
@@ -48,12 +52,13 @@ function getDescription(props: NavigationTileProps) {
       lineHeight: '25px',
       color: palette.skeColor.blackAlt
     };
+  } else {
+    return {};
   }
 }
 
 export const getClassNames = (props: NavigationTileProps) => {
   const palette = getTheme().palette as PaletteProps;
-  // @ts-ignore TODO
   return mergeStyleSets({
     content: {
       selectors: {
