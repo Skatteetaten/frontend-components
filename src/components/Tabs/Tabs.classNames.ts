@@ -27,7 +27,10 @@ export const getClassNames = function getClassNames(props: TabProps) {
             },
             ':active': {
               background: palette.skeColor.darkBlue,
-              color: palette.skeColor.white
+              color: palette.skeColor.white,
+              border: props.border
+                ? `2px solid ${palette.skeColor.darkBlue}`
+                : 'none'
             }
           }
         },
