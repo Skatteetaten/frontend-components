@@ -3,41 +3,33 @@
 exports[`MessageBar komponent matcher snapshot 1`] = `
 <div>
   <div
-    style={
-      Object {
-        "background": "#ffffff",
-      }
-    }
+    className="ms-MessageBar ms-MessageBar-multiline entered root-43"
   >
     <div
-      className="ms-MessageBar ms-MessageBar-multiline entered root-78"
+      className="ms-MessageBar-content content-44"
     >
       <div
-        className="ms-MessageBar-content content-79"
+        aria-hidden={true}
+        className="ms-MessageBar-icon iconContainer-45"
       >
-        <div
+        <i
           aria-hidden={true}
-          className="ms-MessageBar-icon iconContainer-80"
+          className="icon-55"
+          data-icon-name="Info"
         >
-          <i
-            aria-hidden={true}
-            className="icon-90"
-            data-icon-name="Info"
-          >
-            
-          </i>
-        </div>
-        <div
-          aria-live="polite"
-          className="ms-MessageBar-text text-82"
-          id="MessageBar0"
+          
+        </i>
+      </div>
+      <div
+        aria-live="polite"
+        className="ms-MessageBar-text text-47"
+        id="MessageBar0"
+        role="status"
+      >
+        <span
+          className="ms-MessageBar-innerText innerText-48"
           role="status"
-        >
-          <span
-            className="ms-MessageBar-innerText innerText-83"
-            role="status"
-          />
-        </div>
+        />
       </div>
     </div>
   </div>

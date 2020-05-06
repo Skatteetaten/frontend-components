@@ -1,4 +1,3 @@
-import 'isomorphic-fetch';
 import { withRouter } from 'react-router';
 import TopBanner from '../../components/TopBanner';
 import FooterContent from '../../components/FooterContent';
