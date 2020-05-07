@@ -46,23 +46,25 @@ import React from 'react';
 import FileUploader, {
   FileFormatTypes
 } from '@skatteetaten/frontend-components/FileUploader';
-const files = [];
-const [filesToComponent, setFilesToComponent] = React.useState(files);
+const [files, setFiles] = React.useState([]);
 
-<div style={{ width: '300px' }}>
+<div style={{ width: '400px' }}>
   <FileUploader
     label={'Last opp bilde'}
     acceptedFileFormats={[FileFormatTypes.png, FileFormatTypes.jpg]}
-    files={filesToComponent}
+    files={files}
     multipleFiles={true}
     uploadFile={file => {
       files.push(file);
-      setFilesToComponent([...files]);
+      setFiles([...files]);
     }}
     deleteFile={file => {
       const newList = files.filter(fileInList => fileInList !== file);
       setFiles(newList);
     }}
+    info={
+      'Husk at du bør sjekke dokumentene for sensitive personopplysninger, og eventuelt fjerne disse før dokumentene settes inn.'
+    }
   />
 </div>;
 ```

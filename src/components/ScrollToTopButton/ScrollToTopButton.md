@@ -15,13 +15,16 @@ import ScrollToTopButton from '@skatteetaten/frontend-components/ScrollToTopButt
 ```
 
 ```js noeditor beskrivelse
-
-<h3>Går til toppen av siden</h3>
+<h3>
+  Knapp for å navigere til toppen av siden
+</h3>
 <p>
-  ScrollToTopButton brukes når man har lange sider og det er nyttig å gå tilbake
-  til toppen av siden. Ved skjermbredde større enn 1170px vises symbolet nede
-  til høyre som overlay. Er skjermbredden mindre vises den sentrert.
+  ScrollToTopButton bruker du på lange sider når det er nyttig for brukeren å gå tilbake til toppen av siden. Dersom skjermbredden er større enn 1170px skal du plassere symbolet nede til høyre, og er skjermbredden mindre skal symbolet være sentrert. Brukeren vil se knappen som et overlag.
 </p>
+<p>
+  Knappen må kunne brukes med tastatur, ikke bare rulle med mus.
+</p>
+
 ```
 
 ```js noeditor uu

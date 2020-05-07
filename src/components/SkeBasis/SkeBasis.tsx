@@ -1,4 +1,9 @@
-import { createTheme, loadTheme, registerIcons } from '@uifabric/styling';
+import {
+  createTheme,
+  loadTheme,
+  registerIcons,
+  IIconSubset
+} from '@uifabric/styling';
 import {
   Fabric,
   IFabricProps
@@ -16,14 +21,7 @@ const palette = {
 interface SkeBasisProps extends IFabricProps {
   palette?: object;
   fonts?: object;
-  icons?: Array<{
-    style: object;
-    fontFace: {
-      fontFamily: string;
-      src: string;
-    };
-    icons: object;
-  }>;
+  icons?: Array<IIconSubset>;
 }
 
 class SkeBasis extends React.PureComponent<SkeBasisProps> {
@@ -37,8 +35,7 @@ class SkeBasis extends React.PureComponent<SkeBasisProps> {
     icons: [SkeBasis.ICONS.SkeIcons, SkeBasis.ICONS.MdIcons]
   };
 
-  // @ts-ignore TODOHeidi
-  constructor(props) {
+  constructor(props: SkeBasisProps) {
     super(props);
     const { palette, fonts } = props;
 
@@ -47,13 +44,17 @@ class SkeBasis extends React.PureComponent<SkeBasisProps> {
       loadTheme(theme);
     }
     if (props.icons) {
-      // @ts-ignore TODO
       props.icons.forEach(iconFont => registerIcons(iconFont));
     }
   }
 
   render() {
-    return <Fabric {...this.props}>{this.props.children}</Fabric>;
+    const fabricProps: IFabricProps = {
+      dir: 'ltr',
+      ...this.props
+    };
+
+    return <Fabric {...fabricProps}>{this.props.children}</Fabric>;
   }
 }
 

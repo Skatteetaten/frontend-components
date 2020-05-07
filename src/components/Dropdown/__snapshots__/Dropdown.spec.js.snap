@@ -11,10 +11,10 @@ exports[`Dropdown komponent matcher snapshot 1`] = `
   <StyledWithResponsiveMode
     calloutProps={
       Object {
-        "className": "SkeDropdownValg-78",
+        "className": "SkeDropdownValg-43",
       }
     }
-    className="SkeDropdown-77"
+    className="SkeDropdown-42"
     id="dropdown-undefined-input"
     onRenderCaretDown={[Function]}
     options={

@@ -80,26 +80,24 @@ const links = [
 ```
 
 ```js noeditor beskrivelse
-<h3>Samling av lenker til navigasjon</h3>
-  <p>
-      LinkGroup er en samling av lenker, og kan brukes til navigasjon når
-      brukeren har flere mulig etterfølgende valg. For enkeltstående lenker,
-      eller hvis du trenger andre ikoner, kan du bruke <a href="#link">Link</a>{' '}
-      i stedet.{' '}
-    </p>
-    <p>
-      Standarden vi bruker i tekst er blå skrift og understrekning. Hvis
-      bakgrunnen krever en annen farge enn blå for å være leselig og oppfylle
-      kontrastkravet, brukes en annen farge; for eksempel hvit på svart bakgrunn
-      som i innlogget header eller hvit på burgunder i footer.
-    </p>
+<h3>
+  Samling av lenker til navigasjon
+</h3>
+<p>
+  LinkGroup er en samling av lenker, og kan brukes til navigasjon når brukeren har flere mulig etterfølgende valg. Hvis du trenger enkeltstående lenker eller ikoner, bruker du <a href="#link">Link</a>{' '} i stedet.
+</p>
+<p>
+  Standarden vi bruker i tekst er blå skrift og understrekning. Hvis bakgrunnen krever en annen farge enn blå, for å være leselig og for å oppfylle kontrastkravet, skal du bruke en annen farge. Et eksempel er hvit på svart bakgrunn som i innlogget header eller hvit på burgunder i footer.
+</p>
 
-    <p>
-      Se{' '}
+<p>Se også {' '}
       <a href="https://www.skatteetaten.no/stilogtone/produkt/skatteetatenno/lenker/">
         Skatteetatens skriveregler
       </a>{' '}
-      for hjelp til å lage gode lenker.
+      for hjelp til å lage gode lenketekster.
+    </p>
+    <p>
+      Lenketeksten eller alternativ tekst, som grafisk lenke, skal tydeliggjøre hva som er målet til lenken.
     </p>
 
 ```

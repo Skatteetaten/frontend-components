@@ -288,6 +288,10 @@ const iconGroup = {
       usage: 'Flere enn én person'
     },
     {
+      name: 'AccountMultiple',
+      usage: 'To eller flere'
+    },
+    {
       name: 'AccountChild',
       usage: 'Familie'
     },

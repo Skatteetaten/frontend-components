@@ -29,6 +29,8 @@ export interface TextFieldProps extends ITextFieldProps {
   inputSize?: 'normal' | 'large';
   /** Setter inputmode (html 5) på tekstefeltet */
   inputMode?: ITextFieldProps['inputMode'];
+  /** aria-label for knapp i label */
+  labelButtonAriaLabel?: string;
   /** Størrelse på label */
   labelSize?: 'small' | 'large';
   /** Tekst inni feltet som vises før man skriver */
@@ -62,6 +64,7 @@ export const TextField: React.FC<TextFieldProps> = ({
   errorMessage,
   id,
   label,
+  labelButtonAriaLabel,
   mask,
   inputMode,
   onCalloutToggle,
@@ -121,6 +124,7 @@ export const TextField: React.FC<TextFieldProps> = ({
         id={labelId}
         inputId={inputId}
         label={label}
+        buttonAriaLabel={labelButtonAriaLabel}
         editFunction={onEdit}
         warning={rest.warning}
         help={rest.help}

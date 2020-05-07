@@ -1,12 +1,10 @@
 import { mergeStyles } from '@uifabric/merge-styles';
-import { Animation } from '../utils/getAnimationStyles';
-import { FontSizes, IconFontSizes } from '..';
+import { FontSizes, IconFontSizes, PaletteProps } from '..';
 import { getTheme } from '@uifabric/styling';
 import { MessageBarType } from 'office-ui-fabric-react/lib-commonjs/MessageBar';
-import { PaletteProps } from '..';
 import { MessageBarProps } from './MessageBar';
 
-function getBackgroundColor(props: MessageBarProps) {
+function getBackgroundColor(props: MessageBarProps['type']) {
   const palette = getTheme().palette as PaletteProps;
 
   switch (props) {
@@ -27,14 +25,10 @@ function getBackgroundColor(props: MessageBarProps) {
       };
   }
 }
-// @ts-ignore TODO
-export const getClassNames = props => {
+export const getClassNames = (props: MessageBarProps) => {
   const palette = getTheme().palette as PaletteProps;
   const severe = props.type === MessageBarType.severeWarning;
-  // @ts-ignore TODO
-  const fadeOut = Animation.fadeOutNormal;
   const { size } = props;
-  // @ts-ignore TODO
   return mergeStyles([
     {
       selectors: {
@@ -44,9 +38,6 @@ export const getClassNames = props => {
           selectors: {
             '&.fade-exit': {
               opacity: 1
-            },
-            '&.fade-exit-active': {
-              ...fadeOut
             }
           }
         },
@@ -66,7 +57,7 @@ export const getClassNames = props => {
           fontSize: size === 'large' ? IconFontSizes.mega : IconFontSizes.large,
           selectors: {
             '@media (max-width: 640px)': {
-              fontSize: size === 'large' && IconFontSizes.large,
+              fontSize: size === 'large' ? IconFontSizes.large : undefined,
               margin: size === 'large' ? '10px 0 0 10px' : ''
             }
           }
@@ -78,7 +69,7 @@ export const getClassNames = props => {
           padding: size === 'large' ? '7px 0px 0px 30px' : '-2px 0px 0px 0px',
           selectors: {
             '@media (max-width: 640px)': {
-              fontSize: size === 'large' && IconFontSizes.large,
+              fontSize: size === 'large' ? IconFontSizes.large : undefined,
               padding: size === 'large' ? '7px 0px 0px 8px' : '-2px 0px 0px 0px'
             }
           }

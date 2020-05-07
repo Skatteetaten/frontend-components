@@ -29,6 +29,23 @@ describe('FileUploader komponent', () => {
         .text()
     ).toEqual('Aksepterte filformater: .jpg, .png');
   });
+  it('skal rendre med info', () => {
+    const wrapper = oppsettShallow({
+      info:
+        'Husk å sjekke for sensitive personopplysninger, og evt fjerne disse før du laster opp vedleggene.',
+      ariaLabel: 'Filopplaster',
+      uploadFile: jest.fn()
+    });
+    expect(wrapper.find('label').props()['aria-label']).toEqual('Filopplaster');
+    expect(
+      wrapper
+        .find('div')
+        .last()
+        .text()
+    ).toEqual(
+      'Husk å sjekke for sensitive personopplysninger, og evt fjerne disse før du laster opp vedleggene.'
+    );
+  });
   it('skal kjøre uploadFile-funksjon når bruker laster opp fil', () => {
     const mockFunc = jest.fn();
     const wrapper = oppsettFullDOM({

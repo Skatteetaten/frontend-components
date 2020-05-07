@@ -27,6 +27,8 @@ export interface RadioButtonGroupProps extends IChoiceGroupProps {
   horizontal?: boolean;
   /** Callout warning */
   warning?: JSX.Element | string;
+  /** aria-label for knapp i label */
+  labelButtonAriaLabel?: string;
   /** Overstyr label, se LabelWithCallout komponent */
   labelCallout?: LabelWithCalloutProps;
   /** Brukerspesifisert event for callout **/
@@ -52,6 +54,7 @@ const RadioButtonGroup = (props: RadioButtonGroupProps) => {
     warning,
     id,
     label,
+    labelButtonAriaLabel,
     labelCallout,
     onCalloutToggle,
     options,
@@ -74,6 +77,7 @@ const RadioButtonGroup = (props: RadioButtonGroupProps) => {
     <fieldset id={id} className={styles.fieldset}>
       <LabelWithCallout
         label={label}
+        buttonAriaLabel={labelButtonAriaLabel}
         help={help}
         warning={warning}
         inFieldset={true}

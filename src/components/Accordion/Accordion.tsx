@@ -5,18 +5,18 @@ import classnames from 'classnames';
 import { AccordionItemProps } from './AccordionItem';
 
 interface AccordionProps extends React.HTMLAttributes<HTMLDivElement> {
-  /** Benyttes når man skal ta brukeren gjennom en sekvens av trinnvise steg. */
-  children?: React.ReactNode;
-  processList?: boolean;
-  stepId?: string;
-  /** Overstyring av stiler */
-  className?: string;
   /** aria-label */
   ariaLabel?: string;
+  /** Benyttes når man skal ta brukeren gjennom en sekvens av trinnvise steg. */
+  children?: React.ReactNode;
+  /** Overstyring av stiler */
+  className?: string;
   /** Gjør teksten (toggleButtonText-attributtet) i knappen som toggler AccordionItem til en overskrift.
    * Eg. headingLevel = 1 gir \<h1>{toggleButtonText}\</h1>.
    * Verdi 1-6.*/
   headingLevel?: number;
+  processList?: boolean;
+  stepId?: string;
 }
 
 /**
