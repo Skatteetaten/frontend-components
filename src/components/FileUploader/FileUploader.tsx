@@ -72,8 +72,8 @@ export interface FileUploaderProps {
   uploadFile?: (file: File) => void;
   /**forsinkelse før opplasting i millisekunder*/
   forsinkelse?: number;
-  /**erstatte non-ord karakter med "_" */
-  normaliseFileName?: boolean;
+  /**erstatter tegn som er ugyldig e i BIG-IP med "_" */
+  normalizeFileName?: boolean;
 }
 
 export const isCorrectFileFormat = (
@@ -95,7 +95,7 @@ export const isCorrectFileFormat = (
 const nonWordCharacterRegex = /\W/g;
 const fileNameRegex = /\.(?=[^.]+$)/;
 
-export const normalise = (file: File) => {
+export const normalize = (file: File) => {
   const nameList = file.name.split(fileNameRegex);
   const fileName = nameList[0];
   const normalizedName = fileName.replace(nonWordCharacterRegex, '_');
@@ -124,7 +124,7 @@ const FileUploader: React.FC<FileUploaderProps> = props => {
     onCalloutToggle,
     queryParams,
     uploadFile,
-    normaliseFileName
+    normalizeFileName
   } = props;
   const styles = getClassNames(props);
   const [internalFiles, setInternalFiles] = React.useState<Array<any>>(
@@ -162,7 +162,7 @@ const FileUploader: React.FC<FileUploaderProps> = props => {
           formData.append(
             'upload',
             file,
-            normaliseFileName ? normalise(file) : undefined
+            normalizeFileName ? normalize(file) : undefined
           );
           formData.append('originalFileName', file.name);
           setTimeout(
