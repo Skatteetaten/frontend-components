@@ -37,6 +37,24 @@ import SearchField from '@skatteetaten/frontend-components/SearchField';
 </div>;
 ```
 
+Flere komponeter har LabelWithCallout innebygd. Her med autoDismiss:
+
+```js
+import TextField from '@skatteetaten/frontend-components/TextField';
+
+<>
+  <div style={{ width: '300px' }}>
+    <TextField
+      label="Fullt navn"
+      labelWithCalloutAutoDismiss={true}
+      value={state.value1}
+      onChange={(e, value) => setState({ value1: value })}
+      help="Vi trenger å vite navnet ditt dersom vi skal kontakte deg senere."
+    />
+  </div>
+</>;
+```
+
 ```js noeditor beskrivelse
 <h3>Hjelpekomponent</h3>
 <p>Dette er i hovedsak en hjelpekomponent som brukes av input-komponentene. Det er for eksempel denne som brukes til å vise label og hjelpetekst og i toppen av TextField og DatePicker.</p>
