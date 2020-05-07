@@ -1,10 +1,9 @@
-import { mergeStyleSets } from '@uifabric/merge-styles';
+import { mergeStyleSets, IStyle } from '@uifabric/merge-styles';
 import { getTheme } from '@uifabric/styling';
 import { FontSizes, FontWeights } from '..';
 import { PaletteProps } from '..';
 
-// @ts-ignore TODO
-const getStepContentPadding = stepType => {
+const getStepContentPadding = (stepType: string): string => {
   if (stepType === 'next') {
     return '10px 0';
   } else if (stepType === 'result') {
@@ -13,19 +12,26 @@ const getStepContentPadding = stepType => {
     return '0';
   }
 };
-// @ts-ignore TODO
-const getStepContentInner = (stepType, activeStep, palette) => {
+
+const getStepContentInner = (
+  stepType: string,
+  activeStep: boolean,
+  palette: PaletteProps
+): IStyle => {
   if (stepType !== 'result') {
     return {
       display: activeStep ? 'block' : 'flex',
       width: '100%',
       margin: '0 0 8px 0',
-      selectors: stepType !== 'next' && {
-        button: {
-          right: 0,
-          bottom: 0
-        }
-      }
+      selectors:
+        stepType !== 'next'
+          ? {
+              button: {
+                right: 0,
+                bottom: 0
+              }
+            }
+          : {}
     };
   } else {
     return {
@@ -38,11 +44,10 @@ const getStepContentInner = (stepType, activeStep, palette) => {
     };
   }
 };
-// @ts-ignore TODO
+
 export const getClassNames = props => {
   const palette = getTheme().palette as PaletteProps;
 
-  // @ts-ignore TODO
   return mergeStyleSets({
     arrowLine: {
       float: 'right',
@@ -154,7 +159,9 @@ export const getClassNames = props => {
       bottom: 0,
       marginTop: '10px',
       height:
-        (props.stepType === 'next' || props.stepType === 'result') && '30px',
+        props.stepType === 'next' || props.stepType === 'result'
+          ? '30px'
+          : undefined,
       selectors: {
         '&::after': props.stepType === 'next' && {
           border: 'solid ' + palette.skeColor.lightGrey,
@@ -176,7 +183,9 @@ export const getClassNames = props => {
         '@media only screen and (max-width: 479px)': {
           width: '1px',
           height:
-            (props.stepType === 'next' || props.stepType === 'result') && '25px'
+            props.stepType === 'next' || props.stepType === 'result'
+              ? '25px'
+              : undefined
         }
       }
     },
@@ -250,9 +259,10 @@ export const getClassNames = props => {
         '@media only screen and (max-width: 479px)': {
           display: 'flex',
           borderTop:
-            props.stepType === 'result' &&
-            `2px solid ${palette.skeColor.green}`,
-          margin: props.stepType === 'result' && 0
+            props.stepType === 'result'
+              ? `2px solid ${palette.skeColor.green}`
+              : undefined,
+          margin: props.stepType === 'result' ? 0 : undefined
         }
       }
     },
@@ -265,7 +275,7 @@ export const getClassNames = props => {
       }
     },
     wrapperStep: {
-      display: props.showStep ? 'block' : ' none',
+      display: props.showStep ? 'block' : 'none',
       counterIncrement: 'step-counter',
       position: 'relative',
       padding: props.stepType === 'result' ? '0 18px' : '0 20px',

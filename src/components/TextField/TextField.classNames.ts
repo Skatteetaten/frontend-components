@@ -40,7 +40,6 @@ export const getClassNames = (props: TextFieldProps) => {
     ? palette.skeColor.error
     : palette.skeColor.blackAlt;
 
-  // @ts-ignore TODO
   return mergeStyles({
     displayName: 'SkeTextField',
     selectors: {
@@ -77,9 +76,7 @@ export const getClassNames = (props: TextFieldProps) => {
       },
       '&.is-active.ms-TextField--underlined .ms-TextField-wrapper': {
         border: `1px solid ${color}`,
-        outlineColor: color,
-        outlineWidth: '1px',
-        outlineStyle: 'solid'
+        outline: `1px solid ${color}`
       },
       // Ikke lengre i bruk
       '& .ms-TextField-field[readOnly]': {
