@@ -1,4 +1,4 @@
-Skatteetatens Designsystem støtter de nettleserne som brukes av mer enn 2 % av de besøkende på skatteetaten.no. Per dags dato betyr det at vi støtter de to siste versjonene av:
+Designsystemet i Skatteetaten støtter nettlesere som blir brukt av mer enn 2 % på skatteetaten.no. Vi støtter nå følgende nettlesere (oppdatert mai 2020):
 
 - Chrome (ca. 41,9 %)
 - Safari (ca. 32,7 %)
@@ -19,14 +19,14 @@ import Link from '@skatteetaten/frontend-components/Link';
   <Accordion>
     <AccordionItem
       toggleContent
-      toggleButtonText={'Varsler i løsningene'}
+      toggleButtonText={'Varsle når nettleser er gammel eller under 2%-grensen'}
       stepId={'step-1-3'}
     >
       <p>
-        Når vi oppdager at brukeren har gammel nettleser skal vedkommende få
-        beskjed om det. Dette gjør vi ved hjelp av en tydelig meldingslinje på
-        toppen av skjermen. En slik meldingslinje skal inneholde lenke til
-        dokumentasjon som hjelper brukeren videre.
+        Når vi oppdager at brukeren har gammel nettleser skal vi gi beskjed om
+        det. Dette gjør vi ved hjelp av en tydelig meldingslinje på toppen av
+        skjermen. En slik meldingslinje skal inneholde lenke til dokumentasjon
+        som hjelper brukeren videre.
       </p>
       <p>Hvis bruker har en nettleser som vi ikke støtter:</p>
       <MessageBar onDismiss={() => null}>
@@ -51,7 +51,7 @@ import Link from '@skatteetaten/frontend-components/Link';
     </AccordionItem>
     <AccordionItem
       toggleContent
-      toggleButtonText={'Nettleser uten JavaScript'}
+      toggleButtonText={'Gi beskjed når nettleser er uten JavaScript'}
       stepId={'step-1-2'}
     >
       <p>
@@ -59,7 +59,7 @@ import Link from '@skatteetaten/frontend-components/Link';
         finnes små mindre enheter uten JavaScript. Bruk derfor &lt;noscript&gt;
         taggen for å vise en melding til disse brukerne. For eksempel:
         &lt;noscript&gt;Har du skrudd av JavaScript i nettleseren din? For at
-        løsningen skal fungere (best mulig) må du slå på JavaScript
+        løsningen skal fungere (best mulig) må du slå på JavaScript.
         &lt;/noscript&gt;
       </p>
     </AccordionItem>
