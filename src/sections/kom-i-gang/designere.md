@@ -65,7 +65,7 @@ import AccordionItem from '@skatteetaten/frontend-components/Accordion/Accordion
 
 ### Axure-komponenter
 
-Komponentene finnes også i Axure-versjon. Etter at du har fått tilgang til dem vil de automatisk dukke opp i widget-menyen din i Axure. Du kan også bla i kompoentene:
+Komponentene finnes også i Axure-versjon. Etter at du har fått tilgang til dem vil de automatisk dukke opp i widget-menyen din i Axure. Du kan også bla i komponentene:
 
 ```js noeditor
 import OpenClose from '@skatteetaten/frontend-components/OpenClose';
