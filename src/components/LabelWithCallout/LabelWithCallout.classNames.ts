@@ -22,21 +22,20 @@ function getLabelSize(props: LabelWithCalloutProps) {
 
 function getDisplay(props: LabelWithCalloutProps) {
   const { help, warning } = props;
-  if (help !== undefined || warning !== undefined) {
-    return { display: 'initial' };
-  } else return { display: 'inline-block' };
+  return help !== undefined || warning !== undefined
+    ? 'initial'
+    : 'inline-block';
 }
 
 export const getClassNames = (props: LabelWithCalloutProps) => {
   const palette = getTheme().palette as PaletteProps;
   const { calloutFloating } = props;
 
-  // @ts-ignore //TODO merge
   return mergeStyleSets({
     calloutContext: {
       selectors: {
         '& .ms-Callout-container': {
-          position: !calloutFloating && 'inherit',
+          position: !calloutFloating ? 'inherit' : undefined,
           margin: !calloutFloating ? '10px 0' : 0,
           width: '100%'
         },
@@ -61,11 +60,11 @@ export const getClassNames = (props: LabelWithCalloutProps) => {
     label: {
       paddingBottom: 4,
       paddingLeft: 0,
-      ...getDisplay(props),
+      display: getDisplay(props),
+      color: palette.skeColor.blackAlt,
+      fontWeight: FontWeights.regular,
+      ...getLabelSize(props),
       selectors: {
-        color: palette.skeColor.blackAlt,
-        fontWeight: FontWeights.regular,
-        ...getLabelSize(props),
         '& .ms-Label': {
           fontWeight: FontWeights.regular
         }
@@ -75,10 +74,10 @@ export const getClassNames = (props: LabelWithCalloutProps) => {
       paddingLeft: 0,
       paddingBottom: 4,
       display: 'inline-block',
+      color: palette.skeColor.blackAlt,
+      fontWeight: FontWeights.regular,
+      ...getLabelSize(props),
       selectors: {
-        color: palette.skeColor.blackAlt,
-        fontWeight: FontWeights.regular,
-        ...getLabelSize(props),
         '& .ms-Label': {
           fontWeight: FontWeights.regular
         },

@@ -1,210 +1,256 @@
-import { mergeStyles } from '@uifabric/merge-styles';
+import { mergeStyles, IStyle } from '@uifabric/merge-styles';
 import { getTheme } from '@uifabric/styling';
 import { FontSizes, FontWeights } from '../utils/fonts';
-// @ts-ignore TODO
-import includes from 'lodash/includes';
-import { PaletteProps } from '..';
+import { PaletteProps } from '../utils/palette';
+import { takeIf } from '../utils/helpers';
+
+/**
+ * Each property contains a list of tags which should have their
+ * corresponding css style (margin, color, size, border) removed.
+ */
+interface TagStyleOptions {
+  noMargin?: string[];
+  noColor?: string[];
+  noSize?: string[];
+  noBorder?: string[];
+}
+
+interface TagStyle {
+  showMargin: boolean;
+  showColor: boolean;
+  showSize: boolean;
+  showBorder: boolean;
+}
 
 const defaultMargin = '16px 0 4px 0';
 
-export const hex2rgba = (hex, alpha = 1) => {
-  const [r, g, b] = hex.match(/\w\w/g).map(x => parseInt(x, 16));
+export const hex2rgba = (hex: string, alpha = 1): string => {
+  const [r, g, b] = hex.match(/\w\w/g)?.map(x => parseInt(x, 16)) ?? [];
   return `rgba(${r},${g},${b},${alpha})`;
 };
 
-// @ts-ignore TODO
-function hideCSSProp(tag, cssProp) {
-  if (typeof cssProp === 'undefined') return false;
-  else if (typeof cssProp !== 'object') return false;
-  else return !!includes(cssProp, tag);
+function containsTag(tag: string, tags?: string[]): boolean {
+  if (Array.isArray(tags) && tags !== undefined) {
+    return tags.indexOf(tag) > -1;
+  }
+  return false;
 }
-// @ts-ignore TODO
-const getTagStyle = (tag, { noMargin, noColor, noSize, noBorder }) => ({
-  showMargin: !hideCSSProp(tag, noMargin),
-  showColor: !hideCSSProp(tag, noColor),
-  showSize: !hideCSSProp(tag, noSize),
-  showBorder: !hideCSSProp(tag, noBorder)
+
+const getTagStyle = (
+  tag: string,
+  { noMargin, noColor, noSize, noBorder }: TagStyleOptions
+): TagStyle => ({
+  showMargin: !containsTag(tag, noMargin),
+  showColor: !containsTag(tag, noColor),
+  showSize: !containsTag(tag, noSize),
+  showBorder: !containsTag(tag, noBorder)
 });
-// @ts-ignore TODO
-const getH1Style = (props, palette) => {
-  const { showSize, showMargin, showColor } = getTagStyle('h1', props);
+
+const getH1Style = (
+  options: TagStyleOptions,
+  palette: PaletteProps
+): IStyle => {
+  const { showSize, showMargin, showColor } = getTagStyle('h1', options);
   return {
-    fontSize: showSize && FontSizes.superLarge,
+    fontSize: takeIf(showSize, FontSizes.superLarge),
     lineHeight: '48px',
     fontWeight: FontWeights.bold,
-    margin: showMargin && '40px 0 8px 0',
-    color: showColor && palette.skeColor.blackAlt,
+    margin: takeIf(showMargin, '40px 0 8px 0'),
+    color: takeIf(showColor, palette.skeColor.blackAlt),
     selectors: {
       '@media (max-width: 640px)': {
-        fontSize: showSize && FontSizes.xxLarge,
-        margin: showMargin && '32px 0 4px 0',
+        fontSize: takeIf(showSize, FontSizes.xxLarge),
+        margin: takeIf(showMargin, '32px 0 4px 0'),
         lineHeight: '40px'
       },
       '@media (max-width: 480px)': {
-        fontSize: showSize && FontSizes.xLarge,
-        margin: showMargin && '32px 0 4px 0',
+        fontSize: takeIf(showSize, FontSizes.xLarge),
+        margin: takeIf(showMargin, '32px 0 4px 0'),
         lineHeight: '40px'
       }
     }
   };
 };
-// @ts-ignore TODO
-const getH2Style = (props, palette) => {
-  const { showColor, showMargin, showSize } = getTagStyle('h2', props);
+
+const getH2Style = (
+  options: TagStyleOptions,
+  palette: PaletteProps
+): IStyle => {
+  const { showColor, showMargin, showSize } = getTagStyle('h2', options);
   return {
-    fontSize: showSize && FontSizes.xxLarge,
+    fontSize: takeIf(showSize, FontSizes.xxLarge),
     lineHeight: '32px',
     fontWeight: FontWeights.bold,
-    margin: showMargin && '32px 0 8px 0',
-    color: showColor && palette.skeColor.blackAlt,
+    margin: takeIf(showMargin, '32px 0 8px 0'),
+    color: takeIf(showColor, palette.skeColor.blackAlt),
     selectors: {
       '@media (max-width: 640px)': {
-        fontSize: showSize && FontSizes.xLarge,
-        margin: showMargin && defaultMargin,
+        fontSize: takeIf(showSize, FontSizes.xLarge),
+        margin: takeIf(showMargin, defaultMargin),
         lineHeight: '28px'
       },
       '@media (max-width: 480px)': {
-        fontSize: showSize && FontSizes.large,
-        margin: showMargin && defaultMargin,
+        fontSize: takeIf(showSize, FontSizes.large),
+        margin: takeIf(showMargin, defaultMargin),
         lineHeight: '28px'
       }
     }
   };
 };
-// @ts-ignore TODO
-const getH3Style = (props, palette) => {
-  const { showSize, showMargin, showColor } = getTagStyle('h3', props);
+
+const getH3Style = (
+  options: TagStyleOptions,
+  palette: PaletteProps
+): IStyle => {
+  const { showSize, showMargin, showColor } = getTagStyle('h3', options);
   return {
-    fontSize: showSize && FontSizes.xLarge,
+    fontSize: takeIf(showSize, FontSizes.xLarge),
     fontWeight: FontWeights.bold,
-    margin: showMargin && '24px 0 8px 0',
-    color: showColor && palette.skeColor.blackAlt,
+    margin: takeIf(showMargin, '24px 0 8px 0'),
+    color: takeIf(showColor, palette.skeColor.blackAlt),
     selectors: {
       '@media (max-width: 640px)': {
-        fontSize: showSize && FontSizes.largePlus,
-        margin: showMargin && defaultMargin
+        fontSize: takeIf(showSize, FontSizes.largePlus),
+        margin: takeIf(showMargin, defaultMargin)
       },
       '@media (max-width: 480px)': {
-        fontSize: showSize && FontSizes.large,
-        margin: showMargin && defaultMargin
+        fontSize: takeIf(showSize, FontSizes.large),
+        margin: takeIf(showMargin, defaultMargin)
       }
     }
   };
 };
-// @ts-ignore TODO
-const getH4Style = (props, palette) => {
-  const { showSize, showMargin, showColor } = getTagStyle('h4', props);
+
+const getH4Style = (
+  options: TagStyleOptions,
+  palette: PaletteProps
+): IStyle => {
+  const { showSize, showMargin, showColor } = getTagStyle('h4', options);
   return {
-    fontSize: showSize && FontSizes.large,
+    fontSize: takeIf(showSize, FontSizes.large),
     fontWeight: FontWeights.bold,
-    margin: showMargin && '16px 0 0 0',
-    color: showColor && palette.skeColor.blackAlt,
+    margin: takeIf(showMargin, '16px 0 0 0'),
+    color: takeIf(showColor, palette.skeColor.blackAlt),
     selectors: {
       '@media (max-width: 640px)': {
-        fontSize: showSize && FontSizes.mediumPlus,
-        margin: showMargin && '8px 0 0 0'
+        fontSize: takeIf(showSize, FontSizes.mediumPlus),
+        margin: takeIf(showMargin, '8px 0 0 0')
       },
       '@media (max-width: 480px)': {
-        fontSize: showSize && FontSizes.medium,
-        margin: showMargin && '8px 0 0 0'
+        fontSize: takeIf(showSize, FontSizes.medium),
+        margin: takeIf(showMargin, '8px 0 0 0')
       }
     }
   };
 };
-// @ts-ignore TODO
-const getPStyle = (props, palette) => {
-  const { showSize, showMargin, showColor } = getTagStyle('p', props);
+
+const getPStyle = (options: TagStyleOptions, palette: PaletteProps): IStyle => {
+  const { showSize, showMargin, showColor } = getTagStyle('p', options);
   return {
-    fontSize: showSize && FontSizes.medium,
+    fontSize: takeIf(showSize, FontSizes.medium),
     fontWeight: FontWeights.regular,
     lineHeight: '23px',
-    margin: showMargin && '14px 0 0 0',
-    color: showColor && palette.skeColor.blackAlt,
+    margin: takeIf(showMargin, '14px 0 0 0'),
+    color: takeIf(showColor, palette.skeColor.blackAlt),
     selectors: {
       '@media (max-width: 640px)': {
-        fontSize: showSize && FontSizes.smallPlus,
+        fontSize: takeIf(showSize, FontSizes.smallPlus),
         lineHeight: '22px'
       },
       '@media (max-width: 480px)': {
-        fontSize: showSize && FontSizes.small,
+        fontSize: takeIf(showSize, FontSizes.small),
         lineHeight: '22px'
       }
     }
   };
 };
-// @ts-ignore TODO
-const getUlStyle = (props, palette) => {
-  const { showSize, showMargin, showColor } = getTagStyle('ul', props);
+
+const getUlStyle = (
+  options: TagStyleOptions,
+  palette: PaletteProps
+): IStyle => {
+  const { showSize, showMargin, showColor } = getTagStyle('ul', options);
   return {
     listStyleType: 'square',
-    fontSize: showSize && FontSizes.medium,
-    margin: showMargin && '16px 0 16px 0',
+    fontSize: takeIf(showSize, FontSizes.medium),
+    margin: takeIf(showMargin, '16px 0 16px 0'),
     lineHeight: '22px',
-    color: showColor && palette.skeColor.blackAlt,
+    color: takeIf(showColor, palette.skeColor.blackAlt),
     selectors: {
       '@media (max-width: 640px)': {
-        fontSize: showSize && FontSizes.smallPlus,
+        fontSize: takeIf(showSize, FontSizes.smallPlus),
         lineHeight: '22px'
       },
       '@media (max-width: 480px)': {
-        fontSize: showSize && FontSizes.small,
+        fontSize: takeIf(showSize, FontSizes.small),
         lineHeight: '22px'
       }
     }
   };
 };
-// @ts-ignore TODO
-const getOlStyle = (props, palette) => {
-  const { showSize, showMargin, showColor } = getTagStyle('ol', props);
+
+const getOlStyle = (
+  options: TagStyleOptions,
+  palette: PaletteProps
+): IStyle => {
+  const { showSize, showMargin, showColor } = getTagStyle('ol', options);
   return {
-    fontSize: showSize && FontSizes.medium,
-    margin: showMargin && '16px 0 16px 0',
+    fontSize: takeIf(showSize, FontSizes.medium),
+    margin: takeIf(showMargin, '16px 0 16px 0'),
     lineHeight: '24px',
-    color: showColor && palette.skeColor.blackAlt,
+    color: takeIf(showColor, palette.skeColor.blackAlt),
     selectors: {
       '@media (max-width: 640px)': {
-        fontSize: showSize && FontSizes.smallPlus,
+        fontSize: takeIf(showSize, FontSizes.smallPlus),
         lineHeight: '22px'
       },
       '@media (max-width: 480px)': {
-        fontSize: showSize && FontSizes.small,
+        fontSize: takeIf(showSize, FontSizes.small),
         lineHeight: '22px'
       }
     }
   };
 };
-// @ts-ignore TODO
-const getBlockqouteStyle = (props, palette) => {
-  const { showSize, showMargin, showColor } = getTagStyle('blockquote', props);
+
+const getBlockqouteStyle = (
+  options: TagStyleOptions,
+  palette: PaletteProps
+): IStyle => {
+  const { showSize, showMargin, showColor } = getTagStyle(
+    'blockquote',
+    options
+  );
   return {
-    fontSize: showSize && FontSizes.medium,
+    fontSize: takeIf(showSize, FontSizes.medium),
     fontWeight: FontWeights.regular,
     lineHeight: '22px',
-    margin: showMargin && '16px 24px',
+    margin: takeIf(showMargin, '16px 24px'),
     padding: '8px 24px',
-    color: showColor && palette.skeColor.blackAlt,
+    color: takeIf(showColor, palette.skeColor.blackAlt),
     borderLeft: `4px solid ${palette.skeColor.brown}`,
     selectors: {
       '@media (max-width: 640px)': {
-        fontSize: showSize && FontSizes.smallPlus,
+        fontSize: takeIf(showSize, FontSizes.smallPlus),
         lineHeight: '22px'
       },
       '@media (max-width: 480px)': {
-        fontSize: showSize && FontSizes.small,
+        fontSize: takeIf(showSize, FontSizes.small),
         lineHeight: '22px'
       }
     }
   };
 };
-// @ts-ignore TODO
-const getAStyle = (props, palette) => {
-  const { showColor, showBorder } = getTagStyle('a', props);
+
+const getAStyle = (options: TagStyleOptions, palette: PaletteProps): IStyle => {
+  const { showColor, showBorder } = getTagStyle('a', options);
   return {
-    color: showColor && palette.skeColor.blue,
+    color: takeIf(showColor, palette.skeColor.blue),
     textDecoration: 'none',
     paddingBottom: '1px',
-    borderBottom:
-      showBorder && `2px solid ` + hex2rgba(palette.skeColor.blue, 0.25),
+    borderBottom: takeIf(
+      showBorder,
+      `2px solid ${hex2rgba(palette.skeColor.blue, 0.25)}`
+    ),
     transition: 'border-color .5s',
     selectors: {
       ':hover': {
@@ -220,10 +266,9 @@ const getAStyle = (props, palette) => {
     }
   };
 };
-// @ts-ignore TODO
+
 export const getClassNames = function getClassNames(props) {
   const palette = getTheme().palette as PaletteProps;
-  // @ts-ignore TODO
   return mergeStyles([
     {
       displayName: 'SkeTypography',

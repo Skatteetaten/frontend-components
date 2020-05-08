@@ -47,6 +47,8 @@ const DEFAULTPARSEDATEFROMSTRING = (
   return null;
 };
 export interface DatePickerProps extends IDatePickerProps {
+  /** Lukk callout på blur */
+  labelWithCalloutAutoDismiss?: boolean;
   /** Tilstand som kan benyttes når datovelger skal vises i lesemodus */
   readonlyMode?: boolean;
   /** Kan overstyre standard feilmelding hvis felt er påkrevd */
@@ -111,6 +113,7 @@ export default class DatePicker extends React.Component<DatePickerProps> {
       calloutFloating,
       children,
       className,
+      labelWithCalloutAutoDismiss,
       errorMessage = null,
       id,
       help,
@@ -134,6 +137,7 @@ export default class DatePicker extends React.Component<DatePickerProps> {
           buttonAriaLabel={labelButtonAriaLabel}
           help={help}
           calloutFloating={calloutFloating}
+          autoDismiss={labelWithCalloutAutoDismiss}
           onCalloutToggle={onCalloutToggle}
           {...labelCallout}
         />

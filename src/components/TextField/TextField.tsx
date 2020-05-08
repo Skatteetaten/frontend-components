@@ -16,6 +16,8 @@ export interface TextFieldProps extends ITextFieldProps {
   boldText?: boolean;
   /** Bestemmer om hjelptekst/varseltekst skal legge seg mellom label og tekstfelt eller flytende over innhold */
   calloutFloating?: boolean;
+  /** Lukk callout på blur */
+  labelWithCalloutAutoDismiss?: boolean;
   /** Bestemmer om ett readOnly felt skal være alltid redigerbart om det er tomt */
   editableWhenEmpty?: boolean;
   /** Benyttes når et readOnly felt skal være redigertbart  */
@@ -57,6 +59,7 @@ export const TextField: React.FC<TextFieldProps> = ({
   calloutFloating,
   children,
   className,
+  labelWithCalloutAutoDismiss,
   editable,
   errorMessage,
   id,
@@ -129,6 +132,7 @@ export const TextField: React.FC<TextFieldProps> = ({
         editable={editable}
         inputSize={rest.inputSize}
         calloutFloating={calloutFloating}
+        autoDismiss={labelWithCalloutAutoDismiss}
         onRenderLabel={onRenderLabel}
         onCalloutToggle={onCalloutToggle}
       />
