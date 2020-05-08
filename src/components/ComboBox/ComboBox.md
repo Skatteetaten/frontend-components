@@ -144,7 +144,7 @@ let error = 'En feil';
     <li>Aria-hidden brukes for å skjule hjelpeikon for skjermleser.</li>
     <li>
       Aria-expanded, role=combobox og aria-owns brukes på &lt;div&gt;. Dette
-      brukes for at skjermleser skal få beskjed om at det er en combox med en
+      brukes for at skjermleser skal få beskjed om at det er en combobox med en
       tilhørende liste som utvides/minimeres.
     </li>
     <li>

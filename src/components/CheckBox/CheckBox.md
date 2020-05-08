@@ -16,7 +16,7 @@ import CheckBox from '@skatteetaten/frontend-components/CheckBox';
 ```js noeditor uu
 <h3>Tips</h3>
 <ul>
-<li>Sjekk at tilstand på avhuking (valgt/ikke valgt) leses opp av skjermleser. OBS: Det trengs ikke noe WAI ARIA for å få til dette hvis sjekkboksen er kodet riktig med HTML (input og label med for-attributt).</li>
+<li>Sjekk at tilstand på avhuking (valgt/ikke valgt) leses opp av skjermleser. OBS: Det trengs ikke noe WAI-ARIA for å få til dette hvis sjekkboksen er kodet riktig med HTML (input og label med for-attributt).</li>
 <li>Bruk fieldset og legend-elementer for gruppering av flere sjekkbokser under en ledetekst.</li>
 </ul>
 

@@ -55,7 +55,7 @@ import Link from '@skatteetaten/frontend-components/Link';
         <li>Dårlig kontrast</li>
         <li>Forvirrende om/når den kan velges</li>
         <li>Brukere kan gå glipp av tilstandsendring</li>
-        <li>Noen skjermlesere leser leser ikke elementer som er disabled</li>
+        <li>Noen skjermlesere leser ikke elementer som er disabled</li>
         <li>Alternativ: Aktiv knapp (blå) med eventuelle feilmeldinger</li>
       </ul>
     </li>
