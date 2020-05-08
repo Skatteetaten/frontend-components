@@ -74,6 +74,8 @@ export interface FileUploaderProps {
   uploadFile?: (file: File) => void;
   /**forsinkelse før opplasting i millisekunder*/
   forsinkelse?: number;
+  /**erstatter tegn som er ugyldig e i BIG-IP med "_" */
+  normalizeFileName?: boolean;
 }
 
 export const isCorrectFileFormat = (
@@ -90,6 +92,16 @@ export const isCorrectFileFormat = (
     }
   }
   return false;
+};
+
+const nonWordCharacterRegex = /\W/g;
+const fileNameRegex = /\.(?=[^.]+$)/;
+
+export const normalize = (file: File) => {
+  const nameList = file.name.split(fileNameRegex);
+  const fileName = nameList[0];
+  const normalizedName = fileName.replace(nonWordCharacterRegex, '_');
+  return normalizedName.concat('.', nameList[1]);
 };
 
 const FileUploader: React.FC<FileUploaderProps> = props => {
@@ -114,7 +126,8 @@ const FileUploader: React.FC<FileUploaderProps> = props => {
     multipleFiles,
     onCalloutToggle,
     queryParams,
-    uploadFile
+    uploadFile,
+    normalizeFileName
   } = props;
   const styles = getClassNames(props);
   const [internalFiles, setInternalFiles] = React.useState<Array<any>>(
@@ -149,7 +162,12 @@ const FileUploader: React.FC<FileUploaderProps> = props => {
         if (axiosPath) {
           setInternalLoading(true);
           const formData = new FormData();
-          formData.append('upload', file);
+          formData.append(
+            'upload',
+            file,
+            normalizeFileName ? normalize(file) : undefined
+          );
+          formData.append('originalFileName', file.name);
           setTimeout(
             () =>
               axios
