@@ -1,4 +1,4 @@
-For å evaluere brukeropplevelsen til en løsning er det brukervennligstesting vi normalt støtter oss til. Men av og til kan det også være nyttig å evaluere på andre måter; for eksempel å sjekke opp mot solide grunnprinsipper for god design.
+For å evaluere brukeropplevelsen til en løsning er det brukervennlighetstesting vi normalt støtter oss til. Men av og til kan det også være nyttig å evaluere på andre måter; for eksempel å sjekke opp mot solide grunnprinsipper for god design.
 
 Listen under inneholder ti generelle grunnprinsipper for design av brukergrensesnitt, som har vist seg å holde vann. Det finnes unntak, men de er sjeldne, så dersom du har en løsning som bryter med noen av disse, anbefaler vi å brukerteste ekstra grundig.
 

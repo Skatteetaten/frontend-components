@@ -47,6 +47,10 @@ module.exports = {
           content: 'src/sections/kom-i-gang/utviklere.md'
         },
         {
+          name: 'Nettleserstøtte',
+          content: 'src/sections/kom-i-gang/nettlesere.md'
+        },
+        {
           name: 'Versjonshistorikk',
           content: 'CHANGELOG.md'
         }

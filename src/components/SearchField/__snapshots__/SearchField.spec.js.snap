@@ -5,26 +5,27 @@ exports[`SearchField komponent matcher snapshot 1`] = `
   id="searchfield-1"
 >
   <div
-    className="ms-SearchBox SkeSearchField-88"
+    className="ms-SearchBox SkeSearchField-53"
     onFocusCapture={[Function]}
     role="search"
   >
     <div
       aria-hidden={true}
-      className="ms-SearchBox-iconContainer iconContainer-89"
+      className="ms-SearchBox-iconContainer iconContainer-54"
       onClick={[Function]}
     >
       <i
         aria-hidden={true}
-        className="ms-SearchBox-icon icon-94"
+        className="ms-SearchBox-icon icon-59"
         data-icon-name="Search"
       >
         
       </i>
     </div>
     <input
-      className="ms-SearchBox-field field-92"
+      className="ms-SearchBox-field field-57"
       id="SearchBox0"
+      onBlur={[Function]}
       onChange={[Function]}
       onInput={[Function]}
       onKeyDown={[Function]}

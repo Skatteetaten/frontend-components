@@ -43,7 +43,7 @@ import AccordionItem from '@skatteetaten/frontend-components/Accordion/Accordion
       stepId={'step-1-2'}
     >
       <ol>
-        <li>Gå til Sketch > Preferences</li>
+        <li>Gå til Sketch {'>'} Preferences</li>
         <li>Velg Libraries</li>
         <li>Trykk på Add library</li>
         <li>Bla gjennom og velg filen fra 1)</li>
@@ -65,7 +65,7 @@ import AccordionItem from '@skatteetaten/frontend-components/Accordion/Accordion
 
 ### Axure-komponenter
 
-Komponentene finnes også i Axure-versjon. Etter at du har fått tilgang til dem vil de automatisk dukke opp i widget-menyen din i Axure. Du kan også bla i kompoentene:
+Komponentene finnes også i Axure-versjon. Etter at du har fått tilgang til dem vil de automatisk dukke opp i widget-menyen din i Axure. Du kan også bla i komponentene:
 
 ```js noeditor
 import OpenClose from '@skatteetaten/frontend-components/OpenClose';

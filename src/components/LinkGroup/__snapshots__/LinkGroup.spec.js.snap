@@ -12,24 +12,24 @@ exports[`Link komponent matcher snapshot 1`] = `
   }
 >
   <ul
-    className="arrowLinkList-70"
+    className="arrowLinkList-38"
   >
     <li
-      className="arrowLink-68"
+      className="arrowLink-36"
       key="0"
     >
       <Icon
-        className="icon-69"
+        className="icon-37"
         iconName="arrowForward"
         role="presentation"
       >
         <StyledIconBase
-          className="icon-69"
+          className="icon-37"
           iconName="arrowForward"
           role="presentation"
         >
           <IconBase
-            className="icon-69"
+            className="icon-37"
             iconName="arrowForward"
             role="presentation"
             styles={[Function]}
@@ -224,12 +224,14 @@ exports[`Link komponent matcher snapshot 1`] = `
                   "yellowDark": "#d29200",
                   "yellowLight": "#fff100",
                 },
+                "rtl": undefined,
                 "semanticColors": Object {
                   "accentButtonBackground": "#1362ae",
                   "accentButtonText": "#ffffff",
                   "actionLink": "rgba(0, 0, 0, 0.95)",
                   "actionLinkHovered": "rgba(21, 21, 21, 0.95)",
-                  "blockingBackground": "rgba(250, 65, 0, .2)",
+                  "blockingBackground": "#FDE7E9",
+                  "blockingIcon": "#FDE7E9",
                   "bodyBackground": "#ffffff",
                   "bodyBackgroundChecked": "#eaeaea",
                   "bodyBackgroundHovered": "#f4f4f4",
@@ -261,9 +263,12 @@ exports[`Link komponent matcher snapshot 1`] = `
                   "disabledBorder": "#c8c8c8",
                   "disabledSubtext": "#d0d0d0",
                   "disabledText": "rgba(89, 89, 89, 0.95)",
-                  "errorBackground": "rgba(245, 135, 145, .2)",
+                  "errorBackground": "#FDE7E9",
+                  "errorIcon": "#A80000",
                   "errorText": "#a4262c",
                   "focusBorder": "rgba(55, 55, 55, 0.95)",
+                  "infoBackground": "#f3f2f1",
+                  "infoIcon": "#605e5c",
                   "inputBackground": "#ffffff",
                   "inputBackgroundChecked": "#1362ae",
                   "inputBackgroundCheckedHovered": "#0c3f6f",
@@ -297,6 +302,9 @@ exports[`Link komponent matcher snapshot 1`] = `
                   "menuItemBackgroundPressed": "#eaeaea",
                   "menuItemText": "rgba(0, 0, 0, 0.95)",
                   "menuItemTextHovered": "rgba(21, 21, 21, 0.95)",
+                  "messageLink": "#005A9E",
+                  "messageLinkHovered": "#004578",
+                  "messageText": "#323130",
                   "primaryButtonBackground": "#1362ae",
                   "primaryButtonBackgroundDisabled": "#f4f4f4",
                   "primaryButtonBackgroundHovered": "#11599c",
@@ -306,14 +314,18 @@ exports[`Link komponent matcher snapshot 1`] = `
                   "primaryButtonTextDisabled": "#d0d0d0",
                   "primaryButtonTextHovered": "#ffffff",
                   "primaryButtonTextPressed": "#ffffff",
+                  "severeWarningBackground": "#FED9CC",
+                  "severeWarningIcon": "#D83B01",
                   "smallInputBorder": "rgba(55, 55, 55, 0.95)",
-                  "successBackground": "rgba(95, 210, 85, .2)",
+                  "successBackground": "#DFF6DD",
+                  "successIcon": "#107C10",
                   "successText": "#107C10",
                   "variantBorder": "#eaeaea",
                   "variantBorderHovered": "rgba(89, 89, 89, 0.95)",
-                  "warningBackground": "rgba(255, 200, 10, .2)",
+                  "warningBackground": "#FFF4CE",
                   "warningHighlight": "#ffb900",
-                  "warningText": "#333333",
+                  "warningIcon": "#797775",
+                  "warningText": "#323130",
                 },
                 "spacing": Object {
                   "l1": "20px",
@@ -327,17 +339,17 @@ exports[`Link komponent matcher snapshot 1`] = `
           >
             <i
               aria-hidden={true}
-              className="icon-73"
+              className="icon-41"
               data-icon-name="arrowForward"
               role="presentation"
             >
-              
+              
             </i>
           </IconBase>
         </StyledIconBase>
       </Icon>
       <a
-        className="arrowLinkA-71"
+        className="arrowLinkA-39"
         href="#"
       >
         Dette er en link

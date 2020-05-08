@@ -76,7 +76,7 @@ import Typography from '@skatteetaten/frontend-components/Typography';
   <ul>
     <li>
       Bruk av overskrifter (h-tag) er veldig viktig for å strukturere og dele
-      inn innhold. Det gir skjermleserbrukere bedre oversiktig og enklere
+      inn innhold. Det gir skjermleserbrukere bedre oversikt og enklere
       navigering til innhold.
     </li>
     <li>
@@ -86,8 +86,8 @@ import Typography from '@skatteetaten/frontend-components/Typography';
       passer med en &lt;h1&gt;, bør &lt;h2&gt; brukes.
     </li>
     <li>
-      En &lt;h2&gt; skal alltid høre til en &lt;h1&gt;, &lt;h3&gt; til &lt;h2>
-      osv. Tenk på logisk hierarki.
+      En &lt;h2&gt; skal alltid høre til en &lt;h1&gt;, &lt;h3&gt; til
+      &lt;h2&gt; osv. Tenk på logisk hierarki.
     </li>
     <li>Vurder om innhold bør ha h-tag.</li>
     <li>
@@ -113,7 +113,7 @@ import Typography from '@skatteetaten/frontend-components/Typography';
   <ul>
     <li>
       Hvis ikke vanlig h-tag kan brukes, vurder om du bør kode det med
-      role=heading og aria-level (overkskriftsnivå) for skjermleser.
+      role=heading og aria-level (overskriftsnivå) for skjermleser.
     </li>
   </ul>
 </div>

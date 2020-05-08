@@ -1,8 +1,7 @@
 import { mergeStyles } from '@uifabric/merge-styles';
 import { getTheme } from '@uifabric/styling';
-import { FontSizes, FontWeights } from '..';
+import { FontSizes, FontWeights, PaletteProps } from '..';
 import { MdIcons } from '../utils/icons/';
-import { PaletteProps } from '..';
 import { DatePickerProps } from './DatePicker';
 
 const errorIcon = "'" + MdIcons.icons.Error + "'";
@@ -56,7 +55,6 @@ export const getClassNames = (props: DatePickerProps) => {
   const { errorMessage, borderless, underlined, readonlyMode } = props;
   const palette = getTheme().palette as PaletteProps;
   const color = errorMessage ? palette.skeColor.error : palette.skeColor.blue;
-  // @ts-ignore TODO
   return mergeStyles({
     displayName: 'SkeDatePicker',
     outline: 'transparent',
@@ -95,9 +93,7 @@ export const getClassNames = (props: DatePickerProps) => {
       '& .ms-TextField.is-active .ms-TextField-fieldGroup': !borderless &&
         !underlined &&
         !readonlyMode && {
-          outlineColor: color,
-          outlineWidth: '1px',
-          outlineStyle: 'solid'
+          outline: `1px solid ${color}`
         },
       // style customization for underlined mode
       '& .ms-TextField.ms-TextField--underlined .ms-TextField-wrapper': {
@@ -108,9 +104,7 @@ export const getClassNames = (props: DatePickerProps) => {
       },
       '& .ms-TextField.is-active.ms-TextField--underlined .ms-TextField-wrapper': {
         border: `1px solid ${color}`,
-        outlineColor: color,
-        outlineWidth: '1px',
-        outlineStyle: 'solid'
+        outline: `1px solid ${color}`
       },
 
       '& .ms-TextField.is-active .ms-Label': {

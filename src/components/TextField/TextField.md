@@ -10,7 +10,7 @@ import TextField from '@skatteetaten/frontend-components/TextField';
     id={'my-input'}
     label={'Navn'}
     value={state.value}
-    onChange={(e, value) => setState({ value1: value })}
+    onChange={(e, value) => setState({ value: value })}
   />
 </div>;
 ```
@@ -52,7 +52,6 @@ import TextField from '@skatteetaten/frontend-components/TextField';
       inputMode={'numeric'}
       value={'23'}
       warning="Er du sikker på at antall barn er riktig?"
-      value={state.value2}
       onChange={(e, value) => setState({ value2: value })}
     />
   </div>

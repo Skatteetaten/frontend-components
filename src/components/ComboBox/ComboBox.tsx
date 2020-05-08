@@ -12,6 +12,8 @@ import ErrorMessage from '../ErrorMessage';
 import { useId } from '@reach/auto-id';
 
 export interface ComboboxProps extends IComboBoxProps {
+  /** Lukk callout på blur */
+  labelWithCalloutAutoDismiss?: boolean;
   /** Egendefinert feilmelding */
   errorMessage?: IComboBoxProps['errorMessage'];
   /** Hjelpetekst */
@@ -35,6 +37,7 @@ export interface ComboboxProps extends IComboBoxProps {
 const Combobox: React.FC<ComboboxProps> = props => {
   const {
     children,
+    labelWithCalloutAutoDismiss,
     errorMessage,
     label,
     help,
@@ -59,6 +62,7 @@ const Combobox: React.FC<ComboboxProps> = props => {
         buttonAriaLabel={labelButtonAriaLabel}
         help={help}
         onCalloutToggle={onCalloutToggle}
+        autoDismiss={labelWithCalloutAutoDismiss}
         {...labelCallout}
       />
       <VirtualizedComboBox
