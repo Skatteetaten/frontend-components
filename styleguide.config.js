@@ -65,6 +65,7 @@ module.exports = {
     generateComponentsGroup('Oppsett av siden', [
       'FooterContent',
       'Grid',
+      'Pagination',
       'SkeBasis',
       'TopBanner',
       'TopStripe',
