@@ -97,7 +97,7 @@ export const isCorrectFileFormat = (
 const nonWordCharacterRegex = /\W/g;
 const fileNameRegex = /\.(?=[^.]+$)/;
 
-export const normalize = (file: File) => {
+const normalize = (file: File) => {
   const nameList = file.name.split(fileNameRegex);
   const fileName = nameList[0];
   const normalizedName = fileName.replace(nonWordCharacterRegex, '_');
@@ -167,7 +167,9 @@ const FileUploader: React.FC<FileUploaderProps> = props => {
             file,
             normalizeFileName ? normalize(file) : undefined
           );
-          formData.append('originalFileName', file.name);
+          if (normalizeFileName) {
+            formData.append('oppgittFilnavn', file.name);
+          }
           setTimeout(
             () =>
               axios
