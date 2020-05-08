@@ -1,3 +1,12 @@
+### **v.3.3.4 - 08.05.2020 **
+
+- Tabs: has options for border and underline for improved contrast and affordance.
+- FileUpload: added function to normalize file names.
+- InputFields: Help text can now be closed automatically when clicking utside the box.
+- Added icon for "Enkeltpersonsforetak"
+- Updated fabric to lastest version
+- Updated dependencies
+
 ### **v.3.3.3 - 29.04.2020 **
 
 - New component: ButtonLink. This component should be used when the "Call to action" is to navigate to another page.
