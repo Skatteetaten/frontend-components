@@ -343,7 +343,7 @@ exports[`Link komponent matcher snapshot 1`] = `
               data-icon-name="arrowForward"
               role="presentation"
             >
-              
+              
             </i>
           </IconBase>
         </StyledIconBase>

@@ -296,6 +296,10 @@ const iconGroup = {
       usage: 'Familie'
     },
     {
+      name: 'AccountEnk',
+      usage: 'Enkeltpersonsforetak'
+    },
+    {
       name: 'Search',
       usage: 'Søk'
     },
