@@ -95,7 +95,7 @@ export const isCorrectFileFormat = (
 const nonWordCharacterRegex = /\W/g;
 const fileNameRegex = /\.(?=[^.]+$)/;
 
-export const normalize = (file: File) => {
+const normalize = (file: File) => {
   const nameList = file.name.split(fileNameRegex);
   const fileName = nameList[0];
   const normalizedName = fileName.replace(nonWordCharacterRegex, '_');
