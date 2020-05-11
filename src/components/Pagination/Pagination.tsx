@@ -1,29 +1,42 @@
 import * as React from 'react';
 import { getClassNames } from './Pagination.classNames';
 import classnames from 'classnames';
+import Icon from '../Icon';
 
 interface PaginationProps {
+  /** Aria-label */
+  ariaLabel?: string;
+  /** Aria-label for sidelinker */
+  ariaLabelNavigationLink?: string;
+  /** Aria-label for aktiv sidelink */
+  ariaLabelNavigationLinkActive?: string;
+  /** CSS class */
   className: string;
   /** Nåværende sidenummer */
   currentPage: number;
+  /** Tekst neste-knapp */
+  nextLabel?: string;
   /** Funksjon som trigges på sideendring */
   onPageChange: (page: number) => void;
+  /** Total antall objekter i liste */
   total: number;
+  /** Ant objekter som vises per side */
   pageSize: number;
+  /** Tekst forrige-knapp */
+  previousLabel?: string;
 }
 const getNumberOfPages = (total: number, pageSize: number) => {
   return Math.ceil(total / pageSize);
 };
 
-const range = (start, end) =>
-  Array.from({ length: end - start }, (v, k) => k + start);
+const range = start => Array.from({ length: 3 }, (v, k) => k + start);
 
 const getSlidingWindowEdges = (
   currentPage: number,
   total: number,
   pageSize: number
 ) => {
-  const windowSize = 10;
+  const windowSize = 3;
 
   const numberOfPages = getNumberOfPages(total, pageSize);
   if (numberOfPages <= windowSize) {
@@ -48,71 +61,14 @@ const getSlidingWindowEdges = (
   };
 };
 
-const FirstPage = (props: {
-  currentPage: number;
-  total: number;
-  pageSize: number;
-  onClick: (newPage: number) => void;
-}) => {
-  const edges = getSlidingWindowEdges(
-    props.currentPage,
-    props.total,
-    props.pageSize
-  );
-  console.log(edges);
-
-  return (
-    <li>
-      <button
-        onClick={() => {
-          props.onClick(1);
-        }}
-      >
-        1
-      </button>
-    </li>
-  );
-};
-
-const LastPage = (props: {
-  currentPage: number;
-  total: number;
-  pageSize: number;
-  onClick: (newPage: number) => void;
-}) => {
-  const edges = getSlidingWindowEdges(
-    props.currentPage,
-    props.total,
-    props.pageSize
-  );
-  const numberOfPages = getNumberOfPages(props.total, props.pageSize);
-  if (edges.endPage === numberOfPages) {
-    return null;
-  }
-
-  return (
-    <li>
-      ...{' '}
-      <button
-        onClick={() => {
-          props.onClick(numberOfPages - 1);
-        }}
-      >
-        {numberOfPages}
-      </button>
-    </li>
-  );
-};
-
 const NextPage: React.FC<{
   currentPage: number;
   total: number;
   pageSize: number;
   onClick: (newPage: number) => void;
+  label: string;
 }> = props => {
-  if (props.currentPage === getNumberOfPages(props.total, props.pageSize)) {
-    return <li>Neste</li>;
-  }
+  const styles = getClassNames();
 
   return (
     <li>
@@ -121,8 +77,10 @@ const NextPage: React.FC<{
           evt.preventDefault();
           props.onClick(props.currentPage + 1);
         }}
+        aria-label={props.label}
       >
-        Neste
+        <span>{props.label}</span>
+        <Icon iconName="ChevronRight" className={styles.linkIcons} />
       </button>
     </li>
   );
@@ -131,7 +89,9 @@ const NextPage: React.FC<{
 const PreviousLink: React.FC<{
   currentPage: number;
   onClick: (newPage: number) => void;
+  label: string;
 }> = props => {
+  const styles = getClassNames();
   return (
     <li>
       <button
@@ -139,8 +99,10 @@ const PreviousLink: React.FC<{
           evt.preventDefault();
           props.onClick(props.currentPage - 1);
         }}
+        aria-label={props.label}
       >
-        Forrige
+        <Icon iconName="ChevronLeft" className={styles.linkIcons} />
+        {props.label}
       </button>
     </li>
   );
@@ -150,16 +112,43 @@ const Page: React.FC<{
   page: number;
   onClick: (page: number) => void;
   isCurrent: boolean;
+  ariaLabelNavigationLink: string | undefined;
+  ariaLabelNavigationLinkActive: string | undefined;
 }> = props => {
+  const {
+    page,
+    onClick,
+    isCurrent,
+    ariaLabelNavigationLink,
+    ariaLabelNavigationLinkActive
+  } = props;
+  const styles = getClassNames();
+
+  const ariaLabel = () => {
+    if (isCurrent) {
+      return (
+        (ariaLabelNavigationLinkActive
+          ? ariaLabelNavigationLinkActive
+          : 'Aktiv side, Side ') + page
+      );
+    }
+    return (
+      (ariaLabelNavigationLink ? ariaLabelNavigationLink : 'Gå til ') + page
+    );
+  };
+
   return (
     <li>
       <button
         onClick={evt => {
           evt.preventDefault();
-          props.onClick(props.page + 1);
+          onClick(page);
         }}
+        className={isCurrent ? styles.activePage : styles.pageNumber}
+        aria-label={ariaLabel()}
+        aria-current={isCurrent}
       >
-        {props.page + 1}
+        {page}
       </button>
     </li>
   );
@@ -170,22 +159,25 @@ const Pages = (props: {
   pageSize: number;
   onPageChange: (newPage: number) => void;
   total: number;
+  ariaLabelNavigationLink: string | undefined;
+  ariaLabelNavigationLinkActive: string | undefined;
 }) => {
   const windowEdges = getSlidingWindowEdges(
     props.currentPage,
     props.total,
     props.pageSize
   );
-
   return (
     <div>
-      {range(windowEdges.startPage, windowEdges.endPage).map(i => {
+      {range(windowEdges.startPage).map(i => {
         return (
           <Page
             key={i}
             onClick={props.onPageChange}
             page={i}
             isCurrent={props.currentPage === i}
+            ariaLabelNavigationLink={props.ariaLabelNavigationLink}
+            ariaLabelNavigationLinkActive={props.ariaLabelNavigationLinkActive}
           />
         );
       })}
@@ -197,48 +189,63 @@ const Pages = (props: {
  * @visibleName Pagination
  */
 const Pagination: React.FC<PaginationProps> = props => {
-  const { currentPage } = props;
+  const {
+    ariaLabel,
+    ariaLabelNavigationLink,
+    ariaLabelNavigationLinkActive,
+    className,
+    currentPage,
+    nextLabel,
+    onPageChange,
+    pageSize,
+    previousLabel,
+    total
+  } = props;
   const styles = getClassNames();
-  console.log(currentPage);
+  const firstListObject = (currentPage - 1) * pageSize;
+  const lastListObject = firstListObject + pageSize;
+  const view =
+    lastListObject > total ? total : firstListObject + 1 + '-' + lastListObject;
   return (
-    <div className={classnames(styles.paginationContainer, props.className)}>
-      <ul>
-        {currentPage > 1 && (
-          <PreviousLink
-            currentPage={currentPage}
-            onClick={(page: number) => props.onPageChange(page)}
-          />
-        )}
-
-        <FirstPage
-          currentPage={currentPage}
-          total={props.total}
-          pageSize={props.pageSize}
-          onClick={props.onPageChange}
-        />
-        <li>
-          <ul>
-            <Pages
-              onPageChange={props.onPageChange}
+    <div className={classnames(styles.paginationContainer, className)}>
+      <p>
+        Viser {view} av {total}
+      </p>
+      <nav
+        role="navigation"
+        aria-label={ariaLabel ? ariaLabel : 'Paginerings navigasjon'}
+      >
+        <ul>
+          {currentPage > 1 && (
+            <PreviousLink
               currentPage={currentPage}
-              total={props.total}
-              pageSize={props.pageSize}
+              onClick={(page: number) => onPageChange(page)}
+              label={previousLabel ? previousLabel : 'Forrige'}
             />
-          </ul>
-        </li>
-        <LastPage
-          currentPage={currentPage}
-          total={props.total}
-          pageSize={props.pageSize}
-          onClick={props.onPageChange}
-        />
-        <NextPage
-          currentPage={currentPage}
-          total={props.total}
-          pageSize={props.pageSize}
-          onClick={props.onPageChange}
-        />
-      </ul>
+          )}
+          <li>
+            <ul>
+              <Pages
+                onPageChange={onPageChange}
+                currentPage={currentPage}
+                total={total}
+                pageSize={pageSize}
+                ariaLabelNavigationLink={ariaLabelNavigationLink}
+                ariaLabelNavigationLinkActive={ariaLabelNavigationLinkActive}
+              />
+            </ul>
+          </li>
+          {currentPage < getNumberOfPages(total, pageSize) && (
+            <NextPage
+              currentPage={currentPage}
+              total={total}
+              pageSize={pageSize}
+              onClick={onPageChange}
+              label={nextLabel ? nextLabel : 'Neste'}
+            />
+          )}
+        </ul>
+      </nav>
     </div>
   );
 };
