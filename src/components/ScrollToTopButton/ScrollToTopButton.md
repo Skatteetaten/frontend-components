@@ -33,7 +33,7 @@ import ScrollToTopButton from '@skatteetaten/frontend-components/ScrollToTopButt
   <ul>
   <li>Må kunne brukes med tastatur og flytte tastaturfokus til toppen, ikke bare rulle.</li>
   <li>Nettleseren skal ikke bare rulle til toppen, men også tastaturfokus skal også flyttes til toppen.</li>
-  <li>Skjermleserbrukere vil hovedsaklig bruke hurtigtaster for å flytte til toppen.</li>
+  <li>Skjermleserbrukere vil hovedsakelig bruke hurtigtaster for å flytte til toppen.</li>
   <li>Det er ikke noe krav å ha slik funksjonalitet</li>
   </ul>
 

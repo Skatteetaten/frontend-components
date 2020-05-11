@@ -288,7 +288,7 @@ import Link from '@skatteetaten/frontend-components/Link';
   <h3>Tips</h3>
   <ul>
     <li>
-      Valgene i toppstripa som utvider innhold, bør ha et pilikon, for visuell
+      Valgene i toppstripa som utvider innhold, bør ha et pil-ikon, for visuell
       indikasjon av funksjonaliteten.{' '}
     </li>
     <li>

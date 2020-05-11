@@ -356,7 +356,7 @@ function chooseRow() {
 <ul>
 <li>Ikke bruk listen til å vise kommandoer eller innstillinger.</li>
 <li>Ikke ha for mye data slik at brukeren på scrolle horisontalt.</li>
-<li>Listen bør ha en vilkårlig størrelse slik at informasjonen ikke blir trykt sammen og uoversiktelig.</li>
+<li>Listen bør ha en vilkårlig størrelse slik at informasjonen ikke blir trykt sammen og uoversiktlig.</li>
 <li>Sørg for at listen har fokusmarkering slik at brukere kan pile seg gjennom listen</li>
 <li>Listen skal kun ha ett tabstopp (2 inkludert sorterbare kolonneoverskrifter) der det ikke er ekstra skjemafelt.</li>
 <li>Sjekk at du kan navigere med piltaster i tabellen og velge ulik sortering med tastatur.</li>

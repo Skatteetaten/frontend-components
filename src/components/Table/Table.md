@@ -203,7 +203,7 @@ const data = [
 ```js noeditor uu
 <h3>Tips</h3>
 <ul>
-<li>På små skjermer vil endre-ikon flyttes til venstre, og tabellen har horisontal skrolling ved behov.</li>
+<li>På små skjermer vil endre-ikon flyttes til venstre, og tabellen har horisontal scrolling ved behov.</li>
 <li>Husk at th-tags skal brukes på kolonneoverskrifter. Det kan også være fornuftig å bruke dette på radoverskrifter for å gjøre navigering i tabellen med skjermleser mer forståelig. Husk å bruke scope=row og scope=col for spesifisering.</li>
 <li>Tomme celler bør være td-tag.</li>
 <li>Sjekk at du kan velge ulik sortering med tastatur.</li>

@@ -62,7 +62,7 @@ import Grid from '@skatteetaten/frontend-components/Grid';
 
   <h3>WAI-ARIA</h3>
   <ul>
-    <li>Aria-hidden brukes for skjule footer-grafikk for skjemleser. </li>
+    <li>Aria-hidden brukes for skjule footer-grafikk for skjermleser. </li>
   </ul>
 </div>
 ```

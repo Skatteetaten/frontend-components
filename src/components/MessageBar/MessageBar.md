@@ -60,7 +60,7 @@ const afterDurationComponent = (resetDuration, setShowAlways) => (
 <li>Innholdet bør være kort og presist.</li>
 <li>Pass på tilstrekkelig kontrast (minst 4.5) mellom tekst og bakgrunn</li>
 <li>Husk å bruke riktig type av MessageBar til riktig type melding.</li>
-<li>Ved messageBar som forsvinner må fokus på siden settes tilbake til samme sted som brukeren stod før boksen dukket opp og forsvant igjen.</li>
+<li>Ved MessageBar som forsvinner må fokus på siden settes tilbake til samme sted som brukeren stod før boksen dukket opp og forsvant igjen.</li>
 <li>Gi brukerne nok tid å få lese meldingen som forsvinner automatisk, selv om brukeren kan se meldingen igjen.</li>
 </ul>
 
