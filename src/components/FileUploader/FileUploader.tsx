@@ -74,8 +74,12 @@ export interface FileUploaderProps {
   uploadFile?: (file: File) => void;
   /**forsinkelse før opplasting i millisekunder*/
   forsinkelse?: number;
-  /**erstatter tegn som er ugyldig e i BIG-IP med "_" */
+  /**erstatter tegn som er ugyldige i BIG-IP med "_" */
   normalizeFileName?: boolean;
+  /**størrelsesgrense til en enkelt fil i bit*/
+  fileSizeLimit?: number;
+  /*feilmelding for overskred av filstørrelsesgrense**/
+  exceedFileSizeLimitErrorMessage?: string;
 }
 
 export const isCorrectFileFormat = (
@@ -127,7 +131,9 @@ const FileUploader: React.FC<FileUploaderProps> = props => {
     onCalloutToggle,
     queryParams,
     uploadFile,
-    normalizeFileName
+    normalizeFileName,
+    fileSizeLimit,
+    exceedFileSizeLimitErrorMessage
   } = props;
   const styles = getClassNames(props);
   const [internalFiles, setInternalFiles] = React.useState<Array<any>>(
@@ -153,7 +159,13 @@ const FileUploader: React.FC<FileUploaderProps> = props => {
 
   const handleNewFiles = (fileList: File[]) => {
     setErrorMessage('');
+    let exceedSizeLimitFiles: File[] = [];
     fileList.forEach((file: File) => {
+      if (fileSizeLimit && file.size > fileSizeLimit) {
+        exceedSizeLimitFiles.push(file);
+        return;
+      }
+
       const correctFileFormat = isCorrectFileFormat(file, acceptedFileFormats);
       if (correctFileFormat) {
         if (uploadFile) {
@@ -197,6 +209,10 @@ const FileUploader: React.FC<FileUploaderProps> = props => {
         setErrorMessage('Dette filformatet er ikke godkjent');
       }
     });
+
+    if (fileSizeLimit && exceedSizeLimitFiles.length) {
+      setErrorMessage(exceedFileSizeLimitErrorMessage || '');
+    }
   };
 
   const handleDragOverAndDragEnter = (
