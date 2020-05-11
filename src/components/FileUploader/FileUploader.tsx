@@ -30,7 +30,7 @@ export interface FileUploaderProps {
   /** Akksepterte filformater */
   acceptedFileFormats?: Array<FileFormatTypes>;
   /** Tekst for opplastingskomponenten */
-  addFileString?: string;
+  addFileString?: string | JSX.Element;
   /** aria-label */
   ariaLabel?: string;
   /**string for Apikall */
@@ -74,7 +74,7 @@ export interface FileUploaderProps {
   uploadFile?: (file: File) => void;
   /**forsinkelse før opplasting i millisekunder*/
   forsinkelse?: number;
-  /**erstatter tegn som er ugyldig e i BIG-IP med "_" */
+  /**erstatter tegn som er ugyldige i BIG-IP med "_" */
   normalizeFileName?: boolean;
 }
 
@@ -336,7 +336,7 @@ const FileUploader: React.FC<FileUploaderProps> = props => {
           <ul className={styles.fileList}>
             {internalFiles.map((file, index: number) => (
               <li key={file.name.concat(index.toString())}>
-                {file.name}
+                <div className={styles.fileName}>{file.name}</div>
                 {file.error ? (
                   <Icon iconName={'Error'} className={styles.errorColor} />
                 ) : (

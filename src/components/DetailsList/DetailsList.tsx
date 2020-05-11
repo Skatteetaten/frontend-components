@@ -25,6 +25,8 @@ export interface DetailsListProps extends IDetailsListProps {
   isSortedDescending?: boolean;
   onSortUpdate?: (...args: any[]) => any;
   columns?: Array<IColumn>;
+  /** Mulighet for å skru av hover-effekt dersom listeelement ikke er klikkbar. Kan ikke kombineres med checkbox */
+  noHover?: boolean;
 }
 /**
  * @visibleName DetailsList (Sammensatt tabell)

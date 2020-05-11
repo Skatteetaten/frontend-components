@@ -13,13 +13,14 @@ export const getClassNames = (props: FileUploaderProps) => {
     informationWrapper: {
       marginTop: '8px',
       fontSize: '12px',
+      lineHeight: '19px',
       color: palette.skeColor.darkGrey
     },
     errorColor: {
       color: `${palette.skeColor.error} !important`
     },
     fileList: {
-      listStyle: 'none',
+      listStyle: 'none !important',
       padding: 0,
       selectors: {
         i: {
@@ -27,7 +28,8 @@ export const getClassNames = (props: FileUploaderProps) => {
           float: 'right'
         },
         li: {
-          wordBreak: 'break-all'
+          wordBreak: 'break-all',
+          display: 'block'
         }
       }
     },
@@ -38,6 +40,10 @@ export const getClassNames = (props: FileUploaderProps) => {
       border: 0,
       borderStyle: 'none',
       cursor: 'pointer'
+    },
+    fileName: {
+      float: 'left',
+      width: '90%'
     },
     fileUploadInput: {
       opacity: 0,
