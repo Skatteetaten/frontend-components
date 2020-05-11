@@ -4,11 +4,11 @@ import { matches } from '../utils/test-utils';
 import { mount } from 'enzyme';
 
 function oppsettFullDOM(props) {
-  const Wrapper = props => {
+  const Wrapper = wrapperProps => {
     const [currentPage, setCurrentPage] = React.useState(1);
     return (
       <Pagination
-        {...props}
+        {...wrapperProps}
         currentPage={currentPage}
         onPageChange={page => setCurrentPage(page)}
       />
