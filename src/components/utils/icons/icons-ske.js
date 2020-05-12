@@ -25,9 +25,9 @@ export default {
 
     icons: { 
         'AccountEnk': '\uea01', 
-        'ArrowBack': '\uea02', 
-        'ArrowDown': '\uea03', 
-        'ArrowForward': '\uea04', 
+        'ArrowBack': '\uea02',
+        'ArrowForward': '\uea03',
+        'ArrowDown': '\uea04',
         'ArrowUp': '\uea05', 
         'ArrowUpDown': '\uea06', 
         'Avgift': '\uea07', 
