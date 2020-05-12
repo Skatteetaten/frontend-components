@@ -7,38 +7,45 @@ fontUrls.push('url("' + require('../assets/SkeIconfont.woff') + '") format("woff
 fontUrls.push('url("' + require('../assets/SkeIconfont.ttf') + '") format("truetype")');
 
 export default {
-    style: {
-        MozOsxFontSmoothing: 'grayscale',
-        WebkitFontSmoothing: 'antialiased',
-        fontStyle: 'normal',
-        fontWeight: 'normal',
-        speak: 'none',
-        display: 'inline-block',
-        transform: 'translate(0, 0)',
-        textRendering: 'auto',
-        fontSize: 'inherit',
-    },
-    fontFace: {
-        fontFamily: '"SkeIconfont"',
-        src: fontUrls.join(', '),
-    },
-
-    icons: { 
-        'ArrowBack': '\uea01', 
-        'ArrowDown': '\uea02', 
-        'ArrowForward': '\uea03', 
-        'ArrowUp': '\uea04', 
-        'ArrowUpDown': '\uea05', 
-        'Avgift': '\uea06', 
-        'AvgiftBedrift': '\uea07', 
-        'Company': '\uea08', 
-        'Down': '\uea09', 
-        'Ekteskap': '\uea0a', 
-        'Familie': '\uea0b', 
-        'Folkeregister': '\uea0c', 
-        'Kroner': '\uea0d', 
-        'PreviewFile': '\uea0e', 
-        'Skattetrekk': '\uea0f', 
-        'Up': '\uea10' 
-    }
+  style: {
+      MozOsxFontSmoothing: 'grayscale',
+      WebkitFontSmoothing: 'antialiased',
+      fontStyle: 'normal',
+      fontWeight: 'normal',
+      speak: 'none',
+      display: 'inline-block',
+      transform: 'translate(0, 0)',
+      textRendering: 'auto',
+      fontSize: 'inherit',
+  },
+  fontFace: {
+      fontFamily: '"SkeIconfont"',
+      src: fontUrls.join(', '),
+  },
+  icons: {
+    'AccountEnk': '\uea01',
+    'ArrowBack': '\uea02',
+    'ArrowDown': '\uea03',
+    'ArrowForward': '\uea04',
+    'ArrowUp': '\uea05',
+    'ArrowUpDown': '\uea06',
+    'Avgift': '\uea07',
+    'AvgiftBedrift': '\uea08',
+    'Company': '\uea09',
+    'Down': '\uea0a',
+    'Ekteskap': '\uea0b',
+    'Familie': '\uea0c',
+    'Folkeregister': '\uea0d',
+    'Kroner': '\uea0e',
+    'PreviewFile': '\uea0f',
+    'Skattetrekk': '\uea10',
+    'TemaArbeidTrygdPensjon': '\uea11',
+    'TemaBankLaanForsikring': '\uea12',
+    'TemaBoligEiendeler': '\uea13',
+    'TemaFamilie': '\uea14',
+    'TemaFinans': '\uea15',
+    'TemaGaveArv': '\uea16',
+    'TemaPersonligeForhold': '\uea17',
+    'Up': '\uea18'
+  }
 };
