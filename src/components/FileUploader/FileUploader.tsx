@@ -167,9 +167,6 @@ const FileUploader: React.FC<FileUploaderProps> = props => {
             file,
             normalizeFileName ? normalize(file) : undefined
           );
-          if (normalizeFileName) {
-            formData.append('oppgittFilnavn', file.name);
-          }
           setTimeout(
             () =>
               axios
