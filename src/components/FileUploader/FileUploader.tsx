@@ -78,7 +78,7 @@ export interface FileUploaderProps {
   normalizeFileName?: boolean;
   /**størrelsesgrense til en enkelt fil i bit*/
   fileSizeLimit?: number;
-  /*feilmelding for overskred av filstørrelsesgrense**/
+  /*feilmelding for oversteget av filstørrelsesgrense**/
   exceedFileSizeLimitErrorMessage?: string;
 }
 
