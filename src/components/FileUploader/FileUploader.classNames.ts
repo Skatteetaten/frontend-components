@@ -1,7 +1,7 @@
 import { mergeStyleSets } from '@uifabric/merge-styles';
 import { FileUploaderProps } from './FileUploader';
 import { getTheme } from '@uifabric/styling';
-import { PaletteProps } from '..';
+import { FontSizes, LineHeightSizes, PaletteProps } from '..';
 
 export const getClassNames = (props: FileUploaderProps) => {
   const palette = getTheme().palette as PaletteProps;
@@ -12,8 +12,8 @@ export const getClassNames = (props: FileUploaderProps) => {
     },
     informationWrapper: {
       marginTop: '8px',
-      fontSize: '12px',
-      lineHeight: '19px',
+      fontSize: FontSizes.xSmall,
+      lineHeight: LineHeightSizes.xSmall,
       color: palette.skeColor.darkGrey
     },
     errorColor: {
