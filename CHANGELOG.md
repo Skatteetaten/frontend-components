@@ -1,3 +1,8 @@
+### **v.3.3.5 - 13.05.2020 **
+
+- Sketch components updated.
+- Fixed an issue where icons could not be imported.
+
 ### **v.3.3.4 - 08.05.2020 **
 
 - Tabs: has options for border and underline for improved contrast and affordance.
