@@ -1,9 +1,9 @@
 {
   "files": {
     "main.css": "/static/css/main.91e86fd1.chunk.css",
-    "main.js": "/build/main.c235c99b.js",
+    "main.js": "/build/main.a77c383d.js",
     "runtime-main.js": "/build/bundle.45dbd693.js",
-    "build/2.68107133.js": "/build/2.68107133.js",
+    "build/2.67b5783b.js": "/build/2.67b5783b.js",
     "assets/png/Byggeklosser.png": "/assets/png/Byggeklosser.png",
     "assets/png/Byggeklosser_skisse.png": "/assets/png/Byggeklosser_skisse.png",
     "assets/png/designer.png": "/assets/png/designer.png",
@@ -13,15 +13,16 @@
     "assets/png/utvikler.png": "/assets/png/utvikler.png",
     "assets/sketch/designsystem-1.0.sketch": "/assets/sketch/designsystem-1.0.sketch",
     "assets/sketch/designsystem-1.1.sketch": "/assets/sketch/designsystem-1.1.sketch",
+    "assets/sketch/designsystem-latest.sketch": "/assets/sketch/designsystem-latest.sketch",
     "assets/svg/bit-bucket-logo.svg": "/assets/svg/bit-bucket-logo.svg",
     "assets/svg/ske-logo-intern-kopi.svg": "/assets/svg/ske-logo-intern-kopi.svg",
     "assets/svg/ske-logo-intern.svg": "/assets/svg/ske-logo-intern.svg",
     "assets/svg/ske-logo.svg": "/assets/svg/ske-logo.svg",
-    "build/2.68107133.js.LICENSE.txt": "/build/2.68107133.js.LICENSE.txt",
+    "build/2.67b5783b.js.LICENSE.txt": "/build/2.67b5783b.js.LICENSE.txt",
     "favicon.ico": "/favicon.ico",
     "index.html": "/index.html",
     "manifest.json": "/manifest.json",
-    "precache-manifest.56927fde41db4b06858e5b7c3de15f2f.js": "/precache-manifest.56927fde41db4b06858e5b7c3de15f2f.js",
+    "precache-manifest.832b049c46101ded5a1bab00e10df9d2.js": "/precache-manifest.832b049c46101ded5a1bab00e10df9d2.js",
     "service-worker.js": "/service-worker.js",
     "static/css/main.91e86fd1.chunk.css.map": "/static/css/main.91e86fd1.chunk.css.map",
     "static/media/SkeIconfont.eot": "/static/media/SkeIconfont.3203bf52.eot",
@@ -38,8 +39,8 @@
   },
   "entrypoints": [
     "build/bundle.45dbd693.js",
-    "build/2.68107133.js",
+    "build/2.67b5783b.js",
     "static/css/main.91e86fd1.chunk.css",
-    "build/main.c235c99b.js"
+    "build/main.a77c383d.js"
   ]
 }

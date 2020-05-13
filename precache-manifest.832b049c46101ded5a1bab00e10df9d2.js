@@ -36,6 +36,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "assets/sketch/designsystem-1.1.sketch"
   },
   {
+    "revision": "1aa249f79883185c05d428bd2e957b67",
+    "url": "assets/sketch/designsystem-latest.sketch"
+  },
+  {
     "revision": "ddc8f627ee84168d91f0a0f65be4da36",
     "url": "assets/svg/bit-bucket-logo.svg"
   },
@@ -52,27 +56,27 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "assets/svg/ske-logo.svg"
   },
   {
-    "revision": "681071339752f7b3c864",
-    "url": "build/2.68107133.js"
+    "revision": "67b5783b27acba240aac",
+    "url": "build/2.67b5783b.js"
   },
   {
-    "revision": "9a4106d8463315f6fd2ebd9b6bb61dd9",
-    "url": "build/2.68107133.js.LICENSE.txt"
+    "revision": "33854c9c2379d7789c60a4d2c037695b",
+    "url": "build/2.67b5783b.js.LICENSE.txt"
   },
   {
     "revision": "45dbd693a61cad3baa1a",
     "url": "build/bundle.45dbd693.js"
   },
   {
-    "revision": "c235c99bb978c3a5c83f",
-    "url": "build/main.c235c99b.js"
+    "revision": "a77c383da88b3a2b9e3d",
+    "url": "build/main.a77c383d.js"
   },
   {
     "revision": "ad1c490ae23267ebf5c2ab3cede0877a",
     "url": "favicon.ico"
   },
   {
-    "revision": "f50bd7258803301adf4ff3998df88aa0",
+    "revision": "022a2bf5a1dc6bc6776d5ac97c2f2aef",
     "url": "index.html"
   },
   {
@@ -80,7 +84,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "manifest.json"
   },
   {
-    "revision": "c235c99bb978c3a5c83f",
+    "revision": "a77c383da88b3a2b9e3d",
     "url": "static/css/main.91e86fd1.chunk.css"
   },
   {
