@@ -211,9 +211,21 @@ const FileUploader: React.FC<FileUploaderProps> = props => {
     });
 
     if (fileSizeLimit && exceedSizeLimitFiles.length) {
-      setErrorMessage(exceedFileSizeLimitErrorMessage || '');
+      setErrorMessage(
+        exceedFileSizeLimitErrorMessage ||
+          createDefaultOversizedFileErrorMessage(fileSizeLimit)
+      );
     }
   };
+
+  const createDefaultOversizedFileErrorMessage = (
+    filstoerrelsegrense: number
+  ) =>
+    `Vi kan ikke motta denne filen fordi den er for stor. Filer kan ikke overstige ${bitToMegabyte(
+      filstoerrelsegrense
+    )} Mb. Du kan forsøke å dele opp i flere mindre filer, eller bruke et format som tar mindre plass.`;
+
+  const bitToMegabyte = (size: number) => (size / (1024 * 1024)).toFixed(1);
 
   const handleDragOverAndDragEnter = (
     event: React.DragEvent<HTMLDivElement>
