@@ -1,5 +1,5 @@
 import React from 'react';
-import Pagination from './Pagination';
+import Pagination, { getSlidingWindowEdges } from './Pagination';
 import { matches } from '../utils/test-utils';
 import { mount } from 'enzyme';
 
@@ -98,5 +98,13 @@ describe('Pagination komponent', () => {
         .find('button')
         .prop('aria-current')
     ).toEqual(true);
+  });
+  it('getSlidingWindowEdges() skal resturne riktig start og slutt basert på input', () => {
+    let range = getSlidingWindowEdges(1, 12, 4, 2);
+    expect(range.startPage).toEqual(1);
+    expect(range.endPage).toEqual(2);
+    range = getSlidingWindowEdges(16, 100, 5, 5);
+    expect(range.startPage).toEqual(12);
+    expect(range.endPage).toEqual(16);
   });
 });

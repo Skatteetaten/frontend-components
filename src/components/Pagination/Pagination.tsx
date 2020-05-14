@@ -31,29 +31,27 @@ const getNumberOfPages = (total: number, pageSize: number) => {
   return Math.ceil(total / pageSize);
 };
 
-const range = start => Array.from({ length: 3 }, (v, k) => k + start);
+const range = (start: number, pagesDisplayed: number) =>
+  Array.from({ length: pagesDisplayed }, (v, k) => k + start);
 
-const getSlidingWindowEdges = (
+export const getSlidingWindowEdges = (
   currentPage: number,
   total: number,
   pageSize: number,
   pagesDisplayed: number
 ) => {
-  const windowSize = pagesDisplayed;
-
   const numberOfPages = getNumberOfPages(total, pageSize);
-  if (numberOfPages <= windowSize) {
+  if (numberOfPages <= pagesDisplayed) {
     return {
       startPage: 1,
       endPage: numberOfPages
     };
   }
-
-  let startPage = currentPage - Math.ceil(windowSize / 2);
-  if (startPage < 1) {
+  let startPage = currentPage - (pagesDisplayed - 1);
+  if (currentPage <= pagesDisplayed) {
     startPage = 1;
   }
-  let endPage = startPage + windowSize;
+  let endPage = startPage + (pagesDisplayed - 1);
 
   if (endPage > numberOfPages) {
     endPage = numberOfPages;
@@ -166,15 +164,17 @@ const Pages = (props: {
   ariaLabelNavigationLink: string | undefined;
   ariaLabelNavigationLinkActive: string | undefined;
 }) => {
+  const pagesDisplayed = props.pagesDisplayed || 3;
   const windowEdges = getSlidingWindowEdges(
     props.currentPage,
     props.total,
     props.pageSize,
-    props.pagesDisplayed || 3
+    pagesDisplayed
   );
+
   return (
     <div>
-      {range(windowEdges.startPage).map(i => {
+      {range(windowEdges.startPage, pagesDisplayed).map(i => {
         return (
           <Page
             key={i}
