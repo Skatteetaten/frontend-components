@@ -71,11 +71,11 @@ const data = [
     type: 'Admin'
   }
 ];
+const pageSize = 3;
 const [displayedData, setDisplayedData] = React.useState(
-  [...data].splice(0, 3)
+  [...data].splice(0, pageSize)
 );
 const [currentPage, setCurrentPage] = React.useState(1);
-const pageSize = 3;
 
 <div>
   <Table data={displayedData} columns={columns} />
@@ -83,7 +83,7 @@ const pageSize = 3;
     currentPage={currentPage}
     onPageChange={page => {
       const index = (page - 1) * pageSize;
-      setDisplayedData([...data].splice(index, 3));
+      setDisplayedData([...data].splice(index, pageSize));
       setCurrentPage(page);
     }}
     total={data.length}

@@ -74,8 +74,12 @@ export interface FileUploaderProps {
   uploadFile?: (file: File) => void;
   /**forsinkelse før opplasting i millisekunder*/
   forsinkelse?: number;
-  /**erstatter tegn som er ugyldig e i BIG-IP med "_" */
+  /**erstatter tegn som er ugyldige i BIG-IP med "_" */
   normalizeFileName?: boolean;
+  /**størrelsesgrense til en enkelt fil i bit*/
+  fileSizeLimit?: number;
+  /*feilmelding for oversteget av filstørrelsesgrense**/
+  exceedFileSizeLimitErrorMessage?: string;
 }
 
 export const isCorrectFileFormat = (
@@ -127,7 +131,9 @@ const FileUploader: React.FC<FileUploaderProps> = props => {
     onCalloutToggle,
     queryParams,
     uploadFile,
-    normalizeFileName
+    normalizeFileName,
+    fileSizeLimit,
+    exceedFileSizeLimitErrorMessage
   } = props;
   const styles = getClassNames(props);
   const [internalFiles, setInternalFiles] = React.useState<Array<any>>(
@@ -153,7 +159,13 @@ const FileUploader: React.FC<FileUploaderProps> = props => {
 
   const handleNewFiles = (fileList: File[]) => {
     setErrorMessage('');
+    let exceedSizeLimitFiles: File[] = [];
     fileList.forEach((file: File) => {
+      if (fileSizeLimit && file.size > fileSizeLimit) {
+        exceedSizeLimitFiles.push(file);
+        return;
+      }
+
       const correctFileFormat = isCorrectFileFormat(file, acceptedFileFormats);
       if (correctFileFormat) {
         if (uploadFile) {
@@ -167,9 +179,6 @@ const FileUploader: React.FC<FileUploaderProps> = props => {
             file,
             normalizeFileName ? normalize(file) : undefined
           );
-          if (normalizeFileName) {
-            formData.append('oppgittFilnavn', file.name);
-          }
           setTimeout(
             () =>
               axios
@@ -197,7 +206,23 @@ const FileUploader: React.FC<FileUploaderProps> = props => {
         setErrorMessage('Dette filformatet er ikke godkjent');
       }
     });
+
+    if (fileSizeLimit && exceedSizeLimitFiles.length) {
+      setErrorMessage(
+        exceedFileSizeLimitErrorMessage ||
+          createDefaultOversizedFileErrorMessage(fileSizeLimit)
+      );
+    }
   };
+
+  const createDefaultOversizedFileErrorMessage = (
+    filstoerrelsegrense: number
+  ) =>
+    `Vi kan ikke motta denne filen fordi den er for stor. Filer kan ikke overstige ${bitToMegabyte(
+      filstoerrelsegrense
+    )} Mb. Du kan forsøke å dele opp i flere mindre filer, eller bruke et format som tar mindre plass.`;
+
+  const bitToMegabyte = (size: number) => (size / (1024 * 1024)).toFixed(1);
 
   const handleDragOverAndDragEnter = (
     event: React.DragEvent<HTMLDivElement>

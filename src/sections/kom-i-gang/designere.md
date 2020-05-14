@@ -12,13 +12,41 @@ import Button from '@skatteetaten/frontend-components/Button';
 <div>
   <p>
     <Link
-      path={'./assets/sketch/designsystem-1.1.sketch'}
+      path={'./assets/sketch/designsystem-latest.sketch'}
       text={'Last ned nyeste Sketch-fil'}
       icon={'Download'}
       placement="before"
     />
   </p>
 </div>;
+```
+
+```js noeditor
+import OpenClose from '@skatteetaten/frontend-components/OpenClose';
+import Typography from '@skatteetaten/frontend-components/Typography';
+
+const style = {
+  marginTop: 0
+};
+
+<OpenClose title={'Versjonshistorikk'}>
+  <Typography>
+    <h4 style={{ marginTop: '0' }}>Versjon 1.2</h4>
+    <ul>
+      <li>
+        Ikoner har nå slices, så det er lettere å få riktige avstander i Zeplin.
+      </li>
+      <li>
+        Flere komponenter (OpenClose, ErrorMessage, LinkGroup, etc) er lagt til.
+      </li>
+      <li>Mange komponenter har ny dynamisk layout.</li>
+      <li>
+        TopStripe har nå flere statuser (ikke innlogget, innlogget, flerbruker,
+        firma)
+      </li>
+    </ul>
+  </Typography>
+</OpenClose>;
 ```
 
 ### Sette opp Sketch

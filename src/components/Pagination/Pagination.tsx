@@ -18,6 +18,8 @@ interface PaginationProps {
   nextLabel?: string;
   /** Funksjon som trigges på sideendring */
   onPageChange: (page: number) => void;
+  /** Antall sidetall som vises samtidig. Default er 3. */
+  pagesDisplayed?: number;
   /** Total antall objekter i liste */
   total: number;
   /** Ant objekter som vises per side */
@@ -29,28 +31,27 @@ const getNumberOfPages = (total: number, pageSize: number) => {
   return Math.ceil(total / pageSize);
 };
 
-const range = start => Array.from({ length: 3 }, (v, k) => k + start);
+const range = (start: number, pagesDisplayed: number) =>
+  Array.from({ length: pagesDisplayed }, (v, k) => k + start);
 
-const getSlidingWindowEdges = (
+export const getSlidingWindowEdges = (
   currentPage: number,
   total: number,
-  pageSize: number
+  pageSize: number,
+  pagesDisplayed: number
 ) => {
-  const windowSize = 3;
-
   const numberOfPages = getNumberOfPages(total, pageSize);
-  if (numberOfPages <= windowSize) {
+  if (numberOfPages <= pagesDisplayed) {
     return {
       startPage: 1,
       endPage: numberOfPages
     };
   }
-
-  let startPage = currentPage - Math.ceil(windowSize / 2);
-  if (startPage < 1) {
+  let startPage = currentPage - (pagesDisplayed - 1);
+  if (currentPage <= pagesDisplayed) {
     startPage = 1;
   }
-  let endPage = startPage + windowSize;
+  let endPage = startPage + (pagesDisplayed - 1);
 
   if (endPage > numberOfPages) {
     endPage = numberOfPages;
@@ -77,7 +78,7 @@ const NextPage: React.FC<{
           evt.preventDefault();
           props.onClick(props.currentPage + 1);
         }}
-        aria-label={props.label}
+        role="link"
       >
         <span>{props.label}</span>
         <Icon iconName="ChevronRight" className={styles.linkIcons} />
@@ -99,7 +100,7 @@ const PreviousLink: React.FC<{
           evt.preventDefault();
           props.onClick(props.currentPage - 1);
         }}
-        aria-label={props.label}
+        role="link"
       >
         <Icon iconName="ChevronLeft" className={styles.linkIcons} />
         {props.label}
@@ -129,12 +130,10 @@ const Page: React.FC<{
       return (
         (ariaLabelNavigationLinkActive
           ? ariaLabelNavigationLinkActive
-          : 'Aktiv side, Side ') + page
+          : 'Side ') + page
       );
     }
-    return (
-      (ariaLabelNavigationLink ? ariaLabelNavigationLink : 'Gå til ') + page
-    );
+    return (ariaLabelNavigationLink ? ariaLabelNavigationLink : 'Side ') + page;
   };
 
   return (
@@ -147,6 +146,8 @@ const Page: React.FC<{
         className={isCurrent ? styles.activePage : styles.pageNumber}
         aria-label={ariaLabel()}
         aria-current={isCurrent}
+        aria-disabled={isCurrent}
+        role="link"
       >
         {page}
       </button>
@@ -156,20 +157,24 @@ const Page: React.FC<{
 
 const Pages = (props: {
   currentPage: number;
+  pagesDisplayed: number | undefined;
   pageSize: number;
   onPageChange: (newPage: number) => void;
   total: number;
   ariaLabelNavigationLink: string | undefined;
   ariaLabelNavigationLinkActive: string | undefined;
 }) => {
+  const pagesDisplayed = props.pagesDisplayed || 3;
   const windowEdges = getSlidingWindowEdges(
     props.currentPage,
     props.total,
-    props.pageSize
+    props.pageSize,
+    pagesDisplayed
   );
+
   return (
     <div>
-      {range(windowEdges.startPage).map(i => {
+      {range(windowEdges.startPage, pagesDisplayed).map(i => {
         return (
           <Page
             key={i}
@@ -197,6 +202,7 @@ const Pagination: React.FC<PaginationProps> = props => {
     currentPage,
     nextLabel,
     onPageChange,
+    pagesDisplayed,
     pageSize,
     previousLabel,
     total
@@ -211,10 +217,7 @@ const Pagination: React.FC<PaginationProps> = props => {
       <p>
         Viser {view} av {total}
       </p>
-      <nav
-        role="navigation"
-        aria-label={ariaLabel ? ariaLabel : 'Paginerings navigasjon'}
-      >
+      <nav aria-label={ariaLabel ? ariaLabel : 'Sidenavigering'}>
         <ul>
           {currentPage > 1 && (
             <PreviousLink
@@ -229,6 +232,7 @@ const Pagination: React.FC<PaginationProps> = props => {
                 onPageChange={onPageChange}
                 currentPage={currentPage}
                 total={total}
+                pagesDisplayed={pagesDisplayed}
                 pageSize={pageSize}
                 ariaLabelNavigationLink={ariaLabelNavigationLink}
                 ariaLabelNavigationLinkActive={ariaLabelNavigationLinkActive}
