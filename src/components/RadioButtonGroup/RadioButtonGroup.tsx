@@ -16,6 +16,7 @@ export interface IRadioButtonGroupOptions extends IChoiceGroupOption {
 
 export interface RadioButtonGroupProps extends IChoiceGroupProps {
   calloutFloating?: boolean;
+  /** CSS class */
   className?: string;
   /** Feilmelding */
   errorMessage?: JSX.Element | string;

@@ -33,7 +33,7 @@ export interface FileUploaderProps {
   addFileString?: string | JSX.Element;
   /** aria-label */
   ariaLabel?: string;
-  /**string for Apikall */
+  /** string for Apikall */
   axiosPath?: string;
   /** CSS class */
   className?: string;
