@@ -1,7 +1,7 @@
 import { mergeStyleSets } from '@uifabric/merge-styles';
 import { FileUploaderProps } from './FileUploader';
 import { getTheme } from '@uifabric/styling';
-import { PaletteProps } from '..';
+import { FontSizes, LineHeightSizes, PaletteProps } from '..';
 
 export const getClassNames = (props: FileUploaderProps) => {
   const palette = getTheme().palette as PaletteProps;
@@ -12,14 +12,15 @@ export const getClassNames = (props: FileUploaderProps) => {
     },
     informationWrapper: {
       marginTop: '8px',
-      fontSize: '12px',
+      fontSize: FontSizes.xSmall,
+      lineHeight: LineHeightSizes.xSmall,
       color: palette.skeColor.darkGrey
     },
     errorColor: {
       color: `${palette.skeColor.error} !important`
     },
     fileList: {
-      listStyle: 'none',
+      listStyle: 'none !important',
       padding: 0,
       selectors: {
         i: {
@@ -27,7 +28,8 @@ export const getClassNames = (props: FileUploaderProps) => {
           float: 'right'
         },
         li: {
-          wordBreak: 'break-all'
+          wordBreak: 'break-all',
+          display: 'block'
         }
       }
     },
@@ -38,6 +40,10 @@ export const getClassNames = (props: FileUploaderProps) => {
       border: 0,
       borderStyle: 'none',
       cursor: 'pointer'
+    },
+    fileName: {
+      float: 'left',
+      width: '90%'
     },
     fileUploadInput: {
       opacity: 0,

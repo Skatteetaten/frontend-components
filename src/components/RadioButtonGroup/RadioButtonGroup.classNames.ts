@@ -1,6 +1,6 @@
 import { mergeStyleSets } from '@uifabric/merge-styles';
 import { getTheme } from '@uifabric/styling';
-import { FontSizes, FontWeights } from '../utils/fonts';
+import { FontSizes, FontWeights, LineHeightSizes } from '../utils/fonts';
 import { isUndefined } from 'util';
 import { PaletteProps } from '..';
 
@@ -40,11 +40,13 @@ export const getClassNames = props => {
         'span.ms-ChoiceFieldLabel': {
           fontSize: FontSizes.medium,
           display: 'inline-block',
-          paddingLeft: '26px'
+          paddingLeft: '26px',
+          lineHeight: LineHeightSizes.medium
         },
         'span.descriptionLabel': {
           fontSize: FontSizes.smallPlus,
-          color: palette.skeColor.darkGrey
+          color: palette.skeColor.darkGrey,
+          lineHeight: LineHeightSizes.smallPlus
         },
         '& .ms-ChoiceField-field::before': {
           content: '',

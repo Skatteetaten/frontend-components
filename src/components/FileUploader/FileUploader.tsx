@@ -30,10 +30,10 @@ export interface FileUploaderProps {
   /** Akksepterte filformater */
   acceptedFileFormats?: Array<FileFormatTypes>;
   /** Tekst for opplastingskomponenten */
-  addFileString?: string;
+  addFileString?: string | JSX.Element;
   /** aria-label */
   ariaLabel?: string;
-  /**string for Apikall */
+  /** string for Apikall */
   axiosPath?: string;
   /** CSS class */
   className?: string;
@@ -361,7 +361,7 @@ const FileUploader: React.FC<FileUploaderProps> = props => {
           <ul className={styles.fileList}>
             {internalFiles.map((file, index: number) => (
               <li key={file.name.concat(index.toString())}>
-                {file.name}
+                <div className={styles.fileName}>{file.name}</div>
                 {file.error ? (
                   <Icon iconName={'Error'} className={styles.errorColor} />
                 ) : (
