@@ -191,7 +191,7 @@ const Pages = (props: {
 };
 
 /**
- * @visibleName Pagination
+ * @visibleName Pagination (Sidevelger)
  */
 const Pagination: React.FC<PaginationProps> = props => {
   const {
