@@ -9,7 +9,8 @@ export const getClassNames = () => {
     activePage: {
       color: `${palette.skeColor.darkGrey} !important`,
       borderBottom: 'none !important',
-      paddingTop: '3px !important'
+      paddingTop: '3px !important',
+      paddingBottom: '6px !important'
     },
     linkIcons: {
       fontSize: '22px',
@@ -20,6 +21,7 @@ export const getClassNames = () => {
       paddingTop: '3px !important'
     },
     paginationContainer: {
+      paddingTop: '24px',
       fontSize: '16px',
       selectors: {
         button: {
@@ -58,9 +60,19 @@ export const getClassNames = () => {
             button: {
               color: palette.skeColor.blue,
               fontWeight: 'bold',
-              padding: '0',
-              margin: '4px',
-              cursor: 'pointer'
+              padding: '3px 1px 3px 1px',
+              margin: '4px 6px ',
+              cursor: 'pointer',
+              verticalAlign: 'middle'
+            },
+            'button:focus': {
+              color: palette.skeColor.darkBlue,
+              backgroundColor: palette.skeColor.lightBlue,
+              outline: 'none'
+            },
+            'button:hover': {
+              color: palette.skeColor.darkBlue,
+              backgroundColor: palette.skeColor.lightBlue
             }
           }
         },
