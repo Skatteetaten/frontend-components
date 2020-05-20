@@ -14,6 +14,8 @@ interface TableProps<P> extends React.HTMLAttributes<HTMLDivElement> {
   data: P[];
   /**  Gjør det mulig å redigere rader i tabellen */
   editableRows?: boolean;
+  /** Om tabellen skal være i full bredde (100 %) */
+  fullWidth?: boolean;
   /**  Indeks til rad som skal åpnes i redigeringsmodus */
   openEditableRowIndex?: number;
   /**  Blir kalt ved åpning eller lukking av rad, om man ønsker å styre 'openEditableRowIndex' state utenfra */
@@ -106,7 +108,7 @@ export default class Table<P> extends React.PureComponent<
       <div
         ref={this.wrapperRef}
         id={id}
-        className={classnames(getClassNames(), className)}
+        className={classnames(getClassNames(this.props), className)}
       >
         <table>
           <thead>
