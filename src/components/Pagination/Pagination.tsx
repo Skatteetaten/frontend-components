@@ -31,8 +31,11 @@ const getNumberOfPages = (total: number, pageSize: number) => {
   return Math.ceil(total / pageSize);
 };
 
-const range = (start: number, pagesDisplayed: number) =>
-  Array.from({ length: pagesDisplayed }, (v, k) => k + start);
+const range = (start: number, end: number, pagesDisplayed: number) =>
+  Array.from(
+    { length: pagesDisplayed < end ? pagesDisplayed : end },
+    (v, k) => k + start
+  );
 
 export const getSlidingWindowEdges = (
   currentPage: number,
@@ -174,18 +177,22 @@ const Pages = (props: {
 
   return (
     <div>
-      {range(windowEdges.startPage, pagesDisplayed).map(i => {
-        return (
-          <Page
-            key={i}
-            onClick={props.onPageChange}
-            page={i}
-            isCurrent={props.currentPage === i}
-            ariaLabelNavigationLink={props.ariaLabelNavigationLink}
-            ariaLabelNavigationLinkActive={props.ariaLabelNavigationLinkActive}
-          />
-        );
-      })}
+      {range(windowEdges.startPage, windowEdges.endPage, pagesDisplayed).map(
+        i => {
+          return (
+            <Page
+              key={i}
+              onClick={props.onPageChange}
+              page={i}
+              isCurrent={props.currentPage === i}
+              ariaLabelNavigationLink={props.ariaLabelNavigationLink}
+              ariaLabelNavigationLinkActive={
+                props.ariaLabelNavigationLinkActive
+              }
+            />
+          );
+        }
+      )}
     </div>
   );
 };

@@ -107,4 +107,35 @@ describe('Pagination komponent', () => {
     expect(range.startPage).toEqual(12);
     expect(range.endPage).toEqual(16);
   });
+  it('skal genere en side dersom total er mindre enn pageSize', () => {
+    let wrapper = oppsettFullDOM({
+      total: 17,
+      pageSize: 50
+    });
+    expect(
+      wrapper
+        .find('ul')
+        .last()
+        .find('li').length
+    ).toEqual(1);
+    wrapper = oppsettFullDOM({
+      total: 32,
+      pageSize: 20
+    });
+    expect(
+      wrapper
+        .find('ul')
+        .last()
+        .find('li').length
+    ).toEqual(2);
+    expect(
+      wrapper
+        .find('ul')
+        .last()
+        .find('li')
+        .first()
+        .find('button')
+        .prop('aria-current')
+    ).toEqual(true);
+  });
 });

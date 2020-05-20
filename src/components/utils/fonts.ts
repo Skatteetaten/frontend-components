@@ -14,6 +14,21 @@ export enum FontSizes {
   mega = '72px'
 }
 
+export enum LineHeightSizes {
+  mini = '17px',
+  xSmall = '19px',
+  small = '21px',
+  smallPlus = '22px',
+  medium = '23px',
+  mediumPlus = '24px',
+  large = '25px',
+  largePlus = '27px',
+  xLarge = '29px',
+  xxLarge = '35px',
+  superLarge = '49px',
+  mega = '79px'
+}
+
 export type FontSizeType = keyof typeof FontSizes;
 
 export enum FontWeights {

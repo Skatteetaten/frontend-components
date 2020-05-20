@@ -24,6 +24,7 @@ export const getClassNames = (props: DetailsListProps) => {
   const inset = 0;
   const position = 'relative';
   const radius = '0';
+  const noHover = props.noHover && props.checkboxVisibility === 2;
 
   return mergeStyles({
     outline: 'transparent',
@@ -100,7 +101,7 @@ export const getClassNames = (props: DetailsListProps) => {
         minHeight: 32,
         selectors: {
           ':hover': {
-            background: getHoverColor(props)
+            background: noHover ? 'none' : getHoverColor(props)
           }
         }
       },
@@ -122,7 +123,8 @@ export const getClassNames = (props: DetailsListProps) => {
         background: getBackgroundColor(props),
         selectors: {
           ':hover': {
-            background: getHoverColor(props)
+            background: noHover ? 'none' : getHoverColor(props),
+            color: noHover ? 'rgba(55, 55, 55, 0.95)' : 'inherit'
           },
           '& .is-selected': {
             background: palette.neutralQuaternaryAlt
@@ -139,7 +141,7 @@ export const getClassNames = (props: DetailsListProps) => {
             padding: 0
           },
           ':hover': {
-            textDecoration: 'underline'
+            textDecoration: noHover ? 'none' : 'underline'
           }
         }
       },
