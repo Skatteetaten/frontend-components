@@ -82,8 +82,6 @@ export interface FileUploaderProps {
   fileSizeLimit?: number;
   /*feilmelding for oversteget av filstørrelsesgrense**/
   exceedFileSizeLimitErrorMessage?: string;
-  /**overstyr intern feilmelding*/
-  errorMessage?: string;
   /**Funkjson henrettet etter opplasting*/
   afterUpload?: () => void;
 }
@@ -144,7 +142,6 @@ const FileUploader: React.FC<FileUploaderProps> = props => {
     invalidCharacterRegexp,
     fileSizeLimit,
     exceedFileSizeLimitErrorMessage,
-    errorMessage,
     afterUpload
   } = props;
   const styles = getClassNames(props);
@@ -163,12 +160,6 @@ const FileUploader: React.FC<FileUploaderProps> = props => {
       setInternalFiles(files);
     }
   }, [files]);
-
-  React.useEffect(() => {
-    if (errorMessage) {
-      setInternalErrorMessages([errorMessage]);
-    }
-  }, [errorMessage]);
 
   const pushToInternalMessages = (msg: string) =>
     setInternalErrorMessages(prevState => [...prevState, msg]);
