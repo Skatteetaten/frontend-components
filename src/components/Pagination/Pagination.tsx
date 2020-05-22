@@ -32,8 +32,7 @@ const getNumberOfPages = (total: number, pageSize: number) => {
 };
 
 const range = (start: number, end: number, pagesDisplayed: number) =>
-  Array.from(
-    { length: pagesDisplayed < end ? pagesDisplayed : end },
+  [...new Array(pagesDisplayed < end ? pagesDisplayed : end)].map(
     (v, k) => k + start
   );
 
