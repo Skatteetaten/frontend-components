@@ -40,6 +40,5 @@ exports[`FileUploader komponent matcher snapshot 1`] = `
     tabIndex={-1}
     type="file"
   />
-  
 </div>
 `;
