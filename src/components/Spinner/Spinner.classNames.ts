@@ -10,10 +10,7 @@ export const getClassNames = function getClassNames(props: SpinnerProps) {
     {
       selectors: {
         '.ms-Spinner-label': {
-          color:
-            props.labelColor === 'blue'
-              ? palette.skeColor.blue
-              : props.labelColor
+          color: props.spinnerColor
         },
         '&.ms-Spinner': {
           position: 'relative'
