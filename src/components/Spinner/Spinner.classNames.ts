@@ -9,6 +9,12 @@ export const getClassNames = function getClassNames(props: SpinnerProps) {
   return mergeStyles([
     {
       selectors: {
+        '.ms-Spinner-label': {
+          color:
+            props.labelColor === 'blue'
+              ? palette.skeColor.blue
+              : props.labelColor
+        },
         '&.ms-Spinner': {
           position: 'relative'
         },

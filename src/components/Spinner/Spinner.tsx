@@ -9,6 +9,7 @@ import { getClassNames } from './Spinner.classNames';
 
 export interface SpinnerProps extends ISpinnerProps {
   spinnerColor?: 'white' | 'black';
+  labelColor?: 'white' | 'black' | 'blue';
 }
 
 /**
@@ -18,7 +19,8 @@ class Spinner extends React.PureComponent<SpinnerProps> {
   static Size = SpinnerSize;
   static defaultProps = {
     size: SpinnerSize.medium,
-    spinnerColor: 'black'
+    spinnerColor: 'black',
+    labelColor: 'black'
   };
   render() {
     const { className, ...rest } = this.props;
