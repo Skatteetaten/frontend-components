@@ -1,0 +1,79 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Pagination komponent matcher snapshot 1`] = `
+<div
+  className="paginationContainer-39"
+>
+  <p>
+    Viser 
+    1-5
+     av 
+    15
+  </p>
+  <nav
+    aria-label="Sidenavigering"
+  >
+    <ul>
+      <li>
+        <ul>
+          <div>
+            <li>
+              <button
+                aria-current={true}
+                aria-disabled={true}
+                aria-label="Side 1"
+                className="activePage-36"
+                onClick={[Function]}
+                role="link"
+              >
+                1
+              </button>
+            </li>
+            <li>
+              <button
+                aria-current={false}
+                aria-disabled={false}
+                aria-label="Side 2"
+                className="pageNumber-38"
+                onClick={[Function]}
+                role="link"
+              >
+                2
+              </button>
+            </li>
+            <li>
+              <button
+                aria-current={false}
+                aria-disabled={false}
+                aria-label="Side 3"
+                className="pageNumber-38"
+                onClick={[Function]}
+                role="link"
+              >
+                3
+              </button>
+            </li>
+          </div>
+        </ul>
+      </li>
+      <li>
+        <button
+          onClick={[Function]}
+          role="link"
+        >
+          <span>
+            Neste
+          </span>
+          <i
+            aria-hidden={true}
+            className="linkIcons-41"
+            data-icon-name="ChevronRight"
+          >
+            
+          </i>
+        </button>
+      </li>
+    </ul>
+  </nav>
+</div>
+`;

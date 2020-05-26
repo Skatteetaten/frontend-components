@@ -4,7 +4,7 @@ import { getTheme } from '@uifabric/styling';
 import { FontWeights } from '..';
 import { PaletteProps } from '..';
 
-export const getClassNames = function getClassNames() {
+export const getClassNames = props => {
   const palette = getTheme().palette as PaletteProps;
 
   return mergeStyles([
@@ -14,6 +14,7 @@ export const getClassNames = function getClassNames() {
       selectors: {
         table: {
           display: 'table',
+          width: props.fullWidth ? '100%' : undefined,
           borderCollapse: 'collapse',
           textAlign: 'left',
           selectors: {
