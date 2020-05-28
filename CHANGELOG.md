@@ -1,3 +1,11 @@
+### **v.3.4.0 - 28.05.2020 **
+
+- Pagination: new component for navigating long tables or search results.
+- Spinner: changed label color from blue to same as spinner
+- FileUpload: Improved handeling of long file names, norwegian characters and error messages.
+- RadioButtonGroup: Improved typography in description.
+- DetailsList: Ability to remove hover effect
+
 ### **v.3.3.5 - 13.05.2020 **
 
 - Sketch components updated.
