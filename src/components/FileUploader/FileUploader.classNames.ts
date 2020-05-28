@@ -33,6 +33,9 @@ export const getClassNames = (props: FileUploaderProps) => {
         }
       }
     },
+    fileListWrapper: {
+      display: 'grid'
+    },
     fileListCancelBtn: {
       backgroundColor: 'transparent',
       float: 'right',

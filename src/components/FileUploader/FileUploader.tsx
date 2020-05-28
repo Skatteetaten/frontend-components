@@ -52,7 +52,7 @@ export interface FileUploaderProps {
   /** Id */
   id?: string;
   /** Tilleggsinformasjon */
-  info?: string;
+  info?: string | JSX.Element;
   /** Descriptive label for SearchField */
   label?: string;
   /** aria-label for knapp i label */
@@ -401,7 +401,7 @@ const FileUploader: React.FC<FileUploaderProps> = props => {
           </div>
         ))}
       {internalFiles.length > 0 && (
-        <div role="alert">
+        <div role="alert" className={styles.fileListWrapper}>
           <ul className={styles.fileList}>
             {internalFiles.map((file, index: number) => (
               <li key={file.name.concat(index.toString())}>
