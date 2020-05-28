@@ -28,6 +28,7 @@ export * from './LinkGroup';
 export * from './MessageBar';
 export * from './NavigationTile';
 export * from './OpenClose';
+export * from './Pagination';
 export * from './ProgressBar';
 export * from './RadioButtonGroup';
 export * from './ScrollToTopButton';
