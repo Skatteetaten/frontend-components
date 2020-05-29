@@ -4,6 +4,7 @@ export const getClassNames = props => {
   const {
     noSpacing,
     rowSpacing,
+    colPadding,
     centered,
     padding,
     sm,
@@ -79,6 +80,7 @@ export const getClassNames = props => {
       minHeight: '1px',
       paddingLeft: !noSpacing && '8px',
       paddingRight: !noSpacing && '8px',
+      padding: colPadding,
       boxSizing: 'border-box',
       width: '100%',
       selectors: {
