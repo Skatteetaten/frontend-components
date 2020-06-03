@@ -31,6 +31,8 @@ export interface FileUploaderProps {
   acceptedFileFormats?: Array<FileFormatTypes>;
   /** Tekst for opplastingskomponenten */
   addFileString?: string | JSX.Element;
+  /**Funkjson henrettet etter opplasting*/
+  afterUpload?: () => void;
   /** aria-label */
   ariaLabel?: string;
   /** string for Apikall */
@@ -45,14 +47,24 @@ export interface FileUploaderProps {
   deleteButtonAriaLabel?: string;
   /** Funksjon for å slette opplastet fil */
   deleteFile?: (file: File) => void;
+  /**feilmelding for oversteget av filstørrelsesgrense*/
+  exceedFileSizeLimitErrorMessage?: string;
   /** Opplastede filer */
   files?: Array<any>;
+  /**størrelsesgrense til en enkelt fil i bit*/
+  fileSizeLimit?: number;
+  /**forsinkelse før opplasting i millisekunder*/
+  forsinkelse?: number;
   /** Hjelpetekst */
   help?: string | JSX.Element;
   /** Id */
   id?: string;
   /** Tilleggsinformasjon */
   info?: string | JSX.Element;
+  /**Definer ugyldige tegn som skal erstattes med "_". Skal erstatte alle non-ord karakter dersom invalidCharacterRegexp ikker er oppgitt*/
+  invalidCharacterRegexp?: RegExp;
+  /**Funksjon som kjører dersom spinner forandrer state */
+  isLoading?: (loading: boolean) => void;
   /** Descriptive label for SearchField */
   label?: string;
   /** aria-label for knapp i label */
@@ -63,6 +75,8 @@ export interface FileUploaderProps {
   loading?: boolean;
   /** Mulighet for å laste opp flere filer */
   multipleFiles?: boolean;
+  /**erstatter tegn som er ugyldige */
+  normalizeFileName?: boolean;
   /** Brukerspesifisert event for callout **/
   onCalloutToggle?: (
     oldCalloutState: calloutState,
@@ -72,18 +86,6 @@ export interface FileUploaderProps {
   queryParams?: any;
   /** Funksjon for filopplasting */
   uploadFile?: (file: File) => void;
-  /**forsinkelse før opplasting i millisekunder*/
-  forsinkelse?: number;
-  /**erstatter tegn som er ugyldige */
-  normalizeFileName?: boolean;
-  /**Definer ugyldige tegn som skal erstattes med "_". Skal erstatte alle non-ord karakter dersom invalidCharacterRegexp ikker er oppgitt*/
-  invalidCharacterRegexp?: RegExp;
-  /**størrelsesgrense til en enkelt fil i bit*/
-  fileSizeLimit?: number;
-  /*feilmelding for oversteget av filstørrelsesgrense**/
-  exceedFileSizeLimitErrorMessage?: string;
-  /**Funkjson henrettet etter opplasting*/
-  afterUpload?: () => void;
 }
 
 export const isCorrectFileFormat = (
@@ -130,6 +132,7 @@ const FileUploader: React.FC<FileUploaderProps> = props => {
     help,
     id,
     info,
+    isLoading,
     label,
     labelButtonAriaLabel,
     labelCallout,
@@ -310,6 +313,14 @@ const FileUploader: React.FC<FileUploaderProps> = props => {
     files.forEach(file => {
       deleteFromList(file);
     });
+  }
+
+  if (isLoading) {
+    if (loading || internalLoading) {
+      isLoading(true);
+    } else {
+      isLoading(false);
+    }
   }
 
   return (
