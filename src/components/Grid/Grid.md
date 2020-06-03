@@ -16,9 +16,10 @@ DemoBlock = ({ children }) => (
 );
 ```
 
+Grid med standard padding:
+
 ```js
 import Grid from '@skatteetaten/frontend-components/Grid';
-
 <Grid padding="0px">
   <Grid.Row>
     <Grid.Col lg={4}>
@@ -96,22 +97,149 @@ import Grid from '@skatteetaten/frontend-components/Grid';
 </Grid>;
 ```
 
+Endre bredde på seksjon ved ulike skjermstørrelser:
+
+```js
+import Grid from '@skatteetaten/frontend-components/Grid';
+<Grid padding="0px">
+  <Grid.Row>
+    <Grid.Col sm={12} md={4} lg={3} xl={2} xxl={1}>
+      <DemoBlock>Del 1</DemoBlock>
+    </Grid.Col>
+    <Grid.Col sm={12} md={4} lg={3} xl={2} xxl={1}>
+      <DemoBlock>Del 2</DemoBlock>
+    </Grid.Col>
+    <Grid.Col sm={12} md={4} lg={3} xl={2} xxl={1}>
+      <DemoBlock>Del 3</DemoBlock>
+    </Grid.Col>
+  </Grid.Row>
+</Grid>;
+```
+
+Seksjoner som hører sammen
+
+```js
+import Grid from '@skatteetaten/frontend-components/Grid';
+import Card from '@skatteetaten/frontend-components/Card';
+import TextField from '@skatteetaten/frontend-components/TextField';
+<div>
+  <Grid padding="16px 8px">
+    <Grid.Row rowSpacing={Grid.SPACE_NONE}>
+      <Grid.Col lg={12}>
+        <Card
+          title="Saksopplysninger"
+          color={Card.Color.BEIGE}
+          expand={true}
+          circleOnIcon={false}
+          isExpanded={false}
+        >
+          <p>Ingen opplysninger registrert.</p>
+        </Card>
+      </Grid.Col>
+    </Grid.Row>
+    <Grid.Row rowSpacing={Grid.SPACE_NONE}>
+      <Grid.Col lg={12}>
+        <Card
+          title="Fra arbeidsgiver"
+          color={Card.Color.BEIGE}
+          expand={true}
+          circleOnIcon={false}
+          isExpanded={false}
+        >
+          <p>Ingen opplysninger registrert.</p>
+        </Card>
+      </Grid.Col>
+    </Grid.Row>
+    <Grid.Row rowSpacing={Grid.SPACE_NONE}>
+      <Grid.Col lg={12}>
+        <Card
+          title="Fra skattemelding"
+          color={Card.Color.BEIGE}
+          expand={true}
+          circleOnIcon={false}
+          isExpanded={false}
+        >
+          <p>Ingen opplysninger registrert.</p>
+        </Card>
+      </Grid.Col>
+    </Grid.Row>
+  </Grid>
+</div>;
+```
+
+Grid inni et annet grid:
+
+```js
+import Grid from '@skatteetaten/frontend-components/Grid';
+import Card from '@skatteetaten/frontend-components/Card';
+import TextField from '@skatteetaten/frontend-components/TextField';
+<div>
+  <Grid padding="0px">
+    <Grid.Row>
+      <Grid.Col lg={12}>
+        <Card
+          title="Skattemelding"
+          color={Card.Color.BEIGE}
+          expand={true}
+          circleOnIcon={false}
+          isExpanded={false}
+        >
+          <Grid padding="0px">
+            <Grid.Row>
+              <Grid.Col sm={12} md={4} lg={3} xl={2} xxl={1} noSpacing>
+                Del 1
+              </Grid.Col>
+              <Grid.Col sm={12} md={4} lg={3} xl={2} xxl={1} noSpacing>
+                Del 2
+              </Grid.Col>
+              <Grid.Col sm={12} md={4} lg={3} xl={2} xxl={1} noSpacing>
+                Del 3
+              </Grid.Col>
+            </Grid.Row>
+          </Grid>
+        </Card>
+      </Grid.Col>
+    </Grid.Row>
+  </Grid>
+</div>;
+```
+
 ```js noeditor beskrivelse
+import Grid from '@skatteetaten/frontend-components/Grid';
+import Card from '@skatteetaten/frontend-components/Card';
+import TextField from '@skatteetaten/frontend-components/TextField';
+import Button from '@skatteetaten/frontend-components/Button';
+import DatePicker from '@skatteetaten/frontend-components/DatePicker';
+
+<div>
   <h3>For plassering av elementer</h3>
   <p>
-    Et grid/rutenett hjelper til med å plassere komponenter på skjermen. Det
-    er først og fremst nyttig i utvikling, men kan være lurt for designere å
-    tenke på hvordan komponenter enkelt plasseres.
+    Et rutenett lar deg fordele og plassere innhold på en nettside. Rutene
+    plasserer innholdet vårt riktig slik at komponentene er på rett plass, selv
+    om brukerne våre benytter forskjellige skjermbredder.
   </p>
+  <p>
+    Dette er nyttig i utvikling av nettsiden, men det er også lurt for designere
+    å tenke gjennom hvordan de enklest kan plassere komponentene.
+  </p>
+
   <h3>Kolonner og brekkpunkter</h3>
   <p>
-    Et grid består av rader og kolonner, hvor en rad kan maksimalt ha 12
-    kolonner, men man trenger ikke bruke alle 12.
+    Et grid består av rader og kolonner. En rad kan maksimalt ha 12 kolonner,
+    men du trenger ikke bruke alle 12.
   </p>
   <p>
-    Griden kan settes opp slik at antall kolonner som vises er avhengig av
-    skjermstørrelsen, og på den måten kan realisere responsivt design. Vi har
-    følgende brekkpunkter:
+    Du kan sette opp rutenettet slik at tallet på kolonner som brukeren ser, er
+    avhengig av skjermstørrelsen. På den måten får vi et responsivt design som
+    betyr at elementene på siden automatisk blir strekt, krympet eller flyttet,
+    for å tilpasse seg den tilgjengelige skjermplassen.
+  </p>
+  <p>
+    I praksis må du forholde deg et sett av skjermstørrelser og hvordan
+    rutenettet skal se ut på hver av dem. Ved gitte skjermstørrelser kan
+    rutenettet justere seg for eksempel, gå fra flere kolonner på desktop til én
+    kolonne på mobil. Skjermstørrelsene som rutenettet kan justere seg på kalles
+    brekkpunkter, og komponenten bruker disse:
   </p>
   <ul>
     <li>Small (sm): maks 479px</li>
@@ -121,12 +249,13 @@ import Grid from '@skatteetaten/frontend-components/Grid';
     <li>Xx-large (xxl): 1366px-1919px</li>
     <li>Xxx-large (xxxl): min 1920px</li>
   </ul>
-  <p>Man kan fjerne luft rundt kolonner ved å sette noPadding. </p>
+  <h3>Bruk luft for å dele eller knytte sammen ulike typer innhold</h3>
   <p>
-    Det anbefalt å bruke luft/anstander til å fortelle om i hvor stor grad en
-    seksjon er knyttet til en annen. Du kan bruke avstander mellom radene i
-    griden for oppnå det:
+    Vi anbefaler at du bruker luft/anstander til å vise i hvor stor grad en
+    seksjon med innhold er knyttet til en annen, slik som du tydelig ser i
+    bunnen på <a href="https://www.skatteetaten.no">skatteetaten.no</a>.
   </p>
+  <p>Du kan bruke avstander mellom radene i griden for oppnå dette:</p>
   <ul>
     <li>
       Når innholdet hører sammen: Grid.SPACE_NONE (0px) eller Grid.SPACE_SMALL
@@ -135,6 +264,13 @@ import Grid from '@skatteetaten/frontend-components/Grid';
     <li>For ny seksjon, med samme type innhold: Grid.SPACE_MEDIUM (16px)</li>
     <li>Nytt type innhold eller tydelig skille: Grid.SPACE_LARGE (24px)</li>
   </ul>
+
+  <p>
+    Du kan justere også luft rundt celler ved å sette for eksempel &lt;Grid.Col
+    colPadding="0 8px 0 0"&gt;, eller fjerne den helt ved å bruke &lt;Grid.Col
+    noSpacing&gt;
+  </p>
+</div>;
 ```
 
 ```js noeditor uu

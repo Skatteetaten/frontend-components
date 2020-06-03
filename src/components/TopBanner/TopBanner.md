@@ -113,13 +113,12 @@ import TopBanner from '@skatteetaten/frontend-components/TopBanner';
 ```js noeditor beskrivelse
 <h3>Forskjell på interne systemer og publikumsløsninger</h3>
   <p>
-    Vi ønsker å skille interne og eksterne løsninger visuelt fra hverandre. Interne løsninger bruker fylt toppbanner med skrå strek, mens eksterne bruker
-    den som ligner mer på den som brukes på skatteetaten.no, for en smidig overgang fra skatteetaten.no til en tilnyttet løsning.
+   Alle løsningene våre har et toppbanner som visuelt skiller interne og eksterne fra hverandre. Interne løsninger bruker fylt toppbanner med skrå strek, mens eksterne bruker en smal lang strek, slik som på <a href='https://www.skatteetaten.no'>skatteetaten.no</a>. Dette lager en smidig overgang fra skatteetaten.no til en tilknyttet løsning.
   </p>
   <h3>Startsider på interne løsinger</h3>
-  <p>Interne fagsystemer har gjerne en hovedside hvor en finner arbeidsoppgaver eller søker etter opplysninger. Her kan TopBanneren holdes enkel, og kun inneholde navn på logo og navn på applikasjonen. Det er ikke nødvendig å skrive «Hjemmeside», «Startside»,  «Velkommen» i toppbanneren her. TopBanner kan inneholde meny til rapporter og «løse sider», eller personlige innstillinger.</p>
+  <p>Interne fagsystemer har gjerne en hovedside der brukerne finner arbeidsoppgaver eller søker etter opplysninger. Her kan toppbanneren holdes enkel, og kun inneholde navn på logo og navn på applikasjonen. Toppbanneren kan inneholde meny til rapporter og «løse sider», eller personlige innstillinger. Du trenger ikke skrive «Hjemmeside», «Startside», «Velkommen» i toppbanneren her.</p>
   <h3>Undersider på interne løsinger</h3>
-   <p>De fleste interne systemer har en eller flere sett med undersider. I tillegg bør banneren få en tittel som setter kontektsen til det som utføres i skjermbildet nedenfor, for eksempel en sakstype eller arbeidsoppgave. Dersom arbeidoppgaven står i toppbanneret skal også arbeidsliste-funksjonene «Gjør tilgjengelig», «Sett på vent» og «Fordel» bør stå i umiddelbar nærhet.
+   <p>De fleste interne systemer har en eller flere sett med undersider. Banneret på sidene bør ha en tittel som forteller konteksten til innholdet på siden, altså en forklaring som gjør det relevant for brukeren, for eksempel en sakstype eller arbeidsoppgave. Dersom du velger å ha arbeidsoppgaven i toppbanneret, skal også arbeidsliste-funksjonene «Gjør tilgjengelig», «Sett på vent» og «Fordel» stå i umiddelbar nærhet.
    </p>
     <h3>Klikkbar logo</h3>
   <p>
