@@ -175,6 +175,14 @@ const FileUploader: React.FC<FileUploaderProps> = props => {
     }
   };
 
+  const triggerUpdateFiles = (validFiles: Array<File>) => {
+    if (uploadFile) {
+      validFiles.forEach(file => {
+        uploadFile(file);
+      });
+    }
+  };
+
   const uploadFilePromise = (
     url: string,
     file: File,
@@ -221,11 +229,7 @@ const FileUploader: React.FC<FileUploaderProps> = props => {
       isValidFile(file, fileSizeLimit)
     );
 
-    if (uploadFile) {
-      validFiles.forEach(file => {
-        uploadFile(file);
-      });
-    }
+    triggerUpdateFiles(validFiles);
 
     if (!axiosPath) {
       return;
@@ -306,6 +310,7 @@ const FileUploader: React.FC<FileUploaderProps> = props => {
             f => f.id !== fileToBeDeleted.id
           );
           setInternalFiles(newList);
+          triggerUpdateFiles(newList);
         });
     }
   };
