@@ -46,7 +46,7 @@ export interface FileUploaderProps {
   /** Aria-label for "fjern fil"-knapp */
   deleteButtonAriaLabel?: string;
   /** Funksjon for å slette opplastet fil */
-  deleteFile?: (file: File) => void;
+  deleteFile?: (file: AttachmentMetadata | File) => void;
   /**feilmelding for oversteget av filstørrelsesgrense*/
   exceedFileSizeLimitErrorMessage?: string;
   /** Opplastede filer */
