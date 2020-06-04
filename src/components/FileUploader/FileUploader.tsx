@@ -31,6 +31,8 @@ export interface FileUploaderProps {
   acceptedFileFormats?: Array<FileFormatTypes>;
   /** Tekst for opplastingskomponenten */
   addFileString?: string | JSX.Element;
+  /** Funksjon som kjøres etter opplasting */
+  afterUpload?: () => void;
   /** aria-label */
   ariaLabel?: string;
   /** string for Apikall */
@@ -44,16 +46,26 @@ export interface FileUploaderProps {
   /** Aria-label for "fjern fil"-knapp */
   deleteButtonAriaLabel?: string;
   /** Funksjon for å slette opplastet fil */
-  deleteFile?: (file: File) => void;
+  deleteFile?: (file: AttachmentMetadata | File) => void;
+  /**feilmelding for oversteget av filstørrelsesgrense*/
+  exceedFileSizeLimitErrorMessage?: string;
   /** Opplastede filer */
   files?: Array<any>;
+  /** Størrelsesgrense til en enkelt fil i bit*/
+  fileSizeLimit?: number;
+  /** Forsinkelse før opplasting i millisekunder*/
+  forsinkelse?: number;
   /** Hjelpetekst */
   help?: string | JSX.Element;
   /** Id */
   id?: string;
   /** Tilleggsinformasjon */
   info?: string | JSX.Element;
-  /** Descriptive label for SearchField */
+  /** Definer ugyldige tegn som skal erstattes med "_". NormalizeFileName vil erstatte alle ugyldige tegn dersom denne verdien ikke er satt. */
+  invalidCharacterRegexp?: RegExp;
+  /**Funksjon som kjører dersom spinner forandrer state */
+  isLoading?: (loading: boolean) => void;
+  /** Beskrivende label for FileUploader */
   label?: string;
   /** aria-label for knapp i label */
   labelButtonAriaLabel?: string;
@@ -63,7 +75,9 @@ export interface FileUploaderProps {
   loading?: boolean;
   /** Mulighet for å laste opp flere filer */
   multipleFiles?: boolean;
-  /** Brukerspesifisert event for callout **/
+  /** Erstatter tegn som er ugyldige */
+  normalizeFileName?: boolean;
+  /** Brukerspesifisert event for callout */
   onCalloutToggle?: (
     oldCalloutState: calloutState,
     newCalloutState: calloutState
@@ -72,18 +86,6 @@ export interface FileUploaderProps {
   queryParams?: any;
   /** Funksjon for filopplasting */
   uploadFile?: (file: File) => void;
-  /**forsinkelse før opplasting i millisekunder*/
-  forsinkelse?: number;
-  /**erstatter tegn som er ugyldige */
-  normalizeFileName?: boolean;
-  /**Definer ugyldige tegn som skal erstattes med "_". Skal erstatte alle non-ord karakter dersom invalidCharacterRegexp ikker er oppgitt*/
-  invalidCharacterRegexp?: RegExp;
-  /**størrelsesgrense til en enkelt fil i bit*/
-  fileSizeLimit?: number;
-  /*feilmelding for oversteget av filstørrelsesgrense**/
-  exceedFileSizeLimitErrorMessage?: string;
-  /**Funkjson henrettet etter opplasting*/
-  afterUpload?: () => void;
 }
 
 export const isCorrectFileFormat = (
@@ -119,30 +121,31 @@ const FileUploader: React.FC<FileUploaderProps> = props => {
   const {
     acceptedFileFormats,
     addFileString,
+    afterUpload,
     ariaLabel,
     axiosPath,
     className,
-    labelWithCalloutAutoDismiss,
     deleteAllFiles,
     deleteButtonAriaLabel,
     deleteFile,
+    exceedFileSizeLimitErrorMessage,
     files,
+    fileSizeLimit,
     help,
     id,
     info,
+    invalidCharacterRegexp,
+    isLoading,
     label,
     labelButtonAriaLabel,
     labelCallout,
+    labelWithCalloutAutoDismiss,
     loading,
     multipleFiles,
+    normalizeFileName,
     onCalloutToggle,
     queryParams,
-    uploadFile,
-    normalizeFileName,
-    invalidCharacterRegexp,
-    fileSizeLimit,
-    exceedFileSizeLimitErrorMessage,
-    afterUpload
+    uploadFile
   } = props;
   const styles = getClassNames(props);
   const [internalFiles, setInternalFiles] = React.useState<Array<any>>(
@@ -169,6 +172,14 @@ const FileUploader: React.FC<FileUploaderProps> = props => {
     event.stopPropagation();
     if (event.target.files && event.target.files.length > 0) {
       handleNewFiles(Array.from(event.target.files));
+    }
+  };
+
+  const triggerUpdateFiles = (validFiles: Array<File>) => {
+    if (uploadFile) {
+      validFiles.forEach(file => {
+        uploadFile(file);
+      });
     }
   };
 
@@ -218,11 +229,7 @@ const FileUploader: React.FC<FileUploaderProps> = props => {
       isValidFile(file, fileSizeLimit)
     );
 
-    if (uploadFile) {
-      validFiles.forEach(file => {
-        uploadFile(file);
-      });
-    }
+    triggerUpdateFiles(validFiles);
 
     if (!axiosPath) {
       return;
@@ -303,6 +310,7 @@ const FileUploader: React.FC<FileUploaderProps> = props => {
             f => f.id !== fileToBeDeleted.id
           );
           setInternalFiles(newList);
+          triggerUpdateFiles(newList);
         });
     }
   };
@@ -310,6 +318,14 @@ const FileUploader: React.FC<FileUploaderProps> = props => {
     files.forEach(file => {
       deleteFromList(file);
     });
+  }
+
+  if (isLoading) {
+    if (loading || internalLoading) {
+      isLoading(true);
+    } else {
+      isLoading(false);
+    }
   }
 
   return (
