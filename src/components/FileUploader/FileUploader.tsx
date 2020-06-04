@@ -31,7 +31,7 @@ export interface FileUploaderProps {
   acceptedFileFormats?: Array<FileFormatTypes>;
   /** Tekst for opplastingskomponenten */
   addFileString?: string | JSX.Element;
-  /**Funkjson henrettet etter opplasting*/
+  /** Funksjon som kjøres etter opplasting */
   afterUpload?: () => void;
   /** aria-label */
   ariaLabel?: string;
@@ -51,9 +51,9 @@ export interface FileUploaderProps {
   exceedFileSizeLimitErrorMessage?: string;
   /** Opplastede filer */
   files?: Array<any>;
-  /**størrelsesgrense til en enkelt fil i bit*/
+  /** Størrelsesgrense til en enkelt fil i bit*/
   fileSizeLimit?: number;
-  /**forsinkelse før opplasting i millisekunder*/
+  /** Forsinkelse før opplasting i millisekunder*/
   forsinkelse?: number;
   /** Hjelpetekst */
   help?: string | JSX.Element;
@@ -61,11 +61,11 @@ export interface FileUploaderProps {
   id?: string;
   /** Tilleggsinformasjon */
   info?: string | JSX.Element;
-  /**Definer ugyldige tegn som skal erstattes med "_". Skal erstatte alle non-ord karakter dersom invalidCharacterRegexp ikker er oppgitt*/
+  /** Definer ugyldige tegn som skal erstattes med "_". NormalizeFileName vil erstatte alle ugyldige tegn dersom denne verdien ikke er satt. */
   invalidCharacterRegexp?: RegExp;
   /**Funksjon som kjører dersom spinner forandrer state */
   isLoading?: (loading: boolean) => void;
-  /** Descriptive label for SearchField */
+  /** Beskrivende label for FileUploader */
   label?: string;
   /** aria-label for knapp i label */
   labelButtonAriaLabel?: string;
@@ -75,9 +75,9 @@ export interface FileUploaderProps {
   loading?: boolean;
   /** Mulighet for å laste opp flere filer */
   multipleFiles?: boolean;
-  /**erstatter tegn som er ugyldige */
+  /** Erstatter tegn som er ugyldige */
   normalizeFileName?: boolean;
-  /** Brukerspesifisert event for callout **/
+  /** Brukerspesifisert event for callout */
   onCalloutToggle?: (
     oldCalloutState: calloutState,
     newCalloutState: calloutState
