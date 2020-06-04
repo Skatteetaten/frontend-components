@@ -121,31 +121,31 @@ const FileUploader: React.FC<FileUploaderProps> = props => {
   const {
     acceptedFileFormats,
     addFileString,
+    afterUpload,
     ariaLabel,
     axiosPath,
     className,
-    labelWithCalloutAutoDismiss,
     deleteAllFiles,
     deleteButtonAriaLabel,
     deleteFile,
+    exceedFileSizeLimitErrorMessage,
     files,
+    fileSizeLimit,
     help,
     id,
     info,
+    invalidCharacterRegexp,
     isLoading,
     label,
     labelButtonAriaLabel,
     labelCallout,
+    labelWithCalloutAutoDismiss,
     loading,
     multipleFiles,
+    normalizeFileName,
     onCalloutToggle,
     queryParams,
-    uploadFile,
-    normalizeFileName,
-    invalidCharacterRegexp,
-    fileSizeLimit,
-    exceedFileSizeLimitErrorMessage,
-    afterUpload
+    uploadFile
   } = props;
   const styles = getClassNames(props);
   const [internalFiles, setInternalFiles] = React.useState<Array<any>>(
