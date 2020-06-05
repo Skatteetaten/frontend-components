@@ -12,7 +12,7 @@ interface StepListProps extends React.HTMLAttributes<HTMLDivElement> {
   children?: React.ReactNode;
 }
 /**
- * @visibleName StepList (Prosessviser)
+ * @visibleName StepList (StegListe)
  */
 
 const StepList = (props: StepListProps) => {
