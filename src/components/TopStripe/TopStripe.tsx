@@ -43,10 +43,19 @@ const TopStripe: React.FC<TopStripeProps> = props => {
     setOpen(notOpen);
   };
 
+  const handleEscape = (e: any) => {
+    // Match escape key
+    if (e.keyCode === 27) {
+      setOpen(notOpen);
+    }
+  };
+
   React.useEffect(() => {
     document.addEventListener('mousedown', handleClickOutside);
+    document.addEventListener('keydown', handleEscape);
     return () => {
       document.removeEventListener('mousedown', handleClickOutside);
+      document.removeEventListener('keydown', handleEscape);
     };
   });
 
