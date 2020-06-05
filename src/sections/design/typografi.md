@@ -41,7 +41,7 @@ Hvis en tekstlinje (spalten) er for lang vil teksten oppleves som tung å lese. 
 
 ### Om skrifttypen
 
-Helvetica er valgt som Skatteetatens profilfont, men på grunn av høye kostnader er det ikke blitt valgt å kjøpe lisens for Helvetica til bruk på web. Det betyr at Designsystemet ikke inneholder noen ikon-font, men er satt opp slik at dersom Helvetica er installert så vil denne brukes. Dersom en maskin ikke har installert Helvetica, vil Arial være neste beste alternativ, og i praksis den fonten som vises hos svært mange brukere.
+Helvetica er valgt som Skatteetatens profilfont, men på grunn av høye kostnader er det ikke blitt valgt å kjøpe lisens for Helvetica til bruk på web. Det betyr at Designsystemet ikke inneholder noen font, men er satt opp slik at dersom Helvetica er installert så vil denne brukes. Dersom en maskin ikke har installert Helvetica, vil Arial være neste beste alternativ, og i praksis den fonten som vises hos svært mange brukere.
 
 ### Komponent
 
