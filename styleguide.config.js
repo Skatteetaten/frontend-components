@@ -83,6 +83,7 @@ module.exports = {
       'DatePicker',
       'Dropdown',
       'FileUploader',
+      'CommandBar',
       'RadioButtonGroup',
       'SearchField',
       'TextField'
