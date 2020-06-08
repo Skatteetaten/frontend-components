@@ -2,11 +2,11 @@
 
 exports[`Dropdown komponent matcher snapshot 1`] = `
 <div
-  id="dropdown-undefined"
+  id="dropdown-todo"
 >
   <LabelWithCallout
-    id="dropdown-undefined-label"
-    inputId="dropdown-undefined-input-option"
+    id="dropdown-todo-label"
+    inputId="dropdown-todo-input-option"
   />
   <StyledWithResponsiveMode
     calloutProps={
@@ -15,7 +15,7 @@ exports[`Dropdown komponent matcher snapshot 1`] = `
       }
     }
     className="SkeDropdown-42"
-    id="dropdown-undefined-input"
+    id="dropdown-todo-input"
     onRenderCaretDown={[Function]}
     options={
       Array [

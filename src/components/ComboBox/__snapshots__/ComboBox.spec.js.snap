@@ -2,15 +2,15 @@
 
 exports[`Combobox komponent matcher med snapshot 1`] = `
 <div
-  id="combobox-1"
+  id="combobox-todo"
 >
   <div
     className="ms-ComboBox-container SkeCombobox-42"
-    id="combobox-1-input"
+    id="combobox-todo-input"
   >
     <div
       className="ms-ComboBox css-51"
-      id="combobox-undefined-inputwrapper"
+      id="combobox-todo-inputwrapper"
     >
       <input
         aria-autocomplete="both"
@@ -21,7 +21,7 @@ exports[`Combobox komponent matcher med snapshot 1`] = `
         className="ms-ComboBox-Input css-52"
         data-is-interactable={true}
         data-lpignore={true}
-        id="combobox-undefined-input-input"
+        id="combobox-todo-input-input"
         onBlur={[Function]}
         onChange={[Function]}
         onClick={[Function]}
@@ -60,7 +60,7 @@ exports[`Combobox komponent matcher med snapshot 1`] = `
         >
           <i
             aria-hidden={true}
-            className="ms-Icon root-37 css-67 ms-Button-icon icon-62"
+            className="ms-Icon root-38 css-67 ms-Button-icon icon-62"
             data-icon-name="ChevronDown"
             role="presentation"
             style={
@@ -78,7 +78,7 @@ exports[`Combobox komponent matcher med snapshot 1`] = `
       aria-atomic="true"
       aria-live="polite"
       className=""
-      id="combobox-undefined-input-error"
+      id="combobox-todo-input-error"
       role="region"
     >
       

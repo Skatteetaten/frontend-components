@@ -1,8 +1,7 @@
 ** En ComboBox ser ut og fungerer i hovedsak som en som nedtrekksliste - men har den forskjellen brukeren kan skrive i feltet. Det er spesielt nyttig hvis listen over valg er lang. **
 
 ```js
-import ComboBox from '@skatteetaten/frontend-components/ComboBox';
-import Grid from '@skatteetaten/frontend-components/Grid';
+import { ComboBox, Grid } from '@skatteetaten/frontend-components';
 
 const initialState = {
   options: [
@@ -10,8 +9,8 @@ const initialState = {
     { key: 'B', text: 'beta', value: 'Alfa' },
     { key: 'C', text: 'gamma', value: 'Alfa' },
     { key: 'D', text: 'delta', value: 'Alfa' },
-    { key: 'E', text: 'echo', value: 'Alfa' }
-  ]
+    { key: 'E', text: 'echo', value: 'Alfa' },
+  ],
 };
 
 <div>
@@ -49,8 +48,7 @@ const initialState = {
 Stor versjon:
 
 ```js
-import ComboBox from '@skatteetaten/frontend-components/ComboBox';
-import Grid from '@skatteetaten/frontend-components/Grid';
+import { ComboBox, Grid } from '@skatteetaten/frontend-components';
 
 const initialState = {
   options: [
@@ -58,8 +56,8 @@ const initialState = {
     { key: 'B', text: 'beta', value: 'Alfa' },
     { key: 'C', text: 'gamma', value: 'Alfa' },
     { key: 'D', text: 'delta', value: 'Alfa' },
-    { key: 'E', text: 'echo', value: 'Alfa' }
-  ]
+    { key: 'E', text: 'echo', value: 'Alfa' },
+  ],
 };
 
 <div>
@@ -86,8 +84,7 @@ const initialState = {
 Med Feilmelding:
 
 ```js
-import ComboBox from '@skatteetaten/frontend-components/ComboBox';
-import Grid from '@skatteetaten/frontend-components/Grid';
+import { ComboBox, Grid } from '@skatteetaten/frontend-components';
 
 const initialState = {
   options: [
@@ -95,8 +92,8 @@ const initialState = {
     { key: 'B', text: 'beta', value: 'Alfa' },
     { key: 'C', text: 'gamma', value: 'Alfa' },
     { key: 'D', text: 'delta', value: 'Alfa' },
-    { key: 'E', text: 'echo', value: 'Alfa' }
-  ]
+    { key: 'E', text: 'echo', value: 'Alfa' },
+  ],
 };
 let error = 'En feil';
 

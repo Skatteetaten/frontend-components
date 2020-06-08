@@ -12,24 +12,24 @@ exports[`Link komponent matcher snapshot 1`] = `
   }
 >
   <ul
-    className="arrowLinkList-38"
+    className="arrowLinkList-44"
   >
     <li
-      className="arrowLink-36"
+      className="arrowLink-42"
       key="0"
     >
       <Icon
-        className="icon-37"
+        className="icon-43"
         iconName="arrowForward"
         role="presentation"
       >
         <StyledIconBase
-          className="icon-37"
+          className="icon-43"
           iconName="arrowForward"
           role="presentation"
         >
           <IconBase
-            className="icon-37"
+            className="icon-43"
             iconName="arrowForward"
             role="presentation"
             styles={[Function]}
@@ -47,65 +47,65 @@ exports[`Link komponent matcher snapshot 1`] = `
                   "large": Object {
                     "MozOsxFontSmoothing": "grayscale",
                     "WebkitFontSmoothing": "antialiased",
-                    "fontFamily": "'Helvetica Neue', Helvetica , Arial, sans-serif",
+                    "fontFamily": "'Segoe UI', 'Segoe UI Web (West European)', 'Segoe UI', -apple-system, BlinkMacSystemFont, 'Roboto', 'Helvetica Neue', sans-serif",
                     "fontSize": "18px",
-                    "fontWeight": 300,
+                    "fontWeight": 400,
                   },
                   "medium": Object {
                     "MozOsxFontSmoothing": "grayscale",
                     "WebkitFontSmoothing": "antialiased",
-                    "fontFamily": "'Helvetica Neue', Helvetica , Arial, sans-serif",
-                    "fontSize": "16px",
+                    "fontFamily": "'Segoe UI', 'Segoe UI Web (West European)', 'Segoe UI', -apple-system, BlinkMacSystemFont, 'Roboto', 'Helvetica Neue', sans-serif",
+                    "fontSize": "14px",
                     "fontWeight": 400,
                   },
                   "mediumPlus": Object {
                     "MozOsxFontSmoothing": "grayscale",
                     "WebkitFontSmoothing": "antialiased",
-                    "fontFamily": "'Helvetica Neue', Helvetica , Arial, sans-serif",
-                    "fontSize": "17px",
+                    "fontFamily": "'Segoe UI', 'Segoe UI Web (West European)', 'Segoe UI', -apple-system, BlinkMacSystemFont, 'Roboto', 'Helvetica Neue', sans-serif",
+                    "fontSize": "16px",
                     "fontWeight": 400,
                   },
                   "mega": Object {
                     "MozOsxFontSmoothing": "grayscale",
                     "WebkitFontSmoothing": "antialiased",
-                    "fontFamily": "'Helvetica Neue', Helvetica , Arial, sans-serif",
-                    "fontSize": "72px",
-                    "fontWeight": 100,
+                    "fontFamily": "'Segoe UI', 'Segoe UI Web (West European)', 'Segoe UI', -apple-system, BlinkMacSystemFont, 'Roboto', 'Helvetica Neue', sans-serif",
+                    "fontSize": "68px",
+                    "fontWeight": 600,
                   },
                   "small": Object {
                     "MozOsxFontSmoothing": "grayscale",
                     "WebkitFontSmoothing": "antialiased",
-                    "fontFamily": "'Helvetica Neue', Helvetica , Arial, sans-serif",
-                    "fontSize": "14px",
+                    "fontFamily": "'Segoe UI', 'Segoe UI Web (West European)', 'Segoe UI', -apple-system, BlinkMacSystemFont, 'Roboto', 'Helvetica Neue', sans-serif",
+                    "fontSize": "12px",
                     "fontWeight": 400,
                   },
                   "smallPlus": Object {
                     "MozOsxFontSmoothing": "grayscale",
                     "WebkitFontSmoothing": "antialiased",
-                    "fontFamily": "'Helvetica Neue', Helvetica , Arial, sans-serif",
-                    "fontSize": "15px",
+                    "fontFamily": "'Segoe UI', 'Segoe UI Web (West European)', 'Segoe UI', -apple-system, BlinkMacSystemFont, 'Roboto', 'Helvetica Neue', sans-serif",
+                    "fontSize": "12px",
                     "fontWeight": 400,
                   },
                   "superLarge": Object {
                     "MozOsxFontSmoothing": "grayscale",
                     "WebkitFontSmoothing": "antialiased",
-                    "fontFamily": "'Helvetica Neue', Helvetica , Arial, sans-serif",
+                    "fontFamily": "'Segoe UI', 'Segoe UI Web (West European)', 'Segoe UI', -apple-system, BlinkMacSystemFont, 'Roboto', 'Helvetica Neue', sans-serif",
                     "fontSize": "42px",
-                    "fontWeight": 100,
+                    "fontWeight": 600,
                   },
                   "tiny": Object {
                     "MozOsxFontSmoothing": "grayscale",
                     "WebkitFontSmoothing": "antialiased",
-                    "fontFamily": "'Helvetica Neue', Helvetica , Arial, sans-serif",
+                    "fontFamily": "'Segoe UI', 'Segoe UI Web (West European)', 'Segoe UI', -apple-system, BlinkMacSystemFont, 'Roboto', 'Helvetica Neue', sans-serif",
                     "fontSize": "10px",
-                    "fontWeight": 600,
+                    "fontWeight": 400,
                   },
                   "xLarge": Object {
                     "MozOsxFontSmoothing": "grayscale",
                     "WebkitFontSmoothing": "antialiased",
-                    "fontFamily": "'Helvetica Neue', Helvetica , Arial, sans-serif",
-                    "fontSize": "22px",
-                    "fontWeight": 100,
+                    "fontFamily": "'Segoe UI', 'Segoe UI Web (West European)', 'Segoe UI', -apple-system, BlinkMacSystemFont, 'Roboto', 'Helvetica Neue', sans-serif",
+                    "fontSize": "20px",
+                    "fontWeight": 600,
                   },
                   "xLargePlus": Object {
                     "MozOsxFontSmoothing": "grayscale",
@@ -117,16 +117,16 @@ exports[`Link komponent matcher snapshot 1`] = `
                   "xSmall": Object {
                     "MozOsxFontSmoothing": "grayscale",
                     "WebkitFontSmoothing": "antialiased",
-                    "fontFamily": "'Helvetica Neue', Helvetica , Arial, sans-serif",
-                    "fontSize": "12px",
+                    "fontFamily": "'Segoe UI', 'Segoe UI Web (West European)', 'Segoe UI', -apple-system, BlinkMacSystemFont, 'Roboto', 'Helvetica Neue', sans-serif",
+                    "fontSize": "10px",
                     "fontWeight": 400,
                   },
                   "xxLarge": Object {
                     "MozOsxFontSmoothing": "grayscale",
                     "WebkitFontSmoothing": "antialiased",
-                    "fontFamily": "'Helvetica Neue', Helvetica , Arial, sans-serif",
+                    "fontFamily": "'Segoe UI', 'Segoe UI Web (West European)', 'Segoe UI', -apple-system, BlinkMacSystemFont, 'Roboto', 'Helvetica Neue', sans-serif",
                     "fontSize": "28px",
-                    "fontWeight": 100,
+                    "fontWeight": 600,
                   },
                   "xxLargePlus": Object {
                     "MozOsxFontSmoothing": "grayscale",
@@ -339,7 +339,7 @@ exports[`Link komponent matcher snapshot 1`] = `
           >
             <i
               aria-hidden={true}
-              className="icon-41"
+              className="icon-47"
               data-icon-name="arrowForward"
               role="presentation"
             >
@@ -349,7 +349,7 @@ exports[`Link komponent matcher snapshot 1`] = `
         </StyledIconBase>
       </Icon>
       <a
-        className="arrowLinkA-39"
+        className="arrowLinkA-45"
         href="#"
       >
         Dette er en link

@@ -1,13 +1,13 @@
 ** Teknisk grunnkomponent for å sette Skatteetatens fonter og farge **
 
 ```js noeditor
-import MessageBar from '@skatteetaten/frontend-components/MessageBar';
+import { MessageBar } from '@skatteetaten/frontend-components';
 
 <MessageBar>Det finnes ingen egne eksempler for SkeBasis.</MessageBar>;
 ```
 
 ```js noeditor beskrivelse
-import MessageBar from '@skatteetaten/frontend-components/MessageBar';
+import { MessageBar } from '@skatteetaten/frontend-components';
 <div>
   <h3>Teknisk komponent for oppsett</h3>
   <p>

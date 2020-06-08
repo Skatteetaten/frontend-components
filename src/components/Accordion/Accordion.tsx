@@ -1,10 +1,10 @@
 import * as React from 'react';
-import Grid from '../Grid/Grid';
+import { Grid } from '../index';
 import { getClassNames } from './Accordion.classNames';
 import classnames from 'classnames';
-import { AccordionItemProps } from './AccordionItem';
+import { AccordionItemProps } from '../index';
 
-interface AccordionProps extends React.HTMLAttributes<HTMLDivElement> {
+export interface AccordionProps extends React.HTMLAttributes<HTMLDivElement> {
   /** aria-label */
   ariaLabel?: string;
   /** Benyttes når man skal ta brukeren gjennom en sekvens av trinnvise steg. */
@@ -23,14 +23,14 @@ interface AccordionProps extends React.HTMLAttributes<HTMLDivElement> {
  * @visibleName Accordion (Ekspanderende panel)
  */
 
-const Accordion: React.FC<AccordionProps> = props => {
+export const Accordion: React.FC<AccordionProps> = (props) => {
   const {
     processList,
     stepId,
     className,
     children,
     ariaLabel,
-    headingLevel
+    headingLevel,
   } = props;
   const { accordion } = getClassNames();
   const totalSteps = React.Children.count(children);
@@ -46,7 +46,7 @@ const Accordion: React.FC<AccordionProps> = props => {
               processList,
               headingLevel: child.props.headingLevel
                 ? child.props.headingLevel
-                : headingLevel
+                : headingLevel,
             });
           }
         })}
@@ -54,5 +54,3 @@ const Accordion: React.FC<AccordionProps> = props => {
     </div>
   );
 };
-
-export default Accordion;

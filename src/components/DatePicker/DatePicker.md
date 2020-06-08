@@ -1,12 +1,12 @@
 ** Datovelger brukes i skjemaer når brukeren skal oppgi datoer. **
 
 ```js
-import DatePicker from '@skatteetaten/frontend-components/DatePicker';
+import { DatePicker } from '@skatteetaten/frontend-components';
 
 const initialState = {
   value: new Date(),
   value2: new Date(),
-  value3: new Date()
+  value3: new Date(),
 };
 
 <div>
@@ -42,12 +42,12 @@ const initialState = {
 Stor versjon:
 
 ```js
-import DatePicker from '@skatteetaten/frontend-components/DatePicker';
+import { DatePicker } from '@skatteetaten/frontend-components';
 
 const initialState = {
   value: new Date(),
   value2: new Date(),
-  value3: new Date()
+  value3: new Date(),
 };
 
 <div className="ExampleFlexContainer-200">

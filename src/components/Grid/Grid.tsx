@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { getClassNames } from './Grid.classNames';
 
-interface RowProps {
+export interface RowProps {
   rowSpacing?: string;
   rowInset?: boolean;
   centered?: boolean;
@@ -10,11 +10,11 @@ interface RowProps {
   padding?: string;
 }
 
-class Row extends React.Component<RowProps, {}> {
+export class Row extends React.Component<RowProps, {}> {
   static displayName = 'GridRow';
 
   static defaultProps = {
-    rowSpacing: '8px'
+    rowSpacing: '8px',
   };
 
   render() {
@@ -27,7 +27,7 @@ class Row extends React.Component<RowProps, {}> {
   }
 }
 
-interface ColProps {
+export interface ColProps {
   noSpacing?: boolean;
   className?: string;
   tag?: string;
@@ -50,7 +50,7 @@ interface ColProps {
   xxlPull?: number;
   xxxlPull?: number;
 }
-class Col extends React.Component<ColProps, {}> {
+export class Col extends React.Component<ColProps, {}> {
   static displayName = 'GridCol';
   render() {
     const { children, className = '', tag = 'div' } = this.props;
@@ -62,7 +62,7 @@ class Col extends React.Component<ColProps, {}> {
   }
 }
 
-interface GridProps {
+export interface GridProps {
   className?: string;
   tag?: string;
   padding?: string;
@@ -79,7 +79,7 @@ export class Grid extends React.Component<GridProps, {}> {
   static SPACE_LARGE = '24px';
 
   static defaultProps = {
-    padding: '0 8px'
+    padding: '0 8px',
   };
 
   render() {
@@ -91,5 +91,3 @@ export class Grid extends React.Component<GridProps, {}> {
     );
   }
 }
-
-export default Grid;

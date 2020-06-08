@@ -1,5 +1,5 @@
 ```js noeditor
-import MessageBar from '@skatteetaten/frontend-components/MessageBar';
+import { MessageBar } from '@skatteetaten/frontend-components';
 
 <MessageBar>
   Det finnes ingen egne eksempler for TabItem. Gå til <a href="/#tabs">Tabs</a>{' '}

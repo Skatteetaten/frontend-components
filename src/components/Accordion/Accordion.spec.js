@@ -1,8 +1,7 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
 import toJson from 'enzyme-to-json';
-import Accordion from './Accordion';
-import AccordionItem from './AccordionItem';
+import { Accordion, AccordionItem } from '../index';
 
 function oppsettShallow(props1, props2) {
   return shallow(
@@ -31,12 +30,12 @@ describe('Accordion komponent', () => {
   it('rendrer accordion med riktig props', () => {
     const wrapper = oppsettShallow(
       {
-        processList: true
+        processList: true,
       },
       {
         toggleContent: true,
         toggleButtonText: 'Hvorfor holde brukertest?',
-        stepId: 'step-1-1'
+        stepId: 'step-1-1',
       }
     );
 
@@ -53,10 +52,10 @@ describe('Accordion komponent', () => {
   it('rendrer steg i en prosessListe', () => {
     const wrapper = oppsettMount(
       {
-        processList: true
+        processList: true,
       },
       {
-        stepId: 'step-1-1'
+        stepId: 'step-1-1',
       }
     );
 
@@ -68,12 +67,12 @@ describe('Accordion komponent', () => {
   it('rendrer ekspanderbar knapp', () => {
     const wrapper = oppsettMount(
       {
-        processList: true
+        processList: true,
       },
       {
         toggleContent: true,
         toggleButtonText: 'Åpne steg',
-        stepId: 'step-1-1'
+        stepId: 'step-1-1',
       }
     );
 
@@ -92,7 +91,7 @@ describe('Accordion komponent', () => {
         toggleButtonText: 'Åpne steg',
         stepId: 'step-2-1',
         title: 'Tittel',
-        subtitle: 'Undertittel'
+        subtitle: 'Undertittel',
       }
     );
 
@@ -118,7 +117,7 @@ describe('Accordion komponent', () => {
         stepId: 'step-2-1',
         title: 'Tittel',
         subtitle: 'Undertittel',
-        headingLevel: 1
+        headingLevel: 1,
       }
     );
 
@@ -150,7 +149,7 @@ describe('Accordion komponent', () => {
             <li>Hallo</li>
           </ul>
         ),
-        headingLevel: 1
+        headingLevel: 1,
       }
     );
 

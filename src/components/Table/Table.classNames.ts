@@ -1,10 +1,9 @@
 import { mergeStyles } from '@uifabric/merge-styles';
 import { getTheme } from '@uifabric/styling';
 
-import { FontWeights } from '..';
-import { PaletteProps } from '..';
+import { FontWeights, PaletteProps } from '../index';
 
-export const getClassNames = props => {
+export const getClassNames = (props) => {
   const palette = getTheme().palette as PaletteProps;
 
   return mergeStyles([
@@ -19,21 +18,21 @@ export const getClassNames = props => {
           textAlign: 'left',
           selectors: {
             thead: {
-              display: 'table-header-group'
+              display: 'table-header-group',
             },
             'td,th': {
-              padding: 12
+              padding: 12,
             },
             'td.editableCell': {
-              padding: 0
+              padding: 0,
             },
             'th.hideOnMobile, td.hideOnMobile': {
               display: 'none',
               selectors: {
                 '@media (min-width: 640px)': {
-                  display: 'table-cell'
-                }
-              }
+                  display: 'table-cell',
+                },
+              },
             },
             th: {
               verticalAlign: 'bottom',
@@ -48,60 +47,60 @@ export const getClassNames = props => {
                   cursor: 'pointer',
                   selectors: {
                     ':hover': {
-                      color: `${palette.skeColor.darkBlue}`
+                      color: `${palette.skeColor.darkBlue}`,
                     },
                     '& [data-icon-name="ArrowUpDown"]': {
                       selectors: {
                         '@media (min-width: 1024px)': {
-                          opacity: 0
+                          opacity: 0,
                         },
                         '& .noAutoHide': {
-                          opacity: 1
+                          opacity: 1,
                         },
                         ':hover': {
-                          opacity: 1
-                        }
-                      }
-                    }
-                  }
+                          opacity: 1,
+                        },
+                      },
+                    },
+                  },
                 },
                 ':focus': {
                   color: `${palette.skeColor.blue}`,
-                  outline: '0'
+                  outline: '0',
                 },
                 '& .sortable': {
                   cursor: 'pointer',
                   selectors: {
                     ':hover [data-icon-name="ArrowUpDown"]': {
-                      opacity: 1
+                      opacity: 1,
                     },
                     ':focus [data-icon-name="ArrowUpDown"]': {
-                      opacity: 1
-                    }
-                  }
-                }
-              }
+                      opacity: 1,
+                    },
+                  },
+                },
+              },
             },
             td: {
               borderBottom: `1px solid ${palette.skeColor.lightGrey}`,
               selectors: {
                 '& .right': {
-                  textAlign: 'right'
+                  textAlign: 'right',
                 },
                 '& .center': {
-                  textAlign: 'center'
-                }
-              }
-            }
-          }
+                  textAlign: 'center',
+                },
+              },
+            },
+          },
         },
         '.editableRow': {
-          display: 'none'
+          display: 'none',
         },
         '.editableRow-open': {
-          display: 'table-row'
-        }
-      }
-    }
+          display: 'table-row',
+        },
+      },
+    },
   ]);
 };

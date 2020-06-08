@@ -2,7 +2,7 @@ import * as React from 'react';
 import { getClassNames } from './ErrorMessage.classNames';
 import classnames from 'classnames';
 
-interface ErrorMessageProps {
+export interface ErrorMessageProps {
   /** Feilmelding */
   children: JSX.Element | string;
   showError?: boolean;
@@ -12,7 +12,7 @@ interface ErrorMessageProps {
   className?: string;
 }
 
-const ErrorMessage: React.FC<ErrorMessageProps> = props => {
+export const ErrorMessage: React.FC<ErrorMessageProps> = (props) => {
   const errorClassNames = getClassNames();
   const { ariaLabel, className } = props;
   const showError = props.showError !== undefined ? props.showError : true;
@@ -30,5 +30,3 @@ const ErrorMessage: React.FC<ErrorMessageProps> = props => {
     </span>
   );
 };
-
-export default ErrorMessage;

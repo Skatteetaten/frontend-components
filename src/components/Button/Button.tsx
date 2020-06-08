@@ -1,8 +1,5 @@
 import classnames from 'classnames';
-import {
-  DefaultButton,
-  IButtonProps
-} from 'office-ui-fabric-react/lib-commonjs/Button';
+import { DefaultButton, IButtonProps } from 'office-ui-fabric-react';
 import * as React from 'react';
 import { getClassNames as getStandardClassNames } from './Button.classNames';
 
@@ -53,7 +50,7 @@ export interface ButtonProps extends IButtonProps {
  * @visibleName Button (Knapp)
  */
 
-const Button: React.FC<ButtonProps> = props => {
+export const Button: React.FC<ButtonProps> = (props) => {
   const { children, icon, className, iconProps, buttonType, ...rest } = props;
 
   return (
@@ -72,7 +69,5 @@ Button.defaultProps = {
   icon: undefined,
   onClick: undefined,
   primary: false,
-  buttonStyle: 'primaryRounded'
+  buttonStyle: 'primaryRounded',
 };
-
-export default Button;

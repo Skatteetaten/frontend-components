@@ -1,24 +1,24 @@
 import React from 'react';
 import { matches } from '../utils/test-utils';
 import { shallow, mount } from 'enzyme';
-import ComboBox from './ComboBox';
+import { Combobox } from '../index';
 
 function oppsettShallow(props) {
-  return shallow(<ComboBox {...props} />);
+  return shallow(<Combobox {...props} />);
 }
 
 function oppsettFullDOM(props) {
-  return mount(<ComboBox {...props} />);
+  return mount(<Combobox {...props} />);
 }
 
 describe('Combobox komponent', () => {
   it('matcher med snapshot', () => {
-    matches(<ComboBox />);
+    matches(<Combobox />);
   });
 
   it('rendrer Combobox med default props', () => {
     const wrapper = oppsettFullDOM();
-    const combobox = wrapper.find(ComboBox);
+    const combobox = wrapper.find(Combobox);
     expect(combobox.prop('autoComplete')).toEqual('on');
     expect(combobox.prop('allowFreeform')).toEqual(false);
     expect(combobox.prop('label')).toEqual(undefined);
@@ -28,15 +28,15 @@ describe('Combobox komponent', () => {
   it('rendrer Cobobox med riktige props ', () => {
     const wrapper = oppsettFullDOM({
       id: 'Combobox-1',
-      disabled: true
+      disabled: true,
     });
-    expect(wrapper.find(ComboBox).prop('disabled')).toEqual(true);
+    expect(wrapper.find(Combobox).prop('disabled')).toEqual(true);
     expect(wrapper.first('div').prop('id')).toEqual('Combobox-1');
   });
 
   it('rendrer nedtrekksliste når Cobobox klikkes ', () => {
     const wrapper = oppsettFullDOM({
-      options: [{ key: 'A', text: 'alfa', value: 'Alfa' }]
+      options: [{ key: 'A', text: 'alfa', value: 'Alfa' }],
     });
 
     const button = wrapper.find('CustomizedIconButton');
@@ -46,7 +46,7 @@ describe('Combobox komponent', () => {
 
   it('rendrer feilmelding under Cobobox ', () => {
     const wrapper = oppsettFullDOM({
-      errorMessage: 'Feilmelding'
+      errorMessage: 'Feilmelding',
     });
 
     expect(wrapper.html()).toContain('Feilmelding');

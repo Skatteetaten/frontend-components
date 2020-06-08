@@ -1,57 +1,55 @@
 import React from 'react';
 import { mount } from 'enzyme';
 import toJson from 'enzyme-to-json';
-import Table from './Table';
-import IconButton from '../IconButton/IconButton';
-import Grid from '../Grid/Grid';
+import { Table, IconButton, Grid } from '../index';
 
 const data = [
   {
     Måned: 'Januar',
     Beløp: 100,
     Dekningsgrad: '100%',
-    Avkastning: '1000'
+    Avkastning: '1000',
   },
   {
     Måned: 'Februar',
     Beløp: 100,
     Dekningsgrad: '50%',
-    Avkastning: '500'
+    Avkastning: '500',
   },
   {
     Måned: 'Mars',
     Beløp: 100,
     Dekningsgrad: '20%',
-    Avkastning: '2000'
+    Avkastning: '2000',
   },
   {
     Måned: 'April',
     Beløp: 100,
     Dekningsgrad: '30%',
-    Avkastning: '1055'
-  }
+    Avkastning: '1055',
+  },
 ];
 
 const columns = [
   {
     name: 'Måned',
-    fieldName: 'month'
+    fieldName: 'month',
   },
   {
     name: 'Beløp',
     fieldName: 'amount',
-    alignment: 'right'
+    alignment: 'right',
   },
   {
     name: 'Dekningsgrad',
     fieldName: 'coverage',
-    alignment: 'right'
+    alignment: 'right',
   },
   {
     name: 'Avkastning',
     fieldName: 'revenue',
-    alignment: 'right'
-  }
+    alignment: 'right',
+  },
 ];
 
 const content = (data, close) => (
@@ -98,7 +96,7 @@ describe('Table komponent', () => {
       editableRows: true,
       id: 'tableid',
       className: 'tableClass',
-      editableContent: 'Editerbart innhold'
+      editableContent: 'Editerbart innhold',
     });
 
     const tableWrapper = wrapper.find('Table > div');
@@ -130,7 +128,7 @@ describe('Table komponent', () => {
       data,
       columns,
       editableRows: true,
-      editableContent: content
+      editableContent: content,
     });
 
     const editButton = wrapper
@@ -149,7 +147,7 @@ describe('Table komponent', () => {
       data,
       columns,
       editableRows: true,
-      editableContent: content
+      editableContent: content,
     });
 
     const editButton = wrapper
@@ -160,7 +158,7 @@ describe('Table komponent', () => {
 
     editButton.simulate('click');
 
-    wrapper.find('.editButton').forEach(node => {
+    wrapper.find('.editButton').forEach((node) => {
       expect(node.prop('disabled')).toEqual(true);
     });
   });

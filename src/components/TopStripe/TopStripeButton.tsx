@@ -11,7 +11,7 @@ export interface TopStripeButtonProps
   text?: string;
 }
 
-export const TopStripeButton: React.FC<TopStripeButtonProps> = props => {
+export const TopStripeButton: React.FC<TopStripeButtonProps> = (props) => {
   const { topStripeStyle, className, ariaLabel, text, ...rest } = props;
 
   const styles = getClassNames();

@@ -2,15 +2,17 @@ import classnames from 'classnames';
 import {
   Dropdown as FabricDropdown,
   DropdownMenuItemType,
-  IDropdownProps
-} from 'office-ui-fabric-react/lib-commonjs/Dropdown';
+  IDropdownProps,
+} from 'office-ui-fabric-react';
 import * as React from 'react';
-import Icon from '../Icon/Icon';
 import { getCalloutClassNames, getClassNames } from './Dropdown.classNames';
-import LabelWithCallout, { calloutState } from '../LabelWithCallout';
-import { LabelWithCalloutProps } from '../LabelWithCallout/LabelWithCallout';
-import ErrorMessage from '../ErrorMessage';
-import { useId } from '@reach/auto-id';
+import {
+  ErrorMessage,
+  Icon,
+  LabelWithCallout,
+  calloutState,
+  LabelWithCalloutProps,
+} from '../index';
 
 export interface DropdownProps extends IDropdownProps {
   /** Lukk callout på blur */
@@ -34,13 +36,13 @@ export interface DropdownProps extends IDropdownProps {
   ) => void;
 }
 
-interface DropdownState {
+export interface DropdownState {
   isCalloutVisible: boolean;
 }
 /**
  * @visibleName Dropdown (Nedtrekksliste)
  */
-const Dropdown: React.FC<DropdownProps> = props => {
+export const Dropdown: React.FC<DropdownProps> = (props) => {
   const {
     children,
     labelWithCalloutAutoDismiss,
@@ -56,7 +58,7 @@ const Dropdown: React.FC<DropdownProps> = props => {
     ...rest
   } = props;
 
-  const genratedId = useId(id);
+  const genratedId = 'todo';
   const mainId = id ? id : 'dropdown-' + genratedId;
   const inputId = mainId + '-input';
   const labelId = mainId + '-label';
@@ -79,7 +81,7 @@ const Dropdown: React.FC<DropdownProps> = props => {
         id={inputId}
         className={classnames(getClassNames(props), className)}
         calloutProps={{
-          className: getCalloutClassNames()
+          className: getCalloutClassNames(),
         }}
         onRenderCaretDown={() => <Icon iconName={'ChevronDown'} />}
       >
@@ -92,5 +94,3 @@ const Dropdown: React.FC<DropdownProps> = props => {
 
 // @ts-ignore
 Dropdown.ItemType = DropdownMenuItemType;
-
-export default Dropdown;

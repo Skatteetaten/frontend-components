@@ -1,19 +1,19 @@
 ** En valggruppe (med radioknapper) brukes i skjemaer for å velge ett alternativ blant flere gjensidig utelukkende valg. **
 
 ```js
-import RadioButtonGroup from '@skatteetaten/frontend-components/RadioButtonGroup';
+import { RadioButtonGroup } from '@skatteetaten/frontend-components';
 
 const initialState = {
   options: [
     {
       key: 'A',
-      text: 'Enkeltpersonsforetak'
+      text: 'Enkeltpersonsforetak',
     },
     {
       key: 'B',
-      text: 'Aksjeselskap'
-    }
-  ]
+      text: 'Aksjeselskap',
+    },
+  ],
 };
 <RadioButtonGroup
   label="Type virksomhet"
@@ -27,7 +27,7 @@ const initialState = {
 Med beskrivelse på hvert steg:
 
 ```js
-import RadioButtonGroup from '@skatteetaten/frontend-components/RadioButtonGroup';
+import { RadioButtonGroup } from '@skatteetaten/frontend-components';
 
 const initialState = {
   options: [
@@ -35,15 +35,15 @@ const initialState = {
       key: 'A',
       text: 'Sparekonto',
       description:
-        'Dette er egentlig bare en brukskonto, med et annet navn. Du har ubegrenset uttak i året'
+        'Dette er egentlig bare en brukskonto, med et annet navn. Du har ubegrenset uttak i året',
     },
     {
       key: 'B',
       text: 'Sparekonto pluss',
       description:
-        'Hvis du er veldig glad i å spare uten renter er dette kontoen for deg. Uttak fra denne kontoen kommer med gebyr'
-    }
-  ]
+        'Hvis du er veldig glad i å spare uten renter er dette kontoen for deg. Uttak fra denne kontoen kommer med gebyr',
+    },
+  ],
 };
 <>
   <RadioButtonGroup

@@ -1,8 +1,8 @@
 import classnames from 'classnames';
 import * as React from 'react';
-import { IconButton as FabricIconButton } from 'office-ui-fabric-react/lib-commonjs/Button';
+import { IconButton as FabricIconButton } from 'office-ui-fabric-react';
 import { getClassNames } from './IconButton.classNames';
-import { ButtonProps } from '../Button';
+import { ButtonProps } from '../index';
 
 export interface IconButtonProps extends ButtonProps {
   /** Om sirkel skal vises eller ikke. Sirkel vil typisk benyttes når ikon fra material-design ikke har egen sirkel  */
@@ -22,9 +22,10 @@ export interface IconButtonProps extends ButtonProps {
 /**
  * @visibleName IconButton (Ikonknapp)
  */
-const IconButton: React.FC<IconButtonProps> = props => {
+export const IconButton: React.FC<IconButtonProps> = (props) => {
   const { icon, className, ...rest } = props;
   return (
+    // @ts-ignore
     <FabricIconButton
       {...rest}
       className={classnames(getClassNames(props), className)}
@@ -41,7 +42,5 @@ IconButton.defaultProps = {
   icon: undefined,
   onClick: undefined,
   title: undefined,
-  type: 'default'
+  type: 'default',
 };
-
-export default IconButton;

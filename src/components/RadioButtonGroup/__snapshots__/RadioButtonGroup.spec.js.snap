@@ -18,19 +18,19 @@ exports[`RadioButtonGroup komponent matcher snapshot 1`] = `
       role="radiogroup"
     >
       <div
-        className="ms-ChoiceFieldGroup-flexContainer flexContainer-52"
+        className="ms-ChoiceFieldGroup-flexContainer"
       >
         <div
-          className="ms-ChoiceField root-53"
+          className="ms-ChoiceField root-52"
         >
           <div
-            className="ms-ChoiceField-wrapper choiceFieldWrapper-54"
+            className="ms-ChoiceField-wrapper"
           >
             <input
               checked={false}
-              className="ms-ChoiceField-input input-55"
-              id="ChoiceGroup0-A"
-              name="ChoiceGroup0"
+              className="ms-ChoiceField-input input-53"
+              id="ChoiceGroup1-A"
+              name="ChoiceGroup1"
               onBlur={[Function]}
               onChange={[Function]}
               onFocus={[Function]}
@@ -38,12 +38,12 @@ exports[`RadioButtonGroup komponent matcher snapshot 1`] = `
               type="radio"
             />
             <label
-              className="ms-ChoiceField-field field-56"
-              htmlFor="ChoiceGroup0-A"
+              className="ms-ChoiceField-field field-54"
+              htmlFor="ChoiceGroup1-A"
             >
               <span
                 className="ms-ChoiceFieldLabel"
-                id="ChoiceGroupLabel1-A"
+                id="ChoiceGroupLabel2-A"
               >
                 Valg A
               </span>
@@ -51,16 +51,16 @@ exports[`RadioButtonGroup komponent matcher snapshot 1`] = `
           </div>
         </div>
         <div
-          className="ms-ChoiceField root-53"
+          className="ms-ChoiceField root-52"
         >
           <div
-            className="ms-ChoiceField-wrapper choiceFieldWrapper-54"
+            className="ms-ChoiceField-wrapper"
           >
             <input
               checked={true}
-              className="ms-ChoiceField-input input-55"
-              id="ChoiceGroup0-B"
-              name="ChoiceGroup0"
+              className="ms-ChoiceField-input input-53"
+              id="ChoiceGroup1-B"
+              name="ChoiceGroup1"
               onBlur={[Function]}
               onChange={[Function]}
               onFocus={[Function]}
@@ -68,12 +68,12 @@ exports[`RadioButtonGroup komponent matcher snapshot 1`] = `
               type="radio"
             />
             <label
-              className="ms-ChoiceField-field is-checked field-62"
-              htmlFor="ChoiceGroup0-B"
+              className="ms-ChoiceField-field is-checked field-59"
+              htmlFor="ChoiceGroup1-B"
             >
               <span
                 className="ms-ChoiceFieldLabel"
-                id="ChoiceGroupLabel1-B"
+                id="ChoiceGroupLabel2-B"
               >
                 Valg B
               </span>
@@ -81,17 +81,17 @@ exports[`RadioButtonGroup komponent matcher snapshot 1`] = `
           </div>
         </div>
         <div
-          className="ms-ChoiceField root-53"
+          className="ms-ChoiceField root-52"
         >
           <div
-            className="ms-ChoiceField-wrapper choiceFieldWrapper-54"
+            className="ms-ChoiceField-wrapper"
           >
             <input
               checked={false}
-              className="ms-ChoiceField-input is-disabled input-55"
+              className="ms-ChoiceField-input is-disabled input-53"
               disabled={true}
-              id="ChoiceGroup0-C"
-              name="ChoiceGroup0"
+              id="ChoiceGroup1-C"
+              name="ChoiceGroup1"
               onBlur={[Function]}
               onChange={[Function]}
               onFocus={[Function]}
@@ -99,12 +99,12 @@ exports[`RadioButtonGroup komponent matcher snapshot 1`] = `
               type="radio"
             />
             <label
-              className="ms-ChoiceField-field field-65"
-              htmlFor="ChoiceGroup0-C"
+              className="ms-ChoiceField-field field-62"
+              htmlFor="ChoiceGroup1-C"
             >
               <span
                 className="ms-ChoiceFieldLabel"
-                id="ChoiceGroupLabel1-C"
+                id="ChoiceGroupLabel2-C"
               >
                 Valg C
               </span>
@@ -112,17 +112,17 @@ exports[`RadioButtonGroup komponent matcher snapshot 1`] = `
           </div>
         </div>
         <div
-          className="ms-ChoiceField root-53"
+          className="ms-ChoiceField root-52"
         >
           <div
-            className="ms-ChoiceField-wrapper choiceFieldWrapper-54"
+            className="ms-ChoiceField-wrapper"
           >
             <input
               checked={false}
-              className="ms-ChoiceField-input is-disabled input-55"
+              className="ms-ChoiceField-input is-disabled input-53"
               disabled={true}
-              id="ChoiceGroup0-D"
-              name="ChoiceGroup0"
+              id="ChoiceGroup1-D"
+              name="ChoiceGroup1"
               onBlur={[Function]}
               onChange={[Function]}
               onFocus={[Function]}
@@ -130,12 +130,12 @@ exports[`RadioButtonGroup komponent matcher snapshot 1`] = `
               type="radio"
             />
             <label
-              className="ms-ChoiceField-field field-65"
-              htmlFor="ChoiceGroup0-D"
+              className="ms-ChoiceField-field field-62"
+              htmlFor="ChoiceGroup1-D"
             >
               <span
                 className="ms-ChoiceFieldLabel"
-                id="ChoiceGroupLabel1-D"
+                id="ChoiceGroupLabel2-D"
               >
                 Valg D
               </span>

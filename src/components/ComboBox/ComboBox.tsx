@@ -1,15 +1,14 @@
 import * as React from 'react';
-import {
-  VirtualizedComboBox,
-  IComboBoxProps
-} from 'office-ui-fabric-react/lib-commonjs/ComboBox';
+import { VirtualizedComboBox, IComboBoxProps } from 'office-ui-fabric-react';
 import classnames from 'classnames';
 
 import { getClassNames, getOptionsClassNames } from './ComboBox.classNames';
-import LabelWithCallout, { calloutState } from '../LabelWithCallout';
-import { LabelWithCalloutProps } from '../LabelWithCallout/LabelWithCallout';
-import ErrorMessage from '../ErrorMessage';
-import { useId } from '@reach/auto-id';
+import {
+  LabelWithCallout,
+  calloutState,
+  LabelWithCalloutProps,
+  ErrorMessage,
+} from '../index';
 
 export interface ComboboxProps extends IComboBoxProps {
   /** Lukk callout på blur */
@@ -34,7 +33,7 @@ export interface ComboboxProps extends IComboBoxProps {
 /**
  * @visibleName ComboBox (Nedtrekksliste med skriving)
  */
-const Combobox: React.FC<ComboboxProps> = props => {
+export const Combobox: React.FC<ComboboxProps> = (props) => {
   const {
     children,
     labelWithCalloutAutoDismiss,
@@ -49,7 +48,7 @@ const Combobox: React.FC<ComboboxProps> = props => {
     ...rest
   } = props;
 
-  const genratedId = useId(id);
+  const genratedId = 'todo';
   const mainId = id ? id : 'combobox-' + genratedId;
   const inputId = mainId + '-input';
   const labelId = mainId + '-label';
@@ -71,7 +70,7 @@ const Combobox: React.FC<ComboboxProps> = props => {
         ariaLabel={label}
         className={classnames(getClassNames(props), className)}
         calloutProps={{
-          className: getOptionsClassNames(props)
+          className: getOptionsClassNames(props),
         }}
       >
         {children}
@@ -87,7 +86,5 @@ Combobox.defaultProps = {
   label: undefined,
   errorMessage: undefined,
   help: undefined,
-  disabled: false
+  disabled: false,
 };
-
-export default Combobox;

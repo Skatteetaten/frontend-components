@@ -8,7 +8,7 @@ DemoBlock = ({ children }) => (
       backgroundColor: '#ddd',
       textAlign: 'center',
       marginBottom: '0',
-      padding: '8px 0'
+      padding: '8px 0',
     }}
   >
     {children}
@@ -17,7 +17,7 @@ DemoBlock = ({ children }) => (
 ```
 
 ```js
-import Grid from '@skatteetaten/frontend-components/Grid';
+import { Grid } from '@skatteetaten/frontend-components';
 
 <Grid padding="0px">
   <Grid.Row>
@@ -58,7 +58,7 @@ import Grid from '@skatteetaten/frontend-components/Grid';
 Grid uten padding:
 
 ```js
-import Grid from '@skatteetaten/frontend-components/Grid';
+import { Grid } from '@skatteetaten/frontend-components';
 
 <Grid padding="0">
   <Grid.Row rowSpacing={Grid.SPACE_NONE}>

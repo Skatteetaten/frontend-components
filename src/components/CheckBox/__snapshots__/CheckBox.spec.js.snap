@@ -8,7 +8,7 @@ exports[`Checkbox komponent matcher snapshot 1`] = `
     aria-checked="false"
     checked={false}
     className="input-44"
-    id="checkbox-0"
+    id="checkbox-1"
     onBlur={[Function]}
     onChange={[Function]}
     onFocus={[Function]}
@@ -16,7 +16,7 @@ exports[`Checkbox komponent matcher snapshot 1`] = `
   />
   <label
     className="ms-Checkbox-label label-45"
-    htmlFor="checkbox-0"
+    htmlFor="checkbox-1"
   >
     <div
       className="ms-Checkbox-checkbox checkbox-46"

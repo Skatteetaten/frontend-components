@@ -6,13 +6,16 @@ import { css } from '@uifabric/utilities';
 import {
   DatePicker as FabricDatePicker,
   DayOfWeek,
-  IDatePickerProps
-} from 'office-ui-fabric-react/lib-commonjs/DatePicker';
-import { FirstWeekOfYear } from 'office-ui-fabric-react/lib-commonjs/utilities/dateValues/DateValues';
-import ErrorMessage from '../ErrorMessage';
+  IDatePickerProps,
+} from 'office-ui-fabric-react';
+import { FirstWeekOfYear } from 'office-ui-fabric-react';
+import {
+  ErrorMessage,
+  LabelWithCallout,
+  LabelWithCalloutProps,
+  calloutState,
+} from '../index';
 import { getClassNames } from './DatePicker.classNames';
-import LabelWithCallout, { calloutState } from '../LabelWithCallout';
-import { LabelWithCalloutProps } from '../LabelWithCallout/LabelWithCallout';
 
 const DEFAULT_DATE_FORMAT = 'DD.MM.YYYY';
 const DEFAULT_STRINGS = {
@@ -29,7 +32,7 @@ const DEFAULT_STRINGS = {
   invalidInputErrorMessage: `Ikke en gyldig dato. (format: ${DEFAULT_DATE_FORMAT})`,
   /** Automatisk utvide høyde (ved multiline) */
   isOutOfBoundsErrorMessage: 'Datoen er ikke innenfor gyldig periode',
-  isRequiredErrorMessage: 'Dette feltet er påkrevd'
+  isRequiredErrorMessage: 'Dette feltet er påkrevd',
 };
 const DEFAULTFORMATDATE = (date: Date | null | undefined): string => {
   if (date) {
@@ -81,7 +84,7 @@ export interface DatePickerProps extends IDatePickerProps {
 /**
  * @visibleName DatePicker (Datovelger)
  */
-export default class DatePicker extends React.Component<DatePickerProps> {
+export class DatePicker extends React.Component<DatePickerProps> {
   static DefaultDateFormat = DEFAULT_DATE_FORMAT;
   static DefaultStrings = DEFAULT_STRINGS;
   static DefaultFormatDate = DEFAULTFORMATDATE;
@@ -103,7 +106,7 @@ export default class DatePicker extends React.Component<DatePickerProps> {
     showGoToToday: true,
     showMonthPickerAsOverlay: false,
     showWeekNumbers: false,
-    strings: DatePicker.DefaultStrings
+    strings: DatePicker.DefaultStrings,
   };
 
   render() {
@@ -156,7 +159,7 @@ export default class DatePicker extends React.Component<DatePickerProps> {
               : DatePicker.DefaultStrings.isOutOfBoundsErrorMessage,
             invalidInputErrorMessage: invalidInputErrorMessage
               ? invalidInputErrorMessage
-              : DatePicker.DefaultStrings.invalidInputErrorMessage
+              : DatePicker.DefaultStrings.invalidInputErrorMessage,
           }}
         >
           {children}

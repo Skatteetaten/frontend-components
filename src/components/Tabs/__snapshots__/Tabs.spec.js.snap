@@ -7,7 +7,7 @@ exports[`Tabs komponent matcher snapshot 1`] = `
 >
   <div
     className="ms-FocusZone css-50 ms-Pivot ms-Pivot--large ms-Pivot--tabs root-43"
-    data-focuszone-id="FocusZone1"
+    data-focuszone-id="FocusZone2"
     onFocus={[Function]}
     onKeyDown={[Function]}
     onMouseDownCapture={[Function]}
@@ -18,7 +18,7 @@ exports[`Tabs komponent matcher snapshot 1`] = `
       className="ms-Button ms-Button--action ms-Button--command ms-Pivot-link is-selected linkIsSelected-51"
       data-content="Tilgjengelige oppgaver (23)"
       data-is-focusable={true}
-      id="Pivot0-Tab0"
+      id="Pivot1-Tab0"
       name="Tilgjengelige oppgaver"
       onClick={[Function]}
       onKeyDown={[Function]}
@@ -34,16 +34,16 @@ exports[`Tabs komponent matcher snapshot 1`] = `
         data-automationid="splitbuttonprimary"
       >
         <span
-          className="ms-Pivot-linkContent linkContent-46"
+          className="ms-Pivot-linkContent linkContent-47"
         >
           <span
-            className="ms-Pivot-text text-47"
+            className="ms-Pivot-text text-48"
           >
              
             Tilgjengelige oppgaver
           </span>
           <span
-            className="ms-Pivot-count count-48"
+            className="ms-Pivot-count count-49"
           >
              (
             23
@@ -57,7 +57,7 @@ exports[`Tabs komponent matcher snapshot 1`] = `
       className="ms-Button ms-Button--action ms-Button--command ms-Pivot-link link-59"
       data-content="Mine oppgaver (2)"
       data-is-focusable={true}
-      id="Pivot0-Tab1"
+      id="Pivot1-Tab1"
       name="Mine oppgaver"
       onClick={[Function]}
       onKeyDown={[Function]}
@@ -73,16 +73,16 @@ exports[`Tabs komponent matcher snapshot 1`] = `
         data-automationid="splitbuttonprimary"
       >
         <span
-          className="ms-Pivot-linkContent linkContent-46"
+          className="ms-Pivot-linkContent linkContent-47"
         >
           <span
-            className="ms-Pivot-text text-47"
+            className="ms-Pivot-text text-48"
           >
              
             Mine oppgaver
           </span>
           <span
-            className="ms-Pivot-count count-48"
+            className="ms-Pivot-count count-49"
           >
              (
             2
@@ -96,7 +96,7 @@ exports[`Tabs komponent matcher snapshot 1`] = `
       className="ms-Button ms-Button--action ms-Button--command ms-Pivot-link link-59"
       data-content="Andres oppgaver xx"
       data-is-focusable={true}
-      id="Pivot0-Tab2"
+      id="Pivot1-Tab2"
       name="Andres oppgaver"
       onClick={[Function]}
       onKeyDown={[Function]}
@@ -112,10 +112,10 @@ exports[`Tabs komponent matcher snapshot 1`] = `
         data-automationid="splitbuttonprimary"
       >
         <span
-          className="ms-Pivot-linkContent linkContent-46"
+          className="ms-Pivot-linkContent linkContent-47"
         >
           <span
-            className="ms-Pivot-icon icon-49"
+            className="ms-Pivot-icon"
           >
             <i
               aria-hidden={true}
@@ -126,7 +126,7 @@ exports[`Tabs komponent matcher snapshot 1`] = `
             </i>
           </span>
           <span
-            className="ms-Pivot-text text-47"
+            className="ms-Pivot-text text-48"
           >
              
             Andres oppgaver
@@ -136,7 +136,10 @@ exports[`Tabs komponent matcher snapshot 1`] = `
     </button>
   </div>
   <div
-    aria-labelledby="Pivot0-Tab0"
+    aria-hidden={false}
+    aria-labelledby="Pivot1-Tab0"
+    className="itemContainer-44"
+    hidden={false}
     role="tabpanel"
   >
     <div>

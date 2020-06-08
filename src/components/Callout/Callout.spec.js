@@ -1,7 +1,7 @@
 import React from 'react';
 import { matches } from './../utils/test-utils';
 import { shallow } from 'enzyme';
-import Callout from './Callout';
+import { Callout } from '../index';
 
 function oppsettShallow(props) {
   return shallow(<Callout {...props} />);
@@ -29,7 +29,7 @@ describe('Callout komponent', () => {
     const wrapper = oppsettShallow({
       gapSpace: 5,
       directionalHint: Callout.POS_BOTTOM_LEFT,
-      color: Callout.INFO
+      color: Callout.INFO,
     });
     const CalloutElm = wrapper.find('Callout');
 

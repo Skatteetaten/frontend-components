@@ -2,7 +2,7 @@
 
 exports[`Pagination komponent matcher snapshot 1`] = `
 <div
-  className="paginationContainer-39"
+  className="paginationContainer-45"
 >
   <p>
     Viser 
@@ -22,7 +22,7 @@ exports[`Pagination komponent matcher snapshot 1`] = `
                 aria-current={true}
                 aria-disabled={true}
                 aria-label="Side 1"
-                className="activePage-36"
+                className="activePage-42"
                 onClick={[Function]}
                 role="link"
               >
@@ -34,7 +34,7 @@ exports[`Pagination komponent matcher snapshot 1`] = `
                 aria-current={false}
                 aria-disabled={false}
                 aria-label="Side 2"
-                className="pageNumber-38"
+                className="pageNumber-44"
                 onClick={[Function]}
                 role="link"
               >
@@ -46,7 +46,7 @@ exports[`Pagination komponent matcher snapshot 1`] = `
                 aria-current={false}
                 aria-disabled={false}
                 aria-label="Side 3"
-                className="pageNumber-38"
+                className="pageNumber-44"
                 onClick={[Function]}
                 role="link"
               >
@@ -66,7 +66,7 @@ exports[`Pagination komponent matcher snapshot 1`] = `
           </span>
           <i
             aria-hidden={true}
-            className="linkIcons-41"
+            className="linkIcons-47"
             data-icon-name="ChevronRight"
           >
             

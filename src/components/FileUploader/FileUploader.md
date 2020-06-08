@@ -4,9 +4,10 @@ Komponenten er basert på at du sender inn sti til API. Dersom ikke dette skulle
 
 ```js
 import React from 'react';
-import FileUploader, {
-  FileFormatTypes
-} from '@skatteetaten/frontend-components/FileUploader';
+import {
+  FileUploader,
+  FileFormatTypes,
+} from '@skatteetaten/frontend-components';
 const [files, setFiles] = React.useState([]);
 const [spinner, setSpinner] = React.useState(false);
 
@@ -18,10 +19,10 @@ const [spinner, setSpinner] = React.useState(false);
     acceptedFileFormats={[
       FileFormatTypes.doc,
       FileFormatTypes.docx,
-      FileFormatTypes.txt
+      FileFormatTypes.txt,
     ]}
     files={files}
-    uploadFile={file => {
+    uploadFile={(file) => {
       setSpinner(true);
       setTimeout(() => {
         const newList = [...files];
@@ -30,8 +31,8 @@ const [spinner, setSpinner] = React.useState(false);
         setSpinner(false);
       }, 2000);
     }}
-    deleteFile={file => {
-      const newList = files.filter(fileInList => fileInList !== file);
+    deleteFile={(file) => {
+      const newList = files.filter((fileInList) => fileInList !== file);
       setFiles(newList);
     }}
     loading={spinner}
@@ -43,9 +44,10 @@ Mulighet til å laste opp flere filer samtidig:
 
 ```js
 import React from 'react';
-import FileUploader, {
-  FileFormatTypes
-} from '@skatteetaten/frontend-components/FileUploader';
+import {
+  FileUploader,
+  FileFormatTypes,
+} from '@skatteetaten/frontend-components';
 const [files, setFiles] = React.useState([]);
 
 <div style={{ width: '400px' }}>
@@ -54,12 +56,12 @@ const [files, setFiles] = React.useState([]);
     acceptedFileFormats={[FileFormatTypes.png, FileFormatTypes.jpg]}
     files={files}
     multipleFiles={true}
-    uploadFile={file => {
+    uploadFile={(file) => {
       files.push(file);
       setFiles([...files]);
     }}
-    deleteFile={file => {
-      const newList = files.filter(fileInList => fileInList !== file);
+    deleteFile={(file) => {
+      const newList = files.filter((fileInList) => fileInList !== file);
       setFiles(newList);
     }}
     info={

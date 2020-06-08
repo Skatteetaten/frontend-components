@@ -1,6 +1,6 @@
 import * as React from 'react';
 import classnames from 'classnames';
-import Icon from '../Icon';
+import { Icon } from '../index';
 import { getClassNames } from './Link.classNames';
 
 export interface LinkProps
@@ -16,7 +16,7 @@ export interface LinkProps
   text?: string;
 }
 
-const Link: React.FC<LinkProps> = props => {
+export const Link: React.FC<LinkProps> = (props) => {
   const {
     className,
     placement,
@@ -69,4 +69,3 @@ const Link: React.FC<LinkProps> = props => {
     </span>
   );
 };
-export default Link;

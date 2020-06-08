@@ -1,9 +1,9 @@
 import * as React from 'react';
 import { getClassNames } from './Pagination.classNames';
 import classnames from 'classnames';
-import Icon from '../Icon';
+import { Icon } from '../index';
 
-interface PaginationProps {
+export interface PaginationProps {
   /** Aria-label */
   ariaLabel?: string;
   /** Aria-label for sidelinker */
@@ -46,7 +46,7 @@ export const getSlidingWindowEdges = (
   if (numberOfPages <= pagesDisplayed) {
     return {
       startPage: 1,
-      endPage: numberOfPages
+      endPage: numberOfPages,
     };
   }
   let startPage = currentPage - (pagesDisplayed - 1);
@@ -60,23 +60,23 @@ export const getSlidingWindowEdges = (
   }
   return {
     startPage: startPage,
-    endPage: endPage
+    endPage: endPage,
   };
 };
 
-const NextPage: React.FC<{
+export const NextPage: React.FC<{
   currentPage: number;
   total: number;
   pageSize: number;
   onClick: (newPage: number) => void;
   label: string;
-}> = props => {
+}> = (props) => {
   const styles = getClassNames();
 
   return (
     <li>
       <button
-        onClick={evt => {
+        onClick={(evt) => {
           evt.preventDefault();
           props.onClick(props.currentPage + 1);
         }}
@@ -89,16 +89,16 @@ const NextPage: React.FC<{
   );
 };
 
-const PreviousLink: React.FC<{
+export const PreviousLink: React.FC<{
   currentPage: number;
   onClick: (newPage: number) => void;
   label: string;
-}> = props => {
+}> = (props) => {
   const styles = getClassNames();
   return (
     <li>
       <button
-        onClick={evt => {
+        onClick={(evt) => {
           evt.preventDefault();
           props.onClick(props.currentPage - 1);
         }}
@@ -111,19 +111,19 @@ const PreviousLink: React.FC<{
   );
 };
 
-const Page: React.FC<{
+export const Page: React.FC<{
   page: number;
   onClick: (page: number) => void;
   isCurrent: boolean;
   ariaLabelNavigationLink: string | undefined;
   ariaLabelNavigationLinkActive: string | undefined;
-}> = props => {
+}> = (props) => {
   const {
     page,
     onClick,
     isCurrent,
     ariaLabelNavigationLink,
-    ariaLabelNavigationLinkActive
+    ariaLabelNavigationLinkActive,
   } = props;
   const styles = getClassNames();
 
@@ -141,7 +141,7 @@ const Page: React.FC<{
   return (
     <li>
       <button
-        onClick={evt => {
+        onClick={(evt) => {
           evt.preventDefault();
           onClick(page);
         }}
@@ -157,7 +157,7 @@ const Page: React.FC<{
   );
 };
 
-const Pages = (props: {
+export const Pages = (props: {
   currentPage: number;
   pagesDisplayed: number | undefined;
   pageSize: number;
@@ -177,7 +177,7 @@ const Pages = (props: {
   return (
     <div>
       {range(windowEdges.startPage, windowEdges.endPage, pagesDisplayed).map(
-        i => {
+        (i) => {
           return (
             <Page
               key={i}
@@ -199,7 +199,7 @@ const Pages = (props: {
 /**
  * @visibleName Pagination (Sidevelger)
  */
-const Pagination: React.FC<PaginationProps> = props => {
+export const Pagination: React.FC<PaginationProps> = (props) => {
   const {
     ariaLabel,
     ariaLabelNavigationLink,
@@ -211,7 +211,7 @@ const Pagination: React.FC<PaginationProps> = props => {
     pagesDisplayed,
     pageSize,
     previousLabel,
-    total
+    total,
   } = props;
   const styles = getClassNames();
   const firstListObject = (currentPage - 1) * pageSize;
@@ -259,5 +259,3 @@ const Pagination: React.FC<PaginationProps> = props => {
     </div>
   );
 };
-
-export default Pagination;

@@ -21,7 +21,7 @@ exports[`Button komponent  matcher snapshot 1`] = `
     >
       <span
         className="ms-Button-label label-47"
-        id="id__0"
+        id="id__1"
       >
         Knapptekst
       </span>

@@ -2,7 +2,7 @@
 
 exports[`SearchField komponent matcher snapshot 1`] = `
 <div
-  id="searchfield-1"
+  id="searchfield-todo"
 >
   <div
     className="ms-SearchBox SkeSearchField-53"
@@ -24,7 +24,7 @@ exports[`SearchField komponent matcher snapshot 1`] = `
     </div>
     <input
       className="ms-SearchBox-field field-57"
-      id="SearchBox0"
+      id="SearchBox1"
       onBlur={[Function]}
       onChange={[Function]}
       onInput={[Function]}

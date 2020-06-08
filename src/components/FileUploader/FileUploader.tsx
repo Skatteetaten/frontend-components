@@ -2,13 +2,14 @@ import * as React from 'react';
 import axios, { AxiosResponse } from 'axios';
 import { getClassNames } from './FileUploader.classNames';
 import classnames from 'classnames';
-import Icon from '../Icon';
-import LabelWithCallout, {
+import {
+  ErrorMessage,
+  Spinner,
+  Icon,
+  LabelWithCallout,
   calloutState,
-  LabelWithCalloutProps
-} from '../LabelWithCallout';
-import Spinner from '../Spinner';
-import ErrorMessage from '../ErrorMessage';
+  LabelWithCalloutProps,
+} from '../index';
 
 export enum FileFormatTypes {
   doc = '.doc',
@@ -19,7 +20,7 @@ export enum FileFormatTypes {
   png = '.png',
   tif = '.tif',
   txt = '.txt',
-  xml = '.xml'
+  xml = '.xml',
 }
 
 export interface AttachmentMetadata extends File {
@@ -113,7 +114,7 @@ const normalize = (file: File, invalidCharacterRegexp?: RegExp) => {
   return normalizedName.concat('.', nameList[1]);
 };
 
-const FileUploader: React.FC<FileUploaderProps> = props => {
+export const FileUploader: React.FC<FileUploaderProps> = (props) => {
   const {
     acceptedFileFormats,
     addFileString,
@@ -139,7 +140,7 @@ const FileUploader: React.FC<FileUploaderProps> = props => {
     normalizeFileName,
     invalidCharacterRegexp,
     fileSizeLimit,
-    exceedFileSizeLimitErrorMessage
+    exceedFileSizeLimitErrorMessage,
   } = props;
   const styles = getClassNames(props);
   const [internalFiles, setInternalFiles] = React.useState<Array<any>>(
@@ -165,7 +166,7 @@ const FileUploader: React.FC<FileUploaderProps> = props => {
 
   const handleNewFiles = (fileList: File[]) => {
     setErrorMessage('');
-    let exceedSizeLimitFiles: File[] = [];
+    const exceedSizeLimitFiles: File[] = [];
     fileList.forEach((file: File) => {
       if (fileSizeLimit && file.size > fileSizeLimit) {
         exceedSizeLimitFiles.push(file);
@@ -195,13 +196,13 @@ const FileUploader: React.FC<FileUploaderProps> = props => {
                   formData,
                   { params: queryParams }
                 )
-                .then(res => {
+                .then((res) => {
                   if (res.data) {
                     setErrorMessage('');
                     setInternalFiles([...internalFiles, res.data]);
                   }
                 })
-                .catch(error => {
+                .catch((error) => {
                   setErrorMessage('Kunne ikke laste opp fil');
                 })
                 .finally(() => {
@@ -265,18 +266,18 @@ const FileUploader: React.FC<FileUploaderProps> = props => {
       axios
         .delete(`${axiosPath}/${fileToBeDeleted.id}`, {
           params: queryParams,
-          data: {} // kreves av BigIP
+          data: {}, // kreves av BigIP
         })
         .then(() => {
           const newList = internalFiles.filter(
-            f => f.id !== fileToBeDeleted.id
+            (f) => f.id !== fileToBeDeleted.id
           );
           setInternalFiles(newList);
         });
     }
   };
   if (deleteAllFiles && files) {
-    files.forEach(file => {
+    files.forEach((file) => {
       deleteFromList(file);
     });
   }
@@ -306,13 +307,13 @@ const FileUploader: React.FC<FileUploaderProps> = props => {
           onDragLeave={handleDragLeave}
           onDragOver={handleDragOverAndDragEnter}
           onDrop={handleDrop}
-          onClick={event => {
+          onClick={(event) => {
             event.preventDefault();
             if (inputRef.current) {
               inputRef.current.click();
             }
           }}
-          onKeyPress={ev => {
+          onKeyPress={(ev) => {
             if (ev.keyCode === 0 && inputRef.current) {
               inputRef.current.click();
             }
@@ -393,5 +394,3 @@ const FileUploader: React.FC<FileUploaderProps> = props => {
     </div>
   );
 };
-
-export default FileUploader;

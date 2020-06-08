@@ -1,10 +1,10 @@
 import * as React from 'react';
-import IconButton from '../../IconButton';
-import Icon from '../../Icon';
+import { IconButton, Icon } from '../../index';
 import classnames from 'classnames';
 import { getClassNames } from '../AccordionMenu.classNames';
 
-interface AccordionMenuItemProps extends React.HTMLAttributes<HTMLDivElement> {
+export interface AccordionMenuItemProps
+  extends React.HTMLAttributes<HTMLDivElement> {
   /** Ikon som benyttes for et menypunkt   */
   icon?: string;
   /** Om et menypunkt skal være default åpen */
@@ -20,7 +20,7 @@ interface AccordionMenuItemProps extends React.HTMLAttributes<HTMLDivElement> {
   ariaLabel?: string;
 }
 
-const AccordionMenuItem = (props: AccordionMenuItemProps) => {
+export const AccordionMenuItem = (props: AccordionMenuItemProps) => {
   const [isContentOpen, setContentOpen] = React.useState<boolean>(
     props.isOpen || false
   );
@@ -46,7 +46,7 @@ const AccordionMenuItem = (props: AccordionMenuItemProps) => {
     iconWrapper,
     toggleButton,
     toggleButtonOpen,
-    content
+    content,
   } = styles;
 
   const styleTitle = styles.title;
@@ -85,5 +85,3 @@ const AccordionMenuItem = (props: AccordionMenuItemProps) => {
     </li>
   );
 };
-
-export default AccordionMenuItem;

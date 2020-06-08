@@ -5,7 +5,7 @@ import RSGSection from 'react-styleguidist/lib/client/rsg-components/Section/Sec
 import ReactComponent from '../ReactComponent/ReactComponent';
 import Forside from '../Forside/forside';
 /* Normalize recursive content  */
-const slugId = { idAttribute: value => value.slug };
+const slugId = { idAttribute: (value) => value.slug };
 const component = new schema.Entity('components', undefined, slugId);
 const section = new schema.Entity('sections', undefined, slugId);
 const components = new schema.Array(component);
@@ -18,7 +18,7 @@ const mySchema = new schema.Entity(
 );
 
 export class Sections extends React.Component<> {
-  renderSection = props => {
+  renderSection = (props) => {
     const params = props.match && props.match.params;
     let slug = params && params.slug ? params.slug.toLowerCase() : '';
     const { entities } = normalize(props.sections, [mySchema]);
@@ -48,7 +48,7 @@ export class Sections extends React.Component<> {
       <Switch>
         <Route
           path={'/:slug?'}
-          render={props => this.renderSection({ ...props, ...this.props })}
+          render={(props) => this.renderSection({ ...props, ...this.props })}
         />
       </Switch>
     );

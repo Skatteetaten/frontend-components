@@ -1,17 +1,15 @@
 import * as React from 'react';
-import ActionButton from '../ActionButton/ActionButton';
 import classnames from 'classnames';
-import Image from '../Image/Image';
-import Icon from '../Icon/Icon';
+import { Icon, Image, ActionButton, UseScreen } from '../index';
 
 // @ts-ignore TODO
-import internlogo from './assets/ske-logo-intern.svg';
 import { getClassNames as getExternalClassNames } from './External.classNames';
 import { getClassNames as getInternalClassNames } from './Internal.classNames';
-import { UseScreen } from './../utils/ScreenPlugin';
+import externallogo from './assets/ske-logo.svg';
+import internallogo from './assets/ske-logo-intern.svg';
 
 // @ts-ignore TODO
-const InternalHeader = props => {
+const InternalHeader = (props) => {
   const styles = getInternalClassNames(props);
   const size = UseScreen();
 
@@ -30,7 +28,7 @@ const InternalHeader = props => {
           {size.gt.md && (
             <Image
               className={styles.headerLogo}
-              src={internlogo}
+              src={internallogo}
               alt="Skatteetaten logo"
             />
           )}
@@ -78,10 +76,10 @@ const ExternalHeaderContent = ({ styles, ...props }) => {
   );
 };
 
-const ExternalHeader: React.FC<TopBannerProps> = props => {
+export const ExternalHeader: React.FC<TopBannerProps> = (props) => {
   const styles = getExternalClassNames(props);
+  // @ts-ignore
   const { header, headerMain, logoWrapper, contentWrapper } = styles;
-  const externallogo = require('./assets/ske-logo.svg');
   const compactHeight = props.compact ? 55 : 68;
 
   const imageElement = (
@@ -133,7 +131,7 @@ export interface TopBannerProps {
 /**
  * @visibleName TopBanner (Topp)
  */
-const TopBanner: React.FC<TopBannerProps> = props => {
+export const TopBanner: React.FC<TopBannerProps> = (props) => {
   const { external, ...rest } = props;
   return external ? <ExternalHeader {...rest} /> : <InternalHeader {...rest} />;
 };
@@ -146,7 +144,5 @@ TopBanner.defaultProps = {
   icon: 'Home',
   external: false,
   compact: false,
-  logoLink: false
+  logoLink: false,
 };
-
-export default TopBanner;

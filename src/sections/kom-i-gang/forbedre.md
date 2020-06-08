@@ -1,8 +1,7 @@
 Vi har lagt opp til at alle som jobber med design og utvikling kan bidra til å forbedre komponentene. Her har vi laget en oversikt for å hjelpe deg i gang.
 
 ```js noeditor beskrivelse
-import Accordion from '@skatteetaten/frontend-components/Accordion';
-import AccordionItem from '@skatteetaten/frontend-components/Accordion/AccordionItem';
+import { Accordion, AccordionItem } from '@skatteetaten/frontend-components';
 
 <Accordion processList>
   <AccordionItem

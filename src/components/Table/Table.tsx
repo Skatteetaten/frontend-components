@@ -1,11 +1,9 @@
 import classnames from 'classnames';
 import * as React from 'react';
-import Icon from '../Icon/Icon';
+import { Icon, TableRow } from '../index';
 import { getClassNames } from './Table.classNames';
 
-import TableRow from './TableRow';
-
-interface TableProps<P> extends React.HTMLAttributes<HTMLDivElement> {
+export interface TableProps<P> extends React.HTMLAttributes<HTMLDivElement> {
   /** Mulighet for å legge inn egen klasse for å overstyre stiling */
   className?: string;
   /** Global attributt som må være unik for hele HTML dokumentet */
@@ -57,12 +55,9 @@ interface TableState {
 /**
  * @visibleName Table (Tabell)
  */
-export default class Table<P> extends React.PureComponent<
-  TableProps<P>,
-  TableState
-> {
+export class Table<P> extends React.PureComponent<TableProps<P>, TableState> {
   static defaultProps = {
-    data: []
+    data: [],
   };
   private readonly wrapperRef: React.RefObject<HTMLDivElement>;
   private readonly tableRef: React.RefObject<HTMLDivElement>;
@@ -77,8 +72,8 @@ export default class Table<P> extends React.PureComponent<
       openEditableRowIndex: props.openEditableRowIndex,
       sort: {
         ascending: false,
-        columnFieldName: ''
-      }
+        columnFieldName: '',
+      },
     };
   }
 
@@ -126,8 +121,9 @@ export default class Table<P> extends React.PureComponent<
   }
 
   _updateDimensions = () => {
-    let tableWidth = this.tableRef.current && this.tableRef.current.clientWidth;
-    let wrapperWidth =
+    const tableWidth =
+      this.tableRef.current && this.tableRef.current.clientWidth;
+    const wrapperWidth =
       this.wrapperRef.current && this.wrapperRef.current.clientWidth;
 
     this._setScrollBarState(wrapperWidth, tableWidth);
@@ -139,11 +135,11 @@ export default class Table<P> extends React.PureComponent<
   ) => {
     if (tableWidth && wrapperWidth && tableWidth > wrapperWidth) {
       this.setState({
-        tableIsScrollable: true
+        tableIsScrollable: true,
       });
     } else {
       this.setState({
-        tableIsScrollable: false
+        tableIsScrollable: false,
       });
     }
   };
@@ -151,7 +147,7 @@ export default class Table<P> extends React.PureComponent<
   _getHeader = (columns: TableProps<P>['columns']) => {
     return (
       columns &&
-      columns.map(key => {
+      columns.map((key) => {
         if (key.sortable) {
           const isSorted = this.state.sort.columnFieldName === key.fieldName;
           const isSortedAscending = this.state.sort.ascending;
@@ -169,7 +165,7 @@ export default class Table<P> extends React.PureComponent<
                 key.hideOnMobile ? 'hideOnMobile' : ''
               )}
               tabIndex={0}
-              onKeyDown={e => {
+              onKeyDown={(e) => {
                 return e.key === 'Enter'
                   ? this._setSortingState(key.fieldName)
                   : null;
@@ -204,8 +200,8 @@ export default class Table<P> extends React.PureComponent<
           this.state.sort.columnFieldName === columnFieldName
             ? !this.state.sort.ascending
             : true,
-        columnFieldName: columnFieldName
-      }
+        columnFieldName: columnFieldName,
+      },
     });
 
   _getRowData = (columns: TableProps<P>['columns']) => {
@@ -236,14 +232,15 @@ export default class Table<P> extends React.PureComponent<
       const sortDescending = !this.state.sort.ascending;
       const sortingFunction =
         this.props.columns &&
-        this.props.columns.filter(column => column.fieldName === sortingKey)[0]
-          .sortingFunction;
+        this.props.columns.filter(
+          (column) => column.fieldName === sortingKey
+        )[0].sortingFunction;
       if (sortingFunction) {
         copiedArray.sort((a, b) =>
           sortingFunction(a[sortingKey], b[sortingKey])
         );
       } else {
-        copiedArray.sort(function(a, b) {
+        copiedArray.sort(function (a, b) {
           return a[sortingKey] < b[sortingKey] ? -1 : 1;
         });
       }

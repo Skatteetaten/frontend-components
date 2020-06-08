@@ -5,9 +5,7 @@ Hvis vi skal få til en enhetlig brukeropplevelse på tvers, må alle løsninger
 Vi har laget Sketch-varianter av komponentene, slik at skissene dine kan harmonere med de tekniske.
 
 ```js noeditor
-import OpenClose from '@skatteetaten/frontend-components/OpenClose';
-import Link from '@skatteetaten/frontend-components/Link';
-import Button from '@skatteetaten/frontend-components/Button';
+import { OpenClose, Link, Button } from '@skatteetaten/frontend-components';
 
 <div>
   <p>
@@ -22,11 +20,10 @@ import Button from '@skatteetaten/frontend-components/Button';
 ```
 
 ```js noeditor
-import OpenClose from '@skatteetaten/frontend-components/OpenClose';
-import Typography from '@skatteetaten/frontend-components/Typography';
+import { OpenClose, Typography } from '@skatteetaten/frontend-components';
 
 const style = {
-  marginTop: 0
+  marginTop: 0,
 };
 
 <OpenClose title={'Versjonshistorikk'}>
@@ -52,8 +49,7 @@ const style = {
 ### Sette opp Sketch
 
 ```js noeditor
-import Accordion from '@skatteetaten/frontend-components/Accordion';
-import AccordionItem from '@skatteetaten/frontend-components/Accordion/AccordionItem';
+import { Accordion, AccordionItem } from '@skatteetaten/frontend-components';
 <div>
   <Accordion processList>
     <AccordionItem
@@ -96,8 +92,7 @@ import AccordionItem from '@skatteetaten/frontend-components/Accordion/Accordion
 Komponentene finnes også i Axure-versjon. Etter at du har fått tilgang til dem vil de automatisk dukke opp i widget-menyen din i Axure. Du kan også bla i komponentene:
 
 ```js noeditor
-import OpenClose from '@skatteetaten/frontend-components/OpenClose';
-import Link from '@skatteetaten/frontend-components/Link';
+import { OpenClose, Link } from '@skatteetaten/frontend-components';
 
 <div>
   <p>

@@ -1,7 +1,7 @@
 import React from 'react';
 import { matches } from './../utils/test-utils';
 import { shallow } from 'enzyme';
-import CheckBox from './CheckBox';
+import { CheckBox } from '../index';
 
 function oppsettShallow(props) {
   return shallow(<CheckBox {...props} />);
@@ -25,7 +25,7 @@ describe('Checkbox komponent', () => {
       label: 'checkbox-label',
       name: 'checkbox-name',
       id: 'checkbox-id',
-      className: 'checkbox-classname'
+      className: 'checkbox-classname',
     });
 
     const checkbox = wrapper.find('StyledCheckboxBase');

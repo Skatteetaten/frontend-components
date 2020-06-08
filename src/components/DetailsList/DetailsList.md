@@ -3,7 +3,7 @@
 Kolonner som kan sorteres
 
 ```js
-import DetailsList from '@skatteetaten/frontend-components/DetailsList';
+import { DetailsList } from '@skatteetaten/frontend-components';
 
 const initialState = {
   columns: [
@@ -22,7 +22,7 @@ const initialState = {
         } else {
           return items.sort((a, b) => b[fieldName].localeCompare(a[fieldName]));
         }
-      }
+      },
     },
     {
       key: 'column2',
@@ -41,7 +41,7 @@ const initialState = {
         } else {
           return items.sort((a, b) => b[fieldName].localeCompare(a[fieldName]));
         }
-      }
+      },
     },
     {
       key: 'column3',
@@ -49,7 +49,7 @@ const initialState = {
       fieldName: 'avgiftsgruppe',
       minWidth: 50,
       maxWidth: 150,
-      isResizable: true
+      isResizable: true,
     },
     {
       key: 'column4',
@@ -57,7 +57,7 @@ const initialState = {
       fieldName: 'beloep',
       minWidth: 100,
       maxWidth: 200,
-      isResizable: true
+      isResizable: true,
     },
     {
       key: 'column5',
@@ -65,7 +65,7 @@ const initialState = {
       fieldName: 'fritak',
       minWidth: 50,
       maxWidth: 150,
-      isResizable: true
+      isResizable: true,
     },
     {
       key: 'column6',
@@ -73,8 +73,8 @@ const initialState = {
       fieldName: 'status',
       minWidth: 100,
       maxWidth: 200,
-      isResizable: true
-    }
+      isResizable: true,
+    },
   ],
   items: [
     {
@@ -85,7 +85,7 @@ const initialState = {
       fritak: '',
       status: 'Iverksatt',
       kravgrunnlag: null,
-      links: null
+      links: null,
     },
     {
       fastsatt: '31.05.2018',
@@ -95,7 +95,7 @@ const initialState = {
       fritak: '',
       status: 'Iverksatt',
       kravgrunnlag: null,
-      links: null
+      links: null,
     },
     {
       fastsatt: '02.03.2018',
@@ -105,7 +105,7 @@ const initialState = {
       fritak: '',
       status: 'Under arbeid',
       kravgrunnlag: null,
-      links: null
+      links: null,
     },
     {
       fastsatt: '03.03.2018',
@@ -115,7 +115,7 @@ const initialState = {
       fritak: '',
       status: 'Under arbeid',
       kravgrunnlag: null,
-      links: null
+      links: null,
     },
     {
       fastsatt: '04.01.2018',
@@ -125,7 +125,7 @@ const initialState = {
       fritak: '',
       status: 'Under arbeid',
       kravgrunnlag: null,
-      links: null
+      links: null,
     },
     {
       fastsatt: '31.01.2018',
@@ -135,7 +135,7 @@ const initialState = {
       fritak: '',
       status: 'Iverksatt',
       kravgrunnlag: null,
-      links: null
+      links: null,
     },
     {
       fastsatt: '31.01.2018',
@@ -145,7 +145,7 @@ const initialState = {
       fritak: '',
       status: 'Påbegynt',
       kravgrunnlag: null,
-      links: null
+      links: null,
     },
     {
       fastsatt: '31.01.2018',
@@ -155,7 +155,7 @@ const initialState = {
       fritak: '',
       status: 'Påbegynt',
       kravgrunnlag: null,
-      links: null
+      links: null,
     },
     {
       fastsatt: '31.01.2018',
@@ -165,7 +165,7 @@ const initialState = {
       fritak: '',
       status: 'Påbeynt',
       kravgrunnlag: null,
-      links: null
+      links: null,
     },
     {
       fastsatt: '31.01.2018',
@@ -175,7 +175,7 @@ const initialState = {
       fritak: '',
       status: 'Ny',
       kravgrunnlag: null,
-      links: null
+      links: null,
     },
     {
       fastsatt: '31.01.2018',
@@ -185,7 +185,7 @@ const initialState = {
       fritak: '',
       status: 'Iverksatt',
       kravgrunnlag: null,
-      links: null
+      links: null,
     },
     {
       fastsatt: '31.01.2018',
@@ -195,7 +195,7 @@ const initialState = {
       fritak: '',
       status: 'Ny',
       kravgrunnlag: null,
-      links: null
+      links: null,
     },
     {
       fastsatt: '31.01.2018',
@@ -205,9 +205,9 @@ const initialState = {
       fritak: '',
       status: 'Iverksatt',
       kravgrunnlag: null,
-      links: null
-    }
-  ]
+      links: null,
+    },
+  ],
 };
 <DetailsList
   columns={state.columns}
@@ -220,7 +220,7 @@ const initialState = {
 Brukeren kan velge en eller flere rader vha av sjekkbokser.
 
 ```js
-import DetailsList from '@skatteetaten/frontend-components/DetailsList';
+import { DetailsList } from '@skatteetaten/frontend-components';
 
 const initialState = {
   columns: [
@@ -230,7 +230,7 @@ const initialState = {
       fieldName: 'fastsatt',
       minWidth: 50,
       maxWidth: 200,
-      isResizable: true
+      isResizable: true,
     },
     {
       key: 'column2',
@@ -238,7 +238,7 @@ const initialState = {
       fieldName: 'avgiftstype',
       minWidth: 50,
       maxWidth: 150,
-      isResizable: true
+      isResizable: true,
     },
     {
       key: 'column3',
@@ -246,7 +246,7 @@ const initialState = {
       fieldName: 'avgiftsgruppe',
       minWidth: 50,
       maxWidth: 150,
-      isResizable: true
+      isResizable: true,
     },
     {
       key: 'column4',
@@ -254,7 +254,7 @@ const initialState = {
       fieldName: 'beloep',
       minWidth: 100,
       maxWidth: 200,
-      isResizable: true
+      isResizable: true,
     },
     {
       key: 'column5',
@@ -262,7 +262,7 @@ const initialState = {
       fieldName: 'fritak',
       minWidth: 50,
       maxWidth: 150,
-      isResizable: true
+      isResizable: true,
     },
     {
       key: 'column6',
@@ -270,8 +270,8 @@ const initialState = {
       fieldName: 'status',
       minWidth: 100,
       maxWidth: 200,
-      isResizable: true
-    }
+      isResizable: true,
+    },
   ],
   items: [
     {
@@ -283,7 +283,7 @@ const initialState = {
       status: 'Iverksatt',
       kravgrunnlag: null,
       links: null,
-      checkboxVisibility: true
+      checkboxVisibility: true,
     },
     {
       fastsatt: '31.01.2018',
@@ -293,7 +293,7 @@ const initialState = {
       fritak: '',
       status: 'Iverksatt',
       kravgrunnlag: null,
-      links: null
+      links: null,
     },
     {
       fastsatt: '31.01.2018',
@@ -303,7 +303,7 @@ const initialState = {
       fritak: '',
       status: 'Under arbeid',
       kravgrunnlag: null,
-      links: null
+      links: null,
     },
     {
       fastsatt: '31.01.2018',
@@ -313,7 +313,7 @@ const initialState = {
       fritak: '',
       status: 'Under arbeid',
       kravgrunnlag: null,
-      links: null
+      links: null,
     },
     {
       fastsatt: '31.01.2018',
@@ -323,7 +323,7 @@ const initialState = {
       fritak: '',
       status: 'Under arbeid',
       kravgrunnlag: null,
-      links: null
+      links: null,
     },
     {
       fastsatt: '31.01.2018',
@@ -333,9 +333,9 @@ const initialState = {
       fritak: '',
       status: 'Iverksatt',
       kravgrunnlag: null,
-      links: null
-    }
-  ]
+      links: null,
+    },
+  ],
 };
 
 function chooseRow() {

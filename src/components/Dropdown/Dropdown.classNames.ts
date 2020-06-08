@@ -1,10 +1,12 @@
 import { mergeStyles } from '@uifabric/merge-styles';
 import { getTheme } from '@uifabric/styling';
-import { FontSizes } from '../utils/fonts';
-import { MdIcons } from '../utils/icons/';
-import { Animation } from '../utils/getAnimationStyles';
-import { PaletteProps } from '..';
-import { DropdownProps } from './Dropdown';
+import {
+  FontSizes,
+  MdIcons,
+  Animation,
+  PaletteProps,
+  DropdownProps,
+} from '../index';
 
 function getFieldTypeStyles(props: DropdownProps) {
   if (props.inputSize === 'large') {
@@ -14,18 +16,18 @@ function getFieldTypeStyles(props: DropdownProps) {
         padding: '5px 12px',
         borderRadius: '0px',
         fontSize: FontSizes.large,
-        height: '46px'
+        height: '46px',
       },
       '& span.ms-Dropdown-caretDownWrapper': {
         top: '8px',
-        fontSize: FontSizes.large
-      }
+        fontSize: FontSizes.large,
+      },
     };
   } else {
     return {
       '.ms-Dropdown-title': {
-        fontSize: FontSizes.small
-      }
+        fontSize: FontSizes.small,
+      },
     };
   }
 }
@@ -44,30 +46,30 @@ export const getClassNames = (props: DropdownProps) => {
     selectors: {
       ...getFieldTypeStyles(props),
       '& .ms-TextField-errorMessage': {
-        fontSize: FontSizes.small
+        fontSize: FontSizes.small,
       },
       '::-moz-focus-inner': {
-        border: '0'
+        border: '0',
       },
       '& .ms-Dropdown-title': {
         borderColor: palette.skeColor.blackAlt,
-        borderRadius: '0px'
+        borderRadius: '0px',
       },
       '& .ms-Dropdown-title.ms-Dropdown-title': errorMessage && {
-        borderColor: color
+        borderColor: color,
       },
       // hack
       '&:focus .ms-Dropdown-title.ms-Dropdown-title': {
-        border: `2px solid ${palette.skeColor.blue}`
+        border: `2px solid ${palette.skeColor.blue}`,
       },
       '&.is-disabled.is-disabled span.ms-Dropdown-title': {
         borderColor: palette.skeColor.grey,
         borderStyle: 'solid',
         borderWidth: '1px',
-        backgroundColor: palette.skeColor.whiteGrey
+        backgroundColor: palette.skeColor.whiteGrey,
       },
       '&.is-disabled.is-disabled span.ms-Dropdown-caretDownWrapper': {
-        color: palette.skeColor.grey
+        color: palette.skeColor.grey,
       },
       '&:focus:after': !props.disabled && {
         content: '""',
@@ -78,9 +80,9 @@ export const getClassNames = (props: DropdownProps) => {
         right: inset + 1,
         borderRadius: radius,
         outline: 'transparent',
-        zIndex: 1
-      }
-    }
+        zIndex: 1,
+      },
+    },
   });
 };
 
@@ -111,9 +113,9 @@ export const getErrorClassNames = (props: DropdownProps) => {
         marginRight: 3,
         position: 'absolute',
         top: 5,
-        left: 0
-      }
-    }
+        left: 0,
+      },
+    },
   });
 };
 
@@ -129,9 +131,9 @@ export const getCalloutClassNames = () => {
         border: '0',
         selectors: {
           '.dropdownItemSelected': {
-            background: palette.skeColor.burgundy
-          }
-        }
+            background: palette.skeColor.burgundy,
+          },
+        },
       },
       '.ms-Fabric.is-focusVisible.is-focusVisible & .ms-Dropdown-item:focus:after, .ms-Dropdown-item:hover:after': {
         content: '""',
@@ -144,25 +146,25 @@ export const getCalloutClassNames = () => {
         borderRadius: radius,
         outline: 'transparent',
         zIndex: 1,
-        color: palette.skeColor.blackAlt
+        color: palette.skeColor.blackAlt,
       },
       '.ms-Dropdown-item:hover': {
         color: palette.skeColor.blackAlt,
         selectors: {
           ':hover': {
             background: palette.skeColor.lightBlue,
-            textDecoration: 'underline'
+            textDecoration: 'underline',
           },
           ':active': {
             background: palette.skeColor.lightBlue,
-            textDecoration: 'none'
-          }
-        }
+            textDecoration: 'none',
+          },
+        },
       },
       '.ms-Dropdown-item:focus': {
         background: palette.skeColor.lightBlue,
-        textDecoration: 'underline'
-      }
-    }
+        textDecoration: 'underline',
+      },
+    },
   });
 };

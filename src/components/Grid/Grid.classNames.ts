@@ -1,6 +1,6 @@
 import { mergeStyleSets } from '@uifabric/merge-styles';
 // @ts-ignore TODO
-export const getClassNames = props => {
+export const getClassNames = (props) => {
   const {
     noSpacing,
     rowSpacing,
@@ -37,7 +37,7 @@ export const getClassNames = props => {
     hiddenXxl,
     hiddenXxlUp,
     hiddenXxlDown,
-    hiddenXxxl
+    hiddenXxxl,
   } = props;
   // @ts-ignore TODO
   return mergeStyleSets({
@@ -50,12 +50,12 @@ export const getClassNames = props => {
         '&::before, &::after': {
           display: 'table',
           content: '""',
-          lineHeight: '0'
+          lineHeight: '0',
         },
         '&::after': {
-          clear: 'both'
-        }
-      }
+          clear: 'both',
+        },
+      },
     },
     row: {
       displayName: 'ske-Grid-row',
@@ -66,12 +66,12 @@ export const getClassNames = props => {
         '&::before, &::after': {
           display: 'table',
           content: '""',
-          lineHeight: '0'
+          lineHeight: '0',
         },
         '&::after': {
-          clear: 'both'
-        }
-      }
+          clear: 'both',
+        },
+      },
     },
     col: {
       displayName: 'ske-Grid-col',
@@ -83,7 +83,7 @@ export const getClassNames = props => {
       width: '100%',
       selectors: {
         '& $grid': {
-          padding: '0'
+          padding: '0',
         },
         "[dir='ltr'] &": {
           float: centered ? 'none' : 'left',
@@ -92,29 +92,29 @@ export const getClassNames = props => {
             '@media (min-width: 320px)': {
               width: `${(100 / 12) * sm}%`,
               left: `${(100 / 12) * smPush}%`,
-              right: `${(100 / 12) * smPull}%`
+              right: `${(100 / 12) * smPull}%`,
             },
             '@media (min-width: 480px)': {
               width: `${(100 / 12) * md}%`,
               left: `${(100 / 12) * mdPush}%`,
-              right: `${(100 / 12) * mdPull}%`
+              right: `${(100 / 12) * mdPull}%`,
             },
             '@media (min-width: 640px)': {
               width: `${(100 / 12) * lg}%`,
               left: `${(100 / 12) * lgPush}%`,
-              right: `${(100 / 12) * lgPull}%`
+              right: `${(100 / 12) * lgPull}%`,
             },
             '@media (min-width: 1024px)': {
               width: `${(100 / 12) * xl}%`,
               left: `${(100 / 12) * xlPush}%`,
-              right: `${(100 / 12) * xlPull}%`
+              right: `${(100 / 12) * xlPull}%`,
             },
             '@media (min-width: 1366px)': {
               width: `${(100 / 12) * xxl}%`,
               left: `${(100 / 12) * xxlPush}%`,
-              right: `${(100 / 12) * xxlPull}%`
-            }
-          }
+              right: `${(100 / 12) * xxlPull}%`,
+            },
+          },
         },
         "[dir='rtl'] &": {
           float: 'right',
@@ -122,29 +122,29 @@ export const getClassNames = props => {
             '@media (min-width: 320px)': {
               width: `${(100 / 12) * sm}%`,
               right: `${(100 / 12) * smPush}%`,
-              left: `${(100 / 12) * smPull}%`
+              left: `${(100 / 12) * smPull}%`,
             },
             '@media (min-width: 480px)': {
               width: `${(100 / 12) * md}%`,
               right: `${(100 / 12) * mdPush}%`,
-              left: `${(100 / 12) * mdPull}%`
+              left: `${(100 / 12) * mdPull}%`,
             },
             '@media (min-width: 640px)': {
               width: `${(100 / 12) * lg}%`,
               right: `${(100 / 12) * lgPush}%`,
-              left: `${(100 / 12) * lgPull}%`
+              left: `${(100 / 12) * lgPull}%`,
             },
             '@media (min-width: 1024px)': {
               width: `${(100 / 12) * xl}%`,
               right: `${(100 / 12) * xlPush}%`,
-              left: `${(100 / 12) * xlPull}%`
+              left: `${(100 / 12) * xlPull}%`,
             },
             '@media (min-width: 1366px)': {
               width: `${(100 / 12) * xxl}%`,
               right: `${(100 / 12) * smPush}%`,
-              left: `${(100 / 12) * xxlPull}%`
-            }
-          }
+              left: `${(100 / 12) * xxlPull}%`,
+            },
+          },
         },
 
         // SMALL
@@ -155,7 +155,7 @@ export const getClassNames = props => {
               hiddenLgDown ||
               hiddenXlDown ||
               hiddenXxlDown) &&
-            'none !important'
+            'none !important',
         },
 
         // MEDIUM
@@ -167,7 +167,7 @@ export const getClassNames = props => {
               hiddenLgDown ||
               hiddenXlDown ||
               hiddenXxlDown) &&
-            'none !important'
+            'none !important',
         },
         // LARGE
         '@media (min-width: 640px) and (max-width: 1023px)': {
@@ -178,7 +178,7 @@ export const getClassNames = props => {
               hiddenLgDown ||
               hiddenXlDown ||
               hiddenXxlDown) &&
-            'none !important'
+            'none !important',
         },
         // EXTRA LARGE
         '@media (min-width: 1024px) and (max-width: 1365px)': {
@@ -189,7 +189,7 @@ export const getClassNames = props => {
               hiddenXlUp ||
               hiddenXlDown ||
               hiddenXxlDown) &&
-            'none !important'
+            'none !important',
         },
         // EXTRA EXTRA LARGE
         '@media (min-width: 1366px) and (max-width: 1919px)': {
@@ -200,7 +200,7 @@ export const getClassNames = props => {
               hiddenXxl ||
               hiddenXxlUp ||
               hiddenXxlDown) &&
-            'none !important'
+            'none !important',
         },
         // EXTRA EXTRA EXTRA LARGE
         '@media (min-width: 1920px)': {
@@ -215,15 +215,15 @@ export const getClassNames = props => {
           selectors: {
             "[dir='ltr'] &": {
               left: `${(100 / 12) * xxxlPush}%`,
-              right: `${(100 / 12) * xxxlPull}%`
+              right: `${(100 / 12) * xxxlPull}%`,
             },
             "[dir='rtl'] &": {
               right: `${(100 / 12) * xxxlPush}%`,
-              left: `${(100 / 12) * xxxlPull}%`
-            }
-          }
-        }
-      }
-    }
+              left: `${(100 / 12) * xxxlPull}%`,
+            },
+          },
+        },
+      },
+    },
   });
 };

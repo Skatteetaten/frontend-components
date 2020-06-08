@@ -1,5 +1,5 @@
 ```js noeditor
-import MessageBar from '@skatteetaten/frontend-components/MessageBar';
+import { MessageBar } from '@skatteetaten/frontend-components';
 
 <MessageBar type={MessageBar.Type.info}>
   NB: Vær ekstra oppmerksom på kravene til universell utforming når du benytter
@@ -14,7 +14,7 @@ Denne komponenten brukes når du ønsker å lede oppmerksomhet mot en enkelt hov
 Det er en vedtatt designretningslinje i etaten, at slike hovedhandlinger skal se ut som knapper, og denne komponenten sikrer god universell utforming i slike situasjoner.
 
 ```js
-import ButtonLink from '@skatteetaten/frontend-components/ButtonLink';
+import { ButtonLink } from '@skatteetaten/frontend-components';
 
 <ButtonLink path={'#'} text="Se og endre skattekort" />;
 ```
@@ -37,7 +37,7 @@ men selve funksjonen - at brukeren kommer til en ny side - vil være som før.
 ```
 
 ```js noeditor uu
-import Link from '@skatteetaten/frontend-components/Link';
+import { Link } from '@skatteetaten/frontend-components';
 <div>
   <h2>Knapp eller lenke</h2>
   <p>

@@ -1,7 +1,7 @@
 ** Nedtrekkslister brukes når brukeren skal kunne velge et eller flere valg fra en liste. **
 
 ```js
-import Dropdown from '@skatteetaten/frontend-components/Dropdown';
+import { Dropdown } from '@skatteetaten/frontend-components';
 
 const initialState = {
   options: [
@@ -18,8 +18,8 @@ const initialState = {
     { key: 'G', text: 'Kålrabi' },
     { key: 'H', text: 'Potet' },
     { key: 'I', text: 'Selleri' },
-    { key: 'J', text: 'Tomat' }
-  ]
+    { key: 'J', text: 'Tomat' },
+  ],
 };
 
 <div style={{ width: '300px' }}>
@@ -35,7 +35,7 @@ const initialState = {
 Stor versjon:
 
 ```js
-import Dropdown from '@skatteetaten/frontend-components/Dropdown';
+import { Dropdown } from '@skatteetaten/frontend-components';
 
 const initialState = {
   options: [
@@ -52,8 +52,8 @@ const initialState = {
     { key: 'G', text: 'Kålrabi' },
     { key: 'H', text: 'Potet' },
     { key: 'I', text: 'Selleri' },
-    { key: 'J', text: 'Tomat' }
-  ]
+    { key: 'J', text: 'Tomat' },
+  ],
 };
 
 <div style={{ width: '300px' }}>

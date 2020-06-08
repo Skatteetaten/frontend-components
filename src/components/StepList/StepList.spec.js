@@ -1,8 +1,7 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
 import toJson from 'enzyme-to-json';
-import StepList from './StepList';
-import Step from './Step';
+import { StepList, Step } from '../index';
 
 function oppsettShallow(props) {
   return shallow(
@@ -33,7 +32,7 @@ describe('StepList komponent', () => {
   it('rendrer steplist med riktig props', () => {
     const wrapper = oppsettShallow({
       stepTitle: 'Jobber du?',
-      stepId: 'step-1-1'
+      stepId: 'step-1-1',
     });
 
     expect(wrapper.find('Step').prop('stepTitle')).toEqual('Jobber du?');
@@ -44,7 +43,7 @@ describe('StepList komponent', () => {
     oppsettShallow({});
 
     const wrapper = oppsettMount({
-      stepType: 'result'
+      stepType: 'result',
     });
 
     expect(wrapper.find('Step').prop('stepType')).toEqual('result');
@@ -57,7 +56,7 @@ describe('StepList komponent', () => {
     oppsettShallow({});
 
     const wrapper = oppsettMount({
-      stepType: 'next'
+      stepType: 'next',
     });
 
     expect(wrapper.exists('.stepNumber')).toEqual(false);

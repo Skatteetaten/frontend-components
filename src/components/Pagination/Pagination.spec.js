@@ -1,16 +1,16 @@
 import React from 'react';
-import Pagination, { getSlidingWindowEdges } from './Pagination';
+import { Pagination, getSlidingWindowEdges } from '../index';
 import { matches } from '../utils/test-utils';
 import { mount } from 'enzyme';
 
 function oppsettFullDOM(props) {
-  const Wrapper = wrapperProps => {
+  const Wrapper = (wrapperProps) => {
     const [currentPage, setCurrentPage] = React.useState(1);
     return (
       <Pagination
         {...wrapperProps}
         currentPage={currentPage}
-        onPageChange={page => setCurrentPage(page)}
+        onPageChange={(page) => setCurrentPage(page)}
       />
     );
   };
@@ -34,7 +34,7 @@ describe('Pagination komponent', () => {
       ariaLabelNavigationLink: 'Go to page ',
       ariaLabelNavigationLinkActive: 'Current page, Page ',
       total: 15,
-      pageSize: 5
+      pageSize: 5,
     });
     const firstPageLink = wrapper
       .find('ul')
@@ -56,7 +56,7 @@ describe('Pagination komponent', () => {
   it('skal endre aktiv side på klikk', () => {
     const wrapper = oppsettFullDOM({
       total: 15,
-      pageSize: 5
+      pageSize: 5,
     });
     const firstPageLink = wrapper
       .find('ul')
@@ -110,24 +110,14 @@ describe('Pagination komponent', () => {
   it('skal genere en side dersom total er mindre enn pageSize', () => {
     let wrapper = oppsettFullDOM({
       total: 17,
-      pageSize: 50
+      pageSize: 50,
     });
-    expect(
-      wrapper
-        .find('ul')
-        .last()
-        .find('li').length
-    ).toEqual(1);
+    expect(wrapper.find('ul').last().find('li').length).toEqual(1);
     wrapper = oppsettFullDOM({
       total: 32,
-      pageSize: 20
+      pageSize: 20,
     });
-    expect(
-      wrapper
-        .find('ul')
-        .last()
-        .find('li').length
-    ).toEqual(2);
+    expect(wrapper.find('ul').last().find('li').length).toEqual(2);
     expect(
       wrapper
         .find('ul')

@@ -1,8 +1,8 @@
 import * as React from 'react';
-import IconButton from '../../IconButton';
+import { IconButton } from '../../index';
 import classnames from 'classnames';
 
-interface TableRowProps<P> {
+export interface TableRowProps<P> {
   data: P;
   rowIndex: number;
   editableRows: boolean | undefined;
@@ -22,11 +22,11 @@ interface TableRowProps<P> {
 /**
  * @visibleName TableRow (Tabellrad)
  */
-export default class TableRow<P> extends React.PureComponent<TableRowProps<P>> {
+export class TableRow<P> extends React.PureComponent<TableRowProps<P>> {
   constructor(props: TableRowProps<P>) {
     super(props);
     this.state = {
-      isEditableRowOpen: false
+      isEditableRowOpen: false,
     };
   }
 
@@ -41,7 +41,7 @@ export default class TableRow<P> extends React.PureComponent<TableRowProps<P>> {
       tableHasScroll,
       isEditableRowOpen,
       onCloseRow,
-      onEditRow
+      onEditRow,
     } = this.props;
     const numberOfItems = Object.keys(data).length + 1;
     const editButton = (

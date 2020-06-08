@@ -1,21 +1,25 @@
-import { FontSizes, FontWeights, PaletteProps } from '..';
+import {
+  FontSizes,
+  FontWeights,
+  PaletteProps,
+  LabelWithCalloutProps,
+} from '../index';
 import { mergeStyleSets } from '@uifabric/merge-styles';
 import { getTheme } from '@uifabric/styling';
-import { LabelWithCalloutProps } from './LabelWithCallout';
 
 function getLabelSize(props: LabelWithCalloutProps) {
   switch (props.inputSize) {
     case 'small':
       return {
-        fontSize: FontSizes.small
+        fontSize: FontSizes.small,
       };
     case 'large':
       return {
-        fontSize: FontSizes.large
+        fontSize: FontSizes.large,
       };
     default:
       return {
-        fontSize: FontSizes.medium
+        fontSize: FontSizes.medium,
       };
   }
 }
@@ -37,25 +41,25 @@ export const getClassNames = (props: LabelWithCalloutProps) => {
         '& .ms-Callout-container': {
           position: !calloutFloating ? 'inherit' : undefined,
           margin: !calloutFloating ? '10px 0' : 0,
-          width: '100%'
+          width: '100%',
         },
         '& .ms-Callout': !calloutFloating && {
           left: '0 !important',
           top: '0 !important',
-          position: 'inherit'
+          position: 'inherit',
         },
         '& .ms-Callout-main': !calloutFloating && {
           maxWidth: '100%',
-          display: 'inline-block'
+          display: 'inline-block',
         },
         '& .ms-Callout-beak': !calloutFloating && {
           left: '20px !important',
-          top: '-8px !important'
+          top: '-8px !important',
         },
         '& .ms-Callout-beakCurtain': {
-          backgroundColor: 'transparent'
-        }
-      }
+          backgroundColor: 'transparent',
+        },
+      },
     },
     label: {
       paddingBottom: 4,
@@ -66,9 +70,9 @@ export const getClassNames = (props: LabelWithCalloutProps) => {
       ...getLabelSize(props),
       selectors: {
         '& .ms-Label': {
-          fontWeight: FontWeights.regular
-        }
-      }
+          fontWeight: FontWeights.regular,
+        },
+      },
     },
     labelAsLegend: {
       paddingLeft: 0,
@@ -79,12 +83,12 @@ export const getClassNames = (props: LabelWithCalloutProps) => {
       ...getLabelSize(props),
       selectors: {
         '& .ms-Label': {
-          fontWeight: FontWeights.regular
+          fontWeight: FontWeights.regular,
         },
         '@supports (display: contents)': {
-          display: 'contents'
-        }
-      }
+          display: 'contents',
+        },
+      },
     },
     labelIconArea: {
       height: '22px',
@@ -93,33 +97,33 @@ export const getClassNames = (props: LabelWithCalloutProps) => {
       selectors: {
         '& button ': {
           height: '22px',
-          marginTop: '-2px'
-        }
-      }
+          marginTop: '-2px',
+        },
+      },
     },
     icon: {
       color: palette.skeColor.blue,
       selectors: {
         '& i': {
-          fontSize: 'large'
+          fontSize: 'large',
         },
         '&:focus&:after': {
           border: `2px solid ${palette.skeColor.blue}`,
-          outline: 'none'
-        }
-      }
+          outline: 'none',
+        },
+      },
     },
     warningicon: {
       color: palette.skeColor.blue,
       selectors: {
         '& i': {
-          fontSize: 'large'
+          fontSize: 'large',
         },
         '&:focus&:after': {
           border: `2px solid ${palette.skeColor.blue}`,
-          outline: 'none'
-        }
-      }
+          outline: 'none',
+        },
+      },
     },
     errorIcon: {
       position: 'absolute',
@@ -128,9 +132,9 @@ export const getClassNames = (props: LabelWithCalloutProps) => {
       selectors: {
         '& i': {
           color: palette.skeColor.pink,
-          fontSize: 'large'
-        }
-      }
-    }
+          fontSize: 'large',
+        },
+      },
+    },
   });
 };

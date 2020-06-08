@@ -1,7 +1,7 @@
 import React from 'react';
-import Button from '../../components/Button/Button';
+import { Button } from '../../components/index';
 
-const UsageTabButton = props => {
+const UsageTabButton = (props) => {
   console.log(props);
   if (props.active) return <Button {...props}>Skjul API</Button>;
   return <Button {...props}>Se API</Button>;

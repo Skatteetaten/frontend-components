@@ -1,9 +1,11 @@
 ** Dialog brukes til å vise innhold midt på skjermen og tiltrekke seg brukerens oppmerksomhet. **
 
 ```js
-import Dialog from '@skatteetaten/frontend-components/Dialog';
-import Button from '@skatteetaten/frontend-components/Button';
-import ActionButton from '@skatteetaten/frontend-components/ActionButton';
+import {
+  Dialog,
+  Button,
+  ActionButton,
+} from '@skatteetaten/frontend-components';
 
 const initialState = { hideDialog: true };
 
@@ -41,9 +43,11 @@ function closeDialog() {
 ```
 
 ```js
-import Dialog from '@skatteetaten/frontend-components/Dialog';
-import Button from '@skatteetaten/frontend-components/Button';
-import NavigationTile from '@skatteetaten/frontend-components/NavigationTile';
+import {
+  Dialog,
+  Button,
+  NavigationTile,
+} from '@skatteetaten/frontend-components';
 
 const initialState = { hideDialog: true };
 
@@ -55,13 +59,13 @@ const content1 = [
   {
     to: '#',
     heading: 'Næringsrapport skatt AS',
-    icon: 'ArrowForward'
+    icon: 'ArrowForward',
   },
   {
     to: '#',
     heading: 'Næringsrapport skatt ENK',
-    icon: 'ArrowForward'
-  }
+    icon: 'ArrowForward',
+  },
 ];
 
 <div>
@@ -99,9 +103,11 @@ const content1 = [
 ```
 
 ```js
-import Dialog from '@skatteetaten/frontend-components/Dialog';
-import Button from '@skatteetaten/frontend-components/Button';
-import ActionButton from '@skatteetaten/frontend-components/ActionButton';
+import {
+  Dialog,
+  Button,
+  ActionButton,
+} from '@skatteetaten/frontend-components';
 
 const initialState = { hideDialog: true };
 

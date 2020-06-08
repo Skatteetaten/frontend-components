@@ -3,7 +3,7 @@
 Standard tekstfelt:
 
 ```js
-import TextField from '@skatteetaten/frontend-components/TextField';
+import { TextField } from '@skatteetaten/frontend-components';
 
 <div style={{ width: '300px' }}>
   <TextField
@@ -18,7 +18,7 @@ import TextField from '@skatteetaten/frontend-components/TextField';
 Stor variant av tekstfelt:
 
 ```js
-import TextField from '@skatteetaten/frontend-components/TextField';
+import { TextField } from '@skatteetaten/frontend-components';
 
 <div style={{ width: '300px' }}>
   <TextField
@@ -33,7 +33,7 @@ import TextField from '@skatteetaten/frontend-components/TextField';
 Hjelpetekster og advarsel:
 
 ```js
-import TextField from '@skatteetaten/frontend-components/TextField';
+import { TextField } from '@skatteetaten/frontend-components';
 
 <>
   <div style={{ width: '300px' }}>
@@ -61,7 +61,7 @@ import TextField from '@skatteetaten/frontend-components/TextField';
 Feilmelding vises i umiddelbar nærhet til feltet:
 
 ```js
-import TextField from '@skatteetaten/frontend-components/TextField';
+import { TextField } from '@skatteetaten/frontend-components';
 
 <div style={{ width: '160px' }}>
   <TextField
@@ -78,12 +78,12 @@ import TextField from '@skatteetaten/frontend-components/TextField';
 Av og til ønsker man å veksle mellom skrive og lesemodus. Da vises det som ren tekst med et blyant-ikon. Når man klikker, blir det skrivefelt:
 
 ```js
-import TextField from '@skatteetaten/frontend-components/TextField';
+import { TextField } from '@skatteetaten/frontend-components';
 
 const initialState = {
   value: 'Siri Saksbehandler',
   vekt: '4',
-  empty: ''
+  empty: '',
 };
 
 <div style={{ width: '300px' }}>
@@ -121,7 +121,7 @@ const initialState = {
 Bestemt formatering:
 
 ```js
-import TextField from '@skatteetaten/frontend-components/TextField';
+import { TextField } from '@skatteetaten/frontend-components';
 
 <div style={{ width: '300px' }}>
   <TextField
@@ -137,7 +137,7 @@ import TextField from '@skatteetaten/frontend-components/TextField';
 Multiline tekstfelt:
 
 ```js
-import TextField from '@skatteetaten/frontend-components/TextField';
+import { TextField } from '@skatteetaten/frontend-components';
 
 <div style={{ width: '300px' }}>
   <TextField
@@ -147,7 +147,7 @@ import TextField from '@skatteetaten/frontend-components/TextField';
       const lineBreak = value.length > 50;
       if (lineBreak !== state.lineBreak) {
         setState({
-          lineBreak: lineBreak
+          lineBreak: lineBreak,
         });
       }
     }}

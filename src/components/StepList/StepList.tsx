@@ -1,10 +1,9 @@
 import classnames from 'classnames';
 import React from 'react';
-import Grid from '../Grid/Grid';
+import { Grid, StepProps } from '../index';
 import { getClassNames } from './StepList.classNames';
-import { StepProps } from './Step/Step';
 
-interface StepListProps extends React.HTMLAttributes<HTMLDivElement> {
+export interface StepListProps extends React.HTMLAttributes<HTMLDivElement> {
   /** Klassenavn som kan benyttes for å overstyre css */
   className?: string;
   /** Label som kan settes for hele steplisten */
@@ -15,7 +14,7 @@ interface StepListProps extends React.HTMLAttributes<HTMLDivElement> {
  * @visibleName StepList (Prosessviser)
  */
 
-const StepList = (props: StepListProps) => {
+export const StepList = (props: StepListProps) => {
   const { children, ariaLabel, className } = props;
   const styles = getClassNames(props);
 
@@ -29,12 +28,10 @@ const StepList = (props: StepListProps) => {
         {React.Children.map(children, (child, index) => {
           if (React.isValidElement<StepProps>(child))
             return React.cloneElement(child, {
-              stepNumber: index + 1
+              stepNumber: index + 1,
             });
         })}
       </Grid>
     </div>
   );
 };
-
-export default StepList;

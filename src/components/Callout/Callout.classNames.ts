@@ -1,17 +1,16 @@
 import { getTheme } from '@uifabric/styling';
 import { mergeStyleSets } from '@uifabric/merge-styles';
-import { FontSizes } from '..';
-import { PaletteProps } from '..';
-import { CalloutColor, CalloutProps } from './Callout';
+import { FontSizes, PaletteProps, CalloutColor, CalloutProps } from '../index';
+
 function getCalloutBorder(props: CalloutProps) {
   const palette = getTheme().palette as PaletteProps;
   if (props.color === 'white') {
     return {
-      border: `2px solid ${palette.skeColor.blackAlt}`
+      border: `2px solid ${palette.skeColor.blackAlt}`,
     };
   } else {
     return {
-      border: 'none'
+      border: 'none',
     };
   }
 }
@@ -33,28 +32,28 @@ export const getClassNames = (props: CalloutProps) => {
           padding: '10px 20px 10px 10px',
           selectors: {
             '@media  only screen and (max-width: 479px)': {
-              maxWidth: 300
+              maxWidth: 300,
             },
             '& h3': {
-              padding: '10px 10px 0 10px'
+              padding: '10px 10px 0 10px',
             },
             '& p': {
-              padding: '10px 10px 0 10px'
-            }
-          }
+              padding: '10px 10px 0 10px',
+            },
+          },
         },
         '.ms-Callout-beak': {
-          backgroundColor: palette.skeColor[props.color as CalloutColor]
+          backgroundColor: palette.skeColor[props.color as CalloutColor],
         },
         '&& h3': {
           marginTop: '5px',
           marginBottom: '-12px',
-          fontSize: FontSizes.large
-        }
-      }
+          fontSize: FontSizes.large,
+        },
+      },
     },
     calloutWrapper: {
-      width: '100%'
+      width: '100%',
     },
     closeButton: {
       backgroundColor: 'transparent',
@@ -66,24 +65,24 @@ export const getClassNames = (props: CalloutProps) => {
       opacity: 1,
       selectors: {
         '&& i': {
-          fontWeight: 700
+          fontWeight: 700,
         },
         '&:hover i': {
           transition: 'opacity 300ms ease-out',
-          backgroundColor: palette.skeColor.lightBlue
+          backgroundColor: palette.skeColor.lightBlue,
         },
         '&:focus i': {
           backgroundColor: palette.skeColor.lightBlue,
-          borderRadius: 0
+          borderRadius: 0,
         },
         '&& .ms-Button-icon': {
-          padding: '4px 4px 4px 4px'
+          padding: '4px 4px 4px 4px',
         },
         '&.ms-Button': {
           border: 'none !important',
-          backgroundColor: 'transparent !important'
-        }
-      }
-    }
+          backgroundColor: 'transparent !important',
+        },
+      },
+    },
   });
 };

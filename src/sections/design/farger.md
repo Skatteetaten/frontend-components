@@ -7,7 +7,7 @@ Bokser, rammer, visuelle elementer på en side kan bruke green, lightGreen, brow
 
 ```js noeditor beskrivelse
 import TinyColor from '@ctrl/tinycolor';
-import SkeBasis from '@skatteetaten/frontend-components/SkeBasis';
+import { SkeBasis } from '@skatteetaten/frontend-components';
 
 palette = Object(SkeBasis.PALETTE);
 
@@ -69,7 +69,7 @@ BlackAlt brukes som fargen på tekster hvis bakgrunnen er lys. White brukes hvis
 
 ```js noeditor beskrivelse
 import TinyColor from '@ctrl/tinycolor';
-import SkeBasis from '@skatteetaten/frontend-components/SkeBasis';
+import { SkeBasis } from '@skatteetaten/frontend-components';
 palette = Object(SkeBasis.PALETTE);
 
 function drawSwatch(colorCode) {
@@ -102,7 +102,7 @@ Blue brukes på lenker og knapper som er klikkbare og som ligger på lys bakgrun
 
 ```js noeditor beskrivelse
 const { TinyColor } = require('@ctrl/tinycolor');
-import SkeBasis from '@skatteetaten/frontend-components/SkeBasis';
+import { SkeBasis } from '@skatteetaten/frontend-components';
 
 palette = Object(SkeBasis.PALETTE);
 

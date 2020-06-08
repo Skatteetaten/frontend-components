@@ -1,8 +1,6 @@
 import { mergeStyles, mergeStyleSets } from '@uifabric/merge-styles';
 import { getTheme } from '@uifabric/styling';
-import { FontSizes, FontWeights } from '../utils/fonts';
-import { PaletteProps } from '..';
-import { ComboboxProps } from './ComboBox';
+import { FontSizes, FontWeights, PaletteProps, ComboboxProps } from '../index';
 
 function getFieldTypeStyles(props: ComboboxProps) {
   const { errorMessage } = props;
@@ -11,37 +9,30 @@ function getFieldTypeStyles(props: ComboboxProps) {
     ? palette.skeColor.error
     : palette.skeColor.blackAlt;
 
-  if (props.inputSize === 'large') {
-    return {
-      '& .ms-ComboBox': {
-        borderWidth: '2px',
-        borderRadius: '0px',
-        height: '46px',
-        padding: '5px 12px',
-        borderColor: palette.skeColor.blackAlt
-      },
-      '& .ms-ComboBox:after': {
-        borderRadius: '0px',
-        borderWidth: '2px',
-        borderColor: errorMessage && color
-      },
-      '& .ms-ComboBox:focus': {
-        borderColor: `${palette.skeColor.blue} !important`
-      },
-      '& .ms-ComboBox-Input': {
-        fontSize: FontSizes.large
-      },
-      'i.ms-Button-icon': {
-        fontSize: FontSizes.large
-      }
-    };
-  } else {
-    return {
-      '& .ms-ComboBox-Input': {
-        fontSize: FontSizes.medium
-      }
-    };
-  }
+  return {
+    '& .ms-ComboBox': {
+      borderWidth: '2px',
+      borderRadius: '0px',
+      height: '46px',
+      padding: '5px 12px',
+      borderColor: palette.skeColor.blackAlt,
+    },
+    '& .ms-ComboBox:after': {
+      borderRadius: '0px',
+      borderWidth: '2px',
+      borderColor: errorMessage && color,
+    },
+    '& .ms-ComboBox:focus': {
+      borderColor: `${palette.skeColor.blue} !important`,
+    },
+    '& .ms-ComboBox-Input': {
+      fontSize:
+        props.inputSize === 'large' ? FontSizes.large : FontSizes.medium,
+    },
+    'i.ms-Button-icon': {
+      fontSize: FontSizes.large,
+    },
+  };
 }
 
 export const getClassNames = (props: ComboboxProps) => {
@@ -54,38 +45,43 @@ export const getClassNames = (props: ComboboxProps) => {
   return mergeStyles({
     displayName: 'SkeCombobox',
     selectors: {
+      // @ts-ignore
       '& .ms-ComboBox': {
         borderRadius: '0px',
         height: '30px',
-        padding: '0px 32px 1px 8px'
+        padding: '0px 32px 1px 8px',
       },
+      // @ts-ignore
       '& .ms-ComboBox:focus': {
-        outline: `2px solid ${palette.skeColor.blue}`
+        outline: `2px solid ${palette.skeColor.blue}`,
       },
+      // @ts-ignore
       '& .ms-ComboBox:after': {
         borderRadius: '0px',
-        borderColor: errorMessage && color
+        borderColor: errorMessage && color,
       },
+      // @ts-ignore
       '& .ms-ComboBox-Input': {
         paddingBottom: '1px',
-        paddingTop: '1px'
+        paddingTop: '1px',
       },
       '& .ms-ComboBox-Input.is-disabled': {
-        backgroundColor: palette.skeColor.whiteGrey
+        backgroundColor: palette.skeColor.whiteGrey,
       },
       '& .ms-ComboBox.is-disabled': {
-        borderColor: palette.skeColor.grey
+        borderColor: palette.skeColor.grey,
       },
       '& .ms-ComboBox.is-disabled button': {
-        color: palette.skeColor.grey
+        color: palette.skeColor.grey,
       },
       '.ms-ComboBox-CaretDown-button': {
         // Negative positioning to account for the 2px border
         right: '0',
-        top: '0'
+        top: '0',
       },
-      ...getFieldTypeStyles(props)
-    }
+      // @ts-ignore
+      ...getFieldTypeStyles(props),
+    },
   });
 };
 
@@ -100,9 +96,9 @@ export const getOptionsClassNames = (props: ComboboxProps) => {
         selectors: {
           ':hover': {
             background: palette.skeColor.lightBlue,
-            textDecoration: 'underline'
-          }
-        }
+            textDecoration: 'underline',
+          },
+        },
       },
       '& .ms-ComboBox-option.is-checked': {
         background: palette.skeColor.lightBlue,
@@ -112,22 +108,22 @@ export const getOptionsClassNames = (props: ComboboxProps) => {
           ':active': {
             background: `${palette.skeColor.lightBlue} !important`,
             border: `2px solid ${palette.skeColor.blue}`,
-            textDecoration: 'none'
-          }
-        }
+            textDecoration: 'none',
+          },
+        },
       },
       '& .ms-ComboBox-option.is-checked:after': {
         border: 'none',
-        outline: 'none'
+        outline: 'none',
       },
       '& .ms-ComboBox-optionText': {
-        whiteSpace: 'normal !important'
+        whiteSpace: 'normal !important',
       },
       'button.ms-ComboBox-option': {
         marginTop: '4px',
-        marginBottom: '4px'
-      }
-    }
+        marginBottom: '4px',
+      },
+    },
   });
 };
 
@@ -137,7 +133,7 @@ export const getLabelClassNames = (props: ComboboxProps) => {
   return mergeStyleSets({
     labelArea: {
       display: 'flex',
-      alignItems: 'center'
+      alignItems: 'center',
     },
     label: {
       //flexGrow: 1,
@@ -145,32 +141,32 @@ export const getLabelClassNames = (props: ComboboxProps) => {
     labelText: {
       fontSize: FontSizes.small,
       color: palette.skeColor.blackAlt,
-      fontWeight: FontWeights.regular
+      fontWeight: FontWeights.regular,
     },
     labelIconArea: {
       height: '27px',
-      marginTop: '-5px'
+      marginTop: '-5px',
     },
     icon: {
       color: palette.skeColor.blue,
       selectors: {
         '& i': {
-          fontSize: 'large'
+          fontSize: 'large',
         },
         '&:focus&:after': {
           border: `2px solid ${palette.skeColor.blue}`,
-          outline: 'none'
+          outline: 'none',
         },
         '&:focus::after': {
           border: `2px solid ${palette.skeColor.blue}`,
-          outline: 'none'
+          outline: 'none',
         },
         '&:hover': {
           border: palette.skeColor.blackAlt,
           outline: 'none',
-          background: 'none'
-        }
-      }
-    }
+          background: 'none',
+        },
+      },
+    },
   });
 };

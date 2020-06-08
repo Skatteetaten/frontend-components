@@ -1,26 +1,28 @@
 ** Tabeller brukes til å liste ut strukturerte data.**
 
 ```js
-import Table from '@skatteetaten/frontend-components/Table';
-import Grid from '@skatteetaten/frontend-components/Grid';
-import TextField from '@skatteetaten/frontend-components/TextField';
-import IconButton from '@skatteetaten/frontend-components/IconButton';
+import {
+  Table,
+  Grid,
+  TextField,
+  IconButton,
+} from '@skatteetaten/frontend-components';
 
 import moment from 'moment';
 
 const wrapperStyle = {
   backgroundColor: '#f9ede2',
-  padding: 12
+  padding: 12,
 };
 
 const blockCenterStyle = {
   textAlign: 'center',
-  marginTop: 20
+  marginTop: 20,
 };
 
 const tableStyle = {
   background: 'red',
-  marginTop: 20
+  marginTop: 20,
 };
 
 const editableContent = (data, close, rowIndex) => (
@@ -90,25 +92,25 @@ const columns = [
     fieldName: 'month',
     sortable: true,
     sortingFunction: sortMonths,
-    autohideSorting: false
+    autohideSorting: false,
   },
   {
     name: 'Beløp',
     fieldName: 'amount',
     alignment: 'right',
     sortable: true,
-    autohideSorting: false
+    autohideSorting: false,
   },
   {
     name: 'Dekningsgrad',
     fieldName: 'coverage',
-    alignment: 'right'
+    alignment: 'right',
   },
   {
     name: 'Avkastning',
     fieldName: 'revenue',
-    alignment: 'right'
-  }
+    alignment: 'right',
+  },
 ];
 
 const data = [
@@ -116,26 +118,26 @@ const data = [
     month: 'Januar',
     amount: 5426,
     coverage: '100%',
-    revenue: '1000'
+    revenue: '1000',
   },
   {
     month: 'Februar',
     amount: 5432,
     coverage: '50%',
-    revenue: '500'
+    revenue: '500',
   },
   {
     month: 'Mars',
     amount: 4899,
     coverage: '20%',
-    revenue: '2000'
+    revenue: '2000',
   },
   {
     month: 'April',
     amount: 2344,
     coverage: '30%',
-    revenue: '1055'
-  }
+    revenue: '1055',
+  },
 ];
 
 <Table
@@ -150,24 +152,23 @@ const data = [
 ** Man kan styre hvilke kolonner som skal vises på mobil med _hideOnMobile_-attributtet:**
 
 ```js
-import Table from '@skatteetaten/frontend-components/Table';
-import ActionButton from '@skatteetaten/frontend-components/ActionButton';
+import { Table, ActionButton } from '@skatteetaten/frontend-components';
 
 const columns = [
   {
     name: 'Navn',
-    fieldName: 'navn'
+    fieldName: 'navn',
   },
   {
     name: 'Tilgang gitt',
     fieldName: 'dato',
     alignment: 'right',
-    hideOnMobile: true
+    hideOnMobile: true,
   },
   {
     name: '',
-    fieldName: 'kanSlettes'
-  }
+    fieldName: 'kanSlettes',
+  },
 ];
 
 const data = [
@@ -181,7 +182,7 @@ const data = [
       >
         Slett tilgang
       </ActionButton>
-    )
+    ),
   },
   {
     navn: 'Kai Mossige',
@@ -193,8 +194,8 @@ const data = [
       >
         Slett tilgang
       </ActionButton>
-    )
-  }
+    ),
+  },
 ];
 
 <Table data={data} columns={columns} />;

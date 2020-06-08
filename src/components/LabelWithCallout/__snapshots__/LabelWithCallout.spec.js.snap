@@ -32,7 +32,7 @@ Array [
       >
         <i
           aria-hidden={true}
-          className="ms-Icon root-33 css-57 ms-Button-icon icon-52"
+          className="ms-Icon root-38 css-57 ms-Button-icon icon-52"
           data-icon-name="HelpOutline"
           role="presentation"
           style={

@@ -1,24 +1,26 @@
 import { mergeStyles } from '@uifabric/merge-styles';
 import { getTheme } from '@uifabric/styling';
-import { FontSizes, FontWeights } from '../utils/fonts';
-import { MdIcons } from '../utils/icons/';
-import { isUndefined } from 'util';
-import { PaletteProps } from '..';
-import { TextFieldProps } from './TextField';
+import {
+  FontSizes,
+  FontWeights,
+  MdIcons,
+  PaletteProps,
+  TextFieldProps,
+} from '../index';
 
 function getFieldTypeStyles(props: TextFieldProps) {
   if (props.inputSize === 'large') {
     return {
       '.ms-TextField-fieldGroup': {
         borderWidth: 2,
-        minHeight: 42
-      }
+        minHeight: 42,
+      },
     };
   } else {
     return {
       '& .ms-TextField-field': {
-        fontSize: FontSizes.medium
-      }
+        fontSize: FontSizes.medium,
+      },
     };
   }
 }
@@ -31,7 +33,7 @@ export const getClassNames = (props: TextFieldProps) => {
     editableWhenEmpty,
     errorMessage,
     readOnly,
-    underlined
+    underlined,
   } = props;
   const { semanticColors } = getTheme();
   const palette = getTheme().palette as PaletteProps;
@@ -46,37 +48,37 @@ export const getClassNames = (props: TextFieldProps) => {
       ...getFieldTypeStyles(props),
       '&.is-disabled .ms-TextField-fieldGroup': {
         border: `1px solid ${palette.skeColor.lightGrey}`,
-        backgroundColor: palette.skeColor.neutralGrey
+        backgroundColor: palette.skeColor.neutralGrey,
       },
       '&& .ms-TextField-fieldGroup': {
         borderColor: color,
-        borderRadius: '0px'
+        borderRadius: '0px',
       },
       '& .ms-TextField-fieldGroup': readOnly && {
         border: 'none',
         outline: 'none',
-        background: 'transparent'
+        background: 'transparent',
       },
       '&& .ms-TextField-fieldGroup:focus': {
         border: props.errorMessage
           ? palette.skeColor.blue
-          : palette.skeColor.error
+          : palette.skeColor.error,
       },
       '&.is-active .ms-TextField-fieldGroup': !borderless &&
         !underlined &&
         !readOnly && {
-          border: `1px solid ${palette.skeColor.blue}`
+          border: `1px solid ${palette.skeColor.blue}`,
         },
       // style customization for underlined model
       '&.ms-TextField--underlined .ms-TextField-wrapper': {
-        border: `1px solid ${color}`
+        border: `1px solid ${color}`,
       },
       '&.ms-TextField--underlined .ms-TextField-wrapper:hover': {
-        border: `1px solid ${semanticColors.inputBorderHovered}`
+        border: `1px solid ${semanticColors.inputBorderHovered}`,
       },
       '&.is-active.ms-TextField--underlined .ms-TextField-wrapper': {
         border: `1px solid ${color}`,
-        outline: `1px solid ${color}`
+        outline: `1px solid ${color}`,
       },
       // Ikke lengre i bruk
       '& .ms-TextField-field[readOnly]': {
@@ -85,29 +87,29 @@ export const getClassNames = (props: TextFieldProps) => {
         fontWeight: boldText ? FontWeights.bold : FontWeights.regular,
         border: 'none',
         outline: 'none',
-        background: 'transparent'
+        background: 'transparent',
       },
       '& .ms-TextField-field[readOnly]:focus': {
-        fontWeight: boldText ? FontWeights.bold : FontWeights.regular
+        fontWeight: boldText ? FontWeights.bold : FontWeights.regular,
       },
       '&.is-active .ms-TextField-field': readOnly && {
         border: `1px solid ${palette.skeColor.blue}`,
-        backgroundColor: palette.skeColor.white
+        backgroundColor: palette.skeColor.white,
       },
       '&.is-active .ms-TextField-field[readOnly]:focus': readOnly && {
         border: `none`,
-        background: 'transparent'
+        background: 'transparent',
       },
       '& .ms-TextField-field[disabled]': {
-        color: palette.skeColor.darkGrey
+        color: palette.skeColor.darkGrey,
       },
       '.ms-Button-icon': {
-        fontSize: 18
+        fontSize: 18,
       },
       '& .ms-TextField-errorMessage': {
         position: 'relative',
         color: palette.skeColor.error,
-        paddingLeft: 20
+        paddingLeft: 20,
       },
       '& .ms-TextField-errorMessage::before': {
         fontFamily: MdIcons.fontFace.fontFamily,
@@ -117,23 +119,23 @@ export const getClassNames = (props: TextFieldProps) => {
         marginRight: 3,
         position: 'absolute',
         top: 5,
-        left: 0
+        left: 0,
       },
       'textarea.ms-TextField-field': {
-        resize: 'none'
+        resize: 'none',
       },
       'input.ms-TextField-field': editableWhenEmpty && {
         border: '1px solid' + palette.skeColor.blackAlt,
-        backgroundColor: palette.skeColor.white
+        backgroundColor: palette.skeColor.white,
       },
-      '& .ms-Callout-main': !isUndefined(calloutFloating) &&
+      '& .ms-Callout-main': typeof calloutFloating !== 'undefined' &&
         !calloutFloating && {
-          display: 'inline-block'
+          display: 'inline-block',
         },
       '.ms-TextField-suffix': !props.editMode &&
         props.readOnly && {
-          display: 'none'
-        }
-    }
+          display: 'none',
+        },
+    },
   });
 };

@@ -2,7 +2,7 @@ import React from 'react';
 import { matches } from '../utils/test-utils';
 import { shallow, mount } from 'enzyme';
 
-import DatePicker from './DatePicker';
+import { DatePicker } from '../index';
 
 function oppsettShallow(props) {
   return shallow(<DatePicker {...props} />);
@@ -24,7 +24,7 @@ describe('DatePicker komponent', () => {
       ariaLabel: 'Datovelger',
       placeholder: 'dd.mm.åååå',
       info:
-        'Du kan skrive inn dato i feltet, eller velge en dato ved hjelp av datovelgeren, enten med mus eller bruk tastaturet'
+        'Du kan skrive inn dato i feltet, eller velge en dato ved hjelp av datovelgeren, enten med mus eller bruk tastaturet',
     });
 
     const styledDatePickerBase = wrapper.find('StyledDatePickerBase');
@@ -39,7 +39,7 @@ describe('DatePicker komponent', () => {
       isRequiredErrorMessage: 'Dette feltet er påkrevd i testen',
       isOutOfBoundsErrorMessage:
         'Datoen er ikke innenfor gyldig periode i testen',
-      invalidInputErrorMessage: 'Ikke gyldig format i testen'
+      invalidInputErrorMessage: 'Ikke gyldig format i testen',
     });
 
     const datePicker = wrapper.find('DatePicker');
@@ -66,17 +66,14 @@ describe('DatePicker komponent', () => {
 
   it('setter datovelger i readonly modus', () => {
     const wrapper = oppsettMount({
-      readonlyMode: true
+      readonlyMode: true,
     });
 
     expect(wrapper.find('StyledDatePickerBase').prop('readonlyMode')).toEqual(
       true
     );
     expect(
-      wrapper
-        .find('TextFieldBase')
-        .find('input')
-        .prop('disabled')
+      wrapper.find('TextFieldBase').find('input').prop('disabled')
     ).toEqual(true);
   });
 });

@@ -1,6 +1,6 @@
 import React from 'react';
 import { matches } from './../utils/test-utils';
-import FileUploader, { FileFormatTypes } from './FileUploader';
+import { FileUploader, FileFormatTypes } from '../index';
 import { mount, shallow } from 'enzyme';
 
 function oppsettShallow(props) {
@@ -19,30 +19,22 @@ describe('FileUploader komponent', () => {
     const wrapper = oppsettShallow({
       acceptedFileFormats: [FileFormatTypes.jpg, FileFormatTypes.png],
       ariaLabel: 'Filopplaster',
-      uploadFile: jest.fn()
+      uploadFile: jest.fn(),
     });
     expect(wrapper.find('label').props()['aria-label']).toEqual('Filopplaster');
-    expect(
-      wrapper
-        .find('span')
-        .first()
-        .text()
-    ).toEqual('Aksepterte filformater: .jpg, .png');
+    expect(wrapper.find('span').first().text()).toEqual(
+      'Aksepterte filformater: .jpg, .png'
+    );
   });
   it('skal rendre med info', () => {
     const wrapper = oppsettShallow({
       info:
         'Husk å sjekke for sensitive personopplysninger, og evt fjerne disse før du laster opp vedleggene.',
       ariaLabel: 'Filopplaster',
-      uploadFile: jest.fn()
+      uploadFile: jest.fn(),
     });
     expect(wrapper.find('label').props()['aria-label']).toEqual('Filopplaster');
-    expect(
-      wrapper
-        .find('div')
-        .last()
-        .text()
-    ).toEqual(
+    expect(wrapper.find('div').last().text()).toEqual(
       'Husk å sjekke for sensitive personopplysninger, og evt fjerne disse før du laster opp vedleggene.'
     );
   });
@@ -51,12 +43,12 @@ describe('FileUploader komponent', () => {
     const wrapper = oppsettFullDOM({
       acceptedFileFormats: [FileFormatTypes.doc, FileFormatTypes.docx],
       ariaLabel: 'Filopplaster',
-      uploadFile: () => mockFunc()
+      uploadFile: () => mockFunc(),
     });
     wrapper.find('input').simulate('change', {
       target: {
-        files: [{ name: 'tekst.doc' }]
-      }
+        files: [{ name: 'tekst.doc' }],
+      },
     });
     expect(mockFunc.mock.calls.length).toBeGreaterThan(0);
   });
@@ -65,13 +57,13 @@ describe('FileUploader komponent', () => {
     const wrapper = oppsettFullDOM({
       acceptedFileFormats: [FileFormatTypes.doc, FileFormatTypes.docx],
       ariaLabel: 'Filopplaster',
-      uploadFile: () => mockFunc()
+      uploadFile: () => mockFunc(),
     });
     expect(wrapper.exists('ErrorMessage')).toEqual(false);
     wrapper.find('input').simulate('change', {
       target: {
-        files: [{ name: 'tekst.jpeg' }]
-      }
+        files: [{ name: 'tekst.jpeg' }],
+      },
     });
     expect(wrapper.exists('ErrorMessage')).toEqual(true);
     expect(wrapper.find('ErrorMessage').text()).toEqual(
@@ -85,20 +77,11 @@ describe('FileUploader komponent', () => {
       ariaLabel: 'Filopplaster',
       uploadFile: () => mockFunc(),
       files: [{ name: 'FilNavn.png', id: '123456789' }],
-      deleteFile: () => mockFuncDelete()
+      deleteFile: () => mockFuncDelete(),
     });
     expect(wrapper.find('li').length).toEqual(1);
-    expect(
-      wrapper
-        .find('li')
-        .first()
-        .text()
-    ).toEqual('FilNavn.png');
-    wrapper
-      .find('li')
-      .first()
-      .find('button')
-      .simulate('click');
+    expect(wrapper.find('li').first().text()).toEqual('FilNavn.png');
+    wrapper.find('li').first().find('button').simulate('click');
     expect(mockFuncDelete).toHaveBeenCalled();
   });
 });

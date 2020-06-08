@@ -1,9 +1,11 @@
 import { withRouter } from 'react-router';
-import TopBanner from '../../components/TopBanner';
-import FooterContent from '../../components/FooterContent';
-import Grid from '../../components/Grid';
-import Link from '../../components/Link';
-import ActionButton from '../../components/ActionButton';
+import {
+  ActionButton,
+  Link,
+  Grid,
+  FooterContent,
+  TopBanner,
+} from '../../components/index';
 import { getClassNames } from './classNames';
 import React from 'react';
 import './style.css';
@@ -30,19 +32,19 @@ export class StyleGuideRenderer extends React.Component<> {
     this.state = {
       isHidden: true,
       showNavigation: false,
-      version: ''
+      version: '',
     };
   }
 
   _toggleMainNavigation() {
     this.setState({
-      showNavigation: !this.state.showNavigation
+      showNavigation: !this.state.showNavigation,
     });
   }
 
   _toggleComponentVisibility() {
     this.setState({
-      isHidden: !this.state.isHidden
+      isHidden: !this.state.isHidden,
     });
   }
 
