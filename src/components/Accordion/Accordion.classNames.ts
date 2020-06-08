@@ -101,12 +101,6 @@ export function getClassNames() {
           fontSize: FontSizes.largePlus,
           margin: '0'
         },
-        '& span': {
-          display: 'flex',
-          flexDirection: 'row',
-          justifyContent: 'space-between',
-          alignItems: 'center'
-        },
         '& i': {
           alignSelf: 'flex-start',
           transition: '.2s',
@@ -126,6 +120,12 @@ export function getClassNames() {
           transform: 'rotate(180deg)'
         }
       }
+    },
+    toggleButtonContent: {
+      display: 'flex',
+      flexDirection: 'row',
+      justifyContent: 'space-between',
+      alignItems: 'center'
     }
   });
 }

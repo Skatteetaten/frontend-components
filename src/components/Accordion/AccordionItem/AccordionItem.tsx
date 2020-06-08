@@ -66,7 +66,7 @@ const ToggleContent: React.FC<ToggleContentInterface> = props => {
       onClick={onClick}
       aria-describedby={processList ? 'StepId' + stepId : undefined}
     >
-      <div>
+      <div className={styles.toggleButtonContent}>
         <div>
           {headingLevel && toggleButtonText ? (
             <Heading text={toggleButtonText} level={headingLevel} />
