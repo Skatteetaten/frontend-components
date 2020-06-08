@@ -9,7 +9,7 @@ exports[`Accordion komponent matcher snapshot 1`] = `
       padding="0 8px"
     >
       <div
-        className="ske-Grid-45 "
+        className="ske-Grid-46 "
       >
         <AccordionItem
           key=".0"
@@ -24,17 +24,17 @@ exports[`Accordion komponent matcher snapshot 1`] = `
               rowSpacing="0px"
             >
               <div
-                className="ske-Grid-row-48 "
+                className="ske-Grid-row-49 "
               >
                 <GridCol>
                   <div
-                    className="ske-Grid-col-47 "
+                    className="ske-Grid-col-48 "
                   >
                     <GridRow
                       rowSpacing="0px"
                     >
                       <div
-                        className="ske-Grid-row-48 "
+                        className="ske-Grid-row-49 "
                       >
                         <GridCol
                           md={12}
@@ -42,7 +42,7 @@ exports[`Accordion komponent matcher snapshot 1`] = `
                           xl={12}
                         >
                           <div
-                            className="ske-Grid-col-49 "
+                            className="ske-Grid-col-50 "
                           >
                             <hr />
                             <ToggleContent
@@ -58,6 +58,7 @@ exports[`Accordion komponent matcher snapshot 1`] = `
                                   "stepNumber": "stepNumber-41",
                                   "subComponentStyles": Object {},
                                   "toggleButton": "toggleButton-43",
+                                  "toggleButtonContent": "toggleButtonContent-45",
                                   "toggleButtonOpen": "toggleButtonOpen-44",
                                   "wrapperStep": "wrapperStep-37",
                                 }
