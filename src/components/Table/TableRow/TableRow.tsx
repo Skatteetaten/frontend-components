@@ -51,6 +51,7 @@ export default class TableRow<P> extends React.PureComponent<TableRowProps<P>> {
         title="Rediger rad"
         icon="Edit"
         disabled={editModeActive}
+        type="button"
       />
     );
 
