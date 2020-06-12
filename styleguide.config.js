@@ -43,7 +43,7 @@ module.exports = {
           content: 'src/sections/kom-i-gang/tommelfinger.md'
         },
         {
-          name: 'Teknisk',
+          name: 'Installasjon og versjoner',
           content: 'src/sections/kom-i-gang/utviklere.md'
         },
         {
