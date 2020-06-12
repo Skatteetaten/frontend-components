@@ -6,7 +6,6 @@ import {
 import * as React from 'react';
 import { getClassNames } from './SearchField.classNames';
 import { IDropdownOption } from 'office-ui-fabric-react';
-import ActionButton from '../ActionButton';
 import LabelWithCallout, {
   calloutState,
   LabelWithCalloutProps
@@ -173,14 +172,13 @@ const SearchField: React.FC<SearchFieldProps> = props => {
                 role="option"
                 aria-selected={key === focus}
               >
-                <ActionButton
-                  ariaLabel={listItem.text}
-                  className={styles.blackAlt}
+                <div
                   title={listItem.text}
+                  className={styles.blackAlt}
                   tabIndex={-1}
                 >
                   {listItem.text}
-                </ActionButton>
+                </div>
               </li>
             );
           })}
