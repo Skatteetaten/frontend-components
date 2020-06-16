@@ -10,7 +10,8 @@ const data = [
     Måned: 'Januar',
     Beløp: 100,
     Dekningsgrad: '100%',
-    Avkastning: '1000'
+    Avkastning: '1000',
+    ikkeTegnetVerdi: '2000'
   },
   {
     Måned: 'Februar',
@@ -85,6 +86,24 @@ function oppsettMount(props) {
   return mount(<Table {...props} />);
 }
 
+function mountMedEditerbartInnholdAapen() {
+  const wrapper = oppsettMount({
+    data,
+    columns,
+    editableRows: true,
+    editableContent: content
+  });
+
+  wrapper
+    .find('TableRow')
+    .first()
+    .find('IconButton')
+    .first()
+    .simulate('click');
+
+  return wrapper;
+}
+
 describe('Table komponent', () => {
   it('matcher snapshot', () => {
     const wrapper = oppsettMount({ data, columns });
@@ -144,21 +163,19 @@ describe('Table komponent', () => {
     expect(wrapper.html()).toContain('Her kommer redigerbart innhold');
   });
 
+  it('setter korrekt colspan på editerbart innhold sin kolonne', () => {
+    const wrapper = mountMedEditerbartInnholdAapen();
+
+    const editableContentColspan = wrapper
+      .find('.editableCell')
+      .getDOMNode()
+      .getAttribute('colspan');
+
+    expect(editableContentColspan).toBe('5');
+  });
+
   it('når en tabellrad er i editeringsmodus skal det ikke være mulig å editere øvrige rader ', () => {
-    const wrapper = oppsettMount({
-      data,
-      columns,
-      editableRows: true,
-      editableContent: content
-    });
-
-    const editButton = wrapper
-      .find('TableRow')
-      .first()
-      .find('IconButton')
-      .first();
-
-    editButton.simulate('click');
+    const wrapper = mountMedEditerbartInnholdAapen();
 
     wrapper.find('.editButton').forEach(node => {
       expect(node.prop('disabled')).toEqual(true);
