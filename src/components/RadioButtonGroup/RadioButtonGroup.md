@@ -20,7 +20,7 @@ const initialState = {
   options={state.options}
   onChange={(e, option) => console.log(option)}
   help="Type virksomhet vil påvirke hva du må rapportere til oss."
-  id="radio"
+  id="radio-1"
 />;
 ```
 
