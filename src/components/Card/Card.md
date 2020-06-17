@@ -123,22 +123,22 @@ import TextField from '@skatteetaten/frontend-components/TextField';
 ```
 
 ```js noeditor beskrivelse
-  <h3>Gruppering av innhold</h3>
-  <p> Card-komponenten er laget for å gruppere informasjon.
-      Hvis man har mange innholdskort på skjermen kan det være nyttig å kollapse
-      dem, slik at brukeren ikke ser så mye informasjon på en gang. Handlinger
-      knyttet til informasjonen inni kortet kan legges i handlingsknapper i
-      toppen av kortet.
+  <h3>Gruppering av innhold skaper mer oversikt</h3>
+  <p> Vi bruker innholdskort for å gruppere innhold som hører sammen. Kortene er formet som fargede eller innrammede bokser med tekst inni, noe som gjør informasjonen tydelig for brukeren. Er det mange innholdskort på skjermen kan det være nyttig å kollapse dem, slik at brukeren ikke ser mye og ulik informasjon på en gang.
   </p>
-  <h3>Ulike farger har ulike betydninger</h3>
+  <p>Er innholdet handlingsrettet, altså at brukeren skal gjøre noe, skal du beskrive handlingen i toppen av boksen. Les nærmere i språkprofilen om <a href="https://www.skatteetaten.no/stilogtone/skrive/sprakprofil/aktivt-sprak/">hvordan du skriver gode handlingstitler</a>.</p>
+
+  <h3>Ulike farger på boksene, har ulike betydninger</h3>
   <ul>
-    <li>Grå: Ofte bruk bakgrunnsfarge for interne løsninger</li>
     <li>Grønn: Brukers til hjelp</li>
     <li>Gul: Brukes til informasjon og opplysning.</li>
     <li>
       Hvit med grønn ramme: Brukes til konklusjoner og betalingsopplysninger
     </li>
+    <li>Grå: Kan brukes som bakgrunnsfarge for interne løsninger</li>
+
   </ul>
+  <p>Unngå å bruke forskjellig farge på ramme og bakgrunn, for eksempel grønn ramme og gul bakgrunn.</p>
 ```
 
 ```js noeditor uu
