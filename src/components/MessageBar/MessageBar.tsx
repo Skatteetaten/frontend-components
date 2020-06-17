@@ -8,6 +8,7 @@ import * as React from 'react';
 // @ts-ignore TODO
 import { CSSTransition } from 'react-transition-group';
 import { default as MessageBarButton } from '../Button/Button';
+
 import { getClassNames } from './MessageBar.classNames';
 
 export interface MessageBarProps extends IMessageBarProps {
