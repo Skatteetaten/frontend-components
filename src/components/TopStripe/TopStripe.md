@@ -20,13 +20,21 @@ import Link from '@skatteetaten/frontend-components/Link';
       placement="before"
     />
 
-    <TopStripeMenu title={'Endre skriftstørrelse'}>
+    <TopStripeMenu
+      showChevron
+      closeMenuAriaLabel="Lukk endre skriftstørrelse"
+      title={'Endre skriftstørrelse'}
+    >
       <div style={{ fontSize: '24px', marginTop: '8px' }}>
         Hold Ctrl-tasten nede (Cmd-tasten på Mac). Trykk på + for å forstørre
         eller - for å forminske.
       </div>
     </TopStripeMenu>
-    <TopStripeMenu title={'Language / Språk'}>
+    <TopStripeMenu
+      showChevron
+      closeMenuAriaLabel="Lukk Language / Språk"
+      title={'Language / Språk'}
+    >
       <TopStripeButton ariaLabel={'Norsk'} onClick={() => console.log('NB')}>
         Norsk
       </TopStripeButton>

@@ -69,7 +69,7 @@ const ExternalHeaderContent = ({ styles, ...props }) => {
         onClick={props.onClick}
         className={styles.linkButton}
         icon="Back"
-        ariaLabel="Til startsiden"
+        role="link"
       >
         {props.homeText}
       </ActionButton>
