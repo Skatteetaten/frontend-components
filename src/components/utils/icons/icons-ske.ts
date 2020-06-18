@@ -37,15 +37,16 @@ export default {
     'Familie': '\uea0c',
     'Folkeregister': '\uea0d',
     'Kroner': '\uea0e',
-    'PreviewFile': '\uea0f',
-    'Skattetrekk': '\uea10',
-    'TemaArbeidTrygdPensjon': '\uea11',
-    'TemaBankLaanForsikring': '\uea12',
-    'TemaBoligEiendeler': '\uea13',
-    'TemaFamilie': '\uea14',
-    'TemaFinans': '\uea15',
-    'TemaGaveArv': '\uea16',
-    'TemaPersonligeForhold': '\uea17',
-    'Up': '\uea18'
+    'More': '\uea0f',
+    'PreviewFile': '\uea10',
+    'Skattetrekk': '\uea11',
+    'TemaArbeidTrygdPensjon': '\uea12',
+    'TemaBankLaanForsikring': '\uea13',
+    'TemaBoligEiendeler': '\uea14',
+    'TemaFamilie': '\uea15',
+    'TemaFinans': '\uea16',
+    'TemaGaveArv': '\uea17',
+    'TemaPersonligeForhold': '\uea18',
+    'Up': '\uea19'
   }
 };

@@ -9,6 +9,9 @@ initialState = {
       key: 'calendarEvent',
       name: 'Kalender',
       ariaLabel: 'Kalender',
+      onClick: () => {
+        console.log('hei');
+      },
       iconProps: {
         iconName: 'Calendar'
       }
@@ -17,6 +20,9 @@ initialState = {
       key: 'calendarEvent1',
       name: 'Kalender',
       ariaLabel: 'Kalender',
+      onClick: () => {
+        console.log('og');
+      },
       iconProps: {
         iconName: 'Calendar'
       }
@@ -25,14 +31,9 @@ initialState = {
       key: 'calendarEvent2',
       name: 'Kalender',
       ariaLabel: 'Kalender',
-      iconProps: {
-        iconName: 'Calendar'
-      }
-    },
-    {
-      key: 'calendarEvent3',
-      name: 'Kalender',
-      ariaLabel: 'Kalender',
+      onClick: () => {
+        console.log('hopp');
+      },
       iconProps: {
         iconName: 'Calendar'
       }
@@ -47,17 +48,12 @@ initialState = {
       subMenuProps: {
         items: [
           {
-            key: 'home',
-            name: 'Hjem',
-            ariaLabel: 'Hjem',
-            iconProps: {
-              iconName: 'Home'
-            }
-          },
-          {
             key: 'calendarEvent',
             name: 'Kalender',
             ariaLabel: 'Kalender',
+            onClick: () => {
+              console.log(':o');
+            },
             iconProps: {
               iconName: 'Calendar'
             }
@@ -97,6 +93,7 @@ initialState = {
       key: 'Print',
       name: 'Skriv ut',
       ariaLabel: 'Skriv ut',
+      selected: true,
       iconProps: {
         iconName: 'Print'
       },
