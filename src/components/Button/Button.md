@@ -159,7 +159,9 @@ import { ErrorMessage, Link } from '@skatteetaten/frontend-components';
     Unngå å bruke knapper i inaktiv tilstand, som typisk er lysegrå. I stedet
     bør knappen alltid være aktiv, som for eksempel blå med hvit skrift. Dersom
     skjemaet eller siden inneholder feil, slik at brukeren ikke kan navigere seg
-    videre, skal du vise fornuftige feilmeldinger når den klikkes på.
+    videre, skal du vise fornuftige feilmeldinger når den klikkes på. I interne
+    løsninger kan det imidlertid være ok å bruke inaktive knapper for å øke
+    effektiviteten.
   </p>
   <div className="dodont">
     <div className="do">

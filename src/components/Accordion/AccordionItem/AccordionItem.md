@@ -1,5 +1,4 @@
-AccordionItem definerer en enkelt åpne/lukke knapp med tilhørende innholdspanel og er et barn av Accordion komponenten.
-AccordionItem brukes alltid sammen med Accordion
+AccordionItem brukes til å lage en enkelt åpne/lukke-knapp med tilhørende innhold inni Accordion-komponenten. AccordionItem kan ikke brukes på egenhånd.
 
 ```js noeditor
 import { MessageBar } from '@skatteetaten/frontend-components';

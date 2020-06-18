@@ -13,6 +13,7 @@ export interface ActionButtonProps extends ButtonProps {
   color?: 'blue' | 'black' | 'red' | 'green' | 'white';
   /**  true hvis ikonet skal plasseres etter tekst, ellers rendres det foran. */
   iconAfter?: boolean;
+  ariaLabel?: string;
 }
 
 /**
@@ -28,10 +29,19 @@ export class ActionButton extends React.PureComponent<ActionButtonProps, {}> {
     icon: undefined,
     iconSize: ActionButton.NORMAL,
     onClick: undefined,
+    ariaLabel: '',
   };
 
   render() {
-    const { children, icon, iconSize, color, className, ...props } = this.props;
+    const {
+      children,
+      icon,
+      ariaLabel,
+      iconSize,
+      color,
+      className,
+      ...props
+    } = this.props;
     return (
       <FabricActionButton
         {...props}
@@ -40,6 +50,7 @@ export class ActionButton extends React.PureComponent<ActionButtonProps, {}> {
         iconProps={{
           iconName: icon,
         }}
+        ariaLabel={ariaLabel}
       >
         {children}
       </FabricActionButton>

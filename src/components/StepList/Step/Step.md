@@ -1,5 +1,4 @@
-AccordionItem definerer en enkelt åpne/lukke knapp med tilhørende innholdspanel og er et barn av Accordion komponenten.
-AccordionItem brukes alltid sammen med Accordion
+Step brukes til å lage et enkelt steg med tilhørende innhold inni StepList-komponenten. Step kan ikke brukes på egenhånd.
 
 ```js noeditor
 import { MessageBar } from '@skatteetaten/frontend-components';

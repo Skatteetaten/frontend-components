@@ -29,6 +29,25 @@ describe('Pagination komponent', () => {
       />
     );
   });
+
+  it('skal rendre visningsoppsummering rett', () => {
+    let wrapper = mount(<Pagination total={18} pageSize={7} currentPage={1} />);
+
+    expect(
+      wrapper.find('[data-testid="pagination-oppsummering"]').text()
+    ).toEqual('Viser 1-7 av 18');
+
+    wrapper = mount(<Pagination total={18} pageSize={7} currentPage={2} />);
+    expect(
+      wrapper.find('[data-testid="pagination-oppsummering"]').text()
+    ).toEqual('Viser 8-14 av 18');
+
+    wrapper = mount(<Pagination total={18} pageSize={7} currentPage={3} />);
+    expect(
+      wrapper.find('[data-testid="pagination-oppsummering"]').text()
+    ).toEqual('Viser 15-18 av 18');
+  });
+
   it('skal rendre i henhold til props', () => {
     const wrapper = oppsettFullDOM({
       ariaLabelNavigationLink: 'Go to page ',

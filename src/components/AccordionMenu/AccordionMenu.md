@@ -7,7 +7,7 @@ import { MessageBar } from '@skatteetaten/frontend-components';
 </MessageBar>;
 ```
 
-** En AccordionMenu kan benyttes som er venstre meny i interne saksbehandlingsløsninger.**
+** Ekspanderende panel i saksbehandlingsløsninger**
 
 ```js
 import {
@@ -179,7 +179,7 @@ const timeStampStyle = {
 ```
 
 ```js noeditor beskrivelse
-  <h3>Først og fremst til saksbehandling</h3>
-  <p>AccordionMenu brukes primæret som venstremeny i saksbehandling</p>
-  <p>Det er mulig å vise vilkårlig innhold inne i et ekspanderbart område.</p>
+  <h3>Ekspanderende panel i venstremeny forenkler saksbehandlingen</h3>
+  <p>For å gjøre det enklere for saksbehandlere å ha oversikt over en rekke kategorier med ulikt innhold, kan du bruke ekspanderende bokser i venstremenyen. Du kan vise et vilkårlig innhold i det ekspanderbare området.</p>
+  <p>Komponenten har mye til felles med Accordion, men AccordionMenu er spesielt stilet for å brukes til kategorivisning i saksbehandlingsløsninger. Komponenten setter alltid av plass til ikoner, og tegner opp sirkel rundt disse.</p>
 ```

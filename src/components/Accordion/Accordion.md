@@ -15,27 +15,76 @@ import { Accordion, AccordionItem } from '@skatteetaten/frontend-components';
 <Accordion>
   <AccordionItem
     toggleContent
-    toggleButtonText={'Derfor holder du brukertest'}
+    toggleButtonText={'Restskatt på 1 000 kroner eller mer'}
     stepId={'step-1-1'}
   >
-    <p>For å finne ut som brukere kan benytte løsningen som forutsatt.</p>
-  </AccordionItem>
-  <AccordionItem
-    toggleContent
-    toggleButtonText={'Slik gjennomfører du brukertest'}
-    stepId={'step-1-2'}
-  >
     <p>
-      En brukertest inkluderer planlegging, deltakere, forbedredelse,
-      gjennomføring og oppsummering.
+      Fikk du over 1 000 kroner i restskatt, deles summen opp i 2 fakturaer.
+      Fristen for når du må betale avhenger av når du fikk skatteoppgjøret ditt:
+    </p>
+    <ul>
+      <li>
+        Fikk du skatteoppgjøret ditt 20. juni, er fristen for 1. fakturaen 20.
+        august og 2. fakturaen 24. september.
+      </li>
+      <li>
+        Fikk du skatteoppgjøret ditt 15. august eller senere, er fristen for 1.
+        fakturaen 3 uker etter datoen skatteoppgjøret ditt var klart, og 2.
+        fakturaen 8 uker etter at skatteoppgjøret ditt var klart.
+      </li>
+    </ul>
+
+    <p>
+      Hvis betalingsfristen din er på en lørdag eller søndag, kan du betale
+      innen mandagen (første virkedag) etter fristen.
+    </p>
+
+    <p>
+      Du må betale restskatten selv om du har{' '}
+      <a href="#">endret etter fristen for skattemeldingen eller klaget</a>.
+      Hvis du ikke betaler restskatten i tide, løper det forsinkelsesrenter ved
+      forfall frem til du betaler.
+    </p>
+
+    <p>
+      Betaler du ikke innen fristen på første fakturaen, regner vi det som om du
+      ikke har betalt i det hele tatt. Trenger du hjelp, ta kontakt med
+      skatteoppkreveren i din kommune.
     </p>
   </AccordionItem>
   <AccordionItem
     toggleContent
-    toggleButtonText={'Tid for gjennomføring'}
-    stepId={'step-1-3'}
+    toggleButtonText={'Restskatt under 1 000 kroner'}
+    stepId={'step-1-2'}
   >
-    <p>Beregn omkring 3 dager for planlegging og gjennomføring.</p>
+    <p>
+      Fristen for å betale hvis du har fått restskatt på under 1 000 kroner
+      avhenger av når du fikk skatteoppgjøret ditt:
+    </p>
+    <ul>
+      <li>
+        Fikk du skatteoppgjøret ditt 20. juni, er fristen for å betale 20.
+        august.
+      </li>
+      <li>
+        Fikk du skatteoppgjøret ditt 15. august eller senere, er fristen for å
+        betale 3 uker etter datoen skatteoppgjøret ditt var klart.
+      </li>
+    </ul>
+
+    <p>
+      Hvis betalingsfristen din er på en lørdag eller søndag, kan du betale
+      innen mandagen (første virkedag) etter fristen.
+    </p>
+
+    <p>
+      Du må betale restskatten selv om du har{' '}
+      <a href="#">endret etter fristen for skattemeldingen eller klaget</a>.
+      Hvis du ikke betaler restskatten i tide, løper det forsinkelsesrenter ved
+      forfall frem til du betaler.
+    </p>
+
+    <p>Restskatt under 100 kroner trenger du ikke å betale.</p>
   </AccordionItem>
 </Accordion>;
 ```
@@ -174,9 +223,16 @@ import { Accordion, AccordionItem } from '@skatteetaten/frontend-components';
 ```
 
 ```js noeditor beskrivelse
-  <h3>Vise og skjule informasjon</h3>
-  <p>Accordion brukes for å gruppevis vise og skjule utdypende informasjon,
-      eller for å veilede brukeren gjennom en sekvens av trinnvise steg.{' '}
-    </p>
-    <p>Det er mulig å vise vilkårlig innhold inni et ekspanderende område.</p>
+import Accordion from '@skatteetaten/frontend-components/Accordion';
+import AccordionItem from '@skatteetaten/frontend-components/Accordion/AccordionItem';
+<div>
+  <h3>Ekspanderende panel der brukeren kan velge å se innholdet</h3>
+  <p>
+    For å gjøre det lettere for brukeren å orientere seg i mye informasjon på en
+    gang på nettsiden, kan vi plassere noe av innholdet i skjulte bokser. Et
+    slikt ekspanderende panel, gjør det mulig for brukeren å lese overskriften
+    og utvide hvis innholdet er aktuelt og la være hvis ikke. Denne komponenten
+    er også nyttig for å veilede brukeren gjennom en sekvens av trinnvise steg.
+  </p>
+</div>;
 ```

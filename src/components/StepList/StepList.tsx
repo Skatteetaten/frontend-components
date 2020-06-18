@@ -11,7 +11,7 @@ export interface StepListProps extends React.HTMLAttributes<HTMLDivElement> {
   children?: React.ReactNode;
 }
 /**
- * @visibleName StepList (Prosessviser)
+ * @visibleName StepList (StegListe)
  */
 
 export const StepList = (props: StepListProps) => {

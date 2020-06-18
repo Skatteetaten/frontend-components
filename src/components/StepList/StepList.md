@@ -6,7 +6,7 @@ import { MessageBar } from '@skatteetaten/frontend-components';
 </MessageBar>;
 ```
 
-** StepList benyttes for å veilede brukeren gjennom en sekvens av trinnvise steg **
+** Stegvis veiledning for brukeren **
 
 ```js
 import {
@@ -256,34 +256,24 @@ const titles = {
 ```
 
 ```js noeditor beskrivelse
-  <h3>Veileder eller skjema</h3>
-  <p>StepList brukes når vi ønsker å veilede brukeren gjennom en rekke steg.
-  Komponenten kan brukes til å dele opp et skjema i porsjoner, eller som en
-  veiviser med spørsmål som ender opp i et svar eller en konklusjon.</p>
+  <h3>Stegvis veiledning for brukeren</h3>
+  <p>Når vi ønsker å veilede brukeren gjennom en rekke steg, bruker vi StepList. Dette er en effektiv og motiverende måte å vise vei for brukeren, slik at det ikke blir overveldende å lese all informasjonen på en gang. Vi bruker komponenten på to måter: </p>
+  <ul>
+  <li>Dele opp et skjema i porsjoner.</li>
+  <li>Veiviser med spørsmål som ender opp i et svar eller en konklusjon.</li>
+  </ul>
+  <h3>Bruk oppsummering til slutt</h3>
+  <p>Hvis du skal bruke komponenten til å lage et skjema, er hovedregelen at du har med et oppsummeringssteg til slutt. Det er viktig at brukeren har mulighet til å se over skjemaet før innsending. Oppsummeringssteget skal være et eget steg og teksten på knappen endrer seg fra «Neste» til «Send inn» eller tilsvarende. Her kan du eventuelt også ha med mulighet for at brukeren godkjenner opplysningene.</p>
 
-  <p>Hvis du skal bruke komponenten til å lage et skjema, bør det som
-  hovedregel være med et oppsummeringssteg til slutt. (Elmer-standarden sier
-  at bruker skal ha mulighet til å se over skjemaet før innsending.)
-  Oppsummeringssteget skal være et eget steg og knappen endrer da navn til
-  «Send inn» eller tilsvarende. Her kan du ha eventuelt ha med mulighet for
-  at bruker godkjenner opplysningene.</p>
+  <h3>Varsel av brukerfeil når brukeren klikker «neste»</h3>
 
-  <h3>Feilhåndtering i steget</h3>
+  <p>Når et steg inneholder feil, plasserer vi oppsummering av feilen i en MessageBar i toppen av steget. Denne dukker opp når bruker klikker «Neste». Fokus settes til overskriften i MessageBar.</p>
 
-  <p>Når et steg inneholder feil, plasserer vi oppsummering av feilen(e) i en
-  MessageBar i toppen av steget. Denne dukker opp når bruker klikker Neste.
-  Fokus settes til overskriften i MessageBar.</p>
+  <h3>Brukeren skal kunne hoppe frem og tilbake i steglisten</h3>
 
-  <h3>Stegliste som del av en større prosess</h3>
+  <p>I noen tilfeller kan en bruker starte midt i en stegliste. Et eksempel er dersom brukeren allerede har fylt inn opplysninger i en veiviser på skatteetaten.no, og deretter blir sendt til en innlogget tjeneste. Da skal opplysningene som allerede er registrert, nå være forhåndsutfylt i den innloggede tjenesten.</p>
 
-  <p>I noen tilfeller bør en kunne hoppe inn midt i liste med steg. Et eksempel
-  er dersom man har fylt inn opplysninger i en veiviser på skatteetaten.no,
-  og deretter sendes til en innlogget tjeneste – så bør opplysningene man
-  allerede har registrert være forhåndsutfylt i den innloggede tjenesten.</p>
-
-  <p>Hvis du gjør en endring i et tidlig steg og det ikke er avhengigheter,
-  husker skjemaet det du har skrevet inn på senere steg. Hvis det er
-  avhengigheter, nullstilles senere steg.</p>
+  <p>Hvis brukeren gjør en endring i et tidlig steg og det ikke er avhengigheter, husker skjemaet det som er skrevet inn på senere steg. Hvis det derimot er avhengigheter mellom stegene, blir senere steg nullstilt.</p>
 
 ```
 

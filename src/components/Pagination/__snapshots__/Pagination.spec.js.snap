@@ -4,11 +4,10 @@ exports[`Pagination komponent matcher snapshot 1`] = `
 <div
   className="paginationContainer-45"
 >
-  <p>
-    Viser 
-    1-5
-     av 
-    15
+  <p
+    data-testid="pagination-oppsummering"
+  >
+    Viser 1-5 av 15
   </p>
   <nav
     aria-label="Sidenavigering"

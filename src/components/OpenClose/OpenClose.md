@@ -85,12 +85,13 @@ const paraStyle = {
 ```
 
 ```js noeditor beskrivelse
+<h3>Vise eller skjule utdypende informasjon</h3>
 <p>
-  OpenClose-komponenten kan brukes når du skal vise og skjule utdypende
-  informasjon. Den er laget for å kunne stå alene, så dersom du har flere
-  grupper med utdypende informasjon bør du vurdere å bruke Accordion i stedet.
+  Når det er behov for å vise eller skjule utdypende informasjon, kan du bruke OpenClose-komponenten. Dette gjør det ryddig for brukeren. Komponenten skal i regelen stå alene, så dersom du har flere grupper med utdypende informasjon skal du vurdere å bruke <a href="#Accordion">Accordion</a> i stedet.
 </p>
+<h3>En venstremarg gjør overskrift og tekst samlende</h3>
 <p>
-  Du kan plassere vilkårlig innhold inni komponenten, men det skal alltid være tydelig at innholdet hører til under den aktuelle «overskriften». Som regel løser vi dette ved å la innholdet inni komponenten få en liten vestremarg.
+  Du kan plassere hvilket som helst innhold inni komponenten, men det skal alltid være tydelig at innholdet hører til under den aktuelle overskriften. Dette kan du løse ved å la det utdypende innholdet få en liten vestremarg, altså et lite innrykk mot høyre.
 </p>
+<p>Se også <a href="https://www.skatteetaten.no/stilogtone/skrive/skriveregler/tittel/">Skatteetatens skriveregler</a> for hjelp til å skrive gode overskrifter. </p>
 ```

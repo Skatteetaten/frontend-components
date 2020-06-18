@@ -215,14 +215,14 @@ export const Pagination: React.FC<PaginationProps> = (props) => {
   } = props;
   const styles = getClassNames();
   const firstListObject = (currentPage - 1) * pageSize;
-  const lastListObject = firstListObject + pageSize;
+  const lastListObject = Math.min(firstListObject + pageSize, total);
+
   const view =
     lastListObject > total ? total : firstListObject + 1 + '-' + lastListObject;
+
   return (
     <div className={classnames(styles.paginationContainer, className)}>
-      <p>
-        Viser {view} av {total}
-      </p>
+      <p data-testid="pagination-oppsummering">{`Viser ${view} av ${total}`}</p>
       <nav aria-label={ariaLabel ? ariaLabel : 'Sidenavigering'}>
         <ul>
           {currentPage > 1 && (

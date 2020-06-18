@@ -44,12 +44,13 @@ import { Typography } from '@skatteetaten/frontend-components';
 ```
 
 ```js noeditor beskrivelse
-    <h3>Legger til tekst-stiler</h3>
+    <h3>Komponent som legger til tekst-stiler</h3>
     <p>
       Typography er en teknisk hjelpekomponent som brukes til å legge på
       tekst-stiler til vanlige typografi-elementer, f.eks. overskrifter, lister
-      og tekst. Komponenten legger til stiler for:
+      og tekst.
     </p>
+    <p>Komponenten legger til stiler for:</p>
     <ul>
       <li>Overskrifter (h1, h2, h3 og h4)</li>
       <li>Avsnitt (p) </li>
@@ -58,14 +59,10 @@ import { Typography } from '@skatteetaten/frontend-components';
     </ul>
     <h3>Plassering i koden</h3>
     <p>
-      Denne komponenten kan brukes på de fleste nivåer i koden. Tidlig i et
-      prosjekt kan man legge Typography på et høyt nivå, for å sikre konsekvent
-      utseende på tvers. Lengre ut i et prosjekt kan det være vitkig unngå
-      potensielle ringvirkninger, og da gir det mening å bruke komponenten på et
-      lavere nivå, og stile deler av løsningen (lokalt).
+      Denne komponenten kan brukes på de fleste nivåer i koden. Hvis du legger Typography på et høyt nivå, for eksempel innenfor body-taggen, sikrer det konsekvente stiler på tvers i løsningen. Men det betyr også at stilene i Typography kan påvirke utseendet i andre komponenter du legger til på et lavere nivå, inn under Typography. Hvis du oppleverer at typografien i underliggende komponenter ikke blir som du forventer, bør du vurderere å flytte Typography-komponenten til et lavere nivå i koden.
     </p>
     <p>
-      Se <a href="#section-om-skrifttype">typografi</a> for detaljer rundt
+      Se <a href="#section-om-skrifttypen">«Om skrifttypen»</a> for detaljer rundt
       skriftstørrelse.
     </p>
 ```
