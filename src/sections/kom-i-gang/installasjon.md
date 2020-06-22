@@ -46,7 +46,13 @@ lastes inn før testene kjøres. Dette bør gjøres en gang før alle testene st
 
 Ved bruk av _create-react-app_ kan dette gjøres i _src/setupTests.js_.
 
+
+
 ```js static noeditor
 // src/setupTests.js
 import '@skatteetaten/frontend-components/utils/loadTheme';
 ```
+
+### Rammeverk basert på Fluent UI
+Mange av komponentene i Designsystemet er basert på rammeverket Fluent UI. Du kan se nærmere på hvilke komponenter som er tilgjengelig og hvilke egenskaper de har på [Microsofts side for utviklere] (https://developer.microsoft.com/en-us/fluentui#/controls/web). 
+
