@@ -1,24 +1,24 @@
 import React from 'react';
 import { matches } from '../utils/test-utils';
 import { shallow, mount } from 'enzyme';
-import { Combobox } from '../index';
+import { ComboBox } from '../index';
 
 function oppsettShallow(props) {
-  return shallow(<Combobox {...props} />);
+  return shallow(<ComboBox {...props} />);
 }
 
 function oppsettFullDOM(props) {
-  return mount(<Combobox {...props} />);
+  return mount(<ComboBox {...props} />);
 }
 
 describe('Combobox komponent', () => {
   it('matcher med snapshot', () => {
-    matches(<Combobox />);
+    matches(<ComboBox />);
   });
 
   it('rendrer Combobox med default props', () => {
     const wrapper = oppsettFullDOM();
-    const combobox = wrapper.find(Combobox);
+    const combobox = wrapper.find(ComboBox);
     expect(combobox.prop('autoComplete')).toEqual('on');
     expect(combobox.prop('allowFreeform')).toEqual(false);
     expect(combobox.prop('label')).toEqual(undefined);
@@ -30,7 +30,7 @@ describe('Combobox komponent', () => {
       id: 'Combobox-1',
       disabled: true,
     });
-    expect(wrapper.find(Combobox).prop('disabled')).toEqual(true);
+    expect(wrapper.find(ComboBox).prop('disabled')).toEqual(true);
     expect(wrapper.first('div').prop('id')).toEqual('Combobox-1');
   });
 

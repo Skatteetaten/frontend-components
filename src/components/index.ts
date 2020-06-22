@@ -40,8 +40,8 @@ export type { CheckBoxProps } from './CheckBox/CheckBox';
 export { Chip } from './Chip/Chip';
 export type { ChipProps } from './Chip/Chip';
 export { ChipType } from './Chip/Chip';
-export { Combobox } from './ComboBox/ComboBox';
-export type { ComboboxProps } from './ComboBox/ComboBox';
+export { ComboBox } from './ComboBox/ComboBox';
+export type { ComboBoxProps as ComboboxProps } from './ComboBox/ComboBox';
 export {
   DatePicker,
   FirstWeekOfYear,

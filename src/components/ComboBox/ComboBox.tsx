@@ -10,7 +10,7 @@ import {
   ErrorMessage,
 } from '../index';
 
-export interface ComboboxProps extends IComboBoxProps {
+export interface ComboBoxProps extends IComboBoxProps {
   /** Lukk callout på blur */
   labelWithCalloutAutoDismiss?: boolean;
   /** Egendefinert feilmelding */
@@ -33,7 +33,7 @@ export interface ComboboxProps extends IComboBoxProps {
 /**
  * @visibleName ComboBox (Nedtrekksliste med skriving)
  */
-export const Combobox: React.FC<ComboboxProps> = (props) => {
+export const ComboBox: React.FC<ComboBoxProps> = (props) => {
   const {
     children,
     labelWithCalloutAutoDismiss,
@@ -80,7 +80,7 @@ export const Combobox: React.FC<ComboboxProps> = (props) => {
   );
 };
 
-Combobox.defaultProps = {
+ComboBox.defaultProps = {
   autoComplete: 'on',
   allowFreeform: false,
   label: undefined,
