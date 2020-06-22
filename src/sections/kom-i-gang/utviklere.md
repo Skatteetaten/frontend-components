@@ -1,14 +1,3 @@
-### Utvikling av Designsystemet
-
-For å starte projektet i utviklingsmodus, kjør kommandoene under.
-
-```bash noeditor
-npm install
-npm start
-```
-
-Når prosjektet har startet, vil nye endringer automatisk bli oppdatert i nettleseren.
-
 ### Ny release
 
 Designsystemet følger semantisk versjonering.
