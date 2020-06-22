@@ -24,11 +24,6 @@ For å rulle ut en ny versjon av Desingsystemet følges disse stegene:
 
 Mange av komponentene i Designsystemet er basert på rammeverket Fabric UI. For å se hvilke komponenter som er tilgjengelig og hvilke egenskaper de har, se: https://developer.microsoft.com/en-us/fabric#/components
 
-### Mål: Enhetlig brukeropplevelse på tvers
-
-Det er et uttalt mål i Skatteetaten at brukerne våre skal ha en enhetlig opplevelse på tvers av løsningene våre. Vi skal ha høye standarder for gode brukeropplevelser og universell utforming og vi skal alltid følge den visuelle profilen vår. Designsystemet er et av de viktigste virkemidlene for å sikre dette.
-
-Alle moderniserte løsninger skal derfor, før eller siden, bruke Designsystemet – og da aller helst den nyeste versjonen.
 
 ### «Men må jeg bruke Designsystemet?»
 
