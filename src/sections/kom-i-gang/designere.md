@@ -1,4 +1,4 @@
-Hvis vi skal få til en enhetlig brukeropplevelse på tvers, må alle løsninger i Skatteetaten bruke Designsystemet. Som designer må du blant annet hjelpe utviklerne i ditt prosjekt å følge prinsippene her.
+Brukerne våre skal ha en enhetlig opplevelse på tvers av løsningene våre. Skal vi få til dette, må alle løsninger i Skatteetaten bruke designsystemet. Gjennom designsystemet sikrer vi også høye standarder for gode brukeropplevelser og universell utforming, og ikke minst, at vi følger den visuelle profilen vår. Som designer må du hjelpe utviklerne i prosjektet ditt til å følge prinsippene i designsystemet.
 
 ### Last ned Sketch-komponenter
 
