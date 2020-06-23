@@ -1,4 +1,6 @@
-Brukerne våre skal ha en enhetlig opplevelse på tvers av løsningene våre. Skal vi få til dette, må alle løsninger i Skatteetaten bruke designsystemet. Gjennom designsystemet sikrer vi også høye standarder for gode brukeropplevelser og universell utforming, og ikke minst, at vi følger den visuelle profilen vår. Som designer hjelper du utviklerne i prosjektet ditt til å følge prinsippene i designsystemet.
+Brukerne våre skal ha en enhetlig opplevelse på tvers av løsningene våre. Skal vi få til dette, må alle løsninger i Skatteetaten bruke designsystemet. Gjennom designsystemet sikrer vi også høye standarder for gode brukeropplevelser og universell utforming, og ikke minst, at vi følger den visuelle profilen vår. 
+
+Som designer må du hjelpe utviklerne i prosjektet ditt til å følge prinsippene i designsystemet. Videre ser du hvordan du kommer i gang for å bruke designsystemet når du jobber.
 
 ### Last ned Sketch-komponenter
 
@@ -91,7 +93,7 @@ import AccordionItem from '@skatteetaten/frontend-components/Accordion/Accordion
 </div>;
 ```
 
-### Axure-komponenter
+### Axure-komponenter også tilgjengelig
 
 Komponentene finnes også i Axure-versjon. Etter at du har fått tilgang til dem vil de automatisk dukke opp i widget-menyen din i Axure. Du kan også bla i komponentene:
 
