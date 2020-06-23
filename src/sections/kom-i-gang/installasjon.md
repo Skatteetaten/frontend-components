@@ -2,14 +2,14 @@ Brukerne våre skal ha en enhetlig opplevelse på tvers av løsningene våre. Sk
 
 Som utvikler, må du samarbeide med designer for å best mulig sikre at dere følger prinsippene i designsystemet. Videre ser du hvordan du kommer i gang for å bruke designsystemet når du jobber.
 
-Legg til komponentbiblioteket i prosjektet:
+### Legg til komponentbiblioteket i prosjektet:
 
 ```bash noeditor
 npm config set registry https://nexus-npm.aurora.skead.no/npm/repository/npm-all
 npm install @skatteetaten/frontend-components
 ```
 
-Omslutt hele applikasjonen din i SkeBasis (index.js):
+### Omslutt hele applikasjonen din i SkeBasis (index.js):
 
 ```js static noeditor
 import React from 'react';
@@ -25,7 +25,7 @@ ReactDOM.render(
 );
 ```
 
-Ta så ibruk komponentene i applikasjonen din (App.js):
+### Ta så ibruk komponentene i applikasjonen din (App.js):
 
 ```js static noeditor
 import React, { Component } from 'react';
