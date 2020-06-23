@@ -19,8 +19,7 @@ Vi jobber hele tiden aktivt med å rette feil og legge til funksjoner i komponen
 
 ### Merk komponenter som er utgående
 
-Når vi lansererer nye hovedversjoner kan vi fjerne eller endre på hele komponenter eller deler av dem. Slike endringer varsler vi alltid om i god tid i forveien.
-Langsmed merker vi en del komponenter i Designsystemet som «utgående» (Deprecated). Denne delen er en kandidat for fjerning eller endring i neste hovedversjon. Vanligvis vil markeringene ligge i API-listen, men vi kan også merke hele komponenter med en tydelig meldingsboks. Fra og med versjon 3.4.0 vil vi også vise nye markeringer i versjonsloggen.
+Når vi lansererer nye hovedversjoner kan vi fjerne eller endre på hele komponenter eller deler av dem. Slike endringer varsler vi alltid om i god tid i forveien. Vi merker enkelte komponenter eller deler av APIet som utgående (Deprecated). Disse er viktige at du merker deg, siden disse er kandidater for fjerning i neste hovedversjon. Vanligvis vil markeringene ligge i API-listen, men vi kan også merke hele komponenter med en tydelig meldingsboks. Fra og med versjon 3.4.0 vil vi også vise nye markeringer i versjonsloggen.
 
 ### Vi støtter de to siste versjonene
 
