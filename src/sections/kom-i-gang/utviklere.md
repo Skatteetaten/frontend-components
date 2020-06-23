@@ -1,4 +1,4 @@
-### Må du bruke designsystemet i alle løsninger?»
+### Må du bruke designsystemet i alle løsninger?
 
 Du skal ha veldig gode grunner for å prioritere å lage alt i løsningene selv. Det er et krav å følge Skatteetatens visuelle profil og UX-standarder, og sikre universell utforming. Designsystemet vil oftest være den sikreste og mest effektive måten for å ivareta dette. I tillegg vil prosjektene bli vurdert ut ifra om de bruker designsystemet gjennom de ikke-funkjonelle kravene (UT-UX-EXT-03).  
 Når du bruker designsystemet, blir arbeidet med digitale uttak mer korrekt og effektive. I tillegg vil jevnlige forbedringer rundt sikkerhet og universell utforming bli ivaretatt gjennom komponentsbiblioteket vårt.
