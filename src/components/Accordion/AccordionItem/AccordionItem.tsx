@@ -68,8 +68,8 @@ const ToggleContent: React.FC<ToggleContentInterface> = props => {
       onClick={onClick}
       aria-describedby={processList ? 'StepId' + stepId : undefined}
     >
-      <span>
-        <div>
+      <span className={styles.toggleButtonContent}>
+        <span>
           {headingLevel && toggleButtonText ? (
             <Heading text={toggleButtonText} level={headingLevel} />
           ) : (
@@ -77,13 +77,13 @@ const ToggleContent: React.FC<ToggleContentInterface> = props => {
           )}
           {subtitle &&
             (typeof subtitle === 'object' ? (
-              <div className={styles.subtitle}>{subtitle}</div>
+              <span className={styles.subtitle}>{subtitle}</span>
             ) : (
-              <p className={styles.subtitle} aria-label={subtitle}>
+              <span className={styles.subtitle} aria-label={subtitle}>
                 {subtitle}
-              </p>
+              </span>
             ))}
-        </div>
+        </span>
         <Icon iconName={'ChevronDown'} />
       </span>
     </button>
