@@ -3,23 +3,14 @@
 ```js
 import DatePicker from '@skatteetaten/frontend-components/DatePicker';
 
-const initialState = {
-  value: new Date(),
-  value2: new Date(),
-  value3: new Date()
-};
-
 <div>
   <div className="ExampleFlexContainer-200">
     <DatePicker
       id={'my-date1'}
       label={'Velg en dato'}
-      placeholder={'Velg en dato...'}
       help={
         'Du kan skrive inn dato i feltet, eller velge en dato ved hjelp av datovelgeren, enten med mus eller bruk tastaturet'
       }
-      value={state.value1}
-      onChange={(e, value1) => setState({ value1 })}
       isRequiredErrorMessage={'Dato må fylles ut'}
     />
   </div>
@@ -30,39 +21,10 @@ const initialState = {
       label={'Ukenummer'}
       placeholder={'dd.mm.åååå'}
       help={'Denne datovelgeren viser ukenummer i kalender'}
-      value={state.value2}
-      onChange={({ target: { value2 } }) => setState({ value2 })}
       showMonthPickerAsOverlay={true}
       showWeekNumbers={true}
     />
   </div>
-</div>;
-```
-
-Stor versjon:
-
-```js
-import DatePicker from '@skatteetaten/frontend-components/DatePicker';
-
-const initialState = {
-  value: new Date(),
-  value2: new Date(),
-  value3: new Date()
-};
-
-<div className="ExampleFlexContainer-200">
-  <DatePicker
-    id={'my-date1'}
-    label={'Velg en dato'}
-    inputSize={'large'}
-    placeholder={'Velg en dato...'}
-    help={
-      'Du kan skrive inn dato i feltet, eller velge en dato ved hjelp av datovelgeren, enten med mus eller bruk tastaturet'
-    }
-    value={state.value1}
-    onChange={(e, value1) => setState({ value1 })}
-    isRequiredErrorMessage={'Dato må fylles ut'}
-  />
 </div>;
 ```
 
