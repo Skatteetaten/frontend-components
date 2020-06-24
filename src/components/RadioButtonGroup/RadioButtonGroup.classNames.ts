@@ -86,6 +86,10 @@ export const getClassNames = props => {
           fontSize: FontSizes.medium,
           fontWeight: FontWeights.regular
         },
+        '.ms-ChoiceFieldGroup-flexContainer': errorMessage && {
+          padding: '0 7px 3px 7px',
+          border: '1px solid ' + palette.skeColor.error
+        },
         '.ms-ChoiceField-field::before': errorMessage && {
           content: '',
           display: 'inline-block',
