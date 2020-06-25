@@ -1,4 +1,13 @@
-Vi har lagt opp til at alle som jobber med design og utvikling kan bidra til å forbedre komponentene. Her har vi laget en oversikt for å hjelpe deg i gang.
+Vi har lagt opp til at alle som jobber med design og utvikling kan bidra til å forbedre komponentene. Nedenfor ser du en trinnvis oversikt som hjelper deg i gang.
+
+For å starte projektet i utviklingsmodus, kjør kommandoene under.
+
+```bash noeditor
+npm install
+npm start
+```
+
+Når prosjektet har startet, vil nye endringer automatisk bli oppdatert i nettleseren.
 
 ```js noeditor beskrivelse
 import { Accordion, AccordionItem } from '@skatteetaten/frontend-components';

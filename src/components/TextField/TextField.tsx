@@ -103,6 +103,14 @@ export const TextField: React.FC<TextFieldProps> = ({
     return value;
   };
 
+  const setCustomButtonAriaLabel = () => {
+    if (rest.suffix && readOnly) {
+      return 'Rediger ' + label + ' (' + rest.suffix + ')';
+    } else {
+      return undefined;
+    }
+  };
+
   let TextFieldType: React.ComponentType<ITextFieldProps>;
   if (mask) {
     TextFieldType = MaskedTextField;
@@ -122,7 +130,11 @@ export const TextField: React.FC<TextFieldProps> = ({
         id={labelId}
         inputId={inputId}
         label={label}
-        buttonAriaLabel={labelButtonAriaLabel}
+        buttonAriaLabel={
+          labelButtonAriaLabel
+            ? labelButtonAriaLabel
+            : setCustomButtonAriaLabel()
+        }
         editFunction={onEdit}
         warning={rest.warning}
         help={rest.help}

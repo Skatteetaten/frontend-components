@@ -43,7 +43,7 @@ export class TableRow<P> extends React.PureComponent<TableRowProps<P>> {
       onCloseRow,
       onEditRow,
     } = this.props;
-    const numberOfItems = Object.keys(data).length + 1;
+    const numberOfColumns = columns.length + (editableRows ? 1 : 0);
     const editButton = (
       <IconButton
         className={'editButton'}
@@ -51,6 +51,7 @@ export class TableRow<P> extends React.PureComponent<TableRowProps<P>> {
         title="Rediger rad"
         icon="Edit"
         disabled={editModeActive}
+        type="button"
       />
     );
 
@@ -74,7 +75,7 @@ export class TableRow<P> extends React.PureComponent<TableRowProps<P>> {
                 <td
                   key={rowIndex}
                   className="editableCell"
-                  colSpan={numberOfItems}
+                  colSpan={numberOfColumns}
                 >
                   {editableContent &&
                     editableContent(data, onCloseRow, rowIndex)}

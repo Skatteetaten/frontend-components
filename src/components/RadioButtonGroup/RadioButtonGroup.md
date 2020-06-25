@@ -50,7 +50,6 @@ const initialState = {
     label="Type sparekonto"
     options={state.options}
     onChange={(e, option) => console.log(option)}
-    id="radio"
   />
 </>;
 ```

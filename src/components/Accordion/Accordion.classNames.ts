@@ -86,25 +86,9 @@ export function getClassNames() {
         '&:focus': {
           outline: 'none',
         },
-        '& p': {
-          color: palette.skeColor.blackAlt,
-          width: '100%',
-          border: 'none',
-          textAlign: 'left',
-          fontSize: FontSizes.large,
-          fontWeight: FontWeights.regular,
-          margin: 0,
-          padding: '8px 5px 0 0',
-        },
         '& h1, h2, h3, h4, h5, h6': {
           fontSize: FontSizes.largePlus,
           margin: '0',
-        },
-        '& span': {
-          display: 'flex',
-          flexDirection: 'row',
-          justifyContent: 'space-between',
-          alignItems: 'center',
         },
         '& i': {
           alignSelf: 'flex-start',
@@ -125,6 +109,23 @@ export function getClassNames() {
           transform: 'rotate(180deg)',
         },
       },
+    },
+    toggleButtonContent: {
+      display: 'flex',
+      flexDirection: 'row',
+      justifyContent: 'space-between',
+      alignItems: 'center',
+    },
+    subtitle: {
+      display: 'block',
+      color: palette.skeColor.blackAlt,
+      width: '100%',
+      border: 'none',
+      textAlign: 'left',
+      fontSize: FontSizes.large,
+      fontWeight: FontWeights.regular,
+      margin: 0,
+      padding: '8px 5px 0 0',
     },
   });
 }
