@@ -9,6 +9,7 @@ import ErrorMessage from '../ErrorMessage/ErrorMessage';
 import { getClassNames } from './RadioButtonGroup.classNames';
 import LabelWithCallout, { calloutState } from '../LabelWithCallout';
 import { LabelWithCalloutProps } from '../LabelWithCallout/LabelWithCallout';
+import { useId } from '@reach/auto-id';
 
 export interface IRadioButtonGroupOptions extends IChoiceGroupOption {
   description?: string;
@@ -74,9 +75,15 @@ const RadioButtonGroup = (props: RadioButtonGroupProps) => {
 
   const styles = getClassNames({ ...props });
 
+  const generatedId = useId(id);
+  const mainId = id ? id : 'radiogroup-' + generatedId;
+  const groupId = mainId + '-group';
+  const labelId = mainId + '-label';
+
   return (
-    <fieldset id={id} className={styles.fieldset}>
+    <fieldset id={mainId} className={styles.fieldset}>
       <LabelWithCallout
+        id={labelId}
         label={label}
         buttonAriaLabel={labelButtonAriaLabel}
         help={help}
@@ -88,10 +95,11 @@ const RadioButtonGroup = (props: RadioButtonGroupProps) => {
         {...labelCallout}
       />
       <FabricChoiceGroup
+        id={groupId}
         options={tempOptions}
         {...rest}
         className={classnames(styles.radioButtons, className)}
-        ariaLabelledBy={label}
+        ariaLabelledBy={labelId}
       >
         {children}
       </FabricChoiceGroup>

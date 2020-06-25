@@ -5,6 +5,7 @@ import classnames from 'classnames';
 import { LinkProps } from '../Link';
 import { TopStripeContext } from './TopStripe';
 import { TopStripeButton } from './TopStripeButton';
+import { UseScreen } from '../utils/ScreenPlugin';
 import Icon from '../Icon/Icon';
 
 export interface TopStripeMenuProps extends LinkProps {
@@ -14,12 +15,14 @@ export interface TopStripeMenuProps extends LinkProps {
    */
   closeOnClick?: boolean;
   defaultSelected?: number;
+  showOnMobile: boolean;
   onRender?: any;
   title: string;
   className?: string;
   index?: number;
   icon?: string;
   showChevron?: boolean;
+  closeMenuAriaLabel?: string;
 }
 
 export const TopStripeMenu: React.FC<TopStripeMenuProps> = props => {
@@ -31,16 +34,25 @@ export const TopStripeMenu: React.FC<TopStripeMenuProps> = props => {
     icon,
     title,
     index,
+    showOnMobile = false,
+    closeMenuAriaLabel = '',
     closeOnClick = true
   } = props;
   const { open, setOpen, closeMenu } = React.useContext(TopStripeContext);
+
+  const screenSize = UseScreen();
+  if (screenSize.sm && !showOnMobile) {
+    return null;
+  }
 
   return (
     <>
       {props.icon ? <Icon className={styles.menuIcon} iconName={icon} /> : ''}
 
       <TopStripeButton
-        aria-haspopup
+        aria-haspopup={true}
+        role="menu"
+        aria-expanded={open === index}
         className={classnames(styles.plainButton, className)}
         onClick={() => setOpen(index)}
       >
@@ -63,6 +75,7 @@ export const TopStripeMenu: React.FC<TopStripeMenuProps> = props => {
                 if (React.isValidElement<LinkProps>(child)) {
                   return (
                     <li
+                      role="menuitem"
                       onClick={(e: any) => {
                         child.props &&
                           child.props.onClick &&
@@ -73,6 +86,7 @@ export const TopStripeMenu: React.FC<TopStripeMenuProps> = props => {
                     >
                       <Icon
                         iconName={child.props.icon || undefined}
+                        ariaLabel="Valgt"
                         className={styles.icon}
                       />
                       {React.cloneElement(child, {
@@ -90,6 +104,7 @@ export const TopStripeMenu: React.FC<TopStripeMenuProps> = props => {
               className={styles.menuCloseButton}
               icon={'ChevronUp'}
               onClick={() => setOpen(index)}
+              ariaLabel={closeMenuAriaLabel}
             />
           </li>
         </ul>

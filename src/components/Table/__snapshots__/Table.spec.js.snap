@@ -32,6 +32,7 @@ exports[`Table komponent matcher snapshot 1`] = `
         "Beløp": 100,
         "Dekningsgrad": "100%",
         "Måned": "Januar",
+        "ikkeTegnetVerdi": "2000",
       },
       Object {
         "Avkastning": "500",
@@ -117,6 +118,7 @@ exports[`Table komponent matcher snapshot 1`] = `
               "Beløp": 100,
               "Dekningsgrad": "100%",
               "Måned": "Januar",
+              "ikkeTegnetVerdi": "2000",
             }
           }
           editModeActive={false}

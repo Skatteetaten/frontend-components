@@ -17,6 +17,8 @@ export interface AccordionItemProps {
   icon?: string;
   /** Tekst som er ønskelig at leses opp for skjermleser om man spesifiserer et ikon */
   ariaLabel?: string;
+  /** Om man ønsker en ytterligere aksjon når bruker åpner eller lukker. */
+  onChange?: (...args: any[]) => any;
   /** Om man ønsker ytterligere aksjon når bruker åpner steget. Kalles KUN når steget åpnes, ikke når det lukkes. */
   onClick?: (...args: any[]) => any;
   /**   Id som settes i aria-control på vise/skjule knapp som peker på innholdspanelet som knappen styrer */
@@ -66,8 +68,8 @@ const ToggleContent: React.FC<ToggleContentInterface> = props => {
       onClick={onClick}
       aria-describedby={processList ? 'StepId' + stepId : undefined}
     >
-      <span>
-        <div>
+      <span className={styles.toggleButtonContent}>
+        <span>
           {headingLevel && toggleButtonText ? (
             <Heading text={toggleButtonText} level={headingLevel} />
           ) : (
@@ -75,13 +77,13 @@ const ToggleContent: React.FC<ToggleContentInterface> = props => {
           )}
           {subtitle &&
             (typeof subtitle === 'object' ? (
-              <div className={styles.subtitle}>{subtitle}</div>
+              <span className={styles.subtitle}>{subtitle}</span>
             ) : (
-              <p className={styles.subtitle} aria-label={subtitle}>
+              <span className={styles.subtitle} aria-label={subtitle}>
                 {subtitle}
-              </p>
+              </span>
             ))}
-        </div>
+        </span>
         <Icon iconName={'ChevronDown'} />
       </span>
     </button>
@@ -98,7 +100,10 @@ const AccordionItem: React.FC<AccordionItemProps> = props => {
   };
 
   const clickHandler = () => {
-    const { onClick } = props;
+    const { onClick, onChange } = props;
+    if (onChange) {
+      onChange();
+    }
     if (onClick && !isContentOpen) {
       onClick();
     }

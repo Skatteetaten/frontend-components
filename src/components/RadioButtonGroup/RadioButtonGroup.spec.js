@@ -58,7 +58,7 @@ describe('RadioButtonGroup komponent', () => {
     expect(wrapper.prop('className')).toEqual('radiobuttongroup-class');
     expect(
       wrapper.find('StyledChoiceGroupBase').props().ariaLabelledBy
-    ).toEqual('Velg en');
+    ).toEqual('radiobuttongroup-id-label');
     expect(wrapper.find('StyledChoiceGroupBase').prop('required')).toEqual(
       true
     );
