@@ -4,7 +4,7 @@ import webfontWOFF from '../assets/materialdesignicons-webfont.woff';
 import webfontTTF from '../assets/materialdesignicons-webfont.ttf';
 import webfontSVG from '../assets/materialdesignicons-webfont.svg';
 
-export default {
+export const MdIcons = {
   style: {
     MozOsxFontSmoothing: 'grayscale',
     WebkitFontSmoothing: 'antialiased',

@@ -4,7 +4,7 @@ import SkeIconfontWOFF from '../assets/SkeIconfont.woff';
 import SkeIconfontTTF from '../assets/SkeIconfont.ttf';
 import SkeIconfontSVG from '../assets/SkeIconfont.svg';
 
-export default {
+export const SkeIcons = {
   style: {
     MozOsxFontSmoothing: 'grayscale',
     WebkitFontSmoothing: 'antialiased',
