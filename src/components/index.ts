@@ -1,4 +1,4 @@
-export { Palette, skeColor, skePalette } from './utils/palette';
+export { default as Palette, skeColor, skePalette } from './utils/palette';
 export type { PaletteProps, SkeColorProp } from './utils/palette';
 export {
   Fonts,
@@ -12,8 +12,8 @@ export type { FontSizeType } from './utils/fonts';
 export { getFocusStyle } from './utils/getFocusStyle';
 export { Heading } from './utils/Heading';
 export { UseScreen } from './utils/ScreenPlugin';
-export { SkeIcons } from './utils/icons/icons-ske';
-export { MdIcons } from './utils/icons/icons-mdi';
+export { default as SkeIcons } from './utils/icons/icons-ske';
+export { default as MdIcons } from './utils/icons/icons-mdi';
 export { Animation } from './utils/getAnimationStyles';
 export { takeIf } from './utils/helpers';
 export { Accordion } from './Accordion/Accordion';

@@ -1,2 +1,2 @@
-export { SkeIcons } from './icons-ske';
-export { MdIcons } from './icons-mdi';
+export { default as SkeIcons } from './icons-ske';
+export { default as MdIcons } from './icons-mdi';

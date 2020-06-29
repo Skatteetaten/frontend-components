@@ -1,8 +1,9 @@
 import { registerIcons, loadTheme, createTheme } from '@uifabric/styling';
 
-import { Palette, Fonts, SkeIcons, MdIcons } from '../index';
+import palette from './palette';
+import { Fonts, SkeIcons, MdIcons } from '../index';
 // @ts-ignore TODO
-const theme = createTheme({ Palette, Fonts, isInverted: false });
+const theme = createTheme({ palette, Fonts, isInverted: false });
 loadTheme(theme);
 // @ts-ignore TODO
 registerIcons(SkeIcons);
