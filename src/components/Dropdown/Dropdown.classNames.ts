@@ -54,7 +54,8 @@ export const getClassNames = (props: DropdownProps) => {
         borderRadius: '0px'
       },
       '& .ms-Dropdown-title.ms-Dropdown-title': errorMessage && {
-        borderColor: color
+        borderColor: color,
+        borderWidth: '2px'
       },
       // hack
       '&:focus .ms-Dropdown-title.ms-Dropdown-title': {
