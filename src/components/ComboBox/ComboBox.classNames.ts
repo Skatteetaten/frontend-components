@@ -56,20 +56,19 @@ export const getClassNames = (props: ComboboxProps) => {
     selectors: {
       '& .ms-ComboBox': {
         borderRadius: '0px',
-        height: '30px',
+        height: '32px',
         padding: '0px 32px 1px 8px'
       },
       '& .ms-ComboBox:focus': {
-        outline: `2px solid ${palette.skeColor.blue}`
+        outline: `2px solid ${palette.skeColor.blue}`,
+        borderColor: palette.skeColor.blue
       },
       '& .ms-ComboBox:after': {
         borderRadius: '0px',
-        borderColor: errorMessage && color
+        borderColor: errorMessage && color,
+        borderWidth: errorMessage && '2px'
       },
-      '& .ms-ComboBox-Input': {
-        paddingBottom: '1px',
-        paddingTop: '1px'
-      },
+
       '& .ms-ComboBox-Input.is-disabled': {
         backgroundColor: palette.skeColor.whiteGrey
       },

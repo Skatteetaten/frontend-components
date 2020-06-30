@@ -19,8 +19,8 @@ function getFieldTypeStyles(props: DatePickerProps) {
         fontSize: FontSizes.large + ' !important'
       },
       'i.ms-DatePicker-event--without-label': {
-        marginTop: '5px',
-        fontSize: FontSizes.large
+        marginTop: '0px',
+        fontSize: FontSizes.xLarge
       }
     };
   } else {
@@ -52,7 +52,7 @@ function getTextFieldStyles(props: DatePickerProps) {
 }
 
 export const getClassNames = (props: DatePickerProps) => {
-  const { errorMessage, borderless, underlined, readonlyMode } = props;
+  const { errorMessage, readonlyMode } = props;
   const palette = getTheme().palette as PaletteProps;
   const color = errorMessage ? palette.skeColor.error : palette.skeColor.blue;
   return mergeStyles({
@@ -90,25 +90,13 @@ export const getClassNames = (props: DatePickerProps) => {
       '.ms-TextField i': readonlyMode && {
         display: 'none'
       },
-      '& .ms-TextField.is-active .ms-TextField-fieldGroup': !borderless &&
-        !underlined &&
-        !readonlyMode && {
-          outline: `1px solid ${color}`
-        },
+
       // style customization for underlined mode
       '& .ms-TextField.ms-TextField--underlined .ms-TextField-wrapper': {
         border: `1px solid ${color}`
       },
       '& .ms-TextField.ms-TextField--underlined .ms-TextField-wrapper:hover': {
         border: `1px solid ${palette.skeColor.black}`
-      },
-      '& .ms-TextField.is-active.ms-TextField--underlined .ms-TextField-wrapper': {
-        border: `1px solid ${color}`,
-        outline: `1px solid ${color}`
-      },
-
-      '& .ms-TextField.is-active .ms-Label': {
-        color: color
       },
       '& .ms-TextField-errorMessage': {
         color: palette.skeColor.error,
@@ -123,7 +111,12 @@ export const getClassNames = (props: DatePickerProps) => {
         }
       },
       '& .ms-TextField .ms-TextField-fieldGroup': errorMessage && {
-        borderColor: palette.skeColor.error
+        borderColor: palette.skeColor.error,
+        borderWidth: '2px'
+      },
+      '& .ms-TextField.is-active .ms-TextField-fieldGroup': errorMessage && {
+        outlineColor: palette.skeColor.blue,
+        borderColor: palette.skeColor.blue
       },
       ...getFieldTypeStyles(props),
       ...getTextFieldStyles(props)

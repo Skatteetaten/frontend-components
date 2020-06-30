@@ -14,6 +14,12 @@ function getFieldTypeStyles(props: TextFieldProps) {
         minHeight: 42
       }
     };
+  } else if (props.errorMessage) {
+    return {
+      '.ms-TextField-fieldGroup': {
+        borderWidth: 2
+      }
+    };
   } else {
     return {
       '& .ms-TextField-field': {
