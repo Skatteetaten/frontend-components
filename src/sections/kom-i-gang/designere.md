@@ -1,4 +1,4 @@
-Brukerne våre skal ha en enhetlig opplevelse på tvers av løsningene våre. Skal vi få til dette, må alle løsninger i Skatteetaten bruke designsystemet. Gjennom designsystemet sikrer vi også høye standarder for gode brukeropplevelser og universell utforming, og ikke minst, at vi følger den visuelle profilen vår. 
+Brukerne våre skal ha en enhetlig opplevelse på tvers av løsningene våre. Skal vi få til dette, må alle løsninger i Skatteetaten bruke designsystemet. Gjennom designsystemet sikrer vi også høye standarder for gode brukeropplevelser og universell utforming, og ikke minst, at vi følger den visuelle profilen vår.
 
 Som designer samarbeider du med utviklerne i prosjektet ditt for å best mulig følge prinsippene i designsystemet. Videre ser du hvordan du kommer i gang for å bruke designsystemet når du jobber.
 
@@ -33,6 +33,30 @@ const style = {
 
 <OpenClose title={'Versjonshistorikk'}>
   <Typography>
+    <h4>Versjon 1.3</h4>
+    <ul>
+      <li>Nytt symbol: Paginering.</li>
+      <li>
+        TopStripe og TopBanner har nå egne symboler tilpasset størrelsene 1440,
+        1024 og 320px.
+      </li>
+      <li>ScrollToTopButton har oppdatert ikon</li>
+      <li>
+        StepList: IconStep (steg med ikon i stedet for tall) er lagt inn som ny
+        tilstand.
+      </li>
+      <li>
+        Nye ikoner: Pencil-off, Enkeltpersonsforetak, VerticalDots,
+        VerticalDotsCircle, VerticalDotsCircleSolid
+      </li>
+      <li>
+        Justerte komponenter: Tabs (arkfane), ProgressBar (UU), MessageBar
+        (SevereWarning), Inputfelt (nye error-tilstander og Input Label),
+        StepList (plassering av knapp)
+      </li>
+      <li>Farger: opprydding av duplikater og forbedret Burgundy.</li>
+    </ul>
+
     <h4 style={{ marginTop: '0' }}>Versjon 1.2</h4>
     <ul>
       <li>
