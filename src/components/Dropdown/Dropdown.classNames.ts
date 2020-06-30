@@ -141,14 +141,19 @@ export const getCalloutClassNames = () => {
         top: inset + 1,
         bottom: inset + 1,
         right: inset + 1,
-        //border: '2px solid ' + palette.skeColor.blue,
         borderRadius: radius,
         outline: 'transparent',
         zIndex: 1,
         color: palette.skeColor.blackAlt
       },
-      '.ms-Dropdown-item:hover': {
+      '.ms-Dropdown-optionText': {
+        whiteSpace: 'normal !important'
+      },
+      '.ms-Dropdown-item': {
         color: palette.skeColor.blackAlt,
+        marginTop: '4px',
+        marginBottom: '4px',
+
         selectors: {
           ':hover': {
             background: palette.skeColor.lightBlue,
