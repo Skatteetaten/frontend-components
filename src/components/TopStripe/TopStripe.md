@@ -20,13 +20,21 @@ import Link from '@skatteetaten/frontend-components/Link';
       placement="before"
     />
 
-    <TopStripeMenu title={'Endre skriftstørrelse'}>
+    <TopStripeMenu
+      showChevron
+      closeMenuAriaLabel="Lukk endre skriftstørrelse"
+      title={'Endre skriftstørrelse'}
+    >
       <div style={{ fontSize: '24px', marginTop: '8px' }}>
         Hold Ctrl-tasten nede (Cmd-tasten på Mac). Trykk på + for å forstørre
         eller - for å forminske.
       </div>
     </TopStripeMenu>
-    <TopStripeMenu title={'Language / Språk'}>
+    <TopStripeMenu
+      showChevron
+      closeMenuAriaLabel="Lukk Language / Språk"
+      title={'Language / Språk'}
+    >
       <TopStripeButton ariaLabel={'Norsk'} onClick={() => console.log('NB')}>
         Norsk
       </TopStripeButton>
@@ -262,19 +270,17 @@ import Link from '@skatteetaten/frontend-components/Link';
 ```
 
 ```js noeditor beskrivelse
-  <h3>Vise innlogging</h3>
+  <h3>Viser at brukeren er logget inn med MinID</h3>
   <p>
-    TopStripe er den svarte, horisontale stripen helt i toppen. DIFI anbefaler at vi har en felles markering av innloggede tjenester som
-    benytter MinID. Alle innloggede publikumsløsninger skal derfor ha
-    en slik TopStripe. I utgangspunktet skal TopStripe være identisk på tvers av løsningene våre, slik at brukerne kjenner den igjen.
+    TopStripe er svart og ligger øverst på innloggede sider for publikum. Digitaliseringsdirektoratet anbefaler at vi har en felles markering av innloggede tjenester som benytter MinID. Alle innloggede publikumsløsninger skal derfor ha en slik TopStripe. Den svarte stripen skal være identisk på tvers av løsningene våre, slik at brukerne kjenner den igjen.
   </p>
   <h3>Overordnede lenker og funksjoner</h3>
   <p>
-    Vi legger de overordede funksjonene «Kontakt oss», «Language / Språk» og «Endre skriftstørrelse» i TopStripe. På mobil flytter vi disse funksjonene ned til footeren.
+    Legg de overordede funksjonene «Kontakt oss», «Language/Språk» og «Endre skriftstørrelse» i TopStripen. På mobil flytter du disse funksjonene ned til <a href="#FooterContent">footeren</a>.
   </p>
   <h3>Endre bruker</h3>
   <p>
-    Av og til kan den innloggende brukeren ha rettighet til å se eller sende inn opplysninger på vegne av andre (personer eller virksomheter). Rett ved siden av logg ut-knappen har vi derfor en partsvelger som lar deg bytte til hvem du ønsker å representere. Partsvelgeren vises alltid når brukeren er innlogget, også på mobil. Dersom en part har rettigheter til å handle på vegne av et stort antall parter, lenker vi til en side eller dialog som gir oversikt og mulighet til å bytte.
+    Av og til kan den innloggende brukeren ha rettighet til å se eller sende inn opplysninger på vegne av andre personer eller virksomheter. Mellom logg ut-knappen og navnet på den som er logget inn, har vi derfor en «velger» med nedtrekksliste. Her kan brukerne bytte til den de ønsker å representere. Denne velgeren er alltid synlig når brukeren er innlogget, også på mobil. Dersom en bruker har rettigheter til å handle på vegne av et stort antall personer, lenker du til en side eller dialog som gir brukeren mulighet til å bytte.
   </p>
 
 
