@@ -5,8 +5,6 @@ import {
   ICommandBarItemProps
 } from 'office-ui-fabric-react/lib-commonjs/CommandBar';
 import { CommandBarButton } from 'office-ui-fabric-react/lib-commonjs/Button';
-import ActionButton from '@skatteetaten/frontend-components/ActionButton';
-import Dropdown from '@skatteetaten/frontend-components/Dropdown';
 import { getClassNames } from './CommandBar.classNames';
 import classnames from 'classnames';
 

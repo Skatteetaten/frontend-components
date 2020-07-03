@@ -6,59 +6,31 @@ knapper i overflow eller på andre siden av skjermen. **
 initialState = {
   items: [
     {
-      key: 'calendarEvent',
-      name: 'Kalender',
-      ariaLabel: 'Kalender',
+      key: 'view1',
+      name: 'Vis tekst',
+      ariaLabel: 'Vis tekst',
       onClick: () => {
-        console.log('hei');
+        console.log('Klikk');
       },
       iconProps: {
-        iconName: 'Calendar'
+        iconName: 'File'
       }
     },
     {
-      key: 'calendarEvent1',
-      name: 'Kalender',
-      ariaLabel: 'Kalender',
-      onClick: () => {
-        console.log('og');
-      },
+      key: 'view2',
+      name: 'Vis XML',
+      ariaLabel: 'Vis XML',
+      selected: true,
       iconProps: {
-        iconName: 'Calendar'
+        iconName: 'XMLFile'
       }
     },
     {
-      key: 'calendarEvent2',
-      name: 'Kalender',
-      ariaLabel: 'Kalender',
-      onClick: () => {
-        console.log('hopp');
-      },
+      key: 'view3',
+      name: 'Vis Excel',
+      ariaLabel: 'Vis XML',
       iconProps: {
-        iconName: 'Calendar'
-      }
-    },
-    {
-      key: 'menuItem',
-      name: 'Meny',
-      iconProps: {
-        iconName: 'Menu'
-      },
-      ariaLabel: 'Meny',
-      subMenuProps: {
-        items: [
-          {
-            key: 'calendarEvent',
-            name: 'Kalender',
-            ariaLabel: 'Kalender',
-            onClick: () => {
-              console.log(':o');
-            },
-            iconProps: {
-              iconName: 'Calendar'
-            }
-          }
-        ]
+        iconName: 'ExcelFile'
       }
     }
   ],
@@ -82,18 +54,74 @@ initialState = {
   ],
   farItems: [
     {
-      key: 'filtrer',
-      name: 'Filter',
-      ariaLabel: 'Filter',
+      key: 'Print',
+      name: 'Skriv ut',
+      ariaLabel: 'Skriv ut',
       iconProps: {
-        iconName: 'Filter'
+        iconName: 'Print'
       }
     },
+    {
+      key: 'log',
+      name: 'Sakslogg',
+      ariaLabel: 'Info',
+      iconProps: {
+        iconName: 'History'
+      },
+      iconOnly: true
+    }
+  ]
+};
+
+<div className="ExampleSpacing8">
+  <CommandBar items={state.items} farItems={state.farItems} />
+</div>;
+```
+
+```js
+initialState = {
+  items: [
+    {
+      key: 'view1',
+      name: 'Start arbeidsoppgave',
+      ariaLabel: 'Start arbeidsoppgave',
+      onClick: () => {
+        console.log('og');
+      },
+      iconProps: {
+        iconName: 'PlayOutline'
+      }
+    },
+    {
+      key: 'view2',
+      name: 'Sett på vent',
+      ariaLabel: 'Sett arbeidsoppgave på vent',
+      onClick: () => {
+        console.log('hei');
+      },
+      iconProps: {
+        iconName: 'PauseOutline'
+      }
+    },
+
+    {
+      key: 'view3',
+      name: 'Tildel',
+      ariaLabel: 'Tildel arbeidsoppgave',
+      onClick: () => {
+        console.log('og');
+      },
+      iconProps: {
+        iconName: 'PersonMoreOutline'
+      }
+    }
+  ],
+
+  farItems: [
     {
       key: 'Print',
       name: 'Skriv ut',
       ariaLabel: 'Skriv ut',
-      selected: true,
       iconProps: {
         iconName: 'Print'
       },
@@ -116,7 +144,7 @@ initialState = {
 </div>;
 ```
 
-Man kan også flytte menyen på høyre side
+Som en meny:
 
 ```js
 initialState = {
@@ -156,44 +184,10 @@ initialState = {
 </div>;
 ```
 
-```js noeditor
-import Accordion from '@skatteetaten/frontend-components/Accordion';
-import AccordionItem from '@skatteetaten/frontend-components/Accordion/AccordionItem';
+```js noeditor uu
+<p>Denne seksjonen er foreløpig tom.</p>
+```
 
-<Accordion>
-  <AccordionItem toggleContent toggleButtonText={'Bruk'} stepId={'step-1-1'}>
-    <p>
-      CommandBar er til å bruke når man trenger en meny eller kommandolinje for
-      å håndtere kommandoer eller navigering internt på siden eller til andre
-      sider.
-    </p>
-  </AccordionItem>
-  <AccordionItem
-    toggleContent
-    toggleButtonText={'Universell utforming'}
-    stepId={'step-1-2'}
-  >
-    <ul>
-      <li>
-        Kontroller at det er mulig å åpne/lukke CommandBar-menyene både med mus
-        og tastatur
-      </li>
-      <li>Sjekk at skjermleser klarer å få tak i labelene til valgene.</li>
-    </ul>
-  </AccordionItem>
-  <AccordionItem
-    toggleContent
-    toggleButtonText={'Tekniske detaljer'}
-    stepId={'step-1-3'}
-  >
-    <p>
-      <a
-        href="https://developer.microsoft.com/en-us/fabric#/controls/web/commandbar"
-        target="_blank"
-      >
-        Se flere tilgjengelige props i Fabric dokumentasjonen
-      </a>
-    </p>
-  </AccordionItem>
-</Accordion>;
+```js noeditor beskrivelse
+<p>Denne seksjonen er foreløpig tom.</p>
 ```
