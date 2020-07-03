@@ -117,6 +117,31 @@ const normalize = (file: File, invalidCharacterRegexp?: RegExp) => {
   return normalizedName.concat('.', nameList[1]);
 };
 
+enum FilTyperNavn {
+  ExcelFile = 'ExcelFile',
+  WordFile = 'WordFile',
+  PDFFile = 'PDFFile',
+  XMLFile = 'XMLFile',
+  File = 'File'
+}
+
+const filtypeMap = (() => {
+  const map = new Map<string, FilTyperNavn>();
+  map.set('xls', FilTyperNavn.ExcelFile);
+  map.set('xlsx', FilTyperNavn.ExcelFile);
+  map.set('doc', FilTyperNavn.WordFile);
+  map.set('docx', FilTyperNavn.WordFile);
+  map.set('pdf', FilTyperNavn.PDFFile);
+  map.set('xml', FilTyperNavn.XMLFile);
+  return map;
+})();
+
+const getFileIconName = (fil: AttachmentMetadata) => {
+  const filutvidelse = fil.name.split('.').pop();
+  const fileType = filtypeMap.get(filutvidelse ? filutvidelse : '');
+  return fileType ? fileType : FilTyperNavn.File;
+};
+
 const FileUploader: React.FC<FileUploaderProps> = props => {
   const {
     acceptedFileFormats,
@@ -421,7 +446,9 @@ const FileUploader: React.FC<FileUploaderProps> = props => {
           <ul className={styles.fileList}>
             {internalFiles.map((file, index: number) => (
               <li key={file.name.concat(index.toString())}>
-                <div className={styles.fileName}>{file.name}</div>
+                <div className={styles.fileName}>
+                  <Icon iconName={getFileIconName(file)} /> {file.name}
+                </div>
                 {file.error ? (
                   <Icon iconName={'Error'} className={styles.errorColor} />
                 ) : (

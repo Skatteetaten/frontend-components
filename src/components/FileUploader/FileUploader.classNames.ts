@@ -46,7 +46,14 @@ export const getClassNames = (props: FileUploaderProps) => {
     },
     fileName: {
       float: 'left',
-      width: '90%'
+      width: '90%',
+      selectors: {
+        i: {
+          float: 'left',
+          marginRight: '8px',
+          color: palette.skeColor.grey
+        }
+      }
     },
     fileUploadInput: {
       opacity: 0,
