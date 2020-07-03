@@ -95,7 +95,7 @@ describe('FileUploader komponent', () => {
         .find('li')
         .first()
         .text()
-    ).toEqual(' FilNavn.png');
+    ).toEqual('FilNavn.png');
     wrapper
       .find('li')
       .first()

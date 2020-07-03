@@ -47,11 +47,15 @@ export const getClassNames = (props: FileUploaderProps) => {
     fileName: {
       float: 'left',
       width: '90%',
+      display: 'inline',
       selectors: {
         i: {
           float: 'left',
           marginRight: '8px',
           color: palette.skeColor.grey
+        },
+        span: {
+          display: 'flex'
         }
       }
     },

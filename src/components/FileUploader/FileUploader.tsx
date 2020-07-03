@@ -447,7 +447,8 @@ const FileUploader: React.FC<FileUploaderProps> = props => {
             {internalFiles.map((file, index: number) => (
               <li key={file.name.concat(index.toString())}>
                 <div className={styles.fileName}>
-                  <Icon iconName={getFileIconName(file)} /> {file.name}
+                  <Icon iconName={getFileIconName(file)} />
+                  <span>{file.name}</span>
                 </div>
                 {file.error ? (
                   <Icon iconName={'Error'} className={styles.errorColor} />
