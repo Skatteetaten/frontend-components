@@ -73,7 +73,7 @@ const ToggleContent: React.FC<ToggleContentInterface> = props => {
           {headingLevel && toggleButtonText ? (
             <Heading text={toggleButtonText} level={headingLevel} />
           ) : (
-            <span>toggleButtonText</span>
+            <span>{toggleButtonText}</span>
           )}
           {subtitle &&
             (typeof subtitle === 'object' ? (
