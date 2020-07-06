@@ -7,10 +7,10 @@ import Grid from '@skatteetaten/frontend-components/Grid';
 const initialState = {
   options: [
     { key: 'A', text: 'alfa', value: 'Alfa' },
-    { key: 'B', text: 'beta', value: 'Alfa' },
-    { key: 'C', text: 'gamma', value: 'Alfa' },
-    { key: 'D', text: 'delta', value: 'Alfa' },
-    { key: 'E', text: 'echo', value: 'Alfa' }
+    { key: 'B', text: 'beta', value: 'Beta' },
+    { key: 'C', text: 'gamma', value: 'Gamma' },
+    { key: 'D', text: 'delta', value: 'Delta' },
+    { key: 'E', text: 'echo', value: 'Echo' }
   ]
 };
 

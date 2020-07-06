@@ -6,26 +6,18 @@ import Dropdown from '@skatteetaten/frontend-components/Dropdown';
 const initialState = {
   options: [
     { key: null, text: 'Ingen' },
-    { key: 'Header', text: 'Frukt', itemType: Dropdown.ItemType.Header },
     { key: 'A', text: 'Banan' },
     { key: 'B', text: 'Eple' },
     { key: 'C', text: 'Kiwi' },
     { key: 'D', text: 'Pære' },
-    { key: 'E', text: 'Sitron' },
-    { key: 'divider_2', text: '-', itemType: Dropdown.ItemType.Divider },
-    { key: 'Header2', text: 'Grønnsaker', itemType: Dropdown.ItemType.Header },
-    { key: 'F', text: 'Agurk' },
-    { key: 'G', text: 'Kålrabi' },
-    { key: 'H', text: 'Potet' },
-    { key: 'I', text: 'Selleri' },
-    { key: 'J', text: 'Tomat' }
+    { key: 'E', text: 'Sitron' }
   ]
 };
 
 <div style={{ width: '300px' }}>
   <Dropdown
     label="Velg favoritt"
-    help="Tekst som hjelper brukeren å fylle ut feltet."
+    help="Tekst som hjelper brukeren å forstå eller få til."
     options={state.options}
     onChange={console.log}
   />
@@ -40,26 +32,18 @@ import Dropdown from '@skatteetaten/frontend-components/Dropdown';
 const initialState = {
   options: [
     { key: null, text: 'Ingen' },
-    { key: 'Header', text: 'Frukt', itemType: Dropdown.ItemType.Header },
     { key: 'A', text: 'Banan' },
     { key: 'B', text: 'Eple' },
     { key: 'C', text: 'Kiwi' },
     { key: 'D', text: 'Pære' },
-    { key: 'E', text: 'Sitron' },
-    { key: 'divider_2', text: '-', itemType: Dropdown.ItemType.Divider },
-    { key: 'Header2', text: 'Grønnsaker', itemType: Dropdown.ItemType.Header },
-    { key: 'F', text: 'Agurk' },
-    { key: 'G', text: 'Kålrabi' },
-    { key: 'H', text: 'Potet' },
-    { key: 'I', text: 'Selleri' },
-    { key: 'J', text: 'Tomat' }
+    { key: 'E', text: 'Sitron' }
   ]
 };
 
 <div style={{ width: '300px' }}>
   <Dropdown
     label="Velg favoritt"
-    help="Tekst som hjelper brukeren å fylle ut feltet."
+    help="Tekst som hjelper brukeren å forstå eller få til"
     inputSize="large"
     options={state.options}
     onChange={console.log}
