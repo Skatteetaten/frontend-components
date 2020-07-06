@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 
 import {
   CommandBar as FabricCommandBar,
@@ -27,15 +27,23 @@ const CommandBar: React.FC<CommandBarProps> = props => {
   const { commandBar } = getClassNames(props);
 
   return (
-    <FabricCommandBar
-      buttonAs={Custom}
-      {...rest}
-      items={items}
-      className={classnames(commandBar, className)}
-      farItems={farItems}
-      ariaLabel={ariaLabel}
-    />
+    <nav aria-label={ariaLabel}>
+      <FabricCommandBar
+        buttonAs={Custom}
+        {...rest}
+        items={items}
+        className={classnames(commandBar, className)}
+        farItems={farItems}
+      />
+    </nav>
   );
+};
+
+CommandBar.defaultProps = {
+  items: [],
+  farItems: [],
+  ariaLabel: '',
+  className: ''
 };
 
 const Custom = (props: any) => {
