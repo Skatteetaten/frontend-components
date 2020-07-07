@@ -15,9 +15,6 @@ it('rendrer CommandBar med default props', () => {
 
   expect(wrapper.prop('items')).toEqual([]);
   expect(wrapper.prop('farItems')).toEqual([]);
-  expect(wrapper.prop('ariaLabel')).toEqual(
-    'Bruk høyre- og venstre-tastaturknapp for å navigere mellom kommandoene'
-  );
 });
 
 it('setter CommandBar med riktige props', () => {
