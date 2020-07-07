@@ -13,7 +13,6 @@ export function getClassNames(props) {
         },
         '& .ms-Button--commandBar': {
           color: palette.skeColor.blue,
-          backgroundColor: 'transparent',
           paddingLeft: '8px',
           paddingRight: '8px',
           marginRight: '2px'
@@ -58,7 +57,7 @@ export function getClassNames(props) {
     tabButton: {
       backgroundColor: props.selected
         ? palette.skeColor.lightBlue
-        : palette.skeColor.white,
+        : 'transparent',
       borderRadius: '3px'
     }
   });
