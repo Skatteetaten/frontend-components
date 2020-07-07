@@ -8,10 +8,12 @@ export function getClassNames(props) {
     commandBar: {
       selectors: {
         '& .ms-CommandBar': {
-          padding: '0'
+          padding: '0',
+          backgroundColor: 'transparent'
         },
         '& .ms-Button--commandBar': {
           color: palette.skeColor.blue,
+          backgroundColor: 'transparent',
           paddingLeft: '8px',
           paddingRight: '8px',
           marginRight: '2px'
