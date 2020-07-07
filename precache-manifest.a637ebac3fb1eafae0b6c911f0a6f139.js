@@ -56,27 +56,27 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "assets/svg/ske-logo.svg"
   },
   {
-    "revision": "94e450a50b1365a2af9d",
-    "url": "build/2.94e450a5.js"
+    "revision": "c334e399c5b7724d7506",
+    "url": "build/2.c334e399.js"
   },
   {
-    "revision": "85235271d0a391884d911b136043b6a1",
-    "url": "build/2.94e450a5.js.LICENSE.txt"
+    "revision": "6bb41b1c1de83a300d0f350dec1b462f",
+    "url": "build/2.c334e399.js.LICENSE.txt"
   },
   {
     "revision": "45dbd693a61cad3baa1a",
     "url": "build/bundle.45dbd693.js"
   },
   {
-    "revision": "dc83c32109698d01feb7",
-    "url": "build/main.dc83c321.js"
+    "revision": "bdccc6c6711e24e9fea1",
+    "url": "build/main.bdccc6c6.js"
   },
   {
     "revision": "ad1c490ae23267ebf5c2ab3cede0877a",
     "url": "favicon.ico"
   },
   {
-    "revision": "cfcb902516f16f9024f91052204a81e8",
+    "revision": "cd93b58f9f9e959861cb717edb4c46a6",
     "url": "index.html"
   },
   {
@@ -84,7 +84,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "manifest.json"
   },
   {
-    "revision": "dc83c32109698d01feb7",
+    "revision": "bdccc6c6711e24e9fea1",
     "url": "static/css/main.91e86fd1.chunk.css"
   },
   {
