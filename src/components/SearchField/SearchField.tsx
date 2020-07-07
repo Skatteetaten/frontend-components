@@ -36,6 +36,8 @@ export interface SearchFieldProps extends ISearchBoxProps {
   searchFieldSize?: 'standard' | 'large';
   /** @ignore */
   underlined?: ISearchBoxProps['underlined'];
+  /**påkalt etter bruker valger et alternativ*/
+  onSelected?: (option: IDropdownOption) => void;
 }
 
 const searchInList = (options: Array<IDropdownOption>, filterText: string) => {
@@ -65,6 +67,7 @@ const SearchField: React.FC<SearchFieldProps> = props => {
     labelCallout,
     onCalloutToggle,
     onChange,
+    onSelected,
     options,
     ...rest
   } = props;
@@ -99,6 +102,14 @@ const SearchField: React.FC<SearchFieldProps> = props => {
     const event: React.ChangeEvent<HTMLInputElement> = {};
     setValue(text);
     onChange && onChange(event, text);
+    setDropdownVisible(false);
+    setFocus(-1);
+    listRefs.current = [];
+  };
+
+  const selectEvent = (item: IDropdownOption) => {
+    setValue(item.text);
+    onSelected && onSelected(item);
     setDropdownVisible(false);
     setFocus(-1);
     listRefs.current = [];
@@ -156,7 +167,7 @@ const SearchField: React.FC<SearchFieldProps> = props => {
               <li
                 aria-label={listItem.text}
                 key={listItem.key}
-                onClick={() => changeEvent(listItem.text)}
+                onClick={() => selectEvent(listItem)}
                 onKeyPress={ev => {
                   if (ev.keyCode === 0) {
                     changeEvent(listItem.text);
