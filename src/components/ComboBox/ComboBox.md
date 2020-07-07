@@ -83,6 +83,38 @@ const initialState = {
 </div>;
 ```
 
+Lesemodus:
+
+```js
+import ComboBox from '@skatteetaten/frontend-components/ComboBox';
+import Grid from '@skatteetaten/frontend-components/Grid';
+
+<div>
+  <Grid>
+    <Grid.Row>
+      <Grid.Col lg={4}>
+        <ComboBox
+          readOnly
+          label="Lesemodus:"
+          placeHolder="Velg"
+          options={[
+            { key: 'A', text: 'alfa', value: 'Alfa' },
+            { key: 'B', text: 'beta', value: 'Beta' },
+            { key: 'C', text: 'gamma', value: 'Gamma' },
+            { key: 'D', text: 'delta', value: 'Delta' },
+            { key: 'E', text: 'echo', value: 'Echo' }
+          ]}
+          defaultSelectedKey="D"
+          allowFreeform={false}
+          ariaLabel="Eksempel ComboBox"
+          useComboBoxAsMenuWidth
+        />
+      </Grid.Col>
+    </Grid.Row>
+  </Grid>
+</div>;
+```
+
 Med Feilmelding:
 
 ```js

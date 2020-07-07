@@ -24,11 +24,13 @@ export interface ComboboxProps extends IComboBoxProps {
   labelButtonAriaLabel?: string;
   /** Overstyr label, se LabelWithCallout komponent */
   labelCallout?: LabelWithCalloutProps;
-  /** Brukerspesifisert event for callout **/
+  /** Brukerspesifisert event for callout */
   onCalloutToggle?: (
     oldCalloutState: calloutState,
     newCalloutState: calloutState
   ) => void;
+  /** Lesemodus */
+  readOnly?: boolean;
 }
 
 /**
@@ -46,6 +48,7 @@ const Combobox: React.FC<ComboboxProps> = props => {
     labelButtonAriaLabel,
     labelCallout,
     onCalloutToggle,
+    readOnly,
     ...rest
   } = props;
 
@@ -53,6 +56,9 @@ const Combobox: React.FC<ComboboxProps> = props => {
   const mainId = id ? id : 'combobox-' + genratedId;
   const inputId = mainId + '-input';
   const labelId = mainId + '-label';
+
+  const styles = getClassNames(props);
+
   return (
     <div id={mainId}>
       <LabelWithCallout
@@ -65,17 +71,30 @@ const Combobox: React.FC<ComboboxProps> = props => {
         autoDismiss={labelWithCalloutAutoDismiss}
         {...labelCallout}
       />
-      <VirtualizedComboBox
-        {...rest}
-        id={inputId}
-        ariaLabel={label}
-        className={classnames(getClassNames(props), className)}
-        calloutProps={{
-          className: getOptionsClassNames(props)
-        }}
-      >
-        {children}
-      </VirtualizedComboBox>
+      {readOnly ? (
+        <input
+          readOnly
+          className={styles.readOnly}
+          value={
+            props.options.filter(
+              option => option.key === props.defaultSelectedKey
+            )[0].text
+          }
+        />
+      ) : (
+        <VirtualizedComboBox
+          {...rest}
+          id={inputId}
+          ariaLabel={label}
+          className={classnames(styles.main, className)}
+          calloutProps={{
+            className: getOptionsClassNames(props)
+          }}
+        >
+          {children}
+        </VirtualizedComboBox>
+      )}
+
       {errorMessage && <ErrorMessage>{errorMessage}</ErrorMessage>}
     </div>
   );

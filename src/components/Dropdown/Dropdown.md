@@ -51,6 +51,28 @@ const initialState = {
 </div>;
 ```
 
+Lesemodus:
+
+```js
+import Dropdown from '@skatteetaten/frontend-components/Dropdown';
+
+<div style={{ width: '300px' }}>
+  <Dropdown
+    readOnly
+    label="Lesemodus:"
+    inputSize="large"
+    options={[
+      { key: 'A', text: 'alfa', value: 'Alfa' },
+      { key: 'B', text: 'beta', value: 'Beta' },
+      { key: 'C', text: 'gamma', value: 'Gamma' },
+      { key: 'D', text: 'delta', value: 'Delta' },
+      { key: 'E', text: 'echo', value: 'Echo' }
+    ]}
+    defaultSelectedKey="D"
+  />
+</div>;
+```
+
 ```js noeditor uu
 <h3>Tips</h3>
 <ul>
