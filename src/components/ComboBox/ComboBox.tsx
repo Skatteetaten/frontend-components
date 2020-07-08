@@ -29,7 +29,7 @@ export interface ComboboxProps extends IComboBoxProps {
     oldCalloutState: calloutState,
     newCalloutState: calloutState
   ) => void;
-  /** Lesemodus */
+  /** Lesemodus. Kan brukes i sammenheng med text eller defaultSelectedKey for å vise verdi */
   readOnly?: boolean;
 }
 
@@ -73,12 +73,15 @@ const Combobox: React.FC<ComboboxProps> = props => {
       />
       {readOnly ? (
         <input
+          type="text"
           readOnly
           className={styles.readOnly}
           value={
-            props.options.filter(
-              option => option.key === props.defaultSelectedKey
-            )[0].text
+            props.text
+              ? props.text
+              : props.options.filter(
+                  option => option.key === props.defaultSelectedKey
+                )[0].text
           }
         />
       ) : (

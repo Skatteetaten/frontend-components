@@ -32,7 +32,7 @@ export interface DropdownProps extends IDropdownProps {
     oldCalloutState: calloutState,
     newCalloutState: calloutState
   ) => void;
-  /** Lesemodus */
+  /** Lesemodus. Kan brukes i sammenheng med selectedKey eller defaultSelectedKey for å vise verdi */
   readOnly?: boolean;
 }
 
@@ -79,11 +79,13 @@ const Dropdown: React.FC<DropdownProps> = props => {
       />
       {readOnly ? (
         <input
+          type="text"
           readOnly
           className={styles.readOnly}
           value={
             props.options.filter(
-              option => option.key === props.defaultSelectedKey
+              option =>
+                option.key === (props.selectedKey || props.defaultSelectedKey)
             )[0].text
           }
         />

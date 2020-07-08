@@ -68,7 +68,7 @@ import Dropdown from '@skatteetaten/frontend-components/Dropdown';
       { key: 'D', text: 'delta', value: 'Delta' },
       { key: 'E', text: 'echo', value: 'Echo' }
     ]}
-    defaultSelectedKey="D"
+    selectedKey="D"
   />
 </div>;
 ```
