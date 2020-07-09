@@ -105,12 +105,10 @@ export default class Card extends React.PureComponent<CardProps, CardState> {
       subtitle,
       expand,
       actions,
-      isExpanded,
       className,
       circleOnIcon,
       id,
-      buttonType,
-      ...props
+      buttonType
     } = this.props;
 
     const styles = getClassNames(this.props, this.state);
