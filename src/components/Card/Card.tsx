@@ -154,11 +154,7 @@ export default class Card extends React.PureComponent<CardProps, CardState> {
             )}
           </div>
         ) : null}
-        {isExpandedState && (
-          <div {...props} className={styles.body}>
-            {children}
-          </div>
-        )}
+        {isExpandedState && <div className={styles.body}>{children}</div>}
       </div>
     );
   }
