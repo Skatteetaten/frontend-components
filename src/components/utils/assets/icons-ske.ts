@@ -38,10 +38,11 @@ export default {
     ChevronUp: '',
     ExcelFile: '\uea05',
     File: '\uea06',
-    PDFFile: '\uea07',
-    Person: '\uea08',
-    Skattetrekk: '\uea09',
-    WarningOutline: '\uea0a',
-    XMLFile: '\uea0b'
+    More: '\uea07',
+    PDFFile: '\uea08',
+    Person: '\uea09',
+    Skattetrekk: '\uea0a',
+    WarningOutline: '\uea0b',
+    XMLFile: '\uea0c'
   }
 };

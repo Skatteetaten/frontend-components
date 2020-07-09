@@ -31,6 +31,8 @@ export interface FileUploaderProps {
   acceptedFileFormats?: Array<FileFormatTypes>;
   /** Tekst for opplastingskomponenten */
   addFileString?: string | JSX.Element;
+  /** Funksjon som kjøres etter opplasting */
+  afterUpload?: () => void;
   /** aria-label */
   ariaLabel?: string;
   /** string for Apikall */
@@ -44,16 +46,26 @@ export interface FileUploaderProps {
   /** Aria-label for "fjern fil"-knapp */
   deleteButtonAriaLabel?: string;
   /** Funksjon for å slette opplastet fil */
-  deleteFile?: (file: File) => void;
+  deleteFile?: (file: AttachmentMetadata | File) => void;
+  /**feilmelding for oversteget av filstørrelsesgrense*/
+  exceedFileSizeLimitErrorMessage?: string;
   /** Opplastede filer */
   files?: Array<any>;
+  /** Størrelsesgrense til en enkelt fil i bit*/
+  fileSizeLimit?: number;
+  /** Forsinkelse før opplasting i millisekunder*/
+  forsinkelse?: number;
   /** Hjelpetekst */
   help?: string | JSX.Element;
   /** Id */
   id?: string;
   /** Tilleggsinformasjon */
-  info?: string;
-  /** Descriptive label for SearchField */
+  info?: string | JSX.Element;
+  /** Definer ugyldige tegn som skal erstattes med "_". NormalizeFileName vil erstatte alle ugyldige tegn dersom denne verdien ikke er satt. */
+  invalidCharacterRegexp?: RegExp;
+  /**Funksjon som kjører dersom spinner forandrer state */
+  isLoading?: (loading: boolean) => void;
+  /** Beskrivende label for FileUploader */
   label?: string;
   /** aria-label for knapp i label */
   labelButtonAriaLabel?: string;
@@ -63,7 +75,9 @@ export interface FileUploaderProps {
   loading?: boolean;
   /** Mulighet for å laste opp flere filer */
   multipleFiles?: boolean;
-  /** Brukerspesifisert event for callout **/
+  /** Erstatter tegn som er ugyldige */
+  normalizeFileName?: boolean;
+  /** Brukerspesifisert event for callout */
   onCalloutToggle?: (
     oldCalloutState: calloutState,
     newCalloutState: calloutState
@@ -72,16 +86,6 @@ export interface FileUploaderProps {
   queryParams?: any;
   /** Funksjon for filopplasting */
   uploadFile?: (file: File) => void;
-  /**forsinkelse før opplasting i millisekunder*/
-  forsinkelse?: number;
-  /**erstatter tegn som er ugyldige */
-  normalizeFileName?: boolean;
-  /**Definer ugyldige tegn som skal erstattes med "_". Skal erstatte alle non-ord karakter dersom invalidCharacterRegexp ikker er oppgitt*/
-  invalidCharacterRegexp?: RegExp;
-  /**størrelsesgrense til en enkelt fil i bit*/
-  fileSizeLimit?: number;
-  /*feilmelding for oversteget av filstørrelsesgrense**/
-  exceedFileSizeLimitErrorMessage?: string;
 }
 
 export const isCorrectFileFormat = (
@@ -113,47 +117,80 @@ const normalize = (file: File, invalidCharacterRegexp?: RegExp) => {
   return normalizedName.concat('.', nameList[1]);
 };
 
+enum FilTyperNavn {
+  ExcelFile = 'ExcelFile',
+  WordFile = 'WordFile',
+  PDFFile = 'PDFFile',
+  XMLFile = 'XMLFile',
+  File = 'File'
+}
+
+const filtypeMap = (() => {
+  const map = new Map<string, FilTyperNavn>();
+  map.set('xls', FilTyperNavn.ExcelFile);
+  map.set('xlsx', FilTyperNavn.ExcelFile);
+  map.set('doc', FilTyperNavn.WordFile);
+  map.set('docx', FilTyperNavn.WordFile);
+  map.set('pdf', FilTyperNavn.PDFFile);
+  map.set('xml', FilTyperNavn.XMLFile);
+  return map;
+})();
+
+const getFileIconName = (fil: AttachmentMetadata) => {
+  const filutvidelse = fil.name.split('.').pop();
+  const fileType = filtypeMap.get(filutvidelse ? filutvidelse : '');
+  return fileType ? fileType : FilTyperNavn.File;
+};
+
 const FileUploader: React.FC<FileUploaderProps> = props => {
   const {
     acceptedFileFormats,
     addFileString,
+    afterUpload,
     ariaLabel,
     axiosPath,
     className,
-    labelWithCalloutAutoDismiss,
     deleteAllFiles,
     deleteButtonAriaLabel,
     deleteFile,
+    exceedFileSizeLimitErrorMessage,
     files,
+    fileSizeLimit,
     help,
     id,
     info,
+    invalidCharacterRegexp,
+    isLoading,
     label,
     labelButtonAriaLabel,
     labelCallout,
+    labelWithCalloutAutoDismiss,
     loading,
     multipleFiles,
+    normalizeFileName,
     onCalloutToggle,
     queryParams,
-    uploadFile,
-    normalizeFileName,
-    invalidCharacterRegexp,
-    fileSizeLimit,
-    exceedFileSizeLimitErrorMessage
+    uploadFile
   } = props;
   const styles = getClassNames(props);
   const [internalFiles, setInternalFiles] = React.useState<Array<any>>(
     files ? files : []
   );
-  const [errorMessage, setErrorMessage] = React.useState<string>('');
+  const [internalErrorMessages, setInternalErrorMessages] = React.useState<
+    string[]
+  >([]);
   const [internalLoading, setInternalLoading] = React.useState<boolean>(false);
   const inputRef = React.useRef<HTMLInputElement | null>(null);
 
   React.useEffect(() => {
     if (files) {
+      setInternalErrorMessages([]);
       setInternalFiles(files);
     }
   }, [files]);
+
+  const pushToInternalMessages = (msg: string) =>
+    setInternalErrorMessages(prevState => [...prevState, msg]);
 
   const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     event.preventDefault();
@@ -163,64 +200,91 @@ const FileUploader: React.FC<FileUploaderProps> = props => {
     }
   };
 
+  const triggerUpdateFiles = (validFiles: Array<File>) => {
+    if (uploadFile) {
+      validFiles.forEach(file => {
+        uploadFile(file);
+      });
+    }
+  };
+
+  const uploadFilePromise = (
+    url: string,
+    file: File,
+    params?: any
+  ): Promise<any> => {
+    const formData = new FormData();
+    formData.append(
+      'upload',
+      file,
+      normalizeFileName ? normalize(file, invalidCharacterRegexp) : undefined
+    );
+    return axios.post<FormData, AxiosResponse<AttachmentMetadata>>(
+      url,
+      formData,
+      { params }
+    );
+  };
+
+  const isValidFile = (file: File, sizeLimit?: number) =>
+    isCorrectFileFormat(file, acceptedFileFormats) &&
+    (sizeLimit ? file.size <= sizeLimit : true);
+
   const handleNewFiles = (fileList: File[]) => {
-    setErrorMessage('');
-    let exceedSizeLimitFiles: File[] = [];
-    fileList.forEach((file: File) => {
-      if (fileSizeLimit && file.size > fileSizeLimit) {
-        exceedSizeLimitFiles.push(file);
-        return;
-      }
+    setInternalErrorMessages([]);
 
-      const correctFileFormat = isCorrectFileFormat(file, acceptedFileFormats);
-      if (correctFileFormat) {
-        if (uploadFile) {
-          uploadFile(file);
-        }
-        if (axiosPath) {
-          setInternalLoading(true);
-          const formData = new FormData();
-          formData.append(
-            'upload',
-            file,
-            normalizeFileName
-              ? normalize(file, invalidCharacterRegexp)
-              : undefined
-          );
-          setTimeout(
-            () =>
-              axios
-                .post<FormData, AxiosResponse<AttachmentMetadata>>(
-                  axiosPath,
-                  formData,
-                  { params: queryParams }
-                )
-                .then(res => {
-                  if (res.data) {
-                    setErrorMessage('');
-                    setInternalFiles([...internalFiles, res.data]);
-                  }
-                })
-                .catch(error => {
-                  setErrorMessage('Kunne ikke laste opp fil');
-                })
-                .finally(() => {
-                  setInternalLoading(false);
-                }),
-            props.forsinkelse || 0
-          );
-        }
-      } else {
-        setErrorMessage('Dette filformatet er ikke godkjent');
-      }
-    });
-
+    const exceedSizeLimitFiles = fileSizeLimit
+      ? fileList.filter(file => file.size > fileSizeLimit)
+      : [];
     if (fileSizeLimit && exceedSizeLimitFiles.length) {
-      setErrorMessage(
+      pushToInternalMessages(
         exceedFileSizeLimitErrorMessage ||
           createDefaultOversizedFileErrorMessage(fileSizeLimit)
       );
     }
+
+    const invalidFileFormatFiles = fileList.filter(
+      file => !isCorrectFileFormat(file, acceptedFileFormats)
+    );
+    if (invalidFileFormatFiles.length) {
+      pushToInternalMessages('Dette filformatet er ikke godkjent');
+    }
+
+    const validFiles = fileList.filter(file =>
+      isValidFile(file, fileSizeLimit)
+    );
+
+    triggerUpdateFiles(validFiles);
+
+    if (!axiosPath) {
+      return;
+    }
+
+    setInternalLoading(true);
+    const allPromises = validFiles.map((file: File) =>
+      uploadFilePromise(axiosPath, file, queryParams)
+    );
+
+    setTimeout(() => {
+      axios
+        .all(allPromises)
+        .then(responses => {
+          setInternalFiles([
+            ...internalFiles,
+            ...responses.map(res => res.data)
+          ]);
+        })
+        .catch(errors => {
+          //TODO: Det trenger design om flere feilmeldinger
+          pushToInternalMessages('Kunne ikke laste opp fil');
+        })
+        .finally(() => {
+          if (afterUpload) {
+            afterUpload();
+          }
+          setInternalLoading(false);
+        });
+    }, props.forsinkelse || 0);
   };
 
   const createDefaultOversizedFileErrorMessage = (
@@ -253,7 +317,6 @@ const FileUploader: React.FC<FileUploaderProps> = props => {
       event.dataTransfer.files.length > 0
     ) {
       handleNewFiles(Array.from(event.dataTransfer.files));
-      event.dataTransfer.clearData();
     }
   };
 
@@ -272,6 +335,7 @@ const FileUploader: React.FC<FileUploaderProps> = props => {
             f => f.id !== fileToBeDeleted.id
           );
           setInternalFiles(newList);
+          triggerUpdateFiles(newList);
         });
     }
   };
@@ -279,6 +343,14 @@ const FileUploader: React.FC<FileUploaderProps> = props => {
     files.forEach(file => {
       deleteFromList(file);
     });
+  }
+
+  if (isLoading) {
+    if (loading || internalLoading) {
+      isLoading(true);
+    } else {
+      isLoading(false);
+    }
   }
 
   return (
@@ -363,13 +435,21 @@ const FileUploader: React.FC<FileUploaderProps> = props => {
           {info}
         </div>
       )}
-      {errorMessage && <ErrorMessage>{errorMessage}</ErrorMessage>}
+      {internalErrorMessages &&
+        internalErrorMessages.map(msg => (
+          <div key={msg}>
+            <ErrorMessage>{msg}</ErrorMessage>
+          </div>
+        ))}
       {internalFiles.length > 0 && (
-        <div role="alert">
+        <div role="alert" className={styles.fileListWrapper}>
           <ul className={styles.fileList}>
             {internalFiles.map((file, index: number) => (
               <li key={file.name.concat(index.toString())}>
-                <div className={styles.fileName}>{file.name}</div>
+                <div className={styles.fileName}>
+                  <Icon iconName={getFileIconName(file)} />
+                  <span>{file.name}</span>
+                </div>
                 {file.error ? (
                   <Icon iconName={'Error'} className={styles.errorColor} />
                 ) : (

@@ -6,7 +6,6 @@ import {
 import * as React from 'react';
 import { getClassNames } from './SearchField.classNames';
 import { IDropdownOption } from 'office-ui-fabric-react';
-import ActionButton from '../ActionButton';
 import LabelWithCallout, {
   calloutState,
   LabelWithCalloutProps
@@ -37,6 +36,8 @@ export interface SearchFieldProps extends ISearchBoxProps {
   searchFieldSize?: 'standard' | 'large';
   /** @ignore */
   underlined?: ISearchBoxProps['underlined'];
+  /**påkalt etter bruker valger et alternativ*/
+  onSelected?: (option: IDropdownOption) => void;
 }
 
 const searchInList = (options: Array<IDropdownOption>, filterText: string) => {
@@ -66,6 +67,7 @@ const SearchField: React.FC<SearchFieldProps> = props => {
     labelCallout,
     onCalloutToggle,
     onChange,
+    onSelected,
     options,
     ...rest
   } = props;
@@ -100,6 +102,14 @@ const SearchField: React.FC<SearchFieldProps> = props => {
     const event: React.ChangeEvent<HTMLInputElement> = {};
     setValue(text);
     onChange && onChange(event, text);
+    setDropdownVisible(false);
+    setFocus(-1);
+    listRefs.current = [];
+  };
+
+  const selectEvent = (item: IDropdownOption) => {
+    setValue(item.text);
+    onSelected && onSelected(item);
     setDropdownVisible(false);
     setFocus(-1);
     listRefs.current = [];
@@ -157,7 +167,7 @@ const SearchField: React.FC<SearchFieldProps> = props => {
               <li
                 aria-label={listItem.text}
                 key={listItem.key}
-                onClick={() => changeEvent(listItem.text)}
+                onClick={() => selectEvent(listItem)}
                 onKeyPress={ev => {
                   if (ev.keyCode === 0) {
                     changeEvent(listItem.text);
@@ -173,14 +183,13 @@ const SearchField: React.FC<SearchFieldProps> = props => {
                 role="option"
                 aria-selected={key === focus}
               >
-                <ActionButton
-                  ariaLabel={listItem.text}
-                  className={styles.blackAlt}
+                <div
                   title={listItem.text}
+                  className={styles.blackAlt}
                   tabIndex={-1}
                 >
                   {listItem.text}
-                </ActionButton>
+                </div>
               </li>
             );
           })}

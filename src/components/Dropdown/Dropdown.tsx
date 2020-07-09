@@ -27,11 +27,13 @@ export interface DropdownProps extends IDropdownProps {
   multiSelect?: IDropdownProps['multiSelect'];
   /** @ignore */
   multiSelectDelimiter?: IDropdownProps['multiSelectDelimiter'];
-  /** Brukerspesifisert event for callout **/
+  /** Brukerspesifisert event for callout */
   onCalloutToggle?: (
     oldCalloutState: calloutState,
     newCalloutState: calloutState
   ) => void;
+  /** Lesemodus. Kan brukes i sammenheng med selectedKey eller defaultSelectedKey for å vise verdi */
+  readOnly?: boolean;
 }
 
 interface DropdownState {
@@ -53,6 +55,7 @@ const Dropdown: React.FC<DropdownProps> = props => {
     id,
     labelCallout,
     onCalloutToggle,
+    readOnly,
     ...rest
   } = props;
 
@@ -60,12 +63,13 @@ const Dropdown: React.FC<DropdownProps> = props => {
   const mainId = id ? id : 'dropdown-' + genratedId;
   const inputId = mainId + '-input';
   const labelId = mainId + '-label';
+  const styles = getClassNames(props);
 
   return (
     <div id={mainId}>
       <LabelWithCallout
         id={labelId}
-        inputId={inputId + '-option'}
+        inputId={readOnly ? inputId : inputId + '-option'}
         label={label}
         buttonAriaLabel={labelButtonAriaLabel}
         help={help}
@@ -73,18 +77,34 @@ const Dropdown: React.FC<DropdownProps> = props => {
         autoDismiss={labelWithCalloutAutoDismiss}
         {...labelCallout}
       />
-      <FabricDropdown
-        {...rest}
-        ariaLabel={label}
-        id={inputId}
-        className={classnames(getClassNames(props), className)}
-        calloutProps={{
-          className: getCalloutClassNames()
-        }}
-        onRenderCaretDown={() => <Icon iconName={'ChevronDown'} />}
-      >
-        {children}
-      </FabricDropdown>
+      {readOnly ? (
+        <input
+          id={inputId}
+          type="text"
+          readOnly
+          className={styles.readOnly}
+          value={
+            props.options.filter(
+              option =>
+                option.key === (props.selectedKey || props.defaultSelectedKey)
+            )[0].text
+          }
+        />
+      ) : (
+        <FabricDropdown
+          {...rest}
+          ariaLabel={label}
+          id={inputId}
+          className={classnames(styles.main, className)}
+          calloutProps={{
+            className: getCalloutClassNames()
+          }}
+          onRenderCaretDown={() => <Icon iconName={'ChevronDown'} />}
+        >
+          {children}
+        </FabricDropdown>
+      )}
+
       {errorMessage && <ErrorMessage>{errorMessage}</ErrorMessage>}
     </div>
   );

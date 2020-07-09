@@ -12,6 +12,7 @@ export * from './Card';
 export * from './CheckBox';
 export * from './Chip';
 export * from './ComboBox';
+export * from './CommandBar';
 export * from './DatePicker';
 export * from './DetailsList';
 export * from './Dialog';
