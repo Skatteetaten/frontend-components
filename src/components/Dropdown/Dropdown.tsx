@@ -79,6 +79,7 @@ const Dropdown: React.FC<DropdownProps> = props => {
       />
       {readOnly ? (
         <input
+          id={inputId}
           type="text"
           readOnly
           className={styles.readOnly}

@@ -98,11 +98,11 @@ import Grid from '@skatteetaten/frontend-components/Grid';
           label="Lesemodus:"
           placeHolder="Velg"
           options={[
-            { key: 'A', text: 'alfa', value: 'Alfa' },
-            { key: 'B', text: 'beta', value: 'Beta' },
-            { key: 'C', text: 'gamma', value: 'Gamma' },
-            { key: 'D', text: 'delta', value: 'Delta' },
-            { key: 'E', text: 'echo', value: 'Echo' }
+            { key: 'A', text: 'Alfa', value: 'Alfa' },
+            { key: 'B', text: 'Beta', value: 'Beta' },
+            { key: 'C', text: 'Gamma', value: 'Gamma' },
+            { key: 'D', text: 'Delta', value: 'Delta' },
+            { key: 'E', text: 'Echo', value: 'Echo' }
           ]}
           defaultSelectedKey="D"
           allowFreeform={false}

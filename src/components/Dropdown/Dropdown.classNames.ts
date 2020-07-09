@@ -87,7 +87,8 @@ export const getClassNames = (props: DropdownProps) => {
       borderStyle: 'none',
       fontSize: FontSizes.medium,
       fontWeight: 700,
-      display: 'block'
+      display: 'block',
+      padding: 0
     }
   });
 };
