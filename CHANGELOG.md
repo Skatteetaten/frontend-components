@@ -1,4 +1,18 @@
-### **v.3.4.1 - 25.05.2020 **
+### **v.3.5.0 - 10.07.2020 **
+
+- CommandBar: new component
+- Input fields: Added 2px border to input fields when displaying errors.
+- File uploader: better support for long file names, added loading callback function and various small improvements.
+- Added readonly mode to ComboBox and Dropdown.
+- Sketch: updated symbol file (v1.3).
+- Card: fixes an issue where Card rendered invalid HTML.
+- Dropdown: better support for viewing long option strings.
+
+### **v.3.4.2 - 07.07.2020 **
+
+- AccordionItem: Ability to wrap content in span-element when not using headingLevel.
+
+### **v.3.4.1 - 25.06.2020 **
 
 - Pagination: fixes a bug when displaying numbers
 - Accessbility improvements to TopStripe and TextField (read only mode).
