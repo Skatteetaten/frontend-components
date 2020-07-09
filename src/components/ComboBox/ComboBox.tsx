@@ -63,7 +63,7 @@ const Combobox: React.FC<ComboboxProps> = props => {
     <div id={mainId}>
       <LabelWithCallout
         id={labelId}
-        inputId={inputId + '-input'} //Fabric adds its own -input postfix
+        inputId={readOnly ? inputId : inputId + '-input'} //Fabric adds its own -input postfix
         label={label}
         buttonAriaLabel={labelButtonAriaLabel}
         help={help}

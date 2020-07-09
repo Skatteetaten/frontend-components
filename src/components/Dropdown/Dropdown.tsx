@@ -69,7 +69,7 @@ const Dropdown: React.FC<DropdownProps> = props => {
     <div id={mainId}>
       <LabelWithCallout
         id={labelId}
-        inputId={inputId + '-option'}
+        inputId={readOnly ? inputId : inputId + '-option'}
         label={label}
         buttonAriaLabel={labelButtonAriaLabel}
         help={help}
