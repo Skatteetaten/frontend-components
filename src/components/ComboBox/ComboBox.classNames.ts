@@ -50,41 +50,47 @@ export const getClassNames = (props: ComboboxProps) => {
   const color = errorMessage
     ? palette.skeColor.error
     : palette.skeColor.blackAlt;
+  return mergeStyleSets({
+    main: {
+      selectors: {
+        '& .ms-ComboBox': {
+          borderRadius: '0px',
+          height: '32px',
+          padding: '0px 32px 1px 8px'
+        },
+        '& .ms-ComboBox:focus': {
+          outline: `2px solid ${palette.skeColor.blue}`,
+          borderColor: palette.skeColor.blue
+        },
+        '& .ms-ComboBox:after': {
+          borderRadius: '0px',
+          borderColor: errorMessage && color,
+          borderWidth: errorMessage && '2px'
+        },
 
-  return mergeStyles({
-    displayName: 'SkeCombobox',
-    selectors: {
-      '& .ms-ComboBox': {
-        borderRadius: '0px',
-        height: '30px',
-        padding: '0px 32px 1px 8px'
-      },
-      '& .ms-ComboBox:focus': {
-        outline: `2px solid ${palette.skeColor.blue}`
-      },
-      '& .ms-ComboBox:after': {
-        borderRadius: '0px',
-        borderColor: errorMessage && color
-      },
-      '& .ms-ComboBox-Input': {
-        paddingBottom: '1px',
-        paddingTop: '1px'
-      },
-      '& .ms-ComboBox-Input.is-disabled': {
-        backgroundColor: palette.skeColor.whiteGrey
-      },
-      '& .ms-ComboBox.is-disabled': {
-        borderColor: palette.skeColor.grey
-      },
-      '& .ms-ComboBox.is-disabled button': {
-        color: palette.skeColor.grey
-      },
-      '.ms-ComboBox-CaretDown-button': {
-        // Negative positioning to account for the 2px border
-        right: '0',
-        top: '0'
-      },
-      ...getFieldTypeStyles(props)
+        '& .ms-ComboBox-Input.is-disabled': {
+          backgroundColor: palette.skeColor.whiteGrey
+        },
+        '& .ms-ComboBox.is-disabled': {
+          borderColor: palette.skeColor.grey
+        },
+        '& .ms-ComboBox.is-disabled button': {
+          color: palette.skeColor.grey
+        },
+        '.ms-ComboBox-CaretDown-button': {
+          // Negative positioning to account for the 2px border
+          right: '0',
+          top: '0'
+        },
+        ...getFieldTypeStyles(props)
+      }
+    },
+    readOnly: {
+      borderStyle: 'none',
+      fontSize: FontSizes.medium,
+      fontWeight: 700,
+      display: 'block',
+      padding: 0
     }
   });
 };

@@ -7,10 +7,10 @@ import Grid from '@skatteetaten/frontend-components/Grid';
 const initialState = {
   options: [
     { key: 'A', text: 'alfa', value: 'Alfa' },
-    { key: 'B', text: 'beta', value: 'Alfa' },
-    { key: 'C', text: 'gamma', value: 'Alfa' },
-    { key: 'D', text: 'delta', value: 'Alfa' },
-    { key: 'E', text: 'echo', value: 'Alfa' }
+    { key: 'B', text: 'beta', value: 'Beta' },
+    { key: 'C', text: 'gamma', value: 'Gamma' },
+    { key: 'D', text: 'delta', value: 'Delta' },
+    { key: 'E', text: 'echo', value: 'Echo' }
   ]
 };
 
@@ -76,6 +76,38 @@ const initialState = {
           ariaLabel="Eksempel ComboBox"
           useComboBoxAsMenuWidth
           calloutFloating={false}
+        />
+      </Grid.Col>
+    </Grid.Row>
+  </Grid>
+</div>;
+```
+
+Lesemodus:
+
+```js
+import ComboBox from '@skatteetaten/frontend-components/ComboBox';
+import Grid from '@skatteetaten/frontend-components/Grid';
+
+<div>
+  <Grid>
+    <Grid.Row>
+      <Grid.Col lg={4}>
+        <ComboBox
+          readOnly
+          label="Lesemodus:"
+          placeHolder="Velg"
+          options={[
+            { key: 'A', text: 'Alfa', value: 'Alfa' },
+            { key: 'B', text: 'Beta', value: 'Beta' },
+            { key: 'C', text: 'Gamma', value: 'Gamma' },
+            { key: 'D', text: 'Delta', value: 'Delta' },
+            { key: 'E', text: 'Echo', value: 'Echo' }
+          ]}
+          defaultSelectedKey="D"
+          allowFreeform={false}
+          ariaLabel="Eksempel ComboBox"
+          useComboBoxAsMenuWidth
         />
       </Grid.Col>
     </Grid.Row>
