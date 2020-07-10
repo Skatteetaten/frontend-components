@@ -20,7 +20,7 @@ import AccordionItem from '@skatteetaten/frontend-components/Accordion/Accordion
     stepId={'step-1-1'}
   >
     <p>
-      Sjekk alle først om det er mulig å tilpasse en komponent som finnes fra
+      Sjekk aller først om det er mulig å tilpasse en komponent som finnes fra
       før du lager noe helt nytt.
     </p>
     <p>
@@ -50,7 +50,9 @@ import AccordionItem from '@skatteetaten/frontend-components/Accordion/Accordion
     stepId={'step-1-3'}
   >
     <p>
-      Sørg for at du har skrivetilgang til Designsystemet. Send en e-post til{' '}
+      Alle som har tilgang til utviklingmiljø og intern versjonhåndtering vil
+      også ha tilgang til å bidra. Hvis du ikke har tilgang, og likevel ønsker å
+      bidra kan du sende e-post til{' '}
       <a href="mailto:designsystem@skatteetaten.no">designsystem-teamet</a>
     </p>
   </AccordionItem>
@@ -61,14 +63,23 @@ import AccordionItem from '@skatteetaten/frontend-components/Accordion/Accordion
   >
     <ol>
       <li>
-        Opprett en ny branch. Legg inn koden din i den nye brachen, og sørg for
-        at den kjører uten feil eller advarsler lokalt på din maskin.
+        Opprett en ny lokal gren (branch). Legg inn koden din i den nye grenen,
+        og sørg for at den kjører uten feil eller advarsler lokalt på maskinen
+        din.
       </li>
       <li>Du får bonus og pluss i margen for automatiserte tester. :)</li>
       <li>
         Lag noen eksempler på hvordan komponenten brukes i en egen markdown-fil.
       </li>
-      <li>Opprett en ny pull request.</li>
+      <li>
+        Opprett en ny «pull request» i etatens versjonhåndteringssytem og rett
+        denne mot develop (Ikke bruk master, fordi ny kode her fører automatisk
+        til en ny versjon).
+      </li>
+      <li>
+        Designsystem-teamet er normalt ansvarlig for å flette inn «pull
+        requester», men du kan gjøre det selv hvis du har fått grønt lys.
+      </li>
     </ol>
   </AccordionItem>
   <AccordionItem
