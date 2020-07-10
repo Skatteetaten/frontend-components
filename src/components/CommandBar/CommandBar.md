@@ -1,6 +1,4 @@
-** CommandBar kan inneholde en eller flere menyer og knapper.
-For å skape en bra struktur kan man også velge å flytte ikke-viktige
-knapper i overflow eller på andre siden av skjermen. **
+** Et område med kommandoer **
 
 ```js
 initialState = {
@@ -64,9 +62,7 @@ initialState = {
   ]
 };
 
-<div className="ExampleSpacing8">
-  <CommandBar items={state.items} farItems={state.farItems} />
-</div>;
+<CommandBar items={state.items} farItems={state.farItems} />;
 ```
 
 ```js
@@ -121,9 +117,7 @@ initialState = {
   ]
 };
 
-<div className="ExampleSpacing8">
-  <CommandBar items={state.items} farItems={state.farItems} />
-</div>;
+<CommandBar items={state.items} farItems={state.farItems} />;
 ```
 
 ```js noeditor uu
