@@ -28,6 +28,21 @@ import DatePicker from '@skatteetaten/frontend-components/DatePicker';
 </div>;
 ```
 
+Veksle mellom skrive og lesemodus:
+
+```js
+import DatePicker from '@skatteetaten/frontend-components/DatePicker';
+<div className="ExampleFlexContainer-200">
+  <DatePicker
+    id={'readonly-date'}
+    readonlyMode
+    editable
+    label={'Velg en dato'}
+    value={new Date()}
+  />
+</div>;
+```
+
 ```js noeditor uu
 <div>
   <h3>Tips</h3>

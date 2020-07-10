@@ -4,6 +4,8 @@ exports[`DatePicker komponent matcher snapshot 1`] = `
 <div>
   <div
     className="ms-DatePicker SkeDatePicker-50"
+    id="datepicker-1-input"
+    onBlur={[Function]}
   >
     <div
       aria-haspopup="true"
@@ -21,8 +23,7 @@ exports[`DatePicker komponent matcher snapshot 1`] = `
               aria-expanded={false}
               aria-invalid={false}
               className="ms-TextField-field field-57"
-              disabled={false}
-              id="DatePicker0-label"
+              id="datepicker-undefined-input-label"
               onBlur={[Function]}
               onChange={[Function]}
               onClick={[Function]}

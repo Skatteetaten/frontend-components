@@ -53,25 +53,13 @@ describe('DatePicker komponent', () => {
     expect(datePicker.prop('invalidInputErrorMessage')).toEqual(
       'Ikke gyldig format i testen'
     );
-    expect(wrapper.instance().props.isRequiredErrorMessage).toEqual(
-      'Dette feltet er påkrevd i testen'
-    );
-    expect(wrapper.instance().props.isOutOfBoundsErrorMessage).toEqual(
-      'Datoen er ikke innenfor gyldig periode i testen'
-    );
-    expect(wrapper.instance().props.invalidInputErrorMessage).toEqual(
-      'Ikke gyldig format i testen'
-    );
   });
 
   it('setter datovelger i readonly modus', () => {
     const wrapper = oppsettMount({
       readonlyMode: true
     });
-
-    expect(wrapper.find('StyledDatePickerBase').prop('readonlyMode')).toEqual(
-      true
-    );
+    expect(wrapper.find('StyledDatePickerBase').prop('disabled')).toEqual(true);
     expect(
       wrapper
         .find('TextFieldBase')
