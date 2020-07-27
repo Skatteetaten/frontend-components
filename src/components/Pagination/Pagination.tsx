@@ -205,7 +205,6 @@ const Pagination: React.FC<PaginationProps> = props => {
     ariaLabelNavigationLink,
     ariaLabelNavigationLinkActive,
     className,
-    currentPage,
     nextLabel,
     onPageChange,
     pagesDisplayed,
@@ -214,8 +213,17 @@ const Pagination: React.FC<PaginationProps> = props => {
     total
   } = props;
   const styles = getClassNames();
+  const [currentPage, setCurrentPage] = React.useState(props.currentPage);
   const firstListObject = (currentPage - 1) * pageSize;
   const lastListObject = Math.min(firstListObject + pageSize, total);
+
+  React.useEffect(() => {
+    setCurrentPage(props.currentPage);
+  }, [props.currentPage]);
+
+  React.useEffect(() => {
+    setCurrentPage(1);
+  }, [pageSize]);
 
   const view =
     lastListObject > total ? total : firstListObject + 1 + '-' + lastListObject;
