@@ -3,8 +3,6 @@
 ```js
 import Table from '@skatteetaten/frontend-components/Table';
 import Pagination from '@skatteetaten/frontend-components/Pagination';
-import Button from '@skatteetaten/frontend-components/Button';
-
 const columns = [
   {
     name: 'Navn',
@@ -121,25 +119,13 @@ const data = [
     type: 'Admin'
   }
 ];
-const [pageSize, setPageSize] = React.useState(8);
+const pageSize = 8;
 const [displayedData, setDisplayedData] = React.useState(
   [...data].splice(0, pageSize)
 );
 const [currentPage, setCurrentPage] = React.useState(1);
-React.useEffect(() => {
-  setDisplayedData([...data].splice(0, pageSize));
-}, [pageSize]);
 
 <div>
-  <Button
-    buttonStyle="primary"
-    onClick={() => {
-      setPageSize(Math.floor(Math.random() * Math.floor(9)));
-    }}
-  >
-    Endre pageSize
-  </Button>
-  <p>PageSize: {pageSize}</p>
   <Table fullWidth data={displayedData} columns={columns} />
   <Pagination
     currentPage={currentPage}
