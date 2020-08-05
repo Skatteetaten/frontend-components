@@ -38,6 +38,8 @@ export interface SearchFieldProps extends ISearchBoxProps {
   underlined?: ISearchBoxProps['underlined'];
   /**påkalt etter bruker valger et alternativ*/
   onSelected?: (option: IDropdownOption) => void;
+  /** Begrens antall viste søkeresultat */
+  limit?: number;
 }
 
 const searchInList = (options: Array<IDropdownOption>, filterText: string) => {
@@ -51,6 +53,14 @@ const searchInList = (options: Array<IDropdownOption>, filterText: string) => {
       );
     })
     .map(option => option);
+};
+
+const limitNumberOfResults = (list: Array<IDropdownOption>, limit?: number) => {
+  if (limit && !isNaN(limit)) {
+    return list.slice(0, limit);
+  }
+
+  return list;
 };
 
 /**
@@ -69,6 +79,7 @@ const SearchField: React.FC<SearchFieldProps> = props => {
     onChange,
     onSelected,
     options,
+    limit,
     ...rest
   } = props;
   const _searchBoxElement = React.createRef<HTMLDivElement>();
@@ -148,7 +159,8 @@ const SearchField: React.FC<SearchFieldProps> = props => {
 
   const setSearchResult = (newValue: string) => {
     if (options && newValue) {
-      const newList = searchInList(options, newValue);
+      let newList = searchInList(options, newValue);
+      newList = limitNumberOfResults(newList, limit);
       setSearchResultList(newList);
       setDropdownVisible(newList.length > 0);
     }
