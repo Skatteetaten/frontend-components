@@ -64,24 +64,28 @@ exports[`Table komponent matcher snapshot 1`] = `
           <th
             className=""
             key="month"
+            scope="col"
           >
             Måned
           </th>
           <th
             className=""
             key="amount"
+            scope="col"
           >
             Beløp
           </th>
           <th
             className=""
             key="coverage"
+            scope="col"
           >
             Dekningsgrad
           </th>
           <th
             className=""
             key="revenue"
+            scope="col"
           >
             Avkastning
           </th>
@@ -122,19 +126,23 @@ exports[`Table komponent matcher snapshot 1`] = `
             }
           }
           editModeActive={false}
+          expandableModeActive={false}
           isEditableRowOpen={false}
+          isExpandableRowOpen={false}
           key="0"
           onCloseRow={[Function]}
           onEditRow={[Function]}
+          onExpandRow={[Function]}
           rowIndex={0}
           tableHasScroll={false}
         >
           <tr
             key="0"
           >
-            <td
-              className="is-closed"
+            <th
+              className="is-closed tableRow"
               key="0_0"
+              scope="row"
             />
             <td
               className="is-closed right"
@@ -183,19 +191,23 @@ exports[`Table komponent matcher snapshot 1`] = `
             }
           }
           editModeActive={false}
+          expandableModeActive={false}
           isEditableRowOpen={false}
+          isExpandableRowOpen={false}
           key="1"
           onCloseRow={[Function]}
           onEditRow={[Function]}
+          onExpandRow={[Function]}
           rowIndex={1}
           tableHasScroll={false}
         >
           <tr
             key="1"
           >
-            <td
-              className="is-closed"
+            <th
+              className="is-closed tableRow"
               key="1_0"
+              scope="row"
             />
             <td
               className="is-closed right"
@@ -244,19 +256,23 @@ exports[`Table komponent matcher snapshot 1`] = `
             }
           }
           editModeActive={false}
+          expandableModeActive={false}
           isEditableRowOpen={false}
+          isExpandableRowOpen={false}
           key="2"
           onCloseRow={[Function]}
           onEditRow={[Function]}
+          onExpandRow={[Function]}
           rowIndex={2}
           tableHasScroll={false}
         >
           <tr
             key="2"
           >
-            <td
-              className="is-closed"
+            <th
+              className="is-closed tableRow"
               key="2_0"
+              scope="row"
             />
             <td
               className="is-closed right"
@@ -305,19 +321,23 @@ exports[`Table komponent matcher snapshot 1`] = `
             }
           }
           editModeActive={false}
+          expandableModeActive={false}
           isEditableRowOpen={false}
+          isExpandableRowOpen={false}
           key="3"
           onCloseRow={[Function]}
           onEditRow={[Function]}
+          onExpandRow={[Function]}
           rowIndex={3}
           tableHasScroll={false}
         >
           <tr
             key="3"
           >
-            <td
-              className="is-closed"
+            <th
+              className="is-closed tableRow"
               key="3_0"
+              scope="row"
             />
             <td
               className="is-closed right"

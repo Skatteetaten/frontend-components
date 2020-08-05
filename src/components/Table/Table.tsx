@@ -14,6 +14,10 @@ interface TableProps<P> extends React.HTMLAttributes<HTMLDivElement> {
   data: P[];
   /**  Gjør det mulig å redigere rader i tabellen */
   editableRows?: boolean;
+  /** Plassering av ekspanderingsknapp i tabellen. Default er after */
+  expandIconPlacement?: 'after' | 'before';
+  /** Gjør det mulig å ekspandere en rad */
+  expandableRows?: boolean;
   /** Om tabellen skal være i full bredde (100 %) */
   fullWidth?: boolean;
   /**  Indeks til rad som skal åpnes i redigeringsmodus */
@@ -23,6 +27,12 @@ interface TableProps<P> extends React.HTMLAttributes<HTMLDivElement> {
   setOpenEditableRowIndex?: (index?: number) => void;
   /**  Innhold som skal vises når en rad er i editeringsmodus */
   editableContent?: (
+    data: P,
+    onCloseRow: () => void,
+    rowIndex: number
+  ) => React.ReactNode;
+  /**  Innhold som skal vises når en rad er i ekspanderingsmodus */
+  expandableContent?: (
     data: P,
     onCloseRow: () => void,
     rowIndex: number
@@ -50,6 +60,7 @@ interface TableProps<P> extends React.HTMLAttributes<HTMLDivElement> {
 
 interface TableState {
   openEditableRowIndex?: number;
+  openExpandableRowIndex?: number;
   editModeActive: boolean;
   tableIsScrollable: boolean;
   sort: { ascending: boolean; columnFieldName: string };
@@ -75,6 +86,7 @@ export default class Table<P> extends React.PureComponent<
       editModeActive: false,
       tableIsScrollable: false,
       openEditableRowIndex: props.openEditableRowIndex,
+      openExpandableRowIndex: undefined,
       sort: {
         ascending: false,
         columnFieldName: ''
@@ -100,10 +112,23 @@ export default class Table<P> extends React.PureComponent<
   }
 
   render() {
-    const { editableRows, children, className, id } = this.props;
+    const {
+      editableRows,
+      expandableRows,
+      expandIconPlacement,
+      children,
+      className,
+      id
+    } = this.props;
     const { tableIsScrollable } = this.state;
     const columns = this.props.columns;
 
+    const emptyTd = (
+      <>
+        {editableRows && <td className={'emptyTd'} />}
+        {expandableRows && <td className={'emptyTd'} />}
+      </>
+    );
     return (
       <div
         ref={this.wrapperRef}
@@ -113,9 +138,12 @@ export default class Table<P> extends React.PureComponent<
         <table>
           <thead>
             <tr>
-              {tableIsScrollable && editableRows && <th />}
+              {(tableIsScrollable || expandIconPlacement === 'before') &&
+                emptyTd}
               {this._getHeader(columns)}
-              {!tableIsScrollable && editableRows && <th />}
+              {!tableIsScrollable &&
+                expandIconPlacement !== 'before' &&
+                emptyTd}
             </tr>
           </thead>
           <tbody>{this._getRowData(columns)}</tbody>
@@ -174,6 +202,7 @@ export default class Table<P> extends React.PureComponent<
                   ? this._setSortingState(key.fieldName)
                   : null;
               }}
+              scope="col"
             >
               {key.name}
               <Icon
@@ -189,6 +218,7 @@ export default class Table<P> extends React.PureComponent<
           <th
             className={key.hideOnMobile ? 'hideOnMobile' : ''}
             key={key.fieldName}
+            scope="col"
           >
             {key.name}
           </th>
@@ -220,9 +250,15 @@ export default class Table<P> extends React.PureComponent<
           editableContent={this.props.editableContent}
           editableRows={this.props.editableRows}
           editModeActive={this.state.openEditableRowIndex !== undefined}
+          expandableContent={this.props.expandableContent}
+          expandableModeActive={this.state.openExpandableRowIndex !== undefined}
+          expandableRows={this.props.expandableRows}
+          expandIconPlacement={this.props.expandIconPlacement}
           tableHasScroll={this.state.tableIsScrollable}
           isEditableRowOpen={this.state.openEditableRowIndex === index}
+          isExpandableRowOpen={this.state.openExpandableRowIndex === index}
           onEditRow={() => this._handleEditRow(index)}
+          onExpandRow={() => this._handleExpandRow(index)}
           onCloseRow={this._handleCloseRow}
         />
       );
@@ -263,11 +299,19 @@ export default class Table<P> extends React.PureComponent<
     }
   };
 
+  _setOpenExpandableRowIndex = (index?: number) => {
+    this.setState({ openExpandableRowIndex: index });
+  };
+
   _handleEditRow = (index?: number) => {
     this._setOpenEditableRowIndex(index);
+  };
+  _handleExpandRow = (index?: number) => {
+    this._setOpenExpandableRowIndex(index);
   };
 
   _handleCloseRow = () => {
     this._setOpenEditableRowIndex();
+    this._setOpenExpandableRowIndex();
   };
 }

@@ -5,17 +5,27 @@ import classnames from 'classnames';
 interface TableRowProps<P> {
   data: P;
   rowIndex: number;
-  editableRows: boolean | undefined;
   editableContent?: (
     data: P,
     onCloseRow: () => void,
     rowIndex: number
   ) => React.ReactNode;
+  editableRows: boolean | undefined;
+  expandableContent?: (
+    data: P,
+    onCloseRow: () => void,
+    rowIndex: number
+  ) => React.ReactNode;
+  expandableModeActive: boolean;
+  expandableRows: boolean | undefined;
+  expandIconPlacement?: 'after' | 'before';
   columns: any;
   editModeActive: boolean;
   tableHasScroll: boolean;
   isEditableRowOpen: boolean;
+  isExpandableRowOpen: boolean;
   onEditRow: (index?: number) => void;
+  onExpandRow: (index?: number) => void;
   onCloseRow: () => void;
 }
 
@@ -26,7 +36,8 @@ export default class TableRow<P> extends React.PureComponent<TableRowProps<P>> {
   constructor(props: TableRowProps<P>) {
     super(props);
     this.state = {
-      isEditableRowOpen: false
+      isEditableRowOpen: false,
+      isExpandableRowOpen: false
     };
   }
 
@@ -38,10 +49,16 @@ export default class TableRow<P> extends React.PureComponent<TableRowProps<P>> {
       editableContent,
       columns,
       editModeActive,
+      expandableContent,
+      expandableModeActive,
+      expandableRows,
+      expandIconPlacement,
       tableHasScroll,
       isEditableRowOpen,
+      isExpandableRowOpen,
       onCloseRow,
-      onEditRow
+      onEditRow,
+      onExpandRow
     } = this.props;
     const numberOfColumns = columns.length + (editableRows ? 1 : 0);
     const editButton = (
@@ -50,36 +67,94 @@ export default class TableRow<P> extends React.PureComponent<TableRowProps<P>> {
         onClick={() => onEditRow(rowIndex)}
         title="Rediger rad"
         icon="Edit"
+        disabled={editModeActive || expandableModeActive}
+        type="button"
+      />
+    );
+
+    const expandButton = (
+      <IconButton
+        className={'expandButton'}
+        onClick={() => onExpandRow(rowIndex)}
+        buttonSize="large"
+        title="Ekspander"
+        icon="ChevronDown"
         disabled={editModeActive}
         type="button"
       />
     );
 
+    const collapseButton = (
+      <td>
+        <IconButton
+          className={'expandButton'}
+          onClick={() => onCloseRow()}
+          buttonSize="large"
+          title="Kollaps"
+          icon="ChevronUp"
+          type="button"
+        />
+      </td>
+    );
+
+    const actionButtons = (
+      <>
+        {editableRows && <td>{editButton}</td>}
+        {expandableRows && <td>{expandButton}</td>}
+      </>
+    );
     return (
       <>
-        {editableRows ? (
+        {editableRows || expandableRows ? (
           <>
-            {!isEditableRowOpen ? (
-              <tr key={rowIndex}>
-                {tableHasScroll && <td>{editButton}</td>}
-                {this._renderRow(data, columns, rowIndex)}
-                {!tableHasScroll && <td>{editButton}</td>}
-              </tr>
-            ) : (
-              <tr
-                key={rowIndex}
-                className={
-                  isEditableRowOpen ? 'editableRow-open' : 'editableRow'
-                }
-              >
-                <td
+            {isExpandableRowOpen || isEditableRowOpen ? (
+              editableRows ? (
+                <tr
                   key={rowIndex}
-                  className="editableCell"
-                  colSpan={numberOfColumns}
+                  className={
+                    isEditableRowOpen ? 'editableRow-open' : 'editableRow'
+                  }
                 >
-                  {editableContent &&
-                    editableContent(data, onCloseRow, rowIndex)}
-                </td>
+                  <td
+                    key={rowIndex}
+                    className="editableCell"
+                    colSpan={numberOfColumns}
+                  >
+                    {editableContent &&
+                      editableContent(data, onCloseRow, rowIndex)}
+                  </td>
+                </tr>
+              ) : (
+                <>
+                  <tr
+                    key={rowIndex}
+                    className={
+                      isExpandableRowOpen
+                        ? 'expandableRow-open'
+                        : 'expandableRow'
+                    }
+                  >
+                    {expandIconPlacement === 'before' && collapseButton}
+                    {this._renderRow(data, columns, rowIndex)}
+                    {!(expandIconPlacement === 'before') && collapseButton}
+                  </tr>
+                  <tr>
+                    {expandIconPlacement === 'before' && <td />}
+                    <td className="expandableCell" colSpan={numberOfColumns}>
+                      {expandableContent &&
+                        expandableContent(data, onCloseRow, rowIndex)}
+                    </td>
+                  </tr>
+                </>
+              )
+            ) : (
+              <tr key={rowIndex}>
+                {(tableHasScroll || expandIconPlacement === 'before') &&
+                  actionButtons}
+                {this._renderRow(data, columns, rowIndex)}
+                {!tableHasScroll &&
+                  expandIconPlacement !== 'before' &&
+                  actionButtons}
               </tr>
             )}
           </>
@@ -91,17 +166,33 @@ export default class TableRow<P> extends React.PureComponent<TableRowProps<P>> {
   }
   _renderRow = (data: any, columns: any[], rowKey: number) => {
     return columns.map((column, cellIndex) => {
+      if (cellIndex > 0) {
+        return (
+          <td
+            className={classnames(
+              !this.props.isEditableRowOpen ? 'is-closed' : '',
+              column.alignment,
+              column.hideOnMobile ? 'hideOnMobile' : ''
+            )}
+            key={rowKey + '_' + cellIndex}
+          >
+            {data[column.fieldName]}
+          </td>
+        );
+      }
       return (
-        <td
+        <th
+          scope={'row'}
           className={classnames(
             !this.props.isEditableRowOpen ? 'is-closed' : '',
             column.alignment,
-            column.hideOnMobile ? 'hideOnMobile' : ''
+            column.hideOnMobile ? 'hideOnMobile' : '',
+            'tableRow'
           )}
           key={rowKey + '_' + cellIndex}
         >
           {data[column.fieldName]}
-        </td>
+        </th>
       );
     });
   };
