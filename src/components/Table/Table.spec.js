@@ -189,8 +189,10 @@ describe('Table komponent', () => {
     expect(tableRow.at(2).exists('button.expandButton')).toEqual(true);
   });
   it('viser ekspanderbart innhold når ekspanderingsknapp for en tabellrad klikkes', () => {
-    const mockContent = (data, close, rowIndex) => (
-      <div className={'mockDiv'}>Ekspanderbart innhold for {data.Måned}</div>
+    const mockContent = (mockdata, close, rowIndex) => (
+      <div className={'mockDiv'}>
+        Ekspanderbart innhold for {mockdata.Måned}
+      </div>
     );
     const wrapper = oppsettMount({
       data,

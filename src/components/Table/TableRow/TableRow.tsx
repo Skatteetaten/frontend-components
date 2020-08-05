@@ -136,7 +136,7 @@ export default class TableRow<P> extends React.PureComponent<TableRowProps<P>> {
                   >
                     {expandIconPlacement === 'before' && collapseButton}
                     {this._renderRow(data, columns, rowIndex)}
-                    {!(expandIconPlacement === 'before') && collapseButton}
+                    {expandIconPlacement !== 'before' && collapseButton}
                   </tr>
                   <tr>
                     {expandIconPlacement === 'before' && <td />}
