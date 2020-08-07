@@ -123,8 +123,8 @@ describe('Pagination komponent', () => {
     expect(range.startPage).toEqual(1);
     expect(range.endPage).toEqual(2);
     range = getSlidingWindowEdges(16, 100, 5, 5);
-    expect(range.startPage).toEqual(12);
-    expect(range.endPage).toEqual(16);
+    expect(range.startPage).toEqual(14);
+    expect(range.endPage).toEqual(18);
   });
   it('skal genere en side dersom total er mindre enn pageSize', () => {
     let wrapper = oppsettFullDOM({
