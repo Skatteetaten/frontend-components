@@ -5,6 +5,12 @@ import { getClassNames } from './Table.classNames';
 
 import TableRow from './TableRow';
 
+export enum Language {
+  en = 'en',
+  nb = 'nb',
+  nn = 'nn'
+}
+
 interface TableProps<P> extends React.HTMLAttributes<HTMLDivElement> {
   /** Mulighet for å legge inn egen klasse for å overstyre stiling */
   className?: string;
@@ -56,6 +62,8 @@ interface TableProps<P> extends React.HTMLAttributes<HTMLDivElement> {
      */
     autohideSorting?: boolean;
   }[];
+  /** Språkvalg for hva skjermleser leser opp. Default er Norsk Bokmål */
+  language?: Language;
 }
 
 interface TableState {
@@ -65,6 +73,25 @@ interface TableState {
   tableIsScrollable: boolean;
   sort: { ascending: boolean; columnFieldName: string };
 }
+
+const languageKeys = {
+  en: {
+    sortable: 'sortable',
+    sorted_descending: 'sorted descending',
+    sorted_rising: 'sorted rising'
+  },
+  nb: {
+    sortable: 'sorterbar',
+    sorted_descending: 'sortert synkende',
+    sorted_rising: 'sortert stigende'
+  },
+  nn: {
+    sortable: 'sorterbar',
+    sorted_descending: 'sortert søkkande',
+    sorted_rising: 'sortert stigande'
+  }
+};
+
 /**
  * @visibleName Table (Tabell)
  */
@@ -118,7 +145,8 @@ export default class Table<P> extends React.PureComponent<
       expandIconPlacement,
       children,
       className,
-      id
+      id,
+      language
     } = this.props;
     const { tableIsScrollable } = this.state;
     const columns = this.props.columns;
@@ -140,7 +168,7 @@ export default class Table<P> extends React.PureComponent<
             <tr>
               {(tableIsScrollable || expandIconPlacement === 'before') &&
                 emptyTd}
-              {this._getHeader(columns)}
+              {this._getHeader(columns, language)}
               {!tableIsScrollable &&
                 expandIconPlacement !== 'before' &&
                 emptyTd}
@@ -176,7 +204,10 @@ export default class Table<P> extends React.PureComponent<
     }
   };
 
-  _getHeader = (columns: TableProps<P>['columns']) => {
+  _getHeader = (
+    columns: TableProps<P>['columns'],
+    language: Language | undefined
+  ) => {
     return (
       columns &&
       columns.map(key => {
@@ -191,6 +222,23 @@ export default class Table<P> extends React.PureComponent<
           return (
             <th
               key={key.fieldName}
+              scope="col"
+              aria-label={
+                isSorted
+                  ? isSortedAscending
+                    ? key.name.concat(
+                        ' ',
+                        languageKeys[language || 'nb'].sorted_rising
+                      )
+                    : key.name.concat(
+                        ' ',
+                        languageKeys[language || 'nb'].sorted_descending
+                      )
+                  : key.name.concat(
+                      ' ',
+                      languageKeys[language || 'nb'].sortable
+                    )
+              }
               onClick={() => this._setSortingState(key.fieldName)}
               className={classnames(
                 'sortable',
@@ -202,7 +250,6 @@ export default class Table<P> extends React.PureComponent<
                   ? this._setSortingState(key.fieldName)
                   : null;
               }}
-              scope="col"
             >
               {key.name}
               <Icon
