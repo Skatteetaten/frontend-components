@@ -14,13 +14,8 @@ exports[`Dropdown komponent matcher snapshot 1`] = `
         "className": "SkeDropdownValg-44",
       }
     }
-<<<<<<< HEAD
-    className="SkeDropdown-42"
-    id="dropdown-todo-input"
-=======
     className="main-42"
-    id="dropdown-undefined-input"
->>>>>>> develop
+    id="dropdown-todo-input"
     onRenderCaretDown={[Function]}
     options={
       Array [
