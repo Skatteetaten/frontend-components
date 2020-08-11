@@ -3,15 +3,21 @@
 Komponenten er basert på at du sender inn sti til API. Dersom ikke dette skulle passe er det mulighet for å bruke uploadFile og kjøre en egendefinert funksjon.
 
 ```js
-import React from 'react';
+import { useState } from 'react';
+import { UseScreen } from '../index';
 import {
   FileUploader,
   FileFormatTypes,
 } from '@skatteetaten/frontend-components';
-const [files, setFiles] = React.useState([]);
-const [spinner, setSpinner] = React.useState(false);
+const [files, setFiles] = useState([]);
+const [spinner, setSpinner] = useState(false);
 
-<div style={{ width: '300px' }}>
+const styles = {
+  container: {
+    width: size.lt.md ? '100%' : '300px',
+  },
+};
+<div style={styles.container}>
   <FileUploader
     addFileString={'Last opp fil'}
     label={'Last opp vedlegg'}
@@ -43,14 +49,22 @@ const [spinner, setSpinner] = React.useState(false);
 Mulighet til å laste opp flere filer samtidig:
 
 ```js
-import React from 'react';
+import { useState } from 'react';
+import { UseScreen } from '../index';
 import {
   FileUploader,
   FileFormatTypes,
 } from '@skatteetaten/frontend-components';
-const [files, setFiles] = React.useState([]);
+const [files, setFiles] = useState([]);
+const [spinner, setSpinner] = useState(false);
 
-<div style={{ width: '400px' }}>
+const styles = {
+  container: {
+    width: size.lt.lg ? '100%' : '420px',
+  },
+};
+
+<div style={styles.container}>
   <FileUploader
     label={'Last opp bilde'}
     acceptedFileFormats={[FileFormatTypes.png, FileFormatTypes.jpg]}

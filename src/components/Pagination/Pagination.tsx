@@ -32,9 +32,9 @@ const getNumberOfPages = (total: number, pageSize: number) => {
 };
 
 const range = (start: number, end: number, pagesDisplayed: number) =>
-  [...new Array(pagesDisplayed < end ? pagesDisplayed : end)].map(
-    (v, k) => k + start
-  );
+  [...new Array(pagesDisplayed < end ? pagesDisplayed : end)]
+    .filter((v, k) => !(k + start > end))
+    .map((v, k) => k + start);
 
 export const getSlidingWindowEdges = (
   currentPage: number,
@@ -55,6 +55,12 @@ export const getSlidingWindowEdges = (
   }
   let endPage = startPage + (pagesDisplayed - 1);
 
+  // Funkjson for å sette currentPage midt i sidevelger
+  if (endPage === currentPage && !(endPage >= numberOfPages)) {
+    const addValue = Math.floor(pagesDisplayed / 2);
+    endPage = endPage + addValue;
+    startPage = startPage + addValue;
+  }
   if (endPage > numberOfPages) {
     endPage = numberOfPages;
   }
@@ -205,17 +211,28 @@ export const Pagination: React.FC<PaginationProps> = (props) => {
     ariaLabelNavigationLink,
     ariaLabelNavigationLinkActive,
     className,
-    currentPage,
     nextLabel,
     onPageChange,
     pagesDisplayed,
-    pageSize,
     previousLabel,
     total,
   } = props;
   const styles = getClassNames();
+  const [pageSize, setPageSize] = React.useState(props.pageSize);
+  const [currentPage, setCurrentPage] = React.useState(props.currentPage);
   const firstListObject = (currentPage - 1) * pageSize;
   const lastListObject = Math.min(firstListObject + pageSize, total);
+
+  React.useEffect(() => {
+    setCurrentPage(props.currentPage);
+  }, [props.currentPage]);
+
+  React.useEffect(() => {
+    if (pageSize !== props.pageSize) {
+      setCurrentPage(1);
+    }
+    setPageSize(props.pageSize);
+  }, [props.pageSize, pageSize]);
 
   const view =
     lastListObject > total ? total : firstListObject + 1 + '-' + lastListObject;

@@ -1,4 +1,4 @@
-import { mergeStyles } from '@uifabric/merge-styles';
+import { mergeStyles, mergeStyleSets } from '@uifabric/merge-styles';
 import { getTheme } from '@uifabric/styling';
 import {
   FontSizes,
@@ -41,47 +41,56 @@ export const getClassNames = (props: DropdownProps) => {
   const inset = 0;
   const radius = '0';
 
-  return mergeStyles({
-    displayName: 'SkeDropdown',
-    selectors: {
-      ...getFieldTypeStyles(props),
-      '& .ms-TextField-errorMessage': {
-        fontSize: FontSizes.small,
+  return mergeStyleSets({
+    main: {
+      selectors: {
+        ...getFieldTypeStyles(props),
+        '& .ms-TextField-errorMessage': {
+          fontSize: FontSizes.small,
+        },
+        '::-moz-focus-inner': {
+          border: '0',
+        },
+        '& .ms-Dropdown-title': {
+          borderColor: palette.skeColor.blackAlt,
+          borderRadius: '0px',
+        },
+        '& .ms-Dropdown-title.ms-Dropdown-title': errorMessage && {
+          borderColor: color,
+          borderWidth: '2px',
+        },
+        // hack
+        '&:focus .ms-Dropdown-title.ms-Dropdown-title': {
+          border: `2px solid ${palette.skeColor.blue}`,
+        },
+        '&.is-disabled.is-disabled span.ms-Dropdown-title': {
+          borderColor: palette.skeColor.grey,
+          borderStyle: 'solid',
+          borderWidth: '1px',
+          backgroundColor: palette.skeColor.whiteGrey,
+        },
+        '&.is-disabled.is-disabled span.ms-Dropdown-caretDownWrapper': {
+          color: palette.skeColor.grey,
+        },
+        '&:focus:after': !props.disabled && {
+          content: '""',
+          position: 'absolute',
+          left: inset + 1,
+          top: inset + 1,
+          bottom: inset + 1,
+          right: inset + 1,
+          borderRadius: radius,
+          outline: 'transparent',
+          zIndex: 1,
+        },
       },
-      '::-moz-focus-inner': {
-        border: '0',
-      },
-      '& .ms-Dropdown-title': {
-        borderColor: palette.skeColor.blackAlt,
-        borderRadius: '0px',
-      },
-      '& .ms-Dropdown-title.ms-Dropdown-title': errorMessage && {
-        borderColor: color,
-      },
-      // hack
-      '&:focus .ms-Dropdown-title.ms-Dropdown-title': {
-        border: `2px solid ${palette.skeColor.blue}`,
-      },
-      '&.is-disabled.is-disabled span.ms-Dropdown-title': {
-        borderColor: palette.skeColor.grey,
-        borderStyle: 'solid',
-        borderWidth: '1px',
-        backgroundColor: palette.skeColor.whiteGrey,
-      },
-      '&.is-disabled.is-disabled span.ms-Dropdown-caretDownWrapper': {
-        color: palette.skeColor.grey,
-      },
-      '&:focus:after': !props.disabled && {
-        content: '""',
-        position: 'absolute',
-        left: inset + 1,
-        top: inset + 1,
-        bottom: inset + 1,
-        right: inset + 1,
-        borderRadius: radius,
-        outline: 'transparent',
-        zIndex: 1,
-      },
+    },
+    readOnly: {
+      borderStyle: 'none',
+      fontSize: FontSizes.medium,
+      fontWeight: 700,
+      display: 'block',
+      padding: 0,
     },
   });
 };
@@ -142,14 +151,19 @@ export const getCalloutClassNames = () => {
         top: inset + 1,
         bottom: inset + 1,
         right: inset + 1,
-        //border: '2px solid ' + palette.skeColor.blue,
         borderRadius: radius,
         outline: 'transparent',
         zIndex: 1,
         color: palette.skeColor.blackAlt,
       },
-      '.ms-Dropdown-item:hover': {
+      '.ms-Dropdown-optionText': {
+        whiteSpace: 'normal !important',
+      },
+      '.ms-Dropdown-item': {
         color: palette.skeColor.blackAlt,
+        marginTop: '4px',
+        marginBottom: '4px',
+
         selectors: {
           ':hover': {
             background: palette.skeColor.lightBlue,

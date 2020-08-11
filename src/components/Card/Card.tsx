@@ -105,12 +105,10 @@ export class Card extends React.PureComponent<CardProps, CardState> {
       subtitle,
       expand,
       actions,
-      isExpanded,
       className,
       circleOnIcon,
       id,
       buttonType,
-      ...props
     } = this.props;
 
     const styles = getClassNames(this.props, this.state);
@@ -154,11 +152,7 @@ export class Card extends React.PureComponent<CardProps, CardState> {
             )}
           </div>
         ) : null}
-        {isExpandedState && (
-          <div {...props} className={styles.body}>
-            {children}
-          </div>
-        )}
+        {isExpandedState && <div className={styles.body}>{children}</div>}
       </div>
     );
   }

@@ -87,4 +87,18 @@ describe('SearchField komponent', () => {
       'en tekst'
     );
   });
+  it('skal begrense antall viste søkeresultat til "limit"', () => {
+    const wrapper = oppsettFullDOM({
+      ariaLabel: 'searchfield-label',
+      placeholder: 'searchfield-placeholder',
+      className: 'searchfield-classname',
+      id: 'searchfield-id',
+      searchFieldSize: 'standard',
+      limit: 1,
+      options,
+    });
+    const searchField = wrapper.find('input.ms-SearchBox-field');
+    searchField.simulate('change', { target: { name: 'change', value: 'e' } });
+    expect(wrapper.find('li').length).toEqual(1);
+  });
 });

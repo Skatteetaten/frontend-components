@@ -56,4 +56,12 @@ describe('Dropdown komponent', () => {
     expect(wrapper.exists('.ms-Dropdown-header')).toEqual(true);
     expect(wrapper.exists('.ms-Dropdown-divider')).toEqual(true);
   });
+  it('rendrer input med readonly når komponenten har props readOnly ', () => {
+    const wrapper = oppsettFullDOM({
+      readOnly: true,
+      options: options,
+      defaultSelectedKey: 'J',
+    });
+    expect(wrapper.find('input').props().readOnly).toEqual(true);
+  });
 });

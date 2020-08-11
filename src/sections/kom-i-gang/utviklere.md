@@ -8,8 +8,8 @@ Når du bruker designsystemet, blir arbeidet med digitale uttak mer korrekt og e
 Designsystemet blir publisert med semantisk versjonering. Denne retningslinjen indikerer hvor omfattende endringene mellom de forskjellige versjonene er, og sikrer at vi oppdaterer på en kontrollert måte. Vi lager nye versjoner etter følgende modell:
 
 - PATCH-versjon når vi lager bakoverkompatible bugfixes. Bugfix er en intern endring av uønsket oppførsel eller feil. Dette er versjoner som kan bli installert uten at brukere vil merke endringer.
-- MINOR versjon når du legger til ny funksjonalitet på en bakoverkompatibel måte.
-- STOR versjon når vi har API-endringer som ikke er bakoverkompatible.
+- MINOR-versjon når du legger til ny funksjonalitet på en bakoverkompatibel måte.
+- MAJOR-versjon når vi har API-endringer som ikke er bakoverkompatible.
 
 Les mer om [semantisk versjonering](https://semver.org/).
 

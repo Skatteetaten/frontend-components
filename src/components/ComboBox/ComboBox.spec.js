@@ -51,4 +51,19 @@ describe('Combobox komponent', () => {
 
     expect(wrapper.html()).toContain('Feilmelding');
   });
+  it('rendrer input med readonly når komponenten har props readOnly ', () => {
+    const options = [
+      { key: 'A', text: 'alfa', value: 'Alfa' },
+      { key: 'B', text: 'beta', value: 'Beta' },
+      { key: 'C', text: 'gamma', value: 'Gamma' },
+      { key: 'D', text: 'delta', value: 'Delta' },
+      { key: 'E', text: 'echo', value: 'Echo' },
+    ];
+    const wrapper = oppsettFullDOM({
+      readOnly: true,
+      options: options,
+      defaultSelectedKey: 'D',
+    });
+    expect(wrapper.find('input').props().readOnly).toEqual(true);
+  });
 });

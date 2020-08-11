@@ -5,7 +5,6 @@ import { getClassNames } from './SearchField.classNames';
 import { IDropdownOption } from 'office-ui-fabric-react';
 import {
   LabelWithCallout,
-  ActionButton,
   calloutState,
   LabelWithCalloutProps,
 } from '../index';
@@ -34,6 +33,10 @@ export interface SearchFieldProps extends ISearchBoxProps {
   searchFieldSize?: 'standard' | 'large';
   /** @ignore */
   underlined?: ISearchBoxProps['underlined'];
+  /**påkalt etter bruker valger et alternativ*/
+  onSelected?: (option: IDropdownOption) => void;
+  /** Begrens antall viste søkeresultat */
+  limit?: number;
 }
 
 const searchInList = (options: Array<IDropdownOption>, filterText: string) => {
@@ -47,6 +50,14 @@ const searchInList = (options: Array<IDropdownOption>, filterText: string) => {
       );
     })
     .map((option) => option);
+};
+
+const limitNumberOfResults = (list: Array<IDropdownOption>, limit?: number) => {
+  if (limit && !isNaN(limit)) {
+    return list.slice(0, limit);
+  }
+
+  return list;
 };
 
 /**
@@ -63,7 +74,9 @@ export const SearchField: React.FC<SearchFieldProps> = (props) => {
     labelCallout,
     onCalloutToggle,
     onChange,
+    onSelected,
     options,
+    limit,
     ...rest
   } = props;
   const _searchBoxElement = React.createRef<HTMLDivElement>();
@@ -102,6 +115,14 @@ export const SearchField: React.FC<SearchFieldProps> = (props) => {
     listRefs.current = [];
   };
 
+  const selectEvent = (item: IDropdownOption) => {
+    setValue(item.text);
+    onSelected && onSelected(item);
+    setDropdownVisible(false);
+    setFocus(-1);
+    listRefs.current = [];
+  };
+
   const handleOnKeyDown = (ev: React.KeyboardEvent<HTMLElement>) => {
     if (dropdownVisible && listRefs.current) {
       let newFocus = focus;
@@ -135,7 +156,8 @@ export const SearchField: React.FC<SearchFieldProps> = (props) => {
 
   const setSearchResult = (newValue: string) => {
     if (options && newValue) {
-      const newList = searchInList(options, newValue);
+      let newList = searchInList(options, newValue);
+      newList = limitNumberOfResults(newList, limit);
       setSearchResultList(newList);
       setDropdownVisible(newList.length > 0);
     }
@@ -154,7 +176,7 @@ export const SearchField: React.FC<SearchFieldProps> = (props) => {
               <li
                 aria-label={listItem.text}
                 key={listItem.key}
-                onClick={() => changeEvent(listItem.text)}
+                onClick={() => selectEvent(listItem)}
                 onKeyPress={(ev) => {
                   if (ev.keyCode === 0) {
                     changeEvent(listItem.text);
@@ -170,14 +192,13 @@ export const SearchField: React.FC<SearchFieldProps> = (props) => {
                 role="option"
                 aria-selected={key === focus}
               >
-                <ActionButton
-                  ariaLabel={listItem.text}
-                  className={styles.blackAlt}
+                <div
                   title={listItem.text}
+                  className={styles.blackAlt}
                   tabIndex={-1}
                 >
                   {listItem.text}
-                </ActionButton>
+                </div>
               </li>
             );
           })}

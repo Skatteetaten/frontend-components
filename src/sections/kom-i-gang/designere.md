@@ -30,6 +30,30 @@ const style = {
 
 <OpenClose title={'Versjonshistorikk'}>
   <Typography>
+    <h4>Versjon 1.3</h4>
+    <ul>
+      <li>Nytt symbol: Paginering.</li>
+      <li>
+        TopStripe og TopBanner har nå egne symboler tilpasset størrelsene 1440,
+        1024 og 320px.
+      </li>
+      <li>ScrollToTopButton har oppdatert ikon</li>
+      <li>
+        StepList: IconStep (steg med ikon i stedet for tall) er lagt inn som ny
+        tilstand.
+      </li>
+      <li>
+        Nye ikoner: Pencil-off, Enkeltpersonsforetak, VerticalDots,
+        VerticalDotsCircle, VerticalDotsCircleSolid
+      </li>
+      <li>
+        Justerte komponenter: Tabs (arkfane), ProgressBar (UU), MessageBar
+        (SevereWarning), Inputfelt (nye error-tilstander og Input Label),
+        StepList (plassering av knapp)
+      </li>
+      <li>Farger: opprydding av duplikater og forbedret Burgundy.</li>
+    </ul>
+
     <h4 style={{ marginTop: '0' }}>Versjon 1.2</h4>
     <ul>
       <li>

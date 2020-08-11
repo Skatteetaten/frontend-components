@@ -682,5 +682,22 @@ Object.keys(iconGroup).forEach((name) => {
     Material design icons (https://materialdesignicons.com), utvidet med noen
     egendesignede ikoner (i SVG)
   </p>
+  <h3>Temaikoner</h3>
+  <p>
+    Temaikonene er ment å brukes i størrelser på 48px og oppover. Bruk dem til å
+    f.eks. markere starten på en temaseksjon (sammen med en passende
+    overskrift).
+  </p>
+  <h3>Temaikoner i komponenter</h3>
+  <p>
+    Generelt kan man bruke temaikonene som del av et grensesnitt. Unngå å bruke
+    dem som interaksjonselementer/knapper, med disse unntakene:
+  </p>
+  <ul>
+    <li>Som del av en NavigationTile</li>
+    <li>
+      Som del av en seksjon/et Card, med interaksjonselementer ved siden av
+    </li>
+  </ul>
 </div>
 ```
