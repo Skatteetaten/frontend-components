@@ -2,6 +2,7 @@ import React from 'react';
 import toJson from 'enzyme-to-json';
 import { shallow, mount } from 'enzyme';
 import { Dropdown } from '../index';
+import { KeytipData } from 'office-ui-fabric-react';
 
 function oppsettShallow(props) {
   return shallow(<Dropdown {...props} />);
@@ -50,7 +51,7 @@ describe('Dropdown komponent', () => {
       options: options,
     });
 
-    const input = wrapper.find('KeytipData');
+    const input = wrapper.find(KeytipData);
     input.simulate('click');
     expect(wrapper.exists('.ms-Dropdown-optionText')).toEqual(true);
     expect(wrapper.exists('.ms-Dropdown-header')).toEqual(true);
