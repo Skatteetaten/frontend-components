@@ -3,7 +3,7 @@ import {
   IProgressIndicatorProps,
   ProgressIndicator,
 } from 'office-ui-fabric-react';
-import * as React from 'react';
+import React from 'react';
 import { getClassNames } from './ProgressBar.classNames';
 
 /**
