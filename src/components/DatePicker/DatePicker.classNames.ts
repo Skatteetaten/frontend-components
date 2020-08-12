@@ -79,6 +79,9 @@ export const getClassNames = (props: DatePickerProps) => {
       '& .ms-TextField.is-disabled i': {
         color: palette.skeColor.grey
       },
+      '& .ms-TextField.is-disabled input': {
+        padding: '8px'
+      },
       '& .ms-TextField.is-disabled .ms-TextField-fieldGroup': readonlyMode && {
         backgroundColor: 'transparent'
       },
