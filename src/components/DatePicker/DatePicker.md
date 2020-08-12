@@ -32,13 +32,15 @@ Veksle mellom skrive og lesemodus:
 
 ```js
 import DatePicker from '@skatteetaten/frontend-components/DatePicker';
+const [dato, setDato] = React.useState(new Date());
 <div className="ExampleFlexContainer-200">
   <DatePicker
     id={'readonly-date'}
     readonlyMode
     editable
     label={'Velg en dato'}
-    value={new Date()}
+    value={dato}
+    onSelectDate={datoVerdi => setDato(datoVerdi)}
   />
 </div>;
 ```

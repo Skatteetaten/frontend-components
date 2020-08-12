@@ -138,13 +138,16 @@ export const DatePicker: React.FC<DatePickerProps> = (
   }, [editMode, readonlyMode]);
 
   const onEdit = () => {
-    datePicker.current && datePicker.current.focus();
-    setEditMode(true);
+    if (!editMode) {
+      datePicker.current && datePicker.current.focus();
+    }
+    setEditMode(!editMode);
   };
 
   const onBlur: IDatePickerProps['onBlur'] = e => {
     rest.onBlur && rest.onBlur(e);
-    if (editMode) {
+    // @ts-ignore
+    if (editMode && !datePicker.current?.state.isDatePickerShown) {
       setEditMode(!editMode);
     }
   };
