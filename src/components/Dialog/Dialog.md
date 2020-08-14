@@ -161,21 +161,28 @@ function closeDialog() {
 ```
 
 ```js noeditor beskrivelse
-  <h3>Vise valg innenfor kontekst</h3>
+  <h3>En dialogboks fremhever informasjon</h3>
   <p>
-    En dialogboks (modal) brukes gjerne til å gi brukeren et valg samtidig som
-    konteksten beholdes.
+    Dialogboksen dukker opp midt på skjermen for å tiltrekke seg brukerens oppmerksomhet. Det kan for eksempel gjelde en viktig beskjed eller noe brukeren må velge for å fortsette.
   </p>
   <p>
-    Hvis brukeren skal ta stilling til et valg i dialogen bør den settes opp
-    slik at annen brukerinput blir blokkert.{' '}
+    Hvis brukeren skal ta et valg i dialogboksen, bør vi blokkere annen brukerinput.{' '}
   </p>
   <h3>Tre varianter</h3>
   <p>
-    Dialogen finnes i tre varianter; «standard», «luftig» eller «viktig»:
-    Luftig kan brukes hvor du ønsker å at dialogen skal tiltrekke seg ektra
-    oppmerksomhet, mens viktig brukes dersom vi ønsker å formidle en viktig
-    melding der Skatteetaten er avsender.
+    Dialogen finnes i tre varianter: 
+  <ul>
+  <li>
+  Standard – for generelt innhold. 
+  </li> 
+  <li>
+  Luftig – når dialogen skal tiltrekke seg ekstra oppmerksomhet. 
+  </li>
+  <li>
+  <li>
+  Luftig – når dialogen skal tiltrekke seg ekstra oppmerksomhet. 
+  </li> 
+  </ul> 
   </p>
   <p>Dialogen kan inneholde tekst, inputfelt, hjelpeikoner osv.</p>
   <p>
