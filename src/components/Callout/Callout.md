@@ -165,27 +165,28 @@ function closeButton() {
 
 ```js noeditor beskrivelse
   <p>
-    Merk at Callout kun skal brukes i interne løsninger. Se universell
-    utforming for begrunnelse.
+  <h4>Kun i interne løsninger</h4>
+  
+  Vi bruker callout normalt for å vise en hjelpetekst. Et typisk eksempel er et ikon med en «i», der en informasjons-tekst dukker opp når brukeren trykker på ikonet. 
+ 
+  Merk at vi bare bruker callout i interne løsninger fordi dette ikke støtter universell utforming. Se begrunnelse under fanen universell utforming.
+
   </p>
-  <h4>Farger</h4>
+  <h4>Vi bruker grønn og gul farge på boksene</h4>
   <ul>
-    <li>Grønn til hjelpetekster</li>
+    <li>Grønn til hjelpetekster.</li>
     <li>Gul til informasjon og opplysning.</li>
   </ul>
-  <h4>Farger som brukes med forsiktighet</h4>
+  <h4>Unntak fra regelen:</h4>
   <ul>
     <li>
-      Rød til feil og advarsler. Denne skal i utgangspunktet ikke brukes. Hvis
-      det er feil, skal det vises brukeren uten at hun trenger å klikke den
-      frem.
+    Blå farge, for å støtte gammel visuell profil. Det vil si saksbehandlingsløsninger som alt har blå informasjonsbokser. Vi bruker ikke blå i nye løsninger.
     </li>
     <li>
-      Blå for or å støtte gammel visuell profil (saksbehandlingsløsninger som
-      allerede har blå informasjonsbokser). Brukes ikke i nye løsninger.
+    Hvit farge, i tilfeller der grønn og gul gir for lav lesekontrast.
     </li>
     <li>
-      Hvit i unntaktstilfeller der de andre fargene gir for lav lesekontrast
+    Når det gjelder rød farge skal vi ikke bruke denne på utropsbokser. Må vi kommunisere en feil, skal vi fortelle det uten at brukeren må klikke det frem.  
     </li>
 </ul>
 ```
