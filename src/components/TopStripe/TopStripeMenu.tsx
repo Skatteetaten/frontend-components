@@ -55,6 +55,7 @@ export const TopStripeMenu: React.FC<TopStripeMenuProps> = props => {
         aria-expanded={open === index}
         className={classnames(styles.plainButton, className)}
         onClick={() => setOpen(index)}
+        showOnMobile={showOnMobile}
       >
         {title}
         {props.showChevron ? (
