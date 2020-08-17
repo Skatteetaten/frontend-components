@@ -12,7 +12,6 @@ import {
   LabelWithCallout,
   calloutState,
 } from '../index';
-import { useId } from '@reach/auto-id';
 
 export interface IRadioButtonGroupOptions extends IChoiceGroupOption {
   description?: string;
@@ -78,7 +77,7 @@ export const RadioButtonGroup = (props: RadioButtonGroupProps) => {
 
   const styles = getClassNames({ ...props });
 
-  const generatedId = useId(id);
+  const generatedId = `${new Date().getMilliseconds()}`;
   const mainId = id ? id : 'radiogroup-' + generatedId;
   const groupId = mainId + '-group';
   const labelId = mainId + '-label';

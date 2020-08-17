@@ -25,6 +25,7 @@ const externalsConfig = {
     'moment',
     'classnames',
     'axios',
+    'tslib',
   ],
 };
 const resolveConfig = {

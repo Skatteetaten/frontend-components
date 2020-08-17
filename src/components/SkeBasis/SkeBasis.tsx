@@ -6,12 +6,7 @@ import {
 } from '@uifabric/styling';
 import { Fabric, IFabricProps } from 'office-ui-fabric-react';
 import * as React from 'react';
-import { Fonts, SkeIcons, MdIcons, skeColor, skePalette } from '../index';
-
-const palette = {
-  ...skePalette,
-  skeColor: skeColor,
-};
+import { Fonts, SkeIcons, MdIcons, Palette } from '../index';
 
 export interface SkeBasisProps extends IFabricProps {
   palette?: object;
@@ -20,7 +15,7 @@ export interface SkeBasisProps extends IFabricProps {
 }
 
 export class SkeBasis extends React.PureComponent<SkeBasisProps> {
-  static PALETTE = palette;
+  static PALETTE = Palette;
   static FONTS = Fonts;
   static ICONS = {
     ske: SkeIcons,
