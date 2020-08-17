@@ -69,7 +69,6 @@ const Dropdown: React.FC<DropdownProps> = props => {
   const inputId = mainId + '-input';
   const labelId = mainId + '-label';
   const styles = getClassNames(props);
-  // @ts-ignore
   const dropdownStyles: IStyleFunctionOrObject<
     IDropdownStyleProps,
     IDropdownStyles

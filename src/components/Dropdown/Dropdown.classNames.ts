@@ -5,6 +5,7 @@ import { MdIcons } from '../utils/icons/';
 import { Animation } from '../utils/getAnimationStyles';
 import { PaletteProps } from '..';
 import { DropdownProps } from './Dropdown';
+import { IDropdownStyles } from 'office-ui-fabric-react';
 
 function getFieldTypeStyles(props: DropdownProps) {
   if (props.inputSize === 'large') {
@@ -126,7 +127,7 @@ export const getErrorClassNames = (props: DropdownProps) => {
   });
 };
 
-export const getCalloutStyles = () => {
+export const getCalloutStyles = (): Partial<IDropdownStyles> => {
   const palette = getTheme().palette as PaletteProps;
   const inset = 0;
   const radius = '0';
