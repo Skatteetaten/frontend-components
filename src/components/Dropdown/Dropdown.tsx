@@ -15,7 +15,7 @@ import { IStyleFunctionOrObject } from '@uifabric/utilities';
 import {
   IDropdownStyleProps,
   IDropdownStyles
-} from 'office-ui-fabric-react/src/components/Dropdown/Dropdown.types';
+} from 'office-ui-fabric-react/lib-commonjs/Dropdown';
 
 export interface DropdownProps extends IDropdownProps {
   /** Lukk callout på blur */
@@ -69,6 +69,7 @@ const Dropdown: React.FC<DropdownProps> = props => {
   const inputId = mainId + '-input';
   const labelId = mainId + '-label';
   const styles = getClassNames(props);
+  // @ts-ignore
   const dropdownStyles: IStyleFunctionOrObject<
     IDropdownStyleProps,
     IDropdownStyles
