@@ -4,6 +4,7 @@ import moment from 'moment';
 import 'moment/locale/nb';
 import {
   DatePicker as FabricDatePicker,
+  DatePickerBase,
   DayOfWeek,
   IDatePickerProps
 } from 'office-ui-fabric-react/lib-commonjs/DatePicker';
@@ -12,7 +13,6 @@ import ErrorMessage from '../ErrorMessage';
 import { getClassNames } from './DatePicker.classNames';
 import LabelWithCallout, { calloutState } from '../LabelWithCallout';
 import { LabelWithCalloutProps } from '../LabelWithCallout/LabelWithCallout';
-import { IDatePicker } from 'office-ui-fabric-react';
 import { useId } from '@reach/auto-id';
 
 const DEFAULT_DATE_FORMAT = 'DD.MM.YYYY';
@@ -127,7 +127,7 @@ export const DatePicker: React.FC<DatePickerProps> = (
   const inputId = mainId + '-input';
   const labelId = mainId + '-label';
 
-  const datePicker = React.useRef<IDatePicker | null>();
+  const datePicker = React.useRef<DatePickerBase | null>();
   const [editMode, setEditMode] = React.useState<boolean>(false);
   const [readOnly, setReadOnly] = React.useState<boolean | undefined>(
     readonlyMode && !editMode
@@ -146,7 +146,6 @@ export const DatePicker: React.FC<DatePickerProps> = (
 
   const onBlur: IDatePickerProps['onBlur'] = e => {
     rest.onBlur && rest.onBlur(e);
-    // @ts-ignore
     if (editMode && !datePicker.current?.state.isDatePickerShown) {
       setEditMode(!editMode);
     }
@@ -178,7 +177,7 @@ export const DatePicker: React.FC<DatePickerProps> = (
           className
         )}
         componentRef={ref => {
-          datePicker.current = ref;
+          datePicker.current = ref as DatePickerBase;
         }}
         disabled={readOnly ? true : rest.disabled}
         onBlur={onBlur}
