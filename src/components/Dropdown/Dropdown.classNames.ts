@@ -165,8 +165,8 @@ export const getCalloutStyles = (): Partial<IDropdownStyles> => {
       }
     },
     dropdownItemSelected: {
-      color: palette.skeColor.white,
-      background: `${palette.skeColor.burgundy} !important`
+      color: palette.skeColor.blackAlt,
+      background: `${palette.skeColor.whiteGrey} !important`
     },
     dropdownOptionText: { whiteSpace: 'normal !important' }
   };
