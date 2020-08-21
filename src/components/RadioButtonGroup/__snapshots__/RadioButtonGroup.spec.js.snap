@@ -3,20 +3,20 @@
 exports[`RadioButtonGroup komponent matcher snapshot 1`] = `
 <fieldset
   className="fieldset-42"
-  id="radiogroup-895"
+  id="radiogroup-123"
 >
   <legend
     className="labelAsLegend-46"
-    id="radiogroup-895-label"
+    id="radiogroup-123-label"
   >
     Velg en
   </legend>
   <div
     className="radioButtons-43"
-    id="radiogroup-895-group"
+    id="radiogroup-123-group"
   >
     <div
-      aria-labelledby="radiogroup-895-label"
+      aria-labelledby="radiogroup-123-label"
       className="ms-ChoiceFieldGroup root-51"
       role="radiogroup"
     >

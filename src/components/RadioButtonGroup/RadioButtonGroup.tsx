@@ -11,6 +11,7 @@ import {
   ErrorMessage,
   LabelWithCallout,
   calloutState,
+  generateId,
 } from '../index';
 
 export interface IRadioButtonGroupOptions extends IChoiceGroupOption {
@@ -77,7 +78,7 @@ export const RadioButtonGroup = (props: RadioButtonGroupProps) => {
 
   const styles = getClassNames({ ...props });
 
-  const generatedId = `${new Date().getMilliseconds()}`;
+  const generatedId = generateId();
   const mainId = id ? id : 'radiogroup-' + generatedId;
   const groupId = mainId + '-group';
   const labelId = mainId + '-label';

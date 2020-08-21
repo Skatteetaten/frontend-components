@@ -1,6 +1,11 @@
 import * as React from 'react';
 import classnames from 'classnames';
-import { ErrorMessage, LabelWithCallout, calloutState } from '../index';
+import {
+  ErrorMessage,
+  LabelWithCallout,
+  calloutState,
+  generateId,
+} from '../index';
 import {
   ITextFieldProps,
   MaskedTextField,
@@ -74,8 +79,8 @@ export const TextField: React.FC<TextFieldProps> = ({
   rest.inputSize = rest.inputSize || 'normal';
   const shouldEditWhenEmpty = rest.editableWhenEmpty ? value === '' : false;
 
-  const genratedId = 'todo';
-  const mainId = id ? id : 'textfield-' + genratedId;
+  const generatedId = generateId();
+  const mainId = id ? id : 'textfield-' + generatedId;
   const inputId = mainId + '-input';
   const labelId = mainId + '-label';
 

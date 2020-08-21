@@ -16,6 +16,7 @@ export { default as SkeIcons } from './utils/icons/icons-ske';
 export { default as MdIcons } from './utils/icons/icons-mdi';
 export { Animation } from './utils/getAnimationStyles';
 export { takeIf } from './utils/helpers';
+export { generateId } from './utils/generateId';
 export { Accordion } from './Accordion/Accordion';
 export type { AccordionProps } from './Accordion/Accordion';
 export { AccordionItem } from './Accordion/AccordionItem/AccordionItem';

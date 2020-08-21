@@ -7,6 +7,7 @@ import {
   LabelWithCallout,
   calloutState,
   LabelWithCalloutProps,
+  generateId,
 } from '../index';
 
 export interface SearchFieldProps extends ISearchBoxProps {
@@ -207,8 +208,8 @@ export const SearchField: React.FC<SearchFieldProps> = (props) => {
     );
   };
 
-  const genratedId = 'todo';
-  const mainId = id ? id : 'searchfield-' + genratedId;
+  const generatedId = generateId();
+  const mainId = id ? id : 'searchfield-' + generatedId;
   const inputId = mainId + '-input';
   const labelId = mainId + '-label';
 

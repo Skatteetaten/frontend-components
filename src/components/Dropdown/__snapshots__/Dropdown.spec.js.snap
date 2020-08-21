@@ -2,20 +2,15 @@
 
 exports[`Dropdown komponent matcher snapshot 1`] = `
 <div
-  id="dropdown-todo"
+  id="dropdown-123"
 >
   <LabelWithCallout
-    id="dropdown-todo-label"
-    inputId="dropdown-todo-input-option"
+    id="dropdown-123-label"
+    inputId="dropdown-123-input-option"
   />
   <StyledWithResponsiveMode
-    calloutProps={
-      Object {
-        "className": "SkeDropdownValg-44",
-      }
-    }
     className="main-42"
-    id="dropdown-todo-input"
+    id="dropdown-123-input"
     onRenderCaretDown={[Function]}
     options={
       Array [
@@ -81,6 +76,48 @@ exports[`Dropdown komponent matcher snapshot 1`] = `
       ]
     }
     placeholder="Select an option"
+    styles={
+      Object {
+        "dropdownItem": Object {
+          "color": "#1d1d1d",
+          "marginBottom": "4px",
+          "marginTop": "4px",
+          "selectors": Object {
+            "&:active": Object {
+              "background": "#cde1f9",
+              "textDecoration": "none",
+            },
+            "&:focus": Object {
+              "background": "#cde1f9",
+              "textDecoration": "underline",
+            },
+            "&:hover": Object {
+              "background": "#cde1f9 !important",
+              "textDecoration": "underline",
+            },
+            "&:hover:after, &:focus:after": Object {
+              "borderRadius": "0",
+              "bottom": 1,
+              "color": "#1d1d1d",
+              "content": "\\"\\"",
+              "left": 1,
+              "outline": "transparent",
+              "position": "absolute",
+              "right": 1,
+              "top": 1,
+              "zIndex": 1,
+            },
+          },
+        },
+        "dropdownItemSelected": Object {
+          "background": "#6f2c3f !important",
+          "color": "#ffffff",
+        },
+        "dropdownOptionText": Object {
+          "whiteSpace": "normal !important",
+        },
+      }
+    }
   />
 </div>
 `;
