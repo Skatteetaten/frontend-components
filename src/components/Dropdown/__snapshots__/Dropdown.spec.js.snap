@@ -110,8 +110,8 @@ exports[`Dropdown komponent matcher snapshot 1`] = `
           },
         },
         "dropdownItemSelected": Object {
-          "background": "#6f2c3f !important",
-          "color": "#ffffff",
+          "background": "#e8e8e8 !important",
+          "color": "#1d1d1d",
         },
         "dropdownOptionText": Object {
           "whiteSpace": "normal !important",

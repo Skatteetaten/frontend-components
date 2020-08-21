@@ -4,10 +4,8 @@
 import { ActionButton } from '@skatteetaten/frontend-components';
 
 <div>
-  <ActionButton ariaLabel={'legg-til'} icon="AddOutline">
-    Legg til
-  </ActionButton>
-  <ActionButton ariaLabel={'oppdater'} icon="Update" color="black">
+  <ActionButton icon="AddOutline">Legg til</ActionButton>
+  <ActionButton icon="Update" color="black">
     Oppdater
   </ActionButton>
 </div>;
@@ -19,7 +17,7 @@ Ikonet kan rendres til høyre for teksten med iconAfter=_true_:
 import { ActionButton } from '@skatteetaten/frontend-components';
 
 <div>
-  <ActionButton ariaLabel={'legg-til'} icon="delete" iconAfter={true}>
+  <ActionButton icon="delete" iconAfter={true}>
     Fjern
   </ActionButton>
 </div>;
