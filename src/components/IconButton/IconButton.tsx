@@ -28,7 +28,6 @@ const IconButton: React.FC<IconButtonProps> = props => {
     <FabricIconButton
       {...rest}
       className={classnames(getClassNames(props), className)}
-      role="button"
       iconProps={{ iconName: icon }}
     />
   );
@@ -40,8 +39,7 @@ IconButton.defaultProps = {
   disabled: undefined,
   icon: undefined,
   onClick: undefined,
-  title: undefined,
-  type: 'default'
+  title: undefined
 };
 
 export default IconButton;
