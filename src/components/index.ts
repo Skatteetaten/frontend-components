@@ -1,4 +1,4 @@
-export { Palette, skeColor, skePalette } from './utils/palette';
+export { default as Palette, skeColor, skePalette } from './utils/palette';
 export type { PaletteProps, SkeColorProp } from './utils/palette';
 export {
   Fonts,

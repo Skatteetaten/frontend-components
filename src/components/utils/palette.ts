@@ -122,7 +122,7 @@ export enum skePalette {
   disabledText = '#c8c8c8',
 }
 
-export const Palette = {
+export default {
   ...skePalette,
   // Egendefinerte farger fra Skatteetatens designmal
   skeColor: skeColor,
