@@ -129,7 +129,10 @@ export interface TopBannerProps {
   id?: string;
   /** Om logoen skal lenke til skatteetaten.no eller ikke (kun ekstern) */
   logoLink?: boolean;
+  /** OnClick event som trigges av klikk på hjemlink */
+  onClick?: () => void;
 }
+
 /**
  * @visibleName TopBanner (Topp)
  */
