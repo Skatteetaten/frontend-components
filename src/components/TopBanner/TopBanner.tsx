@@ -65,7 +65,7 @@ const ExternalHeaderContent = ({ styles, ...props }) => {
   return (
     <>
       <ActionButton
-        href={props.onClick ? undefined : props.homeUrl}
+        href={props.homeUrl ? undefined : props.homeUrl}
         onClick={props.onClick}
         className={styles.linkButton}
         icon="Back"
