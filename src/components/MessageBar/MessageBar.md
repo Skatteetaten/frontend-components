@@ -1,4 +1,5 @@
-** MessageBar brukes til å formidle viktig informasjon til brukeren som skiller seg ut fra øvrig innhold. Den brukes når du skal gi en tilbakemelding til bruker som omhandler en side, delseksjon eller flere elementer på siden. **
+** MessageBar brukes til å formidle viktig informasjon til brukeren som skiller seg ut fra øvrig innhold. 
+Den brukes når du skal gi en tilbakemelding til bruker som omhandler en side, delseksjon eller flere elementer på siden. **
 
 ```js
 import MessageBar from '@skatteetaten/frontend-components/MessageBar';
@@ -79,18 +80,21 @@ const afterDurationComponent = (resetDuration, setShowAlways) => (
 ```
 
 ```js noeditor beskrivelse
-  <p>Varselbokser kan være med eller uten lukkekryss.</p>{' '}
-  <p>Fargebruk skal signalisere:</p>
+  <h3>MessageBar formidler viktig melding.</h3>
+  <p>MessageBar er en varselboks som skiller seg ut fra det øvrige innholdet og der teksten formidler viktig informasjon. 
+Med dette varselet kan du gi tilbakemelding til brukeren om noe som omhandler en side eller elementer på siden, 
+som for eksempel at et vedlegg er lastet opp.</p> 
+<p>Varselbokser kan være med eller uten lukkekryss og du kan variere størrelse på boksen.</p> 
+   <h3>Fargebruk skal signalisere:</h3>
   <ul>
-    <li>Gul/beige (standard): Nøytral </li>
-    <li>Grønn: Ok, vellykket handling</li>
-    <li>Lys rød: Feil, advarsel</li>
-    <li>Mørk rød: Fortrolige opplysninger, sterk advarsel </li>
+    <li>Gul: Nøytral.</li>
+    <li>Grønn: Ok, vellykket handling.</li>
+    <li>Lys rød: Feil eller advarsel.</li>
+    <li>Mørk rød: Fortrolige opplysninger, sterk advarsel.</li>
   </ul>
   <p>
-    Det er ok å variere størrelse på boksen. Ulike bakgrunnsfarger kan
-    kombineres på samme side. Dersom på skjermen handler om sensitive
-    opplysninger (KODE 6), brukes en ekstra uthevet meldingsboks.
+    Ulike bakgrunnsfarger kan kombineres på samme side. 
+Dersom innholdet handler om sensitive opplysninger (KODE 6), skal du bruke en ekstra uthevet meldingsboks.
   </p>
   <p>
     Se{' '}
