@@ -383,17 +383,18 @@ function chooseRow() {
 ```js noeditor beskrivelse
   <h3>Avansert tabell</h3>
   <p>
-    DetailsList brukes når du har liste av mange repterende rader, og samtidig
-    har behov for:
+   DetailsList er nyttig for å vise store mengder informasjon der brukeren skal kunne sortere, gruppere og filtrere.
   </p>
+  <p>
+Denne komponenten bruker vi på lister med mange repeterende rader, hvor brukeren samtidig har behov for å:
+</p>
   <ul>
     <li>Gruppere rader</li>
-    <li>Velge/markere en eller flere rader</li>
+    <li>Velge eller markere en eller flere rader</li>
     <li>Sortere kolonner</li>
   </ul>
   <p>
-    Sørg for å ha den viktigste kolonnen først til venstre, og at det
-    tilstrekkelig kolonnebredde til å vise innholdet. Dersom innholdet er tar
-    mye plass - vurder å bruke variabel høyde på radene.
+    Sørg for å ha den viktigste kolonnen først til venstre, og at det er tilstrekkelig kolonne-bredde til å vise innholdet.
+ Dersom innholdet tar mye plass, kan du vurdere å bruke variabel høyde på radene.
   </p>
 ```
