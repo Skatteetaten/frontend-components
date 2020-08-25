@@ -44,7 +44,7 @@ import Button from '@skatteetaten/frontend-components/Button';
   </p>
   <h3>Fargevalg for spinneren:Farge</h3>
   <ul>
-Svart er standardfarge.
-Hvit bruker vi på knapper med fyll.
+<li>Svart er standardfarge.</li>
+<li>Hvit bruker vi på knapper med fyll.</li>
 </ul>
 ```
