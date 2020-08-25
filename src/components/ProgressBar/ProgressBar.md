@@ -32,13 +32,12 @@ import ProgressBar from '@skatteetaten/frontend-components/ProgressBar';
 ```
 
 ```js noeditor beskrivelse
-  <h3>Tidsgrenser</h3>
+  <h3>Viser hvor langt det tar for noe å laste  </h3>
   <p>
-    Dersom innlasting av data tar mer enn ti seunder og vi kan forutsi
-    fremdriften, kan vi vise dette med med denne komponenten.
+    Dersom innlasting av data tar mer enn ti sekunder og vi kan forutsi fremdriften, kan vi vise dette med ProgressBar.
   </p>
   <p>
-    Bruk vanlig Spinner dersom du ikke kan forutsi fremdriften eller
-    innlasting tar kortere tid.
+    Bruk vanlig Spinner dersom du ikke kan forutsi fremdriften eller hvis
+    innlasting tar kortere tid enn ti sekunder.
   </p>
 ```
