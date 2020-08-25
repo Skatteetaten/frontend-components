@@ -55,8 +55,10 @@ const initialState = {
     Hvis en komponent ikke har innebygget mekanisme for feilmeldinger, kan du bruke ErrorMessage. Denne knytter du til det elementet det gjelder. 
 Typiske situasjoner er felt eller knapper i skjemaer. Feilmeldingen må komme opp i umiddelbar nærhet til delen den hører til.
   </p>
-    <p>For varsler eller feil som gjelder hele siden, skal du bruke MessageBar (varsler).</p>
-
+    <p>For varsler eller feil som gjelder hele siden, skal du bruke .</p>
+{' '} <a href="https://skatteetaten.github.io/frontend-components/#messagebar"> 
+MessageBar (varsler) </a>{' '}
+</p>
   <h3>Feilmeldingen skal hjelpe brukeren videre</h3>
   <p>
     Det er viktig at teksten i feilmeldingen hjelper brukeren til å komme videre, fremfor å peke på hva brukeren har gjort feil. 
