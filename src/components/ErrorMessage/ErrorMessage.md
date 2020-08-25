@@ -50,19 +50,23 @@ const initialState = {
 ```
 
 ```js noeditor beskrivelse
-<h3>Generell feilmelding</h3>
+<h3>Feilmelding som vi knytter til enkeltelement</h3>
   <p>
-    Dersom komponentene ikke har noen innebygget mekanisme for feilmeldinger,
-    kan ErrorMessage brukes for å vise feilmeldinger knyttet til et annet
-    element. Typiske situasjoner er felt eller knapper i skjemaer.
-    Feilmeldingen skal vises i umiddelbar nærhet til elementet den hører til.
+    Hvis en komponent ikke har innebygget mekanisme for feilmeldinger, kan du bruke ErrorMessage. Denne knytter du til det elementet det gjelder. 
+Typiske situasjoner er felt eller knapper i skjemaer. Feilmeldingen må komme opp i umiddelbar nærhet til delen den hører til.
   </p>
-    <p>For feil eller varsler som gjelder hele siden, bruk MessageBar.</p>
+    <p>For varsler eller feil som gjelder hele siden, skal du bruke MessageBar (varsler).</p>
 
-  <h3>Teksten i feilmeldingen</h3>
+  <h3>Feilmeldingen skal hjelpe brukeren videre</h3>
   <p>
-    Teksten i feilmeldingen bør hjelpe brukeren å komme videre, fremfor å peke
-    på hva han/hun har gjort feil. Du kan for eksempel skrive: "Skriv datoen
-    slik: 17.05.2019" i stedet for "Du har brukt feil datoformat."
+    Det er viktig at teksten i feilmeldingen hjelper brukeren til å komme videre, fremfor å peke på hva brukeren har gjort feil. 
+Du kan for eksempel skrive: «Skriv datoen slik: 17.05.2019» i stedet for «Du har brukt feil datoformat».
+  </p>
+ <p>
+    Se{' '}
+    <a href="https://www.skatteetaten.no/stilogtone/skrive/">
+      Skatteetatens skriveregler
+    </a>{' '}
+    for hjelp til å skrive gode tekster inni boksen.
   </p>
 ```
