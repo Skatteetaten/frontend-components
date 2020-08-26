@@ -1,5 +1,4 @@
 import * as React from 'react';
-import i18next from 'i18next';
 import i18n, { t } from './../utils/i18n/i18n';
 import classnames from 'classnames';
 import moment from 'moment';
@@ -100,7 +99,7 @@ export const DatePicker: React.FC<DatePickerProps> = (
     allowTextInput: true,
     dateTimeFormatter: undefined,
     disabled: false,
-    firstDayOfWeek: DayOfWeek.Monday,
+    firstDayOfWeek: language !== 'en' ? DayOfWeek.Monday : DayOfWeek.Sunday,
     firstWeekOfYear: 0, // FirstDay = 0, FirstFullWeek = 1, FirstFourDayWeek = 2
     formatDate: DEFAULTFORMATDATE,
     initialPickerDate: new Date(),
@@ -130,6 +129,7 @@ export const DatePicker: React.FC<DatePickerProps> = (
 
   if (language) {
     i18n.changeLanguage(language);
+    moment.locale(language);
   }
 
   const DEFAULT_STRINGS = {
