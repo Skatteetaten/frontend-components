@@ -226,15 +226,17 @@ const data = [
 ```js noeditor beskrivelse
   <h3>Enkel tabell</h3>
   <p>
-    Table-komponenten kan med fordel brukes ved mindre datamengder. (Har du
-    store mengder data og/eller behov for avansert funksjonalitet - vurderer
-    DetailsList i stedet).
+    Table-komponenten fungerer godt når du har mindre datamengder. Har du derimot store mengder data og/eller behov for avansert funksjonalitet – 
+bør du vurdere {' '} <a href="https://skatteetaten.github.io/frontend-components/#detailslist"> Detailslist (sammensatt tabell) </a>{' '}i stedet.
   </p>
   <h3>Vise eller redigere enkeltrad</h3>
   <p>
-    Komponenten har to tilstander; visningtilstand som bare viser data, og
-    redigering av enkeltrad. Man må fullføre redigering av raden før man kan
-    redigere en annen.
+    Komponenten har to tilstander:
+<ul>
+<li>Visningtilstand som bare viser data.</li>
+<li>Redigering av enkeltrad. Brukeren må fullføre redigering av en rad for å kunne redigere en annen.</li>
+</ul>
+</p>Du kan også sette opp komponenten uten mulighet for redigering.
   </p>
   <p>Det er også mulig å bruke komponenten uten redigering.</p>
 ```
