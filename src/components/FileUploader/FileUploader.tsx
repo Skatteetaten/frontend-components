@@ -198,6 +198,8 @@ const FileUploader: React.FC<FileUploaderProps> = props => {
     if (event.target.files && event.target.files.length > 0) {
       handleNewFiles(Array.from(event.target.files));
     }
+    // Må set input verdi til "" så at det er mulig å opplaste samme fil etter den blir fjernes i Chrome
+    event.target.value = '';
   };
 
   const triggerUpdateFiles = (validFiles: Array<File>) => {
@@ -260,31 +262,33 @@ const FileUploader: React.FC<FileUploaderProps> = props => {
       return;
     }
 
-    setInternalLoading(true);
-    const allPromises = validFiles.map((file: File) =>
-      uploadFilePromise(axiosPath, file, queryParams)
-    );
+    if (validFiles && validFiles.length) {
+      setInternalLoading(true);
+      const allPromises = validFiles.map((file: File) =>
+        uploadFilePromise(axiosPath, file, queryParams)
+      );
 
-    setTimeout(() => {
-      axios
-        .all(allPromises)
-        .then(responses => {
-          setInternalFiles([
-            ...internalFiles,
-            ...responses.map(res => res.data)
-          ]);
-        })
-        .catch(errors => {
-          //TODO: Det trenger design om flere feilmeldinger
-          pushToInternalMessages('Kunne ikke laste opp fil');
-        })
-        .finally(() => {
-          if (afterUpload) {
-            afterUpload();
-          }
-          setInternalLoading(false);
-        });
-    }, props.forsinkelse || 0);
+      setTimeout(() => {
+        axios
+          .all(allPromises)
+          .then(responses => {
+            setInternalFiles([
+              ...internalFiles,
+              ...responses.map(res => res.data)
+            ]);
+          })
+          .catch(errors => {
+            //TODO: Det trenger design om flere feilmeldinger
+            pushToInternalMessages('Kunne ikke laste opp fil');
+          })
+          .finally(() => {
+            if (afterUpload) {
+              afterUpload();
+            }
+            setInternalLoading(false);
+          });
+      }, props.forsinkelse || 0);
+    }
   };
 
   const createDefaultOversizedFileErrorMessage = (
