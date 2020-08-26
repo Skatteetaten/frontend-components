@@ -12,6 +12,7 @@ import DatePicker from '@skatteetaten/frontend-components/DatePicker';
         'Du kan skrive inn dato i feltet, eller velge en dato ved hjelp av datovelgeren, enten med mus eller bruk tastaturet'
       }
       isRequiredErrorMessage={'Dato må fylles ut'}
+      language={'en'}
     />
   </div>
   <br />
