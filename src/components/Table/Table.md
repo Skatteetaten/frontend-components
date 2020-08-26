@@ -238,5 +238,5 @@ bør du vurdere {' '} <a href="https://skatteetaten.github.io/frontend-component
 </ul>
 </p>Du kan også sette opp komponenten uten mulighet for redigering.
   </p>
-  <p>Det er også mulig å bruke komponenten uten redigering.</p>
+  
 ```
