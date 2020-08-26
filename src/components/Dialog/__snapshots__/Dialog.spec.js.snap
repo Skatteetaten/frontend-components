@@ -15,6 +15,7 @@ exports[`Dialog komponent matcher snapshot 1`] = `
       Object {
         "className": "SkeDialog-77",
         "isBlocking": undefined,
+        "isModeless": true,
       }
     }
     tabletContentOverflows={false}
