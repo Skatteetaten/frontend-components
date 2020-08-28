@@ -72,35 +72,38 @@ export default class TableRow<P> extends React.PureComponent<TableRowProps<P>> {
       />
     );
 
-    const expandButton = (
-      <IconButton
-        className={'expandButton'}
-        onClick={() => onExpandRow(rowIndex)}
-        buttonSize="large"
-        title="Ekspander"
-        icon="ChevronDown"
-        disabled={editModeActive}
-        type="button"
-      />
-    );
+    const ExpandCollapseButton = (props: { open: boolean }) => {
+      const expandClopaseRef = React.createRef<HTMLTableCellElement>();
 
-    const collapseButton = (
-      <td>
-        <IconButton
-          className={'expandButton'}
-          onClick={() => onCloseRow()}
-          buttonSize="large"
-          title="Kollaps"
-          icon="ChevronUp"
-          type="button"
-        />
-      </td>
-    );
+      React.useEffect(() => {
+        if (props.open && expandClopaseRef.current) {
+          const knapp = expandClopaseRef.current
+            .children[0] as HTMLButtonElement;
+          knapp.focus();
+        }
+      }, [props.open]);
+
+      return (
+        <td ref={expandClopaseRef}>
+          <IconButton
+            className={'expandButton'}
+            onClick={() => {
+              props.open ? onCloseRow() : onExpandRow(rowIndex);
+            }}
+            buttonSize="large"
+            title={props.open ? 'Kollaps' : 'Ekspander'}
+            icon={props.open ? 'ChevronUp' : 'ChevronDown'}
+            disabled={editModeActive}
+            type="button"
+          />
+        </td>
+      );
+    };
 
     const actionButtons = (
       <>
         {editableRows && <td>{editButton}</td>}
-        {expandableRows && <td>{expandButton}</td>}
+        {expandableRows && <ExpandCollapseButton open={false} />}
       </>
     );
     return (
@@ -134,9 +137,13 @@ export default class TableRow<P> extends React.PureComponent<TableRowProps<P>> {
                         : 'expandableRow'
                     }
                   >
-                    {expandIconPlacement === 'before' && collapseButton}
-                    {this._renderRow(data, columns, rowIndex)}
-                    {expandIconPlacement !== 'before' && collapseButton}
+                    {expandIconPlacement === 'before' && (
+                      <ExpandCollapseButton open={true} />
+                    )}
+                    {this._renderRow(data, columns, rowIndex, 1)}
+                    {expandIconPlacement !== 'before' && (
+                      <ExpandCollapseButton open={true} />
+                    )}
                   </tr>
                   <tr>
                     {expandIconPlacement === 'before' && <td />}
@@ -151,7 +158,7 @@ export default class TableRow<P> extends React.PureComponent<TableRowProps<P>> {
               <tr key={rowIndex}>
                 {(tableHasScroll || expandIconPlacement === 'before') &&
                   actionButtons}
-                {this._renderRow(data, columns, rowIndex)}
+                {this._renderRow(data, columns, rowIndex, 0)}
                 {!tableHasScroll &&
                   expandIconPlacement !== 'before' &&
                   actionButtons}
@@ -159,13 +166,28 @@ export default class TableRow<P> extends React.PureComponent<TableRowProps<P>> {
             )}
           </>
         ) : (
-          <tr key={rowIndex}>{this._renderRow(data, columns, rowIndex)}</tr>
+          <tr key={rowIndex}>{this._renderRow(data, columns, rowIndex, 0)}</tr>
         )}
       </>
     );
   }
-  _renderRow = (data: any, columns: any[], rowKey: number) => {
+  _renderRow = (
+    data: any,
+    columns: any[],
+    rowKey: number,
+    tabIndex: number
+  ) => {
     return columns.map((column, cellIndex) => {
+      let cellElement;
+      if (
+        typeof data[column.fieldName] === 'object' &&
+        data[column.fieldName].props
+      ) {
+        cellElement = React.cloneElement(data[column.fieldName], {
+          ...data[column.fieldName].props,
+          tabIndex: tabIndex
+        });
+      }
       if (cellIndex > 0) {
         return (
           <td
@@ -176,7 +198,7 @@ export default class TableRow<P> extends React.PureComponent<TableRowProps<P>> {
             )}
             key={rowKey + '_' + cellIndex}
           >
-            {data[column.fieldName]}
+            {cellElement || data[column.fieldName]}
           </td>
         );
       }
@@ -191,7 +213,7 @@ export default class TableRow<P> extends React.PureComponent<TableRowProps<P>> {
           )}
           key={rowKey + '_' + cellIndex}
         >
-          {data[column.fieldName]}
+          {cellElement || data[column.fieldName]}
         </th>
       );
     });
