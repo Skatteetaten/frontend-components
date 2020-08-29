@@ -60,10 +60,25 @@ import DatePicker from '@skatteetaten/frontend-components/DatePicker';
 ```
 
 ```js noeditor beskrivelse
-<h3>Månedsoversikt og ukenummer</h3>
-<p>DatePicker-komponenten kan konfigureres på mange måter. For eksemepel kan man velge å vise månedvelger og ukenummer. Ta hensyn til hvor langt frem eller tilbake brukeren pleier å velge dato. Hvis man vanligvis velger en dato noen dager frem i tid, er det kanskje ikke behov å vise månedsoversikten. I andre tilfeller er det fornuftig å vise både månedoversikt og ukenummer samtidig.</p>
-<h3>Lesemodus</h3>
-<p>Datofeltet har også en lesemodus for når man har behov for å gå fra en tilstand der man kan endre datoen til bare å vise den.
+<h3>Forenkler utfylling av datoer</h3>
+
+<p>
+  Datovelger i et skjema gjør det enklere for brukeren å oppgi datoer.
+  </p>
+
+<h3>Ulike oppsett for datovelger</h3>
+
+<p>
+  Du kan sette opp datovelgeren på mange måter. For eksempel kan du velge å vise månedsvelger og ukenummer når brukeren klikker i feltet. 
+Ta hensyn til hvor langt frem eller tilbake brukeren pleier å velge dato. 
+Hvis det er mest aktuelt å føre opp en dato noen dager frem i tid, er det kanskje ikke nødvendig å vise månedsoversikten. 
+I andre tilfeller er det fornuftig å vise både månedsoversikt og ukenummer samtidig.
+  </p>
+
+
+<p>
+Datofeltet kan også ha en lesemodus. 
+Her kan vi enten vise dagens dato og legge til mulighet for å endre, eller vi kan vise en handligsrettet tekst, for eksempel «Velg en dato». 
 </p>
 <p>Se <a href='https://www.skatteetaten.no/stilogtone/skrive/skriveregler/datoer/'>oppsett for hvordan vi skriver datoer</a> i Skatteetaten.</p>
 ```
