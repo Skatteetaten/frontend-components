@@ -188,17 +188,32 @@ let error = 'En feil';
 ```
 
 ```js noeditor beskrivelse
-  <h3>Til ulike situasjoner</h3>
-  <p>
-    ComboBoxen er en fleksibel nedtrekksliste som kan tilpasses til ulike
-    sitasjoner:
+  <h3>Fleksibel nedtrekksliste med mulighet for å skrive</h3>
+<p>
+   En nedtrekksliste med skriving skiller seg fra en vanlig 
+   {' '}
+<a href="https://skatteetaten.github.io/frontend-components/#dropdown"> 
+  nedtrekksliste (Dropdown)
+  </a>
+{' '}
+ved at brukeren kan skrive i hovedfeltet. 
+Det er mulig å skrive inn nye ord eller bare de første bokstavene, slik at det automatisk kommer opp et ord fra listen. 
+Hvis listen over valg er lang er denne nedtrekkslisten spesielt nyttig.
+ </p>
+
+ <h3>Tilpass listen etter situasjonen</h3>
+<p> 
+ComboBoxen er fleksibel og du kan tilpasse den til ulike sitasjoner. 
   </p>
+
+<p> 
+Du kan velge å la brukeren
+  </p>
+
   <ul>
-    <li>Kun velge eller skrive fra et sett gyldige verdier.</li>
-    <li>
-      Velge eller skrive blant et sett med verdier, eller skrive inn nye
-    </li>
-    <li>Som en nedtrekksliste, uten mulighet til å skrive</li>
-    <li>Automatisk vise meny når feltet får fokus.</li>
+    <li>velge blant et sett med verdier, eller skrive inn nye</li>
+    <li>kun å velge fra listen av gyldige verdier</li>
+    <li>bare velge fra nedtrekkslisten</li>
+    <li>få opp menyen fra listen automatisk når feltet blir klikket på</li>
   </ul>
 ```
