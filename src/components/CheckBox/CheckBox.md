@@ -1,4 +1,4 @@
-** Avkrysningsboks brukes for eksempel i skjemaer til å bekrefte et eller flere valg. **
+** Avkrysningsboks brukes for eksempel i skjemaer til å bekrefte ett eller flere valg. **
 
 ```js
 import CheckBox from '@skatteetaten/frontend-components/CheckBox';
@@ -34,13 +34,23 @@ import CheckBox from '@skatteetaten/frontend-components/CheckBox';
 ```
 
 ```js noeditor beskrivelse
-  <h3>Velge vilkårlig antall elementer</h3>
+  <h3>Avkrysningsboks for vilkårlig valg i en liste</h3>
   <p>
-    Avhukingsbokser brukes når det er liste med valg og brukeren kan velge et
-    vilkårlig antall av dem, inkludert null, ett eller flere. En avhukingsboks
-    er med andre ord uavhengig av de andre i listen. Og huker brukeren av et
-    valg, tar det ikke bort avhukingen av de andre.
+    En avkrysningsboks er ideell i en liste med valg der brukeren skal krysse av og få bekreftet dette valget. 
+Hver avkrysning er uavhengig av de andre i listen, og det er også mulig å ikke krysse av. 
   </p>
 
-  <p>(Hvis brukeren kun skal velge ett valg, bruk RadioButtonGroup.)</p>
+ <p>
+  Se eksempel på bruk av avkrysningsbokser i 
+  {' '}
+<a href="https://www.skatteetaten.no/person/skatt/hjelp-til-riktig-skatt/fradragsveilederen/"> fradragsveilederen på Skattetaten.no
+    </a>{' '}.
+  </p>
+
+  <p>Hvis brukeren kun skal velge ett valg, bruk 
+ {' '}
+<a href="https://skatteetaten.github.io/frontend-components/#radiobuttongroup"> RadioButtonGroup
+    </a>
+{' '}.
+    </p>
 ```
