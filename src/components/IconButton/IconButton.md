@@ -37,11 +37,18 @@ import IconButton from '@skatteetaten/frontend-components/IconButton';
 
 ```js noeditor beskrivelse
 <h3>
-  Ikon som fungerer som knapp
+ Ikonknapp uten synlig tekst for mindre fremtredende handlinger
 </h3>
 <p>
-  Knapper bør i størst mulig grad ha en beskrivende tekst. Du kan bruke ikonknapper i situasjoner der du ikke har anledning til å vise teksten. Det skal alltid være en forklarende tekst som kommer frem når brukeren holder markøren over ikonet.
+  
 </p>
+Denne komponenten fungerer godt når du skal vise brukeren mulighet for mindre viktige handlinger. Et eksempel er et ikon som viser en printer.
+<p>
+  I utgangspunktet bør knapper ha en synlig beskrivende tekst. 
+Ikonknapper har likevel mulighet for å bare vise ikonet dersom du ikke har plass eller anledning til å ha teksten synlig. 
+Merk at det alltid skal være en forklarende tekst som kommer frem når brukeren holder markøren over ikonet. 
+</p>
+
 <p>
   Vær varsom med å bruke ikonknapper i publikumsløsninger.
 </p>
@@ -49,6 +56,6 @@ import IconButton from '@skatteetaten/frontend-components/IconButton';
   Kan ha ulik fremheving
 </h3>
 <p>
-  Ikonknapper kan være små eller store, med eller uten sirkel. Sirkelen benytter du for å fremheve ikonknappen.
+ Ikonknappene kan være små eller store, med eller uten sirkel. Bruker du sirkel rundt ikonet, vil dette virke noe fremhevende.
 </p>
 ```
