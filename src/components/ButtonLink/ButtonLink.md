@@ -9,10 +9,6 @@ import MessageBar from '@skatteetaten/frontend-components/MessageBar';
 
 ** Når hovedhandlingen er navigasjon til en annen side **
 
-Denne komponenten brukes når du ønsker å lede oppmerksomhet mot en enkelt hovedhandling, og når utførselsen av denne hovedhandlingen skjer på en annen side. Et slikt eksempel er «Se og endre skattekort» på «Min side»: Da vil løsningen for å endre skattekort åpnes i en ny side.
-
-Det er en vedtatt designretningslinje i etaten, at slike hovedhandlinger skal se ut som knapper, og denne komponenten sikrer god universell utforming i slike situasjoner.
-
 ```js
 import ButtonLink from '@skatteetaten/frontend-components/ButtonLink';
 
@@ -20,19 +16,37 @@ import ButtonLink from '@skatteetaten/frontend-components/ButtonLink';
 ```
 
 ```js noeditor beskrivelse
-<h2>Tekst på knappen</h2>
+<h2>Hovedhandlingen er navigasjon til en annen side</h2>
 <p>
-Knappeteksten må tydelig fortelle hva knappen gjør, siden denne teksten kan
-bli brukt av skjermleserbrukere når de søker etter den.
-</p>
-<h2>Ved klikk</h2>
-
-<p>
-Når knappen trykkes på tas brukeren til en ny side.
-En a-tag med role=button vil fremstå som en knapp for skjermleserbrukere,
-men selve funksjonen - at brukeren kommer til en ny side - vil være som før.
+Knappelenken leder oppmerksomheten til brukeren mot en enkelt hovedhandling, der utførelsen av denne handlingen skjer på en annen side. 
+Et eksempel er «Se og endre skattekort» på Skatteetaten.no. Når brukeren klikker på denne, vil løsningen for å endre skattekortet bli åpnet i en ny side
 </p>
 
+<p>
+ I designretningslinjene til Skatteetaten, har vi bestemt at slike hovedhandlinger skal se ut som knapper. 
+Denne komponenten sikrer god universell utforming i slike situasjoner.   
+</p>
+
+<h2>Knappeteksten må fortelle hva knappen gjør</h2>
+
+<p>
+Teksten på knappelenken skal lede brukeren til handlingen. 
+Denne teksten blir brukt av skjermleserbrukere når de søker etter den. Det er derfor svært viktig at knappeteksten tydelig forteller hva knappen gjør. 
+</p>
+
+<p>
+    Se{' '}
+    <a href="https://www.skatteetaten.no/stilogtone/skrive/skriveregler/knapper/">
+      skrivereglene
+    </a>{' '}
+    for hvordan skrive på knapper.
+  </p>
+
+<h2>En lenke som ser ut som en knapp</h2>
+<p>
+ButtonLink har en a-tag med role=button, som gjør at den fremstår som en knapp for skjermleserbrukere. 
+Komponenten vil samtidig ha funksjonen med at den tar brukeren til en ny side ved et klikk.
+</p>
 
 ```
 
