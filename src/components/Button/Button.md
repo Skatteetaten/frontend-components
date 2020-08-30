@@ -178,27 +178,21 @@ import Link from '@skatteetaten/frontend-components/Link';
     </div>
   </div>
 
-  <h3>Når hovedhandlingen er navigasjon til et annet område</h3>
+  <h3>Når knappen skal ta brukeren til et annet område</h3>
   <p>
-    Med «annet område» menes at klikk på knapp skal ta bruker til en annen side,
-    og <i>ikke</i> navigasjon videre ned i egen sidestruktur.
-  </p>
-  <p>
-    Noen ganger er hovedhandlingen kun at bruker skal videre til ny side, og
-    ingen handling skal forekomme <i>i tillegg</i> til denne. Et eksempel er
-    hovedhandlingen “Se og endre skattekort” på den innloggede siden Min skatt.
-    Det beste alternativet er å bruke en a-tag med role=“button” og style den
-    som en hovedhandling. Dette vil sikre best mulig brukskvalitet for flest
-    mulig brukergrupper. Komponenten{' '}
-    <Link path="/#buttonlink" text="ButtonLink" /> skal benyttes i disse
-    tilfellene.
+    Noen ganger er hovedhandlingen til knappen kun at bruker skal videre til ny side, og ikke navigere ned i egen sidestruktur.
+For å sikre best mulig brukskvalitet for flest mulig brukergrupper, skal du da bruke 
+{' '}
+    <a href="https://skatteetaten.github.io/frontend-components/#buttonlink">
+      ButtonLink
+    </a>{' '}. 
+Denne komponenten har en a-tag med role=button, som gjør at den fremstår som en knapp for skjermleserbrukere. 
+Komponenten vil samtidig ha funksjonen med at den tar brukeren til en ny side ved et klikk. 
+Et eksempel er hovedhandlingen «Se og endre skattekort» på den innloggede siden «Min skatt». 
   </p>
   <p>
     Lenker skal i utgangspunktet aldri styles som en knapp. Hovedhandling som
-    lenke er unntaket. Trenger en lenke mer synlighet så bør andre tiltak
-    vurderes før man setter lenken som hovedhandling. “Send inn” for et skjema
-    er en hovedhandling som både sender inn og tar bruker til en ny side. Da
-    skal du bruke &lt;Button&gt; som vanlig.
+    lenke er unntaket.
   </p>
 </div>;
 ```
