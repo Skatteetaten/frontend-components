@@ -1,3 +1,9 @@
+### **v.4.0.0 - 31.08.2020 **
+
+- UMD: Enabled umd module building for the design system. This enables it to be loaded with SystemJS for micro-frontend setups.
+- Imports: During the work with UMD building changes were made to imports. Most should be fine but some will need rewrite. Generally all componenets should now be imported directly from '@skatteetaten/frontend-componenents', and not from subfolders. This is especially important if you consume the design system as an UMD module
+- '@reach/auto-id': This package has been removed because of incompatability. It has been replaced by a manual alternative.
+
 ### **v.3.5.1 - 21.08.2020 **
 
 - Pagination: fixes an issue that displayed wrong number of items when changing page size.
