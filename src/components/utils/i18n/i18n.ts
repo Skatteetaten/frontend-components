@@ -27,6 +27,7 @@ export const omstrukturerFlatJSON = data => {
 };
 const en = omstrukturerFlatJSON(languageFile.en_GB);
 const nb = omstrukturerFlatJSON(languageFile.nb_NO);
+const nn = omstrukturerFlatJSON(languageFile.nn_NO);
 
 i18n.use(initReactI18next).init({
   lng: 'nb',
@@ -40,7 +41,7 @@ i18n.use(initReactI18next).init({
   }
 });
 
-const languages = { nb, en };
+const languages = { nb, nn, en };
 
 Object.keys(languages).forEach(language => {
   i18n.addResourceBundle(language, 'ns.translate', languages[language], true);

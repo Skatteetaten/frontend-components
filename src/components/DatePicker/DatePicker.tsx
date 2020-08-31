@@ -57,7 +57,7 @@ export interface DatePickerProps extends IDatePickerProps {
   /** Lukk callout på blur */
   labelWithCalloutAutoDismiss?: boolean;
   /** Språk vist i komponent. Default er norsk bokmål. */
-  language?: 'nb' | 'en';
+  language?: 'nb' | 'nn' | 'en';
   /** Brukerspesifisert event for callout **/
   onCalloutToggle?: (
     oldCalloutState: calloutState,
