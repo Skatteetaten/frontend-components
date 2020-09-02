@@ -178,7 +178,7 @@ import Link from '@skatteetaten/frontend-components/Link';
     </div>
   </div>
 
-  <h3>Når knappen skal ta brukeren til et annet område</h3>
+  <h3>Bruk ButtonLink når knappen skal ta brukeren til et nytt område</h3>
   <p>
     Noen ganger er hovedhandlingen til knappen kun at bruker skal videre til ny side, og ikke navigere ned i egen sidestruktur.
 For å sikre best mulig brukskvalitet for flest mulig brukergrupper, skal du da bruke 
@@ -192,7 +192,11 @@ Et eksempel er hovedhandlingen «Se og endre skattekort» på den innloggede sid
   </p>
   <p>
     Lenker skal i utgangspunktet aldri styles som en knapp. Hovedhandling som
-    lenke er unntaket.
+    lenke er unntaket. Trenger en lenke mer synlighet bør du vurdere andre tiltak. 
+     </p>
+  <p>
+    Velger du «Send inn» for et skjema, skal du bruke «Button». 
+Dette er en hovedhandling som sender inn skjemaet og tar brukeren til en kvitteringsside og ikke til et nytt område, slik en lenke gjør. 
   </p>
 </div>;
 ```
