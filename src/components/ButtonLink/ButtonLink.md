@@ -16,15 +16,15 @@ import ButtonLink from '@skatteetaten/frontend-components/ButtonLink';
 ```
 
 ```js noeditor beskrivelse
-<h2>Hovedhandlingen er navigasjon til en annen side</h2>
+<h2>Knapp der hovedhandlingen tar brukeren videre til nytt område</h2>
 <p>
 Knappelenken leder oppmerksomheten til brukeren mot en enkelt hovedhandling, der utførelsen av denne handlingen skjer på en annen side. 
-Et eksempel er «Se og endre skattekort» på Skatteetaten.no. Når brukeren klikker på denne, vil løsningen for å endre skattekortet bli åpnet i en ny side
+I designretningslinjene til Skatteetaten, har vi bestemt at hovedhandlinger skal se ut som knapper. 
+Denne komponenten sikrer god universell utforming i slike situasjoner. 
 </p>
-
 <p>
- I designretningslinjene til Skatteetaten, har vi bestemt at slike hovedhandlinger skal se ut som knapper. 
-Denne komponenten sikrer god universell utforming i slike situasjoner.   
+Et eksempel er «Se og endre skattekort» på Skatteetaten.no. 
+Når brukeren klikker på denne, vil løsningen for å endre skattekortet bli åpnet i en ny side.  
 </p>
 
 <h2>Knappeteksten må fortelle hva knappen gjør</h2>
@@ -33,7 +33,6 @@ Denne komponenten sikrer god universell utforming i slike situasjoner.
 Teksten på knappelenken skal lede brukeren til handlingen. 
 Denne teksten blir brukt av skjermleserbrukere når de søker etter den. Det er derfor svært viktig at knappeteksten tydelig forteller hva knappen gjør. 
 </p>
-
 <p>
     Se{' '}
     <a href="https://www.skatteetaten.no/stilogtone/skrive/skriveregler/knapper/">
