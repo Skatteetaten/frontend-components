@@ -14,7 +14,7 @@ exports[`Dialog komponent matcher snapshot 1`] = `
     modalProps={
       Object {
         "className": "SkeDialog-42",
-        "isBlocking": undefined,
+        "isBlocking": true,
         "isModeless": true,
       }
     }
