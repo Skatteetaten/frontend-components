@@ -120,6 +120,7 @@ function closeDialog() {
     hidden={state.hideDialog}
     type={Dialog.Type.normal}
     layoutStyle={'important'}
+    modalProps={{ isModeless: false }}
     forceFocusInsideTrap
     onDismiss={closeDialog}
     title="Viktig melding!"
@@ -131,6 +132,43 @@ function closeDialog() {
       <ActionButton onClick={closeDialog}>
         Les mer på skatteetaten.no
       </ActionButton>
+    </Dialog.Footer>
+  </Dialog>
+</div>;
+```
+
+```js
+import Dialog from '@skatteetaten/frontend-components/Dialog';
+import Button from '@skatteetaten/frontend-components/Button';
+import ActionButton from '@skatteetaten/frontend-components/ActionButton';
+
+const initialState = { hideDialog: true };
+
+function closeDialog() {
+  setState({ hideDialog: true });
+}
+
+<div>
+  <Button
+    buttonStyle="secondary"
+    onClick={() => setState({ hideDialog: false })}
+  >
+    Dialog som forsvinner ved klikk utenfor
+  </Button>
+  <Dialog
+    hidden={state.hideDialog}
+    type={Dialog.Type.normal}
+    onDismiss={closeDialog}
+    modalProps={{ isBlocking: false, isModeless: false }}
+    title="Sakshistorikk"
+    forceFocusInsideTrap
+    minWidth="400px"
+    maxWidth="600px"
+  >
+    <p>Ingen opplysninger funnet.</p>
+
+    <Dialog.Footer>
+      <Button onClick={closeDialog}>Lukk</Button>
     </Dialog.Footer>
   </Dialog>
 </div>;

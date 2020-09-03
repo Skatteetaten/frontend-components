@@ -34,7 +34,8 @@ export default class Dialog extends React.PureComponent<
     type: Dialog.Type.normal,
     closeButtonAriaLabel: 'Lukk',
     tabletContentOverflows: false,
-    isModeless: true
+    isModeless: true,
+    isBlocking: true
   };
   private readonly _iconButtonElement: React.RefObject<HTMLDivElement>;
 
