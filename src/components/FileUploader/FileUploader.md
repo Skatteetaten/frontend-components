@@ -78,7 +78,7 @@ const styles = {
       setFiles(newList);
     }}
     info={
-      'Husk at du bør sjekke dokumentene for sensitive personopplysninger, og eventuelt fjerne disse før dokumentene settes inn.'
+      'Husk å fjerne sensitive personopplysninger før du laster opp dokumentet ditt.'
     }
   />
 </div>;
