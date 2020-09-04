@@ -108,3 +108,11 @@ const styles = {
 <li>Aria-hidden brukes for å skjule ikoner for skjermleser.</li>
 </ul>
 ```
+```js noeditor beskrivelse
+
+  <h3>Felt for å laste opp ett eller flere vedlegg</h3>
+  <p>
+    Bruk feltet filopplaster, når brukeren trenger å legge ved bilder eller andre filer. 
+Vi har to varianter – den ene for å laste opp én fil og den andre for å laste opp flere. Vær nøye med å forklare i hjelpeteksten hvilke type filer brukeren kan laste opp.
+  </p>
+```
