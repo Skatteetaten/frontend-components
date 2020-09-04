@@ -209,11 +209,12 @@ ComboBoxen er fleksibel og du kan tilpasse den til ulike sitasjoner.
 <p> 
 Du kan velge å la brukeren
   </p>
-
+<p> 
   <ul>
     <li>velge blant et sett med verdier, eller skrive inn nye</li>
     <li>kun å velge fra listen av gyldige verdier</li>
     <li>bare velge fra nedtrekkslisten</li>
     <li>få opp menyen fra listen automatisk når feltet blir klikket på</li>
   </ul>
+ </p>
 ```
