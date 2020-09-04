@@ -100,25 +100,21 @@ import Dropdown from '@skatteetaten/frontend-components/Dropdown';
 ```js noeditor beskrivelse
 
 
-  <h3>Fin ved lite plass</h3>
+  <h3>Nedtrekksliste som brukeren kan velge fra</h3>
   <p>
-    Nedtrekkslister er fine å bruke når en har lite tilgjenlig plass på
-    skjermen, og når brukeren skal velge fra en liste med relativt få
-    elementer (mindre enn 10). Det er lurt å sortere inneholdet i
-    nedtrekkslisten på en logisk måte, for eksempel alfabetisk.
+    Nedtrekkslister gjør det mulig for brukeren å velge ett eller flere valg fra en liste. 
+De fungerer særlig godt når det er lite plass på skjermen og når brukeren skal velge fra en liste med mindre enn 10 komponenter. 
   </p>
 
-  <h3>Unngå dynamisk innhold</h3>
-  <p>Brukere kan bli forvirret dersom valgene en nedtrekksmenyen dynmisk endrer seg ut ifra andre valg på samme side. </p>
+  <h3>Tips til hvordan du lager en god nedtrekksliste</h3>
 
-  <h3>Sortering av listen</h3>
-  <p>Listen av elementer bør sorteres på en fornuftig måte, slik at den er lettere å lete.</p>
   <p>
-    Hvis man har to ulike typer data i samme nedtrekksliste kan det være
-    hensiktmessig å lage en egen overskrift inni listen. Da blir den enklere å
-    lete i.
-  </p>
-  <p>
-    Hvis en har flere enn 10 elementer i nedtrekkslisten bør en vurdere å velge
+      <ul>
+      <ul>
+    <li>Det er lurt å sortere innholdet i nedtrekkslisten på en logisk måte, for eksempel alfabetisk.</li>
+	<li>Unngå dynamisk innhold. Brukeren kan bli forvirret dersom valgene i nedtrekksmenyen endrer seg dynamisk ut ifra andre valg på samme side.</li>
+    <li>Sorter ordene i listen på en fornuftig måte, slik at det er lettere å lete. Hvis du har to ulike typer data i samme nedtrekksliste kan det være hensiktmessig å lage en egen overskrift inni listen. Da blir den enklere for brukeren å orientere seg</li>
+	<li>Hvis det er flere enn ti elementer i nedtrekkslisten bør du velge {' '}<a href="https://skatteetaten.github.io/frontend-components/#combobox "> nedtrekksliste med skriving (ComboBox) </a>{' '}.</li>
+  </ul>
   </p>
 ```
