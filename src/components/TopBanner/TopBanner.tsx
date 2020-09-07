@@ -65,7 +65,7 @@ const ExternalHeaderContent = ({ styles, ...props }) => {
   return (
     <>
       <ActionButton
-        href={props.onClick ? undefined : props.homeUrl}
+        href={props.homeUrl}
         onClick={props.onClick}
         className={styles.linkButton}
         icon="Back"
@@ -129,7 +129,10 @@ export interface TopBannerProps {
   id?: string;
   /** Om logoen skal lenke til skatteetaten.no eller ikke (kun ekstern) */
   logoLink?: boolean;
+  /** OnClick event som trigges av klikk på hjemlink */
+  onClick?: () => void;
 }
+
 /**
  * @visibleName TopBanner (Topp)
  */

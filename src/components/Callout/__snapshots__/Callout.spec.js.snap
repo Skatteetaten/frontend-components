@@ -22,7 +22,6 @@ exports[`Callout komponent matcher snapshot 1`] = `
         onKeyDown={[Function]}
         onMouseDown={[Function]}
         onMouseUp={[Function]}
-        role="dialog"
         style={
           Object {
             "maxHeight": 752,
@@ -41,8 +40,7 @@ exports[`Callout komponent matcher snapshot 1`] = `
           onKeyUp={[Function]}
           onMouseDown={[Function]}
           onMouseUp={[Function]}
-          role="button"
-          type="default"
+          type="button"
         >
           <span
             className="ms-Button-flexContainer flexContainer-52"
