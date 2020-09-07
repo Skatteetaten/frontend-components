@@ -153,19 +153,19 @@ function closeDialog() {
     buttonStyle="secondary"
     onClick={() => setState({ hideDialog: false })}
   >
-    Dialog som forsvinner ved klikk utenfor
+    Vis dialog som lukkes aktivt
   </Button>
   <Dialog
     hidden={state.hideDialog}
     type={Dialog.Type.normal}
     onDismiss={closeDialog}
-    modalProps={{ isBlocking: false, isModeless: false }}
-    title="Sakshistorikk"
+    modalProps={{ isBlocking: true, isModeless: false }}
+    title="Meldinger"
     forceFocusInsideTrap
     minWidth="400px"
     maxWidth="600px"
   >
-    <p>Ingen opplysninger funnet.</p>
+    <p>Du har ingen nye meldinger.</p>
 
     <Dialog.Footer>
       <Button onClick={closeDialog}>Lukk</Button>
@@ -177,9 +177,9 @@ function closeDialog() {
 ```js noeditor uu
 <h3>Tips</h3>
 <ul>
-<li>Sjekk at dialogen får fokus etter at den åpnes. Dette gjør det enklere for en skjermleser å oppdage og lese opp innholdet.</li>
+<li>Sjekk at dialogen får fokus etter at den åpnes. Dette gjør det enklere for en skjermleser å oppdage og lese opp innholdet. </li>
 <li>Test med tastatur at du ikke kan navigere ut av dialogen. Sjekk også hvor tastaturfokuset er når du lukker dialogen. Tastaturfokuset skal være på knappen som åpner dialogen.</li>
-<li>Sjekk at alt innholdet bak dialogen "viskes" ut visuelt.</li>
+<li>Sjekk at alt innholdet bak dialogen «viskes» ut visuelt.</li>
 </ul>
 
 <h3>Mest relevante WCAG-krav</h3>
