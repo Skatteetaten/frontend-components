@@ -1,7 +1,7 @@
 import * as React from 'react';
 import IconButton from '../../IconButton';
 import classnames from 'classnames';
-import i18n, { t } from '../../utils/i18n/i18n';
+import { t } from '../../utils/i18n/i18n';
 
 interface TableRowProps<P> {
   data: P;
@@ -90,8 +90,9 @@ const TableRow = <P extends object>(props: TableRowProps<P>) => {
     if (expandableContent) {
       return (
         <div
-          className={'expandableContent'}
-          aria-describedby={'columnheader'.concat('_', rowIndex.toString())}
+          className={classnames(
+            expandIconPlacement === 'before' ? 'expandableContent' : ''
+          )}
         >
           {expandableContent(data, onCloseRow, rowIndex)}
         </div>
@@ -116,9 +117,7 @@ const TableRow = <P extends object>(props: TableRowProps<P>) => {
             }
           }}
           buttonSize="large"
-          title={i18n.t('tablerow.expandable.title', {
-            CELL: data[columns[0].fieldName]
-          })}
+          title={t('tablerow.expandable.title')}
           icon={btnProps.open ? 'ChevronUp' : 'ChevronDown'}
           aria-expanded={btnProps.open}
           aria-describedby={tableId.concat(rowIndex.toString(), '_0')}
@@ -146,7 +145,6 @@ const TableRow = <P extends object>(props: TableRowProps<P>) => {
     rowColumns: TableRowProps<P>['columns'],
     rowKey: number
   ) => {
-    const expandCell = expandIconPlacement !== 'before' && isExpandableRowOpen;
     return columns.map((column, cellIndex) => {
       if (cellIndex > 0) {
         return (
@@ -169,14 +167,12 @@ const TableRow = <P extends object>(props: TableRowProps<P>) => {
             !props.isEditableRowOpen ? 'is-closed' : '',
             column.alignment,
             column.hideOnMobile ? 'hideOnMobile' : '',
-            'tableRow',
-            expandCell ? 'expandCell' : ''
+            'tableRow'
           )}
           id={tableId.concat(rowKey.toString(), '_', cellIndex.toString())}
           key={tableId.concat(rowKey.toString(), '_', cellIndex.toString())}
         >
           {data[column.fieldName]}
-          {expandCell && expandableCellContent()}
         </th>
       );
     });
@@ -225,6 +221,11 @@ const TableRow = <P extends object>(props: TableRowProps<P>) => {
                     />
                   )}
                 </tr>
+                {isExpandableRowOpen && expandIconPlacement !== 'before' && (
+                  <tr>
+                    <td colSpan={numberOfColumns}>{expandableCellContent()}</td>
+                  </tr>
+                )}
               </>
             )
           ) : (

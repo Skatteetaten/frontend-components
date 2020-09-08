@@ -301,7 +301,7 @@ const data = [
   }
 ];
 const expandableContent = (data, close, rowIndex) => (
-  <div style={{ width: '700px' }}>
+  <div>
     <ActionButton>Jeg er en knapp</ActionButton>
     <Table
       data={data.ansatte}
@@ -319,20 +319,12 @@ const expandableContent = (data, close, rowIndex) => (
   data={data.map(d => ({
     ...d,
     stopp: (
-      <ActionButton
-        ariaLabel={'Stopp'}
-        icon="Cancel"
-        onClick={() => console.log('stopp')}
-      >
+      <ActionButton icon="Cancel" onClick={() => console.log('stopp')}>
         Stopp
       </ActionButton>
     ),
     restart: (
-      <ActionButton
-        ariaLabel={'restart'}
-        icon="Update"
-        onClick={() => console.log('restart')}
-      >
+      <ActionButton icon="Update" onClick={() => console.log('restart')}>
         Restart
       </ActionButton>
     )
