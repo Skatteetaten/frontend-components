@@ -180,23 +180,27 @@ import Link from '@skatteetaten/frontend-components/Link';
 
   <h3>Bruk ButtonLink når knappen skal ta brukeren til et nytt område</h3>
   <p>
-    Noen ganger er hovedhandlingen til knappen kun at bruker skal videre til ny side, og ikke navigere ned i egen sidestruktur.
-For å sikre best mulig brukskvalitet for flest mulig brukergrupper, skal du da bruke 
-{' '}
+    Noen ganger er hovedhandlingen til knappen kun at bruker skal videre til ny
+    side, og ikke navigere ned i egen sidestruktur. For å sikre best mulig
+    brukskvalitet for flest mulig brukergrupper, skal du da bruke{' '}
     <a href="https://skatteetaten.github.io/frontend-components/#buttonlink">
       ButtonLink
-    </a>{' '}. 
-Denne komponenten har en a-tag med role=button, som gjør at den fremstår som en knapp for skjermleserbrukere. 
-Komponenten vil samtidig ha funksjonen med at den tar brukeren til en ny side ved et klikk. 
-Et eksempel er hovedhandlingen «Se og endre skattekort» på den innloggede siden «Min skatt». 
+    </a>{' '}
+    . Denne komponenten har en a-tag med role=button, som gjør at den fremstår
+    som en knapp for skjermleserbrukere. Komponenten vil samtidig ha funksjonen
+    med at den tar brukeren til en ny side ved et klikk. Et eksempel er
+    hovedhandlingen «Se og endre skattekort» på den innloggede siden «Min
+    skatt».
   </p>
   <p>
     Lenker skal i utgangspunktet aldri styles som en knapp. Hovedhandling som
-    lenke er unntaket. Trenger en lenke mer synlighet bør du vurdere andre tiltak. 
-     </p>
+    lenke er unntaket. Trenger en lenke mer synlighet bør du vurdere andre
+    tiltak.
+  </p>
   <p>
-    Velger du «Send inn» for et skjema, skal du bruke «Button». 
-Dette er en hovedhandling som sender inn skjemaet og tar brukeren til en kvitteringsside og ikke til et nytt område, slik en lenke gjør. 
+    Velger du «Send inn» for et skjema, skal du bruke «Button». Dette er en
+    hovedhandling som sender inn skjemaet og tar brukeren til en kvitteringsside
+    og ikke til et nytt område, slik en lenke gjør.
   </p>
 </div>;
 ```

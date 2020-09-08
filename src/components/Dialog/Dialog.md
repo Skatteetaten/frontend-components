@@ -137,53 +137,68 @@ function closeDialog() {
 ```
 
 ```js noeditor uu
-<h3>Tips</h3>
-<ul>
-<li>Sjekk at dialogen får fokus etter at den åpnes. Dette gjør det enklere for en skjermleser å oppdage og lese opp innholdet.</li>
-<li>Test med tastatur at du ikke kan navigere ut av dialogen. Sjekk også hvor tastaturfokuset er når du lukker dialogen. Tastaturfokuset skal være på knappen som åpner dialogen.</li>
-<li>Sjekk at alt innholdet bak dialogen "viskes" ut visuelt.</li>
-</ul>
+<>
+  <h3>Tips</h3>
+  <ul>
+    <li>
+      Sjekk at dialogen får fokus etter at den åpnes. Dette gjør det enklere for
+      en skjermleser å oppdage og lese opp innholdet.
+    </li>
+    <li>
+      Test med tastatur at du ikke kan navigere ut av dialogen. Sjekk også hvor
+      tastaturfokuset er når du lukker dialogen. Tastaturfokuset skal være på
+      knappen som åpner dialogen.
+    </li>
+    <li>Sjekk at alt innholdet bak dialogen "viskes" ut visuelt.</li>
+  </ul>
 
-<h3>Mest relevante WCAG-krav</h3>
-<ul>
-<li>2.4.3 A, Fokusrekkefølge</li>
-<li>4.1.2 A, Navn, rolle, verdi</li>
-</ul>
+  <h3>Mest relevante WCAG-krav</h3>
+  <ul>
+    <li>2.4.3 A, Fokusrekkefølge</li>
+    <li>4.1.2 A, Navn, rolle, verdi</li>
+  </ul>
 
-<h3>WAI-ARIA</h3>
-<ul>
-<li>Role=dialog identifiserer dialog-elementet for skjermlesere.</li>
-<li>Aria-modal gir beskjed til skjermlesere at det underliggende vinduet ikke er aktivt.</li>
-<li>Aria-labelledby brukes for navngi dialogen med bruk av overskriften.</li>
-<li>Role=heading og aria-level brukes for å sette overskrift med riktig nivå for skjermlesere.</li>
-<li>Aria-label brukes for å navngi lukk-ikon i dialogen. Aria-hidden brukes for å skjule selve ikonet for skjermlesere.</li>
-</ul>
+  <h3>WAI-ARIA</h3>
+  <ul>
+    <li>Role=dialog identifiserer dialog-elementet for skjermlesere.</li>
+    <li>
+      Aria-modal gir beskjed til skjermlesere at det underliggende vinduet ikke
+      er aktivt.
+    </li>
+    <li>
+      Aria-labelledby brukes for navngi dialogen med bruk av overskriften.
+    </li>
+    <li>
+      Role=heading og aria-level brukes for å sette overskrift med riktig nivå
+      for skjermlesere.
+    </li>
+    <li>
+      Aria-label brukes for å navngi lukk-ikon i dialogen. Aria-hidden brukes
+      for å skjule selve ikonet for skjermlesere.
+    </li>
+  </ul>
+</>
 ```
 
 ```js noeditor beskrivelse
+<div>
   <h3>En dialogboks fremhever informasjon</h3>
   <p>
-    Dialogboksen dukker opp midt på skjermen for å tiltrekke seg brukerens oppmerksomhet. Det kan for eksempel gjelde en viktig beskjed eller noe brukeren må velge for å fortsette.
+    Dialogboksen dukker opp midt på skjermen for å tiltrekke seg brukerens
+    oppmerksomhet. Det kan for eksempel gjelde en viktig beskjed eller noe
+    brukeren må velge for å fortsette.
   </p>
   <p>
-    Hvis brukeren skal ta et valg i dialogboksen, bør vi blokkere annen brukerinput.{' '}
+    Hvis brukeren skal ta et valg i dialogboksen, bør vi blokkere annen
+    brukerinput.{' '}
   </p>
   <h3>Tre varianter</h3>
-  <p>
-    Dialogen finnes i tre varianter: 
+  <p>Dialogen finnes i tre varianter: </p>
   <ul>
-  <li>
-  Standard – for generelt innhold. 
-  </li> 
-  <li>
-  Luftig – når dialogen skal tiltrekke seg ekstra oppmerksomhet. 
-  </li>
-  <li>
-  <li>
-  Luftig – når dialogen skal tiltrekke seg ekstra oppmerksomhet. 
-  </li> 
-  </ul> 
-  </p>
+    <li>Standard – for generelt innhold.</li>
+    <li>Luftig – når dialogen skal tiltrekke seg ekstra oppmerksomhet.</li>
+    <li>Viktig – en fremtredende melding med «Skatteetaten som avsender».</li>
+  </ul>
   <p>Dialogen kan inneholde tekst, inputfelt, hjelpeikoner osv.</p>
   <p>
     Se{' '}
@@ -191,5 +206,6 @@ function closeDialog() {
       Skatteetatens stil og tone
     </a>{' '}
     for hjelp til å skrive gode tekster.
-    </p>
+  </p>
+</div>
 ```

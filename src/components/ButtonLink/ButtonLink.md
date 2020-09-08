@@ -16,22 +16,22 @@ import ButtonLink from '@skatteetaten/frontend-components/ButtonLink';
 ```
 
 ```js noeditor beskrivelse
-<h2>Knapp der hovedhandlingen tar brukeren videre til nytt område</h2>
+<h3>Knapp der hovedhandlingen tar brukeren videre til nytt område</h3>
 <p>
-Knappelenken leder oppmerksomheten til brukeren mot en enkelt hovedhandling, der utførelsen av denne handlingen skjer på en annen side. 
-I designretningslinjene til Skatteetaten, har vi bestemt at hovedhandlinger skal se ut som knapper. 
-Denne komponenten sikrer god universell utforming i slike situasjoner. 
+Knappelenken leder oppmerksomheten til brukeren mot en enkelt hovedhandling, der utførelsen av denne handlingen skjer på en annen side.
+I designretningslinjene til Skatteetaten, har vi bestemt at hovedhandlinger skal se ut som knapper.
+Denne komponenten sikrer god universell utforming i slike situasjoner.
 </p>
 <p>
-Et eksempel er «Se og endre skattekort» på Skatteetaten.no. 
-Når brukeren klikker på denne, vil løsningen for å endre skattekortet bli åpnet i en ny side.  
+Et eksempel er «Se og endre skattekort» på Skatteetaten.no.
+Når brukeren klikker på denne, vil løsningen for å endre skattekortet bli åpnet i en ny side.
 </p>
 
-<h2>Knappeteksten må fortelle hva knappen gjør</h2>
+<h3>Knappeteksten må fortelle hva knappen gjør</h3>
 
 <p>
-Teksten på knappelenken skal lede brukeren til handlingen. 
-Denne teksten blir brukt av skjermleserbrukere når de søker etter den. Det er derfor svært viktig at knappeteksten tydelig forteller hva knappen gjør. 
+Teksten på knappelenken skal lede brukeren til handlingen.
+Denne teksten blir brukt av skjermleserbrukere når de søker etter den. Det er derfor svært viktig at knappeteksten tydelig forteller hva knappen gjør.
 </p>
 <p>
     Se{' '}
@@ -41,18 +41,16 @@ Denne teksten blir brukt av skjermleserbrukere når de søker etter den. Det er 
     for hvordan skrive på knapper.
   </p>
 
-<h2>En lenke som ser ut som en knapp</h2>
+<h3>En lenke som ser ut som en knapp</h3>
 <p>
-ButtonLink har en a-tag med role=button, som gjør at den fremstår som en knapp for skjermleserbrukere. 
+ButtonLink har en a-tag med role=button, som gjør at den fremstår som en knapp for skjermleserbrukere.
 Komponenten vil samtidig ha funksjonen med at den tar brukeren til en ny side ved et klikk.
 </p>
-
 ```
 
 ```js noeditor uu
-import Link from '@skatteetaten/frontend-components/Link';
 <div>
-  <h2>Knapp eller lenke</h2>
+  <h3>Knapp eller lenke</h3>
   <p>
     Når noe ser ut som en knapp, bør det også være en knapp for
     skjermleserbrukere. Hvis for eksempel en svaksynt ringer førstelinje og
@@ -75,7 +73,7 @@ import Link from '@skatteetaten/frontend-components/Link';
     </li>
   </ul>
 
-  <h2>WAI-ARIA</h2>
+  <h3>WAI-ARIA</h3>
   <p>Role=button brukes fordi lenken visuelt ser ut en knapp.</p>
-</div>;
+</div>
 ```

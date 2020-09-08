@@ -201,42 +201,66 @@ const data = [
 ```
 
 ```js noeditor uu
-<h3>Tips</h3>
-<ul>
-<li>På små skjermer vil endre-ikon flyttes til venstre, og tabellen har horisontal scrolling ved behov.</li>
-<li>Husk at th-tags skal brukes på kolonneoverskrifter. Det kan også være fornuftig å bruke dette på radoverskrifter for å gjøre navigering i tabellen med skjermleser mer forståelig. Husk å bruke scope=row og scope=col for spesifisering.</li>
-<li>Tomme celler bør være td-tag.</li>
-<li>Sjekk at du kan velge ulik sortering med tastatur.</li>
-<li>Test med skjermleser at du hører hva som er sorterbart og at du ikke mister fokus når du velger en sortering.</li>
-</ul>
+<>
+  <h3>Tips</h3>
+  <ul>
+    <li>
+      På små skjermer vil endre-ikon flyttes til venstre, og tabellen har
+      horisontal scrolling ved behov.
+    </li>
+    <li>
+      Husk at th-tags skal brukes på kolonneoverskrifter. Det kan også være
+      fornuftig å bruke dette på radoverskrifter for å gjøre navigering i
+      tabellen med skjermleser mer forståelig. Husk å bruke scope=row og
+      scope=col for spesifisering.
+    </li>
+    <li>Tomme celler bør være td-tag.</li>
+    <li>Sjekk at du kan velge ulik sortering med tastatur.</li>
+    <li>
+      Test med skjermleser at du hører hva som er sorterbart og at du ikke
+      mister fokus når du velger en sortering.
+    </li>
+  </ul>
 
-<h3>Mest relevante WCAG-krav</h3>
-<ul>
-<li>1.3.1 A, Informasjon og relasjoner</li>
-<li>4.1.2 A, Navn, rolle, verdi</li>
-</ul>
+  <h3>Mest relevante WCAG-krav</h3>
+  <ul>
+    <li>1.3.1 A, Informasjon og relasjoner</li>
+    <li>4.1.2 A, Navn, rolle, verdi</li>
+  </ul>
 
-<h3>WAI-ARIA</h3>
-<ul>
-<li>Aria-sort gir beskjed om noe er sorterbart og om det er sortert stigende eller synkende.</li>
-<li>Aria-hidden brukes for skjule ikoner for skjermleser. </li>
-</ul>
+  <h3>WAI-ARIA</h3>
+  <ul>
+    <li>
+      Aria-sort gir beskjed om noe er sorterbart og om det er sortert stigende
+      eller synkende.
+    </li>
+    <li>Aria-hidden brukes for skjule ikoner for skjermleser. </li>
+  </ul>
+</>
 ```
 
 ```js noeditor beskrivelse
+<>
   <h3>Enkel tabell</h3>
   <p>
-    Table-komponenten fungerer godt når du har mindre datamengder. Har du derimot store mengder data og/eller behov for avansert funksjonalitet – 
-bør du vurdere {' '} <a href="https://skatteetaten.github.io/frontend-components/#detailslist"> Detailslist (sammensatt tabell) </a>{' '}i stedet.
+    Table-komponenten fungerer godt når du har mindre datamengder. Har du
+    derimot store mengder data og/eller behov for avansert funksjonalitet – bør
+    du vurdere{' '}
+    <a href="https://skatteetaten.github.io/frontend-components/#detailslist">
+      {' '}
+      Detailslist (sammensatt tabell)
+    </a>{' '}
+    i stedet.
   </p>
   <h3>Vise eller redigere enkeltrad</h3>
-  <p>
-    Komponenten har to tilstander:
-<ul>
-<li>Visningtilstand som bare viser data.</li>
-<li>Redigering av enkeltrad. Brukeren må fullføre redigering av en rad for å kunne redigere en annen.</li>
-</ul>
-</p>Du kan også sette opp komponenten uten mulighet for redigering.
-  </p>
-  
+  <p>Komponenten har to tilstander:</p>
+  <ul>
+    <li>Visningtilstand som bare viser data.</li>
+    <li>
+      Redigering av enkeltrad. Brukeren må fullføre redigering av en rad for å
+      kunne redigere en annen.
+    </li>
+  </ul>
+  <p>Du kan også sette opp komponenten uten mulighet for redigering.</p>
+</>
 ```
