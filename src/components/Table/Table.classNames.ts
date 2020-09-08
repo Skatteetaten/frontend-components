@@ -120,7 +120,8 @@ export const getClassNames = props => {
           borderBottom: `2px solid ${palette.skeColor.blackAlt}`
         },
         '.expandableContent': {
-          marginTop: '40px'
+          marginTop: '40px',
+          width: 'max-content'
         }
       }
     }
