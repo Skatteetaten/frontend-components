@@ -100,6 +100,10 @@ export const getClassNames = props => {
             }
           }
         },
+        '.expandCell': {
+          maxWidth: 72,
+          maxHeight: 50
+        },
         '.editableRow': {
           display: 'none'
         },
@@ -109,8 +113,14 @@ export const getClassNames = props => {
         '.expandableRow-open .is-closed, .expandableRow-open td': {
           borderBottom: 'none'
         },
+        '.expandableRow-open td, .expandableRow-open th': {
+          verticalAlign: 'text-top'
+        },
         '.emptyTd': {
           borderBottom: `2px solid ${palette.skeColor.blackAlt}`
+        },
+        '.expandableContent': {
+          marginTop: '40px'
         }
       }
     }

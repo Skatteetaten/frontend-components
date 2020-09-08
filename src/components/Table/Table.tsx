@@ -1,9 +1,10 @@
 import classnames from 'classnames';
-import * as React from 'react';
+import React from 'react';
 import Icon from '../Icon/Icon';
 import { getClassNames } from './Table.classNames';
-
 import TableRow from './TableRow';
+import { t } from '../utils/i18n/i18n';
+import { useId } from '@reach/auto-id';
 
 export enum Language {
   en = 'en',
@@ -66,260 +67,137 @@ interface TableProps<P> extends React.HTMLAttributes<HTMLDivElement> {
   language?: Language;
 }
 
-interface TableState {
-  openEditableRowIndex?: number;
-  openExpandableRowIndex?: number;
-  editModeActive: boolean;
-  tableIsScrollable: boolean;
-  sort: { ascending: boolean; columnFieldName: string };
-}
-
-const languageKeys = {
-  en: {
-    sortable: 'sortable',
-    sorted_descending: 'sorted descending',
-    sorted_rising: 'sorted rising'
-  },
-  nb: {
-    sortable: 'sorterbar',
-    sorted_descending: 'sortert synkende',
-    sorted_rising: 'sortert stigende'
-  },
-  nn: {
-    sortable: 'sorterbar',
-    sorted_descending: 'sortert søkkande',
-    sorted_rising: 'sortert stigande'
+export const setScrollBarState = (
+  wrapperWidth: number | null,
+  tableWidth: number | null,
+  setTableIsScrollable: (value: boolean) => void
+) => {
+  if (tableWidth && wrapperWidth && tableWidth > wrapperWidth) {
+    setTableIsScrollable(true);
+  } else {
+    setTableIsScrollable(false);
   }
+};
+
+export const getHeader = (
+  columns: TableProps<any>['columns'],
+  language: Language | undefined,
+  sort: { ascending: boolean; columnFieldName: string },
+  setSort: (sort: { ascending: boolean; columnFieldName: string }) => void
+) => {
+  const setSortingState = (columnFieldName: string) =>
+    setSort({
+      ascending:
+        sort.columnFieldName === columnFieldName ? !sort.ascending : true,
+      columnFieldName: columnFieldName
+    });
+
+  return (
+    columns &&
+    columns.map(key => {
+      if (key.sortable) {
+        const isSorted = sort.columnFieldName === key.fieldName;
+        const isSortedAscending = sort.ascending;
+        const iconName = isSorted
+          ? isSortedAscending
+            ? 'ArrowDown'
+            : 'ArrowUp'
+          : 'ArrowUpDown';
+        return (
+          <th
+            key={key.fieldName}
+            scope="col"
+            aria-label={
+              isSorted
+                ? isSortedAscending
+                  ? key.name.concat(' ', t('table.sorted_ascending'))
+                  : key.name.concat(' ', t('table.sorted_descending'))
+                : key.name.concat(' ', t('table.sortable'))
+            }
+            onClick={() => setSortingState(key.fieldName)}
+            className={classnames(
+              'divTableColumnheader',
+              'sortable',
+              key.hideOnMobile ? 'hideOnMobile' : ''
+            )}
+            tabIndex={0}
+            onKeyDown={e => {
+              return e.key === 'Enter' ? setSortingState(key.fieldName) : null;
+            }}
+          >
+            {key.name}
+            <Icon
+              className={
+                key.autohideSorting === false ? 'noAutoHide' : undefined
+              }
+              iconName={iconName}
+            />
+          </th>
+        );
+      }
+      return (
+        <th
+          className={key.hideOnMobile ? 'hideOnMobile' : ''}
+          key={key.fieldName}
+          scope="col"
+        >
+          {key.name}
+        </th>
+      );
+    })
+  );
 };
 
 /**
  * @visibleName Table (Tabell)
  */
-export default class Table<P> extends React.PureComponent<
-  TableProps<P>,
-  TableState
-> {
-  static defaultProps = {
-    data: []
-  };
-  private readonly wrapperRef: React.RefObject<HTMLDivElement>;
-  private readonly tableRef: React.RefObject<HTMLDivElement>;
+const Table = <P extends object>(props: TableProps<P>) => {
+  const {
+    editableRows,
+    expandableRows,
+    expandIconPlacement,
+    children,
+    className,
+    columns,
+    id,
+    language
+  } = props;
+  const genratedId = useId(id);
+  const mainId = id ? id : 'table-' + genratedId;
 
-  constructor(props: TableProps<P>) {
-    super(props);
-    this.wrapperRef = React.createRef();
-    this.tableRef = React.createRef();
-    this.state = {
-      editModeActive: false,
-      tableIsScrollable: false,
-      openEditableRowIndex: props.openEditableRowIndex,
-      openExpandableRowIndex: undefined,
-      sort: {
-        ascending: false,
-        columnFieldName: ''
-      }
-    };
-  }
+  const wrapperRef = React.useRef<HTMLDivElement>(null);
+  const tableRef = React.useRef<HTMLDivElement>(null);
+  const [tableIsScrollable, setTableIsScrollable] = React.useState<boolean>(
+    false
+  );
+  const [openEditableRowIndex, setOpenEditableRowIndex] = React.useState<
+    number | undefined
+  >();
+  const [openExpandableRowIndex, setOpenExpandableIndex] = React.useState<
+    number | undefined
+  >();
+  const [sort, setSort] = React.useState<{
+    ascending: boolean;
+    columnFieldName: string;
+  }>({ ascending: false, columnFieldName: '' });
 
-  componentDidUpdate(prevProps: TableProps<P>) {
-    if (this.props.openEditableRowIndex !== prevProps.openEditableRowIndex) {
-      this.setState({ openEditableRowIndex: this.props.openEditableRowIndex });
-    }
-  }
+  const updateDimensions = () => {
+    const tableWidth = tableRef.current && tableRef.current.clientWidth;
+    const wrapperWidth = wrapperRef.current && wrapperRef.current.clientWidth;
 
-  componentDidMount() {
-    const tableWidth =
-      this.tableRef.current && this.tableRef.current.clientWidth;
-    const wrapperWidth =
-      this.wrapperRef.current && this.wrapperRef.current.clientWidth;
-
-    this._setScrollBarState(wrapperWidth, tableWidth);
-
-    window.addEventListener('resize', this._updateDimensions);
-  }
-
-  render() {
-    const {
-      editableRows,
-      expandableRows,
-      expandIconPlacement,
-      children,
-      className,
-      id,
-      language
-    } = this.props;
-    const { tableIsScrollable } = this.state;
-    const columns = this.props.columns;
-
-    const emptyTd = (
-      <>
-        {editableRows && <td className={'emptyTd'} />}
-        {expandableRows && <td className={'emptyTd'} />}
-      </>
-    );
-    return (
-      <div
-        ref={this.wrapperRef}
-        id={id}
-        className={classnames(getClassNames(this.props), className)}
-      >
-        <table>
-          <thead>
-            <tr>
-              {(tableIsScrollable || expandIconPlacement === 'before') &&
-                emptyTd}
-              {this._getHeader(columns, language)}
-              {!tableIsScrollable &&
-                expandIconPlacement !== 'before' &&
-                emptyTd}
-            </tr>
-          </thead>
-          <tbody>{this._getRowData(columns)}</tbody>
-        </table>
-        {children}
-      </div>
-    );
-  }
-
-  _updateDimensions = () => {
-    let tableWidth = this.tableRef.current && this.tableRef.current.clientWidth;
-    let wrapperWidth =
-      this.wrapperRef.current && this.wrapperRef.current.clientWidth;
-
-    this._setScrollBarState(wrapperWidth, tableWidth);
-  };
-
-  _setScrollBarState = (
-    wrapperWidth: number | null,
-    tableWidth: number | null
-  ) => {
-    if (tableWidth && wrapperWidth && tableWidth > wrapperWidth) {
-      this.setState({
-        tableIsScrollable: true
-      });
-    } else {
-      this.setState({
-        tableIsScrollable: false
-      });
-    }
-  };
-
-  _getHeader = (
-    columns: TableProps<P>['columns'],
-    language: Language | undefined
-  ) => {
-    return (
-      columns &&
-      columns.map(key => {
-        if (key.sortable) {
-          const isSorted = this.state.sort.columnFieldName === key.fieldName;
-          const isSortedAscending = this.state.sort.ascending;
-          const iconName = isSorted
-            ? isSortedAscending
-              ? 'ArrowDown'
-              : 'ArrowUp'
-            : 'ArrowUpDown';
-          return (
-            <th
-              key={key.fieldName}
-              scope="col"
-              aria-label={
-                isSorted
-                  ? isSortedAscending
-                    ? key.name.concat(
-                        ' ',
-                        languageKeys[language || 'nb'].sorted_rising
-                      )
-                    : key.name.concat(
-                        ' ',
-                        languageKeys[language || 'nb'].sorted_descending
-                      )
-                  : key.name.concat(
-                      ' ',
-                      languageKeys[language || 'nb'].sortable
-                    )
-              }
-              onClick={() => this._setSortingState(key.fieldName)}
-              className={classnames(
-                'sortable',
-                key.hideOnMobile ? 'hideOnMobile' : ''
-              )}
-              tabIndex={0}
-              onKeyDown={e => {
-                return e.key === 'Enter'
-                  ? this._setSortingState(key.fieldName)
-                  : null;
-              }}
-            >
-              {key.name}
-              <Icon
-                className={
-                  key.autohideSorting === false ? 'noAutoHide' : undefined
-                }
-                iconName={iconName}
-              />
-            </th>
-          );
-        }
-        return (
-          <th
-            className={key.hideOnMobile ? 'hideOnMobile' : ''}
-            key={key.fieldName}
-            scope="col"
-          >
-            {key.name}
-          </th>
-        );
-      })
+    setScrollBarState(wrapperWidth, tableWidth, (value: boolean) =>
+      setTableIsScrollable(value)
     );
   };
 
-  _setSortingState = (columnFieldName: string) =>
-    this.setState({
-      sort: {
-        ascending:
-          this.state.sort.columnFieldName === columnFieldName
-            ? !this.state.sort.ascending
-            : true,
-        columnFieldName: columnFieldName
-      }
-    });
-
-  _getRowData = (columns: TableProps<P>['columns']) => {
-    const items = this._sortRowData(this.props.data);
-    return items.map((row, index) => {
-      return (
-        <TableRow
-          data={row}
-          key={index}
-          rowIndex={index}
-          columns={columns}
-          editableContent={this.props.editableContent}
-          editableRows={this.props.editableRows}
-          editModeActive={this.state.openEditableRowIndex !== undefined}
-          expandableContent={this.props.expandableContent}
-          expandableModeActive={this.state.openExpandableRowIndex !== undefined}
-          expandableRows={this.props.expandableRows}
-          expandIconPlacement={this.props.expandIconPlacement}
-          tableHasScroll={this.state.tableIsScrollable}
-          isEditableRowOpen={this.state.openEditableRowIndex === index}
-          isExpandableRowOpen={this.state.openExpandableRowIndex === index}
-          onEditRow={() => this._handleEditRow(index)}
-          onExpandRow={() => this._handleExpandRow(index)}
-          onCloseRow={this._handleCloseRow}
-        />
-      );
-    });
-  };
-
-  _sortRowData = (rows: P[]) => {
-    const sortingKey = this.state.sort.columnFieldName;
+  const sortRowData = (rows: Array<P>) => {
+    const sortingKey = sort.columnFieldName;
     if (sortingKey) {
       const copiedArray = [...rows];
-      const sortDescending = !this.state.sort.ascending;
+      const sortDescending = !sort.ascending;
       const sortingFunction =
-        this.props.columns &&
-        this.props.columns.filter(column => column.fieldName === sortingKey)[0]
+        columns &&
+        columns.filter(column => column.fieldName === sortingKey)[0]
           .sortingFunction;
       if (sortingFunction) {
         copiedArray.sort((a, b) =>
@@ -338,27 +216,84 @@ export default class Table<P> extends React.PureComponent<
     return rows;
   };
 
-  _setOpenEditableRowIndex = (index?: number) => {
-    if (this.props.setOpenEditableRowIndex) {
-      this.props.setOpenEditableRowIndex(index);
-    } else {
-      this.setState({ openEditableRowIndex: index });
-    }
+  const handleEditRow = (index: number) => {
+    setOpenEditableRowIndex(index);
+  };
+  const handleExpandRow = (index: number) => {
+    setOpenExpandableIndex(index);
+  };
+  const handleCloseRow = () => {
+    setOpenEditableRowIndex(undefined);
+    setOpenExpandableIndex(undefined);
   };
 
-  _setOpenExpandableRowIndex = (index?: number) => {
-    this.setState({ openExpandableRowIndex: index });
+  const getRowData = () => {
+    const items = sortRowData(props.data);
+    return items.map((row, index) => {
+      return (
+        <TableRow
+          data={row}
+          key={index}
+          rowIndex={index}
+          columns={columns}
+          editableContent={props.editableContent}
+          editableRows={props.editableRows}
+          editModeActive={openEditableRowIndex !== undefined}
+          expandableContent={props.expandableContent}
+          expandableModeActive={openExpandableRowIndex !== undefined}
+          expandableRows={props.expandableRows}
+          expandIconPlacement={props.expandIconPlacement}
+          tableHasScroll={tableIsScrollable}
+          isEditableRowOpen={openEditableRowIndex === index}
+          isExpandableRowOpen={openExpandableRowIndex === index}
+          onEditRow={() => handleEditRow(index)}
+          onExpandRow={() => handleExpandRow(index)}
+          onCloseRow={handleCloseRow}
+          openExpandableRowIndex={openExpandableRowIndex}
+          tableId={mainId}
+        />
+      );
+    });
   };
 
-  _handleEditRow = (index?: number) => {
-    this._setOpenEditableRowIndex(index);
-  };
-  _handleExpandRow = (index?: number) => {
-    this._setOpenExpandableRowIndex(index);
-  };
+  React.useEffect(() => {
+    const tableWidth = tableRef.current && tableRef.current.clientWidth;
+    const wrapperWidth = wrapperRef.current && wrapperRef.current.clientWidth;
+    setScrollBarState(wrapperWidth, tableWidth, setTableIsScrollable);
+    window.addEventListener('resize', updateDimensions);
+  }, []);
 
-  _handleCloseRow = () => {
-    this._setOpenEditableRowIndex();
-    this._setOpenExpandableRowIndex();
-  };
-}
+  const emptyTd = (
+    <>
+      {editableRows && <td className={'emptyTd'} />}
+      {expandableRows && <td className={'emptyTd'} />}
+    </>
+  );
+
+  return (
+    <div
+      ref={wrapperRef}
+      id={id}
+      className={classnames(getClassNames(props), className)}
+    >
+      <table>
+        <thead>
+          <tr>
+            {(tableIsScrollable || expandIconPlacement === 'before') && emptyTd}
+            {getHeader(
+              columns,
+              language,
+              sort,
+              (value: { ascending: boolean; columnFieldName: string }) =>
+                setSort(value)
+            )}
+            {!tableIsScrollable && expandIconPlacement !== 'before' && emptyTd}
+          </tr>
+        </thead>
+        <tbody>{getRowData()}</tbody>
+      </table>
+      {children}
+    </div>
+  );
+};
+export default Table;

@@ -301,14 +301,18 @@ const data = [
   }
 ];
 const expandableContent = (data, close, rowIndex) => (
-  <Table
-    data={data.ansatte}
-    columns={[
-      { name: 'Ansatt', fieldName: 'navn' },
-      { name: 'Fødselsnr', fieldName: 'fnr' },
-      { name: 'Beskrivelse', fieldName: 'beskrivelse' }
-    ]}
-  />
+  <div style={{ width: '700px' }}>
+    <ActionButton>Jeg er en knapp</ActionButton>
+    <Table
+      data={data.ansatte}
+      columns={[
+        { name: 'Ansatt', fieldName: 'navn' },
+        { name: 'Fødselsnr', fieldName: 'fnr' },
+        { name: 'Beskrivelse', fieldName: 'beskrivelse' }
+      ]}
+      fullWidth
+    />
+  </div>
 );
 
 <Table
