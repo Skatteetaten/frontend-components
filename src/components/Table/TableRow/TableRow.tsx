@@ -222,7 +222,14 @@ const TableRow = <P extends object>(props: TableRowProps<P>) => {
                   )}
                 </tr>
                 {isExpandableRowOpen && expandIconPlacement !== 'before' && (
-                  <tr>
+                  <tr
+                    key={rowIndex + 'expanded'}
+                    className={
+                      isExpandableRowOpen
+                        ? 'expandableRow-open'
+                        : 'expandableRow'
+                    }
+                  >
                     <td colSpan={numberOfColumns}>{expandableCellContent()}</td>
                   </tr>
                 )}

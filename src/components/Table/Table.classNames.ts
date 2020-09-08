@@ -121,7 +121,8 @@ export const getClassNames = props => {
         },
         '.expandableContent': {
           marginTop: '40px',
-          width: 'max-content'
+          width: 'max-content',
+          paddingLeft: '96px'
         }
       }
     }
