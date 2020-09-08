@@ -153,19 +153,19 @@ function closeDialog() {
     buttonStyle="secondary"
     onClick={() => setState({ hideDialog: false })}
   >
-    Dialog som forsvinner ved klikk utenfor
+    Vis dialog som lukkes aktivt
   </Button>
   <Dialog
     hidden={state.hideDialog}
     type={Dialog.Type.normal}
     onDismiss={closeDialog}
-    modalProps={{ isBlocking: false, isModeless: false }}
-    title="Sakshistorikk"
+    modalProps={{ isBlocking: true, isModeless: false }}
+    title="Meldinger"
     forceFocusInsideTrap
     minWidth="400px"
     maxWidth="600px"
   >
-    <p>Ingen opplysninger funnet.</p>
+    <p>Du har ingen nye meldinger.</p>
 
     <Dialog.Footer>
       <Button onClick={closeDialog}>Lukk</Button>
