@@ -11,7 +11,6 @@ const languages = {
     'datepicker.nextYearAriaLabel': 'Neste år',
     'datepicker.prevMonthAriaLabel': 'Forrige måned',
     'datepicker.prevYearAriaLabel': 'Forrige år',
-    'table.expandable.button.title': 'Mer informasjon',
     'table.sortable': 'sorterbar',
     'table.sorted_ascending': 'sortert stigende',
     'table.sorted_descending': 'sortert synkende',
@@ -30,12 +29,11 @@ const languages = {
     'datepicker.nextYearAriaLabel': 'Neste år',
     'datepicker.prevMonthAriaLabel': 'Førre månad',
     'datepicker.prevYearAriaLabel': 'Førre år',
-    'table.expandable.button.title': 'Meir informasjon',
     'table.sortable': 'sorterbar',
     'table.sorted_ascending': 'sortert stigande',
     'table.sorted_descending': 'sortert søkkande',
     'tablerow.editable.title': 'Rediger rad',
-    'tablerow.expandable.title': 'Mer informasjon'
+    'tablerow.expandable.title': 'Meir informasjon'
   },
   en_GB: {
     'datepicker.ariaLabel': 'Calendar',
@@ -49,7 +47,6 @@ const languages = {
     'datepicker.nextYearAriaLabel': 'Next year',
     'datepicker.prevMonthAriaLabel': 'Previous month',
     'datepicker.prevYearAriaLabel': 'Previous year',
-    'table.expandable.button.title': 'More information',
     'table.sortable': 'sortable',
     'table.sorted_ascending': 'sorted ascending',
     'table.sorted_descending': 'sorted descending',
