@@ -1,3 +1,12 @@
+### **v.3.6.0 - 08.09.2020 **
+
+- Table: now supports expandable rows. Improved accessbility by labeling sortable columns.
+- Callout: improved accessibility by removing role="dialog" as default. This is indirectly applied in LabelWithCallout and help texts in input fields.
+- Dialog: improved accessibility by changing default role="alertdialog" to role="dialog".
+- DatePicker: now supports different languanges, mainly in aria-labels strings.
+- FileUploader: fixes an issue where is was not possible to upload the same file.
+- Updated documentation and examples.
+
 ### **v.3.5.1 - 21.08.2020 **
 
 - Pagination: fixes an issue that displayed wrong number of items when changing page size.

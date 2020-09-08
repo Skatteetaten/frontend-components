@@ -273,7 +273,7 @@ const titles = {
       brukere vil sette pris på «akseleratorer» - funksjoner som reduserer tiden
       det tar å gjøre en handling eller gjennomføre en prosess. Slike
       akseleratorer blir ofte ikke lagt merke til av uerfarne brukere, men gjør
-      at erfarne brukere ikke minster fart.
+      at erfarne brukere ikke mister fart.
     </p>
     <p>
       Et eksempel på slike akseleratorer er ved kopiering av tekst i en e-post.

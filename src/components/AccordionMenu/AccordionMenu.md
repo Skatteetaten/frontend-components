@@ -151,33 +151,51 @@ const timeStampStyle = {
 ```
 
 ```js noeditor uu
-<h3>Tips</h3>
-<ul>
-<li>Det skal kun være ett tabstopp pr ekspander.</li>
-<li>Ekspandere skal ha en visuell indikator på at innhold utvides/minimeres.</li>
-<li>Sjekk at elementet leses som en ekspander med skjermleser og at du beholder fokus når du utvider/minimerer den.</li>
-</ul>
+<>
+  <h3>Tips</h3>
+  <ul>
+    <li>Det skal kun være ett tabstopp pr ekspander.</li>
+    <li>
+      Ekspandere skal ha en visuell indikator på at innhold utvides/minimeres.
+    </li>
+    <li>
+      Sjekk at elementet leses som en ekspander med skjermleser og at du
+      beholder fokus når du utvider/minimerer den.
+    </li>
+  </ul>
 
-<h3>Mest relevante WCAG-krav</h3>
-<ul>
-<li>1.3.1 A, Informasjon og relasjoner</li>
-<li>4.1.2 A, Navn, rolle, verdi</li>
-</ul>
+  <h3>Mest relevante WCAG-krav</h3>
+  <ul>
+    <li>1.3.1 A, Informasjon og relasjoner</li>
+    <li>4.1.2 A, Navn, rolle, verdi</li>
+  </ul>
 
-<h3>WAI-ARIA</h3>
-<ul>
-<li>Aria-expanded brukes på knappene som utvides/minimeres.</li>
-<li>Aria-hidden brukes for å skjule ikoner for skjermlesere.</li>
-</ul>
-<p>
-  <a href="https://www.w3.org/TR/wai-aria-practices-1.1/#accordion">
-    Mer om WAI-ARIA for accordion.
-  </a>
-</p>
+  <h3>WAI-ARIA</h3>
+  <ul>
+    <li>Aria-expanded brukes på knappene som utvides/minimeres.</li>
+    <li>Aria-hidden brukes for å skjule ikoner for skjermlesere.</li>
+  </ul>
+  <p>
+    <a href="https://www.w3.org/TR/wai-aria-practices-1.1/#accordion">
+      Mer om WAI-ARIA for accordion.
+    </a>
+  </p>
+</>
 ```
 
 ```js noeditor beskrivelse
+<>
   <h3>Ekspanderende panel i venstremeny forenkler saksbehandlingen</h3>
-  <p>For å gjøre det enklere for saksbehandlere å ha oversikt over en rekke kategorier med ulikt innhold, kan du bruke ekspanderende bokser i venstremenyen. Du kan vise et vilkårlig innhold i det ekspanderbare området.</p>
-  <p>Komponenten har mye til felles med Accordion, men AccordionMenu er spesielt stilet for å brukes til kategorivisning i saksbehandlingsløsninger. Komponenten setter alltid av plass til ikoner, og tegner opp sirkel rundt disse.</p>
+  <p>
+    For å gjøre det enklere for saksbehandlere å ha oversikt over en rekke
+    kategorier med ulikt innhold, kan du bruke ekspanderende bokser i
+    venstremenyen. Du kan vise et vilkårlig innhold i det ekspanderbare området.
+  </p>
+  <p>
+    Komponenten har mye til felles med Accordion, men AccordionMenu er spesielt
+    stilet for å brukes til kategorivisning i saksbehandlingsløsninger.
+    Komponenten setter alltid av plass til ikoner, og tegner opp sirkel rundt
+    disse.
+  </p>
+</>
 ```

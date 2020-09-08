@@ -56,27 +56,42 @@ import TextField from '@skatteetaten/frontend-components/TextField';
 ```
 
 ```js noeditor beskrivelse
-<h3>Hjelpekomponent</h3>
-<p>Dette er i hovedsak en hjelpekomponent som brukes av input-komponentene. Det er for eksempel denne som brukes til å vise label og hjelpetekst og i toppen av TextField og DatePicker.</p>
-<p>Bruk denne komponenten i tilfeller hvor det er ønskelig samme med utseende og funksjonalitet på label og hjelpetekst som for de øvrige inputkomponentene, for eksempel seksjoner eller knapperader.</p>
+<>
+  <h3>Hjelpekomponent</h3>
+  <p>
+    Dette er i hovedsak en hjelpekomponent som brukes av input-komponentene. Det
+    er for eksempel denne som brukes til å vise label og hjelpetekst og i toppen
+    av TextField og DatePicker.
+  </p>
+  <p>
+    Bruk denne komponenten i tilfeller hvor det er ønskelig samme med utseende
+    og funksjonalitet på label og hjelpetekst som for de øvrige
+    inputkomponentene, for eksempel seksjoner eller knapperader.
+  </p>
+</>
 ```
 
 ```js noeditor uu
-<h3>Tips</h3>
-<ul>
-<li>Merk at flytende Callout (Calloutfloating=true) kun kan brukes i interne løsninger.</li>
-</ul>
+<>
+  <h3>Tips</h3>
+  <ul>
+    <li>
+      Merk at flytende Callout (Calloutfloating=true) kun kan brukes i interne
+      løsninger.
+    </li>
+  </ul>
 
-<h3>Mest relevante WCAG-krav</h3>
-<ul>
-<li>1.3.1 A, Informasjon og relasjoner</li>
-<li>4.1.2 A, Navn, rolle, verdi</li>
-</ul>
+  <h3>Mest relevante WCAG-krav</h3>
+  <ul>
+    <li>1.3.1 A, Informasjon og relasjoner</li>
+    <li>4.1.2 A, Navn, rolle, verdi</li>
+  </ul>
 
-<h3>WAI-ARIA</h3>
-<ul>
-<li>Aria-expanded brukes på knappene som utvides/minimeres.</li>
-<li>Aria-label brukes for å navngi lukk-ikon i dialogen.</li>
-<li>Aria-hidden brukes for skjule ikoner for skjermleser. </li>
-</ul>
+  <h3>WAI-ARIA</h3>
+  <ul>
+    <li>Aria-expanded brukes på knappene som utvides/minimeres.</li>
+    <li>Aria-label brukes for å navngi lukk-ikon i dialogen.</li>
+    <li>Aria-hidden brukes for skjule ikoner for skjermleser. </li>
+  </ul>
+</>
 ```

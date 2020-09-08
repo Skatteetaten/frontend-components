@@ -142,50 +142,65 @@ function closeButton() {
 ```
 
 ```js noeditor uu
-<h3>Tips</h3>
-<ul>
-<li>En Callout vil teknisk legges til slutt i koden. Dette betyr at eventuelle hjelpeverktøy, som for eksempel skjermlesere, vil lese opp teksten inni Callouten helt til slutt. Av denne grunn skal ikke komponenten brukes i publikumsløsninger.</li>
-<li>Kontroller at det er mulig å åpne/lukke Callout-en både med mus og tastatur.</li>
-</ul>
+<>
+  <h3>Tips</h3>
+  <ul>
+    <li>
+      En Callout vil teknisk legges til slutt i koden. Dette betyr at eventuelle
+      hjelpeverktøy, som for eksempel skjermlesere, vil lese opp teksten inni
+      Callouten helt til slutt. Av denne grunn skal ikke komponenten brukes i
+      publikumsløsninger.
+    </li>
+    <li>
+      Kontroller at det er mulig å åpne/lukke Callout-en både med mus og
+      tastatur.
+    </li>
+  </ul>
 
-<h3>Mest relevante WCAG-krav</h3>
-<ul>
-<li>1.3.1 A, Informasjon og relasjoner</li>
-<li>4.1.2 A, Navn, rolle, verdi</li>
-</ul>
+  <h3>Mest relevante WCAG-krav</h3>
+  <ul>
+    <li>1.3.1 A, Informasjon og relasjoner</li>
+    <li>4.1.2 A, Navn, rolle, verdi</li>
+  </ul>
 
-<h3>WAI-ARIA</h3>
-<ul>
-<li>Aria-haspopup brukes på knappene som viser melding/varsel.</li>
-<li>Role=dialog identifiserer dialogboksen for skjermleser</li>
-<li>Aria-label brukes for å navngi lukk-ikon i dialogen.</li>
-<li>Aria-hidden brukes for skjule ikoner for skjermleser. </li>
-</ul>
+  <h3>WAI-ARIA</h3>
+  <ul>
+    <li>Aria-haspopup brukes på knappene som viser melding/varsel.</li>
+    <li>Role=dialog identifiserer dialogboksen for skjermleser</li>
+    <li>Aria-label brukes for å navngi lukk-ikon i dialogen.</li>
+    <li>Aria-hidden brukes for skjule ikoner for skjermleser. </li>
+  </ul>
+</>
 ```
 
 ```js noeditor beskrivelse
+<>
+  <h3>Kun i interne løsninger</h3>
   <p>
-    Merk at Callout kun skal brukes i interne løsninger. Se universell
-    utforming for begrunnelse.
+    Vi bruker callout normalt for å vise en hjelpetekst. Et typisk eksempel er
+    et ikon med en «i», der en informasjons-tekst dukker opp når brukeren
+    trykker på ikonet. Merk at vi bare bruker callout i interne løsninger fordi
+    dette ikke støtter universell utforming. Se begrunnelse under fanen
+    universell utforming.
   </p>
-  <h4>Farger</h4>
+  <h3>Vi bruker grønn og gul farge på boksene</h3>
   <ul>
-    <li>Grønn til hjelpetekster</li>
+    <li>Grønn til hjelpetekster.</li>
     <li>Gul til informasjon og opplysning.</li>
   </ul>
-  <h4>Farger som brukes med forsiktighet</h4>
+  <h3>Unntak fra regelen:</h3>
   <ul>
     <li>
-      Rød til feil og advarsler. Denne skal i utgangspunktet ikke brukes. Hvis
-      det er feil, skal det vises brukeren uten at hun trenger å klikke den
+      Blå farge, for å støtte gammel visuell profil. Det vil si
+      saksbehandlingsløsninger som alt har blå informasjonsbokser. Vi bruker
+      ikke blå i nye løsninger.
+    </li>
+    <li>Hvit farge, i tilfeller der grønn og gul gir for lav lesekontrast.</li>
+    <li>
+      Når det gjelder rød farge skal vi ikke bruke denne på utropsbokser. Må vi
+      kommunisere en feil, skal vi fortelle det uten at brukeren må klikke det
       frem.
     </li>
-    <li>
-      Blå for or å støtte gammel visuell profil (saksbehandlingsløsninger som
-      allerede har blå informasjonsbokser). Brukes ikke i nye løsninger.
-    </li>
-    <li>
-      Hvit i unntaktstilfeller der de andre fargene gir for lav lesekontrast
-    </li>
-</ul>
+  </ul>
+</>
 ```

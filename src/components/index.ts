@@ -1,6 +1,7 @@
 export * from './utils/palette';
 export * from './utils/fonts';
 export * from './utils/getFocusStyle';
+export * from './utils/i18n';
 export * from './utils/icons';
 export * from './Accordion';
 export * from './AccordionMenu';
