@@ -6,11 +6,16 @@ import {
 } from 'office-ui-fabric-react/lib-commonjs/Dropdown';
 import * as React from 'react';
 import Icon from '../Icon/Icon';
-import { getCalloutClassNames, getClassNames } from './Dropdown.classNames';
+import { getCalloutStyles, getClassNames } from './Dropdown.classNames';
 import LabelWithCallout, { calloutState } from '../LabelWithCallout';
 import { LabelWithCalloutProps } from '../LabelWithCallout/LabelWithCallout';
 import ErrorMessage from '../ErrorMessage';
 import { useId } from '@reach/auto-id';
+import { IStyleFunctionOrObject } from '@uifabric/utilities';
+import {
+  IDropdownStyleProps,
+  IDropdownStyles
+} from 'office-ui-fabric-react/lib-commonjs/Dropdown';
 
 export interface DropdownProps extends IDropdownProps {
   /** Lukk callout på blur */
@@ -64,6 +69,10 @@ const Dropdown: React.FC<DropdownProps> = props => {
   const inputId = mainId + '-input';
   const labelId = mainId + '-label';
   const styles = getClassNames(props);
+  const dropdownStyles: IStyleFunctionOrObject<
+    IDropdownStyleProps,
+    IDropdownStyles
+  > = getCalloutStyles();
 
   return (
     <div id={mainId}>
@@ -96,9 +105,7 @@ const Dropdown: React.FC<DropdownProps> = props => {
           ariaLabel={label}
           id={inputId}
           className={classnames(styles.main, className)}
-          calloutProps={{
-            className: getCalloutClassNames()
-          }}
+          styles={dropdownStyles}
           onRenderCaretDown={() => <Icon iconName={'ChevronDown'} />}
         >
           {children}

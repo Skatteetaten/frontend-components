@@ -13,16 +13,13 @@ function oppsettFullDOM(props) {
 
 describe('IconButton komponent', () => {
   it('matcher snapshot', () => {
-    matches(
-      <IconButton title="Lagre" circle={true} type="default" icon="Save" />
-    );
+    matches(<IconButton title="Lagre" circle={true} icon="Save" />);
   });
 
   it('rendrer IconButton med default props', () => {
     const wrapper = oppsettShallow({});
 
     expect(wrapper.prop('circle')).toEqual(false);
-    expect(wrapper.prop('type')).toEqual('default');
     expect(wrapper.prop('icon')).toEqual(undefined);
     expect(wrapper.prop('title')).toEqual(undefined);
     expect(wrapper.prop('disabled')).toEqual(undefined);

@@ -5,6 +5,7 @@ import { MdIcons } from '../utils/icons/';
 import { Animation } from '../utils/getAnimationStyles';
 import { PaletteProps } from '..';
 import { DropdownProps } from './Dropdown';
+import { IDropdownStyles } from 'office-ui-fabric-react';
 
 function getFieldTypeStyles(props: DropdownProps) {
   if (props.inputSize === 'large') {
@@ -126,57 +127,47 @@ export const getErrorClassNames = (props: DropdownProps) => {
   });
 };
 
-export const getCalloutClassNames = () => {
+export const getCalloutStyles = (): Partial<IDropdownStyles> => {
   const palette = getTheme().palette as PaletteProps;
   const inset = 0;
   const radius = '0';
 
-  return mergeStyles({
-    displayName: 'SkeDropdownValg',
-    selectors: {
-      '::-moz-focus-inner': {
-        border: '0',
-        selectors: {
-          '.dropdownItemSelected': {
-            background: palette.skeColor.burgundy
-          }
+  return {
+    dropdownItem: {
+      color: palette.skeColor.blackAlt,
+      marginTop: '4px',
+      marginBottom: '4px',
+      selectors: {
+        '&:hover': {
+          background: `${palette.skeColor.lightBlue} !important`,
+          textDecoration: 'underline'
+        },
+        '&:active': {
+          background: palette.skeColor.lightBlue,
+          textDecoration: 'none'
+        },
+        '&:focus': {
+          background: palette.skeColor.lightBlue,
+          textDecoration: 'underline'
+        },
+        '&:hover:after, &:focus:after': {
+          content: '""',
+          position: 'absolute',
+          left: inset + 1,
+          top: inset + 1,
+          bottom: inset + 1,
+          right: inset + 1,
+          borderRadius: radius,
+          outline: 'transparent',
+          zIndex: 1,
+          color: palette.skeColor.blackAlt
         }
-      },
-      '.ms-Fabric.is-focusVisible.is-focusVisible & .ms-Dropdown-item:focus:after, .ms-Dropdown-item:hover:after': {
-        content: '""',
-        position: 'absolute',
-        left: inset + 1,
-        top: inset + 1,
-        bottom: inset + 1,
-        right: inset + 1,
-        borderRadius: radius,
-        outline: 'transparent',
-        zIndex: 1,
-        color: palette.skeColor.blackAlt
-      },
-      '.ms-Dropdown-optionText': {
-        whiteSpace: 'normal !important'
-      },
-      '.ms-Dropdown-item': {
-        color: palette.skeColor.blackAlt,
-        marginTop: '4px',
-        marginBottom: '4px',
-
-        selectors: {
-          ':hover': {
-            background: palette.skeColor.lightBlue,
-            textDecoration: 'underline'
-          },
-          ':active': {
-            background: palette.skeColor.lightBlue,
-            textDecoration: 'none'
-          }
-        }
-      },
-      '.ms-Dropdown-item:focus': {
-        background: palette.skeColor.lightBlue,
-        textDecoration: 'underline'
       }
-    }
-  });
+    },
+    dropdownItemSelected: {
+      color: palette.skeColor.blackAlt,
+      background: `${palette.skeColor.whiteGrey} !important`
+    },
+    dropdownOptionText: { whiteSpace: 'normal !important' }
+  };
 };

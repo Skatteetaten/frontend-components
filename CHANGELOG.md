@@ -1,3 +1,12 @@
+### **v.3.5.1 - 21.08.2020 **
+
+- Pagination: fixes an issue that displayed wrong number of items when changing page size.
+- DatePicker: added readonly mode. Component now uses hooks.
+- TopStripeMenu: now uses showOnMobile to better support responsive design.
+- Dropdown: fixes a issue where some CSS where not applied.
+- IconButton: accessibility improvements; remove role and changed to type=button.
+- Documentation on Icon og ActionButton updated.
+
 ### **v.3.5.0 - 10.07.2020 **
 
 - CommandBar: new component
