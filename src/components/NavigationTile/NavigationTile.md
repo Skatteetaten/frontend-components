@@ -110,46 +110,62 @@ const contents = [
 ```
 
 ```js noeditor beskrivelse
-<h3>
-  Forsideknapp for å gå videre i et spor i sidestrukturen
-</h3>
-<p>
-  NavigationTile bruker du for å veilede brukeren til å velge et spor i sidestrukturen for å komme videre. Knappen er vanlig å bruke på landings-sider. Et eksempel er <a href='https://www.skatteetaten.no/person'>skatteetaten.no/person</a> hvor brukeren velger mellom skatt, avgifter, folkeregister, utenlandsk og så videre.
-</p>
-<h3>
-  Knappen har alltid tittel og kan også ha ikon og beskrivende tekst
-</h3>
-<p>
-  Du kan velge mellom å midtstille, høyre- eller venstre-justere innholdet på knappen. For å stille opp innholdet på denne forsideknappen må du bruke <a href='#navigationcontent'>NavigationContent</a>.
-</p>
-<p>
-  Det er viktig at tekst og symbol på NavigationTile gjør målet med knappen tydelig for brukeren.
-</p>
-
+<>
+  <h3>Forsideknapp for å gå videre i et spor i sidestrukturen</h3>
+  <p>
+    NavigationTile bruker du for å veilede brukeren til å velge et spor i
+    sidestrukturen for å komme videre. Knappen er vanlig å bruke på
+    landings-sider. Et eksempel er{' '}
+    <a href="https://www.skatteetaten.no/person">skatteetaten.no/person</a> hvor
+    brukeren velger mellom skatt, avgifter, folkeregister, utenlandsk og så
+    videre.
+  </p>
+  <h3>Knappen har alltid tittel og kan også ha ikon og beskrivende tekst</h3>
+  <p>
+    Du kan velge mellom å midtstille, høyre- eller venstre-justere innholdet på
+    knappen. For å stille opp innholdet på denne forsideknappen må du bruke{' '}
+    <a href="#navigationcontent">NavigationContent</a>.
+  </p>
+  <p>
+    Det er viktig at tekst og symbol på NavigationTile gjør målet med knappen
+    tydelig for brukeren.
+  </p>
+</>
 ```
 
 ```js noeditor uu
-<h3>Tips</h3>
+<>
+  <h3>Tips</h3>
 
   <ul>
-  <li>En lenke skal minst 2 ulike visuelle "hint" for å skille det fra vanlig tekst. Her er det blå farge og understreking.</li>
-  <li>Tenk på kontrast hvis bakgrunnsfargen bak lenken endrer seg, for eksempel svart bakgrunn = hvit skrift</li>
-  <li>Lenketeksten eller alternativ tekst (grafisk lenke) skal tydeliggjøre hva som er målet til lenken</li>
-  <li>Pass på at overskriften i en tile har riktig nivå</li>
+    <li>
+      En lenke skal minst 2 ulike visuelle "hint" for å skille det fra vanlig
+      tekst. Her er det blå farge og understreking.
+    </li>
+    <li>
+      Tenk på kontrast hvis bakgrunnsfargen bak lenken endrer seg, for eksempel
+      svart bakgrunn = hvit skrift
+    </li>
+    <li>
+      Lenketeksten eller alternativ tekst (grafisk lenke) skal tydeliggjøre hva
+      som er målet til lenken
+    </li>
+    <li>Pass på at overskriften i en tile har riktig nivå</li>
   </ul>
 
   <h3>Mest relevante WCAG-krav</h3>
 
   <ul>
-  <li>1.4.1 A, Bruk av farge</li>
-  <li>1.4.3 AA, Kontrast (minimum)</li>
-  <li>2.4.4 A, Formål med lenke (i kontekst)</li>
+    <li>1.4.1 A, Bruk av farge</li>
+    <li>1.4.3 AA, Kontrast (minimum)</li>
+    <li>2.4.4 A, Formål med lenke (i kontekst)</li>
   </ul>
 
   <h3>WAI-ARIA</h3>
 
   <ul>
-  <li>Aria-hidden="true" brukes for skjule ikoner for skjermleser.</li>
-  <li>Aria-label="xxx" brukes for å navngi nav-tag.</li>
+    <li>Aria-hidden="true" brukes for skjule ikoner for skjermleser.</li>
+    <li>Aria-label="xxx" brukes for å navngi nav-tag.</li>
   </ul>
+</>
 ```

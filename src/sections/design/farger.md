@@ -1,9 +1,13 @@
-Her har vi plukket ut de fargene fra Skatteetatens visuelle profil som fungerer best på digitale flater. I tillegg lagt til et sett med grå- og blåtoner fordi de ofte brukes på nett.
+Nedenfor har vi plukket ut de fargene fra Skatteetatens visuelle profil som fungerer best på digitale flater. 
+I tillegg har vi lagt til et sett med grå- og blåtoner fordi vi ofte bruker disse på nett.
 
 ### Hovedfarger
 
-Burgundy sammen med den lysere varianten burgundyLight brukes i header og footer og er hovedfargen på en side.
-Bokser, rammer, visuelle elementer på en side kan bruke green, lightGreen, brown, beige, pink og lightPink. Pink og lightPink brukes i hovedsak til feilmeldinger og markering av feil.
+Vi bruker farger etter følgende regler:
+
+- Hovedfargen på en side er burgundy. Vi bruker denne fargen sammen med den lysere varianten burgundyLight i header og footer.
+- Bokser, rammer og visuelle elementer på en side har fargene, green, lightGreen, brown, beige, pink og lightPink. 
+- Vi bruker Pink og lightPink i hovedsak på feilmeldinger og markering av feil.
 
 ```js noeditor beskrivelse
 import TinyColor from '@ctrl/tinycolor';
@@ -65,7 +69,7 @@ function drawSwatch(colorCode) {
 
 ### Tekstfarge
 
-BlackAlt brukes som fargen på tekster hvis bakgrunnen er lys. White brukes hvis det er tekst på mørk bakgrunn.
+Vi bruker BlackAlt som farge på tekster der bakgrunnen er lys. Hvis det er tekst på mørk bakgrunn bruker vi White.
 
 ```js noeditor beskrivelse
 import TinyColor from '@ctrl/tinycolor';
@@ -98,7 +102,8 @@ function drawSwatch(colorCode) {
 
 ### Interaksjonsfarge (det som er klikkbart)
 
-Blue brukes på lenker og knapper som er klikkbare og som ligger på lys bakgrunn. Lenker på mørk bakgrunn, bruker lightBlue. DarkBlue brukes for hover-effekt på knapper og andre klikkbare elementer som ikke er lenke.
+Vi bruker Blue på lenker og knapper som brukeren kan klikke på og som ligger på lys bakgrunn. 
+På lenker med mørk bakgrunn, bruker vi lightBlue. DarkBlue bruker vi for hover-effekt på knapper og andre klikkbare elementer som ikke er lenke.
 
 ```js noeditor beskrivelse
 const { TinyColor } = require('@ctrl/tinycolor');
