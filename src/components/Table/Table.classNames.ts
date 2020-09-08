@@ -27,6 +27,9 @@ export const getClassNames = props => {
             'td.editableCell': {
               padding: 0
             },
+            'td.expandableCell td, td.expandableCell .is-closed': {
+              borderBottom: 'none'
+            },
             'th.hideOnMobile, td.hideOnMobile': {
               display: 'none',
               selectors: {
@@ -82,7 +85,9 @@ export const getClassNames = props => {
                 }
               }
             },
-            td: {
+            'td, .tableRow': {
+              fontWeight: '400',
+              verticalAlign: 'inherit',
               borderBottom: `1px solid ${palette.skeColor.lightGrey}`,
               selectors: {
                 '& .right': {
@@ -95,11 +100,29 @@ export const getClassNames = props => {
             }
           }
         },
+        '.expandCell': {
+          maxWidth: 72,
+          maxHeight: 50
+        },
         '.editableRow': {
           display: 'none'
         },
         '.editableRow-open': {
           display: 'table-row'
+        },
+        '.expandableRow-open .is-closed, .expandableRow-open td': {
+          borderBottom: 'none'
+        },
+        '.expandableRow-open td, .expandableRow-open th': {
+          verticalAlign: 'text-top'
+        },
+        '.emptyTd': {
+          borderBottom: `2px solid ${palette.skeColor.blackAlt}`
+        },
+        '.expandableContent': {
+          marginTop: '40px',
+          width: 'max-content',
+          paddingLeft: '96px'
         }
       }
     }

@@ -200,6 +200,139 @@ const data = [
 <Table data={data} columns={columns} />;
 ```
 
+Ekspanderbare rader
+
+```js
+import Table from '@skatteetaten/frontend-components/Table';
+import ActionButton from '@skatteetaten/frontend-components/ActionButton';
+
+const columns = [
+  {
+    name: 'Firma',
+    fieldName: 'firma'
+  },
+  {
+    name: 'Timestamp',
+    fieldName: 'timestamp'
+  },
+  {
+    name: 'Status',
+    fieldName: 'status'
+  },
+  {
+    name: 'Stopp',
+    fieldName: 'stopp'
+  },
+  {
+    name: 'Restart',
+    fieldName: 'restart'
+  },
+  { name: 'ETA', fieldName: 'eta' }
+];
+
+const data = [
+  {
+    firma: 'Bluth Company',
+    timestamp: '2020-08-04 11:31:57 UTC',
+    status: 'RUNNING',
+    eta: '01d 04h 23m 05s',
+    ansatte: [
+      {
+        navn: 'Per Olsen',
+        fnr: '01012020 99999',
+        beskrivelse:
+          'Her er det ganske enkel informasjon i den ekspanderbare raden.'
+      }
+    ]
+  },
+  {
+    firma: 'Business Engros',
+    timestamp: '2020-08-04 11:32:16 UTC',
+    status: 'RUNNING',
+    eta: '01d 04h 23m 05s',
+    ansatte: [
+      {
+        navn: 'Bryce Navnesen',
+        fnr: '02012020 99999',
+        beskrivelse:
+          'Her er det ganske enkel informasjon i den ekspanderbare raden.'
+      },
+      {
+        navn: 'Alice Middleman',
+        fnr: '03012020 99999',
+        beskrivelse:
+          'Her er det ganske enkel informasjon i den ekspanderbare raden.'
+      }
+    ]
+  },
+  {
+    firma: 'Corwood Industries',
+    timestamp: '2020-08-04 11:32:16 UTC',
+    status: 'ERROR',
+    eta: '00d 03h 05m 48s',
+    ansatte: [
+      {
+        navn: 'Kai Mossige',
+        fnr: '01012020 99999',
+        beskrivelse:
+          'Her er det ganske enkel informasjon i den ekspanderbare raden.'
+      }
+    ]
+  },
+  {
+    firma: 'Limerick Partner',
+    timestamp: '2020-08-04 11:32:47 UTC',
+    status: 'FINISHED',
+    eta: '00d 00h 00m 00s',
+    ansatte: [
+      {
+        navn: 'Kari Saksbehandler',
+        fnr: '01012020 99999',
+        beskrivelse:
+          'Her er det ganske enkel informasjon i den ekspanderbare raden.'
+      },
+      {
+        navn: 'Bob Egil Hansen',
+        fnr: '04012020 99999',
+        beskrivelse:
+          'Her er det ganske enkel informasjon i den ekspanderbare raden.'
+      }
+    ]
+  }
+];
+const expandableContent = (data, close, rowIndex) => (
+  <Table
+    data={data.ansatte}
+    columns={[
+      { name: 'Ansatt', fieldName: 'navn' },
+      { name: 'Fødselsnr', fieldName: 'fnr' },
+      { name: 'Beskrivelse', fieldName: 'beskrivelse' }
+    ]}
+    fullWidth
+  />
+);
+
+<Table
+  data={data.map(d => ({
+    ...d,
+    stopp: (
+      <ActionButton icon="Cancel" onClick={() => console.log('stopp')}>
+        Stopp
+      </ActionButton>
+    ),
+    restart: (
+      <ActionButton icon="Update" onClick={() => console.log('restart')}>
+        Restart
+      </ActionButton>
+    )
+  }))}
+  columns={columns}
+  expandableRows
+  expandableContent={expandableContent}
+  expandIconPlacement={'before'}
+/>;
+```
+
 ```js noeditor uu
 <h3>Tips</h3>
 <ul>
