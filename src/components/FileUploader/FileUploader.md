@@ -11,6 +11,7 @@ import {
 } from '@skatteetaten/frontend-components';
 const [files, setFiles] = useState([]);
 const [spinner, setSpinner] = useState(false);
+const size = UseScreen();
 
 const styles = {
   container: {
@@ -57,7 +58,7 @@ import {
 } from '@skatteetaten/frontend-components';
 const [files, setFiles] = useState([]);
 const [spinner, setSpinner] = useState(false);
-
+const size = UseScreen();
 const styles = {
   container: {
     width: size.lt.lg ? '100%' : '420px',

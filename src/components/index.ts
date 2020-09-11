@@ -63,8 +63,12 @@ export type {
   AttachmentMetadata,
 } from './FileUploader/FileUploader';
 export { FooterContent } from './FooterContent/FooterContent';
-export { Grid, Row, Col } from './Grid/Grid';
-export type { GridProps, RowProps, ColProps } from './Grid/Grid';
+export { Grid } from './Grid/Grid';
+export { Row } from './Grid/Row';
+export { Col } from './Grid/Col';
+export type { GridProps } from './Grid/Grid';
+export type { RowProps } from './Grid/Row';
+export type { ColProps } from './Grid/Col';
 export { Icon } from './Icon/Icon';
 export { IconButton } from './IconButton/IconButton';
 export type { IconButtonProps } from './IconButton/IconButton';

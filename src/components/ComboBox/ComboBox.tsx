@@ -8,6 +8,7 @@ import {
   calloutState,
   LabelWithCalloutProps,
   ErrorMessage,
+  generateId,
 } from '../index';
 
 export interface ComboBoxProps extends IComboBoxProps {
@@ -51,8 +52,8 @@ export const ComboBox: React.FC<ComboBoxProps> = (props) => {
     ...rest
   } = props;
 
-  const genratedId = 'todo';
-  const mainId = id ? id : 'combobox-' + genratedId;
+  const generatedId = generateId();
+  const mainId = id ? id : 'combobox-' + generatedId;
   const inputId = mainId + '-input';
   const labelId = mainId + '-label';
 

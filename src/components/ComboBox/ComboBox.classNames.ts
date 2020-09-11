@@ -9,30 +9,37 @@ function getFieldTypeStyles(props: ComboboxProps) {
     ? palette.skeColor.error
     : palette.skeColor.blackAlt;
 
-  return {
-    '& .ms-ComboBox': {
-      borderWidth: '2px',
-      borderRadius: '0px',
-      height: '46px',
-      padding: '5px 12px',
-      borderColor: palette.skeColor.blackAlt,
-    },
-    '& .ms-ComboBox:after': {
-      borderRadius: '0px',
-      borderWidth: '2px',
-      borderColor: errorMessage && color,
-    },
-    '& .ms-ComboBox:focus': {
-      borderColor: `${palette.skeColor.blue} !important`,
-    },
-    '& .ms-ComboBox-Input': {
-      fontSize:
-        props.inputSize === 'large' ? FontSizes.large : FontSizes.medium,
-    },
-    'i.ms-Button-icon': {
-      fontSize: FontSizes.large,
-    },
-  };
+  if (props.inputSize === 'large') {
+    return {
+      '& .ms-ComboBox': {
+        borderWidth: '2px',
+        borderRadius: '0px',
+        height: '46px',
+        padding: '5px 12px',
+        borderColor: palette.skeColor.blackAlt,
+      },
+      '& .ms-ComboBox:after': {
+        borderRadius: '0px',
+        borderWidth: '2px',
+        borderColor: errorMessage && color,
+      },
+      '& .ms-ComboBox:focus': {
+        borderColor: `${palette.skeColor.blue} !important`,
+      },
+      '& .ms-ComboBox-Input': {
+        fontSize: FontSizes.large,
+      },
+      'i.ms-Button-icon': {
+        fontSize: FontSizes.large,
+      },
+    };
+  } else {
+    return {
+      '& .ms-ComboBox-Input': {
+        fontSize: FontSizes.medium,
+      },
+    };
+  }
 }
 
 export const getClassNames = (props: ComboboxProps) => {

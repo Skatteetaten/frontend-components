@@ -76,6 +76,14 @@ const ExternalHeaderContent = ({ styles, ...props }) => {
   );
 };
 
+/**
+ * @visibleName TopBanner (Topp)
+ */
+export const TopBanner: React.FC<TopBannerProps> = (props) => {
+  const { external, ...rest } = props;
+  return external ? <ExternalHeader {...rest} /> : <InternalHeader {...rest} />;
+};
+
 export const ExternalHeader: React.FC<TopBannerProps> = (props) => {
   const styles = getExternalClassNames(props);
   // @ts-ignore
@@ -128,13 +136,6 @@ export interface TopBannerProps {
   /** Om logoen skal lenke til skatteetaten.no eller ikke (kun ekstern) */
   logoLink?: boolean;
 }
-/**
- * @visibleName TopBanner (Topp)
- */
-export const TopBanner: React.FC<TopBannerProps> = (props) => {
-  const { external, ...rest } = props;
-  return external ? <ExternalHeader {...rest} /> : <InternalHeader {...rest} />;
-};
 
 TopBanner.defaultProps = {
   title: undefined,
