@@ -24,7 +24,7 @@ const ScrollToTop = withRouter(
   }
 );
 
-export class StyleGuideRenderer extends React.Component<> {
+export class StyleGuideRenderer extends React.Component {
   static displayName = 'StyleGuideRenderer';
 
   constructor(props) {

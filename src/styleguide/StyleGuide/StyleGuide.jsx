@@ -15,7 +15,7 @@ const history = createHashHistory({
   getUserConfirmation: (message, callback) => callback(window.confirm(message)),
 });
 
-export class StyleGuide extends React.Component<> {
+export class StyleGuide extends React.Component {
   static childContextTypes = {
     codeRevision: PropTypes.number.isRequired,
     config: PropTypes.object.isRequired,
