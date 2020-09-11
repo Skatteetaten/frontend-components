@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-
 ### **v.4.0.0 - 31.08.2020 **
 
 - UMD: Enabled umd module building for the design system. This enables it to be loaded with SystemJS for micro-frontend setups.
@@ -15,7 +13,6 @@
 - DatePicker: now supports different languanges, mainly in aria-labels strings.
 - FileUploader: fixes an issue where is was not possible to upload the same file.
 - Updated documentation and examples.
-  > > > > > > > release/v4
 
 ### **v.3.5.1 - 21.08.2020 **
 
