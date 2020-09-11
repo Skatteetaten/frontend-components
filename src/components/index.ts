@@ -8,6 +8,8 @@ export {
   IconFontSizes,
   createFont,
 } from './utils/fonts';
+export { omstrukturerFlatJSON, t } from './utils/i18n/i18n';
+export { languages } from './utils/i18n/languages';
 export type { FontSizeType } from './utils/fonts';
 export { getFocusStyle } from './utils/getFocusStyle';
 export { Heading } from './utils/Heading';

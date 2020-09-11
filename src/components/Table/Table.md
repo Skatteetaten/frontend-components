@@ -201,41 +201,200 @@ const data = [
 <Table data={data} columns={columns} />;
 ```
 
+Ekspanderbare rader
+
+```js
+import Table from '@skatteetaten/frontend-components/Table';
+import ActionButton from '@skatteetaten/frontend-components/ActionButton';
+
+const columns = [
+  {
+    name: 'Firma',
+    fieldName: 'firma',
+  },
+  {
+    name: 'Timestamp',
+    fieldName: 'timestamp',
+  },
+  {
+    name: 'Status',
+    fieldName: 'status',
+  },
+  {
+    name: 'Stopp',
+    fieldName: 'stopp',
+  },
+  {
+    name: 'Restart',
+    fieldName: 'restart',
+  },
+  { name: 'ETA', fieldName: 'eta' },
+];
+
+const data = [
+  {
+    firma: 'Bluth Company',
+    timestamp: '2020-08-04 11:31:57 UTC',
+    status: 'RUNNING',
+    eta: '01d 04h 23m 05s',
+    ansatte: [
+      {
+        navn: 'Per Olsen',
+        fnr: '01012020 99999',
+        beskrivelse:
+          'Her er det ganske enkel informasjon i den ekspanderbare raden.',
+      },
+    ],
+  },
+  {
+    firma: 'Business Engros',
+    timestamp: '2020-08-04 11:32:16 UTC',
+    status: 'RUNNING',
+    eta: '01d 04h 23m 05s',
+    ansatte: [
+      {
+        navn: 'Bryce Navnesen',
+        fnr: '02012020 99999',
+        beskrivelse:
+          'Her er det ganske enkel informasjon i den ekspanderbare raden.',
+      },
+      {
+        navn: 'Alice Middleman',
+        fnr: '03012020 99999',
+        beskrivelse:
+          'Her er det ganske enkel informasjon i den ekspanderbare raden.',
+      },
+    ],
+  },
+  {
+    firma: 'Corwood Industries',
+    timestamp: '2020-08-04 11:32:16 UTC',
+    status: 'ERROR',
+    eta: '00d 03h 05m 48s',
+    ansatte: [
+      {
+        navn: 'Kai Mossige',
+        fnr: '01012020 99999',
+        beskrivelse:
+          'Her er det ganske enkel informasjon i den ekspanderbare raden.',
+      },
+    ],
+  },
+  {
+    firma: 'Limerick Partner',
+    timestamp: '2020-08-04 11:32:47 UTC',
+    status: 'FINISHED',
+    eta: '00d 00h 00m 00s',
+    ansatte: [
+      {
+        navn: 'Kari Saksbehandler',
+        fnr: '01012020 99999',
+        beskrivelse:
+          'Her er det ganske enkel informasjon i den ekspanderbare raden.',
+      },
+      {
+        navn: 'Bob Egil Hansen',
+        fnr: '04012020 99999',
+        beskrivelse:
+          'Her er det ganske enkel informasjon i den ekspanderbare raden.',
+      },
+    ],
+  },
+];
+const expandableContent = (data, close, rowIndex) => (
+  <Table
+    data={data.ansatte}
+    columns={[
+      { name: 'Ansatt', fieldName: 'navn' },
+      { name: 'Fødselsnr', fieldName: 'fnr' },
+      { name: 'Beskrivelse', fieldName: 'beskrivelse' },
+    ]}
+    fullWidth
+  />
+);
+
+<Table
+  data={data.map((d) => ({
+    ...d,
+    stopp: (
+      <ActionButton icon="Cancel" onClick={() => console.log('stopp')}>
+        Stopp
+      </ActionButton>
+    ),
+    restart: (
+      <ActionButton icon="Update" onClick={() => console.log('restart')}>
+        Restart
+      </ActionButton>
+    ),
+  }))}
+  columns={columns}
+  expandableRows
+  expandableContent={expandableContent}
+  expandIconPlacement={'before'}
+/>;
+```
+
 ```js noeditor uu
-<h3>Tips</h3>
-<ul>
-<li>På små skjermer vil endre-ikon flyttes til venstre, og tabellen har horisontal scrolling ved behov.</li>
-<li>Husk at th-tags skal brukes på kolonneoverskrifter. Det kan også være fornuftig å bruke dette på radoverskrifter for å gjøre navigering i tabellen med skjermleser mer forståelig. Husk å bruke scope=row og scope=col for spesifisering.</li>
-<li>Tomme celler bør være td-tag.</li>
-<li>Sjekk at du kan velge ulik sortering med tastatur.</li>
-<li>Test med skjermleser at du hører hva som er sorterbart og at du ikke mister fokus når du velger en sortering.</li>
-</ul>
+<>
+  <h3>Tips</h3>
+  <ul>
+    <li>
+      På små skjermer vil endre-ikon flyttes til venstre, og tabellen har
+      horisontal scrolling ved behov.
+    </li>
+    <li>
+      Husk at th-tags skal brukes på kolonneoverskrifter. Det kan også være
+      fornuftig å bruke dette på radoverskrifter for å gjøre navigering i
+      tabellen med skjermleser mer forståelig. Husk å bruke scope=row og
+      scope=col for spesifisering.
+    </li>
+    <li>Tomme celler bør være td-tag.</li>
+    <li>Sjekk at du kan velge ulik sortering med tastatur.</li>
+    <li>
+      Test med skjermleser at du hører hva som er sorterbart og at du ikke
+      mister fokus når du velger en sortering.
+    </li>
+  </ul>
 
-<h3>Mest relevante WCAG-krav</h3>
-<ul>
-<li>1.3.1 A, Informasjon og relasjoner</li>
-<li>4.1.2 A, Navn, rolle, verdi</li>
-</ul>
+  <h3>Mest relevante WCAG-krav</h3>
+  <ul>
+    <li>1.3.1 A, Informasjon og relasjoner</li>
+    <li>4.1.2 A, Navn, rolle, verdi</li>
+  </ul>
 
-<h3>WAI-ARIA</h3>
-<ul>
-<li>Aria-sort gir beskjed om noe er sorterbart og om det er sortert stigende eller synkende.</li>
-<li>Aria-hidden brukes for skjule ikoner for skjermleser. </li>
-</ul>
+  <h3>WAI-ARIA</h3>
+  <ul>
+    <li>
+      Aria-sort gir beskjed om noe er sorterbart og om det er sortert stigende
+      eller synkende.
+    </li>
+    <li>Aria-hidden brukes for skjule ikoner for skjermleser. </li>
+  </ul>
+</>
 ```
 
 ```js noeditor beskrivelse
+<>
   <h3>Enkel tabell</h3>
   <p>
-    Table-komponenten kan med fordel brukes ved mindre datamengder. (Har du
-    store mengder data og/eller behov for avansert funksjonalitet - vurderer
-    DetailsList i stedet).
+    Table-komponenten fungerer godt når du har mindre datamengder. Har du
+    derimot store mengder data og/eller behov for avansert funksjonalitet – bør
+    du vurdere{' '}
+    <a href="https://skatteetaten.github.io/frontend-components/#detailslist">
+      {' '}
+      Detailslist (sammensatt tabell)
+    </a>{' '}
+    i stedet.
   </p>
   <h3>Vise eller redigere enkeltrad</h3>
-  <p>
-    Komponenten har to tilstander; visningtilstand som bare viser data, og
-    redigering av enkeltrad. Man må fullføre redigering av raden før man kan
-    redigere en annen.
-  </p>
-  <p>Det er også mulig å bruke komponenten uten redigering.</p>
+  <p>Komponenten har to tilstander:</p>
+  <ul>
+    <li>Visningtilstand som bare viser data.</li>
+    <li>
+      Redigering av enkeltrad. Brukeren må fullføre redigering av en rad for å
+      kunne redigere en annen.
+    </li>
+  </ul>
+  <p>Du kan også sette opp komponenten uten mulighet for redigering.</p>
+</>
 ```

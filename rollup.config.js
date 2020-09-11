@@ -26,6 +26,7 @@ const externalsConfig = {
     'classnames',
     'axios',
     'tslib',
+    'react-i18next',
   ],
 };
 const resolveConfig = {

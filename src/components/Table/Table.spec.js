@@ -174,4 +174,31 @@ describe('Table komponent', () => {
       expect(node.prop('disabled')).toEqual(true);
     });
   });
+  it('rendrer Table med ekspanderbare rader ', () => {
+    const wrapper = oppsettMount({ data, columns, expandableRows: true });
+    const tableRow = wrapper.find('TableRow');
+    expect(wrapper.find('thead').exists('button.expandButton')).toEqual(false);
+    expect(tableRow.at(1).exists('button.expandButton')).toEqual(true);
+    expect(tableRow.at(2).exists('button.expandButton')).toEqual(true);
+  });
+  it('viser ekspanderbart innhold når ekspanderingsknapp for en tabellrad klikkes', () => {
+    const mockContent = (mockdata, close, rowIndex) => (
+      <div className={'mockDiv'}>
+        Ekspanderbart innhold for {mockdata.Måned}
+      </div>
+    );
+    const wrapper = oppsettMount({
+      data,
+      columns,
+      expandableRows: true,
+      expandableContent: mockContent,
+    });
+    const tableRow = wrapper.find('TableRow');
+    expect(wrapper.exists('.mockDiv')).toEqual(false);
+    tableRow.at(0).find('IconButton').first().simulate('click');
+    expect(wrapper.exists('.mockDiv')).toEqual(true);
+    expect(wrapper.find('.mockDiv').text()).toEqual(
+      'Ekspanderbart innhold for Januar'
+    );
+  });
 });

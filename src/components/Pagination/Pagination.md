@@ -141,13 +141,26 @@ const [currentPage, setCurrentPage] = React.useState(1);
 ```
 
 ```js noeditor beskrivelse
-<h3>Henger under tabell eller søkeresultat</h3>
-<p>Sidevelgeren hører alltid sammen med en annen komponent, som regel tabell eller et søkeresultat. Den skal som hovedregel henge under og være like bred den tilhørende komponenten.</p>
+<>
+  <h3>Henger under tabell eller søkeresultat</h3>
+  <p>
+    Sidevelgeren hører alltid sammen med en annen komponent, som regel tabell
+    eller et søkeresultat. Den skal som hovedregel henge under og være like bred
+    den tilhørende komponenten.
+  </p>
 
-<h3>Antall sider som vises</h3>
-<p>Det er mulig å stille inn hvor mange sider som vises i tallrekken. Hva som er anbefalt kommer an på hvor mye data som vises og for sannsynlig det er at brukeren vil bla i opplysningene. På mobil er det imidlertid ikke anbefalt å ha flere enn tre tall, på grunn av plassen.</p>
+  <h3>Antall sider som vises</h3>
+  <p>
+    Det er mulig å stille inn hvor mange sider som vises i tallrekken. Hva som
+    er anbefalt kommer an på hvor mye data som vises og for sannsynlig det er at
+    brukeren vil bla i opplysningene. På mobil er det imidlertid ikke anbefalt å
+    ha flere enn tre tall, på grunn av plassen.
+  </p>
+</>
 ```
 
 ```js noeditor uu
-<p>Denne seksjonen er foreløpig tom.</p>
+<>
+  <p>Denne seksjonen er foreløpig tom.</p>
+</>
 ```

@@ -2,36 +2,36 @@
 
 exports[`RadioButtonGroup komponent matcher snapshot 1`] = `
 <fieldset
-  className="fieldset-42"
+  className="fieldset-106"
   id="radiogroup-123"
 >
   <legend
-    className="labelAsLegend-46"
+    className="labelAsLegend-110"
     id="radiogroup-123-label"
   >
     Velg en
   </legend>
   <div
-    className="radioButtons-43"
+    className="radioButtons-107"
     id="radiogroup-123-group"
   >
     <div
       aria-labelledby="radiogroup-123-label"
-      className="ms-ChoiceFieldGroup root-51"
+      className="ms-ChoiceFieldGroup root-115"
       role="radiogroup"
     >
       <div
         className="ms-ChoiceFieldGroup-flexContainer"
       >
         <div
-          className="ms-ChoiceField root-52"
+          className="ms-ChoiceField root-116"
         >
           <div
             className="ms-ChoiceField-wrapper"
           >
             <input
               checked={false}
-              className="ms-ChoiceField-input input-53"
+              className="ms-ChoiceField-input input-117"
               id="ChoiceGroup1-A"
               name="ChoiceGroup1"
               onBlur={[Function]}
@@ -41,7 +41,7 @@ exports[`RadioButtonGroup komponent matcher snapshot 1`] = `
               type="radio"
             />
             <label
-              className="ms-ChoiceField-field field-54"
+              className="ms-ChoiceField-field field-118"
               htmlFor="ChoiceGroup1-A"
             >
               <span
@@ -54,14 +54,14 @@ exports[`RadioButtonGroup komponent matcher snapshot 1`] = `
           </div>
         </div>
         <div
-          className="ms-ChoiceField root-52"
+          className="ms-ChoiceField root-116"
         >
           <div
             className="ms-ChoiceField-wrapper"
           >
             <input
               checked={true}
-              className="ms-ChoiceField-input input-53"
+              className="ms-ChoiceField-input input-117"
               id="ChoiceGroup1-B"
               name="ChoiceGroup1"
               onBlur={[Function]}
@@ -71,7 +71,7 @@ exports[`RadioButtonGroup komponent matcher snapshot 1`] = `
               type="radio"
             />
             <label
-              className="ms-ChoiceField-field is-checked field-59"
+              className="ms-ChoiceField-field is-checked field-123"
               htmlFor="ChoiceGroup1-B"
             >
               <span
@@ -84,14 +84,14 @@ exports[`RadioButtonGroup komponent matcher snapshot 1`] = `
           </div>
         </div>
         <div
-          className="ms-ChoiceField root-52"
+          className="ms-ChoiceField root-116"
         >
           <div
             className="ms-ChoiceField-wrapper"
           >
             <input
               checked={false}
-              className="ms-ChoiceField-input is-disabled input-53"
+              className="ms-ChoiceField-input is-disabled input-117"
               disabled={true}
               id="ChoiceGroup1-C"
               name="ChoiceGroup1"
@@ -102,7 +102,7 @@ exports[`RadioButtonGroup komponent matcher snapshot 1`] = `
               type="radio"
             />
             <label
-              className="ms-ChoiceField-field field-62"
+              className="ms-ChoiceField-field field-126"
               htmlFor="ChoiceGroup1-C"
             >
               <span
@@ -115,14 +115,14 @@ exports[`RadioButtonGroup komponent matcher snapshot 1`] = `
           </div>
         </div>
         <div
-          className="ms-ChoiceField root-52"
+          className="ms-ChoiceField root-116"
         >
           <div
             className="ms-ChoiceField-wrapper"
           >
             <input
               checked={false}
-              className="ms-ChoiceField-input is-disabled input-53"
+              className="ms-ChoiceField-input is-disabled input-117"
               disabled={true}
               id="ChoiceGroup1-D"
               name="ChoiceGroup1"
@@ -133,7 +133,7 @@ exports[`RadioButtonGroup komponent matcher snapshot 1`] = `
               type="radio"
             />
             <label
-              className="ms-ChoiceField-field field-62"
+              className="ms-ChoiceField-field field-126"
               htmlFor="ChoiceGroup1-D"
             >
               <span

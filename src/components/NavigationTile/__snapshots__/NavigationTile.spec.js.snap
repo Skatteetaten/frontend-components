@@ -2,12 +2,12 @@
 
 exports[`NavigationTile komponent matcher snapshot 1`] = `
 <nav
-  className="nav-43 subComponentStyles content nav"
+  className="nav-107 subComponentStyles content nav"
   renderContent={[Function]}
 >
   <ul>
     <NavigationContent
-      className="content-42"
+      className="content-106"
       description="Skattekort, skattemelding (selvangivelse), skatteoppgjør, tema og fradrag som hjelper deg til få riktig skatt. "
       icon="person"
       id="my-id-1"

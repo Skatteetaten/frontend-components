@@ -121,20 +121,42 @@ initialState = {
 ```
 
 ```js noeditor uu
-<p>Denne seksjonen er foreløpig tom.</p>
+<>
+  <p>Denne seksjonen er foreløpig tom.</p>
+</>
 ```
 
 ```js noeditor beskrivelse
-<h3>Over innholdet</h3>
-<p>CommandBar er et område med kommandoer knyttet innholdet på en side, et panel eller en region. CommandBar skal ligge på toppen av det tilhørende innholdet, og kan da fungerte som en intutiv måte å utføre handlinger på innholdet. </p>
+<>
+  <h3>Over innholdet</h3>
+  <p>
+    CommandBar er et område med kommandoer knyttet innholdet på en side, et
+    panel eller en region. CommandBar skal ligge på toppen av det tilhørende
+    innholdet, og kan da fungerte som en intutiv måte å utføre handlinger på
+    innholdet.{' '}
+  </p>
 
-<h3>Unngå for mange elementer</h3>
-<p>CommandBar fungerer best når den ikke inneholder mer enn 5–7 kommandoer. Hvis du har for mange kommandoer eller disse er dårlig organisert, kan komponenten bli vanskelig å bruke eller gjemme viktige kommandoer for brukerne.</p>
+  <h3>Unngå for mange elementer</h3>
+  <p>
+    CommandBar fungerer best når den ikke inneholder mer enn 5–7 kommandoer.
+    Hvis du har for mange kommandoer eller disse er dårlig organisert, kan
+    komponenten bli vanskelig å bruke eller gjemme viktige kommandoer for
+    brukerne.
+  </p>
 
-<h3>Viktigste elementer først</h3>
-<p>Kommandoer bør være sortert etter viktighet; de viktigste først og fra venstre mot høyre. Hvis du trenger å vise status eller visningsalternativer bør disse plasses på høyre side. Ikke vis mer enn 2–3 kommandoer på høyre side, fordi det vil gjøre hele komponenten vanskeligere lese.</p>
+  <h3>Viktigste elementer først</h3>
+  <p>
+    Kommandoer bør være sortert etter viktighet; de viktigste først og fra
+    venstre mot høyre. Hvis du trenger å vise status eller visningsalternativer
+    bør disse plasses på høyre side. Ikke vis mer enn 2–3 kommandoer på høyre
+    side, fordi det vil gjøre hele komponenten vanskeligere lese.
+  </p>
 
-<h3>Ikoner</h3>
-<p>Kommandoene skal som hovedregel ha både ikon og beskrivende tekst. Det kan imidlertid være ok å bruke kun ikoner for kommandoer som er mye brukt og lett gjenkjennelige.</p>
-
+  <h3>Ikoner</h3>
+  <p>
+    Kommandoene skal som hovedregel ha både ikon og beskrivende tekst. Det kan
+    imidlertid være ok å bruke kun ikoner for kommandoer som er mye brukt og
+    lett gjenkjennelige.
+  </p>
+</>
 ```

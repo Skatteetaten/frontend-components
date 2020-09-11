@@ -8,7 +8,8 @@ import { MessageBar } from '@skatteetaten/frontend-components';
 
 ```js noeditor beskrivelse
 import { MessageBar } from '@skatteetaten/frontend-components';
-<div>
+
+<>
   <h3>Viktig for riktig oppsett</h3>
   <p>
     SkeBasis henter inn korrekte farger, fonter og ikoner på komponentene i
@@ -23,5 +24,5 @@ import { MessageBar } from '@skatteetaten/frontend-components';
     Skatteetaten - og å bruke slike ikoner og fonter kan være et brudd på
     lisensbetingelsene.
   </MessageBar>
-</div>;
+</>;
 ```

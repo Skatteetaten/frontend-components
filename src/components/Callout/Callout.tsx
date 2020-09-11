@@ -49,7 +49,7 @@ export class Callout extends React.PureComponent<CalloutProps, CalloutState> {
     color: Callout.HELP,
     directionalHint: Callout.POS_TOP_CENTER,
     doNotLayer: true,
-    role: 'dialog',
+    role: undefined,
   };
 
   render() {

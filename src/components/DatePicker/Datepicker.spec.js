@@ -64,4 +64,21 @@ describe('DatePicker komponent', () => {
       wrapper.find('TextFieldBase').find('input').prop('disabled')
     ).toEqual(true);
   });
+  it('skal vise DatePicker på engelsk når language er satt til "en"', () => {
+    const wrapper = oppsettMount({
+      label: 'Enter date',
+      language: 'en',
+    });
+    const styledDatePickerBase = wrapper.find('StyledDatePickerBase');
+    expect(styledDatePickerBase.prop('ariaLabel')).toEqual('Enter date');
+    expect(styledDatePickerBase.prop('strings').days).toEqual([
+      'Sunday',
+      'Monday',
+      'Tuesday',
+      'Wednesday',
+      'Thursday',
+      'Friday',
+      'Saturday',
+    ]);
+  });
 });

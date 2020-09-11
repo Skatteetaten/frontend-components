@@ -148,10 +148,18 @@ import { Accordion, AccordionItem } from '@skatteetaten/frontend-components';
 ```
 
 ```js noeditor uu
-<h3>Tips</h3>
-<ul>
-<li>Riktig overskriftsnivå: En Accordion (ekspander) kan brukes på mange ulike nivåer på siden. Komponenten kan være standard tekst (det blå klikkbare elementet), men det kan også i enkelte tilfeller være ønskelig å angi dette som et bestemt overskriftsnivå, for eksempel h3 eller h4. Det gjør du slik:</li>
-</ul>
+<>
+  <h3>Tips</h3>
+  <ul>
+    <li>
+      Riktig overskriftsnivå: En Accordion (ekspander) kan brukes på mange ulike
+      nivåer på siden. Komponenten kan være standard tekst (det blå klikkbare
+      elementet), men det kan også i enkelte tilfeller være ønskelig å angi
+      dette som et bestemt overskriftsnivå, for eksempel h3 eller h4. Det gjør
+      du slik:
+    </li>
+  </ul>
+</>
 ```
 
 ```js uu
@@ -197,34 +205,43 @@ import { Accordion, AccordionItem } from '@skatteetaten/frontend-components';
 ```
 
 ```js noeditor uu
-<ul>
-<li>Det skal kun være ett tabstopp pr ekspander.</li>
-<li>Ekspandere skal ha en visuell indikator på at innhold utvides/minimeres.</li>
-<li>Sjekk at elementet leses som en ekspander med skjermleser og at du beholder fokus når du utvider/minimerer den.</li>
-</ul>
+<>
+  <ul>
+    <li>Det skal kun være ett tabstopp pr ekspander.</li>
+    <li>
+      Ekspandere skal ha en visuell indikator på at innhold utvides/minimeres.
+    </li>
+    <li>
+      Sjekk at elementet leses som en ekspander med skjermleser og at du
+      beholder fokus når du utvider/minimerer den.
+    </li>
+  </ul>
 
-<h3>Mest relevante WCAG-krav</h3>
-<ul>
-<li>1.3.1 A, Informasjon og relasjoner</li>
-<li>4.1.2 A, Navn, rolle, verdi</li>
-</ul>
+  <h3>Mest relevante WCAG-krav</h3>
+  <ul>
+    <li>1.3.1 A, Informasjon og relasjoner</li>
+    <li>4.1.2 A, Navn, rolle, verdi</li>
+  </ul>
 
-<h3>WAI-ARIA</h3>
-<ul>
-<li>Aria-expanded brukes på knappene som utvides/minimeres.</li>
-<li>Aria-label brukes i kombinasjon med aria-describedby på trinnvise steg. Dette gjøres for at skjermleserbrukere skal høre hvilket steg de står på hvis de navigerer fra knapp til knapp (ikke piler seg gjennom sekvensen).</li>
-<li>Aria-hidden brukes for å skjule ikoner for skjermlesere.</li>
-</ul>
-<p>
-  <a href="https://www.w3.org/TR/wai-aria-practices-1.1/#accordion">
-    Mer om WAI-ARIA for accordion.
-  </a>
-</p>
+  <h3>WAI-ARIA</h3>
+  <ul>
+    <li>Aria-expanded brukes på knappene som utvides/minimeres.</li>
+    <li>
+      Aria-label brukes i kombinasjon med aria-describedby på trinnvise steg.
+      Dette gjøres for at skjermleserbrukere skal høre hvilket steg de står på
+      hvis de navigerer fra knapp til knapp (ikke piler seg gjennom sekvensen).
+    </li>
+    <li>Aria-hidden brukes for å skjule ikoner for skjermlesere.</li>
+  </ul>
+  <p>
+    <a href="https://www.w3.org/TR/wai-aria-practices-1.1/#accordion">
+      Mer om WAI-ARIA for accordion.
+    </a>
+  </p>
+</>
 ```
 
 ```js noeditor beskrivelse
-import Accordion from '@skatteetaten/frontend-components/Accordion';
-import AccordionItem from '@skatteetaten/frontend-components/Accordion/AccordionItem';
 <div>
   <h3>Ekspanderende panel der brukeren kan velge å se innholdet</h3>
   <p>
@@ -234,5 +251,5 @@ import AccordionItem from '@skatteetaten/frontend-components/Accordion/Accordion
     og utvide hvis innholdet er aktuelt og la være hvis ikke. Denne komponenten
     er også nyttig for å veilede brukeren gjennom en sekvens av trinnvise steg.
   </p>
-</div>;
+</div>
 ```

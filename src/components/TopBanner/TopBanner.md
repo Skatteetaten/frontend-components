@@ -113,35 +113,56 @@ import { TopBanner } from '@skatteetaten/frontend-components';
 ```
 
 ```js noeditor beskrivelse
-<h3>Forskjell på interne systemer og publikumsløsninger</h3>
+<>
+  <h3>Forskjell på interne systemer og publikumsløsninger</h3>
   <p>
-   Alle løsningene våre har et toppbanner som visuelt skiller interne og eksterne fra hverandre. Interne løsninger bruker fylt toppbanner med skrå strek, mens eksterne bruker en smal lang strek, slik som på <a href='https://www.skatteetaten.no'>skatteetaten.no</a>. Dette lager en smidig overgang fra skatteetaten.no til en tilknyttet løsning.
+    Alle løsningene våre har et toppbanner som visuelt skiller interne og
+    eksterne fra hverandre. Interne løsninger bruker fylt toppbanner med skrå
+    strek, mens eksterne bruker en smal lang strek, slik som på{' '}
+    <a href="https://www.skatteetaten.no">skatteetaten.no</a>. Dette lager en
+    smidig overgang fra skatteetaten.no til en tilknyttet løsning.
   </p>
   <p>
-    Det er valgfritt å bruke kompakt eller standard utgave av banneret, men du må være konsekvent gjennom hele løsningen.
+    Det er valgfritt å bruke kompakt eller standard utgave av banneret, men du
+    må være konsekvent gjennom hele løsningen.
   </p>
   <h3>Startsider på interne løsinger</h3>
-  <p>Interne fagsystemer har gjerne en hovedside der brukerne finner arbeidsoppgaver eller søker etter opplysninger. Her kan toppbanneret holdes enkel, og kun inneholde navn på logo og navn på applikasjonen. Toppbanneret kan inneholde meny til rapporter og «løse sider», eller personlige innstillinger. Du trenger ikke skrive «Hjemmeside», «Startside», «Velkommen» i toppbanneret her.</p>
-  <h3>Undersider på interne løsinger</h3>
-   <p>De fleste interne systemer har en eller flere undersider. Banneret på sidene bør ha en tittel som forteller konteksten til innholdet på siden, altså en forklaring som gjør det relevant for brukeren, for eksempel en sakstype eller arbeidsoppgave. Dersom du velger å ha arbeidsoppgaven i toppbanneret, skal også arbeidsliste-funksjonene «Gjør tilgjengelig», «Sett på vent» og «Fordel» stå i umiddelbar nærhet til arbeidsoppgaven.
-   </p>
-    <h3>Klikkbar logo</h3>
   <p>
-    For alle publikumsløsninger skal logoen som hovedregel være klikkbar og ta deg
-    til forsiden av <a href='https://www.skatteetaten.no'>skatteetaten.no</a>.
+    Interne fagsystemer har gjerne en hovedside der brukerne finner
+    arbeidsoppgaver eller søker etter opplysninger. Her kan toppbanneret holdes
+    enkel, og kun inneholde navn på logo og navn på applikasjonen. Toppbanneret
+    kan inneholde meny til rapporter og «løse sider», eller personlige
+    innstillinger. Du trenger ikke skrive «Hjemmeside», «Startside», «Velkommen»
+    i toppbanneret her.
+  </p>
+  <h3>Undersider på interne løsinger</h3>
+  <p>
+    De fleste interne systemer har en eller flere undersider. Banneret på sidene
+    bør ha en tittel som forteller konteksten til innholdet på siden, altså en
+    forklaring som gjør det relevant for brukeren, for eksempel en sakstype
+    eller arbeidsoppgave. Dersom du velger å ha arbeidsoppgaven i toppbanneret,
+    skal også arbeidsliste-funksjonene «Gjør tilgjengelig», «Sett på vent» og
+    «Fordel» stå i umiddelbar nærhet til arbeidsoppgaven.
+  </p>
+  <h3>Klikkbar logo</h3>
+  <p>
+    For alle publikumsløsninger skal logoen som hovedregel være klikkbar og ta
+    deg til forsiden av{' '}
+    <a href="https://www.skatteetaten.no">skatteetaten.no</a>.
   </p>
 
   <p>
-    Se også {' '}
+    Se også{' '}
     <a href="https://www.skatteetaten.no/stilogtone/visuelt/logo/">
       visuell identitet
     </a>{' '}
     for detaljer rundt bruk av logoen.
   </p>
+</>
 ```
 
 ```js noeditor uu
-<div>
+<>
   <h3>Tips</h3>
   <ul>
     <li>
@@ -182,5 +203,5 @@ import { TopBanner } from '@skatteetaten/frontend-components';
     </li>
     <li>Aria-hidden brukes for å skjule ikoner for skjermleser.</li>
   </ul>
-</div>
+</>
 ```

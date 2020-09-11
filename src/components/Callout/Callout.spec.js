@@ -18,7 +18,6 @@ describe('Callout komponent', () => {
     const closeBtn = wrapper.find('IconButton');
 
     expect(Callout.prop('color')).toEqual('lightGreen');
-    expect(Callout.prop('role')).toEqual('dialog');
     expect(Callout.prop('doNotLayer')).toEqual(true);
     expect(Callout.prop('directionalHint')).toEqual(1);
     expect(closeBtn.prop('aria-label')).toEqual('Lukk');

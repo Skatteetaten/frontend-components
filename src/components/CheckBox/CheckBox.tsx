@@ -15,7 +15,7 @@ export interface CheckBoxProps extends ICheckboxProps {
   defaultIndeterminate?: ICheckboxProps['indeterminate'];
 }
 /**
- * @visibleName CheckBox (Avhukingsboks)
+ * @visibleName CheckBox (Avkrysningsboks)
  */
 export class CheckBox extends React.PureComponent<CheckBoxProps, {}> {
   static defaultProps = {

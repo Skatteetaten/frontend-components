@@ -13,10 +13,10 @@ exports[`Card komponent matcher snapshot 1`] = `
   titlesize="x-large"
 >
   <div
-    className="SkeCard-42"
+    className="SkeCard-106"
   >
     <div
-      className="body-49"
+      className="body-113"
     />
   </div>
 </Card>

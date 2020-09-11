@@ -28,11 +28,13 @@
     "@uifabric/utilities": "7.27.0",
     "axios": "0.19.2",
     "classnames": "2.2.6",
+    "i18next": "19.7.0",
     "material-design-icons": "3.0.1",
     "moment": "2.27.0",
     "office-ui-fabric-react": "7.127.0",
     "prop-types": "15.7.2",
-    "react-transition-group": "4.4.1"
+    "react-transition-group": "4.4.1",
+    "react-i18next": "11.7.1"
   },
   "devDependencies": {
     "@babel/cli": "7.10.5",

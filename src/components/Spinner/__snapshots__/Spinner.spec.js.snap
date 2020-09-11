@@ -2,10 +2,10 @@
 
 exports[`Spinner komponent matcher snapshot 1`] = `
 <div
-  className="ms-Spinner root-44"
+  className="ms-Spinner root-108"
 >
   <div
-    className="ms-Spinner-circle ms-Spinner--medium circle-45"
+    className="ms-Spinner-circle ms-Spinner--medium circle-109"
   />
 </div>
 `;

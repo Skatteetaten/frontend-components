@@ -23,6 +23,7 @@ import { FooterContent, Grid } from '@skatteetaten/frontend-components';
 ```
 
 ```js noeditor beskrivelse
+<>
   <h3>Type innhold i footer</h3>
   <p>
     Footeren i løsningene våre inneholder typisk lenker for deling,
@@ -34,14 +35,15 @@ import { FooterContent, Grid } from '@skatteetaten/frontend-components';
     eksemplene fordi det da tilpasser seg ulike skjermstørrelser.
   </p>
   <p>
-    Logo er en egen komponent på FooterContent-komponenten
-    `FooterContent.Logo`. Logoen blir midtstilt når vinduet er mindre enn
-    1024px som tilsvarer fra og med large i grid-systemet.
+    Logo er en egen komponent på FooterContent-komponenten `FooterContent.Logo`.
+    Logoen blir midtstilt når vinduet er mindre enn 1024px som tilsvarer fra og
+    med large i grid-systemet.
   </p>
+</>
 ```
 
 ```js noeditor uu
-<div>
+<>
   <h3>Tips</h3>
   <ul>
     <li>
@@ -63,5 +65,5 @@ import { FooterContent, Grid } from '@skatteetaten/frontend-components';
   <ul>
     <li>Aria-hidden brukes for skjule footer-grafikk for skjermleser. </li>
   </ul>
-</div>
+</>
 ```

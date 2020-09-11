@@ -273,27 +273,37 @@ import {
 ```
 
 ```js noeditor beskrivelse
+<>
   <h3>Viser at brukeren er logget inn med MinID</h3>
   <p>
-    TopStripe er svart og ligger øverst på innloggede sider for publikum. Digitaliseringsdirektoratet anbefaler at vi har en felles markering av innloggede tjenester som benytter MinID. Alle innloggede publikumsløsninger skal derfor ha en slik TopStripe. Den svarte stripen skal være identisk på tvers av løsningene våre, slik at brukerne kjenner den igjen.
+    TopStripe er svart og ligger øverst på innloggede sider for publikum.
+    Digitaliseringsdirektoratet anbefaler at vi har en felles markering av
+    innloggede tjenester som benytter MinID. Alle innloggede publikumsløsninger
+    skal derfor ha en slik TopStripe. Den svarte stripen skal være identisk på
+    tvers av løsningene våre, slik at brukerne kjenner den igjen.
   </p>
   <h3>Overordnede lenker og funksjoner</h3>
   <p>
-    Legg de overordede funksjonene «Kontakt oss», «Language/Språk» og «Endre skriftstørrelse» i TopStripen. På mobil flytter du disse funksjonene ned til <a href="#FooterContent">footeren</a>.
+    Legg de overordede funksjonene «Kontakt oss», «Language/Språk» og «Endre
+    skriftstørrelse» i TopStripen. På mobil flytter du disse funksjonene ned til{' '}
+    <a href="#FooterContent">footeren</a>.
   </p>
   <h3>Endre bruker</h3>
   <p>
-    Av og til kan den innloggende brukeren ha rettighet til å se eller sende inn opplysninger på vegne av andre personer eller virksomheter. Mellom logg ut-knappen og navnet på den som er logget inn, har vi derfor en «velger» med nedtrekksliste. Her kan brukerne bytte til den de ønsker å representere. Denne velgeren er alltid synlig når brukeren er innlogget, også på mobil. Dersom en bruker har rettigheter til å handle på vegne av et stort antall personer, lenker du til en side eller dialog som gir brukeren mulighet til å bytte.
+    Av og til kan den innloggende brukeren ha rettighet til å se eller sende inn
+    opplysninger på vegne av andre personer eller virksomheter. Mellom logg
+    ut-knappen og navnet på den som er logget inn, har vi derfor en «velger» med
+    nedtrekksliste. Her kan brukerne bytte til den de ønsker å representere.
+    Denne velgeren er alltid synlig når brukeren er innlogget, også på mobil.
+    Dersom en bruker har rettigheter til å handle på vegne av et stort antall
+    personer, lenker du til en side eller dialog som gir brukeren mulighet til å
+    bytte.
   </p>
-
-
-
-
-
+</>
 ```
 
 ```js noeditor uu
-<div>
+<>
   <h3>Tips</h3>
   <ul>
     <li>
@@ -334,5 +344,5 @@ import {
     </li>
     <li>Aria-hidden brukes for å skjule ikoner for skjermleser.</li>
   </ul>
-</div>
+</>
 ```

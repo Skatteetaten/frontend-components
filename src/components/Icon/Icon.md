@@ -649,26 +649,35 @@ Object.keys(iconGroup).forEach((name) => {
 ```
 
 ```js noeditor uu
-<h3>Tips</h3>
-<ul>
-<li>Hvis ikonet er viktig for bruk eller forståelse skal det være tydelig kontrast mellom ikonfarge og bakgrunn. WCAG krever minst 3.0 i kontrast.</li>
-<li>Ikoner som kun er pynt bør skjules for skjermleser. Ikoner som er meningsbærende må gis et tekstalternativ, f.eks. med attributtene aria-label eller alt.</li>
-</ul>
+<>
+  <h3>Tips</h3>
+  <ul>
+    <li>
+      Hvis ikonet er viktig for bruk eller forståelse skal det være tydelig
+      kontrast mellom ikonfarge og bakgrunn. WCAG krever minst 3.0 i kontrast.
+    </li>
+    <li>
+      Ikoner som kun er pynt bør skjules for skjermleser. Ikoner som er
+      meningsbærende må gis et tekstalternativ, f.eks. med attributtene
+      aria-label eller alt.
+    </li>
+  </ul>
 
-<h3>Mest relevante WCAG-krav</h3>
-<ul>
-<li>1.1.1 A, Ikke-tekstlig innhold</li>
-<li>1.4.11 AA, Kontrast for ikke-tekstlig innhold </li>
-</ul>
+  <h3>Mest relevante WCAG-krav</h3>
+  <ul>
+    <li>1.1.1 A, Ikke-tekstlig innhold</li>
+    <li>1.4.11 AA, Kontrast for ikke-tekstlig innhold </li>
+  </ul>
 
-<h3>WAI-ARIA</h3>
-<ul>
-<li>Aria-hidden brukes for å skjule ikoner for skjermleser.</li>
-</ul>
+  <h3>WAI-ARIA</h3>
+  <ul>
+    <li>Aria-hidden brukes for å skjule ikoner for skjermleser.</li>
+  </ul>
+</>
 ```
 
 ```js noeditor beskrivelse
-<div>
+<>
   <h3>Ikoner er viktige i digitale flater</h3>
 
   <p>
@@ -699,5 +708,5 @@ Object.keys(iconGroup).forEach((name) => {
       Som del av en seksjon/et Card, med interaksjonselementer ved siden av
     </li>
   </ul>
-</div>
+</>
 ```

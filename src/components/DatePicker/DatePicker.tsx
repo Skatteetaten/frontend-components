@@ -1,4 +1,5 @@
 import * as React from 'react';
+import i18n, { t } from './../utils/i18n/i18n';
 import classnames from 'classnames';
 import moment from 'moment';
 import 'moment/locale/nb';
@@ -19,21 +20,6 @@ import {
 import { getClassNames } from './DatePicker.classNames';
 
 const DEFAULT_DATE_FORMAT = 'DD.MM.YYYY';
-const DEFAULT_STRINGS = {
-  months: moment.months(),
-  shortMonths: moment.monthsShort(),
-  days: moment.weekdays(),
-  shortDays: moment.weekdaysShort(),
-  goToToday: 'I dag',
-  prevMonthAriaLabel: 'Gå til forrige måned',
-  nextMonthAriaLabel: 'Gå til neste måned',
-  prevYearAriaLabel: 'Gå til forrige år',
-  nextYearAriaLabel: 'Gå til neste år',
-  invalidInputErrorMessage: `Ikke en gyldig dato. (format: ${DEFAULT_DATE_FORMAT})`,
-  /** Automatisk utvide høyde (ved multiline) */
-  isOutOfBoundsErrorMessage: 'Datoen er ikke innenfor gyldig periode',
-  isRequiredErrorMessage: 'Dette feltet er påkrevd',
-};
 const DEFAULTFORMATDATE = (date: Date | null | undefined): string => {
   if (date) {
     return moment(date).format(DEFAULT_DATE_FORMAT);
@@ -72,6 +58,8 @@ export interface DatePickerProps extends IDatePickerProps {
   labelCallout?: LabelWithCalloutProps;
   /** Lukk callout på blur */
   labelWithCalloutAutoDismiss?: boolean;
+  /** Språk vist i komponent. Default er norsk bokmål. */
+  language?: 'nb' | 'nn' | 'en';
   /** Brukerspesifisert event for callout **/
   onCalloutToggle?: (
     oldCalloutState: calloutState,
@@ -104,6 +92,7 @@ export const DatePicker: React.FC<DatePickerProps> = (
     labelButtonAriaLabel,
     labelCallout,
     labelWithCalloutAutoDismiss,
+    language,
     onCalloutToggle,
     readonlyMode,
     ...rest
@@ -112,7 +101,7 @@ export const DatePicker: React.FC<DatePickerProps> = (
     allowTextInput: true,
     dateTimeFormatter: undefined,
     disabled: false,
-    firstDayOfWeek: DayOfWeek.Monday,
+    firstDayOfWeek: language !== 'en' ? DayOfWeek.Monday : DayOfWeek.Sunday,
     firstWeekOfYear: 0, // FirstDay = 0, FirstFullWeek = 1, FirstFourDayWeek = 2
     formatDate: DEFAULTFORMATDATE,
     initialPickerDate: new Date(),
@@ -120,7 +109,7 @@ export const DatePicker: React.FC<DatePickerProps> = (
     isRequired: false,
     highlightCurrentMonth: true,
     parseDateFromString: DEFAULTPARSEDATEFROMSTRING,
-    pickerAriaLabel: 'Kalender',
+    pickerAriaLabel: t('datepicker.ariaLabel'),
     showGoToToday: true,
     showMonthPickerAsOverlay: false,
     showWeekNumbers: true,
@@ -139,6 +128,29 @@ export const DatePicker: React.FC<DatePickerProps> = (
   React.useEffect(() => {
     setReadOnly(readonlyMode && !editMode);
   }, [editMode, readonlyMode]);
+
+  if (language) {
+    i18n.changeLanguage(language);
+    moment.locale(language);
+  }
+
+  const DEFAULT_STRINGS = {
+    months: moment.months(),
+    shortMonths: moment.monthsShort(),
+    days: moment.weekdays(),
+    shortDays: moment.weekdaysShort(),
+    goToToday: t('datepicker.goToToday'),
+    prevMonthAriaLabel: t('datepicker.prevMonthAriaLabel'),
+    nextMonthAriaLabel: t('datepicker.nextMonthAriaLabel'),
+    prevYearAriaLabel: t('datepicker.prevYearAriaLabel'),
+    nextYearAriaLabel: t('datepicker.nextYearAriaLabel'),
+    invalidInputErrorMessage: i18n.t('datepicker.invalidInputErrorMessage', {
+      DEFAULT_DATE_FORMAT,
+    }),
+    /** Automatisk utvide høyde (ved multiline) */
+    isOutOfBoundsErrorMessage: 'Datoen er ikke innenfor gyldig periode',
+    isRequiredErrorMessage: t('datepicker.isRequiredErrorMessage'),
+  };
 
   const onEdit = () => {
     if (!editMode) {

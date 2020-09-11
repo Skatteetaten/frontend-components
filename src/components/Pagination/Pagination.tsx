@@ -55,7 +55,7 @@ export const getSlidingWindowEdges = (
   }
   let endPage = startPage + (pagesDisplayed - 1);
 
-  // Funkjson for å sette currentPage midt i sidevelger
+  // Funksjon for å sette currentPage midt i sidevelger
   if (endPage === currentPage && !(endPage >= numberOfPages)) {
     const addValue = Math.floor(pagesDisplayed / 2);
     endPage = endPage + addValue;
