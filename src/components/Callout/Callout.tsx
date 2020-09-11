@@ -52,7 +52,7 @@ export default class Callout extends React.PureComponent<
     color: Callout.HELP,
     directionalHint: Callout.POS_TOP_CENTER,
     doNotLayer: true,
-    role: 'dialog'
+    role: undefined
   };
 
   render() {

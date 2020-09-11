@@ -645,26 +645,35 @@ Object.keys(iconGroup).forEach(name => {
 ```
 
 ```js noeditor uu
-<h3>Tips</h3>
-<ul>
-<li>Hvis ikonet er viktig for bruk eller forståelse skal det være tydelig kontrast mellom ikonfarge og bakgrunn. WCAG krever minst 3.0 i kontrast.</li>
-<li>Ikoner som kun er pynt bør skjules for skjermleser. Ikoner som er meningsbærende må gis et tekstalternativ, f.eks. med attributtene aria-label eller alt.</li>
-</ul>
+<>
+  <h3>Tips</h3>
+  <ul>
+    <li>
+      Hvis ikonet er viktig for bruk eller forståelse skal det være tydelig
+      kontrast mellom ikonfarge og bakgrunn. WCAG krever minst 3.0 i kontrast.
+    </li>
+    <li>
+      Ikoner som kun er pynt bør skjules for skjermleser. Ikoner som er
+      meningsbærende må gis et tekstalternativ, f.eks. med attributtene
+      aria-label eller alt.
+    </li>
+  </ul>
 
-<h3>Mest relevante WCAG-krav</h3>
-<ul>
-<li>1.1.1 A, Ikke-tekstlig innhold</li>
-<li>1.4.11 AA, Kontrast for ikke-tekstlig innhold </li>
-</ul>
+  <h3>Mest relevante WCAG-krav</h3>
+  <ul>
+    <li>1.1.1 A, Ikke-tekstlig innhold</li>
+    <li>1.4.11 AA, Kontrast for ikke-tekstlig innhold </li>
+  </ul>
 
-<h3>WAI-ARIA</h3>
-<ul>
-<li>Aria-hidden brukes for å skjule ikoner for skjermleser.</li>
-</ul>
+  <h3>WAI-ARIA</h3>
+  <ul>
+    <li>Aria-hidden brukes for å skjule ikoner for skjermleser.</li>
+  </ul>
+</>
 ```
 
 ```js noeditor beskrivelse
-<div>
+<>
   <h3>Ikoner er viktige i digitale flater</h3>
 
   <p>
@@ -680,15 +689,20 @@ Object.keys(iconGroup).forEach(name => {
   </p>
   <h3>Temaikoner</h3>
   <p>
-      Temaikonene er ment å brukes i størrelser på 48px og oppover. Bruk dem til å f.eks. markere starten på en temaseksjon (sammen med en passende overskrift). 
+    Temaikonene er ment å brukes i størrelser på 48px og oppover. Bruk dem til å
+    f.eks. markere starten på en temaseksjon (sammen med en passende
+    overskrift).
   </p>
   <h3>Temaikoner i komponenter</h3>
   <p>
-    Generelt kan man bruke temaikonene som del av et grensesnitt. Unngå å bruke dem som interaksjonselementer/knapper, med disse unntakene:
+    Generelt kan man bruke temaikonene som del av et grensesnitt. Unngå å bruke
+    dem som interaksjonselementer/knapper, med disse unntakene:
   </p>
   <ul>
-      <li>Som del av en NavigationTile</li>
-      <li>Som del av en seksjon/et Card, med interaksjonselementer ved siden av</li>
+    <li>Som del av en NavigationTile</li>
+    <li>
+      Som del av en seksjon/et Card, med interaksjonselementer ved siden av
+    </li>
   </ul>
-</div>
+</>
 ```

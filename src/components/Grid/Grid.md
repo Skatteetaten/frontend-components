@@ -211,7 +211,7 @@ import TextField from '@skatteetaten/frontend-components/TextField';
 import Button from '@skatteetaten/frontend-components/Button';
 import DatePicker from '@skatteetaten/frontend-components/DatePicker';
 
-<div>
+<>
   <h3>For plassering av elementer</h3>
   <p>
     Et rutenett lar deg fordele og plassere innhold på en nettside. Rutene
@@ -270,21 +270,24 @@ import DatePicker from '@skatteetaten/frontend-components/DatePicker';
     colPadding="0 8px 0 0"&gt;, eller fjerne den helt ved å bruke &lt;Grid.Col
     noSpacing&gt;
   </p>
-</div>;
+</>;
 ```
 
 ```js noeditor uu
-<h3>Tips</h3>
-<ul>
-<li>Tenk på logisk rekkefølge</li>
-</ul>
+<>
+  <h3>Tips</h3>
+  <ul>
+    <li>Tenk på logisk rekkefølge</li>
+  </ul>
 
-<h3>Mest relevante WCAG-krav</h3>
-<ul>
-<li>1.3.2 A, Meningsfylt rekkefølge</li>
-</ul>
+  <h3>Mest relevante WCAG-krav</h3>
+  <ul>
+    <li>1.3.2 A, Meningsfylt rekkefølge</li>
+  </ul>
 
-<h3>WAI-ARIA</h3><ul>
-<li>N/A</li>
-</ul>
+  <h3>WAI-ARIA</h3>
+  <ul>
+    <li>N/A</li>
+  </ul>
+</>
 ```

@@ -14,6 +14,7 @@ export interface DialogProps extends IDialogProps {
   layoutStyle?: 'normal' | 'airy' | 'important';
   /** Om det er så mye innhold at det går over flere "sider" (fikser scroll inni dialog på ipad) */
   tabletContentOverflows?: boolean;
+  isModeless?: boolean;
 }
 type DialogState = {
   isCalloutVisible: boolean;
@@ -32,7 +33,9 @@ export default class Dialog extends React.PureComponent<
     layoutStyle: 'normal',
     type: Dialog.Type.normal,
     closeButtonAriaLabel: 'Lukk',
-    tabletContentOverflows: false
+    tabletContentOverflows: false,
+    isModeless: false,
+    isBlocking: undefined
   };
   private readonly _iconButtonElement: React.RefObject<HTMLDivElement>;
 
@@ -52,6 +55,7 @@ export default class Dialog extends React.PureComponent<
       title,
       subText,
       isBlocking,
+      isModeless,
       type,
       className,
       layoutStyle,
@@ -76,6 +80,7 @@ export default class Dialog extends React.PureComponent<
           }}
           modalProps={{
             isBlocking,
+            isModeless,
             className: classnames(styles.main, className),
             ...modalProps
           }}

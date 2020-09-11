@@ -123,10 +123,24 @@ import TextField from '@skatteetaten/frontend-components/TextField';
 ```
 
 ```js noeditor beskrivelse
+<>
   <h3>Gruppering av innhold skaper mer oversikt</h3>
-  <p> Vi bruker innholdskort for å gruppere innhold som hører sammen. Kortene er formet som fargede eller innrammede bokser med tekst inni, noe som gjør informasjonen tydelig for brukeren. Er det mange innholdskort på skjermen kan det være nyttig å kollapse dem, slik at brukeren ikke ser mye og ulik informasjon på en gang.
+  <p>
+    {' '}
+    Vi bruker innholdskort for å gruppere innhold som hører sammen. Kortene er
+    formet som fargede eller innrammede bokser med tekst inni, noe som gjør
+    informasjonen tydelig for brukeren. Er det mange innholdskort på skjermen
+    kan det være nyttig å kollapse dem, slik at brukeren ikke ser mye og ulik
+    informasjon på en gang.
   </p>
-  <p>Er innholdet handlingsrettet, altså at brukeren skal gjøre noe, skal du beskrive handlingen i toppen av boksen. Les nærmere i språkprofilen om <a href="https://www.skatteetaten.no/stilogtone/skrive/sprakprofil/aktivt-sprak/">hvordan du skriver gode handlingstitler</a>.</p>
+  <p>
+    Er innholdet handlingsrettet, altså at brukeren skal gjøre noe, skal du
+    beskrive handlingen i toppen av boksen. Les nærmere i språkprofilen om{' '}
+    <a href="https://www.skatteetaten.no/stilogtone/skrive/sprakprofil/aktivt-sprak/">
+      hvordan du skriver gode handlingstitler
+    </a>
+    .
+  </p>
 
   <h3>Ulike farger på boksene, har ulike betydninger</h3>
   <ul>
@@ -136,28 +150,38 @@ import TextField from '@skatteetaten/frontend-components/TextField';
       Hvit med grønn ramme: Brukes til konklusjoner og betalingsopplysninger
     </li>
     <li>Grå: Kan brukes som bakgrunnsfarge for interne løsninger</li>
-
   </ul>
-  <p>Unngå å bruke forskjellig farge på ramme og bakgrunn, for eksempel grønn ramme og gul bakgrunn.</p>
+  <p>
+    Unngå å bruke forskjellig farge på ramme og bakgrunn, for eksempel grønn
+    ramme og gul bakgrunn.
+  </p>
+</>
 ```
 
 ```js noeditor uu
-<h3>Tips</h3>
-<ul>
-<li>Det skal kun være ett tabstopp pr ekspander.</li>
-<li>Ekspandere skal ha en visuell indikator på at innhold utvides/minimeres.</li>
-<li>Sjekk at elementet leses som en ekspander med skjermleser og at du beholder fokus når du utvider/minimerer den.</li>
-</ul>
+<>
+  <h3>Tips</h3>
+  <ul>
+    <li>Det skal kun være ett tabstopp pr ekspander.</li>
+    <li>
+      Ekspandere skal ha en visuell indikator på at innhold utvides/minimeres.
+    </li>
+    <li>
+      Sjekk at elementet leses som en ekspander med skjermleser og at du
+      beholder fokus når du utvider/minimerer den.
+    </li>
+  </ul>
 
-<h3>Mest relevante WCAG-krav</h3>
-<ul>
-<li>1.3.1 A, Informasjon og relasjoner</li>
-<li>4.1.2 A, Navn, rolle, verdi</li>
-</ul>
+  <h3>Mest relevante WCAG-krav</h3>
+  <ul>
+    <li>1.3.1 A, Informasjon og relasjoner</li>
+    <li>4.1.2 A, Navn, rolle, verdi</li>
+  </ul>
 
-<h3>WAI-ARIA</h3>
-<ul>
-<li>Aria-expanded brukes på knappene som utvides/minimeres.</li>
-<li>Aria-hidden brukes for å skjule ikoner for skjermlesere.</li>
-</ul>
+  <h3>WAI-ARIA</h3>
+  <ul>
+    <li>Aria-expanded brukes på knappene som utvides/minimeres.</li>
+    <li>Aria-hidden brukes for å skjule ikoner for skjermlesere.</li>
+  </ul>
+</>
 ```
