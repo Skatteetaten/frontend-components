@@ -199,7 +199,8 @@ export function getClassNames(props: ButtonProps): string {
           ...getDisabledColor(props)
         },
         '&.ms-Button i': {
-          fontSize: FontSizes.icon
+          fontSize: FontSizes.icon,
+          height: 20
         }
       }
     }
