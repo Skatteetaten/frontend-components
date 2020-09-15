@@ -333,6 +333,156 @@ const expandableContent = (data, close, rowIndex) => (
 />;
 ```
 
+Hele rader kan gjøres klikkbare med _blabla_-attributtet
+
+```js
+import Table from '@skatteetaten/frontend-components/Table';
+import Grid from '@skatteetaten/frontend-components/Grid';
+import TextField from '@skatteetaten/frontend-components/TextField';
+import IconButton from '@skatteetaten/frontend-components/IconButton';
+
+import moment from 'moment';
+
+const wrapperStyle = {
+  backgroundColor: '#f9ede2',
+  padding: 12
+};
+
+const blockCenterStyle = {
+  textAlign: 'center',
+  marginTop: 20
+};
+
+const tableStyle = {
+  background: 'red',
+  marginTop: 20
+};
+
+const editableContent = (data, close, rowIndex) => (
+  <div style={wrapperStyle}>
+    <p>
+      <strong>{data.Måned}</strong>
+    </p>
+
+    <Grid>
+      <Grid.Row>
+        <Grid.Col lg={3}>
+          <TextField
+            id={'textfield-1'}
+            box
+            calloutFloating={false}
+            withLeadingIcon="search"
+            label="Beløp"
+            placeholder={''}
+            help="Hjelpetekst som omhandler beløp."
+          />
+        </Grid.Col>
+        <Grid.Col lg={3}>
+          <TextField
+            id={'textfield-2'}
+            box
+            calloutFloating={false}
+            withLeadingIcon="search"
+            label="Dekningsgrad"
+            placeholder={''}
+            help="Hjelpetekst som omhandler dekningsgrad"
+          />
+        </Grid.Col>
+        <Grid.Col lg={3}>
+          <TextField
+            id={'textfield-3'}
+            box
+            calloutFloating={false}
+            withLeadingIcon="search"
+            label="Avkastning"
+            placeholder={''}
+            help="Hjelpetekst som omhandler avkastning"
+          />
+        </Grid.Col>
+        <Grid.Col lg={3}>
+          <div style={blockCenterStyle}>
+            <IconButton title="Lagre" circle icon="Check" />
+            {'  '}
+            <IconButton
+              onClick={close}
+              title="Angre"
+              circle
+              icon="Cancel"
+            />{' '}
+            <IconButton title="Slett" circle icon="Delete" />{' '}
+          </div>
+        </Grid.Col>
+      </Grid.Row>
+    </Grid>
+  </div>
+);
+
+const sortMonths = (a, b) => moment(a, 'MMMM').diff(moment(b, 'MMMMM'));
+
+const columns = [
+  {
+    name: 'Måned',
+    fieldName: 'month',
+    sortable: true,
+    sortingFunction: sortMonths,
+    autohideSorting: false
+  },
+  {
+    name: 'Beløp',
+    fieldName: 'amount',
+    alignment: 'right',
+    sortable: true,
+    autohideSorting: false
+  },
+  {
+    name: 'Dekningsgrad',
+    fieldName: 'coverage',
+    alignment: 'right'
+  },
+  {
+    name: 'Avkastning',
+    fieldName: 'revenue',
+    alignment: 'right'
+  }
+];
+
+const data = [
+  {
+    month: 'Januar',
+    amount: 5426,
+    coverage: '100%',
+    revenue: '1000'
+  },
+  {
+    month: 'Februar',
+    amount: 5432,
+    coverage: '50%',
+    revenue: '500'
+  },
+  {
+    month: 'Mars',
+    amount: 4899,
+    coverage: '20%',
+    revenue: '2000'
+  },
+  {
+    month: 'April',
+    amount: 2344,
+    coverage: '30%',
+    revenue: '1055'
+  }
+];
+
+<Table
+  className="test"
+  data={data}
+  editableContent={editableContent}
+  editableRows
+  columns={columns}
+  editOnRow
+/>;
+```
+
 ```js noeditor uu
 <>
   <h3>Tips</h3>

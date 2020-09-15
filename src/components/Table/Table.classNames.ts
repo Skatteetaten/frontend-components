@@ -17,15 +17,33 @@ export const getClassNames = props => {
           width: props.fullWidth ? '100%' : undefined,
           borderCollapse: 'collapse',
           textAlign: 'left',
+          height: '1px',
           selectors: {
             thead: {
               display: 'table-header-group'
             },
-            'td,th': {
-              padding: 12
+            tr: {
+              height: '100%'
             },
-            'td.editableCell': {
+            'tr.clickable:hover': {
+              backgroundColor: palette.skeColor.lightBlue
+            },
+            td: {
+              height: '100%',
               padding: 0
+            },
+            '.cellContent': {
+              background: 'transparent',
+              border: 'none',
+              display: 'block',
+              fontSize: 'inherit',
+              height: '100%',
+              padding: 12,
+              textAlign: 'inherit',
+              width: '100%'
+            },
+            '.cellContent.clickable:hover': {
+              cursor: 'pointer'
             },
             'td.expandableCell td, td.expandableCell .is-closed': {
               borderBottom: 'none'

@@ -29,6 +29,8 @@ interface TableProps<P> extends React.HTMLAttributes<HTMLDivElement> {
   fullWidth?: boolean;
   /**  Indeks til rad som skal åpnes i redigeringsmodus */
   openEditableRowIndex?: number;
+  /** Åpne redigeringsmodus ved klikk hvor som helst på raden */
+  openEditableOnRowClick?: boolean;
   /**  Blir kalt ved åpning eller lukking av rad, om man ønsker å styre 'openEditableRowIndex' state utenfra */
   /**  Ved 'undefined' styrer komponenten dette selv  */
   setOpenEditableRowIndex?: (index?: number) => void;
@@ -125,13 +127,15 @@ export const getHeader = (
               return e.key === 'Enter' ? setSortingState(key.fieldName) : null;
             }}
           >
-            {key.name}
-            <Icon
-              className={
-                key.autohideSorting === false ? 'noAutoHide' : undefined
-              }
-              iconName={iconName}
-            />
+            <div className="cellContent">
+              {key.name}
+              <Icon
+                className={
+                  key.autohideSorting === false ? 'noAutoHide' : undefined
+                }
+                iconName={iconName}
+              />
+            </div>
           </th>
         );
       }
@@ -141,7 +145,7 @@ export const getHeader = (
           key={key.fieldName}
           scope="col"
         >
-          {key.name}
+          <div className="cellContent">{key.name}</div>
         </th>
       );
     })
@@ -160,7 +164,8 @@ const Table = <P extends object>(props: TableProps<P>) => {
     className,
     columns,
     id,
-    language
+    language,
+    openEditableOnRowClick
   } = props;
   const genratedId = useId(id);
   const mainId = id ? id : 'table-' + genratedId;
@@ -246,6 +251,7 @@ const Table = <P extends object>(props: TableProps<P>) => {
           tableHasScroll={tableIsScrollable}
           isEditableRowOpen={openEditableRowIndex === index}
           isExpandableRowOpen={openExpandableRowIndex === index}
+          openEditableOnRowClick={openEditableOnRowClick}
           onEditRow={() => handleEditRow(index)}
           onExpandRow={() => handleExpandRow(index)}
           onCloseRow={handleCloseRow}

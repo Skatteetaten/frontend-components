@@ -25,6 +25,7 @@ interface TableRowProps<P> {
   tableHasScroll: boolean;
   isEditableRowOpen: boolean;
   isExpandableRowOpen: boolean;
+  openEditableOnRowClick?: boolean;
   onEditRow: (index?: number) => void;
   onExpandRow: (index?: number) => void;
   onCloseRow: () => void;
@@ -54,7 +55,8 @@ const TableRow = <P extends object>(props: TableRowProps<P>) => {
     onEditRow,
     onExpandRow,
     openExpandableRowIndex,
-    tableId
+    tableId,
+    openEditableOnRowClick
   } = props;
   const numberOfColumns = columns.length + (editableRows ? 1 : 0);
   const expandClopaseRef = React.createRef<HTMLTableCellElement>();
@@ -76,14 +78,16 @@ const TableRow = <P extends object>(props: TableRowProps<P>) => {
   }, [expandClopaseRef, focusRow]);
 
   const editButton = (
-    <IconButton
-      className={'editButton'}
-      onClick={() => onEditRow(rowIndex)}
-      title={t('tablerow.title')}
-      icon="Edit"
-      disabled={editModeActive || expandableModeActive}
-      type="button"
-    />
+    <span className={'cellContent'}>
+      <IconButton
+        className={'editButton'}
+        onClick={() => onEditRow(rowIndex)}
+        title={t('tablerow.title')}
+        icon="Edit"
+        disabled={editModeActive || expandableModeActive}
+        type="button"
+      />
+    </span>
   );
 
   const expandableCellContent = () => {
@@ -140,6 +144,19 @@ const TableRow = <P extends object>(props: TableRowProps<P>) => {
     </>
   );
 
+  const renderCellContent = (content, index) =>
+    openEditableOnRowClick && editableContent ? (
+      <button
+        className="cellContent clickable"
+        onClick={() => onEditRow(index)}
+        tabIndex={-1}
+      >
+        {content}
+      </button>
+    ) : (
+      <div className="cellContent">{content}</div>
+    );
+
   const renderRow = (
     rowData: P,
     rowColumns: TableRowProps<P>['columns'],
@@ -156,7 +173,7 @@ const TableRow = <P extends object>(props: TableRowProps<P>) => {
             )}
             key={tableId.concat(rowKey.toString(), '_', cellIndex.toString())}
           >
-            {data[column.fieldName]}
+            {renderCellContent(data[column.fieldName], cellIndex)}
           </td>
         );
       }
@@ -172,7 +189,7 @@ const TableRow = <P extends object>(props: TableRowProps<P>) => {
           id={tableId.concat(rowKey.toString(), '_', cellIndex.toString())}
           key={tableId.concat(rowKey.toString(), '_', cellIndex.toString())}
         >
-          {data[column.fieldName]}
+          {renderCellContent(data[column.fieldName], cellIndex)}
         </th>
       );
     });
@@ -236,7 +253,10 @@ const TableRow = <P extends object>(props: TableRowProps<P>) => {
               </>
             )
           ) : (
-            <tr key={rowIndex}>
+            <tr
+              key={rowIndex}
+              className={openEditableOnRowClick ? 'clickable' : undefined}
+            >
               {(tableHasScroll || expandIconPlacement === 'before') &&
                 actionButtons}
               {renderRow(data, columns, rowIndex)}
