@@ -333,7 +333,7 @@ const expandableContent = (data, close, rowIndex) => (
 />;
 ```
 
-Hele rader kan gjøres klikkbare med _blabla_-attributtet
+Hele rader kan gjøres klikkbare med _openEditableOnRowClick_-attributtet
 
 ```js
 import Table from '@skatteetaten/frontend-components/Table';

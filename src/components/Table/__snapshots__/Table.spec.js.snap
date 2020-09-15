@@ -66,28 +66,44 @@ exports[`Table komponent matcher snapshot 1`] = `
             key="month"
             scope="col"
           >
-            Måned
+            <div
+              className="cellContent"
+            >
+              Måned
+            </div>
           </th>
           <th
             className=""
             key="amount"
             scope="col"
           >
-            Beløp
+            <div
+              className="cellContent"
+            >
+              Beløp
+            </div>
           </th>
           <th
             className=""
             key="coverage"
             scope="col"
           >
-            Dekningsgrad
+            <div
+              className="cellContent"
+            >
+              Dekningsgrad
+            </div>
           </th>
           <th
             className=""
             key="revenue"
             scope="col"
           >
-            Avkastning
+            <div
+              className="cellContent"
+            >
+              Avkastning
+            </div>
           </th>
         </tr>
       </thead>
@@ -145,19 +161,35 @@ exports[`Table komponent matcher snapshot 1`] = `
               id="table-10_0"
               key="table-10_0"
               scope="row"
-            />
+            >
+              <div
+                className="cellContent"
+              />
+            </th>
             <td
               className="is-closed right"
               key="table-10_1"
-            />
+            >
+              <div
+                className="cellContent"
+              />
+            </td>
             <td
               className="is-closed right"
               key="table-10_2"
-            />
+            >
+              <div
+                className="cellContent"
+              />
+            </td>
             <td
               className="is-closed right"
               key="table-10_3"
-            />
+            >
+              <div
+                className="cellContent"
+              />
+            </td>
           </tr>
         </TableRow>
         <TableRow
@@ -212,19 +244,35 @@ exports[`Table komponent matcher snapshot 1`] = `
               id="table-11_0"
               key="table-11_0"
               scope="row"
-            />
+            >
+              <div
+                className="cellContent"
+              />
+            </th>
             <td
               className="is-closed right"
               key="table-11_1"
-            />
+            >
+              <div
+                className="cellContent"
+              />
+            </td>
             <td
               className="is-closed right"
               key="table-11_2"
-            />
+            >
+              <div
+                className="cellContent"
+              />
+            </td>
             <td
               className="is-closed right"
               key="table-11_3"
-            />
+            >
+              <div
+                className="cellContent"
+              />
+            </td>
           </tr>
         </TableRow>
         <TableRow
@@ -279,19 +327,35 @@ exports[`Table komponent matcher snapshot 1`] = `
               id="table-12_0"
               key="table-12_0"
               scope="row"
-            />
+            >
+              <div
+                className="cellContent"
+              />
+            </th>
             <td
               className="is-closed right"
               key="table-12_1"
-            />
+            >
+              <div
+                className="cellContent"
+              />
+            </td>
             <td
               className="is-closed right"
               key="table-12_2"
-            />
+            >
+              <div
+                className="cellContent"
+              />
+            </td>
             <td
               className="is-closed right"
               key="table-12_3"
-            />
+            >
+              <div
+                className="cellContent"
+              />
+            </td>
           </tr>
         </TableRow>
         <TableRow
@@ -346,19 +410,35 @@ exports[`Table komponent matcher snapshot 1`] = `
               id="table-13_0"
               key="table-13_0"
               scope="row"
-            />
+            >
+              <div
+                className="cellContent"
+              />
+            </th>
             <td
               className="is-closed right"
               key="table-13_1"
-            />
+            >
+              <div
+                className="cellContent"
+              />
+            </td>
             <td
               className="is-closed right"
               key="table-13_2"
-            />
+            >
+              <div
+                className="cellContent"
+              />
+            </td>
             <td
               className="is-closed right"
               key="table-13_3"
-            />
+            >
+              <div
+                className="cellContent"
+              />
+            </td>
           </tr>
         </TableRow>
       </tbody>
