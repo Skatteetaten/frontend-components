@@ -479,7 +479,7 @@ const data = [
   editableContent={editableContent}
   editableRows
   columns={columns}
-  editOnRow
+  openEditableOnRowClick
 />;
 ```
 
