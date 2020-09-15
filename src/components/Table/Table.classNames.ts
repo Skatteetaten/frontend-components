@@ -22,6 +22,9 @@ export const getClassNames = props => {
             thead: {
               display: 'table-header-group'
             },
+            'thead th': {
+              padding: 12
+            },
             tr: {
               height: '100%'
             },
@@ -33,9 +36,11 @@ export const getClassNames = props => {
               padding: 0
             },
             '.cellContent': {
+              alignItems: 'center',
               background: 'transparent',
               border: 'none',
-              display: 'block',
+              boxSizing: 'border-box',
+              display: 'flex',
               fontSize: 'inherit',
               height: '100%',
               padding: 12,
@@ -108,10 +113,12 @@ export const getClassNames = props => {
               verticalAlign: 'inherit',
               borderBottom: `1px solid ${palette.skeColor.lightGrey}`,
               selectors: {
-                '& .right': {
+                '& .right, & .right .cellContent': {
+                  justifyContent: 'flex-end',
                   textAlign: 'right'
                 },
-                '& .center': {
+                '& .center, & .center .cellContent': {
+                  justifyContent: 'center',
                   textAlign: 'center'
                 }
               }

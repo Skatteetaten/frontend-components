@@ -127,15 +127,13 @@ export const getHeader = (
               return e.key === 'Enter' ? setSortingState(key.fieldName) : null;
             }}
           >
-            <div className="cellContent">
-              {key.name}
-              <Icon
-                className={
-                  key.autohideSorting === false ? 'noAutoHide' : undefined
-                }
-                iconName={iconName}
-              />
-            </div>
+            {key.name}
+            <Icon
+              className={
+                key.autohideSorting === false ? 'noAutoHide' : undefined
+              }
+              iconName={iconName}
+            />
           </th>
         );
       }
@@ -145,7 +143,7 @@ export const getHeader = (
           key={key.fieldName}
           scope="col"
         >
-          <div className="cellContent">{key.name}</div>
+          {key.name}
         </th>
       );
     })
