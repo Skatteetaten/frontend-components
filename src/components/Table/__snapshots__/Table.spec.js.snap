@@ -66,44 +66,28 @@ exports[`Table komponent matcher snapshot 1`] = `
             key="month"
             scope="col"
           >
-            <div
-              className="cellContent"
-            >
-              Måned
-            </div>
+            Måned
           </th>
           <th
             className=""
             key="amount"
             scope="col"
           >
-            <div
-              className="cellContent"
-            >
-              Beløp
-            </div>
+            Beløp
           </th>
           <th
             className=""
             key="coverage"
             scope="col"
           >
-            <div
-              className="cellContent"
-            >
-              Dekningsgrad
-            </div>
+            Dekningsgrad
           </th>
           <th
             className=""
             key="revenue"
             scope="col"
           >
-            <div
-              className="cellContent"
-            >
-              Avkastning
-            </div>
+            Avkastning
           </th>
         </tr>
       </thead>
