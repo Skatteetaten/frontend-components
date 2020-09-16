@@ -67,6 +67,8 @@ interface TableProps<P> extends React.HTMLAttributes<HTMLDivElement> {
   }[];
   /** Språkvalg for hva skjermleser leser opp. Default er Norsk Bokmål */
   language?: Language;
+  /** Vis skillelinjer mellom rader*/
+  showRowSeparators?: boolean;
 }
 
 export const setScrollBarState = (

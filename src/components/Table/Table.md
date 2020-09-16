@@ -303,6 +303,7 @@ const data = [
 const expandableContent = (data, close, rowIndex) => (
   <Table
     data={data.ansatte}
+    showRowSeparators={false}
     columns={[
       { name: 'Ansatt', fieldName: 'navn' },
       { name: 'Fødselsnr', fieldName: 'fnr' },

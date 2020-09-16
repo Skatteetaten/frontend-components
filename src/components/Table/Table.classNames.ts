@@ -5,6 +5,7 @@ import { FontWeights } from '..';
 import { PaletteProps } from '..';
 
 export const getClassNames = props => {
+  const { showRowSeparators = true, fullWidth } = props;
   const palette = getTheme().palette as PaletteProps;
 
   return mergeStyles([
@@ -12,9 +13,9 @@ export const getClassNames = props => {
       displayName: 'SkeTable',
       overflowX: 'auto',
       selectors: {
-        table: {
+        '> table': {
           display: 'table',
-          width: props.fullWidth ? '100%' : undefined,
+          width: fullWidth ? '100%' : undefined,
           borderCollapse: 'collapse',
           textAlign: 'left',
           height: '1px',
@@ -23,10 +24,21 @@ export const getClassNames = props => {
               display: 'table-header-group'
             },
             'thead th': {
+              borderBottom: `2px solid ${palette.skeColor.blackAlt}`,
               padding: 12
             },
             tr: {
               height: '100%'
+            },
+            '> tbody > tr+tr:not(.expandableRow-open)': {
+              borderTop: showRowSeparators
+                ? `1px solid ${palette.skeColor.lightGrey}`
+                : undefined
+            },
+            '> tbody > tr:last-child': {
+              borderBottom: showRowSeparators
+                ? `1px solid ${palette.skeColor.lightGrey}`
+                : undefined
             },
             'tr.clickable:hover': {
               backgroundColor: palette.skeColor.lightBlue
@@ -64,7 +76,6 @@ export const getClassNames = props => {
             th: {
               verticalAlign: 'bottom',
               fontWeight: FontWeights.bold,
-              borderBottom: `2px solid ${palette.skeColor.blackAlt}`,
               position: 'relative',
               selectors: {
                 i: {
@@ -111,7 +122,6 @@ export const getClassNames = props => {
             'td, .tableRow': {
               fontWeight: '400',
               verticalAlign: 'inherit',
-              borderBottom: `1px solid ${palette.skeColor.lightGrey}`,
               selectors: {
                 '& .right, & .right .cellContent': {
                   justifyContent: 'flex-end',
@@ -135,19 +145,13 @@ export const getClassNames = props => {
         '.editableRow-open': {
           display: 'table-row'
         },
-        '.expandableRow-open .is-closed, .expandableRow-open td': {
-          borderBottom: 'none'
-        },
-        '.expandableRow-open td, .expandableRow-open th': {
-          verticalAlign: 'text-top'
-        },
         '.emptyTd': {
           borderBottom: `2px solid ${palette.skeColor.blackAlt}`
         },
         '.expandableContent': {
-          marginTop: '40px',
-          width: 'max-content',
-          paddingLeft: '96px'
+          boxSizing: 'border-box',
+          padding: '0 0 12px 96px',
+          width: '100%'
         }
       }
     }
