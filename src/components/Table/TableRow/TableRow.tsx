@@ -92,10 +92,12 @@ const TableRow = <P extends object>(props: TableRowProps<P>) => {
     </span>
   );
 
+  const expandableContentId = `${tableId}-${rowIndex}-expanded`;
   const expandableCellContent = () => {
     if (expandableContent) {
       return (
         <div
+          id={expandableContentId}
           className={classnames(
             expandIconPlacement === 'before' ? 'expandableContent' : ''
           )}
@@ -107,10 +109,7 @@ const TableRow = <P extends object>(props: TableRowProps<P>) => {
     return undefined;
   };
 
-  const ExpandCollapseButton = (btnProps: {
-    open: boolean;
-    focus: boolean;
-  }) => {
+  const ExpandCollapseButton = (btnProps: { open: boolean }) => {
     return (
       <td ref={expandCollapseCellRef} className={'expandCell'}>
         <IconButton
@@ -128,6 +127,7 @@ const TableRow = <P extends object>(props: TableRowProps<P>) => {
           aria-expanded={btnProps.open}
           aria-describedby={tableId.concat(rowIndex.toString(), '_0')}
           disabled={editModeActive}
+          aria-controls={btnProps.open ? expandableContentId : undefined}
           type="button"
         />
       </td>
@@ -138,12 +138,7 @@ const TableRow = <P extends object>(props: TableRowProps<P>) => {
     editableRows || expandableRows ? (
       <>
         {editableRows && <td>{editButton}</td>}
-        {expandableRows && (
-          <ExpandCollapseButton
-            open={isExpandableRowOpen}
-            focus={rowIndex === focusRow}
-          />
-        )}
+        {expandableRows && <ExpandCollapseButton open={isExpandableRowOpen} />}
       </>
     ) : null;
 
