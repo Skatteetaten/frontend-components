@@ -2,19 +2,22 @@ import classnames from 'classnames';
 import {
   Dropdown as FabricDropdown,
   DropdownMenuItemType,
-  IDropdownProps
-} from 'office-ui-fabric-react/lib-commonjs/Dropdown';
+  IDropdownProps,
+} from 'office-ui-fabric-react';
 import * as React from 'react';
-import Icon from '../Icon/Icon';
-import { getCalloutStyles, getClassNames } from './Dropdown.classNames';
-import LabelWithCallout, { calloutState } from '../LabelWithCallout';
-import { LabelWithCalloutProps } from '../LabelWithCallout/LabelWithCallout';
-import ErrorMessage from '../ErrorMessage';
-import { useId } from '@reach/auto-id';
+import { getClassNames, getCalloutStyles } from './Dropdown.classNames';
+import {
+  ErrorMessage,
+  Icon,
+  LabelWithCallout,
+  calloutState,
+  LabelWithCalloutProps,
+  generateId,
+} from '../index';
 import { IStyleFunctionOrObject } from '@uifabric/utilities';
 import {
   IDropdownStyleProps,
-  IDropdownStyles
+  IDropdownStyles,
 } from 'office-ui-fabric-react/lib-commonjs/Dropdown';
 
 export interface DropdownProps extends IDropdownProps {
@@ -41,13 +44,13 @@ export interface DropdownProps extends IDropdownProps {
   readOnly?: boolean;
 }
 
-interface DropdownState {
+export interface DropdownState {
   isCalloutVisible: boolean;
 }
 /**
  * @visibleName Dropdown (Nedtrekksliste)
  */
-const Dropdown: React.FC<DropdownProps> = props => {
+export const Dropdown: React.FC<DropdownProps> = (props) => {
   const {
     children,
     labelWithCalloutAutoDismiss,
@@ -64,8 +67,8 @@ const Dropdown: React.FC<DropdownProps> = props => {
     ...rest
   } = props;
 
-  const genratedId = useId(id);
-  const mainId = id ? id : 'dropdown-' + genratedId;
+  const generatedId = generateId();
+  const mainId = id ? id : 'dropdown-' + generatedId;
   const inputId = mainId + '-input';
   const labelId = mainId + '-label';
   const styles = getClassNames(props);
@@ -94,7 +97,7 @@ const Dropdown: React.FC<DropdownProps> = props => {
           className={styles.readOnly}
           value={
             props.options.filter(
-              option =>
+              (option) =>
                 option.key === (props.selectedKey || props.defaultSelectedKey)
             )[0].text
           }
@@ -119,5 +122,3 @@ const Dropdown: React.FC<DropdownProps> = props => {
 
 // @ts-ignore
 Dropdown.ItemType = DropdownMenuItemType;
-
-export default Dropdown;

@@ -2,37 +2,30 @@ import {
   createTheme,
   loadTheme,
   registerIcons,
-  IIconSubset
+  IIconSubset,
 } from '@uifabric/styling';
-import {
-  Fabric,
-  IFabricProps
-} from 'office-ui-fabric-react/lib-commonjs/Fabric';
+import { Fabric, IFabricProps } from 'office-ui-fabric-react';
 import * as React from 'react';
-import fonts from '../utils/fonts';
-import * as icons from '../utils/icons';
-import { skeColor, skePalette } from '../utils/palette';
+import { Fonts, SkeIcons, MdIcons, Palette } from '../index';
 
-const palette = {
-  ...skePalette,
-  skeColor: skeColor
-};
-
-interface SkeBasisProps extends IFabricProps {
+export interface SkeBasisProps extends IFabricProps {
   palette?: object;
   fonts?: object;
   icons?: Array<IIconSubset>;
 }
 
-class SkeBasis extends React.PureComponent<SkeBasisProps> {
-  static PALETTE = palette;
-  static FONTS = fonts;
-  static ICONS = icons;
+export class SkeBasis extends React.PureComponent<SkeBasisProps> {
+  static PALETTE = Palette;
+  static FONTS = Fonts;
+  static ICONS = {
+    ske: SkeIcons,
+    md: MdIcons,
+  };
 
   static defaultProps = {
     palette: SkeBasis.PALETTE,
     fonts: SkeBasis.FONTS,
-    icons: [SkeBasis.ICONS.SkeIcons, SkeBasis.ICONS.MdIcons]
+    icons: [SkeBasis.ICONS.ske, SkeBasis.ICONS.md],
   };
 
   constructor(props: SkeBasisProps) {
@@ -44,18 +37,16 @@ class SkeBasis extends React.PureComponent<SkeBasisProps> {
       loadTheme(theme);
     }
     if (props.icons) {
-      props.icons.forEach(iconFont => registerIcons(iconFont));
+      props.icons.forEach((iconFont) => registerIcons(iconFont));
     }
   }
 
   render() {
     const fabricProps: IFabricProps = {
       dir: 'ltr',
-      ...this.props
+      ...this.props,
     };
 
     return <Fabric {...fabricProps}>{this.props.children}</Fabric>;
   }
 }
-
-export default SkeBasis;

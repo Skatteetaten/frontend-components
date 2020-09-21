@@ -1,9 +1,7 @@
 import * as React from 'react';
 import classnames from 'classnames';
-import Grid from '../../Grid/Grid';
-import Icon from '../../Icon/Icon';
+import { Grid, Icon, Heading } from '../../index';
 import { getClassNames } from '../Accordion.classNames';
-import Heading from '../../utils/Heading';
 
 export interface AccordionItemProps {
   id?: string;
@@ -41,7 +39,8 @@ interface ToggleContentInterface extends AccordionItemProps {
   isContentOpen: boolean;
   styles: any;
 }
-const ToggleContent: React.FC<ToggleContentInterface> = props => {
+
+const ToggleContent: React.FC<ToggleContentInterface> = (props) => {
   const {
     toggleContent,
     isContentOpen,
@@ -51,7 +50,7 @@ const ToggleContent: React.FC<ToggleContentInterface> = props => {
     subtitle,
     headingLevel,
     stepId,
-    processList
+    processList,
   } = props;
 
   if (!toggleContent) {
@@ -61,7 +60,7 @@ const ToggleContent: React.FC<ToggleContentInterface> = props => {
     <button
       className={
         isContentOpen
-          ? classnames(styles.toggleButton, styles.toggleButtonOpen)
+          ? classnames.default(styles.toggleButton, styles.toggleButtonOpen)
           : styles.toggleButton
       }
       aria-expanded={isContentOpen}
@@ -90,7 +89,7 @@ const ToggleContent: React.FC<ToggleContentInterface> = props => {
   );
 };
 
-const AccordionItem: React.FC<AccordionItemProps> = props => {
+export const AccordionItem: React.FC<AccordionItemProps> = (props) => {
   const [isContentOpen, setContentOpen] = React.useState<boolean>(
     props.isOpen || false
   );
@@ -124,7 +123,7 @@ const AccordionItem: React.FC<AccordionItemProps> = props => {
     totalSteps,
     stepId,
     processList,
-    headingLevel
+    headingLevel,
   } = props;
 
   return (
@@ -192,5 +191,3 @@ const AccordionItem: React.FC<AccordionItemProps> = props => {
     </div>
   );
 };
-
-export default AccordionItem;

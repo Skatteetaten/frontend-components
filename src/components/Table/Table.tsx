@@ -1,18 +1,16 @@
 import classnames from 'classnames';
 import React from 'react';
-import Icon from '../Icon/Icon';
 import { getClassNames } from './Table.classNames';
-import TableRow from './TableRow';
 import { t } from '../utils/i18n/i18n';
-import { useId } from '@reach/auto-id';
+import { Icon, TableRow, generateId } from '../index';
 
 export enum Language {
   en = 'en',
   nb = 'nb',
-  nn = 'nn'
+  nn = 'nn',
 }
 
-interface TableProps<P> extends React.HTMLAttributes<HTMLDivElement> {
+export interface TableProps<P> extends React.HTMLAttributes<HTMLDivElement> {
   /** Mulighet for å legge inn egen klasse for å overstyre stiling */
   className?: string;
   /** Global attributt som må være unik for hele HTML dokumentet */
@@ -89,12 +87,12 @@ export const getHeader = (
     setSort({
       ascending:
         sort.columnFieldName === columnFieldName ? !sort.ascending : true,
-      columnFieldName: columnFieldName
+      columnFieldName: columnFieldName,
     });
 
   return (
     columns &&
-    columns.map(key => {
+    columns.map((key) => {
       if (key.sortable) {
         const isSorted = sort.columnFieldName === key.fieldName;
         const isSortedAscending = sort.ascending;
@@ -121,7 +119,7 @@ export const getHeader = (
               key.hideOnMobile ? 'hideOnMobile' : ''
             )}
             tabIndex={0}
-            onKeyDown={e => {
+            onKeyDown={(e) => {
               return e.key === 'Enter' ? setSortingState(key.fieldName) : null;
             }}
           >
@@ -151,7 +149,7 @@ export const getHeader = (
 /**
  * @visibleName Table (Tabell)
  */
-const Table = <P extends object>(props: TableProps<P>) => {
+export const Table = <P extends object>(props: TableProps<P>) => {
   const {
     editableRows,
     expandableRows,
@@ -160,9 +158,9 @@ const Table = <P extends object>(props: TableProps<P>) => {
     className,
     columns,
     id,
-    language
+    language,
   } = props;
-  const genratedId = useId(id);
+  const genratedId = generateId();
   const mainId = id ? id : 'table-' + genratedId;
 
   const wrapperRef = React.useRef<HTMLDivElement>(null);
@@ -197,14 +195,14 @@ const Table = <P extends object>(props: TableProps<P>) => {
       const sortDescending = !sort.ascending;
       const sortingFunction =
         columns &&
-        columns.filter(column => column.fieldName === sortingKey)[0]
+        columns.filter((column) => column.fieldName === sortingKey)[0]
           .sortingFunction;
       if (sortingFunction) {
         copiedArray.sort((a, b) =>
           sortingFunction(a[sortingKey], b[sortingKey])
         );
       } else {
-        copiedArray.sort(function(a, b) {
+        copiedArray.sort(function (a, b) {
           return a[sortingKey] < b[sortingKey] ? -1 : 1;
         });
       }

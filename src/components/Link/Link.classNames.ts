@@ -1,6 +1,6 @@
 import { mergeStyleSets } from '@uifabric/merge-styles';
 import { getTheme } from '@uifabric/styling';
-import { PaletteProps } from '..';
+import { PaletteProps } from '../index';
 
 export const getClassNames = () => {
   const palette = getTheme().palette as PaletteProps;
@@ -12,10 +12,10 @@ export const getClassNames = () => {
       verticalAlign: 'middle',
       paddingLeft: '4px',
       paddingRight: '4px',
-      borderBottom: 'none'
+      borderBottom: 'none',
     },
     linkContainer: {
-      margin: '0px'
+      margin: '0px',
     },
     iconLink: {
       color: palette.skeColor.blue,
@@ -26,20 +26,20 @@ export const getClassNames = () => {
         '&:hover': {
           color: palette.skeColor.darkBlue,
           borderBottom: '2px solid ' + palette.skeColor.darkBlue,
-          transition: 'border-bottom 0.3s'
+          transition: 'border-bottom 0.3s',
         },
         '&:focus': {
           color: palette.skeColor.darkBlue,
           borderBottom: '2px solid ' + palette.skeColor.darkBlue,
           backgroundColor: palette.skeColor.lightBlue,
-          outline: 'none'
-        }
-      }
-    }
+          outline: 'none',
+        },
+      },
+    },
   });
 };
 
 export const hex2rgba = (hex, alpha = 1) => {
-  const [r, g, b] = hex.match(/\w\w/g).map(x => parseInt(x, 16));
+  const [r, g, b] = hex.match(/\w\w/g).map((x) => parseInt(x, 16));
   return `rgba(${r},${g},${b},${alpha})`;
 };

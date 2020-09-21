@@ -1,16 +1,14 @@
 import classnames from 'classnames';
-import {
-  ISearchBoxProps,
-  SearchBox
-} from 'office-ui-fabric-react/lib-commonjs/SearchBox';
+import { ISearchBoxProps, SearchBox } from 'office-ui-fabric-react';
 import * as React from 'react';
 import { getClassNames } from './SearchField.classNames';
 import { IDropdownOption } from 'office-ui-fabric-react';
-import LabelWithCallout, {
+import {
+  LabelWithCallout,
   calloutState,
-  LabelWithCalloutProps
-} from '../LabelWithCallout';
-import { useId } from '@reach/auto-id';
+  LabelWithCalloutProps,
+  generateId,
+} from '../index';
 
 export interface SearchFieldProps extends ISearchBoxProps {
   /** Lukk callout på blur */
@@ -44,7 +42,7 @@ export interface SearchFieldProps extends ISearchBoxProps {
 
 const searchInList = (options: Array<IDropdownOption>, filterText: string) => {
   return options
-    .filter(option => {
+    .filter((option) => {
       return (
         option.text
           .replace(/\s/g, '')
@@ -52,7 +50,7 @@ const searchInList = (options: Array<IDropdownOption>, filterText: string) => {
           .indexOf(filterText.replace(/\s/g, '').toLowerCase()) > -1
       );
     })
-    .map(option => option);
+    .map((option) => option);
 };
 
 const limitNumberOfResults = (list: Array<IDropdownOption>, limit?: number) => {
@@ -66,7 +64,7 @@ const limitNumberOfResults = (list: Array<IDropdownOption>, limit?: number) => {
 /**
  * @visibleName SearchField (Søkefelt)
  */
-const SearchField: React.FC<SearchFieldProps> = props => {
+export const SearchField: React.FC<SearchFieldProps> = (props) => {
   const {
     className,
     labelWithCalloutAutoDismiss,
@@ -144,9 +142,9 @@ const SearchField: React.FC<SearchFieldProps> = props => {
     }
   };
 
-  const handleClickOutside = event => {
+  const handleClickOutside = (event) => {
     const contains = listRefs.current.filter(
-      ref => ref && ref.contains(event.target)
+      (ref) => ref && ref.contains(event.target)
     );
     if (
       !contains.length &&
@@ -166,7 +164,7 @@ const SearchField: React.FC<SearchFieldProps> = props => {
     }
   };
 
-  const renderSuggestions = list => {
+  const renderSuggestions = (list) => {
     if (list.length === 0) {
       setDropdownVisible(false);
       listRefs.current = [];
@@ -180,12 +178,12 @@ const SearchField: React.FC<SearchFieldProps> = props => {
                 aria-label={listItem.text}
                 key={listItem.key}
                 onClick={() => selectEvent(listItem)}
-                onKeyPress={ev => {
+                onKeyPress={(ev) => {
                   if (ev.keyCode === 0) {
                     changeEvent(listItem.text);
                   }
                 }}
-                onKeyDown={ev => handleOnKeyDown(ev)}
+                onKeyDown={(ev) => handleOnKeyDown(ev)}
                 ref={(ref: HTMLLIElement | null) => {
                   if (ref && listRefs.current.indexOf(ref) === -1) {
                     listRefs.current.splice(key, 0, ref);
@@ -210,8 +208,8 @@ const SearchField: React.FC<SearchFieldProps> = props => {
     );
   };
 
-  const genratedId = useId(id);
-  const mainId = id ? id : 'searchfield-' + genratedId;
+  const generatedId = generateId();
+  const mainId = id ? id : 'searchfield-' + generatedId;
   const inputId = mainId + '-input';
   const labelId = mainId + '-label';
 
@@ -244,7 +242,7 @@ const SearchField: React.FC<SearchFieldProps> = props => {
               setValue(newValue);
               onChange && onChange(ev, newValue);
             }}
-            onKeyDown={ev => handleOnKeyDown(ev)}
+            onKeyDown={(ev) => handleOnKeyDown(ev)}
             value={value}
           />
           {dropdownVisible && renderSuggestions(searchResultList)}
@@ -262,7 +260,5 @@ const SearchField: React.FC<SearchFieldProps> = props => {
 
 SearchField.defaultProps = {
   border: 'default',
-  searchFieldSize: 'standard'
+  searchFieldSize: 'standard',
 };
-
-export default SearchField;

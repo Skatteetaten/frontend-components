@@ -1,4 +1,4 @@
-const languages = {
+export const languages = {
   nb_NO: {
     'datepicker.ariaLabel': 'Kalender',
     'datepicker.goToToday': 'I dag',
@@ -15,7 +15,7 @@ const languages = {
     'table.sorted_ascending': 'sortert stigende',
     'table.sorted_descending': 'sortert synkende',
     'tablerow.editable.title': 'Rediger rad',
-    'tablerow.expandable.title': 'Mer informasjon'
+    'tablerow.expandable.title': 'Mer informasjon',
   },
   nn_NO: {
     'datepicker.ariaLabel': 'Kalender',
@@ -33,7 +33,7 @@ const languages = {
     'table.sorted_ascending': 'sortert stigande',
     'table.sorted_descending': 'sortert søkkande',
     'tablerow.editable.title': 'Rediger rad',
-    'tablerow.expandable.title': 'Meir informasjon'
+    'tablerow.expandable.title': 'Meir informasjon',
   },
   en_GB: {
     'datepicker.ariaLabel': 'Calendar',
@@ -51,8 +51,6 @@ const languages = {
     'table.sorted_ascending': 'sorted ascending',
     'table.sorted_descending': 'sorted descending',
     'tablerow.editable.title': 'Edit row',
-    'tablerow.expandable.title': 'More information'
-  }
+    'tablerow.expandable.title': 'More information',
+  },
 };
-
-export default languages;

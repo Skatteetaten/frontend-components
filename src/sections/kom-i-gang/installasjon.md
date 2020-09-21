@@ -14,7 +14,7 @@ npm install @skatteetaten/frontend-components
 ```js static noeditor
 import React from 'react';
 import ReactDOM from 'react-dom';
-import SkeBasis from '@skatteetaten/frontend-components/SkeBasis';
+import { SkeBasis } from '@skatteetaten/frontend-components';
 import App from './App';
 
 ReactDOM.render(
@@ -29,7 +29,7 @@ ReactDOM.render(
 
 ```js static noeditor
 import React, { Component } from 'react';
-import Card from '@skatteetaten/frontend-components/Card';
+import { Card } from '@skatteetaten/frontend-components';
 
 class App extends Component {
   render() {

@@ -20,7 +20,7 @@ DemoBlock = ({ children }) => (
       backgroundColor: '#eaeaea',
       border: '1px solid',
       textAlign: 'center',
-      padding: '8px 0'
+      padding: '8px 0',
     }}
   >
     {children}

@@ -2,7 +2,7 @@ import * as React from 'react';
 
 import {
   CommandBar as FabricCommandBar,
-  ICommandBarItemProps
+  ICommandBarItemProps,
 } from 'office-ui-fabric-react/lib-commonjs/CommandBar';
 import { CommandBarButton } from 'office-ui-fabric-react/lib-commonjs/Button';
 import { getClassNames } from './CommandBar.classNames';
@@ -22,7 +22,7 @@ interface CommandBarItem extends ICommandBarItemProps {
 /**
  * @visibleName CommandBar (Menyknapper)
  */
-const CommandBar: React.FC<CommandBarProps> = props => {
+const CommandBar: React.FC<CommandBarProps> = (props) => {
   const { items, farItems, ariaLabel, className, ...rest } = props;
   const { commandBar } = getClassNames(props);
 
@@ -43,7 +43,7 @@ CommandBar.defaultProps = {
   items: [],
   farItems: [],
   ariaLabel: '',
-  className: ''
+  className: '',
 };
 
 const Custom = (props: any) => {

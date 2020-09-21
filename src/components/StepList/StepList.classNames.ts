@@ -1,7 +1,6 @@
 import { mergeStyleSets, IStyle } from '@uifabric/merge-styles';
 import { getTheme } from '@uifabric/styling';
-import { FontSizes, FontWeights } from '..';
-import { PaletteProps } from '..';
+import { FontSizes, FontWeights, PaletteProps } from '../index';
 
 const getStepContentPadding = (stepType: string): string => {
   if (stepType === 'next') {
@@ -28,24 +27,24 @@ const getStepContentInner = (
           ? {
               button: {
                 right: 0,
-                bottom: 0
-              }
+                bottom: 0,
+              },
             }
-          : {}
+          : {},
     };
   } else {
     return {
       selectors: {
         '@media  only screen and (max-width: 479px)': stepType === 'result' && {
           paddingBottom: '21px',
-          borderBottom: `2px solid ${palette.skeColor.green}`
-        }
-      }
+          borderBottom: `2px solid ${palette.skeColor.green}`,
+        },
+      },
     };
   }
 };
 
-export const getClassNames = props => {
+export const getClassNames = (props) => {
   const palette = getTheme().palette as PaletteProps;
 
   return mergeStyleSets({
@@ -59,16 +58,16 @@ export const getClassNames = props => {
       selectors: {
         '@media only screen and (max-width: 479px)': {
           top: 35,
-          height: '1px'
-        }
-      }
+          height: '1px',
+        },
+      },
     },
     containerStep: {
-      margin: '0 auto'
+      margin: '0 auto',
     },
     content: {
       backgroundColor: palette.skeColor.white,
-      padding: '0 0 15px 10px'
+      padding: '0 0 15px 10px',
     },
     divider: {
       margin: '0 0 0 26px',
@@ -77,12 +76,12 @@ export const getClassNames = props => {
       color: palette.skeColor.lightGrey,
       selectors: {
         '@media  only screen and (max-width: 479px)': {
-          margin: '0 0 0 20px'
-        }
-      }
+          margin: '0 0 0 20px',
+        },
+      },
     },
     nextStep: {
-      display: 'block'
+      display: 'block',
     },
     numberWrapper: {
       paddingTop: props.stepType === 'result' ? '26px' : '10px',
@@ -93,9 +92,9 @@ export const getClassNames = props => {
       selectors: {
         '@media only screen and (max-width: 479px)': {
           left: -4,
-          paddingTop: '10px'
-        }
-      }
+          paddingTop: '10px',
+        },
+      },
     },
     stepAction: {
       marginLeft: 'auto',
@@ -104,9 +103,9 @@ export const getClassNames = props => {
         '@media only screen and (max-width: 479px)': {
           position: 'absolute',
           height: 'auto',
-          marginBottom: '12px'
-        }
-      }
+          marginBottom: '12px',
+        },
+      },
     },
     stepContent: {
       display: 'flex',
@@ -119,31 +118,31 @@ export const getClassNames = props => {
           margin: '0 0 20px 0',
           selectors: {
             '@media only screen and (max-width: 479px)': {
-              margin: '0'
-            }
-          }
+              margin: '0',
+            },
+          },
         },
         button: props.stepType !== 'next' &&
           props.stepType !== 'result' && {
             selectors: {
               '@media only screen and (max-width: 479px)': {
-                fontSize: FontSizes.smallPlus
+                fontSize: FontSizes.smallPlus,
               },
               i: {
                 selectors: {
                   '@media only screen and (max-width: 479px)': {
-                    fontSize: 'inherit !important'
-                  }
-                }
-              }
-            }
+                    fontSize: 'inherit !important',
+                  },
+                },
+              },
+            },
           },
         '@media only screen and (max-width: 479px)': {
           margin: props.stepType === 'next' ? '10px 0 0 26px' : '0 0 0 20px',
           padding: props.stepType === 'result' ? 0 : '0 0 20px 0',
-          position: 'initial'
-        }
-      }
+          position: 'initial',
+        },
+      },
     },
     stepContentInner: getStepContentInner(
       props.stepType,
@@ -176,18 +175,18 @@ export const getClassNames = props => {
           selectors: {
             '@media only screen and (max-width: 479px)': {
               borderWidth: '0 1px 1px 0',
-              margin: '20px 0 0 10px'
-            }
-          }
+              margin: '20px 0 0 10px',
+            },
+          },
         },
         '@media only screen and (max-width: 479px)': {
           width: '1px',
           height:
             props.stepType === 'next' || props.stepType === 'result'
               ? '25px'
-              : undefined
-        }
-      }
+              : undefined,
+        },
+      },
     },
     stepLineTop: {
       float: 'right',
@@ -197,15 +196,15 @@ export const getClassNames = props => {
       position: 'absolute',
       selectors: {
         '@media only screen and (max-width: 479px)': {
-          width: 1
-        }
-      }
+          width: 1,
+        },
+      },
     },
     stepList: {
       counterReset: 'step-counter',
       position: 'relative',
       backgroundColor: 'transparent',
-      marginBottom: 20
+      marginBottom: 20,
     },
     stepNumber: {
       display: 'flex',
@@ -226,25 +225,25 @@ export const getClassNames = props => {
           color: '#000',
           selectors: {
             '@media only screen and (max-width: 479px)': {
-              fontSize: '14px !important'
-            }
-          }
+              fontSize: '14px !important',
+            },
+          },
         },
         i: {
           marginTop: 4,
           selectors: {
             '@media only screen and (max-width: 479px)': {
-              fontSize: '20px !important'
-            }
-          }
+              fontSize: '20px !important',
+            },
+          },
         },
         '@media only screen and (max-width: 479px)': {
           width: '20px',
           height: '20px',
           fontSize: FontSizes.medium,
-          marginTop: 1
-        }
-      }
+          marginTop: 1,
+        },
+      },
     },
     title: {
       fontSize:
@@ -262,17 +261,17 @@ export const getClassNames = props => {
             props.stepType === 'result'
               ? `2px solid ${palette.skeColor.green}`
               : undefined,
-          margin: props.stepType === 'result' ? 0 : undefined
-        }
-      }
+          margin: props.stepType === 'result' ? 0 : undefined,
+        },
+      },
     },
     titleText: {
       selectors: {
         '@media only screen and (max-width: 479px)': {
           fontSize: FontSizes.medium,
-          paddingTop: props.stepType === 'result' ? '8px' : '0'
-        }
-      }
+          paddingTop: props.stepType === 'result' ? '8px' : '0',
+        },
+      },
     },
     wrapperStep: {
       display: props.showStep ? 'block' : 'none',
@@ -286,9 +285,9 @@ export const getClassNames = props => {
       selectors: {
         '@media  only screen and (max-width: 479px)': {
           border: 'none',
-          padding: '0 2px'
-        }
-      }
-    }
+          padding: '0 2px',
+        },
+      },
+    },
   });
 };

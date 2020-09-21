@@ -1,6 +1,6 @@
 import { mergeStyleSets } from '@uifabric/merge-styles';
 import { getTheme } from '@uifabric/styling';
-import { PaletteProps } from '..';
+import { PaletteProps } from '../index';
 
 export function getClassNames(): any {
   const palette = getTheme().palette as PaletteProps;
@@ -14,11 +14,11 @@ export function getClassNames(): any {
           listStyle: 'none',
           selectors: {
             '&:last-child': {
-              borderBottom: `2px solid ${palette.skeColor.grey}`
-            }
-          }
-        }
-      }
+              borderBottom: `2px solid ${palette.skeColor.grey}`,
+            },
+          },
+        },
+      },
     },
     menuItem: {
       display: 'flex',
@@ -26,20 +26,20 @@ export function getClassNames(): any {
       padding: '0 15px',
       selectors: {
         '&:hover': {
-          background: palette.skeColor.lightBlue
-        }
-      }
+          background: palette.skeColor.lightBlue,
+        },
+      },
     },
     menuItemIsOpen: {
-      borderBottom: `2px solid ${palette.skeColor.grey}`
+      borderBottom: `2px solid ${palette.skeColor.grey}`,
     },
     menuItemTitle: {
       display: 'flex',
-      alignItems: 'center'
+      alignItems: 'center',
     },
     title: {
       margin: '0 15px 0 15px',
-      padding: '10px 0'
+      padding: '10px 0',
     },
     iconWrapper: {
       selectors: {
@@ -50,26 +50,26 @@ export function getClassNames(): any {
           height: 40,
           width: 40,
           border: `2px solid ${palette.skeColor.blackAlt}`,
-          borderRadius: '50%'
-        }
-      }
+          borderRadius: '50%',
+        },
+      },
     },
     toggleButton: {
       alignSelf: 'flex-start',
       marginLeft: 'auto',
-      padding: '10px 0'
+      padding: '10px 0',
     },
     toggleButtonOpen: {
       selectors: {
         '& i': {
-          transform: 'rotate(180deg)'
-        }
-      }
+          transform: 'rotate(180deg)',
+        },
+      },
     },
     content: {
       padding: 15,
       background: palette.skeColor.lightBeige,
-      display: 'block'
-    }
+      display: 'block',
+    },
   });
 }

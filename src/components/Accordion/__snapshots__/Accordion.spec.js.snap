@@ -3,13 +3,13 @@
 exports[`Accordion komponent matcher snapshot 1`] = `
 <Accordion>
   <div
-    className="accordion-38"
+    className="accordion-108"
   >
     <Grid
       padding="0 8px"
     >
       <div
-        className="ske-Grid-47 "
+        className="ske-Grid-117 "
       >
         <AccordionItem
           key=".0"
@@ -17,24 +17,24 @@ exports[`Accordion komponent matcher snapshot 1`] = `
           totalSteps={1}
         >
           <div
-            className="wrapperStep-37"
+            className="wrapperStep-107"
             key="1"
           >
             <GridRow
               rowSpacing="0px"
             >
               <div
-                className="ske-Grid-row-50 "
+                className="ske-Grid-row-120 "
               >
                 <GridCol>
                   <div
-                    className="ske-Grid-col-49 "
+                    className="ske-Grid-col-119 "
                   >
                     <GridRow
                       rowSpacing="0px"
                     >
                       <div
-                        className="ske-Grid-row-50 "
+                        className="ske-Grid-row-120 "
                       >
                         <GridCol
                           md={12}
@@ -42,7 +42,7 @@ exports[`Accordion komponent matcher snapshot 1`] = `
                           xl={12}
                         >
                           <div
-                            className="ske-Grid-col-51 "
+                            className="ske-Grid-col-121 "
                           >
                             <hr />
                             <ToggleContent
@@ -50,23 +50,23 @@ exports[`Accordion komponent matcher snapshot 1`] = `
                               onClick={[Function]}
                               styles={
                                 Object {
-                                  "accordion": "accordion-38",
-                                  "containerStep": "containerStep-36",
-                                  "content": "content-39",
-                                  "heading": "heading-40",
-                                  "stepLine": "stepLine-42",
-                                  "stepNumber": "stepNumber-41",
+                                  "accordion": "accordion-108",
+                                  "containerStep": "containerStep-106",
+                                  "content": "content-109",
+                                  "heading": "heading-110",
+                                  "stepLine": "stepLine-112",
+                                  "stepNumber": "stepNumber-111",
                                   "subComponentStyles": Object {},
-                                  "subtitle": "subtitle-46",
-                                  "toggleButton": "toggleButton-43",
-                                  "toggleButtonContent": "toggleButtonContent-45",
-                                  "toggleButtonOpen": "toggleButtonOpen-44",
-                                  "wrapperStep": "wrapperStep-37",
+                                  "subtitle": "subtitle-116",
+                                  "toggleButton": "toggleButton-113",
+                                  "toggleButtonContent": "toggleButtonContent-115",
+                                  "toggleButtonOpen": "toggleButtonOpen-114",
+                                  "wrapperStep": "wrapperStep-107",
                                 }
                               }
                             />
                             <div
-                              className="content-39"
+                              className="content-109"
                             >
                               <p>
                                 Her vises innhold

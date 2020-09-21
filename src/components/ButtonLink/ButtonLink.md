@@ -1,5 +1,5 @@
 ```js noeditor
-import MessageBar from '@skatteetaten/frontend-components/MessageBar';
+import { MessageBar } from '@skatteetaten/frontend-components';
 
 <MessageBar type={MessageBar.Type.info}>
   NB: Vær ekstra oppmerksom på kravene til universell utforming når du benytter
@@ -10,7 +10,7 @@ import MessageBar from '@skatteetaten/frontend-components/MessageBar';
 ** Når hovedhandlingen er navigasjon til en annen side **
 
 ```js
-import ButtonLink from '@skatteetaten/frontend-components/ButtonLink';
+import { ButtonLink } from '@skatteetaten/frontend-components';
 
 <ButtonLink path={'#'} text="Se og endre skattekort" />;
 ```

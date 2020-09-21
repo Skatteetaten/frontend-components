@@ -1,15 +1,18 @@
 import * as React from 'react';
 import classnames from 'classnames';
-import ErrorMessage from '../ErrorMessage/ErrorMessage';
+import {
+  ErrorMessage,
+  LabelWithCallout,
+  calloutState,
+  generateId,
+} from '../index';
 import {
   ITextFieldProps,
   MaskedTextField,
   TextField as FabricTextField,
-  ITextField
-} from 'office-ui-fabric-react/lib-commonjs/TextField';
+  ITextField,
+} from 'office-ui-fabric-react';
 import { getClassNames } from './TextField.classNames';
-import LabelWithCallout, { calloutState } from '../LabelWithCallout';
-import { useId } from '@reach/auto-id';
 
 export interface TextFieldProps extends ITextFieldProps {
   /** Benyttes når teksten for et readOnly tekstfelt skal fremheves  */
@@ -76,8 +79,8 @@ export const TextField: React.FC<TextFieldProps> = ({
   rest.inputSize = rest.inputSize || 'normal';
   const shouldEditWhenEmpty = rest.editableWhenEmpty ? value === '' : false;
 
-  const genratedId = useId(id);
-  const mainId = id ? id : 'textfield-' + genratedId;
+  const generatedId = generateId();
+  const mainId = id ? id : 'textfield-' + generatedId;
   const inputId = mainId + '-input';
   const labelId = mainId + '-label';
 
@@ -89,7 +92,7 @@ export const TextField: React.FC<TextFieldProps> = ({
     setEditMode(true);
   };
 
-  const onBlur: ITextFieldProps['onBlur'] = e => {
+  const onBlur: ITextFieldProps['onBlur'] = (e) => {
     rest.onBlur && rest.onBlur(e);
     if (editMode) {
       setEditMode(shouldEditWhenEmpty);
@@ -159,7 +162,7 @@ export const TextField: React.FC<TextFieldProps> = ({
           className
         )}
         onBlur={onBlur}
-        componentRef={ref => {
+        componentRef={(ref) => {
           if (rest.componentRef && typeof rest.componentRef === 'function') {
             rest.componentRef(ref);
           }
@@ -173,5 +176,3 @@ export const TextField: React.FC<TextFieldProps> = ({
     </div>
   );
 };
-
-export default TextField;

@@ -1,7 +1,7 @@
 ** Nedtrekkslister brukes når brukeren skal kunne velge et eller flere valg fra en liste. **
 
 ```js
-import Dropdown from '@skatteetaten/frontend-components/Dropdown';
+import { Dropdown } from '@skatteetaten/frontend-components';
 
 const initialState = {
   options: [
@@ -10,8 +10,8 @@ const initialState = {
     { key: 'B', text: 'Eple' },
     { key: 'C', text: 'Kiwi' },
     { key: 'D', text: 'Pære' },
-    { key: 'E', text: 'Sitron' }
-  ]
+    { key: 'E', text: 'Sitron' },
+  ],
 };
 
 <div style={{ width: '300px' }}>
@@ -27,7 +27,7 @@ const initialState = {
 Stor versjon:
 
 ```js
-import Dropdown from '@skatteetaten/frontend-components/Dropdown';
+import { Dropdown } from '@skatteetaten/frontend-components';
 
 const initialState = {
   options: [
@@ -36,8 +36,8 @@ const initialState = {
     { key: 'B', text: 'Eple' },
     { key: 'C', text: 'Kiwi' },
     { key: 'D', text: 'Pære' },
-    { key: 'E', text: 'Sitron' }
-  ]
+    { key: 'E', text: 'Sitron' },
+  ],
 };
 
 <div style={{ width: '300px' }}>
@@ -66,7 +66,7 @@ import Dropdown from '@skatteetaten/frontend-components/Dropdown';
       { key: 'B', text: 'Beta', value: 'Beta' },
       { key: 'C', text: 'Gamma', value: 'Gamma' },
       { key: 'D', text: 'Delta', value: 'Delta' },
-      { key: 'E', text: 'Echo', value: 'Echo' }
+      { key: 'E', text: 'Echo', value: 'Echo' },
     ]}
     selectedKey="D"
   />

@@ -12,24 +12,24 @@ exports[`Link komponent matcher snapshot 1`] = `
   }
 >
   <ul
-    className="arrowLinkList-38"
+    className="arrowLinkList-108"
   >
     <li
-      className="arrowLink-36"
+      className="arrowLink-106"
       key="0"
     >
       <Icon
-        className="icon-37"
+        className="icon-107"
         iconName="arrowForward"
         role="presentation"
       >
         <StyledIconBase
-          className="icon-37"
+          className="icon-107"
           iconName="arrowForward"
           role="presentation"
         >
           <IconBase
-            className="icon-37"
+            className="icon-107"
             iconName="arrowForward"
             role="presentation"
             styles={[Function]}
@@ -42,6 +42,8 @@ exports[`Link komponent matcher snapshot 1`] = `
                   "elevation64": "0 25.6px 57.6px 0 rgba(0, 0, 0, 0.22), 0 4.8px 14.4px 0 rgba(0, 0, 0, 0.18)",
                   "elevation8": "0 3.2px 7.2px 0 rgba(0, 0, 0, 0.132), 0 0.6px 1.8px 0 rgba(0, 0, 0, 0.108)",
                   "roundedCorner2": "2px",
+                  "roundedCorner4": "4px",
+                  "roundedCorner6": "6px",
                 },
                 "fonts": Object {
                   "large": Object {
@@ -256,6 +258,9 @@ exports[`Link komponent matcher snapshot 1`] = `
                   "buttonTextDisabled": "rgba(89, 89, 89, 0.95)",
                   "buttonTextHovered": "rgba(21, 21, 21, 0.95)",
                   "buttonTextPressed": "rgba(21, 21, 21, 0.95)",
+                  "cardShadow": "0 1.6px 3.6px 0 rgba(0, 0, 0, 0.132), 0 0.3px 0.9px 0 rgba(0, 0, 0, 0.108)",
+                  "cardShadowHovered": "0 3.2px 7.2px 0 rgba(0, 0, 0, 0.132), 0 0.6px 1.8px 0 rgba(0, 0, 0, 0.108)",
+                  "cardStandoutBackground": "#ffffff",
                   "defaultStateBackground": "#f8f8f8",
                   "disabledBackground": "#f4f4f4",
                   "disabledBodySubtext": "#c8c8c8",
@@ -339,7 +344,7 @@ exports[`Link komponent matcher snapshot 1`] = `
           >
             <i
               aria-hidden={true}
-              className="icon-41"
+              className="icon-111"
               data-icon-name="arrowForward"
               role="presentation"
             >
@@ -349,7 +354,7 @@ exports[`Link komponent matcher snapshot 1`] = `
         </StyledIconBase>
       </Icon>
       <a
-        className="arrowLinkA-39"
+        className="arrowLinkA-109"
         href="#"
       >
         Dette er en link

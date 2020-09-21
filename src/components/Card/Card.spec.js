@@ -1,7 +1,7 @@
 import React from 'react';
 import toJson from 'enzyme-to-json';
 import { shallow, mount } from 'enzyme';
-import Card from './Card';
+import { Card, CardColor } from '../index';
 
 function oppsettShallow(props) {
   return shallow(<Card {...props} />);
@@ -30,14 +30,14 @@ describe('Card komponent', () => {
 
   it('setter Card med riktige props', () => {
     const wrapper = oppsettFullDOM({
-      color: Card.Color.BEIGE,
+      color: CardColor.BEIGE,
       title: 'Ikke fullført arbeidsoppgave',
       titlesize: 'large',
       marginbottom: '10px',
       expand: true,
       isExpanded: false,
       id: 'card-id',
-      className: 'card-classname'
+      className: 'card-classname',
     });
 
     expect(wrapper.prop('titlesize')).toEqual('large');
@@ -53,7 +53,7 @@ describe('Card komponent', () => {
   it('endrer state når utvid knapp klikkes', () => {
     const wrapper = oppsettShallow({
       expand: true,
-      isExpanded: true
+      isExpanded: true,
     });
     const expandBtn = wrapper.find('IconButton');
 

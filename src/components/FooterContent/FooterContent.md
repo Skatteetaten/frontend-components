@@ -1,8 +1,7 @@
 ** FooterContent brukes i publikumsløsninger for å markere bunnen av siden.**
 
 ```js
-import FooterContent from '@skatteetaten/frontend-components/FooterContent';
-import Grid from '@skatteetaten/frontend-components/Grid';
+import { FooterContent, Grid } from '@skatteetaten/frontend-components';
 
 <div>
   <FooterContent>

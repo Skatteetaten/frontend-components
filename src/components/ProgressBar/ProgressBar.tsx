@@ -1,15 +1,15 @@
 import classnames from 'classnames';
 import {
   IProgressIndicatorProps,
-  ProgressIndicator
-} from 'office-ui-fabric-react/lib-commonjs/ProgressIndicator';
-import * as React from 'react';
+  ProgressIndicator,
+} from 'office-ui-fabric-react';
+import React from 'react';
 import { getClassNames } from './ProgressBar.classNames';
 
 /**
  * @visibleName ProgressBar (Innlasting)
  */
-const ProgressBar: React.FC<IProgressIndicatorProps> = props => {
+export const ProgressBar: React.FC<IProgressIndicatorProps> = (props) => {
   const { className, ...rest } = props;
   return (
     <ProgressIndicator
@@ -27,7 +27,5 @@ ProgressBar.defaultProps = {
   /** Emne som vises over fremdriftsindikatoren */
   label: undefined,
   /** Prosent fullført (fra 0.00 til 1.00) */
-  percentComplete: undefined
+  percentComplete: undefined,
 };
-
-export default ProgressBar;

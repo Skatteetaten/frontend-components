@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
-import IconButton from './IconButton';
+import { IconButton } from '../index';
 import { matches } from './../utils/test-utils';
 
 function oppsettShallow(props) {
@@ -31,7 +31,7 @@ describe('IconButton komponent', () => {
       title: 'Lagre',
       circle: true,
       type: 'large',
-      icon: 'Save'
+      icon: 'Save',
     });
 
     expect(wrapper.prop('title')).toEqual('Lagre');

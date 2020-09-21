@@ -1,7 +1,7 @@
 ** Avkrysningsboks brukes for eksempel i skjemaer til å bekrefte ett eller flere valg. **
 
 ```js
-import CheckBox from '@skatteetaten/frontend-components/CheckBox';
+import { CheckBox } from '@skatteetaten/frontend-components';
 
 <div>
   <fieldset style={{ border: 'none' }}>

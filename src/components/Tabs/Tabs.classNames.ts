@@ -1,7 +1,6 @@
 import { mergeStyles } from '@uifabric/merge-styles';
 import { getTheme } from '@uifabric/styling';
-import { FontWeights, TabProps } from '..';
-import { PaletteProps } from '..';
+import { FontWeights, TabProps, PaletteProps } from '../index';
 
 export const getClassNames = function getClassNames(props: TabProps) {
   const palette = getTheme().palette as PaletteProps;
@@ -19,34 +18,34 @@ export const getClassNames = function getClassNames(props: TabProps) {
           maxWidth: '100%',
           selectors: {
             ':focus': {
-              outline: `2px solid ${palette.skeColor.blue} !important`
+              outline: `2px solid ${palette.skeColor.blue} !important`,
             },
             ':hover': {
               background: palette.skeColor.lightBlue,
-              color: palette.skeColor.blackAlt
+              color: palette.skeColor.blackAlt,
             },
             ':active': {
               background: palette.skeColor.darkBlue,
               color: palette.skeColor.white,
               border: props.border
                 ? `2px solid ${palette.skeColor.darkBlue}`
-                : 'none'
-            }
-          }
+                : 'none',
+            },
+          },
         },
         '& .ms-Pivot-linkContent span': {
-          textDecoration: props.underline ? 'underline' : 'none'
+          textDecoration: props.underline ? 'underline' : 'none',
         },
         '& .ms-Pivot-link .link:focus': {
-          outline: 'none'
+          outline: 'none',
         },
         '&.ms-Pivot-text .ms-Pivot-count': {
-          color: palette.skeColor.black
+          color: palette.skeColor.black,
         },
         '& .ms-Pivot': {
           borderBottom: `3px solid ${palette.skeColor.burgundy}`,
           width: '100%',
-          display: 'inline-block'
+          display: 'inline-block',
         },
         // TODO gjør at komponenter blir offset i tableitem
         // '& .ms-Button-flexContainer': {
@@ -63,17 +62,17 @@ export const getClassNames = function getClassNames(props: TabProps) {
             : 'none',
           selectors: {
             ':before': {
-              borderBottom: 'none'
+              borderBottom: 'none',
             },
             ':hover': {
-              color: palette.skeColor.white
-            }
-          }
+              color: palette.skeColor.white,
+            },
+          },
         },
         '& .ms-Pivot-link.is-selected .ms-Pivot-linkContent span': {
-          textDecoration: 'none'
-        }
-      }
-    }
+          textDecoration: 'none',
+        },
+      },
+    },
   ]);
 };

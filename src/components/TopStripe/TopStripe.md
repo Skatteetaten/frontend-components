@@ -5,12 +5,13 @@
 Viser Kontakt oss, endre skriftsstørrelse, språk og logg inn.
 
 ```js
-import TopStripe, {
+import {
+  TopStripe,
   TopStripeMenu,
-  TopStripeButton
-} from '@skatteetaten/frontend-components/TopStripe';
-import TopBanner from '@skatteetaten/frontend-components/TopBanner';
-import Link from '@skatteetaten/frontend-components/Link';
+  TopStripeButton,
+  TopBanner,
+  Link,
+} from '@skatteetaten/frontend-components';
 
 <div>
   <TopStripe>
@@ -76,13 +77,14 @@ import Link from '@skatteetaten/frontend-components/Link';
 Viser Kontakt oss, endre skriftsstørrelse, språk, partsvalg og logg ut.
 
 ```js
-import TopStripe, {
+import {
+  TopStripe,
   TopStripeMenu,
-  TopStripeButton
-} from '@skatteetaten/frontend-components/TopStripe';
-import TopBanner from '@skatteetaten/frontend-components/TopBanner';
-import Link from '@skatteetaten/frontend-components/Link';
-import Icon from '@skatteetaten/frontend-components/Icon';
+  TopStripeButton,
+  TopBanner,
+  Link,
+  Icon,
+} from '@skatteetaten/frontend-components';
 
 <div>
   <TopStripe>
@@ -146,14 +148,14 @@ import Icon from '@skatteetaten/frontend-components/Icon';
 Viser Kontakt oss, endre skriftsstørrelse, språk, partsvalg og logg ut.
 
 ```js
-import TopStripe, {
+import {
+  TopStripe,
   TopStripeMenu,
-  TopStripeButton
-} from '@skatteetaten/frontend-components/TopStripe';
-import TopBanner from '@skatteetaten/frontend-components/TopBanner';
-import Link from '@skatteetaten/frontend-components/Link';
-import Icon from '@skatteetaten/frontend-components/Icon';
-
+  TopStripeButton,
+  TopBanner,
+  Link,
+  Icon,
+} from '@skatteetaten/frontend-components';
 import { UseScreen } from '@skatteetaten/frontend-components/utils/ScreenPlugin';
 
 const size = UseScreen();
@@ -233,12 +235,13 @@ const size = UseScreen();
 På mobil flyttes valgene for kontakt oss, skriftsstørrelse og språk til footeren.
 
 ```js
-import TopStripe, {
+import {
+  TopStripe,
   TopStripeMenu,
-  TopStripeButton
-} from '@skatteetaten/frontend-components/TopStripe';
-import TopBanner from '@skatteetaten/frontend-components/TopBanner';
-import Link from '@skatteetaten/frontend-components/Link';
+  TopStripeButton,
+  TopBanner,
+  Link,
+} from '@skatteetaten/frontend-components';
 
 <div>
   <TopStripe>

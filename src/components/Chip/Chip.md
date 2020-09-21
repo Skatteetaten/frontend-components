@@ -3,8 +3,7 @@
 Variasjon i utheving, størrelse og farge:
 
 ```js
-import Chip from '@skatteetaten/frontend-components/Chip';
-import Icon from '@skatteetaten/frontend-components/Icon';
+import { Chip, Icon } from '@skatteetaten/frontend-components';
 
 <div>
   <Chip aria-label="Klagesak">Klagesak </Chip>
@@ -22,7 +21,7 @@ import Icon from '@skatteetaten/frontend-components/Icon';
 Eksempel på bruk i tekst:
 
 ```js
-import Chip from '@skatteetaten/frontend-components/Chip';
+import { Chip } from '@skatteetaten/frontend-components';
 
 <div>
   <h3>Dekning av saksomkostninger</h3>

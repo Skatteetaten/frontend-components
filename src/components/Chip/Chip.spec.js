@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
 import toJson from 'enzyme-to-json';
-import Chip from './Chip';
+import { Chip } from '../index';
 
 function oppsettShallow(props) {
   return shallow(<Chip {...props} />);
@@ -28,7 +28,7 @@ describe('Chip komponent', () => {
   it('setter CheckBox med riktige props', () => {
     const wrapper = oppsettShallow({
       size: 'large',
-      type: Chip.OK
+      type: Chip.OK,
     });
 
     expect(wrapper.prop('type')).toEqual('lightGreen');

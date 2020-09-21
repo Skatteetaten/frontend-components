@@ -1,13 +1,13 @@
 import classnames from 'classnames';
 import * as React from 'react';
-import Callout from '../Callout/Callout';
+import { Callout } from '../index';
 import { getClassNames } from './Dialog.classNames';
 import {
   DialogType,
   DialogFooter,
   Dialog as FabricDialog,
-  IDialogProps
-} from 'office-ui-fabric-react/lib-commonjs/Dialog';
+  IDialogProps,
+} from 'office-ui-fabric-react';
 
 export interface DialogProps extends IDialogProps {
   /** Om dialog skal ha mer padding for et luftigere uttrykk */
@@ -16,16 +16,13 @@ export interface DialogProps extends IDialogProps {
   tabletContentOverflows?: boolean;
   isModeless?: boolean;
 }
-type DialogState = {
+export type DialogState = {
   isCalloutVisible: boolean;
 };
 /**
  * @visibleName Dialog (Dialogboks)
  */
-export default class Dialog extends React.PureComponent<
-  DialogProps,
-  DialogState
-> {
+export class Dialog extends React.PureComponent<DialogProps, DialogState> {
   static Footer = DialogFooter;
   static Type = DialogType;
 
@@ -35,14 +32,14 @@ export default class Dialog extends React.PureComponent<
     closeButtonAriaLabel: 'Lukk',
     tabletContentOverflows: false,
     isModeless: false,
-    isBlocking: undefined
+    isBlocking: undefined,
   };
   private readonly _iconButtonElement: React.RefObject<HTMLDivElement>;
 
   constructor(props: DialogProps) {
     super(props);
     this.state = {
-      isCalloutVisible: false
+      isCalloutVisible: false,
     };
     this._iconButtonElement = React.createRef();
     this._onClick = this._onClick.bind(this);
@@ -76,13 +73,13 @@ export default class Dialog extends React.PureComponent<
             type: type,
             title,
             subText,
-            closeButtonAriaLabel: closeButtonAriaLabel
+            closeButtonAriaLabel: closeButtonAriaLabel,
           }}
           modalProps={{
             isBlocking,
             isModeless,
             className: classnames(styles.main, className),
-            ...modalProps
+            ...modalProps,
           }}
         >
           {isCalloutVisible && (
@@ -102,13 +99,13 @@ export default class Dialog extends React.PureComponent<
 
   _onClick() {
     this.setState({
-      isCalloutVisible: !this.state.isCalloutVisible
+      isCalloutVisible: !this.state.isCalloutVisible,
     });
   }
 
   _onDismiss() {
     this.setState({
-      isCalloutVisible: false
+      isCalloutVisible: false,
     });
   }
 }

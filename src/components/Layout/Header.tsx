@@ -1,12 +1,12 @@
 import React from 'react';
-import Grid from '../Grid/Grid';
-import { withResponsiveMode } from 'office-ui-fabric-react/lib-commonjs/utilities/decorators/withResponsiveMode';
+import { Grid } from '../index';
+import { ResponsiveMode } from 'office-ui-fabric-react';
 import { mergeStyles } from '@uifabric/merge-styles';
 
 const getClassNames = () => {
   return mergeStyles({
     displayName: 'SkeHeader',
-    marginBottom: '16px'
+    marginBottom: '16px',
   });
 };
 
@@ -14,7 +14,7 @@ export class Header extends React.Component {
   static displayName = 'Header';
   static defaultProps = {
     tag: 'header',
-    responsiveMode: undefined
+    responsiveMode: ResponsiveMode.large,
   };
   render() {
     const {
@@ -44,5 +44,3 @@ export class Header extends React.Component {
     );
   }
 }
-
-export default withResponsiveMode(Header);

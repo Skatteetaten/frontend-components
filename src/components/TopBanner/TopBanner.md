@@ -5,7 +5,7 @@
 Ikke-innlogget publikumsløsning:
 
 ```js
-import TopBanner from '@skatteetaten/frontend-components/TopBanner';
+import { TopBanner } from '@skatteetaten/frontend-components';
 
 <TopBanner
   external
@@ -18,13 +18,14 @@ import TopBanner from '@skatteetaten/frontend-components/TopBanner';
 Innlogget publikumsløsning:
 
 ```js
-import TopStripe, {
+import {
+  TopStripe,
   TopStripeMenu,
-  TopStripeButton
-} from '@skatteetaten/frontend-components/TopStripe';
-import TopBanner from '@skatteetaten/frontend-components/TopBanner';
-import Link from '@skatteetaten/frontend-components/Link';
-import Icon from '@skatteetaten/frontend-components/Icon';
+  TopStripeButton,
+  TopBanner,
+  Link,
+  Icon,
+} from '@skatteetaten/frontend-components';
 
 <div>
   <TopStripe>
@@ -85,7 +86,7 @@ import Icon from '@skatteetaten/frontend-components/Icon';
 På startsiden i et fagsystem:
 
 ```js
-import TopBanner from '@skatteetaten/frontend-components/TopBanner';
+import { TopBanner } from '@skatteetaten/frontend-components';
 
 <div>
   <TopBanner compact homeText="Systemnavn" homeUrl="#topbanner">
@@ -97,7 +98,7 @@ import TopBanner from '@skatteetaten/frontend-components/TopBanner';
 På en underside i et fagsystem:
 
 ```js
-import TopBanner from '@skatteetaten/frontend-components/TopBanner';
+import { TopBanner } from '@skatteetaten/frontend-components';
 
 <div>
   <TopBanner

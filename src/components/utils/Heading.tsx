@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-const Heading: React.FC<{
+export const Heading: React.FC<{
   text: string;
   level: number;
 }> = ({ text, level }) => {
@@ -21,5 +21,3 @@ const Heading: React.FC<{
       return <span>{text}</span>;
   }
 };
-
-export default Heading;

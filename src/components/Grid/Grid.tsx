@@ -1,72 +1,14 @@
 import * as React from 'react';
 import { getClassNames } from './Grid.classNames';
+import { Col } from './Col';
+import { Row } from './Row';
 
-interface RowProps {
-  rowSpacing?: string;
-  rowInset?: boolean;
-  centered?: boolean;
+export interface GridProps {
   className?: string;
   tag?: string;
   padding?: string;
 }
 
-class Row extends React.Component<RowProps, {}> {
-  static displayName = 'GridRow';
-
-  static defaultProps = {
-    rowSpacing: '8px'
-  };
-
-  render() {
-    const { children, className = '', tag = 'div' } = this.props;
-    return React.createElement(
-      tag,
-      { className: `${getClassNames(this.props).row} ${className}` },
-      children
-    );
-  }
-}
-
-interface ColProps {
-  noSpacing?: boolean;
-  className?: string;
-  tag?: string;
-  sm?: number;
-  md?: number;
-  lg?: number;
-  xl?: number;
-  xxl?: number;
-  xxxl?: number;
-  smPush?: number;
-  mdPush?: number;
-  lgPush?: number;
-  xlPush?: number;
-  xxlPush?: number;
-  xxxlPush?: number;
-  smPull?: number;
-  mdPull?: number;
-  lgPull?: number;
-  xlPull?: number;
-  xxlPull?: number;
-  xxxlPull?: number;
-}
-class Col extends React.Component<ColProps, {}> {
-  static displayName = 'GridCol';
-  render() {
-    const { children, className = '', tag = 'div' } = this.props;
-    return React.createElement(
-      tag,
-      { className: `${getClassNames(this.props).col} ${className}` },
-      children
-    );
-  }
-}
-
-interface GridProps {
-  className?: string;
-  tag?: string;
-  padding?: string;
-}
 /**
  * @visibleName Grid (Rutenett)
  */
@@ -79,7 +21,7 @@ export class Grid extends React.Component<GridProps, {}> {
   static SPACE_LARGE = '24px';
 
   static defaultProps = {
-    padding: '0 8px'
+    padding: '0 8px',
   };
 
   render() {
@@ -91,5 +33,3 @@ export class Grid extends React.Component<GridProps, {}> {
     );
   }
 }
-
-export default Grid;

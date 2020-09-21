@@ -1,6 +1,6 @@
 import classnames from 'classnames';
 import * as React from 'react';
-import IconButton from '../IconButton/IconButton';
+import { IconButton } from '../index';
 import { getClassNames } from './Card.classNames';
 
 export enum CardColor {
@@ -8,7 +8,7 @@ export enum CardColor {
   GREEN = 'lightGreen',
   BEIGE = 'beige',
   WHITE = 'white',
-  RED = 'lightPink'
+  RED = 'lightPink',
 }
 
 export enum CardBorder {
@@ -16,7 +16,7 @@ export enum CardBorder {
   RED_BORDER = 'pink',
   YELLOW_BORDER = 'brown',
   GREY_BORDER = 'grey',
-  WHITE_BORDER = 'white'
+  WHITE_BORDER = 'white',
 }
 
 export interface CardProps extends React.HTMLAttributes<HTMLDivElement> {
@@ -68,7 +68,7 @@ export interface CardState {
 /**
  * @visibleName Card (Innholdskort)
  */
-export default class Card extends React.PureComponent<CardProps, CardState> {
+export class Card extends React.PureComponent<CardProps, CardState> {
   static Color = CardColor;
   static Border = CardBorder;
 
@@ -78,12 +78,12 @@ export default class Card extends React.PureComponent<CardProps, CardState> {
     titlesize: 'x-large',
     expand: false,
     isExpanded: true,
-    color: Card.Color.GREY,
+    color: CardColor.GREY,
     actions: null,
     marginbottom: '2px',
     margin: 'medium',
     circleOnIcon: true,
-    buttonType: 'button'
+    buttonType: 'button',
   };
 
   constructor(props: CardProps) {
@@ -108,7 +108,7 @@ export default class Card extends React.PureComponent<CardProps, CardState> {
       className,
       circleOnIcon,
       id,
-      buttonType
+      buttonType,
     } = this.props;
 
     const styles = getClassNames(this.props, this.state);
@@ -159,7 +159,7 @@ export default class Card extends React.PureComponent<CardProps, CardState> {
 
   _toggleExpand = () => {
     this.setState({
-      isExpandedState: !this.state.isExpandedState
+      isExpandedState: !this.state.isExpandedState,
     });
     this.props.onClick && this.props.onClick();
   };

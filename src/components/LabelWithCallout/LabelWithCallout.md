@@ -1,8 +1,7 @@
 ** Brukes til å vise en label og tilhørende hjelpetekst **
 
 ```js
-import LabelWithCallout from '@skatteetaten/frontend-components/LabelWithCallout';
-import Button from '@skatteetaten/frontend-components/Button';
+import { LabelWithCallout, Button } from '@skatteetaten/frontend-components';
 
 <>
   <LabelWithCallout
@@ -21,8 +20,10 @@ import Button from '@skatteetaten/frontend-components/Button';
 Brukt i kombinasjon med annen komponent.
 
 ```js
-import LabelWithCallout from '@skatteetaten/frontend-components/LabelWithCallout';
-import SearchField from '@skatteetaten/frontend-components/SearchField';
+import {
+  LabelWithCallout,
+  SearchField,
+} from '@skatteetaten/frontend-components';
 <div style={{ width: '350px' }}>
   <LabelWithCallout
     label={'Søk'}
@@ -40,7 +41,7 @@ import SearchField from '@skatteetaten/frontend-components/SearchField';
 Flere komponeter har LabelWithCallout innebygd. Her med autoDismiss:
 
 ```js
-import TextField from '@skatteetaten/frontend-components/TextField';
+import { TextField } from '@skatteetaten/frontend-components';
 
 <>
   <div style={{ width: '300px' }}>

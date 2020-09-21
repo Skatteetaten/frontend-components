@@ -1,9 +1,7 @@
 import React from 'react';
 import { mount } from 'enzyme';
 import toJson from 'enzyme-to-json';
-import Table from './Table';
-import IconButton from '../IconButton/IconButton';
-import Grid from '../Grid/Grid';
+import { Table, IconButton, Grid } from '../index';
 
 const data = [
   {
@@ -11,48 +9,48 @@ const data = [
     Beløp: 100,
     Dekningsgrad: '100%',
     Avkastning: '1000',
-    ikkeTegnetVerdi: '2000'
+    ikkeTegnetVerdi: '2000',
   },
   {
     Måned: 'Februar',
     Beløp: 100,
     Dekningsgrad: '50%',
-    Avkastning: '500'
+    Avkastning: '500',
   },
   {
     Måned: 'Mars',
     Beløp: 100,
     Dekningsgrad: '20%',
-    Avkastning: '2000'
+    Avkastning: '2000',
   },
   {
     Måned: 'April',
     Beløp: 100,
     Dekningsgrad: '30%',
-    Avkastning: '1055'
-  }
+    Avkastning: '1055',
+  },
 ];
 
 const columns = [
   {
     name: 'Måned',
-    fieldName: 'month'
+    fieldName: 'month',
   },
   {
     name: 'Beløp',
     fieldName: 'amount',
-    alignment: 'right'
+    alignment: 'right',
   },
   {
     name: 'Dekningsgrad',
     fieldName: 'coverage',
-    alignment: 'right'
+    alignment: 'right',
   },
   {
     name: 'Avkastning',
     fieldName: 'revenue',
-    alignment: 'right'
-  }
+    alignment: 'right',
+  },
 ];
 
 const content = (data, close) => (
@@ -91,15 +89,10 @@ function mountMedEditerbartInnholdAapen() {
     data,
     columns,
     editableRows: true,
-    editableContent: content
+    editableContent: content,
   });
 
-  wrapper
-    .find('TableRow')
-    .first()
-    .find('IconButton')
-    .first()
-    .simulate('click');
+  wrapper.find('TableRow').first().find('IconButton').first().simulate('click');
 
   return wrapper;
 }
@@ -117,7 +110,7 @@ describe('Table komponent', () => {
       editableRows: true,
       id: 'tableid',
       className: 'tableClass',
-      editableContent: 'Editerbart innhold'
+      editableContent: 'Editerbart innhold',
     });
 
     const tableWrapper = wrapper.find('Table > div');
@@ -149,7 +142,7 @@ describe('Table komponent', () => {
       data,
       columns,
       editableRows: true,
-      editableContent: content
+      editableContent: content,
     });
 
     const editButton = wrapper
@@ -177,7 +170,7 @@ describe('Table komponent', () => {
   it('når en tabellrad er i editeringsmodus skal det ikke være mulig å editere øvrige rader ', () => {
     const wrapper = mountMedEditerbartInnholdAapen();
 
-    wrapper.find('.editButton').forEach(node => {
+    wrapper.find('.editButton').forEach((node) => {
       expect(node.prop('disabled')).toEqual(true);
     });
   });
@@ -198,15 +191,11 @@ describe('Table komponent', () => {
       data,
       columns,
       expandableRows: true,
-      expandableContent: mockContent
+      expandableContent: mockContent,
     });
     const tableRow = wrapper.find('TableRow');
     expect(wrapper.exists('.mockDiv')).toEqual(false);
-    tableRow
-      .at(0)
-      .find('IconButton')
-      .first()
-      .simulate('click');
+    tableRow.at(0).find('IconButton').first().simulate('click');
     expect(wrapper.exists('.mockDiv')).toEqual(true);
     expect(wrapper.find('.mockDiv').text()).toEqual(
       'Ekspanderbart innhold for Januar'

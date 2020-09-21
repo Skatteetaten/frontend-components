@@ -2,10 +2,10 @@ import classnames from 'classnames';
 import {
   Callout as FabricCallout,
   DirectionalHint,
-  ICalloutProps
-} from 'office-ui-fabric-react/lib-commonjs/Callout';
+  ICalloutProps,
+} from 'office-ui-fabric-react';
 import * as React from 'react';
-import IconButton from '../IconButton/IconButton';
+import { IconButton } from '../index';
 import { getClassNames } from './Callout.classNames';
 
 export enum CalloutColor {
@@ -13,7 +13,7 @@ export enum CalloutColor {
   INFO = 'beige',
   ERROR = 'lightPink',
   WARNING = 'beige',
-  BASIC = 'white'
+  BASIC = 'white',
 }
 export interface CalloutProps extends ICalloutProps {
   /** Avgjør om callout vinduet skal lukkes automatisk når området utenfor vinduet klikkes */
@@ -24,17 +24,14 @@ export interface CalloutProps extends ICalloutProps {
   /** dir */
 }
 
-interface CalloutState {
+export interface CalloutState {
   isCalloutVisible: boolean;
 }
 
 /**
  * @visibleName Callout (Utropsboks)
  */
-export default class Callout extends React.PureComponent<
-  CalloutProps,
-  CalloutState
-> {
+export class Callout extends React.PureComponent<CalloutProps, CalloutState> {
   static HELP = CalloutColor.HELP;
   static INFO = CalloutColor.INFO;
   static ERROR = CalloutColor.ERROR;
@@ -52,7 +49,7 @@ export default class Callout extends React.PureComponent<
     color: Callout.HELP,
     directionalHint: Callout.POS_TOP_CENTER,
     doNotLayer: true,
-    role: undefined
+    role: undefined,
   };
 
   render() {
@@ -80,7 +77,7 @@ export default class Callout extends React.PureComponent<
 
   _onDismiss() {
     this.setState({
-      isCalloutVisible: false
+      isCalloutVisible: false,
     });
 
     if (this.props.autoDismiss) {

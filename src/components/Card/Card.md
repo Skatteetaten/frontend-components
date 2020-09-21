@@ -1,7 +1,7 @@
 ** Innholdskort brukes til å gruppere innhold som hører sammen. **
 
 ```js
-import Card from '@skatteetaten/frontend-components/Card';
+import { Card } from '@skatteetaten/frontend-components';
 
 const initialState = { title: 'Skatteoppgjøret for 2017' };
 
@@ -41,13 +41,13 @@ const initialState = { title: 'Skatteoppgjøret for 2017' };
 Mulighet for å endre f.eks tittel mellom åpen og lukket tilstand
 
 ```js
-import Card from '@skatteetaten/frontend-components/Card';
+import { Card } from '@skatteetaten/frontend-components';
 
 const initialState = { title: 'Inntekt' };
 
 function onChange(isExpanded) {
   setState({
-    title: isExpanded ? 'Inntekt (kr 450 000)' : initialState.title
+    title: isExpanded ? 'Inntekt (kr 450 000)' : initialState.title,
   });
 }
 
@@ -57,7 +57,7 @@ function onChange(isExpanded) {
     title={state.title}
     circleOnIcon={false}
     isExpanded={false}
-    onChange={isExpanded => onChange(isExpanded)}
+    onChange={(isExpanded) => onChange(isExpanded)}
     expand
   >
     <p>
@@ -73,9 +73,7 @@ function onChange(isExpanded) {
 Hvitt kort med ramme:
 
 ```js
-import Card from '@skatteetaten/frontend-components/Card';
-import Grid from '@skatteetaten/frontend-components/Grid';
-import TextField from '@skatteetaten/frontend-components/TextField';
+import { Card, Grid, TextField } from '@skatteetaten/frontend-components';
 
 <div>
   <Card

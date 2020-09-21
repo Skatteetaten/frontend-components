@@ -2,18 +2,20 @@ import classnames from 'classnames';
 import * as React from 'react';
 
 import { getClassNames } from './AccordionMenu.classNames';
-import { AccordionItemProps } from '../Accordion/AccordionItem/AccordionItem';
+import { AccordionItemProps } from '../index';
 
-interface AccordionMenuProps extends React.HTMLAttributes<HTMLDivElement> {
+export interface AccordionMenuProps
+  extends React.HTMLAttributes<HTMLDivElement> {
   className?: string;
   children?: React.ReactNode;
   /** aria-label */
   ariaLabel?: string;
 }
-const AccordionMenu: React.FC<AccordionMenuProps> = ({
+
+export const AccordionMenu: React.FC<AccordionMenuProps> = ({
   className,
   children,
-  ariaLabel
+  ariaLabel,
 }) => {
   const styles = getClassNames();
   const totalSteps = React.Children.count(children);
@@ -22,15 +24,13 @@ const AccordionMenu: React.FC<AccordionMenuProps> = ({
       className={classnames(styles.accordionMenu, className)}
       aria-label={ariaLabel}
     >
-      {React.Children.map(children, child => {
+      {React.Children.map(children, (child) => {
         if (React.isValidElement<AccordionItemProps>(child)) {
           return React.cloneElement(child, {
-            totalSteps
+            totalSteps,
           });
         }
       })}
     </ul>
   );
 };
-
-export default AccordionMenu;

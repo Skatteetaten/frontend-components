@@ -5,8 +5,8 @@ import {
   Pivot,
   PivotItem,
   PivotLinkFormat,
-  PivotLinkSize
-} from 'office-ui-fabric-react/lib-commonjs/Pivot';
+  PivotLinkSize,
+} from 'office-ui-fabric-react';
 import * as React from 'react';
 import { getClassNames } from './Tabs.classNames';
 
@@ -21,7 +21,7 @@ export interface TabProps extends IPivotProps {
  * @visibleName Tabs (Arkfane)
  */
 
-const Tabs: React.FC<TabProps> = props => {
+export const Tabs: React.FC<TabProps> = (props) => {
   const { children, className, ...rest } = props;
   return (
     <Pivot
@@ -30,12 +30,10 @@ const Tabs: React.FC<TabProps> = props => {
       linkSize={PivotLinkSize.large}
       className={classnames(getClassNames(props), className)}
     >
-      {React.Children.map(props.children, child => {
+      {React.Children.map(props.children, (child) => {
         if (React.isValidElement<IPivotItemProps>(child))
           return <PivotItem {...child.props} />;
       })}
     </Pivot>
   );
 };
-
-export default Tabs;

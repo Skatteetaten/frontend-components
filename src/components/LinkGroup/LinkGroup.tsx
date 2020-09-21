@@ -1,7 +1,7 @@
 import * as React from 'react';
 import classnames from 'classnames';
 import { getClassNames } from './LinkGroup.classNames';
-import Icon from '../Icon';
+import { Icon } from '../index';
 
 export interface Link extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
   text: string;
@@ -20,7 +20,7 @@ export interface LinkGroupProps {
   className?: string;
 }
 
-const LinkGroup: React.FC<LinkGroupProps> = props => {
+export const LinkGroup: React.FC<LinkGroupProps> = (props) => {
   const styles = getClassNames();
   return (
     <ul className={classnames(styles.arrowLinkList)}>
@@ -59,4 +59,3 @@ const LinkGroup: React.FC<LinkGroupProps> = props => {
     </ul>
   );
 };
-export default LinkGroup;

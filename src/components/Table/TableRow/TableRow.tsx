@@ -1,9 +1,9 @@
 import * as React from 'react';
-import IconButton from '../../IconButton';
+import { IconButton } from '../../index';
 import classnames from 'classnames';
 import { t } from '../../utils/i18n/i18n';
 
-interface TableRowProps<P> {
+export interface TableRowProps<P> {
   data: P;
   rowIndex: number;
   editableContent?: (
@@ -35,7 +35,7 @@ interface TableRowProps<P> {
 /**
  * @visibleName TableRow (Tabellrad)
  */
-const TableRow = <P extends object>(props: TableRowProps<P>) => {
+export const TableRow = <P extends object>(props: TableRowProps<P>) => {
   const {
     data,
     rowIndex,
@@ -54,7 +54,7 @@ const TableRow = <P extends object>(props: TableRowProps<P>) => {
     onEditRow,
     onExpandRow,
     openExpandableRowIndex,
-    tableId
+    tableId,
   } = props;
   const numberOfColumns = columns.length + (editableRows ? 1 : 0);
   const expandClopaseRef = React.createRef<HTMLTableCellElement>();
@@ -73,7 +73,7 @@ const TableRow = <P extends object>(props: TableRowProps<P>) => {
       const knapp = expandClopaseRef.current.children[0] as HTMLButtonElement;
       knapp.focus();
     }
-  }, [expandClopaseRef, focusRow]);
+  }, [expandClopaseRef, focusRow, rowIndex]);
 
   const editButton = (
     <IconButton

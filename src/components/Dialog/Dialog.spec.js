@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
 import toJson from 'enzyme-to-json';
-import Dialog from './Dialog';
+import { Dialog } from '../index';
 
 function oppsettShallow(props) {
   return shallow(<Dialog {...props} />);
@@ -25,7 +25,7 @@ describe('Dialog komponent', () => {
       subText: 'Denne teksten vil vises i dialogen under tittelen',
       minWidth: '400px',
       maxWidth: '600px',
-      hidden: false
+      hidden: false,
     });
 
     const htmlElm = wrapper.find('StyledWithResponsiveMode').first();

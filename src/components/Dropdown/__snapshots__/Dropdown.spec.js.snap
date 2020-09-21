@@ -2,15 +2,15 @@
 
 exports[`Dropdown komponent matcher snapshot 1`] = `
 <div
-  id="dropdown-undefined"
+  id="dropdown-123"
 >
   <LabelWithCallout
-    id="dropdown-undefined-label"
-    inputId="dropdown-undefined-input-option"
+    id="dropdown-123-label"
+    inputId="dropdown-123-input-option"
   />
   <StyledWithResponsiveMode
-    className="main-42"
-    id="dropdown-undefined-input"
+    className="main-106"
+    id="dropdown-123-input"
     onRenderCaretDown={[Function]}
     options={
       Array [

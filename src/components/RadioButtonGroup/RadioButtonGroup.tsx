@@ -2,14 +2,17 @@ import classnames from 'classnames';
 import {
   ChoiceGroup as FabricChoiceGroup,
   IChoiceGroupOption,
-  IChoiceGroupProps
-} from 'office-ui-fabric-react/lib-commonjs/ChoiceGroup';
+  IChoiceGroupProps,
+} from 'office-ui-fabric-react';
 import * as React from 'react';
-import ErrorMessage from '../ErrorMessage/ErrorMessage';
 import { getClassNames } from './RadioButtonGroup.classNames';
-import LabelWithCallout, { calloutState } from '../LabelWithCallout';
-import { LabelWithCalloutProps } from '../LabelWithCallout/LabelWithCallout';
-import { useId } from '@reach/auto-id';
+import {
+  LabelWithCalloutProps,
+  ErrorMessage,
+  LabelWithCallout,
+  calloutState,
+  generateId,
+} from '../index';
 
 export interface IRadioButtonGroupOptions extends IChoiceGroupOption {
   description?: string;
@@ -45,7 +48,7 @@ export interface RadioButtonGroupProps extends IChoiceGroupProps {
  * @visibleName RadioButtonGroup (Radioknapper)
  */
 
-const RadioButtonGroup = (props: RadioButtonGroupProps) => {
+export const RadioButtonGroup = (props: RadioButtonGroupProps) => {
   const {
     calloutFloating,
     children,
@@ -65,7 +68,7 @@ const RadioButtonGroup = (props: RadioButtonGroupProps) => {
   let tempOptions = options;
 
   if (options) {
-    options.forEach(option => {
+    options.forEach((option) => {
       if (option.description) {
         option.onRenderLabel = DescriptionRender(option.description);
       }
@@ -75,7 +78,7 @@ const RadioButtonGroup = (props: RadioButtonGroupProps) => {
 
   const styles = getClassNames({ ...props });
 
-  const generatedId = useId(id);
+  const generatedId = generateId();
   const mainId = id ? id : 'radiogroup-' + generatedId;
   const groupId = mainId + '-group';
   const labelId = mainId + '-label';
@@ -113,7 +116,7 @@ const DescriptionRender = (description: string) => (p: any) => {
     <div
       style={{
         display: 'flex',
-        flexDirection: 'column'
+        flexDirection: 'column',
       }}
     >
       <span id={p.labelId} className="ms-ChoiceFieldLabel">
@@ -127,5 +130,3 @@ const DescriptionRender = (description: string) => (p: any) => {
     </div>
   );
 };
-
-export default RadioButtonGroup;

@@ -1,5 +1,5 @@
 ```js noeditor
-import MessageBar from '@skatteetaten/frontend-components/MessageBar';
+import { MessageBar } from '@skatteetaten/frontend-components';
 
 <MessageBar type={MessageBar.Type.info}>
   Se tilhørende underkomponent{' '}
@@ -10,37 +10,39 @@ import MessageBar from '@skatteetaten/frontend-components/MessageBar';
 ** Ekspanderende panel i saksbehandlingsløsninger**
 
 ```js
-import AccordionMenu from '@skatteetaten/frontend-components/AccordionMenu';
-import AccordionMenuItem from '@skatteetaten/frontend-components/AccordionMenu/AccordionMenuItem';
-import Icon from '@skatteetaten/frontend-components/Icon/Icon';
-import IconButton from '@skatteetaten/frontend-components/IconButton/IconButton';
-import ActionButton from '@skatteetaten/frontend-components/ActionButton/ActionButton';
+import {
+  AccordionMenu,
+  AccordionMenuItem,
+  Icon,
+  IconButton,
+  ActionButton,
+} from '@skatteetaten/frontend-components';
 
 // Inline styles for hacking examples
 const dlStyle = {
   display: 'inline-block',
   width: '50%',
   margin: '0 0 5px 0',
-  verticalAlign: 'text-top'
+  verticalAlign: 'text-top',
 };
 
 const removeMargin = {
-  margin: '0'
+  margin: '0',
 };
 
 const ulStyle = {
   padding: 0,
-  margin: 0
+  margin: 0,
 };
 
 const centerAlignStyle = {
   display: 'flex',
-  alignItems: 'center'
+  alignItems: 'center',
 };
 
 const timeStampStyle = {
   paddingLeft: 40,
-  marginTop: '-10px'
+  marginTop: '-10px',
 };
 
 <div style={{ width: '500px' }}>

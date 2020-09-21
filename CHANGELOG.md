@@ -1,3 +1,10 @@
+### **v.4.0.0 - 31.08.2020 **
+
+- UMD: Enabled umd module building for the design system. This enables it to be loaded with SystemJS for micro-frontend setups.
+- Imports: During the work with UMD building changes were made to imports. Most should be fine but some will need rewrite. Generally all componenets should now be imported directly from '@skatteetaten/frontend-componenents', and not from subfolders. This is especially important if you consume the design system as an UMD module
+- Imports: Imports from office-ui-fabric-react are now also imported directly from root and not from sub-folders e.g. office-ui-fabric-react/lib-commonjs/someComponent
+- # '@reach/auto-id': This package has been removed because of incompatability. It has been replaced by a manual alternative.
+
 ### **v.3.6.0 - 08.09.2020 **
 
 - Table: now supports expandable rows. Improved accessbility by labeling sortable columns.

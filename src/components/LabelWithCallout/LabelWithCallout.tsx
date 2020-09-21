@@ -1,12 +1,12 @@
 import * as React from 'react';
 import { getClassNames } from './LabelWithCallout.classNames';
-import { IconButton } from 'office-ui-fabric-react/lib-commonjs/Button';
-import Callout from '../Callout';
+import { IconButton } from 'office-ui-fabric-react';
+import { Callout } from '../index';
 import classnames from 'classnames';
 
 export enum calloutState {
   OPEN = 'OPEN',
-  CLOSED = 'CLOSED'
+  CLOSED = 'CLOSED',
 }
 
 export interface LabelWithCalloutProps
@@ -40,7 +40,8 @@ export interface LabelWithCalloutProps
   readOnly?: boolean;
   warning?: string | JSX.Element | undefined;
 }
-const LabelWithCallout = (props: LabelWithCalloutProps) => {
+
+export const LabelWithCallout = (props: LabelWithCalloutProps) => {
   const {
     ariaLabel,
     autoDismiss,
@@ -58,7 +59,7 @@ const LabelWithCallout = (props: LabelWithCalloutProps) => {
     readOnly,
     warning,
     onRenderLabel,
-    onCalloutToggle
+    onCalloutToggle,
   } = props;
   const styles = getClassNames({ calloutFloating, ...props });
   const [isCalloutVisible, setIsCalloutVisible] = React.useState(false);
@@ -200,4 +201,3 @@ const LabelWithCallout = (props: LabelWithCalloutProps) => {
     </div>
   ); */
 };
-export default LabelWithCallout;
