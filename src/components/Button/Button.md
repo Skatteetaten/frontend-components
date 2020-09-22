@@ -18,6 +18,8 @@ import Button from '@skatteetaten/frontend-components/Button';
 <div className="ExampleSpacing8">
   <Button buttonStyle="primaryRoundedFilled">Send inn uendret</Button>
   <Button icon="edit">Endre</Button>
+  <Button>Endre</Button>
+  <Button icon="cancel">test</Button>
 </div>;
 ```
 
