@@ -9,6 +9,12 @@ function getTypeColor(props: ButtonProps): object {
   const palette = getTheme().palette as PaletteProps;
   const radius = '20px';
 
+  const sizeNormal = {
+    height: 'auto',
+    minHeight: '32px',
+    padding: '7px 15px'
+  };
+
   switch (props.buttonStyle) {
     case 'primary':
       return {
@@ -17,10 +23,10 @@ function getTypeColor(props: ButtonProps): object {
         background: palette.skeColor.blue,
         color: palette.skeColor.white,
         boxShadow: `0 8px 6px -6px ${palette.skeColor.lightGrey}`,
+        ...sizeNormal,
         selectors: {
           '@media  only screen and (max-width: 479px)': {
-            width: '100%',
-            padding: '21px 0'
+            width: '100%'
           }
         }
       };
@@ -43,7 +49,8 @@ function getTypeColor(props: ButtonProps): object {
         borderRadius: radius,
         borderColor: palette.skeColor.blue,
         background: palette.skeColor.blue,
-        color: palette.skeColor.white
+        color: palette.skeColor.white,
+        ...sizeNormal
       };
     case 'warning':
       return {
@@ -51,10 +58,10 @@ function getTypeColor(props: ButtonProps): object {
         borderColor: palette.skeColor.lightPink,
         background: palette.skeColor.lightPink,
         color: palette.bodyText,
+        ...sizeNormal,
         selectors: {
           '@media  only screen and (max-width: 479px)': {
-            width: '100%',
-            padding: '21px 0'
+            width: '100%'
           }
         }
       };
@@ -63,7 +70,8 @@ function getTypeColor(props: ButtonProps): object {
         padding: 0,
         borderWidth: 0,
         background: 'none',
-        color: palette.skeColor.blue
+        color: palette.skeColor.blue,
+        height: 'auto'
       };
     default:
       // primaryRounded
@@ -71,7 +79,8 @@ function getTypeColor(props: ButtonProps): object {
         borderRadius: radius,
         borderColor: palette.skeColor.blue,
         background: palette.skeColor.white,
-        color: palette.skeColor.blue
+        color: palette.skeColor.blue,
+        ...sizeNormal
       };
   }
 }

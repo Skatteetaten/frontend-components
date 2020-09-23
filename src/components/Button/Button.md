@@ -6,7 +6,22 @@ Tydelig knapp:
 import Button from '@skatteetaten/frontend-components/Button';
 
 <div className="ExampleSpacing8">
-  <Button buttonStyle="primary">Godkjenn</Button>{' '}
+  <Button buttonStyle="primary">
+    Godkjenn altfor lang tekst altfor lang tekst{' '}
+  </Button>
+  <Button buttonStyle="primaryRounded">
+    Godkjenn altfor lang tekst altfor lang tekst{' '}
+  </Button>
+  <Button buttonStyle="primaryRoundedFilled">
+    Godkjenn altfor lang tekst altfor lang tekst{' '}
+  </Button>
+  <Button buttonStyle="warning">
+    Godkjenn altfor lang tekst altfor lang tekst{' '}
+  </Button>
+  <Button buttonStyle="secondary">
+    Godkjenn altfor lang tekst altfor lang tekst{' '}
+  </Button>
+  <Button buttonStyle="primaryLarge">Godkjenn altfor lang tekst altfor</Button>
 </div>;
 ```
 
