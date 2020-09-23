@@ -165,7 +165,8 @@ const Table = <P extends object>(props: TableProps<P>) => {
     columns,
     id,
     language,
-    openEditableOnRowClick
+    openEditableOnRowClick,
+    showRowSeparators = true
   } = props;
   const genratedId = useId(id);
   const mainId = id ? id : 'table-' + genratedId;
@@ -257,6 +258,7 @@ const Table = <P extends object>(props: TableProps<P>) => {
           onCloseRow={handleCloseRow}
           openExpandableRowIndex={openExpandableRowIndex}
           tableId={mainId}
+          showRowSeparators={showRowSeparators}
         />
       );
     });

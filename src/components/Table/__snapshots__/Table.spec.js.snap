@@ -134,10 +134,12 @@ exports[`Table komponent matcher snapshot 1`] = `
           onEditRow={[Function]}
           onExpandRow={[Function]}
           rowIndex={0}
+          showRowSeparators={true}
           tableHasScroll={false}
           tableId="table-1"
         >
           <tr
+            className="separator"
             key="0"
           >
             <th
@@ -217,10 +219,12 @@ exports[`Table komponent matcher snapshot 1`] = `
           onEditRow={[Function]}
           onExpandRow={[Function]}
           rowIndex={1}
+          showRowSeparators={true}
           tableHasScroll={false}
           tableId="table-1"
         >
           <tr
+            className="separator"
             key="1"
           >
             <th
@@ -300,10 +304,12 @@ exports[`Table komponent matcher snapshot 1`] = `
           onEditRow={[Function]}
           onExpandRow={[Function]}
           rowIndex={2}
+          showRowSeparators={true}
           tableHasScroll={false}
           tableId="table-1"
         >
           <tr
+            className="separator"
             key="2"
           >
             <th
@@ -383,10 +389,12 @@ exports[`Table komponent matcher snapshot 1`] = `
           onEditRow={[Function]}
           onExpandRow={[Function]}
           rowIndex={3}
+          showRowSeparators={true}
           tableHasScroll={false}
           tableId="table-1"
         >
           <tr
+            className="separator"
             key="3"
           >
             <th

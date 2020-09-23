@@ -31,6 +31,7 @@ interface TableRowProps<P> {
   onCloseRow: () => void;
   openExpandableRowIndex: number | undefined;
   tableId: string;
+  showRowSeparators: boolean;
 }
 
 /**
@@ -56,7 +57,8 @@ const TableRow = <P extends object>(props: TableRowProps<P>) => {
     onExpandRow,
     openExpandableRowIndex,
     tableId,
-    openEditableOnRowClick
+    openEditableOnRowClick,
+    showRowSeparators
   } = props;
   const numberOfColumns =
     columns.length + (editableRows || expandableRows ? 1 : 0);
@@ -212,14 +214,23 @@ const TableRow = <P extends object>(props: TableRowProps<P>) => {
     <>
       <tr
         key={rowIndex}
-        className={openEditableOnRowClick ? 'clickable' : undefined}
+        className={classnames({
+          clickable: openEditableOnRowClick,
+          separator: showRowSeparators && !isExpandableRowOpen
+        })}
       >
         {actionButtonsBefore && actionButtons}
         {renderRow(data, columns, rowIndex)}
         {!actionButtonsBefore && actionButtons}
       </tr>
       {isExpandableRowOpen && (
-        <tr key={rowIndex + 'expanded'} className={'expandableRow-open'}>
+        <tr
+          key={rowIndex + 'expanded'}
+          className={classnames({
+            'expandableRow-open': true,
+            separator: showRowSeparators && isExpandableRowOpen
+          })}
+        >
           <td colSpan={numberOfColumns}>{expandableCellContent()}</td>
         </tr>
       )}

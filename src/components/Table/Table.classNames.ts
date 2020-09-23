@@ -5,7 +5,7 @@ import { FontWeights } from '..';
 import { PaletteProps } from '..';
 
 export const getClassNames = props => {
-  const { showRowSeparators = true, fullWidth } = props;
+  const { fullWidth } = props;
   const palette = getTheme().palette as PaletteProps;
 
   return mergeStyles([
@@ -30,15 +30,8 @@ export const getClassNames = props => {
             tr: {
               height: '100%'
             },
-            '> tbody > tr+tr:not(.expandableRow-open)': {
-              borderTop: showRowSeparators
-                ? `1px solid ${palette.skeColor.lightGrey}`
-                : undefined
-            },
-            '> tbody > tr:last-child': {
-              borderBottom: showRowSeparators
-                ? `1px solid ${palette.skeColor.lightGrey}`
-                : undefined
+            '.separator': {
+              borderBottom: `1px solid ${palette.skeColor.lightGrey}`
             },
             'tr.clickable:hover': {
               backgroundColor: palette.skeColor.lightBlue
@@ -55,9 +48,14 @@ export const getClassNames = props => {
               display: 'flex',
               fontSize: 'inherit',
               height: '100%',
-              padding: 12,
+              padding: '8px 12px',
               textAlign: 'inherit',
               width: '100%'
+            },
+            // use direct child selectors for dynamic properties to prevent parent tables from
+            // affecting tables in expandable/editable content
+            '.separator > td > .cellContent': {
+              padding: '12px'
             },
             '.cellContent.clickable:hover': {
               cursor: 'pointer'
