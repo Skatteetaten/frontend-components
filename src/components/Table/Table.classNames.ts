@@ -50,7 +50,11 @@ export const getClassNames = props => {
               height: '100%',
               padding: '8px 12px',
               textAlign: 'inherit',
+              verticalAlign: 'middle',
               width: '100%'
+            },
+            '.cellContentSmall': {
+              padding: '2px 12px'
             },
             '.cellContentLarge': {
               padding: '12px'

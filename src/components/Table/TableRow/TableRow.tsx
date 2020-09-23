@@ -82,7 +82,11 @@ const TableRow = <P extends object>(props: TableRowProps<P>) => {
   }, [expandCollapseCellRef, focusRow, rowIndex]);
 
   const editButton = (
-    <span className={'cellContent'}>
+    <span
+      className={classnames('cellContent', {
+        cellContentSmall: !showRowSeparators
+      })}
+    >
       <IconButton
         className={'editButton'}
         onClick={() => onEditRow(rowIndex)}
