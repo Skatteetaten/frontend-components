@@ -28,7 +28,8 @@ export const getClassNames = props => {
               padding: 12
             },
             tr: {
-              height: '100%'
+              height: '100%',
+              verticalAlign: 'baseline'
             },
             '.separator': {
               borderBottom: `1px solid ${palette.skeColor.lightGrey}`
