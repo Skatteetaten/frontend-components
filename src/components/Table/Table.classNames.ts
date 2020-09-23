@@ -29,7 +29,7 @@ export const getClassNames = props => {
             },
             tr: {
               height: '100%',
-              verticalAlign: 'baseline'
+              verticalAlign: 'middle'
             },
             '.separator': {
               borderBottom: `1px solid ${palette.skeColor.lightGrey}`
