@@ -52,9 +52,7 @@ export const getClassNames = props => {
               textAlign: 'inherit',
               width: '100%'
             },
-            // use direct child selectors for dynamic properties to prevent parent tables from
-            // affecting tables in expandable/editable content
-            '.separator > td > .cellContent': {
+            '.cellContentLarge': {
               padding: '12px'
             },
             '.cellContent.clickable:hover': {

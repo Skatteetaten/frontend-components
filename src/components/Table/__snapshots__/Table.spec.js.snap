@@ -149,7 +149,7 @@ exports[`Table komponent matcher snapshot 1`] = `
               scope="row"
             >
               <div
-                className="cellContent"
+                className="cellContent cellContentLarge"
               />
             </th>
             <td
@@ -157,7 +157,7 @@ exports[`Table komponent matcher snapshot 1`] = `
               key="table-10_1"
             >
               <div
-                className="cellContent"
+                className="cellContent cellContentLarge"
               />
             </td>
             <td
@@ -165,7 +165,7 @@ exports[`Table komponent matcher snapshot 1`] = `
               key="table-10_2"
             >
               <div
-                className="cellContent"
+                className="cellContent cellContentLarge"
               />
             </td>
             <td
@@ -173,7 +173,7 @@ exports[`Table komponent matcher snapshot 1`] = `
               key="table-10_3"
             >
               <div
-                className="cellContent"
+                className="cellContent cellContentLarge"
               />
             </td>
           </tr>
@@ -234,7 +234,7 @@ exports[`Table komponent matcher snapshot 1`] = `
               scope="row"
             >
               <div
-                className="cellContent"
+                className="cellContent cellContentLarge"
               />
             </th>
             <td
@@ -242,7 +242,7 @@ exports[`Table komponent matcher snapshot 1`] = `
               key="table-11_1"
             >
               <div
-                className="cellContent"
+                className="cellContent cellContentLarge"
               />
             </td>
             <td
@@ -250,7 +250,7 @@ exports[`Table komponent matcher snapshot 1`] = `
               key="table-11_2"
             >
               <div
-                className="cellContent"
+                className="cellContent cellContentLarge"
               />
             </td>
             <td
@@ -258,7 +258,7 @@ exports[`Table komponent matcher snapshot 1`] = `
               key="table-11_3"
             >
               <div
-                className="cellContent"
+                className="cellContent cellContentLarge"
               />
             </td>
           </tr>
@@ -319,7 +319,7 @@ exports[`Table komponent matcher snapshot 1`] = `
               scope="row"
             >
               <div
-                className="cellContent"
+                className="cellContent cellContentLarge"
               />
             </th>
             <td
@@ -327,7 +327,7 @@ exports[`Table komponent matcher snapshot 1`] = `
               key="table-12_1"
             >
               <div
-                className="cellContent"
+                className="cellContent cellContentLarge"
               />
             </td>
             <td
@@ -335,7 +335,7 @@ exports[`Table komponent matcher snapshot 1`] = `
               key="table-12_2"
             >
               <div
-                className="cellContent"
+                className="cellContent cellContentLarge"
               />
             </td>
             <td
@@ -343,7 +343,7 @@ exports[`Table komponent matcher snapshot 1`] = `
               key="table-12_3"
             >
               <div
-                className="cellContent"
+                className="cellContent cellContentLarge"
               />
             </td>
           </tr>
@@ -404,7 +404,7 @@ exports[`Table komponent matcher snapshot 1`] = `
               scope="row"
             >
               <div
-                className="cellContent"
+                className="cellContent cellContentLarge"
               />
             </th>
             <td
@@ -412,7 +412,7 @@ exports[`Table komponent matcher snapshot 1`] = `
               key="table-13_1"
             >
               <div
-                className="cellContent"
+                className="cellContent cellContentLarge"
               />
             </td>
             <td
@@ -420,7 +420,7 @@ exports[`Table komponent matcher snapshot 1`] = `
               key="table-13_2"
             >
               <div
-                className="cellContent"
+                className="cellContent cellContentLarge"
               />
             </td>
             <td
@@ -428,7 +428,7 @@ exports[`Table komponent matcher snapshot 1`] = `
               key="table-13_3"
             >
               <div
-                className="cellContent"
+                className="cellContent cellContentLarge"
               />
             </td>
           </tr>
