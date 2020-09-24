@@ -6,22 +6,7 @@ Tydelig knapp:
 import Button from '@skatteetaten/frontend-components/Button';
 
 <div className="ExampleSpacing8">
-  <Button buttonStyle="primary">
-    Godkjenn altfor lang tekst altfor lang tekst{' '}
-  </Button>
-  <Button buttonStyle="primaryRounded">
-    Godkjenn altfor lang tekst altfor lang tekst{' '}
-  </Button>
-  <Button buttonStyle="primaryRoundedFilled">
-    Godkjenn altfor lang tekst altfor lang tekst{' '}
-  </Button>
-  <Button buttonStyle="warning">
-    Godkjenn altfor lang tekst altfor lang tekst{' '}
-  </Button>
-  <Button buttonStyle="secondary">
-    Godkjenn altfor lang tekst altfor lang tekst{' '}
-  </Button>
-  <Button buttonStyle="primaryLarge">Godkjenn altfor lang tekst altfor</Button>
+  <Button buttonStyle="primary">Godkjenn</Button>{' '}
 </div>;
 ```
 
@@ -43,6 +28,75 @@ import Button from '@skatteetaten/frontend-components/Button';
 
 <div className="ExampleSpacing8">
   <Button buttonStyle="warning">Avvis</Button>
+</div>;
+```
+
+Lange tekster
+
+```js
+import Button from '@skatteetaten/frontend-components/Button';
+
+<div className="ExampleSpacing8" style={{ maxWidth: '400px' }}>
+  <div>
+    <Button buttonStyle="primary">
+      Dette er en tekst som er altfor lang for knapper, men man vet aldri hva
+      folk finner på
+    </Button>
+  </div>
+  <div>
+    <Button buttonStyle="primary" icon={'Edit'}>
+      Dette er en tekst som er altfor lang for knapper, men man vet aldri hva
+      folk finner på
+    </Button>
+  </div>
+  <div>
+    <Button buttonStyle="primaryRounded">
+      Dette er en tekst som er altfor lang for knapper, men man vet aldri hva
+      folk finner på
+    </Button>
+  </div>
+  <div>
+    <Button buttonStyle="primaryRounded" icon={'Edit'}>
+      Dette er en tekst som er altfor lang for knapper, men man vet aldri hva
+      folk finner på
+    </Button>
+  </div>
+  <div>
+    <Button buttonStyle="primaryRoundedFilled">
+      Dette er en tekst som er altfor lang for knapper, men man vet aldri hva
+      folk finner på
+    </Button>
+  </div>
+  <div>
+    <Button buttonStyle="primaryRoundedFilled" icon={'Edit'}>
+      Dette er en tekst som er altfor lang for knapper, men man vet aldri hva
+      folk finner på
+    </Button>
+  </div>
+  <div>
+    <Button buttonStyle="warning">
+      Dette er en tekst som er altfor lang for knapper, men man vet aldri hva
+      folk finner på
+    </Button>
+  </div>
+  <div>
+    <Button buttonStyle="warning" icon={'Edit'}>
+      Dette er en tekst som er altfor lang for knapper, men man vet aldri hva
+      folk finner på
+    </Button>
+  </div>
+  <div>
+    <Button buttonStyle="secondary">
+      Dette er en tekst som er altfor lang for knapper, men man vet aldri hva
+      folk finner på
+    </Button>
+  </div>
+  <div>
+    <Button buttonStyle="secondary" icon={'Edit'}>
+      Dette er en tekst som er altfor lang for knapper, men man vet aldri hva
+      folk finner på
+    </Button>
+  </div>
 </div>;
 ```
 

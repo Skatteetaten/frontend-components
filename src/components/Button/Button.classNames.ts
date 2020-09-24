@@ -7,7 +7,7 @@ import { getFocusStyle } from '../utils/getFocusStyle';
 
 function getTypeColor(props: ButtonProps): object {
   const palette = getTheme().palette as PaletteProps;
-  const radius = '20px';
+  const radius = '100px';
 
   const sizeNormal = {
     height: 'auto',
@@ -190,6 +190,7 @@ export function getClassNames(props: ButtonProps): string {
           fontWeight: 'normal',
           padding: '15px',
           transition: 'background 0.3s',
+          textAlign: props.icon ? 'left' : 'center',
           ...getTypeColor(props)
         },
         '&.ms-Button:hover, &.ms-Button:focus': {
