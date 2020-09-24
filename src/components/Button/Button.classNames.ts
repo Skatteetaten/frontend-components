@@ -191,6 +191,7 @@ export function getClassNames(props: ButtonProps): string {
           padding: '15px',
           transition: 'background 0.3s',
           textAlign: props.icon ? 'left' : 'center',
+          verticalAlign: 'top',
           ...getTypeColor(props)
         },
         '&.ms-Button:hover, &.ms-Button:focus': {
