@@ -11,6 +11,7 @@ import LabelWithCallout, {
   LabelWithCalloutProps
 } from '../LabelWithCallout';
 import { useId } from '@reach/auto-id';
+import { useHotkeys } from '../utils/useHotkeys';
 
 export interface SearchFieldProps extends ISearchBoxProps {
   /** Lukk callout på blur */
@@ -40,6 +41,8 @@ export interface SearchFieldProps extends ISearchBoxProps {
   onSelected?: (option: IDropdownOption) => void;
   /** Begrens antall viste søkeresultat */
   limit?: number;
+  /** Tillater tastatursnarvei på søk */
+  keyboardShortcut?: boolean;
 }
 
 const searchInList = (options: Array<IDropdownOption>, filterText: string) => {
@@ -80,9 +83,11 @@ const SearchField: React.FC<SearchFieldProps> = props => {
     onSelected,
     options,
     limit,
+    keyboardShortcut = true,
     ...rest
   } = props;
   const _searchBoxElement = React.createRef<HTMLDivElement>();
+  const _componentRef = React.useRef<ISearchBoxProps | null | undefined>();
   const [dropdownVisible, setDropdownVisible] = React.useState<boolean>(false);
   const [searchResultList, setSearchResultList] = React.useState(options);
   const [value, setValue] = React.useState<string | undefined>(props.value);
@@ -106,6 +111,13 @@ const SearchField: React.FC<SearchFieldProps> = props => {
       // Unbind the event listener on clean up
       document.removeEventListener('mousedown', handleClickOutside);
     };
+  });
+
+  useHotkeys('ctrl+f,command+f', ev => {
+    if (keyboardShortcut) {
+      ev.preventDefault();
+      _componentRef.current?.focus();
+    }
   });
 
   const changeEvent = (text: string) => {
@@ -246,6 +258,7 @@ const SearchField: React.FC<SearchFieldProps> = props => {
             }}
             onKeyDown={ev => handleOnKeyDown(ev)}
             value={value}
+            componentRef={_componentRef}
           />
           {dropdownVisible && renderSuggestions(searchResultList)}
         </div>
@@ -254,6 +267,7 @@ const SearchField: React.FC<SearchFieldProps> = props => {
           type={'search'}
           {...props}
           className={classnames(styles.main, className)}
+          componentRef={_componentRef}
         />
       )}
     </div>
