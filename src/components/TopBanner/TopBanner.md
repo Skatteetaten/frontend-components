@@ -12,6 +12,7 @@ import TopBanner from '@skatteetaten/frontend-components/TopBanner';
   homeText="Til skatteetaten.no"
   title="Ekstern publikumsløsning"
   logoLink
+  language="en"
 />;
 ```
 
