@@ -1,6 +1,7 @@
 import classnames from 'classnames';
 import {
   ISearchBoxProps,
+  ISearchBox,
   SearchBox
 } from 'office-ui-fabric-react/lib-commonjs/SearchBox';
 import * as React from 'react';
@@ -87,7 +88,7 @@ const SearchField: React.FC<SearchFieldProps> = props => {
     ...rest
   } = props;
   const _searchBoxElement = React.createRef<HTMLDivElement>();
-  const _componentRef = React.useRef<ISearchBoxProps | null | undefined>();
+  const _componentRef = React.useRef<ISearchBox>(null);
   const [dropdownVisible, setDropdownVisible] = React.useState<boolean>(false);
   const [searchResultList, setSearchResultList] = React.useState(options);
   const [value, setValue] = React.useState<string | undefined>(props.value);
@@ -116,7 +117,7 @@ const SearchField: React.FC<SearchFieldProps> = props => {
   useHotkeys('ctrl+f,command+f', ev => {
     if (keyboardShortcut) {
       ev.preventDefault();
-      _componentRef.current?.focus();
+      return _componentRef.current?.focus();
     }
   });
 

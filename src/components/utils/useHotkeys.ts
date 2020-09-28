@@ -2,11 +2,11 @@
 import hotkeys, { HotkeysEvent, KeyHandler } from 'hotkeys-js';
 import React, { useCallback, useEffect, useRef } from 'react';
 
-type TargetTag = 'INPUT' | 'TEXTAREA' | 'SELECT';
+type AvailableTags = 'INPUT' | 'TEXTAREA' | 'SELECT';
 
 export type Options = {
   filter?: typeof hotkeys.filter;
-  enableOnTags?: TargetTag[];
+  enableOnTags?: AvailableTags[];
   splitKey?: string;
   scope?: string;
   keyup: boolean;
@@ -54,20 +54,20 @@ export function useHotkeys<T extends Element>(
         return true;
       }
       return false;
-    },
+    }, // eslint-disable-next-line react-hooks/exhaustive-deps
     deps ? [ref, ...deps] : [ref]
   );
 
   useEffect(() => {
     if (options && (options as Options).enableOnTags) {
       hotkeys.filter = ({ target, srcElement }) => {
-        //@ts-ignore
         const targetTagName =
+          //@ts-ignore
           (target && target.tagName) || (srcElement && srcElement.tagName);
         return Boolean(
           targetTagName &&
             enableOnTags &&
-            enableOnTags.includes(targetTagName as TargetTag)
+            enableOnTags.includes(targetTagName as AvailableTags)
         );
       };
     }
