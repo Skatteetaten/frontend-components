@@ -87,7 +87,7 @@ const SearchField: React.FC<SearchFieldProps> = props => {
     options,
     limit,
     keyboardShortcut = false,
-    searchShortcutKeys = 'ctrl+f,command+f',
+    searchShortcutKeys = 'ctrl+f',
     ...rest
   } = props;
   const _searchBoxElement = React.createRef<HTMLDivElement>();
