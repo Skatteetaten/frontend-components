@@ -594,7 +594,6 @@ const iconGroup = {
       name: 'TemaAndreForhold',
       usage: 'Andre forhold'
     },
-
     {
       name: 'TemaArbeidTrygdPensjon',
       usage: 'Arbeid, trygd og pensjon'
