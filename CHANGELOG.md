@@ -1,3 +1,14 @@
+### **v.3.7.0 - 29.09.2020 **
+
+- SearchField: added ability to activate with keyboard shortcut
+- TopBanner/FooterContent: added ability to display english logo.
+- Icon: updated company-icons, and added the theme icons.
+- Card: changed default border width to 4px.
+- Table: ability to trigger editableContent by clicking on row
+- Sketch components for designers: updated to version 1.4
+- Button: fixes and issue where buttons with icons were not aligned properly
+- Button: better supports multiple lines of text
+
 ### **v.3.6.0 - 08.09.2020 **
 
 - Table: now supports expandable rows. Improved accessbility by labeling sortable columns.
