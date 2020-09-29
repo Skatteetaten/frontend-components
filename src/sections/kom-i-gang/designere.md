@@ -33,7 +33,43 @@ const style = {
 
 <OpenClose title={'Versjonshistorikk'}>
   <Typography>
-    <h4>Versjon 1.3</h4>
+    <h4>Versjon 1.4</h4>
+    <p style={{ marginBottom: '0' }}>
+      <strong>Typografi</strong>
+    </p>
+    <ul style={{ marginTop: '0' }}>
+      <li>Størrelsen mega har ny linjehøyde (92px / 1.3525)</li>
+      <li>Størrelsen superLarge har ny linjehøyde (56px / 1.33333)</li>
+      <li>Oppdaterte retningslinjer for spaltebredde/brødtekst</li>
+    </ul>
+    <p style={{ marginBottom: '0' }}>
+      <strong>Grid</strong>
+    </p>
+    <ul style={{ marginTop: '0' }}>
+      <li>
+        Flere retningslinjer for de ulike skjermstørrelsene, inkludert konkrete
+        layout settings
+      </li>
+    </ul>
+    <p style={{ marginBottom: '0' }}>
+      <strong>Symboler</strong>
+    </p>
+    <ul style={{ marginTop: '0' }}>
+      <li>Button: Forbedret layout på lange knapper </li>
+      <li>Accordion: Litt opprydding i navngiving</li>
+      <li>Callout: Ny pilretning (top-right)</li>
+      <li>StepList: Nye symboler for mobilt design</li>
+    </ul>
+    <p style={{ marginBottom: '0' }}>
+      <strong>Ikoner</strong>
+    </p>
+    <ul style={{ marginTop: '0' }}>
+      <li>Nye: Andre forhold, Kredittfradrag/alternativ fordeling </li>
+      <li>Oppdaterte: Næring (Company), AvgiftBedrift</li>
+      <li>Småjusteringer av andre ikoner</li>
+    </ul>
+    <hr />
+    <h4 style={{ marginTop: '0' }}>Versjon 1.3</h4>
     <ul>
       <li>Nytt symbol: Paginering.</li>
       <li>
@@ -56,7 +92,7 @@ const style = {
       </li>
       <li>Farger: opprydding av duplikater og forbedret Burgundy.</li>
     </ul>
-
+    <hr />
     <h4 style={{ marginTop: '0' }}>Versjon 1.2</h4>
     <ul>
       <li>
