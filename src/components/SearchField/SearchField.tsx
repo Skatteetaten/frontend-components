@@ -44,6 +44,8 @@ export interface SearchFieldProps extends ISearchBoxProps {
   limit?: number;
   /** Tillater tastatursnarvei på søk */
   keyboardShortcut?: boolean;
+  /** Hvilke taster som fungerer for snarvei */
+  searchShortcutKeys?: 'string';
 }
 
 const searchInList = (options: Array<IDropdownOption>, filterText: string) => {
@@ -84,7 +86,8 @@ const SearchField: React.FC<SearchFieldProps> = props => {
     onSelected,
     options,
     limit,
-    keyboardShortcut = true,
+    keyboardShortcut = false,
+    searchShortcutKeys = 'ctrl+f,command+f',
     ...rest
   } = props;
   const _searchBoxElement = React.createRef<HTMLDivElement>();
@@ -114,7 +117,7 @@ const SearchField: React.FC<SearchFieldProps> = props => {
     };
   });
 
-  useHotkeys('ctrl+f,command+f', ev => {
+  useHotkeys(searchShortcutKeys, ev => {
     if (keyboardShortcut) {
       ev.preventDefault();
       return _componentRef.current?.focus();
