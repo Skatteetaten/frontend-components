@@ -370,11 +370,7 @@ const FileUploader: React.FC<FileUploaderProps> = props => {
         autoDismiss={labelWithCalloutAutoDismiss}
         {...labelCallout}
       />
-      <label
-        htmlFor="fileupload"
-        aria-label={ariaLabel ? ariaLabel : 'Filopplasting'}
-        id="buttonLabel"
-      >
+      <label htmlFor="fileupload" aria-label={ariaLabel} id="buttonLabel">
         <div
           className={styles.uploadArea}
           role="button"
