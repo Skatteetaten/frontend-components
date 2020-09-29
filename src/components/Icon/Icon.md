@@ -591,6 +591,10 @@ const columns = [
 const iconGroup = {
   theme: [
     {
+      name: 'TemaAndreForhold',
+      usage: 'Andre forhold'
+    },
+    {
       name: 'TemaArbeidTrygdPensjon',
       usage: 'Arbeid, trygd og pensjon'
     },
@@ -611,12 +615,20 @@ const iconGroup = {
       usage: 'Finans'
     },
     {
+      name: 'TemaKredittfradrag',
+      usage: 'Kredittfradrag'
+    },
+    {
       name: 'TemaGaveArv',
       usage: 'Gave og arv'
     },
     {
       name: 'TemaPersonligeForhold',
       usage: 'Personlige forhold'
+    },
+    {
+      name: 'TemaSelskapDeltakerfastsetting',
+      usage: 'Deltakerfastsetting'
     }
   ]
 };
