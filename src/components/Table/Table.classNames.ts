@@ -60,6 +60,10 @@ export const getClassNames = props => {
             '.cellContentLarge': {
               padding: '12px'
             },
+            '.cellContent.clickable': {
+              paddingTop: '8px',
+              paddingBottom: '8px'
+            },
             '.cellContent.clickable:hover': {
               cursor: 'pointer'
             },
