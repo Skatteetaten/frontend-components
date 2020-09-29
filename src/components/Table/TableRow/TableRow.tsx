@@ -151,13 +151,17 @@ const TableRow = <P extends object>(props: TableRowProps<P>) => {
   const renderCellContent = (content, index) =>
     openEditableOnRowClick && editableContent ? (
       <button
-        className={classnames('cellContent', 'clickable', {
-          cellContentLarge: showRowSeparators
-        })}
+        className={'cellButton'}
         onClick={() => onEditRow(index)}
         tabIndex={-1}
       >
-        {content}
+        <span
+          className={classnames('cellContent', 'clickable', {
+            cellContentLarge: showRowSeparators
+          })}
+        >
+          {content}
+        </span>
       </button>
     ) : (
       <div

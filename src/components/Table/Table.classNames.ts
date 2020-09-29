@@ -41,10 +41,19 @@ export const getClassNames = props => {
               height: '100%',
               padding: 0
             },
+            '.cellButton': {
+              border: 'none',
+              background: 'transparent',
+              boxSizing: 'border-box',
+              fontSize: 'inherit',
+              height: '100%',
+              margin: 0,
+              padding: 0,
+              textAlign: 'inherit',
+              width: '100%'
+            },
             '.cellContent': {
               alignItems: 'center',
-              background: 'transparent',
-              border: 'none',
               boxSizing: 'border-box',
               display: 'flex',
               fontSize: 'inherit',
