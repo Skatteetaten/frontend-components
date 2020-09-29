@@ -134,10 +134,12 @@ exports[`Table komponent matcher snapshot 1`] = `
           onEditRow={[Function]}
           onExpandRow={[Function]}
           rowIndex={0}
+          showRowSeparators={true}
           tableHasScroll={false}
           tableId="table-1"
         >
           <tr
+            className="separator"
             key="0"
           >
             <th
@@ -145,19 +147,35 @@ exports[`Table komponent matcher snapshot 1`] = `
               id="table-10_0"
               key="table-10_0"
               scope="row"
-            />
+            >
+              <div
+                className="cellContent cellContentLarge"
+              />
+            </th>
             <td
               className="is-closed right"
               key="table-10_1"
-            />
+            >
+              <div
+                className="cellContent cellContentLarge"
+              />
+            </td>
             <td
               className="is-closed right"
               key="table-10_2"
-            />
+            >
+              <div
+                className="cellContent cellContentLarge"
+              />
+            </td>
             <td
               className="is-closed right"
               key="table-10_3"
-            />
+            >
+              <div
+                className="cellContent cellContentLarge"
+              />
+            </td>
           </tr>
         </TableRow>
         <TableRow
@@ -201,10 +219,12 @@ exports[`Table komponent matcher snapshot 1`] = `
           onEditRow={[Function]}
           onExpandRow={[Function]}
           rowIndex={1}
+          showRowSeparators={true}
           tableHasScroll={false}
           tableId="table-1"
         >
           <tr
+            className="separator"
             key="1"
           >
             <th
@@ -212,19 +232,35 @@ exports[`Table komponent matcher snapshot 1`] = `
               id="table-11_0"
               key="table-11_0"
               scope="row"
-            />
+            >
+              <div
+                className="cellContent cellContentLarge"
+              />
+            </th>
             <td
               className="is-closed right"
               key="table-11_1"
-            />
+            >
+              <div
+                className="cellContent cellContentLarge"
+              />
+            </td>
             <td
               className="is-closed right"
               key="table-11_2"
-            />
+            >
+              <div
+                className="cellContent cellContentLarge"
+              />
+            </td>
             <td
               className="is-closed right"
               key="table-11_3"
-            />
+            >
+              <div
+                className="cellContent cellContentLarge"
+              />
+            </td>
           </tr>
         </TableRow>
         <TableRow
@@ -268,10 +304,12 @@ exports[`Table komponent matcher snapshot 1`] = `
           onEditRow={[Function]}
           onExpandRow={[Function]}
           rowIndex={2}
+          showRowSeparators={true}
           tableHasScroll={false}
           tableId="table-1"
         >
           <tr
+            className="separator"
             key="2"
           >
             <th
@@ -279,19 +317,35 @@ exports[`Table komponent matcher snapshot 1`] = `
               id="table-12_0"
               key="table-12_0"
               scope="row"
-            />
+            >
+              <div
+                className="cellContent cellContentLarge"
+              />
+            </th>
             <td
               className="is-closed right"
               key="table-12_1"
-            />
+            >
+              <div
+                className="cellContent cellContentLarge"
+              />
+            </td>
             <td
               className="is-closed right"
               key="table-12_2"
-            />
+            >
+              <div
+                className="cellContent cellContentLarge"
+              />
+            </td>
             <td
               className="is-closed right"
               key="table-12_3"
-            />
+            >
+              <div
+                className="cellContent cellContentLarge"
+              />
+            </td>
           </tr>
         </TableRow>
         <TableRow
@@ -335,10 +389,12 @@ exports[`Table komponent matcher snapshot 1`] = `
           onEditRow={[Function]}
           onExpandRow={[Function]}
           rowIndex={3}
+          showRowSeparators={true}
           tableHasScroll={false}
           tableId="table-1"
         >
           <tr
+            className="separator"
             key="3"
           >
             <th
@@ -346,19 +402,35 @@ exports[`Table komponent matcher snapshot 1`] = `
               id="table-13_0"
               key="table-13_0"
               scope="row"
-            />
+            >
+              <div
+                className="cellContent cellContentLarge"
+              />
+            </th>
             <td
               className="is-closed right"
               key="table-13_1"
-            />
+            >
+              <div
+                className="cellContent cellContentLarge"
+              />
+            </td>
             <td
               className="is-closed right"
               key="table-13_2"
-            />
+            >
+              <div
+                className="cellContent cellContentLarge"
+              />
+            </td>
             <td
               className="is-closed right"
               key="table-13_3"
-            />
+            >
+              <div
+                className="cellContent cellContentLarge"
+              />
+            </td>
           </tr>
         </TableRow>
       </tbody>
