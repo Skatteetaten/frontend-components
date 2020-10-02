@@ -45,13 +45,16 @@ export default {
     'More': '\uea0f', 
     'PreviewFile': '\uea10', 
     'Skattetrekk': '\uea11', 
-    'TemaArbeidTrygdPensjon': '\uea12', 
-    'TemaBankLaanForsikring': '\uea13', 
-    'TemaBoligEiendeler': '\uea14', 
-    'TemaFamilie': '\uea15', 
-    'TemaFinans': '\uea16', 
-    'TemaGaveArv': '\uea17', 
-    'TemaPersonligeForhold': '\uea18', 
-    'Up': '\uea19' 
+    'TemaAndreForhold': '\uea12', 
+    'TemaArbeidTrygdPensjon': '\uea13', 
+    'TemaBankLaanForsikring': '\uea14', 
+    'TemaBoligEiendeler': '\uea15', 
+    'TemaFamilie': '\uea16', 
+    'TemaFinans': '\uea17', 
+    'TemaGaveArv': '\uea18', 
+    'TemaKredittfradrag': '\uea19', 
+    'TemaPersonligeForhold': '\uea1a', 
+    'TemaSelskapDeltakerfastsetting': '\uea1b', 
+    'Up': '\uea1c' 
   }
 };

@@ -1,12 +1,15 @@
 import * as React from 'react';
+//import { t } from '../utils/i18n/i18n'; //Egwene
 import classnames from 'classnames';
 import { Icon, Image, ActionButton, UseScreen } from '../index';
 
 // @ts-ignore TODO
+import externalLogo from './assets/ske-logo.svg';
+import externalLogoEn from './assets/ske-logo-en.svg';
+import internLogo from './assets/ske-logo-intern.svg';
+import internLogoEn from './assets/ske-logo-intern-en.svg';
 import { getClassNames as getExternalClassNames } from './External.classNames';
 import { getClassNames as getInternalClassNames } from './Internal.classNames';
-import externallogo from './assets/ske-logo.svg';
-import internallogo from './assets/ske-logo-intern.svg';
 
 // @ts-ignore TODO
 const InternalHeader = (props) => {
@@ -28,7 +31,7 @@ const InternalHeader = (props) => {
           {size.gt.md && (
             <Image
               className={styles.headerLogo}
-              src={internallogo}
+              src={props.language === 'en' ? internLogoEn : internLogo}
               alt="Skatteetaten logo"
             />
           )}
@@ -91,7 +94,11 @@ export const ExternalHeader: React.FC<TopBannerProps> = (props) => {
   const compactHeight = props.compact ? 55 : 68;
 
   const imageElement = (
-    <Image src={externallogo} height={compactHeight} alt="Skatteetaten logo" />
+    <Image
+      src={props.language === 'en' ? externalLogoEn : externalLogo}
+      height={compactHeight}
+      alt="Skatteetaten logo"
+    />
   );
 
   return (
@@ -137,6 +144,8 @@ export interface TopBannerProps {
   logoLink?: boolean;
   /** OnClick event som trigges av klikk på hjemlink */
   onClick?: () => void;
+  /** Språk på logoen */
+  language?: 'nb' | 'nn' | 'en';
 }
 
 TopBanner.defaultProps = {
@@ -148,4 +157,5 @@ TopBanner.defaultProps = {
   external: false,
   compact: false,
   logoLink: false,
+  language: undefined,
 };

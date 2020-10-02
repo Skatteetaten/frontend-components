@@ -1,5 +1,5 @@
 import classnames from 'classnames';
-import { ISearchBoxProps, SearchBox } from 'office-ui-fabric-react';
+import { ISearchBoxProps, ISearchBox, SearchBox } from 'office-ui-fabric-react';
 import * as React from 'react';
 import { getClassNames } from './SearchField.classNames';
 import { IDropdownOption } from 'office-ui-fabric-react';
@@ -8,6 +8,7 @@ import {
   calloutState,
   LabelWithCalloutProps,
   generateId,
+  useHotkeys,
 } from '../index';
 
 export interface SearchFieldProps extends ISearchBoxProps {
@@ -38,6 +39,10 @@ export interface SearchFieldProps extends ISearchBoxProps {
   onSelected?: (option: IDropdownOption) => void;
   /** Begrens antall viste søkeresultat */
   limit?: number;
+  /** Tillater tastatursnarvei på søk */
+  keyboardShortcut?: boolean;
+  /** Hvilke taster som fungerer for snarvei */
+  searchShortcutKeys?: 'string';
 }
 
 const searchInList = (options: Array<IDropdownOption>, filterText: string) => {
@@ -78,9 +83,12 @@ export const SearchField: React.FC<SearchFieldProps> = (props) => {
     onSelected,
     options,
     limit,
+    keyboardShortcut = false,
+    searchShortcutKeys = 'ctrl+f',
     ...rest
   } = props;
   const _searchBoxElement = React.createRef<HTMLDivElement>();
+  const _componentRef = React.useRef<ISearchBox>(null);
   const [dropdownVisible, setDropdownVisible] = React.useState<boolean>(false);
   const [searchResultList, setSearchResultList] = React.useState(options);
   const [value, setValue] = React.useState<string | undefined>(props.value);
@@ -104,6 +112,13 @@ export const SearchField: React.FC<SearchFieldProps> = (props) => {
       // Unbind the event listener on clean up
       document.removeEventListener('mousedown', handleClickOutside);
     };
+  });
+
+  useHotkeys(searchShortcutKeys, (ev) => {
+    if (keyboardShortcut) {
+      ev.preventDefault();
+      return _componentRef.current?.focus();
+    }
   });
 
   const changeEvent = (text: string) => {
@@ -244,6 +259,7 @@ export const SearchField: React.FC<SearchFieldProps> = (props) => {
             }}
             onKeyDown={(ev) => handleOnKeyDown(ev)}
             value={value}
+            componentRef={_componentRef}
           />
           {dropdownVisible && renderSuggestions(searchResultList)}
         </div>
@@ -252,6 +268,7 @@ export const SearchField: React.FC<SearchFieldProps> = (props) => {
           type={'search'}
           {...props}
           className={classnames(styles.main, className)}
+          componentRef={_componentRef}
         />
       )}
     </div>

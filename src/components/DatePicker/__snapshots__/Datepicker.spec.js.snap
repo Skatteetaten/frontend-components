@@ -3,7 +3,7 @@
 exports[`DatePicker komponent matcher snapshot 1`] = `
 <div>
   <div
-    className="ms-DatePicker SkeDatePicker-114"
+    className="ms-DatePicker SkeDatePicker-82"
     id="datepicker-123-input"
     onBlur={[Function]}
   >
@@ -11,18 +11,18 @@ exports[`DatePicker komponent matcher snapshot 1`] = `
       aria-haspopup="true"
     >
       <div
-        className="ms-TextField textField-118"
+        className="ms-TextField textField-86"
       >
         <div
           className="ms-TextField-wrapper"
         >
           <div
-            className="ms-TextField-fieldGroup fieldGroup-119"
+            className="ms-TextField-fieldGroup fieldGroup-87"
           >
             <input
               aria-expanded={false}
               aria-invalid={false}
-              className="ms-TextField-field field-120"
+              className="ms-TextField-field field-88"
               id="datepicker-123-input-label"
               onBlur={[Function]}
               onChange={[Function]}
@@ -38,7 +38,7 @@ exports[`DatePicker komponent matcher snapshot 1`] = `
             />
             <i
               aria-hidden={true}
-              className="ms-DatePicker-event--without-label msDatePickerDisabled icon-127"
+              className="ms-DatePicker-event--without-label msDatePickerDisabled icon-95"
               data-icon-name="Calendar"
               onClick={[Function]}
             >

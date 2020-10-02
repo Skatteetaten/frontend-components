@@ -156,6 +156,26 @@ describe('Table komponent', () => {
     expect(wrapper.html()).toContain('Her kommer redigerbart innhold');
   });
 
+  it('viser editerbart innhold når en tabellrad klikkes med openEditableOnRowClick', () => {
+    const wrapper = oppsettMount({
+      data,
+      columns,
+      editableRows: true,
+      editableContent: content,
+      openEditableOnRowClick: true,
+    });
+
+    const klikkbarTabellCelle = wrapper
+      .find('TableRow')
+      .first()
+      .find('td .cellContent')
+      .first();
+
+    expect(wrapper.html()).not.toContain('Her kommer redigerbart innhold');
+    klikkbarTabellCelle.simulate('click');
+    expect(wrapper.html()).toContain('Her kommer redigerbart innhold');
+  });
+
   it('setter korrekt colspan på editerbart innhold sin kolonne', () => {
     const wrapper = mountMedEditerbartInnholdAapen();
 

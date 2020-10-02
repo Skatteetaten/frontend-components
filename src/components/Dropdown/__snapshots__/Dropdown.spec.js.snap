@@ -9,7 +9,7 @@ exports[`Dropdown komponent matcher snapshot 1`] = `
     inputId="dropdown-123-input-option"
   />
   <StyledWithResponsiveMode
-    className="main-106"
+    className="main-74"
     id="dropdown-123-input"
     onRenderCaretDown={[Function]}
     options={

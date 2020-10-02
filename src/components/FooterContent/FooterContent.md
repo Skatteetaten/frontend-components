@@ -1,7 +1,11 @@
 ** FooterContent brukes i publikumsløsninger for å markere bunnen av siden.**
 
 ```js
-import { FooterContent, Grid } from '@skatteetaten/frontend-components';
+import {
+  FooterContent,
+  FooterLogo,
+  Grid,
+} from '@skatteetaten/frontend-components';
 
 <div>
   <FooterContent>
@@ -37,7 +41,8 @@ import { FooterContent, Grid } from '@skatteetaten/frontend-components';
   <p>
     Logo er en egen komponent på FooterContent-komponenten `FooterContent.Logo`.
     Logoen blir midtstilt når vinduet er mindre enn 1024px som tilsvarer fra og
-    med large i grid-systemet.
+    med large i grid-systemet. For å få engelsk logo benyttes
+    `FooterContent.LogoEn`
   </p>
 </>
 ```

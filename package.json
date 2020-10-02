@@ -28,6 +28,7 @@
     "@uifabric/utilities": "7.27.0",
     "axios": "0.19.2",
     "classnames": "2.2.6",
+    "hotkeys-js": "3.8.1",
     "i18next": "19.7.0",
     "material-design-icons": "3.0.1",
     "moment": "2.27.0",

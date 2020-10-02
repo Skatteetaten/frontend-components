@@ -10,7 +10,13 @@ import {
 
 function getTypeColor(props: ButtonProps): object {
   const palette = getTheme().palette as PaletteProps;
-  const radius = '20px';
+  const radius = '100px';
+
+  const sizeNormal = {
+    height: 'auto',
+    minHeight: '32px',
+    padding: '7px 15px',
+  };
 
   switch (props.buttonStyle) {
     case 'primary':
@@ -20,10 +26,10 @@ function getTypeColor(props: ButtonProps): object {
         background: palette.skeColor.blue,
         color: palette.skeColor.white,
         boxShadow: `0 8px 6px -6px ${palette.skeColor.lightGrey}`,
+        ...sizeNormal,
         selectors: {
           '@media  only screen and (max-width: 479px)': {
             width: '100%',
-            padding: '21px 0',
           },
         },
       };
@@ -47,6 +53,7 @@ function getTypeColor(props: ButtonProps): object {
         borderColor: palette.skeColor.blue,
         background: palette.skeColor.blue,
         color: palette.skeColor.white,
+        ...sizeNormal,
       };
     case 'warning':
       return {
@@ -54,10 +61,10 @@ function getTypeColor(props: ButtonProps): object {
         borderColor: palette.skeColor.lightPink,
         background: palette.skeColor.lightPink,
         color: palette.bodyText,
+        ...sizeNormal,
         selectors: {
           '@media  only screen and (max-width: 479px)': {
             width: '100%',
-            padding: '21px 0',
           },
         },
       };
@@ -67,6 +74,7 @@ function getTypeColor(props: ButtonProps): object {
         borderWidth: 0,
         background: 'none',
         color: palette.skeColor.blue,
+        height: 'auto',
       };
     default:
       // primaryRounded
@@ -75,6 +83,7 @@ function getTypeColor(props: ButtonProps): object {
         borderColor: palette.skeColor.blue,
         background: palette.skeColor.white,
         color: palette.skeColor.blue,
+        ...sizeNormal,
       };
   }
 }
@@ -184,6 +193,8 @@ export function getClassNames(props: ButtonProps): string {
           fontWeight: 'normal',
           padding: '15px',
           transition: 'background 0.3s',
+          textAlign: props.icon ? 'left' : 'center',
+          verticalAlign: 'top',
           ...getTypeColor(props),
         },
         '&.ms-Button:hover, &.ms-Button:focus': {

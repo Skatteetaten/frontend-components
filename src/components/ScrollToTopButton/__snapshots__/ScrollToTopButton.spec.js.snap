@@ -2,17 +2,17 @@
 
 exports[`ScrollToTopButton komponent matcher snapshot 1`] = `
 <div
-  className="topcontainer-106"
+  className="topcontainer-74"
 >
   <div
-    className="container-107"
+    className="container-75"
   >
     <div
-      className="box-108"
+      className="box-76"
     >
       <button
         aria-label="Til toppen"
-        className="ms-Button ms-Button--action ms-Button--command actionButton-116"
+        className="ms-Button ms-Button--action ms-Button--command actionButton-84"
         data-is-focusable={true}
         onClick={[Function]}
         onKeyDown={[Function]}
@@ -23,18 +23,18 @@ exports[`ScrollToTopButton komponent matcher snapshot 1`] = `
         type="button"
       >
         <span
-          className="ms-Button-flexContainer flexContainer-117"
+          className="ms-Button-flexContainer flexContainer-85"
           data-automationid="splitbuttonprimary"
         >
           <div
-            className="iconFixateContainer-111"
+            className="iconFixateContainer-79"
           >
             <div
-              className="iconFixate-112"
+              className="iconFixate-80"
             >
               <i
                 aria-hidden={true}
-                className="icon-125"
+                className="icon-93"
                 data-icon-name="MoveUp"
               >
                 ﲾ
@@ -42,7 +42,7 @@ exports[`ScrollToTopButton komponent matcher snapshot 1`] = `
             </div>
           </div>
           <div
-            className="label-113"
+            className="label-81"
           >
             Til toppen
           </div>

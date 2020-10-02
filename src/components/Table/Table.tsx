@@ -27,6 +27,8 @@ export interface TableProps<P> extends React.HTMLAttributes<HTMLDivElement> {
   fullWidth?: boolean;
   /**  Indeks til rad som skal åpnes i redigeringsmodus */
   openEditableRowIndex?: number;
+  /** Åpne redigeringsmodus ved klikk hvor som helst på raden */
+  openEditableOnRowClick?: boolean;
   /**  Blir kalt ved åpning eller lukking av rad, om man ønsker å styre 'openEditableRowIndex' state utenfra */
   /**  Ved 'undefined' styrer komponenten dette selv  */
   setOpenEditableRowIndex?: (index?: number) => void;
@@ -63,6 +65,8 @@ export interface TableProps<P> extends React.HTMLAttributes<HTMLDivElement> {
   }[];
   /** Språkvalg for hva skjermleser leser opp. Default er Norsk Bokmål */
   language?: Language;
+  /** Vis skillelinjer mellom rader*/
+  showRowSeparators?: boolean;
 }
 
 export const setScrollBarState = (
@@ -159,6 +163,8 @@ export const Table = <P extends object>(props: TableProps<P>) => {
     columns,
     id,
     language,
+    openEditableOnRowClick,
+    showRowSeparators = true,
   } = props;
   const genratedId = generateId();
   const mainId = id ? id : 'table-' + genratedId;
@@ -244,11 +250,13 @@ export const Table = <P extends object>(props: TableProps<P>) => {
           tableHasScroll={tableIsScrollable}
           isEditableRowOpen={openEditableRowIndex === index}
           isExpandableRowOpen={openExpandableRowIndex === index}
+          openEditableOnRowClick={openEditableOnRowClick}
           onEditRow={() => handleEditRow(index)}
           onExpandRow={() => handleExpandRow(index)}
           onCloseRow={handleCloseRow}
           openExpandableRowIndex={openExpandableRowIndex}
           tableId={mainId}
+          showRowSeparators={showRowSeparators}
         />
       );
     });

@@ -2,7 +2,7 @@
 
 exports[`Pagination komponent matcher snapshot 1`] = `
 <div
-  className="paginationContainer-109"
+  className="paginationContainer-77"
 >
   <p
     data-testid="pagination-oppsummering"
@@ -21,7 +21,7 @@ exports[`Pagination komponent matcher snapshot 1`] = `
                 aria-current={true}
                 aria-disabled={true}
                 aria-label="Side 1"
-                className="activePage-106"
+                className="activePage-74"
                 onClick={[Function]}
                 role="link"
               >
@@ -33,7 +33,7 @@ exports[`Pagination komponent matcher snapshot 1`] = `
                 aria-current={false}
                 aria-disabled={false}
                 aria-label="Side 2"
-                className="pageNumber-108"
+                className="pageNumber-76"
                 onClick={[Function]}
                 role="link"
               >
@@ -45,7 +45,7 @@ exports[`Pagination komponent matcher snapshot 1`] = `
                 aria-current={false}
                 aria-disabled={false}
                 aria-label="Side 3"
-                className="pageNumber-108"
+                className="pageNumber-76"
                 onClick={[Function]}
                 role="link"
               >
@@ -65,7 +65,7 @@ exports[`Pagination komponent matcher snapshot 1`] = `
           </span>
           <i
             aria-hidden={true}
-            className="linkIcons-111"
+            className="linkIcons-79"
             data-icon-name="ChevronRight"
           >
             

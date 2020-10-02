@@ -9,6 +9,7 @@ import { SearchField } from '@skatteetaten/frontend-components';
     border="slim"
     placeholder="Skriv søkeord her"
     ariaLabel="Søk"
+    keyboardShortcut={true}
   />
   <br />
   <SearchField
@@ -61,6 +62,11 @@ const options = [
   <p>
     Søkefeltet kan legges inni en egen container, og størrelsen kan endres
     deretter.
+  </p>
+  <h3>Tastatursnarvei</h3>
+  <p>
+    SearchField tillater tastatursnarvei for søk (ctrl+f eller command+f). For å
+    slå dette på legg til prop keyboardShortcut=&#123;true&#125;
   </p>
 </>
 ```

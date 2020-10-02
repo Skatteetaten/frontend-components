@@ -13,6 +13,7 @@ function SokeBoks({ searchTerm, setSearchTerm, children }) {
           placeholder={'Vis meg...'}
           ariaLabel="Søkefelt"
           value={searchTerm}
+          keyboardShortcut={true}
           className="searchField"
           onChange={(e, value) => setSearchTerm(value || '')}
         />

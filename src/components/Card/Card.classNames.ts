@@ -24,23 +24,23 @@ function getCardBorder(props: CardProps) {
   switch (props.border) {
     case CardBorder.YELLOW_BORDER:
       return {
-        border: `3px solid ${palette.skeColor.brown}`,
+        border: `4px solid ${palette.skeColor.brown}`,
       };
     case CardBorder.GREEN_BORDER:
       return {
-        border: `3px solid ${palette.skeColor.green}`,
+        border: `4px solid ${palette.skeColor.green}`,
       };
     case CardBorder.RED_BORDER:
       return {
-        border: `3px solid ${palette.skeColor.pink}`,
+        border: `4px solid ${palette.skeColor.pink}`,
       };
     case CardBorder.GREY_BORDER:
       return {
-        border: `3px solid ${palette.skeColor.grey}`,
+        border: `4px solid ${palette.skeColor.grey}`,
       };
     case CardBorder.WHITE_BORDER:
       return {
-        border: `3px solid ${palette.skeColor.white}`,
+        border: `4px solid ${palette.skeColor.white}`,
       };
     default:
       return {};
