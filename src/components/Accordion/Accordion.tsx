@@ -36,7 +36,7 @@ const Accordion: React.FC<AccordionProps> = props => {
   const totalSteps = React.Children.count(children);
   return (
     <div className={classnames(accordion, className)} aria-label={ariaLabel}>
-      <Grid>
+      <Grid padding="0px">
         {React.Children.map(children, (child, index) => {
           if (React.isValidElement<AccordionItemProps>(child)) {
             return React.cloneElement(child, {
