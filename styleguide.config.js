@@ -56,6 +56,27 @@ module.exports = {
         }
       ]
     },
+    {
+      name: 'Mønstre',
+      sections: [
+        {
+          name: 'Bytt bruker',
+          content: 'src/sections/monstre/bytt-bruker.md'
+        },
+        {
+          name: 'Komplekse tabeller',
+          content: 'src/sections/monstre/tabell-kompleks.md'
+        },
+        {
+          name: 'Overstyrt eller historisk verdi',
+          content: 'src/sections/monstre/historisk-verdi.md'
+        },
+        {
+          name: 'Feilhåndtering',
+          content: 'src/sections/monstre/feil.md'
+        }
+      ]
+    },
     generateComponentsGroup('Knapper og lenker', [
       'ActionButton',
       'Button',
