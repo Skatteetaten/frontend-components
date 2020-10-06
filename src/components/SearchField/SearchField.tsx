@@ -46,6 +46,8 @@ export interface SearchFieldProps extends ISearchBoxProps {
   keyboardShortcut?: boolean;
   /** Hvilke taster som fungerer for snarvei */
   searchShortcutKeys?: 'string';
+  /** Gjør søkeikonet klikkbart, trenger samme kode som onSearch */
+  onSearchIcon?: (newValue: any) => void;
 }
 
 const searchInList = (options: Array<IDropdownOption>, filterText: string) => {
@@ -88,6 +90,7 @@ const SearchField: React.FC<SearchFieldProps> = props => {
     limit,
     keyboardShortcut = false,
     searchShortcutKeys = 'ctrl+f',
+    onSearchIcon,
     ...rest
   } = props;
   const _searchBoxElement = React.createRef<HTMLDivElement>();
@@ -272,6 +275,9 @@ const SearchField: React.FC<SearchFieldProps> = props => {
           {...props}
           className={classnames(styles.main, className)}
           componentRef={_componentRef}
+          iconProps={{
+            onClick: ev => (onSearchIcon ? onSearchIcon(ev) : null)
+          }}
         />
       )}
     </div>
