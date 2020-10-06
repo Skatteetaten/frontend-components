@@ -10,6 +10,7 @@ import SearchField from '@skatteetaten/frontend-components/SearchField';
     placeholder="Skriv søkeord her"
     ariaLabel="Søk"
     keyboardShortcut={true}
+    onSearchIcon={() => alert('Du trykket på søkeikonet')}
   />
   <br />
   <SearchField
