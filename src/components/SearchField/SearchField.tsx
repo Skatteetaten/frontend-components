@@ -266,6 +266,9 @@ const SearchField: React.FC<SearchFieldProps> = props => {
             onKeyDown={ev => handleOnKeyDown(ev)}
             value={value}
             componentRef={_componentRef}
+            iconProps={{
+              onClick: ev => (onSearchIcon ? onSearchIcon(ev) : null)
+            }}
           />
           {dropdownVisible && renderSuggestions(searchResultList)}
         </div>
