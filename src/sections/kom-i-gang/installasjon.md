@@ -9,9 +9,44 @@ npm config set registry https://nexus-npm.aurora.skead.no/npm/repository/npm-all
 npm install @skatteetaten/frontend-components
 ```
 
-## Importere i SystemJS som UMD pakke
+### Omslutt hele applikasjonen din i SkeBasis (index.js):
 
-Inkluder pakken fra unpkg. I tillegg trenger man et sett med eksterne pakker. Eksempel som følger:
+```js static noeditor
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { SkeBasis } from '@skatteetaten/frontend-components';
+import App from './App';
+
+ReactDOM.render(
+  <SkeBasis>
+    <App />
+  </SkeBasis>,
+  document.getElementById('root')
+);
+```
+
+### Ta så ibruk komponentene i applikasjonen din (App.js):
+
+```js static noeditor
+import React, { Component } from 'react';
+import { Card } from '@skatteetaten/frontend-components';
+
+class App extends Component {
+  render() {
+    return (
+      <Card title="Innhold" expand>
+        Innhold i kortet
+      </Card>
+    );
+  }
+}
+export default App;
+```
+
+### Bruke komponentene som UMD-pakke (Micro Frontend)
+
+Dersom løsningen din følger prinippene til «Micro Frontend», kan du importere komponentene (i SystemJS) som UMD pakke.
+Man må da inkludere pakken fra unpkg, og et sett med eksterne pakker:
 
 ```html
 <% if (isLocal) { %>
@@ -49,40 +84,6 @@ Inkluder pakken fra unpkg. I tillegg trenger man et sett med eksterne pakker. Ek
   }
 </script>
 <% } %>
-```
-
-### Omslutt hele applikasjonen din i SkeBasis (index.js):
-
-```js static noeditor
-import React from 'react';
-import ReactDOM from 'react-dom';
-import { SkeBasis } from '@skatteetaten/frontend-components';
-import App from './App';
-
-ReactDOM.render(
-  <SkeBasis>
-    <App />
-  </SkeBasis>,
-  document.getElementById('root')
-);
-```
-
-### Ta så ibruk komponentene i applikasjonen din (App.js):
-
-```js static noeditor
-import React, { Component } from 'react';
-import { Card } from '@skatteetaten/frontend-components';
-
-class App extends Component {
-  render() {
-    return (
-      <Card title="Innhold" expand>
-        Innhold i kortet
-      </Card>
-    );
-  }
-}
-export default App;
 ```
 
 ### Tester
