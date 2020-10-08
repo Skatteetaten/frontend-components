@@ -13,8 +13,12 @@ import TopStripe, {
 import TopBanner from '@skatteetaten/frontend-components/TopBanner';
 import Link from '@skatteetaten/frontend-components/Link';
 import MessageBar from '@skatteetaten/frontend-components/MessageBar';
+import CheckBox from '@skatteetaten/frontend-components/CheckBox';
+import ErrorMessage from '@skatteetaten/frontend-components/ErrorMessage';
+import DatePicker from '@skatteetaten/frontend-components/DatePicker';
+
 <>
-  <h2>Prøv først å unngå feil</h2>
+  <h3>Prøv først å unngå feil</h3>
   <p>
     En god tommelfingerregel er å prøve å fjerne muligheten for å gjøre feil
     eller kontroller for vanlige feil underveis og spør om bekreftelse hvis de
@@ -22,32 +26,19 @@ import MessageBar from '@skatteetaten/frontend-components/MessageBar';
     er det for eksempel kun mulig å skrive inn ni siffer i feltet for
     organisasjonsnummer:
   </p>
-  <div style={{ width: '300px' }}>
-    <TextField
-      onChange={(e, value) => setState({ value })}
-      label={'Org.nummer (9 siffer)'}
-      mask={'999 999 999'}
-      maskChar={''}
-    />
-  </div>
 
-  <h3>Mønstre for håndtering av feil</h3>
+  <h3>Se for deg en samtale med brukeren</h3>
+  <p>
+    Hvis en feilsituasjon oppstår, er det ofte nyttig å tenke på at du fører en
+    dialog med brukeren. Vi bør møte brukeren med forståelse, at vi vet om at
+    brukeren har et problem, og om mulig komme med et forslag til løsning. Se
+    situasjonen fra brukerens ståsted om tenk hva du ville ønsket at en
+    (hyggelig) person i skranken på skattekontoret hadde sagt.
+  </p>
+
+  <h3>Mønstre</h3>
 
   <Accordion>
-    <AccordionItem
-      toggleContent
-      toggleButtonText={'Se for deg en samtale med brukeren'}
-      headingLevel="3"
-      stepId={'step-2'}
-    >
-      <p>
-        Hvis en feilsituasjon oppstår, er det ofte nyttig å tenke på at du fører
-        en dialog med brukeren. Vi bør møte brukeren med forståelse, at vi vet
-        om at brukeren har et problem, og om mulig komme med et forslag til
-        løsning. Se situasjonen fra brukerens ståsted om tenk hva du ville
-        ønsket at en (hyggelig) person i skranken på skattekontoret hadde sagt.
-      </p>
-    </AccordionItem>
     <AccordionItem
       toggleContent
       toggleButtonText={'Feil ved innlasting'}
@@ -82,13 +73,13 @@ import MessageBar from '@skatteetaten/frontend-components/MessageBar';
     </AccordionItem>
     <AccordionItem
       toggleContent
-      toggleButtonText={'Feil som gjelder flere elementer på siden'}
+      toggleButtonText={'Feil som gjelder siden som helhet'}
       headingLevel="3"
       stepId={'step-4'}
     >
       <p>
-        Hvis brukeren oppleveren en feilsituasjon som handler om flere av
-        elementene på siden, plasserer vi meldingen øverst.
+        Hvis brukeren opplever en feilsituasjon som handler om siden som helhet,
+        plasserer vi meldingen øverst.
       </p>
       <div>
         <TopStripe>
@@ -156,10 +147,45 @@ import MessageBar from '@skatteetaten/frontend-components/MessageBar';
     </AccordionItem>
     <AccordionItem
       toggleContent
-      toggleButtonText={'--'}
+      toggleButtonText={'Flere feil i et skjema'}
       headingLevel="3"
       stepId={'step-5'}
-    ></AccordionItem>
+    >
+      {' '}
+      <p>
+        Feil skal vises i umiddelbar nærhet til der hvor brukeren trykker eller
+        har blikket da feilen oppstår.
+      </p>
+      <TextField
+        id={'my-input1'}
+        label={'E-postadresse'}
+        value={'min_adresse.no'}
+        errorMessage="E-postadressen ser ikke riktig ut."
+      />
+      <br />
+      <TextField
+        id={'my-input2'}
+        label={'Hva trenger du hjelp til?'}
+        multiline
+        rows={7}
+        value={''}
+        errorMessage="Denne kan ikke være tom"
+      />
+      <br />
+      <div style={{ width: '200px' }}>
+        <DatePicker
+          id={'my-date1'}
+          label={'Ønsket dato'}
+          help={
+            'Du kan skrive inn dato i feltet, eller velge en dato ved hjelp av datovelgeren, enten med mus eller bruk tastaturet'
+          }
+          isRequiredErrorMessage={'Dato må fylles ut'}
+        />
+      </div>
+      <br />
+      <Button buttonStyle="primary">Send inn</Button>
+      <ErrorMessage>Skjemaet inneholder 2 feil som må rettes opp.</ErrorMessage>
+    </AccordionItem>
   </Accordion>
 </>;
 ```
