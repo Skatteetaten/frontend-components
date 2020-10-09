@@ -4,7 +4,7 @@ import classnames from 'classnames';
 import { TopStripeButton } from './TopStripeButton';
 
 interface TopStripeProps {
-  children?: JSX.Element | JSX.Element[];
+  children?: JSX.Element | Array<JSX.Element | null>;
   className?: string;
   /** @ignore */
   open?: number;
@@ -75,7 +75,7 @@ const TopStripe: React.FC<TopStripeProps> = props => {
           {...rest}
         >
           {React.Children.map(children, (child: any, index) => {
-            if (child.type === TopStripeButton) {
+            if (child && child.type === TopStripeButton) {
               return (
                 <li>
                   {React.cloneElement(child, {
@@ -84,7 +84,9 @@ const TopStripe: React.FC<TopStripeProps> = props => {
                 </li>
               );
             } else {
-              return <li>{React.cloneElement(child, { index })}</li>;
+              return child ? (
+                <li>{React.cloneElement(child, { index })}</li>
+              ) : null;
             }
           })}
         </ul>
