@@ -51,9 +51,6 @@ export const getClassNames = (props: SearchFieldProps) => {
         }
       }
     },
-    searchIcon: {
-      cursor: 'pointer'
-    },
     main: {
       displayName: 'SkeSearchField',
       selectors: {
