@@ -6,7 +6,7 @@ import { SearchFieldProps } from './SearchField';
 
 export const getClassNames = (props: SearchFieldProps) => {
   const palette = getTheme().palette as PaletteProps;
-  const { border, searchFieldSize } = props;
+  const { border, searchFieldSize, onSearchIcon } = props;
   const largeSize = searchFieldSize === 'large';
   const standardSize = searchFieldSize === 'standard';
 
@@ -104,11 +104,10 @@ export const getClassNames = (props: SearchFieldProps) => {
           fontSize: largeSize ? FontSizes.xLarge : FontSizes.medium,
           opacity: 1,
           outline: 'none',
-          cursor: 'pointer',
+          cursor: onSearchIcon ? 'pointer' : 'default',
           selectors: {
             ':hover': {
-              border: `1px solid ${palette.skeColor.blue}`,
-              background: palette.skeColor.lightBlue
+              background: onSearchIcon && palette.skeColor.lightBlue
             }
           }
         },
@@ -122,6 +121,9 @@ export const getClassNames = (props: SearchFieldProps) => {
           WebkitAppearance: 'textfield'
         },
         'input[type=search]::-webkit-search-cancel-button': {
+          WebkitAppearance: 'none'
+        },
+        'input[type="search"]::-webkit-search-decoration': {
           WebkitAppearance: 'none'
         },
         'input[type=search]::-ms-clear': {
