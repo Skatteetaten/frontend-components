@@ -11,7 +11,7 @@ interface PaginationProps {
   /** Aria-label for aktiv sidelink */
   ariaLabelNavigationLinkActive?: string;
   /** CSS class */
-  className: string;
+  className?: string;
   /** Nåværende sidenummer */
   currentPage: number;
   /** Tekst neste-knapp */
