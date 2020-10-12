@@ -51,6 +51,9 @@ export const getClassNames = (props: SearchFieldProps) => {
         }
       }
     },
+    searchIcon: {
+      cursor: 'pointer'
+    },
     main: {
       displayName: 'SkeSearchField',
       selectors: {
@@ -98,12 +101,19 @@ export const getClassNames = (props: SearchFieldProps) => {
           position: 'absolute',
           color: palette.skeColor.blue,
           right: 10,
-          top: largeSize ? 5 : 0,
-          border: 'none',
+          top: largeSize ? 4 : -1,
+          border: `1px solid ${palette.skeColor.white}`,
           boxSizing: 'border-box',
           fontSize: largeSize ? FontSizes.xLarge : FontSizes.medium,
           opacity: 1,
-          outline: 'none'
+          outline: 'none',
+          cursor: 'pointer',
+          selectors: {
+            ':hover': {
+              border: `1px solid ${palette.skeColor.blue}`,
+              background: palette.skeColor.lightBlue
+            }
+          }
         },
         '& .ms-SearchBox-clearButton': {
           display: 'none'
