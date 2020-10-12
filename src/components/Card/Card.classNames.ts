@@ -72,9 +72,7 @@ export const getClassNames = (props: CardProps, state: CardState) => {
       ...getMargin(props)
     },
     expandIcon: {
-      position: 'absolute',
-      top: 0,
-      right: 0,
+      alignSelf: 'flex-start',
       selectors: {
         '&& .ms-Button-icon': {
           transform: isExpandedState ? 'rotate(-180deg)' : '0',
@@ -83,10 +81,8 @@ export const getClassNames = (props: CardProps, state: CardState) => {
       }
     },
     titlecontainer: {
-      display: 'flex',
       flexWrap: 'wrap',
       justifyContent: 'flex-start',
-      alignItems: 'center',
       outline: 'none',
       selectors: {
         ':focus': {
@@ -95,11 +91,12 @@ export const getClassNames = (props: CardProps, state: CardState) => {
       }
     },
     header: {
-      //display: 'flex',
+      display: 'flex',
       marginTop: '5px',
       justifyContent: 'space-between',
       alignItems: 'center',
-      position: 'relative'
+      position: 'relative',
+      wordBreak: 'break-word'
     },
     title: {
       flex: '1 1 1px',
