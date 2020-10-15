@@ -18,7 +18,7 @@ const findDependencyVersion = (dependency) => {
 };
 
 const findOwnVersion = () =>
-  process.env.version
+  process.env.REACT_APP_BUILD_VERSION
     ? process.env.REACT_APP_BUILD_VERSION
     : packageJson.version;
 
