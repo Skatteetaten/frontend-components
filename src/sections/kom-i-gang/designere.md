@@ -33,6 +33,15 @@ const style = {
 
 <OpenClose title={'Versjonshistorikk'}>
   <Typography>
+    <h4>Versjon 1.5</h4>
+    <ul style={{ marginTop: '0' }}>
+      <li>
+        Alle farger er nå lagt opp som fargevariabler. Husk å oppdatere Sketch
+        til minst versjon 69!
+      </li>
+      <li>Ryddet opp i noen fargeverdier og ikoner i symbolene.</li>
+    </ul>
+    <hr />
     <h4>Versjon 1.4</h4>
     <p style={{ marginBottom: '0' }}>
       <strong>Typografi</strong>
