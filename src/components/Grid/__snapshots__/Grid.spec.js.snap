@@ -6,6 +6,7 @@ exports[`Grid komponent matcher snapshot  1`] = `
 >
   <div
     className="ske-Grid-33 "
+    dir="ltr"
   >
     <GridRow
       rowSpacing="24px"

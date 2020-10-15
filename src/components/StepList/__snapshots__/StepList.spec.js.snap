@@ -11,6 +11,7 @@ exports[`StepList komponent matcher snapshot 1`] = `
     >
       <div
         className="ske-Grid-58 "
+        dir="ltr"
       >
         <Step
           key=".0"
