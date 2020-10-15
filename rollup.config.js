@@ -17,7 +17,7 @@ const urlConfig = {
   include: ['**/*.woff', '**/*.woff2', '**/*.ttf', '**/*.eot'],
   limit: Infinity,
 };
-const externalsConfig = {
+export const externalsConfig = {
   include: [
     'react',
     'react-dom',
@@ -91,6 +91,10 @@ const getPluginsConfig = (prod, mini) => {
 export default (CLIArgs) => {
   const prod = CLIArgs.prod ? CLIArgs.prod : false;
   const mini = CLIArgs.mini ? CLIArgs.mini : false;
+
+  delete CLIArgs.prod;
+  delete CLIArgs.mini;
+
   const bundle = {
     input: 'src/components/index.ts',
     output: {

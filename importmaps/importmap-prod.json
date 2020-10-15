@@ -1,0 +1,13 @@
+{
+  "imports": {
+    "react": "https://cdn.jsdelivr.net/npm/react@<replace>/umd/react.production.js",
+    "react-dom": "https://cdn.jsdelivr.net/npm/react-dom@<replace>/umd/react-dom.production.js",
+    "react-i18next": "https://cdn.jsdelivr.net/npm/react-i18next@<replace>/dist/umd/react-i18next.min.js",
+    "prop-types": "https://unpkg.com/prop-types@<replace>/prop-types.min.js",
+    "classnames": "https://cdn.jsdelivr.net/npm/classnames@<replace>/index.min.js",
+    "moment": "https://cdn.jsdelivr.net/npm/moment@<replace>/min/moment.min.js",
+    "axios": "https://cdn.jsdelivr.net/npm/axios@<replace>/dist/axios.min.js",
+    "tslib": "https://unpkg.com/tslib@<replace>/tslib.js",
+    "@skatteetaten/frontend-components": "https://unpkg.com/@skatteetaten/frontend-components@<replace>/umd/index.production.js"
+  }
+}

@@ -10,7 +10,7 @@ def config = [
     npmPublishFolder	     : 'lib',
     nodeVersion            : '10',
     versionStrategy        : [[ branch : 'master', versionHint:'3' ]],
-    createBuildEnvs        : { props -> "REACT_APP_BUILD_VERSION=${props.version}" },
+    createBuildEnvs        : { props -> "NODE_DEBUG=importmaps REACT_APP_BUILD_VERSION=${props.version}" },
     github                 : [
       enabled              : true,
       push                 : env.BRANCH_NAME == "master",

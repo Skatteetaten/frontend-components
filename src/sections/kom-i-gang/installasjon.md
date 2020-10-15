@@ -46,43 +46,19 @@ export default App;
 ### Bruke komponentene som UMD-pakke (Micro Frontend)
 
 Dersom løsningen din følger prinippene til «Micro Frontend», kan du importere komponentene (i SystemJS) som UMD pakke.
-Man må da inkludere pakken fra unpkg, og et sett med eksterne pakker:
+Alle nødvendige avhengigheter i tillegg til selv designsystemet kommer fra et importmap:
 
 ```html
 <% if (isLocal) { %>
-<script type="systemjs-importmap">
-  {
-    "imports": {
-      "single-spa": "https://cdn.jsdelivr.net/npm/single-spa@5.5.0/lib/system/single-spa.min.js",
-      "react": "https://cdn.jsdelivr.net/npm/react@16.13.1/umd/react.development.js",
-      "react-dom": "https://cdn.jsdelivr.net/npm/react-dom@16.13.1/umd/react-dom.development.js",
-      "react-i18next": "https://cdn.jsdelivr.net/npm/react-i18next@11.7.2/dist/umd/react-i18next.js",
-      "prop-types": "https://unpkg.com/prop-types@15.7.2/prop-types.min.js",
-      "classnames": "https://cdn.jsdelivr.net/npm/classnames@2.2.6/index.min.js",
-      "moment": "https://cdn.jsdelivr.net/npm/moment@2.26.0/min/moment.min.js",
-      "axios": "https://cdn.jsdelivr.net/npm/axios@0.19.2/dist/axios.min.js",
-      "tslib": "https://unpkg.com/tslib@2.0.1/tslib.js",
-      "@skatteetaten/frontend-components": "https://unpkg.com/@skatteetaten/frontend-components@4.0.0/umd/index.development.js"
-    }
-  }
-</script>
+<script
+  type="systemjs-importmap"
+  src="https://unpkg.com/@skatteetaten/frontend-components@<version>/umd/importmap.json"
+></script>
 <% } else { %>
-<script type="systemjs-importmap">
-  {
-    "imports": {
-      "single-spa": "https://cdn.jsdelivr.net/npm/single-spa@5.5.0/lib/system/single-spa.min.js",
-      "react": "https://cdn.jsdelivr.net/npm/react@16.13.1/umd/react.production.js",
-      "react-dom": "https://cdn.jsdelivr.net/npm/react-dom@16.13.1/umd/react-dom.production.js",
-      "react-i18next": "https://cdn.jsdelivr.net/npm/react-i18next@11.7.2/dist/umd/react-i18next.min.js",
-      "prop-types": "https://unpkg.com/prop-types@15.7.2/prop-types.min.js",
-      "classnames": "https://cdn.jsdelivr.net/npm/classnames@2.2.6/index.min.js",
-      "moment": "https://cdn.jsdelivr.net/npm/moment@2.26.0/min/moment.min.js",
-      "axios": "https://cdn.jsdelivr.net/npm/axios@0.19.2/dist/axios.min.js",
-      "tslib": "https://unpkg.com/tslib@2.0.1/tslib.js",
-      "@skatteetaten/frontend-components": "https://unpkg.com/@skatteetaten/frontend-components@4.0.0/umd/index.production.js"
-    }
-  }
-</script>
+<script
+  type="systemjs-importmap"
+  src="https://unpkg.com/@skatteetaten/frontend-components@<version>/umd/importmap-prod.json"
+></script>
 <% } %>
 ```
 

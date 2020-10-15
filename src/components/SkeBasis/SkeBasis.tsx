@@ -3,6 +3,7 @@ import {
   loadTheme,
   registerIcons,
   IIconSubset,
+  getIcon,
 } from '@uifabric/styling';
 import { Fabric, IFabricProps } from 'office-ui-fabric-react';
 import * as React from 'react';
@@ -37,7 +38,9 @@ export class SkeBasis extends React.PureComponent<SkeBasisProps> {
       loadTheme(theme);
     }
     if (props.icons) {
-      props.icons.forEach((iconFont) => registerIcons(iconFont));
+      if (!getIcon('AccountEnk')) {
+        props.icons.forEach((iconFont) => registerIcons(iconFont));
+      }
     }
   }
 
