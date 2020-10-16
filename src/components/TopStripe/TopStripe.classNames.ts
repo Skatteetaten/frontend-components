@@ -43,7 +43,8 @@ export const getClassNames = () => {
         ':focus': {
           backgroundColor: palette.skeColor.white,
           color: palette.skeColor.blackAlt,
-          transition: 'none'
+          transition: 'none',
+          outline: 'none'
         }
       }
     },
@@ -103,7 +104,6 @@ export const getClassNames = () => {
         '.ms-Button-label': {
           margin: '2px 0 0 0',
           padding: 0,
-
           fontSize: FontSizes.small,
           color: palette.skeColor.white,
           textDecoration: 'none !important',
@@ -198,15 +198,23 @@ export const getClassNames = () => {
       verticalAlign: 'middle'
     },
     menuCloseButton: {
+      width: '100%',
       display: 'block',
       margin: '0 auto',
+
       selectors: {
-        i: {
-          color: palette.skeColor.white + '!important'
+        '.ms-Button-flexContainer': {
+          justifyContent: 'center'
         },
-        'i:hover': {
+        '.ms-Button-flexContainer:hover': {
           backgroundColor: palette.skeColor.white,
           color: palette.skeColor.blackAlt + '!important'
+        },
+        '.ms-Button-flexContainer:hover i': {
+          color: palette.skeColor.blackAlt + '!important'
+        },
+        i: {
+          color: palette.skeColor.white + '!important'
         }
       }
     }

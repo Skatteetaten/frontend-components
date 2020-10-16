@@ -35,29 +35,17 @@ import Link from '@skatteetaten/frontend-components/Link';
       closeMenuAriaLabel="Lukk Language / Språk"
       title={'Language / Språk'}
     >
-      <TopStripeButton ariaLabel={'Norsk'} onClick={() => console.log('NB')}>
-        Norsk
-      </TopStripeButton>
-      <TopStripeButton
-        icon={'check'}
-        ariaLabel={'Nynorsk'}
-        onClick={() => console.log('NN')}
-      >
+      <TopStripeButton onClick={() => console.log('NB')}>Norsk</TopStripeButton>
+      <TopStripeButton icon={'check'} onClick={() => console.log('NN')}>
         Nynorsk
       </TopStripeButton>
-      <TopStripeButton ariaLabel={'Engelsk'} onClick={() => console.log('EN')}>
+      <TopStripeButton onClick={() => console.log('EN')}>
         Engelsk
       </TopStripeButton>
-      <TopStripeButton
-        ariaLabel={'Sørsamisk'}
-        onClick={() => console.log('SMA')}
-      >
+      <TopStripeButton onClick={() => console.log('SMA')}>
         Sørsamisk
       </TopStripeButton>
-      <TopStripeButton
-        ariaLabel={'Nordsamisk'}
-        onClick={() => console.log('SME')}
-      >
+      <TopStripeButton onClick={() => console.log('SME')}>
         Nordsamisk
       </TopStripeButton>
     </TopStripeMenu>
@@ -92,13 +80,21 @@ import Icon from '@skatteetaten/frontend-components/Icon';
       placement="before"
     />
 
-    <TopStripeMenu showChevron title={'Endre skriftstørrelse'}>
+    <TopStripeMenu
+      showChevron
+      closeMenuAriaLabel="Lukk endre skriftstørrelse"
+      title={'Endre skriftstørrelse'}
+    >
       <div style={{ fontSize: '24px', marginTop: '8px' }}>
         Hold Ctrl-tasten nede (Cmd-tasten på Mac). Trykk på + for å forstørre
         eller - for å forminske.
       </div>
     </TopStripeMenu>
-    <TopStripeMenu showChevron title={'Language / Språk'}>
+    <TopStripeMenu
+      showChevron
+      closeMenuAriaLabel="Lukk Language / Språk"
+      title={'Language / Språk'}
+    >
       <TopStripeButton onClick={() => console.log('NB')}>Norsk</TopStripeButton>
       <TopStripeButton icon={'check'} onClick={() => console.log('NN')}>
         Nynorsk
@@ -157,7 +153,11 @@ const size = UseScreen();
       placement="before"
     />
 
-    <TopStripeMenu showChevron title={'Endre skriftstørrelse'}>
+    <TopStripeMenu
+      showChevron
+      closeMenuAriaLabel="Lukk endre skriftstørrelse"
+      title={'Endre skriftstørrelse'}
+    >
       <div style={{ fontSize: '24px', marginTop: '8px' }}>
         Hold Ctrl-tasten nede (Cmd-tasten på Mac). Trykk på + for å forstørre
         eller - for å forminske.
@@ -165,33 +165,17 @@ const size = UseScreen();
     </TopStripeMenu>
     <TopStripeMenu showChevron title={'Language / Språk'}>
       <TopStripeButton onClick={() => console.log('NB')}>Norsk</TopStripeButton>
-      <TopStripeButton icon={'check'} onClick={() => console.log('NN')}>
-        Nynorsk
-      </TopStripeButton>
-      <TopStripeButton onClick={() => console.log('EN')}>
-        Engelsk
-      </TopStripeButton>
-      <TopStripeButton onClick={() => console.log('SMA')}>
-        Sørsamisk
-      </TopStripeButton>
-      <TopStripeButton onClick={() => console.log('SME')}>
-        Nordsamisk
-      </TopStripeButton>
+      <TopStripeButton icon={'check'}>Nynorsk</TopStripeButton>
+      <TopStripeButton>Engelsk</TopStripeButton>
+      <TopStripeButton>Sørsamisk</TopStripeButton>
+      <TopStripeButton>Nordsamisk</TopStripeButton>
     </TopStripeMenu>
 
     <TopStripeMenu showChevron icon="person" title={'Vegard Sandli'}>
-      <TopStripeButton onClick={() => console.log('NB')}>
-        Jenny Sandli
-      </TopStripeButton>
-      <TopStripeButton onClick={() => console.log('Eple')}>
-        987654321 Eplepress AS
-      </TopStripeButton>
-      <TopStripeButton onClick={() => console.log('Pære')}>
-        987654322 Pærepress AS
-      </TopStripeButton>
-      <TopStripeButton onClick={() => console.log('Drue')}>
-        987654323 Druepress AS
-      </TopStripeButton>
+      <TopStripeButton>Jenny Sandli</TopStripeButton>
+      <TopStripeButton>987654321 Eplepress AS</TopStripeButton>
+      <TopStripeButton>987654322 Pærepress AS</TopStripeButton>
+      <TopStripeButton>987654323 Druepress AS</TopStripeButton>
       <TopStripeButton onClick={() => console.log('Se alle')}>
         Se alle virksomheter
       </TopStripeButton>
@@ -222,18 +206,10 @@ import Link from '@skatteetaten/frontend-components/Link';
 <div>
   <TopStripe>
     <TopStripeMenu showChevron icon="person" title={'Vegard Sandli'}>
-      <TopStripeButton onClick={() => console.log('NB')}>
-        Jenny Sandli
-      </TopStripeButton>
-      <TopStripeButton onClick={() => console.log('Eple')}>
-        987654321 Eplepress AS
-      </TopStripeButton>
-      <TopStripeButton onClick={() => console.log('Pære')}>
-        987654322 Pærepress AS
-      </TopStripeButton>
-      <TopStripeButton onClick={() => console.log('Drue')}>
-        987654323 Druepress AS
-      </TopStripeButton>
+      <TopStripeButton>Jenny Sandli</TopStripeButton>
+      <TopStripeButton>987654321 Eplepress AS</TopStripeButton>
+      <TopStripeButton>987654322 Pærepress AS</TopStripeButton>
+      <TopStripeButton>987654323 Druepress AS</TopStripeButton>
       <TopStripeButton onClick={() => console.log('Se alle')}>
         Se alle virksomheter
       </TopStripeButton>
