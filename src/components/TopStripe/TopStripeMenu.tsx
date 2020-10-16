@@ -35,7 +35,7 @@ export const TopStripeMenu: React.FC<TopStripeMenuProps> = props => {
     title,
     index,
     showOnMobile = false,
-    closeMenuAriaLabel = '',
+    closeMenuAriaLabel = 'Lukk',
     closeOnClick = true
   } = props;
   const { open, setOpen, closeMenu } = React.useContext(TopStripeContext);
@@ -76,7 +76,7 @@ export const TopStripeMenu: React.FC<TopStripeMenuProps> = props => {
                 if (React.isValidElement<LinkProps>(child)) {
                   return (
                     <li
-                      role="menuitem"
+                      //role="menuitem"
                       onClick={(e: any) => {
                         child.props &&
                           child.props.onClick &&
@@ -91,6 +91,7 @@ export const TopStripeMenu: React.FC<TopStripeMenuProps> = props => {
                         className={styles.icon}
                       />
                       {React.cloneElement(child, {
+                        role: 'menuitem',
                         icon: undefined,
                         onClick: undefined
                       })}
