@@ -15,7 +15,7 @@ export interface TopStripeMenuProps extends LinkProps {
    */
   closeOnClick?: boolean;
   defaultSelected?: number;
-  showOnMobile: boolean;
+  showOnMobile?: boolean;
   onRender?: any;
   title: string;
   className?: string;

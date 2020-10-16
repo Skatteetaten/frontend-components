@@ -24,6 +24,7 @@ import Link from '@skatteetaten/frontend-components/Link';
       showChevron
       closeMenuAriaLabel="Lukk endre skriftstørrelse"
       title={'Endre skriftstørrelse'}
+      showOnMobile={false}
     >
       <div style={{ fontSize: '24px', marginTop: '8px' }}>
         Hold Ctrl-tasten nede (Cmd-tasten på Mac). Trykk på + for å forstørre
@@ -32,6 +33,7 @@ import Link from '@skatteetaten/frontend-components/Link';
     </TopStripeMenu>
     <TopStripeMenu
       showChevron
+      showOnMobile={false}
       closeMenuAriaLabel="Lukk Language / Språk"
       title={'Language / Språk'}
     >
@@ -82,6 +84,7 @@ import Icon from '@skatteetaten/frontend-components/Icon';
 
     <TopStripeMenu
       showChevron
+      showOnMobile={false}
       closeMenuAriaLabel="Lukk endre skriftstørrelse"
       title={'Endre skriftstørrelse'}
     >
@@ -92,6 +95,7 @@ import Icon from '@skatteetaten/frontend-components/Icon';
     </TopStripeMenu>
     <TopStripeMenu
       showChevron
+      showOnMobile={false}
       closeMenuAriaLabel="Lukk Language / Språk"
       title={'Language / Språk'}
     >
@@ -155,6 +159,7 @@ const size = UseScreen();
 
     <TopStripeMenu
       showChevron
+      showOnMobile={false}
       closeMenuAriaLabel="Lukk endre skriftstørrelse"
       title={'Endre skriftstørrelse'}
     >
@@ -163,7 +168,7 @@ const size = UseScreen();
         eller - for å forminske.
       </div>
     </TopStripeMenu>
-    <TopStripeMenu showChevron title={'Language / Språk'}>
+    <TopStripeMenu showOnMobile={false} showChevron title={'Language / Språk'}>
       <TopStripeButton onClick={() => console.log('NB')}>Norsk</TopStripeButton>
       <TopStripeButton icon={'check'}>Nynorsk</TopStripeButton>
       <TopStripeButton>Engelsk</TopStripeButton>
@@ -171,7 +176,12 @@ const size = UseScreen();
       <TopStripeButton>Nordsamisk</TopStripeButton>
     </TopStripeMenu>
 
-    <TopStripeMenu showChevron icon="person" title={'Vegard Sandli'}>
+    <TopStripeMenu
+      showOnMobile={true}
+      showChevron
+      icon="person"
+      title={'Vegard Sandli'}
+    >
       <TopStripeButton>Jenny Sandli</TopStripeButton>
       <TopStripeButton>987654321 Eplepress AS</TopStripeButton>
       <TopStripeButton>987654322 Pærepress AS</TopStripeButton>
@@ -193,7 +203,7 @@ const size = UseScreen();
 
 ### På mobil
 
-På mobil flyttes valgene for kontakt oss, skriftsstørrelse og språk til footeren.
+På mobil flyttes valgene for kontakt oss og skriftsstørrelse til footeren. Språkvalg inni TopBanner.
 
 ```js
 import TopStripe, {
@@ -220,7 +230,11 @@ import Link from '@skatteetaten/frontend-components/Link';
     external
     title={'Side for publikum'}
     homeText={'Tilbake til skatteetaten.no'}
-  />
+  >
+    <div style={{ minHeight: '80px', textAlign: 'right' }}>
+      Språkvalgene her (egen komponent finnes ennå ikke)
+    </div>
+  </TopBanner>
 </div>;
 ```
 
@@ -237,8 +251,9 @@ import Link from '@skatteetaten/frontend-components/Link';
   <h3>Overordnede lenker og funksjoner</h3>
   <p>
     Legg de overordede funksjonene «Kontakt oss», «Language/Språk» og «Endre
-    skriftstørrelse» i TopStripen. På mobil flytter du disse funksjonene ned til{' '}
-    <a href="#FooterContent">footeren</a>.
+    skriftstørrelse» i TopStripen. På mobil flytter du «Kontakt oss» og «Endre
+    skriftstørrelse» ned til <a href="#FooterContent">footeren</a>, mens
+    «Language/Språk» legges inn i <a href="#TopBanner">TopBanner</a>.
   </p>
   <h3>Endre bruker</h3>
   <p>
