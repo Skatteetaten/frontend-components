@@ -92,30 +92,21 @@ import Icon from '@skatteetaten/frontend-components/Icon';
       placement="before"
     />
 
-    <TopStripeMenu title={'Endre skriftstørrelse'}>
+    <TopStripeMenu showChevron title={'Endre skriftstørrelse'}>
       <div style={{ fontSize: '24px', marginTop: '8px' }}>
         Hold Ctrl-tasten nede (Cmd-tasten på Mac). Trykk på + for å forstørre
         eller - for å forminske.
       </div>
     </TopStripeMenu>
-    <TopStripeMenu title={'Language / Språk'}>
-      <TopStripeButton ariaLabel={'Norsk'} onClick={() => console.log('NB')}>
-        Norsk
-      </TopStripeButton>
-      <TopStripeButton
-        icon={'check'}
-        ariaLabel={'Nynorsk'}
-        onClick={() => console.log('NN')}
-      >
+    <TopStripeMenu showChevron title={'Language / Språk'}>
+      <TopStripeButton onClick={() => console.log('NB')}>Norsk</TopStripeButton>
+      <TopStripeButton icon={'check'} onClick={() => console.log('NN')}>
         Nynorsk
       </TopStripeButton>
-      <TopStripeButton ariaLabel={'Engelsk'} onClick={() => console.log('EN')}>
+      <TopStripeButton onClick={() => console.log('EN')}>
         Engelsk
       </TopStripeButton>
-      <TopStripeButton
-        ariaLabel={'Sørsamisk'}
-        onClick={() => console.log('SMA')}
-      >
+      <TopStripeButton onClick={() => console.log('SMA')}>
         Sørsamisk
       </TopStripeButton>
       <TopStripeButton
@@ -166,36 +157,24 @@ const size = UseScreen();
       placement="before"
     />
 
-    <TopStripeMenu title={'Endre skriftstørrelse'}>
+    <TopStripeMenu showChevron title={'Endre skriftstørrelse'}>
       <div style={{ fontSize: '24px', marginTop: '8px' }}>
         Hold Ctrl-tasten nede (Cmd-tasten på Mac). Trykk på + for å forstørre
         eller - for å forminske.
       </div>
     </TopStripeMenu>
-    <TopStripeMenu title={'Language / Språk'}>
-      <TopStripeButton ariaLabel={'Norsk'} onClick={() => console.log('NB')}>
-        Norsk
-      </TopStripeButton>
-      <TopStripeButton
-        icon={'check'}
-        ariaLabel={'Nynorsk'}
-        onClick={() => console.log('NN')}
-      >
+    <TopStripeMenu showChevron title={'Language / Språk'}>
+      <TopStripeButton onClick={() => console.log('NB')}>Norsk</TopStripeButton>
+      <TopStripeButton icon={'check'} onClick={() => console.log('NN')}>
         Nynorsk
       </TopStripeButton>
-      <TopStripeButton ariaLabel={'Engelsk'} onClick={() => console.log('EN')}>
+      <TopStripeButton onClick={() => console.log('EN')}>
         Engelsk
       </TopStripeButton>
-      <TopStripeButton
-        ariaLabel={'Sørsamisk'}
-        onClick={() => console.log('SMA')}
-      >
+      <TopStripeButton onClick={() => console.log('SMA')}>
         Sørsamisk
       </TopStripeButton>
-      <TopStripeButton
-        ariaLabel={'Nordsamisk'}
-        onClick={() => console.log('SME')}
-      >
+      <TopStripeButton onClick={() => console.log('SME')}>
         Nordsamisk
       </TopStripeButton>
     </TopStripeMenu>
