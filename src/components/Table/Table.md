@@ -334,7 +334,7 @@ const expandableContent = (data, close, rowIndex) => (
 />;
 ```
 
-Hele rader kan gjøres klikkbare med _openEditableOnRowClick_-attributtet
+Hele rader kan gjøres klikkbare med _openEditableOnRowClick_-attributtet, og tabeller kan gjøres kompakte med _compactTable_-atributtet.
 
 ```js
 import Table from '@skatteetaten/frontend-components/Table';
@@ -481,6 +481,7 @@ const data = [
   editableRows
   columns={columns}
   openEditableOnRowClick
+  compactTable={true}
 />;
 ```
 

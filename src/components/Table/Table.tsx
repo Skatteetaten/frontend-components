@@ -69,6 +69,8 @@ interface TableProps<P> extends React.HTMLAttributes<HTMLDivElement> {
   language?: Language;
   /** Vis skillelinjer mellom rader*/
   showRowSeparators?: boolean;
+  /** Reduserer tekst og høyre på rader for en mer kompakt tabell */
+  compactTable?: boolean;
 }
 
 export const setScrollBarState = (
@@ -166,7 +168,8 @@ const Table = <P extends object>(props: TableProps<P>) => {
     id,
     language,
     openEditableOnRowClick,
-    showRowSeparators = true
+    showRowSeparators = true,
+    compactTable = false
   } = props;
   const genratedId = useId(id);
   const mainId = id ? id : 'table-' + genratedId;
@@ -259,6 +262,7 @@ const Table = <P extends object>(props: TableProps<P>) => {
           openExpandableRowIndex={openExpandableRowIndex}
           tableId={mainId}
           showRowSeparators={showRowSeparators}
+          compactTable={compactTable}
         />
       );
     });

@@ -1,11 +1,10 @@
 import { mergeStyles } from '@uifabric/merge-styles';
 import { getTheme } from '@uifabric/styling';
-
-import { FontWeights } from '..';
+import { FontWeights, FontSizes } from '..';
 import { PaletteProps } from '..';
 
 export const getClassNames = props => {
-  const { fullWidth } = props;
+  const { fullWidth, compactTable } = props;
   const palette = getTheme().palette as PaletteProps;
 
   return mergeStyles([
@@ -25,7 +24,8 @@ export const getClassNames = props => {
             },
             'thead th': {
               borderBottom: `2px solid ${palette.skeColor.blackAlt}`,
-              padding: 12
+              padding: 12,
+              fontSize: compactTable ? FontSizes.small : 'inherit'
             },
             tr: {
               height: '100%',
@@ -56,8 +56,8 @@ export const getClassNames = props => {
               alignItems: 'center',
               boxSizing: 'border-box',
               display: 'flex',
-              fontSize: 'inherit',
-              height: '100%',
+              fontSize: compactTable ? FontSizes.small : 'inherit',
+              height: compactTable ? '28px' : '100%',
               padding: '8px 12px',
               textAlign: 'inherit',
               verticalAlign: 'middle',
