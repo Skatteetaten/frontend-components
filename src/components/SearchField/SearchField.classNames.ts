@@ -23,7 +23,6 @@ export const getClassNames = (props: SearchFieldProps) => {
       border: `1px solid ${palette.skeColor.black}`
     },
     searchListDropdown: {
-      width: '100% - 2px',
       top: '-1px',
       borderTop: 0,
       position: 'relative',
@@ -33,7 +32,8 @@ export const getClassNames = (props: SearchFieldProps) => {
           position: 'absolute',
           left: 0,
           top: '100%',
-          width: '100%'
+          width: '99.5%',
+          zIndex: 10
         },
         li: {
           background: palette.skeColor.white,
