@@ -50,8 +50,8 @@ export const getClassNames = () => {
     },
     chevronIcon: {
       position: 'absolute',
-      color: 'red',
-      padding: '3px 3px'
+      fontSize: '22px',
+      padding: '2px 2px'
     },
     topStripeContainer: {
       margin: 0,
@@ -63,7 +63,7 @@ export const getClassNames = () => {
       backgroundColor: palette.skeColor.blackAlt,
       color: palette.skeColor.white,
       fontSize: FontSizes.small,
-      height: 30,
+      minHeight: '40px',
       fontWeight: FontWeights.regular,
       padding: '0 8px',
       selectors: {
