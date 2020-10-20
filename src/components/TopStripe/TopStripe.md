@@ -36,19 +36,11 @@ import Link from '@skatteetaten/frontend-components/Link';
       closeMenuAriaLabel="Lukk Language / Språk"
       title={'Language / Språk'}
     >
-      <TopStripeButton onClick={() => console.log('NB')}>Norsk</TopStripeButton>
-      <TopStripeButton current icon={'check'} onClick={() => console.log('NN')}>
-        Nynorsk
-      </TopStripeButton>
-      <TopStripeButton onClick={() => console.log('EN')}>
-        Engelsk
-      </TopStripeButton>
-      <TopStripeButton onClick={() => console.log('SMA')}>
-        Sørsamisk
-      </TopStripeButton>
-      <TopStripeButton onClick={() => console.log('SME')}>
-        Nordsamisk
-      </TopStripeButton>
+      <TopStripeButton>Norsk</TopStripeButton>
+      <TopStripeButton icon={'check'}>Nynorsk</TopStripeButton>
+      <TopStripeButton>Engelsk</TopStripeButton>
+      <TopStripeButton>Sørsamisk</TopStripeButton>
+      <TopStripeButton>Nordsamisk</TopStripeButton>
     </TopStripeMenu>
     <Link path={'#link'} text={'Logg inn'} placement="before" />
   </TopStripe>
@@ -96,22 +88,11 @@ import Icon from '@skatteetaten/frontend-components/Icon';
       closeMenuAriaLabel="Lukk Language / Språk"
       title={'Language / Språk'}
     >
-      <TopStripeButton onClick={() => console.log('NB')}>Norsk</TopStripeButton>
-      <TopStripeButton icon={'check'} onClick={() => console.log('NN')}>
-        Nynorsk
-      </TopStripeButton>
-      <TopStripeButton onClick={() => console.log('EN')}>
-        Engelsk
-      </TopStripeButton>
-      <TopStripeButton onClick={() => console.log('SMA')}>
-        Sørsamisk
-      </TopStripeButton>
-      <TopStripeButton
-        ariaLabel={'Nordsamisk'}
-        onClick={() => console.log('SME')}
-      >
-        Nordsamisk
-      </TopStripeButton>
+      <TopStripeButton>Norsk</TopStripeButton>
+      <TopStripeButton icon={'check'}>Nynorsk</TopStripeButton>
+      <TopStripeButton>Engelsk</TopStripeButton>
+      <TopStripeButton>Sørsamisk</TopStripeButton>
+      <TopStripeButton ariaLabel={'Nordsamisk'}>Nordsamisk</TopStripeButton>
     </TopStripeMenu>
 
     <span>
@@ -119,7 +100,7 @@ import Icon from '@skatteetaten/frontend-components/Icon';
         iconName="person"
         style={{ fontSize: '20px', verticalAlign: 'sub' }}
       />
-      Vegard Sandli
+      Ola Normann
     </span>
 
     <Link path={'#topstripe'} text={'Logg ut'} placement="before" />
@@ -169,15 +150,15 @@ const size = UseScreen();
       </div>
     </TopStripeMenu>
     <TopStripeMenu showOnMobile={false} title={'Language / Språk'}>
-      <TopStripeButton onClick={() => console.log('NB')}>Norsk</TopStripeButton>
+      <TopStripeButton>Norsk</TopStripeButton>
       <TopStripeButton icon={'check'}>Nynorsk</TopStripeButton>
       <TopStripeButton>Engelsk</TopStripeButton>
       <TopStripeButton>Sørsamisk</TopStripeButton>
       <TopStripeButton>Nordsamisk</TopStripeButton>
     </TopStripeMenu>
 
-    <TopStripeMenu showOnMobile={true} icon="person" title={'Vegard Sandli'}>
-      <TopStripeButton>Jenny Sandli</TopStripeButton>
+    <TopStripeMenu showOnMobile={true} icon="person" title={'Hamdi Normann'}>
+      <TopStripeButton>Kari Normann</TopStripeButton>
       <TopStripeButton>987654321 Eplepress AS</TopStripeButton>
       <TopStripeButton>987654322 Pærepress AS</TopStripeButton>
       <TopStripeButton>987654323 Druepress AS</TopStripeButton>
@@ -210,7 +191,7 @@ import Link from '@skatteetaten/frontend-components/Link';
 
 <div>
   <TopStripe>
-    <TopStripeMenu icon="person" title={'Vegard Sandli'}>
+    <TopStripeMenu icon="person" title={'Kari Normann'}>
       <TopStripeButton>Jenny Sandli</TopStripeButton>
       <TopStripeButton>987654321 Eplepress AS</TopStripeButton>
       <TopStripeButton>987654322 Pærepress AS</TopStripeButton>
