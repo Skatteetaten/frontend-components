@@ -7,7 +7,6 @@ import { TopStripeContext } from './TopStripe';
 import { TopStripeButton } from './TopStripeButton';
 import { UseScreen } from '../utils/ScreenPlugin';
 import Icon from '../Icon/Icon';
-import { useHotkeys } from '../utils/useHotkeys';
 
 export interface TopStripeMenuProps extends LinkProps {
   /**
