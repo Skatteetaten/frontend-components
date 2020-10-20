@@ -21,10 +21,10 @@ import Link from '@skatteetaten/frontend-components/Link';
     />
 
     <TopStripeMenu
-      showChevron
       closeMenuAriaLabel="Lukk endre skriftstørrelse"
       title={'Endre skriftstørrelse'}
       showOnMobile={false}
+      contentIsMenu={false}
     >
       <div style={{ fontSize: '24px', marginTop: '8px' }}>
         Hold Ctrl-tasten nede (Cmd-tasten på Mac). Trykk på + for å forstørre
@@ -32,13 +32,12 @@ import Link from '@skatteetaten/frontend-components/Link';
       </div>
     </TopStripeMenu>
     <TopStripeMenu
-      showChevron
       showOnMobile={false}
       closeMenuAriaLabel="Lukk Language / Språk"
       title={'Language / Språk'}
     >
       <TopStripeButton onClick={() => console.log('NB')}>Norsk</TopStripeButton>
-      <TopStripeButton icon={'check'} onClick={() => console.log('NN')}>
+      <TopStripeButton current icon={'check'} onClick={() => console.log('NN')}>
         Nynorsk
       </TopStripeButton>
       <TopStripeButton onClick={() => console.log('EN')}>
@@ -83,7 +82,6 @@ import Icon from '@skatteetaten/frontend-components/Icon';
     />
 
     <TopStripeMenu
-      showChevron
       showOnMobile={false}
       closeMenuAriaLabel="Lukk endre skriftstørrelse"
       title={'Endre skriftstørrelse'}
@@ -94,7 +92,6 @@ import Icon from '@skatteetaten/frontend-components/Icon';
       </div>
     </TopStripeMenu>
     <TopStripeMenu
-      showChevron
       showOnMobile={false}
       closeMenuAriaLabel="Lukk Language / Språk"
       title={'Language / Språk'}
@@ -118,7 +115,10 @@ import Icon from '@skatteetaten/frontend-components/Icon';
     </TopStripeMenu>
 
     <span>
-      <Icon iconName="person" />
+      <Icon
+        iconName="person"
+        style={{ fontSize: '20px', verticalAlign: 'sub' }}
+      />
       Vegard Sandli
     </span>
 
@@ -158,7 +158,7 @@ const size = UseScreen();
     />
 
     <TopStripeMenu
-      showChevron
+      isMenu={false}
       showOnMobile={false}
       closeMenuAriaLabel="Lukk endre skriftstørrelse"
       title={'Endre skriftstørrelse'}
@@ -168,7 +168,7 @@ const size = UseScreen();
         eller - for å forminske.
       </div>
     </TopStripeMenu>
-    <TopStripeMenu showOnMobile={false} showChevron title={'Language / Språk'}>
+    <TopStripeMenu showOnMobile={false} title={'Language / Språk'}>
       <TopStripeButton onClick={() => console.log('NB')}>Norsk</TopStripeButton>
       <TopStripeButton icon={'check'}>Nynorsk</TopStripeButton>
       <TopStripeButton>Engelsk</TopStripeButton>
@@ -176,12 +176,7 @@ const size = UseScreen();
       <TopStripeButton>Nordsamisk</TopStripeButton>
     </TopStripeMenu>
 
-    <TopStripeMenu
-      showOnMobile={true}
-      showChevron
-      icon="person"
-      title={'Vegard Sandli'}
-    >
+    <TopStripeMenu showOnMobile={true} icon="person" title={'Vegard Sandli'}>
       <TopStripeButton>Jenny Sandli</TopStripeButton>
       <TopStripeButton>987654321 Eplepress AS</TopStripeButton>
       <TopStripeButton>987654322 Pærepress AS</TopStripeButton>
@@ -203,7 +198,7 @@ const size = UseScreen();
 
 ### På mobil
 
-På mobil flyttes valgene for kontakt oss og skriftsstørrelse til footeren. Språkvalg inni TopBanner.
+På mobil flyttes valgene for kontakt oss og skriftsstørrelse til footeren. Språkvalg legges inni TopBanner.
 
 ```js
 import TopStripe, {
@@ -215,7 +210,7 @@ import Link from '@skatteetaten/frontend-components/Link';
 
 <div>
   <TopStripe>
-    <TopStripeMenu showChevron icon="person" title={'Vegard Sandli'}>
+    <TopStripeMenu icon="person" title={'Vegard Sandli'}>
       <TopStripeButton>Jenny Sandli</TopStripeButton>
       <TopStripeButton>987654321 Eplepress AS</TopStripeButton>
       <TopStripeButton>987654322 Pærepress AS</TopStripeButton>
