@@ -10,7 +10,7 @@ def config = [
     npmPublishFolder	     : 'lib',
     nodeVersion            : '12',
     versionStrategy        : [[ branch : 'master', versionHint:'3' ]],
-    createBuildEnvs        : { props -> "NODE_OPTIONS=--max_old_space_size=4096 REACT_APP_BUILD_VERSION=${props.version}" },
+    createBuildEnvs        : { props -> "NODE_OPTIONS=--max_old_space_size=3800 REACT_APP_BUILD_VERSION=${props.version}" },
     github                 : [
       enabled              : true,
       push                 : env.BRANCH_NAME == "master",
