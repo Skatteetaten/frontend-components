@@ -11,6 +11,7 @@ import SearchField from '@skatteetaten/frontend-components/SearchField';
     ariaLabel="Søk"
     keyboardShortcut={true}
     onSearchIcon={() => alert('Du trykket på søkeikonet')}
+    searchIconTitle="Start søk"
   />
   <br />
   <SearchField
