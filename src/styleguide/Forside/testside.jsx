@@ -8,9 +8,7 @@ import LinkGroup from '@skatteetaten/frontend-components/LinkGroup';
 import NavigationTile from '@skatteetaten/frontend-components/NavigationTile';
 import NavigationContent from '@skatteetaten/frontend-components/NavigationTile/NavigationContent';
 import ScrollToTopButton from '@skatteetaten/frontend-components/ScrollToTopButton';
-import FooterContent, {
-  FooterLogo
-} from '@skatteetaten/frontend-components/FooterContent';
+import FooterContent from '@skatteetaten/frontend-components/FooterContent';
 import Pagination from '@skatteetaten/frontend-components/Pagination';
 import TopStripe, {
   TopStripeMenu,
@@ -42,8 +40,6 @@ import StepList from '@skatteetaten/frontend-components/StepList';
 import Tabs from '@skatteetaten/frontend-components/Tabs';
 import TabItem from '@skatteetaten/frontend-components/Tabs/TabItem';
 import Chip from '@skatteetaten/frontend-components/Chip';
-import Callout from '@skatteetaten/frontend-components/Callout';
-import Dialog from '@skatteetaten/frontend-components/Dialog';
 import MessageBar from '@skatteetaten/frontend-components/MessageBar';
 import LabelWithCallout from '@skatteetaten/frontend-components/LabelWithCallout';
 import ErrorMessage from '@skatteetaten/frontend-components/ErrorMessage';
@@ -54,9 +50,7 @@ import Table from '@skatteetaten/frontend-components/Table';
 
 function Testside(props) {
   const pageSize = 8;
-  const [displayedData, setDisplayedData] = React.useState(
-    [1, 2, 3].splice(0, pageSize)
-  );
+  const [setDisplayedData] = React.useState([1, 2, 3].splice(0, pageSize));
   const [currentPage, setCurrentPage] = React.useState(1);
   const initialState = {
     options: [
@@ -875,7 +869,7 @@ function Testside(props) {
           bare litt ekstra tekst for å få litt innhold, men normalt vil en ønske
           å skrive så konsentrert som mulig. Mange brukere leser bare de første
           ordene i en tekst, eller hopper ganske enkelt over den. Dette er en{' '}
-          <a href="#testhg">lenke</a>.
+          <a href="#testside">lenke</a>.
         </p>
 
         <p>Hvordan lage god interaksjonsdesign:</p>
@@ -1103,7 +1097,7 @@ function Testside(props) {
 
           <p>
             Du må betale restskatten selv om du har{' '}
-            <a href="#">
+            <a href="#testside">
               endret etter fristen for skattemeldingen eller klaget
             </a>
             . Hvis du ikke betaler restskatten i tide, løper det
@@ -1143,7 +1137,7 @@ function Testside(props) {
 
           <p>
             Du må betale restskatten selv om du har{' '}
-            <a href="#">
+            <a href="#testside">
               endret etter fristen for skattemeldingen eller klaget
             </a>
             . Hvis du ikke betaler restskatten i tide, løper det
