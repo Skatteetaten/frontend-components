@@ -116,6 +116,7 @@ exports[`Table komponent matcher snapshot 1`] = `
               },
             ]
           }
+          compactTable={false}
           data={
             Object {
               "Avkastning": "1000",
@@ -202,6 +203,7 @@ exports[`Table komponent matcher snapshot 1`] = `
               },
             ]
           }
+          compactTable={false}
           data={
             Object {
               "Avkastning": "500",
@@ -287,6 +289,7 @@ exports[`Table komponent matcher snapshot 1`] = `
               },
             ]
           }
+          compactTable={false}
           data={
             Object {
               "Avkastning": "2000",
@@ -372,6 +375,7 @@ exports[`Table komponent matcher snapshot 1`] = `
               },
             ]
           }
+          compactTable={false}
           data={
             Object {
               "Avkastning": "1055",

@@ -12,7 +12,7 @@ export interface IconButtonProps extends ButtonProps {
   /** Beskrivelse av hva knappen gjør (f.eks. til skjermlesere) */
   title?: string;
   /** Gjør knappen til hovedknapp med fylt farge */
-  buttonSize?: 'default' | 'small' | 'medium' | 'large' | 'xLarge';
+  buttonSize?: 'default' | 'xSmall' | 'small' | 'medium' | 'large' | 'xLarge';
   /**
    * Fjerne Prop
    * @ignore
