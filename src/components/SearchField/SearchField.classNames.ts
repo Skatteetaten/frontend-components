@@ -19,18 +19,24 @@ export const getClassNames = (props: SearchFieldProps) => {
       listStyleType: 'none !important',
       padding: '0px',
       marginTop: '0px',
-      marginBottom: '11px'
+      marginBottom: '11px',
+      border: `1px solid ${palette.skeColor.black}`
     },
     searchListDropdown: {
-      width: '100% - 2px',
-      top: '-13px',
-      border: `1px solid ${palette.skeColor.black}`,
+      top: '-1px',
       borderTop: 0,
+      position: 'relative',
       selectors: {
         ul: {
-          margin: 0
+          margin: 0,
+          position: 'absolute',
+          left: 0,
+          top: '100%',
+          width: '99.5%',
+          zIndex: 10
         },
         li: {
+          background: palette.skeColor.white,
           cursor: 'pointer',
           color: palette.skeColor.blackAlt,
           padding: '3px 9px 3px 9px',
