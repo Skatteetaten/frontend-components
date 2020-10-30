@@ -15,14 +15,19 @@ export interface TopStripeMenuProps extends LinkProps {
    */
   closeOnClick?: boolean;
   defaultSelected?: number;
-  showOnMobile: boolean;
+  showOnMobile?: boolean;
   onRender?: any;
   title: string;
   className?: string;
   index?: number;
+  /** Name of icon to display */
   icon?: string;
+  /** Ability to show/hide chevron icon */
   showChevron?: boolean;
+  /**  Aria-label for close button in sub menu */
   closeMenuAriaLabel?: string;
+  /** Spesify if content is menu or not (changes wai-aria behaviour)  */
+  contentIsMenu?: boolean;
 }
 
 export const TopStripeMenu: React.FC<TopStripeMenuProps> = props => {
@@ -35,8 +40,10 @@ export const TopStripeMenu: React.FC<TopStripeMenuProps> = props => {
     title,
     index,
     showOnMobile = false,
-    closeMenuAriaLabel = '',
-    closeOnClick = true
+    closeMenuAriaLabel = 'Lukk',
+    closeOnClick = true,
+    showChevron = true,
+    contentIsMenu = true
   } = props;
   const { open, setOpen, closeMenu } = React.useContext(TopStripeContext);
 
@@ -50,19 +57,18 @@ export const TopStripeMenu: React.FC<TopStripeMenuProps> = props => {
       {props.icon ? <Icon className={styles.menuIcon} iconName={icon} /> : ''}
 
       <TopStripeButton
-        aria-haspopup={true}
-        role="menu"
+        aria-haspopup={contentIsMenu}
         aria-expanded={open === index}
         className={classnames(styles.plainButton, className)}
         onClick={() => setOpen(index)}
         showOnMobile={showOnMobile}
       >
         {title}
-        {props.showChevron ? (
+        {showChevron ? (
           <Icon
             className={styles.chevronIcon}
             aria-hidden
-            iconName={'ChevronDown'}
+            iconName={'MenuDown'}
           />
         ) : (
           ''
@@ -76,7 +82,6 @@ export const TopStripeMenu: React.FC<TopStripeMenuProps> = props => {
                 if (React.isValidElement<LinkProps>(child)) {
                   return (
                     <li
-                      role="menuitem"
                       onClick={(e: any) => {
                         child.props &&
                           child.props.onClick &&
@@ -91,6 +96,8 @@ export const TopStripeMenu: React.FC<TopStripeMenuProps> = props => {
                         className={styles.icon}
                       />
                       {React.cloneElement(child, {
+                        role: 'menuitem',
+                        'aria-current': child.props.icon ? 'true' : undefined,
                         icon: undefined,
                         onClick: undefined
                       })}
