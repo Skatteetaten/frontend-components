@@ -19,6 +19,7 @@ exports[`SearchField komponent matcher snapshot 1`] = `
         className="ms-SearchBox-icon icon-59"
         data-icon-name="Search"
         onClick={[Function]}
+        title=""
       >
         
       </i>
