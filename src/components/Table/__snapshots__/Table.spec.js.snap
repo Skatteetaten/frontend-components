@@ -25,6 +25,7 @@ exports[`Table komponent matcher snapshot 1`] = `
       },
     ]
   }
+  compactTable={false}
   data={
     Array [
       Object {
