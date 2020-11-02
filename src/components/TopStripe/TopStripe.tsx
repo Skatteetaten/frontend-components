@@ -72,7 +72,6 @@ const TopStripe: React.FC<TopStripeProps> = props => {
         <ul
           ref={topRef}
           className={classnames(styles.topStripeContainer, className)}
-          role="menu"
           {...rest}
         >
           {React.Children.map(children, (child: any, index) => {
