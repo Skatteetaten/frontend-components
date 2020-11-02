@@ -75,7 +75,10 @@ export const TopStripeMenu: React.FC<TopStripeMenuProps> = props => {
         )}
       </TopStripeButton>
       {open === index && (
-        <ul className={styles.dropdownContainer}>
+        <ul
+          className={styles.dropdownContainer}
+          role={contentIsMenu ? 'menu' : undefined}
+        >
           {onRender
             ? onRender
             : React.Children.map(children, child => {
@@ -92,7 +95,7 @@ export const TopStripeMenu: React.FC<TopStripeMenuProps> = props => {
                     >
                       <Icon
                         iconName={child.props.icon || undefined}
-                        ariaLabel="Valgt"
+                        aria-hidden
                         className={styles.icon}
                       />
                       {React.cloneElement(child, {
