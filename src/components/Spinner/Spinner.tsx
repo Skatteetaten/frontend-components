@@ -12,7 +12,7 @@ export interface SpinnerProps extends ISpinnerProps {
 }
 
 /**
- * @visibleName Spinner (Innlasting)
+ * @visibleName Spinner (Spinner)
  */
 class Spinner extends React.PureComponent<SpinnerProps> {
   static Size = SpinnerSize;

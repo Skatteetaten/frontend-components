@@ -40,6 +40,10 @@ export interface LabelWithCalloutProps
   readOnly?: boolean;
   warning?: string | JSX.Element | undefined;
 }
+
+/**
+ * @visibleName LabelWithCallout (Merkelapp med utropsboks)
+ */
 const LabelWithCallout = (props: LabelWithCalloutProps) => {
   const {
     ariaLabel,
