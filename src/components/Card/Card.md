@@ -142,14 +142,12 @@ import TextField from '@skatteetaten/frontend-components/TextField';
     .
   </p>
 
-  <h3>Ulike farger på boksene, har ulike betydninger</h3>
+  <h3>Ulike farger på boksene har ulike betydninger. Vi bruker</h3>
   <ul>
-    <li>Grønn: Brukers til hjelp</li>
-    <li>Gul: Brukes til informasjon og opplysning.</li>
-    <li>
-      Hvit med grønn ramme: Brukes til konklusjoner og betalingsopplysninger
-    </li>
-    <li>Grå: Kan brukes som bakgrunnsfarge for interne løsninger</li>
+    <li>Grønn: For hjelp</li>
+    <li>Gul: For opplysninger og generelt innhold.</li>
+    <li>Hvit med grønn ramme: For konklusjoner og betalingsopplysninger</li>
+    <li>Grå: Som bakgrunnsfarge for interne løsninger</li>
   </ul>
   <p>
     Unngå å bruke forskjellig farge på ramme og bakgrunn, for eksempel grønn

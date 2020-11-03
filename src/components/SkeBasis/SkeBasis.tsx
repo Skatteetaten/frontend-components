@@ -23,7 +23,9 @@ interface SkeBasisProps extends IFabricProps {
   fonts?: object;
   icons?: Array<IIconSubset>;
 }
-
+/**
+ * @visibleName SkeBasis (Basiskomponent)
+ */
 class SkeBasis extends React.PureComponent<SkeBasisProps> {
   static PALETTE = palette;
   static FONTS = fonts;

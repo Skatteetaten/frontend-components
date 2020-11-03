@@ -20,7 +20,7 @@ interface AccordionProps extends React.HTMLAttributes<HTMLDivElement> {
 }
 
 /**
- * @visibleName Accordion (Ekspanderende panel)
+ * @visibleName Accordion (Trekkspill)
  */
 
 const Accordion: React.FC<AccordionProps> = props => {

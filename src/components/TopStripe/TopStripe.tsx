@@ -17,7 +17,9 @@ interface TopStripeProps {
 export const TopStripeContext = React.createContext<TopStripeProps>({
   open: -1
 });
-
+/**
+ * @visibleName TopStripe (Toppstripe)
+ */
 const TopStripe: React.FC<TopStripeProps> = props => {
   const notOpen = -1;
   const topRef = React.createRef<HTMLUListElement>();

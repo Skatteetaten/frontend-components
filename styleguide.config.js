@@ -134,7 +134,7 @@ module.exports = {
       name: 'Font og farge',
       sections: [
         {
-          name: 'Om skrifttypen',
+          name: 'Skrifttype',
           content: 'src/sections/design/typografi.md'
         },
         {

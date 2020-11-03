@@ -16,7 +16,9 @@ interface ScrollToTopButtonProps {
 interface ScrollToTopButtonState {
   skjult: boolean;
 }
-
+/**
+ * @visibleName ScrollToTopButton (Gå til toppen)
+ */
 export class ScrollToTopButton extends React.PureComponent<
   ScrollToTopButtonProps,
   ScrollToTopButtonState

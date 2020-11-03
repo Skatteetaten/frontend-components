@@ -29,7 +29,9 @@ export interface TopStripeMenuProps extends LinkProps {
   /** Spesify if content is menu or not (changes wai-aria behaviour)  */
   contentIsMenu?: boolean;
 }
-
+/**
+ * @visibleName TopStripeMenu (Toppstripe-meny)
+ */
 export const TopStripeMenu: React.FC<TopStripeMenuProps> = props => {
   const styles = getClassNames();
   const {

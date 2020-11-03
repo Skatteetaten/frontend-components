@@ -10,6 +10,9 @@ interface AccordionMenuProps extends React.HTMLAttributes<HTMLDivElement> {
   /** aria-label */
   ariaLabel?: string;
 }
+/**
+ * @visibleName AccordionMenu (Trekkspillmeny)
+ */
 const AccordionMenu: React.FC<AccordionMenuProps> = ({
   className,
   children,

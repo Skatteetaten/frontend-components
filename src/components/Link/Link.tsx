@@ -16,6 +16,10 @@ export interface LinkProps
   text?: string;
 }
 
+/**
+ * @visibleName Link (Lenke)
+ */
+
 const Link: React.FC<LinkProps> = props => {
   const {
     className,

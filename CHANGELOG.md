@@ -6,6 +6,7 @@
 - Pagination: className is optional as it should be
 - TopStripe: Accessibility and styling fixes.
 - Sketch file updated to v1.5.
+- Updated documentation
 
 ### **v.3.7.0 - 29.09.2020 **
 

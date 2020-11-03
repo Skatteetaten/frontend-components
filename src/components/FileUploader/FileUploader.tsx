@@ -25,7 +25,9 @@ export enum FileFormatTypes {
 export interface AttachmentMetadata extends File {
   id: string;
 }
-
+/**
+ * @visibleName FileUploader (Filopplaster)
+ */
 export interface FileUploaderProps {
   /** Akksepterte filformater */
   acceptedFileFormats?: Array<FileFormatTypes>;
