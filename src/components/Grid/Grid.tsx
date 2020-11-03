@@ -86,7 +86,10 @@ export class Grid extends React.Component<GridProps, {}> {
     const { children, className = '', tag = 'div' } = this.props;
     return React.createElement(
       tag,
-      { className: `${getClassNames(this.props).grid} ${className}` },
+      {
+        dir: 'ltr',
+        className: `${getClassNames(this.props).grid} ${className}`
+      },
       children
     );
   }

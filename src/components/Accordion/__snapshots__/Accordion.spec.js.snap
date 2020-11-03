@@ -10,6 +10,7 @@ exports[`Accordion komponent matcher snapshot 1`] = `
     >
       <div
         className="ske-Grid-47 "
+        dir="ltr"
       >
         <AccordionItem
           key=".0"

@@ -18,6 +18,8 @@ exports[`SearchField komponent matcher snapshot 1`] = `
         aria-hidden={true}
         className="ms-SearchBox-icon icon-59"
         data-icon-name="Search"
+        onClick={[Function]}
+        title=""
       >
         
       </i>

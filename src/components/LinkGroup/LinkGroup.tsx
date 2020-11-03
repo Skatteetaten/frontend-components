@@ -19,7 +19,9 @@ export interface LinkGroupProps {
   links?: Link[];
   className?: string;
 }
-
+/**
+ * @visibleName LinkGroup (Lenkegruppe)
+ */
 const LinkGroup: React.FC<LinkGroupProps> = props => {
   const styles = getClassNames();
   return (

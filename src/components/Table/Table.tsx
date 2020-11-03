@@ -13,62 +13,65 @@ export enum Language {
 }
 
 interface TableProps<P> extends React.HTMLAttributes<HTMLDivElement> {
-  /** Mulighet for å legge inn egen klasse for å overstyre stiling */
+  /** Possibility to enter your own class to override styling */
   className?: string;
-  /** Global attributt som må være unik for hele HTML dokumentet */
+  /** Global attribute which must be unique for the whole HTML document*/
   id?: string;
-  /** Innholdselementer i tabellen */
+  /** Content elements in the table */
   data: P[];
-  /**  Gjør det mulig å redigere rader i tabellen */
+  /**  Allows you ti edut rows in the table */
   editableRows?: boolean;
-  /** Plassering av ekspanderingsknapp i tabellen. Default er after */
+  /** Placement of expansion button in the table, the default is 'after' */
   expandIconPlacement?: 'after' | 'before';
-  /** Gjør det mulig å ekspandere en rad */
+  /** Allows you to expand a row */
   expandableRows?: boolean;
-  /** Om tabellen skal være i full bredde (100 %) */
+  /** Whether the table should be in full width (100%) or not */
   fullWidth?: boolean;
-  /**  Indeks til rad som skal åpnes i redigeringsmodus */
+  /**  Index for the row that is to be opened in edit mode */
   openEditableRowIndex?: number;
-  /** Åpne redigeringsmodus ved klikk hvor som helst på raden */
+  /** Open edit mode by clicking anywhere on the row */
   openEditableOnRowClick?: boolean;
-  /**  Blir kalt ved åpning eller lukking av rad, om man ønsker å styre 'openEditableRowIndex' state utenfra */
-  /**  Ved 'undefined' styrer komponenten dette selv  */
+  /** Called when opening or closinmg a row, if you want to control the 'openEditableRowIndex' state from the outside.
+   * In the case of 'undefined', the component controls this itself.
+   */
   setOpenEditableRowIndex?: (index?: number) => void;
-  /**  Innhold som skal vises når en rad er i editeringsmodus */
+  /**  Content to be displayed when a row is in edit mode */
   editableContent?: (
     data: P,
     onCloseRow: () => void,
     rowIndex: number
   ) => React.ReactNode;
-  /**  Innhold som skal vises når en rad er i ekspanderingsmodus */
+  /** Content to be displayed when a row is in expansion mode */
   expandableContent?: (
     data: P,
     onCloseRow: () => void,
     rowIndex: number
   ) => React.ReactNode;
-  /**  Konfigurasjon for kolonnenavn og rekkefølge */
+  /**  Configuration for column name and order*/
   columns?: {
-    /** Navnet på kolonnen */
+    /** Column name */
     name: string;
-    /** Nøkkelen i objektet */
+    /** Object key */
     fieldName: string;
-    /** Overstyre venstrejustering inni cellen: 'right' eller 'center'. */
+    /** Override the left alignment inside the cell: 'right' or 'center'. */
     alignment?: 'right' | 'center';
-    /** Bruker kan sortere på kolonnen alfabetisk og på tall (men ikke på tall som er strenger) */
+    /** User can sort the coumln alphabetically and by numbers (but not by numbers that are strings) */
     sortable?: boolean;
-    /** Ikke vis kolonnen på mobil (breakpoint på 640px) */
+    /** Do not show the column on mobile (breakpoint at 640px) */
     hideOnMobile?: boolean;
-    /** Overskriv sorteringsfunksjonen */
+    /** Override the sort function */
     sortingFunction?: (...args: any[]) => any;
-    /** Vis ikon for sortering kun ved hover på kolonne (vises alltid for mobil). Default true,
-     * sett false om ønsker at ikon for sortering alltid skal vises.
+    /** Show the sorting icon only at hover on column (it is always displayed for mobile) Default true,
+     * set false if you want the sorting icon to always be displayed
      */
     autohideSorting?: boolean;
   }[];
-  /** Språkvalg for hva skjermleser leser opp. Default er Norsk Bokmål */
+  /** Language selection for what the screen reader reads out. Default is Norwegian Bokmål */
   language?: Language;
-  /** Vis skillelinjer mellom rader*/
+  /** Show separators between rows */
   showRowSeparators?: boolean;
+  /** Reduce font size and height on rows for a more compact table */
+  compactTable?: boolean;
 }
 
 export const setScrollBarState = (
@@ -166,7 +169,8 @@ const Table = <P extends object>(props: TableProps<P>) => {
     id,
     language,
     openEditableOnRowClick,
-    showRowSeparators = true
+    showRowSeparators = true,
+    compactTable = false
   } = props;
   const genratedId = useId(id);
   const mainId = id ? id : 'table-' + genratedId;
@@ -259,6 +263,7 @@ const Table = <P extends object>(props: TableProps<P>) => {
           openExpandableRowIndex={openExpandableRowIndex}
           tableId={mainId}
           showRowSeparators={showRowSeparators}
+          compactTable={compactTable}
         />
       );
     });

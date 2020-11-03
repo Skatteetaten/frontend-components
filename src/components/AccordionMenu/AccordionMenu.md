@@ -191,11 +191,12 @@ const timeStampStyle = {
     kategorier med ulikt innhold, kan du bruke ekspanderende bokser i
     venstremenyen. Du kan vise et vilkårlig innhold i det ekspanderbare området.
   </p>
-  <p>
-    Komponenten har mye til felles med Accordion, men AccordionMenu er spesielt
-    stilet for å brukes til kategorivisning i saksbehandlingsløsninger.
-    Komponenten setter alltid av plass til ikoner, og tegner opp sirkel rundt
-    disse.
-  </p>
+  <p>Noen særegenskaper:</p>
+  <ul>
+    <li>Laget spesielt for kategorivisning i saksbehandlingsløsninger.</li>
+    <li>
+      Setter alltid av plass til ikoner, og tegner opp sirkel rundt disse.
+    </li>
+  </ul>
 </>
 ```

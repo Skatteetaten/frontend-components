@@ -11,7 +11,9 @@ interface ErrorMessageProps {
   /** Overstyring av stiler */
   className?: string;
 }
-
+/**
+ * @visibleName ErrorMessage (Feilmelding)
+ */
 const ErrorMessage: React.FC<ErrorMessageProps> = props => {
   const errorClassNames = getClassNames();
   const { ariaLabel, className } = props;
