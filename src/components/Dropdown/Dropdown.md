@@ -122,15 +122,20 @@ import Dropdown from '@skatteetaten/frontend-components/Dropdown';
   <p>
     Nedtrekkslister gjør det mulig for brukeren å velge ett eller flere valg fra
     en liste. De fungerer særlig godt når det er lite plass på skjermen og når
-    brukeren skal velge fra en liste med mindre enn 10 komponenter.
+    brukeren skal velge fra en liste med mindre enn 10 alternativer. Hvis det er
+    flere enn ti elementer i nedtrekkslisten bør du velge{' '}
+    <a href="#combobox"> nedtrekksliste med skriving (ComboBox)</a>. Hvis
+    brukeren bare skal huke av ett av alternativene og listen har færre enn 8
+    valg, kan du vurdere å bruke{' '}
+    <a href="#radiobuttongroup"> RadioButtonGroup (radioknapper)</a> i stedet.
   </p>
 
   <h3>Tips til hvordan du lager en god nedtrekksliste</h3>
 
   <ul>
     <li>
-      Det er lurt å sortere innholdet i nedtrekkslisten på en logisk måte, for
-      eksempel alfabetisk.
+      Sorter innholdet i nedtrekkslisten på en logisk måte, for eksempel
+      alfabetisk.
     </li>
     <li>
       Unngå dynamisk innhold. Brukeren kan bli forvirret dersom valgene i

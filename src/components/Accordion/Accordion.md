@@ -246,13 +246,19 @@ import AccordionItem from '@skatteetaten/frontend-components/Accordion/Accordion
 
 ```js noeditor beskrivelse
 <div>
-  <h3>Ekspanderende panel der brukeren kan velge å se innholdet</h3>
+  <h3>Panel som brukeren kan utvide</h3>
   <p>
-    For å gjøre det lettere for brukeren å orientere seg i mye informasjon på en
-    gang på nettsiden, kan vi plassere noe av innholdet i skjulte bokser. Et
-    slikt ekspanderende panel, gjør det mulig for brukeren å lese overskriften
-    og utvide hvis innholdet er aktuelt og la være hvis ikke. Denne komponenten
-    er også nyttig for å veilede brukeren gjennom en sekvens av trinnvise steg.
+    Vi kan plassere deler av et innhold i et ekspanderende panel. Brukeren kan
+    lese overskriften og utvide panelet hvis det er aktuelt og la være hvis
+    ikke. Et trekkspill gjør det lettere for brukeren å orientere seg i mye
+    informasjon.
   </p>
+  <p>Gode grunner til å bruke trekkspill:</p>
+  <ul>
+    <li>Når det er store variasjoner i målgruppens kunnskapsnivå.</li>
+    <li>Hvis det er mye veiledningstekst som de fleste ikke trenger.</li>
+    <li>Når du skal veilede brukeren gjennom en sekvens av trinnvise steg.</li>
+    <li>Dersom du vil vise eksempler.</li>
+  </ul>
 </div>
 ```

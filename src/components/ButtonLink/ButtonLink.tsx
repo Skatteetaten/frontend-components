@@ -12,6 +12,9 @@ export interface ButtonLinkProps
   openInNew?: boolean;
 }
 
+/**
+ * @visibleName ButtonLink (Knappelenke)
+ */
 const ButtonLink: React.FC<ButtonLinkProps> = props => {
   const { path, text, className, openInNew, ...htmlAttributes } = props;
   const styles = getClassNames();
