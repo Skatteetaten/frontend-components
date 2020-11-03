@@ -90,7 +90,7 @@ export const getClassNames = () => {
           backgroundColor: palette.skeColor.white
         },
         '@media (min-width: 900px)': {
-          height: '40px',
+          minHeight: '40px',
           fontSize: FontSizes.small
         }
       }
