@@ -57,11 +57,11 @@ module.exports = {
       ]
     },
     {
-      name: 'Mønstre',
+      name: 'Anbefalte mønstre',
       sections: [
         {
-          name: 'Bytt bruker',
-          content: 'src/sections/monstre/bytt-bruker.md'
+          name: 'Sidelayout',
+          content: 'src/sections/monstre/sidelayout.md'
         },
         {
           name: 'Komplekse tabeller',
