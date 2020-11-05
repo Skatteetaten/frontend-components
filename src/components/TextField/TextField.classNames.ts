@@ -113,6 +113,7 @@ export const getClassNames = (props: TextFieldProps) => {
       '& .ms-TextField-errorMessage': {
         position: 'relative',
         color: palette.skeColor.error,
+        fontWeight: '500',
         paddingLeft: 20
       },
       '& .ms-TextField-errorMessage::before': {
