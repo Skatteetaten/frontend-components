@@ -1,7 +1,6 @@
 import { mergeStyleSets } from '@uifabric/merge-styles';
 import { getTheme } from '@uifabric/styling';
 import { FontSizes, FontWeights, LineHeightSizes } from '../utils/fonts';
-import { isUndefined } from 'util';
 import { PaletteProps } from '..';
 
 export const getClassNames = props => {
@@ -96,7 +95,7 @@ export const getClassNames = props => {
           border: '2px solid' + palette.skeColor.error,
           position: 'absolute'
         },
-        '& .ms-Callout-main': !isUndefined(props.calloutFloating) &&
+        '& .ms-Callout-main': props.calloutFloating !== undefined &&
           !props.calloutFloating && {
             display: 'inline-block'
           }
