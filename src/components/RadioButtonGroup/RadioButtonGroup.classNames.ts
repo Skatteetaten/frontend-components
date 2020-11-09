@@ -34,7 +34,9 @@ export const getClassNames = props => {
           verticalAlign: 'middle'
         },
         '& .ms-ChoiceFieldGroup-flexContainer': {
-          display: horizontal ? 'flex' : 'inline-block'
+          display: horizontal ? 'flex' : 'inline-block',
+          padding: '0em 1em 0.75em 0.5em',
+          marginTop: '8px'
         },
         'span.ms-ChoiceFieldLabel': {
           fontSize: FontSizes.medium,
