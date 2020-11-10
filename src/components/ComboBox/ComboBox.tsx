@@ -8,7 +8,6 @@ import classnames from 'classnames';
 import { getClassNames, getOptionsClassNames } from './ComboBox.classNames';
 import LabelWithCallout, { calloutState } from '../LabelWithCallout';
 import { LabelWithCalloutProps } from '../LabelWithCallout/LabelWithCallout';
-import ErrorMessage from '../ErrorMessage';
 import { useId } from '@reach/auto-id';
 
 export interface ComboboxProps extends IComboBoxProps {
@@ -91,6 +90,7 @@ const Combobox: React.FC<ComboboxProps> = props => {
           id={inputId}
           ariaLabel={label}
           className={classnames(styles.main, className)}
+          errorMessage={errorMessage}
           calloutProps={{
             className: getOptionsClassNames(props)
           }}
@@ -98,8 +98,6 @@ const Combobox: React.FC<ComboboxProps> = props => {
           {children}
         </VirtualizedComboBox>
       )}
-
-      {errorMessage && <ErrorMessage>{errorMessage}</ErrorMessage>}
     </div>
   );
 };
