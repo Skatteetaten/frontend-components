@@ -5,8 +5,6 @@ exports[`FileUploader komponent matcher snapshot 1`] = `
   className="main-50"
 >
   <label
-    aria-label="Filopplasting"
-    htmlFor="fileupload"
     id="buttonLabel"
   >
     <div
@@ -34,8 +32,9 @@ exports[`FileUploader komponent matcher snapshot 1`] = `
     </div>
   </label>
   <input
+    aria-hidden={true}
     className="fileUploadInput-49"
-    id="fileupload"
+    id="fileupload-input"
     onChange={[Function]}
     tabIndex={-1}
     type="file"
