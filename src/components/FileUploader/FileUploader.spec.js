@@ -21,7 +21,6 @@ describe('FileUploader komponent', () => {
       ariaLabel: 'Filopplaster',
       uploadFile: jest.fn()
     });
-    expect(wrapper.find('label').props()['aria-label']).toEqual('Filopplaster');
     expect(
       wrapper
         .find('span')
@@ -36,7 +35,6 @@ describe('FileUploader komponent', () => {
       ariaLabel: 'Filopplaster',
       uploadFile: jest.fn()
     });
-    expect(wrapper.find('label').props()['aria-label']).toEqual('Filopplaster');
     expect(
       wrapper
         .find('div')
