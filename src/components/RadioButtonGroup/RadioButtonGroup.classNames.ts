@@ -34,9 +34,7 @@ export const getClassNames = props => {
           verticalAlign: 'middle'
         },
         '& .ms-ChoiceFieldGroup-flexContainer': {
-          display: horizontal ? 'flex' : 'inline-block',
-          padding: '0em 1em 0.75em 0.5em',
-          marginTop: '8px'
+          display: horizontal ? 'flex' : 'inline-block'
         },
         'span.ms-ChoiceFieldLabel': {
           fontSize: FontSizes.medium,
@@ -88,8 +86,10 @@ export const getClassNames = props => {
           fontWeight: FontWeights.regular
         },
         '.ms-ChoiceFieldGroup-flexContainer': errorMessage && {
-          padding: '0 7px 3px 7px',
-          border: '2px solid ' + palette.skeColor.error
+          //padding: '0 7px 3px 7px',
+          border: '2px solid ' + palette.skeColor.error,
+          padding: '0em 1em 0.75em 0.5em',
+          marginTop: '8px'
         },
         '.ms-ChoiceField-field::before': errorMessage && {
           content: '',
