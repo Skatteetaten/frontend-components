@@ -59,7 +59,7 @@ export interface FileUploaderProps {
   forsinkelse?: number;
   /** Hjelpetekst */
   help?: string | JSX.Element;
-  /** Id */
+  /** Id - should have a value so unique references to labels inside component can be made */
   id?: string;
   /** Tilleggsinformasjon */
   info?: string | JSX.Element;
@@ -159,7 +159,7 @@ const FileUploader: React.FC<FileUploaderProps> = props => {
     files,
     fileSizeLimit,
     help,
-    id,
+    id = 'fileupload',
     info,
     invalidCharacterRegexp,
     isLoading,
@@ -362,7 +362,8 @@ const FileUploader: React.FC<FileUploaderProps> = props => {
   return (
     <div className={classnames(styles.main, className)}>
       <LabelWithCallout
-        id={id}
+        id={id + '-label'}
+        inputId={id + '-input'}
         label={label}
         buttonAriaLabel={labelButtonAriaLabel}
         help={help}
@@ -370,7 +371,7 @@ const FileUploader: React.FC<FileUploaderProps> = props => {
         autoDismiss={labelWithCalloutAutoDismiss}
         {...labelCallout}
       />
-      <label htmlFor="fileupload" aria-label={ariaLabel} id="buttonLabel">
+      <label id="buttonLabel">
         <div
           className={styles.uploadArea}
           role="button"
@@ -405,11 +406,12 @@ const FileUploader: React.FC<FileUploaderProps> = props => {
       <input
         className={styles.fileUploadInput}
         type="file"
-        id="fileupload"
+        id={id + '-input'}
         ref={inputRef}
         multiple={multipleFiles}
         onChange={handleFileChange}
         tabIndex={-1}
+        aria-hidden={true}
       />
 
       {acceptedFileFormats && (

@@ -65,6 +65,7 @@ const styles = {
 
 <div style={styles.container}>
   <FileUploader
+    id={'fileupload2'}
     label={'Last opp bilde'}
     acceptedFileFormats={[FileFormatTypes.png, FileFormatTypes.jpg]}
     files={files}
