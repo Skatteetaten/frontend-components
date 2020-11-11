@@ -35,7 +35,7 @@ export interface FileUploaderProps {
   addFileString?: string | JSX.Element;
   /** Funksjon som kjøres etter opplasting */
   afterUpload?: () => void;
-  /** aria-label */
+  /** aria-label @deprecated */
   ariaLabel?: string;
   /** string for Apikall */
   axiosPath?: string;
@@ -149,7 +149,6 @@ const FileUploader: React.FC<FileUploaderProps> = props => {
     acceptedFileFormats,
     addFileString,
     afterUpload,
-    ariaLabel,
     axiosPath,
     className,
     deleteAllFiles,
