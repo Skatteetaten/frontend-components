@@ -91,6 +91,7 @@ const Combobox: React.FC<ComboboxProps> = props => {
           ariaLabel={label}
           className={classnames(styles.main, className)}
           errorMessage={errorMessage}
+          aria-invalid={errorMessage ? true : false}
           calloutProps={{
             className: getOptionsClassNames(props)
           }}
