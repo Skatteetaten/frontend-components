@@ -9,7 +9,6 @@ import Icon from '../Icon/Icon';
 import { getCalloutStyles, getClassNames } from './Dropdown.classNames';
 import LabelWithCallout, { calloutState } from '../LabelWithCallout';
 import { LabelWithCalloutProps } from '../LabelWithCallout/LabelWithCallout';
-import ErrorMessage from '../ErrorMessage';
 import { useId } from '@reach/auto-id';
 import { IStyleFunctionOrObject } from '@uifabric/utilities';
 import {
@@ -107,16 +106,14 @@ const Dropdown: React.FC<DropdownProps> = props => {
           className={classnames(styles.main, className)}
           styles={dropdownStyles}
           onRenderCaretDown={() => <Icon iconName={'ChevronDown'} />}
+          errorMessage={errorMessage}
         >
           {children}
         </FabricDropdown>
       )}
-
-      {errorMessage && <ErrorMessage>{errorMessage}</ErrorMessage>}
     </div>
   );
 };
-
 // @ts-ignore
 Dropdown.ItemType = DropdownMenuItemType;
 

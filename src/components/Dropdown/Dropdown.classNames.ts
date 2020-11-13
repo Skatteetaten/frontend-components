@@ -39,6 +39,7 @@ export const getClassNames = (props: DropdownProps) => {
     : palette.skeColor.blackAlt;
   const inset = 0;
   const radius = '0';
+  const errorIcon = "'" + MdIcons.icons.Error + "'";
 
   return mergeStyleSets({
     main: {
@@ -81,6 +82,12 @@ export const getClassNames = (props: DropdownProps) => {
           borderRadius: radius,
           outline: 'transparent',
           zIndex: 1
+        },
+        '& div[role=alert]::before': {
+          fontFamily: MdIcons.fontFace.fontFamily,
+          fontSize: 16,
+          content: errorIcon,
+          marginRight: '3px'
         }
       }
     },
@@ -90,39 +97,6 @@ export const getClassNames = (props: DropdownProps) => {
       fontWeight: 700,
       display: 'block',
       padding: 0
-    }
-  });
-};
-
-export const getErrorClassNames = (props: DropdownProps) => {
-  const { errorMessage } = props;
-  const palette = getTheme().palette as PaletteProps;
-  const color = errorMessage
-    ? palette.skeColor.error
-    : palette.skeColor.blackAlt;
-  const errorIcon = "'" + MdIcons.icons.Error + "'";
-
-  return mergeStyles(Animation.errorMessage, {
-    displayName: 'SkeDropdownError',
-    color,
-    fontSize: FontSizes.small,
-    fontWeight: '400',
-    display: 'flex',
-    alignItems: 'center',
-    paddingTop: 5,
-    paddingLeft: 20,
-    position: 'relative',
-    selectors: {
-      '&:before': {
-        fontFamily: MdIcons.fontFace.fontFamily,
-        fontSize: 18,
-        display: 'block',
-        content: errorIcon,
-        marginRight: 3,
-        position: 'absolute',
-        top: 5,
-        left: 0
-      }
     }
   });
 };
