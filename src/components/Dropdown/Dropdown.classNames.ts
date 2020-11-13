@@ -1,8 +1,7 @@
-import { mergeStyles, mergeStyleSets } from '@uifabric/merge-styles';
+import { mergeStyleSets } from '@uifabric/merge-styles';
 import { getTheme } from '@uifabric/styling';
 import { FontSizes } from '../utils/fonts';
 import { MdIcons } from '../utils/icons/';
-import { Animation } from '../utils/getAnimationStyles';
 import { PaletteProps } from '..';
 import { DropdownProps } from './Dropdown';
 import { IDropdownStyles } from 'office-ui-fabric-react';
