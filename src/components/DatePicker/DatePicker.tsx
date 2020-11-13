@@ -185,6 +185,7 @@ export const DatePicker: React.FC<DatePickerProps> = (
         {...defaultValues}
         id={inputId}
         ariaLabel={ariaLabel ? ariaLabel : label}
+        aria-invalid={errorMessage ? true : false}
         className={classnames(
           getClassNames({ errorMessage, readonlyMode: readOnly, ...rest }),
           className
