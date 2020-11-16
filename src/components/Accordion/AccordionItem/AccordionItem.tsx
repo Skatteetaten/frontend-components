@@ -7,29 +7,29 @@ import Heading from '../../utils/Heading';
 
 export interface AccordionItemProps {
   id?: string;
-  /** Valg for å kunne vise/skjule innhold til et steg med en "vise/skjule" knapp */
+  /** Option to enable show/hide the content of a step with a show/hide button */
   toggleContent?: boolean;
-  /** Teksten for vise/skjule knappen for et steg */
+  /** Text on the how/hide button for a step */
   toggleButtonText?: string;
-  /** Om et steg skal være default åpen */
+  /** If a step should be open by default */
   isOpen?: boolean;
-  /** Om skal vise spesifisert ikon istedet tall hvis Accordion er en processList  */
+  /** Option to display a specified icon instead of numbers if Accordion is a processList  */
   icon?: string;
-  /** Tekst som er ønskelig at leses opp for skjermleser om man spesifiserer et ikon */
+  /** Text on a specified Icon */
   ariaLabel?: string;
-  /** Om man ønsker en ytterligere aksjon når bruker åpner eller lukker. */
+  /** Provide further action when the user opens or closes the AccordionItem  */
   onChange?: (...args: any[]) => any;
-  /** Om man ønsker ytterligere aksjon når bruker åpner steget. Kalles KUN når steget åpnes, ikke når det lukkes. */
+  /** Provide further action when a user opens the step. Only callable when the step is being opened, not on close */
   onClick?: (...args: any[]) => any;
-  /**   Id som settes på vise/skjule knapp som peker på innholdspanelet som knappen styrer */
+  /** ID applied to the show/hide button that points to the cotent panel that the button controls */
   stepId?: string;
-  /** Tittel til innholdet */
+  /** Content title */
   title?: string;
-  /** Om man ønsker at toggleButtonText skal være en del av heading tag-hierarkiet. Verdi 1-6.*/
+  /** Adds toggleButtonText to the heading tag-hierarchy. Value 1-6.*/
   headingLevel?: number;
-  /** Subtittel som vises i accordionitem */
+  /** Subtitle shown in accordionitem */
   subtitle?: string | JSX.Element;
-  /** Overstyring av stiler */
+  /** Override styles */
   className?: string;
   stepNumber?: number;
   totalSteps?: number;
