@@ -430,11 +430,7 @@ const FileUploader: React.FC<FileUploaderProps> = props => {
         </span>
       )}
       {info && (
-        <div
-          className={styles.informationWrapper}
-          id="information"
-          aria-label={'informasjon'}
-        >
+        <div className={styles.informationWrapper} id="information">
           {info}
         </div>
       )}
