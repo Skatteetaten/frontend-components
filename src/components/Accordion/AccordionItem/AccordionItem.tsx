@@ -21,7 +21,7 @@ export interface AccordionItemProps {
   onChange?: (...args: any[]) => any;
   /** Om man ønsker ytterligere aksjon når bruker åpner steget. Kalles KUN når steget åpnes, ikke når det lukkes. */
   onClick?: (...args: any[]) => any;
-  /**   Id som settes i aria-control på vise/skjule knapp som peker på innholdspanelet som knappen styrer */
+  /**   Id som settes på vise/skjule knapp som peker på innholdspanelet som knappen styrer */
   stepId?: string;
   /** Tittel til innholdet */
   title?: string;
@@ -130,11 +130,7 @@ const AccordionItem: React.FC<AccordionItemProps> = props => {
   } = props;
 
   return (
-    <div
-      key={stepNumber}
-      className={classnames(styles.wrapperStep, className)}
-      aria-controls={stepId}
-    >
+    <div key={stepNumber} className={classnames(styles.wrapperStep, className)}>
       {processList && stepNumber !== totalSteps && (
         <span className={styles.stepLine} />
       )}
