@@ -485,6 +485,43 @@ const data = [
 />;
 ```
 
+Bruk caption-attributtet for å legge til caption
+
+```js
+import Table from '@skatteetaten/frontend-components/Table';
+import ActionButton from '@skatteetaten/frontend-components/ActionButton';
+import LabelWithCallout from '@skatteetaten/frontend-components/LabelWithCallout';
+
+const columns = [
+  {
+    name: 'Navn',
+    fieldName: 'navn'
+  },
+  {
+    name: 'Tilgang gitt',
+    fieldName: 'dato',
+    alignment: 'right'
+  }
+];
+
+const data = [
+  {
+    navn: 'Sven Lundquist',
+    dato: '23.10.19'
+  },
+  {
+    navn: 'Kai Mossige',
+    dato: '25.11.19'
+  }
+];
+
+const caption = (
+  <LabelWithCallout label={'Personer'} help={'Liste over personer'} />
+);
+
+<Table data={data} columns={columns} caption={caption} />;
+```
+
 ```js noeditor uu
 <>
   <h3>Tips</h3>
