@@ -74,6 +74,10 @@ module.exports = {
         {
           name: 'Feilhåndtering',
           content: 'src/sections/monstre/feil.md'
+        },
+        {
+          name: 'Formatering av felt',
+          content: 'src/sections/monstre/formatering.md'
         }
       ]
     },

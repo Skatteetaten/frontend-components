@@ -22,16 +22,14 @@ import DatePicker from '@skatteetaten/frontend-components/DatePicker';
   <p>
     En god tommelfingerregel er å prøve å fjerne muligheten for å gjøre feil
     eller kontroller for vanlige feil underveis og spør om bekreftelse hvis de
-    går videre. På den måten unngår brukeren ofte å komme i feilsituasjoner. Her
-    er det for eksempel kun mulig å skrive inn ni siffer i feltet for
-    organisasjonsnummer:
+    går videre. På den måten unngår brukeren ofte å komme i feilsituasjoner.
   </p>
 
   <h3>Se for deg en samtale med brukeren</h3>
   <p>
     Hvis en feilsituasjon oppstår, er det ofte nyttig å tenke på at du fører en
-    dialog med brukeren. Vi bør møte brukeren med forståelse, at vi vet om at
-    brukeren har et problem, og om mulig komme med et forslag til løsning. Se
+    dialog med brukeren. Vi bør møte brukeren med forståelse, vise at vi vet om
+    at brukeren har et problem, og om mulig komme med et forslag til løsning. Se
     situasjonen fra brukerens ståsted om tenk hva du ville ønsket at en
     (hyggelig) person i skranken på skattekontoret hadde sagt.
   </p>
@@ -171,17 +169,6 @@ import DatePicker from '@skatteetaten/frontend-components/DatePicker';
         value={''}
         errorMessage="Denne kan ikke være tom"
       />
-      <br />
-      <div style={{ width: '200px' }}>
-        <DatePicker
-          id={'my-date1'}
-          label={'Ønsket dato'}
-          help={
-            'Du kan skrive inn dato i feltet, eller velge en dato ved hjelp av datovelgeren, enten med mus eller bruk tastaturet'
-          }
-          isRequiredErrorMessage={'Dato må fylles ut'}
-        />
-      </div>
       <br />
       <Button buttonStyle="primary">Send inn</Button>
       <ErrorMessage>Skjemaet inneholder 2 feil som må rettes opp.</ErrorMessage>
