@@ -104,6 +104,10 @@ const iconGroup = {
   ],
   info: [
     {
+      name: 'Bell',
+      usage: 'Varsel'
+    },
+    {
       name: 'Blocked',
       usage: 'Sperret/ikke tilgjengelig'
     },
