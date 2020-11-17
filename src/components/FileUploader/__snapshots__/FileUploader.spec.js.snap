@@ -33,7 +33,7 @@ exports[`FileUploader komponent matcher snapshot 1`] = `
   </label>
   <input
     aria-hidden={true}
-    className="fileUploadInput-49"
+    className="fileUploadInput-48"
     id="fileupload-input"
     onChange={[Function]}
     tabIndex={-1}
