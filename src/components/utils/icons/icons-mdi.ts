@@ -138,7 +138,7 @@ export default {
     Phone: '\uf602',
     Forum: '\uf28c',
     Calculator: '\uf0ec',
-    Facebook: '\uf20d',
+    Facebook: '\uea0d',
     LinkedIn: '\uf33c',
     Twitter: '\uf544',
     Key: '\uf306',
