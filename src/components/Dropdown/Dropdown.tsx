@@ -91,6 +91,7 @@ const Dropdown: React.FC<DropdownProps> = props => {
           type="text"
           readOnly
           className={styles.readOnly}
+          aria-invalid={errorMessage ? true : false}
           value={
             props.options.filter(
               option =>
@@ -102,6 +103,7 @@ const Dropdown: React.FC<DropdownProps> = props => {
         <FabricDropdown
           {...rest}
           ariaLabel={label}
+          aria-invalid={errorMessage ? true : false}
           id={inputId}
           className={classnames(styles.main, className)}
           styles={dropdownStyles}
