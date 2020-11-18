@@ -1,3 +1,14 @@
+### **v.3.7.2 - 19.11.2020 **
+
+- DropDown and TextField: now includes aria-invalid attribute
+- AccordionItem: removed aria-controls attribute
+- Table: ability to add caption
+- Checkbox: Styling updated to white background
+- RadioButtonGroup: fixes a styling issue with error border
+- ActionButton: fixes a styling issue with alignment
+- FileUpload: various accessibility improvements, now exports server response
+- New icons: Bell and Facebook
+
 ### **v.3.7.1 - 03.11.2020 **
 
 - Table: Added compact table
