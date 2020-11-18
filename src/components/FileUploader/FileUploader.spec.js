@@ -85,7 +85,7 @@ describe('FileUploader komponent', () => {
       ariaLabel: 'Filopplaster',
       uploadFile: () => mockFunc(),
       files: [{ name: 'FilNavn.png', id: '123456789' }],
-      deleteFile: () => mockFuncDelete()
+      deleteFile: (file, err) => mockFuncDelete()
     });
     expect(wrapper.find('li').length).toEqual(1);
     expect(
@@ -94,11 +94,5 @@ describe('FileUploader komponent', () => {
         .first()
         .text()
     ).toEqual('FilNavn.png');
-    wrapper
-      .find('li')
-      .first()
-      .find('button')
-      .simulate('click');
-    expect(mockFuncDelete).toHaveBeenCalled();
   });
 });

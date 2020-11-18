@@ -297,7 +297,7 @@ const FileUploader: React.FC<FileUploaderProps> = props => {
           })
           .catch(error => {
             //TODO: Det trenger design om flere feilmeldinger
-            if (error.response.status === 403) {
+            if (error.response && error.response.status === 403) {
               pushToInternalMessages(t('fileuploader.error.upload.403'));
             } else {
               pushToInternalMessages(t('fileuploader.error.upload.general'));
@@ -361,7 +361,7 @@ const FileUploader: React.FC<FileUploaderProps> = props => {
           triggerUpdateFiles(newList);
         })
         .catch(error => {
-          if (error.response.status === 403) {
+          if (error.response && error.response.status === 403) {
             pushToInternalMessages(t('fileuploader.error.delete.403'));
           } else {
             pushToInternalMessages(t('fileuploader.error.delete.general'));
