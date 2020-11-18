@@ -485,7 +485,7 @@ const data = [
 />;
 ```
 
-Bruk caption-attributtet for å legge til caption
+Tabeller med overskrifter legges som en _caption_:
 
 ```js
 import Table from '@skatteetaten/frontend-components/Table';
@@ -516,7 +516,12 @@ const data = [
 ];
 
 const caption = (
-  <LabelWithCallout label={'Personer'} help={'Liste over personer'} />
+  <LabelWithCallout
+    label={'Personer med tilgang'}
+    help={
+      'Oversikt over personer som er gitt tilgang til å se statusen i dine saker.'
+    }
+  />
 );
 
 <Table data={data} columns={columns} caption={caption} />;
@@ -541,6 +546,12 @@ const caption = (
     <li>
       Test med skjermleser at du hører hva som er sorterbart og at du ikke
       mister fokus når du velger en sortering.
+    </li>
+    <li>
+      En caption (overskrift) kan hjelpe brukere med å finne, forstå og navigere
+      i tabeller. De fleste skjermlesere vil lese opp innholdet fra
+      caption-elementet, og er derfor til hjelp når skjermleserbrukere skal
+      avgjøre om de vil lese innholdet eller ikke.
     </li>
   </ul>
 
