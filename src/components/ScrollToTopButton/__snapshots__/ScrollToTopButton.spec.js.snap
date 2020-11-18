@@ -37,7 +37,7 @@ exports[`ScrollToTopButton komponent matcher snapshot 1`] = `
                 className="icon-60"
                 data-icon-name="MoveUp"
               >
-                
+                
               </i>
             </div>
           </div>
