@@ -55,7 +55,7 @@ export interface FileUploaderProps {
   /** Aria-label for "fjern fil"-knapp */
   deleteButtonAriaLabel?: string;
   /** Funksjon for å slette opplastet fil */
-  deleteFile?: (file: AttachmentMetadata | File) => void;
+  deleteFile?: (file: AttachmentMetadata | File, errors: string[]) => void;
   /**feilmelding for oversteget av filstørrelsesgrense*/
   exceedFileSizeLimitErrorMessage?: string;
   /** Opplastede filer */
@@ -199,7 +199,6 @@ const FileUploader: React.FC<FileUploaderProps> = props => {
 
   React.useEffect(() => {
     if (files) {
-      setInternalErrorMessages([]);
       setInternalFiles(files);
     }
   }, [files]);
@@ -348,9 +347,6 @@ const FileUploader: React.FC<FileUploaderProps> = props => {
   };
 
   const deleteFromList = (fileToBeDeleted: AttachmentMetadata) => {
-    if (deleteFile) {
-      deleteFile(fileToBeDeleted);
-    }
     if (axiosPath) {
       axios
         .delete(`${axiosPath}/${fileToBeDeleted.id}`, {
@@ -369,6 +365,11 @@ const FileUploader: React.FC<FileUploaderProps> = props => {
             pushToInternalMessages(t('fileuploader.error.delete.403'));
           } else {
             pushToInternalMessages(t('fileuploader.error.delete.general'));
+          }
+        })
+        .finally(() => {
+          if (deleteFile) {
+            deleteFile(fileToBeDeleted, internalErrorMessages);
           }
         });
     }
