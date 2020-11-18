@@ -2,7 +2,7 @@
 
 exports[`TextField komponent matcher snapshot 1`] = `
 <div
-  className="SkeTextField-42"
+  className="SkeTextField-41"
   id="textfield-1"
 >
   <div
