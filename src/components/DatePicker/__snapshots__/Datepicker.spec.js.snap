@@ -3,7 +3,6 @@
 exports[`DatePicker komponent matcher snapshot 1`] = `
 <div>
   <div
-    aria-invalid={false}
     className="ms-DatePicker SkeDatePicker-49"
     id="datepicker-1-input"
     onBlur={[Function]}
