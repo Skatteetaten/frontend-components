@@ -41,7 +41,7 @@ export interface FileUploaderProps {
   /** Tekst for opplastingskomponenten */
   addFileString?: string | JSX.Element;
   /** Funksjon som kjøres etter opplasting */
-  afterUpload?: () => void;
+  afterUpload?: (uploadedFiles: any) => void;
   /** aria-label @deprecated */
   ariaLabel?: string;
   /** string for Apikall */
@@ -287,10 +287,14 @@ const FileUploader: React.FC<FileUploaderProps> = props => {
         axios
           .all(allPromises)
           .then(responses => {
-            setInternalFiles([
+            const updatedInternalFiles = [
               ...internalFiles,
               ...responses.map(res => res.data)
-            ]);
+            ];
+            setInternalFiles(updatedInternalFiles);
+            if (afterUpload) {
+              afterUpload(updatedInternalFiles);
+            }
           })
           .catch(error => {
             //TODO: Det trenger design om flere feilmeldinger
@@ -299,11 +303,11 @@ const FileUploader: React.FC<FileUploaderProps> = props => {
             } else {
               pushToInternalMessages(t('fileuploader.error.upload.general'));
             }
+            if (afterUpload) {
+              afterUpload(internalFiles);
+            }
           })
           .finally(() => {
-            if (afterUpload) {
-              afterUpload();
-            }
             setInternalLoading(false);
           });
       }, props.forsinkelse || 0);

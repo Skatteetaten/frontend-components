@@ -1,6 +1,6 @@
 import { mergeStyles } from '@uifabric/merge-styles';
 import { getTheme } from '@uifabric/styling';
-import palette from 'components/utils/palette';
+import palette from '../utils/palette';
 import { getFocusStyle } from '..';
 import { FontWeights, FontSizes } from '..';
 
