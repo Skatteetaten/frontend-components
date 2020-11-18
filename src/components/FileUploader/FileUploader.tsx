@@ -1,5 +1,6 @@
 import * as React from 'react';
 import axios, { AxiosResponse } from 'axios';
+import i18n, { t } from './../utils/i18n/i18n';
 import { getClassNames } from './FileUploader.classNames';
 import classnames from 'classnames';
 import Icon from '../Icon';
@@ -9,6 +10,12 @@ import LabelWithCallout, {
 } from '../LabelWithCallout';
 import Spinner from '../Spinner';
 import ErrorMessage from '../ErrorMessage';
+
+export enum Language {
+  en = 'en',
+  nb = 'nb',
+  nn = 'nn'
+}
 
 export enum FileFormatTypes {
   doc = '.doc',
@@ -73,6 +80,8 @@ export interface FileUploaderProps {
   labelButtonAriaLabel?: string;
   /** Overstyr label, se LabelWithCallout komponent */
   labelCallout?: LabelWithCalloutProps;
+  /** Language selection for what the screen reader reads out. Default is Norwegian Bokmål */
+  language?: Language;
   /** Spinner når fil laster */
   loading?: boolean;
   /** Mulighet for å laste opp flere filer */
@@ -166,6 +175,7 @@ const FileUploader: React.FC<FileUploaderProps> = props => {
     labelButtonAriaLabel,
     labelCallout,
     labelWithCalloutAutoDismiss,
+    language,
     loading,
     multipleFiles,
     normalizeFileName,
@@ -182,6 +192,10 @@ const FileUploader: React.FC<FileUploaderProps> = props => {
   >([]);
   const [internalLoading, setInternalLoading] = React.useState<boolean>(false);
   const inputRef = React.useRef<HTMLInputElement | null>(null);
+
+  if (language) {
+    i18n.changeLanguage(language);
+  }
 
   React.useEffect(() => {
     if (files) {
@@ -250,7 +264,7 @@ const FileUploader: React.FC<FileUploaderProps> = props => {
       file => !isCorrectFileFormat(file, acceptedFileFormats)
     );
     if (invalidFileFormatFiles.length) {
-      pushToInternalMessages('Dette filformatet er ikke godkjent');
+      pushToInternalMessages(t('fileuploader.error.file_format'));
     }
 
     const validFiles = fileList.filter(file =>
@@ -278,9 +292,13 @@ const FileUploader: React.FC<FileUploaderProps> = props => {
               ...responses.map(res => res.data)
             ]);
           })
-          .catch(errors => {
+          .catch(error => {
             //TODO: Det trenger design om flere feilmeldinger
-            pushToInternalMessages('Kunne ikke laste opp fil');
+            if (error.response.status === 403) {
+              pushToInternalMessages(t('fileuploader.error.upload.403'));
+            } else {
+              pushToInternalMessages(t('fileuploader.error.upload.general'));
+            }
           })
           .finally(() => {
             if (afterUpload) {
@@ -295,9 +313,9 @@ const FileUploader: React.FC<FileUploaderProps> = props => {
   const createDefaultOversizedFileErrorMessage = (
     filstoerrelsegrense: number
   ) =>
-    `Vi kan ikke motta denne filen fordi den er for stor. Filer kan ikke overstige ${bitToMegabyte(
-      filstoerrelsegrense
-    )} Mb. Du kan forsøke å dele opp i flere mindre filer, eller bruke et format som tar mindre plass.`;
+    i18n.t('fileuploader.error.file_size', {
+      filstoerrelsegrense: bitToMegabyte(filstoerrelsegrense)
+    });
 
   const bitToMegabyte = (size: number) => (size / (1024 * 1024)).toFixed(1);
 
@@ -341,6 +359,13 @@ const FileUploader: React.FC<FileUploaderProps> = props => {
           );
           setInternalFiles(newList);
           triggerUpdateFiles(newList);
+        })
+        .catch(error => {
+          if (error.response.status === 403) {
+            pushToInternalMessages(t('fileuploader.error.delete.403'));
+          } else {
+            pushToInternalMessages(t('fileuploader.error.delete.general'));
+          }
         });
     }
   };
@@ -397,7 +422,9 @@ const FileUploader: React.FC<FileUploaderProps> = props => {
           ) : (
             <>
               <Icon iconName={'AttachFile'} className={styles.uploadAreaIcon} />
-              <u>{addFileString ? addFileString : 'Legg til fil(er)'}</u>
+              <u>
+                {addFileString ? addFileString : t('fileuploader.add.label')}
+              </u>
             </>
           )}
         </div>
@@ -415,7 +442,7 @@ const FileUploader: React.FC<FileUploaderProps> = props => {
 
       {acceptedFileFormats && (
         <span className={styles.informationWrapper} id="acceptedFileFormats">
-          Aksepterte filformater:{' '}
+          {t('fileuploader.accepted_file_formats')}{' '}
           <span className={styles.acceptedFileFormats}>
             {acceptedFileFormats.map(
               (fileFormat: FileFormatTypes, index: number) => {
@@ -458,7 +485,7 @@ const FileUploader: React.FC<FileUploaderProps> = props => {
                     aria-label={
                       deleteButtonAriaLabel
                         ? deleteButtonAriaLabel
-                        : 'Fjern fil'
+                        : t('fileuploader.delete.ariaLabel')
                     }
                   >
                     <Icon iconName={'Cancel'} />
