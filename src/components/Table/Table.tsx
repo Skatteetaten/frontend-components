@@ -72,6 +72,8 @@ interface TableProps<P> extends React.HTMLAttributes<HTMLDivElement> {
   showRowSeparators?: boolean;
   /** Reduce font size and height on rows for a more compact table */
   compactTable?: boolean;
+  /** Table caption */
+  caption?: React.ReactNode;
 }
 
 export const setScrollBarState = (
@@ -170,7 +172,8 @@ const Table = <P extends object>(props: TableProps<P>) => {
     language,
     openEditableOnRowClick,
     showRowSeparators = true,
-    compactTable = false
+    compactTable = false,
+    caption = null
   } = props;
   const genratedId = useId(id);
   const mainId = id ? id : 'table-' + genratedId;
@@ -290,6 +293,7 @@ const Table = <P extends object>(props: TableProps<P>) => {
       className={classnames(getClassNames(props), className)}
     >
       <table>
+        {caption && <caption>{caption}</caption>}
         <thead>
           <tr>
             {(tableIsScrollable || expandIconPlacement === 'before') && emptyTd}

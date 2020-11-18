@@ -19,6 +19,9 @@ export const getClassNames = props => {
           textAlign: 'left',
           height: '1px',
           selectors: {
+            caption: {
+              textAlign: 'left'
+            },
             thead: {
               display: 'table-header-group'
             },
