@@ -28,6 +28,8 @@ import Icon from '@skatteetaten/frontend-components/Icon';
 
 <div>
   <TopStripe>
+    <Link path={'#main-content-id'} text={'Hopp til hovedinnhold'} skipLink />
+
     <Link
       path={'https://www.skatteetaten.no/kontakt/'}
       text={'Kontakt oss'}
