@@ -1,9 +1,9 @@
 {
   "files": {
     "main.css": "/static/css/main.91e86fd1.chunk.css",
-    "main.js": "/build/main.5bca45b1.js",
+    "main.js": "/build/main.d2446de5.js",
     "runtime-main.js": "/build/bundle.45dbd693.js",
-    "build/2.2ac05855.js": "/build/2.2ac05855.js",
+    "build/2.13e0dc8f.js": "/build/2.13e0dc8f.js",
     "assets/png/Byggeklosser.png": "/assets/png/Byggeklosser.png",
     "assets/png/Byggeklosser_skisse.png": "/assets/png/Byggeklosser_skisse.png",
     "assets/png/designer.png": "/assets/png/designer.png",
@@ -17,22 +17,23 @@
     "assets/sketch/designsystem-1.2.sketch": "/assets/sketch/designsystem-1.2.sketch",
     "assets/sketch/designsystem-1.3.sketch": "/assets/sketch/designsystem-1.3.sketch",
     "assets/sketch/designsystem-1.5.sketch": "/assets/sketch/designsystem-1.5.sketch",
+    "assets/sketch/designsystem-1.6.sketch": "/assets/sketch/designsystem-1.6.sketch",
     "assets/sketch/designsystem-latest.sketch": "/assets/sketch/designsystem-latest.sketch",
     "assets/svg/bit-bucket-logo.svg": "/assets/svg/bit-bucket-logo.svg",
     "assets/svg/ske-logo-intern-kopi.svg": "/assets/svg/ske-logo-intern-kopi.svg",
     "assets/svg/ske-logo-intern.svg": "/assets/svg/ske-logo-intern.svg",
     "assets/svg/ske-logo.svg": "/assets/svg/ske-logo.svg",
-    "build/2.2ac05855.js.LICENSE.txt": "/build/2.2ac05855.js.LICENSE.txt",
+    "build/2.13e0dc8f.js.LICENSE.txt": "/build/2.13e0dc8f.js.LICENSE.txt",
     "favicon.ico": "/favicon.ico",
     "index.html": "/index.html",
     "manifest.json": "/manifest.json",
-    "precache-manifest.ba6335093b0d7c1692609b9fc0e2ebf3.js": "/precache-manifest.ba6335093b0d7c1692609b9fc0e2ebf3.js",
+    "precache-manifest.ed2d6610ca759a099521fdd991a364d0.js": "/precache-manifest.ed2d6610ca759a099521fdd991a364d0.js",
     "service-worker.js": "/service-worker.js",
     "static/css/main.91e86fd1.chunk.css.map": "/static/css/main.91e86fd1.chunk.css.map",
-    "static/media/SkeIconfont.woff": "/static/media/SkeIconfont.0abc963a.woff",
-    "static/media/SkeIconfont.ttf": "/static/media/SkeIconfont.6a093ece.ttf",
-    "static/media/SkeIconfont.woff2": "/static/media/SkeIconfont.eff438a0.woff2",
-    "static/media/SkeIconfont.eot": "/static/media/SkeIconfont.f91a047c.eot",
+    "static/media/SkeIconfont.ttf": "/static/media/SkeIconfont.3e67885d.ttf",
+    "static/media/SkeIconfont.woff": "/static/media/SkeIconfont.5d7ecce8.woff",
+    "static/media/SkeIconfont.woff2": "/static/media/SkeIconfont.7236ab1d.woff2",
+    "static/media/SkeIconfont.eot": "/static/media/SkeIconfont.9f82588e.eot",
     "static/media/footerDekor.svg": "/static/media/footerDekor.dc63d6fb.svg",
     "static/media/materialdesignicons-webfont.woff": "/static/media/materialdesignicons-webfont.1a95531b.woff",
     "static/media/materialdesignicons-webfont.ttf": "/static/media/materialdesignicons-webfont.6acc7d6c.ttf",
@@ -45,8 +46,8 @@
   },
   "entrypoints": [
     "build/bundle.45dbd693.js",
-    "build/2.2ac05855.js",
+    "build/2.13e0dc8f.js",
     "static/css/main.91e86fd1.chunk.css",
-    "build/main.5bca45b1.js"
+    "build/main.d2446de5.js"
   ]
 }
