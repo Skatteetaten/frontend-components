@@ -1,4 +1,4 @@
-### **v.3.7.2 - 19.11.2020 **
+### **v.3.7.3 - 19.11.2020 **
 
 - DropDown and TextField: now includes aria-invalid attribute
 - AccordionItem: removed aria-controls attribute
@@ -6,8 +6,13 @@
 - Checkbox: Styling updated to white background
 - RadioButtonGroup: fixes a styling issue with error border
 - ActionButton: fixes a styling issue with alignment
-- FileUpload: various accessibility improvements, now exports server response
+- FileUpload: various accessibility improvements, now exports server response, updated error messages
 - New icons: Bell and Facebook
+- Updated Sketch file to version 1.6
+
+### **v.3.7.2 - 18.11.2020 **
+
+- Table: Fixes an issue with row index and initial loading
 
 ### **v.3.7.1 - 03.11.2020 **
 
