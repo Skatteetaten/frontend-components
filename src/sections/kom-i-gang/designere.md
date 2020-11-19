@@ -33,7 +33,33 @@ const style = {
 
 <OpenClose title={'Versjonshistorikk'}>
   <Typography>
-    <h4>Versjon 1.5</h4>
+    <h4>Versjon 1.6 </h4>
+    <p style={{ marginTop: '0' }}>19.11.2020</p>
+    <p style={{ marginBottom: '0' }}>
+      <strong>Ikoner</strong>
+    </p>
+    <ul style={{ marginTop: '0' }}>
+      <li>Oppdatert Facebook-ikon</li>
+    </ul>
+    <p style={{ marginBottom: '0' }}>
+      <strong>Komponenter</strong>
+    </p>
+    <ul style={{ marginTop: '0' }}>
+      <li>Forenklet navigasjon når man skal lage tabeller</li>
+      <li>Venstre-og høyrejusterte overskrifter og kolonner for tabeller</li>
+    </ul>
+    <p style={{ marginBottom: '0' }}>
+      <strong>Gjør det selv-seksjon</strong>
+    </p>
+    <ul style={{ marginTop: '0' }}>
+      <li>
+        Lær å lage egne Tabell-elementer. Gå til <em>Komponenter / Tabeller</em>{' '}
+        i biblioteket for å lese mer.
+      </li>
+    </ul>
+    <hr />
+    <h4 style={{ marginTop: '0' }}>Versjon 1.5 </h4>
+    <p style={{ marginTop: '0' }}>03.11.2020</p>
     <p style={{ marginBottom: '0' }}>
       <strong>Ikoner</strong>
     </p>
@@ -83,6 +109,7 @@ const style = {
     </ul>
     <hr />
     <h4>Versjon 1.4</h4>
+    <p style={{ marginTop: '0' }}>29.09.2020</p>
     <p style={{ marginBottom: '0' }}>
       <strong>Typografi</strong>
     </p>
@@ -119,6 +146,7 @@ const style = {
     </ul>
     <hr />
     <h4 style={{ marginTop: '0' }}>Versjon 1.3</h4>
+    <p style={{ marginTop: '0' }}>10.07.2020</p>
     <ul>
       <li>Nytt symbol: Paginering.</li>
       <li>
@@ -143,6 +171,7 @@ const style = {
     </ul>
     <hr />
     <h4 style={{ marginTop: '0' }}>Versjon 1.2</h4>
+    <p style={{ marginTop: '0' }}>13.05.2020</p>
     <ul>
       <li>
         Ikoner har nå slices, så det er lettere å få riktige avstander i Zeplin.
