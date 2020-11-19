@@ -2,11 +2,11 @@
 
 exports[`Tabs komponent matcher snapshot 1`] = `
 <div
-  className="SkeTabs-42"
+  className="SkeTabs-41"
   role="toolbar"
 >
   <div
-    className="ms-FocusZone css-50 ms-Pivot ms-Pivot--large ms-Pivot--tabs root-43"
+    className="ms-FocusZone css-49 ms-Pivot ms-Pivot--large ms-Pivot--tabs root-42"
     data-focuszone-id="FocusZone1"
     onFocus={[Function]}
     onKeyDown={[Function]}
@@ -15,7 +15,7 @@ exports[`Tabs komponent matcher snapshot 1`] = `
   >
     <button
       aria-selected={true}
-      className="ms-Button ms-Button--action ms-Button--command ms-Pivot-link is-selected linkIsSelected-51"
+      className="ms-Button ms-Button--action ms-Button--command ms-Pivot-link is-selected linkIsSelected-50"
       data-content="Tilgjengelige oppgaver (23)"
       data-is-focusable={true}
       id="Pivot0-Tab0"
@@ -30,20 +30,20 @@ exports[`Tabs komponent matcher snapshot 1`] = `
       type="button"
     >
       <span
-        className="ms-Button-flexContainer flexContainer-52"
+        className="ms-Button-flexContainer flexContainer-51"
         data-automationid="splitbuttonprimary"
       >
         <span
-          className="ms-Pivot-linkContent linkContent-46"
+          className="ms-Pivot-linkContent linkContent-45"
         >
           <span
-            className="ms-Pivot-text text-47"
+            className="ms-Pivot-text text-46"
           >
              
             Tilgjengelige oppgaver
           </span>
           <span
-            className="ms-Pivot-count count-48"
+            className="ms-Pivot-count count-47"
           >
              (
             23
@@ -54,7 +54,7 @@ exports[`Tabs komponent matcher snapshot 1`] = `
     </button>
     <button
       aria-selected={false}
-      className="ms-Button ms-Button--action ms-Button--command ms-Pivot-link link-59"
+      className="ms-Button ms-Button--action ms-Button--command ms-Pivot-link link-58"
       data-content="Mine oppgaver (2)"
       data-is-focusable={true}
       id="Pivot0-Tab1"
@@ -69,20 +69,20 @@ exports[`Tabs komponent matcher snapshot 1`] = `
       type="button"
     >
       <span
-        className="ms-Button-flexContainer flexContainer-52"
+        className="ms-Button-flexContainer flexContainer-51"
         data-automationid="splitbuttonprimary"
       >
         <span
-          className="ms-Pivot-linkContent linkContent-46"
+          className="ms-Pivot-linkContent linkContent-45"
         >
           <span
-            className="ms-Pivot-text text-47"
+            className="ms-Pivot-text text-46"
           >
              
             Mine oppgaver
           </span>
           <span
-            className="ms-Pivot-count count-48"
+            className="ms-Pivot-count count-47"
           >
              (
             2
@@ -93,7 +93,7 @@ exports[`Tabs komponent matcher snapshot 1`] = `
     </button>
     <button
       aria-selected={false}
-      className="ms-Button ms-Button--action ms-Button--command ms-Pivot-link link-59"
+      className="ms-Button ms-Button--action ms-Button--command ms-Pivot-link link-58"
       data-content="Andres oppgaver xx"
       data-is-focusable={true}
       id="Pivot0-Tab2"
@@ -108,25 +108,25 @@ exports[`Tabs komponent matcher snapshot 1`] = `
       type="button"
     >
       <span
-        className="ms-Button-flexContainer flexContainer-52"
+        className="ms-Button-flexContainer flexContainer-51"
         data-automationid="splitbuttonprimary"
       >
         <span
-          className="ms-Pivot-linkContent linkContent-46"
+          className="ms-Pivot-linkContent linkContent-45"
         >
           <span
-            className="ms-Pivot-icon icon-49"
+            className="ms-Pivot-icon icon-48"
           >
             <i
               aria-hidden={true}
-              className="root-61"
+              className="root-60"
               data-icon-name="Update"
             >
               
             </i>
           </span>
           <span
-            className="ms-Pivot-text text-47"
+            className="ms-Pivot-text text-46"
           >
              
             Andres oppgaver

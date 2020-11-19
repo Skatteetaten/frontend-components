@@ -1,6 +1,5 @@
 import * as React from 'react';
 import classnames from 'classnames';
-import ErrorMessage from '../ErrorMessage/ErrorMessage';
 import {
   ITextFieldProps,
   MaskedTextField,
@@ -158,6 +157,7 @@ export const TextField: React.FC<TextFieldProps> = ({
           getClassNames({ ...rest, editMode, readOnly }),
           className
         )}
+        errorMessage={errorMessage}
         onBlur={onBlur}
         componentRef={ref => {
           if (rest.componentRef && typeof rest.componentRef === 'function') {
@@ -169,7 +169,6 @@ export const TextField: React.FC<TextFieldProps> = ({
       >
         {children}
       </TextFieldType>
-      {errorMessage && <ErrorMessage>{errorMessage}</ErrorMessage>}
     </div>
   );
 };
