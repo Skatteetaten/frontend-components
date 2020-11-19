@@ -173,7 +173,8 @@ const Table = <P extends object>(props: TableProps<P>) => {
     openEditableOnRowClick,
     showRowSeparators = true,
     compactTable = false,
-    caption = null
+    caption = null,
+    openEditableRowIndex: externalOpenEditableRowIndex
   } = props;
   const genratedId = useId(id);
   const mainId = id ? id : 'table-' + genratedId;
@@ -185,7 +186,7 @@ const Table = <P extends object>(props: TableProps<P>) => {
   );
   const [openEditableRowIndex, setOpenEditableRowIndex] = React.useState<
     number | undefined
-  >();
+  >(externalOpenEditableRowIndex);
   const [openExpandableRowIndex, setOpenExpandableIndex] = React.useState<
     number | undefined
   >();
