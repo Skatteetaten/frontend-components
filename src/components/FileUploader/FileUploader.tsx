@@ -347,6 +347,7 @@ const FileUploader: React.FC<FileUploaderProps> = props => {
   };
 
   const deleteFromList = (fileToBeDeleted: AttachmentMetadata) => {
+    setInternalErrorMessages([]);
     if (axiosPath) {
       axios
         .delete(`${axiosPath}/${fileToBeDeleted.id}`, {
@@ -372,6 +373,10 @@ const FileUploader: React.FC<FileUploaderProps> = props => {
             deleteFile(fileToBeDeleted, internalErrorMessages);
           }
         });
+    } else {
+      if (deleteFile) {
+        deleteFile(fileToBeDeleted, internalErrorMessages);
+      }
     }
   };
   if (deleteAllFiles && files) {
