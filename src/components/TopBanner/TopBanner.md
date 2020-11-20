@@ -162,6 +162,11 @@ import TopBanner from '@skatteetaten/frontend-components/TopBanner';
   <h3>Tips</h3>
   <ul>
     <li>
+      Lenken Hopp til hovedinnhold (blir synlig ved tastaturfokus), skal sette
+      tastaturfokus til toppen av hovedinnholdet. Bruk riktig id og
+      tabindex="-1" der fokus skal være.
+    </li>
+    <li>
       Valgene i toppstripa som utvider innhold, bør ha et pil-ikon, for visuell
       indikasjon av funksjonaliteten.{' '}
     </li>
