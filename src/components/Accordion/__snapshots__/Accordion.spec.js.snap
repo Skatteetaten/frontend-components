@@ -6,7 +6,7 @@ exports[`Accordion komponent matcher snapshot 1`] = `
     className="accordion-38"
   >
     <Grid
-      padding="0 8px"
+      padding="0px"
     >
       <div
         className="ske-Grid-47 "
@@ -25,25 +25,28 @@ exports[`Accordion komponent matcher snapshot 1`] = `
               rowSpacing="0px"
             >
               <div
-                className="ske-Grid-row-50 "
+                className="ske-Grid-row-51 "
               >
-                <GridCol>
+                <GridCol
+                  noSpacing={true}
+                >
                   <div
-                    className="ske-Grid-col-49 "
+                    className="ske-Grid-col-52 "
                   >
                     <GridRow
                       rowSpacing="0px"
                     >
                       <div
-                        className="ske-Grid-row-50 "
+                        className="ske-Grid-row-51 "
                       >
                         <GridCol
                           md={12}
+                          noSpacing={true}
                           sm={12}
                           xl={12}
                         >
                           <div
-                            className="ske-Grid-col-51 "
+                            className="ske-Grid-col-53 "
                           >
                             <hr />
                             <ToggleContent
