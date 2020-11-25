@@ -10,7 +10,6 @@ import {
   IDatePickerProps
 } from 'office-ui-fabric-react/lib-commonjs/DatePicker';
 import { FirstWeekOfYear } from 'office-ui-fabric-react/lib-commonjs/utilities/dateValues/DateValues';
-import ErrorMessage from '../ErrorMessage';
 import { getClassNames } from './DatePicker.classNames';
 import LabelWithCallout, { calloutState } from '../LabelWithCallout';
 import { LabelWithCalloutProps } from '../LabelWithCallout/LabelWithCallout';
@@ -194,6 +193,9 @@ export const DatePicker: React.FC<DatePickerProps> = (
         }}
         disabled={readOnly ? true : rest.disabled}
         onBlur={onBlur}
+        textField={{
+          errorMessage: errorMessage
+        }}
         strings={{
           ...DEFAULT_STRINGS,
           isRequiredErrorMessage: isRequiredErrorMessage
@@ -209,7 +211,6 @@ export const DatePicker: React.FC<DatePickerProps> = (
       >
         {children}
       </FabricDatePicker>
-      {errorMessage && <ErrorMessage>{errorMessage}</ErrorMessage>}
     </div>
   );
 };

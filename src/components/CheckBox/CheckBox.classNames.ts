@@ -1,5 +1,6 @@
 import { mergeStyles } from '@uifabric/merge-styles';
 import { getTheme } from '@uifabric/styling';
+import palette from '../utils/palette';
 import { getFocusStyle } from '..';
 import { FontWeights, FontSizes } from '..';
 
@@ -21,14 +22,16 @@ export const getClassNames = function getClassNames() {
           display: 'inline-block',
           border: '2px solid',
           cursor: 'pointer',
-          fontSize: FontSizes.medium
+          fontSize: FontSizes.medium,
+          backgroundColor: palette.skeColor.white
         },
         'span.ms-Checkbox-text': {
           fontSize: FontSizes.medium
         },
         '&.is-checked .ms-Checkbox-checkbox': {
           border: 'none',
-          fontSize: FontSizes.medium
+          fontSize: FontSizes.medium,
+          backgroundColor: palette.skeColor.blue
         },
         'i.ms-Checkbox-checkmark': {
           paddingLeft: '1.5px',
@@ -39,7 +42,8 @@ export const getClassNames = function getClassNames() {
           opacity: 0
         },
         '&.is-checked:hover .ms-Checkbox-checkmark': {
-          opacity: 1
+          opacity: 1,
+          backgroundColor: palette.skeColor.darkBlue
         },
         '& i': {
           fontWeight: FontWeights.bold

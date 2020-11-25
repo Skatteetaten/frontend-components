@@ -1,7 +1,6 @@
 import { mergeStyleSets } from '@uifabric/merge-styles';
 import { getTheme } from '@uifabric/styling';
 import { FontSizes, FontWeights, LineHeightSizes } from '../utils/fonts';
-import { isUndefined } from 'util';
 import { PaletteProps } from '..';
 
 export const getClassNames = props => {
@@ -35,7 +34,7 @@ export const getClassNames = props => {
           verticalAlign: 'middle'
         },
         '& .ms-ChoiceFieldGroup-flexContainer': {
-          display: horizontal ? 'flex' : 'block'
+          display: horizontal ? 'flex' : 'inline-block'
         },
         'span.ms-ChoiceFieldLabel': {
           fontSize: FontSizes.medium,
@@ -87,8 +86,10 @@ export const getClassNames = props => {
           fontWeight: FontWeights.regular
         },
         '.ms-ChoiceFieldGroup-flexContainer': errorMessage && {
-          padding: '0 7px 3px 7px',
-          border: '2px solid ' + palette.skeColor.error
+          //padding: '0 7px 3px 7px',
+          border: '2px solid ' + palette.skeColor.error,
+          padding: '0em 1em 0.75em 0.5em',
+          marginTop: '8px'
         },
         '.ms-ChoiceField-field::before': errorMessage && {
           content: '',
@@ -96,7 +97,7 @@ export const getClassNames = props => {
           border: '2px solid' + palette.skeColor.error,
           position: 'absolute'
         },
-        '& .ms-Callout-main': !isUndefined(props.calloutFloating) &&
+        '& .ms-Callout-main': props.calloutFloating !== undefined &&
           !props.calloutFloating && {
             display: 'inline-block'
           }

@@ -1,6 +1,6 @@
 import React from 'react';
 import { matches } from './../utils/test-utils';
-import FileUploader, { FileFormatTypes } from './FileUploader';
+import FileUploader, { FileFormatTypes, Language } from './FileUploader';
 import { mount, shallow } from 'enzyme';
 
 function oppsettShallow(props) {
@@ -21,7 +21,6 @@ describe('FileUploader komponent', () => {
       ariaLabel: 'Filopplaster',
       uploadFile: jest.fn()
     });
-    expect(wrapper.find('label').props()['aria-label']).toEqual('Filopplaster');
     expect(
       wrapper
         .find('span')
@@ -36,7 +35,6 @@ describe('FileUploader komponent', () => {
       ariaLabel: 'Filopplaster',
       uploadFile: jest.fn()
     });
-    expect(wrapper.find('label').props()['aria-label']).toEqual('Filopplaster');
     expect(
       wrapper
         .find('div')
@@ -46,12 +44,32 @@ describe('FileUploader komponent', () => {
       'Husk å sjekke for sensitive personopplysninger, og evt fjerne disse før du laster opp vedleggene.'
     );
   });
+  it('skal vise engelske tekster dersom engelsk språk er valgt', () => {
+    const wrapper = oppsettShallow({
+      acceptedFileFormats: [FileFormatTypes.jpg, FileFormatTypes.png],
+      language: Language.en,
+      uploadFile: jest.fn()
+    });
+    expect(
+      wrapper
+        .find('u')
+        .first()
+        .text()
+    ).toEqual('Add file(s)');
+    expect(
+      wrapper
+        .find('span')
+        .first()
+        .text()
+    ).toEqual('Accepted file formats: .jpg, .png');
+  });
   it('skal kjøre uploadFile-funksjon når bruker laster opp fil', () => {
     const mockFunc = jest.fn();
     const wrapper = oppsettFullDOM({
       acceptedFileFormats: [FileFormatTypes.doc, FileFormatTypes.docx],
       ariaLabel: 'Filopplaster',
       axiosPath: 'http://localhost',
+      language: Language.nb,
       uploadFile: () => mockFunc()
     });
     wrapper.find('input').simulate('change', {
@@ -82,12 +100,12 @@ describe('FileUploader komponent', () => {
   });
   it('skal kjøre deleteFile dersom bruker trykker kryss i liste', () => {
     const mockFunc = jest.fn();
-    const mockFuncDelete = jest.fn();
+    const mockFuncDelete = jest.fn(file => file);
     const wrapper = oppsettFullDOM({
       ariaLabel: 'Filopplaster',
       uploadFile: () => mockFunc(),
       files: [{ name: 'FilNavn.png', id: '123456789' }],
-      deleteFile: () => mockFuncDelete()
+      deleteFile: (file, err) => mockFuncDelete(file)
     });
     expect(wrapper.find('li').length).toEqual(1);
     expect(
@@ -102,5 +120,9 @@ describe('FileUploader komponent', () => {
       .find('button')
       .simulate('click');
     expect(mockFuncDelete).toHaveBeenCalled();
+    expect(mockFuncDelete).toHaveBeenCalledWith({
+      id: '123456789',
+      name: 'FilNavn.png'
+    });
   });
 });
