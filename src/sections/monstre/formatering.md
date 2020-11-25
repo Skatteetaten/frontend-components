@@ -120,15 +120,3 @@ const rtf = new Intl.RelativeTimeFormat('no', {
   />
 </>;
 ```
-
-Vi skriver 18.02.2010 eller 18. februar 2010.
-10 000 kroner
-
-Fødselsnummer består av 11 siffer, og vi skiller dem i 2 grupper. Det er mellomrom foran personnummeret (de 5 siste sifrene).
-121212 12345
-
-Organisasjonsnummer deles i 3 grupper.
-123 123 123
-
-Bankkontonummer deles i 3 grupper. Vi bruker mellomrom, ikke punktum, for å skille gruppene:
-2000 12 34567

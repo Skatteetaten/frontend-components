@@ -2,7 +2,7 @@
 
 I publikumsløsningene våre ser vi at mobil og nettbrett blir stadig viktigere. Det er derfor svært viktig at sidelayouten er reponsiv. I de fleste publikumsløsningen gir det mening å ha hovedinnholdet sentrert i en midtkolonne og solide marger når skjermbredden er stor. På den måten kan hovedinnholdet få en bredde som fungerer godt både på dekstop og mobil.
 
-Merk: Denne siden inneholder et eksempel som bruker Grid-komponent til å lage sidelayout. Dersom du ikke trenger å støtte Internet Explorer 11 kan det er være det å bruke CSS-grid en enklere tilnærming.
+Merk: Denne siden inneholder eksempler som bruker Grid-komponenten til å lage sidelayout. Dersom du ikke trenger å støtte Internet Explorer 11 kan det er være verd å vurdere [CSS-grid](https://www.w3schools.com/css/css_grid.asp) i stedet.
 
 ```js
 import TopStripe, {
@@ -40,14 +40,18 @@ const white = {
     <Grid.Row>
       <Grid.Col sm={0} lg={1} xl={2}></Grid.Col>
       <Grid.Col sm={12} lg={10} xl={8}>
-        <p style={textStyle}>Hovedinnhold</p>
+        <p style={textStyle}>Midtkolonne med hovedinnhold</p>
+        <Card margin="xlarge" color={Card.Color.BEIGE}>
+          <p style={textStyle}>Boks med viktige opplysninger</p>
+        </Card>
+        <br />
 
         <Card
           margin="xlarge"
           color={Card.Color.WHITE}
           border={Card.Border.GREEN_BORDER}
         >
-          <p style={textStyle}>Boks</p>
+          <p style={textStyle}>Ramme med beløpsinformasjon</p>
         </Card>
       </Grid.Col>
       <Grid.Col sm={0} lg={1} xl={2}></Grid.Col>
@@ -78,6 +82,8 @@ import CommandBar from '@skatteetaten/frontend-components/CommandBar';
 import Icon from '@skatteetaten/frontend-components/Icon/Icon';
 import IconButton from '@skatteetaten/frontend-components/IconButton/IconButton';
 import ActionButton from '@skatteetaten/frontend-components/ActionButton/ActionButton';
+import AccordionMenu from '@skatteetaten/frontend-components/AccordionMenu';
+import AccordionMenuItem from '@skatteetaten/frontend-components/AccordionMenu/AccordionMenuItem';
 
 const textStyle = {
   fontSize: '12px',
@@ -160,15 +166,44 @@ const timeStampStyle = {
   <div style={{ marginTop: '16px' }}>
     <Grid>
       <Grid.Row>
-        <Grid.Col sm={12} lg={2}>
-          <Card subtitle="Part" color={Card.Color.BEIGE}></Card>
+        <Grid.Col sm={12} lg={12} xl={3}>
+          <div style={{ minWidth: '200px' }}>
+            <AccordionMenu>
+              <AccordionMenuItem
+                icon="Company"
+                iconLabel="Selskap"
+                heading={
+                  <>
+                    <span>
+                      <strong>Firma</strong>
+                    </span>
+                  </>
+                }
+              >
+                <span>
+                  <strong>Kontaktopplysninger</strong>
+                </span>
+                <dl style={removeMargin}>
+                  <dt style={dlStyle}>Navn</dt>
+                  <dd style={dlStyle}>Firma AS</dd>
+                  <dt style={dlStyle}>Adresse</dt>
+                  <dd style={dlStyle}>
+                    Strandgaten 10 <br />
+                    1234 Lillevik
+                  </dd>
+                  <dt style={dlStyle}>Telefon</dt>
+                  <dd style={dlStyle}>987 65 432</dd>
+                </dl>
+              </AccordionMenuItem>
+            </AccordionMenu>
+          </div>
         </Grid.Col>
-        <Grid.Col sm={12} lg={8}>
+        <Grid.Col sm={12} lg={12} xl={7}>
           <Card subtitle="Kjerneområde" color={Card.Color.GREY}>
             <CommandBar items={state.items} />
           </Card>
         </Grid.Col>
-        <Grid.Col sm={12} lg={2}>
+        <Grid.Col sm={12} lg={12} xl={2}>
           <Card
             subtitle="Rutiner/regler (valgfritt)"
             color={Card.Color.BEIGE}

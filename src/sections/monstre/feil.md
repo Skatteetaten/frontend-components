@@ -156,6 +156,7 @@ import DatePicker from '@skatteetaten/frontend-components/DatePicker';
       </p>
       <TextField
         id={'my-input1'}
+        inputSize={'normal'}
         label={'E-postadresse'}
         value={'min_adresse.no'}
         errorMessage="E-postadressen ser ikke riktig ut."
