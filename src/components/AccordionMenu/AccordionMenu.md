@@ -49,7 +49,7 @@ const timeStampStyle = {
       icon="Company"
       iconLabel="Selskap"
       heading={
-        <>
+        <div style={{ flexDirection: 'row' }}>
           <span>
             <strong>987 654 321 </strong>
           </span>
@@ -57,7 +57,7 @@ const timeStampStyle = {
           <span>
             <strong>Gårsdprodukter kortreist mat AS</strong>
           </span>
-        </>
+        </div>
       }
     >
       <span>
@@ -113,13 +113,22 @@ const timeStampStyle = {
       icon="Briefcase"
       iconLabel={'Arbeidsgiver'}
       heading={
-        <>
-          <span>
+        <div
+          style={{ display: 'flex', flexDirection: 'row', flex: '1 1 auto' }}
+        >
+          <div style={{ display: 'flex' }}>
             <strong>Saksbehandling</strong>
-          </span>
-          <br />
-          <span>1 aktiv sak</span>
-        </>
+          </div>
+          <div
+            style={{
+              display: 'flex',
+              alignSelf: 'flex-start',
+              marginLeft: 'auto'
+            }}
+          >
+            1 aktiv sak
+          </div>
+        </div>
       }
     >
       <ul style={ulStyle}>

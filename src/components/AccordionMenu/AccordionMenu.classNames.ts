@@ -35,9 +35,12 @@ export function getClassNames(): any {
     },
     menuItemTitle: {
       display: 'flex',
-      alignItems: 'center'
+      alignItems: 'center',
+      flex: '1 1 auto'
     },
     title: {
+      display: 'flex',
+      flex: '1 1 auto',
       margin: '0 15px 0 15px',
       padding: '10px 0'
     },
