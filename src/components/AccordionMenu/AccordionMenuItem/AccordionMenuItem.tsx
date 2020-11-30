@@ -23,7 +23,7 @@ interface AccordionMenuItemProps extends React.HTMLAttributes<HTMLDivElement> {
  * @visibleName AccordionMenuItem (Element i trekkspillmeny)
  */
 const AccordionMenuItem = (props: AccordionMenuItemProps) => {
-  const styles = getClassNames(props);
+  const styles = getClassNames();
   const { heading, icon, onClick, className, children, ariaLabel } = props;
   const [isContentOpen, setContentOpen] = React.useState<boolean>(
     props.isOpen || false
