@@ -49,7 +49,7 @@ const timeStampStyle = {
       icon="Company"
       iconLabel="Selskap"
       heading={
-        <div style={{ flexDirection: 'row' }}>
+        <div>
           <span>
             <strong>987 654 321 </strong>
           </span>
@@ -76,7 +76,7 @@ const timeStampStyle = {
       </dl>
     </AccordionMenuItem>
     <AccordionMenuItem
-      icon="Briefcase"
+      icon="Forum"
       iconLabel={'Arbeidsgiver'}
       heading={
         <span>
@@ -112,6 +112,7 @@ const timeStampStyle = {
     <AccordionMenuItem
       icon="Briefcase"
       iconLabel={'Arbeidsgiver'}
+      flex
       heading={
         <div
           style={{ display: 'flex', flexDirection: 'row', flex: '1 1 auto' }}

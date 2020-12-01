@@ -2,8 +2,9 @@ import { mergeStyleSets } from '@uifabric/merge-styles';
 import { getTheme } from '@uifabric/styling';
 import { PaletteProps } from '..';
 
-export function getClassNames(): any {
+export function getClassNames(props): any {
   const palette = getTheme().palette as PaletteProps;
+  const flex = props.flex;
 
   return mergeStyleSets({
     accordionMenu: {
@@ -36,11 +37,11 @@ export function getClassNames(): any {
     menuItemTitle: {
       display: 'flex',
       alignItems: 'center',
-      flex: '1 1 auto'
+      flex: flex ? '1 1 auto' : undefined
     },
     title: {
-      display: 'flex',
-      flex: '1 1 auto',
+      display: flex ? 'flex' : undefined,
+      flex: flex ? '1 1 auto' : undefined,
       margin: '0 15px 0 15px',
       padding: '10px 0'
     },
