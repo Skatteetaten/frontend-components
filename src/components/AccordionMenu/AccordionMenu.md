@@ -49,7 +49,7 @@ const timeStampStyle = {
       icon="Company"
       iconLabel="Selskap"
       heading={
-        <>
+        <div>
           <span>
             <strong>987 654 321 </strong>
           </span>
@@ -57,7 +57,7 @@ const timeStampStyle = {
           <span>
             <strong>Gårsdprodukter kortreist mat AS</strong>
           </span>
-        </>
+        </div>
       }
     >
       <span>
@@ -76,7 +76,7 @@ const timeStampStyle = {
       </dl>
     </AccordionMenuItem>
     <AccordionMenuItem
-      icon="Briefcase"
+      icon="Forum"
       iconLabel={'Arbeidsgiver'}
       heading={
         <span>
@@ -112,14 +112,24 @@ const timeStampStyle = {
     <AccordionMenuItem
       icon="Briefcase"
       iconLabel={'Arbeidsgiver'}
+      flex
       heading={
-        <>
-          <span>
+        <div
+          style={{ display: 'flex', flexDirection: 'row', flex: '1 1 auto' }}
+        >
+          <div style={{ display: 'flex' }}>
             <strong>Saksbehandling</strong>
-          </span>
-          <br />
-          <span>1 aktiv sak</span>
-        </>
+          </div>
+          <div
+            style={{
+              display: 'flex',
+              alignSelf: 'flex-start',
+              marginLeft: 'auto'
+            }}
+          >
+            1 aktiv sak
+          </div>
+        </div>
       }
     >
       <ul style={ulStyle}>
