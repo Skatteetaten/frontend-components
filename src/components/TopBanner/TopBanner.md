@@ -28,6 +28,8 @@ import Icon from '@skatteetaten/frontend-components/Icon';
 
 <div>
   <TopStripe>
+    <Link path={'#main-content-id'} text={'Hopp til hovedinnhold'} skipLink />
+
     <Link
       path={'https://www.skatteetaten.no/kontakt/'}
       text={'Kontakt oss'}
@@ -159,6 +161,11 @@ import TopBanner from '@skatteetaten/frontend-components/TopBanner';
 <>
   <h3>Tips</h3>
   <ul>
+    <li>
+      Lenken Hopp til hovedinnhold (blir synlig ved tastaturfokus), skal sette
+      tastaturfokus til toppen av hovedinnholdet. Bruk riktig id og
+      tabindex="-1" der fokus skal være.
+    </li>
     <li>
       Valgene i toppstripa som utvider innhold, bør ha et pil-ikon, for visuell
       indikasjon av funksjonaliteten.{' '}

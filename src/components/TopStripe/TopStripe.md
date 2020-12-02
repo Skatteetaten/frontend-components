@@ -14,12 +14,12 @@ import Link from '@skatteetaten/frontend-components/Link';
 
 <div>
   <TopStripe>
+    <Link path={'#main-content-id'} text={'Hopp til hovedinnhold'} skipLink />
     <Link
       path={'https://www.skatteetaten.no/kontakt/'}
       text={'Kontakt oss'}
       placement="before"
     />
-
     <TopStripeMenu
       closeMenuAriaLabel="Lukk endre skriftstørrelse"
       title={'Endre skriftstørrelse'}
@@ -67,6 +67,7 @@ import Icon from '@skatteetaten/frontend-components/Icon';
 
 <div>
   <TopStripe>
+    <Link path={'#main-content-id'} text={'Hopp til hovedinnhold'} skipLink />
     <Link
       path={'https://www.skatteetaten.no/kontakt/'}
       text={'Kontakt oss'}
@@ -132,6 +133,8 @@ const size = UseScreen();
 
 <div>
   <TopStripe>
+    <Link path={'#main-content-id'} text={'Hopp til hovedinnhold'} skipLink />
+
     <Link
       path={'https://www.skatteetaten.no/kontakt/'}
       text={'Kontakt oss'}
@@ -191,6 +194,8 @@ import Link from '@skatteetaten/frontend-components/Link';
 
 <div>
   <TopStripe>
+    <Link path={'#main-content-id'} text={'Hopp til hovedinnhold'} skipLink />
+
     <TopStripeMenu icon="person" title={'Kari Normann'}>
       <TopStripeButton>Jenny Sandli</TopStripeButton>
       <TopStripeButton>987654321 Eplepress AS</TopStripeButton>

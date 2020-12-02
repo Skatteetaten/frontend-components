@@ -6,11 +6,13 @@ import { getClassNames } from './Link.classNames';
 export interface LinkProps
   extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
   className?: string;
-  /** Som standard rendres lenkene som a-elementer. Dette gir mulighet for å overstyre implementasjonen. */
+  /** Links are normally rendered as a-tags. This makes is possible to use a different markup. */
   renderContent?: (classNames: string) => JSX.Element;
   icon?: string;
-  /** Om lenken skal åpnes i nytt vindu (target=blank) */
+  /** If the link should open in an new window (target=blank) */
   openInNew?: boolean;
+  /** If the link is an invisible "skip to main content" link */
+  skipLink?: boolean;
   path?: string;
   placement?: 'after' | 'before';
   text?: string;
@@ -28,6 +30,7 @@ const Link: React.FC<LinkProps> = props => {
     path,
     text,
     openInNew,
+    skipLink,
     renderContent,
     ...htmlAttributes
   } = props;
@@ -49,6 +52,14 @@ const Link: React.FC<LinkProps> = props => {
           className={classnames(styles.iconLink)}
           target="_blank"
           rel="noopener noreferrer"
+          {...htmlAttributes}
+        >
+          {props.text}
+        </a>
+      ) : skipLink ? (
+        <a
+          href={props.path}
+          className={classnames(styles.skipLink)}
           {...htmlAttributes}
         >
           {props.text}
