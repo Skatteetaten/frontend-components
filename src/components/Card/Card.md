@@ -21,6 +21,7 @@ const initialState = { title: 'Skatteoppgjøret for 2017' };
     </p>
   </Card>
   <br />
+  <br />
   <Card
     color={Card.Color.GREEN}
     title="Skatteoppgjøret for 2018"

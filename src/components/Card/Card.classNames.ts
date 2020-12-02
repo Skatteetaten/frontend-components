@@ -37,7 +37,7 @@ function getCardBorder(props: CardProps) {
         border: `4px solid ${palette.skeColor.white}`
       };
     default:
-      return {};
+      return { border: 'none' };
   }
 }
 
@@ -60,7 +60,7 @@ export const getClassNames = (props: CardProps, state: CardState) => {
   const theme = getTheme();
   const palette = theme.palette as PaletteProps;
   const { isExpandedState } = state;
-  const { titlesize } = props;
+  const { titlesize, circleOnIcon } = props;
   return mergeStyleSets({
     root: {
       displayName: 'SkeCard',
@@ -69,14 +69,36 @@ export const getClassNames = (props: CardProps, state: CardState) => {
       padding: '8px 16px',
       marginBottom: props.marginbottom,
       ...getCardBorder(props),
-      ...getMargin(props)
+      ...getMargin(props),
+      width: '100%',
+      selectors: {
+        ':hover': {
+          cursor: 'pointer'
+        },
+        ':focus': {
+          outline: 'none'
+        }
+      }
     },
     expandIcon: {
-      alignSelf: 'flex-start',
+      top: 0,
+      right: 0,
+      color: palette.skeColor.blue,
+      margin: '0 4px',
+      width: '30px',
+      height: '30px',
+      border: circleOnIcon
+        ? `3px solid ${palette.skeColor.blue}`
+        : '3px solid transparent',
+      borderRadius: '50%',
       selectors: {
-        '&& .ms-Button-icon': {
+        i: {
           transform: isExpandedState ? 'rotate(-180deg)' : '0',
           fontSize: FontSizes.xxLarge
+        },
+        ':hover': {
+          borderColor: palette.skeColor.blue,
+          background: palette.skeColor.lightBlue
         }
       }
     },
@@ -109,8 +131,7 @@ export const getClassNames = (props: CardProps, state: CardState) => {
       fontWeight: FontWeights.semibold,
       selectors: {
         ':hover': {
-          textDecoration: 'underline',
-          cursor: 'pointer'
+          textDecoration: 'underline'
         }
       }
     },
@@ -121,7 +142,9 @@ export const getClassNames = (props: CardProps, state: CardState) => {
       padding: '5px 0 5px 0'
     },
     body: {
-      animationName: fadeIn
+      textAlign: 'left',
+      animationName: fadeIn,
+      fontSize: FontSizes.medium
     }
   });
 };
