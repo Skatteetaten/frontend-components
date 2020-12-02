@@ -3,8 +3,9 @@ import { getTheme } from '@uifabric/styling';
 import { PaletteProps } from '..';
 import { FontSizes, IconFontSizes } from '../utils/fonts';
 
-export const getClassNames = () => {
+export function getClassNames(props): any {
   const palette = getTheme().palette as PaletteProps;
+  const flex = props.flex;
 
   return mergeStyleSets({
     accordionMenu: {
@@ -46,10 +47,12 @@ export const getClassNames = () => {
     },
     menuItemTitle: {
       display: 'flex',
-      alignItems: 'center'
+      alignItems: 'center',
+      flex: flex ? '1 1 auto' : undefined
     },
     title: {
-      fontSize: FontSizes.medium,
+      display: flex ? 'flex' : undefined,
+      flex: flex ? '1 1 auto' : undefined,
       margin: '0 15px 0 15px',
       padding: '10px 0'
     },
@@ -106,4 +109,4 @@ export const getClassNames = () => {
       display: 'block'
     }
   });
-};
+}
