@@ -1,7 +1,7 @@
 import classnames from 'classnames';
 import * as React from 'react';
+import IconButton from '../IconButton/IconButton';
 import { getClassNames } from './Card.classNames';
-import Icon from '../Icon/Icon';
 
 export enum CardColor {
   GREY = 'neutralGrey',
@@ -57,8 +57,8 @@ export interface CardProps extends React.HTMLAttributes<HTMLDivElement> {
   onClick?: () => void;
   /** aria-label */
   ariaLabel?: string;
-  /** Button type (ex. submit, reset, button). Default er 'button' */
-  buttonType?: 'button' | 'submit' | 'reset';
+  /** Button type. Default er 'button' */
+  buttonType?: string;
 }
 
 export interface CardState {
@@ -106,19 +106,14 @@ export default class Card extends React.PureComponent<CardProps, CardState> {
       expand,
       actions,
       className,
+      circleOnIcon,
       id,
       buttonType
     } = this.props;
 
     const styles = getClassNames(this.props, this.state);
     return (
-      <button
-        id={id}
-        className={classnames(styles.root, className)}
-        onClick={this._toggleExpand}
-        aria-expanded={isExpandedState}
-        type={buttonType}
-      >
+      <div id={id} className={classnames(styles.root, className)}>
         {title || subtitle || expand ? (
           <div className={styles.header}>
             <div className={styles.titlecontainer}>
@@ -145,17 +140,20 @@ export default class Card extends React.PureComponent<CardProps, CardState> {
             </div>
             {expand && (
               <div className={styles.expandIcon}>
-                <Icon
+                <IconButton
                   aria-expanded={isExpandedState}
-                  iconName={'ChevronDown'}
+                  icon={'ChevronDown'}
                   ariaLabel={title}
+                  circle={circleOnIcon}
+                  onClick={this._toggleExpand}
+                  type={buttonType}
                 />
               </div>
             )}
           </div>
         ) : null}
         {isExpandedState && <div className={styles.body}>{children}</div>}
-      </button>
+      </div>
     );
   }
 

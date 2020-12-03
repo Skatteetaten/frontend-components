@@ -55,7 +55,7 @@ describe('Card komponent', () => {
       expand: true,
       isExpanded: true
     });
-    const expandBtn = wrapper.find('button');
+    const expandBtn = wrapper.find('IconButton');
 
     expect(wrapper.html()).toContain('titleExpand');
     expect(wrapper.html()).toContain('expandIcon');

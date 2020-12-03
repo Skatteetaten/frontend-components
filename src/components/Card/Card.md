@@ -39,16 +39,16 @@ const initialState = { title: 'Skatteoppgjøret for 2017' };
 </div>;
 ```
 
-Mulighet for å endre f.eks tittel mellom åpen og lukket tilstand
+Du kan endre tittelen mellom åpen og lukket tilstand
 
 ```js
 import Card from '@skatteetaten/frontend-components/Card';
 
-const initialState = { title: 'Inntekt' };
+const initialState = { title: 'Mine meldinger (2)' };
 
 function onChange(isExpanded) {
   setState({
-    title: isExpanded ? 'Inntekt (kr 450 000)' : initialState.title
+    title: isExpanded ? 'Mine meldinger' : initialState.title
   });
 }
 
@@ -61,12 +61,8 @@ function onChange(isExpanded) {
     onChange={isExpanded => onChange(isExpanded)}
     expand
   >
-    <p>
-      De fleste lønnsmottakere og pensjonister fikk skatteoppgjøret 27. juni.
-      Neste mulighet var 15. august, og heretter blir det løpende oppgjør frem
-      til 24. oktober. Vi kan dessverre ikke fortelle deg når du får
-      skatteoppgjøret ditt, hverken på telefon, chat eller på skattekontoret.
-    </p>
+    <p>Melding 1</p>
+    <p>Melding 2</p>
   </Card>
 </div>;
 ```
