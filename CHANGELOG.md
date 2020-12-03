@@ -1,3 +1,10 @@
+### **v.3.7.4 - 03.12.2020 **
+
+- AccordionMenu: added ability to flex content inside title area
+- Icons: New icons Pin and PinOff
+- TopBanner: Fixed onClick in internal header
+- TopStripe/Link: Accessibility; a link can now be used for skipping to main content.
+
 ### **v.3.7.3 - 19.11.2020 **
 
 - DropDown and TextField: now includes aria-invalid attribute
