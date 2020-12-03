@@ -30,7 +30,11 @@ const InternalHeader = props => {
           props.slantedAreaClassName
         )}
       >
-        <a className={styles.headerLinkContainer} href={props.homeUrl}>
+        <a
+          className={styles.headerLinkContainer}
+          href={props.homeUrl}
+          onClick={props.onClick}
+        >
           {size.gt.md && (
             <Image
               className={styles.headerLogo}
