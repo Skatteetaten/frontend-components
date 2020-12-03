@@ -1,4 +1,5 @@
 import * as React from 'react';
+import IconButton from '../../IconButton';
 import Icon from '../../Icon';
 import classnames from 'classnames';
 import { getClassNames } from '../AccordionMenu.classNames';
@@ -20,7 +21,6 @@ interface AccordionMenuItemProps extends React.HTMLAttributes<HTMLDivElement> {
   /** Flex the title section */
   flex?: boolean;
 }
-
 /**
  * @visibleName AccordionMenuItem (Element i trekkspillmeny)
  */
@@ -43,36 +43,49 @@ const AccordionMenuItem = (props: AccordionMenuItemProps) => {
     toggleVisibility();
   };
 
+  const {
+    menuItem,
+    menuItemIsOpen,
+    menuItemTitle,
+    iconWrapper,
+    toggleButton,
+    toggleButtonOpen,
+    content
+  } = styles;
+
   const styleTitle = styles.title;
 
   return (
     <li className={className} aria-label={ariaLabel}>
-      <button
-        className={
-          isContentOpen
-            ? classnames(styles.menuItem, styles.menuItemIsOpen)
-            : styles.menuItem
-        }
-        aria-expanded={isContentOpen}
+      <header
         onClick={clickHandler}
+        className={
+          isContentOpen ? classnames(menuItem, menuItemIsOpen) : menuItem
+        }
       >
-        <div className={styles.menuItemTitle}>
-          <Icon iconName={icon} className={styles.iconWrapper} />
+        <div className={menuItemTitle}>
+          <div className={iconWrapper}>
+            <div>
+              <Icon iconName={icon} style={{ fontSize: '28px' }} />
+            </div>
+          </div>
           <div className={styleTitle}>{heading}</div>
         </div>
         <div
           className={
             isContentOpen
-              ? classnames(styles.toggleButton, styles.toggleButtonOpen)
-              : styles.toggleButton
+              ? classnames(toggleButton, toggleButtonOpen)
+              : toggleButton
           }
         >
-          <Icon iconName="ChevronDown" />
+          <IconButton
+            alt={'Åpne og lukke knapp'}
+            icon="ChevronDown"
+            aria-expanded={isContentOpen}
+          />
         </div>
-      </button>
-      {isContentOpen && (
-        <section className={styles.content}>{children}</section>
-      )}
+      </header>
+      {isContentOpen && <section className={content}>{children}</section>}
     </li>
   );
 };
