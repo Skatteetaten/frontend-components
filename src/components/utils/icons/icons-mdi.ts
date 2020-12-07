@@ -1,27 +1,8 @@
-const fontUrls: string[] = [];
-fontUrls.push(
-  'url("' + require('../assets/materialdesignicons-webfont.eot') + '")'
-);
-fontUrls.push(
-  'url("' +
-    require('../assets/materialdesignicons-webfont.eot') +
-    '?#iefix") format("embedded-opentype")'
-);
-fontUrls.push(
-  'url("' +
-    require('../assets/materialdesignicons-webfont.woff2') +
-    '") format("woff2")'
-);
-fontUrls.push(
-  'url("' +
-    require('../assets/materialdesignicons-webfont.woff') +
-    '") format("woff")'
-);
-fontUrls.push(
-  'url("' +
-    require('../assets/materialdesignicons-webfont.ttf') +
-    '") format("truetype")'
-);
+import webfontEOT from '../assets/materialdesignicons-webfont.eot';
+import webfontWOFF2 from '../assets/materialdesignicons-webfont.woff2';
+import webfontWOFF from '../assets/materialdesignicons-webfont.woff';
+import webfontTTF from '../assets/materialdesignicons-webfont.ttf';
+import webfontSVG from '../assets/materialdesignicons-webfont.svg';
 
 export default {
   style: {
@@ -33,7 +14,14 @@ export default {
   },
   fontFace: {
     fontFamily: `"Material Icons"`,
-    src: fontUrls.join(', ')
+    src: [
+      `url("${webfontEOT}") format("embedded-opentype")`,
+      `url("${webfontEOT}?#iefix") format("embedded-opentype")`,
+      `url("${webfontWOFF2}") format("woff2")`,
+      `url("${webfontWOFF}") format("woff")`,
+      `url("${webfontTTF}") format("truetype")`,
+      `url("${webfontSVG}#materialdesignicons-webfont") format("svg")`
+    ].join(', ')
   },
   icons: {
     //Arrows
@@ -51,6 +39,7 @@ export default {
     ArrowDropDown: '\uf140',
     NavigateBefore: '\uf04d',
     NavigateNext: '\uf054',
+    MoveUp: '\ufcbe',
 
     //Info
     Blocked: '\uf0ad',
@@ -118,8 +107,6 @@ export default {
     OpenInNew: '\uf3cc',
     MenuUp: '\uf360',
     MenuDown: '\uf35d',
-    Pin: '\uf403',
-    PinOff: '\uf404', 
 
     //Sections and symbols
     Home: '\uf2dc',
@@ -140,6 +127,7 @@ export default {
     Phone: '\uf602',
     Forum: '\uf28c',
     Calculator: '\uf0ec',
+    Facebook: '\uf20d',
     LinkedIn: '\uf33c',
     Twitter: '\uf544',
     Key: '\uf306',
