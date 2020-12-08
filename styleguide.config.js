@@ -68,11 +68,7 @@ module.exports = {
           content: 'src/sections/monstre/tabell-kompleks.md'
         },
         {
-          name: 'Overstyrt eller historisk verdi',
-          content: 'src/sections/monstre/historisk-verdi.md'
-        },
-        {
-          name: 'Feilhåndtering',
+          name: 'Tekst på feilmeldinger',
           content: 'src/sections/monstre/feil.md'
         },
         {
