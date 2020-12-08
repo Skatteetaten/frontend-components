@@ -122,6 +122,10 @@
   flex-grow: 1;
 }
 
+.error-border-color {
+  border-color: #a82e39;
+}
+
 q {
   font-style: italic;
   font-size: 36px;

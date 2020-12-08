@@ -16,6 +16,7 @@ import MessageBar from '@skatteetaten/frontend-components/MessageBar';
 import CheckBox from '@skatteetaten/frontend-components/CheckBox';
 import ErrorMessage from '@skatteetaten/frontend-components/ErrorMessage';
 import DatePicker from '@skatteetaten/frontend-components/DatePicker';
+import Image from '@skatteetaten/frontend-components/Image';
 
 <>
   <Card
@@ -61,29 +62,33 @@ import DatePicker from '@skatteetaten/frontend-components/DatePicker';
 
   <h3>Slik designer du en feilmelding som gjelder systemfeil:</h3>
   <ul>
-    <li>La bakgrunnsbildet være dus og inaktivt.</li>
-    <li>
-      Bruk gul bakgrunnsfarge for generelle feilmeldinger og rød hvis det er av
-      høyere alvorlighetsgrad at noe ikke virker som det skal.
-    </li>
+    <li>La bakgrunnen rundt feilmeldingen være dus og inaktiv.</li>
     <li>
       Bruk varseltrekant som ikon i toppen av feilmeldingen dersom det er en
       feil av mer alvorlig art.
     </li>
   </ul>
   <div className="dodont" style={{ marginLeft: '24px' }}>
-    <div className="do">
+    <div className="do" style={{ maxWidth: '44%' }}>
       <p>Ja</p>
-      dialog 1
+      <Image
+        src="./assets/png/eks_systemfeil1.png"
+        alt="Beskriv innholdet i bildet"
+        width="auto"
+      />
     </div>
-    <div className="dont">
+    <div className="dont" style={{ maxWidth: '44%' }}>
       <p>Nei</p>
-      dialog 2
+      <Image
+        src="./assets/png/eks_systemfeil2.png"
+        alt="Beskriv innholdet i bildet"
+        width="auto"
+      />
     </div>
   </div>
   <br />
   <div className="dodont" style={{ marginLeft: '24px' }}>
-    <div className="do" style={{ maxWidth: '45%' }}>
+    <div className="do" style={{ maxWidth: '44%' }}>
       <p>Ja</p>
       <MessageBar type={MessageBar.Type.warning}>
         Beklager, vi har en feil. Prøv igjen om 10 minutter. Vedvarer feilen, er
@@ -139,7 +144,38 @@ import DatePicker from '@skatteetaten/frontend-components/DatePicker';
       brukerens perspektiv og språk.
     </li>
   </ul>
-  <p style={{ color: 'red' }}>Gjerne ett eksempel til her.</p>
+  <div className="dodont" style={{ marginLeft: '24px' }}>
+    <div className="do" style={{ maxWidth: '44%' }}>
+      <p>Ja</p>
+      <TextField
+        label="Inntektsår"
+        value="1009"
+        errorMessage={'Inntekståret må være etter 2008.'}
+      />
+      <br />
+      <TextField
+        label="E-post"
+        value="Ola.Normann.no"
+        errorMessage={
+          'E-posten ser ikke riktig ut. Skriv slik: ola.normann@norge.no'
+        }
+      />
+    </div>
+    <div className="dont" style={{ maxWidth: '44%' }}>
+      <p>Nei</p>
+      <TextField
+        label="Inntektsår"
+        value="20"
+        errorMessage={'Ugyldig år (YYYY)'}
+      />
+      <br />
+      <TextField
+        label="E-post"
+        value="Ola.Normann.no"
+        errorMessage={'Feil i e-postadressen.'}
+      />
+    </div>
+  </div>
 
   <h2>Andre eksempler</h2>
 
@@ -160,18 +196,16 @@ import DatePicker from '@skatteetaten/frontend-components/DatePicker';
           <div style={{ minHeight: '260px', verticalAlign: 'center' }}>
             <div style={{ textAlign: 'center', paddingTop: '40px' }}>
               <Icon
-                iconName="WarningOutline"
+                iconName="ErrorOutline"
                 style={{ fontSize: '32px', color: '#1d1d1d' }}
               />
               <p style={{ fontSize: '18px' }}>
-                Beklager, vi har en feil. Prøv igjen om 10 minutter. Vedvarer
-                feilen, er vi takknemlig som du vil hjelpe oss ved å{' '}
-                <Link
+                Beklager, vi har en feil. Prøv igjen om 10 minutter. <br />
+                Vedvarer feilen, er vi takknemlig som du vil hjelpe oss ved å <Link
                   path={'#link'}
                   text={'sende automatisk beskjed'}
                   icon={'OpenInNew'}
-                />{' '}
-                til oss.
+                /> til oss.
               </p>
             </div>
           </div>
@@ -180,7 +214,7 @@ import DatePicker from '@skatteetaten/frontend-components/DatePicker';
           <div style={{ minHeight: '260px', verticalAlign: 'center' }}>
             <div style={{ textAlign: 'center', paddingTop: '40px' }}>
               <Icon
-                iconName="WarningOutline"
+                iconName="ErrorOutline"
                 style={{ fontSize: '32px', color: '#1d1d1d' }}
               />
               <p style={{ fontSize: '18px' }}>
