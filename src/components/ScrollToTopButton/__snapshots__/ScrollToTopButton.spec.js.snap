@@ -2,6 +2,7 @@
 
 exports[`ScrollToTopButton komponent matcher snapshot 1`] = `
 <div
+  aria-hidden="true"
   className="topcontainer-41"
 >
   <div
