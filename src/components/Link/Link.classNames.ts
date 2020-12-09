@@ -17,6 +17,29 @@ export const getClassNames = () => {
     linkContainer: {
       margin: '0px',
     },
+    skipLink: {
+      left: '-999px',
+      position: 'absolute',
+      top: 'auto',
+      width: '1px',
+      height: '1px',
+      overflow: 'hidden',
+      selectors: {
+        '&:focus, &:active': {
+          color: palette.skeColor.blue,
+          backgroundColor: '#fff',
+          position: 'relative',
+          left: 'auto',
+          top: 'auto',
+          width: '100px',
+          height: 'auto',
+          overflow: 'auto',
+          padding: '5px',
+          border: `4px solid ${palette.skeColor.pink}`,
+          textAlign: 'center',
+        },
+      },
+    },
     iconLink: {
       color: palette.skeColor.blue,
       textDecoration: 'none',

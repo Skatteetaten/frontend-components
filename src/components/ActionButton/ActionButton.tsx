@@ -1,5 +1,5 @@
 import classnames from 'classnames';
-import { ActionButton as FabricActionButton } from 'office-ui-fabric-react';
+import { ActionButton as FabricActionButton } from '@fluentui/react';
 import * as React from 'react';
 import { getClassNames } from './ActionButton.classNames';
 import { ButtonProps } from '../index';

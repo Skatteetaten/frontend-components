@@ -28,7 +28,7 @@ describe('Dialog komponent', () => {
       hidden: false,
     });
 
-    const htmlElm = wrapper.find('StyledWithResponsiveMode').first();
+    const htmlElm = wrapper.find('Dialog').first();
     expect(wrapper.prop('layoutStyle')).toEqual('important');
     expect(wrapper.prop('type')).toEqual(1);
     expect(wrapper.find('.ms-Dialog-title').html()).toContain('Tekst tittel');

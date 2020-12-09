@@ -1,13 +1,13 @@
 ** Kan brukes for å vise for langt det er igjen for noe å laste **
 
-```
+```js
 import { ProgressBar } from '@skatteetaten/frontend-components';
 
 <ProgressBar
   label="Laster inn..."
   description="Vennligst vent mens vi laster inn litt data"
-  percentComplete={.33}
-/>
+  percentComplete={0.33}
+/>;
 ```
 
 ```js noeditor uu

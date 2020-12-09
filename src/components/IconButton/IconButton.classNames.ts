@@ -9,6 +9,11 @@ import {
 
 function getTypeColor(props: IconButtonProps) {
   switch (props.buttonSize) {
+    case 'xSmall':
+      return {
+        width: '26px',
+        height: '26px',
+      };
     case 'small':
       return {
         width: '35px',
@@ -70,6 +75,10 @@ function getCircleFocusStyles(props: IconButtonProps) {
 
 function getIconSize(props: IconButtonProps) {
   switch (props.buttonSize) {
+    case 'xSmall':
+      return {
+        fontsize: FontSizes.smallPlus,
+      };
     case 'small':
       return {
         fontSize: FontSizes.mediumPlus,
@@ -117,9 +126,7 @@ export const getClassNames = function getClassNames(props: IconButtonProps) {
           ...getIconSize(props),
         },
         '&.ms-Button--icon:hover, &.ms-Button--icon:focus': {
-          border: '3px solid',
-          // @ts-ignore
-          borderColor: palette.skeColor.blue,
+          border: `3px solid ${palette.skeColor.blue}`,
           transition: 'background-color 0.3s',
           // @ts-ignore
           ...getCircleHoverStyles(props),

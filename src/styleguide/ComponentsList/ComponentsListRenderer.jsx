@@ -1,6 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router';
-import { Nav } from 'office-ui-fabric-react/lib-commonjs/Nav';
+import { Nav } from '@fluentui/react';
 import { getTheme, FontSizes, FontWeights } from '@uifabric/styling';
 import { mergeStyleSets } from '@uifabric/merge-styles';
 import find from 'lodash.find';

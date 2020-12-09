@@ -3,7 +3,7 @@ import {
   ISpinnerProps,
   Spinner as FabricSpinner,
   SpinnerSize,
-} from 'office-ui-fabric-react';
+} from '@fluentui/react';
 import * as React from 'react';
 import { getClassNames } from './Spinner.classNames';
 
@@ -12,7 +12,7 @@ export interface SpinnerProps extends ISpinnerProps {
 }
 
 /**
- * @visibleName Spinner (Innlasting)
+ * @visibleName Spinner (Spinner)
  */
 export class Spinner extends React.PureComponent<SpinnerProps> {
   static Size = SpinnerSize;

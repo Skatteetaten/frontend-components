@@ -1,8 +1,5 @@
 import classnames from 'classnames';
-import {
-  Checkbox as FabricCheckBox,
-  ICheckboxProps,
-} from 'office-ui-fabric-react';
+import { Checkbox as FabricCheckBox, ICheckboxProps } from '@fluentui/react';
 import * as React from 'react';
 import { getClassNames } from './CheckBox.classNames';
 

@@ -10,14 +10,20 @@ export interface AccordionMenuProps
   children?: React.ReactNode;
   /** aria-label */
   ariaLabel?: string;
+  /** Use flex */
+  flex?: boolean;
 }
 
+/**
+ * @visibleName AccordionMenu (Trekkspillmeny)
+ */
 export const AccordionMenu: React.FC<AccordionMenuProps> = ({
   className,
   children,
   ariaLabel,
+  flex,
 }) => {
-  const styles = getClassNames();
+  const styles = getClassNames({ flex });
   const totalSteps = React.Children.count(children);
   return (
     <ul

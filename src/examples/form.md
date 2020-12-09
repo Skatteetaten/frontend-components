@@ -8,7 +8,7 @@ import {
   Button,
 } from '@skatteetaten/frontend-components';
 
-const initialState = {
+const [state, setState] = React.useState({
   options: [
     {
       key: 'A',
@@ -19,7 +19,7 @@ const initialState = {
       text: 'Valg B',
     },
   ],
-};
+});
 
 <Card title="Skjema">
   <Grid>

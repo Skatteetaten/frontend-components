@@ -6,7 +6,7 @@ import {
   MessageBarProps,
 } from '../index';
 import { getTheme } from '@uifabric/styling';
-import { MessageBarType } from 'office-ui-fabric-react';
+import { MessageBarType } from '@fluentui/react';
 
 function getBackgroundColor(props: MessageBarProps['type']) {
   const palette = getTheme().palette as PaletteProps;

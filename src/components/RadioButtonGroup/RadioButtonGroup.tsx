@@ -3,7 +3,7 @@ import {
   ChoiceGroup as FabricChoiceGroup,
   IChoiceGroupOption,
   IChoiceGroupProps,
-} from 'office-ui-fabric-react';
+} from '@fluentui/react';
 import * as React from 'react';
 import { getClassNames } from './RadioButtonGroup.classNames';
 import {
@@ -103,6 +103,7 @@ export const RadioButtonGroup = (props: RadioButtonGroupProps) => {
         {...rest}
         className={classnames(styles.radioButtons, className)}
         ariaLabelledBy={labelId}
+        aria-invalid={errorMessage ? true : false}
       >
         {children}
       </FabricChoiceGroup>

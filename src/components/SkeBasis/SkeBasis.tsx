@@ -5,7 +5,7 @@ import {
   IIconSubset,
   getIcon,
 } from '@uifabric/styling';
-import { Fabric, IFabricProps } from 'office-ui-fabric-react';
+import { Fabric, IFabricProps } from '@fluentui/react';
 import * as React from 'react';
 import { Fonts, SkeIcons, MdIcons, Palette } from '../index';
 
@@ -15,6 +15,9 @@ export interface SkeBasisProps extends IFabricProps {
   icons?: Array<IIconSubset>;
 }
 
+/**
+ * @visibleName SkeBasis (Basiskomponent)
+ */
 export class SkeBasis extends React.PureComponent<SkeBasisProps> {
   static PALETTE = Palette;
   static FONTS = Fonts;

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Grid } from '../index';
-import { ResponsiveMode } from 'office-ui-fabric-react';
+import { ResponsiveMode } from '@fluentui/react';
 import { mergeStyles } from '@uifabric/merge-styles';
 
 const getClassNames = () => {

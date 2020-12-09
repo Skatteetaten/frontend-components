@@ -2,28 +2,28 @@
 
 exports[`Checkbox komponent matcher snapshot 1`] = `
 <div
-  className="ms-Checkbox reversed is-enabled SkeAvkrysningsboks-75"
+  className="ms-Checkbox reversed is-enabled SkeAvkrysningsboks-55"
 >
   <input
     aria-checked="false"
     checked={false}
-    className="input-76"
-    id="checkbox-1"
+    className="input-56"
+    id="checkbox-0"
     onBlur={[Function]}
     onChange={[Function]}
     onFocus={[Function]}
     type="checkbox"
   />
   <label
-    className="ms-Checkbox-label label-77"
-    htmlFor="checkbox-1"
+    className="ms-Checkbox-label label-57"
+    htmlFor="checkbox-0"
   >
     <div
-      className="ms-Checkbox-checkbox checkbox-78"
+      className="ms-Checkbox-checkbox checkbox-58"
     >
       <i
         aria-hidden={true}
-        className="ms-Checkbox-checkmark checkmark-82"
+        className="ms-Checkbox-checkmark checkmark-62"
         data-icon-name="CheckMark"
       >
         

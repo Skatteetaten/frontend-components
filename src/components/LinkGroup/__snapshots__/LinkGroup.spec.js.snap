@@ -12,24 +12,24 @@ exports[`Link komponent matcher snapshot 1`] = `
   }
 >
   <ul
-    className="arrowLinkList-76"
+    className="arrowLinkList-56"
   >
     <li
-      className="arrowLink-74"
+      className="arrowLink-54"
       key="0"
     >
       <Icon
-        className="icon-75"
+        className="icon-55"
         iconName="arrowForward"
         role="presentation"
       >
         <StyledIconBase
-          className="icon-75"
+          className="icon-55"
           iconName="arrowForward"
           role="presentation"
         >
           <IconBase
-            className="icon-75"
+            className="icon-55"
             iconName="arrowForward"
             role="presentation"
             styles={[Function]}
@@ -259,7 +259,7 @@ exports[`Link komponent matcher snapshot 1`] = `
                   "buttonTextHovered": "rgba(21, 21, 21, 0.95)",
                   "buttonTextPressed": "rgba(21, 21, 21, 0.95)",
                   "cardShadow": "0 1.6px 3.6px 0 rgba(0, 0, 0, 0.132), 0 0.3px 0.9px 0 rgba(0, 0, 0, 0.108)",
-                  "cardShadowHovered": "0 3.2px 7.2px 0 rgba(0, 0, 0, 0.132), 0 0.6px 1.8px 0 rgba(0, 0, 0, 0.108)",
+                  "cardShadowHovered": "0 0 1px rgba(89, 89, 89, 0.95)",
                   "cardStandoutBackground": "#ffffff",
                   "defaultStateBackground": "#f8f8f8",
                   "disabledBackground": "#f4f4f4",
@@ -297,7 +297,7 @@ exports[`Link komponent matcher snapshot 1`] = `
                   "listItemBackgroundCheckedHovered": "#dadada",
                   "listItemBackgroundHovered": "#f4f4f4",
                   "listText": "rgba(0, 0, 0, 0.95)",
-                  "listTextColor": "rgba(0, 0, 0, 0.95)",
+                  "listTextColor": "#323130",
                   "menuBackground": "#ffffff",
                   "menuDivider": "#c8c8c8",
                   "menuHeader": "#1362ae",
@@ -344,7 +344,7 @@ exports[`Link komponent matcher snapshot 1`] = `
           >
             <i
               aria-hidden={true}
-              className="icon-79"
+              className="icon-59"
               data-icon-name="arrowForward"
               role="presentation"
             >
@@ -354,7 +354,7 @@ exports[`Link komponent matcher snapshot 1`] = `
         </StyledIconBase>
       </Icon>
       <a
-        className="arrowLinkA-77"
+        className="arrowLinkA-57"
         href="#"
       >
         Dette er en link

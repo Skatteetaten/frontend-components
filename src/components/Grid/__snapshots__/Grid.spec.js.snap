@@ -5,19 +5,20 @@ exports[`Grid komponent matcher snapshot  1`] = `
   padding="0 8px"
 >
   <div
-    className="ske-Grid-74 "
+    className="ske-Grid-54 "
+    dir="ltr"
   >
     <GridRow
       rowSpacing="24px"
     >
       <div
-        className="ske-Grid-row-77 "
+        className="ske-Grid-row-57 "
       >
         <GridCol
           lg={4}
         >
           <div
-            className="ske-Grid-col-78 "
+            className="ske-Grid-col-58 "
           >
             4
           </div>
@@ -26,14 +27,14 @@ exports[`Grid komponent matcher snapshot  1`] = `
           lg={4}
         >
           <div
-            className="ske-Grid-col-78 "
+            className="ske-Grid-col-58 "
           />
         </GridCol>
         <GridCol
           lg={4}
         >
           <div
-            className="ske-Grid-col-78 "
+            className="ske-Grid-col-58 "
           >
             4
           </div>
@@ -44,13 +45,13 @@ exports[`Grid komponent matcher snapshot  1`] = `
       rowSpacing="8px"
     >
       <div
-        className="ske-Grid-row-79 "
+        className="ske-Grid-row-59 "
       >
         <GridCol
           lg={4}
         >
           <div
-            className="ske-Grid-col-78 "
+            className="ske-Grid-col-58 "
           >
             4
           </div>
@@ -59,14 +60,14 @@ exports[`Grid komponent matcher snapshot  1`] = `
           lg={4}
         >
           <div
-            className="ske-Grid-col-78 "
+            className="ske-Grid-col-58 "
           />
         </GridCol>
         <GridCol
           lg={4}
         >
           <div
-            className="ske-Grid-col-78 "
+            className="ske-Grid-col-58 "
           >
             4
           </div>

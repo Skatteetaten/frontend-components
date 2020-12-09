@@ -1,6 +1,6 @@
 import classnames from 'classnames';
 import * as React from 'react';
-import { IconButton as FabricIconButton } from 'office-ui-fabric-react';
+import { IconButton as FabricIconButton } from '@fluentui/react';
 import { getClassNames } from './IconButton.classNames';
 import { ButtonProps } from '../index';
 
@@ -12,7 +12,7 @@ export interface IconButtonProps extends ButtonProps {
   /** Beskrivelse av hva knappen gjør (f.eks. til skjermlesere) */
   title?: string;
   /** Gjør knappen til hovedknapp med fylt farge */
-  buttonSize?: 'default' | 'small' | 'medium' | 'large' | 'xLarge';
+  buttonSize?: 'default' | 'xSmall' | 'small' | 'medium' | 'large' | 'xLarge';
   /**
    * Fjerne Prop
    * @ignore

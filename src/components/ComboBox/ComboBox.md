@@ -3,7 +3,7 @@
 ```js
 import { ComboBox, Grid } from '@skatteetaten/frontend-components';
 
-const initialState = {
+const [state, setState] = React.useState({
   options: [
     { key: 'A', text: 'alfa', value: 'Alfa' },
     { key: 'B', text: 'beta', value: 'Beta' },
@@ -11,7 +11,7 @@ const initialState = {
     { key: 'D', text: 'delta', value: 'Delta' },
     { key: 'E', text: 'echo', value: 'Echo' },
   ],
-};
+});
 
 <div>
   <Grid>
@@ -50,7 +50,7 @@ Stor versjon:
 ```js
 import { ComboBox, Grid } from '@skatteetaten/frontend-components';
 
-const initialState = {
+const [state, setState] = React.useState({
   options: [
     { key: 'A', text: 'alfa', value: 'Alfa' },
     { key: 'B', text: 'beta', value: 'Alfa' },
@@ -58,7 +58,7 @@ const initialState = {
     { key: 'D', text: 'delta', value: 'Alfa' },
     { key: 'E', text: 'echo', value: 'Alfa' },
   ],
-};
+});
 
 <div>
   <Grid>
@@ -118,7 +118,7 @@ Med Feilmelding:
 ```js
 import { ComboBox, Grid } from '@skatteetaten/frontend-components';
 
-const initialState = {
+const [state, setState] = React.useState({
   options: [
     { key: 'A', text: 'alfa', value: 'Alfa' },
     { key: 'B', text: 'beta', value: 'Alfa' },
@@ -126,7 +126,7 @@ const initialState = {
     { key: 'D', text: 'delta', value: 'Alfa' },
     { key: 'E', text: 'echo', value: 'Alfa' },
   ],
-};
+});
 let error = 'En feil';
 
 <div>

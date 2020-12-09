@@ -3,7 +3,7 @@
 ```js
 import { RadioButtonGroup } from '@skatteetaten/frontend-components';
 
-const initialState = {
+const [state, setState] = React.useState({
   options: [
     {
       key: 'A',
@@ -14,7 +14,8 @@ const initialState = {
       text: 'Aksjeselskap',
     },
   ],
-};
+});
+
 <RadioButtonGroup
   label="Type virksomhet"
   options={state.options}
@@ -29,7 +30,7 @@ Med beskrivelse på hvert steg:
 ```js
 import { RadioButtonGroup } from '@skatteetaten/frontend-components';
 
-const initialState = {
+const [state, setState] = React.useState({
   options: [
     {
       key: 'A',
@@ -44,7 +45,7 @@ const initialState = {
         'Hvis du er veldig glad i å spare uten renter er dette kontoen for deg. Uttak fra denne kontoen kommer med gebyr',
     },
   ],
-};
+});
 <>
   <RadioButtonGroup
     label="Type sparekonto"
@@ -94,20 +95,31 @@ const initialState = {
 
 ```js noeditor beskrivelse
 <>
-  <h3>Velge kun ett valg</h3>
+  <h3>Skjema der brukeren bare kan velge ett alternativ</h3>
 
   <p>
-    Radioknapper bruker vi når ber brukeren om å velge nøyaktig ett valg i en
-    liste.
+    Bruk radioknapper hvis brukeren bare kan velge ett alternativ i listen din.
+    Dersom brukeren skal kunne huke av for flere valg samtidig, bruker du også
+    nedtrekksliste.
   </p>
+  <h3>To oppsett for radioknapper:</h3>
+
+  <ul>
+    <li>
+      Ønsker du at brukeren skal ta et aktivt valg, setter du opp radioknappene
+      uten at de er avhuket.{' '}
+    </li>
+    <li>
+      Hvis brukeren ikke må ta et valg, kan du huke av et alternativ som
+      standard. Da kan brukeren enten la være å gjøre noe, eller fjerne krysset
+      om valget ikke er aktuelt.
+    </li>
+  </ul>
+  <h3>Bruk radioknapper når på korte lister</h3>
+
   <p>
-    Hvis du har plass på siden, og 2-7 valg å velge mellom, er det ofte en
-    fordel å bruke slike radioknapper fremfor nedtrekksmeny.
-  </p>
-  <p>
-    Dersom brukeren må ta et aktivt valg, kan listen med radioknappen starte
-    uten at noen av valgene er avhuket. Implisitt betyr dette at dersom listen
-    med radioknapper får en default-valg satt, MÅ ikke brukeren ta et valg.
+    Hvis listen har mer enn 7 alternativer fremstår den litt lang, og vi
+    anbefaler da en nedtrekksliste (Dropdown) i stedet.
   </p>
 </>
 ```

@@ -98,24 +98,27 @@ import { Card, Tabs, TabItem } from '@skatteetaten/frontend-components';
     Løsningen i designsystemet, som du leser i nå, er et eksempel på bruk av
     Tabs.
   </p>
-  <h3>Innholdet må ha logisk inndeling</h3>
-  <p>
-    Etterstreb logisk inndeling av innholdet slik at brukerne enkelt kan forutse
-    hva som er innholdet i en fane. Bruk korte tekster på titlene - og unngå kun
-    STORE BOKSTAVER.
-  </p>
-
-  <h3>Plassering må være på toppen</h3>
-
-  <p>
-    Plasser Tabs oppe på siden, ikke nede eller til venstre eller høyre. Bruk
-    kun én rad med faner om gangen for å gjøre det tydelig for brukeren.
-  </p>
-
-  <h3>Ikke som navigasjon</h3>
-  <p>
-    Denne Tabs-komponentent bruker vi altså for å bytte visning innad på en side
-    og ikke for å navigere mellom ulike sider.
-  </p>
+  <h3>Slik bruker du tabs:</h3>
+  <ul>
+    <li>
+      Innholdet må ha logisk inndeling. Etterstreb en logisk inndeling av
+      innholdet slik at brukeren enkelt kan forutse hvilken type informasjon som
+      ligger i fanen.
+    </li>
+    <li>
+      Bruk korte tekster på titlene – og unngå hele ord med store bokstaver.
+    </li>
+    <li>
+      Plasser arkfanene må på toppen, ikke nede eller til venstre eller høyre.
+    </li>
+    <li>
+      Bruk kun én rad med faner om gangen for å gjøre det tydelig for brukeren.
+    </li>
+    <li>
+      {' '}
+      Arkfanene skal hjelpe brukeren å bytte visning innad på en side og ikke
+      for å navigere mellom ulike sider.
+    </li>
+  </ul>
 </>
 ```

@@ -1,17 +1,12 @@
 import * as React from 'react';
 import classnames from 'classnames';
-import {
-  ErrorMessage,
-  LabelWithCallout,
-  calloutState,
-  generateId,
-} from '../index';
+import { LabelWithCallout, calloutState, generateId } from '../index';
 import {
   ITextFieldProps,
   MaskedTextField,
   TextField as FabricTextField,
   ITextField,
-} from 'office-ui-fabric-react';
+} from '@fluentui/react';
 import { getClassNames } from './TextField.classNames';
 
 export interface TextFieldProps extends ITextFieldProps {
@@ -161,6 +156,7 @@ export const TextField: React.FC<TextFieldProps> = ({
           getClassNames({ ...rest, editMode, readOnly }),
           className
         )}
+        errorMessage={errorMessage}
         onBlur={onBlur}
         componentRef={(ref) => {
           if (rest.componentRef && typeof rest.componentRef === 'function') {
@@ -172,7 +168,6 @@ export const TextField: React.FC<TextFieldProps> = ({
       >
         {children}
       </TextFieldType>
-      {errorMessage && <ErrorMessage>{errorMessage}</ErrorMessage>}
     </div>
   );
 };

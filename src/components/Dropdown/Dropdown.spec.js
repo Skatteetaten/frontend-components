@@ -2,7 +2,7 @@ import React from 'react';
 import toJson from 'enzyme-to-json';
 import { shallow, mount } from 'enzyme';
 import { Dropdown } from '../index';
-import { KeytipData } from 'office-ui-fabric-react';
+import { KeytipData } from '@fluentui/react';
 
 function oppsettShallow(props) {
   return shallow(<Dropdown {...props} />);

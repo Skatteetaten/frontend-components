@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { getClassNames } from './LabelWithCallout.classNames';
-import { IconButton } from 'office-ui-fabric-react';
+import { IconButton } from '@fluentui/react';
 import { Callout } from '../index';
 import classnames from 'classnames';
 
@@ -41,6 +41,9 @@ export interface LabelWithCalloutProps
   warning?: string | JSX.Element | undefined;
 }
 
+/**
+ * @visibleName LabelWithCallout (Merkelapp med utropsboks)
+ */
 export const LabelWithCallout = (props: LabelWithCalloutProps) => {
   const {
     ariaLabel,

@@ -32,6 +32,7 @@ export interface TableRowProps<P> {
   openExpandableRowIndex: number | undefined;
   tableId: string;
   showRowSeparators: boolean;
+  compactTable: boolean;
 }
 
 /**
@@ -59,6 +60,7 @@ export const TableRow = <P extends object>(props: TableRowProps<P>) => {
     tableId,
     openEditableOnRowClick,
     showRowSeparators,
+    compactTable,
   } = props;
   const numberOfColumns =
     columns.length + (editableRows || expandableRows ? 1 : 0);
@@ -94,6 +96,7 @@ export const TableRow = <P extends object>(props: TableRowProps<P>) => {
         icon="Edit"
         disabled={editModeActive || expandableModeActive}
         type="button"
+        buttonSize={compactTable ? 'xSmall' : 'default'}
       />
     </span>
   );
@@ -127,7 +130,7 @@ export const TableRow = <P extends object>(props: TableRowProps<P>) => {
               onExpandRow(rowIndex);
             }
           }}
-          buttonSize="large"
+          buttonSize={compactTable ? 'xSmall' : 'large'}
           title={t('tablerow.expandable.title')}
           icon={btnProps.open ? 'ChevronUp' : 'ChevronDown'}
           aria-expanded={btnProps.open}

@@ -1,5 +1,6 @@
 import * as React from 'react';
 import axios, { AxiosResponse } from 'axios';
+import i18n, { t } from './../utils/i18n/i18n';
 import { getClassNames } from './FileUploader.classNames';
 import classnames from 'classnames';
 import {
@@ -10,6 +11,12 @@ import {
   calloutState,
   LabelWithCalloutProps,
 } from '../index';
+
+export enum Language {
+  en = 'en',
+  nb = 'nb',
+  nn = 'nn',
+}
 
 export enum FileFormatTypes {
   doc = '.doc',
@@ -26,15 +33,17 @@ export enum FileFormatTypes {
 export interface AttachmentMetadata extends File {
   id: string;
 }
-
+/**
+ * @visibleName FileUploader (Filopplaster)
+ */
 export interface FileUploaderProps {
   /** Akksepterte filformater */
   acceptedFileFormats?: Array<FileFormatTypes>;
   /** Tekst for opplastingskomponenten */
   addFileString?: string | JSX.Element;
   /** Funksjon som kjøres etter opplasting */
-  afterUpload?: () => void;
-  /** aria-label */
+  afterUpload?: (uploadedFiles: any) => void;
+  /** aria-label @deprecated */
   ariaLabel?: string;
   /** string for Apikall */
   axiosPath?: string;
@@ -47,7 +56,7 @@ export interface FileUploaderProps {
   /** Aria-label for "fjern fil"-knapp */
   deleteButtonAriaLabel?: string;
   /** Funksjon for å slette opplastet fil */
-  deleteFile?: (file: AttachmentMetadata | File) => void;
+  deleteFile?: (file: AttachmentMetadata | File, errors: string[]) => void;
   /**feilmelding for oversteget av filstørrelsesgrense*/
   exceedFileSizeLimitErrorMessage?: string;
   /** Opplastede filer */
@@ -58,7 +67,7 @@ export interface FileUploaderProps {
   forsinkelse?: number;
   /** Hjelpetekst */
   help?: string | JSX.Element;
-  /** Id */
+  /** Id - should have a value so unique references to labels inside component can be made */
   id?: string;
   /** Tilleggsinformasjon */
   info?: string | JSX.Element;
@@ -72,6 +81,8 @@ export interface FileUploaderProps {
   labelButtonAriaLabel?: string;
   /** Overstyr label, se LabelWithCallout komponent */
   labelCallout?: LabelWithCalloutProps;
+  /** Language selection for what the screen reader reads out. Default is Norwegian Bokmål */
+  language?: Language;
   /** Spinner når fil laster */
   loading?: boolean;
   /** Mulighet for å laste opp flere filer */
@@ -148,7 +159,6 @@ export const FileUploader: React.FC<FileUploaderProps> = (props) => {
     acceptedFileFormats,
     addFileString,
     afterUpload,
-    ariaLabel,
     axiosPath,
     className,
     deleteAllFiles,
@@ -158,7 +168,7 @@ export const FileUploader: React.FC<FileUploaderProps> = (props) => {
     files,
     fileSizeLimit,
     help,
-    id,
+    id = 'fileupload',
     info,
     invalidCharacterRegexp,
     isLoading,
@@ -166,6 +176,7 @@ export const FileUploader: React.FC<FileUploaderProps> = (props) => {
     labelButtonAriaLabel,
     labelCallout,
     labelWithCalloutAutoDismiss,
+    language,
     loading,
     multipleFiles,
     normalizeFileName,
@@ -183,9 +194,12 @@ export const FileUploader: React.FC<FileUploaderProps> = (props) => {
   const [internalLoading, setInternalLoading] = React.useState<boolean>(false);
   const inputRef = React.useRef<HTMLInputElement | null>(null);
 
+  if (language) {
+    i18n.changeLanguage(language);
+  }
+
   React.useEffect(() => {
     if (files) {
-      setInternalErrorMessages([]);
       setInternalFiles(files);
     }
   }, [files]);
@@ -250,7 +264,7 @@ export const FileUploader: React.FC<FileUploaderProps> = (props) => {
       (file) => !isCorrectFileFormat(file, acceptedFileFormats)
     );
     if (invalidFileFormatFiles.length) {
-      pushToInternalMessages('Dette filformatet er ikke godkjent');
+      pushToInternalMessages(t('fileuploader.error.file_format'));
     }
 
     const validFiles = fileList.filter((file) =>
@@ -273,19 +287,27 @@ export const FileUploader: React.FC<FileUploaderProps> = (props) => {
         axios
           .all(allPromises)
           .then((responses) => {
-            setInternalFiles([
+            const updatedInternalFiles = [
               ...internalFiles,
               ...responses.map((res) => res.data),
-            ]);
+            ];
+            setInternalFiles(updatedInternalFiles);
+            if (afterUpload) {
+              afterUpload(updatedInternalFiles);
+            }
           })
-          .catch((errors) => {
+          .catch((error) => {
             //TODO: Det trenger design om flere feilmeldinger
-            pushToInternalMessages('Kunne ikke laste opp fil');
+            if (error.response && error.response.status === 403) {
+              pushToInternalMessages(t('fileuploader.error.upload.403'));
+            } else {
+              pushToInternalMessages(t('fileuploader.error.upload.general'));
+            }
+            if (afterUpload) {
+              afterUpload(internalFiles);
+            }
           })
           .finally(() => {
-            if (afterUpload) {
-              afterUpload();
-            }
             setInternalLoading(false);
           });
       }, props.forsinkelse || 0);
@@ -295,9 +317,9 @@ export const FileUploader: React.FC<FileUploaderProps> = (props) => {
   const createDefaultOversizedFileErrorMessage = (
     filstoerrelsegrense: number
   ) =>
-    `Vi kan ikke motta denne filen fordi den er for stor. Filer kan ikke overstige ${bitToMegabyte(
-      filstoerrelsegrense
-    )} Mb. Du kan forsøke å dele opp i flere mindre filer, eller bruke et format som tar mindre plass.`;
+    i18n.t('fileuploader.error.file_size', {
+      filstoerrelsegrense: bitToMegabyte(filstoerrelsegrense),
+    });
 
   const bitToMegabyte = (size: number) => (size / (1024 * 1024)).toFixed(1);
 
@@ -326,9 +348,7 @@ export const FileUploader: React.FC<FileUploaderProps> = (props) => {
   };
 
   const deleteFromList = (fileToBeDeleted: AttachmentMetadata) => {
-    if (deleteFile) {
-      deleteFile(fileToBeDeleted);
-    }
+    setInternalErrorMessages([]);
     if (axiosPath) {
       axios
         .delete(`${axiosPath}/${fileToBeDeleted.id}`, {
@@ -341,7 +361,23 @@ export const FileUploader: React.FC<FileUploaderProps> = (props) => {
           );
           setInternalFiles(newList);
           triggerUpdateFiles(newList);
+        })
+        .catch((error) => {
+          if (error.response && error.response.status === 403) {
+            pushToInternalMessages(t('fileuploader.error.delete.403'));
+          } else {
+            pushToInternalMessages(t('fileuploader.error.delete.general'));
+          }
+        })
+        .finally(() => {
+          if (deleteFile) {
+            deleteFile(fileToBeDeleted, internalErrorMessages);
+          }
         });
+    } else {
+      if (deleteFile) {
+        deleteFile(fileToBeDeleted, internalErrorMessages);
+      }
     }
   };
   if (deleteAllFiles && files) {
@@ -361,7 +397,8 @@ export const FileUploader: React.FC<FileUploaderProps> = (props) => {
   return (
     <div className={classnames(styles.main, className)}>
       <LabelWithCallout
-        id={id}
+        id={id + '-label'}
+        inputId={id + '-input'}
         label={label}
         buttonAriaLabel={labelButtonAriaLabel}
         help={help}
@@ -369,11 +406,7 @@ export const FileUploader: React.FC<FileUploaderProps> = (props) => {
         autoDismiss={labelWithCalloutAutoDismiss}
         {...labelCallout}
       />
-      <label
-        htmlFor="fileupload"
-        aria-label={ariaLabel ? ariaLabel : 'Filopplasting'}
-        id="buttonLabel"
-      >
+      <label id="buttonLabel">
         <div
           className={styles.uploadArea}
           role="button"
@@ -400,7 +433,9 @@ export const FileUploader: React.FC<FileUploaderProps> = (props) => {
           ) : (
             <>
               <Icon iconName={'AttachFile'} className={styles.uploadAreaIcon} />
-              <u>{addFileString ? addFileString : 'Legg til fil(er)'}</u>
+              <u>
+                {addFileString ? addFileString : t('fileuploader.add.label')}
+              </u>
             </>
           )}
         </div>
@@ -408,16 +443,17 @@ export const FileUploader: React.FC<FileUploaderProps> = (props) => {
       <input
         className={styles.fileUploadInput}
         type="file"
-        id="fileupload"
+        id={id + '-input'}
         ref={inputRef}
         multiple={multipleFiles}
         onChange={handleFileChange}
         tabIndex={-1}
+        aria-hidden={true}
       />
 
       {acceptedFileFormats && (
         <span className={styles.informationWrapper} id="acceptedFileFormats">
-          Aksepterte filformater:{' '}
+          {t('fileuploader.accepted_file_formats')}{' '}
           <span className={styles.acceptedFileFormats}>
             {acceptedFileFormats.map(
               (fileFormat: FileFormatTypes, index: number) => {
@@ -432,11 +468,7 @@ export const FileUploader: React.FC<FileUploaderProps> = (props) => {
         </span>
       )}
       {info && (
-        <div
-          className={styles.informationWrapper}
-          id="information"
-          aria-label={'informasjon'}
-        >
+        <div className={styles.informationWrapper} id="information">
           {info}
         </div>
       )}
@@ -464,7 +496,7 @@ export const FileUploader: React.FC<FileUploaderProps> = (props) => {
                     aria-label={
                       deleteButtonAriaLabel
                         ? deleteButtonAriaLabel
-                        : 'Fjern fil'
+                        : t('fileuploader.delete.ariaLabel')
                     }
                   >
                     <Icon iconName={'Cancel'} />

@@ -14,9 +14,9 @@ import { MessageBar } from '@skatteetaten/frontend-components';
 ```js
 import { Callout, Button } from '@skatteetaten/frontend-components';
 
-const initialState = {
+const [state, setState] = React.useState({
   isCalloutVisible: false,
-};
+});
 
 function closeButton() {
   setState({
@@ -62,7 +62,7 @@ function closeButton() {
 ```js
 import { Callout, Button } from '@skatteetaten/frontend-components';
 
-const initialState = { isCalloutVisible: false };
+const [state, setState] = React.useState({ isCalloutVisible: false });
 
 function closeButton() {
   setState({
@@ -100,6 +100,8 @@ function closeButton() {
 
 ```js
 import { Callout, Button } from '@skatteetaten/frontend-components';
+
+const [state, setState] = React.useState({ isCalloutVisible: false });
 
 function closeButton() {
   setState({

@@ -6,7 +6,7 @@ import {
   PivotItem,
   PivotLinkFormat,
   PivotLinkSize,
-} from 'office-ui-fabric-react';
+} from '@fluentui/react';
 import * as React from 'react';
 import { getClassNames } from './Tabs.classNames';
 
@@ -18,7 +18,7 @@ export interface TabProps extends IPivotProps {
 }
 
 /**
- * @visibleName Tabs (Arkfane)
+ * @visibleName Tabs (Arkfaner)
  */
 
 export const Tabs: React.FC<TabProps> = (props) => {

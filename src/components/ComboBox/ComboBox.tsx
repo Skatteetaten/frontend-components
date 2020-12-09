@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { VirtualizedComboBox, IComboBoxProps } from 'office-ui-fabric-react';
+import { VirtualizedComboBox, IComboBoxProps } from '@fluentui/react';
 import classnames from 'classnames';
 
 import { getClassNames, getOptionsClassNames } from './ComboBox.classNames';
@@ -7,7 +7,6 @@ import {
   LabelWithCallout,
   calloutState,
   LabelWithCalloutProps,
-  ErrorMessage,
   generateId,
 } from '../index';
 
@@ -91,6 +90,8 @@ export const ComboBox: React.FC<ComboBoxProps> = (props) => {
           id={inputId}
           ariaLabel={label}
           className={classnames(styles.main, className)}
+          errorMessage={errorMessage}
+          aria-invalid={errorMessage ? true : false}
           calloutProps={{
             className: getOptionsClassNames(props),
           }}
@@ -98,8 +99,6 @@ export const ComboBox: React.FC<ComboBoxProps> = (props) => {
           {children}
         </VirtualizedComboBox>
       )}
-
-      {errorMessage && <ErrorMessage>{errorMessage}</ErrorMessage>}
     </div>
   );
 };

@@ -2,16 +2,14 @@
 
 exports[`FileUploader komponent matcher snapshot 1`] = `
 <div
-  className="main-82"
+  className="main-62"
 >
   <label
-    aria-label="Filopplasting"
-    htmlFor="fileupload"
     id="buttonLabel"
   >
     <div
       aria-describedby="acceptedFileFormats"
-      className="uploadArea-83"
+      className="uploadArea-63"
       onClick={[Function]}
       onDragEnter={[Function]}
       onDragLeave={[Function]}
@@ -23,7 +21,7 @@ exports[`FileUploader komponent matcher snapshot 1`] = `
     >
       <i
         aria-hidden={true}
-        className="uploadAreaIcon-93"
+        className="uploadAreaIcon-73"
         data-icon-name="AttachFile"
       >
         
@@ -34,8 +32,9 @@ exports[`FileUploader komponent matcher snapshot 1`] = `
     </div>
   </label>
   <input
-    className="fileUploadInput-81"
-    id="fileupload"
+    aria-hidden={true}
+    className="fileUploadInput-61"
+    id="fileupload-input"
     onChange={[Function]}
     tabIndex={-1}
     type="file"

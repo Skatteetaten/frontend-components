@@ -1,10 +1,17 @@
 import { mergeStyles, mergeStyleSets } from '@uifabric/merge-styles';
 import { getTheme } from '@uifabric/styling';
-import { FontSizes, FontWeights, PaletteProps, ComboboxProps } from '../index';
+import {
+  FontSizes,
+  FontWeights,
+  PaletteProps,
+  ComboboxProps,
+  MdIcons,
+} from '../index';
 
 function getFieldTypeStyles(props: ComboboxProps) {
   const { errorMessage } = props;
   const palette = getTheme().palette as PaletteProps;
+
   const color = errorMessage
     ? palette.skeColor.error
     : palette.skeColor.blackAlt;
@@ -45,6 +52,8 @@ function getFieldTypeStyles(props: ComboboxProps) {
 export const getClassNames = (props: ComboboxProps) => {
   const { errorMessage } = props;
   const palette = getTheme().palette as PaletteProps;
+  const errorIcon = "'" + MdIcons.icons.Error + "'";
+
   const color = errorMessage
     ? palette.skeColor.error
     : palette.skeColor.blackAlt;
@@ -81,6 +90,16 @@ export const getClassNames = (props: ComboboxProps) => {
           // Negative positioning to account for the 2px border
           right: '0',
           top: '0',
+        },
+        '& div[role=region]::before': {
+          fontFamily: MdIcons.fontFace.fontFamily,
+          fontSize: 16,
+          content: errorMessage && errorIcon,
+          marginRight: '3px',
+        },
+        '& div[role=region]': {
+          fontWeight: FontWeights.medium,
+          fontSize: FontSizes.small,
         },
         ...getFieldTypeStyles(props),
       },

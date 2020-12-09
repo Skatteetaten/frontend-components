@@ -4,7 +4,7 @@ import { FontSizes, PaletteProps, SearchFieldProps } from '../index';
 
 export const getClassNames = (props: SearchFieldProps) => {
   const palette = getTheme().palette as PaletteProps;
-  const { border, searchFieldSize } = props;
+  const { border, searchFieldSize, onSearchIcon } = props;
   const largeSize = searchFieldSize === 'large';
   const standardSize = searchFieldSize === 'standard';
 
@@ -18,17 +18,23 @@ export const getClassNames = (props: SearchFieldProps) => {
       padding: '0px',
       marginTop: '0px',
       marginBottom: '11px',
+      border: `1px solid ${palette.skeColor.black}`,
     },
     searchListDropdown: {
-      width: '100% - 2px',
-      top: '-13px',
-      border: `1px solid ${palette.skeColor.black}`,
+      top: '-1px',
       borderTop: 0,
+      position: 'relative',
       selectors: {
         ul: {
           margin: 0,
+          position: 'absolute',
+          left: 0,
+          top: '100%',
+          width: '99.5%',
+          zIndex: 10,
         },
         li: {
+          background: palette.skeColor.white,
           cursor: 'pointer',
           color: palette.skeColor.blackAlt,
           padding: '3px 9px 3px 9px',
@@ -102,6 +108,12 @@ export const getClassNames = (props: SearchFieldProps) => {
           fontSize: largeSize ? FontSizes.xLarge : FontSizes.medium,
           opacity: 1,
           outline: 'none',
+          cursor: onSearchIcon ? 'pointer' : 'default',
+          selectors: {
+            ':hover': {
+              background: onSearchIcon && palette.skeColor.lightBlue,
+            },
+          },
         },
         '& .ms-SearchBox-clearButton': {
           display: 'none',
@@ -113,6 +125,9 @@ export const getClassNames = (props: SearchFieldProps) => {
           WebkitAppearance: 'textfield',
         },
         'input[type=search]::-webkit-search-cancel-button': {
+          WebkitAppearance: 'none',
+        },
+        'input[type="search"]::-webkit-search-decoration': {
           WebkitAppearance: 'none',
         },
         'input[type=search]::-ms-clear': {

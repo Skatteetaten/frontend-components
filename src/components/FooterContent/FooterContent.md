@@ -28,21 +28,23 @@ import {
 
 ```js noeditor beskrivelse
 <>
-  <h3>Type innhold i footer</h3>
+  <h3>Innhold i bunnen av siden</h3>
   <p>
-    Footeren i løsningene våre inneholder typisk lenker for deling,
-    kontaktopplysniger, personvernopplysninger og liknende.
+    Bunnen i nett-løsningene våre, inneholder typisk lenker for deling,
+    kontaktopplysniger, personvernopplysninger og lignende.
   </p>
+  <h3>Tilpass bunnen til ulike skjermstørrelser</h3>
   <p>
-    Teknisk sett kan FooterContent-komponenten innholde et vilkårlig
-    underelementer, men det er anbefalt å bruke grid-systemet slik som i
-    eksemplene fordi det da tilpasser seg ulike skjermstørrelser.
+    FooterContent-komponenten kan inneholde flere underelementer. Vi anbefaler å
+    bruke grid-systemet for å sette det opp, fordi dette gjør at den tilpasser
+    seg ulike skjermstørrelser.
   </p>
+  <h3>Logo i bunnen</h3>
   <p>
-    Logo er en egen komponent på FooterContent-komponenten `FooterContent.Logo`.
-    Logoen blir midtstilt når vinduet er mindre enn 1024px som tilsvarer fra og
-    med large i grid-systemet. For å få engelsk logo benyttes
-    `FooterContent.LogoEn`
+    I bunnen skal det ligge en egen logo-komponent, «FooterContent.Logo». For å
+    få engelsk logo kan du bruke «FooterContent.LogoEn». Logoen blir midtstilt
+    når skjermen er mindre enn 1024px bred, og dette tilsvarer fra og med
+    «large» i grid-systemet.
   </p>
 </>
 ```

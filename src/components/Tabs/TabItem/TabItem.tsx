@@ -1,7 +1,11 @@
 import * as React from 'react';
-import { IPivotItemProps } from 'office-ui-fabric-react/lib-commonjs/Pivot';
+import { IPivotItemProps } from '@fluentui/react';
+// TODO: Fix deprecation
 import { BaseComponent } from '@uifabric/utilities';
 
+/**
+ * @visibleName TabItem (Enkeltfane)
+ */
 export class TabItem extends BaseComponent<IPivotItemProps, {}> {
   static defaultProps = {
     itemIcon: undefined,

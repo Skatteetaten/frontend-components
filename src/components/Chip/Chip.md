@@ -1,4 +1,4 @@
-** Chip brukes til å markere eller utheve noe - som en merkelapp. **
+** Chip brukes til å markere eller utheve noe – som en merkelapp. **
 
 Variasjon i utheving, størrelse og farge:
 
@@ -65,31 +65,41 @@ import { Chip } from '@skatteetaten/frontend-components';
 
 ```js noeditor beskrivelse
 <>
-  <h3>Typisk bruk</h3>
+  <h3>En merkelapp markerer eller uthever noe</h3>
   <p>
-    Et typisk tilfelle er dersom man har en liste med opplysninger, og ett at
-    elementene i listen er et unntak som brukeren bør raskt få øye på. Chips kan
-    også brukes for å vise markere aktive filtre i et søk eller kategorier i
-    artikler.
+    En merkelapp er ganske enkelt en farget liten boks, med kort tekst inni.
   </p>
-  <h3>Bruk med varsomhet</h3>
   <p>
-    Det er viktig å bruke dette med varsomhet slik at ikke informasjonen drukner
-    i merkelapper.
+    Merkelappen er lett å få øye på og derfor en god måte å fortelle brukeren om
+    en viktig opplysning. Et eksempel er en boks merket «Unntatt offentlighet».
+    Boksen uthever informasjonen slik at brukeren raskt oppfatter den.
   </p>
+  <p>
+    Du kan også bruke slike merkelapper for å vise aktive filtre i et søk eller
+    kategorier i artikler.
+  </p>
+  <p>
+    Merkelappene kan inneholde lenker dersom de er klikkbare. Lenkene skal være
+    blå, men merk at blå lenkefarge på rød bakgrunn ikke har god nok
+    lesekontrast.
+  </p>
+  <h3>Unngå for mange merkelapper på en side</h3>
+  <p>
+    Merkelappen er effektiv fordi den skiller seg ut og slik fremhever
+    informasjon for brukeren. Hvis du bruker for mange merkelapper vil effekten
+    miste sin kraft og informasjonen kan drukne i stedet.
+  </p>
+  <h3>Stor og liten merkelapp</h3>
+
   <p>
     En chip er liten i sin natur, men dersom du ønsker et kraftigere visuelt
     uttrykk finnes den i en stor variant.
   </p>
-  <h3>Farger</h3>
-  <p>
-    Standard farge på chip er beige/gul, men vi har et par varianter for i grønn
-    og rød dersom du trenger å skille dem fra hverandre. Bruk rød til
-    obs/advarsel og grønn for å signalisere ok.
-  </p>
-  <p>
-    Chips kan inneholde lenker dersom de er klikkbare. Lenkene skal være blå.
-    (Merk at blå lenkefarge på rød bakgrunn ikke har god nok lesekontrast.)
-  </p>
+  <h3>Fargebruk på merkelapper:</h3>
+  <ul>
+    <li>Gul: Standard farge.</li>
+    <li>Rød: Obs/advarsler.</li>
+    <li>Grønn: OK.</li>
+  </ul>
 </>
 ```

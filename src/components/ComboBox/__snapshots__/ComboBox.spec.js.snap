@@ -5,11 +5,12 @@ exports[`Combobox komponent matcher med snapshot 1`] = `
   id="combobox-123"
 >
   <div
-    className="ms-ComboBox-container main-74"
+    aria-invalid={false}
+    className="ms-ComboBox-container main-54"
     id="combobox-123-input"
   >
     <div
-      className="ms-ComboBox css-84"
+      className="ms-ComboBox css-64"
       id="combobox-123-inputwrapper"
     >
       <input
@@ -18,7 +19,7 @@ exports[`Combobox komponent matcher med snapshot 1`] = `
         aria-expanded={false}
         autoCapitalize="off"
         autoComplete="off"
-        className="ms-ComboBox-Input css-85"
+        className="ms-ComboBox-Input css-65"
         data-is-interactable={true}
         data-lpignore={true}
         id="combobox-123-input-input"
@@ -33,7 +34,7 @@ exports[`Combobox komponent matcher med snapshot 1`] = `
         onKeyDown={[Function]}
         onKeyUp={[Function]}
         onTouchStart={[Function]}
-        readOnly={true}
+        readOnly={false}
         role="combobox"
         spellCheck={false}
         type="text"
@@ -41,7 +42,7 @@ exports[`Combobox komponent matcher med snapshot 1`] = `
       />
       <button
         aria-hidden={true}
-        className="ms-Button ms-Button--icon ms-ComboBox-CaretDown-button root-92"
+        className="ms-Button ms-Button--icon ms-ComboBox-CaretDown-button root-72"
         data-is-focusable={false}
         onBlur={[Function]}
         onClick={[Function]}
@@ -55,12 +56,12 @@ exports[`Combobox komponent matcher med snapshot 1`] = `
         type="button"
       >
         <span
-          className="ms-Button-flexContainer flexContainer-93"
+          className="ms-Button-flexContainer flexContainer-73"
           data-automationid="splitbuttonprimary"
         >
           <i
             aria-hidden={true}
-            className="ms-Icon root-38 css-100 ms-Button-icon icon-95"
+            className="ms-Icon root-38 css-80 ms-Button-icon icon-75"
             data-icon-name="ChevronDown"
             role="presentation"
             style={

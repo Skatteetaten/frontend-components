@@ -12,12 +12,15 @@ exports[`Card komponent matcher snapshot 1`] = `
   marginbottom="2px"
   titlesize="x-large"
 >
-  <div
-    className="SkeCard-74"
+  <button
+    aria-expanded={true}
+    className="SkeCard-54"
+    onClick={[Function]}
+    type="button"
   >
     <div
-      className="body-81"
+      className="body-61"
     />
-  </div>
+  </button>
 </Card>
 `;

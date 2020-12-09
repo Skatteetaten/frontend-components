@@ -12,6 +12,9 @@ export interface ErrorMessageProps {
   className?: string;
 }
 
+/**
+ * @visibleName ErrorMessage (Feilmelding)
+ */
 export const ErrorMessage: React.FC<ErrorMessageProps> = (props) => {
   const errorClassNames = getClassNames();
   const { ariaLabel, className } = props;

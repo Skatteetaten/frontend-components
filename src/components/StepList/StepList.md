@@ -16,7 +16,7 @@ import {
   StepList,
 } from '@skatteetaten/frontend-components';
 
-const initialState = {
+const [state, setState] = React.useState({
   options: [
     {
       key: 'A',
@@ -27,7 +27,7 @@ const initialState = {
       text: 'Ikke i Norge',
     },
   ],
-};
+});
 
 const titles = {
   step1: {
@@ -101,7 +101,7 @@ import {
   Card,
 } from '@skatteetaten/frontend-components';
 
-const initialState = {
+const [state, setState] = React.useState({
   options: [
     {
       key: 'A',
@@ -112,7 +112,7 @@ const initialState = {
       text: 'Ikke i Norge',
     },
   ],
-};
+});
 
 const titles = {
   step1: {

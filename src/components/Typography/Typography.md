@@ -69,7 +69,7 @@ import { Typography } from '@skatteetaten/frontend-components';
     flytte Typography-komponenten til et lavere nivå i koden.
   </p>
   <p>
-    Se <a href="#section-om-skrifttypen">«Om skrifttypen»</a> for detaljer rundt
+    Se <a href="#section-skrifttype">«skrifttype»</a> for detaljer rundt
     skriftstørrelse.
   </p>
 </>

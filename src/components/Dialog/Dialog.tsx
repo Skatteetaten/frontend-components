@@ -7,7 +7,7 @@ import {
   DialogFooter,
   Dialog as FabricDialog,
   IDialogProps,
-} from 'office-ui-fabric-react';
+} from '@fluentui/react';
 
 export interface DialogProps extends IDialogProps {
   /** Om dialog skal ha mer padding for et luftigere uttrykk */

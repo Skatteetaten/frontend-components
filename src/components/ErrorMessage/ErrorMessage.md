@@ -10,9 +10,9 @@ Feilmelding ved en komponent:
 
 ```js
 import { ErrorMessage, Button } from '@skatteetaten/frontend-components';
-const initialState = {
+const [state, setState] = React.useState({
   hasError: false,
-};
+});
 
 <>
   <Button

@@ -19,7 +19,7 @@ export interface ChipProps extends React.HTMLAttributes<HTMLDivElement> {
   className?: string;
 }
 /**
- * @visibleName Chip (Merkelapp)
+ * @visibleName Chip (Emneknagg)
  */
 export class Chip extends React.PureComponent<ChipProps, {}> {
   static WARNING = ChipType.WARNING;

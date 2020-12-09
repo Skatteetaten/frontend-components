@@ -7,7 +7,7 @@ import {
   ActionButton,
 } from '@skatteetaten/frontend-components';
 
-const initialState = { hideDialog: true };
+const [state, setState] = React.useState({ hideDialog: true });
 
 function closeDialog() {
   setState({ hideDialog: true });
@@ -49,7 +49,7 @@ import {
   NavigationTile,
 } from '@skatteetaten/frontend-components';
 
-const initialState = { hideDialog: true };
+const [state, setState] = React.useState({ hideDialog: true });
 
 function closeDialog() {
   setState({ hideDialog: true });
@@ -109,7 +109,7 @@ import {
   ActionButton,
 } from '@skatteetaten/frontend-components';
 
-const initialState = { hideDialog: true };
+const [state, setState] = React.useState({ hideDialog: true });
 
 function closeDialog() {
   setState({ hideDialog: true });
@@ -148,7 +148,7 @@ import Dialog from '@skatteetaten/frontend-components/Dialog';
 import Button from '@skatteetaten/frontend-components/Button';
 import ActionButton from '@skatteetaten/frontend-components/ActionButton';
 
-const initialState = { hideDialog: true };
+const [state, setState] = React.useState({ hideDialog: true });
 
 function closeDialog() {
   setState({ hideDialog: true });

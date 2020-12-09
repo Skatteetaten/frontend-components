@@ -1,13 +1,10 @@
 import classnames from 'classnames';
-import {
-  IProgressIndicatorProps,
-  ProgressIndicator,
-} from 'office-ui-fabric-react';
+import { IProgressIndicatorProps, ProgressIndicator } from '@fluentui/react';
 import React from 'react';
 import { getClassNames } from './ProgressBar.classNames';
 
 /**
- * @visibleName ProgressBar (Innlasting)
+ * @visibleName ProgressBar (Fremdriftsvisning)
  */
 export const ProgressBar: React.FC<IProgressIndicatorProps> = (props) => {
   const { className, ...rest } = props;

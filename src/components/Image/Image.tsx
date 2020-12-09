@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Image as FabricImage, IImageProps } from 'office-ui-fabric-react';
+import { Image as FabricImage, IImageProps } from '@fluentui/react';
 
 export interface ImageProps extends IImageProps {}
 /**

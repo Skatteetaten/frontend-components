@@ -5,6 +5,32 @@
 - Imports: Imports from office-ui-fabric-react are now also imported directly from root and not from sub-folders e.g. office-ui-fabric-react/lib-commonjs/someComponent
 - # '@reach/auto-id': This package has been removed because of incompatability. It has been replaced by a manual alternative.
 
+### **v.3.7.3 - 19.11.2020 **
+
+- DropDown and TextField: now includes aria-invalid attribute
+- AccordionItem: removed aria-controls attribute
+- Table: ability to add caption
+- Checkbox: Styling updated to white background
+- RadioButtonGroup: fixes a styling issue with error border
+- ActionButton: fixes a styling issue with alignment
+- FileUpload: various accessibility improvements, now exports server response, updated error messages
+- New icons: Bell and Facebook
+- Updated Sketch file to version 1.6
+
+### **v.3.7.2 - 18.11.2020 **
+
+- Table: Fixes an issue with row index and initial loading
+
+### **v.3.7.1 - 03.11.2020 **
+
+- Table: Added compact table
+- DatePicker: Fixes a bug where icons where not displayed correctly
+- SearchField: ability to trigger search by clicking icon, drop down menu is now overlayed.
+- Pagination: className is optional as it should be
+- TopStripe: Accessibility and styling fixes.
+- Sketch file updated to v1.5.
+- Updated documentation
+
 ### **v.3.7.0 - 29.09.2020 **
 
 - SearchField: added ability to activate with keyboard shortcut

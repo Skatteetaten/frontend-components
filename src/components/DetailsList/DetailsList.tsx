@@ -10,7 +10,7 @@ import {
   IDetailsListProps,
   IColumn as FabricIColumn,
   DetailsRow,
-} from 'office-ui-fabric-react';
+} from '@fluentui/react';
 import { getClassNames } from './DetailsList.classNames';
 
 export interface IColumn extends FabricIColumn {

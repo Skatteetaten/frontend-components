@@ -29,48 +29,45 @@ import {
 
 <div>
   <TopStripe>
-    <Link path={'#topbanner'} text={'Kontakt oss'} placement="before" />
+    <Link path={'#main-content-id'} text={'Hopp til hovedinnhold'} skipLink />
 
-    <TopStripeMenu title={'Endre skriftstørrelse'}>
-      <div style={{ fontSize: '20px' }}>
+    <Link
+      path={'https://www.skatteetaten.no/kontakt/'}
+      text={'Kontakt oss'}
+      placement="before"
+    />
+
+    <TopStripeMenu
+      showOnMobile={false}
+      closeMenuAriaLabel="Lukk endre skriftstørrelse"
+      title={'Endre skriftstørrelse'}
+    >
+      <div style={{ fontSize: '24px', marginTop: '8px' }}>
         Hold Ctrl-tasten nede (Cmd-tasten på Mac). Trykk på + for å forstørre
         eller - for å forminske.
       </div>
     </TopStripeMenu>
-    <TopStripeMenu title={'Language / Språk'}>
-      <TopStripeButton ariaLabel={'Norsk'} onClick={() => console.log('NB')}>
-        Norsk
-      </TopStripeButton>
-      <TopStripeButton
-        icon={'check'}
-        ariaLabel={'Nynorsk'}
-        onClick={() => console.log('NN')}
-      >
-        Nynorsk
-      </TopStripeButton>
-      <TopStripeButton ariaLabel={'Engelsk'} onClick={() => console.log('EN')}>
-        Engelsk
-      </TopStripeButton>
-      <TopStripeButton
-        ariaLabel={'Sørsamisk'}
-        onClick={() => console.log('SMA')}
-      >
-        Sørsamisk
-      </TopStripeButton>
-      <TopStripeButton
-        ariaLabel={'Nordsamisk'}
-        onClick={() => console.log('SME')}
-      >
-        Nordsamisk
-      </TopStripeButton>
+    <TopStripeMenu
+      showOnMobile={false}
+      closeMenuAriaLabel="Lukk Language / Språk"
+      title={'Language / Språk'}
+    >
+      <TopStripeButton>Norsk</TopStripeButton>
+      <TopStripeButton icon={'check'}>Nynorsk</TopStripeButton>
+      <TopStripeButton>Engelsk</TopStripeButton>
+      <TopStripeButton>Sørsamisk</TopStripeButton>
+      <TopStripeButton ariaLabel={'Nordsamisk'}>Nordsamisk</TopStripeButton>
     </TopStripeMenu>
 
     <span>
-      <Icon iconName="person" />
-      Vegard Sandli
+      <Icon
+        iconName="person"
+        style={{ fontSize: '20px', verticalAlign: 'sub' }}
+      />
+      Ola Normann
     </span>
 
-    <Link path={'#topbanner'} text={'Logg ut'} placement="before" />
+    <Link path={'#topstripe'} text={'Logg ut'} placement="before" />
   </TopStripe>
   <TopBanner
     external
@@ -165,6 +162,11 @@ import { TopBanner } from '@skatteetaten/frontend-components';
 <>
   <h3>Tips</h3>
   <ul>
+    <li>
+      Lenken Hopp til hovedinnhold (blir synlig ved tastaturfokus), skal sette
+      tastaturfokus til toppen av hovedinnholdet. Bruk riktig id og
+      tabindex="-1" der fokus skal være.
+    </li>
     <li>
       Valgene i toppstripa som utvider innhold, bør ha et pil-ikon, for visuell
       indikasjon av funksjonaliteten.{' '}

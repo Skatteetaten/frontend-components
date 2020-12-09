@@ -3,6 +3,8 @@
 ```js
 import { LabelWithCallout, Button } from '@skatteetaten/frontend-components';
 
+const [state, setState] = React.useState({ warning: false });
+
 <>
   <LabelWithCallout
     label={'Omregistreringsavgift'}
@@ -42,6 +44,8 @@ Flere komponeter har LabelWithCallout innebygd. Her med autoDismiss:
 
 ```js
 import { TextField } from '@skatteetaten/frontend-components';
+
+const [state, setState] = React.useState({ value1: '' });
 
 <>
   <div style={{ width: '300px' }}>

@@ -5,6 +5,8 @@ Standard tekstfelt:
 ```js
 import { TextField } from '@skatteetaten/frontend-components';
 
+const [state, setState] = React.useState({ value: '' });
+
 <div style={{ width: '300px' }}>
   <TextField
     id={'my-input'}
@@ -19,6 +21,8 @@ Stor variant av tekstfelt:
 
 ```js
 import { TextField } from '@skatteetaten/frontend-components';
+
+const [state, setState] = React.useState({ value: '' });
 
 <div style={{ width: '300px' }}>
   <TextField
@@ -35,12 +39,15 @@ Hjelpetekster og advarsel:
 ```js
 import { TextField } from '@skatteetaten/frontend-components';
 
+const [name, setName] = React.useState('');
+const [children, setChildren] = React.useState('23');
+
 <>
   <div style={{ width: '300px' }}>
     <TextField
       label="Fullt navn"
-      value={state.value1}
-      onChange={(e, value) => setState({ value1: value })}
+      value={name}
+      onChange={(e, value) => setName(value)}
       help="Vi trenger å vite navnet ditt dersom vi skal kontakte deg senere."
     />
   </div>
@@ -50,9 +57,9 @@ import { TextField } from '@skatteetaten/frontend-components';
       label="Antall barn"
       placeholder={''}
       inputMode={'numeric'}
-      value={'23'}
+      value={children}
       warning="Er du sikker på at antall barn er riktig?"
-      onChange={(e, value) => setState({ value2: value })}
+      onChange={(e, value) => setChildren(value)}
     />
   </div>
 </>;
@@ -62,6 +69,8 @@ Feilmelding vises i umiddelbar nærhet til feltet:
 
 ```js
 import { TextField } from '@skatteetaten/frontend-components';
+
+const [state, setState] = React.useState({ value: '' });
 
 <div style={{ width: '160px' }}>
   <TextField
@@ -80,11 +89,11 @@ Av og til ønsker man å veksle mellom skrive og lesemodus. Da vises det som ren
 ```js
 import { TextField } from '@skatteetaten/frontend-components';
 
-const initialState = {
+const [state, setState] = React.useState({
   value: 'Siri Saksbehandler',
   vekt: '4',
   empty: '',
-};
+});
 
 <div style={{ width: '300px' }}>
   <TextField
@@ -92,7 +101,7 @@ const initialState = {
     editable
     label="Saksbehandler"
     value={state.value}
-    onChange={(e, value) => setState({ value })}
+    onChange={(e, value) => setState({ ...state, value })}
     boldText={true}
   />
   <p>Med suffix:</p>
@@ -101,7 +110,7 @@ const initialState = {
     editable
     label="Vekt på vare"
     value={state.vekt}
-    onChange={(e, value) => setState({ vekt: value })}
+    onChange={(e, value) => setState({ ...state, vekt: value })}
     boldText={true}
     suffix={'kg'}
   />
@@ -112,7 +121,7 @@ const initialState = {
     editableWhenEmpty
     label="Saksbehandler"
     value={state.empty}
-    onChange={(e, value) => setState({ empty: value })}
+    onChange={(e, value) => setState({ ...state, empty: value })}
     boldText={true}
   />
 </div>;
@@ -122,6 +131,8 @@ Bestemt formatering:
 
 ```js
 import { TextField } from '@skatteetaten/frontend-components';
+
+const [state, setState] = React.useState({ value: '' });
 
 <div style={{ width: '300px' }}>
   <TextField
@@ -139,16 +150,16 @@ Multiline tekstfelt:
 ```js
 import { TextField } from '@skatteetaten/frontend-components';
 
+const [lineBreak, setLineBreak] = React.useState(false);
+
 <div style={{ width: '300px' }}>
   <TextField
     label="Endres til multiline dersom teksten er lengre enn 50 tegn"
-    multiline={state.lineBreak}
+    multiline={lineBreak}
     onChange={(e, value) => {
-      const lineBreak = value.length > 50;
-      if (lineBreak !== state.lineBreak) {
-        setState({
-          lineBreak: lineBreak,
-        });
+      const shouldBreakLine = value.length > 50;
+      if (shouldBreakLine !== state.lineBreak) {
+        setLineBreak(shouldBreakLine);
       }
     }}
   />
@@ -226,12 +237,20 @@ import { TextField } from '@skatteetaten/frontend-components';
 
 ```js noeditor beskrivelse
 <>
-  <h3>Mange ulike kombinasjoner</h3>
+  <h3>Mange varianter av tekstfelt</h3>
 
   <p>
-    I Designsystemet finnes det mange ulike varisjoner av tekstfelt. Vi har med
-    og uten hjelpetekst, feilmeldinger eller lese- og skrivemodus. Vi har også
-    mulighet til å bestemme formatering, for eksempel ved organiasasjonsnummer.
+    I designsystemet finnes det mange ulike variasjoner av tekstfelt.
+    Tekstfeltene kan ha:
   </p>
+  <ul>
+    <li>hjelpetekst eller være blanke</li>
+    <li>feilmeldinger som varsler</li>
+    <li>lese- og skrivemodus</li>
+    <li>
+      formateringer som sikrer riktig format, som for eksempel fødselsnummer
+    </li>
+    <li>mulighet for å skrive flere setninger med en bestemt begrensing</li>
+  </ul>
 </>
 ```

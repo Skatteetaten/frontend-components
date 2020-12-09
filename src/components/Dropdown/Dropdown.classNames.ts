@@ -1,4 +1,4 @@
-import { mergeStyles, mergeStyleSets } from '@uifabric/merge-styles';
+import { mergeStyleSets, mergeStyles } from '@uifabric/merge-styles';
 import { getTheme } from '@uifabric/styling';
 import {
   FontSizes,
@@ -7,7 +7,7 @@ import {
   PaletteProps,
   DropdownProps,
 } from '../index';
-import { IDropdownStyles } from 'office-ui-fabric-react';
+import { IDropdownStyles } from '@fluentui/react';
 
 function getFieldTypeStyles(props: DropdownProps) {
   if (props.inputSize === 'large') {
@@ -41,6 +41,7 @@ export const getClassNames = (props: DropdownProps) => {
     : palette.skeColor.blackAlt;
   const inset = 0;
   const radius = '0';
+  const errorIcon = "'" + MdIcons.icons.Error + "'";
 
   return mergeStyleSets({
     main: {
@@ -83,6 +84,12 @@ export const getClassNames = (props: DropdownProps) => {
           borderRadius: radius,
           outline: 'transparent',
           zIndex: 1,
+        },
+        '& div[role=alert]::before': {
+          fontFamily: MdIcons.fontFace.fontFamily,
+          fontSize: 16,
+          content: errorIcon,
+          marginRight: '3px',
         },
       },
     },

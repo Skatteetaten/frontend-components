@@ -17,7 +17,7 @@ export interface TypographyProps {
   noBorder?: string[];
 }
 /**
- * @visibleName Typography (Fontstørrelse)
+ * @visibleName Typography (Typografi)
  */
 export const Typography: React.FC<TypographyProps> = (props) => {
   const { children, className } = props;

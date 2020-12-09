@@ -1,5 +1,5 @@
 import classnames from 'classnames';
-import { DefaultButton, IButtonProps } from 'office-ui-fabric-react';
+import { DefaultButton, IButtonProps } from '@fluentui/react';
 import * as React from 'react';
 import { getClassNames as getStandardClassNames } from './Button.classNames';
 

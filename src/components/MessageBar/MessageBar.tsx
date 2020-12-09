@@ -3,7 +3,7 @@ import {
   IMessageBarProps,
   MessageBar as FabricMessageBar,
   MessageBarType,
-} from 'office-ui-fabric-react';
+} from '@fluentui/react';
 import * as React from 'react';
 // @ts-ignore TODO
 import { CSSTransition } from 'react-transition-group';

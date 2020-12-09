@@ -2,34 +2,34 @@
 
 exports[`TopBanner komponent matcher snapshot  1`] = `
 <header
-  className="header-74"
+  className="header-54"
 >
   <div
-    className="headerLeftContainer-78"
+    className="headerLeftContainer-58"
   >
     <a
-      className="headerLinkContainer-77"
+      className="headerLinkContainer-57"
     >
       <i
         aria-hidden={true}
-        className="headerIcon-85"
+        className="headerIcon-65"
         data-icon-name="Home"
       >
         
       </i>
       <div
-        className="headerLink-75"
+        className="headerLink-55"
       />
     </a>
   </div>
   <div
-    className="headerDiagonal-80"
+    className="headerDiagonal-60"
   />
   <div
-    className="headerRightContainer-81"
+    className="headerRightContainer-61"
   >
     <div
-      className="elementTitle-82"
+      className="elementTitle-62"
     />
     <div />
   </div>

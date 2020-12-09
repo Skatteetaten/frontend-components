@@ -3,11 +3,12 @@ import {
   Dropdown as FabricDropdown,
   DropdownMenuItemType,
   IDropdownProps,
-} from 'office-ui-fabric-react';
+  IDropdownStyleProps,
+  IDropdownStyles,
+} from '@fluentui/react';
 import * as React from 'react';
 import { getClassNames, getCalloutStyles } from './Dropdown.classNames';
 import {
-  ErrorMessage,
   Icon,
   LabelWithCallout,
   calloutState,
@@ -15,10 +16,6 @@ import {
   generateId,
 } from '../index';
 import { IStyleFunctionOrObject } from '@uifabric/utilities';
-import {
-  IDropdownStyleProps,
-  IDropdownStyles,
-} from 'office-ui-fabric-react/lib-commonjs/Dropdown';
 
 export interface DropdownProps extends IDropdownProps {
   /** Lukk callout på blur */
@@ -95,6 +92,7 @@ export const Dropdown: React.FC<DropdownProps> = (props) => {
           type="text"
           readOnly
           className={styles.readOnly}
+          aria-invalid={errorMessage ? true : false}
           value={
             props.options.filter(
               (option) =>
@@ -106,19 +104,18 @@ export const Dropdown: React.FC<DropdownProps> = (props) => {
         <FabricDropdown
           {...rest}
           ariaLabel={label}
+          aria-invalid={errorMessage ? true : false}
           id={inputId}
           className={classnames(styles.main, className)}
           styles={dropdownStyles}
           onRenderCaretDown={() => <Icon iconName={'ChevronDown'} />}
+          errorMessage={errorMessage}
         >
           {children}
         </FabricDropdown>
       )}
-
-      {errorMessage && <ErrorMessage>{errorMessage}</ErrorMessage>}
     </div>
   );
 };
-
 // @ts-ignore
 Dropdown.ItemType = DropdownMenuItemType;

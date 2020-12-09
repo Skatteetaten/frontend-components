@@ -19,9 +19,9 @@ import {
   Link,
 } from '@skatteetaten/frontend-components';
 
-const initialState = {
+const [state, setState] = React.useState({
   hasSpinner: false,
-};
+});
 
 const links = [
   {

@@ -221,4 +221,19 @@ describe('Table komponent', () => {
       'Ekspanderbart innhold for Januar'
     );
   });
+
+  it('håndterer openEditableRowIndex fra props', () => {
+    const wrapper = mount(
+      <Table
+        data={data}
+        columns={columns}
+        editableContent={(content) => <div id="edit">{content.Måned}</div>}
+        editableRows={true}
+        openEditableRowIndex={0}
+      />
+    );
+
+    let tableRows = wrapper.find('TableRow');
+    expect(tableRows.at(0).exists('#edit')).toEqual(true);
+  });
 });

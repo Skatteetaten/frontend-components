@@ -15,16 +15,17 @@ import {
 
 <div>
   <TopStripe>
+    <Link path={'#main-content-id'} text={'Hopp til hovedinnhold'} skipLink />
     <Link
       path={'https://www.skatteetaten.no/kontakt/'}
       text={'Kontakt oss'}
       placement="before"
     />
-
     <TopStripeMenu
-      showChevron
       closeMenuAriaLabel="Lukk endre skriftstørrelse"
       title={'Endre skriftstørrelse'}
+      showOnMobile={false}
+      contentIsMenu={false}
     >
       <div style={{ fontSize: '24px', marginTop: '8px' }}>
         Hold Ctrl-tasten nede (Cmd-tasten på Mac). Trykk på + for å forstørre
@@ -32,35 +33,15 @@ import {
       </div>
     </TopStripeMenu>
     <TopStripeMenu
-      showChevron
+      showOnMobile={false}
       closeMenuAriaLabel="Lukk Language / Språk"
       title={'Language / Språk'}
     >
-      <TopStripeButton ariaLabel={'Norsk'} onClick={() => console.log('NB')}>
-        Norsk
-      </TopStripeButton>
-      <TopStripeButton
-        icon={'check'}
-        ariaLabel={'Nynorsk'}
-        onClick={() => console.log('NN')}
-      >
-        Nynorsk
-      </TopStripeButton>
-      <TopStripeButton ariaLabel={'Engelsk'} onClick={() => console.log('EN')}>
-        Engelsk
-      </TopStripeButton>
-      <TopStripeButton
-        ariaLabel={'Sørsamisk'}
-        onClick={() => console.log('SMA')}
-      >
-        Sørsamisk
-      </TopStripeButton>
-      <TopStripeButton
-        ariaLabel={'Nordsamisk'}
-        onClick={() => console.log('SME')}
-      >
-        Nordsamisk
-      </TopStripeButton>
+      <TopStripeButton>Norsk</TopStripeButton>
+      <TopStripeButton icon={'check'}>Nynorsk</TopStripeButton>
+      <TopStripeButton>Engelsk</TopStripeButton>
+      <TopStripeButton>Sørsamisk</TopStripeButton>
+      <TopStripeButton>Nordsamisk</TopStripeButton>
     </TopStripeMenu>
     <Link path={'#link'} text={'Logg inn'} placement="before" />
   </TopStripe>
@@ -88,49 +69,41 @@ import {
 
 <div>
   <TopStripe>
+    <Link path={'#main-content-id'} text={'Hopp til hovedinnhold'} skipLink />
     <Link
       path={'https://www.skatteetaten.no/kontakt/'}
       text={'Kontakt oss'}
       placement="before"
     />
 
-    <TopStripeMenu title={'Endre skriftstørrelse'}>
+    <TopStripeMenu
+      showOnMobile={false}
+      closeMenuAriaLabel="Lukk endre skriftstørrelse"
+      title={'Endre skriftstørrelse'}
+    >
       <div style={{ fontSize: '24px', marginTop: '8px' }}>
         Hold Ctrl-tasten nede (Cmd-tasten på Mac). Trykk på + for å forstørre
         eller - for å forminske.
       </div>
     </TopStripeMenu>
-    <TopStripeMenu title={'Language / Språk'}>
-      <TopStripeButton ariaLabel={'Norsk'} onClick={() => console.log('NB')}>
-        Norsk
-      </TopStripeButton>
-      <TopStripeButton
-        icon={'check'}
-        ariaLabel={'Nynorsk'}
-        onClick={() => console.log('NN')}
-      >
-        Nynorsk
-      </TopStripeButton>
-      <TopStripeButton ariaLabel={'Engelsk'} onClick={() => console.log('EN')}>
-        Engelsk
-      </TopStripeButton>
-      <TopStripeButton
-        ariaLabel={'Sørsamisk'}
-        onClick={() => console.log('SMA')}
-      >
-        Sørsamisk
-      </TopStripeButton>
-      <TopStripeButton
-        ariaLabel={'Nordsamisk'}
-        onClick={() => console.log('SME')}
-      >
-        Nordsamisk
-      </TopStripeButton>
+    <TopStripeMenu
+      showOnMobile={false}
+      closeMenuAriaLabel="Lukk Language / Språk"
+      title={'Language / Språk'}
+    >
+      <TopStripeButton>Norsk</TopStripeButton>
+      <TopStripeButton icon={'check'}>Nynorsk</TopStripeButton>
+      <TopStripeButton>Engelsk</TopStripeButton>
+      <TopStripeButton>Sørsamisk</TopStripeButton>
+      <TopStripeButton ariaLabel={'Nordsamisk'}>Nordsamisk</TopStripeButton>
     </TopStripeMenu>
 
     <span>
-      <Icon iconName="person" />
-      Vegard Sandli
+      <Icon
+        iconName="person"
+        style={{ fontSize: '20px', verticalAlign: 'sub' }}
+      />
+      Ola Normann
     </span>
 
     <Link path={'#topstripe'} text={'Logg ut'} placement="before" />
@@ -162,59 +135,38 @@ const size = UseScreen();
 
 <div>
   <TopStripe>
+    <Link path={'#main-content-id'} text={'Hopp til hovedinnhold'} skipLink />
+
     <Link
       path={'https://www.skatteetaten.no/kontakt/'}
       text={'Kontakt oss'}
       placement="before"
     />
 
-    <TopStripeMenu title={'Endre skriftstørrelse'}>
+    <TopStripeMenu
+      isMenu={false}
+      showOnMobile={false}
+      closeMenuAriaLabel="Lukk endre skriftstørrelse"
+      title={'Endre skriftstørrelse'}
+    >
       <div style={{ fontSize: '24px', marginTop: '8px' }}>
         Hold Ctrl-tasten nede (Cmd-tasten på Mac). Trykk på + for å forstørre
         eller - for å forminske.
       </div>
     </TopStripeMenu>
-    <TopStripeMenu title={'Language / Språk'}>
-      <TopStripeButton ariaLabel={'Norsk'} onClick={() => console.log('NB')}>
-        Norsk
-      </TopStripeButton>
-      <TopStripeButton
-        icon={'check'}
-        ariaLabel={'Nynorsk'}
-        onClick={() => console.log('NN')}
-      >
-        Nynorsk
-      </TopStripeButton>
-      <TopStripeButton ariaLabel={'Engelsk'} onClick={() => console.log('EN')}>
-        Engelsk
-      </TopStripeButton>
-      <TopStripeButton
-        ariaLabel={'Sørsamisk'}
-        onClick={() => console.log('SMA')}
-      >
-        Sørsamisk
-      </TopStripeButton>
-      <TopStripeButton
-        ariaLabel={'Nordsamisk'}
-        onClick={() => console.log('SME')}
-      >
-        Nordsamisk
-      </TopStripeButton>
+    <TopStripeMenu showOnMobile={false} title={'Language / Språk'}>
+      <TopStripeButton>Norsk</TopStripeButton>
+      <TopStripeButton icon={'check'}>Nynorsk</TopStripeButton>
+      <TopStripeButton>Engelsk</TopStripeButton>
+      <TopStripeButton>Sørsamisk</TopStripeButton>
+      <TopStripeButton>Nordsamisk</TopStripeButton>
     </TopStripeMenu>
 
-    <TopStripeMenu showChevron icon="person" title={'Vegard Sandli'}>
-      <TopStripeButton onClick={() => console.log('NB')}>
-        Jenny Sandli
-      </TopStripeButton>
-      <TopStripeButton onClick={() => console.log('Eple')}>
-        987654321 Eplepress AS
-      </TopStripeButton>
-      <TopStripeButton onClick={() => console.log('Pære')}>
-        987654322 Pærepress AS
-      </TopStripeButton>
-      <TopStripeButton onClick={() => console.log('Drue')}>
-        987654323 Druepress AS
-      </TopStripeButton>
+    <TopStripeMenu showOnMobile={true} icon="person" title={'Hamdi Normann'}>
+      <TopStripeButton>Kari Normann</TopStripeButton>
+      <TopStripeButton>987654321 Eplepress AS</TopStripeButton>
+      <TopStripeButton>987654322 Pærepress AS</TopStripeButton>
+      <TopStripeButton>987654323 Druepress AS</TopStripeButton>
       <TopStripeButton onClick={() => console.log('Se alle')}>
         Se alle virksomheter
       </TopStripeButton>
@@ -232,7 +184,7 @@ const size = UseScreen();
 
 ### På mobil
 
-På mobil flyttes valgene for kontakt oss, skriftsstørrelse og språk til footeren.
+På mobil flyttes valgene for kontakt oss og skriftsstørrelse til footeren. Språkvalg legges inni TopBanner.
 
 ```js
 import {
@@ -245,19 +197,13 @@ import {
 
 <div>
   <TopStripe>
-    <TopStripeMenu showChevron icon="person" title={'Vegard Sandli'}>
-      <TopStripeButton onClick={() => console.log('NB')}>
-        Jenny Sandli
-      </TopStripeButton>
-      <TopStripeButton onClick={() => console.log('Eple')}>
-        987654321 Eplepress AS
-      </TopStripeButton>
-      <TopStripeButton onClick={() => console.log('Pære')}>
-        987654322 Pærepress AS
-      </TopStripeButton>
-      <TopStripeButton onClick={() => console.log('Drue')}>
-        987654323 Druepress AS
-      </TopStripeButton>
+    <Link path={'#main-content-id'} text={'Hopp til hovedinnhold'} skipLink />
+
+    <TopStripeMenu icon="person" title={'Kari Normann'}>
+      <TopStripeButton>Jenny Sandli</TopStripeButton>
+      <TopStripeButton>987654321 Eplepress AS</TopStripeButton>
+      <TopStripeButton>987654322 Pærepress AS</TopStripeButton>
+      <TopStripeButton>987654323 Druepress AS</TopStripeButton>
       <TopStripeButton onClick={() => console.log('Se alle')}>
         Se alle virksomheter
       </TopStripeButton>
@@ -268,7 +214,11 @@ import {
     external
     title={'Side for publikum'}
     homeText={'Tilbake til skatteetaten.no'}
-  />
+  >
+    <div style={{ minHeight: '80px', textAlign: 'right' }}>
+      Språkvalgene her (egen komponent finnes ennå ikke)
+    </div>
+  </TopBanner>
 </div>;
 ```
 
@@ -285,8 +235,9 @@ import {
   <h3>Overordnede lenker og funksjoner</h3>
   <p>
     Legg de overordede funksjonene «Kontakt oss», «Language/Språk» og «Endre
-    skriftstørrelse» i TopStripen. På mobil flytter du disse funksjonene ned til{' '}
-    <a href="#FooterContent">footeren</a>.
+    skriftstørrelse» i TopStripen. På mobil flytter du «Kontakt oss» og «Endre
+    skriftstørrelse» ned til <a href="#FooterContent">footeren</a>, mens
+    «Language/Språk» legges inn i <a href="#TopBanner">TopBanner</a>.
   </p>
   <h3>Endre bruker</h3>
   <p>

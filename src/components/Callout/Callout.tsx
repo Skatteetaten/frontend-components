@@ -3,7 +3,7 @@ import {
   Callout as FabricCallout,
   DirectionalHint,
   ICalloutProps,
-} from 'office-ui-fabric-react';
+} from '@fluentui/react';
 import * as React from 'react';
 import { IconButton } from '../index';
 import { getClassNames } from './Callout.classNames';

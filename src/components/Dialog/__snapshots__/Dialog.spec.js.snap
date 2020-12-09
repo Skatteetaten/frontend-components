@@ -2,7 +2,7 @@
 
 exports[`Dialog komponent matcher snapshot 1`] = `
 <div>
-  <StyledWithResponsiveMode
+  <Dialog
     dialogContentProps={
       Object {
         "closeButtonAriaLabel": "Lukk",
@@ -13,7 +13,7 @@ exports[`Dialog komponent matcher snapshot 1`] = `
     }
     modalProps={
       Object {
-        "className": "SkeDialog-74",
+        "className": "SkeDialog-54",
         "isBlocking": undefined,
         "isModeless": false,
       }

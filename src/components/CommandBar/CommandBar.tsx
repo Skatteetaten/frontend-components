@@ -1,10 +1,10 @@
 import * as React from 'react';
 
 import {
+  CommandBarButton,
   CommandBar as FabricCommandBar,
   ICommandBarItemProps,
-} from 'office-ui-fabric-react/lib-commonjs/CommandBar';
-import { CommandBarButton } from 'office-ui-fabric-react/lib-commonjs/Button';
+} from '@fluentui/react';
 import { getClassNames } from './CommandBar.classNames';
 import classnames from 'classnames';
 
