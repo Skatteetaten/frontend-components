@@ -79,11 +79,11 @@
     "react-test-renderer": "16.13.1",
     "rimraf": "3.0.2",
     "sonar-scanner": "3.1.0",
-    "typescript": "4.1.2",
+    "typescript": "3.9.7",
     "webfont": "9.0.0"
   },
   "scripts": {
-    "start": "REACT_APP_BUILD_VERSION=$(git rev-parse --abbrev-ref HEAD) styleguidist server",
+    "start": "REACT_APP_BUILD_VERSION=$(git rev-parse --abbrev-ref HEAD) FAST_REFRESH=false styleguidist server",
     "generate:icons": "webfont --normalize --fontHeight 600 src/webfont/**/*.svg -d src/components/utils/assets",
     "prebuild": "npm-run-all clean lint",
     "build": "npm-run-all generate:icons build:lib build:docs",

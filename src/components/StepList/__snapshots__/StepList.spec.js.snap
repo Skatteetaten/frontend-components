@@ -3,14 +3,14 @@
 exports[`StepList komponent matcher snapshot 1`] = `
 <StepList>
   <div
-    className="stepList-52"
+    className="stepList-96"
     role="region"
   >
     <Grid
       padding="0"
     >
       <div
-        className="ske-Grid-57 "
+        className="ske-Grid-101 "
         dir="ltr"
       >
         <Step
@@ -18,35 +18,35 @@ exports[`StepList komponent matcher snapshot 1`] = `
           stepNumber={1}
         >
           <div
-            className="wrapperStep-64"
+            className="wrapperStep-108"
             key="1"
           >
             <GridRow
               rowSpacing="0px"
             >
               <div
-                className="ske-Grid-row-61 "
+                className="ske-Grid-row-105 "
               >
                 <GridCol
                   noSpacing={true}
                 >
                   <div
-                    className="ske-Grid-col-62 "
+                    className="ske-Grid-col-106 "
                   >
                     <GridRow
                       rowSpacing="0px"
                     >
                       <div
-                        className="ske-Grid-row-61 "
+                        className="ske-Grid-row-105 "
                       >
                         <GridCol
                           sm={12}
                         >
                           <div
-                            className="ske-Grid-col-63 "
+                            className="ske-Grid-col-107 "
                           >
                             <span
-                              className="stepLine-50"
+                              className="stepLine-94"
                             />
                             <span
                               className=""
@@ -54,45 +54,45 @@ exports[`StepList komponent matcher snapshot 1`] = `
                             <NumberIcon
                               styles={
                                 Object {
-                                  "arrowLine": "arrowLine-41",
-                                  "containerStep": "containerStep-42",
-                                  "content": "content-43",
-                                  "divider": "divider-44",
-                                  "nextStep": "nextStep-45",
-                                  "numberWrapper": "numberWrapper-46",
-                                  "stepAction": "stepAction-47",
-                                  "stepContent": "stepContent-48",
-                                  "stepContentInner": "stepContentInner-49",
-                                  "stepLine": "stepLine-50",
-                                  "stepLineTop": "stepLineTop-51",
-                                  "stepList": "stepList-52",
-                                  "stepNumber": "stepNumber-53",
+                                  "arrowLine": "arrowLine-85",
+                                  "containerStep": "containerStep-86",
+                                  "content": "content-87",
+                                  "divider": "divider-88",
+                                  "nextStep": "nextStep-89",
+                                  "numberWrapper": "numberWrapper-90",
+                                  "stepAction": "stepAction-91",
+                                  "stepContent": "stepContent-92",
+                                  "stepContentInner": "stepContentInner-93",
+                                  "stepLine": "stepLine-94",
+                                  "stepLineTop": "stepLineTop-95",
+                                  "stepList": "stepList-96",
+                                  "stepNumber": "stepNumber-97",
                                   "subComponentStyles": Object {},
-                                  "title": "title-54",
-                                  "titleText": "titleText-55",
-                                  "wrapperStep": "wrapperStep-64",
+                                  "title": "title-98",
+                                  "titleText": "titleText-99",
+                                  "wrapperStep": "wrapperStep-108",
                                 }
                               }
                             >
                               <div
-                                className="numberWrapper-46"
+                                className="numberWrapper-90"
                               >
                                 <div
-                                  className="stepNumber-53"
+                                  className="stepNumber-97"
                                 >
                                   <span />
                                 </div>
                               </div>
                             </NumberIcon>
                             <hr
-                              className="divider-44"
+                              className="divider-88"
                             />
                             <div>
                               <div
-                                className="stepContent-48"
+                                className="stepContent-92"
                               >
                                 <div
-                                  className="stepContentInner-49"
+                                  className="stepContentInner-93"
                                 />
                               </div>
                             </div>
