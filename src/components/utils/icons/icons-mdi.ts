@@ -39,7 +39,6 @@ export default {
     ArrowDropDown: '\uf140',
     NavigateBefore: '\uf04d',
     NavigateNext: '\uf054',
-    MoveUp: '\ufcbe',
 
     //Info
     Blocked: '\uf0ad',
@@ -127,7 +126,6 @@ export default {
     Phone: '\uf602',
     Forum: '\uf28c',
     Calculator: '\uf0ec',
-    Facebook: '\uf20d',
     LinkedIn: '\uf33c',
     Twitter: '\uf544',
     Key: '\uf306',
