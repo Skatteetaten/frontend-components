@@ -3,6 +3,7 @@
 exports[`Card komponent matcher snapshot 1`] = `
 <Card
   actions={null}
+  ariaLabel={null}
   buttonType="button"
   circleOnIcon={true}
   color="neutralGrey"

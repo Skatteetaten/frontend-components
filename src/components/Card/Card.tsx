@@ -83,7 +83,8 @@ export default class Card extends React.PureComponent<CardProps, CardState> {
     marginbottom: '2px',
     margin: 'medium',
     circleOnIcon: true,
-    buttonType: 'button'
+    buttonType: 'button',
+    ariaLabel: null
   };
 
   constructor(props: CardProps) {
@@ -108,7 +109,8 @@ export default class Card extends React.PureComponent<CardProps, CardState> {
       className,
       circleOnIcon,
       id,
-      buttonType
+      buttonType,
+      ariaLabel
     } = this.props;
 
     const styles = getClassNames(this.props, this.state);
@@ -143,7 +145,7 @@ export default class Card extends React.PureComponent<CardProps, CardState> {
                 <IconButton
                   aria-expanded={isExpandedState}
                   icon={'ChevronDown'}
-                  ariaLabel={title}
+                  ariaLabel={ariaLabel}
                   circle={circleOnIcon}
                   onClick={this._toggleExpand}
                   type={buttonType}
