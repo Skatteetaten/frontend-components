@@ -116,9 +116,10 @@ export default class Card extends React.PureComponent<CardProps, CardState> {
       buttonType,
       ariaLabel
     } = this.props;
-    const TitleTag = titleTagName as keyof JSX.IntrinsicElements;
 
+    const TitleTag = titleTagName as keyof JSX.IntrinsicElements;
     const styles = getClassNames(this.props, this.state);
+
     return (
       <div id={id} className={classnames(styles.root, className)}>
         {title || subtitle || expand ? (
