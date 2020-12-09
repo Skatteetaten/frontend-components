@@ -22,6 +22,8 @@ export enum CardBorder {
 export interface CardProps extends React.HTMLAttributes<HTMLDivElement> {
   /** Teksten som vises i kortet */
   title?: string;
+  /** tagName for kort-tittel */
+  titleTagName?: keyof JSX.IntrinsicElements;
   /** Subtittel som vises i kortet */
   subtitle?: string;
   /** Fontstørrelse på tittel */
@@ -74,6 +76,7 @@ export default class Card extends React.PureComponent<CardProps, CardState> {
 
   static defaultProps = {
     title: undefined,
+    titleTagName: 'div',
     subtitle: undefined,
     titlesize: 'x-large',
     expand: false,
@@ -103,6 +106,7 @@ export default class Card extends React.PureComponent<CardProps, CardState> {
     const {
       children,
       title,
+      titleTagName,
       subtitle,
       expand,
       actions,
@@ -112,6 +116,7 @@ export default class Card extends React.PureComponent<CardProps, CardState> {
       buttonType,
       ariaLabel
     } = this.props;
+    const TitleTag = titleTagName as keyof JSX.IntrinsicElements;
 
     const styles = getClassNames(this.props, this.state);
     return (
@@ -120,18 +125,18 @@ export default class Card extends React.PureComponent<CardProps, CardState> {
           <div className={styles.header}>
             <div className={styles.titlecontainer}>
               {expand && (
-                <div
+                <TitleTag
                   aria-label={title}
                   className={styles.titleExpand}
                   onClick={this._toggleExpand}
                 >
                   {title}
-                </div>
+                </TitleTag>
               )}
               {!expand && (
-                <div className={styles.title} aria-label={title}>
+                <TitleTag className={styles.title} aria-label={title}>
                   {title}
-                </div>
+                </TitleTag>
               )}
               {actions && <div>{actions}</div>}
               {
