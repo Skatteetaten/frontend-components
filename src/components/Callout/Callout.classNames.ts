@@ -18,6 +18,7 @@ function getCalloutBorder(props: CalloutProps) {
 export const getClassNames = (props: CalloutProps) => {
   const theme = getTheme();
   const palette = theme.palette as PaletteProps;
+  const { border } = props;
   return mergeStyleSets({
     main: {
       displayName: 'SkeCallout',
@@ -29,7 +30,7 @@ export const getClassNames = (props: CalloutProps) => {
           maxWidth: 600,
           backgroundColor: palette.skeColor[props.color as CalloutColor],
           boxShadow: 'none',
-          border: 'none',
+          border: border ? `1px solid ${palette.skeColor.black}` : 'none',
           padding: '10px 20px 10px 10px',
           selectors: {
             '@media  only screen and (max-width: 479px)': {
@@ -44,7 +45,10 @@ export const getClassNames = (props: CalloutProps) => {
           }
         },
         '.ms-Callout-beak': {
-          backgroundColor: palette.skeColor[props.color as CalloutColor]
+          backgroundColor: palette.skeColor[props.color as CalloutColor],
+          borderBottom: border ? `1px solid ${palette.skeColor.black}` : 'none',
+          borderRight: border ? `1px solid ${palette.skeColor.black}` : 'none',
+          zIndex: 5
         },
         '&& h3': {
           marginTop: '5px',
