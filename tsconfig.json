@@ -13,9 +13,10 @@
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "jsx": "preserve",
+    "jsx": "react",
     "noImplicitAny": false,
-    "noEmit": true
+    "noEmit": true,
+    "noFallthroughCasesInSwitch": true
   },
   "include": ["src/components", "src/react-app-env.d.ts"],
   "exclude": ["node_modules", "lib", "scripts", "**/*.spec.js"]
