@@ -30,7 +30,10 @@ export const getClassNames = (props: CalloutProps) => {
           maxWidth: 600,
           backgroundColor: palette.skeColor[props.color as CalloutColor],
           boxShadow: 'none',
-          border: border ? `1px solid ${palette.skeColor.black}` : 'none',
+          border:
+            border === 'hintTop' || border === 'hintBottom'
+              ? `1px solid ${palette.skeColor.black}`
+              : 'none',
           padding: '10px 20px 10px 10px',
           selectors: {
             '@media  only screen and (max-width: 479px)': {
@@ -46,8 +49,22 @@ export const getClassNames = (props: CalloutProps) => {
         },
         '.ms-Callout-beak': {
           backgroundColor: palette.skeColor[props.color as CalloutColor],
-          borderBottom: border ? `1px solid ${palette.skeColor.black}` : 'none',
-          borderRight: border ? `1px solid ${palette.skeColor.black}` : 'none',
+          borderBottom:
+            border === 'hintTop'
+              ? `1px solid ${palette.skeColor.black}`
+              : 'none',
+          borderRight:
+            border === 'hintTop'
+              ? `1px solid ${palette.skeColor.black}`
+              : 'none',
+          borderTop:
+            border === 'hintBottom'
+              ? `1px solid ${palette.skeColor.black}`
+              : 'none',
+          borderLeft:
+            border === 'hintBottom'
+              ? `1px solid ${palette.skeColor.black}`
+              : 'none',
           zIndex: 5
         },
         '&& h3': {

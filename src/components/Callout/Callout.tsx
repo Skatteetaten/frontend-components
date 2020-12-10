@@ -20,8 +20,8 @@ export interface CalloutProps extends ICalloutProps {
   autoDismiss?: boolean;
   /** There are four colors; lightGreen, beige, lightPink or white */
   color?: CalloutColor;
-  /** Adds border around the callout box */
-  border?: boolean;
+  /** Adds border around the callout box, make sure to match hintTop/hintBottom to the directionalHint */
+  border?: 'hintTop' | 'hintBottom';
   onClose?: () => void;
   /** dir */
 }
@@ -55,7 +55,7 @@ export default class Callout extends React.PureComponent<
     directionalHint: Callout.POS_TOP_CENTER,
     doNotLayer: true,
     role: undefined,
-    border: false
+    border: undefined
   };
 
   render() {
