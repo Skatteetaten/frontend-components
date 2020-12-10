@@ -69,19 +69,20 @@ import Image from '@skatteetaten/frontend-components/Image';
     </li>
   </ul>
   <div className="dodont" style={{ marginLeft: '24px' }}>
-    <div className="do" style={{ maxWidth: '44%' }}>
+    <div className="do" style={{ maxWidth: '37%' }}>
       <p>Ja</p>
       <Image
         src="./assets/png/eks_systemfeil1.png"
-        alt="Beskriv innholdet i bildet"
+        alt="Eksempel på systemfeil: Beklager – vi har systemfeil. Vi klarte ikke opprette forbindelse til en nødvendig tjeneste. 
+Skal vi sende deg en melding når tjenesten er oppe igjen? "
         width="auto"
       />
     </div>
-    <div className="dont" style={{ maxWidth: '44%' }}>
+    <div className="dont" style={{ maxWidth: '37%' }}>
       <p>Nei</p>
       <Image
         src="./assets/png/eks_systemfeil2.png"
-        alt="Beskriv innholdet i bildet"
+        alt="Eksempel på systemfeil: Systemfeil. Prøv igjen senere. Hvis feilen vedvarer, kontakt Skatteetaten.[undefined]"
         width="auto"
       />
     </div>
