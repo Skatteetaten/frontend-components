@@ -101,12 +101,14 @@ export const getClassNames = (props: CardProps, state: CardState) => {
     title: {
       flex: '1 1 1px',
       fontSize: titlesize,
-      fontWeight: FontWeights.semibold
+      fontWeight: FontWeights.semibold,
+      margin: 0
     },
     titleExpand: {
       flex: '1 1 1px',
       fontSize: titlesize,
       fontWeight: FontWeights.semibold,
+      margin: 0,
       selectors: {
         ':hover': {
           textDecoration: 'underline',
