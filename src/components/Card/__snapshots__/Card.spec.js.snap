@@ -3,6 +3,7 @@
 exports[`Card komponent matcher snapshot 1`] = `
 <Card
   actions={null}
+  ariaLabel={null}
   buttonType="button"
   circleOnIcon={true}
   color="neutralGrey"
@@ -10,6 +11,7 @@ exports[`Card komponent matcher snapshot 1`] = `
   isExpanded={true}
   margin="medium"
   marginbottom="2px"
+  titleTagName="div"
   titlesize="x-large"
 >
   <div

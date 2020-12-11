@@ -63,4 +63,13 @@ describe('Card komponent', () => {
     expandBtn.simulate('click');
     expect(wrapper.state('isExpandedState')).toEqual(false);
   });
+
+  it('kan definere tagName på title', () => {
+    const wrapper = oppsettFullDOM({
+      title: 'tittel',
+      titleTagName: 'h3'
+    });
+
+    expect(wrapper.html()).toContain('tittel</h3>');
+  });
 });
