@@ -1,3 +1,9 @@
+### **v.3.7.5 - 11.12.2020 **
+
+- Fixes an issue with icons disappering with react-scripts version 4.0
+- ScrollToTopButton: Added aria-hidden to top container to hide it from screen readers.
+- Card: title can now be rendered as a custom tag, for instance h2 or h3.
+
 ### **v.3.7.4 - 03.12.2020 **
 
 - AccordionMenu: added ability to flex content inside title area

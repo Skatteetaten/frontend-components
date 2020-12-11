@@ -88,7 +88,7 @@ const ExternalHeaderContent = ({ styles, ...props }) => {
 
 const ExternalHeader: React.FC<TopBannerProps> = props => {
   const styles = getExternalClassNames(props);
-  const { header, headerMain, logoWrapper, contentWrapper } = styles;
+  const { header, headerMain, contentWrapper } = styles;
   const compactHeight = props.compact ? 55 : 68;
 
   const imageElement = (
@@ -102,7 +102,7 @@ const ExternalHeader: React.FC<TopBannerProps> = props => {
   return (
     <header className={classnames(header, props.className)} id={props.id}>
       <div className={headerMain}>
-        <div className={logoWrapper}>
+        <div>
           <div>
             {props.logoLink ? (
               <a href="https://www.skatteetaten.no">{imageElement}</a>

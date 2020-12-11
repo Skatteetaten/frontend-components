@@ -3,7 +3,7 @@
 exports[`ActionButton komponent matcher snapshot 1`] = `
 <button
   aria-label="Button label"
-  className="ms-Button ms-Button--action ms-Button--command root-42"
+  className="ms-Button ms-Button--action ms-Button--command root-86"
   data-is-focusable={true}
   onClick={[Function]}
   onKeyDown={[Function]}
@@ -14,7 +14,7 @@ exports[`ActionButton komponent matcher snapshot 1`] = `
   type="button"
 >
   <span
-    className="ms-Button-flexContainer flexContainer-43"
+    className="ms-Button-flexContainer flexContainer-87"
     data-automationid="splitbuttonprimary"
   />
 </button>
