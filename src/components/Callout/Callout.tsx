@@ -55,12 +55,11 @@ export default class Callout extends React.PureComponent<
     directionalHint: Callout.POS_TOP_CENTER,
     doNotLayer: true,
     role: undefined,
-    border: false,
-    borderHint: undefined
+    border: false
   };
 
   render() {
-    const { children, className, id, directionalHint, ...props } = this.props;
+    const { children, className, id, ...props } = this.props;
     const styles = getClassNames(props);
 
     return (
