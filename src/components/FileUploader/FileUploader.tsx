@@ -6,7 +6,7 @@ import classnames from 'classnames';
 import Icon from '../Icon';
 import LabelWithCallout, {
   calloutState,
-  LabelWithCalloutProps,
+  LabelWithCalloutProps
 } from '../LabelWithCallout';
 import Spinner from '../Spinner';
 import ErrorMessage from '../ErrorMessage';
@@ -14,7 +14,7 @@ import ErrorMessage from '../ErrorMessage';
 export enum Language {
   en = 'en',
   nb = 'nb',
-  nn = 'nn',
+  nn = 'nn'
 }
 
 export enum FileFormatTypes {
@@ -26,7 +26,7 @@ export enum FileFormatTypes {
   png = '.png',
   tif = '.tif',
   txt = '.txt',
-  xml = '.xml',
+  xml = '.xml'
 }
 
 export interface AttachmentMetadata extends File {
@@ -97,6 +97,9 @@ export interface FileUploaderProps {
   queryParams?: any;
   /** Funksjon for filopplasting */
   uploadFile?: (file: File) => void;
+  /** Gjør DELETE operasjonen kompatibel når man kjører en løsning bak WebSeal.
+   * Default implementasjon gjør den kompatibel nårman kjører løsningen bak BigIp som krever en tom body i requesten
+   *  **/
   usesWebSealCompatibleDelete?: boolean;
 }
 
@@ -134,7 +137,7 @@ enum FilTyperNavn {
   WordFile = 'WordFile',
   PDFFile = 'PDFFile',
   XMLFile = 'XMLFile',
-  File = 'File',
+  File = 'File'
 }
 
 const filtypeMap = (() => {
@@ -154,7 +157,7 @@ const getFileIconName = (fil: AttachmentMetadata) => {
   return fileType ? fileType : FilTyperNavn.File;
 };
 
-const FileUploader: React.FC<FileUploaderProps> = (props) => {
+const FileUploader: React.FC<FileUploaderProps> = props => {
   const {
     acceptedFileFormats,
     addFileString,
@@ -182,7 +185,7 @@ const FileUploader: React.FC<FileUploaderProps> = (props) => {
     normalizeFileName,
     onCalloutToggle,
     queryParams,
-    uploadFile,
+    uploadFile
   } = props;
   const styles = getClassNames(props);
   const [internalFiles, setInternalFiles] = React.useState<Array<any>>(
@@ -205,7 +208,7 @@ const FileUploader: React.FC<FileUploaderProps> = (props) => {
   }, [files]);
 
   const pushToInternalMessages = (msg: string) =>
-    setInternalErrorMessages((prevState) => [...prevState, msg]);
+    setInternalErrorMessages(prevState => [...prevState, msg]);
 
   const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     event.preventDefault();
@@ -219,7 +222,7 @@ const FileUploader: React.FC<FileUploaderProps> = (props) => {
 
   const triggerUpdateFiles = (validFiles: Array<File>) => {
     if (uploadFile) {
-      validFiles.forEach((file) => {
+      validFiles.forEach(file => {
         uploadFile(file);
       });
     }
@@ -251,7 +254,7 @@ const FileUploader: React.FC<FileUploaderProps> = (props) => {
     setInternalErrorMessages([]);
 
     const exceedSizeLimitFiles = fileSizeLimit
-      ? fileList.filter((file) => file.size > fileSizeLimit)
+      ? fileList.filter(file => file.size > fileSizeLimit)
       : [];
     if (fileSizeLimit && exceedSizeLimitFiles.length) {
       pushToInternalMessages(
@@ -261,13 +264,13 @@ const FileUploader: React.FC<FileUploaderProps> = (props) => {
     }
 
     const invalidFileFormatFiles = fileList.filter(
-      (file) => !isCorrectFileFormat(file, acceptedFileFormats)
+      file => !isCorrectFileFormat(file, acceptedFileFormats)
     );
     if (invalidFileFormatFiles.length) {
       pushToInternalMessages(t('fileuploader.error.file_format'));
     }
 
-    const validFiles = fileList.filter((file) =>
+    const validFiles = fileList.filter(file =>
       isValidFile(file, fileSizeLimit)
     );
 
@@ -286,17 +289,17 @@ const FileUploader: React.FC<FileUploaderProps> = (props) => {
       setTimeout(() => {
         axios
           .all(allPromises)
-          .then((responses) => {
+          .then(responses => {
             const updatedInternalFiles = [
               ...internalFiles,
-              ...responses.map((res) => res.data),
+              ...responses.map(res => res.data)
             ];
             setInternalFiles(updatedInternalFiles);
             if (afterUpload) {
               afterUpload(updatedInternalFiles);
             }
           })
-          .catch((error) => {
+          .catch(error => {
             //TODO: Det trenger design om flere feilmeldinger
             if (error.response && error.response.status === 403) {
               pushToInternalMessages(t('fileuploader.error.upload.403'));
@@ -318,7 +321,7 @@ const FileUploader: React.FC<FileUploaderProps> = (props) => {
     filstoerrelsegrense: number
   ) =>
     i18n.t('fileuploader.error.file_size', {
-      filstoerrelsegrense: bitToMegabyte(filstoerrelsegrense),
+      filstoerrelsegrense: bitToMegabyte(filstoerrelsegrense)
     });
 
   const bitToMegabyte = (size: number) => (size / (1024 * 1024)).toFixed(1);
@@ -353,16 +356,16 @@ const FileUploader: React.FC<FileUploaderProps> = (props) => {
       axios
         .delete(`${axiosPath}/${fileToBeDeleted.id}`, {
           params: queryParams,
-          data: props.usesWebSealCompatibleDelete === true ? null : {}, // body kreves av BigIP
+          data: props.usesWebSealCompatibleDelete === true ? null : {} // body kreves av BigIP
         })
         .then(() => {
           const newList = internalFiles.filter(
-            (f) => f.id !== fileToBeDeleted.id
+            f => f.id !== fileToBeDeleted.id
           );
           setInternalFiles(newList);
           triggerUpdateFiles(newList);
         })
-        .catch((error) => {
+        .catch(error => {
           if (error.response && error.response.status === 403) {
             pushToInternalMessages(t('fileuploader.error.delete.403'));
           } else {
@@ -381,7 +384,7 @@ const FileUploader: React.FC<FileUploaderProps> = (props) => {
     }
   };
   if (deleteAllFiles && files) {
-    files.forEach((file) => {
+    files.forEach(file => {
       deleteFromList(file);
     });
   }
@@ -416,13 +419,13 @@ const FileUploader: React.FC<FileUploaderProps> = (props) => {
           onDragLeave={handleDragLeave}
           onDragOver={handleDragOverAndDragEnter}
           onDrop={handleDrop}
-          onClick={(event) => {
+          onClick={event => {
             event.preventDefault();
             if (inputRef.current) {
               inputRef.current.click();
             }
           }}
-          onKeyPress={(ev) => {
+          onKeyPress={ev => {
             if (ev.keyCode === 0 && inputRef.current) {
               inputRef.current.click();
             }
@@ -473,7 +476,7 @@ const FileUploader: React.FC<FileUploaderProps> = (props) => {
         </div>
       )}
       {internalErrorMessages &&
-        internalErrorMessages.map((msg) => (
+        internalErrorMessages.map(msg => (
           <div key={msg}>
             <ErrorMessage>{msg}</ErrorMessage>
           </div>
