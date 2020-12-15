@@ -5,7 +5,7 @@ import { PaletteProps } from '..';
 import { CalloutColor, CalloutProps } from './Callout';
 function getCalloutBorder(props: CalloutProps) {
   const palette = getTheme().palette as PaletteProps;
-  if (props.color === 'white') {
+  if (props.color === 'white' || props.border) {
     return {
       border: `2px solid ${palette.skeColor.blackAlt}`
     };
@@ -18,7 +18,6 @@ function getCalloutBorder(props: CalloutProps) {
 export const getClassNames = (props: CalloutProps) => {
   const theme = getTheme();
   const palette = theme.palette as PaletteProps;
-  const { border } = props;
   return mergeStyleSets({
     main: {
       displayName: 'SkeCallout',
@@ -30,10 +29,6 @@ export const getClassNames = (props: CalloutProps) => {
           maxWidth: 600,
           backgroundColor: palette.skeColor[props.color as CalloutColor],
           boxShadow: 'none',
-          border:
-            border === 'hintTop' || border === 'hintBottom'
-              ? `1px solid ${palette.skeColor.black}`
-              : 'none',
           padding: '10px 20px 10px 10px',
           selectors: {
             '@media  only screen and (max-width: 479px)': {
@@ -48,24 +43,7 @@ export const getClassNames = (props: CalloutProps) => {
           }
         },
         '.ms-Callout-beak': {
-          backgroundColor: palette.skeColor[props.color as CalloutColor],
-          borderBottom:
-            border === 'hintTop'
-              ? `1px solid ${palette.skeColor.black}`
-              : 'none',
-          borderRight:
-            border === 'hintTop'
-              ? `1px solid ${palette.skeColor.black}`
-              : 'none',
-          borderTop:
-            border === 'hintBottom'
-              ? `1px solid ${palette.skeColor.black}`
-              : 'none',
-          borderLeft:
-            border === 'hintBottom'
-              ? `1px solid ${palette.skeColor.black}`
-              : 'none',
-          zIndex: 5
+          backgroundColor: palette.skeColor[props.color as CalloutColor]
         },
         '&& h3': {
           marginTop: '5px',
