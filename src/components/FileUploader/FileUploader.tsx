@@ -97,8 +97,8 @@ export interface FileUploaderProps {
   queryParams?: any;
   /** Funksjon for filopplasting */
   uploadFile?: (file: File) => void;
-  /** Gjør DELETE operasjonen kompatibel når man kjører en løsning bak WebSeal.
-   * Default implementasjon gjør den kompatibel nårman kjører løsningen bak BigIp som krever en tom body i requesten
+  /** Gjør at DELETE operasjonen, ved slett av opplastet fil, fungerer når løsningen kjører bak WebSeal.
+   * Default implementasjon legger ved en tom body i DELETE requesten som er nødvendig for løsninger som kjører bak BigIp
    *  **/
   usesWebSealCompatibleDelete?: boolean;
 }
