@@ -16,10 +16,12 @@ export enum CalloutColor {
   BASIC = 'white'
 }
 export interface CalloutProps extends ICalloutProps {
-  /** Avgjør om callout vinduet skal lukkes automatisk når området utenfor vinduet klikkes */
+  /** Determine if the callout window will close automaticly when the area outside the window is clicked */
   autoDismiss?: boolean;
-  /** Finnes fire bakgrunnfarger: grønn, rosa, beige eller hvit */
+  /** There are four colors; lightGreen, beige, lightPink or white */
   color?: CalloutColor;
+  /** Adds border around the callout box */
+  border?: boolean;
   onClose?: () => void;
   /** dir */
 }
@@ -52,7 +54,8 @@ export default class Callout extends React.PureComponent<
     color: Callout.HELP,
     directionalHint: Callout.POS_TOP_CENTER,
     doNotLayer: true,
-    role: undefined
+    role: undefined,
+    border: false
   };
 
   render() {
