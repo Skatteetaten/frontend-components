@@ -20,8 +20,8 @@ export interface CalloutProps extends ICalloutProps {
   autoDismiss?: boolean;
   /** There are four colors; lightGreen, beige, lightPink or white */
   color?: CalloutColor;
-  /** Adds border around the callout box, make sure to match hintTop/hintBottom to the directionalHint */
-  border?: true;
+  /** Adds border around the callout box */
+  border?: boolean;
   onClose?: () => void;
   /** dir */
 }
