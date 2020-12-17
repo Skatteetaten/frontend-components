@@ -1,21 +1,39 @@
 import { mergeStyleSets } from '@uifabric/merge-styles';
 import { getTheme } from '@uifabric/styling';
 import { PaletteProps } from '..';
+import { LinkProps } from './Link';
+import { FontSizes, FontWeights } from '../utils/fonts';
 
-export const getClassNames = () => {
+export const getClassNames = (props: LinkProps) => {
   const palette = getTheme().palette as PaletteProps;
+  const { linkGroup } = props;
 
   return mergeStyleSets({
     icon: {
       color: palette.skeColor.blue,
-      fontSize: '18px',
-      verticalAlign: 'middle',
-      paddingLeft: '4px',
-      paddingRight: '4px',
+      fontSize: linkGroup ? FontSizes.medium : FontSizes.large,
+      fontWeight: linkGroup ? FontWeights.bold : 'inherit',
+      verticalAlign: linkGroup ? 'bottom' : 'middle',
+      paddingLeft: linkGroup ? '0px' : '4px',
+      paddingRight: linkGroup ? '10px' : '4px',
       borderBottom: 'none'
     },
     linkContainer: {
-      margin: '0px'
+      margin: '0px',
+      selectors: {
+        ':hover>i': {
+          color: linkGroup ? palette.skeColor.darkBlue : '',
+          paddingLeft: linkGroup ? '4px' : '4px',
+          paddingRight: linkGroup ? '6px' : '4px',
+          transition: linkGroup ? '0.1s' : ''
+        },
+        ':hover>a': {
+          color: linkGroup ? palette.skeColor.darkBlue : '',
+          borderBottom: linkGroup
+            ? '2px solid ' + palette.skeColor.darkBlue
+            : ''
+        }
+      }
     },
     skipLink: {
       left: '-999px',
