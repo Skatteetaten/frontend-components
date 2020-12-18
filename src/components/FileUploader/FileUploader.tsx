@@ -97,6 +97,10 @@ export interface FileUploaderProps {
   queryParams?: any;
   /** Funksjon for filopplasting */
   uploadFile?: (file: File) => void;
+  /** Gjør at DELETE operasjonen, ved slett av opplastet fil, fungerer når løsningen kjører bak WebSeal.
+   * Default implementasjon legger ved en tom body i DELETE requesten som er nødvendig for løsninger som kjører bak BigIp
+   *  **/
+  usesWebSealCompatibleDelete?: boolean;
 }
 
 export const isCorrectFileFormat = (
@@ -352,7 +356,7 @@ const FileUploader: React.FC<FileUploaderProps> = props => {
       axios
         .delete(`${axiosPath}/${fileToBeDeleted.id}`, {
           params: queryParams,
-          data: {} // kreves av BigIP
+          data: props.usesWebSealCompatibleDelete === true ? null : {} // body kreves av BigIP
         })
         .then(() => {
           const newList = internalFiles.filter(
