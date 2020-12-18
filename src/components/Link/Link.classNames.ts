@@ -23,7 +23,7 @@ export const getClassNames = (props: LinkProps) => {
       selectors: {
         ':hover>i': {
           color: linkGroup ? palette.skeColor.darkBlue : '',
-          paddingLeft: linkGroup ? '4px' : '4px',
+          paddingLeft: '4px',
           paddingRight: linkGroup ? '6px' : '4px',
           transition: linkGroup ? '0.1s' : ''
         },
