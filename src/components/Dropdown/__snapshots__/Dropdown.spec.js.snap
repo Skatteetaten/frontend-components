@@ -10,7 +10,7 @@ exports[`Dropdown komponent matcher snapshot 1`] = `
   />
   <StyledWithResponsiveMode
     aria-invalid={false}
-    className="main-85"
+    className="main-41"
     id="dropdown-undefined-input"
     onRenderCaretDown={[Function]}
     options={
