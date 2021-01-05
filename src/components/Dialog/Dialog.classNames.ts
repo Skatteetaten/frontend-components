@@ -19,7 +19,7 @@ function getMainBackgroundStyle(props: DialogProps) {
 
   if (props.layoutStyle === 'important') {
     return {
-      background: `url(${dekor})`,
+      background: `url(${dekor.default})`,
       backgroundSize: 'calc(100% + 1px) 20px',
       backgroundRepeat: 'no-repeat',
       backgroundPosition: 'bottom left',
@@ -36,7 +36,7 @@ function getHeaderBackgroundStyle(props: DialogProps) {
   if (props.layoutStyle === 'important') {
     const logoPlacement = props.title ? '-30px' : '-18px';
     return {
-      backgroundImage: `url(${logo})`,
+      backgroundImage: `url(${logo.default})`,
       backgroundSize: '40px 100%',
       backgroundRepeat: 'no-repeat',
       backgroundPosition: `top ${logoPlacement} left 20px`,
