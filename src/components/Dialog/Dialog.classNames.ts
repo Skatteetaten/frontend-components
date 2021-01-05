@@ -3,9 +3,8 @@ import { mergeStyleSets } from '@uifabric/merge-styles';
 import { FontSizes, FontWeights } from '../utils/fonts';
 import { PaletteProps } from '..';
 import { DialogProps } from './Dialog';
-
-const dekor = require('./assets/footerDekor.svg');
-const logo = require('./assets/ske-logo.svg');
+import logo from './assets/ske-logo.svg';
+import dekor from './assets/footerDekor.svg';
 
 function setMinMaxWidth(props: DialogProps) {
   return {
@@ -19,7 +18,7 @@ function getMainBackgroundStyle(props: DialogProps) {
 
   if (props.layoutStyle === 'important') {
     return {
-      background: `url(${dekor.default})`,
+      background: `url(${dekor})`,
       backgroundSize: 'calc(100% + 1px) 20px',
       backgroundRepeat: 'no-repeat',
       backgroundPosition: 'bottom left',
@@ -36,7 +35,7 @@ function getHeaderBackgroundStyle(props: DialogProps) {
   if (props.layoutStyle === 'important') {
     const logoPlacement = props.title ? '-30px' : '-18px';
     return {
-      backgroundImage: `url(${logo.default})`,
+      backgroundImage: `url(${logo})`,
       backgroundSize: '40px 100%',
       backgroundRepeat: 'no-repeat',
       backgroundPosition: `top ${logoPlacement} left 20px`,
