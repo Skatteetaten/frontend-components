@@ -40,7 +40,7 @@ const centerAlignStyle = {
 };
 
 const timeStampStyle = {
-  paddingLeft: 40,
+  paddingLeft: 26,
   marginTop: '-10px'
 };
 
