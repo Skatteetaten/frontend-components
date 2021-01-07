@@ -73,7 +73,16 @@ describe('Card komponent', () => {
     expect(wrapper.html()).toContain('tittel</h3>');
   });
 
-  it('rendrer med data-testid fra argumenter', () => {
+  it('rendrer ikke attributter definert i CardProps', () => {
+    const wrapper = oppsettFullDOM({
+      color: Card.Color.BEIGE
+    });
+
+    const findColor = wrapper.find('div[color="' + Card.Color.BEIGE + '"]');
+    expect(findColor.exists()).toBeFalsy();
+  });
+
+  it('rendrer attributtet data-testid', () => {
     const wrapper = oppsettFullDOM({
       color: Card.Color.BEIGE,
       title: 'Ikke fullført arbeidsoppgave',
@@ -86,8 +95,7 @@ describe('Card komponent', () => {
       'data-testid': 'Card-Component'
     });
 
-    expect(
-      wrapper.find('[data-testid="Card-Component"]').length
-    ).toBeGreaterThan(0);
+    const findTestid = wrapper.find('div[data-testid="Card-Component"]');
+    expect(findTestid.exists()).toBeTruthy();
   });
 });
