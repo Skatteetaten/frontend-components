@@ -114,14 +114,27 @@ export default class Card extends React.PureComponent<CardProps, CardState> {
       circleOnIcon,
       id,
       buttonType,
-      ariaLabel
+      ariaLabel,
+      isExpanded,
+      titlesize,
+      color,
+      border,
+      marginbottom,
+      margin,
+      onChange,
+      onClick,
+      ...htmlAttributes
     } = this.props;
 
     const TitleTag = titleTagName as keyof JSX.IntrinsicElements;
     const styles = getClassNames(this.props, this.state);
 
     return (
-      <div id={id} className={classnames(styles.root, className)}>
+      <div
+        id={id}
+        className={classnames(styles.root, className)}
+        {...htmlAttributes}
+      >
         {title || subtitle || expand ? (
           <div className={styles.header}>
             <div className={styles.titlecontainer}>

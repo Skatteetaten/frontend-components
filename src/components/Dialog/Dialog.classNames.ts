@@ -3,9 +3,8 @@ import { mergeStyleSets } from '@uifabric/merge-styles';
 import { FontSizes, FontWeights } from '../utils/fonts';
 import { PaletteProps } from '..';
 import { DialogProps } from './Dialog';
-
-const dekor = require('./assets/footerDekor.svg');
-const logo = require('./assets/ske-logo.svg');
+import logo from './assets/ske-logo.svg';
+import dekor from './assets/footerDekor.svg';
 
 function setMinMaxWidth(props: DialogProps) {
   return {
