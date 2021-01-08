@@ -1,10 +1,10 @@
 ### **v.3.7.6 - 08.01.2021 **
 
-Callout: Added new prop to draw border around callout
-FileUploader: Added prop that makes delete compatible with webseal
-LinkGroup: Now uses same markup as Link (Accessibility improvement)
-Dialog: Fixes an issue where the logo inside the dialog dissappeared
-Card: added ability to have more html attributes ie. data-testid.
+- Callout: Added new prop to draw border around callout
+- FileUploader: Added prop that makes delete compatible with webseal
+- LinkGroup: Now uses same markup as Link (Accessibility improvement)
+- Dialog: Fixes an issue where the logo inside the dialog dissappeared
+- Card: added ability to have more html attributes ie. data-testid.
 
 ### **v.3.7.5 - 11.12.2020 **
 
