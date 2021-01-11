@@ -5,7 +5,8 @@ import Icon from '../../Icon/Icon';
 import { getClassNames } from '../Accordion.classNames';
 import Heading from '../../utils/Heading';
 
-export interface AccordionItemProps {
+export interface AccordionItemProps
+  extends React.HTMLAttributes<HTMLDivElement> {
   id?: string;
   /** Option to enable show/hide the content of a step with a show/hide button */
   toggleContent?: boolean;
@@ -126,11 +127,20 @@ const AccordionItem: React.FC<AccordionItemProps> = props => {
     totalSteps,
     stepId,
     processList,
-    headingLevel
+    headingLevel,
+    id,
+    isOpen,
+    onChange,
+    onClick,
+    ...htmlAttributes
   } = props;
 
   return (
-    <div key={stepNumber} className={classnames(styles.wrapperStep, className)}>
+    <div
+      key={stepNumber}
+      className={classnames(styles.wrapperStep, className)}
+      {...htmlAttributes}
+    >
       {processList && stepNumber !== totalSteps && (
         <span className={styles.stepLine} />
       )}
