@@ -18,7 +18,7 @@ import ErrorMessage from '@skatteetaten/frontend-components/ErrorMessage';
 import DatePicker from '@skatteetaten/frontend-components/DatePicker';
 import Image from '@skatteetaten/frontend-components/Image';
 
-<>
+<div>
   <Card
     title="Hovedregler for feilmeldinger"
     color={Card.Color.WHITE}
@@ -73,8 +73,7 @@ import Image from '@skatteetaten/frontend-components/Image';
       <p>Ja</p>
       <Image
         src="./assets/png/eks_systemfeil1.png"
-        alt="Eksempel på systemfeil: Beklager – vi har systemfeil. Vi klarte ikke opprette forbindelse til en nødvendig tjeneste. 
-Skal vi sende deg en melding når tjenesten er oppe igjen? "
+        alt="Eksempel på systemfeil: Beklager – vi har systemfeil. Vi klarte ikke opprette forbindelse til en nødvendig tjeneste. Skal vi sende deg en melding når tjenesten er oppe igjen? "
         width="auto"
       />
     </div>
@@ -262,5 +261,5 @@ Skal vi sende deg en melding når tjenesten er oppe igjen? "
       <ErrorMessage>Skjemaet inneholder 2 feil som må rettes opp.</ErrorMessage>
     </AccordionItem>
   </Accordion>
-</>;
+</div>;
 ```
