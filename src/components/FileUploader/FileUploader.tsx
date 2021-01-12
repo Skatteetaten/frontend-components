@@ -10,6 +10,7 @@ import LabelWithCallout, {
 } from '../LabelWithCallout';
 import Spinner from '../Spinner';
 import ErrorMessage from '../ErrorMessage';
+import Link from '../Link';
 
 export enum Language {
   en = 'en',
@@ -101,6 +102,8 @@ export interface FileUploaderProps {
    * Default implementasjon legger ved en tom body i DELETE requesten som er nødvendig for løsninger som kjører bak BigIp
    *  **/
   usesWebSealCompatibleDelete?: boolean;
+
+  downloadFile?: (file: File) => void;
 }
 
 export const isCorrectFileFormat = (
@@ -185,7 +188,8 @@ const FileUploader: React.FC<FileUploaderProps> = props => {
     normalizeFileName,
     onCalloutToggle,
     queryParams,
-    uploadFile
+    uploadFile,
+    downloadFile
   } = props;
   const styles = getClassNames(props);
   const [internalFiles, setInternalFiles] = React.useState<Array<any>>(
@@ -350,6 +354,14 @@ const FileUploader: React.FC<FileUploaderProps> = props => {
     }
   };
 
+  const showFileName = (file: any) => {
+    if (downloadFile) {
+      return <Link text={file.name} onClick={() => downloadFile(file)} />;
+    } else {
+      return <span>{file.name}</span>;
+    }
+  };
+
   const deleteFromList = (fileToBeDeleted: AttachmentMetadata) => {
     setInternalErrorMessages([]);
     if (axiosPath) {
@@ -487,8 +499,11 @@ const FileUploader: React.FC<FileUploaderProps> = props => {
             {internalFiles.map((file, index: number) => (
               <li key={file.name.concat(index.toString())}>
                 <div className={styles.fileName}>
-                  <Icon iconName={getFileIconName(file)} />
-                  <span>{file.name}</span>
+                  <Icon
+                    className={styles.fileIcon}
+                    iconName={getFileIconName(file)}
+                  />
+                  {showFileName(file)}
                 </div>
                 {file.error ? (
                   <Icon iconName={'Error'} className={styles.errorColor} />
