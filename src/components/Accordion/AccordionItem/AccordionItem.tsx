@@ -102,18 +102,6 @@ const AccordionItem: React.FC<AccordionItemProps> = props => {
     setContentOpen(!isContentOpen);
   };
 
-  const clickHandler = () => {
-    const { onClick, onChange } = props;
-    if (onChange) {
-      onChange();
-    }
-    if (onClick && !isContentOpen) {
-      onClick();
-    }
-    toggleVisibility();
-  };
-
-  const styles = getClassNames();
   const {
     title,
     subtitle,
@@ -134,6 +122,18 @@ const AccordionItem: React.FC<AccordionItemProps> = props => {
     onClick,
     ...htmlAttributes
   } = props;
+
+  const clickHandler = () => {
+    if (onChange) {
+      onChange();
+    }
+    if (onClick && !isContentOpen) {
+      onClick();
+    }
+    toggleVisibility();
+  };
+
+  const styles = getClassNames();
 
   return (
     <div
