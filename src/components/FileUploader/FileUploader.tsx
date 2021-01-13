@@ -102,7 +102,9 @@ export interface FileUploaderProps {
    * Default implementasjon legger ved en tom body i DELETE requesten som er nødvendig for løsninger som kjører bak BigIp
    *  **/
   usesWebSealCompatibleDelete?: boolean;
-
+  /**
+   * Funksjon for filnedlasting
+   * */
   downloadFile?: (file: File) => void;
 }
 
