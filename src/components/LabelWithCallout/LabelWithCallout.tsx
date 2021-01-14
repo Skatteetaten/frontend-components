@@ -13,25 +13,29 @@ export interface LabelWithCalloutProps
   extends React.HTMLAttributes<HTMLDivElement> {
   /** aria-label */
   ariaLabel?: string;
-  /** Avgjør om callout vinduet skal lukkes automatisk når området utenfor vinduet klikkes */
+  /** If the Callout shoud close if the user clicks the area outside it.  */
   autoDismiss?: boolean;
-  /** aria-label for help/warning-knapp */
+  /** Draws a border round the callout */
+  border?: boolean;
+  /** aria-label for help/warning button */
   buttonAriaLabel?: string;
-  /** Tittel for help/warning-knapp */
+  /** Title for help/warning button */
   buttonTitle?: string;
+  /** If the Callout should float over page content */
   calloutFloating?: boolean;
+  /** For overriding styles */
   className?: string;
   editable?: boolean;
   editFunction?: () => void;
   help?: string | JSX.Element;
   id?: any;
-  /** Når komponenten skal knyttes til et inputfelt */
+  /** Used for connecting to an input field */
   inputId?: any;
-  /** Når komponenten plasseres inni fieldset (label vil rendres som et legend-element) */
+  /** When placed inside a fieldset, and the label element should be renderes as a legend element instead. */
   inFieldset?: boolean;
   inputSize?: 'small' | 'normal' | 'large';
   label?: string;
-  /** Brukerspesifisert event for callout **/
+  /** Event for callout **/
   onCalloutToggle?: (
     oldCalloutState: calloutState,
     newCalloutState: calloutState
@@ -48,6 +52,7 @@ const LabelWithCallout = (props: LabelWithCalloutProps) => {
   const {
     ariaLabel,
     autoDismiss,
+    border,
     buttonAriaLabel,
     buttonTitle,
     calloutFloating = false,
@@ -164,6 +169,7 @@ const LabelWithCallout = (props: LabelWithCalloutProps) => {
       {isCalloutVisible && (
         <Callout
           className={styles.calloutContext}
+          border={border}
           directionalHint={
             calloutFloating ? Callout.POS_BOTTOM_LEFT : Callout.POS_TOP_LEFT
           }
