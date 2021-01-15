@@ -14,6 +14,7 @@ import { getClassNames } from './DatePicker.classNames';
 import LabelWithCallout, { calloutState } from '../LabelWithCallout';
 import { LabelWithCalloutProps } from '../LabelWithCallout/LabelWithCallout';
 import { useId } from '@reach/auto-id';
+import ErrorMessage from '../ErrorMessage';
 
 const DEFAULT_DATE_FORMAT = 'DD.MM.YYYY';
 
@@ -193,9 +194,6 @@ export const DatePicker: React.FC<DatePickerProps> = (
         }}
         disabled={readOnly ? true : rest.disabled}
         onBlur={onBlur}
-        textField={{
-          errorMessage: errorMessage
-        }}
         strings={{
           ...DEFAULT_STRINGS,
           isRequiredErrorMessage: isRequiredErrorMessage
@@ -211,6 +209,7 @@ export const DatePicker: React.FC<DatePickerProps> = (
       >
         {children}
       </FabricDatePicker>
+      {errorMessage && <ErrorMessage>{errorMessage}</ErrorMessage>}
     </div>
   );
 };
