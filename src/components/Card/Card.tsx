@@ -111,7 +111,17 @@ export default class Card extends React.PureComponent<CardProps, CardState> {
       actions,
       className,
       id,
-      buttonType
+      buttonType,
+      ariaLabel,
+      isExpanded,
+      titlesize,
+      color,
+      border,
+      marginbottom,
+      margin,
+      onChange,
+      onClick,
+      ...htmlAttributes
     } = this.props;
 
     const TitleTag = titleTagName as keyof JSX.IntrinsicElements;
@@ -157,7 +167,11 @@ export default class Card extends React.PureComponent<CardProps, CardState> {
       </div>
     );
     return (
-      <div id={id} className={classnames(styles.root, className)}>
+      <div
+        id={id}
+        className={classnames(styles.root, className)}
+        {...htmlAttributes}
+      >
         {expand ? expandCard : title || subtitle ? regularCard : null}
         {isExpandedState && <div className={styles.body}>{children}</div>}
       </div>

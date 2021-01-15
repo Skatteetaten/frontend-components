@@ -72,4 +72,30 @@ describe('Card komponent', () => {
 
     expect(wrapper.html()).toContain('tittel</h3>');
   });
+
+  it('rendrer ikke attributter definert i CardProps', () => {
+    const wrapper = oppsettFullDOM({
+      color: Card.Color.BEIGE
+    });
+
+    const findColor = wrapper.find('div[color="' + Card.Color.BEIGE + '"]');
+    expect(findColor.exists()).toBeFalsy();
+  });
+
+  it('rendrer attributtet data-testid', () => {
+    const wrapper = oppsettFullDOM({
+      color: Card.Color.BEIGE,
+      title: 'Ikke fullført arbeidsoppgave',
+      titlesize: 'large',
+      marginbottom: '10px',
+      expand: true,
+      isExpanded: false,
+      id: 'card-id',
+      className: 'card-classname',
+      'data-testid': 'Card-Component'
+    });
+
+    const findTestid = wrapper.find('div[data-testid="Card-Component"]');
+    expect(findTestid.exists()).toBeTruthy();
+  });
 });
