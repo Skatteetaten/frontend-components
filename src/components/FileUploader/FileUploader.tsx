@@ -39,6 +39,8 @@ export interface AttachmentMetadata extends File {
 export interface FileUploaderProps {
   /** Akksepterte filformater */
   acceptedFileFormats?: Array<FileFormatTypes>;
+  /** Tekst for aksepeterte typer*/
+  acceptedFileFormatsLabel?: string;
   /** Tekst for opplastingskomponenten */
   addFileString?: string | JSX.Element;
   /** Funksjon som kjøres etter opplasting */
@@ -165,6 +167,7 @@ const getFileIconName = (fil: AttachmentMetadata) => {
 const FileUploader: React.FC<FileUploaderProps> = props => {
   const {
     acceptedFileFormats,
+    acceptedFileFormatsLabel,
     addFileString,
     afterUpload,
     axiosPath,
@@ -470,7 +473,9 @@ const FileUploader: React.FC<FileUploaderProps> = props => {
 
       {acceptedFileFormats && (
         <span className={styles.informationWrapper} id="acceptedFileFormats">
-          {t('fileuploader.accepted_file_formats')}{' '}
+          {acceptedFileFormatsLabel
+            ? acceptedFileFormatsLabel
+            : t('fileuploader.accepted_file_formats')}{' '}
           <span className={styles.acceptedFileFormats}>
             {acceptedFileFormats.map(
               (fileFormat: FileFormatTypes, index: number) => {
