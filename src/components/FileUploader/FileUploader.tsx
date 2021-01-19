@@ -361,7 +361,13 @@ const FileUploader: React.FC<FileUploaderProps> = props => {
 
   const showFileName = (file: any) => {
     if (downloadFile) {
-      return <Link text={file.name} onClick={() => downloadFile(file)} />;
+      return (
+        <Link
+          tabIndex={0}
+          text={file.name}
+          onClick={() => downloadFile(file)}
+        />
+      );
     } else {
       return <span>{file.name}</span>;
     }
