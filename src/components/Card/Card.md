@@ -9,7 +9,6 @@ const initialState = { title: 'Skatteoppgjøret for 2017' };
   <Card
     color={Card.Color.BEIGE}
     title={initialState.title}
-    circleOnIcon={false}
     isExpanded={false}
     expand
   >
@@ -25,7 +24,6 @@ const initialState = { title: 'Skatteoppgjøret for 2017' };
   <Card
     color={Card.Color.GREEN}
     title="Skatteoppgjøret for 2018"
-    circleOnIcon={false}
     isExpanded={false}
     expand
   >
@@ -56,7 +54,6 @@ function onChange(isExpanded) {
   <Card
     color={Card.Color.BEIGE}
     title={state.title}
-    circleOnIcon={false}
     isExpanded={false}
     onChange={isExpanded => onChange(isExpanded)}
     expand

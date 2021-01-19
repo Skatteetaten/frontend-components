@@ -30,7 +30,7 @@ export interface CardProps extends React.HTMLAttributes<HTMLDivElement> {
   titlesize?: 'large' | 'x-large' | 'xx-large';
   /** Om kortet skal kunne utvides eller ikke */
   expand?: boolean;
-  /** Om utvidikonet skal ha sirkel eller ikke */
+  /** @deprecated Om utvidikonet skal ha sirkel eller ikke */
   circleOnIcon?: boolean;
   /** Om kortet er utvidet eller ikke */
   isExpanded?: boolean;
