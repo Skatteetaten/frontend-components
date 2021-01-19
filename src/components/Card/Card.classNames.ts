@@ -75,6 +75,7 @@ export const getClassNames = (props: CardProps, state: CardState) => {
       top: 0,
       right: 0,
       color: palette.skeColor.blue,
+      borderTopWidth: '0px',
       margin: '0 4px',
       width: '30px',
       height: '30px',
@@ -110,9 +111,14 @@ export const getClassNames = (props: CardProps, state: CardState) => {
       alignItems: 'center',
       position: 'relative',
       wordBreak: 'break-word',
+      paddingLeft: '0px',
+      paddingRight: '0px',
       selectors: {
         ':hover': {
           cursor: expand ? 'pointer' : ''
+        },
+        ':active': {
+          color: palette.skeColor.blue
         },
         ':focus': {
           outlineColor: palette.skeColor.blue
