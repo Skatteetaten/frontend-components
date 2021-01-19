@@ -68,7 +68,7 @@ module.exports = {
           content: 'src/sections/monstre/tabell-kompleks.md'
         },
         {
-          name: 'Tekst på feilmeldinger',
+          name: 'Feilmeldinger',
           content: 'src/sections/monstre/feil.md'
         },
         {
