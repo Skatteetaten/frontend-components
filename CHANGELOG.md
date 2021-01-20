@@ -1,3 +1,10 @@
+### **v.3.7.7 - 20.01.2021 **
+
+- FileUploader: Support for downloading files and overriding accepted file format label.
+- AccordionItem: now send html attributes to div (supports data-testid)
+- DatePicker: Fixes a bug where error messages would not be displayed (isOutOfBounds and invalidInput)
+- LabelWithCallout: Now supports Callout with border.
+
 ### **v.3.7.6 - 08.01.2021 **
 
 - Callout: Added new prop to draw border around callout
