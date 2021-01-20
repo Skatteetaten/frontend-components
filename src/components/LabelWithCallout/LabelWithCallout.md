@@ -4,7 +4,7 @@
 import LabelWithCallout from '@skatteetaten/frontend-components/LabelWithCallout';
 import Button from '@skatteetaten/frontend-components/Button';
 
-<>
+<div style={{ width: '350px' }}>
   <LabelWithCallout
     label={'Omregistreringsavgift'}
     help={'Avgiften du må betale for å registrere kjøretøyet på en ny person.'}
@@ -15,7 +15,7 @@ import Button from '@skatteetaten/frontend-components/Button';
   <Button onClick={() => setState({ warning: !state.warning })}>
     {state.warning ? 'Vis med hjelpetekst' : 'Vis med varsel'}
   </Button>
-</>;
+</div>;
 ```
 
 Brukt i kombinasjon med annen komponent.

@@ -800,35 +800,13 @@ function Testside(props) {
             </div>
           </TopStripeMenu>
           <TopStripeMenu title={'Language / Språk'}>
-            <TopStripeButton
-              ariaLabel={'Norsk'}
-              onClick={() => console.log('NB')}
-            >
-              Norsk
-            </TopStripeButton>
-            <TopStripeButton
-              icon={'check'}
-              ariaLabel={'Nynorsk'}
-              onClick={() => console.log('NN')}
-            >
+            <TopStripeButton ariaLabel={'Norsk'}>Norsk</TopStripeButton>
+            <TopStripeButton icon={'check'} ariaLabel={'Nynorsk'}>
               Nynorsk
             </TopStripeButton>
-            <TopStripeButton
-              ariaLabel={'Engelsk'}
-              onClick={() => console.log('EN')}
-            >
-              Engelsk
-            </TopStripeButton>
-            <TopStripeButton
-              ariaLabel={'Sørsamisk'}
-              onClick={() => console.log('SMA')}
-            >
-              Sørsamisk
-            </TopStripeButton>
-            <TopStripeButton
-              ariaLabel={'Nordsamisk'}
-              onClick={() => console.log('SME')}
-            >
+            <TopStripeButton ariaLabel={'Engelsk'}>Engelsk</TopStripeButton>
+            <TopStripeButton ariaLabel={'Sørsamisk'}>Sørsamisk</TopStripeButton>
+            <TopStripeButton ariaLabel={'Nordsamisk'}>
               Nordsamisk
             </TopStripeButton>
           </TopStripeMenu>
@@ -934,7 +912,6 @@ function Testside(props) {
             text: 'Aksjeselskap'
           }
         ]}
-        onChange={(e, option) => console.log(option)}
         help="Type virksomhet vil påvirke hva du må rapportere til oss."
         id="radio"
       />
@@ -1030,20 +1007,17 @@ function Testside(props) {
         label="Velg favoritt"
         help="Tekst som hjelper brukeren å forstå eller få til."
         options={initialState.options}
-        onChange={console.log}
       />
       <Dropdown
         label="Velg favoritt"
         help="Tekst som hjelper brukeren å forstå eller få til"
         inputSize="large"
         options={initialState.options}
-        onChange={console.log}
       />
       <Dropdown
         label="Velg favoritt"
         help="Tekst som hjelper brukeren å forstå eller få til."
         options={initialState.options}
-        onChange={console.log}
         errorMessage={'Vis med feil'}
       />
 
@@ -1168,7 +1142,6 @@ function Testside(props) {
           toggleContent
           toggleButtonText={'Planlegging'}
           stepId={'step-1-1'}
-          onClick={() => console.log('Hello World')}
         >
           <p>Hva skal du teste og med hvilke brukere?</p>
         </AccordionItem>
@@ -1468,9 +1441,6 @@ function Testside(props) {
             key: 'view1',
             name: 'Tekst',
             ariaLabel: 'Vis tekst',
-            onClick: () => {
-              console.log('Klikk');
-            },
             iconProps: {
               iconName: 'File'
             }

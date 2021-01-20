@@ -30,12 +30,17 @@ const Accordion: React.FC<AccordionProps> = props => {
     className,
     children,
     ariaLabel,
-    headingLevel
+    headingLevel,
+    ...htmlAttributes
   } = props;
   const { accordion } = getClassNames();
   const totalSteps = React.Children.count(children);
   return (
-    <div className={classnames(accordion, className)} aria-label={ariaLabel}>
+    <div
+      className={classnames(accordion, className)}
+      aria-label={ariaLabel}
+      {...htmlAttributes}
+    >
       <Grid>
         {React.Children.map(children, (child, index) => {
           if (React.isValidElement<AccordionItemProps>(child)) {
