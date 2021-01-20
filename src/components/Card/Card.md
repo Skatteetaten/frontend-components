@@ -12,7 +12,7 @@ const initialState = { title: 'Skatteoppgjøret for 2017' };
     isExpanded={false}
     expand
   >
-    <p>
+    <p style={{ marginTop: 0 }}>
       De fleste lønnsmottakere og pensjonister fikk skatteoppgjøret 27. juni.
       Neste mulighet var 15. august, og heretter blir det løpende oppgjør frem
       til 24. oktober. Vi kan dessverre ikke fortelle deg når du får
@@ -27,7 +27,7 @@ const initialState = { title: 'Skatteoppgjøret for 2017' };
     isExpanded={false}
     expand
   >
-    <p>
+    <p style={{ marginTop: 0 }}>
       De fleste lønnsmottakere og pensjonister fikk skatteoppgjøret 27. juni.
       Neste mulighet var 15. august, og heretter blir det løpende oppgjør frem
       til 24. oktober. Vi kan dessverre ikke fortelle deg når du får
@@ -58,7 +58,7 @@ function onChange(isExpanded) {
     onChange={isExpanded => onChange(isExpanded)}
     expand
   >
-    <p>Melding 1</p>
+    <p style={{ marginTop: 0 }}>Melding 1</p>
     <p>Melding 2</p>
   </Card>
 </div>;

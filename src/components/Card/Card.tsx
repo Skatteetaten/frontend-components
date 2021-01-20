@@ -30,8 +30,6 @@ export interface CardProps extends React.HTMLAttributes<HTMLDivElement> {
   titlesize?: 'large' | 'x-large' | 'xx-large';
   /** Om kortet skal kunne utvides eller ikke */
   expand?: boolean;
-  /** @deprecated Om utvidikonet skal ha sirkel eller ikke */
-  circleOnIcon?: boolean;
   /** Om kortet er utvidet eller ikke */
   isExpanded?: boolean;
   /** Finnes fire bakgrunnfarger: graa, gronn, rod eller beige */
@@ -85,7 +83,6 @@ export default class Card extends React.PureComponent<CardProps, CardState> {
     actions: null,
     marginbottom: '2px',
     margin: 'medium',
-    circleOnIcon: true,
     buttonType: 'button'
   };
 
