@@ -45,11 +45,9 @@ import Typography from '@skatteetaten/frontend-components/Typography';
 
 ```js noeditor beskrivelse
 <>
-  <h3>Komponent som legger til tekst-stiler</h3>
+  <h3>Komponent som legger til stiler på teksten</h3>
   <p>
-    Typography er en teknisk hjelpekomponent som brukes til å legge på
-    tekst-stiler til vanlige typografi-elementer, f.eks. overskrifter, lister og
-    tekst.
+    Typography er en hjelpekomponent som legger riktige stiler på tekstelementer som for eksempel overskrifter, lister og tekst.
   </p>
   <p>Komponenten legger til stiler for:</p>
   <ul>
@@ -59,15 +57,12 @@ import Typography from '@skatteetaten/frontend-components/Typography';
     <li>Sitat (blockqoute)</li>
   </ul>
   <h3>Plassering i koden</h3>
-  <p>
-    Denne komponenten kan brukes på de fleste nivåer i koden. Hvis du legger
-    Typography på et høyt nivå, for eksempel innenfor body-taggen, sikrer det
-    konsekvente stiler på tvers i løsningen. Men det betyr også at stilene i
-    Typography kan påvirke utseendet i andre komponenter du legger til på et
-    lavere nivå, inn under Typography. Hvis du oppleverer at typografien i
-    underliggende komponenter ikke blir som du forventer, bør du vurderere å
-    flytte Typography-komponenten til et lavere nivå i koden.
-  </p>
+ <p>Du kan bruke typografi-komponenten både på høyere og lavere nivå i koden:</p>
+  <ul>
+    <li>Hvis du legger Typography på et høyt nivå, for eksempel innenfor body-taggen, sikrer det konsekvente stiler på tvers i løsningen. 
+Men det betyr også at stilene da kan påvirke utseendet i andre komponenter som du legger til på et lavere nivå, inn under Typography. </li>
+    <li>Hvis du oppleverer at typografien i underliggende komponenter ikke blir som du forventer, bør du vurderere å flytte Typography-komponenten til et lavere nivå i koden.</li>
+  </ul>
   <p>
     Se <a href="#section-skrifttype">«skrifttype»</a> for detaljer rundt
     skriftstørrelse.
