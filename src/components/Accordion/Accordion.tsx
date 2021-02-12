@@ -34,7 +34,11 @@ const Accordion: React.FC<AccordionProps> = props => {
     ...htmlAttributes
   } = props;
   const { accordion } = getClassNames();
-  const totalSteps = React.Children.count(children.filter(child => React.isValidElement(child)));
+  const totalSteps = React.Children.count(
+    React.Children.toArray(children).filter(child =>
+      React.isValidElement(child)
+    )
+  );
   return (
     <div
       className={classnames(accordion, className)}
