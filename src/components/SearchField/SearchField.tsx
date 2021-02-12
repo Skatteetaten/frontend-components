@@ -130,18 +130,8 @@ const SearchField: React.FC<SearchFieldProps> = props => {
     }
   });
 
-  const changeEvent = (text: string) => {
-    //@ts-ignore TODO
-    const event: React.ChangeEvent<HTMLInputElement> = {};
-    setValue(text);
-    onChange && onChange(event, text);
-    setDropdownVisible(false);
-    setFocus(-1);
-    listRefs.current = [];
-  };
-
   const selectEvent = (item: IDropdownOption) => {
-    setValue(item.text);
+    setValue(!onSelected ? item.text : '');
     onSelected && onSelected(item);
     setDropdownVisible(false);
     setFocus(-1);
@@ -184,6 +174,7 @@ const SearchField: React.FC<SearchFieldProps> = props => {
       let newList = searchInList(options, newValue);
       newList = limitNumberOfResults(newList, limit);
       setSearchResultList(newList);
+      console.log(newList, value);
       setDropdownVisible(newList.length > 0);
     }
   };
@@ -204,7 +195,7 @@ const SearchField: React.FC<SearchFieldProps> = props => {
                 onClick={() => selectEvent(listItem)}
                 onKeyPress={ev => {
                   if (ev.keyCode === 0) {
-                    changeEvent(listItem.text);
+                    selectEvent(listItem);
                   }
                 }}
                 onKeyDown={ev => handleOnKeyDown(ev)}
