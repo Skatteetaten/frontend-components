@@ -148,7 +148,7 @@ const [currentPage, setCurrentPage] = React.useState(1);
 Komponenten skal som hovedregel henge under og være like bred som den tilhørende komponenten.
   </p>
 
-  <h3>Hvor mange sider skal vises i sidevelgeren? </h3>
+  <h3>Hvor mange sider skal vises i sidevelgeren?</h3>
   <p>
     Du kan stille inn antallet sider i tallrekken der brukeren blar fra. 
   </p>
