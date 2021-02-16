@@ -34,11 +34,11 @@ const Accordion: React.FC<AccordionProps> = props => {
     ...htmlAttributes
   } = props;
   const { accordion } = getClassNames();
-  const totalSteps = React.Children.count(
-    React.Children.toArray(children).filter(child =>
-      React.isValidElement(child)
-    )
+  const validChildren = React.Children.toArray(children).filter(child =>
+    React.isValidElement(child)
   );
+  const totalSteps = React.Children.count(validChildren);
+
   return (
     <div
       className={classnames(accordion, className)}
@@ -46,7 +46,7 @@ const Accordion: React.FC<AccordionProps> = props => {
       {...htmlAttributes}
     >
       <Grid>
-        {React.Children.map(children, (child, index) => {
+        {React.Children.map(validChildren, (child, index) => {
           if (React.isValidElement<AccordionItemProps>(child)) {
             return React.cloneElement(child, {
               stepNumber: index + 1,
