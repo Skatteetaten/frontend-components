@@ -108,7 +108,6 @@ const SearchField: React.FC<SearchFieldProps> = props => {
   React.useEffect(() => {
     setSearchResultList(options);
     setSearchResult(value ? value : '');
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [options]);
 
   React.useEffect(() => {
@@ -174,7 +173,6 @@ const SearchField: React.FC<SearchFieldProps> = props => {
       let newList = searchInList(options, newValue);
       newList = limitNumberOfResults(newList, limit);
       setSearchResultList(newList);
-      console.log(newList, value);
       setDropdownVisible(newList.length > 0);
     }
   };
