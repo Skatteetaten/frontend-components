@@ -53,13 +53,14 @@ export interface SearchFieldProps extends ISearchBoxProps {
 }
 
 const searchInList = (options: Array<IDropdownOption>, filterText: string) => {
+  const regex = /[\s.,:-]+/g;
   return options
     .filter(option => {
       return (
         option.text
-          .replace(/\s/g, '')
+          .replace(regex, '')
           .toLowerCase()
-          .indexOf(filterText.replace(/\s/g, '').toLowerCase()) > -1
+          .indexOf(filterText.replace(regex, '').toLowerCase()) > -1
       );
     })
     .map(option => option);
