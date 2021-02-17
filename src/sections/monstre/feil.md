@@ -38,6 +38,7 @@ import Image from '@skatteetaten/frontend-components/Image';
         Skriv med ord som er lette å forstå, også for ikke-tekniske brukere.
       </li>
       <li>Spesifiser hva som er feil.</li>
+      <li>Unngå for generelle feilmeldinger - skreddersøm er bra.</li>
       <li>Foreslå konkret hva brukeren kan gjøre for å komme videre.</li>
       <li>Test på en kollega eller andre som ikke kjenner løsningen.</li>
     </ul>
@@ -156,8 +157,8 @@ import Image from '@skatteetaten/frontend-components/Image';
           Foreslå hva som kan ha forårsaket feilen og hjelp brukeren videre.{' '}
         </li>
         <li>
-          Vær konkret. I stedet for å skrive «Udefinerbar feil», fortell, gjerne
-          stegvis, hva brukeren skal gjøre for å komme videre.{' '}
+          Vær konkret. I stedet for å skrive «Udefinerbar feil», fortell hva
+          brukeren skal gjøre for å komme videre.{' '}
         </li>
         <li>
           Bruk en vennlig tone og unngå tekniske ord. Feilmeldingen skal ha
@@ -180,6 +181,12 @@ import Image from '@skatteetaten/frontend-components/Image';
               'E-posten ser ikke riktig ut. Skriv slik: ola.normann@norge.no'
             }
           />
+          <br />
+          <TextField
+            label="Antall dager i Norge i perioden/inntekståret"
+            value=""
+            errorMessage={'Du må fylle ut antall dager.'}
+          />
         </div>
         <div className="dont" style={{ maxWidth: '44%' }}>
           <p>Nei</p>
@@ -193,6 +200,12 @@ import Image from '@skatteetaten/frontend-components/Image';
             label="E-post"
             value="Ola.Normann.no"
             errorMessage={'Feil i e-postadressen.'}
+          />
+          <br />
+          <TextField
+            label="Antall dager i Norge i perioden/inntekståret"
+            value=""
+            errorMessage={'Feltet må fylles ut.'}
           />
         </div>
       </div>
@@ -278,6 +291,14 @@ import Image from '@skatteetaten/frontend-components/Image';
       <ErrorMessage>
         Skjemaet inneholder 2 feil som du må rette opp.
       </ErrorMessage>
+    </AccordionItem>
+    <AccordionItem
+      toggleContent
+      toggleButtonText={'Obligatoriske felt'}
+      headingLevel="3"
+      stepId={'step-5'}
+    >
+      <p></p>
     </AccordionItem>
   </Accordion>
 </div>;

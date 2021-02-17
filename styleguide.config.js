@@ -64,6 +64,10 @@ module.exports = {
           content: 'src/sections/monstre/sidelayout.md'
         },
         {
+          name: 'Obligatoriske felt',
+          content: 'src/sections/monstre/obligatorisk.md'
+        },
+        {
           name: 'Komplekse tabeller',
           content: 'src/sections/monstre/tabell-kompleks.md'
         },
