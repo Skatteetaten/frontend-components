@@ -13,6 +13,9 @@ import LabelWithCallout, {
 } from '../LabelWithCallout';
 import { useId } from '@reach/auto-id';
 import { useHotkeys } from '../utils/useHotkeys';
+import { t } from '../utils/i18n/i18n';
+import i18n from 'i18next';
+import { Language } from '../FileUploader';
 
 export interface SearchFieldProps extends ISearchBoxProps {
   /** Lukk callout på blur */
@@ -40,6 +43,8 @@ export interface SearchFieldProps extends ISearchBoxProps {
   underlined?: ISearchBoxProps['underlined'];
   /**påkalt etter bruker valger et alternativ*/
   onSelected?: (option: IDropdownOption) => void;
+  /** Language selection for what the screen reader reads out. Default is Norwegian Bokmål */
+  language?: Language;
   /** Begrens antall viste søkeresultat */
   limit?: number;
   /** Tillater tastatursnarvei på søk */
@@ -86,6 +91,7 @@ const SearchField: React.FC<SearchFieldProps> = props => {
     label,
     labelButtonAriaLabel,
     labelCallout,
+    language,
     onCalloutToggle,
     onChange,
     onSelected,
@@ -105,6 +111,10 @@ const SearchField: React.FC<SearchFieldProps> = props => {
   const [focus, setFocus] = React.useState<number>(-1);
   const styles = getClassNames(props);
   const listRefs = React.useRef<(HTMLLIElement | null)[]>([]);
+
+  if (language) {
+    i18n.changeLanguage(language);
+  }
 
   React.useEffect(() => {
     setSearchResultList(options);
@@ -226,6 +236,7 @@ const SearchField: React.FC<SearchFieldProps> = props => {
   const mainId = id ? id : 'searchfield-' + genratedId;
   const inputId = mainId + '-input';
   const labelId = mainId + '-label';
+  const srFocus = mainId + '-srFocus';
 
   return (
     <div id={mainId}>
@@ -241,10 +252,15 @@ const SearchField: React.FC<SearchFieldProps> = props => {
       />
       {options ? (
         <div ref={_searchBoxElement}>
+          <span id={srFocus} aria-live="assertive" className={styles.srOnly}>
+            {t('searchfield.sr.focus')}
+          </span>
           <SearchBox
             {...rest}
             id={inputId}
             aria-expanded="false"
+            aria-describedby={srFocus}
+            aria-owns="results"
             type={'search'}
             className={classnames(styles.main, className)}
             onChange={(ev, newValue) => {
@@ -263,7 +279,16 @@ const SearchField: React.FC<SearchFieldProps> = props => {
               onClick: ev => (onSearchIcon ? onSearchIcon(ev) : null)
             }}
           />
-          {dropdownVisible && renderSuggestions(searchResultList)}
+          {dropdownVisible && (
+            <>
+              <span aria-live="assertive" className={styles.srOnly}>
+                {i18n.t('searchfield.sr.results', {
+                  ant: searchResultList ? searchResultList.length : 0
+                })}
+              </span>
+              {renderSuggestions(searchResultList)}
+            </>
+          )}
         </div>
       ) : (
         <SearchBox
