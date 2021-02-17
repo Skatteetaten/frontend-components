@@ -18,7 +18,7 @@ exports[`Accordion komponent Sender videre html atributter 1`] = `
       >
         <AccordionItem
           data-testid="testid123"
-          key=".0"
+          key=".$.0"
           processList={true}
           stepId="step-1-1"
           stepNumber={1}
@@ -134,7 +134,7 @@ exports[`Accordion komponent matcher snapshot 1`] = `
         dir="ltr"
       >
         <AccordionItem
-          key=".0"
+          key=".$.0"
           stepNumber={1}
           totalSteps={1}
         >
