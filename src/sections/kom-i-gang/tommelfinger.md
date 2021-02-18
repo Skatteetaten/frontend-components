@@ -94,7 +94,7 @@ const titles = {
     </p>
     <div className="dodont">
       <div className="do">
-        <p>Gjør slik:</p>
+        <p class="title">Gjør slik:</p>
         <Grid padding="0px">
           <Grid.Row rowSpacing={Grid.SPACE_NONE}>
             <Grid.Col noSpacing lg={12}>
@@ -106,7 +106,7 @@ const titles = {
         </Grid>
       </div>
       <div className="dont">
-        <p>Ikke gjør slik:</p>
+        <p class="title">Ikke gjør slik:</p>
         <Grid padding="0px">
           <Grid.Row rowSpacing={Grid.SPACE_NONE}>
             <Grid.Col noSpacing lg={12}>
@@ -211,7 +211,7 @@ const titles = {
     </p>
     <div className="dodont">
       <div className="do">
-        <p>Gjør slik:</p>
+        <p class="title">Gjør slik:</p>
         <Grid padding="0px">
           <Grid.Row rowSpacing={Grid.SPACE_NONE}>
             <Grid.Col noSpacing lg={12}>
@@ -228,14 +228,14 @@ const titles = {
           </Grid.Row>
           <Grid.Row rowSpacing={Grid.SPACE_NONE}>
             <Grid.Col noSpacing lg={12}>
-              <p>Vise funksjoner:</p>{' '}
+              <p class="title">Vise funksjoner:</p>{' '}
               <IconButton title={'Skriv ut'} icon="Print" />
             </Grid.Col>
           </Grid.Row>
         </Grid>
       </div>
       <div className="dont">
-        <p>Ikke gjør slik:</p>
+        <p class="title">Ikke gjør slik:</p>
         <Grid padding="0px">
           <Grid.Row rowSpacing={Grid.SPACE_NONE}>
             <Grid.Col noSpacing lg={12}>
@@ -252,7 +252,7 @@ const titles = {
             </Grid.Col>
             <Grid.Row rowSpacing={Grid.SPACE_NONE}>
               <Grid.Col noSpacing lg={12}>
-                <p>Skjule funksjoner:</p>{' '}
+                <p class="title">Skjule funksjoner:</p>{' '}
                 <p style={{ fontWeight: 'normal' }}>
                   (må huske høyreklikke + skriv ut)
                 </p>
@@ -316,7 +316,7 @@ const titles = {
     </p>
     <div className="dodont">
       <div className="do">
-        <p>Gjør slik:</p>
+        <p class="title">Gjør slik:</p>
         <MessageBar type={MessageBar.Type.warning}>
           Kunne ikke hente kjøretøydata. Sjekk at du har riktige tilganger i
           <Link
@@ -328,7 +328,7 @@ const titles = {
         </MessageBar>
       </div>
       <div className="dont">
-        <p>Ikke gjør slik:</p>
+        <p class="title">Ikke gjør slik:</p>
         <MessageBar type={MessageBar.Type.warning}>
           Feil: 401 Unauthorized error.
         </MessageBar>

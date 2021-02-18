@@ -80,7 +80,7 @@
   flex-wrap: wrap;
 }
 
-.dodont p {
+.dodont p.title {
   font-weight: 600;
   font-size: 18px;
   margin-top: 0;

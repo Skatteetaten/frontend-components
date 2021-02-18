@@ -82,7 +82,7 @@ import Image from '@skatteetaten/frontend-components/Image';
       </ul>
       <div className="dodont" style={{ marginLeft: '24px' }}>
         <div className="do" style={{ maxWidth: '37%' }}>
-          <p>Ja</p>
+          <p class="title">Ja</p>
           <Image
             src="./assets/png/eks_systemfeil1.png"
             alt="Eksempel på systemfeil: Beklager – vi har systemfeil. Vi klarte ikke opprette forbindelse til en nødvendig tjeneste. Skal vi sende deg en melding når tjenesten er oppe igjen? "
@@ -90,7 +90,7 @@ import Image from '@skatteetaten/frontend-components/Image';
           />
         </div>
         <div className="dont" style={{ maxWidth: '37%' }}>
-          <p>Nei</p>
+          <p class="title">Nei</p>
           <Image
             src="./assets/png/eks_systemfeil2.png"
             alt="Eksempel på systemfeil: Systemfeil. Prøv igjen senere. Hvis feilen vedvarer, kontakt Skatteetaten.[undefined]"
@@ -101,7 +101,7 @@ import Image from '@skatteetaten/frontend-components/Image';
       <br />
       <div className="dodont" style={{ marginLeft: '24px' }}>
         <div className="do" style={{ maxWidth: '44%' }}>
-          <p>Ja</p>
+          <p class="title">Ja</p>
           <MessageBar type={MessageBar.Type.warning}>
             Beklager, vi har en feil. Prøv igjen om 10 minutter. Vedvarer
             feilen, er vi takknemlig som du vil hjelpe oss ved å{' '}
@@ -114,7 +114,7 @@ import Image from '@skatteetaten/frontend-components/Image';
           </MessageBar>
         </div>
         <div className="dont">
-          <p>Nei</p>
+          <p class="title">Nei</p>
           <MessageBar type={MessageBar.Type.warning}>
             Feil i annen tjeneste. Vennligst prøv igjen.
           </MessageBar>
@@ -167,7 +167,7 @@ import Image from '@skatteetaten/frontend-components/Image';
       </ul>
       <div className="dodont" style={{ marginLeft: '24px' }}>
         <div className="do" style={{ maxWidth: '44%' }}>
-          <p>Ja</p>
+          <p class="title">Ja</p>
           <TextField
             label="Inntektsår"
             value="1009"
@@ -189,7 +189,7 @@ import Image from '@skatteetaten/frontend-components/Image';
           />
         </div>
         <div className="dont" style={{ maxWidth: '44%' }}>
-          <p>Nei</p>
+          <p class="title">Nei</p>
           <TextField
             label="Inntektsår"
             value="20"
