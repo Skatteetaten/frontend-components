@@ -112,6 +112,13 @@ const SearchField: React.FC<SearchFieldProps> = props => {
   const styles = getClassNames(props);
   const listRefs = React.useRef<(HTMLLIElement | null)[]>([]);
 
+  const genratedId = useId(id);
+  const mainId = id ? id : 'searchfield-' + genratedId;
+  const inputId = mainId + '-input';
+  const labelId = mainId + '-label';
+  const srFocus = mainId + '-srFocus';
+  const resultsId = mainId + '-results';
+
   if (language) {
     i18n.changeLanguage(language);
   }
@@ -190,12 +197,17 @@ const SearchField: React.FC<SearchFieldProps> = props => {
 
   const renderSuggestions = list => {
     if (list.length === 0) {
-      setDropdownVisible(false);
       listRefs.current = [];
     }
     return (
       <div className={styles.searchListDropdown}>
-        <ul id="results" role="listbox" className={styles.searchList}>
+        <ul
+          id={resultsId}
+          role="listbox"
+          className={
+            dropdownVisible && list.length ? styles.searchList : styles.hiddenUl
+          }
+        >
           {list.map((listItem, key: number) => {
             return (
               <li
@@ -232,12 +244,6 @@ const SearchField: React.FC<SearchFieldProps> = props => {
     );
   };
 
-  const genratedId = useId(id);
-  const mainId = id ? id : 'searchfield-' + genratedId;
-  const inputId = mainId + '-input';
-  const labelId = mainId + '-label';
-  const srFocus = mainId + '-srFocus';
-
   return (
     <div id={mainId}>
       <LabelWithCallout
@@ -252,15 +258,15 @@ const SearchField: React.FC<SearchFieldProps> = props => {
       />
       {options ? (
         <div ref={_searchBoxElement}>
-          <span id={srFocus} aria-live="assertive" className={styles.srOnly}>
+          <span id={srFocus} className={styles.srOnly}>
             {t('searchfield.sr.focus')}
           </span>
           <SearchBox
             {...rest}
             id={inputId}
-            aria-expanded="false"
+            aria-expanded={dropdownVisible}
             aria-describedby={srFocus}
-            aria-owns="results"
+            aria-owns={resultsId}
             type={'search'}
             className={classnames(styles.main, className)}
             onChange={(ev, newValue) => {
@@ -279,16 +285,14 @@ const SearchField: React.FC<SearchFieldProps> = props => {
               onClick: ev => (onSearchIcon ? onSearchIcon(ev) : null)
             }}
           />
-          {dropdownVisible && (
-            <>
-              <span aria-live="assertive" className={styles.srOnly}>
-                {i18n.t('searchfield.sr.results', {
+          <span aria-live="assertive" className={styles.srOnly}>
+            {dropdownVisible
+              ? i18n.t('searchfield.sr.results', {
                   ant: searchResultList ? searchResultList.length : 0
-                })}
-              </span>
-              {renderSuggestions(searchResultList)}
-            </>
-          )}
+                })
+              : ''}
+          </span>
+          {renderSuggestions(searchResultList)}
         </div>
       ) : (
         <SearchBox

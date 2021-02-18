@@ -44,7 +44,6 @@ const [searchTerm, setSearchTerm] = React.useState('');
     searchFieldSize="standard"
     border="slim"
     placeholder="Skriv søkeord her"
-    ariaLabel="Søk"
     help="Tekst som hjelper brukeren å fylle ut feltet."
     options={options}
     value={searchTerm}
