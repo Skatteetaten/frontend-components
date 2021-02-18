@@ -10,8 +10,8 @@ export const getClassNames = (props: SearchFieldProps) => {
   const largeSize = searchFieldSize === 'large';
   const standardSize = searchFieldSize === 'standard';
 
-  //@ts-ignore
   return mergeStyleSets({
+    //@ts-ignore
     blackAlt: {
       color: `${palette.skeColor.blackAlt} !important`
     },
