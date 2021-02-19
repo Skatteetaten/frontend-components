@@ -35,7 +35,6 @@ const options = [
   { key: '5', text: 'Appelsin' },
   { key: '6', text: 'Fersken' }
 ];
-const [list, setList] = React.useState([]);
 const [searchTerm, setSearchTerm] = React.useState('');
 
 <div style={{ width: '300px' }}>
@@ -48,16 +47,7 @@ const [searchTerm, setSearchTerm] = React.useState('');
     options={options}
     value={searchTerm}
     onChange={(ev, value) => setSearchTerm(value)}
-    onSelected={item => {
-      setSearchTerm('');
-      setList([...list, item]);
-    }}
   />
-  <ul>
-    {list.map((item, index) => (
-      <li key={item.key.concat('_', index)}>{item.text}</li>
-    ))}
-  </ul>
 </div>;
 ```
 

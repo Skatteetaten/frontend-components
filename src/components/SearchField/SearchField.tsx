@@ -209,7 +209,7 @@ const SearchField: React.FC<SearchFieldProps> = props => {
           }
         >
           {list.map((listItem, key: number) => {
-            return (
+            return dropdownVisible ? (
               <li
                 aria-label={listItem.text}
                 key={listItem.key}
@@ -237,7 +237,7 @@ const SearchField: React.FC<SearchFieldProps> = props => {
                   {listItem.text}
                 </div>
               </li>
-            );
+            ) : null;
           })}
         </ul>
       </div>
