@@ -292,14 +292,6 @@ import Image from '@skatteetaten/frontend-components/Image';
         Skjemaet inneholder 2 feil som du må rette opp.
       </ErrorMessage>
     </AccordionItem>
-    <AccordionItem
-      toggleContent
-      toggleButtonText={'Obligatoriske felt'}
-      headingLevel="3"
-      stepId={'step-5'}
-    >
-      <p></p>
-    </AccordionItem>
   </Accordion>
 </div>;
 ```

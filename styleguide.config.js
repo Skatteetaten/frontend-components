@@ -68,16 +68,12 @@ module.exports = {
           content: 'src/sections/monstre/obligatorisk.md'
         },
         {
-          name: 'Komplekse tabeller',
+          name: 'Store tabeller',
           content: 'src/sections/monstre/tabell-kompleks.md'
         },
         {
           name: 'Feilmeldinger',
           content: 'src/sections/monstre/feil.md'
-        },
-        {
-          name: 'Formatering av felt',
-          content: 'src/sections/monstre/formatering.md'
         }
       ]
     },
