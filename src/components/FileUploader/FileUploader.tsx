@@ -10,6 +10,7 @@ import LabelWithCallout, {
 } from '../LabelWithCallout';
 import Spinner from '../Spinner';
 import ErrorMessage from '../ErrorMessage';
+import Link from '../Link';
 
 export enum Language {
   en = 'en',
@@ -38,6 +39,8 @@ export interface AttachmentMetadata extends File {
 export interface FileUploaderProps {
   /** Akksepterte filformater */
   acceptedFileFormats?: Array<FileFormatTypes>;
+  /** Tekst for aksepeterte typer*/
+  acceptedFileFormatsLabel?: string;
   /** Tekst for opplastingskomponenten */
   addFileString?: string | JSX.Element;
   /** Funksjon som kjøres etter opplasting */
@@ -97,6 +100,14 @@ export interface FileUploaderProps {
   queryParams?: any;
   /** Funksjon for filopplasting */
   uploadFile?: (file: File) => void;
+  /** Gjør at DELETE operasjonen, ved slett av opplastet fil, fungerer når løsningen kjører bak WebSeal.
+   * Default implementasjon legger ved en tom body i DELETE requesten som er nødvendig for løsninger som kjører bak BigIp
+   *  **/
+  usesWebSealCompatibleDelete?: boolean;
+  /**
+   * Funksjon for filnedlasting
+   * */
+  downloadFile?: (file: File) => void;
 }
 
 export const isCorrectFileFormat = (
@@ -156,6 +167,7 @@ const getFileIconName = (fil: AttachmentMetadata) => {
 const FileUploader: React.FC<FileUploaderProps> = props => {
   const {
     acceptedFileFormats,
+    acceptedFileFormatsLabel,
     addFileString,
     afterUpload,
     axiosPath,
@@ -181,7 +193,8 @@ const FileUploader: React.FC<FileUploaderProps> = props => {
     normalizeFileName,
     onCalloutToggle,
     queryParams,
-    uploadFile
+    uploadFile,
+    downloadFile
   } = props;
   const styles = getClassNames(props);
   const [internalFiles, setInternalFiles] = React.useState<Array<any>>(
@@ -346,13 +359,27 @@ const FileUploader: React.FC<FileUploaderProps> = props => {
     }
   };
 
+  const showFileName = (file: any) => {
+    if (downloadFile) {
+      return (
+        <Link
+          tabIndex={0}
+          text={file.name}
+          onClick={() => downloadFile(file)}
+        />
+      );
+    } else {
+      return <span>{file.name}</span>;
+    }
+  };
+
   const deleteFromList = (fileToBeDeleted: AttachmentMetadata) => {
     setInternalErrorMessages([]);
     if (axiosPath) {
       axios
         .delete(`${axiosPath}/${fileToBeDeleted.id}`, {
           params: queryParams,
-          data: {} // kreves av BigIP
+          data: props.usesWebSealCompatibleDelete === true ? null : {} // body kreves av BigIP
         })
         .then(() => {
           const newList = internalFiles.filter(
@@ -452,7 +479,9 @@ const FileUploader: React.FC<FileUploaderProps> = props => {
 
       {acceptedFileFormats && (
         <span className={styles.informationWrapper} id="acceptedFileFormats">
-          {t('fileuploader.accepted_file_formats')}{' '}
+          {acceptedFileFormatsLabel
+            ? acceptedFileFormatsLabel
+            : t('fileuploader.accepted_file_formats')}{' '}
           <span className={styles.acceptedFileFormats}>
             {acceptedFileFormats.map(
               (fileFormat: FileFormatTypes, index: number) => {
@@ -483,8 +512,11 @@ const FileUploader: React.FC<FileUploaderProps> = props => {
             {internalFiles.map((file, index: number) => (
               <li key={file.name.concat(index.toString())}>
                 <div className={styles.fileName}>
-                  <Icon iconName={getFileIconName(file)} />
-                  <span>{file.name}</span>
+                  <Icon
+                    className={styles.fileIcon}
+                    iconName={getFileIconName(file)}
+                  />
+                  {showFileName(file)}
                 </div>
                 {file.error ? (
                   <Icon iconName={'Error'} className={styles.errorColor} />

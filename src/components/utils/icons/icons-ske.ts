@@ -1,28 +1,33 @@
-const fontUrls: string[] = [];
-
-fontUrls.push('url("' + require('../assets/SkeIconfont.eot') + '")');
-fontUrls.push('url("' + require('../assets/SkeIconfont.eot') + '?#iefix") format("embedded-opentype")');
-fontUrls.push('url("' + require('../assets/SkeIconfont.woff2') + '") format("woff2")');
-fontUrls.push('url("' + require('../assets/SkeIconfont.woff') + '") format("woff")');
-fontUrls.push('url("' + require('../assets/SkeIconfont.ttf') + '") format("truetype")');
+import SkeIconfontEOT from '../assets/SkeIconfont.eot';
+import SkeIconfontWOFF2 from '../assets/SkeIconfont.woff2';
+import SkeIconfontWOFF from '../assets/SkeIconfont.woff';
+import SkeIconfontTTF from '../assets/SkeIconfont.ttf';
+import SkeIconfontSVG from '../assets/SkeIconfont.svg';
 
 export default {
   style: {
-      MozOsxFontSmoothing: 'grayscale',
-      WebkitFontSmoothing: 'antialiased',
-      fontStyle: 'normal',
-      fontWeight: 'normal',
-      speak: 'none',
-      display: 'inline-block',
-      transform: 'translate(0, 0)',
-      textRendering: 'auto',
-      fontSize: 'inherit',
+    MozOsxFontSmoothing: 'grayscale',
+    WebkitFontSmoothing: 'antialiased',
+    fontStyle: 'normal',
+    fontWeight: 'normal',
+    speak: 'none',
+    display: 'inline-block',
+    transform: 'translate(0, 0)',
+    textRendering: 'auto',
+    fontSize: 'inherit',
   },
   fontFace: {
-      fontFamily: '"SkeIconfont"',
-      src: fontUrls.join(', '),
+    fontFamily: '"SkeIconfont"',
+    src: [
+      `url("${SkeIconfontEOT}") format("embedded-opentype")`,
+      `url("${SkeIconfontEOT}?#iefix") format("embedded-opentype")`,
+      `url("${SkeIconfontWOFF2}") format("woff2")`,
+      `url("${SkeIconfontWOFF}") format("woff")`,
+      `url("${SkeIconfontTTF}") format("truetype")`,
+      `url("${SkeIconfontSVG}#SkeIconfont") format("svg")`
+    ].join(', '),
   },
-  icons: {
+  icons: { 
     'AccountEnk': '\uea01', 
     'ArrowBack': '\uea02', 
     'ArrowDown': '\uea03', 
@@ -34,8 +39,8 @@ export default {
     'Bell': '\uea09', 
     'Company': '\uea0a', 
     'Down': '\uea0b', 
-    'Ekteskap': '\uea0c',
-    'Facebook': '\uea0d',  
+    'Ekteskap': '\uea0c', 
+    'Facebook': '\uea0d', 
     'Familie': '\uea0e', 
     'Folkeregister': '\uea0f', 
     'Kroner': '\uea10', 

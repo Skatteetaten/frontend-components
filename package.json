@@ -53,8 +53,6 @@
     "@types/react": "16.9.34",
     "@types/react-dom": "16.9.7",
     "@types/react-router": "5.1.7",
-    "@typescript-eslint/eslint-plugin": "2.31.0",
-    "@typescript-eslint/parser": "2.31.0",
     "acorn": "6.3.0",
     "cpx": "1.5.0",
     "cross-env": "6.0.3",
@@ -62,9 +60,7 @@
     "enzyme-adapter-react-16": "1.15.2",
     "enzyme-to-json": "3.4.4",
     "es6-promise": "4.2.8",
-    "eslint": "6.8.0",
-    "eslint-config-prettier": "6.11.0",
-    "eslint-config-react-app": "5.2.1",
+    "eslint-plugin-prettier": "3.1.4",
     "gh-pages": "2.2.0",
     "husky": "3.1.0",
     "jest-junit": "10.0.0",
@@ -78,16 +74,16 @@
     "react-dom": "16.13.1",
     "react-router": "5.1.2",
     "react-router-dom": "5.1.2",
-    "react-scripts": "3.4.1",
+    "react-scripts": "4.0.1",
     "react-styleguidist": "10.3.0",
     "react-test-renderer": "16.13.1",
     "rimraf": "3.0.2",
     "sonar-scanner": "3.1.0",
-    "typescript": "3.8.3",
+    "typescript": "3.9.7",
     "webfont": "9.0.0"
   },
   "scripts": {
-    "start": "REACT_APP_BUILD_VERSION=$(git rev-parse --abbrev-ref HEAD) styleguidist server",
+    "start": "REACT_APP_BUILD_VERSION=$(git rev-parse --abbrev-ref HEAD) FAST_REFRESH=false styleguidist server",
     "generate:icons": "webfont --normalize --fontHeight 600 src/webfont/**/*.svg -d src/components/utils/assets",
     "prebuild": "npm-run-all clean lint",
     "build": "npm-run-all generate:icons build:lib build:docs",
@@ -120,7 +116,7 @@
     "normalize": true,
     "round": false,
     "centerHorizontally": true,
-    "template": "src/webfont/icons-ske.js.njk",
+    "template": "src/webfont/icons-ske.ts.njk",
     "templateFontPath": "../assets/",
     "destTemplate": "src/components/utils/icons"
   },
@@ -156,17 +152,16 @@
   },
   "eslintConfig": {
     "extends": [
-      "react-app",
-      "prettier",
-      "eslint:recommended",
-      "plugin:@typescript-eslint/eslint-recommended"
+      "react-app"
     ],
-    "parser": "@typescript-eslint/parser",
-    "parserOptions": {
-      "project": "./tsconfig.json"
-    },
+    "plugins": [
+      "prettier"
+    ],
     "rules": {
+      "prettier/prettier": "error",
       "no-console": "warn",
+      "no-unused-vars": "off",
+      "import/no-anonymous-default-export": "off",
       "sort-imports": [
         "warn",
         {

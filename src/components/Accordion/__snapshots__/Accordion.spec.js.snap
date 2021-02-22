@@ -1,5 +1,126 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Accordion komponent Sender videre html atributter 1`] = `
+<Accordion
+  data-testid="testidparent123"
+  processList={true}
+>
+  <div
+    className="accordion-38"
+    data-testid="testidparent123"
+  >
+    <Grid
+      padding="0 8px"
+    >
+      <div
+        className="ske-Grid-47 "
+        dir="ltr"
+      >
+        <AccordionItem
+          data-testid="testid123"
+          key=".$.0"
+          processList={true}
+          stepId="step-1-1"
+          stepNumber={1}
+          totalSteps={1}
+        >
+          <div
+            className="wrapperStep-37"
+            data-testid="testid123"
+            key="1"
+          >
+            <GridRow
+              rowSpacing="0px"
+            >
+              <div
+                className="ske-Grid-row-50 "
+              >
+                <GridCol>
+                  <div
+                    className="ske-Grid-col-49 "
+                  >
+                    <GridRow
+                      rowSpacing="0px"
+                    >
+                      <div
+                        className="ske-Grid-row-50 "
+                      >
+                        <GridCol
+                          md={1}
+                          sm={2}
+                          xl={1}
+                        >
+                          <div
+                            className="ske-Grid-col-52 "
+                          >
+                            <div
+                              className="stepNumber-41"
+                            >
+                              <span
+                                aria-label="Steg 1"
+                                id="StepIdstep-1-1"
+                              >
+                                1
+                              </span>
+                            </div>
+                          </div>
+                        </GridCol>
+                        <GridCol
+                          md={10}
+                          sm={9}
+                          xl={11}
+                        >
+                          <div
+                            className="ske-Grid-col-53 "
+                          >
+                            <hr />
+                            <ToggleContent
+                              isContentOpen={false}
+                              onClick={[Function]}
+                              processList={true}
+                              stepId="step-1-1"
+                              styles={
+                                Object {
+                                  "accordion": "accordion-38",
+                                  "containerStep": "containerStep-36",
+                                  "content": "content-39",
+                                  "heading": "heading-40",
+                                  "stepLine": "stepLine-42",
+                                  "stepNumber": "stepNumber-41",
+                                  "subComponentStyles": Object {},
+                                  "subtitle": "subtitle-46",
+                                  "toggleButton": "toggleButton-43",
+                                  "toggleButtonContent": "toggleButtonContent-45",
+                                  "toggleButtonOpen": "toggleButtonOpen-44",
+                                  "wrapperStep": "wrapperStep-37",
+                                }
+                              }
+                            />
+                            <div
+                              className="content-39"
+                              id="step-1-1"
+                            >
+                              <p>
+                                Her vises innhold
+                              </p>
+                            </div>
+                            <hr />
+                          </div>
+                        </GridCol>
+                      </div>
+                    </GridRow>
+                  </div>
+                </GridCol>
+              </div>
+            </GridRow>
+          </div>
+        </AccordionItem>
+      </div>
+    </Grid>
+  </div>
+</Accordion>
+`;
+
 exports[`Accordion komponent matcher snapshot 1`] = `
 <Accordion>
   <div
@@ -13,7 +134,7 @@ exports[`Accordion komponent matcher snapshot 1`] = `
         dir="ltr"
       >
         <AccordionItem
-          key=".0"
+          key=".$.0"
           stepNumber={1}
           totalSteps={1}
         >

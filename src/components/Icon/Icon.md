@@ -468,6 +468,14 @@ const iconGroup = {
     {
       name: 'Save',
       usage: 'Lagre (merk at vi normalt har autolagring)'
+    },
+    {
+      name: 'Pin',
+      usage: 'Festet element'
+    },
+    {
+      name: 'PinOff',
+      usage: 'Ikke-festet element'
     }
   ],
   files: [

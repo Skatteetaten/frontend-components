@@ -17,6 +17,10 @@
   margin: 8px;
 }
 
+.pa8-imp {
+  padding: 8px !important;
+}
+
 .ml8 {
   margin-left: 8px;
 }

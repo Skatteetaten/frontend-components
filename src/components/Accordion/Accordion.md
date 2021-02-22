@@ -101,7 +101,6 @@ import AccordionItem from '@skatteetaten/frontend-components/Accordion/Accordion
     toggleContent
     toggleButtonText={'Planlegging'}
     stepId={'step-1-1'}
-    onClick={() => console.log('Hello World')}
   >
     <p>Hva skal du teste og med hvilke brukere?</p>
   </AccordionItem>

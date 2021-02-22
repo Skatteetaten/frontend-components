@@ -1,3 +1,31 @@
+### **v.3.7.7 - 20.01.2021 **
+
+- FileUploader: Support for downloading files and overriding accepted file format label.
+- AccordionItem: now send html attributes to div (supports data-testid)
+- DatePicker: Fixes a bug where error messages would not be displayed (isOutOfBounds and invalidInput)
+- LabelWithCallout: Now supports Callout with border.
+
+### **v.3.7.6 - 08.01.2021 **
+
+- Callout: Added new prop to draw border around callout
+- FileUploader: Added prop that makes delete compatible with webseal
+- LinkGroup: Now uses same markup as Link (Accessibility improvement)
+- Dialog: Fixes an issue where the logo inside the dialog dissappeared
+- Card: added ability to have more html attributes ie. data-testid.
+
+### **v.3.7.5 - 11.12.2020 **
+
+- Fixes an issue with icons disappering with react-scripts version 4.0
+- ScrollToTopButton: Added aria-hidden to top container to hide it from screen readers.
+- Card: title can now be rendered as a custom tag, for instance h2 or h3.
+
+### **v.3.7.4 - 03.12.2020 **
+
+- AccordionMenu: added ability to flex content inside title area
+- Icons: New icons Pin and PinOff
+- TopBanner: Fixed onClick in internal header
+- TopStripe/Link: Accessibility; a link can now be used for skipping to main content.
+
 ### **v.3.7.3 - 19.11.2020 **
 
 - DropDown and TextField: now includes aria-invalid attribute

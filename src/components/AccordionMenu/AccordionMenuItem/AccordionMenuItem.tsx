@@ -5,19 +5,21 @@ import classnames from 'classnames';
 import { getClassNames } from '../AccordionMenu.classNames';
 
 interface AccordionMenuItemProps extends React.HTMLAttributes<HTMLDivElement> {
-  /** Ikon som benyttes for et menypunkt   */
+  /** Icons that is used for menu item    */
   icon?: string;
-  /** Om et menypunkt skal være default åpen */
+  /** If a menu item should be open by default */
   isOpen?: boolean;
-  /** Tittel på menypunkt */
+  /** The title of the menu item */
   heading: string | JSX.Element | undefined;
-  /** Om man ønsker ytterligere aksjon når bruker åpner steget. Kalles KUN når steget åpnes, ikke når det lukkes. */
+  /** Callback when used opens the menu item. Is called only when opened, not when closing.  */
   onClick?: (...args: any[]) => any;
-  /** Klasse som kan benyttes til overstyre stiler */
+  /** Additional class names for overriding styling */
   className?: string;
   children?: JSX.Element;
-  /** aria-label */
+  /** aria-label for the menu item */
   ariaLabel?: string;
+  /** Flex the title section */
+  flex?: boolean;
 }
 /**
  * @visibleName AccordionMenuItem (Element i trekkspillmeny)
@@ -27,8 +29,8 @@ const AccordionMenuItem = (props: AccordionMenuItemProps) => {
     props.isOpen || false
   );
 
-  const styles = getClassNames();
   const { heading, icon, onClick, className, children, ariaLabel } = props;
+  const styles = getClassNames(props);
 
   const toggleVisibility = () => {
     setContentOpen(!isContentOpen);

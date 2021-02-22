@@ -111,7 +111,7 @@ import Link from '@skatteetaten/frontend-components/Link';
     <div className="do">
       <p class="title">Gjør slik:</p>
       <Button buttonStyle="primary">Send inn</Button>
-      <Button className="ml8" buttonStyle="secondary">
+      <Button className="ml8 pa8-imp" buttonStyle="secondary">
         Avbryt
       </Button>
       <p class="title">Eller slik:</p>

@@ -25,6 +25,7 @@ import SearchField from '@skatteetaten/frontend-components/SearchField';
 Søkefelt med resultat i dropdown:
 
 ```js
+import React from 'react';
 import SearchField from '@skatteetaten/frontend-components/SearchField';
 const options = [
   { key: '1', text: 'Banan' },
@@ -34,6 +35,7 @@ const options = [
   { key: '5', text: 'Appelsin' },
   { key: '6', text: 'Fersken' }
 ];
+const [searchTerm, setSearchTerm] = React.useState('');
 
 <div style={{ width: '300px' }}>
   <SearchField
@@ -41,9 +43,10 @@ const options = [
     searchFieldSize="standard"
     border="slim"
     placeholder="Skriv søkeord her"
-    ariaLabel="Søk"
     help="Tekst som hjelper brukeren å fylle ut feltet."
     options={options}
+    value={searchTerm}
+    onChange={(ev, value) => setSearchTerm(value)}
   />
 </div>;
 ```

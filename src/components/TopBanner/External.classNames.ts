@@ -3,8 +3,8 @@ import { getTheme } from '@uifabric/styling';
 import { FontSizes } from '..';
 import { PaletteProps } from '..';
 import { TopBannerProps } from './TopBanner';
+import separator from './assets/separator.png';
 
-const separator = require('./assets/separator.png');
 export function getClassNames(props: TopBannerProps) {
   const { compact } = props;
   const palette = getTheme().palette as PaletteProps;
