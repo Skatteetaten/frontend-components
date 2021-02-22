@@ -226,6 +226,7 @@ function isSelected(selectItems, key) {
           columns={columns}
           openEditableOnRowClick
           compactTable={false}
+          caption="Månedsoversikt"
         />
       </div>
     </AccordionItem>
@@ -282,6 +283,7 @@ function isSelected(selectItems, key) {
           multiSelect
           onChange={console.log}
           style={{ maxWidth: '200px' }}
+          caption="Månedsoversikt"
         />
       </div>
 
@@ -290,6 +292,8 @@ function isSelected(selectItems, key) {
         columns={columns}
         openEditableOnRowClick
         compactTable={true}
+        caption="Månedsoversikt"
+        hideCaption={true}
       />
     </AccordionItem>
   </Accordion>
