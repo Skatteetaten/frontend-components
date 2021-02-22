@@ -5,6 +5,7 @@ import Table from '@skatteetaten/frontend-components/Table';
 import Grid from '@skatteetaten/frontend-components/Grid';
 import TextField from '@skatteetaten/frontend-components/TextField';
 import IconButton from '@skatteetaten/frontend-components/IconButton';
+import LabelWithCallout from '@skatteetaten/frontend-components/LabelWithCallout';
 
 import moment from 'moment';
 
@@ -22,6 +23,13 @@ const tableStyle = {
   background: 'red',
   marginTop: 20
 };
+
+const caption = (
+  <LabelWithCallout
+    label={'Månedsoversikt'}
+    help={'Oversikt over beløp og dekningsgrad i perioden.'}
+  />
+);
 
 const editableContent = (data, close, rowIndex) => (
   <div style={wrapperStyle}>
@@ -139,11 +147,12 @@ const data = [
 ];
 
 <Table
-  className="test"
   data={data}
   editableContent={editableContent}
   editableRows
   columns={columns}
+  caption={caption}
+  hideCaption={false}
 />;
 ```
 
@@ -197,7 +206,12 @@ const data = [
   }
 ];
 
-<Table data={data} columns={columns} />;
+<Table
+  data={data}
+  columns={columns}
+  caption="Oversikt over brukere"
+  hideCaption={true}
+/>;
 ```
 
 Ekspanderbare rader
@@ -331,6 +345,8 @@ const expandableContent = (data, close, rowIndex) => (
   expandableRows
   expandableContent={expandableContent}
   expandIconPlacement={'before'}
+  caption="Firmaoversikt"
+  hideCaption={true}
 />;
 ```
 
@@ -475,56 +491,15 @@ const data = [
 ];
 
 <Table
-  className="test"
   data={data}
   editableContent={editableContent}
   editableRows
   columns={columns}
   openEditableOnRowClick
   compactTable={true}
+  caption="Månedoversikt"
+  hideCaption={true}
 />;
-```
-
-Tabeller med overskrifter legges som en _caption_:
-
-```js
-import Table from '@skatteetaten/frontend-components/Table';
-import ActionButton from '@skatteetaten/frontend-components/ActionButton';
-import LabelWithCallout from '@skatteetaten/frontend-components/LabelWithCallout';
-
-const columns = [
-  {
-    name: 'Navn',
-    fieldName: 'navn'
-  },
-  {
-    name: 'Tilgang gitt',
-    fieldName: 'dato',
-    alignment: 'right'
-  }
-];
-
-const data = [
-  {
-    navn: 'Sven Lundquist',
-    dato: '23.10.19'
-  },
-  {
-    navn: 'Kai Mossige',
-    dato: '25.11.19'
-  }
-];
-
-const caption = (
-  <LabelWithCallout
-    label={'Personer med tilgang'}
-    help={
-      'Oversikt over personer som er gitt tilgang til å se statusen i dine saker.'
-    }
-  />
-);
-
-<Table data={data} columns={columns} caption={caption} />;
 ```
 
 ```js noeditor uu
@@ -548,8 +523,10 @@ const caption = (
       mister fokus når du velger en sortering.
     </li>
     <li>
-      En caption (overskrift) kan hjelpe brukere med å finne, forstå og navigere
-      i tabeller. De fleste skjermlesere vil lese opp innholdet fra
+      Tabeller skal alltid ha et caption-element, men det er mulig å visuelt
+      skjule den dersom visningen ikke passer inn på siden. En caption
+      (overskrift) kan hjelpe brukere med å finne, forstå og navigere i
+      tabeller. De fleste skjermlesere vil lese opp innholdet fra
       caption-elementet, og er derfor til hjelp når skjermleserbrukere skal
       avgjøre om de vil lese innholdet eller ikke.
     </li>

@@ -5,6 +5,7 @@ import { getClassNames } from './Table.classNames';
 import TableRow from './TableRow';
 import { t } from '../utils/i18n/i18n';
 import { useId } from '@reach/auto-id';
+import { getSrOnlyStyle } from '../utils/getSrOnlyStyle';
 
 export enum Language {
   en = 'en',
@@ -73,7 +74,9 @@ interface TableProps<P> extends React.HTMLAttributes<HTMLDivElement> {
   /** Reduce font size and height on rows for a more compact table */
   compactTable?: boolean;
   /** Table caption */
-  caption?: React.ReactNode;
+  caption: React.ReactNode;
+  /** Ability to hide caption visually, but still being detectable for screen readers */
+  hideCaption?: boolean;
 }
 
 export const setScrollBarState = (
@@ -174,6 +177,7 @@ const Table = <P extends object>(props: TableProps<P>) => {
     showRowSeparators = true,
     compactTable = false,
     caption = null,
+    hideCaption,
     openEditableRowIndex: externalOpenEditableRowIndex
   } = props;
   const genratedId = useId(id);
@@ -294,7 +298,11 @@ const Table = <P extends object>(props: TableProps<P>) => {
       className={classnames(getClassNames(props), className)}
     >
       <table>
-        {caption && <caption>{caption}</caption>}
+        {caption && (
+          <caption style={hideCaption ? getSrOnlyStyle() : undefined}>
+            {caption}
+          </caption>
+        )}
         <thead>
           <tr>
             {(tableIsScrollable || expandIconPlacement === 'before') && emptyTd}
