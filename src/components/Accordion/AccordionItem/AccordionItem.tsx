@@ -145,10 +145,10 @@ const AccordionItem: React.FC<AccordionItemProps> = props => {
         <span className={styles.stepLine} />
       )}
       <Grid.Row rowSpacing={Grid.SPACE_NONE}>
-        <Grid.Col>
+        <Grid.Col noSpacing>
           <Grid.Row rowSpacing={Grid.SPACE_NONE}>
             {processList && (
-              <Grid.Col sm={2} md={1} xl={1}>
+              <Grid.Col noSpacing sm={2} md={1} xl={1}>
                 <div className={styles.stepNumber}>
                   <span
                     id={'StepId' + stepId}
@@ -160,6 +160,7 @@ const AccordionItem: React.FC<AccordionItemProps> = props => {
               </Grid.Col>
             )}
             <Grid.Col
+              noSpacing
               sm={processList ? 9 : 12}
               md={processList ? 10 : 12}
               xl={processList ? 11 : 12}

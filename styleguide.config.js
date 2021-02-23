@@ -43,6 +43,10 @@ module.exports = {
           content: 'src/sections/kom-i-gang/tommelfinger.md'
         },
         {
+          name: 'Tips og triks',
+          content: 'src/sections/kom-i-gang/tipstriks.md'
+        },
+        {
           name: 'Krav og versjoner',
           content: 'src/sections/kom-i-gang/utviklere.md'
         },
@@ -53,6 +57,23 @@ module.exports = {
         {
           name: 'Versjonshistorikk',
           content: 'CHANGELOG.md'
+        }
+      ]
+    },
+    {
+      name: 'Anbefalte mønstre',
+      sections: [
+        {
+          name: 'Obligatoriske felt',
+          content: 'src/sections/monstre/obligatorisk.md'
+        },
+        {
+          name: 'Store tabeller',
+          content: 'src/sections/monstre/tabell-kompleks.md'
+        },
+        {
+          name: 'Feilmeldinger',
+          content: 'src/sections/monstre/feil.md'
         }
       ]
     },

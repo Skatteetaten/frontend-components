@@ -43,7 +43,7 @@ const Accordion: React.FC<AccordionProps> = props => {
       aria-label={ariaLabel}
       {...htmlAttributes}
     >
-      <Grid>
+      <Grid padding="0px">
         {React.Children.map(validChildren, (child, index) => {
           if (React.isValidElement<AccordionItemProps>(child)) {
             return React.cloneElement(child, {

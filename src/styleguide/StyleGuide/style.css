@@ -84,16 +84,32 @@
   flex-wrap: wrap;
 }
 
-.dodont p {
+.dodont p.title {
   font-weight: 600;
   font-size: 18px;
+  margin-top: 0;
+}
+
+.pl8 {
+  padding-left: 8px;
+}
+
+.pr8 {
+  padding-right: 8px;
+}
+
+.pl16 {
+  padding-left: 16px;
+}
+
+.pr16 {
+  padding-right: 16px;
 }
 
 .do {
   display: block;
   min-width: 300px;
-  border: 2px solid #91d6ac;
-  border-top: 8px solid #91d6ac;
+  border-left: 4px solid #91d6ac;
   padding: 0px 16px 24px 16px;
   margin-right: 16px;
   margin-bottom: 16px;
@@ -103,12 +119,15 @@
 .dont {
   display: block;
   min-width: 300px;
-  border: 2px solid #b25c62;
-  border-top: 8px solid #b25c62;
+  border-left: 4px solid #f7d1d7;
   padding: 0px 16px 24px 16px;
   margin-right: 16px;
   margin-bottom: 16px;
   flex-grow: 1;
+}
+
+.error-border-color {
+  border-color: #a82e39;
 }
 
 q {
