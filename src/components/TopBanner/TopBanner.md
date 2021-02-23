@@ -113,33 +113,54 @@ import TopBanner from '@skatteetaten/frontend-components/TopBanner';
   <h3>Forskjell på interne systemer og publikumsløsninger</h3>
   <p>
     Alle løsningene våre har et toppbanner som visuelt skiller interne og
-    eksterne fra hverandre. 
+    eksterne fra hverandre.
   </p>
 
-<ul><li>Interne løsninger bruker fylt toppbanner med skrå strek.</li>
-<li>Eksterne bruker en smal lang strek, slik som på skatteetaten.no. Dette lager en smidig overgang fra skatteetaten.no til en tilknyttet løsning.</li>
-</ul>
+  <ul>
+    <li>Interne løsninger bruker fylt toppbanner med skrå strek.</li>
+    <li>
+      Eksterne bruker en smal lang strek, slik som på skatteetaten.no. Dette
+      lager en smidig overgang fra skatteetaten.no til en tilknyttet løsning.
+    </li>
+  </ul>
   <p>
     Det er valgfritt å bruke kompakt eller standard utgave av banneret, men du
     må være konsekvent gjennom hele løsningen.
   </p>
   <h3>Startsider på interne løsninger</h3>
   <p>
-    Interne fagsystemer har en hovedside der brukeren finner arbeidsoppgaver eller søker etter opplysninger. På de interne løsningene gjelder følgende:
+    Interne fagsystemer har en hovedside der brukeren finner arbeidsoppgaver
+    eller søker etter opplysninger. På de interne løsningene gjelder følgende:
   </p>
-<ul><li>TopBanner kan holdes enkel og kun inneholde navn på logo og tittel på applikasjonen.</li>
-<li>TopBanner kan inneholde meny til rapporter og enkeltstående sider eller personlige innstillinger.</li>
-<li>Du trenger ikke skrive «Startside» eller «Velkommen» i toppbanneret.</li>
-</ul>
+  <ul>
+    <li>
+      TopBanner kan holdes enkel og kun inneholde navn på logo og tittel på
+      applikasjonen.
+    </li>
+    <li>
+      TopBanner kan inneholde meny til rapporter og enkeltstående sider eller
+      personlige innstillinger.
+    </li>
+    <li>
+      Du trenger ikke skrive «Startside» eller «Velkommen» i toppbanneret.
+    </li>
+  </ul>
 
   <h3>Undersider på interne løsinger</h3>
-  <p>
-    De fleste interne systemer har en eller flere undersider. 
-  </p>
+  <p>De fleste interne systemer har en eller flere undersider.</p>
 
-<ul><li>Banneret på undersidene skal ha en tittel som formidler konteksten og gjør innholdet relevant for brukeren, for eksempel en sakstype eller arbeidsoppgave.</li>
-<li>Velger du å å ha arbeidsoppgaven i toppbanneret, skal også arbeidsliste-funksjonene «Gjør tilgjengelig», «Sett på vent» og «Fordel» stå i umiddelbar nærhet.</li>
-</ul>
+  <ul>
+    <li>
+      Banneret på undersidene skal ha en tittel som formidler konteksten og gjør
+      innholdet relevant for brukeren, for eksempel en sakstype eller
+      arbeidsoppgave.
+    </li>
+    <li>
+      Velger du å ha arbeidsoppgaven i toppbanneret, skal også
+      arbeidsliste-funksjonene «Gjør tilgjengelig», «Sett på vent» og «Fordel»
+      stå i umiddelbar nærhet.
+    </li>
+  </ul>
 
   <h3>Klikkbar logo i publikumsløsninger</h3>
   <p>

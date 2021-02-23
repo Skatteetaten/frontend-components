@@ -27,19 +27,26 @@ import Grid from '@skatteetaten/frontend-components/Grid';
 
 ```js noeditor beskrivelse
 <>
- 
   <p>
-    I alle nettløsningene våre har vi en bunn som typisk inneholder kontaktopplysninger, personvernopplysninger og lenker for deling. 
-Bunn-komponenten kan inneholde flere underelementer.
+    I alle nettløsningene våre har vi en bunn som typisk inneholder
+    kontaktopplysninger, personvernopplysninger og lenker for deling.
+    Bunn-komponenten kan inneholde flere underelementer.
   </p>
   <h3>Tilpass bunnen til ulike skjermstørrelser</h3>
   <ul>
-    <li>Bruk grid-systemet når du setter opp bunnen fordi dette gjør at den tilpasser seg ulike skjermstørrelser.</li>
- </ul>
+    <li>
+      Bruk grid-systemet når du setter opp bunnen fordi dette gjør at den
+      tilpasser seg ulike skjermstørrelser.
+    </li>
+  </ul>
   <h3>Logo i bunnen</h3>
- <ul>
-    <li>Bruk komponenten FooterContent.Logo i bunnen. Logoen blir midtstilt på skjermer mindre enn 1024px bred, og det tilsvarer fra og med «large» i grid-systemet.</li>
-</ul>
+  <ul>
+    <li>
+      Bruk komponenten FooterContent.Logo i bunnen. Logoen blir midtstilt på
+      skjermer mindre enn 1024px bred, og det tilsvarer fra og med «large» i
+      grid-systemet.
+    </li>
+  </ul>
 </>
 ```
 
