@@ -184,11 +184,11 @@ function isSelected(selectItems, key) {
     margin="large"
   >
     <p>
-      Tabeller er gode når man skal sammenligne opplysninger, hvis blir for mye
-      informasjon i dem kan de fort bli uoversiktlige. Det første vi anbefaler
-      er derfor å stille spørsmål til om du er <em>helt sikker</em> på at du
-      trenger å vise alle opplysningene; vurder om det er noe du kan fjerne
-      eller like gjerne kan vise et annet sted. Men i de tilfellene hvor
+      Tabeller er gode når man skal sammenligne opplysninger, men hvis det blir
+      for mye informasjon i dem kan de fort bli uoversiktlige. Det første vi
+      anbefaler er derfor å stille spørsmål til om du er <em>helt sikker</em> på
+      at du trenger å vise alle opplysningene; vurder om det er noe du kan
+      fjerne eller like gjerne kan vise et annet sted. Men i de tilfellene hvor
       tabellene er og blir store, er det noen mønstre som kan være nyttige.
     </p>
     <ul>
