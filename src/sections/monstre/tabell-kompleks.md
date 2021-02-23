@@ -276,8 +276,7 @@ function isSelected(selectItems, key) {
         <h3>Månedoversikt</h3>
 
         <Dropdown
-          label="Vis/skjul"
-          help="Viser eller skjuler kolonner i tabellen"
+          label="Vis/skjul kolonner"
           options={dropdownItems}
           defaultSelectedKeys={selectedColums}
           multiSelect
