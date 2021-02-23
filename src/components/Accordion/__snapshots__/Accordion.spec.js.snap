@@ -10,7 +10,7 @@ exports[`Accordion komponent Sender videre html atributter 1`] = `
     data-testid="testidparent123"
   >
     <Grid
-      padding="0 8px"
+      padding="0px"
     >
       <div
         className="ske-Grid-47 "
@@ -33,19 +33,19 @@ exports[`Accordion komponent Sender videre html atributter 1`] = `
               rowSpacing="0px"
             >
               <div
-                className="ske-Grid-row-50 "
+                className="ske-Grid-row-51 "
               >
                 <GridCol
                   noSpacing={true}
                 >
                   <div
-                    className="ske-Grid-col-51 "
+                    className="ske-Grid-col-52 "
                   >
                     <GridRow
                       rowSpacing="0px"
                     >
                       <div
-                        className="ske-Grid-row-50 "
+                        className="ske-Grid-row-51 "
                       >
                         <GridCol
                           md={1}
@@ -54,7 +54,7 @@ exports[`Accordion komponent Sender videre html atributter 1`] = `
                           xl={1}
                         >
                           <div
-                            className="ske-Grid-col-53 "
+                            className="ske-Grid-col-54 "
                           >
                             <div
                               className="stepNumber-41"
@@ -75,7 +75,7 @@ exports[`Accordion komponent Sender videre html atributter 1`] = `
                           xl={11}
                         >
                           <div
-                            className="ske-Grid-col-54 "
+                            className="ske-Grid-col-55 "
                           >
                             <hr />
                             <ToggleContent
@@ -131,7 +131,7 @@ exports[`Accordion komponent matcher snapshot 1`] = `
     className="accordion-38"
   >
     <Grid
-      padding="0 8px"
+      padding="0px"
     >
       <div
         className="ske-Grid-47 "
@@ -150,19 +150,19 @@ exports[`Accordion komponent matcher snapshot 1`] = `
               rowSpacing="0px"
             >
               <div
-                className="ske-Grid-row-50 "
+                className="ske-Grid-row-51 "
               >
                 <GridCol
                   noSpacing={true}
                 >
                   <div
-                    className="ske-Grid-col-51 "
+                    className="ske-Grid-col-52 "
                   >
                     <GridRow
                       rowSpacing="0px"
                     >
                       <div
-                        className="ske-Grid-row-50 "
+                        className="ske-Grid-row-51 "
                       >
                         <GridCol
                           md={12}
@@ -171,7 +171,7 @@ exports[`Accordion komponent matcher snapshot 1`] = `
                           xl={12}
                         >
                           <div
-                            className="ske-Grid-col-52 "
+                            className="ske-Grid-col-53 "
                           >
                             <hr />
                             <ToggleContent
