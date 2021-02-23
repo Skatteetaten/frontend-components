@@ -1,3 +1,10 @@
+### **v.3.8.0 - 24.02.2021 **
+
+- A new section containing recommended patterns.
+- LabelWithCallout: Fixes a visual bug that showed a white area when using a border around the callout.
+- Accordion: Better support for dynamic loading of steps and correct rendering of left line. This update also removes outer margins to better support smaller screens. To bring back this margin you have to add your own custom styling.
+- SearchField: Accessibility improvements with SearchField with dropdown.
+
 ### **v.3.7.7 - 20.01.2021 **
 
 - FileUploader: Support for downloading files and overriding accepted file format label.
