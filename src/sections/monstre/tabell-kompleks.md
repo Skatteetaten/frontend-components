@@ -3,7 +3,9 @@ import Table from '@skatteetaten/frontend-components/Table';
 import Grid from '@skatteetaten/frontend-components/Grid';
 import TextField from '@skatteetaten/frontend-components/TextField';
 import IconButton from '@skatteetaten/frontend-components/IconButton';
-import Dropdown from '@skatteetaten/frontend-components/Dropdown';
+//import Dropdown from '@skatteetaten/frontend-components/Dropdown';
+import { Dropdown } from 'office-ui-fabric-react/lib/Dropdown';
+
 import Accordion from '@skatteetaten/frontend-components/Accordion';
 import AccordionItem from '@skatteetaten/frontend-components/Accordion/AccordionItem';
 import Card from '@skatteetaten/frontend-components/Card';
@@ -12,24 +14,7 @@ import moment from 'moment';
 
 const sortMonths = (a, b) => moment(a, 'MMMM').diff(moment(b, 'MMMMM'));
 
-const selectedColums = [
-  'grp',
-  'jan',
-  'feb',
-  'mar',
-  'mai',
-  'apr',
-  'mai',
-  'jun',
-  'jul',
-  'aug',
-  'sep',
-  'okt',
-  'nov',
-  'des'
-];
-
-const columns = [
+const mockColumns = [
   {
     name: 'Gruppe',
     fieldName: 'grp',
@@ -127,7 +112,7 @@ function formatNumber(count) {
   return `${new Intl.NumberFormat('no-NB').format(count)}`;
 }
 
-const data = [
+const mockData = [
   {
     grp: 'Fastlønn',
     jan: formatNumber(64793),
@@ -159,7 +144,20 @@ const data = [
     des: formatNumber(0)
   }
 ];
-const dropdownItems = getDropdownItems(columns);
+const dropdownItems = colums => {
+  let items = [];
+
+  colums &&
+    colums.forEach(item => {
+      items.push({ key: item.fieldName, text: item.name });
+    });
+
+  return items;
+};
+
+const [selectedColums, setSelectedColums] = React.useState(
+  mockColumns.map(item => item.fieldName)
+);
 
 function getDropdownItems(colums) {
   let items = [];
@@ -169,6 +167,16 @@ function getDropdownItems(colums) {
   });
 
   return items;
+}
+
+function onChange(item) {
+  if (item) {
+    setSelectedColums(
+      item.selected
+        ? [...selectedColums, item.key]
+        : selectedColums.filter(key => key !== item.key)
+    );
+  }
 }
 
 function isSelected(selectItems, key) {
@@ -222,8 +230,8 @@ function isSelected(selectItems, key) {
       </p>
       <div style={{ maxWidth: '500px', overflowX: 'visible' }}>
         <Table
-          data={data}
-          columns={columns}
+          data={mockData}
+          columns={mockColumns}
           openEditableOnRowClick
           compactTable={false}
           caption="Månedsoversikt"
@@ -277,18 +285,20 @@ function isSelected(selectItems, key) {
 
         <Dropdown
           label="Vis/skjul kolonner"
-          options={dropdownItems}
+          options={dropdownItems(mockColumns)}
           defaultSelectedKeys={selectedColums}
           multiSelect
-          onChange={console.log}
+          onChange={(event, item) => onChange(item)}
           style={{ maxWidth: '200px' }}
           caption="Månedsoversikt"
         />
       </div>
 
       <Table
-        data={data}
-        columns={columns}
+        data={mockData}
+        columns={mockColumns.filter(item =>
+          selectedColums.includes(item.fieldName)
+        )}
         openEditableOnRowClick
         compactTable={true}
         caption="Månedsoversikt"
