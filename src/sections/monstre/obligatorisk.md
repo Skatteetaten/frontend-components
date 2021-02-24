@@ -29,20 +29,16 @@ const initialState = {
   >
     <p>
       Hovedregelen er at alle felt som vises skal fylles ut – vi skal bare
-      spørre brukeren om ting vi trenger. Det finnes imidlertid unntak og da
-      merker vi de obligatoriske feltene med stjerne (*). Toppen av skjemaet
-      skal inneholde en beskrivelse av hva som gjelder i det aktuelle tilfellet.
+      spørre brukeren om ting vi trenger.
     </p>
     <ul>
       <li>
-        Vi spør kun etter de opplysningene vi trenger - verken mer eller mindre.
+        Merk toppen av skjemaet med
+        <em>«Alle felt må fylles ut»</em>.
       </li>
       <li>
-        Hvis alle felt må fylles ut, skriver vi:{' '}
-        <em>«Alle felt må fylles ut»</em> i toppen av skjemaet
-      </li>
-      <li>
-        Hvis ikke alle felt må fylles ut, markerer vi feltene med * og skriver
+        Unntak fra regelen: Hvis ikke alle felt må fylles ut må du merke
+        obligatoriske felt med * og skrive
         <em>«Felt markert med * må fylles ut»</em> i toppen av skjemaet.
       </li>
     </ul>
@@ -96,7 +92,7 @@ const initialState = {
           <p class="title">Ja</p>
           <div style={{ padding: '2px' }}>
             <Card color={Card.Color.BEIGE}>
-              Felt markert med * må fylles ut
+              Felt markert med * må fylles ut.
             </Card>
             <br />
             <TextField label={'Navn på virksomhet *'} inputSize="large" />
