@@ -23,7 +23,7 @@ const mockColumns = [
     autohideSorting: false
   },
   {
-    name: 'Januer',
+    name: 'Januar',
     fieldName: 'jan',
     alignment: 'right',
     sortable: false,
@@ -192,25 +192,23 @@ function isSelected(selectItems, key) {
     margin="large"
   >
     <p>
-      Tabeller er gode når man skal sammenligne opplysninger, men hvis det blir
-      for mye informasjon i dem kan de fort bli uoversiktlige. Det første vi
-      anbefaler er derfor å stille spørsmål til om du er <em>helt sikker</em> på
-      at du trenger å vise alle opplysningene; vurder om det er noe du kan
-      fjerne eller like gjerne kan vise et annet sted. Men i de tilfellene hvor
-      tabellene er og blir store, er det noen mønstre som kan være nyttige.
+      Tabeller er gode når man skal sammenligne opplysninger, men kan bli
+      uoversiktlige med mye informasjon. Vurder derfor om noe kan fjernes eller
+      vises et annet sted. Dersom du allikevel må bruke stor tabell, anbefaler
+      vi følgende mønstre:
     </p>
     <ul>
       <li>
-        Legg de mest sentrale opplysningene i tabellen til venstre slik at de
-        leses først og kuttes sist.
+        Plasser de mest sentrale opplysningene til venstre. De vil leses først
+        og kuttes/skjules sist.
       </li>
       <li>
-        Skjul eller fjern kolonner som ikke er nødvendige. Hvis behovet varierer
-        kan du la brukeren vise/skjule kolonner selv.
+        Vis kun kolonner som er nødvendige. For større fleksibilitet kan du la
+        brukeren vise/skjule kolonner selv.
       </li>
       <li>
-        Det er ok å bruke horisontal skroll på en tabell som er for bred for
-        mobil. Unngå horisontal skrolling på store skjermer.
+        Horisontal skroll er ok i tabeller som er for brede på mobil. Unngå
+        horisontal skroll på stor skjerm.
       </li>
     </ul>
   </Card>
@@ -225,8 +223,7 @@ function isSelected(selectItems, key) {
       stepId={'step-1'}
     >
       <p>
-        Dersom en tabell blir for stor på små skjermer kan vi bruke horisontal
-        skrolling.
+        For store tabeller på små skjermer, kan du benytte horisontal skroll:
       </p>
       <div style={{ maxWidth: '500px', overflowX: 'visible' }}>
         <Table
@@ -244,10 +241,7 @@ function isSelected(selectItems, key) {
       headingLevel="3"
       stepId={'step-2'}
     >
-      <p>
-        Dersom en tabell blir for stor på liten skjerm kan vi presentere
-        opplysningene vertikalt i stedet.
-      </p>
+      <p>Store tabeller på små skjermer kan alternativt vises vertikalt:</p>
       <div style={{ maxWidth: '500px', overflowX: 'visible' }}>
         <h3>Månedoversikt</h3>
 
@@ -277,8 +271,8 @@ function isSelected(selectItems, key) {
       stepId={'step-3'}
     >
       <p>
-        Dersom en tabell er for bred kan vi la brukeren selv vise/skjule
-        kolonner.
+        Funksjonalitet for å vise/skjule kolonner kan være nyttig for brede
+        tabeller:
       </p>
       <div style={{ display: 'flex', justifyContent: 'space-between' }}>
         <h3>Månedoversikt</h3>

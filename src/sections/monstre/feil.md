@@ -29,17 +29,16 @@ import Image from '@skatteetaten/frontend-components/Image';
     <p>
       Feilmeldinger forteller brukeren at noe har gått galt, og det kan både
       gjelde systemfeil og brukerfeil. Det er vår jobb å hjelpe brukeren videre.
-      Det er derfor nyttig å ta utgangspunkt i en samtale med brukeren når du
-      foklarer tilpasser løsningsteksten.
+      Det kan derfor være nyttig å se for seg en samtale med brukeren når du
+      tilpasser løsningsteksten.
     </p>
 
     <ul>
+      <li>Bruk et enkelt og forståelig språk. Unngå tekniske ord.</li>
       <li>
-        Skriv med ord som er lette å forstå, også for ikke-tekniske brukere.
+        Fortell hva som er feil og hva brukeren skal gjøre for å komme videre.
       </li>
-      <li>Spesifiser hva som er feil.</li>
       <li>Unngå for generelle feilmeldinger - skreddersøm er bra.</li>
-      <li>Foreslå konkret hva brukeren kan gjøre for å komme videre.</li>
       <li>Test på en kollega eller andre som ikke kjenner løsningen.</li>
     </ul>
     <p>
@@ -60,24 +59,23 @@ import Image from '@skatteetaten/frontend-components/Image';
     >
       <h3>Slik skriver du feilmeldinger som gjelder systemfeil:</h3>
       <ul>
-        <li>Vis respekt ved å skrive kort, konsist og uten tekniske ord.</li>
+        <li>Skriv kort, konsist og ikke-teknisk.</li>
         <li>
           Forklar når brukeren kan prøve igjen, dersom det har en hensikt.
         </li>
-        <li>Vis ansvar og empati ved å forklare at det er vår feil.</li>
-        <li>Fortell konkret hvordan brukeren kan komme videre.</li>
-        <li>
-          Bruk en knapp for å registrere feilen automatisk, hvis det er mulig,
-          og vis en kvittering.
-        </li>
+        <li>Vær tydelig på at feilen ikke skyldes brukeren.</li>
+        <li>Fortell hvordan brukeren kan komme seg videre.</li>
       </ul>
 
       <h3>Slik designer du en feilmelding som gjelder systemfeil:</h3>
       <ul>
-        <li>La bakgrunnen rundt feilmeldingen være dus og inaktiv.</li>
+        <li>Ton ned/dus innholdet bak feilmeldingsboksen. </li>
         <li>
           Bruk varseltrekant som ikon i toppen av feilmeldingen dersom det er en
           feil av mer alvorlig art.
+        </li>
+        <li>
+          Hvis det er mulig, bruk en knapp for å registrere feilen automatisk.
         </li>
       </ul>
       <div className="dodont" style={{ marginLeft: '24px' }}>
@@ -103,14 +101,13 @@ import Image from '@skatteetaten/frontend-components/Image';
         <div className="do" style={{ maxWidth: '44%' }}>
           <p class="title">Ja</p>
           <MessageBar type={MessageBar.Type.warning}>
-            Beklager, vi har en feil. Prøv igjen om 10 minutter. Vedvarer
-            feilen, er vi takknemlig som du vil hjelpe oss ved å{' '}
+            Beklager, vi har en feil. Prøv igjen om 10 minutter. Send gjerne en{' '}
             <Link
               path={'#link'}
-              text={'sende automatisk beskjed'}
+              text={'automatisk beskjed'}
               icon={'OpenInNew'}
             />{' '}
-            til oss.
+            for å hjelpe. Takk for tålmodigheten.
           </MessageBar>
         </div>
         <div className="dont">
@@ -127,44 +124,28 @@ import Image from '@skatteetaten/frontend-components/Image';
       headingLevel="3"
       stepId={'step-2'}
     >
-      <h3>Slik skriver du feilmeldinger som skyldes brukerfeil i tekstfelt:</h3>
+      <h3>Slik skriver du feilmeldinger ved brukerfeil i skjemautfylling:</h3>
 
       <ul>
-        <li>
-          Vær svært kortfattet og konkret for å hjelpe brukeren videre. I stedet
-          for å skrive «Feltet er obligatorisk», fortell hva brukeren skal fylle
-          inn.{' '}
-        </li>
+        <li>Skriv enkelt, kort og konsist for å hjelpe brukeren videre.</li>
         <li>Bruk en vennlig tone og unngå tekniske ord.</li>
+        <li>Forklar hva som er feil. </li>
+        <li>
+          Unngå at samme feilmelding gjenbrukes for ulike felt (For eksempel
+          «Ikke gyldig verdi», «Feltet må fylles inn»).
+        </li>
       </ul>
 
-      <h3>Slik designer du en feilmelding som brukerfeil i tekstfelt:</h3>
+      <h3>Slik designer du en feilmelding ved brukerfeil i skjemautfylling:</h3>
       <ul>
-        <li>Bruk rød skrift og merk feltet med rød ramme.</li>
-        <li>Plasser feilmeldingen rett ved feltet.</li>
+        <li>Bruk ikon, rød skrift og rød ramme på feltet.</li>
+        <li>Plasser feilmeldingen rett under feltet.</li>
         <li>
           Ta brukeren til feltet med feil dersom brukeren er på annet sted på
           siden.
         </li>
       </ul>
 
-      <h3>
-        Slik skriver du feilmeldinger som skyldes generelle brukerfeil som for
-        eksempel valideringsfeil:
-      </h3>
-      <ul>
-        <li>
-          Foreslå hva som kan ha forårsaket feilen og hjelp brukeren videre.{' '}
-        </li>
-        <li>
-          Vær konkret. I stedet for å skrive «Udefinerbar feil», fortell hva
-          brukeren skal gjøre for å komme videre.{' '}
-        </li>
-        <li>
-          Bruk en vennlig tone og unngå tekniske ord. Feilmeldingen skal ha
-          brukerens perspektiv og språk.
-        </li>
-      </ul>
       <div className="dodont" style={{ marginLeft: '24px' }}>
         <div className="do" style={{ maxWidth: '44%' }}>
           <p class="title">Ja</p>
@@ -185,7 +166,7 @@ import Image from '@skatteetaten/frontend-components/Image';
           <TextField
             label="Antall dager i Norge i perioden/inntekståret"
             value=""
-            errorMessage={'Du må fylle ut antall dager.'}
+            errorMessage={'Antall dager må fylles ut.'}
           />
         </div>
         <div className="dont" style={{ maxWidth: '44%' }}>
@@ -217,8 +198,8 @@ import Image from '@skatteetaten/frontend-components/Image';
       stepId={'step-3'}
     >
       <p>
-        I tilfeller hvor vi ikke klarer å laste inn data i rammer og bokser,
-        viser vi et varselikon, en forklarende tekst og et forslag til løsning.
+        Der hvor innlasting av data i rammer og bokser ikke er mulig, bruker vi
+        varselikon, tekstbeskrivelse og løsningsforslag.
       </p>
 
       <div>
@@ -231,11 +212,12 @@ import Image from '@skatteetaten/frontend-components/Image';
               />
               <p style={{ fontSize: '18px' }}>
                 Beklager, vi har en feil. Prøv igjen om 10 minutter. <br />
-                Vedvarer feilen, er vi takknemlig som du vil hjelpe oss ved å <Link
+                Send gjerne en <Link
                   path={'#link'}
-                  text={'sende automatisk beskjed'}
+                  text={'automatisk beskjed'}
                   icon={'OpenInNew'}
-                /> til oss.
+                /> for å hjelpe. <br />
+                <br /> Takk for tålmodigheten.
               </p>
             </div>
           </div>
@@ -258,39 +240,6 @@ import Image from '@skatteetaten/frontend-components/Image';
           </div>
         </Card>
       </div>
-    </AccordionItem>
-    <AccordionItem
-      toggleContent
-      toggleButtonText={'Flere feil i et skjema'}
-      headingLevel="3"
-      stepId={'step-5'}
-    >
-      {' '}
-      <p>
-        Feil skal vises i umiddelbar nærhet til der hvor brukeren trykker eller
-        har blikket da feilen oppstår.
-      </p>
-      <TextField
-        id={'my-input1'}
-        inputSize={'normal'}
-        label={'E-postadresse'}
-        value={'min_adresse.no'}
-        errorMessage="E-postadressen ser ikke riktig ut."
-      />
-      <br />
-      <TextField
-        id={'my-input2'}
-        label={'Hva trenger du hjelp til?'}
-        multiline
-        rows={7}
-        value={''}
-        errorMessage="Feltet «Hva trenger du hjelp til?» kan ikke være tomt."
-      />
-      <br />
-      <Button buttonStyle="primary">Send inn</Button>
-      <ErrorMessage>
-        Skjemaet inneholder 2 feil som du må rette opp.
-      </ErrorMessage>
     </AccordionItem>
   </Accordion>
 </div>;

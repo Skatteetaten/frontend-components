@@ -54,8 +54,8 @@ const initialState = {
       stepId={'step-1'}
     >
       <p>
-        Når alle felt må fylles ut, bruker vi ikke stjernemarkering, men
-        forklarer det i toppen:
+        Der alle felt må fylles ut, merker vi ikke med stjerne, men beskriver
+        det i toppen.
       </p>
       <div className="dodont" style={{ marginLeft: '24px' }}>
         <div className="do" style={{ maxWidth: '30%' }}>
@@ -84,8 +84,8 @@ const initialState = {
       stepId={'step-2'}
     >
       <p>
-        Når ikke alle felt må fylles ut, bruker vi stjerne (*) til å markere de
-        obligatoriske feltene.
+        Der ikke alle felt må fylles ut, merker vi feltnavn/ledetekst med
+        stjerne (*) på obligatoriske felt.
       </p>
       <div className="dodont" style={{ marginLeft: '24px' }}>
         <div className="do" style={{ maxWidth: '30%' }}>
