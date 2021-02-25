@@ -10,8 +10,8 @@ import MessageBar from '@skatteetaten/frontend-components/MessageBar';
 <div>
   <h3>Teknisk komponent for TopStripe</h3>
   <p>
-    TopStripeMenu er en hjelpekomponent til TopStripe som kan brukes til å lage
-    en meny inni stripen.
+    TopStripeMenu er en hjelpekomponent til TopStripe. Du kan benytte denne for
+    å lage en meny inni den svarte stripen.
   </p>
 </div>
 ```

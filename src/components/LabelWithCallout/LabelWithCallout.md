@@ -4,7 +4,7 @@
 import LabelWithCallout from '@skatteetaten/frontend-components/LabelWithCallout';
 import Button from '@skatteetaten/frontend-components/Button';
 
-<div style={{ width: '350px' }}>
+<div style={{ width: '400px' }}>
   <LabelWithCallout
     label={'Omregistreringsavgift'}
     help={'Avgiften du må betale for å registrere kjøretøyet på en ny person.'}
@@ -12,6 +12,7 @@ import Button from '@skatteetaten/frontend-components/Button';
       state.warning && 'Du ser ut til å være fritatt for omregistreringsavgift.'
     }
   />
+  <br />
   <Button onClick={() => setState({ warning: !state.warning })}>
     {state.warning ? 'Vis med hjelpetekst' : 'Vis med varsel'}
   </Button>
@@ -37,7 +38,7 @@ import SearchField from '@skatteetaten/frontend-components/SearchField';
 </div>;
 ```
 
-Flere komponeter har LabelWithCallout innebygd. Her med autoDismiss:
+LabelWithCallout brukt i tekstfelt med automatisk lukking av utropsboksen:
 
 ```js
 import TextField from '@skatteetaten/frontend-components/TextField';

@@ -917,8 +917,10 @@ function Testside(props) {
       />
       <h2>CheckBox</h2>
 
-      <fieldset style={{ border: 'none' }}>
-        <legend style={{ fontSize: '14px' }}>Velg aktuelle lover</legend>
+      <fieldset style={{ border: 'none', margin: '0', padding: '0' }}>
+        <legend style={{ fontSize: '16px', marginBottom: '4px' }}>
+          Velg aktuelle lover
+        </legend>
         <CheckBox boxSide={'start'} label="Skatteloven" />
         <CheckBox boxSide={'start'} label="Skattebetalingsloven" />
         <CheckBox boxSide={'start'} label="Skatteforvaltningsloven" />
