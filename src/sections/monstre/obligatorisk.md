@@ -29,20 +29,16 @@ const initialState = {
   >
     <p>
       Hovedregelen er at alle felt som vises skal fylles ut – vi skal bare
-      spørre brukeren om ting vi trenger. Det finnes imidlertid unntak og da
-      merker vi de obligatoriske feltene med stjerne (*). Toppen av skjemaet
-      skal inneholde en beskrivelse av hva som gjelder i det aktuelle tilfellet.
+      spørre brukeren om ting vi trenger.
     </p>
     <ul>
       <li>
-        Vi spør kun etter de opplysningene vi trenger - verken mer eller mindre.
+        Merk toppen av skjemaet med
+        <em>«Alle felt må fylles ut»</em>.
       </li>
       <li>
-        Hvis alle felt må fylles ut, skriver vi:{' '}
-        <em>«Alle felt må fylles ut»</em> i toppen av skjemaet
-      </li>
-      <li>
-        Hvis ikke alle felt må fylles ut, markerer vi feltene med * og skriver
+        Unntak fra regelen: Hvis ikke alle felt må fylles ut må du merke
+        obligatoriske felt med * og skrive
         <em>«Felt markert med * må fylles ut»</em> i toppen av skjemaet.
       </li>
     </ul>
@@ -58,8 +54,8 @@ const initialState = {
       stepId={'step-1'}
     >
       <p>
-        Når alle felt må fylles ut, bruker vi ikke stjernemarkering, men
-        forklarer det i toppen:
+        Der alle felt må fylles ut, merker vi ikke med stjerne, men beskriver
+        det i toppen.
       </p>
       <div className="dodont" style={{ marginLeft: '24px' }}>
         <div className="do" style={{ maxWidth: '30%' }}>
@@ -88,15 +84,15 @@ const initialState = {
       stepId={'step-2'}
     >
       <p>
-        Når ikke alle felt må fylles ut, bruker vi stjerne (*) til å markere de
-        obligatoriske feltene.
+        Der ikke alle felt må fylles ut, merker vi feltnavn/ledetekst med
+        stjerne (*) på obligatoriske felt.
       </p>
       <div className="dodont" style={{ marginLeft: '24px' }}>
         <div className="do" style={{ maxWidth: '30%' }}>
           <p class="title">Ja</p>
           <div style={{ padding: '2px' }}>
             <Card color={Card.Color.BEIGE}>
-              Felt markert med * må fylles ut
+              Felt markert med * må fylles ut.
             </Card>
             <br />
             <TextField label={'Navn på virksomhet *'} inputSize="large" />

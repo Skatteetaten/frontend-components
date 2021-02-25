@@ -3,7 +3,9 @@ import Table from '@skatteetaten/frontend-components/Table';
 import Grid from '@skatteetaten/frontend-components/Grid';
 import TextField from '@skatteetaten/frontend-components/TextField';
 import IconButton from '@skatteetaten/frontend-components/IconButton';
-import Dropdown from '@skatteetaten/frontend-components/Dropdown';
+//import Dropdown from '@skatteetaten/frontend-components/Dropdown';
+import { Dropdown } from 'office-ui-fabric-react/lib/Dropdown';
+
 import Accordion from '@skatteetaten/frontend-components/Accordion';
 import AccordionItem from '@skatteetaten/frontend-components/Accordion/AccordionItem';
 import Card from '@skatteetaten/frontend-components/Card';
@@ -12,24 +14,7 @@ import moment from 'moment';
 
 const sortMonths = (a, b) => moment(a, 'MMMM').diff(moment(b, 'MMMMM'));
 
-const selectedColums = [
-  'grp',
-  'jan',
-  'feb',
-  'mar',
-  'mai',
-  'apr',
-  'mai',
-  'jun',
-  'jul',
-  'aug',
-  'sep',
-  'okt',
-  'nov',
-  'des'
-];
-
-const columns = [
+const mockColumns = [
   {
     name: 'Gruppe',
     fieldName: 'grp',
@@ -38,7 +23,7 @@ const columns = [
     autohideSorting: false
   },
   {
-    name: 'Januer',
+    name: 'Januar',
     fieldName: 'jan',
     alignment: 'right',
     sortable: false,
@@ -127,7 +112,7 @@ function formatNumber(count) {
   return `${new Intl.NumberFormat('no-NB').format(count)}`;
 }
 
-const data = [
+const mockData = [
   {
     grp: 'Fastlønn',
     jan: formatNumber(64793),
@@ -159,7 +144,20 @@ const data = [
     des: formatNumber(0)
   }
 ];
-const dropdownItems = getDropdownItems(columns);
+const dropdownItems = colums => {
+  let items = [];
+
+  colums &&
+    colums.forEach(item => {
+      items.push({ key: item.fieldName, text: item.name });
+    });
+
+  return items;
+};
+
+const [selectedColums, setSelectedColums] = React.useState(
+  mockColumns.map(item => item.fieldName)
+);
 
 function getDropdownItems(colums) {
   let items = [];
@@ -169,6 +167,16 @@ function getDropdownItems(colums) {
   });
 
   return items;
+}
+
+function onChange(item) {
+  if (item) {
+    setSelectedColums(
+      item.selected
+        ? [...selectedColums, item.key]
+        : selectedColums.filter(key => key !== item.key)
+    );
+  }
 }
 
 function isSelected(selectItems, key) {
@@ -184,25 +192,23 @@ function isSelected(selectItems, key) {
     margin="large"
   >
     <p>
-      Tabeller er gode når man skal sammenligne opplysninger, men hvis det blir
-      for mye informasjon i dem kan de fort bli uoversiktlige. Det første vi
-      anbefaler er derfor å stille spørsmål til om du er <em>helt sikker</em> på
-      at du trenger å vise alle opplysningene; vurder om det er noe du kan
-      fjerne eller like gjerne kan vise et annet sted. Men i de tilfellene hvor
-      tabellene er og blir store, er det noen mønstre som kan være nyttige.
+      Tabeller er gode når man skal sammenligne opplysninger, men kan bli
+      uoversiktlige med mye informasjon. Vurder derfor om noe kan fjernes eller
+      vises et annet sted. Dersom du allikevel må bruke stor tabell, anbefaler
+      vi følgende mønstre:
     </p>
     <ul>
       <li>
-        Legg de mest sentrale opplysningene i tabellen til venstre slik at de
-        leses først og kuttes sist.
+        Plasser de mest sentrale opplysningene til venstre. De vil leses først
+        og kuttes/skjules sist.
       </li>
       <li>
-        Skjul eller fjern kolonner som ikke er nødvendige. Hvis behovet varierer
-        kan du la brukeren vise/skjule kolonner selv.
+        Vis kun kolonner som er nødvendige. For større fleksibilitet kan du la
+        brukeren vise/skjule kolonner selv.
       </li>
       <li>
-        Det er ok å bruke horisontal skroll på en tabell som er for bred for
-        mobil. Unngå horisontal skrolling på store skjermer.
+        Horisontal skroll er ok i tabeller som er for brede på mobil. Unngå
+        horisontal skroll på stor skjerm.
       </li>
     </ul>
   </Card>
@@ -217,13 +223,12 @@ function isSelected(selectItems, key) {
       stepId={'step-1'}
     >
       <p>
-        Dersom en tabell blir for stor på små skjermer kan vi bruke horisontal
-        skrolling.
+        For store tabeller på små skjermer, kan du benytte horisontal skroll:
       </p>
       <div style={{ maxWidth: '500px', overflowX: 'visible' }}>
         <Table
-          data={data}
-          columns={columns}
+          data={mockData}
+          columns={mockColumns}
           openEditableOnRowClick
           compactTable={false}
           caption="Månedsoversikt"
@@ -236,10 +241,7 @@ function isSelected(selectItems, key) {
       headingLevel="3"
       stepId={'step-2'}
     >
-      <p>
-        Dersom en tabell blir for stor på liten skjerm kan vi presentere
-        opplysningene vertikalt i stedet.
-      </p>
+      <p>Store tabeller på små skjermer kan alternativt vises vertikalt:</p>
       <div style={{ maxWidth: '500px', overflowX: 'visible' }}>
         <h3>Månedoversikt</h3>
 
@@ -269,26 +271,28 @@ function isSelected(selectItems, key) {
       stepId={'step-3'}
     >
       <p>
-        Dersom en tabell er for bred kan vi la brukeren selv vise/skjule
-        kolonner.
+        Funksjonalitet for å vise/skjule kolonner kan være nyttig for brede
+        tabeller:
       </p>
       <div style={{ display: 'flex', justifyContent: 'space-between' }}>
         <h3>Månedoversikt</h3>
 
         <Dropdown
           label="Vis/skjul kolonner"
-          options={dropdownItems}
+          options={dropdownItems(mockColumns)}
           defaultSelectedKeys={selectedColums}
           multiSelect
-          onChange={console.log}
+          onChange={(event, item) => onChange(item)}
           style={{ maxWidth: '200px' }}
           caption="Månedsoversikt"
         />
       </div>
 
       <Table
-        data={data}
-        columns={columns}
+        data={mockData}
+        columns={mockColumns.filter(item =>
+          selectedColums.includes(item.fieldName)
+        )}
         openEditableOnRowClick
         compactTable={true}
         caption="Månedsoversikt"
