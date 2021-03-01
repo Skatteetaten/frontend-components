@@ -402,6 +402,10 @@ const iconGroup = {
     {
       name: 'Ekteskap',
       usage: 'Ekteskap'
+    },
+    {
+      name: 'Chatbot',
+      usage: 'Chatbot - systemikon'
     }
   ],
   manipulate: [
@@ -617,6 +621,10 @@ const iconGroup = {
     {
       name: 'TemaBoligEiendeler',
       usage: 'Bolig og eiendeler '
+    },
+    {
+      name: 'TemaChatbot',
+      usage: 'Chatbot - stor utgave'
     },
     {
       name: 'TemaFamilie',
