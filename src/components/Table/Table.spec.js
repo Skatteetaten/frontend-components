@@ -248,17 +248,21 @@ describe('Table komponent', () => {
     expect(tableRows.at(0).exists('#edit')).toEqual(true);
   });
   it('tegner Table med en rad og en underrad', () => {
-    const dataMedUnderlinjer = [{
-      Måned: 'Februar',
-      Beløp: 100,
-      Dekningsgrad: '50%',
-      Avkastning: '500',
-      children: [{
-        Beløp: 1000,
+    const dataMedUnderlinjer = [
+      {
+        Måned: 'Februar',
+        Beløp: 100,
         Dekningsgrad: '50%',
-        Avkastning: '5000',
-      }]
-    }];
+        Avkastning: '500',
+        children: [
+          {
+            Beløp: 1000,
+            Dekningsgrad: '50%',
+            Avkastning: '5000'
+          }
+        ]
+      }
+    ];
     const wrapper = oppsettMount({
       data: dataMedUnderlinjer,
       columns,
@@ -270,6 +274,6 @@ describe('Table komponent', () => {
     expect(wrapper.find('TableRow').length).toEqual(1);
 
     const tableRow = wrapper.find('TableRow');
-    expect(tableRow.find('tr').length).toEqual(2)
+    expect(tableRow.find('tr').length).toEqual(2);
   });
 });
