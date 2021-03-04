@@ -502,6 +502,168 @@ const data = [
 />;
 ```
 
+Tabellen kan ha bare noen linjer som er editerbare. Den kan også ha underlinjer. Begge disse er styrt av felter på selve rad dataen. 
+hideEdit vil gjemme edit knappen. Underlinjer kan legges inn i children feltet. Underlinjer vil ikke vises i edit modus og har ikke egen edit knapp. 
+
+```js
+import Table from '@skatteetaten/frontend-components/Table';
+import Grid from '@skatteetaten/frontend-components/Grid';
+import TextField from '@skatteetaten/frontend-components/TextField';
+import IconButton from '@skatteetaten/frontend-components/IconButton';
+import LabelWithCallout from '@skatteetaten/frontend-components/LabelWithCallout';
+
+import moment from 'moment';
+
+const wrapperStyle = {
+  backgroundColor: '#f9ede2',
+  padding: 12
+};
+
+const blockCenterStyle = {
+  textAlign: 'center',
+  marginTop: 20
+};
+
+const tableStyle = {
+  background: 'red',
+  marginTop: 20
+};
+
+const caption = (
+  <LabelWithCallout
+    label={'Månedsoversikt'}
+    help={'Oversikt over beløp og dekningsgrad i perioden.'}
+  />
+);
+
+const editableContent = (data, close, rowIndex) => (
+  <div style={wrapperStyle}>
+    <p>
+      <strong>{data.Måned}</strong>
+    </p>
+
+    <Grid>
+      <Grid.Row>
+        <Grid.Col lg={3}>
+          <TextField
+            id={'textfield-1'}
+            box
+            calloutFloating={false}
+            withLeadingIcon="search"
+            label="Beløp"
+            placeholder={''}
+            help="Hjelpetekst som omhandler beløp."
+          />
+        </Grid.Col>
+        <Grid.Col lg={3}>
+          <TextField
+            id={'textfield-2'}
+            box
+            calloutFloating={false}
+            withLeadingIcon="search"
+            label="Dekningsgrad"
+            placeholder={''}
+            help="Hjelpetekst som omhandler dekningsgrad"
+          />
+        </Grid.Col>
+        <Grid.Col lg={3}>
+          <TextField
+            id={'textfield-3'}
+            box
+            calloutFloating={false}
+            withLeadingIcon="search"
+            label="Avkastning"
+            placeholder={''}
+            help="Hjelpetekst som omhandler avkastning"
+          />
+        </Grid.Col>
+        <Grid.Col lg={3}>
+          <div style={blockCenterStyle}>
+            <IconButton title="Lagre" circle icon="Check" />
+            {'  '}
+            <IconButton
+              onClick={close}
+              title="Angre"
+              circle
+              icon="Cancel"
+            />{' '}
+            <IconButton title="Slett" circle icon="Delete" />{' '}
+          </div>
+        </Grid.Col>
+      </Grid.Row>
+    </Grid>
+  </div>
+);
+
+const sortMonths = (a, b) =>parseInt(a) - parseInt(b);
+
+const columns = [
+  {
+    name: 'Mva-kode',
+    fieldName: 'kode',
+    sortable: true,
+    sortingFunction: sortMonths,
+    autohideSorting: false
+  },
+  {
+    name: 'Beskrivelse',
+    fieldName: 'beskrivelse',
+  },
+  {
+    name: 'Grunnlag',
+    fieldName: 'grunnlag',
+    alignment: 'right'
+  },
+  {
+    name: 'Sats',
+    fieldName: 'sats',
+    alignment: 'right'
+  },
+  {
+    name: 'Mva',
+    fieldName: 'mva',
+    alignment: 'right'
+  }
+];
+
+const data = [
+  {
+    kode: '3',
+    beskrivelse: "Kjøp",
+    grunnlag: '10 000',
+    sats: '25%',
+    mva: '2 500',
+    children: [  {
+      beskrivelse: "Fradrag",
+      sats: '25%',
+      mva: '-2 500'
+    }]
+  },
+  {
+    kode: '1',
+    beskrivelse: 'Salg av varer',
+    grunnlag: '60 000',
+    sats: '25%',
+    mva: '15 000',
+    hideEdit: true
+  },
+ {
+    kode: '2',
+    beskrivelse: 'Salg av tjenester',
+    sats: '25%',
+    mva: '15 500',
+  },
+];
+
+<Table
+  data={data}
+  editableContent={editableContent}
+  editableRows={[0,2]}
+  columns={columns}
+/>;
+```
+
+
 ```js noeditor uu
 <>
   <h3>Tips</h3>
