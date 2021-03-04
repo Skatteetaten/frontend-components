@@ -242,7 +242,8 @@ const TableRow = <P extends object>(props: TableRowProps<P>) => {
         key={rowIndex}
         className={classnames({
           clickable: openEditableOnRowClick,
-          separator: showRowSeparator && !isExpandableRowOpen && !data.children
+          separator:
+            showRowSeparator && !isExpandableRowOpen && !data['children']
         })}
       >
         {actionButtonsBefore && actionButtons}
@@ -262,15 +263,15 @@ const TableRow = <P extends object>(props: TableRowProps<P>) => {
         </tr>
       )}
       {!isEditableRowOpen &&
-        !!data.children &&
-        data.children.length > 0 &&
-        data.children.map((child, childIndex) => {
+        !!data['children'] &&
+        data['children'].length > 0 &&
+        data['children'].map((child, childIndex) => {
           return (
             <tr
               key={rowIndex + 'child' + childIndex}
               className={classnames({
                 separator:
-                  showRowSeparator && childIndex === data.children.length - 1
+                  showRowSeparator && childIndex === data['children'].length - 1
               })}
             >
               {actionButtonsBefore && <td />}

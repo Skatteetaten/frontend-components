@@ -502,8 +502,8 @@ const data = [
 />;
 ```
 
-Tabellen kan ha bare noen linjer som er editerbare. Den kan også ha underlinjer. Begge disse er styrt av felter på selve rad dataen. 
-hideEdit vil gjemme edit knappen. Underlinjer kan legges inn i children feltet. Underlinjer vil ikke vises i edit modus og har ikke egen edit knapp. 
+Tabellen kan ha bare noen linjer som er editerbare. Den kan også ha underlinjer. Begge disse er styrt av felter på selve rad dataen.
+hideEdit vil gjemme edit knappen. Underlinjer kan legges inn i children feltet. Underlinjer vil ikke vises i edit modus og har ikke egen edit knapp.
 
 ```js
 import Table from '@skatteetaten/frontend-components/Table';
@@ -595,7 +595,7 @@ const editableContent = (data, close, rowIndex) => (
   </div>
 );
 
-const sortMonths = (a, b) =>parseInt(a) - parseInt(b);
+const sortMonths = (a, b) => parseInt(a) - parseInt(b);
 
 const columns = [
   {
@@ -607,7 +607,7 @@ const columns = [
   },
   {
     name: 'Beskrivelse',
-    fieldName: 'beskrivelse',
+    fieldName: 'beskrivelse'
   },
   {
     name: 'Grunnlag',
@@ -629,15 +629,17 @@ const columns = [
 const data = [
   {
     kode: '3',
-    beskrivelse: "Kjøp",
+    beskrivelse: 'Kjøp',
     grunnlag: '10 000',
     sats: '25%',
     mva: '2 500',
-    children: [  {
-      beskrivelse: "Fradrag",
-      sats: '25%',
-      mva: '-2 500'
-    }]
+    children: [
+      {
+        beskrivelse: 'Fradrag',
+        sats: '25%',
+        mva: '-2 500'
+      }
+    ]
   },
   {
     kode: '1',
@@ -647,22 +649,21 @@ const data = [
     mva: '15 000',
     hideEdit: true
   },
- {
+  {
     kode: '2',
     beskrivelse: 'Salg av tjenester',
     sats: '25%',
-    mva: '15 500',
-  },
+    mva: '15 500'
+  }
 ];
 
 <Table
   data={data}
   editableContent={editableContent}
-  editableRows={[0,2]}
+  editableRows={[0, 2]}
   columns={columns}
 />;
 ```
-
 
 ```js noeditor uu
 <>
