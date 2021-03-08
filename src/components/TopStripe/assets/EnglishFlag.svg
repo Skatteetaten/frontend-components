@@ -1,0 +1,25 @@
+<svg id="Layer_1" style="enable-background:new 0 0 512 512;" height="13.42" width="23" version="1.1" viewBox="0 100 512 291" xml:space="preserve"
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink">
+    <style type="text/css">
+	.st3{fill:#ffffff;}
+	.st4{fill:#bd0034;}
+	.st5{fill:#1a237b;}
+    </style>
+    <g>
+        <rect class="st3" height="298.7" width="512" y="106.7"/>
+        <polygon class="st4" points="342.8,214.7 512,119.9 512,106.7 500.3,106.7 307.4,214.7  "/>
+        <polygon class="st4" points="334.8,303.4 512,402.5 512,382.7 370.2,303.4  "/>
+        <polygon class="st4" points="0,129.4 151.5,214.7 187,214.7 0,109.5  "/>
+        <polygon class="st4" points="178.9,303.4 0,403.6 0,405.4 32.3,405.4 214.4,303.4  "/>
+        <polygon class="st5" points="477,106.7 297.7,106.7 297.7,207.1  "/>
+        <polygon class="st5" points="218.5,106.7 40,106.7 218.5,207.1  "/>
+        <polygon class="st5" points="512,214.7 512,146.1 390.4,214.7  "/>
+        <polygon class="st5" points="512,371.1 512,303.4 390.4,303.4  "/>
+        <polygon class="st5" points="50.1,405.4 218.5,405.4 218.5,310.9  "/>
+        <polygon class="st5" points="297.7,405.4 466.6,405.4 297.7,310.9  "/>
+        <polygon class="st5" points="0,303.4 0,374.2 125.8,303.4  "/>
+        <polygon class="st5" points="0,214.7 125.8,214.7 0,143.7  "/>
+        <polygon class="st4" points="234.4,106.7 234.4,232.4 0,232.4 0,285.6 234.4,285.6 234.4,405.4 281.9,405.4 281.9,285.6 512,285.6    512,232.4 281.9,232.4 281.9,106.7  "/>
+    </g>
+</svg>

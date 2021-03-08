@@ -153,7 +153,7 @@ export const getClassNames = () => {
       }
     },
     dropdownContainer: {
-      minWidth: '100px',
+      minWidth: '10rem',
       position: 'absolute',
       backgroundColor: palette.skeColor.blackAlt,
       color: palette.skeColor.white,
