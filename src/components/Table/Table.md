@@ -662,6 +662,8 @@ const data = [
   editableContent={editableContent}
   editableRows={[0, 2]}
   columns={columns}
+  caption={'Eksempel med sammenslåtte rader'}
+  hideCaption={true}
 />;
 ```
 

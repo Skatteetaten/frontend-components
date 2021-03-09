@@ -86,6 +86,8 @@ const TableRow = <P extends object>(props: TableRowProps<P>) => {
     }
   }, [expandCollapseCellRef, focusRow, rowIndex]);
 
+  const childrenLength = !!data['children'] ? data['children'].length : 0;
+
   const editButton = (
     <span
       className={classnames('cellContent', {
@@ -100,6 +102,7 @@ const TableRow = <P extends object>(props: TableRowProps<P>) => {
         disabled={editModeActive || expandableModeActive}
         type="button"
         buttonSize={compactTable ? 'xSmall' : 'default'}
+        aria-describedby={tableId.concat(rowIndex.toString(), '_0')}
       />
     </span>
   );
@@ -149,7 +152,11 @@ const TableRow = <P extends object>(props: TableRowProps<P>) => {
   const actionButtons =
     editableRow || expandableRows ? (
       <>
-        {editableRow && <td>{editButton}</td>}
+        {editableRow && (
+          <td className={classnames('separator')} rowSpan={childrenLength + 1}>
+            {editButton}
+          </td>
+        )}
         {expandableRows && <ExpandCollapseButton open={isExpandableRowOpen} />}
       </>
     ) : null;
@@ -187,7 +194,8 @@ const TableRow = <P extends object>(props: TableRowProps<P>) => {
     rowData: P,
     rowColumns: TableRowProps<P>['columns'],
     rowKey: number,
-    isChild: boolean = false
+    isChild: boolean = false,
+    childrenLength: number = 0
   ) => {
     return columns.map((column, cellIndex) => {
       if (cellIndex > 0) {
@@ -203,22 +211,26 @@ const TableRow = <P extends object>(props: TableRowProps<P>) => {
             {renderCellContent(rowData[column.fieldName], cellIndex, isChild)}
           </td>
         );
+      } else if (!isChild) {
+        return (
+          <th
+            scope={'row'}
+            className={classnames(
+              !props.isEditableRowOpen ? 'is-closed' : '',
+              column.alignment,
+              column.hideOnMobile ? 'hideOnMobile' : '',
+              'tableRow',
+              'separator'
+            )}
+            id={tableId.concat(rowKey.toString(), '_', cellIndex.toString())}
+            key={tableId.concat(rowKey.toString(), '_', cellIndex.toString())}
+            rowSpan={childrenLength + 1}
+          >
+            {renderCellContent(rowData[column.fieldName], cellIndex, isChild)}
+          </th>
+        );
       }
-      return (
-        <th
-          scope={'row'}
-          className={classnames(
-            !props.isEditableRowOpen ? 'is-closed' : '',
-            column.alignment,
-            column.hideOnMobile ? 'hideOnMobile' : '',
-            'tableRow'
-          )}
-          id={tableId.concat(rowKey.toString(), '_', cellIndex.toString())}
-          key={tableId.concat(rowKey.toString(), '_', cellIndex.toString())}
-        >
-          {renderCellContent(rowData[column.fieldName], cellIndex, isChild)}
-        </th>
-      );
+      return null;
     });
   };
 
@@ -236,6 +248,7 @@ const TableRow = <P extends object>(props: TableRowProps<P>) => {
   }
   const actionButtonsBefore =
     tableHasScroll || expandIconPlacement === 'before';
+
   return (
     <>
       <tr
@@ -247,7 +260,7 @@ const TableRow = <P extends object>(props: TableRowProps<P>) => {
         })}
       >
         {actionButtonsBefore && actionButtons}
-        {renderRow(data, columns, rowIndex)}
+        {renderRow(data, columns, rowIndex, false, childrenLength)}
         {!actionButtonsBefore && actionButtons}
         {showExtraCol && <td />}
       </tr>
@@ -264,7 +277,7 @@ const TableRow = <P extends object>(props: TableRowProps<P>) => {
       )}
       {!isEditableRowOpen &&
         !!data['children'] &&
-        data['children'].length > 0 &&
+        childrenLength > 0 &&
         data['children'].map((child, childIndex) => {
           return (
             <tr
