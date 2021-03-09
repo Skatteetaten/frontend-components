@@ -194,8 +194,7 @@ const TableRow = <P extends object>(props: TableRowProps<P>) => {
     rowData: P,
     rowColumns: TableRowProps<P>['columns'],
     rowKey: number,
-    isChild: boolean = false,
-    childrenLength: number = 0
+    isChild: boolean = false
   ) => {
     return columns.map((column, cellIndex) => {
       if (cellIndex > 0) {
@@ -260,7 +259,7 @@ const TableRow = <P extends object>(props: TableRowProps<P>) => {
         })}
       >
         {actionButtonsBefore && actionButtons}
-        {renderRow(data, columns, rowIndex, false, childrenLength)}
+        {renderRow(data, columns, rowIndex, false)}
         {!actionButtonsBefore && actionButtons}
         {showExtraCol && <td />}
       </tr>
