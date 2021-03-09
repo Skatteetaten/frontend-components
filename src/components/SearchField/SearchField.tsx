@@ -270,13 +270,13 @@ const SearchField: React.FC<SearchFieldProps> = props => {
             type={'search'}
             className={classnames(styles.main, className)}
             onChange={(ev, newValue) => {
+              onChange && onChange(ev, newValue);
               if (!newValue) {
                 setDropdownVisible(false);
               } else {
                 setSearchResult(newValue);
               }
               setValue(newValue);
-              onChange && onChange(ev, newValue);
             }}
             onKeyDown={ev => handleOnKeyDown(ev)}
             value={value}
