@@ -1,16 +1,19 @@
-<svg id="Layer_1" height="13.42" width="23" version="1.1" viewBox="0 100 512 291" xml:space="preserve"
-    xmlns="http://www.w3.org/2000/svg"
-    xmlns:xlink="http://www.w3.org/1999/xlink">
-    <style type="text/css">
+<!-- 
 	.st0{fill:#dc1e39;}
 	.st1{fill:#ffffff;}
-	.st2{fill:#262d65;}
-    </style>
-    <g>
-        <rect class="st0" height="298.7" width="512" y="106.7"/>
-        <rect class="st1" height="298.7" width="74.7" x="112" y="106.7"/>
-        <rect class="st1" height="74.7" width="512" y="218.7"/>
-        <rect class="st2" height="298.7" width="37.3" x="130.7" y="106.7"/>
-        <rect class="st2" height="37.3" width="512" y="237.3"/>
-    </g>
+	.st2{fill:#262d65;} -->
+
+
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" height="14" version="1.1" viewBox="0 0 22 16">
+	<title>Flag of Norway</title>
+	<rect width="22" height="16" fill="#C8102E"/>
+	<g fill="#fff">
+		<rect width="4" height="16" x="6"/>
+		<rect width="22" height="4" y="6"/>
+	</g>
+	<g fill="#00205B">
+		<rect width="2" height="16" x="7"/>
+		<rect width="22" height="2" y="7"/>
+	</g>
 </svg>
