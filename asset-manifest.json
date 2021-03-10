@@ -1,9 +1,9 @@
 {
   "files": {
     "main.css": "/static/css/main.dc9a9f4d.chunk.css",
-    "main.js": "/build/main.edf4c309.js",
+    "main.js": "/build/main.7f849b08.js",
     "runtime-main.js": "/build/bundle.c6779e55.js",
-    "build/2.e993a020.js": "/build/2.e993a020.js",
+    "build/2.2ddc424b.js": "/build/2.2ddc424b.js",
     "assets/png/Byggeklosser.png": "/assets/png/Byggeklosser.png",
     "assets/png/Byggeklosser_skisse.png": "/assets/png/Byggeklosser_skisse.png",
     "assets/png/designer.png": "/assets/png/designer.png",
@@ -25,16 +25,16 @@
     "assets/svg/ske-logo-intern-kopi.svg": "/assets/svg/ske-logo-intern-kopi.svg",
     "assets/svg/ske-logo-intern.svg": "/assets/svg/ske-logo-intern.svg",
     "assets/svg/ske-logo.svg": "/assets/svg/ske-logo.svg",
-    "build/2.e993a020.js.LICENSE.txt": "/build/2.e993a020.js.LICENSE.txt",
+    "build/2.2ddc424b.js.LICENSE.txt": "/build/2.2ddc424b.js.LICENSE.txt",
     "favicon.ico": "/favicon.ico",
     "index.html": "/index.html",
     "manifest.json": "/manifest.json",
     "static/css/main.dc9a9f4d.chunk.css.map": "/static/css/main.dc9a9f4d.chunk.css.map",
-    "static/media/SkeIconfont.0a9dc76d.svg": "/static/media/SkeIconfont.0a9dc76d.svg",
-    "static/media/SkeIconfont.6031d566.woff": "/static/media/SkeIconfont.6031d566.woff",
-    "static/media/SkeIconfont.c9e023b2.woff2": "/static/media/SkeIconfont.c9e023b2.woff2",
-    "static/media/SkeIconfont.de123fca.ttf": "/static/media/SkeIconfont.de123fca.ttf",
-    "static/media/SkeIconfont.ec6f71d4.eot": "/static/media/SkeIconfont.ec6f71d4.eot",
+    "static/media/SkeIconfont.6fbc805b.woff": "/static/media/SkeIconfont.6fbc805b.woff",
+    "static/media/SkeIconfont.746b1322.ttf": "/static/media/SkeIconfont.746b1322.ttf",
+    "static/media/SkeIconfont.840af99b.svg": "/static/media/SkeIconfont.840af99b.svg",
+    "static/media/SkeIconfont.a4f638a5.eot": "/static/media/SkeIconfont.a4f638a5.eot",
+    "static/media/SkeIconfont.e6735bce.woff2": "/static/media/SkeIconfont.e6735bce.woff2",
     "static/media/footerDekor.416cfac2.svg": "/static/media/footerDekor.416cfac2.svg",
     "static/media/materialdesignicons-webfont.3584b5e5.eot": "/static/media/materialdesignicons-webfont.3584b5e5.eot",
     "static/media/materialdesignicons-webfont.3a6518ff.woff": "/static/media/materialdesignicons-webfont.3a6518ff.woff",
@@ -51,8 +51,8 @@
   },
   "entrypoints": [
     "build/bundle.c6779e55.js",
-    "build/2.e993a020.js",
+    "build/2.2ddc424b.js",
     "static/css/main.dc9a9f4d.chunk.css",
-    "build/main.edf4c309.js"
+    "build/main.7f849b08.js"
   ]
 }
