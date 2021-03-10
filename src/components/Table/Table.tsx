@@ -20,7 +20,10 @@ interface TableProps<P> extends React.HTMLAttributes<HTMLDivElement> {
   id?: string;
   /** Content elements in the table */
   data: P[];
-  /**  Allows you ti edut rows in the table */
+  /**  Allows you to edit rows in the table.
+   *  Use a boolean for if all the rows should be editable.
+   *  If only a subset of the rows should be editable, use an array of indexes of the rows. NOTE: not compatiable with sorting
+   * */
   editableRows?: boolean;
   /** Placement of expansion button in the table, the default is 'after' */
   expandIconPlacement?: 'after' | 'before';
@@ -69,7 +72,10 @@ interface TableProps<P> extends React.HTMLAttributes<HTMLDivElement> {
   }[];
   /** Language selection for what the screen reader reads out. Default is Norwegian Bokmål */
   language?: Language;
-  /** Show separators between rows */
+  /** Show separators between rows
+   *  Use a boolean for if all the rows should have seperators.
+   *  If only a subset of the rows should have seperators, use an array of indexes of the rows. NOTE: not compatiable with sorting
+   * */
   showRowSeparators?: boolean;
   /** Reduce font size and height on rows for a more compact table */
   compactTable?: boolean;
