@@ -97,7 +97,7 @@ const TableRow = <P extends object>(props: TableRowProps<P>) => {
       <IconButton
         className={'editButton'}
         onClick={() => onEditRow(rowIndex)}
-        title={t('tablerow.title')}
+        title={t('tablerow.editable.title')}
         icon="Edit"
         disabled={editModeActive || expandableModeActive}
         type="button"
