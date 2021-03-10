@@ -144,9 +144,10 @@ exports[`Table komponent matcher snapshot 1`] = `
             key="0"
           >
             <th
-              className="is-closed tableRow"
+              className="is-closed tableRow separator"
               id="table-10_0"
               key="table-10_0"
+              rowSpan={1}
               scope="row"
             >
               <div
@@ -230,9 +231,10 @@ exports[`Table komponent matcher snapshot 1`] = `
             key="1"
           >
             <th
-              className="is-closed tableRow"
+              className="is-closed tableRow separator"
               id="table-11_0"
               key="table-11_0"
+              rowSpan={1}
               scope="row"
             >
               <div
@@ -316,9 +318,10 @@ exports[`Table komponent matcher snapshot 1`] = `
             key="2"
           >
             <th
-              className="is-closed tableRow"
+              className="is-closed tableRow separator"
               id="table-12_0"
               key="table-12_0"
+              rowSpan={1}
               scope="row"
             >
               <div
@@ -402,9 +405,10 @@ exports[`Table komponent matcher snapshot 1`] = `
             key="3"
           >
             <th
-              className="is-closed tableRow"
+              className="is-closed tableRow separator"
               id="table-13_0"
               key="table-13_0"
+              rowSpan={1}
               scope="row"
             >
               <div

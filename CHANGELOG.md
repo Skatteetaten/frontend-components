@@ -1,3 +1,10 @@
+### **v.3.8.1 - 10.03.2021 **
+
+- Table: now supports spanned rows and has the ability to hide edit buttons on separate rows.
+- SearchField: ability to run onChange before setting search results.
+- DatePicker: fixes a bug where initPickerDate was ignored.
+- Added chatbot icons.
+
 ### **v.3.8.0 - 25.02.2021 **
 
 - A new section containing recommended patterns.

@@ -72,6 +72,12 @@ export const getClassNames = props => {
             '.cellContentLarge': {
               padding: '12px'
             },
+            '.cellContentChildRow': {
+              padding: '0px 12px 12px 12px'
+            },
+            '.cellContentHideEdit': {
+              minHeight: '60px'
+            },
             '.cellContent.clickable': {
               paddingTop: '8px',
               paddingBottom: '8px'
