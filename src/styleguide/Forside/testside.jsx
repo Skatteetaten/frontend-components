@@ -1422,7 +1422,19 @@ function Testside(props) {
       </Card>
       <h2>OpenClose</h2>
 
-      <OpenClose title={'Inntekter som skattlegges i ordningen'}>
+      <OpenClose title={'Standard åpne/lukke'}>
+        <div>Innhold inni en div</div>
+      </OpenClose>
+
+      <OpenClose iconRight title={'Ikonet til høyre'}>
+        <div>Innhold inni en div</div>
+      </OpenClose>
+
+      <OpenClose compact title={'Kompakt versjon'}>
+        <div>Innhold inni en div</div>
+      </OpenClose>
+
+      <OpenClose compact iconRight title={'Ikon til høyre (kompakt)'}>
         <div>Innhold inni en div</div>
       </OpenClose>
       <h2>CommandBar</h2>
