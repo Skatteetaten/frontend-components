@@ -3,8 +3,10 @@ import { getTheme } from '@uifabric/styling';
 import { FontSizes, FontWeights, IconFontSizes } from '..';
 import { PaletteProps } from '..';
 
-export function getClassNames() {
+export function getClassNames(props) {
   const palette = getTheme().palette as PaletteProps;
+  const { compact, iconRight } = props;
+
   return mergeStyleSets({
     toggleButton: {
       display: 'flex',
@@ -13,13 +15,14 @@ export function getClassNames() {
       alignItems: 'center',
       border: 'none',
       color: palette.skeColor.blue,
-      fontSize: FontSizes.medium,
+      fontSize: props.compact ? FontSizes.medium : FontSizes.smallPlus,
+      padding: 0,
       fontWeight: FontWeights.bold,
       background: 'none',
       cursor: 'pointer',
       selectors: {
         '@media (min-width: 640px)': {
-          fontSize: FontSizes.largePlus
+          fontSize: compact ? FontSizes.medium : FontSizes.largePlus
         },
         '&:hover, &:focus': {
           background: palette.skeColor.lightBlue
@@ -28,30 +31,40 @@ export function getClassNames() {
           outline: 'none'
         },
         '& h1, h2, h3, h4, h5, h6': {
-          fontSize: FontSizes.largePlus,
+          fontSize: compact ? FontSizes.medium : FontSizes.largePlus,
           margin: '0'
         },
         '& i': {
           transition: '.2s',
-          fontSize: IconFontSizes.xlarge,
+          padding: 0,
+          marginLeft: compact
+            ? iconRight
+              ? '4px'
+              : '-4px'
+            : iconRight
+            ? '8px'
+            : '-8px',
+          fontSize: compact ? IconFontSizes.small : IconFontSizes.xxlarge,
           selectors: {
             '@media (min-width: 640px)': {
-              fontSize: IconFontSizes.xxlarge
+              fontSize: compact ? IconFontSizes.large : IconFontSizes.xxlarge
             }
           }
         }
       }
     },
     content: {
-      padding: '8px 0 16px 8px',
-      marginLeft: '2em'
+      padding: '8px 0',
+      marginLeft: compact ? '18px' : '26px',
+      marginBottom: '8px'
     },
     contentWhenIconRight: {
-      padding: '8px 0 16px 8px',
-      marginLeft: '16px'
+      padding: '8px 0',
+      marginLeft: compact ? '18px' : '16px',
+      marginBottom: '8px'
     },
     heading: {
-      fontSize: FontSizes.largePlus,
+      fontSize: compact ? FontSizes.medium : FontSizes.largePlus,
       margin: '0'
     },
     toggleButtonOpen: {

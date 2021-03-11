@@ -15,6 +15,8 @@ export interface OpenCloseProps {
   headingLevel?: number;
   /** By default er ikonet for åpning til venstre. Kan overstyres med iconRight: true. */
   iconRight?: boolean;
+  /** Display as a compact version with smaller font size and margins */
+  compact?: boolean;
   /** Overstyring av stiler */
   className?: string;
   /** Elementene som vises/skjules når bruker ekspanderer/kollapser.*/
@@ -27,6 +29,7 @@ const OpenClose: React.FC<OpenCloseProps> = props => {
     className,
     headingLevel,
     iconRight,
+    compact,
     onClick,
     children
   } = props;
@@ -44,7 +47,7 @@ const OpenClose: React.FC<OpenCloseProps> = props => {
     toggleVisibility();
   };
 
-  const styles = getClassNames();
+  const styles = getClassNames(props);
 
   return (
     <div className={className}>

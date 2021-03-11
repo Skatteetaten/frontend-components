@@ -10,28 +10,52 @@ import Typography from '@skatteetaten/frontend-components/Typography';
 const paraStyle = {
   marginBlockStart: '0'
 };
+<>
+  <OpenClose title={'Inntekter som skattlegges i ordningen'}>
+    <Typography>
+      <p style={paraStyle}>
+        Arbeidsgiveren din/den som utbetaler skal trekke kildeskatt av følgende
+        inntekter:
+      </p>
+      <ul>
+        <li>
+          lønn og andre godtgjørelser fra kilder i Norge for arbeid utført i
+          Norge, inkludert feriepenger
+        </li>
+        <li>godtgjørelser til direktør eller styremedlem i selskap i Norge</li>
+        <li>gratiale, tantieme eller lignende ytelser fra norske selskap</li>
+        <li>lønn til utleid utenlandsk arbeidstaker, inkludert feriepenger</li>
+        <li>
+          utgiftsgodtgjørelser, refusjoner og naturalytelser som er
+          skattepliktige fordeler for deg, inkludert dekning av pendlerkostnader
+        </li>
+      </ul>
+    </Typography>
+  </OpenClose>
 
-<OpenClose title={'Inntekter som skattlegges i ordningen'}>
-  <Typography>
-    <p style={paraStyle}>
-      Arbeidsgiveren din/den som utbetaler skal trekke kildeskatt av følgende
-      inntekter:
-    </p>
-    <ul>
-      <li>
-        lønn og andre godtgjørelser fra kilder i Norge for arbeid utført i
-        Norge, inkludert feriepenger
-      </li>
-      <li>godtgjørelser til direktør eller styremedlem i selskap i Norge</li>
-      <li>gratiale, tantieme eller lignende ytelser fra norske selskap</li>
-      <li>lønn til utleid utenlandsk arbeidstaker, inkludert feriepenger</li>
-      <li>
-        utgiftsgodtgjørelser, refusjoner og naturalytelser som er skattepliktige
-        fordeler for deg, inkludert dekning av pendlerkostnader
-      </li>
-    </ul>
-  </Typography>
-</OpenClose>;
+  <br />
+  <OpenClose compact iconRight title={'Vis flere detaljer'}>
+    <Typography>
+      <p style={paraStyle}>
+        Arbeidsgiveren din/den som utbetaler skal trekke kildeskatt av følgende
+        inntekter:
+      </p>
+      <ul>
+        <li>
+          lønn og andre godtgjørelser fra kilder i Norge for arbeid utført i
+          Norge, inkludert feriepenger
+        </li>
+        <li>godtgjørelser til direktør eller styremedlem i selskap i Norge</li>
+        <li>gratiale, tantieme eller lignende ytelser fra norske selskap</li>
+        <li>lønn til utleid utenlandsk arbeidstaker, inkludert feriepenger</li>
+        <li>
+          utgiftsgodtgjørelser, refusjoner og naturalytelser som er
+          skattepliktige fordeler for deg, inkludert dekning av pendlerkostnader
+        </li>
+      </ul>
+    </Typography>
+  </OpenClose>
+</>;
 ```
 
 OpenClose som er åpen fra start:
