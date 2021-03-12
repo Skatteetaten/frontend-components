@@ -35,7 +35,11 @@ const [language, setLanguage] = useState('nb');
         eller - for å forminske.
       </div>
     </TopStripeMenu>
-    <LanguagePicker selectedLanguage={language} setLanguage={setLanguage} />
+    <LanguagePicker
+      selectedLanguage={language}
+      setLanguage={setLanguage}
+      showOnMobile={true}
+    />
     <TopStripeMenu
       showOnMobile={false}
       closeMenuAriaLabel="Lukk Language / Språk"

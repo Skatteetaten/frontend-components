@@ -4,6 +4,8 @@ import { TopStripeMenu } from './TopStripeMenu';
 import { ReactComponent as EnglishFlag } from './assets/EnglishFlag.svg';
 import { ReactComponent as NorwegianFlag } from './assets/NorwegianFlag.svg';
 import Icon from '../Icon/Icon';
+import { UseScreen } from '../utils/ScreenPlugin';
+import { getClassNames } from './LanguagePicker.classNames';
 
 enum LanguageEnum {
   BOKMAAL = 'nb',
@@ -36,46 +38,82 @@ const displayFlag = (language: LanguageEnum): JSX.Element => {
 const LanguagePickerButton = ({
   buttonLanguage,
   selectedLanguage,
-  setLanguage
-}): JSX.Element => (
-  <TopStripeButton onClick={() => setLanguage(buttonLanguage)}>
-    {buttonLanguage === selectedLanguage && <Icon iconName={'Check'} />}
-    {displayFlag(buttonLanguage)}
-    {generateLanguagePickerText(buttonLanguage)}
-  </TopStripeButton>
-);
+  setLanguage,
+  showOnMobile
+}): JSX.Element => {
+  const styles = getClassNames();
+  return (
+    <TopStripeButton
+      onClick={() => setLanguage(buttonLanguage)}
+      showOnMobile={showOnMobile}
+      className={styles.languageButton}
+    >
+      {buttonLanguage === selectedLanguage && (
+        <Icon iconName={'Check'} className={styles.checkIcon} />
+      )}
+      <span className={styles.flag}>{displayFlag(buttonLanguage)}</span>
+      <span className={styles.text}>
+        {generateLanguagePickerText(buttonLanguage)}
+      </span>
+    </TopStripeButton>
+  );
+};
 
 export interface LanguagePickerProps {
   className?: string;
   selectedLanguage: LanguageEnum;
   setLanguage: any;
+  showOnMobile?: boolean;
 }
 export const LanguagePicker: React.FC<LanguagePickerProps> = props => {
-  const { className, selectedLanguage, setLanguage } = props;
+  const {
+    className,
+    selectedLanguage,
+    setLanguage,
+    showOnMobile = false
+  } = props;
+  const styles = getClassNames();
+  const screenSize = UseScreen();
+  if (screenSize.sm && !showOnMobile) {
+    return null;
+  }
 
   return (
     <>
-      {displayFlag(selectedLanguage)}
+      <span className={styles.flag}>{displayFlag(selectedLanguage)}</span>
       <TopStripeMenu
-        showOnMobile={false}
+        showOnMobile={showOnMobile}
         title={generateLanguagePickerText(selectedLanguage)}
         className={className}
       >
-        <LanguagePickerButton
-          buttonLanguage={LanguageEnum.BOKMAAL}
-          selectedLanguage={selectedLanguage}
-          setLanguage={setLanguage}
-        />
-        <LanguagePickerButton
-          buttonLanguage={LanguageEnum.NYNORSK}
-          selectedLanguage={selectedLanguage}
-          setLanguage={setLanguage}
-        />
-        <LanguagePickerButton
-          buttonLanguage={LanguageEnum.ENGLISH}
-          selectedLanguage={selectedLanguage}
-          setLanguage={setLanguage}
-        />
+        <div className={styles.wrapper}>
+          <ul className={styles.listOfLanguages}>
+            <li>
+              <LanguagePickerButton
+                buttonLanguage={LanguageEnum.BOKMAAL}
+                selectedLanguage={selectedLanguage}
+                setLanguage={setLanguage}
+                showOnMobile={showOnMobile}
+              />
+            </li>
+            <li>
+              <LanguagePickerButton
+                buttonLanguage={LanguageEnum.NYNORSK}
+                selectedLanguage={selectedLanguage}
+                setLanguage={setLanguage}
+                showOnMobile={showOnMobile}
+              />
+            </li>
+            <li>
+              <LanguagePickerButton
+                buttonLanguage={LanguageEnum.ENGLISH}
+                selectedLanguage={selectedLanguage}
+                setLanguage={setLanguage}
+                showOnMobile={showOnMobile}
+              />
+            </li>
+          </ul>
+        </div>
       </TopStripeMenu>
     </>
   );

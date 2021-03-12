@@ -172,6 +172,12 @@ export const getClassNames = () => {
         },
         'a,i': {
           borderWidth: 0
+        },
+        '@media (max-width: 900px)': {
+          minWidth: '100%',
+          left: 0,
+          padding: 0,
+          textAlign: 'center'
         }
       }
     },
