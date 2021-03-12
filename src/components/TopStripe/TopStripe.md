@@ -39,6 +39,7 @@ const [language, setLanguage] = useState('nb');
       selectedLanguage={language}
       setLanguage={setLanguage}
       showOnMobile={true}
+      showSami={true}
     />
     <TopStripeMenu
       showOnMobile={false}

@@ -3,6 +3,7 @@ import { TopStripeButton } from './TopStripeButton';
 import { TopStripeMenu } from './TopStripeMenu';
 import { ReactComponent as EnglishFlag } from './assets/EnglishFlag.svg';
 import { ReactComponent as NorwegianFlag } from './assets/NorwegianFlag.svg';
+import { ReactComponent as SamiFlag } from './assets/SamiFlag.svg';
 import Icon from '../Icon/Icon';
 import { UseScreen } from '../utils/ScreenPlugin';
 import { getClassNames } from './LanguagePicker.classNames';
@@ -10,7 +11,8 @@ import { getClassNames } from './LanguagePicker.classNames';
 enum LanguageEnum {
   BOKMAAL = 'nb',
   NYNORSK = 'nn',
-  ENGLISH = 'en'
+  ENGLISH = 'en',
+  SAMI = 'se'
 }
 
 const generateLanguagePickerText = (language: LanguageEnum): string => {
@@ -21,6 +23,8 @@ const generateLanguagePickerText = (language: LanguageEnum): string => {
       return 'Nynorsk';
     case LanguageEnum.ENGLISH:
       return 'Engelsk';
+    case LanguageEnum.SAMI:
+      return 'Sámigiella';
   }
 };
 
@@ -32,6 +36,8 @@ const displayFlag = (language: LanguageEnum): JSX.Element => {
       return <NorwegianFlag />;
     case LanguageEnum.ENGLISH:
       return <EnglishFlag />;
+    case LanguageEnum.SAMI:
+      return <SamiFlag />;
   }
 };
 
@@ -64,13 +70,15 @@ export interface LanguagePickerProps {
   selectedLanguage: LanguageEnum;
   setLanguage: any;
   showOnMobile?: boolean;
+  showSami?: boolean;
 }
 export const LanguagePicker: React.FC<LanguagePickerProps> = props => {
   const {
     className,
     selectedLanguage,
     setLanguage,
-    showOnMobile = false
+    showOnMobile = false,
+    showSami = false
   } = props;
   const styles = getClassNames();
   const screenSize = UseScreen();
@@ -112,6 +120,16 @@ export const LanguagePicker: React.FC<LanguagePickerProps> = props => {
                 showOnMobile={showOnMobile}
               />
             </li>
+            {showSami && (
+              <li>
+                <LanguagePickerButton
+                  buttonLanguage={LanguageEnum.SAMI}
+                  selectedLanguage={selectedLanguage}
+                  setLanguage={setLanguage}
+                  showOnMobile={showOnMobile}
+                />
+              </li>
+            )}
           </ul>
         </div>
       </TopStripeMenu>
