@@ -94,44 +94,32 @@ export const LanguagePicker: React.FC<LanguagePickerProps> = props => {
         title={generateLanguagePickerText(selectedLanguage)}
         className={className}
       >
-        <div className={styles.wrapper}>
-          <ul className={styles.listOfLanguages}>
-            <li>
-              <LanguagePickerButton
-                buttonLanguage={LanguageEnum.BOKMAAL}
-                selectedLanguage={selectedLanguage}
-                setLanguage={setLanguage}
-                showOnMobile={showOnMobile}
-              />
-            </li>
-            <li>
-              <LanguagePickerButton
-                buttonLanguage={LanguageEnum.NYNORSK}
-                selectedLanguage={selectedLanguage}
-                setLanguage={setLanguage}
-                showOnMobile={showOnMobile}
-              />
-            </li>
-            <li>
-              <LanguagePickerButton
-                buttonLanguage={LanguageEnum.ENGLISH}
-                selectedLanguage={selectedLanguage}
-                setLanguage={setLanguage}
-                showOnMobile={showOnMobile}
-              />
-            </li>
-            {showSami && (
-              <li>
-                <LanguagePickerButton
-                  buttonLanguage={LanguageEnum.SAMI}
-                  selectedLanguage={selectedLanguage}
-                  setLanguage={setLanguage}
-                  showOnMobile={showOnMobile}
-                />
-              </li>
-            )}
-          </ul>
-        </div>
+        <LanguagePickerButton
+          buttonLanguage={LanguageEnum.BOKMAAL}
+          selectedLanguage={selectedLanguage}
+          setLanguage={setLanguage}
+          showOnMobile={showOnMobile}
+        />
+        <LanguagePickerButton
+          buttonLanguage={LanguageEnum.NYNORSK}
+          selectedLanguage={selectedLanguage}
+          setLanguage={setLanguage}
+          showOnMobile={showOnMobile}
+        />
+        <LanguagePickerButton
+          buttonLanguage={LanguageEnum.ENGLISH}
+          selectedLanguage={selectedLanguage}
+          setLanguage={setLanguage}
+          showOnMobile={showOnMobile}
+        />
+        {showSami && (
+          <LanguagePickerButton
+            buttonLanguage={LanguageEnum.SAMI}
+            selectedLanguage={selectedLanguage}
+            setLanguage={setLanguage}
+            showOnMobile={showOnMobile}
+          />
+        )}
       </TopStripeMenu>
     </>
   );

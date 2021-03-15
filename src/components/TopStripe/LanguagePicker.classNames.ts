@@ -3,27 +3,12 @@ import { FontSizes } from '../utils/fonts';
 
 export const getClassNames = () => {
   return mergeStyleSets({
-    wrapper: {
-      display: 'flex',
-      justifyContent: 'center'
-    },
-    listOfLanguages: {
-      display: 'flex',
-      flexDirection: 'column',
-      paddingLeft: '0',
-      selectors: {
-        '> button': {
-          width: '100%',
-          textAlign: 'left'
-        }
-      }
-    },
     languageButton: {
       padding: '4px 16px 0 24px',
       width: '100%',
       selectors: {
         '@media (max-width: 900px)': {
-          textAlign: 'left'
+          paddingLeft: 'calc(50% - 48px)'
         }
       }
     },
@@ -34,7 +19,7 @@ export const getClassNames = () => {
       marginLeft: '-24px',
       selectors: {
         '@media (max-width: 900px)': {
-          left: 'calc(50% - 72px)',
+          left: 'calc(50% - 84px)',
           width: '14px',
           margin: '0 8px',
           fontSize: FontSizes.medium + ' !important'
