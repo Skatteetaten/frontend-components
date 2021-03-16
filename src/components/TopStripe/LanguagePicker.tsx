@@ -22,7 +22,7 @@ const generateLanguagePickerText = (language: LanguageEnum): string => {
     case LanguageEnum.NYNORSK:
       return 'Nynorsk';
     case LanguageEnum.ENGLISH:
-      return 'Engelsk';
+      return 'English';
     case LanguageEnum.SAMI:
       return 'Sámigiella';
   }
