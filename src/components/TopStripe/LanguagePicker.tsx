@@ -53,6 +53,7 @@ const LanguagePickerButton = ({
       onClick={() => setLanguage(buttonLanguage)}
       showOnMobile={showOnMobile}
       className={styles.languageButton}
+      aria-current={buttonLanguage === selectedLanguage}
     >
       {buttonLanguage === selectedLanguage && (
         <Icon iconName={'Check'} className={styles.checkIcon} />
@@ -80,6 +81,23 @@ export const LanguagePicker: React.FC<LanguagePickerProps> = props => {
     showOnMobile = false,
     showSami = false
   } = props;
+  const [languages, setLanguages] = React.useState<LanguageEnum[]>([]);
+
+  React.useEffect(() => {
+    showSami
+      ? setLanguages([
+          LanguageEnum.BOKMAAL,
+          LanguageEnum.NYNORSK,
+          LanguageEnum.ENGLISH,
+          LanguageEnum.SAMI
+        ])
+      : setLanguages([
+          LanguageEnum.BOKMAAL,
+          LanguageEnum.NYNORSK,
+          LanguageEnum.ENGLISH
+        ]);
+  }, [showSami]);
+
   const styles = getClassNames();
   const screenSize = UseScreen();
   if (screenSize.sm && !showOnMobile) {
@@ -94,32 +112,16 @@ export const LanguagePicker: React.FC<LanguagePickerProps> = props => {
         title={generateLanguagePickerText(selectedLanguage)}
         className={className}
       >
-        <LanguagePickerButton
-          buttonLanguage={LanguageEnum.BOKMAAL}
-          selectedLanguage={selectedLanguage}
-          setLanguage={setLanguage}
-          showOnMobile={showOnMobile}
-        />
-        <LanguagePickerButton
-          buttonLanguage={LanguageEnum.NYNORSK}
-          selectedLanguage={selectedLanguage}
-          setLanguage={setLanguage}
-          showOnMobile={showOnMobile}
-        />
-        <LanguagePickerButton
-          buttonLanguage={LanguageEnum.ENGLISH}
-          selectedLanguage={selectedLanguage}
-          setLanguage={setLanguage}
-          showOnMobile={showOnMobile}
-        />
-        {showSami && (
-          <LanguagePickerButton
-            buttonLanguage={LanguageEnum.SAMI}
-            selectedLanguage={selectedLanguage}
-            setLanguage={setLanguage}
-            showOnMobile={showOnMobile}
-          />
-        )}
+        {languages.map(language => {
+          return (
+            <LanguagePickerButton
+              buttonLanguage={language}
+              selectedLanguage={selectedLanguage}
+              setLanguage={setLanguage}
+              showOnMobile={showOnMobile}
+            />
+          );
+        })}
       </TopStripeMenu>
     </>
   );
