@@ -1,6 +1,6 @@
 import { getTheme } from '@uifabric/styling';
 import { mergeStyleSets } from '@uifabric/merge-styles';
-import { PaletteProps } from '..';
+import { FontSizes, PaletteProps } from '..';
 
 export const getClassNames = () => {
   const palette = getTheme().palette as PaletteProps;
@@ -13,7 +13,7 @@ export const getClassNames = () => {
       paddingBottom: '6px !important'
     },
     linkIcons: {
-      fontSize: '22px',
+      fontSize: FontSizes.xLarge,
       verticalAlign: 'middle'
     },
     pageNumber: {
@@ -22,12 +22,12 @@ export const getClassNames = () => {
     },
     paginationContainer: {
       paddingTop: '24px',
-      fontSize: '16px',
+      fontSize: FontSizes.medium,
       selectors: {
         button: {
           border: 'none',
           background: 'transparent',
-          fontSize: '16px'
+          fontSize: FontSizes.medium
         },
         nav: {
           float: 'right',

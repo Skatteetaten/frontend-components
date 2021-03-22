@@ -40,13 +40,13 @@ export enum FontWeights {
 }
 
 export enum IconFontSizes {
-  xSmall = '10px',
-  small = '12px',
-  medium = '16px',
-  large = '20px',
-  xlarge = '24px',
-  xxlarge = '32px',
-  mega = '40px'
+  xSmall = '0.625rem',
+  small = '0.75rem',
+  medium = '1rem',
+  large = '1.25rem',
+  xlarge = '1.5rem',
+  xxlarge = '2rem',
+  mega = '2.5rem'
 }
 // @ts-ignore TODO
 export const createFont = (size, weight, localeCode = 'no') => {

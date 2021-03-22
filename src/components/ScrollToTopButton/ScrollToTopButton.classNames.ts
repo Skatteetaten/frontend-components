@@ -1,6 +1,6 @@
 import { mergeStyleSets } from '@uifabric/merge-styles';
 import { getTheme } from '@uifabric/styling';
-import { PaletteProps } from '..';
+import { FontSizes, PaletteProps } from '..';
 
 export const getClassNames = () => {
   const palette = getTheme().palette as PaletteProps;
@@ -64,7 +64,7 @@ export const getClassNames = () => {
       }
     },
     icon: {
-      fontSize: '40px',
+      fontSize: '2.5rem',
       color: color,
       display: 'inline'
     },
@@ -81,7 +81,7 @@ export const getClassNames = () => {
       left: '-0.2em'
     },
     label: {
-      fontSize: '13px',
+      fontSize: FontSizes.small,
       fontWeight: 700,
       textAlign: 'center',
       marginTop: '40px',

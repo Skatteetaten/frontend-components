@@ -62,7 +62,7 @@ const AccordionMenuItem = (props: AccordionMenuItemProps) => {
         <div className={menuItemTitle}>
           <div className={iconWrapper}>
             <div>
-              <Icon iconName={icon} style={{ fontSize: '28px' }} />
+              <Icon iconName={icon} style={{ fontSize: '1.75rem' }} />
             </div>
           </div>
           <div className={styleTitle}>{heading}</div>

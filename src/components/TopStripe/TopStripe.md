@@ -93,7 +93,7 @@ import Icon from '@skatteetaten/frontend-components/Icon';
     />
 
     <TopStripeMenu title={'Endre skriftstørrelse'}>
-      <div style={{ fontSize: '24px', marginTop: '8px' }}>
+      <div style={{ fontSize: '1.5rem', marginTop: '8px' }}>
         Hold Ctrl-tasten nede (Cmd-tasten på Mac). Trykk på + for å forstørre
         eller - for å forminske.
       </div>
@@ -167,7 +167,7 @@ const size = UseScreen();
     />
 
     <TopStripeMenu title={'Endre skriftstørrelse'}>
-      <div style={{ fontSize: '24px', marginTop: '8px' }}>
+      <div style={{ fontSize: '1.5rem', marginTop: '8px' }}>
         Hold Ctrl-tasten nede (Cmd-tasten på Mac). Trykk på + for å forstørre
         eller - for å forminske.
       </div>

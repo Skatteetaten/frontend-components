@@ -1,6 +1,6 @@
 import { mergeStyleSets } from '@uifabric/merge-styles';
 import { getTheme } from '@uifabric/styling';
-import { PaletteProps } from '..';
+import { FontSizes, PaletteProps } from '..';
 
 export const getClassNames = () => {
   const palette = getTheme().palette as PaletteProps;
@@ -8,7 +8,7 @@ export const getClassNames = () => {
   return mergeStyleSets({
     icon: {
       color: palette.skeColor.blue,
-      fontSize: '18px',
+      fontSize: FontSizes.large,
       verticalAlign: 'middle',
       paddingLeft: '4px',
       paddingRight: '4px',
