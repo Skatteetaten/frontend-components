@@ -43,14 +43,15 @@ export const getClassNames = () => {
         ':focus': {
           backgroundColor: palette.skeColor.white,
           color: palette.skeColor.blackAlt,
-          transition: 'none'
+          transition: 'none',
+          outline: 'none'
         }
       }
     },
     chevronIcon: {
       position: 'absolute',
-      color: 'red',
-      padding: '3px 3px'
+      fontSize: '22px',
+      padding: '2px 2px'
     },
     topStripeContainer: {
       margin: 0,
@@ -62,7 +63,7 @@ export const getClassNames = () => {
       backgroundColor: palette.skeColor.blackAlt,
       color: palette.skeColor.white,
       fontSize: FontSizes.small,
-      height: 30,
+      minHeight: '40px',
       fontWeight: FontWeights.regular,
       padding: '0 8px',
       selectors: {
@@ -89,7 +90,7 @@ export const getClassNames = () => {
           backgroundColor: palette.skeColor.white
         },
         '@media (min-width: 900px)': {
-          height: '40px',
+          minHeight: '40px',
           fontSize: FontSizes.small
         }
       }
@@ -103,7 +104,6 @@ export const getClassNames = () => {
         '.ms-Button-label': {
           margin: '2px 0 0 0',
           padding: 0,
-
           fontSize: FontSizes.small,
           color: palette.skeColor.white,
           textDecoration: 'none !important',
@@ -198,15 +198,23 @@ export const getClassNames = () => {
       verticalAlign: 'middle'
     },
     menuCloseButton: {
+      width: '100%',
       display: 'block',
       margin: '0 auto',
+
       selectors: {
-        i: {
-          color: palette.skeColor.white + '!important'
+        '.ms-Button-flexContainer': {
+          justifyContent: 'center'
         },
-        'i:hover': {
+        '.ms-Button-flexContainer:hover': {
           backgroundColor: palette.skeColor.white,
           color: palette.skeColor.blackAlt + '!important'
+        },
+        '.ms-Button-flexContainer:hover i': {
+          color: palette.skeColor.blackAlt + '!important'
+        },
+        i: {
+          color: palette.skeColor.white + '!important'
         }
       }
     }

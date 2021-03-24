@@ -70,6 +70,9 @@ export const getClassNames = () => {
     },
     iconFixateContainer: {
       background: whiteBackground,
+      borderColor: color,
+      borderWidth: '2px',
+      borderStyle: 'solid',
       borderRadius: '50%',
       height: '30px',
       width: '30px',
@@ -77,8 +80,8 @@ export const getClassNames = () => {
     },
     iconFixate: {
       position: 'absolute',
-      top: '-0.5em',
-      left: '-0.2em'
+      top: '0.4em',
+      left: '0.3em'
     },
     label: {
       fontSize: FontSizes.small,

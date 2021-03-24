@@ -5,11 +5,12 @@ exports[`Combobox komponent matcher med snapshot 1`] = `
   id="combobox-1"
 >
   <div
-    className="ms-ComboBox-container main-42"
+    aria-invalid={false}
+    className="ms-ComboBox-container main-85"
     id="combobox-1-input"
   >
     <div
-      className="ms-ComboBox css-52"
+      className="ms-ComboBox css-95"
       id="combobox-undefined-inputwrapper"
     >
       <input
@@ -18,7 +19,7 @@ exports[`Combobox komponent matcher med snapshot 1`] = `
         aria-expanded={false}
         autoCapitalize="off"
         autoComplete="off"
-        className="ms-ComboBox-Input css-53"
+        className="ms-ComboBox-Input css-96"
         data-is-interactable={true}
         data-lpignore={true}
         id="combobox-undefined-input-input"
@@ -41,7 +42,7 @@ exports[`Combobox komponent matcher med snapshot 1`] = `
       />
       <button
         aria-hidden={true}
-        className="ms-Button ms-Button--icon ms-ComboBox-CaretDown-button root-60"
+        className="ms-Button ms-Button--icon ms-ComboBox-CaretDown-button root-103"
         data-is-focusable={false}
         onBlur={[Function]}
         onClick={[Function]}
@@ -55,12 +56,12 @@ exports[`Combobox komponent matcher med snapshot 1`] = `
         type="button"
       >
         <span
-          className="ms-Button-flexContainer flexContainer-61"
+          className="ms-Button-flexContainer flexContainer-104"
           data-automationid="splitbuttonprimary"
         >
           <i
             aria-hidden={true}
-            className="ms-Icon root-37 css-68 ms-Button-icon icon-63"
+            className="ms-Icon root-37 css-111 ms-Button-icon icon-106"
             data-icon-name="ChevronDown"
             role="presentation"
             style={

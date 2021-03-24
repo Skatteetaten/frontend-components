@@ -3,19 +3,19 @@
 exports[`LabelWithCallout komponent matcher snapshot 1`] = `
 Array [
   <label
-    className="label-43"
+    className="label-86"
     id="LabelWithCallout_id"
   >
     Mock Label
   </label>,
   <span
-    className="labelIconArea-45"
+    className="labelIconArea-88"
   >
     <button
       aria-describedby="LabelWithCallout_id"
       aria-expanded={false}
       aria-label="Hjelp"
-      className="ms-Button ms-Button--icon icon-49"
+      className="ms-Button ms-Button--icon icon-92"
       data-is-focusable={true}
       onClick={[Function]}
       onKeyDown={[Function]}
@@ -27,12 +27,12 @@ Array [
       type="button"
     >
       <span
-        className="ms-Button-flexContainer flexContainer-50"
+        className="ms-Button-flexContainer flexContainer-93"
         data-automationid="splitbuttonprimary"
       >
         <i
           aria-hidden={true}
-          className="ms-Icon root-33 css-57 ms-Button-icon icon-52"
+          className="ms-Icon root-33 css-100 ms-Button-icon icon-95"
           data-icon-name="HelpOutline"
           role="presentation"
           style={

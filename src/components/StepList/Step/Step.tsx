@@ -21,7 +21,9 @@ const NumberIcon = (props: any) => {
     </div>
   );
 };
-
+/**
+ * @visibleName Step (Enkeltsteg)
+ */
 export interface StepProps extends React.HTMLAttributes<HTMLDivElement> {
   /** Action Button for endre **/
   actionBtn?: {

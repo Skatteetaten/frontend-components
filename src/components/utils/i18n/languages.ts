@@ -11,6 +11,21 @@ const languages = {
     'datepicker.nextYearAriaLabel': 'Neste år',
     'datepicker.prevMonthAriaLabel': 'Forrige måned',
     'datepicker.prevYearAriaLabel': 'Forrige år',
+    'fileuploader.accepted_file_formats': 'Aksepterte filformater:',
+    'fileuploader.add.label': 'Legg til fil(er)',
+    'fileuploader.delete.ariaLabel': 'Fjern fil',
+    'fileuploader.error.delete.403':
+      'Du har ikke rettigheter til å slette filer.',
+    'fileuploader.error.delete.general': 'Kunne ikke slette fil',
+    'fileuploader.error.file_format': 'Dette filformatet er ikke godkjent',
+    'fileuploader.error.file_size':
+      'Vi kan ikke motta denne filen fordi den er for stor. Filer kan ikke overstige {{filstoerrelsegrense}} Mb. Du kan forsøke å dele opp i flere mindre filer, eller bruke et format som tar mindre plass.',
+    'fileuploader.error.upload.403':
+      'Du har ikke rettigheter til å laste opp filer.',
+    'fileuploader.error.upload.general': 'Kunne ikke laste opp fil',
+    'searchfield.sr.focus':
+      'Bruk piltaster ned/opp for å velge forslag når de vises',
+    'searchfield.sr.results': '{{ant}} forslag vises.',
     'table.sortable': 'sorterbar',
     'table.sorted_ascending': 'sortert stigende',
     'table.sorted_descending': 'sortert synkende',
@@ -29,6 +44,19 @@ const languages = {
     'datepicker.nextYearAriaLabel': 'Neste år',
     'datepicker.prevMonthAriaLabel': 'Førre månad',
     'datepicker.prevYearAriaLabel': 'Førre år',
+    'fileuploader.accepted_file_formats': 'Aksepterte filformater:',
+    'fileuploader.add.label': 'Legg til fil(er)',
+    'fileuploader.delete.ariaLabel': 'Fjern fil',
+    'fileuploader.error.delete.403': 'Du har ikkje rettar til å sletta filer.',
+    'fileuploader.error.delete.general': 'Kunne ikkje slette fil',
+    'fileuploader.error.file_format': 'Dette filformatet er ikkje godkjent',
+    'fileuploader.error.file_size':
+      'Vi kan ikkje få denne fila fordi den er for stor. Filer kan ikkje overstiga {{filstoerrelsegrense}} Mb. Du kan prøva å dela opp i fleire mindre filer, eller bruka eit format som tar mindre plass.',
+    'fileuploader.error.upload.403':
+      'Du har ikkje rettar til å lasta opp filer.',
+    'fileuploader.error.upload.general': 'Kunne ikkje lasta opp fil',
+    'searchfield.sr.focus': 'Bruk piltastane ned/opp for å velje',
+    'searchfield.sr.results': '{{ant}} forslag visast.',
     'table.sortable': 'sorterbar',
     'table.sorted_ascending': 'sortert stigande',
     'table.sorted_descending': 'sortert søkkande',
@@ -47,6 +75,20 @@ const languages = {
     'datepicker.nextYearAriaLabel': 'Next year',
     'datepicker.prevMonthAriaLabel': 'Previous month',
     'datepicker.prevYearAriaLabel': 'Previous year',
+    'fileuploader.accepted_file_formats': 'Accepted file formats:',
+    'fileuploader.add.label': 'Add file(s)',
+    'fileuploader.delete.ariaLabel': 'Delete file',
+    'fileuploader.error.delete.403':
+      'You do not have permission to delete files',
+    'fileuploader.error.delete.general': "Can't delete file",
+    'fileuploader.error.file_format': 'This file format is not accepted',
+    'fileuploader.error.file_size':
+      'We could not receive this file because it is too large. Files cannot exceed {{filstoerrelsegrense}} Mb. You can try splitting the file into smaller files or using a format that takes up less space.',
+    'fileuploader.error.upload.403':
+      'You do not have permission to upload files',
+    'fileuploader.error.upload.general': "Can't upload file",
+    'searchfield.sr.focus': 'Use up/down to choose options when they are shown',
+    'searchfield.sr.results': '{{ant}} items shown.',
     'table.sortable': 'sortable',
     'table.sorted_ascending': 'sorted ascending',
     'table.sorted_descending': 'sorted descending',

@@ -9,6 +9,9 @@ import SearchField from '@skatteetaten/frontend-components/SearchField';
     border="slim"
     placeholder="Skriv søkeord her"
     ariaLabel="Søk"
+    keyboardShortcut={true}
+    onSearchIcon={() => alert('Du trykket på søkeikonet')}
+    searchIconTitle="Start søk"
   />
   <br />
   <SearchField
@@ -22,6 +25,7 @@ import SearchField from '@skatteetaten/frontend-components/SearchField';
 Søkefelt med resultat i dropdown:
 
 ```js
+import React from 'react';
 import SearchField from '@skatteetaten/frontend-components/SearchField';
 const options = [
   { key: '1', text: 'Banan' },
@@ -31,6 +35,7 @@ const options = [
   { key: '5', text: 'Appelsin' },
   { key: '6', text: 'Fersken' }
 ];
+const [searchTerm, setSearchTerm] = React.useState('');
 
 <div style={{ width: '300px' }}>
   <SearchField
@@ -38,28 +43,39 @@ const options = [
     searchFieldSize="standard"
     border="slim"
     placeholder="Skriv søkeord her"
-    ariaLabel="Søk"
     help="Tekst som hjelper brukeren å fylle ut feltet."
     options={options}
+    value={searchTerm}
+    onChange={(ev, value) => setSearchTerm(value)}
   />
 </div>;
 ```
 
 ```js noeditor beskrivelse
 <>
-  <h3>Markeres med ikon eller tekst</h3>
+  <h3>Tekstfelt for å søke i nettløsningen</h3>
   <p>
-    Et søkefelt skal alltid ha en markering i form av et søkeikon eller
-    alternativt en knapp med «Søk».
+    Søkefeltet lar brukeren søke i nettløsningen. Feltet skal alltid være
+    markert med et søkeikon eller en knapp med ordet «Søk».
   </p>
-  <h3>Plassering og bredde</h3>
+  <h3>Plassering og bredde på søkefelt</h3>
   <p>
-    Søkefeltet skal kun ta en del av bredden på skjermen eller området for
-    tekst. Hvis feltet blir for stort, oppfatter brukeren det som en banner.
+    Søkefeltet skal kun oppta en del av bredden på skjermen eller området for
+    tekst. Hvis feltet blir for stort, oppfatter brukeren det som et banner.
   </p>
   <p>
     Søkefeltet kan legges inni en egen container, og størrelsen kan endres
     deretter.
+  </p>
+  <p>
+    Du kan legge søkefeltet inni en egen ramme og du kan så endre størrelsen
+    deretter.
+  </p>
+  <h3>Legg til rette for tastatursnarvei i søkefeltet</h3>
+  <p>
+    Komponenten SearchField tillater at brukeren kan søke med tastatursnarvei
+    «ctrl+f» eller «command+f». For å slå dette på må du legge til prop
+    keyboardShortcut=&#123;true&#125;.
   </p>
 </>
 ```

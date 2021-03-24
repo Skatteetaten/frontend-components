@@ -10,11 +10,11 @@ import {
   IDatePickerProps
 } from 'office-ui-fabric-react/lib-commonjs/DatePicker';
 import { FirstWeekOfYear } from 'office-ui-fabric-react/lib-commonjs/utilities/dateValues/DateValues';
-import ErrorMessage from '../ErrorMessage';
 import { getClassNames } from './DatePicker.classNames';
 import LabelWithCallout, { calloutState } from '../LabelWithCallout';
 import { LabelWithCalloutProps } from '../LabelWithCallout/LabelWithCallout';
 import { useId } from '@reach/auto-id';
+import ErrorMessage from '../ErrorMessage';
 
 const DEFAULT_DATE_FORMAT = 'DD.MM.YYYY';
 
@@ -181,8 +181,8 @@ export const DatePicker: React.FC<DatePickerProps> = (
         {...labelCallout}
       />
       <FabricDatePicker
-        {...rest}
         {...defaultValues}
+        {...rest}
         id={inputId}
         ariaLabel={ariaLabel ? ariaLabel : label}
         className={classnames(

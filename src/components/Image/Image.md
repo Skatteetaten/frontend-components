@@ -34,14 +34,14 @@ import Image from '@skatteetaten/frontend-components/Image';
 
 ```js noeditor beskrivelse
 <>
-  <h3>Bilder brukes unntaksvis</h3>
+  <h3>Vi bruker sjeldent bilder</h3>
   <p>
-    Det brukes lite bilder i våre løsninger, unntaket er kampanjer på
+    Løsningene våre er stort sett uten bilder. Unntaket er kampanjer på
     skatteetaten.no og bakgrunnsbilde på oppgaveliste.
   </p>
   <p>
-    Denne komponenten hjelper til med skalering av bilder og hva som skjer når
-    bildene lastes inn.
+    Denne komponenten hjelper til med å skalere bildene og forbedrer
+    innlastingen.
   </p>
 </>
 ```

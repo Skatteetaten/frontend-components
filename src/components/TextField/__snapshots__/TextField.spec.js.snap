@@ -2,21 +2,21 @@
 
 exports[`TextField komponent matcher snapshot 1`] = `
 <div
-  className="SkeTextField-42"
+  className="SkeTextField-85"
   id="textfield-1"
 >
   <div
-    className="ms-TextField SkeTextField-50"
+    className="ms-TextField SkeTextField-94"
   >
     <div
-      className="ms-TextField-wrapper wrapper-51"
+      className="ms-TextField-wrapper wrapper-95"
     >
       <div
-        className="ms-TextField-fieldGroup fieldGroup-52"
+        className="ms-TextField-fieldGroup fieldGroup-96"
       >
         <input
           aria-invalid={false}
-          className="ms-TextField-field field-53"
+          className="ms-TextField-field field-97"
           id="textfield-1-input"
           onBlur={[Function]}
           onChange={[Function]}

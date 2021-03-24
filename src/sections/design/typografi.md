@@ -1,4 +1,4 @@
-Hvor lett noe er å lese, er avgjørende for forståelsen av innholdet. Tekst formidler mesteparten av det vi å ønsker å fortelle til brukeren på de digitale plattformene våre. 
+Hvor lett noe er å lese, er avgjørende for forståelsen av innholdet. Tekst formidler mesteparten av det vi å ønsker å fortelle til brukeren på de digitale plattformene våre.
 Derfor er skriftstørrelse, farge, linjeavstand og spaltebredde viktige element i formidlingen av budskapet vårt.
 
 ### Skriftstørrelse
@@ -17,7 +17,7 @@ Standard fontstørrelse er 16px. Komponentene henter fontstørrelser fra en fil 
 
 ### Avstander
 
-Avstander i Designsystemet er i hovedsak hopp på '8px'. Vi bruker 8px mellom to elementer som hører sammen, 16px mellom to elementer som ikke hører naturlig sammen, 
+Avstander i Designsystemet er i hovedsak hopp på '8px'. Vi bruker 8px mellom to elementer som hører sammen, 16px mellom to elementer som ikke hører naturlig sammen,
 og 24px for avslutninger av seksjoner eller andre tydelige skiller. Rammer og streker har gjerne en tykkelse på 4px.
 
 ### Farge
@@ -30,7 +30,8 @@ color: 'rgba(29,29,29');
 ```
 
 ### Linjeavstand
-Linjeavstanden bør være omkring 120–160 % av skriftstørrelsen. Generelt øker behovet for linjeasvtand når skriftstørrelsen blir mindre. 
+
+Linjeavstanden bør være omkring 120–160 % av skriftstørrelsen. Generelt øker behovet for linjeasvtand når skriftstørrelsen blir mindre.
 Som en tommelfingerregel kan du sette line-height til fontstørrelse pluss 7 piksler. For standard brødtekst i artikkel blir dette: 16px + 7px = 23px.
 
 ```css
@@ -43,9 +44,10 @@ Hvis en tekstlinje (spalten) er for lang vil teksten oppleves som tung å lese. 
 
 ### Om skrifttypen
 
-Helvetica er valgt som Skatteetatens profilfont, men på grunn av høye kostnader har vi ikke valgt å kjøpe lisens for Helvetica til bruk på web. 
-Det betyr at Designsystemet ikke inneholder noen font, men er satt opp slik at dersom Helvetica er installert hos brukeren, så vil denne bli brukt. 
-Dersom Helvetica ikke er installert, vil Arial være neste beste alternativ, og i praksis den fonten de fleste brukere ser. 
+Helvetica er valgt som Skatteetatens profilfont, men på grunn av høye kostnader har vi ikke valgt å kjøpe lisens for Helvetica til bruk på web.
+Det betyr at Designsystemet ikke inneholder noen font, men er satt opp slik at dersom Helvetica er installert hos brukeren, så vil denne bli brukt.
+Dersom Helvetica ikke er installert, vil Arial være neste beste alternativ, og i praksis den fonten de fleste brukere ser.
+
 ### Komponent
 
 Se også [Typography-komponenten](#typography) for hjelp til stiling av vanlige elementer.

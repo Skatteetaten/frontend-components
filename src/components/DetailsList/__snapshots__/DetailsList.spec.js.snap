@@ -4,7 +4,7 @@ exports[`DetailsList komponent matcher snapshot 1`] = `
 <StyledWithViewportComponent
   checkboxCellClassName="DetailsListCheckBox"
   checkboxVisibility={2}
-  className="css-42"
+  className="css-85"
   columns={
     Array [
       Object {

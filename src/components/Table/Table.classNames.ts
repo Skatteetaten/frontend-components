@@ -1,10 +1,10 @@
 import { mergeStyles } from '@uifabric/merge-styles';
 import { getTheme } from '@uifabric/styling';
-
-import { FontWeights } from '..';
+import { FontWeights, FontSizes } from '..';
 import { PaletteProps } from '..';
 
 export const getClassNames = props => {
+  const { fullWidth, compactTable } = props;
   const palette = getTheme().palette as PaletteProps;
 
   return mergeStyles([
@@ -12,20 +12,78 @@ export const getClassNames = props => {
       displayName: 'SkeTable',
       overflowX: 'auto',
       selectors: {
-        table: {
+        '> table': {
           display: 'table',
-          width: props.fullWidth ? '100%' : undefined,
+          width: fullWidth ? '100%' : undefined,
           borderCollapse: 'collapse',
           textAlign: 'left',
+          height: '1px',
           selectors: {
+            caption: {
+              textAlign: 'left'
+            },
             thead: {
               display: 'table-header-group'
             },
-            'td,th': {
-              padding: 12
+            'thead th': {
+              borderBottom: `2px solid ${palette.skeColor.blackAlt}`,
+              padding: 12,
+              fontSize: compactTable ? FontSizes.small : 'inherit'
             },
-            'td.editableCell': {
+            tr: {
+              height: '100%',
+              verticalAlign: 'middle'
+            },
+            '.separator': {
+              borderBottom: `1px solid ${palette.skeColor.lightGrey}`
+            },
+            'tr.clickable:hover': {
+              backgroundColor: palette.skeColor.lightBlue
+            },
+            td: {
+              height: '100%',
               padding: 0
+            },
+            '.cellButton': {
+              border: 'none',
+              background: 'transparent',
+              boxSizing: 'border-box',
+              fontSize: 'inherit',
+              height: '100%',
+              margin: 0,
+              padding: 0,
+              textAlign: 'inherit',
+              width: '100%'
+            },
+            '.cellContent': {
+              alignItems: 'center',
+              boxSizing: 'border-box',
+              display: 'flex',
+              fontSize: compactTable ? FontSizes.small : 'inherit',
+              height: compactTable ? '28px' : '100%',
+              padding: '8px 12px',
+              textAlign: 'inherit',
+              verticalAlign: 'middle',
+              width: '100%'
+            },
+            '.cellContentSmall': {
+              padding: '2px 12px'
+            },
+            '.cellContentLarge': {
+              padding: '12px'
+            },
+            '.cellContentChildRow': {
+              padding: '0px 12px 12px 12px'
+            },
+            '.cellContentHideEdit': {
+              minHeight: '60px'
+            },
+            '.cellContent.clickable': {
+              paddingTop: '8px',
+              paddingBottom: '8px'
+            },
+            '.cellContent.clickable:hover': {
+              cursor: 'pointer'
             },
             'td.expandableCell td, td.expandableCell .is-closed': {
               borderBottom: 'none'
@@ -41,7 +99,6 @@ export const getClassNames = props => {
             th: {
               verticalAlign: 'bottom',
               fontWeight: FontWeights.bold,
-              borderBottom: `2px solid ${palette.skeColor.blackAlt}`,
               position: 'relative',
               selectors: {
                 i: {
@@ -88,12 +145,13 @@ export const getClassNames = props => {
             'td, .tableRow': {
               fontWeight: '400',
               verticalAlign: 'inherit',
-              borderBottom: `1px solid ${palette.skeColor.lightGrey}`,
               selectors: {
-                '& .right': {
+                '& .right, & .right .cellContent': {
+                  justifyContent: 'flex-end',
                   textAlign: 'right'
                 },
-                '& .center': {
+                '& .center, & .center .cellContent': {
+                  justifyContent: 'center',
                   textAlign: 'center'
                 }
               }
@@ -110,19 +168,13 @@ export const getClassNames = props => {
         '.editableRow-open': {
           display: 'table-row'
         },
-        '.expandableRow-open .is-closed, .expandableRow-open td': {
-          borderBottom: 'none'
-        },
-        '.expandableRow-open td, .expandableRow-open th': {
-          verticalAlign: 'text-top'
-        },
         '.emptyTd': {
           borderBottom: `2px solid ${palette.skeColor.blackAlt}`
         },
         '.expandableContent': {
-          marginTop: '40px',
-          width: 'max-content',
-          paddingLeft: '96px'
+          boxSizing: 'border-box',
+          padding: '0 0 12px 96px',
+          width: '100%'
         }
       }
     }

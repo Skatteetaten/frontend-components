@@ -46,7 +46,8 @@ export const getClassNames = (props: LabelWithCalloutProps) => {
         },
         '& .ms-Callout-main': !calloutFloating && {
           maxWidth: '100%',
-          display: 'inline-block'
+          display: 'inline-block',
+          overflow: 'initial'
         },
         '& .ms-Callout-beak': !calloutFloating && {
           left: '20px !important',

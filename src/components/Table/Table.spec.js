@@ -163,6 +163,26 @@ describe('Table komponent', () => {
     expect(wrapper.html()).toContain('Her kommer redigerbart innhold');
   });
 
+  it('viser editerbart innhold når en tabellrad klikkes med openEditableOnRowClick', () => {
+    const wrapper = oppsettMount({
+      data,
+      columns,
+      editableRows: true,
+      editableContent: content,
+      openEditableOnRowClick: true
+    });
+
+    const klikkbarTabellCelle = wrapper
+      .find('TableRow')
+      .first()
+      .find('td .cellContent')
+      .first();
+
+    expect(wrapper.html()).not.toContain('Her kommer redigerbart innhold');
+    klikkbarTabellCelle.simulate('click');
+    expect(wrapper.html()).toContain('Her kommer redigerbart innhold');
+  });
+
   it('setter korrekt colspan på editerbart innhold sin kolonne', () => {
     const wrapper = mountMedEditerbartInnholdAapen();
 
@@ -211,5 +231,49 @@ describe('Table komponent', () => {
     expect(wrapper.find('.mockDiv').text()).toEqual(
       'Ekspanderbart innhold for Januar'
     );
+  });
+
+  it('håndterer openEditableRowIndex fra props', () => {
+    const wrapper = mount(
+      <Table
+        data={data}
+        columns={columns}
+        editableContent={data => <div id="edit">{data.Måned}</div>}
+        editableRows={true}
+        openEditableRowIndex={0}
+      />
+    );
+
+    let tableRows = wrapper.find('TableRow');
+    expect(tableRows.at(0).exists('#edit')).toEqual(true);
+  });
+  it('tegner Table med en rad og en underrad', () => {
+    const dataMedUnderlinjer = [
+      {
+        Måned: 'Februar',
+        Beløp: 100,
+        Dekningsgrad: '50%',
+        Avkastning: '500',
+        children: [
+          {
+            Beløp: 1000,
+            Dekningsgrad: '50%',
+            Avkastning: '5000'
+          }
+        ]
+      }
+    ];
+    const wrapper = oppsettMount({
+      data: dataMedUnderlinjer,
+      columns,
+      editableRows: true,
+      id: 'tableid',
+      className: 'tableClass',
+      editableContent: 'Editerbart innhold'
+    });
+    expect(wrapper.find('TableRow').length).toEqual(1);
+
+    const tableRow = wrapper.find('TableRow');
+    expect(tableRow.find('tr').length).toEqual(2);
   });
 });

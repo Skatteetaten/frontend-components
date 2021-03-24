@@ -10,12 +10,14 @@ interface AccordionMenuProps extends React.HTMLAttributes<HTMLDivElement> {
   /** aria-label */
   ariaLabel?: string;
 }
-const AccordionMenu: React.FC<AccordionMenuProps> = ({
-  className,
-  children,
-  ariaLabel
-}) => {
-  const styles = getClassNames();
+
+/**
+ * @visibleName AccordionMenu (Trekkspillmeny)
+ */
+const AccordionMenu: React.FC<AccordionMenuProps> = props => {
+  const { className, children, ariaLabel } = props;
+
+  const styles = getClassNames(props);
   const totalSteps = React.Children.count(children);
   return (
     <ul

@@ -21,6 +21,7 @@ const initialState = { title: 'Skatteoppgjøret for 2017' };
     </p>
   </Card>
   <br />
+  <br />
   <Card
     color={Card.Color.GREEN}
     title="Skatteoppgjøret for 2018"
@@ -38,16 +39,16 @@ const initialState = { title: 'Skatteoppgjøret for 2017' };
 </div>;
 ```
 
-Mulighet for å endre f.eks tittel mellom åpen og lukket tilstand
+Du kan endre tittelen mellom åpen og lukket tilstand
 
 ```js
 import Card from '@skatteetaten/frontend-components/Card';
 
-const initialState = { title: 'Inntekt' };
+const initialState = { title: 'Mine meldinger (2)' };
 
 function onChange(isExpanded) {
   setState({
-    title: isExpanded ? 'Inntekt (kr 450 000)' : initialState.title
+    title: isExpanded ? 'Mine meldinger' : initialState.title
   });
 }
 
@@ -60,12 +61,8 @@ function onChange(isExpanded) {
     onChange={isExpanded => onChange(isExpanded)}
     expand
   >
-    <p>
-      De fleste lønnsmottakere og pensjonister fikk skatteoppgjøret 27. juni.
-      Neste mulighet var 15. august, og heretter blir det løpende oppgjør frem
-      til 24. oktober. Vi kan dessverre ikke fortelle deg når du får
-      skatteoppgjøret ditt, hverken på telefon, chat eller på skattekontoret.
-    </p>
+    <p>Melding 1</p>
+    <p>Melding 2</p>
   </Card>
 </div>;
 ```
@@ -142,14 +139,12 @@ import TextField from '@skatteetaten/frontend-components/TextField';
     .
   </p>
 
-  <h3>Ulike farger på boksene, har ulike betydninger</h3>
+  <h3>Ulike farger på boksene har ulike betydninger. Vi bruker</h3>
   <ul>
-    <li>Grønn: Brukers til hjelp</li>
-    <li>Gul: Brukes til informasjon og opplysning.</li>
-    <li>
-      Hvit med grønn ramme: Brukes til konklusjoner og betalingsopplysninger
-    </li>
-    <li>Grå: Kan brukes som bakgrunnsfarge for interne løsninger</li>
+    <li>Grønn: For hjelp</li>
+    <li>Gul: For opplysninger og generelt innhold.</li>
+    <li>Hvit med grønn ramme: For konklusjoner og betalingsopplysninger</li>
+    <li>Grå: Som bakgrunnsfarge for interne løsninger</li>
   </ul>
   <p>
     Unngå å bruke forskjellig farge på ramme og bakgrunn, for eksempel grønn

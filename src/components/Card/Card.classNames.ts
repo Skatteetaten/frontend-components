@@ -18,23 +18,23 @@ function getCardBorder(props: CardProps) {
   switch (props.border) {
     case Card.Border.YELLOW_BORDER:
       return {
-        border: `3px solid ${palette.skeColor.brown}`
+        border: `4px solid ${palette.skeColor.brown}`
       };
     case Card.Border.GREEN_BORDER:
       return {
-        border: `3px solid ${palette.skeColor.green}`
+        border: `4px solid ${palette.skeColor.green}`
       };
     case Card.Border.RED_BORDER:
       return {
-        border: `3px solid ${palette.skeColor.pink}`
+        border: `4px solid ${palette.skeColor.pink}`
       };
     case Card.Border.GREY_BORDER:
       return {
-        border: `3px solid ${palette.skeColor.grey}`
+        border: `4px solid ${palette.skeColor.grey}`
       };
     case Card.Border.WHITE_BORDER:
       return {
-        border: `3px solid ${palette.skeColor.white}`
+        border: `4px solid ${palette.skeColor.white}`
       };
     default:
       return {};
@@ -72,9 +72,7 @@ export const getClassNames = (props: CardProps, state: CardState) => {
       ...getMargin(props)
     },
     expandIcon: {
-      position: 'absolute',
-      top: 0,
-      right: 0,
+      alignSelf: 'flex-start',
       selectors: {
         '&& .ms-Button-icon': {
           transform: isExpandedState ? 'rotate(-180deg)' : '0',
@@ -83,10 +81,8 @@ export const getClassNames = (props: CardProps, state: CardState) => {
       }
     },
     titlecontainer: {
-      display: 'flex',
       flexWrap: 'wrap',
       justifyContent: 'flex-start',
-      alignItems: 'center',
       outline: 'none',
       selectors: {
         ':focus': {
@@ -95,21 +91,24 @@ export const getClassNames = (props: CardProps, state: CardState) => {
       }
     },
     header: {
-      //display: 'flex',
+      display: 'flex',
       marginTop: '5px',
       justifyContent: 'space-between',
       alignItems: 'center',
-      position: 'relative'
+      position: 'relative',
+      wordBreak: 'break-word'
     },
     title: {
       flex: '1 1 1px',
       fontSize: titlesize,
-      fontWeight: FontWeights.semibold
+      fontWeight: FontWeights.semibold,
+      margin: 0
     },
     titleExpand: {
       flex: '1 1 1px',
       fontSize: titlesize,
       fontWeight: FontWeights.semibold,
+      margin: 0,
       selectors: {
         ':hover': {
           textDecoration: 'underline',

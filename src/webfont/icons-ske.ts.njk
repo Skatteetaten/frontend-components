@@ -1,0 +1,33 @@
+import SkeIconfontEOT from '{{ fontPath }}SkeIconfont.eot';
+import SkeIconfontWOFF2 from '{{ fontPath }}SkeIconfont.woff2';
+import SkeIconfontWOFF from '{{ fontPath }}SkeIconfont.woff';
+import SkeIconfontTTF from '{{ fontPath }}SkeIconfont.ttf';
+import SkeIconfontSVG from '{{ fontPath }}SkeIconfont.svg';
+
+export default {
+  style: {
+    MozOsxFontSmoothing: 'grayscale',
+    WebkitFontSmoothing: 'antialiased',
+    fontStyle: 'normal',
+    fontWeight: 'normal',
+    speak: 'none',
+    display: 'inline-block',
+    transform: 'translate(0, 0)',
+    textRendering: 'auto',
+    fontSize: 'inherit',
+  },
+  fontFace: {
+    fontFamily: '"{{ fontName }}"',
+    src: [
+      `url("${SkeIconfontEOT}") format("embedded-opentype")`,
+      `url("${SkeIconfontEOT}?#iefix") format("embedded-opentype")`,
+      `url("${SkeIconfontWOFF2}") format("woff2")`,
+      `url("${SkeIconfontWOFF}") format("woff")`,
+      `url("${SkeIconfontTTF}") format("truetype")`,
+      `url("${SkeIconfontSVG}#SkeIconfont") format("svg")`
+    ].join(', '),
+  },
+  icons: { {% for glyph in glyphs %}
+    '{{ glyph.name }}': '\u{{ glyph.unicode[0].charCodeAt(0).toString(16) }}'{% if loop.index < loop.length %},{% endif%} {% endfor %}
+  }
+};

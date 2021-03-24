@@ -1,3 +1,83 @@
+### **v.3.8.1 - 10.03.2021 **
+
+- Table: now supports spanned rows and has the ability to hide edit buttons on separate rows.
+- SearchField: ability to run onChange before setting search results.
+- DatePicker: fixes a bug where initPickerDate was ignored.
+- Added chatbot icons.
+
+### **v.3.8.0 - 25.02.2021 **
+
+- A new section containing recommended patterns.
+- Table: caption is now required. Added feature to visually hide table caption, but still make it accessible to screen readers.
+- LabelWithCallout: Fixes a visual bug that showed a white area when using a border around the callout.
+- Accordion: Better support for dynamic loading of steps and correct rendering of left line. This update also removes outer margins to better support smaller screens. To bring back this margin you have to add your own custom styling.
+- SearchField: Accessibility improvements in SearchField with dropdown.
+
+### **v.3.7.7 - 20.01.2021 **
+
+- FileUploader: Support for downloading files and overriding accepted file format label.
+- AccordionItem: now send html attributes to div (supports data-testid)
+- DatePicker: Fixes a bug where error messages would not be displayed (isOutOfBounds and invalidInput)
+- LabelWithCallout: Now supports Callout with border.
+
+### **v.3.7.6 - 08.01.2021 **
+
+- Callout: Added new prop to draw border around callout
+- FileUploader: Added prop that makes delete compatible with webseal
+- LinkGroup: Now uses same markup as Link (Accessibility improvement)
+- Dialog: Fixes an issue where the logo inside the dialog dissappeared
+- Card: added ability to have more html attributes ie. data-testid.
+
+### **v.3.7.5 - 11.12.2020 **
+
+- Fixes an issue with icons disappering with react-scripts version 4.0
+- ScrollToTopButton: Added aria-hidden to top container to hide it from screen readers.
+- Card: title can now be rendered as a custom tag, for instance h2 or h3.
+
+### **v.3.7.4 - 03.12.2020 **
+
+- AccordionMenu: added ability to flex content inside title area
+- Icons: New icons Pin and PinOff
+- TopBanner: Fixed onClick in internal header
+- TopStripe/Link: Accessibility; a link can now be used for skipping to main content.
+
+### **v.3.7.3 - 19.11.2020 **
+
+- DropDown and TextField: now includes aria-invalid attribute
+- AccordionItem: removed aria-controls attribute
+- Table: ability to add caption
+- Checkbox: Styling updated to white background
+- RadioButtonGroup: fixes a styling issue with error border
+- ActionButton: fixes a styling issue with alignment
+- FileUpload: various accessibility improvements, now exports server response, updated error messages
+- New icons: Bell and Facebook
+- Updated Sketch file to version 1.6
+
+### **v.3.7.2 - 18.11.2020 **
+
+- Table: Fixes an issue with row index and initial loading
+
+### **v.3.7.1 - 03.11.2020 **
+
+- Table: Added compact table
+- DatePicker: Fixes a bug where icons where not displayed correctly
+- SearchField: ability to trigger search by clicking icon, drop down menu is now overlayed.
+- Pagination: className is optional as it should be
+- TopStripe: Accessibility and styling fixes.
+- Sketch file updated to v1.5.
+- Updated documentation
+
+### **v.3.7.0 - 29.09.2020 **
+
+- SearchField: added ability to activate with keyboard shortcut
+- TopBanner/FooterContent: added ability to display english logo.
+- Icon: updated company-icons, and added the theme icons.
+- Card: changed default border width to 4px.
+- Table: ability to trigger editableContent by clicking on row
+- Sketch components for designers: updated to version 1.4
+- Button: fixes and issue where buttons with icons were not aligned properly
+- Button: better supports multiple lines of text
+
 ### **v.3.6.0 - 08.09.2020 **
 
 - Table: now supports expandable rows. Improved accessbility by labeling sortable columns.

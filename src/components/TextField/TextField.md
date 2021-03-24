@@ -226,12 +226,20 @@ import TextField from '@skatteetaten/frontend-components/TextField';
 
 ```js noeditor beskrivelse
 <>
-  <h3>Mange ulike kombinasjoner</h3>
+  <h3>Mange varianter av tekstfelt</h3>
 
   <p>
-    I Designsystemet finnes det mange ulike varisjoner av tekstfelt. Vi har med
-    og uten hjelpetekst, feilmeldinger eller lese- og skrivemodus. Vi har også
-    mulighet til å bestemme formatering, for eksempel ved organiasasjonsnummer.
+    I designsystemet finnes det mange ulike variasjoner av tekstfelt.
+    Tekstfeltene kan ha:
   </p>
+  <ul>
+    <li>hjelpetekst eller være blanke</li>
+    <li>feilmeldinger som varsler</li>
+    <li>lese- og skrivemodus</li>
+    <li>
+      formateringer som sikrer riktig format, som for eksempel fødselsnummer
+    </li>
+    <li>mulighet for å skrive flere setninger med en bestemt begrensing</li>
+  </ul>
 </>
 ```

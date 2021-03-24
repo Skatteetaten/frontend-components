@@ -28,48 +28,45 @@ import Icon from '@skatteetaten/frontend-components/Icon';
 
 <div>
   <TopStripe>
-    <Link path={'#topbanner'} text={'Kontakt oss'} placement="before" />
+    <Link path={'#main-content-id'} text={'Hopp til hovedinnhold'} skipLink />
 
-    <TopStripeMenu title={'Endre skriftstørrelse'}>
-      <div style={{ fontSize: '20px' }}>
+    <Link
+      path={'https://www.skatteetaten.no/kontakt/'}
+      text={'Kontakt oss'}
+      placement="before"
+    />
+
+    <TopStripeMenu
+      showOnMobile={false}
+      closeMenuAriaLabel="Lukk endre skriftstørrelse"
+      title={'Endre skriftstørrelse'}
+    >
+      <div style={{ fontSize: '24px', marginTop: '8px' }}>
         Hold Ctrl-tasten nede (Cmd-tasten på Mac). Trykk på + for å forstørre
         eller - for å forminske.
       </div>
     </TopStripeMenu>
-    <TopStripeMenu title={'Language / Språk'}>
-      <TopStripeButton ariaLabel={'Norsk'} onClick={() => console.log('NB')}>
-        Norsk
-      </TopStripeButton>
-      <TopStripeButton
-        icon={'check'}
-        ariaLabel={'Nynorsk'}
-        onClick={() => console.log('NN')}
-      >
-        Nynorsk
-      </TopStripeButton>
-      <TopStripeButton ariaLabel={'Engelsk'} onClick={() => console.log('EN')}>
-        Engelsk
-      </TopStripeButton>
-      <TopStripeButton
-        ariaLabel={'Sørsamisk'}
-        onClick={() => console.log('SMA')}
-      >
-        Sørsamisk
-      </TopStripeButton>
-      <TopStripeButton
-        ariaLabel={'Nordsamisk'}
-        onClick={() => console.log('SME')}
-      >
-        Nordsamisk
-      </TopStripeButton>
+    <TopStripeMenu
+      showOnMobile={false}
+      closeMenuAriaLabel="Lukk Language / Språk"
+      title={'Language / Språk'}
+    >
+      <TopStripeButton>Norsk</TopStripeButton>
+      <TopStripeButton icon={'check'}>Nynorsk</TopStripeButton>
+      <TopStripeButton>Engelsk</TopStripeButton>
+      <TopStripeButton>Sørsamisk</TopStripeButton>
+      <TopStripeButton ariaLabel={'Nordsamisk'}>Nordsamisk</TopStripeButton>
     </TopStripeMenu>
 
     <span>
-      <Icon iconName="person" />
-      Vegard Sandli
+      <Icon
+        iconName="person"
+        style={{ fontSize: '20px', verticalAlign: 'sub' }}
+      />
+      Ola Normann
     </span>
 
-    <Link path={'#topbanner'} text={'Logg ut'} placement="before" />
+    <Link path={'#topstripe'} text={'Logg ut'} placement="before" />
   </TopStripe>
   <TopBanner
     external
@@ -116,37 +113,59 @@ import TopBanner from '@skatteetaten/frontend-components/TopBanner';
   <h3>Forskjell på interne systemer og publikumsløsninger</h3>
   <p>
     Alle løsningene våre har et toppbanner som visuelt skiller interne og
-    eksterne fra hverandre. Interne løsninger bruker fylt toppbanner med skrå
-    strek, mens eksterne bruker en smal lang strek, slik som på{' '}
-    <a href="https://www.skatteetaten.no">skatteetaten.no</a>. Dette lager en
-    smidig overgang fra skatteetaten.no til en tilknyttet løsning.
+    eksterne fra hverandre.
   </p>
+
+  <ul>
+    <li>Interne løsninger bruker fylt toppbanner med skrå strek.</li>
+    <li>
+      Eksterne bruker en smal lang strek, slik som på skatteetaten.no. Dette
+      lager en smidig overgang fra skatteetaten.no til en tilknyttet løsning.
+    </li>
+  </ul>
   <p>
     Det er valgfritt å bruke kompakt eller standard utgave av banneret, men du
     må være konsekvent gjennom hele løsningen.
   </p>
-  <h3>Startsider på interne løsinger</h3>
+  <h3>Startsider på interne løsninger</h3>
   <p>
-    Interne fagsystemer har gjerne en hovedside der brukerne finner
-    arbeidsoppgaver eller søker etter opplysninger. Her kan toppbanneret holdes
-    enkel, og kun inneholde navn på logo og navn på applikasjonen. Toppbanneret
-    kan inneholde meny til rapporter og «løse sider», eller personlige
-    innstillinger. Du trenger ikke skrive «Hjemmeside», «Startside», «Velkommen»
-    i toppbanneret her.
+    Interne fagsystemer har en hovedside der brukeren finner arbeidsoppgaver
+    eller søker etter opplysninger. På de interne løsningene gjelder følgende:
   </p>
+  <ul>
+    <li>
+      TopBanner kan holdes enkel og kun inneholde navn på logo og tittel på
+      applikasjonen.
+    </li>
+    <li>
+      TopBanner kan inneholde meny til rapporter og enkeltstående sider eller
+      personlige innstillinger.
+    </li>
+    <li>
+      Du trenger ikke skrive «Startside» eller «Velkommen» i toppbanneret.
+    </li>
+  </ul>
+
   <h3>Undersider på interne løsinger</h3>
-  <p>
-    De fleste interne systemer har en eller flere undersider. Banneret på sidene
-    bør ha en tittel som forteller konteksten til innholdet på siden, altså en
-    forklaring som gjør det relevant for brukeren, for eksempel en sakstype
-    eller arbeidsoppgave. Dersom du velger å ha arbeidsoppgaven i toppbanneret,
-    skal også arbeidsliste-funksjonene «Gjør tilgjengelig», «Sett på vent» og
-    «Fordel» stå i umiddelbar nærhet til arbeidsoppgaven.
-  </p>
-  <h3>Klikkbar logo</h3>
+  <p>De fleste interne systemer har en eller flere undersider.</p>
+
+  <ul>
+    <li>
+      Banneret på undersidene skal ha en tittel som formidler konteksten og gjør
+      innholdet relevant for brukeren, for eksempel en sakstype eller
+      arbeidsoppgave.
+    </li>
+    <li>
+      Velger du å ha arbeidsoppgaven i toppbanneret, skal også
+      arbeidsliste-funksjonene «Gjør tilgjengelig», «Sett på vent» og «Fordel»
+      stå i umiddelbar nærhet.
+    </li>
+  </ul>
+
+  <h3>Klikkbar logo i publikumsløsninger</h3>
   <p>
     For alle publikumsløsninger skal logoen som hovedregel være klikkbar og ta
-    deg til forsiden av{' '}
+    brukeren til forsiden av{' '}
     <a href="https://www.skatteetaten.no">skatteetaten.no</a>.
   </p>
 
@@ -164,6 +183,11 @@ import TopBanner from '@skatteetaten/frontend-components/TopBanner';
 <>
   <h3>Tips</h3>
   <ul>
+    <li>
+      Lenken Hopp til hovedinnhold (blir synlig ved tastaturfokus), skal sette
+      tastaturfokus til toppen av hovedinnholdet. Bruk riktig id og
+      tabindex="-1" der fokus skal være.
+    </li>
     <li>
       Valgene i toppstripa som utvider innhold, bør ha et pil-ikon, for visuell
       indikasjon av funksjonaliteten.{' '}

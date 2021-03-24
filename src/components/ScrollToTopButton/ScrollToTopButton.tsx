@@ -16,7 +16,9 @@ interface ScrollToTopButtonProps {
 interface ScrollToTopButtonState {
   skjult: boolean;
 }
-
+/**
+ * @visibleName ScrollToTopButton (Gå til toppen)
+ */
 export class ScrollToTopButton extends React.PureComponent<
   ScrollToTopButtonProps,
   ScrollToTopButtonState
@@ -54,7 +56,7 @@ export class ScrollToTopButton extends React.PureComponent<
     const visKlasse = this.state.skjult ? '' : styles.vis;
 
     return (
-      <div id={id} className={styles.topcontainer}>
+      <div id={id} className={styles.topcontainer} aria-hidden="true">
         <div className={classnames(styles.container, visKlasse, className)}>
           <div className={styles.box}>
             <ActionButton

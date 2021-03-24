@@ -113,16 +113,18 @@ export const getClassNames = (props: TextFieldProps) => {
       '& .ms-TextField-errorMessage': {
         position: 'relative',
         color: palette.skeColor.error,
+        fontWeight: FontWeights.medium,
+        fontSize: FontSizes.small,
         paddingLeft: 20
       },
       '& .ms-TextField-errorMessage::before': {
         fontFamily: MdIcons.fontFace.fontFamily,
-        fontSize: 18,
+        fontSize: 16,
         display: 'block',
         content: errorIcon,
         marginRight: 3,
         position: 'absolute',
-        top: 5,
+        top: 6,
         left: 0
       },
       'textarea.ms-TextField-field': {

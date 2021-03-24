@@ -73,6 +73,11 @@ export function getClassNames(props: ActionButtonProps): string {
   const radius = '0';
   return mergeStyles(getFocusStyle({ palette }, inset, 'relative', radius), {
     selectors: {
+      '&.ms-Button.ms-Button--action': {
+        height: 'auto',
+        minHeight: '40px',
+        padding: '10px 4px'
+      },
       '& span': {
         flexDirection: props.iconAfter ? 'row-reverse' : 'row'
       },
@@ -93,6 +98,7 @@ export function getClassNames(props: ActionButtonProps): string {
         ...getHoverColor(props)
       },
       '&.ms-Button--action:active .ms-Button-label': {
+        textAlign: props.iconAfter ? 'right' : 'left',
         textDecoration: 'none'
       },
       '&.ms-Button--action:disabled, &.ms-Button--action:disabled i': {

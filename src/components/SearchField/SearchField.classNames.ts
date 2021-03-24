@@ -6,31 +6,48 @@ import { SearchFieldProps } from './SearchField';
 
 export const getClassNames = (props: SearchFieldProps) => {
   const palette = getTheme().palette as PaletteProps;
-  const { border, searchFieldSize } = props;
+  const { border, searchFieldSize, onSearchIcon } = props;
   const largeSize = searchFieldSize === 'large';
   const standardSize = searchFieldSize === 'standard';
 
-  //@ts-ignore
   return mergeStyleSets({
+    //@ts-ignore
     blackAlt: {
       color: `${palette.skeColor.blackAlt} !important`
+    },
+    hiddenUl: {
+      position: 'absolute',
+      width: '1px',
+      height: '1px',
+      padding: 0,
+      margin: '-1px',
+      overflow: 'hidden',
+      clip: 'rect(0,0,0,0)',
+      whiteSpace: 'nowrap',
+      border: 0
     },
     searchList: {
       listStyleType: 'none !important',
       padding: '0px',
       marginTop: '0px',
-      marginBottom: '11px'
+      marginBottom: '11px',
+      border: `1px solid ${palette.skeColor.black}`
     },
     searchListDropdown: {
-      width: '100% - 2px',
-      top: '-13px',
-      border: `1px solid ${palette.skeColor.black}`,
+      top: '-1px',
       borderTop: 0,
+      position: 'relative',
       selectors: {
         ul: {
-          margin: 0
+          margin: 0,
+          position: 'absolute',
+          left: 0,
+          top: '100%',
+          width: '99.5%',
+          zIndex: 10
         },
         li: {
+          background: palette.skeColor.white,
           cursor: 'pointer',
           color: palette.skeColor.blackAlt,
           padding: '3px 9px 3px 9px',
@@ -50,6 +67,17 @@ export const getClassNames = (props: SearchFieldProps) => {
           }
         }
       }
+    },
+    srOnly: {
+      position: 'absolute',
+      width: '1px',
+      height: '1px',
+      padding: 0,
+      margin: '-1px',
+      overflow: 'hidden',
+      clip: 'rect(0,0,0,0)',
+      whiteSpace: 'nowrap',
+      border: 0
     },
     main: {
       displayName: 'SkeSearchField',
@@ -103,7 +131,13 @@ export const getClassNames = (props: SearchFieldProps) => {
           boxSizing: 'border-box',
           fontSize: largeSize ? FontSizes.xLarge : FontSizes.medium,
           opacity: 1,
-          outline: 'none'
+          outline: 'none',
+          cursor: onSearchIcon ? 'pointer' : 'default',
+          selectors: {
+            ':hover': {
+              background: onSearchIcon && palette.skeColor.lightBlue
+            }
+          }
         },
         '& .ms-SearchBox-clearButton': {
           display: 'none'
@@ -115,6 +149,9 @@ export const getClassNames = (props: SearchFieldProps) => {
           WebkitAppearance: 'textfield'
         },
         'input[type=search]::-webkit-search-cancel-button': {
+          WebkitAppearance: 'none'
+        },
+        'input[type="search"]::-webkit-search-decoration': {
           WebkitAppearance: 'none'
         },
         'input[type=search]::-ms-clear': {

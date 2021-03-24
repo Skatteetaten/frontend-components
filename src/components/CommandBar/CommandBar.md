@@ -128,35 +128,32 @@ initialState = {
 
 ```js noeditor beskrivelse
 <>
-  <h3>Over innholdet</h3>
   <p>
-    CommandBar er et område med kommandoer knyttet innholdet på en side, et
-    panel eller en region. CommandBar skal ligge på toppen av det tilhørende
-    innholdet, og kan da fungerte som en intutiv måte å utføre handlinger på
-    innholdet.{' '}
+    CommandBar er et område med knapper og kommandoer som ligger på toppen av
+    tilhørende innhold, som for eksempel en side eller et panel. Knappene skal
+    få brukeren til å intutiv utføre handlinger knyttet til innholdet.
   </p>
 
-  <h3>Unngå for mange elementer</h3>
-  <p>
-    CommandBar fungerer best når den ikke inneholder mer enn 5–7 kommandoer.
-    Hvis du har for mange kommandoer eller disse er dårlig organisert, kan
-    komponenten bli vanskelig å bruke eller gjemme viktige kommandoer for
-    brukerne.
-  </p>
-
-  <h3>Viktigste elementer først</h3>
-  <p>
-    Kommandoer bør være sortert etter viktighet; de viktigste først og fra
-    venstre mot høyre. Hvis du trenger å vise status eller visningsalternativer
-    bør disse plasses på høyre side. Ikke vis mer enn 2–3 kommandoer på høyre
-    side, fordi det vil gjøre hele komponenten vanskeligere lese.
-  </p>
-
-  <h3>Ikoner</h3>
-  <p>
-    Kommandoene skal som hovedregel ha både ikon og beskrivende tekst. Det kan
-    imidlertid være ok å bruke kun ikoner for kommandoer som er mye brukt og
-    lett gjenkjennelige.
-  </p>
+  <h3>Slik bruker du CommandBar:</h3>
+  <ul>
+    <li>
+      Unngå for mange elementer. Vi anbefaler maksimum 7 kommandoer. Blir det
+      for mange knapper blir det uoversiktlig og vanskelig å bruke.
+    </li>
+    <li>
+      Plasser de viktigste elementene først. Sorter etter viktighet fra venstre
+      mot høyre.{' '}
+    </li>
+    <li>
+      Kommandoer som viser status eller visningsalternativer hører til på høyre
+      side. Plasser maksimum 2–3 element her, for å skape oversikt i komponenten
+      som helhet.
+    </li>
+    <li>
+      Bruk ikoner. Kommandoene skal som hovedregel ha både ikon og beskrivende
+      tekst. Du kan benytte kun ikonet på kommandoer som er mye brukt og er lett
+      gjenkjennelige, som for eksempel et ikon for utskrift.{' '}
+    </li>
+  </ul>
 </>
 ```

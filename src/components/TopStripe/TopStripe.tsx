@@ -4,7 +4,7 @@ import classnames from 'classnames';
 import { TopStripeButton } from './TopStripeButton';
 
 interface TopStripeProps {
-  children?: JSX.Element | JSX.Element[];
+  children?: JSX.Element | Array<JSX.Element | null | false>;
   className?: string;
   /** @ignore */
   open?: number;
@@ -17,7 +17,9 @@ interface TopStripeProps {
 export const TopStripeContext = React.createContext<TopStripeProps>({
   open: -1
 });
-
+/**
+ * @visibleName TopStripe (Toppstripe)
+ */
 const TopStripe: React.FC<TopStripeProps> = props => {
   const notOpen = -1;
   const topRef = React.createRef<HTMLUListElement>();
@@ -75,7 +77,7 @@ const TopStripe: React.FC<TopStripeProps> = props => {
           {...rest}
         >
           {React.Children.map(children, (child: any, index) => {
-            if (child.type === TopStripeButton) {
+            if (child && child.type === TopStripeButton) {
               return (
                 <li>
                   {React.cloneElement(child, {
@@ -84,7 +86,9 @@ const TopStripe: React.FC<TopStripeProps> = props => {
                 </li>
               );
             } else {
-              return <li>{React.cloneElement(child, { index })}</li>;
+              return child ? (
+                <li>{React.cloneElement(child, { index })}</li>
+              ) : null;
             }
           })}
         </ul>

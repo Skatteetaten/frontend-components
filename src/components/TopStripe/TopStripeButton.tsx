@@ -12,7 +12,9 @@ export interface TopStripeButtonProps
   ariaLabel?: string;
   text?: string;
 }
-
+/**
+ * @visibleName TopStripeButton (Toppstripe-knapp)
+ */
 export const TopStripeButton: React.FC<TopStripeButtonProps> = props => {
   const {
     topStripeStyle,

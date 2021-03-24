@@ -5,31 +5,32 @@ import Icon from '../../Icon/Icon';
 import { getClassNames } from '../Accordion.classNames';
 import Heading from '../../utils/Heading';
 
-export interface AccordionItemProps {
+export interface AccordionItemProps
+  extends React.HTMLAttributes<HTMLDivElement> {
   id?: string;
-  /** Valg for å kunne vise/skjule innhold til et steg med en "vise/skjule" knapp */
+  /** Option to enable show/hide the content of a step with a show/hide button */
   toggleContent?: boolean;
-  /** Teksten for vise/skjule knappen for et steg */
+  /** Text on the how/hide button for a step */
   toggleButtonText?: string;
-  /** Om et steg skal være default åpen */
+  /** If a step should be open by default */
   isOpen?: boolean;
-  /** Om skal vise spesifisert ikon istedet tall hvis Accordion er en processList  */
+  /** Option to display a specified icon instead of numbers if Accordion is a processList  */
   icon?: string;
-  /** Tekst som er ønskelig at leses opp for skjermleser om man spesifiserer et ikon */
+  /** Text on a specified Icon */
   ariaLabel?: string;
-  /** Om man ønsker en ytterligere aksjon når bruker åpner eller lukker. */
+  /** Provide further action when the user opens or closes the AccordionItem  */
   onChange?: (...args: any[]) => any;
-  /** Om man ønsker ytterligere aksjon når bruker åpner steget. Kalles KUN når steget åpnes, ikke når det lukkes. */
+  /** Provide further action when a user opens the step. Only callable when the step is being opened, not on close */
   onClick?: (...args: any[]) => any;
-  /**   Id som settes i aria-control på vise/skjule knapp som peker på innholdspanelet som knappen styrer */
+  /** ID applied to the show/hide button that points to the cotent panel that the button controls */
   stepId?: string;
-  /** Tittel til innholdet */
+  /** Content title */
   title?: string;
-  /** Om man ønsker at toggleButtonText skal være en del av heading tag-hierarkiet. Verdi 1-6.*/
+  /** Adds toggleButtonText to the heading tag-hierarchy. Value 1-6.*/
   headingLevel?: number;
-  /** Subtittel som vises i accordionitem */
+  /** Subtitle shown in accordionitem */
   subtitle?: string | JSX.Element;
-  /** Overstyring av stiler */
+  /** Override styles */
   className?: string;
   stepNumber?: number;
   totalSteps?: number;
@@ -89,7 +90,9 @@ const ToggleContent: React.FC<ToggleContentInterface> = props => {
     </button>
   );
 };
-
+/**
+ * @visibleName AccordionItem (Rad i trekkspill)
+ */
 const AccordionItem: React.FC<AccordionItemProps> = props => {
   const [isContentOpen, setContentOpen] = React.useState<boolean>(
     props.isOpen || false
@@ -99,18 +102,6 @@ const AccordionItem: React.FC<AccordionItemProps> = props => {
     setContentOpen(!isContentOpen);
   };
 
-  const clickHandler = () => {
-    const { onClick, onChange } = props;
-    if (onChange) {
-      onChange();
-    }
-    if (onClick && !isContentOpen) {
-      onClick();
-    }
-    toggleVisibility();
-  };
-
-  const styles = getClassNames();
   const {
     title,
     subtitle,
@@ -124,23 +115,40 @@ const AccordionItem: React.FC<AccordionItemProps> = props => {
     totalSteps,
     stepId,
     processList,
-    headingLevel
+    headingLevel,
+    id,
+    isOpen,
+    onChange,
+    onClick,
+    ...htmlAttributes
   } = props;
+
+  const clickHandler = () => {
+    if (onChange) {
+      onChange();
+    }
+    if (onClick && !isContentOpen) {
+      onClick();
+    }
+    toggleVisibility();
+  };
+
+  const styles = getClassNames();
 
   return (
     <div
       key={stepNumber}
       className={classnames(styles.wrapperStep, className)}
-      aria-controls={stepId}
+      {...htmlAttributes}
     >
       {processList && stepNumber !== totalSteps && (
         <span className={styles.stepLine} />
       )}
       <Grid.Row rowSpacing={Grid.SPACE_NONE}>
-        <Grid.Col>
+        <Grid.Col noSpacing>
           <Grid.Row rowSpacing={Grid.SPACE_NONE}>
             {processList && (
-              <Grid.Col sm={2} md={1} xl={1}>
+              <Grid.Col noSpacing sm={2} md={1} xl={1}>
                 <div className={styles.stepNumber}>
                   <span
                     id={'StepId' + stepId}
@@ -152,6 +160,7 @@ const AccordionItem: React.FC<AccordionItemProps> = props => {
               </Grid.Col>
             )}
             <Grid.Col
+              noSpacing
               sm={processList ? 9 : 12}
               md={processList ? 10 : 12}
               xl={processList ? 11 : 12}

@@ -104,6 +104,10 @@ const iconGroup = {
   ],
   info: [
     {
+      name: 'Bell',
+      usage: 'Varsel'
+    },
+    {
       name: 'Blocked',
       usage: 'Sperret/ikke tilgjengelig'
     },
@@ -398,6 +402,10 @@ const iconGroup = {
     {
       name: 'Ekteskap',
       usage: 'Ekteskap'
+    },
+    {
+      name: 'Chatbot',
+      usage: 'Chatbot - systemikon'
     }
   ],
   manipulate: [
@@ -464,6 +472,14 @@ const iconGroup = {
     {
       name: 'Save',
       usage: 'Lagre (merk at vi normalt har autolagring)'
+    },
+    {
+      name: 'Pin',
+      usage: 'Festet element'
+    },
+    {
+      name: 'PinOff',
+      usage: 'Ikke-festet element'
     }
   ],
   files: [
@@ -591,6 +607,10 @@ const columns = [
 const iconGroup = {
   theme: [
     {
+      name: 'TemaAndreForhold',
+      usage: 'Andre forhold'
+    },
+    {
       name: 'TemaArbeidTrygdPensjon',
       usage: 'Arbeid, trygd og pensjon'
     },
@@ -603,6 +623,10 @@ const iconGroup = {
       usage: 'Bolig og eiendeler '
     },
     {
+      name: 'TemaChatbot',
+      usage: 'Chatbot - stor utgave'
+    },
+    {
       name: 'TemaFamilie',
       usage: 'Familie'
     },
@@ -611,12 +635,20 @@ const iconGroup = {
       usage: 'Finans'
     },
     {
+      name: 'TemaKredittfradrag',
+      usage: 'Kredittfradrag'
+    },
+    {
       name: 'TemaGaveArv',
       usage: 'Gave og arv'
     },
     {
       name: 'TemaPersonligeForhold',
       usage: 'Personlige forhold'
+    },
+    {
+      name: 'TemaSelskapDeltakerfastsetting',
+      usage: 'Deltakerfastsetting'
     }
   ]
 };
@@ -677,31 +709,42 @@ Object.keys(iconGroup).forEach(name => {
   <h3>Ikoner er viktige i digitale flater</h3>
 
   <p>
-    Ikoner er en viktig del av visuell kommunikasjon på digitale platformer
-    fordi det bidrar blant annet ved å simplifisere navigasjon, optimalisere
-    interaksjon, visualisere ideer og støtte tekstlig innhold.
-  </p>
-
-  <p>
-    Ikonene i Skatteetatens designsystem er en kombinasjon av ikoner fra
-    Material design icons (https://materialdesignicons.com), utvidet med noen
-    egendesignede ikoner (i SVG)
-  </p>
-  <h3>Temaikoner</h3>
-  <p>
-    Temaikonene er ment å brukes i størrelser på 48px og oppover. Bruk dem til å
-    f.eks. markere starten på en temaseksjon (sammen med en passende
-    overskrift).
-  </p>
-  <h3>Temaikoner i komponenter</h3>
-  <p>
-    Generelt kan man bruke temaikonene som del av et grensesnitt. Unngå å bruke
-    dem som interaksjonselementer/knapper, med disse unntakene:
+    Ikoner er en viktig del av den visuelle kommunikasjon på digitale
+    plattformer. Gode ikoner er universelle, sparer plass og intuitive – vi
+    oppfatter dem umiddelbart. Ikoner bidrar til å
   </p>
   <ul>
-    <li>Som del av en NavigationTile</li>
+    <li>forenkle navigasjonen</li>
+    <li>visualisere ideer</li>
+    <li>støtte tekstlig innhold</li>
+    <li>skape god interaksjon</li>
+  </ul>
+
+  <h3>Ikonene er basert på standarder</h3>
+
+  <p>
+    Ikonene i Skatteetatens designsystem er basert på standardikoner fra
+    <a href="https://materialdesignicons.com/"> Material Design Icons</a>, i tillegg
+    til utvidet med noen egendesignede ikoner (i SVG). Vi bruker ikoner direkte eller
+    i en av de andre komponentene i designsystemet.
+  </p>
+
+  <h3>Retningslinjer for temaikoner</h3>
+  <ul>
+    <li>Bruk størrelse på 48px og oppover.</li>
+    <li>Bruk temaikoner sammen med overskrift i starten på en temaseksjon.</li>
+  </ul>
+
+  <h3>Temaikoner i komponenter</h3>
+  <p>
+    Generelt kan du bruke temaikonene som del av et grensesnitt. Unngå å bruke
+    temaikoner som knapper eller interaksjonselementer, med disse unntakene:
+  </p>
+  <ul>
+    <li>Som del av en forsideknapp (NavigationTile).</li>
     <li>
-      Som del av en seksjon/et Card, med interaksjonselementer ved siden av
+      Som del av en seksjon eller et innholdskort (Card), med
+      interaksjonselementer ved siden av.
     </li>
   </ul>
 </>
