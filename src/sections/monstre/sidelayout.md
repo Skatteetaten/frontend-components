@@ -17,9 +17,39 @@ import FooterContent from '@skatteetaten/frontend-components/FooterContent';
 import Grid from '@skatteetaten/frontend-components/Grid';
 import Icon from '@skatteetaten/frontend-components/Icon';
 import Typography from '@skatteetaten/frontend-components/Typography';
-//import { UseScreen } from '../../../src/utils/ScreenPlugin';
+import Button from '@skatteetaten/frontend-components/Button';
+import Step from '@skatteetaten/frontend-components/StepList/Step';
+import StepList from '@skatteetaten/frontend-components/StepList';
+import LinkGroup from '@skatteetaten/frontend-components/LinkGroup';
+import { UseScreen } from '../../components/utils/ScreenPlugin';
 
-//const screenSize = UseScreen();
+const links = [
+  {
+    text: 'Beregn reisefradrag',
+    path: '#stepList'
+  },
+  {
+    text: 'Oversikt over alle fradrag',
+    path: '#stepList'
+  }
+];
+
+const titles = {
+  step1: {
+    no: 'Jobber du?',
+    en: 'Are you a wage earner doing paid work?'
+  },
+  step2: {
+    no: 'Sommerjobb?',
+    en: 'Summerjob?'
+  },
+  step3: {
+    no: 'Du er ikke pendler',
+    en: 'You are not a commuter.'
+  }
+};
+
+const screenSize = UseScreen();
 
 <div>
   <TopStripe>
@@ -32,31 +62,13 @@ import Typography from '@skatteetaten/frontend-components/Typography';
       </div>
     </TopStripeMenu>
     <TopStripeMenu title={'Language / Språk'}>
-      <TopStripeButton ariaLabel={'Norsk'} onClick={() => console.log('NB')}>
-        Norsk
-      </TopStripeButton>
-      <TopStripeButton
-        icon={'check'}
-        ariaLabel={'Nynorsk'}
-        onClick={() => console.log('NN')}
-      >
+      <TopStripeButton ariaLabel={'Norsk'}>Norsk</TopStripeButton>
+      <TopStripeButton icon={'check'} ariaLabel={'Nynorsk'}>
         Nynorsk
       </TopStripeButton>
-      <TopStripeButton ariaLabel={'Engelsk'} onClick={() => console.log('EN')}>
-        Engelsk
-      </TopStripeButton>
-      <TopStripeButton
-        ariaLabel={'Sørsamisk'}
-        onClick={() => console.log('SMA')}
-      >
-        Sørsamisk
-      </TopStripeButton>
-      <TopStripeButton
-        ariaLabel={'Nordsamisk'}
-        onClick={() => console.log('SME')}
-      >
-        Nordsamisk
-      </TopStripeButton>
+      <TopStripeButton ariaLabel={'Engelsk'}>Engelsk</TopStripeButton>
+      <TopStripeButton ariaLabel={'Sørsamisk'}>Sørsamisk</TopStripeButton>
+      <TopStripeButton ariaLabel={'Nordsamisk'}>Nordsamisk</TopStripeButton>
     </TopStripeMenu>
     <Link path={'#link'} text={'Logg inn'} placement="before" />
   </TopStripe>
@@ -68,44 +80,48 @@ import Typography from '@skatteetaten/frontend-components/Typography';
   <Typography>
     <Grid padding={'0px'}>
       <Grid.Row>
-        <Grid.Col sm={0} lg={1} xl={2}></Grid.Col>
-        <Grid.Col sm={12} lg={10} xl={8}>
+        <Grid.Col noSpacing sm={0} lg={1} xl={2}></Grid.Col>
+        <Grid.Col noSpacing sm={12} lg={10} xl={8}>
           <Grid>
             <Grid.Row rowSpacing={Grid.SPACE_LARGE}>
               <Grid.Col noSpacing sm={0} lg={1} xl={2}></Grid.Col>
               <Grid.Col noSpacing sm={12} lg={10} xl={8}>
-                <h2>Innhold utenfor Card</h2>
+                <h2 style={{ marginTop: '8px' }}>
+                  Eksempel på publikumsløsning
+                </h2>
                 <p>
-                  Dette er også et eget grid. Den er meningen at denne teksten
-                  skal alignes pent med teksten inni kortet under.
+                  Denne siden inneholder et eksempel hvordan en publikumsløsning
+                  kan utformes. Hovedinnholdet justeres mot en linje i
+                  venstrekant, mens enkelte elementer trekkes ut over linjen.
                 </p>
               </Grid.Col>
               <Grid.Col noSpacing sm={0} lg={1} xl={2}></Grid.Col>
             </Grid.Row>
           </Grid>
           <Card
-            color={Card.Color.WHITE}
-            border={Card.Border.GREEN_BORDER}
-            margin="small"
+            color={Card.Color.BEIGE}
+            margin={screenSize.gt.md ? 'small' : 'medium'}
           >
             <Grid padding={'0px'}>
               <Grid.Row>
                 <Grid.Col noSpacing sm={0} lg={1} xl={2}>
-                  <div style={{ textAlign: 'center', marginTop: '10px' }}>
+                  <div style={{ textAlign: 'center', marginTop: '8px' }}>
                     <Icon
-                      iconName="Company"
+                      iconName="Info"
                       style={{
-                        fontSize: '40px'
-                        //display: screenSize.lt.xl ? 'none' : 'block'
+                        fontSize: '36px',
+                        display: screenSize.lt.xl ? 'none' : 'block'
                       }}
                     />
                   </div>
                 </Grid.Col>
                 <Grid.Col noSpacing sm={12} lg={10} xl={8}>
-                  <h3 style={{ marginTop: '24px' }}>Et kort</h3>
+                  <h3 style={{ marginTop: '14px' }}>Varsel</h3>
                   <p>
-                    I dette kortet måtte jeg fjerne alt av titler og marg og
-                    satt inn en nytt grid. 8 av kolonnene brukes til innhold
+                    Dersom vi ønsker å tiltrekke brukerens oppmerksomhet kan vi
+                    legge inn bokser (Card) og et passende ikon. Siden det er
+                    ønskelig at innholdet inni boksen justeres pent med
+                    innholdet rundt, plasserer vi det i et grid.
                   </p>
                   <br />
                 </Grid.Col>
@@ -114,10 +130,47 @@ import Typography from '@skatteetaten/frontend-components/Typography';
             </Grid>
           </Card>
         </Grid.Col>
-        <Grid.Col sm={0} lg={1} xl={2}></Grid.Col>
+        <Grid.Col noSpacing sm={0} lg={1} xl={2}></Grid.Col>
       </Grid.Row>
     </Grid>
   </Typography>
+  <div style={{ height: '24px' }} />
+  <Grid padding={'0px'}>
+    <Grid.Row>
+      <Grid.Col noSpacing sm={0} lg={1} xl={2}></Grid.Col>
+      <Grid.Col noSpacing sm={12} lg={10} xl={8}>
+        <StepList>
+          <Step
+            stepTitle={titles.step1.no}
+            stepId={'step-1-1'}
+            actionBtn={{ text: 'Endre', ariaLabel: 'Endre jobber du?' }}
+            gridSpacing
+          >
+            <div>
+              <p>Jeg er fulltidsstudent eller vernepliktig i militæret </p>
+            </div>
+          </Step>
+          <Step
+            stepTitle={titles.step2.no}
+            stepId={'step-1-2'}
+            activeStep={false}
+            actionBtn={{ text: 'Endre', ariaLabel: 'Endre sommerjobb?' }}
+            gridSpacing
+          >
+            <p>Nei</p>
+          </Step>
+          <Step stepType={'result'} resultIcon={'Check'} gridSpacing>
+            <h3 style={{ marginTop: '10px' }}>Resultatvisning</h3>
+            <p>
+              Resultatet etter stegveiviseren bør også få en del oppmerksomhet,
+              og derfor større bredde enn hovedinnholdet.
+            </p>
+          </Step>
+        </StepList>
+      </Grid.Col>
+      <Grid.Col noSpacing sm={0} lg={1} xl={2}></Grid.Col>
+    </Grid.Row>
+  </Grid>
 
   <FooterContent>
     <Grid>
@@ -138,332 +191,5 @@ import Typography from '@skatteetaten/frontend-components/Typography';
       </Grid.Row>
     </Grid>
   </FooterContent>
-</div>;
-```
-
-### Saksbehandlingsløsning
-
-I de interne løsningene deler vi inn skjermen i et partsområde, et kjerneområde og et valgfritt rutineområde. Reponsivt design er viktig også her, fordi mange saksbehandlere bruker løsningene på deler av skjermen. Partsområdet skal inneholde opplysninger om personen, bedriften, kjøretøyet eller liknende som gir en støtte for saksbehandler for utførelse av arbeidsoppgaven. Kjerneområdet fyller hoveddelen av skjermbildet og har høyest prioritet. Her utføres selve arbeidsoppgaven. Funksjoner knyttet til arbeidsoppgaven kan ligge i kjerneområdet eller i toppen. I systemer med komplekse rutiner eller lovbestemmelser kan det være nyttig å tilby en rutinebeskrivelse i et eget område.
-
-```js
-import TopStripe, {
-  TopStripeMenu,
-  TopStripeButton
-} from '@skatteetaten/frontend-components/TopStripe';
-import TopBanner from '@skatteetaten/frontend-components/TopBanner';
-import Link from '@skatteetaten/frontend-components/Link';
-import Card from '@skatteetaten/frontend-components/Card';
-import TextField from '@skatteetaten/frontend-components/TextField';
-import Grid from '@skatteetaten/frontend-components/Grid';
-import CommandBar from '@skatteetaten/frontend-components/CommandBar';
-import Icon from '@skatteetaten/frontend-components/Icon/Icon';
-import IconButton from '@skatteetaten/frontend-components/IconButton/IconButton';
-import ActionButton from '@skatteetaten/frontend-components/ActionButton/ActionButton';
-import AccordionMenu from '@skatteetaten/frontend-components/AccordionMenu';
-import AccordionMenuItem from '@skatteetaten/frontend-components/AccordionMenu/AccordionMenuItem';
-
-const textStyle = {
-  fontSize: '12px',
-  textAlign: 'center',
-  textTransform: 'uppercase'
-};
-
-const white = {
-  color: '#ffffff'
-};
-
-initialState = {
-  items: [
-    {
-      key: 'view1',
-      name: 'Start arbeidsoppgave',
-      ariaLabel: 'Start arbeidsoppgave',
-      onClick: () => {
-        console.log('og');
-      },
-      iconProps: {
-        iconName: 'PlayOutline'
-      }
-    },
-    {
-      key: 'view2',
-      name: 'Sett på vent',
-      ariaLabel: 'Sett arbeidsoppgave på vent',
-      onClick: () => {
-        console.log('hei');
-      },
-      iconProps: {
-        iconName: 'PauseOutline'
-      }
-    },
-
-    {
-      key: 'view3',
-      name: 'Tildel',
-      ariaLabel: 'Tildel arbeidsoppgave',
-      onClick: () => {
-        console.log('og');
-      },
-      iconProps: {
-        iconName: 'PersonMoreOutline'
-      }
-    }
-  ]
-};
-
-const dlStyle = {
-  display: 'inline-block',
-  width: '50%',
-  margin: '0 0 5px 0',
-  verticalAlign: 'text-top'
-};
-
-const removeMargin = {
-  margin: '0'
-};
-
-const ulStyle = {
-  padding: 0,
-  margin: 0
-};
-
-const centerAlignStyle = {
-  display: 'flex',
-  alignItems: 'center'
-};
-
-const timeStampStyle = {
-  paddingLeft: 40,
-  marginTop: '-10px'
-};
-
-<div>
-  <TopBanner compact title="Kontekst" homeText="Systemnavn">
-    <CommandBar items={state.items} />
-  </TopBanner>
-
-  <div style={{ marginTop: '16px' }}>
-    <Grid>
-      <Grid.Row>
-        <Grid.Col sm={12} lg={12} xl={3}>
-          <div style={{ minWidth: '200px' }}>
-            <AccordionMenu>
-              <AccordionMenuItem
-                icon="Person"
-                iconLabel="Firmanavn"
-                heading={
-                  <>
-                    <span>
-                      <strong>Fatima Normann</strong>
-                    </span>
-                  </>
-                }
-              >
-                <span>
-                  <strong>Kontaktopplysninger</strong>
-                </span>
-                <dl style={removeMargin}>
-                  <dt style={dlStyle}>Navn</dt>
-                  <dd style={dlStyle}>Firma AS</dd>
-                  <dt style={dlStyle}>Adresse</dt>
-                  <dd style={dlStyle}>
-                    Strandgaten 10 <br />
-                    1234 Lillevik
-                  </dd>
-                  <dt style={dlStyle}>Telefon</dt>
-                  <dd style={dlStyle}>987 65 432</dd>
-                </dl>
-              </AccordionMenuItem>
-            </AccordionMenu>
-          </div>
-        </Grid.Col>
-        <Grid.Col sm={12} lg={12} xl={7}>
-          <Card subtitle="Kjerneområde" color={Card.Color.GREY}>
-            <CommandBar items={state.items} />
-          </Card>
-        </Grid.Col>
-        <Grid.Col sm={12} lg={12} xl={2}>
-          <Card
-            subtitle="Rutiner/regler (valgfritt)"
-            color={Card.Color.BEIGE}
-          ></Card>
-        </Grid.Col>
-      </Grid.Row>
-    </Grid>
-  </div>
-</div>;
-```
-
-```js
-import TopStripe, {
-  TopStripeMenu,
-  TopStripeButton
-} from '@skatteetaten/frontend-components/TopStripe';
-import TopBanner from '@skatteetaten/frontend-components/TopBanner';
-import Link from '@skatteetaten/frontend-components/Link';
-import Card from '@skatteetaten/frontend-components/Card';
-import TextField from '@skatteetaten/frontend-components/TextField';
-import Grid from '@skatteetaten/frontend-components/Grid';
-import CommandBar from '@skatteetaten/frontend-components/CommandBar';
-import Icon from '@skatteetaten/frontend-components/Icon/Icon';
-import IconButton from '@skatteetaten/frontend-components/IconButton/IconButton';
-import ActionButton from '@skatteetaten/frontend-components/ActionButton/ActionButton';
-import AccordionMenu from '@skatteetaten/frontend-components/AccordionMenu';
-import AccordionMenuItem from '@skatteetaten/frontend-components/AccordionMenu/AccordionMenuItem';
-
-const textStyle = {
-  fontSize: '12px',
-  textAlign: 'center',
-  textTransform: 'uppercase'
-};
-
-const white = {
-  color: '#ffffff'
-};
-
-initialState = {
-  items: [
-    {
-      key: 'view1',
-      name: 'Start arbeidsoppgave',
-      ariaLabel: 'Start arbeidsoppgave',
-      onClick: () => {
-        console.log('og');
-      },
-      iconProps: {
-        iconName: 'PlayOutline'
-      }
-    },
-    {
-      key: 'view2',
-      name: 'Sett på vent',
-      ariaLabel: 'Sett arbeidsoppgave på vent',
-      onClick: () => {
-        console.log('hei');
-      },
-      iconProps: {
-        iconName: 'PauseOutline'
-      }
-    },
-
-    {
-      key: 'view3',
-      name: 'Tildel',
-      ariaLabel: 'Tildel arbeidsoppgave',
-      onClick: () => {
-        console.log('og');
-      },
-      iconProps: {
-        iconName: 'PersonMoreOutline'
-      }
-    }
-  ]
-};
-
-const dlStyle = {
-  display: 'inline-block',
-  width: '50%',
-  margin: '0 0 5px 0',
-  verticalAlign: 'text-top'
-};
-
-const removeMargin = {
-  margin: '0'
-};
-
-const ulStyle = {
-  padding: 0,
-  margin: 0
-};
-
-const centerAlignStyle = {
-  display: 'flex',
-  alignItems: 'center'
-};
-
-const timeStampStyle = {
-  paddingLeft: 40,
-  marginTop: '-10px'
-};
-
-<div>
-  <TopBanner
-    external
-    title="Klage - fastsetting av engangsavgift"
-    homeText="Til Avgiftsweb hjem"
-  ></TopBanner>
-
-  <div style={{ marginTop: '16px' }}>
-    <Grid>
-      <Grid.Row>
-        <Grid.Col sm={12} lg={12} xl={3}>
-          <div style={{ minWidth: '200px' }}>
-            <AccordionMenu>
-              <AccordionMenuItem
-                icon="Person"
-                iconLabel="Firmanavn"
-                heading={
-                  <>
-                    <span>
-                      <strong>Fatima Normann</strong>
-                    </span>
-                  </>
-                }
-              >
-                <span>
-                  <strong>Kontaktopplysninger</strong>
-                </span>
-                <dl style={removeMargin}>
-                  <dt style={dlStyle}>Navn</dt>
-                  <dd style={dlStyle}>Firma AS</dd>
-                  <dt style={dlStyle}>Adresse</dt>
-                  <dd style={dlStyle}>
-                    Strandgaten 10 <br />
-                    1234 Lillevik
-                  </dd>
-                  <dt style={dlStyle}>Telefon</dt>
-                  <dd style={dlStyle}>987 65 432</dd>
-                </dl>
-              </AccordionMenuItem>
-            </AccordionMenu>
-          </div>
-        </Grid.Col>
-        <Grid.Col sm={12} lg={12} xl={7}>
-          <Card
-            title="Behandle klage fra brev"
-            subtitle="Utført 14.02.2021 Av Siri Saksbehandler"
-            color={Card.Color.GREY}
-            marginbottom="16px"
-          >
-            <p>
-              Behandle klage i brev fra Fatima Normann.{' '}
-              <Link
-                path={'#link'}
-                text={'Åpne påstand'}
-                icon={'OpenInNew'}
-                openInNew={true}
-                placement="after"
-              />
-            </p>
-            <p></p>
-          </Card>
-          <Card
-            title="Skrive vedtaksbrev"
-            subtitle="Ikke påbegynt"
-            color={Card.Color.WHITE}
-            border={Card.Border.YELLOW_BORDER}
-          >
-            <CommandBar items={state.items} />
-          </Card>
-        </Grid.Col>
-        <Grid.Col sm={12} lg={12} xl={2}>
-          <Card
-            subtitle="Rutiner/regler (valgfritt)"
-            color={Card.Color.BEIGE}
-          ></Card>
-        </Grid.Col>
-      </Grid.Row>
-    </Grid>
-  </div>
 </div>;
 ```
