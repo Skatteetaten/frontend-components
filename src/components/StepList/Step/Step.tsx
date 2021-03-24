@@ -45,6 +45,7 @@ export interface StepProps extends React.HTMLAttributes<HTMLDivElement> {
   className?: string;
   stepNumber?: number;
   children?: React.ReactElement;
+  gridSpacing?: boolean;
 }
 
 const Step = (props: StepProps) => {
@@ -56,7 +57,8 @@ const Step = (props: StepProps) => {
     resultIcon,
     className,
     stepType,
-    actionBtn
+    actionBtn,
+    gridSpacing
   } = props;
   const [styles, setStyles] = React.useState(getClassNames(props));
   const size = UseScreen();
@@ -76,7 +78,9 @@ const Step = (props: StepProps) => {
       <Grid.Row rowSpacing={Grid.SPACE_NONE}>
         <Grid.Col noSpacing={true}>
           <Grid.Row rowSpacing={Grid.SPACE_NONE}>
-            <Grid.Col sm={12}>
+            {gridSpacing && <Grid.Col noSpacing sm={0} lg={1}></Grid.Col>}
+
+            <Grid.Col sm={12} lg={10}>
               {stepNumber && stepNumber > 1 && (
                 <span className={classnames(styles.stepLineTop)} />
               )}
@@ -129,6 +133,7 @@ const Step = (props: StepProps) => {
                 </div>
               </div>
             </Grid.Col>
+            {gridSpacing && <Grid.Col noSpacing sm={0} lg={1}></Grid.Col>}
           </Grid.Row>
         </Grid.Col>
       </Grid.Row>

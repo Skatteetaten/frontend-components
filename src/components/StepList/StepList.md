@@ -53,6 +53,7 @@ const testFunc = () => {
       stepId={'step-1-1'}
       actionBtn={{
         text: 'Endre',
+        icon: 'edit',
         event: testFunc,
         ariaLabel: 'Endre jobber du?'
       }}
@@ -65,16 +66,17 @@ const testFunc = () => {
   <Step
     stepTitle={titles.step2.no}
     stepId={'step-1-2'}
-    actionBtn={{ text: 'Endre', ariaLabel: 'Endre overnatting' }}
+    actionBtn={{ text: 'Endre', icon: 'edit', ariaLabel: 'Endre overnatting' }}
   >
     <div>
       <p>Ja, jeg overnatter et annet sted enn hjemme på grunn av jobb</p>
     </div>
   </Step>
   <Step stepTitle={titles.step3.no} stepId={'step-1-3'} activeStep={true}>
-    <p style={{ marginBottom: '5px' }}>Hvor er hjemmet ditt?</p>
     <RadioButtonGroup
       required
+      label="Hvor er hjemmet ditt?"
+      options={state.options}
       defaultSelectedKey="A"
       options={state.options}
       id="RadiobuttonGroup"
@@ -142,6 +144,7 @@ const testFunc = () => {
       actionBtn={{
         text: 'Endre',
         event: testFunc,
+        icon: 'edit',
         ariaLabel: 'Endre jobber du?'
       }}
     >
@@ -153,7 +156,7 @@ const testFunc = () => {
   <Step
     stepTitle={titles.step2.no}
     stepId={'step-1-2'}
-    actionBtn={{ text: 'Endre', ariaLabel: 'Endre overnatting' }}
+    actionBtn={{ text: 'Endre', icon: 'edit', ariaLabel: 'Endre overnatting' }}
   >
     <div>
       <p>Ja, jeg overnatter et annet sted enn hjemme på grunn av jobb</p>
@@ -223,7 +226,7 @@ const titles = {
   <Step
     stepTitle={titles.step1.no}
     stepId={'step-1-1'}
-    actionBtn={{ text: 'Endre', ariaLabel: 'Endre jobber du?' }}
+    actionBtn={{ text: 'Endre', icon: 'edit', ariaLabel: 'Endre jobber du?' }}
   >
     <div>
       <p>Jeg er fulltidsstudent eller vernepliktig i militæret </p>
@@ -233,7 +236,7 @@ const titles = {
     stepTitle={titles.step2.no}
     stepId={'step-1-2'}
     activeStep={false}
-    actionBtn={{ text: 'Endre', ariaLabel: 'Endre sommerjobb?' }}
+    actionBtn={{ text: 'Endre', icon: 'edit', ariaLabel: 'Endre sommerjobb?' }}
   >
     <p>Nei</p>
   </Step>
