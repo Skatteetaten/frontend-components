@@ -43,6 +43,14 @@ function getCardBorder(props: CardProps) {
 
 function getMargin(props: CardProps) {
   switch (props.margin) {
+    case 'none':
+      return {
+        padding: '0px'
+      };
+    case 'small':
+      return {
+        padding: '4px'
+      };
     case 'large':
       return {
         padding: '24px'

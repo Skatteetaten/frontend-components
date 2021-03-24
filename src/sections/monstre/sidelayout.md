@@ -15,51 +15,128 @@ import Card from '@skatteetaten/frontend-components/Card';
 import TextField from '@skatteetaten/frontend-components/TextField';
 import FooterContent from '@skatteetaten/frontend-components/FooterContent';
 import Grid from '@skatteetaten/frontend-components/Grid';
+import Icon from '@skatteetaten/frontend-components/Icon';
+import Typography from '@skatteetaten/frontend-components/Typography';
+//import { UseScreen } from '../../../src/utils/ScreenPlugin';
 
-const textStyle = {
-  fontSize: '12px',
-  textAlign: 'center',
-  textTransform: 'uppercase'
-};
-
-const white = {
-  color: '#ffffff'
-};
+//const screenSize = UseScreen();
 
 <div>
   <TopStripe>
-    <p style={textStyle}>Toppstripe</p>
+    <Link path={'#topstripe'} text={'Kontakt oss'} placement="before" />
+
+    <TopStripeMenu title={'Endre skriftstørrelse'}>
+      <div style={{ fontSize: '20px' }}>
+        Hold Ctrl-tasten nede (Cmd-tasten på Mac). Trykk på + for å forstørre
+        eller - for å forminske.
+      </div>
+    </TopStripeMenu>
+    <TopStripeMenu title={'Language / Språk'}>
+      <TopStripeButton ariaLabel={'Norsk'} onClick={() => console.log('NB')}>
+        Norsk
+      </TopStripeButton>
+      <TopStripeButton
+        icon={'check'}
+        ariaLabel={'Nynorsk'}
+        onClick={() => console.log('NN')}
+      >
+        Nynorsk
+      </TopStripeButton>
+      <TopStripeButton ariaLabel={'Engelsk'} onClick={() => console.log('EN')}>
+        Engelsk
+      </TopStripeButton>
+      <TopStripeButton
+        ariaLabel={'Sørsamisk'}
+        onClick={() => console.log('SMA')}
+      >
+        Sørsamisk
+      </TopStripeButton>
+      <TopStripeButton
+        ariaLabel={'Nordsamisk'}
+        onClick={() => console.log('SME')}
+      >
+        Nordsamisk
+      </TopStripeButton>
+    </TopStripeMenu>
+    <Link path={'#link'} text={'Logg inn'} placement="before" />
   </TopStripe>
   <TopBanner
     external
-    homeText="Til skatteetaten.no"
-    title="Ekstern publikumsløsning"
-    logoLink
+    title={'Side for publikum'}
+    homeText={'Tilbake til skatteetaten.no'}
   />
-  <Grid>
-    <Grid.Row>
-      <Grid.Col sm={0} lg={1} xl={2}></Grid.Col>
-      <Grid.Col sm={12} lg={10} xl={8}>
-        <p style={textStyle}>Midtkolonne med hovedinnhold</p>
-        <Card margin="xlarge" color={Card.Color.BEIGE}>
-          <p style={textStyle}>Boks med viktige opplysninger</p>
-        </Card>
-        <br />
-
-        <Card
-          margin="xlarge"
-          color={Card.Color.WHITE}
-          border={Card.Border.GREEN_BORDER}
-        >
-          <p style={textStyle}>Ramme med beløpsinformasjon</p>
-        </Card>
-      </Grid.Col>
-      <Grid.Col sm={0} lg={1} xl={2}></Grid.Col>
-    </Grid.Row>
-  </Grid>
+  <Typography>
+    <Grid padding={'0px'}>
+      <Grid.Row>
+        <Grid.Col sm={0} lg={1} xl={2}></Grid.Col>
+        <Grid.Col sm={12} lg={10} xl={8}>
+          <Grid>
+            <Grid.Row rowSpacing={Grid.SPACE_LARGE}>
+              <Grid.Col noSpacing sm={0} lg={1} xl={2}></Grid.Col>
+              <Grid.Col noSpacing sm={12} lg={10} xl={8}>
+                <h2>Innhold utenfor Card</h2>
+                <p>
+                  Dette er også et eget grid. Den er meningen at denne teksten
+                  skal alignes pent med teksten inni kortet under.
+                </p>
+              </Grid.Col>
+              <Grid.Col noSpacing sm={0} lg={1} xl={2}></Grid.Col>
+            </Grid.Row>
+          </Grid>
+          <Card
+            color={Card.Color.WHITE}
+            border={Card.Border.GREEN_BORDER}
+            margin="small"
+          >
+            <Grid padding={'0px'}>
+              <Grid.Row>
+                <Grid.Col noSpacing sm={0} lg={1} xl={2}>
+                  <div style={{ textAlign: 'center', marginTop: '10px' }}>
+                    <Icon
+                      iconName="Company"
+                      style={{
+                        fontSize: '40px'
+                        //display: screenSize.lt.xl ? 'none' : 'block'
+                      }}
+                    />
+                  </div>
+                </Grid.Col>
+                <Grid.Col noSpacing sm={12} lg={10} xl={8}>
+                  <h3 style={{ marginTop: '24px' }}>Et kort</h3>
+                  <p>
+                    I dette kortet måtte jeg fjerne alt av titler og marg og
+                    satt inn en nytt grid. 8 av kolonnene brukes til innhold
+                  </p>
+                  <br />
+                </Grid.Col>
+                <Grid.Col noSpacing sm={0} lg={1} xl={2}></Grid.Col>
+              </Grid.Row>
+            </Grid>
+          </Card>
+        </Grid.Col>
+        <Grid.Col sm={0} lg={1} xl={2}></Grid.Col>
+      </Grid.Row>
+    </Grid>
+  </Typography>
 
   <FooterContent>
-    <p style={textStyle}>Footer</p>
+    <Grid>
+      <Grid.Row>
+        <Grid.Col sm={0} lg={1} xl={2}></Grid.Col>
+        <Grid.Col noSpacing sm={12} lg={10} xl={8}>
+          <Grid>
+            <Grid.Row>
+              <Grid.Col noSpacing sm={0} lg={1} xl={2}></Grid.Col>
+              <Grid.Col noSpacing sm={12} lg={10} xl={8}>
+                <p>Innhold i footer</p>
+              </Grid.Col>
+              <Grid.Col noSpacing sm={0} lg={1} xl={2}></Grid.Col>
+            </Grid.Row>
+          </Grid>
+        </Grid.Col>
+        <Grid.Col noSpacing sm={0} lg={1} xl={2}></Grid.Col>
+      </Grid.Row>
+    </Grid>
   </FooterContent>
 </div>;
 ```

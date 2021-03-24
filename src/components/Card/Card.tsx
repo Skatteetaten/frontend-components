@@ -48,7 +48,7 @@ export interface CardProps extends React.HTMLAttributes<HTMLDivElement> {
   /** Avstand under kortet */
   marginbottom?: string;
   /** Luft over og under kortet */
-  margin?: 'medium' | 'large' | 'xlarge';
+  margin?: 'none' | 'small' | 'medium' | 'large' | 'xlarge';
   /** Callback som kjøres når man åpner eller lukker kortet */
   onChange?: (...args: any[]) => any;
   /** Global attributt som må være unik for hele HTML dokumentet */

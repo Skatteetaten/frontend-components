@@ -74,6 +74,10 @@ module.exports = {
         {
           name: 'Feilmeldinger',
           content: 'src/sections/monstre/feil.md'
+        },
+        {
+          name: 'Sidelayout',
+          content: 'src/sections/monstre/sidelayout.md'
         }
       ]
     },
