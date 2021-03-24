@@ -90,7 +90,7 @@ const Step = (props: StepProps) => {
                   [styles.arrowLine]: stepType === 'next'
                 })}
               />
-              {size.gt.sm && stepType !== 'next' && (
+              {stepType !== 'next' && (
                 <NumberIcon
                   styles={styles}
                   resultIcon={resultIcon}
