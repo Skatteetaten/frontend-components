@@ -53,6 +53,7 @@ const LanguagePickerButton = ({
       onClick={() => setLanguage(buttonLanguage)}
       showOnMobile={showOnMobile}
       className={styles.languageButton}
+      role={'menuitem'}
       aria-current={buttonLanguage === selectedLanguage}
     >
       {buttonLanguage === selectedLanguage && (
