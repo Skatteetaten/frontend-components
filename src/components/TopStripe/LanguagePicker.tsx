@@ -69,17 +69,32 @@ const LanguagePickerButton = ({
 
 export interface LanguagePickerProps {
   className?: string;
+  /**
+   * Current language on the page. Valid values are 'nb', 'nn', 'en' and 'se'
+   */
   selectedLanguage: LanguageEnum;
+  /**
+   * Method for setting the language on the page
+   */
   setLanguage: any;
+  /**
+   * If element is displayed in TopStripe on mobile
+   * @default true
+   */
   showOnMobile?: boolean;
+  /**
+   * If sami option is included in language picker
+   * @default false
+   */
   showSami?: boolean;
 }
+
 export const LanguagePicker: React.FC<LanguagePickerProps> = props => {
   const {
     className,
     selectedLanguage,
     setLanguage,
-    showOnMobile = false,
+    showOnMobile = true,
     showSami = false
   } = props;
   const [languages, setLanguages] = React.useState<LanguageEnum[]>([]);
