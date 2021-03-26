@@ -166,21 +166,22 @@ const testFunc = () => {
     <p>Jeg bor i Norge</p>
   </Step>
   <Step stepTitle={titles.step4.no} stepId={'step-1-4'} activeStep={true}>
-    <Card color={Card.Color.BEIGE} margin={'large'}>
-      <p style={{ fontWeight: '700' }}>
-        Følgende opplysninger er klare til innsending:
-      </p>
-      <ul>
-        <li>Du jobber</li>
-        <li>Du overnatter et annet sted enn hjemme på grunn av jobb</li>
-        <li>Du bor i Norge</li>
-      </ul>
-      <CheckBox
-        boxSide={'start'}
-        label="Jeg bekrefter at opplysningene over stemmer."
-      />
-    </Card>
-    <br />
+    <div style={{ marginTop: '8px', marginBottom: '16px' }}>
+      <Card color={Card.Color.BEIGE} margin={'large'}>
+        <p style={{ fontWeight: '700' }}>
+          Følgende opplysninger er klare til innsending:
+        </p>
+        <ul>
+          <li>Du jobber</li>
+          <li>Du overnatter et annet sted enn hjemme på grunn av jobb</li>
+          <li>Du bor i Norge</li>
+        </ul>
+        <CheckBox
+          boxSide={'start'}
+          label="Jeg bekrefter at opplysningene over stemmer."
+        />
+      </Card>
+    </div>
   </Step>
   <Step stepType={'next'}>
     <Button buttonStyle="primary">Send inn</Button>
@@ -195,6 +196,7 @@ import Button from '@skatteetaten/frontend-components/Button';
 import Step from '@skatteetaten/frontend-components/StepList/Step';
 import StepList from '@skatteetaten/frontend-components/StepList';
 import LinkGroup from '@skatteetaten/frontend-components/LinkGroup';
+import Typography from '@skatteetaten/frontend-components/Typography';
 
 const links = [
   {
@@ -227,6 +229,7 @@ const titles = {
     stepTitle={titles.step1.no}
     stepId={'step-1-1'}
     actionBtn={{ text: 'Endre', icon: 'edit', ariaLabel: 'Endre jobber du?' }}
+    gridSpacing
   >
     <div>
       <p>Jeg er fulltidsstudent eller vernepliktig i militæret </p>
@@ -237,16 +240,24 @@ const titles = {
     stepId={'step-1-2'}
     activeStep={false}
     actionBtn={{ text: 'Endre', icon: 'edit', ariaLabel: 'Endre sommerjobb?' }}
+    gridSpacing
   >
     <p>Nei</p>
   </Step>
-  <Step stepTitle={titles.step3.no} stepType={'result'} resultIcon={'Check'}>
-    <p>
-      Er du fulltidsstudent eller i militæret, regnes du ikke som pendler hvis
-      du ikke har sommerjobb. Hvis du har lang reisevei mellom hjem og
-      arbeidsplass, kan du ha krav på reisefradrag. Det kan du sjekke i
-      reisefradragskalkulatoren.
-    </p>
+  <Step
+    stepTitle={titles.step3.no}
+    stepType={'result'}
+    resultIcon={'Check'}
+    gridSpacing
+  >
+    <Typography>
+      <p>
+        Er du fulltidsstudent eller i militæret, regnes du ikke som pendler hvis
+        du ikke har sommerjobb. Hvis du har lang reisevei mellom hjem og
+        arbeidsplass, kan du ha krav på reisefradrag. Det kan du sjekke i
+        reisefradragskalkulatoren.
+      </p>
+    </Typography>
     <LinkGroup links={links} />
   </Step>
 </StepList>;

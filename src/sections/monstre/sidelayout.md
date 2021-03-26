@@ -1,8 +1,52 @@
-### Publikumsløsning
+```js noeditor
+import Card from '@skatteetaten/frontend-components/Card';
+import Link from '@skatteetaten/frontend-components/Link';
 
-I publikumsløsningene våre ser vi at mobil og nettbrett blir stadig viktigere. Det er derfor svært viktig at sidelayouten er reponsiv. I de fleste publikumsløsningen gir det mening å ha hovedinnholdet sentrert i en midtkolonne og solide marger når skjermbredden er stor. På den måten kan hovedinnholdet få en bredde som fungerer godt både på dekstop og mobil.
+<div>
+  <Card
+    title="Hovedregler for sidelayout"
+    color={Card.Color.WHITE}
+    border={Card.Border.YELLOW_BORDER}
+    titlesize="x-large"
+    margin="large"
+  >
+    <p>
+      Oppbygging av siden skal gjøres på en slik måte at den fungerer godt
+      uavhengig av skjermstørrelse (responsiv design). I publikumsløsninger er
+      dette viktig fordi mange bruker løsningene våre på mobil og nettbrett,
+      ikke bare på PC. I interne løsninger er det viktig for å støtte at
+      saksbehandler har flere vinduer ved siden av hverandre på skjermen.
+      <ul>
+        <li>Publikumsløsninger skal alltid ha topp og bunn.</li>
+        <li>
+          Etterstreb å ha hovedinnholdet i én kolonne midt på siden. Juster
+          teksten og elementer i hovedinnholdet mot en vertikal linje.
+        </li>
+        <li>
+          Enkelte elementer, som bokser og rammer, kan gis ektra oppmerksomhet
+          ved å trekke dem utenfor den vertikale linjen.
+        </li>
+        <li>
+          Både hovedinnhold, bokser og rammer skal ha en bredde som fungerer
+          godt på den skjermen de vises. Bruk solide marger til høyre og venstre
+          når skjermbredden er stor, og reduser dem når skjermbredden minker.
+        </li>
+      </ul>
+    </p>
+    <p>
+      Merk: Denne siden inneholder eksempler som bruker
+      <Link path="#grid" text="Grid-komponenten" /> til å lage sidelayout. Dersom
+      du ikke trenger å støtte Internet Explorer 11 kan det er være verd å vurdere{' '}
+      <Link
+        path="https://www.w3schools.com/css/css_grid.asp"
+        text="CSS-grid"
+      /> i stedet.
+    </p>
+  </Card>
+</div>;
+```
 
-Merk: Denne siden inneholder eksempler som bruker Grid-komponenten til å lage sidelayout. Dersom du ikke trenger å støtte Internet Explorer 11 kan det er være verd å vurdere [CSS-grid](https://www.w3schools.com/css/css_grid.asp) i stedet.
+### Eksempel på sidelayout for publikumsløsning
 
 ```js
 import TopStripe, {
@@ -103,9 +147,15 @@ const screenSize = UseScreen();
             margin={screenSize.gt.md ? 'small' : 'medium'}
           >
             <Grid padding={'0px'}>
-              <Grid.Row>
+              <Grid.Row rowSpacing={Grid.SPACE_LARGE}>
                 <Grid.Col noSpacing sm={0} lg={1} xl={2}>
-                  <div style={{ textAlign: 'center', marginTop: '8px' }}>
+                  <div
+                    style={{
+                      textAlign: 'right',
+                      marginTop: '-4px',
+                      marginRight: '16px'
+                    }}
+                  >
                     <Icon
                       iconName="Info"
                       style={{
@@ -116,14 +166,13 @@ const screenSize = UseScreen();
                   </div>
                 </Grid.Col>
                 <Grid.Col noSpacing sm={12} lg={10} xl={8}>
-                  <h3 style={{ marginTop: '14px' }}>Varsel</h3>
+                  <h3 style={{ marginTop: '0px' }}>Varsel</h3>
                   <p>
                     Dersom vi ønsker å tiltrekke brukerens oppmerksomhet kan vi
                     legge inn bokser (Card) og et passende ikon. Siden det er
                     ønskelig at innholdet inni boksen justeres pent med
                     innholdet rundt, plasserer vi det i et grid.
                   </p>
-                  <br />
                 </Grid.Col>
                 <Grid.Col noSpacing sm={0} lg={1} xl={2}></Grid.Col>
               </Grid.Row>
@@ -134,16 +183,19 @@ const screenSize = UseScreen();
       </Grid.Row>
     </Grid>
   </Typography>
-  <div style={{ height: '24px' }} />
   <Grid padding={'0px'}>
-    <Grid.Row>
+    <Grid.Row rowSpacing={Grid.SPACE_LARGE}>
       <Grid.Col noSpacing sm={0} lg={1} xl={2}></Grid.Col>
       <Grid.Col noSpacing sm={12} lg={10} xl={8}>
         <StepList>
           <Step
             stepTitle={titles.step1.no}
             stepId={'step-1-1'}
-            actionBtn={{ text: 'Endre', ariaLabel: 'Endre jobber du?' }}
+            actionBtn={{
+              text: 'Endre',
+              icon: 'Edit',
+              ariaLabel: 'Endre jobber du?'
+            }}
             gridSpacing
           >
             <div>
@@ -154,17 +206,25 @@ const screenSize = UseScreen();
             stepTitle={titles.step2.no}
             stepId={'step-1-2'}
             activeStep={false}
-            actionBtn={{ text: 'Endre', ariaLabel: 'Endre sommerjobb?' }}
+            actionBtn={{
+              text: 'Endre',
+              icon: 'Edit',
+              ariaLabel: 'Endre sommerjobb?'
+            }}
             gridSpacing
           >
             <p>Nei</p>
           </Step>
           <Step stepType={'result'} resultIcon={'Check'} gridSpacing>
-            <h3 style={{ marginTop: '10px' }}>Resultatvisning</h3>
-            <p>
-              Resultatet etter stegveiviseren bør også få en del oppmerksomhet,
-              og derfor større bredde enn hovedinnholdet.
-            </p>
+            <Typography>
+              <div style={{ marginTop: '8px', marginBottom: '8px' }}>
+                <h3 style={{ marginTop: '0' }}>Resultatvisning</h3>
+                <p>
+                  Resultatet etter stegveiviseren bør også få en del
+                  oppmerksomhet, og derfor større bredde enn hovedinnholdet.
+                </p>
+              </div>
+            </Typography>
           </Step>
         </StepList>
       </Grid.Col>
