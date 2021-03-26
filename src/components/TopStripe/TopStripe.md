@@ -185,20 +185,30 @@ const [language, setLanguage] = useState('nb');
 
 ### På mobil
 
-På mobil flyttes valgene for kontakt oss og skriftsstørrelse til footeren. Språkvalg legges inni TopBanner.
+På mobil flyttes valgene for kontakt oss og skriftsstørrelse til footeren.
 
 ```js
+import { useState } from 'react';
+
 import TopStripe, {
+  LanguagePicker,
   TopStripeMenu,
   TopStripeButton
 } from '@skatteetaten/frontend-components/TopStripe';
 import TopBanner from '@skatteetaten/frontend-components/TopBanner';
 import Link from '@skatteetaten/frontend-components/Link';
 
+const [language, setLanguage] = useState('nb');
+
 <div>
   <TopStripe>
     <Link path={'#main-content-id'} text={'Hopp til hovedinnhold'} skipLink />
-
+    <LanguagePicker
+      selectedLanguage={language}
+      setLanguage={setLanguage}
+      showOnMobile={true}
+      showSami={true}
+    />
     <TopStripeMenu icon="person" title={'Kari Normann'}>
       <TopStripeButton>Jenny Sandli</TopStripeButton>
       <TopStripeButton>987654321 Eplepress AS</TopStripeButton>
@@ -216,7 +226,7 @@ import Link from '@skatteetaten/frontend-components/Link';
     homeText={'Tilbake til skatteetaten.no'}
   >
     <div style={{ minHeight: '80px', textAlign: 'right' }}>
-      Språkvalgene her (egen komponent finnes ennå ikke)
+      «Hamburger»-meny her (egen komponent finnes ennå ikke)
     </div>
   </TopBanner>
 </div>;
