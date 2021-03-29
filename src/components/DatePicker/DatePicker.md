@@ -6,22 +6,10 @@ import DatePicker from '@skatteetaten/frontend-components/DatePicker';
 <div>
   <div className="ExampleFlexContainer-200">
     <DatePicker
-      id={'my-date1'}
-      label={'Velg en dato'}
-      help={
-        'Du kan skrive inn dato i feltet, eller velge en dato ved hjelp av datovelgeren, enten med mus eller bruk tastaturet'
-      }
-      isRequiredErrorMessage={'Dato må fylles ut'}
-    />
-  </div>
-  <br />
-  <div className="ExampleFlexContainer-200">
-    <DatePicker
       id={'my-date'}
-      label={'Ukenummer'}
-      placeholder={'dd.mm.åååå'}
+      label={'Dato (dd.mm.åååå)'}
       help={'Denne datovelgeren viser ukenummer i kalender'}
-      showMonthPickerAsOverlay={true}
+      showMonthPickerAsOverlay={false}
       showWeekNumbers={true}
     />
   </div>
