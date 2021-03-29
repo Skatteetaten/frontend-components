@@ -39,10 +39,10 @@ export function getClassNames(props) {
           padding: 0,
           marginLeft: compact
             ? iconRight
-              ? '4px'
+              ? '0px'
               : '-4px'
             : iconRight
-            ? '8px'
+            ? '0px'
             : '-8px',
           fontSize: compact ? IconFontSizes.small : IconFontSizes.xxlarge,
           selectors: {
