@@ -6,7 +6,7 @@ import { SearchFieldProps } from './SearchField';
 
 export const getClassNames = (props: SearchFieldProps) => {
   const palette = getTheme().palette as PaletteProps;
-  const { border, searchFieldSize, onSearchIcon, options } = props;
+  const { border, searchFieldSize, onSearchIcon } = props;
   const largeSize = searchFieldSize === 'large';
   const standardSize = searchFieldSize === 'standard';
 
