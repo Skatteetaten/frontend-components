@@ -6,7 +6,7 @@ import { SearchFieldProps } from './SearchField';
 
 export const getClassNames = (props: SearchFieldProps) => {
   const palette = getTheme().palette as PaletteProps;
-  const { border, searchFieldSize, onSearchIcon } = props;
+  const { border, searchFieldSize, onSearchIcon, options } = props;
   const largeSize = searchFieldSize === 'large';
   const standardSize = searchFieldSize === 'standard';
 
@@ -124,7 +124,9 @@ export const getClassNames = (props: SearchFieldProps) => {
         },
         '& .ms-SearchBox-icon': {
           position: 'absolute',
-          color: palette.skeColor.blue,
+          color: onSearchIcon
+            ? palette.skeColor.blue
+            : palette.skeColor.blackAlt,
           right: 10,
           top: largeSize ? 5 : 0,
           border: 'none',
