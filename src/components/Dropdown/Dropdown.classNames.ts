@@ -7,6 +7,8 @@ import { DropdownProps } from './Dropdown';
 import { IDropdownStyles } from 'office-ui-fabric-react';
 
 function getFieldTypeStyles(props: DropdownProps) {
+  const palette = getTheme().palette as PaletteProps;
+
   if (props.inputSize === 'large') {
     return {
       '.ms-Dropdown-title': {
@@ -18,13 +20,17 @@ function getFieldTypeStyles(props: DropdownProps) {
       },
       '& span.ms-Dropdown-caretDownWrapper': {
         top: '8px',
-        fontSize: FontSizes.large
+        fontSize: FontSizes.large,
+        color: palette.skeColor.blue
       }
     };
   } else {
     return {
       '.ms-Dropdown-title': {
         fontSize: FontSizes.small
+      },
+      '& span.ms-Dropdown-caretDownWrapper': {
+        color: palette.skeColor.blue
       }
     };
   }
@@ -53,6 +59,9 @@ export const getClassNames = (props: DropdownProps) => {
         '& .ms-Dropdown-title': {
           borderColor: palette.skeColor.blackAlt,
           borderRadius: '0px'
+        },
+        '& .ms-Dropdown-titleIsPlaceHolder': {
+          borderColor: palette.skeColor.blackAlt
         },
         '& .ms-Dropdown-title.ms-Dropdown-title': errorMessage && {
           borderColor: color,
@@ -95,7 +104,9 @@ export const getClassNames = (props: DropdownProps) => {
       fontSize: FontSizes.medium,
       fontWeight: 700,
       display: 'block',
-      padding: 0
+      padding: 0,
+      marginLeft: 0,
+      marginRight: 0
     }
   });
 };

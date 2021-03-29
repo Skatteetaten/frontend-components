@@ -16,7 +16,8 @@ const initialState = {
 
 <div style={{ width: '300px' }}>
   <Dropdown
-    label="Velg favoritt"
+    label="Fruktsort"
+    placeholder="Velg"
     help="Tekst som hjelper brukeren å forstå eller få til."
     options={state.options}
     onChange={console.log}
@@ -42,7 +43,8 @@ const initialState = {
 
 <div style={{ width: '300px' }}>
   <Dropdown
-    label="Velg favoritt"
+    label="Fruktsort"
+    placeholder="Velg"
     help="Tekst som hjelper brukeren å forstå eller få til"
     inputSize="large"
     options={state.options}
@@ -59,14 +61,14 @@ import Dropdown from '@skatteetaten/frontend-components/Dropdown';
 <div style={{ width: '300px' }}>
   <Dropdown
     readOnly
-    label="Lesemodus:"
-    inputSize="large"
+    label="Fruktsort"
     options={[
-      { key: 'A', text: 'Alfa', value: 'Alfa' },
-      { key: 'B', text: 'Beta', value: 'Beta' },
-      { key: 'C', text: 'Gamma', value: 'Gamma' },
-      { key: 'D', text: 'Delta', value: 'Delta' },
-      { key: 'E', text: 'Echo', value: 'Echo' }
+      { key: null, text: 'Ingen' },
+      { key: 'A', text: 'Banan' },
+      { key: 'B', text: 'Eple' },
+      { key: 'C', text: 'Kiwi' },
+      { key: 'D', text: 'Pære' },
+      { key: 'E', text: 'Sitron' }
     ]}
     selectedKey="D"
   />
