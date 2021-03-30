@@ -16,7 +16,7 @@ function getType(props: NavigationTileProps): IRawStyle {
 function getIcon(props: NavigationTileProps): IRawStyle {
   if (props.alignIcon === 'right') {
     return {
-      fontSize: '1.4rem',
+      fontSize: '1.75rem',
       float: 'right'
     };
   }

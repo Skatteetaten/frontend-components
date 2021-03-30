@@ -1,5 +1,6 @@
 import { mergeStyleSets } from '@uifabric/merge-styles';
 import { getTheme } from '@uifabric/styling';
+import { LineHeightSizes } from 'components/utils/fonts';
 import { FontSizes, PaletteProps } from '..';
 
 export const getClassNames = () => {
@@ -64,9 +65,10 @@ export const getClassNames = () => {
       }
     },
     icon: {
-      fontSize: '2.5rem',
+      fontSize: '1.375rem',
       color: color,
-      display: 'inline'
+      display: 'inline',
+      lineHeight: '0.95'
     },
     iconFixateContainer: {
       background: whiteBackground,
