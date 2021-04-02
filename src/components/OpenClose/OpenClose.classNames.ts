@@ -16,9 +16,13 @@ export function getClassNames(props) {
       border: 'none',
       color: palette.skeColor.blue,
       fontSize: props.compact ? FontSizes.medium : FontSizes.smallPlus,
-      padding: 0,
       fontWeight: FontWeights.bold,
+      padding: 0,
       background: 'none',
+      marginLeft: '-0.5rem',
+      paddingLeft: '0.5rem',
+      marginRight: '-0.5rem',
+      paddingRight: '0.5rem',
       cursor: 'pointer',
       selectors: {
         '@media (min-width: 640px)': {
@@ -39,12 +43,13 @@ export function getClassNames(props) {
           padding: 0,
           marginLeft: compact
             ? iconRight
-              ? '0px'
+              ? '2px'
               : '-4px'
             : iconRight
-            ? '0px'
+            ? '2px'
             : '-8px',
           fontSize: compact ? IconFontSizes.small : IconFontSizes.xxlarge,
+          fontWeight: FontWeights.bold,
           selectors: {
             '@media (min-width: 640px)': {
               fontSize: compact ? IconFontSizes.large : IconFontSizes.xxlarge
