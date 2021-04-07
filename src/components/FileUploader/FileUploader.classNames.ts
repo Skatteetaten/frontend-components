@@ -47,6 +47,10 @@ export const getClassNames = (props: FileUploaderProps) => {
       border: 0,
       borderStyle: 'none',
       cursor: 'pointer',
+      marginTop: 5,
+    },
+    fileIcon: {
+      fontSize: '20px',
     },
     fileName: {
       float: 'left',

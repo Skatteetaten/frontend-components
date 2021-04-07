@@ -1,12 +1,6 @@
-import { mergeStyleSets, mergeStyles } from '@uifabric/merge-styles';
+import { mergeStyleSets } from '@uifabric/merge-styles';
 import { getTheme } from '@uifabric/styling';
-import {
-  FontSizes,
-  MdIcons,
-  Animation,
-  PaletteProps,
-  DropdownProps,
-} from '../index';
+import { FontSizes, MdIcons, PaletteProps, DropdownProps } from '../index';
 import { IDropdownStyles } from '@fluentui/react';
 
 function getFieldTypeStyles(props: DropdownProps) {
@@ -99,39 +93,6 @@ export const getClassNames = (props: DropdownProps) => {
       fontWeight: 700,
       display: 'block',
       padding: 0,
-    },
-  });
-};
-
-export const getErrorClassNames = (props: DropdownProps) => {
-  const { errorMessage } = props;
-  const palette = getTheme().palette as PaletteProps;
-  const color = errorMessage
-    ? palette.skeColor.error
-    : palette.skeColor.blackAlt;
-  const errorIcon = "'" + MdIcons.icons.Error + "'";
-
-  return mergeStyles(Animation.errorMessage, {
-    displayName: 'SkeDropdownError',
-    color,
-    fontSize: FontSizes.small,
-    fontWeight: '400',
-    display: 'flex',
-    alignItems: 'center',
-    paddingTop: 5,
-    paddingLeft: 20,
-    position: 'relative',
-    selectors: {
-      '&:before': {
-        fontFamily: MdIcons.fontFace.fontFamily,
-        fontSize: 18,
-        display: 'block',
-        content: errorIcon,
-        marginRight: 3,
-        position: 'absolute',
-        top: 5,
-        left: 0,
-      },
     },
   });
 };

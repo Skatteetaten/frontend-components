@@ -5,7 +5,7 @@ import { LabelWithCallout, Button } from '@skatteetaten/frontend-components';
 
 const [state, setState] = React.useState({ warning: false });
 
-<>
+<div style={{ width: '400px' }}>
   <LabelWithCallout
     label={'Omregistreringsavgift'}
     help={'Avgiften du må betale for å registrere kjøretøyet på en ny person.'}
@@ -13,10 +13,11 @@ const [state, setState] = React.useState({ warning: false });
       state.warning && 'Du ser ut til å være fritatt for omregistreringsavgift.'
     }
   />
+  <br />
   <Button onClick={() => setState({ warning: !state.warning })}>
     {state.warning ? 'Vis med hjelpetekst' : 'Vis med varsel'}
   </Button>
-</>;
+</div>;
 ```
 
 Brukt i kombinasjon med annen komponent.
@@ -40,7 +41,7 @@ import {
 </div>;
 ```
 
-Flere komponeter har LabelWithCallout innebygd. Her med autoDismiss:
+LabelWithCallout brukt i tekstfelt med automatisk lukking av utropsboksen:
 
 ```js
 import { TextField } from '@skatteetaten/frontend-components';

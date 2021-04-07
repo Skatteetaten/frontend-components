@@ -66,7 +66,7 @@ export const getClassNames = (props: CardProps, state: CardState) => {
   const theme = getTheme();
   const palette = theme.palette as PaletteProps;
   const { isExpandedState } = state;
-  const { titlesize, circleOnIcon } = props;
+  const { titlesize } = props;
   return mergeStyleSets({
     root: {
       displayName: 'SkeCard',
@@ -87,16 +87,7 @@ export const getClassNames = (props: CardProps, state: CardState) => {
       },
     },
     expandIcon: {
-      top: 0,
-      right: 0,
-      color: palette.skeColor.blue,
-      margin: '0 4px',
-      width: '30px',
-      height: '30px',
-      border: circleOnIcon
-        ? `3px solid ${palette.skeColor.blue}`
-        : '3px solid transparent',
-      borderRadius: '50%',
+      alignSelf: 'flex-start',
       selectors: {
         i: {
           transform: isExpandedState ? 'rotate(-180deg)' : '0',
@@ -130,11 +121,13 @@ export const getClassNames = (props: CardProps, state: CardState) => {
       flex: '1 1 1px',
       fontSize: titlesize,
       fontWeight: FontWeights.semibold,
+      margin: 0,
     },
     titleExpand: {
       flex: '1 1 1px',
       fontSize: titlesize,
       fontWeight: FontWeights.semibold,
+      margin: 0,
       selectors: {
         ':hover': {
           textDecoration: 'underline',

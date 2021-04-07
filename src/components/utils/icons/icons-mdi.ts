@@ -107,7 +107,7 @@ export default {
     MenuUp: '\uf360',
     MenuDown: '\uf35d',
     Pin: '\uf403',
-    PinOff: '\uf404', 
+    PinOff: '\uf404',
 
     //Sections and symbols
     Home: '\uf2dc',

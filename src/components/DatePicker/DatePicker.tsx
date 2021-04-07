@@ -182,8 +182,8 @@ export const DatePicker: React.FC<DatePickerProps> = (
         {...labelCallout}
       />
       <FabricDatePicker
-        {...rest}
         {...defaultValues}
+        {...rest}
         id={inputId}
         ariaLabel={ariaLabel ? ariaLabel : label}
         className={classnames(

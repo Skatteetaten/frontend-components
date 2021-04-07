@@ -4,7 +4,7 @@ exports[`FooterContent komponent matcher snapshot  1`] = `
 <div>
   <div
     aria-hidden="true"
-    className="footerDecorContainer-56"
+    className="footerDecorContainer-44"
   >
     <svg
       className="footer-decoration-svg"
@@ -40,10 +40,10 @@ exports[`FooterContent komponent matcher snapshot  1`] = `
     </svg>
   </div>
   <footer
-    className="footerWrapper-54"
+    className="footerWrapper-42"
   >
     <div
-      className="footerContent-55"
+      className="footerContent-43"
     />
   </footer>
 </div>

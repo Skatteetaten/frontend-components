@@ -623,6 +623,10 @@ const iconGroup = {
       usage: 'Bolig og eiendeler ',
     },
     {
+      name: 'TemaChatbot',
+      usage: 'Chatbot - stor utgave'
+    },
+    {
       name: 'TemaFamilie',
       usage: 'Familie',
     },

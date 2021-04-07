@@ -2,11 +2,11 @@
 
 exports[`Tabs komponent matcher snapshot 1`] = `
 <div
-  className="SkeTabs-54"
+  className="SkeTabs-42"
   role="toolbar"
 >
   <div
-    className="ms-FocusZone css-62 ms-Pivot ms-Pivot--large ms-Pivot--tabs root-55"
+    className="ms-FocusZone css-50 ms-Pivot ms-Pivot--large ms-Pivot--tabs root-43"
     data-focuszone-id="FocusZone1"
     onFocus={[Function]}
     onKeyDown={[Function]}
@@ -15,7 +15,7 @@ exports[`Tabs komponent matcher snapshot 1`] = `
   >
     <button
       aria-selected={true}
-      className="ms-Button ms-Button--action ms-Button--command ms-Pivot-link is-selected linkIsSelected-63"
+      className="ms-Button ms-Button--action ms-Button--command ms-Pivot-link is-selected linkIsSelected-51"
       data-content="Tilgjengelige oppgaver (23)"
       data-is-focusable={true}
       id="Pivot0-Tab0"
@@ -30,20 +30,20 @@ exports[`Tabs komponent matcher snapshot 1`] = `
       type="button"
     >
       <span
-        className="ms-Button-flexContainer flexContainer-64"
+        className="ms-Button-flexContainer flexContainer-52"
         data-automationid="splitbuttonprimary"
       >
         <span
-          className="ms-Pivot-linkContent linkContent-59"
+          className="ms-Pivot-linkContent linkContent-47"
         >
           <span
-            className="ms-Pivot-text text-60"
+            className="ms-Pivot-text text-48"
           >
              
             Tilgjengelige oppgaver
           </span>
           <span
-            className="ms-Pivot-count count-61"
+            className="ms-Pivot-count count-49"
           >
              (
             23
@@ -54,7 +54,7 @@ exports[`Tabs komponent matcher snapshot 1`] = `
     </button>
     <button
       aria-selected={false}
-      className="ms-Button ms-Button--action ms-Button--command ms-Pivot-link link-71"
+      className="ms-Button ms-Button--action ms-Button--command ms-Pivot-link link-59"
       data-content="Mine oppgaver (2)"
       data-is-focusable={true}
       id="Pivot0-Tab1"
@@ -69,20 +69,20 @@ exports[`Tabs komponent matcher snapshot 1`] = `
       type="button"
     >
       <span
-        className="ms-Button-flexContainer flexContainer-64"
+        className="ms-Button-flexContainer flexContainer-52"
         data-automationid="splitbuttonprimary"
       >
         <span
-          className="ms-Pivot-linkContent linkContent-59"
+          className="ms-Pivot-linkContent linkContent-47"
         >
           <span
-            className="ms-Pivot-text text-60"
+            className="ms-Pivot-text text-48"
           >
              
             Mine oppgaver
           </span>
           <span
-            className="ms-Pivot-count count-61"
+            className="ms-Pivot-count count-49"
           >
              (
             2
@@ -93,7 +93,7 @@ exports[`Tabs komponent matcher snapshot 1`] = `
     </button>
     <button
       aria-selected={false}
-      className="ms-Button ms-Button--action ms-Button--command ms-Pivot-link link-71"
+      className="ms-Button ms-Button--action ms-Button--command ms-Pivot-link link-59"
       data-content="Andres oppgaver xx"
       data-is-focusable={true}
       id="Pivot0-Tab2"
@@ -108,25 +108,25 @@ exports[`Tabs komponent matcher snapshot 1`] = `
       type="button"
     >
       <span
-        className="ms-Button-flexContainer flexContainer-64"
+        className="ms-Button-flexContainer flexContainer-52"
         data-automationid="splitbuttonprimary"
       >
         <span
-          className="ms-Pivot-linkContent linkContent-59"
+          className="ms-Pivot-linkContent linkContent-47"
         >
           <span
             className="ms-Pivot-icon"
           >
             <i
               aria-hidden={true}
-              className="root-73"
+              className="root-61"
               data-icon-name="Update"
             >
               
             </i>
           </span>
           <span
-            className="ms-Pivot-text text-60"
+            className="ms-Pivot-text text-48"
           >
              
             Andres oppgaver
@@ -138,7 +138,7 @@ exports[`Tabs komponent matcher snapshot 1`] = `
   <div
     aria-hidden={false}
     aria-labelledby="Pivot0-Tab0"
-    className="itemContainer-56"
+    className="itemContainer-44"
     hidden={false}
     role="tabpanel"
   >

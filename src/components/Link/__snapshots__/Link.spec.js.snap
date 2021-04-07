@@ -2,17 +2,17 @@
 
 exports[`Link komponent matcher snapshot 1`] = `
 <span
-  className="linkContainer-55"
+  className="linkContainer-43"
 >
   <a
-    className="iconLink-57"
+    className="iconLink-45"
     href="#"
   >
     Last ned dokumentene
   </a>
   <i
     aria-hidden={true}
-    className="icon-59"
+    className="icon-47"
     data-icon-name="Download"
     role="presentation"
   >

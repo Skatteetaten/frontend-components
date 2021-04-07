@@ -9,6 +9,7 @@ export {
   createFont,
 } from './utils/fonts';
 export { omstrukturerFlatJSON, t } from './utils/i18n/i18n';
+export { getSrOnlyStyle } from './utils/getSrOnlyStyle';
 export { languages } from './utils/i18n/languages';
 export type { FontSizeType } from './utils/fonts';
 export { getFocusStyle } from './utils/getFocusStyle';
@@ -60,7 +61,11 @@ export { Dropdown } from './Dropdown/Dropdown';
 export type { DropdownProps } from './Dropdown/Dropdown';
 export { ErrorMessage } from './ErrorMessage/ErrorMessage';
 export type { ErrorMessageProps } from './ErrorMessage/ErrorMessage';
-export { FileUploader, FileFormatTypes } from './FileUploader/FileUploader';
+export {
+  FileUploader,
+  Language,
+  FileFormatTypes,
+} from './FileUploader/FileUploader';
 export type {
   FileUploaderProps,
   AttachmentMetadata,

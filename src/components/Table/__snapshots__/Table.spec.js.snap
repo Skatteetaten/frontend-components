@@ -56,7 +56,7 @@ exports[`Table komponent matcher snapshot 1`] = `
   }
 >
   <div
-    className="SkeTable-54"
+    className="SkeTable-42"
   >
     <table>
       <thead>
@@ -144,9 +144,10 @@ exports[`Table komponent matcher snapshot 1`] = `
             key="0"
           >
             <th
-              className="is-closed tableRow"
+              className="is-closed tableRow separator"
               id="table-1230_0"
               key="table-1230_0"
+              rowSpan={1}
               scope="row"
             >
               <div
@@ -230,9 +231,10 @@ exports[`Table komponent matcher snapshot 1`] = `
             key="1"
           >
             <th
-              className="is-closed tableRow"
+              className="is-closed tableRow separator"
               id="table-1231_0"
               key="table-1231_0"
+              rowSpan={1}
               scope="row"
             >
               <div
@@ -316,9 +318,10 @@ exports[`Table komponent matcher snapshot 1`] = `
             key="2"
           >
             <th
-              className="is-closed tableRow"
+              className="is-closed tableRow separator"
               id="table-1232_0"
               key="table-1232_0"
+              rowSpan={1}
               scope="row"
             >
               <div
@@ -402,9 +405,10 @@ exports[`Table komponent matcher snapshot 1`] = `
             key="3"
           >
             <th
-              className="is-closed tableRow"
+              className="is-closed tableRow separator"
               id="table-1233_0"
               key="table-1233_0"
+              rowSpan={1}
               scope="row"
             >
               <div

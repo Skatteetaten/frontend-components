@@ -7,14 +7,12 @@ import { AccordionItemProps } from '../index';
 export interface AccordionProps extends React.HTMLAttributes<HTMLDivElement> {
   /** aria-label */
   ariaLabel?: string;
-  /** Benyttes når man skal ta brukeren gjennom en sekvens av trinnvise steg. */
   children?: React.ReactNode;
-  /** Overstyring av stiler */
+  /** Custom styling */
   className?: string;
-  /** Gjør teksten (toggleButtonText-attributtet) i knappen som toggler AccordionItem til en overskrift.
-   * Eg. headingLevel = 1 gir \<h1>{toggleButtonText}\</h1>.
-   * Verdi 1-6.*/
+  /** Wraps the text in a heading-tag. Ie. headingLevel = 1 produces \<h1>{toggleButtonText}\</h1>.*/
   headingLevel?: number;
+  /** List style with numbers or icons */
   processList?: boolean;
   stepId?: string;
 }
@@ -31,13 +29,22 @@ export const Accordion: React.FC<AccordionProps> = (props) => {
     children,
     ariaLabel,
     headingLevel,
+    ...htmlAttributes
   } = props;
   const { accordion } = getClassNames();
-  const totalSteps = React.Children.count(children);
+  const validChildren = React.Children.toArray(children).filter((child) =>
+    React.isValidElement(child)
+  );
+  const totalSteps = React.Children.count(validChildren);
+
   return (
-    <div className={classnames(accordion, className)} aria-label={ariaLabel}>
-      <Grid>
-        {React.Children.map(children, (child, index) => {
+    <div
+      className={classnames(accordion, className)}
+      aria-label={ariaLabel}
+      {...htmlAttributes}
+    >
+      <Grid padding="0px">
+        {React.Children.map(validChildren, (child, index) => {
           if (React.isValidElement<AccordionItemProps>(child)) {
             return React.cloneElement(child, {
               stepNumber: index + 1,

@@ -3,6 +3,7 @@
 exports[`Card komponent matcher snapshot 1`] = `
 <Card
   actions={null}
+  ariaLabel={null}
   buttonType="button"
   circleOnIcon={true}
   color="neutralGrey"
@@ -10,17 +11,15 @@ exports[`Card komponent matcher snapshot 1`] = `
   isExpanded={true}
   margin="medium"
   marginbottom="2px"
+  titleTagName="div"
   titlesize="x-large"
 >
-  <button
-    aria-expanded={true}
-    className="SkeCard-54"
-    onClick={[Function]}
-    type="button"
+  <div
+    className="SkeCard-42"
   >
     <div
-      className="body-61"
+      className="body-49"
     />
-  </button>
+  </div>
 </Card>
 `;

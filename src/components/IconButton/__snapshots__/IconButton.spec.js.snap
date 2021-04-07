@@ -2,7 +2,7 @@
 
 exports[`IconButton komponent matcher snapshot 1`] = `
 <button
-  className="ms-Button ms-Button--icon ske-iconundefined-button-55"
+  className="ms-Button ms-Button--icon ske-iconundefined-button-43"
   data-is-focusable={true}
   onClick={[Function]}
   onKeyDown={[Function]}
@@ -14,12 +14,12 @@ exports[`IconButton komponent matcher snapshot 1`] = `
   type="button"
 >
   <span
-    className="ms-Button-flexContainer flexContainer-56"
+    className="ms-Button-flexContainer flexContainer-44"
     data-automationid="splitbuttonprimary"
   >
     <i
       aria-hidden={true}
-      className="ms-Icon root-38 css-63 ms-Button-icon icon-58"
+      className="ms-Icon root-38 css-51 ms-Button-icon icon-46"
       data-icon-name="Save"
       role="presentation"
       style={

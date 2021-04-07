@@ -2,7 +2,7 @@ import classnames from 'classnames';
 import React from 'react';
 import { getClassNames } from './Table.classNames';
 import { t } from '../utils/i18n/i18n';
-import { Icon, TableRow, generateId } from '../index';
+import { Icon, TableRow, generateId, getSrOnlyStyle } from '../index';
 
 export enum Language {
   en = 'en',
@@ -17,7 +17,10 @@ export interface TableProps<P> extends React.HTMLAttributes<HTMLDivElement> {
   id?: string;
   /** Content elements in the table */
   data: P[];
-  /**  Allows you ti edut rows in the table */
+  /**  Allows you to edit rows in the table.
+   *  Use a boolean for if all the rows should be editable.
+   *  If only a subset of the rows should be editable, use an array of indexes of the rows. NOTE: not compatiable with sorting
+   * */
   editableRows?: boolean;
   /** Placement of expansion button in the table, the default is 'after' */
   expandIconPlacement?: 'after' | 'before';
@@ -66,12 +69,17 @@ export interface TableProps<P> extends React.HTMLAttributes<HTMLDivElement> {
   }[];
   /** Language selection for what the screen reader reads out. Default is Norwegian Bokmål */
   language?: Language;
-  /** Show separators between rows */
+  /** Show separators between rows
+   *  Use a boolean for if all the rows should have seperators.
+   *  If only a subset of the rows should have seperators, use an array of indexes of the rows. NOTE: not compatiable with sorting
+   * */
   showRowSeparators?: boolean;
   /** Reduce font size and height on rows for a more compact table */
   compactTable?: boolean;
   /** Table caption */
-  caption?: React.ReactNode;
+  caption: React.ReactNode;
+  /** Ability to hide caption visually, but still being detectable for screen readers */
+  hideCaption?: boolean;
 }
 
 export const setScrollBarState = (
@@ -172,6 +180,7 @@ export const Table = <P extends object>(props: TableProps<P>) => {
     showRowSeparators = true,
     compactTable = false,
     caption = null,
+    hideCaption,
     openEditableRowIndex: externalOpenEditableRowIndex,
   } = props;
   const genratedId = generateId();
@@ -292,7 +301,11 @@ export const Table = <P extends object>(props: TableProps<P>) => {
       className={classnames(getClassNames(props), className)}
     >
       <table>
-        {caption && <caption>{caption}</caption>}
+        {caption && (
+          <caption style={hideCaption ? getSrOnlyStyle() : undefined}>
+            {caption}
+          </caption>
+        )}
         <thead>
           <tr>
             {(tableIsScrollable || expandIconPlacement === 'before') && emptyTd}

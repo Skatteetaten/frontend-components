@@ -51,7 +51,15 @@ export function getClassNames() {
       fontSize: FontSizes.large,
       fontWeight: FontWeights.bold,
       zIndex: 10,
-      marginTop: 20,
+      marginTop: 18,
+
+      selectors: {
+        '@media (max-width: 639px)': {
+          fontSize: FontSizes.medium,
+          width: '24px',
+          height: '24px',
+        },
+      },
     },
     stepLine: {
       display: 'block',
@@ -59,8 +67,14 @@ export function getClassNames() {
       width: 2,
       backgroundColor: palette.skeColor.lightGrey,
       top: 50,
-      left: 32,
+      left: 16,
       height: '100%',
+      selectors: {
+        '@media (max-width: 639px)': {
+          left: 14,
+          top: 40,
+        },
+      },
     },
     toggleButton: {
       width: '100%',
@@ -69,7 +83,7 @@ export function getClassNames() {
       color: palette.skeColor.blue,
       fontSize: FontSizes.medium,
       fontWeight: FontWeights.bold,
-      padding: '16px 24px 16px 8px',
+      padding: '16px 16px 16px 8px',
       background: 'none',
       position: 'relative',
       cursor: 'pointer',
@@ -93,11 +107,12 @@ export function getClassNames() {
         '& i': {
           alignSelf: 'flex-start',
           transition: '.2s',
-          marginTop: '-5px',
+          marginTop: '-2px',
           fontSize: IconFontSizes.xlarge,
           selectors: {
             '@media (min-width: 640px)': {
               fontSize: IconFontSizes.xxlarge,
+              alignSelf: 'flex-end',
             },
           },
         },

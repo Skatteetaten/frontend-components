@@ -3,7 +3,8 @@ import classnames from 'classnames';
 import { Grid, Icon, Heading } from '../../index';
 import { getClassNames } from '../Accordion.classNames';
 
-export interface AccordionItemProps {
+export interface AccordionItemProps
+  extends React.HTMLAttributes<HTMLDivElement> {
   id?: string;
   /** Option to enable show/hide the content of a step with a show/hide button */
   toggleContent?: boolean;
@@ -101,18 +102,6 @@ export const AccordionItem: React.FC<AccordionItemProps> = (props) => {
     setContentOpen(!isContentOpen);
   };
 
-  const clickHandler = () => {
-    const { onClick, onChange } = props;
-    if (onChange) {
-      onChange();
-    }
-    if (onClick && !isContentOpen) {
-      onClick();
-    }
-    toggleVisibility();
-  };
-
-  const styles = getClassNames();
   const {
     title,
     subtitle,
@@ -127,18 +116,39 @@ export const AccordionItem: React.FC<AccordionItemProps> = (props) => {
     stepId,
     processList,
     headingLevel,
+    id,
+    isOpen,
+    onChange,
+    onClick,
+    ...htmlAttributes
   } = props;
 
+  const clickHandler = () => {
+    if (onChange) {
+      onChange();
+    }
+    if (onClick && !isContentOpen) {
+      onClick();
+    }
+    toggleVisibility();
+  };
+
+  const styles = getClassNames();
+
   return (
-    <div key={stepNumber} className={classnames(styles.wrapperStep, className)}>
+    <div
+      key={stepNumber}
+      className={classnames(styles.wrapperStep, className)}
+      {...htmlAttributes}
+    >
       {processList && stepNumber !== totalSteps && (
         <span className={styles.stepLine} />
       )}
       <Grid.Row rowSpacing={Grid.SPACE_NONE}>
-        <Grid.Col>
+        <Grid.Col noSpacing>
           <Grid.Row rowSpacing={Grid.SPACE_NONE}>
             {processList && (
-              <Grid.Col sm={2} md={1} xl={1}>
+              <Grid.Col noSpacing sm={2} md={1} xl={1}>
                 <div className={styles.stepNumber}>
                   <span
                     id={'StepId' + stepId}
@@ -150,6 +160,7 @@ export const AccordionItem: React.FC<AccordionItemProps> = (props) => {
               </Grid.Col>
             )}
             <Grid.Col
+              noSpacing
               sm={processList ? 9 : 12}
               md={processList ? 10 : 12}
               xl={processList ? 11 : 12}

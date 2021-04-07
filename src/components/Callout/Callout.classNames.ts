@@ -4,7 +4,7 @@ import { FontSizes, PaletteProps, CalloutColor, CalloutProps } from '../index';
 
 function getCalloutBorder(props: CalloutProps) {
   const palette = getTheme().palette as PaletteProps;
-  if (props.color === 'white') {
+  if (props.color === 'white' || props.border) {
     return {
       border: `2px solid ${palette.skeColor.blackAlt}`,
     };
@@ -28,7 +28,6 @@ export const getClassNames = (props: CalloutProps) => {
           maxWidth: 600,
           backgroundColor: palette.skeColor[props.color as CalloutColor],
           boxShadow: 'none',
-          border: 'none',
           padding: '10px 20px 10px 10px',
           selectors: {
             '@media  only screen and (max-width: 479px)': {

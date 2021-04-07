@@ -16,6 +16,8 @@ export interface LinkProps
   path?: string;
   placement?: 'after' | 'before';
   text?: string;
+  /** @ignore */
+  linkGroup?: boolean;
 }
 
 /**
@@ -31,10 +33,11 @@ export const Link: React.FC<LinkProps> = (props) => {
     text,
     openInNew,
     skipLink,
+    linkGroup,
     renderContent,
     ...htmlAttributes
   } = props;
-  const styles = getClassNames();
+  const styles = getClassNames(props);
   return (
     <span className={classnames(styles.linkContainer, props.className)}>
       {props.placement === 'before' && props.icon && (

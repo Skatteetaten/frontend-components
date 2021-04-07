@@ -126,7 +126,13 @@ const [displayedData, setDisplayedData] = React.useState(
 const [currentPage, setCurrentPage] = React.useState(1);
 
 <div>
-  <Table fullWidth data={displayedData} columns={columns} />
+  <Table
+    fullWidth
+    data={displayedData}
+    columns={columns}
+    caption={'Oversikt over brukere'}
+    hideCaption={true}
+  />
   <Pagination
     currentPage={currentPage}
     onPageChange={(page) => {
@@ -142,20 +148,26 @@ const [currentPage, setCurrentPage] = React.useState(1);
 
 ```js noeditor beskrivelse
 <>
-  <h3>Henger under tabell eller søkeresultat</h3>
+  <h3>Komponent som gjør at brukeren kan bla i lister og tabeller</h3>
   <p>
-    Sidevelgeren hører alltid sammen med en annen komponent, som regel tabell
-    eller et søkeresultat. Den skal som hovedregel henge under og være like bred
-    den tilhørende komponenten.
+    Sidevelgeren hører alltid til annen komponent og har som funksjon at
+    brukeren skal kunne bla frem og tilbake i stedet for å måtte skrolle nedover
+    i lange lister og tabeller med opplysninger. Komponenten skal som hovedregel
+    henge under og være like bred som den tilhørende komponenten.
   </p>
 
-  <h3>Antall sider som vises</h3>
-  <p>
-    Det er mulig å stille inn hvor mange sider som vises i tallrekken. Hva som
-    er anbefalt kommer an på hvor mye data som vises og for sannsynlig det er at
-    brukeren vil bla i opplysningene. På mobil er det imidlertid ikke anbefalt å
-    ha flere enn tre tall, på grunn av plassen.
-  </p>
+  <h3>Hvor mange sider skal vises i sidevelgeren?</h3>
+  <p>Du kan stille inn antallet sider i tallrekken der brukeren blar fra.</p>
+  <ul>
+    <li>
+      Ta hensyn til hvor mye data som vises og sannsynligheten for at brukeren
+      vil bla i opplysningene.
+    </li>
+    <li>
+      På mobil anbefaler vi maksimum tre tall i tallrekken på grunn av plassen
+      på skjermen.
+    </li>
+  </ul>
 </>
 ```
 

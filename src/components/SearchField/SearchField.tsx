@@ -3,12 +3,15 @@ import { ISearchBoxProps, ISearchBox, SearchBox } from '@fluentui/react';
 import * as React from 'react';
 import { getClassNames } from './SearchField.classNames';
 import { IDropdownOption } from '@fluentui/react';
+import i18n from 'i18next';
 import {
   LabelWithCallout,
   calloutState,
   LabelWithCalloutProps,
+  Language,
   generateId,
   useHotkeys,
+  t,
 } from '../index';
 
 export interface SearchFieldProps extends ISearchBoxProps {
@@ -37,6 +40,8 @@ export interface SearchFieldProps extends ISearchBoxProps {
   underlined?: ISearchBoxProps['underlined'];
   /**påkalt etter bruker valger et alternativ*/
   onSelected?: (option: IDropdownOption) => void;
+  /** Language selection for what the screen reader reads out. Default is Norwegian Bokmål */
+  language?: Language;
   /** Begrens antall viste søkeresultat */
   limit?: number;
   /** Tillater tastatursnarvei på søk */
@@ -50,13 +55,14 @@ export interface SearchFieldProps extends ISearchBoxProps {
 }
 
 const searchInList = (options: Array<IDropdownOption>, filterText: string) => {
+  const regex = /[\s.,:-]+/g;
   return options
     .filter((option) => {
       return (
         option.text
-          .replace(/\s/g, '')
+          .replace(regex, '')
           .toLowerCase()
-          .indexOf(filterText.replace(/\s/g, '').toLowerCase()) > -1
+          .indexOf(filterText.replace(regex, '').toLowerCase()) > -1
       );
     })
     .map((option) => option);
@@ -82,6 +88,7 @@ export const SearchField: React.FC<SearchFieldProps> = (props) => {
     label,
     labelButtonAriaLabel,
     labelCallout,
+    language,
     onCalloutToggle,
     onChange,
     onSelected,
@@ -102,11 +109,33 @@ export const SearchField: React.FC<SearchFieldProps> = (props) => {
   const styles = getClassNames(props);
   const listRefs = React.useRef<(HTMLLIElement | null)[]>([]);
 
+  const genratedId = generateId();
+  const mainId = id ? id : 'searchfield-' + genratedId;
+  const inputId = mainId + '-input';
+  const labelId = mainId + '-label';
+  const srFocus = mainId + '-srFocus';
+  const resultsId = mainId + '-results';
+
+  if (language) {
+    i18n.changeLanguage(language);
+  }
+
+  const setSearchResult = React.useCallback(
+    (newValue: string) => {
+      if (options && newValue) {
+        let newList = searchInList(options, newValue);
+        newList = limitNumberOfResults(newList, limit);
+        setSearchResultList(newList);
+        setDropdownVisible(newList.length > 0);
+      }
+    },
+    [limit, options]
+  );
+
   React.useEffect(() => {
     setSearchResultList(options);
     setSearchResult(value ? value : '');
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [options]);
+  }, [options, setSearchResult, value]);
 
   React.useEffect(() => {
     setValue(props.value);
@@ -127,18 +156,8 @@ export const SearchField: React.FC<SearchFieldProps> = (props) => {
     }
   });
 
-  const changeEvent = (text: string) => {
-    //@ts-ignore TODO
-    const event: React.ChangeEvent<HTMLInputElement> = {};
-    setValue(text);
-    onChange && onChange(event, text);
-    setDropdownVisible(false);
-    setFocus(-1);
-    listRefs.current = [];
-  };
-
   const selectEvent = (item: IDropdownOption) => {
-    setValue(item.text);
+    setValue(!onSelected ? item.text : '');
     onSelected && onSelected(item);
     setDropdownVisible(false);
     setFocus(-1);
@@ -176,32 +195,28 @@ export const SearchField: React.FC<SearchFieldProps> = (props) => {
     }
   };
 
-  const setSearchResult = (newValue: string) => {
-    if (options && newValue) {
-      let newList = searchInList(options, newValue);
-      newList = limitNumberOfResults(newList, limit);
-      setSearchResultList(newList);
-      setDropdownVisible(newList.length > 0);
-    }
-  };
-
   const renderSuggestions = (list) => {
     if (list.length === 0) {
-      setDropdownVisible(false);
       listRefs.current = [];
     }
     return (
       <div className={styles.searchListDropdown}>
-        <ul id="results" role="listbox" className={styles.searchList}>
+        <ul
+          id={resultsId}
+          role="listbox"
+          className={
+            dropdownVisible && list.length ? styles.searchList : styles.hiddenUl
+          }
+        >
           {list.map((listItem, key: number) => {
-            return (
+            return dropdownVisible ? (
               <li
                 aria-label={listItem.text}
                 key={listItem.key}
                 onClick={() => selectEvent(listItem)}
                 onKeyPress={(ev) => {
                   if (ev.keyCode === 0) {
-                    changeEvent(listItem.text);
+                    selectEvent(listItem);
                   }
                 }}
                 onKeyDown={(ev) => handleOnKeyDown(ev)}
@@ -222,17 +237,12 @@ export const SearchField: React.FC<SearchFieldProps> = (props) => {
                   {listItem.text}
                 </div>
               </li>
-            );
+            ) : null;
           })}
         </ul>
       </div>
     );
   };
-
-  const generatedId = generateId();
-  const mainId = id ? id : 'searchfield-' + generatedId;
-  const inputId = mainId + '-input';
-  const labelId = mainId + '-label';
 
   return (
     <div id={mainId}>
@@ -248,20 +258,25 @@ export const SearchField: React.FC<SearchFieldProps> = (props) => {
       />
       {options ? (
         <div ref={_searchBoxElement}>
+          <span id={srFocus} className={styles.srOnly}>
+            {t('searchfield.sr.focus')}
+          </span>
           <SearchBox
             {...rest}
             id={inputId}
-            aria-expanded="false"
+            aria-expanded={dropdownVisible}
+            aria-describedby={srFocus}
+            aria-owns={resultsId}
             type={'search'}
             className={classnames(styles.main, className)}
             onChange={(ev, newValue) => {
+              onChange && onChange(ev, newValue);
               if (!newValue) {
                 setDropdownVisible(false);
               } else {
                 setSearchResult(newValue);
               }
               setValue(newValue);
-              onChange && onChange(ev, newValue);
             }}
             onKeyDown={(ev) => handleOnKeyDown(ev)}
             value={value}
@@ -270,7 +285,14 @@ export const SearchField: React.FC<SearchFieldProps> = (props) => {
               onClick: (ev) => (onSearchIcon ? onSearchIcon(ev) : null),
             }}
           />
-          {dropdownVisible && renderSuggestions(searchResultList)}
+          <span aria-live="assertive" className={styles.srOnly}>
+            {dropdownVisible
+              ? i18n.t('searchfield.sr.results', {
+                  ant: searchResultList ? searchResultList.length : 0,
+                })
+              : ''}
+          </span>
+          {renderSuggestions(searchResultList)}
         </div>
       ) : (
         <SearchBox

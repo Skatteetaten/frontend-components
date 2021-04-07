@@ -158,4 +158,19 @@ describe('Accordion komponent', () => {
       '<ul><li>Hei</li><li>Hallo</li></ul>'
     );
   });
+
+  it('Sender videre html atributter', () => {
+    const wrapper = oppsettMount(
+      {
+        processList: true,
+        'data-testid': 'testidparent123',
+      },
+      {
+        stepId: 'step-1-1',
+        'data-testid': 'testid123',
+      }
+    );
+
+    expect(toJson(wrapper)).toMatchSnapshot();
+  });
 });

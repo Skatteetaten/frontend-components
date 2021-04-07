@@ -62,8 +62,11 @@ export const TableRow = <P extends object>(props: TableRowProps<P>) => {
     showRowSeparators,
     compactTable,
   } = props;
+  const editableRow = !data['hideEdit'] && editableRows;
+  const showExtraCol = data['hideEdit'] && editableRows;
+  const showRowSeparator = !data['hideSeperator'] && showRowSeparators;
   const numberOfColumns =
-    columns.length + (editableRows || expandableRows ? 1 : 0);
+    columns.length + (editableRow || expandableRows || showExtraCol ? 1 : 0);
   const expandCollapseCellRef = React.createRef<HTMLTableCellElement>();
   const [focusRow, setFocusRow] = React.useState<number | undefined>(
     openExpandableRowIndex
@@ -83,6 +86,8 @@ export const TableRow = <P extends object>(props: TableRowProps<P>) => {
     }
   }, [expandCollapseCellRef, focusRow, rowIndex]);
 
+  const childrenLength = !!data['children'] ? data['children'].length : 0;
+
   const editButton = (
     <span
       className={classnames('cellContent', {
@@ -92,11 +97,12 @@ export const TableRow = <P extends object>(props: TableRowProps<P>) => {
       <IconButton
         className={'editButton'}
         onClick={() => onEditRow(rowIndex)}
-        title={t('tablerow.title')}
+        title={t('tablerow.editable.title')}
         icon="Edit"
         disabled={editModeActive || expandableModeActive}
         type="button"
         buttonSize={compactTable ? 'xSmall' : 'default'}
+        aria-describedby={tableId.concat(rowIndex.toString(), '_0')}
       />
     </span>
   );
@@ -144,15 +150,19 @@ export const TableRow = <P extends object>(props: TableRowProps<P>) => {
   };
 
   const actionButtons =
-    editableRows || expandableRows ? (
+    editableRow || expandableRows ? (
       <>
-        {editableRows && <td>{editButton}</td>}
+        {editableRow && (
+          <td className={classnames('separator')} rowSpan={childrenLength + 1}>
+            {editButton}
+          </td>
+        )}
         {expandableRows && <ExpandCollapseButton open={isExpandableRowOpen} />}
       </>
     ) : null;
 
-  const renderCellContent = (content, index) =>
-    openEditableOnRowClick && editableContent ? (
+  const renderCellContent = (content, index, isChild) =>
+    openEditableOnRowClick && editableContent && editableRow ? (
       <button
         className={'cellButton'}
         onClick={() => onEditRow(index)}
@@ -160,7 +170,9 @@ export const TableRow = <P extends object>(props: TableRowProps<P>) => {
       >
         <span
           className={classnames('cellContent', 'clickable', {
-            cellContentLarge: showRowSeparators,
+            cellContentLarge: showRowSeparator && !isChild,
+            cellContentChildRow: isChild,
+            cellContentHideEdit: !editableRow && editableRows,
           })}
         >
           {content}
@@ -169,7 +181,9 @@ export const TableRow = <P extends object>(props: TableRowProps<P>) => {
     ) : (
       <div
         className={classnames('cellContent', {
-          cellContentLarge: showRowSeparators,
+          cellContentLarge: showRowSeparator && !isChild,
+          cellContentChildRow: isChild,
+          cellContentHideEdit: !editableRow && editableRows,
         })}
       >
         {content}
@@ -179,7 +193,8 @@ export const TableRow = <P extends object>(props: TableRowProps<P>) => {
   const renderRow = (
     rowData: P,
     rowColumns: TableRowProps<P>['columns'],
-    rowKey: number
+    rowKey: number,
+    isChild: boolean = false
   ) => {
     return columns.map((column, cellIndex) => {
       if (cellIndex > 0) {
@@ -192,25 +207,29 @@ export const TableRow = <P extends object>(props: TableRowProps<P>) => {
             )}
             key={tableId.concat(rowKey.toString(), '_', cellIndex.toString())}
           >
-            {renderCellContent(data[column.fieldName], cellIndex)}
+            {renderCellContent(rowData[column.fieldName], cellIndex, isChild)}
           </td>
         );
+      } else if (!isChild) {
+        return (
+          <th
+            scope={'row'}
+            className={classnames(
+              !props.isEditableRowOpen ? 'is-closed' : '',
+              column.alignment,
+              column.hideOnMobile ? 'hideOnMobile' : '',
+              'tableRow',
+              'separator'
+            )}
+            id={tableId.concat(rowKey.toString(), '_', cellIndex.toString())}
+            key={tableId.concat(rowKey.toString(), '_', cellIndex.toString())}
+            rowSpan={childrenLength + 1}
+          >
+            {renderCellContent(rowData[column.fieldName], cellIndex, isChild)}
+          </th>
+        );
       }
-      return (
-        <th
-          scope={'row'}
-          className={classnames(
-            !props.isEditableRowOpen ? 'is-closed' : '',
-            column.alignment,
-            column.hideOnMobile ? 'hideOnMobile' : '',
-            'tableRow'
-          )}
-          id={tableId.concat(rowKey.toString(), '_', cellIndex.toString())}
-          key={tableId.concat(rowKey.toString(), '_', cellIndex.toString())}
-        >
-          {renderCellContent(data[column.fieldName], cellIndex)}
-        </th>
-      );
+      return null;
     });
   };
 
@@ -226,21 +245,23 @@ export const TableRow = <P extends object>(props: TableRowProps<P>) => {
       </tr>
     );
   }
-
   const actionButtonsBefore =
     tableHasScroll || expandIconPlacement === 'before';
+
   return (
     <>
       <tr
         key={rowIndex}
         className={classnames({
           clickable: openEditableOnRowClick,
-          separator: showRowSeparators && !isExpandableRowOpen,
+          separator:
+            showRowSeparator && !isExpandableRowOpen && !data['children'],
         })}
       >
         {actionButtonsBefore && actionButtons}
-        {renderRow(data, columns, rowIndex)}
+        {renderRow(data, columns, rowIndex, false)}
         {!actionButtonsBefore && actionButtons}
+        {showExtraCol && <td />}
       </tr>
       {isExpandableRowOpen && (
         <tr
@@ -253,6 +274,26 @@ export const TableRow = <P extends object>(props: TableRowProps<P>) => {
           <td colSpan={numberOfColumns}>{expandableCellContent()}</td>
         </tr>
       )}
+      {!isEditableRowOpen &&
+        !!data['children'] &&
+        childrenLength > 0 &&
+        data['children'].map((child, childIndex) => {
+          return (
+            <tr
+              key={rowIndex + 'child' + childIndex}
+              className={classnames({
+                separator:
+                  showRowSeparator &&
+                  childIndex === data['children'].length - 1,
+              })}
+            >
+              {actionButtonsBefore && <td />}
+              {renderRow(child, columns, childIndex, true)}
+              {!actionButtonsBefore && <td />}
+              {showExtraCol && <td />}
+            </tr>
+          );
+        })}
     </>
   );
 };
