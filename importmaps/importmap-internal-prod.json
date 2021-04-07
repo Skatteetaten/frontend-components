@@ -1,13 +1,13 @@
 {
   "imports": {
-    "react": "https://k22600-frontend-components-aurora-dev.utv.paas.skead.no/umd/deps/react@<replace>/umd/react.development.js",
-    "react-dom": "https://k22600-frontend-components-aurora-dev.utv.paas.skead.no/umd/deps/react-dom@<replace>/umd/react-dom.development.js",
-    "react-i18next": "https://k22600-frontend-components-aurora-dev.utv.paas.skead.no/umd/deps/react-i18next@<replace>/dist/umd/react-i18next.js",
-    "prop-types": "https://k22600-frontend-components-aurora-dev.utv.paas.skead.no/umd/deps/prop-types@<replace>/prop-types.min.js",
-    "classnames": "https://k22600-frontend-components-aurora-dev.utv.paas.skead.no/umd/deps/classnames@<replace>/index.min.js",
-    "moment": "https://k22600-frontend-components-aurora-dev.utv.paas.skead.no/umd/deps/moment@<replace>/min/moment.min.js",
-    "axios": "https://k22600-frontend-components-aurora-dev.utv.paas.skead.no/umd/deps/npm/axios@<replace>/dist/axios.min.js",
-    "tslib": "https://k22600-frontend-components-aurora-dev.utv.paas.skead.no/umd/deps/tslib@<replace>/tslib.js",
+    "react": "https://k22600-frontend-components-aurora-dev.utv.paas.skead.no/umd/deps/react/umd/react.development.js",
+    "react-dom": "https://k22600-frontend-components-aurora-dev.utv.paas.skead.no/umd/deps/react-dom/umd/react-dom.development.js",
+    "react-i18next": "https://k22600-frontend-components-aurora-dev.utv.paas.skead.no/umd/deps/react-i18next/dist/umd/react-i18next.js",
+    "prop-types": "https://k22600-frontend-components-aurora-dev.utv.paas.skead.no/umd/deps/prop-types/prop-types.min.js",
+    "classnames": "https://k22600-frontend-components-aurora-dev.utv.paas.skead.no/umd/deps/classnames/index.min.js",
+    "moment": "https://k22600-frontend-components-aurora-dev.utv.paas.skead.no/umd/deps/moment/min/moment.min.js",
+    "axios": "https://k22600-frontend-components-aurora-dev.utv.paas.skead.no/umd/deps/npm/axios/dist/axios.min.js",
+    "tslib": "https://k22600-frontend-components-aurora-dev.utv.paas.skead.no/umd/deps/tslib/tslib.js",
     "@skatteetaten/frontend-components": "https://k22600-frontend-components-aurora-dev.utv.paas.skead.no/umd/index.production.js"
   }
 }
