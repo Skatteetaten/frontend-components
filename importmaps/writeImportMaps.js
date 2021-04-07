@@ -63,12 +63,8 @@ const write = () => {
   replaceImportVersions(dataDev.imports);
   replaceImportVersions(dataProd.imports);
 
-  process.env["NODE_TLS_REJECT_UNAUTHORIZED"] = 0;
-
   writeDependencies(dataDev, 'deps/dev');
   writeDependencies(dataProd, 'deps');
-
-  process.env["NODE_TLS_REJECT_UNAUTHORIZED"] = 1;
 
   const devPath = 'lib/umd';
   const prodPath = 'lib/umd';
