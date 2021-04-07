@@ -11,6 +11,7 @@ import ScrollToTopButton from '@skatteetaten/frontend-components/ScrollToTopButt
 import FooterContent from '@skatteetaten/frontend-components/FooterContent';
 import Pagination from '@skatteetaten/frontend-components/Pagination';
 import TopStripe, {
+  LanguagePicker,
   TopStripeMenu,
   TopStripeButton
 } from '@skatteetaten/frontend-components/TopStripe';
@@ -672,6 +673,8 @@ function Testside(props) {
     ));
   };
 
+  const [language, setLanguage] = useState('nb');
+
   return (
     <>
       <h1>Testside for komponenter</h1>
@@ -799,17 +802,12 @@ function Testside(props) {
               forstørre eller - for å forminske.
             </div>
           </TopStripeMenu>
-          <TopStripeMenu title={'Language / Språk'}>
-            <TopStripeButton ariaLabel={'Norsk'}>Norsk</TopStripeButton>
-            <TopStripeButton icon={'check'} ariaLabel={'Nynorsk'}>
-              Nynorsk
-            </TopStripeButton>
-            <TopStripeButton ariaLabel={'Engelsk'}>Engelsk</TopStripeButton>
-            <TopStripeButton ariaLabel={'Sørsamisk'}>Sørsamisk</TopStripeButton>
-            <TopStripeButton ariaLabel={'Nordsamisk'}>
-              Nordsamisk
-            </TopStripeButton>
-          </TopStripeMenu>
+          <LanguagePicker
+            selectedLanguage={language}
+            setLanguage={setLanguage}
+            showOnMobile={true}
+            showSami={true}
+          />
 
           <span>
             <Icon iconName="person" /> Vegard Sandli
