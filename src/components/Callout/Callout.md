@@ -1,7 +1,7 @@
 ** Callout brukes når man ønsker å vise brukeren en tekst som er knyttet til element i skjermbildet. Et typisk eksempel er en ikon med spørsmåltegn, og en tilhørende hjelpetekst dukker opp når man trykker på det. **
 
 ```js noeditor
-import MessageBar from '@skatteetaten/frontend-components/MessageBar';
+import { MessageBar } from '@skatteetaten/frontend-components';
 
 <MessageBar type={MessageBar.Type.warning}>
   Denne komponenten skal kun brukes i interne løsninger på grunn av universell
@@ -12,21 +12,20 @@ import MessageBar from '@skatteetaten/frontend-components/MessageBar';
 ### Hjelpetekst
 
 ```js
-import Callout from '@skatteetaten/frontend-components/Callout';
-import Button from '@skatteetaten/frontend-components/Button';
+import { Callout, Button } from '@skatteetaten/frontend-components';
 
-const initialState = {
-  isCalloutVisible: false
-};
+const [state, setState] = React.useState({
+  isCalloutVisible: false,
+});
 
 function closeButton() {
   setState({
-    isCalloutVisible: false
+    isCalloutVisible: false,
   });
 }
 
 <div>
-  <span ref={spanElement => (buttonElement = spanElement)}>
+  <span ref={(spanElement) => (buttonElement = spanElement)}>
     <Button
       buttonStyle="secondary"
       aria-haspopup="true"
@@ -61,19 +60,18 @@ function closeButton() {
 ### Infotekst
 
 ```js
-import Callout from '@skatteetaten/frontend-components/Callout';
-import Button from '@skatteetaten/frontend-components/Button';
+import { Callout, Button } from '@skatteetaten/frontend-components';
 
-const initialState = { isCalloutVisible: false };
+const [state, setState] = React.useState({ isCalloutVisible: false });
 
 function closeButton() {
   setState({
-    isCalloutVisible: false
+    isCalloutVisible: false,
   });
 }
 
 <div>
-  <span ref={spanElement => (buttonElement2 = spanElement)}>
+  <span ref={(spanElement) => (buttonElement2 = spanElement)}>
     <Button
       buttonStyle="secondary"
       aria-haspopup="true"
@@ -101,17 +99,18 @@ function closeButton() {
 ### Autolukking
 
 ```js
-import Callout from '@skatteetaten/frontend-components/Callout';
-import Button from '@skatteetaten/frontend-components/Button';
+import { Callout, Button } from '@skatteetaten/frontend-components';
+
+const [state, setState] = React.useState({ isCalloutVisible: false });
 
 function closeButton() {
   setState({
-    isCalloutVisible: false
+    isCalloutVisible: false,
   });
 }
 
 <div>
-  <span ref={spanElement => (buttonElement4 = spanElement)}>
+  <span ref={(spanElement) => (buttonElement4 = spanElement)}>
     <Button
       buttonStyle="secondary"
       aria-haspopup="true"

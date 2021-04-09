@@ -2,7 +2,7 @@ import * as React from 'react';
 import classnames from 'classnames';
 import { getClassNames } from './Typography.classNames';
 
-interface TypographyProps {
+export interface TypographyProps {
   /** Mulighet for egen overstyring av css */
   className?: string;
   /** Tar bort definisjon av marg for spesifikke tagger ('h1', 'h2', 'h3', 'h4', 'p', 'ol', 'ul', 'blockquote') */
@@ -19,7 +19,7 @@ interface TypographyProps {
 /**
  * @visibleName Typography (Typografi)
  */
-const Typography: React.FC<TypographyProps> = props => {
+export const Typography: React.FC<TypographyProps> = (props) => {
   const { children, className } = props;
 
   return (
@@ -34,6 +34,5 @@ Typography.defaultProps = {
   noBorder: undefined,
   noColor: undefined,
   noMargin: undefined,
-  noSize: undefined
+  noSize: undefined,
 };
-export default Typography;

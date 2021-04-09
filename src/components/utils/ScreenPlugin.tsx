@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 
 // @ts-ignore TODO
-const getValuesForComparison = sizeObj => ({
+const getValuesForComparison = (sizeObj) => ({
   gt: sizeObj.gt,
   lt: sizeObj.lt,
   sm: sizeObj.sm,
@@ -9,7 +9,7 @@ const getValuesForComparison = sizeObj => ({
   lg: sizeObj.lg,
   xl: sizeObj.xl,
   xxl: sizeObj.xxl,
-  xxxl: sizeObj.xxxl
+  xxxl: sizeObj.xxxl,
 });
 
 export const UseScreen = () => {
@@ -21,7 +21,7 @@ export const UseScreen = () => {
       md: 640,
       lg: 1024,
       xl: 1366,
-      xxl: 1920
+      xxl: 1920,
     },
     lt: {
       sm: false,
@@ -29,7 +29,7 @@ export const UseScreen = () => {
       lg: true,
       xl: true,
       xxl: true,
-      xxxl: true
+      xxxl: true,
     },
     gt: {
       sm: false,
@@ -37,14 +37,14 @@ export const UseScreen = () => {
       lg: false,
       xl: false,
       xxl: false,
-      xxxl: false
+      xxxl: false,
     },
     sm: true,
     md: false,
     lg: false,
     xl: false,
     xxl: false,
-    xxxl: false
+    xxxl: false,
   });
 
   useEffect(() => {
@@ -53,7 +53,7 @@ export const UseScreen = () => {
         gt: {},
         lt: {},
         height: 0,
-        width: 0
+        width: 0,
       };
       if (window.innerHeight !== size.height) {
         newSizes.height = window.innerHeight;

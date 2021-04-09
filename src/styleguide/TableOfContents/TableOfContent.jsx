@@ -1,6 +1,6 @@
 import React from 'react';
 import ComponentsListRenderer from '../ComponentsList/ComponentsListRenderer';
-import SearchField from '../../components/SearchField';
+import { SearchField } from '../../components/index';
 import getFilterRegExp from 'react-styleguidist/lib/client/utils/getFilterRegExp';
 import { UseScreen } from '../../components/utils/ScreenPlugin';
 
@@ -25,7 +25,7 @@ function SokeBoks({ searchTerm, setSearchTerm, children }) {
 
 function filterComponentsByName(components, query) {
   let regExp = getFilterRegExp(query);
-  return components.filter(function(_ref) {
+  return components.filter(function (_ref) {
     let name = _ref.name;
     let visibleName = _ref.visibleName;
     return regExp.test(name) || regExp.test(visibleName);
@@ -35,17 +35,17 @@ function filterComponentsByName(components, query) {
 function filterSectionsByName(sections, query) {
   const regExp = getFilterRegExp(query);
   return sections
-    .map(section => ({
+    .map((section) => ({
       ...section,
       sections: section.sections
         ? filterSectionsByName(section.sections, query)
         : [],
       components: section.components
         ? filterComponentsByName(section.components, query)
-        : []
+        : [],
     }))
     .filter(
-      section =>
+      (section) =>
         section.components.length > 0 ||
         section.sections.length > 0 ||
         regExp.test(section.name) ||
@@ -55,18 +55,18 @@ function filterSectionsByName(sections, query) {
 
 export class TableOfContent extends React.Component<> {
   state = {
-    searchTerm: ''
+    searchTerm: '',
   };
   renderLevel(sections) {
     const _this2 = this;
-    const items = sections.map(function(section) {
+    const items = sections.map(function (section) {
       const children = [].concat(
         section.sections || [],
         section.components || []
       );
       return Object.assign({}, section, {
         heading: !!section.name && children.length > 0,
-        content: children.length > 0 && _this2.renderLevel(children)
+        content: children.length > 0 && _this2.renderLevel(children),
       });
     });
     return (
@@ -90,7 +90,7 @@ export class TableOfContent extends React.Component<> {
 
   render() {
     const { searchTerm } = this.state;
-    const setSearchTerm = searchTerm => this.setState({ searchTerm });
+    const setSearchTerm = (searchTerm) => this.setState({ searchTerm });
     return (
       <SokeBoks searchTerm={searchTerm} setSearchTerm={setSearchTerm}>
         {this.renderSections()}

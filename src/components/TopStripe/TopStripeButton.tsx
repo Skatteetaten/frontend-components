@@ -1,7 +1,7 @@
 import * as React from 'react';
 import classnames from 'classnames';
 import { getClassNames } from './TopStripe.classNames';
-import { UseScreen } from '../utils/ScreenPlugin';
+import { UseScreen } from '../index';
 
 export interface TopStripeButtonProps
   extends React.HTMLAttributes<HTMLButtonElement> {
@@ -12,10 +12,11 @@ export interface TopStripeButtonProps
   ariaLabel?: string;
   text?: string;
 }
+
 /**
  * @visibleName TopStripeButton (Toppstripe-knapp)
  */
-export const TopStripeButton: React.FC<TopStripeButtonProps> = props => {
+export const TopStripeButton: React.FC<TopStripeButtonProps> = (props) => {
   const {
     topStripeStyle,
     showOnMobile = false,

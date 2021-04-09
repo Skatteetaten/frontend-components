@@ -20,11 +20,11 @@ export default {
     display: 'inline-block',
     transform: 'translate(0, 0)',
     textRendering: 'auto',
-    fontSize: 'inherit'
+    fontSize: 'inherit',
   },
   fontFace: {
     fontFamily: '"SkeIconfont"',
-    src: fontUrls.join(', ')
+    src: fontUrls.join(', '),
   },
 
   icons: {
@@ -43,6 +43,6 @@ export default {
     Person: '\uea09',
     Skattetrekk: '\uea0a',
     WarningOutline: '\uea0b',
-    XMLFile: '\uea0c'
-  }
+    XMLFile: '\uea0c',
+  },
 };

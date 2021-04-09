@@ -1,14 +1,14 @@
 import classnames from 'classnames';
 import * as React from 'react';
-import IconButton from '../IconButton/IconButton';
 import { getClassNames } from './Card.classNames';
+import { IconButton } from '../index';
 
 export enum CardColor {
   GREY = 'neutralGrey',
   GREEN = 'lightGreen',
   BEIGE = 'beige',
   WHITE = 'white',
-  RED = 'lightPink'
+  RED = 'lightPink',
 }
 
 export enum CardBorder {
@@ -16,7 +16,7 @@ export enum CardBorder {
   RED_BORDER = 'pink',
   YELLOW_BORDER = 'brown',
   GREY_BORDER = 'grey',
-  WHITE_BORDER = 'white'
+  WHITE_BORDER = 'white',
 }
 
 export interface CardProps extends React.HTMLAttributes<HTMLDivElement> {
@@ -59,8 +59,8 @@ export interface CardProps extends React.HTMLAttributes<HTMLDivElement> {
   onClick?: () => void;
   /** aria-label */
   ariaLabel?: string;
-  /** Button type. Default er 'button' */
-  buttonType?: string;
+  /** Button type (ex. submit, reset, button). Default er 'button' */
+  buttonType?: 'button' | 'submit' | 'reset';
 }
 
 export interface CardState {
@@ -70,7 +70,7 @@ export interface CardState {
 /**
  * @visibleName Card (Innholdskort)
  */
-export default class Card extends React.PureComponent<CardProps, CardState> {
+export class Card extends React.PureComponent<CardProps, CardState> {
   static Color = CardColor;
   static Border = CardBorder;
 
@@ -81,13 +81,13 @@ export default class Card extends React.PureComponent<CardProps, CardState> {
     titlesize: 'x-large',
     expand: false,
     isExpanded: true,
-    color: Card.Color.GREY,
+    color: CardColor.GREY,
     actions: null,
     marginbottom: '2px',
     margin: 'medium',
     circleOnIcon: true,
     buttonType: 'button',
-    ariaLabel: null
+    ariaLabel: null,
   };
 
   constructor(props: CardProps) {
@@ -180,7 +180,7 @@ export default class Card extends React.PureComponent<CardProps, CardState> {
 
   _toggleExpand = () => {
     this.setState({
-      isExpandedState: !this.state.isExpandedState
+      isExpandedState: !this.state.isExpandedState,
     });
     this.props.onClick && this.props.onClick();
   };

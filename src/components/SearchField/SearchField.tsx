@@ -1,21 +1,18 @@
 import classnames from 'classnames';
-import {
-  ISearchBoxProps,
-  ISearchBox,
-  SearchBox
-} from 'office-ui-fabric-react/lib-commonjs/SearchBox';
+import { ISearchBoxProps, ISearchBox, SearchBox } from '@fluentui/react';
 import * as React from 'react';
 import { getClassNames } from './SearchField.classNames';
-import { IDropdownOption } from 'office-ui-fabric-react';
-import LabelWithCallout, {
-  calloutState,
-  LabelWithCalloutProps
-} from '../LabelWithCallout';
-import { useId } from '@reach/auto-id';
-import { useHotkeys } from '../utils/useHotkeys';
-import { t } from '../utils/i18n/i18n';
+import { IDropdownOption } from '@fluentui/react';
 import i18n from 'i18next';
-import { Language } from '../FileUploader';
+import {
+  LabelWithCallout,
+  calloutState,
+  LabelWithCalloutProps,
+  Language,
+  generateId,
+  useHotkeys,
+  t,
+} from '../index';
 
 export interface SearchFieldProps extends ISearchBoxProps {
   /** Lukk callout på blur */
@@ -60,7 +57,7 @@ export interface SearchFieldProps extends ISearchBoxProps {
 const searchInList = (options: Array<IDropdownOption>, filterText: string) => {
   const regex = /[\s.,:-]+/g;
   return options
-    .filter(option => {
+    .filter((option) => {
       return (
         option.text
           .replace(regex, '')
@@ -68,7 +65,7 @@ const searchInList = (options: Array<IDropdownOption>, filterText: string) => {
           .indexOf(filterText.replace(regex, '').toLowerCase()) > -1
       );
     })
-    .map(option => option);
+    .map((option) => option);
 };
 
 const limitNumberOfResults = (list: Array<IDropdownOption>, limit?: number) => {
@@ -82,7 +79,7 @@ const limitNumberOfResults = (list: Array<IDropdownOption>, limit?: number) => {
 /**
  * @visibleName SearchField (Søkefelt)
  */
-const SearchField: React.FC<SearchFieldProps> = props => {
+export const SearchField: React.FC<SearchFieldProps> = (props) => {
   const {
     className,
     labelWithCalloutAutoDismiss,
@@ -112,7 +109,7 @@ const SearchField: React.FC<SearchFieldProps> = props => {
   const styles = getClassNames(props);
   const listRefs = React.useRef<(HTMLLIElement | null)[]>([]);
 
-  const genratedId = useId(id);
+  const genratedId = generateId();
   const mainId = id ? id : 'searchfield-' + genratedId;
   const inputId = mainId + '-input';
   const labelId = mainId + '-label';
@@ -123,10 +120,22 @@ const SearchField: React.FC<SearchFieldProps> = props => {
     i18n.changeLanguage(language);
   }
 
+  const setSearchResult = React.useCallback(
+    (newValue: string) => {
+      if (options && newValue) {
+        let newList = searchInList(options, newValue);
+        newList = limitNumberOfResults(newList, limit);
+        setSearchResultList(newList);
+        setDropdownVisible(newList.length > 0);
+      }
+    },
+    [limit, options]
+  );
+
   React.useEffect(() => {
     setSearchResultList(options);
     setSearchResult(value ? value : '');
-  }, [options]);
+  }, [options, setSearchResult, value]);
 
   React.useEffect(() => {
     setValue(props.value);
@@ -140,7 +149,7 @@ const SearchField: React.FC<SearchFieldProps> = props => {
     };
   });
 
-  useHotkeys(searchShortcutKeys, ev => {
+  useHotkeys(searchShortcutKeys, (ev) => {
     if (keyboardShortcut) {
       ev.preventDefault();
       return _componentRef.current?.focus();
@@ -173,9 +182,9 @@ const SearchField: React.FC<SearchFieldProps> = props => {
     }
   };
 
-  const handleClickOutside = event => {
+  const handleClickOutside = (event) => {
     const contains = listRefs.current.filter(
-      ref => ref && ref.contains(event.target)
+      (ref) => ref && ref.contains(event.target)
     );
     if (
       !contains.length &&
@@ -186,16 +195,7 @@ const SearchField: React.FC<SearchFieldProps> = props => {
     }
   };
 
-  const setSearchResult = (newValue: string) => {
-    if (options && newValue) {
-      let newList = searchInList(options, newValue);
-      newList = limitNumberOfResults(newList, limit);
-      setSearchResultList(newList);
-      setDropdownVisible(newList.length > 0);
-    }
-  };
-
-  const renderSuggestions = list => {
+  const renderSuggestions = (list) => {
     if (list.length === 0) {
       listRefs.current = [];
     }
@@ -214,12 +214,12 @@ const SearchField: React.FC<SearchFieldProps> = props => {
                 aria-label={listItem.text}
                 key={listItem.key}
                 onClick={() => selectEvent(listItem)}
-                onKeyPress={ev => {
+                onKeyPress={(ev) => {
                   if (ev.keyCode === 0) {
                     selectEvent(listItem);
                   }
                 }}
-                onKeyDown={ev => handleOnKeyDown(ev)}
+                onKeyDown={(ev) => handleOnKeyDown(ev)}
                 ref={(ref: HTMLLIElement | null) => {
                   if (ref && listRefs.current.indexOf(ref) === -1) {
                     listRefs.current.splice(key, 0, ref);
@@ -278,18 +278,18 @@ const SearchField: React.FC<SearchFieldProps> = props => {
               }
               setValue(newValue);
             }}
-            onKeyDown={ev => handleOnKeyDown(ev)}
+            onKeyDown={(ev) => handleOnKeyDown(ev)}
             value={value}
             componentRef={_componentRef}
             iconProps={{
               iconName: 'Filter',
-              onClick: ev => (onSearchIcon ? onSearchIcon(ev) : null)
+              onClick: (ev) => (onSearchIcon ? onSearchIcon(ev) : null),
             }}
           />
           <span aria-live="assertive" className={styles.srOnly}>
             {dropdownVisible
               ? i18n.t('searchfield.sr.results', {
-                  ant: searchResultList ? searchResultList.length : 0
+                  ant: searchResultList ? searchResultList.length : 0,
                 })
               : ''}
           </span>
@@ -302,8 +302,8 @@ const SearchField: React.FC<SearchFieldProps> = props => {
           className={classnames(styles.main, className)}
           componentRef={_componentRef}
           iconProps={{
-            onClick: ev => (onSearchIcon ? onSearchIcon(ev) : null),
-            title: onSearchIcon ? searchIconTitle : ''
+            onClick: (ev) => (onSearchIcon ? onSearchIcon(ev) : null),
+            title: onSearchIcon ? searchIconTitle : '',
           }}
         />
       )}
@@ -313,7 +313,5 @@ const SearchField: React.FC<SearchFieldProps> = props => {
 
 SearchField.defaultProps = {
   border: 'default',
-  searchFieldSize: 'standard'
+  searchFieldSize: 'standard',
 };
-
-export default SearchField;

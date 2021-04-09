@@ -3,8 +3,7 @@
 Velge fra en fast liste (stor versjon):
 
 ```js
-import ComboBox from '@skatteetaten/frontend-components/ComboBox';
-import Grid from '@skatteetaten/frontend-components/Grid';
+import { ComboBox, Grid } from '@skatteetaten/frontend-components';
 
 const initialState = {
   fylker: [
@@ -18,8 +17,8 @@ const initialState = {
     { key: 'H', text: 'Trøndelag', value: 'Trøndelag' },
     { key: 'I', text: 'Vestfold og Telemark', value: 'Vestfold og Telemark' },
     { key: 'J', text: 'Vestland', value: 'Vestland' },
-    { key: 'K', text: 'Viken', value: 'Viken' }
-  ]
+    { key: 'K', text: 'Viken', value: 'Viken' },
+  ],
 };
 
 <div>
@@ -46,8 +45,7 @@ const initialState = {
 Hvis brukeren skal kunne legge til egne elementer:
 
 ```js
-import ComboBox from '@skatteetaten/frontend-components/ComboBox';
-import Grid from '@skatteetaten/frontend-components/Grid';
+import { ComboBox, Grid } from '@skatteetaten/frontend-components';
 
 const initialState = {
   biler: [
@@ -61,8 +59,8 @@ const initialState = {
     { key: 'G', text: 'Tesla', value: 'Troms og Finnmark' },
     { key: 'H', text: 'Volkswagen', value: 'Trøndelag' },
     { key: 'I', text: 'Volvo', value: 'Volvo' },
-    { key: 'J', text: 'Vestland', value: 'Vestland' }
-  ]
+    { key: 'J', text: 'Vestland', value: 'Vestland' },
+  ],
 };
 
 <div>
@@ -104,8 +102,8 @@ const initialState = {
     { key: 'H', text: 'Trøndelag', value: 'Trøndelag' },
     { key: 'I', text: 'Vestfold og Telemark', value: 'Vestfold og Telemark' },
     { key: 'J', text: 'Vestland', value: 'Vestland' },
-    { key: 'K', text: 'Viken', value: 'Viken' }
-  ]
+    { key: 'K', text: 'Viken', value: 'Viken' },
+  ],
 };
 
 <div>
@@ -129,8 +127,7 @@ const initialState = {
 Med Feilmelding:
 
 ```js
-import ComboBox from '@skatteetaten/frontend-components/ComboBox';
-import Grid from '@skatteetaten/frontend-components/Grid';
+import { ComboBox, Grid } from '@skatteetaten/frontend-components';
 
 const initialState = {
   fylker: [
@@ -144,8 +141,8 @@ const initialState = {
     { key: 'H', text: 'Trøndelag', value: 'Trøndelag' },
     { key: 'I', text: 'Vestfold og Telemark', value: 'Vestfold og Telemark' },
     { key: 'J', text: 'Vestland', value: 'Vestland' },
-    { key: 'K', text: 'Viken', value: 'Viken' }
-  ]
+    { key: 'K', text: 'Viken', value: 'Viken' },
+  ],
 };
 let error = 'En feil';
 

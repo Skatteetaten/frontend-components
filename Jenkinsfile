@@ -8,7 +8,7 @@ def config = [
     publishToNpm           : true,
     publishSnapshotToNpm	 : true,
     npmPublishFolder	     : 'lib',
-    nodeVersion            : '10',
+    nodeVersion            : '12',
     versionStrategy        : [[ branch : 'master', versionHint:'3' ]],
     createBuildEnvs        : { props -> "REACT_APP_BUILD_VERSION=${props.version}" },
     github                 : [

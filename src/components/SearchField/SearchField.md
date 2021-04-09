@@ -1,7 +1,7 @@
 ** SearchField er et tekstfelt som brukes når man søker gjennom innhold i en nettløsning. **
 
 ```js
-import SearchField from '@skatteetaten/frontend-components/SearchField';
+import { SearchField } from '@skatteetaten/frontend-components';
 
 <div style={{ width: '300px' }}>
   <SearchField
@@ -28,8 +28,8 @@ import SearchField from '@skatteetaten/frontend-components/SearchField';
 Søkefelt med filtrering:
 
 ```js
-import React from 'react';
-import SearchField from '@skatteetaten/frontend-components/SearchField';
+import { SearchField } from '@skatteetaten/frontend-components';
+
 const options = [
   { text: 'Afghanistan', key: 'AF' },
   { text: 'Åland Islands', key: 'AX' },
@@ -273,7 +273,7 @@ const options = [
   { text: 'Western Sahara', key: 'EH' },
   { text: 'Yemen', key: 'YE' },
   { text: 'Zambia', key: 'ZM' },
-  { text: 'Zimbabwe', key: 'ZW' }
+  { text: 'Zimbabwe', key: 'ZW' },
 ];
 const [searchTerm, setSearchTerm] = React.useState('');
 

@@ -1,7 +1,7 @@
 ** Datovelger brukes i skjemaer når brukeren skal oppgi datoer. **
 
 ```js
-import DatePicker from '@skatteetaten/frontend-components/DatePicker';
+import { DatePicker } from '@skatteetaten/frontend-components';
 
 <div>
   <div className="ExampleFlexContainer-200">
@@ -28,7 +28,7 @@ const [dato, setDato] = React.useState(new Date());
     editable
     label={'Velg en dato'}
     value={dato}
-    onSelectDate={datoVerdi => setDato(datoVerdi)}
+    onSelectDate={(datoVerdi) => setDato(datoVerdi)}
   />
 </div>;
 ```
