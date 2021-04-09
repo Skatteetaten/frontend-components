@@ -1,8 +1,8 @@
 {
   "imports": {
-    "react": "https://k22600-frontend-components-aurora-dev.utv.paas.skead.no/umd/deps/react/umd/react.development.js",
-    "react-dom": "https://k22600-frontend-components-aurora-dev.utv.paas.skead.no/umd/deps/react-dom/umd/react-dom.development.js",
-    "react-i18next": "https://k22600-frontend-components-aurora-dev.utv.paas.skead.no/umd/deps/react-i18next/dist/umd/react-i18next.js",
+    "react": "https://k22600-frontend-components-aurora-dev.utv.paas.skead.no/umd/deps/react/umd/react.production.js",
+    "react-dom": "https://k22600-frontend-components-aurora-dev.utv.paas.skead.no/umd/deps/react-dom/umd/react-dom.production.js",
+    "react-i18next": "https://k22600-frontend-components-aurora-dev.utv.paas.skead.no/umd/deps/react-i18next/dist/umd/react-i18next.min.js",
     "prop-types": "https://k22600-frontend-components-aurora-dev.utv.paas.skead.no/umd/deps/prop-types/prop-types.min.js",
     "classnames": "https://k22600-frontend-components-aurora-dev.utv.paas.skead.no/umd/deps/classnames/index.min.js",
     "moment": "https://k22600-frontend-components-aurora-dev.utv.paas.skead.no/umd/deps/moment/min/moment.min.js",
