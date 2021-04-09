@@ -2,7 +2,7 @@
 Den brukes når du skal gi en tilbakemelding til bruker som omhandler en side, delseksjon eller flere elementer på siden. **
 
 ```js
-import MessageBar from '@skatteetaten/frontend-components/MessageBar';
+import { MessageBar } from '@skatteetaten/frontend-components';
 
 <>
   <MessageBar type={MessageBar.Type.success} onDismiss={() => null}>
@@ -27,7 +27,7 @@ import MessageBar from '@skatteetaten/frontend-components/MessageBar';
 Stor MessageBar:
 
 ```js
-import MessageBar from '@skatteetaten/frontend-components/MessageBar';
+import { MessageBar } from '@skatteetaten/frontend-components';
 
 <MessageBar size="large" onDismiss={() => null}>
   Satsene for denne avgiftstypen ble oppdatert 01.01.2017.
@@ -37,8 +37,7 @@ import MessageBar from '@skatteetaten/frontend-components/MessageBar';
 MessageBar der boksen forsvinner etter X sekunder:
 
 ```js
-import MessageBar from '@skatteetaten/frontend-components/MessageBar';
-import Button from '@skatteetaten/frontend-components/Button';
+import { MessageBar, Button } from '@skatteetaten/frontend-components';
 
 const afterDurationComponent = (resetDuration, setShowAlways) => (
   <div>

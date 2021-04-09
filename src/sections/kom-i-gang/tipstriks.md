@@ -1,24 +1,30 @@
 ```js noeditor
-<h3>Formatering av datoer</h3>
-<p>
-  Vi skriver 16.08.2020 eller 16. august 2020. Husk at vi alltid skriver
-  årstallet helt ut for å unngå misforståelser. Se <a href="https://www.skatteetaten.no/stilogtone/skrive/skriveregler/datoer/">skriveregelene</a> for detaljer.
-</p>
+<div>
+  <h3>Formatering av datoer</h3>
+  <p>
+    Vi skriver 16.08.2020 eller 16. august 2020. Husk at vi alltid skriver
+    årstallet helt ut for å unngå misforståelser. Se{' '}
+    <a href="https://www.skatteetaten.no/stilogtone/skrive/skriveregler/datoer/">
+      skriveregelene
+    </a>{' '}
+    for detaljer.
+  </p>
+</div>
 ```
 
 ```js
-import LabelWithCallout from '@skatteetaten/frontend-components/LabelWithCallout';
+import { LabelWithCallout } from '@skatteetaten/frontend-components';
 
 const date = new Date('2020-07-16');
 var options = {
   year: 'numeric',
   month: '2-digit',
-  day: '2-digit'
+  day: '2-digit',
 };
 var full_options = {
   year: 'numeric',
   month: 'long',
-  day: 'numeric'
+  day: 'numeric',
 };
 
 const no_formatted_date = `${new Intl.DateTimeFormat('no-NB', options).format(
@@ -54,15 +60,20 @@ const en_formatted_date = `${new Intl.DateTimeFormat(
 ```
 
 ```js noeditor
-<h3>Formatering av tall</h3>
-<p>
-  Tall skrives med siffer. Vi skriver 4 og 104, ikke fire og hundreogfire. Se <a href="https://www.skatteetaten.no/stilogtone/skrive/skriveregler/tall/">skriveregelene</a> for detaljer.
-</p>
+<div>
+  <h3>Formatering av tall</h3>
+  <p>
+    Tall skrives med siffer. Vi skriver 4 og 104, ikke fire og hundreogfire. Se{' '}
+    <a href="https://www.skatteetaten.no/stilogtone/skrive/skriveregler/tall/">
+      skriveregelene
+    </a>{' '}
+    for detaljer.
+  </p>
+</div>
 ```
 
 ```js
-import TextField from '@skatteetaten/frontend-components/TextField';
-import LabelWithCallout from '@skatteetaten/frontend-components/LabelWithCallout';
+import { TextField, LabelWithCallout } from '@skatteetaten/frontend-components';
 
 const count = 26254;
 const count_persent = 13.5;
@@ -100,11 +111,12 @@ const en_formatted_desimal = `${new Intl.NumberFormat('en-GB').format(
 ```
 
 ```js
-import LabelWithCallout from '@skatteetaten/frontend-components/LabelWithCallout';
+import { LabelWithCallout } from '@skatteetaten/frontend-components';
+
 const rtf = new Intl.RelativeTimeFormat('no', {
   localeMatcher: 'best fit',
   numeric: 'always',
-  style: 'long'
+  style: 'long',
 });
 <>
   <LabelWithCallout

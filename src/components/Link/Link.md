@@ -1,7 +1,7 @@
 ** Lenke til filer eller nettsider **
 
 ```js
-import Link from '@skatteetaten/frontend-components/Link';
+import { Link } from '@skatteetaten/frontend-components';
 
 <div className="ExampleSpacing8">
   <Link

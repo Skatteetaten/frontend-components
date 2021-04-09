@@ -1,8 +1,6 @@
 import classnames from 'classnames';
 import * as React from 'react';
-import NavigationContent, {
-  ContentProps
-} from './NavigationContent/NavigationContent';
+import { NavigationContent, ContentProps } from '../index';
 import { getClassNames } from './NavigationTile.classNames';
 
 export interface NavigationTileProps {
@@ -32,7 +30,7 @@ export interface NavigationTileProps {
 /**
  * @visibleName NavigationTile (Forsideknapp)
  */
-const NavigationTile: React.FC<NavigationTileProps> = props => {
+export const NavigationTile: React.FC<NavigationTileProps> = (props) => {
   const {
     children,
     contents,
@@ -88,7 +86,5 @@ NavigationTile.defaultProps = {
   alignDescription: 'center',
   alignIcon: 'center',
   alignTitle: 'center',
-  type: 'center'
+  type: 'center',
 };
-
-export default NavigationTile;

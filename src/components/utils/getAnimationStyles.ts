@@ -2,5 +2,5 @@
 import { AnimationClassNames } from '@uifabric/styling';
 
 export const Animation = {
-  errorMessage: AnimationClassNames.slideDownIn20
+  errorMessage: AnimationClassNames.slideDownIn20,
 };

@@ -1,7 +1,6 @@
 import { mergeStyleSets } from '@uifabric/merge-styles';
 import { getTheme } from '@uifabric/styling';
-import { FontSizes, FontWeights, IconFontSizes } from '..';
-import { PaletteProps } from '..';
+import { FontSizes, FontWeights, IconFontSizes, PaletteProps } from '../index';
 
 export function getClassNames(props) {
   const palette = getTheme().palette as PaletteProps;
@@ -26,17 +25,17 @@ export function getClassNames(props) {
       cursor: 'pointer',
       selectors: {
         '@media (min-width: 640px)': {
-          fontSize: compact ? FontSizes.medium : FontSizes.largePlus
+          fontSize: compact ? FontSizes.medium : FontSizes.largePlus,
         },
         '&:hover, &:focus': {
-          background: palette.skeColor.lightBlue
+          background: palette.skeColor.lightBlue,
         },
         '&:focus': {
-          outline: 'none'
+          outline: 'none',
         },
         '& h1, h2, h3, h4, h5, h6': {
           fontSize: compact ? FontSizes.medium : FontSizes.largePlus,
-          margin: '0'
+          margin: '0',
         },
         '& i': {
           transition: '.2s',
@@ -52,32 +51,32 @@ export function getClassNames(props) {
           fontWeight: FontWeights.bold,
           selectors: {
             '@media (min-width: 640px)': {
-              fontSize: compact ? IconFontSizes.large : IconFontSizes.xxlarge
-            }
-          }
-        }
-      }
+              fontSize: compact ? IconFontSizes.large : IconFontSizes.xxlarge,
+            },
+          },
+        },
+      },
     },
     content: {
       padding: '8px 0',
       marginLeft: compact ? '18px' : '26px',
-      marginBottom: '8px'
+      marginBottom: '8px',
     },
     contentWhenIconRight: {
       padding: '8px 0',
       marginLeft: compact ? '18px' : '16px',
-      marginBottom: '8px'
+      marginBottom: '8px',
     },
     heading: {
       fontSize: compact ? FontSizes.medium : FontSizes.largePlus,
-      margin: '0'
+      margin: '0',
     },
     toggleButtonOpen: {
       selectors: {
         '& i': {
-          transform: 'rotate(180deg)'
-        }
-      }
-    }
+          transform: 'rotate(180deg)',
+        },
+      },
+    },
   });
 }

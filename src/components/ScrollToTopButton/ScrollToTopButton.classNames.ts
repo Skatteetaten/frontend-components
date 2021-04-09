@@ -1,6 +1,6 @@
 import { mergeStyleSets } from '@uifabric/merge-styles';
 import { getTheme } from '@uifabric/styling';
-import { PaletteProps } from '..';
+import { PaletteProps } from '../index';
 
 export const getClassNames = () => {
   const palette = getTheme().palette as PaletteProps;
@@ -20,9 +20,9 @@ export const getClassNames = () => {
         '@media (min-width: 1170px)': {
           position: 'fixed',
           top: 0,
-          right: 0
-        }
-      }
+          right: 0,
+        },
+      },
     },
     container: {
       position: 'relative !important',
@@ -31,12 +31,12 @@ export const getClassNames = () => {
       transition: '0.2s',
       selectors: {
         '@media (min-width: 900px)': {
-          maxWidth: '878px'
+          maxWidth: '878px',
         },
         '@media (min-width: 1170px)': {
-          maxWidth: '1151.9px'
-        }
-      }
+          maxWidth: '1151.9px',
+        },
+      },
     },
     box: {
       marginTop: 0,
@@ -44,9 +44,9 @@ export const getClassNames = () => {
         '@media (min-width: 1170px)': {
           top: '80vh',
           position: 'absolute',
-          right: 0
-        }
-      }
+          right: 0,
+        },
+      },
     },
     actionButton: {
       display: 'block',
@@ -55,18 +55,18 @@ export const getClassNames = () => {
       margin: '24px auto',
       selectors: {
         '.ms-Button-flexContainer': {
-          flexDirection: 'column'
+          flexDirection: 'column',
         },
         ':hover .ms-Button-flexContainer > div': {
           backgroundColor: hoverBackground,
-          color: hoverColor
-        }
-      }
+          color: hoverColor,
+        },
+      },
     },
     icon: {
       fontSize: '22px',
       color: color,
-      display: 'inline'
+      display: 'inline',
     },
     iconFixateContainer: {
       background: whiteBackground,
@@ -76,12 +76,12 @@ export const getClassNames = () => {
       borderRadius: '50%',
       height: '30px',
       width: '30px',
-      position: 'absolute'
+      position: 'absolute',
     },
     iconFixate: {
       position: 'absolute',
       top: '0.4em',
-      left: '0.3em'
+      left: '0.3em',
     },
     label: {
       fontSize: '13px',
@@ -92,12 +92,12 @@ export const getClassNames = () => {
       borderRadius: '10px',
       color: color,
       padding: '2px 15px',
-      zIndex: 1
+      zIndex: 1,
     },
     vis: {
       visibility: 'visible',
       opacity: '1 !important',
-      transform: 'translateY(-15px)'
-    }
+      transform: 'translateY(-15px)',
+    },
   });
 };

@@ -11,8 +11,9 @@ import ScrollToTopButton from '@skatteetaten/frontend-components/ScrollToTopButt
 import FooterContent from '@skatteetaten/frontend-components/FooterContent';
 import Pagination from '@skatteetaten/frontend-components/Pagination';
 import TopStripe, {
+  LanguagePicker,
   TopStripeMenu,
-  TopStripeButton
+  TopStripeButton,
 } from '@skatteetaten/frontend-components/TopStripe';
 import TopBanner from '@skatteetaten/frontend-components/TopBanner';
 import Icon from '@skatteetaten/frontend-components/Icon';
@@ -23,7 +24,7 @@ import DatePicker from '@skatteetaten/frontend-components/DatePicker';
 import Dropdown from '@skatteetaten/frontend-components/Dropdown';
 import { useState } from 'react';
 import FileUploader, {
-  FileFormatTypes
+  FileFormatTypes,
 } from '@skatteetaten/frontend-components/FileUploader';
 import RadioButtonGroup from '@skatteetaten/frontend-components/RadioButtonGroup';
 import SearchField from '@skatteetaten/frontend-components/SearchField';
@@ -58,10 +59,10 @@ function Testside(props) {
       { key: 'B', text: 'beta', value: 'Beta' },
       { key: 'C', text: 'gamma', value: 'Gamma' },
       { key: 'D', text: 'delta', value: 'Delta' },
-      { key: 'E', text: 'echo', value: 'Echo' }
+      { key: 'E', text: 'echo', value: 'Echo' },
     ],
     isCalloutVisible: false,
-    hideDialog: true
+    hideDialog: true,
   };
   const [files, setFiles] = useState([]);
   const [spinner, setSpinner] = useState(false);
@@ -70,41 +71,41 @@ function Testside(props) {
     display: 'inline-block',
     width: '50%',
     margin: '0 0 5px 0',
-    verticalAlign: 'text-top'
+    verticalAlign: 'text-top',
   };
 
   const removeMargin = {
-    margin: '0'
+    margin: '0',
   };
 
   const ulStyle = {
     padding: 0,
-    margin: 0
+    margin: 0,
   };
 
   const centerAlignStyle = {
     display: 'flex',
-    alignItems: 'center'
+    alignItems: 'center',
   };
 
   const timeStampStyle = {
     paddingLeft: 40,
-    marginTop: '-10px'
+    marginTop: '-10px',
   };
 
   const titles = {
     step1: {
       no: 'Jobber du?',
-      en: 'Are you a wage earner doing paid work?'
+      en: 'Are you a wage earner doing paid work?',
     },
     step2: {
       no: 'Overnatting',
-      en: 'Spend the night somewhere else than at home?'
+      en: 'Spend the night somewhere else than at home?',
     },
     step3: {
       no: 'Bor i Norge',
-      en: 'Where is your home?'
-    }
+      en: 'Where is your home?',
+    },
   };
   const showFirstStep = true;
   const editableContent = (data, close, rowIndex) => (
@@ -118,25 +119,25 @@ function Testside(props) {
       name: 'Måned',
       fieldName: 'month',
       sortable: true,
-      autohideSorting: false
+      autohideSorting: false,
     },
     {
       name: 'Beløp',
       fieldName: 'amount',
       alignment: 'right',
       sortable: true,
-      autohideSorting: false
+      autohideSorting: false,
     },
     {
       name: 'Dekningsgrad',
       fieldName: 'coverage',
-      alignment: 'right'
+      alignment: 'right',
     },
     {
       name: 'Avkastning',
       fieldName: 'revenue',
-      alignment: 'right'
-    }
+      alignment: 'right',
+    },
   ];
 
   const data = [
@@ -144,533 +145,535 @@ function Testside(props) {
       month: 'Januar',
       amount: 5426,
       coverage: '100%',
-      revenue: '1000'
+      revenue: '1000',
     },
     {
       month: 'Februar',
       amount: 5432,
       coverage: '50%',
-      revenue: '500'
+      revenue: '500',
     },
     {
       month: 'Mars',
       amount: 4899,
       coverage: '20%',
-      revenue: '2000'
+      revenue: '2000',
     },
     {
       month: 'April',
       amount: 2344,
       coverage: '30%',
-      revenue: '1055'
-    }
+      revenue: '1055',
+    },
   ];
 
   const iconGroup = {
     arrows: [
       {
         name: 'CircleUp',
-        usage: 'Lukke område'
+        usage: 'Lukke område',
       },
       {
         name: 'CircleDown',
-        usage: 'Åpne område'
+        usage: 'Åpne område',
       },
       {
         name: 'ChevronUp',
-        usage: 'Lukke område'
+        usage: 'Lukke område',
       },
       {
         name: 'ChevronDown',
-        usage: 'Åpne område'
+        usage: 'Åpne område',
       },
       {
         name: 'ArrowUp',
-        usage: 'Opp / sorter stigende'
+        usage: 'Opp / sorter stigende',
       },
       {
         name: 'ArrowDown',
-        usage: 'Ned / sorter synkende'
+        usage: 'Ned / sorter synkende',
       },
       {
         name: 'ArrowBack',
-        usage: 'Gå tilbake/Forrige'
+        usage: 'Gå tilbake/Forrige',
       },
       {
         name: 'ArrowForward',
-        usage: 'Gå til/Neste'
+        usage: 'Gå til/Neste',
       },
       {
         name: 'ArrowUpDown',
-        usage: 'Usorterte kolonner i tabell'
+        usage: 'Usorterte kolonner i tabell',
       },
       {
         name: 'MenuUp',
-        usage: 'Opp i meny'
+        usage: 'Opp i meny',
       },
       {
         name: 'MenuDown',
-        usage: 'Ned i meny'
+        usage: 'Ned i meny',
       },
       {
         name: 'MoveUp',
-        usage: 'Til toppen av siden'
-      }
+        usage: 'Til toppen av siden',
+      },
     ],
     info: [
       {
         name: 'Blocked',
-        usage: 'Sperret/ikke tilgjengelig'
+        usage: 'Sperret/ikke tilgjengelig',
       },
       {
         name: 'Error',
-        usage: 'Feil'
+        usage: 'Feil',
       },
       {
         name: 'ErrorOutline',
-        usage: 'Feil'
+        usage: 'Feil',
       },
       {
         name: 'helpFilled',
-        usage: 'Hjelp'
+        usage: 'Hjelp',
       },
       {
         name: 'HelpOutline',
-        usage: 'Hjelp'
+        usage: 'Hjelp',
       },
       {
         name: 'HelpSimple',
-        usage: 'Hjelp'
+        usage: 'Hjelp',
       },
       {
         name: 'Info',
-        usage: 'Informasjon, nyttig opplysning'
+        usage: 'Informasjon, nyttig opplysning',
       },
       {
         name: 'InfoOutline',
-        usage: 'Informasjon, nyttig opplysning'
+        usage: 'Informasjon, nyttig opplysning',
       },
       {
         name: 'Warning',
-        usage: 'Advarsel'
+        usage: 'Advarsel',
       },
       {
         name: 'WarningOutline',
-        usage: 'Advarsel'
-      }
+        usage: 'Advarsel',
+      },
     ],
     addremove: [
       {
         name: 'Add',
-        usage: 'Legg til'
+        usage: 'Legg til',
       },
       {
         name: 'AddOutline',
-        usage: 'Legg til'
+        usage: 'Legg til',
       },
       {
         name: 'Cancel',
-        usage: 'Lukk, avbryt eller ikke ok'
+        usage: 'Lukk, avbryt eller ikke ok',
       },
       {
         name: 'Delete',
-        usage: 'Slett'
+        usage: 'Slett',
       },
       {
         name: 'Share',
-        usage: 'Del'
+        usage: 'Del',
       },
       {
         name: 'Upload',
-        usage: 'Last opp'
+        usage: 'Last opp',
       },
       {
         name: 'Download',
-        usage: 'Last ned'
+        usage: 'Last ned',
       },
       {
         name: 'Deploy',
-        usage: 'Distribuere (deploye)'
-      }
+        usage: 'Distribuere (deploye)',
+      },
     ],
     tags: [
       {
         name: 'Bookmark',
-        usage: 'Merk som bokmerke, snarvei'
+        usage: 'Merk som bokmerke, snarvei',
       },
       {
         name: 'Favorite',
-        usage: 'Merk som favoritt'
+        usage: 'Merk som favoritt',
       },
       {
         name: 'Check',
-        usage: 'Utført, ferdig'
+        usage: 'Utført, ferdig',
       },
       {
         name: 'Completed',
-        usage: 'Utført, ferdig'
+        usage: 'Utført, ferdig',
       },
       {
         name: 'ChatBubbleOutline',
-        usage: 'Kommentar, merknad'
+        usage: 'Kommentar, merknad',
       },
       {
         name: 'Cloud',
-        usage: 'Skytjeneste'
+        usage: 'Skytjeneste',
       },
       {
         name: 'CloudUpload',
-        usage: 'Last opp til skytjeneste'
+        usage: 'Last opp til skytjeneste',
       },
       {
         name: 'CircleFilled',
-        usage: 'Markert'
+        usage: 'Markert',
       },
       {
         name: 'Code',
-        usage: 'Kode'
+        usage: 'Kode',
       },
       {
         name: 'Lock',
-        usage: 'Låst element'
+        usage: 'Låst element',
       },
       {
         name: 'LockOutline',
-        usage: 'Låst element'
+        usage: 'Låst element',
       },
       {
         name: 'LockOpen',
-        usage: 'Ulåst element'
+        usage: 'Ulåst element',
       },
       {
         name: 'LockOutlineOpen',
-        usage: 'Ulåst element'
-      }
+        usage: 'Ulåst element',
+      },
     ],
     time: [
       {
         name: 'Calendar',
-        usage: 'Dato, datovelger'
+        usage: 'Dato, datovelger',
       },
       {
         name: 'CalendarClock',
-        usage: 'Dato og tidspunkt'
+        usage: 'Dato og tidspunkt',
       },
       {
         name: 'Update',
-        usage: 'Oppdater'
+        usage: 'Oppdater',
       },
       {
         name: 'History',
-        usage: 'Historikk'
+        usage: 'Historikk',
       },
       {
         name: 'Timeline',
-        usage: 'Utvikling over tid'
+        usage: 'Utvikling over tid',
       },
       {
         name: 'Timelapse',
-        usage: 'Pågår, under arbeid'
+        usage: 'Pågår, under arbeid',
       },
       {
         name: 'Timersand',
-        usage: 'Venter'
-      }
+        usage: 'Venter',
+      },
     ],
     sections: [
       {
         name: 'Home',
-        usage: 'Hjem, tilbake til hjemmeside'
+        usage: 'Hjem, tilbake til hjemmeside',
       },
       {
         name: 'Menu',
-        usage: 'Meny til smal skjerm'
+        usage: 'Meny til smal skjerm',
       },
       {
         name: 'Person',
-        usage: 'Personlig'
+        usage: 'Personlig',
       },
       {
         name: 'PersonOutline',
-        usage: 'Personlig'
+        usage: 'Personlig',
       },
       {
         name: 'PersonMore',
-        usage: 'Flere enn én person'
+        usage: 'Flere enn én person',
       },
       {
         name: 'PersonMoreOutline',
-        usage: 'Flere enn én person'
+        usage: 'Flere enn én person',
       },
       {
         name: 'AccountMultiple',
-        usage: 'To eller flere'
+        usage: 'To eller flere',
       },
       {
         name: 'AccountChild',
-        usage: 'Familie'
+        usage: 'Familie',
       },
       {
         name: 'AccountEnk',
-        usage: 'Enkeltpersonsforetak'
+        usage: 'Enkeltpersonsforetak',
       },
       {
         name: 'Search',
-        usage: 'Søk'
+        usage: 'Søk',
       },
       {
         name: 'Settings',
-        usage: 'Innstillinger'
+        usage: 'Innstillinger',
       },
       {
         name: 'Skattetrekk',
-        usage: 'Skatt, skattetrekk'
+        usage: 'Skatt, skattetrekk',
       },
       {
         name: 'Avgift',
-        usage: 'Avgift generell'
+        usage: 'Avgift generell',
       },
       {
         name: 'AvgiftBedrift',
-        usage: 'Avgift for bedrifter'
+        usage: 'Avgift for bedrifter',
       },
       {
         name: 'Kroner',
-        usage: 'Skatt, penger'
+        usage: 'Skatt, penger',
       },
       {
         name: 'Folkeregister',
-        usage: 'Folkeregister'
+        usage: 'Folkeregister',
       },
       {
         name: 'Earth',
-        usage: 'Utland'
+        usage: 'Utland',
       },
       {
         name: 'Email',
-        usage: 'Innboks, e-post, skriv til oss, sende'
+        usage: 'Innboks, e-post, skriv til oss, sende',
       },
       {
         name: 'Briefcase',
-        usage: 'Arbeidsgiver'
+        usage: 'Arbeidsgiver',
       },
       {
         name: 'Company',
-        usage: 'Bedrift og organisasjon'
+        usage: 'Bedrift og organisasjon',
       },
       {
         name: 'Hammer',
-        usage: 'Starte og drive'
+        usage: 'Starte og drive',
       },
       {
         name: 'BookOpen',
-        usage: 'Veiledning'
+        usage: 'Veiledning',
       },
       {
         name: 'Phone',
-        usage: 'Telefon, kontakt'
+        usage: 'Telefon, kontakt',
       },
       {
         name: 'Forum',
-        usage: 'Chat, forum'
+        usage: 'Chat, forum',
       },
       {
         name: 'Calculator',
-        usage: 'Kalkuler, beregne'
+        usage: 'Kalkuler, beregne',
       },
       {
         name: 'Facebook',
-        usage: 'Facebook'
+        usage: 'Facebook',
       },
       {
         name: 'LinkedIn',
-        usage: 'LinkedIn'
+        usage: 'LinkedIn',
       },
       {
         name: 'Twitter',
-        usage: 'Twitter'
+        usage: 'Twitter',
       },
       {
         name: 'Key',
-        usage: 'Tilganger'
+        usage: 'Tilganger',
       },
       {
         name: 'BookOpenOutline',
-        usage: 'Skattemelding'
+        usage: 'Skattemelding',
       },
       {
         name: 'CashRefund',
-        usage: 'Skatteoppgjør'
+        usage: 'Skatteoppgjør',
       },
       {
         name: 'LanPending',
-        usage: 'Skattkort'
+        usage: 'Skattkort',
       },
       {
         name: 'Familie',
-        usage: 'Familie'
+        usage: 'Familie',
       },
       {
         name: 'Ekteskap',
-        usage: 'Ekteskap'
-      }
+        usage: 'Ekteskap',
+      },
     ],
     manipulate: [
       {
         name: 'FormatAlignLeft',
-        usage: 'Venstrejuster'
+        usage: 'Venstrejuster',
       },
       {
         name: 'FormatAlignRight',
-        usage: 'Høyrejustert'
+        usage: 'Høyrejustert',
       },
       {
         name: 'PauseOutline',
-        usage: 'Sett på vent'
+        usage: 'Sett på vent',
       },
       {
         name: 'TaOppgave',
-        usage: 'Ta oppgave'
+        usage: 'Ta oppgave',
       },
       {
         name: 'PlayOutline',
-        usage: 'Start'
+        usage: 'Start',
       },
       {
         name: 'Filter',
-        usage: 'Filtrer'
+        usage: 'Filtrer',
       },
       {
         name: 'SortUp',
-        usage: 'Sorter stigende'
+        usage: 'Sorter stigende',
       },
       {
         name: 'SortDown',
-        usage: 'Sorter synkende'
+        usage: 'Sorter synkende',
       },
       {
         name: 'SortDefault',
-        usage: 'Sorter default'
+        usage: 'Sorter default',
       },
       {
         name: 'SortAsc',
-        usage: 'Sorter stigende alt 2.'
+        usage: 'Sorter stigende alt 2.',
       },
       {
         name: 'SortDesc',
-        usage: 'Sorter synkende alt 2.'
+        usage: 'Sorter synkende alt 2.',
       },
       {
         name: 'OpenInNew',
-        usage: 'Åpne i ny fane eller nytt vindu'
+        usage: 'Åpne i ny fane eller nytt vindu',
       },
       {
         name: 'Copy',
-        usage: 'Kopier'
+        usage: 'Kopier',
       },
       {
         name: 'Edit',
-        usage: 'Endre eller rediger'
+        usage: 'Endre eller rediger',
       },
       {
         name: 'Print',
-        usage: 'Skriv ut'
+        usage: 'Skriv ut',
       },
       {
         name: 'Save',
-        usage: 'Lagre (merk at vi normalt har autolagring)'
-      }
+        usage: 'Lagre (merk at vi normalt har autolagring)',
+      },
     ],
     files: [
       {
         name: 'AttachFile',
-        usage: 'Filvedlegg'
+        usage: 'Filvedlegg',
       },
       {
         name: 'Description',
-        usage: 'Detaljer, beskrivelse'
+        usage: 'Detaljer, beskrivelse',
       },
       {
         name: 'FileOutline',
-        usage: 'Generell fil '
+        usage: 'Generell fil ',
       },
       {
         name: 'File',
-        usage: 'Generell fil'
+        usage: 'Generell fil',
       },
       {
         name: 'PreviewFile',
-        usage: 'Forhåndsvisning'
+        usage: 'Forhåndsvisning',
       },
       {
         name: 'ExcelFile',
-        usage: 'Excel-fil'
+        usage: 'Excel-fil',
       },
       {
         name: 'WordFile',
-        usage: 'Word-fil'
+        usage: 'Word-fil',
       },
       {
         name: 'PDFFile',
-        usage: 'Pdf-fil'
+        usage: 'Pdf-fil',
       },
       {
         name: 'XMLFile',
-        usage: 'XML-fil'
-      }
+        usage: 'XML-fil',
+      },
     ],
     theme: [
       {
         name: 'TemaAndreForhold',
-        usage: 'Andre forhold'
+        usage: 'Andre forhold',
       },
       {
         name: 'TemaArbeidTrygdPensjon',
-        usage: 'Arbeid, trygd og pensjon'
+        usage: 'Arbeid, trygd og pensjon',
       },
       {
         name: 'TemaBankLaanForsikring',
-        usage: 'Bank, lån og forsikring'
+        usage: 'Bank, lån og forsikring',
       },
       {
         name: 'TemaBoligEiendeler',
-        usage: 'Bolig og eiendeler '
+        usage: 'Bolig og eiendeler ',
       },
       {
         name: 'TemaFamilie',
-        usage: 'Familie'
+        usage: 'Familie',
       },
       {
         name: 'TemaFinans',
-        usage: 'Finans'
+        usage: 'Finans',
       },
       {
         name: 'TemaKredittfradrag',
-        usage: 'Kredittfradrag'
+        usage: 'Kredittfradrag',
       },
       {
         name: 'TemaGaveArv',
-        usage: 'Gave og arv'
+        usage: 'Gave og arv',
       },
       {
         name: 'TemaPersonligeForhold',
-        usage: 'Personlige forhold'
+        usage: 'Personlige forhold',
       },
       {
         name: 'TemaSelskapDeltakerfastsetting',
-        usage: 'Deltakerfastsetting'
-      }
-    ]
+        usage: 'Deltakerfastsetting',
+      },
+    ],
   };
 
-  const printIcons = icons => {
-    return icons.map(props => (
+  const printIcons = (icons) => {
+    return icons.map((props) => (
       <Icon
         iconName={props.name}
         style={{ fontSize: '30px', position: 'relative' }}
       />
     ));
   };
+
+  const [language, setLanguage] = useState('nb');
 
   return (
     <>
@@ -723,12 +726,12 @@ function Testside(props) {
         links={[
           {
             text: 'Dette er en link',
-            path: '#linkgroup'
+            path: '#linkgroup',
           },
           {
             text: 'En annen  link',
-            path: '#linkgroup'
-          }
+            path: '#linkgroup',
+          },
         ]}
       />
       <h2>NavigationTile</h2>
@@ -774,7 +777,7 @@ function Testside(props) {
 
       <Pagination
         currentPage={currentPage}
-        onPageChange={page => {
+        onPageChange={(page) => {
           const index = (page - 1) * pageSize;
           setDisplayedData([...10].splice(index, pageSize));
           setCurrentPage(page);
@@ -799,17 +802,12 @@ function Testside(props) {
               forstørre eller - for å forminske.
             </div>
           </TopStripeMenu>
-          <TopStripeMenu title={'Language / Språk'}>
-            <TopStripeButton ariaLabel={'Norsk'}>Norsk</TopStripeButton>
-            <TopStripeButton icon={'check'} ariaLabel={'Nynorsk'}>
-              Nynorsk
-            </TopStripeButton>
-            <TopStripeButton ariaLabel={'Engelsk'}>Engelsk</TopStripeButton>
-            <TopStripeButton ariaLabel={'Sørsamisk'}>Sørsamisk</TopStripeButton>
-            <TopStripeButton ariaLabel={'Nordsamisk'}>
-              Nordsamisk
-            </TopStripeButton>
-          </TopStripeMenu>
+          <LanguagePicker
+            selectedLanguage={language}
+            setLanguage={setLanguage}
+            showOnMobile={true}
+            showSami={true}
+          />
 
           <span>
             <Icon iconName="person" /> Vegard Sandli
@@ -880,10 +878,10 @@ function Testside(props) {
         acceptedFileFormats={[
           FileFormatTypes.doc,
           FileFormatTypes.docx,
-          FileFormatTypes.txt
+          FileFormatTypes.txt,
         ]}
         files={files}
-        uploadFile={file => {
+        uploadFile={(file) => {
           setSpinner(true);
           setTimeout(() => {
             const newList = [...files];
@@ -892,8 +890,8 @@ function Testside(props) {
             setSpinner(false);
           }, 2000);
         }}
-        deleteFile={file => {
-          const newList = files.filter(fileInList => fileInList !== file);
+        deleteFile={(file) => {
+          const newList = files.filter((fileInList) => fileInList !== file);
           setFiles(newList);
         }}
         loading={spinner}
@@ -905,12 +903,12 @@ function Testside(props) {
         options={[
           {
             key: 'A',
-            text: 'Enkeltpersonsforetak'
+            text: 'Enkeltpersonsforetak',
           },
           {
             key: 'B',
-            text: 'Aksjeselskap'
-          }
+            text: 'Aksjeselskap',
+          },
         ]}
         help="Type virksomhet vil påvirke hva du må rapportere til oss."
         id="radio"
@@ -968,7 +966,7 @@ function Testside(props) {
           { key: 'B', text: 'Beta', value: 'Beta' },
           { key: 'C', text: 'Gamma', value: 'Gamma' },
           { key: 'D', text: 'Delta', value: 'Delta' },
-          { key: 'E', text: 'Echo', value: 'Echo' }
+          { key: 'E', text: 'Echo', value: 'Echo' },
         ]}
         defaultSelectedKey="D"
         allowFreeform={false}
@@ -1265,7 +1263,7 @@ function Testside(props) {
                 style={{
                   display: 'flex',
                   flexDirection: 'row',
-                  flex: '1 1 auto'
+                  flex: '1 1 auto',
                 }}
               >
                 <div style={{ display: 'flex' }}>
@@ -1275,7 +1273,7 @@ function Testside(props) {
                   style={{
                     display: 'flex',
                     alignSelf: 'flex-start',
-                    marginLeft: 'auto'
+                    marginLeft: 'auto',
                   }}
                 >
                   1 aktiv sak
@@ -1446,9 +1444,9 @@ function Testside(props) {
             name: 'Registrer ny opplysning',
             ariaLabel: 'Registrer ny opplysning',
             iconProps: {
-              iconName: 'AddOutline'
-            }
-          }
+              iconName: 'AddOutline',
+            },
+          },
         ]}
         farItems={[
           {
@@ -1456,8 +1454,8 @@ function Testside(props) {
             name: 'Tekst',
             ariaLabel: 'Vis tekst',
             iconProps: {
-              iconName: 'File'
-            }
+              iconName: 'File',
+            },
           },
           {
             key: 'view2',
@@ -1465,17 +1463,17 @@ function Testside(props) {
             ariaLabel: 'Vis XML',
             selected: true,
             iconProps: {
-              iconName: 'XMLFile'
-            }
+              iconName: 'XMLFile',
+            },
           },
           {
             key: 'view3',
             name: 'Excel',
             ariaLabel: 'Vis XML',
             iconProps: {
-              iconName: 'ExcelFile'
-            }
-          }
+              iconName: 'ExcelFile',
+            },
+          },
         ]}
       />
       <h2>StepList</h2>
@@ -1487,7 +1485,7 @@ function Testside(props) {
             stepId={'step-1-1'}
             actionBtn={{
               text: 'Endre',
-              ariaLabel: 'Endre jobber du?'
+              ariaLabel: 'Endre jobber du?',
             }}
           >
             <div>
@@ -1512,12 +1510,12 @@ function Testside(props) {
             options={[
               {
                 key: 'A',
-                text: 'Jeg bor i Norge'
+                text: 'Jeg bor i Norge',
               },
               {
                 key: 'B',
-                text: 'Ikke i Norge'
-              }
+                text: 'Ikke i Norge',
+              },
             ]}
             id="RadiobuttonGroup"
           />
@@ -1621,7 +1619,7 @@ function Testside(props) {
                   b[fieldName].localeCompare(a[fieldName])
                 );
               }
-            }
+            },
           },
           {
             key: 'column2',
@@ -1644,7 +1642,7 @@ function Testside(props) {
                   b[fieldName].localeCompare(a[fieldName])
                 );
               }
-            }
+            },
           },
           {
             key: 'column3',
@@ -1652,7 +1650,7 @@ function Testside(props) {
             fieldName: 'avgiftsgruppe',
             minWidth: 50,
             maxWidth: 150,
-            isResizable: true
+            isResizable: true,
           },
           {
             key: 'column4',
@@ -1660,7 +1658,7 @@ function Testside(props) {
             fieldName: 'beloep',
             minWidth: 100,
             maxWidth: 200,
-            isResizable: true
+            isResizable: true,
           },
           {
             key: 'column5',
@@ -1668,7 +1666,7 @@ function Testside(props) {
             fieldName: 'fritak',
             minWidth: 50,
             maxWidth: 150,
-            isResizable: true
+            isResizable: true,
           },
           {
             key: 'column6',
@@ -1676,8 +1674,8 @@ function Testside(props) {
             fieldName: 'status',
             minWidth: 100,
             maxWidth: 200,
-            isResizable: true
-          }
+            isResizable: true,
+          },
         ]}
         items={[
           {
@@ -1688,7 +1686,7 @@ function Testside(props) {
             fritak: '',
             status: 'Iverksatt',
             kravgrunnlag: null,
-            links: null
+            links: null,
           },
           {
             fastsatt: '31.05.2018',
@@ -1698,7 +1696,7 @@ function Testside(props) {
             fritak: '',
             status: 'Iverksatt',
             kravgrunnlag: null,
-            links: null
+            links: null,
           },
           {
             fastsatt: '02.03.2018',
@@ -1708,7 +1706,7 @@ function Testside(props) {
             fritak: '',
             status: 'Under arbeid',
             kravgrunnlag: null,
-            links: null
+            links: null,
           },
           {
             fastsatt: '03.03.2018',
@@ -1718,7 +1716,7 @@ function Testside(props) {
             fritak: '',
             status: 'Under arbeid',
             kravgrunnlag: null,
-            links: null
+            links: null,
           },
           {
             fastsatt: '04.01.2018',
@@ -1728,7 +1726,7 @@ function Testside(props) {
             fritak: '',
             status: 'Under arbeid',
             kravgrunnlag: null,
-            links: null
+            links: null,
           },
           {
             fastsatt: '31.01.2018',
@@ -1738,7 +1736,7 @@ function Testside(props) {
             fritak: '',
             status: 'Iverksatt',
             kravgrunnlag: null,
-            links: null
+            links: null,
           },
           {
             fastsatt: '31.01.2018',
@@ -1748,7 +1746,7 @@ function Testside(props) {
             fritak: '',
             status: 'Påbegynt',
             kravgrunnlag: null,
-            links: null
+            links: null,
           },
           {
             fastsatt: '31.01.2018',
@@ -1758,7 +1756,7 @@ function Testside(props) {
             fritak: '',
             status: 'Påbegynt',
             kravgrunnlag: null,
-            links: null
+            links: null,
           },
           {
             fastsatt: '31.01.2018',
@@ -1768,7 +1766,7 @@ function Testside(props) {
             fritak: '',
             status: 'Påbeynt',
             kravgrunnlag: null,
-            links: null
+            links: null,
           },
           {
             fastsatt: '31.01.2018',
@@ -1778,7 +1776,7 @@ function Testside(props) {
             fritak: '',
             status: 'Ny',
             kravgrunnlag: null,
-            links: null
+            links: null,
           },
           {
             fastsatt: '31.01.2018',
@@ -1788,7 +1786,7 @@ function Testside(props) {
             fritak: '',
             status: 'Iverksatt',
             kravgrunnlag: null,
-            links: null
+            links: null,
           },
           {
             fastsatt: '31.01.2018',
@@ -1798,7 +1796,7 @@ function Testside(props) {
             fritak: '',
             status: 'Ny',
             kravgrunnlag: null,
-            links: null
+            links: null,
           },
           {
             fastsatt: '31.01.2018',
@@ -1808,8 +1806,8 @@ function Testside(props) {
             fritak: '',
             status: 'Iverksatt',
             kravgrunnlag: null,
-            links: null
-          }
+            links: null,
+          },
         ]}
         constrainMode={DetailsList.ConstrainMode.horizontalConstrained}
       />

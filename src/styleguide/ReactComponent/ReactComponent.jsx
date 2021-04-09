@@ -12,12 +12,12 @@ export default class ReactComponent extends Component {
   static contextType = Context;
   state = {
     activeTab:
-      this.props.usageMode === UsageModes.expand ? UsageTabButton : undefined
+      this.props.usageMode === UsageModes.expand ? UsageTabButton : undefined,
   };
 
-  handleTabChange = name => {
-    this.setState(state => ({
-      activeTab: state.activeTab !== name ? name : undefined
+  handleTabChange = (name) => {
+    this.setState((state) => ({
+      activeTab: state.activeTab !== name ? name : undefined,
     }));
   };
 
@@ -25,7 +25,7 @@ export default class ReactComponent extends Component {
     const { activeTab } = this.state;
     const {
       displayMode,
-      config: { pagePerSection }
+      config: { pagePerSection },
     } = this.context;
     const { component, depth, usageMode, exampleMode } = this.props;
     const { name, visibleName, slug, filepath, pathLine } = component;
@@ -51,7 +51,7 @@ export default class ReactComponent extends Component {
             slotName="componentToolbar"
             slotProps={{
               ...component,
-              isolated: displayMode !== DisplayModes.all
+              isolated: displayMode !== DisplayModes.all,
             }}
             depth={depth}
           >

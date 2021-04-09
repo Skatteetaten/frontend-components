@@ -1,5 +1,5 @@
 import React from 'react';
-import Grid from '../Grid/Grid';
+import { Grid } from '../index';
 import { mergeStyles } from '@uifabric/merge-styles';
 
 const getClassNames = () => {
@@ -7,14 +7,14 @@ const getClassNames = () => {
     displayName: 'SkeFooter',
     paddingLeft: '0',
     paddingRight: '0',
-    marginTop: '16px'
+    marginTop: '16px',
   });
 };
 
 export class Footer extends React.Component {
   static displayName = 'Footer';
   static defaultProps = {
-    tag: 'footer'
+    tag: 'footer',
   };
   render() {
     // @ts-ignore TODO
@@ -30,5 +30,3 @@ export class Footer extends React.Component {
     );
   }
 }
-
-export default Footer;

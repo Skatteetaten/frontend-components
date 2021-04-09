@@ -1,8 +1,9 @@
 ** Brukes til å vise en label og tilhørende hjelpetekst **
 
 ```js
-import LabelWithCallout from '@skatteetaten/frontend-components/LabelWithCallout';
-import Button from '@skatteetaten/frontend-components/Button';
+import { LabelWithCallout, Button } from '@skatteetaten/frontend-components';
+
+const [state, setState] = React.useState({ warning: false });
 
 <div style={{ width: '400px' }}>
   <LabelWithCallout
@@ -22,8 +23,10 @@ import Button from '@skatteetaten/frontend-components/Button';
 Brukt i kombinasjon med annen komponent.
 
 ```js
-import LabelWithCallout from '@skatteetaten/frontend-components/LabelWithCallout';
-import SearchField from '@skatteetaten/frontend-components/SearchField';
+import {
+  LabelWithCallout,
+  SearchField,
+} from '@skatteetaten/frontend-components';
 <div style={{ width: '350px' }}>
   <LabelWithCallout
     label={'Søk'}
@@ -41,7 +44,9 @@ import SearchField from '@skatteetaten/frontend-components/SearchField';
 LabelWithCallout brukt i tekstfelt med automatisk lukking av utropsboksen:
 
 ```js
-import TextField from '@skatteetaten/frontend-components/TextField';
+import { TextField } from '@skatteetaten/frontend-components';
+
+const [state, setState] = React.useState({ value1: '' });
 
 <>
   <div style={{ width: '300px' }}>

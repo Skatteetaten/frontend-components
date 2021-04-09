@@ -1,24 +1,26 @@
 import { mergeStyles } from '@uifabric/merge-styles';
 import { getTheme } from '@uifabric/styling';
-import { FontSizes } from '..';
-import { getFocusStyle } from '..';
-import { PaletteProps } from '..';
-import { ActionButtonProps } from './ActionButton';
+import {
+  FontSizes,
+  PaletteProps,
+  getFocusStyle,
+  ActionButtonProps,
+} from '../index';
 
 function getTypeColor(props: ActionButtonProps): object {
   const palette = getTheme().palette as PaletteProps;
   switch (props.color) {
     case 'blue':
       return {
-        color: palette.skeColor.blue
+        color: palette.skeColor.blue,
       };
     case 'white':
       return {
-        color: palette.skeColor.white
+        color: palette.skeColor.white,
       };
     default:
       return {
-        color: palette.bodyText
+        color: palette.bodyText,
       };
   }
 }
@@ -28,23 +30,23 @@ function getIconColor(props: ActionButtonProps): object {
   switch (props.color) {
     case 'black':
       return {
-        color: palette.bodyText
+        color: palette.bodyText,
       };
     case 'green':
       return {
-        color: palette.skeColor.green
+        color: palette.skeColor.green,
       };
     case 'red':
       return {
-        color: palette.skeColor.pink
+        color: palette.skeColor.pink,
       };
     case 'white':
       return {
-        color: palette.skeColor.white
+        color: palette.skeColor.white,
       };
     default:
       return {
-        color: palette.skeColor.blue
+        color: palette.skeColor.blue,
       };
   }
 }
@@ -54,15 +56,15 @@ function getHoverColor(props: ActionButtonProps): object {
   switch (props.color) {
     case 'black':
       return {
-        color: palette.skeColor.blue
+        color: palette.skeColor.blue,
       };
     case 'white':
       return {
-        color: palette.skeColor.whiteGrey
+        color: palette.skeColor.whiteGrey,
       };
     default:
       return {
-        color: palette.bodyText
+        color: palette.bodyText,
       };
   }
 }
@@ -76,34 +78,34 @@ export function getClassNames(props: ActionButtonProps): string {
       '&.ms-Button.ms-Button--action': {
         height: 'auto',
         minHeight: '40px',
-        padding: '10px 4px'
+        padding: '10px 4px',
       },
       '& span': {
-        flexDirection: props.iconAfter ? 'row-reverse' : 'row'
+        flexDirection: props.iconAfter ? 'row-reverse' : 'row',
       },
       '&.ms-Button.ms-Button--action, &.ms-Button--action .ms-Button-icon': {
-        ...getTypeColor(props)
+        ...getTypeColor(props),
       },
       '&.ms-Button--action .ms-Button-icon': {
         // @ts-ignore TODO
         fontSize: FontSizes[props.iconSize],
         // @ts-ignore TODO
-        ...getIconColor(props)
+        ...getIconColor(props),
       },
       '&.ms-Button--action:hover .ms-Button-label': {
         textDecoration: 'underline',
-        ...getHoverColor(props)
+        ...getHoverColor(props),
       },
       '&.ms-Button--action:hover .ms-Button-icon': {
-        ...getHoverColor(props)
+        ...getHoverColor(props),
       },
       '&.ms-Button--action:active .ms-Button-label': {
         textAlign: props.iconAfter ? 'right' : 'left',
-        textDecoration: 'none'
+        textDecoration: 'none',
       },
       '&.ms-Button--action:disabled, &.ms-Button--action:disabled i': {
-        color: palette.skeColor.lightGrey
-      }
-    }
+        color: palette.skeColor.lightGrey,
+      },
+    },
   });
 }

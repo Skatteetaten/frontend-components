@@ -1,14 +1,13 @@
 ** OpenClose er enkelstående områder for å vise og skjule utdypende informasjon. **
 
 ```js
-import OpenClose from '@skatteetaten/frontend-components/OpenClose';
-import Typography from '@skatteetaten/frontend-components/Typography';
+import { OpenClose, Typography } from '@skatteetaten/frontend-components';
 
 // Inline styles are bad design https://reactjs.org/docs/faq-styling.html
 // Just for the purpose of the example
 
 const paraStyle = {
-  marginBlockStart: '0'
+  marginBlockStart: '0',
 };
 <>
   <OpenClose title={'Inntekter som skattlegges i ordningen'}>
@@ -61,13 +60,13 @@ const paraStyle = {
 OpenClose som er åpen fra start:
 
 ```js
-import OpenClose from '@skatteetaten/frontend-components/OpenClose';
+import { OpenClose } from '@skatteetaten/frontend-components';
 
 // Inline styles are bad design https://reactjs.org/docs/faq-styling.html
 // Just for the purpose of the example
 
 const paraStyle = {
-  marginBlockStart: '0'
+  marginBlockStart: '0',
 };
 
 <OpenClose

@@ -1,13 +1,13 @@
 import { mergeStyles, mergeStyleSets } from '@uifabric/merge-styles';
 import { getTheme } from '@uifabric/styling';
-import { PaletteProps } from '..';
+import { PaletteProps } from '../index';
 
 export const getClassNames = () => {
   const palette = getTheme().palette as PaletteProps;
 
   return mergeStyleSets({
     footerWrapper: {
-      backgroundColor: palette.skeColor.burgundy
+      backgroundColor: palette.skeColor.burgundy,
     },
     footerContent: {
       backgroundColor: palette.skeColor.burgundy,
@@ -18,9 +18,9 @@ export const getClassNames = () => {
       selectors: {
         '@media (max-width: 1023px)': {
           maxWidth: '100%',
-          padding: '70px 16px'
-        }
-      }
+          padding: '70px 16px',
+        },
+      },
     },
     footerDecorContainer: {
       width: '100%',
@@ -29,10 +29,10 @@ export const getClassNames = () => {
       selectors: {
         svg: {
           height: '85px',
-          overflow: 'hidden'
-        }
-      }
-    }
+          overflow: 'hidden',
+        },
+      },
+    },
   });
 };
 
@@ -43,13 +43,13 @@ export const getLogoClassNames = () =>
         '@media (max-width: 1023px)': {
           selectors: {
             img: {
-              margin: '0 auto'
+              margin: '0 auto',
             },
             'div &': {
-              marginBottom: '16px'
-            }
-          }
-        }
-      }
-    }
+              marginBottom: '16px',
+            },
+          },
+        },
+      },
+    },
   ]);

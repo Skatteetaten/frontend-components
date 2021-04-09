@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
 import { matches } from './../utils/test-utils';
-import SearchField from './SearchField';
+import { SearchField } from '../index';
 
 function oppsettShallow(props) {
   return shallow(<SearchField {...props} />);
@@ -18,7 +18,7 @@ describe('SearchField komponent', () => {
       { key: 1, text: 'en tekst' },
       { key: 2, text: 'bil' },
       { key: 3, text: 'Hypofyseregulator' },
-      { key: 4, text: 'katt' }
+      { key: 4, text: 'katt' },
     ];
   });
   it('matcher snapshot', () => {
@@ -39,7 +39,7 @@ describe('SearchField komponent', () => {
       placeholder: 'searchfield-placeholder',
       className: 'searchfield-classname',
       id: 'searchfield-id',
-      searchFieldSize: 'large'
+      searchFieldSize: 'large',
     });
 
     const searchField = wrapper.find('input.ms-SearchBox-field');
@@ -61,19 +61,14 @@ describe('SearchField komponent', () => {
       className: 'searchfield-classname',
       id: 'searchfield-id',
       searchFieldSize: 'standard',
-      options
+      options,
     });
     const searchField = wrapper.find('input.ms-SearchBox-field');
     searchField.simulate('change', { target: { name: 'change', value: 'e' } });
     expect(wrapper.find('input.ms-SearchBox-field').prop('value')).toEqual('e');
     expect(wrapper.find('ul').exists()).toEqual(true);
     expect(wrapper.find('li').length).toEqual(2);
-    expect(
-      wrapper
-        .find('li')
-        .last()
-        .text()
-    ).toEqual('Hypofyseregulator');
+    expect(wrapper.find('li').last().text()).toEqual('Hypofyseregulator');
   });
   it('skal legge til valgt element i inputfelt, når det blir trykket på', () => {
     const wrapper = oppsettFullDOM({
@@ -82,15 +77,12 @@ describe('SearchField komponent', () => {
       className: 'searchfield-classname',
       id: 'searchfield-id',
       searchFieldSize: 'standard',
-      options
+      options,
     });
     const searchField = wrapper.find('input.ms-SearchBox-field');
     searchField.simulate('change', { target: { name: 'change', value: 'e' } });
     expect(wrapper.find('li').length).toEqual(2);
-    wrapper
-      .find('li')
-      .first()
-      .simulate('click');
+    wrapper.find('li').first().simulate('click');
     expect(wrapper.find('input.ms-SearchBox-field').prop('value')).toEqual(
       'en tekst'
     );
@@ -103,7 +95,7 @@ describe('SearchField komponent', () => {
       id: 'searchfield-id',
       searchFieldSize: 'standard',
       limit: 1,
-      options
+      options,
     });
     const searchField = wrapper.find('input.ms-SearchBox-field');
     searchField.simulate('change', { target: { name: 'change', value: 'e' } });

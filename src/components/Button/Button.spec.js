@@ -1,7 +1,7 @@
 import React from 'react';
 import { matches } from './../utils/test-utils';
 import { mount } from 'enzyme';
-import Button from './Button';
+import { Button } from '../index';
 
 function oppsettFullDOM(props) {
   return mount(<Button {...props}>Knappetekst</Button>);
@@ -27,7 +27,7 @@ describe('Button komponent ', () => {
     const wrapper = oppsettFullDOM({
       type: 'secondary',
       icon: 'Add',
-      disabled: true
+      disabled: true,
     });
 
     expect(wrapper.prop('type')).toEqual('secondary');

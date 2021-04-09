@@ -7,7 +7,7 @@ import Forside from '../Forside/forside';
 import Testside from '../Forside/testside';
 
 /* Normalize recursive content  */
-const slugId = { idAttribute: value => value.slug };
+const slugId = { idAttribute: (value) => value.slug };
 const component = new schema.Entity('components', undefined, slugId);
 const section = new schema.Entity('sections', undefined, slugId);
 const components = new schema.Array(component);
@@ -19,8 +19,8 @@ const mySchema = new schema.Entity(
   slugId
 );
 
-export class Sections extends React.Component<> {
-  renderSection = props => {
+export class Sections extends React.Component {
+  renderSection = (props) => {
     const params = props.match && props.match.params;
     let slug = params && params.slug ? params.slug.toLowerCase() : '';
     const { entities } = normalize(props.sections, [mySchema]);
@@ -54,7 +54,7 @@ export class Sections extends React.Component<> {
       <Switch>
         <Route
           path={'/:slug?'}
-          render={props => this.renderSection({ ...props, ...this.props })}
+          render={(props) => this.renderSection({ ...props, ...this.props })}
         />
       </Switch>
     );

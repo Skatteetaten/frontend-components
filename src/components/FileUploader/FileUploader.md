@@ -4,18 +4,19 @@ Felt for å laste opp filer. Komponenten er basert på at du sender inn sti til 
 
 ```js
 import { useState } from 'react';
-import { UseScreen } from '../utils/ScreenPlugin';
-import FileUploader, {
-  FileFormatTypes
-} from '@skatteetaten/frontend-components/FileUploader';
+import { UseScreen } from '../index';
+import {
+  FileUploader,
+  FileFormatTypes,
+} from '@skatteetaten/frontend-components';
 const [files, setFiles] = useState([]);
 const [spinner, setSpinner] = useState(false);
 const size = UseScreen();
 
 const styles = {
   container: {
-    width: size.lt.md ? '100%' : '300px'
-  }
+    width: size.lt.md ? '100%' : '300px',
+  },
 };
 <div style={styles.container}>
   <FileUploader
@@ -25,10 +26,10 @@ const styles = {
     acceptedFileFormats={[
       FileFormatTypes.doc,
       FileFormatTypes.docx,
-      FileFormatTypes.txt
+      FileFormatTypes.txt,
     ]}
     files={files}
-    uploadFile={file => {
+    uploadFile={(file) => {
       setSpinner(true);
       setTimeout(() => {
         const newList = [...files];
@@ -37,8 +38,8 @@ const styles = {
         setSpinner(false);
       }, 2000);
     }}
-    deleteFile={file => {
-      const newList = files.filter(fileInList => fileInList !== file);
+    deleteFile={(file) => {
+      const newList = files.filter((fileInList) => fileInList !== file);
       setFiles(newList);
     }}
     loading={spinner}
@@ -50,17 +51,18 @@ Mulighet til å laste opp flere filer samtidig:
 
 ```js
 import { useState } from 'react';
-import { UseScreen } from '../utils/ScreenPlugin';
-import FileUploader, {
-  FileFormatTypes
-} from '@skatteetaten/frontend-components/FileUploader';
+import { UseScreen } from '../index';
+import {
+  FileUploader,
+  FileFormatTypes,
+} from '@skatteetaten/frontend-components';
 const [files, setFiles] = useState([]);
+const [spinner, setSpinner] = useState(false);
 const size = UseScreen();
-
 const styles = {
   container: {
-    width: size.lt.lg ? '100%' : '420px'
-  }
+    width: size.lt.lg ? '100%' : '420px',
+  },
 };
 
 <div style={styles.container}>
@@ -70,12 +72,12 @@ const styles = {
     acceptedFileFormats={[FileFormatTypes.png, FileFormatTypes.jpg]}
     files={files}
     multipleFiles={true}
-    uploadFile={file => {
+    uploadFile={(file) => {
       files.push(file);
       setFiles([...files]);
     }}
-    deleteFile={file => {
-      const newList = files.filter(fileInList => fileInList !== file);
+    deleteFile={(file) => {
+      const newList = files.filter((fileInList) => fileInList !== file);
       setFiles(newList);
     }}
     info={

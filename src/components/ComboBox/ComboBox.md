@@ -1,18 +1,17 @@
 ** En ComboBox ser ut og fungerer i hovedsak som en som nedtrekksliste - men har den forskjellen brukeren kan skrive i feltet. Det er spesielt nyttig hvis listen over valg er lang. **
 
 ```js
-import ComboBox from '@skatteetaten/frontend-components/ComboBox';
-import Grid from '@skatteetaten/frontend-components/Grid';
+import { ComboBox, Grid } from '@skatteetaten/frontend-components';
 
-const initialState = {
+const [state, setState] = React.useState({
   options: [
     { key: 'A', text: 'alfa', value: 'Alfa' },
     { key: 'B', text: 'beta', value: 'Beta' },
     { key: 'C', text: 'gamma', value: 'Gamma' },
     { key: 'D', text: 'delta', value: 'Delta' },
-    { key: 'E', text: 'echo', value: 'Echo' }
-  ]
-};
+    { key: 'E', text: 'echo', value: 'Echo' },
+  ],
+});
 
 <div>
   <Grid>
@@ -49,18 +48,17 @@ const initialState = {
 Stor versjon:
 
 ```js
-import ComboBox from '@skatteetaten/frontend-components/ComboBox';
-import Grid from '@skatteetaten/frontend-components/Grid';
+import { ComboBox, Grid } from '@skatteetaten/frontend-components';
 
-const initialState = {
+const [state, setState] = React.useState({
   options: [
     { key: 'A', text: 'alfa', value: 'Alfa' },
     { key: 'B', text: 'beta', value: 'Alfa' },
     { key: 'C', text: 'gamma', value: 'Alfa' },
     { key: 'D', text: 'delta', value: 'Alfa' },
-    { key: 'E', text: 'echo', value: 'Alfa' }
-  ]
-};
+    { key: 'E', text: 'echo', value: 'Alfa' },
+  ],
+});
 
 <div>
   <Grid>
@@ -102,7 +100,7 @@ import Grid from '@skatteetaten/frontend-components/Grid';
             { key: 'B', text: 'Beta', value: 'Beta' },
             { key: 'C', text: 'Gamma', value: 'Gamma' },
             { key: 'D', text: 'Delta', value: 'Delta' },
-            { key: 'E', text: 'Echo', value: 'Echo' }
+            { key: 'E', text: 'Echo', value: 'Echo' },
           ]}
           defaultSelectedKey="D"
           allowFreeform={false}
@@ -118,18 +116,17 @@ import Grid from '@skatteetaten/frontend-components/Grid';
 Med Feilmelding:
 
 ```js
-import ComboBox from '@skatteetaten/frontend-components/ComboBox';
-import Grid from '@skatteetaten/frontend-components/Grid';
+import { ComboBox, Grid } from '@skatteetaten/frontend-components';
 
-const initialState = {
+const [state, setState] = React.useState({
   options: [
     { key: 'A', text: 'alfa', value: 'Alfa' },
     { key: 'B', text: 'beta', value: 'Alfa' },
     { key: 'C', text: 'gamma', value: 'Alfa' },
     { key: 'D', text: 'delta', value: 'Alfa' },
-    { key: 'E', text: 'echo', value: 'Alfa' }
-  ]
-};
+    { key: 'E', text: 'echo', value: 'Alfa' },
+  ],
+});
 let error = 'En feil';
 
 <div>
