@@ -60,7 +60,7 @@ Viser Kontakt oss, endre skriftsstørrelse, språk, partsvalg og logg ut.
 ```js
 import { useState } from 'react';
 
-import TopStripe, {
+import {
   LanguagePicker,
   TopStripe,
   TopStripeMenu,

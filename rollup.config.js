@@ -4,6 +4,7 @@ import resolve from '@rollup/plugin-node-resolve';
 import json from '@rollup/plugin-json';
 import image from '@rollup/plugin-image';
 import url from '@rollup/plugin-url';
+import svgr from '@svgr/rollup';
 import injectProcessEnv from 'rollup-plugin-inject-process-env';
 import externals from 'rollup-plugin-node-externals';
 import nodePolyfills from 'rollup-plugin-node-polyfills';
@@ -14,7 +15,7 @@ import globals from 'rollup-plugin-node-globals';
 const extensions = ['.js', '.ts', '.tsx', '.jsx'];
 const outputDir = './lib/umd/';
 const urlConfig = {
-  include: ['**/*.woff', '**/*.woff2', '**/*.ttf', '**/*.eot'],
+  include: ['**/*.woff', '**/*.woff2', '**/*.ttf', '**/*.eot', '**/*.svg'],
   limit: Infinity,
 };
 export const externalsConfig = {
@@ -69,6 +70,7 @@ const terserConfig = (prod) => {
 const getPluginsConfig = (prod, mini) => {
   const sortie = [
     url(urlConfig),
+    svgr(),
     image(),
     json(),
     externals(externalsConfig),

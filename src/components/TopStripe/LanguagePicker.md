@@ -4,13 +4,14 @@ For å velge mellom norsk bokmål, nynorsk, englesk og samisk i publikumsløsnin
 
 ```js
 import { useState } from 'react';
-import TopStripe, {
+import {
+  TopStripe,
   LanguagePicker,
   TopStripeMenu,
-  TopStripeButton
-} from '@skatteetaten/frontend-components/TopStripe';
-import TopBanner from '@skatteetaten/frontend-components/TopBanner';
-import Link from '@skatteetaten/frontend-components/Link';
+  TopStripeButton,
+  TopBanner,
+  Link
+} from '@skatteetaten/frontend-components';
 
 const [language, setLanguage] = useState('nb');
 
