@@ -18,14 +18,18 @@ import { TopBanner } from '@skatteetaten/frontend-components';
 Innlogget publikumsløsning:
 
 ```js
+import { useState } from 'react';
 import {
   TopStripe,
+  LanguagePicker,
   TopStripeMenu,
   TopStripeButton,
   TopBanner,
   Link,
   Icon,
 } from '@skatteetaten/frontend-components';
+
+const [language, setLanguage] = useState('nb');
 
 <div>
   <TopStripe>
@@ -47,17 +51,12 @@ import {
         eller - for å forminske.
       </div>
     </TopStripeMenu>
-    <TopStripeMenu
-      showOnMobile={false}
-      closeMenuAriaLabel="Lukk Language / Språk"
-      title={'Language / Språk'}
-    >
-      <TopStripeButton>Norsk</TopStripeButton>
-      <TopStripeButton icon={'check'}>Nynorsk</TopStripeButton>
-      <TopStripeButton>Engelsk</TopStripeButton>
-      <TopStripeButton>Sørsamisk</TopStripeButton>
-      <TopStripeButton ariaLabel={'Nordsamisk'}>Nordsamisk</TopStripeButton>
-    </TopStripeMenu>
+    <LanguagePicker
+      selectedLanguage={language}
+      setLanguage={setLanguage}
+      showOnMobile={true}
+      showSami={true}
+    />
 
     <span>
       <Icon

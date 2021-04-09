@@ -3,7 +3,7 @@
 ```js noeditor
 import { MessageBar } from '@skatteetaten/frontend-components';
 
-<MessageBar>Det finnes ingen egne eksempler for TopStripButton.</MessageBar>;
+<MessageBar>Det finnes ingen egne eksempler for TopStripeButton.</MessageBar>;
 ```
 
 ```js noeditor beskrivelse

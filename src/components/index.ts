@@ -152,6 +152,8 @@ export { TopStripeButton } from './TopStripe/TopStripeButton';
 export type { TopStripeButtonProps } from './TopStripe/TopStripeButton';
 export { TopStripeMenu } from './TopStripe/TopStripeMenu';
 export type { TopStripeMenuProps } from './TopStripe/TopStripeMenu';
+export { LanguagePicker } from './TopStripe/LanguagePicker';
+export type { LanguagePickerProps } from './TopStripe/LanguagePicker';
 export { Typography } from './Typography/Typography';
 export type { TypographyProps } from './Typography/Typography';
 export { Layout } from './Layout/Layout';

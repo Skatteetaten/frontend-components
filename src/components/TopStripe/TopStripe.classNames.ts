@@ -152,7 +152,7 @@ export const getClassNames = () => {
       },
     },
     dropdownContainer: {
-      minWidth: '100px',
+      minWidth: '10rem',
       position: 'absolute',
       backgroundColor: palette.skeColor.blackAlt,
       color: palette.skeColor.white,
@@ -171,6 +171,12 @@ export const getClassNames = () => {
         },
         'a,i': {
           borderWidth: 0,
+        },
+        '@media (max-width: 900px)': {
+          minWidth: '100%',
+          left: 0,
+          padding: 0,
+          textAlign: 'center',
         },
       },
     },

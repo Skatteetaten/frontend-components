@@ -5,13 +5,17 @@
 Viser Kontakt oss, endre skriftsstørrelse, språk og logg inn.
 
 ```js
+import { useState } from 'react';
 import {
   TopStripe,
+  LanguagePicker,
   TopStripeMenu,
   TopStripeButton,
   TopBanner,
   Link,
 } from '@skatteetaten/frontend-components';
+
+const [language, setLanguage] = useState('nb');
 
 <div>
   <TopStripe>
@@ -32,17 +36,13 @@ import {
         eller - for å forminske.
       </div>
     </TopStripeMenu>
-    <TopStripeMenu
-      showOnMobile={false}
-      closeMenuAriaLabel="Lukk Language / Språk"
-      title={'Language / Språk'}
-    >
-      <TopStripeButton>Norsk</TopStripeButton>
-      <TopStripeButton icon={'check'}>Nynorsk</TopStripeButton>
-      <TopStripeButton>Engelsk</TopStripeButton>
-      <TopStripeButton>Sørsamisk</TopStripeButton>
-      <TopStripeButton>Nordsamisk</TopStripeButton>
-    </TopStripeMenu>
+    <LanguagePicker
+      selectedLanguage={language}
+      setLanguage={setLanguage}
+      showOnMobile={true}
+      showSami={true}
+    />
+
     <Link path={'#link'} text={'Logg inn'} placement="before" />
   </TopStripe>
   <TopBanner
@@ -58,7 +58,10 @@ import {
 Viser Kontakt oss, endre skriftsstørrelse, språk, partsvalg og logg ut.
 
 ```js
-import {
+import { useState } from 'react';
+
+import TopStripe, {
+  LanguagePicker,
   TopStripe,
   TopStripeMenu,
   TopStripeButton,
@@ -66,6 +69,7 @@ import {
   Link,
   Icon,
 } from '@skatteetaten/frontend-components';
+const [language, setLanguage] = useState('nb');
 
 <div>
   <TopStripe>
@@ -86,17 +90,12 @@ import {
         eller - for å forminske.
       </div>
     </TopStripeMenu>
-    <TopStripeMenu
-      showOnMobile={false}
-      closeMenuAriaLabel="Lukk Language / Språk"
-      title={'Language / Språk'}
-    >
-      <TopStripeButton>Norsk</TopStripeButton>
-      <TopStripeButton icon={'check'}>Nynorsk</TopStripeButton>
-      <TopStripeButton>Engelsk</TopStripeButton>
-      <TopStripeButton>Sørsamisk</TopStripeButton>
-      <TopStripeButton ariaLabel={'Nordsamisk'}>Nordsamisk</TopStripeButton>
-    </TopStripeMenu>
+    <LanguagePicker
+      selectedLanguage={language}
+      setLanguage={setLanguage}
+      showOnMobile={true}
+      showSami={true}
+    />
 
     <span>
       <Icon
@@ -121,8 +120,11 @@ import {
 Viser Kontakt oss, endre skriftsstørrelse, språk, partsvalg og logg ut.
 
 ```js
+import { useState } from 'react';
+
 import {
   TopStripe,
+  LanguagePicker,
   TopStripeMenu,
   TopStripeButton,
   TopBanner,
@@ -132,6 +134,7 @@ import {
 import { UseScreen } from '@skatteetaten/frontend-components/utils/ScreenPlugin';
 
 const size = UseScreen();
+const [language, setLanguage] = useState('nb');
 
 <div>
   <TopStripe>
@@ -154,13 +157,13 @@ const size = UseScreen();
         eller - for å forminske.
       </div>
     </TopStripeMenu>
-    <TopStripeMenu showOnMobile={false} title={'Language / Språk'}>
-      <TopStripeButton>Norsk</TopStripeButton>
-      <TopStripeButton icon={'check'}>Nynorsk</TopStripeButton>
-      <TopStripeButton>Engelsk</TopStripeButton>
-      <TopStripeButton>Sørsamisk</TopStripeButton>
-      <TopStripeButton>Nordsamisk</TopStripeButton>
-    </TopStripeMenu>
+
+    <LanguagePicker
+      selectedLanguage={language}
+      setLanguage={setLanguage}
+      showOnMobile={true}
+      showSami={true}
+    />
 
     <TopStripeMenu showOnMobile={true} icon="person" title={'Hamdi Normann'}>
       <TopStripeButton>Kari Normann</TopStripeButton>
@@ -184,21 +187,31 @@ const size = UseScreen();
 
 ### På mobil
 
-På mobil flyttes valgene for kontakt oss og skriftsstørrelse til footeren. Språkvalg legges inni TopBanner.
+På mobil flyttes valgene for kontakt oss og skriftsstørrelse til footeren.
 
 ```js
+import { useState } from 'react';
+
 import {
   TopStripe,
+  LanguagePicker,
   TopStripeMenu,
   TopStripeButton,
   TopBanner,
   Link,
 } from '@skatteetaten/frontend-components';
 
+const [language, setLanguage] = useState('nb');
+
 <div>
   <TopStripe>
     <Link path={'#main-content-id'} text={'Hopp til hovedinnhold'} skipLink />
-
+    <LanguagePicker
+      selectedLanguage={language}
+      setLanguage={setLanguage}
+      showOnMobile={true}
+      showSami={true}
+    />
     <TopStripeMenu icon="person" title={'Kari Normann'}>
       <TopStripeButton>Jenny Sandli</TopStripeButton>
       <TopStripeButton>987654321 Eplepress AS</TopStripeButton>
@@ -216,7 +229,7 @@ import {
     homeText={'Tilbake til skatteetaten.no'}
   >
     <div style={{ minHeight: '80px', textAlign: 'right' }}>
-      Språkvalgene her (egen komponent finnes ennå ikke)
+      «Hamburger»-meny her (egen komponent finnes ennå ikke)
     </div>
   </TopBanner>
 </div>;
