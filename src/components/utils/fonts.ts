@@ -11,7 +11,7 @@ export enum FontSizes {
   xLarge = '1.375rem',
   xxLarge = '1.875rem',
   superLarge = '2.625rem',
-  mega = '4.25rem'
+  mega = '4.25rem',
 }
 
 export enum LineHeightSizes {
@@ -26,7 +26,7 @@ export enum LineHeightSizes {
   xLarge = '1.636',
   xxLarge = '1.6',
   superLarge = '1.524',
-  mega = '1.4118'
+  mega = '1.4118',
 }
 
 export type FontSizeType = keyof typeof FontSizes;
@@ -37,7 +37,7 @@ export enum FontWeights {
   regular = 400,
   medium = 500,
   semibold = 600,
-  bold = 700
+  bold = 700,
 }
 
 export enum IconFontSizes {
@@ -47,7 +47,7 @@ export enum IconFontSizes {
   large = '1.25rem',
   xlarge = '1.5rem',
   xxlarge = '2rem',
-  mega = '2.5rem'
+  mega = '2.5rem',
 }
 // @ts-ignore TODO
 export const createFont = (size, weight, localeCode = 'no') => {
@@ -57,11 +57,11 @@ export const createFont = (size, weight, localeCode = 'no') => {
     MozOsxFontSmoothing: 'grayscale',
     WebkitFontSmoothing: 'antialiased',
     fontSize: size,
-    fontWeight: weight
+    fontWeight: weight,
   };
 };
 
-export default {
+export const Fonts = {
   tiny: createFont(FontSizes.mini, FontWeights.semibold),
   xSmall: createFont(FontSizes.xSmall, FontWeights.regular),
   small: createFont(FontSizes.small, FontWeights.regular),
@@ -72,5 +72,5 @@ export default {
   xLarge: createFont(FontSizes.xLarge, FontWeights.light),
   xxLarge: createFont(FontSizes.xxLarge, FontWeights.light),
   superLarge: createFont(FontSizes.superLarge, FontWeights.light),
-  mega: createFont(FontSizes.mega, FontWeights.light)
+  mega: createFont(FontSizes.mega, FontWeights.light),
 };

@@ -1,6 +1,6 @@
 import { getTheme } from '@uifabric/styling';
 import { mergeStyleSets } from '@uifabric/merge-styles';
-import { FontSizes, PaletteProps } from '..';
+import { FontSizes, PaletteProps } from '../index';
 
 export const getClassNames = () => {
   const palette = getTheme().palette as PaletteProps;
@@ -10,15 +10,15 @@ export const getClassNames = () => {
       color: `${palette.skeColor.darkGrey} !important`,
       borderBottom: 'none !important',
       paddingTop: '3px !important',
-      paddingBottom: '6px !important'
+      paddingBottom: '6px !important',
     },
     linkIcons: {
       fontSize: FontSizes.xLarge,
-      verticalAlign: 'middle'
+      verticalAlign: 'middle',
     },
     pageNumber: {
       borderBottom: `2px solid ${palette.skeColor.lightBlue} !important`,
-      paddingTop: '3px !important'
+      paddingTop: '3px !important',
     },
     paginationContainer: {
       paddingTop: '24px',
@@ -27,16 +27,16 @@ export const getClassNames = () => {
         button: {
           border: 'none',
           background: 'transparent',
-          fontSize: FontSizes.medium
+          fontSize: FontSizes.medium,
         },
         nav: {
           float: 'right',
           selectors: {
             '@media only screen and (max-width: 479px)': {
               margin: '0 auto',
-              float: 'none'
-            }
-          }
+              float: 'none',
+            },
+          },
         },
         p: {
           marginTop: '7px',
@@ -44,15 +44,15 @@ export const getClassNames = () => {
           selectors: {
             '@media only screen and (max-width: 479px)': {
               margin: '0 auto',
-              float: 'none'
-            }
-          }
+              float: 'none',
+            },
+          },
         },
         ul: {
           listStyle: 'none',
           display: 'inline-flex',
           paddingLeft: '0',
-          margin: 0
+          margin: 0,
         },
         li: {
           display: 'inline',
@@ -63,23 +63,23 @@ export const getClassNames = () => {
               padding: '3px 1px 3px 1px',
               margin: '4px 6px ',
               cursor: 'pointer',
-              verticalAlign: 'middle'
+              verticalAlign: 'middle',
             },
             'button:focus': {
               color: palette.skeColor.darkBlue,
               backgroundColor: palette.skeColor.lightBlue,
-              outline: 'none'
+              outline: 'none',
             },
             'button:hover': {
               color: palette.skeColor.darkBlue,
-              backgroundColor: palette.skeColor.lightBlue
-            }
-          }
+              backgroundColor: palette.skeColor.lightBlue,
+            },
+          },
         },
         '@media only screen and (max-width: 479px)': {
-          display: 'grid'
-        }
-      }
-    }
+          display: 'grid',
+        },
+      },
+    },
   });
 };

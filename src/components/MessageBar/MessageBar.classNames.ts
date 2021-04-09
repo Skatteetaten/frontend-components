@@ -1,8 +1,12 @@
 import { mergeStyles } from '@uifabric/merge-styles';
-import { FontSizes, IconFontSizes, PaletteProps } from '..';
+import {
+  FontSizes,
+  IconFontSizes,
+  PaletteProps,
+  MessageBarProps,
+} from '../index';
 import { getTheme } from '@uifabric/styling';
-import { MessageBarType } from 'office-ui-fabric-react/lib-commonjs/MessageBar';
-import { MessageBarProps } from './MessageBar';
+import { MessageBarType } from '@fluentui/react';
 
 function getBackgroundColor(props: MessageBarProps['type']) {
   const palette = getTheme().palette as PaletteProps;
@@ -12,16 +16,16 @@ function getBackgroundColor(props: MessageBarProps['type']) {
     case MessageBarType.warning:
     case MessageBarType.severeWarning:
       return {
-        backgroundColor: palette.skeColor.lightPink
+        backgroundColor: palette.skeColor.lightPink,
       };
     case MessageBarType.success:
       return {
-        backgroundColor: palette.skeColor.lightGreen
+        backgroundColor: palette.skeColor.lightGreen,
       };
     case MessageBarType.info:
     default:
       return {
-        backgroundColor: palette.skeColor.beige
+        backgroundColor: palette.skeColor.beige,
       };
   }
 }
@@ -37,9 +41,9 @@ export const getClassNames = (props: MessageBarProps) => {
           color: palette.skeColor.blackAlt,
           selectors: {
             '&.fade-exit': {
-              opacity: 1
-            }
-          }
+              opacity: 1,
+            },
+          },
         },
         '.ms-MessageBar-content': {
           border: severe ? `4px solid ${palette.skeColor.pink}` : 'none',
@@ -47,9 +51,9 @@ export const getClassNames = (props: MessageBarProps) => {
           width: 'auto',
           selectors: {
             '@media (max-width: 640px)': {
-              padding: size === 'large' ? '12px 12px 12px 0px' : ''
-            }
-          }
+              padding: size === 'large' ? '12px 12px 12px 0px' : '',
+            },
+          },
         },
 
         '.ms-MessageBar-icon i': {
@@ -58,9 +62,9 @@ export const getClassNames = (props: MessageBarProps) => {
           selectors: {
             '@media (max-width: 640px)': {
               fontSize: size === 'large' ? IconFontSizes.large : undefined,
-              margin: size === 'large' ? '10px 0 0 10px' : ''
-            }
-          }
+              margin: size === 'large' ? '10px 0 0 10px' : '',
+            },
+          },
         },
         '.ms-MessageBar-innerText': {
           fontSize: size === 'large' ? FontSizes.large : FontSizes.medium,
@@ -70,18 +74,19 @@ export const getClassNames = (props: MessageBarProps) => {
           selectors: {
             '@media (max-width: 640px)': {
               fontSize: size === 'large' ? IconFontSizes.large : undefined,
-              padding: size === 'large' ? '7px 0px 0px 8px' : '-2px 0px 0px 0px'
-            }
-          }
+              padding:
+                size === 'large' ? '7px 0px 0px 8px' : '-2px 0px 0px 0px',
+            },
+          },
         },
         '.ms-MessageBar-dismissal': {
-          marginTop: size === 'large' ? '12px ' : '4px'
+          marginTop: size === 'large' ? '12px ' : '4px',
         },
         '.ms-MessageBar-dismissal i': {
           fontSize:
-            size === 'large' ? IconFontSizes.xlarge : IconFontSizes.large
-        }
-      }
-    }
+            size === 'large' ? IconFontSizes.xlarge : IconFontSizes.large,
+        },
+      },
+    },
   ]);
 };

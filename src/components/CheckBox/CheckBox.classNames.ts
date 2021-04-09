@@ -1,8 +1,6 @@
 import { mergeStyles } from '@uifabric/merge-styles';
 import { getTheme } from '@uifabric/styling';
-import palette from '../utils/palette';
-import { getFocusStyle } from '..';
-import { FontWeights, FontSizes } from '..';
+import { getFocusStyle, FontWeights, FontSizes, skeColor } from '../index';
 
 export const getClassNames = function getClassNames() {
   const theme = getTheme();
@@ -14,7 +12,7 @@ export const getClassNames = function getClassNames() {
       displayName: 'SkeAvkrysningsboks',
       selectors: {
         '&.ms-Checkbox': {
-          padding: '4px'
+          padding: '4px',
         },
         '&.is-enabled .ms-Checkbox-checkbox': {
           borderRadius: '0px',
@@ -23,35 +21,35 @@ export const getClassNames = function getClassNames() {
           border: '2px solid',
           cursor: 'pointer',
           fontSize: FontSizes.medium,
-          backgroundColor: palette.skeColor.white
+          backgroundColor: skeColor.white,
         },
         'span.ms-Checkbox-text': {
-          fontSize: FontSizes.medium
+          fontSize: FontSizes.medium,
         },
         '&.is-checked .ms-Checkbox-checkbox': {
           border: 'none',
           fontSize: FontSizes.medium,
-          backgroundColor: palette.skeColor.blue
+          backgroundColor: skeColor.blue,
         },
         'i.ms-Checkbox-checkmark': {
           paddingLeft: '1.5px',
           paddingTop: '1.5px',
-          fontSize: FontSizes.medium
+          fontSize: FontSizes.medium,
         },
         '&:hover .ms-Checkbox-checkmark': {
-          opacity: 0
+          opacity: 0,
         },
         '&.is-checked:hover .ms-Checkbox-checkmark': {
           opacity: 1,
-          backgroundColor: palette.skeColor.darkBlue
+          backgroundColor: skeColor.darkBlue,
         },
         '& i': {
-          fontWeight: FontWeights.bold
+          fontWeight: FontWeights.bold,
         },
         '.ms-Checkbox-label:hover i': {
-          opacity: 0
-        }
-      }
-    }
+          opacity: 0,
+        },
+      },
+    },
   ]);
 };

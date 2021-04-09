@@ -1,8 +1,6 @@
 import { mergeStyles, IStyle } from '@uifabric/merge-styles';
 import { getTheme } from '@uifabric/styling';
-import { FontSizes, FontWeights } from '../utils/fonts';
-import { PaletteProps } from '../utils/palette';
-import { takeIf } from '../utils/helpers';
+import { FontSizes, FontWeights, PaletteProps, takeIf } from '../index';
 
 /**
  * Each property contains a list of tags which should have their
@@ -25,7 +23,7 @@ interface TagStyle {
 const defaultMargin = '16px 0 4px 0';
 
 export const hex2rgba = (hex: string, alpha = 1): string => {
-  const [r, g, b] = hex.match(/\w\w/g)?.map(x => parseInt(x, 16)) ?? [];
+  const [r, g, b] = hex.match(/\w\w/g)?.map((x) => parseInt(x, 16)) ?? [];
   return `rgba(${r},${g},${b},${alpha})`;
 };
 
@@ -43,7 +41,7 @@ const getTagStyle = (
   showMargin: !containsTag(tag, noMargin),
   showColor: !containsTag(tag, noColor),
   showSize: !containsTag(tag, noSize),
-  showBorder: !containsTag(tag, noBorder)
+  showBorder: !containsTag(tag, noBorder),
 });
 
 const getH1Style = (
@@ -61,14 +59,14 @@ const getH1Style = (
       '@media (max-width: 640px)': {
         fontSize: takeIf(showSize, FontSizes.xxLarge),
         margin: takeIf(showMargin, '32px 0 4px 0'),
-        lineHeight: '40px'
+        lineHeight: '40px',
       },
       '@media (max-width: 480px)': {
         fontSize: takeIf(showSize, FontSizes.xLarge),
         margin: takeIf(showMargin, '32px 0 4px 0'),
-        lineHeight: '40px'
-      }
-    }
+        lineHeight: '40px',
+      },
+    },
   };
 };
 
@@ -87,14 +85,14 @@ const getH2Style = (
       '@media (max-width: 640px)': {
         fontSize: takeIf(showSize, FontSizes.xLarge),
         margin: takeIf(showMargin, defaultMargin),
-        lineHeight: '28px'
+        lineHeight: '28px',
       },
       '@media (max-width: 480px)': {
         fontSize: takeIf(showSize, FontSizes.large),
         margin: takeIf(showMargin, defaultMargin),
-        lineHeight: '28px'
-      }
-    }
+        lineHeight: '28px',
+      },
+    },
   };
 };
 
@@ -111,13 +109,13 @@ const getH3Style = (
     selectors: {
       '@media (max-width: 640px)': {
         fontSize: takeIf(showSize, FontSizes.largePlus),
-        margin: takeIf(showMargin, defaultMargin)
+        margin: takeIf(showMargin, defaultMargin),
       },
       '@media (max-width: 480px)': {
         fontSize: takeIf(showSize, FontSizes.large),
-        margin: takeIf(showMargin, defaultMargin)
-      }
-    }
+        margin: takeIf(showMargin, defaultMargin),
+      },
+    },
   };
 };
 
@@ -134,13 +132,13 @@ const getH4Style = (
     selectors: {
       '@media (max-width: 640px)': {
         fontSize: takeIf(showSize, FontSizes.mediumPlus),
-        margin: takeIf(showMargin, '8px 0 0 0')
+        margin: takeIf(showMargin, '8px 0 0 0'),
       },
       '@media (max-width: 480px)': {
         fontSize: takeIf(showSize, FontSizes.medium),
-        margin: takeIf(showMargin, '8px 0 0 0')
-      }
-    }
+        margin: takeIf(showMargin, '8px 0 0 0'),
+      },
+    },
   };
 };
 
@@ -155,13 +153,13 @@ const getPStyle = (options: TagStyleOptions, palette: PaletteProps): IStyle => {
     selectors: {
       '@media (max-width: 640px)': {
         fontSize: takeIf(showSize, FontSizes.smallPlus),
-        lineHeight: '22px'
+        lineHeight: '22px',
       },
       '@media (max-width: 480px)': {
         fontSize: takeIf(showSize, FontSizes.small),
-        lineHeight: '22px'
-      }
-    }
+        lineHeight: '22px',
+      },
+    },
   };
 };
 
@@ -179,13 +177,13 @@ const getUlStyle = (
     selectors: {
       '@media (max-width: 640px)': {
         fontSize: takeIf(showSize, FontSizes.smallPlus),
-        lineHeight: '22px'
+        lineHeight: '22px',
       },
       '@media (max-width: 480px)': {
         fontSize: takeIf(showSize, FontSizes.small),
-        lineHeight: '22px'
-      }
-    }
+        lineHeight: '22px',
+      },
+    },
   };
 };
 
@@ -202,13 +200,13 @@ const getOlStyle = (
     selectors: {
       '@media (max-width: 640px)': {
         fontSize: takeIf(showSize, FontSizes.smallPlus),
-        lineHeight: '22px'
+        lineHeight: '22px',
       },
       '@media (max-width: 480px)': {
         fontSize: takeIf(showSize, FontSizes.small),
-        lineHeight: '22px'
-      }
-    }
+        lineHeight: '22px',
+      },
+    },
   };
 };
 
@@ -231,13 +229,13 @@ const getBlockqouteStyle = (
     selectors: {
       '@media (max-width: 640px)': {
         fontSize: takeIf(showSize, FontSizes.smallPlus),
-        lineHeight: '22px'
+        lineHeight: '22px',
       },
       '@media (max-width: 480px)': {
         fontSize: takeIf(showSize, FontSizes.small),
-        lineHeight: '22px'
-      }
-    }
+        lineHeight: '22px',
+      },
+    },
   };
 };
 
@@ -255,15 +253,15 @@ const getAStyle = (options: TagStyleOptions, palette: PaletteProps): IStyle => {
     selectors: {
       ':hover': {
         color: palette.skeColor.darkBlue,
-        borderBottom: '2px solid ' + palette.skeColor.darkBlue
+        borderBottom: '2px solid ' + palette.skeColor.darkBlue,
       },
       ':focus': {
         color: palette.skeColor.darkBlue,
         borderBottom: '2px solid ' + palette.skeColor.darkBlue,
         backgroundColor: palette.skeColor.lightBlue,
-        outline: 'none'
-      }
-    }
+        outline: 'none',
+      },
+    },
   };
 };
 
@@ -281,8 +279,8 @@ export const getClassNames = function getClassNames(props) {
         ul: getUlStyle(props, palette),
         ol: getOlStyle(props, palette),
         blockquote: getBlockqouteStyle(props, palette),
-        a: getAStyle(props, palette)
-      }
-    }
+        a: getAStyle(props, palette),
+      },
+    },
   ]);
 };

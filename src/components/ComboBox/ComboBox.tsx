@@ -1,16 +1,16 @@
 import * as React from 'react';
-import {
-  VirtualizedComboBox,
-  IComboBoxProps
-} from 'office-ui-fabric-react/lib-commonjs/ComboBox';
+import { VirtualizedComboBox, IComboBoxProps } from '@fluentui/react';
 import classnames from 'classnames';
 
 import { getClassNames, getOptionsClassNames } from './ComboBox.classNames';
-import LabelWithCallout, { calloutState } from '../LabelWithCallout';
-import { LabelWithCalloutProps } from '../LabelWithCallout/LabelWithCallout';
-import { useId } from '@reach/auto-id';
+import {
+  LabelWithCallout,
+  calloutState,
+  LabelWithCalloutProps,
+  generateId,
+} from '../index';
 
-export interface ComboboxProps extends IComboBoxProps {
+export interface ComboBoxProps extends IComboBoxProps {
   /** Lukk callout på blur */
   labelWithCalloutAutoDismiss?: boolean;
   /** Egendefinert feilmelding */
@@ -35,7 +35,7 @@ export interface ComboboxProps extends IComboBoxProps {
 /**
  * @visibleName ComboBox (Nedtrekksliste med skriving)
  */
-const Combobox: React.FC<ComboboxProps> = props => {
+export const ComboBox: React.FC<ComboBoxProps> = (props) => {
   const {
     children,
     labelWithCalloutAutoDismiss,
@@ -51,8 +51,8 @@ const Combobox: React.FC<ComboboxProps> = props => {
     ...rest
   } = props;
 
-  const genratedId = useId(id);
-  const mainId = id ? id : 'combobox-' + genratedId;
+  const generatedId = generateId();
+  const mainId = id ? id : 'combobox-' + generatedId;
   const inputId = mainId + '-input';
   const labelId = mainId + '-label';
 
@@ -80,7 +80,7 @@ const Combobox: React.FC<ComboboxProps> = props => {
             props.text
               ? props.text
               : props.options.filter(
-                  option => option.key === props.defaultSelectedKey
+                  (option) => option.key === props.defaultSelectedKey
                 )[0].text
           }
         />
@@ -93,7 +93,7 @@ const Combobox: React.FC<ComboboxProps> = props => {
           errorMessage={errorMessage}
           aria-invalid={errorMessage ? true : false}
           calloutProps={{
-            className: getOptionsClassNames(props)
+            className: getOptionsClassNames(props),
           }}
         >
           {children}
@@ -103,13 +103,11 @@ const Combobox: React.FC<ComboboxProps> = props => {
   );
 };
 
-Combobox.defaultProps = {
+ComboBox.defaultProps = {
   autoComplete: 'on',
   allowFreeform: false,
   label: undefined,
   errorMessage: undefined,
   help: undefined,
-  disabled: false
+  disabled: false,
 };
-
-export default Combobox;

@@ -2,7 +2,7 @@ Brukerne våre skal ha en enhetlig opplevelse på tvers av løsningene våre. Sk
 
 Som utvikler, samarbeider du med designer for å best mulig sikre at dere følger prinsippene i designsystemet. Videre ser du hvordan du kommer i gang for å bruke designsystemet når du jobber.
 
-### Legg til komponentbiblioteket i prosjektet:
+## Legg til komponentbiblioteket i prosjektet:
 
 ```bash noeditor
 npm config set registry https://nexus-npm.aurora.skead.no/npm/repository/npm-all
@@ -14,7 +14,7 @@ npm install @skatteetaten/frontend-components
 ```js static noeditor
 import React from 'react';
 import ReactDOM from 'react-dom';
-import SkeBasis from '@skatteetaten/frontend-components/SkeBasis';
+import { SkeBasis } from '@skatteetaten/frontend-components';
 import App from './App';
 
 ReactDOM.render(
@@ -29,7 +29,7 @@ ReactDOM.render(
 
 ```js static noeditor
 import React, { Component } from 'react';
-import Card from '@skatteetaten/frontend-components/Card';
+import { Card } from '@skatteetaten/frontend-components';
 
 class App extends Component {
   render() {
@@ -41,6 +41,25 @@ class App extends Component {
   }
 }
 export default App;
+```
+
+### Bruke komponentene som UMD-pakke (Micro Frontend)
+
+Dersom løsningen din følger prinippene til «Micro Frontend», kan du importere komponentene (i SystemJS) som UMD pakke.
+Alle nødvendige avhengigheter i tillegg til selv designsystemet kommer fra et importmap:
+
+```html
+<% if (isLocal) { %>
+<script
+  type="systemjs-importmap"
+  src="https://unpkg.com/@skatteetaten/frontend-components@<version>/umd/importmap.json"
+></script>
+<% } else { %>
+<script
+  type="systemjs-importmap"
+  src="https://unpkg.com/@skatteetaten/frontend-components@<version>/umd/importmap-prod.json"
+></script>
+<% } %>
 ```
 
 ### Tester

@@ -1,8 +1,7 @@
 import * as React from 'react';
 import classnames from 'classnames';
-import Icon from '../Icon/Icon';
+import { Icon, Heading } from '../index';
 import { getClassNames } from './OpenClose.classNames';
-import Heading from '../utils/Heading';
 
 export interface OpenCloseProps {
   /** Om innholdet skal være åpent fra start */
@@ -21,14 +20,14 @@ export interface OpenCloseProps {
   children?: JSX.Element;
 }
 
-const OpenClose: React.FC<OpenCloseProps> = props => {
+export const OpenClose: React.FC<OpenCloseProps> = (props) => {
   const {
     title,
     className,
     headingLevel,
     iconRight,
     onClick,
-    children
+    children,
   } = props;
 
   const [isContentOpen, setContentOpen] = React.useState<boolean>(
@@ -75,5 +74,3 @@ const OpenClose: React.FC<OpenCloseProps> = props => {
     </div>
   );
 };
-
-export default OpenClose;

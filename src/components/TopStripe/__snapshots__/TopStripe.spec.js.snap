@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TopStripe komponent matcher snapshot  1`] = `
+Array [
+  <div
+    className="overlay-42"
+  />,
+  <ul
+    className="topStripeContainer-46"
+  />,
+]
+`;

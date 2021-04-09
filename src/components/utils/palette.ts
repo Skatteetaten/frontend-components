@@ -88,7 +88,7 @@ export enum skeColor {
   lightBlue = '#cde1f9',
   mediumBlue = '#8accff',
   error = '#a82e39',
-  transparent = 'transparent'
+  transparent = 'transparent',
 }
 
 export enum skePalette {
@@ -119,13 +119,13 @@ export enum skePalette {
   bodyBackground = '#ffffff',
   bodyText = 'rgba(0, 0, 0, 0.95)',
   disabledBackground = '#f4f4f4',
-  disabledText = '#c8c8c8'
+  disabledText = '#c8c8c8',
 }
 
 export default {
   ...skePalette,
   // Egendefinerte farger fra Skatteetatens designmal
-  skeColor: skeColor
+  skeColor: skeColor,
 
   /* OPPRINNELIG LISTE
   themeDarker: '#004578',

@@ -1,9 +1,9 @@
 import { mergeStyles } from '@uifabric/merge-styles';
 import { getTheme } from '@uifabric/styling';
-import { FontWeights, FontSizes } from '..';
-import { PaletteProps } from '..';
 
-export const getClassNames = props => {
+import { FontWeights, FontSizes, PaletteProps } from '../index';
+
+export const getClassNames = (props) => {
   const { fullWidth, compactTable } = props;
   const palette = getTheme().palette as PaletteProps;
 
@@ -20,29 +20,29 @@ export const getClassNames = props => {
           height: '1px',
           selectors: {
             caption: {
-              textAlign: 'left'
+              textAlign: 'left',
             },
             thead: {
-              display: 'table-header-group'
+              display: 'table-header-group',
             },
             'thead th': {
               borderBottom: `2px solid ${palette.skeColor.blackAlt}`,
               padding: 12,
-              fontSize: compactTable ? FontSizes.small : 'inherit'
+              fontSize: compactTable ? FontSizes.small : 'inherit',
             },
             tr: {
               height: '100%',
-              verticalAlign: 'middle'
+              verticalAlign: 'middle',
             },
             '.separator': {
-              borderBottom: `1px solid ${palette.skeColor.lightGrey}`
+              borderBottom: `1px solid ${palette.skeColor.lightGrey}`,
             },
             'tr.clickable:hover': {
-              backgroundColor: palette.skeColor.lightBlue
+              backgroundColor: palette.skeColor.lightBlue,
             },
             td: {
               height: '100%',
-              padding: 0
+              padding: 0,
             },
             '.cellButton': {
               border: 'none',
@@ -53,7 +53,7 @@ export const getClassNames = props => {
               margin: 0,
               padding: 0,
               textAlign: 'inherit',
-              width: '100%'
+              width: '100%',
             },
             '.cellContent': {
               alignItems: 'center',
@@ -64,37 +64,37 @@ export const getClassNames = props => {
               padding: '8px 12px',
               textAlign: 'inherit',
               verticalAlign: 'middle',
-              width: '100%'
+              width: '100%',
             },
             '.cellContentSmall': {
-              padding: '2px 12px'
+              padding: '2px 12px',
             },
             '.cellContentLarge': {
-              padding: '12px'
+              padding: '12px',
             },
             '.cellContentChildRow': {
-              padding: '0px 12px 12px 12px'
+              padding: '0px 12px 12px 12px',
             },
             '.cellContentHideEdit': {
-              minHeight: '60px'
+              minHeight: '60px',
             },
             '.cellContent.clickable': {
               paddingTop: '8px',
-              paddingBottom: '8px'
+              paddingBottom: '8px',
             },
             '.cellContent.clickable:hover': {
-              cursor: 'pointer'
+              cursor: 'pointer',
             },
             'td.expandableCell td, td.expandableCell .is-closed': {
-              borderBottom: 'none'
+              borderBottom: 'none',
             },
             'th.hideOnMobile, td.hideOnMobile': {
               display: 'none',
               selectors: {
                 '@media (min-width: 640px)': {
-                  display: 'table-cell'
-                }
-              }
+                  display: 'table-cell',
+                },
+              },
             },
             th: {
               verticalAlign: 'bottom',
@@ -108,39 +108,39 @@ export const getClassNames = props => {
                   cursor: 'pointer',
                   selectors: {
                     ':hover': {
-                      color: `${palette.skeColor.darkBlue}`
+                      color: `${palette.skeColor.darkBlue}`,
                     },
                     '& [data-icon-name="ArrowUpDown"]': {
                       selectors: {
                         '@media (min-width: 1024px)': {
-                          opacity: 0
+                          opacity: 0,
                         },
                         '& .noAutoHide': {
-                          opacity: 1
+                          opacity: 1,
                         },
                         ':hover': {
-                          opacity: 1
-                        }
-                      }
-                    }
-                  }
+                          opacity: 1,
+                        },
+                      },
+                    },
+                  },
                 },
                 ':focus': {
                   color: `${palette.skeColor.blue}`,
-                  outline: '0'
+                  outline: '0',
                 },
                 '& .sortable': {
                   cursor: 'pointer',
                   selectors: {
                     ':hover [data-icon-name="ArrowUpDown"]': {
-                      opacity: 1
+                      opacity: 1,
                     },
                     ':focus [data-icon-name="ArrowUpDown"]': {
-                      opacity: 1
-                    }
-                  }
-                }
-              }
+                      opacity: 1,
+                    },
+                  },
+                },
+              },
             },
             'td, .tableRow': {
               fontWeight: '400',
@@ -148,35 +148,35 @@ export const getClassNames = props => {
               selectors: {
                 '& .right, & .right .cellContent': {
                   justifyContent: 'flex-end',
-                  textAlign: 'right'
+                  textAlign: 'right',
                 },
                 '& .center, & .center .cellContent': {
                   justifyContent: 'center',
-                  textAlign: 'center'
-                }
-              }
-            }
-          }
+                  textAlign: 'center',
+                },
+              },
+            },
+          },
         },
         '.expandCell': {
           maxWidth: 72,
-          maxHeight: 50
+          maxHeight: 50,
         },
         '.editableRow': {
-          display: 'none'
+          display: 'none',
         },
         '.editableRow-open': {
-          display: 'table-row'
+          display: 'table-row',
         },
         '.emptyTd': {
-          borderBottom: `2px solid ${palette.skeColor.blackAlt}`
+          borderBottom: `2px solid ${palette.skeColor.blackAlt}`,
         },
         '.expandableContent': {
           boxSizing: 'border-box',
           padding: '0 0 12px 96px',
-          width: '100%'
-        }
-      }
-    }
+          width: '100%',
+        },
+      },
+    },
   ]);
 };

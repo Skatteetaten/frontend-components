@@ -1,5 +1,5 @@
 import * as React from 'react';
-import Icon from '../../Icon/Icon';
+import { Icon } from '../../index';
 
 export interface NavigationContentProps
   extends React.HTMLAttributes<HTMLAnchorElement> {
@@ -57,7 +57,7 @@ const Content = (props: _InternalContentProps) => {
 /**
  * @visibleName NavigationContent (Innhold til forsideknapp)
  */
-const NavigationContent: React.FC<NavigationContentProps> = props => {
+export const NavigationContent: React.FC<NavigationContentProps> = (props) => {
   const {
     renderContent,
     id,
@@ -76,7 +76,7 @@ const NavigationContent: React.FC<NavigationContentProps> = props => {
     heading,
     description,
     children,
-    headingLevel
+    headingLevel,
   };
 
   if (typeof props.to === 'function') {
@@ -105,5 +105,3 @@ const NavigationContent: React.FC<NavigationContentProps> = props => {
     </li>
   );
 };
-
-export default NavigationContent;

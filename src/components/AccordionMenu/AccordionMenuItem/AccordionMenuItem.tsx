@@ -1,11 +1,11 @@
 import * as React from 'react';
-import IconButton from '../../IconButton';
-import Icon from '../../Icon';
+import { Icon } from '../../index';
 import classnames from 'classnames';
 import { getClassNames } from '../AccordionMenu.classNames';
 
-interface AccordionMenuItemProps extends React.HTMLAttributes<HTMLDivElement> {
-  /** Icons that is used for menu item    */
+export interface AccordionMenuItemProps
+  extends React.HTMLAttributes<HTMLDivElement> {
+  /** Ikon som benyttes for et menypunkt   */
   icon?: string;
   /** If a menu item should be open by default */
   isOpen?: boolean;
@@ -21,10 +21,11 @@ interface AccordionMenuItemProps extends React.HTMLAttributes<HTMLDivElement> {
   /** Flex the title section */
   flex?: boolean;
 }
+
 /**
  * @visibleName AccordionMenuItem (Element i trekkspillmeny)
  */
-const AccordionMenuItem = (props: AccordionMenuItemProps) => {
+export const AccordionMenuItem = (props: AccordionMenuItemProps) => {
   const [isContentOpen, setContentOpen] = React.useState<boolean>(
     props.isOpen || false
   );
@@ -43,51 +44,36 @@ const AccordionMenuItem = (props: AccordionMenuItemProps) => {
     toggleVisibility();
   };
 
-  const {
-    menuItem,
-    menuItemIsOpen,
-    menuItemTitle,
-    iconWrapper,
-    toggleButton,
-    toggleButtonOpen,
-    content
-  } = styles;
-
   const styleTitle = styles.title;
 
   return (
     <li className={className} aria-label={ariaLabel}>
-      <header
-        onClick={clickHandler}
+      <button
         className={
-          isContentOpen ? classnames(menuItem, menuItemIsOpen) : menuItem
+          isContentOpen
+            ? classnames(styles.menuItem, styles.menuItemIsOpen)
+            : styles.menuItem
         }
+        aria-expanded={isContentOpen}
+        onClick={clickHandler}
       >
-        <div className={menuItemTitle}>
-          <div className={iconWrapper}>
-            <div>
-              <Icon iconName={icon} style={{ fontSize: '1.75rem' }} />
-            </div>
-          </div>
+        <div className={styles.menuItemTitle}>
+          <Icon iconName={icon} className={styles.iconWrapper} />
           <div className={styleTitle}>{heading}</div>
         </div>
         <div
           className={
             isContentOpen
-              ? classnames(toggleButton, toggleButtonOpen)
-              : toggleButton
+              ? classnames(styles.toggleButton, styles.toggleButtonOpen)
+              : styles.toggleButton
           }
         >
-          <IconButton
-            alt={'Åpne og lukke knapp'}
-            icon="ChevronDown"
-            aria-expanded={isContentOpen}
-          />
+          <Icon iconName="ChevronDown" />
         </div>
-      </header>
-      {isContentOpen && <section className={content}>{children}</section>}
+      </button>
+      {isContentOpen && (
+        <section className={styles.content}>{children}</section>
+      )}
     </li>
   );
 };
-
-export default AccordionMenuItem;

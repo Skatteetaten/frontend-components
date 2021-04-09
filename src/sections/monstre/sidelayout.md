@@ -5,25 +5,26 @@ I publikumsløsningene våre ser vi at mobil og nettbrett blir stadig viktigere.
 Merk: Denne siden inneholder eksempler som bruker Grid-komponenten til å lage sidelayout. Dersom du ikke trenger å støtte Internet Explorer 11 kan det er være verd å vurdere [CSS-grid](https://www.w3schools.com/css/css_grid.asp) i stedet.
 
 ```js
-import TopStripe, {
+import {
+  Link,
+  Card,
+  TextField,
+  TopStripe,
   TopStripeMenu,
-  TopStripeButton
-} from '@skatteetaten/frontend-components/TopStripe';
-import TopBanner from '@skatteetaten/frontend-components/TopBanner';
-import Link from '@skatteetaten/frontend-components/Link';
-import Card from '@skatteetaten/frontend-components/Card';
-import TextField from '@skatteetaten/frontend-components/TextField';
-import FooterContent from '@skatteetaten/frontend-components/FooterContent';
-import Grid from '@skatteetaten/frontend-components/Grid';
+  TopStripeButton,
+  TopBanner,
+  FooterContent,
+  Grid,
+} from '@skatteetaten/frontend-components';
 
 const textStyle = {
   fontSize: '12px',
   textAlign: 'center',
-  textTransform: 'uppercase'
+  textTransform: 'uppercase',
 };
 
 const white = {
-  color: '#ffffff'
+  color: '#ffffff',
 };
 
 <div>
@@ -69,30 +70,30 @@ const white = {
 I de interne løsningene deler vi inn skjermen i et partsområde, et kjerneområde og et valgfritt rutineområde. Reponsivt design er viktig også her, fordi mange saksbehandlere bruker løsningene på deler av skjermen. Partsområdet skal inneholde opplysninger om personen, bedriften, kjøretøyet eller liknende som gir en støtte for saksbehandler for utførelse av arbeidsoppgaven. Kjerneområdet fyller hoveddelen av skjermbildet og har høyest prioritet. Her utføres selve arbeidsoppgaven. Funksjoner knyttet til arbeidsoppgaven kan ligge i kjerneområdet eller i toppen. I systemer med komplekse rutiner eller lovbestemmelser kan det være nyttig å tilby en rutinebeskrivelse i et eget område.
 
 ```js
-import TopStripe, {
+import {
+  AccordionMenu,
+  AccordionMenuItem,
+  Link,
+  Card,
+  Icon,
+  IconButton,
+  TextField,
+  TopStripe,
   TopStripeMenu,
-  TopStripeButton
-} from '@skatteetaten/frontend-components/TopStripe';
-import TopBanner from '@skatteetaten/frontend-components/TopBanner';
-import Link from '@skatteetaten/frontend-components/Link';
-import Card from '@skatteetaten/frontend-components/Card';
-import TextField from '@skatteetaten/frontend-components/TextField';
-import Grid from '@skatteetaten/frontend-components/Grid';
-import CommandBar from '@skatteetaten/frontend-components/CommandBar';
-import Icon from '@skatteetaten/frontend-components/Icon/Icon';
-import IconButton from '@skatteetaten/frontend-components/IconButton/IconButton';
-import ActionButton from '@skatteetaten/frontend-components/ActionButton/ActionButton';
-import AccordionMenu from '@skatteetaten/frontend-components/AccordionMenu';
-import AccordionMenuItem from '@skatteetaten/frontend-components/AccordionMenu/AccordionMenuItem';
+  TopStripeButton,
+  TopBanner,
+  CommandBar,
+  Grid,
+} from '@skatteetaten/frontend-components';
 
 const textStyle = {
   fontSize: '12px',
   textAlign: 'center',
-  textTransform: 'uppercase'
+  textTransform: 'uppercase',
 };
 
 const white = {
-  color: '#ffffff'
+  color: '#ffffff',
 };
 
 initialState = {
@@ -105,8 +106,8 @@ initialState = {
         console.log('og');
       },
       iconProps: {
-        iconName: 'PlayOutline'
-      }
+        iconName: 'PlayOutline',
+      },
     },
     {
       key: 'view2',
@@ -116,8 +117,8 @@ initialState = {
         console.log('hei');
       },
       iconProps: {
-        iconName: 'PauseOutline'
-      }
+        iconName: 'PauseOutline',
+      },
     },
 
     {
@@ -128,36 +129,36 @@ initialState = {
         console.log('og');
       },
       iconProps: {
-        iconName: 'PersonMoreOutline'
-      }
-    }
-  ]
+        iconName: 'PersonMoreOutline',
+      },
+    },
+  ],
 };
 
 const dlStyle = {
   display: 'inline-block',
   width: '50%',
   margin: '0 0 5px 0',
-  verticalAlign: 'text-top'
+  verticalAlign: 'text-top',
 };
 
 const removeMargin = {
-  margin: '0'
+  margin: '0',
 };
 
 const ulStyle = {
   padding: 0,
-  margin: 0
+  margin: 0,
 };
 
 const centerAlignStyle = {
   display: 'flex',
-  alignItems: 'center'
+  alignItems: 'center',
 };
 
 const timeStampStyle = {
   paddingLeft: 40,
-  marginTop: '-10px'
+  marginTop: '-10px',
 };
 
 <div>
@@ -218,30 +219,30 @@ const timeStampStyle = {
 ```
 
 ```js
-import TopStripe, {
+import {
+  AccordionMenu,
+  AccordionMenuItem,
+  Link,
+  Card,
+  Icon,
+  IconButton,
+  TextField,
+  TopStripe,
   TopStripeMenu,
-  TopStripeButton
-} from '@skatteetaten/frontend-components/TopStripe';
-import TopBanner from '@skatteetaten/frontend-components/TopBanner';
-import Link from '@skatteetaten/frontend-components/Link';
-import Card from '@skatteetaten/frontend-components/Card';
-import TextField from '@skatteetaten/frontend-components/TextField';
-import Grid from '@skatteetaten/frontend-components/Grid';
-import CommandBar from '@skatteetaten/frontend-components/CommandBar';
-import Icon from '@skatteetaten/frontend-components/Icon/Icon';
-import IconButton from '@skatteetaten/frontend-components/IconButton/IconButton';
-import ActionButton from '@skatteetaten/frontend-components/ActionButton/ActionButton';
-import AccordionMenu from '@skatteetaten/frontend-components/AccordionMenu';
-import AccordionMenuItem from '@skatteetaten/frontend-components/AccordionMenu/AccordionMenuItem';
+  TopStripeButton,
+  TopBanner,
+  CommandBar,
+  Grid,
+} from '@skatteetaten/frontend-components';
 
 const textStyle = {
   fontSize: '12px',
   textAlign: 'center',
-  textTransform: 'uppercase'
+  textTransform: 'uppercase',
 };
 
 const white = {
-  color: '#ffffff'
+  color: '#ffffff',
 };
 
 initialState = {
@@ -254,8 +255,8 @@ initialState = {
         console.log('og');
       },
       iconProps: {
-        iconName: 'PlayOutline'
-      }
+        iconName: 'PlayOutline',
+      },
     },
     {
       key: 'view2',
@@ -265,8 +266,8 @@ initialState = {
         console.log('hei');
       },
       iconProps: {
-        iconName: 'PauseOutline'
-      }
+        iconName: 'PauseOutline',
+      },
     },
 
     {
@@ -277,36 +278,36 @@ initialState = {
         console.log('og');
       },
       iconProps: {
-        iconName: 'PersonMoreOutline'
-      }
-    }
-  ]
+        iconName: 'PersonMoreOutline',
+      },
+    },
+  ],
 };
 
 const dlStyle = {
   display: 'inline-block',
   width: '50%',
   margin: '0 0 5px 0',
-  verticalAlign: 'text-top'
+  verticalAlign: 'text-top',
 };
 
 const removeMargin = {
-  margin: '0'
+  margin: '0',
 };
 
 const ulStyle = {
   padding: 0,
-  margin: 0
+  margin: 0,
 };
 
 const centerAlignStyle = {
   display: 'flex',
-  alignItems: 'center'
+  alignItems: 'center',
 };
 
 const timeStampStyle = {
   paddingLeft: 40,
-  marginTop: '-10px'
+  marginTop: '-10px',
 };
 
 <div>

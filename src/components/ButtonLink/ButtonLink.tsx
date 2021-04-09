@@ -15,7 +15,7 @@ export interface ButtonLinkProps
 /**
  * @visibleName ButtonLink (Knappelenke)
  */
-const ButtonLink: React.FC<ButtonLinkProps> = props => {
+export const ButtonLink: React.FC<ButtonLinkProps> = (props) => {
   const { path, text, className, openInNew, ...htmlAttributes } = props;
   const styles = getClassNames();
   if (openInNew) {
@@ -45,5 +45,3 @@ const ButtonLink: React.FC<ButtonLinkProps> = props => {
 };
 
 ButtonLink.defaultProps = {};
-
-export default ButtonLink;

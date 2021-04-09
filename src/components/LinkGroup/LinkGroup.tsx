@@ -1,7 +1,7 @@
 import * as React from 'react';
 import classnames from 'classnames';
 import { getClassNames } from './LinkGroup.classNames';
-import Link from '../Link/Link';
+import { Link as SkeLink } from '../index';
 
 export interface Link extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
   text: string;
@@ -19,10 +19,11 @@ export interface LinkGroupProps {
   links?: Link[];
   className?: string;
 }
+
 /**
  * @visibleName LinkGroup (Lenkegruppe)
  */
-const LinkGroup: React.FC<LinkGroupProps> = props => {
+export const LinkGroup: React.FC<LinkGroupProps> = (props) => {
   const styles = getClassNames();
   return (
     <ul className={classnames(styles.arrowLinkList)}>
@@ -42,7 +43,7 @@ const LinkGroup: React.FC<LinkGroupProps> = props => {
                   htmlAttributes
                 )
               ) : (
-                <Link
+                <SkeLink
                   linkGroup
                   icon="ArrowForward"
                   placement="before"
@@ -56,4 +57,3 @@ const LinkGroup: React.FC<LinkGroupProps> = props => {
     </ul>
   );
 };
-export default LinkGroup;

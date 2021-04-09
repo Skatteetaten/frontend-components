@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
 import toJson from 'enzyme-to-json';
-import NavigationTile from './NavigationTile';
+import { NavigationTile } from '../index';
 
 const contents = [
   {
@@ -10,8 +10,8 @@ const contents = [
     title: 'Skatt',
     description:
       'Skattekort, skattemelding (selvangivelse), skatteoppgjør, tema og fradrag som hjelper deg til få riktig skatt. ',
-    icon: 'person'
-  }
+    icon: 'person',
+  },
 ];
 
 function oppsettShallow(props) {
@@ -25,7 +25,7 @@ describe('NavigationTile komponent', () => {
   it('matcher snapshot', () => {
     const wrapper = oppsettShallow({
       contents: contents,
-      renderContent: (to, content) => <a href={'something/' + to}>{content}</a>
+      renderContent: (to, content) => <a href={'something/' + to}>{content}</a>,
     });
     expect(toJson(wrapper)).toMatchSnapshot();
   });
@@ -45,27 +45,27 @@ describe('NavigationTile komponent', () => {
         to: '#',
         heading: 'Navigationtile tittel 1',
         icon: 'ArrowForward',
-        description: 'Navigationtile beskrivelse 1'
+        description: 'Navigationtile beskrivelse 1',
       },
       {
         to: '#',
         heading: 'Navigationtile tittel 2',
         icon: 'person',
-        description: 'Navigationtile beskrivelse 2'
+        description: 'Navigationtile beskrivelse 2',
       },
       {
         to: '#',
         heading: 'Navigationtile tittel 3',
         icon: 'ArrowForward',
-        description: 'Navigationtile beskrivelse 3'
-      }
+        description: 'Navigationtile beskrivelse 3',
+      },
     ];
 
     const wrapper = oppsettFullDOM({
       type: 'left',
       alignIcon: 'right',
       alignTitle: 'left',
-      contents: contents
+      contents: contents,
     });
 
     const tile = wrapper.find('nav');

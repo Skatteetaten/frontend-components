@@ -1,2 +1,2 @@
-export { default } from './MessageBar';
+export { MessageBar as default } from './MessageBar';
 export * from './MessageBar';

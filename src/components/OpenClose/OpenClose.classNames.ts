@@ -1,7 +1,6 @@
 import { mergeStyleSets } from '@uifabric/merge-styles';
 import { getTheme } from '@uifabric/styling';
-import { FontSizes, FontWeights, IconFontSizes } from '..';
-import { PaletteProps } from '..';
+import { FontSizes, FontWeights, IconFontSizes, PaletteProps } from '../index';
 
 export function getClassNames() {
   const palette = getTheme().palette as PaletteProps;
@@ -19,47 +18,47 @@ export function getClassNames() {
       cursor: 'pointer',
       selectors: {
         '@media (min-width: 640px)': {
-          fontSize: FontSizes.largePlus
+          fontSize: FontSizes.largePlus,
         },
         '&:hover, &:focus': {
-          background: palette.skeColor.lightBlue
+          background: palette.skeColor.lightBlue,
         },
         '&:focus': {
-          outline: 'none'
+          outline: 'none',
         },
         '& h1, h2, h3, h4, h5, h6': {
           fontSize: FontSizes.largePlus,
-          margin: '0'
+          margin: '0',
         },
         '& i': {
           transition: '.2s',
           fontSize: IconFontSizes.xlarge,
           selectors: {
             '@media (min-width: 640px)': {
-              fontSize: IconFontSizes.xxlarge
-            }
-          }
-        }
-      }
+              fontSize: IconFontSizes.xxlarge,
+            },
+          },
+        },
+      },
     },
     content: {
       padding: '8px 0 16px 8px',
-      marginLeft: '2em'
+      marginLeft: '2em',
     },
     contentWhenIconRight: {
       padding: '8px 0 16px 8px',
-      marginLeft: '16px'
+      marginLeft: '16px',
     },
     heading: {
       fontSize: FontSizes.largePlus,
-      margin: '0'
+      margin: '0',
     },
     toggleButtonOpen: {
       selectors: {
         '& i': {
-          transform: 'rotate(180deg)'
-        }
-      }
-    }
+          transform: 'rotate(180deg)',
+        },
+      },
+    },
   });
 }
