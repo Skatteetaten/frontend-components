@@ -90,22 +90,6 @@ Lesemodus:
 import ComboBox from '@skatteetaten/frontend-components/ComboBox';
 import Grid from '@skatteetaten/frontend-components/Grid';
 
-const initialState = {
-  fylker: [
-    { key: 'A', text: 'Agder', value: 'Agder' },
-    { key: 'B', text: 'Innlandet', value: 'Innlandet' },
-    { key: 'C', text: 'Møre og Romsdal', value: 'Møre og Romsdal' },
-    { key: 'D', text: 'Nordland', value: 'Nordland' },
-    { key: 'E', text: 'Oslo', value: 'Oslo' },
-    { key: 'F', text: 'Rogaland', value: 'Rogaland' },
-    { key: 'G', text: 'Troms og Finnmark', value: 'Troms og Finnmark' },
-    { key: 'H', text: 'Trøndelag', value: 'Trøndelag' },
-    { key: 'I', text: 'Vestfold og Telemark', value: 'Vestfold og Telemark' },
-    { key: 'J', text: 'Vestland', value: 'Vestland' },
-    { key: 'K', text: 'Viken', value: 'Viken' },
-  ],
-};
-
 <div>
   <Grid>
     <Grid.Row>
@@ -113,7 +97,23 @@ const initialState = {
         <ComboBox
           readOnly
           label="Fylke"
-          options={state.fylker}
+          options={[
+            { key: 'A', text: 'Agder', value: 'Agder' },
+            { key: 'B', text: 'Innlandet', value: 'Innlandet' },
+            { key: 'C', text: 'Møre og Romsdal', value: 'Møre og Romsdal' },
+            { key: 'D', text: 'Nordland', value: 'Nordland' },
+            { key: 'E', text: 'Oslo', value: 'Oslo' },
+            { key: 'F', text: 'Rogaland', value: 'Rogaland' },
+            { key: 'G', text: 'Troms og Finnmark', value: 'Troms og Finnmark' },
+            { key: 'H', text: 'Trøndelag', value: 'Trøndelag' },
+            {
+              key: 'I',
+              text: 'Vestfold og Telemark',
+              value: 'Vestfold og Telemark',
+            },
+            { key: 'J', text: 'Vestland', value: 'Vestland' },
+            { key: 'K', text: 'Viken', value: 'Viken' },
+          ]}
           defaultSelectedKey="A"
           allowFreeform={false}
           ariaLabel="Eksempel med ComboBox i lesemodus"
