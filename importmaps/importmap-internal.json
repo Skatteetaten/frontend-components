@@ -8,7 +8,7 @@
     "moment": "https://k22600-frontend-components-aurora-dev.utv.paas.skead.no/umd/deps/dev/moment/min/moment.min.js",
     "axios": "https://k22600-frontend-components-aurora-dev.utv.paas.skead.no/umd/deps/dev/axios/dist/axios.min.js",
     "tslib": "https://k22600-frontend-components-aurora-dev.utv.paas.skead.no/umd/deps/dev/tslib/tslib.js",
-    "i18next": "https://k22600-frontend-components-aurora-dev.utv.paas.skead.no/umd/deps/dev/i18next.js",
+    "i18next": "https://k22600-frontend-components-aurora-dev.utv.paas.skead.no/umd/deps/dev/i18next/dist/umd/i18next.js",
     "@fluentui/react": "https://k22600-frontend-components-aurora-dev.utv.paas.skead.no/umd/deps/dev/@fluentui/react/dist/fluentui-react.umd.js",
     "react-transition-group": "https://k22600-frontend-components-aurora-dev.utv.paas.skead.no/umd/deps/dev/react-transition-group/dist/react-transition-group.js",
     "@skatteetaten/frontend-components": "https://k22600-frontend-components-aurora-dev.utv.paas.skead.no/umd/index.development.js"

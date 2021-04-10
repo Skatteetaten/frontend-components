@@ -46,7 +46,7 @@ const writeDependencies = (data, path) => {
   for (const [key, value] of Object.entries(data.imports)) {
     if (!value.includes('frontend-components')) {
       const basePath = `lib/umd/${path}`;
-      const itemPath = `${basePath}/${key}/${value.split('@')[1].split(/\/(.+)/)[1]}`
+      const itemPath = `${basePath}/${key}/${value.substring(value.lastIndexOf('@') + 1, value.length).split(/\/(.+)/)[1]}`
       const makePath = itemPath.substring(0, itemPath.lastIndexOf("\/"));
 
       if (!fs.existsSync(makePath)) fs.mkdirSync(makePath, { recursive: true });
