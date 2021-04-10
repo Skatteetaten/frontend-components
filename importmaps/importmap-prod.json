@@ -8,6 +8,9 @@
     "moment": "https://cdn.jsdelivr.net/npm/moment@<replace>/min/moment.min.js",
     "axios": "https://cdn.jsdelivr.net/npm/axios@<replace>/dist/axios.min.js",
     "tslib": "https://unpkg.com/tslib@<replace>/tslib.js",
+    "i18next": "https://unpkg.com/i18next@<replace>/dist/umd/i18next.min.js",
+    "@fluentui/react": "https://cdn.jsdelivr.net/npm/@fluentui/react@<replace>/dist/fluentui-react.umd.js",
+    "react-transition-group": "https://cdn.jsdelivr.net/npm/react-transition-group@<replace>/dist/react-transition-group.min.js",
     "@skatteetaten/frontend-components": "https://unpkg.com/@skatteetaten/frontend-components@<replace>/umd/index.production.js"
   }
 }

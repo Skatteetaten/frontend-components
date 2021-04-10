@@ -25,9 +25,12 @@ export const externalsConfig = {
     'prop-types',
     'moment',
     'classnames',
+    'i18next',
     'axios',
     'tslib',
     'react-i18next',
+    '@fluentui/react',
+    'react-transition-group',
   ],
 };
 const resolveConfig = {
