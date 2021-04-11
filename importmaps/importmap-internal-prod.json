@@ -6,7 +6,7 @@
     "prop-types": "https://k22600-frontend-components-aurora-dev.utv.paas.skead.no/umd/deps/prop-types/prop-types.min.js",
     "classnames": "https://k22600-frontend-components-aurora-dev.utv.paas.skead.no/umd/deps/classnames/index.min.js",
     "moment": "https://k22600-frontend-components-aurora-dev.utv.paas.skead.no/umd/deps/moment/min/moment.min.js",
-    "axios": "https://k22600-frontend-components-aurora-dev.utv.paas.skead.no/umd/deps/npm/axios/dist/axios.min.js",
+    "axios": "https://k22600-frontend-components-aurora-dev.utv.paas.skead.no/umd/deps/axios/dist/axios.min.js",
     "tslib": "https://k22600-frontend-components-aurora-dev.utv.paas.skead.no/umd/deps/tslib/tslib.js",
     "i18next": "https://k22600-frontend-components-aurora-dev.utv.paas.skead.no/umd/deps/i18next/dist/umd/i18next.min.js",
     "@fluentui/react": "https://k22600-frontend-components-aurora-dev.utv.paas.skead.no/umd/deps/@fluentui/react/dist/fluentui-react.umd.js",
