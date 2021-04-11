@@ -33,7 +33,7 @@ const replaceImportVersions = (importMap) => {
         '<replace>',
         findOwnVersion()
       );
-    } else {
+    } else if (external !== 'react/jsx-runtime') {
       importMap[external] = importMap[external].replace(
         '<replace>',
         findDependencyVersion(external)
