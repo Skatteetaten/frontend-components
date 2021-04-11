@@ -104,7 +104,7 @@ export default (CLIArgs) => {
     input: 'src/components/index.ts',
     output: {
       file: `${outputDir}index.${prod ? 'production' : 'development'}.js`,
-      format: 'umd',
+      format: 'system',
       name: '@skatteetaten/frontend-components',
       globals: {
         react: 'React',
