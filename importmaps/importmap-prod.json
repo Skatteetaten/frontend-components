@@ -3,7 +3,6 @@
     "react": "https://cdn.jsdelivr.net/npm/react@<replace>/umd/react.production.min.js",
     "react-dom": "https://cdn.jsdelivr.net/npm/react-dom@<replace>/umd/react-dom.production.min.js",
     "react-i18next": "https://cdn.jsdelivr.net/npm/react-i18next@<replace>/dist/umd/react-i18next.min.js",
-    "react/jsx-runtime": "https://cdn.jsdelivr.net/npm/react@16.14.0/cjs/react-jsx-runtime.production.min.js",
     "prop-types": "https://unpkg.com/prop-types@<replace>/prop-types.min.js",
     "classnames": "https://cdn.jsdelivr.net/npm/classnames@<replace>/index.min.js",
     "moment": "https://cdn.jsdelivr.net/npm/moment@<replace>/min/moment.min.js",
