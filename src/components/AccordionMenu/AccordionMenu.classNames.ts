@@ -36,16 +36,16 @@ export function getClassNames(props): any {
       selectors: {
         '&:hover': {
           backgroundColor: palette.skeColor.lightBlue,
-          cursor: 'pointer'
+          cursor: 'pointer',
         },
         '&:focus': {
           backgroundColor: palette.skeColor.lightBlue,
-          outline: 'none'
-        }
-      }
+          outline: 'none',
+        },
+      },
     },
     menuItemIsOpen: {
-      borderTop: `2px solid ${palette.skeColor.grey} !important`
+      borderTop: `2px solid ${palette.skeColor.grey} !important`,
     },
     menuItemTitle: {
       display: 'flex',
@@ -68,25 +68,25 @@ export function getClassNames(props): any {
       border: `2px solid ${palette.skeColor.blackAlt}`,
       borderRadius: '50%',
       margin: '8px 0 8px 0',
-      fontSize: IconFontSizes.xlarge
+      fontSize: IconFontSizes.xlarge,
     },
     toggleButton: {
       color: palette.skeColor.blue,
       selectors: {
         i: {
           fontSize: IconFontSizes.xlarge,
-          paddingLeft: '1px'
-        }
-      }
+          paddingLeft: '1px',
+        },
+      },
     },
     toggleButtonOpen: {
       color: palette.skeColor.blue,
       selectors: {
         i: {
           transform: 'rotate(180deg)',
-          paddingLeft: '1px'
-        }
-      }
+          paddingLeft: '1px',
+        },
+      },
     },
     content: {
       borderTop: `2px solid ${palette.skeColor.grey}`,

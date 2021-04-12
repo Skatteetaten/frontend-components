@@ -83,7 +83,7 @@ export class Card extends React.PureComponent<CardProps, CardState> {
     actions: null,
     marginbottom: '2px',
     margin: 'medium',
-    buttonType: 'button'
+    buttonType: 'button',
   };
 
   constructor(props: CardProps) {

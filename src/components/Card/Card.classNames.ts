@@ -133,21 +133,21 @@ export const getClassNames = (props: CardProps, state: CardState) => {
       paddingRight: '0px',
       selectors: {
         ':hover': {
-          cursor: expand ? 'pointer' : ''
+          cursor: expand ? 'pointer' : '',
         },
         ':active': {
-          color: palette.skeColor.blue
+          color: palette.skeColor.blue,
         },
         ':focus': {
-          outlineColor: palette.skeColor.blue
+          outlineColor: palette.skeColor.blue,
         },
         ':focus:not(:focus-visible)': {
-          outline: 'none'
+          outline: 'none',
         },
         ':focus-visible': {
-          outlineColor: palette.skeColor.blue
-        }
-      }
+          outlineColor: palette.skeColor.blue,
+        },
+      },
     },
     title: {
       flex: '1 1 1px',
@@ -167,7 +167,7 @@ export const getClassNames = (props: CardProps, state: CardState) => {
       },
     },
     actions: {
-      fontSize: FontSizes.medium
+      fontSize: FontSizes.medium,
     },
     subtitle: {
       width: '100%',
