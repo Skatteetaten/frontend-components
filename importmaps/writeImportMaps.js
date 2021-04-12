@@ -1,6 +1,6 @@
 const fs = require('fs');
 const path = require('path');
-const https = require('https');
+const fetch = require('node-fetch');
 const util = require('util');
 const debugLogger = util.debuglog('importmaps');
 const dataDev = require('./importmap.json');
@@ -42,7 +42,7 @@ const replaceImportVersions = (importMap) => {
   });
 };
 
-const writeDependencies = (data, path) => {
+const writeDependencies = async (data, path) => {
   for (const [key, value] of Object.entries(data.imports)) {
     if (!value.includes('frontend-components')) {
       const basePath = `lib/umd/${path}`;
@@ -51,20 +51,25 @@ const writeDependencies = (data, path) => {
 
       if (!fs.existsSync(makePath)) fs.mkdirSync(makePath, { recursive: true });
 
-      const file = fs.createWriteStream(itemPath);
-      const request = https.get(value, function(response) {
-        response.pipe(file);
-      });
+      try {
+        const file = fs.createWriteStream(itemPath);
+        const data = await fetch(value);
+
+        data.body.pipe(file);
+      } catch (error) {
+        console.log(error);
+        return error;
+      }
     }
   };
 };
 
-const write = () => {
+const write = async () => {
   replaceImportVersions(dataDev.imports);
   replaceImportVersions(dataProd.imports);
 
-  writeDependencies(dataDev, 'deps/dev');
-  writeDependencies(dataProd, 'deps');
+  await writeDependencies(dataDev, 'deps/dev');
+  await writeDependencies(dataProd, 'deps');
 
   const devPath = 'lib/umd';
   const prodPath = 'lib/umd';
@@ -122,4 +127,4 @@ const write = () => {
   );
 };
 
-write();
+write().then(() => console.log("Import maps complete!"));
