@@ -35,9 +35,6 @@ function getFieldTypeStyles(props: DropdownProps) {
 
 export const getClassNames = (props: DropdownProps) => {
   const palette = getTheme().palette as PaletteProps;
-
-  console.log(palette);
-
   const { errorMessage } = props;
   const inset = 0;
   const radius = '0';
