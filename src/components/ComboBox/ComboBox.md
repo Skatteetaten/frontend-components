@@ -87,8 +87,7 @@ const initialState = {
 Lesemodus:
 
 ```js
-import ComboBox from '@skatteetaten/frontend-components/ComboBox';
-import Grid from '@skatteetaten/frontend-components/Grid';
+import { ComboBox, Grid } from '@skatteetaten/frontend-components';
 
 <div>
   <Grid>
