@@ -53,7 +53,7 @@ const columns = [
   },
 ];
 
-const content = (data, close) => (
+const content = (close) => (
   <div>
     <p>
       <strong>{data.Måned}</strong>
@@ -227,7 +227,7 @@ describe('Table komponent', () => {
       <Table
         data={data}
         columns={columns}
-        editableContent={(content) => <div id="edit">{content.Måned}</div>}
+        editableContent={() => <div id="edit">{content.Måned}</div>}
         editableRows={true}
         openEditableRowIndex={0}
       />

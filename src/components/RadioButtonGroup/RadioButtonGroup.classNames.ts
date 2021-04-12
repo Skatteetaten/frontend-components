@@ -44,12 +44,14 @@ export const getClassNames = (props) => {
           fontSize: FontSizes.medium,
           display: 'inline-block',
           paddingLeft: '26px',
-          lineHeight: LineHeightSizes.medium,
+          lineHeight: '1.5',
+          marginTop: '-0.125rem',
         },
         'span.descriptionLabel': {
           fontSize: FontSizes.smallPlus,
           color: palette.skeColor.darkGrey,
-          lineHeight: LineHeightSizes.smallPlus,
+          lineHeight: LineHeightSizes.xSmall,
+          marginTop: '0',
         },
         '& .ms-ChoiceField-field::before': {
           content: '',

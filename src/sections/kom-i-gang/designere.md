@@ -28,7 +28,7 @@ const style = {
   marginTop: 0,
 };
 
-<OpenClose title={'Versjonshistorikk'}>
+<OpenClose compact title={'Versjonshistorikk'}>
   <Typography>
     <h4>Versjon 1.6 </h4>
     <p style={{ marginTop: '0' }}>19.11.2020</p>

@@ -46,8 +46,12 @@ const writeDependencies = async (data, path) => {
   for (const [key, value] of Object.entries(data.imports)) {
     if (!value.includes('frontend-components')) {
       const basePath = `lib/umd/${path}`;
-      const itemPath = `${basePath}/${key}/${value.substring(value.lastIndexOf('@') + 1, value.length).split(/\/(.+)/)[1]}`
-      const makePath = itemPath.substring(0, itemPath.lastIndexOf("\/"));
+      const itemPath = `${basePath}/${key}/${
+        value
+          .substring(value.lastIndexOf('@') + 1, value.length)
+          .split(/\/(.+)/)[1]
+      }`;
+      const makePath = itemPath.substring(0, itemPath.lastIndexOf('/'));
 
       if (!fs.existsSync(makePath)) fs.mkdirSync(makePath, { recursive: true });
 
@@ -61,7 +65,7 @@ const writeDependencies = async (data, path) => {
         return error;
       }
     }
-  };
+  }
 };
 
 const write = async () => {
@@ -82,8 +86,10 @@ const write = async () => {
 
   if (!fs.existsSync(devPath)) fs.mkdirSync(devPath, { recursive: true });
   if (!fs.existsSync(prodPath)) fs.mkdirSync(prodPath, { recursive: true });
-  if (!fs.existsSync(devInternalPath)) fs.mkdirSync(devInternalPath, { recursive: true });
-  if (!fs.existsSync(prodInternalPath)) fs.mkdirSync(prodInternalPath, { recursive: true });
+  if (!fs.existsSync(devInternalPath))
+    fs.mkdirSync(devInternalPath, { recursive: true });
+  if (!fs.existsSync(prodInternalPath))
+    fs.mkdirSync(prodInternalPath, { recursive: true });
 
   fs.writeFile(
     `${devPath}/importmap.json`,
@@ -127,4 +133,4 @@ const write = async () => {
   );
 };
 
-write().then(() => console.log("Import maps complete!"));
+write().then(() => console.log('Import maps complete!'));

@@ -11,6 +11,8 @@ import {
 const errorIcon = "'" + MdIcons.icons.Error + "'";
 
 function getFieldTypeStyles(props: DatePickerProps) {
+  const palette = getTheme().palette as PaletteProps;
+
   if (props.inputSize === 'large') {
     return {
       '& .ms-TextField-fieldGroup': {
@@ -25,12 +27,16 @@ function getFieldTypeStyles(props: DatePickerProps) {
       'i.ms-DatePicker-event--without-label': {
         marginTop: '0px',
         fontSize: FontSizes.xLarge,
+        color: palette.skeColor.blue,
       },
     };
   } else {
     return {
       '& .ms-TextField-fieldGroup': {
         fontSize: FontSizes.small,
+      },
+      'i.ms-DatePicker-event--without-label': {
+        color: palette.skeColor.blue,
       },
     };
   }

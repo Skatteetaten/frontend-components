@@ -1,6 +1,6 @@
 import { mergeStyleSets, IRawStyle } from '@uifabric/merge-styles';
 import { getTheme } from '@uifabric/styling';
-import { PaletteProps, NavigationTileProps } from '../index';
+import { FontSizes, PaletteProps, NavigationTileProps } from '../index';
 
 function getType(props: NavigationTileProps): IRawStyle {
   if (props.type === 'left') {
@@ -15,12 +15,12 @@ function getType(props: NavigationTileProps): IRawStyle {
 function getIcon(props: NavigationTileProps): IRawStyle {
   if (props.alignIcon === 'right') {
     return {
-      fontSize: '28px',
+      fontSize: '1.75rem',
       float: 'right',
     };
   }
   return {
-    fontSize: '42px',
+    fontSize: FontSizes.superLarge,
     display: 'inherit',
     margin: `16px 0`,
     textAlign: 'center',
@@ -75,7 +75,7 @@ export const getClassNames = (props: NavigationTileProps) => {
           textAlign: 'center',
           margin: 0,
           marginBottom: '8px',
-          fontSize: '24px',
+          fontSize: '1.5rem',
           color: palette.skeColor.blue,
           ...getTitle(props),
         },

@@ -1,5 +1,5 @@
 ```js noeditor
-import { 
+import {
   Accordion,
   AccordionItem,
   Card,
