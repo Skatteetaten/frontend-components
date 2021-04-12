@@ -44,7 +44,7 @@ module.exports = {
         },
         {
           name: 'Tips og triks',
-          content: 'src/sections/kom-i-gang/tipstriks.md'
+          content: 'src/sections/kom-i-gang/tipstriks.md',
         },
         {
           name: 'Krav og versjoner',
@@ -65,17 +65,17 @@ module.exports = {
       sections: [
         {
           name: 'Obligatoriske felt',
-          content: 'src/sections/monstre/obligatorisk.md'
+          content: 'src/sections/monstre/obligatorisk.md',
         },
         {
           name: 'Store tabeller',
-          content: 'src/sections/monstre/tabell-kompleks.md'
+          content: 'src/sections/monstre/tabell-kompleks.md',
         },
         {
           name: 'Feilmeldinger',
-          content: 'src/sections/monstre/feil.md'
-        }
-      ]
+          content: 'src/sections/monstre/feil.md',
+        },
+      ],
     },
     generateComponentsGroup('Knapper og lenker', [
       'ActionButton',

@@ -3,6 +3,7 @@ import { getTheme } from '@uifabric/styling';
 import {
   FontSizes,
   FontWeights,
+  IconFontSizes,
   PaletteProps,
   ComboboxProps,
   MdIcons,
@@ -37,7 +38,11 @@ function getFieldTypeStyles(props: ComboboxProps) {
         fontSize: FontSizes.large,
       },
       'i.ms-Button-icon': {
-        fontSize: FontSizes.large,
+        fontSize: IconFontSizes.large,
+        paddingRight: '4px',
+      },
+      '& ::placeholder': {
+        color: `${palette.skeColor.darkGrey} !important`,
       },
     };
   } else {
@@ -90,6 +95,7 @@ export const getClassNames = (props: ComboboxProps) => {
           // Negative positioning to account for the 2px border
           right: '0',
           top: '0',
+          color: palette.skeColor.blue,
         },
         '& div[role=region]::before': {
           fontFamily: MdIcons.fontFace.fontFamily,

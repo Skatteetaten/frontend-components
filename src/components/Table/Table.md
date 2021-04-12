@@ -218,10 +218,7 @@ const data = [
 Ekspanderbare rader
 
 ```js
-import {
-  Table,
-  ActionButton
-} from '@skatteetaten/frontend-components';
+import { Table, ActionButton } from '@skatteetaten/frontend-components';
 
 const columns = [
   {
@@ -523,17 +520,17 @@ import moment from 'moment';
 
 const wrapperStyle = {
   backgroundColor: '#f9ede2',
-  padding: 12
+  padding: 12,
 };
 
 const blockCenterStyle = {
   textAlign: 'center',
-  marginTop: 20
+  marginTop: 20,
 };
 
 const tableStyle = {
   background: 'red',
-  marginTop: 20
+  marginTop: 20,
 };
 
 const caption = (
@@ -610,27 +607,27 @@ const columns = [
     fieldName: 'kode',
     sortable: true,
     sortingFunction: sortMonths,
-    autohideSorting: false
+    autohideSorting: false,
   },
   {
     name: 'Beskrivelse',
-    fieldName: 'beskrivelse'
+    fieldName: 'beskrivelse',
   },
   {
     name: 'Grunnlag',
     fieldName: 'grunnlag',
-    alignment: 'right'
+    alignment: 'right',
   },
   {
     name: 'Sats',
     fieldName: 'sats',
-    alignment: 'right'
+    alignment: 'right',
   },
   {
     name: 'Mva',
     fieldName: 'mva',
-    alignment: 'right'
-  }
+    alignment: 'right',
+  },
 ];
 
 const data = [
@@ -644,9 +641,9 @@ const data = [
       {
         beskrivelse: 'Fradrag',
         sats: '25%',
-        mva: '-2 500'
-      }
-    ]
+        mva: '-2 500',
+      },
+    ],
   },
   {
     kode: '1',
@@ -654,14 +651,14 @@ const data = [
     grunnlag: '60 000',
     sats: '25%',
     mva: '15 000',
-    hideEdit: true
+    hideEdit: true,
   },
   {
     kode: '2',
     beskrivelse: 'Salg av tjenester',
     sats: '25%',
-    mva: '15 500'
-  }
+    mva: '15 500',
+  },
 ];
 
 <Table

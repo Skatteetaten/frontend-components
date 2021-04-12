@@ -624,7 +624,7 @@ const iconGroup = {
     },
     {
       name: 'TemaChatbot',
-      usage: 'Chatbot - stor utgave'
+      usage: 'Chatbot - stor utgave',
     },
     {
       name: 'TemaFamilie',

@@ -1,5 +1,5 @@
 ```js noeditor
-import { 
+import {
   Accordion,
   AccordionItem,
   Card,
@@ -12,13 +12,13 @@ const initialState = {
   options: [
     {
       key: 'A',
-      text: 'Enkeltpersonsforetak'
+      text: 'Enkeltpersonsforetak',
     },
     {
       key: 'B',
-      text: 'Aksjeselskap'
-    }
-  ]
+      text: 'Aksjeselskap',
+    },
+  ],
 };
 
 <div>

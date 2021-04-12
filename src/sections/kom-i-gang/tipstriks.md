@@ -3,7 +3,11 @@
   <h3>Formatering av datoer</h3>
   <p>
     Vi skriver 16.08.2020 eller 16. august 2020. Husk at vi alltid skriver
-    årstallet helt ut for å unngå misforståelser. Se <a href="https://www.skatteetaten.no/stilogtone/skrive/skriveregler/datoer/">skriveregelene</a> for detaljer.
+    årstallet helt ut for å unngå misforståelser. Se{' '}
+    <a href="https://www.skatteetaten.no/stilogtone/skrive/skriveregler/datoer/">
+      skriveregelene
+    </a>{' '}
+    for detaljer.
   </p>
 </div>
 ```
@@ -15,12 +19,12 @@ const date = new Date('2020-07-16');
 var options = {
   year: 'numeric',
   month: '2-digit',
-  day: '2-digit'
+  day: '2-digit',
 };
 var full_options = {
   year: 'numeric',
   month: 'long',
-  day: 'numeric'
+  day: 'numeric',
 };
 
 const no_formatted_date = `${new Intl.DateTimeFormat('no-NB', options).format(
@@ -59,7 +63,11 @@ const en_formatted_date = `${new Intl.DateTimeFormat(
 <div>
   <h3>Formatering av tall</h3>
   <p>
-    Tall skrives med siffer. Vi skriver 4 og 104, ikke fire og hundreogfire. Se <a href="https://www.skatteetaten.no/stilogtone/skrive/skriveregler/tall/">skriveregelene</a> for detaljer.
+    Tall skrives med siffer. Vi skriver 4 og 104, ikke fire og hundreogfire. Se{' '}
+    <a href="https://www.skatteetaten.no/stilogtone/skrive/skriveregler/tall/">
+      skriveregelene
+    </a>{' '}
+    for detaljer.
   </p>
 </div>
 ```
@@ -108,7 +116,7 @@ import { LabelWithCallout } from '@skatteetaten/frontend-components';
 const rtf = new Intl.RelativeTimeFormat('no', {
   localeMatcher: 'best fit',
   numeric: 'always',
-  style: 'long'
+  style: 'long',
 });
 <>
   <LabelWithCallout

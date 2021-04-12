@@ -20,11 +20,11 @@ import {
 const textStyle = {
   fontSize: '12px',
   textAlign: 'center',
-  textTransform: 'uppercase'
+  textTransform: 'uppercase',
 };
 
 const white = {
-  color: '#ffffff'
+  color: '#ffffff',
 };
 
 <div>
@@ -70,7 +70,7 @@ const white = {
 I de interne løsningene deler vi inn skjermen i et partsområde, et kjerneområde og et valgfritt rutineområde. Reponsivt design er viktig også her, fordi mange saksbehandlere bruker løsningene på deler av skjermen. Partsområdet skal inneholde opplysninger om personen, bedriften, kjøretøyet eller liknende som gir en støtte for saksbehandler for utførelse av arbeidsoppgaven. Kjerneområdet fyller hoveddelen av skjermbildet og har høyest prioritet. Her utføres selve arbeidsoppgaven. Funksjoner knyttet til arbeidsoppgaven kan ligge i kjerneområdet eller i toppen. I systemer med komplekse rutiner eller lovbestemmelser kan det være nyttig å tilby en rutinebeskrivelse i et eget område.
 
 ```js
-import { 
+import {
   AccordionMenu,
   AccordionMenuItem,
   Link,
@@ -89,11 +89,11 @@ import {
 const textStyle = {
   fontSize: '12px',
   textAlign: 'center',
-  textTransform: 'uppercase'
+  textTransform: 'uppercase',
 };
 
 const white = {
-  color: '#ffffff'
+  color: '#ffffff',
 };
 
 initialState = {
@@ -106,8 +106,8 @@ initialState = {
         console.log('og');
       },
       iconProps: {
-        iconName: 'PlayOutline'
-      }
+        iconName: 'PlayOutline',
+      },
     },
     {
       key: 'view2',
@@ -117,8 +117,8 @@ initialState = {
         console.log('hei');
       },
       iconProps: {
-        iconName: 'PauseOutline'
-      }
+        iconName: 'PauseOutline',
+      },
     },
 
     {
@@ -129,36 +129,36 @@ initialState = {
         console.log('og');
       },
       iconProps: {
-        iconName: 'PersonMoreOutline'
-      }
-    }
-  ]
+        iconName: 'PersonMoreOutline',
+      },
+    },
+  ],
 };
 
 const dlStyle = {
   display: 'inline-block',
   width: '50%',
   margin: '0 0 5px 0',
-  verticalAlign: 'text-top'
+  verticalAlign: 'text-top',
 };
 
 const removeMargin = {
-  margin: '0'
+  margin: '0',
 };
 
 const ulStyle = {
   padding: 0,
-  margin: 0
+  margin: 0,
 };
 
 const centerAlignStyle = {
   display: 'flex',
-  alignItems: 'center'
+  alignItems: 'center',
 };
 
 const timeStampStyle = {
   paddingLeft: 40,
-  marginTop: '-10px'
+  marginTop: '-10px',
 };
 
 <div>
@@ -219,7 +219,7 @@ const timeStampStyle = {
 ```
 
 ```js
-import { 
+import {
   AccordionMenu,
   AccordionMenuItem,
   Link,
@@ -238,11 +238,11 @@ import {
 const textStyle = {
   fontSize: '12px',
   textAlign: 'center',
-  textTransform: 'uppercase'
+  textTransform: 'uppercase',
 };
 
 const white = {
-  color: '#ffffff'
+  color: '#ffffff',
 };
 
 initialState = {
@@ -255,8 +255,8 @@ initialState = {
         console.log('og');
       },
       iconProps: {
-        iconName: 'PlayOutline'
-      }
+        iconName: 'PlayOutline',
+      },
     },
     {
       key: 'view2',
@@ -266,8 +266,8 @@ initialState = {
         console.log('hei');
       },
       iconProps: {
-        iconName: 'PauseOutline'
-      }
+        iconName: 'PauseOutline',
+      },
     },
 
     {
@@ -278,36 +278,36 @@ initialState = {
         console.log('og');
       },
       iconProps: {
-        iconName: 'PersonMoreOutline'
-      }
-    }
-  ]
+        iconName: 'PersonMoreOutline',
+      },
+    },
+  ],
 };
 
 const dlStyle = {
   display: 'inline-block',
   width: '50%',
   margin: '0 0 5px 0',
-  verticalAlign: 'text-top'
+  verticalAlign: 'text-top',
 };
 
 const removeMargin = {
-  margin: '0'
+  margin: '0',
 };
 
 const ulStyle = {
   padding: 0,
-  margin: 0
+  margin: 0,
 };
 
 const centerAlignStyle = {
   display: 'flex',
-  alignItems: 'center'
+  alignItems: 'center',
 };
 
 const timeStampStyle = {
   paddingLeft: 40,
-  marginTop: '-10px'
+  marginTop: '-10px',
 };
 
 <div>

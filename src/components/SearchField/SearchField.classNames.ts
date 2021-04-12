@@ -122,7 +122,9 @@ export const getClassNames = (props: SearchFieldProps) => {
         },
         '& .ms-SearchBox-icon': {
           position: 'absolute',
-          color: palette.skeColor.blue,
+          color: onSearchIcon
+            ? palette.skeColor.blue
+            : palette.skeColor.blackAlt,
           right: 10,
           top: largeSize ? 5 : 0,
           border: 'none',

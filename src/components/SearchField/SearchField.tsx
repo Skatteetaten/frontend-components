@@ -282,6 +282,7 @@ export const SearchField: React.FC<SearchFieldProps> = (props) => {
             value={value}
             componentRef={_componentRef}
             iconProps={{
+              iconName: 'Filter',
               onClick: (ev) => (onSearchIcon ? onSearchIcon(ev) : null),
             }}
           />

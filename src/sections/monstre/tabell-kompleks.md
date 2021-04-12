@@ -1,5 +1,5 @@
 ```js noeditor
-import { 
+import {
   Table,
   Grid,
   TextField,
@@ -20,92 +20,92 @@ const mockColumns = [
     fieldName: 'grp',
     sortable: true,
     sortingFunction: sortMonths,
-    autohideSorting: false
+    autohideSorting: false,
   },
   {
     name: 'Januar',
     fieldName: 'jan',
     alignment: 'right',
     sortable: false,
-    autohideSorting: true
+    autohideSorting: true,
   },
   {
     name: 'Februar',
     fieldName: 'feb',
     alignment: 'right',
     sortable: false,
-    autohideSorting: true
+    autohideSorting: true,
   },
   {
     name: 'Mars',
     fieldName: 'mar',
     alignment: 'right',
     sortable: false,
-    autohideSorting: true
+    autohideSorting: true,
   },
   {
     name: 'April',
     fieldName: 'apr',
     alignment: 'right',
     sortable: false,
-    autohideSorting: true
+    autohideSorting: true,
   },
   {
     name: 'Mai',
     fieldName: 'mai',
     alignment: 'right',
     sortable: false,
-    autohideSorting: true
+    autohideSorting: true,
   },
   {
     name: 'Juni',
     fieldName: 'jun',
     alignment: 'right',
     sortable: false,
-    autohideSorting: true
+    autohideSorting: true,
   },
   {
     name: 'Juli',
     fieldName: 'jul',
     alignment: 'right',
     sortable: false,
-    autohideSorting: true
+    autohideSorting: true,
   },
   {
     name: 'August',
     fieldName: 'aug',
     alignment: 'right',
     sortable: false,
-    autohideSorting: true
+    autohideSorting: true,
   },
   {
     name: 'September',
     fieldName: 'sep',
     alignment: 'right',
     sortable: false,
-    autohideSorting: true
+    autohideSorting: true,
   },
   {
     name: 'Oktober',
     fieldName: 'okt',
     alignment: 'right',
     sortable: false,
-    autohideSorting: true
+    autohideSorting: true,
   },
   {
     name: 'November',
     fieldName: 'nov',
     alignment: 'right',
     sortable: false,
-    autohideSorting: true
+    autohideSorting: true,
   },
   {
     name: 'Desember',
     fieldName: 'des',
     alignment: 'right',
     sortable: false,
-    autohideSorting: true
-  }
+    autohideSorting: true,
+  },
 ];
 
 function formatNumber(count) {
@@ -126,7 +126,7 @@ const mockData = [
     sep: formatNumber(48251),
     okt: formatNumber(48251),
     nov: formatNumber(48251),
-    des: formatNumber(48251)
+    des: formatNumber(48251),
   },
   {
     grp: 'Kontantytelse',
@@ -141,14 +141,14 @@ const mockData = [
     sep: formatNumber(0),
     okt: formatNumber(0),
     nov: formatNumber(0),
-    des: formatNumber(0)
-  }
+    des: formatNumber(0),
+  },
 ];
-const dropdownItems = colums => {
+const dropdownItems = (colums) => {
   let items = [];
 
   colums &&
-    colums.forEach(item => {
+    colums.forEach((item) => {
       items.push({ key: item.fieldName, text: item.name });
     });
 
@@ -156,13 +156,13 @@ const dropdownItems = colums => {
 };
 
 const [selectedColums, setSelectedColums] = React.useState(
-  mockColumns.map(item => item.fieldName)
+  mockColumns.map((item) => item.fieldName)
 );
 
 function getDropdownItems(colums) {
   let items = [];
 
-  colums.forEach(item => {
+  colums.forEach((item) => {
     items.push({ key: item.fieldName, text: item.name });
   });
 
@@ -174,7 +174,7 @@ function onChange(item) {
     setSelectedColums(
       item.selected
         ? [...selectedColums, item.key]
-        : selectedColums.filter(key => key !== item.key)
+        : selectedColums.filter((key) => key !== item.key)
     );
   }
 }
@@ -290,7 +290,7 @@ function isSelected(selectItems, key) {
 
       <Table
         data={mockData}
-        columns={mockColumns.filter(item =>
+        columns={mockColumns.filter((item) =>
           selectedColums.includes(item.fieldName)
         )}
         openEditableOnRowClick
