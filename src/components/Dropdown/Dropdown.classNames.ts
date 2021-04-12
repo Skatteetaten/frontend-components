@@ -58,7 +58,9 @@ export const getClassNames = (props: DropdownProps) => {
           borderColor: palette.skeColor.blackAlt,
         },
         '& .ms-Dropdown-title.ms-Dropdown-title': errorMessage && {
-          borderColor: errorMessage ? palette.skeColor.error : palette.skeColor.blackAlt,
+          borderColor: errorMessage
+            ? palette.skeColor.error
+            : palette.skeColor.blackAlt,
           borderWidth: '2px',
         },
         // hack
