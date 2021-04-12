@@ -1,10 +1,11 @@
 import * as React from 'react';
-import Icon from '../../Icon';
+import { Icon } from '../../index';
 import classnames from 'classnames';
 import { getClassNames } from '../AccordionMenu.classNames';
 
-interface AccordionMenuItemProps extends React.HTMLAttributes<HTMLDivElement> {
-  /** Icons that is used for menu item    */
+export interface AccordionMenuItemProps
+  extends React.HTMLAttributes<HTMLDivElement> {
+  /** Ikon som benyttes for et menypunkt   */
   icon?: string;
   /** If a menu item should be open by default */
   isOpen?: boolean;
@@ -20,10 +21,11 @@ interface AccordionMenuItemProps extends React.HTMLAttributes<HTMLDivElement> {
   /** Flex the title section */
   flex?: boolean;
 }
+
 /**
  * @visibleName AccordionMenuItem (Element i trekkspillmeny)
  */
-const AccordionMenuItem = (props: AccordionMenuItemProps) => {
+export const AccordionMenuItem = (props: AccordionMenuItemProps) => {
   const styles = getClassNames(props);
   const { heading, icon, onClick, className, children, ariaLabel } = props;
   const [isContentOpen, setContentOpen] = React.useState<boolean>(
@@ -72,5 +74,3 @@ const AccordionMenuItem = (props: AccordionMenuItemProps) => {
     </li>
   );
 };
-
-export default AccordionMenuItem;

@@ -1,25 +1,26 @@
 import classnames from 'classnames';
 import React from 'react';
-import Icon from '../Icon/Icon';
 import { getClassNames } from './Table.classNames';
-import TableRow from './TableRow';
 import { t } from '../utils/i18n/i18n';
-import { useId } from '@reach/auto-id';
+import { Icon, TableRow, generateId, getSrOnlyStyle } from '../index';
 
 export enum Language {
   en = 'en',
   nb = 'nb',
-  nn = 'nn'
+  nn = 'nn',
 }
 
-interface TableProps<P> extends React.HTMLAttributes<HTMLDivElement> {
+export interface TableProps<P> extends React.HTMLAttributes<HTMLDivElement> {
   /** Possibility to enter your own class to override styling */
   className?: string;
   /** Global attribute which must be unique for the whole HTML document*/
   id?: string;
   /** Content elements in the table */
   data: P[];
-  /**  Allows you ti edut rows in the table */
+  /**  Allows you to edit rows in the table.
+   *  Use a boolean for if all the rows should be editable.
+   *  If only a subset of the rows should be editable, use an array of indexes of the rows. NOTE: not compatiable with sorting
+   * */
   editableRows?: boolean;
   /** Placement of expansion button in the table, the default is 'after' */
   expandIconPlacement?: 'after' | 'before';
@@ -68,12 +69,17 @@ interface TableProps<P> extends React.HTMLAttributes<HTMLDivElement> {
   }[];
   /** Language selection for what the screen reader reads out. Default is Norwegian Bokmål */
   language?: Language;
-  /** Show separators between rows */
+  /** Show separators between rows
+   *  Use a boolean for if all the rows should have seperators.
+   *  If only a subset of the rows should have seperators, use an array of indexes of the rows. NOTE: not compatiable with sorting
+   * */
   showRowSeparators?: boolean;
   /** Reduce font size and height on rows for a more compact table */
   compactTable?: boolean;
   /** Table caption */
-  caption?: React.ReactNode;
+  caption: React.ReactNode;
+  /** Ability to hide caption visually, but still being detectable for screen readers */
+  hideCaption?: boolean;
 }
 
 export const setScrollBarState = (
@@ -98,12 +104,12 @@ export const getHeader = (
     setSort({
       ascending:
         sort.columnFieldName === columnFieldName ? !sort.ascending : true,
-      columnFieldName: columnFieldName
+      columnFieldName: columnFieldName,
     });
 
   return (
     columns &&
-    columns.map(key => {
+    columns.map((key) => {
       if (key.sortable) {
         const isSorted = sort.columnFieldName === key.fieldName;
         const isSortedAscending = sort.ascending;
@@ -130,7 +136,7 @@ export const getHeader = (
               key.hideOnMobile ? 'hideOnMobile' : ''
             )}
             tabIndex={0}
-            onKeyDown={e => {
+            onKeyDown={(e) => {
               return e.key === 'Enter' ? setSortingState(key.fieldName) : null;
             }}
           >
@@ -160,7 +166,7 @@ export const getHeader = (
 /**
  * @visibleName Table (Tabell)
  */
-const Table = <P extends object>(props: TableProps<P>) => {
+export const Table = <P extends object>(props: TableProps<P>) => {
   const {
     editableRows,
     expandableRows,
@@ -174,9 +180,10 @@ const Table = <P extends object>(props: TableProps<P>) => {
     showRowSeparators = true,
     compactTable = false,
     caption = null,
-    openEditableRowIndex: externalOpenEditableRowIndex
+    hideCaption,
+    openEditableRowIndex: externalOpenEditableRowIndex,
   } = props;
-  const genratedId = useId(id);
+  const genratedId = generateId();
   const mainId = id ? id : 'table-' + genratedId;
 
   const wrapperRef = React.useRef<HTMLDivElement>(null);
@@ -211,14 +218,14 @@ const Table = <P extends object>(props: TableProps<P>) => {
       const sortDescending = !sort.ascending;
       const sortingFunction =
         columns &&
-        columns.filter(column => column.fieldName === sortingKey)[0]
+        columns.filter((column) => column.fieldName === sortingKey)[0]
           .sortingFunction;
       if (sortingFunction) {
         copiedArray.sort((a, b) =>
           sortingFunction(a[sortingKey], b[sortingKey])
         );
       } else {
-        copiedArray.sort(function(a, b) {
+        copiedArray.sort(function (a, b) {
           return a[sortingKey] < b[sortingKey] ? -1 : 1;
         });
       }
@@ -294,7 +301,11 @@ const Table = <P extends object>(props: TableProps<P>) => {
       className={classnames(getClassNames(props), className)}
     >
       <table>
-        {caption && <caption>{caption}</caption>}
+        {caption && (
+          <caption style={hideCaption ? getSrOnlyStyle() : undefined}>
+            {caption}
+          </caption>
+        )}
         <thead>
           <tr>
             {(tableIsScrollable || expandIconPlacement === 'before') && emptyTd}

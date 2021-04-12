@@ -2,16 +2,16 @@
 
 exports[`Combobox komponent matcher med snapshot 1`] = `
 <div
-  id="combobox-1"
+  id="combobox-123"
 >
   <div
     aria-invalid={false}
-    className="ms-ComboBox-container main-41"
-    id="combobox-1-input"
+    className="ms-ComboBox-container main-42"
+    id="combobox-123-input"
   >
     <div
-      className="ms-ComboBox css-51"
-      id="combobox-undefined-inputwrapper"
+      className="ms-ComboBox css-52"
+      id="combobox-123-inputwrapper"
     >
       <input
         aria-autocomplete="both"
@@ -19,10 +19,10 @@ exports[`Combobox komponent matcher med snapshot 1`] = `
         aria-expanded={false}
         autoCapitalize="off"
         autoComplete="off"
-        className="ms-ComboBox-Input css-52"
+        className="ms-ComboBox-Input css-53"
         data-is-interactable={true}
         data-lpignore={true}
-        id="combobox-undefined-input-input"
+        id="combobox-123-input-input"
         onBlur={[Function]}
         onChange={[Function]}
         onClick={[Function]}
@@ -34,7 +34,7 @@ exports[`Combobox komponent matcher med snapshot 1`] = `
         onKeyDown={[Function]}
         onKeyUp={[Function]}
         onTouchStart={[Function]}
-        readOnly={true}
+        readOnly={false}
         role="combobox"
         spellCheck={false}
         type="text"
@@ -42,7 +42,7 @@ exports[`Combobox komponent matcher med snapshot 1`] = `
       />
       <button
         aria-hidden={true}
-        className="ms-Button ms-Button--icon ms-ComboBox-CaretDown-button root-59"
+        className="ms-Button ms-Button--icon ms-ComboBox-CaretDown-button root-60"
         data-is-focusable={false}
         onBlur={[Function]}
         onClick={[Function]}
@@ -56,12 +56,12 @@ exports[`Combobox komponent matcher med snapshot 1`] = `
         type="button"
       >
         <span
-          className="ms-Button-flexContainer flexContainer-60"
+          className="ms-Button-flexContainer flexContainer-61"
           data-automationid="splitbuttonprimary"
         >
           <i
             aria-hidden={true}
-            className="ms-Icon root-37 css-67 ms-Button-icon icon-62"
+            className="ms-Icon root-38 css-68 ms-Button-icon icon-63"
             data-icon-name="ChevronDown"
             role="presentation"
             style={
@@ -79,7 +79,7 @@ exports[`Combobox komponent matcher med snapshot 1`] = `
       aria-atomic="true"
       aria-live="polite"
       className=""
-      id="combobox-undefined-input-error"
+      id="combobox-123-input-error"
       role="region"
     >
       

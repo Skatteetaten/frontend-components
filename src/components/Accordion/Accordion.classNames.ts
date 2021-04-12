@@ -1,16 +1,15 @@
 import { mergeStyleSets } from '@uifabric/merge-styles';
 import { getTheme } from '@uifabric/styling';
-import { FontSizes, FontWeights, IconFontSizes } from '../utils/fonts';
-import { PaletteProps } from '..';
+import { FontSizes, FontWeights, IconFontSizes, PaletteProps } from '../index';
 
 export function getClassNames() {
   const palette = getTheme().palette as PaletteProps;
   return mergeStyleSets({
     containerStep: {
-      margin: '0 auto'
+      margin: '0 auto',
     },
     wrapperStep: {
-      position: 'relative'
+      position: 'relative',
     },
     accordion: {
       position: 'relative',
@@ -21,22 +20,22 @@ export function getClassNames() {
           margin: 0,
           border: 'solid',
           borderWidth: '1px',
-          color: palette.skeColor.lightGrey
-        }
-      }
+          color: palette.skeColor.lightGrey,
+        },
+      },
     },
     content: {
       backgroundColor: palette.skeColor.white,
       padding: '0px 0 15px 10px',
       selectors: {
         '&:focus': {
-          background: palette.skeColor.lightBlue
-        }
-      }
+          background: palette.skeColor.lightBlue,
+        },
+      },
     },
     heading: {
       fontSize: FontSizes.largePlus,
-      margin: '0'
+      margin: '0',
     },
     stepNumber: {
       display: 'flex',
@@ -52,7 +51,15 @@ export function getClassNames() {
       fontSize: FontSizes.large,
       fontWeight: FontWeights.bold,
       zIndex: 10,
-      marginTop: 20
+      marginTop: 18,
+
+      selectors: {
+        '@media (max-width: 639px)': {
+          fontSize: FontSizes.medium,
+          width: '24px',
+          height: '24px',
+        },
+      },
     },
     stepLine: {
       display: 'block',
@@ -60,8 +67,14 @@ export function getClassNames() {
       width: 2,
       backgroundColor: palette.skeColor.lightGrey,
       top: 50,
-      left: 32,
-      height: '100%'
+      left: 16,
+      height: '100%',
+      selectors: {
+        '@media (max-width: 639px)': {
+          left: 14,
+          top: 40,
+        },
+      },
     },
     toggleButton: {
       width: '100%',
@@ -70,7 +83,7 @@ export function getClassNames() {
       color: palette.skeColor.blue,
       fontSize: FontSizes.medium,
       fontWeight: FontWeights.bold,
-      padding: '16px 24px 16px 8px',
+      padding: '16px 16px 16px 8px',
       background: 'none',
       position: 'relative',
       cursor: 'pointer',
@@ -79,43 +92,44 @@ export function getClassNames() {
 
       selectors: {
         '@media (min-width: 640px)': {
-          fontSize: FontSizes.largePlus
+          fontSize: FontSizes.largePlus,
         },
         '&:hover, &:focus': {
-          background: palette.skeColor.lightBlue
+          background: palette.skeColor.lightBlue,
         },
         '&:focus': {
-          outline: 'none'
+          outline: 'none',
         },
         '& h1, h2, h3, h4, h5, h6': {
           fontSize: FontSizes.largePlus,
-          margin: '0'
+          margin: '0',
         },
         '& i': {
           alignSelf: 'flex-start',
           transition: '.2s',
-          marginTop: '-5px',
+          marginTop: '-2px',
           fontSize: IconFontSizes.xlarge,
           selectors: {
             '@media (min-width: 640px)': {
-              fontSize: IconFontSizes.xxlarge
-            }
-          }
-        }
-      }
+              fontSize: IconFontSizes.xxlarge,
+              alignSelf: 'flex-end',
+            },
+          },
+        },
+      },
     },
     toggleButtonOpen: {
       selectors: {
         '& i': {
-          transform: 'rotate(180deg)'
-        }
-      }
+          transform: 'rotate(180deg)',
+        },
+      },
     },
     toggleButtonContent: {
       display: 'flex',
       flexDirection: 'row',
       justifyContent: 'space-between',
-      alignItems: 'center'
+      alignItems: 'center',
     },
     subtitle: {
       display: 'block',
@@ -126,7 +140,7 @@ export function getClassNames() {
       fontSize: FontSizes.large,
       fontWeight: FontWeights.regular,
       margin: 0,
-      padding: '8px 5px 0 0'
-    }
+      padding: '8px 5px 0 0',
+    },
   });
 }

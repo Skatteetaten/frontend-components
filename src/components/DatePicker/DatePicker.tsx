@@ -7,17 +7,18 @@ import {
   DatePicker as FabricDatePicker,
   DatePickerBase,
   DayOfWeek,
-  IDatePickerProps
-} from 'office-ui-fabric-react/lib-commonjs/DatePicker';
-import { FirstWeekOfYear } from 'office-ui-fabric-react/lib-commonjs/utilities/dateValues/DateValues';
+  IDatePickerProps,
+} from '@fluentui/react';
+import { FirstWeekOfYear } from '@fluentui/react';
+import {
+  LabelWithCallout,
+  LabelWithCalloutProps,
+  calloutState,
+  generateId,
+} from '../index';
 import { getClassNames } from './DatePicker.classNames';
-import LabelWithCallout, { calloutState } from '../LabelWithCallout';
-import { LabelWithCalloutProps } from '../LabelWithCallout/LabelWithCallout';
-import { useId } from '@reach/auto-id';
-import ErrorMessage from '../ErrorMessage';
 
 const DEFAULT_DATE_FORMAT = 'DD.MM.YYYY';
-
 const DEFAULTFORMATDATE = (date: Date | null | undefined): string => {
   if (date) {
     return moment(date).format(DEFAULT_DATE_FORMAT);
@@ -110,10 +111,10 @@ export const DatePicker: React.FC<DatePickerProps> = (
     pickerAriaLabel: t('datepicker.ariaLabel'),
     showGoToToday: true,
     showMonthPickerAsOverlay: false,
-    showWeekNumbers: true
+    showWeekNumbers: true,
   };
-  const genratedId = useId(id);
-  const mainId = id ? id : 'datepicker-' + genratedId;
+  const generatedId = generateId();
+  const mainId = id ? id : 'datepicker-' + generatedId;
   const inputId = mainId + '-input';
   const labelId = mainId + '-label';
 
@@ -143,11 +144,11 @@ export const DatePicker: React.FC<DatePickerProps> = (
     prevYearAriaLabel: t('datepicker.prevYearAriaLabel'),
     nextYearAriaLabel: t('datepicker.nextYearAriaLabel'),
     invalidInputErrorMessage: i18n.t('datepicker.invalidInputErrorMessage', {
-      DEFAULT_DATE_FORMAT
+      DEFAULT_DATE_FORMAT,
     }),
     /** Automatisk utvide høyde (ved multiline) */
     isOutOfBoundsErrorMessage: 'Datoen er ikke innenfor gyldig periode',
-    isRequiredErrorMessage: t('datepicker.isRequiredErrorMessage')
+    isRequiredErrorMessage: t('datepicker.isRequiredErrorMessage'),
   };
 
   const onEdit = () => {
@@ -157,7 +158,7 @@ export const DatePicker: React.FC<DatePickerProps> = (
     setEditMode(!editMode);
   };
 
-  const onBlur: IDatePickerProps['onBlur'] = e => {
+  const onBlur: IDatePickerProps['onBlur'] = (e) => {
     rest.onBlur && rest.onBlur(e);
     if (editMode && !datePicker.current?.state.isDatePickerShown) {
       setEditMode(!editMode);
@@ -181,19 +182,22 @@ export const DatePicker: React.FC<DatePickerProps> = (
         {...labelCallout}
       />
       <FabricDatePicker
-        {...rest}
         {...defaultValues}
+        {...rest}
         id={inputId}
         ariaLabel={ariaLabel ? ariaLabel : label}
         className={classnames(
           getClassNames({ errorMessage, readonlyMode: readOnly, ...rest }),
           className
         )}
-        componentRef={ref => {
+        componentRef={(ref) => {
           datePicker.current = ref as DatePickerBase;
         }}
         disabled={readOnly ? true : rest.disabled}
         onBlur={onBlur}
+        textField={{
+          errorMessage: errorMessage,
+        }}
         strings={{
           ...DEFAULT_STRINGS,
           isRequiredErrorMessage: isRequiredErrorMessage
@@ -204,12 +208,11 @@ export const DatePicker: React.FC<DatePickerProps> = (
             : DEFAULT_STRINGS.isOutOfBoundsErrorMessage,
           invalidInputErrorMessage: invalidInputErrorMessage
             ? invalidInputErrorMessage
-            : DEFAULT_STRINGS.invalidInputErrorMessage
+            : DEFAULT_STRINGS.invalidInputErrorMessage,
         }}
       >
         {children}
       </FabricDatePicker>
-      {errorMessage && <ErrorMessage>{errorMessage}</ErrorMessage>}
     </div>
   );
 };

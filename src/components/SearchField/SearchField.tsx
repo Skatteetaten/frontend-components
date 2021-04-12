@@ -1,18 +1,18 @@
 import classnames from 'classnames';
-import {
-  ISearchBoxProps,
-  ISearchBox,
-  SearchBox
-} from 'office-ui-fabric-react/lib-commonjs/SearchBox';
+import { ISearchBoxProps, ISearchBox, SearchBox } from '@fluentui/react';
 import * as React from 'react';
 import { getClassNames } from './SearchField.classNames';
-import { IDropdownOption } from 'office-ui-fabric-react';
-import LabelWithCallout, {
+import { IDropdownOption } from '@fluentui/react';
+import i18n from 'i18next';
+import {
+  LabelWithCallout,
   calloutState,
-  LabelWithCalloutProps
-} from '../LabelWithCallout';
-import { useId } from '@reach/auto-id';
-import { useHotkeys } from '../utils/useHotkeys';
+  LabelWithCalloutProps,
+  Language,
+  generateId,
+  useHotkeys,
+  t,
+} from '../index';
 
 export interface SearchFieldProps extends ISearchBoxProps {
   /** Lukk callout på blur */
@@ -40,6 +40,8 @@ export interface SearchFieldProps extends ISearchBoxProps {
   underlined?: ISearchBoxProps['underlined'];
   /**påkalt etter bruker valger et alternativ*/
   onSelected?: (option: IDropdownOption) => void;
+  /** Language selection for what the screen reader reads out. Default is Norwegian Bokmål */
+  language?: Language;
   /** Begrens antall viste søkeresultat */
   limit?: number;
   /** Tillater tastatursnarvei på søk */
@@ -53,16 +55,17 @@ export interface SearchFieldProps extends ISearchBoxProps {
 }
 
 const searchInList = (options: Array<IDropdownOption>, filterText: string) => {
+  const regex = /[\s.,:-]+/g;
   return options
-    .filter(option => {
+    .filter((option) => {
       return (
         option.text
-          .replace(/\s/g, '')
+          .replace(regex, '')
           .toLowerCase()
-          .indexOf(filterText.replace(/\s/g, '').toLowerCase()) > -1
+          .indexOf(filterText.replace(regex, '').toLowerCase()) > -1
       );
     })
-    .map(option => option);
+    .map((option) => option);
 };
 
 const limitNumberOfResults = (list: Array<IDropdownOption>, limit?: number) => {
@@ -76,7 +79,7 @@ const limitNumberOfResults = (list: Array<IDropdownOption>, limit?: number) => {
 /**
  * @visibleName SearchField (Søkefelt)
  */
-const SearchField: React.FC<SearchFieldProps> = props => {
+export const SearchField: React.FC<SearchFieldProps> = (props) => {
   const {
     className,
     labelWithCalloutAutoDismiss,
@@ -85,6 +88,7 @@ const SearchField: React.FC<SearchFieldProps> = props => {
     label,
     labelButtonAriaLabel,
     labelCallout,
+    language,
     onCalloutToggle,
     onChange,
     onSelected,
@@ -105,11 +109,33 @@ const SearchField: React.FC<SearchFieldProps> = props => {
   const styles = getClassNames(props);
   const listRefs = React.useRef<(HTMLLIElement | null)[]>([]);
 
+  const genratedId = generateId();
+  const mainId = id ? id : 'searchfield-' + genratedId;
+  const inputId = mainId + '-input';
+  const labelId = mainId + '-label';
+  const srFocus = mainId + '-srFocus';
+  const resultsId = mainId + '-results';
+
+  if (language) {
+    i18n.changeLanguage(language);
+  }
+
+  const setSearchResult = React.useCallback(
+    (newValue: string) => {
+      if (options && newValue) {
+        let newList = searchInList(options, newValue);
+        newList = limitNumberOfResults(newList, limit);
+        setSearchResultList(newList);
+        setDropdownVisible(newList.length > 0);
+      }
+    },
+    [limit, options]
+  );
+
   React.useEffect(() => {
     setSearchResultList(options);
     setSearchResult(value ? value : '');
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [options]);
+  }, [options, setSearchResult, value]);
 
   React.useEffect(() => {
     setValue(props.value);
@@ -123,25 +149,15 @@ const SearchField: React.FC<SearchFieldProps> = props => {
     };
   });
 
-  useHotkeys(searchShortcutKeys, ev => {
+  useHotkeys(searchShortcutKeys, (ev) => {
     if (keyboardShortcut) {
       ev.preventDefault();
       return _componentRef.current?.focus();
     }
   });
 
-  const changeEvent = (text: string) => {
-    //@ts-ignore TODO
-    const event: React.ChangeEvent<HTMLInputElement> = {};
-    setValue(text);
-    onChange && onChange(event, text);
-    setDropdownVisible(false);
-    setFocus(-1);
-    listRefs.current = [];
-  };
-
   const selectEvent = (item: IDropdownOption) => {
-    setValue(item.text);
+    setValue(!onSelected ? item.text : '');
     onSelected && onSelected(item);
     setDropdownVisible(false);
     setFocus(-1);
@@ -166,9 +182,9 @@ const SearchField: React.FC<SearchFieldProps> = props => {
     }
   };
 
-  const handleClickOutside = event => {
+  const handleClickOutside = (event) => {
     const contains = listRefs.current.filter(
-      ref => ref && ref.contains(event.target)
+      (ref) => ref && ref.contains(event.target)
     );
     if (
       !contains.length &&
@@ -179,35 +195,31 @@ const SearchField: React.FC<SearchFieldProps> = props => {
     }
   };
 
-  const setSearchResult = (newValue: string) => {
-    if (options && newValue) {
-      let newList = searchInList(options, newValue);
-      newList = limitNumberOfResults(newList, limit);
-      setSearchResultList(newList);
-      setDropdownVisible(newList.length > 0);
-    }
-  };
-
-  const renderSuggestions = list => {
+  const renderSuggestions = (list) => {
     if (list.length === 0) {
-      setDropdownVisible(false);
       listRefs.current = [];
     }
     return (
       <div className={styles.searchListDropdown}>
-        <ul id="results" role="listbox" className={styles.searchList}>
+        <ul
+          id={resultsId}
+          role="listbox"
+          className={
+            dropdownVisible && list.length ? styles.searchList : styles.hiddenUl
+          }
+        >
           {list.map((listItem, key: number) => {
-            return (
+            return dropdownVisible ? (
               <li
                 aria-label={listItem.text}
                 key={listItem.key}
                 onClick={() => selectEvent(listItem)}
-                onKeyPress={ev => {
+                onKeyPress={(ev) => {
                   if (ev.keyCode === 0) {
-                    changeEvent(listItem.text);
+                    selectEvent(listItem);
                   }
                 }}
-                onKeyDown={ev => handleOnKeyDown(ev)}
+                onKeyDown={(ev) => handleOnKeyDown(ev)}
                 ref={(ref: HTMLLIElement | null) => {
                   if (ref && listRefs.current.indexOf(ref) === -1) {
                     listRefs.current.splice(key, 0, ref);
@@ -225,17 +237,12 @@ const SearchField: React.FC<SearchFieldProps> = props => {
                   {listItem.text}
                 </div>
               </li>
-            );
+            ) : null;
           })}
         </ul>
       </div>
     );
   };
-
-  const genratedId = useId(id);
-  const mainId = id ? id : 'searchfield-' + genratedId;
-  const inputId = mainId + '-input';
-  const labelId = mainId + '-label';
 
   return (
     <div id={mainId}>
@@ -251,29 +258,42 @@ const SearchField: React.FC<SearchFieldProps> = props => {
       />
       {options ? (
         <div ref={_searchBoxElement}>
+          <span id={srFocus} className={styles.srOnly}>
+            {t('searchfield.sr.focus')}
+          </span>
           <SearchBox
             {...rest}
             id={inputId}
-            aria-expanded="false"
+            aria-expanded={dropdownVisible}
+            aria-describedby={srFocus}
+            aria-owns={resultsId}
             type={'search'}
             className={classnames(styles.main, className)}
             onChange={(ev, newValue) => {
+              onChange && onChange(ev, newValue);
               if (!newValue) {
                 setDropdownVisible(false);
               } else {
                 setSearchResult(newValue);
               }
               setValue(newValue);
-              onChange && onChange(ev, newValue);
             }}
-            onKeyDown={ev => handleOnKeyDown(ev)}
+            onKeyDown={(ev) => handleOnKeyDown(ev)}
             value={value}
             componentRef={_componentRef}
             iconProps={{
-              onClick: ev => (onSearchIcon ? onSearchIcon(ev) : null)
+              iconName: 'Filter',
+              onClick: (ev) => (onSearchIcon ? onSearchIcon(ev) : null),
             }}
           />
-          {dropdownVisible && renderSuggestions(searchResultList)}
+          <span aria-live="assertive" className={styles.srOnly}>
+            {dropdownVisible
+              ? i18n.t('searchfield.sr.results', {
+                  ant: searchResultList ? searchResultList.length : 0,
+                })
+              : ''}
+          </span>
+          {renderSuggestions(searchResultList)}
         </div>
       ) : (
         <SearchBox
@@ -282,8 +302,8 @@ const SearchField: React.FC<SearchFieldProps> = props => {
           className={classnames(styles.main, className)}
           componentRef={_componentRef}
           iconProps={{
-            onClick: ev => (onSearchIcon ? onSearchIcon(ev) : null),
-            title: onSearchIcon ? searchIconTitle : ''
+            onClick: (ev) => (onSearchIcon ? onSearchIcon(ev) : null),
+            title: onSearchIcon ? searchIconTitle : '',
           }}
         />
       )}
@@ -293,7 +313,5 @@ const SearchField: React.FC<SearchFieldProps> = props => {
 
 SearchField.defaultProps = {
   border: 'default',
-  searchFieldSize: 'standard'
+  searchFieldSize: 'standard',
 };
-
-export default SearchField;

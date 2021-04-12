@@ -9,7 +9,7 @@ export function getFocusStyle(
     outline: 'transparent',
     selectors: {
       '::-moz-focus-inner': {
-        border: '0'
+        border: '0',
       },
       '.ms-Fabric--isFocusVisible &:focus:after': {
         content: '""',
@@ -20,10 +20,8 @@ export function getFocusStyle(
         border: '2px solid ' + theme.palette.skeColor.blue,
         borderRadius: radius,
         outline: 'transparent',
-        zIndex: 1
-      }
-    }
+        zIndex: 1,
+      },
+    },
   };
 }
-
-export default getFocusStyle;

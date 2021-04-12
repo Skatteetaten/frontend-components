@@ -2,10 +2,9 @@ import { mergeStyles } from '@uifabric/merge-styles';
 import {
   getTheme,
   AnimationClassNames,
-  getGlobalClassNames
+  getGlobalClassNames,
 } from '@uifabric/styling';
-import { MdIcons } from '../utils/icons/';
-import { PaletteProps } from '..';
+import { MdIcons, PaletteProps } from '../index';
 
 const errorIcon = "'" + MdIcons.icons.Error + "'";
 export const getClassNames = function getClassNames() {
@@ -29,9 +28,9 @@ export const getClassNames = function getClassNames() {
           fontFamily: MdIcons.fontFace.fontFamily,
           fontSize: fonts.small,
           content: errorIcon,
-          marginRight: 3
-        }
-      }
-    }
+          marginRight: 3,
+        },
+      },
+    },
   ]);
 };

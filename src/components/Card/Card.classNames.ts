@@ -1,43 +1,49 @@
-import Card, { CardColor, CardProps, CardState } from './Card';
-import { FontSizes, FontWeights } from '..';
+import {
+  CardColor,
+  CardBorder,
+  CardProps,
+  CardState,
+  FontSizes,
+  FontWeights,
+  PaletteProps,
+} from '../index';
 import { getTheme } from '@uifabric/styling';
 import { keyframes, mergeStyleSets } from '@uifabric/merge-styles';
-import { PaletteProps } from '..';
 
 const fadeIn = keyframes({
   from: {
-    opacity: 0
+    opacity: 0,
   },
   to: {
-    opacity: 1
-  }
+    opacity: 1,
+  },
 });
 
 function getCardBorder(props: CardProps) {
   const palette = getTheme().palette as PaletteProps;
   switch (props.border) {
-    case Card.Border.YELLOW_BORDER:
+    case CardBorder.YELLOW_BORDER:
       return {
-        border: `4px solid ${palette.skeColor.brown}`
+        border: `4px solid ${palette.skeColor.brown}`,
       };
-    case Card.Border.GREEN_BORDER:
+    case CardBorder.GREEN_BORDER:
       return {
-        border: `4px solid ${palette.skeColor.green}`
+        border: `4px solid ${palette.skeColor.green}`,
       };
-    case Card.Border.RED_BORDER:
+    case CardBorder.RED_BORDER:
       return {
-        border: `4px solid ${palette.skeColor.pink}`
+        border: `4px solid ${palette.skeColor.pink}`,
       };
-    case Card.Border.GREY_BORDER:
+    case CardBorder.GREY_BORDER:
       return {
-        border: `4px solid ${palette.skeColor.grey}`
+        border: `4px solid ${palette.skeColor.grey}`,
       };
-    case Card.Border.WHITE_BORDER:
+    case CardBorder.WHITE_BORDER:
       return {
-        border: `4px solid ${palette.skeColor.white}`
+        border: `4px solid ${palette.skeColor.white}`,
       };
     default:
-      return {};
+      return { border: 'none' };
   }
 }
 
@@ -45,11 +51,11 @@ function getMargin(props: CardProps) {
   switch (props.margin) {
     case 'large':
       return {
-        padding: '24px'
+        padding: '24px',
       };
     case 'xlarge':
       return {
-        padding: '64px'
+        padding: '64px',
       };
     default:
       return {};
@@ -69,7 +75,16 @@ export const getClassNames = (props: CardProps, state: CardState) => {
       padding: '8px 16px',
       marginBottom: props.marginbottom,
       ...getCardBorder(props),
-      ...getMargin(props)
+      ...getMargin(props),
+      width: '100%',
+      selectors: {
+        ':hover': {
+          cursor: 'pointer',
+        },
+        ':focus': {
+          outline: 'none',
+        },
+      },
     },
     expandIcon: {
       top: 0,
@@ -84,9 +99,13 @@ export const getClassNames = (props: CardProps, state: CardState) => {
       selectors: {
         i: {
           transform: isExpandedState ? 'rotate(-180deg)' : '0',
-          fontSize: FontSizes.xxLarge
-        }
-      }
+          fontSize: FontSizes.xxLarge,
+        },
+        ':hover': {
+          borderColor: palette.skeColor.blue,
+          background: palette.skeColor.lightBlue,
+        },
+      },
     },
     titlecontainer: {
       flexWrap: 'wrap',
@@ -96,9 +115,9 @@ export const getClassNames = (props: CardProps, state: CardState) => {
       outline: 'none',
       selectors: {
         ':focus': {
-          textDecoration: 'underline'
-        }
-      }
+          textDecoration: 'underline',
+        },
+      },
     },
     header: {
       width: '100%',
@@ -134,7 +153,7 @@ export const getClassNames = (props: CardProps, state: CardState) => {
       flex: '1 1 1px',
       fontSize: titlesize,
       fontWeight: FontWeights.semibold,
-      margin: 0
+      margin: 0,
     },
     titleExpand: {
       flex: '1 1 1px',
@@ -144,9 +163,8 @@ export const getClassNames = (props: CardProps, state: CardState) => {
       selectors: {
         ':hover': {
           textDecoration: 'underline',
-          cursor: 'pointer'
-        }
-      }
+        },
+      },
     },
     actions: {
       fontSize: FontSizes.medium
@@ -155,10 +173,12 @@ export const getClassNames = (props: CardProps, state: CardState) => {
       width: '100%',
       fontSize: FontSizes.large,
       fontWeight: FontWeights.regular,
-      padding: '5px 0 5px 0'
+      padding: '5px 0 5px 0',
     },
     body: {
-      animationName: fadeIn
-    }
+      textAlign: 'left',
+      animationName: fadeIn,
+      fontSize: FontSizes.medium,
+    },
   });
 };

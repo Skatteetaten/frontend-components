@@ -56,7 +56,7 @@ exports[`Table komponent matcher snapshot 1`] = `
   }
 >
   <div
-    className="SkeTable-41"
+    className="SkeTable-42"
   >
     <table>
       <thead>
@@ -137,16 +137,17 @@ exports[`Table komponent matcher snapshot 1`] = `
           rowIndex={0}
           showRowSeparators={true}
           tableHasScroll={false}
-          tableId="table-1"
+          tableId="table-123"
         >
           <tr
             className="separator"
             key="0"
           >
             <th
-              className="is-closed tableRow"
-              id="table-10_0"
-              key="table-10_0"
+              className="is-closed tableRow separator"
+              id="table-1230_0"
+              key="table-1230_0"
+              rowSpan={1}
               scope="row"
             >
               <div
@@ -155,7 +156,7 @@ exports[`Table komponent matcher snapshot 1`] = `
             </th>
             <td
               className="is-closed right"
-              key="table-10_1"
+              key="table-1230_1"
             >
               <div
                 className="cellContent cellContentLarge"
@@ -163,7 +164,7 @@ exports[`Table komponent matcher snapshot 1`] = `
             </td>
             <td
               className="is-closed right"
-              key="table-10_2"
+              key="table-1230_2"
             >
               <div
                 className="cellContent cellContentLarge"
@@ -171,7 +172,7 @@ exports[`Table komponent matcher snapshot 1`] = `
             </td>
             <td
               className="is-closed right"
-              key="table-10_3"
+              key="table-1230_3"
             >
               <div
                 className="cellContent cellContentLarge"
@@ -223,16 +224,17 @@ exports[`Table komponent matcher snapshot 1`] = `
           rowIndex={1}
           showRowSeparators={true}
           tableHasScroll={false}
-          tableId="table-1"
+          tableId="table-123"
         >
           <tr
             className="separator"
             key="1"
           >
             <th
-              className="is-closed tableRow"
-              id="table-11_0"
-              key="table-11_0"
+              className="is-closed tableRow separator"
+              id="table-1231_0"
+              key="table-1231_0"
+              rowSpan={1}
               scope="row"
             >
               <div
@@ -241,7 +243,7 @@ exports[`Table komponent matcher snapshot 1`] = `
             </th>
             <td
               className="is-closed right"
-              key="table-11_1"
+              key="table-1231_1"
             >
               <div
                 className="cellContent cellContentLarge"
@@ -249,7 +251,7 @@ exports[`Table komponent matcher snapshot 1`] = `
             </td>
             <td
               className="is-closed right"
-              key="table-11_2"
+              key="table-1231_2"
             >
               <div
                 className="cellContent cellContentLarge"
@@ -257,7 +259,7 @@ exports[`Table komponent matcher snapshot 1`] = `
             </td>
             <td
               className="is-closed right"
-              key="table-11_3"
+              key="table-1231_3"
             >
               <div
                 className="cellContent cellContentLarge"
@@ -309,16 +311,17 @@ exports[`Table komponent matcher snapshot 1`] = `
           rowIndex={2}
           showRowSeparators={true}
           tableHasScroll={false}
-          tableId="table-1"
+          tableId="table-123"
         >
           <tr
             className="separator"
             key="2"
           >
             <th
-              className="is-closed tableRow"
-              id="table-12_0"
-              key="table-12_0"
+              className="is-closed tableRow separator"
+              id="table-1232_0"
+              key="table-1232_0"
+              rowSpan={1}
               scope="row"
             >
               <div
@@ -327,7 +330,7 @@ exports[`Table komponent matcher snapshot 1`] = `
             </th>
             <td
               className="is-closed right"
-              key="table-12_1"
+              key="table-1232_1"
             >
               <div
                 className="cellContent cellContentLarge"
@@ -335,7 +338,7 @@ exports[`Table komponent matcher snapshot 1`] = `
             </td>
             <td
               className="is-closed right"
-              key="table-12_2"
+              key="table-1232_2"
             >
               <div
                 className="cellContent cellContentLarge"
@@ -343,7 +346,7 @@ exports[`Table komponent matcher snapshot 1`] = `
             </td>
             <td
               className="is-closed right"
-              key="table-12_3"
+              key="table-1232_3"
             >
               <div
                 className="cellContent cellContentLarge"
@@ -395,16 +398,17 @@ exports[`Table komponent matcher snapshot 1`] = `
           rowIndex={3}
           showRowSeparators={true}
           tableHasScroll={false}
-          tableId="table-1"
+          tableId="table-123"
         >
           <tr
             className="separator"
             key="3"
           >
             <th
-              className="is-closed tableRow"
-              id="table-13_0"
-              key="table-13_0"
+              className="is-closed tableRow separator"
+              id="table-1233_0"
+              key="table-1233_0"
+              rowSpan={1}
               scope="row"
             >
               <div
@@ -413,7 +417,7 @@ exports[`Table komponent matcher snapshot 1`] = `
             </th>
             <td
               className="is-closed right"
-              key="table-13_1"
+              key="table-1233_1"
             >
               <div
                 className="cellContent cellContentLarge"
@@ -421,7 +425,7 @@ exports[`Table komponent matcher snapshot 1`] = `
             </td>
             <td
               className="is-closed right"
-              key="table-13_2"
+              key="table-1233_2"
             >
               <div
                 className="cellContent cellContentLarge"
@@ -429,7 +433,7 @@ exports[`Table komponent matcher snapshot 1`] = `
             </td>
             <td
               className="is-closed right"
-              key="table-13_3"
+              key="table-1233_3"
             >
               <div
                 className="cellContent cellContentLarge"

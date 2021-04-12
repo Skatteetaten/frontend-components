@@ -1,10 +1,11 @@
 ** FooterContent brukes i publikumsløsninger for å markere bunnen av siden.**
 
 ```js
-import FooterContent, {
-  FooterLogo
-} from '@skatteetaten/frontend-components/FooterContent';
-import Grid from '@skatteetaten/frontend-components/Grid';
+import {
+  FooterContent,
+  FooterLogo,
+  Grid,
+} from '@skatteetaten/frontend-components';
 
 <div>
   <FooterContent>
@@ -29,8 +30,9 @@ import Grid from '@skatteetaten/frontend-components/Grid';
 <>
   <h3>Innhold i bunnen av siden</h3>
   <p>
-    Bunnen i nett-løsningene våre, inneholder typisk lenker for deling,
-    kontaktopplysniger, personvernopplysninger og lignende.
+    I alle nettløsningene våre har vi en bunn som typisk inneholder
+    kontaktopplysninger, personvernopplysninger og lenker for deling.
+    Bunn-komponenten kan inneholde flere underelementer.
   </p>
   <h3>Tilpass bunnen til ulike skjermstørrelser</h3>
   <p>
@@ -45,6 +47,21 @@ import Grid from '@skatteetaten/frontend-components/Grid';
     når skjermen er mindre enn 1024px bred, og dette tilsvarer fra og med
     «large» i grid-systemet.
   </p>
+  <h3>Tilpass bunnen til ulike skjermstørrelser</h3>
+  <ul>
+    <li>
+      Bruk grid-systemet når du setter opp bunnen fordi dette gjør at den
+      tilpasser seg ulike skjermstørrelser.
+    </li>
+  </ul>
+  <h3>Logo i bunnen</h3>
+  <ul>
+    <li>
+      Bruk komponenten FooterContent.Logo i bunnen. Logoen blir midtstilt på
+      skjermer mindre enn 1024px bred, og det tilsvarer fra og med «large» i
+      grid-systemet.
+    </li>
+  </ul>
 </>
 ```
 

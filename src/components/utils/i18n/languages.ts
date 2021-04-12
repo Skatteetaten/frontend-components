@@ -1,4 +1,4 @@
-const languages = {
+export const languages = {
   nb_NO: {
     'datepicker.ariaLabel': 'Kalender',
     'datepicker.goToToday': 'I dag',
@@ -23,11 +23,14 @@ const languages = {
     'fileuploader.error.upload.403':
       'Du har ikke rettigheter til å laste opp filer.',
     'fileuploader.error.upload.general': 'Kunne ikke laste opp fil',
+    'searchfield.sr.focus':
+      'Bruk piltaster ned/opp for å velge forslag når de vises',
+    'searchfield.sr.results': '{{ant}} forslag vises.',
     'table.sortable': 'sorterbar',
     'table.sorted_ascending': 'sortert stigende',
     'table.sorted_descending': 'sortert synkende',
     'tablerow.editable.title': 'Rediger rad',
-    'tablerow.expandable.title': 'Mer informasjon'
+    'tablerow.expandable.title': 'Mer informasjon',
   },
   nn_NO: {
     'datepicker.ariaLabel': 'Kalender',
@@ -52,11 +55,13 @@ const languages = {
     'fileuploader.error.upload.403':
       'Du har ikkje rettar til å lasta opp filer.',
     'fileuploader.error.upload.general': 'Kunne ikkje lasta opp fil',
+    'searchfield.sr.focus': 'Bruk piltastane ned/opp for å velje',
+    'searchfield.sr.results': '{{ant}} forslag visast.',
     'table.sortable': 'sorterbar',
     'table.sorted_ascending': 'sortert stigande',
     'table.sorted_descending': 'sortert søkkande',
     'tablerow.editable.title': 'Rediger rad',
-    'tablerow.expandable.title': 'Meir informasjon'
+    'tablerow.expandable.title': 'Meir informasjon',
   },
   en_GB: {
     'datepicker.ariaLabel': 'Calendar',
@@ -82,12 +87,12 @@ const languages = {
     'fileuploader.error.upload.403':
       'You do not have permission to upload files',
     'fileuploader.error.upload.general': "Can't upload file",
+    'searchfield.sr.focus': 'Use up/down to choose options when they are shown',
+    'searchfield.sr.results': '{{ant}} items shown.',
     'table.sortable': 'sortable',
     'table.sorted_ascending': 'sorted ascending',
     'table.sorted_descending': 'sorted descending',
     'tablerow.editable.title': 'Edit row',
-    'tablerow.expandable.title': 'More information'
-  }
+    'tablerow.expandable.title': 'More information',
+  },
 };
-
-export default languages;

@@ -1,3 +1,32 @@
+### **v.4.0.0 - 31.08.2020 **
+
+- UMD: Enabled umd module building for the design system. This enables it to be loaded with SystemJS for micro-frontend setups.
+- Imports: During the work with UMD building changes were made to imports. Most should be fine but some will need rewrite. Generally all componenets should now be imported directly from '@skatteetaten/frontend-componenents', and not from subfolders. This is especially important if you consume the design system as an UMD module
+- Imports: Imports from office-ui-fabric-react are now also imported directly from root and not from sub-folders e.g. office-ui-fabric-react/lib-commonjs/someComponent
+- # '@reach/auto-id': This package has been removed because of incompatability. It has been replaced by a manual alternative.
+
+### **v.3.8.1 - 10.03.2021 **
+
+- Table: now supports spanned rows and has the ability to hide edit buttons on separate rows.
+- SearchField: ability to run onChange before setting search results.
+- DatePicker: fixes a bug where initPickerDate was ignored.
+- Added chatbot icons.
+
+### **v.3.8.0 - 25.02.2021 **
+
+- A new section containing recommended patterns.
+- Table: caption is now required. Added feature to visually hide table caption, but still make it accessible to screen readers.
+- LabelWithCallout: Fixes a visual bug that showed a white area when using a border around the callout.
+- Accordion: Better support for dynamic loading of steps and correct rendering of left line. This update also removes outer margins to better support smaller screens. To bring back this margin you have to add your own custom styling.
+- SearchField: Accessibility improvements in SearchField with dropdown.
+
+### **v.3.7.7 - 20.01.2021 **
+
+- FileUploader: Support for downloading files and overriding accepted file format label.
+- AccordionItem: now send html attributes to div (supports data-testid)
+- DatePicker: Fixes a bug where error messages would not be displayed (isOutOfBounds and invalidInput)
+- LabelWithCallout: Now supports Callout with border.
+
 ### **v.3.7.6 - 08.01.2021 **
 
 - Callout: Added new prop to draw border around callout

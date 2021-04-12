@@ -1,7 +1,6 @@
 import { mergeStyleSets } from '@uifabric/merge-styles';
 import { getTheme } from '@uifabric/styling';
-import { PaletteProps } from '..';
-import { FontSizes, IconFontSizes } from '../utils/fonts';
+import { PaletteProps, FontSizes, IconFontSizes } from '../index';
 
 export function getClassNames(props): any {
   const palette = getTheme().palette as PaletteProps;
@@ -17,11 +16,11 @@ export function getClassNames(props): any {
           margin: '0 !important',
           selectors: {
             '&:last-child': {
-              borderBottom: `2px solid ${palette.skeColor.grey}`
-            }
-          }
-        }
-      }
+              borderBottom: `2px solid ${palette.skeColor.grey}`,
+            },
+          },
+        },
+      },
     },
     menuItem: {
       backgroundColor: palette.skeColor.white,
@@ -51,14 +50,14 @@ export function getClassNames(props): any {
     menuItemTitle: {
       display: 'flex',
       alignItems: 'center',
-      flex: flex ? '1 1 auto' : undefined
+      flex: flex ? '1 1 auto' : undefined,
     },
     title: {
       fontSize: FontSizes.medium,
       display: flex ? 'flex' : undefined,
       flex: flex ? '1 1 auto' : undefined,
       margin: '0 15px 0 15px',
-      padding: '10px 0'
+      padding: '10px 0',
     },
     iconWrapper: {
       display: 'flex',
@@ -71,7 +70,6 @@ export function getClassNames(props): any {
       margin: '8px 0 8px 0',
       fontSize: IconFontSizes.xlarge
     },
-
     toggleButton: {
       color: palette.skeColor.blue,
       selectors: {
@@ -91,9 +89,10 @@ export function getClassNames(props): any {
       }
     },
     content: {
+      borderTop: `2px solid ${palette.skeColor.grey}`,
       padding: 15,
       background: palette.skeColor.lightBeige,
-      display: 'block'
-    }
+      display: 'block',
+    },
   });
 }

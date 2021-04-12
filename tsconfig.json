@@ -2,7 +2,11 @@
   "compilerOptions": {
     "baseUrl": "src",
     "target": "es5",
-    "lib": ["dom", "dom.iterable", "esnext"],
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
     "allowJs": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
@@ -18,6 +22,14 @@
     "noEmit": true,
     "noFallthroughCasesInSwitch": true
   },
-  "include": ["src/components", "src/react-app-env.d.ts"],
-  "exclude": ["node_modules", "lib", "scripts", "**/*.spec.js"]
+  "include": [
+    "src/components",
+    "src/react-app-env.d.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    "lib",
+    "scripts",
+    "**/*.spec.js"
+  ]
 }

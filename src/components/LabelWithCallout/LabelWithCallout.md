@@ -1,10 +1,11 @@
 ** Brukes til å vise en label og tilhørende hjelpetekst **
 
 ```js
-import LabelWithCallout from '@skatteetaten/frontend-components/LabelWithCallout';
-import Button from '@skatteetaten/frontend-components/Button';
+import { LabelWithCallout, Button } from '@skatteetaten/frontend-components';
 
-<div style={{ width: '350px' }}>
+const [state, setState] = React.useState({ warning: false });
+
+<div style={{ width: '400px' }}>
   <LabelWithCallout
     label={'Omregistreringsavgift'}
     help={'Avgiften du må betale for å registrere kjøretøyet på en ny person.'}
@@ -12,6 +13,7 @@ import Button from '@skatteetaten/frontend-components/Button';
       state.warning && 'Du ser ut til å være fritatt for omregistreringsavgift.'
     }
   />
+  <br />
   <Button onClick={() => setState({ warning: !state.warning })}>
     {state.warning ? 'Vis med hjelpetekst' : 'Vis med varsel'}
   </Button>
@@ -21,8 +23,10 @@ import Button from '@skatteetaten/frontend-components/Button';
 Brukt i kombinasjon med annen komponent.
 
 ```js
-import LabelWithCallout from '@skatteetaten/frontend-components/LabelWithCallout';
-import SearchField from '@skatteetaten/frontend-components/SearchField';
+import {
+  LabelWithCallout,
+  SearchField,
+} from '@skatteetaten/frontend-components';
 <div style={{ width: '350px' }}>
   <LabelWithCallout
     label={'Søk'}
@@ -37,10 +41,12 @@ import SearchField from '@skatteetaten/frontend-components/SearchField';
 </div>;
 ```
 
-Flere komponeter har LabelWithCallout innebygd. Her med autoDismiss:
+LabelWithCallout brukt i tekstfelt med automatisk lukking av utropsboksen:
 
 ```js
-import TextField from '@skatteetaten/frontend-components/TextField';
+import { TextField } from '@skatteetaten/frontend-components';
+
+const [state, setState] = React.useState({ value1: '' });
 
 <>
   <div style={{ width: '300px' }}>

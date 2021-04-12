@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
 import { matches } from '../utils/test-utils';
-import TextField from './TextField';
+import { TextField } from '../index';
 
 function oppsettShallow(props) {
   return shallow(<TextField {...props} />);
@@ -31,7 +31,7 @@ describe('TextField komponent', () => {
       borderless: true,
       placeholder: 'textfield-placeholder',
       inputSize: 'large',
-      className: 'textfield-classname'
+      className: 'textfield-classname',
     });
     const textfield = wrapper.find('.ms-TextField');
     const input = wrapper.find('input');
@@ -46,7 +46,7 @@ describe('TextField komponent', () => {
 
   it('rendrer TextFiled label', () => {
     const wrapper = oppsettFullDOM({
-      label: 'textfied-label'
+      label: 'textfied-label',
     });
     const label = wrapper.find('label');
 
@@ -58,7 +58,7 @@ describe('TextField komponent', () => {
     const wrapper = oppsettFullDOM({
       id: 'Tekstfelt',
       label: 'Fullt navn',
-      help: 'Vi trenger å vite navnet ditt dersom vi skal kontakte deg senere'
+      help: 'Vi trenger å vite navnet ditt dersom vi skal kontakte deg senere',
     });
     const helpButton = wrapper.find('.ms-Icon');
     expect(helpButton.prop('data-icon-name')).toEqual('HelpOutline');
@@ -80,26 +80,21 @@ describe('TextField komponent', () => {
           Vi trenger å vite navnet <em>ditt</em> dersom vi skal kontakte deg
           senere
         </p>
-      )
+      ),
     });
     const helpButton = wrapper.find('.ms-Icon');
 
     helpButton.simulate('click');
     const callout = wrapper.find('StyledCalloutContentBase');
     expect(callout).toHaveLength(1);
-    expect(
-      callout
-        .find('Popup')
-        .find('em')
-        .html()
-    ).toContain('ditt');
+    expect(callout.find('Popup').find('em').html()).toContain('ditt');
   });
 
   it('rendrer TextFiled med varseltekst', () => {
     const wrapper = oppsettFullDOM({
       id: 'Tekstfelt',
       label: 'Antall barn',
-      warning: 'Er du sikker på at antall barn er riktig?'
+      warning: 'Er du sikker på at antall barn er riktig?',
     });
     const warningButton = wrapper.find('.ms-Icon');
 
@@ -121,7 +116,7 @@ describe('TextField komponent', () => {
         <p>
           Er du sikker på at antall <strong>barn</strong> er riktig?'
         </p>
-      )
+      ),
     });
     const warningButton = wrapper.find('.ms-Icon');
 
@@ -131,18 +126,13 @@ describe('TextField komponent', () => {
     const callout = wrapper.find('StyledCalloutContentBase');
     expect(callout).toHaveLength(1);
 
-    expect(
-      callout
-        .find('Popup')
-        .find('strong')
-        .html()
-    ).toContain('barn');
+    expect(callout.find('Popup').find('strong').html()).toContain('barn');
   });
 
   it('rendrer TextFiled i lesemodus', () => {
     const wrapper = oppsettFullDOM({
       readOnly: true,
-      editable: true
+      editable: true,
     });
     const editButton = wrapper.find('button.ms-Button--icon');
     let input = wrapper.find('input');
@@ -163,7 +153,7 @@ describe('TextField komponent', () => {
 
   it('rendrer TextFiled med feilmelding', () => {
     const wrapper = oppsettFullDOM({
-      errorMessage: 'Inntekståret må være etter 2008.'
+      errorMessage: 'Inntekståret må være etter 2008.',
     });
 
     expect(wrapper.html()).toContain('role="alert"');
@@ -171,7 +161,7 @@ describe('TextField komponent', () => {
 
   it('rendrer TextFiled med prefix', () => {
     const wrapper = oppsettFullDOM({
-      prefix: 'http://'
+      prefix: 'http://',
     });
 
     const prefix = wrapper.find('.ms-TextField-prefix');
@@ -181,7 +171,7 @@ describe('TextField komponent', () => {
 
   it('rendrer TextFiled med suffix', () => {
     const wrapper = oppsettFullDOM({
-      suffix: '.com'
+      suffix: '.com',
     });
 
     const suffix = wrapper.find('.ms-TextField-suffix');
@@ -191,7 +181,7 @@ describe('TextField komponent', () => {
 
   it('rendrer TextField med flere linjer', () => {
     const wrapper = oppsettFullDOM({
-      multiline: true
+      multiline: true,
     });
 
     expect(wrapper.find('textarea')).toHaveLength(1);
@@ -200,7 +190,7 @@ describe('TextField komponent', () => {
   it('rendrer TextField med flere linjer med satt antall linjer som vises', () => {
     const wrapper = oppsettFullDOM({
       multiline: true,
-      rows: 7
+      rows: 7,
     });
 
     expect(wrapper.find('textarea').prop('rows')).toEqual(7);

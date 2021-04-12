@@ -1,20 +1,21 @@
 ```js
-import TopBanner from '@skatteetaten/frontend-components/TopBanner';
-import Grid from '@skatteetaten/frontend-components/Grid';
-import Card from '@skatteetaten/frontend-components/Card';
-import FooterContent from '@skatteetaten/frontend-components/FooterContent';
-
-const { Layout } = require('../components/Layout/Layout.js');
-const { Header } = require('../components/Layout/Header.js');
-const { Main } = require('../components/Layout/Main.js');
-const { Article } = require('../components/Layout/Article.js');
+import {
+  Layout,
+  Header,
+  Main,
+  Article,
+  TopBanner,
+  Grid,
+  Card,
+  FooterContent,
+} from '@skatteetaten/frontend-components';
 
 const DemoBlock = ({ children }) => (
   <div
     style={{
       border: '1px solid',
       textAlign: 'center',
-      color: '#000'
+      color: '#000',
     }}
   >
     {children}

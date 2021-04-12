@@ -1,9 +1,10 @@
 import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
-import languageFile from './languages';
+import { languages as languageFile } from './languages';
 
-export const omstrukturerFlatJSON = data => {
+export const omstrukturerFlatJSON = (data) => {
   if (Object(data) !== data || Array.isArray(data)) return data;
+  /* eslint-disable prefer-const */
   let result = {},
     cur,
     prop,
@@ -37,17 +38,17 @@ i18n.use(initReactI18next).init({
   defaultNS: 'ns.translate',
   interpolation: {
     // escapeValue not needed for react as it escapes by default
-    escapeValue: false
-  }
+    escapeValue: false,
+  },
 });
 
 const languages = { nb, nn, en };
 
-Object.keys(languages).forEach(language => {
+Object.keys(languages).forEach((language) => {
   i18n.addResourceBundle(language, 'ns.translate', languages[language], true);
 });
 
 export default i18n;
-export const t = tekst => {
+export const t = (tekst) => {
   return i18n.t(tekst);
 };

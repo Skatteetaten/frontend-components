@@ -3,7 +3,7 @@
 Tydelig knapp:
 
 ```js
-import Button from '@skatteetaten/frontend-components/Button';
+import { Button } from '@skatteetaten/frontend-components';
 
 <div className="ExampleSpacing8">
   <Button buttonStyle="primary">Godkjenn</Button>{' '}
@@ -13,7 +13,7 @@ import Button from '@skatteetaten/frontend-components/Button';
 Noe nedtonet hovedhandling:
 
 ```js
-import Button from '@skatteetaten/frontend-components/Button';
+import { Button } from '@skatteetaten/frontend-components';
 
 <div className="ExampleSpacing8">
   <Button buttonStyle="primaryRoundedFilled">Send inn uendret</Button>
@@ -24,7 +24,7 @@ import Button from '@skatteetaten/frontend-components/Button';
 Advarsel:
 
 ```js
-import Button from '@skatteetaten/frontend-components/Button';
+import { Button } from '@skatteetaten/frontend-components';
 
 <div className="ExampleSpacing8">
   <Button buttonStyle="warning">Avvis</Button>
@@ -32,7 +32,7 @@ import Button from '@skatteetaten/frontend-components/Button';
 ```
 
 ```js noeditor uu
-import Link from '@skatteetaten/frontend-components/Link';
+import { Link } from '@skatteetaten/frontend-components';
 <div>
   <h3>Tips</h3>
 
@@ -79,8 +79,7 @@ import Link from '@skatteetaten/frontend-components/Link';
 ```
 
 ```js noeditor beskrivelse
-import ErrorMessage from '@skatteetaten/frontend-components/ErrorMessage';
-import Link from '@skatteetaten/frontend-components/Link';
+import { ErrorMessage, Link } from '@skatteetaten/frontend-components';
 <div>
   <h3>En knapp er hovedhandlingen på en side</h3>
   <p>
@@ -109,17 +108,17 @@ import Link from '@skatteetaten/frontend-components/Link';
   </p>
   <div className="dodont">
     <div className="do">
-      <p>Gjør slik:</p>
+      <p class="title">Gjør slik:</p>
       <Button buttonStyle="primary">Send inn</Button>
       <Button className="ml8 pa8-imp" buttonStyle="secondary">
         Avbryt
       </Button>
-      <p>Eller slik:</p>
+      <p class="title">Eller slik:</p>
       <Button buttonStyle="primaryRoundedFilled">Send inn</Button>
       <Button className="ml8">Avbryt</Button>
     </div>
     <div className="dont">
-      <p>Ikke gjør slik:</p>
+      <p class="title">Ikke gjør slik:</p>
       <Button buttonStyle="primary">Send inn</Button>
       <Button className="ml8">Avbryt</Button>
     </div>
@@ -140,14 +139,14 @@ import Link from '@skatteetaten/frontend-components/Link';
   </p>
   <div className="dodont">
     <div className="do">
-      <p>Gjør slik:</p>
+      <p class="title">Gjør slik:</p>
       <Button buttonStyle="primary">Godkjenn</Button>
       <Button buttonStyle="warning" className="ml8">
         Avvis
       </Button>
     </div>
     <div className="dont">
-      <p>Ikke gjør slik:</p>
+      <p class="title">Ikke gjør slik:</p>
       <Button buttonStyle="primary">Godkjenn</Button>
       <Button buttonStyle="primary" className="ml8">
         Avvis
@@ -166,12 +165,12 @@ import Link from '@skatteetaten/frontend-components/Link';
   </p>
   <div className="dodont">
     <div className="do">
-      <p>Gjør slik:</p>
+      <p class="title">Gjør slik:</p>
       <Button buttonStyle="primary">Send inn</Button>
       <ErrorMessage>Du må bekrefte beløpet før du kan sende inn</ErrorMessage>
     </div>
     <div className="dont">
-      <p>Ikke gjør slik:</p>
+      <p class="title">Ikke gjør slik:</p>
       <Button disabled buttonStyle="primary">
         Send inn
       </Button>

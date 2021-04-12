@@ -1,9 +1,7 @@
 import * as React from 'react';
 //import { t } from '../utils/i18n/i18n'; //Egwene
-import ActionButton from '../ActionButton/ActionButton';
 import classnames from 'classnames';
-import Image from '../Image/Image';
-import Icon from '../Icon/Icon';
+import { Icon, Image, ActionButton, UseScreen } from '../index';
 
 // @ts-ignore TODO
 import externalLogo from './assets/ske-logo.svg';
@@ -12,10 +10,9 @@ import internLogo from './assets/ske-logo-intern.svg';
 import internLogoEn from './assets/ske-logo-intern-en.svg';
 import { getClassNames as getExternalClassNames } from './External.classNames';
 import { getClassNames as getInternalClassNames } from './Internal.classNames';
-import { UseScreen } from './../utils/ScreenPlugin';
 
 // @ts-ignore TODO
-const InternalHeader = props => {
+const InternalHeader = (props) => {
   const styles = getInternalClassNames(props);
   const size = UseScreen();
 
@@ -86,8 +83,17 @@ const ExternalHeaderContent = ({ styles, ...props }) => {
   );
 };
 
-const ExternalHeader: React.FC<TopBannerProps> = props => {
+/**
+ * @visibleName TopBanner (Topp)
+ */
+export const TopBanner: React.FC<TopBannerProps> = (props) => {
+  const { external, ...rest } = props;
+  return external ? <ExternalHeader {...rest} /> : <InternalHeader {...rest} />;
+};
+
+export const ExternalHeader: React.FC<TopBannerProps> = (props) => {
   const styles = getExternalClassNames(props);
+  // @ts-ignore
   const { header, headerMain, contentWrapper } = styles;
   const compactHeight = props.compact ? 55 : 68;
 
@@ -146,14 +152,6 @@ export interface TopBannerProps {
   language?: 'nb' | 'nn' | 'en';
 }
 
-/**
- * @visibleName TopBanner (Topp)
- */
-const TopBanner: React.FC<TopBannerProps> = props => {
-  const { external, ...rest } = props;
-  return external ? <ExternalHeader {...rest} /> : <InternalHeader {...rest} />;
-};
-
 TopBanner.defaultProps = {
   title: undefined,
   homeUrl: undefined,
@@ -163,7 +161,5 @@ TopBanner.defaultProps = {
   external: false,
   compact: false,
   logoLink: false,
-  language: undefined
+  language: undefined,
 };
-
-export default TopBanner;

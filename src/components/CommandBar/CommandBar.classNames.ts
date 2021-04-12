@@ -9,56 +9,58 @@ export function getClassNames(props) {
       selectors: {
         '& .ms-CommandBar': {
           padding: '0',
-          backgroundColor: 'transparent'
+          backgroundColor: 'transparent',
         },
         '& .ms-Button--commandBar': {
           color: palette.skeColor.blue,
           paddingLeft: '8px',
           paddingRight: '8px',
-          marginRight: '2px'
+          marginRight: '2px',
         },
         '& .ms-Button--commandBar:hover': {
-          backgroundColor: palette.skeColor.lightBlue
+          backgroundColor: palette.skeColor.lightBlue,
         },
         '& .ms-Button--commandBar:hover .ms-Button-menuIcon': {
-          backgroundColor: palette.skeColor.lightBlue
+          backgroundColor: palette.skeColor.lightBlue,
         },
         '& .ms-Button--commandBar:focus': {
           border: `2px solid ${palette.skeColor.blue}`,
           paddingLeft: '6px',
-          paddingRight: '6px'
+          paddingRight: '6px',
         },
         '& :focus::after': {
-          outline: '0px solid transparent !important'
+          outline: '0px solid transparent !important',
         },
         '& .ms-Button--commandBar:active .ms-Button-label': {
-          color: palette.skeColor.darkBlue
+          color: palette.skeColor.darkBlue,
         },
         '& .ms-Button-icon': {
-          color: props.selected ? palette.skeColor.white : palette.skeColor.blue
+          color: props.selected
+            ? palette.skeColor.white
+            : palette.skeColor.blue,
         },
         '& .ms-Button-menuIcon': {
-          color: palette.skeColor.blue + '!important'
+          color: palette.skeColor.blue + '!important',
         },
         '& .ms-Button-menuIcon:hover': {
-          color: palette.skeColor.blue
+          color: palette.skeColor.blue,
         },
         '& .ms-OverflowSet-overflowButton i': {
-          color: palette.skeColor.blue
+          color: palette.skeColor.blue,
         },
         '& .ms-Button-label': {
-          color: palette.skeColor.blue
-        }
-      }
+          color: palette.skeColor.blue,
+        },
+      },
     },
     contextualMenu: {
-      backgroundColor: palette.skeColor.blue
+      backgroundColor: palette.skeColor.blue,
     },
     tabButton: {
       backgroundColor: props.selected
         ? palette.skeColor.lightBlue
         : 'transparent',
-      borderRadius: '3px'
-    }
+      borderRadius: '3px',
+    },
   });
 }

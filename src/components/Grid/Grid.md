@@ -8,7 +8,7 @@ DemoBlock = ({ children }) => (
       backgroundColor: '#ddd',
       textAlign: 'center',
       marginBottom: '0',
-      padding: '8px 0'
+      padding: '8px 0',
     }}
   >
     {children}
@@ -19,7 +19,8 @@ DemoBlock = ({ children }) => (
 Grid med standard padding:
 
 ```js
-import Grid from '@skatteetaten/frontend-components/Grid';
+import { Grid } from '@skatteetaten/frontend-components';
+
 <Grid padding="0px">
   <Grid.Row>
     <Grid.Col lg={4}>
@@ -59,7 +60,7 @@ import Grid from '@skatteetaten/frontend-components/Grid';
 Grid uten padding:
 
 ```js
-import Grid from '@skatteetaten/frontend-components/Grid';
+import { Grid } from '@skatteetaten/frontend-components';
 
 <Grid padding="0">
   <Grid.Row rowSpacing={Grid.SPACE_NONE}>
@@ -208,7 +209,7 @@ import Button from '@skatteetaten/frontend-components/Button';
 import DatePicker from '@skatteetaten/frontend-components/DatePicker';
 
 <>
-  <h3>For plassering av elementer</h3>
+  <h3>Komponent for plassering av elementer</h3>
   <p>
     Et rutenett lar deg fordele og plassere innhold på en nettside. Rutene
     plasserer innholdet vårt riktig slik at komponentene er på rett plass, selv
@@ -231,11 +232,15 @@ import DatePicker from '@skatteetaten/frontend-components/DatePicker';
     for å tilpasse seg den tilgjengelige skjermplassen.
   </p>
   <p>
-    I praksis må du forholde deg et sett av skjermstørrelser og hvordan
+    I praksis må du forholde deg til et sett av skjermstørrelser og hvordan
     rutenettet skal se ut på hver av dem. Ved gitte skjermstørrelser kan
     rutenettet justere seg for eksempel, gå fra flere kolonner på desktop til én
-    kolonne på mobil. Skjermstørrelsene som rutenettet kan justere seg på kalles
-    brekkpunkter, og komponenten bruker disse:
+    kolonne på mobil.
+  </p>
+  <p>
+    {' '}
+    Skjermstørrelsene som rutenettet kan justere seg på kalles brekkpunkter og
+    komponenten bruker disse:
   </p>
   <ul>
     <li>Small (sm): maks 479px</li>
@@ -247,9 +252,9 @@ import DatePicker from '@skatteetaten/frontend-components/DatePicker';
   </ul>
   <h3>Bruk luft for å dele eller knytte sammen ulike typer innhold</h3>
   <p>
-    Vi anbefaler at du bruker luft/anstander til å vise i hvor stor grad en
-    seksjon med innhold er knyttet til en annen, slik som du tydelig ser i
-    bunnen på <a href="https://www.skatteetaten.no">skatteetaten.no</a>.
+    Vi anbefaler at du bruker luft eller ulike anstander til å vise i hvor stor
+    grad en seksjon med innhold er knyttet til en annen, slik som du tydelig ser
+    i bunnen på <a href="https://www.skatteetaten.no">skatteetaten.no</a>.
   </p>
   <p>Du kan bruke avstander mellom radene i griden for oppnå dette:</p>
   <ul>
@@ -261,11 +266,14 @@ import DatePicker from '@skatteetaten/frontend-components/DatePicker';
     <li>Nytt type innhold eller tydelig skille: Grid.SPACE_LARGE (24px)</li>
   </ul>
 
-  <p>
-    Du kan justere også luft rundt celler ved å sette for eksempel &lt;Grid.Col
-    colPadding="0 8px 0 0"&gt;, eller fjerne den helt ved å bruke &lt;Grid.Col
-    noSpacing&gt;
-  </p>
+  <p>Du kan også justere luft rundt celler:</p>
+  <ul>
+    <li>
+      Sett for eksempel &lt;Grid.Col colPadding="0 8px 0 0"&gt; forå legge til
+      mer luft.
+    </li>
+    <li>Fjern luft helt ved å bruke &lt;Grid.Col noSpacing&gt;.</li>
+  </ul>
 </>;
 ```
 

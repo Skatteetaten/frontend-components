@@ -6,26 +6,26 @@ exports[`Accordion komponent Sender videre html atributter 1`] = `
   processList={true}
 >
   <div
-    className="accordion-38"
+    className="accordion-44"
     data-testid="testidparent123"
   >
     <Grid
-      padding="0 8px"
+      padding="0px"
     >
       <div
-        className="ske-Grid-47 "
+        className="ske-Grid-53 "
         dir="ltr"
       >
         <AccordionItem
           data-testid="testid123"
-          key=".0"
+          key=".$.0"
           processList={true}
           stepId="step-1-1"
           stepNumber={1}
           totalSteps={1}
         >
           <div
-            className="wrapperStep-37"
+            className="wrapperStep-43"
             data-testid="testid123"
             key="1"
           >
@@ -33,28 +33,31 @@ exports[`Accordion komponent Sender videre html atributter 1`] = `
               rowSpacing="0px"
             >
               <div
-                className="ske-Grid-row-50 "
+                className="ske-Grid-row-57 "
               >
-                <GridCol>
+                <GridCol
+                  noSpacing={true}
+                >
                   <div
-                    className="ske-Grid-col-49 "
+                    className="ske-Grid-col-58 "
                   >
                     <GridRow
                       rowSpacing="0px"
                     >
                       <div
-                        className="ske-Grid-row-50 "
+                        className="ske-Grid-row-57 "
                       >
                         <GridCol
                           md={1}
+                          noSpacing={true}
                           sm={2}
                           xl={1}
                         >
                           <div
-                            className="ske-Grid-col-52 "
+                            className="ske-Grid-col-60 "
                           >
                             <div
-                              className="stepNumber-41"
+                              className="stepNumber-47"
                             >
                               <span
                                 aria-label="Steg 1"
@@ -67,11 +70,12 @@ exports[`Accordion komponent Sender videre html atributter 1`] = `
                         </GridCol>
                         <GridCol
                           md={10}
+                          noSpacing={true}
                           sm={9}
                           xl={11}
                         >
                           <div
-                            className="ske-Grid-col-53 "
+                            className="ske-Grid-col-61 "
                           >
                             <hr />
                             <ToggleContent
@@ -81,23 +85,23 @@ exports[`Accordion komponent Sender videre html atributter 1`] = `
                               stepId="step-1-1"
                               styles={
                                 Object {
-                                  "accordion": "accordion-38",
-                                  "containerStep": "containerStep-36",
-                                  "content": "content-39",
-                                  "heading": "heading-40",
-                                  "stepLine": "stepLine-42",
-                                  "stepNumber": "stepNumber-41",
+                                  "accordion": "accordion-44",
+                                  "containerStep": "containerStep-42",
+                                  "content": "content-45",
+                                  "heading": "heading-46",
+                                  "stepLine": "stepLine-48",
+                                  "stepNumber": "stepNumber-47",
                                   "subComponentStyles": Object {},
-                                  "subtitle": "subtitle-46",
-                                  "toggleButton": "toggleButton-43",
-                                  "toggleButtonContent": "toggleButtonContent-45",
-                                  "toggleButtonOpen": "toggleButtonOpen-44",
-                                  "wrapperStep": "wrapperStep-37",
+                                  "subtitle": "subtitle-52",
+                                  "toggleButton": "toggleButton-49",
+                                  "toggleButtonContent": "toggleButtonContent-51",
+                                  "toggleButtonOpen": "toggleButtonOpen-50",
+                                  "wrapperStep": "wrapperStep-43",
                                 }
                               }
                             />
                             <div
-                              className="content-39"
+                              className="content-45"
                               id="step-1-1"
                             >
                               <p>
@@ -124,47 +128,50 @@ exports[`Accordion komponent Sender videre html atributter 1`] = `
 exports[`Accordion komponent matcher snapshot 1`] = `
 <Accordion>
   <div
-    className="accordion-38"
+    className="accordion-44"
   >
     <Grid
-      padding="0 8px"
+      padding="0px"
     >
       <div
-        className="ske-Grid-47 "
+        className="ske-Grid-53 "
         dir="ltr"
       >
         <AccordionItem
-          key=".0"
+          key=".$.0"
           stepNumber={1}
           totalSteps={1}
         >
           <div
-            className="wrapperStep-37"
+            className="wrapperStep-43"
             key="1"
           >
             <GridRow
               rowSpacing="0px"
             >
               <div
-                className="ske-Grid-row-50 "
+                className="ske-Grid-row-57 "
               >
-                <GridCol>
+                <GridCol
+                  noSpacing={true}
+                >
                   <div
-                    className="ske-Grid-col-49 "
+                    className="ske-Grid-col-58 "
                   >
                     <GridRow
                       rowSpacing="0px"
                     >
                       <div
-                        className="ske-Grid-row-50 "
+                        className="ske-Grid-row-57 "
                       >
                         <GridCol
                           md={12}
+                          noSpacing={true}
                           sm={12}
                           xl={12}
                         >
                           <div
-                            className="ske-Grid-col-51 "
+                            className="ske-Grid-col-59 "
                           >
                             <hr />
                             <ToggleContent
@@ -172,23 +179,23 @@ exports[`Accordion komponent matcher snapshot 1`] = `
                               onClick={[Function]}
                               styles={
                                 Object {
-                                  "accordion": "accordion-38",
-                                  "containerStep": "containerStep-36",
-                                  "content": "content-39",
-                                  "heading": "heading-40",
-                                  "stepLine": "stepLine-42",
-                                  "stepNumber": "stepNumber-41",
+                                  "accordion": "accordion-44",
+                                  "containerStep": "containerStep-42",
+                                  "content": "content-45",
+                                  "heading": "heading-46",
+                                  "stepLine": "stepLine-48",
+                                  "stepNumber": "stepNumber-47",
                                   "subComponentStyles": Object {},
-                                  "subtitle": "subtitle-46",
-                                  "toggleButton": "toggleButton-43",
-                                  "toggleButtonContent": "toggleButtonContent-45",
-                                  "toggleButtonOpen": "toggleButtonOpen-44",
-                                  "wrapperStep": "wrapperStep-37",
+                                  "subtitle": "subtitle-52",
+                                  "toggleButton": "toggleButton-49",
+                                  "toggleButtonContent": "toggleButtonContent-51",
+                                  "toggleButtonOpen": "toggleButtonOpen-50",
+                                  "wrapperStep": "wrapperStep-43",
                                 }
                               }
                             />
                             <div
-                              className="content-39"
+                              className="content-45"
                             >
                               <p>
                                 Her vises innhold

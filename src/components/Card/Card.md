@@ -1,9 +1,9 @@
 ** Innholdskort brukes til å gruppere innhold som hører sammen. **
 
 ```js
-import Card from '@skatteetaten/frontend-components/Card';
+import { Card } from '@skatteetaten/frontend-components';
 
-const initialState = { title: 'Skatteoppgjøret for 2017' };
+const [state, setState] = React.useState({ title: 'Skatteoppgjøret for 2017' });
 
 <div>
   <Card
@@ -40,13 +40,13 @@ const initialState = { title: 'Skatteoppgjøret for 2017' };
 Du kan endre tittelen mellom åpen og lukket tilstand
 
 ```js
-import Card from '@skatteetaten/frontend-components/Card';
+import { Card } from '@skatteetaten/frontend-components';
 
-const initialState = { title: 'Mine meldinger (2)' };
+const [state, setState] = React.useState({ title: 'Inntekt' });
 
 function onChange(isExpanded) {
   setState({
-    title: isExpanded ? 'Mine meldinger' : initialState.title
+    title: isExpanded ? 'Inntekt (kr 450 000)' : state.title,
   });
 }
 
@@ -55,7 +55,7 @@ function onChange(isExpanded) {
     color={Card.Color.BEIGE}
     title={state.title}
     isExpanded={false}
-    onChange={isExpanded => onChange(isExpanded)}
+    onChange={(isExpanded) => onChange(isExpanded)}
     expand
   >
     <p style={{ marginTop: 0 }}>Melding 1</p>
@@ -67,9 +67,7 @@ function onChange(isExpanded) {
 Hvitt kort med ramme:
 
 ```js
-import Card from '@skatteetaten/frontend-components/Card';
-import Grid from '@skatteetaten/frontend-components/Grid';
-import TextField from '@skatteetaten/frontend-components/TextField';
+import { Card, Grid, TextField } from '@skatteetaten/frontend-components';
 
 <div>
   <Card
