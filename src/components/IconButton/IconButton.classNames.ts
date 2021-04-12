@@ -131,8 +131,8 @@ export const getClassNames = function getClassNames(props: IconButtonProps) {
           // @ts-ignore
           ...getCircleHoverStyles(props),
         },
-        '.ms-Fabric.is-focusVisible.is-focusVisible &:focus:after': {
-          borderWidth: '0px',
+        '&:focus&:after': {
+          borderColor: 'transparent',
         },
         '&.ms-Button--icon:active': {
           color: palette.white,
