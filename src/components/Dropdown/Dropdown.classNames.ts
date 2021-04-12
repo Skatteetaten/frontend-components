@@ -34,11 +34,8 @@ function getFieldTypeStyles(props: DropdownProps) {
 }
 
 export const getClassNames = (props: DropdownProps) => {
-  const { errorMessage } = props;
   const palette = getTheme().palette as PaletteProps;
-  const color = errorMessage
-    ? palette.skeColor.error
-    : palette.skeColor.blackAlt;
+  const { errorMessage } = props;
   const inset = 0;
   const radius = '0';
   const errorIcon = "'" + MdIcons.icons.Error + "'";
@@ -61,7 +58,7 @@ export const getClassNames = (props: DropdownProps) => {
           borderColor: palette.skeColor.blackAlt,
         },
         '& .ms-Dropdown-title.ms-Dropdown-title': errorMessage && {
-          borderColor: color,
+          borderColor: errorMessage ? palette.skeColor.error : palette.skeColor.blackAlt,
           borderWidth: '2px',
         },
         // hack

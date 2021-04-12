@@ -175,4 +175,4 @@ export default {
   greenDark: '#004b1c',
   green: '#107c10',
   greenLight: '#bad80a',*/
-};
+} as PaletteProps;
