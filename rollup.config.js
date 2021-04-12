@@ -29,7 +29,6 @@ export const externalsConfig = {
     'axios',
     'tslib',
     'react-i18next',
-    '@fluentui/react',
     'react-transition-group',
   ],
 };
