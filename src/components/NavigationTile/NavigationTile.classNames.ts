@@ -58,6 +58,9 @@ function getDescription(props: NavigationTileProps): IRawStyle {
 
 export const getClassNames = (props: NavigationTileProps) => {
   const palette = getTheme().palette as PaletteProps;
+
+  console.log(palette);
+
   return mergeStyleSets({
     content: {
       selectors: {
