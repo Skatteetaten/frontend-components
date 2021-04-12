@@ -40,14 +40,14 @@ export const getClassNames = function getClassNames(props) {
     },
     headerIcon: {
       color: palette.skeColor.white,
-      fontSize: '20px',
+      fontSize: FontSizes.icon,
       marginLeft: '10px',
       fontWeight: '700',
     },
     headerLinkContainer: {
       alignItems: 'center',
       display: 'flex',
-      fontSize: '18px',
+      fontSize: FontSizes.large,
       fontWeight: '700',
       textDecorationColor: palette.skeColor.white,
       textDecoration: 'none',

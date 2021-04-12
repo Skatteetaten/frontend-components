@@ -85,7 +85,7 @@ const [language, setLanguage] = useState('nb');
       closeMenuAriaLabel="Lukk endre skriftstørrelse"
       title={'Endre skriftstørrelse'}
     >
-      <div style={{ fontSize: '24px', marginTop: '8px' }}>
+      <div style={{ fontSize: '1.5rem', marginTop: '8px' }}>
         Hold Ctrl-tasten nede (Cmd-tasten på Mac). Trykk på + for å forstørre
         eller - for å forminske.
       </div>
@@ -152,7 +152,7 @@ const [language, setLanguage] = useState('nb');
       closeMenuAriaLabel="Lukk endre skriftstørrelse"
       title={'Endre skriftstørrelse'}
     >
-      <div style={{ fontSize: '24px', marginTop: '8px' }}>
+      <div style={{ fontSize: '1.5rem', marginTop: '8px' }}>
         Hold Ctrl-tasten nede (Cmd-tasten på Mac). Trykk på + for å forstørre
         eller - for å forminske.
       </div>

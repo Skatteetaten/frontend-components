@@ -84,7 +84,7 @@ export const getClassNames = (props: FileUploaderProps) => {
       cursor: 'pointer',
     },
     uploadAreaIcon: {
-      fontSize: '20px',
+      fontSize: FontSizes.icon,
       color: palette.skeColor.blue,
     },
   });

@@ -225,7 +225,7 @@ export const getClassNames = (props) => {
           color: '#000',
           selectors: {
             '@media only screen and (max-width: 479px)': {
-              fontSize: '14px !important',
+              fontSize: '0.875rem !important',
             },
           },
         },
@@ -233,7 +233,7 @@ export const getClassNames = (props) => {
           marginTop: 4,
           selectors: {
             '@media only screen and (max-width: 479px)': {
-              fontSize: '20px !important',
+              fontSize: '1.25rem !important',
             },
           },
         },
