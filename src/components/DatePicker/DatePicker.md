@@ -1,4 +1,4 @@
-** Datovelger brukes i skjemaer når brukeren skal oppgi datoer. **
+**Datovelger brukes i skjemaer når brukeren skal oppgi datoer.**
 
 ```js
 import { DatePicker } from '@skatteetaten/frontend-components';

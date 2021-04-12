@@ -7,7 +7,7 @@ import { MessageBar } from '@skatteetaten/frontend-components';
 </MessageBar>;
 ```
 
-** Når hovedhandlingen er navigasjon til en annen side **
+**Når hovedhandlingen er navigasjon til en annen side**
 
 ```js
 import { ButtonLink } from '@skatteetaten/frontend-components';

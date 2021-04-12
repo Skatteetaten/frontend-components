@@ -1,4 +1,4 @@
-** Liste med navigasjonslenker med pil**
+**Liste med navigasjonslenker med pil**
 
 ```js
 import { LinkGroup } from '@skatteetaten/frontend-components';
@@ -20,7 +20,7 @@ const links = [
 </div>;
 ```
 
-** Eksempel på egendefinert link-implementasjon vha. react-router **
+**Eksempel på egendefinert link-implementasjon vha. react-router**
 
 ```js
 import { LinkGroup } from '@skatteetaten/frontend-components';

@@ -1,4 +1,4 @@
-** Språkvelger i publikumsløsninger **
+**Språkvelger i publikumsløsninger**
 
 For å velge mellom norsk bokmål, nynorsk, englesk og samisk i publikumsløsninger.
 
@@ -10,7 +10,7 @@ import {
   TopStripeMenu,
   TopStripeButton,
   TopBanner,
-  Link
+  Link,
 } from '@skatteetaten/frontend-components';
 
 const [language, setLanguage] = useState('nb');
@@ -50,12 +50,12 @@ import LinkGroup from '@skatteetaten/frontend-components/LinkGroup';
 const links = [
   {
     text: 'TopBanner (Topp)',
-    path: '#topbanner'
+    path: '#topbanner',
   },
   {
     text: 'TopStripe (Toppstripe)',
-    path: '#topstripe'
-  }
+    path: '#topstripe',
+  },
 ];
 
 <>

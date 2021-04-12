@@ -6,7 +6,7 @@ import { MessageBar } from '@skatteetaten/frontend-components';
 </MessageBar>;
 ```
 
-** Stegvis veiledning for brukeren **
+**Stegvis veiledning for brukeren**
 
 ```js
 import {

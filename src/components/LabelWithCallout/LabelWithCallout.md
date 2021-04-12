@@ -1,4 +1,4 @@
-** Brukes til å vise en label og tilhørende hjelpetekst **
+**Brukes til å vise en label og tilhørende hjelpetekst**
 
 ```js
 import { LabelWithCallout, Button } from '@skatteetaten/frontend-components';

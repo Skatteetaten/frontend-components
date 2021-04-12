@@ -1,4 +1,4 @@
-** Et område med kommandoer **
+**Et område med kommandoer**
 
 ```js
 const [state, setState] = React.useState({

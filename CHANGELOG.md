@@ -1,18 +1,18 @@
-### **v.4.0.0 - 31.08.2020 **
+### **v.4.0.0 - 31.08.2020**
 
 - UMD: Enabled umd module building for the design system. This enables it to be loaded with SystemJS for micro-frontend setups.
 - Imports: During the work with UMD building changes were made to imports. Most should be fine but some will need rewrite. Generally all componenets should now be imported directly from '@skatteetaten/frontend-componenents', and not from subfolders. This is especially important if you consume the design system as an UMD module
 - Imports: Imports from office-ui-fabric-react are now also imported directly from root and not from sub-folders e.g. office-ui-fabric-react/lib-commonjs/someComponent
 - # '@reach/auto-id': This package has been removed because of incompatability. It has been replaced by a manual alternative.
 
-### **v.3.8.1 - 10.03.2021 **
+### **v.3.8.1 - 10.03.2021**
 
 - Table: now supports spanned rows and has the ability to hide edit buttons on separate rows.
 - SearchField: ability to run onChange before setting search results.
 - DatePicker: fixes a bug where initPickerDate was ignored.
 - Added chatbot icons.
 
-### **v.3.8.0 - 25.02.2021 **
+### **v.3.8.0 - 25.02.2021**
 
 - A new section containing recommended patterns.
 - Table: caption is now required. Added feature to visually hide table caption, but still make it accessible to screen readers.
@@ -20,14 +20,14 @@
 - Accordion: Better support for dynamic loading of steps and correct rendering of left line. This update also removes outer margins to better support smaller screens. To bring back this margin you have to add your own custom styling.
 - SearchField: Accessibility improvements in SearchField with dropdown.
 
-### **v.3.7.7 - 20.01.2021 **
+### **v.3.7.7 - 20.01.2021**
 
 - FileUploader: Support for downloading files and overriding accepted file format label.
 - AccordionItem: now send html attributes to div (supports data-testid)
 - DatePicker: Fixes a bug where error messages would not be displayed (isOutOfBounds and invalidInput)
 - LabelWithCallout: Now supports Callout with border.
 
-### **v.3.7.6 - 08.01.2021 **
+### **v.3.7.6 - 08.01.2021**
 
 - Callout: Added new prop to draw border around callout
 - FileUploader: Added prop that makes delete compatible with webseal
@@ -35,20 +35,20 @@
 - Dialog: Fixes an issue where the logo inside the dialog dissappeared
 - Card: added ability to have more html attributes ie. data-testid.
 
-### **v.3.7.5 - 11.12.2020 **
+### **v.3.7.5 - 11.12.2020**
 
 - Fixes an issue with icons disappering with react-scripts version 4.0
 - ScrollToTopButton: Added aria-hidden to top container to hide it from screen readers.
 - Card: title can now be rendered as a custom tag, for instance h2 or h3.
 
-### **v.3.7.4 - 03.12.2020 **
+### **v.3.7.4 - 03.12.2020**
 
 - AccordionMenu: added ability to flex content inside title area
 - Icons: New icons Pin and PinOff
 - TopBanner: Fixed onClick in internal header
 - TopStripe/Link: Accessibility; a link can now be used for skipping to main content.
 
-### **v.3.7.3 - 19.11.2020 **
+### **v.3.7.3 - 19.11.2020**
 
 - DropDown and TextField: now includes aria-invalid attribute
 - AccordionItem: removed aria-controls attribute
@@ -60,11 +60,11 @@
 - New icons: Bell and Facebook
 - Updated Sketch file to version 1.6
 
-### **v.3.7.2 - 18.11.2020 **
+### **v.3.7.2 - 18.11.2020**
 
 - Table: Fixes an issue with row index and initial loading
 
-### **v.3.7.1 - 03.11.2020 **
+### **v.3.7.1 - 03.11.2020**
 
 - Table: Added compact table
 - DatePicker: Fixes a bug where icons where not displayed correctly
@@ -74,7 +74,7 @@
 - Sketch file updated to v1.5.
 - Updated documentation
 
-### **v.3.7.0 - 29.09.2020 **
+### **v.3.7.0 - 29.09.2020**
 
 - SearchField: added ability to activate with keyboard shortcut
 - TopBanner/FooterContent: added ability to display english logo.
@@ -85,7 +85,7 @@
 - Button: fixes and issue where buttons with icons were not aligned properly
 - Button: better supports multiple lines of text
 
-### **v.3.6.0 - 08.09.2020 **
+### **v.3.6.0 - 08.09.2020**
 
 - Table: now supports expandable rows. Improved accessbility by labeling sortable columns.
 - Callout: improved accessibility by removing role="dialog" as default. This is indirectly applied in LabelWithCallout and help texts in input fields.
@@ -94,7 +94,7 @@
 - FileUploader: fixes an issue where is was not possible to upload the same file.
 - Updated documentation and examples.
 
-### **v.3.5.1 - 21.08.2020 **
+### **v.3.5.1 - 21.08.2020**
 
 - Pagination: fixes an issue that displayed wrong number of items when changing page size.
 - DatePicker: added readonly mode. Component now uses hooks.
@@ -103,7 +103,7 @@
 - IconButton: accessibility improvements; remove role and changed to type=button.
 - Documentation on Icon og ActionButton updated.
 
-### **v.3.5.0 - 10.07.2020 **
+### **v.3.5.0 - 10.07.2020**
 
 - CommandBar: new component
 - Input fields: Added 2px border to input fields when displaying errors.
@@ -113,11 +113,11 @@
 - Card: fixes an issue where Card rendered invalid HTML.
 - Dropdown: better support for viewing long option strings.
 
-### **v.3.4.2 - 07.07.2020 **
+### **v.3.4.2 - 07.07.2020**
 
 - AccordionItem: Ability to wrap content in span-element when not using headingLevel.
 
-### **v.3.4.1 - 25.06.2020 **
+### **v.3.4.1 - 25.06.2020**
 
 - Pagination: fixes a bug when displaying numbers
 - Accessbility improvements to TopStripe and TextField (read only mode).
@@ -126,7 +126,7 @@
 - Fixes various semantic errors in Accordion, Table and IconButton.
 - Added section on version strategy ("Krav og versjoner") and improved documentation.
 
-### **v.3.4.0 - 28.05.2020 **
+### **v.3.4.0 - 28.05.2020**
 
 - Pagination: new component for navigating long tables or search results.
 - Spinner: changed label color from blue to same as spinner
@@ -134,12 +134,12 @@
 - RadioButtonGroup: Improved typography in description.
 - DetailsList: Ability to remove hover effect
 
-### **v.3.3.5 - 13.05.2020 **
+### **v.3.3.5 - 13.05.2020**
 
 - Sketch components updated.
 - Fixed an issue where icons could not be imported.
 
-### **v.3.3.4 - 08.05.2020 **
+### **v.3.3.4 - 08.05.2020**
 
 - Tabs: has options for border and underline for improved contrast and affordance.
 - FileUpload: added function to normalize file names.
@@ -148,7 +148,7 @@
 - Updated fabric to lastest version
 - Updated dependencies
 
-### **v.3.3.3 - 29.04.2020 **
+### **v.3.3.3 - 29.04.2020**
 
 - New component: ButtonLink. This component should be used when the "Call to action" is to navigate to another page.
 - Changed margins in OpenClose to match title
@@ -157,11 +157,11 @@
 - LabelWithCallout: added ability to have aria label on help button.
 - Updated documentation: WCAG and ARIA-information, some CSS improvements and updated «Bruk og innhold» for buttons and links.
 
-### **v.3.3.2 - 07.04.2020 **
+### **v.3.3.2 - 07.04.2020**
 
 - Changed to manual version strategy. This does not affect how the components are used, it is simply a change in the way we deploy changes.
 
-### **v.3.3.1 - 06.04.2020 **
+### **v.3.3.1 - 06.04.2020**
 
 - FileUploader now accepts multiple files.
 - Accordion subtitle now accepts object as prop.
@@ -174,7 +174,7 @@
 - Fix styling bug in heuritics and examples.
 - Brought back pink in color list.
 
-### **v.3.3.0 - 19.03.2020 **
+### **v.3.3.0 - 19.03.2020**
 
 - New component - FileUploader
 - Remove stuck scrollbar inside dialog
@@ -183,12 +183,12 @@
 - Combobox: fixed focus style
 - Upgraded to Fabric 7.82.1
 
-### **v.3.2.2 - 03.03.2020 **
+### **v.3.2.2 - 03.03.2020**
 
 - Accessibility improvements to Accordion, Dialog, MessageBar, ErrorMessage, Spinner, ProgressBar, NavigationTile and FooterContent.
 - Updated Sketch-file
 
-### **v.3.2.1 - 27.02.2020 **
+### **v.3.2.1 - 27.02.2020**
 
 - Dialog: added prop tabletContentOverflows to address an issue when scrolling on iPad.
 - Icons: Added some bigger and more detailed theme-icons
@@ -196,7 +196,7 @@
 - SearchField: Fixed a bug where not all props were sent
 - Description in RadioButtonGroup was incorrectly set to required
 
-### **v.3.2.0 - 25.02.2020 **
+### **v.3.2.0 - 25.02.2020**
 
 - OpenClose: new component
 - ActionButton: Icon can now be placed on right side.
@@ -206,14 +206,14 @@
 - LabelWithCallout: fixed an issue where the help icon was incorrecly placed if the label went over multiple lines.
 - FooterContent: fixed a typescript error
 
-### **v.3.1.1 - 10.02.2020 **
+### **v.3.1.1 - 10.02.2020**
 
 - Dialog: fixed an error where overflow content disappered on iOS.
 - Dialog: fixed the logo placement when no title is used
 - RadioButtonGroup can now display description.
 - Combobox: accessbility improvement: remove aria-role
 
-### **v.3.1.0 - 04.02.2020 **
+### **v.3.1.0 - 04.02.2020**
 
 - Internal TopBanner can now render children-elements. Added slantedAreaWidth prop to set width to slanted area.
 - Accordion: added ability to specify h-tag level

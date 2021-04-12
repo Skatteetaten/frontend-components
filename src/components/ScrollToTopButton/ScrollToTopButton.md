@@ -1,4 +1,4 @@
-** ScrollToTopButton brukes til å gå til toppen av siden. **
+**ScrollToTopButton brukes til å gå til toppen av siden.**
 
 ```js noeditor
 import { MessageBar } from '@skatteetaten/frontend-components';

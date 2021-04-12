@@ -1,4 +1,4 @@
-** Ikoner kan brukes direkte eller av de andre komponentene i Designsystemet. **
+**Ikoner kan brukes direkte eller av de andre komponentene i Designsystemet.**
 
 ```js
 import { Icon } from '@skatteetaten/frontend-components';
@@ -624,7 +624,7 @@ const iconGroup = {
     },
     {
       name: 'TemaChatbot',
-      usage: 'Chatbot - stor utgave'
+      usage: 'Chatbot - stor utgave',
     },
     {
       name: 'TemaFamilie',

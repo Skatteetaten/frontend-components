@@ -1,4 +1,4 @@
-** Avkrysningsboks brukes for eksempel i skjemaer til å bekrefte ett eller flere valg. **
+**Avkrysningsboks brukes for eksempel i skjemaer til å bekrefte ett eller flere valg.**
 
 ```js
 import { CheckBox } from '@skatteetaten/frontend-components';

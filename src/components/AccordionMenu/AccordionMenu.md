@@ -7,7 +7,7 @@ import { MessageBar } from '@skatteetaten/frontend-components';
 </MessageBar>;
 ```
 
-** Ekspanderende panel i saksbehandlingsløsninger**
+**Ekspanderende panel i saksbehandlingsløsninger**
 
 ```js
 import {

@@ -1,4 +1,4 @@
-** Lenke til filer eller nettsider **
+**Lenke til filer eller nettsider **
 
 ```js
 import { Link } from '@skatteetaten/frontend-components';

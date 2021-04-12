@@ -7,7 +7,7 @@ import { MessageBar } from '@skatteetaten/frontend-components';
 </MessageBar>;
 ```
 
-** Accordion inneholder ett eller flere ekspanderende områder med en beskrivende tittel.**
+**Accordion inneholder ett eller flere ekspanderende områder med en beskrivende tittel.**
 
 ```js
 import { Accordion, AccordionItem } from '@skatteetaten/frontend-components';
