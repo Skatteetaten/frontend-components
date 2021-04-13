@@ -40,9 +40,7 @@ exports[`StepList komponent matcher snapshot 1`] = `
                         className="ske-Grid-row-62 "
                       >
                         <GridCol
-                          lg={10}
                           sm={12}
-                          xxxl={8}
                         >
                           <div
                             className="ske-Grid-col-64 "
