@@ -1,7 +1,7 @@
 import classnames from 'classnames';
 import * as React from 'react';
 import { getClassNames } from './Card.classNames';
-import { IconButton } from '../index';
+import { Icon } from '../index';
 
 export enum CardColor {
   GREY = 'neutralGrey',
@@ -30,8 +30,6 @@ export interface CardProps extends React.HTMLAttributes<HTMLDivElement> {
   titlesize?: 'large' | 'x-large' | 'xx-large';
   /** Om kortet skal kunne utvides eller ikke */
   expand?: boolean;
-  /** Om utvidikonet skal ha sirkel eller ikke */
-  circleOnIcon?: boolean;
   /** Om kortet er utvidet eller ikke */
   isExpanded?: boolean;
   /** Finnes fire bakgrunnfarger: graa, gronn, rod eller beige */
@@ -43,12 +41,10 @@ export interface CardProps extends React.HTMLAttributes<HTMLDivElement> {
     | CardBorder.YELLOW_BORDER
     | CardBorder.RED_BORDER
     | CardBorder.GREY_BORDER;
-  /** Aksjoner i toppen av kortet */
-  actions?: object;
   /** Avstand under kortet */
   marginbottom?: string;
   /** Luft over og under kortet */
-  margin?: 'medium' | 'large' | 'xlarge';
+  margin?: 'none' | 'small' | 'medium' | 'large' | 'xlarge';
   /** Callback som kjøres når man åpner eller lukker kortet */
   onChange?: (...args: any[]) => any;
   /** Global attributt som må være unik for hele HTML dokumentet */
@@ -59,7 +55,7 @@ export interface CardProps extends React.HTMLAttributes<HTMLDivElement> {
   onClick?: () => void;
   /** aria-label */
   ariaLabel?: string;
-  /** Button type (ex. submit, reset, button). Default er 'button' */
+  /** Button type (ex. submit, reset, button). Default is 'button' */
   buttonType?: 'button' | 'submit' | 'reset';
 }
 
@@ -81,13 +77,10 @@ export class Card extends React.PureComponent<CardProps, CardState> {
     titlesize: 'x-large',
     expand: false,
     isExpanded: true,
-    color: CardColor.GREY,
-    actions: null,
+    color: CardColor.BEIGE,
     marginbottom: '2px',
     margin: 'medium',
-    circleOnIcon: true,
     buttonType: 'button',
-    ariaLabel: null,
   };
 
   constructor(props: CardProps) {
@@ -109,9 +102,7 @@ export class Card extends React.PureComponent<CardProps, CardState> {
       titleTagName,
       subtitle,
       expand,
-      actions,
       className,
-      circleOnIcon,
       id,
       buttonType,
       ariaLabel,
@@ -129,50 +120,50 @@ export class Card extends React.PureComponent<CardProps, CardState> {
     const TitleTag = titleTagName as keyof JSX.IntrinsicElements;
     const styles = getClassNames(this.props, this.state);
 
+    const expandCard = (
+      <button
+        className={styles.header}
+        onClick={expand ? this._toggleExpand : undefined}
+        aria-expanded={isExpandedState}
+        type={buttonType}
+      >
+        <div className={styles.titlecontainer}>
+          <TitleTag aria-label={title} className={styles.titleExpand}>
+            {title}
+          </TitleTag>
+          {
+            <div className={styles.subtitle} aria-label={subtitle}>
+              {subtitle}
+            </div>
+          }
+        </div>
+        <div className={styles.expandIcon}>
+          <Icon iconName={'ChevronDown'} />
+        </div>
+      </button>
+    );
+
+    const regularCard = (
+      <div className={styles.header}>
+        <div className={styles.titlecontainer}>
+          <TitleTag className={styles.title} aria-label={title}>
+            {title}
+          </TitleTag>
+          {
+            <div className={styles.subtitle} aria-label={subtitle}>
+              {subtitle}
+            </div>
+          }
+        </div>
+      </div>
+    );
     return (
       <div
         id={id}
         className={classnames(styles.root, className)}
         {...htmlAttributes}
       >
-        {title || subtitle || expand ? (
-          <div className={styles.header}>
-            <div className={styles.titlecontainer}>
-              {expand && (
-                <TitleTag
-                  aria-label={title}
-                  className={styles.titleExpand}
-                  onClick={this._toggleExpand}
-                >
-                  {title}
-                </TitleTag>
-              )}
-              {!expand && (
-                <TitleTag className={styles.title} aria-label={title}>
-                  {title}
-                </TitleTag>
-              )}
-              {actions && <div>{actions}</div>}
-              {
-                <div className={styles.subtitle} aria-label={subtitle}>
-                  {subtitle}
-                </div>
-              }
-            </div>
-            {expand && (
-              <div className={styles.expandIcon}>
-                <IconButton
-                  aria-expanded={isExpandedState}
-                  icon={'ChevronDown'}
-                  ariaLabel={ariaLabel}
-                  circle={circleOnIcon}
-                  onClick={this._toggleExpand}
-                  type={buttonType}
-                />
-              </div>
-            )}
-          </div>
-        ) : null}
+        {expand ? expandCard : title || subtitle ? regularCard : null}
         {isExpandedState && <div className={styles.body}>{children}</div>}
       </div>
     );

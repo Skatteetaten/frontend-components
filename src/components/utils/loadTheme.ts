@@ -5,9 +5,14 @@ import {
   Fonts as fonts,
   SkeIcons,
   MdIcons,
+  PaletteProps,
 } from '../index';
 // @ts-ignore TODO
-const theme = createTheme({ palette, fonts, isInverted: false });
+const theme = createTheme({
+  palette: palette as PaletteProps,
+  fonts,
+  isInverted: false,
+});
 loadTheme(theme);
 // @ts-ignore TODO
 registerIcons(SkeIcons);

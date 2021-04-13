@@ -26,12 +26,11 @@ export interface AccordionMenuItemProps
  * @visibleName AccordionMenuItem (Element i trekkspillmeny)
  */
 export const AccordionMenuItem = (props: AccordionMenuItemProps) => {
+  const styles = getClassNames(props);
+  const { heading, icon, onClick, className, children, ariaLabel } = props;
   const [isContentOpen, setContentOpen] = React.useState<boolean>(
     props.isOpen || false
   );
-
-  const { heading, icon, onClick, className, children, ariaLabel } = props;
-  const styles = getClassNames(props);
 
   const toggleVisibility = () => {
     setContentOpen(!isContentOpen);
@@ -44,22 +43,20 @@ export const AccordionMenuItem = (props: AccordionMenuItemProps) => {
     toggleVisibility();
   };
 
-  const styleTitle = styles.title;
-
   return (
     <li className={className} aria-label={ariaLabel}>
       <button
+        onClick={clickHandler}
         className={
           isContentOpen
             ? classnames(styles.menuItem, styles.menuItemIsOpen)
             : styles.menuItem
         }
         aria-expanded={isContentOpen}
-        onClick={clickHandler}
       >
         <div className={styles.menuItemTitle}>
           <Icon iconName={icon} className={styles.iconWrapper} />
-          <div className={styleTitle}>{heading}</div>
+          <div className={styles.title}>{heading}</div>
         </div>
         <div
           className={
