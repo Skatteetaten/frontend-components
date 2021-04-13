@@ -77,7 +77,7 @@ export class Card extends React.PureComponent<CardProps, CardState> {
     titlesize: 'x-large',
     expand: false,
     isExpanded: true,
-    color: CardColor.GREY,
+    color: CardColor.BEIGE,
     marginbottom: '2px',
     margin: 'medium',
     buttonType: 'button',
