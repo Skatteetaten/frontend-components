@@ -41,12 +41,10 @@ export interface CardProps extends React.HTMLAttributes<HTMLDivElement> {
     | CardBorder.YELLOW_BORDER
     | CardBorder.RED_BORDER
     | CardBorder.GREY_BORDER;
-  /** Aksjoner i toppen av kortet */
-  actions?: object;
   /** Avstand under kortet */
   marginbottom?: string;
   /** Luft over og under kortet */
-  margin?: 'medium' | 'large' | 'xlarge';
+  margin?: 'none' | 'small' | 'medium' | 'large' | 'xlarge';
   /** Callback som kjøres når man åpner eller lukker kortet */
   onChange?: (...args: any[]) => any;
   /** Global attributt som må være unik for hele HTML dokumentet */
@@ -80,7 +78,6 @@ export class Card extends React.PureComponent<CardProps, CardState> {
     expand: false,
     isExpanded: true,
     color: CardColor.GREY,
-    actions: null,
     marginbottom: '2px',
     margin: 'medium',
     buttonType: 'button',
@@ -105,7 +102,6 @@ export class Card extends React.PureComponent<CardProps, CardState> {
       titleTagName,
       subtitle,
       expand,
-      actions,
       className,
       id,
       buttonType,
@@ -135,7 +131,6 @@ export class Card extends React.PureComponent<CardProps, CardState> {
           <TitleTag aria-label={title} className={styles.titleExpand}>
             {title}
           </TitleTag>
-          {actions && <div className={styles.actions}>{actions}</div>}
           {
             <div className={styles.subtitle} aria-label={subtitle}>
               {subtitle}
@@ -154,7 +149,6 @@ export class Card extends React.PureComponent<CardProps, CardState> {
           <TitleTag className={styles.title} aria-label={title}>
             {title}
           </TitleTag>
-          {actions && <div className={styles.actions}>{actions}</div>}
           {
             <div className={styles.subtitle} aria-label={subtitle}>
               {subtitle}
