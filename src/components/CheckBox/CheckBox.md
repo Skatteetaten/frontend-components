@@ -1,16 +1,26 @@
 **Avkrysningsboks brukes for eksempel i skjemaer til å bekrefte ett eller flere valg.**
 
 ```js
-import { CheckBox } from '@skatteetaten/frontend-components';
+import { CheckBox, LabelWithCallout } from '@skatteetaten/frontend-components';
 
 <div>
   <fieldset style={{ border: 'none', margin: '0', padding: '0' }}>
-    <legend style={{ fontSize: '0.875rem', marginBottom: '4px' }}>
-      Velg aktuelle lover
-    </legend>
-    <CheckBox boxSide={'start'} label="Skatteloven" />
-    <CheckBox boxSide={'start'} label="Skattebetalingsloven" />
-    <CheckBox boxSide={'start'} label="Skatteforvaltningsloven" />
+    <LabelWithCallout
+      inFieldset
+      label="Velg det som gjelder deg"
+      help="Du kan få fradrag for enkelte ting om helse og familie. Velg deg som gjelder for deg."
+    />
+    <div style={{ height: '8px' }} />
+    <CheckBox boxSide={'start'} label="Har barn under 12 år" />
+    <CheckBox
+      boxSide={'start'}
+      label="Får ekstra reisevei til jobb på grunn av levering til barnehage eller skolefritidsordning"
+    />
+    <CheckBox
+      boxSide={'start'}
+      label="Har barn som er 12 år eller eldre og som har særskilt omsorgsbehov"
+    />
+    <CheckBox boxSide={'start'} label="Er enslig forsørger" />
   </fieldset>
 </div>;
 ```
