@@ -148,7 +148,10 @@ export class StyleGuideRenderer extends React.Component {
           </div>
           <div className="footer">
             <FooterContent>
-              <p>Versjon {version}</p>
+              <div style={{ marginLeft: '30px' }}>
+                {' '}
+                <p>Versjon {version}</p>
+              </div>
             </FooterContent>
           </div>
         </div>

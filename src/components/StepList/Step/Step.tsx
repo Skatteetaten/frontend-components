@@ -22,26 +22,28 @@ const NumberIcon = (props: any) => {
  * @visibleName Step (Enkeltsteg)
  */
 export interface StepProps extends React.HTMLAttributes<HTMLDivElement> {
-  /** Action Button for endre **/
+  /** Change-button for step **/
   actionBtn?: {
     icon?: string;
     event?: () => void;
     text: string;
     ariaLabel?: string;
   };
-  /** Overskrift for et steg */
+  /** Title displayed in the step  */
   stepTitle?: string;
-  /** Benyttes for å definere type steg som skal vises */
+  /** Type of step */
   stepType?: 'passive' | 'active' | 'result' | 'next';
-  /** Om et steg skal være synlig eller ikke */
+  /** If the step is visible or not */
   showStep?: boolean;
-  /**  Id som settes i aria-control på vise/skjule knapp som peker på innholdspanelet som knappen styrer */
+  /**  Id uses in aria-controls on show/hide button that points to content panel */
   stepId?: string;
-  /** Ikon som skal vises i resultat steg */
+  /** Icon in the result step */
   resultIcon?: string;
   className?: string;
   stepNumber?: number;
   children?: React.ReactElement;
+  /** If the step should have an outer grid for alignment to surrounding elements */
+  gridSpacing?: boolean;
 }
 
 export const Step = (props: StepProps) => {
@@ -54,6 +56,7 @@ export const Step = (props: StepProps) => {
     className,
     stepType,
     actionBtn,
+    gridSpacing,
   } = props;
   const [styles, setStyles] = React.useState(getClassNames(props));
   const size = UseScreen();
@@ -73,7 +76,15 @@ export const Step = (props: StepProps) => {
       <Grid.Row rowSpacing={Grid.SPACE_NONE}>
         <Grid.Col noSpacing={true}>
           <Grid.Row rowSpacing={Grid.SPACE_NONE}>
-            <Grid.Col sm={12}>
+            {gridSpacing && (
+              <Grid.Col noSpacing sm={0} lg={1} xxxl={2}></Grid.Col>
+            )}
+
+            <Grid.Col
+              sm={12}
+              lg={gridSpacing ? 10 : undefined}
+              xxxl={gridSpacing ? 8 : undefined}
+            >
               {stepNumber && stepNumber > 1 && (
                 <span className={classnames(styles.stepLineTop)} />
               )}
@@ -83,7 +94,7 @@ export const Step = (props: StepProps) => {
                   [styles.arrowLine]: stepType === 'next',
                 })}
               />
-              {size.gt.sm && stepType !== 'next' && (
+              {stepType !== 'next' && (
                 <NumberIcon
                   styles={styles}
                   resultIcon={resultIcon}
@@ -126,6 +137,9 @@ export const Step = (props: StepProps) => {
                 </div>
               </div>
             </Grid.Col>
+            {gridSpacing && (
+              <Grid.Col noSpacing sm={0} lg={1} xxxl={2}></Grid.Col>
+            )}
           </Grid.Row>
         </Grid.Col>
       </Grid.Row>

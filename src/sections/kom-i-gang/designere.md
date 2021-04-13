@@ -25,7 +25,7 @@ import { OpenClose, Link, Button } from '@skatteetaten/frontend-components';
 import { OpenClose, Typography } from '@skatteetaten/frontend-components';
 
 const style = {
-  marginTop: 0
+  marginTop: 0,
 };
 
 <OpenClose compact title={'Versjonshistorikk'}>
