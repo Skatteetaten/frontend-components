@@ -12,7 +12,7 @@ import { OpenClose, Link, Button } from '@skatteetaten/frontend-components';
 <div>
   <p>
     <Link
-      path={'./assets/sketch/designsystem-latest.sketch'}
+      path={'./assets/sketch/designsystem-1.7.sketch'}
       text={'Last ned nyeste Sketch-fil'}
       icon={'Download'}
       placement="before"
@@ -25,12 +25,50 @@ import { OpenClose, Link, Button } from '@skatteetaten/frontend-components';
 import { OpenClose, Typography } from '@skatteetaten/frontend-components';
 
 const style = {
-  marginTop: 0,
+  marginTop: 0
 };
 
 <OpenClose compact title={'Versjonshistorikk'}>
   <Typography>
-    <h4>Versjon 1.6 </h4>
+    <h4>Versjon 1.7 </h4>
+    <p style={{ marginTop: '0' }}>12.04.2021</p>
+    <p style={{ marginBottom: '0' }}>
+      <strong>Tabeller</strong>
+    </p>
+    <ul style={{ marginTop: '0' }}>
+      <li>
+        Ny variant: CompactTable. Denne er med 14px tekst og mindre marginer.{' '}
+      </li>
+      <li>
+        Vil du legge til testdata i tabeller? Kikk på den oppdaterte DIY-guiden
+        under Komponenter ↳ Tabeller.
+      </li>
+      <li>
+        Vil du komme igang raskt? Vi har laget et par eksempeltabeller med
+        typiske saksbehandlingsfelter.
+      </li>
+    </ul>
+    <p style={{ marginBottom: '0' }}>
+      <strong>Farger</strong>
+    </p>
+    <ul style={{ marginTop: '0' }}>
+      <li>Nye og reviderte farger til dekor og statusmeldinger. </li>
+    </ul>
+    <p style={{ marginBottom: '0' }}>
+      <strong>Komponenter</strong>
+    </p>
+    <ul style={{ marginTop: '0' }}>
+      <li>
+        AccordionMenu: Active, open og closed er endret til normal, hover og
+        open.
+      </li>
+      <li>
+        IconButton: Ny variant. No-outline (til bruk i f.eks. AccordionMenu og
+        andre steder der outline ikke vises før hover){' '}
+      </li>
+    </ul>
+    <hr />
+    <h4 style={{ marginTop: '0' }}>Versjon 1.6 </h4>
     <p style={{ marginTop: '0' }}>19.11.2020</p>
     <p style={{ marginBottom: '0' }}>
       <strong>Ikoner</strong>
