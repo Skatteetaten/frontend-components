@@ -1,6 +1,6 @@
 import { mergeStyleSets } from '@uifabric/merge-styles';
 import { getTheme } from '@uifabric/styling';
-import { PaletteProps, IconFontSizes } from '../index';
+import { PaletteProps, FontSizes, IconFontSizes } from '../index';
 
 export function getClassNames(props): any {
   const palette = getTheme().palette as PaletteProps;
@@ -13,6 +13,7 @@ export function getClassNames(props): any {
       selectors: {
         li: {
           listStyle: 'none',
+          margin: '0 !important',
           selectors: {
             '&:last-child': {
               borderBottom: `2px solid ${palette.skeColor.grey}`,
@@ -33,16 +34,21 @@ export function getClassNames(props): any {
       textAlign: 'left',
       padding: '0 15px',
       selectors: {
-        '&:hover, &:focus': {
+        '&:hover': {
+          backgroundColor: palette.skeColor.lightBlue,
+          cursor: 'pointer',
+        },
+        '&:focus': {
           backgroundColor: palette.skeColor.lightBlue,
           outline: 'none',
-          borderTop: `2px solid ${palette.skeColor.grey}`,
-          cursor: 'pointer',
+        },
+        '&:active': {
+          color: palette.skeColor.darkBlue,
         },
       },
     },
     menuItemIsOpen: {
-      border: 'none',
+      borderTop: `2px solid ${palette.skeColor.grey} !important`,
     },
     menuItemTitle: {
       display: 'flex',
@@ -50,6 +56,7 @@ export function getClassNames(props): any {
       flex: flex ? '1 1 auto' : undefined,
     },
     title: {
+      fontSize: FontSizes.medium,
       display: flex ? 'flex' : undefined,
       flex: flex ? '1 1 auto' : undefined,
       margin: '0 15px 0 15px',
@@ -66,38 +73,21 @@ export function getClassNames(props): any {
       margin: '8px 0 8px 0',
       fontSize: IconFontSizes.xlarge,
     },
-
     toggleButton: {
       color: palette.skeColor.blue,
-      width: '26px',
-      height: '26px',
-      border: '3px solid transparent',
-      borderRadius: '50%',
       selectors: {
         i: {
           fontSize: IconFontSizes.xlarge,
           paddingLeft: '1px',
         },
-        ':hover': {
-          borderColor: palette.skeColor.blue,
-          background: palette.skeColor.lightBlue,
-        },
       },
     },
     toggleButtonOpen: {
       color: palette.skeColor.blue,
-      width: '26px',
-      height: '26px',
-      border: '3px solid transparent',
-      borderRadius: '50%',
       selectors: {
         i: {
           transform: 'rotate(180deg)',
-          paddingLeft: '2px',
-        },
-        ':hover': {
-          borderColor: palette.skeColor.blue,
-          background: palette.skeColor.lightBlue,
+          paddingLeft: '1px',
         },
       },
     },

@@ -49,16 +49,28 @@ function getCardBorder(props: CardProps) {
 
 function getMargin(props: CardProps) {
   switch (props.margin) {
+    case 'none':
+      return {
+        margin: '0px',
+      };
+    case 'small':
+      return {
+        margin: '4px',
+      };
+    case 'medium':
+      return {
+        margin: '12px',
+      };
     case 'large':
       return {
-        padding: '24px',
+        margin: '24px',
       };
     case 'xlarge':
       return {
-        padding: '64px',
+        margin: '64px',
       };
     default:
-      return {};
+      return { margin: '8px' };
   }
 }
 
@@ -66,20 +78,20 @@ export const getClassNames = (props: CardProps, state: CardState) => {
   const theme = getTheme();
   const palette = theme.palette as PaletteProps;
   const { isExpandedState } = state;
-  const { titlesize } = props;
+  const { titlesize, expand } = props;
   return mergeStyleSets({
     root: {
       displayName: 'SkeCard',
       color: theme.semanticColors.bodyText,
       backgroundColor: palette.skeColor[props.color as CardColor],
-      padding: '8px 16px',
       marginBottom: props.marginbottom,
       ...getCardBorder(props),
-      ...getMargin(props),
-      width: '100%',
+      padding: 0,
+      display: 'flow-root',
+      boxSizing: 'border-box',
       selectors: {
         ':hover': {
-          cursor: 'pointer',
+          cursor: expand ? 'pointer' : 'default',
         },
         ':focus': {
           outline: 'none',
@@ -87,11 +99,15 @@ export const getClassNames = (props: CardProps, state: CardState) => {
       },
     },
     expandIcon: {
-      alignSelf: 'flex-start',
+      color: palette.skeColor.blue,
+      borderTopWidth: '0px',
+      border: 'none',
+      borderRadius: '50%',
+      paddingRight: '4px',
       selectors: {
         i: {
           transform: isExpandedState ? 'rotate(-180deg)' : '0',
-          fontSize: FontSizes.xxLarge,
+          fontSize: FontSizes.superLarge,
         },
         ':hover': {
           borderColor: palette.skeColor.blue,
@@ -100,8 +116,9 @@ export const getClassNames = (props: CardProps, state: CardState) => {
       },
     },
     titlecontainer: {
-      flexWrap: 'wrap',
-      justifyContent: 'flex-start',
+      ...getMargin(props),
+      marginBottom: '2px',
+      textAlign: 'left',
       outline: 'none',
       selectors: {
         ':focus': {
@@ -110,18 +127,37 @@ export const getClassNames = (props: CardProps, state: CardState) => {
       },
     },
     header: {
+      width: '100%',
+      backgroundColor: 'inherit',
+      border: 'none',
       display: 'flex',
-      marginTop: '5px',
       justifyContent: 'space-between',
       alignItems: 'center',
+      padding: 0,
       position: 'relative',
       wordBreak: 'break-word',
+      selectors: {
+        ':hover': {
+          cursor: expand ? 'pointer' : '',
+        },
+        ':active': {
+          color: expand ? palette.skeColor.blue : palette.skeColor.blackAlt,
+        },
+        ':focus': {
+          outlineColor: palette.skeColor.blue,
+        },
+        ':focus:not(:focus-visible)': {
+          outline: 'none',
+        },
+        ':focus-visible': {
+          outlineColor: palette.skeColor.blue,
+        },
+      },
     },
     title: {
       flex: '1 1 1px',
       fontSize: titlesize,
       fontWeight: FontWeights.semibold,
-      margin: 0,
     },
     titleExpand: {
       flex: '1 1 1px',
@@ -134,6 +170,9 @@ export const getClassNames = (props: CardProps, state: CardState) => {
         },
       },
     },
+    actions: {
+      fontSize: FontSizes.medium,
+    },
     subtitle: {
       width: '100%',
       fontSize: FontSizes.large,
@@ -144,6 +183,8 @@ export const getClassNames = (props: CardProps, state: CardState) => {
       textAlign: 'left',
       animationName: fadeIn,
       fontSize: FontSizes.medium,
+      ...getMargin(props),
+      marginTop: 0,
     },
   });
 };

@@ -131,7 +131,6 @@ import TextField from '@skatteetaten/frontend-components/TextField';
           title="Saksopplysninger"
           color={Card.Color.BEIGE}
           expand={true}
-          circleOnIcon={false}
           isExpanded={false}
         >
           <p>Ingen opplysninger registrert.</p>
@@ -144,7 +143,6 @@ import TextField from '@skatteetaten/frontend-components/TextField';
           title="Fra arbeidsgiver"
           color={Card.Color.BEIGE}
           expand={true}
-          circleOnIcon={false}
           isExpanded={false}
         >
           <p>Ingen opplysninger registrert.</p>
@@ -157,7 +155,6 @@ import TextField from '@skatteetaten/frontend-components/TextField';
           title="Fra skattemelding"
           color={Card.Color.BEIGE}
           expand={true}
-          circleOnIcon={false}
           isExpanded={false}
         >
           <p>Ingen opplysninger registrert.</p>
@@ -182,7 +179,6 @@ import TextField from '@skatteetaten/frontend-components/TextField';
           title="Skattemelding"
           color={Card.Color.BEIGE}
           expand={true}
-          circleOnIcon={false}
           isExpanded={false}
         >
           <Grid padding="0px">
