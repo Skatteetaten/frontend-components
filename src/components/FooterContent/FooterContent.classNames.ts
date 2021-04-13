@@ -12,13 +12,11 @@ export const getClassNames = () => {
     footerContent: {
       backgroundColor: palette.skeColor.burgundy,
       color: palette.skeColor.white,
-      maxWidth: '50%',
-      margin: '0 auto',
-      padding: '70px 0',
+      padding: '24px 4px',
       selectors: {
         '@media (max-width: 1023px)': {
           maxWidth: '100%',
-          padding: '70px 16px',
+          padding: '24px 16px',
         },
       },
     },
