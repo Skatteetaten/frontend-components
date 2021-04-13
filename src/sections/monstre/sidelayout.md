@@ -49,51 +49,27 @@ import Link from '@skatteetaten/frontend-components/Link';
 ### Eksempel på sidelayout for publikumsløsning
 
 ```js
-import TopStripe, {
+import {
+  Link,
+  Card,
+  TextField,
+  TopStripe,
   TopStripeMenu,
-  TopStripeButton
-} from '@skatteetaten/frontend-components/TopStripe';
-import TopBanner from '@skatteetaten/frontend-components/TopBanner';
-import Link from '@skatteetaten/frontend-components/Link';
-import Card from '@skatteetaten/frontend-components/Card';
-import TextField from '@skatteetaten/frontend-components/TextField';
-import FooterContent from '@skatteetaten/frontend-components/FooterContent';
-import Grid from '@skatteetaten/frontend-components/Grid';
-import Icon from '@skatteetaten/frontend-components/Icon';
-import Typography from '@skatteetaten/frontend-components/Typography';
-import Button from '@skatteetaten/frontend-components/Button';
-import Step from '@skatteetaten/frontend-components/StepList/Step';
-import StepList from '@skatteetaten/frontend-components/StepList';
-import LinkGroup from '@skatteetaten/frontend-components/LinkGroup';
-import { UseScreen } from '../../components/utils/ScreenPlugin';
+  TopStripeButton,
+  TopBanner,
+  FooterContent,
+  Grid,
+} from '@skatteetaten/frontend-components';
 
-const links = [
-  {
-    text: 'Beregn reisefradrag',
-    path: '#stepList'
-  },
-  {
-    text: 'Oversikt over alle fradrag',
-    path: '#stepList'
-  }
-];
-
-const titles = {
-  step1: {
-    no: 'Jobber du?',
-    en: 'Are you a wage earner doing paid work?'
-  },
-  step2: {
-    no: 'Sommerjobb?',
-    en: 'Summerjob?'
-  },
-  step3: {
-    no: 'Du er ikke pendler',
-    en: 'You are not a commuter.'
-  }
+const textStyle = {
+  fontSize: '12px',
+  textAlign: 'center',
+  textTransform: 'uppercase',
 };
 
-const screenSize = UseScreen();
+const white = {
+  color: '#ffffff',
+};
 
 <div>
   <TopStripe>
@@ -153,14 +129,14 @@ const screenSize = UseScreen();
                     style={{
                       textAlign: 'right',
                       marginTop: '-4px',
-                      marginRight: '16px'
+                      marginRight: '16px',
                     }}
                   >
                     <Icon
                       iconName="Info"
                       style={{
                         fontSize: '36px',
-                        display: screenSize.lt.xl ? 'none' : 'block'
+                        display: screenSize.lt.xl ? 'none' : 'block',
                       }}
                     />
                   </div>
@@ -194,7 +170,7 @@ const screenSize = UseScreen();
             actionBtn={{
               text: 'Endre',
               icon: 'Edit',
-              ariaLabel: 'Endre jobber du?'
+              ariaLabel: 'Endre jobber du?',
             }}
             gridSpacing
           >
@@ -209,7 +185,7 @@ const screenSize = UseScreen();
             actionBtn={{
               text: 'Endre',
               icon: 'Edit',
-              ariaLabel: 'Endre sommerjobb?'
+              ariaLabel: 'Endre sommerjobb?',
             }}
             gridSpacing
           >

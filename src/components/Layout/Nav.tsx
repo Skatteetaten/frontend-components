@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import Grid from '../Grid/Grid';
+import { Grid } from '../index';
 
 export class Nav extends Grid.Col {
   static displayName = 'Nav';
@@ -21,12 +21,12 @@ export class Nav extends Grid.Col {
     lgPull: PropTypes.number,
     xlPull: PropTypes.number,
     xxlPull: PropTypes.number,
-    xxxlPull: PropTypes.number
+    xxxlPull: PropTypes.number,
   };
   static defaultProps = {
     tag: 'nav',
     lg: 2,
-    xl: 2
+    xl: 2,
     //lgPull: 10,
     //xlPull: 8
   };
@@ -34,5 +34,3 @@ export class Nav extends Grid.Col {
     return super.render();
   }
 }
-
-export default Nav;

@@ -5,12 +5,17 @@
 Viser Kontakt oss, endre skriftsstørrelse, språk og logg inn.
 
 ```js
-import TopStripe, {
+import { useState } from 'react';
+import {
+  TopStripe,
+  LanguagePicker,
   TopStripeMenu,
-  TopStripeButton
-} from '@skatteetaten/frontend-components/TopStripe';
-import TopBanner from '@skatteetaten/frontend-components/TopBanner';
-import Link from '@skatteetaten/frontend-components/Link';
+  TopStripeButton,
+  TopBanner,
+  Link,
+} from '@skatteetaten/frontend-components';
+
+const [language, setLanguage] = useState('nb');
 
 <div>
   <TopStripe>
@@ -31,17 +36,13 @@ import Link from '@skatteetaten/frontend-components/Link';
         eller - for å forminske.
       </div>
     </TopStripeMenu>
-    <TopStripeMenu
-      showOnMobile={false}
-      closeMenuAriaLabel="Lukk Language / Språk"
-      title={'Language / Språk'}
-    >
-      <TopStripeButton>Norsk</TopStripeButton>
-      <TopStripeButton icon={'check'}>Nynorsk</TopStripeButton>
-      <TopStripeButton>Engelsk</TopStripeButton>
-      <TopStripeButton>Sørsamisk</TopStripeButton>
-      <TopStripeButton>Nordsamisk</TopStripeButton>
-    </TopStripeMenu>
+    <LanguagePicker
+      selectedLanguage={language}
+      setLanguage={setLanguage}
+      showOnMobile={true}
+      showSami={true}
+    />
+
     <Link path={'#link'} text={'Logg inn'} placement="before" />
   </TopStripe>
   <TopBanner
@@ -57,13 +58,18 @@ import Link from '@skatteetaten/frontend-components/Link';
 Viser Kontakt oss, endre skriftsstørrelse, språk, partsvalg og logg ut.
 
 ```js
-import TopStripe, {
+import { useState } from 'react';
+
+import {
+  LanguagePicker,
+  TopStripe,
   TopStripeMenu,
-  TopStripeButton
-} from '@skatteetaten/frontend-components/TopStripe';
-import TopBanner from '@skatteetaten/frontend-components/TopBanner';
-import Link from '@skatteetaten/frontend-components/Link';
-import Icon from '@skatteetaten/frontend-components/Icon';
+  TopStripeButton,
+  TopBanner,
+  Link,
+  Icon,
+} from '@skatteetaten/frontend-components';
+const [language, setLanguage] = useState('nb');
 
 <div>
   <TopStripe>
@@ -79,22 +85,17 @@ import Icon from '@skatteetaten/frontend-components/Icon';
       closeMenuAriaLabel="Lukk endre skriftstørrelse"
       title={'Endre skriftstørrelse'}
     >
-      <div style={{ fontSize: '24px', marginTop: '8px' }}>
+      <div style={{ fontSize: '1.5rem', marginTop: '8px' }}>
         Hold Ctrl-tasten nede (Cmd-tasten på Mac). Trykk på + for å forstørre
         eller - for å forminske.
       </div>
     </TopStripeMenu>
-    <TopStripeMenu
-      showOnMobile={false}
-      closeMenuAriaLabel="Lukk Language / Språk"
-      title={'Language / Språk'}
-    >
-      <TopStripeButton>Norsk</TopStripeButton>
-      <TopStripeButton icon={'check'}>Nynorsk</TopStripeButton>
-      <TopStripeButton>Engelsk</TopStripeButton>
-      <TopStripeButton>Sørsamisk</TopStripeButton>
-      <TopStripeButton ariaLabel={'Nordsamisk'}>Nordsamisk</TopStripeButton>
-    </TopStripeMenu>
+    <LanguagePicker
+      selectedLanguage={language}
+      setLanguage={setLanguage}
+      showOnMobile={true}
+      showSami={true}
+    />
 
     <span>
       <Icon
@@ -119,17 +120,21 @@ import Icon from '@skatteetaten/frontend-components/Icon';
 Viser Kontakt oss, endre skriftsstørrelse, språk, partsvalg og logg ut.
 
 ```js
-import TopStripe, {
-  TopStripeMenu,
-  TopStripeButton
-} from '@skatteetaten/frontend-components/TopStripe';
-import TopBanner from '@skatteetaten/frontend-components/TopBanner';
-import Link from '@skatteetaten/frontend-components/Link';
-import Icon from '@skatteetaten/frontend-components/Icon';
+import { useState } from 'react';
 
+import {
+  TopStripe,
+  LanguagePicker,
+  TopStripeMenu,
+  TopStripeButton,
+  TopBanner,
+  Link,
+  Icon,
+} from '@skatteetaten/frontend-components';
 import { UseScreen } from '@skatteetaten/frontend-components/utils/ScreenPlugin';
 
 const size = UseScreen();
+const [language, setLanguage] = useState('nb');
 
 <div>
   <TopStripe>
@@ -147,18 +152,18 @@ const size = UseScreen();
       closeMenuAriaLabel="Lukk endre skriftstørrelse"
       title={'Endre skriftstørrelse'}
     >
-      <div style={{ fontSize: '24px', marginTop: '8px' }}>
+      <div style={{ fontSize: '1.5rem', marginTop: '8px' }}>
         Hold Ctrl-tasten nede (Cmd-tasten på Mac). Trykk på + for å forstørre
         eller - for å forminske.
       </div>
     </TopStripeMenu>
-    <TopStripeMenu showOnMobile={false} title={'Language / Språk'}>
-      <TopStripeButton>Norsk</TopStripeButton>
-      <TopStripeButton icon={'check'}>Nynorsk</TopStripeButton>
-      <TopStripeButton>Engelsk</TopStripeButton>
-      <TopStripeButton>Sørsamisk</TopStripeButton>
-      <TopStripeButton>Nordsamisk</TopStripeButton>
-    </TopStripeMenu>
+
+    <LanguagePicker
+      selectedLanguage={language}
+      setLanguage={setLanguage}
+      showOnMobile={true}
+      showSami={true}
+    />
 
     <TopStripeMenu showOnMobile={true} icon="person" title={'Hamdi Normann'}>
       <TopStripeButton>Kari Normann</TopStripeButton>
@@ -182,20 +187,31 @@ const size = UseScreen();
 
 ### På mobil
 
-På mobil flyttes valgene for kontakt oss og skriftsstørrelse til footeren. Språkvalg legges inni TopBanner.
+På mobil flyttes valgene for kontakt oss og skriftsstørrelse til footeren.
 
 ```js
-import TopStripe, {
+import { useState } from 'react';
+
+import {
+  TopStripe,
+  LanguagePicker,
   TopStripeMenu,
-  TopStripeButton
-} from '@skatteetaten/frontend-components/TopStripe';
-import TopBanner from '@skatteetaten/frontend-components/TopBanner';
-import Link from '@skatteetaten/frontend-components/Link';
+  TopStripeButton,
+  TopBanner,
+  Link,
+} from '@skatteetaten/frontend-components';
+
+const [language, setLanguage] = useState('nb');
 
 <div>
   <TopStripe>
     <Link path={'#main-content-id'} text={'Hopp til hovedinnhold'} skipLink />
-
+    <LanguagePicker
+      selectedLanguage={language}
+      setLanguage={setLanguage}
+      showOnMobile={true}
+      showSami={true}
+    />
     <TopStripeMenu icon="person" title={'Kari Normann'}>
       <TopStripeButton>Jenny Sandli</TopStripeButton>
       <TopStripeButton>987654321 Eplepress AS</TopStripeButton>
@@ -213,7 +229,7 @@ import Link from '@skatteetaten/frontend-components/Link';
     homeText={'Tilbake til skatteetaten.no'}
   >
     <div style={{ minHeight: '80px', textAlign: 'right' }}>
-      Språkvalgene her (egen komponent finnes ennå ikke)
+      «Hamburger»-meny her (egen komponent finnes ennå ikke)
     </div>
   </TopBanner>
 </div>;

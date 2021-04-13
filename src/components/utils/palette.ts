@@ -1,4 +1,5 @@
 import { IPalette } from '@uifabric/styling';
+
 export interface SkeColorProp {
   internal: string;
   internalLight: string;
@@ -28,6 +29,7 @@ export interface SkeColorProp {
   error: string;
   transparent: string;
 }
+
 export interface PaletteProps extends IPalette {
   skeColor: SkeColorProp;
   themePrimary: string;
@@ -88,7 +90,7 @@ export enum skeColor {
   lightBlue = '#cde1f9',
   mediumBlue = '#8accff',
   error = '#a82e39',
-  transparent = 'transparent'
+  transparent = 'transparent',
 }
 
 export enum skePalette {
@@ -119,14 +121,13 @@ export enum skePalette {
   bodyBackground = '#ffffff',
   bodyText = 'rgba(0, 0, 0, 0.95)',
   disabledBackground = '#f4f4f4',
-  disabledText = '#c8c8c8'
+  disabledText = '#c8c8c8',
 }
 
-export default {
-  ...skePalette,
+//@ts-ignore
+export const DefaultPalette: PaletteProps = Object.assign(skePalette, {
   // Egendefinerte farger fra Skatteetatens designmal
-  skeColor: skeColor
-
+  skeColor: skeColor,
   /* OPPRINNELIG LISTE
   themeDarker: '#004578',
   themeDark: '#005a9e',
@@ -175,4 +176,4 @@ export default {
   greenDark: '#004b1c',
   green: '#107c10',
   greenLight: '#bad80a',*/
-};
+});

@@ -1,10 +1,7 @@
 import React from 'react';
-import ActionButton from '../../ActionButton';
 import classnames from 'classnames';
-import Grid from '../../Grid/Grid';
-import Icon from '../../Icon';
+import { ActionButton, Grid, Icon, UseScreen } from '../../index';
 import { getClassNames } from '../StepList.classNames';
-import { UseScreen } from '../../utils/ScreenPlugin';
 
 const NumberIcon = (props: any) => {
   return (
@@ -49,7 +46,7 @@ export interface StepProps extends React.HTMLAttributes<HTMLDivElement> {
   gridSpacing?: boolean;
 }
 
-const Step = (props: StepProps) => {
+export const Step = (props: StepProps) => {
   const {
     stepTitle,
     stepNumber,
@@ -59,7 +56,7 @@ const Step = (props: StepProps) => {
     className,
     stepType,
     actionBtn,
-    gridSpacing
+    gridSpacing,
   } = props;
   const [styles, setStyles] = React.useState(getClassNames(props));
   const size = UseScreen();
@@ -69,7 +66,7 @@ const Step = (props: StepProps) => {
       getClassNames({
         ...props,
         showStep: typeof props.showStep === 'boolean' ? props.showStep : true,
-        stepType: props.stepType || 'passive'
+        stepType: props.stepType || 'passive',
       })
     );
   }, [props]);
@@ -94,7 +91,7 @@ const Step = (props: StepProps) => {
               <span className={classnames(styles.stepLine)} />
               <span
                 className={classnames({
-                  [styles.arrowLine]: stepType === 'next'
+                  [styles.arrowLine]: stepType === 'next',
                 })}
               />
               {stepType !== 'next' && (
@@ -149,4 +146,3 @@ const Step = (props: StepProps) => {
     </div>
   );
 };
-export default Step;

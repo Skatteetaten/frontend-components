@@ -11,7 +11,7 @@ Vi bruker farger etter følgende regler:
 
 ```js noeditor beskrivelse
 import TinyColor from '@ctrl/tinycolor';
-import SkeBasis from '@skatteetaten/frontend-components/SkeBasis';
+import { SkeBasis } from '@skatteetaten/frontend-components';
 
 palette = Object(SkeBasis.PALETTE);
 
@@ -73,7 +73,7 @@ Vi bruker BlackAlt som farge på tekster der bakgrunnen er lys. Hvis det er teks
 
 ```js noeditor beskrivelse
 import TinyColor from '@ctrl/tinycolor';
-import SkeBasis from '@skatteetaten/frontend-components/SkeBasis';
+import { SkeBasis } from '@skatteetaten/frontend-components';
 palette = Object(SkeBasis.PALETTE);
 
 function drawSwatch(colorCode) {
@@ -107,7 +107,7 @@ På lenker med mørk bakgrunn, bruker vi lightBlue. DarkBlue bruker vi for hover
 
 ```js noeditor beskrivelse
 const { TinyColor } = require('@ctrl/tinycolor');
-import SkeBasis from '@skatteetaten/frontend-components/SkeBasis';
+import { SkeBasis } from '@skatteetaten/frontend-components';
 
 palette = Object(SkeBasis.PALETTE);
 

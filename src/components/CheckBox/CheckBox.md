@@ -1,11 +1,11 @@
 ** Avkrysningsboks brukes for eksempel i skjemaer til å bekrefte ett eller flere valg. **
 
 ```js
-import CheckBox from '@skatteetaten/frontend-components/CheckBox';
+import { CheckBox } from '@skatteetaten/frontend-components';
 
 <div>
   <fieldset style={{ border: 'none', margin: '0', padding: '0' }}>
-    <legend style={{ fontSize: '16px', marginBottom: '4px' }}>
+    <legend style={{ fontSize: '0.875rem', marginBottom: '4px' }}>
       Velg aktuelle lover
     </legend>
     <CheckBox boxSide={'start'} label="Skatteloven" />

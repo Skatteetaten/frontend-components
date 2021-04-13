@@ -1,9 +1,12 @@
 import { mergeStyles } from '@uifabric/merge-styles';
 import { getTheme } from '@uifabric/styling';
-import { FontSizes, FontWeights } from '..';
-import { PaletteProps } from '..';
-import { ButtonProps } from './Button';
-import { getFocusStyle } from '../utils/getFocusStyle';
+import {
+  FontSizes,
+  FontWeights,
+  PaletteProps,
+  ButtonProps,
+  getFocusStyle,
+} from '../index';
 
 function getTypeColor(props: ButtonProps): object {
   const palette = getTheme().palette as PaletteProps;
@@ -12,7 +15,7 @@ function getTypeColor(props: ButtonProps): object {
   const sizeNormal = {
     height: 'auto',
     minHeight: '32px',
-    padding: '7px 15px'
+    padding: '7px 15px',
   };
 
   switch (props.buttonStyle) {
@@ -26,9 +29,9 @@ function getTypeColor(props: ButtonProps): object {
         ...sizeNormal,
         selectors: {
           '@media  only screen and (max-width: 479px)': {
-            width: '100%'
-          }
-        }
+            width: '100%',
+          },
+        },
       };
     case 'primaryLarge':
       return {
@@ -42,7 +45,7 @@ function getTypeColor(props: ButtonProps): object {
         fontWeight: FontWeights.semibold,
         padding: '25px',
         height: '80px',
-        maxWidth: 'calc((75*550px)/100)'
+        maxWidth: 'calc((75*550px)/100)',
       };
     case 'primaryRoundedFilled':
       return {
@@ -50,7 +53,7 @@ function getTypeColor(props: ButtonProps): object {
         borderColor: palette.skeColor.blue,
         background: palette.skeColor.blue,
         color: palette.skeColor.white,
-        ...sizeNormal
+        ...sizeNormal,
       };
     case 'warning':
       return {
@@ -61,9 +64,9 @@ function getTypeColor(props: ButtonProps): object {
         ...sizeNormal,
         selectors: {
           '@media  only screen and (max-width: 479px)': {
-            width: '100%'
-          }
-        }
+            width: '100%',
+          },
+        },
       };
     case 'secondary':
       return {
@@ -71,7 +74,7 @@ function getTypeColor(props: ButtonProps): object {
         borderWidth: 0,
         background: 'none',
         color: palette.skeColor.blue,
-        height: 'auto'
+        height: 'auto',
       };
     default:
       // primaryRounded
@@ -80,7 +83,7 @@ function getTypeColor(props: ButtonProps): object {
         borderColor: palette.skeColor.blue,
         background: palette.skeColor.white,
         color: palette.skeColor.blue,
-        ...sizeNormal
+        ...sizeNormal,
       };
   }
 }
@@ -92,18 +95,18 @@ function getTypeFocusColor(props: ButtonProps): object {
       return {
         borderColor: palette.skeColor.blue,
         background: palette.skeColor.lightPink,
-        color: palette.bodyText
+        color: palette.bodyText,
       };
     case 'secondary':
       return {
         background: 'none',
-        color: palette.skeColor.blue
+        color: palette.skeColor.blue,
       };
     default:
       return {
         borderColor: palette.skeColor.blue,
         background: palette.skeColor.lightBlue,
-        color: palette.skeColor.blue
+        color: palette.skeColor.blue,
       };
   }
 }
@@ -115,18 +118,18 @@ function getTypeActiveColor(props: ButtonProps) {
       return {
         borderColor: palette.skeColor.pink,
         background: palette.skeColor.pink,
-        color: palette.skeColor.white
+        color: palette.skeColor.white,
       };
     case 'secondary':
       return {
         background: 'none',
-        color: palette.skeColor.darkBlue
+        color: palette.skeColor.darkBlue,
       };
     default:
       return {
         borderColor: palette.skeColor.darkBlue,
         background: palette.skeColor.darkBlue,
-        color: palette.skeColor.white
+        color: palette.skeColor.white,
       };
   }
 }
@@ -135,11 +138,11 @@ function getDisabledColor(props: ButtonProps) {
   switch (props.buttonStyle) {
     case 'primary':
       return {
-        boxShadow: `none`
+        boxShadow: `none`,
       };
     case 'secondary':
       return {
-        background: 'none'
+        background: 'none',
       };
     default:
       return;
@@ -149,7 +152,7 @@ function getDisabledColor(props: ButtonProps) {
 function getLabelStyles(props: ButtonProps) {
   if (props.buttonStyle === 'secondary') {
     return {
-      textDecoration: 'underline'
+      textDecoration: 'underline',
     };
   } else {
     return;
@@ -192,27 +195,27 @@ export function getClassNames(props: ButtonProps): string {
           transition: 'background 0.3s',
           textAlign: props.icon ? 'left' : 'center',
           verticalAlign: 'top',
-          ...getTypeColor(props)
+          ...getTypeColor(props),
         },
         '&.ms-Button:hover, &.ms-Button:focus': {
-          ...getTypeFocusColor(props)
+          ...getTypeFocusColor(props),
         },
         '&.ms-Button:hover .ms-Button-label': {
-          ...getLabelStyles(props)
+          ...getLabelStyles(props),
         },
         '&.ms-Button:active': {
-          ...getTypeActiveColor(props)
+          ...getTypeActiveColor(props),
         },
         '&.ms-Button:disabled': {
           background: palette.skeColor.whiteGrey,
           borderColor: palette.skeColor.lightGrey,
           color: palette.skeColor.lightGrey,
-          ...getDisabledColor(props)
+          ...getDisabledColor(props),
         },
         '&.ms-Button i': {
-          fontSize: FontSizes.icon
-        }
-      }
-    }
+          fontSize: FontSizes.icon,
+        },
+      },
+    },
   ]);
 }

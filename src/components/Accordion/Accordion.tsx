@@ -1,11 +1,11 @@
 import * as React from 'react';
-import Grid from '../Grid/Grid';
+import { Grid } from '../index';
 import { getClassNames } from './Accordion.classNames';
 import classnames from 'classnames';
-import { AccordionItemProps } from './AccordionItem';
+import { AccordionItemProps } from '../index';
 
-interface AccordionProps extends React.HTMLAttributes<HTMLDivElement> {
-  /** Aria-label on main container*/
+export interface AccordionProps extends React.HTMLAttributes<HTMLDivElement> {
+  /** aria-label */
   ariaLabel?: string;
   children?: React.ReactNode;
   /** Custom styling */
@@ -21,7 +21,7 @@ interface AccordionProps extends React.HTMLAttributes<HTMLDivElement> {
  * @visibleName Accordion (Trekkspill)
  */
 
-const Accordion: React.FC<AccordionProps> = props => {
+export const Accordion: React.FC<AccordionProps> = (props) => {
   const {
     processList,
     stepId,
@@ -32,7 +32,7 @@ const Accordion: React.FC<AccordionProps> = props => {
     ...htmlAttributes
   } = props;
   const { accordion } = getClassNames();
-  const validChildren = React.Children.toArray(children).filter(child =>
+  const validChildren = React.Children.toArray(children).filter((child) =>
     React.isValidElement(child)
   );
   const totalSteps = React.Children.count(validChildren);
@@ -53,7 +53,7 @@ const Accordion: React.FC<AccordionProps> = props => {
               processList,
               headingLevel: child.props.headingLevel
                 ? child.props.headingLevel
-                : headingLevel
+                : headingLevel,
             });
           }
         })}
@@ -61,5 +61,3 @@ const Accordion: React.FC<AccordionProps> = props => {
     </div>
   );
 };
-
-export default Accordion;

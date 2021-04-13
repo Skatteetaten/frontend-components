@@ -1,6 +1,6 @@
 import { mergeStyleSets } from '@uifabric/merge-styles';
 import { getTheme } from '@uifabric/styling';
-import { FontSizes, FontWeights, PaletteProps } from '..';
+import { FontSizes, FontWeights, PaletteProps } from '../index';
 
 export const getClassNames = () => {
   const palette = getTheme().palette as PaletteProps;
@@ -25,20 +25,20 @@ export const getClassNames = () => {
         '&:hover': {
           borderColor: palette.skeColor.blue,
           background: palette.skeColor.lightBlue,
-          color: palette.skeColor.blue
+          color: palette.skeColor.blue,
         },
         '&:focus': {
           borderColor: palette.skeColor.blue,
           background: palette.skeColor.lightBlue,
           color: palette.skeColor.blue,
-          outline: 'none'
+          outline: 'none',
         },
         '&:active': {
           borderColor: palette.skeColor.darkBlue,
           background: palette.skeColor.darkBlue,
-          color: palette.skeColor.white
-        }
-      }
-    }
+          color: palette.skeColor.white,
+        },
+      },
+    },
   });
 };

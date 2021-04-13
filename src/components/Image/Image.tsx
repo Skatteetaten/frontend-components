@@ -1,14 +1,11 @@
 import * as React from 'react';
-import {
-  Image as FabricImage,
-  IImageProps
-} from 'office-ui-fabric-react/lib-commonjs/Image';
+import { Image as FabricImage, IImageProps } from '@fluentui/react';
 
-interface ImageProps extends IImageProps {}
+export interface ImageProps extends IImageProps {}
 /**
  * @visibleName Image (Bilde)
  */
-const Image: React.FC<ImageProps> = props => {
+export const Image: React.FC<ImageProps> = (props) => {
   const { children, className, ...rest } = props;
   return (
     <FabricImage {...rest} className={className}>
@@ -16,5 +13,3 @@ const Image: React.FC<ImageProps> = props => {
     </FabricImage>
   );
 };
-
-export default Image;

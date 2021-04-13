@@ -5,7 +5,7 @@ import classnames from 'classnames';
 export enum ChipType {
   WARNING = 'lightPink',
   OK = 'lightGreen',
-  NEUTRAL = 'beige'
+  NEUTRAL = 'beige',
 }
 
 export interface ChipProps extends React.HTMLAttributes<HTMLDivElement> {
@@ -21,13 +21,13 @@ export interface ChipProps extends React.HTMLAttributes<HTMLDivElement> {
 /**
  * @visibleName Chip (Emneknagg)
  */
-export default class Chip extends React.PureComponent<ChipProps, {}> {
+export class Chip extends React.PureComponent<ChipProps, {}> {
   static WARNING = ChipType.WARNING;
   static OK = ChipType.OK;
   static NEUTRAL = ChipType.NEUTRAL;
   static defaultProps = {
     size: 'standard',
-    type: Chip.NEUTRAL
+    type: Chip.NEUTRAL,
   };
 
   render() {

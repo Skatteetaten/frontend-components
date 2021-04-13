@@ -1,2 +1,2 @@
-export { default } from './Callout';
+export { Callout as default } from './Callout';
 export * from './Callout';

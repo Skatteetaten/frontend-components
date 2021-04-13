@@ -7,14 +7,12 @@ Som designer samarbeider du med utviklerne i prosjektet ditt for å best mulig f
 Vi har laget Sketch-varianter av komponentene, slik at skissene dine kan harmonere med de tekniske.
 
 ```js noeditor
-import OpenClose from '@skatteetaten/frontend-components/OpenClose';
-import Link from '@skatteetaten/frontend-components/Link';
-import Button from '@skatteetaten/frontend-components/Button';
+import { OpenClose, Link, Button } from '@skatteetaten/frontend-components';
 
 <div>
   <p>
     <Link
-      path={'./assets/sketch/designsystem-latest.sketch'}
+      path={'./assets/sketch/designsystem-1.7.sketch'}
       text={'Last ned nyeste Sketch-fil'}
       icon={'Download'}
       placement="before"
@@ -24,16 +22,53 @@ import Button from '@skatteetaten/frontend-components/Button';
 ```
 
 ```js noeditor
-import OpenClose from '@skatteetaten/frontend-components/OpenClose';
-import Typography from '@skatteetaten/frontend-components/Typography';
+import { OpenClose, Typography } from '@skatteetaten/frontend-components';
 
 const style = {
-  marginTop: 0
+  marginTop: 0,
 };
 
-<OpenClose title={'Versjonshistorikk'}>
+<OpenClose compact title={'Versjonshistorikk'}>
   <Typography>
-    <h4>Versjon 1.6 </h4>
+    <h4>Versjon 1.7 </h4>
+    <p style={{ marginTop: '0' }}>12.04.2021</p>
+    <p style={{ marginBottom: '0' }}>
+      <strong>Tabeller</strong>
+    </p>
+    <ul style={{ marginTop: '0' }}>
+      <li>
+        Ny variant: CompactTable. Denne er med 14px tekst og mindre marginer.{' '}
+      </li>
+      <li>
+        Vil du legge til testdata i tabeller? Kikk på den oppdaterte DIY-guiden
+        under Komponenter ↳ Tabeller.
+      </li>
+      <li>
+        Vil du komme igang raskt? Vi har laget et par eksempeltabeller med
+        typiske saksbehandlingsfelter.
+      </li>
+    </ul>
+    <p style={{ marginBottom: '0' }}>
+      <strong>Farger</strong>
+    </p>
+    <ul style={{ marginTop: '0' }}>
+      <li>Nye og reviderte farger til dekor og statusmeldinger. </li>
+    </ul>
+    <p style={{ marginBottom: '0' }}>
+      <strong>Komponenter</strong>
+    </p>
+    <ul style={{ marginTop: '0' }}>
+      <li>
+        AccordionMenu: Active, open og closed er endret til normal, hover og
+        open.
+      </li>
+      <li>
+        IconButton: Ny variant. No-outline (til bruk i f.eks. AccordionMenu og
+        andre steder der outline ikke vises før hover){' '}
+      </li>
+    </ul>
+    <hr />
+    <h4 style={{ marginTop: '0' }}>Versjon 1.6 </h4>
     <p style={{ marginTop: '0' }}>19.11.2020</p>
     <p style={{ marginBottom: '0' }}>
       <strong>Ikoner</strong>
@@ -192,8 +227,7 @@ const style = {
 ### Sette opp Sketch
 
 ```js noeditor
-import Accordion from '@skatteetaten/frontend-components/Accordion';
-import AccordionItem from '@skatteetaten/frontend-components/Accordion/AccordionItem';
+import { Accordion, AccordionItem } from '@skatteetaten/frontend-components';
 <div>
   <Accordion processList>
     <AccordionItem
@@ -236,8 +270,7 @@ import AccordionItem from '@skatteetaten/frontend-components/Accordion/Accordion
 Komponentene finnes også i Axure-versjon. Etter at du har fått tilgang til dem vil de automatisk dukke opp i widget-menyen din i Axure. Du kan også bla i komponentene:
 
 ```js noeditor
-import OpenClose from '@skatteetaten/frontend-components/OpenClose';
-import Link from '@skatteetaten/frontend-components/Link';
+import { OpenClose, Link } from '@skatteetaten/frontend-components';
 
 <div>
   <p>

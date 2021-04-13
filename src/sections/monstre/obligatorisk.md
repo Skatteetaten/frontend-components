@@ -1,22 +1,24 @@
 ```js noeditor
-import Card from '@skatteetaten/frontend-components/Card';
-import Accordion from '@skatteetaten/frontend-components/Accordion';
-import AccordionItem from '@skatteetaten/frontend-components/Accordion/AccordionItem';
-import Button from '@skatteetaten/frontend-components/Button';
-import TextField from '@skatteetaten/frontend-components/TextField';
-import RadioButtonGroup from '@skatteetaten/frontend-components/RadioButtonGroup';
+import {
+  Accordion,
+  AccordionItem,
+  Card,
+  TextField,
+  Button,
+  RadioButtonGroup,
+} from '@skatteetaten/frontend-components';
 
 const initialState = {
   options: [
     {
       key: 'A',
-      text: 'Enkeltpersonsforetak'
+      text: 'Enkeltpersonsforetak',
     },
     {
       key: 'B',
-      text: 'Aksjeselskap'
-    }
-  ]
+      text: 'Aksjeselskap',
+    },
+  ],
 };
 
 <div>

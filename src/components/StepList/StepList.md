@@ -1,5 +1,5 @@
 ```js noeditor
-import MessageBar from '@skatteetaten/frontend-components/MessageBar';
+import { MessageBar } from '@skatteetaten/frontend-components';
 
 <MessageBar type={MessageBar.Type.info}>
   Se tilhørende underkompoent <a href="/#step">Step</a> for komplett API.
@@ -9,37 +9,39 @@ import MessageBar from '@skatteetaten/frontend-components/MessageBar';
 ** Stegvis veiledning for brukeren **
 
 ```js
-import Button from '@skatteetaten/frontend-components/Button';
-import RadioButtonGroup from '@skatteetaten/frontend-components/RadioButtonGroup';
-import Step from '@skatteetaten/frontend-components/StepList/Step';
-import StepList from '@skatteetaten/frontend-components/StepList';
+import {
+  Button,
+  RadioButtonGroup,
+  Step,
+  StepList,
+} from '@skatteetaten/frontend-components';
 
-const initialState = {
+const [state, setState] = React.useState({
   options: [
     {
       key: 'A',
-      text: 'Jeg bor i Norge'
+      text: 'Jeg bor i Norge',
     },
     {
       key: 'B',
-      text: 'Ikke i Norge'
-    }
-  ]
-};
+      text: 'Ikke i Norge',
+    },
+  ],
+});
 
 const titles = {
   step1: {
     no: 'Jobber du?',
-    en: 'Are you a wage earner doing paid work?'
+    en: 'Are you a wage earner doing paid work?',
   },
   step2: {
     no: 'Overnatting',
-    en: 'Spend the night somewhere else than at home?'
+    en: 'Spend the night somewhere else than at home?',
   },
   step3: {
     no: 'Bor i Norge',
-    en: 'Where is your home?'
-  }
+    en: 'Where is your home?',
+  },
 };
 const showFirstStep = true;
 const testFunc = () => {
@@ -55,7 +57,7 @@ const testFunc = () => {
         text: 'Endre',
         icon: 'edit',
         event: testFunc,
-        ariaLabel: 'Endre jobber du?'
+        ariaLabel: 'Endre jobber du?',
       }}
     >
       <div>
@@ -92,43 +94,45 @@ const testFunc = () => {
 Oppsummering før innsending:
 
 ```js
-import Button from '@skatteetaten/frontend-components/Button';
-import RadioButtonGroup from '@skatteetaten/frontend-components/RadioButtonGroup';
-import Step from '@skatteetaten/frontend-components/StepList/Step';
-import StepList from '@skatteetaten/frontend-components/StepList';
-import CheckBox from '@skatteetaten/frontend-components/CheckBox';
-import Card from '@skatteetaten/frontend-components/Card';
+import {
+  Button,
+  RadioButtonGroup,
+  Step,
+  StepList,
+  CheckBox,
+  Card,
+} from '@skatteetaten/frontend-components';
 
-const initialState = {
+const [state, setState] = React.useState({
   options: [
     {
       key: 'A',
-      text: 'Jeg bor i Norge'
+      text: 'Jeg bor i Norge',
     },
     {
       key: 'B',
-      text: 'Ikke i Norge'
-    }
-  ]
-};
+      text: 'Ikke i Norge',
+    },
+  ],
+});
 
 const titles = {
   step1: {
     no: 'Jobber du?',
-    en: 'Are you a wage earner doing paid work?'
+    en: 'Are you a wage earner doing paid work?',
   },
   step2: {
     no: 'Overnatting',
-    en: 'Spend the night somewhere else than at home?'
+    en: 'Spend the night somewhere else than at home?',
   },
   step3: {
     no: 'Bor i Norge',
-    en: 'Where is your home?'
+    en: 'Where is your home?',
   },
   step4: {
     no: 'Oppsummering før innsending',
-    en: 'Summary before submit'
-  }
+    en: 'Summary before submit',
+  },
 };
 const showFirstStep = true;
 
@@ -145,7 +149,7 @@ const testFunc = () => {
         text: 'Endre',
         event: testFunc,
         icon: 'edit',
-        ariaLabel: 'Endre jobber du?'
+        ariaLabel: 'Endre jobber du?',
       }}
     >
       <div>
@@ -192,36 +196,37 @@ const testFunc = () => {
 StepList som er fullført og viser et resultat i i siste steg
 
 ```js
-import Button from '@skatteetaten/frontend-components/Button';
-import Step from '@skatteetaten/frontend-components/StepList/Step';
-import StepList from '@skatteetaten/frontend-components/StepList';
-import LinkGroup from '@skatteetaten/frontend-components/LinkGroup';
-import Typography from '@skatteetaten/frontend-components/Typography';
+import {
+  Button,
+  Step,
+  StepList,
+  LinkGroup,
+} from '@skatteetaten/frontend-components';
 
 const links = [
   {
     text: 'Beregn reisefradrag',
-    path: '#stepList'
+    path: '#stepList',
   },
   {
     text: 'Oversikt over alle fradrag',
-    path: '#stepList'
-  }
+    path: '#stepList',
+  },
 ];
 
 const titles = {
   step1: {
     no: 'Jobber du?',
-    en: 'Are you a wage earner doing paid work?'
+    en: 'Are you a wage earner doing paid work?',
   },
   step2: {
     no: 'Sommerjobb?',
-    en: 'Summerjob?'
+    en: 'Summerjob?',
   },
   step3: {
     no: 'Du er ikke pendler',
-    en: 'You are not a commuter.'
-  }
+    en: 'You are not a commuter.',
+  },
 };
 
 <StepList>

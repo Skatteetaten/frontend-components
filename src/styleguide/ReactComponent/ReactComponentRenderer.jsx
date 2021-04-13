@@ -1,33 +1,32 @@
 import React from 'react';
 import Pathline from 'react-styleguidist/lib/client/rsg-components/Pathline';
 import Styled from 'react-styleguidist/lib/client/rsg-components/Styled';
-import Tabs from '../../components/Tabs';
-import TabItem from '../../components/Tabs/TabItem';
+import { Tabs, TabItem } from '../../components/index';
 import Examples from 'react-styleguidist/lib/client/rsg-components/Examples';
 import { UseScreen } from '../../components/utils/ScreenPlugin';
 
 const styles = ({ color, fontSize, space }) => ({
   root: {
-    marginBottom: space[6]
+    marginBottom: space[6],
   },
   header: {
-    marginBottom: space[3]
+    marginBottom: space[3],
   },
   tabs: {
-    marginBottom: space[3]
+    marginBottom: space[3],
   },
   tabButtons: {
-    marginBottom: space[1]
+    marginBottom: space[1],
   },
   tabBody: {
     overflowX: 'auto',
     maxWidth: '100%',
-    WebkitOverflowScrolling: 'touch'
+    WebkitOverflowScrolling: 'touch',
   },
   docs: {
     color: color.base,
-    fontSize: fontSize.text
-  }
+    fontSize: fontSize.text,
+  },
 });
 
 export function ReactComponentRenderer({
@@ -40,19 +39,19 @@ export function ReactComponentRenderer({
   examples,
   exampleMode,
   tabButtons,
-  tabBody
+  tabBody,
 }) {
   // Splitter opp kode og beskrivelse
   const code = examples.filter(
-    item =>
+    (item) =>
       !item.settings ||
       (item.settings && !item.settings.beskrivelse && !item.settings.uu)
   );
   const exampleDescription = examples.filter(
-    item => item.settings && item.settings.beskrivelse
+    (item) => item.settings && item.settings.beskrivelse
   );
   const exampleAccessibility = examples.filter(
-    item => item.settings && item.settings.uu
+    (item) => item.settings && item.settings.uu
   );
 
   const size = UseScreen();
