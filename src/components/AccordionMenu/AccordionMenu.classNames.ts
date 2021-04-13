@@ -42,6 +42,9 @@ export function getClassNames(props): any {
           backgroundColor: palette.skeColor.lightBlue,
           outline: 'none',
         },
+        '&:active': {
+          color: palette.skeColor.darkBlue,
+        },
       },
     },
     menuItemIsOpen: {
