@@ -1,6 +1,5 @@
 ```js noeditor
-import Card from '@skatteetaten/frontend-components/Card';
-import Link from '@skatteetaten/frontend-components/Link';
+import { Link, Card } from '@skatteetaten/frontend-components';
 
 <div>
   <Card
@@ -10,12 +9,12 @@ import Link from '@skatteetaten/frontend-components/Link';
     titlesize="x-large"
     margin="large"
   >
-    <p>
+    <p style={{ marginTop: '0' }}>
       Oppbygging av siden skal gjøres på en slik måte at den fungerer godt
       uavhengig av skjermstørrelse (responsiv design). I publikumsløsninger er
       dette viktig fordi mange bruker løsningene våre på mobil og nettbrett,
-      ikke bare på PC. I interne løsninger er det viktig for å støtte at
-      saksbehandler har flere vinduer ved siden av hverandre på skjermen.
+      ikke bare på PC. I interne løsninger er det viktig fordi saksbehandlene
+      ofte har flere vinduer ved siden av hverandre på skjermen.
       <ul>
         <li>Publikumsløsninger skal alltid ha topp og bunn.</li>
         <li>
@@ -33,15 +32,6 @@ import Link from '@skatteetaten/frontend-components/Link';
         </li>
       </ul>
     </p>
-    <p>
-      Merk: Denne siden inneholder eksempler som bruker
-      <Link path="#grid" text="Grid-komponenten" /> til å lage sidelayout. Dersom
-      du ikke trenger å støtte Internet Explorer 11 kan det er være verd å vurdere{' '}
-      <Link
-        path="https://www.w3schools.com/css/css_grid.asp"
-        text="CSS-grid"
-      /> i stedet.
-    </p>
   </Card>
 </div>;
 ```
@@ -49,6 +39,8 @@ import Link from '@skatteetaten/frontend-components/Link';
 ### Eksempel på sidelayout for publikumsløsning
 
 ```js
+import { useState } from 'react';
+
 import {
   Link,
   Card,
@@ -57,9 +49,46 @@ import {
   TopStripeMenu,
   TopStripeButton,
   TopBanner,
+  Typography,
+  LanguagePicker,
+  Icon,
+  StepList,
+  Step,
   FooterContent,
   Grid,
 } from '@skatteetaten/frontend-components';
+
+import { UseScreen } from '../../components/utils/ScreenPlugin';
+
+const [language, setLanguage] = useState('nb');
+
+const screenSize = UseScreen();
+
+const links = [
+  {
+    text: 'Beregn reisefradrag',
+    path: '#stepList',
+  },
+  {
+    text: 'Oversikt over alle fradrag',
+    path: '#stepList',
+  },
+];
+
+const titles = {
+  step1: {
+    no: 'Jobber du?',
+    en: 'Are you a wage earner doing paid work?',
+  },
+  step2: {
+    no: 'Sommerjobb?',
+    en: 'Summerjob?',
+  },
+  step3: {
+    no: 'Du er ikke pendler',
+    en: 'You are not a commuter.',
+  },
+};
 
 const textStyle = {
   fontSize: '12px',
@@ -73,23 +102,30 @@ const white = {
 
 <div>
   <TopStripe>
-    <Link path={'#topstripe'} text={'Kontakt oss'} placement="before" />
-
-    <TopStripeMenu title={'Endre skriftstørrelse'}>
-      <div style={{ fontSize: '20px' }}>
+    <Link path={'#main-content-id'} text={'Hopp til hovedinnhold'} skipLink />
+    <Link
+      path={'https://www.skatteetaten.no/kontakt/'}
+      text={'Kontakt oss'}
+      placement="before"
+    />
+    <TopStripeMenu
+      closeMenuAriaLabel="Lukk endre skriftstørrelse"
+      title={'Endre skriftstørrelse'}
+      showOnMobile={false}
+      contentIsMenu={false}
+    >
+      <div style={{ fontSize: '24px', marginTop: '8px' }}>
         Hold Ctrl-tasten nede (Cmd-tasten på Mac). Trykk på + for å forstørre
         eller - for å forminske.
       </div>
     </TopStripeMenu>
-    <TopStripeMenu title={'Language / Språk'}>
-      <TopStripeButton ariaLabel={'Norsk'}>Norsk</TopStripeButton>
-      <TopStripeButton icon={'check'} ariaLabel={'Nynorsk'}>
-        Nynorsk
-      </TopStripeButton>
-      <TopStripeButton ariaLabel={'Engelsk'}>Engelsk</TopStripeButton>
-      <TopStripeButton ariaLabel={'Sørsamisk'}>Sørsamisk</TopStripeButton>
-      <TopStripeButton ariaLabel={'Nordsamisk'}>Nordsamisk</TopStripeButton>
-    </TopStripeMenu>
+    <LanguagePicker
+      selectedLanguage={language}
+      setLanguage={setLanguage}
+      showOnMobile={true}
+      showSami={true}
+    />
+
     <Link path={'#link'} text={'Logg inn'} placement="before" />
   </TopStripe>
   <TopBanner
@@ -215,7 +251,9 @@ const white = {
         <Grid.Col noSpacing sm={12} lg={10} xl={8}>
           <Grid>
             <Grid.Row>
-              <Grid.Col noSpacing sm={0} lg={1} xl={2}></Grid.Col>
+              <Grid.Col noSpacing sm={0} lg={1} xl={2}>
+                <FooterContent.Logo />
+              </Grid.Col>
               <Grid.Col noSpacing sm={12} lg={10} xl={8}>
                 <p>Innhold i footer</p>
               </Grid.Col>
