@@ -47,7 +47,7 @@ export class Callout extends React.PureComponent<CalloutProps, CalloutState> {
   static POS_BOTTOM_RIGHT = DirectionalHint.bottomRightEdge;
 
   static defaultProps = {
-    autoDismiss: false,
+    autoDismiss: true,
     color: Callout.HELP,
     directionalHint: Callout.POS_TOP_CENTER,
     doNotLayer: true,
