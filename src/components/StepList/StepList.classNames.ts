@@ -37,7 +37,8 @@ const getStepContentInner = (
       selectors: {
         '@media  only screen and (max-width: 479px)': stepType === 'result' && {
           paddingBottom: '21px',
-          borderBottom: `2px solid ${palette.skeColor.green}`,
+          borderBottom: `3px solid ${palette.skeColor.green}`,
+          borderTop: `3px solid ${palette.skeColor.green}`,
         },
       },
     };
@@ -156,6 +157,8 @@ export const getClassNames = (props) => {
       position: 'absolute',
       top: 0,
       bottom: 0,
+      left: props.stepType === 'result' ? '7px' : undefined,
+
       marginTop: '10px',
       height:
         props.stepType === 'next' || props.stepType === 'result'
@@ -191,12 +194,14 @@ export const getClassNames = (props) => {
     stepLineTop: {
       float: 'right',
       width: 2,
+      left: props.stepType === 'result' ? '7px' : undefined,
       height: '10px',
       backgroundColor: palette.skeColor.lightGrey,
       position: 'absolute',
       selectors: {
         '@media only screen and (max-width: 479px)': {
           width: 1,
+          left: props.stepType === 'result' ? '8px' : undefined,
         },
       },
     },
@@ -230,7 +235,7 @@ export const getClassNames = (props) => {
           },
         },
         i: {
-          marginTop: 4,
+          marginTop: 1,
           selectors: {
             '@media only screen and (max-width: 479px)': {
               fontSize: '1.25rem !important',
@@ -259,7 +264,7 @@ export const getClassNames = (props) => {
           display: 'flex',
           borderTop:
             props.stepType === 'result'
-              ? `2px solid ${palette.skeColor.green}`
+              ? `4px solid ${palette.skeColor.green}`
               : undefined,
           margin: props.stepType === 'result' ? 0 : undefined,
         },
@@ -280,7 +285,7 @@ export const getClassNames = (props) => {
       padding: props.stepType === 'result' ? '0 18px' : '0 20px',
       border:
         props.stepType === 'result'
-          ? `2px solid ${palette.skeColor.green}`
+          ? `4px solid ${palette.skeColor.green}`
           : 'none',
       selectors: {
         '@media  only screen and (max-width: 479px)': {

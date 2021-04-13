@@ -11,15 +11,21 @@ import {
   <FooterContent>
     <Grid>
       <Grid.Row>
-        <Grid.Col sm={12} lg={12} xl={4}>
-          <FooterContent.Logo />
+        <Grid.Col sm={0} lg={1} xl={2}></Grid.Col>
+        <Grid.Col noSpacing sm={12} lg={10} xl={8}>
+          <Grid>
+            <Grid.Row>
+              <Grid.Col noSpacing sm={0} lg={1} xl={2}>
+                <FooterContent.Logo />
+              </Grid.Col>
+              <Grid.Col noSpacing sm={12} lg={10} xl={8}>
+                <p>Innhold i footer</p>
+              </Grid.Col>
+              <Grid.Col noSpacing sm={0} lg={1} xl={2}></Grid.Col>
+            </Grid.Row>
+          </Grid>
         </Grid.Col>
-        <Grid.Col sm={12} lg={12} xl={4}>
-          <b>Kontakt oss</b>
-        </Grid.Col>
-        <Grid.Col sm={12} lg={12} xl={4}>
-          noreply@skatteetaten.no
-        </Grid.Col>
+        <Grid.Col noSpacing sm={0} lg={1} xl={2}></Grid.Col>
       </Grid.Row>
     </Grid>
   </FooterContent>
