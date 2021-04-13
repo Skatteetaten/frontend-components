@@ -21,7 +21,7 @@ describe('Card komponent', () => {
     const wrapper = oppsettFullDOM();
 
     expect(wrapper.prop('titlesize')).toEqual('x-large');
-    expect(wrapper.prop('color')).toEqual('neutralGrey');
+    expect(wrapper.prop('color')).toEqual('beige');
     expect(wrapper.prop('marginbottom')).toEqual('2px');
     expect(wrapper.prop('expand')).toEqual(false);
     expect(wrapper.prop('isExpanded')).toEqual(true);

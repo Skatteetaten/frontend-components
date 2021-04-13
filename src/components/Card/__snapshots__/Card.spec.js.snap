@@ -2,9 +2,8 @@
 
 exports[`Card komponent matcher snapshot 1`] = `
 <Card
-  actions={null}
   buttonType="button"
-  color="neutralGrey"
+  color="beige"
   expand={false}
   isExpanded={true}
   margin="medium"
