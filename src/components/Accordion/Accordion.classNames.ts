@@ -112,7 +112,6 @@ export function getClassNames() {
           selectors: {
             '@media (min-width: 640px)': {
               fontSize: IconFontSizes.xxlarge,
-              alignSelf: 'flex-end',
             },
           },
         },
