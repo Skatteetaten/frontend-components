@@ -1,9 +1,28 @@
-### **v.4.0.0 - 31.08.2020**
+### **v.4.0.0 - 16.04.2021 - Major release**
 
-- UMD: Enabled umd module building for the design system. This enables it to be loaded with SystemJS for micro-frontend setups.
+#### **Better support for micro frontends (UMD build)**
+
+- Enabled UMD module building for the design system. This enables it to be loaded with SystemJS for micro-frontend setups.
 - Imports: During the work with UMD building changes were made to imports. Most should be fine but some will need rewrite. Generally all componenets should now be imported directly from '@skatteetaten/frontend-componenents', and not from subfolders. This is especially important if you consume the design system as an UMD module
 - Imports: Imports from office-ui-fabric-react are now also imported directly from root and not from sub-folders e.g. office-ui-fabric-react/lib-commonjs/someComponent
-- # '@reach/auto-id': This package has been removed because of incompatability. It has been replaced by a manual alternative.
+- #'@reach/auto-id': This package has been removed because of incompatability. It has been replaced by a manual alternative.
+
+#### **Breaking changes**
+
+- New import statement for all components (due to UMD build)
+- Card: rewritten so that it now uses a button-element for the open/close-mechanism. This means that support for secondary actions in the header section has been removed. These must now be placed in the card body. Default color is now set to beige.
+- Footer: removed fixed width to support a vide range of screen sizes
+- Callout: autodismiss now defaults to true
+
+#### **vAdditions and fixes**
+
+- LanguagePicker - new component
+- Updated Sketch library
+- New pattern with page layout
+- StepList hos has an option to add outer grid column to better align with pages content.
+- Components now uses rem units for font size - accessilibty improvements
+- Card: Added ability to remove padding inside the card completely.
+- Various updates to documentation and code examples.
 
 ### **v.3.8.1 - 10.03.2021**
 
