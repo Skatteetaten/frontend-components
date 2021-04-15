@@ -89,7 +89,8 @@ const writeDependencyFromFile = async (itemPath, sub) => {
 
   if (!fs.existsSync(makePath)) fs.mkdirSync(makePath, { recursive: true });
 
-  fs.copyFileSync(`${destDir}/umd/index.${sub}.js`, itemPath);
+  fs.copyFileSync(require.resolve(`../../umd/index.${sub}.js`), itemPath);
+  fs.copyFileSync(require.resolve(`../../umd/index.${sub}.js.map`), itemPath);
 }
 
 const writeImportmap = (mapsPath, data, path) => {
