@@ -111,10 +111,10 @@ const writeImportmaps = () => {
 
   if (!fs.existsSync(importMapsPath)) fs.mkdirSync(importMapsPath, { recursive: true });
 
-  writeImportmap(importMapsPath, dataDev, 'importmap.json');
-  writeImportmap(importMapsPath, dataProd, 'importmap-prod.json');
-  writeImportmap(importMapsPath, dataInternalDev, 'importmap-internal.json');
-  writeImportmap(importMapsPath, dataInternalProd, 'importmap-internal-prod.json');
+  writeImportmap(importMapsPath, dataDev, 'importmap');
+  writeImportmap(importMapsPath, dataProd, 'importmap-prod');
+  writeImportmap(importMapsPath, dataInternalDev, 'importmap-internal');
+  writeImportmap(importMapsPath, dataInternalProd, 'importmap-internal-prod');
 };
 
 const write = async () => {
