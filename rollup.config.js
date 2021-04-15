@@ -8,6 +8,7 @@ import svgr from '@svgr/rollup';
 import injectProcessEnv from 'rollup-plugin-inject-process-env';
 import externals from 'rollup-plugin-node-externals';
 import nodePolyfills from 'rollup-plugin-node-polyfills';
+import bundleSize from 'rollup-plugin-bundle-size';
 import { terser } from 'rollup-plugin-terser';
 import typescript from '@rollup/plugin-typescript';
 import globals from 'rollup-plugin-node-globals';
@@ -83,6 +84,7 @@ const getPluginsConfig = (prod, mini) => {
     typescript(typescriptOptions),
     babel(babelConfig),
     commonjs(commonJsConfig),
+    bundleSize(),
   ];
 
   if (mini) {

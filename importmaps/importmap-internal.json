@@ -1,15 +1,15 @@
 {
   "imports": {
-    "react": "https://k22600-frontend-components-aurora-dev.utv.paas.skead.no/umd/deps/dev/react/umd/react.development.js",
-    "react-dom": "https://k22600-frontend-components-aurora-dev.utv.paas.skead.no/umd/deps/dev/react-dom/umd/react-dom.development.js",
-    "react-i18next": "https://k22600-frontend-components-aurora-dev.utv.paas.skead.no/umd/deps/dev/react-i18next/dist/umd/react-i18next.js",
-    "prop-types": "https://k22600-frontend-components-aurora-dev.utv.paas.skead.no/umd/deps/dev/prop-types/prop-types.min.js",
-    "classnames": "https://k22600-frontend-components-aurora-dev.utv.paas.skead.no/umd/deps/dev/classnames/index.min.js",
-    "moment": "https://k22600-frontend-components-aurora-dev.utv.paas.skead.no/umd/deps/dev/moment/min/moment.min.js",
-    "axios": "https://k22600-frontend-components-aurora-dev.utv.paas.skead.no/umd/deps/dev/axios/dist/axios.min.js",
-    "tslib": "https://k22600-frontend-components-aurora-dev.utv.paas.skead.no/umd/deps/dev/tslib/tslib.js",
-    "i18next": "https://k22600-frontend-components-aurora-dev.utv.paas.skead.no/umd/deps/dev/i18next/dist/umd/i18next.js",
-    "react-transition-group": "https://k22600-frontend-components-aurora-dev.utv.paas.skead.no/umd/deps/dev/react-transition-group/dist/react-transition-group.js",
-    "@skatteetaten/frontend-components": "https://k22600-frontend-components-aurora-dev.utv.paas.skead.no/umd/index.development.js"
+    "react": "/umd/deps/dev/react/<replace>/umd/react.development.js",
+    "react-dom": "/umd/deps/dev/react-dom/<replace>/umd/react-dom.development.js",
+    "react-i18next": "/umd/deps/dev/react-i18next/<replace>/dist/umd/react-i18next.js",
+    "prop-types": "/umd/deps/dev/prop-types/<replace>/prop-types.min.js",
+    "classnames": "/umd/deps/dev/classnames/<replace>/index.min.js",
+    "moment": "/umd/deps/dev/moment/<replace>/min/moment.min.js",
+    "axios": "/umd/deps/dev/axios/<replace>/dist/axios.min.js",
+    "tslib": "/umd/deps/dev/tslib/<replace>/tslib.js",
+    "i18next": "/umd/deps/dev/i18next/<replace>/dist/umd/i18next.js",
+    "react-transition-group": "/umd/deps/dev/react-transition-group/<replace>/dist/react-transition-group.js",
+    "@skatteetaten/frontend-components": "/umd/deps/dev/frontend-components/<replace>/index.development.js"
   }
 }
