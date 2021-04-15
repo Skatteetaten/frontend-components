@@ -12,11 +12,11 @@ const packageJsonPath = process.argv[3] || require.resolve('../../package.json')
 const packageJson = require(packageJsonPath);
 
 const findDependencyVersion = (dependency) => {
-  if (packageJson.dependencies[dependency]) {
+  if (packageJson.dependencies && packageJson.dependencies[dependency]) {
     return packageJson.dependencies[dependency];
-  } else if (packageJson.devDependencies[dependency]) {
+  } else if (packageJson.devDependencies && packageJson.devDependencies[dependency]) {
     return packageJson.devDependencies[dependency];
-  } else if (packageJson.peerDependencies[dependency]) {
+  } else if (packageJson.peerDependencies && packageJson.peerDependencies[dependency]) {
     return packageJson.peerDependencies[dependency];
   } else {
     throw Error(`No dependency by name: ${dependency}!`);
@@ -117,8 +117,8 @@ const writeImportmaps = () => {
 };
 
 const write = async () => {
-  fs.rmSync(`${destDir}/umd/deps`, { recursive: true, force: true });
-  fs.rmSync(`${destDir}/umd/importmaps`, { recursive: true, force: true });
+  fs.rmdirSync(`${destDir}/umd/deps`, { recursive: true, force: true });
+  fs.rmdirSync(`${destDir}/umd/importmaps`, { recursive: true, force: true });
 
   replaceImportVersions(dataDev.imports);
   replaceImportVersions(dataProd.imports);
