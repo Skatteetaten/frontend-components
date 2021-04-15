@@ -13,6 +13,7 @@
 - Card: rewritten so that it now uses a button-element for the open/close-mechanism. This means that support for secondary actions in the header section has been removed. These must now be placed in the card body. Default color is now set to beige.
 - Footer: removed fixed width to support a vide range of screen sizes
 - Callout: autodismiss now defaults to true
+- ErrorMessage: removed ariaLabel-prop (deprecated)
 
 #### **Additions and fixes**
 
