@@ -8,7 +8,7 @@ const dataProd = require('./importmap-prod.json');
 const dataInternalDev = require('./importmap-internal.json');
 const dataInternalProd = require('./importmap-internal-prod.json');
 const destDir = process.argv[2] || 'build';
-const packageJsonPath = process.argv[3] || require.resolve('../../../package.json');
+const packageJsonPath = process.argv[3] || require.resolve('../../package.json');
 const packageJson = require(packageJsonPath);
 
 const findDependencyVersion = (dependency) => {
