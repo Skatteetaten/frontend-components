@@ -106,7 +106,7 @@ const writeImportmap = (mapsPath, data, path) => {
 };
 
 const writeImportmaps = () => {
-  const importMapsPath = `${destDir}/umd/importmaps`;
+  const importMapsPath = `${destDir}/umd/importmaps/frontend-components`;
 
   if (!fs.existsSync(importMapsPath)) fs.mkdirSync(importMapsPath, { recursive: true });
 
