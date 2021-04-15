@@ -102,8 +102,10 @@ export const getClassNames = (props: CardProps, state: CardState) => {
       color: palette.skeColor.blue,
       borderTopWidth: '0px',
       border: 'none',
+      height: '46px',
+      width: '46px',
       borderRadius: '50%',
-      paddingRight: '4px',
+      marginRight: '8px',
       selectors: {
         i: {
           transform: isExpandedState ? 'rotate(-180deg)' : '0',
