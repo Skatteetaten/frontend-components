@@ -1,4 +1,4 @@
-** OpenClose er enkelstående områder for å vise og skjule utdypende informasjon. **
+**OpenClose er enkelstående områder for å vise og skjule utdypende informasjon.**
 
 ```js
 import { OpenClose, Typography } from '@skatteetaten/frontend-components';

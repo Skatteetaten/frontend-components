@@ -1,4 +1,4 @@
-** Toppbanner vises på toppen i løsningene og skiller interne og eksterne løsninger fra hverandre **
+**Toppbanner vises på toppen i løsningene og skiller interne og eksterne løsninger fra hverandre**
 
 ### Publikumsløsninger
 

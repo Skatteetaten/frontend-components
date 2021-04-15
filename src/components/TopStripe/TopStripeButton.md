@@ -1,4 +1,4 @@
-** TopStripeButton en hjelpekomponent til TopStripe **
+**TopStripeButton en hjelpekomponent til TopStripe **
 
 ```js noeditor
 import { MessageBar } from '@skatteetaten/frontend-components';

@@ -1,4 +1,4 @@
-** Chip brukes til å markere eller utheve noe – som en merkelapp. **
+**Chip brukes til å markere eller utheve noe – som en merkelapp.**
 
 Variasjon i utheving, størrelse og farge:
 

@@ -1,4 +1,4 @@
-** Spinner brukes for å vise brukeren at data lastes. **
+**Spinner brukes for å vise brukeren at data lastes.**
 
 ```js
 import { Spinner, Button } from '@skatteetaten/frontend-components';

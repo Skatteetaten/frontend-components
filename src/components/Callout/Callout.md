@@ -1,4 +1,4 @@
-** Callout brukes når man ønsker å vise brukeren en tekst som er knyttet til element i skjermbildet. Et typisk eksempel er en ikon med spørsmåltegn, og en tilhørende hjelpetekst dukker opp når man trykker på det. **
+**Callout brukes når man ønsker å vise brukeren en tekst som er knyttet til element i skjermbildet. Et typisk eksempel er en ikon med spørsmåltegn, og en tilhørende hjelpetekst dukker opp når man trykker på det.**
 
 ```js noeditor
 import { MessageBar } from '@skatteetaten/frontend-components';
@@ -44,6 +44,7 @@ function closeButton() {
       color={Callout.HELP}
       doNotLayer={true}
       onClose={() => closeButton()}
+      onDismiss={() => closeButton()}
     >
       <h3>Bolignummer</h3>
       <p>
@@ -88,6 +89,7 @@ function closeButton() {
       directionalHint={Callout.POS_BOTTOM_LEFT}
       color={Callout.INFO}
       onClose={() => closeButton()}
+      onDismiss={() => closeButton()}
     >
       <h3>Renter ikke inkludert</h3>
       <p>Dette beløpet inkluderer ikke avsavnsrenter.</p>
@@ -117,7 +119,7 @@ function closeButton() {
       icon="Info"
       onClick={() => setState({ isCalloutVisible: !state.isCalloutVisible })}
     >
-      Vis meldingsboks som lukkes automatisk
+      Vis meldingsboks som må lukkes manuelt
     </Button>
   </span>
 
@@ -127,14 +129,10 @@ function closeButton() {
       color={Callout.INFO}
       directionalHint={Callout.POS_TOP_LEFT}
       onClose={() => closeButton()}
-      autoDismiss={true}
-      onDismiss={() => closeButton()}
+      autoDismiss={false}
     >
       <h3>Meldingsboks informasjon </h3>
-      <p>
-        Denne meldingsboksen skal lukkes automatisk når området utenfor
-        meldingsboksen klikkes
-      </p>
+      <p>Denne meldingsboksen må lukkes ved lukkekrysset</p>
     </Callout>
   )}
 </div>;

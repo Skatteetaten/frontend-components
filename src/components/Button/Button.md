@@ -1,4 +1,4 @@
-** Button brukes til hovedhandlinger, og tommelfingerregelen er det kun skal være én slik knapp på siden **
+**Button brukes til hovedhandlinger, og tommelfingerregelen er det kun skal være én slik knapp på siden**
 
 Tydelig knapp:
 

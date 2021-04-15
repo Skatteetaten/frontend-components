@@ -1,4 +1,4 @@
-** Dialog brukes til å vise innhold midt på skjermen og tiltrekke seg brukerens oppmerksomhet. **
+**Dialog brukes til å vise innhold midt på skjermen og tiltrekke seg brukerens oppmerksomhet.**
 
 ```js
 import {

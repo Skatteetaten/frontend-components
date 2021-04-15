@@ -1,4 +1,4 @@
-** NavigationTile brukes på navigasjonssider for å sende brukeren videre ned i sidestrukturen **
+**NavigationTile brukes på navigasjonssider for å sende brukeren videre ned i sidestrukturen**
 
 ```js
 import {

@@ -1,4 +1,4 @@
-** Språkvelger i publikumsløsninger **
+**Språkvelger i publikumsløsninger**
 
 For å velge mellom norsk bokmål, nynorsk, englesk og samisk i publikumsløsninger.
 

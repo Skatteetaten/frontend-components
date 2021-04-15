@@ -6,7 +6,7 @@ import { MessageBar } from '@skatteetaten/frontend-components';
 </MessageBar>;
 ```
 
-** Stegvis veiledning for brukeren **
+**Stegvis veiledning for brukeren**
 
 ```js
 import {
@@ -100,6 +100,7 @@ import {
   Step,
   StepList,
   CheckBox,
+  Typography,
   Card,
 } from '@skatteetaten/frontend-components';
 
@@ -171,11 +172,12 @@ const testFunc = () => {
   </Step>
   <Step stepTitle={titles.step4.no} stepId={'step-1-4'} activeStep={true}>
     <div style={{ marginTop: '8px', marginBottom: '16px' }}>
-      <Card color={Card.Color.BEIGE} margin={'large'}>
-        <p style={{ fontWeight: '700' }}>
-          Følgende opplysninger er klare til innsending:
-        </p>
-        <ul>
+      <Card
+        title="Følgende opplysninger er klare til innsending:"
+        titlesize="medium"
+        color={Card.Color.BEIGE}
+      >
+        <ul style={{ marginTop: '0' }}>
           <li>Du jobber</li>
           <li>Du overnatter et annet sted enn hjemme på grunn av jobb</li>
           <li>Du bor i Norge</li>
@@ -200,6 +202,7 @@ import {
   Button,
   Step,
   StepList,
+  Typography,
   LinkGroup,
 } from '@skatteetaten/frontend-components';
 

@@ -1,4 +1,4 @@
-** Tabeller brukes til å liste ut strukturerte data.**
+**Tabeller brukes til å liste ut strukturerte data.**
 
 ```js
 import {
@@ -158,7 +158,7 @@ const data = [
 />;
 ```
 
-** Man kan styre hvilke kolonner som skal vises på mobil med _hideOnMobile_-attributtet:**
+**Man kan styre hvilke kolonner som skal vises på mobil med _hideOnMobile_-attributtet:**
 
 ```js
 import { Table, ActionButton } from '@skatteetaten/frontend-components';

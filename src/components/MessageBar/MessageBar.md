@@ -1,5 +1,5 @@
-** MessageBar brukes til å formidle viktig informasjon til brukeren som skiller seg ut fra øvrig innhold.
-Den brukes når du skal gi en tilbakemelding til bruker som omhandler en side, delseksjon eller flere elementer på siden. **
+**MessageBar brukes til å formidle viktig informasjon til brukeren som skiller seg ut fra øvrig innhold.
+Den brukes når du skal gi en tilbakemelding til bruker som omhandler en side, delseksjon eller flere elementer på siden.**
 
 ```js
 import { MessageBar } from '@skatteetaten/frontend-components';

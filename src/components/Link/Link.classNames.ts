@@ -26,10 +26,7 @@ export const getClassNames = (props: LinkProps) => {
           transition: linkGroup ? '0.1s' : '',
         },
         ':hover>a': {
-          color: linkGroup ? palette.skeColor.darkBlue : '',
-          borderBottom: linkGroup
-            ? '2px solid ' + palette.skeColor.darkBlue
-            : '',
+          backgroundColor: palette.skeColor.lightBlue,
         },
       },
     },
@@ -65,6 +62,7 @@ export const getClassNames = (props: LinkProps) => {
         '&:hover': {
           color: palette.skeColor.darkBlue,
           borderBottom: '2px solid ' + palette.skeColor.darkBlue,
+          backgroundColor: palette.skeColor.lightBlue,
           transition: 'border-bottom 0.3s',
         },
         '&:focus': {
