@@ -14,7 +14,7 @@
 - Footer: removed fixed width to support a vide range of screen sizes
 - Callout: autodismiss now defaults to true
 
-#### **vAdditions and fixes**
+#### **Additions and fixes**
 
 - LanguagePicker - new component
 - Updated Sketch library
