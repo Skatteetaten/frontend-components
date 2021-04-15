@@ -1,10 +1,11 @@
-Designsystemet i Skatteetaten støtter nettlesere som blir brukt av mer enn 2 % på skatteetaten.no. Vi støtter nå følgende nettlesere (oppdatert april 2021):
+Designsystemet i Skatteetaten støtter nettlesere som blir brukt av mer enn 2 % på skatteetaten.no. Vi støtter nå følgende nettlesere (oppdatert august 2020):
 
-- Chrome (ca. 44,7 %)
-- Safari (ca. 36,2 %)
-- Edge (ca. 8,6 %)
-- Samsung Internet (ca. 5,1 %)
-- Firefox (ca. 2,6 %)
+- Chrome (ca. 43,4 %)
+- Safari (ca. 36,1 %)
+- Edge (ca. 6,5 %)
+- Internet Explorer 11 (ca. 4,8 %)
+- Samsung Internet (ca. 3,8 %)
+- Firefox (ca. 2,7 %)
 
 Vi bør ikke uten videre anta at brukerne våre vet hva en nettleser er eller vet hvordan man installerer en. Det er også en mulighet at de ikke kan oppgradere på grunn av plattform eller fordi de bruker en løsning som krever en bestemt nettleser.
 
