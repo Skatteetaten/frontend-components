@@ -52,7 +52,7 @@ export class Callout extends React.PureComponent<CalloutProps, CalloutState> {
     directionalHint: Callout.POS_TOP_CENTER,
     doNotLayer: true,
     role: undefined,
-    border: false,
+    border: true,
   };
 
   render() {
