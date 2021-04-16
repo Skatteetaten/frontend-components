@@ -79,6 +79,7 @@ export function getClassNames(props: ActionButtonProps): string {
         height: 'auto',
         minHeight: '40px',
         padding: '10px 4px',
+        textAlign: props.iconAfter ? 'right' : 'left',
       },
       '& span': {
         flexDirection: props.iconAfter ? 'row-reverse' : 'row',
@@ -86,11 +87,18 @@ export function getClassNames(props: ActionButtonProps): string {
       '&.ms-Button.ms-Button--action, &.ms-Button--action .ms-Button-icon': {
         ...getTypeColor(props),
       },
+      '& .ms-Button-flexContainer': {
+        alignItems: 'baseline',
+      },
       '&.ms-Button--action .ms-Button-icon': {
         // @ts-ignore TODO
         fontSize: FontSizes[props.iconSize],
+        transform: 'translateY(1px)',
         // @ts-ignore TODO
         ...getIconColor(props),
+      },
+      '&.ms-Button--action .ms-Button-label': {
+        lineHeight: '1.5',
       },
       '&.ms-Button--action:hover .ms-Button-label': {
         textDecoration: 'underline',

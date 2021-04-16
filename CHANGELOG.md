@@ -24,6 +24,7 @@
 - Card: Added ability to remove padding inside the card completely.
 - SearchField how uses a filter icon instead for magnifier glass when filtering options
 - OpenClose: added compact version
+- ActionButton: the text inside button now aligns towards icon instead of being centered.
 - Updated Sketch library
 - Various updates to documentation and code examples.
 
