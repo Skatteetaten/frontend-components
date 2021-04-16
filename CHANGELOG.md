@@ -1,4 +1,4 @@
-### **v.4.0.0 - 16.04.2021 - Major release**
+### **v.4.0.0 - 19.04.2021 - Major release**
 
 #### **Better support for micro frontends (UMD build)**
 
@@ -13,7 +13,7 @@
 - Card: rewritten so that it now uses a button-element for the open/close-mechanism. This means that support for secondary actions in the header section has been removed. These must now be placed in the card body. Default color is now set to beige.
 - Footer: removed fixed width to support a vide range of screen sizes
 - Callout: autodismiss and border now defaults to true
-- ErrorMessage: removed ariaLabel-prop (deprecated)
+- ErrorMessage: removed ariaLabel-prop
 
 #### **Additions and fixes**
 
@@ -24,6 +24,8 @@
 - Card: Added ability to remove padding inside the card completely.
 - SearchField how uses a filter icon instead for magnifier glass when filtering options
 - OpenClose: added compact version
+- Links: updated hover styles
+- Accordion: Chevron icon now aligns towards top
 - ActionButton: the text inside button now aligns towards icon instead of being centered.
 - Updated Sketch library
 - Various updates to documentation and code examples.
