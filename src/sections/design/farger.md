@@ -1,5 +1,12 @@
+```js noeditor
+import { MessageBar } from '@skatteetaten/frontend-components';
+
+<MessageBar>Fargene under «Visuell identitet» har nylig blitt endret. Vi jobber med å innnarbeide de nye fargene, men inntil videre er det fargene på denne siden som brukes i komponentene.</MessageBar>;
+```
+
 Nedenfor har vi plukket ut de fargene fra Skatteetatens visuelle profil som fungerer best på digitale flater. 
 I tillegg har vi lagt til et sett med grå- og blåtoner fordi vi ofte bruker disse på nett.
+
 
 ### Hovedfarger
 

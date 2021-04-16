@@ -12,17 +12,19 @@
 - New import statement for all components (due to UMD build)
 - Card: rewritten so that it now uses a button-element for the open/close-mechanism. This means that support for secondary actions in the header section has been removed. These must now be placed in the card body. Default color is now set to beige.
 - Footer: removed fixed width to support a vide range of screen sizes
-- Callout: autodismiss now defaults to true
+- Callout: autodismiss and border now defaults to true
 - ErrorMessage: removed ariaLabel-prop (deprecated)
 
 #### **Additions and fixes**
 
 - LanguagePicker - new component
-- Updated Sketch library
 - New pattern with page layout
 - StepList hos has an option to add outer grid column to better align with pages content.
-- Components now uses rem units for font size - accessilibty improvements
+- Components now uses rem units for font size - accessibility improvements
 - Card: Added ability to remove padding inside the card completely.
+- SearchField how uses a filter icon instead for magnifier glass when filtering options
+- OpenClose: added compact version
+- Updated Sketch library
 - Various updates to documentation and code examples.
 
 ### **v.3.8.1 - 10.03.2021**

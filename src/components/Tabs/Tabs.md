@@ -34,7 +34,7 @@ Tabs med ytterstrek når brukt på en grå flate:
 ```js
 import { Card, Tabs, TabItem } from '@skatteetaten/frontend-components';
 
-<Card title="Arbeidsliste">
+<Card title="Arbeidsliste" color={Card.Color.GREY}>
   <Tabs border={true}>
     <TabItem
       headerText="Tilgjengelige oppgaver"

@@ -13,22 +13,22 @@ import { Link, Card } from '@skatteetaten/frontend-components';
       Oppbygging av siden skal gjøres på en slik måte at den fungerer godt
       uavhengig av skjermstørrelse (responsiv design). I publikumsløsninger er
       dette viktig fordi mange bruker løsningene våre på mobil og nettbrett,
-      ikke bare på PC. I interne løsninger er det viktig fordi saksbehandlene
+      ikke bare på PC. I interne løsninger er det viktig fordi saksbehandlerne
       ofte har flere vinduer ved siden av hverandre på skjermen.
       <ul>
         <li>Publikumsløsninger skal alltid ha topp og bunn.</li>
         <li>
-          Etterstreb å ha hovedinnholdet i én kolonne midt på siden. Juster
-          teksten og elementer i hovedinnholdet mot en vertikal linje.
+          Legg hovedinnholdet i én kolonne midt på siden og juster teksten og
+          visuelle elementer i hovedinnholdet mot en vertikal linje.
         </li>
         <li>
-          Enkelte elementer, som bokser og rammer, kan gis ektra oppmerksomhet
-          ved å trekke dem utenfor den vertikale linjen.
+          Bokser og rammer kan gis ekstra oppmerksomhet ved å trekke dem utenfor
+          den vertikale linjen.
         </li>
         <li>
-          Både hovedinnhold, bokser og rammer skal ha en bredde som fungerer
-          godt på den skjermen de vises. Bruk solide marger til høyre og venstre
-          når skjermbredden er stor, og reduser dem når skjermbredden minker.
+          Bredden på hovedinnhold, bokser og rammer skal fungere godt på den
+          skjermen de vises. Bruk solide marger til høyre og venstre når
+          skjermbredden er stor, og reduser dem når skjermbredden minker.
         </li>
       </ul>
     </p>

@@ -1,14 +1,5 @@
 **Callout brukes når man ønsker å vise brukeren en tekst som er knyttet til element i skjermbildet. Et typisk eksempel er en ikon med spørsmåltegn, og en tilhørende hjelpetekst dukker opp når man trykker på det.**
 
-```js noeditor
-import { MessageBar } from '@skatteetaten/frontend-components';
-
-<MessageBar type={MessageBar.Type.warning}>
-  Denne komponenten skal kun brukes i interne løsninger på grunn av universell
-  utforming.
-</MessageBar>;
-```
-
 ### Hjelpetekst
 
 ```js
