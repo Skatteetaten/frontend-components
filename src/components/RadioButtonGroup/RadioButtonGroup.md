@@ -15,14 +15,15 @@ const [state, setState] = React.useState({
     },
   ],
 });
-
-<RadioButtonGroup
-  label="Type virksomhet"
-  options={state.options}
-  onChange={(e, option) => console.log(option)}
-  help="Type virksomhet vil påvirke hva du må rapportere til oss."
-  id="radio"
-/>;
+<div style={{ width: '400px' }}>
+  <RadioButtonGroup
+    label="Type virksomhet"
+    options={state.options}
+    onChange={(e, option) => console.log(option)}
+    help="Type virksomhet vil påvirke hva du må rapportere til oss."
+    id="radio"
+  />
+</div>;
 ```
 
 Med beskrivelse på hvert steg:

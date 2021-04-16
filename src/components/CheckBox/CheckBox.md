@@ -3,7 +3,7 @@
 ```js
 import { CheckBox, LabelWithCallout } from '@skatteetaten/frontend-components';
 
-<div>
+<div style={{ width: '500px' }}>
   <fieldset style={{ border: 'none', margin: '0', padding: '0' }}>
     <LabelWithCallout
       inFieldset
