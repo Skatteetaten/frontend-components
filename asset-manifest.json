@@ -1,9 +1,9 @@
 {
   "files": {
     "main.css": "/static/css/main.dc9a9f4d.chunk.css",
-    "main.js": "/build/main.7f849b08.js",
-    "runtime-main.js": "/build/bundle.c6779e55.js",
-    "build/2.2ddc424b.js": "/build/2.2ddc424b.js",
+    "main.js": "/build/main.e23fcb64.js",
+    "runtime-main.js": "/build/bundle.483fa668.js",
+    "build/2.c497b6a4.js": "/build/2.c497b6a4.js",
     "assets/png/Byggeklosser.png": "/assets/png/Byggeklosser.png",
     "assets/png/Byggeklosser_skisse.png": "/assets/png/Byggeklosser_skisse.png",
     "assets/png/designer.png": "/assets/png/designer.png",
@@ -20,16 +20,20 @@
     "assets/sketch/designsystem-1.3.sketch": "/assets/sketch/designsystem-1.3.sketch",
     "assets/sketch/designsystem-1.5.sketch": "/assets/sketch/designsystem-1.5.sketch",
     "assets/sketch/designsystem-1.6.sketch": "/assets/sketch/designsystem-1.6.sketch",
+    "assets/sketch/designsystem-1.7.sketch": "/assets/sketch/designsystem-1.7.sketch",
     "assets/sketch/designsystem-latest.sketch": "/assets/sketch/designsystem-latest.sketch",
     "assets/svg/bit-bucket-logo.svg": "/assets/svg/bit-bucket-logo.svg",
     "assets/svg/ske-logo-intern-kopi.svg": "/assets/svg/ske-logo-intern-kopi.svg",
     "assets/svg/ske-logo-intern.svg": "/assets/svg/ske-logo-intern.svg",
     "assets/svg/ske-logo.svg": "/assets/svg/ske-logo.svg",
-    "build/2.2ddc424b.js.LICENSE.txt": "/build/2.2ddc424b.js.LICENSE.txt",
+    "build/2.c497b6a4.js.LICENSE.txt": "/build/2.c497b6a4.js.LICENSE.txt",
     "favicon.ico": "/favicon.ico",
     "index.html": "/index.html",
     "manifest.json": "/manifest.json",
     "static/css/main.dc9a9f4d.chunk.css.map": "/static/css/main.dc9a9f4d.chunk.css.map",
+    "static/media/EnglishFlag.91934228.svg": "/static/media/EnglishFlag.91934228.svg",
+    "static/media/NorwegianFlag.36cf4a7f.svg": "/static/media/NorwegianFlag.36cf4a7f.svg",
+    "static/media/SamiFlag.7996b238.svg": "/static/media/SamiFlag.7996b238.svg",
     "static/media/SkeIconfont.6fbc805b.woff": "/static/media/SkeIconfont.6fbc805b.woff",
     "static/media/SkeIconfont.746b1322.ttf": "/static/media/SkeIconfont.746b1322.ttf",
     "static/media/SkeIconfont.840af99b.svg": "/static/media/SkeIconfont.840af99b.svg",
@@ -50,9 +54,9 @@
     "static/media/ske-logo.7f07b60a.svg": "/static/media/ske-logo.7f07b60a.svg"
   },
   "entrypoints": [
-    "build/bundle.c6779e55.js",
-    "build/2.2ddc424b.js",
+    "build/bundle.483fa668.js",
+    "build/2.c497b6a4.js",
     "static/css/main.dc9a9f4d.chunk.css",
-    "build/main.7f849b08.js"
+    "build/main.e23fcb64.js"
   ]
 }
