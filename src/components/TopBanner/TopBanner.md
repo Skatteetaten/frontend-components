@@ -1,11 +1,11 @@
-** Toppbanner vises på toppen i løsningene og skiller interne og eksterne løsninger fra hverandre **
+**Toppbanner vises på toppen i løsningene og skiller interne og eksterne løsninger fra hverandre**
 
 ### Publikumsløsninger
 
 Ikke-innlogget publikumsløsning:
 
 ```js
-import TopBanner from '@skatteetaten/frontend-components/TopBanner';
+import { TopBanner } from '@skatteetaten/frontend-components';
 
 <TopBanner
   external
@@ -19,15 +19,15 @@ Innlogget publikumsløsning:
 
 ```js
 import { useState } from 'react';
-
-import TopStripe, {
+import {
+  TopStripe,
   LanguagePicker,
   TopStripeMenu,
-  TopStripeButton
-} from '@skatteetaten/frontend-components/TopStripe';
-import TopBanner from '@skatteetaten/frontend-components/TopBanner';
-import Link from '@skatteetaten/frontend-components/Link';
-import Icon from '@skatteetaten/frontend-components/Icon';
+  TopStripeButton,
+  TopBanner,
+  Link,
+  Icon,
+} from '@skatteetaten/frontend-components';
 
 const [language, setLanguage] = useState('nb');
 
@@ -82,7 +82,7 @@ const [language, setLanguage] = useState('nb');
 På startsiden i et fagsystem:
 
 ```js
-import TopBanner from '@skatteetaten/frontend-components/TopBanner';
+import { TopBanner } from '@skatteetaten/frontend-components';
 
 <div>
   <TopBanner compact homeText="Systemnavn" homeUrl="#topbanner">
@@ -94,7 +94,7 @@ import TopBanner from '@skatteetaten/frontend-components/TopBanner';
 På en underside i et fagsystem:
 
 ```js
-import TopBanner from '@skatteetaten/frontend-components/TopBanner';
+import { TopBanner } from '@skatteetaten/frontend-components';
 
 <div>
   <TopBanner

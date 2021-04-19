@@ -1,10 +1,8 @@
 import * as React from 'react';
 import { TopStripeButton } from './TopStripeButton';
 import { TopStripeMenu } from './TopStripeMenu';
-import { ReactComponent as EnglishFlag } from './assets/EnglishFlag.svg';
-import { ReactComponent as NorwegianFlag } from './assets/NorwegianFlag.svg';
-import { ReactComponent as SamiFlag } from './assets/SamiFlag.svg';
-import Icon from '../Icon/Icon';
+import { EnglishFlag, NorwegianFlag, SamiFlag } from './assets';
+import { Icon } from '../index';
 import { UseScreen } from '../utils/ScreenPlugin';
 import { getClassNames } from './LanguagePicker.classNames';
 
@@ -12,7 +10,7 @@ enum LanguageEnum {
   BOKMAAL = 'nb',
   NYNORSK = 'nn',
   ENGLISH = 'en',
-  SAMI = 'se'
+  SAMI = 'se',
 }
 
 const generateLanguagePickerText = (language: LanguageEnum): string => {
@@ -45,7 +43,7 @@ const LanguagePickerButton = ({
   buttonLanguage,
   selectedLanguage,
   setLanguage,
-  showOnMobile
+  showOnMobile,
 }): JSX.Element => {
   const styles = getClassNames();
   return (
@@ -89,13 +87,13 @@ export interface LanguagePickerProps {
   showSami?: boolean;
 }
 
-export const LanguagePicker: React.FC<LanguagePickerProps> = props => {
+export const LanguagePicker: React.FC<LanguagePickerProps> = (props) => {
   const {
     className,
     selectedLanguage,
     setLanguage,
     showOnMobile = true,
-    showSami = false
+    showSami = false,
   } = props;
   const [languages, setLanguages] = React.useState<LanguageEnum[]>([]);
 
@@ -105,12 +103,12 @@ export const LanguagePicker: React.FC<LanguagePickerProps> = props => {
           LanguageEnum.BOKMAAL,
           LanguageEnum.NYNORSK,
           LanguageEnum.ENGLISH,
-          LanguageEnum.SAMI
+          LanguageEnum.SAMI,
         ])
       : setLanguages([
           LanguageEnum.BOKMAAL,
           LanguageEnum.NYNORSK,
-          LanguageEnum.ENGLISH
+          LanguageEnum.ENGLISH,
         ]);
   }, [showSami]);
 
@@ -128,7 +126,7 @@ export const LanguagePicker: React.FC<LanguagePickerProps> = props => {
         title={generateLanguagePickerText(selectedLanguage)}
         className={className}
       >
-        {languages.map(language => {
+        {languages.map((language) => {
           return (
             <LanguagePickerButton
               buttonLanguage={language}

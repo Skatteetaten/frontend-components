@@ -1,4 +1,4 @@
-** TopStripe er en svart menystripe øverst på innloggede sider for publikum. **
+**TopStripe er en svart menystripe øverst på innloggede sider for publikum.**
 
 ### Ikke innlogget
 
@@ -6,13 +6,14 @@ Viser Kontakt oss, endre skriftsstørrelse, språk og logg inn.
 
 ```js
 import { useState } from 'react';
-import TopStripe, {
+import {
+  TopStripe,
   LanguagePicker,
   TopStripeMenu,
-  TopStripeButton
-} from '@skatteetaten/frontend-components/TopStripe';
-import TopBanner from '@skatteetaten/frontend-components/TopBanner';
-import Link from '@skatteetaten/frontend-components/Link';
+  TopStripeButton,
+  TopBanner,
+  Link,
+} from '@skatteetaten/frontend-components';
 
 const [language, setLanguage] = useState('nb');
 
@@ -59,14 +60,15 @@ Viser Kontakt oss, endre skriftsstørrelse, språk, partsvalg og logg ut.
 ```js
 import { useState } from 'react';
 
-import TopStripe, {
+import {
   LanguagePicker,
+  TopStripe,
   TopStripeMenu,
-  TopStripeButton
-} from '@skatteetaten/frontend-components/TopStripe';
-import TopBanner from '@skatteetaten/frontend-components/TopBanner';
-import Link from '@skatteetaten/frontend-components/Link';
-import Icon from '@skatteetaten/frontend-components/Icon';
+  TopStripeButton,
+  TopBanner,
+  Link,
+  Icon,
+} from '@skatteetaten/frontend-components';
 const [language, setLanguage] = useState('nb');
 
 <div>
@@ -83,7 +85,7 @@ const [language, setLanguage] = useState('nb');
       closeMenuAriaLabel="Lukk endre skriftstørrelse"
       title={'Endre skriftstørrelse'}
     >
-      <div style={{ fontSize: '24px', marginTop: '8px' }}>
+      <div style={{ fontSize: '1.5rem', marginTop: '8px' }}>
         Hold Ctrl-tasten nede (Cmd-tasten på Mac). Trykk på + for å forstørre
         eller - for å forminske.
       </div>
@@ -120,15 +122,15 @@ Viser Kontakt oss, endre skriftsstørrelse, språk, partsvalg og logg ut.
 ```js
 import { useState } from 'react';
 
-import TopStripe, {
+import {
+  TopStripe,
   LanguagePicker,
   TopStripeMenu,
-  TopStripeButton
-} from '@skatteetaten/frontend-components/TopStripe';
-import TopBanner from '@skatteetaten/frontend-components/TopBanner';
-import Link from '@skatteetaten/frontend-components/Link';
-import Icon from '@skatteetaten/frontend-components/Icon';
-
+  TopStripeButton,
+  TopBanner,
+  Link,
+  Icon,
+} from '@skatteetaten/frontend-components';
 import { UseScreen } from '@skatteetaten/frontend-components/utils/ScreenPlugin';
 
 const size = UseScreen();
@@ -150,7 +152,7 @@ const [language, setLanguage] = useState('nb');
       closeMenuAriaLabel="Lukk endre skriftstørrelse"
       title={'Endre skriftstørrelse'}
     >
-      <div style={{ fontSize: '24px', marginTop: '8px' }}>
+      <div style={{ fontSize: '1.5rem', marginTop: '8px' }}>
         Hold Ctrl-tasten nede (Cmd-tasten på Mac). Trykk på + for å forstørre
         eller - for å forminske.
       </div>
@@ -190,13 +192,14 @@ På mobil flyttes valgene for kontakt oss og skriftsstørrelse til footeren.
 ```js
 import { useState } from 'react';
 
-import TopStripe, {
+import {
+  TopStripe,
   LanguagePicker,
   TopStripeMenu,
-  TopStripeButton
-} from '@skatteetaten/frontend-components/TopStripe';
-import TopBanner from '@skatteetaten/frontend-components/TopBanner';
-import Link from '@skatteetaten/frontend-components/Link';
+  TopStripeButton,
+  TopBanner,
+  Link,
+} from '@skatteetaten/frontend-components';
 
 const [language, setLanguage] = useState('nb');
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import { mount } from 'enzyme';
 import { matches } from '../utils/test-utils';
-import TopBanner from './TopBanner';
+import { TopBanner } from '../index';
 
 function oppsettFullDOM(props) {
   return mount(<TopBanner {...props} />);
@@ -24,7 +24,7 @@ describe('TopBanner komponent', () => {
   it('rendrer TopBanner med riktige props', () => {
     const wrapper = oppsettFullDOM({
       className: 'topbanner-classname',
-      id: 'toppbanner-id'
+      id: 'toppbanner-id',
     });
 
     expect(wrapper.prop('className')).toEqual('topbanner-classname');
@@ -35,7 +35,7 @@ describe('TopBanner komponent', () => {
     const wrapper = oppsettFullDOM({
       external: true,
       homeText: 'Til skatteetaten.no',
-      title: 'Ekstern publikumsløsning'
+      title: 'Ekstern publikumsløsning',
     });
 
     expect(wrapper.find('h1').html()).toContain('Ekstern publikumsløsning');
@@ -49,7 +49,7 @@ describe('TopBanner komponent', () => {
   it('rendrer TopBanner med kompakt visning for eksterne arbeidsflater ', () => {
     const wrapper = oppsettFullDOM({
       external: true,
-      compact: true
+      compact: true,
     });
 
     expect(wrapper.find('ImageBase').prop('height')).toEqual(55);
@@ -60,7 +60,7 @@ describe('TopBanner komponent', () => {
     const wrapper = oppsettFullDOM({
       external: false,
       compact: true,
-      title: 'Intern løsning'
+      title: 'Intern løsning',
     });
 
     expect(wrapper.find('header'));
@@ -75,7 +75,7 @@ describe('TopBanner komponent', () => {
     const wrapper = oppsettFullDOM({
       external: false,
       icon: 'ArrowBack',
-      title: 'Intern løsning'
+      title: 'Intern løsning',
     });
 
     expect(wrapper.find('header'));
@@ -89,7 +89,7 @@ describe('TopBanner komponent', () => {
   it('rendrer intern TopBanner uten tittel', () => {
     const wrapper = oppsettFullDOM({
       external: false,
-      title: 'Intern løsning'
+      title: 'Intern løsning',
     });
 
     expect(wrapper.find('header'));

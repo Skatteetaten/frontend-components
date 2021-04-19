@@ -8,9 +8,9 @@ export const getClassNames = () => {
       width: '100%',
       selectors: {
         '@media (max-width: 900px)': {
-          paddingLeft: 'calc(50% - 48px)'
-        }
-      }
+          paddingLeft: 'calc(50% - 48px)',
+        },
+      },
     },
     checkIcon: {
       display: 'inline',
@@ -22,21 +22,21 @@ export const getClassNames = () => {
           left: 'calc(50% - 84px)',
           width: '14px',
           margin: '0 8px',
-          fontSize: FontSizes.medium + ' !important'
-        }
-      }
+          fontSize: FontSizes.medium + ' !important',
+        },
+      },
     },
     flag: {
       marginRight: '4px',
-      verticalAlign: 'middle'
+      verticalAlign: 'middle',
     },
     text: {
       selectors: {
         '@media (max-width: 900px)': {
           marginLeft: '4px',
-          textDecoration: 'underline'
-        }
-      }
-    }
+          textDecoration: 'underline',
+        },
+      },
+    },
   });
 };

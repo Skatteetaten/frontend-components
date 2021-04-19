@@ -1,9 +1,11 @@
-** Tekstfelt benyttes når vi ønsker at brukeren skrive inn informasjon av en bestemt type - som oftest i et skjema **
+**Tekstfelt benyttes når vi ønsker at brukeren skrive inn informasjon av en bestemt type - som oftest i et skjema**
 
 Standard tekstfelt:
 
 ```js
-import TextField from '@skatteetaten/frontend-components/TextField';
+import { TextField } from '@skatteetaten/frontend-components';
+
+const [state, setState] = React.useState({ value: '' });
 
 <div style={{ width: '300px' }}>
   <TextField
@@ -18,7 +20,9 @@ import TextField from '@skatteetaten/frontend-components/TextField';
 Stor variant av tekstfelt:
 
 ```js
-import TextField from '@skatteetaten/frontend-components/TextField';
+import { TextField } from '@skatteetaten/frontend-components';
+
+const [state, setState] = React.useState({ value: '' });
 
 <div style={{ width: '300px' }}>
   <TextField
@@ -33,14 +37,17 @@ import TextField from '@skatteetaten/frontend-components/TextField';
 Hjelpetekster og advarsel:
 
 ```js
-import TextField from '@skatteetaten/frontend-components/TextField';
+import { TextField } from '@skatteetaten/frontend-components';
+
+const [name, setName] = React.useState('');
+const [children, setChildren] = React.useState('23');
 
 <>
   <div style={{ width: '300px' }}>
     <TextField
       label="Fullt navn"
-      value={state.value1}
-      onChange={(e, value) => setState({ value1: value })}
+      value={name}
+      onChange={(e, value) => setName(value)}
       help="Vi trenger å vite navnet ditt dersom vi skal kontakte deg senere."
     />
   </div>
@@ -50,9 +57,9 @@ import TextField from '@skatteetaten/frontend-components/TextField';
       label="Antall barn"
       placeholder={''}
       inputMode={'numeric'}
-      value={'23'}
+      value={children}
       warning="Er du sikker på at antall barn er riktig?"
-      onChange={(e, value) => setState({ value2: value })}
+      onChange={(e, value) => setChildren(value)}
     />
   </div>
 </>;
@@ -61,7 +68,9 @@ import TextField from '@skatteetaten/frontend-components/TextField';
 Feilmelding vises i umiddelbar nærhet til feltet:
 
 ```js
-import TextField from '@skatteetaten/frontend-components/TextField';
+import { TextField } from '@skatteetaten/frontend-components';
+
+const [state, setState] = React.useState({ value: '' });
 
 <div style={{ width: '160px' }}>
   <TextField
@@ -78,13 +87,13 @@ import TextField from '@skatteetaten/frontend-components/TextField';
 Av og til ønsker man å veksle mellom skrive og lesemodus. Da vises det som ren tekst med et blyant-ikon. Når man klikker, blir det skrivefelt:
 
 ```js
-import TextField from '@skatteetaten/frontend-components/TextField';
+import { TextField } from '@skatteetaten/frontend-components';
 
-const initialState = {
+const [state, setState] = React.useState({
   value: 'Siri Saksbehandler',
   vekt: '4',
-  empty: ''
-};
+  empty: '',
+});
 
 <div style={{ width: '300px' }}>
   <TextField
@@ -92,7 +101,7 @@ const initialState = {
     editable
     label="Saksbehandler"
     value={state.value}
-    onChange={(e, value) => setState({ value })}
+    onChange={(e, value) => setState({ ...state, value })}
     boldText={true}
   />
   <p>Med suffix:</p>
@@ -101,7 +110,7 @@ const initialState = {
     editable
     label="Vekt på vare"
     value={state.vekt}
-    onChange={(e, value) => setState({ vekt: value })}
+    onChange={(e, value) => setState({ ...state, vekt: value })}
     boldText={true}
     suffix={'kg'}
   />
@@ -112,7 +121,7 @@ const initialState = {
     editableWhenEmpty
     label="Saksbehandler"
     value={state.empty}
-    onChange={(e, value) => setState({ empty: value })}
+    onChange={(e, value) => setState({ ...state, empty: value })}
     boldText={true}
   />
 </div>;
@@ -121,7 +130,9 @@ const initialState = {
 Bestemt formatering:
 
 ```js
-import TextField from '@skatteetaten/frontend-components/TextField';
+import { TextField } from '@skatteetaten/frontend-components';
+
+const [state, setState] = React.useState({ value: '' });
 
 <div style={{ width: '300px' }}>
   <TextField
@@ -137,18 +148,18 @@ import TextField from '@skatteetaten/frontend-components/TextField';
 Multiline tekstfelt:
 
 ```js
-import TextField from '@skatteetaten/frontend-components/TextField';
+import { TextField } from '@skatteetaten/frontend-components';
+
+const [lineBreak, setLineBreak] = React.useState(false);
 
 <div style={{ width: '300px' }}>
   <TextField
     label="Endres til multiline dersom teksten er lengre enn 50 tegn"
-    multiline={state.lineBreak}
+    multiline={lineBreak}
     onChange={(e, value) => {
-      const lineBreak = value.length > 50;
-      if (lineBreak !== state.lineBreak) {
-        setState({
-          lineBreak: lineBreak
-        });
+      const shouldBreakLine = value.length > 50;
+      if (shouldBreakLine !== state.lineBreak) {
+        setLineBreak(shouldBreakLine);
       }
     }}
   />

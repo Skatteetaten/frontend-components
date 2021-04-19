@@ -1,2 +1,2 @@
-export { default } from './SkeBasis';
+export { SkeBasis as default } from './SkeBasis';
 export * from './SkeBasis';

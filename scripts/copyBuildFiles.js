@@ -4,7 +4,7 @@ var {
   readFileSync,
   copyFileSync,
   writeFileSync,
-  mkdirSync
+  mkdirSync,
 } = require('fs');
 
 const libPath = resolve(__dirname, '../lib/');
@@ -15,7 +15,7 @@ if (!existsSync(libPath)) {
 
 const files = ['README.md', 'LICENSE'];
 
-files.forEach(file => {
+files.forEach((file) => {
   const filePath = resolve(libPath, basename(file));
   copyFileSync(file, filePath);
   console.log(`Copied ${file} to ${filePath}`);
@@ -37,7 +37,7 @@ const {
   peerDependencies,
   dependencies,
   types,
-  main
+  main,
 } = JSON.parse(pkgjson);
 
 const minimalPackage = {
@@ -55,7 +55,7 @@ const minimalPackage = {
   bugs,
   homepage,
   peerDependencies,
-  dependencies
+  dependencies,
 };
 
 const pkgJsonPath = resolve(libPath, 'package.json');

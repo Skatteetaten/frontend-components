@@ -1,24 +1,31 @@
-** FooterContent brukes i publikumsløsninger for å markere bunnen av siden.**
+**FooterContent brukes i publikumsløsninger for å markere bunnen av siden.**
 
 ```js
-import FooterContent, {
-  FooterLogo
-} from '@skatteetaten/frontend-components/FooterContent';
-import Grid from '@skatteetaten/frontend-components/Grid';
+import {
+  FooterContent,
+  FooterLogo,
+  Grid,
+} from '@skatteetaten/frontend-components';
 
 <div>
   <FooterContent>
     <Grid>
       <Grid.Row>
-        <Grid.Col sm={12} lg={12} xl={4}>
-          <FooterContent.Logo />
+        <Grid.Col sm={0} lg={1} xl={2}></Grid.Col>
+        <Grid.Col noSpacing sm={12} lg={10} xl={8}>
+          <Grid>
+            <Grid.Row>
+              <Grid.Col noSpacing sm={0} lg={1} xl={2}>
+                <FooterContent.Logo />
+              </Grid.Col>
+              <Grid.Col noSpacing sm={12} lg={10} xl={8}>
+                <p>Innhold i footer</p>
+              </Grid.Col>
+              <Grid.Col noSpacing sm={0} lg={1} xl={2}></Grid.Col>
+            </Grid.Row>
+          </Grid>
         </Grid.Col>
-        <Grid.Col sm={12} lg={12} xl={4}>
-          <b>Kontakt oss</b>
-        </Grid.Col>
-        <Grid.Col sm={12} lg={12} xl={4}>
-          noreply@skatteetaten.no
-        </Grid.Col>
+        <Grid.Col noSpacing sm={0} lg={1} xl={2}></Grid.Col>
       </Grid.Row>
     </Grid>
   </FooterContent>
@@ -27,10 +34,24 @@ import Grid from '@skatteetaten/frontend-components/Grid';
 
 ```js noeditor beskrivelse
 <>
+  <h3>Innhold i bunnen av siden</h3>
   <p>
     I alle nettløsningene våre har vi en bunn som typisk inneholder
     kontaktopplysninger, personvernopplysninger og lenker for deling.
     Bunn-komponenten kan inneholde flere underelementer.
+  </p>
+  <h3>Tilpass bunnen til ulike skjermstørrelser</h3>
+  <p>
+    FooterContent-komponenten kan inneholde flere underelementer. Vi anbefaler å
+    bruke grid-systemet for å sette det opp, fordi dette gjør at den tilpasser
+    seg ulike skjermstørrelser.
+  </p>
+  <h3>Logo i bunnen</h3>
+  <p>
+    I bunnen skal det ligge en egen logo-komponent, «FooterContent.Logo». For å
+    få engelsk logo kan du bruke «FooterContent.LogoEn». Logoen blir midtstilt
+    når skjermen er mindre enn 1024px bred, og dette tilsvarer fra og med
+    «large» i grid-systemet.
   </p>
   <h3>Tilpass bunnen til ulike skjermstørrelser</h3>
   <ul>

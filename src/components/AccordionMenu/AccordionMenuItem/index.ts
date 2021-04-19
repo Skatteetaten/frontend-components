@@ -1,2 +1,2 @@
-export { default } from './AccordionMenuItem';
+export { AccordionMenuItem as default } from './AccordionMenuItem';
 export * from './AccordionMenuItem';

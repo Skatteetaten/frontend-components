@@ -1,5 +1,5 @@
 import * as React from 'react';
-import Image from '../Image/Image';
+import { Image } from '../index';
 import { getClassNames, getLogoClassNames } from './FooterContent.classNames';
 import FooterDekor from './footerDekor';
 import logo from './assets/ske-logo.svg';
@@ -27,7 +27,8 @@ const LogoEn = () => {
   );
 };
 
-interface FooterContentProps extends React.HTMLAttributes<HTMLDivElement> {
+export interface FooterContentProps
+  extends React.HTMLAttributes<HTMLDivElement> {
   children: React.ReactNode;
   className?: string;
   /** aria-label */
@@ -37,7 +38,7 @@ interface FooterContentProps extends React.HTMLAttributes<HTMLDivElement> {
 /**
  * @visibleName FooterContent (Bunn)
  */
-class FooterContent extends React.PureComponent<FooterContentProps> {
+export class FooterContent extends React.PureComponent<FooterContentProps> {
   /** Engelsk logo */
   static LogoEn = LogoEn;
   /** Norsk Logo */
@@ -60,5 +61,3 @@ class FooterContent extends React.PureComponent<FooterContentProps> {
     );
   }
 }
-
-export default FooterContent;

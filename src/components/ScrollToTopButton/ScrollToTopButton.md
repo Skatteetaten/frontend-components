@@ -1,13 +1,13 @@
-** ScrollToTopButton brukes til å gå til toppen av siden. **
+**ScrollToTopButton brukes til å gå til toppen av siden.**
 
 ```js noeditor
-import MessageBar from '@skatteetaten/frontend-components/MessageBar';
+import { MessageBar } from '@skatteetaten/frontend-components';
 
 <MessageBar>Rull nedover på siden for å se knappen.</MessageBar>;
 ```
 
 ```js
-import ScrollToTopButton from '@skatteetaten/frontend-components/ScrollToTopButton';
+import { ScrollToTopButton } from '@skatteetaten/frontend-components';
 
 <div>
   <ScrollToTopButton label={'Til toppen'} />

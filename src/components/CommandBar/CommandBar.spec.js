@@ -23,7 +23,7 @@ it('setter CommandBar med riktige props', () => {
       key: 'menuItem',
       name: 'Meny',
       iconProps: {
-        iconName: 'Menu'
+        iconName: 'Menu',
       },
       ariaLabel: 'Meny',
       subMenuProps: {
@@ -33,12 +33,12 @@ it('setter CommandBar med riktige props', () => {
             name: 'Hjem',
             ariaLabel: 'Hjem',
             iconProps: {
-              iconName: 'Home'
-            }
-          }
-        ]
-      }
-    }
+              iconName: 'Home',
+            },
+          },
+        ],
+      },
+    },
   ];
   const farItems = [
     {
@@ -46,22 +46,22 @@ it('setter CommandBar med riktige props', () => {
       name: 'Filter',
       ariaLabel: 'Filter',
       iconProps: {
-        iconName: 'Filter'
-      }
+        iconName: 'Filter',
+      },
     },
     {
       key: 'info',
       name: 'Info',
       ariaLabel: 'Info',
       iconProps: {
-        iconName: 'Info'
+        iconName: 'Info',
       },
-      iconOnly: true
-    }
+      iconOnly: true,
+    },
   ];
   const wrapper = oppsettFullDOM({
     items: items,
-    farItems: farItems
+    farItems: farItems,
   });
 
   expect(wrapper.prop('items')).toEqual(items);

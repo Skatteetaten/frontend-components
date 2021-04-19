@@ -12,10 +12,10 @@ exports[`Link komponent matcher snapshot 1`] = `
   }
 >
   <ul
-    className="arrowLinkList-37"
+    className="arrowLinkList-44"
   >
     <li
-      className="arrowLink-36"
+      className="arrowLink-42"
       key="0"
     >
       <Link
@@ -26,20 +26,20 @@ exports[`Link komponent matcher snapshot 1`] = `
         text="Dette er en link"
       >
         <span
-          className="linkContainer-39"
+          className="linkContainer-46"
         >
           <Icon
-            className="icon-38"
+            className="icon-45"
             iconName="ArrowForward"
             role="presentation"
           >
             <StyledIconBase
-              className="icon-38"
+              className="icon-45"
               iconName="ArrowForward"
               role="presentation"
             >
               <IconBase
-                className="icon-38"
+                className="icon-45"
                 iconName="ArrowForward"
                 role="presentation"
                 styles={[Function]}
@@ -52,69 +52,71 @@ exports[`Link komponent matcher snapshot 1`] = `
                       "elevation64": "0 25.6px 57.6px 0 rgba(0, 0, 0, 0.22), 0 4.8px 14.4px 0 rgba(0, 0, 0, 0.18)",
                       "elevation8": "0 3.2px 7.2px 0 rgba(0, 0, 0, 0.132), 0 0.6px 1.8px 0 rgba(0, 0, 0, 0.108)",
                       "roundedCorner2": "2px",
+                      "roundedCorner4": "4px",
+                      "roundedCorner6": "6px",
                     },
                     "fonts": Object {
                       "large": Object {
                         "MozOsxFontSmoothing": "grayscale",
                         "WebkitFontSmoothing": "antialiased",
-                        "fontFamily": "'Helvetica Neue', Helvetica , Arial, sans-serif",
-                        "fontSize": "18px",
+                        "fontFamily": "'Helvetica Neue', Helvetica , Arial, 'Liberation Sans', 'Nimbus Sans L', sans-serif",
+                        "fontSize": "1.125rem",
                         "fontWeight": 300,
                       },
                       "medium": Object {
                         "MozOsxFontSmoothing": "grayscale",
                         "WebkitFontSmoothing": "antialiased",
-                        "fontFamily": "'Helvetica Neue', Helvetica , Arial, sans-serif",
-                        "fontSize": "16px",
+                        "fontFamily": "'Helvetica Neue', Helvetica , Arial, 'Liberation Sans', 'Nimbus Sans L', sans-serif",
+                        "fontSize": "1rem",
                         "fontWeight": 400,
                       },
                       "mediumPlus": Object {
                         "MozOsxFontSmoothing": "grayscale",
                         "WebkitFontSmoothing": "antialiased",
-                        "fontFamily": "'Helvetica Neue', Helvetica , Arial, sans-serif",
-                        "fontSize": "17px",
+                        "fontFamily": "'Helvetica Neue', Helvetica , Arial, 'Liberation Sans', 'Nimbus Sans L', sans-serif",
+                        "fontSize": "1.0625rem",
                         "fontWeight": 400,
                       },
                       "mega": Object {
                         "MozOsxFontSmoothing": "grayscale",
                         "WebkitFontSmoothing": "antialiased",
-                        "fontFamily": "'Helvetica Neue', Helvetica , Arial, sans-serif",
-                        "fontSize": "72px",
+                        "fontFamily": "'Helvetica Neue', Helvetica , Arial, 'Liberation Sans', 'Nimbus Sans L', sans-serif",
+                        "fontSize": "4.25rem",
                         "fontWeight": 100,
                       },
                       "small": Object {
                         "MozOsxFontSmoothing": "grayscale",
                         "WebkitFontSmoothing": "antialiased",
-                        "fontFamily": "'Helvetica Neue', Helvetica , Arial, sans-serif",
-                        "fontSize": "14px",
+                        "fontFamily": "'Helvetica Neue', Helvetica , Arial, 'Liberation Sans', 'Nimbus Sans L', sans-serif",
+                        "fontSize": "0.875rem",
                         "fontWeight": 400,
                       },
                       "smallPlus": Object {
                         "MozOsxFontSmoothing": "grayscale",
                         "WebkitFontSmoothing": "antialiased",
-                        "fontFamily": "'Helvetica Neue', Helvetica , Arial, sans-serif",
-                        "fontSize": "15px",
+                        "fontFamily": "'Helvetica Neue', Helvetica , Arial, 'Liberation Sans', 'Nimbus Sans L', sans-serif",
+                        "fontSize": "0.9375rem",
                         "fontWeight": 400,
                       },
                       "superLarge": Object {
                         "MozOsxFontSmoothing": "grayscale",
                         "WebkitFontSmoothing": "antialiased",
-                        "fontFamily": "'Helvetica Neue', Helvetica , Arial, sans-serif",
-                        "fontSize": "42px",
+                        "fontFamily": "'Helvetica Neue', Helvetica , Arial, 'Liberation Sans', 'Nimbus Sans L', sans-serif",
+                        "fontSize": "2.625rem",
                         "fontWeight": 100,
                       },
                       "tiny": Object {
                         "MozOsxFontSmoothing": "grayscale",
                         "WebkitFontSmoothing": "antialiased",
-                        "fontFamily": "'Helvetica Neue', Helvetica , Arial, sans-serif",
-                        "fontSize": "10px",
+                        "fontFamily": "'Helvetica Neue', Helvetica , Arial, 'Liberation Sans', 'Nimbus Sans L', sans-serif",
+                        "fontSize": "0.625rem",
                         "fontWeight": 600,
                       },
                       "xLarge": Object {
                         "MozOsxFontSmoothing": "grayscale",
                         "WebkitFontSmoothing": "antialiased",
-                        "fontFamily": "'Helvetica Neue', Helvetica , Arial, sans-serif",
-                        "fontSize": "22px",
+                        "fontFamily": "'Helvetica Neue', Helvetica , Arial, 'Liberation Sans', 'Nimbus Sans L', sans-serif",
+                        "fontSize": "1.375rem",
                         "fontWeight": 100,
                       },
                       "xLargePlus": Object {
@@ -127,15 +129,15 @@ exports[`Link komponent matcher snapshot 1`] = `
                       "xSmall": Object {
                         "MozOsxFontSmoothing": "grayscale",
                         "WebkitFontSmoothing": "antialiased",
-                        "fontFamily": "'Helvetica Neue', Helvetica , Arial, sans-serif",
-                        "fontSize": "12px",
+                        "fontFamily": "'Helvetica Neue', Helvetica , Arial, 'Liberation Sans', 'Nimbus Sans L', sans-serif",
+                        "fontSize": "0.75rem",
                         "fontWeight": 400,
                       },
                       "xxLarge": Object {
                         "MozOsxFontSmoothing": "grayscale",
                         "WebkitFontSmoothing": "antialiased",
-                        "fontFamily": "'Helvetica Neue', Helvetica , Arial, sans-serif",
-                        "fontSize": "28px",
+                        "fontFamily": "'Helvetica Neue', Helvetica , Arial, 'Liberation Sans', 'Nimbus Sans L', sans-serif",
+                        "fontSize": "1.875rem",
                         "fontWeight": 100,
                       },
                       "xxLargePlus": Object {
@@ -266,6 +268,9 @@ exports[`Link komponent matcher snapshot 1`] = `
                       "buttonTextDisabled": "rgba(89, 89, 89, 0.95)",
                       "buttonTextHovered": "rgba(21, 21, 21, 0.95)",
                       "buttonTextPressed": "rgba(21, 21, 21, 0.95)",
+                      "cardShadow": "0 1.6px 3.6px 0 rgba(0, 0, 0, 0.132), 0 0.3px 0.9px 0 rgba(0, 0, 0, 0.108)",
+                      "cardShadowHovered": "0 0 1px rgba(89, 89, 89, 0.95)",
+                      "cardStandoutBackground": "#ffffff",
                       "defaultStateBackground": "#f8f8f8",
                       "disabledBackground": "#f4f4f4",
                       "disabledBodySubtext": "#c8c8c8",
@@ -302,7 +307,7 @@ exports[`Link komponent matcher snapshot 1`] = `
                       "listItemBackgroundCheckedHovered": "#dadada",
                       "listItemBackgroundHovered": "#f4f4f4",
                       "listText": "rgba(0, 0, 0, 0.95)",
-                      "listTextColor": "rgba(0, 0, 0, 0.95)",
+                      "listTextColor": "#323130",
                       "menuBackground": "#ffffff",
                       "menuDivider": "#c8c8c8",
                       "menuHeader": "#1362ae",
@@ -349,7 +354,7 @@ exports[`Link komponent matcher snapshot 1`] = `
               >
                 <i
                   aria-hidden={true}
-                  className="icon-43"
+                  className="icon-50"
                   data-icon-name="ArrowForward"
                   role="presentation"
                 >
@@ -359,7 +364,7 @@ exports[`Link komponent matcher snapshot 1`] = `
             </StyledIconBase>
           </Icon>
           <a
-            className="iconLink-41"
+            className="iconLink-48"
             href="#"
           >
             Dette er en link

@@ -1,6 +1,6 @@
 import React from 'react';
 import { matches } from './../utils/test-utils';
-import FileUploader, { FileFormatTypes, Language } from './FileUploader';
+import { FileUploader, FileFormatTypes, Language } from './FileUploader';
 import { mount, shallow } from 'enzyme';
 
 function oppsettShallow(props) {
@@ -19,28 +19,20 @@ describe('FileUploader komponent', () => {
     const wrapper = oppsettShallow({
       acceptedFileFormats: [FileFormatTypes.jpg, FileFormatTypes.png],
       ariaLabel: 'Filopplaster',
-      uploadFile: jest.fn()
+      uploadFile: jest.fn(),
     });
-    expect(
-      wrapper
-        .find('span')
-        .first()
-        .text()
-    ).toEqual('Aksepterte filformater: .jpg, .png');
+    expect(wrapper.find('span').first().text()).toEqual(
+      'Aksepterte filformater: .jpg, .png'
+    );
   });
   it('skal rendre med info', () => {
     const wrapper = oppsettShallow({
       info:
         'Husk å sjekke for sensitive personopplysninger, og evt fjerne disse før du laster opp vedleggene.',
       ariaLabel: 'Filopplaster',
-      uploadFile: jest.fn()
+      uploadFile: jest.fn(),
     });
-    expect(
-      wrapper
-        .find('div')
-        .last()
-        .text()
-    ).toEqual(
+    expect(wrapper.find('div').last().text()).toEqual(
       'Husk å sjekke for sensitive personopplysninger, og evt fjerne disse før du laster opp vedleggene.'
     );
   });
@@ -48,20 +40,12 @@ describe('FileUploader komponent', () => {
     const wrapper = oppsettShallow({
       acceptedFileFormats: [FileFormatTypes.jpg, FileFormatTypes.png],
       language: Language.en,
-      uploadFile: jest.fn()
+      uploadFile: jest.fn(),
     });
-    expect(
-      wrapper
-        .find('u')
-        .first()
-        .text()
-    ).toEqual('Add file(s)');
-    expect(
-      wrapper
-        .find('span')
-        .first()
-        .text()
-    ).toEqual('Accepted file formats: .jpg, .png');
+    expect(wrapper.find('u').first().text()).toEqual('Add file(s)');
+    expect(wrapper.find('span').first().text()).toEqual(
+      'Accepted file formats: .jpg, .png'
+    );
   });
   it('skal kjøre uploadFile-funksjon når bruker laster opp fil', () => {
     const mockFunc = jest.fn();
@@ -70,12 +54,12 @@ describe('FileUploader komponent', () => {
       ariaLabel: 'Filopplaster',
       axiosPath: 'http://localhost',
       language: Language.nb,
-      uploadFile: () => mockFunc()
+      uploadFile: () => mockFunc(),
     });
     wrapper.find('input').simulate('change', {
       target: {
-        files: [{ name: 'tekst.doc' }]
-      }
+        files: [{ name: 'tekst.doc' }],
+      },
     });
     expect(mockFunc.mock.calls.length).toBe(1);
   });
@@ -85,13 +69,13 @@ describe('FileUploader komponent', () => {
       acceptedFileFormats: [FileFormatTypes.doc, FileFormatTypes.docx],
       ariaLabel: 'Filopplaster',
       axiosPath: 'http://localhost',
-      uploadFile: () => mockFunc()
+      uploadFile: () => mockFunc(),
     });
     expect(wrapper.exists('ErrorMessage')).toEqual(false);
     wrapper.find('input').simulate('change', {
       target: {
-        files: [{ name: 'tekst.jpeg' }]
-      }
+        files: [{ name: 'tekst.jpeg' }],
+      },
     });
     expect(wrapper.exists('ErrorMessage')).toEqual(true);
     expect(wrapper.find('ErrorMessage').text()).toEqual(
@@ -100,29 +84,20 @@ describe('FileUploader komponent', () => {
   });
   it('skal kjøre deleteFile dersom bruker trykker kryss i liste', () => {
     const mockFunc = jest.fn();
-    const mockFuncDelete = jest.fn(file => file);
+    const mockFuncDelete = jest.fn((file) => file);
     const wrapper = oppsettFullDOM({
       ariaLabel: 'Filopplaster',
       uploadFile: () => mockFunc(),
       files: [{ name: 'FilNavn.png', id: '123456789' }],
-      deleteFile: (file, err) => mockFuncDelete(file)
+      deleteFile: (file, err) => mockFuncDelete(file),
     });
     expect(wrapper.find('li').length).toEqual(1);
-    expect(
-      wrapper
-        .find('li')
-        .first()
-        .text()
-    ).toEqual('FilNavn.png');
-    wrapper
-      .find('li')
-      .first()
-      .find('button')
-      .simulate('click');
+    expect(wrapper.find('li').first().text()).toEqual('FilNavn.png');
+    wrapper.find('li').first().find('button').simulate('click');
     expect(mockFuncDelete).toHaveBeenCalled();
     expect(mockFuncDelete).toHaveBeenCalledWith({
       id: '123456789',
-      name: 'FilNavn.png'
+      name: 'FilNavn.png',
     });
   });
 });

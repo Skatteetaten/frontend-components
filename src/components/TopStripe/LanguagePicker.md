@@ -1,16 +1,17 @@
-** Språkvelger i publikumsløsninger **
+**Språkvelger i publikumsløsninger**
 
 For å velge mellom norsk bokmål, nynorsk, englesk og samisk i publikumsløsninger.
 
 ```js
 import { useState } from 'react';
-import TopStripe, {
+import {
+  TopStripe,
   LanguagePicker,
   TopStripeMenu,
-  TopStripeButton
-} from '@skatteetaten/frontend-components/TopStripe';
-import TopBanner from '@skatteetaten/frontend-components/TopBanner';
-import Link from '@skatteetaten/frontend-components/Link';
+  TopStripeButton,
+  TopBanner,
+  Link,
+} from '@skatteetaten/frontend-components';
 
 const [language, setLanguage] = useState('nb');
 
@@ -49,12 +50,12 @@ import LinkGroup from '@skatteetaten/frontend-components/LinkGroup';
 const links = [
   {
     text: 'TopBanner (Topp)',
-    path: '#topbanner'
+    path: '#topbanner',
   },
   {
     text: 'TopStripe (Toppstripe)',
-    path: '#topstripe'
-  }
+    path: '#topstripe',
+  },
 ];
 
 <>

@@ -1,7 +1,7 @@
 import React from 'react';
 import { mount } from 'enzyme';
 import { matches } from '../utils/test-utils';
-import TopStripe from './TopStripe';
+import { TopStripe } from '../index';
 
 function oppsettFullDOM(props) {
   return mount(<TopStripe {...props} />);
@@ -11,7 +11,7 @@ describe('TopStripe komponent', () => {
     matches(<TopStripe />);
   });
 
-  it('rendrer TopStripe med deafult props', () => {
+  it('rendrer TopStripe med default props', () => {
     const wrapper = oppsettFullDOM();
 
     expect(wrapper.prop('className')).toEqual(undefined);

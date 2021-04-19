@@ -1,18 +1,18 @@
-** Liste med navigasjonslenker med pil**
+**Liste med navigasjonslenker med pil**
 
 ```js
-import LinkGroup from '@skatteetaten/frontend-components/LinkGroup';
+import { LinkGroup } from '@skatteetaten/frontend-components';
 import { Link as RRLink, BrowserRouter as Router } from 'react-router-dom';
 
 const links = [
   {
     text: 'Dette er en link',
-    path: '#linkgroup'
+    path: '#linkgroup',
   },
   {
     text: 'En annen  link',
-    path: '#linkgroup'
-  }
+    path: '#linkgroup',
+  },
 ];
 
 <div>
@@ -20,21 +20,21 @@ const links = [
 </div>;
 ```
 
-** Eksempel på egendefinert link-implementasjon vha. react-router **
+**Eksempel på egendefinert link-implementasjon vha. react-router**
 
 ```js
-import LinkGroup from '@skatteetaten/frontend-components/LinkGroup';
+import { LinkGroup } from '@skatteetaten/frontend-components';
 import { Link as RRLink, BrowserRouter as Router } from 'react-router-dom';
 
 const links = [
   {
     text: 'Dette er en link',
-    path: '#linkgroup'
+    path: '#linkgroup',
   },
   {
     text: 'En annen  link',
-    path: '#linkgroup'
-  }
+    path: '#linkgroup',
+  },
 ];
 
 <div>

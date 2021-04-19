@@ -1,8 +1,6 @@
 import { mergeStyleSets } from '@uifabric/merge-styles';
 import { getTheme } from '@uifabric/styling';
-import { FontSizes } from '..';
-import { PaletteProps } from '..';
-import { TopBannerProps } from './TopBanner';
+import { FontSizes, PaletteProps, TopBannerProps } from '../index';
 import separator from './assets/separator.png';
 
 export function getClassNames(props: TopBannerProps) {
@@ -21,9 +19,9 @@ export function getClassNames(props: TopBannerProps) {
           backgroundRepeat: 'no-repeat',
           backgroundPosition: 'center',
           backgroundSize: 'cover',
-          backgroundImage: `url(${separator})`
-        }
-      }
+          backgroundImage: `url(${separator})`,
+        },
+      },
     },
     headerMain: {
       width: 'auto',
@@ -40,9 +38,9 @@ export function getClassNames(props: TopBannerProps) {
         '@media (min-width: 640px)': {
           width: 'auto',
           minWidth: compact ? 'auto' : '500px',
-          flexDirection: 'row'
-        }
-      }
+          flexDirection: 'row',
+        },
+      },
     },
     contentWrapper: {
       flexGrow: 3,
@@ -52,18 +50,18 @@ export function getClassNames(props: TopBannerProps) {
       paddingLeft: '16px',
       selectors: {
         '@media (min-width: 480px)': {
-          paddingLeft: '32px'
-        }
-      }
+          paddingLeft: '32px',
+        },
+      },
     },
     title: {
       marginTop: compact ? '12px' : '4px',
       fontSize: `${FontSizes.large} !important`,
       selectors: {
         '@media (min-width: 640px)': {
-          fontSize: `${FontSizes.xLarge} !important`
-        }
-      }
+          fontSize: `${FontSizes.xLarge} !important`,
+        },
+      },
     },
     separator: {
       width: '100%',
@@ -72,7 +70,7 @@ export function getClassNames(props: TopBannerProps) {
       backgroundRepeat: 'no-repeat',
       backgroundPosition: 'center',
       backgroundSize: 'cover',
-      backgroundImage: `url(${separator})`
+      backgroundImage: `url(${separator})`,
     },
     linkButton: {
       displayName: 'SkeActionButton',
@@ -82,9 +80,9 @@ export function getClassNames(props: TopBannerProps) {
         '& .ms-Button-textContainer': {
           color: palette.skeColor.blue,
           fontSize: FontSizes.xSmall,
-          fontWeight: 'bold'
-        }
-      }
-    }
+          fontWeight: 'bold',
+        },
+      },
+    },
   });
 }
