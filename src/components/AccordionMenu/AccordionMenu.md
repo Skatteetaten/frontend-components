@@ -1,5 +1,5 @@
 ```js noeditor
-import MessageBar from '@skatteetaten/frontend-components/MessageBar';
+import { MessageBar } from '@skatteetaten/frontend-components';
 
 <MessageBar type={MessageBar.Type.info}>
   Se tilhørende underkomponent{' '}
@@ -7,40 +7,43 @@ import MessageBar from '@skatteetaten/frontend-components/MessageBar';
 </MessageBar>;
 ```
 
-** Ekspanderende panel i saksbehandlingsløsninger**
+**Ekspanderende panel i saksbehandlingsløsninger**
 
 ```js
-import AccordionMenu from '@skatteetaten/frontend-components/AccordionMenu';
-import AccordionMenuItem from '@skatteetaten/frontend-components/AccordionMenu/AccordionMenuItem';
-import Icon from '@skatteetaten/frontend-components/Icon/Icon';
-import IconButton from '@skatteetaten/frontend-components/IconButton/IconButton';
-import ActionButton from '@skatteetaten/frontend-components/ActionButton/ActionButton';
+import {
+  AccordionMenu,
+  AccordionMenuItem,
+  Icon,
+  IconButton,
+  Link,
+  ActionButton,
+} from '@skatteetaten/frontend-components';
 
 // Inline styles for hacking examples
 const dlStyle = {
   display: 'inline-block',
   width: '50%',
   margin: '0 0 5px 0',
-  verticalAlign: 'text-top'
+  verticalAlign: 'text-top',
 };
 
 const removeMargin = {
-  margin: '0'
+  margin: '0',
 };
 
 const ulStyle = {
   padding: 0,
-  margin: 0
+  margin: 0,
 };
 
 const centerAlignStyle = {
   display: 'flex',
-  alignItems: 'center'
+  alignItems: 'center',
 };
 
 const timeStampStyle = {
-  paddingLeft: 40,
-  marginTop: '-10px'
+  paddingLeft: 26,
+  marginTop: '-10px',
 };
 
 <div style={{ width: '500px' }}>
@@ -63,6 +66,8 @@ const timeStampStyle = {
       <span>
         <strong>Kontaktopplysninger</strong>
       </span>
+      <br />
+      <br />
       <dl style={removeMargin}>
         <dt style={dlStyle}>Navn</dt>
         <dd style={dlStyle}>Ola Nordmann</dd>
@@ -124,7 +129,7 @@ const timeStampStyle = {
             style={{
               display: 'flex',
               alignSelf: 'flex-start',
-              marginLeft: 'auto'
+              marginLeft: 'auto',
             }}
           >
             1 aktiv sak
@@ -134,23 +139,38 @@ const timeStampStyle = {
     >
       <ul style={ulStyle}>
         <li>
-          <ActionButton icon="Update" ariaLabel="Oppdater">
-            Vurder omberegning engangsavgift
-          </ActionButton>
-          <br />
+          <Link
+            placement="before"
+            icon="Update"
+            ariaLabel="Vurder omberegning engangsavgift (oppdater)"
+            text="Vurder omberegning engangsavgift"
+            path={'#accordionmenu'}
+          />
+          <br /> <br />
           <div style={timeStampStyle}>Sist endret: 16.07.2019</div>
-        </li>
-        <li>
-          <ActionButton icon="Check" ariaLabel="Utført">
-            Refusjon engangsavgift
-          </ActionButton>
           <br />
-          <div style={timeStampStyle}>Sist endret: 22.05.2019</div>
         </li>
         <li>
-          <ActionButton icon="Check" ariaLabel="Utført">
-            Refusjon engangsavgift
-          </ActionButton>
+          <Link
+            placement="before"
+            icon="Check"
+            ariaLabel="Refusjon engangsavgift (utført)"
+            text="Refusjon engangsavgift"
+            path={'#accordionmenu'}
+          />
+          <br /> <br />
+          <div style={timeStampStyle}>Sist endret: 22.05.2019</div>
+          <br />
+        </li>
+        <li>
+          <Link
+            placement="before"
+            icon="Check"
+            ariaLabel="Refusjon engangsavgift (utført)"
+            text="Refusjon engangsavgift"
+            path={'#accordionmenu'}
+          />
+          <br />
           <br />
           <div style={timeStampStyle}>Sist endret: 14.05.2019</div>
         </li>

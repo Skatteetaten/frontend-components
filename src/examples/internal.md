@@ -1,15 +1,16 @@
 Venstre, kjerne og rutine:
 
 ```js
-import TopBanner from '@skatteetaten/frontend-components/TopBanner';
-import Card from '@skatteetaten/frontend-components/Card';
-
-const { Layout } = require('../components/Layout/Layout.js');
-const { Header } = require('../components/Layout/Header.js');
-const { Main } = require('../components/Layout/Main.js');
-const { Article } = require('../components/Layout/Article.js');
-const { Nav } = require('../components/Layout/Nav.js');
-const { Aside } = require('../components/Layout/Aside.js');
+import {
+  TopBanner,
+  Card,
+  Layout,
+  Header,
+  Main,
+  Article,
+  Nav,
+  Aside,
+} from '@skatteetaten/frontend-components';
 
 <Layout>
   <Header hiddenXlUp>
@@ -41,15 +42,16 @@ const { Aside } = require('../components/Layout/Aside.js');
 Kjerne og rutine:
 
 ```js
-import TopBanner from '@skatteetaten/frontend-components/TopBanner';
-import Card from '@skatteetaten/frontend-components/Card';
-
-const { Layout } = require('../components/Layout/Layout.js');
-const { Header } = require('../components/Layout/Header.js');
-const { Main } = require('../components/Layout/Main.js');
-const { Article } = require('../components/Layout/Article.js');
-const { Nav } = require('../components/Layout/Nav.js');
-const { Aside } = require('../components/Layout/Aside.js');
+import {
+  TopBanner,
+  Card,
+  Layout,
+  Header,
+  Main,
+  Article,
+  Nav,
+  Aside,
+} from '@skatteetaten/frontend-components';
 
 <Layout>
   <Header hiddenXlUp>
@@ -76,15 +78,16 @@ const { Aside } = require('../components/Layout/Aside.js');
 Venstre, kjerne:
 
 ```js
-import TopBanner from '@skatteetaten/frontend-components/TopBanner';
-import Card from '@skatteetaten/frontend-components/Card';
-
-const { Layout } = require('../components/Layout/Layout.js');
-const { Header } = require('../components/Layout/Header.js');
-const { Main } = require('../components/Layout/Main.js');
-const { Article } = require('../components/Layout/Article.js');
-const { Nav } = require('../components/Layout/Nav.js');
-const { Aside } = require('../components/Layout/Aside.js');
+import {
+  TopBanner,
+  Card,
+  Layout,
+  Header,
+  Main,
+  Article,
+  Nav,
+  Aside,
+} from '@skatteetaten/frontend-components';
 
 <Layout>
   <Header hiddenXlUp>

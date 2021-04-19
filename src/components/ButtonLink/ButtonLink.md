@@ -1,5 +1,5 @@
 ```js noeditor
-import MessageBar from '@skatteetaten/frontend-components/MessageBar';
+import { MessageBar } from '@skatteetaten/frontend-components';
 
 <MessageBar type={MessageBar.Type.info}>
   NB: Vær ekstra oppmerksom på kravene til universell utforming når du benytter
@@ -7,33 +7,38 @@ import MessageBar from '@skatteetaten/frontend-components/MessageBar';
 </MessageBar>;
 ```
 
-** Når hovedhandlingen er navigasjon til en annen side **
+**Når hovedhandlingen er navigasjon til en annen side**
 
 ```js
-import ButtonLink from '@skatteetaten/frontend-components/ButtonLink';
+import { ButtonLink } from '@skatteetaten/frontend-components';
 
 <ButtonLink path={'#'} text="Se og endre skattekort" />;
 ```
 
 ```js noeditor beskrivelse
-<h3>Knapp der hovedhandlingen tar brukeren videre til nytt område</h3>
-<p>
-Knappelenken leder oppmerksomheten til brukeren mot en enkelt hovedhandling, der utførelsen av denne handlingen skjer på en annen side.
-I designretningslinjene til Skatteetaten, har vi bestemt at hovedhandlinger skal se ut som knapper.
-Denne komponenten sikrer god universell utforming i slike situasjoner.
-</p>
-<p>
-Et eksempel er «Se og endre skattekort» på Skatteetaten.no.
-Når brukeren klikker på denne, vil løsningen for å endre skattekortet bli åpnet i en ny side.
-</p>
+<div>
+  <h3>Knapp der hovedhandlingen tar brukeren videre til nytt område</h3>
+  <p>
+    Knappelenken leder oppmerksomheten til brukeren mot en enkelt hovedhandling,
+    der utførelsen av denne handlingen skjer på en annen side. I
+    designretningslinjene til Skatteetaten, har vi bestemt at hovedhandlinger
+    skal se ut som knapper. Denne komponenten sikrer god universell utforming i
+    slike situasjoner.
+  </p>
+  <p>
+    Et eksempel er «Se og endre skattekort» på Skatteetaten.no. Når brukeren
+    klikker på denne, vil løsningen for å endre skattekortet bli åpnet i en ny
+    side.
+  </p>
 
-<h3>Knappeteksten må fortelle hva knappen gjør</h3>
+  <h3>Knappeteksten må fortelle hva knappen gjør</h3>
 
-<p>
-Teksten på knappelenken skal lede brukeren til handlingen.
-Denne teksten blir brukt av skjermleserbrukere når de søker etter den. Det er derfor svært viktig at knappeteksten tydelig forteller hva knappen gjør.
-</p>
-<p>
+  <p>
+    Teksten på knappelenken skal lede brukeren til handlingen. Denne teksten
+    blir brukt av skjermleserbrukere når de søker etter den. Det er derfor svært
+    viktig at knappeteksten tydelig forteller hva knappen gjør.
+  </p>
+  <p>
     Se{' '}
     <a href="https://www.skatteetaten.no/stilogtone/skrive/skriveregler/knapper/">
       skrivereglene
@@ -41,11 +46,13 @@ Denne teksten blir brukt av skjermleserbrukere når de søker etter den. Det er 
     for hvordan skrive på knapper.
   </p>
 
-<h3>En lenke som ser ut som en knapp</h3>
-<p>
-ButtonLink har en a-tag med role=button, som gjør at den fremstår som en knapp for skjermleserbrukere.
-Komponenten vil samtidig ha funksjonen med at den tar brukeren til en ny side ved et klikk.
-</p>
+  <h3>En lenke som ser ut som en knapp</h3>
+  <p>
+    ButtonLink har en a-tag med role=button, som gjør at den fremstår som en
+    knapp for skjermleserbrukere. Komponenten vil samtidig ha funksjonen med at
+    den tar brukeren til en ny side ved et klikk.
+  </p>
+</div>
 ```
 
 ```js noeditor uu

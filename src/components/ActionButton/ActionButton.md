@@ -1,7 +1,7 @@
-** Aksjonsknapp for selvstendige og mindre fremtredende handlinger **
+**Aksjonsknapp for selvstendige og mindre fremtredende handlinger**
 
 ```js
-import ActionButton from '@skatteetaten/frontend-components/ActionButton';
+import { ActionButton } from '@skatteetaten/frontend-components';
 
 <div>
   <ActionButton icon="AddOutline">Legg til</ActionButton>
@@ -14,7 +14,7 @@ import ActionButton from '@skatteetaten/frontend-components/ActionButton';
 Ikonet kan rendres til høyre for teksten med iconAfter=_true_:
 
 ```js
-import ActionButton from '@skatteetaten/frontend-components/ActionButton';
+import { ActionButton } from '@skatteetaten/frontend-components';
 
 <div>
   <ActionButton icon="delete" iconAfter={true}>

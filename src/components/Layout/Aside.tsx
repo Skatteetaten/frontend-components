@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import Grid from '../Grid/Grid';
+import { Grid } from '../index';
 
 export class Aside extends Grid.Col {
   static displayName = 'Aside';
@@ -21,16 +21,14 @@ export class Aside extends Grid.Col {
     lgPull: PropTypes.number,
     xlPull: PropTypes.number,
     xxlPull: PropTypes.number,
-    xxxlPull: PropTypes.number
+    xxxlPull: PropTypes.number,
   };
   static defaultProps = {
     tag: 'aside',
     lg: 12,
-    xl: 2
+    xl: 2,
   };
   render() {
     return super.render();
   }
 }
-
-export default Aside;

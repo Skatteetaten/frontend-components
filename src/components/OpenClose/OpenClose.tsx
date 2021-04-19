@@ -1,34 +1,35 @@
 import * as React from 'react';
 import classnames from 'classnames';
-import Icon from '../Icon/Icon';
+import { Icon, Heading } from '../index';
 import { getClassNames } from './OpenClose.classNames';
-import Heading from '../utils/Heading';
 
 export interface OpenCloseProps {
-  /** Om innholdet skal være åpent fra start */
+  /** If the content aria should be open/visible */
   isOpen?: boolean;
-  /** Om man ønsker ytterligere aksjon når bruker åpner steget. Kalles KUN når steget åpnes, ikke når det lukkes. */
+  /** Callback when opened (not when closed) */
   onClick?: (...args: any[]) => any;
-  /** Tittel på knappen */
+  /** Button title  */
   title?: string;
-  /** Om man ønsker at tittelen skal være en del av heading tag-hierarkiet. Verdi 1-6.*/
+  /** If the title should be a wrapped in a heading tag, value 1-7 .*/
   headingLevel?: number;
   /** By default er ikonet for åpning til venstre. Kan overstyres med iconRight: true. */
   iconRight?: boolean;
-  /** Overstyring av stiler */
+  /** Display as a compact version with smaller font size and margins */
+  compact?: boolean;
+  /** Styling overrides */
   className?: string;
-  /** Elementene som vises/skjules når bruker ekspanderer/kollapser.*/
+  /** Elements that are shown/hidden.*/
   children?: JSX.Element;
 }
 
-const OpenClose: React.FC<OpenCloseProps> = props => {
+export const OpenClose: React.FC<OpenCloseProps> = (props) => {
   const {
     title,
     className,
     headingLevel,
     iconRight,
     onClick,
-    children
+    children,
   } = props;
 
   const [isContentOpen, setContentOpen] = React.useState<boolean>(
@@ -44,7 +45,7 @@ const OpenClose: React.FC<OpenCloseProps> = props => {
     toggleVisibility();
   };
 
-  const styles = getClassNames();
+  const styles = getClassNames(props);
 
   return (
     <div className={className}>
@@ -75,5 +76,3 @@ const OpenClose: React.FC<OpenCloseProps> = props => {
     </div>
   );
 };
-
-export default OpenClose;

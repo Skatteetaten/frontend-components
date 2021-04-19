@@ -3,48 +3,50 @@ For å evaluere brukeropplevelsen til en løsning er det brukervennlighetstestin
 Listen under inneholder ti generelle grunnprinsipper for design av brukergrensesnitt, som har vist seg å holde vann. Det finnes unntak, men de er sjeldne, så dersom du har en løsning som bryter med noen av disse, anbefaler vi å brukerteste ekstra grundig.
 
 ```js noeditor
-import Accordion from '@skatteetaten/frontend-components/Accordion';
-import AccordionItem from '@skatteetaten/frontend-components/Accordion/AccordionItem';
-import Spinner from '@skatteetaten/frontend-components/Spinner';
-import Button from '@skatteetaten/frontend-components/Button';
-import Card from '@skatteetaten/frontend-components/Card';
-import TopBanner from '@skatteetaten/frontend-components/TopBanner';
-import TextField from '@skatteetaten/frontend-components/TextField';
-import Grid from '@skatteetaten/frontend-components/Grid';
-import MessageBar from '@skatteetaten/frontend-components/MessageBar';
-import LabelWithCallout from '@skatteetaten/frontend-components/LabelWithCallout';
-import ActionButton from '@skatteetaten/frontend-components/ActionButton';
-import IconButton from '@skatteetaten/frontend-components/IconButton';
-import Link from '@skatteetaten/frontend-components/Link';
+import {
+  Accordion,
+  AccordionItem,
+  Spinner,
+  Button,
+  Card,
+  TopBanner,
+  TextField,
+  Grid,
+  MessageBar,
+  LabelWithCallout,
+  ActionButton,
+  IconButton,
+  Link,
+} from '@skatteetaten/frontend-components';
 
-const initialState = {
-  hasSpinner: false
-};
+const [state, setState] = React.useState({
+  hasSpinner: false,
+});
 
 const links = [
   {
     text: 'Beregn reisefradrag',
-    path: '#stepList'
+    path: '#stepList',
   },
   {
     text: 'Oversikt over alle fradrag',
-    path: '#stepList'
-  }
+    path: '#stepList',
+  },
 ];
 
 const titles = {
   step1: {
     no: 'Jobber du?',
-    en: 'Are you a wage earner doing paid work?'
+    en: 'Are you a wage earner doing paid work?',
   },
   step2: {
     no: 'Sommerjobb?',
-    en: 'Summerjob?'
+    en: 'Summerjob?',
   },
   step3: {
     no: 'Du er ikke pendler',
-    en: 'You are not a commuter.'
-  }
+    en: 'You are not a commuter.',
+  },
 };
 
 <Accordion processList>

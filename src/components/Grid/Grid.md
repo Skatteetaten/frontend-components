@@ -1,4 +1,4 @@
-** Grid er en komponent som brukes til å plassere komponenter og annet innhold på siden, og hjelper til med å justere plasseringen for ulike skjermbredder. **
+**Grid er en komponent som brukes til å plassere komponenter og annet innhold på siden, og hjelper til med å justere plasseringen for ulike skjermbredder.**
 
 ```js noeditor
 DemoBlock = ({ children }) => (
@@ -8,7 +8,7 @@ DemoBlock = ({ children }) => (
       backgroundColor: '#ddd',
       textAlign: 'center',
       marginBottom: '0',
-      padding: '8px 0'
+      padding: '8px 0',
     }}
   >
     {children}
@@ -19,7 +19,8 @@ DemoBlock = ({ children }) => (
 Grid med standard padding:
 
 ```js
-import Grid from '@skatteetaten/frontend-components/Grid';
+import { Grid } from '@skatteetaten/frontend-components';
+
 <Grid padding="0px">
   <Grid.Row>
     <Grid.Col lg={4}>
@@ -59,7 +60,7 @@ import Grid from '@skatteetaten/frontend-components/Grid';
 Grid uten padding:
 
 ```js
-import Grid from '@skatteetaten/frontend-components/Grid';
+import { Grid } from '@skatteetaten/frontend-components';
 
 <Grid padding="0">
   <Grid.Row rowSpacing={Grid.SPACE_NONE}>
@@ -130,7 +131,6 @@ import TextField from '@skatteetaten/frontend-components/TextField';
           title="Saksopplysninger"
           color={Card.Color.BEIGE}
           expand={true}
-          circleOnIcon={false}
           isExpanded={false}
         >
           <p>Ingen opplysninger registrert.</p>
@@ -143,7 +143,6 @@ import TextField from '@skatteetaten/frontend-components/TextField';
           title="Fra arbeidsgiver"
           color={Card.Color.BEIGE}
           expand={true}
-          circleOnIcon={false}
           isExpanded={false}
         >
           <p>Ingen opplysninger registrert.</p>
@@ -156,7 +155,6 @@ import TextField from '@skatteetaten/frontend-components/TextField';
           title="Fra skattemelding"
           color={Card.Color.BEIGE}
           expand={true}
-          circleOnIcon={false}
           isExpanded={false}
         >
           <p>Ingen opplysninger registrert.</p>
@@ -181,7 +179,6 @@ import TextField from '@skatteetaten/frontend-components/TextField';
           title="Skattemelding"
           color={Card.Color.BEIGE}
           expand={true}
-          circleOnIcon={false}
           isExpanded={false}
         >
           <Grid padding="0px">

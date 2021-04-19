@@ -1,9 +1,9 @@
-** Button brukes til hovedhandlinger, og tommelfingerregelen er det kun skal være én slik knapp på siden **
+**Button brukes til hovedhandlinger, og tommelfingerregelen er det kun skal være én slik knapp på siden**
 
 Tydelig knapp:
 
 ```js
-import Button from '@skatteetaten/frontend-components/Button';
+import { Button } from '@skatteetaten/frontend-components';
 
 <div className="ExampleSpacing8">
   <Button buttonStyle="primary">Godkjenn</Button>{' '}
@@ -13,7 +13,7 @@ import Button from '@skatteetaten/frontend-components/Button';
 Noe nedtonet hovedhandling:
 
 ```js
-import Button from '@skatteetaten/frontend-components/Button';
+import { Button } from '@skatteetaten/frontend-components';
 
 <div className="ExampleSpacing8">
   <Button buttonStyle="primaryRoundedFilled">Send inn uendret</Button>
@@ -24,7 +24,7 @@ import Button from '@skatteetaten/frontend-components/Button';
 Advarsel:
 
 ```js
-import Button from '@skatteetaten/frontend-components/Button';
+import { Button } from '@skatteetaten/frontend-components';
 
 <div className="ExampleSpacing8">
   <Button buttonStyle="warning">Avvis</Button>
@@ -32,7 +32,7 @@ import Button from '@skatteetaten/frontend-components/Button';
 ```
 
 ```js noeditor uu
-import Link from '@skatteetaten/frontend-components/Link';
+import { Link } from '@skatteetaten/frontend-components';
 <div>
   <h3>Tips</h3>
 
@@ -79,8 +79,7 @@ import Link from '@skatteetaten/frontend-components/Link';
 ```
 
 ```js noeditor beskrivelse
-import ErrorMessage from '@skatteetaten/frontend-components/ErrorMessage';
-import Link from '@skatteetaten/frontend-components/Link';
+import { ErrorMessage, Link } from '@skatteetaten/frontend-components';
 <div>
   <h3>En knapp er hovedhandlingen på en side</h3>
   <p>

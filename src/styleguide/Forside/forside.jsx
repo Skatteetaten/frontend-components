@@ -1,9 +1,11 @@
 import React from 'react';
-import Card from '../../components/Card';
-import Grid from '../../components/Grid/Grid';
-import Icon from '../../components/Icon';
-import NavigationTile from '../../components/NavigationTile';
-import NavigationContent from '../../components/NavigationTile/NavigationContent';
+import {
+  Card,
+  Grid,
+  Icon,
+  NavigationTile,
+  NavigationContent,
+} from '../../components/index';
 
 function Forside(props) {
   return (
@@ -22,7 +24,7 @@ function Forside(props) {
                 style={{
                   color: '#1d1d1d',
                   fontSize: '40px',
-                  marginTop: '10px'
+                  marginTop: '10px',
                 }}
               />
             </Grid.Col>
@@ -33,7 +35,7 @@ function Forside(props) {
                   fontStyle: 'italic',
                   color: '#1d1d1d',
                   fontWeight: '400',
-                  fontSize: '18px'
+                  fontSize: '18px',
                 }}
               >
                 Med Designsystemet slipper vi å tenke så mye på designreglene
@@ -45,7 +47,7 @@ function Forside(props) {
                   color: '#1d1d1d',
                   fontWeight: '400',
                   fontSize: '18px',
-                  textAlign: 'right'
+                  textAlign: 'right',
                 }}
               >
                 – utvikler i Skatteetaten

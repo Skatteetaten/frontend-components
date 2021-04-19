@@ -1,5 +1,12 @@
+```js noeditor
+import { MessageBar } from '@skatteetaten/frontend-components';
+
+<MessageBar>Fargene under «Visuell identitet» har nylig blitt endret. Vi jobber med å innnarbeide de nye fargene, men inntil videre er det fargene på denne siden som brukes i komponentene.</MessageBar>;
+```
+
 Nedenfor har vi plukket ut de fargene fra Skatteetatens visuelle profil som fungerer best på digitale flater. 
 I tillegg har vi lagt til et sett med grå- og blåtoner fordi vi ofte bruker disse på nett.
+
 
 ### Hovedfarger
 
@@ -11,7 +18,7 @@ Vi bruker farger etter følgende regler:
 
 ```js noeditor beskrivelse
 import TinyColor from '@ctrl/tinycolor';
-import SkeBasis from '@skatteetaten/frontend-components/SkeBasis';
+import { SkeBasis } from '@skatteetaten/frontend-components';
 
 palette = Object(SkeBasis.PALETTE);
 
@@ -73,7 +80,7 @@ Vi bruker BlackAlt som farge på tekster der bakgrunnen er lys. Hvis det er teks
 
 ```js noeditor beskrivelse
 import TinyColor from '@ctrl/tinycolor';
-import SkeBasis from '@skatteetaten/frontend-components/SkeBasis';
+import { SkeBasis } from '@skatteetaten/frontend-components';
 palette = Object(SkeBasis.PALETTE);
 
 function drawSwatch(colorCode) {
@@ -107,7 +114,7 @@ På lenker med mørk bakgrunn, bruker vi lightBlue. DarkBlue bruker vi for hover
 
 ```js noeditor beskrivelse
 const { TinyColor } = require('@ctrl/tinycolor');
-import SkeBasis from '@skatteetaten/frontend-components/SkeBasis';
+import { SkeBasis } from '@skatteetaten/frontend-components';
 
 palette = Object(SkeBasis.PALETTE);
 

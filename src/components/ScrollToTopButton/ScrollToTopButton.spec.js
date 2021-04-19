@@ -1,6 +1,6 @@
 import React from 'react';
 import { mount } from 'enzyme';
-import ScrollToTopButton from './ScrollToTopButton';
+import { ScrollToTopButton } from '../index';
 import { matches } from '../utils/test-utils';
 
 function oppsettFullDOM(props) {
@@ -22,7 +22,7 @@ describe('ScrollToTopButton komponent', () => {
 
   it('kan sette label', () => {
     const wrapper = oppsettFullDOM({
-      label: 'Tulletittel'
+      label: 'Tulletittel',
     });
 
     const label = wrapper.find('button > span');

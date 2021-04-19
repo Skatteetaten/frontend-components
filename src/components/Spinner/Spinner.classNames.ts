@@ -1,7 +1,6 @@
 import { mergeStyles } from '@uifabric/merge-styles';
 import { getTheme } from '@uifabric/styling';
-import { PaletteProps } from '..';
-import { SpinnerProps } from './Spinner';
+import { PaletteProps, SpinnerProps } from '../index';
 
 export const getClassNames = function getClassNames(props: SpinnerProps) {
   const palette = getTheme().palette as PaletteProps;
@@ -10,10 +9,10 @@ export const getClassNames = function getClassNames(props: SpinnerProps) {
     {
       selectors: {
         '.ms-Spinner-label': {
-          color: props.spinnerColor
+          color: props.spinnerColor,
         },
         '&.ms-Spinner': {
-          position: 'relative'
+          position: 'relative',
         },
         '.ms-Spinner-circle': {
           display: 'inline-block',
@@ -26,9 +25,9 @@ export const getClassNames = function getClassNames(props: SpinnerProps) {
           borderTop: '4px solid transparent',
           animationDuration: '1s',
           animationIterationCount: 'linear infinite',
-          animationTimingFunction: 'linear'
-        }
-      }
-    }
+          animationTimingFunction: 'linear',
+        },
+      },
+    },
   ]);
 };

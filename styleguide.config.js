@@ -5,8 +5,8 @@ function generateComponentsGroup(groupName, components) {
   return {
     name: groupName,
     components: components.map(
-      component => `src/components/${component}/**/[A-Z]*.tsx`
-    )
+      (component) => `src/components/${component}/**/[A-Z]*.tsx`
+    ),
   };
 }
 
@@ -19,7 +19,7 @@ module.exports = {
     '@skatteetaten/frontend-components': path.resolve(
       __dirname,
       'src/components'
-    )
+    ),
   },
   pagePerSection: false,
   sections: [
@@ -28,54 +28,58 @@ module.exports = {
       sections: [
         {
           name: 'Kom i gang for utviklere',
-          content: 'src/sections/kom-i-gang/installasjon.md'
+          content: 'src/sections/kom-i-gang/installasjon.md',
         },
         {
           name: 'Kom i gang for designere',
-          content: 'src/sections/kom-i-gang/designere.md'
+          content: 'src/sections/kom-i-gang/designere.md',
         },
         {
           name: 'Bidra',
-          content: 'src/sections/kom-i-gang/forbedre.md'
+          content: 'src/sections/kom-i-gang/forbedre.md',
         },
         {
           name: 'Tommelfingerregler for design',
-          content: 'src/sections/kom-i-gang/tommelfinger.md'
+          content: 'src/sections/kom-i-gang/tommelfinger.md',
         },
         {
           name: 'Tips og triks',
-          content: 'src/sections/kom-i-gang/tipstriks.md'
+          content: 'src/sections/kom-i-gang/tipstriks.md',
         },
         {
           name: 'Krav og versjoner',
-          content: 'src/sections/kom-i-gang/utviklere.md'
+          content: 'src/sections/kom-i-gang/utviklere.md',
         },
         {
           name: 'Nettleserstøtte',
-          content: 'src/sections/kom-i-gang/nettlesere.md'
+          content: 'src/sections/kom-i-gang/nettlesere.md',
         },
         {
           name: 'Versjonshistorikk',
-          content: 'CHANGELOG.md'
-        }
-      ]
+          content: 'CHANGELOG.md',
+        },
+      ],
     },
     {
       name: 'Anbefalte mønstre',
       sections: [
         {
           name: 'Obligatoriske felt',
-          content: 'src/sections/monstre/obligatorisk.md'
+          content: 'src/sections/monstre/obligatorisk.md',
         },
         {
           name: 'Store tabeller',
-          content: 'src/sections/monstre/tabell-kompleks.md'
+          content: 'src/sections/monstre/tabell-kompleks.md',
         },
         {
           name: 'Feilmeldinger',
-          content: 'src/sections/monstre/feil.md'
-        }
-      ]
+          content: 'src/sections/monstre/feil.md',
+        },
+        {
+          name: 'Sidelayout',
+          content: 'src/sections/monstre/sidelayout.md',
+        },
+      ],
     },
     generateComponentsGroup('Knapper og lenker', [
       'ActionButton',
@@ -85,7 +89,7 @@ module.exports = {
       'Link',
       'LinkGroup',
       'NavigationTile',
-      'ScrollToTopButton'
+      'ScrollToTopButton',
     ]),
     generateComponentsGroup('Oppsett av siden', [
       'FooterContent',
@@ -96,7 +100,7 @@ module.exports = {
       'TopStripe',
       'TopStripeMenu',
       'TopStripeButton',
-      'Typography'
+      'Typography',
     ]),
     generateComponentsGroup('Inputfelt og skjema', [
       'CheckBox',
@@ -106,7 +110,7 @@ module.exports = {
       'FileUploader',
       'RadioButtonGroup',
       'SearchField',
-      'TextField'
+      'TextField',
     ]),
     generateComponentsGroup('Bokser og gruppering', [
       'Accordion',
@@ -117,7 +121,7 @@ module.exports = {
       'LinkGroup',
       'StepList',
       'Step',
-      'Tabs'
+      'Tabs',
     ]),
     generateComponentsGroup('Ikoner og bilder', ['Chip', 'Icon', 'Image']),
     generateComponentsGroup('Varsler og meldinger', [
@@ -125,7 +129,7 @@ module.exports = {
       'Dialog',
       'MessageBar',
       'LabelWithCallout',
-      'ErrorMessage'
+      'ErrorMessage',
     ]),
     generateComponentsGroup('Innlasting', ['ProgressBar', 'Spinner']),
     generateComponentsGroup('Tabeller', ['DetailsList', 'Table']),
@@ -135,14 +139,14 @@ module.exports = {
       sections: [
         {
           name: 'Skrifttype',
-          content: 'src/sections/design/typografi.md'
+          content: 'src/sections/design/typografi.md',
         },
         {
           name: 'Farger',
-          content: 'src/sections/design/farger.md'
-        }
-      ]
-    }
+          content: 'src/sections/design/farger.md',
+        },
+      ],
+    },
   ],
   assetsDir: 'assets',
   template: {
@@ -152,12 +156,12 @@ module.exports = {
       links: [
         {
           rel: 'manifest',
-          href: './manifest.json'
-        }
-      ]
-    }
+          href: './manifest.json',
+        },
+      ],
+    },
   },
-  styleguideDir: 'docs',
+  styleguideDir: 'lib',
   defaultExample: false,
   showSidebar: true,
   ignore: [
@@ -166,29 +170,24 @@ module.exports = {
     '**/*.spec.{js,jsx,ts,tsx}',
     '**/*.d.ts',
     '**/components/utils/**',
-    '**/*.classNames.ts'
+    '**/*.classNames.ts',
   ],
   getComponentPathLine(componentPath) {
     const name = path.basename(componentPath, '.tsx');
-    const dir = path.dirname(componentPath).replace('src/components', '');
-    if (dir.search('Layout') > 0) {
-      return `import ${name} from '${pkg.name}${dir}/${name}';`;
-    } else {
-      return `import ${name} from '${pkg.name}${dir}';`;
-    }
-  },
 
+    return `import { ${name} } from '${pkg.name}';`;
+  },
   theme: {
     color: {
       linkHover: '#6F2C3F',
       link: '#1362ae',
       name: '#4f2330',
       tyoe: '#6F2C3F',
-      error: '#df4661'
+      error: '#df4661',
     },
     fontFamily: {
-      base: '"Helvetica Neue", Helvetica, Arial, sans-serif'
-    }
+      base: '"Helvetica Neue", Helvetica, Arial, sans-serif',
+    },
   },
   styleguideComponents: {
     StyleGuide: path.join(__dirname, 'src/styleguide/StyleGuide/StyleGuide'),
@@ -203,7 +202,7 @@ module.exports = {
     'slots/IsolateButton': path.join(
       __dirname,
       'src/styleguide/slots/IsolateButton'
-    )
+    ),
     // 'Table': path.join(
     //   __dirname,
     //   'src/styleguide/Table'
@@ -212,12 +211,12 @@ module.exports = {
   resolver: require('react-docgen').resolver.findAllComponentDefinitions,
   propsParser: require('react-docgen-typescript').withDefaultConfig({
     savePropValueAsString: true,
-    propFilter: prop => {
+    propFilter: (prop) => {
       if (prop.parent) {
         // Fjerner default html props fra API lista
         return !prop.parent.fileName.includes('node_modules/@types/react');
       }
       return true;
-    }
-  }).parse
+    },
+  }).parse,
 };

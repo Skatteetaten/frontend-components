@@ -1,7 +1,7 @@
 import React from 'react';
 import toJson from 'enzyme-to-json';
 import { shallow, mount } from 'enzyme';
-import Card from './Card';
+import { Card, CardColor } from '../index';
 
 function oppsettShallow(props) {
   return shallow(<Card {...props} />);
@@ -21,7 +21,7 @@ describe('Card komponent', () => {
     const wrapper = oppsettFullDOM();
 
     expect(wrapper.prop('titlesize')).toEqual('x-large');
-    expect(wrapper.prop('color')).toEqual('neutralGrey');
+    expect(wrapper.prop('color')).toEqual('beige');
     expect(wrapper.prop('marginbottom')).toEqual('2px');
     expect(wrapper.prop('expand')).toEqual(false);
     expect(wrapper.prop('isExpanded')).toEqual(true);
@@ -30,14 +30,14 @@ describe('Card komponent', () => {
 
   it('setter Card med riktige props', () => {
     const wrapper = oppsettFullDOM({
-      color: Card.Color.BEIGE,
+      color: CardColor.BEIGE,
       title: 'Ikke fullført arbeidsoppgave',
       titlesize: 'large',
       marginbottom: '10px',
       expand: true,
       isExpanded: false,
       id: 'card-id',
-      className: 'card-classname'
+      className: 'card-classname',
     });
 
     expect(wrapper.prop('titlesize')).toEqual('large');
@@ -53,9 +53,9 @@ describe('Card komponent', () => {
   it('endrer state når utvid knapp klikkes', () => {
     const wrapper = oppsettShallow({
       expand: true,
-      isExpanded: true
+      isExpanded: true,
     });
-    const expandBtn = wrapper.find('IconButton');
+    const expandBtn = wrapper.find('button');
 
     expect(wrapper.html()).toContain('titleExpand');
     expect(wrapper.html()).toContain('expandIcon');
@@ -67,7 +67,7 @@ describe('Card komponent', () => {
   it('kan definere tagName på title', () => {
     const wrapper = oppsettFullDOM({
       title: 'tittel',
-      titleTagName: 'h3'
+      titleTagName: 'h3',
     });
 
     expect(wrapper.html()).toContain('tittel</h3>');
@@ -75,7 +75,7 @@ describe('Card komponent', () => {
 
   it('rendrer ikke attributter definert i CardProps', () => {
     const wrapper = oppsettFullDOM({
-      color: Card.Color.BEIGE
+      color: Card.Color.BEIGE,
     });
 
     const findColor = wrapper.find('div[color="' + Card.Color.BEIGE + '"]');
@@ -92,7 +92,7 @@ describe('Card komponent', () => {
       isExpanded: false,
       id: 'card-id',
       className: 'card-classname',
-      'data-testid': 'Card-Component'
+      'data-testid': 'Card-Component',
     });
 
     const findTestid = wrapper.find('div[data-testid="Card-Component"]');

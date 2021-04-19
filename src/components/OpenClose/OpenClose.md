@@ -1,49 +1,72 @@
-** OpenClose er enkelstående områder for å vise og skjule utdypende informasjon. **
+**OpenClose er enkelstående områder for å vise og skjule utdypende informasjon.**
 
 ```js
-import OpenClose from '@skatteetaten/frontend-components/OpenClose';
-import Typography from '@skatteetaten/frontend-components/Typography';
+import { OpenClose, Typography } from '@skatteetaten/frontend-components';
 
 // Inline styles are bad design https://reactjs.org/docs/faq-styling.html
 // Just for the purpose of the example
 
 const paraStyle = {
-  marginBlockStart: '0'
+  marginBlockStart: '0',
 };
+<>
+  <OpenClose title={'Inntekter som skattlegges i ordningen'}>
+    <Typography>
+      <p style={paraStyle}>
+        Arbeidsgiveren din/den som utbetaler skal trekke kildeskatt av følgende
+        inntekter:
+      </p>
+      <ul>
+        <li>
+          lønn og andre godtgjørelser fra kilder i Norge for arbeid utført i
+          Norge, inkludert feriepenger
+        </li>
+        <li>godtgjørelser til direktør eller styremedlem i selskap i Norge</li>
+        <li>gratiale, tantieme eller lignende ytelser fra norske selskap</li>
+        <li>lønn til utleid utenlandsk arbeidstaker, inkludert feriepenger</li>
+        <li>
+          utgiftsgodtgjørelser, refusjoner og naturalytelser som er
+          skattepliktige fordeler for deg, inkludert dekning av pendlerkostnader
+        </li>
+      </ul>
+    </Typography>
+  </OpenClose>
 
-<OpenClose title={'Inntekter som skattlegges i ordningen'}>
-  <Typography>
-    <p style={paraStyle}>
-      Arbeidsgiveren din/den som utbetaler skal trekke kildeskatt av følgende
-      inntekter:
-    </p>
-    <ul>
-      <li>
-        lønn og andre godtgjørelser fra kilder i Norge for arbeid utført i
-        Norge, inkludert feriepenger
-      </li>
-      <li>godtgjørelser til direktør eller styremedlem i selskap i Norge</li>
-      <li>gratiale, tantieme eller lignende ytelser fra norske selskap</li>
-      <li>lønn til utleid utenlandsk arbeidstaker, inkludert feriepenger</li>
-      <li>
-        utgiftsgodtgjørelser, refusjoner og naturalytelser som er skattepliktige
-        fordeler for deg, inkludert dekning av pendlerkostnader
-      </li>
-    </ul>
-  </Typography>
-</OpenClose>;
+  <br />
+  <OpenClose compact iconRight title={'Vis flere detaljer'}>
+    <Typography>
+      <p style={paraStyle}>
+        Arbeidsgiveren din/den som utbetaler skal trekke kildeskatt av følgende
+        inntekter:
+      </p>
+      <ul>
+        <li>
+          lønn og andre godtgjørelser fra kilder i Norge for arbeid utført i
+          Norge, inkludert feriepenger
+        </li>
+        <li>godtgjørelser til direktør eller styremedlem i selskap i Norge</li>
+        <li>gratiale, tantieme eller lignende ytelser fra norske selskap</li>
+        <li>lønn til utleid utenlandsk arbeidstaker, inkludert feriepenger</li>
+        <li>
+          utgiftsgodtgjørelser, refusjoner og naturalytelser som er
+          skattepliktige fordeler for deg, inkludert dekning av pendlerkostnader
+        </li>
+      </ul>
+    </Typography>
+  </OpenClose>
+</>;
 ```
 
 OpenClose som er åpen fra start:
 
 ```js
-import OpenClose from '@skatteetaten/frontend-components/OpenClose';
+import { OpenClose } from '@skatteetaten/frontend-components';
 
 // Inline styles are bad design https://reactjs.org/docs/faq-styling.html
 // Just for the purpose of the example
 
 const paraStyle = {
-  marginBlockStart: '0'
+  marginBlockStart: '0',
 };
 
 <OpenClose

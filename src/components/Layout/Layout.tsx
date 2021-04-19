@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import Grid from '../Grid/Grid';
+import { Grid } from '../index';
 
 export const Layout: FC = ({ children }) => <Grid tag="div">{children}</Grid>;
 

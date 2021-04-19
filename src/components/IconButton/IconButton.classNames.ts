@@ -1,36 +1,38 @@
 import { mergeStyles } from '@uifabric/merge-styles';
 import { getTheme } from '@uifabric/styling';
-import { FontSizes } from '../utils/fonts';
-import { getFocusStyle } from '../utils/getFocusStyle';
-import { PaletteProps } from '..';
-import { IconButtonProps } from './IconButton';
+import {
+  FontSizes,
+  getFocusStyle,
+  PaletteProps,
+  IconButtonProps,
+} from '../index';
 
 function getTypeColor(props: IconButtonProps) {
   switch (props.buttonSize) {
     case 'xSmall':
       return {
         width: '26px',
-        height: '26px'
+        height: '26px',
       };
     case 'small':
       return {
         width: '35px',
-        height: '35px'
+        height: '35px',
       };
     case 'medium':
       return {
         width: '40px',
-        height: '40px'
+        height: '40px',
       };
     case 'large':
       return {
         width: '50px',
-        height: '50px'
+        height: '50px',
       };
     case 'xLarge':
       return {
         width: '60px',
-        height: '60px'
+        height: '60px',
       };
     default:
       return {};
@@ -44,11 +46,11 @@ function getCircleStyles(props: IconButtonProps) {
     return {
       border: 'solid',
       borderWidth: '3px',
-      borderColor: palette.skeColor.blue
+      borderColor: palette.skeColor.blue,
     };
   } else {
     return {
-      borderWidth: 0
+      borderWidth: 0,
     };
   }
 }
@@ -59,7 +61,7 @@ function getCircleHoverStyles(props: IconButtonProps) {
     color: palette.skeColor.blue,
     borderWidth: '3px',
     borderColor: palette.skeColor.blue,
-    background: palette.skeColor.lightBlue
+    background: palette.skeColor.lightBlue,
   };
 }
 
@@ -67,7 +69,7 @@ function getCircleFocusStyles(props: IconButtonProps) {
   const palette = getTheme().palette as PaletteProps;
   return {
     borderColor: palette.skeColor.darkBlue,
-    backgroundColor: palette.skeColor.darkBlue
+    backgroundColor: palette.skeColor.darkBlue,
   };
 }
 
@@ -75,27 +77,27 @@ function getIconSize(props: IconButtonProps) {
   switch (props.buttonSize) {
     case 'xSmall':
       return {
-        fontsize: FontSizes.smallPlus
+        fontsize: FontSizes.smallPlus,
       };
     case 'small':
       return {
-        fontSize: FontSizes.mediumPlus
+        fontSize: FontSizes.mediumPlus,
       };
     case 'medium':
       return {
-        fontSize: FontSizes.largePlus
+        fontSize: FontSizes.largePlus,
       };
     case 'large':
       return {
-        fontSize: FontSizes.xxLarge
+        fontSize: FontSizes.xxLarge,
       };
     case 'xLarge':
       return {
-        fontSize: FontSizes.superLarge
+        fontSize: FontSizes.superLarge,
       };
     default:
       return {
-        fontSize: FontSizes.icon
+        fontSize: FontSizes.icon,
       };
   }
 }
@@ -118,32 +120,33 @@ export const getClassNames = function getClassNames(props: IconButtonProps) {
           background: 'none',
           color: palette.skeColor.blue,
           ...getTypeColor(props),
-          ...getCircleStyles(props)
+          ...getCircleStyles(props),
         },
         '&.ms-Button--icon i': {
-          ...getIconSize(props)
+          ...getIconSize(props),
         },
         '&.ms-Button--icon:hover, &.ms-Button--icon:focus': {
           border: `3px solid ${palette.skeColor.blue}`,
           transition: 'background-color 0.3s',
-          ...getCircleHoverStyles(props)
+          // @ts-ignore
+          ...getCircleHoverStyles(props),
         },
-        '.ms-Fabric.is-focusVisible.is-focusVisible &:focus:after': {
-          borderWidth: '0px'
+        '&:focus&:after': {
+          borderColor: 'transparent',
         },
         '&.ms-Button--icon:active': {
           color: palette.white,
-          ...getCircleFocusStyles(props)
+          ...getCircleFocusStyles(props),
         },
         '&.ms-Button--icon:disabled': {
           ...getCircleStyles(props),
           color: palette.skeColor.lightGrey,
-          borderColor: palette.skeColor.lightGrey
+          borderColor: palette.skeColor.lightGrey,
         },
         '&.ms-Button--icon:disabled i': {
-          color: palette.skeColor.lightGrey
-        }
-      }
-    }
+          color: palette.skeColor.lightGrey,
+        },
+      },
+    },
   ]);
 };

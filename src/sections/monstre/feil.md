@@ -1,22 +1,23 @@
 ```js noeditor
-import Accordion from '@skatteetaten/frontend-components/Accordion';
-import AccordionItem from '@skatteetaten/frontend-components/Accordion/AccordionItem';
-import Card from '@skatteetaten/frontend-components/Card';
-import Icon from '@skatteetaten/frontend-components/Icon';
-import TextField from '@skatteetaten/frontend-components/TextField';
-import Button from '@skatteetaten/frontend-components/Button';
-import ActionButton from '@skatteetaten/frontend-components/ActionButton';
-import TopStripe, {
+import {
+  Accordion,
+  AccordionItem,
+  Card,
+  Icon,
+  TextField,
+  Button,
+  ActionButton,
+  TopStripe,
   TopStripeMenu,
-  TopStripeButton
-} from '@skatteetaten/frontend-components/TopStripe';
-import TopBanner from '@skatteetaten/frontend-components/TopBanner';
-import Link from '@skatteetaten/frontend-components/Link';
-import MessageBar from '@skatteetaten/frontend-components/MessageBar';
-import CheckBox from '@skatteetaten/frontend-components/CheckBox';
-import ErrorMessage from '@skatteetaten/frontend-components/ErrorMessage';
-import DatePicker from '@skatteetaten/frontend-components/DatePicker';
-import Image from '@skatteetaten/frontend-components/Image';
+  TopStripeButton,
+  TopBanner,
+  Link,
+  MessageBar,
+  CheckBox,
+  ErrorMessage,
+  DatePicker,
+  Image,
+} from '@skatteetaten/frontend-components';
 
 <div>
   <Card
