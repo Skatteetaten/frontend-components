@@ -5,22 +5,6 @@ Velge fra en fast liste (stor versjon):
 ```js
 import { ComboBox, Grid } from '@skatteetaten/frontend-components';
 
-const initialState = {
-  fylker: [
-    { key: 'A', text: 'Agder', value: 'Agder' },
-    { key: 'B', text: 'Innlandet', value: 'Innlandet' },
-    { key: 'C', text: 'Møre og Romsdal', value: 'Møre og Romsdal' },
-    { key: 'D', text: 'Nordland', value: 'Nordland' },
-    { key: 'E', text: 'Oslo', value: 'Oslo' },
-    { key: 'F', text: 'Rogaland', value: 'Rogaland' },
-    { key: 'G', text: 'Troms og Finnmark', value: 'Troms og Finnmark' },
-    { key: 'H', text: 'Trøndelag', value: 'Trøndelag' },
-    { key: 'I', text: 'Vestfold og Telemark', value: 'Vestfold og Telemark' },
-    { key: 'J', text: 'Vestland', value: 'Vestland' },
-    { key: 'K', text: 'Viken', value: 'Viken' },
-  ],
-};
-
 <div>
   <Grid>
     <Grid.Row>
@@ -30,7 +14,23 @@ const initialState = {
           help="Dette feltet foreslår en verdi når du begynner å skrive. Du kan også bla gjennom listen og velge på den måten."
           placeholder="Velg eller begynn å skrive"
           inputSize="large"
-          options={state.fylker}
+          options={[
+            { key: 'A', text: 'Agder', value: 'Agder' },
+            { key: 'B', text: 'Innlandet', value: 'Innlandet' },
+            { key: 'C', text: 'Møre og Romsdal', value: 'Møre og Romsdal' },
+            { key: 'D', text: 'Nordland', value: 'Nordland' },
+            { key: 'E', text: 'Oslo', value: 'Oslo' },
+            { key: 'F', text: 'Rogaland', value: 'Rogaland' },
+            { key: 'G', text: 'Troms og Finnmark', value: 'Troms og Finnmark' },
+            { key: 'H', text: 'Trøndelag', value: 'Trøndelag' },
+            {
+              key: 'I',
+              text: 'Vestfold og Telemark',
+              value: 'Vestfold og Telemark',
+            },
+            { key: 'J', text: 'Vestland', value: 'Vestland' },
+            { key: 'K', text: 'Viken', value: 'Viken' },
+          ]}
           allowFreeform={false}
           ariaLabel="Eksempel ComboBox"
           useComboBoxAsMenuWidth
@@ -47,22 +47,6 @@ Hvis brukeren skal kunne legge til egne elementer:
 ```js
 import { ComboBox, Grid } from '@skatteetaten/frontend-components';
 
-const initialState = {
-  biler: [
-    { key: 'A', text: 'Audi', value: 'Audi' },
-    { key: 'A', text: 'BMW', value: 'BMW' },
-    { key: 'B', text: 'Hyundai', value: 'Hyundai' },
-    { key: 'C', text: 'Mercedes-Benz', value: 'Mercedes-Benz' },
-    { key: 'D', text: 'Nissan', value: 'Nissan' },
-    { key: 'E', text: 'MG', value: 'MG' },
-    { key: 'F', text: 'Mitsubishi', value: 'Rogaland' },
-    { key: 'G', text: 'Tesla', value: 'Troms og Finnmark' },
-    { key: 'H', text: 'Volkswagen', value: 'Trøndelag' },
-    { key: 'I', text: 'Volvo', value: 'Volvo' },
-    { key: 'J', text: 'Vestland', value: 'Vestland' },
-  ],
-};
-
 <div>
   <Grid>
     <Grid.Row>
@@ -71,7 +55,18 @@ const initialState = {
           label="Bilmerke"
           help="Dette feltet foreslår en verdi når du begynner å skrive. Det er også mulig å legge til egne verdier."
           placeholder="Velg eller legg til"
-          options={state.biler}
+          options={[
+            { key: 'A', text: 'Audi', value: 'Audi' },
+            { key: 'A', text: 'BMW', value: 'BMW' },
+            { key: 'B', text: 'Hyundai', value: 'Hyundai' },
+            { key: 'C', text: 'Mercedes-Benz', value: 'Mercedes-Benz' },
+            { key: 'D', text: 'Nissan', value: 'Nissan' },
+            { key: 'E', text: 'MG', value: 'MG' },
+            { key: 'F', text: 'Mitsubishi', value: 'Rogaland' },
+            { key: 'G', text: 'Tesla', value: 'Troms og Finnmark' },
+            { key: 'H', text: 'Volkswagen', value: 'Trøndelag' },
+            { key: 'I', text: 'Volvo', value: 'Volvo' },
+          ]}
           allowFreeform={true}
           autoComplete={'on'}
           ariaLabel="Eksempel på ComboBox"
