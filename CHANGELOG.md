@@ -4,11 +4,12 @@
 
 - Enabled UMD module building for the design system. This enables it to be loaded with SystemJS for micro-frontend setups.
 - Imports: During the work with UMD building changes were made to imports. Most should be fine but some will need rewrite. Generally all componenets should now be imported directly from '@skatteetaten/frontend-componenents', and not from subfolders. This is especially important if you consume the design system as an UMD module
-- Imports: Imports from office-ui-fabric-react are now also imported directly from root and not from sub-folders e.g. office-ui-fabric-react/lib-commonjs/someComponent
+- Imports: Imports from @fluentui/react are now also imported directly from root and not from sub-folders e.g. @fluentui/react/lib-commonjs/someComponent
 - #'@reach/auto-id': This package has been removed because of incompatability. It has been replaced by a manual alternative.
 
 #### **Breaking changes**
 
+- Changed import for Fabric React Components from office-ui-fabric-react to @fluentui/react. https://github.com/microsoft/fluentui#looking-for-office-ui-fabric-react
 - New import statement for all components (due to UMD build)
 - Card: rewritten so that it now uses a button-element for the open/close-mechanism. This means that support for secondary actions in the header section has been removed. These must now be placed in the card body. Default color is now set to beige.
 - Footer: removed fixed width to support a vide range of screen sizes
