@@ -6,7 +6,7 @@ import { Icon } from '../index';
 import { UseScreen } from '../utils/ScreenPlugin';
 import { getClassNames } from './LanguagePicker.classNames';
 
-enum LanguageEnum {
+export enum LanguageEnum {
   BOKMAAL = 'nb',
   NYNORSK = 'nn',
   ENGLISH = 'en',
