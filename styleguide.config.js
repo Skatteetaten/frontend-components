@@ -161,7 +161,7 @@ module.exports = {
       ],
     },
   },
-  styleguideDir: 'lib',
+  styleguideDir: 'docs',
   defaultExample: false,
   showSidebar: true,
   ignore: [
