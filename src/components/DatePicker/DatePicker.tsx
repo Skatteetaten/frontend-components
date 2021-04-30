@@ -169,7 +169,7 @@ export const DatePicker: React.FC<DatePickerProps> = (
     <div id={id}>
       <LabelWithCallout
         id={labelId}
-        inputId={inputId}
+        inputId={inputId + '-label'}
         label={label}
         buttonAriaLabel={labelButtonAriaLabel}
         help={help}
@@ -185,7 +185,7 @@ export const DatePicker: React.FC<DatePickerProps> = (
         {...defaultValues}
         {...rest}
         id={inputId}
-        ariaLabel={ariaLabel ? ariaLabel : label}
+        ariaLabel={ariaLabel}
         className={classnames(
           getClassNames({ errorMessage, readonlyMode: readOnly, ...rest }),
           className
