@@ -38,5 +38,5 @@ export interface LabelWithCalloutProps
   ) => void;
   onRenderLabel?: any;
   readOnly?: boolean;
-  warning?: string | JSX.Element | undefined;
+  warning?: string | JSX.Element;
 }
