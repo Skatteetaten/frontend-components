@@ -1,8 +1,8 @@
 import * as React from 'react';
-import { Grid } from '../index';
+import { Grid } from '../Grid';
 import { getClassNames } from './Accordion.classNames';
 import classnames from 'classnames';
-import { AccordionItemProps } from '../index';
+import { AccordionItemProps } from './AccordionItem/AccordionItem.types';
 
 export interface AccordionProps extends React.HTMLAttributes<HTMLDivElement> {
   /** aria-label */

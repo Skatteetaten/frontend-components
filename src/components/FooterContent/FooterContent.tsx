@@ -1,9 +1,10 @@
 import * as React from 'react';
-import { Image } from '../index';
+import { Image } from '../Image';
 import { getClassNames, getLogoClassNames } from './FooterContent.classNames';
 import FooterDekor from './footerDekor';
 import logo from './assets/ske-logo.svg';
 import logoEn from './assets/ske-logo-en.svg';
+import { FooterContentProps } from './FooterContent.types';
 
 const Logo = () => {
   return (
@@ -26,14 +27,6 @@ const LogoEn = () => {
     />
   );
 };
-
-export interface FooterContentProps
-  extends React.HTMLAttributes<HTMLDivElement> {
-  children: React.ReactNode;
-  className?: string;
-  /** aria-label */
-  ariaLabel?: string;
-}
 
 /**
  * @visibleName FooterContent (Bunn)

@@ -1,6 +1,7 @@
 import { mergeStyleSets } from '@uifabric/merge-styles';
 import { getTheme } from '@uifabric/styling';
-import { FontSizes, MdIcons, PaletteProps, DropdownProps } from '../index';
+import { FontSizes, MdIcons, PaletteProps } from '../utils';
+import { DropdownProps } from './DropDown.types';
 import { IDropdownStyles } from '@fluentui/react';
 
 function getFieldTypeStyles(props: DropdownProps) {

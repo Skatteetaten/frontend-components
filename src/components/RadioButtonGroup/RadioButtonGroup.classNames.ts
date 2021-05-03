@@ -5,7 +5,7 @@ import {
   FontWeights,
   LineHeightSizes,
   PaletteProps,
-} from '../index';
+} from '../utils';
 
 export const getClassNames = (props) => {
   const palette = getTheme().palette as PaletteProps;

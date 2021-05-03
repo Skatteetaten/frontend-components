@@ -1,5 +1,5 @@
 import React from 'react';
-import { Grid } from '../index';
+import { Grid } from '../Grid';
 import { ResponsiveMode } from '@fluentui/react';
 import { mergeStyles } from '@uifabric/merge-styles';
 

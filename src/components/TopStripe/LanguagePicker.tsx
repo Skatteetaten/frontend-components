@@ -2,8 +2,8 @@ import * as React from 'react';
 import { TopStripeButton } from './TopStripeButton';
 import { TopStripeMenu } from './TopStripeMenu';
 import { EnglishFlag, NorwegianFlag, SamiFlag } from './assets';
-import { Icon } from '../index';
-import { UseScreen } from '../utils/ScreenPlugin';
+import { Icon } from '../Icon';
+import { UseScreen } from '../utils';
 import { getClassNames } from './LanguagePicker.classNames';
 
 enum LanguageEnum {

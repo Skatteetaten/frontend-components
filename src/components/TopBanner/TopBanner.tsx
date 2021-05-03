@@ -1,7 +1,11 @@
 import * as React from 'react';
 //import { t } from '../utils/i18n/i18n'; //Egwene
 import classnames from 'classnames';
-import { Icon, Image, ActionButton, UseScreen } from '../index';
+import { UseScreen } from '../utils';
+import { Icon } from '../Icon';
+import { Image } from '../Image';
+import { ActionButton } from '../ActionButton';
+import { TopBannerTypes } from './TopBanner.types';
 
 // @ts-ignore TODO
 import externalLogo from './assets/ske-logo.svg';
@@ -86,12 +90,12 @@ const ExternalHeaderContent = ({ styles, ...props }) => {
 /**
  * @visibleName TopBanner (Topp)
  */
-export const TopBanner: React.FC<TopBannerProps> = (props) => {
+export const TopBanner: React.FC<TopBannerTypes> = (props) => {
   const { external, ...rest } = props;
   return external ? <ExternalHeader {...rest} /> : <InternalHeader {...rest} />;
 };
 
-export const ExternalHeader: React.FC<TopBannerProps> = (props) => {
+export const ExternalHeader: React.FC<TopBannerTypes> = (props) => {
   const styles = getExternalClassNames(props);
   // @ts-ignore
   const { header, headerMain, contentWrapper } = styles;
@@ -124,33 +128,6 @@ export const ExternalHeader: React.FC<TopBannerProps> = (props) => {
     </header>
   );
 };
-
-export interface TopBannerProps {
-  /** Tittelen på banneren */
-  title?: string | JSX.Element;
-  /** Teksten som vises ved siden av home-knapp */
-  homeText?: string;
-  /** URLen på homeknappen */
-  homeUrl?: string;
-  /** Ikon på intern toppbanner */
-  icon?: string;
-  /** Om banneren er ment for en intern eller ekstern løsning */
-  external?: boolean;
-  /** Om banneren skal ta mindre plass vertikalt  */
-  compact?: boolean;
-  /** Overstyring av stiler */
-  className?: string;
-  /** Mulighet til å sette bredde på skrått område i toppen (kun intern) */
-  slantedAreaWidth?: number | string;
-  /** Global attributt som må være unik for hele HTML dokumentet */
-  id?: string;
-  /** Om logoen skal lenke til skatteetaten.no eller ikke (kun ekstern) */
-  logoLink?: boolean;
-  /** OnClick event som trigges av klikk på hjemlink */
-  onClick?: () => void;
-  /** Språk på logoen */
-  language?: 'nb' | 'nn' | 'en';
-}
 
 TopBanner.defaultProps = {
   title: undefined,

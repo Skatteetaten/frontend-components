@@ -1,48 +1,11 @@
 import classnames from 'classnames';
-import {
-  ChoiceGroup as FabricChoiceGroup,
-  IChoiceGroupOption,
-  IChoiceGroupProps,
-} from '@fluentui/react';
+import { ChoiceGroup as FabricChoiceGroup } from '@fluentui/react';
 import * as React from 'react';
 import { getClassNames } from './RadioButtonGroup.classNames';
-import {
-  LabelWithCalloutProps,
-  ErrorMessage,
-  LabelWithCallout,
-  calloutState,
-  generateId,
-} from '../index';
-
-export interface IRadioButtonGroupOptions extends IChoiceGroupOption {
-  description?: string;
-}
-
-export interface RadioButtonGroupProps extends IChoiceGroupProps {
-  calloutFloating?: boolean;
-  /** CSS class */
-  className?: string;
-  /** Feilmelding */
-  errorMessage?: JSX.Element | string;
-  /** Hjelpetekst */
-  help?: JSX.Element | string;
-  /** Horizontal layout */
-  horizontal?: boolean;
-  /** aria-label for knapp i label */
-  labelButtonAriaLabel?: string;
-  /** Overstyr label, se LabelWithCallout komponent */
-  labelCallout?: LabelWithCalloutProps;
-  /** Lukk callout på blur */
-  labelWithCalloutAutoDismiss?: boolean;
-  /** Brukerspesifisert event for callout **/
-  onCalloutToggle?: (
-    oldCalloutState: calloutState,
-    newCalloutState: calloutState
-  ) => void;
-  options: IRadioButtonGroupOptions[];
-  /** Callout warning */
-  warning?: JSX.Element | string;
-}
+import { generateId } from '../utils';
+import { LabelWithCallout } from '../LabelWithCallout';
+import { ErrorMessage } from '../ErrorMessage';
+import { RadioButtonGroupProps } from './RadioButtonGroup.types';
 
 /**
  * @visibleName RadioButtonGroup (Radioknapper)

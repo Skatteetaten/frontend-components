@@ -1,32 +1,9 @@
 import * as React from 'react';
 import { getClassNames } from './Pagination.classNames';
 import classnames from 'classnames';
-import { Icon } from '../index';
+import { Icon } from '../Icon';
+import { PaginationProps } from './Pagination.types';
 
-export interface PaginationProps {
-  /** Aria-label */
-  ariaLabel?: string;
-  /** Aria-label for sidelinker */
-  ariaLabelNavigationLink?: string;
-  /** Aria-label for aktiv sidelink */
-  ariaLabelNavigationLinkActive?: string;
-  /** CSS class */
-  className?: string;
-  /** Nåværende sidenummer */
-  currentPage: number;
-  /** Tekst neste-knapp */
-  nextLabel?: string;
-  /** Funksjon som trigges på sideendring */
-  onPageChange: (page: number) => void;
-  /** Antall sidetall som vises samtidig. Default er 3. */
-  pagesDisplayed?: number;
-  /** Total antall objekter i liste */
-  total: number;
-  /** Ant objekter som vises per side */
-  pageSize: number;
-  /** Tekst forrige-knapp */
-  previousLabel?: string;
-}
 const getNumberOfPages = (total: number, pageSize: number) => {
   return Math.ceil(total / pageSize);
 };

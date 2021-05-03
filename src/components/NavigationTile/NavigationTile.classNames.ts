@@ -1,6 +1,7 @@
 import { mergeStyleSets, IRawStyle } from '@uifabric/merge-styles';
 import { getTheme } from '@uifabric/styling';
-import { FontSizes, PaletteProps, NavigationTileProps } from '../index';
+import { FontSizes, PaletteProps } from '../utils';
+import { NavigationTileProps } from './NavigationTile.types';
 
 function getType(props: NavigationTileProps): IRawStyle {
   if (props.type === 'left') {

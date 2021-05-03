@@ -1,14 +1,12 @@
 import * as React from 'react';
 import { getClassNames } from './TopStripe.classNames';
 import classnames from 'classnames';
-import {
-  Icon,
-  LinkProps,
-  ActionButton,
-  TopStripeButton,
-  TopStripeContext,
-  UseScreen,
-} from '../index';
+import { UseScreen } from '../utils';
+import { Icon } from '../Icon';
+import { LinkProps } from '../Link/Link.types';
+import { ActionButton } from '../ActionButton';
+import { TopStripeButton } from './TopStripeButton';
+import { TopStripeContext } from './TopStripe';
 
 export interface TopStripeMenuProps extends LinkProps {
   /**

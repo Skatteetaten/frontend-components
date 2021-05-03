@@ -1,4 +1,4 @@
-import { Grid } from '../index';
+import { Grid } from '../Grid';
 
 export class Main extends Grid.Row {
   static displayName = 'Main';

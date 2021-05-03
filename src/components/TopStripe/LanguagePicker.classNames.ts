@@ -1,5 +1,5 @@
 import { mergeStyleSets } from '@uifabric/merge-styles';
-import { FontSizes } from '../utils/fonts';
+import { FontSizes } from '../utils';
 
 export const getClassNames = () => {
   return mergeStyleSets({

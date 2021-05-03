@@ -2,17 +2,8 @@ import classnames from 'classnames';
 import * as React from 'react';
 
 import { getClassNames } from './AccordionMenu.classNames';
-import { AccordionItemProps } from '../index';
-
-export interface AccordionMenuProps
-  extends React.HTMLAttributes<HTMLDivElement> {
-  className?: string;
-  children?: React.ReactNode;
-  /** aria-label */
-  ariaLabel?: string;
-  /** Use flex */
-  flex?: boolean;
-}
+import { AccordionItemProps } from '../Accordion/AccordionItem/AccordionItem.types';
+import { AccordionMenuProps } from './AccordionMenu.types';
 
 /**
  * @visibleName AccordionMenu (Trekkspillmeny)

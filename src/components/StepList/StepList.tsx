@@ -1,15 +1,10 @@
 import classnames from 'classnames';
 import React from 'react';
-import { Grid, StepProps } from '../index';
+import { StepProps } from './Step';
+import { Grid } from '../Grid';
 import { getClassNames } from './StepList.classNames';
+import { StepListProps } from './StepList.types';
 
-export interface StepListProps extends React.HTMLAttributes<HTMLDivElement> {
-  /** Klassenavn som kan benyttes for å overstyre css */
-  className?: string;
-  /** Label som kan settes for hele steplisten */
-  ariaLabel?: string;
-  children?: React.ReactNode;
-}
 /**
  * @visibleName StepList (StegListe)
  */

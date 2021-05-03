@@ -1,12 +1,7 @@
 import { mergeStyles } from '@uifabric/merge-styles';
 import { getTheme } from '@uifabric/styling';
-import {
-  FontSizes,
-  FontWeights,
-  PaletteProps,
-  MdIcons,
-  DatePickerProps,
-} from '../index';
+import { FontSizes, FontWeights, PaletteProps, MdIcons } from '../utils';
+import { DatePickerProps } from './DatePicker.types';
 
 const errorIcon = "'" + MdIcons.icons.Error + "'";
 

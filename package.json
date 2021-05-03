@@ -80,6 +80,7 @@
     "husky": "4.3.0",
     "jest-junit": "12.0.0",
     "lodash.find": "4.6.0",
+    "madge": "4.0.2",
     "node-fetch": "2.6.1",
     "normalizr": "3.6.1",
     "npm-run-all": "4.1.5",
@@ -108,7 +109,7 @@
   "scripts": {
     "start": "REACT_APP_BUILD_VERSION=$(git rev-parse --abbrev-ref HEAD) FAST_REFRESH=false styleguidist server --verbose",
     "generate:icons": "webfont --normalize --fontHeight 600 src/webfont/**/*.svg -d src/components/utils/assets",
-    "prebuild": "run-s clean generate:icons lint",
+    "prebuild": "run-s clean generate:icons circularDeps lint",
     "build": "run-p build:lib build:docs",
     "build:docs": "styleguidist build",
     "build:lib": "run-p build:types build:umds build:commonjs build:assets",
@@ -131,6 +132,7 @@
     "sonarqube": "sonar-scanner",
     "test": "react-scripts test --env=jsdom --verbose=false",
     "test:coverage": "CI=true react-scripts test --env=jsdom --coverage --testResultsProcessor jest-junit",
+    "circularDeps": "node scripts/checkCircularDeps.js",
     "postversion": "npm run build:copy-files",
     "clean": "rimraf coverage lib docs *.tgz",
     "deploy:gh-pages": "gh-pages -d docs -p 0 -r https://github.com/Skatteetaten/frontend-components.git",
@@ -169,7 +171,15 @@
   },
   "babel": {
     "presets": [
-      "@babel/preset-env",
+      [
+        "@babel/preset-env",
+        {
+          "modules": false,
+          "targets": {
+            "node": true
+          }
+        }
+      ],
       "@babel/preset-react",
       "@babel/preset-typescript"
     ],

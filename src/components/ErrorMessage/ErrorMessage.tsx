@@ -1,14 +1,7 @@
 import * as React from 'react';
 import { getClassNames } from './ErrorMessage.classNames';
 import classnames from 'classnames';
-
-export interface ErrorMessageProps {
-  /** Feilmelding */
-  children: JSX.Element | string;
-  showError?: boolean;
-  /** Overstyring av stiler */
-  className?: string;
-}
+import { ErrorMessageProps } from './ErrorMessage.types';
 
 /**
  * @visibleName ErrorMessage (Feilmelding)

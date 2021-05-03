@@ -1,6 +1,6 @@
 import { mergeStyleSets } from '@uifabric/merge-styles';
 import { getTheme } from '@uifabric/styling';
-import { FontSizes, FontWeights, PaletteProps } from '../index';
+import { FontSizes, FontWeights, PaletteProps } from '../utils';
 
 export const getClassNames = () => {
   const palette = getTheme().palette as PaletteProps;

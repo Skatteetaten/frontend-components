@@ -1,23 +1,8 @@
 import * as React from 'react';
 import { getClassNames } from './Chip.classNames';
 import classnames from 'classnames';
+import { ChipProps, ChipType } from './Chip.types';
 
-export enum ChipType {
-  WARNING = 'lightPink',
-  OK = 'lightGreen',
-  NEUTRAL = 'beige',
-}
-
-export interface ChipProps extends React.HTMLAttributes<HTMLDivElement> {
-  /** Bruksområde som avgir hvilken farge chip-en får */
-  type?: ChipType;
-  /** Størrelse på Chip */
-  size?: 'standard' | 'large';
-  /** aria-label */
-  ariaLabel?: string;
-  /** Overstyring av stiler */
-  className?: string;
-}
 /**
  * @visibleName Chip (Emneknagg)
  */

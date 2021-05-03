@@ -1,6 +1,7 @@
 import { mergeStyles } from '@uifabric/merge-styles';
 import { getTheme } from '@uifabric/styling';
-import { FontWeights, TabProps, PaletteProps } from '../index';
+import { FontWeights, PaletteProps } from '../utils';
+import { TabProps } from './Tabs.types';
 
 export const getClassNames = function getClassNames(props: TabProps) {
   const palette = getTheme().palette as PaletteProps;

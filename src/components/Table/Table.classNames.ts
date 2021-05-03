@@ -1,7 +1,7 @@
 import { mergeStyles } from '@uifabric/merge-styles';
 import { getTheme } from '@uifabric/styling';
 
-import { FontWeights, FontSizes, PaletteProps } from '../index';
+import { FontWeights, FontSizes, PaletteProps } from '../utils';
 
 export const getClassNames = (props) => {
   const { fullWidth, compactTable } = props;

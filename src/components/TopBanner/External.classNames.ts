@@ -1,9 +1,10 @@
 import { mergeStyleSets } from '@uifabric/merge-styles';
 import { getTheme } from '@uifabric/styling';
-import { FontSizes, PaletteProps, TopBannerProps } from '../index';
+import { FontSizes, PaletteProps } from '../utils';
+import { TopBannerTypes } from './TopBanner.types';
 import separator from './assets/separator.png';
 
-export function getClassNames(props: TopBannerProps) {
+export function getClassNames(props: TopBannerTypes) {
   const { compact } = props;
   const palette = getTheme().palette as PaletteProps;
   // @ts-ignore TODO

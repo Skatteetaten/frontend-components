@@ -1,6 +1,6 @@
 import { mergeStyles, IStyle } from '@uifabric/merge-styles';
 import { getTheme } from '@uifabric/styling';
-import { FontSizes, FontWeights, PaletteProps, takeIf } from '../index';
+import { FontSizes, FontWeights, PaletteProps, takeIf } from '../utils';
 
 /**
  * Each property contains a list of tags which should have their

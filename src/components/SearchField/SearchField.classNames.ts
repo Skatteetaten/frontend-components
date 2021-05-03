@@ -1,6 +1,7 @@
 import { mergeStyleSets } from '@uifabric/merge-styles';
 import { getTheme } from '@uifabric/styling';
-import { FontSizes, PaletteProps, SearchFieldProps } from '../index';
+import { FontSizes, PaletteProps } from '../utils';
+import { SearchFieldProps } from './SearchField.types';
 
 export const getClassNames = (props: SearchFieldProps) => {
   const palette = getTheme().palette as PaletteProps;

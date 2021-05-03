@@ -2,48 +2,17 @@ import classnames from 'classnames';
 import {
   Dropdown as FabricDropdown,
   DropdownMenuItemType,
-  IDropdownProps,
   IDropdownStyleProps,
   IDropdownStyles,
 } from '@fluentui/react';
 import * as React from 'react';
 import { getClassNames, getCalloutStyles } from './Dropdown.classNames';
-import {
-  Icon,
-  LabelWithCallout,
-  calloutState,
-  LabelWithCalloutProps,
-  generateId,
-} from '../index';
+import { generateId } from '../utils';
+import { Icon } from '../Icon';
+import { LabelWithCallout } from '../LabelWithCallout';
 import { IStyleFunctionOrObject } from '@uifabric/utilities';
+import { DropdownProps } from './DropDown.types';
 
-export interface DropdownProps extends IDropdownProps {
-  /** Lukk callout på blur */
-  labelWithCalloutAutoDismiss?: boolean;
-  /** Hjelpetekst */
-  help?: string | JSX.Element;
-  /** Størrelse på inputfelt som skal benyttes */
-  inputSize?: 'normal' | 'large';
-  /** aria-label for knapp i label */
-  labelButtonAriaLabel?: string;
-  /** Overstyr label, se LabelWithCallout komponent */
-  labelCallout?: LabelWithCalloutProps;
-  /** @ignore */
-  multiSelect?: IDropdownProps['multiSelect'];
-  /** @ignore */
-  multiSelectDelimiter?: IDropdownProps['multiSelectDelimiter'];
-  /** Brukerspesifisert event for callout */
-  onCalloutToggle?: (
-    oldCalloutState: calloutState,
-    newCalloutState: calloutState
-  ) => void;
-  /** Lesemodus. Kan brukes i sammenheng med selectedKey eller defaultSelectedKey for å vise verdi */
-  readOnly?: boolean;
-}
-
-export interface DropdownState {
-  isCalloutVisible: boolean;
-}
 /**
  * @visibleName Dropdown (Nedtrekksliste)
  */

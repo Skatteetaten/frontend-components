@@ -2,19 +2,7 @@ import classnames from 'classnames';
 import { ActionButton as FabricActionButton } from '@fluentui/react';
 import * as React from 'react';
 import { getClassNames } from './ActionButton.classNames';
-import { ButtonProps } from '../index';
-
-export interface ActionButtonProps extends ButtonProps {
-  /** Ikon som skal vises foran lenketeksten */
-  icon?: string;
-  /** Ikon størrelse, to tilgjengelige størrelser */
-  iconSize?: any;
-  /** Fire forhåndsdefinerte farger, se eksempler */
-  color?: 'blue' | 'black' | 'red' | 'green' | 'white';
-  /**  true hvis ikonet skal plasseres etter tekst, ellers rendres det foran. */
-  iconAfter?: boolean;
-  ariaLabel?: string;
-}
+import { ActionButtonProps } from './ActionButton.types';
 
 /**
  * @visibleName ActionButton (Aksjonsknapp)
