@@ -129,6 +129,7 @@ export const LanguagePicker: React.FC<LanguagePickerProps> = (props) => {
         {languages.map((language) => {
           return (
             <LanguagePickerButton
+              key={language}
               buttonLanguage={language}
               selectedLanguage={selectedLanguage}
               setLanguage={setLanguage}
