@@ -106,6 +106,39 @@
   padding-right: 16px;
 }
 
+.mt0 {
+  margin-top: 0;
+}
+
+.mt8 {
+  margin-top: 8px;
+}
+
+.mt16 {
+  margin-top: 16px;
+}
+
+.mb0 {
+  margin-bottom: 0;
+}
+
+.mb8 {
+  margin-bottom: 8px;
+}
+
+.mb16 {
+  margin-bottom: 16px;
+}
+
+dt {
+  font-weight: 600;
+  margin-top: 8px;
+}
+
+dd {
+  margin-left: 16px;
+}
+
 .do {
   display: block;
   min-width: 300px;
