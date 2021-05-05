@@ -1,10 +1,6 @@
 import { mergeStyles } from '@uifabric/merge-styles';
-import {
-  FontSizes,
-  IconFontSizes,
-  PaletteProps,
-  MessageBarProps,
-} from '../index';
+import { FontSizes, IconFontSizes, PaletteProps } from '../utils';
+import { MessageBarProps } from './MessageBar.types';
 import { getTheme } from '@uifabric/styling';
 import { MessageBarType } from '@fluentui/react';
 

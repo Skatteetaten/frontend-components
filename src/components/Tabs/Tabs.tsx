@@ -1,7 +1,6 @@
 import classnames from 'classnames';
 import {
   IPivotItemProps,
-  IPivotProps,
   Pivot,
   PivotItem,
   PivotLinkFormat,
@@ -9,13 +8,7 @@ import {
 } from '@fluentui/react';
 import * as React from 'react';
 import { getClassNames } from './Tabs.classNames';
-
-export interface TabProps extends IPivotProps {
-  /** Border rundt tabs */
-  border?: boolean;
-  /** Underline for å fremheve tabs */
-  underline?: boolean;
-}
+import { TabProps } from './Tabs.types';
 
 /**
  * @visibleName Tabs (Arkfaner)

@@ -1,24 +1,14 @@
 import classnames from 'classnames';
 import * as React from 'react';
-import { Callout } from '../index';
+import { Callout } from '../Callout';
 import { getClassNames } from './Dialog.classNames';
 import {
   DialogType,
   DialogFooter,
   Dialog as FabricDialog,
-  IDialogProps,
 } from '@fluentui/react';
+import { DialogProps, DialogState } from './Dialog.types';
 
-export interface DialogProps extends IDialogProps {
-  /** Om dialog skal ha mer padding for et luftigere uttrykk */
-  layoutStyle?: 'normal' | 'airy' | 'important';
-  /** Om det er så mye innhold at det går over flere "sider" (fikser scroll inni dialog på ipad) */
-  tabletContentOverflows?: boolean;
-  isModeless?: boolean;
-}
-export type DialogState = {
-  isCalloutVisible: boolean;
-};
 /**
  * @visibleName Dialog (Dialogboks)
  */

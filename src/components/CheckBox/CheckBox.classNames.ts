@@ -1,6 +1,6 @@
 import { mergeStyles } from '@uifabric/merge-styles';
 import { getTheme } from '@uifabric/styling';
-import { getFocusStyle, FontWeights, FontSizes, skeColor } from '../index';
+import { getFocusStyle, FontWeights, FontSizes, skeColor } from '../utils';
 
 export const getClassNames = function getClassNames() {
   const theme = getTheme();

@@ -1,12 +1,7 @@
 import { mergeStyles } from '@uifabric/merge-styles';
 import { getTheme } from '@uifabric/styling';
-import {
-  FontSizes,
-  FontWeights,
-  MdIcons,
-  PaletteProps,
-  TextFieldProps,
-} from '../index';
+import { FontSizes, FontWeights, MdIcons, PaletteProps } from '../utils';
+import { TextFieldProps } from './TextField.types';
 
 function getFieldTypeStyles(props: TextFieldProps) {
   if (props.inputSize === 'large') {

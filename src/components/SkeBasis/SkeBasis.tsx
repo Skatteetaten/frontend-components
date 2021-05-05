@@ -7,8 +7,7 @@ import {
 } from '@uifabric/styling';
 import { Fabric, IFabricProps } from '@fluentui/react';
 import * as React from 'react';
-import { Fonts, SkeIcons, MdIcons, Palette } from '../index';
-import { PaletteProps } from 'components/utils/palette';
+import { Fonts, MdIcons, SkeIcons, Palette, PaletteProps } from '../utils';
 
 export interface SkeBasisProps extends IFabricProps {
   palette?: object;

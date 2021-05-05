@@ -667,6 +667,7 @@ function Testside(props) {
   const printIcons = (icons) => {
     return icons.map((props) => (
       <Icon
+        key={props.name}
         iconName={props.name}
         style={{ fontSize: '30px', position: 'relative' }}
       />
@@ -984,7 +985,7 @@ function Testside(props) {
         isRequiredErrorMessage={'Dato må fylles ut'}
       />
       <DatePicker
-        id={'my-date1'}
+        id={'my-date2'}
         label={'Velg en dato'}
         inputSize="large"
         help={
@@ -993,7 +994,7 @@ function Testside(props) {
         isRequiredErrorMessage={'Dato må fylles ut'}
       />
       <DatePicker
-        id={'my-date1'}
+        id={'my-date3'}
         label={'Velg en dato'}
         help={
           'Du kan skrive inn dato i feltet, eller velge en dato ved hjelp av datovelgeren, enten med mus eller bruk tastaturet'
@@ -1309,13 +1310,7 @@ function Testside(props) {
       </div>
       <h2>Card</h2>
 
-      <Card
-        color={Card.Color.BEIGE}
-        title="Beige"
-        circleOnIcon={true}
-        isExpanded={false}
-        expand
-      >
+      <Card color={Card.Color.BEIGE} title="Beige" isExpanded={false} expand>
         <p>
           De fleste lønnsmottakere og pensjonister fikk skatteoppgjøret 27.
           juni. Neste mulighet var 15. august, og heretter blir det løpende
@@ -1327,7 +1322,6 @@ function Testside(props) {
       <Card
         color={Card.Color.GREEN}
         title="Grønn"
-        circleOnIcon={false}
         isExpanded={false}
         expand
         margin="large"
@@ -1340,12 +1334,7 @@ function Testside(props) {
           skattekontoret.
         </p>
       </Card>
-      <Card
-        color={Card.Color.GREY}
-        title="Grå"
-        circleOnIcon={false}
-        margin="xlarge"
-      >
+      <Card color={Card.Color.GREY} title="Grå" margin="xlarge">
         <p>
           De fleste lønnsmottakere og pensjonister fikk skatteoppgjøret 27.
           juni. Neste mulighet var 15. august, og heretter blir det løpende
@@ -1354,13 +1343,7 @@ function Testside(props) {
           skattekontoret.
         </p>
       </Card>
-      <Card
-        color={Card.Color.WHITE}
-        title="Hvit"
-        circleOnIcon={false}
-        isExpanded={false}
-        expand
-      >
+      <Card color={Card.Color.WHITE} title="Hvit" isExpanded={false} expand>
         <p>
           De fleste lønnsmottakere og pensjonister fikk skatteoppgjøret 27.
           juni. Neste mulighet var 15. august, og heretter blir det løpende
@@ -1374,7 +1357,6 @@ function Testside(props) {
         border={Card.Border.GREEN_BORDER}
         title="Du må betale omregistreringsavgift"
         subtitle="Gjelder kjøretøyet PR 12345"
-        circleOnIcon={false}
         isExpanded={false}
         expand
       >

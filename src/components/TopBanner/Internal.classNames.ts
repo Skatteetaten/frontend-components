@@ -1,4 +1,4 @@
-import { FontSizes, PaletteProps } from '../index';
+import { FontSizes, PaletteProps } from '../utils';
 import { getTheme } from '@uifabric/styling';
 import { mergeStyleSets } from '@uifabric/merge-styles';
 

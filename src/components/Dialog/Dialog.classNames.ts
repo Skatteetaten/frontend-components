@@ -1,6 +1,7 @@
 import { getTheme } from '@uifabric/styling';
 import { mergeStyleSets } from '@uifabric/merge-styles';
-import { FontSizes, FontWeights, PaletteProps, DialogProps } from '../index';
+import { FontSizes, FontWeights, PaletteProps } from '../utils';
+import { DialogProps } from './Dialog.types';
 import dekor from './assets/footerDekor.svg';
 import logo from './assets/ske-logo.svg';
 

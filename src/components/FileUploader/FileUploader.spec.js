@@ -1,6 +1,7 @@
 import React from 'react';
 import { matches } from './../utils/test-utils';
-import { FileUploader, FileFormatTypes, Language } from './FileUploader';
+import { FileUploader } from './FileUploader';
+import { FileFormatTypes, Language } from './FileUploader.types';
 import { mount, shallow } from 'enzyme';
 
 function oppsettShallow(props) {

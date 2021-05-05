@@ -1,16 +1,9 @@
 import classnames from 'classnames';
-import { Checkbox as FabricCheckBox, ICheckboxProps } from '@fluentui/react';
+import { Checkbox as FabricCheckBox } from '@fluentui/react';
 import * as React from 'react';
 import { getClassNames } from './CheckBox.classNames';
+import { CheckBoxProps } from './CheckBox.types';
 
-export interface CheckBoxProps extends ICheckboxProps {
-  /** Angir teknisk navn på elementet */
-  name?: string;
-  /** @ignore */
-  indeterminate?: ICheckboxProps['indeterminate'];
-  /** @ignore */
-  defaultIndeterminate?: ICheckboxProps['indeterminate'];
-}
 /**
  * @visibleName CheckBox (Avkrysningsboks)
  */

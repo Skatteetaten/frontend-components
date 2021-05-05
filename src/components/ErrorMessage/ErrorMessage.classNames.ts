@@ -4,7 +4,7 @@ import {
   AnimationClassNames,
   getGlobalClassNames,
 } from '@uifabric/styling';
-import { MdIcons, PaletteProps } from '../index';
+import { MdIcons, PaletteProps } from '../utils';
 
 const errorIcon = "'" + MdIcons.icons.Error + "'";
 export const getClassNames = function getClassNames() {

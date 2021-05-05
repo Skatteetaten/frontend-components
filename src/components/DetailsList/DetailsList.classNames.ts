@@ -1,11 +1,7 @@
 import { mergeStyles } from '@uifabric/merge-styles';
 import { getTheme } from '@uifabric/styling';
-import {
-  FontSizes,
-  FontWeights,
-  PaletteProps,
-  DetailsListProps,
-} from '../index';
+import { FontSizes, FontWeights, PaletteProps } from '../utils';
+import { DetailsListProps } from './DetailsList.types';
 
 function getBackgroundColor(props: DetailsListProps) {
   const palette = getTheme().palette as PaletteProps;

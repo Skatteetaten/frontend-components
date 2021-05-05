@@ -1,7 +1,7 @@
 import * as React from 'react';
-import { IconButton } from '../../index';
+import { IconButton } from '../../IconButton';
 import classnames from 'classnames';
-import { t } from '../../utils/i18n/i18n';
+import { t } from '../../utils';
 
 export interface TableRowProps<P> {
   data: P;

@@ -1,11 +1,7 @@
 import { mergeStyles } from '@uifabric/merge-styles';
 import { getTheme } from '@uifabric/styling';
-import {
-  FontSizes,
-  getFocusStyle,
-  PaletteProps,
-  IconButtonProps,
-} from '../index';
+import { FontSizes, getFocusStyle, PaletteProps } from '../utils';
+import { IconButtonProps } from './IconButton.types';
 
 function getTypeColor(props: IconButtonProps) {
   switch (props.buttonSize) {

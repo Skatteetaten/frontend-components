@@ -1,18 +1,8 @@
 import * as React from 'react';
 import { getClassNames } from './TopStripe.classNames';
 import classnames from 'classnames';
-import { TopStripeButton } from '../index';
-
-export interface TopStripeProps {
-  children?: JSX.Element | Array<JSX.Element | null | false>;
-  className?: string;
-  /** @ignore */
-  open?: number;
-  /** @ignore */
-  setOpen?: any;
-  /** @ignore */
-  closeMenu?: () => void;
-}
+import { TopStripeButton } from './TopStripeButton';
+import { TopStripeProps } from './TopStripe.types';
 
 export const TopStripeContext = React.createContext<TopStripeProps>({
   open: -1,

@@ -1,6 +1,9 @@
 import React from 'react';
 import classnames from 'classnames';
-import { ActionButton, Grid, Icon, UseScreen } from '../../index';
+import { UseScreen } from '../../utils';
+import { ActionButton } from '../../ActionButton';
+import { Grid } from '../../Grid';
+import { Icon } from '../../Icon';
 import { getClassNames } from '../StepList.classNames';
 
 const NumberIcon = (props: any) => {

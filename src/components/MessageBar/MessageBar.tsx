@@ -1,37 +1,14 @@
 import classnames from 'classnames';
 import {
-  IMessageBarProps,
   MessageBar as FabricMessageBar,
   MessageBarType,
 } from '@fluentui/react';
 import * as React from 'react';
 // @ts-ignore TODO
 import { CSSTransition } from 'react-transition-group';
-import { Button as MessageBarButton } from '../index';
+import { Button as MessageBarButton } from '../Button';
 import { getClassNames } from './MessageBar.classNames';
-
-export interface MessageBarProps extends IMessageBarProps {
-  type?:
-    | MessageBarType.success
-    | MessageBarType.blocked
-    | MessageBarType.severeWarning
-    | MessageBarType.error
-    | MessageBarType.info
-    | MessageBarType.warning;
-  size?: 'default' | 'large';
-  /** Antall sekunder som boksen skal være synlig */
-  duration?: number;
-  /** (resetDuration: () => void, setShowAlways: () => void) => JSXElement
-   */
-  onRenderAfterDuration?: (...args: any[]) => any;
-  /** Callback for klikk på knappen */
-  onClick?: (...args: any[]) => any;
-}
-
-export interface MessageBarState extends React.HTMLAttributes<HTMLDivElement> {
-  hideMessageBar: boolean;
-  showMessage: boolean;
-}
+import { MessageBarProps, MessageBarState } from './MessageBar.types';
 
 /**
  * @visibleName MessageBar (Varsler)

@@ -1,9 +1,11 @@
 import * as React from 'react';
 import { TopStripeButton } from './TopStripeButton';
 import { TopStripeMenu } from './TopStripeMenu';
-import { EnglishFlag, NorwegianFlag, SamiFlag } from './assets';
-import { Icon } from '../index';
-import { UseScreen } from '../utils/ScreenPlugin';
+import { ReactComponent as EnglishFlag } from './assets/EnglishFlag.svg';
+import { ReactComponent as NorwegianFlag } from './assets/NorwegianFlag.svg';
+import { ReactComponent as SamiFlag } from './assets/SamiFlag.svg';
+import { Icon } from '../Icon';
+import { UseScreen } from '../utils';
 import { getClassNames } from './LanguagePicker.classNames';
 
 enum LanguageEnum {
@@ -129,6 +131,7 @@ export const LanguagePicker: React.FC<LanguagePickerProps> = (props) => {
         {languages.map((language) => {
           return (
             <LanguagePickerButton
+              key={language}
               buttonLanguage={language}
               selectedLanguage={selectedLanguage}
               setLanguage={setLanguage}

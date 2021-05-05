@@ -1,9 +1,5 @@
-import {
-  FontSizes,
-  FontWeights,
-  PaletteProps,
-  LabelWithCalloutProps,
-} from '../index';
+import { FontSizes, FontWeights, PaletteProps } from '../utils';
+import { LabelWithCalloutProps } from './LabelWithCallout.types';
 import { mergeStyleSets } from '@uifabric/merge-styles';
 import { getTheme } from '@uifabric/styling';
 
