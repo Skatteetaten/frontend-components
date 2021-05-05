@@ -27,15 +27,17 @@ const generateLanguagePickerText = (language: LanguageEnum): string => {
 };
 
 const displayFlag = (language: LanguageEnum): JSX.Element => {
+  const altText: string = generateLanguagePickerText(language);
+
   switch (language) {
     case LanguageEnum.BOKMAAL:
-      return <NorwegianFlag />;
+      return <img src={NorwegianFlag} alt={altText} />;
     case LanguageEnum.NYNORSK:
-      return <NorwegianFlag />;
+      return <img src={NorwegianFlag} alt={altText} />;
     case LanguageEnum.ENGLISH:
-      return <EnglishFlag />;
+      return <img src={EnglishFlag} alt={altText} />;
     case LanguageEnum.SAMI:
-      return <SamiFlag />;
+      return <img src={SamiFlag} alt={altText} />;
   }
 };
 
