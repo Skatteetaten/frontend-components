@@ -36,7 +36,7 @@ const eksempel = '[TODO eksempel]';
     titlesize="x-large"
     margin="large"
   >
-    <p class="mt0">
+    <p className="mt0">
       Ledetekster blir også kalt label, spørsmålstekst eller instrukser. Disse
       mikrotekstene skal hjelpe brukeren med å fylle ut et skjema, og vi
       plasserer dem i nær tilknytning de feltene de gjelder for. Ledeteksten må
@@ -78,15 +78,24 @@ const eksempel = '[TODO eksempel]';
         <h2 style={{ marginTop: '0px', marginBottom: '2px' }}>
           Hvem er ny eier av kjøretøyet?{' '}
           <span style={{ fontSize: '16px' }}>
-            <Chip aria-describedby="text-tittel" size="standard">
-              Skjematittel eller spørsmålstekst
+            <Chip size="standard">
+              Skjematittel eller spørsmålstekst{' '}
+              <span class="sr-only">
+                Ha alltid med en tittel eller spørsmål i skjemaet. Ikke bland
+                spørsmål med en spesifikasjon av hva brukeren skal gjøre.
+              </span>
             </Chip>
           </span>
         </h2>
-        <p class="mt0">
+        <p className="mt0">
           Før vi kan hjelpe deg videre må du oppgi hvem som er den nye eieren av
           kjøretøyet.{' '}
-          <Chip aria-describedby="text-fremskutt">Fremskutt hjelpetekst</Chip>
+          <Chip>
+            Fremskutt hjelpetekst
+            <span class="sr-only">
+              Skal forklare brukeren hvorfor de skal fylle ut feltet.
+            </span>
+          </Chip>
         </p>
 
         <div style={{ width: '600px', display: 'flex' }}>
@@ -100,7 +109,12 @@ const eksempel = '[TODO eksempel]';
           </div>
           <div style={{ paddingLeft: '8px' }}>
             {' '}
-            <Chip aria-describedby="text-feltnavn">Feltnavn</Chip>
+            <Chip>
+              Feltnavn
+              <span class="sr-only">
+                Spesifiserer hva brukeren skal fylle ut.
+              </span>
+            </Chip>
           </div>
         </div>
         <br />
@@ -122,7 +136,14 @@ const eksempel = '[TODO eksempel]';
             }}
           >
             {' '}
-            <Chip aria-describedby="text-enhet">Enhetsbenevnelse</Chip>
+            <Chip>
+              Enhetsbenevnelse
+              <span class="sr-only">
+                Viser enhetsbenevnelse ved siden av feltet hvis det er behov for
+                å forklare hva vi teller. For eksempel, NOK, kg, dager, måneder
+                og kvadratmeter.
+              </span>
+            </Chip>
           </div>
         </div>
       </Card>
@@ -131,7 +152,7 @@ const eksempel = '[TODO eksempel]';
         <dt id="text-tittel">Skjematittel eller spørsmålstekst</dt>
         <dd>
           Ha alltid med en tittel eller spørsmål i skjemaet. Ikke bland spørsmål
-          med en spesifikasjon av hva brukeren skal gjøre
+          med en spesifikasjon av hva brukeren skal gjøre.
         </dd>
 
         <dt id="text-fremskutt">Fremskutt hjelpetekst</dt>
@@ -252,7 +273,7 @@ const eksempel = '[TODO eksempel]';
       </p>
       <div className="dodont" style={{ marginLeft: '24px' }}>
         <div className="do" style={{ maxWidth: '44%' }}>
-          <p class="title">Ja</p>
+          <p className="title">Ja</p>
           <Card
             margin="large"
             color={Card.Color.WHITE}
@@ -285,7 +306,7 @@ const eksempel = '[TODO eksempel]';
           </Card>
         </div>
         <div className="dont" style={{ maxWidth: '44%' }}>
-          <p class="title">Nei</p>
+          <p className="title">Nei</p>
           <Card
             margin="large"
             color={Card.Color.WHITE}
