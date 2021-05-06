@@ -4,9 +4,10 @@ import {
   AccordionItem,
   Card,
   Icon,
+  Grid,
   LabelWithCallout,
   ComboBox,
-  ActionButton,
+  Button,
   Link,
   MessageBar,
   TextField,
@@ -78,25 +79,26 @@ const eksempel = '[TODO eksempel]';
         <h2 style={{ marginTop: '0px', marginBottom: '2px' }}>
           Hvem er ny eier av kjøretøyet?{' '}
           <span style={{ fontSize: '16px' }}>
-            <Chip size="standard">
-              Skjematittel eller spørsmålstekst{' '}
-              <span class="sr-only">
-                Ha alltid med en tittel eller spørsmål i skjemaet. Ikke bland
-                spørsmål med en spesifikasjon av hva brukeren skal gjøre.
-              </span>
+            <Chip size="standard" className="tipchip">
+              <Button buttonStyle="secondary">
+                Skjematittel eller spørsmålstekst
+              </Button>
             </Chip>
           </span>
         </h2>
-        <p className="mt0">
-          Før vi kan hjelpe deg videre må du oppgi hvem som er den nye eieren av
-          kjøretøyet.{' '}
-          <Chip>
-            Fremskutt hjelpetekst
-            <span class="sr-only">
-              Skal forklare brukeren hvorfor de skal fylle ut feltet.
-            </span>
-          </Chip>
-        </p>
+        <Grid padding="0px">
+          <Grid.Row>
+            <Grid.Col sm={8} noSpacing>
+              <p className="mt0">
+                Før vi kan hjelpe deg videre må du oppgi hvem som er den nye
+                eieren av kjøretøyet.
+              </p>
+            </Grid.Col>
+            <Grid.Col sm={4} noSpacing>
+              <Chip className="tipchip">Fremskutt hjelpetekst</Chip>
+            </Grid.Col>
+          </Grid.Row>
+        </Grid>
 
         <div style={{ width: '600px', display: 'flex' }}>
           <div>
@@ -109,7 +111,7 @@ const eksempel = '[TODO eksempel]';
           </div>
           <div style={{ paddingLeft: '8px' }}>
             {' '}
-            <Chip>
+            <Chip className="tipchip">
               Feltnavn
               <span class="sr-only">
                 Spesifiserer hva brukeren skal fylle ut.
@@ -136,14 +138,7 @@ const eksempel = '[TODO eksempel]';
             }}
           >
             {' '}
-            <Chip>
-              Enhetsbenevnelse
-              <span class="sr-only">
-                Viser enhetsbenevnelse ved siden av feltet hvis det er behov for
-                å forklare hva vi teller. For eksempel, NOK, kg, dager, måneder
-                og kvadratmeter.
-              </span>
-            </Chip>
+            <Chip className="tipchip">Enhetsbenevnelse</Chip>
           </div>
         </div>
       </Card>
@@ -151,8 +146,8 @@ const eksempel = '[TODO eksempel]';
       <dl>
         <dt id="text-tittel">Skjematittel eller spørsmålstekst</dt>
         <dd>
-          Ha alltid med en tittel eller spørsmål i skjemaet. Ikke bland spørsmål
-          med en spesifikasjon av hva brukeren skal gjøre.
+          1. Ha alltid med en tittel eller spørsmål i skjemaet. Ikke bland
+          spørsmål med en spesifikasjon av hva brukeren skal gjøre.
         </dd>
 
         <dt id="text-fremskutt">Fremskutt hjelpetekst</dt>
@@ -184,10 +179,6 @@ const eksempel = '[TODO eksempel]';
         <li>
           Funksjoner i skjemaet bør være tydelige uten skriftlige forklaringer.
           Eksempel er knapper med: «Last opp fil», «Avbryt» eller «OK»
-        </li>
-        <li>
-          Pass på at placeholder ikke forsvinner når brukeren klikker i feltet
-          og at kontrastforholdene er minimum på 4,5.
         </li>
         <li>Like elementer skal uttrykkes likt gjennom hele skjemaet.</li>
       </ul>
@@ -262,7 +253,8 @@ const eksempel = '[TODO eksempel]';
 
         <li>
           Vi bruker plassholder (placeholder) som instruks, som for eksempel
-          «Begynn å skrive». Vi bruker det aldri som formatvisning, som
+          «Begynn å skrive». Plassholder skal ikke være identisk med eller
+          erstatte feltnavnet. Vi bruker det aldri som formatvisning, som
           foreksemel «dd.mm.åååå», da dette utfordrer arbeidsminnet.
         </li>
       </ul>
@@ -282,7 +274,6 @@ const eksempel = '[TODO eksempel]';
             <h2 style={{ marginTop: '0px' }}>
               Legg til opplysninger om barn over 12 år
             </h2>
-            <p>(Her kan du velge hvilke opplysninger du vil legge til.)</p>
 
             <div style={{ maxWidth: '500px' }}>
               <ComboBox

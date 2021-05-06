@@ -384,3 +384,31 @@ ul.navigation li.underline {
   white-space: nowrap;
   border-width: 0;
 }
+
+/* TipChip */
+.tipchip {
+  display: inline-block;
+  position: relative;
+  background: #cde1f9;
+  margin-left: 8px;
+  vertical-align: baseline;
+}
+
+.tipchip button {
+  margin-top: 4px;
+}
+
+.tipchip:after {
+  content: '';
+  display: block;
+  position: absolute;
+  right: 100%;
+  top: 50%;
+  margin-top: -12px;
+
+  height: 0;
+  border-top: 12px solid transparent;
+  border-right: 12px solid #cde1f9;
+  border-bottom: 12px solid transparent;
+  border-left: 12px solid transparent;
+}
