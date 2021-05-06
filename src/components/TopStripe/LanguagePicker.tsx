@@ -48,7 +48,6 @@ const LanguagePickerButton = ({
   selectedLanguage,
   setLanguage,
   showOnMobile,
-  ...rest
 }): JSX.Element => {
   const styles = getClassNames();
   return (
@@ -58,7 +57,6 @@ const LanguagePickerButton = ({
       className={styles.languageButton}
       role={'menuitem'}
       aria-current={buttonLanguage === selectedLanguage}
-      {...rest}
     >
       {buttonLanguage === selectedLanguage && (
         <Icon iconName={'Check'} className={styles.checkIcon} />
@@ -135,7 +133,6 @@ export const LanguagePicker: React.FC<LanguagePickerProps> = (props) => {
         {languages.map((language) => {
           return (
             <LanguagePickerButton
-              key={language}
               buttonLanguage={language}
               selectedLanguage={selectedLanguage}
               setLanguage={setLanguage}
