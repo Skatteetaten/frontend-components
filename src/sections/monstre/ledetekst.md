@@ -18,7 +18,7 @@ import {
 } from '@skatteetaten/frontend-components';
 
 const [state, setState] = React.useState({
-  isCalloutVisible: false,
+  isTitleCalloutVisible: false,
 });
 
 function closeButton() {
