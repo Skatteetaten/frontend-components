@@ -7,7 +7,6 @@ export const getClassNames = () => {
   const whiteBackground = palette.skeColor.white;
   const hoverBackground = palette.skeColor.lightBlue;
   const color = palette.skeColor.blue;
-  const hoverColor = palette.skeColor.blackAlt;
 
   // @ts-ignore TODO
   return mergeStyleSets({
