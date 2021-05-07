@@ -55,11 +55,11 @@ export const getClassNames = () => {
       margin: '24px auto',
       selectors: {
         '.ms-Button-flexContainer': {
-          flexDirection: 'column',
+          flexDirection: 'initial',
+          justifyContent: 'center',
         },
         ':hover .ms-Button-flexContainer > div': {
           backgroundColor: hoverBackground,
-          color: hoverColor,
         },
       },
     },
@@ -82,7 +82,7 @@ export const getClassNames = () => {
     iconFixate: {
       position: 'absolute',
       top: '0.4em',
-      left: '0.3em',
+      left: '0.25em',
     },
     label: {
       fontSize: FontSizes.small,
