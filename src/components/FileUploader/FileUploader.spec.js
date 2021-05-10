@@ -101,7 +101,7 @@ describe('FileUploader komponent', () => {
       name: 'FilNavn.png',
     });
   });
-  it('støtte csv format', () => {
+  it('støtter csv format', () => {
     const mockFunc = jest.fn();
     const wrapper = oppsettFullDOM({
       acceptedFileFormats: [FileFormatTypes.csv],
