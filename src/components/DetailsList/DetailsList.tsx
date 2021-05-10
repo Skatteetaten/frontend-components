@@ -12,7 +12,7 @@ import {
 import { getClassNames } from './DetailsList.classNames';
 import { DetailsListProps, IColumn } from './DetailsList.types';
 
-export { DetailsRow };
+export { FabricDetailsList, DetailsRow };
 
 /**
  * @visibleName DetailsList (Sammensatt tabell)
