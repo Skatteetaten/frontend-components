@@ -4,7 +4,7 @@
 - DatePicker: Fixes an accessibility bug where label and input field was not correctly associated.
 - LanguagePicker: Fixes a typescript issue.
 - ScrollToTopButton: Fixes a styling issue where the icon was not correctly centered.
-  – FileUploader now supports .CSV files
+- FileUploader now supports .CSV files
 - Various updates to documentation.
 
 ### **v.4.0.0 - 19.04.2021 - Major release**
