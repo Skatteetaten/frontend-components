@@ -16,6 +16,7 @@ export enum FileFormatTypes {
   tif = '.tif',
   txt = '.txt',
   xml = '.xml',
+  csv = '.csv',
 }
 
 export interface AttachmentMetadata extends File {
