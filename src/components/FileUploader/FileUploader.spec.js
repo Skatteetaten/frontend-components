@@ -1,6 +1,7 @@
 import React from 'react';
 import { matches } from './../utils/test-utils';
-import { FileUploader, FileFormatTypes, Language } from './FileUploader';
+import { FileUploader } from './FileUploader';
+import { FileFormatTypes, Language } from './FileUploader.types';
 import { mount, shallow } from 'enzyme';
 
 function oppsettShallow(props) {
@@ -99,5 +100,24 @@ describe('FileUploader komponent', () => {
       id: '123456789',
       name: 'FilNavn.png',
     });
+  });
+  it('støtter csv format', () => {
+    const mockFunc = jest.fn();
+    const wrapper = oppsettFullDOM({
+      acceptedFileFormats: [FileFormatTypes.csv],
+      ariaLabel: 'Filopplaster',
+      axiosPath: 'http://localhost',
+      uploadFile: () => mockFunc(),
+    });
+    expect(wrapper.find('span').first().text()).toEqual(
+      'Aksepterte filformater: .csv'
+    );
+    wrapper.find('input').simulate('change', {
+      target: {
+        files: [{ name: 'fil.csv' }],
+      },
+    });
+    expect(wrapper.exists('ErrorMessage')).toEqual(false);
+    expect(mockFunc.mock.calls.length).toBe(1);
   });
 });

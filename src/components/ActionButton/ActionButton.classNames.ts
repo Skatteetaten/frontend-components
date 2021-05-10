@@ -1,11 +1,7 @@
 import { mergeStyles } from '@uifabric/merge-styles';
 import { getTheme } from '@uifabric/styling';
-import {
-  FontSizes,
-  PaletteProps,
-  getFocusStyle,
-  ActionButtonProps,
-} from '../index';
+import { FontSizes, PaletteProps, getFocusStyle } from '../utils';
+import { ActionButtonProps } from './ActionButton.types';
 
 function getTypeColor(props: ActionButtonProps): object {
   const palette = getTheme().palette as PaletteProps;

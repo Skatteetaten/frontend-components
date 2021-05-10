@@ -1,5 +1,5 @@
 import React from 'react';
-import { Grid } from '../index';
+import { Grid } from '../Grid';
 import { mergeStyles } from '@uifabric/merge-styles';
 
 const getClassNames = () => {

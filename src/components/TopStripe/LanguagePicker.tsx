@@ -2,11 +2,11 @@ import * as React from 'react';
 import { TopStripeButton } from './TopStripeButton';
 import { TopStripeMenu } from './TopStripeMenu';
 import { EnglishFlag, NorwegianFlag, SamiFlag } from './assets';
-import { Icon } from '../index';
-import { UseScreen } from '../utils/ScreenPlugin';
+import { Icon } from '../Icon';
+import { UseScreen } from '../utils';
 import { getClassNames } from './LanguagePicker.classNames';
 
-enum LanguageEnum {
+export enum LanguageEnum {
   BOKMAAL = 'nb',
   NYNORSK = 'nn',
   ENGLISH = 'en',
@@ -27,15 +27,17 @@ const generateLanguagePickerText = (language: LanguageEnum): string => {
 };
 
 const displayFlag = (language: LanguageEnum): JSX.Element => {
+  const altText: string = generateLanguagePickerText(language);
+
   switch (language) {
     case LanguageEnum.BOKMAAL:
-      return <NorwegianFlag />;
+      return <img src={NorwegianFlag} alt={altText} />;
     case LanguageEnum.NYNORSK:
-      return <NorwegianFlag />;
+      return <img src={NorwegianFlag} alt={altText} />;
     case LanguageEnum.ENGLISH:
-      return <EnglishFlag />;
+      return <img src={EnglishFlag} alt={altText} />;
     case LanguageEnum.SAMI:
-      return <SamiFlag />;
+      return <img src={SamiFlag} alt={altText} />;
   }
 };
 
@@ -129,6 +131,7 @@ export const LanguagePicker: React.FC<LanguagePickerProps> = (props) => {
         {languages.map((language) => {
           return (
             <LanguagePickerButton
+              key={language}
               buttonLanguage={language}
               selectedLanguage={selectedLanguage}
               setLanguage={setLanguage}

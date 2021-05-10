@@ -1,6 +1,7 @@
 import { mergeStyles } from '@uifabric/merge-styles';
 import { getTheme } from '@uifabric/styling';
-import { PaletteProps, SpinnerProps } from '../index';
+import { PaletteProps } from '../utils';
+import { SpinnerProps } from './Spinner.types';
 
 export const getClassNames = function getClassNames(props: SpinnerProps) {
   const palette = getTheme().palette as PaletteProps;

@@ -1,17 +1,8 @@
 import * as React from 'react';
 import classnames from 'classnames';
 import { getClassNames } from './TopStripe.classNames';
-import { UseScreen } from '../index';
-
-export interface TopStripeButtonProps
-  extends React.HTMLAttributes<HTMLButtonElement> {
-  /** @ignore Får ekstra stil fra toppstripe */
-  topStripeStyle?: string;
-  showOnMobile?: boolean;
-  className?: string;
-  ariaLabel?: string;
-  text?: string;
-}
+import { UseScreen } from '../utils';
+import { TopStripeButtonProps } from './TopStripe.types';
 
 /**
  * @visibleName TopStripeButton (Toppstripe-knapp)

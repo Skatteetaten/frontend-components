@@ -1,24 +1,8 @@
 import * as React from 'react';
 import classnames from 'classnames';
-import { Icon } from '../index';
+import { Icon } from '../Icon';
 import { getClassNames } from './Link.classNames';
-
-export interface LinkProps
-  extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
-  className?: string;
-  /** Links are normally rendered as a-tags. This makes is possible to use a different markup. */
-  renderContent?: (classNames: string) => JSX.Element;
-  icon?: string;
-  /** If the link should open in an new window (target=blank) */
-  openInNew?: boolean;
-  /** If the link is an invisible "skip to main content" link */
-  skipLink?: boolean;
-  path?: string;
-  placement?: 'after' | 'before';
-  text?: string;
-  /** @ignore */
-  linkGroup?: boolean;
-}
+import { LinkProps } from './Link.types';
 
 /**
  * @visibleName Link (Lenke)

@@ -5,11 +5,11 @@ import {
   FontWeights,
   IconFontSizes,
   PaletteProps,
-  ComboboxProps,
   MdIcons,
-} from '../index';
+} from '../utils';
+import { ComboBoxProps } from './ComboBox.types';
 
-function getFieldTypeStyles(props: ComboboxProps) {
+function getFieldTypeStyles(props: ComboBoxProps) {
   const { errorMessage } = props;
   const palette = getTheme().palette as PaletteProps;
 
@@ -54,7 +54,7 @@ function getFieldTypeStyles(props: ComboboxProps) {
   }
 }
 
-export const getClassNames = (props: ComboboxProps) => {
+export const getClassNames = (props: ComboBoxProps) => {
   const { errorMessage } = props;
   const palette = getTheme().palette as PaletteProps;
   const errorIcon = "'" + MdIcons.icons.Error + "'";
@@ -120,7 +120,7 @@ export const getClassNames = (props: ComboboxProps) => {
   });
 };
 
-export const getOptionsClassNames = (props: ComboboxProps) => {
+export const getOptionsClassNames = (props: ComboBoxProps) => {
   const palette = getTheme().palette as PaletteProps;
 
   return mergeStyles({
@@ -162,7 +162,7 @@ export const getOptionsClassNames = (props: ComboboxProps) => {
   });
 };
 
-export const getLabelClassNames = (props: ComboboxProps) => {
+export const getLabelClassNames = (props: ComboBoxProps) => {
   const palette = getTheme().palette as PaletteProps;
 
   return mergeStyleSets({

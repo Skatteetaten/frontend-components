@@ -1,11 +1,7 @@
 import { mergeStyleSets } from '@uifabric/merge-styles';
 import { getTheme } from '@uifabric/styling';
-import {
-  FontSizes,
-  LineHeightSizes,
-  PaletteProps,
-  FileUploaderProps,
-} from '../index';
+import { FontSizes, LineHeightSizes, PaletteProps } from '../utils';
+import { FileUploaderProps } from './FileUploader.types';
 
 export const getClassNames = (props: FileUploaderProps) => {
   const palette = getTheme().palette as PaletteProps;

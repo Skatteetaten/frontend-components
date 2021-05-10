@@ -1,12 +1,7 @@
 import { mergeStyles } from '@uifabric/merge-styles';
 import { getTheme } from '@uifabric/styling';
-import {
-  FontSizes,
-  FontWeights,
-  PaletteProps,
-  ButtonProps,
-  getFocusStyle,
-} from '../index';
+import { FontSizes, FontWeights, PaletteProps, getFocusStyle } from '../utils';
+import { ButtonProps } from './Button.types';
 
 function getTypeColor(props: ButtonProps): object {
   const palette = getTheme().palette as PaletteProps;

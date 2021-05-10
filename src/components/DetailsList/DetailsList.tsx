@@ -7,28 +7,13 @@ import {
   ConstrainMode,
   CheckboxVisibility,
   Selection,
-  IDetailsListProps,
-  IColumn as FabricIColumn,
   DetailsRow,
 } from '@fluentui/react';
 import { getClassNames } from './DetailsList.classNames';
+import { DetailsListProps, IColumn } from './DetailsList.types';
 
-export interface IColumn extends FabricIColumn {
-  sortItems?: any;
-}
+export { FabricDetailsList, DetailsRow };
 
-export { DetailsRow };
-
-export interface DetailsListProps extends IDetailsListProps {
-  background?: 'white' | 'transparent';
-  /**  Konfigurasjon for kolonnenavn og rekkefølge */
-  columns?: Array<IColumn>;
-  isSorted?: boolean;
-  isSortedDescending?: boolean;
-  /** Mulighet for å skru av hover-effekt dersom listeelement ikke er klikkbar. Kan ikke kombineres med checkbox */
-  noHover?: boolean;
-  onSortUpdate?: (...args: any[]) => any;
-}
 /**
  * @visibleName DetailsList (Sammensatt tabell)
  */

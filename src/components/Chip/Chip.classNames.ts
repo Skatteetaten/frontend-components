@@ -1,6 +1,7 @@
 import { getTheme } from '@uifabric/styling';
 import { mergeStyles } from '@uifabric/merge-styles';
-import { PaletteProps, ChipProps, ChipType } from '../index';
+import { PaletteProps } from '../utils';
+import { ChipProps, ChipType } from './Chip.types';
 
 export const getClassNames = function getClassNames(props: ChipProps) {
   const palette = getTheme().palette as PaletteProps;

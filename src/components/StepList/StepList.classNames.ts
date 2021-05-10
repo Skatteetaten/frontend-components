@@ -1,6 +1,6 @@
 import { mergeStyleSets, IStyle } from '@uifabric/merge-styles';
 import { getTheme } from '@uifabric/styling';
-import { FontSizes, FontWeights, PaletteProps } from '../index';
+import { FontSizes, FontWeights, PaletteProps } from '../utils';
 
 const getStepContentPadding = (stepType: string): string => {
   if (stepType === 'next') {

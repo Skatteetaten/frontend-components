@@ -1,7 +1,8 @@
 import React from 'react';
 import toJson from 'enzyme-to-json';
 import { shallow, mount } from 'enzyme';
-import { Card, CardColor } from '../index';
+
+import { Card, CardColor } from './index';
 
 function oppsettShallow(props) {
   return shallow(<Card {...props} />);

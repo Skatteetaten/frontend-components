@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Icon } from '../../index';
+import { Icon } from '../../Icon';
 
 export interface NavigationContentProps
   extends React.HTMLAttributes<HTMLAnchorElement> {

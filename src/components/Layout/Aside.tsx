@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import { Grid } from '../index';
+import { Grid } from '../Grid';
 
 export class Aside extends Grid.Col {
   static displayName = 'Aside';

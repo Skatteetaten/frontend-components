@@ -70,7 +70,6 @@ describe('DatePicker komponent', () => {
       language: 'en',
     });
     const styledDatePickerBase = wrapper.find('StyledDatePickerBase');
-    expect(styledDatePickerBase.prop('ariaLabel')).toEqual('Enter date');
     expect(styledDatePickerBase.prop('strings').days).toEqual([
       'Sunday',
       'Monday',

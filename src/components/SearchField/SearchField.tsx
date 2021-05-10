@@ -1,58 +1,12 @@
 import classnames from 'classnames';
-import { ISearchBoxProps, ISearchBox, SearchBox } from '@fluentui/react';
+import { ISearchBox, SearchBox } from '@fluentui/react';
 import * as React from 'react';
 import { getClassNames } from './SearchField.classNames';
 import { IDropdownOption } from '@fluentui/react';
 import i18n from 'i18next';
-import {
-  LabelWithCallout,
-  calloutState,
-  LabelWithCalloutProps,
-  Language,
-  generateId,
-  useHotkeys,
-  t,
-} from '../index';
-
-export interface SearchFieldProps extends ISearchBoxProps {
-  /** Lukk callout på blur */
-  labelWithCalloutAutoDismiss?: boolean;
-  /** Størrelsen på rammen */
-  border?: 'default' | 'slim';
-  /** Hjelpetekst */
-  help?: string | JSX.Element;
-  /** Descriptive label for SearchField */
-  label?: string;
-  /** aria-label for knapp i label */
-  labelButtonAriaLabel?: string;
-  /** Overstyr label, se LabelWithCallout komponent */
-  labelCallout?: LabelWithCalloutProps;
-  /** Brukerspesifisert event for callout **/
-  onCalloutToggle?: (
-    oldCalloutState: calloutState,
-    newCalloutState: calloutState
-  ) => void;
-  /** Liste med mulige søkeresultat fra søk */
-  options?: Array<IDropdownOption>;
-  /** Størrelsen på søkefeltet */
-  searchFieldSize?: 'standard' | 'large';
-  /** @ignore */
-  underlined?: ISearchBoxProps['underlined'];
-  /**påkalt etter bruker valger et alternativ*/
-  onSelected?: (option: IDropdownOption) => void;
-  /** Language selection for what the screen reader reads out. Default is Norwegian Bokmål */
-  language?: Language;
-  /** Begrens antall viste søkeresultat */
-  limit?: number;
-  /** Tillater tastatursnarvei på søk */
-  keyboardShortcut?: boolean;
-  /** Hvilke taster som fungerer for snarvei */
-  searchShortcutKeys?: 'string';
-  /** Gjør søkeikonet klikkbart, trenger samme kode som onSearch */
-  onSearchIcon?: (newValue: any) => void;
-  /** Legg til egen mouseover tittel på søkeikonet */
-  searchIconTitle?: 'string';
-}
+import { generateId, useHotkeys, t } from '../utils';
+import { LabelWithCallout } from '../LabelWithCallout';
+import { SearchFieldProps } from './SearchField.types';
 
 const searchInList = (options: Array<IDropdownOption>, filterText: string) => {
   const regex = /[\s.,:-]+/g;

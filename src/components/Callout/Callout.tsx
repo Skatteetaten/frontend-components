@@ -1,34 +1,9 @@
 import classnames from 'classnames';
-import {
-  Callout as FabricCallout,
-  DirectionalHint,
-  ICalloutProps,
-} from '@fluentui/react';
+import { Callout as FabricCallout, DirectionalHint } from '@fluentui/react';
 import * as React from 'react';
-import { IconButton } from '../index';
+import { IconButton } from '../IconButton';
 import { getClassNames } from './Callout.classNames';
-
-export enum CalloutColor {
-  HELP = 'lightGreen',
-  INFO = 'beige',
-  ERROR = 'lightPink',
-  WARNING = 'beige',
-  BASIC = 'white',
-}
-export interface CalloutProps extends ICalloutProps {
-  /** Determine if the callout window will close automaticly when the area outside the window is clicked */
-  autoDismiss?: boolean;
-  /** There are four colors; lightGreen, beige, lightPink or white */
-  color?: CalloutColor;
-  /** Adds border around the callout box */
-  border?: boolean;
-  onClose?: () => void;
-  /** dir */
-}
-
-export interface CalloutState {
-  isCalloutVisible: boolean;
-}
+import { CalloutColor, CalloutProps, CalloutState } from './Callout.types';
 
 /**
  * @visibleName Callout (Utropsboks)

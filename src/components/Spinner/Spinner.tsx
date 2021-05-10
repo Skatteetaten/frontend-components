@@ -1,15 +1,8 @@
 import classnames from 'classnames';
-import {
-  ISpinnerProps,
-  Spinner as FabricSpinner,
-  SpinnerSize,
-} from '@fluentui/react';
+import { Spinner as FabricSpinner, SpinnerSize } from '@fluentui/react';
 import * as React from 'react';
 import { getClassNames } from './Spinner.classNames';
-
-export interface SpinnerProps extends ISpinnerProps {
-  spinnerColor?: 'white' | 'black';
-}
+import { SpinnerProps } from './Spinner.types';
 
 /**
  * @visibleName Spinner (Spinner)

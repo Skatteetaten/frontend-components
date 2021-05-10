@@ -1,3 +1,12 @@
+### **v.4.1.0 - 10.05.2021**
+
+- Greatly reduced bundle size! Typescript is now compiled to es modules instead of commonjs in /lib. This means that the building-pipeline must support 'es import'-statements, not just 'require' statements. Note that you may also have to configure jest-testing, see [Kom i gang for utviklere](#section-kom-i-gang-for-utviklere).
+- DatePicker: Fixes an accessibility bug where label and input field was not correctly associated.
+- LanguagePicker: Fixes a typescript issue.
+- ScrollToTopButton: Fixes a styling issue where the icon was not correctly centered.
+- FileUploader now supports .CSV files
+- Various updates to documentation.
+
 ### **v.4.0.0 - 19.04.2021 - Major release**
 
 #### **Better support for micro frontends (UMD build)**

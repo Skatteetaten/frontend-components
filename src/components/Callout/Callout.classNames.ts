@@ -1,6 +1,7 @@
 import { getTheme } from '@uifabric/styling';
 import { mergeStyleSets } from '@uifabric/merge-styles';
-import { FontSizes, PaletteProps, CalloutColor, CalloutProps } from '../index';
+import { FontSizes, PaletteProps } from '../utils';
+import { CalloutProps, CalloutColor } from './Callout.types';
 
 function getCalloutBorder(props: CalloutProps) {
   const palette = getTheme().palette as PaletteProps;
