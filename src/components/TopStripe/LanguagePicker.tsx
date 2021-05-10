@@ -1,9 +1,7 @@
 import * as React from 'react';
 import { TopStripeButton } from './TopStripeButton';
 import { TopStripeMenu } from './TopStripeMenu';
-import { ReactComponent as EnglishFlag } from './assets/EnglishFlag.svg';
-import { ReactComponent as NorwegianFlag } from './assets/NorwegianFlag.svg';
-import { ReactComponent as SamiFlag } from './assets/SamiFlag.svg';
+import { EnglishFlag, NorwegianFlag, SamiFlag } from './assets';
 import { Icon } from '../Icon';
 import { UseScreen } from '../utils';
 import { getClassNames } from './LanguagePicker.classNames';
@@ -48,7 +46,6 @@ const LanguagePickerButton = ({
   selectedLanguage,
   setLanguage,
   showOnMobile,
-  ...rest
 }): JSX.Element => {
   const styles = getClassNames();
   return (
@@ -58,7 +55,6 @@ const LanguagePickerButton = ({
       className={styles.languageButton}
       role={'menuitem'}
       aria-current={buttonLanguage === selectedLanguage}
-      {...rest}
     >
       {buttonLanguage === selectedLanguage && (
         <Icon iconName={'Check'} className={styles.checkIcon} />
