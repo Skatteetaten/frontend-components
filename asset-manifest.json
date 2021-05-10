@@ -1,9 +1,9 @@
 {
   "files": {
     "main.css": "/static/css/main.dc9a9f4d.chunk.css",
-    "main.js": "/build/main.e23fcb64.js",
+    "main.js": "/build/main.54b24b4d.js",
     "runtime-main.js": "/build/bundle.483fa668.js",
-    "build/2.c497b6a4.js": "/build/2.c497b6a4.js",
+    "build/2.498d1064.js": "/build/2.498d1064.js",
     "assets/png/Byggeklosser.png": "/assets/png/Byggeklosser.png",
     "assets/png/Byggeklosser_skisse.png": "/assets/png/Byggeklosser_skisse.png",
     "assets/png/designer.png": "/assets/png/designer.png",
@@ -26,7 +26,7 @@
     "assets/svg/ske-logo-intern-kopi.svg": "/assets/svg/ske-logo-intern-kopi.svg",
     "assets/svg/ske-logo-intern.svg": "/assets/svg/ske-logo-intern.svg",
     "assets/svg/ske-logo.svg": "/assets/svg/ske-logo.svg",
-    "build/2.c497b6a4.js.LICENSE.txt": "/build/2.c497b6a4.js.LICENSE.txt",
+    "build/2.498d1064.js.LICENSE.txt": "/build/2.498d1064.js.LICENSE.txt",
     "favicon.ico": "/favicon.ico",
     "index.html": "/index.html",
     "manifest.json": "/manifest.json",
@@ -55,8 +55,8 @@
   },
   "entrypoints": [
     "build/bundle.483fa668.js",
-    "build/2.c497b6a4.js",
+    "build/2.498d1064.js",
     "static/css/main.dc9a9f4d.chunk.css",
-    "build/main.e23fcb64.js"
+    "build/main.54b24b4d.js"
   ]
 }
