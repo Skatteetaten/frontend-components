@@ -69,6 +69,7 @@ const initialState = {
             <br />
             <RadioButtonGroup
               label="Type virksomhet"
+              labelSize="large"
               options={state.options}
               help="Type virksomhet vil påvirke hva du må rapportere til oss."
               id="radio123"
@@ -101,6 +102,7 @@ const initialState = {
             <br />
             <RadioButtonGroup
               label="Type virksomhet *"
+              labelSize="large"
               options={state.options}
               help="Type virksomhet vil påvirke hva du må rapportere til oss."
               id="radio321"
