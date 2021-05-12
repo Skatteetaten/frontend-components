@@ -86,7 +86,7 @@ export const getClassNames = (props: ComboBoxProps) => {
           backgroundColor: palette.skeColor.whiteGrey,
         },
         '& .ms-ComboBox.is-disabled': {
-          borderColor: palette.skeColor.grey,
+          border: `1px solid ${palette.skeColor.lightGrey}`,
         },
         '& .ms-ComboBox.is-disabled button': {
           color: palette.skeColor.grey,

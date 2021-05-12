@@ -76,10 +76,10 @@ export const getClassNames = (props: DatePickerProps) => {
         content: '""',
       },
       '& .ms-TextField.is-disabled': !readonlyMode && {
-        borderColor: palette.skeColor.grey,
-        borderWidth: '1px',
+        borderColor: palette.skeColor.lightGrey,
         borderStyle: 'solid',
-        backgroundColor: palette.skeColor.whiteGrey,
+        borderWidth: '0px',
+        backgroundColor: palette.skeColor.neutralGrey,
       },
       '& .ms-TextField.is-disabled i': {
         color: palette.skeColor.grey,
@@ -87,8 +87,11 @@ export const getClassNames = (props: DatePickerProps) => {
       '& .ms-TextField.is-disabled input': {
         padding: '8px',
       },
-      '& .ms-TextField.is-disabled .ms-TextField-fieldGroup': readonlyMode && {
-        backgroundColor: 'transparent',
+      '& .ms-TextField.is-disabled .ms-TextField-fieldGroup': {
+        backgroundColor: readonlyMode ? 'transparent' : undefined,
+        borderColor: palette.skeColor.lightGrey,
+        borderStyle: 'solid',
+        borderWidth: '1px',
       },
       '& .ms-TextField .ms-TextField-fieldGroup .ms-TextField-field': readonlyMode && {
         fontWeight: FontWeights.bold,

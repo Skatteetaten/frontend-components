@@ -91,6 +91,12 @@ export const getClassNames = (props: SearchFieldProps) => {
           position: 'relative',
           fontSize: largeSize ? FontSizes.large : FontSizes.medium,
         },
+        '&.is-disabled.ms-SearchBox': {
+          borderColor: palette.skeColor.lightGrey,
+          borderStyle: 'solid',
+          borderWidth: '1px',
+          backgroundColor: palette.skeColor.neutralGrey,
+        },
         '&.is-active.ms-SearchBox': {
           border: `1px solid ${palette.skeColor.blue}`,
           outline: 'none',

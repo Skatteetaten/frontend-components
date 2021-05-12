@@ -68,13 +68,16 @@ export const getClassNames = (props: DropdownProps) => {
         '&:focus .ms-Dropdown-title.ms-Dropdown-title': {
           border: `2px solid ${palette.skeColor.blue}`,
         },
-        '&.is-disabled.is-disabled span.ms-Dropdown-title': {
-          borderColor: palette.skeColor.grey,
+        '& .is-disabled .ms-Dropdown': {
+          backgroundColor: 'red',
+        },
+        '& .is-disabled .ms-Dropdown-title': {
+          borderColor: palette.skeColor.lightGrey,
           borderStyle: 'solid',
           borderWidth: '1px',
-          backgroundColor: palette.skeColor.whiteGrey,
+          backgroundColor: palette.skeColor.neutralGrey,
         },
-        '&.is-disabled.is-disabled span.ms-Dropdown-caretDownWrapper': {
+        '& .is-disabled .ms-Dropdown-caretDownWrapper': {
           color: palette.skeColor.grey,
         },
         '&:focus:after': !props.disabled && {

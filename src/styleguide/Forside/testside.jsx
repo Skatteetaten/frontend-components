@@ -974,6 +974,7 @@ function Testside(props) {
         ariaLabel="Eksempel ComboBox"
         useComboBoxAsMenuWidth
       />
+
       <h2>Datepicker</h2>
 
       <DatePicker
@@ -1002,6 +1003,7 @@ function Testside(props) {
         isRequiredErrorMessage={'Dato må fylles ut'}
         errorMessage={'Vis med feil'}
       />
+
       <h2>Dropdown</h2>
 
       <Dropdown
@@ -1037,6 +1039,7 @@ function Testside(props) {
         placeholder="Skriv søkeord her"
         ariaLabel="Søk"
       />
+
       <h2>TextField</h2>
 
       <TextField id={'my-input'} label={'Navn'} />
@@ -1055,6 +1058,47 @@ function Testside(props) {
         boldText={true}
         value="Siri Saksbehandler"
       />
+
+      <h2>Disabled</h2>
+      <TextField disabled label={'Navn'} value="Tekst" />
+      <br />
+      <Dropdown
+        label="Velg favoritt"
+        disabled
+        placeholder="Placeholder"
+        help="Tekst som hjelper brukeren å forstå eller få til."
+        options={initialState.options}
+      />
+      <br />
+      <DatePicker
+        id={'my-date3'}
+        label={'Velg en dato'}
+        disabled
+        help={
+          'Du kan skrive inn dato i feltet, eller velge en dato ved hjelp av datovelgeren, enten med mus eller bruk tastaturet'
+        }
+      />
+      <br />
+      <ComboBox
+        label="Disabled"
+        disabled
+        value="Tekst"
+        placeHolder="Velg"
+        options={[
+          { key: 'A', text: 'Alfa', value: 'Alfa' },
+          { key: 'B', text: 'Beta', value: 'Beta' },
+          { key: 'C', text: 'Gamma', value: 'Gamma' },
+          { key: 'D', text: 'Delta', value: 'Delta' },
+          { key: 'E', text: 'Echo', value: 'Echo' },
+        ]}
+        defaultSelectedKey="D"
+        allowFreeform={false}
+        ariaLabel="Eksempel ComboBox"
+        useComboBoxAsMenuWidth
+      />
+      <br />
+      <SearchField disabled placeholder="Skriv søkeord her" ariaLabel="Søk" />
+
       <h2>Accordion</h2>
 
       <Accordion>
