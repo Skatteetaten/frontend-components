@@ -19,11 +19,20 @@ import {
 
 const [state, setState] = React.useState({
   isTitleCalloutVisible: false,
+  isHelpCalloutVisible: false,
+  isFieldCalloutVisible: false,
+  isUnitCalloutVisible: false,
+  isNoteCalloutVisible: false,
+  isPlaceholderCalloutVisible: false,
 });
 
 function closeButton() {
   setState({
     isCalloutVisible: false,
+    isHelpCalloutVisible: false,
+    isFieldCalloutVisible: false,
+    isUnitCalloutVisible: false,
+    isPlaceholderCalloutVisible: false,
   });
 }
 
@@ -31,7 +40,7 @@ const eksempel = '[TODO eksempel]';
 
 <div>
   <Card
-    title="Hovedregler for ledetekster (label, spørsmålstekst)"
+    title="Hovedregler for ledetekster (label, spørsmålstekst og instruks)"
     color={Card.Color.WHITE}
     border={Card.Border.YELLOW_BORDER}
     titlesize="x-large"
@@ -78,12 +87,41 @@ const eksempel = '[TODO eksempel]';
       >
         <h2 style={{ marginTop: '0px', marginBottom: '2px' }}>
           Hvem er ny eier av kjøretøyet?{' '}
-          <span style={{ fontSize: '16px' }}>
-            <Chip size="standard" className="tipchip">
-              <Button buttonStyle="secondary">
-                Skjematittel eller spørsmålstekst
+          <span
+            style={{ fontSize: '16px' }}
+            ref={(spanElement) => (buttonElement = spanElement)}
+          >
+            <Chip
+              size="standard"
+              className="tipchip"
+              onClick={() =>
+                setState({
+                  isTitleCalloutVisible: !state.isTitleCalloutVisible,
+                })
+              }
+            >
+              <Button buttonStyle="secondary" aria-haspopup="true">
+                Skjematittel
               </Button>
             </Chip>
+
+            {state.isTitleCalloutVisible && (
+              <Callout
+                target={buttonElement}
+                gapSpace={5}
+                directionalHint={Callout.POS_TOP_LEFT}
+                color={Callout.HELP}
+                doNotLayer={true}
+                onClose={() => closeButton()}
+                onDismiss={() => closeButton()}
+              >
+                <h3>Skjematittel eller spørsmålstekst</h3>
+                <p>
+                  Ha alltid med en tittel eller spørsmål i skjemaet. Ikke bland
+                  spørsmål med en spesifikasjon av hva brukeren skal gjøre.
+                </p>
+              </Callout>
+            )}
           </span>
         </h2>
         <Grid padding="0px">
@@ -95,28 +133,136 @@ const eksempel = '[TODO eksempel]';
               </p>
             </Grid.Col>
             <Grid.Col sm={4} noSpacing>
-              <Chip className="tipchip">Fremskutt hjelpetekst</Chip>
+              <span
+                style={{ fontSize: '16px' }}
+                ref={(spanElement) => (buttonElement1 = spanElement)}
+              >
+                <Chip
+                  size="standard"
+                  className="tipchip"
+                  onClick={() =>
+                    setState({
+                      isHelpCalloutVisible: !state.isHelpCalloutVisible,
+                    })
+                  }
+                >
+                  <Button buttonStyle="secondary" aria-haspopup="true">
+                    Fremskutt hjelpetekst
+                  </Button>
+                </Chip>
+
+                {state.isHelpCalloutVisible && (
+                  <Callout
+                    target={buttonElement1}
+                    gapSpace={5}
+                    directionalHint={Callout.POS_TOP_LEFT}
+                    color={Callout.HELP}
+                    doNotLayer={true}
+                    onClose={() => closeButton()}
+                    onDismiss={() => closeButton()}
+                  >
+                    <h3>Fremskutt hjelpetekst</h3>
+                    <p>
+                      Skal forklare brukeren hvorfor de skal fylle ut feltet.
+                    </p>
+                  </Callout>
+                )}
+              </span>
             </Grid.Col>
           </Grid.Row>
         </Grid>
+        <div style={{ display: 'flex', alignItems: 'baseline' }}>
+          <div style={{ width: '180px', marginBottom: '16px' }}>
+            <Card color={Card.Color.BEIGE}>Alle felt må fylles ut.</Card>{' '}
+          </div>
+          <div
+            style={{ fontSize: '16px', marginLeft: '16px' }}
+            ref={(spanElement) => (buttonElement5 = spanElement)}
+          >
+            <Chip
+              size="standard"
+              className="tipchip"
+              onClick={() =>
+                setState({
+                  isNoteCalloutVisible: !state.isNoteCalloutVisible,
+                })
+              }
+            >
+              <Button buttonStyle="secondary" aria-haspopup="true">
+                Merkelapp for obligatoriske felt
+              </Button>
+            </Chip>
 
-        <div style={{ width: '600px', display: 'flex' }}>
+            {state.isNoteCalloutVisible && (
+              <Callout
+                target={buttonElement5}
+                gapSpace={5}
+                directionalHint={Callout.POS_TOP_RIGHT}
+                calloutMinWidth="500"
+                color={Callout.HELP}
+                doNotLayer={true}
+                onClose={() => closeButton()}
+                onDismiss={() => closeButton()}
+              >
+                <h3>Merkelapp for obligatoriske felt</h3>
+                <p>
+                  Merk toppen av skjemaet med «Alle felt må fylles ut» eller
+                  «Felt markert med * må fylles ut». Se{' '}
+                  <Link
+                    path="#section-obligatoriske-felt"
+                    text="mønster for obligatoriske felt"
+                  />{' '}
+                  for flere detaljer.
+                </p>
+              </Callout>
+            )}
+          </div>
+        </div>
+
+        <div style={{ minWidth: '600px', display: 'flex' }}>
           <div>
             <TextField
               label="Fødselsnr 11 siffer / organisasjonsnr. 9 siffer"
               inputSize={'large'}
               value={state.value}
-              onChange={(e, value) => setState({ value })}
+              //onChange={(e, value) => setState({ value })}
             />
           </div>
-          <div style={{ paddingLeft: '8px' }}>
-            {' '}
-            <Chip className="tipchip">
-              Feltnavn
-              <span class="sr-only">
-                Spesifiserer hva brukeren skal fylle ut.
-              </span>
-            </Chip>
+          <div style={{ minWidth: '250px', paddingLeft: '16px' }}>
+            <span
+              style={{ fontSize: '16px' }}
+              ref={(spanElement) => (buttonElement2 = spanElement)}
+            >
+              <Chip
+                size="standard"
+                className="tipchip"
+                onClick={() =>
+                  setState({
+                    isFieldCalloutVisible: !state.isFieldCalloutVisible,
+                  })
+                }
+              >
+                <Button buttonStyle="secondary" aria-haspopup="true">
+                  Feltnavn
+                </Button>
+              </Chip>
+
+              {state.isFieldCalloutVisible && (
+                <Callout
+                  target={buttonElement2}
+                  gapSpace={5}
+                  directionalHint={Callout.POS_TOP_RIGHT}
+                  calloutMinWidth="500"
+                  color={Callout.HELP}
+                  doNotLayer={true}
+                  onClose={() => closeButton()}
+                  onDismiss={() => closeButton()}
+                >
+                  <h3>Feltnavn</h3>
+                  <p>Spesifiserer hva brukeren skal fylle ut.</p>
+                </Callout>
+              )}
+            </span>
           </div>
         </div>
         <br />
@@ -126,41 +272,62 @@ const eksempel = '[TODO eksempel]';
               label="Tillatt totaltvekt med tilhenger"
               inputSize={'large'}
               value={state.value}
-              onChange={(e, value) => setState({ value })}
+              //onChange={(e, value) => setState({ value })}
+              mask={'9999'}
+              maskChar={''}
               suffix="kg"
             />
           </div>
           <div
             style={{
-              paddingLeft: '8px',
+              paddingLeft: '16px',
               paddingBottom: '4px',
               alignSelf: 'flex-end',
+              minWidth: '300px',
             }}
           >
-            {' '}
-            <Chip className="tipchip">Enhetsbenevnelse</Chip>
+            <span
+              style={{ fontSize: '16px' }}
+              ref={(spanElement) => (buttonElement3 = spanElement)}
+            >
+              <Chip
+                size="standard"
+                className="tipchip"
+                onClick={() =>
+                  setState({
+                    isUnitCalloutVisible: !state.isUnitCalloutVisible,
+                  })
+                }
+              >
+                <Button buttonStyle="secondary" aria-haspopup="true">
+                  Enhetsbenevnelse
+                </Button>
+              </Chip>
+
+              {state.isUnitCalloutVisible && (
+                <Callout
+                  target={buttonElement3}
+                  gapSpace={5}
+                  directionalHint={Callout.POS_TOP_RIGHT}
+                  calloutMinWidth="500"
+                  color={Callout.HELP}
+                  doNotLayer={true}
+                  onClose={() => closeButton()}
+                  onDismiss={() => closeButton()}
+                >
+                  <h3>Enhetsbenevnelse</h3>
+                  <p>
+                    {' '}
+                    Viser enhetsbenevnelse ved siden av feltet hvis det er behov
+                    for å forklare hva vi teller. For eksempel, NOK, kg, dager,
+                    måneder og kvadratmeter.
+                  </p>
+                </Callout>
+              )}
+            </span>
           </div>
         </div>
       </Card>
-
-      <dl>
-        <dt id="text-tittel">Skjematittel eller spørsmålstekst</dt>
-        <dd>
-          1. Ha alltid med en tittel eller spørsmål i skjemaet. Ikke bland
-          spørsmål med en spesifikasjon av hva brukeren skal gjøre.
-        </dd>
-
-        <dt id="text-fremskutt">Fremskutt hjelpetekst</dt>
-        <dd>Skal forklare brukeren hvorfor de skal fylle ut feltet.</dd>
-        <dt id="text-feltnavn">Feltnavn</dt>
-        <dd>Spesifiserer hva brukeren skal fylle ut.</dd>
-        <dt id="text-enhet">Enhetsbenevnelse</dt>
-        <dd>
-          Viser enhetsbenevnelse ved siden av feltet hvis det er behov for å
-          forklare hva vi teller. For eksempel, NOK, kg, dager, måneder og
-          kvadratmeter.
-        </dd>
-      </dl>
     </AccordionItem>
     <AccordionItem
       toggleContent
@@ -178,14 +345,14 @@ const eksempel = '[TODO eksempel]';
 
         <li>
           Funksjoner i skjemaet bør være tydelige uten skriftlige forklaringer.
-          Eksempel er knapper med: «Last opp fil», «Avbryt» eller «OK»
+          Eksempel er knapper med: «Last opp fil», «Avbryt» eller «Send inn».
         </li>
         <li>Like elementer skal uttrykkes likt gjennom hele skjemaet.</li>
       </ul>
 
       <p>
         I et skjema er det viktig å vise hva som er overordnet og underordnet.
-        Placeholder gir en instruks:
+        Plassholder gir en instruks:
       </p>
       <Card
         margin="large"
@@ -196,29 +363,71 @@ const eksempel = '[TODO eksempel]';
           Legg til opplysninger om barn over 12 år
         </h2>
 
-        <div style={{ width: '500px' }}>
-          <ComboBox
-            label="Velg type opplysninger du vil legge til"
-            help="Dette feltet foreslår en verdi når du begynner å skrive. Du kan også bla gjennom listen og velge på den måten."
-            placeholder="Velg eller begynn å skrive"
-            inputSize="large"
-            options={[
-              { key: 'A', text: 'Bosted', value: 'Bosted' },
-              { key: 'B', text: 'Alder', value: 'Alder' },
-              { key: 'C', text: 'Foresatt', value: 'Foresatt' },
-              { key: 'D', text: 'Frikort', value: 'Frikort' },
-              { key: 'E', text: 'Andre opplysninger', value: 'Andre' },
-            ]}
-            allowFreeform={false}
-            ariaLabel="Eksempel ComboBox"
-            useComboBoxAsMenuWidth
-            calloutFloating={false}
-          />
-          <br />
-          <MessageBar>
-            Forklar hva brukeren skal gjøre i placeholder. Ikke skriv
-            spesifikasjon av verdien.
-          </MessageBar>
+        <div style={{ display: 'flex' }}>
+          <div style={{ width: '500px' }}>
+            <ComboBox
+              label="Velg type opplysninger du vil legge til"
+              help="Dette feltet foreslår en verdi når du begynner å skrive. Du kan også bla gjennom listen og velge på den måten."
+              placeholder="Velg eller begynn å skrive"
+              inputSize="large"
+              options={[
+                { key: 'A', text: 'Bosted', value: 'Bosted' },
+                { key: 'B', text: 'Alder', value: 'Alder' },
+                { key: 'C', text: 'Foresatt', value: 'Foresatt' },
+                { key: 'D', text: 'Frikort', value: 'Frikort' },
+                { key: 'E', text: 'Andre opplysninger', value: 'Andre' },
+              ]}
+              allowFreeform={false}
+              ariaLabel="Eksempel ComboBox"
+              useComboBoxAsMenuWidth
+              calloutFloating={false}
+            />
+          </div>
+          <div
+            style={{
+              paddingLeft: '16px',
+              paddingBottom: '4px',
+              alignSelf: 'flex-end',
+              minWidth: '300px',
+            }}
+          >
+            <span
+              style={{ fontSize: '16px' }}
+              ref={(spanElement) => (buttonElement6 = spanElement)}
+            >
+              <Chip
+                size="standard"
+                className="tipchip"
+                onClick={() =>
+                  setState({
+                    isPlaceholderCalloutVisible: !state.isPlaceholderCalloutVisible,
+                  })
+                }
+              >
+                <Button buttonStyle="secondary" aria-haspopup="true">
+                  Plassholder med instruks
+                </Button>
+              </Chip>
+
+              {state.isPlaceholderCalloutVisible && (
+                <Callout
+                  target={buttonElement6}
+                  gapSpace={5}
+                  directionalHint={Callout.POS_TOP_LEFT}
+                  color={Callout.HELP}
+                  doNotLayer={true}
+                  onClose={() => closeButton()}
+                  onDismiss={() => closeButton()}
+                >
+                  <h3>Plassholder med forklaring</h3>
+                  <p>
+                    Forklar hva brukeren skal gjøre i plassholderen. Ikke skriv
+                    spesifikasjon av verdien.
+                  </p>
+                </Callout>
+              )}
+            </span>
+          </div>
         </div>
       </Card>
     </AccordionItem>
@@ -261,7 +470,7 @@ const eksempel = '[TODO eksempel]';
       <p>
         Tittelen i ja-eksempelet er kort men konkret, og plassert i toppen av
         skjemaet. Ledeteksten forklarer med vanlige ord hva brukeren skal gjøre,
-        og placeholderteksten gir instruks om å skrive i feltet.
+        og plassholderteksten gir instruks om å skrive i feltet.
       </p>
       <div className="dodont" style={{ marginLeft: '24px' }}>
         <div className="do" style={{ maxWidth: '44%' }}>
@@ -346,25 +555,20 @@ const eksempel = '[TODO eksempel]';
           vi ha med plassholdertekst i tillegg til riktig ikon.
         </li>
         <li>
-          (Vær oppmerksom på å skille mellom søk, valg og valg fra liste (ikke
-          «søk» fra liste), og bruk riktig ikon og instruks i
-          plassholder-teksten, for å veillede brukeren.){' '}
-        </li>
-        <li>
           Searchfield: Bruk forstørrelsesglass og teksten «skriv søkeord her»
-          ved generelt søk og filtreringsikonet og teksten«begynn å skrive» når
-          brukeren skal søke fra et utvalg.{' '}
+          ved generelt søk og filtreringsikonet og teksten «begynn å skrive» når
+          brukeren skal søke fra et utvalg.
         </li>
         <li>
           Dropdown: Vi benytter denne når brukeren skal kunne krysse av for ett
-          eller flere valg i en liste. Skriv «velg» i placeholderen, og pass på
-          at det også er mulig å ikke velge noe.{' '}
+          eller flere valg i en liste. Skriv «velg» i plassholderen, og pass på
+          at det også er mulig å ikke velge noe.
         </li>
         <li>
           Combobox: Når nedtrekkslisten er lang, er det nyttig at brukeren kan
           skrive i feltet og at det da automtisk kommer opp aktuelle ord fra
           listen. Plassholderteksten må da spesifisere dette, som for eksempel
-          «velg eller begynn å skrive» eller «velg eller legg til»
+          «velg eller begynn å skrive» eller «velg eller legg til».
         </li>
       </ul>
     </AccordionItem>
