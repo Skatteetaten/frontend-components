@@ -85,6 +85,9 @@ export const getClassNames = (props: ComboBoxProps) => {
         '& .ms-ComboBox-Input.is-disabled': {
           backgroundColor: palette.skeColor.whiteGrey,
         },
+        '& .is-disabled .ms-ComboBox-Input:hover': {
+          cursor: 'not-allowed',
+        },
         '& .ms-ComboBox.is-disabled': {
           border: `1px solid ${palette.skeColor.lightGrey}`,
         },

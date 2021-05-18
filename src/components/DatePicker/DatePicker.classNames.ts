@@ -86,6 +86,7 @@ export const getClassNames = (props: DatePickerProps) => {
       },
       '& .ms-TextField.is-disabled input': {
         padding: '8px',
+        cursor: 'not-allowed',
       },
       '& .ms-TextField.is-disabled .ms-TextField-fieldGroup': {
         backgroundColor: readonlyMode ? 'transparent' : undefined,

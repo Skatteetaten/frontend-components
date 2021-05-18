@@ -53,6 +53,8 @@ function Testside(props) {
   const pageSize = 8;
   const [setDisplayedData] = React.useState([1, 2, 3].splice(0, pageSize));
   const [currentPage, setCurrentPage] = React.useState(1);
+  const [date, setDato] = React.useState(new Date());
+
   const initialState = {
     options: [
       { key: 'A', text: 'alfa', value: 'Alfa' },
@@ -983,6 +985,7 @@ function Testside(props) {
         help={
           'Du kan skrive inn dato i feltet, eller velge en dato ved hjelp av datovelgeren, enten med mus eller bruk tastaturet'
         }
+        value={date}
         isRequiredErrorMessage={'Dato må fylles ut'}
       />
       <DatePicker
@@ -1074,6 +1077,7 @@ function Testside(props) {
         id={'my-date3'}
         label={'Velg en dato'}
         disabled
+        value={date}
         help={
           'Du kan skrive inn dato i feltet, eller velge en dato ved hjelp av datovelgeren, enten med mus eller bruk tastaturet'
         }

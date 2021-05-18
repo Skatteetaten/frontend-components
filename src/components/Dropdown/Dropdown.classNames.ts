@@ -80,6 +80,13 @@ export const getClassNames = (props: DropdownProps) => {
         '& .is-disabled .ms-Dropdown-caretDownWrapper': {
           color: palette.skeColor.grey,
         },
+        '&:active .is-disabled .ms-Dropdown-title': {
+          borderColor: palette.skeColor.lightGrey,
+        },
+        '&:hover .is-disabled .ms-Dropdown-title': {
+          borderColor: palette.skeColor.lightGrey,
+          cursor: 'not-allowed',
+        },
         '&:focus:after': !props.disabled && {
           content: '""',
           position: 'absolute',
