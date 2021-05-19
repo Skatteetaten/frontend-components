@@ -541,9 +541,7 @@ const eksempel = '[TODO eksempel]';
     </AccordionItem>
     <AccordionItem
       toggleContent
-      toggleButtonText={
-        'Ledetekster i inputfelt for søk eller valg fra liste (Combobox, Dropdown og SearchField) '
-      }
+      toggleButtonText={'Ledetekster i Combobox, Dropdown og SearchField'}
       headingLevel="3"
       stepId={'ledetekst-step-4'}
     >
@@ -561,7 +559,7 @@ const eksempel = '[TODO eksempel]';
         </li>
         <li>
           Dropdown: Vi benytter denne når brukeren skal kunne krysse av for ett
-          eller flere valg i en liste. Skriv «velg» i plassholderen, og pass på
+          eller flere valg i en liste. Skriv «Velg» i plassholderen, og pass på
           at det også er mulig å ikke velge noe.
         </li>
         <li>
