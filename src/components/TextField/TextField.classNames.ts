@@ -142,7 +142,7 @@ export const getClassNames = (props: TextFieldProps) => {
         backgroundColor: palette.skeColor.whiteGrey,
       },
       '&.is-disabled .ms-TextField-field': {
-        color: palette.skeColor.darkGrey,
+        color: palette.skeColor.blackAlt,
       },
       '&.is-disabled .ms-TextField-field:hover': {
         cursor: 'not-allowed',

@@ -1063,10 +1063,39 @@ function Testside(props) {
       />
 
       <h2>Disabled</h2>
-      <TextField disabled label={'Navn'} value="Tekst" />
+      <TextField disabled label={'Tekstfelt'} value="Tekst" />
+      <TextField
+        disabled
+        inputSize="large"
+        label={'Stort tekstfelt'}
+        value="Tekst"
+      />
+
+      <TextField
+        disabled
+        label={'Tekstfelt med placeholder'}
+        placeholder="Placeholder"
+      />
       <br />
       <Dropdown
-        label="Velg favoritt"
+        label="Dropdown med tekst"
+        disabled
+        selectedKey="D"
+        help="Tekst som hjelper brukeren å forstå eller få til."
+        options={initialState.options}
+      />
+
+      <Dropdown
+        label="Stor dropdown"
+        disabled
+        inputSize="large"
+        selectedKey="D"
+        help="Tekst som hjelper brukeren å forstå eller få til."
+        options={initialState.options}
+      />
+
+      <Dropdown
+        label="Dropdown med placeholder"
         disabled
         placeholder="Placeholder"
         help="Tekst som hjelper brukeren å forstå eller få til."
@@ -1075,16 +1104,35 @@ function Testside(props) {
       <br />
       <DatePicker
         id={'my-date3'}
-        label={'Velg en dato'}
-        disabled
+        label={'Datepicker med dato'}
         value={date}
+        disabled
+        help={
+          'Du kan skrive inn dato i feltet, eller velge en dato ved hjelp av datovelgeren, enten med mus eller bruk tastaturet'
+        }
+      />
+      <DatePicker
+        id={'my-date3'}
+        label={'Stor datepicker '}
+        disabled
+        inputSize="large"
+        value={date}
+        help={
+          'Du kan skrive inn dato i feltet, eller velge en dato ved hjelp av datovelgeren, enten med mus eller bruk tastaturet'
+        }
+      />
+      <DatePicker
+        id={'my-date3'}
+        label={'Datepicker med placeholder'}
+        disabled
+        placeholder="Placeholder"
         help={
           'Du kan skrive inn dato i feltet, eller velge en dato ved hjelp av datovelgeren, enten med mus eller bruk tastaturet'
         }
       />
       <br />
       <ComboBox
-        label="Disabled"
+        label="Combobox"
         disabled
         value="Tekst"
         placeHolder="Velg"
@@ -1100,8 +1148,48 @@ function Testside(props) {
         ariaLabel="Eksempel ComboBox"
         useComboBoxAsMenuWidth
       />
+      <ComboBox
+        label="Stor combobox"
+        disabled
+        value="Tekst"
+        inputSize="large"
+        placeHolder="Velg"
+        options={[
+          { key: 'A', text: 'Alfa', value: 'Alfa' },
+          { key: 'B', text: 'Beta', value: 'Beta' },
+          { key: 'C', text: 'Gamma', value: 'Gamma' },
+          { key: 'D', text: 'Delta', value: 'Delta' },
+          { key: 'E', text: 'Echo', value: 'Echo' },
+        ]}
+        defaultSelectedKey="D"
+        allowFreeform={false}
+        ariaLabel="Eksempel ComboBox"
+        useComboBoxAsMenuWidth
+      />
+      <ComboBox
+        label="Combobox med placeholder"
+        disabled
+        placeholder="placeholder"
+        options={[
+          { key: 'A', text: 'Alfa', value: 'Alfa' },
+          { key: 'B', text: 'Beta', value: 'Beta' },
+          { key: 'C', text: 'Gamma', value: 'Gamma' },
+          { key: 'D', text: 'Delta', value: 'Delta' },
+          { key: 'E', text: 'Echo', value: 'Echo' },
+        ]}
+        allowFreeform={false}
+        ariaLabel="Eksempel ComboBox"
+        useComboBoxAsMenuWidth
+      />
       <br />
       <SearchField disabled placeholder="Skriv søkeord her" ariaLabel="Søk" />
+      <SearchField disabled value="Verdi" ariaLabel="Søk" />
+      <SearchField
+        disabled
+        searchFieldSize="large"
+        value="Verdi"
+        ariaLabel="Søk"
+      />
 
       <h2>Accordion</h2>
 

@@ -13,14 +13,14 @@ function getFieldTypeStyles(props: DatePickerProps) {
       '& .ms-TextField-fieldGroup': {
         borderWidth: '2px',
         height: '46px',
-        padding: '5px 0',
+        margin: '5px 0',
         fontSize: FontSizes.large,
       },
       '& input.ms-TextField-field': {
         fontSize: FontSizes.large + ' !important',
       },
       'i.ms-DatePicker-event--without-label': {
-        marginTop: '0px',
+        marginTop: '6px',
         fontSize: FontSizes.xLarge,
         color: palette.skeColor.blue,
       },
@@ -87,6 +87,7 @@ export const getClassNames = (props: DatePickerProps) => {
       '& .ms-TextField.is-disabled input': {
         padding: '8px',
         cursor: 'not-allowed',
+        color: palette.skeColor.blackAlt,
       },
       '& .ms-TextField.is-disabled .ms-TextField-fieldGroup': {
         backgroundColor: readonlyMode ? 'transparent' : undefined,
