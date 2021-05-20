@@ -8,19 +8,6 @@ import {
   RadioButtonGroup,
 } from '@skatteetaten/frontend-components';
 
-const initialState = {
-  options: [
-    {
-      key: 'A',
-      text: 'Enkeltpersonsforetak',
-    },
-    {
-      key: 'B',
-      text: 'Aksjeselskap',
-    },
-  ],
-};
-
 <div>
   <Card
     title="Hovedregler for obligatoriske felt"
@@ -70,7 +57,16 @@ const initialState = {
             <RadioButtonGroup
               label="Type virksomhet"
               labelSize="large"
-              options={state.options}
+              options={[
+                {
+                  key: 'A',
+                  text: 'Enkeltpersonsforetak',
+                },
+                {
+                  key: 'B',
+                  text: 'Aksjeselskap',
+                },
+              ]}
               help="Type virksomhet vil påvirke hva du må rapportere til oss."
               id="radio123"
             />
@@ -103,7 +99,16 @@ const initialState = {
             <RadioButtonGroup
               label="Type virksomhet *"
               labelSize="large"
-              options={state.options}
+              options={[
+                {
+                  key: 'A',
+                  text: 'Enkeltpersonsforetak',
+                },
+                {
+                  key: 'B',
+                  text: 'Aksjeselskap',
+                },
+              ]}
               help="Type virksomhet vil påvirke hva du må rapportere til oss."
               id="radio321"
             />
