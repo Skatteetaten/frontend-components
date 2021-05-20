@@ -56,6 +56,7 @@ import {
             <br />
             <RadioButtonGroup
               label="Type virksomhet"
+              labelSize="large"
               options={[
                 {
                   key: 'A',
@@ -97,6 +98,7 @@ import {
             <br />
             <RadioButtonGroup
               label="Type virksomhet *"
+              labelSize="large"
               options={[
                 {
                   key: 'A',

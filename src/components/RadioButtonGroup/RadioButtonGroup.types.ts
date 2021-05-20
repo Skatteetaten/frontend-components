@@ -17,6 +17,8 @@ export interface RadioButtonGroupProps extends IChoiceGroupProps {
   horizontal?: boolean;
   /** aria-label for knapp i label */
   labelButtonAriaLabel?: string;
+  /** Størrelse på feltnavn over radioknappene */
+  labelSize?: 'small' | 'normal' | 'large';
   /** Overstyr label, se LabelWithCallout komponent */
   labelCallout?: LabelWithCalloutProps;
   /** Lukk callout på blur */
