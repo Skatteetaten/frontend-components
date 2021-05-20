@@ -106,6 +106,39 @@
   padding-right: 16px;
 }
 
+.mt0 {
+  margin-top: 0;
+}
+
+.mt8 {
+  margin-top: 8px;
+}
+
+.mt16 {
+  margin-top: 16px;
+}
+
+.mb0 {
+  margin-bottom: 0;
+}
+
+.mb8 {
+  margin-bottom: 8px;
+}
+
+.mb16 {
+  margin-bottom: 16px;
+}
+
+dt {
+  font-weight: 600;
+  margin-top: 8px;
+}
+
+dd {
+  margin-left: 16px;
+}
+
 .do {
   display: block;
   min-width: 300px;
@@ -338,4 +371,44 @@ ul.navigation li.underline {
     border-bottom: 2px solid #6f2c3f;
     font-weight: 700;
   }
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* TipChip */
+.tipchip {
+  display: inline-block;
+  position: relative;
+  background: #cde1f9;
+  margin-left: 8px;
+  vertical-align: baseline;
+}
+
+.tipchip button {
+  margin-top: 4px;
+}
+
+.tipchip:after {
+  content: '';
+  display: block;
+  position: absolute;
+  right: 100%;
+  top: 50%;
+  margin-top: -12px;
+
+  height: 0;
+  border-top: 12px solid transparent;
+  border-right: 12px solid #cde1f9;
+  border-bottom: 12px solid transparent;
+  border-left: 12px solid transparent;
 }
