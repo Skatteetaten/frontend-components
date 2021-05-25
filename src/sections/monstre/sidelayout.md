@@ -133,117 +133,119 @@ const white = {
     title={'Side for publikum'}
     homeText={'Tilbake til skatteetaten.no'}
   />
-  <Typography>
-    <Grid padding={'0px'}>
-      <Grid.Row>
-        <Grid.Col noSpacing sm={0} lg={1} xl={2}></Grid.Col>
-        <Grid.Col noSpacing sm={12} lg={10} xl={8}>
-          <Grid>
-            <Grid.Row rowSpacing={Grid.SPACE_LARGE}>
-              <Grid.Col noSpacing sm={0} lg={1} xl={2}></Grid.Col>
-              <Grid.Col noSpacing sm={12} lg={10} xl={8}>
-                <h2 style={{ marginTop: '8px' }}>
-                  Eksempel på publikumsløsning
-                </h2>
-                <p>
-                  Denne siden inneholder et eksempel hvordan en publikumsløsning
-                  kan utformes. Hovedinnholdet justeres mot en linje i
-                  venstrekant, mens enkelte elementer trekkes ut over linjen.
-                </p>
-              </Grid.Col>
-              <Grid.Col noSpacing sm={0} lg={1} xl={2}></Grid.Col>
-            </Grid.Row>
-          </Grid>
-          <Card
-            color={Card.Color.BEIGE}
-            margin={screenSize.gt.md ? 'small' : 'medium'}
-          >
-            <Grid padding={'0px'}>
+  <main aria-labelledby="main_heading">
+    <Typography>
+      <Grid padding={'0px'}>
+        <Grid.Row>
+          <Grid.Col noSpacing sm={0} lg={1} xl={2}></Grid.Col>
+          <Grid.Col noSpacing sm={12} lg={10} xl={8}>
+            <Grid>
               <Grid.Row rowSpacing={Grid.SPACE_LARGE}>
-                <Grid.Col noSpacing sm={0} lg={1} xl={2}>
-                  <div
-                    style={{
-                      textAlign: 'right',
-                      marginTop: '-4px',
-                      marginRight: '16px',
-                    }}
-                  >
-                    <Icon
-                      iconName="Info"
-                      style={{
-                        fontSize: '36px',
-                        display: screenSize.lt.xl ? 'none' : 'block',
-                      }}
-                    />
-                  </div>
-                </Grid.Col>
+                <Grid.Col noSpacing sm={0} lg={1} xl={2}></Grid.Col>
                 <Grid.Col noSpacing sm={12} lg={10} xl={8}>
-                  <h3 style={{ marginTop: '0px' }}>Varsel</h3>
+                  <h2 id="main_heading" style={{ marginTop: '8px' }}>
+                    Eksempel på publikumsløsning
+                  </h2>
                   <p>
-                    Dersom vi ønsker å tiltrekke brukerens oppmerksomhet kan vi
-                    legge inn bokser (Card) og et passende ikon. Siden det er
-                    ønskelig at innholdet inni boksen justeres pent med
-                    innholdet rundt, plasserer vi det i et grid.
+                    Denne siden inneholder et eksempel hvordan en
+                    publikumsløsning kan utformes. Hovedinnholdet justeres mot
+                    en linje i venstrekant, mens enkelte elementer trekkes ut
+                    over linjen.
                   </p>
                 </Grid.Col>
                 <Grid.Col noSpacing sm={0} lg={1} xl={2}></Grid.Col>
               </Grid.Row>
             </Grid>
-          </Card>
+            <Card
+              color={Card.Color.BEIGE}
+              margin={screenSize.gt.md ? 'small' : 'medium'}
+            >
+              <Grid padding={'0px'}>
+                <Grid.Row rowSpacing={Grid.SPACE_LARGE}>
+                  <Grid.Col noSpacing sm={0} lg={1} xl={2}>
+                    <div
+                      style={{
+                        textAlign: 'right',
+                        marginTop: '-4px',
+                        marginRight: '16px',
+                      }}
+                    >
+                      <Icon
+                        iconName="Info"
+                        style={{
+                          fontSize: '36px',
+                          display: screenSize.lt.xl ? 'none' : 'block',
+                        }}
+                      />
+                    </div>
+                  </Grid.Col>
+                  <Grid.Col noSpacing sm={12} lg={10} xl={8}>
+                    <h3 style={{ marginTop: '0px' }}>Varsel</h3>
+                    <p>
+                      Dersom vi ønsker å tiltrekke brukerens oppmerksomhet kan
+                      vi legge inn bokser (Card) og et passende ikon. Siden det
+                      er ønskelig at innholdet inni boksen justeres pent med
+                      innholdet rundt, plasserer vi det i et grid.
+                    </p>
+                  </Grid.Col>
+                  <Grid.Col noSpacing sm={0} lg={1} xl={2}></Grid.Col>
+                </Grid.Row>
+              </Grid>
+            </Card>
+          </Grid.Col>
+          <Grid.Col noSpacing sm={0} lg={1} xl={2}></Grid.Col>
+        </Grid.Row>
+      </Grid>
+    </Typography>
+    <Grid padding={'0px'}>
+      <Grid.Row rowSpacing={Grid.SPACE_LARGE}>
+        <Grid.Col noSpacing sm={0} lg={1} xl={2}></Grid.Col>
+        <Grid.Col noSpacing sm={12} lg={10} xl={8}>
+          <StepList>
+            <Step
+              stepTitle={titles.step1.no}
+              stepId={'step-1-1'}
+              actionBtn={{
+                text: 'Endre',
+                icon: 'Edit',
+                ariaLabel: 'Endre jobber du?',
+              }}
+              gridSpacing
+            >
+              <div>
+                <p>Jeg er fulltidsstudent eller vernepliktig i militæret </p>
+              </div>
+            </Step>
+            <Step
+              stepTitle={titles.step2.no}
+              stepId={'step-1-2'}
+              activeStep={false}
+              actionBtn={{
+                text: 'Endre',
+                icon: 'Edit',
+                ariaLabel: 'Endre sommerjobb?',
+              }}
+              gridSpacing
+            >
+              <p>Nei</p>
+            </Step>
+            <Step stepType={'result'} resultIcon={'Check'} gridSpacing>
+              <Typography>
+                <div style={{ marginTop: '8px', marginBottom: '8px' }}>
+                  <h3 style={{ marginTop: '0' }}>Resultatvisning</h3>
+                  <p>
+                    Resultatet etter stegveiviseren bør også få en del
+                    oppmerksomhet, og derfor større bredde enn hovedinnholdet.
+                  </p>
+                </div>
+              </Typography>
+            </Step>
+          </StepList>
         </Grid.Col>
         <Grid.Col noSpacing sm={0} lg={1} xl={2}></Grid.Col>
       </Grid.Row>
     </Grid>
-  </Typography>
-  <Grid padding={'0px'}>
-    <Grid.Row rowSpacing={Grid.SPACE_LARGE}>
-      <Grid.Col noSpacing sm={0} lg={1} xl={2}></Grid.Col>
-      <Grid.Col noSpacing sm={12} lg={10} xl={8}>
-        <StepList>
-          <Step
-            stepTitle={titles.step1.no}
-            stepId={'step-1-1'}
-            actionBtn={{
-              text: 'Endre',
-              icon: 'Edit',
-              ariaLabel: 'Endre jobber du?',
-            }}
-            gridSpacing
-          >
-            <div>
-              <p>Jeg er fulltidsstudent eller vernepliktig i militæret </p>
-            </div>
-          </Step>
-          <Step
-            stepTitle={titles.step2.no}
-            stepId={'step-1-2'}
-            activeStep={false}
-            actionBtn={{
-              text: 'Endre',
-              icon: 'Edit',
-              ariaLabel: 'Endre sommerjobb?',
-            }}
-            gridSpacing
-          >
-            <p>Nei</p>
-          </Step>
-          <Step stepType={'result'} resultIcon={'Check'} gridSpacing>
-            <Typography>
-              <div style={{ marginTop: '8px', marginBottom: '8px' }}>
-                <h3 style={{ marginTop: '0' }}>Resultatvisning</h3>
-                <p>
-                  Resultatet etter stegveiviseren bør også få en del
-                  oppmerksomhet, og derfor større bredde enn hovedinnholdet.
-                </p>
-              </div>
-            </Typography>
-          </Step>
-        </StepList>
-      </Grid.Col>
-      <Grid.Col noSpacing sm={0} lg={1} xl={2}></Grid.Col>
-    </Grid.Row>
-  </Grid>
-
+  </main>
   <FooterContent>
     <Grid>
       <Grid.Row>
