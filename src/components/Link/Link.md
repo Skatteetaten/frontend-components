@@ -8,7 +8,7 @@ import { Link } from '@skatteetaten/frontend-components';
 <div className="ExampleSpacing8">
   <Link
     path={'#link'}
-    text={'Rettledning til RF-1167 Næringsoppgave 2 for 2020 (PDF)'}
+    text={'Rettledning til RF-1167 Næringsoppgave 2 for 2020 (pdf)'}
     placement="before"
   />
 </div>;
@@ -31,6 +31,19 @@ import { Link } from '@skatteetaten/frontend-components';
     path={'#link'}
     text={'Brukerveiledning for bilforhandlere'}
     icon={'OpenInNew'}
+    placement="after"
+  />
+</div>;
+```
+
+Åpne i ny fane:
+
+```js
+import { Link } from '@skatteetaten/frontend-components';
+<div className="ExampleSpacing8">
+  <Link
+    path={'https://www.skatteetaten.no/rettskilder/type/lover-og-forskrifter/'}
+    text={'Se lover og forskrifter (åpnes i ny fane)'}
     openInNew={true}
     placement="after"
   />
@@ -50,13 +63,11 @@ import { Link } from '@skatteetaten/frontend-components';
 ```js noeditor beskrivelse
 <>
   <h3>Lenke til filer eller nettsider</h3>
+  <p>Vi benytter Link for å lenke til filer eller nettsider.</p>
   <p>
-    En link benytter du for å lenke til filer eller nettsider. Når brukeren
-    klikker på lenken, kommer den aktuelle filen eller nettsiden frem.
-  </p>
-  <p>
-    Er lenken en handling som påvirker siden brukeren er på, for eksempel
-    «Lagre» eller «Send inn», skal du normalt bruke en knapp i stedet. Se
+    Hvis lenken er en handling som påvirker siden brukeren er på, som for
+    eksempel «Lagre» eller «Send inn», skal du normalt bruke en knapp i stedet.
+    Se
     <a href="#actionbutton">aksjonsknapp</a>, <a href="#button">knapp</a> og <a href="#iconbutton">
       ikonknapp
     </a> for eksempler på knapper. Se også <a href="https://www.skatteetaten.no/stilogtone/produkt/skatteetatenno/lenker/">
@@ -64,41 +75,49 @@ import { Link } from '@skatteetaten/frontend-components';
     </a> for hjelp til å lage gode lenketekster.
   </p>
 
-  <h3>Åpne i nye fane eller nedlasting</h3>
+  <h3>Åpne i eksisterende fane, ny fane eller nedlastning?</h3>
   <p>
-    For at brukeren skal få en konsistent og forutsigbar brukeropplevelse,
-    anbefaler vi å følge brukerens egne lenkeinnstillinger i nettleseren. Det
-    betyr med andre ord at lenker som hovedregel skal åpnes i samme vindu, og
-    skal vi være forsiktige med å gjøre våre egne overstyringer. Det finnes
-    imidlertid unntak hvor brukerens oppgave tilsier at en bestemt oppførsel er
-    bedre. Faner som aktivt åpnes i ny fane bør visuelt markeres med ikon eller
-    tekst, slik at brukeren forstår hva som skjer.
+    Når brukeren klikker på lenken, kommer den aktuelle filen eller nettsiden
+    frem. Hovedregelen er at lenker skal åpnes i samme fane. Det finnes også
+    unntak hvor lenken kan åpnes i ny fane eller som nedlastning.
   </p>
-  <p>Når du bør åpne filer og nettsider i egen fane:</p>
+
+  <h4>Når bør du åpne lenken i samme vindu:</h4>
   <ul>
     <li>
-      Når vi lenker til veiledninger eller annet innhold som brukeren bruker som
-      støtte i gjennomføringen av oppgaven.
+      I de fleste tilfeller – dette er hovedregelen fordi vi sikrer en
+      konsistent og forutsigbar brukeropplevelse ved å la brukerens egne
+      lenkeinnstillinger i nettleseren videreføres etter klikket på lenken.
+    </li>
+  </ul>
+
+  <h4>Når bør du åpne lenken i egen fane eller som nedlastning:</h4>
+  <ul>
+    <li>
+      Når du lenker til veiledninger eller annet innhold som brukeren benytter
+      som støtte i gjennomføringen av oppgaven.
     </li>
     <li>
       Dersom brukeren risikerer å miste innhold når hun klikker på lenken, for
-      eksempel ved utfylling av skjema.
+      eksempel ved utfylling av skjema.{' '}
     </li>
   </ul>
-  <p>
-    Merk også at ved åpning av i ny fane legger vi til to attributter; den
-    første, «target», åpner i nytt vindu, og den andre, «rel», er en
-    sikkerhetsfunksjon som bryter koblingen mellom eksisterende vindu og nytt
-    vindu. Dersom den åpnede fanen inneholder ondsinnet kode, kan den uten denne
-    funksjonen, få tilgang til vinduet den var lenket fra. Dette er spesielt
-    viktig å ta hensyn til dersom du lenker til eksterne sider eller sider med
-    innhold som er laget av bruker.
-  </p>
 
-  <h3>Lenke til eksterne filer og nettsider</h3>
-  <p>
-    Vi markerer lenker som åpner eksterne sider med eget symbol (se eksempel).
-  </p>
+  <h3>Pass på, når du lenker til ny fane eller nedlastning:</h3>
+  <ul>
+    <li>
+      Marker lenker som åpner eksterne sider og filer med eget symbol (se
+      eksempel).
+    </li>
+    <li>
+      Når du lenker til eksterne sider eller sider med innhold som er laget av
+      bruker, er det spesielt viktig å beskytte mot ondsinnet kode. Legg derfor
+      til to attributter; den første, «target», åpner i nytt vindu, og den
+      andre, «rel», er en sikkerhetsfunksjon som bryter koblingen mellom
+      eksisterende vindu og nytt vindu. Uten denne funksjonen, kan ondsinnet
+      kode få tilgang til vinduet du lenket fra.
+    </li>
+  </ul>
 </>
 ```
 
