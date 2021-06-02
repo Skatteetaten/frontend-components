@@ -61,6 +61,22 @@ import { Link } from '@skatteetaten/frontend-components';
 ```
 
 ```js noeditor beskrivelse
+import LinkGroup from '@skatteetaten/frontend-components/LinkGroup';
+const links = [
+  {
+    text: 'ActionButton (Aksjonsknapp)',
+    path: '#actionbutton',
+  },
+  {
+    text: 'Button (Knapp)',
+    path: '#button',
+  },
+  ,
+  {
+    text: 'IconButton (Ikonknapp)',
+    path: '#iconbutton',
+  },
+];
 <>
   <h3>Lenke til filer eller nettsider</h3>
   <p>Vi benytter Link for å lenke til filer eller nettsider.</p>
@@ -118,7 +134,10 @@ import { Link } from '@skatteetaten/frontend-components';
       kode få tilgang til vinduet du lenket fra.
     </li>
   </ul>
-</>
+
+  <h3>Relaterte komponenter</h3>
+  <LinkGroup links={links} />
+</>;
 ```
 
 ```js noeditor uu
