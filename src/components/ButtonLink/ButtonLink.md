@@ -56,31 +56,26 @@ import { ButtonLink } from '@skatteetaten/frontend-components';
 ```
 
 ```js noeditor uu
-<div>
+
   <h3>Knapp eller lenke</h3>
   <p>
-    Når noe ser ut som en knapp, bør det også være en knapp for
-    skjermleserbrukere. Hvis for eksempel en svaksynt ringer førstelinje og
-    ønsker veiledning eller spør en kollega, vil de mest sannsynlig bli henvist
-    til knappen med en gitt tekst. Da kan en skjermleserbruker bruke
-    hurtigtaster for å gå til knappen. Med role="button" vil komponenten kun
-    dukke opp som en knapp, og <i>ikke</i> i en liste over lenker.
+   Hovedregelen er at vi skal bruke knapper og lenker til det de opprinnelig er laget for. Men knapper og lenker brukes en del overlappende. ButtonLink ser ut som en knapp, men er lenke funksjonelt. En blind person med skjermleser har mange måter å navigere på, f.eks. fra knapp til knapp, liste med lenker, internt tekstsøk på nettsiden osv. Hvis en skjermleserbruker får hjelp på nettsiden av en seende person vil den trolig omtales som en knapp. Fordi den kan bli enklere å finne i en veiledningssituasjon har vi derfor har vi valgt å bruke role=button . Vi tror allikevel at det er en god tekst på knappen som er mest avgjørende for brukeren, altså at det er tydelig hva som skjer hvis den velges.
   </p>
-  <p>En skjermleserbruker har to måter å lete etter innhold på siden: </p>
+ 
+<h3>Mest relevante WCAG-krav</h3>
   <ul>
     <li>
-      Vanlig søk (Ctrl + f): Da søker man først og fremst etter teksten på
-      lenken eller knappen, som betyr at ordlyden er viktig.
+2.4.4 A, Formål med lenke (i kontekst)</li> 
+<li>4.1.2 A, Navn, rolle, verdi
     </li>
     <li>
-      Få skjermleseren til å lage en liste over knapper eller lenker på siden,
-      og bla gjennom denne. Det er ikke uvanlig at sider har svært mange lenker
-      eller knapper, og dette gjør det listen lang å bla gjennom. I slike
-      tilfeller er det rimelig å anta at brukeren forsøker å søke først.
+
     </li>
   </ul>
 
   <h3>WAI-ARIA</h3>
-  <p>Role=button brukes fordi lenken visuelt ser ut en knapp.</p>
-</div>
+  <ul>
+  <li>Role=button brukes fordi lenken visuelt ser ut en knapp.</li>
+</ul>
+
 ```
