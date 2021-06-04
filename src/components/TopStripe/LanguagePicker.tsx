@@ -5,6 +5,7 @@ import { EnglishFlag, NorwegianFlag, SamiFlag } from './assets';
 import { Icon } from '../Icon';
 import { UseScreen } from '../utils';
 import { getClassNames } from './LanguagePicker.classNames';
+import { useEffect } from 'react';
 
 export enum LanguageEnum {
   BOKMAAL = 'nb',
@@ -99,7 +100,7 @@ export const LanguagePicker: React.FC<LanguagePickerProps> = (props) => {
   } = props;
   const [languages, setLanguages] = React.useState<LanguageEnum[]>([]);
 
-  React.useEffect(() => {
+  useEffect(() => {
     showSami
       ? setLanguages([
           LanguageEnum.BOKMAAL,
@@ -113,6 +114,10 @@ export const LanguagePicker: React.FC<LanguagePickerProps> = (props) => {
           LanguageEnum.ENGLISH,
         ]);
   }, [showSami]);
+
+  useEffect(() => {
+    document.documentElement.lang = selectedLanguage;
+  }, [selectedLanguage]);
 
   const styles = getClassNames();
   const screenSize = UseScreen();
