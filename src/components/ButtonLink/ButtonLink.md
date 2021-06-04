@@ -57,7 +57,6 @@ import { ButtonLink } from '@skatteetaten/frontend-components';
 
 ```js noeditor uu
 <>
-
   <h3>Knapp eller lenke</h3>
   <p>
    Hovedregelen er at vi skal bruke knapper og lenker til det de opprinnelig er laget for. Men knapper og lenker brukes en del overlappende. ButtonLink ser ut som en knapp, men er lenke funksjonelt. En blind person med skjermleser har mange måter å navigere på, f.eks. fra knapp til knapp, liste med lenker, internt tekstsøk på nettsiden osv. Hvis en skjermleserbruker får hjelp på nettsiden av en seende person vil den trolig omtales som en knapp. Fordi den kan bli enklere å finne i en veiledningssituasjon har vi derfor har vi valgt å bruke role=button . Vi tror allikevel at det er en god tekst på knappen som er mest avgjørende for brukeren, altså at det er tydelig hva som skjer hvis den velges.
