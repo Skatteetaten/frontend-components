@@ -24,5 +24,5 @@ export interface TopBannerTypes {
   /** Språk på logoen */
   language?: 'nb' | 'nn' | 'en';
   /** Topstripe */
-  topStripe?: Element;
+  topStripe?: JSX.Element;
 }
