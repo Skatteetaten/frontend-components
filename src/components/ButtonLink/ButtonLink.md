@@ -56,6 +56,7 @@ import { ButtonLink } from '@skatteetaten/frontend-components';
 ```
 
 ```js noeditor uu
+<>
 
   <h3>Knapp eller lenke</h3>
   <p>
@@ -78,4 +79,5 @@ import { ButtonLink } from '@skatteetaten/frontend-components';
   <li>Role=button brukes fordi lenken visuelt ser ut en knapp.</li>
 </ul>
 
+</>
 ```
