@@ -63,6 +63,7 @@ export const Step = (props: StepProps) => {
   } = props;
   const [styles, setStyles] = React.useState(getClassNames(props));
   const size = UseScreen();
+  const headingId = stepId ? stepId + '-heading' : undefined;
 
   React.useEffect(() => {
     setStyles(
@@ -111,7 +112,11 @@ export const Step = (props: StepProps) => {
               <div id={stepId}>
                 <div className={styles.stepContent}>
                   {stepTitle && (
-                    <h2 className={styles.title}>
+                    <h2
+                      className={styles.title}
+                      id={headingId}
+                      tabIndex={stepId ? -1 : undefined}
+                    >
                       {!size.gt.sm && stepType !== 'next' && (
                         <NumberIcon
                           styles={styles}
