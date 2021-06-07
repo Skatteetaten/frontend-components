@@ -198,13 +198,23 @@ const white = {
       </Grid>
     </Typography>
     <Grid padding={'0px'}>
-      <Grid.Row rowSpacing={Grid.SPACE_LARGE}>
+      <Grid.Row rowSpacing={Grid.SPACE_NONE}>
         <Grid.Col noSpacing sm={0} lg={1} xl={2}></Grid.Col>
         <Grid.Col noSpacing sm={12} lg={10} xl={8}>
+          <Grid>
+            <Grid.Row rowSpacing={Grid.SPACE_LARGE}>
+              <Grid.Col noSpacing sm={0} lg={1} xl={2}></Grid.Col>
+              <Grid.Col noSpacing sm={12} lg={10} xl={8}>
+                <Card color={Card.Color.BEIGE}>Alle felt må fylles ut.</Card>
+              </Grid.Col>
+              <Grid.Col noSpacing sm={0} lg={1} xl={2}></Grid.Col>
+            </Grid.Row>
+          </Grid>
           <StepList>
             <Step
               stepTitle={titles.step1.no}
               stepId={'step-1-1'}
+              headingLevel={3}
               actionBtn={{
                 text: 'Endre',
                 icon: 'Edit',
@@ -220,6 +230,7 @@ const white = {
               stepTitle={titles.step2.no}
               stepId={'step-1-2'}
               activeStep={false}
+              headingLevel={3}
               actionBtn={{
                 text: 'Endre',
                 icon: 'Edit',
