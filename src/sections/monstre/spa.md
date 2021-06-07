@@ -143,6 +143,25 @@ import {
         </li>
       </ul>
     </AccordionItem>
+    <AccordionItem
+      toggleContent
+      toggleButtonText={'Sette fokus i StepList'}
+      headingLevel="3"
+      stepId={'fokus-step-4'}
+    >
+      <p>
+        På samme måte som vi må sette fokus der hovedinnholdet byttes ut, må vi
+        også styre fokus til riktig sted i en StepList. Når Neste-knappen
+        velges, lukkes steget du stod på og nytt steg dukker opp. Her må fokus
+        settes til toppen av det nye innholdet, det vil si overskriften som
+        navngir steget. Løsningen blir derfor ikke helt identisk som å sette
+        fokus til &lt;main&gt; når nytt hovedinnhold vises. Slik løses det i
+        StepList:
+        <code>
+          &lt;h3 id="heading_id3" tabindex="-1"&gt; Steg 2 &lt;/h3&gt;
+        </code>
+      </p>
+    </AccordionItem>
   </Accordion>
 </div>;
 ```
