@@ -133,7 +133,7 @@ const white = {
     title={'Side for publikum'}
     homeText={'Tilbake til skatteetaten.no'}
   />
-  <main aria-labelledby="main_heading">
+  <main aria-labelledby="main_heading" tabindex="-1">
     <Typography>
       <Grid padding={'0px'}>
         <Grid.Row>

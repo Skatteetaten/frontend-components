@@ -20,7 +20,7 @@ import {
 
 <div>
   <Card
-    title="Hovedregler for single page-applikasjon"
+    title="Prinsipper for utvikling av single page-applikasjon"
     color={Card.Color.WHITE}
     border={Card.Border.YELLOW_BORDER}
     titlesize="x-large"
@@ -33,10 +33,8 @@ import {
       inn og presentere kun de opplysningene brukeren trenger.
     </p>
     <p>
-      Denne typen dynamisk innhold fører med seg en ekstra utfording: vi må
-      sørge for at brukere får med seg at innholdet på siden har endret seg, for
-      eksempel hvis det er grunn til å tro at de de ser et annet sted på siden
-      eller bruker skjermleser.
+      Denne typen dynamisk innhold fører med seg en ekstra utfordring: vi må
+      sørge for at brukere får med seg at innholdet på siden har endret seg.
     </p>
     <p>
       For å gi tastatur- og skjermleserbrukere bedre kontroll i løsningene våre
@@ -65,30 +63,38 @@ import {
       headingLevel="3"
       stepId={'fokus-step-1'}
     >
-      <p>
-        Hvis brukeren har navigert til en konkret nettside er det mest
-        sannsynlig at de er interessert i hovedinnholdet på den nye siden. Dette
-        betyr at vi må sette identifisere et fornuftig «startpunkt» for
-        skjermleser-brukere, slik at de unngår å måtte bla gjennom hele siden
-        hver gang den endrer seg. I løsningene våre har vi ofte en overskrift
-        (&lt;h1&gt; eller &lt;h2&gt;) i toppen som endres fra side til side. En
-        av titlene kan være mer statisk tekst som beskriver fagområde eller
-        liknende. Det vil som often være fornuftig å la skjermleser lese opp fra
-        tittelen som endres fra side til siste, fremfor den statiske teksten.
-        Det bør også være en sammenheng mellom det brukeren klikket på for å få
-        frem innholdet og det første som blir lest opp når det nye innholdet
-        lastes.
-      </p>
-      <p>
-        Måten vi gjør dette må er å gi den beskrivende overskriften en id, og la
-        main-elementet henvise til denne:
-        <br />
+      <div>
+        <p>
+          Hvis brukeren har navigert til en konkret nettside er det mest
+          sannsynlig at de er interessert i hovedinnholdet på den nye siden.
+          Dette betyr at vi må sette identifisere et fornuftig «startpunkt» for
+          skjermleser-brukere, slik at de unngår å måtte bla gjennom hele siden
+          hver gang den endrer seg. I løsningene våre har vi ofte en overskrift
+          (&lt;h1&gt; eller &lt;h2&gt;) i toppen som endres fra side til side.
+          En av titlene kan være mer statisk tekst som beskriver fagområde eller
+          liknende. Det vil som oftest være fornuftig å la skjermleser lese opp
+          fra tittelen som endres fra side til siste, fremfor den statiske
+          teksten. Det bør også være en sammenheng mellom det brukeren klikket
+          på for å få frem innholdet og det første som blir lest opp når det nye
+          innholdet lastes.
+        </p>
+        <p>
+          Måten vi gjør dette er å gi den beskrivende overskriften en id, og la
+          main-elementet henvise til denne:
+          <br />
+          <code>
+            &lt;h1 id="heading_id1"&gt;Dynamisk overskrift&lt;/h1&gt;
+          </code>{' '}
+          og
+          <code>&lt;main aria-labelledby="heading_id1" tabindex="-1"&gt;</code>
+        </p>
+        Og deretter bruke et skript for å sette fokus når siden lastes: <br />
         <code>
-          &lt;h1 id="heading_id1"&gt;Dynamisk overskrift&lt;/h1&gt;
-        </code>{' '}
-        og
-        <code>&lt;main aria-describedby="heading_id1"&gt;</code>
-      </p>
+          window.setTimeout(function () &#123; const myTitle: HTMLElement | null
+          = document.getElementById(&#39;heading_id1&#39;); myTitle &amp;&amp;
+          myTitle.focus(); &#125;, 0);
+        </code>
+      </div>
     </AccordionItem>
     <AccordionItem
       toggleContent
@@ -106,13 +112,13 @@ import {
     </AccordionItem>
     <AccordionItem
       toggleContent
-      toggleButtonText={'Bruke tabindex'}
+      toggleButtonText={'Styre fokus til riktig sted (tabindex)'}
       headingLevel="3"
       stepId={'fokus-step-3'}
     >
       <p>
-        Tabindex er et attributt som kan legges på de fleste html-elenenter.
-        Tabindex-attributtet har 3 hovedfunksjoner:
+        Tabindex er et attributt som kan legges på de fleste html-elementer for
+        å styre fokus. Tabindex-attributtet har 3 hovedfunksjoner:
       </p>
       <ul>
         <li>
@@ -133,25 +139,9 @@ import {
         <li>
           <b>Tabindex="1"</b> eller høyere definerer en konkret
           navigeringsrekkefølge. Positive verdier brukes kun i sjeldne
-          tilfeller, har lett for å medføre feil og skal unngås.
+          tilfeller, har lett for å medføre feil og <i>skal unngås</i>.
         </li>
       </ul>
-    </AccordionItem>
-    <AccordionItem
-      toggleContent
-      toggleButtonText={'Tydelig dynamisk innhold'}
-      headingLevel="3"
-      stepId={'fokus-step-4'}
-    >
-      <p>
-        Det er fort gjort å gå glipp av innhold som endrer seg på siden. Pass
-        derfor på å kun oppdatere innhold automatisk på en slik måte at brukeren
-        er klar over det, og i umiddelbar nærhet til der brukeren har
-        oppmerksomheten sin. Du kan eventuelt bruke MessageBar eller ikoner for
-        å tiltrekke oppmerksomhet der det er nødvendig. Dersom du har har et et
-        regnestykke som må oppdateres som følge av nye data, kan du bruke en
-        spinner for å signalisere at opplysningene er i ferd med å endres.
-      </p>
     </AccordionItem>
   </Accordion>
 </div>;
