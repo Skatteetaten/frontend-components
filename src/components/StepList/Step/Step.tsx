@@ -5,6 +5,7 @@ import { ActionButton } from '../../ActionButton';
 import { Grid } from '../../Grid';
 import { Icon } from '../../Icon';
 import { getClassNames } from '../StepList.classNames';
+import { Heading } from '../../utils';
 
 const NumberIcon = (props: any) => {
   return (
@@ -47,6 +48,8 @@ export interface StepProps extends React.HTMLAttributes<HTMLDivElement> {
   children?: React.ReactElement;
   /** If the step should have an outer grid for alignment to surrounding elements */
   gridSpacing?: boolean;
+  /** Set title heading tag-hierarchy. Value 1-6.*/
+  headingLevel?: number;
 }
 
 export const Step = (props: StepProps) => {
@@ -60,6 +63,7 @@ export const Step = (props: StepProps) => {
     stepType,
     actionBtn,
     gridSpacing,
+    headingLevel = 2,
   } = props;
   const [styles, setStyles] = React.useState(getClassNames(props));
   const size = UseScreen();
@@ -112,10 +116,12 @@ export const Step = (props: StepProps) => {
               <div id={stepId}>
                 <div className={styles.stepContent}>
                   {stepTitle && (
-                    <h2
-                      className={styles.title}
+                    <Heading
                       id={headingId}
+                      text={stepTitle}
+                      level={headingLevel}
                       tabIndex={stepId ? -1 : undefined}
+                      className={styles.title}
                     >
                       {!size.gt.sm && stepType !== 'next' && (
                         <NumberIcon
@@ -127,7 +133,7 @@ export const Step = (props: StepProps) => {
                       <span className={classnames(styles.titleText)}>
                         {stepTitle}
                       </span>
-                    </h2>
+                    </Heading>
                   )}
                   <div className={styles.stepContentInner}>
                     {children}
