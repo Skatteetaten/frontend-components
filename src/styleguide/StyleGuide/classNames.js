@@ -43,7 +43,7 @@ export const getClassNames = function getClassNames(props, state) {
         'p > a': {
           color: palette.skeColor.blue,
           textDecoration: 'none',
-          fontWeight: 700,
+          fontWeight: 500,
           paddingBottom: '1px',
           borderBottom: `2px solid ` + hex2rgba(palette.skeColor.blue, 0.25),
           transition: 'border-color .5s',
