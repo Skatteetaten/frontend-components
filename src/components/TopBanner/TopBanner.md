@@ -32,47 +32,53 @@ import {
 const [language, setLanguage] = useState('nb');
 
 <div>
-  <TopStripe>
-    <Link path={'#main-content-id'} text={'Hopp til hovedinnhold'} skipLink />
-
-    <Link
-      path={'https://www.skatteetaten.no/kontakt/'}
-      text={'Kontakt oss'}
-      placement="before"
-    />
-
-    <TopStripeMenu
-      showOnMobile={false}
-      closeMenuAriaLabel="Lukk endre skriftstørrelse"
-      title={'Endre skriftstørrelse'}
-    >
-      <div style={{ fontSize: '24px', marginTop: '8px' }}>
-        Hold Ctrl-tasten nede (Cmd-tasten på Mac). Trykk på + for å forstørre
-        eller - for å forminske.
-      </div>
-    </TopStripeMenu>
-    <LanguagePicker
-      selectedLanguage={language}
-      setLanguage={setLanguage}
-      showOnMobile={true}
-      showSami={true}
-    />
-
-    <span>
-      <Icon
-        iconName="person"
-        style={{ fontSize: '20px', verticalAlign: 'sub' }}
-      />
-      Ola Normann
-    </span>
-
-    <Link path={'#topstripe'} text={'Logg ut'} placement="before" />
-  </TopStripe>
   <TopBanner
     external
     title={'Side for publikum'}
     homeText={'Tilbake til skatteetaten.no'}
     logoLink
+    topStripe={
+      <TopStripe>
+        <Link
+          path={'#main-content-id'}
+          text={'Hopp til hovedinnhold'}
+          skipLink
+        />
+
+        <Link
+          path={'https://www.skatteetaten.no/kontakt/'}
+          text={'Kontakt oss'}
+          placement="before"
+        />
+
+        <TopStripeMenu
+          showOnMobile={false}
+          closeMenuAriaLabel="Lukk endre skriftstørrelse"
+          title={'Endre skriftstørrelse'}
+        >
+          <div style={{ fontSize: '24px', marginTop: '8px' }}>
+            Hold Ctrl-tasten nede (Cmd-tasten på Mac). Trykk på + for å
+            forstørre eller - for å forminske.
+          </div>
+        </TopStripeMenu>
+        <LanguagePicker
+          selectedLanguage={language}
+          setLanguage={setLanguage}
+          showOnMobile={true}
+          showSami={true}
+        />
+
+        <span>
+          <Icon
+            iconName="person"
+            style={{ fontSize: '20px', verticalAlign: 'sub' }}
+          />
+          Ola Normann
+        </span>
+
+        <Link path={'#topstripe'} text={'Logg ut'} placement="before" />
+      </TopStripe>
+    }
   />
 </div>;
 ```
