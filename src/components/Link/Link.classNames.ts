@@ -57,7 +57,7 @@ export const getClassNames = (props: LinkProps) => {
     iconLink: {
       color: palette.skeColor.blue,
       textDecoration: 'none',
-      fontWeight: 700,
+      fontWeight: linkGroup ? FontWeights.bold : FontWeights.medium,
       borderBottom: '2px solid ' + hex2rgba(palette.skeColor.blue, 0.25),
       selectors: {
         '&:hover': {
