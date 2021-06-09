@@ -100,6 +100,13 @@ const white = {
   color: '#ffffff',
 };
 
+const leadtextStyles = {
+  fontSize: '14px',
+  textAlign: 'right',
+  fontWeight: '400',
+  margin: '8px 13% 8px 0',
+};
+
 <div>
   <TopBanner
     external
@@ -207,15 +214,7 @@ const white = {
       <Grid.Row rowSpacing={Grid.SPACE_NONE}>
         <Grid.Col noSpacing sm={0} lg={1} xl={2}></Grid.Col>
         <Grid.Col noSpacing sm={12} lg={10} xl={8}>
-          <Grid>
-            <Grid.Row rowSpacing={Grid.SPACE_LARGE}>
-              <Grid.Col noSpacing sm={0} lg={1} xl={2}></Grid.Col>
-              <Grid.Col noSpacing sm={12} lg={10} xl={8}>
-                <Card color={Card.Color.BEIGE}>Alle felt må fylles ut.</Card>
-              </Grid.Col>
-              <Grid.Col noSpacing sm={0} lg={1} xl={2}></Grid.Col>
-            </Grid.Row>
-          </Grid>
+          <p style={leadtextStyles}>Alle felt må fylles ut</p>
           <StepList>
             <Step
               stepTitle={titles.step1.no}
