@@ -84,6 +84,10 @@ module.exports = {
           name: 'Ledetekst',
           content: 'src/sections/monstre/ledetekst.md',
         },
+        {
+          name: 'Single page-applikasjon (SPA)',
+          content: 'src/sections/monstre/spa.md',
+        },
       ],
     },
     generateComponentsGroup('Knapper og lenker', [

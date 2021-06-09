@@ -792,33 +792,35 @@ function Testside(props) {
       <div style={{ marginTop: '60px', marginBottom: '20px' }}>
         <h2>TopStripe, TopBanner</h2>
 
-        <TopStripe>
-          <Link
-            path={'https://www.skatteetaten.no/kontakt/'}
-            text={'Kontakt oss'}
-            placement="before"
-          />
-
-          <TopStripeMenu title={'Endre skriftstørrelse'}>
-            <div style={{ fontSize: '24px', marginTop: '8px' }}>
-              Hold Ctrl-tasten nede (Cmd-tasten på Mac). Trykk på + for å
-              forstørre eller - for å forminske.
-            </div>
-          </TopStripeMenu>
-          <LanguagePicker
-            selectedLanguage={language}
-            setLanguage={setLanguage}
-            showOnMobile={true}
-            showSami={true}
-          />
-
-          <span>
-            <Icon iconName="person" /> Vegard Sandli
-          </span>
-
-          <Link path={'#topstripe'} text={'Logg ut'} placement="before" />
-        </TopStripe>
         <TopBanner
+          topStripe={
+            <TopStripe>
+              <Link
+                path={'https://www.skatteetaten.no/kontakt/'}
+                text={'Kontakt oss'}
+                placement="before"
+              />
+
+              <TopStripeMenu title={'Endre skriftstørrelse'}>
+                <div style={{ fontSize: '24px', marginTop: '8px' }}>
+                  Hold Ctrl-tasten nede (Cmd-tasten på Mac). Trykk på + for å
+                  forstørre eller - for å forminske.
+                </div>
+              </TopStripeMenu>
+              <LanguagePicker
+                selectedLanguage={language}
+                setLanguage={setLanguage}
+                showOnMobile={true}
+                showSami={true}
+              />
+
+              <span>
+                <Icon iconName="person" /> Vegard Sandli
+              </span>
+
+              <Link path={'#topstripe'} text={'Logg ut'} placement="before" />
+            </TopStripe>
+          }
           external
           title={'Side for publikum'}
           homeText={'Tilbake til skatteetaten.no'}

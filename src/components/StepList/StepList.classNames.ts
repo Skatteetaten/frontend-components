@@ -257,16 +257,20 @@ export const getClassNames = (props) => {
         props.stepType === 'result'
           ? palette.skeColor.blackAlt
           : palette.skeColor.blue,
-      margin: '8px 0 0',
+      margin: '0 0',
+      marginTop: '8px !important',
       flex: '0 0 100%',
       selectors: {
         '@media only screen and (max-width: 479px)': {
           display: 'flex',
+          fontSize: FontSizes.medium,
+
           borderTop:
             props.stepType === 'result'
               ? `4px solid ${palette.skeColor.green}`
               : undefined,
           margin: props.stepType === 'result' ? 0 : undefined,
+          paddingTop: props.stepType === 'result' ? '8px' : '0',
         },
       },
     },
