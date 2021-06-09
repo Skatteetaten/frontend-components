@@ -7,7 +7,7 @@ export enum CalloutColor {
   WARNING = 'beige',
   BASIC = 'white',
 }
-export interface CalloutProps extends ICalloutProps {
+export interface CalloutProps extends Omit<ICalloutProps, 'backgroundColor'> {
   /** Determine if the callout window will close automaticly when the area outside the window is clicked */
   autoDismiss?: boolean;
   /** There are four colors; lightGreen, beige, lightPink or white */

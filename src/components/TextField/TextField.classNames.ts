@@ -47,10 +47,6 @@ export const getClassNames = (props: TextFieldProps) => {
     displayName: 'SkeTextField',
     selectors: {
       ...getFieldTypeStyles(props),
-      '&.is-disabled .ms-TextField-fieldGroup': {
-        border: `1px solid ${palette.skeColor.lightGrey}`,
-        backgroundColor: palette.skeColor.neutralGrey,
-      },
       '&& .ms-TextField-fieldGroup': {
         borderColor: color,
         borderRadius: '0px',
@@ -139,6 +135,18 @@ export const getClassNames = (props: TextFieldProps) => {
         props.readOnly && {
           display: 'none',
         },
+      '&.is-disabled .ms-TextField-fieldGroup': {
+        borderColor: palette.skeColor.lightGrey,
+        borderStyle: 'solid',
+        borderWidth: '1px',
+        backgroundColor: palette.skeColor.whiteGrey,
+      },
+      '&.is-disabled .ms-TextField-field': {
+        color: palette.skeColor.blackAlt,
+      },
+      '&.is-disabled .ms-TextField-field:hover': {
+        cursor: 'not-allowed',
+      },
     },
   });
 };
