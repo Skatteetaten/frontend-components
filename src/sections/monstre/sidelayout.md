@@ -101,35 +101,41 @@ const white = {
 };
 
 <div>
-  <TopStripe>
-    <Link path={'#main-content-id'} text={'Hopp til hovedinnhold'} skipLink />
-    <Link
-      path={'https://www.skatteetaten.no/kontakt/'}
-      text={'Kontakt oss'}
-      placement="before"
-    />
-    <TopStripeMenu
-      closeMenuAriaLabel="Lukk endre skriftstørrelse"
-      title={'Endre skriftstørrelse'}
-      showOnMobile={false}
-      contentIsMenu={false}
-    >
-      <div style={{ fontSize: '24px', marginTop: '8px' }}>
-        Hold Ctrl-tasten nede (Cmd-tasten på Mac). Trykk på + for å forstørre
-        eller - for å forminske.
-      </div>
-    </TopStripeMenu>
-    <LanguagePicker
-      selectedLanguage={language}
-      setLanguage={setLanguage}
-      showOnMobile={true}
-      showSami={true}
-    />
-
-    <Link path={'#link'} text={'Logg inn'} placement="before" />
-  </TopStripe>
   <TopBanner
     external
+    topStripe={
+      <TopStripe>
+        <Link
+          path={'#main-content-id'}
+          text={'Hopp til hovedinnhold'}
+          skipLink
+        />
+        <Link
+          path={'https://www.skatteetaten.no/kontakt/'}
+          text={'Kontakt oss'}
+          placement="before"
+        />
+        <TopStripeMenu
+          closeMenuAriaLabel="Lukk endre skriftstørrelse"
+          title={'Endre skriftstørrelse'}
+          showOnMobile={false}
+          contentIsMenu={false}
+        >
+          <div style={{ fontSize: '24px', marginTop: '8px' }}>
+            Hold Ctrl-tasten nede (Cmd-tasten på Mac). Trykk på + for å
+            forstørre eller - for å forminske.
+          </div>
+        </TopStripeMenu>
+        <LanguagePicker
+          selectedLanguage={language}
+          setLanguage={setLanguage}
+          showOnMobile={true}
+          showSami={true}
+        />
+
+        <Link path={'#link'} text={'Logg inn'} placement="before" />
+      </TopStripe>
+    }
     title={'Side for publikum'}
     homeText={'Tilbake til skatteetaten.no'}
   />
