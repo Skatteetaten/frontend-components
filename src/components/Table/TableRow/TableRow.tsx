@@ -264,8 +264,7 @@ export const TableRow = <P extends object>(props: TableRowProps<P>) => {
             <tr
               key={rowIndex}
               className={classnames('expandableRow-open', {
-                separator:
-                  showRowSeparator && !isExpandableRowOpen && data['children'],
+                separator: showRowSeparator,
               })}
             >
               {expandIconPlacement === 'before' && (
@@ -293,7 +292,7 @@ export const TableRow = <P extends object>(props: TableRowProps<P>) => {
         ) : (
           <tr
             key={rowIndex}
-            className={classnames({
+            className={classnames('expandableRow', {
               clickable: openEditableOnRowClick,
               separator:
                 showRowSeparator && !isExpandableRowOpen && !data['children'],

@@ -174,6 +174,12 @@ export const getClassNames = (props) => {
         '.editableRow-open': {
           display: 'table-row',
         },
+        '.expandableRow': {
+          div: {
+            alignItems: 'start',
+            marginTop: '16px',
+          },
+        },
         '.expandableRow-open .is-closed, .expandableRow-open td': {
           borderBottom: 'none',
           div: {
