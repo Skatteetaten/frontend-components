@@ -36,7 +36,7 @@ export const getHeader = (
     columns.map((key) => {
       if (!key.name) {
         // Når kolonnetittel er tom skal ikke kolonnen ha <th />
-        return <td className={'emptyTd'} />;
+        return <td key={key.fieldName} className={'emptyTd'} />;
       }
       if (key.sortable) {
         const isSorted = sort.columnFieldName === key.fieldName;

@@ -4,7 +4,7 @@ import { getTheme } from '@uifabric/styling';
 import { FontWeights, FontSizes, PaletteProps } from '../utils';
 
 export const getClassNames = (props) => {
-  const { fullWidth, compactTable } = props;
+  const { fullWidth, compactTable, columns } = props;
   const palette = getTheme().palette as PaletteProps;
 
   return mergeStyles([
@@ -191,11 +191,12 @@ export const getClassNames = (props) => {
           borderBottom: `2px solid ${palette.skeColor.blackAlt}`,
         },
         '.expandableContent': {
-          marginTop: '40px',
-          width: 'max-content',
           padding: '0 0 12px 62px',
           '>div': {
             overflowX: 'initial',
+          },
+          table: {
+            width: `calc(${columns.length} * 97px)`,
           },
         },
       },
