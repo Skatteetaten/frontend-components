@@ -30,6 +30,9 @@ export const getClassNames = (props) => {
               padding: 12,
               fontSize: compactTable ? FontSizes.small : 'inherit',
             },
+            'td.editableCell': {
+              padding: 0,
+            },
             tr: {
               height: '100%',
               verticalAlign: 'middle',
@@ -158,8 +161,11 @@ export const getClassNames = (props) => {
             },
           },
         },
+        '.expandButton': {
+          marginTop: '16px',
+        },
         '.expandCell': {
-          maxWidth: 72,
+          maxWidth: 50,
           maxHeight: 50,
         },
         '.editableRow': {
@@ -168,13 +174,20 @@ export const getClassNames = (props) => {
         '.editableRow-open': {
           display: 'table-row',
         },
+        '.expandableRow-open .is-closed, .expandableRow-open td': {
+          borderBottom: 'none',
+          div: {
+            alignItems: 'start',
+            marginTop: '16px',
+          },
+        },
         '.emptyTd': {
           borderBottom: `2px solid ${palette.skeColor.blackAlt}`,
         },
         '.expandableContent': {
-          boxSizing: 'border-box',
-          padding: '0 0 12px 96px',
-          width: '100%',
+          marginTop: '40px',
+          width: 'max-content',
+          padding: '0 0 12px 62px',
         },
       },
     },

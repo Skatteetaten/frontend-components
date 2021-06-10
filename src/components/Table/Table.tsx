@@ -1,5 +1,5 @@
 import classnames from 'classnames';
-import React from 'react';
+import React, { useState } from 'react';
 import { getClassNames } from './Table.classNames';
 import { t, generateId, getSrOnlyStyle } from '../utils';
 import { Icon } from '../Icon';
@@ -112,16 +112,14 @@ export const Table = <P extends object>(props: TableProps<P>) => {
 
   const wrapperRef = React.useRef<HTMLDivElement>(null);
   const tableRef = React.useRef<HTMLDivElement>(null);
-  const [tableIsScrollable, setTableIsScrollable] = React.useState<boolean>(
-    false
-  );
-  const [openEditableRowIndex, setOpenEditableRowIndex] = React.useState<
+  const [tableIsScrollable, setTableIsScrollable] = useState<boolean>(false);
+  const [openEditableRowIndex, setOpenEditableRowIndex] = useState<
     number | undefined
   >(externalOpenEditableRowIndex);
-  const [openExpandableRowIndex, setOpenExpandableIndex] = React.useState<
+  const [openExpandableRowIndex, setOpenExpandableIndex] = useState<
     number | undefined
   >();
-  const [sort, setSort] = React.useState<{
+  const [sort, setSort] = useState<{
     ascending: boolean;
     columnFieldName: string;
   }>({ ascending: false, columnFieldName: '' });
