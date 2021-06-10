@@ -161,7 +161,7 @@ export const getClassNames = (props) => {
             },
           },
         },
-        '.expandButton': {
+        '.expandButton-open': {
           marginTop: '16px',
         },
         '.expandCell': {
@@ -194,6 +194,9 @@ export const getClassNames = (props) => {
           marginTop: '40px',
           width: 'max-content',
           padding: '0 0 12px 62px',
+          '>div': {
+            overflowX: 'initial',
+          },
         },
       },
     },

@@ -128,7 +128,9 @@ export const TableRow = <P extends object>(props: TableRowProps<P>) => {
     return (
       <td ref={expandCollapseCellRef} className={'expandCell'}>
         <IconButton
-          className={'expandButton'}
+          className={classnames('expandButton', {
+            'expandButton-open': isExpandableRowOpen,
+          })}
           onClick={() => {
             if (btnProps.open) {
               onCloseRow();
