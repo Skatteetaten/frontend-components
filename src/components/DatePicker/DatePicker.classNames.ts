@@ -68,7 +68,6 @@ export const getCalendarClassNames = (props: DatePickerProps) => {
       },
       '& .ms-DatePicker-goToday': {
         right: '10px',
-        color: palette.skeColor.blue,
       },
       '& .ms-DatePicker-day--highlighted': {
         backgroundColor: palette.skeColor.lightBlue,
