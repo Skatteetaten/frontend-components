@@ -13,7 +13,7 @@ def config = [
     createBuildEnvs        : { props -> "REACT_APP_BUILD_VERSION=${props.version}" },
     npmjs                    : [
       publish              : true,
-      prepareCmd           : "build:copy-files-external"
+      prepareCmd           : "run build:copy-files-external"
     ],
     github                 : [
       enabled              : true,
