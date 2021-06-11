@@ -1,7 +1,7 @@
 #!/usr/bin/env groovy
 
 def config = [
-    scriptVersion          : 'v7',
+    scriptVersion          : 'feature/AOS-5615-Automatisere-publisering-av-Designsystemet-til-npmjs',
     iqOrganizationName     : 'Team AOS',
     pipelineScript         : 'https://git.aurora.skead.no/scm/ao/aurora-pipeline-scripts.git',
     sonarQube              : true,
@@ -11,6 +11,10 @@ def config = [
     nodeVersion            : '12',
     versionStrategy        : [[ branch : 'master', versionHint:'4' ]],
     createBuildEnvs        : { props -> "REACT_APP_BUILD_VERSION=${props.version}" },
+    npm                    : [
+      publish              : true,
+      prepareCmd           : "build:copy-files-external"
+    ]
     github                 : [
       enabled              : true,
       push                 : env.BRANCH_NAME == "master",

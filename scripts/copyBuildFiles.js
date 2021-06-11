@@ -21,6 +21,15 @@ files.forEach((file) => {
   console.log(`Copied ${file} to ${filePath}`);
 });
 
+const myArgs = process.argv.slice(2);
+const isExternal = myArgs[0] === 'EXTERNAL';
+
+if (isExternal) {
+  const npmrcPath = resolve(libPath, '.npmrc');
+  writeFileSync(npmrcPath, '//registry.npmjs.org/:_authToken=${NPM_TOKEN}');
+  console.log(`Created .npmrc in ${npmrcPath}`);
+}
+
 const pkgjson = readFileSync(resolve(__dirname, '../package.json'), 'utf8');
 const {
   name,
@@ -45,7 +54,7 @@ const minimalPackage = {
   groupId,
   author,
   version,
-  publishConfig,
+  publishConfig: isExternal ? undefined : publishConfig,
   description,
   main,
   types,
