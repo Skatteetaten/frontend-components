@@ -1,3 +1,16 @@
+### **v.4.1.1 - 11.06.2021**
+
+- TopBanner: now supports TopStripe as a prop, and therefore rendered inside the header-element. (Accessibility improvement)
+- DatePicker: Fixes a styling bug where calendar dates overlaped "Today-button", and improved contrast on month-elements.
+- LanguagePicker now changes the langauge of the whole page.
+- Input fields now has a more consistent look when disabled
+- Link: Changed font weight from bold to medium, and updated documentation
+- Patterns: New patterns for text and single page application. Page layout pattern updated with accessibility improvements.
+- RadioButtonGroup: Ability to change label size
+- Table: Fixed an accessiblity issue where the expand rows where not read in correct order by screen readers.
+- Updated browser stats; IE11 removed from list since usage has been less than 2 % for a longer period.
+- Updated i18next dependency
+
 ### **v.4.1.0 - 10.05.2021**
 
 - Greatly reduced bundle size! Typescript is now compiled to es modules instead of commonjs in /lib. This means that the building-pipeline must support 'es import'-statements, not just 'require' statements. Note that you may also have to configure jest-testing, see [Kom i gang for utviklere](#section-kom-i-gang-for-utviklere).
