@@ -199,6 +199,10 @@ export const getClassNames = (props) => {
             width: `calc(${columns.length} * 97px)`,
           },
         },
+        '.sum': {
+          textAlign: 'end',
+          padding: '12px',
+        },
       },
     },
   ]);

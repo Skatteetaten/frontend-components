@@ -33,6 +33,7 @@ export interface TableRowProps<P> {
   tableId: string;
   showRowSeparators: boolean;
   compactTable: boolean;
+  sum: { text: string; colspan: number; total: number | string } | undefined;
 }
 
 /**

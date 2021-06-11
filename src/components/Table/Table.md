@@ -323,7 +323,6 @@ const expandableContent = (data, close, rowIndex) => (
       { name: 'Fødselsnr', fieldName: 'fnr' },
       { name: 'Beskrivelse', fieldName: 'beskrivelse' },
     ]}
-    fullWidth
   />
 );
 
@@ -668,6 +667,7 @@ const data = [
   columns={columns}
   caption={'Eksempel med sammenslåtte rader'}
   hideCaption={true}
+  sum={{ text: 'sum', colspan: 4, total: '30 500' }}
 />;
 ```
 

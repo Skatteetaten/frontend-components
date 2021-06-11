@@ -110,6 +110,7 @@ export const Table = <P extends object>(props: TableProps<P>) => {
     caption = null,
     hideCaption,
     openEditableRowIndex: externalOpenEditableRowIndex,
+    sum,
   } = props;
   const genratedId = generateId();
   const mainId = id ? id : 'table-' + genratedId;
@@ -201,6 +202,7 @@ export const Table = <P extends object>(props: TableProps<P>) => {
           tableId={mainId}
           showRowSeparators={showRowSeparators}
           compactTable={compactTable}
+          sum={sum}
         />
       );
     });
@@ -245,7 +247,17 @@ export const Table = <P extends object>(props: TableProps<P>) => {
             {!tableIsScrollable && expandIconPlacement !== 'before' && emptyTd}
           </tr>
         </thead>
-        <tbody>{getRowData()}</tbody>
+        <tbody>
+          {getRowData()}
+          {sum && (
+            <tr>
+              <th colSpan={sum.colspan} scope="row" className={'sum'}>
+                {sum.text}
+              </th>
+              <td className={'sum'}>{sum.total}</td>
+            </tr>
+          )}
+        </tbody>
       </table>
       {children}
     </div>
