@@ -14,7 +14,7 @@ def config = [
     npm                    : [
       publish              : true,
       prepareCmd           : "build:copy-files-external"
-    ]
+    ],
     github                 : [
       enabled              : true,
       push                 : env.BRANCH_NAME == "master",
