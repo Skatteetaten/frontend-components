@@ -255,6 +255,8 @@ export const Table = <P extends object>(props: TableProps<P>) => {
                 {sum.text}
               </th>
               <td className={'sum'}>{sum.total}</td>
+              {editableRows && <td />}
+              {expandableRows && expandIconPlacement !== 'before' && <td />}
             </tr>
           )}
         </tbody>
