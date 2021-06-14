@@ -12,7 +12,8 @@ def config = [
     versionStrategy        : [[ branch : 'master', versionHint:'4' ]],
     createBuildEnvs        : { props -> "REACT_APP_BUILD_VERSION=${props.version}" },
     npmjs                    : [
-      publish              : true
+      publish              : true,
+      prepareCmd           : "run build:copy-files-external"
     ],
     github                 : [
       enabled              : true,
