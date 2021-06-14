@@ -56,6 +56,31 @@ function getTextFieldStyles(props: DatePickerProps) {
   }
 }
 
+export const getCalendarClassNames = (props: DatePickerProps) => {
+  const palette = getTheme().palette as PaletteProps;
+  return mergeStyles({
+    displayName: 'SkeCalendar',
+    color: palette.skeColor.blackAlt,
+
+    selectors: {
+      '& .ms-DatePicker-monthOption:hover': {
+        color: `${palette.skeColor.blackAlt} !important`,
+      },
+      '& .ms-DatePicker-goToday': {
+        right: '10px',
+      },
+      '& .ms-DatePicker-day--highlighted': {
+        backgroundColor: palette.skeColor.lightBlue,
+        color: palette.skeColor.blackAlt,
+      },
+      '& .ms-DatePicker-day--today': {
+        backgroundColor: palette.skeColor.lightBlue,
+        color: palette.skeColor.blackAlt,
+      },
+    },
+  });
+};
+
 export const getClassNames = (props: DatePickerProps) => {
   const { errorMessage, readonlyMode } = props;
   const palette = getTheme().palette as PaletteProps;
@@ -129,6 +154,9 @@ export const getClassNames = (props: DatePickerProps) => {
       '& .ms-TextField.is-active .ms-TextField-fieldGroup': errorMessage && {
         outlineColor: palette.skeColor.blue,
         borderColor: palette.skeColor.blue,
+      },
+      '& .ms-DatePicker-goToday ': {
+        right: '14px;',
       },
       ...getFieldTypeStyles(props),
       ...getTextFieldStyles(props),

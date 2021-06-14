@@ -12,7 +12,7 @@ import {
 import { FirstWeekOfYear } from '@fluentui/react';
 import { generateId } from '../utils';
 import { LabelWithCallout } from '../LabelWithCallout';
-import { getClassNames } from './DatePicker.classNames';
+import { getClassNames, getCalendarClassNames } from './DatePicker.classNames';
 import { DatePickerProps } from './DatePicker.types';
 
 const DEFAULT_DATE_FORMAT = 'DD.MM.YYYY';
@@ -153,6 +153,9 @@ export const DatePicker: React.FC<DatePickerProps> = (
         )}
         componentRef={(ref) => {
           datePicker.current = ref as DatePickerBase;
+        }}
+        calloutProps={{
+          className: getCalendarClassNames(props),
         }}
         disabled={readOnly ? true : rest.disabled}
         onBlur={onBlur}
