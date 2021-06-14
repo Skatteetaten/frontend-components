@@ -1,7 +1,7 @@
 #!/usr/bin/env groovy
 
 def config = [
-    scriptVersion          : 'feature/AOS-5615-Automatisere-publisering-av-Designsystemet-til-npmjs',
+    scriptVersion          : 'v7',
     iqOrganizationName     : 'Team AOS',
     pipelineScript         : 'https://git.aurora.skead.no/scm/ao/aurora-pipeline-scripts.git',
     sonarQube              : true,
