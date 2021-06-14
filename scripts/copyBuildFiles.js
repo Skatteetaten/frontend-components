@@ -25,11 +25,8 @@ const myArgs = process.argv.slice(2);
 const isExternal = myArgs[0] === 'EXTERNAL';
 
 if (isExternal) {
-  const npmrcPath = resolve('.npmrc');
-  writeFileSync(
-    npmrcPath,
-    '//registry.npmjs.org/:_authToken=${NPM_TOKEN}\nsave-exact=true\nscripts-prepend-node-path=true\n'
-  );
+  const npmrcPath = resolve(libPath, '.npmrc');
+  writeFileSync(npmrcPath, '//registry.npmjs.org/:_authToken=${NPM_TOKEN}');
   console.log(`updated .npmrc with external publish config`);
 }
 
