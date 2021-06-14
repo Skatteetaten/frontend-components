@@ -1,6 +1,6 @@
 **Språkvelger i publikumsløsninger**
 
-For å velge mellom norsk bokmål, nynorsk, englesk og samisk i publikumsløsninger.
+For å velge mellom norsk bokmål, nynorsk, engelsk og samisk i publikumsløsninger.
 
 ```js
 import { useState } from 'react';
