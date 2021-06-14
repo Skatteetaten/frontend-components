@@ -267,7 +267,10 @@ export const TableRow = <P extends object>(props: TableRowProps<P>) => {
             <tr
               key={rowIndex}
               className={classnames('expandableRow-open', {
-                separator: showRowSeparator,
+                separator:
+                  showRowSeparator &&
+                  (expandIconPlacement === 'before' ||
+                    (expandIconPlacement === 'after' && !isExpandableRowOpen)),
               })}
             >
               {expandIconPlacement === 'before' && (
@@ -282,13 +285,15 @@ export const TableRow = <P extends object>(props: TableRowProps<P>) => {
               <tr
                 key={rowIndex + 'expanded'}
                 className={classnames('expandableRow-open', {
-                  separator:
-                    showRowSeparator &&
-                    !isExpandableRowOpen &&
-                    data['children'],
+                  separator: showRowSeparator,
                 })}
               >
-                <td colSpan={numberOfColumns}>{expandableCellContent()}</td>
+                <td
+                  colSpan={numberOfColumns}
+                  className={'expandableContent-after'}
+                >
+                  {expandableCellContent()}
+                </td>
               </tr>
             )}
           </>

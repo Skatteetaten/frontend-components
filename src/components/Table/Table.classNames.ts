@@ -191,12 +191,18 @@ export const getClassNames = (props) => {
           borderBottom: `2px solid ${palette.skeColor.blackAlt}`,
         },
         '.expandableContent': {
-          padding: '0 0 12px 62px',
-          '>div': {
+          padding: '0 0 12px 96px',
+          div: {
             overflowX: 'initial',
           },
           table: {
-            width: `calc(${columns.length} * 97px)`,
+            width: `calc(${columns.length} * 91px)`,
+          },
+        },
+        '.expandableContent-after': {
+          padding: '0 0 12px 46px',
+          div: {
+            overflowX: 'initial',
           },
         },
         '.sum': {
