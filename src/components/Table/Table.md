@@ -27,12 +27,7 @@ const tableStyle = {
   marginTop: 20,
 };
 
-const caption = (
-  <LabelWithCallout
-    label={'Månedsoversikt'}
-    help={'Oversikt over beløp og dekningsgrad i perioden.'}
-  />
-);
+const caption = <LabelWithCallout label={'Månedsoversikt'} />;
 
 const editableContent = (data, close, rowIndex) => (
   <div style={wrapperStyle}>
