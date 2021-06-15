@@ -22,7 +22,7 @@ files.forEach((file) => {
 });
 
 const myArgs = process.argv.slice(2);
-const isExternal = myArgs[0] === 'EXTERNAL';
+const isExternal = myArgs.length > 0 && myArgs[0] === 'EXTERNAL';
 
 if (isExternal) {
   const npmrcPath = resolve(libPath, '.npmrc');
