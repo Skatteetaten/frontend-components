@@ -5,7 +5,7 @@ Som utvikler, samarbeider du med designer for å best mulig sikre at dere følge
 ## Legg til komponentbiblioteket i prosjektet:
 
 ```bash noeditor
-npm config set registry https://nexus-npm.aurora.skead.no/npm/repository/npm-all
+npm config set registry https://nexus.sits.no/repository/npm-all/
 npm install @skatteetaten/frontend-components
 ```
 
