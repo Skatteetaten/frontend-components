@@ -4,7 +4,7 @@ import { getTheme } from '@uifabric/styling';
 import { FontWeights, FontSizes, PaletteProps } from '../utils';
 
 export const getClassNames = (props) => {
-  const { fullWidth, compactTable, columns } = props;
+  const { fullWidth, compactTable } = props;
   const palette = getTheme().palette as PaletteProps;
 
   return mergeStyles([
@@ -87,9 +87,6 @@ export const getClassNames = (props) => {
             },
             '.cellContent.clickable:hover': {
               cursor: 'pointer',
-            },
-            'td.expandableCell td, td.expandableCell .is-closed': {
-              borderBottom: 'none',
             },
             'th.hideOnMobile, td.hideOnMobile': {
               display: 'none',
@@ -176,31 +173,33 @@ export const getClassNames = (props) => {
         },
         '.expandableRow': {
           div: {
-            alignItems: 'start',
-            marginTop: '16px',
+            alignItems: compactTable ? 'center' : 'start',
+            marginTop: compactTable ? 0 : '16px',
           },
         },
         '.expandableRow-open .is-closed, .expandableRow-open td': {
           borderBottom: 'none',
+          verticalAlign: 'top',
           div: {
             alignItems: 'start',
-            marginTop: '16px',
+            marginTop: compactTable ? 0 : '16px',
+            height: 'auto',
           },
         },
         '.emptyTd': {
           borderBottom: `2px solid ${palette.skeColor.blackAlt}`,
         },
         '.expandableContent': {
-          padding: '0 0 12px 96px',
+          padding: compactTable ? '0 32px 4px 32px' : '0 52px 8px 52px',
           div: {
             overflowX: 'initial',
           },
           table: {
-            width: `calc(${columns.length} * 91px)`,
+            width: '100%',
           },
         },
         '.expandableContent-after': {
-          padding: '0 0 12px 46px',
+          padding: compactTable ? '0 32px 4px 32px' : '0 52px 8px 52px',
           div: {
             overflowX: 'initial',
           },

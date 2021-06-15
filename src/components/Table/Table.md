@@ -218,7 +218,7 @@ const data = [
 Ekspanderbare rader
 
 ```js
-import { Table, ActionButton } from '@skatteetaten/frontend-components';
+import { Grid, Table, ActionButton } from '@skatteetaten/frontend-components';
 
 const columns = [
   {
@@ -315,15 +315,24 @@ const data = [
   },
 ];
 const expandableContent = (data, close, rowIndex) => (
-  <Table
-    data={data.ansatte}
-    showRowSeparators={false}
-    columns={[
-      { name: 'Ansatt', fieldName: 'navn' },
-      { name: 'Fødselsnr', fieldName: 'fnr' },
-      { name: 'Beskrivelse', fieldName: 'beskrivelse' },
-    ]}
-  />
+  <div style={{ width: 'max-content' }}>
+    <Grid>
+      <Grid.Row>
+        <Grid.Col xl={12} sm={8}>
+          <Table
+            data={data.ansatte}
+            showRowSeparators={false}
+            columns={[
+              { name: 'Ansatt', fieldName: 'navn' },
+              { name: 'Fødselsnr', fieldName: 'fnr' },
+              { name: 'Beskrivelse', fieldName: 'beskrivelse' },
+            ]}
+            fullWidth
+          />
+        </Grid.Col>
+      </Grid.Row>
+    </Grid>
+  </div>
 );
 
 <Table
