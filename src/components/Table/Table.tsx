@@ -91,6 +91,30 @@ export const getHeader = (
   );
 };
 
+const SumRow = (props: {
+  columns: Array<any> | undefined;
+  sum: { text: string; colspan: number; total: number | string };
+  editableRows: boolean | Array<number> | undefined;
+  expandableRows: boolean | undefined;
+  expandIconPlacement: 'after' | 'before' | undefined;
+}) => {
+  const columns = props.columns
+    ? props.columns.length - props.sum.colspan - 1
+    : 0;
+  const emptyCells = Array.from(Array(columns).keys());
+  return (
+    <tr>
+      <th colSpan={props.sum.colspan} scope="row" className={'sum'}>
+        {props.sum.text}
+      </th>
+      <td className={'sum'}>{props.sum.total}</td>
+      {props.editableRows && <td />}
+      {props.expandableRows && props.expandIconPlacement === 'after' && <td />}
+      {!!emptyCells.length && emptyCells.map(() => <td />)}
+    </tr>
+  );
+};
+
 /**
  * @visibleName Table (Tabell)
  */
@@ -250,14 +274,13 @@ export const Table = <P extends object>(props: TableProps<P>) => {
         <tbody>
           {getRowData()}
           {sum && (
-            <tr>
-              <th colSpan={sum.colspan} scope="row" className={'sum'}>
-                {sum.text}
-              </th>
-              <td className={'sum'}>{sum.total}</td>
-              {editableRows && <td />}
-              {expandableRows && expandIconPlacement !== 'before' && <td />}
-            </tr>
+            <SumRow
+              columns={props.columns}
+              editableRows={editableRows}
+              expandableRows={expandableRows}
+              expandIconPlacement={expandIconPlacement}
+              sum={sum}
+            />
           )}
         </tbody>
       </table>
