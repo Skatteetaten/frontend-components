@@ -158,9 +158,6 @@ export const getClassNames = (props) => {
             },
           },
         },
-        '.expandButton-open': {
-          marginTop: '16px',
-        },
         '.expandCell': {
           maxWidth: 50,
           maxHeight: 50,
@@ -171,18 +168,12 @@ export const getClassNames = (props) => {
         '.editableRow-open': {
           display: 'table-row',
         },
-        '.expandableRow': {
-          div: {
-            alignItems: compactTable ? 'center' : 'start',
-            marginTop: compactTable ? 0 : '16px',
-          },
-        },
         '.expandableRow-open .is-closed, .expandableRow-open td': {
           borderBottom: 'none',
           verticalAlign: 'top',
           div: {
             alignItems: 'start',
-            marginTop: compactTable ? 0 : '16px',
+            marginTop: compactTable ? 0 : '2px',
             height: 'auto',
           },
         },
