@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React, { useEffect } from 'react';
 import { IconButton } from '../../IconButton';
 import classnames from 'classnames';
 import { t } from '../../utils';
@@ -11,7 +11,7 @@ export interface TableRowProps<P> {
     onCloseRow: () => void,
     rowIndex: number
   ) => React.ReactNode;
-  editableRows: boolean | undefined;
+  editableRows: boolean | Array<number> | undefined;
   expandableContent?: (
     data: P,
     onCloseRow: () => void,
@@ -33,6 +33,7 @@ export interface TableRowProps<P> {
   tableId: string;
   showRowSeparators: boolean;
   compactTable: boolean;
+  sum: { text: string; colspan: number; total: number | string } | undefined;
 }
 
 /**
@@ -72,13 +73,13 @@ export const TableRow = <P extends object>(props: TableRowProps<P>) => {
     openExpandableRowIndex
   );
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (openExpandableRowIndex !== undefined) {
       setFocusRow(openExpandableRowIndex);
     }
   }, [openExpandableRowIndex]);
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (focusRow === rowIndex && expandCollapseCellRef.current) {
       const knapp = expandCollapseCellRef.current
         .children[0] as HTMLButtonElement;
@@ -128,7 +129,9 @@ export const TableRow = <P extends object>(props: TableRowProps<P>) => {
     return (
       <td ref={expandCollapseCellRef} className={'expandCell'}>
         <IconButton
-          className={'expandButton'}
+          className={classnames('expandButton', {
+            'expandButton-open': isExpandableRowOpen,
+          })}
           onClick={() => {
             if (btnProps.open) {
               onCloseRow();
@@ -145,6 +148,9 @@ export const TableRow = <P extends object>(props: TableRowProps<P>) => {
           aria-controls={btnProps.open ? expandableContentId : undefined}
           type="button"
         />
+        {btnProps.open &&
+          expandIconPlacement === 'before' &&
+          expandableCellContent()}
       </td>
     );
   };
@@ -153,7 +159,13 @@ export const TableRow = <P extends object>(props: TableRowProps<P>) => {
     editableRow || expandableRows ? (
       <>
         {editableRow && (
-          <td className={classnames('separator')} rowSpan={childrenLength + 1}>
+          <td
+            className={classnames({
+              clickable: openEditableOnRowClick,
+              separator: showRowSeparator && !isExpandableRowOpen,
+            })}
+            rowSpan={childrenLength + 1}
+          >
             {editButton}
           </td>
         )}
@@ -200,11 +212,12 @@ export const TableRow = <P extends object>(props: TableRowProps<P>) => {
       if (cellIndex > 0) {
         return (
           <td
-            className={classnames(
-              !props.isEditableRowOpen ? 'is-closed' : '',
-              column.alignment,
-              column.hideOnMobile ? 'hideOnMobile' : ''
-            )}
+            className={classnames(column.alignment, {
+              'is-closed': !props.isEditableRowOpen,
+              hideOnMobile: column.hideOnMobile,
+              separator:
+                showRowSeparator && !isExpandableRowOpen && !data['children'],
+            })}
             key={tableId.concat(rowKey.toString(), '_', cellIndex.toString())}
           >
             {renderCellContent(rowData[column.fieldName], cellIndex, isChild)}
@@ -214,13 +227,11 @@ export const TableRow = <P extends object>(props: TableRowProps<P>) => {
         return (
           <th
             scope={'row'}
-            className={classnames(
-              !props.isEditableRowOpen ? 'is-closed' : '',
-              column.alignment,
-              column.hideOnMobile ? 'hideOnMobile' : '',
-              'tableRow',
-              'separator'
-            )}
+            className={classnames(column.alignment, 'tableRow', {
+              'is-closed': !props.isEditableRowOpen,
+              hideOnMobile: column.hideOnMobile,
+              separator: showRowSeparator && !isExpandableRowOpen,
+            })}
             id={tableId.concat(rowKey.toString(), '_', cellIndex.toString())}
             key={tableId.concat(rowKey.toString(), '_', cellIndex.toString())}
             rowSpan={childrenLength + 1}
@@ -250,50 +261,96 @@ export const TableRow = <P extends object>(props: TableRowProps<P>) => {
 
   return (
     <>
-      <tr
-        key={rowIndex}
-        className={classnames({
-          clickable: openEditableOnRowClick,
-          separator:
-            showRowSeparator && !isExpandableRowOpen && !data['children'],
-        })}
-      >
-        {actionButtonsBefore && actionButtons}
-        {renderRow(data, columns, rowIndex, false)}
-        {!actionButtonsBefore && actionButtons}
-        {showExtraCol && <td />}
-      </tr>
-      {isExpandableRowOpen && (
-        <tr
-          key={rowIndex + 'expanded'}
-          className={classnames({
-            'expandableRow-open': true,
-            separator: showRowSeparators && isExpandableRowOpen,
-          })}
-        >
-          <td colSpan={numberOfColumns}>{expandableCellContent()}</td>
-        </tr>
-      )}
-      {!isEditableRowOpen &&
-        !!data['children'] &&
-        childrenLength > 0 &&
-        data['children'].map((child, childIndex) => {
-          return (
+      {expandableRows ? (
+        isExpandableRowOpen ? (
+          <>
             <tr
-              key={rowIndex + 'child' + childIndex}
-              className={classnames({
+              key={rowIndex}
+              className={classnames('expandableRow-open', {
                 separator:
                   showRowSeparator &&
-                  childIndex === data['children'].length - 1,
+                  (expandIconPlacement === 'before' ||
+                    (expandIconPlacement === 'after' && !isExpandableRowOpen)),
               })}
             >
-              {actionButtonsBefore && <td />}
-              {renderRow(child, columns, childIndex, true)}
-              {!actionButtonsBefore && <td />}
-              {showExtraCol && <td />}
+              {expandIconPlacement === 'before' && (
+                <ExpandCollapseButton open={true} />
+              )}
+              {renderRow(data, columns, rowIndex)}
+              {expandIconPlacement !== 'before' && (
+                <ExpandCollapseButton open={true} />
+              )}
             </tr>
-          );
-        })}
+            {expandIconPlacement !== 'before' && (
+              <tr
+                key={rowIndex + 'expanded'}
+                className={classnames('expandableRow-open', {
+                  separator: showRowSeparator,
+                })}
+              >
+                <td
+                  colSpan={numberOfColumns}
+                  className={'expandableContent-after'}
+                >
+                  {expandableCellContent()}
+                </td>
+              </tr>
+            )}
+          </>
+        ) : (
+          <tr
+            key={rowIndex}
+            className={classnames('expandableRow', {
+              clickable: openEditableOnRowClick,
+              separator:
+                showRowSeparator && !isExpandableRowOpen && !data['children'],
+            })}
+          >
+            {(tableHasScroll || expandIconPlacement === 'before') &&
+              actionButtons}
+            {renderRow(data, columns, rowIndex)}
+            {!tableHasScroll &&
+              expandIconPlacement !== 'before' &&
+              actionButtons}
+          </tr>
+        )
+      ) : (
+        <>
+          <tr
+            key={rowIndex}
+            className={classnames({
+              clickable: openEditableOnRowClick,
+              separator:
+                showRowSeparator && !isExpandableRowOpen && !data['children'],
+            })}
+          >
+            {actionButtonsBefore && actionButtons}
+            {renderRow(data, columns, rowIndex, false)}
+            {!actionButtonsBefore && actionButtons}
+            {showExtraCol && <td />}
+          </tr>
+          {!isEditableRowOpen &&
+            !!data['children'] &&
+            childrenLength > 0 &&
+            data['children'].map((child, childIndex) => {
+              return (
+                <tr
+                  key={rowIndex + 'child' + childIndex}
+                  className={classnames({
+                    separator:
+                      showRowSeparator &&
+                      childIndex === data['children'].length - 1,
+                  })}
+                >
+                  {actionButtonsBefore && <td />}
+                  {renderRow(child, columns, childIndex, true)}
+                  {!actionButtonsBefore && <td />}
+                  {showExtraCol && <td />}
+                </tr>
+              );
+            })}
+        </>
+      )}
     </>
   );
 };

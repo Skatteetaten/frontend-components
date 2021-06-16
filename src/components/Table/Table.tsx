@@ -1,5 +1,5 @@
 import classnames from 'classnames';
-import React from 'react';
+import React, { useState } from 'react';
 import { getClassNames } from './Table.classNames';
 import { t, generateId, getSrOnlyStyle } from '../utils';
 import { Icon } from '../Icon';
@@ -34,6 +34,10 @@ export const getHeader = (
   return (
     columns &&
     columns.map((key) => {
+      if (!key.name) {
+        // Når kolonnetittel er tom skal ikke kolonnen ha <th />
+        return <td key={key.fieldName} className={'emptyTd'} />;
+      }
       if (key.sortable) {
         const isSorted = sort.columnFieldName === key.fieldName;
         const isSortedAscending = sort.ascending;
@@ -87,6 +91,31 @@ export const getHeader = (
   );
 };
 
+const SumRow = (props: {
+  columns: Array<any> | undefined;
+  sum: { text: string; colspan: number; total: number | string };
+  editableRows: boolean | Array<number> | undefined;
+  expandableRows: boolean | undefined;
+  expandIconPlacement: 'after' | 'before' | undefined;
+}) => {
+  const columns = props.columns
+    ? props.columns.length - props.sum.colspan - 1
+    : 0;
+  const emptyCells = Array.from(Array(columns).keys());
+  let counter = 0;
+  return (
+    <tr>
+      <th colSpan={props.sum.colspan} scope="row" className={'sum'}>
+        {props.sum.text}
+      </th>
+      <td className={'sum'}>{props.sum.total}</td>
+      {props.editableRows && <td />}
+      {props.expandableRows && props.expandIconPlacement === 'after' && <td />}
+      {!!emptyCells.length && emptyCells.map(() => <td key={counter++} />)}
+    </tr>
+  );
+};
+
 /**
  * @visibleName Table (Tabell)
  */
@@ -106,22 +135,21 @@ export const Table = <P extends object>(props: TableProps<P>) => {
     caption = null,
     hideCaption,
     openEditableRowIndex: externalOpenEditableRowIndex,
+    sum,
   } = props;
   const genratedId = generateId();
   const mainId = id ? id : 'table-' + genratedId;
 
   const wrapperRef = React.useRef<HTMLDivElement>(null);
   const tableRef = React.useRef<HTMLDivElement>(null);
-  const [tableIsScrollable, setTableIsScrollable] = React.useState<boolean>(
-    false
-  );
-  const [openEditableRowIndex, setOpenEditableRowIndex] = React.useState<
+  const [tableIsScrollable, setTableIsScrollable] = useState<boolean>(false);
+  const [openEditableRowIndex, setOpenEditableRowIndex] = useState<
     number | undefined
   >(externalOpenEditableRowIndex);
-  const [openExpandableRowIndex, setOpenExpandableIndex] = React.useState<
+  const [openExpandableRowIndex, setOpenExpandableIndex] = useState<
     number | undefined
   >();
-  const [sort, setSort] = React.useState<{
+  const [sort, setSort] = useState<{
     ascending: boolean;
     columnFieldName: string;
   }>({ ascending: false, columnFieldName: '' });
@@ -199,6 +227,7 @@ export const Table = <P extends object>(props: TableProps<P>) => {
           tableId={mainId}
           showRowSeparators={showRowSeparators}
           compactTable={compactTable}
+          sum={sum}
         />
       );
     });
@@ -243,7 +272,18 @@ export const Table = <P extends object>(props: TableProps<P>) => {
             {!tableIsScrollable && expandIconPlacement !== 'before' && emptyTd}
           </tr>
         </thead>
-        <tbody>{getRowData()}</tbody>
+        <tbody>
+          {getRowData()}
+          {sum && (
+            <SumRow
+              columns={props.columns}
+              editableRows={editableRows}
+              expandableRows={expandableRows}
+              expandIconPlacement={expandIconPlacement}
+              sum={sum}
+            />
+          )}
+        </tbody>
       </table>
       {children}
     </div>

@@ -30,6 +30,9 @@ export const getClassNames = (props) => {
               padding: 12,
               fontSize: compactTable ? FontSizes.small : 'inherit',
             },
+            'td.editableCell': {
+              padding: 0,
+            },
             tr: {
               height: '100%',
               verticalAlign: 'middle',
@@ -84,9 +87,6 @@ export const getClassNames = (props) => {
             },
             '.cellContent.clickable:hover': {
               cursor: 'pointer',
-            },
-            'td.expandableCell td, td.expandableCell .is-closed': {
-              borderBottom: 'none',
             },
             'th.hideOnMobile, td.hideOnMobile': {
               display: 'none',
@@ -159,7 +159,7 @@ export const getClassNames = (props) => {
           },
         },
         '.expandCell': {
-          maxWidth: 72,
+          maxWidth: 50,
           maxHeight: 50,
         },
         '.editableRow': {
@@ -168,13 +168,36 @@ export const getClassNames = (props) => {
         '.editableRow-open': {
           display: 'table-row',
         },
+        '.expandableRow-open .is-closed, .expandableRow-open td': {
+          borderBottom: 'none',
+          verticalAlign: 'top',
+          div: {
+            alignItems: 'start',
+            marginTop: compactTable ? 0 : '2px',
+            height: 'auto',
+          },
+        },
         '.emptyTd': {
           borderBottom: `2px solid ${palette.skeColor.blackAlt}`,
         },
         '.expandableContent': {
-          boxSizing: 'border-box',
-          padding: '0 0 12px 96px',
-          width: '100%',
+          padding: compactTable ? '0 32px 4px 32px' : '0 52px 8px 52px',
+          div: {
+            overflowX: 'initial',
+          },
+          table: {
+            width: '100%',
+          },
+        },
+        '.expandableContent-after': {
+          padding: compactTable ? '0 32px 4px 32px' : '0 52px 8px 52px',
+          div: {
+            overflowX: 'initial',
+          },
+        },
+        '.sum': {
+          textAlign: 'end',
+          padding: '12px',
         },
       },
     },
