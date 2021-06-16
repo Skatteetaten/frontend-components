@@ -90,12 +90,20 @@ const links = [
 ```js noeditor uu
 <>
   <h3>Tips</h3>
-  <p>Denne seksjonen en foreløpig tom.</p>
+  <ul><li>Skal ha støtte for navigering med piltaster ned/opp i tillegg til tab.</li>
+<li>Kode for nettsidens hovedspråk, lang-attributt, må oppdateres i henhold til valgt språk.</li>
+<li>Når menyen lukkes, for eksempel ved valg av språk eller lukk-knappen, skal synlig tastaturfokus være på hovedvalget.</li></ul>
 
   <h3>Mest relevante WCAG-krav</h3>
-  <p>Denne seksjonen en foreløpig tom.</p>
+ <ul><li>2.4.3 A, Fokusrekkefølge</li>
+<li>3.1.1 A, Språk på siden</li>
+<li>4.1.2 A, Navn, rolle, verdi</li></ul>
 
   <h3>WAI-ARIA</h3>
-  <p>Denne seksjonen en foreløpig tom.</p>
+  <ul><li>Aria-hidden=true brukes for å skjule ikoner.</li>
+<li>Aria-expanded brukes på innhold som utvides/minimeres.</li>
+<li>Aria-haspopup=true brukes på interaktivt popup-element, typisk meny. Annonseres som meny av skjermleser, derfor ikke hensiktsmessig å bruke på vanlig utvidbar funksjonalitet som f.eks. Endre skriftstørrelse.</li>
+<li>Role=menu, menuitem brukes for å identifisere listeelementer som menyelementer.</li>
+<li>Aria-current=true brukes for å annonsere gjeldene valg (avhukning)</li></ul>
 </>
 ```

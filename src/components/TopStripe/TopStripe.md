@@ -339,9 +339,9 @@ const [language, setLanguage] = useState('nb');
       skriftstørrelse.
     </li>
     <li>
-      Aria-expanded, aria-haspopup, aria-controls, aria-labelledby, role=menu,
+       Aria-haspopup, role=menu,
       role=menuitem brukes på f.eks. på språkmenyen. Dette får skjermleser til å
-      "bytte" modus og trigge menynavigering.
+      "bytte" modus og trigge menynavigering. 
     </li>
     <li>Aria-hidden brukes for å skjule ikoner for skjermleser.</li>
   </ul>
