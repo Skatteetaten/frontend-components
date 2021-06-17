@@ -1,9 +1,9 @@
 {
   "files": {
-    "main.css": "/static/css/main.dc9a9f4d.chunk.css",
-    "main.js": "/build/main.54b24b4d.js",
-    "runtime-main.js": "/build/bundle.483fa668.js",
-    "build/2.498d1064.js": "/build/2.498d1064.js",
+    "main.css": "/static/css/main.ac061772.chunk.css",
+    "main.js": "/build/main.3154ceb1.js",
+    "runtime-main.js": "/build/bundle.3527ec54.js",
+    "build/2.db2c1762.js": "/build/2.db2c1762.js",
     "assets/png/Byggeklosser.png": "/assets/png/Byggeklosser.png",
     "assets/png/Byggeklosser_skisse.png": "/assets/png/Byggeklosser_skisse.png",
     "assets/png/designer.png": "/assets/png/designer.png",
@@ -26,19 +26,19 @@
     "assets/svg/ske-logo-intern-kopi.svg": "/assets/svg/ske-logo-intern-kopi.svg",
     "assets/svg/ske-logo-intern.svg": "/assets/svg/ske-logo-intern.svg",
     "assets/svg/ske-logo.svg": "/assets/svg/ske-logo.svg",
-    "build/2.498d1064.js.LICENSE.txt": "/build/2.498d1064.js.LICENSE.txt",
+    "build/2.db2c1762.js.LICENSE.txt": "/build/2.db2c1762.js.LICENSE.txt",
     "favicon.ico": "/favicon.ico",
     "index.html": "/index.html",
     "manifest.json": "/manifest.json",
-    "static/css/main.dc9a9f4d.chunk.css.map": "/static/css/main.dc9a9f4d.chunk.css.map",
+    "static/css/main.ac061772.chunk.css.map": "/static/css/main.ac061772.chunk.css.map",
     "static/media/EnglishFlag.91934228.svg": "/static/media/EnglishFlag.91934228.svg",
     "static/media/NorwegianFlag.36cf4a7f.svg": "/static/media/NorwegianFlag.36cf4a7f.svg",
     "static/media/SamiFlag.7996b238.svg": "/static/media/SamiFlag.7996b238.svg",
-    "static/media/SkeIconfont.6fbc805b.woff": "/static/media/SkeIconfont.6fbc805b.woff",
-    "static/media/SkeIconfont.746b1322.ttf": "/static/media/SkeIconfont.746b1322.ttf",
+    "static/media/SkeIconfont.5cb82ca9.woff": "/static/media/SkeIconfont.5cb82ca9.woff",
+    "static/media/SkeIconfont.795dc4c6.eot": "/static/media/SkeIconfont.795dc4c6.eot",
     "static/media/SkeIconfont.840af99b.svg": "/static/media/SkeIconfont.840af99b.svg",
-    "static/media/SkeIconfont.a4f638a5.eot": "/static/media/SkeIconfont.a4f638a5.eot",
-    "static/media/SkeIconfont.e6735bce.woff2": "/static/media/SkeIconfont.e6735bce.woff2",
+    "static/media/SkeIconfont.a342c87d.ttf": "/static/media/SkeIconfont.a342c87d.ttf",
+    "static/media/SkeIconfont.f6af47f6.woff2": "/static/media/SkeIconfont.f6af47f6.woff2",
     "static/media/footerDekor.416cfac2.svg": "/static/media/footerDekor.416cfac2.svg",
     "static/media/materialdesignicons-webfont.3584b5e5.eot": "/static/media/materialdesignicons-webfont.3584b5e5.eot",
     "static/media/materialdesignicons-webfont.3a6518ff.woff": "/static/media/materialdesignicons-webfont.3a6518ff.woff",
@@ -54,9 +54,9 @@
     "static/media/ske-logo.7f07b60a.svg": "/static/media/ske-logo.7f07b60a.svg"
   },
   "entrypoints": [
-    "build/bundle.483fa668.js",
-    "build/2.498d1064.js",
-    "static/css/main.dc9a9f4d.chunk.css",
-    "build/main.54b24b4d.js"
+    "build/bundle.3527ec54.js",
+    "build/2.db2c1762.js",
+    "static/css/main.ac061772.chunk.css",
+    "build/main.3154ceb1.js"
   ]
 }
