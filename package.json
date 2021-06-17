@@ -115,6 +115,7 @@
     "build:lib": "run-p build:types build:umds build:commonjs build:assets",
     "build:assets": "cpx \"./src/components/**/assets/**/*\" ./lib",
     "build:copy-files": "node scripts/copyBuildFiles.js",
+    "build:copy-files-external": "node scripts/copyBuildFiles.js EXTERNAL",
     "build:commonjs": "babel ./src/components --out-dir lib --extensions '.ts,.tsx' ",
     "build:umd-warnings": "rollup -c -m",
     "build:umds": "run-s build:umd build:umd-prod build:importmaps",
