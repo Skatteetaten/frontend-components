@@ -266,4 +266,25 @@ describe('Table komponent', () => {
     const tableRow = wrapper.find('TableRow');
     expect(tableRow.find('tr').length).toEqual(2);
   });
+  it('skal vise sum og opprette tomme <td> dersom kolonneheaderen er tom', () => {
+    const wrapper = oppsettMount({
+      data,
+      columns: [
+        ...columns,
+        {
+          name: '',
+          fieldName: 'empty1',
+        },
+        {
+          name: '',
+          fieldName: 'empty2',
+        },
+      ],
+      id: 'tableid',
+      className: 'tableClass',
+      sum: { text: 'Sum:', colspan: 3, total: '4555' },
+    });
+    expect(wrapper.find('SumRow').text()).toEqual('Sum:4555');
+    expect(wrapper.find('SumRow').find('td').length).toEqual(3);
+  });
 });

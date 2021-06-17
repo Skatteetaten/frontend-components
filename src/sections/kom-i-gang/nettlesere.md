@@ -1,11 +1,10 @@
-Designsystemet i Skatteetaten støtter nettlesere som blir brukt av mer enn 2 % på skatteetaten.no. Vi støtter nå følgende nettlesere (oppdatert august 2020):
+Designsystemet i Skatteetaten støtter nettlesere som blir brukt av mer enn 2 % på skatteetaten.no. Vi støtter nå følgende nettlesere (oppdatert juni 2021):
 
-- Chrome (ca. 43,4 %)
-- Safari (ca. 36,1 %)
-- Edge (ca. 6,5 %)
-- Internet Explorer 11 (ca. 4,8 %)
-- Samsung Internet (ca. 3,8 %)
-- Firefox (ca. 2,7 %)
+- Chrome (ca. 46,8 %)
+- Safari (ca. 34,7 %)
+- Edge (ca. 8,4 %)
+- Samsung Internet (ca. 4,2 %)
+- Firefox (ca. 2,5 %)
 
 Vi bør ikke uten videre anta at brukerne våre vet hva en nettleser er eller vet hvordan man installerer en. Det er også en mulighet at de ikke kan oppgradere på grunn av plattform eller fordi de bruker en løsning som krever en bestemt nettleser.
 
@@ -37,22 +36,14 @@ import {
         <div>
           Du bruker en utdatert nettleser, og vil kunne oppleve feil eller
           mangler ved løsningen. Vi anbefaler at du
-          <a href="#" style={{ color: '#1362ae' }}>
-            oppdaterer til en annen nettleser
-          </a>.
+          <Link
+            path={'https://www.skatteetaten.no/system/nettlesersjekk2/'}
+            text={'oppdaterer til en annen nettleser'}
+          />.
         </div>
       </MessageBar>
-
-      <p>
-        Hvis bruker har en nettleser som snart vil miste støtten (under 3 %):
-      </p>
-      <MessageBar onDismiss={() => null}>
-        Du bruker en nettleser vi er i ferd med å fase ut. Vi anbefaler at du
-        <a href="#" style={{ color: '#1362ae' }}>
-          oppdaterer til en annen nettleser
-        </a> snart.
-      </MessageBar>
     </AccordionItem>
+
     <AccordionItem
       toggleContent
       toggleButtonText={'Gi beskjed når nettleser er uten JavaScript'}

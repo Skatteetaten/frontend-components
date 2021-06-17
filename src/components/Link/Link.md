@@ -1,75 +1,143 @@
 **Lenke til filer eller nettsider**
 
+Filer:
+
 ```js
 import { Link } from '@skatteetaten/frontend-components';
 
 <div className="ExampleSpacing8">
   <Link
     path={'#link'}
-    text={'Last ned dokumentene'}
-    icon={'Download'}
+    text={'Rettledning til RF-1167 Næringsoppgave 2 for 2020 (pdf)'}
     placement="before"
   />
-  <Link
-    path={'#link'}
-    text={'Gå til oversikt'}
-    icon={'ArrowForward'}
-    placement="before"
-  />
-  <Link
-    path={'#link'}
-    text={'Åpne i nytt vindu'}
-    icon={'OpenInNew'}
-    openInNew={true}
-    placement="after"
-  />
-  <br />
-  <br />
-  <p>
-    Det er også mulig å bruke en
-    <Link path={'#link'} text={'link'} /> inni et avsnitt med tekst.
-  </p>
 </div>;
 ```
 
+Eksterne sider:
+
+```js
+import { Link } from '@skatteetaten/frontend-components';
+
+<div className="ExampleSpacing8">
+  <Link
+    path={'#link'}
+    text={'Kontakte Statens Vegvesen'}
+    icon={'OpenInNew'}
+    placement="after"
+  />
+  <br /> <br />
+  <Link
+    path={'#link'}
+    text={'Brukerveiledning for bilforhandlere'}
+    icon={'OpenInNew'}
+    placement="after"
+  />
+</div>;
+```
+
+Åpne i ny fane:
+
+```js
+import { Link } from '@skatteetaten/frontend-components';
+<div className="ExampleSpacing8">
+  <Link
+    path={'https://www.skatteetaten.no/rettskilder/type/lover-og-forskrifter/'}
+    text={'Se lover og forskrifter (åpnes i ny fane)'}
+    openInNew={true}
+    placement="after"
+  />
+</div>;
+```
+
+Løpende tekst:
+
+```js
+import { Link } from '@skatteetaten/frontend-components';
+<p>
+  Det er også mulig å bruke en
+  <Link path={'#link'} text={'link'} /> inni et avsnitt med tekst.
+</p>;
+```
+
 ```js noeditor beskrivelse
+import LinkGroup from '@skatteetaten/frontend-components/LinkGroup';
+const links = [
+  {
+    text: 'ActionButton (Aksjonsknapp)',
+    path: '#actionbutton',
+  },
+  {
+    text: 'Button (Knapp)',
+    path: '#button',
+  },
+  ,
+  {
+    text: 'IconButton (Ikonknapp)',
+    path: '#iconbutton',
+  },
+];
 <>
   <h3>Lenke til filer eller nettsider</h3>
+  <p>Vi benytter Link for å lenke til filer eller nettsider.</p>
   <p>
-    En link benytter du for å lenke til filer eller nettsider. Når brukeren
-    klikker på lenken, kommer den aktuelle filen eller nettsiden frem.
-  </p>
-  <p>
-    Er lenken en handling som påvirker siden brukeren er på, for eksempel
-    «Lagre» eller «Send inn», skal du normalt bruke en knapp i stedet. Se
-    aksjonsknapp, knapp og ikonknapp for eksempler på knapper.
-  </p>
-  <p>
-    Se også{' '}
-    <a href="https://www.skatteetaten.no/stilogtone/produkt/skatteetatenno/lenker/">
+    Hvis lenken er en handling som påvirker siden brukeren er på, som for
+    eksempel «Lagre» eller «Send inn», skal du normalt bruke en knapp i stedet.
+    Se
+    <a href="#actionbutton">aksjonsknapp</a>, <a href="#button">knapp</a> og <a href="#iconbutton">
+      ikonknapp
+    </a> for eksempler på knapper. Se også <a href="https://www.skatteetaten.no/stilogtone/produkt/skatteetatenno/lenker/">
       Skatteetatens skriveregler
-    </a>{' '}
-    for hjelp til å lage gode lenketekster.
+    </a> for hjelp til å lage gode lenketekster.
   </p>
-  <h3>Åpne i nytt vindu eller fane</h3>
+
+  <h3>Åpne i eksisterende fane, ny fane eller nedlastning?</h3>
   <p>
-    Tenk gjennom hvilke egenskaper du gir lenken din. Du kan velge at innholdet
-    i lenken din skal åpne seg i nytt vindu eller at navigeringen skal fortsette
-    i det samme vinduet eller fanen. Som hovedregel bør lenkes åpnes i samme
-    vindu, men dersom brukeren risikerer å miste innhold når man klikker på den,
-    for eksempel ved utfylling av skjema, kan det være hensiktsmessig å åpne
-    innholdet i ny fane.
+    Når brukeren klikker på lenken, kommer den aktuelle filen eller nettsiden
+    frem. Hovedregelen er at lenker skal åpnes i samme fane. Det finnes også
+    unntak hvor lenken kan åpnes i ny fane eller som nedlastning.
   </p>
-  <p>
-    Når du velger at lenken din skal åpne nettsiden eller filen i nytt vindu,
-    legger du til to egenskaper til lenken. Den første, «target», åpner i nytt
-    vindu, og den andre, «rel», er en sikkerhetsfunksjon som bryter koblingen
-    mellom eksisterende vindu og nytt vindu. Dersom den åpnede fanen inneholder
-    ondsinnet kode, kan den uten denne funksjonen, få tilgang til vinduet den
-    var lenket fra. Dette er spesielt viktig å ta hensyn til dersom du lenker
-    til eksterne sider eller sider med innhold som er laget av bruker.
-  </p>
-</>
+
+  <h4>Når bør du åpne lenken i samme vindu:</h4>
+  <ul>
+    <li>
+      I de fleste tilfeller – dette er hovedregelen fordi vi sikrer en
+      konsistent og forutsigbar brukeropplevelse ved å la brukerens egne
+      lenkeinnstillinger i nettleseren videreføres etter klikket på lenken.
+    </li>
+  </ul>
+
+  <h4>Når bør du åpne lenken i egen fane eller som nedlastning:</h4>
+  <ul>
+    <li>
+      Når du lenker til veiledninger eller annet innhold som brukeren benytter
+      som støtte i gjennomføringen av oppgaven.
+    </li>
+    <li>
+      Dersom brukeren risikerer å miste innhold når hun klikker på lenken, for
+      eksempel ved utfylling av skjema.{' '}
+    </li>
+  </ul>
+
+  <h3>Pass på, når du lenker til ny fane eller nedlastning:</h3>
+  <ul>
+    <li>
+      Marker lenker som åpner eksterne sider og filer med eget symbol (se
+      eksempel).
+    </li>
+    <li>
+      Når du lenker til eksterne sider eller sider med innhold som er laget av
+      bruker, er det spesielt viktig å beskytte mot ondsinnet kode. Legg derfor
+      til to attributter; den første, «target», åpner i nytt vindu, og den
+      andre, «rel», er en sikkerhetsfunksjon som bryter koblingen mellom
+      eksisterende vindu og nytt vindu. Uten denne funksjonen, kan ondsinnet
+      kode få tilgang til vinduet du lenket fra.
+    </li>
+  </ul>
+
+  <h3>Relaterte komponenter</h3>
+  <LinkGroup links={links} />
+</>;
 ```
 
 ```js noeditor uu

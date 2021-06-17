@@ -18,37 +18,43 @@ import {
 const [language, setLanguage] = useState('nb');
 
 <div>
-  <TopStripe>
-    <Link path={'#main-content-id'} text={'Hopp til hovedinnhold'} skipLink />
-    <Link
-      path={'https://www.skatteetaten.no/kontakt/'}
-      text={'Kontakt oss'}
-      placement="before"
-    />
-    <TopStripeMenu
-      closeMenuAriaLabel="Lukk endre skriftstørrelse"
-      title={'Endre skriftstørrelse'}
-      showOnMobile={false}
-      contentIsMenu={false}
-    >
-      <div style={{ fontSize: '24px', marginTop: '8px' }}>
-        Hold Ctrl-tasten nede (Cmd-tasten på Mac). Trykk på + for å forstørre
-        eller - for å forminske.
-      </div>
-    </TopStripeMenu>
-    <LanguagePicker
-      selectedLanguage={language}
-      setLanguage={setLanguage}
-      showOnMobile={true}
-      showSami={true}
-    />
-
-    <Link path={'#link'} text={'Logg inn'} placement="before" />
-  </TopStripe>
   <TopBanner
     external
     title={'Side for publikum'}
     homeText={'Tilbake til skatteetaten.no'}
+    topStripe={
+      <TopStripe>
+        <Link
+          path={'#main-content-id'}
+          text={'Hopp til hovedinnhold'}
+          skipLink
+        />
+        <Link
+          path={'https://www.skatteetaten.no/kontakt/'}
+          text={'Kontakt oss'}
+          placement="before"
+        />
+        <TopStripeMenu
+          closeMenuAriaLabel="Lukk endre skriftstørrelse"
+          title={'Endre skriftstørrelse'}
+          showOnMobile={false}
+          contentIsMenu={false}
+        >
+          <div style={{ fontSize: '24px', marginTop: '8px' }}>
+            Hold Ctrl-tasten nede (Cmd-tasten på Mac). Trykk på + for å
+            forstørre eller - for å forminske.
+          </div>
+        </TopStripeMenu>
+        <LanguagePicker
+          selectedLanguage={language}
+          setLanguage={setLanguage}
+          showOnMobile={true}
+          showSami={true}
+        />
+
+        <Link path={'#link'} text={'Logg inn'} placement="before" />
+      </TopStripe>
+    }
   />
 </div>;
 ```
@@ -72,45 +78,51 @@ import {
 const [language, setLanguage] = useState('nb');
 
 <div>
-  <TopStripe>
-    <Link path={'#main-content-id'} text={'Hopp til hovedinnhold'} skipLink />
-    <Link
-      path={'https://www.skatteetaten.no/kontakt/'}
-      text={'Kontakt oss'}
-      placement="before"
-    />
-
-    <TopStripeMenu
-      showOnMobile={false}
-      closeMenuAriaLabel="Lukk endre skriftstørrelse"
-      title={'Endre skriftstørrelse'}
-    >
-      <div style={{ fontSize: '1.5rem', marginTop: '8px' }}>
-        Hold Ctrl-tasten nede (Cmd-tasten på Mac). Trykk på + for å forstørre
-        eller - for å forminske.
-      </div>
-    </TopStripeMenu>
-    <LanguagePicker
-      selectedLanguage={language}
-      setLanguage={setLanguage}
-      showOnMobile={true}
-      showSami={true}
-    />
-
-    <span>
-      <Icon
-        iconName="person"
-        style={{ fontSize: '20px', verticalAlign: 'sub' }}
-      />
-      Ola Normann
-    </span>
-
-    <Link path={'#topstripe'} text={'Logg ut'} placement="before" />
-  </TopStripe>
   <TopBanner
     external
     title={'Side for publikum'}
     homeText={'Tilbake til skatteetaten.no'}
+    topStripe={
+      <TopStripe>
+        <Link
+          path={'#main-content-id'}
+          text={'Hopp til hovedinnhold'}
+          skipLink
+        />
+        <Link
+          path={'https://www.skatteetaten.no/kontakt/'}
+          text={'Kontakt oss'}
+          placement="before"
+        />
+
+        <TopStripeMenu
+          showOnMobile={false}
+          closeMenuAriaLabel="Lukk endre skriftstørrelse"
+          title={'Endre skriftstørrelse'}
+        >
+          <div style={{ fontSize: '1.5rem', marginTop: '8px' }}>
+            Hold Ctrl-tasten nede (Cmd-tasten på Mac). Trykk på + for å
+            forstørre eller - for å forminske.
+          </div>
+        </TopStripeMenu>
+        <LanguagePicker
+          selectedLanguage={language}
+          setLanguage={setLanguage}
+          showOnMobile={true}
+          showSami={true}
+        />
+
+        <span>
+          <Icon
+            iconName="person"
+            style={{ fontSize: '20px', verticalAlign: 'sub' }}
+          />
+          Ola Normann
+        </span>
+
+        <Link path={'#topstripe'} text={'Logg ut'} placement="before" />
+      </TopStripe>
+    }
   />
 </div>;
 ```
@@ -137,50 +149,60 @@ const size = UseScreen();
 const [language, setLanguage] = useState('nb');
 
 <div>
-  <TopStripe>
-    <Link path={'#main-content-id'} text={'Hopp til hovedinnhold'} skipLink />
-
-    <Link
-      path={'https://www.skatteetaten.no/kontakt/'}
-      text={'Kontakt oss'}
-      placement="before"
-    />
-
-    <TopStripeMenu
-      isMenu={false}
-      showOnMobile={false}
-      closeMenuAriaLabel="Lukk endre skriftstørrelse"
-      title={'Endre skriftstørrelse'}
-    >
-      <div style={{ fontSize: '1.5rem', marginTop: '8px' }}>
-        Hold Ctrl-tasten nede (Cmd-tasten på Mac). Trykk på + for å forstørre
-        eller - for å forminske.
-      </div>
-    </TopStripeMenu>
-
-    <LanguagePicker
-      selectedLanguage={language}
-      setLanguage={setLanguage}
-      showOnMobile={true}
-      showSami={true}
-    />
-
-    <TopStripeMenu showOnMobile={true} icon="person" title={'Hamdi Normann'}>
-      <TopStripeButton>Kari Normann</TopStripeButton>
-      <TopStripeButton>987654321 Eplepress AS</TopStripeButton>
-      <TopStripeButton>987654322 Pærepress AS</TopStripeButton>
-      <TopStripeButton>987654323 Druepress AS</TopStripeButton>
-      <TopStripeButton onClick={() => console.log('Se alle')}>
-        Se alle virksomheter
-      </TopStripeButton>
-    </TopStripeMenu>
-
-    <Link path={'#topstripe'} text={'Logg ut'} placement="before" />
-  </TopStripe>
   <TopBanner
     external
     title={'Side for publikum'}
     homeText={'Tilbake til skatteetaten.no'}
+    topStripe={
+      <TopStripe>
+        <Link
+          path={'#main-content-id'}
+          text={'Hopp til hovedinnhold'}
+          skipLink
+        />
+
+        <Link
+          path={'https://www.skatteetaten.no/kontakt/'}
+          text={'Kontakt oss'}
+          placement="before"
+        />
+
+        <TopStripeMenu
+          isMenu={false}
+          showOnMobile={false}
+          closeMenuAriaLabel="Lukk endre skriftstørrelse"
+          title={'Endre skriftstørrelse'}
+        >
+          <div style={{ fontSize: '1.5rem', marginTop: '8px' }}>
+            Hold Ctrl-tasten nede (Cmd-tasten på Mac). Trykk på + for å
+            forstørre eller - for å forminske.
+          </div>
+        </TopStripeMenu>
+
+        <LanguagePicker
+          selectedLanguage={language}
+          setLanguage={setLanguage}
+          showOnMobile={true}
+          showSami={true}
+        />
+
+        <TopStripeMenu
+          showOnMobile={true}
+          icon="person"
+          title={'Hamdi Normann'}
+        >
+          <TopStripeButton>Kari Normann</TopStripeButton>
+          <TopStripeButton>987654321 Eplepress AS</TopStripeButton>
+          <TopStripeButton>987654322 Pærepress AS</TopStripeButton>
+          <TopStripeButton>987654323 Druepress AS</TopStripeButton>
+          <TopStripeButton onClick={() => console.log('Se alle')}>
+            Se alle virksomheter
+          </TopStripeButton>
+        </TopStripeMenu>
+
+        <Link path={'#topstripe'} text={'Logg ut'} placement="before" />
+      </TopStripe>
+    }
   />
 </div>;
 ```
@@ -204,29 +226,35 @@ import {
 const [language, setLanguage] = useState('nb');
 
 <div>
-  <TopStripe>
-    <Link path={'#main-content-id'} text={'Hopp til hovedinnhold'} skipLink />
-    <LanguagePicker
-      selectedLanguage={language}
-      setLanguage={setLanguage}
-      showOnMobile={true}
-      showSami={true}
-    />
-    <TopStripeMenu icon="person" title={'Kari Normann'}>
-      <TopStripeButton>Jenny Sandli</TopStripeButton>
-      <TopStripeButton>987654321 Eplepress AS</TopStripeButton>
-      <TopStripeButton>987654322 Pærepress AS</TopStripeButton>
-      <TopStripeButton>987654323 Druepress AS</TopStripeButton>
-      <TopStripeButton onClick={() => console.log('Se alle')}>
-        Se alle virksomheter
-      </TopStripeButton>
-    </TopStripeMenu>
-    <Link path={'#topstripe'} text={'Logg ut'} placement="before" />
-  </TopStripe>
   <TopBanner
     external
     title={'Side for publikum'}
     homeText={'Tilbake til skatteetaten.no'}
+    topStripe={
+      <TopStripe>
+        <Link
+          path={'#main-content-id'}
+          text={'Hopp til hovedinnhold'}
+          skipLink
+        />
+        <LanguagePicker
+          selectedLanguage={language}
+          setLanguage={setLanguage}
+          showOnMobile={true}
+          showSami={true}
+        />
+        <TopStripeMenu icon="person" title={'Kari Normann'}>
+          <TopStripeButton>Jenny Sandli</TopStripeButton>
+          <TopStripeButton>987654321 Eplepress AS</TopStripeButton>
+          <TopStripeButton>987654322 Pærepress AS</TopStripeButton>
+          <TopStripeButton>987654323 Druepress AS</TopStripeButton>
+          <TopStripeButton onClick={() => console.log('Se alle')}>
+            Se alle virksomheter
+          </TopStripeButton>
+        </TopStripeMenu>
+        <Link path={'#topstripe'} text={'Logg ut'} placement="before" />
+      </TopStripe>
+    }
   >
     <div style={{ minHeight: '80px', textAlign: 'right' }}>
       «Hamburger»-meny her (egen komponent finnes ennå ikke)
@@ -271,6 +299,10 @@ const [language, setLanguage] = useState('nb');
   <h3>Tips</h3>
   <ul>
     <li>
+      Bruk enten header-taggen rundt TopStripe eller TopStripe som en prop i
+      TopBanner for at begge komponentene blir liggende inni header-taggen.
+    </li>
+    <li>
       Lenken Hopp til hovedinnhold (blir synlig ved tastaturfokus), skal sette
       tastaturfokus til toppen av hovedinnholdet. Bruk riktig id og
       tabindex="-1" der fokus skal være.
@@ -307,9 +339,9 @@ const [language, setLanguage] = useState('nb');
       skriftstørrelse.
     </li>
     <li>
-      Aria-expanded, aria-haspopup, aria-controls, aria-labelledby, role=menu,
+       Aria-haspopup, role=menu,
       role=menuitem brukes på f.eks. på språkmenyen. Dette får skjermleser til å
-      "bytte" modus og trigge menynavigering.
+      "bytte" modus og trigge menynavigering. 
     </li>
     <li>Aria-hidden brukes for å skjule ikoner for skjermleser.</li>
   </ul>

@@ -6,11 +6,11 @@ import { Link as RRLink, BrowserRouter as Router } from 'react-router-dom';
 
 const links = [
   {
-    text: 'Dette er en link',
+    text: 'Rettledning til RF-1167 Næringsoppgave 2 for 2020 (PDF)',
     path: '#linkgroup',
   },
   {
-    text: 'En annen  link',
+    text: 'Rettledning til RF-1167 Næringsoppgave 2 for 2020 (Word)',
     path: '#linkgroup',
   },
 ];

@@ -1,5 +1,4 @@
 import * as React from 'react';
-//import { t } from '../utils/i18n/i18n'; //Egwene
 import classnames from 'classnames';
 import { UseScreen } from '../utils';
 import { Icon } from '../Icon';
@@ -111,6 +110,7 @@ export const ExternalHeader: React.FC<TopBannerTypes> = (props) => {
 
   return (
     <header className={classnames(header, props.className)} id={props.id}>
+      {props.topStripe}
       <div className={headerMain}>
         <div>
           <div>

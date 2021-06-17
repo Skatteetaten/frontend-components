@@ -22,11 +22,6 @@ interface TagStyle {
 
 const defaultMargin = '16px 0 4px 0';
 
-export const hex2rgba = (hex: string, alpha = 1): string => {
-  const [r, g, b] = hex.match(/\w\w/g)?.map((x) => parseInt(x, 16)) ?? [];
-  return `rgba(${r},${g},${b},${alpha})`;
-};
-
 function containsTag(tag: string, tags?: string[]): boolean {
   if (Array.isArray(tags) && tags !== undefined) {
     return tags.indexOf(tag) > -1;
@@ -245,11 +240,7 @@ const getAStyle = (options: TagStyleOptions, palette: PaletteProps): IStyle => {
     color: takeIf(showColor, palette.skeColor.blue),
     textDecoration: 'none',
     paddingBottom: '1px',
-    borderBottom: takeIf(
-      showBorder,
-      `2px solid ${hex2rgba(palette.skeColor.blue, 0.25)}`
-    ),
-    transition: 'border-color .5s',
+    borderBottom: takeIf(showBorder, `1px solid ${palette.skeColor.blue}`),
     selectors: {
       ':hover': {
         color: palette.skeColor.darkBlue,

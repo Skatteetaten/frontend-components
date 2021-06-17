@@ -53,6 +53,8 @@ function Testside(props) {
   const pageSize = 8;
   const [setDisplayedData] = React.useState([1, 2, 3].splice(0, pageSize));
   const [currentPage, setCurrentPage] = React.useState(1);
+  const [date, setDato] = React.useState(new Date());
+
   const initialState = {
     options: [
       { key: 'A', text: 'alfa', value: 'Alfa' },
@@ -790,33 +792,35 @@ function Testside(props) {
       <div style={{ marginTop: '60px', marginBottom: '20px' }}>
         <h2>TopStripe, TopBanner</h2>
 
-        <TopStripe>
-          <Link
-            path={'https://www.skatteetaten.no/kontakt/'}
-            text={'Kontakt oss'}
-            placement="before"
-          />
-
-          <TopStripeMenu title={'Endre skriftstørrelse'}>
-            <div style={{ fontSize: '24px', marginTop: '8px' }}>
-              Hold Ctrl-tasten nede (Cmd-tasten på Mac). Trykk på + for å
-              forstørre eller - for å forminske.
-            </div>
-          </TopStripeMenu>
-          <LanguagePicker
-            selectedLanguage={language}
-            setLanguage={setLanguage}
-            showOnMobile={true}
-            showSami={true}
-          />
-
-          <span>
-            <Icon iconName="person" /> Vegard Sandli
-          </span>
-
-          <Link path={'#topstripe'} text={'Logg ut'} placement="before" />
-        </TopStripe>
         <TopBanner
+          topStripe={
+            <TopStripe>
+              <Link
+                path={'https://www.skatteetaten.no/kontakt/'}
+                text={'Kontakt oss'}
+                placement="before"
+              />
+
+              <TopStripeMenu title={'Endre skriftstørrelse'}>
+                <div style={{ fontSize: '24px', marginTop: '8px' }}>
+                  Hold Ctrl-tasten nede (Cmd-tasten på Mac). Trykk på + for å
+                  forstørre eller - for å forminske.
+                </div>
+              </TopStripeMenu>
+              <LanguagePicker
+                selectedLanguage={language}
+                setLanguage={setLanguage}
+                showOnMobile={true}
+                showSami={true}
+              />
+
+              <span>
+                <Icon iconName="person" /> Vegard Sandli
+              </span>
+
+              <Link path={'#topstripe'} text={'Logg ut'} placement="before" />
+            </TopStripe>
+          }
           external
           title={'Side for publikum'}
           homeText={'Tilbake til skatteetaten.no'}
@@ -974,6 +978,7 @@ function Testside(props) {
         ariaLabel="Eksempel ComboBox"
         useComboBoxAsMenuWidth
       />
+
       <h2>Datepicker</h2>
 
       <DatePicker
@@ -982,6 +987,7 @@ function Testside(props) {
         help={
           'Du kan skrive inn dato i feltet, eller velge en dato ved hjelp av datovelgeren, enten med mus eller bruk tastaturet'
         }
+        value={date}
         isRequiredErrorMessage={'Dato må fylles ut'}
       />
       <DatePicker
@@ -1002,6 +1008,7 @@ function Testside(props) {
         isRequiredErrorMessage={'Dato må fylles ut'}
         errorMessage={'Vis med feil'}
       />
+
       <h2>Dropdown</h2>
 
       <Dropdown
@@ -1037,6 +1044,7 @@ function Testside(props) {
         placeholder="Skriv søkeord her"
         ariaLabel="Søk"
       />
+
       <h2>TextField</h2>
 
       <TextField id={'my-input'} label={'Navn'} />
@@ -1055,6 +1063,136 @@ function Testside(props) {
         boldText={true}
         value="Siri Saksbehandler"
       />
+
+      <h2>Disabled</h2>
+      <TextField disabled label={'Tekstfelt'} value="Tekst" />
+      <TextField
+        disabled
+        inputSize="large"
+        label={'Stort tekstfelt'}
+        value="Tekst"
+      />
+
+      <TextField
+        disabled
+        label={'Tekstfelt med placeholder'}
+        placeholder="Placeholder"
+      />
+      <br />
+      <Dropdown
+        label="Dropdown med tekst"
+        disabled
+        selectedKey="D"
+        help="Tekst som hjelper brukeren å forstå eller få til."
+        options={initialState.options}
+      />
+
+      <Dropdown
+        label="Stor dropdown"
+        disabled
+        inputSize="large"
+        selectedKey="D"
+        help="Tekst som hjelper brukeren å forstå eller få til."
+        options={initialState.options}
+      />
+
+      <Dropdown
+        label="Dropdown med placeholder"
+        disabled
+        placeholder="Placeholder"
+        help="Tekst som hjelper brukeren å forstå eller få til."
+        options={initialState.options}
+      />
+      <br />
+      <DatePicker
+        id={'my-date3'}
+        label={'Datepicker med dato'}
+        value={date}
+        disabled
+        help={
+          'Du kan skrive inn dato i feltet, eller velge en dato ved hjelp av datovelgeren, enten med mus eller bruk tastaturet'
+        }
+      />
+      <DatePicker
+        id={'my-date3'}
+        label={'Stor datepicker '}
+        disabled
+        inputSize="large"
+        value={date}
+        help={
+          'Du kan skrive inn dato i feltet, eller velge en dato ved hjelp av datovelgeren, enten med mus eller bruk tastaturet'
+        }
+      />
+      <DatePicker
+        id={'my-date3'}
+        label={'Datepicker med placeholder'}
+        disabled
+        placeholder="Placeholder"
+        help={
+          'Du kan skrive inn dato i feltet, eller velge en dato ved hjelp av datovelgeren, enten med mus eller bruk tastaturet'
+        }
+      />
+      <br />
+      <ComboBox
+        label="Combobox"
+        disabled
+        value="Tekst"
+        placeHolder="Velg"
+        options={[
+          { key: 'A', text: 'Alfa', value: 'Alfa' },
+          { key: 'B', text: 'Beta', value: 'Beta' },
+          { key: 'C', text: 'Gamma', value: 'Gamma' },
+          { key: 'D', text: 'Delta', value: 'Delta' },
+          { key: 'E', text: 'Echo', value: 'Echo' },
+        ]}
+        defaultSelectedKey="D"
+        allowFreeform={false}
+        ariaLabel="Eksempel ComboBox"
+        useComboBoxAsMenuWidth
+      />
+      <ComboBox
+        label="Stor combobox"
+        disabled
+        value="Tekst"
+        inputSize="large"
+        placeHolder="Velg"
+        options={[
+          { key: 'A', text: 'Alfa', value: 'Alfa' },
+          { key: 'B', text: 'Beta', value: 'Beta' },
+          { key: 'C', text: 'Gamma', value: 'Gamma' },
+          { key: 'D', text: 'Delta', value: 'Delta' },
+          { key: 'E', text: 'Echo', value: 'Echo' },
+        ]}
+        defaultSelectedKey="D"
+        allowFreeform={false}
+        ariaLabel="Eksempel ComboBox"
+        useComboBoxAsMenuWidth
+      />
+      <ComboBox
+        label="Combobox med placeholder"
+        disabled
+        placeholder="placeholder"
+        options={[
+          { key: 'A', text: 'Alfa', value: 'Alfa' },
+          { key: 'B', text: 'Beta', value: 'Beta' },
+          { key: 'C', text: 'Gamma', value: 'Gamma' },
+          { key: 'D', text: 'Delta', value: 'Delta' },
+          { key: 'E', text: 'Echo', value: 'Echo' },
+        ]}
+        allowFreeform={false}
+        ariaLabel="Eksempel ComboBox"
+        useComboBoxAsMenuWidth
+      />
+      <br />
+      <SearchField disabled placeholder="Skriv søkeord her" ariaLabel="Søk" />
+      <SearchField disabled value="Verdi" ariaLabel="Søk" />
+      <SearchField
+        disabled
+        searchFieldSize="large"
+        value="Verdi"
+        ariaLabel="Søk"
+      />
+
       <h2>Accordion</h2>
 
       <Accordion>

@@ -6,6 +6,7 @@ import {
   Grid,
   TextField,
   IconButton,
+  Button,
   LabelWithCallout,
 } from '@skatteetaten/frontend-components';
 
@@ -16,8 +17,8 @@ const wrapperStyle = {
   padding: 12,
 };
 
-const blockCenterStyle = {
-  textAlign: 'center',
+const blockRightStyle = {
+  textAlign: 'right',
   marginTop: 20,
 };
 
@@ -26,12 +27,7 @@ const tableStyle = {
   marginTop: 20,
 };
 
-const caption = (
-  <LabelWithCallout
-    label={'Månedsoversikt'}
-    help={'Oversikt over beløp og dekningsgrad i perioden.'}
-  />
-);
+const caption = <LabelWithCallout label={'Månedsoversikt'} />;
 
 const editableContent = (data, close, rowIndex) => (
   <div style={wrapperStyle}>
@@ -41,7 +37,7 @@ const editableContent = (data, close, rowIndex) => (
 
     <Grid>
       <Grid.Row>
-        <Grid.Col lg={3}>
+        <Grid.Col lg={4}>
           <TextField
             id={'textfield-1'}
             box
@@ -52,7 +48,7 @@ const editableContent = (data, close, rowIndex) => (
             help="Hjelpetekst som omhandler beløp."
           />
         </Grid.Col>
-        <Grid.Col lg={3}>
+        <Grid.Col lg={4}>
           <TextField
             id={'textfield-2'}
             box
@@ -63,7 +59,7 @@ const editableContent = (data, close, rowIndex) => (
             help="Hjelpetekst som omhandler dekningsgrad"
           />
         </Grid.Col>
-        <Grid.Col lg={3}>
+        <Grid.Col lg={4}>
           <TextField
             id={'textfield-3'}
             box
@@ -74,17 +70,15 @@ const editableContent = (data, close, rowIndex) => (
             help="Hjelpetekst som omhandler avkastning"
           />
         </Grid.Col>
-        <Grid.Col lg={3}>
-          <div style={blockCenterStyle}>
-            <IconButton title="Lagre" circle icon="Check" />
-            {'  '}
-            <IconButton
-              onClick={close}
-              title="Angre"
-              circle
-              icon="Cancel"
-            />{' '}
-            <IconButton title="Slett" circle icon="Delete" />{' '}
+      </Grid.Row>
+      <Grid.Row>
+        <Grid.Col lg={6}></Grid.Col>
+        <Grid.Col lg={6}>
+          <div style={blockRightStyle}>
+            <Button>Slett</Button>
+
+            <Button>Avbryt</Button>
+            <Button buttonStyle="primaryRoundedFilled">Lagre</Button>
           </div>
         </Grid.Col>
       </Grid.Row>
@@ -218,7 +212,7 @@ const data = [
 Ekspanderbare rader
 
 ```js
-import { Table, ActionButton } from '@skatteetaten/frontend-components';
+import { Grid, Table, ActionButton } from '@skatteetaten/frontend-components';
 
 const columns = [
   {
@@ -226,120 +220,104 @@ const columns = [
     fieldName: 'firma',
   },
   {
-    name: 'Timestamp',
+    name: 'Startet',
     fieldName: 'timestamp',
   },
   {
     name: 'Status',
     fieldName: 'status',
   },
-  {
-    name: 'Stopp',
-    fieldName: 'stopp',
-  },
-  {
-    name: 'Restart',
-    fieldName: 'restart',
-  },
-  { name: 'ETA', fieldName: 'eta' },
+  { name: 'Forventet behandlet', fieldName: 'eta' },
 ];
 
 const data = [
   {
     firma: 'Bluth Company',
-    timestamp: '2020-08-04 11:31:57 UTC',
-    status: 'RUNNING',
-    eta: '01d 04h 23m 05s',
+    timestamp: '08.04.2020 11:31:57',
+    status: 'Under behandling',
+    eta: 'Mer enn 1 dag',
     ansatte: [
       {
         navn: 'Per Olsen',
         fnr: '01012020 99999',
-        beskrivelse:
-          'Her er det ganske enkel informasjon i den ekspanderbare raden.',
+        beskrivelse: 'Ingen flere opplysninger',
       },
     ],
   },
   {
     firma: 'Business Engros',
-    timestamp: '2020-08-04 11:32:16 UTC',
-    status: 'RUNNING',
-    eta: '01d 04h 23m 05s',
+    timestamp: '08.04.2020 11:32:16',
+    status: 'Under behandling',
+    eta: '23 min',
     ansatte: [
       {
         navn: 'Bryce Navnesen',
         fnr: '02012020 99999',
-        beskrivelse:
-          'Her er det ganske enkel informasjon i den ekspanderbare raden.',
+        beskrivelse: 'Ingen flere opplysninger',
       },
       {
         navn: 'Alice Middleman',
         fnr: '03012020 99999',
-        beskrivelse:
-          'Her er det ganske enkel informasjon i den ekspanderbare raden.',
+        beskrivelse: 'Ingen flere opplysninger',
       },
     ],
   },
   {
     firma: 'Corwood Industries',
-    timestamp: '2020-08-04 11:32:16 UTC',
-    status: 'ERROR',
-    eta: '00d 03h 05m 48s',
+    timestamp: '08.04.2020 11:32:16',
+    status: 'Ferdig',
+    eta: '–',
     ansatte: [
       {
         navn: 'Kai Mossige',
         fnr: '01012020 99999',
-        beskrivelse:
-          'Her er det ganske enkel informasjon i den ekspanderbare raden.',
+        beskrivelse: 'Ingen flere opplysninger',
       },
     ],
   },
   {
     firma: 'Limerick Partner',
-    timestamp: '2020-08-04 11:32:47 UTC',
-    status: 'FINISHED',
-    eta: '00d 00h 00m 00s',
+    timestamp: '08.04.2020 11:32:47',
+    status: 'Ferdig',
+    eta: '–',
     ansatte: [
       {
         navn: 'Kari Saksbehandler',
         fnr: '01012020 99999',
-        beskrivelse:
-          'Her er det ganske enkel informasjon i den ekspanderbare raden.',
+        beskrivelse: 'Ingen flere opplysninger',
       },
       {
         navn: 'Bob Egil Hansen',
         fnr: '04012020 99999',
-        beskrivelse:
-          'Her er det ganske enkel informasjon i den ekspanderbare raden.',
+        beskrivelse: 'Ingen flere opplysninger',
       },
     ],
   },
 ];
 const expandableContent = (data, close, rowIndex) => (
-  <Table
-    data={data.ansatte}
-    showRowSeparators={false}
-    columns={[
-      { name: 'Ansatt', fieldName: 'navn' },
-      { name: 'Fødselsnr', fieldName: 'fnr' },
-      { name: 'Beskrivelse', fieldName: 'beskrivelse' },
-    ]}
-    fullWidth
-  />
+  <div style={{ width: 'max-content' }}>
+    <Grid>
+      <Grid.Row>
+        <Grid.Col xl={12} sm={8}>
+          <Table
+            data={data.ansatte}
+            showRowSeparators={false}
+            columns={[
+              { name: 'Ansatt', fieldName: 'navn' },
+              { name: 'Fødselsnr', fieldName: 'fnr' },
+              { name: 'Beskrivelse', fieldName: 'beskrivelse' },
+            ]}
+            fullWidth
+          />
+        </Grid.Col>
+      </Grid.Row>
+    </Grid>
+  </div>
 );
 
 <Table
   data={data.map((d) => ({
     ...d,
-    stopp: (
-      <ActionButton icon="Cancel" onClick={() => console.log('stopp')}>
-        Stopp
-      </ActionButton>
-    ),
-    restart: (
-      <ActionButton icon="Update" onClick={() => console.log('restart')}>
-        Restart
-      </ActionButton>
-    ),
   }))}
   columns={columns}
   expandableRows
@@ -347,6 +325,7 @@ const expandableContent = (data, close, rowIndex) => (
   expandIconPlacement={'before'}
   caption="Firmaoversikt"
   hideCaption={true}
+  expandIconPlacement={'after'}
 />;
 ```
 
@@ -668,6 +647,7 @@ const data = [
   columns={columns}
   caption={'Eksempel med sammenslåtte rader'}
   hideCaption={true}
+  sum={{ text: 'sum', colspan: 4, total: '30 500' }}
 />;
 ```
 

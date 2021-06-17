@@ -17,7 +17,7 @@ export interface TableProps<P> extends React.HTMLAttributes<HTMLDivElement> {
    *  Use a boolean for if all the rows should be editable.
    *  If only a subset of the rows should be editable, use an array of indexes of the rows. NOTE: not compatiable with sorting
    * */
-  editableRows?: boolean;
+  editableRows?: boolean | Array<number>;
   /** Placement of expansion button in the table, the default is 'after' */
   expandIconPlacement?: 'after' | 'before';
   /** Allows you to expand a row */
@@ -76,4 +76,6 @@ export interface TableProps<P> extends React.HTMLAttributes<HTMLDivElement> {
   caption: React.ReactNode;
   /** Ability to hide caption visually, but still being detectable for screen readers */
   hideCaption?: boolean;
+  /** Show sum at the end of the Table. Colspan signifies the rows of columns the sum should take up. */
+  sum?: { text: string; colspan: number; total: number | string };
 }

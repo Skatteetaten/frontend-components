@@ -57,14 +57,13 @@ export const getClassNames = (props: LinkProps) => {
     iconLink: {
       color: palette.skeColor.blue,
       textDecoration: 'none',
-      fontWeight: 700,
-      borderBottom: '2px solid ' + hex2rgba(palette.skeColor.blue, 0.25),
+      fontWeight: linkGroup ? FontWeights.bold : FontWeights.medium,
+      borderBottom: `1px solid ${palette.skeColor.blue}`,
       selectors: {
         '&:hover': {
           color: palette.skeColor.darkBlue,
           borderBottom: '2px solid ' + palette.skeColor.darkBlue,
           backgroundColor: palette.skeColor.lightBlue,
-          transition: 'border-bottom 0.3s',
         },
         '&:focus': {
           color: palette.skeColor.darkBlue,
@@ -75,9 +74,4 @@ export const getClassNames = (props: LinkProps) => {
       },
     },
   });
-};
-
-export const hex2rgba = (hex, alpha = 1) => {
-  const [r, g, b] = hex.match(/\w\w/g).map((x) => parseInt(x, 16));
-  return `rgba(${r},${g},${b},${alpha})`;
 };

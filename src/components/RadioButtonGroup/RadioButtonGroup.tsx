@@ -22,6 +22,7 @@ export const RadioButtonGroup = (props: RadioButtonGroupProps) => {
     warning,
     id,
     label,
+    labelSize,
     labelButtonAriaLabel,
     labelCallout,
     onCalloutToggle,
@@ -53,6 +54,7 @@ export const RadioButtonGroup = (props: RadioButtonGroupProps) => {
         label={label}
         buttonAriaLabel={labelButtonAriaLabel}
         help={help}
+        inputSize={labelSize}
         warning={warning}
         inFieldset={true}
         calloutFloating={calloutFloating}

@@ -23,4 +23,6 @@ export interface TopBannerTypes {
   onClick?: () => void;
   /** Språk på logoen */
   language?: 'nb' | 'nn' | 'en';
+  /** Topstripe */
+  topStripe?: JSX.Element;
 }

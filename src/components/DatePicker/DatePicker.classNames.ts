@@ -13,14 +13,14 @@ function getFieldTypeStyles(props: DatePickerProps) {
       '& .ms-TextField-fieldGroup': {
         borderWidth: '2px',
         height: '46px',
-        padding: '5px 0',
+        margin: '5px 0',
         fontSize: FontSizes.large,
       },
       '& input.ms-TextField-field': {
         fontSize: FontSizes.large + ' !important',
       },
       'i.ms-DatePicker-event--without-label': {
-        marginTop: '0px',
+        marginTop: '6px',
         fontSize: FontSizes.xLarge,
         color: palette.skeColor.blue,
       },
@@ -56,6 +56,31 @@ function getTextFieldStyles(props: DatePickerProps) {
   }
 }
 
+export const getCalendarClassNames = (props: DatePickerProps) => {
+  const palette = getTheme().palette as PaletteProps;
+  return mergeStyles({
+    displayName: 'SkeCalendar',
+    color: palette.skeColor.blackAlt,
+
+    selectors: {
+      '& .ms-DatePicker-monthOption:hover': {
+        color: `${palette.skeColor.blackAlt} !important`,
+      },
+      '& .ms-DatePicker-goToday': {
+        right: '10px',
+      },
+      '& .ms-DatePicker-day--highlighted': {
+        backgroundColor: palette.skeColor.lightBlue,
+        color: palette.skeColor.blackAlt,
+      },
+      '& .ms-DatePicker-day--today': {
+        backgroundColor: palette.skeColor.lightBlue,
+        color: palette.skeColor.blackAlt,
+      },
+    },
+  });
+};
+
 export const getClassNames = (props: DatePickerProps) => {
   const { errorMessage, readonlyMode } = props;
   const palette = getTheme().palette as PaletteProps;
@@ -76,19 +101,24 @@ export const getClassNames = (props: DatePickerProps) => {
         content: '""',
       },
       '& .ms-TextField.is-disabled': !readonlyMode && {
-        borderColor: palette.skeColor.grey,
-        borderWidth: '1px',
+        borderColor: palette.skeColor.lightGrey,
         borderStyle: 'solid',
-        backgroundColor: palette.skeColor.whiteGrey,
+        borderWidth: '0px',
+        backgroundColor: palette.skeColor.neutralGrey,
       },
       '& .ms-TextField.is-disabled i': {
         color: palette.skeColor.grey,
       },
       '& .ms-TextField.is-disabled input': {
         padding: '8px',
+        cursor: 'not-allowed',
+        color: palette.skeColor.blackAlt,
       },
-      '& .ms-TextField.is-disabled .ms-TextField-fieldGroup': readonlyMode && {
-        backgroundColor: 'transparent',
+      '& .ms-TextField.is-disabled .ms-TextField-fieldGroup': {
+        backgroundColor: readonlyMode ? 'transparent' : undefined,
+        borderColor: palette.skeColor.lightGrey,
+        borderStyle: 'solid',
+        borderWidth: '1px',
       },
       '& .ms-TextField .ms-TextField-fieldGroup .ms-TextField-field': readonlyMode && {
         fontWeight: FontWeights.bold,
@@ -124,6 +154,9 @@ export const getClassNames = (props: DatePickerProps) => {
       '& .ms-TextField.is-active .ms-TextField-fieldGroup': errorMessage && {
         outlineColor: palette.skeColor.blue,
         borderColor: palette.skeColor.blue,
+      },
+      '& .ms-DatePicker-goToday ': {
+        right: '14px;',
       },
       ...getFieldTypeStyles(props),
       ...getTextFieldStyles(props),
