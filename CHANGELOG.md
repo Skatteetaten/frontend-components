@@ -1,4 +1,4 @@
-### **v.4.1.1 - 16.06.2021**
+### **v.4.1.1 - 17.06.2021**
 
 - TopBanner: now supports TopStripe as a prop, and therefore rendered inside the header-element. (Accessibility improvement)
 - DatePicker: Fixes a styling bug where calendar dates overlaped "Today-button", and improved contrast on month-elements.
