@@ -5,166 +5,20 @@ exports[`SearchField komponent matcher snapshot 1`] = `
   id="searchfield-123"
 >
   <div
-    className=
-        ms-SearchBox
-        {
-          -moz-osx-font-smoothing: grayscale;
-          -webkit-font-smoothing: antialiased;
-          align-items: stretch;
-          background-color: #ffffff;
-          border-radius: 2px;
-          border: 1px solid rgba(55, 55, 55, 0.95);
-          box-shadow: none;
-          box-sizing: border-box;
-          color: rgba(0, 0, 0, 0.95);
-          display: flex;
-          flex-direction: row;
-          flex-wrap: nowrap;
-          font-family: 'Helvetica Neue', Helvetica , Arial, 'Liberation Sans', 'Nimbus Sans L', sans-serif;
-          font-size: 1rem;
-          font-weight: 400;
-          height: 32px;
-          margin-bottom: 0px;
-          margin-left: 0px;
-          margin-right: 0px;
-          margin-top: 0px;
-          padding-bottom: 1px;
-          padding-left: 4px;
-          padding-right: 0;
-          padding-top: 1px;
-        }
-        @media screen and (-ms-high-contrast: active), (forced-colors: active){& {
-          border-color: WindowText;
-        }
-        &:hover {
-          border-color: rgba(0, 0, 0, 0.95);
-        }
-        @media screen and (-ms-high-contrast: active), (forced-colors: active){&:hover {
-          border-color: Highlight;
-        }
-        &:hover .ms-SearchBox-iconContainer {
-          color: #0c3f6f;
-        }
-        &.ms-SearchBox {
-          border-radius: 0px;
-          border: 2px solid #000000;
-          font-size: 1rem;
-          height: 32px;
-          position: relative;
-        }
-        &.is-disabled.ms-SearchBox {
-          background-color: #f4f4f4;
-          border-color: #bbbbbb;
-          border-style: solid;
-          border-width: 1px;
-        }
-        &.is-active.ms-SearchBox {
-          border: 1px solid #1362ae;
-          box-sizing: border-box;
-          outline: none;
-        }
-        &.is-active.ms-SearchBox .ms-SearchBox-field {
-          padding-bottom: 5px;
-          padding-left: 6px;
-          padding-right: 25px;
-          padding-top: 5px;
-        }
-        &.is-active.ms-SearchBox .ms-SearchBox-iconContainer {
-          right: 0px;
-          top: 7px;
-        }
-        & .ms-SearchBox-field {
-          font-family: inherit;
-          font-size: inherit;
-          font-weight: inherit;
-          outline: none;
-          padding-bottom: 5px;
-          padding-left: 5px;
-          padding-right: 30px;
-          padding-top: 5px;
-        }
-        & .ms-SearchBox-iconContainer {
-          position: absolute;
-          right: 0px;
-          top: 7px;
-        }
-        & .ms-SearchBox-iconContainer:hover {
-          border: none;
-        }
-        &.is-disabled.ms-SearchBox i {
-          color: #666666;
-        }
-        &.is-disabled.ms-SearchBox input {
-          color: #1d1d1d;
-          cursor: not-allowed;
-        }
-        & .ms-SearchBox-icon {
-          border: none;
-          box-sizing: border-box;
-          color: #1d1d1d;
-          cursor: default;
-          font-size: 1rem;
-          opacity: 1;
-          outline: none;
-          position: absolute;
-          right: 10px;
-          top: 0px;
-        }
-        & .ms-SearchBox-clearButton {
-          display: none;
-        }
-        & .ms-Button {
-          display: none;
-        }
-        & input[type=search] {
-          -webkit-appearance: textfield;
-        }
-        & input[type=search]::-webkit-search-cancel-button {
-          -webkit-appearance: none;
-        }
-        & input[type="search"]::-webkit-search-decoration {
-          -webkit-appearance: none;
-        }
-        & input[type=search]::-ms-clear {
-          display: none;
-          height: 0px;
-          width: 0px;
-        }
+    className="calloutLabelWrapper-48"
+  />
+  <div
+    className="ms-SearchBox SkeSearchField-56"
     onFocusCapture={[Function]}
   >
     <div
       aria-hidden={true}
-      className=
-          ms-SearchBox-iconContainer
-          {
-            color: #1362ae;
-            cursor: text;
-            display: flex;
-            flex-direction: column;
-            flex-shrink: 0;
-            font-size: 16px;
-            justify-content: center;
-            text-align: center;
-            transition: width 0.167s;
-            width: 32px;
-          }
+      className="ms-SearchBox-iconContainer iconContainer-57"
       onClick={[Function]}
     >
       <i
         aria-hidden={true}
-        className=
-            ms-SearchBox-icon
-            {
-              -moz-osx-font-smoothing: grayscale;
-              -webkit-font-smoothing: antialiased;
-              display: inline-block;
-              font-family: "Material Icons";
-              font-style: normal;
-              font-weight: normal;
-              opacity: 1;
-              speak: none;
-              transition: opacity 0.167s 0s;
-            }
+        className="ms-SearchBox-icon icon-62"
         data-icon-name="Search"
         onClick={[Function]}
         title=""
@@ -173,46 +27,7 @@ exports[`SearchField komponent matcher snapshot 1`] = `
       </i>
     </div>
     <input
-      className=
-          ms-SearchBox-field
-          {
-            background-color: transparent;
-            border: none;
-            box-shadow: none;
-            box-sizing: border-box;
-            color: rgba(0, 0, 0, 0.95);
-            flex: 1 1 0px;
-            font-family: inherit;
-            font-size: inherit;
-            font-weight: inherit;
-            margin-bottom: 0px;
-            margin-left: 0px;
-            margin-right: 0px;
-            margin-top: 0px;
-            min-width: 0px;
-            outline: none;
-            overflow: hidden;
-            padding-bottom: 0.5px;
-            padding-left: 0px;
-            padding-right: 0px;
-            padding-top: 0px;
-            text-overflow: ellipsis;
-          }
-          &::placeholder {
-            color: rgba(55, 55, 55, 0.95);
-            opacity: 1;
-          }
-          &:-ms-input-placeholder {
-            color: rgba(55, 55, 55, 0.95);
-            opacity: 1;
-          }
-          &::-ms-input-placeholder {
-            color: rgba(55, 55, 55, 0.95);
-            opacity: 1;
-          }
-          &::-ms-clear {
-            display: none;
-          }
+      className="ms-SearchBox-field field-60"
       id="SearchBox0"
       onBlur={[Function]}
       onChange={[Function]}

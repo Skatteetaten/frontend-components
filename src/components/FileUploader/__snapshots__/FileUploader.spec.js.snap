@@ -6,6 +6,9 @@ exports[`FileUploader komponent matcher snapshot 1`] = `
 
 
 >
+  <div
+    className="calloutLabelWrapper-54"
+  />
   <label
     id="buttonLabel"
   >
@@ -36,19 +39,7 @@ exports[`FileUploader komponent matcher snapshot 1`] = `
     >
       <i
         aria-hidden={true}
-        className=
-
-            {
-              -moz-osx-font-smoothing: grayscale;
-              -webkit-font-smoothing: antialiased;
-              color: #1362ae;
-              display: inline-block;
-              font-family: "Material Icons";
-              font-size: 1.25rem;
-              font-style: normal;
-              font-weight: normal;
-              speak: none;
-            }
+        className="uploadAreaIcon-63"
         data-icon-name="AttachFile"
       >
         

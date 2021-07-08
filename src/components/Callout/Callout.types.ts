@@ -15,9 +15,11 @@ export interface CalloutProps extends Omit<ICalloutProps, 'backgroundColor'> {
   /** Adds border around the callout box */
   border?: boolean;
   onClose?: () => void;
-  /** dir */
+  isCalloutVisible: boolean;
 }
 
 export interface CalloutState {
   isCalloutVisible: boolean;
+  target: Element | undefined;
+  widthBtnLabel: string;
 }
