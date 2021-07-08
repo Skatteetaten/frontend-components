@@ -15,7 +15,6 @@ export interface CalloutProps extends Omit<ICalloutProps, 'backgroundColor'> {
   /** Adds border around the callout box */
   border?: boolean;
   onClose?: () => void;
-  isCalloutVisible: boolean;
 }
 
 export interface CalloutState {
