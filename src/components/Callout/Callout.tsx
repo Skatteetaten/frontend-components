@@ -1,6 +1,6 @@
 import classnames from 'classnames';
 import { Callout as FabricCallout, DirectionalHint } from '@fluentui/react';
-import * as React from 'react';
+import React, { PureComponent } from 'react';
 import { IconButton } from '../IconButton';
 import { getClassNames } from './Callout.classNames';
 import { CalloutColor, CalloutProps, CalloutState } from './Callout.types';
@@ -8,7 +8,7 @@ import { CalloutColor, CalloutProps, CalloutState } from './Callout.types';
 /**
  * @visibleName Callout (Utropsboks)
  */
-export class Callout extends React.PureComponent<CalloutProps, CalloutState> {
+export class Callout extends PureComponent<CalloutProps, CalloutState> {
   static HELP = CalloutColor.HELP;
   static INFO = CalloutColor.INFO;
   static ERROR = CalloutColor.ERROR;
@@ -29,10 +29,42 @@ export class Callout extends React.PureComponent<CalloutProps, CalloutState> {
     role: undefined,
     border: true,
   };
+  constructor(props) {
+    super(props);
+    this.state = {
+      widthBtnLabel: '',
+      target: undefined,
+      isCalloutVisible: props.isCalloutVisible,
+    };
+  }
 
   render() {
     const { children, className, id, ...props } = this.props;
-    const styles = getClassNames(props);
+    const styles = getClassNames(props, this.state.widthBtnLabel);
+
+    window.onclick = (e) => {
+      if (
+        (e.target &&
+          e.target.parentElement !== this.state.target &&
+          e.target.parentElement.className.indexOf('ms-Button-textContainer') >
+            -1) ||
+        e.target.className.indexOf('ms-Button-textContainer') > -1
+      ) {
+        this.setState({
+          target: e.target.parentElement,
+          widthBtnLabel: window.getComputedStyle(e.target.parentElement).width,
+        });
+      }
+    };
+
+    window.onresize = () => {
+      if (this.state.target) {
+        this.setState({
+          //@ts-ignore
+          widthBtnLabel: window.getComputedStyle(this.state.target).width,
+        });
+      }
+    };
 
     return (
       <div id={id} className={classnames(styles.calloutWrapper, className)}>

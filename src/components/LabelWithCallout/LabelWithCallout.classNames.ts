@@ -32,6 +32,9 @@ export const getClassNames = (props: LabelWithCalloutProps) => {
   const { calloutFloating } = props;
 
   return mergeStyleSets({
+    calloutLabelWrapper: {
+      display: 'flex',
+    },
     calloutContext: {
       selectors: {
         '& .ms-Callout-container': {
