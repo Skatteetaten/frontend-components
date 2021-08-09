@@ -78,6 +78,14 @@ export const getClassNames = (props: FileUploaderProps) => {
       marginTop: '8px',
       marginBottom: '8px',
       cursor: 'pointer',
+      transition: 'all 80ms ease-in-out 0s',
+      selectors: {
+        ':focus': {
+          border: `2px solid ${palette.skeColor.blue}`,
+          backgroundImage: `repeating-linear-gradient(22.5deg, ${palette.skeColor.lightBlue}, ${palette.skeColor.lightBlue} 4px, ${palette.skeColor.white} 4px, ${palette.skeColor.white} 8px)`,
+          transform: 'scale(101%)',
+        },
+      },
     },
     uploadAreaIcon: {
       fontSize: FontSizes.icon,
