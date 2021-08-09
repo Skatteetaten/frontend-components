@@ -43,7 +43,8 @@ export const getClassNames = (props: FileUploaderProps) => {
       border: 0,
       borderStyle: 'none',
       cursor: 'pointer',
-      marginTop: 5,
+      marginTop: 4,
+      fontSize: '20px',
     },
     fileIcon: {
       fontSize: '20px',
@@ -52,6 +53,7 @@ export const getClassNames = (props: FileUploaderProps) => {
       float: 'left',
       width: '90%',
       display: 'inline',
+      lineHeight: '1.4',
       selectors: {
         i: {
           float: 'left',
@@ -60,6 +62,7 @@ export const getClassNames = (props: FileUploaderProps) => {
         },
         span: {
           display: 'flex',
+          marginTop: '3px',
         },
       },
     },
