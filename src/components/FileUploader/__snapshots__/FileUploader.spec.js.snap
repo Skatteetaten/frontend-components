@@ -10,24 +10,11 @@ exports[`FileUploader komponent matcher snapshot 1`] = `
     className="calloutLabelWrapper-54"
   />
   <label
-    id="buttonLabel"
+    id="fileupload123-label"
   >
     <div
-      aria-describedby="acceptedFileFormats"
-      className=
-
-          {
-            background-color: #cde1f9;
-            border: 2px dashed #1362ae;
-            cursor: pointer;
-            margin-bottom: 8px;
-            margin-top: 8px;
-            padding-bottom: 16px;
-            padding-left: 16px;
-            padding-right: 16px;
-            padding-top: 16px;
-            text-align: center;
-          }
+      aria-describedby="fileupload123-label acceptedFileFormats123"
+      className="uploadArea-52"
       onClick={[Function]}
       onDragEnter={[Function]}
       onDragLeave={[Function]}
@@ -64,5 +51,15 @@ exports[`FileUploader komponent matcher snapshot 1`] = `
     tabIndex={-1}
     type="file"
   />
+  <div
+    className="fileListWrapper-46"
+    role="alert"
+  >
+    <span
+      className="sr-only"
+    >
+      fileuploader.uploaded
+    </span>
+  </div>
 </div>
 `;

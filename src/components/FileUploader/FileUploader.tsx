@@ -13,6 +13,8 @@ import {
   FileFormatTypes,
   FileUploaderProps,
 } from './FileUploader.types';
+import { useEffect, useRef, useState } from 'react';
+import { generateId } from '../utils';
 
 export const isCorrectFileFormat = (
   file: File,
@@ -101,20 +103,26 @@ export const FileUploader: React.FC<FileUploaderProps> = (props) => {
     downloadFile,
   } = props;
   const styles = getClassNames(props);
-  const [internalFiles, setInternalFiles] = React.useState<Array<any>>(
+  const [internalFiles, setInternalFiles] = useState<Array<any>>(
     files ? files : []
   );
-  const [internalErrorMessages, setInternalErrorMessages] = React.useState<
-    string[]
-  >([]);
-  const [internalLoading, setInternalLoading] = React.useState<boolean>(false);
-  const inputRef = React.useRef<HTMLInputElement | null>(null);
+  const [internalErrorMessages, setInternalErrorMessages] = useState<string[]>(
+    []
+  );
+  const [internalLoading, setInternalLoading] = useState<boolean>(false);
+  const inputRef = useRef<HTMLInputElement | null>(null);
+  const uploadAreaRef = useRef<HTMLDivElement | null>(null);
+
+  const randomId = generateId();
+  const fileuploadLabelId = 'fileupload'.concat(randomId, '-label');
+  const acceptedFileFormatsId = 'acceptedFileFormats'.concat(randomId);
+  const informationId = 'information'.concat(randomId);
 
   if (language) {
     i18n.changeLanguage(language);
   }
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (files) {
       setInternalFiles(files);
     }
@@ -309,6 +317,7 @@ export const FileUploader: React.FC<FileUploaderProps> = (props) => {
         deleteFile(fileToBeDeleted, internalErrorMessages);
       }
     }
+    uploadAreaRef.current?.focus();
   };
   if (deleteAllFiles && files) {
     files.forEach((file) => {
@@ -336,11 +345,15 @@ export const FileUploader: React.FC<FileUploaderProps> = (props) => {
         autoDismiss={labelWithCalloutAutoDismiss}
         {...labelCallout}
       />
-      <label id="buttonLabel">
+      <label id={fileuploadLabelId}>
         <div
+          ref={uploadAreaRef}
           className={styles.uploadArea}
           role="button"
-          aria-describedby="acceptedFileFormats"
+          aria-describedby={fileuploadLabelId.concat(
+            ' ',
+            acceptedFileFormatsId
+          )}
           tabIndex={0}
           onDragEnter={handleDragOverAndDragEnter}
           onDragLeave={handleDragLeave}
@@ -382,7 +395,7 @@ export const FileUploader: React.FC<FileUploaderProps> = (props) => {
       />
 
       {acceptedFileFormats && (
-        <span className={styles.informationWrapper} id="acceptedFileFormats">
+        <span className={styles.informationWrapper} id={acceptedFileFormatsId}>
           {acceptedFileFormatsLabel
             ? acceptedFileFormatsLabel
             : t('fileuploader.accepted_file_formats')}{' '}
@@ -400,7 +413,16 @@ export const FileUploader: React.FC<FileUploaderProps> = (props) => {
         </span>
       )}
       {info && (
-        <div className={styles.informationWrapper} id="information">
+        <div
+          aria-describedby={fileuploadLabelId.concat(
+            ' ',
+            acceptedFileFormatsId,
+            ' ',
+            informationId
+          )}
+          className={styles.informationWrapper}
+          id={informationId}
+        >
           {info}
         </div>
       )}
@@ -410,8 +432,9 @@ export const FileUploader: React.FC<FileUploaderProps> = (props) => {
             <ErrorMessage>{msg}</ErrorMessage>
           </div>
         ))}
-      {internalFiles.length > 0 && (
-        <div role="alert" className={styles.fileListWrapper}>
+      <div role="alert" className={styles.fileListWrapper}>
+        <span className="sr-only">{t('fileuploader.uploaded')}</span>
+        {internalFiles.length > 0 && (
           <ul className={styles.fileList}>
             {internalFiles.map((file, index: number) => (
               <li key={file.name.concat(index.toString())}>
@@ -440,8 +463,8 @@ export const FileUploader: React.FC<FileUploaderProps> = (props) => {
               </li>
             ))}
           </ul>
-        </div>
-      )}
+        )}
+      </div>
     </div>
   );
 };
