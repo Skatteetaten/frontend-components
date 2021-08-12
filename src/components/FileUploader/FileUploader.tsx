@@ -317,7 +317,10 @@ export const FileUploader: React.FC<FileUploaderProps> = (props) => {
         deleteFile(fileToBeDeleted, internalErrorMessages);
       }
     }
-    uploadAreaRef.current?.focus();
+    const ref = uploadAreaRef.current;
+    if (ref) {
+      ref.focus();
+    }
   };
   if (deleteAllFiles && files) {
     files.forEach((file) => {
