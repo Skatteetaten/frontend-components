@@ -83,10 +83,13 @@ export const getClassNames = (props: FileUploaderProps) => {
       cursor: 'pointer',
       transition: 'all 80ms ease-in-out 0s',
       selectors: {
+        ':hover': {
+          border: `2px solid ${palette.skeColor.blue}`,
+        },
         ':focus': {
           border: `2px solid ${palette.skeColor.blue}`,
-          backgroundImage: `repeating-linear-gradient(22.5deg, ${palette.skeColor.lightBlue}, ${palette.skeColor.lightBlue} 4px, ${palette.skeColor.white} 4px, ${palette.skeColor.white} 8px)`,
-          transform: 'scale(101%)',
+          transform: 'scale(1.02) translateY(-1px)',
+          boxShadow: 'rgba(0, 0, 0, 0.3) 0px 10px 6px -10px',
         },
       },
     },
