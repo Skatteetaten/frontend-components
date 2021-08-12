@@ -23,6 +23,7 @@ export const languages = {
     'fileuploader.error.upload.403':
       'Du har ikke rettigheter til å laste opp filer.',
     'fileuploader.error.upload.general': 'Kunne ikke laste opp fil',
+    'fileuploaded.uploaded.sr_heading': 'Lastet opp:',
     'searchfield.sr.focus':
       'Bruk piltaster ned/opp for å velge forslag når de vises',
     'searchfield.sr.results': '{{ant}} forslag vises.',
@@ -55,6 +56,7 @@ export const languages = {
     'fileuploader.error.upload.403':
       'Du har ikkje rettar til å lasta opp filer.',
     'fileuploader.error.upload.general': 'Kunne ikkje lasta opp fil',
+    'fileuploaded.uploaded.sr_heading': 'Lasta opp:',
     'searchfield.sr.focus': 'Bruk piltastane ned/opp for å velje',
     'searchfield.sr.results': '{{ant}} forslag visast.',
     'table.sortable': 'sorterbar',
@@ -87,6 +89,7 @@ export const languages = {
     'fileuploader.error.upload.403':
       'You do not have permission to upload files',
     'fileuploader.error.upload.general': "Can't upload file",
+    'fileuploaded.uploaded.sr_heading': 'Uploaded:',
     'searchfield.sr.focus': 'Use up/down to choose options when they are shown',
     'searchfield.sr.results': '{{ant}} items shown.',
     'table.sortable': 'sortable',
