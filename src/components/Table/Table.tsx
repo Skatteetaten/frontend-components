@@ -1,5 +1,5 @@
 import classnames from 'classnames';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { getClassNames } from './Table.classNames';
 import { t, generateId, getSrOnlyStyle } from '../utils';
 import { Icon } from '../Icon';
@@ -153,6 +153,12 @@ export const Table = <P extends object>(props: TableProps<P>) => {
     ascending: boolean;
     columnFieldName: string;
   }>({ ascending: false, columnFieldName: '' });
+
+  useEffect(() => {
+    if (props.setOpenEditableRowIndex) {
+      props.setOpenEditableRowIndex(openEditableRowIndex);
+    }
+  }, [openEditableRowIndex]);
 
   const updateDimensions = () => {
     const tableWidth = tableRef.current && tableRef.current.clientWidth;
