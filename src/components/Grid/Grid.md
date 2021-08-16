@@ -221,7 +221,7 @@ import DatePicker from '@skatteetaten/frontend-components/DatePicker';
 <p>
     <ul>
   <li>Grid er nyttig i utvikling av nettsiden fordi det hjelper oss å 
-tenke gjennom hvordan vi enklest kan plassere komponentene.</li>
+planlegge hvordan vi enklest kan plassere komponentene.</li>
     <li>Rutenettet sikrer responsivt design ved å fordele og gruppere innholdet 
 riktig. Det vil si at komponentene er på rett plass, selv om brukerne benytter 
 forskjellige skjermbredder</li>
@@ -235,7 +235,7 @@ forskjellige skjermbredder</li>
 kolonner, men du trenger ikke bruke alle 12.</li>
  <li>Sett opp rutenettet slik at tallet på kolonner som brukeren ser, er 
 avhengig av skjermstørrelsen. Da vil innholdet automatisk blir strekt, krympet 
-eller flyttet, for å tilpasse seg den tilgjengelige skjermplassen.</li> 
+eller flyttet for å tilpasse seg den tilgjengelige skjermplassen.</li> 
  <li>I praksis må du forholde deg et sett av skjermstørrelser og hvordan rutenettet 
 skal se ut på hver av dem. Ved gitte skjermstørrelser kan rutenettet justere seg for eksempel, 
 gå fra flere kolonner på desktop til én kolonne på mobil.</li>
@@ -245,7 +245,7 @@ gå fra flere kolonner på desktop til én kolonne på mobil.</li>
 <h3>Brekkpunkter som komponenten bruker:</h3>
   <p>
    { " " }
-    Skjermstørrelsene som rutenettet kan justere seg på kalles brekkpunkter og
+    Skjermstørrelsene som rutenettet kan justere seg på kalles brekkpunkter, og
     komponenten bruker disse:
   <ul>
     <li>Small (sm): maks 479px</li>
@@ -267,11 +267,11 @@ gå fra flere kolonner på desktop til én kolonne på mobil.</li>
   <ul>
     <li>
       Når innholdet hører sammen: Grid.SPACE_NONE (0px) eller Grid.SPACE_SMALL
-      (8px)
-    </li>
+      (8px)</li>
     <li>For ny seksjon med samme type innhold: Grid.SPACE_MEDIUM (16px)</li>
     <li>Nytt type innhold eller tydelig skille: Grid.SPACE_LARGE (24px)</li>
   </ul>
+ </p>
 
   <p>Slik justerer du luft rundt celler for å skille eller samle innhold:</p>
   <ul>
@@ -281,6 +281,7 @@ gå fra flere kolonner på desktop til én kolonne på mobil.</li>
     </li>
     <li>Fjern luft helt ved å bruke &lt;Grid.Col noSpacing&gt;.</li>
   </ul>
+ </p>
 </>;
 ```
 
