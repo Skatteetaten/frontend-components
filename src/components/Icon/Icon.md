@@ -330,6 +330,10 @@ const iconGroup = {
       usage: 'Skatt, penger',
     },
     {
+      name: 'Soknad',
+      usage: 'Søknad',
+    },
+    {
       name: 'Folkeregister',
       usage: 'Folkeregister',
     },
@@ -462,6 +466,10 @@ const iconGroup = {
     {
       name: 'Edit',
       usage: 'Endre eller rediger',
+    },
+    {
+      name: 'Dupliser',
+      usage: 'Dupliser',
     },
     {
       name: 'Print',
