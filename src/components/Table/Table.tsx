@@ -135,6 +135,7 @@ export const Table = <P extends object>(props: TableProps<P>) => {
     caption = null,
     hideCaption,
     openEditableRowIndex: externalOpenEditableRowIndex,
+    setOpenEditableRowIndex,
     sum,
   } = props;
   const genratedId = generateId();
@@ -143,9 +144,10 @@ export const Table = <P extends object>(props: TableProps<P>) => {
   const wrapperRef = React.useRef<HTMLDivElement>(null);
   const tableRef = React.useRef<HTMLDivElement>(null);
   const [tableIsScrollable, setTableIsScrollable] = useState<boolean>(false);
-  const [openEditableRowIndex, setOpenEditableRowIndex] = useState<
-    number | undefined
-  >(externalOpenEditableRowIndex);
+  const [
+    openEditableRowIndexInternal,
+    setOpenEditableRowIndexInternal,
+  ] = useState<number | undefined>(externalOpenEditableRowIndex);
   const [openExpandableRowIndex, setOpenExpandableIndex] = useState<
     number | undefined
   >();
@@ -155,10 +157,10 @@ export const Table = <P extends object>(props: TableProps<P>) => {
   }>({ ascending: false, columnFieldName: '' });
 
   useEffect(() => {
-    if (props.setOpenEditableRowIndex) {
-      props.setOpenEditableRowIndex(openEditableRowIndex);
+    if (setOpenEditableRowIndex) {
+      setOpenEditableRowIndex(openEditableRowIndexInternal);
     }
-  }, [openEditableRowIndex]);
+  }, [openEditableRowIndexInternal, setOpenEditableRowIndex]);
 
   const updateDimensions = () => {
     const tableWidth = tableRef.current && tableRef.current.clientWidth;
@@ -196,13 +198,13 @@ export const Table = <P extends object>(props: TableProps<P>) => {
   };
 
   const handleEditRow = (index: number) => {
-    setOpenEditableRowIndex(index);
+    setOpenEditableRowIndexInternal(index);
   };
   const handleExpandRow = (index: number) => {
     setOpenExpandableIndex(index);
   };
   const handleCloseRow = () => {
-    setOpenEditableRowIndex(undefined);
+    setOpenEditableRowIndexInternal(undefined);
     setOpenExpandableIndex(undefined);
   };
 
@@ -217,13 +219,13 @@ export const Table = <P extends object>(props: TableProps<P>) => {
           columns={columns}
           editableContent={props.editableContent}
           editableRows={props.editableRows}
-          editModeActive={openEditableRowIndex !== undefined}
+          editModeActive={openEditableRowIndexInternal !== undefined}
           expandableContent={props.expandableContent}
           expandableModeActive={openExpandableRowIndex !== undefined}
           expandableRows={props.expandableRows}
           expandIconPlacement={props.expandIconPlacement}
           tableHasScroll={tableIsScrollable}
-          isEditableRowOpen={openEditableRowIndex === index}
+          isEditableRowOpen={openEditableRowIndexInternal === index}
           isExpandableRowOpen={openExpandableRowIndex === index}
           openEditableOnRowClick={openEditableOnRowClick}
           onEditRow={() => handleEditRow(index)}
