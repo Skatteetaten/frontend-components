@@ -134,7 +134,7 @@ export const Table = <P extends object>(props: TableProps<P>) => {
     compactTable = false,
     caption = null,
     hideCaption,
-    openEditableRowIndex: externalOpenEditableRowIndex,
+    openEditableRowIndex: OpenEditableRowIndexExternal,
     setOpenEditableRowIndex,
     sum,
   } = props;
@@ -147,7 +147,7 @@ export const Table = <P extends object>(props: TableProps<P>) => {
   const [
     openEditableRowIndexInternal,
     setOpenEditableRowIndexInternal,
-  ] = useState<number | undefined>(externalOpenEditableRowIndex);
+  ] = useState<number | undefined>(OpenEditableRowIndexExternal);
   const [openExpandableRowIndex, setOpenExpandableIndex] = useState<
     number | undefined
   >();
@@ -161,6 +161,10 @@ export const Table = <P extends object>(props: TableProps<P>) => {
       setOpenEditableRowIndex(openEditableRowIndexInternal);
     }
   }, [openEditableRowIndexInternal, setOpenEditableRowIndex]);
+
+  useEffect(() => {
+    setOpenEditableRowIndexInternal(OpenEditableRowIndexExternal);
+  }, [OpenEditableRowIndexExternal]);
 
   const updateDimensions = () => {
     const tableWidth = tableRef.current && tableRef.current.clientWidth;
