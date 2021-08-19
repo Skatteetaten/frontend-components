@@ -355,7 +355,8 @@ export const FileUploader: React.FC<FileUploaderProps> = (props) => {
           role="button"
           aria-describedby={fileuploadLabelId.concat(
             ' ',
-            acceptedFileFormatsId
+            acceptedFileFormatsId,
+            info ? ' '.concat(informationId) : ''
           )}
           tabIndex={0}
           onDragEnter={handleDragOverAndDragEnter}
@@ -416,16 +417,7 @@ export const FileUploader: React.FC<FileUploaderProps> = (props) => {
         </span>
       )}
       {info && (
-        <div
-          aria-describedby={fileuploadLabelId.concat(
-            ' ',
-            acceptedFileFormatsId,
-            ' ',
-            informationId
-          )}
-          className={styles.informationWrapper}
-          id={informationId}
-        >
+        <div className={styles.informationWrapper} id={informationId}>
           {info}
         </div>
       )}
@@ -436,7 +428,7 @@ export const FileUploader: React.FC<FileUploaderProps> = (props) => {
           </div>
         ))}
       <div role="alert" className={styles.fileListWrapper}>
-        <span className="sr-only">{t('fileuploader.uploaded')}</span>
+        <span className="sr-only">{t('fileuploader.uploaded.sr_heading')}</span>
         {internalFiles.length > 0 && (
           <ul className={styles.fileList}>
             {internalFiles.map((file, index: number) => (

@@ -58,7 +58,7 @@ exports[`FileUploader komponent matcher snapshot 1`] = `
     <span
       className="sr-only"
     >
-      fileuploader.uploaded
+      Lastet opp:
     </span>
   </div>
 </div>
