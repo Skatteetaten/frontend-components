@@ -2,7 +2,7 @@
 
 ### Ikke innlogget
 
-Viser Kontakt oss, endre skriftsstørrelse, språk og logg inn.
+Viser kontakt oss, endre skriftsstørrelse, språk og logg inn.
 
 ```js
 import TopStripe, {
@@ -54,7 +54,7 @@ import Link from '@skatteetaten/frontend-components/Link';
 
 ### Innlogget og kan kun representere seg selv
 
-Viser Kontakt oss, endre skriftsstørrelse, språk, partsvalg og logg ut.
+Viser kontakt oss, endre skriftsstørrelse, språk, partsvalg (velger for hvem de representerer) og logg ut.
 
 ```js
 import TopStripe, {
@@ -116,7 +116,7 @@ import Icon from '@skatteetaten/frontend-components/Icon';
 
 ### Innlogget og kan representere flere
 
-Viser Kontakt oss, endre skriftsstørrelse, språk, partsvalg og logg ut.
+Viser kontakt oss, endre skriftsstørrelse, språk, partsvalg (velger for hvem de representerer) og logg ut.
 
 ```js
 import TopStripe, {
