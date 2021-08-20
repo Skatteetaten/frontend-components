@@ -427,39 +427,41 @@ export const FileUploader: React.FC<FileUploaderProps> = (props) => {
             <ErrorMessage>{msg}</ErrorMessage>
           </div>
         ))}
-      {internalFiles.length > 0 && (
-        <span className="sr-only">{t('fileuploader.uploaded.sr_heading')}</span>
-      )}
       <div role="alert" aria-atomic="true" className={styles.fileListWrapper}>
         {internalFiles.length > 0 && (
-          <ul className={styles.fileList}>
-            {internalFiles.map((file, index: number) => (
-              <li key={file.name.concat(index.toString())}>
-                <div className={styles.fileName}>
-                  <Icon
-                    className={styles.fileIcon}
-                    iconName={getFileIconName(file)}
-                  />
-                  {showFileName(file)}
-                </div>
-                {file.error ? (
-                  <Icon iconName={'Error'} className={styles.errorColor} />
-                ) : (
-                  <button
-                    className={styles.fileListCancelBtn}
-                    onClick={() => deleteFromList(file)}
-                    aria-label={
-                      deleteButtonAriaLabel
-                        ? deleteButtonAriaLabel
-                        : t('fileuploader.delete.ariaLabel')
-                    }
-                  >
-                    <Icon iconName={'Cancel'} />
-                  </button>
-                )}
-              </li>
-            ))}
-          </ul>
+          <>
+            <span className="sr-only">
+              {t('fileuploader.uploaded.sr_heading')}
+            </span>
+            <ul className={styles.fileList}>
+              {internalFiles.map((file, index: number) => (
+                <li key={file.name.concat(index.toString())}>
+                  <div className={styles.fileName}>
+                    <Icon
+                      className={styles.fileIcon}
+                      iconName={getFileIconName(file)}
+                    />
+                    {showFileName(file)}
+                  </div>
+                  {file.error ? (
+                    <Icon iconName={'Error'} className={styles.errorColor} />
+                  ) : (
+                    <button
+                      className={styles.fileListCancelBtn}
+                      onClick={() => deleteFromList(file)}
+                      aria-label={
+                        deleteButtonAriaLabel
+                          ? deleteButtonAriaLabel
+                          : t('fileuploader.delete.ariaLabel')
+                      }
+                    >
+                      <Icon iconName={'Cancel'} />
+                    </button>
+                  )}
+                </li>
+              ))}
+            </ul>
+          </>
         )}
       </div>
     </div>
