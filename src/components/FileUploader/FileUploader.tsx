@@ -427,8 +427,10 @@ export const FileUploader: React.FC<FileUploaderProps> = (props) => {
             <ErrorMessage>{msg}</ErrorMessage>
           </div>
         ))}
-      <div role="alert" className={styles.fileListWrapper}>
+      {internalFiles.length > 0 && (
         <span className="sr-only">{t('fileuploader.uploaded.sr_heading')}</span>
+      )}
+      <div role="alert" aria-atomic="true" className={styles.fileListWrapper}>
         {internalFiles.length > 0 && (
           <ul className={styles.fileList}>
             {internalFiles.map((file, index: number) => (

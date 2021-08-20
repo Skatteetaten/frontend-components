@@ -52,14 +52,9 @@ exports[`FileUploader komponent matcher snapshot 1`] = `
     type="file"
   />
   <div
+    aria-atomic="true"
     className="fileListWrapper-46"
     role="alert"
-  >
-    <span
-      className="sr-only"
-    >
-      Lastet opp:
-    </span>
-  </div>
+  />
 </div>
 `;
