@@ -56,22 +56,19 @@ import Typography from '@skatteetaten/frontend-components/Typography';
     <li>Lister (ol og ul)</li>
     <li>Sitat (blockqoute)</li>
   </ul>
-  <h3>Plassering i koden</h3>
+  <h3>Tips når du plasserer komponenten i koden:</h3>
   <p>
     Du kan bruke typografi-komponenten både på høyere og lavere nivå i koden:
   </p>
   <ul>
-    <li>
-      Hvis du legger Typography på et høyt nivå, for eksempel innenfor
-      body-taggen, sikrer det konsekvente stiler på tvers i løsningen. Men det
-      betyr også at stilene da kan påvirke utseendet i andre komponenter som du
-      legger til på et lavere nivå, inn under Typography.{' '}
+    <li>Hvis du legger Typography på et høyt nivå, for eksempel innenfor body-taggen, 
+sikrer det konsekvente stiler på tvers i løsningen. Det betyr samtidig at stilene kan 
+påvirke utseendet i andre komponenter som du legger til på et lavere nivå, under Typography.{' '}
     </li>
     <li>
-      Hvis du oppleverer at typografien i underliggende komponenter ikke blir
-      som du forventer, bør du vurderere å flytte Typography-komponenten til et
-      lavere nivå i koden.
-    </li>
+      Vurderer å flytte Typography-komponenten til et lavere nivå i 
+koden hvis du opplever at typografien i underliggende komponenter ikke blir som 
+du forventer.</li>
   </ul>
   <p>
     Se <a href="#section-skrifttype">«skrifttype»</a> for detaljer rundt
