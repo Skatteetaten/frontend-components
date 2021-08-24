@@ -8,10 +8,10 @@ exports[`FileUploader komponent matcher snapshot 1`] = `
     className="calloutLabelWrapper-54"
   />
   <label
-    id="buttonLabel"
+    id="fileupload123-label"
   >
     <div
-      aria-describedby="acceptedFileFormats"
+      aria-describedby="fileupload123-label acceptedFileFormats123"
       className="uploadArea-52"
       onClick={[Function]}
       onDragEnter={[Function]}
@@ -41,6 +41,11 @@ exports[`FileUploader komponent matcher snapshot 1`] = `
     onChange={[Function]}
     tabIndex={-1}
     type="file"
+  />
+  <div
+    aria-atomic="true"
+    className="fileListWrapper-46"
+    role="alert"
   />
 </div>
 `;
