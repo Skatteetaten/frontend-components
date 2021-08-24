@@ -81,6 +81,24 @@ export const getClassNames = (props: FileUploaderProps) => {
       marginTop: '8px',
       marginBottom: '8px',
       cursor: 'pointer',
+      transition: 'all 80ms ease-in-out 0s',
+      selectors: {
+        ':hover': {
+          border: `2px dashed ${palette.skeColor.blue}`,
+          transform: 'scale(1.02) translateY(-1px)',
+          boxShadow: 'rgba(0, 0, 0, 0.3) 0px 10px 6px -10px',
+        },
+        ':focus': {
+          border: `2px solid ${palette.skeColor.blue}`,
+          transform: 'scale(1.02) translateY(-1px)',
+          boxShadow: 'rgba(0, 0, 0, 0.3) 0px 10px 6px -10px',
+        },
+        ':active': {
+          border: `2px solid ${palette.skeColor.blue}`,
+          transform: 'scale(1) translateY(0)',
+          boxShadow: 'rgba(0, 0, 0, 0.0) 0px 0 0 0',
+        },
+      },
     },
     uploadAreaIcon: {
       fontSize: FontSizes.icon,
