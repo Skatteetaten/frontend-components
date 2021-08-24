@@ -33,7 +33,7 @@ describe('FileUploader komponent', () => {
       ariaLabel: 'Filopplaster',
       uploadFile: jest.fn(),
     });
-    expect(wrapper.find('div').last().text()).toEqual(
+    expect(wrapper.find('div').at(2).text()).toEqual(
       'Husk å sjekke for sensitive personopplysninger, og evt fjerne disse før du laster opp vedleggene.'
     );
   });

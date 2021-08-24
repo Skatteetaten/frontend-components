@@ -1,3 +1,10 @@
+### **v.4.1.2 - 24.08.2021**
+
+- FileUploader: Better support for screen reader, and updated focus styling on main button
+- LabelWithCallout: fixes a bug where the callout background was not displayed correctly
+- Table: fixes an issue where setOpenEditableRowIndex was not called
+- Improved accessibility in Chip and Callout examples
+
 ### **v.4.1.1 - 17.06.2021**
 
 - TopBanner: now supports TopStripe as a prop, and therefore rendered inside the header-element. (Accessibility improvement)
