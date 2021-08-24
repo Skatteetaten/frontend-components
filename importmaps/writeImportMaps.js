@@ -133,13 +133,20 @@ const writeImportmaps = () => {
 };
 
 const write = async () => {
-
   fs.rmdirSync(`${destDir}/esm/deps`, { recursive: true, force: true });
   fs.rmdirSync(`${destDir}/esm/importmaps`, { recursive: true, force: true });
   // TO-DO - usikker hva tanken var her og om vi må gjøre noe mer etter for esm importMaps
-  // fs.rmdirSync(`${destDir}/umd/deps`, { recursive: true, force: true });
+  // fs.rmdirSync(`${destDir}/esm/deps`, { recursive: true, force: true });
+  // fs.rmdirSync(`${destDir}/esm/importmaps`, { recursive: true, force: true });
+
+  replaceImportVersions(dataDev.imports);
+  replaceImportVersions(dataProd.imports);
+  replaceImportVersions(dataInternalDev.imports);
+  replaceImportVersions(dataInternalProd.imports);
 
   writeImportmaps();
+};
+
 write()
   .catch((error) => {
     console.error(error);

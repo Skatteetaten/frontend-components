@@ -5,19 +5,112 @@ exports[`LabelWithCallout komponent matcher snapshot 1`] = `
   className="calloutLabelWrapper-42"
 >
   <label
-    className="label-44"
+    className=
+
+        {
+          color: #1d1d1d;
+          display: initial;
+          font-size: 1rem;
+          font-weight: 400;
+          padding-bottom: 4px;
+          padding-left: 0px;
+        }
+        & .ms-Label {
+          font-weight: 400;
+        }
     id="LabelWithCallout_id"
   >
     Mock Label
   </label>
   <span
-    className="labelIconArea-46"
+    className=
+
+        {
+          display: inline-block;
+          height: 22px;
+        }
+        & button  {
+          height: 22px;
+          margin-top: -2px;
+        }
   >
     <button
       aria-describedby="LabelWithCallout_id"
       aria-expanded={false}
       aria-label="Hjelp"
-      className="ms-Button ms-Button--icon icon-50"
+      className=
+          ms-Button
+          ms-Button--icon
+          {
+            -moz-osx-font-smoothing: grayscale;
+            -webkit-font-smoothing: antialiased;
+            background-color: transparent;
+            border-radius: 2px;
+            border: none;
+            box-sizing: border-box;
+            color: #1362ae;
+            cursor: pointer;
+            display: inline-block;
+            font-family: 'Helvetica Neue', Helvetica , Arial, 'Liberation Sans', 'Nimbus Sans L', sans-serif;
+            font-size: 1rem;
+            font-weight: 400;
+            height: 32px;
+            outline: transparent;
+            padding-bottom: 0;
+            padding-left: 4px;
+            padding-right: 4px;
+            padding-top: 0;
+            position: relative;
+            text-align: center;
+            text-decoration: none;
+            user-select: none;
+            width: 32px;
+          }
+          &::-moz-focus-inner {
+            border: 0;
+          }
+          .ms-Fabric--isFocusVisible &:focus:after {
+            border: 1px solid transparent;
+            bottom: 2px;
+            content: "";
+            left: 2px;
+            outline: 1px solid rgba(55, 55, 55, 0.95);
+            position: absolute;
+            right: 2px;
+            top: 2px;
+            z-index: 1;
+          }
+          @media screen and (-ms-high-contrast: active), (forced-colors: active){.ms-Fabric--isFocusVisible &:focus:after {
+            bottom: -2px;
+            left: -2px;
+            outline-color: ButtonText;
+            right: -2px;
+            top: -2px;
+          }
+          &:active > * {
+            left: 0px;
+            position: relative;
+            top: 0px;
+          }
+          &:hover {
+            background-color: #f4f4f4;
+            color: #11599c;
+          }
+          @media screen and (-ms-high-contrast: active), (forced-colors: active){&:hover {
+            border-color: Highlight;
+            color: Highlight;
+          }
+          &:active {
+            background-color: #eaeaea;
+            color: #0c3f6f;
+          }
+          & i {
+            font-size: large;
+          }
+          &:focus&:after {
+            border: 2px solid #1362ae;
+            outline: none;
+          }
       data-is-focusable={true}
       onClick={[Function]}
       onKeyDown={[Function]}
@@ -29,12 +122,44 @@ exports[`LabelWithCallout komponent matcher snapshot 1`] = `
       type="button"
     >
       <span
-        className="ms-Button-flexContainer flexContainer-51"
+        className=
+            ms-Button-flexContainer
+            {
+              align-items: center;
+              display: flex;
+              flex-wrap: nowrap;
+              height: 100%;
+              justify-content: center;
+            }
         data-automationid="splitbuttonprimary"
       >
         <i
           aria-hidden={true}
-          className="ms-Icon root-38 css-58 ms-Button-icon icon-53"
+          className=
+              ms-Icon
+              ms-Button-icon
+              {
+                display: inline-block;
+              }
+              {
+                -moz-osx-font-smoothing: grayscale;
+                -webkit-font-smoothing: antialiased;
+                font-family: "Material Icons";
+                font-style: normal;
+                font-weight: normal;
+                speak: none;
+              }
+              {
+                flex-shrink: 0;
+                font-size: 1.0625rem;
+                height: 16px;
+                line-height: 16px;
+                margin-bottom: 0;
+                margin-left: 4px;
+                margin-right: 4px;
+                margin-top: 0;
+                text-align: center;
+              }
           data-icon-name="HelpOutline"
           style={
             Object {
