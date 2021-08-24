@@ -12,10 +12,23 @@ exports[`Link komponent matcher snapshot 1`] = `
   }
 >
   <ul
-    className="arrowLinkList-44"
+    className=
+
+        {
+          padding-inline-start: 0px;
+        }
   >
     <li
-      className="arrowLink-42"
+      className=
+
+          {
+            display: block;
+            margin-bottom: 12px;
+            margin-left: 0px;
+            margin-right: 0;
+            margin-top: 0;
+            position: relative;
+          }
       key="0"
     >
       <Link
@@ -26,20 +39,66 @@ exports[`Link komponent matcher snapshot 1`] = `
         text="Dette er en link"
       >
         <span
-          className="linkContainer-46"
+          className=
+
+              {
+                margin-bottom: 0px;
+                margin-left: 0px;
+                margin-right: 0px;
+                margin-top: 0px;
+              }
+              &:hover>i {
+                color: #093e61;
+                padding-left: 4px;
+                padding-right: 6px;
+                transition: 0.1s;
+              }
+              &:hover>a {
+                background-color: #cde1f9;
+              }
         >
           <Icon
-            className="icon-45"
+            className=
+
+                {
+                  border-bottom: none;
+                  color: #1362ae;
+                  font-size: 1rem;
+                  font-weight: 700;
+                  padding-left: 0px;
+                  padding-right: 10px;
+                  vertical-align: bottom;
+                }
             iconName="ArrowForward"
             role="presentation"
           >
             <StyledIconBase
-              className="icon-45"
+              className=
+
+                  {
+                    border-bottom: none;
+                    color: #1362ae;
+                    font-size: 1rem;
+                    font-weight: 700;
+                    padding-left: 0px;
+                    padding-right: 10px;
+                    vertical-align: bottom;
+                  }
               iconName="ArrowForward"
               role="presentation"
             >
               <IconBase
-                className="icon-45"
+                className=
+
+                    {
+                      border-bottom: none;
+                      color: #1362ae;
+                      font-size: 1rem;
+                      font-weight: 700;
+                      padding-left: 0px;
+                      padding-right: 10px;
+                      vertical-align: bottom;
+                    }
                 iconName="ArrowForward"
                 role="presentation"
                 styles={[Function]}
@@ -354,7 +413,25 @@ exports[`Link komponent matcher snapshot 1`] = `
               >
                 <i
                   aria-hidden={true}
-                  className="icon-50"
+                  className=
+
+                      {
+                        -moz-osx-font-smoothing: grayscale;
+                        -webkit-font-smoothing: antialiased;
+                        border-bottom: none;
+                        color: #1362ae;
+                        display: inline-block;
+                        font-family: "SkeIconfont";
+                        font-size: 1rem;
+                        font-style: normal;
+                        font-weight: 700;
+                        padding-left: 0px;
+                        padding-right: 10px;
+                        speak: none;
+                        text-rendering: auto;
+                        transform: translate(0, 0);
+                        vertical-align: bottom;
+                      }
                   data-icon-name="ArrowForward"
                   role="presentation"
                 >
@@ -364,7 +441,25 @@ exports[`Link komponent matcher snapshot 1`] = `
             </StyledIconBase>
           </Icon>
           <a
-            className="iconLink-48"
+            className=
+
+                {
+                  border-bottom: 1px solid #1362ae;
+                  color: #1362ae;
+                  font-weight: 700;
+                  text-decoration: none;
+                }
+                &:hover {
+                  background-color: #cde1f9;
+                  border-bottom: 2px solid #093e61;
+                  color: #093e61;
+                }
+                &:focus {
+                  background-color: #cde1f9;
+                  border-bottom: 2px solid #093e61;
+                  color: #093e61;
+                  outline: none;
+                }
             href="#"
           >
             Dette er en link

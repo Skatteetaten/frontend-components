@@ -3,10 +3,95 @@
 exports[`TopStripe komponent matcher snapshot  1`] = `
 Array [
   <div
-    className="overlay-42"
+    className=
+
+        {
+          background-color: rgba(255, 255, 255, 0.8);
+          bottom: 0px;
+          display: none;
+          left: 0px;
+          min-height: 200px;
+          position: fixed;
+          right: 0px;
+          top: 0px;
+          transition: 0.3s ease-out;
+          z-index: 100;
+        }
   />,
   <ul
-    className="topStripeContainer-46"
+    className=
+
+        {
+          align-items: center;
+          background-color: #1d1d1d;
+          color: #ffffff;
+          display: flex;
+          font-size: 0.875rem;
+          font-weight: 400;
+          justify-content: flex-end;
+          margin-bottom: 0px;
+          margin-left: 0px;
+          margin-right: 0px;
+          margin-top: 0px;
+          min-height: 40px;
+          padding-bottom: 0;
+          padding-left: 8px;
+          padding-right: 8px;
+          padding-top: 0;
+          position: relative;
+          z-index: 150;
+        }
+        & li {
+          list-style-type: none;
+          padding-bottom: 8px;
+          padding-left: 16px;
+          padding-right: 16px;
+          padding-top: 6px;
+        }
+        & a {
+          border-color: #bbbbbb;
+          border-width: 2px;
+          color: #ffffff;
+          font-weight: 400;
+        }
+        & i {
+          border-color: #bbbbbb;
+          border-width: 2px;
+          color: #ffffff;
+          font-weight: 400;
+        }
+        & a:hover {
+          border-color: #ffffff;
+          color: #ffffff;
+        }
+        & a:hover i {
+          border-color: #ffffff;
+          color: #ffffff;
+        }
+        & a:focus {
+          background-color: #ffffff;
+          border-color: #666666;
+          color: #1d1d1d;
+          outline: none;
+        }
+        & a:focus i {
+          background-color: #ffffff;
+          border-color: #666666;
+          color: #1d1d1d;
+          outline: none;
+        }
+        & a:active {
+          background-color: #ffffff;
+          color: #1d1d1d;
+        }
+        & a:active i {
+          background-color: #ffffff;
+          color: #1d1d1d;
+        }
+        @media (min-width: 900px){& {
+          font-size: 0.875rem;
+          min-height: 40px;
+        }
   />,
 ]
 `;

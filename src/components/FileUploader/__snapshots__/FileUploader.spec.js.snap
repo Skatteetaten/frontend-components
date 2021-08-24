@@ -2,14 +2,29 @@
 
 exports[`FileUploader komponent matcher snapshot 1`] = `
 <div
-  className="main-51"
+  className=
+
+
 >
   <label
     id="buttonLabel"
   >
     <div
       aria-describedby="acceptedFileFormats"
-      className="uploadArea-52"
+      className=
+
+          {
+            background-color: #cde1f9;
+            border: 2px dashed #1362ae;
+            cursor: pointer;
+            margin-bottom: 8px;
+            margin-top: 8px;
+            padding-bottom: 16px;
+            padding-left: 16px;
+            padding-right: 16px;
+            padding-top: 16px;
+            text-align: center;
+          }
       onClick={[Function]}
       onDragEnter={[Function]}
       onDragLeave={[Function]}
@@ -21,7 +36,19 @@ exports[`FileUploader komponent matcher snapshot 1`] = `
     >
       <i
         aria-hidden={true}
-        className="uploadAreaIcon-62"
+        className=
+
+            {
+              -moz-osx-font-smoothing: grayscale;
+              -webkit-font-smoothing: antialiased;
+              color: #1362ae;
+              display: inline-block;
+              font-family: "Material Icons";
+              font-size: 1.25rem;
+              font-style: normal;
+              font-weight: normal;
+              speak: none;
+            }
         data-icon-name="AttachFile"
       >
         
@@ -33,7 +60,14 @@ exports[`FileUploader komponent matcher snapshot 1`] = `
   </label>
   <input
     aria-hidden={true}
-    className="fileUploadInput-50"
+    className=
+
+        {
+          opacity: 0;
+          overflow: hidden;
+          position: absolute;
+          z-index: -1;
+        }
     id="fileupload-input"
     onChange={[Function]}
     tabIndex={-1}

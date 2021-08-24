@@ -2,12 +2,215 @@
 
 exports[`NavigationTile komponent matcher snapshot 1`] = `
 <nav
-  className="nav-43 subComponentStyles content nav"
+  className=
+      subComponentStyles
+      content
+      nav
+      & a {
+        border: 0;
+        margin-bottom: auto;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: auto;
+      }
+      & button {
+        background-color: inherit;
+        border: 0;
+        margin-bottom: auto;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: auto;
+      }
+      & ul {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        padding-bottom: 0px;
+        padding-left: 0px;
+        padding-right: 0px;
+        padding-top: 0px;
+      }
+      & ul li {
+        border-bottom: 3px solid #093e61;
+        display: flex;
+        flex-basis: 46%;
+        list-style: none;
+        margin-bottom: 32px;
+        position: relative;
+        text-decoration: none;
+      }
+      & ul li > a {
+        color: #093e61;
+        margin-bottom: 0 !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        margin-top: 0 !important;
+        padding-bottom: 16px;
+        padding-left: 16px;
+        padding-right: 16px;
+        text-decoration: none;
+        transition: all 0.2s ease;
+        width: 100%;
+      }
+      & ul li > button {
+        color: #093e61;
+        margin-bottom: 0 !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        margin-top: 0 !important;
+        padding-bottom: 16px;
+        padding-left: 16px;
+        padding-right: 16px;
+        text-decoration: none;
+        transition: all 0.2s ease;
+        width: 100%;
+      }
+      & ul li > a:active {
+        background-color: #cde1f9;
+        outline: none;
+        transition: background-color .2s;
+      }
+      & ul li > a:focus {
+        background-color: #cde1f9;
+        outline: none;
+        transition: background-color .2s;
+      }
+      & ul li > a:hover {
+        background-color: #cde1f9;
+        outline: none;
+        transition: background-color .2s;
+      }
+      & ul li > button:active {
+        background-color: #cde1f9;
+        outline: none;
+        transition: background-color .2s;
+      }
+      & ul li > button:focus {
+        background-color: #cde1f9;
+        outline: none;
+        transition: background-color .2s;
+      }
+      & ul li > button:hover {
+        background-color: #cde1f9;
+        outline: none;
+        transition: background-color .2s;
+      }
+      & ul li > a::after {
+        background-color: #093e61;
+        bottom: 0px;
+        content: "";
+        display: inline-block;
+        height: 0px;
+        left: 0px;
+        position: absolute;
+        transition: height 0.1s;
+        width: 100%;
+      }
+      & ul li > button::after {
+        background-color: #093e61;
+        bottom: 0px;
+        content: "";
+        display: inline-block;
+        height: 0px;
+        left: 0px;
+        position: absolute;
+        transition: height 0.1s;
+        width: 100%;
+      }
+      & ul li > a:focus:after {
+        height: 2px;
+      }
+      & ul li > a:hover:after {
+        height: 2px;
+      }
+      & ul li > button:focus:after {
+        height: 2px;
+      }
+      & ul li > button:hover:after {
+        height: 2px;
+      }
+      @media (max-width: 1023px){& ul li {
+        flex-basis: 100%;
+      }
   renderContent={[Function]}
 >
   <ul>
     <NavigationContent
-      className="content-42"
+      className=
+
+          & i {
+            color: black;
+            display: inherit;
+            font-size: 2.625rem;
+            margin-bottom: 16px;
+            margin-left: 0;
+            margin-right: 0;
+            margin-top: 16px;
+            text-align: center;
+          }
+          & p {
+            color: #1d1d1d;
+            line-height: 25px;
+            margin-bottom: 0px;
+            margin-left: 0px;
+            margin-right: 0px;
+            margin-top: 0px;
+            text-align: center;
+          }
+          & h2 {
+            color: #1362ae;
+            font-size: 1.5rem;
+            margin-bottom: 8px;
+            margin-left: 0px;
+            margin-right: 0px;
+            margin-top: 0px;
+            text-align: center;
+          }
+          & h3 {
+            color: #1362ae;
+            font-size: 1.5rem;
+            margin-bottom: 8px;
+            margin-left: 0px;
+            margin-right: 0px;
+            margin-top: 0px;
+            text-align: center;
+          }
+          & h4 {
+            color: #1362ae;
+            font-size: 1.5rem;
+            margin-bottom: 8px;
+            margin-left: 0px;
+            margin-right: 0px;
+            margin-top: 0px;
+            text-align: center;
+          }
+          & h5 {
+            color: #1362ae;
+            font-size: 1.5rem;
+            margin-bottom: 8px;
+            margin-left: 0px;
+            margin-right: 0px;
+            margin-top: 0px;
+            text-align: center;
+          }
+          & h6 {
+            color: #1362ae;
+            font-size: 1.5rem;
+            margin-bottom: 8px;
+            margin-left: 0px;
+            margin-right: 0px;
+            margin-top: 0px;
+            text-align: center;
+          }
+          &:active h2 {
+            color: #093e61;
+          }
+          &:focus h2 {
+            color: #093e61;
+          }
+          &:hover h2 {
+            color: #093e61;
+          }
       description="Skattekort, skattemelding (selvangivelse), skatteoppgjør, tema og fradrag som hjelper deg til få riktig skatt. "
       icon="person"
       id="my-id-1"

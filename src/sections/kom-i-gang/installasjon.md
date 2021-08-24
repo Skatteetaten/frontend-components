@@ -45,6 +45,7 @@ export default App;
 
 ### Bruke komponentene som UMD-pakke (Micro Frontend)
 
+// TO-DO følges opp - hva har umd med micro-frontend å gjøre?
 Dersom løsningen din følger prinippene til «Micro Frontend», kan du importere komponentene (i SystemJS) som UMD pakke.
 Alle nødvendige avhengigheter i tillegg til selv designsystemet kommer fra et importmap:
 

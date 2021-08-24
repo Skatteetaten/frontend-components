@@ -13,7 +13,60 @@ exports[`Dialog komponent matcher snapshot 1`] = `
     }
     modalProps={
       Object {
-        "className": "SkeDialog-42",
+        "className": 
+
+          {
+            position: absolute;
+          }
+          & .ms-Dialog-main {
+            height: ;
+          }
+          @media (min-width: 480px){& .ms-Dialog-main {
+            border-color: #6f2c3f;
+            border-style: solid;
+            border-width: 4px;
+          }
+          & .ms-Modal-scrollableContent {
+            -webkit-overflow-scrolling: touch;
+            overflow-x: hidden;
+            overflow-y: auto;
+          }
+          @media only screen and (min-device-width: 768px) and (max-device-width: 1024px){& .ms-Modal-scrollableContent {
+            bottom: 0px;
+            position: relative;
+            top: 0px;
+          }
+          & .ms-Button.ms-Dialog-button--close i {
+            font-size: 1.25rem;
+            font-weight: 700;
+            opacity: 1;
+          }
+          & .ms-Button.ms-Dialog-button--close:hover i {
+            font-size: 1.25rem;
+            font-weight: 700;
+            opacity: 0.7;
+            transition: opacity 300ms ease-out;
+          }
+          & .ms-Dialog-title {
+            font-size: 1.375rem;
+            font-weight: 600;
+            padding-bottom: 20px;
+            padding-left: 20px;
+            padding-right: 50px;
+            padding-top: 20px;
+          }
+          & .ms-Dialog-subText {
+            font-size: 1rem;
+          }
+          & .ms-Overlay {
+            background-color: rgba(255, 255, 255, 0.8);
+          }
+          & .ms-Dialog-inner {
+            padding-bottom: 20px;
+            padding-left: 20px;
+            padding-right: 20px;
+            padding-top: 0;
+          },
         "isBlocking": undefined,
         "isModeless": false,
       }

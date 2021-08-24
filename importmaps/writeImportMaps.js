@@ -60,7 +60,7 @@ const replaceImportVersions = (importMap) => {
 const writeDependencies = async (data, path) => {
   for (const [key, value] of Object.entries(data.imports)) {
     if (!value.includes('frontend-components')) {
-      const basePath = `${destDir}/umd/${path}`;
+      const basePath = `${destDir}/esm/${path}`;
       const itemPath = `${basePath}/${key}/${value.split('@')[1]}`;
       const makePath = itemPath.substring(0, itemPath.lastIndexOf('/'));
 
@@ -100,9 +100,9 @@ const writeDependencyFromFile = async (itemPath, sub) => {
 
   if (!fs.existsSync(makePath)) fs.mkdirSync(makePath, { recursive: true });
 
-  fs.copyFileSync(require.resolve(`../../umd/index.${sub}.js`), itemPath);
+  fs.copyFileSync(require.resolve(`../../esm/index.${sub}.js`), itemPath);
   fs.copyFileSync(
-    require.resolve(`../../umd/index.${sub}.js.map`),
+    require.resolve(`../../esm/index.${sub}.js.map`),
     `${itemPath}.map`
   );
 };
@@ -121,7 +121,7 @@ const writeImportmap = (mapsPath, data, path) => {
 };
 
 const writeImportmaps = () => {
-  const importMapsPath = `${destDir}/umd/importmaps/frontend-components`;
+  const importMapsPath = `${destDir}/esm/importmaps/frontend-components`;
 
   if (!fs.existsSync(importMapsPath))
     fs.mkdirSync(importMapsPath, { recursive: true });
@@ -134,8 +134,8 @@ const writeImportmaps = () => {
 
 const write = async () => {
   // TO-DO - usikker hva tanken var her og om vi må gjøre noe mer etter for esm importMaps
-  // fs.rmdirSync(`${destDir}/umd/deps`, { recursive: true, force: true });
-  // fs.rmdirSync(`${destDir}/umd/importmaps`, { recursive: true, force: true });
+  // fs.rmdirSync(`${destDir}/esm/deps`, { recursive: true, force: true });
+  // fs.rmdirSync(`${destDir}/esm/importmaps`, { recursive: true, force: true });
 
   replaceImportVersions(dataDev.imports);
   replaceImportVersions(dataProd.imports);

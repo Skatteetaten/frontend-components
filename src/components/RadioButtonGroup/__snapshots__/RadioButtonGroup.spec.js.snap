@@ -2,37 +2,175 @@
 
 exports[`RadioButtonGroup komponent matcher snapshot 1`] = `
 <fieldset
-  className="fieldset-42"
+  className=
+
+      {
+        border: none;
+        margin-bottom: 0px;
+        margin-left: 0px;
+        margin-right: 0px;
+        margin-top: 0px;
+        padding-bottom: 0px;
+        padding-left: 0px;
+        padding-right: 0px;
+        padding-top: 0px;
+        width: 100%;
+      }
   id="radiogroup-123"
 >
   <legend
-    className="labelAsLegend-46"
+    className=
+
+        {
+          color: #1d1d1d;
+          display: inline-block;
+          font-size: 1rem;
+          font-weight: 400;
+          padding-bottom: 4px;
+          padding-left: 0px;
+        }
+        & .ms-Label {
+          font-weight: 400;
+        }
+        @supports (display: contents){& {
+          display: contents;
+        }
     id="radiogroup-123-label"
   >
     Velg en
   </legend>
   <div
     aria-invalid={false}
-    className="radioButtons-43"
+    className=
+        ms-ChoiceFieldGroup
+        {
+          -moz-osx-font-smoothing: grayscale;
+          -webkit-font-smoothing: antialiased;
+          display: block;
+          font-family: 'Helvetica Neue', Helvetica , Arial, 'Liberation Sans', 'Nimbus Sans L', sans-serif;
+          font-size: 1rem;
+          font-weight: 400;
+        }
+        &::-moz-focus-inner {
+          border: 0;
+        }
+        & .ms-ChoiceField-wrapper {
+          position: relative;
+        }
+        & .ms-ChoiceField-field {
+          display: inline-block;
+          margin-bottom: 4px;
+          margin-right: 0;
+          margin-top: 4px;
+          outline: 0px;
+          position: relative;
+          vertical-align: middle;
+        }
+        & .ms-ChoiceFieldGroup-flexContainer {
+          display: inline-block;
+        }
+        & span.ms-ChoiceFieldLabel {
+          display: inline-block;
+          font-size: 1rem;
+          line-height: 1.5;
+          margin-top: -0.125rem;
+          padding-left: 26px;
+        }
+        & span.descriptionLabel {
+          color: #666666;
+          font-size: 0.9375rem;
+          line-height: 1.6666;
+          margin-top: 0;
+        }
+        & .ms-ChoiceField-field::before {
+          border: 2px solid#000000;
+          content: ;
+          display: inline-block;
+          position: absolute;
+        }
+        & .ms-ChoiceField-input {
+          background-color: #ffffff;
+          border: 2px solid#1362ae;
+        }
+        & .ms-ChoiceField-input:disabled + .ms-ChoiceField-field::before {
+          background-color: #ffffff;
+          border: 2px solid#bbbbbb;
+          color: #bbbbbb;
+        }
+        & .ms-ChoiceField-input:checked + .ms-ChoiceField-field::before {
+          background-color: #ffffff;
+          border: 2px solid#1362ae;
+        }
+        .ms-Fabric.is-focusVisible.is-focusVisible & .ms-ChoiceField-wrapper.is-inFocus:after {
+          border: 2px solid#1362ae;
+          bottom: -6px;
+          content: "";
+          left: -6px;
+          outline: none;
+          position: absolute;
+          right: -6px;
+          top: -6px;
+          z-index: 1;
+        }
+        & .ms-Label {
+          font-size: 0.875rem;
+          font-weight: 400;
+        }
+        & span.ms-Label {
+          font-size: 1rem;
+          font-weight: 400;
+        }
     id="radiogroup-123-group"
   >
     <div
       aria-labelledby="radiogroup-123-label"
-      className="ms-ChoiceFieldGroup root-51"
       role="radiogroup"
     >
       <div
         className="ms-ChoiceFieldGroup-flexContainer"
       >
         <div
-          className="ms-ChoiceField root-52"
+          className=
+              ms-ChoiceField
+              {
+                -moz-osx-font-smoothing: grayscale;
+                -webkit-font-smoothing: antialiased;
+                align-items: center;
+                border: none;
+                box-sizing: border-box;
+                color: rgba(0, 0, 0, 0.95);
+                display: flex;
+                font-family: 'Helvetica Neue', Helvetica , Arial, 'Liberation Sans', 'Nimbus Sans L', sans-serif;
+                font-size: 1rem;
+                font-weight: 400;
+                margin-top: 8px;
+                min-height: 26px;
+                position: relative;
+              }
+              & .ms-ChoiceFieldLabel {
+                display: inline-block;
+                padding-left: 26px;
+              }
         >
           <div
             className="ms-ChoiceField-wrapper"
           >
             <input
               checked={false}
-              className="ms-ChoiceField-input input-53"
+              className=
+                  ms-ChoiceField-input
+                  {
+                    height: 100%;
+                    margin-bottom: 0px;
+                    margin-left: 0px;
+                    margin-right: 0px;
+                    margin-top: 0px;
+                    opacity: 0;
+                    position: absolute;
+                    right: 0px;
+                    top: 0px;
+                    width: 100%;
+                  }
               id="ChoiceGroup0-A"
               name="ChoiceGroup0"
               onBlur={[Function]}
@@ -42,7 +180,79 @@ exports[`RadioButtonGroup komponent matcher snapshot 1`] = `
               type="radio"
             />
             <label
-              className="ms-ChoiceField-field field-54"
+              className=
+                  ms-ChoiceField-field
+                  {
+                    cursor: pointer;
+                    display: inline-block;
+                    margin-top: 0px;
+                    min-height: 20px;
+                    position: relative;
+                    user-select: none;
+                    vertical-align: top;
+                  }
+                  &:hover .ms-ChoiceFieldLabel {
+                    color: rgba(21, 21, 21, 0.95);
+                  }
+                  &:hover:before {
+                    border-color: rgba(0, 0, 0, 0.95);
+                  }
+                  &:hover:after {
+                    background-color: rgba(55, 55, 55, 0.95);
+                    content: "";
+                    height: 10px;
+                    left: 5px;
+                    top: 5px;
+                    transition-property: background-color;
+                    width: 10px;
+                  }
+                  &:focus .ms-ChoiceFieldLabel {
+                    color: rgba(21, 21, 21, 0.95);
+                  }
+                  &:focus:before {
+                    border-color: rgba(0, 0, 0, 0.95);
+                  }
+                  &:focus:after {
+                    background-color: rgba(55, 55, 55, 0.95);
+                    content: "";
+                    height: 10px;
+                    left: 5px;
+                    top: 5px;
+                    transition-property: background-color;
+                    width: 10px;
+                  }
+                  &:before {
+                    background-color: #ffffff;
+                    border-color: rgba(0, 0, 0, 0.95);
+                    border-radius: 50%;
+                    border-style: solid;
+                    border-width: 1px;
+                    box-sizing: border-box;
+                    content: "";
+                    display: inline-block;
+                    font-weight: normal;
+                    height: 20px;
+                    left: 0px;
+                    position: absolute;
+                    top: 0px;
+                    transition-duration: 200ms;
+                    transition-property: border-color;
+                    transition-timing-function: cubic-bezier(.4, 0, .23, 1);
+                    width: 20px;
+                  }
+                  &:after {
+                    border-radius: 50%;
+                    box-sizing: border-box;
+                    content: "";
+                    height: 0px;
+                    left: 10px;
+                    position: absolute;
+                    right: 0px;
+                    transition-duration: 200ms;
+                    transition-property: border-width;
+                    transition-timing-function: cubic-bezier(.4, 0, .23, 1);
+                    width: 0px;
+                  }
               htmlFor="ChoiceGroup0-A"
             >
               <span
@@ -55,14 +265,47 @@ exports[`RadioButtonGroup komponent matcher snapshot 1`] = `
           </div>
         </div>
         <div
-          className="ms-ChoiceField root-52"
+          className=
+              ms-ChoiceField
+              {
+                -moz-osx-font-smoothing: grayscale;
+                -webkit-font-smoothing: antialiased;
+                align-items: center;
+                border: none;
+                box-sizing: border-box;
+                color: rgba(0, 0, 0, 0.95);
+                display: flex;
+                font-family: 'Helvetica Neue', Helvetica , Arial, 'Liberation Sans', 'Nimbus Sans L', sans-serif;
+                font-size: 1rem;
+                font-weight: 400;
+                margin-top: 8px;
+                min-height: 26px;
+                position: relative;
+              }
+              & .ms-ChoiceFieldLabel {
+                display: inline-block;
+                padding-left: 26px;
+              }
         >
           <div
             className="ms-ChoiceField-wrapper"
           >
             <input
               checked={true}
-              className="ms-ChoiceField-input input-53"
+              className=
+                  ms-ChoiceField-input
+                  {
+                    height: 100%;
+                    margin-bottom: 0px;
+                    margin-left: 0px;
+                    margin-right: 0px;
+                    margin-top: 0px;
+                    opacity: 0;
+                    position: absolute;
+                    right: 0px;
+                    top: 0px;
+                    width: 100%;
+                  }
               id="ChoiceGroup0-B"
               name="ChoiceGroup0"
               onBlur={[Function]}
@@ -72,7 +315,85 @@ exports[`RadioButtonGroup komponent matcher snapshot 1`] = `
               type="radio"
             />
             <label
-              className="ms-ChoiceField-field is-checked field-59"
+              className=
+                  ms-ChoiceField-field
+                  is-checked
+                  {
+                    border-color: #1362ae;
+                    cursor: pointer;
+                    display: inline-block;
+                    margin-top: 0px;
+                    min-height: 20px;
+                    position: relative;
+                    user-select: none;
+                    vertical-align: top;
+                  }
+                  &:hover .ms-ChoiceFieldLabel {
+                    color: rgba(21, 21, 21, 0.95);
+                  }
+                  &:hover:before {
+                    border-color: #0c3f6f;
+                  }
+                  &:hover:after {
+                    background: #0c3f6f;
+                    border-color: #0c3f6f;
+                  }
+                  &:focus .ms-ChoiceFieldLabel {
+                    color: rgba(21, 21, 21, 0.95);
+                  }
+                  &:focus:before {
+                    border-color: #0c3f6f;
+                  }
+                  &:focus:after {
+                    background: #0c3f6f;
+                    border-color: #0c3f6f;
+                  }
+                  &:before {
+                    background-color: #ffffff;
+                    border-color: #1362ae;
+                    border-radius: 50%;
+                    border-style: solid;
+                    border-width: 1px;
+                    box-sizing: border-box;
+                    content: "";
+                    display: inline-block;
+                    font-weight: normal;
+                    height: 20px;
+                    left: 0px;
+                    position: absolute;
+                    top: 0px;
+                    transition-duration: 200ms;
+                    transition-property: border-color;
+                    transition-timing-function: cubic-bezier(.4, 0, .23, 1);
+                    width: 20px;
+                  }
+                  @media screen and (-ms-high-contrast: active), (forced-colors: active){&:before {
+                    background: Window;
+                    border-color: Highlight;
+                    forced-color-adjust: none;
+                  }
+                  &:after {
+                    background: #1362ae;
+                    border-color: #1362ae;
+                    border-radius: 50%;
+                    border-style: solid;
+                    border-width: 5px;
+                    box-sizing: border-box;
+                    content: "";
+                    height: 10px;
+                    left: 5px;
+                    position: absolute;
+                    right: 0px;
+                    top: 5px;
+                    transition-duration: 200ms;
+                    transition-property: border-width;
+                    transition-timing-function: cubic-bezier(.4, 0, .23, 1);
+                    width: 10px;
+                  }
+                  @media screen and (-ms-high-contrast: active), (forced-colors: active){&:after {
+                    border-color: Highlight;
+                    forced-color-adjust: none;
+                  }
               htmlFor="ChoiceGroup0-B"
             >
               <span
@@ -85,14 +406,48 @@ exports[`RadioButtonGroup komponent matcher snapshot 1`] = `
           </div>
         </div>
         <div
-          className="ms-ChoiceField root-52"
+          className=
+              ms-ChoiceField
+              {
+                -moz-osx-font-smoothing: grayscale;
+                -webkit-font-smoothing: antialiased;
+                align-items: center;
+                border: none;
+                box-sizing: border-box;
+                color: rgba(0, 0, 0, 0.95);
+                display: flex;
+                font-family: 'Helvetica Neue', Helvetica , Arial, 'Liberation Sans', 'Nimbus Sans L', sans-serif;
+                font-size: 1rem;
+                font-weight: 400;
+                margin-top: 8px;
+                min-height: 26px;
+                position: relative;
+              }
+              & .ms-ChoiceFieldLabel {
+                display: inline-block;
+                padding-left: 26px;
+              }
         >
           <div
             className="ms-ChoiceField-wrapper"
           >
             <input
               checked={false}
-              className="ms-ChoiceField-input is-disabled input-53"
+              className=
+                  ms-ChoiceField-input
+                  is-disabled
+                  {
+                    height: 100%;
+                    margin-bottom: 0px;
+                    margin-left: 0px;
+                    margin-right: 0px;
+                    margin-top: 0px;
+                    opacity: 0;
+                    position: absolute;
+                    right: 0px;
+                    top: 0px;
+                    width: 100%;
+                  }
               disabled={true}
               id="ChoiceGroup0-C"
               name="ChoiceGroup0"
@@ -103,7 +458,63 @@ exports[`RadioButtonGroup komponent matcher snapshot 1`] = `
               type="radio"
             />
             <label
-              className="ms-ChoiceField-field field-62"
+              className=
+                  ms-ChoiceField-field
+                  {
+                    cursor: default;
+                    display: inline-block;
+                    margin-top: 0px;
+                    min-height: 20px;
+                    position: relative;
+                    user-select: none;
+                    vertical-align: top;
+                  }
+                  &:before {
+                    background-color: #ffffff;
+                    border-color: #c8c8c8;
+                    border-radius: 50%;
+                    border-style: solid;
+                    border-width: 1px;
+                    box-sizing: border-box;
+                    content: "";
+                    display: inline-block;
+                    font-weight: normal;
+                    height: 20px;
+                    left: 0px;
+                    position: absolute;
+                    top: 0px;
+                    transition-duration: 200ms;
+                    transition-property: border-color;
+                    transition-timing-function: cubic-bezier(.4, 0, .23, 1);
+                    width: 20px;
+                  }
+                  @media screen and (-ms-high-contrast: active), (forced-colors: active){&:before {
+                    -ms-high-contrast-adjust: none;
+                    background: Window;
+                    border-color: GrayText;
+                    forced-color-adjust: none;
+                  }
+                  &:after {
+                    border-radius: 50%;
+                    box-sizing: border-box;
+                    content: "";
+                    height: 0px;
+                    left: 10px;
+                    position: absolute;
+                    right: 0px;
+                    transition-duration: 200ms;
+                    transition-property: border-width;
+                    transition-timing-function: cubic-bezier(.4, 0, .23, 1);
+                    width: 0px;
+                  }
+                  & .ms-ChoiceFieldLabel {
+                    color: rgba(89, 89, 89, 0.95);
+                  }
+                  @media screen and (-ms-high-contrast: active), (forced-colors: active){& .ms-ChoiceFieldLabel {
+                    -ms-high-contrast-adjust: none;
+                    color: GrayText;
+                    forced-color-adjust: none;
+                  }
               htmlFor="ChoiceGroup0-C"
             >
               <span
@@ -116,14 +527,48 @@ exports[`RadioButtonGroup komponent matcher snapshot 1`] = `
           </div>
         </div>
         <div
-          className="ms-ChoiceField root-52"
+          className=
+              ms-ChoiceField
+              {
+                -moz-osx-font-smoothing: grayscale;
+                -webkit-font-smoothing: antialiased;
+                align-items: center;
+                border: none;
+                box-sizing: border-box;
+                color: rgba(0, 0, 0, 0.95);
+                display: flex;
+                font-family: 'Helvetica Neue', Helvetica , Arial, 'Liberation Sans', 'Nimbus Sans L', sans-serif;
+                font-size: 1rem;
+                font-weight: 400;
+                margin-top: 8px;
+                min-height: 26px;
+                position: relative;
+              }
+              & .ms-ChoiceFieldLabel {
+                display: inline-block;
+                padding-left: 26px;
+              }
         >
           <div
             className="ms-ChoiceField-wrapper"
           >
             <input
               checked={false}
-              className="ms-ChoiceField-input is-disabled input-53"
+              className=
+                  ms-ChoiceField-input
+                  is-disabled
+                  {
+                    height: 100%;
+                    margin-bottom: 0px;
+                    margin-left: 0px;
+                    margin-right: 0px;
+                    margin-top: 0px;
+                    opacity: 0;
+                    position: absolute;
+                    right: 0px;
+                    top: 0px;
+                    width: 100%;
+                  }
               disabled={true}
               id="ChoiceGroup0-D"
               name="ChoiceGroup0"
@@ -134,7 +579,63 @@ exports[`RadioButtonGroup komponent matcher snapshot 1`] = `
               type="radio"
             />
             <label
-              className="ms-ChoiceField-field field-62"
+              className=
+                  ms-ChoiceField-field
+                  {
+                    cursor: default;
+                    display: inline-block;
+                    margin-top: 0px;
+                    min-height: 20px;
+                    position: relative;
+                    user-select: none;
+                    vertical-align: top;
+                  }
+                  &:before {
+                    background-color: #ffffff;
+                    border-color: #c8c8c8;
+                    border-radius: 50%;
+                    border-style: solid;
+                    border-width: 1px;
+                    box-sizing: border-box;
+                    content: "";
+                    display: inline-block;
+                    font-weight: normal;
+                    height: 20px;
+                    left: 0px;
+                    position: absolute;
+                    top: 0px;
+                    transition-duration: 200ms;
+                    transition-property: border-color;
+                    transition-timing-function: cubic-bezier(.4, 0, .23, 1);
+                    width: 20px;
+                  }
+                  @media screen and (-ms-high-contrast: active), (forced-colors: active){&:before {
+                    -ms-high-contrast-adjust: none;
+                    background: Window;
+                    border-color: GrayText;
+                    forced-color-adjust: none;
+                  }
+                  &:after {
+                    border-radius: 50%;
+                    box-sizing: border-box;
+                    content: "";
+                    height: 0px;
+                    left: 10px;
+                    position: absolute;
+                    right: 0px;
+                    transition-duration: 200ms;
+                    transition-property: border-width;
+                    transition-timing-function: cubic-bezier(.4, 0, .23, 1);
+                    width: 0px;
+                  }
+                  & .ms-ChoiceFieldLabel {
+                    color: rgba(89, 89, 89, 0.95);
+                  }
+                  @media screen and (-ms-high-contrast: active), (forced-colors: active){& .ms-ChoiceFieldLabel {
+                    -ms-high-contrast-adjust: none;
+                    color: GrayText;
+                    forced-color-adjust: none;
+                  }
               htmlFor="ChoiceGroup0-D"
             >
               <span

@@ -2,17 +2,67 @@
 
 exports[`Link komponent matcher snapshot 1`] = `
 <span
-  className="linkContainer-43"
+  className=
+
+      {
+        margin-bottom: 0px;
+        margin-left: 0px;
+        margin-right: 0px;
+        margin-top: 0px;
+      }
+      &:hover>i {
+        color: ;
+        padding-left: 4px;
+        padding-right: 4px;
+        transition: ;
+      }
+      &:hover>a {
+        background-color: #cde1f9;
+      }
 >
   <a
-    className="iconLink-45"
+    className=
+
+        {
+          border-bottom: 1px solid #1362ae;
+          color: #1362ae;
+          font-weight: 500;
+          text-decoration: none;
+        }
+        &:hover {
+          background-color: #cde1f9;
+          border-bottom: 2px solid #093e61;
+          color: #093e61;
+        }
+        &:focus {
+          background-color: #cde1f9;
+          border-bottom: 2px solid #093e61;
+          color: #093e61;
+          outline: none;
+        }
     href="#"
   >
     Last ned dokumentene
   </a>
   <i
     aria-hidden={true}
-    className="icon-47"
+    className=
+
+        {
+          -moz-osx-font-smoothing: grayscale;
+          -webkit-font-smoothing: antialiased;
+          border-bottom: none;
+          color: #1362ae;
+          display: inline-block;
+          font-family: "Material Icons";
+          font-size: 1.125rem;
+          font-style: normal;
+          font-weight: inherit;
+          padding-left: 4px;
+          padding-right: 4px;
+          speak: none;
+          vertical-align: middle;
+        }
     data-icon-name="Download"
     role="presentation"
   >

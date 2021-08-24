@@ -2,7 +2,123 @@
 
 exports[`IconButton komponent matcher snapshot 1`] = `
 <button
-  className="ms-Button ms-Button--icon ske-iconundefined-button-43"
+  className=
+      ms-Button
+      ms-Button--icon
+      {
+        -moz-osx-font-smoothing: grayscale;
+        -webkit-font-smoothing: antialiased;
+        background-color: transparent;
+        border-radius: 2px;
+        border: none;
+        box-sizing: border-box;
+        color: #1362ae;
+        cursor: pointer;
+        display: inline-block;
+        font-family: 'Helvetica Neue', Helvetica , Arial, 'Liberation Sans', 'Nimbus Sans L', sans-serif;
+        font-size: 1rem;
+        font-weight: 400;
+        height: 32px;
+        outline: transparent;
+        padding-bottom: 0;
+        padding-left: 4px;
+        padding-right: 4px;
+        padding-top: 0;
+        position: relative;
+        text-align: center;
+        text-decoration: none;
+        user-select: none;
+        width: 32px;
+      }
+      &::-moz-focus-inner {
+        border: 0;
+      }
+      .ms-Fabric--isFocusVisible &:focus:after {
+        border-radius: 0;
+        border: 2px solid #1362ae;
+        bottom: -3px;
+        content: "";
+        left: -3px;
+        outline: transparent;
+        position: absolute;
+        right: -3px;
+        top: -3px;
+        z-index: 1;
+      }
+      @media screen and (-ms-high-contrast: active), (forced-colors: active){.ms-Fabric--isFocusVisible &:focus:after {
+        bottom: -2px;
+        left: -2px;
+        outline-color: ButtonText;
+        right: -2px;
+        top: -2px;
+      }
+      &:active > * {
+        left: 0px;
+        position: relative;
+        top: 0px;
+      }
+      &:hover {
+        background-color: #f4f4f4;
+        color: #11599c;
+      }
+      @media screen and (-ms-high-contrast: active), (forced-colors: active){&:hover {
+        border-color: Highlight;
+        color: Highlight;
+      }
+      &:active {
+        background-color: #eaeaea;
+        color: #0c3f6f;
+      }
+      &.ms-Button--icon {
+        background: none;
+        border-color: #1362ae;
+        border-radius: 50%;
+        border-width: 3px;
+        border: solid;
+        color: #1362ae;
+        height: 40px;
+        padding-bottom: 0px;
+        padding-left: 0px;
+        padding-right: 0px;
+        padding-top: 0px;
+        width: 40px;
+      }
+      &.ms-Button--icon i {
+        font-size: 1.25rem;
+      }
+      &.ms-Button--icon:hover {
+        background: #cde1f9;
+        border-color: #1362ae;
+        border-width: 3px;
+        border: 3px solid #1362ae;
+        color: #1362ae;
+        transition: background-color 0.3s;
+      }
+      &.ms-Button--icon:focus {
+        background: #cde1f9;
+        border-color: #1362ae;
+        border-width: 3px;
+        border: 3px solid #1362ae;
+        color: #1362ae;
+        transition: background-color 0.3s;
+      }
+      &:focus&:after {
+        border-color: transparent;
+      }
+      &.ms-Button--icon:active {
+        background-color: #093e61;
+        border-color: #093e61;
+        color: #ffffff;
+      }
+      &.ms-Button--icon:disabled {
+        border-color: #bbbbbb;
+        border-width: 3px;
+        border: solid;
+        color: #bbbbbb;
+      }
+      &.ms-Button--icon:disabled i {
+        color: #bbbbbb;
+      }
   data-is-focusable={true}
   onClick={[Function]}
   onKeyDown={[Function]}
@@ -14,14 +130,45 @@ exports[`IconButton komponent matcher snapshot 1`] = `
   type="button"
 >
   <span
-    className="ms-Button-flexContainer flexContainer-44"
+    className=
+        ms-Button-flexContainer
+        {
+          align-items: center;
+          display: flex;
+          flex-wrap: nowrap;
+          height: 100%;
+          justify-content: center;
+        }
     data-automationid="splitbuttonprimary"
   >
     <i
       aria-hidden={true}
-      className="ms-Icon root-38 css-51 ms-Button-icon icon-46"
+      className=
+          ms-Icon
+          ms-Button-icon
+          {
+            display: inline-block;
+          }
+          {
+            -moz-osx-font-smoothing: grayscale;
+            -webkit-font-smoothing: antialiased;
+            font-family: "Material Icons";
+            font-style: normal;
+            font-weight: normal;
+            speak: none;
+          }
+          {
+            flex-shrink: 0;
+            font-size: 1.0625rem;
+            height: 16px;
+            line-height: 16px;
+            margin-bottom: 0;
+            margin-left: 4px;
+            margin-right: 4px;
+            margin-top: 0;
+            text-align: center;
+          }
       data-icon-name="Save"
-      role="presentation"
       style={
         Object {
           "fontFamily": "\\"Material Icons\\"",

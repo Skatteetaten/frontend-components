@@ -4,7 +4,17 @@ exports[`FooterContent komponent matcher snapshot  1`] = `
 <div>
   <div
     aria-hidden="true"
-    className="footerDecorContainer-44"
+    className=
+
+        {
+          line-height: 0px;
+          margin-bottom: -5px;
+          width: 100%;
+        }
+        & svg {
+          height: 85px;
+          overflow: hidden;
+        }
   >
     <svg
       className="footer-decoration-svg"
@@ -40,10 +50,30 @@ exports[`FooterContent komponent matcher snapshot  1`] = `
     </svg>
   </div>
   <footer
-    className="footerWrapper-42"
+    className=
+
+        {
+          background-color: #6f2c3f;
+        }
   >
     <div
-      className="footerContent-43"
+      className=
+
+          {
+            background-color: #6f2c3f;
+            color: #ffffff;
+            padding-bottom: 24px;
+            padding-left: 4px;
+            padding-right: 4px;
+            padding-top: 24px;
+          }
+          @media (max-width: 1023px){& {
+            max-width: 100%;
+            padding-bottom: 24px;
+            padding-left: 16px;
+            padding-right: 16px;
+            padding-top: 24px;
+          }
     />
   </footer>
 </div>

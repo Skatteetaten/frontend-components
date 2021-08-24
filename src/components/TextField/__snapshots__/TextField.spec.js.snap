@@ -2,21 +2,294 @@
 
 exports[`TextField komponent matcher snapshot 1`] = `
 <div
-  className="SkeTextField-42"
+  className=
+
+      & .ms-TextField-field {
+        font-size: 1rem;
+      }
+      && .ms-TextField-fieldGroup {
+        border-color: #1d1d1d;
+        border-radius: 0px;
+      }
+      && .ms-TextField-fieldGroup:focus {
+        border: #a82e39;
+      }
+      &.is-active .ms-TextField-fieldGroup {
+        border: 1px solid #1362ae;
+      }
+      &.ms-TextField--underlined .ms-TextField-wrapper {
+        border: 1px solid #1d1d1d;
+      }
+      &.ms-TextField--underlined .ms-TextField-wrapper:hover {
+        border: 1px solid rgba(0, 0, 0, 0.95);
+      }
+      &.is-active.ms-TextField--underlined .ms-TextField-wrapper {
+        border: 1px solid #1d1d1d;
+        outline: 1px solid #1d1d1d;
+      }
+      & .ms-TextField-field[readOnly] {
+        background: transparent;
+        border: none;
+        cursor: default;
+        font-weight: 400;
+        outline: none;
+        padding-left: 1px;
+      }
+      & .ms-TextField-field[readOnly]:focus {
+        font-weight: 400;
+      }
+      & .ms-TextField-field[disabled] {
+        color: #666666;
+      }
+      & .ms-Button-icon {
+        font-size: 18px;
+      }
+      & .ms-TextField-errorMessage {
+        color: #a82e39;
+        font-size: 0.875rem;
+        font-weight: 500;
+        padding-left: 20px;
+        position: relative;
+      }
+      & .ms-TextField-errorMessage::before {
+        content: '';
+        display: block;
+        font-family: "Material Icons";
+        font-size: 16px;
+        left: 0px;
+        margin-right: 3px;
+        position: absolute;
+        top: 6px;
+      }
+      & textarea.ms-TextField-field {
+        resize: none;
+      }
+      &.is-disabled .ms-TextField-fieldGroup {
+        background-color: #e8e8e8;
+        border-color: #bbbbbb;
+        border-style: solid;
+        border-width: 1px;
+      }
+      &.is-disabled .ms-TextField-field {
+        color: #1d1d1d;
+      }
+      &.is-disabled .ms-TextField-field:hover {
+        cursor: not-allowed;
+      }
   id="textfield-123"
 >
   <div
-    className="ms-TextField SkeTextField-50"
+    className=
+        ms-TextField
+        {
+          -moz-osx-font-smoothing: grayscale;
+          -webkit-font-smoothing: antialiased;
+          box-shadow: none;
+          box-sizing: border-box;
+          font-family: 'Helvetica Neue', Helvetica , Arial, 'Liberation Sans', 'Nimbus Sans L', sans-serif;
+          font-size: 1rem;
+          font-weight: 400;
+          margin-bottom: 0px;
+          margin-left: 0px;
+          margin-right: 0px;
+          margin-top: 0px;
+          padding-bottom: 0px;
+          padding-left: 0px;
+          padding-right: 0px;
+          padding-top: 0px;
+          position: relative;
+        }
+        & .ms-TextField-field {
+          font-size: 1rem;
+        }
+        && .ms-TextField-fieldGroup {
+          border-color: #1d1d1d;
+          border-radius: 0px;
+        }
+        && .ms-TextField-fieldGroup:focus {
+          border: #a82e39;
+        }
+        &.is-active .ms-TextField-fieldGroup {
+          border: 1px solid #1362ae;
+        }
+        &.ms-TextField--underlined .ms-TextField-wrapper {
+          border: 1px solid #1d1d1d;
+        }
+        &.ms-TextField--underlined .ms-TextField-wrapper:hover {
+          border: 1px solid rgba(0, 0, 0, 0.95);
+        }
+        &.is-active.ms-TextField--underlined .ms-TextField-wrapper {
+          border: 1px solid #1d1d1d;
+          outline: 1px solid #1d1d1d;
+        }
+        & .ms-TextField-field[readOnly] {
+          background: transparent;
+          border: none;
+          cursor: default;
+          font-weight: 400;
+          outline: none;
+          padding-left: 1px;
+        }
+        & .ms-TextField-field[readOnly]:focus {
+          font-weight: 400;
+        }
+        & .ms-TextField-field[disabled] {
+          color: #666666;
+        }
+        & .ms-Button-icon {
+          font-size: 18px;
+        }
+        & .ms-TextField-errorMessage {
+          color: #a82e39;
+          font-size: 0.875rem;
+          font-weight: 500;
+          padding-left: 20px;
+          position: relative;
+        }
+        & .ms-TextField-errorMessage::before {
+          content: '';
+          display: block;
+          font-family: "Material Icons";
+          font-size: 16px;
+          left: 0px;
+          margin-right: 3px;
+          position: absolute;
+          top: 6px;
+        }
+        & textarea.ms-TextField-field {
+          resize: none;
+        }
+        &.is-disabled .ms-TextField-fieldGroup {
+          background-color: #e8e8e8;
+          border-color: #bbbbbb;
+          border-style: solid;
+          border-width: 1px;
+        }
+        &.is-disabled .ms-TextField-field {
+          color: #1d1d1d;
+        }
+        &.is-disabled .ms-TextField-field:hover {
+          cursor: not-allowed;
+        }
   >
     <div
       className="ms-TextField-wrapper"
     >
       <div
-        className="ms-TextField-fieldGroup fieldGroup-51"
+        className=
+            ms-TextField-fieldGroup
+            {
+              align-items: stretch;
+              background: #ffffff;
+              border-radius: 2px;
+              border: 1px solid rgba(55, 55, 55, 0.95);
+              box-shadow: none;
+              box-sizing: border-box;
+              cursor: text;
+              display: flex;
+              flex-direction: row;
+              height: 32px;
+              margin-bottom: 0px;
+              margin-left: 0px;
+              margin-right: 0px;
+              margin-top: 0px;
+              padding-bottom: 0px;
+              padding-left: 0px;
+              padding-right: 0px;
+              padding-top: 0px;
+              position: relative;
+            }
+            &:hover {
+              border-color: rgba(0, 0, 0, 0.95);
+            }
+            @media screen and (-ms-high-contrast: active), (forced-colors: active){&:hover {
+              -ms-high-contrast-adjust: none;
+              border-color: Highlight;
+              forced-color-adjust: none;
+            }
       >
         <input
           aria-invalid={false}
-          className="ms-TextField-field field-52"
+          className=
+              ms-TextField-field
+              {
+                -moz-osx-font-smoothing: grayscale;
+                -webkit-font-smoothing: antialiased;
+                background-color: transparent;
+                background: none;
+                border-radius: 0px;
+                border: none;
+                box-shadow: none;
+                box-sizing: border-box;
+                color: rgba(0, 0, 0, 0.95);
+                font-family: 'Helvetica Neue', Helvetica , Arial, 'Liberation Sans', 'Nimbus Sans L', sans-serif;
+                font-size: 1rem;
+                font-weight: 400;
+                margin-bottom: 0px;
+                margin-left: 0px;
+                margin-right: 0px;
+                margin-top: 0px;
+                min-width: 0px;
+                outline: 0px;
+                padding-bottom: 0;
+                padding-left: 8px;
+                padding-right: 8px;
+                padding-top: 0;
+                text-overflow: ellipsis;
+                width: 100%;
+              }
+              &:active {
+                outline: 0px;
+              }
+              &:focus {
+                outline: 0px;
+              }
+              &:hover {
+                outline: 0px;
+              }
+              &::-ms-clear {
+                display: none;
+              }
+              @media screen and (-ms-high-contrast: active), (forced-colors: active){& {
+                background: Window;
+                color: WindowText;
+              }
+              &::placeholder {
+                -moz-osx-font-smoothing: grayscale;
+                -webkit-font-smoothing: antialiased;
+                color: rgba(55, 55, 55, 0.95);
+                font-family: 'Helvetica Neue', Helvetica , Arial, 'Liberation Sans', 'Nimbus Sans L', sans-serif;
+                font-size: 1rem;
+                font-weight: 400;
+                opacity: 1;
+              }
+              @media screen and (-ms-high-contrast: active), (forced-colors: active){&::placeholder {
+                color: GrayText;
+              }
+              &:-ms-input-placeholder {
+                -moz-osx-font-smoothing: grayscale;
+                -webkit-font-smoothing: antialiased;
+                color: rgba(55, 55, 55, 0.95);
+                font-family: 'Helvetica Neue', Helvetica , Arial, 'Liberation Sans', 'Nimbus Sans L', sans-serif;
+                font-size: 1rem;
+                font-weight: 400;
+                opacity: 1;
+              }
+              @media screen and (-ms-high-contrast: active), (forced-colors: active){&:-ms-input-placeholder {
+                color: GrayText;
+              }
+              &::-ms-input-placeholder {
+                -moz-osx-font-smoothing: grayscale;
+                -webkit-font-smoothing: antialiased;
+                color: rgba(55, 55, 55, 0.95);
+                font-family: 'Helvetica Neue', Helvetica , Arial, 'Liberation Sans', 'Nimbus Sans L', sans-serif;
+                font-size: 1rem;
+                font-weight: 400;
+                opacity: 1;
+              }
+              @media screen and (-ms-high-contrast: active), (forced-colors: active){&::-ms-input-placeholder {
+                color: GrayText;
+              }
           id="textfield-123-input"
           onBlur={[Function]}
           onChange={[Function]}

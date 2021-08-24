@@ -15,7 +15,7 @@ import globals from 'rollup-plugin-node-globals';
 import { visualizer } from 'rollup-plugin-visualizer';
 
 const extensions = ['.js', '.ts', '.tsx', '.jsx'];
-const outputDir = './lib/umd/';
+const outputDir = './lib/esm/';
 const urlConfig = {
   include: ['**/*.woff', '**/*.woff2', '**/*.ttf', '**/*.eot', '**/*.svg'],
   limit: Infinity,

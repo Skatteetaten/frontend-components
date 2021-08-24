@@ -8,9 +8,66 @@ exports[`Dropdown komponent matcher snapshot 1`] = `
     id="dropdown-123-label"
     inputId="dropdown-123-input-option"
   />
-  <StyledWithResponsiveMode
+  <Dropdown
     aria-invalid={false}
-    className="main-42"
+    className=
+
+        & .ms-Dropdown-title {
+          border-color: #1d1d1d;
+          border-radius: 0px;
+          font-size: 0.875rem;
+        }
+        & span.ms-Dropdown-caretDownWrapper {
+          color: #1362ae;
+        }
+        & .ms-TextField-errorMessage {
+          font-size: 0.875rem;
+        }
+        &::-moz-focus-inner {
+          border: 0;
+        }
+        & .ms-Dropdown-titleIsPlaceHolder {
+          border-color: #1d1d1d;
+        }
+        &:focus .ms-Dropdown-title.ms-Dropdown-title {
+          border: 2px solid #1362ae;
+        }
+        & .is-disabled .ms-Dropdown {
+          background-color: red;
+        }
+        & .is-disabled .ms-Dropdown-title {
+          background-color: #f4f4f4;
+          border-color: #bbbbbb;
+          border-style: solid;
+          border-width: 1px;
+        }
+        & .is-disabled .ms-Dropdown-caretDownWrapper {
+          color: #999999;
+        }
+        &:active .is-disabled .ms-Dropdown-title {
+          border-color: #bbbbbb;
+        }
+        &:hover .is-disabled .ms-Dropdown-title {
+          border-color: #bbbbbb;
+          cursor: not-allowed;
+        }
+        &:focus:after {
+          border-radius: 0;
+          bottom: 1px;
+          content: "";
+          left: 1px;
+          outline: transparent;
+          position: absolute;
+          right: 1px;
+          top: 1px;
+          z-index: 1;
+        }
+        & div[role=alert]::before {
+          content: '';
+          font-family: "Material Icons";
+          font-size: 16px;
+          margin-right: 3px;
+        }
     id="dropdown-123-input"
     onRenderCaretDown={[Function]}
     options={

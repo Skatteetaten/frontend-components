@@ -2,7 +2,76 @@
 
 exports[`Pagination komponent matcher snapshot 1`] = `
 <div
-  className="paginationContainer-45"
+  className=
+
+      {
+        font-size: 1rem;
+        padding-top: 24px;
+      }
+      & button {
+        background: transparent;
+        border: none;
+        font-size: 1rem;
+      }
+      & nav {
+        float: right;
+      }
+      @media only screen and (max-width: 479px){& nav {
+        float: none;
+        margin-bottom: 0;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 0;
+      }
+      & p {
+        float: left;
+        margin-top: 7px;
+      }
+      @media only screen and (max-width: 479px){& p {
+        float: none;
+        margin-bottom: 0;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 0;
+      }
+      & ul {
+        display: inline-flex;
+        list-style: none;
+        margin-bottom: 0px;
+        margin-left: 0px;
+        margin-right: 0px;
+        margin-top: 0px;
+        padding-left: 0;
+      }
+      & li {
+        display: inline;
+      }
+      & li button {
+        color: #1362ae;
+        cursor: pointer;
+        font-weight: bold;
+        margin-bottom: 4px;
+        margin-left: 6px;
+        margin-right: 6px;
+        margin-top: 4px;
+        padding-bottom: 3px;
+        padding-left: 1px;
+        padding-right: 1px;
+        padding-top: 3px;
+        vertical-align: middle;
+      }
+      & li button:focus {
+        background-color: #cde1f9;
+        color: #093e61;
+        outline: none;
+      }
+      & li button:hover {
+        background-color: #cde1f9;
+        color: #093e61;
+      }
+      @media only screen and (max-width: 479px){& {
+        display: grid;
+      }
 >
   <p
     data-testid="pagination-oppsummering"
@@ -21,7 +90,14 @@ exports[`Pagination komponent matcher snapshot 1`] = `
                 aria-current={true}
                 aria-disabled={true}
                 aria-label="Side 1"
-                className="activePage-42"
+                className=
+
+                    {
+                      border-bottom: none !important;
+                      color: #666666 !important;
+                      padding-bottom: 6px !important;
+                      padding-top: 3px !important;
+                    }
                 onClick={[Function]}
                 role="link"
               >
@@ -33,7 +109,12 @@ exports[`Pagination komponent matcher snapshot 1`] = `
                 aria-current={false}
                 aria-disabled={false}
                 aria-label="Side 2"
-                className="pageNumber-44"
+                className=
+
+                    {
+                      border-bottom: 2px solid #cde1f9 !important;
+                      padding-top: 3px !important;
+                    }
                 onClick={[Function]}
                 role="link"
               >
@@ -45,7 +126,12 @@ exports[`Pagination komponent matcher snapshot 1`] = `
                 aria-current={false}
                 aria-disabled={false}
                 aria-label="Side 3"
-                className="pageNumber-44"
+                className=
+
+                    {
+                      border-bottom: 2px solid #cde1f9 !important;
+                      padding-top: 3px !important;
+                    }
                 onClick={[Function]}
                 role="link"
               >
@@ -65,7 +151,19 @@ exports[`Pagination komponent matcher snapshot 1`] = `
           </span>
           <i
             aria-hidden={true}
-            className="linkIcons-47"
+            className=
+
+                {
+                  -moz-osx-font-smoothing: grayscale;
+                  -webkit-font-smoothing: antialiased;
+                  display: inline-block;
+                  font-family: "Material Icons";
+                  font-size: 1.375rem;
+                  font-style: normal;
+                  font-weight: normal;
+                  speak: none;
+                  vertical-align: middle;
+                }
             data-icon-name="ChevronRight"
           >
             

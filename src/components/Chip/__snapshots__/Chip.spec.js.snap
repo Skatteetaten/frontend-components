@@ -6,7 +6,34 @@ exports[`Chip komponent matcher snapshot 1`] = `
   type="beige"
 >
   <div
-    className="ske-chip-42"
+    className=
+
+        {
+          background-color: #f9ede2;
+          border-radius: 5px;
+          border: 1px solid #ffffff;
+          color: #1d1d1d;
+          display: inline-block;
+          font-size: standard;
+          font-weight: 400;
+          padding-bottom: 3px;
+          padding-left: 12px;
+          padding-right: 12px;
+          padding-top: 3px;
+          vertical-align: middle;
+        }
+        & > div {
+          align-items: center;
+          display: flex;
+          justify-content: center;
+        }
+        & a {
+          color: #1d1d1d;
+          text-decoration: underlined;
+        }
+        & i {
+          vertical-align: text-bottom;
+        }
     size="standard"
     type="beige"
   />

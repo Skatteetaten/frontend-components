@@ -2,7 +2,43 @@
 
 exports[`ButtonLink-komponent matcher snapshot 1`] = `
 <a
-  className="buttonLink-42"
+  className=
+
+      {
+        background: #1362ae;
+        border-color: #1362ae;
+        border-radius: 7px;
+        border-style: solid;
+        border-width: 3px;
+        box-shadow: 0 8px 6px -6px #bbbbbb;
+        color: #ffffff;
+        display: inline-block;
+        font-size: 1.25rem;
+        font-weight: 600;
+        max-width: calc((75*550px)/100);
+        padding-bottom: 25px;
+        padding-left: 25px;
+        padding-right: 25px;
+        padding-top: 25px;
+        text-decoration: none;
+        transition: background 0.3s;
+      }
+      &:hover {
+        background: #cde1f9;
+        border-color: #1362ae;
+        color: #1362ae;
+      }
+      &:focus {
+        background: #cde1f9;
+        border-color: #1362ae;
+        color: #1362ae;
+        outline: none;
+      }
+      &:active {
+        background: #093e61;
+        border-color: #093e61;
+        color: #ffffff;
+      }
   href="#"
   role="button"
 >
