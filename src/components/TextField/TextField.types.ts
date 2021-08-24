@@ -1,7 +1,7 @@
-import { ITextFieldProps } from '@fluentui/react';
+import { IMaskedTextFieldProps } from '@fluentui/react';
 import { calloutState } from '../LabelWithCallout';
 
-export interface TextFieldProps extends ITextFieldProps {
+export interface TextFieldProps extends IMaskedTextFieldProps {
   /** Benyttes når teksten for et readOnly tekstfelt skal fremheves  */
   boldText?: boolean;
   /** Bestemmer om hjelptekst/varseltekst skal legge seg mellom label og tekstfelt eller flytende over innhold */
@@ -18,7 +18,7 @@ export interface TextFieldProps extends ITextFieldProps {
   /** Størrelse på tekstfelt som skal benyttes */
   inputSize?: 'normal' | 'large';
   /** Setter inputmode (html 5) på tekstefeltet */
-  inputMode?: ITextFieldProps['inputMode'];
+  inputMode?: IMaskedTextFieldProps['inputMode'];
   /** aria-label for knapp i label */
   labelButtonAriaLabel?: string;
   /** Størrelse på label */
@@ -30,9 +30,9 @@ export interface TextFieldProps extends ITextFieldProps {
   /** Antall rader som skal vises i feltet når multiline er satt */
   rows?: number;
   /** @ignore */
-  borderless?: ITextFieldProps['borderless'];
+  borderless?: IMaskedTextFieldProps['borderless'];
   /** @ignore */
-  underlined?: ITextFieldProps['underlined'];
+  underlined?: IMaskedTextFieldProps['underlined'];
   /** @ignore */
   editMode?: boolean;
   /** Brukerspesifisert event for callout **/

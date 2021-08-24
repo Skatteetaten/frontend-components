@@ -1,11 +1,6 @@
 import classnames from 'classnames';
-import {
-  IPivotItemProps,
-  Pivot,
-  PivotItem,
-  PivotLinkFormat,
-  PivotLinkSize,
-} from '@fluentui/react';
+import { IPivotItemProps, Pivot, PivotItem } from '@fluentui/react';
+
 import * as React from 'react';
 import { getClassNames } from './Tabs.classNames';
 import { TabProps } from './Tabs.types';
@@ -19,8 +14,8 @@ export const Tabs: React.FC<TabProps> = (props) => {
   return (
     <Pivot
       {...rest}
-      linkFormat={PivotLinkFormat.tabs}
-      linkSize={PivotLinkSize.large}
+      linkFormat={'tabs'}
+      linkSize={'large'}
       className={classnames(getClassNames(props), className)}
     >
       {React.Children.map(props.children, (child) => {

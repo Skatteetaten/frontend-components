@@ -1,4 +1,4 @@
-import { IPalette } from '@uifabric/styling';
+import { IPalette } from '@fluentui/react/lib/Styling';
 
 export interface SkeColorProp {
   internal: string;

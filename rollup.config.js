@@ -12,6 +12,7 @@ import bundleSize from 'rollup-plugin-bundle-size';
 import { terser } from 'rollup-plugin-terser';
 import typescript from '@rollup/plugin-typescript';
 import globals from 'rollup-plugin-node-globals';
+import { visualizer } from 'rollup-plugin-visualizer';
 
 const extensions = ['.js', '.ts', '.tsx', '.jsx'];
 const outputDir = './lib/umd/';
@@ -85,6 +86,7 @@ const getPluginsConfig = (prod, mini) => {
     babel(babelConfig),
     commonjs(commonJsConfig),
     bundleSize(),
+    visualizer({ template: 'sunburst' }),
   ];
 
   if (mini) {
@@ -105,7 +107,7 @@ export default (CLIArgs) => {
     input: 'src/components/index.ts',
     output: {
       file: `${outputDir}index.${prod ? 'production' : 'development'}.js`,
-      format: 'umd',
+      format: 'esm',
       name: '@skatteetaten/frontend-components',
       globals: {
         react: 'React',

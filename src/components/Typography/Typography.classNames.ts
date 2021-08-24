@@ -1,5 +1,5 @@
-import { mergeStyles, IStyle } from '@uifabric/merge-styles';
-import { getTheme } from '@uifabric/styling';
+import { mergeStyles, IStyle } from '@fluentui/merge-styles';
+import { getTheme } from '@fluentui/react/lib/Styling';
 import { FontSizes, FontWeights, PaletteProps, takeIf } from '../utils';
 
 /**

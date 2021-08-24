@@ -1,9 +1,9 @@
-import { mergeStyles } from '@uifabric/merge-styles';
+import { mergeStyles } from '@fluentui/merge-styles';
 import {
   getTheme,
   AnimationClassNames,
   getGlobalClassNames,
-} from '@uifabric/styling';
+} from '@fluentui/react/lib/Styling';
 import { MdIcons, PaletteProps } from '../utils';
 
 const errorIcon = "'" + MdIcons.icons.Error + "'";

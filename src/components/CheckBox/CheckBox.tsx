@@ -12,13 +12,20 @@ export class CheckBox extends React.PureComponent<CheckBoxProps, {}> {
     boxSide: 'end',
   };
   render() {
-    const { checked, defaultChecked, className, ...props } = this.props;
+    const {
+      checked,
+      defaultChecked,
+      className,
+      inputProps,
+      ...props
+    } = this.props;
     const checkedProps = defaultChecked ? { defaultChecked } : { checked };
+    const inputPropsWithRole = { ...inputProps, role: 'checkbox' };
     return (
       <FabricCheckBox
         {...props}
         className={classnames(getClassNames(), className)}
-        role="checkbox"
+        inputProps={inputPropsWithRole}
         {...checkedProps}
       />
     );

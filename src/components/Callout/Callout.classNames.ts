@@ -1,5 +1,5 @@
-import { getTheme } from '@uifabric/styling';
-import { mergeStyleSets } from '@uifabric/merge-styles';
+import { getTheme } from '@fluentui/react/lib/Styling';
+import { mergeStyleSets } from '@fluentui/merge-styles';
 import { FontSizes, PaletteProps } from '../utils';
 import { CalloutProps, CalloutColor } from './Callout.types';
 

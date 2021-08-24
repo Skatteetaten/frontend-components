@@ -23,6 +23,7 @@ export const ComboBox: React.FC<ComboBoxProps> = (props) => {
     labelCallout,
     onCalloutToggle,
     readOnly,
+    ref,
     ...rest
   } = props;
 
@@ -34,7 +35,7 @@ export const ComboBox: React.FC<ComboBoxProps> = (props) => {
   const styles = getClassNames(props);
 
   return (
-    <div id={mainId}>
+    <div id={mainId} ref={ref}>
       <LabelWithCallout
         id={labelId}
         inputId={readOnly ? inputId : inputId + '-input'} //Fabric adds its own -input postfix

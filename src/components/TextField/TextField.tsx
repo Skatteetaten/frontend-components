@@ -3,7 +3,7 @@ import classnames from 'classnames';
 import { LabelWithCallout } from '../LabelWithCallout';
 import { generateId } from '../utils';
 import {
-  ITextFieldProps,
+  IMaskedTextFieldProps,
   MaskedTextField,
   TextField as FabricTextField,
   ITextField,
@@ -48,7 +48,7 @@ export const TextField: React.FC<TextFieldProps> = ({
     setEditMode(true);
   };
 
-  const onBlur: ITextFieldProps['onBlur'] = (e) => {
+  const onBlur: IMaskedTextFieldProps['onBlur'] = (e) => {
     rest.onBlur && rest.onBlur(e);
     if (editMode) {
       setEditMode(shouldEditWhenEmpty);
@@ -72,7 +72,7 @@ export const TextField: React.FC<TextFieldProps> = ({
     }
   };
 
-  let TextFieldType: React.ComponentType<ITextFieldProps>;
+  let TextFieldType: React.ComponentType<IMaskedTextFieldProps>;
   if (mask) {
     TextFieldType = MaskedTextField;
   } else {

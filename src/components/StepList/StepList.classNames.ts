@@ -1,5 +1,5 @@
-import { mergeStyleSets, IStyle } from '@uifabric/merge-styles';
-import { getTheme } from '@uifabric/styling';
+import { mergeStyleSets, IStyle } from '@fluentui/merge-styles';
+import { getTheme } from '@fluentui/react/lib/Styling';
 import { FontSizes, FontWeights, PaletteProps } from '../utils';
 
 const getStepContentPadding = (stepType: string): string => {

@@ -10,7 +10,7 @@ import { getClassNames, getCalloutStyles } from './Dropdown.classNames';
 import { generateId } from '../utils';
 import { Icon } from '../Icon';
 import { LabelWithCallout } from '../LabelWithCallout';
-import { IStyleFunctionOrObject } from '@uifabric/utilities';
+import { IStyleFunctionOrObject } from '@fluentui/utilities';
 import { DropdownProps } from './DropDown.types';
 
 /**

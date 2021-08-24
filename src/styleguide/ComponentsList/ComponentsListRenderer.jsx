@@ -1,8 +1,8 @@
 import React from 'react';
 import { withRouter } from 'react-router';
 import { Nav } from '@fluentui/react';
-import { getTheme, FontSizes, FontWeights } from '@uifabric/styling';
-import { mergeStyleSets } from '@uifabric/merge-styles';
+import { getTheme, FontSizes, FontWeights } from '@fluentui/react/lib/Styling';
+import { mergeStyleSets } from '@fluentui/merge-styles';
 import find from 'lodash.find';
 
 function createMenu(items, searchTerm) {

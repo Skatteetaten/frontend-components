@@ -5,8 +5,8 @@ import moment from 'moment';
 import 'moment/locale/nb';
 import {
   DatePicker as FabricDatePicker,
-  DatePickerBase,
   DayOfWeek,
+  IDatePicker,
   IDatePickerProps,
 } from '@fluentui/react';
 import { FirstWeekOfYear } from '@fluentui/react';
@@ -79,7 +79,7 @@ export const DatePicker: React.FC<DatePickerProps> = (
   const inputId = mainId + '-input';
   const labelId = mainId + '-label';
 
-  const datePicker = React.useRef<DatePickerBase | null>();
+  const datePickerRef = React.useRef<IDatePicker | null>();
   const [editMode, setEditMode] = React.useState<boolean>(false);
   const [readOnly, setReadOnly] = React.useState<boolean | undefined>(
     readonlyMode && !editMode
@@ -114,16 +114,17 @@ export const DatePicker: React.FC<DatePickerProps> = (
 
   const onEdit = () => {
     if (!editMode) {
-      datePicker.current && datePicker.current.focus();
+      datePickerRef.current && datePickerRef.current.focus();
     }
     setEditMode(!editMode);
   };
 
   const onBlur: IDatePickerProps['onBlur'] = (e) => {
     rest.onBlur && rest.onBlur(e);
-    if (editMode && !datePicker.current?.state.isDatePickerShown) {
-      setEditMode(!editMode);
-    }
+    // TO-DO datepicker er blitt en FunctionComponent. Det er ikke mulig å aksessere intern state på denne måten
+    // if (editMode && !datePickerRef.current?.state.isDatePickerShown) {
+    //   setEditMode(!editMode);
+    // }
   };
 
   return (
@@ -152,7 +153,7 @@ export const DatePicker: React.FC<DatePickerProps> = (
           className
         )}
         componentRef={(ref) => {
-          datePicker.current = ref as DatePickerBase;
+          datePickerRef.current = ref as IDatePicker;
         }}
         calloutProps={{
           className: getCalendarClassNames(props),

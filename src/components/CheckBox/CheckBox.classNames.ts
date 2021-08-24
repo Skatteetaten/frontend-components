@@ -1,5 +1,5 @@
-import { mergeStyles } from '@uifabric/merge-styles';
-import { getTheme } from '@uifabric/styling';
+import { mergeStyles } from '@fluentui/merge-styles';
+import { getTheme } from '@fluentui/react/lib/Styling';
 import { getFocusStyle, FontWeights, FontSizes, skeColor } from '../utils';
 
 export const getClassNames = function getClassNames() {

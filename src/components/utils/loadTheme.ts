@@ -1,4 +1,8 @@
-import { registerIcons, loadTheme, createTheme } from '@uifabric/styling';
+import {
+  registerIcons,
+  loadTheme,
+  createTheme,
+} from '@fluentui/react/lib/Styling';
 
 import {
   Palette as palette,

@@ -1,5 +1,5 @@
-import { mergeStyleSets } from '@uifabric/merge-styles';
-import { getTheme } from '@uifabric/styling';
+import { mergeStyleSets } from '@fluentui/merge-styles';
+import { getTheme } from '@fluentui/react/lib/Styling';
 import { FontSizes, MdIcons, PaletteProps } from '../utils';
 import { DropdownProps } from './DropDown.types';
 import { IDropdownStyles } from '@fluentui/react';

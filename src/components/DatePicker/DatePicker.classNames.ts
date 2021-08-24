@@ -1,5 +1,5 @@
-import { mergeStyles } from '@uifabric/merge-styles';
-import { getTheme } from '@uifabric/styling';
+import { mergeStyles } from '@fluentui/merge-styles';
+import { getTheme } from '@fluentui/react/lib/Styling';
 import { FontSizes, FontWeights, PaletteProps, MdIcons } from '../utils';
 import { DatePickerProps } from './DatePicker.types';
 

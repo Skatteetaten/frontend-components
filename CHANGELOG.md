@@ -1,3 +1,19 @@
+### **v.5.0.0 - 24.08.2021**
+
+- Oppgraderer fluent-ui til v8:
+  https://github.com/microsoft/fluentui/wiki/Version-8-release-notes
+  https://github.com/microsoft/fluentui/wiki/Version-8-migration-guide#individual-components-new-features
+  - ivaretar breaking-change på role i checkbox
+  - flytter ref på combobox til ytterste wrapper
+  - datepicker oppdaterer ref - TO-DO: ikke mulig å aksessere lokal state for editMode
+  - refaktorerer TabItem til FunctionComponent
+  - oppdaterer types for TextField
+- Rydder opp i dupliserte dependencies: Fjerner @uifabric dependencies og peker mot allerede installerte @fabricui versjoner
+- Oppgraderer dependencies: Oppgradrere i18next og react-i18next dependencies, plus node-fetch dependency
+- Flytter fra dependency til devDependency: uuid
+- Fjerner unødvendige dependencies: fjerner tslib (allerede definert i fluentui)
+- Eksport til ESM: Endrer fra umd til esm eksport
+
 ### **v.4.1.1 - 17.06.2021**
 
 - TopBanner: now supports TopStripe as a prop, and therefore rendered inside the header-element. (Accessibility improvement)

@@ -1,5 +1,5 @@
-import { mergeStyles, mergeStyleSets } from '@uifabric/merge-styles';
-import { getTheme } from '@uifabric/styling';
+import { mergeStyles, mergeStyleSets } from '@fluentui/merge-styles';
+import { getTheme } from '@fluentui/react/lib/Styling';
 import { PaletteProps } from '../utils';
 
 export const getClassNames = () => {
