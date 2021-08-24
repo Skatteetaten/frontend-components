@@ -13,7 +13,8 @@
 - Flytter fra dependency til devDependency: uuid
 - Fjerner unødvendige dependencies: fjerner tslib (allerede definert i fluentui)
 - Eksport til ESM: Endrer fra umd til esm eksport (//TO-DO reaktivere import-maps)
-- # Reorganisering av import/export til å fungere med moduler (//TO-DO alle doc-sidene må retestes) //TO-DO fjerne entry.ts i /lib etter compile
+- Reorganisering av import/export til å fungere med moduler (//TO-DO alle doc-sidene må retestes) //TO-DO fjerne entry.ts i /lib etter compile
+
 
 ### **v.4.1.2 - 24.08.2021**
 
