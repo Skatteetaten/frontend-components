@@ -86,7 +86,7 @@ const getPluginsConfig = (prod, mini) => {
     babel(babelConfig),
     commonjs(commonJsConfig),
     bundleSize(),
-    visualizer({ template: 'sunburst' }),
+    visualizer(),
   ];
 
   if (mini) {

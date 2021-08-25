@@ -10,8 +10,6 @@ import {
   LabelWithCallout,
 } from '@skatteetaten/frontend-components';
 
-import moment from 'moment';
-
 const wrapperStyle = {
   backgroundColor: '#f9ede2',
   padding: 12,
@@ -86,14 +84,11 @@ const editableContent = (data, close, rowIndex) => (
   </div>
 );
 
-const sortMonths = (a, b) => moment(a, 'MMMM').diff(moment(b, 'MMMMM'));
-
 const columns = [
   {
     name: 'Måned',
     fieldName: 'month',
     sortable: true,
-    sortingFunction: sortMonths,
     autohideSorting: false,
   },
   {
@@ -339,8 +334,6 @@ import {
   IconButton,
 } from '@skatteetaten/frontend-components';
 
-import moment from 'moment';
-
 const wrapperStyle = {
   backgroundColor: '#f9ede2',
   padding: 12,
@@ -415,14 +408,11 @@ const editableContent = (data, close, rowIndex) => (
   </div>
 );
 
-const sortMonths = (a, b) => moment(a, 'MMMM').diff(moment(b, 'MMMMM'));
-
 const columns = [
   {
-    name: 'Måned',
-    fieldName: 'month',
+    name: 'Dekningsgrad',
+    fieldName: 'coverage',
     sortable: true,
-    sortingFunction: sortMonths,
     autohideSorting: false,
   },
   {
@@ -433,10 +423,11 @@ const columns = [
     autohideSorting: false,
   },
   {
-    name: 'Dekningsgrad',
-    fieldName: 'coverage',
+    name: 'Måned',
+    fieldName: 'month',
     alignment: 'right',
   },
+
   {
     name: 'Avkastning',
     fieldName: 'revenue',
@@ -494,8 +485,6 @@ import {
   IconButton,
   LabelWithCallout,
 } from '@skatteetaten/frontend-components';
-
-import moment from 'moment';
 
 const wrapperStyle = {
   backgroundColor: '#f9ede2',
@@ -578,14 +567,14 @@ const editableContent = (data, close, rowIndex) => (
   </div>
 );
 
-const sortMonths = (a, b) => parseInt(a) - parseInt(b);
+const sortMva = (a, b) => parseInt(a) - parseInt(b);
 
 const columns = [
   {
     name: 'Mva-kode',
     fieldName: 'kode',
     sortable: true,
-    sortingFunction: sortMonths,
+    sortingFunction: sortMva,
     autohideSorting: false,
   },
   {
