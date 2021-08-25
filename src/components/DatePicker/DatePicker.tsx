@@ -122,6 +122,7 @@ export const DatePicker: React.FC<DatePickerProps> = (
   const onBlur: IDatePickerProps['onBlur'] = (e) => {
     rest.onBlur && rest.onBlur(e);
     // TO-DO datepicker er blitt en FunctionComponent. Det er ikke mulig å aksessere intern state på denne måten
+    // Filled out feature request here: https://github.com/microsoft/fluentui/issues/19512
     // if (editMode && !datePickerRef.current?.state.isDatePickerShown) {
     //   setEditMode(!editMode);
     // }
