@@ -53,12 +53,12 @@ describe('RadioButtonGroup komponent', () => {
       'radiobuttongroup-id'
     );
     expect(wrapper.prop('className')).toEqual('radiobuttongroup-class');
-    expect(
-      wrapper.find('StyledChoiceGroupBase').props().ariaLabelledBy
-    ).toEqual('radiobuttongroup-id-label');
-    expect(wrapper.find('StyledChoiceGroupBase').prop('required')).toEqual(
-      true
+    expect(wrapper.find('StyledChoiceGroup').props().ariaLabelledBy).toEqual(
+      'radiobuttongroup-id-label'
     );
+    expect(
+      wrapper.find('StyledChoiceGroupOption').first().prop('required')
+    ).toEqual(true);
     expect(wrapper.exists('#ChoiceGroup2-B')).toEqual(true);
     expect(wrapper.find('input#ChoiceGroup2-B').prop('checked')).toEqual(true);
     expect(wrapper.find('input#ChoiceGroup2-B').prop('disabled')).toEqual(
@@ -78,9 +78,9 @@ describe('RadioButtonGroup komponent', () => {
       options: options,
     });
 
-    const radiobutton = wrapper.find('StyledChoiceGroupOptionBase');
-    expect(radiobutton).toHaveLength(4);
-    expect(radiobutton.at(2).find('.ms-ChoiceFieldLabel').html()).toContain(
+    const radiobuttons = wrapper.find('StyledChoiceGroupOption');
+    expect(radiobuttons).toHaveLength(4);
+    expect(radiobuttons.at(2).find('.ms-ChoiceFieldLabel').html()).toContain(
       'Valg C'
     );
   });
@@ -104,12 +104,12 @@ describe('RadioButtonGroup komponent', () => {
         },
       ],
     });
-    const radiobutton = wrapper.find('StyledChoiceGroupOptionBase');
+    const radiobuttons = wrapper.find('StyledChoiceGroupOption');
     expect(
-      radiobutton.at(1).find('.ms-ChoiceFieldLabel').first().html()
+      radiobuttons.at(1).find('.ms-ChoiceFieldLabel').first().html()
     ).toContain('Valg B');
     expect(
-      radiobutton.at(1).find('.ms-ChoiceFieldLabel').last().html()
+      radiobuttons.at(1).find('.ms-ChoiceFieldLabel').last().html()
     ).toContain('Beskrivelse til B');
   });
 });
