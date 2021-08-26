@@ -10,16 +10,11 @@ import {
   Card,
 } from '@skatteetaten/frontend-components';
 
-import moment from 'moment';
-
-const sortMonths = (a, b) => moment(a, 'MMMM').diff(moment(b, 'MMMMM'));
-
 const mockColumns = [
   {
     name: 'Gruppe',
     fieldName: 'grp',
     sortable: true,
-    sortingFunction: sortMonths,
     autohideSorting: false,
   },
   {
