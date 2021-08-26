@@ -133,9 +133,8 @@ const writeImportmaps = () => {
 };
 
 const write = async () => {
-  // TO-DO - usikker hva tanken var her og om vi må gjøre noe mer etter for esm importMaps
-  // fs.rmdirSync(`${destDir}/esm/deps`, { recursive: true, force: true });
-  // fs.rmdirSync(`${destDir}/esm/importmaps`, { recursive: true, force: true });
+  fs.rmdirSync(`${destDir}/esm/deps`, { recursive: true, force: true });
+  fs.rmdirSync(`${destDir}/esm/importmaps`, { recursive: true, force: true });
 
   replaceImportVersions(dataDev.imports);
   replaceImportVersions(dataProd.imports);
