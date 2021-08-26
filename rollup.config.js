@@ -8,7 +8,7 @@ import svgr from '@svgr/rollup';
 import injectProcessEnv from 'rollup-plugin-inject-process-env';
 import externals from 'rollup-plugin-node-externals';
 import nodePolyfills from 'rollup-plugin-node-polyfills';
-import bundleSize from 'rollup-plugin-bundle-size';
+//import bundleSize from 'rollup-plugin-bundle-size';
 import { terser } from 'rollup-plugin-terser';
 import typescript from '@rollup/plugin-typescript';
 import globals from 'rollup-plugin-node-globals';
@@ -29,7 +29,6 @@ export const externalsConfig = {
     'classnames',
     'i18next',
     'axios',
-    'tslib',
     'react-i18next',
     'react-transition-group',
   ],
@@ -85,7 +84,7 @@ const getPluginsConfig = (prod, mini) => {
     typescript(typescriptOptions),
     babel(babelConfig),
     commonjs(commonJsConfig),
-    bundleSize(),
+    //bundleSize(),
     visualizer(),
   ];
 
@@ -106,8 +105,9 @@ export default (CLIArgs) => {
   const bundle = {
     input: 'src/components/index.ts',
     output: {
-      file: `${outputDir}index.${prod ? 'production' : 'development'}.js`,
+      dir: outputDir,
       format: 'esm',
+      sourcemap: true,
       name: '@skatteetaten/frontend-components',
       globals: {
         react: 'React',
