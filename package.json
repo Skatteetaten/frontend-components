@@ -27,7 +27,6 @@
   },
   "dependencies": {
     "@fluentui/react": "8.29.1",
-    "@fluentui/utilities": "8.3.0",
     "axios": "0.21.1",
     "classnames": "2.2.6",
     "hotkeys-js": "3.8.1",
