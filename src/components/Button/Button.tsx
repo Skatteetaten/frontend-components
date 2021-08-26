@@ -1,5 +1,5 @@
 import classnames from 'classnames';
-import { DefaultButton } from '@fluentui/react';
+import { DefaultButton } from '@fluentui/react/lib/Button';
 import * as React from 'react';
 import { getClassNames as getStandardClassNames } from './Button.classNames';
 import { ButtonProps } from './Button.types';
