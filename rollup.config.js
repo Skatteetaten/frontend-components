@@ -118,6 +118,7 @@ export default (CLIArgs) => {
         axios: 'axios',
       },
     },
+    preserveModules: true,
   };
 
   bundle.plugins = getPluginsConfig(prod, mini);
