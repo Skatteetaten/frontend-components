@@ -2,7 +2,11 @@
 
 exports[`LabelWithCallout komponent matcher snapshot 1`] = `
 <div
-  className="calloutLabelWrapper-42"
+  className=
+
+      {
+        display: flex;
+      }
 >
   <label
     className=

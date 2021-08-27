@@ -7,13 +7,17 @@ exports[`FileUploader komponent matcher snapshot 1`] = `
 
 >
   <div
-    className="calloutLabelWrapper-54"
+    className=
+
+        {
+          display: flex;
+        }
   />
   <label
     id="fileupload123-label"
   >
     <div
-      aria-describedby="acceptedFileFormats"
+      aria-describedby="fileupload123-label acceptedFileFormats123"
       className=
 
           {
@@ -27,6 +31,22 @@ exports[`FileUploader komponent matcher snapshot 1`] = `
             padding-right: 16px;
             padding-top: 16px;
             text-align: center;
+            transition: all 80ms ease-in-out 0s;
+          }
+          &:hover {
+            border: 2px dashed #1362ae;
+            box-shadow: rgba(0, 0, 0, 0.3) 0px 10px 6px -10px;
+            transform: scale(1.02) translateY(-1px);
+          }
+          &:focus {
+            border: 2px solid #1362ae;
+            box-shadow: rgba(0, 0, 0, 0.3) 0px 10px 6px -10px;
+            transform: scale(1.02) translateY(-1px);
+          }
+          &:active {
+            border: 2px solid #1362ae;
+            box-shadow: rgba(0, 0, 0, 0.0) 0px 0 0 0;
+            transform: scale(1) translateY(0);
           }
       onClick={[Function]}
       onDragEnter={[Function]}
@@ -78,7 +98,11 @@ exports[`FileUploader komponent matcher snapshot 1`] = `
   />
   <div
     aria-atomic="true"
-    className="fileListWrapper-46"
+    className=
+
+        {
+          display: grid;
+        }
     role="alert"
   />
 </div>
