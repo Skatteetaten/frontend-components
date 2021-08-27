@@ -1,6 +1,6 @@
 import babel from '@rollup/plugin-babel';
 import commonjs from '@rollup/plugin-commonjs';
-import resolve from '@rollup/plugin-node-resolve';
+import nodeResolve from '@rollup/plugin-node-resolve';
 import json from '@rollup/plugin-json';
 import image from '@rollup/plugin-image';
 import url from '@rollup/plugin-url';
@@ -77,10 +77,11 @@ const getPluginsConfig = (prod, mini) => {
     image(),
     json(),
     externals(externalsConfig),
+    nodeResolve(resolveConfig),
     globals(),
     nodePolyfills(),
     injectProcessEnv(injectProcessEnvConfig),
-    resolve(resolveConfig),
+
     typescript(typescriptOptions),
     babel(babelConfig),
     commonjs(commonJsConfig),
