@@ -5,6 +5,7 @@
   "version": "5.0.0",
   "private": false,
   "main": "lib/index.js",
+  "sideEffects": false,
   "bin": {
     "skatteetaten-frontend-components-import-maps": "./lib/bin/importMaps/writeImportMaps.js"
   },
