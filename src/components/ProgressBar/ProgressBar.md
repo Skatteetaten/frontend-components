@@ -1,7 +1,7 @@
 **Kan brukes for å vise for langt det er igjen for noe å laste**
 
 ```js
-import { ProgressBar } from '@skatteetaten/frontend-components';
+import { ProgressBar } from '@skatteetaten/frontend-components/ProgressBar';
 
 <ProgressBar
   label="Laster inn..."

@@ -2,7 +2,7 @@ import React from 'react';
 import { matches } from '../utils/test-utils';
 import { shallow, mount } from 'enzyme';
 
-import { DatePicker } from '../index';
+import { DatePicker } from '.';
 
 function oppsettShallow(props) {
   return shallow(<DatePicker {...props} />);

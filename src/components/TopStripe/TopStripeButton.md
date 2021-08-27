@@ -1,7 +1,7 @@
 **TopStripeButton en hjelpekomponent til TopStripe**
 
 ```js noeditor
-import { MessageBar } from '@skatteetaten/frontend-components';
+import { MessageBar } from '@skatteetaten/frontend-components/MessageBar';
 
 <MessageBar>Det finnes ingen egne eksempler for TopStripeButton.</MessageBar>;
 ```

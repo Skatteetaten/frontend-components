@@ -1,7 +1,7 @@
 **Datovelger brukes i skjemaer når brukeren skal oppgi datoer.**
 
 ```js
-import { DatePicker } from '@skatteetaten/frontend-components';
+import { DatePicker } from '@skatteetaten/frontend-components/DatePicker';
 
 <div>
   <div className="ExampleFlexContainer-200">

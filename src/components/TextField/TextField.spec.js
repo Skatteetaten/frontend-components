@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
 import { matches } from '../utils/test-utils';
-import { TextField } from '../index';
+import { TextField } from '.';
 
 function oppsettShallow(props) {
   return shallow(<TextField {...props} />);

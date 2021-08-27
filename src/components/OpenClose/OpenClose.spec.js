@@ -1,6 +1,6 @@
 import React from 'react';
 import { mount } from 'enzyme';
-import { OpenClose } from '../index';
+import { OpenClose } from '.';
 
 describe('openClose komponent', () => {
   const tekstIEkspanderbartFelt = 'Jeg har ett barn.';

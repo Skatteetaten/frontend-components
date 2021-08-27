@@ -1,11 +1,9 @@
 **Dialog brukes til å vise innhold midt på skjermen og tiltrekke seg brukerens oppmerksomhet.**
 
 ```js
-import {
-  Dialog,
-  Button,
-  ActionButton,
-} from '@skatteetaten/frontend-components';
+import { ActionButton } from '@skatteetaten/frontend-components/ActionButton';
+import { Button } from '@skatteetaten/frontend-components/ActionButton';
+import { Dialog } from '@skatteetaten/frontend-components/ActionButton';
 
 const [state, setState] = React.useState({ hideDialog: true });
 
@@ -43,11 +41,9 @@ function closeDialog() {
 ```
 
 ```js
-import {
-  Dialog,
-  Button,
-  NavigationTile,
-} from '@skatteetaten/frontend-components';
+import { Button } from '@skatteetaten/frontend-components/ActionButton';
+import { Dialog } from '@skatteetaten/frontend-components/ActionButton';
+import { NavigationTile } from '@skatteetaten/frontend-components/NavigationTile';
 
 const [state, setState] = React.useState({ hideDialog: true });
 
@@ -103,11 +99,9 @@ const content1 = [
 ```
 
 ```js
-import {
-  Dialog,
-  Button,
-  ActionButton,
-} from '@skatteetaten/frontend-components';
+import { ActionButton } from '@skatteetaten/frontend-components/ActionButton';
+import { Button } from '@skatteetaten/frontend-components/ActionButton';
+import { Dialog } from '@skatteetaten/frontend-components/ActionButton';
 
 const [state, setState] = React.useState({ hideDialog: true });
 

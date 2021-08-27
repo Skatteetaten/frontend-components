@@ -3,7 +3,7 @@
 Tydelig knapp:
 
 ```js
-import { Button } from '@skatteetaten/frontend-components';
+import { Button } from '@skatteetaten/frontend-components/Button';
 
 <div className="ExampleSpacing8">
   <Button buttonStyle="primary">Godkjenn</Button>{' '}
@@ -13,7 +13,7 @@ import { Button } from '@skatteetaten/frontend-components';
 Noe nedtonet hovedhandling:
 
 ```js
-import { Button } from '@skatteetaten/frontend-components';
+import { Button } from '@skatteetaten/frontend-components/Button';
 
 <div className="ExampleSpacing8">
   <Button buttonStyle="primaryRoundedFilled">Send inn uendret</Button>
@@ -24,7 +24,7 @@ import { Button } from '@skatteetaten/frontend-components';
 Advarsel:
 
 ```js
-import { Button } from '@skatteetaten/frontend-components';
+import { Button } from '@skatteetaten/frontend-components/Button';
 
 <div className="ExampleSpacing8">
   <Button buttonStyle="warning">Avvis</Button>
@@ -32,7 +32,7 @@ import { Button } from '@skatteetaten/frontend-components';
 ```
 
 ```js noeditor uu
-import { Link } from '@skatteetaten/frontend-components';
+import { Link } from '@skatteetaten/frontend-components/Link';
 <div>
   <h3>Tips</h3>
 
@@ -79,7 +79,8 @@ import { Link } from '@skatteetaten/frontend-components';
 ```
 
 ```js noeditor beskrivelse
-import { ErrorMessage, Link } from '@skatteetaten/frontend-components';
+import { ErrorMessage } from '@skatteetaten/frontend-components/ErrorMessage';
+import { Link } from '@skatteetaten/frontend-components/Link';
 <div>
   <h3>En knapp er hovedhandlingen på en side</h3>
   <p>

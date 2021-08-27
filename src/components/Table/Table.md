@@ -1,14 +1,12 @@
 **Tabeller brukes til å liste ut strukturerte data.**
 
 ```js
-import {
-  Table,
-  Grid,
-  TextField,
-  IconButton,
-  Button,
-  LabelWithCallout,
-} from '@skatteetaten/frontend-components';
+import { Button } from '@skatteetaten/frontend-components/Button';
+import { Grid } from '@skatteetaten/frontend-components/Grid';
+import { IconButton } from '@skatteetaten/frontend-components/IconButton';
+import { LabelWithCallout } from '@skatteetaten/frontend-components/LabelWithCallout';
+import { Table } from '@skatteetaten/frontend-components/Table';
+import { TextField } from '@skatteetaten/frontend-components/TextField';
 
 const wrapperStyle = {
   backgroundColor: '#f9ede2',
@@ -150,7 +148,8 @@ const data = [
 **Man kan styre hvilke kolonner som skal vises på mobil med _hideOnMobile_-attributtet:**
 
 ```js
-import { Table, ActionButton } from '@skatteetaten/frontend-components';
+import { ActionButton } from '@skatteetaten/frontend-components/ActionButton';
+import { Table } from '@skatteetaten/frontend-components/Table';
 
 const columns = [
   {
@@ -207,7 +206,9 @@ const data = [
 Ekspanderbare rader
 
 ```js
-import { Grid, Table, ActionButton } from '@skatteetaten/frontend-components';
+import { ActionButton } from '@skatteetaten/frontend-components/ActionButton';
+import { Grid } from '@skatteetaten/frontend-components/Grid';
+import { Table } from '@skatteetaten/frontend-components/Table';
 
 const columns = [
   {
@@ -327,12 +328,10 @@ const expandableContent = (data, close, rowIndex) => (
 Hele rader kan gjøres klikkbare med _openEditableOnRowClick_-attributtet, og tabeller kan gjøres kompakte med _compactTable_-atributtet.
 
 ```js
-import {
-  Table,
-  Grid,
-  TextField,
-  IconButton,
-} from '@skatteetaten/frontend-components';
+import { Grid } from '@skatteetaten/frontend-components/Grid';
+import { IconButton } from '@skatteetaten/frontend-components/IconButton';
+import { Table } from '@skatteetaten/frontend-components/Table';
+import { TextField } from '@skatteetaten/frontend-components/TextField';
 
 const wrapperStyle = {
   backgroundColor: '#f9ede2',
@@ -478,13 +477,11 @@ Tabellen kan ha bare noen linjer som er editerbare. Den kan også ha underlinjer
 hideEdit vil gjemme edit knappen. Underlinjer kan legges inn i children feltet. Underlinjer vil ikke vises i edit modus og har ikke egen edit knapp.
 
 ```js
-import {
-  Table,
-  Grid,
-  TextField,
-  IconButton,
-  LabelWithCallout,
-} from '@skatteetaten/frontend-components';
+import { Grid } from '@skatteetaten/frontend-components/Grid';
+import { IconButton } from '@skatteetaten/frontend-components/IconButton';
+import { LabelWithCallout } from '@skatteetaten/frontend-components/LabelWithCallout';
+import { Table } from '@skatteetaten/frontend-components/Table';
+import { TextField } from '@skatteetaten/frontend-components/TextField';
 
 const wrapperStyle = {
   backgroundColor: '#f9ede2',
@@ -643,11 +640,9 @@ const data = [
 Tabeller med overskrifter legges som en _caption_:
 
 ```js
-import {
-  Table,
-  ActionButton,
-  LabelWithCallout,
-} from '@skatteetaten/frontend-components';
+import { ActionButton } from '@skatteetaten/frontend-components/ActionButton';
+import { LabelWithCallout } from '@skatteetaten/frontend-components/LabelWithCallout';
+import { Table } from '@skatteetaten/frontend-components/Table';
 
 const columns = [
   {

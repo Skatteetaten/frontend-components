@@ -1,14 +1,12 @@
 ```js noeditor
-import {
-  Table,
-  Grid,
-  TextField,
-  IconButton,
-  Dropdown,
-  Accordion,
-  AccordionItem,
-  Card,
-} from '@skatteetaten/frontend-components';
+import { Accordion } from '@skatteetaten/frontend-components/Accordion';
+import { AccordionItem } from '@skatteetaten/frontend-components/Accordion/AccordionItem';
+import { Card } from '@skatteetaten/frontend-components/Card';
+import { Dropdown } from '@skatteetaten/frontend-components/Dropdown';
+import { Grid } from '@skatteetaten/frontend-components/Grid';
+import { IconButton } from '@skatteetaten/frontend-components/IconButton';
+import { Table } from '@skatteetaten/frontend-components/Table';
+import { TextField } from '@skatteetaten/frontend-components/TextField';
 
 const mockColumns = [
   {

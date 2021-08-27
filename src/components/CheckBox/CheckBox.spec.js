@@ -1,7 +1,7 @@
 import React from 'react';
 import { matches } from './../utils/test-utils';
 import { shallow } from 'enzyme';
-import { CheckBox } from '../index';
+import { CheckBox } from '.';
 
 function oppsettShallow(props) {
   return shallow(<CheckBox {...props} />);

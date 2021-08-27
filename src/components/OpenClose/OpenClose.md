@@ -1,7 +1,8 @@
 **OpenClose er enkelstående områder for å vise og skjule utdypende informasjon.**
 
 ```js
-import { OpenClose, Typography } from '@skatteetaten/frontend-components';
+import { OpenClose } from '@skatteetaten/frontend-components/OpenClose';
+import { Typography } from '@skatteetaten/frontend-components/Typography';
 
 // Inline styles are bad design https://reactjs.org/docs/faq-styling.html
 // Just for the purpose of the example
@@ -60,7 +61,7 @@ const paraStyle = {
 OpenClose som er åpen fra start:
 
 ```js
-import { OpenClose } from '@skatteetaten/frontend-components';
+import { OpenClose } from '@skatteetaten/frontend-components/OpenClose';
 
 // Inline styles are bad design https://reactjs.org/docs/faq-styling.html
 // Just for the purpose of the example

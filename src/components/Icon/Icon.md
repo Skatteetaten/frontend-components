@@ -1,7 +1,7 @@
 **Ikoner kan brukes direkte eller av de andre komponentene i Designsystemet.**
 
 ```js
-import { Icon } from '@skatteetaten/frontend-components';
+import { Icon } from '@skatteetaten/frontend-components/Icon';
 
 <div>
   <Icon iconName="ArrowUp" style={{ fontSize: '32px', color: '#1362ae' }} />
@@ -21,12 +21,11 @@ import { Icon } from '@skatteetaten/frontend-components';
 ### Liste over alle ikoner
 
 ```js noeditor
-import {
-  Icon,
-  Accordion,
-  AccordionItem,
-  DetailsList,
-} from '@skatteetaten/frontend-components';
+import { Accordion } from '@skatteetaten/frontend-components/Accordion';
+import { AccordionItem } from '@skatteetaten/frontend-components/Accordion/AccordionItem';
+import { DetailsList } from '@skatteetaten/frontend-components/DetailsList';
+import { Icon } from '@skatteetaten/frontend-components/Icon';
+
 const columns = [
   {
     key: 'column1',
@@ -572,12 +571,11 @@ Object.keys(iconGroup).forEach((name) => {
 Store og mer detaljerte temaikoner:
 
 ```js noeditor
-import {
-  Icon,
-  Accordion,
-  AccordionItem,
-  DetailsList,
-} from '@skatteetaten/frontend-components';
+import { Accordion } from '@skatteetaten/frontend-components/Accordion';
+import { AccordionItem } from '@skatteetaten/frontend-components/Accordion/AccordionItem';
+import { DetailsList } from '@skatteetaten/frontend-components/DetailsList';
+import { Icon } from '@skatteetaten/frontend-components/Icon';
+
 const columns = [
   {
     key: 'column1',

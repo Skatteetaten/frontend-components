@@ -1,7 +1,8 @@
 **Brukes til å vise en label og tilhørende hjelpetekst**
 
 ```js
-import { LabelWithCallout, Button } from '@skatteetaten/frontend-components';
+import { Button } from '@skatteetaten/frontend-components/Button';
+import { LabelWithCallout } from '@skatteetaten/frontend-components/LabelWithCallout';
 
 const [state, setState] = React.useState({ warning: false });
 
@@ -23,10 +24,9 @@ const [state, setState] = React.useState({ warning: false });
 Brukt i kombinasjon med annen komponent.
 
 ```js
-import {
-  LabelWithCallout,
-  SearchField,
-} from '@skatteetaten/frontend-components';
+import { LabelWithCallout } from '@skatteetaten/frontend-components/LabelWithCallout';
+import { SearchField } from '@skatteetaten/frontend-components/SearchField';
+
 <div style={{ width: '350px' }}>
   <LabelWithCallout
     label={'Søk'}
@@ -44,7 +44,7 @@ import {
 LabelWithCallout brukt i tekstfelt med automatisk lukking av utropsboksen:
 
 ```js
-import { TextField } from '@skatteetaten/frontend-components';
+import { TextField } from '@skatteetaten/frontend-components/TextField';
 
 const [state, setState] = React.useState({ value1: '' });
 

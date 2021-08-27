@@ -13,7 +13,7 @@
 ```
 
 ```js
-import { LabelWithCallout } from '@skatteetaten/frontend-components';
+import { LabelWithCallout } from '@skatteetaten/frontend-components/LabelWithCallout';
 
 const date = new Date('2020-07-16');
 var options = {
@@ -73,7 +73,8 @@ const en_formatted_date = `${new Intl.DateTimeFormat(
 ```
 
 ```js
-import { TextField, LabelWithCallout } from '@skatteetaten/frontend-components';
+import { LabelWithCallout } from '@skatteetaten/frontend-components/LabelWithCallout';
+import { TextField } from '@skatteetaten/frontend-components/TextField';
 
 const count = 26254;
 const count_persent = 13.5;
@@ -111,7 +112,7 @@ const en_formatted_desimal = `${new Intl.NumberFormat('en-GB').format(
 ```
 
 ```js
-import { LabelWithCallout } from '@skatteetaten/frontend-components';
+import { LabelWithCallout } from '@skatteetaten/frontend-components/LabelWithCallout';
 
 const rtf = new Intl.RelativeTimeFormat('no', {
   localeMatcher: 'best fit',

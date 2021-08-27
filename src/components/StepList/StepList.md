@@ -1,5 +1,5 @@
 ```js noeditor
-import { MessageBar } from '@skatteetaten/frontend-components';
+import { MessageBar } from '@skatteetaten/frontend-components/MessageBar';
 
 <MessageBar type={MessageBar.Type.info}>
   Se tilhørende underkompoent <a href="/#step">Step</a> for komplett API.
@@ -9,12 +9,10 @@ import { MessageBar } from '@skatteetaten/frontend-components';
 **Stegvis veiledning for brukeren**
 
 ```js
-import {
-  Button,
-  RadioButtonGroup,
-  Step,
-  StepList,
-} from '@skatteetaten/frontend-components';
+import { Button } from '@skatteetaten/frontend-components/Button';
+import { RadioButtonGroup } from '@skatteetaten/frontend-components/RadioButtonGroup';
+import { Step } from '@skatteetaten/frontend-components/StepList/Step';
+import { StepList } from '@skatteetaten/frontend-components/StepList/StepList';
 
 const [state, setState] = React.useState({
   options: [
@@ -94,15 +92,13 @@ const testFunc = () => {
 Oppsummering før innsending:
 
 ```js
-import {
-  Button,
-  RadioButtonGroup,
-  Step,
-  StepList,
-  CheckBox,
-  Typography,
-  Card,
-} from '@skatteetaten/frontend-components';
+import { Button } from '@skatteetaten/frontend-components/Button';
+import { Card } from '@skatteetaten/frontend-components/Card';
+import { CheckBox } from '@skatteetaten/frontend-components/CheckBox';
+import { RadioButtonGroup } from '@skatteetaten/frontend-components/RadioButtonGroup';
+import { Step } from '@skatteetaten/frontend-components/StepList/Step';
+import { StepList } from '@skatteetaten/frontend-components/StepList/StepList';
+import { Typography } from '@skatteetaten/frontend-components/Typography';
 
 const [state, setState] = React.useState({
   options: [
@@ -198,13 +194,11 @@ const testFunc = () => {
 StepList som er fullført og viser et resultat i i siste steg
 
 ```js
-import {
-  Button,
-  Step,
-  StepList,
-  Typography,
-  LinkGroup,
-} from '@skatteetaten/frontend-components';
+import { Button } from '@skatteetaten/frontend-components/Button';
+import { LinkGroup } from '@skatteetaten/frontend-components/LinkGroup';
+import { Step } from '@skatteetaten/frontend-components/StepList/Step';
+import { StepList } from '@skatteetaten/frontend-components/StepList/StepList';
+import { Typography } from '@skatteetaten/frontend-components/Typography';
 
 const links = [
   {

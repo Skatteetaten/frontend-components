@@ -1,7 +1,7 @@
 import React from 'react';
 import { mount } from 'enzyme';
 import { matches } from '../utils/test-utils';
-import { RadioButtonGroup } from '../index';
+import { RadioButtonGroup } from '.';
 
 const options = [
   {

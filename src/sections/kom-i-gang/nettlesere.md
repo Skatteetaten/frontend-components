@@ -9,12 +9,10 @@ Designsystemet i Skatteetaten støtter nettlesere som blir brukt av mer enn 2 % 
 Vi bør ikke uten videre anta at brukerne våre vet hva en nettleser er eller vet hvordan man installerer en. Det er også en mulighet at de ikke kan oppgradere på grunn av plattform eller fordi de bruker en løsning som krever en bestemt nettleser.
 
 ```js noeditor
-import {
-  Accordion,
-  AccordionItem,
-  MessageBar,
-  Link,
-} from '@skatteetaten/frontend-components';
+import { Accordion } from '@skatteetaten/frontend-components/Accordion';
+import { AccordionItem } from '@skatteetaten/frontend-components/Accordion/AccordionItem';
+import { Link } from '@skatteetaten/frontend-components/Link';
+import { MessageBar } from '@skatteetaten/frontend-components/MessageBar';
 <>
   <br />
   <Accordion>

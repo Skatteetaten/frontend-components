@@ -3,7 +3,8 @@
 Velge fra en fast liste (stor versjon):
 
 ```js
-import { ComboBox, Grid } from '@skatteetaten/frontend-components';
+import { ComboBox } from '@skatteetaten/frontend-components/ComboBox';
+import { Grid } from '@skatteetaten/frontend-components/Grid';
 
 <div>
   <Grid>
@@ -45,7 +46,8 @@ import { ComboBox, Grid } from '@skatteetaten/frontend-components';
 Hvis brukeren skal kunne legge til egne elementer:
 
 ```js
-import { ComboBox, Grid } from '@skatteetaten/frontend-components';
+import { ComboBox } from '@skatteetaten/frontend-components/ComboBox';
+import { Grid } from '@skatteetaten/frontend-components/Grid';
 
 <div>
   <Grid>
@@ -82,7 +84,8 @@ import { ComboBox, Grid } from '@skatteetaten/frontend-components';
 Lesemodus:
 
 ```js
-import { ComboBox, Grid } from '@skatteetaten/frontend-components';
+import { ComboBox } from '@skatteetaten/frontend-components/ComboBox';
+import { Grid } from '@skatteetaten/frontend-components/Grid';
 
 <div>
   <Grid>
@@ -121,7 +124,8 @@ import { ComboBox, Grid } from '@skatteetaten/frontend-components';
 Med Feilmelding:
 
 ```js
-import { ComboBox, Grid } from '@skatteetaten/frontend-components';
+import { ComboBox } from '@skatteetaten/frontend-components/ComboBox';
+import { Grid } from '@skatteetaten/frontend-components/Grid';
 
 let error = 'En feil';
 

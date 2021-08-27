@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import { matches } from './../utils/test-utils';
-import { Spinner } from '../index';
+import { Spinner } from '.';
 
 function oppsettShallow(props) {
   return shallow(<Spinner {...props} />);

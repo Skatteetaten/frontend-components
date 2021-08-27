@@ -19,7 +19,7 @@ DemoBlock = ({ children }) => (
 Grid med standard padding:
 
 ```js
-import { Grid } from '@skatteetaten/frontend-components';
+import { Grid } from '@skatteetaten/frontend-components/Grid';
 
 <Grid padding="0px">
   <Grid.Row>
@@ -60,7 +60,7 @@ import { Grid } from '@skatteetaten/frontend-components';
 Grid uten padding:
 
 ```js
-import { Grid } from '@skatteetaten/frontend-components';
+import { Grid } from '@skatteetaten/frontend-components/Grid';
 
 <Grid padding="0">
   <Grid.Row rowSpacing={Grid.SPACE_NONE}>

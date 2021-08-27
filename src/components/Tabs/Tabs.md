@@ -1,5 +1,5 @@
 ```js noeditor
-import { MessageBar } from '@skatteetaten/frontend-components';
+import { MessageBar } from '@skatteetaten/frontend-components/MessageBar';
 
 <MessageBar>
   Se også <a href="#tabitem">TabItem</a> som beskriver hver enkelt fane og
@@ -10,7 +10,8 @@ import { MessageBar } from '@skatteetaten/frontend-components';
 **Tabs brukes til å veksle mellom visninger innenfor samme kontekst, og når brukerne ikke trenger å se innholdet fra de ulike visningene samtidig.**
 
 ```js
-import { Tabs, TabItem } from '@skatteetaten/frontend-components';
+import { Tabs } from '@skatteetaten/frontend-components/Tabs';
+import { TabItem } from '@skatteetaten/frontend-components/Tabs/TabItem';
 
 <Tabs underline={true}>
   <TabItem
@@ -32,7 +33,9 @@ import { Tabs, TabItem } from '@skatteetaten/frontend-components';
 Tabs med ytterstrek når brukt på en grå flate:
 
 ```js
-import { Card, Tabs, TabItem } from '@skatteetaten/frontend-components';
+import { Card } from '@skatteetaten/frontend-components/Card';
+import { Tabs } from '@skatteetaten/frontend-components/Tabs';
+import { TabItem } from '@skatteetaten/frontend-components/Tabs/TabItem';
 
 <Card title="Arbeidsliste" color={Card.Color.GREY}>
   <Tabs border={true}>

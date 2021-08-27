@@ -1,5 +1,5 @@
 ```js
-import { Image } from '@skatteetaten/frontend-components';
+import { Image } from '@skatteetaten/frontend-components/Image';
 
 <Image src="http://placehold.it/350x150" alt="Beskriv innholdet i bildet" />;
 ```

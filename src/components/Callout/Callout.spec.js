@@ -1,7 +1,7 @@
 import React from 'react';
 import { matches } from './../utils/test-utils';
 import { shallow } from 'enzyme';
-import { Callout } from '../index';
+import { Callout } from '.';
 
 function oppsettShallow(props) {
   return shallow(<Callout {...props} />);

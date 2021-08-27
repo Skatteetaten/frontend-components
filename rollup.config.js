@@ -104,7 +104,7 @@ export default (CLIArgs) => {
   delete CLIArgs.mini;
 
   const bundle = {
-    input: 'src/components/index.ts',
+    input: 'src/components/entry.ts',
     output: {
       dir: outputDir,
       format: 'esm',

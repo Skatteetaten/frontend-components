@@ -3,7 +3,7 @@
 Kolonner som kan sorteres
 
 ```js
-import { DetailsList } from '@skatteetaten/frontend-components';
+import { DetailsList } from '@skatteetaten/frontend-components/DetailsList';
 
 const [state, setState] = React.useState({
   columns: [
@@ -220,7 +220,7 @@ const [state, setState] = React.useState({
 Brukeren kan velge en eller flere rader vha av sjekkbokser.
 
 ```js
-import { DetailsList } from '@skatteetaten/frontend-components';
+import { DetailsList } from '@skatteetaten/frontend-components/DetailsList';
 
 const [state, setState] = React.useState({
   columns: [

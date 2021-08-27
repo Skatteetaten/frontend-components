@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
 import { matches } from './../utils/test-utils';
-import { SearchField } from '../index';
+import { SearchField } from '.';
 
 function oppsettShallow(props) {
   return shallow(<SearchField {...props} />);

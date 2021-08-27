@@ -1,22 +1,20 @@
 ```js noeditor
-import {
-  Accordion,
-  AccordionItem,
-  Card,
-  Icon,
-  Grid,
-  LabelWithCallout,
-  ComboBox,
-  IconButton,
-  Link,
-  MessageBar,
-  TextField,
-  Typography,
-  Spinner,
-  Chip,
-  Image,
-  Callout,
-} from '@skatteetaten/frontend-components';
+import { Accordion } from '@skatteetaten/frontend-components/Accordion';
+import { AccordionItem } from '@skatteetaten/frontend-components/Accordion/AccordionItem';
+import { Callout } from '@skatteetaten/frontend-components/Callout';
+import { Card } from '@skatteetaten/frontend-components/Card';
+import { Chip } from '@skatteetaten/frontend-components/Chip';
+import { ComboBox } from '@skatteetaten/frontend-components/ComboBox';
+import { Grid } from '@skatteetaten/frontend-components/Grid';
+import { Icon } from '@skatteetaten/frontend-components/Icon';
+import { IconButton } from '@skatteetaten/frontend-components/IconButton';
+import { Image } from '@skatteetaten/frontend-components/Image';
+import { LabelWithCallout } from '@skatteetaten/frontend-components/LabelWithCallout';
+import { Link } from '@skatteetaten/frontend-components/Link';
+import { MessageBar } from '@skatteetaten/frontend-components/MessageBar';
+import { Spinner } from '@skatteetaten/frontend-components/Spinner';
+import { TextField } from '@skatteetaten/frontend-components/TextField';
+import { Typography } from '@skatteetaten/frontend-components/Typography';
 
 <div>
   <Card

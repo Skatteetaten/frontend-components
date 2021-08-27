@@ -1,7 +1,7 @@
 import React from 'react';
 import { mount } from 'enzyme';
 import toJson from 'enzyme-to-json';
-import { Grid } from '../index';
+import { Grid } from '.';
 
 function oppsettFullDOM(props) {
   return mount(

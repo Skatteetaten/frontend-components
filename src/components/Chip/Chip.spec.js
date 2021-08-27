@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
 import toJson from 'enzyme-to-json';
-import { Chip } from '../index';
+import { Chip } from '.';
 
 function oppsettShallow(props) {
   return shallow(<Chip {...props} />);

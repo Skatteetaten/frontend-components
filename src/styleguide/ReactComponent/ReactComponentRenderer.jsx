@@ -1,9 +1,11 @@
 import React from 'react';
 import Pathline from 'react-styleguidist/lib/client/rsg-components/Pathline';
 import Styled from 'react-styleguidist/lib/client/rsg-components/Styled';
-import { Tabs, TabItem } from '../../components/index';
 import Examples from 'react-styleguidist/lib/client/rsg-components/Examples';
 import { UseScreen } from '../../components/utils/ScreenPlugin';
+
+import { Tabs } from '../../components/Tabs';
+import { TabItem } from '../../components/Tabs/TabItem';
 
 const styles = ({ color, fontSize, space }) => ({
   root: {

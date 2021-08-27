@@ -10,7 +10,7 @@ import {
   SkeIcons,
   MdIcons,
   PaletteProps,
-} from '../index';
+} from '../utils/index';
 // @ts-ignore TODO
 const theme = createTheme({
   palette: palette as PaletteProps,

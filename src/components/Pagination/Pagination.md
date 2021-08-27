@@ -1,7 +1,8 @@
 **Sidevelger for å bla i lange tabeller eller søkeresultater**
 
 ```js
-import { Table, Pagination } from '@skatteetaten/frontend-components';
+import { Pagination } from '@skatteetaten/frontend-components/Pagination';
+import { Table } from '@skatteetaten/frontend-components/Table';
 
 const columns = [
   {

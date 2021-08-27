@@ -1,7 +1,7 @@
 import React from 'react';
 import { mount, shallow } from 'enzyme';
 import { matches } from './../utils/test-utils';
-import { LabelWithCallout } from '../index';
+import { LabelWithCallout } from '.';
 
 function oppsettFullDOM(props) {
   return mount(<LabelWithCallout {...props} />);

@@ -1,7 +1,7 @@
 **Typography er hjelpekomponent som brukes til å sette riktige stiler på vanlige typografielementer**
 
 ```js
-import { Typography } from '@skatteetaten/frontend-components';
+import { Typography } from '@skatteetaten/frontend-components/Typography';
 
 <Typography>
   <h1>Overskriftsnivå 1</h1>

@@ -1,3 +1,5 @@
+// This file is used exclusively as an entry for Rollup.
+// It is not meant to import components from that file as it wont be available in the distributed package.
 export {
   DefaultPalette as Palette,
   skeColor,

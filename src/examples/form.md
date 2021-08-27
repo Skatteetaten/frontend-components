@@ -1,12 +1,10 @@
 ```js
-import {
-  Card,
-  Grid,
-  DatePicker,
-  Dropdown,
-  RadioButtonGroup,
-  Button,
-} from '@skatteetaten/frontend-components';
+import { Button } from '@skatteetaten/frontend-components/Button';
+import { Card } from '@skatteetaten/frontend-components/Card';
+import { DatePicker } from '@skatteetaten/frontend-components/DatePicker';
+import { Dropdown } from '@skatteetaten/frontend-components/Dropdown';
+import { Grid } from '@skatteetaten/frontend-components/Grid';
+import { RadioButtonGroup } from '@skatteetaten/frontend-components/RadioButtonGroup';
 
 const [state, setState] = React.useState({
   options: [

@@ -3,7 +3,8 @@
 ### Hjelpetekst
 
 ```js
-import { Callout, Button } from '@skatteetaten/frontend-components';
+import { Button } from '@skatteetaten/frontend-components/Button';
+import { Callout } from '@skatteetaten/frontend-components/Callout';
 
 const [state, setState] = React.useState({
   isCalloutVisible: false,
@@ -52,7 +53,8 @@ function closeButton() {
 ### Infotekst
 
 ```js
-import { Callout, Button } from '@skatteetaten/frontend-components';
+import { Button } from '@skatteetaten/frontend-components/Button';
+import { Callout } from '@skatteetaten/frontend-components/Callout';
 
 const [state, setState] = React.useState({ isCalloutVisible: false });
 
@@ -92,7 +94,8 @@ function closeButton() {
 ### Autolukking
 
 ```js
-import { Callout, Button } from '@skatteetaten/frontend-components';
+import { Button } from '@skatteetaten/frontend-components/Button';
+import { Callout } from '@skatteetaten/frontend-components/Callout';
 
 const [state, setState] = React.useState({ isCalloutVisible: false });
 
