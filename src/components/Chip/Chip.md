@@ -1,21 +1,17 @@
 **Chip brukes til å markere eller utheve noe – som en merkelapp.**
 
-Variasjon i utheving, størrelse og farge:
-
 ```js
 import { Chip } from '@skatteetaten/frontend-components/Chip';
 import { Icon } from '@skatteetaten/frontend-components/Icon';
 
 <div>
-  <Chip aria-label="Klagesak">Klagesak </Chip>
+  <Chip>Klagesak</Chip>
   <span> </span>
-  <Chip type={Chip.OK} size="standard" aria-label="Godkjent">
+  <Chip type={Chip.OK} size="standard">
     <Icon iconName="Check" /> Godkjent
   </Chip>
   <span> </span>
-  <Chip type={Chip.WARNING} aria-label="Unntatt offentlighet">
-    Unntatt offentlighet
-  </Chip>
+  <Chip type={Chip.WARNING}>Unntatt offentlighet</Chip>
 </div>;
 ```
 
@@ -31,9 +27,9 @@ import { Chip } from '@skatteetaten/frontend-components/Chip';
     nr. 24 om ligningsforvalgning (likningsloven) §9-11 etter at skattekontoret
     omgjorde endringsvedtak for 2005 om internprising og tilleggsskatt.
   </p>
-  <Chip aria-label="Tilleggsskatt">Tilleggsskatt</Chip> <span> </span>
-  <Chip aria-label="Internprising">Internprising</Chip> <span> </span>
-  <Chip aria-label="Skatteklagenemnda">Skatteklagenemnda</Chip> <span> </span>
+  <Chip>Tilleggsskatt</Chip> <span> </span>
+  <Chip>Internprising</Chip> <span> </span>
+  <Chip>Skatteklagenemnda</Chip> <span> </span>
 </div>;
 ```
 

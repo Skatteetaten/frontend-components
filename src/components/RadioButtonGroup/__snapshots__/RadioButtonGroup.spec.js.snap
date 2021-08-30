@@ -18,27 +18,35 @@ exports[`RadioButtonGroup komponent matcher snapshot 1`] = `
       }
   id="radiogroup-123"
 >
-  <legend
+  <div
     className=
 
         {
-          color: #1d1d1d;
-          display: inline-block;
-          font-size: 1rem;
-          font-weight: 400;
-          padding-bottom: 4px;
-          padding-left: 0px;
+          display: flex;
         }
-        & .ms-Label {
-          font-weight: 400;
-        }
-        @supports (display: contents){& {
-          display: contents;
-        }
-    id="radiogroup-123-label"
   >
-    Velg en
-  </legend>
+    <legend
+      className=
+
+          {
+            color: #1d1d1d;
+            display: inline-block;
+            font-size: 1rem;
+            font-weight: 400;
+            padding-bottom: 4px;
+            padding-left: 0px;
+          }
+          & .ms-Label {
+            font-weight: 400;
+          }
+          @supports (display: contents){& {
+            display: contents;
+          }
+      id="radiogroup-123-label"
+    >
+      Velg en
+    </legend>
+  </div>
   <div
     aria-invalid={false}
     className=

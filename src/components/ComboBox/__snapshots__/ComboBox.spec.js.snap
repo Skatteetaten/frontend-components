@@ -5,6 +5,13 @@ exports[`Combobox komponent matcher med snapshot 1`] = `
   id="combobox-123"
 >
   <div
+    className=
+
+        {
+          display: flex;
+        }
+  />
+  <div
     aria-invalid={false}
     className=
         ms-ComboBox-container

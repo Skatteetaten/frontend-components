@@ -10,6 +10,8 @@ const [state, setState] = React.useState({
   isCalloutVisible: false,
 });
 
+const visible = state.isCalloutVisible;
+
 function closeButton() {
   setState({
     isCalloutVisible: false,
@@ -20,7 +22,7 @@ function closeButton() {
   <span ref={(spanElement) => (buttonElement = spanElement)}>
     <Button
       buttonStyle="secondary"
-      aria-haspopup="true"
+      aria-expanded={visible}
       icon="Info"
       onClick={() => setState({ isCalloutVisible: !state.isCalloutVisible })}
     >
@@ -58,6 +60,8 @@ import { Callout } from '@skatteetaten/frontend-components/Callout';
 
 const [state, setState] = React.useState({ isCalloutVisible: false });
 
+const visible = state.isCalloutVisible;
+
 function closeButton() {
   setState({
     isCalloutVisible: false,
@@ -68,7 +72,7 @@ function closeButton() {
   <span ref={(spanElement) => (buttonElement2 = spanElement)}>
     <Button
       buttonStyle="secondary"
-      aria-haspopup="true"
+      aria-expanded={visible}
       icon="Info"
       onClick={() => setState({ isCalloutVisible: !state.isCalloutVisible })}
     >
@@ -99,6 +103,8 @@ import { Callout } from '@skatteetaten/frontend-components/Callout';
 
 const [state, setState] = React.useState({ isCalloutVisible: false });
 
+const visible = state.isCalloutVisible;
+
 function closeButton() {
   setState({
     isCalloutVisible: false,
@@ -109,7 +115,7 @@ function closeButton() {
   <span ref={(spanElement) => (buttonElement4 = spanElement)}>
     <Button
       buttonStyle="secondary"
-      aria-haspopup="true"
+      aria-expanded={visible}
       icon="Info"
       onClick={() => setState({ isCalloutVisible: !state.isCalloutVisible })}
     >

@@ -15,9 +15,10 @@ function getCalloutBorder(props: CalloutProps) {
     };
   }
 }
-export const getClassNames = (props: CalloutProps) => {
+export const getClassNames = (props: CalloutProps, widthBtnLabel: string) => {
   const theme = getTheme();
   const palette = theme.palette as PaletteProps;
+
   return mergeStyleSets({
     main: {
       displayName: 'SkeCallout',
@@ -27,9 +28,9 @@ export const getClassNames = (props: CalloutProps) => {
       selectors: {
         '.ms-Callout-main': {
           maxWidth: 600,
+          width: '100%',
           backgroundColor: palette.skeColor[props.color as CalloutColor],
           boxShadow: 'none',
-          padding: '10px 20px 10px 10px',
           selectors: {
             '@media  only screen and (max-width: 479px)': {
               maxWidth: 300,
@@ -40,10 +41,14 @@ export const getClassNames = (props: CalloutProps) => {
             '& p': {
               padding: '10px 10px 0 10px',
             },
+            '.callout-content': {
+              padding: '10px 20px 10px 10px',
+            },
           },
         },
         '.ms-Callout-beak': {
           backgroundColor: palette.skeColor[props.color as CalloutColor],
+          left: 'calc('.concat(widthBtnLabel, '/2) !important'),
         },
         '&& h3': {
           marginTop: '5px',

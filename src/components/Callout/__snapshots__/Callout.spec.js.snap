@@ -44,10 +44,7 @@ exports[`Callout komponent matcher snapshot 1`] = `
             background-color: #e3f5ea;
             box-shadow: none;
             max-width: 600px;
-            padding-bottom: 10px;
-            padding-left: 10px;
-            padding-right: 20px;
-            padding-top: 10px;
+            width: 100%;
           }
           @media  only screen and (max-width: 479px){& .ms-Callout-main {
             max-width: 300px;
@@ -64,8 +61,15 @@ exports[`Callout komponent matcher snapshot 1`] = `
             padding-right: 10px;
             padding-top: 10px;
           }
+          & .ms-Callout-main .callout-content {
+            padding-bottom: 10px;
+            padding-left: 10px;
+            padding-right: 20px;
+            padding-top: 10px;
+          }
           & .ms-Callout-beak {
             background-color: #e3f5ea;
+            left: calc(/2) !important;
           }
           && h3 {
             font-size: 1.125rem;

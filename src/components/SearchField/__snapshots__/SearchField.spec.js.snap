@@ -6,6 +6,13 @@ exports[`SearchField komponent matcher snapshot 1`] = `
 >
   <div
     className=
+
+        {
+          display: flex;
+        }
+  />
+  <div
+    className=
         ms-SearchBox
         {
           -moz-osx-font-smoothing: grayscale;

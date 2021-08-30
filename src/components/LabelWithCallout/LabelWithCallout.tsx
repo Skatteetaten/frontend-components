@@ -58,74 +58,76 @@ export const LabelWithCallout = (props: LabelWithCalloutProps) => {
     onRenderLabel
   ) : (
     <>
-      {inFieldset ? (
-        label ? (
-          <legend
-            aria-label={ariaLabel}
+      <div className={styles.calloutLabelWrapper}>
+        {inFieldset ? (
+          label ? (
+            <legend
+              aria-label={ariaLabel}
+              id={id}
+              className={classnames(styles.labelAsLegend, className)}
+            >
+              {label}
+            </legend>
+          ) : null
+        ) : label ? (
+          <label
             id={id}
-            className={classnames(styles.labelAsLegend, className)}
+            htmlFor={inputId}
+            aria-label={ariaLabel}
+            className={classnames(styles.label, className)}
           >
             {label}
-          </legend>
-        ) : null
-      ) : label ? (
-        <label
-          id={id}
-          htmlFor={inputId}
-          aria-label={ariaLabel}
-          className={classnames(styles.label, className)}
-        >
-          {label}
-        </label>
-      ) : null}
+          </label>
+        ) : null}
 
-      {help && !warning && (
-        <span className={styles.labelIconArea} ref={iconButtonElementRef}>
-          <IconButton
-            iconProps={{ iconName: 'HelpOutline' }}
-            title={buttonTitle ? buttonTitle : 'Hjelp'}
-            aria-describedby={id}
-            ariaLabel={buttonAriaLabel ? buttonAriaLabel : 'Hjelp'}
-            aria-expanded={isCalloutVisible}
-            onClick={() => {
-              setIsCalloutVisible(!isCalloutVisible);
-              toggleEvent();
-            }}
-            className={styles.icon}
-          />
-        </span>
-      )}
-      {warning && (
-        <span className={styles.labelIconArea} ref={iconButtonElementRef}>
-          <IconButton
-            iconProps={{ iconName: 'WarningOutline' }}
-            title={buttonTitle ? buttonTitle : 'Varsel'}
-            aria-describedby={id}
-            ariaLabel={buttonAriaLabel ? buttonAriaLabel : 'Varsel'}
-            aria-expanded={isCalloutVisible}
-            onClick={() => {
-              setIsCalloutVisible(!isCalloutVisible);
-              toggleEvent();
-            }}
-            className={styles.warningicon}
-          />
-        </span>
-      )}
-      {readOnly && (
-        <span className={styles.labelIconArea}>
-          {editable && (
+        {help && !warning && (
+          <span className={styles.labelIconArea} ref={iconButtonElementRef}>
             <IconButton
-              iconProps={{ iconName: 'Edit' }}
-              title={buttonTitle ? buttonTitle : 'Rediger'}
+              iconProps={{ iconName: 'HelpOutline' }}
+              title={buttonTitle ? buttonTitle : 'Hjelp'}
               aria-describedby={id}
-              ariaLabel={buttonAriaLabel ? buttonAriaLabel : 'Rediger'}
+              ariaLabel={buttonAriaLabel ? buttonAriaLabel : 'Hjelp'}
               aria-expanded={isCalloutVisible}
-              onClick={editFunction}
+              onClick={() => {
+                setIsCalloutVisible(!isCalloutVisible);
+                toggleEvent();
+              }}
               className={styles.icon}
             />
-          )}
-        </span>
-      )}
+          </span>
+        )}
+        {warning && (
+          <span className={styles.labelIconArea} ref={iconButtonElementRef}>
+            <IconButton
+              iconProps={{ iconName: 'WarningOutline' }}
+              title={buttonTitle ? buttonTitle : 'Varsel'}
+              aria-describedby={id}
+              ariaLabel={buttonAriaLabel ? buttonAriaLabel : 'Varsel'}
+              aria-expanded={isCalloutVisible}
+              onClick={() => {
+                setIsCalloutVisible(!isCalloutVisible);
+                toggleEvent();
+              }}
+              className={styles.warningicon}
+            />
+          </span>
+        )}
+        {readOnly && (
+          <span className={styles.labelIconArea}>
+            {editable && (
+              <IconButton
+                iconProps={{ iconName: 'Edit' }}
+                title={buttonTitle ? buttonTitle : 'Rediger'}
+                aria-describedby={id}
+                ariaLabel={buttonAriaLabel ? buttonAriaLabel : 'Rediger'}
+                aria-expanded={isCalloutVisible}
+                onClick={editFunction}
+                className={styles.icon}
+              />
+            )}
+          </span>
+        )}
+      </div>
       {isCalloutVisible && (
         <Callout
           className={styles.calloutContext}

@@ -1,7 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`LabelWithCallout komponent matcher snapshot 1`] = `
-Array [
+<div
+  className=
+
+      {
+        display: flex;
+      }
+>
   <label
     className=
 
@@ -19,7 +25,7 @@ Array [
     id="LabelWithCallout_id"
   >
     Mock Label
-  </label>,
+  </label>
   <span
     className=
 
@@ -169,6 +175,6 @@ Array [
         </i>
       </span>
     </button>
-  </span>,
-]
+  </span>
+</div>
 `;

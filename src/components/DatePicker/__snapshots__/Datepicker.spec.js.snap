@@ -4,6 +4,13 @@ exports[`DatePicker komponent matcher snapshot 1`] = `
 <div>
   <div
     className=
+
+        {
+          display: flex;
+        }
+  />
+  <div
+    className=
         ms-DatePicker
         {
           -moz-osx-font-smoothing: grayscale;
