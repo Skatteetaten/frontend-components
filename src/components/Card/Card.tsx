@@ -5,7 +5,7 @@ import { Icon } from '../Icon';
 import { CardBorder, CardColor, CardProps, CardState } from './Card.types';
 
 /**
- * @visibleName Card (Innholdskort)
+ * @visibleName Card _Innholdskort_
  */
 export class Card extends React.PureComponent<CardProps, CardState> {
   static Color = CardColor;

@@ -87,7 +87,7 @@ const ExternalHeaderContent = ({ styles, ...props }) => {
 };
 
 /**
- * @visibleName TopBanner (Topp)
+ * @visibleName TopBanner _Topp_
  */
 export const TopBanner: React.FC<TopBannerTypes> = (props) => {
   const { external, ...rest } = props;

@@ -9,7 +9,7 @@ export const TopStripeContext = React.createContext<TopStripeProps>({
 });
 
 /**
- * @visibleName TopStripe (Toppstripe)
+ * @visibleName TopStripe _Toppstripe_
  */
 export const TopStripe: React.FC<TopStripeProps> = (props) => {
   const notOpen = -1;

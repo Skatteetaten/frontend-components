@@ -5,7 +5,7 @@ import { getClassNames } from './NavigationTile.classNames';
 import { NavigationTileProps } from './NavigationTile.types';
 
 /**
- * @visibleName NavigationTile (Forsideknapp)
+ * @visibleName NavigationTile _Forsideknapp_
  */
 export const NavigationTile: React.FC<NavigationTileProps> = (props) => {
   const {

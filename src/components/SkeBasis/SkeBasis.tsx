@@ -16,7 +16,7 @@ export interface SkeBasisProps extends IFabricProps {
 }
 
 /**
- * @visibleName SkeBasis (Basiskomponent)
+ * @visibleName SkeBasis _Basiskomponent_
  */
 export class SkeBasis extends React.PureComponent<SkeBasisProps> {
   static PALETTE = Palette;

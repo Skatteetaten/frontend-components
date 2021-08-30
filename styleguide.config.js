@@ -183,8 +183,10 @@ module.exports = {
   ],
   getComponentPathLine(componentPath) {
     const name = path.basename(componentPath, '.tsx');
-
-    return `import { ${name} } from '${pkg.name}';`;
+    const dirname = path.dirname(componentPath);
+    const dirNameStriped = dirname.replace('src/components/', '');
+    // src/components/Accordion/AccordionItem/AccordionItem.tsx
+    return `import { ${name} } from '${pkg.name}/${dirNameStriped}';`;
   },
   theme: {
     color: {

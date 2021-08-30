@@ -6,7 +6,7 @@ import { AccordionItemProps } from '../Accordion/AccordionItem/AccordionItem.typ
 import { AccordionMenuProps } from './AccordionMenu.types';
 
 /**
- * @visibleName AccordionMenu (Trekkspillmeny)
+ * @visibleName AccordionMenu _Trekkspillmeny_
  */
 export const AccordionMenu: React.FC<AccordionMenuProps> = ({
   className,

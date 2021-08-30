@@ -31,7 +31,7 @@ const limitNumberOfResults = (list: Array<IDropdownOption>, limit?: number) => {
 };
 
 /**
- * @visibleName SearchField (Søkefelt)
+ * @visibleName SearchField _Soekefelt_
  */
 export const SearchField: React.FC<SearchFieldProps> = (props) => {
   const {

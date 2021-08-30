@@ -4,7 +4,7 @@ import { getClassNames } from './ButtonLink.classNames';
 import { ButtonLinkProps } from './ButtonLink.types';
 
 /**
- * @visibleName ButtonLink (Knappelenke)
+ * @visibleName ButtonLink _Knappelenke_
  */
 export const ButtonLink: React.FC<ButtonLinkProps> = (props) => {
   const { path, text, className, openInNew, ...htmlAttributes } = props;

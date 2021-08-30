@@ -3,7 +3,7 @@ import { Image as FabricImage, IImageProps } from '@fluentui/react';
 
 export interface ImageProps extends IImageProps {}
 /**
- * @visibleName Image (Bilde)
+ * @visibleName Image _Bilde_
  */
 export const Image: React.FC<ImageProps> = (props) => {
   const { children, className, ...rest } = props;

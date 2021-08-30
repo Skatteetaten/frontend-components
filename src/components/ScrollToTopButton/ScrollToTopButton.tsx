@@ -9,7 +9,7 @@ import {
 } from './ScrollToTopButton.types';
 
 /**
- * @visibleName ScrollToTopButton (Gå til toppen)
+ * @visibleName ScrollToTopButton _GaaTilToppen_
  */
 export class ScrollToTopButton extends React.PureComponent<
   ScrollToTopButtonProps,

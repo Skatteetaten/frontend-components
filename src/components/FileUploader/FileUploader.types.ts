@@ -23,7 +23,7 @@ export interface AttachmentMetadata extends File {
   id: string;
 }
 /**
- * @visibleName FileUploader (Filopplaster)
+ * @visibleName FileUploader _Filopplaster_
  */
 export interface FileUploaderProps {
   /** Akksepterte filformater */

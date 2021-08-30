@@ -8,7 +8,7 @@ import { LabelWithCallout } from '../LabelWithCallout';
 import { ComboBoxProps } from './ComboBox.types';
 
 /**
- * @visibleName ComboBox (Nedtrekksliste med skriving)
+ * @visibleName ComboBox _Nedtrekksliste med skriving_
  */
 export const ComboBox: React.FC<ComboBoxProps> = (props) => {
   const {

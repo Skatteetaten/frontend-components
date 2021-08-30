@@ -5,7 +5,7 @@ import { Link as SkeLink } from '../Link';
 import { LinkGroupProps } from './LinkGroup.types';
 
 /**
- * @visibleName LinkGroup (Lenkegruppe)
+ * @visibleName LinkGroup _Lenkegruppe_
  */
 export const LinkGroup: React.FC<LinkGroupProps> = (props) => {
   const styles = getClassNames();

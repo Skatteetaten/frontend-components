@@ -4,7 +4,7 @@ import React from 'react';
 import { getClassNames } from './ProgressBar.classNames';
 
 /**
- * @visibleName ProgressBar (Fremdriftsvisning)
+ * @visibleName ProgressBar _Fremdriftsvisning_
  */
 export const ProgressBar: React.FC<IProgressIndicatorProps> = (props) => {
   const { className, ...rest } = props;

@@ -6,7 +6,7 @@ import { getClassNames } from './Callout.classNames';
 import { CalloutColor, CalloutProps, CalloutState } from './Callout.types';
 
 /**
- * @visibleName Callout (Utropsboks)
+ * @visibleName Callout _Utropsboks_
  */
 export class Callout extends PureComponent<CalloutProps, CalloutState> {
   static HELP = CalloutColor.HELP;

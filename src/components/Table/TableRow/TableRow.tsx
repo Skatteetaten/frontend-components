@@ -37,7 +37,7 @@ export interface TableRowProps<P> {
 }
 
 /**
- * @visibleName TableRow (Tabellrad)
+ * @visibleName TableRow _Tabellrad_
  */
 export const TableRow = <P extends object>(props: TableRowProps<P>) => {
   const {

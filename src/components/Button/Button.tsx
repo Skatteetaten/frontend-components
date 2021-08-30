@@ -5,7 +5,7 @@ import { getClassNames as getStandardClassNames } from './Button.classNames';
 import { ButtonProps } from './Button.types';
 
 /**
- * @visibleName Button (Knapp)
+ * @visibleName Button _Knapp_
  */
 
 export const Button: React.FC<ButtonProps> = (props) => {

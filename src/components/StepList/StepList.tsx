@@ -6,7 +6,7 @@ import { getClassNames } from './StepList.classNames';
 import { StepListProps } from './StepList.types';
 
 /**
- * @visibleName StepList (StegListe)
+ * @visibleName StepList _StegListe_
  */
 
 export const StepList = (props: StepListProps) => {

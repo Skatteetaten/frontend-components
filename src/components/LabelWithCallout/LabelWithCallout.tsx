@@ -6,7 +6,7 @@ import classnames from 'classnames';
 import { calloutState, LabelWithCalloutProps } from './LabelWithCallout.types';
 
 /**
- * @visibleName LabelWithCallout (Merkelapp med utropsboks)
+ * @visibleName LabelWithCallout _MerkelappMedUtropsboks_
  */
 export const LabelWithCallout = (props: LabelWithCalloutProps) => {
   const {

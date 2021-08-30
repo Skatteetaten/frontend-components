@@ -55,7 +55,7 @@ const Content = (props: _InternalContentProps) => {
 };
 
 /**
- * @visibleName NavigationContent (Innhold til forsideknapp)
+ * @visibleName NavigationContent _InnholdTilForsideknapp_
  */
 export const NavigationContent: React.FC<NavigationContentProps> = (props) => {
   const {

@@ -48,7 +48,7 @@ export const getSlidingWindowEdges = (
 };
 
 /**
- * @visibleName Pagination (Sidevelger)
+ * @visibleName Pagination _Sidevelger_
  */
 export const Pagination: React.FC<PaginationProps> = (props) => {
   const {

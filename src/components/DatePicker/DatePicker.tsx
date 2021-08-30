@@ -31,7 +31,7 @@ const DEFAULTPARSEDATEFROMSTRING = (date: string): Date | null => {
 };
 
 /**
- * @visibleName DatePicker (Datovelger)
+ * @visibleName DatePicker _Datovelger_
  */
 export const DatePicker: React.FC<DatePickerProps> = (
   props: DatePickerProps

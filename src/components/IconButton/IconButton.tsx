@@ -5,7 +5,7 @@ import { getClassNames } from './IconButton.classNames';
 import { IconButtonProps } from './IconButton.types';
 
 /**
- * @visibleName IconButton (Ikonknapp)
+ * @visibleName IconButton _Ikonknapp_
  */
 export const IconButton: React.FC<IconButtonProps> = (props) => {
   const { icon, className, ...rest } = props;

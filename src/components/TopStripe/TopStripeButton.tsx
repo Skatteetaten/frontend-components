@@ -5,7 +5,7 @@ import { UseScreen } from '../utils';
 import { TopStripeButtonProps } from './TopStripe.types';
 
 /**
- * @visibleName TopStripeButton (Toppstripe-knapp)
+ * @visibleName TopStripeButton _Toppstripe-knapp_
  */
 export const TopStripeButton: React.FC<TopStripeButtonProps> = (props) => {
   const {

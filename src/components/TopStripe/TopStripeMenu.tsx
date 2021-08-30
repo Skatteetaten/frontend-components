@@ -31,7 +31,7 @@ export interface TopStripeMenuProps extends LinkProps {
 }
 
 /**
- * @visibleName TopStripeMenu (Toppstripe-meny)
+ * @visibleName TopStripeMenu _ToppstripeMeny_
  */
 export const TopStripeMenu: React.FC<TopStripeMenuProps> = (props) => {
   const styles = getClassNames();

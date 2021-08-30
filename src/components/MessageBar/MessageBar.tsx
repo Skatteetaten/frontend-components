@@ -11,7 +11,7 @@ import { getClassNames } from './MessageBar.classNames';
 import { MessageBarProps, MessageBarState } from './MessageBar.types';
 
 /**
- * @visibleName MessageBar (Varsler)
+ * @visibleName MessageBar _Varsler_
  */
 export class MessageBar extends React.PureComponent<
   MessageBarProps,

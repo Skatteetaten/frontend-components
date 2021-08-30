@@ -18,7 +18,7 @@ export interface AccordionProps extends React.HTMLAttributes<HTMLDivElement> {
 }
 
 /**
- * @visibleName Accordion (Trekkspill)
+ * @visibleName Accordion _Trekkspill_
  */
 
 export const Accordion: React.FC<AccordionProps> = (props) => {

@@ -5,7 +5,7 @@ import { getClassNames } from '../AccordionMenu.classNames';
 import { AccordionMenuItemProps } from './AccordionMenuItem.types';
 
 /**
- * @visibleName AccordionMenuItem (Element i trekkspillmeny)
+ * @visibleName AccordionMenuItem _ElementiTrekkspillmeny_
  */
 export const AccordionMenuItem = (props: AccordionMenuItemProps) => {
   const styles = getClassNames(props);

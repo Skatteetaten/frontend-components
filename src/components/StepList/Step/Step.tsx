@@ -23,7 +23,7 @@ const NumberIcon = (props: any) => {
   );
 };
 /**
- * @visibleName Step (Enkeltsteg)
+ * @visibleName Step _Enkeltsteg_
  */
 export interface StepProps extends React.HTMLAttributes<HTMLDivElement> {
   /** Change-button for step **/

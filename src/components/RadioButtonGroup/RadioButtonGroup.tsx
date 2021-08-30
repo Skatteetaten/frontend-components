@@ -8,7 +8,7 @@ import { ErrorMessage } from '../ErrorMessage';
 import { RadioButtonGroupProps } from './RadioButtonGroup.types';
 
 /**
- * @visibleName RadioButtonGroup (Radioknapper)
+ * @visibleName RadioButtonGroup _Radioknapper_
  */
 
 export const RadioButtonGroup = (props: RadioButtonGroupProps) => {

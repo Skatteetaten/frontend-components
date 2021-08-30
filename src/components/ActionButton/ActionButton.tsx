@@ -5,7 +5,7 @@ import { getClassNames } from './ActionButton.classNames';
 import { ActionButtonProps } from './ActionButton.types';
 
 /**
- * @visibleName ActionButton (Aksjonsknapp)
+ * @visibleName ActionButton _Aksjonsknapp_
  */
 export class ActionButton extends React.PureComponent<ActionButtonProps, {}> {
   static NORMAL = 'icon';

@@ -10,7 +10,7 @@ import {
 import { DialogProps, DialogState } from './Dialog.types';
 
 /**
- * @visibleName Dialog (Dialogboks)
+ * @visibleName Dialog _Dialogboks_
  */
 export class Dialog extends React.PureComponent<DialogProps, DialogState> {
   static Footer = DialogFooter;

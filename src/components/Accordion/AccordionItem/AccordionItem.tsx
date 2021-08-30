@@ -59,7 +59,7 @@ const ToggleContent: React.FC<ToggleContentInterface> = (props) => {
 };
 
 /**
- * @visibleName AccordionItem (Rad i trekkspill)
+ * @visibleName AccordionItem _RadiTrekkspill_
  */
 export const AccordionItem: React.FC<AccordionItemProps> = (props) => {
   const [isContentOpen, setContentOpen] = React.useState<boolean>(

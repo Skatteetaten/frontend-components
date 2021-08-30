@@ -4,7 +4,7 @@ import classnames from 'classnames';
 import { ErrorMessageProps } from './ErrorMessage.types';
 
 /**
- * @visibleName ErrorMessage (Feilmelding)
+ * @visibleName ErrorMessage _Feilmelding_
  */
 export const ErrorMessage: React.FC<ErrorMessageProps> = (props) => {
   const errorClassNames = getClassNames();

@@ -10,7 +10,7 @@ export interface GridProps {
 }
 
 /**
- * @visibleName Grid (Rutenett)
+ * @visibleName Grid _Rutenett_
  */
 export class Grid extends React.Component<GridProps, {}> {
   static Col = Col;

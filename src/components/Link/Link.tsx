@@ -5,7 +5,7 @@ import { getClassNames } from './Link.classNames';
 import { LinkProps } from './Link.types';
 
 /**
- * @visibleName Link (Lenke)
+ * @visibleName Link _Lenke_
  */
 
 export const Link: React.FC<LinkProps> = (props) => {

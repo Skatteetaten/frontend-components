@@ -12,7 +12,7 @@ import { getClassNames } from './TextField.classNames';
 import { TextFieldProps } from './TextField.types';
 
 /**
- * @visibleName TextField (Tekstfelt)
+ * @visibleName TextField _Tekstfelt_
  */
 export const TextField: React.FC<TextFieldProps> = ({
   calloutFloating,
