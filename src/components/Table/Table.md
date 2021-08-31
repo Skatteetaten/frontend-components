@@ -88,7 +88,7 @@ const editableContent = (data, close, rowIndex) => (
 
 const sortMonths = (a, b) => moment(a, 'MMMM').diff(moment(b, 'MMMMM'));
 
-const formatProsent = (prosent) => prosent + '%';
+const formatPercent = (percent) => percent + ' %';
 
 const columns = [
   {
@@ -109,7 +109,7 @@ const columns = [
     name: 'Dekningsgrad',
     fieldName: 'coverage',
     alignment: 'right',
-    formatFunction: formatProsent,
+    formatFunction: formatPercent,
   },
   {
     name: 'Avkastning',
