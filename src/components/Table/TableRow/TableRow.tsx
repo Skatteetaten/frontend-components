@@ -248,7 +248,10 @@ export const TableRow = <P extends object>(props: TableRowProps<P>) => {
     return (
       <tr
         key={rowIndex}
-        className={isEditableRowOpen ? 'editableRow-open' : 'editableRow'}
+        className={classnames(
+          isEditableRowOpen ? 'editableRow-open' : 'editableRow',
+          'separator'
+        )}
       >
         <td key={rowIndex} className="editableCell" colSpan={numberOfColumns}>
           {editableContent && editableContent(data, onCloseRow, rowIndex)}
