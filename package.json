@@ -96,14 +96,14 @@
     "rollup-plugin-inject-process-env": "1.3.1",
     "rollup-plugin-node-externals": "2.2.0",
     "rollup-plugin-node-globals": "1.4.0",
-    "rollup-plugin-node-polyfills": "0.2.1",
+    "rollup-plugin-polyfill-node": "0.7.0",
     "rollup-plugin-terser": "7.0.2",
     "rollup-plugin-visualizer": "5.5.2",
     "sonar-scanner": "3.1.0",
     "tslib": "2.3.1",
     "typescript": "4.3.5",
-    "uuid": "3.4.0",
-    "webfont": "9.0.0"
+    "uuid": "8.3.2",
+    "webfont": "11.2.26"
   },
   "scripts": {
     "start": "REACT_APP_BUILD_VERSION=$(git rev-parse --abbrev-ref HEAD) FAST_REFRESH=false styleguidist server --verbose",
@@ -111,8 +111,9 @@
     "prebuild": "run-s clean generate:icons circularDeps lint",
     "build": "run-p build:lib build:docs",
     "build:docs": "styleguidist build",
-    "build:lib": "run-p build:types build:esms build:commonjs build:assets ",
+    "build:lib": "run-p build:types build:esms build:commonjs build:assets build:designtokens",
     "build:assets": "cpx \"./src/components/**/assets/**/*\" ./lib",
+    "build:designtokens": "cpx \"./src/designtokens/**/*\" ./lib/designtokens",
     "build:copy-files": "node scripts/copyBuildFiles.js",
     "build:copy-files-external": "node scripts/copyBuildFiles.js EXTERNAL",
     "build:commonjs": "babel ./src/components --out-dir lib --extensions '.ts,.tsx' ",
