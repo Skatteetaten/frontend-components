@@ -187,7 +187,7 @@ export const TableRow = <P extends object>(props: TableRowProps<P>) => {
             cellContentHideEdit: !editableRow && editableRows,
           })}
         >
-          {content}
+          {formatContent(content, index)}
         </span>
       </button>
     ) : (
@@ -198,9 +198,16 @@ export const TableRow = <P extends object>(props: TableRowProps<P>) => {
           cellContentHideEdit: !editableRow && editableRows,
         })}
       >
-        {content}
+        {formatContent(content, index)}
       </div>
     );
+
+  const formatContent = (content, index) => {
+    if (columns[index].formatFunction) {
+      return columns[index].formatFunction(content);
+    }
+    return content;
+  };
 
   const renderRow = (
     rowData: P,
