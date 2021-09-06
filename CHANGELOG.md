@@ -1,4 +1,4 @@
-### **v.4.1.3 - 06.11.2021**
+### **v.4.1.3 - 06.09.2021**
 
 - Revert change from v.4.1.0, compiling to es modules, due to problems with build pipelines.
 - Added function to format column data in table
