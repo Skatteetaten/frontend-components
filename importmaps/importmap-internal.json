@@ -1,15 +1,15 @@
 {
   "imports": {
-    "react": "/esm/deps/dev/react/<replace>/esm/react.development.js",
-    "react-dom": "/esm/deps/dev/react-dom/<replace>/esm/react-dom.development.js",
-    "react-i18next": "/esm/deps/dev/react-i18next/<replace>/dist/esm/react-i18next.js",
-    "prop-types": "/esm/deps/dev/prop-types/<replace>/prop-types.min.js",
-    "classnames": "/esm/deps/dev/classnames/<replace>/index.min.js",
-    "moment": "/esm/deps/dev/moment/<replace>/min/moment.min.js",
-    "axios": "/esm/deps/dev/axios/<replace>/dist/axios.min.js",
-    "tslib": "/esm/deps/dev/tslib/<replace>/tslib.js",
-    "i18next": "/esm/deps/dev/i18next/<replace>/dist/esm/i18next.js",
-    "react-transition-group": "/esm/deps/dev/react-transition-group/<replace>/dist/react-transition-group.js",
-    "@skatteetaten/frontend-components": "/esm/deps/dev/frontend-components/<replace>/index.development.js"
+    "react": "/umd/deps/dev/react/<replace>/umd/react.development.js",
+    "react-dom": "/umd/deps/dev/react-dom/<replace>/umd/react-dom.development.js",
+    "react-i18next": "/umd/deps/dev/react-i18next/<replace>/dist/umd/react-i18next.js",
+    "prop-types": "/umd/deps/dev/prop-types/<replace>/prop-types.min.js",
+    "classnames": "/umd/deps/dev/classnames/<replace>/index.min.js",
+    "moment": "/umd/deps/dev/moment/<replace>/min/moment.min.js",
+    "axios": "/umd/deps/dev/axios/<replace>/dist/axios.min.js",
+    "tslib": "/umd/deps/dev/tslib/<replace>/tslib.js",
+    "i18next": "/umd/deps/dev/i18next/<replace>/dist/umd/i18next.js",
+    "react-transition-group": "/umd/deps/dev/react-transition-group/<replace>/dist/react-transition-group.js",
+    "@skatteetaten/frontend-components": "/umd/deps/dev/frontend-components/<replace>/index.development.js"
   }
 }
