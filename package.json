@@ -111,12 +111,13 @@
     "prebuild": "run-s clean generate:icons circularDeps lint",
     "build": "run-p build:lib build:docs",
     "build:docs": "styleguidist build",
-    "build:lib": "run-p build:types build:esm build:umd build:assets build:designtokens",
+    "build:lib": "run-p build:types build:esm build:cjs build:umd build:assets build:designtokens",
     "build:assets": "cpx \"./src/components/**/assets/**/*\" ./lib",
     "build:designtokens": "cpx \"./src/designtokens/**/*\" ./lib/designtokens",
     "build:copy-files": "node scripts/copyBuildFiles.js",
     "build:copy-files-external": "node scripts/copyBuildFiles.js EXTERNAL",
-    "build:esm": "babel ./src/components --out-dir lib --extensions '.ts,.tsx' ",
+    "build:esm": "BABEL_ENV=esm babel ./src/components --out-dir lib --extensions '.ts,.tsx' ",
+    "build:cjs": "BABEL_ENV=cjs babel ./src/components --out-dir lib/cjs --extensions '.ts,.tsx' ",
     "build:umd": "run-s build:umd-dev build:umd-prod",
     "build:umd-dev": "rollup --silent -c -m || exit 1",
     "build:umd-prod": "rollup --silent -c -m --mini --prod || exit 1",
@@ -178,23 +179,46 @@
     "usePathForSuiteName": "true"
   },
   "babel": {
-    "presets": [
-      [
-        "@babel/preset-env",
-        {
-          "modules": false,
-          "targets": {
-            "node": true
-          }
-        }
-      ],
-      "@babel/preset-react",
-      "@babel/preset-typescript"
-    ],
-    "plugins": [
-      "@babel/plugin-proposal-class-properties",
-      "@babel/plugin-proposal-object-rest-spread"
-    ]
+    "env": {
+      "esm": {
+        "presets": [
+          [
+            "@babel/preset-env",
+            {
+              "modules": false,
+              "targets": {
+                "node": true
+              }
+            }
+          ],
+          "@babel/preset-react",
+          "@babel/preset-typescript"
+        ],
+        "plugins": [
+          "@babel/plugin-proposal-class-properties",
+          "@babel/plugin-proposal-object-rest-spread"
+        ]
+      },
+      "cjs": {
+        "presets": [
+          [
+            "@babel/preset-env",
+            {
+              "modules": "auto",
+              "targets": {
+                "node": true
+              }
+            }
+          ],
+          "@babel/preset-react",
+          "@babel/preset-typescript"
+        ],
+        "plugins": [
+          "@babel/plugin-proposal-class-properties",
+          "@babel/plugin-proposal-object-rest-spread"
+        ]
+      }
+    }
   },
   "eslintConfig": {
     "extends": [
