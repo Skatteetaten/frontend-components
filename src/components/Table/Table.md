@@ -100,6 +100,7 @@ const columns = [
     name: 'Dekningsgrad',
     fieldName: 'coverage',
     alignment: 'right',
+    formatFunction: formatPercent,
   },
   {
     name: 'Avkastning',
@@ -112,25 +113,25 @@ const data = [
   {
     month: 'Januar',
     amount: 5426,
-    coverage: '100%',
+    coverage: '100',
     revenue: '1000',
   },
   {
     month: 'Februar',
     amount: 5432,
-    coverage: '50%',
+    coverage: '50',
     revenue: '500',
   },
   {
     month: 'Mars',
     amount: 4899,
-    coverage: '20%',
+    coverage: '20',
     revenue: '2000',
   },
   {
     month: 'April',
     amount: 2344,
-    coverage: '30%',
+    coverage: '30',
     revenue: '1055',
   },
 ];
@@ -438,25 +439,25 @@ const data = [
   {
     month: 'Januar',
     amount: 5426,
-    coverage: '100%',
+    coverage: '100 %',
     revenue: '1000',
   },
   {
     month: 'Februar',
     amount: 5432,
-    coverage: '50%',
+    coverage: '50 %',
     revenue: '500',
   },
   {
     month: 'Mars',
     amount: 4899,
-    coverage: '20%',
+    coverage: '20 %',
     revenue: '2000',
   },
   {
     month: 'April',
     amount: 2344,
-    coverage: '30%',
+    coverage: '30 %',
     revenue: '1055',
   },
 ];
@@ -600,12 +601,12 @@ const data = [
     kode: '3',
     beskrivelse: 'Kjøp',
     grunnlag: '10 000',
-    sats: '25%',
+    sats: '25 %',
     mva: '2 500',
     children: [
       {
         beskrivelse: 'Fradrag',
-        sats: '25%',
+        sats: '25 %',
         mva: '-2 500',
       },
     ],
@@ -614,14 +615,14 @@ const data = [
     kode: '1',
     beskrivelse: 'Salg av varer',
     grunnlag: '60 000',
-    sats: '25%',
+    sats: '25 %',
     mva: '15 000',
     hideEdit: true,
   },
   {
     kode: '2',
     beskrivelse: 'Salg av tjenester',
-    sats: '25%',
+    sats: '25 %',
     mva: '15 500',
   },
 ];

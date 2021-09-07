@@ -87,9 +87,8 @@ const titles = {
   >
     <p style={{ fontWeight: 'bold' }}>
       Systemet bør bruke samme ord, uttrykk og konsepter som brukerne kjenner,
-      fremfor systemorienterte begrep. Følg konvensjonsjoner fra virkelighetens
-      verden, og la informasjonen vises på en naturlig måte og i logisk
-      rekkefølge.
+      fremfor tekniske begrep. Følg vanlig praksis, og la informasjonen vises på
+      en naturlig måte og i logisk rekkefølge.
     </p>
     <div className="dodont">
       <div className="do">
@@ -149,9 +148,9 @@ const titles = {
     stepId={'step-4'}
   >
     <p style={{ fontWeight: 'bold' }}>
-      Brukere bruker mer tid på andre sider enn i din løsning. Det betyr at
-      brukerne har mest erfaring med hvordan ting virker fra andre sider enn
-      dine. Derfor er det lurt å følge allerede kjente konvensjoner.
+      Folk har gjerne mer erfaring med hvordan nettløsningene de bruker i det
+      daglige virker, sammenlignet med den løsningen du lager. Derfor er det
+      lurt å følge vanlige praksiser fra nettet.
     </p>
     <p>
       Hvis du for eksempel lager en løsning for betaling på nett, kan du med
