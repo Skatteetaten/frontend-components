@@ -182,7 +182,7 @@
       [
         "@babel/preset-env",
         {
-          "modules": "auto",
+          "modules": false,
           "targets": {
             "node": true
           }
