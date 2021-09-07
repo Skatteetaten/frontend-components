@@ -1,3 +1,9 @@
+### **v.4.1.3 - 06.09.2021**
+
+- Revert change from v.4.1.0, compiling to es modules, due to problems with build pipelines.
+- Added function to format column data in table
+- Added line in below expandable content in table.
+
 ### **v.4.1.2 - 24.08.2021**
 
 - FileUploader: Better support for screen reader, and updated focus styling on main button
