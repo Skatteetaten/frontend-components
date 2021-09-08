@@ -14,7 +14,7 @@ import globals from 'rollup-plugin-node-globals';
 import { visualizer } from 'rollup-plugin-visualizer';
 
 const extensions = ['.js', '.ts', '.tsx', '.jsx'];
-const outputDir = './lib/esm/';
+const outputDir = './lib/umd/';
 const urlConfig = {
   include: ['**/*.woff', '**/*.woff2', '**/*.ttf', '**/*.eot', '**/*.svg'],
   limit: Infinity,
@@ -103,9 +103,8 @@ export default (CLIArgs) => {
   const bundle = {
     input: 'src/components/entry.ts',
     output: {
-      dir: outputDir,
-      format: 'esm',
-      sourcemap: true,
+      file: `${outputDir}index.${prod ? 'production' : 'development'}.js`,
+      format: 'umd',
       name: '@skatteetaten/frontend-components',
       globals: {
         react: 'React',
@@ -116,7 +115,7 @@ export default (CLIArgs) => {
         axios: 'axios',
       },
     },
-    preserveModules: true,
+    preserveModules: false,
   };
 
   bundle.plugins = getPluginsConfig(prod, mini);
