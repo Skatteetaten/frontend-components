@@ -17,6 +17,11 @@ export enum FileFormatTypes {
   txt = '.txt',
   xml = '.xml',
   csv = '.csv',
+  odt = '.odt',
+  ods = '.ods',
+  odp = '.odp',
+  pptx = '.pptx',
+  xlsx = '.xlsx',
 }
 
 export interface AttachmentMetadata extends File {
