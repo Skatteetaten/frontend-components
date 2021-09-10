@@ -48,6 +48,7 @@ export class Dialog extends React.PureComponent<DialogProps, DialogState> {
       layoutStyle,
       closeButtonAriaLabel,
       modalProps,
+      targetId,
       ...props
     } = this.props;
     const styles = getClassNames(this.props);
@@ -55,8 +56,6 @@ export class Dialog extends React.PureComponent<DialogProps, DialogState> {
 
     return (
       <div>
-        {/*
-        // @ts-ignore */}
         <FabricDialog
           {...props}
           dialogContentProps={{
@@ -69,6 +68,10 @@ export class Dialog extends React.PureComponent<DialogProps, DialogState> {
             isBlocking,
             isModeless,
             className: classnames(styles.main, className),
+            layerProps: {
+              ...modalProps?.layerProps,
+              hostId: targetId,
+            },
             ...modalProps,
           }}
         >
@@ -79,6 +82,7 @@ export class Dialog extends React.PureComponent<DialogProps, DialogState> {
               ariaLabel={'Hjelpetekst'}
               target={this._iconButtonElement}
               onClose={this._onDismiss}
+              doNotLayer={true}
             />
           )}
           {children}

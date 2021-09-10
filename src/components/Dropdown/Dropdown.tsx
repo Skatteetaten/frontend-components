@@ -72,6 +72,9 @@ export const Dropdown: React.FC<DropdownProps> = (props) => {
       ) : (
         <FabricDropdown
           {...rest}
+          calloutProps={{
+            doNotLayer: true,
+          }}
           ariaLabel={label}
           aria-invalid={errorMessage ? true : false}
           id={inputId}

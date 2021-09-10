@@ -69,6 +69,9 @@ exports[`Dialog komponent matcher snapshot 1`] = `
           },
         "isBlocking": undefined,
         "isModeless": false,
+        "layerProps": Object {
+          "hostId": undefined,
+        },
       }
     }
     tabletContentOverflows={false}

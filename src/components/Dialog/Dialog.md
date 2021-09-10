@@ -2,8 +2,8 @@
 
 ```js
 import { ActionButton } from '@skatteetaten/frontend-components/ActionButton';
-import { Button } from '@skatteetaten/frontend-components/ActionButton';
-import { Dialog } from '@skatteetaten/frontend-components/ActionButton';
+import { Button } from '@skatteetaten/frontend-components/Button';
+import { Dialog } from '@skatteetaten/frontend-components/Dialog';
 
 const [state, setState] = React.useState({ hideDialog: true });
 
@@ -41,8 +41,9 @@ function closeDialog() {
 ```
 
 ```js
-import { Button } from '@skatteetaten/frontend-components/ActionButton';
-import { Dialog } from '@skatteetaten/frontend-components/ActionButton';
+import { ActionButton } from '@skatteetaten/frontend-components/ActionButton';
+import { Button } from '@skatteetaten/frontend-components/Button';
+import { Dialog } from '@skatteetaten/frontend-components/Dialog';
 import { NavigationTile } from '@skatteetaten/frontend-components/NavigationTile';
 
 const [state, setState] = React.useState({ hideDialog: true });
@@ -75,8 +76,8 @@ const content1 = [
     hidden={state.hideDialog}
     type={Dialog.Type.normal}
     onDismiss={closeDialog}
-    forceFocusInsideTrap
     title="Velg den inngangen som passer for deg"
+    forceFocusInsideTrap
     minWidth="500px"
     maxWidth="600px"
     layoutStyle={'airy'}
@@ -85,7 +86,7 @@ const content1 = [
       Løsningen for aksjeselskap (AS) åpner i februar mens den blir tilgjengelig
       for enkeltpersonforetak (ENK) i april
     </p>
-    <br />
+
     <NavigationTile
       naviStyle="left"
       naviIcon="left"
@@ -93,15 +94,15 @@ const content1 = [
       naviDesc="left"
       contents={content1}
       renderContent={(to, content1) => <a href={'#'}>{content1}</a>}
-    />
+    ></NavigationTile>
   </Dialog>
 </div>;
 ```
 
 ```js
 import { ActionButton } from '@skatteetaten/frontend-components/ActionButton';
-import { Button } from '@skatteetaten/frontend-components/ActionButton';
-import { Dialog } from '@skatteetaten/frontend-components/ActionButton';
+import { Button } from '@skatteetaten/frontend-components/Button';
+import { Dialog } from '@skatteetaten/frontend-components/Dialog';
 
 const [state, setState] = React.useState({ hideDialog: true });
 
