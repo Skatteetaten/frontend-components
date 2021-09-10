@@ -29,7 +29,7 @@ export function getClassNames() {
       padding: '0px 0 15px 10px',
       selectors: {
         '&:focus': {
-          background: palette.skeColor.lightBlue,
+          background: palette.skeColor.backgroundFocusColor,
         },
       },
     },

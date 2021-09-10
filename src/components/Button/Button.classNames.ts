@@ -53,8 +53,8 @@ function getTypeColor(props: ButtonProps): object {
     case 'warning':
       return {
         borderRadius: '6px',
-        borderColor: palette.skeColor.lightPink,
-        background: palette.skeColor.lightPink,
+        borderColor: palette.skeColor.burgundy10,
+        background: palette.skeColor.burgundy10,
         color: palette.bodyText,
         ...sizeNormal,
         selectors: {
@@ -88,8 +88,8 @@ function getTypeFocusColor(props: ButtonProps): object {
   switch (props.buttonStyle) {
     case 'warning':
       return {
-        borderColor: palette.skeColor.blue,
-        background: palette.skeColor.lightPink,
+        borderColor: palette.skeColor.interactive,
+        background: palette.skeColor.burgundy10,
         color: palette.bodyText,
       };
     case 'secondary':
