@@ -1,4 +1,1 @@
-<svg id="b7319c08-4ec3-45f1-a92a-b20fe6f32478" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-  <path d="M21.05,17.11v2a2,2,0,0,1-2,2h-14a2,2,0,0,1-2-2v-2h7a2,2,0,0,0,4,0h7Z"/>
-  <path d="M3.05,5.11v10h18v-10a2,2,0,0,0-2-2h-14A2,2,0,0,0,3.05,5.11Zm16,5h-5a2,2,0,0,1-4,0h-5v-5h14Z"/>
-</svg>
+<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><defs><path d="M10 17c0 1.1.9 2 2 2s2-.9 2-2h7v2c0 1.1-.9 2-2 2H5c-1.1 0-2-.9-2-2v-2h7Zm9-14c1.1 0 2 .9 2 2v10H3V5a2 2 0 0 1 2-2Zm0 2H5v5h5c0 .36.1.71.27 1a1.996 1.996 0 0 0 3.46 0c.17-.29.27-.64.27-1h5V5Z" id="a"/></defs><use fill="#000" xlink:href="#a" fill-rule="evenodd"/></svg>
