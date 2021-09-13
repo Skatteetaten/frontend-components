@@ -13,7 +13,7 @@ export const getClassNames = function getClassNames(props) {
       borderRadius: '0 0 0 0',
       display: 'flex',
       overflow: 'hidden',
-      background: palette.skeColor.internalLight,
+      background: palette.skeColor.grey5,
       color: palette.skeColor.white,
       alignItems: 'stretch',
       height: compact ? '72px' : '120px',
@@ -77,11 +77,11 @@ export const getClassNames = function getClassNames(props) {
       },
     },
     headerDiagonal: {
-      borderRight: `40px solid ${palette.skeColor.internalLight}`,
+      borderRight: `40px solid ${palette.skeColor.grey5}`,
       borderBottom: `120px solid ${palette.skeColor.internal}`,
     },
     headerRightContainer: {
-      background: palette.skeColor.internalLight,
+      background: palette.skeColor.grey5,
       color: palette.skeColor.black,
       padding: '0 8px',
       flexGrow: '1',
