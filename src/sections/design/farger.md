@@ -1,29 +1,14 @@
-```js noeditor
-import { MessageBar } from '@skatteetaten/frontend-components/MessageBar';
-
-<MessageBar>
-  Fargene under «Visuell identitet» har nylig blitt endret. Vi jobber med å
-  innnarbeide de nye fargene, men inntil videre er det fargene på denne siden
-  som brukes i komponentene.
-</MessageBar>;
-```
 
 Nedenfor har vi plukket ut de fargene fra Skatteetatens visuelle profil som fungerer best på digitale flater.
-I tillegg har vi lagt til et sett med grå- og blåtoner fordi vi ofte bruker disse på nett.
-
-### Hovedfarger
-
-Vi bruker farger etter følgende regler:
-
-- Hovedfargen på en side er burgundy. Vi bruker denne fargen sammen med den lysere varianten burgundyLight i header og footer.
-- Bokser, rammer og visuelle elementer på en side har fargene, green, lightGreen, brown, beige, pink og lightPink.
-- Vi bruker Pink og lightPink i hovedsak på feilmeldinger og markering av feil.
+I tillegg har vi lagt til et sett med blåtoner og statusfarger fordi vi ofte bruker disse på nett.
 
 ```js noeditor beskrivelse
 import TinyColor from '@ctrl/tinycolor';
 import { SkeBasis } from '@skatteetaten/frontend-components/SkeBasis';
 
 palette = Object(SkeBasis.PALETTE);
+
+
 
 function drawSwatch(colorCode) {
   const color = new TinyColor(palette.skeColor[colorCode]);
@@ -45,99 +30,66 @@ function drawSwatch(colorCode) {
 }
 
 <div>
+<h3>Hovedfarger</h3>
   <div style={{ display: 'flex', flexFlow: 'row wrap' }}>
-    {(drawSwatch('burgundy'), drawSwatch('burgundyLight'))}
+    {drawSwatch('burgundy100'),
+     drawSwatch('burgundy70'), 
+     drawSwatch('burgundy50'), 
+     drawSwatch('burgundy30'), 
+     drawSwatch('burgundy10'), 
+     drawSwatch('burgundy5')}
   </div>
   <div style={{ display: 'flex', flexFlow: 'row wrap' }}>
-    {(drawSwatch('green'), drawSwatch('lightGreen'))}
+    {drawSwatch('green100'), 
+     drawSwatch('green70'),
+     drawSwatch('green50'), 
+     drawSwatch('green30'), 
+     drawSwatch('green10'), 
+     drawSwatch('green5')}  
   </div>
+
   <div style={{ display: 'flex', flexFlow: 'row wrap' }}>
-    {
-      (drawSwatch('brown'),
-      drawSwatch('darkBeige'),
-      drawSwatch('beige'),
-      drawSwatch('lightBeige'))
-    }
+    {drawSwatch('brown100'), 
+     drawSwatch('brown70'),
+     drawSwatch('brown50'), 
+     drawSwatch('brown30'), 
+     drawSwatch('brown10'), 
+     drawSwatch('brown5')}  
   </div>
+
   <div style={{ display: 'flex', flexFlow: 'row wrap' }}>
-    {(drawSwatch('pink'), drawSwatch('lightPink'))}
+    {drawSwatch('blue100'), 
+     drawSwatch('blue70'),
+     drawSwatch('blue50'), 
+     drawSwatch('blue30'), 
+     drawSwatch('blue10'), 
+     drawSwatch('blue5')}  
   </div>
-  <h3>Gråtoner</h3>
+
   <div style={{ display: 'flex', flexFlow: 'row wrap' }}>
-    {
-      (drawSwatch('darkGrey'),
-      drawSwatch('grey'),
-      drawSwatch('lightGrey'),
-      drawSwatch('whiteGrey'))
-    }
+    {drawSwatch('black100'), 
+     drawSwatch('grey70'),
+     drawSwatch('grey50'), 
+     drawSwatch('grey30'), 
+     drawSwatch('grey10'), 
+     drawSwatch('grey5')}  
   </div>
+
+  <h3>Statusfarger</h3>
+  <div style={{ display: 'flex', flexFlow: 'row wrap' }}>
+    {drawSwatch('statusError'), 
+     drawSwatch('statusWarning'),
+     drawSwatch('statusOk')}  
+  </div>
+
+  <h3>Interaksjonsfarger</h3>
+  <div style={{ display: 'flex', flexFlow: 'row wrap' }}>
+    {drawSwatch('interactive'), 
+     drawSwatch('interactiveLight'), 
+     drawSwatch('interactiveDark')}  
+  </div>
+
+
 </div>;
 ```
 
-### Tekstfarge
-
-Vi bruker BlackAlt som farge på tekster der bakgrunnen er lys. Hvis det er tekst på mørk bakgrunn bruker vi White.
-
-```js noeditor beskrivelse
-import TinyColor from '@ctrl/tinycolor';
-import { SkeBasis } from '@skatteetaten/frontend-components/SkeBasis';
-palette = Object(SkeBasis.PALETTE);
-
-function drawSwatch(colorCode) {
-  const color = new TinyColor(palette.skeColor[colorCode]);
-
-  return (
-    <div
-      class="swatch"
-      style={{
-        backgroundColor: palette.skeColor[colorCode],
-        color: color.isDark()
-          ? palette.skeColor.white
-          : palette.skeColor.blackAlt,
-      }}
-    >
-      <p>skeColor.{colorCode}</p>
-      <p>{palette.skeColor[colorCode]}</p>
-    </div>
-  );
-}
-
-<div style={{ display: 'flex', flexFlow: 'row wrap' }}>
-  {(drawSwatch('blackAlt'), drawSwatch('white'), drawSwatch('error'))}
-</div>;
-```
-
-### Interaksjonsfarge (det som er klikkbart)
-
-Vi bruker Blue på lenker og knapper som brukeren kan klikke på og som ligger på lys bakgrunn.
-På lenker med mørk bakgrunn, bruker vi lightBlue. DarkBlue bruker vi for hover-effekt på knapper og andre klikkbare elementer som ikke er lenke.
-
-```js noeditor beskrivelse
-const { TinyColor } = require('@ctrl/tinycolor');
-import { SkeBasis } from '@skatteetaten/frontend-components/SkeBasis';
-
-palette = Object(SkeBasis.PALETTE);
-
-function drawSwatch(colorCode) {
-  const color = new TinyColor(palette.skeColor[colorCode]);
-
-  return (
-    <div
-      class="swatch"
-      style={{
-        backgroundColor: palette.skeColor[colorCode],
-        color: color.isDark()
-          ? palette.skeColor.white
-          : palette.skeColor.blackAlt,
-      }}
-    >
-      <p>skeColor.{colorCode}</p>
-      <p>{palette.skeColor[colorCode]}</p>
-    </div>
-  );
-}
-
-<div style={{ display: 'flex', flexFlow: 'row wrap' }}>
-  {(drawSwatch('darkBlue'), drawSwatch('blue'), drawSwatch('lightBlue'))}
-</div>;
-```
