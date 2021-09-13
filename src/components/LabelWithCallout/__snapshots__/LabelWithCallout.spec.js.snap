@@ -12,7 +12,7 @@ exports[`LabelWithCallout komponent matcher snapshot 1`] = `
     className=
 
         {
-          color: #1d1d1d;
+          color: #1a1a1a;
           display: initial;
           font-size: 1rem;
           font-weight: 400;

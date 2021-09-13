@@ -61,7 +61,7 @@ exports[`SearchField komponent matcher snapshot 1`] = `
         }
         &.is-disabled.ms-SearchBox {
           background-color: #f4f4f4;
-          border-color: #bbbbbb;
+          border-color: #b2b2b2;
           border-style: solid;
           border-width: 1px;
         }
@@ -99,16 +99,16 @@ exports[`SearchField komponent matcher snapshot 1`] = `
           border: none;
         }
         &.is-disabled.ms-SearchBox i {
-          color: #666666;
+          color: #4d4d4d;
         }
         &.is-disabled.ms-SearchBox input {
-          color: #1d1d1d;
+          color: #1a1a1a;
           cursor: not-allowed;
         }
         & .ms-SearchBox-icon {
           border: none;
           box-sizing: border-box;
-          color: #1d1d1d;
+          color: #1a1a1a;
           cursor: default;
           font-size: 1rem;
           opacity: 1;

@@ -36,7 +36,7 @@ exports[`MessageBar komponent matcher snapshot 1`] = `
         }
         &.ms-MessageBar {
           background-color: #f9ede2;
-          color: #1d1d1d;
+          color: #1a1a1a;
         }
         &.fade-exit {
           opacity: 1;
@@ -56,7 +56,7 @@ exports[`MessageBar komponent matcher snapshot 1`] = `
           padding-top: ;
         }
         & .ms-MessageBar-icon i {
-          color: #1d1d1d;
+          color: #1a1a1a;
           font-size: 1.25rem;
         }
         @media (max-width: 640px){& .ms-MessageBar-icon i {
@@ -66,7 +66,7 @@ exports[`MessageBar komponent matcher snapshot 1`] = `
           margin-top: ;
         }
         & .ms-MessageBar-innerText {
-          color: #1d1d1d;
+          color: #1a1a1a;
           font-size: 1rem;
           line-height: 22px;
           padding-bottom: 0px;

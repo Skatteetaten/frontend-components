@@ -29,7 +29,7 @@ exports[`RadioButtonGroup komponent matcher snapshot 1`] = `
       className=
 
           {
-            color: #1d1d1d;
+            color: #1a1a1a;
             display: inline-block;
             font-size: 1rem;
             font-weight: 400;
@@ -85,7 +85,7 @@ exports[`RadioButtonGroup komponent matcher snapshot 1`] = `
           padding-left: 26px;
         }
         & span.descriptionLabel {
-          color: #666666;
+          color: #4d4d4d;
           font-size: 0.9375rem;
           line-height: 1.6666;
           margin-top: 0;
@@ -102,8 +102,8 @@ exports[`RadioButtonGroup komponent matcher snapshot 1`] = `
         }
         & .ms-ChoiceField-input:disabled + .ms-ChoiceField-field::before {
           background-color: #ffffff;
-          border: 2px solid#bbbbbb;
-          color: #bbbbbb;
+          border: 2px solid#b2b2b2;
+          color: #b2b2b2;
         }
         & .ms-ChoiceField-input:checked + .ms-ChoiceField-field::before {
           background-color: #ffffff;

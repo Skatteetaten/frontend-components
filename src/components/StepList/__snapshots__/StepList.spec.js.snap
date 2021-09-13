@@ -298,7 +298,7 @@ exports[`StepList komponent matcher snapshot 1`] = `
                               className=
 
                                   {
-                                    background-color: #bbbbbb;
+                                    background-color: #b2b2b2;
                                     bottom: 0px;
                                     float: right;
                                     margin-top: 10px;
@@ -319,7 +319,7 @@ exports[`StepList komponent matcher snapshot 1`] = `
                                   "arrowLine": 
 
                                     {
-                                      background-color: #bbbbbb;
+                                      background-color: #b2b2b2;
                                       float: right;
                                       height: 2px;
                                       position: absolute;
@@ -352,7 +352,7 @@ exports[`StepList komponent matcher snapshot 1`] = `
                                     {
                                       border-width: 1px;
                                       border: solid;
-                                      color: #bbbbbb;
+                                      color: #b2b2b2;
                                       margin-bottom: 0;
                                       margin-left: 26px;
                                       margin-right: 0;
@@ -454,7 +454,7 @@ exports[`StepList komponent matcher snapshot 1`] = `
                                   "stepLine": 
 
                                     {
-                                      background-color: #bbbbbb;
+                                      background-color: #b2b2b2;
                                       bottom: 0px;
                                       float: right;
                                       margin-top: 10px;
@@ -468,7 +468,7 @@ exports[`StepList komponent matcher snapshot 1`] = `
                                   "stepLineTop": 
 
                                     {
-                                      background-color: #bbbbbb;
+                                      background-color: #b2b2b2;
                                       float: right;
                                       height: 10px;
                                       position: absolute;
@@ -627,7 +627,7 @@ exports[`StepList komponent matcher snapshot 1`] = `
                                   {
                                     border-width: 1px;
                                     border: solid;
-                                    color: #bbbbbb;
+                                    color: #b2b2b2;
                                     margin-bottom: 0;
                                     margin-left: 26px;
                                     margin-right: 0;

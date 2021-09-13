@@ -22,7 +22,7 @@ exports[`Callout komponent matcher snapshot 1`] = `
             -moz-osx-font-smoothing: grayscale;
             -webkit-font-smoothing: antialiased;
             border-radius: 2px;
-            border: 2px solid #1d1d1d;
+            border: 2px solid #1a1a1a;
             box-shadow: none !important;
             box-sizing: border-box;
             font-family: 'Helvetica Neue', Helvetica , Arial, 'Liberation Sans', 'Nimbus Sans L', sans-serif;
@@ -118,7 +118,7 @@ exports[`Callout komponent matcher snapshot 1`] = `
                 border-radius: 2px;
                 border: none;
                 box-sizing: border-box;
-                color: #1d1d1d !important;
+                color: #1a1a1a !important;
                 cursor: pointer;
                 display: inline-block;
                 font-family: 'Helvetica Neue', Helvetica , Arial, 'Liberation Sans', 'Nimbus Sans L', sans-serif;
@@ -218,12 +218,12 @@ exports[`Callout komponent matcher snapshot 1`] = `
                 color: #ffffff;
               }
               &.ms-Button--icon:disabled {
-                border-color: #bbbbbb;
+                border-color: #b2b2b2;
                 border-width: 0px;
-                color: #bbbbbb;
+                color: #b2b2b2;
               }
               &.ms-Button--icon:disabled i {
-                color: #bbbbbb;
+                color: #b2b2b2;
               }
               && i {
                 font-weight: 700;

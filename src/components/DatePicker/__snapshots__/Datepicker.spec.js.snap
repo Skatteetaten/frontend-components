@@ -32,7 +32,7 @@ exports[`DatePicker komponent matcher snapshot 1`] = `
           position: relative;
         }
         && .ms-TextField-fieldGroup {
-          border-color: #1d1d1d;
+          border-color: #1a1a1a;
           border-radius: 0px;
         }
         & .ms-TextField-field {
@@ -43,15 +43,15 @@ exports[`DatePicker komponent matcher snapshot 1`] = `
         }
         & .ms-TextField.is-disabled {
           background-color: #f4f4f4;
-          border-color: #bbbbbb;
+          border-color: #b2b2b2;
           border-style: solid;
           border-width: 0px;
         }
         & .ms-TextField.is-disabled i {
-          color: #999999;
+          color: #808080;
         }
         & .ms-TextField.is-disabled input {
-          color: #1d1d1d;
+          color: #1a1a1a;
           cursor: not-allowed;
           padding-bottom: 8px;
           padding-left: 8px;
@@ -59,7 +59,7 @@ exports[`DatePicker komponent matcher snapshot 1`] = `
           padding-top: 8px;
         }
         & .ms-TextField.is-disabled .ms-TextField-fieldGroup {
-          border-color: #bbbbbb;
+          border-color: #b2b2b2;
           border-style: solid;
           border-width: 1px;
         }

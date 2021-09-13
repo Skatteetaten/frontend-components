@@ -71,7 +71,7 @@ exports[`ActionButton komponent matcher snapshot 1`] = `
         color: #1362ae;
       }
       &:active {
-        color: rgba(11, 11, 11, 0.95);
+        color: #1a1a1a;
       }
       &:active .ms-Button-icon {
         color: #0a365f;
@@ -112,10 +112,10 @@ exports[`ActionButton komponent matcher snapshot 1`] = `
         text-decoration: none;
       }
       &.ms-Button--action:disabled {
-        color: #bbbbbb;
+        color: #b2b2b2;
       }
       &.ms-Button--action:disabled i {
-        color: #bbbbbb;
+        color: #b2b2b2;
       }
   data-is-focusable={true}
   onClick={[Function]}

@@ -23,7 +23,7 @@ Array [
 
         {
           align-items: center;
-          background-color: #1d1d1d;
+          background-color: #1a1a1a;
           color: #ffffff;
           display: flex;
           font-size: 0.875rem;
@@ -49,13 +49,13 @@ Array [
           padding-top: 6px;
         }
         & a {
-          border-color: #bbbbbb;
+          border-color: #b2b2b2;
           border-width: 2px;
           color: #ffffff;
           font-weight: 400;
         }
         & i {
-          border-color: #bbbbbb;
+          border-color: #b2b2b2;
           border-width: 2px;
           color: #ffffff;
           font-weight: 400;
@@ -70,23 +70,23 @@ Array [
         }
         & a:focus {
           background-color: #ffffff;
-          border-color: #666666;
-          color: #1d1d1d;
+          border-color: #4d4d4d;
+          color: #1a1a1a;
           outline: none;
         }
         & a:focus i {
           background-color: #ffffff;
-          border-color: #666666;
-          color: #1d1d1d;
+          border-color: #4d4d4d;
+          color: #1a1a1a;
           outline: none;
         }
         & a:active {
           background-color: #ffffff;
-          color: #1d1d1d;
+          color: #1a1a1a;
         }
         & a:active i {
           background-color: #ffffff;
-          color: #1d1d1d;
+          color: #1a1a1a;
         }
         @media (min-width: 900px){& {
           font-size: 0.875rem;
