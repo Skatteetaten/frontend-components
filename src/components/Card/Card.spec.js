@@ -22,7 +22,7 @@ describe('Card komponent', () => {
     const wrapper = oppsettFullDOM();
 
     expect(wrapper.prop('titlesize')).toEqual('x-large');
-    expect(wrapper.prop('color')).toEqual('beige');
+    expect(wrapper.prop('color')).toEqual('brown10');
     expect(wrapper.prop('marginbottom')).toEqual('2px');
     expect(wrapper.prop('expand')).toEqual(false);
     expect(wrapper.prop('isExpanded')).toEqual(true);
@@ -42,7 +42,7 @@ describe('Card komponent', () => {
     });
 
     expect(wrapper.prop('titlesize')).toEqual('large');
-    expect(wrapper.prop('color')).toEqual('beige');
+    expect(wrapper.prop('color')).toEqual('brown10');
     expect(wrapper.prop('marginbottom')).toEqual('10px');
     expect(wrapper.prop('title')).toEqual('Ikke fullført arbeidsoppgave');
     expect(wrapper.prop('isExpanded')).toEqual(false);
