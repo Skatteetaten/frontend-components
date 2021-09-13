@@ -128,7 +128,7 @@ exports[`ScrollToTopButton komponent matcher snapshot 1`] = `
               color: #0a365f;
             }
             &.ms-Button.ms-Button--action {
-              color: #1362ae;
+              color: #093e61;
               height: auto;
               min-height: 40px;
               padding-bottom: 10px;
