@@ -1,5 +1,3 @@
-**TableRow (Tabellrad): rad i tabell**
-
 ```js noeditor beskrivelse
 import { MessageBar } from '@skatteetaten/frontend-components/MessageBar';
 
