@@ -12,7 +12,7 @@ function getBackgroundColor(props: MessageBarProps['type']) {
     case MessageBarType.warning:
     case MessageBarType.severeWarning:
       return {
-        backgroundColor: palette.skeColor.lightPink,
+        backgroundColor: palette.skeColor.burgundy10,
       };
     case MessageBarType.success:
       return {

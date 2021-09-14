@@ -2,7 +2,7 @@ import { mergeStyleSets } from '@fluentui/merge-styles';
 import { getTheme } from '@fluentui/react/lib/Styling';
 import { FontSizes, PaletteProps } from '../utils';
 import { TopBannerTypes } from './TopBanner.types';
-import separator from './assets/separator.png';
+import separator from './assets/separator.svg';
 
 export function getClassNames(props: TopBannerTypes) {
   const { compact } = props;

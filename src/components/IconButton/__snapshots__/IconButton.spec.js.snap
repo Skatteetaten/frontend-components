@@ -111,13 +111,13 @@ exports[`IconButton komponent matcher snapshot 1`] = `
         color: #ffffff;
       }
       &.ms-Button--icon:disabled {
-        border-color: #bbbbbb;
+        border-color: #b2b2b2;
         border-width: 3px;
         border: solid;
-        color: #bbbbbb;
+        color: #b2b2b2;
       }
       &.ms-Button--icon:disabled i {
-        color: #bbbbbb;
+        color: #b2b2b2;
       }
   data-is-focusable={true}
   onClick={[Function]}

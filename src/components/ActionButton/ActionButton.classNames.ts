@@ -8,7 +8,7 @@ function getTypeColor(props: ActionButtonProps): object {
   switch (props.color) {
     case 'blue':
       return {
-        color: palette.skeColor.blue,
+        color: palette.skeColor.interactiveDark,
       };
     case 'white':
       return {
@@ -26,15 +26,15 @@ function getIconColor(props: ActionButtonProps): object {
   switch (props.color) {
     case 'black':
       return {
-        color: palette.bodyText,
+        color: palette.skeColor.black100,
       };
     case 'green':
       return {
-        color: palette.skeColor.green,
+        color: palette.skeColor.statusOk,
       };
     case 'red':
       return {
-        color: palette.skeColor.pink,
+        color: palette.skeColor.statusError,
       };
     case 'white':
       return {
@@ -42,7 +42,7 @@ function getIconColor(props: ActionButtonProps): object {
       };
     default:
       return {
-        color: palette.skeColor.blue,
+        color: palette.skeColor.interactive,
       };
   }
 }

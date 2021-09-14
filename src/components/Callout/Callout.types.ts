@@ -1,10 +1,10 @@
 import { ICalloutProps } from '@fluentui/react';
 
 export enum CalloutColor {
-  HELP = 'lightGreen',
-  INFO = 'beige',
-  ERROR = 'lightPink',
-  WARNING = 'beige',
+  HELP = 'green10',
+  INFO = 'brown10',
+  ERROR = 'burgundy10',
+  WARNING = 'brown10',
   BASIC = 'white',
 }
 export interface CalloutProps extends Omit<ICalloutProps, 'backgroundColor'> {

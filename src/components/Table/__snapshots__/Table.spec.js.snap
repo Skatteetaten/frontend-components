@@ -74,7 +74,7 @@ exports[`Table komponent matcher snapshot 1`] = `
           display: table-header-group;
         }
         & > table thead th {
-          border-bottom: 2px solid #1d1d1d;
+          border-bottom: 2px solid #1a1a1a;
           font-size: inherit;
           padding-bottom: 12px;
           padding-left: 12px;
@@ -92,7 +92,7 @@ exports[`Table komponent matcher snapshot 1`] = `
           vertical-align: middle;
         }
         & > table .separator {
-          border-bottom: 1px solid #bbbbbb;
+          border-bottom: 1px solid #b2b2b2;
         }
         & > table tr.clickable:hover {
           background-color: #cde1f9;
@@ -262,7 +262,7 @@ exports[`Table komponent matcher snapshot 1`] = `
           margin-top: 2px;
         }
         & .emptyTd {
-          border-bottom: 2px solid #1d1d1d;
+          border-bottom: 2px solid #1a1a1a;
         }
         & .expandableContent {
           padding-bottom: 8px;

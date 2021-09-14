@@ -35,11 +35,11 @@ export function getClassNames(props): any {
       padding: '0 15px',
       selectors: {
         '&:hover': {
-          backgroundColor: palette.skeColor.lightBlue,
+          backgroundColor: palette.skeColor.backgroundHoverColor,
           cursor: 'pointer',
         },
         '&:focus': {
-          backgroundColor: palette.skeColor.lightBlue,
+          backgroundColor: palette.skeColor.backgroundFocusColor,
           outline: 'none',
         },
         '&:active': {
@@ -94,7 +94,7 @@ export function getClassNames(props): any {
     content: {
       borderTop: `2px solid ${palette.skeColor.grey}`,
       padding: 15,
-      background: palette.skeColor.lightBeige,
+      background: palette.skeColor.grey5,
       display: 'block',
     },
   });

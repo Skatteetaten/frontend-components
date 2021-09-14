@@ -8,7 +8,7 @@ exports[`TextField komponent matcher snapshot 1`] = `
         font-size: 1rem;
       }
       && .ms-TextField-fieldGroup {
-        border-color: #1d1d1d;
+        border-color: #1a1a1a;
         border-radius: 0px;
       }
       && .ms-TextField-fieldGroup:focus {
@@ -18,14 +18,14 @@ exports[`TextField komponent matcher snapshot 1`] = `
         border: 1px solid #1362ae;
       }
       &.ms-TextField--underlined .ms-TextField-wrapper {
-        border: 1px solid #1d1d1d;
+        border: 1px solid #1a1a1a;
       }
       &.ms-TextField--underlined .ms-TextField-wrapper:hover {
         border: 1px solid rgba(0, 0, 0, 0.95);
       }
       &.is-active.ms-TextField--underlined .ms-TextField-wrapper {
-        border: 1px solid #1d1d1d;
-        outline: 1px solid #1d1d1d;
+        border: 1px solid #1a1a1a;
+        outline: 1px solid #1a1a1a;
       }
       & .ms-TextField-field[readOnly] {
         background: transparent;
@@ -39,7 +39,7 @@ exports[`TextField komponent matcher snapshot 1`] = `
         font-weight: 400;
       }
       & .ms-TextField-field[disabled] {
-        color: #666666;
+        color: #4d4d4d;
       }
       & .ms-Button-icon {
         font-size: 18px;
@@ -65,13 +65,13 @@ exports[`TextField komponent matcher snapshot 1`] = `
         resize: none;
       }
       &.is-disabled .ms-TextField-fieldGroup {
-        background-color: #e8e8e8;
-        border-color: #bbbbbb;
+        background-color: #e5e5e5;
+        border-color: #b2b2b2;
         border-style: solid;
         border-width: 1px;
       }
       &.is-disabled .ms-TextField-field {
-        color: #1d1d1d;
+        color: #1a1a1a;
       }
       &.is-disabled .ms-TextField-field:hover {
         cursor: not-allowed;
@@ -110,7 +110,7 @@ exports[`TextField komponent matcher snapshot 1`] = `
           font-size: 1rem;
         }
         && .ms-TextField-fieldGroup {
-          border-color: #1d1d1d;
+          border-color: #1a1a1a;
           border-radius: 0px;
         }
         && .ms-TextField-fieldGroup:focus {
@@ -120,14 +120,14 @@ exports[`TextField komponent matcher snapshot 1`] = `
           border: 1px solid #1362ae;
         }
         &.ms-TextField--underlined .ms-TextField-wrapper {
-          border: 1px solid #1d1d1d;
+          border: 1px solid #1a1a1a;
         }
         &.ms-TextField--underlined .ms-TextField-wrapper:hover {
           border: 1px solid rgba(0, 0, 0, 0.95);
         }
         &.is-active.ms-TextField--underlined .ms-TextField-wrapper {
-          border: 1px solid #1d1d1d;
-          outline: 1px solid #1d1d1d;
+          border: 1px solid #1a1a1a;
+          outline: 1px solid #1a1a1a;
         }
         & .ms-TextField-field[readOnly] {
           background: transparent;
@@ -141,7 +141,7 @@ exports[`TextField komponent matcher snapshot 1`] = `
           font-weight: 400;
         }
         & .ms-TextField-field[disabled] {
-          color: #666666;
+          color: #4d4d4d;
         }
         & .ms-Button-icon {
           font-size: 18px;
@@ -167,13 +167,13 @@ exports[`TextField komponent matcher snapshot 1`] = `
           resize: none;
         }
         &.is-disabled .ms-TextField-fieldGroup {
-          background-color: #e8e8e8;
-          border-color: #bbbbbb;
+          background-color: #e5e5e5;
+          border-color: #b2b2b2;
           border-style: solid;
           border-width: 1px;
         }
         &.is-disabled .ms-TextField-field {
-          color: #1d1d1d;
+          color: #1a1a1a;
         }
         &.is-disabled .ms-TextField-field:hover {
           cursor: not-allowed;
