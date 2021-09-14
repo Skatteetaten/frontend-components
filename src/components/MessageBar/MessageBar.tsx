@@ -10,8 +10,8 @@ import { Button as MessageBarButton } from '../Button/Button';
 import { getClassNames } from './MessageBar.classNames';
 import { MessageBarProps, MessageBarState } from './MessageBar.types';
 
-/**
- * @visibleName MessageBar _Varsler_
+/*
+ * visibleName MessageBar (Varsler)
  */
 export class MessageBar extends React.PureComponent<
   MessageBarProps,

@@ -4,8 +4,8 @@ import { Icon } from '../Icon';
 import { getClassNames } from './Link.classNames';
 import { LinkProps } from './Link.types';
 
-/**
- * @visibleName Link _Lenke_
+/*
+ * visibleName Link (Lenke)
  */
 
 export const Link: React.FC<LinkProps> = (props) => {

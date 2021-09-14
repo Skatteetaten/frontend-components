@@ -1,4 +1,4 @@
-**SearchField er et tekstfelt som brukes når man søker gjennom innhold i en nettløsning.**
+**SearchField (Søkefelt): er et tekstfelt som brukes når man søker gjennom innhold i en nettløsning.**
 
 ```js
 import { SearchField } from '@skatteetaten/frontend-components/SearchField';

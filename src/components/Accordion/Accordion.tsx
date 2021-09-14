@@ -17,8 +17,8 @@ export interface AccordionProps extends React.HTMLAttributes<HTMLDivElement> {
   stepId?: string;
 }
 
-/**
- * @visibleName Accordion _Trekkspill_
+/*
+ * visibleName Accordion (Trekkspill)
  */
 
 export const Accordion: React.FC<AccordionProps> = (props) => {

@@ -1,4 +1,4 @@
-AccordionItem brukes til å lage en enkelt åpne/lukke-knapp med tilhørende innhold inni Accordion-komponenten. AccordionItem kan ikke brukes på egenhånd.
+**AccordionItem (Rad i trekkspill): brukes til å lage en enkelt åpne/lukke-knapp med tilhørende innhold inni Accordion-komponenten.**
 
 ```js noeditor
 import { MessageBar } from '@skatteetaten/frontend-components/MessageBar';

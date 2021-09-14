@@ -1,4 +1,4 @@
-Step brukes til å lage et enkelt steg med tilhørende innhold inni StepList-komponenten. Step kan ikke brukes på egenhånd.
+**Step (Enkeltsteg): brukes til å lage et enkelt steg med tilhørende innhold inni StepList.**
 
 ```js noeditor
 import { MessageBar } from '@skatteetaten/frontend-components/MessageBar';

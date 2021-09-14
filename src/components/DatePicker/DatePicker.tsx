@@ -30,8 +30,8 @@ const DEFAULTPARSEDATEFROMSTRING = (date: string): Date | null => {
   return null;
 };
 
-/**
- * @visibleName DatePicker _Datovelger_
+/*
+ * visibleName DatePicker (Datovelger)
  */
 export const DatePicker: React.FC<DatePickerProps> = (
   props: DatePickerProps
@@ -157,6 +157,7 @@ export const DatePicker: React.FC<DatePickerProps> = (
           datePickerRef.current = ref as IDatePicker;
         }}
         calloutProps={{
+          doNotLayer: true,
           className: getCalendarClassNames(props),
         }}
         disabled={readOnly ? true : rest.disabled}

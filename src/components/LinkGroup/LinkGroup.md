@@ -1,4 +1,4 @@
-**Liste med navigasjonslenker med pil**
+**LinkGroup (Lenkegruppe): liste med navigasjonslenker med pil**
 
 ```js
 import { LinkGroup } from '@skatteetaten/frontend-components/LinkGroup';

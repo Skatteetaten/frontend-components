@@ -7,7 +7,7 @@ import { MessageBar } from '@skatteetaten/frontend-components/MessageBar';
 </MessageBar>;
 ```
 
-**Ekspanderende panel i saksbehandlingsløsninger**
+**AccordionMenu (Trekkspillmeny): Ekspanderende panel i saksbehandlingsløsninger**
 
 ```js
 import { AccordionMenu } from '@skatteetaten/frontend-components/AccordionMenu';

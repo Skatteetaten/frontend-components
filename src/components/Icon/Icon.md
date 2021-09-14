@@ -1,4 +1,4 @@
-**Ikoner kan brukes direkte eller av de andre komponentene i Designsystemet.**
+**Icon (Ikon): kan brukes direkte eller av de andre komponentene i Designsystemet.**
 
 ```js
 import { Icon } from '@skatteetaten/frontend-components/Icon';

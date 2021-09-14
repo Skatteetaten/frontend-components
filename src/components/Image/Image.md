@@ -1,3 +1,5 @@
+**Image (Bilde): skalering av bilder**
+
 ```js
 import { Image } from '@skatteetaten/frontend-components/Image';
 

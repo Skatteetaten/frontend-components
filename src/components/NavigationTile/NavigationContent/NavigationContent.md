@@ -1,4 +1,4 @@
-**NavigationContent en teknisk hjelpekomponent til NavigationTile**
+**NavigationContent (Innhold til forsideknapp): en teknisk hjelpekomponent til NavigationTile**
 
 ```js noeditor
 import { MessageBar } from '@skatteetaten/frontend-components/MessageBar';

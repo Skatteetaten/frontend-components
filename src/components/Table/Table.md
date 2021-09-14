@@ -1,4 +1,4 @@
-**Tabeller brukes til å liste ut strukturerte data.**
+**Table (Tabell): brukes til å liste ut strukturerte data.**
 
 ```js
 import { Button } from '@skatteetaten/frontend-components/Button';
@@ -100,7 +100,6 @@ const columns = [
     name: 'Dekningsgrad',
     fieldName: 'coverage',
     alignment: 'right',
-    formatFunction: formatPercent,
   },
   {
     name: 'Avkastning',
@@ -113,25 +112,25 @@ const data = [
   {
     month: 'Januar',
     amount: 5426,
-    coverage: '100',
+    coverage: '100 %',
     revenue: '1000',
   },
   {
     month: 'Februar',
     amount: 5432,
-    coverage: '50',
+    coverage: '50 %',
     revenue: '500',
   },
   {
     month: 'Mars',
     amount: 4899,
-    coverage: '20',
+    coverage: '20 %',
     revenue: '2000',
   },
   {
     month: 'April',
     amount: 2344,
-    coverage: '30',
+    coverage: '30 %',
     revenue: '1055',
   },
 ];

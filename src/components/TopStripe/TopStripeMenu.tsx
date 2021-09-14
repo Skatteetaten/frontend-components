@@ -30,8 +30,8 @@ export interface TopStripeMenuProps extends LinkProps {
   contentIsMenu?: boolean;
 }
 
-/**
- * @visibleName TopStripeMenu _ToppstripeMeny_
+/*
+ * visibleName TopStripeMenu (ToppstripeMeny)
  */
 export const TopStripeMenu: React.FC<TopStripeMenuProps> = (props) => {
   const styles = getClassNames();

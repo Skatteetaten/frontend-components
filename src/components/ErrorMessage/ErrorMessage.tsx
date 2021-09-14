@@ -3,8 +3,8 @@ import { getClassNames } from './ErrorMessage.classNames';
 import classnames from 'classnames';
 import { ErrorMessageProps } from './ErrorMessage.types';
 
-/**
- * @visibleName ErrorMessage _Feilmelding_
+/*
+ * visibleName ErrorMessage (Feilmelding)
  */
 export const ErrorMessage: React.FC<ErrorMessageProps> = (props) => {
   const errorClassNames = getClassNames();

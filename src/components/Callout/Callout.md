@@ -1,4 +1,4 @@
-**Callout brukes når man ønsker å vise brukeren en tekst som er knyttet til element i skjermbildet. Et typisk eksempel er en ikon med spørsmåltegn, og en tilhørende hjelpetekst dukker opp når man trykker på det.**
+**Callout (Utropsboks): brukes når man ønsker å vise brukeren en tekst som er knyttet til element i skjermbildet.**
 
 ### Hjelpetekst
 

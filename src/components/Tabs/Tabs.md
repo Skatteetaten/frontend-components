@@ -7,7 +7,7 @@ import { MessageBar } from '@skatteetaten/frontend-components/MessageBar';
 </MessageBar>;
 ```
 
-**Tabs brukes til å veksle mellom visninger innenfor samme kontekst, og når brukerne ikke trenger å se innholdet fra de ulike visningene samtidig.**
+**Tabs (Arkfaner): brukes til å veksle mellom visninger innenfor samme kontekst, og når brukerne ikke trenger å se innholdet fra de ulike visningene samtidig.**
 
 ```js
 import { Tabs } from '@skatteetaten/frontend-components/Tabs';

@@ -1,4 +1,4 @@
-**GridRow en hjelpekomponent til Grid**
+**GridRow (Rad i rutenett): en hjelpekomponent til Grid**
 
 ```js noeditor
 import { MessageBar } from '@skatteetaten/frontend-components/MessageBar';

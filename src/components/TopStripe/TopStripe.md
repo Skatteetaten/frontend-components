@@ -1,4 +1,4 @@
-**TopStripe er en svart menystripe øverst på innloggede sider for publikum.**
+**TopStripe (Toppstripe): er en svart menystripe øverst på innloggede sider for publikum.**
 
 ### Ikke innlogget
 

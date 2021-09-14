@@ -1,4 +1,4 @@
-**ErrorMessage brukes til å vise feilmeldinger.**
+**ErrorMessage (Feilmelding): brukes til å vise feilmeldinger.**
 
 ```js
 import { ErrorMessage } from '@skatteetaten/frontend-components/ErrorMessage';

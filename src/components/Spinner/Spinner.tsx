@@ -4,8 +4,8 @@ import * as React from 'react';
 import { getClassNames } from './Spinner.classNames';
 import { SpinnerProps } from './Spinner.types';
 
-/**
- * @visibleName Spinner _Spinner_
+/*
+ * visibleName Spinner (Spinner)
  */
 export class Spinner extends React.PureComponent<SpinnerProps> {
   static Size = SpinnerSize;

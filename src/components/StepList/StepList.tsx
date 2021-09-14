@@ -5,8 +5,8 @@ import { Grid } from '../Grid';
 import { getClassNames } from './StepList.classNames';
 import { StepListProps } from './StepList.types';
 
-/**
- * @visibleName StepList _StegListe_
+/*
+ * visibleName StepList (Stegliste)
  */
 
 export const StepList = (props: StepListProps) => {
