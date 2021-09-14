@@ -1,4 +1,4 @@
-**Dialog brukes til å vise innhold midt på skjermen og tiltrekke seg brukerens oppmerksomhet.**
+**Dialog (Dialogboks): brukes til å vise innhold midt på skjermen og tiltrekke seg brukerens oppmerksomhet.**
 
 ```js
 import { ActionButton } from '@skatteetaten/frontend-components/ActionButton';

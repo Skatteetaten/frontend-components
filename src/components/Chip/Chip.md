@@ -1,4 +1,4 @@
-**Chip brukes til å markere eller utheve noe – som en merkelapp.**
+**Chip (Emneknagg): brukes til å markere eller utheve noe – som en merkelapp.**
 
 ```js
 import { Chip } from '@skatteetaten/frontend-components/Chip';

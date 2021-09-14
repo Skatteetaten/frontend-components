@@ -13,8 +13,8 @@ import { LabelWithCallout } from '../LabelWithCallout';
 import { IStyleFunctionOrObject } from '@fluentui/utilities';
 import { DropdownProps } from './DropDown.types';
 
-/**
- * @visibleName Dropdown _Nedtrekksliste_
+/*
+ * visibleName Dropdown (Nedtrekksliste)
  */
 export const Dropdown: React.FC<DropdownProps> = (props) => {
   const {

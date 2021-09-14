@@ -1,4 +1,4 @@
-**En valggruppe (med radioknapper) brukes i skjemaer for å velge ett alternativ blant flere gjensidig utelukkende valg.**
+**RadioButtonGroup (Radioknapper): en valggruppe (med radioknapper) brukes i skjemaer for å velge ett alternativ blant flere gjensidig utelukkende valg.**
 
 ```js
 import { RadioButtonGroup } from '@skatteetaten/frontend-components/RadioButtonGroup';

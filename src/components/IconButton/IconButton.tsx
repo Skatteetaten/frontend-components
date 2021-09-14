@@ -4,8 +4,8 @@ import { IconButton as FabricIconButton } from '@fluentui/react';
 import { getClassNames } from './IconButton.classNames';
 import { IconButtonProps } from './IconButton.types';
 
-/**
- * @visibleName IconButton _Ikonknapp_
+/*
+ * visibleName IconButton (Ikonknapp)
  */
 export const IconButton: React.FC<IconButtonProps> = (props) => {
   const { icon, className, ...rest } = props;

@@ -28,8 +28,8 @@ const LogoEn = () => {
   );
 };
 
-/**
- * @visibleName FooterContent _Bunn_
+/*
+ * visibleName FooterContent (Bunn)
  */
 export class FooterContent extends React.PureComponent<FooterContentProps> {
   /** Engelsk logo */

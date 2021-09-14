@@ -1,4 +1,4 @@
-**Nedtrekkslister brukes når brukeren skal kunne velge et eller flere valg fra en liste.**
+**Dropdown (Nedtrekksliste): brukes når brukeren skal kunne velge et eller flere valg fra en liste.**
 
 ```js
 import { Dropdown } from '@skatteetaten/frontend-components/Dropdown';

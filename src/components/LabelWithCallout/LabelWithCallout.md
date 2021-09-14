@@ -1,4 +1,4 @@
-**Brukes til å vise en label og tilhørende hjelpetekst**
+**LabelWithCallout (Merkelapp med utropsboks): Brukes til å vise en merkelapp og tilhørende hjelpetekst**
 
 ```js
 import { Button } from '@skatteetaten/frontend-components/Button';

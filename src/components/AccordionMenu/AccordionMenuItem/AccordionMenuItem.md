@@ -1,4 +1,4 @@
-AccordionMenuItem er en seksjon eller gruppe inni en AccordionMenu.
+**AccordionMenuItem (Element i trekkspillmeny): en seksjon eller gruppe inni en AccordionMenu.**
 
 ```js noeditor
 import { MessageBar } from '@skatteetaten/frontend-components/MessageBar';

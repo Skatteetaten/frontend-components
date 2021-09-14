@@ -36,8 +36,8 @@ export interface TableRowProps<P> {
   sum: { text: string; colspan: number; total: number | string } | undefined;
 }
 
-/**
- * @visibleName TableRow _Tabellrad_
+/*
+ * visibleName TableRow (Tabellrad)
  */
 export const TableRow = <P extends object>(props: TableRowProps<P>) => {
   const {

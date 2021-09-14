@@ -9,8 +9,8 @@ import {
 } from '@fluentui/react';
 import { DialogProps, DialogState } from './Dialog.types';
 
-/**
- * @visibleName Dialog _Dialogboks_
+/*
+ * visibleName Dialog (Dialogboks)
  */
 export class Dialog extends React.PureComponent<DialogProps, DialogState> {
   static Footer = DialogFooter;

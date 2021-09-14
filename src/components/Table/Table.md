@@ -1,4 +1,4 @@
-**Tabeller brukes til å liste ut strukturerte data.**
+**Table (Tabell): brukes til å liste ut strukturerte data.**
 
 ```js
 import { Button } from '@skatteetaten/frontend-components/Button';

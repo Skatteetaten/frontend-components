@@ -1,4 +1,4 @@
-**Lenke til filer eller nettsider**
+**Link (Lenke): lenke til filer eller nettsider**
 
 Filer:
 
