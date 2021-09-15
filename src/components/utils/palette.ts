@@ -1,6 +1,6 @@
 import { IPalette } from '@fluentui/react/lib/Styling';
 
-import colors from '../../designtokens/_colors.json';
+import colors from './designtokens/_colors.json';
 
 export interface SkeColorProp {
   //New
