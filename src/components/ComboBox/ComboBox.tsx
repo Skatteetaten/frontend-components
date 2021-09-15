@@ -7,8 +7,8 @@ import { generateId } from '../utils';
 import { LabelWithCallout } from '../LabelWithCallout';
 import { ComboBoxProps } from './ComboBox.types';
 
-/*
- * visibleName ComboBox (Nedtrekksliste med skriving)
+/**
+ * @visibleName ComboBox _Nedtrekksliste med skriving_
  */
 export const ComboBox: React.FC<ComboBoxProps> = (props) => {
   const {
@@ -69,7 +69,6 @@ export const ComboBox: React.FC<ComboBoxProps> = (props) => {
           errorMessage={errorMessage}
           aria-invalid={errorMessage ? true : false}
           calloutProps={{
-            doNotLayer: true,
             className: getOptionsClassNames(props),
           }}
         >
