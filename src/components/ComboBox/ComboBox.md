@@ -35,6 +35,7 @@ import { Grid } from '@skatteetaten/frontend-components/Grid';
           allowFreeform={false}
           ariaLabel="Eksempel ComboBox"
           useComboBoxAsMenuWidth
+          calloutFloating={false}
         />
       </Grid.Col>
     </Grid.Row>
@@ -72,6 +73,7 @@ import { Grid } from '@skatteetaten/frontend-components/Grid';
           autoComplete={'on'}
           ariaLabel="Eksempel på ComboBox"
           useComboBoxAsMenuWidth
+          calloutFloating={false}
         />
       </Grid.Col>
     </Grid.Row>

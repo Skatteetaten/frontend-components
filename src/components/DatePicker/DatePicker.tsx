@@ -157,7 +157,6 @@ export const DatePicker: React.FC<DatePickerProps> = (
           datePickerRef.current = ref as IDatePicker;
         }}
         calloutProps={{
-          doNotLayer: true,
           className: getCalendarClassNames(props),
         }}
         disabled={readOnly ? true : rest.disabled}
