@@ -1,5 +1,4 @@
 **Ikoner kan brukes direkte eller av de andre komponentene i Designsystemet.**
-
 ```js
 import { Icon } from '@skatteetaten/frontend-components/Icon';
 
@@ -17,7 +16,21 @@ import { Icon } from '@skatteetaten/frontend-components/Icon';
   <Icon iconName="AttachFile" style={{ fontSize: '32px', color: '#1362ae' }} />
 </div>;
 ```
-
+<style>
+  .darkOnHover {
+    text-align: center;
+  }
+  .ms-DetailsRow-cell {
+    padding: 16px 8px 4px 8px !important;
+  }
+  .ms-FocusZone.ms-DetailsRow:hover .darkOnHover {
+    background-color: #093e61;
+    color: #ffffff;
+  }
+  .padLeftM {
+    padding-left: 16px !important;
+  }
+</style>
 ### Liste over alle ikoner
 
 ```js noeditor
@@ -34,9 +47,10 @@ const columns = [
     minWidth: 50,
     maxWidth: 50,
     isResizable: false,
+    className: 'darkOnHover',
   },
   {
-    key: 'column2',
+    key: 'column3',
     name: 'Navn',
     fieldName: 'name',
     minWidth: 50,
@@ -44,7 +58,7 @@ const columns = [
     isResizable: true,
   },
   {
-    key: 'column3',
+    key: 'column4',
     name: 'Brukes til',
     fieldName: 'usage',
     minWidth: 50,
@@ -177,6 +191,10 @@ const iconGroup = {
     {
       name: 'Download',
       usage: 'Last ned',
+    },
+    {
+      name: 'Send',
+      usage: 'Send inn skjema',
     },
     {
       name: 'Deploy',
@@ -485,6 +503,14 @@ const iconGroup = {
     {
       name: 'PinOff',
       usage: 'Ikke-festet element',
+    },
+    {
+      name: 'EyeOutline',
+      usage: 'Vis',
+    },
+    {
+      name: 'EyeOff',
+      usage: 'Skjul',
     },
   ],
   files: [
