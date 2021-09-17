@@ -2,8 +2,8 @@
 
 ```js
 import { ActionButton } from '@skatteetaten/frontend-components/ActionButton';
-import { Button } from '@skatteetaten/frontend-components/ActionButton';
-import { Dialog } from '@skatteetaten/frontend-components/ActionButton';
+import { Button } from '@skatteetaten/frontend-components/Button';
+import { Dialog } from '@skatteetaten/frontend-components/Dialog';
 
 const [state, setState] = React.useState({ hideDialog: true });
 
@@ -41,8 +41,8 @@ function closeDialog() {
 ```
 
 ```js
-import { Button } from '@skatteetaten/frontend-components/ActionButton';
-import { Dialog } from '@skatteetaten/frontend-components/ActionButton';
+import { Button } from '@skatteetaten/frontend-components/Button';
+import { Dialog } from '@skatteetaten/frontend-components/Dialog';
 import { NavigationTile } from '@skatteetaten/frontend-components/NavigationTile';
 
 const [state, setState] = React.useState({ hideDialog: true });
@@ -100,8 +100,8 @@ const content1 = [
 
 ```js
 import { ActionButton } from '@skatteetaten/frontend-components/ActionButton';
-import { Button } from '@skatteetaten/frontend-components/ActionButton';
-import { Dialog } from '@skatteetaten/frontend-components/ActionButton';
+import { Button } from '@skatteetaten/frontend-components/Button';
+import { Dialog } from '@skatteetaten/frontend-components/Dialog';
 
 const [state, setState] = React.useState({ hideDialog: true });
 
