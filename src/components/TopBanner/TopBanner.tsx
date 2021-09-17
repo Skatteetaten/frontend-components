@@ -5,10 +5,14 @@ import { Icon } from '../Icon';
 import { Image } from '../Image';
 import { ActionButton } from '../ActionButton';
 import { TopBannerTypes } from './TopBanner.types';
+import { BrandContext } from '../SkeBasis';
 
 // @ts-ignore TODO
-import externalLogo from './assets/ske-logo.svg';
-import externalLogoEn from './assets/ske-logo-en.svg';
+import logoSKE from './assets/logoSKE.svg';
+import logoSKEen from './assets/logoSKEen.svg';
+import logoLSO from './assets/logoLSO.svg';
+import logoINK from './assets/logoINK.svg';
+
 import internLogo from './assets/ske-logo-intern.svg';
 import internLogoEn from './assets/ske-logo-intern-en.svg';
 import { getClassNames as getExternalClassNames } from './External.classNames';
@@ -95,37 +99,63 @@ export const TopBanner: React.FC<TopBannerTypes> = (props) => {
 };
 
 export const ExternalHeader: React.FC<TopBannerTypes> = (props) => {
-  const styles = getExternalClassNames(props);
+  const styles = getExternalClassNames(props, 'SKE');
   // @ts-ignore
   const { header, headerMain, contentWrapper } = styles;
   const compactHeight = props.compact ? 55 : 68;
 
-  const imageElement = (
-    <Image
-      src={props.language === 'en' ? externalLogoEn : externalLogo}
-      height={compactHeight}
-      alt="Skatteetaten logo"
-    />
-  );
+  function logoImageElement(brand) {
+    switch (brand) {
+      case 'SKE':
+        return (
+          <Image src={logoSKE} height={compactHeight} alt="Skatteetaten logo" />
+        );
+
+      case 'INK':
+        return (
+          <Image src={logoINK} height={compactHeight} alt="Skatteetaten logo" />
+        );
+
+      case 'LSO':
+        return (
+          <Image src={logoLSO} height={compactHeight} alt="Skatteetaten logo" />
+        );
+
+      default:
+        return {};
+    }
+  }
 
   return (
-    <header className={classnames(header, props.className)} id={props.id}>
-      {props.topStripe}
-      <div className={headerMain}>
-        <div>
-          <div>
-            {props.logoLink ? (
-              <a href="https://www.skatteetaten.no">{imageElement}</a>
-            ) : (
-              imageElement
-            )}
+    <BrandContext.Consumer>
+      {({ tag, primaryColor, secondaryColor }) => (
+        <header
+          className={classnames(
+            getExternalClassNames(props, tag).header,
+            props.className
+          )}
+          id={props.id}
+        >
+          {props.topStripe}
+          <div className={headerMain}>
+            <div>
+              <div>
+                {props.logoLink ? (
+                  <a href="https://www.skatteetaten.no">
+                    {logoImageElement(tag)}
+                  </a>
+                ) : (
+                  logoImageElement(tag)
+                )}
+              </div>
+            </div>
+            <div className={contentWrapper}>
+              <ExternalHeaderContent styles={styles} {...props} />
+            </div>
           </div>
-        </div>
-        <div className={contentWrapper}>
-          <ExternalHeaderContent styles={styles} {...props} />
-        </div>
-      </div>
-    </header>
+        </header>
+      )}
+    </BrandContext.Consumer>
   );
 };
 
