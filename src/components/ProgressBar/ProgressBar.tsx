@@ -2,6 +2,7 @@ import classnames from 'classnames';
 import { IProgressIndicatorProps, ProgressIndicator } from '@fluentui/react';
 import React from 'react';
 import { getClassNames } from './ProgressBar.classNames';
+import { BrandContext } from '../SkeBasis';
 
 /*
  * visibleName ProgressBar (Fremdriftsvisning)
@@ -9,10 +10,14 @@ import { getClassNames } from './ProgressBar.classNames';
 export const ProgressBar: React.FC<IProgressIndicatorProps> = (props) => {
   const { className, ...rest } = props;
   return (
-    <ProgressIndicator
-      {...rest}
-      className={classnames(getClassNames(), className)}
-    />
+    <BrandContext.Consumer>
+      {({ tag, primaryColor, secondaryColor }) => (
+        <ProgressIndicator
+          {...rest}
+          className={classnames(getClassNames(tag), className)}
+        />
+      )}
+    </BrandContext.Consumer>
   );
 };
 
