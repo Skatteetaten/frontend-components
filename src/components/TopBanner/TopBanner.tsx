@@ -101,24 +101,36 @@ export const TopBanner: React.FC<TopBannerTypes> = (props) => {
 export const ExternalHeader: React.FC<TopBannerTypes> = (props) => {
   const styles = getExternalClassNames(props, 'SKE');
   // @ts-ignore
-  const { header, headerMain, contentWrapper } = styles;
+  const { logo, headerMain, contentWrapper } = styles;
   const compactHeight = props.compact ? 55 : 68;
 
-  function logoImageElement(brand) {
+  function logoImageElement(brand, showAltText = true) {
     switch (brand) {
       case 'SKE':
         return (
-          <Image src={logoSKE} height={compactHeight} alt="Skatteetaten logo" />
+          <Image
+            src={props.language === 'en' ? logoSKEen : logoSKE}
+            height={compactHeight}
+            alt={showAltText ? 'Skatteetaten logo' : ''}
+          />
         );
 
       case 'INK':
         return (
-          <Image src={logoINK} height={compactHeight} alt="Skatteetaten logo" />
+          <Image
+            src={logoINK}
+            height={compactHeight}
+            alt={showAltText ? 'Statens innkreving logo' : ''}
+          />
         );
 
       case 'LSO':
         return (
-          <Image src={logoLSO} height={compactHeight} alt="Skatteetaten logo" />
+          <Image
+            src={logoLSO}
+            height={compactHeight}
+            alt={showAltText ? 'Lønnsstøtte logo' : ''}
+          />
         );
 
       default:
@@ -139,11 +151,9 @@ export const ExternalHeader: React.FC<TopBannerTypes> = (props) => {
           {props.topStripe}
           <div className={headerMain}>
             <div>
-              <div>
+              <div className={logo}>
                 {props.logoLink ? (
-                  <a href="https://www.skatteetaten.no">
-                    {logoImageElement(tag)}
-                  </a>
+                  <a href={props.logoLinkUrl}>{logoImageElement(tag, false)}</a>
                 ) : (
                   logoImageElement(tag)
                 )}
@@ -167,6 +177,7 @@ TopBanner.defaultProps = {
   icon: 'Home',
   external: false,
   compact: false,
-  logoLink: false,
+  logoLink: true,
+  logoLinkUrl: 'https://www.skatteetaten.no',
   language: undefined,
 };

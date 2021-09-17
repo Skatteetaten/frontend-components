@@ -35,7 +35,7 @@ export const brands = {
 };
 
 export const BrandContext = React.createContext(
-  brands.LSO //default brand
+  brands.SKE //default brand
 );
 
 /*
