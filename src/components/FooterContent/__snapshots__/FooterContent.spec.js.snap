@@ -38,12 +38,12 @@ exports[`FooterContent komponent matcher snapshot  1`] = `
           id="bakgrunn"
         >
           <polygon
-            fill="#F3A7B0"
+            fill="#f06b78"
             points="0 99.6400524 1440 99.6400524 1440 69.2255838 0 17.1793194"
           />
           <path
             d="M1440,98 L1440,629 L0,629 L0,98 L1440,0 L1440,98 Z"
-            fill="#6F2C3F"
+            fill="#6f2c3f"
           />
         </g>
       </g>
@@ -54,6 +54,7 @@ exports[`FooterContent komponent matcher snapshot  1`] = `
 
         {
           background-color: #6f2c3f;
+          color: #ffffff;
         }
   >
     <div
@@ -61,7 +62,6 @@ exports[`FooterContent komponent matcher snapshot  1`] = `
 
           {
             background-color: #6f2c3f;
-            color: #ffffff;
             padding-bottom: 24px;
             padding-left: 4px;
             padding-right: 4px;
