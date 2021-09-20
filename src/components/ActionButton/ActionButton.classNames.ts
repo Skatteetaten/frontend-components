@@ -89,7 +89,7 @@ export function getClassNames(props: ActionButtonProps): string {
       '&.ms-Button--action .ms-Button-icon': {
         // @ts-ignore TODO
         fontSize: FontSizes[props.iconSize],
-        transform: 'translateY(1px)',
+        transform: 'translateY(4px)',
         // @ts-ignore TODO
         ...getIconColor(props),
       },

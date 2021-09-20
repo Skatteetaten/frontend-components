@@ -1,6 +1,6 @@
 import { mergeStyleSets } from '@fluentui/merge-styles';
 import { getTheme } from '@fluentui/react/lib/Styling';
-import { FontSizes, MdIcons, PaletteProps } from '../utils';
+import { FontSizes, SkeIcons, PaletteProps } from '../utils';
 import { DropdownProps } from './DropDown.types';
 import { IDropdownStyles } from '@fluentui/react';
 
@@ -39,7 +39,7 @@ export const getClassNames = (props: DropdownProps) => {
   const { errorMessage } = props;
   const inset = 0;
   const radius = '0';
-  const errorIcon = "'" + MdIcons.icons.Error + "'";
+  const errorIcon = "'" + SkeIcons.icons.Error + "'";
 
   return mergeStyleSets({
     main: {
@@ -99,7 +99,7 @@ export const getClassNames = (props: DropdownProps) => {
           zIndex: 1,
         },
         '& div[role=alert]::before': {
-          fontFamily: MdIcons.fontFace.fontFamily,
+          fontFamily: SkeIcons.fontFace.fontFamily,
           fontSize: 16,
           content: errorIcon,
           marginRight: '3px',

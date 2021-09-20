@@ -22,7 +22,6 @@ export { getFocusStyle } from './utils/getFocusStyle';
 export { Heading } from './utils/Heading';
 export { UseScreen } from './utils/ScreenPlugin';
 export { default as SkeIcons } from './utils/icons/icons-ske';
-export { default as MdIcons } from './utils/icons/icons-mdi';
 export { Animation } from './utils/getAnimationStyles';
 export { takeIf } from './utils/helpers';
 export { generateId } from './utils/generateId';

@@ -8,7 +8,6 @@ import {
   Palette as palette,
   Fonts as fonts,
   SkeIcons,
-  MdIcons,
   PaletteProps,
 } from '../utils/index';
 // @ts-ignore TODO
@@ -21,4 +20,4 @@ loadTheme(theme);
 // @ts-ignore TODO
 registerIcons(SkeIcons);
 // @ts-ignore TODO
-registerIcons(MdIcons);
+

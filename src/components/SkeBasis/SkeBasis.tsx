@@ -7,7 +7,7 @@ import {
 } from '@fluentui/react/lib/Styling';
 import { Fabric, IFabricProps } from '@fluentui/react';
 import * as React from 'react';
-import { Fonts, MdIcons, SkeIcons, Palette, PaletteProps } from '../utils';
+import { Fonts, SkeIcons, Palette, PaletteProps } from '../utils';
 
 export interface SkeBasisProps extends IFabricProps {
   palette?: object;
@@ -23,13 +23,12 @@ export class SkeBasis extends React.PureComponent<SkeBasisProps> {
   static FONTS = Fonts;
   static ICONS = {
     ske: SkeIcons,
-    md: MdIcons,
   };
 
   static defaultProps = {
     palette: SkeBasis.PALETTE as PaletteProps,
     fonts: SkeBasis.FONTS,
-    icons: [SkeBasis.ICONS.ske, SkeBasis.ICONS.md],
+    icons: [SkeBasis.ICONS.ske],
   };
 
   constructor(props: SkeBasisProps) {

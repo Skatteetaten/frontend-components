@@ -1,9 +1,9 @@
 import { mergeStyles } from '@fluentui/merge-styles';
 import { getTheme } from '@fluentui/react/lib/Styling';
-import { FontSizes, FontWeights, PaletteProps, MdIcons } from '../utils';
+import { FontSizes, FontWeights, PaletteProps, SkeIcons } from '../utils';
 import { DatePickerProps } from './DatePicker.types';
 
-const errorIcon = "'" + MdIcons.icons.Error + "'";
+const errorIcon = "'" + SkeIcons.icons.Error + "'";
 
 function getFieldTypeStyles(props: DatePickerProps) {
   const palette = getTheme().palette as PaletteProps;
@@ -139,7 +139,7 @@ export const getClassNames = (props: DatePickerProps) => {
         color: palette.skeColor.error,
         selectors: {
           ':before': {
-            fontFamily: MdIcons.fontFace.fontFamily,
+            fontFamily: SkeIcons.fontFace.fontFamily,
             fontSize: 18,
             display: 'block',
             content: errorIcon,

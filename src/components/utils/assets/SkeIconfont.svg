@@ -571,11 +571,11 @@
     <glyph glyph-name="Pin-1"
       unicode="&#x50;&#x69;&#x6E;"
       horiz-adv-x="600" d="M175 550V500H200V300L150 250V200.025H280V50H320.025V200.025H450V250L400 300V500H425V550z" />
-    <glyph glyph-name="Pin-off"
+    <glyph glyph-name="Pinoff"
       unicode="&#xEA5F;"
       horiz-adv-x="600" d="M200 550V500H225V445.5L470.5 200.025H475V250L425 300V500H450V550H200zM75 468.25L225 318.25V300L174.975 250V200.025H304.975V50H345V198.25L493.25 50L525 82L106.975 500L75 468.25z" />
-    <glyph glyph-name="Pin-off-1"
-      unicode="&#x50;&#x69;&#x6E;&#x5F;&#x6F;&#x66;&#x66;"
+    <glyph glyph-name="Pinoff-1"
+      unicode="&#x50;&#x69;&#x6E;&#x6F;&#x66;&#x66;"
       horiz-adv-x="600" d="M200 550V500H225V445.5L470.5 200.025H475V250L425 300V500H450V550H200zM75 468.25L225 318.25V300L174.975 250V200.025H304.975V50H345V198.25L493.25 50L525 82L106.975 500L75 468.25z" />
     <glyph glyph-name="PlayOutline"
       unicode="&#xEA60;"

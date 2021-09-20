@@ -122,7 +122,7 @@ export default {
     'PersonOutline': '\uea5c', 
     'Phone': '\uea5d', 
     'Pin': '\uea5e', 
-    'Pin-off': '\uea5f', 
+    'Pinoff': '\uea5f', 
     'PlayOutline': '\uea60', 
     'PreviewFile': '\uea61', 
     'Print': '\uea62', 
