@@ -30,7 +30,7 @@ export default {
   icons: { 
     'clear': '\uea17', //tilsvarer Cancel
     'checkmark': '\uea1b', //tilsvarer Check
-    'blocked2': '\uea4c', //tilsvarer Lock
+    'blocked2': '\uea4d', //tilsvarer Lock
     'statuscirclecheckmark': '\uea26', //tilsvarer Completed
   }
 };
