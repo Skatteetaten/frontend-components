@@ -35,9 +35,9 @@ export interface SearchFieldProps extends ISearchBoxProps {
   /** Tillater tastatursnarvei på søk */
   keyboardShortcut?: boolean;
   /** Hvilke taster som fungerer for snarvei */
-  searchShortcutKeys?: 'string';
+  searchShortcutKeys?: string;
   /** Gjør søkeikonet klikkbart, trenger samme kode som onSearch */
   onSearchIcon?: (newValue: any) => void;
   /** Legg til egen mouseover tittel på søkeikonet */
-  searchIconTitle?: 'string';
+  searchIconTitle?: string;
 }
