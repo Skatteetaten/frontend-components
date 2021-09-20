@@ -54,7 +54,7 @@ export const Dropdown: React.FC<DropdownProps> = (props) => {
         help={help}
         onCalloutToggle={onCalloutToggle}
         autoDismiss={labelWithCalloutAutoDismiss}
-        doNotLayer={!!doNotLayer}
+        doNotLayer={doNotLayer}
         {...labelCallout}
       />
       {readOnly ? (
