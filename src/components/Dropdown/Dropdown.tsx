@@ -29,6 +29,7 @@ export const Dropdown: React.FC<DropdownProps> = (props) => {
     id,
     labelCallout,
     onCalloutToggle,
+    doNotLayer,
     readOnly,
     ...rest
   } = props;
@@ -53,6 +54,7 @@ export const Dropdown: React.FC<DropdownProps> = (props) => {
         help={help}
         onCalloutToggle={onCalloutToggle}
         autoDismiss={labelWithCalloutAutoDismiss}
+        doNotLayer={!!doNotLayer}
         {...labelCallout}
       />
       {readOnly ? (
@@ -79,6 +81,9 @@ export const Dropdown: React.FC<DropdownProps> = (props) => {
           styles={dropdownStyles}
           onRenderCaretDown={() => <Icon iconName={'ChevronDown'} />}
           errorMessage={errorMessage}
+          calloutProps={{
+            doNotLayer,
+          }}
         >
           {children}
         </FabricDropdown>

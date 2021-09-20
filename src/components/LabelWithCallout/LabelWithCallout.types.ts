@@ -36,6 +36,7 @@ export interface LabelWithCalloutProps
     oldCalloutState: calloutState,
     newCalloutState: calloutState
   ) => void;
+  doNotLayer?: boolean;
   onRenderLabel?: any;
   readOnly?: boolean;
   warning?: string | JSX.Element;

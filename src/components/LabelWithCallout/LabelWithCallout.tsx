@@ -28,6 +28,7 @@ export const LabelWithCallout = (props: LabelWithCalloutProps) => {
     warning,
     onRenderLabel,
     onCalloutToggle,
+    doNotLayer,
   } = props;
   const styles = getClassNames({ calloutFloating, ...props });
   const [isCalloutVisible, setIsCalloutVisible] = React.useState(false);
@@ -148,6 +149,7 @@ export const LabelWithCallout = (props: LabelWithCalloutProps) => {
               toggleEvent();
             }
           }}
+          doNotLayer={doNotLayer}
         >
           {help && !warning ? helpElement : warningElement}
         </Callout>

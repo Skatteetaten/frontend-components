@@ -48,6 +48,7 @@ export class Dialog extends React.PureComponent<DialogProps, DialogState> {
       layoutStyle,
       closeButtonAriaLabel,
       modalProps,
+      doNotLayer,
       ...props
     } = this.props;
     const styles = getClassNames(this.props);
@@ -79,6 +80,7 @@ export class Dialog extends React.PureComponent<DialogProps, DialogState> {
               ariaLabel={'Hjelpetekst'}
               target={this._iconButtonElement}
               onClose={this._onDismiss}
+              doNotLayer={doNotLayer}
             />
           )}
           {children}
