@@ -16,6 +16,7 @@ export { getFocusStyle } from './getFocusStyle';
 export { Heading } from './Heading';
 export { UseScreen } from './ScreenPlugin';
 export { default as SkeIcons } from './icons/icons-ske';
+export { default as AliasIcons } from './icons/icons-alias';
 export { Animation } from './getAnimationStyles';
 export { takeIf } from './helpers';
 export { generateId } from './generateId';
