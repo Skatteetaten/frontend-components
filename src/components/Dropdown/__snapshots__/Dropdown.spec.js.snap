@@ -5,11 +5,17 @@ exports[`Dropdown komponent matcher snapshot 1`] = `
   id="dropdown-123"
 >
   <LabelWithCallout
+    doNotLayer={false}
     id="dropdown-123-label"
     inputId="dropdown-123-input-option"
   />
   <Dropdown
     aria-invalid={false}
+    calloutProps={
+      Object {
+        "doNotLayer": undefined,
+      }
+    }
     className=
 
         & .ms-Dropdown-title {
