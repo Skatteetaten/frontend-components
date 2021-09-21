@@ -16,6 +16,10 @@ export interface SkeBasisProps extends IFabricProps {
   brand?: string;
 }
 
+interface SkeBasisState {
+  brand: { tag: string; primaryColor: string; secondaryColor: string };
+}
+
 export const brands = {
   SKE: {
     tag: 'SKE',
@@ -41,7 +45,10 @@ export const BrandContext = React.createContext(
 /*
  * visibleName SkeBasis (Basiskomponent)
  */
-export class SkeBasis extends React.PureComponent<SkeBasisProps> {
+export class SkeBasis extends React.PureComponent<
+  SkeBasisProps,
+  SkeBasisState
+> {
   static PALETTE = Palette;
   static FONTS = Fonts;
   static ICONS = {
