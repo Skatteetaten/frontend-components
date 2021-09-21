@@ -7,9 +7,6 @@ import { generateId } from '../utils';
 import { LabelWithCallout } from '../LabelWithCallout';
 import { ComboBoxProps } from './ComboBox.types';
 
-/**
- * @visibleName ComboBox _Nedtrekksliste med skriving_
- */
 export const ComboBox: React.FC<ComboBoxProps> = (props) => {
   const {
     children,
