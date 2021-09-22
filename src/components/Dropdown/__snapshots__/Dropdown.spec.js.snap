@@ -10,6 +10,11 @@ exports[`Dropdown komponent matcher snapshot 1`] = `
   />
   <Dropdown
     aria-invalid={false}
+    calloutProps={
+      Object {
+        "doNotLayer": undefined,
+      }
+    }
     className=
 
         & .ms-Dropdown-title {

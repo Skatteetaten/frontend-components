@@ -35,6 +35,8 @@ export interface TextFieldProps extends IMaskedTextFieldProps {
   underlined?: IMaskedTextFieldProps['underlined'];
   /** @ignore */
   editMode?: boolean;
+  /** doNotLayer prop for Callout */
+  doNotLayer?: boolean;
   /** Brukerspesifisert event for callout **/
   onCalloutToggle?: (
     oldCalloutState: calloutState,

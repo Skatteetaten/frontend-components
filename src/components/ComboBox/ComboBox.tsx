@@ -19,6 +19,7 @@ export const ComboBox: React.FC<ComboBoxProps> = (props) => {
     labelButtonAriaLabel,
     labelCallout,
     onCalloutToggle,
+    calloutProps,
     readOnly,
     ref,
     ...rest
@@ -66,6 +67,7 @@ export const ComboBox: React.FC<ComboBoxProps> = (props) => {
           errorMessage={errorMessage}
           aria-invalid={errorMessage ? true : false}
           calloutProps={{
+            ...calloutProps,
             className: getOptionsClassNames(props),
           }}
         >

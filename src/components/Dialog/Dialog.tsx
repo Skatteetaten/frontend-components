@@ -10,9 +10,6 @@ import {
 import { DialogProps, DialogState } from './Dialog.types';
 import { BrandContext } from '../SkeBasis';
 
-/*
- * visibleName Dialog (Dialogboks)
- */
 export class Dialog extends React.PureComponent<DialogProps, DialogState> {
   static Footer = DialogFooter;
   static Type = DialogType;
@@ -49,6 +46,7 @@ export class Dialog extends React.PureComponent<DialogProps, DialogState> {
       layoutStyle,
       closeButtonAriaLabel,
       modalProps,
+      doNotLayer,
       ...props
     } = this.props;
     const { isCalloutVisible } = this.state;
