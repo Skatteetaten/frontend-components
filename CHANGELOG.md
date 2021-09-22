@@ -1,3 +1,8 @@
+### **v.4.1.4 - 22.09.2021**
+
+- FileUploader: added more supported file types. Fixes an isse with the isLoading-prop that resulted in a console error.
+- SearchField: fixes type spesification on props searchShortcutKeys and searchIconTitle ('string' to string).
+
 ### **v.4.1.3 - 06.09.2021**
 
 - Revert change from v.4.1.0, compiling to es modules, due to problems with build pipelines.
