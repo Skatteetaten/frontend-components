@@ -19,6 +19,7 @@ export const TextField: React.FC<TextFieldProps> = ({
   children,
   className,
   labelWithCalloutAutoDismiss,
+  doNotLayer,
   editable,
   errorMessage,
   id,
@@ -106,6 +107,7 @@ export const TextField: React.FC<TextFieldProps> = ({
         autoDismiss={labelWithCalloutAutoDismiss}
         onRenderLabel={onRenderLabel}
         onCalloutToggle={onCalloutToggle}
+        doNotLayer={doNotLayer}
       />
       <TextFieldType
         {...rest}
