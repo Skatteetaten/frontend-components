@@ -83,6 +83,9 @@ export function getClassNames(props: TopBannerTypes) {
           fontSize: FontSizes.xSmall,
           fontWeight: 'bold',
         },
+        '& .ms-Button-icon': {
+          fontSize: `${FontSizes.medium} !important`,
+        },
       },
     },
   });
