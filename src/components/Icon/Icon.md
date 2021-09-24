@@ -235,6 +235,10 @@ const iconGroup = {
       usage: 'Markert',
     },
     {
+      name: 'CircleRing',
+      usage: 'Umarkert',
+    },
+    {
       name: 'Code',
       usage: 'Kode',
     },
