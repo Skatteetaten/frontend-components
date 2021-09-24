@@ -73,9 +73,9 @@ exports[`DatePicker komponent matcher snapshot 1`] = `
           color: #a82e39;
         }
         & .ms-TextField-errorMessage:before {
-          content: '';
+          content: '';
           display: block;
-          font-family: "Material Icons";
+          font-family: "SkeIconfont";
           font-size: 18px;
           margin-right: 3px;
         }
@@ -265,7 +265,7 @@ exports[`DatePicker komponent matcher snapshot 1`] = `
                     color: rgba(55, 55, 55, 0.95);
                     cursor: pointer;
                     display: inline-block;
-                    font-family: "Material Icons";
+                    font-family: "SkeIconfont";
                     font-size: 16px;
                     font-style: normal;
                     font-weight: normal;
@@ -278,11 +278,13 @@ exports[`DatePicker komponent matcher snapshot 1`] = `
                     position: absolute;
                     right: 4px;
                     speak: none;
+                    text-rendering: auto;
+                    transform: translate(0, 0);
                   }
               data-icon-name="Calendar"
               onClick={[Function]}
             >
-              
+              
             </i>
           </div>
         </div>

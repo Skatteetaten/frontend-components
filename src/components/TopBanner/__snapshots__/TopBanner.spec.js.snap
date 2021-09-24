@@ -54,16 +54,18 @@ exports[`TopBanner komponent matcher snapshot  1`] = `
               -webkit-font-smoothing: antialiased;
               color: #ffffff;
               display: inline-block;
-              font-family: "Material Icons";
+              font-family: "SkeIconfont";
               font-size: 1.25rem;
               font-style: normal;
               font-weight: 700;
               margin-left: 10px;
               speak: none;
+              text-rendering: auto;
+              transform: translate(0, 0);
             }
         data-icon-name="Home"
       >
-        
+        
       </i>
       <div
         className=
