@@ -68,11 +68,6 @@ export class SkeBasis extends React.PureComponent<
     const { palette, fonts, brand } = props;
 
     switch (brand) {
-      case 'SKE':
-        this.state = {
-          brand: brands.SKE,
-        };
-        break;
       case 'INK':
         this.state = {
           brand: brands.INK,
