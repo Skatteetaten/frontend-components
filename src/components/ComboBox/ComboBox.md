@@ -1,4 +1,4 @@
-**En ComboBox ser ut og fungerer i hovedsak som en som nedtrekksliste - men har den forskjellen brukeren kan skrive i feltet. Det er spesielt nyttig hvis listen over valg er lang.**
+**ComboBox (Nedtrekksliste med skriving): nedtrekksliste hvor du kan skrive i feltet - nyttig hvis listen med valg er lang.**
 
 Velge fra en fast liste (stor versjon):
 

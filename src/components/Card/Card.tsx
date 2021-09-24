@@ -4,8 +4,8 @@ import { getClassNames } from './Card.classNames';
 import { Icon } from '../Icon';
 import { CardBorder, CardColor, CardProps, CardState } from './Card.types';
 
-/**
- * @visibleName Card _Innholdskort_
+/*
+ * visibleName Card (Innholdskort)
  */
 export class Card extends React.PureComponent<CardProps, CardState> {
   static Color = CardColor;

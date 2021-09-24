@@ -3,8 +3,8 @@ import classnames from 'classnames';
 import { getClassNames } from './Typography.classNames';
 import { TypographyProps } from './Typography.types';
 
-/**
- * @visibleName Typography _Typografi_
+/*
+ * visibleName Typography (Typografi)
  */
 export const Typography: React.FC<TypographyProps> = (props) => {
   const { children, className } = props;

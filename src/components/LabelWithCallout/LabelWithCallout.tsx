@@ -5,8 +5,8 @@ import { Callout } from '../Callout';
 import classnames from 'classnames';
 import { calloutState, LabelWithCalloutProps } from './LabelWithCallout.types';
 
-/**
- * @visibleName LabelWithCallout _MerkelappMedUtropsboks_
+/*
+ * visibleName LabelWithCallout (Merkelapp med utropsboks)
  */
 export const LabelWithCallout = (props: LabelWithCalloutProps) => {
   const {
@@ -28,6 +28,7 @@ export const LabelWithCallout = (props: LabelWithCalloutProps) => {
     warning,
     onRenderLabel,
     onCalloutToggle,
+    doNotLayer,
   } = props;
   const styles = getClassNames({ calloutFloating, ...props });
   const [isCalloutVisible, setIsCalloutVisible] = React.useState(false);
@@ -148,6 +149,7 @@ export const LabelWithCallout = (props: LabelWithCalloutProps) => {
               toggleEvent();
             }
           }}
+          doNotLayer={doNotLayer}
         >
           {help && !warning ? helpElement : warningElement}
         </Callout>

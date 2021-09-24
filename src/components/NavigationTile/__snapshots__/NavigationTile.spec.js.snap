@@ -149,7 +149,7 @@ exports[`NavigationTile komponent matcher snapshot 1`] = `
             text-align: center;
           }
           & p {
-            color: #1d1d1d;
+            color: #1a1a1a;
             line-height: 25px;
             margin-bottom: 0px;
             margin-left: 0px;

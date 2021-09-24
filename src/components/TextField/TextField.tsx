@@ -11,14 +11,15 @@ import {
 import { getClassNames } from './TextField.classNames';
 import { TextFieldProps } from './TextField.types';
 
-/**
- * @visibleName TextField _Tekstfelt_
+/*
+ * visibleName TextField (Tekstfelt)
  */
 export const TextField: React.FC<TextFieldProps> = ({
   calloutFloating,
   children,
   className,
   labelWithCalloutAutoDismiss,
+  doNotLayer,
   editable,
   errorMessage,
   id,
@@ -106,6 +107,7 @@ export const TextField: React.FC<TextFieldProps> = ({
         autoDismiss={labelWithCalloutAutoDismiss}
         onRenderLabel={onRenderLabel}
         onCalloutToggle={onCalloutToggle}
+        doNotLayer={doNotLayer}
       />
       <TextFieldType
         {...rest}

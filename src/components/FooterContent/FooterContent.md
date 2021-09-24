@@ -1,4 +1,4 @@
-**FooterContent brukes i publikumsløsninger for å markere bunnen av siden.**
+**FooterContent (Bunn): brukes i publikumsløsninger for å markere bunnen av siden.**
 
 ```js
 import { FooterContent } from '@skatteetaten/frontend-components/FooterContent';

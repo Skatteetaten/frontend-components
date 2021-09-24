@@ -1,4 +1,4 @@
-import { IComboBoxProps } from '@fluentui/react';
+import { IComboBoxProps, ICalloutProps } from '@fluentui/react';
 import { calloutState, LabelWithCalloutProps } from '../LabelWithCallout';
 
 export interface ComboBoxProps extends IComboBoxProps {
@@ -20,6 +20,8 @@ export interface ComboBoxProps extends IComboBoxProps {
     oldCalloutState: calloutState,
     newCalloutState: calloutState
   ) => void;
+  /** CalloutProps som sendes videre ned til Callout */
+  calloutProps?: ICalloutProps;
   /** Lesemodus. Kan brukes i sammenheng med text eller defaultSelectedKey for å vise verdi */
   readOnly?: boolean;
 }

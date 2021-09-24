@@ -1,8 +1,8 @@
 import { Icon as FabricIcon, IIconProps } from '@fluentui/react';
 import * as React from 'react';
 
-/**
- * @visibleName Icon _Ikon_
+/*
+ * visibleName Icon (Ikon)
  */
 export const Icon: React.FC<IIconProps> = (props) => {
   const { className, ...rest } = props;

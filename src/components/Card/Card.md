@@ -1,4 +1,4 @@
-**Innholdskort brukes til å gruppere innhold som hører sammen.**
+**Card (Innholdskort): brukes til å gruppere innhold som hører sammen.**
 
 ```js
 import { Card } from '@skatteetaten/frontend-components/Card';

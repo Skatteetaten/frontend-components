@@ -113,7 +113,7 @@
     "build:docs": "styleguidist build",
     "build:lib": "run-p build:types build:esm build:cjs build:umd build:assets build:designtokens",
     "build:assets": "cpx \"./src/components/**/assets/**/*\" ./lib",
-    "build:designtokens": "cpx \"./src/designtokens/**/*\" ./lib/designtokens",
+    "build:designtokens": "cpx \"./src/components/utils/designtokens/**/*\" ./lib/utils/designtokens",
     "build:copy-files": "node scripts/copyBuildFiles.js",
     "build:copy-files-external": "node scripts/copyBuildFiles.js EXTERNAL",
     "build:esm": "BABEL_ENV=esm babel ./src/components --out-dir lib --extensions '.ts,.tsx' ",

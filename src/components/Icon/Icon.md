@@ -1,4 +1,5 @@
-**Ikoner kan brukes direkte eller av de andre komponentene i Designsystemet.**
+**Icon (Ikon): kan brukes direkte eller av de andre komponentene i Designsystemet.**
+
 ```js
 import { Icon } from '@skatteetaten/frontend-components/Icon';
 
@@ -16,6 +17,7 @@ import { Icon } from '@skatteetaten/frontend-components/Icon';
   <Icon iconName="AttachFile" style={{ fontSize: '32px', color: '#1362ae' }} />
 </div>;
 ```
+
 <style>
   .darkOnHover {
     text-align: center;
@@ -31,6 +33,7 @@ import { Icon } from '@skatteetaten/frontend-components/Icon';
     padding-left: 16px !important;
   }
 </style>
+
 ### Liste over alle ikoner
 
 ```js noeditor
@@ -297,6 +300,18 @@ const iconGroup = {
     {
       name: 'Menu',
       usage: 'Meny til smal skjerm',
+    },
+    {
+      name: 'VerticalDots',
+      usage: 'Vis sekundære knapper/funksjoner',
+    },
+    {
+      name: 'VerticalDotsCircle',
+      usage: 'Vis sekundære knapper/funksjoner',
+    },
+    {
+      name: 'VerticalDotsCircleSolid',
+      usage: 'Vis sekundære knapper/funksjoner',
     },
     {
       name: 'Person',

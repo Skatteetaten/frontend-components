@@ -1,4 +1,4 @@
-**Aksjonsknapp for selvstendige og mindre fremtredende handlinger**
+**ActionButton (Aksjonsknapp): for selvstendige og mindre fremtredende handlinger**
 
 ```js
 import { ActionButton } from '@skatteetaten/frontend-components/ActionButton';

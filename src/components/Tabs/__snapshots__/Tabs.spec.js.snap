@@ -18,7 +18,7 @@ exports[`Tabs komponent matcher snapshot 1`] = `
       }
       & .ms-Pivot-link:hover {
         background: #cde1f9;
-        color: #1d1d1d;
+        color: #1a1a1a;
       }
       & .ms-Pivot-link:active {
         background: #093e61;
@@ -168,7 +168,7 @@ exports[`Tabs komponent matcher snapshot 1`] = `
             color: #1362ae;
           }
           &:focus {
-            color: rgba(11, 11, 11, 0.95);
+            color: #1a1a1a;
             outline-offset: -1px;
             outline: none;
           }
@@ -383,7 +383,7 @@ exports[`Tabs komponent matcher snapshot 1`] = `
             color: #1362ae;
           }
           &:focus {
-            color: rgba(11, 11, 11, 0.95);
+            color: #1a1a1a;
             outline-offset: -1px;
             outline: none;
           }
@@ -591,7 +591,7 @@ exports[`Tabs komponent matcher snapshot 1`] = `
             color: #1362ae;
           }
           &:focus {
-            color: rgba(11, 11, 11, 0.95);
+            color: #1a1a1a;
             outline-offset: -1px;
             outline: none;
           }

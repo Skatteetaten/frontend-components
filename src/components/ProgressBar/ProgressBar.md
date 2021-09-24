@@ -1,4 +1,4 @@
-**Kan brukes for å vise for langt det er igjen for noe å laste**
+**ProgressBar (Fremdriftsvisning): brukes for å vise for langt det er igjen for noe å laste**
 
 ```js
 import { ProgressBar } from '@skatteetaten/frontend-components/ProgressBar';

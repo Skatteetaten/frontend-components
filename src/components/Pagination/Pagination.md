@@ -1,4 +1,4 @@
-**Sidevelger for å bla i lange tabeller eller søkeresultater**
+**Pagination (Sidevelger): for å bla i lange tabeller eller søkeresultater**
 
 ```js
 import { Pagination } from '@skatteetaten/frontend-components/Pagination';

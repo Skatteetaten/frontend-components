@@ -31,16 +31,16 @@ exports[`Combobox komponent matcher med snapshot 1`] = `
           border-radius: 0px;
         }
         & .ms-ComboBox-Input.is-disabled {
-          background-color: #e8e8e8;
+          background-color: #e5e5e5;
         }
         & .is-disabled .ms-ComboBox-Input:hover {
           cursor: not-allowed;
         }
         & .ms-ComboBox.is-disabled {
-          border: 1px solid #bbbbbb;
+          border: 1px solid #b2b2b2;
         }
         & .ms-ComboBox.is-disabled button {
-          color: #999999;
+          color: #808080;
         }
         & .ms-ComboBox-CaretDown-button {
           color: #1362ae;

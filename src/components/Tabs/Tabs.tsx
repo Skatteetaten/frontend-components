@@ -5,8 +5,8 @@ import * as React from 'react';
 import { getClassNames } from './Tabs.classNames';
 import { TabProps } from './Tabs.types';
 
-/**
- * @visibleName Tabs _Arkfaner_
+/*
+ * visibleName Tabs (Arkfaner)
  */
 
 export const Tabs: React.FC<TabProps> = (props) => {

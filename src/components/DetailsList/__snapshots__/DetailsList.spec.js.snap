@@ -94,7 +94,7 @@ exports[`DetailsList komponent matcher snapshot 1`] = `
         padding-left: 8px;
       }
       & .ms-List-cell {
-        border-bottom: 1px solid#bbbbbb;
+        border-bottom: 1px solid#b2b2b2;
         min-height: 32px;
       }
       & .ms-FocusZone.ms-DetailsHeader {

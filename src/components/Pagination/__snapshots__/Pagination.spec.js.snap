@@ -94,7 +94,7 @@ exports[`Pagination komponent matcher snapshot 1`] = `
 
                     {
                       border-bottom: none !important;
-                      color: #666666 !important;
+                      color: #4d4d4d !important;
                       padding-bottom: 6px !important;
                       padding-top: 3px !important;
                     }

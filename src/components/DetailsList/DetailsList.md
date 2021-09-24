@@ -1,4 +1,4 @@
-**Detailjliste brukes til å vise store mengder informasjon som skal kunne sorteres, grupperes og filtreres**
+**DetailsList (Sammensatt tabell): brukes til å vise store mengder informasjon som skal kunne sorteres, grupperes og filtreres**
 
 Kolonner som kan sorteres
 

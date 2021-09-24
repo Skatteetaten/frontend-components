@@ -6,7 +6,7 @@ exports[`TopBanner komponent matcher snapshot  1`] = `
 
       {
         align-items: stretch;
-        background: #ECE6E8;
+        background: #f4f4f4;
         border-radius: 0 0 0 0;
         color: #ffffff;
         display: flex;
@@ -26,7 +26,7 @@ exports[`TopBanner komponent matcher snapshot  1`] = `
 
         {
           align-items: center;
-          background: #6F2C3F;
+          background: #6f2c3f;
           display: flex;
           padding-left: 16px;
           padding-right: 8px;
@@ -87,8 +87,8 @@ exports[`TopBanner komponent matcher snapshot  1`] = `
     className=
 
         {
-          border-bottom: 120px solid #6F2C3F;
-          border-right: 40px solid #ECE6E8;
+          border-bottom: 120px solid #6f2c3f;
+          border-right: 40px solid #f4f4f4;
         }
   />
   <div
@@ -96,7 +96,7 @@ exports[`TopBanner komponent matcher snapshot  1`] = `
 
         {
           align-items: center;
-          background: #ECE6E8;
+          background: #f4f4f4;
           color: #000000;
           display: flex;
           flex-grow: 1;

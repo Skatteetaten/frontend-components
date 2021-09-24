@@ -1,0 +1,7 @@
+{
+  "ske-breakpoint-sm": "480px",
+  "ske-breakpoint-md": "640px",
+  "ske-breakpoint-lg": "1024px",
+  "ske-breakpoint-xl": "1366px",
+  "ske-breakpoint-xxl": "1920px"
+}

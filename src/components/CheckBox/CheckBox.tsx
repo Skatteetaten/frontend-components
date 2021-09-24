@@ -4,8 +4,8 @@ import * as React from 'react';
 import { getClassNames } from './CheckBox.classNames';
 import { CheckBoxProps } from './CheckBox.types';
 
-/**
- * @visibleName CheckBox _Avkrysningsboks_
+/*
+ * visibleName CheckBox (Avkrysningsboks)
  */
 export class CheckBox extends React.PureComponent<CheckBoxProps, {}> {
   static defaultProps = {

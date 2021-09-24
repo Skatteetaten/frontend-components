@@ -14,7 +14,7 @@ import { Button } from '@skatteetaten/frontend-components/Button';
 <div>
   <p>
     <Link
-      path={'./assets/sketch/designsystem-1.7.sketch'}
+      path={'./assets/sketch/designsystem-2.0.sketch'}
       text={'Last ned nyeste Sketch-fil'}
       icon={'Download'}
       placement="before"
@@ -33,7 +33,17 @@ const style = {
 
 <OpenClose compact title={'Versjonshistorikk'}>
   <Typography>
-    <h4>Versjon 1.7 </h4>
+    <h4>Versjon 2.0 </h4>
+    <p style={{ marginTop: '0' }}>
+      <em>September 2021</em>
+    </p>
+    <p style={{ marginBottom: '24px' }}>
+      Oppdaterte komponenter/ikoner, ny Gjør Det Selv-seksjon, nye farger og
+      mer.
+    </p>
+
+    <hr />
+    <h4 style={{ marginTop: '0' }}>Versjon 1.7 </h4>
     <p style={{ marginTop: '0' }}>12.04.2021</p>
     <p style={{ marginBottom: '0' }}>
       <strong>Tabeller</strong>

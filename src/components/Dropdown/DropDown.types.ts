@@ -21,6 +21,8 @@ export interface DropdownProps extends IDropdownProps {
     oldCalloutState: calloutState,
     newCalloutState: calloutState
   ) => void;
+  /** doNotLayer prop både for Label og den nested Callout i Dropdown */
+  doNotLayer?: boolean;
   /** Lesemodus. Kan brukes i sammenheng med selectedKey eller defaultSelectedKey for å vise verdi */
   readOnly?: boolean;
 }

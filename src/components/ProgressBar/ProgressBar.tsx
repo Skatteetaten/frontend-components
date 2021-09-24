@@ -3,8 +3,8 @@ import { IProgressIndicatorProps, ProgressIndicator } from '@fluentui/react';
 import React from 'react';
 import { getClassNames } from './ProgressBar.classNames';
 
-/**
- * @visibleName ProgressBar _Fremdriftsvisning_
+/*
+ * visibleName ProgressBar (Fremdriftsvisning)
  */
 export const ProgressBar: React.FC<IProgressIndicatorProps> = (props) => {
   const { className, ...rest } = props;

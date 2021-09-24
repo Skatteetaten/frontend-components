@@ -7,8 +7,8 @@ import { LabelWithCallout } from '../LabelWithCallout';
 import { ErrorMessage } from '../ErrorMessage';
 import { RadioButtonGroupProps } from './RadioButtonGroup.types';
 
-/**
- * @visibleName RadioButtonGroup _Radioknapper_
+/*
+ * visibleName RadioButtonGroup (Radioknapper)
  */
 
 export const RadioButtonGroup = (props: RadioButtonGroupProps) => {

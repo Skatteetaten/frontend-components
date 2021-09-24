@@ -10,10 +10,15 @@ exports[`Dropdown komponent matcher snapshot 1`] = `
   />
   <Dropdown
     aria-invalid={false}
+    calloutProps={
+      Object {
+        "doNotLayer": undefined,
+      }
+    }
     className=
 
         & .ms-Dropdown-title {
-          border-color: #1d1d1d;
+          border-color: #1a1a1a;
           border-radius: 0px;
           font-size: 0.875rem;
         }
@@ -27,7 +32,7 @@ exports[`Dropdown komponent matcher snapshot 1`] = `
           border: 0;
         }
         & .ms-Dropdown-titleIsPlaceHolder {
-          border-color: #1d1d1d;
+          border-color: #1a1a1a;
         }
         &:focus .ms-Dropdown-title.ms-Dropdown-title {
           border: 2px solid #1362ae;
@@ -37,18 +42,18 @@ exports[`Dropdown komponent matcher snapshot 1`] = `
         }
         & .is-disabled .ms-Dropdown-title {
           background-color: #f4f4f4;
-          border-color: #bbbbbb;
+          border-color: #b2b2b2;
           border-style: solid;
           border-width: 1px;
         }
         & .is-disabled .ms-Dropdown-caretDownWrapper {
-          color: #999999;
+          color: #808080;
         }
         &:active .is-disabled .ms-Dropdown-title {
-          border-color: #bbbbbb;
+          border-color: #b2b2b2;
         }
         &:hover .is-disabled .ms-Dropdown-title {
-          border-color: #bbbbbb;
+          border-color: #b2b2b2;
           cursor: not-allowed;
         }
         &:focus:after {
@@ -137,7 +142,7 @@ exports[`Dropdown komponent matcher snapshot 1`] = `
     styles={
       Object {
         "dropdownItem": Object {
-          "color": "#1d1d1d",
+          "color": "#1a1a1a",
           "marginBottom": "4px",
           "marginTop": "4px",
           "selectors": Object {
@@ -156,7 +161,7 @@ exports[`Dropdown komponent matcher snapshot 1`] = `
             "&:hover:after, &:focus:after": Object {
               "borderRadius": "0",
               "bottom": 1,
-              "color": "#1d1d1d",
+              "color": "#1a1a1a",
               "content": "\\"\\"",
               "left": 1,
               "outline": "transparent",
@@ -168,8 +173,8 @@ exports[`Dropdown komponent matcher snapshot 1`] = `
           },
         },
         "dropdownItemSelected": Object {
-          "background": "#e8e8e8 !important",
-          "color": "#1d1d1d",
+          "background": "#e5e5e5 !important",
+          "color": "#1a1a1a",
         },
         "dropdownOptionText": Object {
           "whiteSpace": "normal !important",

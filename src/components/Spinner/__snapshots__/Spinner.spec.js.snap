@@ -20,7 +20,7 @@ exports[`Spinner komponent matcher snapshot 1`] = `
         animation-duration: 1s;
         animation-iteration-count: linear infinite;
         animation-timing-function: linear;
-        border-color: #1d1d1d;
+        border-color: #1a1a1a;
         border-radius: 50%;
         border-top: 4px solid transparent;
         border: 4px solid;

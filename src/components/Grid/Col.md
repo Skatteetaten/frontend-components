@@ -1,4 +1,4 @@
-**GridCol en hjelpekomponent til Grid**
+**GridCol (Kolonne i rutenett): en hjelpekomponent til Grid**
 
 ```js noeditor
 import { MessageBar } from '@skatteetaten/frontend-components/MessageBar';

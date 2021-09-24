@@ -15,7 +15,7 @@ export default () => (
     <g stroke="none" strokeWidth="0" fill="none" fillRule="evenodd">
       <g id="bakgrunn">
         <polygon
-          fill="#C0797E"
+          fill="#F3A7B0"
           points="0 99.6400524 1440 99.6400524 1440 69.2255838 0 17.1793194"
         />
         <path
