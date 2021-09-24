@@ -12,6 +12,7 @@ import logoSKE from './assets/logoSKE.svg';
 import logoSKEen from './assets/logoSKEen.svg';
 import logoLSO from './assets/logoLSO.svg';
 import logoINK from './assets/logoINK.svg';
+import logoINKen from './assets/logoINKen.svg';
 
 import internLogo from './assets/ske-logo-intern.svg';
 import internLogoEn from './assets/ske-logo-intern-en.svg';
@@ -104,7 +105,7 @@ export const ExternalHeader: React.FC<TopBannerTypes> = (props) => {
   const { logo, headerMain, contentWrapper } = styles;
   const compactHeight = props.compact ? 55 : 68;
 
-  function logoImageElement(brand, showAltText = true) {
+  const logoImageElement = (brand: string, showAltText = true) => {
     switch (brand) {
       case 'SKE':
         return (
@@ -118,7 +119,7 @@ export const ExternalHeader: React.FC<TopBannerTypes> = (props) => {
       case 'INK':
         return (
           <Image
-            src={logoINK}
+            src={props.language === 'en' ? logoINKen : logoINK}
             height={compactHeight}
             alt={showAltText ? 'Statens innkreving logo' : ''}
           />
@@ -136,11 +137,11 @@ export const ExternalHeader: React.FC<TopBannerTypes> = (props) => {
       default:
         return {};
     }
-  }
+  };
 
   return (
     <BrandContext.Consumer>
-      {({ tag, primaryColor, secondaryColor }) => (
+      {({ tag }) => (
         <header
           className={classnames(
             getExternalClassNames(props, tag).header,
