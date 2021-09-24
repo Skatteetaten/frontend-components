@@ -53,7 +53,7 @@ export class Dialog extends React.PureComponent<DialogProps, DialogState> {
 
     return (
       <BrandContext.Consumer>
-        {({ tag, primaryColor, secondaryColor }) => (
+        {({ tag }) => (
           <div>
             {/*
        // @ts-ignore */}

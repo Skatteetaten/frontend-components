@@ -11,7 +11,7 @@ export const ProgressBar: React.FC<IProgressIndicatorProps> = (props) => {
   const { className, ...rest } = props;
   return (
     <BrandContext.Consumer>
-      {({ tag, primaryColor, secondaryColor }) => (
+      {({ tag }) => (
         <ProgressIndicator
           {...rest}
           className={classnames(getClassNames(tag), className)}

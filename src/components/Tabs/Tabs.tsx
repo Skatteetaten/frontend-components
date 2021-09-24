@@ -14,7 +14,7 @@ export const Tabs: React.FC<TabProps> = (props) => {
   const { children, className, ...rest } = props;
   return (
     <BrandContext.Consumer>
-      {({ tag, primaryColor, secondaryColor }) => (
+      {({ tag }) => (
         <Pivot
           {...rest}
           linkFormat={'tabs'}
