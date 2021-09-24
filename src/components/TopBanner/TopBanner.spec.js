@@ -43,7 +43,6 @@ describe('TopBanner komponent', () => {
     expect(wrapper.html()).toContain('headerMain');
     expect(wrapper.find('.ms-Icon').prop('data-icon-name')).toEqual('Back');
     expect(wrapper.find('ImageBase').prop('height')).toEqual(68);
-    expect(wrapper.find('img').prop('alt')).toEqual('Skatteetaten logo');
   });
 
   it('rendrer TopBanner med kompakt visning for eksterne arbeidsflater ', () => {
