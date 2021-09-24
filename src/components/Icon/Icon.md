@@ -88,6 +88,14 @@ const iconGroup = {
       usage: 'Åpne område',
     },
     {
+      name: 'ChevronLeft',
+      usage: 'Paginering (forrige side)',
+    },
+    {
+      name: 'ChevronRight',
+      usage: 'Paginering (neste side)',
+    },
+    {
       name: 'ArrowUp',
       usage: 'Opp / sorter stigende',
     },
