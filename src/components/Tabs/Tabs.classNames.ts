@@ -3,8 +3,26 @@ import { getTheme } from '@fluentui/react/lib/Styling';
 import { FontWeights, PaletteProps } from '../utils';
 import { TabProps } from './Tabs.types';
 
-export const getClassNames = function getClassNames(props: TabProps) {
+export const getClassNames = function getClassNames(props: TabProps, tag) {
   const palette = getTheme().palette as PaletteProps;
+
+  let primaryColor = palette.skeColor.burgundy100;
+
+  switch (tag) {
+    case 'INK': {
+      primaryColor = palette.skeColor.green100;
+      break;
+    }
+    case 'LSO': {
+      primaryColor = palette.skeColor.black100;
+      break;
+    }
+    default: {
+      primaryColor = palette.skeColor.burgundy100;
+      break;
+    }
+  }
+
   return mergeStyles([
     {
       displayName: 'SkeTabs',
@@ -44,7 +62,7 @@ export const getClassNames = function getClassNames(props: TabProps) {
           color: palette.skeColor.black,
         },
         '& .ms-Pivot': {
-          borderBottom: `3px solid ${palette.skeColor.burgundy}`,
+          borderBottom: `3px solid ${primaryColor}`,
           width: '100%',
           display: 'inline-block',
         },
@@ -55,12 +73,10 @@ export const getClassNames = function getClassNames(props: TabProps) {
         //   margin: '0 auto'
         // },
         '& .ms-Pivot-link.is-selected': {
-          background: palette.skeColor.burgundy,
+          background: primaryColor,
           fontWeight: FontWeights.regular,
           borderBottom: 'none',
-          border: props.border
-            ? `2px solid ${palette.skeColor.burgundy}`
-            : 'none',
+          border: props.border ? `2px solid ${primaryColor}` : 'none',
           selectors: {
             ':before': {
               borderBottom: 'none',

@@ -45,7 +45,6 @@ describe('TopBanner komponent', () => {
       'ArrowBack'
     );
     expect(wrapper.find('ImageBase').prop('height')).toEqual(68);
-    expect(wrapper.find('img').prop('alt')).toEqual('Skatteetaten logo');
   });
 
   it('rendrer TopBanner med kompakt visning for eksterne arbeidsflater ', () => {

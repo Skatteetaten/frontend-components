@@ -2,15 +2,31 @@ import { mergeStyles } from '@fluentui/merge-styles';
 import { getTheme } from '@fluentui/react/lib/Styling';
 import { FontSizes, PaletteProps } from '../utils';
 
-export const getClassNames = function getClassNames() {
+export const getClassNames = function getClassNames(tag) {
   const palette = getTheme().palette as PaletteProps;
+  let primaryColor = palette.skeColor.burgundy100;
+
+  switch (tag) {
+    case 'INK': {
+      primaryColor = palette.skeColor.green100;
+      break;
+    }
+    case 'LSO': {
+      primaryColor = palette.skeColor.black100;
+      break;
+    }
+    default: {
+      primaryColor = palette.skeColor.burgundy100;
+      break;
+    }
+  }
 
   return mergeStyles([
     {
       displayName: 'SkeProgressBar',
       selectors: {
         '& .ms-ProgressIndicator-progressBar': {
-          background: palette.skeColor.burgundy,
+          background: primaryColor,
           height: '16px',
         },
         '& .ms-ProgressIndicator-itemProgress': {
