@@ -20,7 +20,6 @@ function getTypeColor(props: ButtonProps): object {
         borderColor: palette.skeColor.blue,
         background: palette.skeColor.blue,
         color: palette.skeColor.white,
-        boxShadow: `0 8px 6px -6px ${palette.skeColor.lightGrey}`,
         ...sizeNormal,
         selectors: {
           '@media  only screen and (max-width: 479px)': {
@@ -33,7 +32,7 @@ function getTypeColor(props: ButtonProps): object {
         borderColor: palette.skeColor.blue,
         background: palette.skeColor.blue,
         color: palette.skeColor.white,
-        boxShadow: `0 8px 6px -6px ${palette.skeColor.lightGrey}`,
+        boxShadow: `0 8px 6px -6px ${palette.skeColor.grey10}`,
         fontSize: FontSizes.largePlus,
         borderWidth: '3px',
         borderRadius: '7px',
@@ -91,8 +90,8 @@ function getTypeFocusColor(props: ButtonProps): object {
     case 'warning':
       return {
         borderColor: palette.skeColor.error,
-        background: palette.skeColor.burgundy30,
-        color: palette.bodyText,
+        background: palette.skeColor.error,
+        color: palette.white,
       };
     case 'secondary':
       return {
@@ -104,29 +103,6 @@ function getTypeFocusColor(props: ButtonProps): object {
         borderColor: palette.skeColor.blue,
         background: palette.skeColor.lightBlue,
         color: palette.skeColor.blue,
-      };
-  }
-}
-
-function getTypeActiveColor(props: ButtonProps) {
-  const palette = getTheme().palette as PaletteProps;
-  switch (props.buttonStyle) {
-    case 'warning':
-      return {
-        borderColor: palette.skeColor.pink,
-        background: palette.skeColor.pink,
-        color: palette.skeColor.white,
-      };
-    case 'secondary':
-      return {
-        background: 'none',
-        color: palette.skeColor.darkBlue,
-      };
-    default:
-      return {
-        borderColor: palette.skeColor.darkBlue,
-        background: palette.skeColor.darkBlue,
-        color: palette.skeColor.white,
       };
   }
 }
@@ -190,6 +166,8 @@ export function getClassNames(props: ButtonProps): string {
           fontWeight: 'normal',
           padding: '15px',
           transition: 'background 0.2s',
+          boxShadow: `0 8px 6px -6px ${palette.skeColor.grey30}`,
+
           textAlign: props.icon ? 'left' : 'center',
           verticalAlign: 'top',
           ...getTypeColor(props),
@@ -201,7 +179,10 @@ export function getClassNames(props: ButtonProps): string {
           ...getLabelStyles(props),
         },
         '&.ms-Button:active': {
-          ...getTypeActiveColor(props),
+          position: 'relative',
+          top: '2px',
+          transition: '0.15s',
+          boxShadow: 'none',
         },
         '&.ms-Button:disabled': {
           background: palette.skeColor.whiteGrey,

@@ -14,7 +14,7 @@ export class ActionButton extends React.PureComponent<ActionButtonProps, {}> {
   static defaultProps = {
     color: 'blue',
     disabled: false,
-    border: true,
+    border: false,
     icon: undefined,
     iconSize: ActionButton.NORMAL,
     onClick: undefined,

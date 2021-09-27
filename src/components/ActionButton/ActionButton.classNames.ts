@@ -8,7 +8,7 @@ function getTypeColor(props: ActionButtonProps): object {
   switch (props.color) {
     case 'blue':
       return {
-        color: palette.skeColor.interactiveDark,
+        color: palette.skeColor.interactive,
       };
     case 'red':
       return {
@@ -16,7 +16,7 @@ function getTypeColor(props: ActionButtonProps): object {
       };
     case 'green':
       return {
-        color: palette.skeColor.statusOk,
+        color: palette.skeColor.green100,
       };
     case 'white':
       return {
@@ -93,7 +93,8 @@ export function getClassNames(props: ActionButtonProps): string {
       '&.ms-Button.ms-Button--action': {
         height: 'auto',
         minHeight: '32px',
-        padding: border ? '6px 16px' : '6px 8px',
+        padding: '3px 6px',
+        //padding: border ? '6px 16px' : '6px 8px',
         borderRadius: '4px',
         marginLeft: border ? '0px' : '-8px',
         marginRight: '8px',

@@ -122,8 +122,7 @@ export const getClassNames = function getClassNames(props: IconButtonProps) {
           ...getIconSize(props),
         },
         '&.ms-Button--icon:hover, &.ms-Button--icon:focus': {
-          border: `3px solid ${palette.skeColor.blue}`,
-          transition: 'background-color 0.3s',
+          transition: 'background-color 0.2s',
           // @ts-ignore
           ...getCircleHoverStyles(props),
         },
@@ -131,8 +130,10 @@ export const getClassNames = function getClassNames(props: IconButtonProps) {
           borderColor: 'transparent',
         },
         '&.ms-Button--icon:active': {
-          color: palette.white,
-          ...getCircleFocusStyles(props),
+          color: palette.skeColor.interactiveDark,
+          position: 'relative',
+          top: '2px',
+          transition: '0.15s',
         },
         '&.ms-Button--icon:disabled': {
           ...getCircleStyles(props),
