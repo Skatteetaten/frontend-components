@@ -37,8 +37,8 @@ const getStepContentInner = (
       selectors: {
         '@media  only screen and (max-width: 479px)': stepType === 'result' && {
           paddingBottom: '21px',
-          borderBottom: `3px solid ${palette.skeColor.green}`,
-          borderTop: `3px solid ${palette.skeColor.green}`,
+          borderBottom: `0 solid transparent`,
+          borderTop: `0 solid transparent`,
         },
       },
     };
@@ -264,11 +264,6 @@ export const getClassNames = (props) => {
         '@media only screen and (max-width: 479px)': {
           display: 'flex',
           fontSize: FontSizes.medium,
-
-          borderTop:
-            props.stepType === 'result'
-              ? `4px solid ${palette.skeColor.green}`
-              : undefined,
           margin: props.stepType === 'result' ? 0 : undefined,
           paddingTop: props.stepType === 'result' ? '8px' : '0',
         },
@@ -293,7 +288,12 @@ export const getClassNames = (props) => {
           : 'none',
       selectors: {
         '@media  only screen and (max-width: 479px)': {
-          border: 'none',
+          border: '0 none',
+          outline:
+            props.stepType === 'result'
+              ? `4px solid ${palette.skeColor.green}`
+              : '0 none',
+          outlineOffset: props.stepType === 'result' ? '0.75rem' : '0 none',
           padding: '0 2px',
         },
       },
