@@ -57,34 +57,43 @@ function getIconColor(props: ActionButtonProps): object {
 
 function getBorder(props: ActionButtonProps): object {
   const palette = getTheme().palette as PaletteProps;
-  const { border } = props;
+  const { hideBorder } = props;
   switch (props.color) {
     case 'black':
       return {
-        border: border ? `1px solid ${palette.skeColor.black100}` : 'none',
+        borderBottom: !hideBorder
+          ? `2px solid ${palette.skeColor.grey70}`
+          : `2px solid ${palette.skeColor.transparent}`,
       };
     case 'red':
       return {
-        border: border ? `1px solid ${palette.skeColor.statusError}` : 'none',
+        borderBottom: !hideBorder
+          ? `2px solid ${palette.skeColor.burgundy70}`
+          : `2px solid ${palette.skeColor.transparent}`,
       };
     case 'green':
       return {
-        border: border ? `1px solid ${palette.skeColor.statusOk}` : 'none',
+        borderBottom: !hideBorder
+          ? `2px solid ${palette.skeColor.green70}`
+          : `2px solid ${palette.skeColor.transparent}`,
       };
     case 'white':
       return {
-        border: border ? `1px solid ${palette.skeColor.white}` : 'none',
+        borderBottom: !hideBorder
+          ? `2px solid ${palette.skeColor.white}`
+          : `2px solid ${palette.skeColor.transparent}`,
       };
     default:
       return {
-        border: border ? `1px solid ${palette.skeColor.interactive}` : 'none',
+        borderBottom: !hideBorder
+          ? `2px solid ${palette.skeColor.interactive}`
+          : `2px solid ${palette.skeColor.transparent}`,
       };
   }
 }
 
 export function getClassNames(props: ActionButtonProps): string {
   const palette = getTheme().palette as PaletteProps;
-  const { border } = props;
 
   const inset = -4;
   const radius = '0';
@@ -93,13 +102,9 @@ export function getClassNames(props: ActionButtonProps): string {
       '&.ms-Button.ms-Button--action': {
         height: 'auto',
         minHeight: '32px',
-        padding: '3px 6px',
-        //padding: border ? '6px 16px' : '6px 8px',
-        borderRadius: '4px',
-        marginLeft: border ? '0px' : '-8px',
-        marginRight: '8px',
+        padding: '3px 6px 3px 4px',
         textAlign: props.iconAfter ? 'right' : 'left',
-
+        //border: `2px solid ${palette.skeColor.transparent}`,
         ...getTypeColor(props),
         ...getBorder(props),
       },
@@ -113,7 +118,6 @@ export function getClassNames(props: ActionButtonProps): string {
       },
       '&.ms-Button.ms-Button--action, &.ms-Button--action .ms-Button-icon': {
         fontWeight: FontWeights['medium'],
-        borderRadius: '5px',
         ...getTypeColor(props),
       },
       '& .ms-Button-flexContainer': {
@@ -132,12 +136,20 @@ export function getClassNames(props: ActionButtonProps): string {
         lineHeight: '1.5',
       },
       '&.ms-Button--action:hover ': {
-        backgroundColor: palette.skeColor.lightBlue,
+        //borderBottom: `3px solid ${palette.skeColor.interactive}`,
+        //backgroundColor: palette.skeColor.interactiveLight,
+        border: `2px solid ${palette.skeColor.interactive}`,
+        borderRadius: '5px',
+        paddingTop: '2px',
+        paddingLeft: '3px',
+        paddingRight: '5px',
       },
+
       '&.ms-Button--action:active ': {
-        position: 'relative',
-        top: '2px',
         transition: '0.15s',
+        transform: 'translateY(2px)',
+        transitionTimingFunction: 'ease',
+        //borderBottom: 'none',
       },
       '&.ms-Button--action:focus ': {
         backgroundColor: palette.skeColor.lightBlue,

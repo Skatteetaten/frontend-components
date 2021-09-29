@@ -9,7 +9,7 @@ export interface ActionButtonProps extends ButtonProps {
   color?: 'blue' | 'black' | 'red' | 'green' | 'white';
   /**  true hvis ikonet skal plasseres etter tekst, ellers rendres det foran. */
   iconAfter?: boolean;
-  /** Om knappen skal ha en ramme */
-  border?: boolean;
+  /** Om strek under knappen skal skjules */
+  hideBorder?: boolean;
   ariaLabel?: string;
 }

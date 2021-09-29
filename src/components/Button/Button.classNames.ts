@@ -14,7 +14,7 @@ function getTypeColor(props: ButtonProps): object {
   };
 
   switch (props.buttonStyle) {
-    case 'primary':
+    case 'primaryCornered':
       return {
         borderRadius: '6px',
         borderColor: palette.skeColor.blue,
@@ -27,12 +27,12 @@ function getTypeColor(props: ButtonProps): object {
           },
         },
       };
-    case 'primaryLarge':
+    case 'callToAction':
       return {
         borderColor: palette.skeColor.blue,
         background: palette.skeColor.blue,
         color: palette.skeColor.white,
-        boxShadow: `0 8px 6px -6px ${palette.skeColor.grey10}`,
+        boxShadow: `0 8px 6px -6px ${palette.skeColor.grey30}`,
         fontSize: FontSizes.largePlus,
         borderWidth: '3px',
         borderRadius: '7px',
@@ -41,7 +41,7 @@ function getTypeColor(props: ButtonProps): object {
         height: '80px',
         maxWidth: 'calc((75*550px)/100)',
       };
-    case 'primaryRoundedFilled':
+    case 'primary':
       return {
         borderRadius: radius,
         borderColor: palette.skeColor.blue,
@@ -51,12 +51,11 @@ function getTypeColor(props: ButtonProps): object {
       };
     case 'warning':
       return {
-        borderRadius: '6px',
+        borderRadius: radius,
         borderColor: palette.skeColor.burgundy30,
         background: palette.skeColor.burgundy10,
         color: palette.bodyText,
         ...sizeNormal,
-        boxShadow: `0 6px 6px -6px ${palette.skeColor.lightGrey}`,
 
         selectors: {
           '@media  only screen and (max-width: 479px)': {
@@ -64,21 +63,23 @@ function getTypeColor(props: ButtonProps): object {
           },
         },
       };
-    case 'secondary':
+    case 'secondarySimple':
       return {
-        padding: 0,
-        borderWidth: 0,
+        borderWidth: 3,
+        borderRadius: '6px',
+        borderColor: 'transparent',
+        textDecoration: 'underline',
         background: 'none',
         color: palette.skeColor.blue,
-        height: 'auto',
+        ...sizeNormal,
       };
     default:
-      // primaryRounded
+      // secondary
       return {
         borderRadius: radius,
-        borderColor: palette.skeColor.blue,
+        borderColor: palette.skeColor.interactive,
         background: palette.skeColor.white,
-        color: palette.skeColor.blue,
+        color: palette.skeColor.interactive,
         ...sizeNormal,
       };
   }
@@ -93,16 +94,31 @@ function getTypeFocusColor(props: ButtonProps): object {
         background: palette.skeColor.error,
         color: palette.white,
       };
-    case 'secondary':
+    case 'primaryCornered':
       return {
-        background: 'none',
-        color: palette.skeColor.blue,
+        borderColor: palette.skeColor.interactive,
+        background: palette.skeColor.interactiveDark,
+        color: palette.skeColor.white,
       };
+    case 'primary':
+      return {
+        borderColor: palette.skeColor.interactive,
+        background: palette.skeColor.interactiveDark,
+        color: palette.skeColor.white,
+      };
+
+    case 'callToAction':
+      return {
+        borderColor: palette.skeColor.interactive,
+        background: palette.skeColor.interactiveDark,
+        color: palette.skeColor.white,
+      };
+
     default:
       return {
-        borderColor: palette.skeColor.blue,
-        background: palette.skeColor.lightBlue,
-        color: palette.skeColor.blue,
+        borderColor: palette.skeColor.interactive,
+        background: palette.skeColor.interactiveLight,
+        color: palette.skeColor.interactive,
       };
   }
 }
@@ -122,21 +138,14 @@ function getDisabledColor(props: ButtonProps) {
   }
 }
 
-function getLabelStyles(props: ButtonProps) {
-  if (props.buttonStyle === 'secondary') {
-    return {
-      textDecoration: 'underline',
-    };
-  } else {
-    return;
-  }
-}
-
 function setFocusRadius(props: ButtonProps) {
-  if (props.buttonStyle === 'primary' || props.buttonStyle === 'warning') {
+  if (
+    props.buttonStyle === 'primaryCornered' ||
+    props.buttonStyle === 'secondarySimple'
+  ) {
     return '6px';
   }
-  if (props.buttonStyle === 'primaryLarge') {
+  if (props.buttonStyle === 'callToAction') {
     return '7px';
   } else {
     return '20px';
@@ -165,9 +174,7 @@ export function getClassNames(props: ButtonProps): string {
           borderWidth: '3px',
           fontWeight: 'normal',
           padding: '15px',
-          transition: 'background 0.2s',
-          boxShadow: `0 8px 6px -6px ${palette.skeColor.grey30}`,
-
+          transition: '0.2s',
           textAlign: props.icon ? 'left' : 'center',
           verticalAlign: 'top',
           ...getTypeColor(props),
@@ -175,14 +182,11 @@ export function getClassNames(props: ButtonProps): string {
         '&.ms-Button:hover, &.ms-Button:focus': {
           ...getTypeFocusColor(props),
         },
-        '&.ms-Button:hover .ms-Button-label': {
-          ...getLabelStyles(props),
-        },
         '&.ms-Button:active': {
-          position: 'relative',
-          top: '2px',
           transition: '0.15s',
           boxShadow: 'none',
+          transform: 'translateY(2px)',
+          transitionTimingFunction: 'ease',
         },
         '&.ms-Button:disabled': {
           background: palette.skeColor.whiteGrey,

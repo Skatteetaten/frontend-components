@@ -20,22 +20,23 @@ export const getClassNames = () => {
       padding: '25px',
       maxWidth: 'calc((75*550px)/100)',
       textDecoration: 'none',
-      transition: 'background 0.3s',
+      transition: '0.2s',
+
       selectors: {
         '&:hover': {
-          borderColor: palette.skeColor.blue,
-          background: palette.skeColor.lightBlue,
-          color: palette.skeColor.blue,
+          borderColor: palette.skeColor.interactiveDark,
+          background: palette.skeColor.interactiveDark,
+          color: palette.white,
         },
         '&:focus': {
-          borderColor: palette.skeColor.blue,
-          background: palette.skeColor.lightBlue,
-          color: palette.skeColor.blue,
+          borderColor: palette.skeColor.interactive,
+          background: palette.skeColor.interactiveDark,
+          color: palette.white,
           outline: 'none',
         },
         '&:active': {
-          position: 'relative',
-          top: '2px',
+          transform: 'translateY(2px)',
+          transitionTimingFunction: 'ease',
           transition: '0.15s',
           boxShadow: 'none',
         },

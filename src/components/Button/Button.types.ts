@@ -1,4 +1,5 @@
 import { IButtonProps } from '@fluentui/react';
+import { deprecate } from 'util';
 
 export interface ButtonProps extends IButtonProps {
   /** Ikon som skal vises foran teksten på knappen */
@@ -6,11 +7,11 @@ export interface ButtonProps extends IButtonProps {
   /** Benyttes for å definere type knapp som skal benyttes */
   buttonStyle?:
     | 'primary'
-    | 'primaryRounded'
-    | 'primaryRoundedFilled'
+    | 'primaryCornered'
     | 'warning'
     | 'secondary'
-    | 'primaryLarge';
+    | 'secondarySimple'
+    | 'callToAction';
   /**
    * Skjulte props
    */

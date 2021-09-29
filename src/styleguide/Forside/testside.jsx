@@ -681,22 +681,63 @@ function Testside(props) {
   return (
     <>
       <h1>Testside for komponenter</h1>
+      <h2>Knapperhierarki</h2>
+      <p>1. Call to Action - kun én på siden:</p>
+      <Button buttonStyle="callToAction">Send inn skjema</Button>
+      <p>2. Hovedfunksjoner (knapperad)</p>
+      <Button buttonStyle="primary">Send inn</Button>
+      <Button buttonStyle="secondary">Avbryt</Button>
+      <Button buttonStyle="warning">Slett</Button>
+      <p>3. Mindre sekundærhandliner</p>
+      <ActionButton icon="addOutline" border>
+        Legg til
+      </ActionButton>
+      <ActionButton border>Avbryt</ActionButton>
+      <p>(4 .lenker)</p>
+
+      <Link
+        path={'#link'}
+        text={'Åpne i nytt vindu'}
+        icon={'OpenInNew'}
+        placement="after"
+      />
       <h2>ActionButton</h2>
       <ActionButton icon="AddOutline">Legg til</ActionButton>
+      <ActionButton>Standard</ActionButton>
       <ActionButton icon="Update" color="black">
         Oppdater
       </ActionButton>
+      <ActionButton icon="Update" color="red">
+        Rød knapp
+      </ActionButton>
+      <ActionButton icon="Update" color="green">
+        Grønn knapp
+      </ActionButton>
+      <br />
+      <ActionButton icon="AddOutline" hideBorder>
+        Legg til
+      </ActionButton>
+      <ActionButton hideBorder>Standard</ActionButton>
+      <ActionButton icon="Update" color="black" hideBorder>
+        Oppdater
+      </ActionButton>
+      <ActionButton icon="Update" color="red" hideBorder>
+        Rød knapp
+      </ActionButton>
+      <ActionButton icon="Update" color="green" hideBorder>
+        Grønn knapp
+      </ActionButton>
       <h2>Button</h2>
-
-      <Button buttonStyle="primary">Godkjenn</Button>
-      <Button buttonStyle="primaryRoundedFilled">Send inn uendret</Button>
-      <Button icon="edit">Endre</Button>
+      <Button>Standard</Button>
+      <Button icon="edit">Ikon</Button>
+      <Button buttonStyle="primary">Primary</Button>
+      <Button buttonStyle="secondary">Secondary</Button>
+      <Button buttonStyle="primaryCornered">Primary cornered</Button>
+      <Button buttonStyle="secondarySimple">Secondary simple</Button>
       <Button buttonStyle="warning">Avvis</Button>
       <h2>ButtonLink</h2>
-
       <ButtonLink path={'#'} text="Se og endre skattekort" />
       <h2>IconButton</h2>
-
       <IconButton title="Skriv ut" circle buttonSize="large" icon="Print" />
       <IconButton title="Skriv ut" buttonSize="large" icon="Print" />
       <IconButton title="Skriv ut" circle buttonSize="default" icon="Print" />
@@ -773,11 +814,9 @@ function Testside(props) {
         />
       </NavigationTile>
       <h2>FooterContent</h2>
-
       <ScrollToTopButton label={'Til toppen'} />
       <FooterContent />
       <h2>Pagination</h2>
-
       <Pagination
         currentPage={currentPage}
         onPageChange={(page) => {
@@ -788,7 +827,6 @@ function Testside(props) {
         total={10}
         pageSize={pageSize}
       />
-
       <div style={{ marginTop: '60px', marginBottom: '20px' }}>
         <h2>TopStripe, TopBanner</h2>
 
@@ -835,7 +873,6 @@ function Testside(props) {
         <div>test</div>
       </TopBanner>
       <h2>Typography</h2>
-
       <Typography>
         <h1>Overskriftsnivå 1</h1>
         <p>
@@ -875,7 +912,6 @@ function Testside(props) {
         </ol>
       </Typography>
       <h2>FileUploader</h2>
-
       <FileUploader
         addFileString={'Last opp fil'}
         label={'Last opp vedlegg'}
@@ -902,7 +938,6 @@ function Testside(props) {
         loading={spinner}
       />
       <h2>RadioButtonGroup</h2>
-
       <RadioButtonGroup
         label="Type virksomhet"
         options={[
@@ -919,7 +954,6 @@ function Testside(props) {
         id="radio"
       />
       <h2>CheckBox</h2>
-
       <fieldset style={{ border: 'none', margin: '0', padding: '0' }}>
         <legend style={{ fontSize: '16px', marginBottom: '4px' }}>
           Velg aktuelle lover
@@ -929,7 +963,6 @@ function Testside(props) {
         <CheckBox boxSide={'start'} label="Skatteforvaltningsloven" />
       </fieldset>
       <h2>ComboBox</h2>
-
       <ComboBox
         label="Nedtrekksliste"
         help="Tekst som hjelper brukeren til å fylle ut feltet."
@@ -940,7 +973,6 @@ function Testside(props) {
         useComboBoxAsMenuWidth
         calloutFloating={false}
       />
-
       <ComboBox
         label="Nedtrekksliste"
         help="Hjelpetekst"
@@ -961,7 +993,6 @@ function Testside(props) {
         useComboBoxAsMenuWidth
         errorMessage={'Vis med feil'}
       />
-
       <ComboBox
         readOnly
         label="Lesemodus:"
@@ -978,9 +1009,7 @@ function Testside(props) {
         ariaLabel="Eksempel ComboBox"
         useComboBoxAsMenuWidth
       />
-
       <h2>Datepicker</h2>
-
       <DatePicker
         id={'my-date1'}
         label={'Velg en dato'}
@@ -1008,9 +1037,7 @@ function Testside(props) {
         isRequiredErrorMessage={'Dato må fylles ut'}
         errorMessage={'Vis med feil'}
       />
-
       <h2>Dropdown</h2>
-
       <Dropdown
         label="Velg favoritt"
         help="Tekst som hjelper brukeren å forstå eller få til."
@@ -1028,9 +1055,7 @@ function Testside(props) {
         options={initialState.options}
         errorMessage={'Vis med feil'}
       />
-
       <h2>SearchField</h2>
-
       <SearchField
         searchFieldSize="standard"
         border="slim"
@@ -1044,18 +1069,13 @@ function Testside(props) {
         placeholder="Skriv søkeord her"
         ariaLabel="Søk"
       />
-
       <h2>TextField</h2>
-
       <TextField id={'my-input'} label={'Navn'} />
-
       <TextField label={'Navn'} inputSize={'large'} />
-
       <TextField
         label="Inntektsår"
         errorMessage={'Inntekståret må være etter 2008.'}
       />
-
       <TextField
         readOnly
         editable
@@ -1063,7 +1083,6 @@ function Testside(props) {
         boldText={true}
         value="Siri Saksbehandler"
       />
-
       <h2>Disabled</h2>
       <TextField disabled label={'Tekstfelt'} value="Tekst" />
       <TextField
@@ -1072,7 +1091,6 @@ function Testside(props) {
         label={'Stort tekstfelt'}
         value="Tekst"
       />
-
       <TextField
         disabled
         label={'Tekstfelt med placeholder'}
@@ -1086,7 +1104,6 @@ function Testside(props) {
         help="Tekst som hjelper brukeren å forstå eller få til."
         options={initialState.options}
       />
-
       <Dropdown
         label="Stor dropdown"
         disabled
@@ -1095,7 +1112,6 @@ function Testside(props) {
         help="Tekst som hjelper brukeren å forstå eller få til."
         options={initialState.options}
       />
-
       <Dropdown
         label="Dropdown med placeholder"
         disabled
@@ -1192,9 +1208,7 @@ function Testside(props) {
         value="Verdi"
         ariaLabel="Søk"
       />
-
       <h2>Accordion</h2>
-
       <Accordion>
         <AccordionItem
           toggleContent
@@ -1447,7 +1461,6 @@ function Testside(props) {
         </AccordionMenu>
       </div>
       <h2>Card</h2>
-
       <Card color={Card.Color.BEIGE} title="Beige" isExpanded={false} expand>
         <p>
           De fleste lønnsmottakere og pensjonister fikk skatteoppgjøret 27.
@@ -1506,7 +1519,6 @@ function Testside(props) {
           skattekontoret.
         </p>
       </Card>
-
       <Card
         color={Card.Color.WHITE}
         border={Card.Border.YELLOW_BORDER}
@@ -1522,7 +1534,6 @@ function Testside(props) {
           skattekontoret.
         </p>
       </Card>
-
       <Card
         color={Card.Color.WHITE}
         border={Card.Border.RED_BORDER}
@@ -1539,24 +1550,19 @@ function Testside(props) {
         </p>
       </Card>
       <h2>OpenClose</h2>
-
       <OpenClose title={'Standard åpne/lukke'}>
         <div>Innhold inni en div</div>
       </OpenClose>
-
       <OpenClose iconRight title={'Ikonet til høyre'}>
         <div>Innhold inni en div</div>
       </OpenClose>
-
       <OpenClose compact title={'Kompakt versjon'}>
         <div>Innhold inni en div</div>
       </OpenClose>
-
       <OpenClose compact iconRight title={'Ikon til høyre (kompakt)'}>
         <div>Innhold inni en div</div>
       </OpenClose>
       <h2>CommandBar</h2>
-
       <CommandBar
         items={[
           {
@@ -1597,7 +1603,6 @@ function Testside(props) {
         ]}
       />
       <h2>StepList</h2>
-
       <StepList ariaLabel="Liste med steg">
         {showFirstStep && (
           <Step
@@ -1646,7 +1651,6 @@ function Testside(props) {
         </Step>
       </StepList>
       <h2>Tabs</h2>
-
       <Tabs underline={true}>
         <TabItem
           headerText="Tilgjengelige oppgaver"
@@ -1667,7 +1671,6 @@ function Testside(props) {
         </TabItem>
       </Tabs>
       <h2>Chip</h2>
-
       <Chip aria-label="Klagesak">Klagesak </Chip>
       <Chip type={Chip.OK} size="standard" aria-label="Godkjent">
         <Icon iconName="Check" /> Godkjent
@@ -1676,7 +1679,6 @@ function Testside(props) {
         Unntatt offentlighet
       </Chip>
       <h2>MessageBar</h2>
-
       <MessageBar type={MessageBar.Type.success} onDismiss={() => null}>
         Filen ble lastet opp.
       </MessageBar>
@@ -1694,7 +1696,6 @@ function Testside(props) {
         Satsene for denne avgiftstypen ble oppdatert 01.01.2017.
       </MessageBar>
       <h2>LabelWithCallout</h2>
-
       <LabelWithCallout
         label={'Omregistreringsavgift'}
         help={
@@ -1702,22 +1703,18 @@ function Testside(props) {
         }
       />
       <h2>ErrorMessage</h2>
-
       <ErrorMessage>Skriv datoen slik: 17.05.2019</ErrorMessage>
       <h2>ProgressBar</h2>
-
       <ProgressBar
         label="Laster inn..."
         description="Vennligst vent mens vi laster inn litt data"
         percentComplete={0.33}
       />
       <h2>Spinner</h2>
-
       <Spinner size={Spinner.Size.small} spinnerColor="black" />
       <Spinner size={Spinner.Size.medium} spinnerColor="black" />
       <Spinner size={Spinner.Size.large} spinnerColor="black" />
       <h2>DetailsList</h2>
-
       <DetailsList
         columns={[
           {
@@ -1932,7 +1929,6 @@ function Testside(props) {
         constrainMode={DetailsList.ConstrainMode.horizontalConstrained}
       />
       <h2>Table</h2>
-
       <Table
         data={data}
         editableContent={editableContent}
@@ -1946,9 +1942,7 @@ function Testside(props) {
         editableRows
         columns={columns}
       />
-
       <h2>Icons</h2>
-
       {printIcons(iconGroup.arrows)}
       {printIcons(iconGroup.addremove)}
       {printIcons(iconGroup.files)}

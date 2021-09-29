@@ -61,14 +61,6 @@ function getCircleHoverStyles(props: IconButtonProps) {
   };
 }
 
-function getCircleFocusStyles(props: IconButtonProps) {
-  const palette = getTheme().palette as PaletteProps;
-  return {
-    borderColor: palette.skeColor.darkBlue,
-    backgroundColor: palette.skeColor.darkBlue,
-  };
-}
-
 function getIconSize(props: IconButtonProps) {
   switch (props.buttonSize) {
     case 'xSmall':
@@ -131,9 +123,8 @@ export const getClassNames = function getClassNames(props: IconButtonProps) {
         },
         '&.ms-Button--icon:active': {
           color: palette.skeColor.interactiveDark,
-          position: 'relative',
-          top: '2px',
           transition: '0.15s',
+          transform: 'translateY(2px)',
         },
         '&.ms-Button--icon:disabled': {
           ...getCircleStyles(props),
