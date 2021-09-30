@@ -94,7 +94,7 @@ function getBorder(props: ActionButtonProps): object {
 
 export function getClassNames(props: ActionButtonProps): string {
   const palette = getTheme().palette as PaletteProps;
-  const border = props.border;
+  const { border, disabled } = props;
 
   const inset = -4;
   const radius = '0';
@@ -136,13 +136,15 @@ export function getClassNames(props: ActionButtonProps): string {
         lineHeight: '1.5',
       },
       '&.ms-Button--action:hover ': {
-        backgroundColor: palette.skeColor.interactiveLight,
+        backgroundColor: disabled
+          ? 'undefined'
+          : palette.skeColor.interactiveLight,
         transition: 'background 0.3s',
       },
 
       '&.ms-Button--action:active ': {
         transition: '0.15s',
-        transform: 'translateY(2px)',
+        transform: disabled ? '0s' : 'translateY(2px)',
         transitionTimingFunction: 'ease',
       },
       '&.ms-Button--action:focus ': {
@@ -160,6 +162,7 @@ export function getClassNames(props: ActionButtonProps): string {
       },
       '&.ms-Button--action:disabled, &.ms-Button--action:disabled i': {
         color: palette.skeColor.lightGrey,
+        cursor: 'not-allowed',
       },
     },
   });

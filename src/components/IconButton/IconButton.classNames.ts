@@ -94,6 +94,7 @@ export const getClassNames = function getClassNames(props: IconButtonProps) {
   const palette = getTheme().palette as PaletteProps;
   const inset = -4;
   const radius = '0';
+  const disabled = props.disabled;
 
   return mergeStyles([
     getFocusStyle({ palette }, inset, 'relative', radius),
@@ -124,12 +125,13 @@ export const getClassNames = function getClassNames(props: IconButtonProps) {
         '&.ms-Button--icon:active': {
           color: palette.skeColor.interactiveDark,
           transition: '0.15s',
-          transform: 'translateY(2px)',
+          transform: disabled ? 'none' : 'translateY(2px)',
         },
         '&.ms-Button--icon:disabled': {
           ...getCircleStyles(props),
           color: palette.skeColor.lightGrey,
           borderColor: palette.skeColor.lightGrey,
+          cursor: 'not-allowed',
         },
         '&.ms-Button--icon:disabled i': {
           color: palette.skeColor.lightGrey,

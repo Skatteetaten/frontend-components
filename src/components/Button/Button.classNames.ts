@@ -48,6 +48,11 @@ function getTypeColor(props: ButtonProps): object {
         background: palette.skeColor.blue,
         color: palette.skeColor.white,
         ...sizeNormal,
+        selectors: {
+          '@media  only screen and (max-width: 479px)': {
+            width: '100%',
+          },
+        },
       };
     case 'warning':
       return {
@@ -72,6 +77,11 @@ function getTypeColor(props: ButtonProps): object {
         background: 'none',
         color: palette.skeColor.blue,
         ...sizeNormal,
+        selectors: {
+          '@media  only screen and (max-width: 479px)': {
+            width: '100%',
+          },
+        },
       };
     default:
       // secondary
@@ -81,6 +91,11 @@ function getTypeColor(props: ButtonProps): object {
         background: palette.skeColor.white,
         color: palette.skeColor.interactive,
         ...sizeNormal,
+        selectors: {
+          '@media  only screen and (max-width: 479px)': {
+            width: '100%',
+          },
+        },
       };
   }
 }
@@ -164,6 +179,7 @@ export function getClassNames(props: ButtonProps): string {
   const theme = getTheme();
   const palette = theme.palette as PaletteProps;
   const inset = setInset(props);
+  const disabled = props.disabled;
   const radius = setFocusRadius(props);
   return mergeStyles([
     getFocusStyle(theme, inset, 'relative', radius),
@@ -175,7 +191,7 @@ export function getClassNames(props: ButtonProps): string {
           fontWeight: 'normal',
           padding: '15px',
           transition: '0.2s',
-          textAlign: props.icon ? 'left' : 'center',
+          textAlign: 'center',
           verticalAlign: 'top',
           ...getTypeColor(props),
         },
@@ -185,13 +201,14 @@ export function getClassNames(props: ButtonProps): string {
         '&.ms-Button:active': {
           transition: '0.15s',
           boxShadow: 'none',
-          transform: 'translateY(2px)',
+          transform: disabled ? 'none' : 'translateY(2px)',
           transitionTimingFunction: 'ease',
         },
         '&.ms-Button:disabled': {
           background: palette.skeColor.whiteGrey,
           borderColor: palette.skeColor.lightGrey,
           color: palette.skeColor.lightGrey,
+          cursor: 'not-allowed',
           ...getDisabledColor(props),
         },
         '&.ms-Button i': {
