@@ -5,6 +5,7 @@ import { Button } from '@skatteetaten/frontend-components/Button';
 import { Card } from '@skatteetaten/frontend-components/Card';
 import { DatePicker } from '@skatteetaten/frontend-components/DatePicker';
 import { ErrorMessage } from '@skatteetaten/frontend-components/ErrorMessage';
+import { ErrorSummary } from '@skatteetaten/frontend-components/ErrorSummary';
 import { Icon } from '@skatteetaten/frontend-components/Icon';
 import { Image } from '@skatteetaten/frontend-components/Image';
 import { Link } from '@skatteetaten/frontend-components/Link';
@@ -235,6 +236,73 @@ import { TopStripeButton } from '@skatteetaten/frontend-components/TopStripe/Top
             </div>
           </div>
         </Card>
+      </div>
+    </AccordionItem>
+    <AccordionItem
+      toggleContent
+      toggleButtonText={'Flere feil på siden'}
+      headingLevel="3"
+      stepId={'step-3'}
+    >
+      <p>Hovedregler:</p>
+      <ul>
+        <li>
+          Vi viser ikke brukerfeil eller valideringsfeil uten av brukeren
+          foretar seg noe.
+        </li>
+        <li>
+          Brukerfeil vises etter at bruker har lagt inn opplysningene som fører
+          til feil. For tekstfelt betyr det for eksempel at valideringsfeil
+          først vises etter at brukeren har forlatt feltet, og at feilmeldinger
+          knyttet til obligatoriske felt vises ved fullføring, som når brukeren
+          trykker «Send inn» i et skjema.
+        </li>
+        <li>
+          Vi viser ikke brukerfeil når opplysningene i feltet er gyldige. (Men
+          vi kan bruke et varsel dersom opplysningene er uvanlige eller at vi
+          tror de kan være uriktige.
+        </li>
+      </ul>
+      <div>
+        <div style={{ maxWidth: '350px' }}>
+          <TextField
+            label="Inntektsår"
+            id="input-id1"
+            value="1009"
+            errorMessage={'Inntekståret må være etter 2008.'}
+          />
+          <br />
+          <TextField
+            label="E-post"
+            id="input-id2"
+            value="Ola.Normann.no"
+            errorMessage={
+              'E-posten ser ikke riktig ut. Skriv slik: ola.normann@norge.no'
+            }
+          />
+          <br />
+          <TextField
+            label="Antall dager i Norge i perioden/inntekståret"
+            id="input-id3"
+            value=""
+            errorMessage={'Antall dager må fylles ut.'}
+          />
+        </div>
+        <br />
+        <ErrorSummary
+          title={'For å gå videre må du rette opp i følgende:'}
+          errors={[
+            { id: 'input_aar-input', error: 'Inntekståret må være etter 2008' },
+            {
+              id: 'input_epost-input',
+              error:
+                'E-posten ser ikke riktig ut. Skriv slik: ola.normann@norge.no',
+            },
+            { id: 'input_dager-input', error: 'Antall dager må fylles ut.' },
+          ]}
+        />
+        <br />
+        <Button buttonStyle="primary">Send inn</Button>
       </div>
     </AccordionItem>
   </Accordion>

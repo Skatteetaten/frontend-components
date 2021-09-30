@@ -6,13 +6,13 @@ import { MessageBar } from '@skatteetaten/frontend-components/MessageBar';
 </MessageBar>;
 ```
 
-**StepList (Stegliste): stegvis veiledning for brukeren**
+**Stegvis veiledning for brukeren**
 
 ```js
 import { Button } from '@skatteetaten/frontend-components/Button';
-import { RadioButtonGroup } from '@skatteetaten/frontend-components/RadioButtonGroup';
 import { Step } from '@skatteetaten/frontend-components/StepList/Step';
-import { StepList } from '@skatteetaten/frontend-components/StepList/StepList';
+import { StepList } from '@skatteetaten/frontend-components/StepList';
+import { RadioButtonGroup } from '@skatteetaten/frontend-components/RadioButtonGroup';
 
 const [state, setState] = React.useState({
   options: [
@@ -93,12 +93,12 @@ Oppsummering før innsending:
 
 ```js
 import { Button } from '@skatteetaten/frontend-components/Button';
-import { Card } from '@skatteetaten/frontend-components/Card';
-import { CheckBox } from '@skatteetaten/frontend-components/CheckBox';
-import { RadioButtonGroup } from '@skatteetaten/frontend-components/RadioButtonGroup';
 import { Step } from '@skatteetaten/frontend-components/StepList/Step';
-import { StepList } from '@skatteetaten/frontend-components/StepList/StepList';
+import { StepList } from '@skatteetaten/frontend-components/StepList';
+import { RadioButtonGroup } from '@skatteetaten/frontend-components/RadioButtonGroup';
+import { CheckBox } from '@skatteetaten/frontend-components/CheckBox';
 import { Typography } from '@skatteetaten/frontend-components/Typography';
+import { Card } from '@skatteetaten/frontend-components/Card';
 
 const [state, setState] = React.useState({
   options: [
@@ -195,10 +195,10 @@ StepList som er fullført og viser et resultat i i siste steg
 
 ```js
 import { Button } from '@skatteetaten/frontend-components/Button';
-import { LinkGroup } from '@skatteetaten/frontend-components/LinkGroup';
 import { Step } from '@skatteetaten/frontend-components/StepList/Step';
-import { StepList } from '@skatteetaten/frontend-components/StepList/StepList';
+import { StepList } from '@skatteetaten/frontend-components/StepList';
 import { Typography } from '@skatteetaten/frontend-components/Typography';
+import { LinkGroup } from '@skatteetaten/frontend-components/LinkGroup';
 
 const links = [
   {
@@ -261,6 +261,102 @@ const titles = {
       </p>
     </Typography>
     <LinkGroup links={links} />
+  </Step>
+</StepList>;
+```
+
+**Viser ErrorSummary**
+<br />
+ErrorSummary vises når bruker trykker på "neste"
+
+```js
+import { Button } from '@skatteetaten/frontend-components/Button';
+import { ErrorSummary } from '@skatteetaten/frontend-components/ErrorSummary';
+import { Step } from '@skatteetaten/frontend-components/StepList/Step';
+import { StepList } from '@skatteetaten/frontend-components/StepList';
+import { TextField } from '@skatteetaten/frontend-components/TextField';
+
+const [showError, setShowError] = React.useState(false);
+
+const titles = {
+  step1: {
+    no: 'Jobber du?',
+    en: 'Are you a wage earner doing paid work?',
+  },
+  step2: {
+    no: 'Overnatting',
+    en: 'Spend the night somewhere else than at home?',
+  },
+  step3: {
+    no: 'Adresse',
+    en: 'Address',
+  },
+};
+const showFirstStep = true;
+
+<StepList ariaLabel="Liste med steg">
+  {showFirstStep && (
+    <Step
+      stepTitle={titles.step1.no}
+      stepId={'step-1-1'}
+      actionBtn={{
+        text: 'Endre',
+        icon: 'edit',
+        ariaLabel: 'Endre jobber du?',
+      }}
+    >
+      <div>
+        <p>Jeg jobber</p>
+      </div>
+    </Step>
+  )}
+  <Step
+    stepTitle={titles.step2.no}
+    stepId={'step-1-2'}
+    actionBtn={{ text: 'Endre', icon: 'edit', ariaLabel: 'Endre overnatting' }}
+  >
+    <div>
+      <p>Ja, jeg overnatter et annet sted enn hjemme på grunn av jobb</p>
+    </div>
+  </Step>
+  <Step stepTitle={titles.step3.no} stepId={'step-1-3'} activeStep={true}>
+    <div style={{ width: '386px', marginBottom: '16px', marginTop: '8px' }}>
+      <TextField
+        id={'input_adresse'}
+        label={'Adresse'}
+        errorMessage={showError ? 'Adresse må fylles ut.' : undefined}
+      />
+    </div>
+    <div style={{ width: '400px', display: 'flex' }}>
+      <div style={{ marginRight: '16px' }}>
+        <TextField
+          id={'input_postnummer'}
+          label={'Postnummer'}
+          errorMessage={showError ? 'Postnummer må fylles ut.' : undefined}
+        />
+      </div>
+    </div>
+    <br />
+  </Step>
+  <Step stepType={'next'}>
+    {showError && (
+      <div style={{ marginBottom: '8px' }}>
+        <ErrorSummary
+          title={'For å gå videre må du rette opp i følgende:'}
+          errors={[
+            { id: 'input_adresse-input', error: 'Adresse må fylles ut.' },
+
+            {
+              id: 'input_postnummer-input',
+              error: 'Postnummer må fylles ut.',
+            },
+          ]}
+        />
+      </div>
+    )}
+    <Button buttonStyle="primary" onClick={() => setShowError(true)}>
+      Neste
+    </Button>
   </Step>
 </StepList>;
 ```
