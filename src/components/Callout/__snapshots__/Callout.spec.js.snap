@@ -197,30 +197,29 @@ exports[`Callout komponent matcher snapshot 1`] = `
                 background: #cde1f9;
                 border-color: #1362ae;
                 border-width: 3px;
-                border: 3px solid #1362ae;
                 color: #1362ae;
-                transition: background-color 0.3s;
+                transition: background-color 0.2s;
               }
               &.ms-Button--icon:focus {
                 background: #cde1f9;
                 border-color: #1362ae;
                 border-width: 3px;
-                border: 3px solid #1362ae;
                 color: #1362ae;
-                transition: background-color 0.3s;
+                transition: background-color 0.2s;
               }
               &:focus&:after {
                 border-color: transparent;
               }
               &.ms-Button--icon:active {
-                background-color: #093e61;
-                border-color: #093e61;
-                color: #ffffff;
+                color: #093e61;
+                transform: translateY(2px);
+                transition: 0.15s;
               }
               &.ms-Button--icon:disabled {
                 border-color: #b2b2b2;
                 border-width: 0px;
                 color: #b2b2b2;
+                cursor: not-allowed;
               }
               &.ms-Button--icon:disabled i {
                 color: #b2b2b2;

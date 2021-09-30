@@ -128,13 +128,15 @@ exports[`ScrollToTopButton komponent matcher snapshot 1`] = `
               color: #0a365f;
             }
             &.ms-Button.ms-Button--action {
-              color: #093e61;
+              border-bottom: 2px solid transparent;
+              color: #1362ae;
+              font-weight: 500;
               height: auto;
-              min-height: 40px;
-              padding-bottom: 10px;
+              min-height: 32px;
+              padding-bottom: 3px;
               padding-left: 4px;
               padding-right: 4px;
-              padding-top: 10px;
+              padding-top: 3px;
               text-align: left;
             }
             & span {
@@ -143,7 +145,9 @@ exports[`ScrollToTopButton komponent matcher snapshot 1`] = `
             &.ms-Button--action .ms-Button-icon {
               color: #1362ae;
               font-size: 1.25rem;
-              transform: translateY(1px);
+              font-weight: 500;
+              margin-left: 0;
+              transform: translateY(2px);
             }
             & .ms-Button-flexContainer {
               align-items: baseline;
@@ -153,12 +157,23 @@ exports[`ScrollToTopButton komponent matcher snapshot 1`] = `
             &.ms-Button--action .ms-Button-label {
               line-height: 1.5;
             }
-            &.ms-Button--action:hover .ms-Button-label {
-              color: rgba(0, 0, 0, 0.95);
-              text-decoration: underline;
+            &.ms-Button--action:hover  {
+              background-color: #cde1f9;
+              transition: background 0.3s;
             }
-            &.ms-Button--action:hover .ms-Button-icon {
-              color: rgba(0, 0, 0, 0.95);
+            &.ms-Button--action:active  {
+              transform: translateY(2px);
+              transition-timing-function: ease;
+              transition: 0.15s;
+            }
+            &.ms-Button--action:focus  {
+              background-color: #cde1f9;
+              box-shadow: none;
+              outline: transparent;
+            }
+            &.ms-Button--action:focus::after {
+              border: none;
+              outline: 0px solid transparent !important;
             }
             &.ms-Button--action:active .ms-Button-label {
               text-align: left;
@@ -166,9 +181,11 @@ exports[`ScrollToTopButton komponent matcher snapshot 1`] = `
             }
             &.ms-Button--action:disabled {
               color: #b2b2b2;
+              cursor: not-allowed;
             }
             &.ms-Button--action:disabled i {
               color: #b2b2b2;
+              cursor: not-allowed;
             }
             &:hover .ms-Button-flexContainer > div {
               background-color: #cde1f9;

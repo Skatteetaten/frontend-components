@@ -21,23 +21,24 @@ exports[`ButtonLink-komponent matcher snapshot 1`] = `
         padding-right: 25px;
         padding-top: 25px;
         text-decoration: none;
-        transition: background 0.3s;
+        transition: 0.2s;
       }
       &:hover {
-        background: #cde1f9;
-        border-color: #1362ae;
-        color: #1362ae;
-      }
-      &:focus {
-        background: #cde1f9;
-        border-color: #1362ae;
-        color: #1362ae;
-        outline: none;
-      }
-      &:active {
         background: #093e61;
         border-color: #093e61;
         color: #ffffff;
+      }
+      &:focus {
+        background: #093e61;
+        border-color: #1362ae;
+        color: #ffffff;
+        outline: none;
+      }
+      &:active {
+        box-shadow: none;
+        transform: translateY(2px);
+        transition-timing-function: ease;
+        transition: 0.15s;
       }
   href="#"
   role="button"
