@@ -1,6 +1,13 @@
 import { mergeStyles } from '@fluentui/merge-styles';
 import { getTheme } from '@fluentui/react/lib/Styling';
-import { FontSizes, FontWeights, PaletteProps, getFocusStyle } from '../utils';
+import { ActionButton } from 'components/entry';
+import {
+  FontSizes,
+  IconFontSizes,
+  FontWeights,
+  PaletteProps,
+  getFocusStyle,
+} from '../utils';
 import { ActionButtonProps } from './ActionButton.types';
 
 function getTypeColor(props: ActionButtonProps): object {
@@ -94,7 +101,7 @@ function getBorder(props: ActionButtonProps): object {
 
 export function getClassNames(props: ActionButtonProps): string {
   const palette = getTheme().palette as PaletteProps;
-  const { border, disabled } = props;
+  const { border, disabled, iconSize } = props;
 
   const inset = -4;
   const radius = '0';
@@ -125,9 +132,9 @@ export function getClassNames(props: ActionButtonProps): string {
       },
       '&.ms-Button--action .ms-Button-icon': {
         // @ts-ignore TODO
-        fontSize: FontSizes[props.iconSize],
+        fontSize: IconFontSizes[props.iconSize],
         marginLeft: '0',
-        transform: 'translateY(1px)',
+        transform: 'translateY(2px)',
 
         // @ts-ignore TODO
         ...getIconColor(props),

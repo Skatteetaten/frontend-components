@@ -4,12 +4,9 @@ import * as React from 'react';
 import { getClassNames } from './ActionButton.classNames';
 import { ActionButtonProps } from './ActionButton.types';
 
-/*
- * visibleName ActionButton (Aksjonsknapp)
- */
 export class ActionButton extends React.PureComponent<ActionButtonProps, {}> {
-  static NORMAL = 'icon';
-  static LARGE = 'xxLarge';
+  static NORMAL = 'large';
+  static LARGE = 'xlarge';
 
   static defaultProps = {
     color: 'blue',
