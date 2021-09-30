@@ -1,6 +1,7 @@
 import React from 'react';
 import { mount } from 'enzyme';
-import { ErrorSummary, TextField } from '../index';
+import { ErrorSummary } from '.';
+import { TextField } from '../TextField';
 import { matches } from '../utils/test-utils';
 
 function oppsettMount(props) {

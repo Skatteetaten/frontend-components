@@ -320,10 +320,10 @@ exports[`StepList komponent matcher snapshot 1`] = `
 
                                     {
                                       background-color: #b2b2b2;
+                                      bottom: 34px;
                                       float: right;
                                       height: 2px;
                                       position: absolute;
-                                      top: 40px;
                                       width: 21px;
                                     }
                                     @media only screen and (max-width: 479px){& {
