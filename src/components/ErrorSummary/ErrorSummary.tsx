@@ -7,12 +7,20 @@ import { Icon } from '../Icon';
 import classnames from 'classnames';
 
 export const ErrorSummary: React.FC<ErrorSummaryProps> = (props) => {
-  const { children, className, id, onClick, titleTagName = 'h3' } = props;
+  const {
+    children,
+    className,
+    errors,
+    id,
+    onClick,
+    titleTagName = 'h3',
+  } = props;
   const styles = getClassNames(props);
   const TitleTag = titleTagName as keyof JSX.IntrinsicElements;
+  const errorsExist = errors && errors.length;
 
-  const scrollToId = (id: string) => {
-    const element = document.getElementById(id);
+  const scrollToId = (elementId: string) => {
+    const element = document.getElementById(elementId);
     if (element) {
       element.scrollIntoView({
         behavior: 'smooth',
@@ -21,7 +29,7 @@ export const ErrorSummary: React.FC<ErrorSummaryProps> = (props) => {
     }
   };
 
-  return (
+  return errorsExist ? (
     <div
       className={classnames(className, styles.mainContainer)}
       id={id ? id : 'errorsummary'}
@@ -36,7 +44,7 @@ export const ErrorSummary: React.FC<ErrorSummaryProps> = (props) => {
       <div className={styles.errorListContainer}>
         <TitleTag>{props.title}</TitleTag>
         <ul>
-          {props.errors.map((error: { id: string; error: string }) => (
+          {errors.map((error: { id: string; error: string }) => (
             <li key={error.id}>
               <SkeLink
                 linkGroup
@@ -45,11 +53,7 @@ export const ErrorSummary: React.FC<ErrorSummaryProps> = (props) => {
                 placement="before"
                 text={error.error}
                 onClick={() => {
-                  if (onClick) {
-                    onClick(error.id);
-                  } else {
-                    scrollToId(error.id);
-                  }
+                  onClick ? onClick(error.id) : scrollToId(error.id);
                 }}
               />
             </li>
@@ -58,5 +62,5 @@ export const ErrorSummary: React.FC<ErrorSummaryProps> = (props) => {
         {children}
       </div>
     </div>
-  );
+  ) : null;
 };

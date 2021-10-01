@@ -63,4 +63,21 @@ describe('ErrorSummary komponent', () => {
     wrapper.find('li').at(1).find('a').simulate('click');
     expect(document.activeElement).toBe(input.getDOMNode());
   });
+
+  it('Skal ikke vise ErrorSummary hvis ingen feil finnes', () => {
+    const wrapper = oppsettMount({
+      title: 'For å gå videre må du rette opp i følgende:',
+      errors: [],
+    });
+    expect(wrapper.find('h3').exists()).toBeFalsy();
+    expect(wrapper.find('li').exists()).toBeFalsy();
+  });
+  it('Skal ikke vise ErrorSummary hvis errors er undefined', () => {
+    const wrapper = oppsettMount({
+      title: 'For å gå videre må du rette opp i følgende:',
+      errors: undefined,
+    });
+    expect(wrapper.find('h3').exists()).toBeFalsy();
+    expect(wrapper.find('li').exists()).toBeFalsy();
+  });
 });
