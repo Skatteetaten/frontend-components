@@ -11,7 +11,7 @@ export const ErrorSummary: React.FC<ErrorSummaryProps> = (props) => {
     children,
     className,
     errors,
-    id,
+    id = 'errorsummary',
     onClick,
     titleTagName = 'h3',
   } = props;
@@ -32,7 +32,7 @@ export const ErrorSummary: React.FC<ErrorSummaryProps> = (props) => {
   return errorsExist ? (
     <div
       className={classnames(className, styles.mainContainer)}
-      id={id ? id : 'errorsummary'}
+      id={id}
       role="status"
       aria-live="assertive"
     >
