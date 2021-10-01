@@ -39,7 +39,6 @@ const getStepContentInner = (
           paddingBottom: '21px',
           borderBottom: 'none',
           borderTop: 'none',
-          borderTop: `0 solid transparent`,
         },
       },
     };
