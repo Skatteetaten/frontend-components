@@ -1,1 +1,8 @@
-<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><defs><path id="a" d="M5.88 16.88 12 10.773l6.12 6.107L20 15l-8-8-8 8z"/></defs><use fill="#000" fill-rule="nonzero" transform="rotate(180 12 11.94)" xlink:href="#a"/></svg>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 25.4.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 24 24" style="enable-background:new 0 0 24 24;" xml:space="preserve">
+<g transform="rotate(180 12 11.94)">
+	<path id="a" d="M18.1,7L12,13.1L5.9,7L4,8.9l8,8l8-8L18.1,7z"/>
+</g>
+</svg>
