@@ -37,7 +37,8 @@ const getStepContentInner = (
       selectors: {
         '@media  only screen and (max-width: 479px)': stepType === 'result' && {
           paddingBottom: '21px',
-          borderBottom: `0 solid transparent`,
+          borderBottom: 'none',
+          borderTop: 'none',
           borderTop: `0 solid transparent`,
         },
       },
