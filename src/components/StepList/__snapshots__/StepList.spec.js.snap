@@ -59,8 +59,8 @@ exports[`StepList komponent matcher snapshot 1`] = `
                 }
                 @media  only screen and (max-width: 479px){& {
                   border: 0 none;
-                  outline-offset: 0 none;
-                  outline: 0 none;
+                  outline-offset: none;
+                  outline: none;
                   padding-bottom: 0;
                   padding-left: 2px;
                   padding-right: 2px;
@@ -559,8 +559,8 @@ exports[`StepList komponent matcher snapshot 1`] = `
                                     }
                                     @media  only screen and (max-width: 479px){& {
                                       border: 0 none;
-                                      outline-offset: 0 none;
-                                      outline: 0 none;
+                                      outline-offset: none;
+                                      outline: none;
                                       padding-bottom: 0;
                                       padding-left: 2px;
                                       padding-right: 2px;
