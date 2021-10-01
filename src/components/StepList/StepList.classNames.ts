@@ -293,7 +293,7 @@ export const getClassNames = (props) => {
             props.stepType === 'result'
               ? `4px solid ${palette.skeColor.green}`
               : '0 none',
-          outlineOffset: props.stepType === 'result' ? '0.75rem' : '0 none',
+          outlineOffset: props.stepType === 'result' ? '0.75rem' : 'none',
           padding: '0 2px',
         },
       },
