@@ -1,7 +1,11 @@
+### **v.4.1.5 - 01.10.2021**
+
+- SearchField: fixed keyboard navigation when using a filtered list.
+
 ### **v.4.1.4 - 22.09.2021**
 
 - FileUploader: added more supported file types. Fixes an isse with the isLoading-prop that resulted in a console error.
-- SearchField: fixes type spesification on props searchShortcutKeys and searchIconTitle ('string' to string).
+- SearchField: fixes type specification on props searchShortcutKeys and searchIconTitle ('string' to string).
 
 ### **v.4.1.3 - 06.09.2021**
 
