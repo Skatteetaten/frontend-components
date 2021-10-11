@@ -103,14 +103,17 @@ exports[`ErrorSummary komponent matcher snapshot 1`] = `
               -moz-osx-font-smoothing: grayscale;
               -webkit-font-smoothing: antialiased;
               display: inline-block;
-              font-family: "Material Icons";
+              font-family: "SkeIconfont";
+              font-size: inherit;
               font-style: normal;
               font-weight: normal;
               speak: none;
+              text-rendering: auto;
+              transform: translate(0, 0);
             }
         data-icon-name="Error"
       >
-        
+        
       </i>
     </div>
   </div>
@@ -178,7 +181,7 @@ exports[`ErrorSummary komponent matcher snapshot 1`] = `
             data-icon-name="ArrowForward"
             role="presentation"
           >
-            
+            
           </i>
           <a
             className=
@@ -251,7 +254,7 @@ exports[`ErrorSummary komponent matcher snapshot 1`] = `
             data-icon-name="ArrowForward"
             role="presentation"
           >
-            
+            
           </i>
           <a
             className=
@@ -324,7 +327,7 @@ exports[`ErrorSummary komponent matcher snapshot 1`] = `
             data-icon-name="ArrowForward"
             role="presentation"
           >
-            
+            
           </i>
           <a
             className=
