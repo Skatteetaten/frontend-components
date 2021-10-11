@@ -69,6 +69,8 @@ export { Dropdown } from './Dropdown/Dropdown';
 export type { DropdownProps } from './Dropdown/DropDown.types';
 export { ErrorMessage } from './ErrorMessage/ErrorMessage';
 export type { ErrorMessageProps } from './ErrorMessage/ErrorMessage.types';
+export { ErrorSummary } from './ErrorSummary/ErrorSummary';
+export type { ErrorSummaryProps } from './ErrorSummary/ErrorSummary.types';
 export { FileUploader } from './FileUploader/FileUploader';
 export { Language, FileFormatTypes } from './FileUploader/FileUploader.types';
 export type {

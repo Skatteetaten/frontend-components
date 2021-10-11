@@ -48,7 +48,6 @@ export const getClassNames = (props: TextFieldProps) => {
     selectors: {
       ...getFieldTypeStyles(props),
       '&& .ms-TextField-fieldGroup': {
-        borderColor: color,
         borderRadius: '0px',
       },
       '& .ms-TextField-fieldGroup': readOnly && {

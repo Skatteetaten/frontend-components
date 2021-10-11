@@ -8,7 +8,6 @@ exports[`TextField komponent matcher snapshot 1`] = `
         font-size: 1rem;
       }
       && .ms-TextField-fieldGroup {
-        border-color: #1a1a1a;
         border-radius: 0px;
       }
       && .ms-TextField-fieldGroup:focus {
@@ -110,7 +109,6 @@ exports[`TextField komponent matcher snapshot 1`] = `
           font-size: 1rem;
         }
         && .ms-TextField-fieldGroup {
-          border-color: #1a1a1a;
           border-radius: 0px;
         }
         && .ms-TextField-fieldGroup:focus {

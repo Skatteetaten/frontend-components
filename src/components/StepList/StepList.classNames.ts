@@ -19,7 +19,7 @@ const getStepContentInner = (
 ): IStyle => {
   if (stepType !== 'result') {
     return {
-      display: activeStep ? 'block' : 'flex',
+      display: activeStep || stepType === 'next' ? 'block' : 'flex',
       width: '100%',
       margin: '0 0 8px 0',
       selectors:
@@ -55,7 +55,7 @@ export const getClassNames = (props) => {
       height: '2px',
       backgroundColor: palette.skeColor.lightGrey,
       position: 'absolute',
-      top: 40,
+      bottom: 34,
       selectors: {
         '@media only screen and (max-width: 479px)': {
           top: 35,
@@ -156,14 +156,10 @@ export const getClassNames = (props) => {
       backgroundColor: palette.skeColor.lightGrey,
       position: 'absolute',
       top: 0,
-      bottom: 0,
+      bottom: props.stepType === 'next' ? 34 : 0,
       left: props.stepType === 'result' ? '7px' : undefined,
-
       marginTop: '10px',
-      height:
-        props.stepType === 'next' || props.stepType === 'result'
-          ? '30px'
-          : undefined,
+      height: props.stepType === 'result' ? '30px' : undefined,
       selectors: {
         '&::after': props.stepType === 'next' && {
           border: 'solid ' + palette.skeColor.lightGrey,
@@ -173,8 +169,10 @@ export const getClassNames = (props) => {
           transform: 'rotate(-45deg)',
           width: '4px',
           height: '4px',
-          margin: '25px 0 0 10px',
           content: '""',
+          position: 'absolute',
+          bottom: '-5px',
+          left: '7px',
           selectors: {
             '@media only screen and (max-width: 479px)': {
               borderWidth: '0 1px 1px 0',
@@ -281,7 +279,7 @@ export const getClassNames = (props) => {
       display: props.showStep ? 'block' : 'none',
       counterIncrement: 'step-counter',
       position: 'relative',
-      padding: props.stepType === 'result' ? '0 18px' : '0 20px',
+      padding: props.stepType === 'result' ? '0 17px' : '0 20px',
       border:
         props.stepType === 'result'
           ? `4px solid ${palette.skeColor.green}`

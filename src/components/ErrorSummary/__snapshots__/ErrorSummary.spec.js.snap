@@ -1,0 +1,362 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ErrorSummary komponent matcher snapshot 1`] = `
+<div
+  aria-live="assertive"
+  className=
+
+      {
+        background-color: #ffffff;
+        border: 2px solid #a82e39;
+        display: flex;
+        justify-content: flex-start;
+        width: fit-content;
+      }
+      & h1 {
+        font-size: 1.125rem;
+        margin-bottom: 0;
+        margin-left: 0;
+        margin-right: 0;
+        margin-top: 0;
+      }
+      & h2 {
+        font-size: 1.125rem;
+        margin-bottom: 0;
+        margin-left: 0;
+        margin-right: 0;
+        margin-top: 0;
+      }
+      & h3 {
+        font-size: 1.125rem;
+        margin-bottom: 0;
+        margin-left: 0;
+        margin-right: 0;
+        margin-top: 0;
+      }
+      & h4 {
+        font-size: 1.125rem;
+        margin-bottom: 0;
+        margin-left: 0;
+        margin-right: 0;
+        margin-top: 0;
+      }
+      & h5 {
+        font-size: 1.125rem;
+        margin-bottom: 0;
+        margin-left: 0;
+        margin-right: 0;
+        margin-top: 0;
+      }
+      & h6 {
+        font-size: 1.125rem;
+        margin-bottom: 0;
+        margin-left: 0;
+        margin-right: 0;
+        margin-top: 0;
+      }
+      & ul {
+        padding-bottom: 0px;
+        padding-left: 0px;
+        padding-right: 0px;
+        padding-top: 0px;
+      }
+      & li {
+        cursor: pointer;
+        display: block;
+        line-height: 1.636;
+      }
+  id="errorsummary"
+  role="status"
+>
+  <div
+    className=
+
+        {
+          background-color: #a82e39;
+          text-align: center;
+          width: 4rem;
+        }
+        @media (max-width: 639px){& {
+          width: 2rem;
+        }
+  >
+    <div
+      className=
+
+          {
+            color: #ffffff;
+            font-size: 2.4rem;
+            padding-bottom: 8x;
+            padding-left: 4px;
+            padding-right: 8px;
+            padding-top: 6px;
+          }
+          @media (max-width: 639px){& {
+            font-size: 1.4rem;
+          }
+    >
+      <i
+        aria-hidden={true}
+        className=
+
+            {
+              -moz-osx-font-smoothing: grayscale;
+              -webkit-font-smoothing: antialiased;
+              display: inline-block;
+              font-family: "SkeIconfont";
+              font-size: inherit;
+              font-style: normal;
+              font-weight: normal;
+              speak: none;
+              text-rendering: auto;
+              transform: translate(0, 0);
+            }
+        data-icon-name="Error"
+      >
+        
+      </i>
+    </div>
+  </div>
+  <div
+    className=
+
+        {
+          padding-bottom: 16px;
+          padding-left: 24px;
+          padding-right: 24px;
+          padding-top: 16px;
+        }
+        @media (max-width: 639px){& {
+          padding-bottom: 8px;
+          padding-left: 12px;
+          padding-right: 12px;
+          padding-top: 8px;
+        }
+  >
+    <h3>
+      For å gå videre må du rette opp i følgende:
+    </h3>
+    <ul>
+      <li>
+        <span
+          className=
+
+              {
+                margin-bottom: 0px;
+                margin-left: 0px;
+                margin-right: 0px;
+                margin-top: 0px;
+              }
+              &:hover>i {
+                color: #093e61;
+                padding-left: 4px;
+                padding-right: 6px;
+                transition: 0.1s;
+              }
+              &:hover>a {
+                background-color: #cde1f9;
+              }
+        >
+          <i
+            aria-hidden={true}
+            className=
+
+                {
+                  -moz-osx-font-smoothing: grayscale;
+                  -webkit-font-smoothing: antialiased;
+                  border-bottom: none;
+                  color: #1362ae;
+                  display: inline-block;
+                  font-family: "SkeIconfont";
+                  font-size: 1rem;
+                  font-style: normal;
+                  font-weight: 700;
+                  padding-left: 0px;
+                  padding-right: 10px;
+                  speak: none;
+                  text-rendering: auto;
+                  transform: translate(0, 0);
+                  vertical-align: bottom;
+                }
+            data-icon-name="ArrowForward"
+            role="presentation"
+          >
+            
+          </i>
+          <a
+            className=
+
+                {
+                  border-bottom: 1px solid #1362ae;
+                  color: #1362ae;
+                  font-weight: 700;
+                  text-decoration: none;
+                }
+                &:hover {
+                  background-color: #cde1f9;
+                  border-bottom: 2px solid #093e61;
+                  color: #093e61;
+                }
+                &:focus {
+                  background-color: #cde1f9;
+                  border-bottom: 2px solid #093e61;
+                  color: #093e61;
+                  outline: none;
+                }
+            onClick={[Function]}
+            tabIndex={0}
+          >
+            Du må legge til en adresse
+          </a>
+        </span>
+      </li>
+      <li>
+        <span
+          className=
+
+              {
+                margin-bottom: 0px;
+                margin-left: 0px;
+                margin-right: 0px;
+                margin-top: 0px;
+              }
+              &:hover>i {
+                color: #093e61;
+                padding-left: 4px;
+                padding-right: 6px;
+                transition: 0.1s;
+              }
+              &:hover>a {
+                background-color: #cde1f9;
+              }
+        >
+          <i
+            aria-hidden={true}
+            className=
+
+                {
+                  -moz-osx-font-smoothing: grayscale;
+                  -webkit-font-smoothing: antialiased;
+                  border-bottom: none;
+                  color: #1362ae;
+                  display: inline-block;
+                  font-family: "SkeIconfont";
+                  font-size: 1rem;
+                  font-style: normal;
+                  font-weight: 700;
+                  padding-left: 0px;
+                  padding-right: 10px;
+                  speak: none;
+                  text-rendering: auto;
+                  transform: translate(0, 0);
+                  vertical-align: bottom;
+                }
+            data-icon-name="ArrowForward"
+            role="presentation"
+          >
+            
+          </i>
+          <a
+            className=
+
+                {
+                  border-bottom: 1px solid #1362ae;
+                  color: #1362ae;
+                  font-weight: 700;
+                  text-decoration: none;
+                }
+                &:hover {
+                  background-color: #cde1f9;
+                  border-bottom: 2px solid #093e61;
+                  color: #093e61;
+                }
+                &:focus {
+                  background-color: #cde1f9;
+                  border-bottom: 2px solid #093e61;
+                  color: #093e61;
+                  outline: none;
+                }
+            onClick={[Function]}
+            tabIndex={0}
+          >
+            Du må legge til en postkode
+          </a>
+        </span>
+      </li>
+      <li>
+        <span
+          className=
+
+              {
+                margin-bottom: 0px;
+                margin-left: 0px;
+                margin-right: 0px;
+                margin-top: 0px;
+              }
+              &:hover>i {
+                color: #093e61;
+                padding-left: 4px;
+                padding-right: 6px;
+                transition: 0.1s;
+              }
+              &:hover>a {
+                background-color: #cde1f9;
+              }
+        >
+          <i
+            aria-hidden={true}
+            className=
+
+                {
+                  -moz-osx-font-smoothing: grayscale;
+                  -webkit-font-smoothing: antialiased;
+                  border-bottom: none;
+                  color: #1362ae;
+                  display: inline-block;
+                  font-family: "SkeIconfont";
+                  font-size: 1rem;
+                  font-style: normal;
+                  font-weight: 700;
+                  padding-left: 0px;
+                  padding-right: 10px;
+                  speak: none;
+                  text-rendering: auto;
+                  transform: translate(0, 0);
+                  vertical-align: bottom;
+                }
+            data-icon-name="ArrowForward"
+            role="presentation"
+          >
+            
+          </i>
+          <a
+            className=
+
+                {
+                  border-bottom: 1px solid #1362ae;
+                  color: #1362ae;
+                  font-weight: 700;
+                  text-decoration: none;
+                }
+                &:hover {
+                  background-color: #cde1f9;
+                  border-bottom: 2px solid #093e61;
+                  color: #093e61;
+                }
+                &:focus {
+                  background-color: #cde1f9;
+                  border-bottom: 2px solid #093e61;
+                  color: #093e61;
+                  outline: none;
+                }
+            onClick={[Function]}
+            tabIndex={0}
+          >
+            Du må legge til et poststed
+          </a>
+        </span>
+      </li>
+    </ul>
+  </div>
+</div>
+`;
