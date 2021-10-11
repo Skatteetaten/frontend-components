@@ -91,6 +91,7 @@ export const SearchField: React.FC<SearchFieldProps> = (props) => {
         listRefs.current = [];
         setFocus(-1);
       }
+      setValue(newValue);
     },
     [limit, options, hasSelected]
   );
@@ -266,7 +267,7 @@ export const SearchField: React.FC<SearchFieldProps> = (props) => {
               } else {
                 setSearchResult(newValue);
               }
-              setValue(newValue);
+              setValue(newValue === undefined ? '' : newValue);
             }}
             onKeyDown={(ev) => handleOnKeyDown(ev)}
             value={value}
