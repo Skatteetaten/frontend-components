@@ -54,19 +54,21 @@ exports[`Link komponent matcher snapshot 1`] = `
           border-bottom: none;
           color: #1362ae;
           display: inline-block;
-          font-family: "Material Icons";
+          font-family: "SkeIconfont";
           font-size: 1.125rem;
           font-style: normal;
           font-weight: inherit;
           padding-left: 4px;
           padding-right: 4px;
           speak: none;
+          text-rendering: auto;
+          transform: translate(0, 0);
           vertical-align: middle;
         }
     data-icon-name="Download"
     role="presentation"
   >
-    
+    
   </i>
 </span>
 `;

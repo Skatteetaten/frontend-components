@@ -5,7 +5,7 @@ import {
   FontWeights,
   IconFontSizes,
   PaletteProps,
-  MdIcons,
+  SkeIcons,
 } from '../utils';
 import { ComboBoxProps } from './ComboBox.types';
 
@@ -57,7 +57,7 @@ function getFieldTypeStyles(props: ComboBoxProps) {
 export const getClassNames = (props: ComboBoxProps) => {
   const { errorMessage } = props;
   const palette = getTheme().palette as PaletteProps;
-  const errorIcon = "'" + MdIcons.icons.Error + "'";
+  const errorIcon = "'" + SkeIcons.icons.Error + "'";
 
   const color = errorMessage
     ? palette.skeColor.error
@@ -101,7 +101,7 @@ export const getClassNames = (props: ComboBoxProps) => {
           color: palette.skeColor.blue,
         },
         '& div[role=region]::before': {
-          fontFamily: MdIcons.fontFace.fontFamily,
+          fontFamily: SkeIcons.fontFace.fontFamily,
           fontSize: 16,
           content: errorMessage && errorIcon,
           marginRight: '3px',

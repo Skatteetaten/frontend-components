@@ -93,7 +93,7 @@ describe('FileUploader komponent', () => {
       deleteFile: (file, err) => mockFuncDelete(file),
     });
     expect(wrapper.find('li').length).toEqual(1);
-    expect(wrapper.find('li').first().text()).toEqual('FilNavn.png');
+    expect(wrapper.find('li').first().text()).toEqual('FilNavn.png');
     wrapper.find('li').first().find('button').simulate('click');
     expect(mockFuncDelete).toHaveBeenCalled();
     expect(mockFuncDelete).toHaveBeenCalledWith({

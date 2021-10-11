@@ -92,7 +92,7 @@ exports[`ActionButton komponent matcher snapshot 1`] = `
       &.ms-Button--action .ms-Button-icon {
         color: #1362ae;
         font-size: 1.25rem;
-        transform: translateY(1px);
+        transform: translateY(4px);
       }
       & .ms-Button-flexContainer {
         align-items: baseline;

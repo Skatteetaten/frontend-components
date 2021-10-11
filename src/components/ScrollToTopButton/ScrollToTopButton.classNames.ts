@@ -66,7 +66,7 @@ export const getClassNames = () => {
       fontSize: '1.375rem',
       color: color,
       display: 'inline',
-      lineHeight: '0.95',
+      lineHeight: '0.8',
     },
     iconFixateContainer: {
       background: whiteBackground,

@@ -165,18 +165,21 @@ exports[`SearchField komponent matcher snapshot 1`] = `
               -moz-osx-font-smoothing: grayscale;
               -webkit-font-smoothing: antialiased;
               display: inline-block;
-              font-family: "Material Icons";
+              font-family: "SkeIconfont";
+              font-size: inherit;
               font-style: normal;
               font-weight: normal;
               opacity: 1;
               speak: none;
+              text-rendering: auto;
+              transform: translate(0, 0);
               transition: opacity 0.167s 0s;
             }
         data-icon-name="Search"
         onClick={[Function]}
         title=""
       >
-        
+        
       </i>
     </div>
     <input
