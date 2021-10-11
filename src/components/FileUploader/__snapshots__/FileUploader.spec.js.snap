@@ -66,15 +66,17 @@ exports[`FileUploader komponent matcher snapshot 1`] = `
               -webkit-font-smoothing: antialiased;
               color: #1362ae;
               display: inline-block;
-              font-family: "Material Icons";
+              font-family: "SkeIconfont";
               font-size: 1.25rem;
               font-style: normal;
               font-weight: normal;
               speak: none;
+              text-rendering: auto;
+              transform: translate(0, 0);
             }
         data-icon-name="AttachFile"
       >
-        
+        
       </i>
       <u>
         Legg til fil(er)

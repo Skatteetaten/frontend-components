@@ -41,7 +41,9 @@ describe('TopBanner komponent', () => {
     expect(wrapper.find('h1').html()).toContain('Ekstern publikumsløsning');
     expect(wrapper.html()).toContain('contentWrapper');
     expect(wrapper.html()).toContain('headerMain');
-    expect(wrapper.find('.ms-Icon').prop('data-icon-name')).toEqual('Back');
+    expect(wrapper.find('.ms-Icon').prop('data-icon-name')).toEqual(
+      'ArrowBack'
+    );
     expect(wrapper.find('ImageBase').prop('height')).toEqual(68);
   });
 

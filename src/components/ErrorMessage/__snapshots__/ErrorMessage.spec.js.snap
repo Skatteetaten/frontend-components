@@ -22,8 +22,8 @@ exports[`ErrorMessage komponent matcher snapshot 1`] = `
         padding-top: 5px;
       }
       &:before {
-        content: '';
-        font-family: "Material Icons";
+        content: '';
+        font-family: "SkeIconfont";
         margin-right: 3px;
       }
       &:before fontSize {

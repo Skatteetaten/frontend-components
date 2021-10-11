@@ -68,8 +68,8 @@ exports[`Dropdown komponent matcher snapshot 1`] = `
           z-index: 1;
         }
         & div[role=alert]::before {
-          content: '';
-          font-family: "Material Icons";
+          content: '';
+          font-family: "SkeIconfont";
           font-size: 16px;
           margin-right: 3px;
         }
