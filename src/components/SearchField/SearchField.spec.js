@@ -118,28 +118,47 @@ describe('SearchField komponent', () => {
       holder
     );
     const searchField = wrapper.find('input.ms-SearchBox-field');
-    searchField.simulate('change', { target: { value: 'e' } });
     act(() => {
-      searchField.props().onKeyDown({ preventDefault() {}, key: 'ArrowDown' });
+      searchField.simulate('change', { target: { value: 'e' } });
     });
+    wrapper.update();
+    act(() => {
+      wrapper
+        .find('input.ms-SearchBox-field')
+        .props()
+        .onKeyDown({ preventDefault() {}, key: 'ArrowDown' });
+    });
+    wrapper.update();
     expect(wrapper.find('li').at(0).text()).toEqual(
       document.activeElement.textContent
     );
     act(() => {
-      searchField.props().onKeyDown({ preventDefault() {}, key: 'ArrowDown' });
+      wrapper
+        .find('input.ms-SearchBox-field')
+        .props()
+        .onKeyDown({ preventDefault() {}, key: 'ArrowDown' });
     });
+    wrapper.update();
     expect(wrapper.find('li').at(1).text()).toEqual(
       document.activeElement.textContent
     );
     act(() => {
-      searchField.props().onKeyDown({ preventDefault() {}, key: 'ArrowDown' });
+      wrapper
+        .find('input.ms-SearchBox-field')
+        .props()
+        .onKeyDown({ preventDefault() {}, key: 'ArrowDown' });
     });
+    wrapper.update();
     expect(wrapper.find('li').at(1).text()).toEqual(
       document.activeElement.textContent
     );
     act(() => {
-      searchField.props().onKeyDown({ preventDefault() {}, key: 'ArrowUp' });
+      wrapper
+        .find('input.ms-SearchBox-field')
+        .props()
+        .onKeyDown({ preventDefault() {}, key: 'ArrowUp' });
     });
+    wrapper.update();
     expect(wrapper.find('li').at(0).text()).toEqual(
       document.activeElement.textContent
     );
@@ -154,11 +173,15 @@ describe('SearchField komponent', () => {
       limit: 1,
       options,
     });
-    const searchField = wrapper.find('input.ms-SearchBox-field');
-    searchField.simulate('change', { target: { value: 'e' } });
+    act(() => {
+      wrapper
+        .find('input.ms-SearchBox-field')
+        .simulate('change', { target: { value: 'e' } });
+    });
+    wrapper.update();
     expect(wrapper.find('li').length).toEqual(1);
     act(() => {
-      searchField.props().onKeyDown({ key: 'Escape' });
+      wrapper.find('li').props().onKeyDown({ key: 'Escape' });
     });
     wrapper.update();
     expect(wrapper.find('li').exists()).toBeFalsy();
@@ -174,11 +197,23 @@ describe('SearchField komponent', () => {
       limit: 1,
       options,
     });
-    const searchField = wrapper.find('input.ms-SearchBox-field');
-    searchField.simulate('change', { target: { value: 'e' } });
+    act(() => {
+      wrapper
+        .find('input.ms-SearchBox-field')
+        .props()
+        .onChange({ target: { value: 'e' } });
+    });
+    wrapper.update();
     expect(wrapper.find('li').exists()).toBeTruthy();
     act(() => {
-      searchField.props().onKeyDown({ preventDefault() {}, key: 'ArrowDown' });
+      wrapper
+        .find('input.ms-SearchBox-field')
+        .props()
+        .onKeyDown({ preventDefault() {}, key: 'ArrowDown' });
+    });
+    wrapper.update();
+    expect(wrapper.find('li').at(0).text()).toEqual('en tekst');
+    act(() => {
       wrapper.find('li').props().onKeyDown({ key: 'Enter' });
     });
     wrapper.update();
