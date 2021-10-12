@@ -21,10 +21,61 @@ function getBackgroundColor(props: MessageBarProps['type']) {
     case MessageBarType.info:
     default:
       return {
-        backgroundColor: palette.skeColor.beige,
+        backgroundColor: palette.skeColor.brown10,
       };
   }
 }
+
+function getIconColor(props: MessageBarProps['type']) {
+  const palette = getTheme().palette as PaletteProps;
+
+  switch (props) {
+    case MessageBarType.error:
+    case MessageBarType.warning:
+      return {
+        color: palette.skeColor.statusError,
+      };
+    case MessageBarType.severeWarning:
+      return {
+        color: palette.skeColor.white,
+      };
+    case MessageBarType.success:
+      return {
+        color: palette.skeColor.statusOk,
+      };
+    case MessageBarType.info:
+    default:
+      return {
+        color: palette.skeColor.statusWarning,
+      };
+  }
+}
+
+function getBorderColor(props: MessageBarProps['type']) {
+  const palette = getTheme().palette as PaletteProps;
+
+  switch (props) {
+    case MessageBarType.error:
+    case MessageBarType.warning:
+      return {
+        borderLeft: `3px solid ${palette.skeColor.statusError}`,
+      };
+    case MessageBarType.severeWarning:
+      return {
+        border: `2px solid ${palette.skeColor.statusError}`,
+      };
+    case MessageBarType.success:
+      return {
+        borderLeft: `3px solid ${palette.skeColor.statusOk}`,
+      };
+    case MessageBarType.info:
+    default:
+      return {
+        borderLeft: `3px solid ${palette.skeColor.statusWarning}`,
+      };
+  }
+}
+
 export const getClassNames = (props: MessageBarProps) => {
   const palette = getTheme().palette as PaletteProps;
   const severe = props.type === MessageBarType.severeWarning;
@@ -34,7 +85,9 @@ export const getClassNames = (props: MessageBarProps) => {
       selectors: {
         '&.ms-MessageBar': {
           ...getBackgroundColor(props.type),
+          ...getBorderColor(props.type),
           color: palette.skeColor.blackAlt,
+
           selectors: {
             '&.fade-exit': {
               opacity: 1,
@@ -42,7 +95,7 @@ export const getClassNames = (props: MessageBarProps) => {
           },
         },
         '.ms-MessageBar-content': {
-          border: severe ? `4px solid ${palette.skeColor.pink}` : 'none',
+          border: severe ? `2px solid ${palette.skeColor.statusError}` : 'none',
           padding: size === 'large' ? '25px 25px 25px 30px' : '',
           width: 'auto',
           selectors: {
@@ -51,13 +104,18 @@ export const getClassNames = (props: MessageBarProps) => {
             },
           },
         },
-
+        '& .ms-MessageBar-icon': {
+          backgroundColor: severe ? palette.skeColor.statusError : 'none',
+          margin: 0,
+          padding: '8px 8px 8px 8px',
+        },
         '.ms-MessageBar-icon i': {
-          color: palette.skeColor.blackAlt,
+          ...getIconColor(props.type),
+
           fontSize: size === 'large' ? IconFontSizes.mega : IconFontSizes.large,
           selectors: {
             '@media (max-width: 640px)': {
-              fontSize: size === 'large' ? IconFontSizes.large : undefined,
+              fontSize: size === 'large' ? IconFontSizes.xlarge : undefined,
               margin: size === 'large' ? '10px 0 0 10px' : '',
             },
           },
@@ -69,7 +127,6 @@ export const getClassNames = (props: MessageBarProps) => {
           padding: size === 'large' ? '7px 0px 0px 30px' : '-2px 0px 0px 0px',
           selectors: {
             '@media (max-width: 640px)': {
-              fontSize: size === 'large' ? IconFontSizes.large : undefined,
               padding:
                 size === 'large' ? '7px 0px 0px 8px' : '-2px 0px 0px 0px',
             },
