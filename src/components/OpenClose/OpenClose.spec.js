@@ -37,18 +37,6 @@ describe('openClose komponent', () => {
     expect(tittel.text()).toContain('Tittel');
   });
 
-  it('Kaller onClick når onClick sendes inn som prop og ekspander-knappen trykkes og open er undefined og isOnClickOnlyFiredOnOpen er undefined', () => {
-    const onClickCallback = jest.fn();
-    const wrapper = mount(
-      <OpenClose title="Tittel" onClick={onClickCallback}>
-        {tekstIEkspanderbartFelt}
-      </OpenClose>
-    );
-    const button = wrapper.find('button');
-    button.simulate('click');
-    expect(onClickCallback).toHaveBeenCalledTimes(1);
-  });
-
   it.each([
     [undefined, undefined],
     [undefined, false],
