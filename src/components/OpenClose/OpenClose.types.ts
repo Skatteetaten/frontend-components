@@ -9,6 +9,11 @@ export interface OpenCloseProps {
   headingLevel?: number;
   /** By default er ikonet for åpning til venstre. Kan overstyres med iconRight: true. */
   iconRight?: boolean;
+  /**
+   * If true, onClick is fired only on open. If false, onClick is fired both on open and close
+   * @default true
+   */
+  isOnClickOnlyFiredOnOpen?: boolean;
   /** Display as a compact version with smaller font size and margins */
   compact?: boolean;
   /** Styling overrides */
