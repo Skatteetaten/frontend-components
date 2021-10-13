@@ -107,7 +107,7 @@ export const getClassNames = (props: MessageBarProps) => {
         '& .ms-MessageBar-icon': {
           backgroundColor: severe ? palette.skeColor.statusError : 'none',
           margin: 0,
-          padding: '8px 8px 8px 8px',
+          padding: '8px 10px 8px 8px',
         },
         '.ms-MessageBar-icon i': {
           ...getIconColor(props.type),
@@ -134,6 +134,14 @@ export const getClassNames = (props: MessageBarProps) => {
         },
         '.ms-MessageBar-dismissal': {
           marginTop: size === 'large' ? '12px ' : '4px',
+          selectors: {
+            ':hover': {
+              backgroundColor: palette.skeColor.interactiveLight,
+            },
+            ':focus': {
+              backgroundColor: palette.skeColor.interactiveLight,
+            },
+          },
         },
         '.ms-MessageBar-dismissal i': {
           fontSize:
