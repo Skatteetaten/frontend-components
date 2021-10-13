@@ -53,7 +53,7 @@ function getTypeColor(props: ButtonProps): object {
     case 'warning':
       return {
         borderRadius: '6px',
-        borderColor: palette.skeColor.burgundy30,
+        borderColor: palette.skeColor.burgundy50,
         background: palette.skeColor.burgundy10,
         color: palette.bodyText,
         ...sizeNormal,

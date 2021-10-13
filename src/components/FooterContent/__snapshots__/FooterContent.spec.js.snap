@@ -38,7 +38,7 @@ exports[`FooterContent komponent matcher snapshot  1`] = `
           id="bakgrunn"
         >
           <polygon
-            fill="#f06b78"
+            fill="#f3a7b0"
             points="0 99.6400524 1440 99.6400524 1440 69.2255838 0 17.1793194"
           />
           <path
