@@ -106,7 +106,7 @@ exports[`Button komponent  matcher snapshot 1`] = `
         transition: 0.15s;
       }
       &.ms-Button:disabled {
-        background: #e5e5e5;
+        background: none;
         border-color: #b2b2b2;
         color: #b2b2b2;
         cursor: not-allowed;
