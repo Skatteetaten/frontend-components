@@ -72,7 +72,7 @@ export const getClassNames = (props) => {
           backgroundColor: palette.skeColor.white,
           border: '2px solid' + palette.skeColor.blue,
         },
-        '.ms-Fabric.is-focusVisible.is-focusVisible & .ms-ChoiceField-wrapper.is-inFocus:after': {
+        '& .ms-ChoiceField-wrapper.is-inFocus:after': {
           content: '""',
           position: 'absolute',
           left: inset,
@@ -92,7 +92,6 @@ export const getClassNames = (props) => {
           fontWeight: FontWeights.regular,
         },
         '.ms-ChoiceFieldGroup-flexContainer': errorMessage && {
-          //padding: '0 7px 3px 7px',
           border: '2px solid ' + palette.skeColor.error,
           padding: '0em 1em 0.75em 0.5em',
           marginTop: '8px',

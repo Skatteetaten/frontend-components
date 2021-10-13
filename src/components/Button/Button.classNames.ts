@@ -29,8 +29,8 @@ function getTypeColor(props: ButtonProps): object {
       };
     case 'callToAction':
       return {
-        borderColor: palette.skeColor.blue,
-        background: palette.skeColor.blue,
+        borderColor: palette.skeColor.interactive,
+        background: palette.skeColor.interactive,
         color: palette.skeColor.white,
         boxShadow: `0 8px 6px -6px ${palette.skeColor.grey30}`,
         fontSize: FontSizes.largePlus,
@@ -57,7 +57,7 @@ function getTypeColor(props: ButtonProps): object {
     case 'warning':
       return {
         borderRadius: radius,
-        borderColor: palette.skeColor.burgundy30,
+        borderColor: palette.skeColor.burgundy50,
         background: palette.skeColor.burgundy10,
         color: palette.bodyText,
         ...sizeNormal,
@@ -111,20 +111,20 @@ function getTypeFocusColor(props: ButtonProps): object {
       };
     case 'primaryCornered':
       return {
-        borderColor: palette.skeColor.interactive,
+        borderColor: palette.skeColor.interactiveDark,
         background: palette.skeColor.interactiveDark,
         color: palette.skeColor.white,
       };
     case 'primary':
       return {
-        borderColor: palette.skeColor.interactive,
+        borderColor: palette.skeColor.interactiveDark,
         background: palette.skeColor.interactiveDark,
         color: palette.skeColor.white,
       };
 
     case 'callToAction':
       return {
-        borderColor: palette.skeColor.interactive,
+        borderColor: palette.skeColor.interactiveDark,
         background: palette.skeColor.interactiveDark,
         color: palette.skeColor.white,
       };
