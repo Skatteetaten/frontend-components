@@ -1,5 +1,5 @@
-import { mergeStyles } from '@uifabric/merge-styles';
-import { getTheme } from '@uifabric/styling';
+import { mergeStyles } from '@fluentui/merge-styles';
+import { getTheme } from '@fluentui/react/lib/Styling';
 import { FontSizes, PaletteProps, getFocusStyle } from '../utils';
 import { ActionButtonProps } from './ActionButton.types';
 
@@ -8,7 +8,7 @@ function getTypeColor(props: ActionButtonProps): object {
   switch (props.color) {
     case 'blue':
       return {
-        color: palette.skeColor.blue,
+        color: palette.skeColor.interactiveDark,
       };
     case 'white':
       return {
@@ -26,15 +26,15 @@ function getIconColor(props: ActionButtonProps): object {
   switch (props.color) {
     case 'black':
       return {
-        color: palette.bodyText,
+        color: palette.skeColor.black100,
       };
     case 'green':
       return {
-        color: palette.skeColor.green,
+        color: palette.skeColor.statusOk,
       };
     case 'red':
       return {
-        color: palette.skeColor.pink,
+        color: palette.skeColor.statusError,
       };
     case 'white':
       return {
@@ -42,7 +42,7 @@ function getIconColor(props: ActionButtonProps): object {
       };
     default:
       return {
-        color: palette.skeColor.blue,
+        color: palette.skeColor.interactive,
       };
   }
 }
@@ -89,7 +89,7 @@ export function getClassNames(props: ActionButtonProps): string {
       '&.ms-Button--action .ms-Button-icon': {
         // @ts-ignore TODO
         fontSize: FontSizes[props.iconSize],
-        transform: 'translateY(1px)',
+        transform: 'translateY(4px)',
         // @ts-ignore TODO
         ...getIconColor(props),
       },

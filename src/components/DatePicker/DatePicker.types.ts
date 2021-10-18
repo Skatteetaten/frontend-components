@@ -33,6 +33,8 @@ export interface DatePickerProps extends IDatePickerProps {
     oldCalloutState: calloutState,
     newCalloutState: calloutState
   ) => void;
+  /** doNotLayer prop både for Label og for Datepickeren */
+  doNotLayer?: boolean;
   /** Tilstand som kan benyttes når datovelger skal vises i lesemodus */
   readonlyMode?: boolean;
   /** @ignore */

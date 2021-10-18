@@ -1,9 +1,9 @@
-**Tekstfelt benyttes når vi ønsker at brukeren skrive inn informasjon av en bestemt type - som oftest i et skjema**
+**TextField (Tekstfelt): benyttes når vi ønsker at brukeren skrive inn informasjon av en bestemt type - som oftest i et skjema**
 
 Standard tekstfelt:
 
 ```js
-import { TextField } from '@skatteetaten/frontend-components';
+import { TextField } from '@skatteetaten/frontend-components/TextField';
 
 const [state, setState] = React.useState({ value: '' });
 
@@ -20,7 +20,7 @@ const [state, setState] = React.useState({ value: '' });
 Stor variant av tekstfelt:
 
 ```js
-import { TextField } from '@skatteetaten/frontend-components';
+import { TextField } from '@skatteetaten/frontend-components/TextField';
 
 const [state, setState] = React.useState({ value: '' });
 
@@ -37,7 +37,7 @@ const [state, setState] = React.useState({ value: '' });
 Hjelpetekster og advarsel:
 
 ```js
-import { TextField } from '@skatteetaten/frontend-components';
+import { TextField } from '@skatteetaten/frontend-components/TextField';
 
 const [name, setName] = React.useState('');
 const [children, setChildren] = React.useState('23');
@@ -68,7 +68,7 @@ const [children, setChildren] = React.useState('23');
 Feilmelding vises i umiddelbar nærhet til feltet:
 
 ```js
-import { TextField } from '@skatteetaten/frontend-components';
+import { TextField } from '@skatteetaten/frontend-components/TextField';
 
 const [state, setState] = React.useState({ value: '' });
 
@@ -87,7 +87,7 @@ const [state, setState] = React.useState({ value: '' });
 Av og til ønsker man å veksle mellom skrive og lesemodus. Da vises det som ren tekst med et blyant-ikon. Når man klikker, blir det skrivefelt:
 
 ```js
-import { TextField } from '@skatteetaten/frontend-components';
+import { TextField } from '@skatteetaten/frontend-components/TextField';
 
 const [state, setState] = React.useState({
   value: 'Siri Saksbehandler',
@@ -130,7 +130,7 @@ const [state, setState] = React.useState({
 Bestemt formatering:
 
 ```js
-import { TextField } from '@skatteetaten/frontend-components';
+import { TextField } from '@skatteetaten/frontend-components/TextField';
 
 const [state, setState] = React.useState({ value: '' });
 
@@ -148,7 +148,7 @@ const [state, setState] = React.useState({ value: '' });
 Multiline tekstfelt:
 
 ```js
-import { TextField } from '@skatteetaten/frontend-components';
+import { TextField } from '@skatteetaten/frontend-components/TextField';
 
 const [lineBreak, setLineBreak] = React.useState(false);
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import ComponentsListRenderer from '../ComponentsList/ComponentsListRenderer';
-import { SearchField } from '../../components/index';
+import { SearchField } from '../../components/SearchField';
 import getFilterRegExp from 'react-styleguidist/lib/client/utils/getFilterRegExp';
 import { UseScreen } from '../../components/utils/ScreenPlugin';
 

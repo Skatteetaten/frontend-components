@@ -5,7 +5,7 @@ import Error from 'react-styleguidist/lib/client/rsg-components/Error';
 import Sections from '../Sections/Sections';
 import Context from 'react-styleguidist/lib/client/rsg-components/Context';
 import StyleGuideRenderer from './StyleGuideRenderer';
-import { SkeBasis } from '../../components/index';
+import { SkeBasis } from '../../components/SkeBasis';
 import { createHashHistory } from 'history';
 import { Router } from 'react-router';
 

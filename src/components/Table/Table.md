@@ -1,16 +1,12 @@
-**Tabeller brukes til å liste ut strukturerte data.**
+**Table (Tabell): brukes til å liste ut strukturerte data.**
 
 ```js
-import {
-  Table,
-  Grid,
-  TextField,
-  IconButton,
-  Button,
-  LabelWithCallout,
-} from '@skatteetaten/frontend-components';
-
-import moment from 'moment';
+import { Button } from '@skatteetaten/frontend-components/Button';
+import { Grid } from '@skatteetaten/frontend-components/Grid';
+import { IconButton } from '@skatteetaten/frontend-components/IconButton';
+import { LabelWithCallout } from '@skatteetaten/frontend-components/LabelWithCallout';
+import { Table } from '@skatteetaten/frontend-components/Table';
+import { TextField } from '@skatteetaten/frontend-components/TextField';
 
 const wrapperStyle = {
   backgroundColor: '#f9ede2',
@@ -86,16 +82,11 @@ const editableContent = (data, close, rowIndex) => (
   </div>
 );
 
-const sortMonths = (a, b) => moment(a, 'MMMM').diff(moment(b, 'MMMMM'));
-
-const formatPercent = (percent) => percent + ' %';
-
 const columns = [
   {
     name: 'Måned',
     fieldName: 'month',
     sortable: true,
-    sortingFunction: sortMonths,
     autohideSorting: false,
   },
   {
@@ -109,7 +100,6 @@ const columns = [
     name: 'Dekningsgrad',
     fieldName: 'coverage',
     alignment: 'right',
-    formatFunction: formatPercent,
   },
   {
     name: 'Avkastning',
@@ -122,25 +112,25 @@ const data = [
   {
     month: 'Januar',
     amount: 5426,
-    coverage: '100',
+    coverage: '100 %',
     revenue: '1000',
   },
   {
     month: 'Februar',
     amount: 5432,
-    coverage: '50',
+    coverage: '50 %',
     revenue: '500',
   },
   {
     month: 'Mars',
     amount: 4899,
-    coverage: '20',
+    coverage: '20 %',
     revenue: '2000',
   },
   {
     month: 'April',
     amount: 2344,
-    coverage: '30',
+    coverage: '30 %',
     revenue: '1055',
   },
 ];
@@ -158,7 +148,8 @@ const data = [
 **Man kan styre hvilke kolonner som skal vises på mobil med _hideOnMobile_-attributtet:**
 
 ```js
-import { Table, ActionButton } from '@skatteetaten/frontend-components';
+import { ActionButton } from '@skatteetaten/frontend-components/ActionButton';
+import { Table } from '@skatteetaten/frontend-components/Table';
 
 const columns = [
   {
@@ -215,7 +206,9 @@ const data = [
 Ekspanderbare rader
 
 ```js
-import { Grid, Table, ActionButton } from '@skatteetaten/frontend-components';
+import { ActionButton } from '@skatteetaten/frontend-components/ActionButton';
+import { Grid } from '@skatteetaten/frontend-components/Grid';
+import { Table } from '@skatteetaten/frontend-components/Table';
 
 const columns = [
   {
@@ -335,14 +328,10 @@ const expandableContent = (data, close, rowIndex) => (
 Hele rader kan gjøres klikkbare med _openEditableOnRowClick_-attributtet, og tabeller kan gjøres kompakte med _compactTable_-atributtet.
 
 ```js
-import {
-  Table,
-  Grid,
-  TextField,
-  IconButton,
-} from '@skatteetaten/frontend-components';
-
-import moment from 'moment';
+import { Grid } from '@skatteetaten/frontend-components/Grid';
+import { IconButton } from '@skatteetaten/frontend-components/IconButton';
+import { Table } from '@skatteetaten/frontend-components/Table';
+import { TextField } from '@skatteetaten/frontend-components/TextField';
 
 const wrapperStyle = {
   backgroundColor: '#f9ede2',
@@ -418,14 +407,11 @@ const editableContent = (data, close, rowIndex) => (
   </div>
 );
 
-const sortMonths = (a, b) => moment(a, 'MMMM').diff(moment(b, 'MMMMM'));
-
 const columns = [
   {
-    name: 'Måned',
-    fieldName: 'month',
+    name: 'Dekningsgrad',
+    fieldName: 'coverage',
     sortable: true,
-    sortingFunction: sortMonths,
     autohideSorting: false,
   },
   {
@@ -436,10 +422,11 @@ const columns = [
     autohideSorting: false,
   },
   {
-    name: 'Dekningsgrad',
-    fieldName: 'coverage',
+    name: 'Måned',
+    fieldName: 'month',
     alignment: 'right',
   },
+
   {
     name: 'Avkastning',
     fieldName: 'revenue',
@@ -490,15 +477,11 @@ Tabellen kan ha bare noen linjer som er editerbare. Den kan også ha underlinjer
 hideEdit vil gjemme edit knappen. Underlinjer kan legges inn i children feltet. Underlinjer vil ikke vises i edit modus og har ikke egen edit knapp.
 
 ```js
-import {
-  Table,
-  Grid,
-  TextField,
-  IconButton,
-  LabelWithCallout,
-} from '@skatteetaten/frontend-components';
-
-import moment from 'moment';
+import { Grid } from '@skatteetaten/frontend-components/Grid';
+import { IconButton } from '@skatteetaten/frontend-components/IconButton';
+import { LabelWithCallout } from '@skatteetaten/frontend-components/LabelWithCallout';
+import { Table } from '@skatteetaten/frontend-components/Table';
+import { TextField } from '@skatteetaten/frontend-components/TextField';
 
 const wrapperStyle = {
   backgroundColor: '#f9ede2',
@@ -581,14 +564,14 @@ const editableContent = (data, close, rowIndex) => (
   </div>
 );
 
-const sortMonths = (a, b) => parseInt(a) - parseInt(b);
+const sortMva = (a, b) => parseInt(a) - parseInt(b);
 
 const columns = [
   {
     name: 'Mva-kode',
     fieldName: 'kode',
     sortable: true,
-    sortingFunction: sortMonths,
+    sortingFunction: sortMva,
     autohideSorting: false,
   },
   {
@@ -657,11 +640,9 @@ const data = [
 Tabeller med overskrifter legges som en _caption_:
 
 ```js
-import {
-  Table,
-  ActionButton,
-  LabelWithCallout,
-} from '@skatteetaten/frontend-components';
+import { ActionButton } from '@skatteetaten/frontend-components/ActionButton';
+import { LabelWithCallout } from '@skatteetaten/frontend-components/LabelWithCallout';
+import { Table } from '@skatteetaten/frontend-components/Table';
 
 const columns = [
   {

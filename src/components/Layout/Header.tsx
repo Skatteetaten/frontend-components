@@ -1,7 +1,7 @@
 import React from 'react';
 import { Grid } from '../Grid';
 import { ResponsiveMode } from '@fluentui/react';
-import { mergeStyles } from '@uifabric/merge-styles';
+import { mergeStyles } from '@fluentui/merge-styles';
 
 const getClassNames = () => {
   return mergeStyles({

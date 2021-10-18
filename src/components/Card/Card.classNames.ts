@@ -1,7 +1,7 @@
 import { FontSizes, FontWeights, PaletteProps } from '../utils';
 import { CardProps, CardState, CardColor, CardBorder } from './Card.types';
-import { getTheme } from '@uifabric/styling';
-import { keyframes, mergeStyleSets } from '@uifabric/merge-styles';
+import { getTheme } from '@fluentui/react/lib/Styling';
+import { keyframes, mergeStyleSets } from '@fluentui/merge-styles';
 
 const fadeIn = keyframes({
   from: {

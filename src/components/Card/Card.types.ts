@@ -1,18 +1,18 @@
 import * as React from 'react';
 
 export enum CardColor {
-  GREY = 'neutralGrey',
-  GREEN = 'lightGreen',
-  BEIGE = 'beige',
+  GREY = 'grey10',
+  GREEN = 'green10',
+  BEIGE = 'brown10',
   WHITE = 'white',
-  RED = 'lightPink',
+  RED = 'burgundy10',
 }
 
 export enum CardBorder {
-  GREEN_BORDER = 'green',
-  RED_BORDER = 'pink',
-  YELLOW_BORDER = 'brown',
-  GREY_BORDER = 'grey',
+  GREEN_BORDER = 'green50',
+  RED_BORDER = 'burgundy50',
+  YELLOW_BORDER = 'brown50',
+  GREY_BORDER = 'grey50',
   WHITE_BORDER = 'white',
 }
 

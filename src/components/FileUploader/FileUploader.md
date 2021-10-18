@@ -1,14 +1,14 @@
-**Felt for å laste opp filer**
+**FileUploader (Filopplaster): felt for å laste opp filer**
 
 Komponenten er basert på at du sender inn sti til API. Dersom ikke dette skulle passe er det mulighet for å bruke uploadFile og kjøre en egendefinert funksjon.
 
 ```js
 import { useState } from 'react';
-import { UseScreen } from '../index';
+import { UseScreen } from '../utils/ScreenPlugin';
 import {
   FileUploader,
   FileFormatTypes,
-} from '@skatteetaten/frontend-components';
+} from '@skatteetaten/frontend-components/FileUploader';
 const [files, setFiles] = useState([]);
 const [spinner, setSpinner] = useState(false);
 const size = UseScreen();
@@ -51,11 +51,12 @@ Mulighet til å laste opp flere filer samtidig:
 
 ```js
 import { useState } from 'react';
-import { UseScreen } from '../index';
+import { UseScreen } from '@skatteetaten/frontend-components/utils/ScreenPlugin';
 import {
   FileUploader,
   FileFormatTypes,
-} from '@skatteetaten/frontend-components';
+} from '@skatteetaten/frontend-components/FileUploader';
+
 const [files, setFiles] = useState([]);
 const [spinner, setSpinner] = useState(false);
 const size = UseScreen();

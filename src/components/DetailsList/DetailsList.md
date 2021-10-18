@@ -1,9 +1,9 @@
-**Detailjliste brukes til å vise store mengder informasjon som skal kunne sorteres, grupperes og filtreres**
+**DetailsList (Sammensatt tabell): brukes til å vise store mengder informasjon som skal kunne sorteres, grupperes og filtreres**
 
 Kolonner som kan sorteres
 
 ```js
-import { DetailsList } from '@skatteetaten/frontend-components';
+import { DetailsList } from '@skatteetaten/frontend-components/DetailsList';
 
 const [state, setState] = React.useState({
   columns: [
@@ -220,7 +220,7 @@ const [state, setState] = React.useState({
 Brukeren kan velge en eller flere rader vha av sjekkbokser.
 
 ```js
-import { DetailsList } from '@skatteetaten/frontend-components';
+import { DetailsList } from '@skatteetaten/frontend-components/DetailsList';
 
 const [state, setState] = React.useState({
   columns: [

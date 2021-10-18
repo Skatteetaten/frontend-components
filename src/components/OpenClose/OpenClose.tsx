@@ -12,6 +12,7 @@ export const OpenClose: React.FC<OpenCloseProps> = (props) => {
     headingLevel,
     iconRight,
     onClick,
+    isOnClickOnlyFiredOnOpen = true,
     children,
   } = props;
 
@@ -22,8 +23,14 @@ export const OpenClose: React.FC<OpenCloseProps> = (props) => {
   const toggleVisibility = () => setContentOpen(!isContentOpen);
 
   const clickHandler = () => {
-    if (onClick && !isContentOpen) {
-      onClick();
+    if (onClick) {
+      if (isOnClickOnlyFiredOnOpen) {
+        if (!isContentOpen) {
+          onClick();
+        }
+      } else {
+        onClick();
+      }
     }
     toggleVisibility();
   };

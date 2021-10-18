@@ -4,7 +4,172 @@ exports[`DetailsList komponent matcher snapshot 1`] = `
 <StyledWithViewportComponent
   checkboxCellClassName="DetailsListCheckBox"
   checkboxVisibility={2}
-  className="css-42"
+  className=
+
+      {
+        background: #1362ae;
+        outline: transparent;
+        position: relative;
+      }
+      &::-moz-focus-inner {
+        border: 0;
+      }
+      .ms-Fabric.is-focusVisible.is-focusVisible & .ms-DetailsRow:focus {
+        background-color: #1362ae;
+        color: #ffffff;
+      }
+      .ms-Fabric.is-focusVisible.is-focusVisible & .ms-DetailsRow:focus:after {
+        border-radius: 0;
+        border: 2px solid #1362ae;
+        bottom: 1px;
+        content: "";
+        left: 1px;
+        outline: transparent;
+        position: absolute;
+        right: 1px;
+        top: 1px;
+        z-index: 1;
+      }
+      .ms-Fabric.is-focusVisible.is-focusVisible & .ms-DetailsHeader-cellTitle:focus:after {
+        border-radius: 0;
+        border: 2px solid #1362ae;
+        bottom: 1px;
+        content: "";
+        left: 1px;
+        outline: transparent;
+        position: absolute;
+        right: 1px;
+        top: 1px;
+        z-index: 1;
+      }
+      & .ms-GroupHeader {
+        background: #ffffff;
+      }
+      & .ms-GroupHeader .ms-GroupHeader-expand {
+        border-radius: 50%;
+        border: 2px solid #1362ae;
+        color: #1362ae;
+        height: 20px;
+        margin-bottom: 9px;
+        margin-left: 9px;
+        margin-right: 9px;
+        margin-top: 9px;
+        position: relative;
+        width: 20px;
+      }
+      & .ms-GroupHeader .ms-GroupHeader-expand i {
+        font-weight: 700;
+        position: absolute;
+        transform-origin: center center;
+      }
+      & .ms-DetailsHeader-collapseButton {
+        color: #1362ae;
+      }
+      &.ms-DetailsList {
+        background: none;
+        font-size: 1rem;
+      }
+      & .ms-GroupHeader-title {
+        font-size: 1rem;
+        font-weight: 600;
+        padding-left: 6px;
+      }
+      & .ms-DetailsHeader-cell [data-icon-name="SortDown"] {
+        color: #1362ae;
+        font-size: 1.25rem;
+      }
+      & .ms-DetailsHeader-cell [data-icon-name="SortUp"] {
+        color: #1362ae;
+        font-size: 1.25rem;
+      }
+      & .ms-DetailsHeader-cell {
+        font-size: 1rem;
+        font-weight: 600;
+        min-height: 32px;
+      }
+      & .ms-DetailsHeader-cell:hover {
+        background: #cde1f9;
+      }
+      & .ms-DetailsHeader-cellTitle {
+        padding-left: 8px;
+      }
+      & .ms-List-cell {
+        border-bottom: 1px solid#b2b2b2;
+        min-height: 32px;
+      }
+      & .ms-FocusZone.ms-DetailsHeader {
+        background: #ffffff;
+        border-bottom: 2px solid#000000;
+        padding-bottom: 0px;
+      }
+      & .ms-FocusZone.ms-DetailsRow {
+        background: #ffffff;
+        min-height: 26px;
+      }
+      & .ms-FocusZone.ms-DetailsRow:hover {
+        background: #cde1f9;
+        color: inherit;
+      }
+      & .is-selected {
+        background: #dadada;
+      }
+      & .ms-DetailsRow-cell {
+        font-size: 1rem;
+        min-height: 32px;
+        padding-bottom: 8px;
+        padding-left: 8px;
+        padding-right: 8px;
+        padding-top: 8px;
+      }
+      & .ms-DetailsRow-cellCheck {
+        padding-bottom: 0px;
+        padding-left: 0px;
+        padding-right: 0px;
+        padding-top: 0px;
+      }
+      & .ms-DetailsRow-cell:hover {
+        text-decoration: underline;
+      }
+      & .ms-DetailsRow-check {
+        height: 32px;
+        width: 32px;
+      }
+      & .ms-DetailsRow-check .ms-Check {
+        height: 20px;
+        width: 20px;
+      }
+      & .ms-DetailsRow-check .ms-Check:before {
+        background: none;
+        border-radius: 0px;
+        height: 20px;
+        width: 20px;
+      }
+      & .ms-DetailsRow-check .ms-Check.is-checked:before {
+        background: #1362ae;
+        border-radius: 0px;
+        height: 20px;
+        width: 20px;
+      }
+      & .ms-DetailsRow-check .ms-Check-circle {
+        border: 1px solid #000;
+        font-family: none;
+        font-size: 0px;
+        height: 20px;
+        width: 20px;
+      }
+      & .ms-DetailsRow-check .ms-Check-check {
+        margin-bottom: 0;
+        margin-left: 1px;
+        margin-right: 0;
+        margin-top: 3px;
+      }
+      & .ms-DetailsRow-check .ms-Check-check:hover {
+        cursor: pointer;
+        opacity: 0;
+      }
+      & .ms-DetailsRow-check .ms-Check.is-checked .ms-Check-check:hover {
+        opacity: 1;
+      }
   columns={
     Array [
       Object {

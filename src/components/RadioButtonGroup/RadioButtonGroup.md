@@ -1,7 +1,7 @@
-**En valggruppe (med radioknapper) brukes i skjemaer for å velge ett alternativ blant flere gjensidig utelukkende valg.**
+**RadioButtonGroup (Radioknapper): en valggruppe (med radioknapper) brukes i skjemaer for å velge ett alternativ blant flere gjensidig utelukkende valg.**
 
 ```js
-import { RadioButtonGroup } from '@skatteetaten/frontend-components';
+import { RadioButtonGroup } from '@skatteetaten/frontend-components/RadioButtonGroup';
 
 const [state, setState] = React.useState({
   options: [
@@ -29,7 +29,7 @@ const [state, setState] = React.useState({
 Med beskrivelse på hvert steg:
 
 ```js
-import { RadioButtonGroup } from '@skatteetaten/frontend-components';
+import { RadioButtonGroup } from '@skatteetaten/frontend-components/RadioButtonGroup';
 
 const [state, setState] = React.useState({
   options: [

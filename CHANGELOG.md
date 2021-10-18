@@ -1,3 +1,20 @@
+### **v.5.0.0 - 24.08.2021**
+
+- Oppgraderer fluent-ui til v8:
+  https://github.com/microsoft/fluentui/wiki/Version-8-release-notes
+  https://github.com/microsoft/fluentui/wiki/Version-8-migration-guide#individual-components-new-features
+  - ivaretar breaking-change på role i checkbox
+  - flytter ref på combobox til ytterste wrapper
+  - datepicker oppdaterer ref - TO-DO: ikke mulig å aksessere lokal state for editMode
+  - refaktorerer TabItem til FunctionComponent
+  - oppdaterer types for TextField
+- Rydder opp i dupliserte dependencies: Fjerner @uifabric dependencies og peker mot allerede installerte @fabricui versjoner
+- Oppgraderer dependencies: Oppgradrere i18next og react-i18next dependencies, plus node-fetch dependency
+- Flytter fra dependency til devDependency: uuid
+- Fjerner unødvendige dependencies: fjerner tslib (allerede definert i fluentui)
+- Eksport til ESM: Endrer fra umd til esm eksport (//TO-DO reaktivere import-maps)
+- Reorganisering av import/export til å fungere med moduler (//TO-DO alle doc-sidene må retestes) //TO-DO fjerne entry.ts i /lib etter compile
+
 ### **v.4.1.5 - 01.10.2021**
 
 - SearchField: fixed keyboard navigation when using a filtered list.

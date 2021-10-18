@@ -1,4 +1,4 @@
-**TopStripe er en svart menystripe øverst på innloggede sider for publikum.**
+**TopStripe (Toppstripe): er en svart menystripe øverst på innloggede sider for publikum.**
 
 ### Ikke innlogget
 
@@ -6,14 +6,12 @@ Viser Kontakt oss, endre skriftsstørrelse, språk og logg inn.
 
 ```js
 import { useState } from 'react';
-import {
-  TopStripe,
-  LanguagePicker,
-  TopStripeMenu,
-  TopStripeButton,
-  TopBanner,
-  Link,
-} from '@skatteetaten/frontend-components';
+import { Link } from '@skatteetaten/frontend-components/Link';
+import { TopBanner } from '@skatteetaten/frontend-components/TopBanner';
+import { TopStripe } from '@skatteetaten/frontend-components/TopStripe';
+import { LanguagePicker } from '@skatteetaten/frontend-components/TopStripe/LanguagePicker';
+import { TopStripeMenu } from '@skatteetaten/frontend-components/TopStripe/TopStripeMenu';
+import { TopStripeButton } from '@skatteetaten/frontend-components/TopStripe/TopStripeButton';
 
 const [language, setLanguage] = useState('nb');
 
@@ -65,16 +63,14 @@ Viser Kontakt oss, endre skriftsstørrelse, språk, partsvalg og logg ut.
 
 ```js
 import { useState } from 'react';
+import { Icon } from '@skatteetaten/frontend-components/Icon';
+import { Link } from '@skatteetaten/frontend-components/Link';
+import { TopBanner } from '@skatteetaten/frontend-components/TopBanner';
+import { TopStripe } from '@skatteetaten/frontend-components/TopStripe';
+import { LanguagePicker } from '@skatteetaten/frontend-components/TopStripe/LanguagePicker';
+import { TopStripeMenu } from '@skatteetaten/frontend-components/TopStripe/TopStripeMenu';
+import { TopStripeButton } from '@skatteetaten/frontend-components/TopStripe/TopStripeButton';
 
-import {
-  LanguagePicker,
-  TopStripe,
-  TopStripeMenu,
-  TopStripeButton,
-  TopBanner,
-  Link,
-  Icon,
-} from '@skatteetaten/frontend-components';
 const [language, setLanguage] = useState('nb');
 
 <div>
@@ -133,16 +129,14 @@ Viser Kontakt oss, endre skriftsstørrelse, språk, partsvalg og logg ut.
 
 ```js
 import { useState } from 'react';
+import { Icon } from '@skatteetaten/frontend-components/Icon';
+import { Link } from '@skatteetaten/frontend-components/Link';
+import { TopBanner } from '@skatteetaten/frontend-components/TopBanner';
+import { TopStripe } from '@skatteetaten/frontend-components/TopStripe';
+import { LanguagePicker } from '@skatteetaten/frontend-components/TopStripe/LanguagePicker';
+import { TopStripeMenu } from '@skatteetaten/frontend-components/TopStripe/TopStripeMenu';
+import { TopStripeButton } from '@skatteetaten/frontend-components/TopStripe/TopStripeButton';
 
-import {
-  TopStripe,
-  LanguagePicker,
-  TopStripeMenu,
-  TopStripeButton,
-  TopBanner,
-  Link,
-  Icon,
-} from '@skatteetaten/frontend-components';
 import { UseScreen } from '@skatteetaten/frontend-components/utils/ScreenPlugin';
 
 const size = UseScreen();
@@ -213,15 +207,12 @@ På mobil flyttes valgene for kontakt oss og skriftsstørrelse til footeren.
 
 ```js
 import { useState } from 'react';
-
-import {
-  TopStripe,
-  LanguagePicker,
-  TopStripeMenu,
-  TopStripeButton,
-  TopBanner,
-  Link,
-} from '@skatteetaten/frontend-components';
+import { Link } from '@skatteetaten/frontend-components/Link';
+import { TopBanner } from '@skatteetaten/frontend-components/TopBanner';
+import { TopStripe } from '@skatteetaten/frontend-components/TopStripe';
+import { LanguagePicker } from '@skatteetaten/frontend-components/TopStripe/LanguagePicker';
+import { TopStripeMenu } from '@skatteetaten/frontend-components/TopStripe/TopStripeMenu';
+import { TopStripeButton } from '@skatteetaten/frontend-components/TopStripe/TopStripeButton';
 
 const [language, setLanguage] = useState('nb');
 
@@ -339,9 +330,8 @@ const [language, setLanguage] = useState('nb');
       skriftstørrelse.
     </li>
     <li>
-       Aria-haspopup, role=menu,
-      role=menuitem brukes på f.eks. på språkmenyen. Dette får skjermleser til å
-      "bytte" modus og trigge menynavigering. 
+      Aria-haspopup, role=menu, role=menuitem brukes på f.eks. på språkmenyen.
+      Dette får skjermleser til å "bytte" modus og trigge menynavigering.
     </li>
     <li>Aria-hidden brukes for å skjule ikoner for skjermleser.</li>
   </ul>

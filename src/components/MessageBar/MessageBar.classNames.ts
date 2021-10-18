@@ -1,7 +1,7 @@
-import { mergeStyles } from '@uifabric/merge-styles';
+import { mergeStyles } from '@fluentui/merge-styles';
 import { FontSizes, IconFontSizes, PaletteProps } from '../utils';
 import { MessageBarProps } from './MessageBar.types';
-import { getTheme } from '@uifabric/styling';
+import { getTheme } from '@fluentui/react/lib/Styling';
 import { MessageBarType } from '@fluentui/react';
 
 function getBackgroundColor(props: MessageBarProps['type']) {
@@ -12,7 +12,7 @@ function getBackgroundColor(props: MessageBarProps['type']) {
     case MessageBarType.warning:
     case MessageBarType.severeWarning:
       return {
-        backgroundColor: palette.skeColor.lightPink,
+        backgroundColor: palette.skeColor.burgundy10,
       };
     case MessageBarType.success:
       return {

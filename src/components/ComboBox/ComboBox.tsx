@@ -7,9 +7,6 @@ import { generateId } from '../utils';
 import { LabelWithCallout } from '../LabelWithCallout';
 import { ComboBoxProps } from './ComboBox.types';
 
-/**
- * @visibleName ComboBox (Nedtrekksliste med skriving)
- */
 export const ComboBox: React.FC<ComboBoxProps> = (props) => {
   const {
     children,
@@ -22,7 +19,9 @@ export const ComboBox: React.FC<ComboBoxProps> = (props) => {
     labelButtonAriaLabel,
     labelCallout,
     onCalloutToggle,
+    calloutProps,
     readOnly,
+    ref,
     ...rest
   } = props;
 
@@ -34,7 +33,7 @@ export const ComboBox: React.FC<ComboBoxProps> = (props) => {
   const styles = getClassNames(props);
 
   return (
-    <div id={mainId}>
+    <div id={mainId} ref={ref}>
       <LabelWithCallout
         id={labelId}
         inputId={readOnly ? inputId : inputId + '-input'} //Fabric adds its own -input postfix
@@ -68,6 +67,7 @@ export const ComboBox: React.FC<ComboBoxProps> = (props) => {
           errorMessage={errorMessage}
           aria-invalid={errorMessage ? true : false}
           calloutProps={{
+            ...calloutProps,
             className: getOptionsClassNames(props),
           }}
         >

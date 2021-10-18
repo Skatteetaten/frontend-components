@@ -1,17 +1,17 @@
-import { mergeStyles, mergeStyleSets } from '@uifabric/merge-styles';
-import { getTheme } from '@uifabric/styling';
+import { mergeStyles, mergeStyleSets } from '@fluentui/merge-styles';
+import { getTheme } from '@fluentui/react/lib/Styling';
 import { PaletteProps } from '../utils';
 
 export const getClassNames = () => {
   const palette = getTheme().palette as PaletteProps;
 
   return mergeStyleSets({
-    footerWrapper: {
-      backgroundColor: palette.skeColor.burgundy,
-    },
-    footerContent: {
+    footerWrapperSKE: {
       backgroundColor: palette.skeColor.burgundy,
       color: palette.skeColor.white,
+    },
+    footerContentSKE: {
+      backgroundColor: palette.skeColor.burgundy,
       padding: '24px 4px',
       selectors: {
         '@media (max-width: 1023px)': {
@@ -20,6 +20,38 @@ export const getClassNames = () => {
         },
       },
     },
+    /** BRAND VARIANTS INK */
+    footerWrapperINK: {
+      backgroundColor: palette.skeColor.green100,
+      color: palette.skeColor.white,
+    },
+    footerContentINK: {
+      backgroundColor: palette.skeColor.green100,
+      padding: '24px 4px',
+      selectors: {
+        '@media (max-width: 1023px)': {
+          maxWidth: '100%',
+          padding: '24px 16px',
+        },
+      },
+    },
+
+    /** BRAND VARIANTS LSO */
+    footerWrapperLSO: {
+      backgroundColor: palette.skeColor.black100,
+      color: palette.skeColor.white,
+    },
+    footerContentLSO: {
+      backgroundColor: palette.skeColor.black100,
+      padding: '24px 4px',
+      selectors: {
+        '@media (max-width: 1023px)': {
+          maxWidth: '100%',
+          padding: '24px 16px',
+        },
+      },
+    },
+
     footerDecorContainer: {
       width: '100%',
       marginBottom: -5,

@@ -1,7 +1,7 @@
 import React from 'react';
 import { matches } from '../utils/test-utils';
 import { shallow, mount } from 'enzyme';
-import { ComboBox } from '../index';
+import { ComboBox } from '.';
 
 function oppsettShallow(props) {
   return shallow(<ComboBox {...props} />);

@@ -1,7 +1,8 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
 import toJson from 'enzyme-to-json';
-import { StepList, Step } from '../index';
+import { StepList } from '.';
+import { Step } from './Step';
 
 function oppsettShallow(props) {
   return shallow(

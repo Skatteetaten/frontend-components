@@ -8,8 +8,8 @@ export const TopStripeContext = React.createContext<TopStripeProps>({
   open: -1,
 });
 
-/**
- * @visibleName TopStripe (Toppstripe)
+/*
+ * visibleName TopStripe (Toppstripe)
  */
 export const TopStripe: React.FC<TopStripeProps> = (props) => {
   const notOpen = -1;
@@ -27,8 +27,12 @@ export const TopStripe: React.FC<TopStripeProps> = (props) => {
   const showOverlay = open !== notOpen ? styles.overlayShow : '';
 
   const handleClickOutside = (e: any) => {
+    const eventPaths: Array<EventTarget> = e.composedPath
+      ? e.composedPath()
+      : [];
+    const target = eventPaths.length > 0 ? eventPaths[0] : e.target;
     const node = topRef.current;
-    if (node && node.contains(e.target)) {
+    if (node && node.contains(target)) {
       // inside click
       return;
     }

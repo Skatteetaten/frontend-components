@@ -1,7 +1,7 @@
 import React from 'react';
 import { mount } from 'enzyme';
 import { matches } from '../utils/test-utils';
-import { TopStripe } from '../index';
+import { TopStripe } from '.';
 
 function oppsettFullDOM(props) {
   return mount(<TopStripe {...props} />);

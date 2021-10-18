@@ -1,6 +1,6 @@
 import React from 'react';
 import { mount } from 'enzyme';
-import { OpenClose } from '../index';
+import { OpenClose } from '.';
 
 describe('openClose komponent', () => {
   const tekstIEkspanderbartFelt = 'Jeg har ett barn.';
@@ -35,5 +35,78 @@ describe('openClose komponent', () => {
     );
     const tittel = wrapper.find('button').find('h3');
     expect(tittel.text()).toContain('Tittel');
+  });
+
+  it.each([
+    [undefined, undefined],
+    [undefined, false],
+    [undefined, true],
+    [false, undefined],
+    [false, false],
+    [false, true],
+  ])(
+    'Kaller onClick når onClick sendes inn som prop og ekspander-knappen trykkes og open er (%p) og isOnClickOnlyFiredOnOpen er (%p)',
+    (openProp, isOnClickOnlyFiredOnOpenProp) => {
+      const onClickCallback = jest.fn();
+      const wrapper = mount(
+        <OpenClose
+          title="Tittel"
+          onClick={onClickCallback}
+          open={openProp}
+          isOnClickOnlyFiredOnOpen={isOnClickOnlyFiredOnOpenProp}
+        >
+          {tekstIEkspanderbartFelt}
+        </OpenClose>
+      );
+      const button = wrapper.find('button');
+      button.simulate('click');
+      expect(onClickCallback).toHaveBeenCalledTimes(1);
+    }
+  );
+
+  it('Kaller by default ikke onClick når knappen trykkes når open er true', () => {
+    const onClickCallback = jest.fn();
+    const wrapper = mount(
+      <OpenClose title="Tittel" onClick={onClickCallback} isOpen>
+        {tekstIEkspanderbartFelt}
+      </OpenClose>
+    );
+    const button = wrapper.find('button');
+    button.simulate('click');
+    expect(onClickCallback).not.toHaveBeenCalled();
+  });
+
+  it('Kaller ikke onClick når knappen trykkes når open er true og isOnClickOnlyFiredOnOpen er true', () => {
+    const onClickCallback = jest.fn();
+    const wrapper = mount(
+      <OpenClose
+        title="Tittel"
+        onClick={onClickCallback}
+        isOpen
+        isOnClickOnlyFiredOnOpen={true}
+      >
+        {tekstIEkspanderbartFelt}
+      </OpenClose>
+    );
+    const button = wrapper.find('button');
+    button.simulate('click');
+    expect(onClickCallback).not.toHaveBeenCalled();
+  });
+
+  it('Kaller onClick når knappen trykkes når open er true og isOnClickOnlyFiredOnOpen er false', () => {
+    const onClickCallback = jest.fn();
+    const wrapper = mount(
+      <OpenClose
+        title="Tittel"
+        onClick={onClickCallback}
+        isOpen
+        isOnClickOnlyFiredOnOpen={false}
+      >
+        {tekstIEkspanderbartFelt}
+      </OpenClose>
+    );
+    const button = wrapper.find('button');
+    button.simulate('click');
+    expect(onClickCallback).toHaveBeenCalledTimes(1);
   });
 });

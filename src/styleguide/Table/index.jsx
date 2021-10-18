@@ -1,5 +1,5 @@
 import React from 'react';
-import { Table } from '../../components/index';
+import { Table } from '../../components/Table';
 
 export function TableRenderer(_ref2) {
   const columns = [

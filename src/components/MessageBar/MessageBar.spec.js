@@ -1,7 +1,7 @@
 import React from 'react';
 import { mount } from 'enzyme';
 import { matches } from './../utils/test-utils';
-import { MessageBar } from '../index';
+import { MessageBar } from '.';
 
 function oppsettFullDOM(props) {
   return mount(

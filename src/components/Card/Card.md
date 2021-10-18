@@ -1,7 +1,9 @@
-**Innholdskort brukes til å gruppere innhold som hører sammen.**
+**Card (Innholdskort): brukes til å gruppere innhold som hører sammen.**
 
 ```js
-import { Card, Typography, Link } from '@skatteetaten/frontend-components';
+import { Card } from '@skatteetaten/frontend-components/Card';
+import { Link } from '@skatteetaten/frontend-components/Link';
+import { Typography } from '@skatteetaten/frontend-components/Typography';
 
 const [state, setState] = React.useState({ title: 'Skatteoppgjøret for 2017' });
 
@@ -25,7 +27,9 @@ const [state, setState] = React.useState({ title: 'Skatteoppgjøret for 2017' })
 Vi viser gjerne konklusjoner og oppsummeringer i et kort grønn ramme:
 
 ```js
-import { Card, Typography, Link } from '@skatteetaten/frontend-components';
+import { Card } from '@skatteetaten/frontend-components/Card';
+import { Link } from '@skatteetaten/frontend-components/Link';
+import { Typography } from '@skatteetaten/frontend-components/Typography';
 
 const [state, setState] = React.useState({ title: 'Skatteoppgjøret for 2017' });
 
@@ -49,7 +53,10 @@ const [state, setState] = React.useState({ title: 'Skatteoppgjøret for 2017' })
 Varsel i card:
 
 ```js
-import { Card, Icon, Grid, TextField } from '@skatteetaten/frontend-components';
+import { Card } from '@skatteetaten/frontend-components/Card';
+import { Grid } from '@skatteetaten/frontend-components/Grid';
+import { Icon } from '@skatteetaten/frontend-components/Icon';
+import { TextField } from '@skatteetaten/frontend-components/TextField';
 import { UseScreen } from '../../components/utils/ScreenPlugin';
 
 const screenSize = UseScreen();

@@ -36,8 +36,8 @@ const limitNumberOfResults = (list: Array<IDropdownOption>, limit?: number) => {
   return list;
 };
 
-/**
- * @visibleName SearchField (Søkefelt)
+/*
+ * visibleName SearchField (Søkefelt)
  */
 export const SearchField: React.FC<SearchFieldProps> = (props) => {
   const {
@@ -269,7 +269,7 @@ export const SearchField: React.FC<SearchFieldProps> = (props) => {
               setValue(newValue);
             }}
             onKeyDown={(ev) => handleOnKeyDown(ev)}
-            value={value}
+            value={value !== undefined ? value : ''}
             componentRef={_componentRef}
             iconProps={{
               iconName: 'Filter',

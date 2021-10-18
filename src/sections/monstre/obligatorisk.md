@@ -1,12 +1,10 @@
 ```js noeditor
-import {
-  Accordion,
-  AccordionItem,
-  Card,
-  TextField,
-  Button,
-  RadioButtonGroup,
-} from '@skatteetaten/frontend-components';
+import { Accordion } from '@skatteetaten/frontend-components/Accordion';
+import { AccordionItem } from '@skatteetaten/frontend-components/Accordion/AccordionItem';
+import { Button } from '@skatteetaten/frontend-components/Button';
+import { Card } from '@skatteetaten/frontend-components/Card';
+import { RadioButtonGroup } from '@skatteetaten/frontend-components/RadioButtonGroup';
+import { TextField } from '@skatteetaten/frontend-components/TextField';
 
 <div>
   <Card

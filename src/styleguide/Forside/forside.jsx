@@ -1,11 +1,10 @@
 import React from 'react';
-import {
-  Card,
-  Grid,
-  Icon,
-  NavigationTile,
-  NavigationContent,
-} from '../../components/index';
+
+import { Card } from '../../components/Card';
+import { Grid } from '../../components/Grid';
+import { Icon } from '../../components/Icon';
+import { NavigationTile } from '../../components/NavigationTile';
+import { NavigationContent } from '../../components/NavigationTile/NavigationContent';
 
 function Forside(props) {
   return (

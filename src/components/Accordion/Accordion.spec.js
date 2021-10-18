@@ -1,7 +1,8 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
 import toJson from 'enzyme-to-json';
-import { Accordion, AccordionItem } from '../index';
+import { Accordion } from '.';
+import { AccordionItem } from './AccordionItem';
 
 function oppsettShallow(props1, props2) {
   return shallow(

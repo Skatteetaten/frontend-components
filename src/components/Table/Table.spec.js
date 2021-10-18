@@ -1,7 +1,9 @@
 import React from 'react';
 import { mount } from 'enzyme';
 import toJson from 'enzyme-to-json';
-import { Table, IconButton, Grid } from '../index';
+import { Table } from '.';
+import { IconButton } from '../IconButton';
+import { Grid } from '../Grid';
 
 const data = [
   {

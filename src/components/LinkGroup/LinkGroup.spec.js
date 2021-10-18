@@ -1,7 +1,7 @@
 import React from 'react';
 import { mount } from 'enzyme';
 import toJson from 'enzyme-to-json';
-import { LinkGroup } from '../index';
+import { LinkGroup } from '.';
 
 function oppsettMount() {
   return mount(<LinkGroup links={[{ text: 'Dette er en link', path: '#' }]} />);

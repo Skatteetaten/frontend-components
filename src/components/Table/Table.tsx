@@ -116,8 +116,8 @@ const SumRow = (props: {
   );
 };
 
-/**
- * @visibleName Table (Tabell)
+/*
+ * visibleName Table (Tabell)
  */
 export const Table = <P extends object>(props: TableProps<P>) => {
   const {

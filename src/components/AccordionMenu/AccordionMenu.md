@@ -1,5 +1,5 @@
 ```js noeditor
-import { MessageBar } from '@skatteetaten/frontend-components';
+import { MessageBar } from '@skatteetaten/frontend-components/MessageBar';
 
 <MessageBar type={MessageBar.Type.info}>
   Se tilhørende underkomponent{' '}
@@ -7,17 +7,15 @@ import { MessageBar } from '@skatteetaten/frontend-components';
 </MessageBar>;
 ```
 
-**Ekspanderende panel i saksbehandlingsløsninger**
+**AccordionMenu (Trekkspillmeny): Ekspanderende panel i saksbehandlingsløsninger**
 
 ```js
-import {
-  AccordionMenu,
-  AccordionMenuItem,
-  Icon,
-  IconButton,
-  Link,
-  ActionButton,
-} from '@skatteetaten/frontend-components';
+import { AccordionMenu } from '@skatteetaten/frontend-components/AccordionMenu';
+import { AccordionMenuItem } from '@skatteetaten/frontend-components/AccordionMenu/AccordionMenuItem';
+import { ActionButton } from '@skatteetaten/frontend-components/ActionButton';
+import { Icon } from '@skatteetaten/frontend-components/Icon';
+import { IconButton } from '@skatteetaten/frontend-components/IconButton';
+import { Link } from '@skatteetaten/frontend-components/Link';
 
 // Inline styles for hacking examples
 const dlStyle = {

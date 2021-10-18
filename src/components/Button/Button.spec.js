@@ -1,7 +1,7 @@
 import React from 'react';
 import { matches } from './../utils/test-utils';
 import { mount } from 'enzyme';
-import { Button } from '../index';
+import { Button } from '.';
 
 function oppsettFullDOM(props) {
   return mount(<Button {...props}>Knappetekst</Button>);

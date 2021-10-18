@@ -1,5 +1,5 @@
-import { mergeStyleSets } from '@uifabric/merge-styles';
-import { getTheme } from '@uifabric/styling';
+import { mergeStyleSets } from '@fluentui/merge-styles';
+import { getTheme } from '@fluentui/react/lib/Styling';
 import { FontSizes, FontWeights, IconFontSizes, PaletteProps } from '../utils';
 
 export function getClassNames() {
@@ -29,7 +29,7 @@ export function getClassNames() {
       padding: '0px 0 15px 10px',
       selectors: {
         '&:focus': {
-          background: palette.skeColor.lightBlue,
+          background: palette.skeColor.backgroundFocusColor,
         },
       },
     },

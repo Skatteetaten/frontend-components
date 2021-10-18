@@ -17,18 +17,21 @@ export enum FileFormatTypes {
   txt = '.txt',
   xml = '.xml',
   csv = '.csv',
-  odt = '.odt',
-  ods = '.ods',
+  odf = '.odf',
   odp = '.odp',
+  ods = '.ods',
+  odt = '.odt',
+  ppt = '.ppt',
   pptx = '.pptx',
+  xls = '.xls',
   xlsx = '.xlsx',
 }
 
 export interface AttachmentMetadata extends File {
   id: string;
 }
-/**
- * @visibleName FileUploader (Filopplaster)
+/*
+ * visibleName FileUploader (Filopplaster)
  */
 export interface FileUploaderProps {
   /** Akksepterte filformater */

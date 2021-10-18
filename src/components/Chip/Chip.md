@@ -1,7 +1,8 @@
-**Chip brukes til å markere eller utheve noe – som en merkelapp.**
+**Chip (Emneknagg): brukes til å markere eller utheve noe – som en merkelapp.**
 
 ```js
-import { Chip, Icon } from '@skatteetaten/frontend-components';
+import { Chip } from '@skatteetaten/frontend-components/Chip';
+import { Icon } from '@skatteetaten/frontend-components/Icon';
 
 <div>
   <Chip>Klagesak</Chip>
@@ -17,7 +18,7 @@ import { Chip, Icon } from '@skatteetaten/frontend-components';
 Eksempel på bruk i tekst:
 
 ```js
-import { Chip } from '@skatteetaten/frontend-components';
+import { Chip } from '@skatteetaten/frontend-components/Chip';
 
 <div>
   <h3>Dekning av saksomkostninger</h3>

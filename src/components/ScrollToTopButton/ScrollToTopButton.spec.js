@@ -1,6 +1,6 @@
 import React from 'react';
 import { mount } from 'enzyme';
-import { ScrollToTopButton } from '../index';
+import { ScrollToTopButton } from '.';
 import { matches } from '../utils/test-utils';
 
 function oppsettFullDOM(props) {

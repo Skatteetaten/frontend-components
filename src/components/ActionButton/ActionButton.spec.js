@@ -1,7 +1,7 @@
 import React from 'react';
 import { mount } from 'enzyme';
 import { matches } from './../utils/test-utils';
-import { ActionButton } from '../index';
+import { ActionButton } from '.';
 
 function oppsettMount(props) {
   return mount(<ActionButton {...props} />);

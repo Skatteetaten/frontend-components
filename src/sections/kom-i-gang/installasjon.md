@@ -14,7 +14,7 @@ npm install @skatteetaten/frontend-components
 ```js static noeditor
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { SkeBasis } from '@skatteetaten/frontend-components';
+import { SkeBasis } from '@skatteetaten/frontend-components/SkeBasis';
 import App from './App';
 
 ReactDOM.render(
@@ -29,7 +29,7 @@ ReactDOM.render(
 
 ```js static noeditor
 import React, { Component } from 'react';
-import { Card } from '@skatteetaten/frontend-components';
+import { Card } from '@skatteetaten/frontend-components/Card';
 
 class App extends Component {
   render() {
@@ -45,6 +45,7 @@ export default App;
 
 ### Bruke komponentene som UMD-pakke (Micro Frontend)
 
+// TO-DO følges opp - hva har umd med micro-frontend å gjøre?
 Dersom løsningen din følger prinippene til «Micro Frontend», kan du importere komponentene (i SystemJS) som UMD pakke.
 Alle nødvendige avhengigheter i tillegg til selv designsystemet kommer fra et importmap:
 

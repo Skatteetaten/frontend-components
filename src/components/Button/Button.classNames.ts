@@ -1,5 +1,5 @@
-import { mergeStyles } from '@uifabric/merge-styles';
-import { getTheme } from '@uifabric/styling';
+import { mergeStyles } from '@fluentui/merge-styles';
+import { getTheme } from '@fluentui/react/lib/Styling';
 import { FontSizes, FontWeights, PaletteProps, getFocusStyle } from '../utils';
 import { ButtonProps } from './Button.types';
 
@@ -53,10 +53,12 @@ function getTypeColor(props: ButtonProps): object {
     case 'warning':
       return {
         borderRadius: '6px',
-        borderColor: palette.skeColor.lightPink,
-        background: palette.skeColor.lightPink,
+        borderColor: palette.skeColor.burgundy50,
+        background: palette.skeColor.burgundy10,
         color: palette.bodyText,
         ...sizeNormal,
+        boxShadow: `0 6px 6px -6px ${palette.skeColor.lightGrey}`,
+
         selectors: {
           '@media  only screen and (max-width: 479px)': {
             width: '100%',
@@ -88,8 +90,8 @@ function getTypeFocusColor(props: ButtonProps): object {
   switch (props.buttonStyle) {
     case 'warning':
       return {
-        borderColor: palette.skeColor.blue,
-        background: palette.skeColor.lightPink,
+        borderColor: palette.skeColor.error,
+        background: palette.skeColor.burgundy30,
         color: palette.bodyText,
       };
     case 'secondary':
@@ -187,7 +189,7 @@ export function getClassNames(props: ButtonProps): string {
           borderWidth: '3px',
           fontWeight: 'normal',
           padding: '15px',
-          transition: 'background 0.3s',
+          transition: 'background 0.2s',
           textAlign: props.icon ? 'left' : 'center',
           verticalAlign: 'top',
           ...getTypeColor(props),

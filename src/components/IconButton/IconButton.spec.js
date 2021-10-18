@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
-import { IconButton } from '../index';
+import { IconButton } from '.';
 import { matches } from './../utils/test-utils';
 
 function oppsettShallow(props) {

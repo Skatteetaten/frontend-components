@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
 import toJson from 'enzyme-to-json';
-import { Dialog } from '../index';
+import { Dialog } from '.';
 
 function oppsettShallow(props) {
   return shallow(<Dialog {...props} />);

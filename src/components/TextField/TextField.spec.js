@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
 import { matches } from '../utils/test-utils';
-import { TextField } from '../index';
+import { TextField } from '.';
 
 function oppsettShallow(props) {
   return shallow(<TextField {...props} />);
@@ -66,8 +66,8 @@ describe('TextField komponent', () => {
     helpButton.simulate('click');
     const callout = wrapper.find('StyledCalloutContentBase');
     expect(callout).toHaveLength(1);
-    expect(callout.prop('color')).toEqual('lightGreen');
-    expect(callout.find('Popup').html()).toContain(
+    expect(callout.prop('color')).toEqual('green10');
+    expect(callout.find('p').html()).toContain(
       'Vi trenger å vite navnet ditt dersom vi skal kontakte deg senere'
     );
   });
@@ -87,7 +87,7 @@ describe('TextField komponent', () => {
     helpButton.simulate('click');
     const callout = wrapper.find('StyledCalloutContentBase');
     expect(callout).toHaveLength(1);
-    expect(callout.find('Popup').find('em').html()).toContain('ditt');
+    expect(callout.find('p').find('em').html()).toContain('ditt');
   });
 
   it('rendrer TextFiled med varseltekst', () => {
@@ -103,8 +103,8 @@ describe('TextField komponent', () => {
     warningButton.simulate('click');
     const callout = wrapper.find('StyledCalloutContentBase');
     expect(callout).toHaveLength(1);
-    expect(callout.prop('color')).toEqual('beige');
-    expect(callout.find('Popup').html()).toContain(
+    expect(callout.prop('color')).toEqual('brown10');
+    expect(callout.find('p').html()).toContain(
       'Er du sikker på at antall barn er riktig?'
     );
   });
@@ -126,7 +126,7 @@ describe('TextField komponent', () => {
     const callout = wrapper.find('StyledCalloutContentBase');
     expect(callout).toHaveLength(1);
 
-    expect(callout.find('Popup').find('strong').html()).toContain('barn');
+    expect(callout.find('p').find('strong').html()).toContain('barn');
   });
 
   it('rendrer TextFiled i lesemodus', () => {

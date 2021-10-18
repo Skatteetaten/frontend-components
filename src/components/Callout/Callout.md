@@ -1,9 +1,10 @@
-**Callout brukes når man ønsker å vise brukeren en tekst som er knyttet til element i skjermbildet. Et typisk eksempel er en ikon med spørsmåltegn, og en tilhørende hjelpetekst dukker opp når man trykker på det.**
+**Callout (Utropsboks): brukes når man ønsker å vise brukeren en tekst som er knyttet til element i skjermbildet.**
 
 ### Hjelpetekst
 
 ```js
-import { Callout, Button } from '@skatteetaten/frontend-components';
+import { Button } from '@skatteetaten/frontend-components/Button';
+import { Callout } from '@skatteetaten/frontend-components/Callout';
 
 const [state, setState] = React.useState({
   isCalloutVisible: false,
@@ -54,7 +55,8 @@ function closeButton() {
 ### Infotekst
 
 ```js
-import { Callout, Button } from '@skatteetaten/frontend-components';
+import { Button } from '@skatteetaten/frontend-components/Button';
+import { Callout } from '@skatteetaten/frontend-components/Callout';
 
 const [state, setState] = React.useState({ isCalloutVisible: false });
 
@@ -96,7 +98,8 @@ function closeButton() {
 ### Autolukking
 
 ```js
-import { Callout, Button } from '@skatteetaten/frontend-components';
+import { Button } from '@skatteetaten/frontend-components/Button';
+import { Callout } from '@skatteetaten/frontend-components/Callout';
 
 const [state, setState] = React.useState({ isCalloutVisible: false });
 
