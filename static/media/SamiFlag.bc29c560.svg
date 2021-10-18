@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<svg viewBox="0 36 18 14" height="14" xmlns="http://www.w3.org/2000/svg">
+<svg viewBox="0 36 18 14" height="14" width="21" xmlns="http://www.w3.org/2000/svg">
   <g transform="matrix(1, 0, 0, 1, -1, -15)">
     <path fill="#D81E05" d="M1 51h6v14H1z"/>
     <path fill="#007A3D" d="M7 51h1v14H7z"/>

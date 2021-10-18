@@ -1,9 +1,9 @@
 {
   "files": {
     "main.css": "/static/css/main.ac061772.chunk.css",
-    "main.js": "/build/main.82ebc2aa.js",
+    "main.js": "/build/main.1e3169df.js",
     "runtime-main.js": "/build/bundle.3527ec54.js",
-    "build/2.d2daef99.js": "/build/2.d2daef99.js",
+    "build/2.b5348948.js": "/build/2.b5348948.js",
     "assets/png/Byggeklosser.png": "/assets/png/Byggeklosser.png",
     "assets/png/Byggeklosser_skisse.png": "/assets/png/Byggeklosser_skisse.png",
     "assets/png/designer.png": "/assets/png/designer.png",
@@ -26,14 +26,14 @@
     "assets/svg/ske-logo-intern-kopi.svg": "/assets/svg/ske-logo-intern-kopi.svg",
     "assets/svg/ske-logo-intern.svg": "/assets/svg/ske-logo-intern.svg",
     "assets/svg/ske-logo.svg": "/assets/svg/ske-logo.svg",
-    "build/2.d2daef99.js.LICENSE.txt": "/build/2.d2daef99.js.LICENSE.txt",
+    "build/2.b5348948.js.LICENSE.txt": "/build/2.b5348948.js.LICENSE.txt",
     "favicon.ico": "/favicon.ico",
     "index.html": "/index.html",
     "manifest.json": "/manifest.json",
     "static/css/main.ac061772.chunk.css.map": "/static/css/main.ac061772.chunk.css.map",
-    "static/media/EnglishFlag.91934228.svg": "/static/media/EnglishFlag.91934228.svg",
-    "static/media/NorwegianFlag.36cf4a7f.svg": "/static/media/NorwegianFlag.36cf4a7f.svg",
-    "static/media/SamiFlag.7996b238.svg": "/static/media/SamiFlag.7996b238.svg",
+    "static/media/EnglishFlag.714be210.svg": "/static/media/EnglishFlag.714be210.svg",
+    "static/media/NorwegianFlag.e7fb117c.svg": "/static/media/NorwegianFlag.e7fb117c.svg",
+    "static/media/SamiFlag.bc29c560.svg": "/static/media/SamiFlag.bc29c560.svg",
     "static/media/SkeIconfont.31d6bdd3.woff2": "/static/media/SkeIconfont.31d6bdd3.woff2",
     "static/media/SkeIconfont.539fa828.eot": "/static/media/SkeIconfont.539fa828.eot",
     "static/media/SkeIconfont.74db99a5.woff": "/static/media/SkeIconfont.74db99a5.woff",
@@ -55,8 +55,8 @@
   },
   "entrypoints": [
     "build/bundle.3527ec54.js",
-    "build/2.d2daef99.js",
+    "build/2.b5348948.js",
     "static/css/main.ac061772.chunk.css",
-    "build/main.82ebc2aa.js"
+    "build/main.1e3169df.js"
   ]
 }
