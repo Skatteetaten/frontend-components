@@ -219,7 +219,12 @@ function closeDialog() {
 ```
 
 ```js noeditor beskrivelse
+import { MessageBar } from '@skatteetaten/frontend-components/MessageBar';
+
 <div>
+  <MessageBar type={MessageBar.Type.info}>
+    Merk at denne komponenten foreløpig ikke fungerer i micro frontends.
+  </MessageBar>
   <h3>En dialogboks fremhever informasjon</h3>
   <p>
     Dialogboksen dukker opp midt på skjermen for å tiltrekke seg brukerens
@@ -245,5 +250,5 @@ function closeDialog() {
     </a>{' '}
     for hjelp til å skrive gode tekster.
   </p>
-</div>
+</div>;
 ```

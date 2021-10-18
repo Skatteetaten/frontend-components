@@ -119,7 +119,13 @@ import Dropdown from '@skatteetaten/frontend-components/Dropdown';
 ```
 
 ```js noeditor beskrivelse
+import { MessageBar } from '@skatteetaten/frontend-components/MessageBar';
+
 <>
+  <MessageBar type={MessageBar.Type.info}>
+    Merk at denne komponenten foreløpig ikke fungerer i micro frontends. Vurder
+    å bruke ComboBox i stedet.
+  </MessageBar>
   <h3>Nedtrekksliste som brukeren kan velge fra</h3>
   <p>
     Nedtrekkslister gjør det mulig for brukeren å velge ett eller flere valg fra
@@ -131,9 +137,7 @@ import Dropdown from '@skatteetaten/frontend-components/Dropdown';
     valg, kan du vurdere å bruke{' '}
     <a href="#radiobuttongroup"> RadioButtonGroup (radioknapper)</a> i stedet.
   </p>
-
   <h3>Tips til hvordan du lager en god nedtrekksliste</h3>
-
   <ul>
     <li>
       Sorter innholdet i nedtrekkslisten på en logisk måte, for eksempel
@@ -154,5 +158,5 @@ import Dropdown from '@skatteetaten/frontend-components/Dropdown';
       <a href="#combobox"> nedtrekksliste med skriving (ComboBox) </a>.
     </li>
   </ul>
-</>
+</>;
 ```

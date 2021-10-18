@@ -5,6 +5,8 @@ I tillegg har vi lagt til et sett med blåtoner og statusfarger fordi vi ofte br
 ```js noeditor beskrivelse
 import TinyColor from '@ctrl/tinycolor';
 import { SkeBasis } from '@skatteetaten/frontend-components/SkeBasis';
+import { Icon } from '@skatteetaten/frontend-components/Icon';
+
 
 palette = Object(SkeBasis.PALETTE);
 
@@ -89,6 +91,39 @@ function drawSwatch(colorCode) {
      drawSwatch('interactiveDark')}  
   </div>
 
+  <h3>Tips og retningslinjer</h3>
+  <p>100-fargene kan brukes med 30-fargene og lysere. Unngå å blande på tvers av hovedfarger.</p>
+  <div className="dodont">
+    <div className="do">
+      <p class="title">Gjør slik:</p>
+      <div style={{fontSize:"22px",padding:'0px 8px', color: palette.skeColor.green100, backgroundColor: palette.skeColor.green30}}>green100 på green30</div>
+      <div style={{fontSize:"22px", padding:'0px 8px', color: palette.skeColor.green100, backgroundColor: palette.skeColor.green10}}>green100 på green10</div>
+      <div style={{fontSize:"22px", padding:'0px 8px', color: palette.skeColor.green100, backgroundColor: palette.skeColor.green5}}>green100 på green5</div>
+    </div>
+    
+    <div className="dont">
+      <p class="title">Ikke gjør slik:</p>
+      <div style={{fontSize:"22px", padding:'0px 8px', color: palette.skeColor.green100, backgroundColor: palette.skeColor.green50}}>green100 på green50 (3.88 i kontrast)</div>
+      <div style={{fontSize:"22px", padding:'0px 8px', color: palette.skeColor.green70, backgroundColor: palette.skeColor.green10}}>green70 på green10 (2.89 i kontrast)</div>
+      <div style={{fontSize:"22px", padding:'0px 8px', color: palette.skeColor.burgundy10, backgroundColor: palette.skeColor.green100, border: `4px solid ${palette.skeColor.blue50}`}}>burgundy10 på green100 (stygt)</div>
+    </div>
+  </div>
+
+  <p>Av statusfargene er den bare den røde som brukes til tekst:</p>
+
+  <div className="dodont">
+    <div className="do">
+      <p class="title">Gjør slik:</p>
+      <div style={{fontSize:"22px"}}><Icon iconName="Completed" style={{position: 'absolute', fontSize:"22px", color: palette.skeColor.statusOk}}/><span style={{marginLeft: '26px', marginTop: '4px'}}>Fullført</span></div>
+      <div style={{fontSize:"22px"}}><Icon iconName="Info" style={{position: 'absolute', fontSize:"22px", color: palette.skeColor.statusWarning}}/><span style={{marginLeft: '26px', marginTop: '4px'}}>Til oppfølging</span></div>
+      <div style={{fontSize:"22px", color: palette.skeColor.statusError}}><Icon iconName="Error" style={{position: 'absolute', fontSize:"22px", color: palette.skeColor.statusError}}/><span style={{marginLeft: '26px', marginTop: '4px'}}>Feil på siden</span></div>
+    </div>
+    <div className="dont">
+      <p class="title">Ikke gjør slik:</p>
+      <p style={{color: palette.skeColor.statusOk, backgroundColor: palette.skeColor.green5}}>Fullført</p>
+      <p style={{color: palette.skeColor.statusWarning, backgroundColor: palette.skeColor.brown5}}>Til oppfølging</p>
+    </div>
+  </div>
 
 </div>;
 ```
