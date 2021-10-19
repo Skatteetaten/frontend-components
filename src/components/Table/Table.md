@@ -18,6 +18,10 @@ const blockRightStyle = {
   marginTop: 20,
 };
 
+const buttonPaddingStyle = {
+  marginLeft: '8px',
+};
+
 const tableStyle = {
   background: 'red',
   marginTop: 20,
@@ -73,8 +77,14 @@ const editableContent = (data, close, rowIndex) => (
           <div style={blockRightStyle}>
             <Button onClick={close}>Slett</Button>
 
-            <Button onClick={close}>Avbryt</Button>
-            <Button onClick={close} buttonStyle="primaryRoundedFilled">
+            <Button onClick={close} style={buttonPaddingStyle}>
+              Avbryt
+            </Button>
+            <Button
+              onClick={close}
+              style={buttonPaddingStyle}
+              buttonStyle="primaryRoundedFilled"
+            >
               Ok
             </Button>
           </div>
@@ -345,6 +355,10 @@ const blockRightStyle = {
   marginTop: 20,
 };
 
+const buttonPaddingStyle = {
+  marginLeft: '8px',
+};
+
 const tableStyle = {
   background: 'red',
   marginTop: 20,
@@ -398,8 +412,14 @@ const editableContent = (data, close, rowIndex) => (
           <div style={blockRightStyle}>
             <Button onClick={close}>Slett</Button>
 
-            <Button onClick={close}>Avbryt</Button>
-            <Button onClick={close} buttonStyle="primaryRoundedFilled">
+            <Button onClick={close} style={buttonPaddingStyle}>
+              Avbryt
+            </Button>
+            <Button
+              onClick={close}
+              style={buttonPaddingStyle}
+              buttonStyle="primaryRoundedFilled"
+            >
               Ok
             </Button>
           </div>
@@ -495,6 +515,10 @@ const blockRightStyle = {
   marginTop: 20,
 };
 
+const buttonPaddingStyle = {
+  marginLeft: '8px',
+};
+
 const tableStyle = {
   background: 'red',
   marginTop: 20,
@@ -556,8 +580,14 @@ const editableContent = (data, close, rowIndex) => (
           <div style={blockRightStyle}>
             <Button onClick={close}>Slett</Button>
 
-            <Button onClick={close}>Avbryt</Button>
-            <Button onClick={close} buttonStyle="primaryRoundedFilled">
+            <Button onClick={close} style={buttonPaddingStyle}>
+              Avbryt
+            </Button>
+            <Button
+              onClick={close}
+              style={buttonPaddingStyle}
+              buttonStyle="primaryRoundedFilled"
+            >
               Ok
             </Button>
           </div>

@@ -105,7 +105,7 @@ function drawSwatch(colorCode) {
       <p class="title">Ikke gjør slik:</p>
       <div style={{fontSize:"22px", padding:'0px 8px', color: palette.skeColor.green100, backgroundColor: palette.skeColor.green50}}>green100 på green50 (3.88 i kontrast)</div>
       <div style={{fontSize:"22px", padding:'0px 8px', color: palette.skeColor.green70, backgroundColor: palette.skeColor.green10}}>green70 på green10 (2.89 i kontrast)</div>
-      <div style={{fontSize:"22px", padding:'0px 8px', color: palette.skeColor.burgundy10, backgroundColor: palette.skeColor.green100, border: `4px solid ${palette.skeColor.blue50}`}}>burgundy10 på green100 (stygt)</div>
+      <div style={{fontSize:"22px", padding:'0px 8px', color: palette.skeColor.blue100, backgroundColor: palette.skeColor.brown50, border: `4px solid ${palette.skeColor.burgundy50}`}}>blue100 på brown50 + ramme (💩)</div>
     </div>
   </div>
 
@@ -120,8 +120,8 @@ function drawSwatch(colorCode) {
     </div>
     <div className="dont">
       <p class="title">Ikke gjør slik:</p>
-      <p style={{color: palette.skeColor.statusOk, backgroundColor: palette.skeColor.green5}}>Fullført</p>
-      <p style={{color: palette.skeColor.statusWarning, backgroundColor: palette.skeColor.brown5}}>Til oppfølging</p>
+      <p style={{color: palette.skeColor.statusOk, backgroundColor: palette.skeColor.green5, fontSize:"22px"}}>Fullført</p>
+      <p style={{color: palette.skeColor.statusWarning, backgroundColor: palette.skeColor.brown5, fontSize:"22px"}}>Til oppfølging</p>
     </div>
   </div>
 
