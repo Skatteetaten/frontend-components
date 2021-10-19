@@ -16,7 +16,7 @@ import { visualizer } from 'rollup-plugin-visualizer';
 const extensions = ['.js', '.ts', '.tsx', '.jsx'];
 const outputDir = './lib/umd/';
 const urlConfig = {
-  include: ['**/*.woff', '**/*.woff2', '**/*.ttf', '**/*.eot', '**/*.svg'],
+  include: ['**/*.woff'],
   limit: Infinity,
 };
 export const externalsConfig = {
