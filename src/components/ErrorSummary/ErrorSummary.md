@@ -2,7 +2,32 @@
 
 ```js
 import { ErrorSummary } from '@skatteetaten/frontend-components/ErrorSummary';
+
+<div>
+  <ErrorSummary
+    title={'For å gå videre må du rette opp i følgende:'}
+    errors={[
+      { id: 'input_aar-input', error: 'Inntekståret må være etter 2008' },
+      {
+        id: 'input_epost-input',
+        error: 'E-posten ser ikke riktig ut. Skriv slik: ola.normann@norge.no',
+      },
+      { id: 'input_dager-input', error: 'Antall dager må fylles ut.' },
+    ]}
+  />
+</div>;
+```
+
+Brukt i et skjema:
+
+```js
+import { ErrorSummary } from '@skatteetaten/frontend-components/ErrorSummary';
 import { TextField } from '@skatteetaten/frontend-components/TextField';
+import { Button } from '@skatteetaten/frontend-components/Button';
+
+const buttonStyle = {
+  marginTop: '8px',
+};
 
 <div>
   <div style={{ width: '350px', marginBottom: '16px' }}>
@@ -39,6 +64,10 @@ import { TextField } from '@skatteetaten/frontend-components/TextField';
       { id: 'input_dager-input', error: 'Antall dager må fylles ut.' },
     ]}
   />
+
+  <Button style={buttonStyle} buttonStyle="primaryRoundedFilled">
+    Send inn
+  </Button>
 </div>;
 ```
 

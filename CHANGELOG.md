@@ -1,17 +1,54 @@
-### **v.5.0.0 - 24.08.2021**
+### **v.5.0.0 - 31.10.2021 - Major release**
 
-- Oppgraderer fluent-ui til v8:
-  https://github.com/microsoft/fluentui/wiki/Version-8-release-notes
-  https://github.com/microsoft/fluentui/wiki/Version-8-migration-guide#individual-components-new-features
-  - ivaretar breaking-change på role i checkbox
+#### Colors and design
+
+- Colors updated with new names and values. Colors are now accessible via design tokens. Added design tokens for spacing and typography as well.
+- New colors brands (themes), which changes the main color in: TopBanner (external), FooterContent, Tabs, Dialog and ProgressBar. We have themes for Skatteetaten (default), Statens innkreving (INK), and Lønnsstøtteordningen (LSO).
+- New status colors: statusOk and statusWarning.
+- Both Button and ActionButton have upgraded styling, click and hover effects
+- New ErrorSummary component.
+- ErrorMessage design upgraded to match the new ErrorSummary component.
+
+#### Micro frontend support and building pipeline
+
+- The components now better supports Micro Frontend; the styling information can be accessed from shadow DOM. (Note: Dialog and Dropdown does not fully support this yet.)
+- We have changed from UMD to ESM-export.
+- Reorganized import and export to support modules.
+
+#### Upgrades and optimizations
+
+- Upgraded to Fluent-UI v8:
+  https://github.com/microsoft/fluentui/wiki/Version-8-release-notes (this upgrade requires React 17)
+- Upgraded dependencies: i18next og react-i18next and node-fetch
+- Remove unnecessary dependencies: tslib (already included in Fluent UI) and fixes duplicate dependencies.
+- Moved uuid from dependency to devDependendy
+- Icons have been reorganized into a single, much smaller font file, using woff-format only.
+
+#### Breaking
+
+- React 17 is now required
+- global imports from root is now longer supported:
+  import { CardBorder } from '@skatteetaten/frontend-components'; must now be changed to
+  more specific imports: imports import { CardBorder } from '@skatteetaten/frontend-components/Card';
+- Button variants have been reorganized/prioritized, with have new names and default value:
+  "primaryLarge" is now "callToAction",
+  "primaryRoundedFilled" is now "primary",
+  "secondary" is now "secondarySimple",
+  "primary" is now "primaryCornered",
+  "primaryRounded" is now "secondary" (default)
+
+#### Additional
+
+- Sketch-file updated and reorganized.
+- Fixes known accessibility issues with Commandbar, Dropdown and Combobox
+
+#### Notes /Todo
+
+- - ivaretar breaking-change på role i checkbox
   - flytter ref på combobox til ytterste wrapper
   - datepicker oppdaterer ref - TO-DO: ikke mulig å aksessere lokal state for editMode
   - refaktorerer TabItem til FunctionComponent
   - oppdaterer types for TextField
-- Rydder opp i dupliserte dependencies: Fjerner @uifabric dependencies og peker mot allerede installerte @fabricui versjoner
-- Oppgraderer dependencies: Oppgradrere i18next og react-i18next dependencies, plus node-fetch dependency
-- Flytter fra dependency til devDependency: uuid
-- Fjerner unødvendige dependencies: fjerner tslib (allerede definert i fluentui)
 - Eksport til ESM: Endrer fra umd til esm eksport (//TO-DO reaktivere import-maps)
 - Reorganisering av import/export til å fungere med moduler (//TO-DO alle doc-sidene må retestes) //TO-DO fjerne entry.ts i /lib etter compile
 

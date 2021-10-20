@@ -1,6 +1,5 @@
 ```js noeditor
 import { Card } from '@skatteetaten/frontend-components/Card';
-import { Link } from '@skatteetaten/frontend-components/Link';
 
 <div>
   <Card
@@ -46,7 +45,7 @@ import { Card } from '@skatteetaten/frontend-components/Card';
 import { FooterContent } from '@skatteetaten/frontend-components/FooterContent';
 import { Grid } from '@skatteetaten/frontend-components/Grid';
 import { Icon } from '@skatteetaten/frontend-components/Icon';
-import { LanguagePicker } from '@skatteetaten/frontend-components/Link';
+import { LanguagePicker } from '@skatteetaten/frontend-components/TopStripe/LanguagePicker';
 import { Link } from '@skatteetaten/frontend-components/Link';
 import { TextField } from '@skatteetaten/frontend-components/TextField';
 import { Step } from '@skatteetaten/frontend-components/StepList/Step';
