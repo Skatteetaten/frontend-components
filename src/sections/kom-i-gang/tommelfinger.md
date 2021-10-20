@@ -15,6 +15,7 @@ import { Link } from '@skatteetaten/frontend-components/Link';
 import { MessageBar } from '@skatteetaten/frontend-components/MessageBar';
 import { TextField } from '@skatteetaten/frontend-components/TextField';
 import { TopBanner } from '@skatteetaten/frontend-components/TopBanner';
+import { Spinner } from '@skatteetaten/frontend-components/Spinner';
 
 const [state, setState] = React.useState({
   hasSpinner: false,
