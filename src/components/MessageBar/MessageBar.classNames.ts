@@ -107,7 +107,7 @@ export const getClassNames = (props: MessageBarProps) => {
         '& .ms-MessageBar-icon': {
           backgroundColor: severe ? palette.skeColor.statusError : 'none',
           margin: 0,
-          padding: '8px 10px 8px 8px',
+          padding: '9px 10px 8px 9px',
         },
         '.ms-MessageBar-icon i': {
           ...getIconColor(props.type),
@@ -120,10 +120,13 @@ export const getClassNames = (props: MessageBarProps) => {
             },
           },
         },
+        '.ms-MessageBar-text': {
+          margin: '8px',
+        },
         '.ms-MessageBar-innerText': {
           fontSize: size === 'large' ? FontSizes.large : FontSizes.medium,
           color: palette.skeColor.blackAlt,
-          lineHeight: size === 'large' ? '28px' : '22px',
+          lineHeight: size === 'large' ? '1.75rem' : '1.5rem',
           padding: size === 'large' ? '7px 0px 0px 30px' : '-2px 0px 0px 0px',
           selectors: {
             '@media (max-width: 640px)': {
@@ -134,12 +137,23 @@ export const getClassNames = (props: MessageBarProps) => {
         },
         '.ms-MessageBar-dismissal': {
           marginTop: size === 'large' ? '12px ' : '4px',
+          marginRight: size === 'large' ? 'undefined ' : '4px',
+          borderRadius: '50%',
+          transition: 'transform 80ms',
           selectors: {
             ':hover': {
               backgroundColor: palette.skeColor.interactiveLight,
             },
             ':focus': {
               backgroundColor: palette.skeColor.interactiveLight,
+              border: `2px solid ${palette.skeColor.interactive}`,
+              '::after': {
+                outline: `0 none !important`,
+                borderRadius: '50%',
+              },
+            },
+            ':active': {
+              transform: 'translate(0,1px)',
             },
           },
         },
