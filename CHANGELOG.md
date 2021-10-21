@@ -8,6 +8,7 @@
 - Both Button and ActionButton have upgraded styling, click and hover effects
 - New ErrorSummary component.
 - ErrorMessage design upgraded to match the new ErrorSummary component.
+- ActionButton: the large icon is slightly smaller
 
 #### Micro frontend support and building pipeline
 
@@ -51,6 +52,7 @@
   - oppdaterer types for TextField
 - Eksport til ESM: Endrer fra umd til esm eksport (//TO-DO reaktivere import-maps)
 - Reorganisering av import/export til å fungere med moduler (//TO-DO alle doc-sidene må retestes) //TO-DO fjerne entry.ts i /lib etter compile
+- DoNotLayer breaking
 
 ### **v.4.1.3 - 06.09.2021**
 
