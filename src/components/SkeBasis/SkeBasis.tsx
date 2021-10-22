@@ -103,7 +103,6 @@ export class SkeBasis extends React.PureComponent<
     };
 
     return (
-      /* TODO: Ok å bytte fra fabric til ThemeProvider? */
       <BrandContext.Provider value={this.state.brand}>
         <ThemeProvider {...fabricProps}>{this.props.children}</ThemeProvider>
       </BrandContext.Provider>

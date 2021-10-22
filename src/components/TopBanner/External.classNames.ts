@@ -9,7 +9,8 @@ import separatorINK from './assets/separatorINK.svg';
 export function getClassNames(props: TopBannerTypes, tag) {
   const { compact } = props;
   const palette = getTheme().palette as PaletteProps;
-  let dekor = separatorSKE;
+
+  let dekor;
 
   switch (tag) {
     case 'SKE':

@@ -6,7 +6,7 @@ import { TabProps } from './Tabs.types';
 export const getClassNames = function getClassNames(props: TabProps, tag) {
   const palette = getTheme().palette as PaletteProps;
 
-  let primaryColor = palette.skeColor.burgundy100;
+  let primaryColor;
 
   switch (tag) {
     case 'INK': {

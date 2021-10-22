@@ -51,7 +51,7 @@ export const getClassNames = function getClassNames(
 ) {
   const palette = getTheme().palette as PaletteProps;
 
-  let primaryColor = palette.skeColor.burgundy100;
+  let primaryColor;
 
   switch (tag) {
     case 'INK': {
