@@ -713,17 +713,17 @@ function Testside(props) {
         Grønn knapp
       </ActionButton>
       <br />
-      <ActionButton icon="AddOutline" hideBorder>
+      <ActionButton icon="AddOutline" border>
         Legg til
       </ActionButton>
-      <ActionButton hideBorder>Standard</ActionButton>
-      <ActionButton icon="Update" color="black" hideBorder>
+      <ActionButton border>Standard</ActionButton>
+      <ActionButton icon="Update" color="black" border>
         Oppdater
       </ActionButton>
-      <ActionButton icon="Update" color="red" hideBorder>
+      <ActionButton icon="Update" color="red" border>
         Rød knapp
       </ActionButton>
-      <ActionButton icon="Update" color="green" hideBorder>
+      <ActionButton icon="Update" color="green" border>
         Grønn knapp
       </ActionButton>
       <h2>Button</h2>
