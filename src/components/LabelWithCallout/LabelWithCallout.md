@@ -6,7 +6,7 @@ import { LabelWithCallout } from '@skatteetaten/frontend-components/LabelWithCal
 
 const [state, setState] = React.useState({ warning: false });
 
-<div style={{ width: '400px' }}>
+<div style={{ maxWidth: '400px' }}>
   <LabelWithCallout
     label={'Omregistreringsavgift'}
     help={'Avgiften du må betale for å registrere kjøretøyet på en ny person.'}
@@ -27,7 +27,7 @@ Brukt i kombinasjon med annen komponent.
 import { LabelWithCallout } from '@skatteetaten/frontend-components/LabelWithCallout';
 import { SearchField } from '@skatteetaten/frontend-components/SearchField';
 
-<div style={{ width: '350px' }}>
+<div style={{ maxWidth: '350px' }}>
   <LabelWithCallout
     label={'Søk'}
     help={'Her kan du søke etter personer og virksomheter'}
@@ -49,7 +49,7 @@ import { TextField } from '@skatteetaten/frontend-components/TextField';
 const [state, setState] = React.useState({ value1: '' });
 
 <>
-  <div style={{ width: '300px' }}>
+  <div style={{ maxWidth: '300px' }}>
     <TextField
       label="Fullt navn"
       labelWithCalloutAutoDismiss={true}

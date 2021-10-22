@@ -66,6 +66,8 @@ export function getClassNames(props): any {
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'center',
+      flexGrow: '0',
+      flexShrink: '0',
       height: 40,
       width: 40,
       border: `2px solid ${palette.skeColor.blackAlt}`,

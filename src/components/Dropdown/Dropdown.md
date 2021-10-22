@@ -14,7 +14,7 @@ const [state, setState] = React.useState({
   ],
 });
 
-<div style={{ width: '300px' }}>
+<div style={{ maxWidth: '300px' }}>
   <Dropdown
     label="Fruktsort"
     placeholder="Velg"
@@ -41,7 +41,7 @@ const [state, setState] = React.useState({
   ],
 });
 
-<div style={{ width: '300px' }}>
+<div style={{ maxWidth: '300px' }}>
   <Dropdown
     label="Fruktsort"
     placeholder="Velg"
@@ -58,7 +58,7 @@ Lesemodus:
 ```js
 import Dropdown from '@skatteetaten/frontend-components/Dropdown';
 
-<div style={{ width: '300px' }}>
+<div style={{ maxWidth: '300px' }}>
   <Dropdown
     readOnly
     label="Fruktsort"

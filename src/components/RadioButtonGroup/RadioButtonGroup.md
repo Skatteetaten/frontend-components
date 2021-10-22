@@ -15,7 +15,7 @@ const [state, setState] = React.useState({
     },
   ],
 });
-<div style={{ width: '400px' }}>
+<div style={{ maxWidth: '400px' }}>
   <RadioButtonGroup
     label="Type virksomhet"
     options={state.options}

@@ -5,7 +5,7 @@ Filer:
 ```js
 import { Link } from '@skatteetaten/frontend-components/Link';
 
-<div className="ExampleSpacing8">
+<div>
   <Link
     path={'#link'}
     text={'Rettledning til RF-1167 Næringsoppgave 2 for 2020 (pdf)'}
@@ -19,7 +19,7 @@ Eksterne sider:
 ```js
 import { Link } from '@skatteetaten/frontend-components/Link';
 
-<div className="ExampleSpacing8">
+<div>
   <Link
     path={'#link'}
     text={'Kontakte Statens Vegvesen'}
@@ -40,7 +40,7 @@ import { Link } from '@skatteetaten/frontend-components/Link';
 
 ```js
 import { Link } from '@skatteetaten/frontend-components/Link';
-<div className="ExampleSpacing8">
+<div>
   <Link
     path={'https://www.skatteetaten.no/rettskilder/type/lover-og-forskrifter/'}
     text={'Se lover og forskrifter (åpnes i ny fane)'}

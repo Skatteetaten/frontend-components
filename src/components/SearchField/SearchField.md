@@ -3,7 +3,7 @@
 ```js
 import { SearchField } from '@skatteetaten/frontend-components/SearchField';
 
-<div style={{ width: '300px' }}>
+<div style={{ maxWidth: '300px' }}>
   <SearchField
     searchFieldSize="standard"
     border="slim"
@@ -277,7 +277,7 @@ const options = [
 ];
 const [searchTerm, setSearchTerm] = React.useState('');
 
-<div style={{ width: '300px' }}>
+<div style={{ maxWidth: '300px' }}>
   <SearchField
     label={'Land'}
     searchFieldSize="standard"
