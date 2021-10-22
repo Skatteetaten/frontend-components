@@ -13,7 +13,6 @@ import Pagination from '@skatteetaten/frontend-components/Pagination';
 import TopStripe, {
   LanguagePicker,
   TopStripeMenu,
-  TopStripeButton,
 } from '@skatteetaten/frontend-components/TopStripe';
 import TopBanner from '@skatteetaten/frontend-components/TopBanner';
 import Icon from '@skatteetaten/frontend-components/Icon';

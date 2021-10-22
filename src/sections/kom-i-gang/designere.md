@@ -34,8 +34,13 @@ const style = {
 <OpenClose compact title={'Versjonshistorikk'}>
   <Typography>
     <h4>Versjon 2.0 </h4>
-    <p style={{ marginTop: '0' }}><em>September 2021</em></p>
-    <p style={{ marginBottom: '24px' }}>Oppdaterte komponenter/ikoner, ny Gjør Det Selv-seksjon, nye farger og mer.</p>
+    <p style={{ marginTop: '0' }}>
+      <em>September 2021</em>
+    </p>
+    <p style={{ marginBottom: '24px' }}>
+      Oppdaterte komponenter/ikoner, ny Gjør Det Selv-seksjon, nye farger og
+      mer.
+    </p>
 
     <hr />
     <h4 style={{ marginTop: '0' }}>Versjon 1.7 </h4>

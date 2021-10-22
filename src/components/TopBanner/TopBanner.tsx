@@ -5,10 +5,15 @@ import { Icon } from '../Icon';
 import { Image } from '../Image';
 import { ActionButton } from '../ActionButton';
 import { TopBannerTypes } from './TopBanner.types';
+import { BrandContext } from '../SkeBasis';
 
 // @ts-ignore TODO
-import externalLogo from './assets/ske-logo.svg';
-import externalLogoEn from './assets/ske-logo-en.svg';
+import logoSKE from './assets/logoSKE.svg';
+import logoSKEen from './assets/logoSKEen.svg';
+import logoLSO from './assets/logoLSO.svg';
+import logoINK from './assets/logoINK.svg';
+import logoINKen from './assets/logoINKen.svg';
+
 import internLogo from './assets/ske-logo-intern.svg';
 import internLogoEn from './assets/ske-logo-intern-en.svg';
 import { getClassNames as getExternalClassNames } from './External.classNames';
@@ -76,7 +81,7 @@ const ExternalHeaderContent = ({ styles, ...props }) => {
         href={props.homeUrl}
         onClick={props.onClick}
         className={styles.linkButton}
-        icon="Back"
+        icon="ArrowBack"
         role="link"
       >
         {props.homeText}
@@ -95,37 +100,73 @@ export const TopBanner: React.FC<TopBannerTypes> = (props) => {
 };
 
 export const ExternalHeader: React.FC<TopBannerTypes> = (props) => {
-  const styles = getExternalClassNames(props);
+  const styles = getExternalClassNames(props, 'SKE');
   // @ts-ignore
-  const { header, headerMain, contentWrapper } = styles;
+  const { logo, headerMain, contentWrapper } = styles;
   const compactHeight = props.compact ? 55 : 68;
 
-  const imageElement = (
-    <Image
-      src={props.language === 'en' ? externalLogoEn : externalLogo}
-      height={compactHeight}
-      alt="Skatteetaten logo"
-    />
-  );
+  const logoImageElement = (brand: string, showAltText = true) => {
+    switch (brand) {
+      case 'SKE':
+        return (
+          <Image
+            src={props.language === 'en' ? logoSKEen : logoSKE}
+            height={compactHeight}
+            alt={showAltText ? 'Skatteetaten logo' : ''}
+          />
+        );
+
+      case 'INK':
+        return (
+          <Image
+            src={props.language === 'en' ? logoINKen : logoINK}
+            height={compactHeight}
+            alt={showAltText ? 'Statens innkreving logo' : ''}
+          />
+        );
+
+      case 'LSO':
+        return (
+          <Image
+            src={logoLSO}
+            height={compactHeight}
+            alt={showAltText ? 'Lønnsstøtte logo' : ''}
+          />
+        );
+
+      default:
+        return {};
+    }
+  };
 
   return (
-    <header className={classnames(header, props.className)} id={props.id}>
-      {props.topStripe}
-      <div className={headerMain}>
-        <div>
-          <div>
-            {props.logoLink ? (
-              <a href="https://www.skatteetaten.no">{imageElement}</a>
-            ) : (
-              imageElement
-            )}
+    <BrandContext.Consumer>
+      {({ tag }) => (
+        <header
+          className={classnames(
+            getExternalClassNames(props, tag).header,
+            props.className
+          )}
+          id={props.id}
+        >
+          {props.topStripe}
+          <div className={headerMain}>
+            <div>
+              <div className={logo}>
+                {props.logoLink ? (
+                  <a href={props.logoLinkUrl}>{logoImageElement(tag, false)}</a>
+                ) : (
+                  logoImageElement(tag)
+                )}
+              </div>
+            </div>
+            <div className={contentWrapper}>
+              <ExternalHeaderContent styles={styles} {...props} />
+            </div>
           </div>
-        </div>
-        <div className={contentWrapper}>
-          <ExternalHeaderContent styles={styles} {...props} />
-        </div>
-      </div>
-    </header>
+        </header>
+      )}
+    </BrandContext.Consumer>
   );
 };
 
@@ -137,6 +178,7 @@ TopBanner.defaultProps = {
   icon: 'Home',
   external: false,
   compact: false,
-  logoLink: false,
+  logoLink: true,
+  logoLinkUrl: 'https://www.skatteetaten.no',
   language: undefined,
 };

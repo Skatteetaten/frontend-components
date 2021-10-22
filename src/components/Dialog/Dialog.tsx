@@ -8,10 +8,8 @@ import {
   Dialog as FabricDialog,
 } from '@fluentui/react';
 import { DialogProps, DialogState } from './Dialog.types';
+import { BrandContext } from '../SkeBasis';
 
-/*
- * visibleName Dialog (Dialogboks)
- */
 export class Dialog extends React.PureComponent<DialogProps, DialogState> {
   static Footer = DialogFooter;
   static Type = DialogType;
@@ -51,41 +49,46 @@ export class Dialog extends React.PureComponent<DialogProps, DialogState> {
       doNotLayer,
       ...props
     } = this.props;
-    const styles = getClassNames(this.props);
     const { isCalloutVisible } = this.state;
 
     return (
-      <div>
-        {/*
-        // @ts-ignore */}
-        <FabricDialog
-          {...props}
-          dialogContentProps={{
-            type: type,
-            title,
-            subText,
-            closeButtonAriaLabel: closeButtonAriaLabel,
-          }}
-          modalProps={{
-            isBlocking,
-            isModeless,
-            className: classnames(styles.main, className),
-            ...modalProps,
-          }}
-        >
-          {isCalloutVisible && (
-            <Callout
-              directionalHint={Callout.POS_TOP_LEFT}
-              color={Callout.HELP}
-              ariaLabel={'Hjelpetekst'}
-              target={this._iconButtonElement}
-              onClose={this._onDismiss}
-              doNotLayer={doNotLayer}
-            />
-          )}
-          {children}
-        </FabricDialog>
-      </div>
+      <BrandContext.Consumer>
+        {({ tag }) => (
+          <div>
+            {/*
+       // @ts-ignore */}
+            <FabricDialog
+              {...props}
+              dialogContentProps={{
+                type: type,
+                title,
+                subText,
+                closeButtonAriaLabel: closeButtonAriaLabel,
+              }}
+              modalProps={{
+                isBlocking,
+                isModeless,
+                className: classnames(
+                  getClassNames(this.props, tag).main,
+                  className
+                ),
+                ...modalProps,
+              }}
+            >
+              {isCalloutVisible && (
+                <Callout
+                  directionalHint={Callout.POS_TOP_LEFT}
+                  color={Callout.HELP}
+                  ariaLabel={'Hjelpetekst'}
+                  target={this._iconButtonElement}
+                  onClose={this._onDismiss}
+                />
+              )}
+              {children}
+            </FabricDialog>
+          </div>
+        )}
+      </BrandContext.Consumer>
     );
   }
 

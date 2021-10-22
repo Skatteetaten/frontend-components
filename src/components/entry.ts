@@ -22,7 +22,6 @@ export { getFocusStyle } from './utils/getFocusStyle';
 export { Heading } from './utils/Heading';
 export { UseScreen } from './utils/ScreenPlugin';
 export { default as SkeIcons } from './utils/icons/icons-ske';
-export { default as MdIcons } from './utils/icons/icons-mdi';
 export { Animation } from './utils/getAnimationStyles';
 export { takeIf } from './utils/helpers';
 export { generateId } from './utils/generateId';
@@ -70,6 +69,8 @@ export { Dropdown } from './Dropdown/Dropdown';
 export type { DropdownProps } from './Dropdown/DropDown.types';
 export { ErrorMessage } from './ErrorMessage/ErrorMessage';
 export type { ErrorMessageProps } from './ErrorMessage/ErrorMessage.types';
+export { ErrorSummary } from './ErrorSummary/ErrorSummary';
+export type { ErrorSummaryProps } from './ErrorSummary/ErrorSummary.types';
 export { FileUploader } from './FileUploader/FileUploader';
 export { Language, FileFormatTypes } from './FileUploader/FileUploader.types';
 export type {

@@ -179,11 +179,14 @@ exports[`Checkbox komponent matcher snapshot 1`] = `
               -webkit-font-smoothing: antialiased;
               color: #ffffff;
               display: inline-block;
-              font-family: "Material Icons";
+              font-family: "SkeIconfont";
+              font-size: inherit;
               font-style: normal;
               font-weight: normal;
               opacity: 0;
               speak: none;
+              text-rendering: auto;
+              transform: translate(0, 0);
             }
             @media screen and (-ms-high-contrast: active), (forced-colors: active){& {
               -ms-high-contrast-adjust: none;
@@ -192,7 +195,7 @@ exports[`Checkbox komponent matcher snapshot 1`] = `
             }
         data-icon-name="CheckMark"
       >
-        
+        
       </i>
     </div>
   </label>

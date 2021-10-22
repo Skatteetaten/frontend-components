@@ -272,7 +272,7 @@ exports[`Link komponent matcher snapshot 1`] = `
                         "burgundy": "#6f2c3f",
                         "burgundy10": "#f7e2e8",
                         "burgundy100": "#6f2c3f",
-                        "burgundy30": "#f06b78",
+                        "burgundy30": "#f3a7b0",
                         "burgundy5": "#faf0f3",
                         "burgundy50": "#f06674",
                         "burgundy70": "#b04c5c",
@@ -472,7 +472,7 @@ exports[`Link komponent matcher snapshot 1`] = `
                   data-icon-name="ArrowForward"
                   role="presentation"
                 >
-                  
+                  
                 </i>
               </IconBase>
             </StyledIconBase>

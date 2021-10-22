@@ -328,13 +328,9 @@ export const FileUploader: React.FC<FileUploaderProps> = (props) => {
     });
   }
 
-  if (isLoading) {
-    if (loading || internalLoading) {
-      isLoading(true);
-    } else {
-      isLoading(false);
-    }
-  }
+  useEffect(() => {
+    isLoading && isLoading(loading || internalLoading);
+  }, [loading, internalLoading, isLoading]);
 
   return (
     <div className={classnames(styles.main, className)}>

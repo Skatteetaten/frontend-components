@@ -2,11 +2,30 @@ import { mergeStyleSets } from '@fluentui/merge-styles';
 import { getTheme } from '@fluentui/react/lib/Styling';
 import { FontSizes, PaletteProps } from '../utils';
 import { TopBannerTypes } from './TopBanner.types';
-import separator from './assets/separator.svg';
+import separatorSKE from './assets/separatorSKE.svg';
+import separatorLSO from './assets/separatorLSO.svg';
+import separatorINK from './assets/separatorINK.svg';
 
-export function getClassNames(props: TopBannerTypes) {
+export function getClassNames(props: TopBannerTypes, tag) {
   const { compact } = props;
   const palette = getTheme().palette as PaletteProps;
+  let dekor = separatorSKE;
+
+  switch (tag) {
+    case 'SKE':
+      dekor = separatorSKE;
+      break;
+    case 'INK':
+      dekor = separatorINK;
+      break;
+    case 'LSO':
+      dekor = separatorLSO;
+      break;
+    default:
+      dekor = separatorSKE;
+      break;
+  }
+
   // @ts-ignore TODO
   return mergeStyleSets({
     header: {
@@ -20,7 +39,7 @@ export function getClassNames(props: TopBannerTypes) {
           backgroundRepeat: 'no-repeat',
           backgroundPosition: 'center',
           backgroundSize: 'cover',
-          backgroundImage: `url(${separator})`,
+          backgroundImage: `url(${dekor})`,
         },
       },
     },
@@ -71,7 +90,7 @@ export function getClassNames(props: TopBannerTypes) {
       backgroundRepeat: 'no-repeat',
       backgroundPosition: 'center',
       backgroundSize: 'cover',
-      backgroundImage: `url(${separator})`,
+      backgroundImage: `url(${dekor})`,
     },
     linkButton: {
       displayName: 'SkeActionButton',
@@ -82,6 +101,9 @@ export function getClassNames(props: TopBannerTypes) {
           color: palette.skeColor.blue,
           fontSize: FontSizes.xSmall,
           fontWeight: 'bold',
+        },
+        '& .ms-Button-icon': {
+          fontSize: `${FontSizes.medium} !important`,
         },
       },
     },

@@ -93,7 +93,7 @@ describe('FileUploader komponent', () => {
       deleteFile: (file, err) => mockFuncDelete(file),
     });
     expect(wrapper.find('li').length).toEqual(1);
-    expect(wrapper.find('li').first().text()).toEqual('FilNavn.png');
+    expect(wrapper.find('li').first().text()).toEqual('FilNavn.png');
     wrapper.find('li').first().find('button').simulate('click');
     expect(mockFuncDelete).toHaveBeenCalled();
     expect(mockFuncDelete).toHaveBeenCalledWith({
@@ -119,5 +119,37 @@ describe('FileUploader komponent', () => {
     });
     expect(wrapper.exists('ErrorMessage')).toEqual(false);
     expect(mockFunc.mock.calls.length).toBe(1);
+  });
+
+  it('støtter .odt, .ods, .odp, ,pptx og .xlsx format', () => {
+    const mockFunc = jest.fn();
+    const wrapper = oppsettFullDOM({
+      acceptedFileFormats: [
+        FileFormatTypes.odt,
+        FileFormatTypes.ods,
+        FileFormatTypes.odp,
+        FileFormatTypes.pptx,
+        FileFormatTypes.xlsx,
+      ],
+      ariaLabel: 'Filopplaster',
+      axiosPath: 'http://localhost',
+      uploadFile: () => mockFunc(),
+    });
+    expect(wrapper.find('span').first().text()).toEqual(
+      'Aksepterte filformater: .odt, .ods, .odp, .pptx, .xlsx'
+    );
+    wrapper.find('input').simulate('change', {
+      target: {
+        files: [
+          { name: 'fil.odt' },
+          { name: 'fil.ods' },
+          { name: 'fil.odp' },
+          { name: 'fil.pptx' },
+          { name: 'fil.xlsx' },
+        ],
+      },
+    });
+    expect(wrapper.exists('ErrorMessage')).toEqual(false);
+    expect(mockFunc.mock.calls.length).toBe(5);
   });
 });

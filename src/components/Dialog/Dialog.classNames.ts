@@ -45,8 +45,28 @@ function getHeaderBackgroundStyle(props: DialogProps) {
   }
 }
 
-export const getClassNames = function getClassNames(props: DialogProps) {
+export const getClassNames = function getClassNames(
+  props: DialogProps,
+  tag = 'SKE'
+) {
   const palette = getTheme().palette as PaletteProps;
+
+  let primaryColor = palette.skeColor.burgundy100;
+
+  switch (tag) {
+    case 'INK': {
+      primaryColor = palette.skeColor.green100;
+      break;
+    }
+    case 'LSO': {
+      primaryColor = palette.skeColor.black100;
+      break;
+    }
+    default: {
+      primaryColor = palette.skeColor.burgundy100;
+      break;
+    }
+  }
 
   const overflows = props.tabletContentOverflows;
 
@@ -60,7 +80,7 @@ export const getClassNames = function getClassNames(props: DialogProps) {
           selectors: {
             '@media (min-width: 480px)': {
               ...setMinMaxWidth(props),
-              borderColor: palette.skeColor.burgundy,
+              borderColor: primaryColor,
               borderStyle: 'solid',
               borderWidth: '4px',
             },

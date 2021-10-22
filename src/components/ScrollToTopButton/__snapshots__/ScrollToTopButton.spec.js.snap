@@ -247,14 +247,14 @@ exports[`ScrollToTopButton komponent matcher snapshot 1`] = `
                       font-size: 1.375rem;
                       font-style: normal;
                       font-weight: normal;
-                      line-height: 0.95;
+                      line-height: 0.8;
                       speak: none;
                       text-rendering: auto;
                       transform: translate(0, 0);
                     }
                 data-icon-name="MoveUp"
               >
-                
+                
               </i>
             </div>
           </div>

@@ -139,6 +139,7 @@ module.exports = {
       'MessageBar',
       'LabelWithCallout',
       'ErrorMessage',
+      'ErrorSummary',
     ]),
     generateComponentsGroup('Innlasting', ['ProgressBar', 'Spinner']),
     generateComponentsGroup('Tabeller', ['DetailsList', 'Table']),

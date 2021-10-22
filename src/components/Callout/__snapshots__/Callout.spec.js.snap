@@ -277,10 +277,14 @@ exports[`Callout komponent matcher snapshot 1`] = `
                   {
                     -moz-osx-font-smoothing: grayscale;
                     -webkit-font-smoothing: antialiased;
-                    font-family: "Material Icons";
+                    display: inline-block;
+                    font-family: "SkeIconfont";
+                    font-size: inherit;
                     font-style: normal;
                     font-weight: normal;
                     speak: none;
+                    text-rendering: auto;
+                    transform: translate(0, 0);
                   }
                   {
                     flex-shrink: 0;
@@ -296,11 +300,11 @@ exports[`Callout komponent matcher snapshot 1`] = `
               data-icon-name="Cancel"
               style={
                 Object {
-                  "fontFamily": "\\"Material Icons\\"",
+                  "fontFamily": "\\"SkeIconfont\\"",
                 }
               }
             >
-              
+              
             </i>
           </span>
         </button>
