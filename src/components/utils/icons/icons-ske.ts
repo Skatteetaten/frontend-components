@@ -1,9 +1,4 @@
-import SkeIconfontEOT from '../assets/SkeIconfont.eot';
-import SkeIconfontWOFF2 from '../assets/SkeIconfont.woff2';
 import SkeIconfontWOFF from '../assets/SkeIconfont.woff';
-import SkeIconfontTTF from '../assets/SkeIconfont.ttf';
-import SkeIconfontSVG from '../assets/SkeIconfont.svg';
-
 export default {
   style: {
     MozOsxFontSmoothing: 'grayscale',
@@ -19,12 +14,7 @@ export default {
   fontFace: {
     fontFamily: '"SkeIconfont"',
     src: [
-      `url("${SkeIconfontEOT}") format("embedded-opentype")`,
-      `url("${SkeIconfontEOT}?#iefix") format("embedded-opentype")`,
-      `url("${SkeIconfontWOFF2}") format("woff2")`,
       `url("${SkeIconfontWOFF}") format("woff")`,
-      `url("${SkeIconfontTTF}") format("truetype")`,
-      `url("${SkeIconfontSVG}#SkeIconfont") format("svg")`
     ].join(', '),
   },
   icons: { 
