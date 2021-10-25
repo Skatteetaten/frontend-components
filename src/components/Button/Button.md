@@ -94,7 +94,7 @@ import { ActionButton } from '@skatteetaten/frontend-components/ActionButton';
   </p>
   <ol>
     <li>
-      For ekstra fremtrendende hovedhandlinger der vi typisk for å oppfordrer
+      For ekstra fremtrendende hovedhandlinger der vi typisk oppfordrer
       til handling, bruker vi hovedhandlingsknappen (call-to-action):
       <br /> <br />
       <Button buttonStyle="callToAction">Send inn skattemeldingen</Button>
