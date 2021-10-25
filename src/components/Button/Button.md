@@ -101,7 +101,7 @@ import { ActionButton } from '@skatteetaten/frontend-components/ActionButton';
       <br /> <br />
     </li>
     <li>
-      Vi bruker primær og sekunærknappene til viktige funksjoner på siden,
+      Vi bruker primær- og sekundærknappene til viktige funksjoner på siden,
       f.eks. knapperader i bunnen av skjema.
       <br /> <br />
       <Button buttonStyle="primary">Send inn</Button>{' '}
