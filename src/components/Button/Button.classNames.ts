@@ -110,7 +110,6 @@ function getTypeFocusColor(props: ButtonProps): object {
         color: palette.white,
       };
     case 'primaryCornered':
-    case 'primaryCornered':
     case 'primary':
     case 'callToAction':
       return {
@@ -118,24 +117,6 @@ function getTypeFocusColor(props: ButtonProps): object {
         background: palette.skeColor.interactiveDark,
         color: palette.skeColor.white,
       };
-        borderColor: palette.skeColor.interactiveDark,
-        background: palette.skeColor.interactiveDark,
-        color: palette.skeColor.white,
-      };
-    case 'primary':
-      return {
-        borderColor: palette.skeColor.interactiveDark,
-        background: palette.skeColor.interactiveDark,
-        color: palette.skeColor.white,
-      };
-
-    case 'callToAction':
-      return {
-        borderColor: palette.skeColor.interactiveDark,
-        background: palette.skeColor.interactiveDark,
-        color: palette.skeColor.white,
-      };
-
     default:
       return {
         borderColor: palette.skeColor.interactive,
