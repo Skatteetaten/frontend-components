@@ -89,7 +89,7 @@ import { ActionButton } from '@skatteetaten/frontend-components/ActionButton';
   <p>
     Hvilken type knapp som passer best avhenger av viktigheten til funksjonen
     som ligger bak; jo viktigere og mer brukt en funksjon er, jo mer
-    fremtredende knapp bør brukes. Vi ha følgende rekkefølge, fra mest til minst
+    fremtredende knapp bør brukes. Vi har følgende rekkefølge, fra mest til minst
     fremtrendende:
   </p>
   <ol>
