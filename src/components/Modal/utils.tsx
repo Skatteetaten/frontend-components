@@ -9,7 +9,6 @@ export const useEscOnPress = (
       return;
     }
     if (event.code === 'Escape' && onClose) {
-      // TO-DO should call onClose by itself
       onClose(ref);
     }
   };

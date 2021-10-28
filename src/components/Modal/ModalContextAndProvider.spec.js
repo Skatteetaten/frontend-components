@@ -1,6 +1,5 @@
 import React from 'react';
 import { act } from 'react-dom/test-utils';
-// import { renderHook, act } from '@testing-library/react-hooks';
 import { mount } from 'enzyme';
 
 import { ModalProvider } from './ModalProvider';
