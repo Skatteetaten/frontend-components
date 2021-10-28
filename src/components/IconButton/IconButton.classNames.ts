@@ -40,13 +40,11 @@ function getCircleStyles(props: IconButtonProps) {
 
   if (props.circle === true) {
     return {
-      border: 'solid',
-      borderWidth: '3px',
-      borderColor: palette.skeColor.blue,
+      border: '3px solid ' + palette.skeColor.interactive,
     };
   } else {
     return {
-      borderWidth: 0,
+      border: '3px solid ' + palette.skeColor.transparent,
     };
   }
 }
@@ -55,8 +53,8 @@ function getCircleHoverStyles(props: IconButtonProps) {
   const palette = getTheme().palette as PaletteProps;
   return {
     color: palette.skeColor.blue,
-    borderWidth: '3px',
-    borderColor: palette.skeColor.blue,
+    //borderWidth: '3px',
+    //borderColor: palette.skeColor.blue,
     background: palette.skeColor.lightBlue,
   };
 }
@@ -92,8 +90,8 @@ function getIconSize(props: IconButtonProps) {
 
 export const getClassNames = function getClassNames(props: IconButtonProps) {
   const palette = getTheme().palette as PaletteProps;
-  const inset = -4;
-  const radius = '0';
+  const inset = props.circle ? -8 : -4;
+  const radius = '50px';
   const disabled = props.disabled;
 
   return mergeStyles([
@@ -114,16 +112,16 @@ export const getClassNames = function getClassNames(props: IconButtonProps) {
         '&.ms-Button--icon i': {
           ...getIconSize(props),
         },
-        '&.ms-Button--icon:hover, &.ms-Button--icon:focus': {
+        '&.ms-Button--icon:hover': {
           transition: 'background-color 0.2s',
           // @ts-ignore
           ...getCircleHoverStyles(props),
         },
         '&:focus&:after': {
-          borderColor: 'transparent',
+          //borderColor: 'transparent',
         },
         '&.ms-Button--icon:active': {
-          color: palette.skeColor.interactiveDark,
+          //color: palette.skeColor.interactiveDark,
           transition: '0.15s',
           transform: disabled ? 'none' : 'translateY(2px)',
         },

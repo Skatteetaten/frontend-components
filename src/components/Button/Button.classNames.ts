@@ -5,7 +5,7 @@ import { ButtonProps } from './Button.types';
 
 function getTypeColor(props: ButtonProps): object {
   const palette = getTheme().palette as PaletteProps;
-  const radius = '100px';
+  const radius = '200px';
 
   const sizeNormal = {
     height: 'auto',
@@ -16,7 +16,7 @@ function getTypeColor(props: ButtonProps): object {
   switch (props.buttonStyle) {
     case 'primaryCornered':
       return {
-        borderRadius: '6px',
+        borderRadius: '7px',
         borderColor: palette.skeColor.blue,
         background: palette.skeColor.blue,
         color: palette.skeColor.white,
@@ -35,7 +35,7 @@ function getTypeColor(props: ButtonProps): object {
         boxShadow: `0 8px 6px -6px ${palette.skeColor.grey30}`,
         fontSize: FontSizes.largePlus,
         borderWidth: '3px',
-        borderRadius: '7px',
+        borderRadius: '8px',
         fontWeight: FontWeights.semibold,
         padding: '25px',
         height: '80px',
@@ -106,6 +106,32 @@ function getTypeFocusColor(props: ButtonProps): object {
     case 'warning':
       return {
         borderColor: palette.skeColor.error,
+        //background: palette.skeColor.error,
+        color: palette.white,
+      };
+    case 'primaryCornered':
+    case 'primary':
+    case 'callToAction':
+      return {
+        borderColor: palette.skeColor.interactiveDark,
+        //background: palette.skeColor.interactiveDark,
+        color: palette.skeColor.white,
+      };
+    default:
+      return {
+        borderColor: palette.skeColor.interactive,
+        //background: palette.skeColor.interactiveDark,
+        color: palette.skeColor.interactive,
+      };
+  }
+}
+
+function getTypeHoverColor(props: ButtonProps): object {
+  const palette = getTheme().palette as PaletteProps;
+  switch (props.buttonStyle) {
+    case 'warning':
+      return {
+        borderColor: palette.skeColor.error,
         background: palette.skeColor.error,
         color: palette.white,
       };
@@ -125,6 +151,33 @@ function getTypeFocusColor(props: ButtonProps): object {
       };
   }
 }
+/*
+function styleFocusBorder(props: ButtonProps, inset, radius) {
+  const palette = getTheme().palette as PaletteProps;
+  const buttonStyle = props.buttonStyle;
+  return {
+    outline: 'transparent',
+    selectors: {
+      '::-moz-focus-inner': {
+        border: '0',
+      },
+      '.ms-Fabric--isFocusVisible &:focus:after': {
+        content: '""',
+        left: inset + 1,
+        top: inset + 1,
+        bottom: inset + 1,
+        right: inset + 1,
+        border:
+          buttonStyle === 'warning'
+            ? '2px solid ' + palette.skeColor.error
+            : '2px solid ' + palette.skeColor.interactive,
+        borderRadius: radius,
+        outline: 'transparent',
+        zIndex: 1,
+      },
+    },
+  };
+}*/
 
 function getDisabledColor(props: ButtonProps) {
   switch (props.buttonStyle) {
@@ -146,20 +199,20 @@ function setFocusRadius(props: ButtonProps) {
     props.buttonStyle === 'primaryCornered' ||
     props.buttonStyle === 'secondarySimple'
   ) {
-    return '6px';
+    return '8px';
   }
   if (props.buttonStyle === 'callToAction') {
-    return '7px';
+    return '10px';
   } else {
-    return '20px';
+    return '21px';
   }
 }
 
 function setInset(props: ButtonProps) {
   if (props.buttonStyle === 'primary' || props.buttonStyle === 'warning') {
-    return -3;
+    return -8;
   } else {
-    return -4;
+    return -8;
   }
 }
 
@@ -183,8 +236,11 @@ export function getClassNames(props: ButtonProps): string {
           verticalAlign: 'top',
           ...getTypeColor(props),
         },
-        '&.ms-Button:hover, &.ms-Button:focus': {
+        /*'&.ms-Button:focus': {
           ...getTypeFocusColor(props),
+        },*/
+        '&.ms-Button:hover': {
+          ...getTypeHoverColor(props),
         },
         '&.ms-Button:active': {
           transition: '0.15s',

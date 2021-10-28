@@ -29,10 +29,8 @@ export const getClassNames = () => {
           color: palette.white,
         },
         '&:focus': {
-          borderColor: palette.skeColor.interactive,
-          background: palette.skeColor.interactiveDark,
-          color: palette.white,
-          outline: 'none',
+          outline: '2px solid ' + palette.skeColor.interactive,
+          outlineOffset: '3px',
         },
         '&:active': {
           transform: 'translateY(2px)',

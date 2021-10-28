@@ -101,8 +101,8 @@ export function getClassNames(props: ActionButtonProps): string {
   const palette = getTheme().palette as PaletteProps;
   const { border, disabled } = props;
 
-  const inset = -4;
-  const radius = '0';
+  const inset = -3;
+  const radius = '4px';
   return mergeStyles(getFocusStyle({ palette }, inset, 'relative', radius), {
     selectors: {
       '&.ms-Button.ms-Button--action': {
@@ -112,11 +112,6 @@ export function getClassNames(props: ActionButtonProps): string {
         textAlign: props.iconAfter ? 'right' : 'left',
         ...getTypeColor(props),
         ...getBorder(props),
-      },
-      '.ms-Fabric--isFocusVisible &:focus:after': {
-        content: '""',
-        outline: 'transparent',
-        zIndex: 1,
       },
       '& span': {
         flexDirection: props.iconAfter ? 'row-reverse' : 'row',
@@ -132,7 +127,7 @@ export function getClassNames(props: ActionButtonProps): string {
         // @ts-ignore TODO
         fontSize: IconFontSizes[props.iconSize],
         marginLeft: '0',
-        transform: 'translateY(2px)',
+        transform: 'translateY(4px)',
 
         // @ts-ignore TODO
         ...getIconColor(props),
@@ -151,15 +146,6 @@ export function getClassNames(props: ActionButtonProps): string {
         transition: '0.15s',
         transform: disabled ? '0s' : 'translateY(2px)',
         transitionTimingFunction: 'ease',
-      },
-      '&.ms-Button--action:focus ': {
-        backgroundColor: palette.skeColor.lightBlue,
-        outline: 'transparent',
-        boxShadow: 'none',
-      },
-      '&.ms-Button--action:focus::after': {
-        outline: '0px solid transparent !important',
-        border: 'none',
       },
       '&.ms-Button--action:active .ms-Button-label': {
         textAlign: props.iconAfter ? 'right' : 'left',

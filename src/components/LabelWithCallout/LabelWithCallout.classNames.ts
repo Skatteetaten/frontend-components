@@ -107,8 +107,11 @@ export const getClassNames = (props: LabelWithCalloutProps) => {
         '& i': {
           fontSize: 'large',
         },
+        '&:focus': {
+          background: palette.skeColor.interactiveLight,
+        },
         '&:focus&:after': {
-          border: `2px solid ${palette.skeColor.blue}`,
+          border: `2px solid ${palette.skeColor.transparent}`,
           outline: 'none',
         },
       },
