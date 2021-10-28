@@ -16,7 +16,6 @@ export const ModalProvider: React.FC<ModalProviderTypes> = ({ children }) => {
     if (isOpen(name)) {
       return;
     }
-
     setModalList([...modalList, name]);
   };
 
@@ -24,9 +23,7 @@ export const ModalProvider: React.FC<ModalProviderTypes> = ({ children }) => {
     if (isClosed(name)) {
       return;
     }
-
     const newList = modalList.filter((modalName) => modalName !== name);
-
     setModalList(newList);
   };
 
@@ -41,7 +38,6 @@ export const ModalProvider: React.FC<ModalProviderTypes> = ({ children }) => {
       closeModal(name);
       return;
     }
-
     openModal(name);
   };
 
