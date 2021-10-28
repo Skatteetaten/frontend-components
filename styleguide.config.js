@@ -136,6 +136,7 @@ module.exports = {
     generateComponentsGroup('Varsler og meldinger', [
       'Callout',
       'Dialog',
+      'Modal',
       'MessageBar',
       'LabelWithCallout',
       'ErrorMessage',
