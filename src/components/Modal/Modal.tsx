@@ -18,6 +18,7 @@ interface ModalTypes {
   name: string;
   rootNode?: Element | null;
   hideCloseButton?: boolean;
+  elementToFocusOnDismiss?: HTMLElement;
   customClassNames?: {
     wrapper?: string;
     trapZone?: string;
@@ -25,14 +26,11 @@ interface ModalTypes {
     closeBtn?: string;
     overlay?: string;
   };
-  elementToFocusOnDismiss?: HTMLElement;
   onClose?: (ref: HTMLDivElement) => void;
   onOpen?: (ref: HTMLDivElement) => void;
   children: React.ReactNode;
 }
 
-// TO-DO add trapFocus
-// TO-DO add tester
 const ModalBase: React.FC<ModalTypes> = ({
   name,
   rootNode,
@@ -41,7 +39,6 @@ const ModalBase: React.FC<ModalTypes> = ({
   elementToFocusOnDismiss,
   onClose,
   onOpen,
-
   children,
 }) => {
   const modalWrapperId = 'modal-wrapper';
