@@ -100,32 +100,6 @@ function getTypeColor(props: ButtonProps): object {
   }
 }
 
-function getTypeFocusColor(props: ButtonProps): object {
-  const palette = getTheme().palette as PaletteProps;
-  switch (props.buttonStyle) {
-    case 'warning':
-      return {
-        borderColor: palette.skeColor.error,
-        //background: palette.skeColor.error,
-        color: palette.white,
-      };
-    case 'primaryCornered':
-    case 'primary':
-    case 'callToAction':
-      return {
-        borderColor: palette.skeColor.interactiveDark,
-        //background: palette.skeColor.interactiveDark,
-        color: palette.skeColor.white,
-      };
-    default:
-      return {
-        borderColor: palette.skeColor.interactive,
-        //background: palette.skeColor.interactiveDark,
-        color: palette.skeColor.interactive,
-      };
-  }
-}
-
 function getTypeHoverColor(props: ButtonProps): object {
   const palette = getTheme().palette as PaletteProps;
   switch (props.buttonStyle) {
@@ -151,33 +125,6 @@ function getTypeHoverColor(props: ButtonProps): object {
       };
   }
 }
-/*
-function styleFocusBorder(props: ButtonProps, inset, radius) {
-  const palette = getTheme().palette as PaletteProps;
-  const buttonStyle = props.buttonStyle;
-  return {
-    outline: 'transparent',
-    selectors: {
-      '::-moz-focus-inner': {
-        border: '0',
-      },
-      '.ms-Fabric--isFocusVisible &:focus:after': {
-        content: '""',
-        left: inset + 1,
-        top: inset + 1,
-        bottom: inset + 1,
-        right: inset + 1,
-        border:
-          buttonStyle === 'warning'
-            ? '2px solid ' + palette.skeColor.error
-            : '2px solid ' + palette.skeColor.interactive,
-        borderRadius: radius,
-        outline: 'transparent',
-        zIndex: 1,
-      },
-    },
-  };
-}*/
 
 function getDisabledColor(props: ButtonProps) {
   switch (props.buttonStyle) {
@@ -236,9 +183,6 @@ export function getClassNames(props: ButtonProps): string {
           verticalAlign: 'top',
           ...getTypeColor(props),
         },
-        /*'&.ms-Button:focus': {
-          ...getTypeFocusColor(props),
-        },*/
         '&.ms-Button:hover': {
           ...getTypeHoverColor(props),
         },
