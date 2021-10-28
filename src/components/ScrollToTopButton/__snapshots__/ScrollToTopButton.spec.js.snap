@@ -86,15 +86,15 @@ exports[`ScrollToTopButton komponent matcher snapshot 1`] = `
               border: 0;
             }
             .ms-Fabric--isFocusVisible &:focus:after {
-              border-radius: 0;
+              border-radius: 4px;
               border: 2px solid #1362ae;
-              bottom: -3px;
+              bottom: -2px;
               content: "";
-              left: -3px;
+              left: -2px;
               outline: transparent;
               position: absolute;
-              right: -3px;
-              top: -3px;
+              right: -2px;
+              top: -2px;
               z-index: 1;
             }
             @media screen and (-ms-high-contrast: active), (forced-colors: active){.ms-Fabric--isFocusVisible &:focus:after {
@@ -147,7 +147,7 @@ exports[`ScrollToTopButton komponent matcher snapshot 1`] = `
               font-size: 1.25rem;
               font-weight: 500;
               margin-left: 0;
-              transform: translateY(2px);
+              transform: translateY(4px);
             }
             & .ms-Button-flexContainer {
               align-items: baseline;
@@ -165,15 +165,6 @@ exports[`ScrollToTopButton komponent matcher snapshot 1`] = `
               transform: translateY(2px);
               transition-timing-function: ease;
               transition: 0.15s;
-            }
-            &.ms-Button--action:focus  {
-              background-color: #cde1f9;
-              box-shadow: none;
-              outline: transparent;
-            }
-            &.ms-Button--action:focus::after {
-              border: none;
-              outline: 0px solid transparent !important;
             }
             &.ms-Button--action:active .ms-Button-label {
               text-align: left;

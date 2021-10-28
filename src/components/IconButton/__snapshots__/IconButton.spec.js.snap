@@ -34,15 +34,15 @@ exports[`IconButton komponent matcher snapshot 1`] = `
         border: 0;
       }
       .ms-Fabric--isFocusVisible &:focus:after {
-        border-radius: 0;
+        border-radius: 50px;
         border: 2px solid #1362ae;
-        bottom: -3px;
+        bottom: -7px;
         content: "";
-        left: -3px;
+        left: -7px;
         outline: transparent;
         position: absolute;
-        right: -3px;
-        top: -3px;
+        right: -7px;
+        top: -7px;
         z-index: 1;
       }
       @media screen and (-ms-high-contrast: active), (forced-colors: active){.ms-Fabric--isFocusVisible &:focus:after {
@@ -71,10 +71,8 @@ exports[`IconButton komponent matcher snapshot 1`] = `
       }
       &.ms-Button--icon {
         background: none;
-        border-color: #1362ae;
         border-radius: 50%;
-        border-width: 3px;
-        border: solid;
+        border: 3px solid #1362ae;
         color: #1362ae;
         height: 40px;
         padding-bottom: 0px;
@@ -88,30 +86,16 @@ exports[`IconButton komponent matcher snapshot 1`] = `
       }
       &.ms-Button--icon:hover {
         background: #cde1f9;
-        border-color: #1362ae;
-        border-width: 3px;
         color: #1362ae;
         transition: background-color 0.2s;
-      }
-      &.ms-Button--icon:focus {
-        background: #cde1f9;
-        border-color: #1362ae;
-        border-width: 3px;
-        color: #1362ae;
-        transition: background-color 0.2s;
-      }
-      &:focus&:after {
-        border-color: transparent;
       }
       &.ms-Button--icon:active {
-        color: #093e61;
         transform: translateY(2px);
         transition: 0.15s;
       }
       &.ms-Button--icon:disabled {
         border-color: #b2b2b2;
-        border-width: 3px;
-        border: solid;
+        border: 3px solid #1362ae;
         color: #b2b2b2;
         cursor: not-allowed;
       }
