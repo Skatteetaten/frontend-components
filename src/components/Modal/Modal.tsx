@@ -10,30 +10,14 @@ import {
 import { CloseButton } from './components/CloseButton';
 import { Overlay } from './components/Overlay';
 import { useModalContext, ModalInstance } from './ModalContext';
+import { ModalTypes } from './Modal.types';
 import { useEscOnPress } from './utils';
 
 import styles from './styles.module.css';
 
-interface ModalTypes {
-  name: string;
-  rootNode?: Element | null;
-  hideCloseButton?: boolean;
-  elementToFocusOnDismiss?: HTMLElement;
-  customClassNames?: {
-    wrapper?: string;
-    trapZone?: string;
-    modal?: string;
-    closeBtn?: string;
-    overlay?: string;
-  };
-  onClose?: (ref: HTMLDivElement) => void;
-  onOpen?: (ref: HTMLDivElement) => void;
-  children: React.ReactNode;
-}
-
 const ModalBase: React.FC<ModalTypes> = ({
   name,
-  rootNode,
+  shadowRootNode,
   hideCloseButton,
   customClassNames,
   elementToFocusOnDismiss,
@@ -63,17 +47,17 @@ const ModalBase: React.FC<ModalTypes> = ({
   };
 
   useEffect(() => {
-    if (!rootNode) {
+    if (!shadowRootNode) {
       setIsDOMAnchorReady(true);
       return;
     }
 
-    if (rootNode.shadowRoot?.getElementById(modalWrapperId)) {
+    if (shadowRootNode.getElementById(modalWrapperId)) {
       setIsDOMAnchorReady(true);
     } else {
       const modalWrapper = document.createElement('div');
       modalWrapper.id = modalWrapperId;
-      rootNode.shadowRoot?.appendChild(modalWrapper);
+      shadowRootNode.appendChild(modalWrapper);
       setIsDOMAnchorReady(true);
     }
   }, []);
@@ -102,13 +86,13 @@ const ModalBase: React.FC<ModalTypes> = ({
           id={focusTrapZoneId}
           ref={focusTrapZoneElm}
           componentRef={focusTrapZone}
-          className={customClassNames?.trapZone}
+          className={customClassNames?.trapzone}
           elementToFocusOnDismiss={elementToFocusOnDismiss}
           isClickableOutsideFocusTrap
         >
           {!hideCloseButton && (
             <CloseButton
-              className={customClassNames?.closeBtn}
+              className={customClassNames?.closebutton}
               onClick={closeModal}
             />
           )}
@@ -117,7 +101,7 @@ const ModalBase: React.FC<ModalTypes> = ({
       </div>
       <Overlay className={customClassNames?.overlay} onClick={closeModal} />
     </div>,
-    rootNode?.shadowRoot?.getElementById('modal-wrapper') ?? document.body
+    shadowRootNode?.getElementById('modal-wrapper') ?? document.body
   );
 };
 

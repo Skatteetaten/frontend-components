@@ -12,6 +12,7 @@ export const CloseButton: React.FC<CloseButtonTypes> = ({
   onClick,
 }) => (
   <button
+    data-testid={'modal-closebutton'}
     className={`${styles.closeButton} ${className ? className : ''}`}
     onClick={onClick}
   >

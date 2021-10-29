@@ -1,0 +1,2211 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Modal modal med rootNode instansierer Modal komponent i shadow-domen i en modal-wrapper 1`] = `
+<div
+  id="modal-wrapper"
+>
+  <div
+    class="wrapper undefined"
+  >
+    <div
+      class="modal undefined"
+    >
+      <div
+        id="ModalTrapFocus8"
+      >
+        <div
+          aria-hidden="true"
+          data-is-visible="true"
+          style="pointer-events: none; position: fixed;"
+          tabindex="0"
+        />
+        <button
+          class="closeButton "
+          data-testid="modal-closebutton"
+        >
+          X
+        </button>
+        <div
+          id="modal-children"
+        >
+          Modal
+        </div>
+        <div
+          aria-hidden="true"
+          data-is-visible="true"
+          style="pointer-events: none; position: fixed;"
+          tabindex="0"
+        />
+      </div>
+    </div>
+    <div
+      class="overlay "
+      data-testid="modal-overlay"
+    />
+  </div>
+</div>
+`;
+
+exports[`Modal modal mountes med riktig classNames når customClassNames taes i bruk 1`] = `
+LoadedCheerio {
+  "0": Node {
+    "attribs": Object {
+      "class": "wrapper wrapperCustomClassName",
+    },
+    "children": Array [
+      Node {
+        "attribs": Object {
+          "class": "modal modalCustomClassName",
+        },
+        "children": Array [
+          Node {
+            "attribs": Object {
+              "class": "trapzoneCustomClassName",
+              "id": "ModalTrapFocus7",
+            },
+            "children": Array [
+              Node {
+                "attribs": Object {
+                  "aria-hidden": "true",
+                  "data-is-visible": "true",
+                  "style": "pointer-events: none; position: fixed;",
+                  "tabindex": "0",
+                },
+                "children": Array [],
+                "name": "div",
+                "namespace": "http://www.w3.org/1999/xhtml",
+                "next": Node {
+                  "attribs": Object {
+                    "class": "closeButton closebuttonCustomClassName",
+                    "data-testid": "modal-closebutton",
+                  },
+                  "children": Array [
+                    Node {
+                      "data": "X",
+                      "next": null,
+                      "parent": [Circular],
+                      "prev": null,
+                      "type": "text",
+                    },
+                  ],
+                  "name": "button",
+                  "namespace": "http://www.w3.org/1999/xhtml",
+                  "next": Node {
+                    "attribs": Object {
+                      "id": "modal-children",
+                    },
+                    "children": Array [
+                      Node {
+                        "data": "Modal",
+                        "next": null,
+                        "parent": [Circular],
+                        "prev": null,
+                        "type": "text",
+                      },
+                    ],
+                    "name": "div",
+                    "namespace": "http://www.w3.org/1999/xhtml",
+                    "next": Node {
+                      "attribs": Object {
+                        "aria-hidden": "true",
+                        "data-is-visible": "true",
+                        "style": "pointer-events: none; position: fixed;",
+                        "tabindex": "0",
+                      },
+                      "children": Array [],
+                      "name": "div",
+                      "namespace": "http://www.w3.org/1999/xhtml",
+                      "next": null,
+                      "parent": [Circular],
+                      "prev": [Circular],
+                      "type": "tag",
+                      "x-attribsNamespace": Object {
+                        "aria-hidden": undefined,
+                        "data-is-visible": undefined,
+                        "style": undefined,
+                        "tabindex": undefined,
+                      },
+                      "x-attribsPrefix": Object {
+                        "aria-hidden": undefined,
+                        "data-is-visible": undefined,
+                        "style": undefined,
+                        "tabindex": undefined,
+                      },
+                    },
+                    "parent": [Circular],
+                    "prev": [Circular],
+                    "type": "tag",
+                    "x-attribsNamespace": Object {
+                      "id": undefined,
+                    },
+                    "x-attribsPrefix": Object {
+                      "id": undefined,
+                    },
+                  },
+                  "parent": [Circular],
+                  "prev": [Circular],
+                  "type": "tag",
+                  "x-attribsNamespace": Object {
+                    "class": undefined,
+                    "data-testid": undefined,
+                  },
+                  "x-attribsPrefix": Object {
+                    "class": undefined,
+                    "data-testid": undefined,
+                  },
+                },
+                "parent": [Circular],
+                "prev": null,
+                "type": "tag",
+                "x-attribsNamespace": Object {
+                  "aria-hidden": undefined,
+                  "data-is-visible": undefined,
+                  "style": undefined,
+                  "tabindex": undefined,
+                },
+                "x-attribsPrefix": Object {
+                  "aria-hidden": undefined,
+                  "data-is-visible": undefined,
+                  "style": undefined,
+                  "tabindex": undefined,
+                },
+              },
+              Node {
+                "attribs": Object {
+                  "class": "closeButton closebuttonCustomClassName",
+                  "data-testid": "modal-closebutton",
+                },
+                "children": Array [
+                  Node {
+                    "data": "X",
+                    "next": null,
+                    "parent": [Circular],
+                    "prev": null,
+                    "type": "text",
+                  },
+                ],
+                "name": "button",
+                "namespace": "http://www.w3.org/1999/xhtml",
+                "next": Node {
+                  "attribs": Object {
+                    "id": "modal-children",
+                  },
+                  "children": Array [
+                    Node {
+                      "data": "Modal",
+                      "next": null,
+                      "parent": [Circular],
+                      "prev": null,
+                      "type": "text",
+                    },
+                  ],
+                  "name": "div",
+                  "namespace": "http://www.w3.org/1999/xhtml",
+                  "next": Node {
+                    "attribs": Object {
+                      "aria-hidden": "true",
+                      "data-is-visible": "true",
+                      "style": "pointer-events: none; position: fixed;",
+                      "tabindex": "0",
+                    },
+                    "children": Array [],
+                    "name": "div",
+                    "namespace": "http://www.w3.org/1999/xhtml",
+                    "next": null,
+                    "parent": [Circular],
+                    "prev": [Circular],
+                    "type": "tag",
+                    "x-attribsNamespace": Object {
+                      "aria-hidden": undefined,
+                      "data-is-visible": undefined,
+                      "style": undefined,
+                      "tabindex": undefined,
+                    },
+                    "x-attribsPrefix": Object {
+                      "aria-hidden": undefined,
+                      "data-is-visible": undefined,
+                      "style": undefined,
+                      "tabindex": undefined,
+                    },
+                  },
+                  "parent": [Circular],
+                  "prev": [Circular],
+                  "type": "tag",
+                  "x-attribsNamespace": Object {
+                    "id": undefined,
+                  },
+                  "x-attribsPrefix": Object {
+                    "id": undefined,
+                  },
+                },
+                "parent": [Circular],
+                "prev": Node {
+                  "attribs": Object {
+                    "aria-hidden": "true",
+                    "data-is-visible": "true",
+                    "style": "pointer-events: none; position: fixed;",
+                    "tabindex": "0",
+                  },
+                  "children": Array [],
+                  "name": "div",
+                  "namespace": "http://www.w3.org/1999/xhtml",
+                  "next": [Circular],
+                  "parent": [Circular],
+                  "prev": null,
+                  "type": "tag",
+                  "x-attribsNamespace": Object {
+                    "aria-hidden": undefined,
+                    "data-is-visible": undefined,
+                    "style": undefined,
+                    "tabindex": undefined,
+                  },
+                  "x-attribsPrefix": Object {
+                    "aria-hidden": undefined,
+                    "data-is-visible": undefined,
+                    "style": undefined,
+                    "tabindex": undefined,
+                  },
+                },
+                "type": "tag",
+                "x-attribsNamespace": Object {
+                  "class": undefined,
+                  "data-testid": undefined,
+                },
+                "x-attribsPrefix": Object {
+                  "class": undefined,
+                  "data-testid": undefined,
+                },
+              },
+              Node {
+                "attribs": Object {
+                  "id": "modal-children",
+                },
+                "children": Array [
+                  Node {
+                    "data": "Modal",
+                    "next": null,
+                    "parent": [Circular],
+                    "prev": null,
+                    "type": "text",
+                  },
+                ],
+                "name": "div",
+                "namespace": "http://www.w3.org/1999/xhtml",
+                "next": Node {
+                  "attribs": Object {
+                    "aria-hidden": "true",
+                    "data-is-visible": "true",
+                    "style": "pointer-events: none; position: fixed;",
+                    "tabindex": "0",
+                  },
+                  "children": Array [],
+                  "name": "div",
+                  "namespace": "http://www.w3.org/1999/xhtml",
+                  "next": null,
+                  "parent": [Circular],
+                  "prev": [Circular],
+                  "type": "tag",
+                  "x-attribsNamespace": Object {
+                    "aria-hidden": undefined,
+                    "data-is-visible": undefined,
+                    "style": undefined,
+                    "tabindex": undefined,
+                  },
+                  "x-attribsPrefix": Object {
+                    "aria-hidden": undefined,
+                    "data-is-visible": undefined,
+                    "style": undefined,
+                    "tabindex": undefined,
+                  },
+                },
+                "parent": [Circular],
+                "prev": Node {
+                  "attribs": Object {
+                    "class": "closeButton closebuttonCustomClassName",
+                    "data-testid": "modal-closebutton",
+                  },
+                  "children": Array [
+                    Node {
+                      "data": "X",
+                      "next": null,
+                      "parent": [Circular],
+                      "prev": null,
+                      "type": "text",
+                    },
+                  ],
+                  "name": "button",
+                  "namespace": "http://www.w3.org/1999/xhtml",
+                  "next": [Circular],
+                  "parent": [Circular],
+                  "prev": Node {
+                    "attribs": Object {
+                      "aria-hidden": "true",
+                      "data-is-visible": "true",
+                      "style": "pointer-events: none; position: fixed;",
+                      "tabindex": "0",
+                    },
+                    "children": Array [],
+                    "name": "div",
+                    "namespace": "http://www.w3.org/1999/xhtml",
+                    "next": [Circular],
+                    "parent": [Circular],
+                    "prev": null,
+                    "type": "tag",
+                    "x-attribsNamespace": Object {
+                      "aria-hidden": undefined,
+                      "data-is-visible": undefined,
+                      "style": undefined,
+                      "tabindex": undefined,
+                    },
+                    "x-attribsPrefix": Object {
+                      "aria-hidden": undefined,
+                      "data-is-visible": undefined,
+                      "style": undefined,
+                      "tabindex": undefined,
+                    },
+                  },
+                  "type": "tag",
+                  "x-attribsNamespace": Object {
+                    "class": undefined,
+                    "data-testid": undefined,
+                  },
+                  "x-attribsPrefix": Object {
+                    "class": undefined,
+                    "data-testid": undefined,
+                  },
+                },
+                "type": "tag",
+                "x-attribsNamespace": Object {
+                  "id": undefined,
+                },
+                "x-attribsPrefix": Object {
+                  "id": undefined,
+                },
+              },
+              Node {
+                "attribs": Object {
+                  "aria-hidden": "true",
+                  "data-is-visible": "true",
+                  "style": "pointer-events: none; position: fixed;",
+                  "tabindex": "0",
+                },
+                "children": Array [],
+                "name": "div",
+                "namespace": "http://www.w3.org/1999/xhtml",
+                "next": null,
+                "parent": [Circular],
+                "prev": Node {
+                  "attribs": Object {
+                    "id": "modal-children",
+                  },
+                  "children": Array [
+                    Node {
+                      "data": "Modal",
+                      "next": null,
+                      "parent": [Circular],
+                      "prev": null,
+                      "type": "text",
+                    },
+                  ],
+                  "name": "div",
+                  "namespace": "http://www.w3.org/1999/xhtml",
+                  "next": [Circular],
+                  "parent": [Circular],
+                  "prev": Node {
+                    "attribs": Object {
+                      "class": "closeButton closebuttonCustomClassName",
+                      "data-testid": "modal-closebutton",
+                    },
+                    "children": Array [
+                      Node {
+                        "data": "X",
+                        "next": null,
+                        "parent": [Circular],
+                        "prev": null,
+                        "type": "text",
+                      },
+                    ],
+                    "name": "button",
+                    "namespace": "http://www.w3.org/1999/xhtml",
+                    "next": [Circular],
+                    "parent": [Circular],
+                    "prev": Node {
+                      "attribs": Object {
+                        "aria-hidden": "true",
+                        "data-is-visible": "true",
+                        "style": "pointer-events: none; position: fixed;",
+                        "tabindex": "0",
+                      },
+                      "children": Array [],
+                      "name": "div",
+                      "namespace": "http://www.w3.org/1999/xhtml",
+                      "next": [Circular],
+                      "parent": [Circular],
+                      "prev": null,
+                      "type": "tag",
+                      "x-attribsNamespace": Object {
+                        "aria-hidden": undefined,
+                        "data-is-visible": undefined,
+                        "style": undefined,
+                        "tabindex": undefined,
+                      },
+                      "x-attribsPrefix": Object {
+                        "aria-hidden": undefined,
+                        "data-is-visible": undefined,
+                        "style": undefined,
+                        "tabindex": undefined,
+                      },
+                    },
+                    "type": "tag",
+                    "x-attribsNamespace": Object {
+                      "class": undefined,
+                      "data-testid": undefined,
+                    },
+                    "x-attribsPrefix": Object {
+                      "class": undefined,
+                      "data-testid": undefined,
+                    },
+                  },
+                  "type": "tag",
+                  "x-attribsNamespace": Object {
+                    "id": undefined,
+                  },
+                  "x-attribsPrefix": Object {
+                    "id": undefined,
+                  },
+                },
+                "type": "tag",
+                "x-attribsNamespace": Object {
+                  "aria-hidden": undefined,
+                  "data-is-visible": undefined,
+                  "style": undefined,
+                  "tabindex": undefined,
+                },
+                "x-attribsPrefix": Object {
+                  "aria-hidden": undefined,
+                  "data-is-visible": undefined,
+                  "style": undefined,
+                  "tabindex": undefined,
+                },
+              },
+            ],
+            "name": "div",
+            "namespace": "http://www.w3.org/1999/xhtml",
+            "next": null,
+            "parent": [Circular],
+            "prev": null,
+            "type": "tag",
+            "x-attribsNamespace": Object {
+              "class": undefined,
+              "id": undefined,
+            },
+            "x-attribsPrefix": Object {
+              "class": undefined,
+              "id": undefined,
+            },
+          },
+        ],
+        "name": "div",
+        "namespace": "http://www.w3.org/1999/xhtml",
+        "next": Node {
+          "attribs": Object {
+            "class": "overlay overlayCustomClassName",
+            "data-testid": "modal-overlay",
+          },
+          "children": Array [],
+          "name": "div",
+          "namespace": "http://www.w3.org/1999/xhtml",
+          "next": null,
+          "parent": [Circular],
+          "prev": [Circular],
+          "type": "tag",
+          "x-attribsNamespace": Object {
+            "class": undefined,
+            "data-testid": undefined,
+          },
+          "x-attribsPrefix": Object {
+            "class": undefined,
+            "data-testid": undefined,
+          },
+        },
+        "parent": [Circular],
+        "prev": null,
+        "type": "tag",
+        "x-attribsNamespace": Object {
+          "class": undefined,
+        },
+        "x-attribsPrefix": Object {
+          "class": undefined,
+        },
+      },
+      Node {
+        "attribs": Object {
+          "class": "overlay overlayCustomClassName",
+          "data-testid": "modal-overlay",
+        },
+        "children": Array [],
+        "name": "div",
+        "namespace": "http://www.w3.org/1999/xhtml",
+        "next": null,
+        "parent": [Circular],
+        "prev": Node {
+          "attribs": Object {
+            "class": "modal modalCustomClassName",
+          },
+          "children": Array [
+            Node {
+              "attribs": Object {
+                "class": "trapzoneCustomClassName",
+                "id": "ModalTrapFocus7",
+              },
+              "children": Array [
+                Node {
+                  "attribs": Object {
+                    "aria-hidden": "true",
+                    "data-is-visible": "true",
+                    "style": "pointer-events: none; position: fixed;",
+                    "tabindex": "0",
+                  },
+                  "children": Array [],
+                  "name": "div",
+                  "namespace": "http://www.w3.org/1999/xhtml",
+                  "next": Node {
+                    "attribs": Object {
+                      "class": "closeButton closebuttonCustomClassName",
+                      "data-testid": "modal-closebutton",
+                    },
+                    "children": Array [
+                      Node {
+                        "data": "X",
+                        "next": null,
+                        "parent": [Circular],
+                        "prev": null,
+                        "type": "text",
+                      },
+                    ],
+                    "name": "button",
+                    "namespace": "http://www.w3.org/1999/xhtml",
+                    "next": Node {
+                      "attribs": Object {
+                        "id": "modal-children",
+                      },
+                      "children": Array [
+                        Node {
+                          "data": "Modal",
+                          "next": null,
+                          "parent": [Circular],
+                          "prev": null,
+                          "type": "text",
+                        },
+                      ],
+                      "name": "div",
+                      "namespace": "http://www.w3.org/1999/xhtml",
+                      "next": Node {
+                        "attribs": Object {
+                          "aria-hidden": "true",
+                          "data-is-visible": "true",
+                          "style": "pointer-events: none; position: fixed;",
+                          "tabindex": "0",
+                        },
+                        "children": Array [],
+                        "name": "div",
+                        "namespace": "http://www.w3.org/1999/xhtml",
+                        "next": null,
+                        "parent": [Circular],
+                        "prev": [Circular],
+                        "type": "tag",
+                        "x-attribsNamespace": Object {
+                          "aria-hidden": undefined,
+                          "data-is-visible": undefined,
+                          "style": undefined,
+                          "tabindex": undefined,
+                        },
+                        "x-attribsPrefix": Object {
+                          "aria-hidden": undefined,
+                          "data-is-visible": undefined,
+                          "style": undefined,
+                          "tabindex": undefined,
+                        },
+                      },
+                      "parent": [Circular],
+                      "prev": [Circular],
+                      "type": "tag",
+                      "x-attribsNamespace": Object {
+                        "id": undefined,
+                      },
+                      "x-attribsPrefix": Object {
+                        "id": undefined,
+                      },
+                    },
+                    "parent": [Circular],
+                    "prev": [Circular],
+                    "type": "tag",
+                    "x-attribsNamespace": Object {
+                      "class": undefined,
+                      "data-testid": undefined,
+                    },
+                    "x-attribsPrefix": Object {
+                      "class": undefined,
+                      "data-testid": undefined,
+                    },
+                  },
+                  "parent": [Circular],
+                  "prev": null,
+                  "type": "tag",
+                  "x-attribsNamespace": Object {
+                    "aria-hidden": undefined,
+                    "data-is-visible": undefined,
+                    "style": undefined,
+                    "tabindex": undefined,
+                  },
+                  "x-attribsPrefix": Object {
+                    "aria-hidden": undefined,
+                    "data-is-visible": undefined,
+                    "style": undefined,
+                    "tabindex": undefined,
+                  },
+                },
+                Node {
+                  "attribs": Object {
+                    "class": "closeButton closebuttonCustomClassName",
+                    "data-testid": "modal-closebutton",
+                  },
+                  "children": Array [
+                    Node {
+                      "data": "X",
+                      "next": null,
+                      "parent": [Circular],
+                      "prev": null,
+                      "type": "text",
+                    },
+                  ],
+                  "name": "button",
+                  "namespace": "http://www.w3.org/1999/xhtml",
+                  "next": Node {
+                    "attribs": Object {
+                      "id": "modal-children",
+                    },
+                    "children": Array [
+                      Node {
+                        "data": "Modal",
+                        "next": null,
+                        "parent": [Circular],
+                        "prev": null,
+                        "type": "text",
+                      },
+                    ],
+                    "name": "div",
+                    "namespace": "http://www.w3.org/1999/xhtml",
+                    "next": Node {
+                      "attribs": Object {
+                        "aria-hidden": "true",
+                        "data-is-visible": "true",
+                        "style": "pointer-events: none; position: fixed;",
+                        "tabindex": "0",
+                      },
+                      "children": Array [],
+                      "name": "div",
+                      "namespace": "http://www.w3.org/1999/xhtml",
+                      "next": null,
+                      "parent": [Circular],
+                      "prev": [Circular],
+                      "type": "tag",
+                      "x-attribsNamespace": Object {
+                        "aria-hidden": undefined,
+                        "data-is-visible": undefined,
+                        "style": undefined,
+                        "tabindex": undefined,
+                      },
+                      "x-attribsPrefix": Object {
+                        "aria-hidden": undefined,
+                        "data-is-visible": undefined,
+                        "style": undefined,
+                        "tabindex": undefined,
+                      },
+                    },
+                    "parent": [Circular],
+                    "prev": [Circular],
+                    "type": "tag",
+                    "x-attribsNamespace": Object {
+                      "id": undefined,
+                    },
+                    "x-attribsPrefix": Object {
+                      "id": undefined,
+                    },
+                  },
+                  "parent": [Circular],
+                  "prev": Node {
+                    "attribs": Object {
+                      "aria-hidden": "true",
+                      "data-is-visible": "true",
+                      "style": "pointer-events: none; position: fixed;",
+                      "tabindex": "0",
+                    },
+                    "children": Array [],
+                    "name": "div",
+                    "namespace": "http://www.w3.org/1999/xhtml",
+                    "next": [Circular],
+                    "parent": [Circular],
+                    "prev": null,
+                    "type": "tag",
+                    "x-attribsNamespace": Object {
+                      "aria-hidden": undefined,
+                      "data-is-visible": undefined,
+                      "style": undefined,
+                      "tabindex": undefined,
+                    },
+                    "x-attribsPrefix": Object {
+                      "aria-hidden": undefined,
+                      "data-is-visible": undefined,
+                      "style": undefined,
+                      "tabindex": undefined,
+                    },
+                  },
+                  "type": "tag",
+                  "x-attribsNamespace": Object {
+                    "class": undefined,
+                    "data-testid": undefined,
+                  },
+                  "x-attribsPrefix": Object {
+                    "class": undefined,
+                    "data-testid": undefined,
+                  },
+                },
+                Node {
+                  "attribs": Object {
+                    "id": "modal-children",
+                  },
+                  "children": Array [
+                    Node {
+                      "data": "Modal",
+                      "next": null,
+                      "parent": [Circular],
+                      "prev": null,
+                      "type": "text",
+                    },
+                  ],
+                  "name": "div",
+                  "namespace": "http://www.w3.org/1999/xhtml",
+                  "next": Node {
+                    "attribs": Object {
+                      "aria-hidden": "true",
+                      "data-is-visible": "true",
+                      "style": "pointer-events: none; position: fixed;",
+                      "tabindex": "0",
+                    },
+                    "children": Array [],
+                    "name": "div",
+                    "namespace": "http://www.w3.org/1999/xhtml",
+                    "next": null,
+                    "parent": [Circular],
+                    "prev": [Circular],
+                    "type": "tag",
+                    "x-attribsNamespace": Object {
+                      "aria-hidden": undefined,
+                      "data-is-visible": undefined,
+                      "style": undefined,
+                      "tabindex": undefined,
+                    },
+                    "x-attribsPrefix": Object {
+                      "aria-hidden": undefined,
+                      "data-is-visible": undefined,
+                      "style": undefined,
+                      "tabindex": undefined,
+                    },
+                  },
+                  "parent": [Circular],
+                  "prev": Node {
+                    "attribs": Object {
+                      "class": "closeButton closebuttonCustomClassName",
+                      "data-testid": "modal-closebutton",
+                    },
+                    "children": Array [
+                      Node {
+                        "data": "X",
+                        "next": null,
+                        "parent": [Circular],
+                        "prev": null,
+                        "type": "text",
+                      },
+                    ],
+                    "name": "button",
+                    "namespace": "http://www.w3.org/1999/xhtml",
+                    "next": [Circular],
+                    "parent": [Circular],
+                    "prev": Node {
+                      "attribs": Object {
+                        "aria-hidden": "true",
+                        "data-is-visible": "true",
+                        "style": "pointer-events: none; position: fixed;",
+                        "tabindex": "0",
+                      },
+                      "children": Array [],
+                      "name": "div",
+                      "namespace": "http://www.w3.org/1999/xhtml",
+                      "next": [Circular],
+                      "parent": [Circular],
+                      "prev": null,
+                      "type": "tag",
+                      "x-attribsNamespace": Object {
+                        "aria-hidden": undefined,
+                        "data-is-visible": undefined,
+                        "style": undefined,
+                        "tabindex": undefined,
+                      },
+                      "x-attribsPrefix": Object {
+                        "aria-hidden": undefined,
+                        "data-is-visible": undefined,
+                        "style": undefined,
+                        "tabindex": undefined,
+                      },
+                    },
+                    "type": "tag",
+                    "x-attribsNamespace": Object {
+                      "class": undefined,
+                      "data-testid": undefined,
+                    },
+                    "x-attribsPrefix": Object {
+                      "class": undefined,
+                      "data-testid": undefined,
+                    },
+                  },
+                  "type": "tag",
+                  "x-attribsNamespace": Object {
+                    "id": undefined,
+                  },
+                  "x-attribsPrefix": Object {
+                    "id": undefined,
+                  },
+                },
+                Node {
+                  "attribs": Object {
+                    "aria-hidden": "true",
+                    "data-is-visible": "true",
+                    "style": "pointer-events: none; position: fixed;",
+                    "tabindex": "0",
+                  },
+                  "children": Array [],
+                  "name": "div",
+                  "namespace": "http://www.w3.org/1999/xhtml",
+                  "next": null,
+                  "parent": [Circular],
+                  "prev": Node {
+                    "attribs": Object {
+                      "id": "modal-children",
+                    },
+                    "children": Array [
+                      Node {
+                        "data": "Modal",
+                        "next": null,
+                        "parent": [Circular],
+                        "prev": null,
+                        "type": "text",
+                      },
+                    ],
+                    "name": "div",
+                    "namespace": "http://www.w3.org/1999/xhtml",
+                    "next": [Circular],
+                    "parent": [Circular],
+                    "prev": Node {
+                      "attribs": Object {
+                        "class": "closeButton closebuttonCustomClassName",
+                        "data-testid": "modal-closebutton",
+                      },
+                      "children": Array [
+                        Node {
+                          "data": "X",
+                          "next": null,
+                          "parent": [Circular],
+                          "prev": null,
+                          "type": "text",
+                        },
+                      ],
+                      "name": "button",
+                      "namespace": "http://www.w3.org/1999/xhtml",
+                      "next": [Circular],
+                      "parent": [Circular],
+                      "prev": Node {
+                        "attribs": Object {
+                          "aria-hidden": "true",
+                          "data-is-visible": "true",
+                          "style": "pointer-events: none; position: fixed;",
+                          "tabindex": "0",
+                        },
+                        "children": Array [],
+                        "name": "div",
+                        "namespace": "http://www.w3.org/1999/xhtml",
+                        "next": [Circular],
+                        "parent": [Circular],
+                        "prev": null,
+                        "type": "tag",
+                        "x-attribsNamespace": Object {
+                          "aria-hidden": undefined,
+                          "data-is-visible": undefined,
+                          "style": undefined,
+                          "tabindex": undefined,
+                        },
+                        "x-attribsPrefix": Object {
+                          "aria-hidden": undefined,
+                          "data-is-visible": undefined,
+                          "style": undefined,
+                          "tabindex": undefined,
+                        },
+                      },
+                      "type": "tag",
+                      "x-attribsNamespace": Object {
+                        "class": undefined,
+                        "data-testid": undefined,
+                      },
+                      "x-attribsPrefix": Object {
+                        "class": undefined,
+                        "data-testid": undefined,
+                      },
+                    },
+                    "type": "tag",
+                    "x-attribsNamespace": Object {
+                      "id": undefined,
+                    },
+                    "x-attribsPrefix": Object {
+                      "id": undefined,
+                    },
+                  },
+                  "type": "tag",
+                  "x-attribsNamespace": Object {
+                    "aria-hidden": undefined,
+                    "data-is-visible": undefined,
+                    "style": undefined,
+                    "tabindex": undefined,
+                  },
+                  "x-attribsPrefix": Object {
+                    "aria-hidden": undefined,
+                    "data-is-visible": undefined,
+                    "style": undefined,
+                    "tabindex": undefined,
+                  },
+                },
+              ],
+              "name": "div",
+              "namespace": "http://www.w3.org/1999/xhtml",
+              "next": null,
+              "parent": [Circular],
+              "prev": null,
+              "type": "tag",
+              "x-attribsNamespace": Object {
+                "class": undefined,
+                "id": undefined,
+              },
+              "x-attribsPrefix": Object {
+                "class": undefined,
+                "id": undefined,
+              },
+            },
+          ],
+          "name": "div",
+          "namespace": "http://www.w3.org/1999/xhtml",
+          "next": [Circular],
+          "parent": [Circular],
+          "prev": null,
+          "type": "tag",
+          "x-attribsNamespace": Object {
+            "class": undefined,
+          },
+          "x-attribsPrefix": Object {
+            "class": undefined,
+          },
+        },
+        "type": "tag",
+        "x-attribsNamespace": Object {
+          "class": undefined,
+          "data-testid": undefined,
+        },
+        "x-attribsPrefix": Object {
+          "class": undefined,
+          "data-testid": undefined,
+        },
+      },
+    ],
+    "name": "div",
+    "namespace": "http://www.w3.org/1999/xhtml",
+    "next": null,
+    "parent": Node {
+      "children": Array [
+        [Circular],
+      ],
+      "name": "root",
+      "next": null,
+      "parent": null,
+      "prev": null,
+      "type": "root",
+    },
+    "prev": null,
+    "type": "tag",
+    "x-attribsNamespace": Object {
+      "class": undefined,
+    },
+    "x-attribsPrefix": Object {
+      "class": undefined,
+    },
+  },
+  "_root": LoadedCheerio {
+    "0": Node {
+      "children": Array [
+        Node {
+          "attribs": Object {},
+          "children": Array [
+            Node {
+              "attribs": Object {},
+              "children": Array [],
+              "name": "head",
+              "namespace": "http://www.w3.org/1999/xhtml",
+              "next": Node {
+                "attribs": Object {},
+                "children": Array [],
+                "name": "body",
+                "namespace": "http://www.w3.org/1999/xhtml",
+                "next": null,
+                "parent": [Circular],
+                "prev": [Circular],
+                "type": "tag",
+                "x-attribsNamespace": Object {},
+                "x-attribsPrefix": Object {},
+              },
+              "parent": [Circular],
+              "prev": null,
+              "type": "tag",
+              "x-attribsNamespace": Object {},
+              "x-attribsPrefix": Object {},
+            },
+            Node {
+              "attribs": Object {},
+              "children": Array [],
+              "name": "body",
+              "namespace": "http://www.w3.org/1999/xhtml",
+              "next": null,
+              "parent": [Circular],
+              "prev": Node {
+                "attribs": Object {},
+                "children": Array [],
+                "name": "head",
+                "namespace": "http://www.w3.org/1999/xhtml",
+                "next": [Circular],
+                "parent": [Circular],
+                "prev": null,
+                "type": "tag",
+                "x-attribsNamespace": Object {},
+                "x-attribsPrefix": Object {},
+              },
+              "type": "tag",
+              "x-attribsNamespace": Object {},
+              "x-attribsPrefix": Object {},
+            },
+          ],
+          "name": "html",
+          "namespace": "http://www.w3.org/1999/xhtml",
+          "next": null,
+          "parent": [Circular],
+          "prev": null,
+          "type": "tag",
+          "x-attribsNamespace": Object {},
+          "x-attribsPrefix": Object {},
+        },
+      ],
+      "name": "root",
+      "next": null,
+      "parent": null,
+      "prev": null,
+      "type": "root",
+      "x-mode": "quirks",
+    },
+    "_root": [Circular],
+    "length": 1,
+    "options": Object {
+      "decodeEntities": true,
+      "xml": false,
+    },
+  },
+  "length": 1,
+  "options": Object {
+    "decodeEntities": true,
+    "xml": false,
+  },
+}
+`;
+
+exports[`Modal modal mountes slik den skal med wrapper, closeButton, overlay, trapFocus og innhold 1`] = `
+LoadedCheerio {
+  "0": Node {
+    "attribs": Object {
+      "class": "wrapper undefined",
+    },
+    "children": Array [
+      Node {
+        "attribs": Object {
+          "class": "modal undefined",
+        },
+        "children": Array [
+          Node {
+            "attribs": Object {
+              "id": "ModalTrapFocus0",
+            },
+            "children": Array [
+              Node {
+                "attribs": Object {
+                  "aria-hidden": "true",
+                  "data-is-visible": "true",
+                  "style": "pointer-events: none; position: fixed;",
+                  "tabindex": "0",
+                },
+                "children": Array [],
+                "name": "div",
+                "namespace": "http://www.w3.org/1999/xhtml",
+                "next": Node {
+                  "attribs": Object {
+                    "class": "closeButton ",
+                    "data-testid": "modal-closebutton",
+                  },
+                  "children": Array [
+                    Node {
+                      "data": "X",
+                      "next": null,
+                      "parent": [Circular],
+                      "prev": null,
+                      "type": "text",
+                    },
+                  ],
+                  "name": "button",
+                  "namespace": "http://www.w3.org/1999/xhtml",
+                  "next": Node {
+                    "attribs": Object {
+                      "id": "modal-children",
+                    },
+                    "children": Array [
+                      Node {
+                        "data": "Modal",
+                        "next": null,
+                        "parent": [Circular],
+                        "prev": null,
+                        "type": "text",
+                      },
+                    ],
+                    "name": "div",
+                    "namespace": "http://www.w3.org/1999/xhtml",
+                    "next": Node {
+                      "attribs": Object {
+                        "aria-hidden": "true",
+                        "data-is-visible": "true",
+                        "style": "pointer-events: none; position: fixed;",
+                        "tabindex": "0",
+                      },
+                      "children": Array [],
+                      "name": "div",
+                      "namespace": "http://www.w3.org/1999/xhtml",
+                      "next": null,
+                      "parent": [Circular],
+                      "prev": [Circular],
+                      "type": "tag",
+                      "x-attribsNamespace": Object {
+                        "aria-hidden": undefined,
+                        "data-is-visible": undefined,
+                        "style": undefined,
+                        "tabindex": undefined,
+                      },
+                      "x-attribsPrefix": Object {
+                        "aria-hidden": undefined,
+                        "data-is-visible": undefined,
+                        "style": undefined,
+                        "tabindex": undefined,
+                      },
+                    },
+                    "parent": [Circular],
+                    "prev": [Circular],
+                    "type": "tag",
+                    "x-attribsNamespace": Object {
+                      "id": undefined,
+                    },
+                    "x-attribsPrefix": Object {
+                      "id": undefined,
+                    },
+                  },
+                  "parent": [Circular],
+                  "prev": [Circular],
+                  "type": "tag",
+                  "x-attribsNamespace": Object {
+                    "class": undefined,
+                    "data-testid": undefined,
+                  },
+                  "x-attribsPrefix": Object {
+                    "class": undefined,
+                    "data-testid": undefined,
+                  },
+                },
+                "parent": [Circular],
+                "prev": null,
+                "type": "tag",
+                "x-attribsNamespace": Object {
+                  "aria-hidden": undefined,
+                  "data-is-visible": undefined,
+                  "style": undefined,
+                  "tabindex": undefined,
+                },
+                "x-attribsPrefix": Object {
+                  "aria-hidden": undefined,
+                  "data-is-visible": undefined,
+                  "style": undefined,
+                  "tabindex": undefined,
+                },
+              },
+              Node {
+                "attribs": Object {
+                  "class": "closeButton ",
+                  "data-testid": "modal-closebutton",
+                },
+                "children": Array [
+                  Node {
+                    "data": "X",
+                    "next": null,
+                    "parent": [Circular],
+                    "prev": null,
+                    "type": "text",
+                  },
+                ],
+                "name": "button",
+                "namespace": "http://www.w3.org/1999/xhtml",
+                "next": Node {
+                  "attribs": Object {
+                    "id": "modal-children",
+                  },
+                  "children": Array [
+                    Node {
+                      "data": "Modal",
+                      "next": null,
+                      "parent": [Circular],
+                      "prev": null,
+                      "type": "text",
+                    },
+                  ],
+                  "name": "div",
+                  "namespace": "http://www.w3.org/1999/xhtml",
+                  "next": Node {
+                    "attribs": Object {
+                      "aria-hidden": "true",
+                      "data-is-visible": "true",
+                      "style": "pointer-events: none; position: fixed;",
+                      "tabindex": "0",
+                    },
+                    "children": Array [],
+                    "name": "div",
+                    "namespace": "http://www.w3.org/1999/xhtml",
+                    "next": null,
+                    "parent": [Circular],
+                    "prev": [Circular],
+                    "type": "tag",
+                    "x-attribsNamespace": Object {
+                      "aria-hidden": undefined,
+                      "data-is-visible": undefined,
+                      "style": undefined,
+                      "tabindex": undefined,
+                    },
+                    "x-attribsPrefix": Object {
+                      "aria-hidden": undefined,
+                      "data-is-visible": undefined,
+                      "style": undefined,
+                      "tabindex": undefined,
+                    },
+                  },
+                  "parent": [Circular],
+                  "prev": [Circular],
+                  "type": "tag",
+                  "x-attribsNamespace": Object {
+                    "id": undefined,
+                  },
+                  "x-attribsPrefix": Object {
+                    "id": undefined,
+                  },
+                },
+                "parent": [Circular],
+                "prev": Node {
+                  "attribs": Object {
+                    "aria-hidden": "true",
+                    "data-is-visible": "true",
+                    "style": "pointer-events: none; position: fixed;",
+                    "tabindex": "0",
+                  },
+                  "children": Array [],
+                  "name": "div",
+                  "namespace": "http://www.w3.org/1999/xhtml",
+                  "next": [Circular],
+                  "parent": [Circular],
+                  "prev": null,
+                  "type": "tag",
+                  "x-attribsNamespace": Object {
+                    "aria-hidden": undefined,
+                    "data-is-visible": undefined,
+                    "style": undefined,
+                    "tabindex": undefined,
+                  },
+                  "x-attribsPrefix": Object {
+                    "aria-hidden": undefined,
+                    "data-is-visible": undefined,
+                    "style": undefined,
+                    "tabindex": undefined,
+                  },
+                },
+                "type": "tag",
+                "x-attribsNamespace": Object {
+                  "class": undefined,
+                  "data-testid": undefined,
+                },
+                "x-attribsPrefix": Object {
+                  "class": undefined,
+                  "data-testid": undefined,
+                },
+              },
+              Node {
+                "attribs": Object {
+                  "id": "modal-children",
+                },
+                "children": Array [
+                  Node {
+                    "data": "Modal",
+                    "next": null,
+                    "parent": [Circular],
+                    "prev": null,
+                    "type": "text",
+                  },
+                ],
+                "name": "div",
+                "namespace": "http://www.w3.org/1999/xhtml",
+                "next": Node {
+                  "attribs": Object {
+                    "aria-hidden": "true",
+                    "data-is-visible": "true",
+                    "style": "pointer-events: none; position: fixed;",
+                    "tabindex": "0",
+                  },
+                  "children": Array [],
+                  "name": "div",
+                  "namespace": "http://www.w3.org/1999/xhtml",
+                  "next": null,
+                  "parent": [Circular],
+                  "prev": [Circular],
+                  "type": "tag",
+                  "x-attribsNamespace": Object {
+                    "aria-hidden": undefined,
+                    "data-is-visible": undefined,
+                    "style": undefined,
+                    "tabindex": undefined,
+                  },
+                  "x-attribsPrefix": Object {
+                    "aria-hidden": undefined,
+                    "data-is-visible": undefined,
+                    "style": undefined,
+                    "tabindex": undefined,
+                  },
+                },
+                "parent": [Circular],
+                "prev": Node {
+                  "attribs": Object {
+                    "class": "closeButton ",
+                    "data-testid": "modal-closebutton",
+                  },
+                  "children": Array [
+                    Node {
+                      "data": "X",
+                      "next": null,
+                      "parent": [Circular],
+                      "prev": null,
+                      "type": "text",
+                    },
+                  ],
+                  "name": "button",
+                  "namespace": "http://www.w3.org/1999/xhtml",
+                  "next": [Circular],
+                  "parent": [Circular],
+                  "prev": Node {
+                    "attribs": Object {
+                      "aria-hidden": "true",
+                      "data-is-visible": "true",
+                      "style": "pointer-events: none; position: fixed;",
+                      "tabindex": "0",
+                    },
+                    "children": Array [],
+                    "name": "div",
+                    "namespace": "http://www.w3.org/1999/xhtml",
+                    "next": [Circular],
+                    "parent": [Circular],
+                    "prev": null,
+                    "type": "tag",
+                    "x-attribsNamespace": Object {
+                      "aria-hidden": undefined,
+                      "data-is-visible": undefined,
+                      "style": undefined,
+                      "tabindex": undefined,
+                    },
+                    "x-attribsPrefix": Object {
+                      "aria-hidden": undefined,
+                      "data-is-visible": undefined,
+                      "style": undefined,
+                      "tabindex": undefined,
+                    },
+                  },
+                  "type": "tag",
+                  "x-attribsNamespace": Object {
+                    "class": undefined,
+                    "data-testid": undefined,
+                  },
+                  "x-attribsPrefix": Object {
+                    "class": undefined,
+                    "data-testid": undefined,
+                  },
+                },
+                "type": "tag",
+                "x-attribsNamespace": Object {
+                  "id": undefined,
+                },
+                "x-attribsPrefix": Object {
+                  "id": undefined,
+                },
+              },
+              Node {
+                "attribs": Object {
+                  "aria-hidden": "true",
+                  "data-is-visible": "true",
+                  "style": "pointer-events: none; position: fixed;",
+                  "tabindex": "0",
+                },
+                "children": Array [],
+                "name": "div",
+                "namespace": "http://www.w3.org/1999/xhtml",
+                "next": null,
+                "parent": [Circular],
+                "prev": Node {
+                  "attribs": Object {
+                    "id": "modal-children",
+                  },
+                  "children": Array [
+                    Node {
+                      "data": "Modal",
+                      "next": null,
+                      "parent": [Circular],
+                      "prev": null,
+                      "type": "text",
+                    },
+                  ],
+                  "name": "div",
+                  "namespace": "http://www.w3.org/1999/xhtml",
+                  "next": [Circular],
+                  "parent": [Circular],
+                  "prev": Node {
+                    "attribs": Object {
+                      "class": "closeButton ",
+                      "data-testid": "modal-closebutton",
+                    },
+                    "children": Array [
+                      Node {
+                        "data": "X",
+                        "next": null,
+                        "parent": [Circular],
+                        "prev": null,
+                        "type": "text",
+                      },
+                    ],
+                    "name": "button",
+                    "namespace": "http://www.w3.org/1999/xhtml",
+                    "next": [Circular],
+                    "parent": [Circular],
+                    "prev": Node {
+                      "attribs": Object {
+                        "aria-hidden": "true",
+                        "data-is-visible": "true",
+                        "style": "pointer-events: none; position: fixed;",
+                        "tabindex": "0",
+                      },
+                      "children": Array [],
+                      "name": "div",
+                      "namespace": "http://www.w3.org/1999/xhtml",
+                      "next": [Circular],
+                      "parent": [Circular],
+                      "prev": null,
+                      "type": "tag",
+                      "x-attribsNamespace": Object {
+                        "aria-hidden": undefined,
+                        "data-is-visible": undefined,
+                        "style": undefined,
+                        "tabindex": undefined,
+                      },
+                      "x-attribsPrefix": Object {
+                        "aria-hidden": undefined,
+                        "data-is-visible": undefined,
+                        "style": undefined,
+                        "tabindex": undefined,
+                      },
+                    },
+                    "type": "tag",
+                    "x-attribsNamespace": Object {
+                      "class": undefined,
+                      "data-testid": undefined,
+                    },
+                    "x-attribsPrefix": Object {
+                      "class": undefined,
+                      "data-testid": undefined,
+                    },
+                  },
+                  "type": "tag",
+                  "x-attribsNamespace": Object {
+                    "id": undefined,
+                  },
+                  "x-attribsPrefix": Object {
+                    "id": undefined,
+                  },
+                },
+                "type": "tag",
+                "x-attribsNamespace": Object {
+                  "aria-hidden": undefined,
+                  "data-is-visible": undefined,
+                  "style": undefined,
+                  "tabindex": undefined,
+                },
+                "x-attribsPrefix": Object {
+                  "aria-hidden": undefined,
+                  "data-is-visible": undefined,
+                  "style": undefined,
+                  "tabindex": undefined,
+                },
+              },
+            ],
+            "name": "div",
+            "namespace": "http://www.w3.org/1999/xhtml",
+            "next": null,
+            "parent": [Circular],
+            "prev": null,
+            "type": "tag",
+            "x-attribsNamespace": Object {
+              "id": undefined,
+            },
+            "x-attribsPrefix": Object {
+              "id": undefined,
+            },
+          },
+        ],
+        "name": "div",
+        "namespace": "http://www.w3.org/1999/xhtml",
+        "next": Node {
+          "attribs": Object {
+            "class": "overlay ",
+            "data-testid": "modal-overlay",
+          },
+          "children": Array [],
+          "name": "div",
+          "namespace": "http://www.w3.org/1999/xhtml",
+          "next": null,
+          "parent": [Circular],
+          "prev": [Circular],
+          "type": "tag",
+          "x-attribsNamespace": Object {
+            "class": undefined,
+            "data-testid": undefined,
+          },
+          "x-attribsPrefix": Object {
+            "class": undefined,
+            "data-testid": undefined,
+          },
+        },
+        "parent": [Circular],
+        "prev": null,
+        "type": "tag",
+        "x-attribsNamespace": Object {
+          "class": undefined,
+        },
+        "x-attribsPrefix": Object {
+          "class": undefined,
+        },
+      },
+      Node {
+        "attribs": Object {
+          "class": "overlay ",
+          "data-testid": "modal-overlay",
+        },
+        "children": Array [],
+        "name": "div",
+        "namespace": "http://www.w3.org/1999/xhtml",
+        "next": null,
+        "parent": [Circular],
+        "prev": Node {
+          "attribs": Object {
+            "class": "modal undefined",
+          },
+          "children": Array [
+            Node {
+              "attribs": Object {
+                "id": "ModalTrapFocus0",
+              },
+              "children": Array [
+                Node {
+                  "attribs": Object {
+                    "aria-hidden": "true",
+                    "data-is-visible": "true",
+                    "style": "pointer-events: none; position: fixed;",
+                    "tabindex": "0",
+                  },
+                  "children": Array [],
+                  "name": "div",
+                  "namespace": "http://www.w3.org/1999/xhtml",
+                  "next": Node {
+                    "attribs": Object {
+                      "class": "closeButton ",
+                      "data-testid": "modal-closebutton",
+                    },
+                    "children": Array [
+                      Node {
+                        "data": "X",
+                        "next": null,
+                        "parent": [Circular],
+                        "prev": null,
+                        "type": "text",
+                      },
+                    ],
+                    "name": "button",
+                    "namespace": "http://www.w3.org/1999/xhtml",
+                    "next": Node {
+                      "attribs": Object {
+                        "id": "modal-children",
+                      },
+                      "children": Array [
+                        Node {
+                          "data": "Modal",
+                          "next": null,
+                          "parent": [Circular],
+                          "prev": null,
+                          "type": "text",
+                        },
+                      ],
+                      "name": "div",
+                      "namespace": "http://www.w3.org/1999/xhtml",
+                      "next": Node {
+                        "attribs": Object {
+                          "aria-hidden": "true",
+                          "data-is-visible": "true",
+                          "style": "pointer-events: none; position: fixed;",
+                          "tabindex": "0",
+                        },
+                        "children": Array [],
+                        "name": "div",
+                        "namespace": "http://www.w3.org/1999/xhtml",
+                        "next": null,
+                        "parent": [Circular],
+                        "prev": [Circular],
+                        "type": "tag",
+                        "x-attribsNamespace": Object {
+                          "aria-hidden": undefined,
+                          "data-is-visible": undefined,
+                          "style": undefined,
+                          "tabindex": undefined,
+                        },
+                        "x-attribsPrefix": Object {
+                          "aria-hidden": undefined,
+                          "data-is-visible": undefined,
+                          "style": undefined,
+                          "tabindex": undefined,
+                        },
+                      },
+                      "parent": [Circular],
+                      "prev": [Circular],
+                      "type": "tag",
+                      "x-attribsNamespace": Object {
+                        "id": undefined,
+                      },
+                      "x-attribsPrefix": Object {
+                        "id": undefined,
+                      },
+                    },
+                    "parent": [Circular],
+                    "prev": [Circular],
+                    "type": "tag",
+                    "x-attribsNamespace": Object {
+                      "class": undefined,
+                      "data-testid": undefined,
+                    },
+                    "x-attribsPrefix": Object {
+                      "class": undefined,
+                      "data-testid": undefined,
+                    },
+                  },
+                  "parent": [Circular],
+                  "prev": null,
+                  "type": "tag",
+                  "x-attribsNamespace": Object {
+                    "aria-hidden": undefined,
+                    "data-is-visible": undefined,
+                    "style": undefined,
+                    "tabindex": undefined,
+                  },
+                  "x-attribsPrefix": Object {
+                    "aria-hidden": undefined,
+                    "data-is-visible": undefined,
+                    "style": undefined,
+                    "tabindex": undefined,
+                  },
+                },
+                Node {
+                  "attribs": Object {
+                    "class": "closeButton ",
+                    "data-testid": "modal-closebutton",
+                  },
+                  "children": Array [
+                    Node {
+                      "data": "X",
+                      "next": null,
+                      "parent": [Circular],
+                      "prev": null,
+                      "type": "text",
+                    },
+                  ],
+                  "name": "button",
+                  "namespace": "http://www.w3.org/1999/xhtml",
+                  "next": Node {
+                    "attribs": Object {
+                      "id": "modal-children",
+                    },
+                    "children": Array [
+                      Node {
+                        "data": "Modal",
+                        "next": null,
+                        "parent": [Circular],
+                        "prev": null,
+                        "type": "text",
+                      },
+                    ],
+                    "name": "div",
+                    "namespace": "http://www.w3.org/1999/xhtml",
+                    "next": Node {
+                      "attribs": Object {
+                        "aria-hidden": "true",
+                        "data-is-visible": "true",
+                        "style": "pointer-events: none; position: fixed;",
+                        "tabindex": "0",
+                      },
+                      "children": Array [],
+                      "name": "div",
+                      "namespace": "http://www.w3.org/1999/xhtml",
+                      "next": null,
+                      "parent": [Circular],
+                      "prev": [Circular],
+                      "type": "tag",
+                      "x-attribsNamespace": Object {
+                        "aria-hidden": undefined,
+                        "data-is-visible": undefined,
+                        "style": undefined,
+                        "tabindex": undefined,
+                      },
+                      "x-attribsPrefix": Object {
+                        "aria-hidden": undefined,
+                        "data-is-visible": undefined,
+                        "style": undefined,
+                        "tabindex": undefined,
+                      },
+                    },
+                    "parent": [Circular],
+                    "prev": [Circular],
+                    "type": "tag",
+                    "x-attribsNamespace": Object {
+                      "id": undefined,
+                    },
+                    "x-attribsPrefix": Object {
+                      "id": undefined,
+                    },
+                  },
+                  "parent": [Circular],
+                  "prev": Node {
+                    "attribs": Object {
+                      "aria-hidden": "true",
+                      "data-is-visible": "true",
+                      "style": "pointer-events: none; position: fixed;",
+                      "tabindex": "0",
+                    },
+                    "children": Array [],
+                    "name": "div",
+                    "namespace": "http://www.w3.org/1999/xhtml",
+                    "next": [Circular],
+                    "parent": [Circular],
+                    "prev": null,
+                    "type": "tag",
+                    "x-attribsNamespace": Object {
+                      "aria-hidden": undefined,
+                      "data-is-visible": undefined,
+                      "style": undefined,
+                      "tabindex": undefined,
+                    },
+                    "x-attribsPrefix": Object {
+                      "aria-hidden": undefined,
+                      "data-is-visible": undefined,
+                      "style": undefined,
+                      "tabindex": undefined,
+                    },
+                  },
+                  "type": "tag",
+                  "x-attribsNamespace": Object {
+                    "class": undefined,
+                    "data-testid": undefined,
+                  },
+                  "x-attribsPrefix": Object {
+                    "class": undefined,
+                    "data-testid": undefined,
+                  },
+                },
+                Node {
+                  "attribs": Object {
+                    "id": "modal-children",
+                  },
+                  "children": Array [
+                    Node {
+                      "data": "Modal",
+                      "next": null,
+                      "parent": [Circular],
+                      "prev": null,
+                      "type": "text",
+                    },
+                  ],
+                  "name": "div",
+                  "namespace": "http://www.w3.org/1999/xhtml",
+                  "next": Node {
+                    "attribs": Object {
+                      "aria-hidden": "true",
+                      "data-is-visible": "true",
+                      "style": "pointer-events: none; position: fixed;",
+                      "tabindex": "0",
+                    },
+                    "children": Array [],
+                    "name": "div",
+                    "namespace": "http://www.w3.org/1999/xhtml",
+                    "next": null,
+                    "parent": [Circular],
+                    "prev": [Circular],
+                    "type": "tag",
+                    "x-attribsNamespace": Object {
+                      "aria-hidden": undefined,
+                      "data-is-visible": undefined,
+                      "style": undefined,
+                      "tabindex": undefined,
+                    },
+                    "x-attribsPrefix": Object {
+                      "aria-hidden": undefined,
+                      "data-is-visible": undefined,
+                      "style": undefined,
+                      "tabindex": undefined,
+                    },
+                  },
+                  "parent": [Circular],
+                  "prev": Node {
+                    "attribs": Object {
+                      "class": "closeButton ",
+                      "data-testid": "modal-closebutton",
+                    },
+                    "children": Array [
+                      Node {
+                        "data": "X",
+                        "next": null,
+                        "parent": [Circular],
+                        "prev": null,
+                        "type": "text",
+                      },
+                    ],
+                    "name": "button",
+                    "namespace": "http://www.w3.org/1999/xhtml",
+                    "next": [Circular],
+                    "parent": [Circular],
+                    "prev": Node {
+                      "attribs": Object {
+                        "aria-hidden": "true",
+                        "data-is-visible": "true",
+                        "style": "pointer-events: none; position: fixed;",
+                        "tabindex": "0",
+                      },
+                      "children": Array [],
+                      "name": "div",
+                      "namespace": "http://www.w3.org/1999/xhtml",
+                      "next": [Circular],
+                      "parent": [Circular],
+                      "prev": null,
+                      "type": "tag",
+                      "x-attribsNamespace": Object {
+                        "aria-hidden": undefined,
+                        "data-is-visible": undefined,
+                        "style": undefined,
+                        "tabindex": undefined,
+                      },
+                      "x-attribsPrefix": Object {
+                        "aria-hidden": undefined,
+                        "data-is-visible": undefined,
+                        "style": undefined,
+                        "tabindex": undefined,
+                      },
+                    },
+                    "type": "tag",
+                    "x-attribsNamespace": Object {
+                      "class": undefined,
+                      "data-testid": undefined,
+                    },
+                    "x-attribsPrefix": Object {
+                      "class": undefined,
+                      "data-testid": undefined,
+                    },
+                  },
+                  "type": "tag",
+                  "x-attribsNamespace": Object {
+                    "id": undefined,
+                  },
+                  "x-attribsPrefix": Object {
+                    "id": undefined,
+                  },
+                },
+                Node {
+                  "attribs": Object {
+                    "aria-hidden": "true",
+                    "data-is-visible": "true",
+                    "style": "pointer-events: none; position: fixed;",
+                    "tabindex": "0",
+                  },
+                  "children": Array [],
+                  "name": "div",
+                  "namespace": "http://www.w3.org/1999/xhtml",
+                  "next": null,
+                  "parent": [Circular],
+                  "prev": Node {
+                    "attribs": Object {
+                      "id": "modal-children",
+                    },
+                    "children": Array [
+                      Node {
+                        "data": "Modal",
+                        "next": null,
+                        "parent": [Circular],
+                        "prev": null,
+                        "type": "text",
+                      },
+                    ],
+                    "name": "div",
+                    "namespace": "http://www.w3.org/1999/xhtml",
+                    "next": [Circular],
+                    "parent": [Circular],
+                    "prev": Node {
+                      "attribs": Object {
+                        "class": "closeButton ",
+                        "data-testid": "modal-closebutton",
+                      },
+                      "children": Array [
+                        Node {
+                          "data": "X",
+                          "next": null,
+                          "parent": [Circular],
+                          "prev": null,
+                          "type": "text",
+                        },
+                      ],
+                      "name": "button",
+                      "namespace": "http://www.w3.org/1999/xhtml",
+                      "next": [Circular],
+                      "parent": [Circular],
+                      "prev": Node {
+                        "attribs": Object {
+                          "aria-hidden": "true",
+                          "data-is-visible": "true",
+                          "style": "pointer-events: none; position: fixed;",
+                          "tabindex": "0",
+                        },
+                        "children": Array [],
+                        "name": "div",
+                        "namespace": "http://www.w3.org/1999/xhtml",
+                        "next": [Circular],
+                        "parent": [Circular],
+                        "prev": null,
+                        "type": "tag",
+                        "x-attribsNamespace": Object {
+                          "aria-hidden": undefined,
+                          "data-is-visible": undefined,
+                          "style": undefined,
+                          "tabindex": undefined,
+                        },
+                        "x-attribsPrefix": Object {
+                          "aria-hidden": undefined,
+                          "data-is-visible": undefined,
+                          "style": undefined,
+                          "tabindex": undefined,
+                        },
+                      },
+                      "type": "tag",
+                      "x-attribsNamespace": Object {
+                        "class": undefined,
+                        "data-testid": undefined,
+                      },
+                      "x-attribsPrefix": Object {
+                        "class": undefined,
+                        "data-testid": undefined,
+                      },
+                    },
+                    "type": "tag",
+                    "x-attribsNamespace": Object {
+                      "id": undefined,
+                    },
+                    "x-attribsPrefix": Object {
+                      "id": undefined,
+                    },
+                  },
+                  "type": "tag",
+                  "x-attribsNamespace": Object {
+                    "aria-hidden": undefined,
+                    "data-is-visible": undefined,
+                    "style": undefined,
+                    "tabindex": undefined,
+                  },
+                  "x-attribsPrefix": Object {
+                    "aria-hidden": undefined,
+                    "data-is-visible": undefined,
+                    "style": undefined,
+                    "tabindex": undefined,
+                  },
+                },
+              ],
+              "name": "div",
+              "namespace": "http://www.w3.org/1999/xhtml",
+              "next": null,
+              "parent": [Circular],
+              "prev": null,
+              "type": "tag",
+              "x-attribsNamespace": Object {
+                "id": undefined,
+              },
+              "x-attribsPrefix": Object {
+                "id": undefined,
+              },
+            },
+          ],
+          "name": "div",
+          "namespace": "http://www.w3.org/1999/xhtml",
+          "next": [Circular],
+          "parent": [Circular],
+          "prev": null,
+          "type": "tag",
+          "x-attribsNamespace": Object {
+            "class": undefined,
+          },
+          "x-attribsPrefix": Object {
+            "class": undefined,
+          },
+        },
+        "type": "tag",
+        "x-attribsNamespace": Object {
+          "class": undefined,
+          "data-testid": undefined,
+        },
+        "x-attribsPrefix": Object {
+          "class": undefined,
+          "data-testid": undefined,
+        },
+      },
+    ],
+    "name": "div",
+    "namespace": "http://www.w3.org/1999/xhtml",
+    "next": null,
+    "parent": Node {
+      "children": Array [
+        [Circular],
+      ],
+      "name": "root",
+      "next": null,
+      "parent": null,
+      "prev": null,
+      "type": "root",
+    },
+    "prev": null,
+    "type": "tag",
+    "x-attribsNamespace": Object {
+      "class": undefined,
+    },
+    "x-attribsPrefix": Object {
+      "class": undefined,
+    },
+  },
+  "_root": LoadedCheerio {
+    "0": Node {
+      "children": Array [
+        Node {
+          "attribs": Object {},
+          "children": Array [
+            Node {
+              "attribs": Object {},
+              "children": Array [],
+              "name": "head",
+              "namespace": "http://www.w3.org/1999/xhtml",
+              "next": Node {
+                "attribs": Object {},
+                "children": Array [],
+                "name": "body",
+                "namespace": "http://www.w3.org/1999/xhtml",
+                "next": null,
+                "parent": [Circular],
+                "prev": [Circular],
+                "type": "tag",
+                "x-attribsNamespace": Object {},
+                "x-attribsPrefix": Object {},
+              },
+              "parent": [Circular],
+              "prev": null,
+              "type": "tag",
+              "x-attribsNamespace": Object {},
+              "x-attribsPrefix": Object {},
+            },
+            Node {
+              "attribs": Object {},
+              "children": Array [],
+              "name": "body",
+              "namespace": "http://www.w3.org/1999/xhtml",
+              "next": null,
+              "parent": [Circular],
+              "prev": Node {
+                "attribs": Object {},
+                "children": Array [],
+                "name": "head",
+                "namespace": "http://www.w3.org/1999/xhtml",
+                "next": [Circular],
+                "parent": [Circular],
+                "prev": null,
+                "type": "tag",
+                "x-attribsNamespace": Object {},
+                "x-attribsPrefix": Object {},
+              },
+              "type": "tag",
+              "x-attribsNamespace": Object {},
+              "x-attribsPrefix": Object {},
+            },
+          ],
+          "name": "html",
+          "namespace": "http://www.w3.org/1999/xhtml",
+          "next": null,
+          "parent": [Circular],
+          "prev": null,
+          "type": "tag",
+          "x-attribsNamespace": Object {},
+          "x-attribsPrefix": Object {},
+        },
+      ],
+      "name": "root",
+      "next": null,
+      "parent": null,
+      "prev": null,
+      "type": "root",
+      "x-mode": "quirks",
+    },
+    "_root": [Circular],
+    "length": 1,
+    "options": Object {
+      "decodeEntities": true,
+      "xml": false,
+    },
+  },
+  "length": 1,
+  "options": Object {
+    "decodeEntities": true,
+    "xml": false,
+  },
+}
+`;

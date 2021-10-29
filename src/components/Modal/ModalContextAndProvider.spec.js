@@ -5,7 +5,7 @@ import { mount } from 'enzyme';
 import { ModalProvider } from './ModalProvider';
 import { useModalContext } from './ModalContext';
 
-describe('ModalProvider', () => {
+describe('ModalContext og ModalProvider', () => {
   const firstModalName = 'modal';
   const secondModalName = 'modal2';
   const thirdModalName = 'modal3';
@@ -36,7 +36,7 @@ describe('ModalProvider', () => {
     return wrapper.find(ModalProvider).find(HookResult).prop('result');
   };
 
-  test('modal list return correct array of modal names, and open() method can add new item/items to the modal list', () => {
+  test('modal list returnerer riktig array med modal names, og open() method kan legge til nye item/items til modal list', () => {
     const wrapper = mount(<TestComponent />);
 
     let hookResult = wrapper
@@ -65,7 +65,7 @@ describe('ModalProvider', () => {
     expect(hookResult.list).toEqual([firstModalName, thirdModalName]);
   });
 
-  test('modal close() method can remove item/items from the modal list', () => {
+  test('modal close() method kan fjerne item/items fra modal list', () => {
     const wrapper = mount(<TestComponent />);
 
     let hookResult = wrapper
@@ -95,7 +95,7 @@ describe('ModalProvider', () => {
     expect(hookResult.list).toEqual([firstModalName]);
   });
 
-  test('modal toggle() method can add/remove item/items to/from the modal list', () => {
+  test('modal toggle() method kan legger til/fjerne item/items til og fra modal list', () => {
     const wrapper = mount(<TestComponent />);
 
     let hookResult = wrapper
@@ -119,7 +119,7 @@ describe('ModalProvider', () => {
     expect(hookResult.list).toEqual([]);
   });
 
-  test('modal closeAll() can clear the modal list', () => {
+  test('modal closeAll() can tømme modal list', () => {
     const wrapper = mount(<TestComponent />);
 
     let hookResult = wrapper
@@ -161,7 +161,7 @@ describe('ModalProvider', () => {
     expect(hookResult.list).toEqual([]);
   });
 
-  test('modal isOpen() and isClose() return correct result', () => {
+  test('modal isOpen() og isClose() returnerer riktig resultat', () => {
     const wrapper = mount(<TestComponent />);
 
     let hookResult = wrapper
