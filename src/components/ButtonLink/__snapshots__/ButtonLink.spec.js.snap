@@ -29,10 +29,8 @@ exports[`ButtonLink-komponent matcher snapshot 1`] = `
         color: #ffffff;
       }
       &:focus {
-        background: #093e61;
-        border-color: #1362ae;
-        color: #ffffff;
-        outline: none;
+        outline-offset: 3px;
+        outline: 2px solid #1362ae;
       }
       &:active {
         box-shadow: none;
