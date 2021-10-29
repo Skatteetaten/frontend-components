@@ -4,7 +4,7 @@
 import { CheckBox } from '@skatteetaten/frontend-components/CheckBox';
 import { LabelWithCallout } from '@skatteetaten/frontend-components/LabelWithCallout';
 
-<div style={{ width: '500px' }}>
+<div style={{ maxWidth: '500px' }}>
   <fieldset style={{ border: 'none', margin: '0', padding: '0' }}>
     <LabelWithCallout
       inFieldset

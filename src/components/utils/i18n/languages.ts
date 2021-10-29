@@ -6,7 +6,7 @@ export const languages = {
       'Datoen er ikke gyldig. (format: {{DEFAULT_DATE_FORMAT}})',
     'datepicker.isOutOfBoundsErrorMessage':
       'Datoen er ikke innenfor gyldig periode.',
-    'datepicker.isRequiredErrorMessage': 'Feltet er påkrevd',
+    'datepicker.isRequiredErrorMessage': 'Dato må fylles ut',
     'datepicker.nextMonthAriaLabel': 'Neste måned',
     'datepicker.nextYearAriaLabel': 'Neste år',
     'datepicker.prevMonthAriaLabel': 'Forrige måned',
@@ -40,7 +40,7 @@ export const languages = {
       'Datoen er ikkje gyldig. (format: {{DEFAULT_DATE_FORMAT}})',
     'datepicker.isOutOfBoundsErrorMessage':
       'Datoen er ikkje innanfor ein gyldig periode.',
-    'datepicker.isRequiredErrorMessage': 'Feltet er påkravd',
+    'datepicker.isRequiredErrorMessage': 'Dato må fyllast ut',
     'datepicker.nextMonthAriaLabel': 'Neste månad',
     'datepicker.nextYearAriaLabel': 'Neste år',
     'datepicker.prevMonthAriaLabel': 'Førre månad',
@@ -72,7 +72,7 @@ export const languages = {
       'Invalid date format. (format: {{DEFAULT_DATE_FORMAT}})',
     'datepicker.isOutOfBoundsErrorMessage':
       'The date is not within a valid period.',
-    'datepicker.isRequiredErrorMessage': 'Field is required',
+    'datepicker.isRequiredErrorMessage': 'Date is required',
     'datepicker.nextMonthAriaLabel': 'Next month',
     'datepicker.nextYearAriaLabel': 'Next year',
     'datepicker.prevMonthAriaLabel': 'Previous month',

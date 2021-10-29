@@ -7,6 +7,8 @@ import { Typography } from '@skatteetaten/frontend-components/Typography';
 // Inline styles are bad design https://reactjs.org/docs/faq-styling.html
 // Just for the purpose of the example
 
+const [state, setState] = React.useState({ open: false });
+
 const paraStyle = {
   marginBlockStart: '0',
 };
@@ -34,7 +36,12 @@ const paraStyle = {
   </OpenClose>
 
   <br />
-  <OpenClose compact iconRight title={'Vis flere detaljer'}>
+  <OpenClose
+    compact
+    isOnClickOnlyFiredOnOpen={false}
+    title={state.open ? 'Skjul detaljer' : 'Vis detaljer'}
+    onClick={() => setState({ open: !state.open })}
+  >
     <Typography>
       <p style={paraStyle}>
         Arbeidsgiveren din/den som utbetaler skal trekke kildeskatt av følgende
@@ -62,6 +69,7 @@ OpenClose som er åpen fra start:
 
 ```js
 import { OpenClose } from '@skatteetaten/frontend-components/OpenClose';
+import { Typography } from '@skatteetaten/frontend-components/Typography';
 
 // Inline styles are bad design https://reactjs.org/docs/faq-styling.html
 // Just for the purpose of the example
@@ -75,16 +83,19 @@ const paraStyle = {
   title={'Tilleggsmelding eller korrigert melding?'}
   headingLevel={2}
 >
-  <p style={paraStyle}>
-    Både tilleggsmelding og korrigert melding er endringsmeldinger. Forskjellen
-    er at tilleggsmelding kun inkluderer de endringene du skal gjøre, mens en
-    korrigert melding er en ny innlevering av hele mva-meldingen. Korrigert
-    melding skal kun brukes hvis du har ført mye av regnskapet feil.
-  </p>
-  <p>
-    Du kan gjøre endringer innen 3 år etter den opprinnelige innleveringsfristen
-    for mva-meldingen.
-  </p>
+  <Typography>
+    <p style={paraStyle}>
+      Både tilleggsmelding og korrigert melding er endringsmeldinger.
+      Forskjellen er at tilleggsmelding kun inkluderer de endringene du skal
+      gjøre, mens en korrigert melding er en ny innlevering av hele
+      mva-meldingen. Korrigert melding skal kun brukes hvis du har ført mye av
+      regnskapet feil.
+    </p>
+    <p>
+      Du kan gjøre endringer innen 3 år etter den opprinnelige
+      innleveringsfristen for mva-meldingen.
+    </p>
+  </Typography>
 </OpenClose>;
 ```
 

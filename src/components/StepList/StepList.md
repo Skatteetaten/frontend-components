@@ -320,14 +320,14 @@ const showFirstStep = true;
     </div>
   </Step>
   <Step stepTitle={titles.step3.no} stepId={'step-1-3'} activeStep={true}>
-    <div style={{ width: '386px', marginBottom: '16px', marginTop: '8px' }}>
+    <div style={{ maxWidth: '386px', marginBottom: '16px', marginTop: '8px' }}>
       <TextField
         id={'input_adresse'}
         label={'Adresse'}
         errorMessage={showError ? 'Adresse må fylles ut.' : undefined}
       />
     </div>
-    <div style={{ width: '400px', display: 'flex' }}>
+    <div style={{ maxWidth: '400px', display: 'flex' }}>
       <div style={{ marginRight: '16px' }}>
         <TextField
           id={'input_postnummer'}

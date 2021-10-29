@@ -18,6 +18,10 @@ const blockRightStyle = {
   marginTop: 20,
 };
 
+const buttonPaddingStyle = {
+  marginLeft: '8px',
+};
+
 const tableStyle = {
   background: 'red',
   marginTop: 20,
@@ -71,10 +75,18 @@ const editableContent = (data, close, rowIndex) => (
         <Grid.Col lg={6}></Grid.Col>
         <Grid.Col lg={6}>
           <div style={blockRightStyle}>
-            <Button>Slett</Button>
+            <Button onClick={close}>Slett</Button>
 
-            <Button>Avbryt</Button>
-            <Button buttonStyle="primaryRoundedFilled">Lagre</Button>
+            <Button onClick={close} style={buttonPaddingStyle}>
+              Avbryt
+            </Button>
+            <Button
+              onClick={close}
+              style={buttonPaddingStyle}
+              buttonStyle="primaryRoundedFilled"
+            >
+              Ok
+            </Button>
           </div>
         </Grid.Col>
       </Grid.Row>
@@ -329,7 +341,7 @@ Hele rader kan gjøres klikkbare med _openEditableOnRowClick_-attributtet, og ta
 
 ```js
 import { Grid } from '@skatteetaten/frontend-components/Grid';
-import { IconButton } from '@skatteetaten/frontend-components/IconButton';
+import { Button } from '@skatteetaten/frontend-components/Button';
 import { Table } from '@skatteetaten/frontend-components/Table';
 import { TextField } from '@skatteetaten/frontend-components/TextField';
 
@@ -338,9 +350,13 @@ const wrapperStyle = {
   padding: 12,
 };
 
-const blockCenterStyle = {
-  textAlign: 'center',
+const blockRightStyle = {
+  textAlign: 'right',
   marginTop: 20,
+};
+
+const buttonPaddingStyle = {
+  marginLeft: '8px',
 };
 
 const tableStyle = {
@@ -356,7 +372,7 @@ const editableContent = (data, close, rowIndex) => (
 
     <Grid>
       <Grid.Row>
-        <Grid.Col lg={3}>
+        <Grid.Col lg={4}>
           <TextField
             id={'textfield-1'}
             box
@@ -367,7 +383,7 @@ const editableContent = (data, close, rowIndex) => (
             help="Hjelpetekst som omhandler beløp."
           />
         </Grid.Col>
-        <Grid.Col lg={3}>
+        <Grid.Col lg={4}>
           <TextField
             id={'textfield-2'}
             box
@@ -378,7 +394,7 @@ const editableContent = (data, close, rowIndex) => (
             help="Hjelpetekst som omhandler dekningsgrad"
           />
         </Grid.Col>
-        <Grid.Col lg={3}>
+        <Grid.Col lg={4}>
           <TextField
             id={'textfield-3'}
             box
@@ -389,17 +405,23 @@ const editableContent = (data, close, rowIndex) => (
             help="Hjelpetekst som omhandler avkastning"
           />
         </Grid.Col>
-        <Grid.Col lg={3}>
-          <div style={blockCenterStyle}>
-            <IconButton title="Lagre" circle icon="Check" />
-            {'  '}
-            <IconButton
+      </Grid.Row>
+      <Grid.Row>
+        <Grid.Col lg={6}></Grid.Col>
+        <Grid.Col lg={6}>
+          <div style={blockRightStyle}>
+            <Button onClick={close}>Slett</Button>
+
+            <Button onClick={close} style={buttonPaddingStyle}>
+              Avbryt
+            </Button>
+            <Button
               onClick={close}
-              title="Angre"
-              circle
-              icon="Cancel"
-            />{' '}
-            <IconButton title="Slett" circle icon="Delete" />{' '}
+              style={buttonPaddingStyle}
+              buttonStyle="primaryRoundedFilled"
+            >
+              Ok
+            </Button>
           </div>
         </Grid.Col>
       </Grid.Row>
@@ -478,7 +500,7 @@ hideEdit vil gjemme edit knappen. Underlinjer kan legges inn i children feltet. 
 
 ```js
 import { Grid } from '@skatteetaten/frontend-components/Grid';
-import { IconButton } from '@skatteetaten/frontend-components/IconButton';
+import { Button } from '@skatteetaten/frontend-components/Button';
 import { LabelWithCallout } from '@skatteetaten/frontend-components/LabelWithCallout';
 import { Table } from '@skatteetaten/frontend-components/Table';
 import { TextField } from '@skatteetaten/frontend-components/TextField';
@@ -488,9 +510,13 @@ const wrapperStyle = {
   padding: 12,
 };
 
-const blockCenterStyle = {
-  textAlign: 'center',
+const blockRightStyle = {
+  textAlign: 'right',
   marginTop: 20,
+};
+
+const buttonPaddingStyle = {
+  marginLeft: '8px',
 };
 
 const tableStyle = {
@@ -513,50 +539,57 @@ const editableContent = (data, close, rowIndex) => (
 
     <Grid>
       <Grid.Row>
-        <Grid.Col lg={3}>
+        <Grid.Col lg={5}>
           <TextField
             id={'textfield-1'}
             box
             calloutFloating={false}
             withLeadingIcon="search"
-            label="Beløp"
+            label="Grunnlag"
             placeholder={''}
-            help="Hjelpetekst som omhandler beløp."
+            help="Hjelpetekst som omhandler grunnlag."
           />
         </Grid.Col>
-        <Grid.Col lg={3}>
+        <Grid.Col lg={2}>
           <TextField
             id={'textfield-2'}
             box
             calloutFloating={false}
             withLeadingIcon="search"
-            label="Dekningsgrad"
+            label="Sats"
+            suffix="%"
             placeholder={''}
             help="Hjelpetekst som omhandler dekningsgrad"
           />
         </Grid.Col>
-        <Grid.Col lg={3}>
+        <Grid.Col lg={5}>
           <TextField
             id={'textfield-3'}
             box
             calloutFloating={false}
             withLeadingIcon="search"
-            label="Avkastning"
+            label="Mva"
             placeholder={''}
-            help="Hjelpetekst som omhandler avkastning"
+            help="Hjelpetekst som omhandler mva"
           />
         </Grid.Col>
-        <Grid.Col lg={3}>
-          <div style={blockCenterStyle}>
-            <IconButton title="Lagre" circle icon="Check" />
-            {'  '}
-            <IconButton
+      </Grid.Row>
+      <Grid.Row>
+        <Grid.Col lg={6}></Grid.Col>
+        <Grid.Col lg={6}>
+          <div style={blockRightStyle}>
+            <Button onClick={close}>Slett</Button>
+
+            <Button onClick={close} style={buttonPaddingStyle}>
+              Avbryt
+            </Button>
+            <Button
               onClick={close}
-              title="Angre"
-              circle
-              icon="Cancel"
-            />{' '}
-            <IconButton title="Slett" circle icon="Delete" />{' '}
+              style={buttonPaddingStyle}
+              buttonStyle="primaryRoundedFilled"
+            >
+              Ok
+            </Button>
           </div>
         </Grid.Col>
       </Grid.Row>

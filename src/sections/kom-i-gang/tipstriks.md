@@ -1,5 +1,5 @@
 ```js noeditor
-<div style={{ width: '500px' }}>
+<div style={{ maxWidth: '500px' }}>
   <h3>Formatering av datoer</h3>
   <p>
     Vi skriver 16.08.2020 eller 16. august 2020. Husk at vi alltid skriver
@@ -15,7 +15,7 @@
 ```js
 import { LabelWithCallout } from '@skatteetaten/frontend-components/LabelWithCallout';
 
-const date = new Date('2020-07-16');
+const date = new Date('2020-08-16');
 var options = {
   year: 'numeric',
   month: '2-digit',
@@ -40,7 +40,7 @@ const en_formatted_date = `${new Intl.DateTimeFormat(
   full_options
 ).format(date)}`;
 
-<div style={{ width: '400px' }}>
+<div style={{ maxWidth: '400px' }}>
   <LabelWithCallout
     label={no_formatted_date}
     help="Standard måte å skrive norsk dato på. Vi skriver årstallet fullt ut, og to siffer i dag og måned."
@@ -60,7 +60,7 @@ const en_formatted_date = `${new Intl.DateTimeFormat(
 ```
 
 ```js noeditor
-<div style={{ width: '500px' }}>
+<div style={{ maxWidth: '500px' }}>
   <h3>Formatering av tall</h3>
   <p>
     Tall skrives med siffer. Vi skriver 4 og 104, ikke fire og hundreogfire. Se{' '}
@@ -89,7 +89,7 @@ const en_formatted_desimal = `${new Intl.NumberFormat('en-GB').format(
   count_persent
 )}`;
 
-<div style={{ width: '400px' }}>
+<div style={{ maxWidth: '400px' }}>
   <LabelWithCallout
     label={'Norsk beløp: ' + no_formatted_number + '\u00A0kroner'}
   />
@@ -119,7 +119,7 @@ const rtf = new Intl.RelativeTimeFormat('no', {
   numeric: 'always',
   style: 'long',
 });
-<div style={{ width: '300px' }}>
+<div style={{ maxWidth: '300px' }}>
   <LabelWithCallout
     label={rtf.format(-3, 'day')}
     help={'Tallene skrives alltid med siffer, også 1-10'}

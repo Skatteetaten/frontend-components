@@ -7,7 +7,7 @@ import { TextField } from '@skatteetaten/frontend-components/TextField';
 
 const [state, setState] = React.useState({ value: '' });
 
-<div style={{ width: '300px' }}>
+<div style={{ maxWidth: '300px' }}>
   <TextField
     id={'my-input'}
     label={'Navn'}
@@ -24,7 +24,7 @@ import { TextField } from '@skatteetaten/frontend-components/TextField';
 
 const [state, setState] = React.useState({ value: '' });
 
-<div style={{ width: '300px' }}>
+<div style={{ maxWidth: '300px' }}>
   <TextField
     label={'Navn'}
     inputSize={'large'}
@@ -43,7 +43,7 @@ const [name, setName] = React.useState('');
 const [children, setChildren] = React.useState('23');
 
 <>
-  <div style={{ width: '300px' }}>
+  <div style={{ maxWidth: '300px' }}>
     <TextField
       label="Fullt navn"
       value={name}
@@ -52,7 +52,7 @@ const [children, setChildren] = React.useState('23');
     />
   </div>
   <br />
-  <div style={{ width: '150px' }}>
+  <div style={{ maxWidth: '150px' }}>
     <TextField
       label="Antall barn"
       placeholder={''}
@@ -72,7 +72,7 @@ import { TextField } from '@skatteetaten/frontend-components/TextField';
 
 const [state, setState] = React.useState({ value: '' });
 
-<div style={{ width: '160px' }}>
+<div style={{ maxWidth: '160px' }}>
   <TextField
     label="Inntektsår"
     value={state.value}
@@ -95,7 +95,7 @@ const [state, setState] = React.useState({
   empty: '',
 });
 
-<div style={{ width: '300px' }}>
+<div style={{ maxWidth: '300px' }}>
   <TextField
     readOnly
     editable
@@ -134,7 +134,7 @@ import { TextField } from '@skatteetaten/frontend-components/TextField';
 
 const [state, setState] = React.useState({ value: '' });
 
-<div style={{ width: '300px' }}>
+<div style={{ maxWidth: '300px' }}>
   <TextField
     value={state.value}
     onChange={(e, value) => setState({ value })}
@@ -152,7 +152,7 @@ import { TextField } from '@skatteetaten/frontend-components/TextField';
 
 const [lineBreak, setLineBreak] = React.useState(false);
 
-<div style={{ width: '300px' }}>
+<div style={{ maxWidth: '300px' }}>
   <TextField
     label="Endres til multiline dersom teksten er lengre enn 50 tegn"
     multiline={lineBreak}

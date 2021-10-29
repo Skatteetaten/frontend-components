@@ -44,7 +44,7 @@ const timeStampStyle = {
   marginTop: '-10px',
 };
 
-<div style={{ width: '500px' }}>
+<div style={{ maxWidth: '400px' }}>
   <AccordionMenu>
     <AccordionMenuItem
       icon="Company"

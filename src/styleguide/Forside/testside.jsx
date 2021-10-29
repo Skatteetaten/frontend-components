@@ -1340,7 +1340,7 @@ function Testside(props) {
         </AccordionItem>
       </Accordion>
       <hr />
-      <div style={{ width: '500px' }}>
+      <div style={{ maxWidth: '500px' }}>
         <AccordionMenu>
           <AccordionMenuItem
             icon="Company"

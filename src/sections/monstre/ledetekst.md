@@ -170,7 +170,7 @@ const eksempel = '[TODO eksempel]';
           </Grid.Row>
         </Grid>
         <div style={{ display: 'flex', alignItems: 'baseline' }}>
-          <div style={{ width: '180px', marginBottom: '16px' }}>
+          <div style={{ maxWidth: '180px', marginBottom: '16px' }}>
             <Card color={Card.Color.BEIGE}>Alle felt må fylles ut.</Card>{' '}
           </div>
           <div
@@ -362,7 +362,7 @@ const eksempel = '[TODO eksempel]';
         </h2>
 
         <div style={{ display: 'flex' }}>
-          <div style={{ width: '500px' }}>
+          <div style={{ maxWidth: '500px' }}>
             <ComboBox
               label="Velg type opplysninger du vil legge til"
               help="Dette feltet foreslår en verdi når du begynner å skrive. Du kan også bla gjennom listen og velge på den måten."
