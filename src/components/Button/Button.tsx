@@ -27,5 +27,5 @@ Button.defaultProps = {
   icon: undefined,
   onClick: undefined,
   primary: false,
-  buttonStyle: 'primaryRounded',
+  buttonStyle: 'secondary',
 };

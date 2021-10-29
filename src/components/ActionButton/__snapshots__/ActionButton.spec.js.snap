@@ -35,15 +35,15 @@ exports[`ActionButton komponent matcher snapshot 1`] = `
         border: 0;
       }
       .ms-Fabric--isFocusVisible &:focus:after {
-        border-radius: 0;
+        border-radius: 4px;
         border: 2px solid #1362ae;
-        bottom: -3px;
+        bottom: -2px;
         content: "";
-        left: -3px;
+        left: -2px;
         outline: transparent;
         position: absolute;
-        right: -3px;
-        top: -3px;
+        right: -2px;
+        top: -2px;
         z-index: 1;
       }
       @media screen and (-ms-high-contrast: active), (forced-colors: active){.ms-Fabric--isFocusVisible &:focus:after {
@@ -77,13 +77,15 @@ exports[`ActionButton komponent matcher snapshot 1`] = `
         color: #0a365f;
       }
       &.ms-Button.ms-Button--action {
-        color: #093e61;
+        border-bottom: 2px solid transparent;
+        color: #1362ae;
+        font-weight: 500;
         height: auto;
-        min-height: 40px;
-        padding-bottom: 10px;
+        min-height: 32px;
+        padding-bottom: 3px;
         padding-left: 4px;
         padding-right: 4px;
-        padding-top: 10px;
+        padding-top: 3px;
         text-align: left;
       }
       & span {
@@ -92,6 +94,8 @@ exports[`ActionButton komponent matcher snapshot 1`] = `
       &.ms-Button--action .ms-Button-icon {
         color: #1362ae;
         font-size: 1.25rem;
+        font-weight: 500;
+        margin-left: 0;
         transform: translateY(4px);
       }
       & .ms-Button-flexContainer {
@@ -100,12 +104,14 @@ exports[`ActionButton komponent matcher snapshot 1`] = `
       &.ms-Button--action .ms-Button-label {
         line-height: 1.5;
       }
-      &.ms-Button--action:hover .ms-Button-label {
-        color: rgba(0, 0, 0, 0.95);
-        text-decoration: underline;
+      &.ms-Button--action:hover  {
+        background-color: #cde1f9;
+        transition: background 0.3s;
       }
-      &.ms-Button--action:hover .ms-Button-icon {
-        color: rgba(0, 0, 0, 0.95);
+      &.ms-Button--action:active  {
+        transform: translateY(2px);
+        transition-timing-function: ease;
+        transition: 0.15s;
       }
       &.ms-Button--action:active .ms-Button-label {
         text-align: left;
@@ -113,9 +119,11 @@ exports[`ActionButton komponent matcher snapshot 1`] = `
       }
       &.ms-Button--action:disabled {
         color: #b2b2b2;
+        cursor: not-allowed;
       }
       &.ms-Button--action:disabled i {
         color: #b2b2b2;
+        cursor: not-allowed;
       }
   data-is-focusable={true}
   onClick={[Function]}

@@ -109,7 +109,7 @@ exports[`RadioButtonGroup komponent matcher snapshot 1`] = `
           background-color: #ffffff;
           border: 2px solid#1362ae;
         }
-        .ms-Fabric.is-focusVisible.is-focusVisible & .ms-ChoiceField-wrapper.is-inFocus:after {
+        & .ms-ChoiceField-wrapper.is-inFocus:after {
           border: 2px solid#1362ae;
           bottom: -6px;
           content: "";

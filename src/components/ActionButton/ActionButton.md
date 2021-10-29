@@ -5,20 +5,8 @@ import { ActionButton } from '@skatteetaten/frontend-components/ActionButton';
 
 <div>
   <ActionButton icon="AddOutline">Legg til</ActionButton>
-  <ActionButton icon="Update" color="black">
-    Oppdater
-  </ActionButton>
-</div>;
-```
-
-Ikonet kan rendres til høyre for teksten med iconAfter=_true_:
-
-```js
-import { ActionButton } from '@skatteetaten/frontend-components/ActionButton';
-
-<div>
-  <ActionButton icon="delete" iconAfter={true}>
-    Fjern
+  <ActionButton icon="delete" color="red" iconAfter={true}>
+    Slett
   </ActionButton>
 </div>;
 ```

@@ -1,23 +1,23 @@
-**Button (Knapp): brukes til hovedhandlinger**
+**Button (Knapp): brukes til handlinger på siden**
 
-Tydelig knapp:
+Hovedhandlings-knapp («call to action»):
 
 ```js
 import { Button } from '@skatteetaten/frontend-components/Button';
 
 <div className="ExampleSpacing8">
-  <Button buttonStyle="primary">Godkjenn</Button>{' '}
+  <Button buttonStyle="callToAction">Send inn skattemeldingen</Button>{' '}
 </div>;
 ```
 
-Noe nedtonet hovedhandling:
+Primær- og sekundærknapper:
 
 ```js
 import { Button } from '@skatteetaten/frontend-components/Button';
 
 <div className="ExampleSpacing8">
-  <Button buttonStyle="primaryRoundedFilled">Send inn uendret</Button>
-  <Button icon="edit">Endre</Button>
+  <Button buttonStyle="primary">Send inn skjema</Button>
+  <Button buttonStyle="secondary">Avbryt</Button>
 </div>;
 ```
 
@@ -27,7 +27,7 @@ Advarsel:
 import { Button } from '@skatteetaten/frontend-components/Button';
 
 <div className="ExampleSpacing8">
-  <Button buttonStyle="warning">Avvis</Button>
+  <Button buttonStyle="warning">Slett</Button>
 </div>;
 ```
 
@@ -81,31 +81,49 @@ import { Link } from '@skatteetaten/frontend-components/Link';
 ```js noeditor beskrivelse
 import { ErrorMessage } from '@skatteetaten/frontend-components/ErrorMessage';
 import { Link } from '@skatteetaten/frontend-components/Link';
-<div>
-  <h3>En knapp er hovedhandlingen på en side</h3>
-  <p>
-    Du skal benytte en «knapp» til hovedhandlinger. En tommelfingerregel er at
-    det kun skal være én slik knapp på siden.
-  </p>
-  <p>
-    Se{' '}
-    <a href="https://www.skatteetaten.no/stilogtone/skrive/skriveregler/knapper/">
-      skrivereglene
-    </a>{' '}
-    for hvordan skrive på knapper.
-  </p>
+import { Button } from '@skatteetaten/frontend-components/Button';
+import { ActionButton } from '@skatteetaten/frontend-components/ActionButton';
 
-  <h3>Tre ulike varianter</h3>
+<div>
+  <h3>Typen knapp synliggjør viktigheten</h3>
   <p>
-    Utformingen av knappen kan være firkantet eller avrundet. Den avrundede kan
-    være fylt eller ikke fylt, mens den firkantede alltid er fylt. Hvilken knapp
-    du skal velge er avhengig av hvor mye oppmerksomhet du ønsker funksjonen
-    skal ha på siden. Firkantet knapp viser størst viktighet, og deretter kommer
-    avrundet knapp med fyll og til slutt avrundet knapp uten fyll.
+    Hvilken type knapp som passer best avhenger av viktigheten til funksjonen
+    som ligger bak; jo viktigere og mer brukt en funksjon er, jo mer
+    fremtredende knapp bør brukes. Vi har følgende rekkefølge, fra mest til minst
+    fremtrendende:
   </p>
+  <ol>
+    <li>
+      For ekstra fremtrendende hovedhandlinger der vi typisk oppfordrer
+      til handling, bruker vi hovedhandlingsknappen (call-to-action):
+      <br /> <br />
+      <Button buttonStyle="callToAction">Send inn skattemeldingen</Button>
+      <br /> <br />
+    </li>
+    <li>
+      Vi bruker primær- og sekundærknappene til viktige funksjoner på siden,
+      f.eks. knapperader i bunnen av skjema.
+      <br /> <br />
+      <Button buttonStyle="primary">Send inn</Button>{' '}
+      <Button buttonStyle="secondary">Avbryt</Button>
+      <br /> <br />
+    </li>
+
+    <li>
+      Vi bruker aksjonsknapper (ActionButton) til mindre fremtredende handlinger
+      på siden:
+      <br />
+      <ActionButton icon="addOutline">Legg til rad</ActionButton>{' '}
+      <ActionButton icon="edit">Rediger</ActionButton>
+      <ActionButton icon="print">Skriv ut</ActionButton>
+      <br /> <br />
+    </li>
+  </ol>
+
+  <h3>Skill mellom primær- og sekundærhandlinger</h3>
   <p>
-    Bruk samme type knapp i løsningen for å sikre konsistens av innholdet. De to
-    formene kan ikke plasseres ved siden av hverandre.
+    Bruk primær- og sekundærknappene aktivt for vise brukeren hvilke funksjoner
+    som er mer eller mindre sentrale.{' '}
   </p>
   <div className="dodont">
     <div className="do">
@@ -114,23 +132,16 @@ import { Link } from '@skatteetaten/frontend-components/Link';
       <Button className="ml8 pa8-imp" buttonStyle="secondary">
         Avbryt
       </Button>
-      <p class="title">Eller slik:</p>
-      <Button buttonStyle="primaryRoundedFilled">Send inn</Button>
-      <Button className="ml8">Avbryt</Button>
     </div>
     <div className="dont">
       <p class="title">Ikke gjør slik:</p>
       <Button buttonStyle="primary">Send inn</Button>
-      <Button className="ml8">Avbryt</Button>
+      <Button buttonStyle="primary" className="ml8">
+        Avbryt
+      </Button>
     </div>
   </div>
 
-  <h3>Bruk egen stil for overordnete og underordnete knapper</h3>
-  <p>
-    Dersom du har en underordnet funksjon ved siden av en hovedfunksjon, for
-    eksempel «Avbryt» ved siden av «Send inn», finnes det en egen stil for
-    dette.
-  </p>
   <h3>Bruk knapp med rød bakgrunn for handlinger det ikke går an å angre på</h3>
   <p>
     En advarselsknapp har rød bakgrunn. Eksempler på advarselsknapper er
@@ -138,6 +149,7 @@ import { Link } from '@skatteetaten/frontend-components/Link';
     Bruk denne knappen til en handling som er sidestilt med en annen
     primærhandling, der du ønsker å signalisere en konsekvens.
   </p>
+
   <div className="dodont">
     <div className="do">
       <p class="title">Gjør slik:</p>
@@ -148,8 +160,8 @@ import { Link } from '@skatteetaten/frontend-components/Link';
     </div>
     <div className="dont">
       <p class="title">Ikke gjør slik:</p>
-      <Button buttonStyle="primary">Godkjenn</Button>
-      <Button buttonStyle="primary" className="ml8">
+      <Button buttonStyle="secondary">Godkjenn</Button>
+      <Button buttonStyle="secondary" className="ml8">
         Avvis
       </Button>
     </div>
