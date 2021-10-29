@@ -155,18 +155,10 @@ function setFocusRadius(props: ButtonProps) {
   }
 }
 
-function setInset(props: ButtonProps) {
-  if (props.buttonStyle === 'primary' || props.buttonStyle === 'warning') {
-    return -8;
-  } else {
-    return -8;
-  }
-}
-
 export function getClassNames(props: ButtonProps): string {
   const theme = getTheme();
   const palette = theme.palette as PaletteProps;
-  const inset = setInset(props);
+  const inset = -8;
   const disabled = props.disabled;
   const radius = setFocusRadius(props);
   return mergeStyles([
