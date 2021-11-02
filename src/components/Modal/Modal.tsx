@@ -6,25 +6,33 @@ import {
   FocusTrapZone,
   IFocusTrapZone,
 } from '@fluentui/react/lib/FocusTrapZone';
+import classnames from 'classnames';
+import { IconButton } from '../IconButton';
+import { BrandContext } from '../SkeBasis';
 
-import { CloseButton } from './components/CloseButton';
+import i18n, { t } from './../utils/i18n/i18n';
+//import { CloseButton } from './components/CloseButton';
 import { Overlay } from './components/Overlay';
 import { useModalContext, ModalInstance } from './ModalContext';
-import { ModalTypes } from './Modal.types';
+import { ModalProps } from './Modal.types';
+import { getClassNames } from './Modal.classNames';
 import { useEscOnPress } from './utils';
 
-import styles from './styles.module.css';
+// import styles from './styles.module.css';
 
-const ModalBase: React.FC<ModalTypes> = ({
-  name,
-  shadowRootNode,
-  hideCloseButton,
-  customClassNames,
-  elementToFocusOnDismiss,
-  onClose,
-  onOpen,
-  children,
-}) => {
+const ModalBase: React.FC<ModalProps> = (props: ModalProps) => {
+  const {
+    name,
+    shadowRootNode,
+    hideCloseButton,
+    customClassNames,
+    language,
+    elementToFocusOnDismiss,
+    onClose,
+    onOpen,
+    children,
+    ...rest
+  } = props;
   const modalWrapperId = 'modal-wrapper';
   const [isDOMAnchorReady, setIsDOMAnchorReady] = useState<boolean>(false);
   const [modalRef, setModalRef] = useState<HTMLDivElement | null>(null);
@@ -32,6 +40,10 @@ const ModalBase: React.FC<ModalTypes> = ({
   const modalInstance: ModalInstance | undefined = useModalContext();
   const focusTrapZone = React.useRef<IFocusTrapZone>(null);
   const focusTrapZoneElm = React.useRef<HTMLDivElement>(null);
+
+  if (language) {
+    i18n.changeLanguage(language);
+  }
 
   const onRefChange = useCallback((node: HTMLDivElement) => {
     setModalRef(node);
@@ -77,30 +89,49 @@ const ModalBase: React.FC<ModalTypes> = ({
   }
 
   return createPortal(
-    <div className={`${styles.wrapper} ${customClassNames?.wrapper}`}>
-      <div
-        ref={onRefChange}
-        className={`${styles.modal} ${customClassNames?.modal}`}
-      >
-        <FocusTrapZone
-          id={focusTrapZoneId}
-          ref={focusTrapZoneElm}
-          componentRef={focusTrapZone}
-          className={customClassNames?.trapzone}
-          elementToFocusOnDismiss={elementToFocusOnDismiss}
-          isClickableOutsideFocusTrap
+    <BrandContext.Consumer>
+      {({ tag }) => (
+        <div
+          className={`${classnames(getClassNames(props, tag).wrapper)} ${
+            customClassNames?.wrapper ?? ''
+          }`}
         >
-          {!hideCloseButton && (
-            <CloseButton
-              className={customClassNames?.closebutton}
-              onClick={closeModal}
-            />
-          )}
-          {children}
-        </FocusTrapZone>
-      </div>
-      <Overlay className={customClassNames?.overlay} onClick={closeModal} />
-    </div>,
+          <div
+            ref={onRefChange}
+            className={`${classnames(getClassNames(props, tag).modal)} ${
+              customClassNames?.modal ?? ''
+            }`}
+          >
+            <FocusTrapZone
+              id={focusTrapZoneId}
+              ref={focusTrapZoneElm}
+              componentRef={focusTrapZone}
+              className={customClassNames?.trapzone ?? ''}
+              elementToFocusOnDismiss={elementToFocusOnDismiss}
+              isClickableOutsideFocusTrap
+            >
+              {!hideCloseButton && (
+                <IconButton
+                  title={t('modal.closebutton')}
+                  className={`${classnames(
+                    getClassNames(props, tag).closeButton
+                  )} ${customClassNames?.closebutton ?? ''}`}
+                  icon={'Cancel'}
+                  onClick={closeModal}
+                />
+              )}
+              {children}
+            </FocusTrapZone>
+          </div>
+          <Overlay
+            className={`${classnames(getClassNames(props, tag).overlay)} ${
+              customClassNames?.overlay ?? ''
+            }`}
+            onClick={closeModal}
+          />
+        </div>
+      )}
+    </BrandContext.Consumer>,
     shadowRootNode?.getElementById('modal-wrapper') ?? document.body
   );
 };

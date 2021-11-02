@@ -3,10 +3,11 @@
 Lorem ipsum:
 
 ```js
-import { ActionButton } from '@skatteetaten/frontend-components/ActionButton';
+import { Button } from '@skatteetaten/frontend-components/Button';
 import { ModalProvider } from '@skatteetaten/frontend-components/Modal/ModalProvider';
 import { useModalContext } from '@skatteetaten/frontend-components/Modal//ModalContext';
 import { Modal } from '@skatteetaten/frontend-components/Modal';
+import { Typography } from '@skatteetaten/frontend-components/Typography';
 
 const TestComponent = ({}) => {
   const modal = useModalContext();
@@ -17,26 +18,30 @@ const TestComponent = ({}) => {
 
   return (
     <>
-      <ActionButton
-        icon={'ChatBubbleOutline'}
-        onClick={toggleModal}
-        aria-haspopup
-      >
-        {'Toggle Modal'}
-      </ActionButton>
+      <Button icon={'ChatBubbleOutline'} onClick={toggleModal} aria-haspopup>
+        {'Åpne modal'}
+      </Button>
 
       {modal && modal.isOpen('testModal') && (
         <Modal name={'testModal'}>
-          <h2>{'Random title'}</h2>
-
-          <ActionButton onClick={toggleModal}>{'Close'}</ActionButton>
+          <Typography>
+            <h2>{'Random title'}</h2>
+            <p>
+              Lorem ipsum dolor sit amet onsectur Lorem ipsum dolor sit amet
+              onsectur Lorem ipsum dolor sit amet onsectur Lorem ipsum dolor sit
+              amet onsectur Lorem ipsum dolor sit amet onsectur Lorem ipsum
+              dolor sit amet onsectur Lorem ipsum dolor sit amet onsectur Lorem
+              ipsum dolor sit amet onsectur Lorem ipsum dolor sit amet onsectur
+            </p>
+          </Typography>
+          <Button onClick={toggleModal}>{'Lukk'}</Button>
         </Modal>
       )}
     </>
   );
 };
 
-<div className="ExampleSpacing8">
+<div>
   <ModalProvider>
     <TestComponent />
   </ModalProvider>

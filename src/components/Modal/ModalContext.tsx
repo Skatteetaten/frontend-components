@@ -9,7 +9,7 @@ export interface ModalInstance {
   isClose: (name: string) => boolean;
   list: Array<string>;
 }
-
+/* @ignore */
 export const ModalContext = React.createContext<ModalInstance | undefined>(
   undefined
 );
