@@ -1,7 +1,7 @@
 export interface ErrorSummaryProps {
   /** Id */
   id?: string;
-  /** Mulighet til å angi shadowRoot til en custom node Modal'en skal instansieres i */
+  /** Mulighet til å angi egenspesifisert element utenfor Document som ErrorSummary skal peke til*/
   shadowRootNode?: Document | ShadowRoot;
   /** Tittel */
   title: string;
