@@ -43,23 +43,16 @@ exports[`Callout komponent matcher snapshot 1`] = `
           & .ms-Callout-main {
             background-color: #e3f5ea;
             box-shadow: none;
+            box-sizing: border-box;
             max-width: 600px;
+            padding-bottom: 1rem;
+            padding-left: 1rem;
+            padding-right: 2rem;
+            padding-top: 1rem;
             width: 100%;
           }
           @media  only screen and (max-width: 479px){& .ms-Callout-main {
             max-width: 300px;
-          }
-          & h3 {
-            padding-bottom: 0;
-            padding-left: 10px;
-            padding-right: 10px;
-            padding-top: 10px;
-          }
-          & p {
-            padding-bottom: 0;
-            padding-left: 10px;
-            padding-right: 10px;
-            padding-top: 10px;
           }
           & .ms-Callout-main .callout-content {
             padding-bottom: 10px;
@@ -71,10 +64,15 @@ exports[`Callout komponent matcher snapshot 1`] = `
             background-color: #e3f5ea;
             left: calc(/2) !important;
           }
+          & p {
+            margin-bottom: 0;
+            margin-left: 0;
+            margin-right: 0;
+            margin-top: 0;
+          }
           && h3 {
             font-size: 1.125rem;
-            margin-bottom: -12px;
-            margin-top: 5px;
+            margin-top: 0;
           }
       style={
         Object {
