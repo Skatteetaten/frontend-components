@@ -1,7 +1,6 @@
 import * as React from 'react';
 
 import { CalloutProps } from '../Callout/Callout.types';
-//import { ICalloutProps } from '@fluentui/react';
 
 export enum calloutState {
   OPEN = 'OPEN',
