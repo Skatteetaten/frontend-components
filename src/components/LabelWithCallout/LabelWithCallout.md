@@ -6,7 +6,7 @@ import { LabelWithCallout } from '@skatteetaten/frontend-components/LabelWithCal
 
 const [state, setState] = React.useState({ warning: false });
 
-<div /*style={{ maxWidth: '400px' }}*/>
+<div style={{ maxWidth: '400px' }}>
   <LabelWithCallout
     label={'Omregistreringsavgift'}
     help={'Avgiften du må betale for å registrere kjøretøyet på en ny person.'}
@@ -22,13 +22,13 @@ const [state, setState] = React.useState({ warning: false });
 </div>;
 ```
 
-Brukt i kombinasjon med annen komponent.
+Brukt i kombinasjon med annen komponent, og veldig mye tekst.
 
 ```js
 import { LabelWithCallout } from '@skatteetaten/frontend-components/LabelWithCallout';
 import { SearchField } from '@skatteetaten/frontend-components/SearchField';
 
-<div /*style={{ maxWidth: '350px' }}*/>
+<div>
   <LabelWithCallout
     label={'Søk'}
     help={
@@ -44,7 +44,7 @@ import { SearchField } from '@skatteetaten/frontend-components/SearchField';
 </div>;
 ```
 
-Brukt med calloutFloating prop.
+Brukt med calloutFloating prop, og veldig mye tekst
 
 ```js
 import { LabelWithCallout } from '@skatteetaten/frontend-components/LabelWithCallout';
