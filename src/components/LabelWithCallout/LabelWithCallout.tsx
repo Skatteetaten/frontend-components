@@ -36,26 +36,12 @@ export const LabelWithCallout = (props: LabelWithCalloutProps) => {
   const helpElement = React.isValidElement(help) ? (
     help
   ) : (
-    <p
-      // className={`${styles.calloutContentWrapper} ${
-      //   customClassNames?.helpPragraph ?? ''
-      // }`}
-      className={customClassNames?.helpPragraph ?? ''}
-    >
-      {help}
-    </p>
+    <p className={customClassNames?.helpPragraph ?? ''}>{help}</p>
   );
   const warningElement = React.isValidElement(warning) ? (
     warning
   ) : (
-    <p
-      // className={`${styles.calloutContentWrapper} ${
-      //   customClassNames?.warningPragraph ?? ''
-      // }`}
-      className={customClassNames?.warningPragraph ?? ''}
-    >
-      {warning}
-    </p>
+    <p className={customClassNames?.warningPragraph ?? ''}>{warning}</p>
   );
 
   const toggleEvent = () => {
