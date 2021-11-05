@@ -50,8 +50,7 @@ export const DatePicker: React.FC<DatePickerProps> = (
     help,
     label,
     labelButtonAriaLabel,
-    labelCallout,
-    labelWithCalloutAutoDismiss,
+    labelWithCalloutProps,
     language,
     onCalloutToggle,
     readonlyMode,
@@ -138,14 +137,16 @@ export const DatePicker: React.FC<DatePickerProps> = (
         buttonAriaLabel={labelButtonAriaLabel}
         help={help}
         calloutFloating={calloutFloating}
-        autoDismiss={labelWithCalloutAutoDismiss}
         onCalloutToggle={onCalloutToggle}
         editable={editable}
         editFunction={onEdit}
         readOnly={readonlyMode}
-        doNotLayer={doNotLayer}
-        {...labelCallout}
+        calloutProps={{
+          ...labelWithCalloutProps?.calloutProps,
+          doNotLayer,
+        }}
       />
+
       <FabricDatePicker
         {...defaultValues}
         {...rest}

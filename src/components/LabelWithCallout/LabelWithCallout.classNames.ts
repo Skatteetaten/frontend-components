@@ -101,6 +101,11 @@ export const getClassNames = (props: LabelWithCalloutProps) => {
         },
       },
     },
+    // calloutContentWrapper: {
+    //   'padding-top': '0!important',
+    //   'padding-left': '1rem!important',
+    //   'padding-right': '1.75rem!important',
+    // },
     icon: {
       color: palette.skeColor.blue,
       selectors: {

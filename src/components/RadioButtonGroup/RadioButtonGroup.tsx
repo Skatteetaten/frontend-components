@@ -16,7 +16,6 @@ export const RadioButtonGroup = (props: RadioButtonGroupProps) => {
     calloutFloating,
     children,
     className,
-    labelWithCalloutAutoDismiss,
     errorMessage,
     help,
     warning,
@@ -24,7 +23,7 @@ export const RadioButtonGroup = (props: RadioButtonGroupProps) => {
     label,
     labelSize,
     labelButtonAriaLabel,
-    labelCallout,
+    labelWithCalloutProps,
     onCalloutToggle,
     options,
     ...rest
@@ -59,8 +58,7 @@ export const RadioButtonGroup = (props: RadioButtonGroupProps) => {
         inFieldset={true}
         calloutFloating={calloutFloating}
         onCalloutToggle={onCalloutToggle}
-        autoDismiss={labelWithCalloutAutoDismiss}
-        {...labelCallout}
+        {...labelWithCalloutProps}
       />
       <FabricChoiceGroup
         id={groupId}

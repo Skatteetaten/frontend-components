@@ -25,7 +25,7 @@ import { SearchField } from '@skatteetaten/frontend-components/SearchField';
 </div>;
 ```
 
-Søkefelt med filtrering:
+Søkefelt med filtrering og automatisk lukking:
 
 ```js
 import { SearchField } from '@skatteetaten/frontend-components/SearchField';
@@ -287,6 +287,9 @@ const [searchTerm, setSearchTerm] = React.useState('');
     options={options}
     value={searchTerm}
     onChange={(ev, value) => setSearchTerm(value)}
+    labelWithCalloutProps={{
+      calloutProps: { autoDismiss: true },
+    }}
   />
 </div>;
 ```

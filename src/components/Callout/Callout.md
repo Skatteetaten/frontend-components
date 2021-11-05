@@ -42,10 +42,9 @@ function closeButton() {
     >
       <h3>Bolignummer</h3>
       <p>
-        Bolignummeret er et nummer som unikt identifiserer en leilighet.
-        Nummeret består at en bokstav etterfulgt av fire tall, f.eks. H0101.
-        Bolignummeret står som regel på et klistemerke i dørkarmen til
-        inngangsdøren.
+        {
+          'Bolignummeret er et nummer som unikt identifiserer en leilighet. Nummeret består at en bokstav etterfulgt av fire tall, f.eks. H0101.Bolignummeret står som regel på et klistemerke i dørkarmen tilinngangsdøren.'
+        }
       </p>
     </Callout>
   )}

@@ -20,14 +20,14 @@ exports[`RadioButtonGroup komponent matcher snapshot 1`] = `
 >
   <div
     className=
-
+        
         {
           display: flex;
         }
   >
     <legend
       className=
-
+          
           {
             color: #1a1a1a;
             display: inline-block;

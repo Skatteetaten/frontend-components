@@ -6,13 +6,14 @@ import { LabelWithCallout } from '@skatteetaten/frontend-components/LabelWithCal
 
 const [state, setState] = React.useState({ warning: false });
 
-<div style={{ maxWidth: '400px' }}>
+<div /*style={{ maxWidth: '400px' }}*/>
   <LabelWithCallout
     label={'Omregistreringsavgift'}
     help={'Avgiften du må betale for å registrere kjøretøyet på en ny person.'}
     warning={
       state.warning && 'Du ser ut til å være fritatt for omregistreringsavgift.'
     }
+    calloutProps={{ border: true }}
   />
   <br />
   <Button onClick={() => setState({ warning: !state.warning })}>
@@ -27,16 +28,35 @@ Brukt i kombinasjon med annen komponent.
 import { LabelWithCallout } from '@skatteetaten/frontend-components/LabelWithCallout';
 import { SearchField } from '@skatteetaten/frontend-components/SearchField';
 
-<div style={{ maxWidth: '350px' }}>
+<div /*style={{ maxWidth: '350px' }}*/>
   <LabelWithCallout
     label={'Søk'}
-    help={'Her kan du søke etter personer og virksomheter'}
+    help={
+      'Her kan du søke etter personer og virkso m he ter. Lorem ipsum dolor sit amet consectur lorem ipsum dolor sit amet co nsectur lorem ipsum dol or sit amet conse ctur lorem ipsum dolor sit amet consectur lorem ipsum dolor sit amet cons ectur lorem ipsum dolor sit amet consectur lorem ipsum dolor sit amet con sectur lorem ipsum dolor sit amet consectur lorem ipsum dolor sit am et consectur lorem ipsum dolor sit amet consectur lorem ipsum dolor sit amet con  sectur lorem ipsum dolor sit amet consectur lorem ipsum dolor sit amet consectur lorem ipsum dolor sit amet consectur lorem ipsum dolor sit amet consectur lorem ipsum dolor sit amet consectur lorem ipsum dolor sit amet consectur lorem ipsum dolor sit amet consectur'
+    }
   />
   <SearchField
     searchFieldSize="standard"
     border="slim"
     placeholder="Skriv søkeord her"
     ariaLabel="Søkefelt"
+  />
+</div>;
+```
+
+Brukt med calloutFloating prop.
+
+```js
+import { LabelWithCallout } from '@skatteetaten/frontend-components/LabelWithCallout';
+import { SearchField } from '@skatteetaten/frontend-components/SearchField';
+
+<div>
+  <LabelWithCallout
+    label={'Søk'}
+    help={
+      'Her kan du søke etter personer og virkso m he ter. Lorem ipsum dolor sit amet consectur lorem ipsum dolor sit amet co nsectur lorem ipsum dol or sit amet conse ctur lorem ipsum dolor sit amet consectur lorem ipsum dolor sit amet cons ectur lorem ipsum dolor sit amet consectur lorem ipsum dolor sit amet con sectur lorem ipsum dolor sit amet consectur lorem ipsum dolor sit am et consectur lorem ipsum dolor sit amet consectur lorem ipsum dolor sit amet con  sectur lorem ipsum dolor sit amet consectur lorem ipsum dolor sit amet consectur lorem ipsum dolor sit amet consectur lorem ipsum dolor sit amet consectur lorem ipsum dolor sit amet consectur lorem ipsum dolor sit amet consectur lorem ipsum dolor sit amet consectur'
+    }
+    calloutFloating
   />
 </div>;
 ```
@@ -52,10 +72,12 @@ const [state, setState] = React.useState({ value1: '' });
   <div style={{ maxWidth: '300px' }}>
     <TextField
       label="Fullt navn"
-      labelWithCalloutAutoDismiss={true}
       value={state.value1}
       onChange={(e, value) => setState({ value1: value })}
       help="Vi trenger å vite navnet ditt dersom vi skal kontakte deg senere."
+      labelWithCalloutProps={{
+        calloutProps: { autoDismiss: true },
+      }}
     />
   </div>
 </>;

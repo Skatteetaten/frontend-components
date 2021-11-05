@@ -42,12 +42,11 @@ const limitNumberOfResults = (list: Array<IDropdownOption>, limit?: number) => {
 export const SearchField: React.FC<SearchFieldProps> = (props) => {
   const {
     className,
-    labelWithCalloutAutoDismiss,
     help,
     id,
     label,
     labelButtonAriaLabel,
-    labelCallout,
+    labelWithCalloutProps,
     language,
     onCalloutToggle,
     onChange,
@@ -239,8 +238,7 @@ export const SearchField: React.FC<SearchFieldProps> = (props) => {
         inputId={inputId}
         help={help}
         onCalloutToggle={onCalloutToggle}
-        autoDismiss={labelWithCalloutAutoDismiss}
-        {...labelCallout}
+        {...labelWithCalloutProps}
       />
       {options ? (
         <div ref={_searchBoxElement}>

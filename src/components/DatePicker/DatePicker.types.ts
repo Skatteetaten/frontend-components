@@ -23,9 +23,7 @@ export interface DatePickerProps extends IDatePickerProps {
   /** aria-label for knapp i label */
   labelButtonAriaLabel?: string;
   /** Overstyr label, se LabelWithCallout komponent */
-  labelCallout?: LabelWithCalloutProps;
-  /** Lukk callout på blur */
-  labelWithCalloutAutoDismiss?: boolean;
+  labelWithCalloutProps?: LabelWithCalloutProps;
   /** Språk vist i komponent. Default er norsk bokmål. */
   language?: 'nb' | 'nn' | 'en';
   /** Brukerspesifisert event for callout **/
@@ -33,7 +31,7 @@ export interface DatePickerProps extends IDatePickerProps {
     oldCalloutState: calloutState,
     newCalloutState: calloutState
   ) => void;
-  /** doNotLayer prop både for Label og for Datepickeren */
+  /** doNotLayer prop for Datepickeren og labelWithCallout */
   doNotLayer?: boolean;
   /** Tilstand som kan benyttes når datovelger skal vises i lesemodus */
   readonlyMode?: boolean;

@@ -1,5 +1,27 @@
 ### **v.5.0.0 - 31.10.2021 - Major release**
 
+#### Breaking
+
+- React 17 is now required
+- global imports from root is now longer supported:
+  import { CardBorder } from '@skatteetaten/frontend-components'; must now be changed to
+  more specific imports: imports import { CardBorder } from '@skatteetaten/frontend-components/Card';
+- Button variants have been reorganized/prioritized, with have new names and default value:
+  "primaryLarge" is now "callToAction",
+  "primaryRoundedFilled" is now "primary",
+  "secondary" is now "secondarySimple",
+  "primary" is now "primaryCornered",
+  "primaryRounded" is now "secondary" (default)
+
+  #### Breaking per component
+
+- LabelWithCallout
+  -> 'className' prop -> use customClassNames
+  -> 'autoDismiss', 'border' deprecated, use the same keys within 'calloutProps' prop instead
+- SearchField, ComboBox, DatePicker, Dropdown, FileUploader, RadioButtonGroup
+  -> 'labelCallout' prop renamed to 'labelWithCalloutProps'
+  -> 'labelWithCalloutAutoDismiss', use 'autodismiss' key under 'labelWithCalloutProps.calloutProps' prop instead
+
 #### Colors and design
 
 - Colors updated with new names and values. Colors are now accessible via design tokens. Added design tokens for spacing and typography as well.
@@ -24,19 +46,6 @@
 - Remove unnecessary dependencies: tslib (already included in Fluent UI) and fixes duplicate dependencies.
 - Moved uuid from dependency to devDependendy
 - Icons have been reorganized into a single, much smaller font file, using woff-format only.
-
-#### Breaking
-
-- React 17 is now required
-- global imports from root is now longer supported:
-  import { CardBorder } from '@skatteetaten/frontend-components'; must now be changed to
-  more specific imports: imports import { CardBorder } from '@skatteetaten/frontend-components/Card';
-- Button variants have been reorganized/prioritized, with have new names and default value:
-  "primaryLarge" is now "callToAction",
-  "primaryRoundedFilled" is now "primary",
-  "secondary" is now "secondarySimple",
-  "primary" is now "primaryCornered",
-  "primaryRounded" is now "secondary" (default)
 
 #### Additional
 

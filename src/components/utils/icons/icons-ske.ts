@@ -1,4 +1,5 @@
 import SkeIconfontWOFF from '../assets/SkeIconfont.woff';
+
 export default {
   style: {
     MozOsxFontSmoothing: 'grayscale',

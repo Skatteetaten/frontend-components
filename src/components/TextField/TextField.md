@@ -34,7 +34,7 @@ const [state, setState] = React.useState({ value: '' });
 </div>;
 ```
 
-Hjelpetekster og advarsel:
+Hjelpetekster og advarsel med automatisk lukking:
 
 ```js
 import { TextField } from '@skatteetaten/frontend-components/TextField';
@@ -49,6 +49,9 @@ const [children, setChildren] = React.useState('23');
       value={name}
       onChange={(e, value) => setName(value)}
       help="Vi trenger å vite navnet ditt dersom vi skal kontakte deg senere."
+      labelWithCalloutProps={{
+        calloutProps: { autoDismiss: true },
+      }}
     />
   </div>
   <br />
@@ -60,6 +63,9 @@ const [children, setChildren] = React.useState('23');
       value={children}
       warning="Er du sikker på at antall barn er riktig?"
       onChange={(e, value) => setChildren(value)}
+      labelWithCalloutProps={{
+        calloutProps: { autoDismiss: true },
+      }}
     />
   </div>
 </>;

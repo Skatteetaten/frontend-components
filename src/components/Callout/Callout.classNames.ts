@@ -31,15 +31,11 @@ export const getClassNames = (props: CalloutProps, widthBtnLabel: string) => {
           width: '100%',
           backgroundColor: palette.skeColor[props.color as CalloutColor],
           boxShadow: 'none',
+          'box-sizing': 'border-box',
+          padding: '1rem 2rem 1rem 1rem',
           selectors: {
             '@media  only screen and (max-width: 479px)': {
               maxWidth: 300,
-            },
-            '& h3': {
-              padding: '10px 10px 0 10px',
-            },
-            '& p': {
-              padding: '10px 10px 0 10px',
             },
             '.callout-content': {
               padding: '10px 20px 10px 10px',
@@ -50,9 +46,11 @@ export const getClassNames = (props: CalloutProps, widthBtnLabel: string) => {
           backgroundColor: palette.skeColor[props.color as CalloutColor],
           left: 'calc('.concat(widthBtnLabel, '/2) !important'),
         },
+        '& p': {
+          margin: '0 ',
+        },
         '&& h3': {
-          marginTop: '5px',
-          marginBottom: '-12px',
+          marginTop: '0',
           fontSize: FontSizes.large,
         },
       },
