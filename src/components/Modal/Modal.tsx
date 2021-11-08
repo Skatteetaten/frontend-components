@@ -29,7 +29,6 @@ const ModalBase: React.FC<ModalProps> = (props: ModalProps) => {
     onClose,
     onOpen,
     children,
-    ...rest
   } = props;
   const modalWrapperId = 'modal-wrapper';
   const [isDOMAnchorReady, setIsDOMAnchorReady] = useState<boolean>(false);
@@ -43,10 +42,6 @@ const ModalBase: React.FC<ModalProps> = (props: ModalProps) => {
     i18n.changeLanguage(language);
   }
 
-  const onRefChange = useCallback((node: HTMLDivElement) => {
-    setModalRef(node);
-  }, []);
-
   const closeModal = (): void => {
     modalInstance && modalInstance.close(name);
     document.body.style.overflow = '';
@@ -55,6 +50,10 @@ const ModalBase: React.FC<ModalProps> = (props: ModalProps) => {
       onClose(modalRef);
     }
   };
+
+  const onRefChange = useCallback((node: HTMLDivElement) => {
+    setModalRef(node);
+  }, []);
 
   useEffect(() => {
     if (!shadowRootNode) {
@@ -70,7 +69,7 @@ const ModalBase: React.FC<ModalProps> = (props: ModalProps) => {
       shadowRootNode.appendChild(modalWrapper);
       setIsDOMAnchorReady(true);
     }
-  }, []);
+  }, [shadowRootNode]);
 
   useEffect(() => {
     document.body.style.overflow = 'hidden';

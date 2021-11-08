@@ -4,16 +4,16 @@ export const useEscOnPress = (
   ref: HTMLDivElement | null,
   onClose?: (ref: HTMLDivElement) => void
 ): void => {
-  const onKeyDown = (event: KeyboardEvent): void => {
-    if (ref == null) {
-      return;
-    }
-    if (event.code === 'Escape' && onClose) {
-      onClose(ref);
-    }
-  };
-
   useEffect(() => {
+    const onKeyDown = (event: KeyboardEvent): void => {
+      if (ref == null) {
+        return;
+      }
+      if (event.code === 'Escape' && onClose) {
+        onClose(ref);
+      }
+    };
+
     if (ref) {
       window.addEventListener('keydown', onKeyDown as EventListener, false);
     }
@@ -22,5 +22,5 @@ export const useEscOnPress = (
         window.removeEventListener('keydown', onKeyDown as EventListener);
       }
     };
-  }, [ref]);
+  }, [ref, onClose]);
 };
