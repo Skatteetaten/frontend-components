@@ -29,7 +29,7 @@ const TestComponent = ({}) => {
             <p>Er du sikker på at du vil kansellere arbeidsoppgaven?</p>
           </Typography>
           <div style={{ marginTop: '16px' }}>
-            <Button buttonStyle="primaryRoundedFilled" onClick={toggleModal}>
+            <Button buttonStyle="primary" onClick={toggleModal}>
               {'Kanseller'}
             </Button>
             <Button onClick={toggleModal}>{'Avbryt'}</Button>
