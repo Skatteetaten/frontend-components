@@ -1,4 +1,4 @@
-import React, { memo, useCallback, useState, useEffect } from 'react';
+import * as React from 'react';
 import { createPortal } from 'react-dom';
 
 import { useId } from '@fluentui/react-hooks';
@@ -31,8 +31,10 @@ const ModalBase: React.FC<ModalProps> = (props: ModalProps) => {
     children,
   } = props;
   const modalWrapperId = 'modal-wrapper';
-  const [isDOMAnchorReady, setIsDOMAnchorReady] = useState<boolean>(false);
-  const [modalRef, setModalRef] = useState<HTMLDivElement | null>(null);
+  const [isDOMAnchorReady, setIsDOMAnchorReady] = React.useState<boolean>(
+    false
+  );
+  const [modalRef, setModalRef] = React.useState<HTMLDivElement | null>(null);
 
   const modalInstance: ModalInstance | undefined = useModalContext();
   const focusTrapZone = React.useRef<IFocusTrapZone>(null);
@@ -51,11 +53,11 @@ const ModalBase: React.FC<ModalProps> = (props: ModalProps) => {
     }
   };
 
-  const onRefChange = useCallback((node: HTMLDivElement) => {
+  const onRefChange = React.useCallback((node: HTMLDivElement) => {
     setModalRef(node);
   }, []);
 
-  useEffect(() => {
+  React.useEffect(() => {
     if (!shadowRootNode) {
       setIsDOMAnchorReady(true);
       return;
@@ -71,7 +73,7 @@ const ModalBase: React.FC<ModalProps> = (props: ModalProps) => {
     }
   }, [shadowRootNode]);
 
-  useEffect(() => {
+  React.useEffect(() => {
     document.body.style.overflow = 'hidden';
     if (modalRef && onOpen) {
       onOpen(modalRef);
@@ -109,6 +111,7 @@ const ModalBase: React.FC<ModalProps> = (props: ModalProps) => {
             >
               {!hideCloseButton && (
                 <IconButton
+                  uniqueId={'modal-closebutton'}
                   title={t('modal.closebutton')}
                   className={`${classnames(
                     getClassNames(props, tag).closeButton
@@ -133,4 +136,4 @@ const ModalBase: React.FC<ModalProps> = (props: ModalProps) => {
   );
 };
 
-export const Modal = memo(ModalBase);
+export const Modal = React.memo(ModalBase);

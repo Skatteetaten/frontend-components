@@ -10,16 +10,19 @@ describe('Modal', () => {
 
   test('modal mountes slik den skal med wrapper, closeButton, overlay, trapFocus og innhold', () => {
     const wrapper = mount(
-      <Modal>
+      <Modal
+        customClassNames={{
+          closebutton: 'closebuttonCustom',
+          overlay: 'overlayCustom',
+        }}
+      >
         <div id={'modal-children'}>{modalText}</div>
       </Modal>
     );
     expect(wrapper.render()).toMatchSnapshot();
     expect(wrapper.find('#modal-children').text()).toEqual(modalText);
-    expect(
-      wrapper.find('[data-testid="modal-closebutton"]').exists()
-    ).toBeTruthy();
-    expect(wrapper.find('[data-testid="modal-overlay"]').exists()).toBeTruthy();
+    expect(wrapper.find('.closebuttonCustom').exists()).toBeTruthy();
+    expect(wrapper.find('.overlayCustom').exists()).toBeTruthy();
   });
 
   test('modal mountes med create portal', () => {
@@ -47,13 +50,18 @@ describe('Modal', () => {
     const onClose = jest.fn();
 
     const wrapper = mount(
-      <Modal onClose={onClose}>
+      <Modal
+        onClose={onClose}
+        customClassNames={{
+          overlay: 'overlay',
+        }}
+      >
         <div id={'modal-children'}>{modalText}</div>
       </Modal>
     );
 
-    expect(wrapper.find('[data-testid="modal-overlay"]').exists()).toBeTruthy();
-    wrapper.find('[data-testid="modal-overlay"]').simulate('click');
+    expect(wrapper.find('.overlay').exists()).toBeTruthy();
+    wrapper.find('.overlay').first().simulate('click');
     expect(onClose).toHaveBeenCalledTimes(1);
   });
 
@@ -73,15 +81,17 @@ describe('Modal', () => {
     const onClose = jest.fn();
 
     const wrapper = mount(
-      <Modal onClose={onClose}>
+      <Modal
+        customClassNames={{ closebutton: 'closebutton' }}
+        hideCloseButton={false}
+        onClose={onClose}
+      >
         <div id={'modal-children'}>{modalText}</div>
       </Modal>
     );
 
-    expect(
-      wrapper.find('[data-testid="modal-closebutton"]').exists()
-    ).toBeTruthy();
-    wrapper.find('[data-testid="modal-closebutton"]').simulate('click');
+    expect(wrapper.find('.closebutton').exists()).toBeTruthy();
+    wrapper.find('.closebutton').first().simulate('click');
 
     expect(onClose).toHaveBeenCalledTimes(1);
   });
