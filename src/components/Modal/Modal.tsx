@@ -18,8 +18,6 @@ import { ModalProps } from './Modal.types';
 import { getClassNames } from './Modal.classNames';
 import { useEscOnPress } from './utils';
 
-// import styles from './styles.module.css';
-
 const ModalBase: React.FC<ModalProps> = (props: ModalProps) => {
   const {
     name,

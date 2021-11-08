@@ -4,15 +4,19 @@ import { PaletteProps } from '../utils';
 import { ModalProps } from './Modal.types';
 
 // TO-DO avklare størrelser med design
-const getModalWidth = (props: ModalProps) => {
+/*const getModalWidth = (props: ModalProps) => {
+  
   if (props.size === 'small') {
-    return '300px';
+    return '50ch';
   }
   if (props.size === 'medium') {
-    return '500px';
+    return '60ch';
   }
-  return '90%';
-};
+  if (props.size === 'large') {
+    return '60ch';
+  }
+  return '50ch';
+};*/
 
 export const getClassNames = (props: ModalProps, tag: string) => {
   const palette = getTheme().palette as PaletteProps;
@@ -59,8 +63,16 @@ export const getClassNames = (props: ModalProps, tag: string) => {
       border: `4px solid ${primaryColor}`,
       zIndex: 99999,
       overflow: 'auto',
-      '@media only screen and (max-width: 479px)': {
-        width: getModalWidth(props),
+      selectors: {
+        '@media (min-width: 320px)': {
+          width: '40ch',
+        },
+        '@media (min-width: 479px)': {
+          width: '50ch',
+        },
+        '@media (min-width: 640px)': {
+          width: '70ch',
+        },
       },
     },
 

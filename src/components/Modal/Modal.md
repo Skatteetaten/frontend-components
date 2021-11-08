@@ -1,6 +1,4 @@
-**Modal : enkel modal fungerende med web-components**
-
-Lorem ipsum:
+**Modal: Enkel modalboks**
 
 ```js
 import { Button } from '@skatteetaten/frontend-components/Button';
@@ -18,23 +16,24 @@ const TestComponent = ({}) => {
 
   return (
     <>
-      <Button icon={'ChatBubbleOutline'} onClick={toggleModal} aria-haspopup>
+      <Button onClick={toggleModal} aria-haspopup>
         {'Åpne modal'}
       </Button>
 
       {modal && modal.isOpen('testModal') && (
         <Modal name={'testModal'}>
           <Typography>
-            <h2>{'Random title'}</h2>
-            <p>
-              Lorem ipsum dolor sit amet onsectur Lorem ipsum dolor sit amet
-              onsectur Lorem ipsum dolor sit amet onsectur Lorem ipsum dolor sit
-              amet onsectur Lorem ipsum dolor sit amet onsectur Lorem ipsum
-              dolor sit amet onsectur Lorem ipsum dolor sit amet onsectur Lorem
-              ipsum dolor sit amet onsectur Lorem ipsum dolor sit amet onsectur
-            </p>
+            <h3 style={{ marginTop: '0px' }}>
+              {'Kansellere arbeidsoppgaven?'}
+            </h3>
+            <p>Er du sikker på at du vil kansellere arbeidsoppgaven?</p>
           </Typography>
-          <Button onClick={toggleModal}>{'Lukk'}</Button>
+          <div style={{ marginTop: '16px' }}>
+            <Button buttonStyle="primaryRoundedFilled" onClick={toggleModal}>
+              {'Kanseller'}
+            </Button>
+            <Button onClick={toggleModal}>{'Avbryt'}</Button>
+          </div>
         </Modal>
       )}
     </>
