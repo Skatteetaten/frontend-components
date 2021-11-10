@@ -6,12 +6,11 @@ import {
   FocusTrapZone,
   IFocusTrapZone,
 } from '@fluentui/react/lib/FocusTrapZone';
-import classnames from 'classnames';
+//import classnames from 'classnames';
 import { IconButton } from '../IconButton';
 import { BrandContext } from '../SkeBasis';
 
 import i18n, { t } from './../utils/i18n/i18n';
-//import { CloseButton } from './components/CloseButton';
 import { Overlay } from './components/Overlay';
 import { useModalContext, ModalInstance } from './ModalContext';
 import { ModalProps } from './Modal.types';
@@ -91,13 +90,13 @@ const ModalBase: React.FC<ModalProps> = (props: ModalProps) => {
     <BrandContext.Consumer>
       {({ tag }) => (
         <div
-          className={`${classnames(getClassNames(props, tag).wrapper)} ${
+          className={`${getClassNames(props, tag).wrapper} ${
             customClassNames?.wrapper ?? ''
           }`}
         >
           <div
             ref={onRefChange}
-            className={`${classnames(getClassNames(props, tag).modal)} ${
+            className={`${getClassNames(props, tag).modal} ${
               customClassNames?.modal ?? ''
             }`}
           >
@@ -113,9 +112,9 @@ const ModalBase: React.FC<ModalProps> = (props: ModalProps) => {
                 <IconButton
                   uniqueId={'modal-closebutton'}
                   title={t('modal.closebutton')}
-                  className={`${classnames(
-                    getClassNames(props, tag).closeButton
-                  )} ${customClassNames?.closebutton ?? ''}`}
+                  className={`${getClassNames(props, tag).closeButton} ${
+                    customClassNames?.closebutton ?? ''
+                  }`}
                   icon={'Cancel'}
                   onClick={closeModal}
                 />
@@ -124,7 +123,7 @@ const ModalBase: React.FC<ModalProps> = (props: ModalProps) => {
             </FocusTrapZone>
           </div>
           <Overlay
-            className={`${classnames(getClassNames(props, tag).overlay)} ${
+            className={`${getClassNames(props, tag).overlay} ${
               customClassNames?.overlay ?? ''
             }`}
             onClick={closeModal}

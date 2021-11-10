@@ -5,8 +5,6 @@ export interface ModalProps {
   name: string;
   /** Mulighet til å angi shadowRoot til en custom node Modal'en skal instansieres i */
   shadowRootNode?: Document | ShadowRoot;
-  /** Valgri størrelse på Modal - default tar den 90% av skjermen */
-  size: 'small' | 'medium' | 'large';
   /** Skjuler lukkeknappen */
   hideCloseButton?: boolean;
   /** Element fokuset skal settes tilbake til når Modalen lukkes */
