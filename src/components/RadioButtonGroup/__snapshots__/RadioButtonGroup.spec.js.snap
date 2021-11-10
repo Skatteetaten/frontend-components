@@ -92,13 +92,24 @@ exports[`RadioButtonGroup komponent matcher snapshot 1`] = `
         }
         & .ms-ChoiceField-field::before {
           border: 2px solid#000000;
+          box-shadow: inset 0 0 0 8px #ffffff , inset 0 0 0 12px transparent;
           content: ;
           display: inline-block;
           position: absolute;
+          transition: box-shadow 80ms ease-out;
+        }
+        & .ms-ChoiceField-field:hover::before {
+          box-shadow: inset 0 0 0 3px #ffffff , inset 0 0 0 12px #000000;
+        }
+        & .ms-ChoiceField-field:hover::after {
+          border: none;
         }
         & .ms-ChoiceField-input {
           background-color: #ffffff;
           border: 2px solid#1362ae;
+        }
+        & .ms-ChoiceField-input:disabled + .ms-ChoiceField-field:hover::before {
+          box-shadow: inset 0 0 0 3px #ffffff , inset 0 0 0 12px #b2b2b2;
         }
         & .ms-ChoiceField-input:disabled + .ms-ChoiceField-field::before {
           background-color: #ffffff;
@@ -108,6 +119,10 @@ exports[`RadioButtonGroup komponent matcher snapshot 1`] = `
         & .ms-ChoiceField-input:checked + .ms-ChoiceField-field::before {
           background-color: #ffffff;
           border: 2px solid#1362ae;
+          box-shadow: inset 0 0 0 3px #ffffff , inset 0 0 0 12px #1362ae;
+        }
+        & .ms-ChoiceField-input:checked + .ms-ChoiceField-field::after {
+          border: none;
         }
         & .ms-ChoiceField-wrapper.is-inFocus:after {
           border: 2px solid#1362ae;
