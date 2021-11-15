@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-export interface ModalTypes {
+export interface ModalProps {
   /** Unikt navn til modal-instancen - refereres ved open/close osv */
   name: string;
   /** Mulighet til å angi shadowRoot til en custom node Modal'en skal instansieres i */
@@ -17,6 +17,8 @@ export interface ModalTypes {
     closebutton?: string;
     overlay?: string;
   };
+  /** Språk vist i komponent. Default er norsk bokmål. */
+  language?: 'nb' | 'nn' | 'en';
   /** Funksjon som kalles når Nodalen lukkes */
   onClose?: (ref: HTMLDivElement) => void;
   /** Funksjon som kalles når Nodalen åpnes */

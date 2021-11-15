@@ -5,13 +5,57 @@ exports[`Modal modal med rootNode instansierer Modal komponent i shadow-domen i 
   id="modal-wrapper"
 >
   <div
-    class="wrapper undefined"
+    class=
+        
+        {
+          align-items: center;
+          bottom: 0px;
+          display: flex;
+          justify-content: center;
+          left: 0px;
+          position: fixed;
+          right: 0px;
+          top: 0px;
+          z-index: 99998;
+        }
   >
     <div
-      class="modal undefined"
+      class=
+          
+          {
+            background: #ffffff;
+            border: 4px solid #6f2c3f;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            flex-wrap: nowrap;
+            height: auto;
+            max-height: 90%;
+            max-width: 90%;
+            overflow: auto;
+            padding-bottom: 16px;
+            padding-left: 16px;
+            padding-right: 16px;
+            padding-top: 16px;
+            position: relative;
+            z-index: 99999;
+          }
+          @media (min-width: 320px){& {
+            min-width: 40ch;
+          }
+          @media (min-width: 479px){& {
+            min-width: 50ch;
+          }
+          @media (min-width: 640px){& {
+            min-width: 70ch;
+          }
+          @media (min-width: 1024px){& {
+            min-width: 80ch;
+          }
     >
       <div
-        id="ModalTrapFocus8"
+        class=""
+        id="ModalTrapFocus26"
       >
         <div
           aria-hidden="true"
@@ -20,10 +64,175 @@ exports[`Modal modal med rootNode instansierer Modal komponent i shadow-domen i 
           tabindex="0"
         />
         <button
-          class="closeButton "
-          data-testid="modal-closebutton"
+          class=
+              ms-Button
+              ms-Button--icon
+              {
+                -moz-osx-font-smoothing: grayscale;
+                -webkit-font-smoothing: antialiased;
+                background-color: transparent;
+                border-radius: 2px;
+                border: none;
+                box-sizing: border-box;
+                color: #1362ae;
+                cursor: pointer;
+                display: inline-block;
+                font-family: 'Helvetica Neue', Helvetica , Arial, 'Liberation Sans', 'Nimbus Sans L', sans-serif;
+                font-size: 1rem;
+                font-weight: 400;
+                height: 30px;
+                outline: transparent;
+                padding-bottom: 0;
+                padding-left: 4px;
+                padding-right: 4px;
+                padding-top: 0;
+                position: absolute;
+                right: 10px;
+                text-align: center;
+                text-decoration: none;
+                top: 10px;
+                user-select: none;
+                width: 32px;
+              }
+              &::-moz-focus-inner {
+                border: 0;
+              }
+              .ms-Fabric--isFocusVisible &:focus:after {
+                border-radius: 0;
+                border: 2px solid #1362ae;
+                bottom: -3px;
+                content: "";
+                left: -3px;
+                outline: transparent;
+                position: absolute;
+                right: -3px;
+                top: -3px;
+                z-index: 1;
+              }
+              @media screen and (-ms-high-contrast: active), (forced-colors: active){.ms-Fabric--isFocusVisible &:focus:after {
+                bottom: -2px;
+                left: -2px;
+                outline-color: ButtonText;
+                right: -2px;
+                top: -2px;
+              }
+              &:active > * {
+                left: 0px;
+                position: relative;
+                top: 0px;
+              }
+              &:hover {
+                background-color: #f4f4f4;
+                color: #11599c;
+              }
+              @media screen and (-ms-high-contrast: active), (forced-colors: active){&:hover {
+                border-color: Highlight;
+                color: Highlight;
+              }
+              &:active {
+                background-color: #eaeaea;
+                color: #0c3f6f;
+              }
+              &.ms-Button--icon {
+                background: none;
+                border-radius: 50%;
+                border-width: 0px;
+                color: #1362ae;
+                height: 40px;
+                padding-bottom: 0px;
+                padding-left: 0px;
+                padding-right: 0px;
+                padding-top: 0px;
+                width: 40px;
+              }
+              &.ms-Button--icon i {
+                font-size: 1.25rem;
+              }
+              &.ms-Button--icon:hover {
+                background: #cde1f9;
+                border-color: #1362ae;
+                border-width: 3px;
+                border: 3px solid #1362ae;
+                color: #1362ae;
+                transition: background-color 0.3s;
+              }
+              &.ms-Button--icon:focus {
+                background: #cde1f9;
+                border-color: #1362ae;
+                border-width: 3px;
+                border: 3px solid #1362ae;
+                color: #1362ae;
+                transition: background-color 0.3s;
+              }
+              &:focus&:after {
+                border-color: transparent;
+              }
+              &.ms-Button--icon:active {
+                background-color: #093e61;
+                border-color: #093e61;
+                color: #ffffff;
+              }
+              &.ms-Button--icon:disabled {
+                border-color: #b2b2b2;
+                border-width: 0px;
+                color: #b2b2b2;
+              }
+              &.ms-Button--icon:disabled i {
+                color: #b2b2b2;
+              }
+          data-is-focusable="true"
+          title="Lukk"
+          type="button"
         >
-          X
+          <span
+            class=
+                ms-Button-flexContainer
+                {
+                  align-items: center;
+                  display: flex;
+                  flex-wrap: nowrap;
+                  height: 100%;
+                  justify-content: center;
+                }
+            data-automationid="splitbuttonprimary"
+          >
+            <i
+              aria-hidden="true"
+              class=
+                  ms-Icon
+                  ms-Button-icon
+                  {
+                    display: inline-block;
+                  }
+                  {
+                    -moz-osx-font-smoothing: grayscale;
+                    -webkit-font-smoothing: antialiased;
+                    display: inline-block;
+                    font-family: "SkeIconfont";
+                    font-size: inherit;
+                    font-style: normal;
+                    font-weight: normal;
+                    speak: none;
+                    text-rendering: auto;
+                    transform: translate(0, 0);
+                  }
+                  {
+                    flex-shrink: 0;
+                    font-size: 1.0625rem;
+                    height: 16px;
+                    line-height: 16px;
+                    margin-bottom: 0;
+                    margin-left: 4px;
+                    margin-right: 4px;
+                    margin-top: 0;
+                    text-align: center;
+                  }
+              data-icon-name="Cancel"
+              style="font-family: \\"SkeIconfont\\";"
+            >
+              
+            </i>
+          </span>
         </button>
         <div
           id="modal-children"
@@ -39,7 +248,17 @@ exports[`Modal modal med rootNode instansierer Modal komponent i shadow-domen i 
       </div>
     </div>
     <div
-      class="overlay "
+      class=
+          
+          {
+            background: rgba(0, 0, 0, 0.4);
+            bottom: 0px;
+            left: 0px;
+            position: fixed;
+            right: 0px;
+            top: 0px;
+            z-index: 99998;
+          }
       data-testid="modal-overlay"
     />
   </div>
@@ -50,18 +269,61 @@ exports[`Modal modal mountes med riktig classNames når customClassNames taes i 
 LoadedCheerio {
   "0": Node {
     "attribs": Object {
-      "class": "wrapper wrapperCustomClassName",
+      "class": 
+        wrapperCustomClassName
+        {
+          align-items: center;
+          bottom: 0px;
+          display: flex;
+          justify-content: center;
+          left: 0px;
+          position: fixed;
+          right: 0px;
+          top: 0px;
+          z-index: 99998;
+        },
     },
     "children": Array [
       Node {
         "attribs": Object {
-          "class": "modal modalCustomClassName",
+          "class": 
+            modalCustomClassName
+            {
+              background: #ffffff;
+              border: 4px solid #6f2c3f;
+              box-sizing: border-box;
+              display: flex;
+              flex-direction: column;
+              flex-wrap: nowrap;
+              height: auto;
+              max-height: 90%;
+              max-width: 90%;
+              overflow: auto;
+              padding-bottom: 16px;
+              padding-left: 16px;
+              padding-right: 16px;
+              padding-top: 16px;
+              position: relative;
+              z-index: 99999;
+            }
+            @media (min-width: 320px){& {
+              min-width: 40ch;
+            }
+            @media (min-width: 479px){& {
+              min-width: 50ch;
+            }
+            @media (min-width: 640px){& {
+              min-width: 70ch;
+            }
+            @media (min-width: 1024px){& {
+              min-width: 80ch;
+            },
         },
         "children": Array [
           Node {
             "attribs": Object {
               "class": "trapzoneCustomClassName",
-              "id": "ModalTrapFocus7",
+              "id": "ModalTrapFocus22",
             },
             "children": Array [
               Node {
@@ -76,16 +338,220 @@ LoadedCheerio {
                 "namespace": "http://www.w3.org/1999/xhtml",
                 "next": Node {
                   "attribs": Object {
-                    "class": "closeButton closebuttonCustomClassName",
-                    "data-testid": "modal-closebutton",
+                    "class": 
+                      ms-Button
+                      ms-Button--icon
+                      closebuttonCustomClassName
+                      {
+                        -moz-osx-font-smoothing: grayscale;
+                        -webkit-font-smoothing: antialiased;
+                        background-color: transparent;
+                        border-radius: 2px;
+                        border: none;
+                        box-sizing: border-box;
+                        color: #1362ae;
+                        cursor: pointer;
+                        display: inline-block;
+                        font-family: 'Helvetica Neue', Helvetica , Arial, 'Liberation Sans', 'Nimbus Sans L', sans-serif;
+                        font-size: 1rem;
+                        font-weight: 400;
+                        height: 30px;
+                        outline: transparent;
+                        padding-bottom: 0;
+                        padding-left: 4px;
+                        padding-right: 4px;
+                        padding-top: 0;
+                        position: absolute;
+                        right: 10px;
+                        text-align: center;
+                        text-decoration: none;
+                        top: 10px;
+                        user-select: none;
+                        width: 32px;
+                      }
+                      &::-moz-focus-inner {
+                        border: 0;
+                      }
+                      .ms-Fabric--isFocusVisible &:focus:after {
+                        border-radius: 0;
+                        border: 2px solid #1362ae;
+                        bottom: -3px;
+                        content: "";
+                        left: -3px;
+                        outline: transparent;
+                        position: absolute;
+                        right: -3px;
+                        top: -3px;
+                        z-index: 1;
+                      }
+                      @media screen and (-ms-high-contrast: active), (forced-colors: active){.ms-Fabric--isFocusVisible &:focus:after {
+                        bottom: -2px;
+                        left: -2px;
+                        outline-color: ButtonText;
+                        right: -2px;
+                        top: -2px;
+                      }
+                      &:active > * {
+                        left: 0px;
+                        position: relative;
+                        top: 0px;
+                      }
+                      &:hover {
+                        background-color: #f4f4f4;
+                        color: #11599c;
+                      }
+                      @media screen and (-ms-high-contrast: active), (forced-colors: active){&:hover {
+                        border-color: Highlight;
+                        color: Highlight;
+                      }
+                      &:active {
+                        background-color: #eaeaea;
+                        color: #0c3f6f;
+                      }
+                      &.ms-Button--icon {
+                        background: none;
+                        border-radius: 50%;
+                        border-width: 0px;
+                        color: #1362ae;
+                        height: 40px;
+                        padding-bottom: 0px;
+                        padding-left: 0px;
+                        padding-right: 0px;
+                        padding-top: 0px;
+                        width: 40px;
+                      }
+                      &.ms-Button--icon i {
+                        font-size: 1.25rem;
+                      }
+                      &.ms-Button--icon:hover {
+                        background: #cde1f9;
+                        border-color: #1362ae;
+                        border-width: 3px;
+                        border: 3px solid #1362ae;
+                        color: #1362ae;
+                        transition: background-color 0.3s;
+                      }
+                      &.ms-Button--icon:focus {
+                        background: #cde1f9;
+                        border-color: #1362ae;
+                        border-width: 3px;
+                        border: 3px solid #1362ae;
+                        color: #1362ae;
+                        transition: background-color 0.3s;
+                      }
+                      &:focus&:after {
+                        border-color: transparent;
+                      }
+                      &.ms-Button--icon:active {
+                        background-color: #093e61;
+                        border-color: #093e61;
+                        color: #ffffff;
+                      }
+                      &.ms-Button--icon:disabled {
+                        border-color: #b2b2b2;
+                        border-width: 0px;
+                        color: #b2b2b2;
+                      }
+                      &.ms-Button--icon:disabled i {
+                        color: #b2b2b2;
+                      },
+                    "data-is-focusable": "true",
+                    "title": "Lukk",
+                    "type": "button",
                   },
                   "children": Array [
                     Node {
-                      "data": "X",
+                      "attribs": Object {
+                        "class": 
+                          ms-Button-flexContainer
+                          {
+                            align-items: center;
+                            display: flex;
+                            flex-wrap: nowrap;
+                            height: 100%;
+                            justify-content: center;
+                          },
+                        "data-automationid": "splitbuttonprimary",
+                      },
+                      "children": Array [
+                        Node {
+                          "attribs": Object {
+                            "aria-hidden": "true",
+                            "class": 
+                              ms-Icon
+                              ms-Button-icon
+                              {
+                                display: inline-block;
+                              }
+                              {
+                                -moz-osx-font-smoothing: grayscale;
+                                -webkit-font-smoothing: antialiased;
+                                display: inline-block;
+                                font-family: "SkeIconfont";
+                                font-size: inherit;
+                                font-style: normal;
+                                font-weight: normal;
+                                speak: none;
+                                text-rendering: auto;
+                                transform: translate(0, 0);
+                              }
+                              {
+                                flex-shrink: 0;
+                                font-size: 1.0625rem;
+                                height: 16px;
+                                line-height: 16px;
+                                margin-bottom: 0;
+                                margin-left: 4px;
+                                margin-right: 4px;
+                                margin-top: 0;
+                                text-align: center;
+                              },
+                            "data-icon-name": "Cancel",
+                            "style": "font-family: \\"SkeIconfont\\";",
+                          },
+                          "children": Array [
+                            Node {
+                              "data": "",
+                              "next": null,
+                              "parent": [Circular],
+                              "prev": null,
+                              "type": "text",
+                            },
+                          ],
+                          "name": "i",
+                          "namespace": "http://www.w3.org/1999/xhtml",
+                          "next": null,
+                          "parent": [Circular],
+                          "prev": null,
+                          "type": "tag",
+                          "x-attribsNamespace": Object {
+                            "aria-hidden": undefined,
+                            "class": undefined,
+                            "data-icon-name": undefined,
+                            "style": undefined,
+                          },
+                          "x-attribsPrefix": Object {
+                            "aria-hidden": undefined,
+                            "class": undefined,
+                            "data-icon-name": undefined,
+                            "style": undefined,
+                          },
+                        },
+                      ],
+                      "name": "span",
+                      "namespace": "http://www.w3.org/1999/xhtml",
                       "next": null,
                       "parent": [Circular],
                       "prev": null,
-                      "type": "text",
+                      "type": "tag",
+                      "x-attribsNamespace": Object {
+                        "class": undefined,
+                        "data-automationid": undefined,
+                      },
+                      "x-attribsPrefix": Object {
+                        "class": undefined,
+                        "data-automationid": undefined,
+                      },
                     },
                   ],
                   "name": "button",
@@ -147,11 +613,15 @@ LoadedCheerio {
                   "type": "tag",
                   "x-attribsNamespace": Object {
                     "class": undefined,
-                    "data-testid": undefined,
+                    "data-is-focusable": undefined,
+                    "title": undefined,
+                    "type": undefined,
                   },
                   "x-attribsPrefix": Object {
                     "class": undefined,
-                    "data-testid": undefined,
+                    "data-is-focusable": undefined,
+                    "title": undefined,
+                    "type": undefined,
                   },
                 },
                 "parent": [Circular],
@@ -172,16 +642,220 @@ LoadedCheerio {
               },
               Node {
                 "attribs": Object {
-                  "class": "closeButton closebuttonCustomClassName",
-                  "data-testid": "modal-closebutton",
+                  "class": 
+                    ms-Button
+                    ms-Button--icon
+                    closebuttonCustomClassName
+                    {
+                      -moz-osx-font-smoothing: grayscale;
+                      -webkit-font-smoothing: antialiased;
+                      background-color: transparent;
+                      border-radius: 2px;
+                      border: none;
+                      box-sizing: border-box;
+                      color: #1362ae;
+                      cursor: pointer;
+                      display: inline-block;
+                      font-family: 'Helvetica Neue', Helvetica , Arial, 'Liberation Sans', 'Nimbus Sans L', sans-serif;
+                      font-size: 1rem;
+                      font-weight: 400;
+                      height: 30px;
+                      outline: transparent;
+                      padding-bottom: 0;
+                      padding-left: 4px;
+                      padding-right: 4px;
+                      padding-top: 0;
+                      position: absolute;
+                      right: 10px;
+                      text-align: center;
+                      text-decoration: none;
+                      top: 10px;
+                      user-select: none;
+                      width: 32px;
+                    }
+                    &::-moz-focus-inner {
+                      border: 0;
+                    }
+                    .ms-Fabric--isFocusVisible &:focus:after {
+                      border-radius: 0;
+                      border: 2px solid #1362ae;
+                      bottom: -3px;
+                      content: "";
+                      left: -3px;
+                      outline: transparent;
+                      position: absolute;
+                      right: -3px;
+                      top: -3px;
+                      z-index: 1;
+                    }
+                    @media screen and (-ms-high-contrast: active), (forced-colors: active){.ms-Fabric--isFocusVisible &:focus:after {
+                      bottom: -2px;
+                      left: -2px;
+                      outline-color: ButtonText;
+                      right: -2px;
+                      top: -2px;
+                    }
+                    &:active > * {
+                      left: 0px;
+                      position: relative;
+                      top: 0px;
+                    }
+                    &:hover {
+                      background-color: #f4f4f4;
+                      color: #11599c;
+                    }
+                    @media screen and (-ms-high-contrast: active), (forced-colors: active){&:hover {
+                      border-color: Highlight;
+                      color: Highlight;
+                    }
+                    &:active {
+                      background-color: #eaeaea;
+                      color: #0c3f6f;
+                    }
+                    &.ms-Button--icon {
+                      background: none;
+                      border-radius: 50%;
+                      border-width: 0px;
+                      color: #1362ae;
+                      height: 40px;
+                      padding-bottom: 0px;
+                      padding-left: 0px;
+                      padding-right: 0px;
+                      padding-top: 0px;
+                      width: 40px;
+                    }
+                    &.ms-Button--icon i {
+                      font-size: 1.25rem;
+                    }
+                    &.ms-Button--icon:hover {
+                      background: #cde1f9;
+                      border-color: #1362ae;
+                      border-width: 3px;
+                      border: 3px solid #1362ae;
+                      color: #1362ae;
+                      transition: background-color 0.3s;
+                    }
+                    &.ms-Button--icon:focus {
+                      background: #cde1f9;
+                      border-color: #1362ae;
+                      border-width: 3px;
+                      border: 3px solid #1362ae;
+                      color: #1362ae;
+                      transition: background-color 0.3s;
+                    }
+                    &:focus&:after {
+                      border-color: transparent;
+                    }
+                    &.ms-Button--icon:active {
+                      background-color: #093e61;
+                      border-color: #093e61;
+                      color: #ffffff;
+                    }
+                    &.ms-Button--icon:disabled {
+                      border-color: #b2b2b2;
+                      border-width: 0px;
+                      color: #b2b2b2;
+                    }
+                    &.ms-Button--icon:disabled i {
+                      color: #b2b2b2;
+                    },
+                  "data-is-focusable": "true",
+                  "title": "Lukk",
+                  "type": "button",
                 },
                 "children": Array [
                   Node {
-                    "data": "X",
+                    "attribs": Object {
+                      "class": 
+                        ms-Button-flexContainer
+                        {
+                          align-items: center;
+                          display: flex;
+                          flex-wrap: nowrap;
+                          height: 100%;
+                          justify-content: center;
+                        },
+                      "data-automationid": "splitbuttonprimary",
+                    },
+                    "children": Array [
+                      Node {
+                        "attribs": Object {
+                          "aria-hidden": "true",
+                          "class": 
+                            ms-Icon
+                            ms-Button-icon
+                            {
+                              display: inline-block;
+                            }
+                            {
+                              -moz-osx-font-smoothing: grayscale;
+                              -webkit-font-smoothing: antialiased;
+                              display: inline-block;
+                              font-family: "SkeIconfont";
+                              font-size: inherit;
+                              font-style: normal;
+                              font-weight: normal;
+                              speak: none;
+                              text-rendering: auto;
+                              transform: translate(0, 0);
+                            }
+                            {
+                              flex-shrink: 0;
+                              font-size: 1.0625rem;
+                              height: 16px;
+                              line-height: 16px;
+                              margin-bottom: 0;
+                              margin-left: 4px;
+                              margin-right: 4px;
+                              margin-top: 0;
+                              text-align: center;
+                            },
+                          "data-icon-name": "Cancel",
+                          "style": "font-family: \\"SkeIconfont\\";",
+                        },
+                        "children": Array [
+                          Node {
+                            "data": "",
+                            "next": null,
+                            "parent": [Circular],
+                            "prev": null,
+                            "type": "text",
+                          },
+                        ],
+                        "name": "i",
+                        "namespace": "http://www.w3.org/1999/xhtml",
+                        "next": null,
+                        "parent": [Circular],
+                        "prev": null,
+                        "type": "tag",
+                        "x-attribsNamespace": Object {
+                          "aria-hidden": undefined,
+                          "class": undefined,
+                          "data-icon-name": undefined,
+                          "style": undefined,
+                        },
+                        "x-attribsPrefix": Object {
+                          "aria-hidden": undefined,
+                          "class": undefined,
+                          "data-icon-name": undefined,
+                          "style": undefined,
+                        },
+                      },
+                    ],
+                    "name": "span",
+                    "namespace": "http://www.w3.org/1999/xhtml",
                     "next": null,
                     "parent": [Circular],
                     "prev": null,
-                    "type": "text",
+                    "type": "tag",
+                    "x-attribsNamespace": Object {
+                      "class": undefined,
+                      "data-automationid": undefined,
+                    },
+                    "x-attribsPrefix": Object {
+                      "class": undefined,
+                      "data-automationid": undefined,
+                    },
                   },
                 ],
                 "name": "button",
@@ -269,11 +943,15 @@ LoadedCheerio {
                 "type": "tag",
                 "x-attribsNamespace": Object {
                   "class": undefined,
-                  "data-testid": undefined,
+                  "data-is-focusable": undefined,
+                  "title": undefined,
+                  "type": undefined,
                 },
                 "x-attribsPrefix": Object {
                   "class": undefined,
-                  "data-testid": undefined,
+                  "data-is-focusable": undefined,
+                  "title": undefined,
+                  "type": undefined,
                 },
               },
               Node {
@@ -321,16 +999,220 @@ LoadedCheerio {
                 "parent": [Circular],
                 "prev": Node {
                   "attribs": Object {
-                    "class": "closeButton closebuttonCustomClassName",
-                    "data-testid": "modal-closebutton",
+                    "class": 
+                      ms-Button
+                      ms-Button--icon
+                      closebuttonCustomClassName
+                      {
+                        -moz-osx-font-smoothing: grayscale;
+                        -webkit-font-smoothing: antialiased;
+                        background-color: transparent;
+                        border-radius: 2px;
+                        border: none;
+                        box-sizing: border-box;
+                        color: #1362ae;
+                        cursor: pointer;
+                        display: inline-block;
+                        font-family: 'Helvetica Neue', Helvetica , Arial, 'Liberation Sans', 'Nimbus Sans L', sans-serif;
+                        font-size: 1rem;
+                        font-weight: 400;
+                        height: 30px;
+                        outline: transparent;
+                        padding-bottom: 0;
+                        padding-left: 4px;
+                        padding-right: 4px;
+                        padding-top: 0;
+                        position: absolute;
+                        right: 10px;
+                        text-align: center;
+                        text-decoration: none;
+                        top: 10px;
+                        user-select: none;
+                        width: 32px;
+                      }
+                      &::-moz-focus-inner {
+                        border: 0;
+                      }
+                      .ms-Fabric--isFocusVisible &:focus:after {
+                        border-radius: 0;
+                        border: 2px solid #1362ae;
+                        bottom: -3px;
+                        content: "";
+                        left: -3px;
+                        outline: transparent;
+                        position: absolute;
+                        right: -3px;
+                        top: -3px;
+                        z-index: 1;
+                      }
+                      @media screen and (-ms-high-contrast: active), (forced-colors: active){.ms-Fabric--isFocusVisible &:focus:after {
+                        bottom: -2px;
+                        left: -2px;
+                        outline-color: ButtonText;
+                        right: -2px;
+                        top: -2px;
+                      }
+                      &:active > * {
+                        left: 0px;
+                        position: relative;
+                        top: 0px;
+                      }
+                      &:hover {
+                        background-color: #f4f4f4;
+                        color: #11599c;
+                      }
+                      @media screen and (-ms-high-contrast: active), (forced-colors: active){&:hover {
+                        border-color: Highlight;
+                        color: Highlight;
+                      }
+                      &:active {
+                        background-color: #eaeaea;
+                        color: #0c3f6f;
+                      }
+                      &.ms-Button--icon {
+                        background: none;
+                        border-radius: 50%;
+                        border-width: 0px;
+                        color: #1362ae;
+                        height: 40px;
+                        padding-bottom: 0px;
+                        padding-left: 0px;
+                        padding-right: 0px;
+                        padding-top: 0px;
+                        width: 40px;
+                      }
+                      &.ms-Button--icon i {
+                        font-size: 1.25rem;
+                      }
+                      &.ms-Button--icon:hover {
+                        background: #cde1f9;
+                        border-color: #1362ae;
+                        border-width: 3px;
+                        border: 3px solid #1362ae;
+                        color: #1362ae;
+                        transition: background-color 0.3s;
+                      }
+                      &.ms-Button--icon:focus {
+                        background: #cde1f9;
+                        border-color: #1362ae;
+                        border-width: 3px;
+                        border: 3px solid #1362ae;
+                        color: #1362ae;
+                        transition: background-color 0.3s;
+                      }
+                      &:focus&:after {
+                        border-color: transparent;
+                      }
+                      &.ms-Button--icon:active {
+                        background-color: #093e61;
+                        border-color: #093e61;
+                        color: #ffffff;
+                      }
+                      &.ms-Button--icon:disabled {
+                        border-color: #b2b2b2;
+                        border-width: 0px;
+                        color: #b2b2b2;
+                      }
+                      &.ms-Button--icon:disabled i {
+                        color: #b2b2b2;
+                      },
+                    "data-is-focusable": "true",
+                    "title": "Lukk",
+                    "type": "button",
                   },
                   "children": Array [
                     Node {
-                      "data": "X",
+                      "attribs": Object {
+                        "class": 
+                          ms-Button-flexContainer
+                          {
+                            align-items: center;
+                            display: flex;
+                            flex-wrap: nowrap;
+                            height: 100%;
+                            justify-content: center;
+                          },
+                        "data-automationid": "splitbuttonprimary",
+                      },
+                      "children": Array [
+                        Node {
+                          "attribs": Object {
+                            "aria-hidden": "true",
+                            "class": 
+                              ms-Icon
+                              ms-Button-icon
+                              {
+                                display: inline-block;
+                              }
+                              {
+                                -moz-osx-font-smoothing: grayscale;
+                                -webkit-font-smoothing: antialiased;
+                                display: inline-block;
+                                font-family: "SkeIconfont";
+                                font-size: inherit;
+                                font-style: normal;
+                                font-weight: normal;
+                                speak: none;
+                                text-rendering: auto;
+                                transform: translate(0, 0);
+                              }
+                              {
+                                flex-shrink: 0;
+                                font-size: 1.0625rem;
+                                height: 16px;
+                                line-height: 16px;
+                                margin-bottom: 0;
+                                margin-left: 4px;
+                                margin-right: 4px;
+                                margin-top: 0;
+                                text-align: center;
+                              },
+                            "data-icon-name": "Cancel",
+                            "style": "font-family: \\"SkeIconfont\\";",
+                          },
+                          "children": Array [
+                            Node {
+                              "data": "",
+                              "next": null,
+                              "parent": [Circular],
+                              "prev": null,
+                              "type": "text",
+                            },
+                          ],
+                          "name": "i",
+                          "namespace": "http://www.w3.org/1999/xhtml",
+                          "next": null,
+                          "parent": [Circular],
+                          "prev": null,
+                          "type": "tag",
+                          "x-attribsNamespace": Object {
+                            "aria-hidden": undefined,
+                            "class": undefined,
+                            "data-icon-name": undefined,
+                            "style": undefined,
+                          },
+                          "x-attribsPrefix": Object {
+                            "aria-hidden": undefined,
+                            "class": undefined,
+                            "data-icon-name": undefined,
+                            "style": undefined,
+                          },
+                        },
+                      ],
+                      "name": "span",
+                      "namespace": "http://www.w3.org/1999/xhtml",
                       "next": null,
                       "parent": [Circular],
                       "prev": null,
-                      "type": "text",
+                      "type": "tag",
+                      "x-attribsNamespace": Object {
+                        "class": undefined,
+                        "data-automationid": undefined,
+                      },
+                      "x-attribsPrefix": Object {
+                        "class": undefined,
+                        "data-automationid": undefined,
+                      },
                     },
                   ],
                   "name": "button",
@@ -367,11 +1249,15 @@ LoadedCheerio {
                   "type": "tag",
                   "x-attribsNamespace": Object {
                     "class": undefined,
-                    "data-testid": undefined,
+                    "data-is-focusable": undefined,
+                    "title": undefined,
+                    "type": undefined,
                   },
                   "x-attribsPrefix": Object {
                     "class": undefined,
-                    "data-testid": undefined,
+                    "data-is-focusable": undefined,
+                    "title": undefined,
+                    "type": undefined,
                   },
                 },
                 "type": "tag",
@@ -413,16 +1299,220 @@ LoadedCheerio {
                   "parent": [Circular],
                   "prev": Node {
                     "attribs": Object {
-                      "class": "closeButton closebuttonCustomClassName",
-                      "data-testid": "modal-closebutton",
+                      "class": 
+                        ms-Button
+                        ms-Button--icon
+                        closebuttonCustomClassName
+                        {
+                          -moz-osx-font-smoothing: grayscale;
+                          -webkit-font-smoothing: antialiased;
+                          background-color: transparent;
+                          border-radius: 2px;
+                          border: none;
+                          box-sizing: border-box;
+                          color: #1362ae;
+                          cursor: pointer;
+                          display: inline-block;
+                          font-family: 'Helvetica Neue', Helvetica , Arial, 'Liberation Sans', 'Nimbus Sans L', sans-serif;
+                          font-size: 1rem;
+                          font-weight: 400;
+                          height: 30px;
+                          outline: transparent;
+                          padding-bottom: 0;
+                          padding-left: 4px;
+                          padding-right: 4px;
+                          padding-top: 0;
+                          position: absolute;
+                          right: 10px;
+                          text-align: center;
+                          text-decoration: none;
+                          top: 10px;
+                          user-select: none;
+                          width: 32px;
+                        }
+                        &::-moz-focus-inner {
+                          border: 0;
+                        }
+                        .ms-Fabric--isFocusVisible &:focus:after {
+                          border-radius: 0;
+                          border: 2px solid #1362ae;
+                          bottom: -3px;
+                          content: "";
+                          left: -3px;
+                          outline: transparent;
+                          position: absolute;
+                          right: -3px;
+                          top: -3px;
+                          z-index: 1;
+                        }
+                        @media screen and (-ms-high-contrast: active), (forced-colors: active){.ms-Fabric--isFocusVisible &:focus:after {
+                          bottom: -2px;
+                          left: -2px;
+                          outline-color: ButtonText;
+                          right: -2px;
+                          top: -2px;
+                        }
+                        &:active > * {
+                          left: 0px;
+                          position: relative;
+                          top: 0px;
+                        }
+                        &:hover {
+                          background-color: #f4f4f4;
+                          color: #11599c;
+                        }
+                        @media screen and (-ms-high-contrast: active), (forced-colors: active){&:hover {
+                          border-color: Highlight;
+                          color: Highlight;
+                        }
+                        &:active {
+                          background-color: #eaeaea;
+                          color: #0c3f6f;
+                        }
+                        &.ms-Button--icon {
+                          background: none;
+                          border-radius: 50%;
+                          border-width: 0px;
+                          color: #1362ae;
+                          height: 40px;
+                          padding-bottom: 0px;
+                          padding-left: 0px;
+                          padding-right: 0px;
+                          padding-top: 0px;
+                          width: 40px;
+                        }
+                        &.ms-Button--icon i {
+                          font-size: 1.25rem;
+                        }
+                        &.ms-Button--icon:hover {
+                          background: #cde1f9;
+                          border-color: #1362ae;
+                          border-width: 3px;
+                          border: 3px solid #1362ae;
+                          color: #1362ae;
+                          transition: background-color 0.3s;
+                        }
+                        &.ms-Button--icon:focus {
+                          background: #cde1f9;
+                          border-color: #1362ae;
+                          border-width: 3px;
+                          border: 3px solid #1362ae;
+                          color: #1362ae;
+                          transition: background-color 0.3s;
+                        }
+                        &:focus&:after {
+                          border-color: transparent;
+                        }
+                        &.ms-Button--icon:active {
+                          background-color: #093e61;
+                          border-color: #093e61;
+                          color: #ffffff;
+                        }
+                        &.ms-Button--icon:disabled {
+                          border-color: #b2b2b2;
+                          border-width: 0px;
+                          color: #b2b2b2;
+                        }
+                        &.ms-Button--icon:disabled i {
+                          color: #b2b2b2;
+                        },
+                      "data-is-focusable": "true",
+                      "title": "Lukk",
+                      "type": "button",
                     },
                     "children": Array [
                       Node {
-                        "data": "X",
+                        "attribs": Object {
+                          "class": 
+                            ms-Button-flexContainer
+                            {
+                              align-items: center;
+                              display: flex;
+                              flex-wrap: nowrap;
+                              height: 100%;
+                              justify-content: center;
+                            },
+                          "data-automationid": "splitbuttonprimary",
+                        },
+                        "children": Array [
+                          Node {
+                            "attribs": Object {
+                              "aria-hidden": "true",
+                              "class": 
+                                ms-Icon
+                                ms-Button-icon
+                                {
+                                  display: inline-block;
+                                }
+                                {
+                                  -moz-osx-font-smoothing: grayscale;
+                                  -webkit-font-smoothing: antialiased;
+                                  display: inline-block;
+                                  font-family: "SkeIconfont";
+                                  font-size: inherit;
+                                  font-style: normal;
+                                  font-weight: normal;
+                                  speak: none;
+                                  text-rendering: auto;
+                                  transform: translate(0, 0);
+                                }
+                                {
+                                  flex-shrink: 0;
+                                  font-size: 1.0625rem;
+                                  height: 16px;
+                                  line-height: 16px;
+                                  margin-bottom: 0;
+                                  margin-left: 4px;
+                                  margin-right: 4px;
+                                  margin-top: 0;
+                                  text-align: center;
+                                },
+                              "data-icon-name": "Cancel",
+                              "style": "font-family: \\"SkeIconfont\\";",
+                            },
+                            "children": Array [
+                              Node {
+                                "data": "",
+                                "next": null,
+                                "parent": [Circular],
+                                "prev": null,
+                                "type": "text",
+                              },
+                            ],
+                            "name": "i",
+                            "namespace": "http://www.w3.org/1999/xhtml",
+                            "next": null,
+                            "parent": [Circular],
+                            "prev": null,
+                            "type": "tag",
+                            "x-attribsNamespace": Object {
+                              "aria-hidden": undefined,
+                              "class": undefined,
+                              "data-icon-name": undefined,
+                              "style": undefined,
+                            },
+                            "x-attribsPrefix": Object {
+                              "aria-hidden": undefined,
+                              "class": undefined,
+                              "data-icon-name": undefined,
+                              "style": undefined,
+                            },
+                          },
+                        ],
+                        "name": "span",
+                        "namespace": "http://www.w3.org/1999/xhtml",
                         "next": null,
                         "parent": [Circular],
                         "prev": null,
-                        "type": "text",
+                        "type": "tag",
+                        "x-attribsNamespace": Object {
+                          "class": undefined,
+                          "data-automationid": undefined,
+                        },
+                        "x-attribsPrefix": Object {
+                          "class": undefined,
+                          "data-automationid": undefined,
+                        },
                       },
                     ],
                     "name": "button",
@@ -459,11 +1549,15 @@ LoadedCheerio {
                     "type": "tag",
                     "x-attribsNamespace": Object {
                       "class": undefined,
-                      "data-testid": undefined,
+                      "data-is-focusable": undefined,
+                      "title": undefined,
+                      "type": undefined,
                     },
                     "x-attribsPrefix": Object {
                       "class": undefined,
-                      "data-testid": undefined,
+                      "data-is-focusable": undefined,
+                      "title": undefined,
+                      "type": undefined,
                     },
                   },
                   "type": "tag",
@@ -509,7 +1603,17 @@ LoadedCheerio {
         "namespace": "http://www.w3.org/1999/xhtml",
         "next": Node {
           "attribs": Object {
-            "class": "overlay overlayCustomClassName",
+            "class": 
+              overlayCustomClassName
+              {
+                background: rgba(0, 0, 0, 0.4);
+                bottom: 0px;
+                left: 0px;
+                position: fixed;
+                right: 0px;
+                top: 0px;
+                z-index: 99998;
+              },
             "data-testid": "modal-overlay",
           },
           "children": Array [],
@@ -540,7 +1644,17 @@ LoadedCheerio {
       },
       Node {
         "attribs": Object {
-          "class": "overlay overlayCustomClassName",
+          "class": 
+            overlayCustomClassName
+            {
+              background: rgba(0, 0, 0, 0.4);
+              bottom: 0px;
+              left: 0px;
+              position: fixed;
+              right: 0px;
+              top: 0px;
+              z-index: 99998;
+            },
           "data-testid": "modal-overlay",
         },
         "children": Array [],
@@ -550,13 +1664,44 @@ LoadedCheerio {
         "parent": [Circular],
         "prev": Node {
           "attribs": Object {
-            "class": "modal modalCustomClassName",
+            "class": 
+              modalCustomClassName
+              {
+                background: #ffffff;
+                border: 4px solid #6f2c3f;
+                box-sizing: border-box;
+                display: flex;
+                flex-direction: column;
+                flex-wrap: nowrap;
+                height: auto;
+                max-height: 90%;
+                max-width: 90%;
+                overflow: auto;
+                padding-bottom: 16px;
+                padding-left: 16px;
+                padding-right: 16px;
+                padding-top: 16px;
+                position: relative;
+                z-index: 99999;
+              }
+              @media (min-width: 320px){& {
+                min-width: 40ch;
+              }
+              @media (min-width: 479px){& {
+                min-width: 50ch;
+              }
+              @media (min-width: 640px){& {
+                min-width: 70ch;
+              }
+              @media (min-width: 1024px){& {
+                min-width: 80ch;
+              },
           },
           "children": Array [
             Node {
               "attribs": Object {
                 "class": "trapzoneCustomClassName",
-                "id": "ModalTrapFocus7",
+                "id": "ModalTrapFocus22",
               },
               "children": Array [
                 Node {
@@ -571,16 +1716,220 @@ LoadedCheerio {
                   "namespace": "http://www.w3.org/1999/xhtml",
                   "next": Node {
                     "attribs": Object {
-                      "class": "closeButton closebuttonCustomClassName",
-                      "data-testid": "modal-closebutton",
+                      "class": 
+                        ms-Button
+                        ms-Button--icon
+                        closebuttonCustomClassName
+                        {
+                          -moz-osx-font-smoothing: grayscale;
+                          -webkit-font-smoothing: antialiased;
+                          background-color: transparent;
+                          border-radius: 2px;
+                          border: none;
+                          box-sizing: border-box;
+                          color: #1362ae;
+                          cursor: pointer;
+                          display: inline-block;
+                          font-family: 'Helvetica Neue', Helvetica , Arial, 'Liberation Sans', 'Nimbus Sans L', sans-serif;
+                          font-size: 1rem;
+                          font-weight: 400;
+                          height: 30px;
+                          outline: transparent;
+                          padding-bottom: 0;
+                          padding-left: 4px;
+                          padding-right: 4px;
+                          padding-top: 0;
+                          position: absolute;
+                          right: 10px;
+                          text-align: center;
+                          text-decoration: none;
+                          top: 10px;
+                          user-select: none;
+                          width: 32px;
+                        }
+                        &::-moz-focus-inner {
+                          border: 0;
+                        }
+                        .ms-Fabric--isFocusVisible &:focus:after {
+                          border-radius: 0;
+                          border: 2px solid #1362ae;
+                          bottom: -3px;
+                          content: "";
+                          left: -3px;
+                          outline: transparent;
+                          position: absolute;
+                          right: -3px;
+                          top: -3px;
+                          z-index: 1;
+                        }
+                        @media screen and (-ms-high-contrast: active), (forced-colors: active){.ms-Fabric--isFocusVisible &:focus:after {
+                          bottom: -2px;
+                          left: -2px;
+                          outline-color: ButtonText;
+                          right: -2px;
+                          top: -2px;
+                        }
+                        &:active > * {
+                          left: 0px;
+                          position: relative;
+                          top: 0px;
+                        }
+                        &:hover {
+                          background-color: #f4f4f4;
+                          color: #11599c;
+                        }
+                        @media screen and (-ms-high-contrast: active), (forced-colors: active){&:hover {
+                          border-color: Highlight;
+                          color: Highlight;
+                        }
+                        &:active {
+                          background-color: #eaeaea;
+                          color: #0c3f6f;
+                        }
+                        &.ms-Button--icon {
+                          background: none;
+                          border-radius: 50%;
+                          border-width: 0px;
+                          color: #1362ae;
+                          height: 40px;
+                          padding-bottom: 0px;
+                          padding-left: 0px;
+                          padding-right: 0px;
+                          padding-top: 0px;
+                          width: 40px;
+                        }
+                        &.ms-Button--icon i {
+                          font-size: 1.25rem;
+                        }
+                        &.ms-Button--icon:hover {
+                          background: #cde1f9;
+                          border-color: #1362ae;
+                          border-width: 3px;
+                          border: 3px solid #1362ae;
+                          color: #1362ae;
+                          transition: background-color 0.3s;
+                        }
+                        &.ms-Button--icon:focus {
+                          background: #cde1f9;
+                          border-color: #1362ae;
+                          border-width: 3px;
+                          border: 3px solid #1362ae;
+                          color: #1362ae;
+                          transition: background-color 0.3s;
+                        }
+                        &:focus&:after {
+                          border-color: transparent;
+                        }
+                        &.ms-Button--icon:active {
+                          background-color: #093e61;
+                          border-color: #093e61;
+                          color: #ffffff;
+                        }
+                        &.ms-Button--icon:disabled {
+                          border-color: #b2b2b2;
+                          border-width: 0px;
+                          color: #b2b2b2;
+                        }
+                        &.ms-Button--icon:disabled i {
+                          color: #b2b2b2;
+                        },
+                      "data-is-focusable": "true",
+                      "title": "Lukk",
+                      "type": "button",
                     },
                     "children": Array [
                       Node {
-                        "data": "X",
+                        "attribs": Object {
+                          "class": 
+                            ms-Button-flexContainer
+                            {
+                              align-items: center;
+                              display: flex;
+                              flex-wrap: nowrap;
+                              height: 100%;
+                              justify-content: center;
+                            },
+                          "data-automationid": "splitbuttonprimary",
+                        },
+                        "children": Array [
+                          Node {
+                            "attribs": Object {
+                              "aria-hidden": "true",
+                              "class": 
+                                ms-Icon
+                                ms-Button-icon
+                                {
+                                  display: inline-block;
+                                }
+                                {
+                                  -moz-osx-font-smoothing: grayscale;
+                                  -webkit-font-smoothing: antialiased;
+                                  display: inline-block;
+                                  font-family: "SkeIconfont";
+                                  font-size: inherit;
+                                  font-style: normal;
+                                  font-weight: normal;
+                                  speak: none;
+                                  text-rendering: auto;
+                                  transform: translate(0, 0);
+                                }
+                                {
+                                  flex-shrink: 0;
+                                  font-size: 1.0625rem;
+                                  height: 16px;
+                                  line-height: 16px;
+                                  margin-bottom: 0;
+                                  margin-left: 4px;
+                                  margin-right: 4px;
+                                  margin-top: 0;
+                                  text-align: center;
+                                },
+                              "data-icon-name": "Cancel",
+                              "style": "font-family: \\"SkeIconfont\\";",
+                            },
+                            "children": Array [
+                              Node {
+                                "data": "",
+                                "next": null,
+                                "parent": [Circular],
+                                "prev": null,
+                                "type": "text",
+                              },
+                            ],
+                            "name": "i",
+                            "namespace": "http://www.w3.org/1999/xhtml",
+                            "next": null,
+                            "parent": [Circular],
+                            "prev": null,
+                            "type": "tag",
+                            "x-attribsNamespace": Object {
+                              "aria-hidden": undefined,
+                              "class": undefined,
+                              "data-icon-name": undefined,
+                              "style": undefined,
+                            },
+                            "x-attribsPrefix": Object {
+                              "aria-hidden": undefined,
+                              "class": undefined,
+                              "data-icon-name": undefined,
+                              "style": undefined,
+                            },
+                          },
+                        ],
+                        "name": "span",
+                        "namespace": "http://www.w3.org/1999/xhtml",
                         "next": null,
                         "parent": [Circular],
                         "prev": null,
-                        "type": "text",
+                        "type": "tag",
+                        "x-attribsNamespace": Object {
+                          "class": undefined,
+                          "data-automationid": undefined,
+                        },
+                        "x-attribsPrefix": Object {
+                          "class": undefined,
+                          "data-automationid": undefined,
+                        },
                       },
                     ],
                     "name": "button",
@@ -642,11 +1991,15 @@ LoadedCheerio {
                     "type": "tag",
                     "x-attribsNamespace": Object {
                       "class": undefined,
-                      "data-testid": undefined,
+                      "data-is-focusable": undefined,
+                      "title": undefined,
+                      "type": undefined,
                     },
                     "x-attribsPrefix": Object {
                       "class": undefined,
-                      "data-testid": undefined,
+                      "data-is-focusable": undefined,
+                      "title": undefined,
+                      "type": undefined,
                     },
                   },
                   "parent": [Circular],
@@ -667,16 +2020,220 @@ LoadedCheerio {
                 },
                 Node {
                   "attribs": Object {
-                    "class": "closeButton closebuttonCustomClassName",
-                    "data-testid": "modal-closebutton",
+                    "class": 
+                      ms-Button
+                      ms-Button--icon
+                      closebuttonCustomClassName
+                      {
+                        -moz-osx-font-smoothing: grayscale;
+                        -webkit-font-smoothing: antialiased;
+                        background-color: transparent;
+                        border-radius: 2px;
+                        border: none;
+                        box-sizing: border-box;
+                        color: #1362ae;
+                        cursor: pointer;
+                        display: inline-block;
+                        font-family: 'Helvetica Neue', Helvetica , Arial, 'Liberation Sans', 'Nimbus Sans L', sans-serif;
+                        font-size: 1rem;
+                        font-weight: 400;
+                        height: 30px;
+                        outline: transparent;
+                        padding-bottom: 0;
+                        padding-left: 4px;
+                        padding-right: 4px;
+                        padding-top: 0;
+                        position: absolute;
+                        right: 10px;
+                        text-align: center;
+                        text-decoration: none;
+                        top: 10px;
+                        user-select: none;
+                        width: 32px;
+                      }
+                      &::-moz-focus-inner {
+                        border: 0;
+                      }
+                      .ms-Fabric--isFocusVisible &:focus:after {
+                        border-radius: 0;
+                        border: 2px solid #1362ae;
+                        bottom: -3px;
+                        content: "";
+                        left: -3px;
+                        outline: transparent;
+                        position: absolute;
+                        right: -3px;
+                        top: -3px;
+                        z-index: 1;
+                      }
+                      @media screen and (-ms-high-contrast: active), (forced-colors: active){.ms-Fabric--isFocusVisible &:focus:after {
+                        bottom: -2px;
+                        left: -2px;
+                        outline-color: ButtonText;
+                        right: -2px;
+                        top: -2px;
+                      }
+                      &:active > * {
+                        left: 0px;
+                        position: relative;
+                        top: 0px;
+                      }
+                      &:hover {
+                        background-color: #f4f4f4;
+                        color: #11599c;
+                      }
+                      @media screen and (-ms-high-contrast: active), (forced-colors: active){&:hover {
+                        border-color: Highlight;
+                        color: Highlight;
+                      }
+                      &:active {
+                        background-color: #eaeaea;
+                        color: #0c3f6f;
+                      }
+                      &.ms-Button--icon {
+                        background: none;
+                        border-radius: 50%;
+                        border-width: 0px;
+                        color: #1362ae;
+                        height: 40px;
+                        padding-bottom: 0px;
+                        padding-left: 0px;
+                        padding-right: 0px;
+                        padding-top: 0px;
+                        width: 40px;
+                      }
+                      &.ms-Button--icon i {
+                        font-size: 1.25rem;
+                      }
+                      &.ms-Button--icon:hover {
+                        background: #cde1f9;
+                        border-color: #1362ae;
+                        border-width: 3px;
+                        border: 3px solid #1362ae;
+                        color: #1362ae;
+                        transition: background-color 0.3s;
+                      }
+                      &.ms-Button--icon:focus {
+                        background: #cde1f9;
+                        border-color: #1362ae;
+                        border-width: 3px;
+                        border: 3px solid #1362ae;
+                        color: #1362ae;
+                        transition: background-color 0.3s;
+                      }
+                      &:focus&:after {
+                        border-color: transparent;
+                      }
+                      &.ms-Button--icon:active {
+                        background-color: #093e61;
+                        border-color: #093e61;
+                        color: #ffffff;
+                      }
+                      &.ms-Button--icon:disabled {
+                        border-color: #b2b2b2;
+                        border-width: 0px;
+                        color: #b2b2b2;
+                      }
+                      &.ms-Button--icon:disabled i {
+                        color: #b2b2b2;
+                      },
+                    "data-is-focusable": "true",
+                    "title": "Lukk",
+                    "type": "button",
                   },
                   "children": Array [
                     Node {
-                      "data": "X",
+                      "attribs": Object {
+                        "class": 
+                          ms-Button-flexContainer
+                          {
+                            align-items: center;
+                            display: flex;
+                            flex-wrap: nowrap;
+                            height: 100%;
+                            justify-content: center;
+                          },
+                        "data-automationid": "splitbuttonprimary",
+                      },
+                      "children": Array [
+                        Node {
+                          "attribs": Object {
+                            "aria-hidden": "true",
+                            "class": 
+                              ms-Icon
+                              ms-Button-icon
+                              {
+                                display: inline-block;
+                              }
+                              {
+                                -moz-osx-font-smoothing: grayscale;
+                                -webkit-font-smoothing: antialiased;
+                                display: inline-block;
+                                font-family: "SkeIconfont";
+                                font-size: inherit;
+                                font-style: normal;
+                                font-weight: normal;
+                                speak: none;
+                                text-rendering: auto;
+                                transform: translate(0, 0);
+                              }
+                              {
+                                flex-shrink: 0;
+                                font-size: 1.0625rem;
+                                height: 16px;
+                                line-height: 16px;
+                                margin-bottom: 0;
+                                margin-left: 4px;
+                                margin-right: 4px;
+                                margin-top: 0;
+                                text-align: center;
+                              },
+                            "data-icon-name": "Cancel",
+                            "style": "font-family: \\"SkeIconfont\\";",
+                          },
+                          "children": Array [
+                            Node {
+                              "data": "",
+                              "next": null,
+                              "parent": [Circular],
+                              "prev": null,
+                              "type": "text",
+                            },
+                          ],
+                          "name": "i",
+                          "namespace": "http://www.w3.org/1999/xhtml",
+                          "next": null,
+                          "parent": [Circular],
+                          "prev": null,
+                          "type": "tag",
+                          "x-attribsNamespace": Object {
+                            "aria-hidden": undefined,
+                            "class": undefined,
+                            "data-icon-name": undefined,
+                            "style": undefined,
+                          },
+                          "x-attribsPrefix": Object {
+                            "aria-hidden": undefined,
+                            "class": undefined,
+                            "data-icon-name": undefined,
+                            "style": undefined,
+                          },
+                        },
+                      ],
+                      "name": "span",
+                      "namespace": "http://www.w3.org/1999/xhtml",
                       "next": null,
                       "parent": [Circular],
                       "prev": null,
-                      "type": "text",
+                      "type": "tag",
+                      "x-attribsNamespace": Object {
+                        "class": undefined,
+                        "data-automationid": undefined,
+                      },
+                      "x-attribsPrefix": Object {
+                        "class": undefined,
+                        "data-automationid": undefined,
+                      },
                     },
                   ],
                   "name": "button",
@@ -764,11 +2321,15 @@ LoadedCheerio {
                   "type": "tag",
                   "x-attribsNamespace": Object {
                     "class": undefined,
-                    "data-testid": undefined,
+                    "data-is-focusable": undefined,
+                    "title": undefined,
+                    "type": undefined,
                   },
                   "x-attribsPrefix": Object {
                     "class": undefined,
-                    "data-testid": undefined,
+                    "data-is-focusable": undefined,
+                    "title": undefined,
+                    "type": undefined,
                   },
                 },
                 Node {
@@ -816,16 +2377,220 @@ LoadedCheerio {
                   "parent": [Circular],
                   "prev": Node {
                     "attribs": Object {
-                      "class": "closeButton closebuttonCustomClassName",
-                      "data-testid": "modal-closebutton",
+                      "class": 
+                        ms-Button
+                        ms-Button--icon
+                        closebuttonCustomClassName
+                        {
+                          -moz-osx-font-smoothing: grayscale;
+                          -webkit-font-smoothing: antialiased;
+                          background-color: transparent;
+                          border-radius: 2px;
+                          border: none;
+                          box-sizing: border-box;
+                          color: #1362ae;
+                          cursor: pointer;
+                          display: inline-block;
+                          font-family: 'Helvetica Neue', Helvetica , Arial, 'Liberation Sans', 'Nimbus Sans L', sans-serif;
+                          font-size: 1rem;
+                          font-weight: 400;
+                          height: 30px;
+                          outline: transparent;
+                          padding-bottom: 0;
+                          padding-left: 4px;
+                          padding-right: 4px;
+                          padding-top: 0;
+                          position: absolute;
+                          right: 10px;
+                          text-align: center;
+                          text-decoration: none;
+                          top: 10px;
+                          user-select: none;
+                          width: 32px;
+                        }
+                        &::-moz-focus-inner {
+                          border: 0;
+                        }
+                        .ms-Fabric--isFocusVisible &:focus:after {
+                          border-radius: 0;
+                          border: 2px solid #1362ae;
+                          bottom: -3px;
+                          content: "";
+                          left: -3px;
+                          outline: transparent;
+                          position: absolute;
+                          right: -3px;
+                          top: -3px;
+                          z-index: 1;
+                        }
+                        @media screen and (-ms-high-contrast: active), (forced-colors: active){.ms-Fabric--isFocusVisible &:focus:after {
+                          bottom: -2px;
+                          left: -2px;
+                          outline-color: ButtonText;
+                          right: -2px;
+                          top: -2px;
+                        }
+                        &:active > * {
+                          left: 0px;
+                          position: relative;
+                          top: 0px;
+                        }
+                        &:hover {
+                          background-color: #f4f4f4;
+                          color: #11599c;
+                        }
+                        @media screen and (-ms-high-contrast: active), (forced-colors: active){&:hover {
+                          border-color: Highlight;
+                          color: Highlight;
+                        }
+                        &:active {
+                          background-color: #eaeaea;
+                          color: #0c3f6f;
+                        }
+                        &.ms-Button--icon {
+                          background: none;
+                          border-radius: 50%;
+                          border-width: 0px;
+                          color: #1362ae;
+                          height: 40px;
+                          padding-bottom: 0px;
+                          padding-left: 0px;
+                          padding-right: 0px;
+                          padding-top: 0px;
+                          width: 40px;
+                        }
+                        &.ms-Button--icon i {
+                          font-size: 1.25rem;
+                        }
+                        &.ms-Button--icon:hover {
+                          background: #cde1f9;
+                          border-color: #1362ae;
+                          border-width: 3px;
+                          border: 3px solid #1362ae;
+                          color: #1362ae;
+                          transition: background-color 0.3s;
+                        }
+                        &.ms-Button--icon:focus {
+                          background: #cde1f9;
+                          border-color: #1362ae;
+                          border-width: 3px;
+                          border: 3px solid #1362ae;
+                          color: #1362ae;
+                          transition: background-color 0.3s;
+                        }
+                        &:focus&:after {
+                          border-color: transparent;
+                        }
+                        &.ms-Button--icon:active {
+                          background-color: #093e61;
+                          border-color: #093e61;
+                          color: #ffffff;
+                        }
+                        &.ms-Button--icon:disabled {
+                          border-color: #b2b2b2;
+                          border-width: 0px;
+                          color: #b2b2b2;
+                        }
+                        &.ms-Button--icon:disabled i {
+                          color: #b2b2b2;
+                        },
+                      "data-is-focusable": "true",
+                      "title": "Lukk",
+                      "type": "button",
                     },
                     "children": Array [
                       Node {
-                        "data": "X",
+                        "attribs": Object {
+                          "class": 
+                            ms-Button-flexContainer
+                            {
+                              align-items: center;
+                              display: flex;
+                              flex-wrap: nowrap;
+                              height: 100%;
+                              justify-content: center;
+                            },
+                          "data-automationid": "splitbuttonprimary",
+                        },
+                        "children": Array [
+                          Node {
+                            "attribs": Object {
+                              "aria-hidden": "true",
+                              "class": 
+                                ms-Icon
+                                ms-Button-icon
+                                {
+                                  display: inline-block;
+                                }
+                                {
+                                  -moz-osx-font-smoothing: grayscale;
+                                  -webkit-font-smoothing: antialiased;
+                                  display: inline-block;
+                                  font-family: "SkeIconfont";
+                                  font-size: inherit;
+                                  font-style: normal;
+                                  font-weight: normal;
+                                  speak: none;
+                                  text-rendering: auto;
+                                  transform: translate(0, 0);
+                                }
+                                {
+                                  flex-shrink: 0;
+                                  font-size: 1.0625rem;
+                                  height: 16px;
+                                  line-height: 16px;
+                                  margin-bottom: 0;
+                                  margin-left: 4px;
+                                  margin-right: 4px;
+                                  margin-top: 0;
+                                  text-align: center;
+                                },
+                              "data-icon-name": "Cancel",
+                              "style": "font-family: \\"SkeIconfont\\";",
+                            },
+                            "children": Array [
+                              Node {
+                                "data": "",
+                                "next": null,
+                                "parent": [Circular],
+                                "prev": null,
+                                "type": "text",
+                              },
+                            ],
+                            "name": "i",
+                            "namespace": "http://www.w3.org/1999/xhtml",
+                            "next": null,
+                            "parent": [Circular],
+                            "prev": null,
+                            "type": "tag",
+                            "x-attribsNamespace": Object {
+                              "aria-hidden": undefined,
+                              "class": undefined,
+                              "data-icon-name": undefined,
+                              "style": undefined,
+                            },
+                            "x-attribsPrefix": Object {
+                              "aria-hidden": undefined,
+                              "class": undefined,
+                              "data-icon-name": undefined,
+                              "style": undefined,
+                            },
+                          },
+                        ],
+                        "name": "span",
+                        "namespace": "http://www.w3.org/1999/xhtml",
                         "next": null,
                         "parent": [Circular],
                         "prev": null,
-                        "type": "text",
+                        "type": "tag",
+                        "x-attribsNamespace": Object {
+                          "class": undefined,
+                          "data-automationid": undefined,
+                        },
+                        "x-attribsPrefix": Object {
+                          "class": undefined,
+                          "data-automationid": undefined,
+                        },
                       },
                     ],
                     "name": "button",
@@ -862,11 +2627,15 @@ LoadedCheerio {
                     "type": "tag",
                     "x-attribsNamespace": Object {
                       "class": undefined,
-                      "data-testid": undefined,
+                      "data-is-focusable": undefined,
+                      "title": undefined,
+                      "type": undefined,
                     },
                     "x-attribsPrefix": Object {
                       "class": undefined,
-                      "data-testid": undefined,
+                      "data-is-focusable": undefined,
+                      "title": undefined,
+                      "type": undefined,
                     },
                   },
                   "type": "tag",
@@ -908,16 +2677,220 @@ LoadedCheerio {
                     "parent": [Circular],
                     "prev": Node {
                       "attribs": Object {
-                        "class": "closeButton closebuttonCustomClassName",
-                        "data-testid": "modal-closebutton",
+                        "class": 
+                          ms-Button
+                          ms-Button--icon
+                          closebuttonCustomClassName
+                          {
+                            -moz-osx-font-smoothing: grayscale;
+                            -webkit-font-smoothing: antialiased;
+                            background-color: transparent;
+                            border-radius: 2px;
+                            border: none;
+                            box-sizing: border-box;
+                            color: #1362ae;
+                            cursor: pointer;
+                            display: inline-block;
+                            font-family: 'Helvetica Neue', Helvetica , Arial, 'Liberation Sans', 'Nimbus Sans L', sans-serif;
+                            font-size: 1rem;
+                            font-weight: 400;
+                            height: 30px;
+                            outline: transparent;
+                            padding-bottom: 0;
+                            padding-left: 4px;
+                            padding-right: 4px;
+                            padding-top: 0;
+                            position: absolute;
+                            right: 10px;
+                            text-align: center;
+                            text-decoration: none;
+                            top: 10px;
+                            user-select: none;
+                            width: 32px;
+                          }
+                          &::-moz-focus-inner {
+                            border: 0;
+                          }
+                          .ms-Fabric--isFocusVisible &:focus:after {
+                            border-radius: 0;
+                            border: 2px solid #1362ae;
+                            bottom: -3px;
+                            content: "";
+                            left: -3px;
+                            outline: transparent;
+                            position: absolute;
+                            right: -3px;
+                            top: -3px;
+                            z-index: 1;
+                          }
+                          @media screen and (-ms-high-contrast: active), (forced-colors: active){.ms-Fabric--isFocusVisible &:focus:after {
+                            bottom: -2px;
+                            left: -2px;
+                            outline-color: ButtonText;
+                            right: -2px;
+                            top: -2px;
+                          }
+                          &:active > * {
+                            left: 0px;
+                            position: relative;
+                            top: 0px;
+                          }
+                          &:hover {
+                            background-color: #f4f4f4;
+                            color: #11599c;
+                          }
+                          @media screen and (-ms-high-contrast: active), (forced-colors: active){&:hover {
+                            border-color: Highlight;
+                            color: Highlight;
+                          }
+                          &:active {
+                            background-color: #eaeaea;
+                            color: #0c3f6f;
+                          }
+                          &.ms-Button--icon {
+                            background: none;
+                            border-radius: 50%;
+                            border-width: 0px;
+                            color: #1362ae;
+                            height: 40px;
+                            padding-bottom: 0px;
+                            padding-left: 0px;
+                            padding-right: 0px;
+                            padding-top: 0px;
+                            width: 40px;
+                          }
+                          &.ms-Button--icon i {
+                            font-size: 1.25rem;
+                          }
+                          &.ms-Button--icon:hover {
+                            background: #cde1f9;
+                            border-color: #1362ae;
+                            border-width: 3px;
+                            border: 3px solid #1362ae;
+                            color: #1362ae;
+                            transition: background-color 0.3s;
+                          }
+                          &.ms-Button--icon:focus {
+                            background: #cde1f9;
+                            border-color: #1362ae;
+                            border-width: 3px;
+                            border: 3px solid #1362ae;
+                            color: #1362ae;
+                            transition: background-color 0.3s;
+                          }
+                          &:focus&:after {
+                            border-color: transparent;
+                          }
+                          &.ms-Button--icon:active {
+                            background-color: #093e61;
+                            border-color: #093e61;
+                            color: #ffffff;
+                          }
+                          &.ms-Button--icon:disabled {
+                            border-color: #b2b2b2;
+                            border-width: 0px;
+                            color: #b2b2b2;
+                          }
+                          &.ms-Button--icon:disabled i {
+                            color: #b2b2b2;
+                          },
+                        "data-is-focusable": "true",
+                        "title": "Lukk",
+                        "type": "button",
                       },
                       "children": Array [
                         Node {
-                          "data": "X",
+                          "attribs": Object {
+                            "class": 
+                              ms-Button-flexContainer
+                              {
+                                align-items: center;
+                                display: flex;
+                                flex-wrap: nowrap;
+                                height: 100%;
+                                justify-content: center;
+                              },
+                            "data-automationid": "splitbuttonprimary",
+                          },
+                          "children": Array [
+                            Node {
+                              "attribs": Object {
+                                "aria-hidden": "true",
+                                "class": 
+                                  ms-Icon
+                                  ms-Button-icon
+                                  {
+                                    display: inline-block;
+                                  }
+                                  {
+                                    -moz-osx-font-smoothing: grayscale;
+                                    -webkit-font-smoothing: antialiased;
+                                    display: inline-block;
+                                    font-family: "SkeIconfont";
+                                    font-size: inherit;
+                                    font-style: normal;
+                                    font-weight: normal;
+                                    speak: none;
+                                    text-rendering: auto;
+                                    transform: translate(0, 0);
+                                  }
+                                  {
+                                    flex-shrink: 0;
+                                    font-size: 1.0625rem;
+                                    height: 16px;
+                                    line-height: 16px;
+                                    margin-bottom: 0;
+                                    margin-left: 4px;
+                                    margin-right: 4px;
+                                    margin-top: 0;
+                                    text-align: center;
+                                  },
+                                "data-icon-name": "Cancel",
+                                "style": "font-family: \\"SkeIconfont\\";",
+                              },
+                              "children": Array [
+                                Node {
+                                  "data": "",
+                                  "next": null,
+                                  "parent": [Circular],
+                                  "prev": null,
+                                  "type": "text",
+                                },
+                              ],
+                              "name": "i",
+                              "namespace": "http://www.w3.org/1999/xhtml",
+                              "next": null,
+                              "parent": [Circular],
+                              "prev": null,
+                              "type": "tag",
+                              "x-attribsNamespace": Object {
+                                "aria-hidden": undefined,
+                                "class": undefined,
+                                "data-icon-name": undefined,
+                                "style": undefined,
+                              },
+                              "x-attribsPrefix": Object {
+                                "aria-hidden": undefined,
+                                "class": undefined,
+                                "data-icon-name": undefined,
+                                "style": undefined,
+                              },
+                            },
+                          ],
+                          "name": "span",
+                          "namespace": "http://www.w3.org/1999/xhtml",
                           "next": null,
                           "parent": [Circular],
                           "prev": null,
-                          "type": "text",
+                          "type": "tag",
+                          "x-attribsNamespace": Object {
+                            "class": undefined,
+                            "data-automationid": undefined,
+                          },
+                          "x-attribsPrefix": Object {
+                            "class": undefined,
+                            "data-automationid": undefined,
+                          },
                         },
                       ],
                       "name": "button",
@@ -954,11 +2927,15 @@ LoadedCheerio {
                       "type": "tag",
                       "x-attribsNamespace": Object {
                         "class": undefined,
-                        "data-testid": undefined,
+                        "data-is-focusable": undefined,
+                        "title": undefined,
+                        "type": undefined,
                       },
                       "x-attribsPrefix": Object {
                         "class": undefined,
-                        "data-testid": undefined,
+                        "data-is-focusable": undefined,
+                        "title": undefined,
+                        "type": undefined,
                       },
                     },
                     "type": "tag",
@@ -1135,16 +3112,60 @@ exports[`Modal modal mountes slik den skal med wrapper, closeButton, overlay, tr
 LoadedCheerio {
   "0": Node {
     "attribs": Object {
-      "class": "wrapper undefined",
+      "class": 
+        
+        {
+          align-items: center;
+          bottom: 0px;
+          display: flex;
+          justify-content: center;
+          left: 0px;
+          position: fixed;
+          right: 0px;
+          top: 0px;
+          z-index: 99998;
+        },
     },
     "children": Array [
       Node {
         "attribs": Object {
-          "class": "modal undefined",
+          "class": 
+            
+            {
+              background: #ffffff;
+              border: 4px solid #6f2c3f;
+              box-sizing: border-box;
+              display: flex;
+              flex-direction: column;
+              flex-wrap: nowrap;
+              height: auto;
+              max-height: 90%;
+              max-width: 90%;
+              overflow: auto;
+              padding-bottom: 16px;
+              padding-left: 16px;
+              padding-right: 16px;
+              padding-top: 16px;
+              position: relative;
+              z-index: 99999;
+            }
+            @media (min-width: 320px){& {
+              min-width: 40ch;
+            }
+            @media (min-width: 479px){& {
+              min-width: 50ch;
+            }
+            @media (min-width: 640px){& {
+              min-width: 70ch;
+            }
+            @media (min-width: 1024px){& {
+              min-width: 80ch;
+            },
         },
         "children": Array [
           Node {
             "attribs": Object {
+              "class": "",
               "id": "ModalTrapFocus0",
             },
             "children": Array [
@@ -1160,16 +3181,220 @@ LoadedCheerio {
                 "namespace": "http://www.w3.org/1999/xhtml",
                 "next": Node {
                   "attribs": Object {
-                    "class": "closeButton ",
-                    "data-testid": "modal-closebutton",
+                    "class": 
+                      ms-Button
+                      ms-Button--icon
+                      closebuttonCustom
+                      {
+                        -moz-osx-font-smoothing: grayscale;
+                        -webkit-font-smoothing: antialiased;
+                        background-color: transparent;
+                        border-radius: 2px;
+                        border: none;
+                        box-sizing: border-box;
+                        color: #1362ae;
+                        cursor: pointer;
+                        display: inline-block;
+                        font-family: 'Helvetica Neue', Helvetica , Arial, 'Liberation Sans', 'Nimbus Sans L', sans-serif;
+                        font-size: 1rem;
+                        font-weight: 400;
+                        height: 30px;
+                        outline: transparent;
+                        padding-bottom: 0;
+                        padding-left: 4px;
+                        padding-right: 4px;
+                        padding-top: 0;
+                        position: absolute;
+                        right: 10px;
+                        text-align: center;
+                        text-decoration: none;
+                        top: 10px;
+                        user-select: none;
+                        width: 32px;
+                      }
+                      &::-moz-focus-inner {
+                        border: 0;
+                      }
+                      .ms-Fabric--isFocusVisible &:focus:after {
+                        border-radius: 0;
+                        border: 2px solid #1362ae;
+                        bottom: -3px;
+                        content: "";
+                        left: -3px;
+                        outline: transparent;
+                        position: absolute;
+                        right: -3px;
+                        top: -3px;
+                        z-index: 1;
+                      }
+                      @media screen and (-ms-high-contrast: active), (forced-colors: active){.ms-Fabric--isFocusVisible &:focus:after {
+                        bottom: -2px;
+                        left: -2px;
+                        outline-color: ButtonText;
+                        right: -2px;
+                        top: -2px;
+                      }
+                      &:active > * {
+                        left: 0px;
+                        position: relative;
+                        top: 0px;
+                      }
+                      &:hover {
+                        background-color: #f4f4f4;
+                        color: #11599c;
+                      }
+                      @media screen and (-ms-high-contrast: active), (forced-colors: active){&:hover {
+                        border-color: Highlight;
+                        color: Highlight;
+                      }
+                      &:active {
+                        background-color: #eaeaea;
+                        color: #0c3f6f;
+                      }
+                      &.ms-Button--icon {
+                        background: none;
+                        border-radius: 50%;
+                        border-width: 0px;
+                        color: #1362ae;
+                        height: 40px;
+                        padding-bottom: 0px;
+                        padding-left: 0px;
+                        padding-right: 0px;
+                        padding-top: 0px;
+                        width: 40px;
+                      }
+                      &.ms-Button--icon i {
+                        font-size: 1.25rem;
+                      }
+                      &.ms-Button--icon:hover {
+                        background: #cde1f9;
+                        border-color: #1362ae;
+                        border-width: 3px;
+                        border: 3px solid #1362ae;
+                        color: #1362ae;
+                        transition: background-color 0.3s;
+                      }
+                      &.ms-Button--icon:focus {
+                        background: #cde1f9;
+                        border-color: #1362ae;
+                        border-width: 3px;
+                        border: 3px solid #1362ae;
+                        color: #1362ae;
+                        transition: background-color 0.3s;
+                      }
+                      &:focus&:after {
+                        border-color: transparent;
+                      }
+                      &.ms-Button--icon:active {
+                        background-color: #093e61;
+                        border-color: #093e61;
+                        color: #ffffff;
+                      }
+                      &.ms-Button--icon:disabled {
+                        border-color: #b2b2b2;
+                        border-width: 0px;
+                        color: #b2b2b2;
+                      }
+                      &.ms-Button--icon:disabled i {
+                        color: #b2b2b2;
+                      },
+                    "data-is-focusable": "true",
+                    "title": "Lukk",
+                    "type": "button",
                   },
                   "children": Array [
                     Node {
-                      "data": "X",
+                      "attribs": Object {
+                        "class": 
+                          ms-Button-flexContainer
+                          {
+                            align-items: center;
+                            display: flex;
+                            flex-wrap: nowrap;
+                            height: 100%;
+                            justify-content: center;
+                          },
+                        "data-automationid": "splitbuttonprimary",
+                      },
+                      "children": Array [
+                        Node {
+                          "attribs": Object {
+                            "aria-hidden": "true",
+                            "class": 
+                              ms-Icon
+                              ms-Button-icon
+                              {
+                                display: inline-block;
+                              }
+                              {
+                                -moz-osx-font-smoothing: grayscale;
+                                -webkit-font-smoothing: antialiased;
+                                display: inline-block;
+                                font-family: "SkeIconfont";
+                                font-size: inherit;
+                                font-style: normal;
+                                font-weight: normal;
+                                speak: none;
+                                text-rendering: auto;
+                                transform: translate(0, 0);
+                              }
+                              {
+                                flex-shrink: 0;
+                                font-size: 1.0625rem;
+                                height: 16px;
+                                line-height: 16px;
+                                margin-bottom: 0;
+                                margin-left: 4px;
+                                margin-right: 4px;
+                                margin-top: 0;
+                                text-align: center;
+                              },
+                            "data-icon-name": "Cancel",
+                            "style": "font-family: \\"SkeIconfont\\";",
+                          },
+                          "children": Array [
+                            Node {
+                              "data": "",
+                              "next": null,
+                              "parent": [Circular],
+                              "prev": null,
+                              "type": "text",
+                            },
+                          ],
+                          "name": "i",
+                          "namespace": "http://www.w3.org/1999/xhtml",
+                          "next": null,
+                          "parent": [Circular],
+                          "prev": null,
+                          "type": "tag",
+                          "x-attribsNamespace": Object {
+                            "aria-hidden": undefined,
+                            "class": undefined,
+                            "data-icon-name": undefined,
+                            "style": undefined,
+                          },
+                          "x-attribsPrefix": Object {
+                            "aria-hidden": undefined,
+                            "class": undefined,
+                            "data-icon-name": undefined,
+                            "style": undefined,
+                          },
+                        },
+                      ],
+                      "name": "span",
+                      "namespace": "http://www.w3.org/1999/xhtml",
                       "next": null,
                       "parent": [Circular],
                       "prev": null,
-                      "type": "text",
+                      "type": "tag",
+                      "x-attribsNamespace": Object {
+                        "class": undefined,
+                        "data-automationid": undefined,
+                      },
+                      "x-attribsPrefix": Object {
+                        "class": undefined,
+                        "data-automationid": undefined,
+                      },
                     },
                   ],
                   "name": "button",
@@ -1231,11 +3456,15 @@ LoadedCheerio {
                   "type": "tag",
                   "x-attribsNamespace": Object {
                     "class": undefined,
-                    "data-testid": undefined,
+                    "data-is-focusable": undefined,
+                    "title": undefined,
+                    "type": undefined,
                   },
                   "x-attribsPrefix": Object {
                     "class": undefined,
-                    "data-testid": undefined,
+                    "data-is-focusable": undefined,
+                    "title": undefined,
+                    "type": undefined,
                   },
                 },
                 "parent": [Circular],
@@ -1256,16 +3485,220 @@ LoadedCheerio {
               },
               Node {
                 "attribs": Object {
-                  "class": "closeButton ",
-                  "data-testid": "modal-closebutton",
+                  "class": 
+                    ms-Button
+                    ms-Button--icon
+                    closebuttonCustom
+                    {
+                      -moz-osx-font-smoothing: grayscale;
+                      -webkit-font-smoothing: antialiased;
+                      background-color: transparent;
+                      border-radius: 2px;
+                      border: none;
+                      box-sizing: border-box;
+                      color: #1362ae;
+                      cursor: pointer;
+                      display: inline-block;
+                      font-family: 'Helvetica Neue', Helvetica , Arial, 'Liberation Sans', 'Nimbus Sans L', sans-serif;
+                      font-size: 1rem;
+                      font-weight: 400;
+                      height: 30px;
+                      outline: transparent;
+                      padding-bottom: 0;
+                      padding-left: 4px;
+                      padding-right: 4px;
+                      padding-top: 0;
+                      position: absolute;
+                      right: 10px;
+                      text-align: center;
+                      text-decoration: none;
+                      top: 10px;
+                      user-select: none;
+                      width: 32px;
+                    }
+                    &::-moz-focus-inner {
+                      border: 0;
+                    }
+                    .ms-Fabric--isFocusVisible &:focus:after {
+                      border-radius: 0;
+                      border: 2px solid #1362ae;
+                      bottom: -3px;
+                      content: "";
+                      left: -3px;
+                      outline: transparent;
+                      position: absolute;
+                      right: -3px;
+                      top: -3px;
+                      z-index: 1;
+                    }
+                    @media screen and (-ms-high-contrast: active), (forced-colors: active){.ms-Fabric--isFocusVisible &:focus:after {
+                      bottom: -2px;
+                      left: -2px;
+                      outline-color: ButtonText;
+                      right: -2px;
+                      top: -2px;
+                    }
+                    &:active > * {
+                      left: 0px;
+                      position: relative;
+                      top: 0px;
+                    }
+                    &:hover {
+                      background-color: #f4f4f4;
+                      color: #11599c;
+                    }
+                    @media screen and (-ms-high-contrast: active), (forced-colors: active){&:hover {
+                      border-color: Highlight;
+                      color: Highlight;
+                    }
+                    &:active {
+                      background-color: #eaeaea;
+                      color: #0c3f6f;
+                    }
+                    &.ms-Button--icon {
+                      background: none;
+                      border-radius: 50%;
+                      border-width: 0px;
+                      color: #1362ae;
+                      height: 40px;
+                      padding-bottom: 0px;
+                      padding-left: 0px;
+                      padding-right: 0px;
+                      padding-top: 0px;
+                      width: 40px;
+                    }
+                    &.ms-Button--icon i {
+                      font-size: 1.25rem;
+                    }
+                    &.ms-Button--icon:hover {
+                      background: #cde1f9;
+                      border-color: #1362ae;
+                      border-width: 3px;
+                      border: 3px solid #1362ae;
+                      color: #1362ae;
+                      transition: background-color 0.3s;
+                    }
+                    &.ms-Button--icon:focus {
+                      background: #cde1f9;
+                      border-color: #1362ae;
+                      border-width: 3px;
+                      border: 3px solid #1362ae;
+                      color: #1362ae;
+                      transition: background-color 0.3s;
+                    }
+                    &:focus&:after {
+                      border-color: transparent;
+                    }
+                    &.ms-Button--icon:active {
+                      background-color: #093e61;
+                      border-color: #093e61;
+                      color: #ffffff;
+                    }
+                    &.ms-Button--icon:disabled {
+                      border-color: #b2b2b2;
+                      border-width: 0px;
+                      color: #b2b2b2;
+                    }
+                    &.ms-Button--icon:disabled i {
+                      color: #b2b2b2;
+                    },
+                  "data-is-focusable": "true",
+                  "title": "Lukk",
+                  "type": "button",
                 },
                 "children": Array [
                   Node {
-                    "data": "X",
+                    "attribs": Object {
+                      "class": 
+                        ms-Button-flexContainer
+                        {
+                          align-items: center;
+                          display: flex;
+                          flex-wrap: nowrap;
+                          height: 100%;
+                          justify-content: center;
+                        },
+                      "data-automationid": "splitbuttonprimary",
+                    },
+                    "children": Array [
+                      Node {
+                        "attribs": Object {
+                          "aria-hidden": "true",
+                          "class": 
+                            ms-Icon
+                            ms-Button-icon
+                            {
+                              display: inline-block;
+                            }
+                            {
+                              -moz-osx-font-smoothing: grayscale;
+                              -webkit-font-smoothing: antialiased;
+                              display: inline-block;
+                              font-family: "SkeIconfont";
+                              font-size: inherit;
+                              font-style: normal;
+                              font-weight: normal;
+                              speak: none;
+                              text-rendering: auto;
+                              transform: translate(0, 0);
+                            }
+                            {
+                              flex-shrink: 0;
+                              font-size: 1.0625rem;
+                              height: 16px;
+                              line-height: 16px;
+                              margin-bottom: 0;
+                              margin-left: 4px;
+                              margin-right: 4px;
+                              margin-top: 0;
+                              text-align: center;
+                            },
+                          "data-icon-name": "Cancel",
+                          "style": "font-family: \\"SkeIconfont\\";",
+                        },
+                        "children": Array [
+                          Node {
+                            "data": "",
+                            "next": null,
+                            "parent": [Circular],
+                            "prev": null,
+                            "type": "text",
+                          },
+                        ],
+                        "name": "i",
+                        "namespace": "http://www.w3.org/1999/xhtml",
+                        "next": null,
+                        "parent": [Circular],
+                        "prev": null,
+                        "type": "tag",
+                        "x-attribsNamespace": Object {
+                          "aria-hidden": undefined,
+                          "class": undefined,
+                          "data-icon-name": undefined,
+                          "style": undefined,
+                        },
+                        "x-attribsPrefix": Object {
+                          "aria-hidden": undefined,
+                          "class": undefined,
+                          "data-icon-name": undefined,
+                          "style": undefined,
+                        },
+                      },
+                    ],
+                    "name": "span",
+                    "namespace": "http://www.w3.org/1999/xhtml",
                     "next": null,
                     "parent": [Circular],
                     "prev": null,
-                    "type": "text",
+                    "type": "tag",
+                    "x-attribsNamespace": Object {
+                      "class": undefined,
+                      "data-automationid": undefined,
+                    },
+                    "x-attribsPrefix": Object {
+                      "class": undefined,
+                      "data-automationid": undefined,
+                    },
                   },
                 ],
                 "name": "button",
@@ -1353,11 +3786,15 @@ LoadedCheerio {
                 "type": "tag",
                 "x-attribsNamespace": Object {
                   "class": undefined,
-                  "data-testid": undefined,
+                  "data-is-focusable": undefined,
+                  "title": undefined,
+                  "type": undefined,
                 },
                 "x-attribsPrefix": Object {
                   "class": undefined,
-                  "data-testid": undefined,
+                  "data-is-focusable": undefined,
+                  "title": undefined,
+                  "type": undefined,
                 },
               },
               Node {
@@ -1405,16 +3842,220 @@ LoadedCheerio {
                 "parent": [Circular],
                 "prev": Node {
                   "attribs": Object {
-                    "class": "closeButton ",
-                    "data-testid": "modal-closebutton",
+                    "class": 
+                      ms-Button
+                      ms-Button--icon
+                      closebuttonCustom
+                      {
+                        -moz-osx-font-smoothing: grayscale;
+                        -webkit-font-smoothing: antialiased;
+                        background-color: transparent;
+                        border-radius: 2px;
+                        border: none;
+                        box-sizing: border-box;
+                        color: #1362ae;
+                        cursor: pointer;
+                        display: inline-block;
+                        font-family: 'Helvetica Neue', Helvetica , Arial, 'Liberation Sans', 'Nimbus Sans L', sans-serif;
+                        font-size: 1rem;
+                        font-weight: 400;
+                        height: 30px;
+                        outline: transparent;
+                        padding-bottom: 0;
+                        padding-left: 4px;
+                        padding-right: 4px;
+                        padding-top: 0;
+                        position: absolute;
+                        right: 10px;
+                        text-align: center;
+                        text-decoration: none;
+                        top: 10px;
+                        user-select: none;
+                        width: 32px;
+                      }
+                      &::-moz-focus-inner {
+                        border: 0;
+                      }
+                      .ms-Fabric--isFocusVisible &:focus:after {
+                        border-radius: 0;
+                        border: 2px solid #1362ae;
+                        bottom: -3px;
+                        content: "";
+                        left: -3px;
+                        outline: transparent;
+                        position: absolute;
+                        right: -3px;
+                        top: -3px;
+                        z-index: 1;
+                      }
+                      @media screen and (-ms-high-contrast: active), (forced-colors: active){.ms-Fabric--isFocusVisible &:focus:after {
+                        bottom: -2px;
+                        left: -2px;
+                        outline-color: ButtonText;
+                        right: -2px;
+                        top: -2px;
+                      }
+                      &:active > * {
+                        left: 0px;
+                        position: relative;
+                        top: 0px;
+                      }
+                      &:hover {
+                        background-color: #f4f4f4;
+                        color: #11599c;
+                      }
+                      @media screen and (-ms-high-contrast: active), (forced-colors: active){&:hover {
+                        border-color: Highlight;
+                        color: Highlight;
+                      }
+                      &:active {
+                        background-color: #eaeaea;
+                        color: #0c3f6f;
+                      }
+                      &.ms-Button--icon {
+                        background: none;
+                        border-radius: 50%;
+                        border-width: 0px;
+                        color: #1362ae;
+                        height: 40px;
+                        padding-bottom: 0px;
+                        padding-left: 0px;
+                        padding-right: 0px;
+                        padding-top: 0px;
+                        width: 40px;
+                      }
+                      &.ms-Button--icon i {
+                        font-size: 1.25rem;
+                      }
+                      &.ms-Button--icon:hover {
+                        background: #cde1f9;
+                        border-color: #1362ae;
+                        border-width: 3px;
+                        border: 3px solid #1362ae;
+                        color: #1362ae;
+                        transition: background-color 0.3s;
+                      }
+                      &.ms-Button--icon:focus {
+                        background: #cde1f9;
+                        border-color: #1362ae;
+                        border-width: 3px;
+                        border: 3px solid #1362ae;
+                        color: #1362ae;
+                        transition: background-color 0.3s;
+                      }
+                      &:focus&:after {
+                        border-color: transparent;
+                      }
+                      &.ms-Button--icon:active {
+                        background-color: #093e61;
+                        border-color: #093e61;
+                        color: #ffffff;
+                      }
+                      &.ms-Button--icon:disabled {
+                        border-color: #b2b2b2;
+                        border-width: 0px;
+                        color: #b2b2b2;
+                      }
+                      &.ms-Button--icon:disabled i {
+                        color: #b2b2b2;
+                      },
+                    "data-is-focusable": "true",
+                    "title": "Lukk",
+                    "type": "button",
                   },
                   "children": Array [
                     Node {
-                      "data": "X",
+                      "attribs": Object {
+                        "class": 
+                          ms-Button-flexContainer
+                          {
+                            align-items: center;
+                            display: flex;
+                            flex-wrap: nowrap;
+                            height: 100%;
+                            justify-content: center;
+                          },
+                        "data-automationid": "splitbuttonprimary",
+                      },
+                      "children": Array [
+                        Node {
+                          "attribs": Object {
+                            "aria-hidden": "true",
+                            "class": 
+                              ms-Icon
+                              ms-Button-icon
+                              {
+                                display: inline-block;
+                              }
+                              {
+                                -moz-osx-font-smoothing: grayscale;
+                                -webkit-font-smoothing: antialiased;
+                                display: inline-block;
+                                font-family: "SkeIconfont";
+                                font-size: inherit;
+                                font-style: normal;
+                                font-weight: normal;
+                                speak: none;
+                                text-rendering: auto;
+                                transform: translate(0, 0);
+                              }
+                              {
+                                flex-shrink: 0;
+                                font-size: 1.0625rem;
+                                height: 16px;
+                                line-height: 16px;
+                                margin-bottom: 0;
+                                margin-left: 4px;
+                                margin-right: 4px;
+                                margin-top: 0;
+                                text-align: center;
+                              },
+                            "data-icon-name": "Cancel",
+                            "style": "font-family: \\"SkeIconfont\\";",
+                          },
+                          "children": Array [
+                            Node {
+                              "data": "",
+                              "next": null,
+                              "parent": [Circular],
+                              "prev": null,
+                              "type": "text",
+                            },
+                          ],
+                          "name": "i",
+                          "namespace": "http://www.w3.org/1999/xhtml",
+                          "next": null,
+                          "parent": [Circular],
+                          "prev": null,
+                          "type": "tag",
+                          "x-attribsNamespace": Object {
+                            "aria-hidden": undefined,
+                            "class": undefined,
+                            "data-icon-name": undefined,
+                            "style": undefined,
+                          },
+                          "x-attribsPrefix": Object {
+                            "aria-hidden": undefined,
+                            "class": undefined,
+                            "data-icon-name": undefined,
+                            "style": undefined,
+                          },
+                        },
+                      ],
+                      "name": "span",
+                      "namespace": "http://www.w3.org/1999/xhtml",
                       "next": null,
                       "parent": [Circular],
                       "prev": null,
-                      "type": "text",
+                      "type": "tag",
+                      "x-attribsNamespace": Object {
+                        "class": undefined,
+                        "data-automationid": undefined,
+                      },
+                      "x-attribsPrefix": Object {
+                        "class": undefined,
+                        "data-automationid": undefined,
+                      },
                     },
                   ],
                   "name": "button",
@@ -1451,11 +4092,15 @@ LoadedCheerio {
                   "type": "tag",
                   "x-attribsNamespace": Object {
                     "class": undefined,
-                    "data-testid": undefined,
+                    "data-is-focusable": undefined,
+                    "title": undefined,
+                    "type": undefined,
                   },
                   "x-attribsPrefix": Object {
                     "class": undefined,
-                    "data-testid": undefined,
+                    "data-is-focusable": undefined,
+                    "title": undefined,
+                    "type": undefined,
                   },
                 },
                 "type": "tag",
@@ -1497,16 +4142,220 @@ LoadedCheerio {
                   "parent": [Circular],
                   "prev": Node {
                     "attribs": Object {
-                      "class": "closeButton ",
-                      "data-testid": "modal-closebutton",
+                      "class": 
+                        ms-Button
+                        ms-Button--icon
+                        closebuttonCustom
+                        {
+                          -moz-osx-font-smoothing: grayscale;
+                          -webkit-font-smoothing: antialiased;
+                          background-color: transparent;
+                          border-radius: 2px;
+                          border: none;
+                          box-sizing: border-box;
+                          color: #1362ae;
+                          cursor: pointer;
+                          display: inline-block;
+                          font-family: 'Helvetica Neue', Helvetica , Arial, 'Liberation Sans', 'Nimbus Sans L', sans-serif;
+                          font-size: 1rem;
+                          font-weight: 400;
+                          height: 30px;
+                          outline: transparent;
+                          padding-bottom: 0;
+                          padding-left: 4px;
+                          padding-right: 4px;
+                          padding-top: 0;
+                          position: absolute;
+                          right: 10px;
+                          text-align: center;
+                          text-decoration: none;
+                          top: 10px;
+                          user-select: none;
+                          width: 32px;
+                        }
+                        &::-moz-focus-inner {
+                          border: 0;
+                        }
+                        .ms-Fabric--isFocusVisible &:focus:after {
+                          border-radius: 0;
+                          border: 2px solid #1362ae;
+                          bottom: -3px;
+                          content: "";
+                          left: -3px;
+                          outline: transparent;
+                          position: absolute;
+                          right: -3px;
+                          top: -3px;
+                          z-index: 1;
+                        }
+                        @media screen and (-ms-high-contrast: active), (forced-colors: active){.ms-Fabric--isFocusVisible &:focus:after {
+                          bottom: -2px;
+                          left: -2px;
+                          outline-color: ButtonText;
+                          right: -2px;
+                          top: -2px;
+                        }
+                        &:active > * {
+                          left: 0px;
+                          position: relative;
+                          top: 0px;
+                        }
+                        &:hover {
+                          background-color: #f4f4f4;
+                          color: #11599c;
+                        }
+                        @media screen and (-ms-high-contrast: active), (forced-colors: active){&:hover {
+                          border-color: Highlight;
+                          color: Highlight;
+                        }
+                        &:active {
+                          background-color: #eaeaea;
+                          color: #0c3f6f;
+                        }
+                        &.ms-Button--icon {
+                          background: none;
+                          border-radius: 50%;
+                          border-width: 0px;
+                          color: #1362ae;
+                          height: 40px;
+                          padding-bottom: 0px;
+                          padding-left: 0px;
+                          padding-right: 0px;
+                          padding-top: 0px;
+                          width: 40px;
+                        }
+                        &.ms-Button--icon i {
+                          font-size: 1.25rem;
+                        }
+                        &.ms-Button--icon:hover {
+                          background: #cde1f9;
+                          border-color: #1362ae;
+                          border-width: 3px;
+                          border: 3px solid #1362ae;
+                          color: #1362ae;
+                          transition: background-color 0.3s;
+                        }
+                        &.ms-Button--icon:focus {
+                          background: #cde1f9;
+                          border-color: #1362ae;
+                          border-width: 3px;
+                          border: 3px solid #1362ae;
+                          color: #1362ae;
+                          transition: background-color 0.3s;
+                        }
+                        &:focus&:after {
+                          border-color: transparent;
+                        }
+                        &.ms-Button--icon:active {
+                          background-color: #093e61;
+                          border-color: #093e61;
+                          color: #ffffff;
+                        }
+                        &.ms-Button--icon:disabled {
+                          border-color: #b2b2b2;
+                          border-width: 0px;
+                          color: #b2b2b2;
+                        }
+                        &.ms-Button--icon:disabled i {
+                          color: #b2b2b2;
+                        },
+                      "data-is-focusable": "true",
+                      "title": "Lukk",
+                      "type": "button",
                     },
                     "children": Array [
                       Node {
-                        "data": "X",
+                        "attribs": Object {
+                          "class": 
+                            ms-Button-flexContainer
+                            {
+                              align-items: center;
+                              display: flex;
+                              flex-wrap: nowrap;
+                              height: 100%;
+                              justify-content: center;
+                            },
+                          "data-automationid": "splitbuttonprimary",
+                        },
+                        "children": Array [
+                          Node {
+                            "attribs": Object {
+                              "aria-hidden": "true",
+                              "class": 
+                                ms-Icon
+                                ms-Button-icon
+                                {
+                                  display: inline-block;
+                                }
+                                {
+                                  -moz-osx-font-smoothing: grayscale;
+                                  -webkit-font-smoothing: antialiased;
+                                  display: inline-block;
+                                  font-family: "SkeIconfont";
+                                  font-size: inherit;
+                                  font-style: normal;
+                                  font-weight: normal;
+                                  speak: none;
+                                  text-rendering: auto;
+                                  transform: translate(0, 0);
+                                }
+                                {
+                                  flex-shrink: 0;
+                                  font-size: 1.0625rem;
+                                  height: 16px;
+                                  line-height: 16px;
+                                  margin-bottom: 0;
+                                  margin-left: 4px;
+                                  margin-right: 4px;
+                                  margin-top: 0;
+                                  text-align: center;
+                                },
+                              "data-icon-name": "Cancel",
+                              "style": "font-family: \\"SkeIconfont\\";",
+                            },
+                            "children": Array [
+                              Node {
+                                "data": "",
+                                "next": null,
+                                "parent": [Circular],
+                                "prev": null,
+                                "type": "text",
+                              },
+                            ],
+                            "name": "i",
+                            "namespace": "http://www.w3.org/1999/xhtml",
+                            "next": null,
+                            "parent": [Circular],
+                            "prev": null,
+                            "type": "tag",
+                            "x-attribsNamespace": Object {
+                              "aria-hidden": undefined,
+                              "class": undefined,
+                              "data-icon-name": undefined,
+                              "style": undefined,
+                            },
+                            "x-attribsPrefix": Object {
+                              "aria-hidden": undefined,
+                              "class": undefined,
+                              "data-icon-name": undefined,
+                              "style": undefined,
+                            },
+                          },
+                        ],
+                        "name": "span",
+                        "namespace": "http://www.w3.org/1999/xhtml",
                         "next": null,
                         "parent": [Circular],
                         "prev": null,
-                        "type": "text",
+                        "type": "tag",
+                        "x-attribsNamespace": Object {
+                          "class": undefined,
+                          "data-automationid": undefined,
+                        },
+                        "x-attribsPrefix": Object {
+                          "class": undefined,
+                          "data-automationid": undefined,
+                        },
                       },
                     ],
                     "name": "button",
@@ -1543,11 +4392,15 @@ LoadedCheerio {
                     "type": "tag",
                     "x-attribsNamespace": Object {
                       "class": undefined,
-                      "data-testid": undefined,
+                      "data-is-focusable": undefined,
+                      "title": undefined,
+                      "type": undefined,
                     },
                     "x-attribsPrefix": Object {
                       "class": undefined,
-                      "data-testid": undefined,
+                      "data-is-focusable": undefined,
+                      "title": undefined,
+                      "type": undefined,
                     },
                   },
                   "type": "tag",
@@ -1580,9 +4433,11 @@ LoadedCheerio {
             "prev": null,
             "type": "tag",
             "x-attribsNamespace": Object {
+              "class": undefined,
               "id": undefined,
             },
             "x-attribsPrefix": Object {
+              "class": undefined,
               "id": undefined,
             },
           },
@@ -1591,7 +4446,17 @@ LoadedCheerio {
         "namespace": "http://www.w3.org/1999/xhtml",
         "next": Node {
           "attribs": Object {
-            "class": "overlay ",
+            "class": 
+              overlayCustom
+              {
+                background: rgba(0, 0, 0, 0.4);
+                bottom: 0px;
+                left: 0px;
+                position: fixed;
+                right: 0px;
+                top: 0px;
+                z-index: 99998;
+              },
             "data-testid": "modal-overlay",
           },
           "children": Array [],
@@ -1622,7 +4487,17 @@ LoadedCheerio {
       },
       Node {
         "attribs": Object {
-          "class": "overlay ",
+          "class": 
+            overlayCustom
+            {
+              background: rgba(0, 0, 0, 0.4);
+              bottom: 0px;
+              left: 0px;
+              position: fixed;
+              right: 0px;
+              top: 0px;
+              z-index: 99998;
+            },
           "data-testid": "modal-overlay",
         },
         "children": Array [],
@@ -1632,11 +4507,43 @@ LoadedCheerio {
         "parent": [Circular],
         "prev": Node {
           "attribs": Object {
-            "class": "modal undefined",
+            "class": 
+              
+              {
+                background: #ffffff;
+                border: 4px solid #6f2c3f;
+                box-sizing: border-box;
+                display: flex;
+                flex-direction: column;
+                flex-wrap: nowrap;
+                height: auto;
+                max-height: 90%;
+                max-width: 90%;
+                overflow: auto;
+                padding-bottom: 16px;
+                padding-left: 16px;
+                padding-right: 16px;
+                padding-top: 16px;
+                position: relative;
+                z-index: 99999;
+              }
+              @media (min-width: 320px){& {
+                min-width: 40ch;
+              }
+              @media (min-width: 479px){& {
+                min-width: 50ch;
+              }
+              @media (min-width: 640px){& {
+                min-width: 70ch;
+              }
+              @media (min-width: 1024px){& {
+                min-width: 80ch;
+              },
           },
           "children": Array [
             Node {
               "attribs": Object {
+                "class": "",
                 "id": "ModalTrapFocus0",
               },
               "children": Array [
@@ -1652,16 +4559,220 @@ LoadedCheerio {
                   "namespace": "http://www.w3.org/1999/xhtml",
                   "next": Node {
                     "attribs": Object {
-                      "class": "closeButton ",
-                      "data-testid": "modal-closebutton",
+                      "class": 
+                        ms-Button
+                        ms-Button--icon
+                        closebuttonCustom
+                        {
+                          -moz-osx-font-smoothing: grayscale;
+                          -webkit-font-smoothing: antialiased;
+                          background-color: transparent;
+                          border-radius: 2px;
+                          border: none;
+                          box-sizing: border-box;
+                          color: #1362ae;
+                          cursor: pointer;
+                          display: inline-block;
+                          font-family: 'Helvetica Neue', Helvetica , Arial, 'Liberation Sans', 'Nimbus Sans L', sans-serif;
+                          font-size: 1rem;
+                          font-weight: 400;
+                          height: 30px;
+                          outline: transparent;
+                          padding-bottom: 0;
+                          padding-left: 4px;
+                          padding-right: 4px;
+                          padding-top: 0;
+                          position: absolute;
+                          right: 10px;
+                          text-align: center;
+                          text-decoration: none;
+                          top: 10px;
+                          user-select: none;
+                          width: 32px;
+                        }
+                        &::-moz-focus-inner {
+                          border: 0;
+                        }
+                        .ms-Fabric--isFocusVisible &:focus:after {
+                          border-radius: 0;
+                          border: 2px solid #1362ae;
+                          bottom: -3px;
+                          content: "";
+                          left: -3px;
+                          outline: transparent;
+                          position: absolute;
+                          right: -3px;
+                          top: -3px;
+                          z-index: 1;
+                        }
+                        @media screen and (-ms-high-contrast: active), (forced-colors: active){.ms-Fabric--isFocusVisible &:focus:after {
+                          bottom: -2px;
+                          left: -2px;
+                          outline-color: ButtonText;
+                          right: -2px;
+                          top: -2px;
+                        }
+                        &:active > * {
+                          left: 0px;
+                          position: relative;
+                          top: 0px;
+                        }
+                        &:hover {
+                          background-color: #f4f4f4;
+                          color: #11599c;
+                        }
+                        @media screen and (-ms-high-contrast: active), (forced-colors: active){&:hover {
+                          border-color: Highlight;
+                          color: Highlight;
+                        }
+                        &:active {
+                          background-color: #eaeaea;
+                          color: #0c3f6f;
+                        }
+                        &.ms-Button--icon {
+                          background: none;
+                          border-radius: 50%;
+                          border-width: 0px;
+                          color: #1362ae;
+                          height: 40px;
+                          padding-bottom: 0px;
+                          padding-left: 0px;
+                          padding-right: 0px;
+                          padding-top: 0px;
+                          width: 40px;
+                        }
+                        &.ms-Button--icon i {
+                          font-size: 1.25rem;
+                        }
+                        &.ms-Button--icon:hover {
+                          background: #cde1f9;
+                          border-color: #1362ae;
+                          border-width: 3px;
+                          border: 3px solid #1362ae;
+                          color: #1362ae;
+                          transition: background-color 0.3s;
+                        }
+                        &.ms-Button--icon:focus {
+                          background: #cde1f9;
+                          border-color: #1362ae;
+                          border-width: 3px;
+                          border: 3px solid #1362ae;
+                          color: #1362ae;
+                          transition: background-color 0.3s;
+                        }
+                        &:focus&:after {
+                          border-color: transparent;
+                        }
+                        &.ms-Button--icon:active {
+                          background-color: #093e61;
+                          border-color: #093e61;
+                          color: #ffffff;
+                        }
+                        &.ms-Button--icon:disabled {
+                          border-color: #b2b2b2;
+                          border-width: 0px;
+                          color: #b2b2b2;
+                        }
+                        &.ms-Button--icon:disabled i {
+                          color: #b2b2b2;
+                        },
+                      "data-is-focusable": "true",
+                      "title": "Lukk",
+                      "type": "button",
                     },
                     "children": Array [
                       Node {
-                        "data": "X",
+                        "attribs": Object {
+                          "class": 
+                            ms-Button-flexContainer
+                            {
+                              align-items: center;
+                              display: flex;
+                              flex-wrap: nowrap;
+                              height: 100%;
+                              justify-content: center;
+                            },
+                          "data-automationid": "splitbuttonprimary",
+                        },
+                        "children": Array [
+                          Node {
+                            "attribs": Object {
+                              "aria-hidden": "true",
+                              "class": 
+                                ms-Icon
+                                ms-Button-icon
+                                {
+                                  display: inline-block;
+                                }
+                                {
+                                  -moz-osx-font-smoothing: grayscale;
+                                  -webkit-font-smoothing: antialiased;
+                                  display: inline-block;
+                                  font-family: "SkeIconfont";
+                                  font-size: inherit;
+                                  font-style: normal;
+                                  font-weight: normal;
+                                  speak: none;
+                                  text-rendering: auto;
+                                  transform: translate(0, 0);
+                                }
+                                {
+                                  flex-shrink: 0;
+                                  font-size: 1.0625rem;
+                                  height: 16px;
+                                  line-height: 16px;
+                                  margin-bottom: 0;
+                                  margin-left: 4px;
+                                  margin-right: 4px;
+                                  margin-top: 0;
+                                  text-align: center;
+                                },
+                              "data-icon-name": "Cancel",
+                              "style": "font-family: \\"SkeIconfont\\";",
+                            },
+                            "children": Array [
+                              Node {
+                                "data": "",
+                                "next": null,
+                                "parent": [Circular],
+                                "prev": null,
+                                "type": "text",
+                              },
+                            ],
+                            "name": "i",
+                            "namespace": "http://www.w3.org/1999/xhtml",
+                            "next": null,
+                            "parent": [Circular],
+                            "prev": null,
+                            "type": "tag",
+                            "x-attribsNamespace": Object {
+                              "aria-hidden": undefined,
+                              "class": undefined,
+                              "data-icon-name": undefined,
+                              "style": undefined,
+                            },
+                            "x-attribsPrefix": Object {
+                              "aria-hidden": undefined,
+                              "class": undefined,
+                              "data-icon-name": undefined,
+                              "style": undefined,
+                            },
+                          },
+                        ],
+                        "name": "span",
+                        "namespace": "http://www.w3.org/1999/xhtml",
                         "next": null,
                         "parent": [Circular],
                         "prev": null,
-                        "type": "text",
+                        "type": "tag",
+                        "x-attribsNamespace": Object {
+                          "class": undefined,
+                          "data-automationid": undefined,
+                        },
+                        "x-attribsPrefix": Object {
+                          "class": undefined,
+                          "data-automationid": undefined,
+                        },
                       },
                     ],
                     "name": "button",
@@ -1723,11 +4834,15 @@ LoadedCheerio {
                     "type": "tag",
                     "x-attribsNamespace": Object {
                       "class": undefined,
-                      "data-testid": undefined,
+                      "data-is-focusable": undefined,
+                      "title": undefined,
+                      "type": undefined,
                     },
                     "x-attribsPrefix": Object {
                       "class": undefined,
-                      "data-testid": undefined,
+                      "data-is-focusable": undefined,
+                      "title": undefined,
+                      "type": undefined,
                     },
                   },
                   "parent": [Circular],
@@ -1748,16 +4863,220 @@ LoadedCheerio {
                 },
                 Node {
                   "attribs": Object {
-                    "class": "closeButton ",
-                    "data-testid": "modal-closebutton",
+                    "class": 
+                      ms-Button
+                      ms-Button--icon
+                      closebuttonCustom
+                      {
+                        -moz-osx-font-smoothing: grayscale;
+                        -webkit-font-smoothing: antialiased;
+                        background-color: transparent;
+                        border-radius: 2px;
+                        border: none;
+                        box-sizing: border-box;
+                        color: #1362ae;
+                        cursor: pointer;
+                        display: inline-block;
+                        font-family: 'Helvetica Neue', Helvetica , Arial, 'Liberation Sans', 'Nimbus Sans L', sans-serif;
+                        font-size: 1rem;
+                        font-weight: 400;
+                        height: 30px;
+                        outline: transparent;
+                        padding-bottom: 0;
+                        padding-left: 4px;
+                        padding-right: 4px;
+                        padding-top: 0;
+                        position: absolute;
+                        right: 10px;
+                        text-align: center;
+                        text-decoration: none;
+                        top: 10px;
+                        user-select: none;
+                        width: 32px;
+                      }
+                      &::-moz-focus-inner {
+                        border: 0;
+                      }
+                      .ms-Fabric--isFocusVisible &:focus:after {
+                        border-radius: 0;
+                        border: 2px solid #1362ae;
+                        bottom: -3px;
+                        content: "";
+                        left: -3px;
+                        outline: transparent;
+                        position: absolute;
+                        right: -3px;
+                        top: -3px;
+                        z-index: 1;
+                      }
+                      @media screen and (-ms-high-contrast: active), (forced-colors: active){.ms-Fabric--isFocusVisible &:focus:after {
+                        bottom: -2px;
+                        left: -2px;
+                        outline-color: ButtonText;
+                        right: -2px;
+                        top: -2px;
+                      }
+                      &:active > * {
+                        left: 0px;
+                        position: relative;
+                        top: 0px;
+                      }
+                      &:hover {
+                        background-color: #f4f4f4;
+                        color: #11599c;
+                      }
+                      @media screen and (-ms-high-contrast: active), (forced-colors: active){&:hover {
+                        border-color: Highlight;
+                        color: Highlight;
+                      }
+                      &:active {
+                        background-color: #eaeaea;
+                        color: #0c3f6f;
+                      }
+                      &.ms-Button--icon {
+                        background: none;
+                        border-radius: 50%;
+                        border-width: 0px;
+                        color: #1362ae;
+                        height: 40px;
+                        padding-bottom: 0px;
+                        padding-left: 0px;
+                        padding-right: 0px;
+                        padding-top: 0px;
+                        width: 40px;
+                      }
+                      &.ms-Button--icon i {
+                        font-size: 1.25rem;
+                      }
+                      &.ms-Button--icon:hover {
+                        background: #cde1f9;
+                        border-color: #1362ae;
+                        border-width: 3px;
+                        border: 3px solid #1362ae;
+                        color: #1362ae;
+                        transition: background-color 0.3s;
+                      }
+                      &.ms-Button--icon:focus {
+                        background: #cde1f9;
+                        border-color: #1362ae;
+                        border-width: 3px;
+                        border: 3px solid #1362ae;
+                        color: #1362ae;
+                        transition: background-color 0.3s;
+                      }
+                      &:focus&:after {
+                        border-color: transparent;
+                      }
+                      &.ms-Button--icon:active {
+                        background-color: #093e61;
+                        border-color: #093e61;
+                        color: #ffffff;
+                      }
+                      &.ms-Button--icon:disabled {
+                        border-color: #b2b2b2;
+                        border-width: 0px;
+                        color: #b2b2b2;
+                      }
+                      &.ms-Button--icon:disabled i {
+                        color: #b2b2b2;
+                      },
+                    "data-is-focusable": "true",
+                    "title": "Lukk",
+                    "type": "button",
                   },
                   "children": Array [
                     Node {
-                      "data": "X",
+                      "attribs": Object {
+                        "class": 
+                          ms-Button-flexContainer
+                          {
+                            align-items: center;
+                            display: flex;
+                            flex-wrap: nowrap;
+                            height: 100%;
+                            justify-content: center;
+                          },
+                        "data-automationid": "splitbuttonprimary",
+                      },
+                      "children": Array [
+                        Node {
+                          "attribs": Object {
+                            "aria-hidden": "true",
+                            "class": 
+                              ms-Icon
+                              ms-Button-icon
+                              {
+                                display: inline-block;
+                              }
+                              {
+                                -moz-osx-font-smoothing: grayscale;
+                                -webkit-font-smoothing: antialiased;
+                                display: inline-block;
+                                font-family: "SkeIconfont";
+                                font-size: inherit;
+                                font-style: normal;
+                                font-weight: normal;
+                                speak: none;
+                                text-rendering: auto;
+                                transform: translate(0, 0);
+                              }
+                              {
+                                flex-shrink: 0;
+                                font-size: 1.0625rem;
+                                height: 16px;
+                                line-height: 16px;
+                                margin-bottom: 0;
+                                margin-left: 4px;
+                                margin-right: 4px;
+                                margin-top: 0;
+                                text-align: center;
+                              },
+                            "data-icon-name": "Cancel",
+                            "style": "font-family: \\"SkeIconfont\\";",
+                          },
+                          "children": Array [
+                            Node {
+                              "data": "",
+                              "next": null,
+                              "parent": [Circular],
+                              "prev": null,
+                              "type": "text",
+                            },
+                          ],
+                          "name": "i",
+                          "namespace": "http://www.w3.org/1999/xhtml",
+                          "next": null,
+                          "parent": [Circular],
+                          "prev": null,
+                          "type": "tag",
+                          "x-attribsNamespace": Object {
+                            "aria-hidden": undefined,
+                            "class": undefined,
+                            "data-icon-name": undefined,
+                            "style": undefined,
+                          },
+                          "x-attribsPrefix": Object {
+                            "aria-hidden": undefined,
+                            "class": undefined,
+                            "data-icon-name": undefined,
+                            "style": undefined,
+                          },
+                        },
+                      ],
+                      "name": "span",
+                      "namespace": "http://www.w3.org/1999/xhtml",
                       "next": null,
                       "parent": [Circular],
                       "prev": null,
-                      "type": "text",
+                      "type": "tag",
+                      "x-attribsNamespace": Object {
+                        "class": undefined,
+                        "data-automationid": undefined,
+                      },
+                      "x-attribsPrefix": Object {
+                        "class": undefined,
+                        "data-automationid": undefined,
+                      },
                     },
                   ],
                   "name": "button",
@@ -1845,11 +5164,15 @@ LoadedCheerio {
                   "type": "tag",
                   "x-attribsNamespace": Object {
                     "class": undefined,
-                    "data-testid": undefined,
+                    "data-is-focusable": undefined,
+                    "title": undefined,
+                    "type": undefined,
                   },
                   "x-attribsPrefix": Object {
                     "class": undefined,
-                    "data-testid": undefined,
+                    "data-is-focusable": undefined,
+                    "title": undefined,
+                    "type": undefined,
                   },
                 },
                 Node {
@@ -1897,16 +5220,220 @@ LoadedCheerio {
                   "parent": [Circular],
                   "prev": Node {
                     "attribs": Object {
-                      "class": "closeButton ",
-                      "data-testid": "modal-closebutton",
+                      "class": 
+                        ms-Button
+                        ms-Button--icon
+                        closebuttonCustom
+                        {
+                          -moz-osx-font-smoothing: grayscale;
+                          -webkit-font-smoothing: antialiased;
+                          background-color: transparent;
+                          border-radius: 2px;
+                          border: none;
+                          box-sizing: border-box;
+                          color: #1362ae;
+                          cursor: pointer;
+                          display: inline-block;
+                          font-family: 'Helvetica Neue', Helvetica , Arial, 'Liberation Sans', 'Nimbus Sans L', sans-serif;
+                          font-size: 1rem;
+                          font-weight: 400;
+                          height: 30px;
+                          outline: transparent;
+                          padding-bottom: 0;
+                          padding-left: 4px;
+                          padding-right: 4px;
+                          padding-top: 0;
+                          position: absolute;
+                          right: 10px;
+                          text-align: center;
+                          text-decoration: none;
+                          top: 10px;
+                          user-select: none;
+                          width: 32px;
+                        }
+                        &::-moz-focus-inner {
+                          border: 0;
+                        }
+                        .ms-Fabric--isFocusVisible &:focus:after {
+                          border-radius: 0;
+                          border: 2px solid #1362ae;
+                          bottom: -3px;
+                          content: "";
+                          left: -3px;
+                          outline: transparent;
+                          position: absolute;
+                          right: -3px;
+                          top: -3px;
+                          z-index: 1;
+                        }
+                        @media screen and (-ms-high-contrast: active), (forced-colors: active){.ms-Fabric--isFocusVisible &:focus:after {
+                          bottom: -2px;
+                          left: -2px;
+                          outline-color: ButtonText;
+                          right: -2px;
+                          top: -2px;
+                        }
+                        &:active > * {
+                          left: 0px;
+                          position: relative;
+                          top: 0px;
+                        }
+                        &:hover {
+                          background-color: #f4f4f4;
+                          color: #11599c;
+                        }
+                        @media screen and (-ms-high-contrast: active), (forced-colors: active){&:hover {
+                          border-color: Highlight;
+                          color: Highlight;
+                        }
+                        &:active {
+                          background-color: #eaeaea;
+                          color: #0c3f6f;
+                        }
+                        &.ms-Button--icon {
+                          background: none;
+                          border-radius: 50%;
+                          border-width: 0px;
+                          color: #1362ae;
+                          height: 40px;
+                          padding-bottom: 0px;
+                          padding-left: 0px;
+                          padding-right: 0px;
+                          padding-top: 0px;
+                          width: 40px;
+                        }
+                        &.ms-Button--icon i {
+                          font-size: 1.25rem;
+                        }
+                        &.ms-Button--icon:hover {
+                          background: #cde1f9;
+                          border-color: #1362ae;
+                          border-width: 3px;
+                          border: 3px solid #1362ae;
+                          color: #1362ae;
+                          transition: background-color 0.3s;
+                        }
+                        &.ms-Button--icon:focus {
+                          background: #cde1f9;
+                          border-color: #1362ae;
+                          border-width: 3px;
+                          border: 3px solid #1362ae;
+                          color: #1362ae;
+                          transition: background-color 0.3s;
+                        }
+                        &:focus&:after {
+                          border-color: transparent;
+                        }
+                        &.ms-Button--icon:active {
+                          background-color: #093e61;
+                          border-color: #093e61;
+                          color: #ffffff;
+                        }
+                        &.ms-Button--icon:disabled {
+                          border-color: #b2b2b2;
+                          border-width: 0px;
+                          color: #b2b2b2;
+                        }
+                        &.ms-Button--icon:disabled i {
+                          color: #b2b2b2;
+                        },
+                      "data-is-focusable": "true",
+                      "title": "Lukk",
+                      "type": "button",
                     },
                     "children": Array [
                       Node {
-                        "data": "X",
+                        "attribs": Object {
+                          "class": 
+                            ms-Button-flexContainer
+                            {
+                              align-items: center;
+                              display: flex;
+                              flex-wrap: nowrap;
+                              height: 100%;
+                              justify-content: center;
+                            },
+                          "data-automationid": "splitbuttonprimary",
+                        },
+                        "children": Array [
+                          Node {
+                            "attribs": Object {
+                              "aria-hidden": "true",
+                              "class": 
+                                ms-Icon
+                                ms-Button-icon
+                                {
+                                  display: inline-block;
+                                }
+                                {
+                                  -moz-osx-font-smoothing: grayscale;
+                                  -webkit-font-smoothing: antialiased;
+                                  display: inline-block;
+                                  font-family: "SkeIconfont";
+                                  font-size: inherit;
+                                  font-style: normal;
+                                  font-weight: normal;
+                                  speak: none;
+                                  text-rendering: auto;
+                                  transform: translate(0, 0);
+                                }
+                                {
+                                  flex-shrink: 0;
+                                  font-size: 1.0625rem;
+                                  height: 16px;
+                                  line-height: 16px;
+                                  margin-bottom: 0;
+                                  margin-left: 4px;
+                                  margin-right: 4px;
+                                  margin-top: 0;
+                                  text-align: center;
+                                },
+                              "data-icon-name": "Cancel",
+                              "style": "font-family: \\"SkeIconfont\\";",
+                            },
+                            "children": Array [
+                              Node {
+                                "data": "",
+                                "next": null,
+                                "parent": [Circular],
+                                "prev": null,
+                                "type": "text",
+                              },
+                            ],
+                            "name": "i",
+                            "namespace": "http://www.w3.org/1999/xhtml",
+                            "next": null,
+                            "parent": [Circular],
+                            "prev": null,
+                            "type": "tag",
+                            "x-attribsNamespace": Object {
+                              "aria-hidden": undefined,
+                              "class": undefined,
+                              "data-icon-name": undefined,
+                              "style": undefined,
+                            },
+                            "x-attribsPrefix": Object {
+                              "aria-hidden": undefined,
+                              "class": undefined,
+                              "data-icon-name": undefined,
+                              "style": undefined,
+                            },
+                          },
+                        ],
+                        "name": "span",
+                        "namespace": "http://www.w3.org/1999/xhtml",
                         "next": null,
                         "parent": [Circular],
                         "prev": null,
-                        "type": "text",
+                        "type": "tag",
+                        "x-attribsNamespace": Object {
+                          "class": undefined,
+                          "data-automationid": undefined,
+                        },
+                        "x-attribsPrefix": Object {
+                          "class": undefined,
+                          "data-automationid": undefined,
+                        },
                       },
                     ],
                     "name": "button",
@@ -1943,11 +5470,15 @@ LoadedCheerio {
                     "type": "tag",
                     "x-attribsNamespace": Object {
                       "class": undefined,
-                      "data-testid": undefined,
+                      "data-is-focusable": undefined,
+                      "title": undefined,
+                      "type": undefined,
                     },
                     "x-attribsPrefix": Object {
                       "class": undefined,
-                      "data-testid": undefined,
+                      "data-is-focusable": undefined,
+                      "title": undefined,
+                      "type": undefined,
                     },
                   },
                   "type": "tag",
@@ -1989,16 +5520,220 @@ LoadedCheerio {
                     "parent": [Circular],
                     "prev": Node {
                       "attribs": Object {
-                        "class": "closeButton ",
-                        "data-testid": "modal-closebutton",
+                        "class": 
+                          ms-Button
+                          ms-Button--icon
+                          closebuttonCustom
+                          {
+                            -moz-osx-font-smoothing: grayscale;
+                            -webkit-font-smoothing: antialiased;
+                            background-color: transparent;
+                            border-radius: 2px;
+                            border: none;
+                            box-sizing: border-box;
+                            color: #1362ae;
+                            cursor: pointer;
+                            display: inline-block;
+                            font-family: 'Helvetica Neue', Helvetica , Arial, 'Liberation Sans', 'Nimbus Sans L', sans-serif;
+                            font-size: 1rem;
+                            font-weight: 400;
+                            height: 30px;
+                            outline: transparent;
+                            padding-bottom: 0;
+                            padding-left: 4px;
+                            padding-right: 4px;
+                            padding-top: 0;
+                            position: absolute;
+                            right: 10px;
+                            text-align: center;
+                            text-decoration: none;
+                            top: 10px;
+                            user-select: none;
+                            width: 32px;
+                          }
+                          &::-moz-focus-inner {
+                            border: 0;
+                          }
+                          .ms-Fabric--isFocusVisible &:focus:after {
+                            border-radius: 0;
+                            border: 2px solid #1362ae;
+                            bottom: -3px;
+                            content: "";
+                            left: -3px;
+                            outline: transparent;
+                            position: absolute;
+                            right: -3px;
+                            top: -3px;
+                            z-index: 1;
+                          }
+                          @media screen and (-ms-high-contrast: active), (forced-colors: active){.ms-Fabric--isFocusVisible &:focus:after {
+                            bottom: -2px;
+                            left: -2px;
+                            outline-color: ButtonText;
+                            right: -2px;
+                            top: -2px;
+                          }
+                          &:active > * {
+                            left: 0px;
+                            position: relative;
+                            top: 0px;
+                          }
+                          &:hover {
+                            background-color: #f4f4f4;
+                            color: #11599c;
+                          }
+                          @media screen and (-ms-high-contrast: active), (forced-colors: active){&:hover {
+                            border-color: Highlight;
+                            color: Highlight;
+                          }
+                          &:active {
+                            background-color: #eaeaea;
+                            color: #0c3f6f;
+                          }
+                          &.ms-Button--icon {
+                            background: none;
+                            border-radius: 50%;
+                            border-width: 0px;
+                            color: #1362ae;
+                            height: 40px;
+                            padding-bottom: 0px;
+                            padding-left: 0px;
+                            padding-right: 0px;
+                            padding-top: 0px;
+                            width: 40px;
+                          }
+                          &.ms-Button--icon i {
+                            font-size: 1.25rem;
+                          }
+                          &.ms-Button--icon:hover {
+                            background: #cde1f9;
+                            border-color: #1362ae;
+                            border-width: 3px;
+                            border: 3px solid #1362ae;
+                            color: #1362ae;
+                            transition: background-color 0.3s;
+                          }
+                          &.ms-Button--icon:focus {
+                            background: #cde1f9;
+                            border-color: #1362ae;
+                            border-width: 3px;
+                            border: 3px solid #1362ae;
+                            color: #1362ae;
+                            transition: background-color 0.3s;
+                          }
+                          &:focus&:after {
+                            border-color: transparent;
+                          }
+                          &.ms-Button--icon:active {
+                            background-color: #093e61;
+                            border-color: #093e61;
+                            color: #ffffff;
+                          }
+                          &.ms-Button--icon:disabled {
+                            border-color: #b2b2b2;
+                            border-width: 0px;
+                            color: #b2b2b2;
+                          }
+                          &.ms-Button--icon:disabled i {
+                            color: #b2b2b2;
+                          },
+                        "data-is-focusable": "true",
+                        "title": "Lukk",
+                        "type": "button",
                       },
                       "children": Array [
                         Node {
-                          "data": "X",
+                          "attribs": Object {
+                            "class": 
+                              ms-Button-flexContainer
+                              {
+                                align-items: center;
+                                display: flex;
+                                flex-wrap: nowrap;
+                                height: 100%;
+                                justify-content: center;
+                              },
+                            "data-automationid": "splitbuttonprimary",
+                          },
+                          "children": Array [
+                            Node {
+                              "attribs": Object {
+                                "aria-hidden": "true",
+                                "class": 
+                                  ms-Icon
+                                  ms-Button-icon
+                                  {
+                                    display: inline-block;
+                                  }
+                                  {
+                                    -moz-osx-font-smoothing: grayscale;
+                                    -webkit-font-smoothing: antialiased;
+                                    display: inline-block;
+                                    font-family: "SkeIconfont";
+                                    font-size: inherit;
+                                    font-style: normal;
+                                    font-weight: normal;
+                                    speak: none;
+                                    text-rendering: auto;
+                                    transform: translate(0, 0);
+                                  }
+                                  {
+                                    flex-shrink: 0;
+                                    font-size: 1.0625rem;
+                                    height: 16px;
+                                    line-height: 16px;
+                                    margin-bottom: 0;
+                                    margin-left: 4px;
+                                    margin-right: 4px;
+                                    margin-top: 0;
+                                    text-align: center;
+                                  },
+                                "data-icon-name": "Cancel",
+                                "style": "font-family: \\"SkeIconfont\\";",
+                              },
+                              "children": Array [
+                                Node {
+                                  "data": "",
+                                  "next": null,
+                                  "parent": [Circular],
+                                  "prev": null,
+                                  "type": "text",
+                                },
+                              ],
+                              "name": "i",
+                              "namespace": "http://www.w3.org/1999/xhtml",
+                              "next": null,
+                              "parent": [Circular],
+                              "prev": null,
+                              "type": "tag",
+                              "x-attribsNamespace": Object {
+                                "aria-hidden": undefined,
+                                "class": undefined,
+                                "data-icon-name": undefined,
+                                "style": undefined,
+                              },
+                              "x-attribsPrefix": Object {
+                                "aria-hidden": undefined,
+                                "class": undefined,
+                                "data-icon-name": undefined,
+                                "style": undefined,
+                              },
+                            },
+                          ],
+                          "name": "span",
+                          "namespace": "http://www.w3.org/1999/xhtml",
                           "next": null,
                           "parent": [Circular],
                           "prev": null,
-                          "type": "text",
+                          "type": "tag",
+                          "x-attribsNamespace": Object {
+                            "class": undefined,
+                            "data-automationid": undefined,
+                          },
+                          "x-attribsPrefix": Object {
+                            "class": undefined,
+                            "data-automationid": undefined,
+                          },
                         },
                       ],
                       "name": "button",
@@ -2035,11 +5770,15 @@ LoadedCheerio {
                       "type": "tag",
                       "x-attribsNamespace": Object {
                         "class": undefined,
-                        "data-testid": undefined,
+                        "data-is-focusable": undefined,
+                        "title": undefined,
+                        "type": undefined,
                       },
                       "x-attribsPrefix": Object {
                         "class": undefined,
-                        "data-testid": undefined,
+                        "data-is-focusable": undefined,
+                        "title": undefined,
+                        "type": undefined,
                       },
                     },
                     "type": "tag",
@@ -2072,9 +5811,11 @@ LoadedCheerio {
               "prev": null,
               "type": "tag",
               "x-attribsNamespace": Object {
+                "class": undefined,
                 "id": undefined,
               },
               "x-attribsPrefix": Object {
+                "class": undefined,
                 "id": undefined,
               },
             },

@@ -1,12 +1,11 @@
-**Modal : enkel modal fungerende med web-components**
-
-Lorem ipsum:
+**Modal: Enkel modalboks**
 
 ```js
-import { ActionButton } from '@skatteetaten/frontend-components/ActionButton';
+import { Button } from '@skatteetaten/frontend-components/Button';
 import { ModalProvider } from '@skatteetaten/frontend-components/Modal/ModalProvider';
 import { useModalContext } from '@skatteetaten/frontend-components/Modal//ModalContext';
 import { Modal } from '@skatteetaten/frontend-components/Modal';
+import { Typography } from '@skatteetaten/frontend-components/Typography';
 
 const TestComponent = ({}) => {
   const modal = useModalContext();
@@ -17,26 +16,31 @@ const TestComponent = ({}) => {
 
   return (
     <>
-      <ActionButton
-        icon={'ChatBubbleOutline'}
-        onClick={toggleModal}
-        aria-haspopup
-      >
-        {'Toggle Modal'}
-      </ActionButton>
+      <Button onClick={toggleModal} aria-haspopup>
+        {'Åpne modal'}
+      </Button>
 
       {modal && modal.isOpen('testModal') && (
         <Modal name={'testModal'}>
-          <h2>{'Random title'}</h2>
-
-          <ActionButton onClick={toggleModal}>{'Close'}</ActionButton>
+          <Typography>
+            <h3 style={{ marginTop: '0px' }}>
+              {'Kansellere arbeidsoppgaven?'}
+            </h3>
+            <p>Er du sikker på at du vil kansellere arbeidsoppgaven?</p>
+          </Typography>
+          <div style={{ marginTop: '16px' }}>
+            <Button buttonStyle="primary" onClick={toggleModal}>
+              {'Kanseller'}
+            </Button>
+            <Button onClick={toggleModal}>{'Avbryt'}</Button>
+          </div>
         </Modal>
       )}
     </>
   );
 };
 
-<div className="ExampleSpacing8">
+<div>
   <ModalProvider>
     <TestComponent />
   </ModalProvider>
