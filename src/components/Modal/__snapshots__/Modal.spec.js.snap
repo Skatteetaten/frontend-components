@@ -6,7 +6,7 @@ exports[`Modal modal med rootNode instansierer Modal komponent i shadow-domen i 
 >
   <div
     class=
-        
+
         {
           align-items: center;
           bottom: 0px;
@@ -21,7 +21,7 @@ exports[`Modal modal med rootNode instansierer Modal komponent i shadow-domen i 
   >
     <div
       class=
-          
+
           {
             background: #ffffff;
             border: 4px solid #6f2c3f;
@@ -249,7 +249,7 @@ exports[`Modal modal med rootNode instansierer Modal komponent i shadow-domen i 
     </div>
     <div
       class=
-          
+
           {
             background: rgba(0, 0, 0, 0.4);
             bottom: 0px;
@@ -3113,7 +3113,7 @@ LoadedCheerio {
   "0": Node {
     "attribs": Object {
       "class": 
-        
+
         {
           align-items: center;
           bottom: 0px;
@@ -3130,7 +3130,7 @@ LoadedCheerio {
       Node {
         "attribs": Object {
           "class": 
-            
+
             {
               background: #ffffff;
               border: 4px solid #6f2c3f;
@@ -4508,7 +4508,7 @@ LoadedCheerio {
         "prev": Node {
           "attribs": Object {
             "class": 
-              
+
               {
                 background: #ffffff;
                 border: 4px solid #6f2c3f;

@@ -8,7 +8,7 @@ import {
 } from '@fluentui/react/lib/FocusTrapZone';
 import { IconButton } from '../IconButton';
 import { BrandContext } from '../SkeBasis';
-
+import classnames from 'classnames';
 import i18n, { t } from './../utils/i18n/i18n';
 import { useModalContext, ModalInstance } from './ModalContext';
 import { ModalProps } from './Modal.types';
@@ -84,21 +84,23 @@ const ModalBase: React.FC<ModalProps> = (props: ModalProps) => {
     <BrandContext.Consumer>
       {({ tag }) => (
         <div
-          className={`${getClassNames(props, tag).wrapper} ${
-            customClassNames?.wrapper ?? ''
-          }`}
+          className={classnames(
+            getClassNames(props, tag).wrapper,
+            customClassNames?.wrapper
+          )}
         >
           <div
             ref={onRefChange}
-            className={`${getClassNames(props, tag).modal} ${
-              customClassNames?.modal ?? ''
-            }`}
+            className={classnames(
+              getClassNames(props, tag).modal,
+              customClassNames?.modal
+            )}
           >
             <FocusTrapZone
               id={focusTrapZoneId}
               ref={focusTrapZoneElm}
               componentRef={focusTrapZone}
-              className={customClassNames?.trapzone ?? ''}
+              className={classnames(customClassNames?.trapzone)}
               elementToFocusOnDismiss={elementToFocusOnDismiss}
               isClickableOutsideFocusTrap
             >
@@ -106,9 +108,10 @@ const ModalBase: React.FC<ModalProps> = (props: ModalProps) => {
                 <IconButton
                   uniqueId={'modal-closebutton'}
                   title={t('modal.closebutton')}
-                  className={`${getClassNames(props, tag).closeButton} ${
-                    customClassNames?.closebutton ?? ''
-                  }`}
+                  className={classnames(
+                    getClassNames(props, tag).closeButton,
+                    customClassNames?.closebutton
+                  )}
                   icon={'Cancel'}
                   onClick={closeModal}
                 />
@@ -118,9 +121,10 @@ const ModalBase: React.FC<ModalProps> = (props: ModalProps) => {
           </div>
           <div
             data-testid={'modal-overlay'}
-            className={`${getClassNames(props, tag).overlay} ${
-              customClassNames?.overlay ?? ''
-            }`}
+            className={classnames(
+              getClassNames(props, tag).overlay,
+              customClassNames?.overlay
+            )}
             onClick={closeModal}
           />
         </div>
