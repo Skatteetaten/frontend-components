@@ -6,7 +6,6 @@ import {
   FocusTrapZone,
   IFocusTrapZone,
 } from '@fluentui/react/lib/FocusTrapZone';
-//import classnames from 'classnames';
 import { IconButton } from '../IconButton';
 import { BrandContext } from '../SkeBasis';
 
