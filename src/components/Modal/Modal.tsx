@@ -10,7 +10,6 @@ import { IconButton } from '../IconButton';
 import { BrandContext } from '../SkeBasis';
 
 import i18n, { t } from './../utils/i18n/i18n';
-import { Overlay } from './components/Overlay';
 import { useModalContext, ModalInstance } from './ModalContext';
 import { ModalProps } from './Modal.types';
 import { getClassNames } from './Modal.classNames';
@@ -38,17 +37,13 @@ const ModalBase: React.FC<ModalProps> = (props: ModalProps) => {
   const focusTrapZone = React.useRef<IFocusTrapZone>(null);
   const focusTrapZoneElm = React.useRef<HTMLDivElement>(null);
 
-  if (language) {
-    i18n.changeLanguage(language);
-  }
+  language && i18n.changeLanguage(language);
 
   const closeModal = (): void => {
     modalInstance && modalInstance.close(name);
     document.body.style.overflow = '';
 
-    if (onClose && modalRef) {
-      onClose(modalRef);
-    }
+    onClose && modalRef && onClose(modalRef);
   };
 
   const onRefChange = React.useCallback((node: HTMLDivElement) => {
@@ -121,7 +116,8 @@ const ModalBase: React.FC<ModalProps> = (props: ModalProps) => {
               {children}
             </FocusTrapZone>
           </div>
-          <Overlay
+          <div
+            data-testid={'modal-overlay'}
             className={`${getClassNames(props, tag).overlay} ${
               customClassNames?.overlay ?? ''
             }`}
