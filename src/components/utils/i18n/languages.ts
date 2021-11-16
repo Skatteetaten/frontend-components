@@ -1,5 +1,6 @@
 export const languages = {
   nb_NO: {
+    'modal.closebutton': 'Lukk',
     'datepicker.ariaLabel': 'Kalender',
     'datepicker.goToToday': 'I dag',
     'datepicker.invalidInputErrorMessage':
@@ -34,6 +35,7 @@ export const languages = {
     'tablerow.expandable.title': 'Mer informasjon',
   },
   nn_NO: {
+    'modal.closebutton': 'Lukk',
     'datepicker.ariaLabel': 'Kalender',
     'datepicker.goToToday': 'I dag',
     'datepicker.invalidInputErrorMessage':
@@ -66,6 +68,7 @@ export const languages = {
     'tablerow.expandable.title': 'Meir informasjon',
   },
   en_GB: {
+    'modal.closebutton': 'Close',
     'datepicker.ariaLabel': 'Calendar',
     'datepicker.goToToday': 'Today',
     'datepicker.invalidInputErrorMessage':

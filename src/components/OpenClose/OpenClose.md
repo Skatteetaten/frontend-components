@@ -26,7 +26,13 @@ const paraStyle = {
         </li>
         <li>godtgjørelser til direktør eller styremedlem i selskap i Norge</li>
         <li>gratiale, tantieme eller lignende ytelser fra norske selskap</li>
-        <li>lønn til utleid utenlandsk arbeidstaker, inkludert feriepenger</li>
+        <li>
+          lønn til utleid utenlandsk arbeidstaker, inkludert{' '}
+          <a href="#">feriepenger</a>
+        </li>
+        <li>
+          <button>test</button>
+        </li>
         <li>
           utgiftsgodtgjørelser, refusjoner og naturalytelser som er
           skattepliktige fordeler for deg, inkludert dekning av pendlerkostnader
@@ -54,7 +60,13 @@ const paraStyle = {
         </li>
         <li>godtgjørelser til direktør eller styremedlem i selskap i Norge</li>
         <li>gratiale, tantieme eller lignende ytelser fra norske selskap</li>
-        <li>lønn til utleid utenlandsk arbeidstaker, inkludert feriepenger</li>
+        <li>
+          lønn til utleid utenlandsk arbeidstaker, inkludert{' '}
+          <a href="#">feriepenger</a>
+        </li>
+        <li>
+          <button>test</button>
+        </li>
         <li>
           utgiftsgodtgjørelser, refusjoner og naturalytelser som er
           skattepliktige fordeler for deg, inkludert dekning av pendlerkostnader
