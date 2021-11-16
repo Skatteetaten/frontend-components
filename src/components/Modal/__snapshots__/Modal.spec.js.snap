@@ -98,7 +98,7 @@ exports[`Modal modal med rootNode instansierer Modal komponent i shadow-domen i 
                 border: 0;
               }
               .ms-Fabric--isFocusVisible &:focus:after {
-                border-radius: 0;
+                border-radius: 50px;
                 border: 2px solid #1362ae;
                 bottom: -3px;
                 content: "";
@@ -136,7 +136,7 @@ exports[`Modal modal med rootNode instansierer Modal komponent i shadow-domen i 
               &.ms-Button--icon {
                 background: none;
                 border-radius: 50%;
-                border-width: 0px;
+                border: 3px solid transparent;
                 color: #1362ae;
                 height: 40px;
                 padding-bottom: 0px;
@@ -150,32 +150,18 @@ exports[`Modal modal med rootNode instansierer Modal komponent i shadow-domen i 
               }
               &.ms-Button--icon:hover {
                 background: #cde1f9;
-                border-color: #1362ae;
-                border-width: 3px;
-                border: 3px solid #1362ae;
                 color: #1362ae;
-                transition: background-color 0.3s;
-              }
-              &.ms-Button--icon:focus {
-                background: #cde1f9;
-                border-color: #1362ae;
-                border-width: 3px;
-                border: 3px solid #1362ae;
-                color: #1362ae;
-                transition: background-color 0.3s;
-              }
-              &:focus&:after {
-                border-color: transparent;
+                transition: background-color 0.2s;
               }
               &.ms-Button--icon:active {
-                background-color: #093e61;
-                border-color: #093e61;
-                color: #ffffff;
+                transform: translateY(2px);
+                transition: 0.15s;
               }
               &.ms-Button--icon:disabled {
                 border-color: #b2b2b2;
-                border-width: 0px;
+                border: 3px solid transparent;
                 color: #b2b2b2;
+                cursor: not-allowed;
               }
               &.ms-Button--icon:disabled i {
                 color: #b2b2b2;
@@ -373,7 +359,7 @@ LoadedCheerio {
                         border: 0;
                       }
                       .ms-Fabric--isFocusVisible &:focus:after {
-                        border-radius: 0;
+                        border-radius: 50px;
                         border: 2px solid #1362ae;
                         bottom: -3px;
                         content: "";
@@ -411,7 +397,7 @@ LoadedCheerio {
                       &.ms-Button--icon {
                         background: none;
                         border-radius: 50%;
-                        border-width: 0px;
+                        border: 3px solid transparent;
                         color: #1362ae;
                         height: 40px;
                         padding-bottom: 0px;
@@ -425,32 +411,18 @@ LoadedCheerio {
                       }
                       &.ms-Button--icon:hover {
                         background: #cde1f9;
-                        border-color: #1362ae;
-                        border-width: 3px;
-                        border: 3px solid #1362ae;
                         color: #1362ae;
-                        transition: background-color 0.3s;
-                      }
-                      &.ms-Button--icon:focus {
-                        background: #cde1f9;
-                        border-color: #1362ae;
-                        border-width: 3px;
-                        border: 3px solid #1362ae;
-                        color: #1362ae;
-                        transition: background-color 0.3s;
-                      }
-                      &:focus&:after {
-                        border-color: transparent;
+                        transition: background-color 0.2s;
                       }
                       &.ms-Button--icon:active {
-                        background-color: #093e61;
-                        border-color: #093e61;
-                        color: #ffffff;
+                        transform: translateY(2px);
+                        transition: 0.15s;
                       }
                       &.ms-Button--icon:disabled {
                         border-color: #b2b2b2;
-                        border-width: 0px;
+                        border: 3px solid transparent;
                         color: #b2b2b2;
+                        cursor: not-allowed;
                       }
                       &.ms-Button--icon:disabled i {
                         color: #b2b2b2;
@@ -677,7 +649,7 @@ LoadedCheerio {
                       border: 0;
                     }
                     .ms-Fabric--isFocusVisible &:focus:after {
-                      border-radius: 0;
+                      border-radius: 50px;
                       border: 2px solid #1362ae;
                       bottom: -3px;
                       content: "";
@@ -715,7 +687,7 @@ LoadedCheerio {
                     &.ms-Button--icon {
                       background: none;
                       border-radius: 50%;
-                      border-width: 0px;
+                      border: 3px solid transparent;
                       color: #1362ae;
                       height: 40px;
                       padding-bottom: 0px;
@@ -729,32 +701,18 @@ LoadedCheerio {
                     }
                     &.ms-Button--icon:hover {
                       background: #cde1f9;
-                      border-color: #1362ae;
-                      border-width: 3px;
-                      border: 3px solid #1362ae;
                       color: #1362ae;
-                      transition: background-color 0.3s;
-                    }
-                    &.ms-Button--icon:focus {
-                      background: #cde1f9;
-                      border-color: #1362ae;
-                      border-width: 3px;
-                      border: 3px solid #1362ae;
-                      color: #1362ae;
-                      transition: background-color 0.3s;
-                    }
-                    &:focus&:after {
-                      border-color: transparent;
+                      transition: background-color 0.2s;
                     }
                     &.ms-Button--icon:active {
-                      background-color: #093e61;
-                      border-color: #093e61;
-                      color: #ffffff;
+                      transform: translateY(2px);
+                      transition: 0.15s;
                     }
                     &.ms-Button--icon:disabled {
                       border-color: #b2b2b2;
-                      border-width: 0px;
+                      border: 3px solid transparent;
                       color: #b2b2b2;
+                      cursor: not-allowed;
                     }
                     &.ms-Button--icon:disabled i {
                       color: #b2b2b2;
@@ -1034,7 +992,7 @@ LoadedCheerio {
                         border: 0;
                       }
                       .ms-Fabric--isFocusVisible &:focus:after {
-                        border-radius: 0;
+                        border-radius: 50px;
                         border: 2px solid #1362ae;
                         bottom: -3px;
                         content: "";
@@ -1072,7 +1030,7 @@ LoadedCheerio {
                       &.ms-Button--icon {
                         background: none;
                         border-radius: 50%;
-                        border-width: 0px;
+                        border: 3px solid transparent;
                         color: #1362ae;
                         height: 40px;
                         padding-bottom: 0px;
@@ -1086,32 +1044,18 @@ LoadedCheerio {
                       }
                       &.ms-Button--icon:hover {
                         background: #cde1f9;
-                        border-color: #1362ae;
-                        border-width: 3px;
-                        border: 3px solid #1362ae;
                         color: #1362ae;
-                        transition: background-color 0.3s;
-                      }
-                      &.ms-Button--icon:focus {
-                        background: #cde1f9;
-                        border-color: #1362ae;
-                        border-width: 3px;
-                        border: 3px solid #1362ae;
-                        color: #1362ae;
-                        transition: background-color 0.3s;
-                      }
-                      &:focus&:after {
-                        border-color: transparent;
+                        transition: background-color 0.2s;
                       }
                       &.ms-Button--icon:active {
-                        background-color: #093e61;
-                        border-color: #093e61;
-                        color: #ffffff;
+                        transform: translateY(2px);
+                        transition: 0.15s;
                       }
                       &.ms-Button--icon:disabled {
                         border-color: #b2b2b2;
-                        border-width: 0px;
+                        border: 3px solid transparent;
                         color: #b2b2b2;
+                        cursor: not-allowed;
                       }
                       &.ms-Button--icon:disabled i {
                         color: #b2b2b2;
@@ -1334,7 +1278,7 @@ LoadedCheerio {
                           border: 0;
                         }
                         .ms-Fabric--isFocusVisible &:focus:after {
-                          border-radius: 0;
+                          border-radius: 50px;
                           border: 2px solid #1362ae;
                           bottom: -3px;
                           content: "";
@@ -1372,7 +1316,7 @@ LoadedCheerio {
                         &.ms-Button--icon {
                           background: none;
                           border-radius: 50%;
-                          border-width: 0px;
+                          border: 3px solid transparent;
                           color: #1362ae;
                           height: 40px;
                           padding-bottom: 0px;
@@ -1386,32 +1330,18 @@ LoadedCheerio {
                         }
                         &.ms-Button--icon:hover {
                           background: #cde1f9;
-                          border-color: #1362ae;
-                          border-width: 3px;
-                          border: 3px solid #1362ae;
                           color: #1362ae;
-                          transition: background-color 0.3s;
-                        }
-                        &.ms-Button--icon:focus {
-                          background: #cde1f9;
-                          border-color: #1362ae;
-                          border-width: 3px;
-                          border: 3px solid #1362ae;
-                          color: #1362ae;
-                          transition: background-color 0.3s;
-                        }
-                        &:focus&:after {
-                          border-color: transparent;
+                          transition: background-color 0.2s;
                         }
                         &.ms-Button--icon:active {
-                          background-color: #093e61;
-                          border-color: #093e61;
-                          color: #ffffff;
+                          transform: translateY(2px);
+                          transition: 0.15s;
                         }
                         &.ms-Button--icon:disabled {
                           border-color: #b2b2b2;
-                          border-width: 0px;
+                          border: 3px solid transparent;
                           color: #b2b2b2;
+                          cursor: not-allowed;
                         }
                         &.ms-Button--icon:disabled i {
                           color: #b2b2b2;
@@ -1751,7 +1681,7 @@ LoadedCheerio {
                           border: 0;
                         }
                         .ms-Fabric--isFocusVisible &:focus:after {
-                          border-radius: 0;
+                          border-radius: 50px;
                           border: 2px solid #1362ae;
                           bottom: -3px;
                           content: "";
@@ -1789,7 +1719,7 @@ LoadedCheerio {
                         &.ms-Button--icon {
                           background: none;
                           border-radius: 50%;
-                          border-width: 0px;
+                          border: 3px solid transparent;
                           color: #1362ae;
                           height: 40px;
                           padding-bottom: 0px;
@@ -1803,32 +1733,18 @@ LoadedCheerio {
                         }
                         &.ms-Button--icon:hover {
                           background: #cde1f9;
-                          border-color: #1362ae;
-                          border-width: 3px;
-                          border: 3px solid #1362ae;
                           color: #1362ae;
-                          transition: background-color 0.3s;
-                        }
-                        &.ms-Button--icon:focus {
-                          background: #cde1f9;
-                          border-color: #1362ae;
-                          border-width: 3px;
-                          border: 3px solid #1362ae;
-                          color: #1362ae;
-                          transition: background-color 0.3s;
-                        }
-                        &:focus&:after {
-                          border-color: transparent;
+                          transition: background-color 0.2s;
                         }
                         &.ms-Button--icon:active {
-                          background-color: #093e61;
-                          border-color: #093e61;
-                          color: #ffffff;
+                          transform: translateY(2px);
+                          transition: 0.15s;
                         }
                         &.ms-Button--icon:disabled {
                           border-color: #b2b2b2;
-                          border-width: 0px;
+                          border: 3px solid transparent;
                           color: #b2b2b2;
+                          cursor: not-allowed;
                         }
                         &.ms-Button--icon:disabled i {
                           color: #b2b2b2;
@@ -2055,7 +1971,7 @@ LoadedCheerio {
                         border: 0;
                       }
                       .ms-Fabric--isFocusVisible &:focus:after {
-                        border-radius: 0;
+                        border-radius: 50px;
                         border: 2px solid #1362ae;
                         bottom: -3px;
                         content: "";
@@ -2093,7 +2009,7 @@ LoadedCheerio {
                       &.ms-Button--icon {
                         background: none;
                         border-radius: 50%;
-                        border-width: 0px;
+                        border: 3px solid transparent;
                         color: #1362ae;
                         height: 40px;
                         padding-bottom: 0px;
@@ -2107,32 +2023,18 @@ LoadedCheerio {
                       }
                       &.ms-Button--icon:hover {
                         background: #cde1f9;
-                        border-color: #1362ae;
-                        border-width: 3px;
-                        border: 3px solid #1362ae;
                         color: #1362ae;
-                        transition: background-color 0.3s;
-                      }
-                      &.ms-Button--icon:focus {
-                        background: #cde1f9;
-                        border-color: #1362ae;
-                        border-width: 3px;
-                        border: 3px solid #1362ae;
-                        color: #1362ae;
-                        transition: background-color 0.3s;
-                      }
-                      &:focus&:after {
-                        border-color: transparent;
+                        transition: background-color 0.2s;
                       }
                       &.ms-Button--icon:active {
-                        background-color: #093e61;
-                        border-color: #093e61;
-                        color: #ffffff;
+                        transform: translateY(2px);
+                        transition: 0.15s;
                       }
                       &.ms-Button--icon:disabled {
                         border-color: #b2b2b2;
-                        border-width: 0px;
+                        border: 3px solid transparent;
                         color: #b2b2b2;
+                        cursor: not-allowed;
                       }
                       &.ms-Button--icon:disabled i {
                         color: #b2b2b2;
@@ -2412,7 +2314,7 @@ LoadedCheerio {
                           border: 0;
                         }
                         .ms-Fabric--isFocusVisible &:focus:after {
-                          border-radius: 0;
+                          border-radius: 50px;
                           border: 2px solid #1362ae;
                           bottom: -3px;
                           content: "";
@@ -2450,7 +2352,7 @@ LoadedCheerio {
                         &.ms-Button--icon {
                           background: none;
                           border-radius: 50%;
-                          border-width: 0px;
+                          border: 3px solid transparent;
                           color: #1362ae;
                           height: 40px;
                           padding-bottom: 0px;
@@ -2464,32 +2366,18 @@ LoadedCheerio {
                         }
                         &.ms-Button--icon:hover {
                           background: #cde1f9;
-                          border-color: #1362ae;
-                          border-width: 3px;
-                          border: 3px solid #1362ae;
                           color: #1362ae;
-                          transition: background-color 0.3s;
-                        }
-                        &.ms-Button--icon:focus {
-                          background: #cde1f9;
-                          border-color: #1362ae;
-                          border-width: 3px;
-                          border: 3px solid #1362ae;
-                          color: #1362ae;
-                          transition: background-color 0.3s;
-                        }
-                        &:focus&:after {
-                          border-color: transparent;
+                          transition: background-color 0.2s;
                         }
                         &.ms-Button--icon:active {
-                          background-color: #093e61;
-                          border-color: #093e61;
-                          color: #ffffff;
+                          transform: translateY(2px);
+                          transition: 0.15s;
                         }
                         &.ms-Button--icon:disabled {
                           border-color: #b2b2b2;
-                          border-width: 0px;
+                          border: 3px solid transparent;
                           color: #b2b2b2;
+                          cursor: not-allowed;
                         }
                         &.ms-Button--icon:disabled i {
                           color: #b2b2b2;
@@ -2712,7 +2600,7 @@ LoadedCheerio {
                             border: 0;
                           }
                           .ms-Fabric--isFocusVisible &:focus:after {
-                            border-radius: 0;
+                            border-radius: 50px;
                             border: 2px solid #1362ae;
                             bottom: -3px;
                             content: "";
@@ -2750,7 +2638,7 @@ LoadedCheerio {
                           &.ms-Button--icon {
                             background: none;
                             border-radius: 50%;
-                            border-width: 0px;
+                            border: 3px solid transparent;
                             color: #1362ae;
                             height: 40px;
                             padding-bottom: 0px;
@@ -2764,32 +2652,18 @@ LoadedCheerio {
                           }
                           &.ms-Button--icon:hover {
                             background: #cde1f9;
-                            border-color: #1362ae;
-                            border-width: 3px;
-                            border: 3px solid #1362ae;
                             color: #1362ae;
-                            transition: background-color 0.3s;
-                          }
-                          &.ms-Button--icon:focus {
-                            background: #cde1f9;
-                            border-color: #1362ae;
-                            border-width: 3px;
-                            border: 3px solid #1362ae;
-                            color: #1362ae;
-                            transition: background-color 0.3s;
-                          }
-                          &:focus&:after {
-                            border-color: transparent;
+                            transition: background-color 0.2s;
                           }
                           &.ms-Button--icon:active {
-                            background-color: #093e61;
-                            border-color: #093e61;
-                            color: #ffffff;
+                            transform: translateY(2px);
+                            transition: 0.15s;
                           }
                           &.ms-Button--icon:disabled {
                             border-color: #b2b2b2;
-                            border-width: 0px;
+                            border: 3px solid transparent;
                             color: #b2b2b2;
+                            cursor: not-allowed;
                           }
                           &.ms-Button--icon:disabled i {
                             color: #b2b2b2;
@@ -3216,7 +3090,7 @@ LoadedCheerio {
                         border: 0;
                       }
                       .ms-Fabric--isFocusVisible &:focus:after {
-                        border-radius: 0;
+                        border-radius: 50px;
                         border: 2px solid #1362ae;
                         bottom: -3px;
                         content: "";
@@ -3254,7 +3128,7 @@ LoadedCheerio {
                       &.ms-Button--icon {
                         background: none;
                         border-radius: 50%;
-                        border-width: 0px;
+                        border: 3px solid transparent;
                         color: #1362ae;
                         height: 40px;
                         padding-bottom: 0px;
@@ -3268,32 +3142,18 @@ LoadedCheerio {
                       }
                       &.ms-Button--icon:hover {
                         background: #cde1f9;
-                        border-color: #1362ae;
-                        border-width: 3px;
-                        border: 3px solid #1362ae;
                         color: #1362ae;
-                        transition: background-color 0.3s;
-                      }
-                      &.ms-Button--icon:focus {
-                        background: #cde1f9;
-                        border-color: #1362ae;
-                        border-width: 3px;
-                        border: 3px solid #1362ae;
-                        color: #1362ae;
-                        transition: background-color 0.3s;
-                      }
-                      &:focus&:after {
-                        border-color: transparent;
+                        transition: background-color 0.2s;
                       }
                       &.ms-Button--icon:active {
-                        background-color: #093e61;
-                        border-color: #093e61;
-                        color: #ffffff;
+                        transform: translateY(2px);
+                        transition: 0.15s;
                       }
                       &.ms-Button--icon:disabled {
                         border-color: #b2b2b2;
-                        border-width: 0px;
+                        border: 3px solid transparent;
                         color: #b2b2b2;
+                        cursor: not-allowed;
                       }
                       &.ms-Button--icon:disabled i {
                         color: #b2b2b2;
@@ -3520,7 +3380,7 @@ LoadedCheerio {
                       border: 0;
                     }
                     .ms-Fabric--isFocusVisible &:focus:after {
-                      border-radius: 0;
+                      border-radius: 50px;
                       border: 2px solid #1362ae;
                       bottom: -3px;
                       content: "";
@@ -3558,7 +3418,7 @@ LoadedCheerio {
                     &.ms-Button--icon {
                       background: none;
                       border-radius: 50%;
-                      border-width: 0px;
+                      border: 3px solid transparent;
                       color: #1362ae;
                       height: 40px;
                       padding-bottom: 0px;
@@ -3572,32 +3432,18 @@ LoadedCheerio {
                     }
                     &.ms-Button--icon:hover {
                       background: #cde1f9;
-                      border-color: #1362ae;
-                      border-width: 3px;
-                      border: 3px solid #1362ae;
                       color: #1362ae;
-                      transition: background-color 0.3s;
-                    }
-                    &.ms-Button--icon:focus {
-                      background: #cde1f9;
-                      border-color: #1362ae;
-                      border-width: 3px;
-                      border: 3px solid #1362ae;
-                      color: #1362ae;
-                      transition: background-color 0.3s;
-                    }
-                    &:focus&:after {
-                      border-color: transparent;
+                      transition: background-color 0.2s;
                     }
                     &.ms-Button--icon:active {
-                      background-color: #093e61;
-                      border-color: #093e61;
-                      color: #ffffff;
+                      transform: translateY(2px);
+                      transition: 0.15s;
                     }
                     &.ms-Button--icon:disabled {
                       border-color: #b2b2b2;
-                      border-width: 0px;
+                      border: 3px solid transparent;
                       color: #b2b2b2;
+                      cursor: not-allowed;
                     }
                     &.ms-Button--icon:disabled i {
                       color: #b2b2b2;
@@ -3877,7 +3723,7 @@ LoadedCheerio {
                         border: 0;
                       }
                       .ms-Fabric--isFocusVisible &:focus:after {
-                        border-radius: 0;
+                        border-radius: 50px;
                         border: 2px solid #1362ae;
                         bottom: -3px;
                         content: "";
@@ -3915,7 +3761,7 @@ LoadedCheerio {
                       &.ms-Button--icon {
                         background: none;
                         border-radius: 50%;
-                        border-width: 0px;
+                        border: 3px solid transparent;
                         color: #1362ae;
                         height: 40px;
                         padding-bottom: 0px;
@@ -3929,32 +3775,18 @@ LoadedCheerio {
                       }
                       &.ms-Button--icon:hover {
                         background: #cde1f9;
-                        border-color: #1362ae;
-                        border-width: 3px;
-                        border: 3px solid #1362ae;
                         color: #1362ae;
-                        transition: background-color 0.3s;
-                      }
-                      &.ms-Button--icon:focus {
-                        background: #cde1f9;
-                        border-color: #1362ae;
-                        border-width: 3px;
-                        border: 3px solid #1362ae;
-                        color: #1362ae;
-                        transition: background-color 0.3s;
-                      }
-                      &:focus&:after {
-                        border-color: transparent;
+                        transition: background-color 0.2s;
                       }
                       &.ms-Button--icon:active {
-                        background-color: #093e61;
-                        border-color: #093e61;
-                        color: #ffffff;
+                        transform: translateY(2px);
+                        transition: 0.15s;
                       }
                       &.ms-Button--icon:disabled {
                         border-color: #b2b2b2;
-                        border-width: 0px;
+                        border: 3px solid transparent;
                         color: #b2b2b2;
+                        cursor: not-allowed;
                       }
                       &.ms-Button--icon:disabled i {
                         color: #b2b2b2;
@@ -4177,7 +4009,7 @@ LoadedCheerio {
                           border: 0;
                         }
                         .ms-Fabric--isFocusVisible &:focus:after {
-                          border-radius: 0;
+                          border-radius: 50px;
                           border: 2px solid #1362ae;
                           bottom: -3px;
                           content: "";
@@ -4215,7 +4047,7 @@ LoadedCheerio {
                         &.ms-Button--icon {
                           background: none;
                           border-radius: 50%;
-                          border-width: 0px;
+                          border: 3px solid transparent;
                           color: #1362ae;
                           height: 40px;
                           padding-bottom: 0px;
@@ -4229,32 +4061,18 @@ LoadedCheerio {
                         }
                         &.ms-Button--icon:hover {
                           background: #cde1f9;
-                          border-color: #1362ae;
-                          border-width: 3px;
-                          border: 3px solid #1362ae;
                           color: #1362ae;
-                          transition: background-color 0.3s;
-                        }
-                        &.ms-Button--icon:focus {
-                          background: #cde1f9;
-                          border-color: #1362ae;
-                          border-width: 3px;
-                          border: 3px solid #1362ae;
-                          color: #1362ae;
-                          transition: background-color 0.3s;
-                        }
-                        &:focus&:after {
-                          border-color: transparent;
+                          transition: background-color 0.2s;
                         }
                         &.ms-Button--icon:active {
-                          background-color: #093e61;
-                          border-color: #093e61;
-                          color: #ffffff;
+                          transform: translateY(2px);
+                          transition: 0.15s;
                         }
                         &.ms-Button--icon:disabled {
                           border-color: #b2b2b2;
-                          border-width: 0px;
+                          border: 3px solid transparent;
                           color: #b2b2b2;
+                          cursor: not-allowed;
                         }
                         &.ms-Button--icon:disabled i {
                           color: #b2b2b2;
@@ -4594,7 +4412,7 @@ LoadedCheerio {
                           border: 0;
                         }
                         .ms-Fabric--isFocusVisible &:focus:after {
-                          border-radius: 0;
+                          border-radius: 50px;
                           border: 2px solid #1362ae;
                           bottom: -3px;
                           content: "";
@@ -4632,7 +4450,7 @@ LoadedCheerio {
                         &.ms-Button--icon {
                           background: none;
                           border-radius: 50%;
-                          border-width: 0px;
+                          border: 3px solid transparent;
                           color: #1362ae;
                           height: 40px;
                           padding-bottom: 0px;
@@ -4646,32 +4464,18 @@ LoadedCheerio {
                         }
                         &.ms-Button--icon:hover {
                           background: #cde1f9;
-                          border-color: #1362ae;
-                          border-width: 3px;
-                          border: 3px solid #1362ae;
                           color: #1362ae;
-                          transition: background-color 0.3s;
-                        }
-                        &.ms-Button--icon:focus {
-                          background: #cde1f9;
-                          border-color: #1362ae;
-                          border-width: 3px;
-                          border: 3px solid #1362ae;
-                          color: #1362ae;
-                          transition: background-color 0.3s;
-                        }
-                        &:focus&:after {
-                          border-color: transparent;
+                          transition: background-color 0.2s;
                         }
                         &.ms-Button--icon:active {
-                          background-color: #093e61;
-                          border-color: #093e61;
-                          color: #ffffff;
+                          transform: translateY(2px);
+                          transition: 0.15s;
                         }
                         &.ms-Button--icon:disabled {
                           border-color: #b2b2b2;
-                          border-width: 0px;
+                          border: 3px solid transparent;
                           color: #b2b2b2;
+                          cursor: not-allowed;
                         }
                         &.ms-Button--icon:disabled i {
                           color: #b2b2b2;
@@ -4898,7 +4702,7 @@ LoadedCheerio {
                         border: 0;
                       }
                       .ms-Fabric--isFocusVisible &:focus:after {
-                        border-radius: 0;
+                        border-radius: 50px;
                         border: 2px solid #1362ae;
                         bottom: -3px;
                         content: "";
@@ -4936,7 +4740,7 @@ LoadedCheerio {
                       &.ms-Button--icon {
                         background: none;
                         border-radius: 50%;
-                        border-width: 0px;
+                        border: 3px solid transparent;
                         color: #1362ae;
                         height: 40px;
                         padding-bottom: 0px;
@@ -4950,32 +4754,18 @@ LoadedCheerio {
                       }
                       &.ms-Button--icon:hover {
                         background: #cde1f9;
-                        border-color: #1362ae;
-                        border-width: 3px;
-                        border: 3px solid #1362ae;
                         color: #1362ae;
-                        transition: background-color 0.3s;
-                      }
-                      &.ms-Button--icon:focus {
-                        background: #cde1f9;
-                        border-color: #1362ae;
-                        border-width: 3px;
-                        border: 3px solid #1362ae;
-                        color: #1362ae;
-                        transition: background-color 0.3s;
-                      }
-                      &:focus&:after {
-                        border-color: transparent;
+                        transition: background-color 0.2s;
                       }
                       &.ms-Button--icon:active {
-                        background-color: #093e61;
-                        border-color: #093e61;
-                        color: #ffffff;
+                        transform: translateY(2px);
+                        transition: 0.15s;
                       }
                       &.ms-Button--icon:disabled {
                         border-color: #b2b2b2;
-                        border-width: 0px;
+                        border: 3px solid transparent;
                         color: #b2b2b2;
+                        cursor: not-allowed;
                       }
                       &.ms-Button--icon:disabled i {
                         color: #b2b2b2;
@@ -5255,7 +5045,7 @@ LoadedCheerio {
                           border: 0;
                         }
                         .ms-Fabric--isFocusVisible &:focus:after {
-                          border-radius: 0;
+                          border-radius: 50px;
                           border: 2px solid #1362ae;
                           bottom: -3px;
                           content: "";
@@ -5293,7 +5083,7 @@ LoadedCheerio {
                         &.ms-Button--icon {
                           background: none;
                           border-radius: 50%;
-                          border-width: 0px;
+                          border: 3px solid transparent;
                           color: #1362ae;
                           height: 40px;
                           padding-bottom: 0px;
@@ -5307,32 +5097,18 @@ LoadedCheerio {
                         }
                         &.ms-Button--icon:hover {
                           background: #cde1f9;
-                          border-color: #1362ae;
-                          border-width: 3px;
-                          border: 3px solid #1362ae;
                           color: #1362ae;
-                          transition: background-color 0.3s;
-                        }
-                        &.ms-Button--icon:focus {
-                          background: #cde1f9;
-                          border-color: #1362ae;
-                          border-width: 3px;
-                          border: 3px solid #1362ae;
-                          color: #1362ae;
-                          transition: background-color 0.3s;
-                        }
-                        &:focus&:after {
-                          border-color: transparent;
+                          transition: background-color 0.2s;
                         }
                         &.ms-Button--icon:active {
-                          background-color: #093e61;
-                          border-color: #093e61;
-                          color: #ffffff;
+                          transform: translateY(2px);
+                          transition: 0.15s;
                         }
                         &.ms-Button--icon:disabled {
                           border-color: #b2b2b2;
-                          border-width: 0px;
+                          border: 3px solid transparent;
                           color: #b2b2b2;
+                          cursor: not-allowed;
                         }
                         &.ms-Button--icon:disabled i {
                           color: #b2b2b2;
@@ -5555,7 +5331,7 @@ LoadedCheerio {
                             border: 0;
                           }
                           .ms-Fabric--isFocusVisible &:focus:after {
-                            border-radius: 0;
+                            border-radius: 50px;
                             border: 2px solid #1362ae;
                             bottom: -3px;
                             content: "";
@@ -5593,7 +5369,7 @@ LoadedCheerio {
                           &.ms-Button--icon {
                             background: none;
                             border-radius: 50%;
-                            border-width: 0px;
+                            border: 3px solid transparent;
                             color: #1362ae;
                             height: 40px;
                             padding-bottom: 0px;
@@ -5607,32 +5383,18 @@ LoadedCheerio {
                           }
                           &.ms-Button--icon:hover {
                             background: #cde1f9;
-                            border-color: #1362ae;
-                            border-width: 3px;
-                            border: 3px solid #1362ae;
                             color: #1362ae;
-                            transition: background-color 0.3s;
-                          }
-                          &.ms-Button--icon:focus {
-                            background: #cde1f9;
-                            border-color: #1362ae;
-                            border-width: 3px;
-                            border: 3px solid #1362ae;
-                            color: #1362ae;
-                            transition: background-color 0.3s;
-                          }
-                          &:focus&:after {
-                            border-color: transparent;
+                            transition: background-color 0.2s;
                           }
                           &.ms-Button--icon:active {
-                            background-color: #093e61;
-                            border-color: #093e61;
-                            color: #ffffff;
+                            transform: translateY(2px);
+                            transition: 0.15s;
                           }
                           &.ms-Button--icon:disabled {
                             border-color: #b2b2b2;
-                            border-width: 0px;
+                            border: 3px solid transparent;
                             color: #b2b2b2;
+                            cursor: not-allowed;
                           }
                           &.ms-Button--icon:disabled i {
                             color: #b2b2b2;

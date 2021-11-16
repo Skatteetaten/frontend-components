@@ -39,6 +39,7 @@ export const DatePicker: React.FC<DatePickerProps> = (
   const {
     ariaLabel,
     calloutFloating,
+    datepickerCalloutProps,
     children,
     className,
     editable,
@@ -54,9 +55,9 @@ export const DatePicker: React.FC<DatePickerProps> = (
     language,
     onCalloutToggle,
     readonlyMode,
-    doNotLayer,
     ...rest
   } = props;
+
   const defaultValues = {
     allowTextInput: true,
     dateTimeFormatter: undefined,
@@ -143,8 +144,8 @@ export const DatePicker: React.FC<DatePickerProps> = (
         readOnly={readonlyMode}
         calloutProps={{
           ...labelWithCalloutProps?.calloutProps,
-          doNotLayer,
         }}
+        {...labelWithCalloutProps}
       />
 
       <FabricDatePicker
@@ -160,8 +161,11 @@ export const DatePicker: React.FC<DatePickerProps> = (
           datePickerRef.current = ref as IDatePicker;
         }}
         calloutProps={{
-          doNotLayer,
-          className: getCalendarClassNames(props),
+          ...datepickerCalloutProps,
+          className: classnames(
+            getCalendarClassNames(props),
+            datepickerCalloutProps?.className
+          ),
         }}
         disabled={readOnly ? true : rest.disabled}
         onBlur={onBlur}

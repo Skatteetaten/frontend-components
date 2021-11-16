@@ -1,6 +1,8 @@
 import { IDatePickerProps } from '@fluentui/react';
 import { calloutState, LabelWithCalloutProps } from '../LabelWithCallout';
 
+import { CalloutProps } from '../Callout/Callout.types';
+
 export interface DatePickerProps extends IDatePickerProps {
   /** @ignore */
   borderless?: IDatePickerProps['borderless'];
@@ -24,6 +26,8 @@ export interface DatePickerProps extends IDatePickerProps {
   labelButtonAriaLabel?: string;
   /** Overstyr label, se LabelWithCallout komponent */
   labelWithCalloutProps?: LabelWithCalloutProps;
+  /** Overstyr Datepicker Callout, se CalloutProps komponent */
+  datepickerCalloutProps?: CalloutProps;
   /** Språk vist i komponent. Default er norsk bokmål. */
   language?: 'nb' | 'nn' | 'en';
   /** Brukerspesifisert event for callout **/
@@ -31,8 +35,6 @@ export interface DatePickerProps extends IDatePickerProps {
     oldCalloutState: calloutState,
     newCalloutState: calloutState
   ) => void;
-  /** doNotLayer prop for Datepickeren og labelWithCallout */
-  doNotLayer?: boolean;
   /** Tilstand som kan benyttes når datovelger skal vises i lesemodus */
   readonlyMode?: boolean;
   /** @ignore */
