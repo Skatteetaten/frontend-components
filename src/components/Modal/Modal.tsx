@@ -41,8 +41,6 @@ const ModalBase: React.FC<ModalProps> = (props: ModalProps) => {
 
   const closeModal = (): void => {
     modalInstance && modalInstance.close(name);
-    document.body.style.overflow = '';
-
     onClose && modalRef && onClose(modalRef);
   };
 
@@ -67,7 +65,6 @@ const ModalBase: React.FC<ModalProps> = (props: ModalProps) => {
   }, [shadowRootNode]);
 
   React.useEffect(() => {
-    document.body.style.overflow = 'hidden';
     if (modalRef && onOpen) {
       onOpen(modalRef);
     }

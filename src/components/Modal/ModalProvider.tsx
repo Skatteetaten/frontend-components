@@ -14,6 +14,7 @@ export const ModalProvider: React.FC<ModalProviderTypes> = ({ children }) => {
     const isClosed = (name: string): boolean => !modalList.includes(name);
 
     const openModal = (name: string): void => {
+      document.body.style.overflow = 'hidden';
       if (isOpen(name)) {
         return;
       }
@@ -21,6 +22,7 @@ export const ModalProvider: React.FC<ModalProviderTypes> = ({ children }) => {
     };
 
     const closeModal = (name: string): void => {
+      document.body.style.overflow = '';
       if (isClosed(name)) {
         return;
       }
@@ -29,6 +31,7 @@ export const ModalProvider: React.FC<ModalProviderTypes> = ({ children }) => {
     };
 
     const closeAll = (): void => {
+      document.body.style.overflow = '';
       if (modalList.length > 0) {
         setModalList([]);
       }
