@@ -21,7 +21,7 @@ export default {
   icons: { 
     'clear': '\uea17', //tilsvarer Cancel
     'checkmark': '\uea1b', //tilsvarer Check
-    'blocked2': '\uea4f', //tilsvarer Lock
+    'blocked2': '\uea50', //tilsvarer Lock
     'statuscirclecheckmark': '\uea28', //tilsvarer Completed
     'errorbadge': '\uea35', //tilsvarer ErrorOutline
   }

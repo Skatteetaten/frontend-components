@@ -166,6 +166,10 @@ const iconGroup = {
       usage: 'Informasjon, nyttig opplysning',
     },
     {
+      name: 'InfoSimple',
+      usage: 'Informasjon, nyttig opplysning',
+    },
+    {
       name: 'Warning',
       usage: 'Advarsel',
     },
@@ -708,6 +712,50 @@ const iconGroup = {
     {
       name: 'TemaSelskapDeltakerfastsetting',
       usage: 'Deltakerfastsetting',
+    },
+    {
+      name: 'TemaVarelagerFordringer',
+      usage: 'Varelager og fordringer',
+    },
+    {
+      name: 'TemaDriftsmidler',
+      usage: 'Driftsmidler',
+    },
+    {
+      name: 'TemaDrosjeServering',
+      usage: 'Overnatting, servering og drosje',
+    },
+    {
+      name: 'TemaEiendelerEgenkapitalGjeld',
+      usage: 'Eiendeler, egenkapital og gjeld',
+    },
+    {
+      name: 'TemaInntekt',
+      usage: 'Inntekter',
+    },
+    {
+      name: 'TemaUtgift',
+      usage: 'Utgifter',
+    },
+    {
+      name: 'TemaPersoninntekt',
+      usage: 'Personinntekt',
+    },
+    {
+      name: 'TemaNaringsinntekt',
+      usage: 'Næringsinntekt',
+    },
+    {
+      name: 'TemaSkogfond',
+      usage: 'Skog',
+    },
+    {
+      name: 'TemaMvaRegistreringer',
+      usage: 'MVA-registrering',
+    },
+    {
+      name: 'TemaMvaFastsetting',
+      usage: 'MVA-fastsetting',
     },
   ],
 };

@@ -261,6 +261,8 @@ export const getClassNames = function getClassNames(props) {
   return mergeStyles([
     {
       displayName: 'SkeTypography',
+      fontFamily:
+        "'Helvetica Neue', Helvetica , Arial, 'Liberation Sans', 'Nimbus Sans L', sans-serif",
       selectors: {
         h1: getH1Style(props, palette),
         h2: getH2Style(props, palette),
