@@ -44,10 +44,9 @@ exports[`Callout komponent matcher snapshot 1`] = `
             background-color: #e3f5ea;
             box-shadow: none;
             box-sizing: border-box;
-            max-width: 600px;
             padding-bottom: 1rem;
             padding-left: 1rem;
-            padding-right: 2rem;
+            padding-right: 2.5rem;
             padding-top: 1rem;
             width: 100%;
           }
