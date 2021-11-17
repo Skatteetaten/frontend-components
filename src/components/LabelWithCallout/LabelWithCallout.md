@@ -6,8 +6,9 @@ import { LabelWithCallout } from '@skatteetaten/frontend-components/LabelWithCal
 
 const [state, setState] = React.useState({ warning: false });
 
-<div style={{ maxWidth: '400px' }}>
+<div>
   <LabelWithCallout
+    id={'lwc1'}
     label={'Omregistreringsavgift'}
     help={'Avgiften du må betale for å registrere kjøretøyet på en ny person.'}
     warning={
@@ -30,9 +31,10 @@ import { SearchField } from '@skatteetaten/frontend-components/SearchField';
 
 <div>
   <LabelWithCallout
+    id={'lwc2'}
     label={'Søk'}
     help={
-      'Her kan du søke etter personer og virkso m he ter. Lorem ipsum dolor sit amet consectur lorem ipsum dolor sit amet co nsectur lorem ipsum dol or sit amet conse ctur lorem ipsum dolor sit amet consectur lorem ipsum dolor sit amet cons ectur lorem ipsum dolor sit amet consectur lorem ipsum dolor sit amet con sectur lorem ipsum dolor sit amet consectur lorem ipsum dolor sit am et consectur lorem ipsum dolor sit amet consectur lorem ipsum dolor sit amet con  sectur lorem ipsum dolor sit amet consectur lorem ipsum dolor sit amet consectur lorem ipsum dolor sit amet consectur lorem ipsum dolor sit amet consectur lorem ipsum dolor sit amet consectur lorem ipsum dolor sit amet consectur lorem ipsum dolor sit amet consectur'
+      'Her kan du søke etter personer og virksomheter. Dette søkefeltet er spesielt tilpasset for søk i befolkningen, og tar derfor hensyn til personvern. Det betyr at vi ikke kan vise noen resultater før du har bekreftet søket med enter, eller trykket på søkeikonet i feltet. Alle søk logges.'
     }
   />
   <SearchField
@@ -44,7 +46,7 @@ import { SearchField } from '@skatteetaten/frontend-components/SearchField';
 </div>;
 ```
 
-Brukt med calloutFloating prop, og veldig mye tekst
+Brukt med calloutFloating prop og autoDismiss
 
 ```js
 import { LabelWithCallout } from '@skatteetaten/frontend-components/LabelWithCallout';
@@ -52,10 +54,39 @@ import { SearchField } from '@skatteetaten/frontend-components/SearchField';
 
 <div>
   <LabelWithCallout
+    id={'lwc3'}
+    label={'Søk'}
+    help={'Her kan du søke etter personer og virksomheter.'}
+    calloutProps={{ autoDismiss: true }}
+    calloutFloating
+  />
+</div>;
+```
+
+Brukt med calloutFloating prop og autoDismiss, og veldig mye tekst
+
+```js
+import { LabelWithCallout } from '@skatteetaten/frontend-components/LabelWithCallout';
+import { SearchField } from '@skatteetaten/frontend-components/SearchField';
+
+<div>
+  <LabelWithCallout
+    id={'lwc4'}
     label={'Søk'}
     help={
-      'Her kan du søke etter personer og virkso m he ter. Lorem ipsum dolor sit amet consectur lorem ipsum dolor sit amet co nsectur lorem ipsum dol or sit amet conse ctur lorem ipsum dolor sit amet consectur lorem ipsum dolor sit amet cons ectur lorem ipsum dolor sit amet consectur lorem ipsum dolor sit amet con sectur lorem ipsum dolor sit amet consectur lorem ipsum dolor sit am et consectur lorem ipsum dolor sit amet consectur lorem ipsum dolor sit amet con  sectur lorem ipsum dolor sit amet consectur lorem ipsum dolor sit amet consectur lorem ipsum dolor sit amet consectur lorem ipsum dolor sit amet consectur lorem ipsum dolor sit amet consectur lorem ipsum dolor sit amet consectur lorem ipsum dolor sit amet consectur'
+      <p style={{ width: '350px' }}>
+        'Her kan du søke etter personer og virksomheter. Dette søkefeltet er
+        spesielt tilpasset for søk i befolkningen, og tar derfor hensyn til
+        personvern. Det betyr at vi ikke kan vise noen resultater før du har
+        bekreftet søket med enter, eller trykket på søkeikonet i feltet. Alle
+        søk logges. Her kan du IGJEN søke etter personer og virksomheter. Dette
+        søkefeltet er spesielt tilpasset for søk i befolkningen, og tar derfor
+        hensyn til personvern. Det betyr at vi ikke kan vise noen resultater før
+        du har bekreftet søket med enter, eller trykket på søkeikonet i feltet.
+        Alle søk logges.'
+      </p>
     }
+    calloutProps={{ autoDismiss: true }}
     calloutFloating
   />
 </div>;
@@ -69,7 +100,7 @@ import { TextField } from '@skatteetaten/frontend-components/TextField';
 const [state, setState] = React.useState({ value1: '' });
 
 <>
-  <div style={{ maxWidth: '300px' }}>
+  <div>
     <TextField
       label="Fullt navn"
       value={state.value1}

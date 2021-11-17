@@ -27,12 +27,11 @@ export const getClassNames = (props: CalloutProps, widthBtnLabel: string) => {
       ...getCalloutBorder(props),
       selectors: {
         '.ms-Callout-main': {
-          maxWidth: 600,
           width: '100%',
           backgroundColor: palette.skeColor[props.color as CalloutColor],
           boxShadow: 'none',
           'box-sizing': 'border-box',
-          padding: '1rem 2rem 1rem 1rem',
+          padding: '1rem 2.5rem 1rem 1rem',
           selectors: {
             '@media  only screen and (max-width: 479px)': {
               maxWidth: 300,
