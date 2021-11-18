@@ -37,6 +37,7 @@
   "secondary" is now "secondarySimple",
   "primary" is now "primaryCornered",
   "primaryRounded" is now "secondary" (default)
+  - Table className prop deprecated, bruk customClassnames
 
 #### Additional
 

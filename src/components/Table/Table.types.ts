@@ -7,8 +7,14 @@ export enum Language {
 }
 
 export interface TableProps<P> extends React.HTMLAttributes<HTMLDivElement> {
-  /** Possibility to enter your own class to override styling */
-  className?: string;
+  /** Custom classNames for å overskrive styling */
+  customClassNames?: {
+    wrapper?: string;
+    table?: string;
+    caption?: string;
+    // closebutton?: string;
+    // overlay?: string;
+  };
   /** Global attribute which must be unique for the whole HTML document*/
   id?: string;
   /** Content elements in the table */
