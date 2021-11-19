@@ -304,7 +304,7 @@ const data = [
   },
 ];
 const expandableContent = (data, close, rowIndex) => (
-  <div style={{ width: 'max-content' }}>
+  <div>
     <Grid>
       <Grid.Row>
         <Grid.Col xl={12} sm={8}>
@@ -325,12 +325,7 @@ const expandableContent = (data, close, rowIndex) => (
 );
 
 const expandableContentLabelWithCallout = (data, close, rowIndex) => (
-  <div
-    style={{
-      background: 'pink',
-      width: '100%',
-    }}
-  >
+  <div>
     <Grid>
       <Grid.Row>
         <Grid.Col xl={12} sm={4}>
@@ -391,6 +386,7 @@ const expandableContentLabelWithCallout = (data, close, rowIndex) => (
     hideCaption={true}
     expandIconPlacement={'before'}
     expandableRows
+    fullWidth
   />
 </>;
 ```

@@ -1,11 +1,13 @@
 import classnames from 'classnames';
-import { IProcessedStyleSet } from '@fluentui/merge-styles';
+
 import React, { useEffect, useState } from 'react';
 import { getClassNames } from './Table.classNames';
-import { t, generateId, getSrOnlyStyle } from '../utils';
-import { Icon } from '../Icon';
+import { generateId, getSrOnlyStyle } from '../utils';
 import { TableRow } from './TableRow';
+import { SumRow } from './SumRow';
 import { TableProps } from './Table.types';
+
+import { TableHeader } from './TableHeader';
 
 export const setScrollBarState = (
   wrapperWidth: number | null,
@@ -17,105 +19,6 @@ export const setScrollBarState = (
   } else {
     setTableIsScrollable(false);
   }
-};
-
-export const getHeader = (
-  styles: IProcessedStyleSet<{ emptyTd: string }>,
-  columns: TableProps<any>['columns'],
-  sort: { ascending: boolean; columnFieldName: string },
-  setSort: (sort: { ascending: boolean; columnFieldName: string }) => void
-) => {
-  const setSortingState = (columnFieldName: string) =>
-    setSort({
-      ascending:
-        sort.columnFieldName === columnFieldName ? !sort.ascending : true,
-      columnFieldName: columnFieldName,
-    });
-
-  return (
-    columns &&
-    columns.map((key) => {
-      if (!key.name) {
-        // Når kolonnetittel er tom skal ikke kolonnen ha <th />
-        return <td key={key.fieldName} className={styles.emptyTd} />;
-      }
-      if (key.sortable) {
-        const isSorted = sort.columnFieldName === key.fieldName;
-        const isSortedAscending = sort.ascending;
-        const iconName = isSorted
-          ? isSortedAscending
-            ? 'ArrowDown'
-            : 'ArrowUp'
-          : 'ArrowUpDown';
-        return (
-          <th
-            key={key.fieldName}
-            className={classnames(
-              'divTableColumnheader',
-              'sortable',
-              key.hideOnMobile ? 'hideOnMobile' : ''
-            )}
-            tabIndex={0}
-            scope="col"
-            aria-label={
-              isSorted
-                ? isSortedAscending
-                  ? key.name.concat(' ', t('table.sorted_ascending'))
-                  : key.name.concat(' ', t('table.sorted_descending'))
-                : key.name.concat(' ', t('table.sortable'))
-            }
-            onClick={() => setSortingState(key.fieldName)}
-            onKeyDown={(e) => {
-              return e.key === 'Enter' ? setSortingState(key.fieldName) : null;
-            }}
-          >
-            {key.name}
-            <Icon
-              iconName={iconName}
-              className={
-                key.autohideSorting === false ? 'noAutoHide' : undefined
-              }
-            />
-          </th>
-        );
-      }
-      return (
-        <th
-          className={key.hideOnMobile ? 'hideOnMobile' : ''}
-          key={key.fieldName}
-          scope="col"
-        >
-          {key.name}
-        </th>
-      );
-    })
-  );
-};
-
-const SumRow = (props: {
-  columns: Array<any> | undefined;
-  sum: { text: string; colspan: number; total: number | string };
-  editableRows: boolean | Array<number> | undefined;
-  expandableRows: boolean | undefined;
-  expandIconPlacement: 'after' | 'before' | undefined;
-}) => {
-  const columns = props.columns
-    ? props.columns.length - props.sum.colspan - 1
-    : 0;
-  const emptyCells = Array.from(Array(columns).keys());
-  let counter = 0;
-  return (
-    <tr>
-      <th colSpan={props.sum.colspan} scope="row" className={'sum'}>
-        {props.sum.text}
-      </th>
-      <td className={classnames('tableCell', 'sum')}>{props.sum.total}</td>
-      {props.editableRows && <td />}
-      {props.expandableRows && props.expandIconPlacement === 'after' && <td />}
-      {!!emptyCells.length &&
-        emptyCells.map(() => <td className={'tableCell'} key={counter++} />)}
-    </tr>
-  );
 };
 
 /*
@@ -157,7 +60,7 @@ export const Table = <P extends object>(props: TableProps<P>) => {
     columnFieldName: string;
   }>({ ascending: false, columnFieldName: '' });
 
-  const styles = getClassNames(props, '');
+  const styles = getClassNames(props);
 
   useEffect(() => {
     if (setOpenEditableRowIndex) {
@@ -271,22 +174,37 @@ export const Table = <P extends object>(props: TableProps<P>) => {
       <table className={classnames(styles.tabell, customClassNames?.table)}>
         {caption && (
           <caption
-            className={classnames(customClassNames?.caption)}
+            className={classnames(
+              styles.tabellCaption,
+              customClassNames?.caption
+            )}
             style={hideCaption ? getSrOnlyStyle() : undefined}
           >
             {caption}
           </caption>
         )}
-        <thead>
-          <tr>
-            {(tableIsScrollable || expandIconPlacement === 'before') && emptyTd}
-            {getHeader(
-              styles,
-              columns,
-              sort,
-              (value: { ascending: boolean; columnFieldName: string }) =>
-                setSort(value)
+        <thead
+          className={classnames(
+            styles.tabellThead,
+            customClassNames?.tabellThead
+          )}
+        >
+          <tr
+            className={classnames(
+              styles.tabellTheadRow,
+              customClassNames?.tabellTheadRow
             )}
+          >
+            {(tableIsScrollable || expandIconPlacement === 'before') && emptyTd}
+            <TableHeader
+              columns={columns}
+              sort={sort}
+              setSort={(value: {
+                ascending: boolean;
+                columnFieldName: string;
+              }) => setSort(value)}
+            />
+
             {!tableIsScrollable && expandIconPlacement !== 'before' && emptyTd}
           </tr>
         </thead>
