@@ -62,8 +62,8 @@ export const getClassNames = (props: CalloutProps, widthBtnLabel: string) => {
       border: 'none',
       position: 'absolute',
       color: `${palette.skeColor.blackAlt} !important`,
-      right: 1,
-      top: 1,
+      right: '1px',
+      top: '1px',
       opacity: 1,
       selectors: {
         '&& i': {
