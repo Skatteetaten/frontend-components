@@ -957,9 +957,15 @@ function Testside(props) {
         <legend style={{ fontSize: '16px', marginBottom: '4px' }}>
           Velg aktuelle lover
         </legend>
-        <CheckBox boxSide={'start'} label="Skatteloven" />
-        <CheckBox boxSide={'start'} label="Skattebetalingsloven" />
-        <CheckBox boxSide={'start'} label="Skatteforvaltningsloven" />
+        <CheckBox boxSide={'start'} label="Lov om tvangsmulkt" />
+        <CheckBox checked boxSide={'start'} label="Skatteloven" />
+        <CheckBox disabled boxSide={'start'} label="Skattebetalingsloven" />
+        <CheckBox
+          disabled
+          checked
+          boxSide={'start'}
+          label="Skatteforvaltningsloven"
+        />
       </fieldset>
       <h2>ComboBox</h2>
       <ComboBox

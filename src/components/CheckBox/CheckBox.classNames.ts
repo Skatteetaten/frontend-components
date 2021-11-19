@@ -31,6 +31,18 @@ export const getClassNames = function getClassNames() {
           fontSize: FontSizes.medium,
           backgroundColor: skeColor.blue,
         },
+        '&.is-disabled .ms-Checkbox-checkbox': {
+          borderRadius: 0,
+          paddingTop: 0,
+          fontSize: FontSizes.medium,
+          backgroundColor: skeColor.grey10,
+          border: '2px solid ' + skeColor.grey50,
+        },
+        '&.is-disabled i.ms-Checkbox-checkmark': {
+          paddingTop: 0,
+          color: skeColor.grey50,
+          paddingLeft: 0,
+        },
         'i.ms-Checkbox-checkmark': {
           paddingLeft: '1.5px',
           paddingTop: '1.5px',
@@ -41,7 +53,6 @@ export const getClassNames = function getClassNames() {
         },
         '&.is-checked:hover .ms-Checkbox-checkmark': {
           opacity: 1,
-          backgroundColor: skeColor.darkBlue,
         },
         '& i': {
           fontWeight: FontWeights.bold,
