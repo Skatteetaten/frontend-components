@@ -78,6 +78,7 @@ export class Callout extends PureComponent<CalloutProps, CalloutState> {
             aria-label="Lukk"
             icon="Cancel"
             className={styles.closeButton}
+            buttonSize="small"
             onClick={props.onClose}
           />
         </FabricCallout>

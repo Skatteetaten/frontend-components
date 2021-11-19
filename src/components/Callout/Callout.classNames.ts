@@ -62,8 +62,8 @@ export const getClassNames = (props: CalloutProps, widthBtnLabel: string) => {
       border: 'none',
       position: 'absolute',
       color: `${palette.skeColor.blackAlt} !important`,
-      right: 0,
-      top: 0,
+      right: 1,
+      top: 1,
       opacity: 1,
       selectors: {
         '&& i': {
@@ -71,18 +71,6 @@ export const getClassNames = (props: CalloutProps, widthBtnLabel: string) => {
         },
         '&:hover i': {
           transition: 'opacity 300ms ease-out',
-          backgroundColor: palette.skeColor.lightBlue,
-        },
-        '&:focus i': {
-          backgroundColor: palette.skeColor.lightBlue,
-          borderRadius: 0,
-        },
-        '&& .ms-Button-icon': {
-          padding: '4px 4px 4px 4px',
-        },
-        '&.ms-Button': {
-          border: 'none !important',
-          backgroundColor: 'transparent !important',
         },
       },
     },
