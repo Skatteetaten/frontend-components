@@ -7,6 +7,8 @@ import { TableProps } from '../Table.types';
 import { getClassNames } from './TableHeader.classNames';
 import { t } from '../../utils';
 
+import { getIconNameForTheadCell, getAriaLabelForTheadCell } from './utils';
+
 interface TableHeaderProps {
   columns: TableProps<any>['columns'];
   sort: { ascending: boolean; columnFieldName: string };
@@ -25,6 +27,10 @@ export const TableHeader = (props: TableHeaderProps): JSX.Element => {
       columnFieldName: columnFieldName,
     });
 
+  const onKeyDown = (e, fieldName) => {
+    return e.key === 'Enter' ? setSortingState(fieldName) : null;
+  };
+
   const thElements =
     columns &&
     columns.map((key) => {
@@ -36,20 +42,15 @@ export const TableHeader = (props: TableHeaderProps): JSX.Element => {
       }
       if (key.sortable) {
         const isSorted = sort.columnFieldName === key.fieldName;
-        const isSortedAscending = sort.ascending;
-        const iconName = isSorted
-          ? isSortedAscending
-            ? 'ArrowDown'
-            : 'ArrowUp'
-          : 'ArrowUpDown';
-        let ariaLabel = key.fieldName;
-        if (typeof key.name === 'string') {
-          ariaLabel = isSorted
-            ? isSortedAscending
-              ? key.name.concat(' ', t('table.sorted_ascending'))
-              : key.name.concat(' ', t('table.sorted_descending'))
-            : key.name.concat(' ', t('table.sortable'));
-        }
+        const iconName = getIconNameForTheadCell(isSorted, sort.ascending);
+
+        const ariaLabel = getAriaLabelForTheadCell(
+          key.name,
+          key.fieldName,
+          isSorted,
+          sort.ascending,
+          t
+        );
 
         return (
           <th
@@ -68,20 +69,17 @@ export const TableHeader = (props: TableHeaderProps): JSX.Element => {
             scope="col"
             aria-label={ariaLabel}
             onClick={() => setSortingState(key.fieldName)}
-            onKeyDown={(e) => {
-              return e.key === 'Enter' ? setSortingState(key.fieldName) : null;
-            }}
+            onKeyDown={(e) => onKeyDown(e, key.fieldName)}
           >
             {key.name}
             <Icon
               iconName={iconName}
-              className={
-                key.autohideSorting === false ? 'noAutoHide' : undefined
-              }
+              className={!key.autohideSorting ? 'noAutoHide' : undefined}
             />
           </th>
         );
       }
+
       return (
         <th
           key={key.fieldName}
