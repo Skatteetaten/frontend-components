@@ -13,7 +13,7 @@ import i18n, { t } from './../utils/i18n/i18n';
 import { useModalContext, ModalInstance } from './ModalContext';
 import { ModalProps } from './Modal.types';
 import { getClassNames } from './Modal.classNames';
-import { useEscOnPress } from './utils';
+import { createModalDomPlacement, useEscOnPress } from './utils';
 
 const ModalBase: React.FC<ModalProps> = (props: ModalProps) => {
   const {
@@ -27,7 +27,7 @@ const ModalBase: React.FC<ModalProps> = (props: ModalProps) => {
     onOpen,
     children,
   } = props;
-  const modalWrapperId = 'modal-wrapper';
+
   const [isDOMAnchorReady, setIsDOMAnchorReady] = React.useState<boolean>(
     false
   );
@@ -49,19 +49,7 @@ const ModalBase: React.FC<ModalProps> = (props: ModalProps) => {
   }, []);
 
   React.useEffect(() => {
-    if (!shadowRootNode) {
-      setIsDOMAnchorReady(true);
-      return;
-    }
-
-    if (shadowRootNode.getElementById(modalWrapperId)) {
-      setIsDOMAnchorReady(true);
-    } else {
-      const modalWrapper = document.createElement('div');
-      modalWrapper.id = modalWrapperId;
-      shadowRootNode.appendChild(modalWrapper);
-      setIsDOMAnchorReady(true);
-    }
+    createModalDomPlacement(setIsDOMAnchorReady, shadowRootNode);
   }, [shadowRootNode]);
 
   React.useEffect(() => {
