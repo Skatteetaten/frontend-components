@@ -12,57 +12,6 @@ export const getClassNames = (props, expandabledRowOpenWidth) => {
   const palette = getTheme().palette as PaletteProps;
 
   return mergeStyleSets({
-    tabellTheadCell: {
-      borderBottom: `2px solid ${palette.skeColor.blackAlt}`,
-      padding: designtokenSpacing['ske-spacing-lg'],
-      fontSize: compactTable
-        ? designtokenFontSizes['ske-font-size-s']
-        : 'inherit',
-      verticalAlign: 'bottom',
-      fontWeight: designtokenFontSizes['ske-font-weight-bold'],
-      position: 'relative',
-      selectors: {
-        i: {
-          color: `${palette.skeColor.blue}`,
-          position: 'absolute',
-          paddingLeft: designtokenSpacing['ske-spacing-xs'],
-          cursor: 'pointer',
-          selectors: {
-            ':hover': {
-              color: `${palette.skeColor.darkBlue}`,
-            },
-            '& [data-icon-name="ArrowUpDown"]': {
-              selectors: {
-                [`@media (min-width: ${designtokenBreakpoints['ske-breakpoint-lg']})`]: {
-                  opacity: 0,
-                },
-                '& .noAutoHide': {
-                  opacity: 1,
-                },
-                ':hover': {
-                  opacity: 1,
-                },
-              },
-            },
-          },
-        },
-        ':focus': {
-          color: `${palette.skeColor.blue}`,
-          outline: '0',
-        },
-      },
-    },
-    tabellTheadCellIsSortable: {
-      cursor: 'pointer',
-      selectors: {
-        ':hover [data-icon-name="ArrowUpDown"]': {
-          opacity: 1,
-        },
-        ':focus [data-icon-name="ArrowUpDown"]': {
-          opacity: 1,
-        },
-      },
-    },
     tableRow: {
       borderBox: 'box-sizing',
       verticalAlign: 'middle',

@@ -2,6 +2,9 @@ import { mergeStyleSets } from '@fluentui/merge-styles';
 import { getTheme } from '@fluentui/react/lib/Styling';
 
 import { FontWeights, FontSizes, PaletteProps } from '../../utils';
+import designtokenSpacing from '../../utils/designtokens/_spacing.json';
+import designtokenFontSizes from '../../utils/designtokens/_fontSizes.json';
+import designtokenBreakpoints from '../../utils/designtokens/_breakpoints.json';
 
 export const getClassNames = (props) => {
   const { compactTable } = props;
@@ -13,16 +16,18 @@ export const getClassNames = (props) => {
     },
     tabellTheadCell: {
       borderBottom: `2px solid ${palette.skeColor.blackAlt}`,
-      padding: 12,
-      fontSize: compactTable ? FontSizes.small : 'inherit',
+      padding: designtokenSpacing['ske-spacing-lg'],
+      fontSize: compactTable
+        ? designtokenFontSizes['ske-font-size-s']
+        : 'inherit',
       verticalAlign: 'bottom',
-      fontWeight: FontWeights.bold,
+      fontWeight: designtokenFontSizes['ske-font-weight-bold'],
       position: 'relative',
       selectors: {
         i: {
           color: `${palette.skeColor.blue}`,
           position: 'absolute',
-          paddingLeft: '0.1em',
+          paddingLeft: designtokenSpacing['ske-spacing-xs'],
           cursor: 'pointer',
           selectors: {
             ':hover': {
@@ -30,7 +35,7 @@ export const getClassNames = (props) => {
             },
             '& [data-icon-name="ArrowUpDown"]': {
               selectors: {
-                '@media (min-width: 1024px)': {
+                [`@media (min-width: ${designtokenBreakpoints['ske-breakpoint-lg']})`]: {
                   opacity: 0,
                 },
                 '& .noAutoHide': {

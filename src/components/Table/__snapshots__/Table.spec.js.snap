@@ -125,17 +125,17 @@ exports[`Table komponent matcher snapshot 1`] = `
                     border-bottom: 2px solid #1a1a1a;
                     font-size: inherit;
                     font-weight: 700;
-                    padding-bottom: 12px;
-                    padding-left: 12px;
-                    padding-right: 12px;
-                    padding-top: 12px;
+                    padding-bottom: 1rem;
+                    padding-left: 1rem;
+                    padding-right: 1rem;
+                    padding-top: 1rem;
                     position: relative;
                     vertical-align: bottom;
                   }
                   & i {
                     color: #1362ae;
                     cursor: pointer;
-                    padding-left: 0.1em;
+                    padding-left: 0.125rem;
                     position: absolute;
                   }
                   & i:hover {
@@ -166,17 +166,17 @@ exports[`Table komponent matcher snapshot 1`] = `
                     border-bottom: 2px solid #1a1a1a;
                     font-size: inherit;
                     font-weight: 700;
-                    padding-bottom: 12px;
-                    padding-left: 12px;
-                    padding-right: 12px;
-                    padding-top: 12px;
+                    padding-bottom: 1rem;
+                    padding-left: 1rem;
+                    padding-right: 1rem;
+                    padding-top: 1rem;
                     position: relative;
                     vertical-align: bottom;
                   }
                   & i {
                     color: #1362ae;
                     cursor: pointer;
-                    padding-left: 0.1em;
+                    padding-left: 0.125rem;
                     position: absolute;
                   }
                   & i:hover {
@@ -211,17 +211,17 @@ exports[`Table komponent matcher snapshot 1`] = `
                     border-bottom: 2px solid #1a1a1a;
                     font-size: inherit;
                     font-weight: 700;
-                    padding-bottom: 12px;
-                    padding-left: 12px;
-                    padding-right: 12px;
-                    padding-top: 12px;
+                    padding-bottom: 1rem;
+                    padding-left: 1rem;
+                    padding-right: 1rem;
+                    padding-top: 1rem;
                     position: relative;
                     vertical-align: bottom;
                   }
                   & i {
                     color: #1362ae;
                     cursor: pointer;
-                    padding-left: 0.1em;
+                    padding-left: 0.125rem;
                     position: absolute;
                   }
                   & i:hover {
@@ -256,17 +256,17 @@ exports[`Table komponent matcher snapshot 1`] = `
                     border-bottom: 2px solid #1a1a1a;
                     font-size: inherit;
                     font-weight: 700;
-                    padding-bottom: 12px;
-                    padding-left: 12px;
-                    padding-right: 12px;
-                    padding-top: 12px;
+                    padding-bottom: 1rem;
+                    padding-left: 1rem;
+                    padding-right: 1rem;
+                    padding-top: 1rem;
                     position: relative;
                     vertical-align: bottom;
                   }
                   & i {
                     color: #1362ae;
                     cursor: pointer;
-                    padding-left: 0.1em;
+                    padding-left: 0.125rem;
                     position: absolute;
                   }
                   & i:hover {
