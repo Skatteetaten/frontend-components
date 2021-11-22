@@ -76,13 +76,24 @@ exports[`Checkbox komponent matcher snapshot 1`] = `
         border: none;
         font-size: 1rem;
       }
+      &.is-disabled .ms-Checkbox-checkbox {
+        background-color: #e5e5e5;
+        border-radius: 0px;
+        border: 2px solid #808080;
+        font-size: 1rem;
+        padding-top: 0px;
+      }
+      &.is-disabled i.ms-Checkbox-checkmark {
+        color: #808080;
+        padding-left: 0px;
+        padding-top: 0px;
+      }
       & i.ms-Checkbox-checkmark {
         font-size: 1rem;
         padding-left: 1.5px;
         padding-top: 1.5px;
       }
       &.is-checked:hover .ms-Checkbox-checkmark {
-        background-color: #093e61;
         opacity: 1;
       }
       & i {
