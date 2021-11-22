@@ -129,10 +129,10 @@ exports[`Callout komponent matcher snapshot 1`] = `
                 padding-right: 4px;
                 padding-top: 0;
                 position: absolute;
-                right: 0px;
+                right: 1px;
                 text-align: center;
                 text-decoration: none;
-                top: 0px;
+                top: 1px;
                 user-select: none;
                 width: 32px;
               }
@@ -180,15 +180,15 @@ exports[`Callout komponent matcher snapshot 1`] = `
                 border-radius: 50%;
                 border: 3px solid transparent;
                 color: #1362ae;
-                height: 40px;
+                height: 35px;
                 padding-bottom: 0px;
                 padding-left: 0px;
                 padding-right: 0px;
                 padding-top: 0px;
-                width: 40px;
+                width: 35px;
               }
               &.ms-Button--icon i {
-                font-size: 1.25rem;
+                font-size: 1.0625rem;
               }
               &.ms-Button--icon:hover {
                 background: #cde1f9;
@@ -212,22 +212,7 @@ exports[`Callout komponent matcher snapshot 1`] = `
                 font-weight: 700;
               }
               &:hover i {
-                background-color: #cde1f9;
                 transition: opacity 300ms ease-out;
-              }
-              &:focus i {
-                background-color: #cde1f9;
-                border-radius: 0px;
-              }
-              && .ms-Button-icon {
-                padding-bottom: 4px;
-                padding-left: 4px;
-                padding-right: 4px;
-                padding-top: 4px;
-              }
-              &.ms-Button {
-                background-color: transparent !important;
-                border: none !important;
               }
           data-is-focusable={true}
           onClick={[Function]}

@@ -1,5 +1,4 @@
 import { IButtonProps } from '@fluentui/react';
-import { deprecate } from 'util';
 
 export interface ButtonProps extends IButtonProps {
   /** Ikon som skal vises foran teksten på knappen */
