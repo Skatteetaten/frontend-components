@@ -60,6 +60,14 @@ export const getClassNames = (props) => {
         },
       },
     },
+    tabellTheadCellAlignedRight: {
+      justifyContent: 'flex-end',
+      textAlign: 'right',
+    },
+    tabellTheadCellAlignedCenter: {
+      justifyContent: 'center',
+      textAlign: 'center',
+    },
     tabellTheadCellIsEmpty: {
       borderBottom: `2px solid ${palette.skeColor.blackAlt}`,
     },

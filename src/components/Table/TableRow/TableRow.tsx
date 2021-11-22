@@ -5,8 +5,15 @@ import classnames from 'classnames';
 import { t } from '../../utils';
 
 export interface TableRowProps<P> {
-  data: P;
   rowIndex: number;
+  /** Custom classNames for å overskrive styling */
+  customClassNames?: {
+    tableRow?: string;
+    tableCell?: string;
+    cellContent?: string;
+    expandableContent?: string;
+  };
+  data: P;
   editableContent?: (
     data: P,
     onCloseRow: () => void,
@@ -42,8 +49,9 @@ export interface TableRowProps<P> {
  */
 export const TableRow = <P extends object>(props: TableRowProps<P>) => {
   const {
-    data,
     rowIndex,
+    customClassNames,
+    data,
     editableRows,
     editableContent,
     columns,
@@ -95,7 +103,7 @@ export const TableRow = <P extends object>(props: TableRowProps<P>) => {
 
   const editButton = (
     <span
-      className={classnames(styles.cellContent, {
+      className={classnames(styles.cellContent, customClassNames?.cellContent, {
         [styles.cellContentSmall]: !showRowSeparators,
       })}
     >
@@ -116,7 +124,13 @@ export const TableRow = <P extends object>(props: TableRowProps<P>) => {
   const expandableCellContent = () => {
     if (expandableContent) {
       return (
-        <div id={expandableContentId} className={styles.expandableContent}>
+        <div
+          id={expandableContentId}
+          className={classnames(
+            styles.expandableContent,
+            customClassNames?.expandableContent
+          )}
+        >
           {expandableContent(data, onCloseRow, rowIndex)}
         </div>
       );
@@ -133,6 +147,7 @@ export const TableRow = <P extends object>(props: TableRowProps<P>) => {
         ref={expandCollapseCellRef}
         className={classnames(
           styles.tableCell,
+          customClassNames?.tableCell,
           styles.tableCellForExpandCollapseButton
         )}
       >
@@ -168,9 +183,13 @@ export const TableRow = <P extends object>(props: TableRowProps<P>) => {
       <>
         {editableRow && (
           <td
-            className={classnames(styles.tableCell, {
-              [styles.separator]: showRowSeparator && !isExpandableRowOpen,
-            })}
+            className={classnames(
+              styles.tableCell,
+              customClassNames?.tableCell,
+              {
+                [styles.separator]: showRowSeparator && !isExpandableRowOpen,
+              }
+            )}
             rowSpan={childrenLength + 1}
           >
             {editButton}
@@ -201,6 +220,7 @@ export const TableRow = <P extends object>(props: TableRowProps<P>) => {
         <span
           className={classnames(
             styles.cellContent,
+            customClassNames?.cellContent,
             styles.cellContentClickable,
             {
               [styles.cellContentAboveExpandedArea]: isExpandabledRowOpen,
@@ -217,14 +237,18 @@ export const TableRow = <P extends object>(props: TableRowProps<P>) => {
       </button>
     ) : (
       <div
-        className={classnames(styles.cellContent, {
-          [styles.cellContentAboveExpandedArea]: isExpandabledRowOpen,
-          [styles.cellContentAlignedRight]: alignment === 'right',
-          [styles.cellContentAlignedCenter]: alignment === 'center',
-          [styles.cellContentLarge]: showRowSeparator && !isChild,
-          [styles.cellContentChildRow]: isChild,
-          [styles.cellContentHideEdit]: !editableRow && editableRows,
-        })}
+        className={classnames(
+          styles.cellContent,
+          customClassNames?.cellContent,
+          {
+            [styles.cellContentAboveExpandedArea]: isExpandabledRowOpen,
+            [styles.cellContentAlignedRight]: alignment === 'right',
+            [styles.cellContentAlignedCenter]: alignment === 'center',
+            [styles.cellContentLarge]: showRowSeparator && !isChild,
+            [styles.cellContentChildRow]: isChild,
+            [styles.cellContentHideEdit]: !editableRow && editableRows,
+          }
+        )}
       >
         {formatContent(content, index)}
       </div>
@@ -249,15 +273,19 @@ export const TableRow = <P extends object>(props: TableRowProps<P>) => {
         return (
           <td
             key={tableId.concat(rowKey.toString(), '_', cellIndex.toString())}
-            className={classnames(styles.tableCell, {
-              [styles.tableCellAboveExpandedArea]: isRowExpanded,
-              [styles.tableCellAlignedRight]: column.alignment === 'right',
-              [styles.tableCellAlignedCenter]: column.alignment === 'center',
-              [styles.tableCellIsEditableRowClosed]: !props.isEditableRowOpen,
-              [styles.hideOnMobile]: column.hideOnMobile,
-              [styles.separator]:
-                showRowSeparator && !isExpandableRowOpen && !data['children'],
-            })}
+            className={classnames(
+              styles.tableCell,
+              customClassNames?.tableCell,
+              {
+                [styles.tableCellAboveExpandedArea]: isRowExpanded,
+                [styles.tableCellAlignedRight]: column.alignment === 'right',
+                [styles.tableCellAlignedCenter]: column.alignment === 'center',
+                [styles.tableCellIsEditableRowClosed]: !props.isEditableRowOpen,
+                [styles.hideOnMobile]: column.hideOnMobile,
+                [styles.separator]:
+                  showRowSeparator && !isExpandableRowOpen && !data['children'],
+              }
+            )}
           >
             {renderCellContent(
               rowData[column.fieldName],
@@ -273,14 +301,18 @@ export const TableRow = <P extends object>(props: TableRowProps<P>) => {
           <th
             key={tableId.concat(rowKey.toString(), '_', cellIndex.toString())}
             id={tableId.concat(rowKey.toString(), '_', cellIndex.toString())}
-            className={classnames(styles.tableCell, {
-              [styles.tableCellAboveExpandedArea]: isRowExpanded,
-              [styles.tableCellAlignedRight]: column.alignment === 'right',
-              [styles.tableCellAlignedCenter]: column.alignment === 'center',
-              [styles.tableCellIsEditableRowClosed]: !props.isEditableRowOpen,
-              [styles.hideOnMobile]: column.hideOnMobile,
-              [styles.separator]: showRowSeparator && !isExpandableRowOpen,
-            })}
+            className={classnames(
+              styles.tableCell,
+              customClassNames?.tableCell,
+              {
+                [styles.tableCellAboveExpandedArea]: isRowExpanded,
+                [styles.tableCellAlignedRight]: column.alignment === 'right',
+                [styles.tableCellAlignedCenter]: column.alignment === 'center',
+                [styles.tableCellIsEditableRowClosed]: !props.isEditableRowOpen,
+                [styles.hideOnMobile]: column.hideOnMobile,
+                [styles.separator]: showRowSeparator && !isExpandableRowOpen,
+              }
+            )}
             scope={'row'}
             rowSpan={childrenLength + 1}
           >
@@ -304,6 +336,7 @@ export const TableRow = <P extends object>(props: TableRowProps<P>) => {
         key={rowIndex}
         className={classnames(
           styles.tableRow,
+          customClassNames?.tableRow,
           isEditableRowOpen
             ? styles.tableRowEditableAndOpen
             : styles.tableRowEditableAndClosed,
@@ -312,7 +345,7 @@ export const TableRow = <P extends object>(props: TableRowProps<P>) => {
       >
         <td
           key={rowIndex}
-          className={styles.tableCell}
+          className={classnames(styles.tableCell, customClassNames?.tableCell)}
           colSpan={numberOfColumns}
         >
           {editableContent && editableContent(data, onCloseRow, rowIndex)}
@@ -333,6 +366,7 @@ export const TableRow = <P extends object>(props: TableRowProps<P>) => {
               ref={expandabledRowRef}
               className={classnames(
                 styles.tableRow,
+                customClassNames?.tableRow,
                 styles.tableRowIsExpandableAndOpen,
                 {
                   [styles.separator]:
@@ -363,6 +397,7 @@ export const TableRow = <P extends object>(props: TableRowProps<P>) => {
                 key={rowIndex + 'expanded'}
                 className={classnames(
                   styles.tableRow,
+                  customClassNames?.tableRow,
                   styles.tableRowIsExpandableAndOpen,
                   {
                     [styles.separator]: showRowSeparator,
@@ -377,7 +412,7 @@ export const TableRow = <P extends object>(props: TableRowProps<P>) => {
           <tr
             key={rowIndex}
             ref={expandabledRowRef}
-            className={classnames(styles.tableRow, {
+            className={classnames(styles.tableRow, customClassNames?.tableRow, {
               [styles.tableRowIsClickable]: openEditableOnRowClick,
               [styles.separator]:
                 showRowSeparator && !isExpandableRowOpen && !data['children'],
@@ -395,7 +430,7 @@ export const TableRow = <P extends object>(props: TableRowProps<P>) => {
         <>
           <tr
             key={rowIndex}
-            className={classnames(styles.tableRow, {
+            className={classnames(styles.tableRow, customClassNames?.tableRow, {
               [styles.tableRowIsClickable]: openEditableOnRowClick,
               [styles.separator]:
                 showRowSeparator && !isExpandableRowOpen && !data['children'],
@@ -413,11 +448,15 @@ export const TableRow = <P extends object>(props: TableRowProps<P>) => {
               return (
                 <tr
                   key={rowIndex + 'child' + childIndex}
-                  className={classnames(styles.tableRow, {
-                    [styles.separator]:
-                      showRowSeparator &&
-                      childIndex === data['children'].length - 1,
-                  })}
+                  className={classnames(
+                    styles.tableRow,
+                    customClassNames?.tableRow,
+                    {
+                      [styles.separator]:
+                        showRowSeparator &&
+                        childIndex === data['children'].length - 1,
+                    }
+                  )}
                 >
                   {actionButtonsBefore && <td />}
                   {renderRow(child, columns, childIndex, false, true)}

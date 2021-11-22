@@ -53,7 +53,7 @@ export interface TableProps<P> extends React.HTMLAttributes<HTMLDivElement> {
   /**  Configuration for column name and order*/
   columns?: {
     /** Column name */
-    name: string;
+    name: string | JSX.Element;
     /** Object key */
     fieldName: string;
     /** Override the left alignment inside the cell: 'right' or 'center'. */

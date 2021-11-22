@@ -7,8 +7,12 @@ export const getClassNames = (props) => {
   const { fullWidth } = props;
   const palette = getTheme().palette as PaletteProps;
 
-  // TO-DO sjekke om det settes rare classNames rett fra props eller attributes
-  // TO-DO åpne opp med flere customClassNames
+  // TO-DO sjekke om det settes rare classNames rett fra props eller attributes - OK
+  // TO-DO refaktorere med bruk av desigtokens - OK
+  // TO-DO åpne opp med flere customClassNames - OK
+  // TO-DO åpne opp til JSX.Element i header - OK
+  // TO-DO høyre justering - OK
+
   return mergeStyleSets({
     SkeTable: {
       overflowX: 'auto',
@@ -26,7 +30,7 @@ export const getClassNames = (props) => {
     tabellThead: {
       display: 'table-header-group',
     },
-    tableTheadRow: {
+    tabellTheadRow: {
       verticalAlign: 'middle',
     },
     emptyTd: {

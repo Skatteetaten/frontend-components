@@ -1,26 +1,31 @@
 import { mergeStyleSets } from '@fluentui/merge-styles';
 import { getTheme } from '@fluentui/react/lib/Styling';
 
-import { FontWeights, FontSizes, PaletteProps } from '../../utils';
+import { PaletteProps } from '../../utils';
+
+import designtokenSpacing from '../../utils/designtokens/_spacing.json';
+import designtokenFontSizes from '../../utils/designtokens/_fontSizes.json';
+import designtokenBreakpoints from '../../utils/designtokens/_breakpoints.json';
 
 export const getClassNames = (props, expandabledRowOpenWidth) => {
   const { compactTable } = props;
   const palette = getTheme().palette as PaletteProps;
 
-  // TO-DO sjekke om det settes rare classNames rett fra props eller attributes
   return mergeStyleSets({
     tabellTheadCell: {
       borderBottom: `2px solid ${palette.skeColor.blackAlt}`,
-      padding: 12,
-      fontSize: compactTable ? FontSizes.small : 'inherit',
+      padding: designtokenSpacing['ske-spacing-lg'],
+      fontSize: compactTable
+        ? designtokenFontSizes['ske-font-size-s']
+        : 'inherit',
       verticalAlign: 'bottom',
-      fontWeight: FontWeights.bold,
+      fontWeight: designtokenFontSizes['ske-font-weight-bold'],
       position: 'relative',
       selectors: {
         i: {
           color: `${palette.skeColor.blue}`,
           position: 'absolute',
-          paddingLeft: '0.1em',
+          paddingLeft: designtokenSpacing['ske-spacing-xs'],
           cursor: 'pointer',
           selectors: {
             ':hover': {
@@ -28,7 +33,7 @@ export const getClassNames = (props, expandabledRowOpenWidth) => {
             },
             '& [data-icon-name="ArrowUpDown"]': {
               selectors: {
-                '@media (min-width: 1024px)': {
+                [`@media (min-width: ${designtokenBreakpoints['ske-breakpoint-lg']})`]: {
                   opacity: 0,
                 },
                 '& .noAutoHide': {
@@ -79,13 +84,15 @@ export const getClassNames = (props, expandabledRowOpenWidth) => {
     expandableContent: {
       // Dette henter width'en fra parent-row slik at ekspandert innhold kan ta hele bredden
       width: expandabledRowOpenWidth ? expandabledRowOpenWidth - 5 + 'px' : '',
-      padding: compactTable ? '0.25rem' : '0.5rem',
+      padding: compactTable
+        ? designtokenSpacing['ske-spacing-sm']
+        : designtokenSpacing['ske-spacing-md'],
       boxSizing: 'border-box',
       position: 'relative',
       zIndex: 99,
     },
     tableCell: {
-      fontWeight: '400',
+      fontWeight: designtokenFontSizes['ske-font-weight-regular'],
       padding: 0,
       verticalAlign: 'inherit',
     },
@@ -99,11 +106,15 @@ export const getClassNames = (props, expandabledRowOpenWidth) => {
     },
     tableCellIsSum: {
       textAlign: 'end',
-      padding: '12px',
+      padding: designtokenSpacing['ske-spacing-lg'],
     },
     tableCellForExpandCollapseButton: {
-      maxWidth: '50px',
-      maxHeight: '50px',
+      maxWidth: designtokenSpacing['ske-spacing-xl'],
+      selectors: {
+        [`@media (min-width: ${designtokenBreakpoints['ske-breakpoint-md']})`]: {
+          maxWidth: designtokenSpacing['ske-spacing-xxl'],
+        },
+      },
     },
     tableCellIsEditableRowClosed: {
       borderBottom: 'none',
@@ -117,26 +128,29 @@ export const getClassNames = (props, expandabledRowOpenWidth) => {
       alignItems: 'center',
       boxSizing: 'border-box',
       display: 'flex',
-      fontSize: compactTable ? FontSizes.small : 'inherit',
-      //height: compactTable ? '28px' : '100%',
-      padding: '8px 12px',
+      fontSize: compactTable
+        ? designtokenFontSizes['ske-font-size-s']
+        : 'inherit',
+      padding: `${designtokenSpacing['ske-spacing-md']} ${designtokenSpacing['ske-spacing-lg']}`,
       textAlign: 'inherit',
       verticalAlign: 'middle',
       width: '100%',
     },
     cellContentClickable: {
-      paddingTop: '8px',
-      paddingBottom: '8px',
+      paddingTop: designtokenSpacing['ske-spacing-md'],
+      paddingBottom: designtokenSpacing['ske-spacing-md'],
       cursor: 'pointer',
     },
     cellContentSmall: {
-      padding: '2px 12px',
+      padding: `${designtokenSpacing['ske-spacing-xs']} ${designtokenSpacing['ske-spacing-lg']}`,
     },
     cellContentLarge: {
-      padding: compactTable ? '6px 6px' : '12px 12px',
+      padding: compactTable
+        ? `${designtokenSpacing['ske-spacing-sm']} ${designtokenSpacing['ske-spacing-sm']}`
+        : `${designtokenSpacing['ske-spacing-lg']} ${designtokenSpacing['ske-spacing-lg']}`,
     },
     cellContentChildRow: {
-      padding: '0px 12px 12px 12px',
+      padding: `0 ${designtokenSpacing['ske-spacing-lg']} ${designtokenSpacing['ske-spacing-lg']} ${designtokenSpacing['ske-spacing-lg']}`,
     },
     cellContentAlignedRight: {
       justifyContent: 'flex-end',
@@ -151,21 +165,22 @@ export const getClassNames = (props, expandabledRowOpenWidth) => {
       paddingTop: compactTable ? '10px' : '13px',
     },
     cellContentHideEdit: {
-      minHeight: '60px',
+      minHeight: designtokenSpacing['ske-spacing-mega'],
     },
     // TO-DO hover og focus settes i riktig - avventer at bug om hover/focus på iconButton først fikses
     expandButton: {},
     expandButtonIsActive: {},
     editButton: {
+      width: '100%',
+      height: '100%',
+      margin: 0,
+      padding: 0,
       border: 'none',
       background: 'transparent',
       boxSizing: 'border-box',
       fontSize: 'inherit',
-      height: '100%',
-      margin: 0,
-      padding: 0,
+
       textAlign: 'inherit',
-      width: '100%',
     },
     separator: {
       borderBottom: `1px solid ${palette.skeColor.lightGrey}`,
@@ -176,7 +191,7 @@ export const getClassNames = (props, expandabledRowOpenWidth) => {
     hideOnMobile: {
       display: 'none',
       selectors: {
-        '@media (min-width: 640px)': {
+        [`@media (min-width: ${designtokenBreakpoints['ske-breakpoint-md']})`]: {
           display: 'table-cell',
         },
       },

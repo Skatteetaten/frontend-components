@@ -236,7 +236,15 @@ const columns = [
     name: 'Status',
     fieldName: 'status',
   },
-  { name: 'Forventet behandlet', fieldName: 'eta' },
+  {
+    name: (
+      <LabelWithCallout
+        label={'Forventet behandlet'}
+        help={'Status for hvert selskap i perioden.'}
+      />
+    ),
+    fieldName: 'eta',
+  },
 ];
 
 const data = [

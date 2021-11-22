@@ -42,23 +42,31 @@ export const TableHeader = (props: TableHeaderProps): JSX.Element => {
             ? 'ArrowDown'
             : 'ArrowUp'
           : 'ArrowUpDown';
+        let ariaLabel = key.fieldName;
+        if (typeof key.name === 'string') {
+          ariaLabel = isSorted
+            ? isSortedAscending
+              ? key.name.concat(' ', t('table.sorted_ascending'))
+              : key.name.concat(' ', t('table.sorted_descending'))
+            : key.name.concat(' ', t('table.sortable'));
+        }
+
         return (
           <th
             key={key.fieldName}
             className={classnames(
               styles.tabellTheadCell,
               styles.tabellTheadCellIsSortable,
-              { [styles.tabellTheadCell]: key.hideOnMobile }
+              {
+                [styles.tabellTheadCellAlignedRight]: key.alignment === 'right',
+                [styles.tabellTheadCellAlignedCenter]:
+                  key.alignment === 'center',
+                [styles.tabellTheadCell]: key.hideOnMobile,
+              }
             )}
             tabIndex={0}
             scope="col"
-            aria-label={
-              isSorted
-                ? isSortedAscending
-                  ? key.name.concat(' ', t('table.sorted_ascending'))
-                  : key.name.concat(' ', t('table.sorted_descending'))
-                : key.name.concat(' ', t('table.sortable'))
-            }
+            aria-label={ariaLabel}
             onClick={() => setSortingState(key.fieldName)}
             onKeyDown={(e) => {
               return e.key === 'Enter' ? setSortingState(key.fieldName) : null;
@@ -78,6 +86,8 @@ export const TableHeader = (props: TableHeaderProps): JSX.Element => {
         <th
           key={key.fieldName}
           className={classnames(styles.tabellTheadCell, {
+            [styles.tabellTheadCellAlignedRight]: key.alignment === 'right',
+            [styles.tabellTheadCellAlignedCenter]: key.alignment === 'center',
             [styles.tabellTheadCell]: key.hideOnMobile,
           })}
           scope="col"
