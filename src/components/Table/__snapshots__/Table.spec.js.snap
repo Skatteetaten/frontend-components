@@ -61,269 +61,240 @@ exports[`Table komponent matcher snapshot 1`] = `
         {
           overflow-x: auto;
         }
-        & > table {
-          border-collapse: collapse;
-          display: table;
-          height: 1px;
-          text-align: left;
-        }
-        & > table caption {
-          text-align: left;
-        }
-        & > table thead {
-          display: table-header-group;
-        }
-        & > table thead th {
-          border-bottom: 2px solid #1a1a1a;
-          font-size: inherit;
-          padding-bottom: 12px;
-          padding-left: 12px;
-          padding-right: 12px;
-          padding-top: 12px;
-        }
-        & > table td.editableCell {
-          padding-bottom: 0px;
-          padding-left: 0px;
-          padding-right: 0px;
-          padding-top: 0px;
-        }
-        & > table tr {
-          height: 100%;
-          vertical-align: middle;
-        }
-        & > table .separator {
-          border-bottom: 1px solid #b2b2b2;
-        }
-        & > table tr.clickable:hover {
-          background-color: #cde1f9;
-        }
-        & > table td {
-          font-weight: 400;
-          height: 100%;
-          padding-bottom: 0px;
-          padding-left: 0px;
-          padding-right: 0px;
-          padding-top: 0px;
-          vertical-align: inherit;
-        }
-        & > table .cellButton {
-          background: transparent;
-          border: none;
-          box-sizing: border-box;
-          font-size: inherit;
-          height: 100%;
-          margin-bottom: 0px;
-          margin-left: 0px;
-          margin-right: 0px;
-          margin-top: 0px;
-          padding-bottom: 0px;
-          padding-left: 0px;
-          padding-right: 0px;
-          padding-top: 0px;
-          text-align: inherit;
-          width: 100%;
-        }
-        & > table .cellContent {
-          align-items: center;
-          box-sizing: border-box;
-          display: flex;
-          font-size: inherit;
-          height: 100%;
-          padding-bottom: 8px;
-          padding-left: 12px;
-          padding-right: 12px;
-          padding-top: 8px;
-          text-align: inherit;
-          vertical-align: middle;
-          width: 100%;
-        }
-        & > table .cellContentSmall {
-          padding-bottom: 2px;
-          padding-left: 12px;
-          padding-right: 12px;
-          padding-top: 2px;
-        }
-        & > table .cellContentLarge {
-          padding-bottom: 12px;
-          padding-left: 12px;
-          padding-right: 12px;
-          padding-top: 12px;
-        }
-        & > table .cellContentChildRow {
-          padding-bottom: 12px;
-          padding-left: 12px;
-          padding-right: 12px;
-          padding-top: 0px;
-        }
-        & > table .cellContentHideEdit {
-          min-height: 60px;
-        }
-        & > table .cellContent.clickable {
-          padding-bottom: 8px;
-          padding-top: 8px;
-        }
-        & > table .cellContent.clickable:hover {
-          cursor: pointer;
-        }
-        & > table th.hideOnMobile {
-          display: none;
-        }
-        @media (min-width: 640px){& > table th.hideOnMobile {
-          display: table-cell;
-        }
-        & > table td.hideOnMobile {
-          display: none;
-        }
-        @media (min-width: 640px){& > table td.hideOnMobile {
-          display: table-cell;
-        }
-        & > table th {
-          font-weight: 700;
-          position: relative;
-          vertical-align: bottom;
-        }
-        & > table th i {
-          color: #1362ae;
-          cursor: pointer;
-          padding-left: 0.1em;
-          position: absolute;
-        }
-        & > table th i:hover {
-          color: #093e61;
-        }
-        @media (min-width: 1024px){& [data-icon-name="ArrowUpDown"] {
-          opacity: 0;
-        }
-        & .noAutoHide {
-          opacity: 1;
-        }
-        & [data-icon-name="ArrowUpDown"]:hover {
-          opacity: 1;
-        }
-        & > table th:focus {
-          color: #1362ae;
-          outline: 0;
-        }
-        & .sortable {
-          cursor: pointer;
-        }
-        & .sortable:hover [data-icon-name="ArrowUpDown"] {
-          opacity: 1;
-        }
-        & .sortable:focus [data-icon-name="ArrowUpDown"] {
-          opacity: 1;
-        }
-        & .right {
-          justify-content: flex-end;
-          text-align: right;
-        }
-        & .right .cellContent {
-          justify-content: flex-end;
-          text-align: right;
-        }
-        & .center {
-          justify-content: center;
-          text-align: center;
-        }
-        & .center .cellContent {
-          justify-content: center;
-          text-align: center;
-        }
-        & > table .tableRow {
-          font-weight: 400;
-          vertical-align: inherit;
-        }
-        & .expandCell {
-          max-height: 50px;
-          max-width: 50px;
-        }
-        & .editableRow {
-          display: none;
-        }
-        & .editableRow-open {
-          display: table-row;
-        }
-        & .expandableRow-open .is-closed {
-          border-bottom: none;
-          vertical-align: top;
-        }
-        & .expandableRow-open .is-closed div {
-          align-items: start;
-          height: auto;
-          margin-top: 2px;
-        }
-        & .expandableRow-open td {
-          border-bottom: none;
-          vertical-align: top;
-        }
-        & .expandableRow-open td div {
-          align-items: start;
-          height: auto;
-          margin-top: 2px;
-        }
-        & .emptyTd {
-          border-bottom: 2px solid #1a1a1a;
-        }
-        & .expandableContent {
-          padding-bottom: 8px;
-          padding-left: 52px;
-          padding-right: 52px;
-          padding-top: 0;
-        }
-        & .expandableContent div {
-          overflow-x: initial;
-        }
-        & .expandableContent table {
-          width: 100%;
-        }
-        & .expandableContent-after {
-          padding-bottom: 8px;
-          padding-left: 52px;
-          padding-right: 52px;
-          padding-top: 0;
-        }
-        & .expandableContent-after div {
-          overflow-x: initial;
-        }
-        & .sum {
-          padding-bottom: 12px;
-          padding-left: 12px;
-          padding-right: 12px;
-          padding-top: 12px;
-          text-align: end;
-        }
   >
-    <table>
-      <thead>
-        <tr>
-          <th
-            className=""
-            key="month"
-            scope="col"
+    <table
+      className=
+
+          {
+            border-collapse: collapse;
+            display: table;
+            height: 1px;
+            text-align: left;
+          }
+    >
+      <thead
+        className=
+
+            {
+              display: table-header-group;
+            }
+      >
+        <tr
+          className=
+
+              {
+                vertical-align: middle;
+              }
+        >
+          <TableHeader
+            columns={
+              Array [
+                Object {
+                  "fieldName": "month",
+                  "name": "Måned",
+                },
+                Object {
+                  "alignment": "right",
+                  "fieldName": "amount",
+                  "name": "Beløp",
+                },
+                Object {
+                  "alignment": "right",
+                  "fieldName": "coverage",
+                  "name": "Dekningsgrad",
+                },
+                Object {
+                  "alignment": "right",
+                  "fieldName": "revenue",
+                  "name": "Avkastning",
+                },
+              ]
+            }
+            setSort={[Function]}
+            sort={
+              Object {
+                "ascending": false,
+                "columnFieldName": "",
+              }
+            }
           >
-            Måned
-          </th>
-          <th
-            className=""
-            key="amount"
-            scope="col"
-          >
-            Beløp
-          </th>
-          <th
-            className=""
-            key="coverage"
-            scope="col"
-          >
-            Dekningsgrad
-          </th>
-          <th
-            className=""
-            key="revenue"
-            scope="col"
-          >
-            Avkastning
-          </th>
+            <th
+              className=
+
+                  {
+                    border-bottom: 2px solid #1a1a1a;
+                    font-size: inherit;
+                    font-weight: 700;
+                    padding-bottom: 12px;
+                    padding-left: 12px;
+                    padding-right: 12px;
+                    padding-top: 12px;
+                    position: relative;
+                    vertical-align: bottom;
+                  }
+                  & i {
+                    color: #1362ae;
+                    cursor: pointer;
+                    padding-left: 0.1em;
+                    position: absolute;
+                  }
+                  & i:hover {
+                    color: #093e61;
+                  }
+                  @media (min-width: 1024px){& [data-icon-name="ArrowUpDown"] {
+                    opacity: 0;
+                  }
+                  & .noAutoHide {
+                    opacity: 1;
+                  }
+                  & [data-icon-name="ArrowUpDown"]:hover {
+                    opacity: 1;
+                  }
+                  &:focus {
+                    color: #1362ae;
+                    outline: 0;
+                  }
+              key="month"
+              scope="col"
+            >
+              Måned
+            </th>
+            <th
+              className=
+
+                  {
+                    border-bottom: 2px solid #1a1a1a;
+                    font-size: inherit;
+                    font-weight: 700;
+                    padding-bottom: 12px;
+                    padding-left: 12px;
+                    padding-right: 12px;
+                    padding-top: 12px;
+                    position: relative;
+                    vertical-align: bottom;
+                  }
+                  & i {
+                    color: #1362ae;
+                    cursor: pointer;
+                    padding-left: 0.1em;
+                    position: absolute;
+                  }
+                  & i:hover {
+                    color: #093e61;
+                  }
+                  @media (min-width: 1024px){& [data-icon-name="ArrowUpDown"] {
+                    opacity: 0;
+                  }
+                  & .noAutoHide {
+                    opacity: 1;
+                  }
+                  & [data-icon-name="ArrowUpDown"]:hover {
+                    opacity: 1;
+                  }
+                  &:focus {
+                    color: #1362ae;
+                    outline: 0;
+                  }
+                  {
+                    justify-content: flex-end;
+                    text-align: right;
+                  }
+              key="amount"
+              scope="col"
+            >
+              Beløp
+            </th>
+            <th
+              className=
+
+                  {
+                    border-bottom: 2px solid #1a1a1a;
+                    font-size: inherit;
+                    font-weight: 700;
+                    padding-bottom: 12px;
+                    padding-left: 12px;
+                    padding-right: 12px;
+                    padding-top: 12px;
+                    position: relative;
+                    vertical-align: bottom;
+                  }
+                  & i {
+                    color: #1362ae;
+                    cursor: pointer;
+                    padding-left: 0.1em;
+                    position: absolute;
+                  }
+                  & i:hover {
+                    color: #093e61;
+                  }
+                  @media (min-width: 1024px){& [data-icon-name="ArrowUpDown"] {
+                    opacity: 0;
+                  }
+                  & .noAutoHide {
+                    opacity: 1;
+                  }
+                  & [data-icon-name="ArrowUpDown"]:hover {
+                    opacity: 1;
+                  }
+                  &:focus {
+                    color: #1362ae;
+                    outline: 0;
+                  }
+                  {
+                    justify-content: flex-end;
+                    text-align: right;
+                  }
+              key="coverage"
+              scope="col"
+            >
+              Dekningsgrad
+            </th>
+            <th
+              className=
+
+                  {
+                    border-bottom: 2px solid #1a1a1a;
+                    font-size: inherit;
+                    font-weight: 700;
+                    padding-bottom: 12px;
+                    padding-left: 12px;
+                    padding-right: 12px;
+                    padding-top: 12px;
+                    position: relative;
+                    vertical-align: bottom;
+                  }
+                  & i {
+                    color: #1362ae;
+                    cursor: pointer;
+                    padding-left: 0.1em;
+                    position: absolute;
+                  }
+                  & i:hover {
+                    color: #093e61;
+                  }
+                  @media (min-width: 1024px){& [data-icon-name="ArrowUpDown"] {
+                    opacity: 0;
+                  }
+                  & .noAutoHide {
+                    opacity: 1;
+                  }
+                  & [data-icon-name="ArrowUpDown"]:hover {
+                    opacity: 1;
+                  }
+                  &:focus {
+                    color: #1362ae;
+                    outline: 0;
+                  }
+                  {
+                    justify-content: flex-end;
+                    text-align: right;
+                  }
+              key="revenue"
+              scope="col"
+            >
+              Avkastning
+            </th>
+          </TableHeader>
         </tr>
       </thead>
       <tbody>
@@ -375,42 +346,218 @@ exports[`Table komponent matcher snapshot 1`] = `
           tableId="table-123"
         >
           <tr
-            className="separator"
+            className=
+
+                {
+                  border-box: box-sizing;
+                  vertical-align: middle;
+                }
+                {
+                  border-bottom: 1px solid #b2b2b2;
+                }
             key="0"
           >
             <th
-              className="tableRow is-closed separator"
+              className=
+
+                  {
+                    font-weight: 400;
+                    padding-bottom: 0px;
+                    padding-left: 0px;
+                    padding-right: 0px;
+                    padding-top: 0px;
+                    vertical-align: inherit;
+                  }
+                  {
+                    border-bottom: none;
+                    vertical-align: top;
+                  }
+                  {
+                    border-bottom: 1px solid #b2b2b2;
+                  }
               id="table-1230_0"
               key="table-1230_0"
               rowSpan={1}
               scope="row"
             >
               <div
-                className="cellContent cellContentLarge"
+                className=
+
+                    {
+                      align-items: center;
+                      box-sizing: border-box;
+                      display: flex;
+                      font-size: inherit;
+                      padding-bottom: 0.5rem;
+                      padding-left: 1rem;
+                      padding-right: 1rem;
+                      padding-top: 0.5rem;
+                      text-align: inherit;
+                      vertical-align: middle;
+                      width: 100%;
+                    }
+                    {
+                      padding-bottom: 1rem;
+                      padding-left: 1rem;
+                      padding-right: 1rem;
+                      padding-top: 1rem;
+                    }
               />
             </th>
             <td
-              className="right is-closed separator"
+              className=
+
+                  {
+                    font-weight: 400;
+                    padding-bottom: 0px;
+                    padding-left: 0px;
+                    padding-right: 0px;
+                    padding-top: 0px;
+                    vertical-align: inherit;
+                  }
+                  {
+                    justify-content: flex-end;
+                    text-align: right;
+                  }
+                  {
+                    border-bottom: none;
+                    vertical-align: top;
+                  }
+                  {
+                    border-bottom: 1px solid #b2b2b2;
+                  }
               key="table-1230_1"
             >
               <div
-                className="cellContent cellContentLarge"
+                className=
+
+                    {
+                      align-items: center;
+                      box-sizing: border-box;
+                      display: flex;
+                      font-size: inherit;
+                      padding-bottom: 0.5rem;
+                      padding-left: 1rem;
+                      padding-right: 1rem;
+                      padding-top: 0.5rem;
+                      text-align: inherit;
+                      vertical-align: middle;
+                      width: 100%;
+                    }
+                    {
+                      justify-content: flex-end;
+                      text-align: right;
+                    }
+                    {
+                      padding-bottom: 1rem;
+                      padding-left: 1rem;
+                      padding-right: 1rem;
+                      padding-top: 1rem;
+                    }
               />
             </td>
             <td
-              className="right is-closed separator"
+              className=
+
+                  {
+                    font-weight: 400;
+                    padding-bottom: 0px;
+                    padding-left: 0px;
+                    padding-right: 0px;
+                    padding-top: 0px;
+                    vertical-align: inherit;
+                  }
+                  {
+                    justify-content: flex-end;
+                    text-align: right;
+                  }
+                  {
+                    border-bottom: none;
+                    vertical-align: top;
+                  }
+                  {
+                    border-bottom: 1px solid #b2b2b2;
+                  }
               key="table-1230_2"
             >
               <div
-                className="cellContent cellContentLarge"
+                className=
+
+                    {
+                      align-items: center;
+                      box-sizing: border-box;
+                      display: flex;
+                      font-size: inherit;
+                      padding-bottom: 0.5rem;
+                      padding-left: 1rem;
+                      padding-right: 1rem;
+                      padding-top: 0.5rem;
+                      text-align: inherit;
+                      vertical-align: middle;
+                      width: 100%;
+                    }
+                    {
+                      justify-content: flex-end;
+                      text-align: right;
+                    }
+                    {
+                      padding-bottom: 1rem;
+                      padding-left: 1rem;
+                      padding-right: 1rem;
+                      padding-top: 1rem;
+                    }
               />
             </td>
             <td
-              className="right is-closed separator"
+              className=
+
+                  {
+                    font-weight: 400;
+                    padding-bottom: 0px;
+                    padding-left: 0px;
+                    padding-right: 0px;
+                    padding-top: 0px;
+                    vertical-align: inherit;
+                  }
+                  {
+                    justify-content: flex-end;
+                    text-align: right;
+                  }
+                  {
+                    border-bottom: none;
+                    vertical-align: top;
+                  }
+                  {
+                    border-bottom: 1px solid #b2b2b2;
+                  }
               key="table-1230_3"
             >
               <div
-                className="cellContent cellContentLarge"
+                className=
+
+                    {
+                      align-items: center;
+                      box-sizing: border-box;
+                      display: flex;
+                      font-size: inherit;
+                      padding-bottom: 0.5rem;
+                      padding-left: 1rem;
+                      padding-right: 1rem;
+                      padding-top: 0.5rem;
+                      text-align: inherit;
+                      vertical-align: middle;
+                      width: 100%;
+                    }
+                    {
+                      justify-content: flex-end;
+                      text-align: right;
+                    }
+                    {
+                      padding-bottom: 1rem;
+                      padding-left: 1rem;
+                      padding-right: 1rem;
+                      padding-top: 1rem;
+                    }
               />
             </td>
           </tr>
@@ -462,42 +609,218 @@ exports[`Table komponent matcher snapshot 1`] = `
           tableId="table-123"
         >
           <tr
-            className="separator"
+            className=
+
+                {
+                  border-box: box-sizing;
+                  vertical-align: middle;
+                }
+                {
+                  border-bottom: 1px solid #b2b2b2;
+                }
             key="1"
           >
             <th
-              className="tableRow is-closed separator"
+              className=
+
+                  {
+                    font-weight: 400;
+                    padding-bottom: 0px;
+                    padding-left: 0px;
+                    padding-right: 0px;
+                    padding-top: 0px;
+                    vertical-align: inherit;
+                  }
+                  {
+                    border-bottom: none;
+                    vertical-align: top;
+                  }
+                  {
+                    border-bottom: 1px solid #b2b2b2;
+                  }
               id="table-1231_0"
               key="table-1231_0"
               rowSpan={1}
               scope="row"
             >
               <div
-                className="cellContent cellContentLarge"
+                className=
+
+                    {
+                      align-items: center;
+                      box-sizing: border-box;
+                      display: flex;
+                      font-size: inherit;
+                      padding-bottom: 0.5rem;
+                      padding-left: 1rem;
+                      padding-right: 1rem;
+                      padding-top: 0.5rem;
+                      text-align: inherit;
+                      vertical-align: middle;
+                      width: 100%;
+                    }
+                    {
+                      padding-bottom: 1rem;
+                      padding-left: 1rem;
+                      padding-right: 1rem;
+                      padding-top: 1rem;
+                    }
               />
             </th>
             <td
-              className="right is-closed separator"
+              className=
+
+                  {
+                    font-weight: 400;
+                    padding-bottom: 0px;
+                    padding-left: 0px;
+                    padding-right: 0px;
+                    padding-top: 0px;
+                    vertical-align: inherit;
+                  }
+                  {
+                    justify-content: flex-end;
+                    text-align: right;
+                  }
+                  {
+                    border-bottom: none;
+                    vertical-align: top;
+                  }
+                  {
+                    border-bottom: 1px solid #b2b2b2;
+                  }
               key="table-1231_1"
             >
               <div
-                className="cellContent cellContentLarge"
+                className=
+
+                    {
+                      align-items: center;
+                      box-sizing: border-box;
+                      display: flex;
+                      font-size: inherit;
+                      padding-bottom: 0.5rem;
+                      padding-left: 1rem;
+                      padding-right: 1rem;
+                      padding-top: 0.5rem;
+                      text-align: inherit;
+                      vertical-align: middle;
+                      width: 100%;
+                    }
+                    {
+                      justify-content: flex-end;
+                      text-align: right;
+                    }
+                    {
+                      padding-bottom: 1rem;
+                      padding-left: 1rem;
+                      padding-right: 1rem;
+                      padding-top: 1rem;
+                    }
               />
             </td>
             <td
-              className="right is-closed separator"
+              className=
+
+                  {
+                    font-weight: 400;
+                    padding-bottom: 0px;
+                    padding-left: 0px;
+                    padding-right: 0px;
+                    padding-top: 0px;
+                    vertical-align: inherit;
+                  }
+                  {
+                    justify-content: flex-end;
+                    text-align: right;
+                  }
+                  {
+                    border-bottom: none;
+                    vertical-align: top;
+                  }
+                  {
+                    border-bottom: 1px solid #b2b2b2;
+                  }
               key="table-1231_2"
             >
               <div
-                className="cellContent cellContentLarge"
+                className=
+
+                    {
+                      align-items: center;
+                      box-sizing: border-box;
+                      display: flex;
+                      font-size: inherit;
+                      padding-bottom: 0.5rem;
+                      padding-left: 1rem;
+                      padding-right: 1rem;
+                      padding-top: 0.5rem;
+                      text-align: inherit;
+                      vertical-align: middle;
+                      width: 100%;
+                    }
+                    {
+                      justify-content: flex-end;
+                      text-align: right;
+                    }
+                    {
+                      padding-bottom: 1rem;
+                      padding-left: 1rem;
+                      padding-right: 1rem;
+                      padding-top: 1rem;
+                    }
               />
             </td>
             <td
-              className="right is-closed separator"
+              className=
+
+                  {
+                    font-weight: 400;
+                    padding-bottom: 0px;
+                    padding-left: 0px;
+                    padding-right: 0px;
+                    padding-top: 0px;
+                    vertical-align: inherit;
+                  }
+                  {
+                    justify-content: flex-end;
+                    text-align: right;
+                  }
+                  {
+                    border-bottom: none;
+                    vertical-align: top;
+                  }
+                  {
+                    border-bottom: 1px solid #b2b2b2;
+                  }
               key="table-1231_3"
             >
               <div
-                className="cellContent cellContentLarge"
+                className=
+
+                    {
+                      align-items: center;
+                      box-sizing: border-box;
+                      display: flex;
+                      font-size: inherit;
+                      padding-bottom: 0.5rem;
+                      padding-left: 1rem;
+                      padding-right: 1rem;
+                      padding-top: 0.5rem;
+                      text-align: inherit;
+                      vertical-align: middle;
+                      width: 100%;
+                    }
+                    {
+                      justify-content: flex-end;
+                      text-align: right;
+                    }
+                    {
+                      padding-bottom: 1rem;
+                      padding-left: 1rem;
+                      padding-right: 1rem;
+                      padding-top: 1rem;
+                    }
               />
             </td>
           </tr>
@@ -549,42 +872,218 @@ exports[`Table komponent matcher snapshot 1`] = `
           tableId="table-123"
         >
           <tr
-            className="separator"
+            className=
+
+                {
+                  border-box: box-sizing;
+                  vertical-align: middle;
+                }
+                {
+                  border-bottom: 1px solid #b2b2b2;
+                }
             key="2"
           >
             <th
-              className="tableRow is-closed separator"
+              className=
+
+                  {
+                    font-weight: 400;
+                    padding-bottom: 0px;
+                    padding-left: 0px;
+                    padding-right: 0px;
+                    padding-top: 0px;
+                    vertical-align: inherit;
+                  }
+                  {
+                    border-bottom: none;
+                    vertical-align: top;
+                  }
+                  {
+                    border-bottom: 1px solid #b2b2b2;
+                  }
               id="table-1232_0"
               key="table-1232_0"
               rowSpan={1}
               scope="row"
             >
               <div
-                className="cellContent cellContentLarge"
+                className=
+
+                    {
+                      align-items: center;
+                      box-sizing: border-box;
+                      display: flex;
+                      font-size: inherit;
+                      padding-bottom: 0.5rem;
+                      padding-left: 1rem;
+                      padding-right: 1rem;
+                      padding-top: 0.5rem;
+                      text-align: inherit;
+                      vertical-align: middle;
+                      width: 100%;
+                    }
+                    {
+                      padding-bottom: 1rem;
+                      padding-left: 1rem;
+                      padding-right: 1rem;
+                      padding-top: 1rem;
+                    }
               />
             </th>
             <td
-              className="right is-closed separator"
+              className=
+
+                  {
+                    font-weight: 400;
+                    padding-bottom: 0px;
+                    padding-left: 0px;
+                    padding-right: 0px;
+                    padding-top: 0px;
+                    vertical-align: inherit;
+                  }
+                  {
+                    justify-content: flex-end;
+                    text-align: right;
+                  }
+                  {
+                    border-bottom: none;
+                    vertical-align: top;
+                  }
+                  {
+                    border-bottom: 1px solid #b2b2b2;
+                  }
               key="table-1232_1"
             >
               <div
-                className="cellContent cellContentLarge"
+                className=
+
+                    {
+                      align-items: center;
+                      box-sizing: border-box;
+                      display: flex;
+                      font-size: inherit;
+                      padding-bottom: 0.5rem;
+                      padding-left: 1rem;
+                      padding-right: 1rem;
+                      padding-top: 0.5rem;
+                      text-align: inherit;
+                      vertical-align: middle;
+                      width: 100%;
+                    }
+                    {
+                      justify-content: flex-end;
+                      text-align: right;
+                    }
+                    {
+                      padding-bottom: 1rem;
+                      padding-left: 1rem;
+                      padding-right: 1rem;
+                      padding-top: 1rem;
+                    }
               />
             </td>
             <td
-              className="right is-closed separator"
+              className=
+
+                  {
+                    font-weight: 400;
+                    padding-bottom: 0px;
+                    padding-left: 0px;
+                    padding-right: 0px;
+                    padding-top: 0px;
+                    vertical-align: inherit;
+                  }
+                  {
+                    justify-content: flex-end;
+                    text-align: right;
+                  }
+                  {
+                    border-bottom: none;
+                    vertical-align: top;
+                  }
+                  {
+                    border-bottom: 1px solid #b2b2b2;
+                  }
               key="table-1232_2"
             >
               <div
-                className="cellContent cellContentLarge"
+                className=
+
+                    {
+                      align-items: center;
+                      box-sizing: border-box;
+                      display: flex;
+                      font-size: inherit;
+                      padding-bottom: 0.5rem;
+                      padding-left: 1rem;
+                      padding-right: 1rem;
+                      padding-top: 0.5rem;
+                      text-align: inherit;
+                      vertical-align: middle;
+                      width: 100%;
+                    }
+                    {
+                      justify-content: flex-end;
+                      text-align: right;
+                    }
+                    {
+                      padding-bottom: 1rem;
+                      padding-left: 1rem;
+                      padding-right: 1rem;
+                      padding-top: 1rem;
+                    }
               />
             </td>
             <td
-              className="right is-closed separator"
+              className=
+
+                  {
+                    font-weight: 400;
+                    padding-bottom: 0px;
+                    padding-left: 0px;
+                    padding-right: 0px;
+                    padding-top: 0px;
+                    vertical-align: inherit;
+                  }
+                  {
+                    justify-content: flex-end;
+                    text-align: right;
+                  }
+                  {
+                    border-bottom: none;
+                    vertical-align: top;
+                  }
+                  {
+                    border-bottom: 1px solid #b2b2b2;
+                  }
               key="table-1232_3"
             >
               <div
-                className="cellContent cellContentLarge"
+                className=
+
+                    {
+                      align-items: center;
+                      box-sizing: border-box;
+                      display: flex;
+                      font-size: inherit;
+                      padding-bottom: 0.5rem;
+                      padding-left: 1rem;
+                      padding-right: 1rem;
+                      padding-top: 0.5rem;
+                      text-align: inherit;
+                      vertical-align: middle;
+                      width: 100%;
+                    }
+                    {
+                      justify-content: flex-end;
+                      text-align: right;
+                    }
+                    {
+                      padding-bottom: 1rem;
+                      padding-left: 1rem;
+                      padding-right: 1rem;
+                      padding-top: 1rem;
+                    }
               />
             </td>
           </tr>
@@ -636,42 +1135,218 @@ exports[`Table komponent matcher snapshot 1`] = `
           tableId="table-123"
         >
           <tr
-            className="separator"
+            className=
+
+                {
+                  border-box: box-sizing;
+                  vertical-align: middle;
+                }
+                {
+                  border-bottom: 1px solid #b2b2b2;
+                }
             key="3"
           >
             <th
-              className="tableRow is-closed separator"
+              className=
+
+                  {
+                    font-weight: 400;
+                    padding-bottom: 0px;
+                    padding-left: 0px;
+                    padding-right: 0px;
+                    padding-top: 0px;
+                    vertical-align: inherit;
+                  }
+                  {
+                    border-bottom: none;
+                    vertical-align: top;
+                  }
+                  {
+                    border-bottom: 1px solid #b2b2b2;
+                  }
               id="table-1233_0"
               key="table-1233_0"
               rowSpan={1}
               scope="row"
             >
               <div
-                className="cellContent cellContentLarge"
+                className=
+
+                    {
+                      align-items: center;
+                      box-sizing: border-box;
+                      display: flex;
+                      font-size: inherit;
+                      padding-bottom: 0.5rem;
+                      padding-left: 1rem;
+                      padding-right: 1rem;
+                      padding-top: 0.5rem;
+                      text-align: inherit;
+                      vertical-align: middle;
+                      width: 100%;
+                    }
+                    {
+                      padding-bottom: 1rem;
+                      padding-left: 1rem;
+                      padding-right: 1rem;
+                      padding-top: 1rem;
+                    }
               />
             </th>
             <td
-              className="right is-closed separator"
+              className=
+
+                  {
+                    font-weight: 400;
+                    padding-bottom: 0px;
+                    padding-left: 0px;
+                    padding-right: 0px;
+                    padding-top: 0px;
+                    vertical-align: inherit;
+                  }
+                  {
+                    justify-content: flex-end;
+                    text-align: right;
+                  }
+                  {
+                    border-bottom: none;
+                    vertical-align: top;
+                  }
+                  {
+                    border-bottom: 1px solid #b2b2b2;
+                  }
               key="table-1233_1"
             >
               <div
-                className="cellContent cellContentLarge"
+                className=
+
+                    {
+                      align-items: center;
+                      box-sizing: border-box;
+                      display: flex;
+                      font-size: inherit;
+                      padding-bottom: 0.5rem;
+                      padding-left: 1rem;
+                      padding-right: 1rem;
+                      padding-top: 0.5rem;
+                      text-align: inherit;
+                      vertical-align: middle;
+                      width: 100%;
+                    }
+                    {
+                      justify-content: flex-end;
+                      text-align: right;
+                    }
+                    {
+                      padding-bottom: 1rem;
+                      padding-left: 1rem;
+                      padding-right: 1rem;
+                      padding-top: 1rem;
+                    }
               />
             </td>
             <td
-              className="right is-closed separator"
+              className=
+
+                  {
+                    font-weight: 400;
+                    padding-bottom: 0px;
+                    padding-left: 0px;
+                    padding-right: 0px;
+                    padding-top: 0px;
+                    vertical-align: inherit;
+                  }
+                  {
+                    justify-content: flex-end;
+                    text-align: right;
+                  }
+                  {
+                    border-bottom: none;
+                    vertical-align: top;
+                  }
+                  {
+                    border-bottom: 1px solid #b2b2b2;
+                  }
               key="table-1233_2"
             >
               <div
-                className="cellContent cellContentLarge"
+                className=
+
+                    {
+                      align-items: center;
+                      box-sizing: border-box;
+                      display: flex;
+                      font-size: inherit;
+                      padding-bottom: 0.5rem;
+                      padding-left: 1rem;
+                      padding-right: 1rem;
+                      padding-top: 0.5rem;
+                      text-align: inherit;
+                      vertical-align: middle;
+                      width: 100%;
+                    }
+                    {
+                      justify-content: flex-end;
+                      text-align: right;
+                    }
+                    {
+                      padding-bottom: 1rem;
+                      padding-left: 1rem;
+                      padding-right: 1rem;
+                      padding-top: 1rem;
+                    }
               />
             </td>
             <td
-              className="right is-closed separator"
+              className=
+
+                  {
+                    font-weight: 400;
+                    padding-bottom: 0px;
+                    padding-left: 0px;
+                    padding-right: 0px;
+                    padding-top: 0px;
+                    vertical-align: inherit;
+                  }
+                  {
+                    justify-content: flex-end;
+                    text-align: right;
+                  }
+                  {
+                    border-bottom: none;
+                    vertical-align: top;
+                  }
+                  {
+                    border-bottom: 1px solid #b2b2b2;
+                  }
               key="table-1233_3"
             >
               <div
-                className="cellContent cellContentLarge"
+                className=
+
+                    {
+                      align-items: center;
+                      box-sizing: border-box;
+                      display: flex;
+                      font-size: inherit;
+                      padding-bottom: 0.5rem;
+                      padding-left: 1rem;
+                      padding-right: 1rem;
+                      padding-top: 0.5rem;
+                      text-align: inherit;
+                      vertical-align: middle;
+                      width: 100%;
+                    }
+                    {
+                      justify-content: flex-end;
+                      text-align: right;
+                    }
+                    {
+                      padding-bottom: 1rem;
+                      padding-left: 1rem;
+                      padding-right: 1rem;
+                      padding-top: 1rem;
+                    }
               />
             </td>
           </tr>

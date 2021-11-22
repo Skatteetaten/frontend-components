@@ -108,13 +108,13 @@ export const TableRow = <P extends object>(props: TableRowProps<P>) => {
       })}
     >
       <IconButton
-        className={styles.editButton}
-        onClick={() => onEditRow(rowIndex)}
         title={t('tablerow.editable.title')}
-        icon="Edit"
-        disabled={editModeActive || expandableModeActive}
         type="button"
+        icon="Edit"
+        className={styles.editButton}
         buttonSize={compactTable ? 'xSmall' : 'default'}
+        onClick={() => onEditRow(rowIndex)}
+        disabled={editModeActive || expandableModeActive}
         aria-describedby={tableId.concat(rowIndex.toString(), '_0')}
       />
     </span>
@@ -144,6 +144,7 @@ export const TableRow = <P extends object>(props: TableRowProps<P>) => {
   }) => {
     return (
       <td
+        data-testid={'table-cell-expandable'}
         ref={expandCollapseCellRef}
         className={classnames(
           styles.tableCell,
@@ -213,6 +214,7 @@ export const TableRow = <P extends object>(props: TableRowProps<P>) => {
   ) =>
     openEditableOnRowClick && editableContent && editableRow ? (
       <button
+        data-testid={'openEditableOnRowClick-button'}
         className={styles.editButton}
         onClick={() => onEditRow(index)}
         tabIndex={-1}
@@ -345,6 +347,7 @@ export const TableRow = <P extends object>(props: TableRowProps<P>) => {
       >
         <td
           key={rowIndex}
+          data-testid={'editable-content'}
           className={classnames(styles.tableCell, customClassNames?.tableCell)}
           colSpan={numberOfColumns}
         >

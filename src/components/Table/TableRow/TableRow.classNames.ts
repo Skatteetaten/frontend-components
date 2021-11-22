@@ -179,7 +179,6 @@ export const getClassNames = (props, expandabledRowOpenWidth) => {
       background: 'transparent',
       boxSizing: 'border-box',
       fontSize: 'inherit',
-
       textAlign: 'inherit',
     },
     separator: {
