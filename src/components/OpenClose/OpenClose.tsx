@@ -42,11 +42,19 @@ export const OpenClose: React.FC<OpenCloseProps> = (props) => {
         onClick={clickHandler}
       >
         {!iconRight && <Icon iconName={'ChevronDown'} />}
-        {headingLevel && title ? (
-          <Heading text={title} level={headingLevel} />
-        ) : (
-          title
-        )}
+        <span
+          className={
+            iconRight
+              ? styles.toggleTitleSpan
+              : classnames(styles.toggleTitleSpan, styles.toggleTitleLeft)
+          }
+        >
+          {headingLevel && title ? (
+            <Heading text={title} level={headingLevel} />
+          ) : (
+            title
+          )}
+        </span>
         {iconRight && <Icon iconName={'ChevronDown'} />}
       </button>
       {isContentOpen && (
