@@ -27,19 +27,14 @@ export const getClassNames = (props: CalloutProps, widthBtnLabel: string) => {
       ...getCalloutBorder(props),
       selectors: {
         '.ms-Callout-main': {
-          maxWidth: 600,
           width: '100%',
           backgroundColor: palette.skeColor[props.color as CalloutColor],
           boxShadow: 'none',
+          'box-sizing': 'border-box',
+          padding: '1rem 2.5rem 1rem 1rem',
           selectors: {
             '@media  only screen and (max-width: 479px)': {
               maxWidth: 300,
-            },
-            '& h3': {
-              padding: '10px 10px 0 10px',
-            },
-            '& p': {
-              padding: '10px 10px 0 10px',
             },
             '.callout-content': {
               padding: '10px 20px 10px 10px',
@@ -50,9 +45,11 @@ export const getClassNames = (props: CalloutProps, widthBtnLabel: string) => {
           backgroundColor: palette.skeColor[props.color as CalloutColor],
           left: 'calc('.concat(widthBtnLabel, '/2) !important'),
         },
+        '& p': {
+          margin: '0 ',
+        },
         '&& h3': {
-          marginTop: '5px',
-          marginBottom: '-12px',
+          marginTop: '0',
           fontSize: FontSizes.large,
         },
       },
@@ -65,8 +62,8 @@ export const getClassNames = (props: CalloutProps, widthBtnLabel: string) => {
       border: 'none',
       position: 'absolute',
       color: `${palette.skeColor.blackAlt} !important`,
-      right: 0,
-      top: 0,
+      right: '1px',
+      top: '1px',
       opacity: 1,
       selectors: {
         '&& i': {
@@ -74,18 +71,6 @@ export const getClassNames = (props: CalloutProps, widthBtnLabel: string) => {
         },
         '&:hover i': {
           transition: 'opacity 300ms ease-out',
-          backgroundColor: palette.skeColor.lightBlue,
-        },
-        '&:focus i': {
-          backgroundColor: palette.skeColor.lightBlue,
-          borderRadius: 0,
-        },
-        '&& .ms-Button-icon': {
-          padding: '4px 4px 4px 4px',
-        },
-        '&.ms-Button': {
-          border: 'none !important',
-          backgroundColor: 'transparent !important',
         },
       },
     },

@@ -1,13 +1,11 @@
 import { IMaskedTextFieldProps } from '@fluentui/react';
-import { calloutState } from '../LabelWithCallout';
+import { calloutState, LabelWithCalloutProps } from '../LabelWithCallout';
 
 export interface TextFieldProps extends IMaskedTextFieldProps {
   /** Benyttes når teksten for et readOnly tekstfelt skal fremheves  */
   boldText?: boolean;
   /** Bestemmer om hjelptekst/varseltekst skal legge seg mellom label og tekstfelt eller flytende over innhold */
   calloutFloating?: boolean;
-  /** Lukk callout på blur */
-  labelWithCalloutAutoDismiss?: boolean;
   /** Bestemmer om ett readOnly felt skal være alltid redigerbart om det er tomt */
   editableWhenEmpty?: boolean;
   /** Benyttes når et readOnly felt skal være redigertbart  */
@@ -23,6 +21,8 @@ export interface TextFieldProps extends IMaskedTextFieldProps {
   labelButtonAriaLabel?: string;
   /** Størrelse på label */
   labelSize?: 'small' | 'large';
+  /** Overstyr label, se LabelWithCallout komponent */
+  labelWithCalloutProps?: LabelWithCalloutProps;
   /** Tekst inni feltet som vises før man skriver */
   placeholder?: string;
   /** Tilhørende varseltekst */
@@ -35,8 +35,6 @@ export interface TextFieldProps extends IMaskedTextFieldProps {
   underlined?: IMaskedTextFieldProps['underlined'];
   /** @ignore */
   editMode?: boolean;
-  /** doNotLayer prop for Callout */
-  doNotLayer?: boolean;
   /** Brukerspesifisert event for callout **/
   onCalloutToggle?: (
     oldCalloutState: calloutState,

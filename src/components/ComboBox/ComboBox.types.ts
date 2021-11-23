@@ -2,9 +2,6 @@ import { IComboBoxProps, ICalloutProps } from '@fluentui/react';
 import { calloutState, LabelWithCalloutProps } from '../LabelWithCallout';
 
 export interface ComboBoxProps extends IComboBoxProps {
-  //ref?: LegacyRef<VirtualizedComboBox>,
-  /** Lukk callout på blur */
-  labelWithCalloutAutoDismiss?: boolean;
   /** Egendefinert feilmelding */
   errorMessage?: IComboBoxProps['errorMessage'];
   /** Hjelpetekst */
@@ -14,7 +11,7 @@ export interface ComboBoxProps extends IComboBoxProps {
   /** aria-label for knapp i label */
   labelButtonAriaLabel?: string;
   /** Overstyr label, se LabelWithCallout komponent */
-  labelCallout?: LabelWithCalloutProps;
+  labelWithCalloutProps?: LabelWithCalloutProps;
   /** Brukerspesifisert event for callout */
   onCalloutToggle?: (
     oldCalloutState: calloutState,

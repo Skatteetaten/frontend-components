@@ -3,14 +3,14 @@
 exports[`LabelWithCallout komponent matcher snapshot 1`] = `
 <div
   className=
-
+      wrapper
       {
         display: flex;
       }
 >
   <label
     className=
-
+        label
         {
           color: #1a1a1a;
           display: initial;
@@ -45,6 +45,7 @@ exports[`LabelWithCallout komponent matcher snapshot 1`] = `
       className=
           ms-Button
           ms-Button--icon
+          helpicon
           {
             -moz-osx-font-smoothing: grayscale;
             -webkit-font-smoothing: antialiased;

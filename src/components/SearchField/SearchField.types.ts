@@ -3,8 +3,6 @@ import { calloutState, LabelWithCalloutProps } from '../LabelWithCallout';
 import { Language } from '../FileUploader';
 
 export interface SearchFieldProps extends ISearchBoxProps {
-  /** Lukk callout på blur */
-  labelWithCalloutAutoDismiss?: boolean;
   /** Størrelsen på rammen */
   border?: 'default' | 'slim';
   /** Hjelpetekst */
@@ -14,7 +12,7 @@ export interface SearchFieldProps extends ISearchBoxProps {
   /** aria-label for knapp i label */
   labelButtonAriaLabel?: string;
   /** Overstyr label, se LabelWithCallout komponent */
-  labelCallout?: LabelWithCalloutProps;
+  labelWithCalloutProps?: LabelWithCalloutProps;
   /** Brukerspesifisert event for callout **/
   onCalloutToggle?: (
     oldCalloutState: calloutState,

@@ -22,6 +22,9 @@ const [state, setState] = React.useState({
     onChange={(e, option) => console.log(option)}
     help="Type virksomhet vil påvirke hva du må rapportere til oss."
     id="radio"
+    labelWithCalloutProps={{
+      calloutProps: { autoDismiss: true },
+    }}
   />
 </div>;
 ```
