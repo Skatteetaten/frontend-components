@@ -43,23 +43,15 @@ exports[`Callout komponent matcher snapshot 1`] = `
           & .ms-Callout-main {
             background-color: #e3f5ea;
             box-shadow: none;
-            max-width: 600px;
+            box-sizing: border-box;
+            padding-bottom: 1rem;
+            padding-left: 1rem;
+            padding-right: 2.5rem;
+            padding-top: 1rem;
             width: 100%;
           }
           @media  only screen and (max-width: 479px){& .ms-Callout-main {
             max-width: 300px;
-          }
-          & h3 {
-            padding-bottom: 0;
-            padding-left: 10px;
-            padding-right: 10px;
-            padding-top: 10px;
-          }
-          & p {
-            padding-bottom: 0;
-            padding-left: 10px;
-            padding-right: 10px;
-            padding-top: 10px;
           }
           & .ms-Callout-main .callout-content {
             padding-bottom: 10px;
@@ -71,10 +63,15 @@ exports[`Callout komponent matcher snapshot 1`] = `
             background-color: #e3f5ea;
             left: calc(/2) !important;
           }
+          & p {
+            margin-bottom: 0;
+            margin-left: 0;
+            margin-right: 0;
+            margin-top: 0;
+          }
           && h3 {
             font-size: 1.125rem;
-            margin-bottom: -12px;
-            margin-top: 5px;
+            margin-top: 0;
           }
       style={
         Object {
@@ -132,10 +129,10 @@ exports[`Callout komponent matcher snapshot 1`] = `
                 padding-right: 4px;
                 padding-top: 0;
                 position: absolute;
-                right: 0px;
+                right: 1px;
                 text-align: center;
                 text-decoration: none;
-                top: 0px;
+                top: 1px;
                 user-select: none;
                 width: 32px;
               }
@@ -183,15 +180,15 @@ exports[`Callout komponent matcher snapshot 1`] = `
                 border-radius: 50%;
                 border: 3px solid transparent;
                 color: #1362ae;
-                height: 40px;
+                height: 35px;
                 padding-bottom: 0px;
                 padding-left: 0px;
                 padding-right: 0px;
                 padding-top: 0px;
-                width: 40px;
+                width: 35px;
               }
               &.ms-Button--icon i {
-                font-size: 1.25rem;
+                font-size: 1.0625rem;
               }
               &.ms-Button--icon:hover {
                 background: #cde1f9;
@@ -215,22 +212,7 @@ exports[`Callout komponent matcher snapshot 1`] = `
                 font-weight: 700;
               }
               &:hover i {
-                background-color: #cde1f9;
                 transition: opacity 300ms ease-out;
-              }
-              &:focus i {
-                background-color: #cde1f9;
-                border-radius: 0px;
-              }
-              && .ms-Button-icon {
-                padding-bottom: 4px;
-                padding-left: 4px;
-                padding-right: 4px;
-                padding-top: 4px;
-              }
-              &.ms-Button {
-                background-color: transparent !important;
-                border: none !important;
               }
           data-is-focusable={true}
           onClick={[Function]}

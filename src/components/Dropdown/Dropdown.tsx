@@ -19,7 +19,6 @@ import { DropdownProps } from './DropDown.types';
 export const Dropdown: React.FC<DropdownProps> = (props) => {
   const {
     children,
-    labelWithCalloutAutoDismiss,
     errorMessage,
     label,
     labelButtonAriaLabel,
@@ -27,7 +26,7 @@ export const Dropdown: React.FC<DropdownProps> = (props) => {
     onRenderLabel,
     className,
     id,
-    labelCallout,
+    labelWithCalloutProps,
     onCalloutToggle,
     doNotLayer,
     readOnly,
@@ -53,9 +52,10 @@ export const Dropdown: React.FC<DropdownProps> = (props) => {
         buttonAriaLabel={labelButtonAriaLabel}
         help={help}
         onCalloutToggle={onCalloutToggle}
-        autoDismiss={labelWithCalloutAutoDismiss}
-        doNotLayer={doNotLayer}
-        {...labelCallout}
+        calloutProps={{
+          ...labelWithCalloutProps?.calloutProps,
+          doNotLayer,
+        }}
       />
       {readOnly ? (
         <input

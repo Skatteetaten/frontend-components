@@ -36,6 +36,9 @@ import { Grid } from '@skatteetaten/frontend-components/Grid';
           ariaLabel="Eksempel ComboBox"
           useComboBoxAsMenuWidth
           calloutFloating={false}
+          labelWithCalloutProps={{
+            calloutProps: { autoDismiss: true },
+          }}
         />
       </Grid.Col>
     </Grid.Row>

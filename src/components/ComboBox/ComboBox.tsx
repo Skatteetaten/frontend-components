@@ -10,14 +10,13 @@ import { ComboBoxProps } from './ComboBox.types';
 export const ComboBox: React.FC<ComboBoxProps> = (props) => {
   const {
     children,
-    labelWithCalloutAutoDismiss,
     errorMessage,
     label,
     help,
     className,
     id,
     labelButtonAriaLabel,
-    labelCallout,
+    labelWithCalloutProps,
     onCalloutToggle,
     calloutProps,
     readOnly,
@@ -41,8 +40,7 @@ export const ComboBox: React.FC<ComboBoxProps> = (props) => {
         buttonAriaLabel={labelButtonAriaLabel}
         help={help}
         onCalloutToggle={onCalloutToggle}
-        autoDismiss={labelWithCalloutAutoDismiss}
-        {...labelCallout}
+        {...labelWithCalloutProps}
       />
       {readOnly ? (
         <input

@@ -48,8 +48,6 @@ export interface FileUploaderProps {
   axiosPath?: string;
   /** CSS class */
   className?: string;
-  /** Lukk callout på blur */
-  labelWithCalloutAutoDismiss?: boolean;
   /** trigger funksjon til å slette alle filer */
   deleteAllFiles?: boolean;
   /** Aria-label for "fjern fil"-knapp */
@@ -79,7 +77,7 @@ export interface FileUploaderProps {
   /** aria-label for knapp i label */
   labelButtonAriaLabel?: string;
   /** Overstyr label, se LabelWithCallout komponent */
-  labelCallout?: LabelWithCalloutProps;
+  labelWithCalloutProps?: LabelWithCalloutProps;
   /** Language selection for what the screen reader reads out. Default is Norwegian Bokmål */
   language?: Language;
   /** Spinner når fil laster */

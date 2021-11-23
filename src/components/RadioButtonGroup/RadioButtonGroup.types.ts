@@ -20,9 +20,7 @@ export interface RadioButtonGroupProps extends IChoiceGroupProps {
   /** Størrelse på feltnavn over radioknappene */
   labelSize?: 'small' | 'normal' | 'large';
   /** Overstyr label, se LabelWithCallout komponent */
-  labelCallout?: LabelWithCalloutProps;
-  /** Lukk callout på blur */
-  labelWithCalloutAutoDismiss?: boolean;
+  labelWithCalloutProps?: LabelWithCalloutProps;
   /** Brukerspesifisert event for callout **/
   onCalloutToggle?: (
     oldCalloutState: calloutState,

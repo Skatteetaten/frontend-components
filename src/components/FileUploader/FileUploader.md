@@ -43,6 +43,9 @@ const styles = {
       setFiles(newList);
     }}
     loading={spinner}
+    labelWithCalloutProps={{
+      calloutProps: { autoDismiss: true },
+    }}
   />
 </div>;
 ```

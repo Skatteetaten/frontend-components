@@ -1,5 +1,38 @@
 ### **v.5.0.0 - 31.10.2021 - Major release**
 
+#### Notes /Todo
+
+- - ivaretar breaking-change på role i checkbox
+  - flytter ref på combobox til ytterste wrapper
+  - datepicker oppdaterer ref - TO-DO: ikke mulig å aksessere lokal state for editMode
+  - refaktorerer TabItem til FunctionComponent
+  - oppdaterer types for TextField
+- Reorganisering av import/export til å fungere med moduler (//TO-DO alle doc-sidene må retestes) //TO-DO fjerne entry.ts i /lib etter compile
+
+#### Breaking
+
+- React 17 is now required
+- global imports from root is now longer supported:
+  import { CardBorder } from '@skatteetaten/frontend-components'; must now be changed to
+  more specific imports: imports import { CardBorder } from '@skatteetaten/frontend-components/Card';
+- Button variants have been reorganized/prioritized, with have new names and default value:
+  "primaryLarge" is now "callToAction",
+  "primaryRoundedFilled" is now "primary",
+  "secondary" is now "secondarySimple",
+  "primary" is now "primaryCornered",
+  "primaryRounded" is now "secondary" (default)
+
+  #### Breaking per component
+
+- LabelWithCallout
+  -> 'className' prop -> use customClassNames
+  -> 'autoDismiss', 'border' deprecated, use the same keys within 'calloutProps' prop instead
+- SearchField, ComboBox, DatePicker, Dropdown, FileUploader, RadioButtonGroup
+  -> 'labelCallout' prop renamed to 'labelWithCalloutProps'
+  -> 'labelWithCalloutAutoDismiss', use 'autodismiss' key under 'labelWithCalloutProps.calloutProps' prop instead
+- DatePicker
+  -> 'labelCallout' og 'labelWithCalloutAutoDismiss' prop deprecated, use CalloutProps exposed undervlabelWithCalloutProps and datepickerCalloutProps instead
+
 #### Colors and design
 
 - Colors updated with new names and values. Colors are now accessible via design tokens. Added design tokens for spacing and typography as well.
@@ -25,34 +58,10 @@
 - Moved uuid from dependency to devDependendy
 - Icons have been reorganized into a single, much smaller font file, using woff-format only.
 
-#### Breaking
-
-- React 17 is now required
-- global imports from root is now longer supported:
-  import { CardBorder } from '@skatteetaten/frontend-components'; must now be changed to
-  more specific imports: imports import { CardBorder } from '@skatteetaten/frontend-components/Card';
-- Button variants have been reorganized/prioritized, with have new names and default value:
-  "primaryLarge" is now "callToAction",
-  "primaryRoundedFilled" is now "primary",
-  "secondary" is now "secondarySimple",
-  "primary" is now "primaryCornered",
-  "primaryRounded" is now "secondary" (default)
-
 #### Additional
 
 - Sketch-file updated and reorganized.
 - Fixes known accessibility issues with Commandbar, Dropdown and Combobox
-
-#### Notes /Todo
-
-- - ivaretar breaking-change på role i checkbox
-  - flytter ref på combobox til ytterste wrapper
-  - datepicker oppdaterer ref - TO-DO: ikke mulig å aksessere lokal state for editMode
-  - refaktorerer TabItem til FunctionComponent
-  - oppdaterer types for TextField
-- Eksport til ESM: Endrer fra umd til esm eksport (//TO-DO reaktivere import-maps)
-- Reorganisering av import/export til å fungere med moduler (//TO-DO alle doc-sidene må retestes) //TO-DO fjerne entry.ts i /lib etter compile
-- DoNotLayer breaking
 
 ### **v.4.1.5 - 01.10.2021**
 

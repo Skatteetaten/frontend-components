@@ -5,6 +5,11 @@ exports[`Dropdown komponent matcher snapshot 1`] = `
   id="dropdown-123"
 >
   <LabelWithCallout
+    calloutProps={
+      Object {
+        "doNotLayer": undefined,
+      }
+    }
     id="dropdown-123-label"
     inputId="dropdown-123-input-option"
   />

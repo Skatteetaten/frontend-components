@@ -2,8 +2,6 @@ import { IDropdownProps } from '@fluentui/react';
 import { calloutState, LabelWithCalloutProps } from '../LabelWithCallout';
 
 export interface DropdownProps extends IDropdownProps {
-  /** Lukk callout på blur */
-  labelWithCalloutAutoDismiss?: boolean;
   /** Hjelpetekst */
   help?: string | JSX.Element;
   /** Størrelse på inputfelt som skal benyttes */
@@ -11,7 +9,7 @@ export interface DropdownProps extends IDropdownProps {
   /** aria-label for knapp i label */
   labelButtonAriaLabel?: string;
   /** Overstyr label, se LabelWithCallout komponent */
-  labelCallout?: LabelWithCalloutProps;
+  labelWithCalloutProps?: LabelWithCalloutProps;
   /** @ignore */
   multiSelect?: IDropdownProps['multiSelect'];
   /** @ignore */

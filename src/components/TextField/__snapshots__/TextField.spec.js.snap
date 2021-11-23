@@ -79,7 +79,7 @@ exports[`TextField komponent matcher snapshot 1`] = `
 >
   <div
     className=
-
+        
         {
           display: flex;
         }

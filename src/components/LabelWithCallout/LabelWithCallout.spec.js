@@ -18,6 +18,18 @@ describe('LabelWithCallout komponent', () => {
         calloutFloating={false}
         help={'Dette er en mock-hjepetekst'}
         label={'Mock Label'}
+        customClassNames={{
+          wrapper: 'wrapper',
+          label: 'label',
+          legend: 'legend',
+          helpicon: 'helpicon',
+          helpPragraph: 'helpPragraph',
+          warningicon: 'warningicon',
+          warningPragraph: 'warningPragraph',
+          editicon: 'editicon',
+          readonlyarea: 'readonlyarea',
+          callout: 'callout',
+        }}
       />
     );
   });

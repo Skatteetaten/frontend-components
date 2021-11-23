@@ -4,7 +4,7 @@ exports[`DatePicker komponent matcher snapshot 1`] = `
 <div>
   <div
     className=
-
+        
         {
           display: flex;
         }
