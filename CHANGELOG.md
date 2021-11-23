@@ -1,3 +1,10 @@
+### **v.4.2.0 - 24.11.2021**
+
+- New ErrorSummary component
+- Fixes minor styling issues for CheckBox and RadioButtonGroup
+- Sketch-file updated and reorganized.
+- Deprecated: Button buttonStyle: primaryRounded, primaryRoundedFilled, primaryLarge. (We are planning to simplyfy the button hierarchy, and in the next major release these variants will have new names.)
+
 ### **v.4.1.5 - 01.10.2021**
 
 - SearchField: fixed keyboard navigation when using a filtered list.
