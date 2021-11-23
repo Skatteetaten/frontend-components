@@ -1,0 +1,98 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ErrorSummary komponent matcher snapshot 1`] = `
+<div
+  aria-live="assertive"
+  className="mainContainer-42"
+  id="errorsummary"
+  role="status"
+>
+  <div
+    className="iconArea-43"
+  >
+    <div
+      className="errorIcon-44"
+    >
+      <i
+        aria-hidden={true}
+        className="root-47"
+        data-icon-name="Error"
+      >
+        
+      </i>
+    </div>
+  </div>
+  <div
+    className="errorListContainer-45"
+  >
+    <h3>
+      For å gå videre må du rette opp i følgende:
+    </h3>
+    <ul>
+      <li>
+        <span
+          className="linkContainer-49"
+        >
+          <i
+            aria-hidden={true}
+            className="icon-53"
+            data-icon-name="ArrowForward"
+            role="presentation"
+          >
+            
+          </i>
+          <a
+            className="iconLink-51"
+            onClick={[Function]}
+            tabIndex={0}
+          >
+            Du må legge til en adresse
+          </a>
+        </span>
+      </li>
+      <li>
+        <span
+          className="linkContainer-49"
+        >
+          <i
+            aria-hidden={true}
+            className="icon-53"
+            data-icon-name="ArrowForward"
+            role="presentation"
+          >
+            
+          </i>
+          <a
+            className="iconLink-51"
+            onClick={[Function]}
+            tabIndex={0}
+          >
+            Du må legge til en postkode
+          </a>
+        </span>
+      </li>
+      <li>
+        <span
+          className="linkContainer-49"
+        >
+          <i
+            aria-hidden={true}
+            className="icon-53"
+            data-icon-name="ArrowForward"
+            role="presentation"
+          >
+            
+          </i>
+          <a
+            className="iconLink-51"
+            onClick={[Function]}
+            tabIndex={0}
+          >
+            Du må legge til et poststed
+          </a>
+        </span>
+      </li>
+    </ul>
+  </div>
+</div>
+`;
