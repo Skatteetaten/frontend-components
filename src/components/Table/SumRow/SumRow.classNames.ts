@@ -1,4 +1,6 @@
 import { mergeStyleSets } from '@fluentui/merge-styles';
+import designtokenSpacing from '../../utils/designtokens/_spacing.json';
+import designtokenFontSizes from '../../utils/designtokens/_fontSizes.json';
 
 export const getClassNames = () => {
   return mergeStyleSets({
@@ -6,13 +8,13 @@ export const getClassNames = () => {
       verticalAlign: 'middle',
     },
     sumCell: {
-      fontWeight: '400',
+      fontWeight: designtokenFontSizes['ske-font-weight-regular'],
       padding: 0,
       verticalAlign: 'inherit',
     },
     sumCellIsSum: {
       textAlign: 'end',
-      padding: '12px',
+      padding: designtokenSpacing['ske-spacing-md'],
     },
   });
 };

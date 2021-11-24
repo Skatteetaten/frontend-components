@@ -392,7 +392,6 @@ const expandableContentLabelWithCallout = (data, close, rowIndex) => (
     expandIconPlacement={'before'}
     caption="Firmaoversikt"
     hideCaption={true}
-    expandIconPlacement={'before'}
     expandableRows
     fullWidth
   />

@@ -1,7 +1,7 @@
 import { mergeStyleSets } from '@fluentui/merge-styles';
 import { getTheme } from '@fluentui/react/lib/Styling';
 
-import { FontWeights, FontSizes, PaletteProps } from '../../utils';
+import { PaletteProps } from '../../utils';
 import designtokenSpacing from '../../utils/designtokens/_spacing.json';
 import designtokenFontSizes from '../../utils/designtokens/_fontSizes.json';
 import designtokenBreakpoints from '../../utils/designtokens/_breakpoints.json';
