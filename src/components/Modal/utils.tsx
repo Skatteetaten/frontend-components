@@ -1,5 +1,31 @@
 import { useEffect } from 'react';
 
+export const createModalDomPlacement = (
+  setFlag: (a: boolean) => void,
+  shadowRootNode: Document | ShadowRoot | undefined
+) => {
+  if (!shadowRootNode) {
+    setFlag(true);
+    return;
+  }
+
+  const styleInjectorWrapperId = 'style-injector';
+  const modalWrapperId = 'modal-wrapper';
+
+  if (shadowRootNode.getElementById(modalWrapperId)) {
+    setFlag(true);
+  } else {
+    const modalWrapper = document.createElement('div');
+    modalWrapper.id = modalWrapperId;
+    const styleInjectorWrapper = shadowRootNode.getElementById(
+      styleInjectorWrapperId
+    );
+    const parent = styleInjectorWrapper ? styleInjectorWrapper : shadowRootNode;
+    parent.appendChild(modalWrapper);
+    setFlag(true);
+  }
+};
+
 export const useEscOnPress = (
   ref: HTMLDivElement | null,
   onClose?: (ref: HTMLDivElement) => void
