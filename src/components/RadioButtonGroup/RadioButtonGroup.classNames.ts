@@ -58,10 +58,21 @@ export const getClassNames = (props) => {
           display: 'inline-block',
           border: '2px solid' + palette.skeColor.black,
           position: 'absolute',
+          boxShadow: `inset 0 0 0 8px ${palette.skeColor.white} , inset 0 0 0 12px transparent`,
+          transition: 'box-shadow 80ms ease-out',
+        },
+        '& .ms-ChoiceField-field:hover::before': {
+          boxShadow: `inset 0 0 0 3px ${palette.skeColor.white} , inset 0 0 0 12px ${palette.skeColor.black}`,
+        },
+        '& .ms-ChoiceField-field:hover::after': {
+          border: 'none',
         },
         '.ms-ChoiceField-input': {
           backgroundColor: palette.skeColor.white,
           border: '2px solid' + palette.skeColor.blue,
+        },
+        '.ms-ChoiceField-input:disabled + .ms-ChoiceField-field:hover::before': {
+          boxShadow: `inset 0 0 0 3px ${palette.skeColor.white} , inset 0 0 0 12px ${palette.skeColor.lightGrey}`,
         },
         '.ms-ChoiceField-input:disabled + .ms-ChoiceField-field::before': {
           color: palette.skeColor.lightGrey,

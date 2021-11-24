@@ -33,7 +33,7 @@ const paraStyle = {
   </OpenClose>
 
   <br />
-  <OpenClose compact iconRight title={'Vis flere detaljer'}>
+  <OpenClose compact noBorder title={'Vis flere detaljer'}>
     <Typography>
       <p style={paraStyle}>
         Arbeidsgiveren din/den som utbetaler skal trekke kildeskatt av følgende
