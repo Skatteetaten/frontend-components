@@ -48,6 +48,7 @@ import ProgressBar from '@skatteetaten/frontend-components/ProgressBar';
 import Spinner from '@skatteetaten/frontend-components/Spinner';
 import DetailsList from '@skatteetaten/frontend-components/DetailsList';
 import Table from '@skatteetaten/frontend-components/Table';
+import ErrorSummary from '@skatteetaten/frontend-components/ErrorSummary';
 
 function Testside(props) {
   const pageSize = 8;
@@ -1546,7 +1547,7 @@ function Testside(props) {
       </Card>
       <h2>OpenClose</h2>
 
-      <OpenClose title={'Standard åpne/lukke'}>
+      <OpenClose underline title={'Standard åpne/lukke'}>
         <div>Innhold inni en div</div>
       </OpenClose>
 
@@ -1554,7 +1555,7 @@ function Testside(props) {
         <div>Innhold inni en div</div>
       </OpenClose>
 
-      <OpenClose compact title={'Kompakt versjon'}>
+      <OpenClose underline compact title={'Kompakt versjon'}>
         <div>Innhold inni en div</div>
       </OpenClose>
 
@@ -1710,6 +1711,46 @@ function Testside(props) {
       <h2>ErrorMessage</h2>
 
       <ErrorMessage>Skriv datoen slik: 17.05.2019</ErrorMessage>
+
+      <h2>ErrorSummary</h2>
+      <div>
+        <div style={{ width: '350px', marginBottom: '16px' }}>
+          <TextField
+            id={'input_aar'}
+            value="1009"
+            label={'Inntektsår'}
+            errorMessage="Inntekståret må være etter 2008"
+            onChange={() => {}}
+          />
+        </div>
+        <div style={{ width: '350px', marginBottom: '16px' }}>
+          <TextField
+            id={'input_epost'}
+            label={'E-post'}
+            errorMessage="E-posten ser ikke riktig ut. Skriv slik: ola.normann@norge.no"
+          />
+        </div>
+        <div style={{ width: '350px', marginBottom: '16px' }}>
+          <TextField
+            id={'input_dager'}
+            label={'Antall dager i Norge i perioden/inntekståret'}
+            errorMessage="Antall dager må fylles ut"
+          />
+        </div>
+        <ErrorSummary
+          title={'For å gå videre må du rette opp i følgende:'}
+          errors={[
+            { id: 'input_aar-input', error: 'Inntekståret må være etter 2008' },
+            {
+              id: 'input_epost-input',
+              error:
+                'E-posten ser ikke riktig ut. Skriv slik: ola.normann@norge.no',
+            },
+            { id: 'input_dager-input', error: 'Antall dager må fylles ut.' },
+          ]}
+        />
+      </div>
+
       <h2>ProgressBar</h2>
 
       <ProgressBar
