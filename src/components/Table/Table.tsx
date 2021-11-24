@@ -61,7 +61,8 @@ export const getHeader = (
             className={classnames(
               'divTableColumnheader',
               'sortable',
-              key.hideOnMobile ? 'hideOnMobile' : ''
+              key.hideOnMobile ? 'hideOnMobile ' : '',
+              key.alignment ? `${key.alignment} ` : ''
             )}
             tabIndex={0}
             onKeyDown={(e) => {
@@ -80,7 +81,13 @@ export const getHeader = (
       }
       return (
         <th
-          className={key.hideOnMobile ? 'hideOnMobile' : ''}
+          className={
+            key.hideOnMobile
+              ? 'hideOnMobile '
+              : key.alignment
+              ? `${key.alignment} `
+              : ''
+          }
           key={key.fieldName}
           scope="col"
         >

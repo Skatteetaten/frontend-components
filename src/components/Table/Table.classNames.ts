@@ -125,6 +125,14 @@ export const getClassNames = (props) => {
                     },
                   },
                 },
+                '& .right': {
+                  justifyContent: 'flex-end',
+                  textAlign: 'right',
+                },
+                '& .center': {
+                  justifyContent: 'center',
+                  textAlign: 'center',
+                },
                 ':focus': {
                   color: `${palette.skeColor.blue}`,
                   outline: '0',
