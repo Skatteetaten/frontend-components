@@ -1,9 +1,9 @@
 {
   "files": {
     "main.css": "/static/css/main.ac061772.chunk.css",
-    "main.js": "/build/main.1e3169df.js",
+    "main.js": "/build/main.b83029d8.js",
     "runtime-main.js": "/build/bundle.3527ec54.js",
-    "build/2.b5348948.js": "/build/2.b5348948.js",
+    "build/2.0ad79796.js": "/build/2.0ad79796.js",
     "assets/png/Byggeklosser.png": "/assets/png/Byggeklosser.png",
     "assets/png/Byggeklosser_skisse.png": "/assets/png/Byggeklosser_skisse.png",
     "assets/png/designer.png": "/assets/png/designer.png",
@@ -21,12 +21,13 @@
     "assets/sketch/designsystem-1.5.sketch": "/assets/sketch/designsystem-1.5.sketch",
     "assets/sketch/designsystem-1.6.sketch": "/assets/sketch/designsystem-1.6.sketch",
     "assets/sketch/designsystem-1.7.sketch": "/assets/sketch/designsystem-1.7.sketch",
+    "assets/sketch/designsystem-2.0.2.sketch": "/assets/sketch/designsystem-2.0.2.sketch",
     "assets/sketch/designsystem-latest.sketch": "/assets/sketch/designsystem-latest.sketch",
     "assets/svg/bit-bucket-logo.svg": "/assets/svg/bit-bucket-logo.svg",
     "assets/svg/ske-logo-intern-kopi.svg": "/assets/svg/ske-logo-intern-kopi.svg",
     "assets/svg/ske-logo-intern.svg": "/assets/svg/ske-logo-intern.svg",
     "assets/svg/ske-logo.svg": "/assets/svg/ske-logo.svg",
-    "build/2.b5348948.js.LICENSE.txt": "/build/2.b5348948.js.LICENSE.txt",
+    "build/2.0ad79796.js.LICENSE.txt": "/build/2.0ad79796.js.LICENSE.txt",
     "favicon.ico": "/favicon.ico",
     "index.html": "/index.html",
     "manifest.json": "/manifest.json",
@@ -55,8 +56,8 @@
   },
   "entrypoints": [
     "build/bundle.3527ec54.js",
-    "build/2.b5348948.js",
+    "build/2.0ad79796.js",
     "static/css/main.ac061772.chunk.css",
-    "build/main.1e3169df.js"
+    "build/main.b83029d8.js"
   ]
 }
