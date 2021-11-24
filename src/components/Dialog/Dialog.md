@@ -15,7 +15,7 @@ function closeDialog() {
 
 <div>
   <Button
-    buttonStyle="secondary"
+    buttonStyle="primaryRounded"
     onClick={() => setState({ hideDialog: false })}
   >
     Vis standard dialog
@@ -70,7 +70,7 @@ const content1 = [
 
 <div>
   <Button
-    buttonStyle="secondary"
+    buttonStyle="primaryRounded"
     onClick={() => setState({ hideDialog: false })}
   >
     Vis luftig dialog
@@ -117,7 +117,7 @@ function closeDialog() {
 
 <div>
   <Button
-    buttonStyle="secondary"
+    buttonStyle="primaryRounded"
     onClick={() => setState({ hideDialog: false })}
   >
     Vis viktig dialog
@@ -156,7 +156,7 @@ function closeDialog() {
 
 <div>
   <Button
-    buttonStyle="secondary"
+    buttonStyle="primaryRounded"
     onClick={() => setState({ hideDialog: false })}
   >
     Vis dialog som lukkes aktivt
