@@ -6,7 +6,7 @@
 - Checkbox: fixes styling for disabled state.
 - RadioButtonGroup improvements on a display issue when zooming.
 - Table header cells now reacts to alignment.
-- Deprecated: Button buttonStyle: primaryRounded, primaryRoundedFilled, primaryLarge. (We are planning to simplyfy the button hierarchy, and in the next major release these variants will have new names.)
+- Deprecated: Button buttonStyle: primaryRounded, primaryRoundedFilled, primaryLarge. We are planning to simplyfy the button hierarchy, and in the next major release these variants will have new names.
 
 ### **v.4.1.5 - 01.10.2021**
 
