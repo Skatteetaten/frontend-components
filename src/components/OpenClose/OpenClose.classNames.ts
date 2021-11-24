@@ -10,7 +10,7 @@ import {
 
 export function getClassNames(props) {
   const palette = getTheme().palette as PaletteProps;
-  const { compact, iconRight, noBorder } = props;
+  const { compact, iconRight, underline } = props;
 
   return mergeStyleSets({
     toggleButton: {
@@ -86,7 +86,7 @@ export function getClassNames(props) {
       margin: '0',
     },
     toggleTitleSpan: {
-      textDecoration: noBorder ? 'none' : 'underline',
+      textDecoration: underline ? 'underline' : 'none',
       textDecorationColor: 'rgba(19, 98, 174, 0.4)',
       textUnderlineOffset: '0.3rem',
       textDecorationThickness: '0.125rem',
