@@ -1,34 +1,47 @@
 import { mergeStyleSets } from '@fluentui/merge-styles';
 import { getTheme } from '@fluentui/react/lib/Styling';
-import { FontSizes, FontWeights, IconFontSizes, PaletteProps } from '../utils';
+import {
+  FontSizes,
+  FontWeights,
+  LineHeightSizes,
+  IconFontSizes,
+  PaletteProps,
+} from '../utils';
 
 export function getClassNames(props) {
   const palette = getTheme().palette as PaletteProps;
-  const { compact, iconRight } = props;
+  const { compact, iconRight, underline } = props;
 
   return mergeStyleSets({
     toggleButton: {
       display: 'flex',
       flexDirection: 'row',
       justifyContent: 'space-between',
-      alignItems: 'center',
+      alignItems: 'flex-start',
       border: 'none',
       color: palette.skeColor.blue,
       fontSize: props.compact ? FontSizes.medium : FontSizes.smallPlus,
       fontWeight: FontWeights.bold,
-      padding: 0,
+      padding: compact
+        ? '0.125rem 0.25rem 0.125rem 0.25rem'
+        : '0.25rem 0.5rem 0.375rem 0.5rem',
       background: 'none',
       marginLeft: '-0.5rem',
       paddingLeft: '0.5rem',
       marginRight: '-0.5rem',
       paddingRight: '0.5rem',
       cursor: 'pointer',
+      borderBottom: `0.125rem solid transparent`,
       selectors: {
         '@media (min-width: 640px)': {
           fontSize: compact ? FontSizes.medium : FontSizes.largePlus,
         },
         '&:hover, &:focus': {
           background: palette.skeColor.lightBlue,
+          borderBottom: `0.125rem solid ${palette.skeColor.interactive}`,
+          span: {
+            textDecoration: 'none',
+          },
         },
         '&:focus': {
           outline: 'none',
@@ -40,18 +53,12 @@ export function getClassNames(props) {
         '& i': {
           transition: '.2s',
           padding: 0,
-          marginLeft: compact
-            ? iconRight
-              ? '2px'
-              : '-4px'
-            : iconRight
-            ? '2px'
-            : '-8px',
-          fontSize: compact ? IconFontSizes.small : IconFontSizes.xxlarge,
-          fontWeight: FontWeights.bold,
+          marginLeft: iconRight ? '0.125rem' : '-0.25rem',
+          fontSize: IconFontSizes.xlarge,
           selectors: {
             '@media (min-width: 640px)': {
               fontSize: compact ? IconFontSizes.large : IconFontSizes.xxlarge,
+              padding: compact ? '0.125rem 0 0 0' : '0',
             },
           },
         },
@@ -63,13 +70,24 @@ export function getClassNames(props) {
       marginBottom: '8px',
     },
     contentWhenIconRight: {
-      padding: '8px 0',
-      marginLeft: compact ? '18px' : '16px',
-      marginBottom: '8px',
+      padding: '0.5rem 0',
+      marginLeft: compact ? '1.125rem' : '1rem',
+      marginBottom: '0.5rem',
     },
     heading: {
       fontSize: compact ? FontSizes.medium : FontSizes.largePlus,
       margin: '0',
+    },
+    toggleTitleSpan: {
+      textDecoration: underline ? 'underline' : 'none',
+      textDecorationColor: 'rgba(19, 98, 174, 0.4)',
+      textUnderlineOffset: '0.3rem',
+      textDecorationThickness: '0.125rem',
+      lineHeight: LineHeightSizes.large,
+      textAlign: 'left',
+    },
+    toggleTitleLeft: {
+      paddingLeft: compact ? '0.25rem' : '0.5rem',
     },
     toggleButtonOpen: {
       selectors: {

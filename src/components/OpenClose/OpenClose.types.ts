@@ -18,6 +18,8 @@ export interface OpenCloseProps {
   compact?: boolean;
   /** Styling overrides */
   className?: string;
+  /** Show text underline or not  */
+  underline?: boolean;
   /** Elements that are shown/hidden.*/
   children?: JSX.Element;
 }
