@@ -13,7 +13,11 @@ import i18n, { t } from './../utils/i18n/i18n';
 import { useModalContext, ModalInstance } from './ModalContext';
 import { ModalProps } from './Modal.types';
 import { getClassNames } from './Modal.classNames';
-import { createModalDomPlacement, useEscOnPress } from './utils';
+import {
+  getModalAnchor,
+  createModalDomPlacement,
+  useEscOnPress,
+} from './utils';
 
 const ModalBase: React.FC<ModalProps> = (props: ModalProps) => {
   const {
@@ -65,6 +69,8 @@ const ModalBase: React.FC<ModalProps> = (props: ModalProps) => {
     return null;
   }
 
+  const anchor = getModalAnchor(shadowRootNode);
+
   return createPortal(
     <BrandContext.Consumer>
       {({ tag }) => (
@@ -115,7 +121,7 @@ const ModalBase: React.FC<ModalProps> = (props: ModalProps) => {
         </div>
       )}
     </BrandContext.Consumer>,
-    shadowRootNode?.getElementById('modal-wrapper') ?? document.body
+    anchor
   );
 };
 
