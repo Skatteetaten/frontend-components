@@ -3,10 +3,53 @@ import { render } from 'react-dom';
 
 import { mount } from 'enzyme';
 
-import { createModalDomPlacement, useEscOnPress } from './utils';
+import {
+  getModalAnchor,
+  getSkeBasisStylingWrapper,
+  createModalDomPlacement,
+  useEscOnPress,
+} from './utils';
 import { DummyWebComp } from '../utils/test-utils';
 
 describe('Modal utils', () => {
+  describe('getModalAnchor', () => {
+    test('Når den kalles med document som attribute, Så returnerer den riktig modal-wrapper', () => {
+      const original = global.document['body'];
+      document.body.innerHTML =
+        '<div dir="ltr" class="body-555"><div id="modal-wrapper" data-testid="getModalAnchorTest1"></div></div>';
+      const a = getModalAnchor(document);
+      expect(a.getAttribute('data-testid')).toBe('getModalAnchorTest1');
+      global.document['body'] = original;
+    });
+    test('Når den kalles med shadowRoot som attribute, Så returnerer den riktig modal-wrapper', () => {
+      const original = global.document['body'];
+      const originalWindow = global.window;
+      document.body.innerHTML =
+        '<modalanchor-shadowrootnode-test><div dir="ltr" class="body-555"><div id="modal-wrapper" data-testid="getModalAnchorTest2"></div></div></modalanchor-shadowrootnode-test>';
+      const element = document.querySelector('modalanchor-shadowrootnode-test');
+      const a = getModalAnchor(element.shadowRoot);
+      expect(a.getAttribute('data-testid')).toBe('getModalAnchorTest2');
+      global.window = originalWindow;
+      global.document['body'] = original;
+    });
+    test('Når den kalles uten attribute, Så returnerer den riktig modal-wrapper', () => {
+      const original = global.document['body'];
+      document.body.innerHTML =
+        '<div dir="ltr" class="body-555"><div id="modal-wrapper" data-testid="getModalAnchorTest3"></div></div>';
+      const a = getModalAnchor();
+      expect(a.getAttribute('data-testid')).toBe('getModalAnchorTest3');
+      global.document['body'] = original;
+    });
+    test('Når modal-wrapper ikke finnes, Så returnerer den document.body', () => {
+      const original = global.document['body'];
+      document.body.innerHTML =
+        '<div><div id="something-random" data-testid="getModalAnchorTest4"></div></div>';
+      const a = getModalAnchor();
+      expect(a).toEqual(document.body);
+      global.document['body'] = original;
+    });
+  });
+
   // describe('createModalDomPlacement', () => {
   //   test('Når shadowRootNode ikke finnes så returneres det ingenting og flagget settes til true', () => {
   //     const setFlagMock = jest.fn();

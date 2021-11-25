@@ -1,7 +1,8 @@
 import { useEffect } from 'react';
 
-// TO-DO skrive tester
-export const getModalAnchor = (shadowRootNode?: Document | ShadowRoot) => {
+export const getModalAnchor = (
+  shadowRootNode?: Document | ShadowRoot
+): HTMLElement => {
   const modalAnchorInShadowDom = shadowRootNode?.getElementById(
     'modal-wrapper'
   );
