@@ -10,8 +10,9 @@ export const getModalAnchor = (
   return modalAnchorInShadowDom ?? modalAnchorInLightDom ?? document.body;
 };
 
-// TO-DO skrive tester
-export const getSkeBasisStylingWrapper = (rootNode: Document | ShadowRoot) => {
+export const getSkeBasisStylingWrapper = (
+  rootNode: Document | ShadowRoot
+): Element | undefined => {
   let ltrWrapper: Element | undefined;
   const ltrDomElements = rootNode.querySelectorAll('[dir="ltr"]');
 
@@ -24,7 +25,6 @@ export const getSkeBasisStylingWrapper = (rootNode: Document | ShadowRoot) => {
   return ltrWrapper;
 };
 
-// TO-DO skrive tester
 export const createModalDomPlacement = (
   setFlag: (a: boolean) => void,
   shadowRootNode?: Document | ShadowRoot
@@ -45,7 +45,6 @@ export const createModalDomPlacement = (
   }
 };
 
-// TO-DO oppdatere tester
 export const useEscOnPress = (
   ref: HTMLDivElement | null,
   onClose?: (ref: HTMLDivElement) => void
