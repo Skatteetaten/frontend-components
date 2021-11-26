@@ -33,17 +33,17 @@ exports[`Modal modal med rootNode instansierer Modal komponent i shadow-domen i 
             max-height: 90%;
             max-width: 90%;
             overflow: auto;
-            padding-bottom: 16px;
-            padding-left: 16px;
-            padding-right: 16px;
-            padding-top: 16px;
+            padding-bottom: 1rem;
+            padding-left: 1rem;
+            padding-right: 1rem;
+            padding-top: 1rem;
             position: relative;
             z-index: 99999;
           }
           @media (min-width: 320px){& {
             min-width: 40ch;
           }
-          @media (min-width: 479px){& {
+          @media (min-width: 480px){& {
             min-width: 50ch;
           }
           @media (min-width: 640px){& {
@@ -80,17 +80,17 @@ exports[`Modal modal med rootNode instansierer Modal komponent i shadow-domen i 
                 font-family: 'Helvetica Neue', Helvetica , Arial, 'Liberation Sans', 'Nimbus Sans L', sans-serif;
                 font-size: 1rem;
                 font-weight: 400;
-                height: 30px;
+                height: 1.875rem;
                 outline: transparent;
                 padding-bottom: 0;
                 padding-left: 4px;
                 padding-right: 4px;
                 padding-top: 0;
                 position: absolute;
-                right: 10px;
+                right: 0.625rem;
                 text-align: center;
                 text-decoration: none;
-                top: 10px;
+                top: 0.625rem;
                 user-select: none;
                 width: 32px;
               }
@@ -285,17 +285,17 @@ LoadedCheerio {
               max-height: 90%;
               max-width: 90%;
               overflow: auto;
-              padding-bottom: 16px;
-              padding-left: 16px;
-              padding-right: 16px;
-              padding-top: 16px;
+              padding-bottom: 1rem;
+              padding-left: 1rem;
+              padding-right: 1rem;
+              padding-top: 1rem;
               position: relative;
               z-index: 99999;
             }
             @media (min-width: 320px){& {
               min-width: 40ch;
             }
-            @media (min-width: 479px){& {
+            @media (min-width: 480px){& {
               min-width: 50ch;
             }
             @media (min-width: 640px){& {
@@ -341,17 +341,17 @@ LoadedCheerio {
                         font-family: 'Helvetica Neue', Helvetica , Arial, 'Liberation Sans', 'Nimbus Sans L', sans-serif;
                         font-size: 1rem;
                         font-weight: 400;
-                        height: 30px;
+                        height: 1.875rem;
                         outline: transparent;
                         padding-bottom: 0;
                         padding-left: 4px;
                         padding-right: 4px;
                         padding-top: 0;
                         position: absolute;
-                        right: 10px;
+                        right: 0.625rem;
                         text-align: center;
                         text-decoration: none;
-                        top: 10px;
+                        top: 0.625rem;
                         user-select: none;
                         width: 32px;
                       }
@@ -631,17 +631,17 @@ LoadedCheerio {
                       font-family: 'Helvetica Neue', Helvetica , Arial, 'Liberation Sans', 'Nimbus Sans L', sans-serif;
                       font-size: 1rem;
                       font-weight: 400;
-                      height: 30px;
+                      height: 1.875rem;
                       outline: transparent;
                       padding-bottom: 0;
                       padding-left: 4px;
                       padding-right: 4px;
                       padding-top: 0;
                       position: absolute;
-                      right: 10px;
+                      right: 0.625rem;
                       text-align: center;
                       text-decoration: none;
-                      top: 10px;
+                      top: 0.625rem;
                       user-select: none;
                       width: 32px;
                     }
@@ -974,17 +974,17 @@ LoadedCheerio {
                         font-family: 'Helvetica Neue', Helvetica , Arial, 'Liberation Sans', 'Nimbus Sans L', sans-serif;
                         font-size: 1rem;
                         font-weight: 400;
-                        height: 30px;
+                        height: 1.875rem;
                         outline: transparent;
                         padding-bottom: 0;
                         padding-left: 4px;
                         padding-right: 4px;
                         padding-top: 0;
                         position: absolute;
-                        right: 10px;
+                        right: 0.625rem;
                         text-align: center;
                         text-decoration: none;
-                        top: 10px;
+                        top: 0.625rem;
                         user-select: none;
                         width: 32px;
                       }
@@ -1260,17 +1260,17 @@ LoadedCheerio {
                           font-family: 'Helvetica Neue', Helvetica , Arial, 'Liberation Sans', 'Nimbus Sans L', sans-serif;
                           font-size: 1rem;
                           font-weight: 400;
-                          height: 30px;
+                          height: 1.875rem;
                           outline: transparent;
                           padding-bottom: 0;
                           padding-left: 4px;
                           padding-right: 4px;
                           padding-top: 0;
                           position: absolute;
-                          right: 10px;
+                          right: 0.625rem;
                           text-align: center;
                           text-decoration: none;
-                          top: 10px;
+                          top: 0.625rem;
                           user-select: none;
                           width: 32px;
                         }
@@ -1607,17 +1607,17 @@ LoadedCheerio {
                 max-height: 90%;
                 max-width: 90%;
                 overflow: auto;
-                padding-bottom: 16px;
-                padding-left: 16px;
-                padding-right: 16px;
-                padding-top: 16px;
+                padding-bottom: 1rem;
+                padding-left: 1rem;
+                padding-right: 1rem;
+                padding-top: 1rem;
                 position: relative;
                 z-index: 99999;
               }
               @media (min-width: 320px){& {
                 min-width: 40ch;
               }
-              @media (min-width: 479px){& {
+              @media (min-width: 480px){& {
                 min-width: 50ch;
               }
               @media (min-width: 640px){& {
@@ -1663,17 +1663,17 @@ LoadedCheerio {
                           font-family: 'Helvetica Neue', Helvetica , Arial, 'Liberation Sans', 'Nimbus Sans L', sans-serif;
                           font-size: 1rem;
                           font-weight: 400;
-                          height: 30px;
+                          height: 1.875rem;
                           outline: transparent;
                           padding-bottom: 0;
                           padding-left: 4px;
                           padding-right: 4px;
                           padding-top: 0;
                           position: absolute;
-                          right: 10px;
+                          right: 0.625rem;
                           text-align: center;
                           text-decoration: none;
-                          top: 10px;
+                          top: 0.625rem;
                           user-select: none;
                           width: 32px;
                         }
@@ -1953,17 +1953,17 @@ LoadedCheerio {
                         font-family: 'Helvetica Neue', Helvetica , Arial, 'Liberation Sans', 'Nimbus Sans L', sans-serif;
                         font-size: 1rem;
                         font-weight: 400;
-                        height: 30px;
+                        height: 1.875rem;
                         outline: transparent;
                         padding-bottom: 0;
                         padding-left: 4px;
                         padding-right: 4px;
                         padding-top: 0;
                         position: absolute;
-                        right: 10px;
+                        right: 0.625rem;
                         text-align: center;
                         text-decoration: none;
-                        top: 10px;
+                        top: 0.625rem;
                         user-select: none;
                         width: 32px;
                       }
@@ -2296,17 +2296,17 @@ LoadedCheerio {
                           font-family: 'Helvetica Neue', Helvetica , Arial, 'Liberation Sans', 'Nimbus Sans L', sans-serif;
                           font-size: 1rem;
                           font-weight: 400;
-                          height: 30px;
+                          height: 1.875rem;
                           outline: transparent;
                           padding-bottom: 0;
                           padding-left: 4px;
                           padding-right: 4px;
                           padding-top: 0;
                           position: absolute;
-                          right: 10px;
+                          right: 0.625rem;
                           text-align: center;
                           text-decoration: none;
-                          top: 10px;
+                          top: 0.625rem;
                           user-select: none;
                           width: 32px;
                         }
@@ -2582,17 +2582,17 @@ LoadedCheerio {
                             font-family: 'Helvetica Neue', Helvetica , Arial, 'Liberation Sans', 'Nimbus Sans L', sans-serif;
                             font-size: 1rem;
                             font-weight: 400;
-                            height: 30px;
+                            height: 1.875rem;
                             outline: transparent;
                             padding-bottom: 0;
                             padding-left: 4px;
                             padding-right: 4px;
                             padding-top: 0;
                             position: absolute;
-                            right: 10px;
+                            right: 0.625rem;
                             text-align: center;
                             text-decoration: none;
-                            top: 10px;
+                            top: 0.625rem;
                             user-select: none;
                             width: 32px;
                           }
@@ -3016,17 +3016,17 @@ LoadedCheerio {
               max-height: 90%;
               max-width: 90%;
               overflow: auto;
-              padding-bottom: 16px;
-              padding-left: 16px;
-              padding-right: 16px;
-              padding-top: 16px;
+              padding-bottom: 1rem;
+              padding-left: 1rem;
+              padding-right: 1rem;
+              padding-top: 1rem;
               position: relative;
               z-index: 99999;
             }
             @media (min-width: 320px){& {
               min-width: 40ch;
             }
-            @media (min-width: 479px){& {
+            @media (min-width: 480px){& {
               min-width: 50ch;
             }
             @media (min-width: 640px){& {
@@ -3072,17 +3072,17 @@ LoadedCheerio {
                         font-family: 'Helvetica Neue', Helvetica , Arial, 'Liberation Sans', 'Nimbus Sans L', sans-serif;
                         font-size: 1rem;
                         font-weight: 400;
-                        height: 30px;
+                        height: 1.875rem;
                         outline: transparent;
                         padding-bottom: 0;
                         padding-left: 4px;
                         padding-right: 4px;
                         padding-top: 0;
                         position: absolute;
-                        right: 10px;
+                        right: 0.625rem;
                         text-align: center;
                         text-decoration: none;
-                        top: 10px;
+                        top: 0.625rem;
                         user-select: none;
                         width: 32px;
                       }
@@ -3362,17 +3362,17 @@ LoadedCheerio {
                       font-family: 'Helvetica Neue', Helvetica , Arial, 'Liberation Sans', 'Nimbus Sans L', sans-serif;
                       font-size: 1rem;
                       font-weight: 400;
-                      height: 30px;
+                      height: 1.875rem;
                       outline: transparent;
                       padding-bottom: 0;
                       padding-left: 4px;
                       padding-right: 4px;
                       padding-top: 0;
                       position: absolute;
-                      right: 10px;
+                      right: 0.625rem;
                       text-align: center;
                       text-decoration: none;
-                      top: 10px;
+                      top: 0.625rem;
                       user-select: none;
                       width: 32px;
                     }
@@ -3705,17 +3705,17 @@ LoadedCheerio {
                         font-family: 'Helvetica Neue', Helvetica , Arial, 'Liberation Sans', 'Nimbus Sans L', sans-serif;
                         font-size: 1rem;
                         font-weight: 400;
-                        height: 30px;
+                        height: 1.875rem;
                         outline: transparent;
                         padding-bottom: 0;
                         padding-left: 4px;
                         padding-right: 4px;
                         padding-top: 0;
                         position: absolute;
-                        right: 10px;
+                        right: 0.625rem;
                         text-align: center;
                         text-decoration: none;
-                        top: 10px;
+                        top: 0.625rem;
                         user-select: none;
                         width: 32px;
                       }
@@ -3991,17 +3991,17 @@ LoadedCheerio {
                           font-family: 'Helvetica Neue', Helvetica , Arial, 'Liberation Sans', 'Nimbus Sans L', sans-serif;
                           font-size: 1rem;
                           font-weight: 400;
-                          height: 30px;
+                          height: 1.875rem;
                           outline: transparent;
                           padding-bottom: 0;
                           padding-left: 4px;
                           padding-right: 4px;
                           padding-top: 0;
                           position: absolute;
-                          right: 10px;
+                          right: 0.625rem;
                           text-align: center;
                           text-decoration: none;
-                          top: 10px;
+                          top: 0.625rem;
                           user-select: none;
                           width: 32px;
                         }
@@ -4338,17 +4338,17 @@ LoadedCheerio {
                 max-height: 90%;
                 max-width: 90%;
                 overflow: auto;
-                padding-bottom: 16px;
-                padding-left: 16px;
-                padding-right: 16px;
-                padding-top: 16px;
+                padding-bottom: 1rem;
+                padding-left: 1rem;
+                padding-right: 1rem;
+                padding-top: 1rem;
                 position: relative;
                 z-index: 99999;
               }
               @media (min-width: 320px){& {
                 min-width: 40ch;
               }
-              @media (min-width: 479px){& {
+              @media (min-width: 480px){& {
                 min-width: 50ch;
               }
               @media (min-width: 640px){& {
@@ -4394,17 +4394,17 @@ LoadedCheerio {
                           font-family: 'Helvetica Neue', Helvetica , Arial, 'Liberation Sans', 'Nimbus Sans L', sans-serif;
                           font-size: 1rem;
                           font-weight: 400;
-                          height: 30px;
+                          height: 1.875rem;
                           outline: transparent;
                           padding-bottom: 0;
                           padding-left: 4px;
                           padding-right: 4px;
                           padding-top: 0;
                           position: absolute;
-                          right: 10px;
+                          right: 0.625rem;
                           text-align: center;
                           text-decoration: none;
-                          top: 10px;
+                          top: 0.625rem;
                           user-select: none;
                           width: 32px;
                         }
@@ -4684,17 +4684,17 @@ LoadedCheerio {
                         font-family: 'Helvetica Neue', Helvetica , Arial, 'Liberation Sans', 'Nimbus Sans L', sans-serif;
                         font-size: 1rem;
                         font-weight: 400;
-                        height: 30px;
+                        height: 1.875rem;
                         outline: transparent;
                         padding-bottom: 0;
                         padding-left: 4px;
                         padding-right: 4px;
                         padding-top: 0;
                         position: absolute;
-                        right: 10px;
+                        right: 0.625rem;
                         text-align: center;
                         text-decoration: none;
-                        top: 10px;
+                        top: 0.625rem;
                         user-select: none;
                         width: 32px;
                       }
@@ -5027,17 +5027,17 @@ LoadedCheerio {
                           font-family: 'Helvetica Neue', Helvetica , Arial, 'Liberation Sans', 'Nimbus Sans L', sans-serif;
                           font-size: 1rem;
                           font-weight: 400;
-                          height: 30px;
+                          height: 1.875rem;
                           outline: transparent;
                           padding-bottom: 0;
                           padding-left: 4px;
                           padding-right: 4px;
                           padding-top: 0;
                           position: absolute;
-                          right: 10px;
+                          right: 0.625rem;
                           text-align: center;
                           text-decoration: none;
-                          top: 10px;
+                          top: 0.625rem;
                           user-select: none;
                           width: 32px;
                         }
@@ -5313,17 +5313,17 @@ LoadedCheerio {
                             font-family: 'Helvetica Neue', Helvetica , Arial, 'Liberation Sans', 'Nimbus Sans L', sans-serif;
                             font-size: 1rem;
                             font-weight: 400;
-                            height: 30px;
+                            height: 1.875rem;
                             outline: transparent;
                             padding-bottom: 0;
                             padding-left: 4px;
                             padding-right: 4px;
                             padding-top: 0;
                             position: absolute;
-                            right: 10px;
+                            right: 0.625rem;
                             text-align: center;
                             text-decoration: none;
-                            top: 10px;
+                            top: 0.625rem;
                             user-select: none;
                             width: 32px;
                           }
