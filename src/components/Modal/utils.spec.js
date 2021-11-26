@@ -17,8 +17,8 @@ describe('Modal utils', () => {
       const original = global.document['body'];
       document.body.innerHTML =
         '<div dir="ltr" class="body-555"><div id="modal-wrapper" data-testid="getModalAnchorTest1"></div></div>';
-      const a = getModalAnchor(document);
-      expect(a.getAttribute('data-testid')).toBe('getModalAnchorTest1');
+      const anchor = getModalAnchor(document);
+      expect(anchor.getAttribute('data-testid')).toBe('getModalAnchorTest1');
       document.body.innerHTML = '';
       global.document['body'] = original;
     });
@@ -28,8 +28,8 @@ describe('Modal utils', () => {
       document.body.innerHTML =
         '<modalanchor-shadowrootnode-test><div dir="ltr" class="body-555"><div id="modal-wrapper" data-testid="getModalAnchorTest2"></div></div></modalanchor-shadowrootnode-test>';
       const element = document.querySelector('modalanchor-shadowrootnode-test');
-      const a = getModalAnchor(element.shadowRoot);
-      expect(a.getAttribute('data-testid')).toBe('getModalAnchorTest2');
+      const anchor = getModalAnchor(element.shadowRoot);
+      expect(anchor.getAttribute('data-testid')).toBe('getModalAnchorTest2');
       global.window = originalWindow;
       document.body.innerHTML = '';
       global.document['body'] = original;
@@ -38,8 +38,8 @@ describe('Modal utils', () => {
       const original = global.document['body'];
       document.body.innerHTML =
         '<div dir="ltr" class="body-555"><div id="modal-wrapper" data-testid="getModalAnchorTest3"></div></div>';
-      const a = getModalAnchor();
-      expect(a.getAttribute('data-testid')).toBe('getModalAnchorTest3');
+      const anchor = getModalAnchor();
+      expect(anchor.getAttribute('data-testid')).toBe('getModalAnchorTest3');
       document.body.innerHTML = '';
       global.document['body'] = original;
     });
@@ -47,8 +47,8 @@ describe('Modal utils', () => {
       const original = global.document['body'];
       document.body.innerHTML =
         '<div><div id="something-random" data-testid="getModalAnchorTest4"></div></div>';
-      const a = getModalAnchor();
-      expect(a).toEqual(document.body);
+      const anchor = getModalAnchor();
+      expect(anchor).toEqual(document.body);
       document.body.innerHTML = '';
       global.document['body'] = original;
     });
@@ -59,8 +59,8 @@ describe('Modal utils', () => {
       const original = global.document['body'];
       document.body.innerHTML =
         '<div><div dir="ltr" class="body-555"></div><div dir="ltr" class="blabla"></div><div dir="ltr" class="abc"></div></div>';
-      const a = getSkeBasisStylingWrapper(document);
-      expect(a.getAttribute('class')).toEqual('body-555');
+      const stylingWrapper = getSkeBasisStylingWrapper(document);
+      expect(stylingWrapper.getAttribute('class')).toEqual('body-555');
       document.body.innerHTML = '';
       global.document['body'] = original;
     });
@@ -68,8 +68,8 @@ describe('Modal utils', () => {
       const original = global.document['body'];
       document.body.innerHTML =
         '<div><div dir="ltr" class="body-555"></div><div dir="ltr" class="body-333"></div><div dir="ltr" class="body-444"></div></div>';
-      const a = getSkeBasisStylingWrapper(document);
-      expect(a.getAttribute('class')).toEqual('body-444');
+      const stylingWrapper = getSkeBasisStylingWrapper(document);
+      expect(stylingWrapper.getAttribute('class')).toEqual('body-444');
       document.body.innerHTML = '';
       global.document['body'] = original;
     });
@@ -77,8 +77,8 @@ describe('Modal utils', () => {
       const original = global.document['body'];
       document.body.innerHTML =
         '<div><div dir="ltr" class="blala"></div><div dir="ltr" class="333"></div><div dir="ltr" class="abc"></div></div>';
-      const a = getSkeBasisStylingWrapper(document);
-      expect(a).toBeUndefined();
+      const stylingWrapper = getSkeBasisStylingWrapper(document);
+      expect(stylingWrapper).toBeUndefined();
       document.body.innerHTML = '';
       global.document['body'] = original;
     });
@@ -90,8 +90,8 @@ describe('Modal utils', () => {
       const original = global.document['body'];
       document.body.innerHTML =
         '<div id="modal-wrapper" data-testid="createModalDomPlacementTest"></div>';
-      const a = createModalDomPlacement(setFlagMock);
-      expect(a).toBeUndefined();
+      const returnedValue = createModalDomPlacement(setFlagMock);
+      expect(returnedValue).toBeUndefined();
       expect(setFlagMock).toHaveBeenCalledWith(true);
       expect(document.body.innerHTML).toEqual(
         '<div id="modal-wrapper" data-testid="createModalDomPlacementTest"></div>'
@@ -103,8 +103,8 @@ describe('Modal utils', () => {
     test('Når shadowRootNode ikke finnes brukes det document som fallback. Når modal-wrapper ikke er i document, så lages det en modal-wrapper og flagget settes til true', () => {
       const setFlagMock = jest.fn();
       const original = global.document['body'];
-      const a = createModalDomPlacement(setFlagMock);
-      expect(a).toBeUndefined();
+      const returnedValue = createModalDomPlacement(setFlagMock);
+      expect(returnedValue).toBeUndefined();
       expect(setFlagMock).toHaveBeenCalledWith(true);
       expect(document.getElementById('modal-wrapper')).toBeDefined();
       global.document['body'] = original;
@@ -114,8 +114,8 @@ describe('Modal utils', () => {
       const setFlagMock = jest.fn();
       const original = global.document['body'];
       document.body.innerHTML = '<div dir="ltr" class="body-555">';
-      const a = createModalDomPlacement(setFlagMock);
-      expect(a).toBeUndefined();
+      const returnedValue = createModalDomPlacement(setFlagMock);
+      expect(returnedValue).toBeUndefined();
       expect(setFlagMock).toHaveBeenCalledWith(true);
       expect(document.getElementById('modal-wrapper')).toBeDefined();
       expect(document.body.innerHTML).toEqual(
@@ -132,8 +132,11 @@ describe('Modal utils', () => {
       document.body.innerHTML =
         '<shadowrootnode-test1 data-testid="createModalDomPlacementTest1"><div id="modal-wrapper"></div></shadowrootnode-test1>';
       const element = document.querySelector('shadowrootnode-test1');
-      const a = createModalDomPlacement(setFlagMock, element.shadowRoot);
-      expect(a).toBeUndefined();
+      const returnedValue = createModalDomPlacement(
+        setFlagMock,
+        element.shadowRoot
+      );
+      expect(returnedValue).toBeUndefined();
       expect(setFlagMock).toHaveBeenCalledWith(true);
       expect(element.shadowRoot.innerHTML).toEqual(
         '<div><div id="shadow">dummy-shadow</div></div><div id="modal-wrapper"></div>'
@@ -152,8 +155,11 @@ describe('Modal utils', () => {
       document.body.innerHTML =
         '<shadowrootnode-test2 data-testid="createModalDomPlacementTest2"><div>babla</div></shadowrootnode-test2>';
       const element = document.querySelector('shadowrootnode-test2');
-      const a = createModalDomPlacement(setFlagMock, element.shadowRoot);
-      expect(a).toBeUndefined();
+      const returnedValue = createModalDomPlacement(
+        setFlagMock,
+        element.shadowRoot
+      );
+      expect(returnedValue).toBeUndefined();
       expect(setFlagMock).toHaveBeenCalledWith(true);
       expect(element.shadowRoot.getElementById('modal-wrapper')).toBeDefined();
       expect(element.shadowRoot.innerHTML).toEqual(
@@ -173,8 +179,11 @@ describe('Modal utils', () => {
       document.body.innerHTML =
         '<shadowrootnode-test3 data-testid="createModalDomPlacementTest2"><div dir="ltr" class="body-555">babla</div></shadowrootnode-test3>';
       const element = document.querySelector('shadowrootnode-test3');
-      const a = createModalDomPlacement(setFlagMock, element.shadowRoot);
-      expect(a).toBeUndefined();
+      const returnedValue = createModalDomPlacement(
+        setFlagMock,
+        element.shadowRoot
+      );
+      expect(returnedValue).toBeUndefined();
       expect(setFlagMock).toHaveBeenCalledWith(true);
       expect(element.shadowRoot.getElementById('modal-wrapper')).toBeDefined();
       expect(element.shadowRoot.innerHTML).toEqual(
