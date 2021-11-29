@@ -219,6 +219,7 @@ Ekspanderbare rader
 
 ```js
 import { ActionButton } from '@skatteetaten/frontend-components/ActionButton';
+import { LabelWithCallout } from '@skatteetaten/frontend-components/LabelWithCallout';
 import { Grid } from '@skatteetaten/frontend-components/Grid';
 import { Table } from '@skatteetaten/frontend-components/Table';
 
@@ -235,7 +236,15 @@ const columns = [
     name: 'Status',
     fieldName: 'status',
   },
-  { name: 'Forventet behandlet', fieldName: 'eta' },
+  {
+    name: (
+      <LabelWithCallout
+        label={'Forventet behandlet'}
+        help={'Status for hvert selskap i perioden.'}
+      />
+    ),
+    fieldName: 'eta',
+  },
 ];
 
 const data = [
@@ -303,7 +312,7 @@ const data = [
   },
 ];
 const expandableContent = (data, close, rowIndex) => (
-  <div style={{ width: 'max-content' }}>
+  <div>
     <Grid>
       <Grid.Row>
         <Grid.Col xl={12} sm={8}>
@@ -323,18 +332,71 @@ const expandableContent = (data, close, rowIndex) => (
   </div>
 );
 
-<Table
-  data={data.map((d) => ({
-    ...d,
-  }))}
-  columns={columns}
-  expandableRows
-  expandableContent={expandableContent}
-  expandIconPlacement={'before'}
-  caption="Firmaoversikt"
-  hideCaption={true}
-  expandIconPlacement={'after'}
-/>;
+const expandableContentLabelWithCallout = (data, close, rowIndex) => (
+  <div>
+    <Grid>
+      <Grid.Row>
+        <Grid.Col xl={12} sm={4}>
+          <p></p>
+        </Grid.Col>
+        <Grid.Col xl={12} sm={8}>
+          <LabelWithCallout
+            label={'Vil du vite mer?'}
+            help={'Oversikt over ansatte i perioden.'}
+          />
+        </Grid.Col>
+      </Grid.Row>
+      <Grid.Row>
+        <Grid.Col xl={12}>
+          <Table
+            data={data.ansatte}
+            showRowSeparators={false}
+            columns={[
+              { name: 'Ansatt', fieldName: 'navn' },
+              { name: 'Fødselsnr', fieldName: 'fnr' },
+              { name: 'Beskrivelse', fieldName: 'beskrivelse' },
+            ]}
+            fullWidth
+          />
+        </Grid.Col>
+      </Grid.Row>
+    </Grid>
+  </div>
+);
+
+<>
+  <p>Ekspanderbare rader med høyre-pil og nested tabell</p>
+  <Table
+    data={data.map((d) => ({
+      ...d,
+    }))}
+    columns={columns}
+    expandableContent={expandableContent}
+    expandIconPlacement={'before'}
+    caption="Firmaoversikt"
+    hideCaption={true}
+    expandIconPlacement={'after'}
+    expandableRows
+  />
+  <br />
+  <p>
+    Ekspanderbare rader med venstre-pil og bred innhold med nested
+    LabelWithCallout
+  </p>
+  <Table
+    data={data.map((d) => ({
+      ...d,
+    }))}
+    columns={columns}
+    expandableContent={expandableContentLabelWithCallout}
+    expandIconPlacement={'before'}
+    caption="Firmaoversikt"
+    sum={{ text: 'sum', colspan: 4, total: '30 500' }}
+    hideCaption={true}
+    expandableRows
+    fullWidth
+  />
+</>;
 ```
 
 Hele rader kan gjøres klikkbare med _openEditableOnRowClick_-attributtet, og tabeller kan gjøres kompakte med _compactTable_-atributtet.
