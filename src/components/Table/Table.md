@@ -391,6 +391,7 @@ const expandableContentLabelWithCallout = (data, close, rowIndex) => (
     expandableContent={expandableContentLabelWithCallout}
     expandIconPlacement={'before'}
     caption="Firmaoversikt"
+    sum={{ text: 'sum', colspan: 4, total: '30 500' }}
     hideCaption={true}
     expandableRows
     fullWidth

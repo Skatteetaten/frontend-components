@@ -19,7 +19,7 @@ export const SumRow = (props: {
   } = props;
   const styles = getClassNames();
   const columns = numberOfColumns !== 0 ? numberOfColumns - sum.colspan - 1 : 0;
-  const emptyCells = Array.from(Array(columns).keys());
+  const emptyCells = Array.from(Array(columns > 0 ? columns : 0).keys());
   let counter = 0;
   return (
     <tr className={styles.sumRow}>
