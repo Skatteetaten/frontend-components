@@ -62,7 +62,7 @@ export const TableHeader = (props: TableHeaderProps): JSX.Element => {
                 [styles.tabellTheadCellAlignedRight]: key.alignment === 'right',
                 [styles.tabellTheadCellAlignedCenter]:
                   key.alignment === 'center',
-                [styles.tabellTheadCell]: key.hideOnMobile,
+                [styles.tabellTheadCellHiddenOnMobile]: key.hideOnMobile,
               }
             )}
             tabIndex={0}
@@ -86,7 +86,7 @@ export const TableHeader = (props: TableHeaderProps): JSX.Element => {
           className={classnames(styles.tabellTheadCell, {
             [styles.tabellTheadCellAlignedRight]: key.alignment === 'right',
             [styles.tabellTheadCellAlignedCenter]: key.alignment === 'center',
-            [styles.tabellTheadCell]: key.hideOnMobile,
+            [styles.tabellTheadCellHiddenOnMobile]: key.hideOnMobile,
           })}
           scope="col"
         >

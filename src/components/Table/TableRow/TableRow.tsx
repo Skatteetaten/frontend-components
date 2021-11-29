@@ -283,7 +283,7 @@ export const TableRow = <P extends object>(props: TableRowProps<P>) => {
                 [styles.tableCellAlignedRight]: column.alignment === 'right',
                 [styles.tableCellAlignedCenter]: column.alignment === 'center',
                 [styles.tableCellIsEditableRowClosed]: !props.isEditableRowOpen,
-                [styles.hideOnMobile]: column.hideOnMobile,
+                [styles.tableCellHiddenOnMobile]: column.hideOnMobile,
                 [styles.separator]:
                   showRowSeparator && !isExpandableRowOpen && !data['children'],
               }
@@ -311,7 +311,7 @@ export const TableRow = <P extends object>(props: TableRowProps<P>) => {
                 [styles.tableCellAlignedRight]: column.alignment === 'right',
                 [styles.tableCellAlignedCenter]: column.alignment === 'center',
                 [styles.tableCellIsEditableRowClosed]: !props.isEditableRowOpen,
-                [styles.hideOnMobile]: column.hideOnMobile,
+                [styles.tableCellHiddenOnMobile]: column.hideOnMobile,
                 [styles.separator]: showRowSeparator && !isExpandableRowOpen,
               }
             )}

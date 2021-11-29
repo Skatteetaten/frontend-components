@@ -76,5 +76,13 @@ export const getClassNames = (props) => {
     tabellTheadCellIsEmpty: {
       borderBottom: `2px solid ${palette.skeColor.blackAlt}`,
     },
+    tabellTheadCellHiddenOnMobile: {
+      display: 'none',
+      selectors: {
+        [`@media (min-width: ${designtokenBreakpoints['ske-breakpoint-md']})`]: {
+          display: 'table-cell',
+        },
+      },
+    },
   });
 };

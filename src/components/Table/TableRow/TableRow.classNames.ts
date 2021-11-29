@@ -73,6 +73,14 @@ export const getClassNames = (props, expandabledRowOpenWidth) => {
       borderBottom: 'none',
       verticalAlign: 'top',
     },
+    tableCellHiddenOnMobile: {
+      display: 'none',
+      selectors: {
+        [`@media (min-width: ${designtokenBreakpoints['ske-breakpoint-md']})`]: {
+          display: 'table-cell',
+        },
+      },
+    },
     cellContent: {
       alignItems: 'center',
       boxSizing: 'border-box',
@@ -135,14 +143,6 @@ export const getClassNames = (props, expandabledRowOpenWidth) => {
     },
     emptyTd: {
       borderBottom: `2px solid ${palette.skeColor.blackAlt}`,
-    },
-    hideOnMobile: {
-      display: 'none',
-      selectors: {
-        [`@media (min-width: ${designtokenBreakpoints['ske-breakpoint-md']})`]: {
-          display: 'table-cell',
-        },
-      },
     },
   });
 };
