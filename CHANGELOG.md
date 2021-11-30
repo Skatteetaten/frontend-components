@@ -1,3 +1,8 @@
+### **v.4.2.1 - 30.11.2021**
+
+- FileUploader: now supports UPPERCASE file types.
+- Removed dependency material-design-icons
+
 ### **v.4.2.0 - 24.11.2021**
 
 - New ErrorSummary component.
@@ -7,6 +12,10 @@
 - RadioButtonGroup improvements on a display issue when zooming.
 - Table header cells now reacts to alignment.
 - Deprecated: Button buttonStyle: primaryRounded, primaryRoundedFilled, primaryLarge. We are planning to simplyfy the button hierarchy, and in the next major release these variants will have new names.
+
+### **v.4.1.6 - 15.10.2021**
+
+- TopStripe: Added width to flag SVGs
 
 ### **v.4.1.5 - 01.10.2021**
 
