@@ -1,6 +1,7 @@
 ### **v.4.2.1 - 30.11.2021**
 
 - FileUploader: now supports UPPERCASE file types.
+- Removed dependency material-design-icons
 
 ### **v.4.2.0 - 24.11.2021**
 
