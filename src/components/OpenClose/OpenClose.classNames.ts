@@ -8,6 +8,11 @@ import {
   PaletteProps,
 } from '../utils';
 
+import spacing from '../utils/designtokens/_spacing.json';
+import fonts from '../utils/designtokens/_fontSizes.json';
+import breakpoints from '../utils/designtokens/_breakpoints.json';
+import { string } from 'prop-types';
+
 export function getClassNames(props) {
   const palette = getTheme().palette as PaletteProps;
   const { compact, iconRight, underline } = props;
@@ -20,21 +25,35 @@ export function getClassNames(props) {
       alignItems: 'flex-start',
       border: 'none',
       color: palette.skeColor.blue,
-      fontSize: props.compact ? FontSizes.medium : FontSizes.smallPlus,
-      fontWeight: FontWeights.bold,
+      fontSize: fonts['ske-font-size-m'],
+      fontWeight: fonts['ske-font-weight-bold'],
       padding: compact
-        ? '0.125rem 0.25rem 0.125rem 0.25rem'
-        : '0.25rem 0.5rem 0.375rem 0.5rem',
+        ? spacing['ske-spacing-xs'] +
+          ' ' +
+          spacing['ske-spacing-sm'] +
+          ' ' +
+          spacing['ske-spacing-xs'] +
+          ' ' +
+          spacing['kse-spacing-sm']
+        : spacing['ske-spacing-sm'] +
+          ' ' +
+          spacing['ske-spacing-md'] +
+          ' ' +
+          spacing['ske-spacing-sm'] + //'0.375rem' +
+          ' ' +
+          spacing['ske-spacing-md'],
       background: 'none',
-      marginLeft: '-0.5rem',
-      paddingLeft: '0.5rem',
-      marginRight: '-0.5rem',
-      paddingRight: '0.5rem',
+      marginLeft: -spacing['ske-spacing-md'],
+      paddingLeft: spacing['ske-spacing-md'],
+      marginRight: -spacing['ske-spacing-md'],
+      paddingRight: spacing['ske-spacing-md'],
       cursor: 'pointer',
-      borderBottom: `0.125rem solid transparent`,
+      borderBottom: `${spacing['ske-spacing-xs']} solid transparent`,
       selectors: {
-        '@media (min-width: 640px)': {
-          fontSize: compact ? FontSizes.medium : FontSizes.largePlus,
+        [`@media (min-width: ${breakpoints['ske-breakpoint-md']})`]: {
+          fontSize: compact
+            ? fonts['ske-font-size-m']
+            : fonts['ske-font-size-l'],
         },
         '&:hover, &:focus': {
           background: palette.skeColor.lightBlue,
@@ -47,7 +66,7 @@ export function getClassNames(props) {
           outline: 'none',
         },
         '& h1, h2, h3, h4, h5, h6': {
-          fontSize: compact ? FontSizes.medium : FontSizes.largePlus,
+          fontSize: compact ? FontSizes.small : FontSizes.largePlus,
           margin: '0',
         },
         '& i': {
