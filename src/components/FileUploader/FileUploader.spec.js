@@ -83,6 +83,22 @@ describe('FileUploader komponent', () => {
       'Dette filformatet er ikke godkjent'
     );
   });
+  it('skal ikke gi feilmelding dersom bruker laster opp filtype med store bokstaver', () => {
+    const mockFunc = jest.fn();
+    const wrapper = oppsettFullDOM({
+      acceptedFileFormats: [FileFormatTypes.doc, FileFormatTypes.docx],
+      ariaLabel: 'Filopplaster',
+      axiosPath: 'http://localhost',
+      uploadFile: () => mockFunc(),
+    });
+    expect(wrapper.exists('ErrorMessage')).toEqual(false);
+    wrapper.find('input').simulate('change', {
+      target: {
+        files: [{ name: 'tekst.DOC' }, { name: 'tekst_2.Docx' }],
+      },
+    });
+    expect(wrapper.exists('ErrorMessage')).toEqual(false);
+  });
   it('skal kjøre deleteFile dersom bruker trykker kryss i liste', () => {
     const mockFunc = jest.fn();
     const mockFuncDelete = jest.fn((file) => file);
