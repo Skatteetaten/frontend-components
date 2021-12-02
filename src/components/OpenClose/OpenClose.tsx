@@ -76,5 +76,6 @@ export const OpenClose: React.FC<OpenCloseProps> = (props) => {
 };
 
 OpenClose.defaultProps = {
-  underline: true,
+  underline: false,
+  iconRight: false,
 };

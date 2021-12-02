@@ -31,9 +31,6 @@ const paraStyle = {
           <a href="#">feriepenger</a>
         </li>
         <li>
-          <button>test</button>
-        </li>
-        <li>
           utgiftsgodtgjørelser, refusjoner og naturalytelser som er
           skattepliktige fordeler for deg, inkludert dekning av pendlerkostnader
         </li>
