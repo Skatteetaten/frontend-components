@@ -15,12 +15,6 @@
 - global imports from root is now longer supported:
   import { CardBorder } from '@skatteetaten/frontend-components'; must now be changed to
   more specific imports: imports import { CardBorder } from '@skatteetaten/frontend-components/Card';
-- Button variants have been reorganized/prioritized, with have new names and default value:
-  "primaryLarge" is now "callToAction",
-  "primaryRoundedFilled" is now "primary",
-  "secondary" is now "secondarySimple",
-  "primary" is now "primaryCornered",
-  "primaryRounded" is now "secondary" (default)
 
   #### Breaking per component
 
@@ -32,6 +26,14 @@
   -> 'labelWithCalloutAutoDismiss', use 'autodismiss' key under 'labelWithCalloutProps.calloutProps' prop instead
 - DatePicker
   -> 'labelCallout' og 'labelWithCalloutAutoDismiss' prop deprecated, use CalloutProps exposed undervlabelWithCalloutProps and datepickerCalloutProps instead
+- Table
+  -> className prop deprecated, bruk customClassnames
+- Button variants have been reorganized/prioritized, with have new names and default value:
+  -> "primaryLarge" is now "callToAction",
+  -> "primaryRoundedFilled" is now "primary",
+  -> "secondary" is now "secondarySimple",
+  -> "primary" is now "primaryCornered",
+  -> "primaryRounded" is now "secondary" (default)
 
 #### Colors and design
 

@@ -1,7 +1,12 @@
 import { mergeStyleSets } from '@fluentui/merge-styles';
 import { getTheme } from '@fluentui/react/lib/Styling';
-import { PaletteProps } from '../utils';
+
 import { ModalProps } from './Modal.types';
+
+import designtokenSpacing from '../utils/designtokens/_spacing.json';
+import designtokenBreakpoints from '../utils/designtokens/_breakpoints.json';
+
+import { PaletteProps } from '../utils';
 
 export const getClassNames = (props: ModalProps, tag: string) => {
   const palette = getTheme().palette as PaletteProps;
@@ -37,7 +42,7 @@ export const getClassNames = (props: ModalProps, tag: string) => {
     modal: {
       display: 'flex',
       flexWrap: 'nowrap',
-      padding: '16px',
+      padding: designtokenSpacing['ske-spacing-lg'],
       flexDirection: 'column',
       position: 'relative',
       height: 'auto',
@@ -50,15 +55,16 @@ export const getClassNames = (props: ModalProps, tag: string) => {
       overflow: 'auto',
       selectors: {
         '@media (min-width: 320px)': {
+          // TO-DO dette brekkpunktet her savnes
           minWidth: '40ch',
         },
-        '@media (min-width: 479px)': {
+        [`@media (min-width: ${designtokenBreakpoints['ske-breakpoint-sm']})`]: {
           minWidth: '50ch',
         },
-        '@media (min-width: 640px)': {
+        [`@media (min-width: ${designtokenBreakpoints['ske-breakpoint-md']})`]: {
           minWidth: '70ch',
         },
-        '@media (min-width: 1024px)': {
+        [`@media (min-width: ${designtokenBreakpoints['ske-breakpoint-lg']})`]: {
           minWidth: '80ch',
         },
       },
@@ -76,9 +82,9 @@ export const getClassNames = (props: ModalProps, tag: string) => {
 
     closeButton: {
       position: 'absolute',
-      height: '30px',
-      right: '10px',
-      top: '10px',
+      height: '1.875rem',
+      right: '0.625rem',
+      top: '0.625rem',
     },
   });
 };

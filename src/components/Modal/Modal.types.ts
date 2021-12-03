@@ -19,9 +19,9 @@ export interface ModalProps {
   };
   /** Språk vist i komponent. Default er norsk bokmål. */
   language?: 'nb' | 'nn' | 'en';
-  /** Funksjon som kalles når Nodalen lukkes */
+  /** Funksjon som kalles når Modalen lukkes */
   onClose?: (ref: HTMLDivElement) => void;
-  /** Funksjon som kalles når Nodalen åpnes */
+  /** Funksjon som kalles når Modalen åpnes */
   onOpen?: (ref: HTMLDivElement) => void;
   children: React.ReactNode;
 }
