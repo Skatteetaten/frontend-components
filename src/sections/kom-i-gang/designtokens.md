@@ -5,7 +5,6 @@ import designtokenColors from '/utils/designtokens/_colors.json';
 import designtokenFontSizes from '/utils/designtokens/_fontSizes.json';
 import designtokenSpacing from '/utils/designtokens/_spacing.json';
 import designtokenBreakpoints from '/utils/designtokens/_breakpoints.json';
-import designtokenFontSizes from '/utils/designtokens/_fontSizes.json';
 ```
 
 ```js noeditor
