@@ -2,6 +2,11 @@ import { mergeStyleSets } from '@fluentui/merge-styles';
 import { getTheme } from '@fluentui/react/lib/Styling';
 import { FontSizes, PaletteProps } from '../utils';
 
+import designtokenSpacing from '../utils/designtokens/_spacing.json';
+import designtokenFonts from '../utils/designtokens/_fontSizes.json';
+import designtokenColors from '../utils/designtokens/_colors.json';
+import designtokenBreakpoints from '../utils/designtokens/_breakpoints.json';
+
 export const getClassNames = () => {
   const palette = getTheme().palette as PaletteProps;
   const whiteBackground = palette.skeColor.white;
@@ -16,7 +21,7 @@ export const getClassNames = () => {
       zIndex: 2,
       visibility: 'hidden',
       selectors: {
-        '@media (min-width: 1170px)': {
+        [`@media (min-width: ${designtokenBreakpoints['ske-breakpoint-lg']})`]: {
           position: 'fixed',
           top: 0,
           right: 0,
@@ -29,18 +34,21 @@ export const getClassNames = () => {
       opacity: 0,
       transition: '0.2s',
       selectors: {
-        '@media (min-width: 900px)': {
-          maxWidth: '878px',
+        [`@media (max-width: ${designtokenBreakpoints['ske-breakpoint-xxl']})`]: {
+          maxWidth: `${designtokenBreakpoints['ske-breakpoint-xl']}`,
         },
-        '@media (min-width: 1170px)': {
+        [`@media (max-width: ${designtokenBreakpoints['ske-breakpoint-xl']})`]: {
+          maxWidth: `${designtokenBreakpoints['ske-breakpoint-lg']}`,
+        },
+        /*'@media (min-width: 1170px)': {
           maxWidth: '1151.9px',
-        },
+        },*/
       },
     },
     box: {
       marginTop: 0,
       selectors: {
-        '@media (min-width: 1170px)': {
+        [`@media (min-width: ${designtokenBreakpoints['ske-breakpoint-lg']})`]: {
           top: '80vh',
           position: 'absolute',
           right: 0,
