@@ -1,6 +1,5 @@
 import { mergeStyleSets } from '@fluentui/merge-styles';
-import { getTheme } from '@fluentui/react/lib/Styling';
-import { FontSizes, PaletteProps } from '../utils';
+import { FontSizes } from '../utils';
 
 import designtokenSpacing from '../utils/designtokens/_spacing.json';
 import designtokenFonts from '../utils/designtokens/_fontSizes.json';
@@ -8,10 +7,9 @@ import designtokenColors from '../utils/designtokens/_colors.json';
 import designtokenBreakpoints from '../utils/designtokens/_breakpoints.json';
 
 export const getClassNames = () => {
-  const palette = getTheme().palette as PaletteProps;
-  const whiteBackground = palette.skeColor.white;
-  const hoverBackground = palette.skeColor.lightBlue;
-  const color = palette.skeColor.blue;
+  const whiteBackground = designtokenColors['ske-color-white-100'];
+  const hoverBackground = designtokenColors['ske-color-interactive-light'];
+  const color = designtokenColors['ske-color-interactive'];
 
   // @ts-ignore TODO
   return mergeStyleSets({
