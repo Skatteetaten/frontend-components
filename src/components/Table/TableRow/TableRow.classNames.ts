@@ -34,8 +34,8 @@ export const getClassNames = (props, expandabledRowOpenWidth) => {
       // Dette henter width'en fra parent-row slik at ekspandert innhold kan ta hele bredden
       width: expandabledRowOpenWidth ? expandabledRowOpenWidth - 5 + 'px' : '',
       padding: compactTable
-        ? designtokenSpacing['ske-spacing-sm']
-        : designtokenSpacing['ske-spacing-md'],
+        ? `${designtokenSpacing['ske-spacing-sm']} 0`
+        : `${designtokenSpacing['ske-spacing-md']} 0`,
       boxSizing: 'border-box',
       position: 'relative',
       zIndex: 99,
