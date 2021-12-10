@@ -51,6 +51,10 @@ module.exports = {
           content: 'src/sections/kom-i-gang/utviklere.md',
         },
         {
+          name: 'Designtokens',
+          content: 'src/sections/kom-i-gang/designtokens.md',
+        },
+        {
           name: 'Nettleserstøtte',
           content: 'src/sections/kom-i-gang/nettlesere.md',
         },
