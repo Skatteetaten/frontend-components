@@ -212,6 +212,7 @@ export const Table = <P extends object>(props: TableProps<P>) => {
           {getRowData()}
           {sum && (
             <SumRow
+              compactTable={compactTable}
               numberOfColumns={props.columns?.length ?? 0}
               editableRows={editableRows}
               expandableRows={expandableRows}

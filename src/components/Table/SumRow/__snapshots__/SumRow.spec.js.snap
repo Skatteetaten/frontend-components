@@ -22,10 +22,15 @@ exports[`SumRow komponent Når SumRow består av 0 kolonner Så ser markupen rik
       className=
 
           {
-            padding-bottom: 0.5rem;
-            padding-left: 0.5rem;
-            padding-right: 0.5rem;
-            padding-top: 0.5rem;
+            font-weight: 400;
+            padding-bottom: 1rem;
+            padding-left: 1rem;
+            padding-right: 1rem;
+            padding-top: 1rem;
+            vertical-align: inherit;
+          }
+          {
+            font-weight: 700;
             text-align: end;
           }
       colSpan={2}
@@ -38,17 +43,13 @@ exports[`SumRow komponent Når SumRow består av 0 kolonner Så ser markupen rik
 
           {
             font-weight: 400;
-            padding-bottom: 0px;
-            padding-left: 0px;
-            padding-right: 0px;
-            padding-top: 0px;
+            padding-bottom: 1rem;
+            padding-left: 1rem;
+            padding-right: 1rem;
+            padding-top: 1rem;
             vertical-align: inherit;
           }
           {
-            padding-bottom: 0.5rem;
-            padding-left: 0.5rem;
-            padding-right: 0.5rem;
-            padding-top: 0.5rem;
             text-align: end;
           }
     >
@@ -80,10 +81,15 @@ exports[`SumRow komponent Når SumRow består av f.eks 5 kolonner Så ser markup
       className=
 
           {
-            padding-bottom: 0.5rem;
-            padding-left: 0.5rem;
-            padding-right: 0.5rem;
-            padding-top: 0.5rem;
+            font-weight: 400;
+            padding-bottom: 1rem;
+            padding-left: 1rem;
+            padding-right: 1rem;
+            padding-top: 1rem;
+            vertical-align: inherit;
+          }
+          {
+            font-weight: 700;
             text-align: end;
           }
       colSpan={2}
@@ -96,17 +102,13 @@ exports[`SumRow komponent Når SumRow består av f.eks 5 kolonner Så ser markup
 
           {
             font-weight: 400;
-            padding-bottom: 0px;
-            padding-left: 0px;
-            padding-right: 0px;
-            padding-top: 0px;
+            padding-bottom: 1rem;
+            padding-left: 1rem;
+            padding-right: 1rem;
+            padding-top: 1rem;
             vertical-align: inherit;
           }
           {
-            padding-bottom: 0.5rem;
-            padding-left: 0.5rem;
-            padding-right: 0.5rem;
-            padding-top: 0.5rem;
             text-align: end;
           }
     >
@@ -117,10 +119,10 @@ exports[`SumRow komponent Når SumRow består av f.eks 5 kolonner Så ser markup
 
           {
             font-weight: 400;
-            padding-bottom: 0px;
-            padding-left: 0px;
-            padding-right: 0px;
-            padding-top: 0px;
+            padding-bottom: 1rem;
+            padding-left: 1rem;
+            padding-right: 1rem;
+            padding-top: 1rem;
             vertical-align: inherit;
           }
       key="0"
@@ -130,10 +132,10 @@ exports[`SumRow komponent Når SumRow består av f.eks 5 kolonner Så ser markup
 
           {
             font-weight: 400;
-            padding-bottom: 0px;
-            padding-left: 0px;
-            padding-right: 0px;
-            padding-top: 0px;
+            padding-bottom: 1rem;
+            padding-left: 1rem;
+            padding-right: 1rem;
+            padding-top: 1rem;
             vertical-align: inherit;
           }
       key="1"
@@ -165,10 +167,15 @@ exports[`SumRow komponent Når SumRow har en editableRows i tillegg Så ser mark
       className=
 
           {
-            padding-bottom: 0.5rem;
-            padding-left: 0.5rem;
-            padding-right: 0.5rem;
-            padding-top: 0.5rem;
+            font-weight: 400;
+            padding-bottom: 1rem;
+            padding-left: 1rem;
+            padding-right: 1rem;
+            padding-top: 1rem;
+            vertical-align: inherit;
+          }
+          {
+            font-weight: 700;
             text-align: end;
           }
       colSpan={2}
@@ -181,17 +188,13 @@ exports[`SumRow komponent Når SumRow har en editableRows i tillegg Så ser mark
 
           {
             font-weight: 400;
-            padding-bottom: 0px;
-            padding-left: 0px;
-            padding-right: 0px;
-            padding-top: 0px;
+            padding-bottom: 1rem;
+            padding-left: 1rem;
+            padding-right: 1rem;
+            padding-top: 1rem;
             vertical-align: inherit;
           }
           {
-            padding-bottom: 0.5rem;
-            padding-left: 0.5rem;
-            padding-right: 0.5rem;
-            padding-top: 0.5rem;
             text-align: end;
           }
     >
@@ -226,10 +229,15 @@ exports[`SumRow komponent Når SumRow har en expandableRows i tillegg Så ser ma
       className=
 
           {
-            padding-bottom: 0.5rem;
-            padding-left: 0.5rem;
-            padding-right: 0.5rem;
-            padding-top: 0.5rem;
+            font-weight: 400;
+            padding-bottom: 1rem;
+            padding-left: 1rem;
+            padding-right: 1rem;
+            padding-top: 1rem;
+            vertical-align: inherit;
+          }
+          {
+            font-weight: 700;
             text-align: end;
           }
       colSpan={2}
@@ -242,17 +250,13 @@ exports[`SumRow komponent Når SumRow har en expandableRows i tillegg Så ser ma
 
           {
             font-weight: 400;
-            padding-bottom: 0px;
-            padding-left: 0px;
-            padding-right: 0px;
-            padding-top: 0px;
+            padding-bottom: 1rem;
+            padding-left: 1rem;
+            padding-right: 1rem;
+            padding-top: 1rem;
             vertical-align: inherit;
           }
           {
-            padding-bottom: 0.5rem;
-            padding-left: 0.5rem;
-            padding-right: 0.5rem;
-            padding-top: 0.5rem;
             text-align: end;
           }
     >
@@ -287,10 +291,15 @@ exports[`SumRow komponent Når SumRow har en expandableRows i tillegg Så ser ma
       className=
 
           {
-            padding-bottom: 0.5rem;
-            padding-left: 0.5rem;
-            padding-right: 0.5rem;
-            padding-top: 0.5rem;
+            font-weight: 400;
+            padding-bottom: 1rem;
+            padding-left: 1rem;
+            padding-right: 1rem;
+            padding-top: 1rem;
+            vertical-align: inherit;
+          }
+          {
+            font-weight: 700;
             text-align: end;
           }
       colSpan={2}
@@ -303,17 +312,13 @@ exports[`SumRow komponent Når SumRow har en expandableRows i tillegg Så ser ma
 
           {
             font-weight: 400;
-            padding-bottom: 0px;
-            padding-left: 0px;
-            padding-right: 0px;
-            padding-top: 0px;
+            padding-bottom: 1rem;
+            padding-left: 1rem;
+            padding-right: 1rem;
+            padding-top: 1rem;
             vertical-align: inherit;
           }
           {
-            padding-bottom: 0.5rem;
-            padding-left: 0.5rem;
-            padding-right: 0.5rem;
-            padding-top: 0.5rem;
             text-align: end;
           }
     >
@@ -346,10 +351,15 @@ exports[`SumRow komponent Når SumRow har en expandableRows i tillegg Så ser ma
       className=
 
           {
-            padding-bottom: 0.5rem;
-            padding-left: 0.5rem;
-            padding-right: 0.5rem;
-            padding-top: 0.5rem;
+            font-weight: 400;
+            padding-bottom: 1rem;
+            padding-left: 1rem;
+            padding-right: 1rem;
+            padding-top: 1rem;
+            vertical-align: inherit;
+          }
+          {
+            font-weight: 700;
             text-align: end;
           }
       colSpan={2}
@@ -362,17 +372,13 @@ exports[`SumRow komponent Når SumRow har en expandableRows i tillegg Så ser ma
 
           {
             font-weight: 400;
-            padding-bottom: 0px;
-            padding-left: 0px;
-            padding-right: 0px;
-            padding-top: 0px;
+            padding-bottom: 1rem;
+            padding-left: 1rem;
+            padding-right: 1rem;
+            padding-top: 1rem;
             vertical-align: inherit;
           }
           {
-            padding-bottom: 0.5rem;
-            padding-left: 0.5rem;
-            padding-right: 0.5rem;
-            padding-top: 0.5rem;
             text-align: end;
           }
     >

@@ -4,6 +4,7 @@ import classnames from 'classnames';
 import { getClassNames } from './SumRow.classNames';
 
 export const SumRow = (props: {
+  compactTable: boolean;
   numberOfColumns: number;
   sum: { text: string; colspan: number; total: number | string };
   editableRows: boolean | Array<number> | undefined;
@@ -11,19 +12,24 @@ export const SumRow = (props: {
   expandIconPlacement: 'after' | 'before' | undefined;
 }) => {
   const {
+    compactTable,
     numberOfColumns,
     sum,
     editableRows,
     expandableRows,
     expandIconPlacement,
   } = props;
-  const styles = getClassNames();
+  const styles = getClassNames(compactTable);
   const columns = numberOfColumns !== 0 ? numberOfColumns - sum.colspan - 1 : 0;
   const emptyCells = Array.from(Array(columns > 0 ? columns : 0).keys());
   let counter = 0;
   return (
     <tr className={styles.sumRow}>
-      <th colSpan={sum.colspan} scope="row" className={styles.sumCellIsSum}>
+      <th
+        colSpan={sum.colspan}
+        scope="row"
+        className={classnames(styles.sumCell, styles.sumCellIsText)}
+      >
         {sum.text}
       </th>
       <td className={classnames(styles.sumCell, styles.sumCellIsSum)}>
