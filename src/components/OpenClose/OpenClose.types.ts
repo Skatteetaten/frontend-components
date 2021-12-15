@@ -16,8 +16,13 @@ export interface OpenCloseProps {
   isOnClickOnlyFiredOnOpen?: boolean;
   /** Display as a compact version with smaller font size and margins */
   compact?: boolean;
-  /** Styling overrides */
-  className?: string;
+  /** Custom classNames for å overskrive styling */
+
+  customClassNames?: {
+    wrapper?: string;
+    button?: string;
+    content?: string;
+  };
   /** Show text underline or not  */
   underline?: boolean;
   /** Elements that are shown/hidden.*/

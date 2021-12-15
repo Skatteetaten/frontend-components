@@ -44,6 +44,11 @@ const paraStyle = {
     isOnClickOnlyFiredOnOpen={false}
     title={state.open ? 'Skjul detaljer' : 'Vis detaljer'}
     onClick={() => setState({ open: !state.open })}
+    customClassNames={{
+      wrapper: 'myWrapperClass',
+      button: 'myButtonClass',
+      content: 'myContentClass',
+    }}
   >
     <Typography>
       <p style={paraStyle}>
@@ -60,9 +65,6 @@ const paraStyle = {
         <li>
           lønn til utleid utenlandsk arbeidstaker, inkludert{' '}
           <a href="#">feriepenger</a>
-        </li>
-        <li>
-          <button>test</button>
         </li>
         <li>
           utgiftsgodtgjørelser, refusjoner og naturalytelser som er

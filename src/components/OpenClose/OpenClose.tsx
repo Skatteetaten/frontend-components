@@ -8,7 +8,7 @@ import { OpenCloseProps } from './OpenClose.types';
 export const OpenClose: React.FC<OpenCloseProps> = (props) => {
   const {
     title,
-    className,
+    customClassNames,
     headingLevel,
     iconRight,
     onClick,
@@ -38,12 +38,16 @@ export const OpenClose: React.FC<OpenCloseProps> = (props) => {
   const styles = getClassNames(props);
 
   return (
-    <div className={className}>
+    <div className={customClassNames?.wrapper}>
       <button
         className={
           isContentOpen
-            ? classnames(styles.toggleButton, styles.toggleButtonOpen)
-            : styles.toggleButton
+            ? classnames(
+                styles.toggleButton,
+                styles.toggleButtonOpen,
+                customClassNames?.button
+              )
+            : classnames(styles.toggleButton, customClassNames?.button)
         }
         aria-expanded={isContentOpen}
         onClick={clickHandler}
@@ -66,7 +70,14 @@ export const OpenClose: React.FC<OpenCloseProps> = (props) => {
       </button>
       {isContentOpen && (
         <div
-          className={!iconRight ? styles.content : styles.contentWhenIconRight}
+          className={
+            !iconRight
+              ? classnames(styles.content, customClassNames?.content)
+              : classnames(
+                  styles.contentWhenIconRight,
+                  customClassNames?.content
+                )
+          }
         >
           {children}
         </div>
