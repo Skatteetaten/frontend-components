@@ -20,20 +20,8 @@ export function getClassNames(props) {
         : designtokenFonts['ske-font-size-l'],
       fontWeight: designtokenFonts['ske-font-weight-bold'],
       padding: compact
-        ? designtokenSpacing['ske-spacing-xs'] +
-          ' ' +
-          designtokenSpacing['ske-spacing-sm'] +
-          ' ' +
-          designtokenSpacing['ske-spacing-xs'] +
-          ' ' +
-          designtokenSpacing['kse-spacing-sm']
-        : designtokenSpacing['ske-spacing-sm'] +
-          ' ' +
-          designtokenSpacing['ske-spacing-md'] +
-          ' ' +
-          designtokenSpacing['ske-spacing-sm'] +
-          ' ' +
-          designtokenSpacing['ske-spacing-md'],
+        ? `${designtokenSpacing['ske-spacing-xs']} ${designtokenSpacing['ske-spacing-sm']}`
+        : `${designtokenSpacing['ske-spacing-sm']} ${designtokenSpacing['ske-spacing-md']}`,
       background: 'none',
       marginLeft: `-${designtokenSpacing['ske-spacing-md']}`,
       paddingLeft: designtokenSpacing['ske-spacing-md'],
@@ -61,12 +49,10 @@ export function getClassNames(props) {
         '& i': {
           transition: '.2s',
           padding: compact
-            ? designtokenSpacing['ske-spacing-xs'] + ' 0 0 0'
+            ? `${designtokenSpacing['ske-spacing-xs']} 0 0`
             : '0',
           marginLeft: iconRight ? designtokenSpacing['ske-spacing-sm'] : '0',
-          marginTop: compact
-            ? designtokenSpacing['ske-spacing-xs']
-            : designtokenSpacing['ske-spacing-sm'],
+          marginTop: compact ? '0' : designtokenSpacing['ske-spacing-xs'],
           fontSize: compact
             ? designtokenFonts['ske-font-size-icon-l']
             : designtokenFonts['ske-font-size-icon-xl'],
