@@ -8,7 +8,9 @@ export const getClassNames = (compactTable) => {
       verticalAlign: 'middle',
     },
     sumCell: {
-      fontWeight: designtokenFontSizes['ske-font-weight-regular'],
+      fontSize: compactTable
+        ? designtokenFontSizes['ske-font-size-s']
+        : 'inherit',
       padding: compactTable
         ? `${designtokenSpacing['ske-spacing-sm']} ${designtokenSpacing['ske-spacing-sm']}`
         : `${designtokenSpacing['ske-spacing-lg']} ${designtokenSpacing['ske-spacing-lg']}`,
@@ -19,6 +21,7 @@ export const getClassNames = (compactTable) => {
       textAlign: 'end',
     },
     sumCellIsSum: {
+      fontWeight: designtokenFontSizes['ske-font-weight-regular'],
       textAlign: 'end',
     },
   });

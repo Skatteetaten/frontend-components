@@ -104,7 +104,7 @@ export const TableRow = <P extends object>(props: TableRowProps<P>) => {
   const editButton = (
     <span
       className={classnames(styles.cellContent, customClassNames?.cellContent, {
-        [styles.cellContentSmall]: !showRowSeparators,
+        [styles.cellContentSmall]: !showRowSeparators || compactTable,
       })}
     >
       <IconButton

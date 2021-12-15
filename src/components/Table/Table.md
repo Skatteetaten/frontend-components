@@ -554,6 +554,7 @@ const data = [
   compactTable={true}
   caption="Månedoversikt"
   hideCaption={true}
+  sum={{ text: 'sum', colspan: 3, total: '30 500' }}
 />;
 ```
 
