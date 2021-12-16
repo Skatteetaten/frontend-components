@@ -368,7 +368,6 @@ exports[`Table komponent matcher snapshot 1`] = `
           >
             <th
               className=
-                  tableCellIsEditableRowClosed
                   tableCellHasSeparator
                   {
                     font-weight: 400;
@@ -376,7 +375,7 @@ exports[`Table komponent matcher snapshot 1`] = `
                     padding-left: 0px;
                     padding-right: 0px;
                     padding-top: 0px;
-                    vertical-align: inherit;
+                    vertical-align: middle;
                   }
                   &.tableCellAlignedRight {
                     justify-content: flex-end;
@@ -401,7 +400,6 @@ exports[`Table komponent matcher snapshot 1`] = `
                   }
                   &.tableCellIsEditableRowClosed {
                     border-bottom: none;
-                    vertical-align: top;
                   }
                   &.tableCellAboveExpandedArea {
                     border-bottom: none;
@@ -425,11 +423,9 @@ exports[`Table komponent matcher snapshot 1`] = `
                 className=
                     cellContentLarge
                     {
-                      align-items: center;
                       box-sizing: border-box;
-                      display: flex;
+                      display: block;
                       font-size: inherit;
-                      height: 100%;
                       padding-bottom: 0.5rem;
                       padding-left: 1rem;
                       padding-right: 1rem;
@@ -462,11 +458,9 @@ exports[`Table komponent matcher snapshot 1`] = `
                       padding-top: 0;
                     }
                     &.cellContentAlignedRight {
-                      justify-content: flex-end;
                       text-align: right;
                     }
                     &.cellContentAlignedCenter {
-                      justify-content: center;
                       text-align: center;
                     }
                     &.cellContentAboveExpandedArea {
@@ -480,7 +474,6 @@ exports[`Table komponent matcher snapshot 1`] = `
             <td
               className=
                   tableCellAlignedRight
-                  tableCellIsEditableRowClosed
                   tableCellHasSeparator
                   {
                     font-weight: 400;
@@ -488,7 +481,7 @@ exports[`Table komponent matcher snapshot 1`] = `
                     padding-left: 0px;
                     padding-right: 0px;
                     padding-top: 0px;
-                    vertical-align: inherit;
+                    vertical-align: middle;
                   }
                   &.tableCellAlignedRight {
                     justify-content: flex-end;
@@ -513,7 +506,6 @@ exports[`Table komponent matcher snapshot 1`] = `
                   }
                   &.tableCellIsEditableRowClosed {
                     border-bottom: none;
-                    vertical-align: top;
                   }
                   &.tableCellAboveExpandedArea {
                     border-bottom: none;
@@ -535,11 +527,9 @@ exports[`Table komponent matcher snapshot 1`] = `
                     cellContentAlignedRight
                     cellContentLarge
                     {
-                      align-items: center;
                       box-sizing: border-box;
-                      display: flex;
+                      display: block;
                       font-size: inherit;
-                      height: 100%;
                       padding-bottom: 0.5rem;
                       padding-left: 1rem;
                       padding-right: 1rem;
@@ -572,11 +562,9 @@ exports[`Table komponent matcher snapshot 1`] = `
                       padding-top: 0;
                     }
                     &.cellContentAlignedRight {
-                      justify-content: flex-end;
                       text-align: right;
                     }
                     &.cellContentAlignedCenter {
-                      justify-content: center;
                       text-align: center;
                     }
                     &.cellContentAboveExpandedArea {
@@ -590,7 +578,6 @@ exports[`Table komponent matcher snapshot 1`] = `
             <td
               className=
                   tableCellAlignedRight
-                  tableCellIsEditableRowClosed
                   tableCellHasSeparator
                   {
                     font-weight: 400;
@@ -598,7 +585,7 @@ exports[`Table komponent matcher snapshot 1`] = `
                     padding-left: 0px;
                     padding-right: 0px;
                     padding-top: 0px;
-                    vertical-align: inherit;
+                    vertical-align: middle;
                   }
                   &.tableCellAlignedRight {
                     justify-content: flex-end;
@@ -623,7 +610,6 @@ exports[`Table komponent matcher snapshot 1`] = `
                   }
                   &.tableCellIsEditableRowClosed {
                     border-bottom: none;
-                    vertical-align: top;
                   }
                   &.tableCellAboveExpandedArea {
                     border-bottom: none;
@@ -645,11 +631,9 @@ exports[`Table komponent matcher snapshot 1`] = `
                     cellContentAlignedRight
                     cellContentLarge
                     {
-                      align-items: center;
                       box-sizing: border-box;
-                      display: flex;
+                      display: block;
                       font-size: inherit;
-                      height: 100%;
                       padding-bottom: 0.5rem;
                       padding-left: 1rem;
                       padding-right: 1rem;
@@ -682,11 +666,9 @@ exports[`Table komponent matcher snapshot 1`] = `
                       padding-top: 0;
                     }
                     &.cellContentAlignedRight {
-                      justify-content: flex-end;
                       text-align: right;
                     }
                     &.cellContentAlignedCenter {
-                      justify-content: center;
                       text-align: center;
                     }
                     &.cellContentAboveExpandedArea {
@@ -700,7 +682,6 @@ exports[`Table komponent matcher snapshot 1`] = `
             <td
               className=
                   tableCellAlignedRight
-                  tableCellIsEditableRowClosed
                   tableCellHasSeparator
                   {
                     font-weight: 400;
@@ -708,7 +689,7 @@ exports[`Table komponent matcher snapshot 1`] = `
                     padding-left: 0px;
                     padding-right: 0px;
                     padding-top: 0px;
-                    vertical-align: inherit;
+                    vertical-align: middle;
                   }
                   &.tableCellAlignedRight {
                     justify-content: flex-end;
@@ -733,7 +714,6 @@ exports[`Table komponent matcher snapshot 1`] = `
                   }
                   &.tableCellIsEditableRowClosed {
                     border-bottom: none;
-                    vertical-align: top;
                   }
                   &.tableCellAboveExpandedArea {
                     border-bottom: none;
@@ -755,11 +735,9 @@ exports[`Table komponent matcher snapshot 1`] = `
                     cellContentAlignedRight
                     cellContentLarge
                     {
-                      align-items: center;
                       box-sizing: border-box;
-                      display: flex;
+                      display: block;
                       font-size: inherit;
-                      height: 100%;
                       padding-bottom: 0.5rem;
                       padding-left: 1rem;
                       padding-right: 1rem;
@@ -792,11 +770,9 @@ exports[`Table komponent matcher snapshot 1`] = `
                       padding-top: 0;
                     }
                     &.cellContentAlignedRight {
-                      justify-content: flex-end;
                       text-align: right;
                     }
                     &.cellContentAlignedCenter {
-                      justify-content: center;
                       text-align: center;
                     }
                     &.cellContentAboveExpandedArea {
@@ -878,7 +854,6 @@ exports[`Table komponent matcher snapshot 1`] = `
           >
             <th
               className=
-                  tableCellIsEditableRowClosed
                   tableCellHasSeparator
                   {
                     font-weight: 400;
@@ -886,7 +861,7 @@ exports[`Table komponent matcher snapshot 1`] = `
                     padding-left: 0px;
                     padding-right: 0px;
                     padding-top: 0px;
-                    vertical-align: inherit;
+                    vertical-align: middle;
                   }
                   &.tableCellAlignedRight {
                     justify-content: flex-end;
@@ -911,7 +886,6 @@ exports[`Table komponent matcher snapshot 1`] = `
                   }
                   &.tableCellIsEditableRowClosed {
                     border-bottom: none;
-                    vertical-align: top;
                   }
                   &.tableCellAboveExpandedArea {
                     border-bottom: none;
@@ -935,11 +909,9 @@ exports[`Table komponent matcher snapshot 1`] = `
                 className=
                     cellContentLarge
                     {
-                      align-items: center;
                       box-sizing: border-box;
-                      display: flex;
+                      display: block;
                       font-size: inherit;
-                      height: 100%;
                       padding-bottom: 0.5rem;
                       padding-left: 1rem;
                       padding-right: 1rem;
@@ -972,11 +944,9 @@ exports[`Table komponent matcher snapshot 1`] = `
                       padding-top: 0;
                     }
                     &.cellContentAlignedRight {
-                      justify-content: flex-end;
                       text-align: right;
                     }
                     &.cellContentAlignedCenter {
-                      justify-content: center;
                       text-align: center;
                     }
                     &.cellContentAboveExpandedArea {
@@ -990,7 +960,6 @@ exports[`Table komponent matcher snapshot 1`] = `
             <td
               className=
                   tableCellAlignedRight
-                  tableCellIsEditableRowClosed
                   tableCellHasSeparator
                   {
                     font-weight: 400;
@@ -998,7 +967,7 @@ exports[`Table komponent matcher snapshot 1`] = `
                     padding-left: 0px;
                     padding-right: 0px;
                     padding-top: 0px;
-                    vertical-align: inherit;
+                    vertical-align: middle;
                   }
                   &.tableCellAlignedRight {
                     justify-content: flex-end;
@@ -1023,7 +992,6 @@ exports[`Table komponent matcher snapshot 1`] = `
                   }
                   &.tableCellIsEditableRowClosed {
                     border-bottom: none;
-                    vertical-align: top;
                   }
                   &.tableCellAboveExpandedArea {
                     border-bottom: none;
@@ -1045,11 +1013,9 @@ exports[`Table komponent matcher snapshot 1`] = `
                     cellContentAlignedRight
                     cellContentLarge
                     {
-                      align-items: center;
                       box-sizing: border-box;
-                      display: flex;
+                      display: block;
                       font-size: inherit;
-                      height: 100%;
                       padding-bottom: 0.5rem;
                       padding-left: 1rem;
                       padding-right: 1rem;
@@ -1082,11 +1048,9 @@ exports[`Table komponent matcher snapshot 1`] = `
                       padding-top: 0;
                     }
                     &.cellContentAlignedRight {
-                      justify-content: flex-end;
                       text-align: right;
                     }
                     &.cellContentAlignedCenter {
-                      justify-content: center;
                       text-align: center;
                     }
                     &.cellContentAboveExpandedArea {
@@ -1100,7 +1064,6 @@ exports[`Table komponent matcher snapshot 1`] = `
             <td
               className=
                   tableCellAlignedRight
-                  tableCellIsEditableRowClosed
                   tableCellHasSeparator
                   {
                     font-weight: 400;
@@ -1108,7 +1071,7 @@ exports[`Table komponent matcher snapshot 1`] = `
                     padding-left: 0px;
                     padding-right: 0px;
                     padding-top: 0px;
-                    vertical-align: inherit;
+                    vertical-align: middle;
                   }
                   &.tableCellAlignedRight {
                     justify-content: flex-end;
@@ -1133,7 +1096,6 @@ exports[`Table komponent matcher snapshot 1`] = `
                   }
                   &.tableCellIsEditableRowClosed {
                     border-bottom: none;
-                    vertical-align: top;
                   }
                   &.tableCellAboveExpandedArea {
                     border-bottom: none;
@@ -1155,11 +1117,9 @@ exports[`Table komponent matcher snapshot 1`] = `
                     cellContentAlignedRight
                     cellContentLarge
                     {
-                      align-items: center;
                       box-sizing: border-box;
-                      display: flex;
+                      display: block;
                       font-size: inherit;
-                      height: 100%;
                       padding-bottom: 0.5rem;
                       padding-left: 1rem;
                       padding-right: 1rem;
@@ -1192,11 +1152,9 @@ exports[`Table komponent matcher snapshot 1`] = `
                       padding-top: 0;
                     }
                     &.cellContentAlignedRight {
-                      justify-content: flex-end;
                       text-align: right;
                     }
                     &.cellContentAlignedCenter {
-                      justify-content: center;
                       text-align: center;
                     }
                     &.cellContentAboveExpandedArea {
@@ -1210,7 +1168,6 @@ exports[`Table komponent matcher snapshot 1`] = `
             <td
               className=
                   tableCellAlignedRight
-                  tableCellIsEditableRowClosed
                   tableCellHasSeparator
                   {
                     font-weight: 400;
@@ -1218,7 +1175,7 @@ exports[`Table komponent matcher snapshot 1`] = `
                     padding-left: 0px;
                     padding-right: 0px;
                     padding-top: 0px;
-                    vertical-align: inherit;
+                    vertical-align: middle;
                   }
                   &.tableCellAlignedRight {
                     justify-content: flex-end;
@@ -1243,7 +1200,6 @@ exports[`Table komponent matcher snapshot 1`] = `
                   }
                   &.tableCellIsEditableRowClosed {
                     border-bottom: none;
-                    vertical-align: top;
                   }
                   &.tableCellAboveExpandedArea {
                     border-bottom: none;
@@ -1265,11 +1221,9 @@ exports[`Table komponent matcher snapshot 1`] = `
                     cellContentAlignedRight
                     cellContentLarge
                     {
-                      align-items: center;
                       box-sizing: border-box;
-                      display: flex;
+                      display: block;
                       font-size: inherit;
-                      height: 100%;
                       padding-bottom: 0.5rem;
                       padding-left: 1rem;
                       padding-right: 1rem;
@@ -1302,11 +1256,9 @@ exports[`Table komponent matcher snapshot 1`] = `
                       padding-top: 0;
                     }
                     &.cellContentAlignedRight {
-                      justify-content: flex-end;
                       text-align: right;
                     }
                     &.cellContentAlignedCenter {
-                      justify-content: center;
                       text-align: center;
                     }
                     &.cellContentAboveExpandedArea {
@@ -1388,7 +1340,6 @@ exports[`Table komponent matcher snapshot 1`] = `
           >
             <th
               className=
-                  tableCellIsEditableRowClosed
                   tableCellHasSeparator
                   {
                     font-weight: 400;
@@ -1396,7 +1347,7 @@ exports[`Table komponent matcher snapshot 1`] = `
                     padding-left: 0px;
                     padding-right: 0px;
                     padding-top: 0px;
-                    vertical-align: inherit;
+                    vertical-align: middle;
                   }
                   &.tableCellAlignedRight {
                     justify-content: flex-end;
@@ -1421,7 +1372,6 @@ exports[`Table komponent matcher snapshot 1`] = `
                   }
                   &.tableCellIsEditableRowClosed {
                     border-bottom: none;
-                    vertical-align: top;
                   }
                   &.tableCellAboveExpandedArea {
                     border-bottom: none;
@@ -1445,11 +1395,9 @@ exports[`Table komponent matcher snapshot 1`] = `
                 className=
                     cellContentLarge
                     {
-                      align-items: center;
                       box-sizing: border-box;
-                      display: flex;
+                      display: block;
                       font-size: inherit;
-                      height: 100%;
                       padding-bottom: 0.5rem;
                       padding-left: 1rem;
                       padding-right: 1rem;
@@ -1482,11 +1430,9 @@ exports[`Table komponent matcher snapshot 1`] = `
                       padding-top: 0;
                     }
                     &.cellContentAlignedRight {
-                      justify-content: flex-end;
                       text-align: right;
                     }
                     &.cellContentAlignedCenter {
-                      justify-content: center;
                       text-align: center;
                     }
                     &.cellContentAboveExpandedArea {
@@ -1500,7 +1446,6 @@ exports[`Table komponent matcher snapshot 1`] = `
             <td
               className=
                   tableCellAlignedRight
-                  tableCellIsEditableRowClosed
                   tableCellHasSeparator
                   {
                     font-weight: 400;
@@ -1508,7 +1453,7 @@ exports[`Table komponent matcher snapshot 1`] = `
                     padding-left: 0px;
                     padding-right: 0px;
                     padding-top: 0px;
-                    vertical-align: inherit;
+                    vertical-align: middle;
                   }
                   &.tableCellAlignedRight {
                     justify-content: flex-end;
@@ -1533,7 +1478,6 @@ exports[`Table komponent matcher snapshot 1`] = `
                   }
                   &.tableCellIsEditableRowClosed {
                     border-bottom: none;
-                    vertical-align: top;
                   }
                   &.tableCellAboveExpandedArea {
                     border-bottom: none;
@@ -1555,11 +1499,9 @@ exports[`Table komponent matcher snapshot 1`] = `
                     cellContentAlignedRight
                     cellContentLarge
                     {
-                      align-items: center;
                       box-sizing: border-box;
-                      display: flex;
+                      display: block;
                       font-size: inherit;
-                      height: 100%;
                       padding-bottom: 0.5rem;
                       padding-left: 1rem;
                       padding-right: 1rem;
@@ -1592,11 +1534,9 @@ exports[`Table komponent matcher snapshot 1`] = `
                       padding-top: 0;
                     }
                     &.cellContentAlignedRight {
-                      justify-content: flex-end;
                       text-align: right;
                     }
                     &.cellContentAlignedCenter {
-                      justify-content: center;
                       text-align: center;
                     }
                     &.cellContentAboveExpandedArea {
@@ -1610,7 +1550,6 @@ exports[`Table komponent matcher snapshot 1`] = `
             <td
               className=
                   tableCellAlignedRight
-                  tableCellIsEditableRowClosed
                   tableCellHasSeparator
                   {
                     font-weight: 400;
@@ -1618,7 +1557,7 @@ exports[`Table komponent matcher snapshot 1`] = `
                     padding-left: 0px;
                     padding-right: 0px;
                     padding-top: 0px;
-                    vertical-align: inherit;
+                    vertical-align: middle;
                   }
                   &.tableCellAlignedRight {
                     justify-content: flex-end;
@@ -1643,7 +1582,6 @@ exports[`Table komponent matcher snapshot 1`] = `
                   }
                   &.tableCellIsEditableRowClosed {
                     border-bottom: none;
-                    vertical-align: top;
                   }
                   &.tableCellAboveExpandedArea {
                     border-bottom: none;
@@ -1665,11 +1603,9 @@ exports[`Table komponent matcher snapshot 1`] = `
                     cellContentAlignedRight
                     cellContentLarge
                     {
-                      align-items: center;
                       box-sizing: border-box;
-                      display: flex;
+                      display: block;
                       font-size: inherit;
-                      height: 100%;
                       padding-bottom: 0.5rem;
                       padding-left: 1rem;
                       padding-right: 1rem;
@@ -1702,11 +1638,9 @@ exports[`Table komponent matcher snapshot 1`] = `
                       padding-top: 0;
                     }
                     &.cellContentAlignedRight {
-                      justify-content: flex-end;
                       text-align: right;
                     }
                     &.cellContentAlignedCenter {
-                      justify-content: center;
                       text-align: center;
                     }
                     &.cellContentAboveExpandedArea {
@@ -1720,7 +1654,6 @@ exports[`Table komponent matcher snapshot 1`] = `
             <td
               className=
                   tableCellAlignedRight
-                  tableCellIsEditableRowClosed
                   tableCellHasSeparator
                   {
                     font-weight: 400;
@@ -1728,7 +1661,7 @@ exports[`Table komponent matcher snapshot 1`] = `
                     padding-left: 0px;
                     padding-right: 0px;
                     padding-top: 0px;
-                    vertical-align: inherit;
+                    vertical-align: middle;
                   }
                   &.tableCellAlignedRight {
                     justify-content: flex-end;
@@ -1753,7 +1686,6 @@ exports[`Table komponent matcher snapshot 1`] = `
                   }
                   &.tableCellIsEditableRowClosed {
                     border-bottom: none;
-                    vertical-align: top;
                   }
                   &.tableCellAboveExpandedArea {
                     border-bottom: none;
@@ -1775,11 +1707,9 @@ exports[`Table komponent matcher snapshot 1`] = `
                     cellContentAlignedRight
                     cellContentLarge
                     {
-                      align-items: center;
                       box-sizing: border-box;
-                      display: flex;
+                      display: block;
                       font-size: inherit;
-                      height: 100%;
                       padding-bottom: 0.5rem;
                       padding-left: 1rem;
                       padding-right: 1rem;
@@ -1812,11 +1742,9 @@ exports[`Table komponent matcher snapshot 1`] = `
                       padding-top: 0;
                     }
                     &.cellContentAlignedRight {
-                      justify-content: flex-end;
                       text-align: right;
                     }
                     &.cellContentAlignedCenter {
-                      justify-content: center;
                       text-align: center;
                     }
                     &.cellContentAboveExpandedArea {
@@ -1898,7 +1826,6 @@ exports[`Table komponent matcher snapshot 1`] = `
           >
             <th
               className=
-                  tableCellIsEditableRowClosed
                   tableCellHasSeparator
                   {
                     font-weight: 400;
@@ -1906,7 +1833,7 @@ exports[`Table komponent matcher snapshot 1`] = `
                     padding-left: 0px;
                     padding-right: 0px;
                     padding-top: 0px;
-                    vertical-align: inherit;
+                    vertical-align: middle;
                   }
                   &.tableCellAlignedRight {
                     justify-content: flex-end;
@@ -1931,7 +1858,6 @@ exports[`Table komponent matcher snapshot 1`] = `
                   }
                   &.tableCellIsEditableRowClosed {
                     border-bottom: none;
-                    vertical-align: top;
                   }
                   &.tableCellAboveExpandedArea {
                     border-bottom: none;
@@ -1955,11 +1881,9 @@ exports[`Table komponent matcher snapshot 1`] = `
                 className=
                     cellContentLarge
                     {
-                      align-items: center;
                       box-sizing: border-box;
-                      display: flex;
+                      display: block;
                       font-size: inherit;
-                      height: 100%;
                       padding-bottom: 0.5rem;
                       padding-left: 1rem;
                       padding-right: 1rem;
@@ -1992,11 +1916,9 @@ exports[`Table komponent matcher snapshot 1`] = `
                       padding-top: 0;
                     }
                     &.cellContentAlignedRight {
-                      justify-content: flex-end;
                       text-align: right;
                     }
                     &.cellContentAlignedCenter {
-                      justify-content: center;
                       text-align: center;
                     }
                     &.cellContentAboveExpandedArea {
@@ -2010,7 +1932,6 @@ exports[`Table komponent matcher snapshot 1`] = `
             <td
               className=
                   tableCellAlignedRight
-                  tableCellIsEditableRowClosed
                   tableCellHasSeparator
                   {
                     font-weight: 400;
@@ -2018,7 +1939,7 @@ exports[`Table komponent matcher snapshot 1`] = `
                     padding-left: 0px;
                     padding-right: 0px;
                     padding-top: 0px;
-                    vertical-align: inherit;
+                    vertical-align: middle;
                   }
                   &.tableCellAlignedRight {
                     justify-content: flex-end;
@@ -2043,7 +1964,6 @@ exports[`Table komponent matcher snapshot 1`] = `
                   }
                   &.tableCellIsEditableRowClosed {
                     border-bottom: none;
-                    vertical-align: top;
                   }
                   &.tableCellAboveExpandedArea {
                     border-bottom: none;
@@ -2065,11 +1985,9 @@ exports[`Table komponent matcher snapshot 1`] = `
                     cellContentAlignedRight
                     cellContentLarge
                     {
-                      align-items: center;
                       box-sizing: border-box;
-                      display: flex;
+                      display: block;
                       font-size: inherit;
-                      height: 100%;
                       padding-bottom: 0.5rem;
                       padding-left: 1rem;
                       padding-right: 1rem;
@@ -2102,11 +2020,9 @@ exports[`Table komponent matcher snapshot 1`] = `
                       padding-top: 0;
                     }
                     &.cellContentAlignedRight {
-                      justify-content: flex-end;
                       text-align: right;
                     }
                     &.cellContentAlignedCenter {
-                      justify-content: center;
                       text-align: center;
                     }
                     &.cellContentAboveExpandedArea {
@@ -2120,7 +2036,6 @@ exports[`Table komponent matcher snapshot 1`] = `
             <td
               className=
                   tableCellAlignedRight
-                  tableCellIsEditableRowClosed
                   tableCellHasSeparator
                   {
                     font-weight: 400;
@@ -2128,7 +2043,7 @@ exports[`Table komponent matcher snapshot 1`] = `
                     padding-left: 0px;
                     padding-right: 0px;
                     padding-top: 0px;
-                    vertical-align: inherit;
+                    vertical-align: middle;
                   }
                   &.tableCellAlignedRight {
                     justify-content: flex-end;
@@ -2153,7 +2068,6 @@ exports[`Table komponent matcher snapshot 1`] = `
                   }
                   &.tableCellIsEditableRowClosed {
                     border-bottom: none;
-                    vertical-align: top;
                   }
                   &.tableCellAboveExpandedArea {
                     border-bottom: none;
@@ -2175,11 +2089,9 @@ exports[`Table komponent matcher snapshot 1`] = `
                     cellContentAlignedRight
                     cellContentLarge
                     {
-                      align-items: center;
                       box-sizing: border-box;
-                      display: flex;
+                      display: block;
                       font-size: inherit;
-                      height: 100%;
                       padding-bottom: 0.5rem;
                       padding-left: 1rem;
                       padding-right: 1rem;
@@ -2212,11 +2124,9 @@ exports[`Table komponent matcher snapshot 1`] = `
                       padding-top: 0;
                     }
                     &.cellContentAlignedRight {
-                      justify-content: flex-end;
                       text-align: right;
                     }
                     &.cellContentAlignedCenter {
-                      justify-content: center;
                       text-align: center;
                     }
                     &.cellContentAboveExpandedArea {
@@ -2230,7 +2140,6 @@ exports[`Table komponent matcher snapshot 1`] = `
             <td
               className=
                   tableCellAlignedRight
-                  tableCellIsEditableRowClosed
                   tableCellHasSeparator
                   {
                     font-weight: 400;
@@ -2238,7 +2147,7 @@ exports[`Table komponent matcher snapshot 1`] = `
                     padding-left: 0px;
                     padding-right: 0px;
                     padding-top: 0px;
-                    vertical-align: inherit;
+                    vertical-align: middle;
                   }
                   &.tableCellAlignedRight {
                     justify-content: flex-end;
@@ -2263,7 +2172,6 @@ exports[`Table komponent matcher snapshot 1`] = `
                   }
                   &.tableCellIsEditableRowClosed {
                     border-bottom: none;
-                    vertical-align: top;
                   }
                   &.tableCellAboveExpandedArea {
                     border-bottom: none;
@@ -2285,11 +2193,9 @@ exports[`Table komponent matcher snapshot 1`] = `
                     cellContentAlignedRight
                     cellContentLarge
                     {
-                      align-items: center;
                       box-sizing: border-box;
-                      display: flex;
+                      display: block;
                       font-size: inherit;
-                      height: 100%;
                       padding-bottom: 0.5rem;
                       padding-left: 1rem;
                       padding-right: 1rem;
@@ -2322,11 +2228,9 @@ exports[`Table komponent matcher snapshot 1`] = `
                       padding-top: 0;
                     }
                     &.cellContentAlignedRight {
-                      justify-content: flex-end;
                       text-align: right;
                     }
                     &.cellContentAlignedCenter {
-                      justify-content: center;
                       text-align: center;
                     }
                     &.cellContentAboveExpandedArea {

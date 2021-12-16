@@ -49,7 +49,8 @@ export const getClassNames = (props, expandabledRowOpenWidth) => {
     tableCell: {
       fontWeight: designtokenFontSizes['ske-font-weight-regular'],
       padding: 0,
-      verticalAlign: 'inherit',
+      // verticalAlign: 'inherit',
+      verticalAlign: 'middle',
       selectors: {
         '&.tableCellAlignedRight': {
           justifyContent: 'flex-end',
@@ -73,7 +74,6 @@ export const getClassNames = (props, expandabledRowOpenWidth) => {
         },
         '&.tableCellIsEditableRowClosed': {
           borderBottom: 'none',
-          verticalAlign: 'top',
         },
         '&.tableCellAboveExpandedArea': {
           borderBottom: 'none',
@@ -94,17 +94,17 @@ export const getClassNames = (props, expandabledRowOpenWidth) => {
     },
 
     cellContent: {
-      height: '100%',
-      alignItems: 'center',
+      display: 'block',
+      width: '100%',
+      verticalAlign: 'middle',
       boxSizing: 'border-box',
-      display: 'flex',
+
       fontSize: compactTable
         ? designtokenFontSizes['ske-font-size-s']
         : 'inherit',
       padding: `${designtokenSpacing['ske-spacing-md']} ${designtokenSpacing['ske-spacing-lg']}`,
       textAlign: 'inherit',
-      verticalAlign: 'middle',
-      width: '100%',
+
       selectors: {
         '&.cellContentSmall': {
           padding: `${designtokenSpacing['ske-spacing-xs']} ${designtokenSpacing['ske-spacing-lg']}`,
@@ -123,11 +123,11 @@ export const getClassNames = (props, expandabledRowOpenWidth) => {
           padding: `0 ${designtokenSpacing['ske-spacing-lg']} ${designtokenSpacing['ske-spacing-lg']} ${designtokenSpacing['ske-spacing-lg']}`,
         },
         '&.cellContentAlignedRight': {
-          justifyContent: 'flex-end',
+          /* justifyContent: 'flex-end',*/
           textAlign: 'right',
         },
         '&.cellContentAlignedCenter': {
-          justifyContent: 'center',
+          /* justifyContent: 'center',*/
           textAlign: 'center',
         },
         '&.cellContentAboveExpandedArea': {

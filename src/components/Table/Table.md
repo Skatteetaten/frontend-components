@@ -222,6 +222,7 @@ import { ActionButton } from '@skatteetaten/frontend-components/ActionButton';
 import { IconButton } from '@skatteetaten/frontend-components/IconButton';
 import { Grid } from '@skatteetaten/frontend-components/Grid';
 import { Table } from '@skatteetaten/frontend-components/Table';
+import { LabelWithCallout } from '@skatteetaten/frontend-components/LabelWithCallout';
 
 const columns = [
   {
