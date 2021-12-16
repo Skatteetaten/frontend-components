@@ -11,7 +11,7 @@ exports[`ScrollToTopButton komponent matcher snapshot 1`] = `
         width: 100%;
         z-index: 2;
       }
-      @media (min-width: 1170px){& {
+      @media (min-width: 1024px){& {
         position: fixed;
         right: 0px;
         top: 0px;
@@ -29,11 +29,11 @@ exports[`ScrollToTopButton komponent matcher snapshot 1`] = `
           position: relative !important;
           transition: 0.2s;
         }
-        @media (min-width: 900px){& {
-          max-width: 878px;
+        @media (max-width: 1920px){& {
+          max-width: 1366px;
         }
-        @media (min-width: 1170px){& {
-          max-width: 1151.9px;
+        @media (max-width: 1366px){& {
+          max-width: 1024px;
         }
   >
     <div
@@ -42,7 +42,7 @@ exports[`ScrollToTopButton komponent matcher snapshot 1`] = `
           {
             margin-top: 0px;
           }
-          @media (min-width: 1170px){& {
+          @media (min-width: 1024px){& {
             position: absolute;
             right: 0px;
             top: 80vh;
@@ -68,10 +68,10 @@ exports[`ScrollToTopButton komponent matcher snapshot 1`] = `
               font-size: 1rem;
               font-weight: 400;
               height: 40px;
-              margin-bottom: 24px;
+              margin-bottom: 1.5rem;
               margin-left: auto;
               margin-right: auto;
-              margin-top: 24px;
+              margin-top: 1.5rem;
               outline: transparent;
               padding-bottom: 0;
               padding-left: 4px;
@@ -256,7 +256,7 @@ exports[`ScrollToTopButton komponent matcher snapshot 1`] = `
                   background-color: white !important;
                   border-radius: 10px;
                   color: #1362ae;
-                  font-size: 0.875rem;
+                  font-size: 0.75rem;
                   font-weight: 700;
                   margin-top: 40px;
                   padding-bottom: 2px;
