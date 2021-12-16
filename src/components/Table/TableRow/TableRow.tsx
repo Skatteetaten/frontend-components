@@ -104,7 +104,7 @@ export const TableRow = <P extends object>(props: TableRowProps<P>) => {
   const editButton = (
     <span
       className={classnames(styles.cellContent, customClassNames?.cellContent, {
-        [styles.cellContentSmall]: !showRowSeparators,
+        cellContentSmall: !showRowSeparators || compactTable,
       })}
     >
       <IconButton
@@ -149,7 +149,7 @@ export const TableRow = <P extends object>(props: TableRowProps<P>) => {
         className={classnames(
           styles.tableCell,
           customClassNames?.tableCell,
-          styles.tableCellForExpandCollapseButton
+          'tableCellForExpandCollapseButton'
         )}
       >
         <IconButton
@@ -188,7 +188,7 @@ export const TableRow = <P extends object>(props: TableRowProps<P>) => {
               styles.tableCell,
               customClassNames?.tableCell,
               {
-                [styles.separator]: showRowSeparator && !isExpandableRowOpen,
+                tableCellHasSeparator: showRowSeparator && !isExpandableRowOpen,
               }
             )}
             rowSpan={childrenLength + 1}
@@ -223,14 +223,14 @@ export const TableRow = <P extends object>(props: TableRowProps<P>) => {
           className={classnames(
             styles.cellContent,
             customClassNames?.cellContent,
-            styles.cellContentClickable,
+            'cellContentClickable',
             {
-              [styles.cellContentAboveExpandedArea]: isExpandabledRowOpen,
-              [styles.cellContentAlignedRight]: alignment === 'right',
-              [styles.cellContentAlignedCenter]: alignment === 'center',
-              [styles.cellContentLarge]: showRowSeparator && !isChild,
-              [styles.cellContentChildRow]: isChild,
-              [styles.cellContentHideEdit]: !editableRow && editableRows,
+              cellContentAboveExpandedArea: isExpandabledRowOpen,
+              cellContentAlignedRight: alignment === 'right',
+              cellContentAlignedCenter: alignment === 'center',
+              cellContentLarge: showRowSeparator && !isChild,
+              cellContentChildRow: isChild,
+              cellContentHideEdit: !editableRow && editableRows,
             }
           )}
         >
@@ -243,12 +243,12 @@ export const TableRow = <P extends object>(props: TableRowProps<P>) => {
           styles.cellContent,
           customClassNames?.cellContent,
           {
-            [styles.cellContentAboveExpandedArea]: isExpandabledRowOpen,
-            [styles.cellContentAlignedRight]: alignment === 'right',
-            [styles.cellContentAlignedCenter]: alignment === 'center',
-            [styles.cellContentLarge]: showRowSeparator && !isChild,
-            [styles.cellContentChildRow]: isChild,
-            [styles.cellContentHideEdit]: !editableRow && editableRows,
+            cellContentAboveExpandedArea: isExpandabledRowOpen,
+            cellContentAlignedRight: alignment === 'right',
+            cellContentAlignedCenter: alignment === 'center',
+            cellContentLarge: showRowSeparator && !isChild,
+            cellContentChildRow: isChild,
+            cellContentHideEdit: !editableRow && editableRows,
           }
         )}
       >
@@ -279,12 +279,13 @@ export const TableRow = <P extends object>(props: TableRowProps<P>) => {
               styles.tableCell,
               customClassNames?.tableCell,
               {
-                [styles.tableCellAboveExpandedArea]: isRowExpanded,
-                [styles.tableCellAlignedRight]: column.alignment === 'right',
-                [styles.tableCellAlignedCenter]: column.alignment === 'center',
-                [styles.tableCellIsEditableRowClosed]: !props.isEditableRowOpen,
-                [styles.tableCellHiddenOnMobile]: column.hideOnMobile,
-                [styles.separator]:
+                tableCellAboveExpandedArea: isRowExpanded,
+                tableCellAlignedRight: column.alignment === 'right',
+                tableCellAlignedCenter: column.alignment === 'center',
+                tableCellIsEditableRowClosed:
+                  editableRow && !props.isEditableRowOpen,
+                tableCellHiddenOnMobile: column.hideOnMobile,
+                tableCellHasSeparator:
                   showRowSeparator && !isExpandableRowOpen && !data['children'],
               }
             )}
@@ -307,12 +308,13 @@ export const TableRow = <P extends object>(props: TableRowProps<P>) => {
               styles.tableCell,
               customClassNames?.tableCell,
               {
-                [styles.tableCellAboveExpandedArea]: isRowExpanded,
-                [styles.tableCellAlignedRight]: column.alignment === 'right',
-                [styles.tableCellAlignedCenter]: column.alignment === 'center',
-                [styles.tableCellIsEditableRowClosed]: !props.isEditableRowOpen,
-                [styles.tableCellHiddenOnMobile]: column.hideOnMobile,
-                [styles.separator]: showRowSeparator && !isExpandableRowOpen,
+                tableCellAboveExpandedArea: isRowExpanded,
+                tableCellAlignedRight: column.alignment === 'right',
+                tableCellAlignedCenter: column.alignment === 'center',
+                tableCellIsEditableRowClosed:
+                  editableRow && !props.isEditableRowOpen,
+                tableCellHiddenOnMobile: column.hideOnMobile,
+                tableCellHasSeparator: showRowSeparator && !isExpandableRowOpen,
               }
             )}
             scope={'row'}
@@ -340,9 +342,9 @@ export const TableRow = <P extends object>(props: TableRowProps<P>) => {
           styles.tableRow,
           customClassNames?.tableRow,
           isEditableRowOpen
-            ? styles.tableRowEditableAndOpen
-            : styles.tableRowEditableAndClosed,
-          styles.separator
+            ? 'tableRowEditableAndOpen'
+            : 'tableRowEditableAndClosed',
+          'tableRowHasSeparator'
         )}
       >
         <td
@@ -370,9 +372,8 @@ export const TableRow = <P extends object>(props: TableRowProps<P>) => {
               className={classnames(
                 styles.tableRow,
                 customClassNames?.tableRow,
-                styles.tableRowIsExpandableAndOpen,
                 {
-                  [styles.separator]:
+                  tableRowHasSeparator:
                     showRowSeparator &&
                     (expandIconPlacement === 'before' ||
                       (expandIconPlacement === 'after' &&
@@ -401,9 +402,9 @@ export const TableRow = <P extends object>(props: TableRowProps<P>) => {
                 className={classnames(
                   styles.tableRow,
                   customClassNames?.tableRow,
-                  styles.tableRowIsExpandableAndOpen,
+
                   {
-                    [styles.separator]: showRowSeparator,
+                    tableRowHasSeparator: showRowSeparator,
                   }
                 )}
               >
@@ -416,8 +417,8 @@ export const TableRow = <P extends object>(props: TableRowProps<P>) => {
             key={rowIndex}
             ref={expandabledRowRef}
             className={classnames(styles.tableRow, customClassNames?.tableRow, {
-              [styles.tableRowIsClickable]: openEditableOnRowClick,
-              [styles.separator]:
+              tableRowIsClickable: openEditableOnRowClick,
+              tableRowHasSeparator:
                 showRowSeparator && !isExpandableRowOpen && !data['children'],
             })}
           >
@@ -434,8 +435,8 @@ export const TableRow = <P extends object>(props: TableRowProps<P>) => {
           <tr
             key={rowIndex}
             className={classnames(styles.tableRow, customClassNames?.tableRow, {
-              [styles.tableRowIsClickable]: openEditableOnRowClick,
-              [styles.separator]:
+              tableRowIsClickable: openEditableOnRowClick,
+              tableRowHasSeparator:
                 showRowSeparator && !isExpandableRowOpen && !data['children'],
             })}
           >
@@ -455,7 +456,7 @@ export const TableRow = <P extends object>(props: TableRowProps<P>) => {
                     styles.tableRow,
                     customClassNames?.tableRow,
                     {
-                      [styles.separator]:
+                      tableRowHasSeparator:
                         showRowSeparator &&
                         childIndex === data['children'].length - 1,
                     }

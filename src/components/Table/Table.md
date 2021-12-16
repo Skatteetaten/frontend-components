@@ -219,9 +219,10 @@ Ekspanderbare rader
 
 ```js
 import { ActionButton } from '@skatteetaten/frontend-components/ActionButton';
-import { LabelWithCallout } from '@skatteetaten/frontend-components/LabelWithCallout';
+import { IconButton } from '@skatteetaten/frontend-components/IconButton';
 import { Grid } from '@skatteetaten/frontend-components/Grid';
 import { Table } from '@skatteetaten/frontend-components/Table';
+import { LabelWithCallout } from '@skatteetaten/frontend-components/LabelWithCallout';
 
 const columns = [
   {
@@ -238,10 +239,14 @@ const columns = [
   },
   {
     name: (
-      <LabelWithCallout
-        label={'Forventet behandlet'}
-        help={'Status for hvert selskap i perioden.'}
-      />
+      <span>
+        <span>Forventet behandlet</span>
+        <IconButton
+          title={'Hjelp'}
+          icon={'HelpOutline'}
+          type="default"
+        ></IconButton>
+      </span>
     ),
     fieldName: 'eta',
   },
@@ -554,6 +559,7 @@ const data = [
   compactTable={true}
   caption="Månedoversikt"
   hideCaption={true}
+  sum={{ text: 'sum', colspan: 3, total: '30 500' }}
 />;
 ```
 

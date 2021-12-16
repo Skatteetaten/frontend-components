@@ -20,13 +20,21 @@ exports[`SumRow komponent Når SumRow består av 0 kolonner Så ser markupen rik
   >
     <th
       className=
-
+          sumCellIsText
           {
-            padding-bottom: 0.5rem;
-            padding-left: 0.5rem;
-            padding-right: 0.5rem;
-            padding-top: 0.5rem;
+            font-size: inherit;
+            padding-bottom: 1rem;
+            padding-left: 1rem;
+            padding-right: 1rem;
+            padding-top: 1rem;
             text-align: end;
+            vertical-align: inherit;
+          }
+          &.sumCellIsText {
+            font-weight: 700;
+          }
+          &.sumCellIsSum {
+            font-weight: 400;
           }
       colSpan={2}
       scope="row"
@@ -35,21 +43,21 @@ exports[`SumRow komponent Når SumRow består av 0 kolonner Så ser markupen rik
     </th>
     <td
       className=
-
+          sumCellIsSum
           {
-            font-weight: 400;
-            padding-bottom: 0px;
-            padding-left: 0px;
-            padding-right: 0px;
-            padding-top: 0px;
+            font-size: inherit;
+            padding-bottom: 1rem;
+            padding-left: 1rem;
+            padding-right: 1rem;
+            padding-top: 1rem;
+            text-align: end;
             vertical-align: inherit;
           }
-          {
-            padding-bottom: 0.5rem;
-            padding-left: 0.5rem;
-            padding-right: 0.5rem;
-            padding-top: 0.5rem;
-            text-align: end;
+          &.sumCellIsText {
+            font-weight: 700;
+          }
+          &.sumCellIsSum {
+            font-weight: 400;
           }
     >
       153
@@ -78,13 +86,21 @@ exports[`SumRow komponent Når SumRow består av f.eks 5 kolonner Så ser markup
   >
     <th
       className=
-
+          sumCellIsText
           {
-            padding-bottom: 0.5rem;
-            padding-left: 0.5rem;
-            padding-right: 0.5rem;
-            padding-top: 0.5rem;
+            font-size: inherit;
+            padding-bottom: 1rem;
+            padding-left: 1rem;
+            padding-right: 1rem;
+            padding-top: 1rem;
             text-align: end;
+            vertical-align: inherit;
+          }
+          &.sumCellIsText {
+            font-weight: 700;
+          }
+          &.sumCellIsSum {
+            font-weight: 400;
           }
       colSpan={2}
       scope="row"
@@ -93,21 +109,21 @@ exports[`SumRow komponent Når SumRow består av f.eks 5 kolonner Så ser markup
     </th>
     <td
       className=
-
+          sumCellIsSum
           {
-            font-weight: 400;
-            padding-bottom: 0px;
-            padding-left: 0px;
-            padding-right: 0px;
-            padding-top: 0px;
+            font-size: inherit;
+            padding-bottom: 1rem;
+            padding-left: 1rem;
+            padding-right: 1rem;
+            padding-top: 1rem;
+            text-align: end;
             vertical-align: inherit;
           }
-          {
-            padding-bottom: 0.5rem;
-            padding-left: 0.5rem;
-            padding-right: 0.5rem;
-            padding-top: 0.5rem;
-            text-align: end;
+          &.sumCellIsText {
+            font-weight: 700;
+          }
+          &.sumCellIsSum {
+            font-weight: 400;
           }
     >
       153
@@ -116,12 +132,19 @@ exports[`SumRow komponent Når SumRow består av f.eks 5 kolonner Så ser markup
       className=
 
           {
-            font-weight: 400;
-            padding-bottom: 0px;
-            padding-left: 0px;
-            padding-right: 0px;
-            padding-top: 0px;
+            font-size: inherit;
+            padding-bottom: 1rem;
+            padding-left: 1rem;
+            padding-right: 1rem;
+            padding-top: 1rem;
+            text-align: end;
             vertical-align: inherit;
+          }
+          &.sumCellIsText {
+            font-weight: 700;
+          }
+          &.sumCellIsSum {
+            font-weight: 400;
           }
       key="0"
     />
@@ -129,12 +152,19 @@ exports[`SumRow komponent Når SumRow består av f.eks 5 kolonner Så ser markup
       className=
 
           {
-            font-weight: 400;
-            padding-bottom: 0px;
-            padding-left: 0px;
-            padding-right: 0px;
-            padding-top: 0px;
+            font-size: inherit;
+            padding-bottom: 1rem;
+            padding-left: 1rem;
+            padding-right: 1rem;
+            padding-top: 1rem;
+            text-align: end;
             vertical-align: inherit;
+          }
+          &.sumCellIsText {
+            font-weight: 700;
+          }
+          &.sumCellIsSum {
+            font-weight: 400;
           }
       key="1"
     />
@@ -163,13 +193,21 @@ exports[`SumRow komponent Når SumRow har en editableRows i tillegg Så ser mark
   >
     <th
       className=
-
+          sumCellIsText
           {
-            padding-bottom: 0.5rem;
-            padding-left: 0.5rem;
-            padding-right: 0.5rem;
-            padding-top: 0.5rem;
+            font-size: inherit;
+            padding-bottom: 1rem;
+            padding-left: 1rem;
+            padding-right: 1rem;
+            padding-top: 1rem;
             text-align: end;
+            vertical-align: inherit;
+          }
+          &.sumCellIsText {
+            font-weight: 700;
+          }
+          &.sumCellIsSum {
+            font-weight: 400;
           }
       colSpan={2}
       scope="row"
@@ -178,21 +216,21 @@ exports[`SumRow komponent Når SumRow har en editableRows i tillegg Så ser mark
     </th>
     <td
       className=
-
+          sumCellIsSum
           {
-            font-weight: 400;
-            padding-bottom: 0px;
-            padding-left: 0px;
-            padding-right: 0px;
-            padding-top: 0px;
+            font-size: inherit;
+            padding-bottom: 1rem;
+            padding-left: 1rem;
+            padding-right: 1rem;
+            padding-top: 1rem;
+            text-align: end;
             vertical-align: inherit;
           }
-          {
-            padding-bottom: 0.5rem;
-            padding-left: 0.5rem;
-            padding-right: 0.5rem;
-            padding-top: 0.5rem;
-            text-align: end;
+          &.sumCellIsText {
+            font-weight: 700;
+          }
+          &.sumCellIsSum {
+            font-weight: 400;
           }
     >
       153
@@ -224,13 +262,21 @@ exports[`SumRow komponent Når SumRow har en expandableRows i tillegg Så ser ma
   >
     <th
       className=
-
+          sumCellIsText
           {
-            padding-bottom: 0.5rem;
-            padding-left: 0.5rem;
-            padding-right: 0.5rem;
-            padding-top: 0.5rem;
+            font-size: inherit;
+            padding-bottom: 1rem;
+            padding-left: 1rem;
+            padding-right: 1rem;
+            padding-top: 1rem;
             text-align: end;
+            vertical-align: inherit;
+          }
+          &.sumCellIsText {
+            font-weight: 700;
+          }
+          &.sumCellIsSum {
+            font-weight: 400;
           }
       colSpan={2}
       scope="row"
@@ -239,21 +285,21 @@ exports[`SumRow komponent Når SumRow har en expandableRows i tillegg Så ser ma
     </th>
     <td
       className=
-
+          sumCellIsSum
           {
-            font-weight: 400;
-            padding-bottom: 0px;
-            padding-left: 0px;
-            padding-right: 0px;
-            padding-top: 0px;
+            font-size: inherit;
+            padding-bottom: 1rem;
+            padding-left: 1rem;
+            padding-right: 1rem;
+            padding-top: 1rem;
+            text-align: end;
             vertical-align: inherit;
           }
-          {
-            padding-bottom: 0.5rem;
-            padding-left: 0.5rem;
-            padding-right: 0.5rem;
-            padding-top: 0.5rem;
-            text-align: end;
+          &.sumCellIsText {
+            font-weight: 700;
+          }
+          &.sumCellIsSum {
+            font-weight: 400;
           }
     >
       153
@@ -285,13 +331,21 @@ exports[`SumRow komponent Når SumRow har en expandableRows i tillegg Så ser ma
   >
     <th
       className=
-
+          sumCellIsText
           {
-            padding-bottom: 0.5rem;
-            padding-left: 0.5rem;
-            padding-right: 0.5rem;
-            padding-top: 0.5rem;
+            font-size: inherit;
+            padding-bottom: 1rem;
+            padding-left: 1rem;
+            padding-right: 1rem;
+            padding-top: 1rem;
             text-align: end;
+            vertical-align: inherit;
+          }
+          &.sumCellIsText {
+            font-weight: 700;
+          }
+          &.sumCellIsSum {
+            font-weight: 400;
           }
       colSpan={2}
       scope="row"
@@ -300,21 +354,21 @@ exports[`SumRow komponent Når SumRow har en expandableRows i tillegg Så ser ma
     </th>
     <td
       className=
-
+          sumCellIsSum
           {
-            font-weight: 400;
-            padding-bottom: 0px;
-            padding-left: 0px;
-            padding-right: 0px;
-            padding-top: 0px;
+            font-size: inherit;
+            padding-bottom: 1rem;
+            padding-left: 1rem;
+            padding-right: 1rem;
+            padding-top: 1rem;
+            text-align: end;
             vertical-align: inherit;
           }
-          {
-            padding-bottom: 0.5rem;
-            padding-left: 0.5rem;
-            padding-right: 0.5rem;
-            padding-top: 0.5rem;
-            text-align: end;
+          &.sumCellIsText {
+            font-weight: 700;
+          }
+          &.sumCellIsSum {
+            font-weight: 400;
           }
     >
       153
@@ -344,13 +398,21 @@ exports[`SumRow komponent Når SumRow har en expandableRows i tillegg Så ser ma
   >
     <th
       className=
-
+          sumCellIsText
           {
-            padding-bottom: 0.5rem;
-            padding-left: 0.5rem;
-            padding-right: 0.5rem;
-            padding-top: 0.5rem;
+            font-size: inherit;
+            padding-bottom: 1rem;
+            padding-left: 1rem;
+            padding-right: 1rem;
+            padding-top: 1rem;
             text-align: end;
+            vertical-align: inherit;
+          }
+          &.sumCellIsText {
+            font-weight: 700;
+          }
+          &.sumCellIsSum {
+            font-weight: 400;
           }
       colSpan={2}
       scope="row"
@@ -359,21 +421,21 @@ exports[`SumRow komponent Når SumRow har en expandableRows i tillegg Så ser ma
     </th>
     <td
       className=
-
+          sumCellIsSum
           {
-            font-weight: 400;
-            padding-bottom: 0px;
-            padding-left: 0px;
-            padding-right: 0px;
-            padding-top: 0px;
+            font-size: inherit;
+            padding-bottom: 1rem;
+            padding-left: 1rem;
+            padding-right: 1rem;
+            padding-top: 1rem;
+            text-align: end;
             vertical-align: inherit;
           }
-          {
-            padding-bottom: 0.5rem;
-            padding-left: 0.5rem;
-            padding-right: 0.5rem;
-            padding-top: 0.5rem;
-            text-align: end;
+          &.sumCellIsText {
+            font-weight: 700;
+          }
+          &.sumCellIsSum {
+            font-weight: 400;
           }
     >
       153
