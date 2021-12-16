@@ -36,7 +36,7 @@ exports[`MessageBar komponent matcher snapshot 1`] = `
         }
         &.ms-MessageBar {
           background-color: #f9ede2;
-          border-left: 3px solid #a97c0a;
+          border-left: 3px solid #805900;
           color: #1a1a1a;
         }
         &.fade-exit {
@@ -68,7 +68,7 @@ exports[`MessageBar komponent matcher snapshot 1`] = `
           padding-top: 9px;
         }
         & .ms-MessageBar-icon i {
-          color: #a97c0a;
+          color: #805900;
           font-size: 1.25rem;
         }
         @media (max-width: 640px){& .ms-MessageBar-icon i {

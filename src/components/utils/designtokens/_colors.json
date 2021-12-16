@@ -31,8 +31,8 @@
   "ske-color-grey-5": "#f4f4f4",
   "ske-color-white-100": "#ffffff",
   "ske-color-status-error": "#a82e39",
-  "ske-color-status-warning": "#a97c0a",
-  "ske-color-status-ok": "#3a9c60",
+  "ske-color-status-warning": "#805900",
+  "ske-color-status-ok": "#316f2a",
   "ske-color-interactive-dark": "#093e61",
   "ske-color-interactive": "#1362ae",
   "ske-color-interactive-light": "#cde1f9"
