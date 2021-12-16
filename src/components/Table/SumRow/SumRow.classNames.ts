@@ -11,18 +11,19 @@ export const getClassNames = (compactTable) => {
       fontSize: compactTable
         ? designtokenFontSizes['ske-font-size-s']
         : 'inherit',
+      textAlign: 'end',
+      verticalAlign: 'inherit',
       padding: compactTable
         ? `${designtokenSpacing['ske-spacing-sm']} ${designtokenSpacing['ske-spacing-sm']}`
         : `${designtokenSpacing['ske-spacing-lg']} ${designtokenSpacing['ske-spacing-lg']}`,
-      verticalAlign: 'inherit',
-    },
-    sumCellIsText: {
-      fontWeight: designtokenFontSizes['ske-font-weight-bold'],
-      textAlign: 'end',
-    },
-    sumCellIsSum: {
-      fontWeight: designtokenFontSizes['ske-font-weight-regular'],
-      textAlign: 'end',
+      selectors: {
+        '&.sumCellIsText': {
+          fontWeight: designtokenFontSizes['ske-font-weight-bold'],
+        },
+        '&.sumCellIsSum': {
+          fontWeight: designtokenFontSizes['ske-font-weight-regular'],
+        },
+      },
     },
   });
 };

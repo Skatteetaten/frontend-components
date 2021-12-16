@@ -28,11 +28,11 @@ export const SumRow = (props: {
       <th
         colSpan={sum.colspan}
         scope="row"
-        className={classnames(styles.sumCell, styles.sumCellIsText)}
+        className={classnames(styles.sumCell, 'sumCellIsText')}
       >
         {sum.text}
       </th>
-      <td className={classnames(styles.sumCell, styles.sumCellIsSum)}>
+      <td className={classnames(styles.sumCell, 'sumCellIsSum')}>
         {sum.total}
       </td>
       {editableRows && <td />}

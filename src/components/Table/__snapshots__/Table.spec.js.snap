@@ -347,19 +347,29 @@ exports[`Table komponent matcher snapshot 1`] = `
         >
           <tr
             className=
-
+                tableRowHasSeparator
                 {
                   border-box: box-sizing;
                   vertical-align: middle;
                 }
-                {
+                &.tableRowIsClickable:hover {
+                  background-color: #cde1f9;
+                }
+                &.tableRowEditableAndOpen {
+                  display: table-row;
+                }
+                &.tableRowEditableAndClosed {
+                  display: none;
+                }
+                &.tableRowHasSeparator {
                   border-bottom: 1px solid #b2b2b2;
                 }
             key="0"
           >
             <th
               className=
-
+                  tableCellIsEditableRowClosed
+                  tableCellHasSeparator
                   {
                     font-weight: 400;
                     padding-bottom: 0px;
@@ -368,11 +378,42 @@ exports[`Table komponent matcher snapshot 1`] = `
                     padding-top: 0px;
                     vertical-align: inherit;
                   }
-                  {
+                  &.tableCellAlignedRight {
+                    justify-content: flex-end;
+                    text-align: right;
+                  }
+                  &.tableCellAlignedCenter {
+                    justify-content: center;
+                    text-align: center;
+                  }
+                  &.tableCellIsSum {
+                    padding-bottom: 1rem;
+                    padding-left: 1rem;
+                    padding-right: 1rem;
+                    padding-top: 1rem;
+                    text-align: end;
+                  }
+                  &.tableCellForExpandCollapseButton {
+                    max-width: 1.5rem;
+                  }
+                  @media (min-width: 640px){&.tableCellForExpandCollapseButton {
+                    max-width: 3.125rem;
+                  }
+                  &.tableCellIsEditableRowClosed {
                     border-bottom: none;
                     vertical-align: top;
                   }
-                  {
+                  &.tableCellAboveExpandedArea {
+                    border-bottom: none;
+                    vertical-align: top;
+                  }
+                  &.tableCellHiddenOnMobile {
+                    display: none;
+                  }
+                  @media (min-width: 640px){&.tableCellHiddenOnMobile {
+                    display: table-cell;
+                  }
+                  &.tableCellHasSeparator {
                     border-bottom: 1px solid #b2b2b2;
                   }
               id="table-1230_0"
@@ -382,12 +423,13 @@ exports[`Table komponent matcher snapshot 1`] = `
             >
               <div
                 className=
-
+                    cellContentLarge
                     {
                       align-items: center;
                       box-sizing: border-box;
                       display: flex;
                       font-size: inherit;
+                      height: 100%;
                       padding-bottom: 0.5rem;
                       padding-left: 1rem;
                       padding-right: 1rem;
@@ -396,17 +438,50 @@ exports[`Table komponent matcher snapshot 1`] = `
                       vertical-align: middle;
                       width: 100%;
                     }
-                    {
+                    &.cellContentSmall {
+                      padding-bottom: 0.125rem;
+                      padding-left: 1rem;
+                      padding-right: 1rem;
+                      padding-top: 0.125rem;
+                    }
+                    &.cellContentClickable {
+                      cursor: pointer;
+                      padding-bottom: 0.5rem;
+                      padding-top: 0.5rem;
+                    }
+                    &.cellContentLarge {
                       padding-bottom: 1rem;
                       padding-left: 1rem;
                       padding-right: 1rem;
                       padding-top: 1rem;
                     }
+                    &.cellContentChildRow {
+                      padding-bottom: 1rem;
+                      padding-left: 1rem;
+                      padding-right: 1rem;
+                      padding-top: 0;
+                    }
+                    &.cellContentAlignedRight {
+                      justify-content: flex-end;
+                      text-align: right;
+                    }
+                    &.cellContentAlignedCenter {
+                      justify-content: center;
+                      text-align: center;
+                    }
+                    &.cellContentAboveExpandedArea {
+                      align-items: start;
+                    }
+                    &.cellContentHideEdit {
+                      min-height: 4rem;
+                    }
               />
             </th>
             <td
               className=
-
+                  tableCellAlignedRight
+                  tableCellIsEditableRowClosed
+                  tableCellHasSeparator
                   {
                     font-weight: 400;
                     padding-bottom: 0px;
@@ -415,27 +490,56 @@ exports[`Table komponent matcher snapshot 1`] = `
                     padding-top: 0px;
                     vertical-align: inherit;
                   }
-                  {
+                  &.tableCellAlignedRight {
                     justify-content: flex-end;
                     text-align: right;
                   }
-                  {
+                  &.tableCellAlignedCenter {
+                    justify-content: center;
+                    text-align: center;
+                  }
+                  &.tableCellIsSum {
+                    padding-bottom: 1rem;
+                    padding-left: 1rem;
+                    padding-right: 1rem;
+                    padding-top: 1rem;
+                    text-align: end;
+                  }
+                  &.tableCellForExpandCollapseButton {
+                    max-width: 1.5rem;
+                  }
+                  @media (min-width: 640px){&.tableCellForExpandCollapseButton {
+                    max-width: 3.125rem;
+                  }
+                  &.tableCellIsEditableRowClosed {
                     border-bottom: none;
                     vertical-align: top;
                   }
-                  {
+                  &.tableCellAboveExpandedArea {
+                    border-bottom: none;
+                    vertical-align: top;
+                  }
+                  &.tableCellHiddenOnMobile {
+                    display: none;
+                  }
+                  @media (min-width: 640px){&.tableCellHiddenOnMobile {
+                    display: table-cell;
+                  }
+                  &.tableCellHasSeparator {
                     border-bottom: 1px solid #b2b2b2;
                   }
               key="table-1230_1"
             >
               <div
                 className=
-
+                    cellContentAlignedRight
+                    cellContentLarge
                     {
                       align-items: center;
                       box-sizing: border-box;
                       display: flex;
                       font-size: inherit;
+                      height: 100%;
                       padding-bottom: 0.5rem;
                       padding-left: 1rem;
                       padding-right: 1rem;
@@ -444,21 +548,50 @@ exports[`Table komponent matcher snapshot 1`] = `
                       vertical-align: middle;
                       width: 100%;
                     }
-                    {
-                      justify-content: flex-end;
-                      text-align: right;
+                    &.cellContentSmall {
+                      padding-bottom: 0.125rem;
+                      padding-left: 1rem;
+                      padding-right: 1rem;
+                      padding-top: 0.125rem;
                     }
-                    {
+                    &.cellContentClickable {
+                      cursor: pointer;
+                      padding-bottom: 0.5rem;
+                      padding-top: 0.5rem;
+                    }
+                    &.cellContentLarge {
                       padding-bottom: 1rem;
                       padding-left: 1rem;
                       padding-right: 1rem;
                       padding-top: 1rem;
                     }
+                    &.cellContentChildRow {
+                      padding-bottom: 1rem;
+                      padding-left: 1rem;
+                      padding-right: 1rem;
+                      padding-top: 0;
+                    }
+                    &.cellContentAlignedRight {
+                      justify-content: flex-end;
+                      text-align: right;
+                    }
+                    &.cellContentAlignedCenter {
+                      justify-content: center;
+                      text-align: center;
+                    }
+                    &.cellContentAboveExpandedArea {
+                      align-items: start;
+                    }
+                    &.cellContentHideEdit {
+                      min-height: 4rem;
+                    }
               />
             </td>
             <td
               className=
-
+                  tableCellAlignedRight
+                  tableCellIsEditableRowClosed
+                  tableCellHasSeparator
                   {
                     font-weight: 400;
                     padding-bottom: 0px;
@@ -467,27 +600,56 @@ exports[`Table komponent matcher snapshot 1`] = `
                     padding-top: 0px;
                     vertical-align: inherit;
                   }
-                  {
+                  &.tableCellAlignedRight {
                     justify-content: flex-end;
                     text-align: right;
                   }
-                  {
+                  &.tableCellAlignedCenter {
+                    justify-content: center;
+                    text-align: center;
+                  }
+                  &.tableCellIsSum {
+                    padding-bottom: 1rem;
+                    padding-left: 1rem;
+                    padding-right: 1rem;
+                    padding-top: 1rem;
+                    text-align: end;
+                  }
+                  &.tableCellForExpandCollapseButton {
+                    max-width: 1.5rem;
+                  }
+                  @media (min-width: 640px){&.tableCellForExpandCollapseButton {
+                    max-width: 3.125rem;
+                  }
+                  &.tableCellIsEditableRowClosed {
                     border-bottom: none;
                     vertical-align: top;
                   }
-                  {
+                  &.tableCellAboveExpandedArea {
+                    border-bottom: none;
+                    vertical-align: top;
+                  }
+                  &.tableCellHiddenOnMobile {
+                    display: none;
+                  }
+                  @media (min-width: 640px){&.tableCellHiddenOnMobile {
+                    display: table-cell;
+                  }
+                  &.tableCellHasSeparator {
                     border-bottom: 1px solid #b2b2b2;
                   }
               key="table-1230_2"
             >
               <div
                 className=
-
+                    cellContentAlignedRight
+                    cellContentLarge
                     {
                       align-items: center;
                       box-sizing: border-box;
                       display: flex;
                       font-size: inherit;
+                      height: 100%;
                       padding-bottom: 0.5rem;
                       padding-left: 1rem;
                       padding-right: 1rem;
@@ -496,21 +658,50 @@ exports[`Table komponent matcher snapshot 1`] = `
                       vertical-align: middle;
                       width: 100%;
                     }
-                    {
-                      justify-content: flex-end;
-                      text-align: right;
+                    &.cellContentSmall {
+                      padding-bottom: 0.125rem;
+                      padding-left: 1rem;
+                      padding-right: 1rem;
+                      padding-top: 0.125rem;
                     }
-                    {
+                    &.cellContentClickable {
+                      cursor: pointer;
+                      padding-bottom: 0.5rem;
+                      padding-top: 0.5rem;
+                    }
+                    &.cellContentLarge {
                       padding-bottom: 1rem;
                       padding-left: 1rem;
                       padding-right: 1rem;
                       padding-top: 1rem;
                     }
+                    &.cellContentChildRow {
+                      padding-bottom: 1rem;
+                      padding-left: 1rem;
+                      padding-right: 1rem;
+                      padding-top: 0;
+                    }
+                    &.cellContentAlignedRight {
+                      justify-content: flex-end;
+                      text-align: right;
+                    }
+                    &.cellContentAlignedCenter {
+                      justify-content: center;
+                      text-align: center;
+                    }
+                    &.cellContentAboveExpandedArea {
+                      align-items: start;
+                    }
+                    &.cellContentHideEdit {
+                      min-height: 4rem;
+                    }
               />
             </td>
             <td
               className=
-
+                  tableCellAlignedRight
+                  tableCellIsEditableRowClosed
+                  tableCellHasSeparator
                   {
                     font-weight: 400;
                     padding-bottom: 0px;
@@ -519,27 +710,56 @@ exports[`Table komponent matcher snapshot 1`] = `
                     padding-top: 0px;
                     vertical-align: inherit;
                   }
-                  {
+                  &.tableCellAlignedRight {
                     justify-content: flex-end;
                     text-align: right;
                   }
-                  {
+                  &.tableCellAlignedCenter {
+                    justify-content: center;
+                    text-align: center;
+                  }
+                  &.tableCellIsSum {
+                    padding-bottom: 1rem;
+                    padding-left: 1rem;
+                    padding-right: 1rem;
+                    padding-top: 1rem;
+                    text-align: end;
+                  }
+                  &.tableCellForExpandCollapseButton {
+                    max-width: 1.5rem;
+                  }
+                  @media (min-width: 640px){&.tableCellForExpandCollapseButton {
+                    max-width: 3.125rem;
+                  }
+                  &.tableCellIsEditableRowClosed {
                     border-bottom: none;
                     vertical-align: top;
                   }
-                  {
+                  &.tableCellAboveExpandedArea {
+                    border-bottom: none;
+                    vertical-align: top;
+                  }
+                  &.tableCellHiddenOnMobile {
+                    display: none;
+                  }
+                  @media (min-width: 640px){&.tableCellHiddenOnMobile {
+                    display: table-cell;
+                  }
+                  &.tableCellHasSeparator {
                     border-bottom: 1px solid #b2b2b2;
                   }
               key="table-1230_3"
             >
               <div
                 className=
-
+                    cellContentAlignedRight
+                    cellContentLarge
                     {
                       align-items: center;
                       box-sizing: border-box;
                       display: flex;
                       font-size: inherit;
+                      height: 100%;
                       padding-bottom: 0.5rem;
                       padding-left: 1rem;
                       padding-right: 1rem;
@@ -548,15 +768,42 @@ exports[`Table komponent matcher snapshot 1`] = `
                       vertical-align: middle;
                       width: 100%;
                     }
-                    {
-                      justify-content: flex-end;
-                      text-align: right;
+                    &.cellContentSmall {
+                      padding-bottom: 0.125rem;
+                      padding-left: 1rem;
+                      padding-right: 1rem;
+                      padding-top: 0.125rem;
                     }
-                    {
+                    &.cellContentClickable {
+                      cursor: pointer;
+                      padding-bottom: 0.5rem;
+                      padding-top: 0.5rem;
+                    }
+                    &.cellContentLarge {
                       padding-bottom: 1rem;
                       padding-left: 1rem;
                       padding-right: 1rem;
                       padding-top: 1rem;
+                    }
+                    &.cellContentChildRow {
+                      padding-bottom: 1rem;
+                      padding-left: 1rem;
+                      padding-right: 1rem;
+                      padding-top: 0;
+                    }
+                    &.cellContentAlignedRight {
+                      justify-content: flex-end;
+                      text-align: right;
+                    }
+                    &.cellContentAlignedCenter {
+                      justify-content: center;
+                      text-align: center;
+                    }
+                    &.cellContentAboveExpandedArea {
+                      align-items: start;
+                    }
+                    &.cellContentHideEdit {
+                      min-height: 4rem;
                     }
               />
             </td>
@@ -610,19 +857,29 @@ exports[`Table komponent matcher snapshot 1`] = `
         >
           <tr
             className=
-
+                tableRowHasSeparator
                 {
                   border-box: box-sizing;
                   vertical-align: middle;
                 }
-                {
+                &.tableRowIsClickable:hover {
+                  background-color: #cde1f9;
+                }
+                &.tableRowEditableAndOpen {
+                  display: table-row;
+                }
+                &.tableRowEditableAndClosed {
+                  display: none;
+                }
+                &.tableRowHasSeparator {
                   border-bottom: 1px solid #b2b2b2;
                 }
             key="1"
           >
             <th
               className=
-
+                  tableCellIsEditableRowClosed
+                  tableCellHasSeparator
                   {
                     font-weight: 400;
                     padding-bottom: 0px;
@@ -631,11 +888,42 @@ exports[`Table komponent matcher snapshot 1`] = `
                     padding-top: 0px;
                     vertical-align: inherit;
                   }
-                  {
+                  &.tableCellAlignedRight {
+                    justify-content: flex-end;
+                    text-align: right;
+                  }
+                  &.tableCellAlignedCenter {
+                    justify-content: center;
+                    text-align: center;
+                  }
+                  &.tableCellIsSum {
+                    padding-bottom: 1rem;
+                    padding-left: 1rem;
+                    padding-right: 1rem;
+                    padding-top: 1rem;
+                    text-align: end;
+                  }
+                  &.tableCellForExpandCollapseButton {
+                    max-width: 1.5rem;
+                  }
+                  @media (min-width: 640px){&.tableCellForExpandCollapseButton {
+                    max-width: 3.125rem;
+                  }
+                  &.tableCellIsEditableRowClosed {
                     border-bottom: none;
                     vertical-align: top;
                   }
-                  {
+                  &.tableCellAboveExpandedArea {
+                    border-bottom: none;
+                    vertical-align: top;
+                  }
+                  &.tableCellHiddenOnMobile {
+                    display: none;
+                  }
+                  @media (min-width: 640px){&.tableCellHiddenOnMobile {
+                    display: table-cell;
+                  }
+                  &.tableCellHasSeparator {
                     border-bottom: 1px solid #b2b2b2;
                   }
               id="table-1231_0"
@@ -645,12 +933,13 @@ exports[`Table komponent matcher snapshot 1`] = `
             >
               <div
                 className=
-
+                    cellContentLarge
                     {
                       align-items: center;
                       box-sizing: border-box;
                       display: flex;
                       font-size: inherit;
+                      height: 100%;
                       padding-bottom: 0.5rem;
                       padding-left: 1rem;
                       padding-right: 1rem;
@@ -659,17 +948,50 @@ exports[`Table komponent matcher snapshot 1`] = `
                       vertical-align: middle;
                       width: 100%;
                     }
-                    {
+                    &.cellContentSmall {
+                      padding-bottom: 0.125rem;
+                      padding-left: 1rem;
+                      padding-right: 1rem;
+                      padding-top: 0.125rem;
+                    }
+                    &.cellContentClickable {
+                      cursor: pointer;
+                      padding-bottom: 0.5rem;
+                      padding-top: 0.5rem;
+                    }
+                    &.cellContentLarge {
                       padding-bottom: 1rem;
                       padding-left: 1rem;
                       padding-right: 1rem;
                       padding-top: 1rem;
                     }
+                    &.cellContentChildRow {
+                      padding-bottom: 1rem;
+                      padding-left: 1rem;
+                      padding-right: 1rem;
+                      padding-top: 0;
+                    }
+                    &.cellContentAlignedRight {
+                      justify-content: flex-end;
+                      text-align: right;
+                    }
+                    &.cellContentAlignedCenter {
+                      justify-content: center;
+                      text-align: center;
+                    }
+                    &.cellContentAboveExpandedArea {
+                      align-items: start;
+                    }
+                    &.cellContentHideEdit {
+                      min-height: 4rem;
+                    }
               />
             </th>
             <td
               className=
-
+                  tableCellAlignedRight
+                  tableCellIsEditableRowClosed
+                  tableCellHasSeparator
                   {
                     font-weight: 400;
                     padding-bottom: 0px;
@@ -678,27 +1000,56 @@ exports[`Table komponent matcher snapshot 1`] = `
                     padding-top: 0px;
                     vertical-align: inherit;
                   }
-                  {
+                  &.tableCellAlignedRight {
                     justify-content: flex-end;
                     text-align: right;
                   }
-                  {
+                  &.tableCellAlignedCenter {
+                    justify-content: center;
+                    text-align: center;
+                  }
+                  &.tableCellIsSum {
+                    padding-bottom: 1rem;
+                    padding-left: 1rem;
+                    padding-right: 1rem;
+                    padding-top: 1rem;
+                    text-align: end;
+                  }
+                  &.tableCellForExpandCollapseButton {
+                    max-width: 1.5rem;
+                  }
+                  @media (min-width: 640px){&.tableCellForExpandCollapseButton {
+                    max-width: 3.125rem;
+                  }
+                  &.tableCellIsEditableRowClosed {
                     border-bottom: none;
                     vertical-align: top;
                   }
-                  {
+                  &.tableCellAboveExpandedArea {
+                    border-bottom: none;
+                    vertical-align: top;
+                  }
+                  &.tableCellHiddenOnMobile {
+                    display: none;
+                  }
+                  @media (min-width: 640px){&.tableCellHiddenOnMobile {
+                    display: table-cell;
+                  }
+                  &.tableCellHasSeparator {
                     border-bottom: 1px solid #b2b2b2;
                   }
               key="table-1231_1"
             >
               <div
                 className=
-
+                    cellContentAlignedRight
+                    cellContentLarge
                     {
                       align-items: center;
                       box-sizing: border-box;
                       display: flex;
                       font-size: inherit;
+                      height: 100%;
                       padding-bottom: 0.5rem;
                       padding-left: 1rem;
                       padding-right: 1rem;
@@ -707,21 +1058,50 @@ exports[`Table komponent matcher snapshot 1`] = `
                       vertical-align: middle;
                       width: 100%;
                     }
-                    {
-                      justify-content: flex-end;
-                      text-align: right;
+                    &.cellContentSmall {
+                      padding-bottom: 0.125rem;
+                      padding-left: 1rem;
+                      padding-right: 1rem;
+                      padding-top: 0.125rem;
                     }
-                    {
+                    &.cellContentClickable {
+                      cursor: pointer;
+                      padding-bottom: 0.5rem;
+                      padding-top: 0.5rem;
+                    }
+                    &.cellContentLarge {
                       padding-bottom: 1rem;
                       padding-left: 1rem;
                       padding-right: 1rem;
                       padding-top: 1rem;
                     }
+                    &.cellContentChildRow {
+                      padding-bottom: 1rem;
+                      padding-left: 1rem;
+                      padding-right: 1rem;
+                      padding-top: 0;
+                    }
+                    &.cellContentAlignedRight {
+                      justify-content: flex-end;
+                      text-align: right;
+                    }
+                    &.cellContentAlignedCenter {
+                      justify-content: center;
+                      text-align: center;
+                    }
+                    &.cellContentAboveExpandedArea {
+                      align-items: start;
+                    }
+                    &.cellContentHideEdit {
+                      min-height: 4rem;
+                    }
               />
             </td>
             <td
               className=
-
+                  tableCellAlignedRight
+                  tableCellIsEditableRowClosed
+                  tableCellHasSeparator
                   {
                     font-weight: 400;
                     padding-bottom: 0px;
@@ -730,27 +1110,56 @@ exports[`Table komponent matcher snapshot 1`] = `
                     padding-top: 0px;
                     vertical-align: inherit;
                   }
-                  {
+                  &.tableCellAlignedRight {
                     justify-content: flex-end;
                     text-align: right;
                   }
-                  {
+                  &.tableCellAlignedCenter {
+                    justify-content: center;
+                    text-align: center;
+                  }
+                  &.tableCellIsSum {
+                    padding-bottom: 1rem;
+                    padding-left: 1rem;
+                    padding-right: 1rem;
+                    padding-top: 1rem;
+                    text-align: end;
+                  }
+                  &.tableCellForExpandCollapseButton {
+                    max-width: 1.5rem;
+                  }
+                  @media (min-width: 640px){&.tableCellForExpandCollapseButton {
+                    max-width: 3.125rem;
+                  }
+                  &.tableCellIsEditableRowClosed {
                     border-bottom: none;
                     vertical-align: top;
                   }
-                  {
+                  &.tableCellAboveExpandedArea {
+                    border-bottom: none;
+                    vertical-align: top;
+                  }
+                  &.tableCellHiddenOnMobile {
+                    display: none;
+                  }
+                  @media (min-width: 640px){&.tableCellHiddenOnMobile {
+                    display: table-cell;
+                  }
+                  &.tableCellHasSeparator {
                     border-bottom: 1px solid #b2b2b2;
                   }
               key="table-1231_2"
             >
               <div
                 className=
-
+                    cellContentAlignedRight
+                    cellContentLarge
                     {
                       align-items: center;
                       box-sizing: border-box;
                       display: flex;
                       font-size: inherit;
+                      height: 100%;
                       padding-bottom: 0.5rem;
                       padding-left: 1rem;
                       padding-right: 1rem;
@@ -759,21 +1168,50 @@ exports[`Table komponent matcher snapshot 1`] = `
                       vertical-align: middle;
                       width: 100%;
                     }
-                    {
-                      justify-content: flex-end;
-                      text-align: right;
+                    &.cellContentSmall {
+                      padding-bottom: 0.125rem;
+                      padding-left: 1rem;
+                      padding-right: 1rem;
+                      padding-top: 0.125rem;
                     }
-                    {
+                    &.cellContentClickable {
+                      cursor: pointer;
+                      padding-bottom: 0.5rem;
+                      padding-top: 0.5rem;
+                    }
+                    &.cellContentLarge {
                       padding-bottom: 1rem;
                       padding-left: 1rem;
                       padding-right: 1rem;
                       padding-top: 1rem;
                     }
+                    &.cellContentChildRow {
+                      padding-bottom: 1rem;
+                      padding-left: 1rem;
+                      padding-right: 1rem;
+                      padding-top: 0;
+                    }
+                    &.cellContentAlignedRight {
+                      justify-content: flex-end;
+                      text-align: right;
+                    }
+                    &.cellContentAlignedCenter {
+                      justify-content: center;
+                      text-align: center;
+                    }
+                    &.cellContentAboveExpandedArea {
+                      align-items: start;
+                    }
+                    &.cellContentHideEdit {
+                      min-height: 4rem;
+                    }
               />
             </td>
             <td
               className=
-
+                  tableCellAlignedRight
+                  tableCellIsEditableRowClosed
+                  tableCellHasSeparator
                   {
                     font-weight: 400;
                     padding-bottom: 0px;
@@ -782,27 +1220,56 @@ exports[`Table komponent matcher snapshot 1`] = `
                     padding-top: 0px;
                     vertical-align: inherit;
                   }
-                  {
+                  &.tableCellAlignedRight {
                     justify-content: flex-end;
                     text-align: right;
                   }
-                  {
+                  &.tableCellAlignedCenter {
+                    justify-content: center;
+                    text-align: center;
+                  }
+                  &.tableCellIsSum {
+                    padding-bottom: 1rem;
+                    padding-left: 1rem;
+                    padding-right: 1rem;
+                    padding-top: 1rem;
+                    text-align: end;
+                  }
+                  &.tableCellForExpandCollapseButton {
+                    max-width: 1.5rem;
+                  }
+                  @media (min-width: 640px){&.tableCellForExpandCollapseButton {
+                    max-width: 3.125rem;
+                  }
+                  &.tableCellIsEditableRowClosed {
                     border-bottom: none;
                     vertical-align: top;
                   }
-                  {
+                  &.tableCellAboveExpandedArea {
+                    border-bottom: none;
+                    vertical-align: top;
+                  }
+                  &.tableCellHiddenOnMobile {
+                    display: none;
+                  }
+                  @media (min-width: 640px){&.tableCellHiddenOnMobile {
+                    display: table-cell;
+                  }
+                  &.tableCellHasSeparator {
                     border-bottom: 1px solid #b2b2b2;
                   }
               key="table-1231_3"
             >
               <div
                 className=
-
+                    cellContentAlignedRight
+                    cellContentLarge
                     {
                       align-items: center;
                       box-sizing: border-box;
                       display: flex;
                       font-size: inherit;
+                      height: 100%;
                       padding-bottom: 0.5rem;
                       padding-left: 1rem;
                       padding-right: 1rem;
@@ -811,15 +1278,42 @@ exports[`Table komponent matcher snapshot 1`] = `
                       vertical-align: middle;
                       width: 100%;
                     }
-                    {
-                      justify-content: flex-end;
-                      text-align: right;
+                    &.cellContentSmall {
+                      padding-bottom: 0.125rem;
+                      padding-left: 1rem;
+                      padding-right: 1rem;
+                      padding-top: 0.125rem;
                     }
-                    {
+                    &.cellContentClickable {
+                      cursor: pointer;
+                      padding-bottom: 0.5rem;
+                      padding-top: 0.5rem;
+                    }
+                    &.cellContentLarge {
                       padding-bottom: 1rem;
                       padding-left: 1rem;
                       padding-right: 1rem;
                       padding-top: 1rem;
+                    }
+                    &.cellContentChildRow {
+                      padding-bottom: 1rem;
+                      padding-left: 1rem;
+                      padding-right: 1rem;
+                      padding-top: 0;
+                    }
+                    &.cellContentAlignedRight {
+                      justify-content: flex-end;
+                      text-align: right;
+                    }
+                    &.cellContentAlignedCenter {
+                      justify-content: center;
+                      text-align: center;
+                    }
+                    &.cellContentAboveExpandedArea {
+                      align-items: start;
+                    }
+                    &.cellContentHideEdit {
+                      min-height: 4rem;
                     }
               />
             </td>
@@ -873,19 +1367,29 @@ exports[`Table komponent matcher snapshot 1`] = `
         >
           <tr
             className=
-
+                tableRowHasSeparator
                 {
                   border-box: box-sizing;
                   vertical-align: middle;
                 }
-                {
+                &.tableRowIsClickable:hover {
+                  background-color: #cde1f9;
+                }
+                &.tableRowEditableAndOpen {
+                  display: table-row;
+                }
+                &.tableRowEditableAndClosed {
+                  display: none;
+                }
+                &.tableRowHasSeparator {
                   border-bottom: 1px solid #b2b2b2;
                 }
             key="2"
           >
             <th
               className=
-
+                  tableCellIsEditableRowClosed
+                  tableCellHasSeparator
                   {
                     font-weight: 400;
                     padding-bottom: 0px;
@@ -894,11 +1398,42 @@ exports[`Table komponent matcher snapshot 1`] = `
                     padding-top: 0px;
                     vertical-align: inherit;
                   }
-                  {
+                  &.tableCellAlignedRight {
+                    justify-content: flex-end;
+                    text-align: right;
+                  }
+                  &.tableCellAlignedCenter {
+                    justify-content: center;
+                    text-align: center;
+                  }
+                  &.tableCellIsSum {
+                    padding-bottom: 1rem;
+                    padding-left: 1rem;
+                    padding-right: 1rem;
+                    padding-top: 1rem;
+                    text-align: end;
+                  }
+                  &.tableCellForExpandCollapseButton {
+                    max-width: 1.5rem;
+                  }
+                  @media (min-width: 640px){&.tableCellForExpandCollapseButton {
+                    max-width: 3.125rem;
+                  }
+                  &.tableCellIsEditableRowClosed {
                     border-bottom: none;
                     vertical-align: top;
                   }
-                  {
+                  &.tableCellAboveExpandedArea {
+                    border-bottom: none;
+                    vertical-align: top;
+                  }
+                  &.tableCellHiddenOnMobile {
+                    display: none;
+                  }
+                  @media (min-width: 640px){&.tableCellHiddenOnMobile {
+                    display: table-cell;
+                  }
+                  &.tableCellHasSeparator {
                     border-bottom: 1px solid #b2b2b2;
                   }
               id="table-1232_0"
@@ -908,12 +1443,13 @@ exports[`Table komponent matcher snapshot 1`] = `
             >
               <div
                 className=
-
+                    cellContentLarge
                     {
                       align-items: center;
                       box-sizing: border-box;
                       display: flex;
                       font-size: inherit;
+                      height: 100%;
                       padding-bottom: 0.5rem;
                       padding-left: 1rem;
                       padding-right: 1rem;
@@ -922,17 +1458,50 @@ exports[`Table komponent matcher snapshot 1`] = `
                       vertical-align: middle;
                       width: 100%;
                     }
-                    {
+                    &.cellContentSmall {
+                      padding-bottom: 0.125rem;
+                      padding-left: 1rem;
+                      padding-right: 1rem;
+                      padding-top: 0.125rem;
+                    }
+                    &.cellContentClickable {
+                      cursor: pointer;
+                      padding-bottom: 0.5rem;
+                      padding-top: 0.5rem;
+                    }
+                    &.cellContentLarge {
                       padding-bottom: 1rem;
                       padding-left: 1rem;
                       padding-right: 1rem;
                       padding-top: 1rem;
                     }
+                    &.cellContentChildRow {
+                      padding-bottom: 1rem;
+                      padding-left: 1rem;
+                      padding-right: 1rem;
+                      padding-top: 0;
+                    }
+                    &.cellContentAlignedRight {
+                      justify-content: flex-end;
+                      text-align: right;
+                    }
+                    &.cellContentAlignedCenter {
+                      justify-content: center;
+                      text-align: center;
+                    }
+                    &.cellContentAboveExpandedArea {
+                      align-items: start;
+                    }
+                    &.cellContentHideEdit {
+                      min-height: 4rem;
+                    }
               />
             </th>
             <td
               className=
-
+                  tableCellAlignedRight
+                  tableCellIsEditableRowClosed
+                  tableCellHasSeparator
                   {
                     font-weight: 400;
                     padding-bottom: 0px;
@@ -941,27 +1510,56 @@ exports[`Table komponent matcher snapshot 1`] = `
                     padding-top: 0px;
                     vertical-align: inherit;
                   }
-                  {
+                  &.tableCellAlignedRight {
                     justify-content: flex-end;
                     text-align: right;
                   }
-                  {
+                  &.tableCellAlignedCenter {
+                    justify-content: center;
+                    text-align: center;
+                  }
+                  &.tableCellIsSum {
+                    padding-bottom: 1rem;
+                    padding-left: 1rem;
+                    padding-right: 1rem;
+                    padding-top: 1rem;
+                    text-align: end;
+                  }
+                  &.tableCellForExpandCollapseButton {
+                    max-width: 1.5rem;
+                  }
+                  @media (min-width: 640px){&.tableCellForExpandCollapseButton {
+                    max-width: 3.125rem;
+                  }
+                  &.tableCellIsEditableRowClosed {
                     border-bottom: none;
                     vertical-align: top;
                   }
-                  {
+                  &.tableCellAboveExpandedArea {
+                    border-bottom: none;
+                    vertical-align: top;
+                  }
+                  &.tableCellHiddenOnMobile {
+                    display: none;
+                  }
+                  @media (min-width: 640px){&.tableCellHiddenOnMobile {
+                    display: table-cell;
+                  }
+                  &.tableCellHasSeparator {
                     border-bottom: 1px solid #b2b2b2;
                   }
               key="table-1232_1"
             >
               <div
                 className=
-
+                    cellContentAlignedRight
+                    cellContentLarge
                     {
                       align-items: center;
                       box-sizing: border-box;
                       display: flex;
                       font-size: inherit;
+                      height: 100%;
                       padding-bottom: 0.5rem;
                       padding-left: 1rem;
                       padding-right: 1rem;
@@ -970,21 +1568,50 @@ exports[`Table komponent matcher snapshot 1`] = `
                       vertical-align: middle;
                       width: 100%;
                     }
-                    {
-                      justify-content: flex-end;
-                      text-align: right;
+                    &.cellContentSmall {
+                      padding-bottom: 0.125rem;
+                      padding-left: 1rem;
+                      padding-right: 1rem;
+                      padding-top: 0.125rem;
                     }
-                    {
+                    &.cellContentClickable {
+                      cursor: pointer;
+                      padding-bottom: 0.5rem;
+                      padding-top: 0.5rem;
+                    }
+                    &.cellContentLarge {
                       padding-bottom: 1rem;
                       padding-left: 1rem;
                       padding-right: 1rem;
                       padding-top: 1rem;
                     }
+                    &.cellContentChildRow {
+                      padding-bottom: 1rem;
+                      padding-left: 1rem;
+                      padding-right: 1rem;
+                      padding-top: 0;
+                    }
+                    &.cellContentAlignedRight {
+                      justify-content: flex-end;
+                      text-align: right;
+                    }
+                    &.cellContentAlignedCenter {
+                      justify-content: center;
+                      text-align: center;
+                    }
+                    &.cellContentAboveExpandedArea {
+                      align-items: start;
+                    }
+                    &.cellContentHideEdit {
+                      min-height: 4rem;
+                    }
               />
             </td>
             <td
               className=
-
+                  tableCellAlignedRight
+                  tableCellIsEditableRowClosed
+                  tableCellHasSeparator
                   {
                     font-weight: 400;
                     padding-bottom: 0px;
@@ -993,27 +1620,56 @@ exports[`Table komponent matcher snapshot 1`] = `
                     padding-top: 0px;
                     vertical-align: inherit;
                   }
-                  {
+                  &.tableCellAlignedRight {
                     justify-content: flex-end;
                     text-align: right;
                   }
-                  {
+                  &.tableCellAlignedCenter {
+                    justify-content: center;
+                    text-align: center;
+                  }
+                  &.tableCellIsSum {
+                    padding-bottom: 1rem;
+                    padding-left: 1rem;
+                    padding-right: 1rem;
+                    padding-top: 1rem;
+                    text-align: end;
+                  }
+                  &.tableCellForExpandCollapseButton {
+                    max-width: 1.5rem;
+                  }
+                  @media (min-width: 640px){&.tableCellForExpandCollapseButton {
+                    max-width: 3.125rem;
+                  }
+                  &.tableCellIsEditableRowClosed {
                     border-bottom: none;
                     vertical-align: top;
                   }
-                  {
+                  &.tableCellAboveExpandedArea {
+                    border-bottom: none;
+                    vertical-align: top;
+                  }
+                  &.tableCellHiddenOnMobile {
+                    display: none;
+                  }
+                  @media (min-width: 640px){&.tableCellHiddenOnMobile {
+                    display: table-cell;
+                  }
+                  &.tableCellHasSeparator {
                     border-bottom: 1px solid #b2b2b2;
                   }
               key="table-1232_2"
             >
               <div
                 className=
-
+                    cellContentAlignedRight
+                    cellContentLarge
                     {
                       align-items: center;
                       box-sizing: border-box;
                       display: flex;
                       font-size: inherit;
+                      height: 100%;
                       padding-bottom: 0.5rem;
                       padding-left: 1rem;
                       padding-right: 1rem;
@@ -1022,21 +1678,50 @@ exports[`Table komponent matcher snapshot 1`] = `
                       vertical-align: middle;
                       width: 100%;
                     }
-                    {
-                      justify-content: flex-end;
-                      text-align: right;
+                    &.cellContentSmall {
+                      padding-bottom: 0.125rem;
+                      padding-left: 1rem;
+                      padding-right: 1rem;
+                      padding-top: 0.125rem;
                     }
-                    {
+                    &.cellContentClickable {
+                      cursor: pointer;
+                      padding-bottom: 0.5rem;
+                      padding-top: 0.5rem;
+                    }
+                    &.cellContentLarge {
                       padding-bottom: 1rem;
                       padding-left: 1rem;
                       padding-right: 1rem;
                       padding-top: 1rem;
                     }
+                    &.cellContentChildRow {
+                      padding-bottom: 1rem;
+                      padding-left: 1rem;
+                      padding-right: 1rem;
+                      padding-top: 0;
+                    }
+                    &.cellContentAlignedRight {
+                      justify-content: flex-end;
+                      text-align: right;
+                    }
+                    &.cellContentAlignedCenter {
+                      justify-content: center;
+                      text-align: center;
+                    }
+                    &.cellContentAboveExpandedArea {
+                      align-items: start;
+                    }
+                    &.cellContentHideEdit {
+                      min-height: 4rem;
+                    }
               />
             </td>
             <td
               className=
-
+                  tableCellAlignedRight
+                  tableCellIsEditableRowClosed
+                  tableCellHasSeparator
                   {
                     font-weight: 400;
                     padding-bottom: 0px;
@@ -1045,27 +1730,56 @@ exports[`Table komponent matcher snapshot 1`] = `
                     padding-top: 0px;
                     vertical-align: inherit;
                   }
-                  {
+                  &.tableCellAlignedRight {
                     justify-content: flex-end;
                     text-align: right;
                   }
-                  {
+                  &.tableCellAlignedCenter {
+                    justify-content: center;
+                    text-align: center;
+                  }
+                  &.tableCellIsSum {
+                    padding-bottom: 1rem;
+                    padding-left: 1rem;
+                    padding-right: 1rem;
+                    padding-top: 1rem;
+                    text-align: end;
+                  }
+                  &.tableCellForExpandCollapseButton {
+                    max-width: 1.5rem;
+                  }
+                  @media (min-width: 640px){&.tableCellForExpandCollapseButton {
+                    max-width: 3.125rem;
+                  }
+                  &.tableCellIsEditableRowClosed {
                     border-bottom: none;
                     vertical-align: top;
                   }
-                  {
+                  &.tableCellAboveExpandedArea {
+                    border-bottom: none;
+                    vertical-align: top;
+                  }
+                  &.tableCellHiddenOnMobile {
+                    display: none;
+                  }
+                  @media (min-width: 640px){&.tableCellHiddenOnMobile {
+                    display: table-cell;
+                  }
+                  &.tableCellHasSeparator {
                     border-bottom: 1px solid #b2b2b2;
                   }
               key="table-1232_3"
             >
               <div
                 className=
-
+                    cellContentAlignedRight
+                    cellContentLarge
                     {
                       align-items: center;
                       box-sizing: border-box;
                       display: flex;
                       font-size: inherit;
+                      height: 100%;
                       padding-bottom: 0.5rem;
                       padding-left: 1rem;
                       padding-right: 1rem;
@@ -1074,15 +1788,42 @@ exports[`Table komponent matcher snapshot 1`] = `
                       vertical-align: middle;
                       width: 100%;
                     }
-                    {
-                      justify-content: flex-end;
-                      text-align: right;
+                    &.cellContentSmall {
+                      padding-bottom: 0.125rem;
+                      padding-left: 1rem;
+                      padding-right: 1rem;
+                      padding-top: 0.125rem;
                     }
-                    {
+                    &.cellContentClickable {
+                      cursor: pointer;
+                      padding-bottom: 0.5rem;
+                      padding-top: 0.5rem;
+                    }
+                    &.cellContentLarge {
                       padding-bottom: 1rem;
                       padding-left: 1rem;
                       padding-right: 1rem;
                       padding-top: 1rem;
+                    }
+                    &.cellContentChildRow {
+                      padding-bottom: 1rem;
+                      padding-left: 1rem;
+                      padding-right: 1rem;
+                      padding-top: 0;
+                    }
+                    &.cellContentAlignedRight {
+                      justify-content: flex-end;
+                      text-align: right;
+                    }
+                    &.cellContentAlignedCenter {
+                      justify-content: center;
+                      text-align: center;
+                    }
+                    &.cellContentAboveExpandedArea {
+                      align-items: start;
+                    }
+                    &.cellContentHideEdit {
+                      min-height: 4rem;
                     }
               />
             </td>
@@ -1136,19 +1877,29 @@ exports[`Table komponent matcher snapshot 1`] = `
         >
           <tr
             className=
-
+                tableRowHasSeparator
                 {
                   border-box: box-sizing;
                   vertical-align: middle;
                 }
-                {
+                &.tableRowIsClickable:hover {
+                  background-color: #cde1f9;
+                }
+                &.tableRowEditableAndOpen {
+                  display: table-row;
+                }
+                &.tableRowEditableAndClosed {
+                  display: none;
+                }
+                &.tableRowHasSeparator {
                   border-bottom: 1px solid #b2b2b2;
                 }
             key="3"
           >
             <th
               className=
-
+                  tableCellIsEditableRowClosed
+                  tableCellHasSeparator
                   {
                     font-weight: 400;
                     padding-bottom: 0px;
@@ -1157,11 +1908,42 @@ exports[`Table komponent matcher snapshot 1`] = `
                     padding-top: 0px;
                     vertical-align: inherit;
                   }
-                  {
+                  &.tableCellAlignedRight {
+                    justify-content: flex-end;
+                    text-align: right;
+                  }
+                  &.tableCellAlignedCenter {
+                    justify-content: center;
+                    text-align: center;
+                  }
+                  &.tableCellIsSum {
+                    padding-bottom: 1rem;
+                    padding-left: 1rem;
+                    padding-right: 1rem;
+                    padding-top: 1rem;
+                    text-align: end;
+                  }
+                  &.tableCellForExpandCollapseButton {
+                    max-width: 1.5rem;
+                  }
+                  @media (min-width: 640px){&.tableCellForExpandCollapseButton {
+                    max-width: 3.125rem;
+                  }
+                  &.tableCellIsEditableRowClosed {
                     border-bottom: none;
                     vertical-align: top;
                   }
-                  {
+                  &.tableCellAboveExpandedArea {
+                    border-bottom: none;
+                    vertical-align: top;
+                  }
+                  &.tableCellHiddenOnMobile {
+                    display: none;
+                  }
+                  @media (min-width: 640px){&.tableCellHiddenOnMobile {
+                    display: table-cell;
+                  }
+                  &.tableCellHasSeparator {
                     border-bottom: 1px solid #b2b2b2;
                   }
               id="table-1233_0"
@@ -1171,12 +1953,13 @@ exports[`Table komponent matcher snapshot 1`] = `
             >
               <div
                 className=
-
+                    cellContentLarge
                     {
                       align-items: center;
                       box-sizing: border-box;
                       display: flex;
                       font-size: inherit;
+                      height: 100%;
                       padding-bottom: 0.5rem;
                       padding-left: 1rem;
                       padding-right: 1rem;
@@ -1185,17 +1968,50 @@ exports[`Table komponent matcher snapshot 1`] = `
                       vertical-align: middle;
                       width: 100%;
                     }
-                    {
+                    &.cellContentSmall {
+                      padding-bottom: 0.125rem;
+                      padding-left: 1rem;
+                      padding-right: 1rem;
+                      padding-top: 0.125rem;
+                    }
+                    &.cellContentClickable {
+                      cursor: pointer;
+                      padding-bottom: 0.5rem;
+                      padding-top: 0.5rem;
+                    }
+                    &.cellContentLarge {
                       padding-bottom: 1rem;
                       padding-left: 1rem;
                       padding-right: 1rem;
                       padding-top: 1rem;
                     }
+                    &.cellContentChildRow {
+                      padding-bottom: 1rem;
+                      padding-left: 1rem;
+                      padding-right: 1rem;
+                      padding-top: 0;
+                    }
+                    &.cellContentAlignedRight {
+                      justify-content: flex-end;
+                      text-align: right;
+                    }
+                    &.cellContentAlignedCenter {
+                      justify-content: center;
+                      text-align: center;
+                    }
+                    &.cellContentAboveExpandedArea {
+                      align-items: start;
+                    }
+                    &.cellContentHideEdit {
+                      min-height: 4rem;
+                    }
               />
             </th>
             <td
               className=
-
+                  tableCellAlignedRight
+                  tableCellIsEditableRowClosed
+                  tableCellHasSeparator
                   {
                     font-weight: 400;
                     padding-bottom: 0px;
@@ -1204,27 +2020,56 @@ exports[`Table komponent matcher snapshot 1`] = `
                     padding-top: 0px;
                     vertical-align: inherit;
                   }
-                  {
+                  &.tableCellAlignedRight {
                     justify-content: flex-end;
                     text-align: right;
                   }
-                  {
+                  &.tableCellAlignedCenter {
+                    justify-content: center;
+                    text-align: center;
+                  }
+                  &.tableCellIsSum {
+                    padding-bottom: 1rem;
+                    padding-left: 1rem;
+                    padding-right: 1rem;
+                    padding-top: 1rem;
+                    text-align: end;
+                  }
+                  &.tableCellForExpandCollapseButton {
+                    max-width: 1.5rem;
+                  }
+                  @media (min-width: 640px){&.tableCellForExpandCollapseButton {
+                    max-width: 3.125rem;
+                  }
+                  &.tableCellIsEditableRowClosed {
                     border-bottom: none;
                     vertical-align: top;
                   }
-                  {
+                  &.tableCellAboveExpandedArea {
+                    border-bottom: none;
+                    vertical-align: top;
+                  }
+                  &.tableCellHiddenOnMobile {
+                    display: none;
+                  }
+                  @media (min-width: 640px){&.tableCellHiddenOnMobile {
+                    display: table-cell;
+                  }
+                  &.tableCellHasSeparator {
                     border-bottom: 1px solid #b2b2b2;
                   }
               key="table-1233_1"
             >
               <div
                 className=
-
+                    cellContentAlignedRight
+                    cellContentLarge
                     {
                       align-items: center;
                       box-sizing: border-box;
                       display: flex;
                       font-size: inherit;
+                      height: 100%;
                       padding-bottom: 0.5rem;
                       padding-left: 1rem;
                       padding-right: 1rem;
@@ -1233,21 +2078,50 @@ exports[`Table komponent matcher snapshot 1`] = `
                       vertical-align: middle;
                       width: 100%;
                     }
-                    {
-                      justify-content: flex-end;
-                      text-align: right;
+                    &.cellContentSmall {
+                      padding-bottom: 0.125rem;
+                      padding-left: 1rem;
+                      padding-right: 1rem;
+                      padding-top: 0.125rem;
                     }
-                    {
+                    &.cellContentClickable {
+                      cursor: pointer;
+                      padding-bottom: 0.5rem;
+                      padding-top: 0.5rem;
+                    }
+                    &.cellContentLarge {
                       padding-bottom: 1rem;
                       padding-left: 1rem;
                       padding-right: 1rem;
                       padding-top: 1rem;
                     }
+                    &.cellContentChildRow {
+                      padding-bottom: 1rem;
+                      padding-left: 1rem;
+                      padding-right: 1rem;
+                      padding-top: 0;
+                    }
+                    &.cellContentAlignedRight {
+                      justify-content: flex-end;
+                      text-align: right;
+                    }
+                    &.cellContentAlignedCenter {
+                      justify-content: center;
+                      text-align: center;
+                    }
+                    &.cellContentAboveExpandedArea {
+                      align-items: start;
+                    }
+                    &.cellContentHideEdit {
+                      min-height: 4rem;
+                    }
               />
             </td>
             <td
               className=
-
+                  tableCellAlignedRight
+                  tableCellIsEditableRowClosed
+                  tableCellHasSeparator
                   {
                     font-weight: 400;
                     padding-bottom: 0px;
@@ -1256,27 +2130,56 @@ exports[`Table komponent matcher snapshot 1`] = `
                     padding-top: 0px;
                     vertical-align: inherit;
                   }
-                  {
+                  &.tableCellAlignedRight {
                     justify-content: flex-end;
                     text-align: right;
                   }
-                  {
+                  &.tableCellAlignedCenter {
+                    justify-content: center;
+                    text-align: center;
+                  }
+                  &.tableCellIsSum {
+                    padding-bottom: 1rem;
+                    padding-left: 1rem;
+                    padding-right: 1rem;
+                    padding-top: 1rem;
+                    text-align: end;
+                  }
+                  &.tableCellForExpandCollapseButton {
+                    max-width: 1.5rem;
+                  }
+                  @media (min-width: 640px){&.tableCellForExpandCollapseButton {
+                    max-width: 3.125rem;
+                  }
+                  &.tableCellIsEditableRowClosed {
                     border-bottom: none;
                     vertical-align: top;
                   }
-                  {
+                  &.tableCellAboveExpandedArea {
+                    border-bottom: none;
+                    vertical-align: top;
+                  }
+                  &.tableCellHiddenOnMobile {
+                    display: none;
+                  }
+                  @media (min-width: 640px){&.tableCellHiddenOnMobile {
+                    display: table-cell;
+                  }
+                  &.tableCellHasSeparator {
                     border-bottom: 1px solid #b2b2b2;
                   }
               key="table-1233_2"
             >
               <div
                 className=
-
+                    cellContentAlignedRight
+                    cellContentLarge
                     {
                       align-items: center;
                       box-sizing: border-box;
                       display: flex;
                       font-size: inherit;
+                      height: 100%;
                       padding-bottom: 0.5rem;
                       padding-left: 1rem;
                       padding-right: 1rem;
@@ -1285,21 +2188,50 @@ exports[`Table komponent matcher snapshot 1`] = `
                       vertical-align: middle;
                       width: 100%;
                     }
-                    {
-                      justify-content: flex-end;
-                      text-align: right;
+                    &.cellContentSmall {
+                      padding-bottom: 0.125rem;
+                      padding-left: 1rem;
+                      padding-right: 1rem;
+                      padding-top: 0.125rem;
                     }
-                    {
+                    &.cellContentClickable {
+                      cursor: pointer;
+                      padding-bottom: 0.5rem;
+                      padding-top: 0.5rem;
+                    }
+                    &.cellContentLarge {
                       padding-bottom: 1rem;
                       padding-left: 1rem;
                       padding-right: 1rem;
                       padding-top: 1rem;
                     }
+                    &.cellContentChildRow {
+                      padding-bottom: 1rem;
+                      padding-left: 1rem;
+                      padding-right: 1rem;
+                      padding-top: 0;
+                    }
+                    &.cellContentAlignedRight {
+                      justify-content: flex-end;
+                      text-align: right;
+                    }
+                    &.cellContentAlignedCenter {
+                      justify-content: center;
+                      text-align: center;
+                    }
+                    &.cellContentAboveExpandedArea {
+                      align-items: start;
+                    }
+                    &.cellContentHideEdit {
+                      min-height: 4rem;
+                    }
               />
             </td>
             <td
               className=
-
+                  tableCellAlignedRight
+                  tableCellIsEditableRowClosed
+                  tableCellHasSeparator
                   {
                     font-weight: 400;
                     padding-bottom: 0px;
@@ -1308,27 +2240,56 @@ exports[`Table komponent matcher snapshot 1`] = `
                     padding-top: 0px;
                     vertical-align: inherit;
                   }
-                  {
+                  &.tableCellAlignedRight {
                     justify-content: flex-end;
                     text-align: right;
                   }
-                  {
+                  &.tableCellAlignedCenter {
+                    justify-content: center;
+                    text-align: center;
+                  }
+                  &.tableCellIsSum {
+                    padding-bottom: 1rem;
+                    padding-left: 1rem;
+                    padding-right: 1rem;
+                    padding-top: 1rem;
+                    text-align: end;
+                  }
+                  &.tableCellForExpandCollapseButton {
+                    max-width: 1.5rem;
+                  }
+                  @media (min-width: 640px){&.tableCellForExpandCollapseButton {
+                    max-width: 3.125rem;
+                  }
+                  &.tableCellIsEditableRowClosed {
                     border-bottom: none;
                     vertical-align: top;
                   }
-                  {
+                  &.tableCellAboveExpandedArea {
+                    border-bottom: none;
+                    vertical-align: top;
+                  }
+                  &.tableCellHiddenOnMobile {
+                    display: none;
+                  }
+                  @media (min-width: 640px){&.tableCellHiddenOnMobile {
+                    display: table-cell;
+                  }
+                  &.tableCellHasSeparator {
                     border-bottom: 1px solid #b2b2b2;
                   }
               key="table-1233_3"
             >
               <div
                 className=
-
+                    cellContentAlignedRight
+                    cellContentLarge
                     {
                       align-items: center;
                       box-sizing: border-box;
                       display: flex;
                       font-size: inherit;
+                      height: 100%;
                       padding-bottom: 0.5rem;
                       padding-left: 1rem;
                       padding-right: 1rem;
@@ -1337,15 +2298,42 @@ exports[`Table komponent matcher snapshot 1`] = `
                       vertical-align: middle;
                       width: 100%;
                     }
-                    {
-                      justify-content: flex-end;
-                      text-align: right;
+                    &.cellContentSmall {
+                      padding-bottom: 0.125rem;
+                      padding-left: 1rem;
+                      padding-right: 1rem;
+                      padding-top: 0.125rem;
                     }
-                    {
+                    &.cellContentClickable {
+                      cursor: pointer;
+                      padding-bottom: 0.5rem;
+                      padding-top: 0.5rem;
+                    }
+                    &.cellContentLarge {
                       padding-bottom: 1rem;
                       padding-left: 1rem;
                       padding-right: 1rem;
                       padding-top: 1rem;
+                    }
+                    &.cellContentChildRow {
+                      padding-bottom: 1rem;
+                      padding-left: 1rem;
+                      padding-right: 1rem;
+                      padding-top: 0;
+                    }
+                    &.cellContentAlignedRight {
+                      justify-content: flex-end;
+                      text-align: right;
+                    }
+                    &.cellContentAlignedCenter {
+                      justify-content: center;
+                      text-align: center;
+                    }
+                    &.cellContentAboveExpandedArea {
+                      align-items: start;
+                    }
+                    &.cellContentHideEdit {
+                      min-height: 4rem;
                     }
               />
             </td>
