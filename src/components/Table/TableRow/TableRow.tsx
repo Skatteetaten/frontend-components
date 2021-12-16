@@ -100,15 +100,13 @@ export const TableRow = <P extends object>(props: TableRowProps<P>) => {
   const styles = getClassNames(props, expandabledRowRef?.current?.offsetWidth);
 
   const childrenLength = !!data['children'] ? data['children'].length : 0;
-  const editButtonClassNames = classnames(
-    styles.cellContent,
-    customClassNames?.cellContent,
-    {
-      cellContentSmall: !showRowSeparators || compactTable,
-    }
-  );
+
   const editButton = (
-    <span className={editButtonClassNames}>
+    <span
+      className={classnames(styles.cellContent, customClassNames?.cellContent, {
+        cellContentSmall: !showRowSeparators || compactTable,
+      })}
+    >
       <IconButton
         title={t('tablerow.editable.title')}
         type="button"
