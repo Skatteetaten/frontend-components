@@ -4,7 +4,17 @@ export interface ScrollToTopButtonProps {
   /** Global attributt som må være unik for hele HTML dokumentet */
   id?: string;
   /** Overstyring av stiler */
-  className?: string;
+  customClassNames?: {
+    topContainer: string;
+    container: string;
+    box: string;
+    button: string;
+    label: string;
+    icon: string;
+    iconContainer: string;
+  };
+  /** Overstyring av bredde/plassering */
+  containerMaxWidth?: string;
 }
 
 export interface ScrollToTopButtonState {

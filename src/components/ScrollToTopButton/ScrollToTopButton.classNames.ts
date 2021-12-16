@@ -1,15 +1,15 @@
 import { mergeStyleSets } from '@fluentui/merge-styles';
-import { FontSizes } from '../utils';
 
 import designtokenSpacing from '../utils/designtokens/_spacing.json';
 import designtokenFonts from '../utils/designtokens/_fontSizes.json';
 import designtokenColors from '../utils/designtokens/_colors.json';
 import designtokenBreakpoints from '../utils/designtokens/_breakpoints.json';
 
-export const getClassNames = () => {
+export const getClassNames = (props) => {
   const whiteBackground = designtokenColors['ske-color-white-100'];
   const hoverBackground = designtokenColors['ske-color-interactive-light'];
   const color = designtokenColors['ske-color-interactive'];
+  const overrideMaxWidth = props.containerMaxWidth;
 
   // @ts-ignore TODO
   return mergeStyleSets({
@@ -33,14 +33,15 @@ export const getClassNames = () => {
       transition: '0.2s',
       selectors: {
         [`@media (max-width: ${designtokenBreakpoints['ske-breakpoint-xxl']})`]: {
-          maxWidth: `${designtokenBreakpoints['ske-breakpoint-xl']}`,
+          maxWidth: overrideMaxWidth
+            ? overrideMaxWidth
+            : `${designtokenBreakpoints['ske-breakpoint-xl']}`,
         },
         [`@media (max-width: ${designtokenBreakpoints['ske-breakpoint-xl']})`]: {
-          maxWidth: `${designtokenBreakpoints['ske-breakpoint-lg']}`,
+          maxWidth: overrideMaxWidth
+            ? overrideMaxWidth
+            : `${designtokenBreakpoints['ske-breakpoint-lg']}`,
         },
-        /*'@media (min-width: 1170px)': {
-          maxWidth: '1151.9px',
-        },*/
       },
     },
     box: {
@@ -57,7 +58,7 @@ export const getClassNames = () => {
       display: 'block',
       textDecoration: 'none !important',
       textAlign: 'center',
-      margin: '24px auto',
+      margin: `${designtokenSpacing['ske-spacing-xl']} auto`,
       selectors: {
         '.ms-Button-flexContainer': {
           flexDirection: 'initial',
@@ -90,7 +91,7 @@ export const getClassNames = () => {
       left: '0.25em',
     },
     label: {
-      fontSize: FontSizes.small,
+      fontSize: designtokenFonts['ske-font-size-icon-s'],
       fontWeight: 700,
       textAlign: 'center',
       marginTop: '40px',
