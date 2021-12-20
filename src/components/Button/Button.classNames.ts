@@ -1,11 +1,17 @@
 import { mergeStyles } from '@fluentui/merge-styles';
 import { getTheme } from '@fluentui/react/lib/Styling';
-import { FontSizes, FontWeights, PaletteProps, getFocusStyle } from '../utils';
+import { getFocusStyle } from '../utils';
 import { ButtonProps } from './Button.types';
 
+import designtokenColors from '../utils/designtokens/_colors.json';
+import designtokenFontSizes from '../utils/designtokens/_fontSizes.json';
+import designtokenBreakpoints from '../utils/designtokens/_breakpoints.json';
+
 function getTypeColor(props: ButtonProps): object {
-  const palette = getTheme().palette as PaletteProps;
   const radius = '200px';
+
+  const interactiveColor = designtokenColors['ske-color-interactive'];
+  const whiteColor = designtokenColors['ske-color-white-100'];
 
   const sizeNormal = {
     height: 'auto',
@@ -17,26 +23,26 @@ function getTypeColor(props: ButtonProps): object {
     case 'primaryCornered':
       return {
         borderRadius: '7px',
-        borderColor: palette.skeColor.blue,
-        background: palette.skeColor.blue,
-        color: palette.skeColor.white,
+        borderColor: interactiveColor,
+        background: interactiveColor,
+        color: whiteColor,
         ...sizeNormal,
         selectors: {
-          '@media  only screen and (max-width: 479px)': {
-            width: '100%',
+          [`@media  only screen and (max-width: ${designtokenBreakpoints['ske-breakpoint-md']})`]: {
+            width: props.mobileFullWidth ? '100%' : undefined,
           },
         },
       };
     case 'callToAction':
       return {
-        borderColor: palette.skeColor.interactive,
-        background: palette.skeColor.interactive,
-        color: palette.skeColor.white,
-        boxShadow: `0 8px 6px -6px ${palette.skeColor.grey30}`,
-        fontSize: FontSizes.largePlus,
+        borderColor: interactiveColor,
+        background: interactiveColor,
+        color: whiteColor,
+        boxShadow: `0 8px 6px -6px ${designtokenColors['ske-color-grey-30']}`,
+        fontSize: designtokenFontSizes['ske-font-size-xl'],
         borderWidth: '3px',
         borderRadius: '8px',
-        fontWeight: FontWeights.semibold,
+        fontWeight: designtokenFontSizes['ske-font-weight-semibold'],
         padding: '25px',
         height: '80px',
         maxWidth: 'calc((75*550px)/100)',
@@ -44,42 +50,42 @@ function getTypeColor(props: ButtonProps): object {
     case 'primary':
       return {
         borderRadius: radius,
-        borderColor: palette.skeColor.blue,
-        background: palette.skeColor.blue,
-        color: palette.skeColor.white,
+        borderColor: interactiveColor,
+        background: interactiveColor,
+        color: whiteColor,
         ...sizeNormal,
         selectors: {
-          '@media  only screen and (max-width: 479px)': {
-            width: '100%',
+          [`@media  only screen and (max-width: ${designtokenBreakpoints['ske-breakpoint-md']})`]: {
+            width: props.mobileFullWidth ? '100%' : undefined,
           },
         },
       };
     case 'warning':
       return {
         borderRadius: radius,
-        borderColor: palette.skeColor.burgundy50,
-        background: palette.skeColor.burgundy10,
-        color: palette.bodyText,
+        borderColor: designtokenColors['ske-color-burgundy-50'],
+        background: designtokenColors['ske-color-burgundy-10'],
+        color: designtokenColors['ske-color-black-100'],
         ...sizeNormal,
 
         selectors: {
-          '@media  only screen and (max-width: 479px)': {
-            width: '100%',
+          [`@media  only screen and (max-width: ${designtokenBreakpoints['ske-breakpoint-md']})`]: {
+            width: props.mobileFullWidth ? '100%' : undefined,
           },
         },
       };
     case 'secondarySimple':
       return {
         borderWidth: 3,
-        borderRadius: '6px',
+        borderRadius: radius,
         borderColor: 'transparent',
         textDecoration: 'underline',
         background: 'none',
-        color: palette.skeColor.blue,
+        color: interactiveColor,
         ...sizeNormal,
         selectors: {
-          '@media  only screen and (max-width: 479px)': {
-            width: '100%',
+          [`@media  only screen and (max-width: ${designtokenBreakpoints['ske-breakpoint-md']})`]: {
+            width: props.mobileFullWidth ? '100%' : undefined,
           },
         },
       };
@@ -87,13 +93,13 @@ function getTypeColor(props: ButtonProps): object {
       // secondary
       return {
         borderRadius: radius,
-        borderColor: palette.skeColor.interactive,
-        background: palette.skeColor.white,
-        color: palette.skeColor.interactive,
+        borderColor: interactiveColor,
+        background: whiteColor,
+        color: interactiveColor,
         ...sizeNormal,
         selectors: {
-          '@media  only screen and (max-width: 479px)': {
-            width: '100%',
+          [`@media  only screen and (max-width: ${designtokenBreakpoints['ske-breakpoint-md']})`]: {
+            width: props.mobileFullWidth ? '100%' : undefined,
           },
         },
       };
@@ -101,27 +107,39 @@ function getTypeColor(props: ButtonProps): object {
 }
 
 function getTypeHoverColor(props: ButtonProps): object {
-  const palette = getTheme().palette as PaletteProps;
+  const interactiveColor = designtokenColors['ske-color-interactive'];
+  const interactiveDarkColor = designtokenColors['ske-color-interactive-dark'];
+  const interactiveLightColor =
+    designtokenColors['ske-color-interactive-light'];
+  const errorColor = designtokenColors['ske-color-status-error'];
+  const whiteColor = designtokenColors['ske-color-white-100'];
+
   switch (props.buttonStyle) {
     case 'warning':
       return {
-        borderColor: palette.skeColor.error,
-        background: palette.skeColor.error,
-        color: palette.white,
+        borderColor: errorColor,
+        background: errorColor,
+        color: whiteColor,
+      };
+    case 'secondarySimple':
+      return {
+        borderColor: interactiveColor,
+        background: interactiveLightColor,
+        textDecoration: 'none',
       };
     case 'primaryCornered':
     case 'primary':
     case 'callToAction':
       return {
-        borderColor: palette.skeColor.interactiveDark,
-        background: palette.skeColor.interactiveDark,
-        color: palette.skeColor.white,
+        borderColor: interactiveDarkColor,
+        background: interactiveDarkColor,
+        color: whiteColor,
       };
     default:
       return {
-        borderColor: palette.skeColor.interactive,
-        background: palette.skeColor.interactiveLight,
-        color: palette.skeColor.interactive,
+        borderColor: interactiveColor,
+        background: interactiveLightColor,
+        color: interactiveColor,
       };
   }
 }
@@ -142,10 +160,7 @@ function getDisabledColor(props: ButtonProps) {
 }
 
 function setFocusRadius(props: ButtonProps) {
-  if (
-    props.buttonStyle === 'primaryCornered' ||
-    props.buttonStyle === 'secondarySimple'
-  ) {
+  if (props.buttonStyle === 'primaryCornered') {
     return '8px';
   }
   if (props.buttonStyle === 'callToAction') {
@@ -157,8 +172,7 @@ function setFocusRadius(props: ButtonProps) {
 
 export function getClassNames(props: ButtonProps): string {
   const theme = getTheme();
-  const palette = theme.palette as PaletteProps;
-  const inset = -8;
+  const inset = props.buttonStyle === 'secondarySimple' ? -4 : -8;
   const disabled = props.disabled;
   const radius = setFocusRadius(props);
   return mergeStyles([
@@ -185,14 +199,14 @@ export function getClassNames(props: ButtonProps): string {
           transitionTimingFunction: 'ease',
         },
         '&.ms-Button:disabled': {
-          background: palette.skeColor.whiteGrey,
-          borderColor: palette.skeColor.lightGrey,
-          color: palette.skeColor.lightGrey,
+          background: designtokenColors['ske-color-grey-10'],
+          borderColor: designtokenColors['ske-color-grey-30'],
+          color: designtokenColors['ske-color-grey-30'],
           cursor: 'not-allowed',
           ...getDisabledColor(props),
         },
         '&.ms-Button i': {
-          fontSize: FontSizes.icon,
+          fontSize: designtokenFontSizes['ske-font-size-icon-l'],
         },
       },
     },
