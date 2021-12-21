@@ -5,6 +5,8 @@ import { ActionButton } from '@skatteetaten/frontend-components/ActionButton';
 import { Button } from '@skatteetaten/frontend-components/Button';
 import { Dialog } from '@skatteetaten/frontend-components/Dialog';
 
+import designtokenBreakpoints from '../../components/utils/designtokens/_breakpoints.json';
+
 const [state, setState] = React.useState({ hideDialog: true });
 
 function closeDialog() {
@@ -12,28 +14,31 @@ function closeDialog() {
 }
 
 <div>
-  <Button
+  <ActionButton
     buttonStyle="secondary"
+    icon="InfoOutline"
     onClick={() => setState({ hideDialog: false })}
   >
     Vis standard dialog
-  </Button>
+  </ActionButton>
   <Dialog
     hidden={state.hideDialog}
     type={Dialog.Type.normal}
     onDismiss={closeDialog}
-    title="Kansellere arbeidsoppgaven?"
+    title="Slette arbeidsoppgaven?"
     forceFocusInsideTrap
-    minWidth="400px"
-    maxWidth="600px"
+    minWidth={designtokenBreakpoints['ske-breakpoint-sm']}
+    maxWidth={designtokenBreakpoints['ske-breakpoint-md']}
   >
-    <p>Er du sikker på at du vil kansellere arbeidsoppgaven?</p>
+    <p>Er du sikker på at du vil slette arbeidsoppgaven?</p>
 
     <p>Handlingen kan ikke reverseres</p>
     <Dialog.Footer>
-      <ActionButton onClick={closeDialog}>Avbryt</ActionButton>
-      <Button onClick={closeDialog} hoved>
-        Kanseller
+      <Button buttonStyle="secondarySimple" onClick={closeDialog}>
+        Avbryt
+      </Button>
+      <Button buttonStyle="warning" onClick={closeDialog}>
+        Slett
       </Button>
     </Dialog.Footer>
   </Dialog>
@@ -41,9 +46,11 @@ function closeDialog() {
 ```
 
 ```js
-import { Button } from '@skatteetaten/frontend-components/Button';
+import { ActionButton } from '@skatteetaten/frontend-components/ActionButton';
 import { Dialog } from '@skatteetaten/frontend-components/Dialog';
 import { NavigationTile } from '@skatteetaten/frontend-components/NavigationTile';
+
+import designtokenBreakpoints from '../../components/utils/designtokens/_breakpoints.json';
 
 const [state, setState] = React.useState({ hideDialog: true });
 
@@ -65,20 +72,21 @@ const content1 = [
 ];
 
 <div>
-  <Button
+  <ActionButton
     buttonStyle="secondary"
     onClick={() => setState({ hideDialog: false })}
+    icon="InfoOutline"
   >
     Vis luftig dialog
-  </Button>
+  </ActionButton>
   <Dialog
     hidden={state.hideDialog}
     type={Dialog.Type.normal}
     onDismiss={closeDialog}
     forceFocusInsideTrap
     title="Velg den inngangen som passer for deg"
-    minWidth="500px"
-    maxWidth="600px"
+    minWidth={designtokenBreakpoints['ske-breakpoint-sm']}
+    maxWidth={designtokenBreakpoints['ske-breakpoint-md']}
     layoutStyle={'airy'}
   >
     <p>
@@ -110,12 +118,13 @@ function closeDialog() {
 }
 
 <div>
-  <Button
+  <ActionButton
     buttonStyle="secondary"
     onClick={() => setState({ hideDialog: false })}
+    icon="InfoOutline"
   >
     Vis viktig dialog
-  </Button>
+  </ActionButton>
   <Dialog
     hidden={state.hideDialog}
     type={Dialog.Type.normal}
@@ -142,6 +151,8 @@ import Dialog from '@skatteetaten/frontend-components/Dialog';
 import Button from '@skatteetaten/frontend-components/Button';
 import ActionButton from '@skatteetaten/frontend-components/ActionButton';
 
+import designtokenBreakpoints from '../../components/utils/designtokens/_breakpoints.json';
+
 const [state, setState] = React.useState({ hideDialog: true });
 
 function closeDialog() {
@@ -149,12 +160,13 @@ function closeDialog() {
 }
 
 <div>
-  <Button
+  <ActionButton
     buttonStyle="secondary"
     onClick={() => setState({ hideDialog: false })}
+    icon="InfoOutline"
   >
     Vis dialog som lukkes aktivt
-  </Button>
+  </ActionButton>
   <Dialog
     hidden={state.hideDialog}
     type={Dialog.Type.normal}
@@ -162,8 +174,8 @@ function closeDialog() {
     modalProps={{ isBlocking: true, isModeless: false }}
     title="Meldinger"
     forceFocusInsideTrap
-    minWidth="400px"
-    maxWidth="600px"
+    minWidth={designtokenBreakpoints['ske-breakpoint-sm']}
+    maxWidth={designtokenBreakpoints['ske-breakpoint-md']}
   >
     <p>Du har ingen nye meldinger.</p>
 
