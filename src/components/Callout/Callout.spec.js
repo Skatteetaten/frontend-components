@@ -17,7 +17,7 @@ describe('Callout komponent', () => {
     const Callout = wrapper.find('Callout');
     const closeBtn = wrapper.find('IconButton');
 
-    expect(Callout.prop('color')).toEqual('green10');
+    expect(Callout.prop('color')).toEqual('ske-color-green-10');
     expect(Callout.prop('doNotLayer')).toEqual(true);
     expect(Callout.prop('directionalHint')).toEqual(1);
     expect(closeBtn.prop('aria-label')).toEqual('Lukk');
@@ -32,7 +32,7 @@ describe('Callout komponent', () => {
     });
     const CalloutElm = wrapper.find('Callout');
 
-    expect(CalloutElm.prop('color')).toEqual('brown10');
+    expect(CalloutElm.prop('color')).toEqual('ske-color-brown-10');
     expect(CalloutElm.prop('gapSpace')).toEqual(5);
     expect(CalloutElm.prop('directionalHint')).toEqual(4);
   });
