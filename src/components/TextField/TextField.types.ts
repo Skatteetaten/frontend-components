@@ -15,6 +15,8 @@ export interface TextFieldProps extends IMaskedTextFieldProps {
   id?: string;
   /** Størrelse på tekstfelt som skal benyttes */
   inputSize?: 'normal' | 'large';
+  /** Om feltet er obligatorisk */
+  required?: boolean;
   /** Setter inputmode (html 5) på tekstefeltet */
   inputMode?: IMaskedTextFieldProps['inputMode'];
   /** aria-label for knapp i label */

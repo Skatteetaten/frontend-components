@@ -23,6 +23,7 @@ export const TextField: React.FC<TextFieldProps> = ({
   errorMessage,
   id,
   label,
+  required = false,
   labelButtonAriaLabel,
   mask,
   inputMode,
@@ -97,6 +98,7 @@ export const TextField: React.FC<TextFieldProps> = ({
             ? labelButtonAriaLabel
             : setCustomButtonAriaLabel()
         }
+        requiredMark={required}
         editFunction={onEdit}
         warning={rest.warning}
         help={rest.help}
@@ -117,6 +119,7 @@ export const TextField: React.FC<TextFieldProps> = ({
           getClassNames({ ...rest, editMode, readOnly }),
           className
         )}
+        required={required}
         errorMessage={errorMessage}
         onBlur={onBlur}
         componentRef={(ref) => {
