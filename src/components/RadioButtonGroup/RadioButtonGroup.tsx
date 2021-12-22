@@ -20,6 +20,7 @@ export const RadioButtonGroup = (props: RadioButtonGroupProps) => {
     help,
     warning,
     id,
+    required = false,
     label,
     labelSize,
     labelButtonAriaLabel,
@@ -52,6 +53,7 @@ export const RadioButtonGroup = (props: RadioButtonGroupProps) => {
         id={labelId}
         label={label}
         buttonAriaLabel={labelButtonAriaLabel}
+        requiredMark={required}
         help={help}
         inputSize={labelSize}
         warning={warning}

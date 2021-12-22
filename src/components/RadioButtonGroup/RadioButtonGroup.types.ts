@@ -15,6 +15,8 @@ export interface RadioButtonGroupProps extends IChoiceGroupProps {
   help?: JSX.Element | string;
   /** Horizontal layout */
   horizontal?: boolean;
+  /** Om merke for obligatorisk felt skal vises */
+  required?: boolean;
   /** aria-label for knapp i label */
   labelButtonAriaLabel?: string;
   /** Størrelse på feltnavn over radioknappene */
