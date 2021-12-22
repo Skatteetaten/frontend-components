@@ -60,6 +60,9 @@ exports[`TextField komponent matcher snapshot 1`] = `
         position: absolute;
         top: 6px;
       }
+      & .ms-TextField-fieldGroup::before {
+        display: none;
+      }
       & textarea.ms-TextField-field {
         resize: none;
       }
@@ -160,6 +163,9 @@ exports[`TextField komponent matcher snapshot 1`] = `
           margin-right: 3px;
           position: absolute;
           top: 6px;
+        }
+        & .ms-TextField-fieldGroup::before {
+          display: none;
         }
         & textarea.ms-TextField-field {
           resize: none;
@@ -300,6 +306,7 @@ exports[`TextField komponent matcher snapshot 1`] = `
           onChange={[Function]}
           onFocus={[Function]}
           onInput={[Function]}
+          required={false}
           type="text"
           value=""
         />
