@@ -64,6 +64,9 @@ export const getClassNames = (props: DropdownProps) => {
             : palette.skeColor.blackAlt,
           borderWidth: '2px',
         },
+        '& .ms-Dropdown.is-required::before': {
+          display: 'none',
+        },
         // hack
         '&:focus .ms-Dropdown-title.ms-Dropdown-title': {
           border: `2px solid ${palette.skeColor.blue}`,

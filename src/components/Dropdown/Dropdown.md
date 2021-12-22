@@ -17,6 +17,7 @@ const [state, setState] = React.useState({
 <div style={{ maxWidth: '300px' }}>
   <Dropdown
     label="Fruktsort"
+    required
     placeholder="Velg"
     help="Tekst som hjelper brukeren å forstå eller få til."
     options={state.options}
