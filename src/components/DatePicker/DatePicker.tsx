@@ -47,6 +47,7 @@ export const DatePicker: React.FC<DatePickerProps> = (
     id,
     invalidInputErrorMessage,
     isOutOfBoundsErrorMessage,
+    isRequired,
     isRequiredErrorMessage,
     help,
     label,
@@ -135,6 +136,7 @@ export const DatePicker: React.FC<DatePickerProps> = (
         id={labelId}
         inputId={inputId + '-label'}
         label={label}
+        requiredMark={isRequired}
         buttonAriaLabel={labelButtonAriaLabel}
         help={help}
         calloutFloating={calloutFloating}
@@ -157,6 +159,7 @@ export const DatePicker: React.FC<DatePickerProps> = (
           getClassNames({ errorMessage, readonlyMode: readOnly, ...rest }),
           className
         )}
+        isRequired={true}
         componentRef={(ref) => {
           datePickerRef.current = ref as IDatePicker;
         }}
