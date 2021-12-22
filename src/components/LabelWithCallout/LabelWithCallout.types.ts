@@ -37,6 +37,8 @@ export interface LabelWithCalloutProps
     callout?: string;
   };
   editable?: boolean;
+  /** If a required mark should appear after the label */
+  requiredMark?: boolean;
   editFunction?: () => void;
   help?: string | JSX.Element;
   /** When placed inside a fieldset, and the label element should be renderes as a legend element instead. */
