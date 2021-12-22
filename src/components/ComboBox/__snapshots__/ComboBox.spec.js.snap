@@ -202,6 +202,7 @@ exports[`Combobox komponent matcher med snapshot 1`] = `
         aria-autocomplete="both"
         aria-disabled={false}
         aria-expanded={false}
+        aria-required={false}
         autoCapitalize="off"
         autoComplete="off"
         className=
