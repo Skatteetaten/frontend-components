@@ -100,6 +100,9 @@ export const getClassNames = (props: DatePickerProps) => {
       '&& .ms-TextField-fieldGroup.ms-TextField-fieldGroup:after': {
         content: '""',
       },
+      '& .ms-TextField-fieldGroup::before': {
+        display: 'none',
+      },
       '& .ms-TextField.is-disabled': !readonlyMode && {
         borderColor: palette.skeColor.lightGrey,
         borderStyle: 'solid',
