@@ -119,6 +119,10 @@ export const getClassNames = (props: TextFieldProps) => {
         top: 6,
         left: 0,
       },
+      '& .ms-TextField-fieldGroup::before': {
+        display: 'none',
+      },
+
       'textarea.ms-TextField-field': {
         resize: 'none',
       },
