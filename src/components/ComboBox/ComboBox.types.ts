@@ -10,6 +10,8 @@ export interface ComboBoxProps extends IComboBoxProps {
   inputSize?: 'normal' | 'large';
   /** aria-label for knapp i label */
   labelButtonAriaLabel?: string;
+  /** Om feltet er obligatorisk */
+  required?: boolean;
   /** Overstyr label, se LabelWithCallout komponent */
   labelWithCalloutProps?: LabelWithCalloutProps;
   /** Brukerspesifisert event for callout */
