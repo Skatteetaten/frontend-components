@@ -79,13 +79,15 @@ function getTypeColor(props: ButtonProps): object {
         borderWidth: 3,
         borderRadius: radius,
         borderColor: 'transparent',
-        textDecoration: 'underline',
         background: 'none',
         color: interactiveColor,
         ...sizeNormal,
         selectors: {
           [`@media  only screen and (max-width: ${designtokenBreakpoints['ske-breakpoint-md']})`]: {
             width: props.mobileFullWidth ? '100%' : undefined,
+          },
+          '.ms-Button-textContainer': {
+            textDecoration: 'underline',
           },
         },
       };
@@ -126,6 +128,11 @@ function getTypeHoverColor(props: ButtonProps): object {
         borderColor: interactiveColor,
         background: interactiveLightColor,
         textDecoration: 'none',
+        selectors: {
+          '.ms-Button-textContainer': {
+            textDecoration: 'none',
+          },
+        },
       };
     case 'primaryCornered':
     case 'primary':
