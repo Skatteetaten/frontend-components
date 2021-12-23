@@ -199,6 +199,7 @@ exports[`RadioButtonGroup komponent matcher snapshot 1`] = `
               onBlur={[Function]}
               onChange={[Function]}
               onFocus={[Function]}
+              required={true}
               type="radio"
             />
             <label
@@ -333,6 +334,7 @@ exports[`RadioButtonGroup komponent matcher snapshot 1`] = `
               onBlur={[Function]}
               onChange={[Function]}
               onFocus={[Function]}
+              required={true}
               type="radio"
             />
             <label
@@ -475,6 +477,7 @@ exports[`RadioButtonGroup komponent matcher snapshot 1`] = `
               onBlur={[Function]}
               onChange={[Function]}
               onFocus={[Function]}
+              required={true}
               type="radio"
             />
             <label
@@ -595,6 +598,7 @@ exports[`RadioButtonGroup komponent matcher snapshot 1`] = `
               onBlur={[Function]}
               onChange={[Function]}
               onFocus={[Function]}
+              required={true}
               type="radio"
             />
             <label

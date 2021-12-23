@@ -69,6 +69,7 @@ export const RadioButtonGroup = (props: RadioButtonGroupProps) => {
         className={classnames(styles.radioButtons, className)}
         ariaLabelledBy={labelId}
         aria-invalid={errorMessage ? true : false}
+        required={required}
       >
         {children}
       </FabricChoiceGroup>
