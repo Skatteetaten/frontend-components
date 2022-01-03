@@ -29,7 +29,7 @@ export interface DatePickerProps extends IDatePickerProps {
   /** Overstyr Datepicker Callout, se CalloutProps komponent */
   datepickerCalloutProps?: CalloutProps;
   /** Språk vist i komponent. Default er norsk bokmål. */
-  language?: 'nb' | 'nn' | 'en';
+  language?: 'nb' | 'nn' | 'en' | 'se';
   /** Brukerspesifisert event for callout **/
   onCalloutToggle?: (
     oldCalloutState: calloutState,

@@ -101,4 +101,37 @@ export const languages = {
     'tablerow.editable.title': 'Edit row',
     'tablerow.expandable.title': 'More information',
   },
+  se_NO: {
+    'datepicker.ariaLabel': 'Kaleandar',
+    'datepicker.goToToday': 'Otne',
+    'datepicker.invalidInputErrorMessage':
+      'Dáhton ii leat gustovaš. (format: {{DEFAULT_DATE_FORMAT}})',
+    'datepicker.isOutOfBoundsErrorMessage':
+      'Dáhton ii leat gustovaš áigodagas.',
+    'datepicker.isRequiredErrorMessage': 'Fertet deavdit dáhtona',
+    'datepicker.nextMonthAriaLabel': 'Boahtte mánnu',
+    'datepicker.nextYearAriaLabel': 'Boahtte jahki',
+    'datepicker.prevMonthAriaLabel': 'Ovddit mánnu',
+    'datepicker.prevYearAriaLabel': 'Ovddit jahki',
+    'fileuploader.accepted_file_formats': 'Dohkkehuvvon fiilaformáhtat:',
+    'fileuploader.add.label': 'Lasit fiilla/fiillaid',
+    'fileuploader.delete.ariaLabel': 'Sihko fiilla',
+    'fileuploader.error.delete.403':
+      'Dus eai leat vuoigatvuođat sihkkot fiillaid.',
+    'fileuploader.error.delete.general': 'It sáhtán sihkkot fiilla',
+    'fileuploader.error.file_format': 'Fiilaformáhta ii leat dohkkehuvvon',
+    'fileuploader.error.file_size':
+      'Mii eat nagot vuostáiváldit fiilla. Fiillat eai sáhte leat stuorát go {{filstoerrelsegrense}} Mb. Sáhtát geahččalit juohkit fiilla eanet osiide, dahje geavahit formáhta mii geavaha unnit saji. ',
+    'fileuploader.error.upload.403':
+      'Dus ii leat vuoigatvuohta lasihit fiillaid.',
+    'fileuploader.error.upload.general': 'It sáhtán lasihit fiilla',
+    'fileuploader.uploaded.sr_heading': 'Lasihuvvon:',
+    'searchfield.sr.focus': 'Geavat vulos/bajás boaluid válljet evttohusaid',
+    'searchfield.sr.results': '{{ant}} evttohus/evttohusat.',
+    'table.sortable': 'sorterbar',
+    'table.sorted_ascending': 'sortert stigande',
+    'table.sorted_descending': 'sortert søkkande',
+    'tablerow.editable.title': 'Redigere ráiddu',
+    'tablerow.expandable.title': 'Eanet dieđut',
+  },
 };

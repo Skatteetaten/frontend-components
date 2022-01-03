@@ -4,6 +4,7 @@ export enum Language {
   en = 'en',
   nb = 'nb',
   nn = 'nn',
+  se = 'se',
 }
 
 export interface TableProps<P> extends React.HTMLAttributes<HTMLDivElement> {
