@@ -1,7 +1,7 @@
 import { mergeStyleSets } from '@fluentui/merge-styles';
 
 import designtokenSpacing from '../utils/designtokens/_spacing.json';
-import designtokenFonts from '../utils/designtokens/_fontSizes.json';
+import designtokenFontSizes from '../utils/designtokens/_fontSizes.json';
 import designtokenColors from '../utils/designtokens/_colors.json';
 import designtokenBreakpoints from '../utils/designtokens/_breakpoints.json';
 
@@ -91,7 +91,7 @@ export const getClassNames = (props) => {
       left: '0.25em',
     },
     label: {
-      fontSize: designtokenFonts['ske-font-size-icon-s'],
+      fontSize: designtokenFontSizes['ske-font-size-icon-s'],
       fontWeight: 700,
       textAlign: 'center',
       marginTop: '40px',
