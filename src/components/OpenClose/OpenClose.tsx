@@ -61,7 +61,11 @@ export const OpenClose: React.FC<OpenCloseProps> = (props) => {
           }
         >
           {headingLevel && title ? (
-            <Heading text={title} level={headingLevel} />
+            <Heading
+              text={title}
+              level={headingLevel}
+              className="styledHeading"
+            />
           ) : (
             title
           )}

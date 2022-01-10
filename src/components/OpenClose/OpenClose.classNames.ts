@@ -40,7 +40,7 @@ export function getClassNames(props) {
         '&:focus': {
           outline: 'none',
         },
-        '& h1, h2, h3, h4, h5, h6': {
+        '& h1.styledHeading, h2.styledHeading, h3.styledHeading, h4.styledHeading, h5.styledHeading, h6.styledHeading': {
           fontSize: compact
             ? designtokenFonts['ske-font-size-s']
             : designtokenFonts['ske-font-size-l'],
