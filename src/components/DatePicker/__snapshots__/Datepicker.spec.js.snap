@@ -98,7 +98,6 @@ exports[`DatePicker komponent matcher snapshot 1`] = `
       <div
         className=
             ms-TextField
-            is-required
             {
               -moz-osx-font-smoothing: grayscale;
               -webkit-font-smoothing: antialiased;
@@ -158,17 +157,6 @@ exports[`DatePicker komponent matcher snapshot 1`] = `
                   -ms-high-contrast-adjust: none;
                   border-color: Highlight;
                   forced-color-adjust: none;
-                }
-                &:before {
-                  color: #a4262c;
-                  content: '*';
-                  position: absolute;
-                  right: -10px;
-                  top: -5px;
-                }
-                @media screen and (-ms-high-contrast: active), (forced-colors: active){&:before {
-                  color: WindowText;
-                  right: -14px;
                 }
           >
             <input
@@ -264,7 +252,7 @@ exports[`DatePicker komponent matcher snapshot 1`] = `
               onInput={[Function]}
               onKeyDown={[Function]}
               readOnly={false}
-              required={true}
+              required={false}
               role="combobox"
               type="text"
               value=""
