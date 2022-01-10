@@ -488,9 +488,9 @@ exports[`Accordion komponent Sender videre html atributter 1`] = `
                                       top: 50px;
                                       width: 2px;
                                     }
-                                    @media (max-width: 640px){& {
-                                      left: 14px;
-                                      top: 40px;
+                                    @media (min-width: 640px){& {
+                                      left: 50px;
+                                      top: 16px;
                                     },
                                   "stepNumber": 
 
@@ -1025,9 +1025,9 @@ exports[`Accordion komponent matcher snapshot 1`] = `
                                       top: 50px;
                                       width: 2px;
                                     }
-                                    @media (max-width: 640px){& {
-                                      left: 14px;
-                                      top: 40px;
+                                    @media (min-width: 640px){& {
+                                      left: 50px;
+                                      top: 16px;
                                     },
                                   "stepNumber": 
 

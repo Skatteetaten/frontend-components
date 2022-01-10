@@ -71,9 +71,9 @@ export function getClassNames() {
       left: 16,
       height: '100%',
       selectors: {
-        [`@media (max-width: ${designtokenBreakpoints['ske-breakpoint-md']})`]: {
-          left: 14,
-          top: 40,
+        [`@media (min-width: ${designtokenBreakpoints['ske-breakpoint-md']})`]: {
+          left: 50,
+          top: 16,
         },
       },
     },
