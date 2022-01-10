@@ -29,7 +29,7 @@ function getTypeColor(props: ButtonProps): object {
         ...sizeNormal,
         selectors: {
           [`@media  only screen and (max-width: ${designtokenBreakpoints['ske-breakpoint-md']})`]: {
-            width: props.mobileFullWidth ? '100%' : undefined,
+            width: props.mobileFullWidth ? '100%' : 'auto',
           },
         },
       };
@@ -70,7 +70,7 @@ function getTypeColor(props: ButtonProps): object {
 
         selectors: {
           [`@media  only screen and (max-width: ${designtokenBreakpoints['ske-breakpoint-md']})`]: {
-            width: props.mobileFullWidth ? '100%' : undefined,
+            width: props.mobileFullWidth ? '100%' : 'auto',
           },
         },
       };
@@ -84,7 +84,7 @@ function getTypeColor(props: ButtonProps): object {
         ...sizeNormal,
         selectors: {
           [`@media  only screen and (max-width: ${designtokenBreakpoints['ske-breakpoint-md']})`]: {
-            width: props.mobileFullWidth ? '100%' : undefined,
+            width: props.mobileFullWidth ? '100%' : 'auto',
           },
           '.ms-Button-textContainer': {
             textDecoration: 'underline',
@@ -101,7 +101,7 @@ function getTypeColor(props: ButtonProps): object {
         ...sizeNormal,
         selectors: {
           [`@media  only screen and (max-width: ${designtokenBreakpoints['ske-breakpoint-md']})`]: {
-            width: props.mobileFullWidth ? '100%' : undefined,
+            width: props.mobileFullWidth ? '100%' : 'auto',
           },
         },
       };
