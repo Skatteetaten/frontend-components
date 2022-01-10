@@ -1,3 +1,7 @@
+### **v.4.2.2 - x.01.2022**
+
+- Updated Axios to fix vulnerabilities.
+
 ### **v.4.2.1 - 30.11.2021**
 
 - FileUploader: now supports UPPERCASE file types.
