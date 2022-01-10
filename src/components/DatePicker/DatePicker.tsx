@@ -159,7 +159,7 @@ export const DatePicker: React.FC<DatePickerProps> = (
           getClassNames({ errorMessage, readonlyMode: readOnly, ...rest }),
           className
         )}
-        isRequired={true}
+        isRequired={isRequired}
         componentRef={(ref) => {
           datePickerRef.current = ref as IDatePicker;
         }}
