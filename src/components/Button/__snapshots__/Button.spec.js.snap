@@ -86,6 +86,9 @@ exports[`Button komponent  matcher snapshot 1`] = `
         transition: 0.2s;
         vertical-align: top;
       }
+      @media  only screen and (max-width: 640px){&.ms-Button {
+        width: auto;
+      }
       &.ms-Button:hover {
         background: #cde1f9;
         border-color: #1362ae;
