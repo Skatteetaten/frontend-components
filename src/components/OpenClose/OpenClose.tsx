@@ -8,7 +8,7 @@ import { OpenCloseProps } from './OpenClose.types';
 export const OpenClose: React.FC<OpenCloseProps> = (props) => {
   const {
     title,
-    className,
+    customClassNames,
     headingLevel,
     iconRight,
     onClick,
@@ -38,31 +38,59 @@ export const OpenClose: React.FC<OpenCloseProps> = (props) => {
   const styles = getClassNames(props);
 
   return (
-    <div className={className}>
+    <div className={customClassNames?.wrapper}>
       <button
         className={
           isContentOpen
-            ? classnames(styles.toggleButton, styles.toggleButtonOpen)
-            : styles.toggleButton
+            ? classnames(
+                styles.toggleButton,
+                styles.toggleButtonOpen,
+                customClassNames?.button
+              )
+            : classnames(styles.toggleButton, customClassNames?.button)
         }
         aria-expanded={isContentOpen}
         onClick={clickHandler}
       >
         {!iconRight && <Icon iconName={'ChevronDown'} />}
-        {headingLevel && title ? (
-          <Heading text={title} level={headingLevel} />
-        ) : (
-          title
-        )}
+        <span
+          className={
+            iconRight
+              ? styles.toggleTitleSpan
+              : classnames(styles.toggleTitleSpan, styles.toggleTitleLeft)
+          }
+        >
+          {headingLevel && title ? (
+            <Heading
+              text={title}
+              level={headingLevel}
+              className="styledHeading"
+            />
+          ) : (
+            title
+          )}
+        </span>
         {iconRight && <Icon iconName={'ChevronDown'} />}
       </button>
       {isContentOpen && (
         <div
-          className={!iconRight ? styles.content : styles.contentWhenIconRight}
+          className={
+            !iconRight
+              ? classnames(styles.content, customClassNames?.content)
+              : classnames(
+                  styles.contentWhenIconRight,
+                  customClassNames?.content
+                )
+          }
         >
           {children}
         </div>
       )}
     </div>
   );
+};
+
+OpenClose.defaultProps = {
+  underline: false,
+  iconRight: false,
 };
