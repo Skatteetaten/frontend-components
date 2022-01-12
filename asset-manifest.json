@@ -1,9 +1,9 @@
 {
   "files": {
     "main.css": "/static/css/main.ac061772.chunk.css",
-    "main.js": "/build/main.de72daef.js",
+    "main.js": "/build/main.d262bfa5.js",
     "runtime-main.js": "/build/bundle.3527ec54.js",
-    "build/2.0229e2da.js": "/build/2.0229e2da.js",
+    "build/2.8feb2a7e.js": "/build/2.8feb2a7e.js",
     "assets/png/Byggeklosser.png": "/assets/png/Byggeklosser.png",
     "assets/png/Byggeklosser_skisse.png": "/assets/png/Byggeklosser_skisse.png",
     "assets/png/designer.png": "/assets/png/designer.png",
@@ -27,7 +27,7 @@
     "assets/svg/ske-logo-intern-kopi.svg": "/assets/svg/ske-logo-intern-kopi.svg",
     "assets/svg/ske-logo-intern.svg": "/assets/svg/ske-logo-intern.svg",
     "assets/svg/ske-logo.svg": "/assets/svg/ske-logo.svg",
-    "build/2.0229e2da.js.LICENSE.txt": "/build/2.0229e2da.js.LICENSE.txt",
+    "build/2.8feb2a7e.js.LICENSE.txt": "/build/2.8feb2a7e.js.LICENSE.txt",
     "favicon.ico": "/favicon.ico",
     "index.html": "/index.html",
     "manifest.json": "/manifest.json",
@@ -56,8 +56,8 @@
   },
   "entrypoints": [
     "build/bundle.3527ec54.js",
-    "build/2.0229e2da.js",
+    "build/2.8feb2a7e.js",
     "static/css/main.ac061772.chunk.css",
-    "build/main.de72daef.js"
+    "build/main.d262bfa5.js"
   ]
 }
