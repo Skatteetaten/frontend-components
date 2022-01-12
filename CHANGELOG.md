@@ -1,4 +1,4 @@
-### **v.4.2.2 - x.01.2022**
+### **v.4.2.2 - 12.01.2022**
 
 - Updated Axios to fix vulnerabilities.
 
