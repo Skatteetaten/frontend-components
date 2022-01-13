@@ -215,6 +215,18 @@ const iconGroup = {
       name: 'Deploy',
       usage: 'Distribuere (deploye)',
     },
+    {
+      name: 'ListAdd',
+      usage: 'Legg til rad',
+    },
+    {
+      name: 'ListRemove',
+      usage: 'Fjern rad',
+    },
+    {
+      name: 'ListReorder',
+      usage: 'Endre rekkefølge (rad)',
+    },
   ],
   tags: [
     {
