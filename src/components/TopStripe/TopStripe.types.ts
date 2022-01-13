@@ -1,3 +1,4 @@
+import { LinkProps } from '../Link/Link.types';
 import * as React from 'react';
 
 export interface TopStripeProps {
@@ -9,6 +10,11 @@ export interface TopStripeProps {
   setOpen?: any;
   /** @ignore */
   closeMenu?: () => void;
+  /**
+   * Brukes for å justere maksbredden til elementene i toppstripen for skjermstørrelser fra 1024px og oppover.
+   * @default '100%''
+   */
+  contentWidth?: string;
 }
 
 export interface TopStripeButtonProps
@@ -19,4 +25,8 @@ export interface TopStripeButtonProps
   className?: string;
   ariaLabel?: string;
   text?: string;
+}
+
+export interface TopStripeLinkProps extends LinkProps {
+  showOnMobile?: boolean;
 }

@@ -1,8 +1,12 @@
 import * as React from 'react';
 import { getClassNames } from './TopStripe.classNames';
 import classnames from 'classnames';
-import { TopStripeButton } from './TopStripeButton';
 import { TopStripeProps } from './TopStripe.types';
+import { TopStripeMenu } from './TopStripeMenu/TopStripeMenu';
+import { TopStripeButton } from './TopStripeButton/TopStripeButton';
+import { TopStripeLink } from './TopStripeLink';
+import { LanguagePicker } from './LanguagePicker/LanguagePicker';
+import { TopStripeUser } from './TopStripeUser';
 
 export const TopStripeContext = React.createContext<TopStripeProps>({
   open: -1,
@@ -12,18 +16,25 @@ export const TopStripeContext = React.createContext<TopStripeProps>({
  * visibleName TopStripe (Toppstripe)
  */
 export const TopStripe: React.FC<TopStripeProps> = (props) => {
+  const topStripeElements = [
+    TopStripeMenu,
+    TopStripeButton,
+    TopStripeLink,
+    TopStripeUser,
+    LanguagePicker,
+  ];
   const notOpen = -1;
   const topRef = React.createRef<HTMLUListElement>();
   const [open, setOpenIndex] = React.useState(notOpen);
-  const setOpen = (num) => {
+  const setOpen = (num: number) => {
     if (open === num) {
       setOpenIndex(notOpen);
     } else {
       setOpenIndex(num);
     }
   };
-  const styles = getClassNames();
-  const { children, className, ...rest } = props;
+  const { children, className, contentWidth, ...rest } = props;
+  const styles = getClassNames(contentWidth);
   const showOverlay = open !== notOpen ? styles.overlayShow : '';
 
   const handleClickOutside = (e: any) => {
@@ -57,37 +68,42 @@ export const TopStripe: React.FC<TopStripeProps> = (props) => {
   });
 
   return (
-    <>
+    <div className={styles.topStripe}>
       <div className={classnames(styles.overlay, showOverlay)} />
-      <TopStripeContext.Provider
-        value={{
-          open: open,
-          setOpen: setOpen,
-          closeMenu: () => setOpenIndex(notOpen),
-        }}
-      >
-        <ul
-          ref={topRef}
-          className={classnames(styles.topStripeContainer, className)}
-          {...rest}
+      <div className={styles.background}>
+        <TopStripeContext.Provider
+          value={{
+            open: open,
+            setOpen: setOpen,
+            closeMenu: () => setOpenIndex(notOpen),
+          }}
         >
-          {React.Children.map(children, (child: any, index) => {
-            if (child && child.type === TopStripeButton) {
-              return (
-                <li>
+          <ul
+            ref={topRef}
+            className={classnames(styles.topStripeContainer, className)}
+            {...rest}
+          >
+            {React.Children.map(children, (child: any, index) =>
+              child ? (
+                <li
+                  className={classnames(
+                    child.type === TopStripeUser ? styles.loggedInUser : '',
+                    topStripeElements.includes(child.type) &&
+                      !child.props.showOnMobile
+                      ? styles.hideOnMobile
+                      : '',
+                    styles.topStripeElement
+                  )}
+                >
                   {React.cloneElement(child, {
-                    topStripeStyle: styles.plainButton,
+                    index,
                   })}
                 </li>
-              );
-            } else {
-              return child ? (
-                <li>{React.cloneElement(child, { index })}</li>
-              ) : null;
-            }
-          })}
-        </ul>
-      </TopStripeContext.Provider>
-    </>
+              ) : null
+            )}
+          </ul>
+        </TopStripeContext.Provider>
+      </div>
+    </div>
   );
 };

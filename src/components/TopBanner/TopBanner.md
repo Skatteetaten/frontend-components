@@ -24,9 +24,9 @@ import { Icon } from '@skatteetaten/frontend-components/Icon';
 import { Link } from '@skatteetaten/frontend-components/Link';
 import { TopBanner } from '@skatteetaten/frontend-components/TopBanner';
 import { TopStripe } from '@skatteetaten/frontend-components/TopStripe';
-import { LanguagePicker } from '@skatteetaten/frontend-components/TopStripe/LanguagePicker';
-import { TopStripeButton } from '@skatteetaten/frontend-components/TopStripe/TopStripeButton';
-import { TopStripeMenu } from '@skatteetaten/frontend-components/TopStripe/TopStripeMenu';
+import { LanguagePicker } from '@skatteetaten/frontend-components/TopStripe/LanguagePicker/LanguagePicker';
+import { TopStripeButton } from '@skatteetaten/frontend-components/TopStripe/TopStripeButton/TopStripeButton';
+import { TopStripeMenu } from '@skatteetaten/frontend-components/TopStripe/TopStripeMenu/TopStripeMenu';
 
 const [language, setLanguage] = useState('nb');
 

@@ -1,7 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`TopStripe komponent matcher snapshot  1`] = `
-Array [
+<div
+  className=
+
+      {
+        position: relative;
+      }
+>
   <div
     className=
 
@@ -17,81 +23,61 @@ Array [
           transition: 0.3s ease-out;
           z-index: 100;
         }
-  />,
-  <ul
+  />
+  <div
     className=
 
         {
-          align-items: center;
           background-color: #1a1a1a;
-          color: #ffffff;
-          display: flex;
-          font-size: 0.875rem;
-          font-weight: 400;
-          justify-content: flex-end;
-          margin-bottom: 0px;
-          margin-left: 0px;
-          margin-right: 0px;
-          margin-top: 0px;
-          min-height: 40px;
-          padding-bottom: 0;
-          padding-left: 8px;
-          padding-right: 8px;
-          padding-top: 0;
           position: relative;
-          z-index: 150;
+          z-index: 125;
         }
-        & li {
-          list-style-type: none;
-          padding-bottom: 8px;
-          padding-left: 16px;
-          padding-right: 16px;
-          padding-top: 6px;
-        }
-        & a {
-          border-color: #b2b2b2;
-          border-width: 2px;
-          color: #ffffff;
-          font-weight: 400;
-        }
-        & i {
-          border-color: #b2b2b2;
-          border-width: 2px;
-          color: #ffffff;
-          font-weight: 400;
-        }
-        & a:hover {
-          border-color: #ffffff;
-          color: #ffffff;
-        }
-        & a:hover i {
-          border-color: #ffffff;
-          color: #ffffff;
-        }
-        & a:focus {
-          background-color: #ffffff;
-          border-color: #4d4d4d;
-          color: #1a1a1a;
-          outline: none;
-        }
-        & a:focus i {
-          background-color: #ffffff;
-          border-color: #4d4d4d;
-          color: #1a1a1a;
-          outline: none;
-        }
-        & a:active {
-          background-color: #ffffff;
-          color: #1a1a1a;
-        }
-        & a:active i {
-          background-color: #ffffff;
-          color: #1a1a1a;
-        }
-        @media (min-width: 900px){& {
-          font-size: 0.875rem;
-          min-height: 40px;
-        }
-  />,
-]
+  >
+    <ul
+      className=
+
+          {
+            align-items: center;
+            background-color: #1a1a1a;
+            color: #ffffff;
+            display: flex;
+            flex-wrap: wrap;
+            font-size: 0.875rem;
+            justify-content: space-between;
+            margin-bottom: 0;
+            margin-left: 0.5rem;
+            margin-right: 0.5rem;
+            margin-top: 0;
+            padding-bottom: 0px;
+            padding-left: 0px;
+            padding-right: 0px;
+            padding-top: 0px;
+            position: relative;
+            z-index: 150;
+          }
+          & li {
+            list-style-type: none;
+            position: relative;
+          }
+          & a {
+            border: none;
+            color: #ffffff;
+            font-weight: 400;
+            text-decoration: underline;
+          }
+          & a:active {
+            color: #1a1a1a;
+          }
+          & a:active i {
+            color: #1a1a1a;
+          }
+          @media (min-width: 480px){& {
+            justify-content: flex-end;
+          }
+          @media (min-width: 1024px){& {
+            max-width: 100%;
+          }
+    />
+  </div>
+</div>
 `;

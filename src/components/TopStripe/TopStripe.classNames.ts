@@ -1,10 +1,19 @@
 import { mergeStyleSets } from '@fluentui/merge-styles';
-import { getTheme } from '@fluentui/react/lib/Styling';
-import { FontSizes, FontWeights, PaletteProps } from '../utils';
+import designtokenColors from '../utils/designtokens/_colors.json';
+import designtokenFontSizes from '../utils/designtokens/_fontSizes.json';
+import designtokenSpacing from '../utils/designtokens/_spacing.json';
+import designtokenBreakpoints from '../utils/designtokens/_breakpoints.json';
 
-export const getClassNames = () => {
-  const palette = getTheme().palette as PaletteProps;
+export const getClassNames = (contentWidth = '100%') => {
   return mergeStyleSets({
+    topStripe: {
+      position: 'relative',
+    },
+    background: {
+      position: 'relative',
+      backgroundColor: designtokenColors['ske-color-black-100'],
+      zIndex: 125,
+    },
     overlay: {
       zIndex: 100,
       position: 'fixed',
@@ -20,206 +29,84 @@ export const getClassNames = () => {
     overlayShow: {
       display: 'block',
     },
-    plainButton: {
-      fontSize: FontSizes.small,
-      background: 'inherit',
-      border: 'inherit',
-      borderWidth: 2,
-      borderBottom: '2px solid ' + palette.skeColor.lightGrey,
-      color: palette.skeColor.white,
-      textDecoration: 'none !important',
-      transition: 'none',
-      paddingLeft: 0,
-      paddingRight: 0,
-      paddingTop: 1,
-      paddingBottom: 0,
-      marginRight: '10px',
-      selectors: {
-        ':hover': {
-          cursor: 'pointer',
-          borderBottom: '2px solid rgba(255, 255, 255, 1)',
-        },
-        ':focus': {
-          backgroundColor: palette.skeColor.white,
-          color: palette.skeColor.blackAlt,
-          transition: 'none',
-          outline: 'none',
-        },
-      },
-    },
-    chevronIcon: {
-      position: 'absolute',
-      fontSize: '22px',
-      padding: '2px 2px',
-    },
     topStripeContainer: {
-      margin: 0,
+      margin: `0 ${designtokenSpacing['ske-spacing-md']}`,
       zIndex: 150,
       position: 'relative',
       display: 'flex',
-      justifyContent: 'flex-end',
+      justifyContent: 'space-between',
+      flexWrap: 'wrap',
       alignItems: 'center',
-      backgroundColor: palette.skeColor.blackAlt,
-      color: palette.skeColor.white,
-      fontSize: FontSizes.small,
-      minHeight: '40px',
-      fontWeight: FontWeights.regular,
-      padding: '0 8px',
+      backgroundColor: designtokenColors['ske-color-black-100'],
+      color: designtokenColors['ske-color-white-100'],
+      fontSize: designtokenFontSizes['ske-font-size-s'],
+      padding: 0,
       selectors: {
-        li: { listStyleType: 'none', padding: '6px 16px 8px 16px' },
-        'a,i': {
-          fontWeight: FontWeights.regular,
-          borderWidth: 2,
-          //padding: '0px 6px 0px 6px',
-          color: palette.skeColor.white,
-          borderColor: palette.skeColor.lightGrey,
+        li: {
+          listStyleType: 'none',
+          position: 'relative',
         },
-        'a:hover,a:hover i': {
-          color: palette.skeColor.white,
-          borderColor: palette.skeColor.white,
-        },
-        'a:focus, a:focus i': {
-          color: palette.skeColor.blackAlt,
-          borderColor: palette.skeColor.darkGrey,
-          backgroundColor: palette.skeColor.white,
-          outline: 'none',
-        },
-        'a:active,a:active i': {
-          color: palette.skeColor.blackAlt,
-          backgroundColor: palette.skeColor.white,
-        },
-        '@media (min-width: 900px)': {
-          minHeight: '40px',
-          fontSize: FontSizes.small,
-        },
-      },
-    },
-    topStripeButton: {
-      textAlign: 'left',
-      lineHeight: '20px',
-    },
-    menuButton: {
-      selectors: {
-        '.ms-Button-label': {
-          margin: '2px 0 0 0',
-          padding: 0,
-          fontSize: FontSizes.small,
-          color: palette.skeColor.white,
-          textDecoration: 'none !important',
-          borderBottom: '2px solid rgba(255, 255, 255, 0.7)',
-          transition: 'border-bottom 0.3s',
-          borderLeftWidth: 0,
-          borderRightWidth: 0,
-        },
-        '&.ms-Button--action:hover .ms-Button-label': {
-          color: palette.skeColor.white,
-          borderBottom: '2px solid rgba(255, 255, 255, 1)',
-        },
-        '&.ms-Button--action > .ms-Button-flexContainer > i': {
-          color: palette.skeColor.white,
-          transition: 'none',
-        },
-        '&.ms-Button--action:hover > .ms-Button-flexContainer > i': {
-          color: palette.skeColor.white,
-          transition: 'none',
-        },
-      },
-    },
-    menuButtonActive: {
-      borderRadius: 0,
-      backgroundColor: palette.skeColor.white,
-      selectors: {
-        '.ms-Button-label': {
-          fontSize: FontSizes.small,
-          color: palette.skeColor.blackAlt,
-          textDecoration: 'none !important',
-          padding: '1px 0px 0 0px',
-          borderBottom: '2px solid rgba(255, 255, 255, 0.7)',
-          transition: 'border-bottom 0.3s',
-        },
-        '&.ms-Button--action:hover .ms-Button-label': {
-          color: palette.skeColor.blackAlt,
-          borderBottom: '2px solid rgba(255, 255, 255, 1)',
-        },
-        '&.ms-Button--action > .ms-Button-flexContainer > i': {
-          color: palette.skeColor.blackAlt,
-          transition: 'none',
-        },
-        '&.ms-Button--action:hover > .ms-Button-flexContainer > i': {
-          color: palette.skeColor.blackAlt,
-          transition: 'none',
-        },
-      },
-    },
-    dropdownContainer: {
-      minWidth: '10rem',
-      position: 'absolute',
-      backgroundColor: palette.skeColor.blackAlt,
-      color: palette.skeColor.white,
-      fontSize: FontSizes.small,
-      fontWeight: FontWeights.regular,
-      paddingInlineStart: 4,
-      paddingInlineEnd: 4,
-      margin: 0,
-      selectors: {
-        'li:hover:not(:last-child)': {
-          backgroundColor: 'white',
-          color: 'black',
-        },
-        'li:hover a': {
-          color: 'black',
-        },
-        'a,i': {
-          borderWidth: 0,
-        },
-        '@media (max-width: 900px)': {
-          minWidth: '100%',
-          left: 0,
-          padding: 0,
-          textAlign: 'center',
-        },
-      },
-    },
-    dropDownLink: {
-      position: 'relative',
-      selectors: {
-        'i, a, button': {
-          fontSize: FontSizes.small,
-          background: 'none',
+        a: {
+          fontWeight: designtokenFontSizes['ske-font-weight-regular'],
+          color: designtokenColors['ske-color-white-100'],
           border: 'none',
-          color: 'inherit',
-          textDecoration: 'none !important',
-          transition: 'none',
+          textDecoration: 'underline',
+        },
+        'a:active, a:active i': {
+          color: designtokenColors['ske-color-black-100'],
+        },
+        [`@media (min-width: ${designtokenBreakpoints['ske-breakpoint-sm']})`]: {
+          justifyContent: 'flex-end',
+        },
+        [`@media (min-width: ${designtokenBreakpoints['ske-breakpoint-lg']})`]: {
+          maxWidth: contentWidth,
         },
       },
     },
-    icon: {
-      position: 'absolute',
-      top: 14,
-      left: 4,
-    },
-    menuIcon: {
-      fontSize: '16px',
-      verticalAlign: 'middle',
-    },
-    menuCloseButton: {
+    loggedInUser: {
+      order: '-1',
       width: '100%',
-      display: 'block',
-      margin: '0 auto',
-
       selectors: {
-        '.ms-Button-flexContainer': {
-          justifyContent: 'center',
+        [`@media (min-width: ${designtokenBreakpoints['ske-breakpoint-sm']})`]: {
+          order: 0,
+          width: 'auto',
         },
-        '.ms-Button-flexContainer:hover': {
-          backgroundColor: palette.skeColor.white,
-          color: palette.skeColor.blackAlt + '!important',
+      },
+    },
+    hideOnMobile: {
+      display: 'none',
+      selectors: {
+        [`@media (min-width: ${designtokenBreakpoints['ske-breakpoint-sm']})`]: {
+          display: 'block',
         },
-        '.ms-Button-flexContainer:hover i': {
-          color: palette.skeColor.blackAlt + '!important',
+      },
+    },
+    topStripeElement: {
+      maxHeight: '40px',
+      selectors: {
+        a: {
+          display: 'block',
+          padding: '12px 8px',
+          borderBottom: 'none !important',
         },
-        i: {
-          color: palette.skeColor.white + '!important',
+        'a:focus, a:hover, > span:hover > a': {
+          color: designtokenColors['ske-color-black-100'],
+          backgroundColor: designtokenColors['ske-color-white-100'],
+        },
+        [`@media (min-width: ${designtokenBreakpoints['ske-breakpoint-sm']})`]: {
+          marginLeft: designtokenSpacing['ske-spacing-md'],
+        },
+      },
+    },
+    topStripeUser: {
+      alignItems: 'center',
+      display: 'flex',
+      flexDirection: 'row',
+      padding: designtokenSpacing['ske-spacing-md'],
+      selectors: {
+        '> i': {
+          fontSize: '20px',
+          alignSelf: 'start',
         },
       },
     },

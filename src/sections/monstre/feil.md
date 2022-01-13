@@ -12,8 +12,8 @@ import { Link } from '@skatteetaten/frontend-components/Link';
 import { MessageBar } from '@skatteetaten/frontend-components/MessageBar';
 import { TextField } from '@skatteetaten/frontend-components/TextField';
 import { TopStripe } from '@skatteetaten/frontend-components/TopStripe';
-import { TopStripeMenu } from '@skatteetaten/frontend-components/TopStripe/TopStripeMenu';
-import { TopStripeButton } from '@skatteetaten/frontend-components/TopStripe/TopStripeButton';
+import { TopStripeMenu } from '@skatteetaten/frontend-components/TopStripe/TopStripeMenu/TopStripeMenu';
+import { TopStripeButton } from '@skatteetaten/frontend-components/TopStripe/TopStripeButton/TopStripeButton';
 
 <div>
   <Card

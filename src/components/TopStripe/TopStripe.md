@@ -9,9 +9,10 @@ import { useState } from 'react';
 import { Link } from '@skatteetaten/frontend-components/Link';
 import { TopBanner } from '@skatteetaten/frontend-components/TopBanner';
 import { TopStripe } from '@skatteetaten/frontend-components/TopStripe';
-import { LanguagePicker } from '@skatteetaten/frontend-components/TopStripe/LanguagePicker';
-import { TopStripeMenu } from '@skatteetaten/frontend-components/TopStripe/TopStripeMenu';
-import { TopStripeButton } from '@skatteetaten/frontend-components/TopStripe/TopStripeButton';
+import { LanguagePicker } from '@skatteetaten/frontend-components/TopStripe/LanguagePicker/LanguagePicker';
+import { TopStripeMenu } from '@skatteetaten/frontend-components/TopStripe/TopStripeMenu/TopStripeMenu';
+import { TopStripeButton } from '@skatteetaten/frontend-components/TopStripe/TopStripeButton/TopStripeButton';
+import { TopStripeLink } from '@skatteetaten/frontend-components/TopStripe/TopStripeLink';
 
 const [language, setLanguage] = useState('nb');
 
@@ -22,23 +23,28 @@ const [language, setLanguage] = useState('nb');
     homeText={'Tilbake til skatteetaten.no'}
     topStripe={
       <TopStripe>
-        <Link
+        <TopStripeLink
           path={'#main-content-id'}
           text={'Hopp til hovedinnhold'}
           skipLink
         />
-        <Link
+        <TopStripeLink
           path={'https://www.skatteetaten.no/kontakt/'}
           text={'Kontakt oss'}
-          placement="before"
         />
         <TopStripeMenu
-          closeMenuAriaLabel="Lukk endre skriftstørrelse"
+          closeMenuAriaLabel={'Lukk endre skriftstørrelse'}
           title={'Endre skriftstørrelse'}
-          showOnMobile={false}
           contentIsMenu={false}
         >
-          <div style={{ fontSize: '24px', marginTop: '8px' }}>
+          <div
+            style={{
+              width: '300px',
+              fontSize: '24px',
+              textAlign: 'center',
+              marginTop: '8px',
+            }}
+          >
             Hold Ctrl-tasten nede (Cmd-tasten på Mac). Trykk på + for å
             forstørre eller - for å forminske.
           </div>
@@ -46,11 +52,14 @@ const [language, setLanguage] = useState('nb');
         <LanguagePicker
           selectedLanguage={language}
           setLanguage={setLanguage}
-          showOnMobile={true}
-          showSami={true}
+          showOnMobile
+          showSami
         />
-
-        <Link path={'#link'} text={'Logg inn'} placement="before" />
+        <TopStripeButton
+          text={'Logg inn'}
+          onClick={() => console.log('logger inn')}
+          showOnMobile
+        />
       </TopStripe>
     }
   />
@@ -67,10 +76,11 @@ import { Icon } from '@skatteetaten/frontend-components/Icon';
 import { Link } from '@skatteetaten/frontend-components/Link';
 import { TopBanner } from '@skatteetaten/frontend-components/TopBanner';
 import { TopStripe } from '@skatteetaten/frontend-components/TopStripe';
-import { LanguagePicker } from '@skatteetaten/frontend-components/TopStripe/LanguagePicker';
-import { TopStripeMenu } from '@skatteetaten/frontend-components/TopStripe/TopStripeMenu';
-import { TopStripeButton } from '@skatteetaten/frontend-components/TopStripe/TopStripeButton';
-
+import { LanguagePicker } from '@skatteetaten/frontend-components/TopStripe/LanguagePicker/LanguagePicker';
+import { TopStripeMenu } from '@skatteetaten/frontend-components/TopStripe/TopStripeMenu/TopStripeMenu';
+import { TopStripeButton } from '@skatteetaten/frontend-components/TopStripe/TopStripeButton/TopStripeButton';
+import { TopStripeLink } from '@skatteetaten/frontend-components/TopStripe/TopStripeLink';
+import { TopStripeUser } from '@skatteetaten/frontend-components/TopStripe/TopStripeUser';
 const [language, setLanguage] = useState('nb');
 
 <div>
@@ -80,23 +90,28 @@ const [language, setLanguage] = useState('nb');
     homeText={'Tilbake til skatteetaten.no'}
     topStripe={
       <TopStripe>
-        <Link
+        <TopStripeLink
           path={'#main-content-id'}
           text={'Hopp til hovedinnhold'}
           skipLink
         />
-        <Link
+        <TopStripeLink
           path={'https://www.skatteetaten.no/kontakt/'}
           text={'Kontakt oss'}
-          placement="before"
         />
-
         <TopStripeMenu
-          showOnMobile={false}
-          closeMenuAriaLabel="Lukk endre skriftstørrelse"
+          contentIsMenu={false}
+          closeMenuAriaLabel={'Lukk endre skriftstørrelse'}
           title={'Endre skriftstørrelse'}
         >
-          <div style={{ fontSize: '1.5rem', marginTop: '8px' }}>
+          <div
+            style={{
+              width: '300px',
+              fontSize: '24px',
+              textAlign: 'center',
+              marginTop: '8px',
+            }}
+          >
             Hold Ctrl-tasten nede (Cmd-tasten på Mac). Trykk på + for å
             forstørre eller - for å forminske.
           </div>
@@ -104,19 +119,15 @@ const [language, setLanguage] = useState('nb');
         <LanguagePicker
           selectedLanguage={language}
           setLanguage={setLanguage}
-          showOnMobile={true}
-          showSami={true}
+          showOnMobile
+          showSami
         />
-
-        <span>
-          <Icon
-            iconName="person"
-            style={{ fontSize: '20px', verticalAlign: 'sub' }}
-          />
-          Ola Normann
-        </span>
-
-        <Link path={'#topstripe'} text={'Logg ut'} placement="before" />
+        <TopStripeUser name={'Ola Nordmann'} showOnMobile />
+        <TopStripeButton
+          text={'Logg ut'}
+          onClick={() => console.log('logger ut')}
+          showOnMobile
+        />
       </TopStripe>
     }
   />
@@ -133,13 +144,14 @@ import { Icon } from '@skatteetaten/frontend-components/Icon';
 import { Link } from '@skatteetaten/frontend-components/Link';
 import { TopBanner } from '@skatteetaten/frontend-components/TopBanner';
 import { TopStripe } from '@skatteetaten/frontend-components/TopStripe';
-import { LanguagePicker } from '@skatteetaten/frontend-components/TopStripe/LanguagePicker';
-import { TopStripeMenu } from '@skatteetaten/frontend-components/TopStripe/TopStripeMenu';
-import { TopStripeButton } from '@skatteetaten/frontend-components/TopStripe/TopStripeButton';
+import { LanguagePicker } from '@skatteetaten/frontend-components/TopStripe/LanguagePicker/LanguagePicker';
+import { TopStripeMenu } from '@skatteetaten/frontend-components/TopStripe/TopStripeMenu/TopStripeMenu';
+import { TopStripeButton } from '@skatteetaten/frontend-components/TopStripe/TopStripeButton/TopStripeButton';
+import { TopStripeUser } from '@skatteetaten/frontend-components/TopStripe/TopStripeUser';
+import { TopStripeLink } from '@skatteetaten/frontend-components/TopStripe/TopStripeLink';
 
 import { UseScreen } from '@skatteetaten/frontend-components/utils/ScreenPlugin';
 
-const size = UseScreen();
 const [language, setLanguage] = useState('nb');
 
 <div>
@@ -149,42 +161,41 @@ const [language, setLanguage] = useState('nb');
     homeText={'Tilbake til skatteetaten.no'}
     topStripe={
       <TopStripe>
-        <Link
+        <TopStripeLink
           path={'#main-content-id'}
           text={'Hopp til hovedinnhold'}
           skipLink
         />
 
-        <Link
+        <TopStripeLink
           path={'https://www.skatteetaten.no/kontakt/'}
           text={'Kontakt oss'}
-          placement="before"
         />
 
         <TopStripeMenu
-          isMenu={false}
-          showOnMobile={false}
-          closeMenuAriaLabel="Lukk endre skriftstørrelse"
+          contentIsMenu={false}
+          closeMenuAriaLabel={'Lukk endre skriftstørrelse'}
           title={'Endre skriftstørrelse'}
         >
-          <div style={{ fontSize: '1.5rem', marginTop: '8px' }}>
+          <div
+            style={{
+              width: '300px',
+              fontSize: '24px',
+              textAlign: 'center',
+              marginTop: '8px',
+            }}
+          >
             Hold Ctrl-tasten nede (Cmd-tasten på Mac). Trykk på + for å
             forstørre eller - for å forminske.
           </div>
         </TopStripeMenu>
-
         <LanguagePicker
           selectedLanguage={language}
           setLanguage={setLanguage}
-          showOnMobile={true}
-          showSami={true}
+          showOnMobile
+          showSami
         />
-
-        <TopStripeMenu
-          showOnMobile={true}
-          icon="person"
-          title={'Hamdi Normann'}
-        >
+        <TopStripeMenu showOnMobile icon={'Person'} title={'Hamdi Normann'}>
           <TopStripeButton>Kari Normann</TopStripeButton>
           <TopStripeButton>987654321 Eplepress AS</TopStripeButton>
           <TopStripeButton>987654322 Pærepress AS</TopStripeButton>
@@ -193,8 +204,11 @@ const [language, setLanguage] = useState('nb');
             Se alle virksomheter
           </TopStripeButton>
         </TopStripeMenu>
-
-        <Link path={'#topstripe'} text={'Logg ut'} placement="before" />
+        <TopStripeButton
+          text={'Logg ut'}
+          onClick={() => console.log('logger ut')}
+          showOnMobile
+        />
       </TopStripe>
     }
   />
@@ -210,9 +224,11 @@ import { useState } from 'react';
 import { Link } from '@skatteetaten/frontend-components/Link';
 import { TopBanner } from '@skatteetaten/frontend-components/TopBanner';
 import { TopStripe } from '@skatteetaten/frontend-components/TopStripe';
-import { LanguagePicker } from '@skatteetaten/frontend-components/TopStripe/LanguagePicker';
-import { TopStripeMenu } from '@skatteetaten/frontend-components/TopStripe/TopStripeMenu';
-import { TopStripeButton } from '@skatteetaten/frontend-components/TopStripe/TopStripeButton';
+import { LanguagePicker } from '@skatteetaten/frontend-components/TopStripe/LanguagePicker/LanguagePicker';
+import { TopStripeMenu } from '@skatteetaten/frontend-components/TopStripe/TopStripeMenu/TopStripeMenu';
+import { TopStripeButton } from '@skatteetaten/frontend-components/TopStripe/TopStripeButton/TopStripeButton';
+import { TopStripeLink } from '@skatteetaten/frontend-components/TopStripe/TopStripeLink';
+import { TopStripeUser } from '@skatteetaten/frontend-components/TopStripe/TopStripeUser';
 
 const [language, setLanguage] = useState('nb');
 
@@ -223,27 +239,24 @@ const [language, setLanguage] = useState('nb');
     homeText={'Tilbake til skatteetaten.no'}
     topStripe={
       <TopStripe>
-        <Link
+        <TopStripeLink
           path={'#main-content-id'}
           text={'Hopp til hovedinnhold'}
           skipLink
+          showOnMobile
         />
+        <TopStripeUser id={'user'} name={'Kari Normann'} showOnMobile />
         <LanguagePicker
           selectedLanguage={language}
           setLanguage={setLanguage}
-          showOnMobile={true}
-          showSami={true}
+          showOnMobile
+          showSami
         />
-        <TopStripeMenu icon="person" title={'Kari Normann'}>
-          <TopStripeButton>Jenny Sandli</TopStripeButton>
-          <TopStripeButton>987654321 Eplepress AS</TopStripeButton>
-          <TopStripeButton>987654322 Pærepress AS</TopStripeButton>
-          <TopStripeButton>987654323 Druepress AS</TopStripeButton>
-          <TopStripeButton onClick={() => console.log('Se alle')}>
-            Se alle virksomheter
-          </TopStripeButton>
-        </TopStripeMenu>
-        <Link path={'#topstripe'} text={'Logg ut'} placement="before" />
+        <TopStripeButton
+          text={'Logg ut'}
+          onClick={() => console.log('logger ut')}
+          showOnMobile
+        />
       </TopStripe>
     }
   >
@@ -251,6 +264,62 @@ const [language, setLanguage] = useState('nb');
       «Hamburger»-meny her (egen komponent finnes ennå ikke)
     </div>
   </TopBanner>
+</div>;
+```
+
+### Begrense bredden på store skjermer
+
+For svært brede skjermer kan det er være nyttig å begrense bredden som toppstripens innhold kan vises i, for eksempel 80 %:
+
+```js
+import { TopBanner } from '@skatteetaten/frontend-components/TopBanner';
+import { TopStripe } from '@skatteetaten/frontend-components/TopStripe';
+import { LanguagePicker } from '@skatteetaten/frontend-components/TopStripe/LanguagePicker/LanguagePicker';
+import { TopStripeMenu } from '@skatteetaten/frontend-components/TopStripe/TopStripeMenu/TopStripeMenu';
+import { TopStripeButton } from '@skatteetaten/frontend-components/TopStripe/TopStripeButton/TopStripeButton';
+import { TopStripeLink } from '@skatteetaten/frontend-components/TopStripe/TopStripeLink';
+
+<div>
+  <TopBanner
+    external
+    title={'Side for publikum'}
+    homeText={'Tilbake til skatteetaten.no'}
+    topStripe={
+      <TopStripe contentWidth={'80%'}>
+        <TopStripeLink
+          path={'#main-content-id'}
+          text={'Hopp til hovedinnhold'}
+          skipLink
+        />
+        <TopStripeLink
+          path={'https://www.skatteetaten.no/kontakt/'}
+          text={'Kontakt oss'}
+        />
+        <TopStripeMenu
+          closeMenuAriaLabel={'Lukk endre skriftstørrelse'}
+          title={'Endre skriftstørrelse'}
+          contentIsMenu={false}
+        >
+          <div
+            style={{
+              width: '300px',
+              fontSize: '24px',
+              textAlign: 'center',
+              marginTop: '8px',
+            }}
+          >
+            Hold Ctrl-tasten nede (Cmd-tasten på Mac). Trykk på + for å
+            forstørre eller - for å forminske.
+          </div>
+        </TopStripeMenu>
+        <TopStripeButton
+          text={'Logg inn'}
+          onClick={() => console.log('logger inn')}
+          showOnMobile
+        />
+      </TopStripe>
+    }
+  />
 </div>;
 ```
 

@@ -1,11 +1,12 @@
 import * as React from 'react';
-import { TopStripeButton } from './TopStripeButton';
-import { TopStripeMenu } from './TopStripeMenu';
-import { EnglishFlag, NorwegianFlag, SamiFlag } from './assets';
-import { Icon } from '../Icon';
-import { UseScreen } from '../utils';
+import { TopStripeButton } from '../TopStripeButton/TopStripeButton';
+import { TopStripeMenu } from '../TopStripeMenu/TopStripeMenu';
+import { EnglishFlag, NorwegianFlag, SamiFlag } from '../assets';
+import { Icon } from '../../Icon';
+import { UseScreen } from '../../utils';
 import { getClassNames } from './LanguagePicker.classNames';
 import { useEffect } from 'react';
+import classNames from 'classnames';
 
 export enum LanguageEnum {
   BOKMAAL = 'nb',
@@ -23,23 +24,31 @@ const generateLanguagePickerText = (language: LanguageEnum): string => {
     case LanguageEnum.ENGLISH:
       return 'English';
     case LanguageEnum.SAMI:
-      return 'Sámigiella';
+      return 'Sámegiella';
   }
 };
 
 const displayFlag = (language: LanguageEnum): JSX.Element => {
-  const altText: string = generateLanguagePickerText(language);
-
   switch (language) {
     case LanguageEnum.BOKMAAL:
-      return <img src={NorwegianFlag} alt={altText} />;
+      return <img src={NorwegianFlag} alt={''} />;
     case LanguageEnum.NYNORSK:
-      return <img src={NorwegianFlag} alt={altText} />;
+      return <img src={NorwegianFlag} alt={''} />;
     case LanguageEnum.ENGLISH:
-      return <img src={EnglishFlag} alt={altText} />;
+      return <img src={EnglishFlag} alt={''} />;
     case LanguageEnum.SAMI:
-      return <img src={SamiFlag} alt={altText} />;
+      return <img src={SamiFlag} alt={''} />;
   }
+};
+
+const generateLanguagePickerTitle = (language: LanguageEnum): JSX.Element => {
+  const styles = getClassNames();
+  return (
+    <>
+      <span className={styles.flag}>{displayFlag(language)}</span>
+      {generateLanguagePickerText(language)}
+    </>
+  );
 };
 
 const LanguagePickerButton = ({
@@ -49,15 +58,19 @@ const LanguagePickerButton = ({
   showOnMobile,
 }): JSX.Element => {
   const styles = getClassNames();
+  const isSelectedLanguage = buttonLanguage === selectedLanguage;
   return (
     <TopStripeButton
       onClick={() => setLanguage(buttonLanguage)}
       showOnMobile={showOnMobile}
-      className={styles.languageButton}
+      className={classNames(
+        styles.languageButton,
+        !isSelectedLanguage ? styles.languageButtonIsNotSelected : ''
+      )}
       role={'menuitem'}
-      aria-current={buttonLanguage === selectedLanguage}
+      aria-current={isSelectedLanguage}
     >
-      {buttonLanguage === selectedLanguage && (
+      {isSelectedLanguage && (
         <Icon iconName={'Check'} className={styles.checkIcon} />
       )}
       <span className={styles.flag}>{displayFlag(buttonLanguage)}</span>
@@ -119,7 +132,6 @@ export const LanguagePicker: React.FC<LanguagePickerProps> = (props) => {
     document.documentElement.lang = selectedLanguage;
   }, [selectedLanguage]);
 
-  const styles = getClassNames();
   const screenSize = UseScreen();
   if (screenSize.sm && !showOnMobile) {
     return null;
@@ -127,10 +139,9 @@ export const LanguagePicker: React.FC<LanguagePickerProps> = (props) => {
 
   return (
     <>
-      <span className={styles.flag}>{displayFlag(selectedLanguage)}</span>
       <TopStripeMenu
         showOnMobile={showOnMobile}
-        title={generateLanguagePickerText(selectedLanguage)}
+        title={generateLanguagePickerTitle(selectedLanguage)}
         className={className}
       >
         {languages.map((language) => {
