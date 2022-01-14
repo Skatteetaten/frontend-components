@@ -14,7 +14,7 @@ import { Button } from '@skatteetaten/frontend-components/Button';
 <div>
   <p>
     <Link
-      path={'./assets/sketch/designsystem-2.0.3.sketch'}
+      path={'./assets/sketch/designsystem-2.0.4.sketch'}
       text={'Last ned nyeste Sketch-fil'}
       icon={'Download'}
       placement="before"
