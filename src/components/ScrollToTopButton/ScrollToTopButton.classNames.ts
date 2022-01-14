@@ -32,15 +32,15 @@ export const getClassNames = (props) => {
       opacity: 0,
       transition: '0.2s',
       selectors: {
-        [`@media (max-width: ${designtokenBreakpoints['ske-breakpoint-xxl']})`]: {
+        [`@media (min-width: ${designtokenBreakpoints['ske-breakpoint-xl']})`]: {
           maxWidth: overrideMaxWidth
             ? overrideMaxWidth
             : `${designtokenBreakpoints['ske-breakpoint-xl']}`,
         },
-        [`@media (max-width: ${designtokenBreakpoints['ske-breakpoint-xl']})`]: {
+        [`@media (min-width: ${designtokenBreakpoints['ske-breakpoint-xxl']})`]: {
           maxWidth: overrideMaxWidth
             ? overrideMaxWidth
-            : `${designtokenBreakpoints['ske-breakpoint-lg']}`,
+            : `${designtokenBreakpoints['ske-breakpoint-xxl']}`,
         },
       },
     },
