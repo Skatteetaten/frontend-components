@@ -29,11 +29,11 @@ exports[`ScrollToTopButton komponent matcher snapshot 1`] = `
           position: relative !important;
           transition: 0.2s;
         }
-        @media (max-width: 1920px){& {
+        @media (min-width: 1366px){& {
           max-width: 1366px;
         }
-        @media (max-width: 1366px){& {
-          max-width: 1024px;
+        @media (min-width: 1920px){& {
+          max-width: 1920px;
         }
   >
     <div
