@@ -2,7 +2,7 @@ import React, { FC } from 'react';
 import { getClassNames } from './TopStripe.classNames';
 import { Icon } from '../Icon';
 import { UseScreen } from '../utils';
-import classNames from 'classnames';
+import classnames from 'classnames';
 
 interface TopStripeUserProps {
   name: string;
@@ -20,7 +20,7 @@ export const TopStripeUser: FC<TopStripeUserProps> = (props) => {
   }
 
   return (
-    <div className={classNames(styles.topStripeUser, className)}>
+    <div className={classnames(styles.topStripeUser, className)}>
       <Icon iconName="person" />
       <div>{name}</div>
     </div>

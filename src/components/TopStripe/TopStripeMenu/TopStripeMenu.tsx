@@ -61,11 +61,10 @@ export const TopStripeMenu: React.FC<TopStripeMenuProps> = (props) => {
       <TopStripeButton
         aria-haspopup={contentIsMenu}
         aria-expanded={isMenuOpen}
-        className={classnames(
-          showChevron ? styles.topStripeMenuShowChevron : '',
-          icon ? styles.topStripeMenuHasIcon : '',
-          className
-        )}
+        className={classnames(className, {
+          [styles.topStripeMenuShowChevron]: showChevron,
+          [styles.topStripeMenuHasIcon]: icon,
+        })}
         onClick={() => setOpen(index)}
         showOnMobile={showOnMobile}
       >

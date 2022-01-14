@@ -6,7 +6,7 @@ import { Icon } from '../../Icon';
 import { UseScreen } from '../../utils';
 import { getClassNames } from './LanguagePicker.classNames';
 import { useEffect } from 'react';
-import classNames from 'classnames';
+import classnames from 'classnames';
 
 export enum LanguageEnum {
   BOKMAAL = 'nb',
@@ -63,10 +63,9 @@ const LanguagePickerButton = ({
     <TopStripeButton
       onClick={() => setLanguage(buttonLanguage)}
       showOnMobile={showOnMobile}
-      className={classNames(
-        styles.languageButton,
-        !isSelectedLanguage ? styles.languageButtonIsNotSelected : ''
-      )}
+      className={classnames(styles.languageButton, {
+        [styles.languageButtonIsNotSelected]: !isSelectedLanguage,
+      })}
       role={'menuitem'}
       aria-current={isSelectedLanguage}
     >
