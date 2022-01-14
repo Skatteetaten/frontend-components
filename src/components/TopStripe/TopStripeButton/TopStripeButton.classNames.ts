@@ -5,6 +5,7 @@ import designtokenColors from '../../utils/designtokens/_colors.json';
 export const getClassNames = () => {
   return mergeStyleSets({
     topStripeButton: {
+      fontFamily: 'inherit',
       fontSize: designtokenFontSizes['ske-font-size-s'],
       background: 'inherit',
       border: 'none',

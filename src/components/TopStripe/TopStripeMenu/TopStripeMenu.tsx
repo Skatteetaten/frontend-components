@@ -49,7 +49,7 @@ export const TopStripeMenu: React.FC<TopStripeMenuProps> = (props) => {
     contentIsMenu = true,
   } = props;
   const { open, setOpen, closeMenu } = React.useContext(TopStripeContext);
-  const menuIsOpen = open === index;
+  const isMenuOpen = open === index;
 
   const screenSize = UseScreen();
   if (screenSize.sm && !showOnMobile) {
@@ -60,9 +60,8 @@ export const TopStripeMenu: React.FC<TopStripeMenuProps> = (props) => {
     <>
       <TopStripeButton
         aria-haspopup={contentIsMenu}
-        aria-expanded={menuIsOpen}
+        aria-expanded={isMenuOpen}
         className={classnames(
-          styles.topStripeMenu,
           showChevron ? styles.topStripeMenuShowChevron : '',
           icon ? styles.topStripeMenuHasIcon : '',
           className
@@ -80,13 +79,13 @@ export const TopStripeMenu: React.FC<TopStripeMenuProps> = (props) => {
           <Icon
             className={styles.topStripeMenuChevronIcon}
             aria-hidden
-            iconName={menuIsOpen ? 'MenuUp' : 'MenuDown'}
+            iconName={isMenuOpen ? 'MenuUp' : 'MenuDown'}
           />
         ) : (
           ''
         )}
       </TopStripeButton>
-      {menuIsOpen && (
+      {isMenuOpen && (
         <ul
           className={styles.topStripeMenuDropdownContainer}
           role={contentIsMenu ? 'menu' : undefined}
