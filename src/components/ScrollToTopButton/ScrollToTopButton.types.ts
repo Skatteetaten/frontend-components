@@ -13,7 +13,7 @@ export interface ScrollToTopButtonProps {
     icon: string;
     iconContainer: string;
   };
-  /** Overstyring av bredde/plassering */
+  /** Overstyring av bredde/plassering for store skjermbredder*/
   containerMaxWidth?: string;
 }
 
