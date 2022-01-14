@@ -32,6 +32,11 @@ export const getClassNames = (props) => {
       opacity: 0,
       transition: '0.2s',
       selectors: {
+        [`@media (min-width: ${designtokenBreakpoints['ske-breakpoint-lg']})`]: {
+          maxWidth: overrideMaxWidth
+            ? overrideMaxWidth
+            : `${designtokenBreakpoints['ske-breakpoint-lg']}`,
+        },
         [`@media (min-width: ${designtokenBreakpoints['ske-breakpoint-xl']})`]: {
           maxWidth: overrideMaxWidth
             ? overrideMaxWidth
