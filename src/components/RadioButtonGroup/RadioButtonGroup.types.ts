@@ -31,4 +31,6 @@ export interface RadioButtonGroupProps extends IChoiceGroupProps {
   options: IRadioButtonGroupOptions[];
   /** Callout warning */
   warning?: JSX.Element | string;
+  /** Om ledetekst for obligatoriske felt skal markeres med stjerne (*) */
+  showRequiredMark?: boolean;
 }

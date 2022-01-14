@@ -31,6 +31,7 @@ export const Dropdown: React.FC<DropdownProps> = (props) => {
     onCalloutToggle,
     doNotLayer,
     readOnly,
+    showRequiredMark = false,
     ...rest
   } = props;
 
@@ -50,7 +51,7 @@ export const Dropdown: React.FC<DropdownProps> = (props) => {
         id={labelId}
         inputId={readOnly ? inputId : inputId + '-option'}
         label={label}
-        requiredMark={required}
+        requiredMark={showRequiredMark}
         buttonAriaLabel={labelButtonAriaLabel}
         help={help}
         onCalloutToggle={onCalloutToggle}

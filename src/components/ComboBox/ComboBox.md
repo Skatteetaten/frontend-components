@@ -13,6 +13,7 @@ import { Grid } from '@skatteetaten/frontend-components/Grid';
         <ComboBox
           label="Fylke"
           required
+          showRequiredMark
           help="Dette feltet foreslår en verdi når du begynner å skrive. Du kan også bla gjennom listen og velge på den måten."
           placeholder="Velg eller begynn å skrive"
           inputSize="large"

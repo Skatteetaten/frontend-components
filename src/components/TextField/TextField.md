@@ -11,6 +11,7 @@ const [state, setState] = React.useState({ value: '' });
   <TextField
     id={'my-input'}
     required
+    showRequiredMark
     label={'Navn'}
     value={state.value}
     onChange={(e, value) => setState({ value: value })}

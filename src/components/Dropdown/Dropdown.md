@@ -18,6 +18,7 @@ const [state, setState] = React.useState({
   <Dropdown
     label="Fruktsort"
     required
+    showRequiredMark
     placeholder="Velg"
     help="Tekst som hjelper brukeren å forstå eller få til."
     options={state.options}
