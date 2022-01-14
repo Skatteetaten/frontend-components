@@ -88,9 +88,9 @@ export const TopStripe: React.FC<TopStripeProps> = (props) => {
                 <li
                   className={classnames(styles.topStripeElement, {
                     [styles.loggedInUser]: child.type === TopStripeUser,
-                    [styles.hideOnMobile]: topStripeElements.includes(
-                      child.type
-                    ),
+                    [styles.hideOnMobile]:
+                      topStripeElements.includes(child.type) &&
+                      !child.props.showOnMobile,
                   })}
                 >
                   {React.cloneElement(child, {
