@@ -7,7 +7,7 @@ import classNames from 'classnames';
 interface TopStripeUserProps {
   name: string;
   showOnMobile?: boolean;
-  className: string;
+  className?: string;
 }
 
 export const TopStripeUser: FC<TopStripeUserProps> = (props) => {

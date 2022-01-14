@@ -5,7 +5,7 @@ import { UseScreen } from '../../utils';
 import { Icon } from '../../Icon';
 import { LinkProps } from '../../Link/Link.types';
 import { ActionButton } from '../../ActionButton';
-import { TopStripeButton } from '../TopStripeButton/TopStripeButton';
+import { TopStripeButton } from '../TopStripeButton';
 import { TopStripeContext } from '../TopStripe';
 
 export interface TopStripeMenuProps extends Omit<LinkProps, 'title'> {

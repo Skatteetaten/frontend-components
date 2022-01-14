@@ -9,9 +9,9 @@ import { useState } from 'react';
 import { Link } from '@skatteetaten/frontend-components/Link';
 import { TopBanner } from '@skatteetaten/frontend-components/TopBanner';
 import { TopStripe } from '@skatteetaten/frontend-components/TopStripe';
-import { LanguagePicker } from '@skatteetaten/frontend-components/TopStripe/LanguagePicker/LanguagePicker';
-import { TopStripeMenu } from '@skatteetaten/frontend-components/TopStripe/TopStripeMenu/TopStripeMenu';
-import { TopStripeButton } from '@skatteetaten/frontend-components/TopStripe/TopStripeButton/TopStripeButton';
+import { LanguagePicker } from '@skatteetaten/frontend-components/TopStripe/LanguagePicker';
+import { TopStripeMenu } from '@skatteetaten/frontend-components/TopStripe/TopStripeMenu';
+import { TopStripeButton } from '@skatteetaten/frontend-components/TopStripe/TopStripeButton';
 import { TopStripeLink } from '@skatteetaten/frontend-components/TopStripe/TopStripeLink';
 
 const [language, setLanguage] = useState('nb');
@@ -76,9 +76,9 @@ import { Icon } from '@skatteetaten/frontend-components/Icon';
 import { Link } from '@skatteetaten/frontend-components/Link';
 import { TopBanner } from '@skatteetaten/frontend-components/TopBanner';
 import { TopStripe } from '@skatteetaten/frontend-components/TopStripe';
-import { LanguagePicker } from '@skatteetaten/frontend-components/TopStripe/LanguagePicker/LanguagePicker';
-import { TopStripeMenu } from '@skatteetaten/frontend-components/TopStripe/TopStripeMenu/TopStripeMenu';
-import { TopStripeButton } from '@skatteetaten/frontend-components/TopStripe/TopStripeButton/TopStripeButton';
+import { LanguagePicker } from '@skatteetaten/frontend-components/TopStripe/LanguagePicker';
+import { TopStripeMenu } from '@skatteetaten/frontend-components/TopStripe/TopStripeMenu';
+import { TopStripeButton } from '@skatteetaten/frontend-components/TopStripe/TopStripeButton';
 import { TopStripeLink } from '@skatteetaten/frontend-components/TopStripe/TopStripeLink';
 import { TopStripeUser } from '@skatteetaten/frontend-components/TopStripe/TopStripeUser';
 const [language, setLanguage] = useState('nb');
@@ -144,9 +144,9 @@ import { Icon } from '@skatteetaten/frontend-components/Icon';
 import { Link } from '@skatteetaten/frontend-components/Link';
 import { TopBanner } from '@skatteetaten/frontend-components/TopBanner';
 import { TopStripe } from '@skatteetaten/frontend-components/TopStripe';
-import { LanguagePicker } from '@skatteetaten/frontend-components/TopStripe/LanguagePicker/LanguagePicker';
-import { TopStripeMenu } from '@skatteetaten/frontend-components/TopStripe/TopStripeMenu/TopStripeMenu';
-import { TopStripeButton } from '@skatteetaten/frontend-components/TopStripe/TopStripeButton/TopStripeButton';
+import { LanguagePicker } from '@skatteetaten/frontend-components/TopStripe/LanguagePicker';
+import { TopStripeMenu } from '@skatteetaten/frontend-components/TopStripe/TopStripeMenu';
+import { TopStripeButton } from '@skatteetaten/frontend-components/TopStripe/TopStripeButton';
 import { TopStripeUser } from '@skatteetaten/frontend-components/TopStripe/TopStripeUser';
 import { TopStripeLink } from '@skatteetaten/frontend-components/TopStripe/TopStripeLink';
 
@@ -224,9 +224,9 @@ import { useState } from 'react';
 import { Link } from '@skatteetaten/frontend-components/Link';
 import { TopBanner } from '@skatteetaten/frontend-components/TopBanner';
 import { TopStripe } from '@skatteetaten/frontend-components/TopStripe';
-import { LanguagePicker } from '@skatteetaten/frontend-components/TopStripe/LanguagePicker/LanguagePicker';
-import { TopStripeMenu } from '@skatteetaten/frontend-components/TopStripe/TopStripeMenu/TopStripeMenu';
-import { TopStripeButton } from '@skatteetaten/frontend-components/TopStripe/TopStripeButton/TopStripeButton';
+import { LanguagePicker } from '@skatteetaten/frontend-components/TopStripe/LanguagePicker';
+import { TopStripeMenu } from '@skatteetaten/frontend-components/TopStripe/TopStripeMenu';
+import { TopStripeButton } from '@skatteetaten/frontend-components/TopStripe/TopStripeButton';
 import { TopStripeLink } from '@skatteetaten/frontend-components/TopStripe/TopStripeLink';
 import { TopStripeUser } from '@skatteetaten/frontend-components/TopStripe/TopStripeUser';
 
@@ -274,9 +274,9 @@ For svært brede skjermer kan det er være nyttig å begrense bredden som toppst
 ```js
 import { TopBanner } from '@skatteetaten/frontend-components/TopBanner';
 import { TopStripe } from '@skatteetaten/frontend-components/TopStripe';
-import { LanguagePicker } from '@skatteetaten/frontend-components/TopStripe/LanguagePicker/LanguagePicker';
-import { TopStripeMenu } from '@skatteetaten/frontend-components/TopStripe/TopStripeMenu/TopStripeMenu';
-import { TopStripeButton } from '@skatteetaten/frontend-components/TopStripe/TopStripeButton/TopStripeButton';
+import { LanguagePicker } from '@skatteetaten/frontend-components/TopStripe/LanguagePicker';
+import { TopStripeMenu } from '@skatteetaten/frontend-components/TopStripe/TopStripeMenu';
+import { TopStripeButton } from '@skatteetaten/frontend-components/TopStripe/TopStripeButton';
 import { TopStripeLink } from '@skatteetaten/frontend-components/TopStripe/TopStripeLink';
 
 <div>

@@ -7,9 +7,9 @@ import { useState } from 'react';
 import { Link } from '@skatteetaten/frontend-components/Link';
 import { TopBanner } from '@skatteetaten/frontend-components/TopBanner';
 import { TopStripe } from '@skatteetaten/frontend-components/TopStripe';
-import { LanguagePicker } from '@skatteetaten/frontend-components/TopStripe/LanguagePicker/LanguagePicker';
-import { TopStripeMenu } from '@skatteetaten/frontend-components/TopStripe/TopStripeMenu/TopStripeMenu';
-import { TopStripeButton } from '@skatteetaten/frontend-components/TopStripe/TopStripeButton/TopStripeButton';
+import { LanguagePicker } from '@skatteetaten/frontend-components/TopStripe/LanguagePicker';
+import { TopStripeMenu } from '@skatteetaten/frontend-components/TopStripe/TopStripeMenu';
+import { TopStripeButton } from '@skatteetaten/frontend-components/TopStripe/TopStripeButton';
 
 const [language, setLanguage] = useState('nb');
 

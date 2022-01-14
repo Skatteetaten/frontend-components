@@ -1,6 +1,6 @@
 import * as React from 'react';
-import { TopStripeButton } from '../TopStripeButton/TopStripeButton';
-import { TopStripeMenu } from '../TopStripeMenu/TopStripeMenu';
+import { TopStripeButton } from '../TopStripeButton';
+import { TopStripeMenu } from '../TopStripeMenu';
 import { EnglishFlag, NorwegianFlag, SamiFlag } from '../assets';
 import { Icon } from '../../Icon';
 import { UseScreen } from '../../utils';

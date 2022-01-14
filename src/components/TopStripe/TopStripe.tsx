@@ -2,10 +2,10 @@ import * as React from 'react';
 import { getClassNames } from './TopStripe.classNames';
 import classnames from 'classnames';
 import { TopStripeProps } from './TopStripe.types';
-import { TopStripeMenu } from './TopStripeMenu/TopStripeMenu';
-import { TopStripeButton } from './TopStripeButton/TopStripeButton';
+import { TopStripeMenu } from './TopStripeMenu';
+import { TopStripeButton } from './TopStripeButton';
 import { TopStripeLink } from './TopStripeLink';
-import { LanguagePicker } from './LanguagePicker/LanguagePicker';
+import { LanguagePicker } from './LanguagePicker';
 import { TopStripeUser } from './TopStripeUser';
 
 export const TopStripeContext = React.createContext<TopStripeProps>({
@@ -86,14 +86,12 @@ export const TopStripe: React.FC<TopStripeProps> = (props) => {
             {React.Children.map(children, (child: any, index) =>
               child ? (
                 <li
-                  className={classnames(
-                    child.type === TopStripeUser ? styles.loggedInUser : '',
-                    topStripeElements.includes(child.type) &&
-                      !child.props.showOnMobile
-                      ? styles.hideOnMobile
-                      : '',
-                    styles.topStripeElement
-                  )}
+                  className={classnames(styles.topStripeElement, {
+                    [styles.loggedInUser]: child.type === TopStripeUser,
+                    [styles.hideOnMobile]: topStripeElements.includes(
+                      child.type
+                    ),
+                  })}
                 >
                   {React.cloneElement(child, {
                     index,
