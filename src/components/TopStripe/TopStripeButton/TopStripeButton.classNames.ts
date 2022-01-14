@@ -13,7 +13,7 @@ export const getClassNames = () => {
       transition: 'none',
       textDecoration: 'underline',
       textAlign: 'left',
-      padding: '12px 8px',
+      padding: '0.75rem 0.5rem',
       margin: 0,
       whiteSpace: 'nowrap',
       selectors: {

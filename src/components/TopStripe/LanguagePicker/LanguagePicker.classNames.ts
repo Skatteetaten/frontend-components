@@ -6,7 +6,7 @@ import designtokenSpacing from '../../utils/designtokens/_spacing.json';
 export const getClassNames = () => {
   return mergeStyleSets({
     languageButton: {
-      paddingLeft: '36px !important',
+      paddingLeft: '2.25rem !important',
       width: '100%',
       fontSize: `${designtokenFontSizes['ske-font-size-l']} !important`,
       selectors: {
@@ -26,7 +26,7 @@ export const getClassNames = () => {
     },
     checkIcon: {
       left: '0',
-      width: '14px',
+      width: '0.875rem',
       margin: `0 ${designtokenSpacing['ske-spacing-md']}`,
       fontSize: `${designtokenFontSizes['ske-font-size-xl']} !important`,
       display: 'inline',
@@ -37,7 +37,7 @@ export const getClassNames = () => {
           padding: `0 ${designtokenSpacing['ske-spacing-sm']}`,
           left: 'auto',
           width: 'auto',
-          marginLeft: '-24px',
+          marginLeft: '-1.5rem',
         },
       },
     },

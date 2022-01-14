@@ -11,14 +11,14 @@ export const getClassNames = () => {
       fontSize: designtokenFontSizes['ske-font-size-m'],
       verticalAlign: 'middle',
       position: 'absolute',
-      bottom: '10px',
-      left: '4px',
+      bottom: '0.625rem',
+      left: '0.25rem',
     },
     topStripeMenuShowChevron: {
-      paddingRight: '22px !important',
+      paddingRight: '1.375rem !important',
     },
     topStripeMenuHasIcon: {
-      paddingLeft: '22px !important',
+      paddingLeft: '1.375rem !important',
     },
     topStripeMenuTitle: {
       textDecoration: 'underline',
@@ -26,13 +26,13 @@ export const getClassNames = () => {
     },
     topStripeMenuChevronIcon: {
       position: 'absolute',
-      fontSize: '22px',
-      bottom: '8px',
+      fontSize: designtokenFontSizes['ske-font-size-xl'],
+      bottom: '0.5rem',
     },
     topStripeMenuDropdownContainer: {
       zIndex: '200',
       position: 'absolute',
-      top: '42px',
+      top: '2.625rem',
       marginLeft: designtokenSpacing['ske-spacing-md'],
       backgroundColor: designtokenColors['ske-color-black-100'],
       minWidth: '100vw',
@@ -49,7 +49,7 @@ export const getClassNames = () => {
           right: 0,
         },
         [`@media (min-width: ${designtokenBreakpoints['ske-breakpoint-sm']})`]: {
-          top: '38px',
+          top: '2.375rem',
           padding: `${designtokenSpacing['ske-spacing-md']} ${designtokenSpacing['ske-spacing-lg']}`,
           minWidth: 'auto',
         },

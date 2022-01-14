@@ -21,7 +21,7 @@ export const getClassNames = (contentWidth = '100%') => {
       right: 0,
       left: 0,
       bottom: 0,
-      minHeight: '200px',
+      minHeight: '12.5rem',
       backgroundColor: 'rgba(255, 255, 255, 0.8)',
       transition: '0.3s ease-out',
       display: 'none',
@@ -86,7 +86,7 @@ export const getClassNames = (contentWidth = '100%') => {
       selectors: {
         a: {
           display: 'block',
-          padding: '12px 8px',
+          padding: '0.75rem 0.5rem',
           borderBottom: 'none !important',
         },
         'a:focus, a:hover, > span:hover > a': {
@@ -105,7 +105,7 @@ export const getClassNames = (contentWidth = '100%') => {
       padding: designtokenSpacing['ske-spacing-md'],
       selectors: {
         '> i': {
-          fontSize: '20px',
+          fontSize: designtokenFontSizes['ske-font-size-icon-l'],
           alignSelf: 'start',
         },
       },
