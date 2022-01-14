@@ -23,19 +23,19 @@ export const TopStripe: React.FC<TopStripeProps> = (props) => {
     TopStripeUser,
     LanguagePicker,
   ];
-  const notOpen = -1;
+  const notOpenIndex = -1;
   const topRef = React.createRef<HTMLUListElement>();
-  const [open, setOpenIndex] = React.useState(notOpen);
+  const [openIndex, setOpenIndex] = React.useState(notOpenIndex);
   const setOpen = (num: number) => {
-    if (open === num) {
-      setOpenIndex(notOpen);
+    if (openIndex === num) {
+      setOpenIndex(notOpenIndex);
     } else {
       setOpenIndex(num);
     }
   };
   const { children, className, contentWidth, ...rest } = props;
   const styles = getClassNames(contentWidth);
-  const showOverlay = open !== notOpen ? styles.overlayShow : '';
+  const showOverlay = openIndex !== notOpenIndex ? styles.overlayShow : '';
 
   const handleClickOutside = (e: any) => {
     const eventPaths: Array<EventTarget> = e.composedPath
@@ -48,13 +48,13 @@ export const TopStripe: React.FC<TopStripeProps> = (props) => {
       return;
     }
     // outside click
-    setOpen(notOpen);
+    setOpen(notOpenIndex);
   };
 
   const handleEscape = (e: any) => {
     // Match escape key
     if (e.keyCode === 27) {
-      setOpen(notOpen);
+      setOpen(notOpenIndex);
     }
   };
 
@@ -73,9 +73,9 @@ export const TopStripe: React.FC<TopStripeProps> = (props) => {
       <div className={styles.background}>
         <TopStripeContext.Provider
           value={{
-            open: open,
+            open: openIndex,
             setOpen: setOpen,
-            closeMenu: () => setOpenIndex(notOpen),
+            closeMenu: () => setOpenIndex(notOpenIndex),
           }}
         >
           <ul
