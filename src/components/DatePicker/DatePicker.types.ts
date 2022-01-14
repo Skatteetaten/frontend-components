@@ -37,6 +37,9 @@ export interface DatePickerProps extends IDatePickerProps {
   ) => void;
   /** Tilstand som kan benyttes når datovelger skal vises i lesemodus */
   readonlyMode?: boolean;
+  /** Om ledetekst for obligatoriske felt skal markeres med stjerne (*) */
+  showRequiredMark?: boolean;
+
   /** @ignore */
   underlined?: IDatePickerProps['underlined'];
 }

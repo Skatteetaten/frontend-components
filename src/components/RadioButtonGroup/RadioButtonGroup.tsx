@@ -27,6 +27,7 @@ export const RadioButtonGroup = (props: RadioButtonGroupProps) => {
     labelWithCalloutProps,
     onCalloutToggle,
     options,
+    showRequiredMark = false,
     ...rest
   } = props;
   let tempOptions = options;
@@ -53,7 +54,7 @@ export const RadioButtonGroup = (props: RadioButtonGroupProps) => {
         id={labelId}
         label={label}
         buttonAriaLabel={labelButtonAriaLabel}
-        requiredMark={required}
+        requiredMark={showRequiredMark}
         help={help}
         inputSize={labelSize}
         warning={warning}

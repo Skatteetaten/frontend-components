@@ -8,6 +8,7 @@ import { DatePicker } from '@skatteetaten/frontend-components/DatePicker';
     <DatePicker
       id={'my-date'}
       isRequired
+      showRequiredMark
       label={'Dato (dd.mm.åååå)'}
       placeholder="Skriv eller velg"
       help={'Denne datovelgeren viser ukenummer i kalender'}
