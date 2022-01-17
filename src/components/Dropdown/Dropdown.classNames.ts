@@ -98,6 +98,9 @@ export const getClassNames = (props: DropdownProps) => {
           outline: 'transparent',
           zIndex: 1,
         },
+        '& div[role=alert]': {
+          fontWeight: 500,
+        },
         '& div[role=alert]::before': {
           fontFamily: SkeIcons.fontFace.fontFamily,
           fontSize: 16,
