@@ -255,32 +255,41 @@ const [language, setLanguage] = useState('nb');
 ```
 
 ```js noeditor beskrivelse
-<>
+<div>
   <h3>Toppstripen viser at brukeren er innlogget med MinID</h3>
   <p>
     Alle innloggede publikumsløsninger skal ha en svart toppstripe som er
-identisk på tvers av løsningene våre. Dette sikrer at brukerne kjenner den
-igjen når de er innlogget med MinID, og er anbefalt av Digitaliseringsdirektoratet.
+    identisk på tvers av løsningene våre. Dette sikrer at brukerne kjenner den
+    igjen når de er innlogget med MinID, og er anbefalt av
+    Digitaliseringsdirektoratet.
   </p>
   <h3>Slik setter du opp toppstripen:</h3>
-<ul>
-    <li>Plasser de overordede funksjonene «Kontakt oss», «Language/Språk» og
-«Endre skriftstørrelse» i <a href="#TopBanner">TopBanner. </li>
-    <li>På mobil flytter du overordnede funksjoner ned til <a href="#FooterContent">footeren</a>.</li>
+  <ul>
+    <li>
+      Plasser de overordede funksjonene «Kontakt oss», «Language/Språk» og
+      «Endre skriftstørrelse» i <a href="#TopBanner">TopBanner</a>.
+    </li>
+    <li>
+      På mobil flytter du overordnede funksjoner ned til{' '}
+      <a href="#FooterContent">footeren</a>.
+    </li>
   </ul>
-<h3>Når brukeren representerer andre</h3>
+  <h3>Når brukeren representerer andre</h3>
   <p>
-   Når den innloggende brukeren har fullmakt (rettighet) til å opptre på vegne av andre personer,
-kan brukeren velge den de representerer i nedtrekksmenyen under sitt eget navn. Velgeren er alltid
-synlig når brukeren er innlogget, også på mobil.
+    Når den innloggende brukeren har fullmakt (rettighet) til å opptre på vegne
+    av andre personer, kan brukeren velge den de representerer i nedtrekksmenyen
+    under sitt eget navn. Velgeren er alltid synlig når brukeren er innlogget,
+    også på mobil.
   </p>
-  <p>
-  Pass på:
-<ul>
-    <li>Dersom en bruker har fullmakt (rettigheter) til å handle på vegne av et stort antall personer,
-må du lenke til en side eller dialog som gir brukeren mulighet til å bytte.</li>
-</ul>
-</>
+  <p>Pass på:</p>
+  <ul>
+    <li>
+      Dersom en bruker har fullmakt (rettigheter) til å handle på vegne av et
+      stort antall personer, må du lenke til en side eller dialog som gir
+      brukeren mulighet til å bytte.
+    </li>
+  </ul>
+</div>
 ```
 
 ```js noeditor uu
