@@ -24,7 +24,7 @@ exports[`Dropdown komponent matcher snapshot 1`] = `
 
         & .ms-Dropdown-title {
           border-color: #1a1a1a;
-          border-radius: 0px;
+          border-radius: 0rem;
           font-size: 0.875rem;
         }
         & span.ms-Dropdown-caretDownWrapper {
@@ -40,25 +40,25 @@ exports[`Dropdown komponent matcher snapshot 1`] = `
           border-color: #1a1a1a;
         }
         &:focus .ms-Dropdown-title.ms-Dropdown-title {
-          border: 2px solid #1362ae;
+          border: 0.125rem solid #1362ae;
         }
         & .is-disabled .ms-Dropdown {
           background-color: red;
         }
         & .is-disabled .ms-Dropdown-title {
           background-color: #f4f4f4;
-          border-color: #b2b2b2;
+          border-color: #808080;
           border-style: solid;
-          border-width: 1px;
+          border-width: 0.063rem;
         }
         & .is-disabled .ms-Dropdown-caretDownWrapper {
           color: #808080;
         }
         &:active .is-disabled .ms-Dropdown-title {
-          border-color: #b2b2b2;
+          border-color: #808080;
         }
         &:hover .is-disabled .ms-Dropdown-title {
-          border-color: #b2b2b2;
+          border-color: #808080;
           cursor: not-allowed;
         }
         &:focus:after {
@@ -72,11 +72,15 @@ exports[`Dropdown komponent matcher snapshot 1`] = `
           top: 1px;
           z-index: 1;
         }
+        & div[role=alert] {
+          font-weight: 500;
+        }
         & div[role=alert]::before {
           content: '';
           font-family: "SkeIconfont";
-          font-size: 16px;
-          margin-right: 3px;
+          font-size: 1rem;
+          margin-right: 0.188rem;
+          vertical-align: text-bottom;
         }
     id="dropdown-123-input"
     onRenderCaretDown={[Function]}
@@ -148,8 +152,8 @@ exports[`Dropdown komponent matcher snapshot 1`] = `
       Object {
         "dropdownItem": Object {
           "color": "#1a1a1a",
-          "marginBottom": "4px",
-          "marginTop": "4px",
+          "marginBottom": "0.25rem",
+          "marginTop": "0.25rem",
           "selectors": Object {
             "&:active": Object {
               "background": "#cde1f9",
@@ -178,7 +182,7 @@ exports[`Dropdown komponent matcher snapshot 1`] = `
           },
         },
         "dropdownItemSelected": Object {
-          "background": "#e5e5e5 !important",
+          "background": "#f4f4f4 !important",
           "color": "#1a1a1a",
         },
         "dropdownOptionText": Object {
