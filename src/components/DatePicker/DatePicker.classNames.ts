@@ -58,22 +58,22 @@ function getTextFieldStyles(props: DatePickerProps) {
 export const getCalendarClassNames = (props: DatePickerProps) => {
   return mergeStyles({
     displayName: 'SkeCalendar',
-    color: designtokenColors['ske-color-black100'],
+    color: designtokenColors['ske-color-black-100'],
 
     selectors: {
       '& .ms-DatePicker-monthOption:hover': {
-        color: `${designtokenColors['ske-color-black100']} !important`,
+        color: `${designtokenColors['ske-color-black-100']} !important`,
       },
       '& .ms-DatePicker-goToday': {
         right: '10px',
       },
       '& .ms-DatePicker-day--highlighted': {
         backgroundColor: designtokenColors['ske-color-interactive-light'],
-        color: designtokenColors['ske-color-black100'],
+        color: designtokenColors['ske-color-black-100'],
       },
       '& .ms-DatePicker-day--today': {
         backgroundColor: designtokenColors['ske-color-interactive-light'],
-        color: designtokenColors['ske-color-black100'],
+        color: designtokenColors['ske-color-black-100'],
       },
     },
   });
@@ -91,7 +91,7 @@ export const getClassNames = (props: DatePickerProps) => {
     selectors: {
       '&& .ms-TextField-fieldGroup': {
         borderRadius: '0px',
-        borderColor: designtokenColors['ske-color-black100'],
+        borderColor: designtokenColors['ske-color-black-100'],
       },
       '& .ms-TextField-field': {
         fontSize: designtokenFonts['ske-font-size-m'],
@@ -100,29 +100,29 @@ export const getClassNames = (props: DatePickerProps) => {
         content: '""',
       },
       '& .ms-TextField.is-disabled': !readonlyMode && {
-        borderColor: designtokenColors['ske-color-grey30'],
+        borderColor: designtokenColors['ske-color-grey-50'],
         borderStyle: 'solid',
         borderWidth: '0px',
-        backgroundColor: designtokenColors['ske-color-grey5'],
+        backgroundColor: designtokenColors['ske-color-grey-5'],
       },
       '& .ms-TextField.is-disabled i': {
-        color: designtokenColors['ske-color-grey50'],
+        color: designtokenColors['ske-color-grey-50'],
       },
       '& .ms-TextField.is-disabled input': {
         padding: '8px',
         cursor: 'not-allowed',
-        color: designtokenColors['ske-color-black100'],
+        color: designtokenColors['ske-color-black-100'],
       },
       '& .ms-TextField.is-disabled .ms-TextField-fieldGroup': {
         backgroundColor: readonlyMode ? 'transparent' : undefined,
-        borderColor: designtokenColors['ske-color-grey30'],
+        borderColor: designtokenColors['ske-color-grey-50'],
         borderStyle: 'solid',
         borderWidth: '1px',
       },
       '& .ms-TextField .ms-TextField-fieldGroup .ms-TextField-field': readonlyMode && {
         fontWeight: designtokenFonts['ske-font-weight-bold'],
         fontSize: designtokenFonts['ske-font-size-medium'],
-        color: designtokenColors['ske-color-black100'],
+        color: designtokenColors['ske-color-black-100'],
       },
       '.ms-TextField i': readonlyMode && {
         display: 'none',
@@ -132,7 +132,7 @@ export const getClassNames = (props: DatePickerProps) => {
         border: `1px solid ${color}`,
       },
       '& .ms-TextField.ms-TextField--underlined .ms-TextField-wrapper:hover': {
-        border: `1px solid ${designtokenColors['ske-color-black100']}`,
+        border: `1px solid ${designtokenColors['ske-color-black-100']}`,
       },
       '& .ms-TextField-errorMessage': {
         color: designtokenColors['ske-color-status-error'],
