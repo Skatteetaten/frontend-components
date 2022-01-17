@@ -3,6 +3,7 @@ import { SkeIcons } from '../utils';
 import { DatePickerProps } from './DatePicker.types';
 import designtokenFonts from '../utils/designtokens/_fontSizes.json';
 import designtokenColors from '../utils/designtokens/_colors.json';
+import designtokenSpacing from '../utils/designtokens/_spacing.json';
 
 const errorIcon = "'" + SkeIcons.icons.Error + "'";
 
@@ -10,16 +11,16 @@ function getFieldTypeStyles(props: DatePickerProps) {
   if (props.inputSize === 'large') {
     return {
       '& .ms-TextField-fieldGroup': {
-        borderWidth: '2px',
-        height: '46px',
-        margin: '5px 0',
+        borderWidth: designtokenSpacing['ske-spacing-xs'],
+        height: '2.875rem',
+        margin: '0.313rem 0',
         fontSize: designtokenFonts['ske-font-size-l'],
       },
       '& input.ms-TextField-field': {
         fontSize: `${designtokenFonts['ske-font-size-l']} !important`,
       },
       'i.ms-DatePicker-event--without-label': {
-        marginTop: '6px',
+        marginTop: '0.375rem',
         fontSize: designtokenFonts['ske-font-size-xl'],
         color: designtokenColors['ske-color-interactive'],
       },
@@ -65,7 +66,7 @@ export const getCalendarClassNames = (props: DatePickerProps) => {
         color: `${designtokenColors['ske-color-black-100']} !important`,
       },
       '& .ms-DatePicker-goToday': {
-        right: '10px',
+        right: '0.625rem',
       },
       '& .ms-DatePicker-day--highlighted': {
         backgroundColor: designtokenColors['ske-color-interactive-light'],
@@ -90,7 +91,7 @@ export const getClassNames = (props: DatePickerProps) => {
     position: 'relative',
     selectors: {
       '&& .ms-TextField-fieldGroup': {
-        borderRadius: '0px',
+        borderRadius: '0rem',
         borderColor: designtokenColors['ske-color-black-100'],
       },
       '& .ms-TextField-field': {
@@ -102,14 +103,14 @@ export const getClassNames = (props: DatePickerProps) => {
       '& .ms-TextField.is-disabled': !readonlyMode && {
         borderColor: designtokenColors['ske-color-grey-50'],
         borderStyle: 'solid',
-        borderWidth: '0px',
+        borderWidth: '0rem',
         backgroundColor: designtokenColors['ske-color-grey-5'],
       },
       '& .ms-TextField.is-disabled i': {
         color: designtokenColors['ske-color-grey-50'],
       },
       '& .ms-TextField.is-disabled input': {
-        padding: '8px',
+        padding: designtokenSpacing['ske-spacing-md'],
         cursor: 'not-allowed',
         color: designtokenColors['ske-color-black-100'],
       },
@@ -117,7 +118,7 @@ export const getClassNames = (props: DatePickerProps) => {
         backgroundColor: readonlyMode ? 'transparent' : undefined,
         borderColor: designtokenColors['ske-color-grey-50'],
         borderStyle: 'solid',
-        borderWidth: '1px',
+        borderWidth: '0.063rem',
       },
       '& .ms-TextField .ms-TextField-fieldGroup .ms-TextField-field': readonlyMode && {
         fontWeight: designtokenFonts['ske-font-weight-bold'],
@@ -129,10 +130,10 @@ export const getClassNames = (props: DatePickerProps) => {
       },
       // style customization for underlined mode
       '& .ms-TextField.ms-TextField--underlined .ms-TextField-wrapper': {
-        border: `1px solid ${color}`,
+        border: `0.063rem solid ${color}`,
       },
       '& .ms-TextField.ms-TextField--underlined .ms-TextField-wrapper:hover': {
-        border: `1px solid ${designtokenColors['ske-color-black-100']}`,
+        border: `0.063rem solid ${designtokenColors['ske-color-black-100']}`,
       },
       '& .ms-TextField-errorMessage': {
         color: designtokenColors['ske-color-status-error'],
@@ -149,14 +150,14 @@ export const getClassNames = (props: DatePickerProps) => {
       },
       '& .ms-TextField .ms-TextField-fieldGroup': errorMessage && {
         borderColor: designtokenColors['ske-color-status-error'],
-        borderWidth: '2px',
+        borderWidth: designtokenSpacing['ske-spacing-xs'],
       },
       '& .ms-TextField.is-active .ms-TextField-fieldGroup': errorMessage && {
         outlineColor: designtokenColors['ske-color-status-interactive'],
         borderColor: designtokenColors['ske-color-status-interactive'],
       },
       '& .ms-DatePicker-goToday ': {
-        right: '14px;',
+        right: '0.875rem;',
       },
       ...getFieldTypeStyles(props),
       ...getTextFieldStyles(props),

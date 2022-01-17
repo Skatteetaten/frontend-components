@@ -4,19 +4,20 @@ import { DropdownProps } from './DropDown.types';
 import { IDropdownStyles } from '@fluentui/react';
 import designtokenFonts from '../utils/designtokens/_fontSizes.json';
 import designtokenColors from '../utils/designtokens/_colors.json';
+import designtokenSpacing from '../utils/designtokens/_spacing.json';
 
 function getFieldTypeStyles(props: DropdownProps) {
   if (props.inputSize === 'large') {
     return {
       '.ms-Dropdown-title': {
         borderWidth: 2,
-        padding: '5px 12px',
-        borderRadius: '0px',
+        padding: '0.313rem 0,75rem',
+        borderRadius: '0rem',
         fontSize: designtokenFonts['ske-font-size-l'],
-        height: '46px',
+        height: '2.875rem',
       },
       '& span.ms-Dropdown-caretDownWrapper': {
-        top: '8px',
+        top: designtokenSpacing['ske-spacing-md'],
         fontSize: designtokenFonts['ske-font-size-l'],
         color: designtokenColors['ske-color-interactive'],
       },
@@ -51,7 +52,7 @@ export const getClassNames = (props: DropdownProps) => {
         },
         '& .ms-Dropdown-title': {
           borderColor: designtokenColors['ske-color-black-100'],
-          borderRadius: '0px',
+          borderRadius: '0rem',
         },
         '& .ms-Dropdown-titleIsPlaceHolder': {
           borderColor: designtokenColors['ske-color-black-100'],
@@ -60,11 +61,11 @@ export const getClassNames = (props: DropdownProps) => {
           borderColor: errorMessage
             ? designtokenColors['ske-color-status-error']
             : designtokenColors['ske-color-black-100'],
-          borderWidth: '2px',
+          borderWidth: designtokenSpacing['ske-spacing-xs'],
         },
         // hack
         '&:focus .ms-Dropdown-title.ms-Dropdown-title': {
-          border: `2px solid ${designtokenColors['ske-color-interactive']}`,
+          border: `${designtokenSpacing['ske-spacing-xs']} solid ${designtokenColors['ske-color-interactive']}`,
         },
         '& .is-disabled .ms-Dropdown': {
           backgroundColor: 'red',
@@ -72,7 +73,7 @@ export const getClassNames = (props: DropdownProps) => {
         '& .is-disabled .ms-Dropdown-title': {
           borderColor: designtokenColors['ske-color-grey-50'],
           borderStyle: 'solid',
-          borderWidth: '1px',
+          borderWidth: '0.063rem',
           backgroundColor: designtokenColors['ske-color-grey-5'],
         },
         '& .is-disabled .ms-Dropdown-caretDownWrapper': {
@@ -127,8 +128,8 @@ export const getCalloutStyles = (): Partial<IDropdownStyles> => {
   return {
     dropdownItem: {
       color: designtokenColors['ske-color-black-100'],
-      marginTop: '4px',
-      marginBottom: '4px',
+      marginTop: designtokenSpacing['ske-spacing-sm'],
+      marginBottom: designtokenSpacing['ske-spacing-sm'],
       selectors: {
         '&:hover': {
           background: `${designtokenColors['ske-color-interactive-light']} !important`,
