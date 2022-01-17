@@ -1,6 +1,7 @@
 import { mergeStyleSets } from '@fluentui/merge-styles';
 import { getTheme } from '@fluentui/react/lib/Styling';
 import { FontSizes, FontWeights, IconFontSizes, PaletteProps } from '../utils';
+import designtokenBreakpoints from '../utils/designtokens/_breakpoints.json';
 
 export function getClassNames() {
   const palette = getTheme().palette as PaletteProps;
@@ -54,7 +55,7 @@ export function getClassNames() {
       marginTop: 18,
 
       selectors: {
-        '@media (max-width: 639px)': {
+        [`@media (max-width: ${designtokenBreakpoints['ske-breakpoint-md']})`]: {
           fontSize: FontSizes.medium,
           width: '24px',
           height: '24px',
@@ -70,9 +71,9 @@ export function getClassNames() {
       left: 16,
       height: '100%',
       selectors: {
-        '@media (max-width: 639px)': {
-          left: 14,
-          top: 40,
+        [`@media (min-width: ${designtokenBreakpoints['ske-breakpoint-md']})`]: {
+          left: 50,
+          top: 16,
         },
       },
     },
@@ -91,7 +92,7 @@ export function getClassNames() {
       marginBottom: '0px',
 
       selectors: {
-        '@media (min-width: 640px)': {
+        [`@media (min-width: ${designtokenBreakpoints['ske-breakpoint-md']})`]: {
           fontSize: FontSizes.largePlus,
         },
         '&:hover, &:focus': {
