@@ -1,6 +1,7 @@
-import { FontSizes, PaletteProps } from '..';
-import { getTheme } from '@uifabric/styling';
-import { mergeStyleSets } from '@uifabric/merge-styles';
+import { FontSizes, PaletteProps } from '../utils';
+import { getTheme } from '@fluentui/react/lib/Styling';
+import { mergeStyleSets } from '@fluentui/merge-styles';
+
 // @ts-ignore TODO
 export const getClassNames = function getClassNames(props) {
   const { compact } = props;
@@ -12,16 +13,16 @@ export const getClassNames = function getClassNames(props) {
       borderRadius: '0 0 0 0',
       display: 'flex',
       overflow: 'hidden',
-      background: palette.skeColor.internalLight,
+      background: palette.skeColor.grey5,
       color: palette.skeColor.white,
       alignItems: 'stretch',
       height: compact ? '72px' : '120px',
 
       selectors: {
         '@media (max-width: 640px)': {
-          height: '72px'
-        }
-      }
+          height: '72px',
+        },
+      },
     },
     headerLink: {
       flexGrow: 1,
@@ -30,26 +31,26 @@ export const getClassNames = function getClassNames(props) {
       marginLeft: '4px',
       selectors: {
         ':hover': {
-          textDecoration: 'underline'
+          textDecoration: 'underline',
         },
         ':active': {
-          textDecoration: 'none'
-        }
-      }
+          textDecoration: 'none',
+        },
+      },
     },
     headerIcon: {
       color: palette.skeColor.white,
-      fontSize: '20px',
+      fontSize: FontSizes.icon,
       marginLeft: '10px',
-      fontWeight: '700'
+      fontWeight: '700',
     },
     headerLinkContainer: {
       alignItems: 'center',
       display: 'flex',
-      fontSize: '18px',
+      fontSize: FontSizes.large,
       fontWeight: '700',
       textDecorationColor: palette.skeColor.white,
-      textDecoration: 'none'
+      textDecoration: 'none',
     },
     headerLeftContainer: {
       // @ts-ignore TODO
@@ -58,7 +59,7 @@ export const getClassNames = function getClassNames(props) {
       display: 'flex',
       alignItems: 'center',
       paddingLeft: 16,
-      paddingRight: 8
+      paddingRight: 8,
     },
     headerLogo: {
       height: compact ? '50px' : '90px',
@@ -69,18 +70,18 @@ export const getClassNames = function getClassNames(props) {
 
           selectors: {
             '@media (min-width: 640px)': {
-              margin: 0
-            }
-          }
-        }
-      }
+              margin: 0,
+            },
+          },
+        },
+      },
     },
     headerDiagonal: {
-      borderRight: `40px solid ${palette.skeColor.internalLight}`,
-      borderBottom: `120px solid ${palette.skeColor.internal}`
+      borderRight: `40px solid ${palette.skeColor.grey5}`,
+      borderBottom: `120px solid ${palette.skeColor.internal}`,
     },
     headerRightContainer: {
-      background: palette.skeColor.internalLight,
+      background: palette.skeColor.grey5,
       color: palette.skeColor.black,
       padding: '0 8px',
       flexGrow: '1',
@@ -93,19 +94,19 @@ export const getClassNames = function getClassNames(props) {
           fontSize: FontSizes.large,
           selectors: {
             '@media (min-width: 640px)': {
-              fontSize: FontSizes.xLarge
-            }
-          }
-        }
-      }
+              fontSize: FontSizes.xLarge,
+            },
+          },
+        },
+      },
     },
     elementTitle: {
       flexGrow: 1,
-      fontSize: FontSizes.large
+      fontSize: FontSizes.large,
     },
     headerRightButtons: {
       display: 'flex',
-      alignSelf: 'flex-end'
-    }
+      alignSelf: 'flex-end',
+    },
   });
 };

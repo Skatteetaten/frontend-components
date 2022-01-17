@@ -1,24 +1,24 @@
 import React from 'react';
 import { withRouter } from 'react-router';
-import { Nav } from 'office-ui-fabric-react/lib-commonjs/Nav';
-import { getTheme, FontSizes, FontWeights } from '@uifabric/styling';
-import { mergeStyleSets } from '@uifabric/merge-styles';
+import { Nav } from '@fluentui/react';
+import { getTheme, FontSizes, FontWeights } from '@fluentui/react/lib/Styling';
+import { mergeStyleSets } from '@fluentui/merge-styles';
 import find from 'lodash.find';
 
 function createMenu(items, searchTerm) {
   return items.map(({ name, slug, components = [], sections = [] }) => {
     const links = [
       ...createMenu(sections, null),
-      ...createMenu(components, null)
+      ...createMenu(components, null),
     ];
     const collapseByDefault = searchTerm === '';
-    const mainLink = find(links, l => l.name === name);
+    const mainLink = find(links, (l) => l.name === name);
     return {
       name,
       url: undefined,
       key: (mainLink && mainLink.key) || slug,
-      links: links.filter(l => l.name !== name),
-      collapseByDefault
+      links: links.filter((l) => l.name !== name),
+      collapseByDefault,
     };
   });
 }
@@ -27,26 +27,26 @@ const getStyles = () => {
   const palette = getTheme().palette;
   return mergeStyleSets({
     root: {
-      displayName: 'SkeNav'
+      displayName: 'SkeNav',
     },
     group: {},
     groupContent: {
-      marginBottom: 0
+      marginBottom: 0,
     },
     navItems: {},
     navItem: {},
     link: {},
     linkText: {
       fontWeight: FontWeights.regular,
-      fontSize: FontSizes.medium
+      fontSize: FontSizes.medium,
     },
     chevronButton: {},
     chevronIcon: {
       color: palette.skeColor.blue,
       fontSize: '20px',
-      fontWeight: '700'
+      fontWeight: '700',
     },
-    compositeLink: {}
+    compositeLink: {},
   });
 };
 
@@ -54,17 +54,17 @@ export class ComponentsListRenderer extends React.Component<> {
   constructor(props) {
     super(props);
     const {
-      match: { params }
+      match: { params },
     } = this.props;
 
     this.state = {
-      selectedKey: params.slug
+      selectedKey: params.slug,
     };
   }
   componentDidUpdate(nextProps) {
     if (nextProps.match.params.slug !== this.props.match.params.slug) {
       this.setState({
-        selectedKey: nextProps.match.params.slug || null
+        selectedKey: nextProps.match.params.slug || null,
       });
     }
   }
@@ -72,7 +72,7 @@ export class ComponentsListRenderer extends React.Component<> {
   render() {
     const { items, history, searchTerm } = this.props;
     const groups = createMenu(items, searchTerm);
-    groups.forEach(group => {
+    groups.forEach((group) => {
       if (group.name === 'Designe og utvikle') {
         group.links.sort((l1, l2) => l1.name.localeCompare(l2.name));
       }

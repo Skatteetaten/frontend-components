@@ -1,64 +1,24 @@
 import * as React from 'react';
 import classnames from 'classnames';
+import { LabelWithCallout } from '../LabelWithCallout';
+import { generateId } from '../utils';
 import {
-  ITextFieldProps,
+  IMaskedTextFieldProps,
   MaskedTextField,
   TextField as FabricTextField,
-  ITextField
-} from 'office-ui-fabric-react/lib-commonjs/TextField';
+  ITextField,
+} from '@fluentui/react';
 import { getClassNames } from './TextField.classNames';
-import LabelWithCallout, { calloutState } from '../LabelWithCallout';
-import { useId } from '@reach/auto-id';
+import { TextFieldProps } from './TextField.types';
 
-export interface TextFieldProps extends ITextFieldProps {
-  /** Benyttes når teksten for et readOnly tekstfelt skal fremheves  */
-  boldText?: boolean;
-  /** Bestemmer om hjelptekst/varseltekst skal legge seg mellom label og tekstfelt eller flytende over innhold */
-  calloutFloating?: boolean;
-  /** Lukk callout på blur */
-  labelWithCalloutAutoDismiss?: boolean;
-  /** Bestemmer om ett readOnly felt skal være alltid redigerbart om det er tomt */
-  editableWhenEmpty?: boolean;
-  /** Benyttes når et readOnly felt skal være redigertbart  */
-  editable?: boolean;
-  /** Tilhørende hjelpetekst */
-  help?: JSX.Element | string;
-  id?: string;
-  /** Størrelse på tekstfelt som skal benyttes */
-  inputSize?: 'normal' | 'large';
-  /** Setter inputmode (html 5) på tekstefeltet */
-  inputMode?: ITextFieldProps['inputMode'];
-  /** aria-label for knapp i label */
-  labelButtonAriaLabel?: string;
-  /** Størrelse på label */
-  labelSize?: 'small' | 'large';
-  /** Tekst inni feltet som vises før man skriver */
-  placeholder?: string;
-  /** Tilhørende varseltekst */
-  warning?: JSX.Element | string;
-  /** Antall rader som skal vises i feltet når multiline er satt */
-  rows?: number;
-  /** @ignore */
-  borderless?: ITextFieldProps['borderless'];
-  /** @ignore */
-  underlined?: ITextFieldProps['underlined'];
-  /** @ignore */
-  editMode?: boolean;
-  /** Brukerspesifisert event for callout **/
-  onCalloutToggle?: (
-    oldCalloutState: calloutState,
-    newCalloutState: calloutState
-  ) => void;
-}
-
-/**
- * @visibleName TextField (Tekstfelt)
+/*
+ * visibleName TextField (Tekstfelt)
  */
 export const TextField: React.FC<TextFieldProps> = ({
   calloutFloating,
   children,
   className,
-  labelWithCalloutAutoDismiss,
+  labelWithCalloutProps,
   editable,
   errorMessage,
   id,
@@ -75,8 +35,8 @@ export const TextField: React.FC<TextFieldProps> = ({
   rest.inputSize = rest.inputSize || 'normal';
   const shouldEditWhenEmpty = rest.editableWhenEmpty ? value === '' : false;
 
-  const genratedId = useId(id);
-  const mainId = id ? id : 'textfield-' + genratedId;
+  const generatedId = generateId();
+  const mainId = id ? id : 'textfield-' + generatedId;
   const inputId = mainId + '-input';
   const labelId = mainId + '-label';
 
@@ -88,7 +48,7 @@ export const TextField: React.FC<TextFieldProps> = ({
     setEditMode(true);
   };
 
-  const onBlur: ITextFieldProps['onBlur'] = e => {
+  const onBlur: IMaskedTextFieldProps['onBlur'] = (e) => {
     rest.onBlur && rest.onBlur(e);
     if (editMode) {
       setEditMode(shouldEditWhenEmpty);
@@ -112,7 +72,7 @@ export const TextField: React.FC<TextFieldProps> = ({
     }
   };
 
-  let TextFieldType: React.ComponentType<ITextFieldProps>;
+  let TextFieldType: React.ComponentType<IMaskedTextFieldProps>;
   if (mask) {
     TextFieldType = MaskedTextField;
   } else {
@@ -128,6 +88,7 @@ export const TextField: React.FC<TextFieldProps> = ({
       )}
     >
       <LabelWithCallout
+        {...labelWithCalloutProps}
         id={labelId}
         inputId={inputId}
         label={label}
@@ -143,7 +104,6 @@ export const TextField: React.FC<TextFieldProps> = ({
         editable={editable}
         inputSize={rest.inputSize}
         calloutFloating={calloutFloating}
-        autoDismiss={labelWithCalloutAutoDismiss}
         onRenderLabel={onRenderLabel}
         onCalloutToggle={onCalloutToggle}
       />
@@ -159,7 +119,7 @@ export const TextField: React.FC<TextFieldProps> = ({
         )}
         errorMessage={errorMessage}
         onBlur={onBlur}
-        componentRef={ref => {
+        componentRef={(ref) => {
           if (rest.componentRef && typeof rest.componentRef === 'function') {
             rest.componentRef(ref);
           }
@@ -172,5 +132,3 @@ export const TextField: React.FC<TextFieldProps> = ({
     </div>
   );
 };
-
-export default TextField;

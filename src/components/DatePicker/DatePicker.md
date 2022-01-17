@@ -1,28 +1,20 @@
-** Datovelger brukes i skjemaer når brukeren skal oppgi datoer. **
+**DatePicker (Datovelger): brukes i skjemaer når brukeren skal oppgi datoer.**
 
 ```js
-import DatePicker from '@skatteetaten/frontend-components/DatePicker';
+import { DatePicker } from '@skatteetaten/frontend-components/DatePicker';
 
 <div>
   <div className="ExampleFlexContainer-200">
     <DatePicker
-      id={'my-date1'}
-      label={'Velg en dato'}
-      help={
-        'Du kan skrive inn dato i feltet, eller velge en dato ved hjelp av datovelgeren, enten med mus eller bruk tastaturet'
-      }
-      isRequiredErrorMessage={'Dato må fylles ut'}
-    />
-  </div>
-  <br />
-  <div className="ExampleFlexContainer-200">
-    <DatePicker
       id={'my-date'}
-      label={'Ukenummer'}
-      placeholder={'dd.mm.åååå'}
+      label={'Dato (dd.mm.åååå)'}
+      placeholder="Skriv eller velg"
       help={'Denne datovelgeren viser ukenummer i kalender'}
-      showMonthPickerAsOverlay={true}
-      showWeekNumbers={true}
+      showMonthPickerAsOverlay={false}
+      labelWithCalloutProps={{
+        calloutProps: { autoDismiss: true },
+      }}
+      showWeekNumbers
     />
   </div>
 </div>;
@@ -40,7 +32,7 @@ const [dato, setDato] = React.useState(new Date());
     editable
     label={'Velg en dato'}
     value={dato}
-    onSelectDate={datoVerdi => setDato(datoVerdi)}
+    onSelectDate={(datoVerdi) => setDato(datoVerdi)}
   />
 </div>;
 ```
@@ -80,20 +72,31 @@ const [dato, setDato] = React.useState(new Date());
 <>
   <h3>Datovelgeren hjelper brukeren å fylle ut dato</h3>
 
-  <p>Datovelgeren i et skjema gjør det enklere for brukeren å oppgi riktig dato ved å vise 
-oversikt over dato, uke og måned. </p>
+  <p>
+    Datovelgeren i et skjema gjør det enklere for brukeren å oppgi riktig dato
+    ved å vise oversikt over dato, uke og måned.{' '}
+  </p>
 
   <h3>Ulike oppsett for datovelger</h3>
   <p>
-    Når du setter opp datovelgeren må du ta hensyn til hvor langt frem eller tilbake 
-brukeren pleier å velge dato. Vurder om både månedsoversikt og ukenummer trenger å vises.
+    Når du setter opp datovelgeren må du ta hensyn til hvor langt frem eller
+    tilbake brukeren pleier å velge dato. Vurder om både månedsoversikt og
+    ukenummer trenger å vises.
   </p>
-  <p>Du kan sette opp skjemaet med datovelgeren flere måter:
- <ul>
-    <li>Vise dagens dato i datofeltet og legge til mulighet for å endre.</li>
-    <li>Vise en handligsrettet tekst i datofeltet, for eksempel «Velg en dato» og deretter vise månedsvelger og ukenummer når brukeren klikker i feltet.</li>
-    <li>Vise både månedsoversikt og datoer med ukenummer, eller bare den ene, når brukeren klikker i feltet eller på endre-ikonet. </li>
-  </ul>
+  <p>
+    Du kan sette opp skjemaet med datovelgeren flere måter:
+    <ul>
+      <li>Vise dagens dato i datofeltet og legge til mulighet for å endre.</li>
+      <li>
+        Vise en handligsrettet tekst i datofeltet, for eksempel «Velg en dato»
+        og deretter vise månedsvelger og ukenummer når brukeren klikker i
+        feltet.
+      </li>
+      <li>
+        Vise både månedsoversikt og datoer med ukenummer, eller bare den ene,
+        når brukeren klikker i feltet eller på endre-ikonet.{' '}
+      </li>
+    </ul>
   </p>
   <p>
     Se{' '}

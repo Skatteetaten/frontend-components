@@ -3,48 +3,48 @@ For å evaluere brukeropplevelsen til en løsning er det brukervennlighetstestin
 Listen under inneholder ti generelle grunnprinsipper for design av brukergrensesnitt, som har vist seg å holde vann. Det finnes unntak, men de er sjeldne, så dersom du har en løsning som bryter med noen av disse, anbefaler vi å brukerteste ekstra grundig.
 
 ```js noeditor
-import Accordion from '@skatteetaten/frontend-components/Accordion';
-import AccordionItem from '@skatteetaten/frontend-components/Accordion/AccordionItem';
-import Spinner from '@skatteetaten/frontend-components/Spinner';
-import Button from '@skatteetaten/frontend-components/Button';
-import Card from '@skatteetaten/frontend-components/Card';
-import TopBanner from '@skatteetaten/frontend-components/TopBanner';
-import TextField from '@skatteetaten/frontend-components/TextField';
-import Grid from '@skatteetaten/frontend-components/Grid';
-import MessageBar from '@skatteetaten/frontend-components/MessageBar';
-import LabelWithCallout from '@skatteetaten/frontend-components/LabelWithCallout';
-import ActionButton from '@skatteetaten/frontend-components/ActionButton';
-import IconButton from '@skatteetaten/frontend-components/IconButton';
-import Link from '@skatteetaten/frontend-components/Link';
+import { Accordion } from '@skatteetaten/frontend-components/Accordion';
+import { AccordionItem } from '@skatteetaten/frontend-components/Accordion/AccordionItem';
+import { ActionButton } from '@skatteetaten/frontend-components/ActionButton';
+import { Button } from '@skatteetaten/frontend-components/Button';
+import { Card } from '@skatteetaten/frontend-components/Card';
+import { Grid } from '@skatteetaten/frontend-components/Grid';
+import { IconButton } from '@skatteetaten/frontend-components/IconButton';
+import { LabelWithCallout } from '@skatteetaten/frontend-components/LabelWithCallout';
+import { Link } from '@skatteetaten/frontend-components/Link';
+import { MessageBar } from '@skatteetaten/frontend-components/MessageBar';
+import { TextField } from '@skatteetaten/frontend-components/TextField';
+import { TopBanner } from '@skatteetaten/frontend-components/TopBanner';
+import { Spinner } from '@skatteetaten/frontend-components/Spinner';
 
-const initialState = {
-  hasSpinner: false
-};
+const [state, setState] = React.useState({
+  hasSpinner: false,
+});
 
 const links = [
   {
     text: 'Beregn reisefradrag',
-    path: '#stepList'
+    path: '#stepList',
   },
   {
     text: 'Oversikt over alle fradrag',
-    path: '#stepList'
-  }
+    path: '#stepList',
+  },
 ];
 
 const titles = {
   step1: {
     no: 'Jobber du?',
-    en: 'Are you a wage earner doing paid work?'
+    en: 'Are you a wage earner doing paid work?',
   },
   step2: {
     no: 'Sommerjobb?',
-    en: 'Summerjob?'
+    en: 'Summerjob?',
   },
   step3: {
     no: 'Du er ikke pendler',
-    en: 'You are not a commuter.'
-  }
+    en: 'You are not a commuter.',
+  },
 };
 
 <Accordion processList>
@@ -88,9 +88,8 @@ const titles = {
   >
     <p style={{ fontWeight: 'bold' }}>
       Systemet bør bruke samme ord, uttrykk og konsepter som brukerne kjenner,
-      fremfor systemorienterte begrep. Følg konvensjonsjoner fra virkelighetens
-      verden, og la informasjonen vises på en naturlig måte og i logisk
-      rekkefølge.
+      fremfor tekniske begrep. Følg vanlig praksis, og la informasjonen vises på
+      en naturlig måte og i logisk rekkefølge.
     </p>
     <div className="dodont">
       <div className="do">
@@ -150,9 +149,9 @@ const titles = {
     stepId={'step-4'}
   >
     <p style={{ fontWeight: 'bold' }}>
-      Brukere bruker mer tid på andre sider enn i din løsning. Det betyr at
-      brukerne har mest erfaring med hvordan ting virker fra andre sider enn
-      dine. Derfor er det lurt å følge allerede kjente konvensjoner.
+      Folk har gjerne mer erfaring med hvordan nettløsningene de bruker i det
+      daglige virker, sammenlignet med den løsningen du lager. Derfor er det
+      lurt å følge vanlige praksiser fra nettet.
     </p>
     <p>
       Hvis du for eksempel lager en løsning for betaling på nett, kan du med
@@ -174,7 +173,7 @@ const titles = {
     <p>
       Her er det kun mulig å skrive inn siffer i feltet for organisasjonsnummer:
     </p>
-    <div style={{ width: '150px' }}>
+    <div style={{ maxWidth: '150px' }}>
       <TextField
         id={'my-input-1'}
         value={'987654321'}
@@ -185,7 +184,7 @@ const titles = {
       />
     </div>
     <p>Vi kan vise et varsel når en verdi virker høy:</p>
-    <div style={{ width: '150px', marginBottom: '8px' }}>
+    <div style={{ maxWidth: '150px', marginBottom: '8px' }}>
       <TextField
         id={'my-helpfield-2'}
         label="Antall barn"

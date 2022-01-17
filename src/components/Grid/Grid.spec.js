@@ -1,7 +1,7 @@
 import React from 'react';
 import { mount } from 'enzyme';
 import toJson from 'enzyme-to-json';
-import Grid from './Grid';
+import { Grid } from '.';
 
 function oppsettFullDOM(props) {
   return mount(
@@ -31,11 +31,6 @@ describe('Grid komponent', () => {
 
     expect(wrapper.exists('GridCol')).toEqual(true);
     expect(wrapper.exists('GridRow')).toEqual(true);
-    expect(
-      wrapper
-        .find('GridRow')
-        .first()
-        .prop('rowSpacing')
-    ).toEqual('24px');
+    expect(wrapper.find('GridRow').first().prop('rowSpacing')).toEqual('24px');
   });
 });

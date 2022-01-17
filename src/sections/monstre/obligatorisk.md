@@ -1,23 +1,10 @@
 ```js noeditor
-import Card from '@skatteetaten/frontend-components/Card';
-import Accordion from '@skatteetaten/frontend-components/Accordion';
-import AccordionItem from '@skatteetaten/frontend-components/Accordion/AccordionItem';
-import Button from '@skatteetaten/frontend-components/Button';
-import TextField from '@skatteetaten/frontend-components/TextField';
-import RadioButtonGroup from '@skatteetaten/frontend-components/RadioButtonGroup';
-
-const initialState = {
-  options: [
-    {
-      key: 'A',
-      text: 'Enkeltpersonsforetak'
-    },
-    {
-      key: 'B',
-      text: 'Aksjeselskap'
-    }
-  ]
-};
+import { Accordion } from '@skatteetaten/frontend-components/Accordion';
+import { AccordionItem } from '@skatteetaten/frontend-components/Accordion/AccordionItem';
+import { Button } from '@skatteetaten/frontend-components/Button';
+import { Card } from '@skatteetaten/frontend-components/Card';
+import { RadioButtonGroup } from '@skatteetaten/frontend-components/RadioButtonGroup';
+import { TextField } from '@skatteetaten/frontend-components/TextField';
 
 <div>
   <Card
@@ -67,7 +54,17 @@ const initialState = {
             <br />
             <RadioButtonGroup
               label="Type virksomhet"
-              options={state.options}
+              labelSize="large"
+              options={[
+                {
+                  key: 'A',
+                  text: 'Enkeltpersonsforetak',
+                },
+                {
+                  key: 'B',
+                  text: 'Aksjeselskap',
+                },
+              ]}
               help="Type virksomhet vil påvirke hva du må rapportere til oss."
               id="radio123"
             />
@@ -99,7 +96,17 @@ const initialState = {
             <br />
             <RadioButtonGroup
               label="Type virksomhet *"
-              options={state.options}
+              labelSize="large"
+              options={[
+                {
+                  key: 'A',
+                  text: 'Enkeltpersonsforetak',
+                },
+                {
+                  key: 'B',
+                  text: 'Aksjeselskap',
+                },
+              ]}
               help="Type virksomhet vil påvirke hva du må rapportere til oss."
               id="radio321"
             />

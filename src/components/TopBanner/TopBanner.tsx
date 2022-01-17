@@ -1,21 +1,26 @@
 import * as React from 'react';
-//import { t } from '../utils/i18n/i18n'; //Egwene
-import ActionButton from '../ActionButton/ActionButton';
 import classnames from 'classnames';
-import Image from '../Image/Image';
-import Icon from '../Icon/Icon';
+import { UseScreen } from '../utils';
+import { Icon } from '../Icon';
+import { Image } from '../Image';
+import { ActionButton } from '../ActionButton';
+import { TopBannerTypes } from './TopBanner.types';
+import { BrandContext } from '../SkeBasis';
 
 // @ts-ignore TODO
-import externalLogo from './assets/ske-logo.svg';
-import externalLogoEn from './assets/ske-logo-en.svg';
+import logoSKE from './assets/logoSKE.svg';
+import logoSKEen from './assets/logoSKEen.svg';
+import logoLSO from './assets/logoLSO.svg';
+import logoINK from './assets/logoINK.svg';
+import logoINKen from './assets/logoINKen.svg';
+
 import internLogo from './assets/ske-logo-intern.svg';
 import internLogoEn from './assets/ske-logo-intern-en.svg';
 import { getClassNames as getExternalClassNames } from './External.classNames';
 import { getClassNames as getInternalClassNames } from './Internal.classNames';
-import { UseScreen } from './../utils/ScreenPlugin';
 
 // @ts-ignore TODO
-const InternalHeader = props => {
+const InternalHeader = (props) => {
   const styles = getInternalClassNames(props);
   const size = UseScreen();
 
@@ -76,7 +81,7 @@ const ExternalHeaderContent = ({ styles, ...props }) => {
         href={props.homeUrl}
         onClick={props.onClick}
         className={styles.linkButton}
-        icon="Back"
+        icon="ArrowBack"
         role="link"
       >
         {props.homeText}
@@ -86,72 +91,83 @@ const ExternalHeaderContent = ({ styles, ...props }) => {
   );
 };
 
-const ExternalHeader: React.FC<TopBannerProps> = props => {
-  const styles = getExternalClassNames(props);
-  const { header, headerMain, contentWrapper } = styles;
-  const compactHeight = props.compact ? 55 : 68;
-
-  const imageElement = (
-    <Image
-      src={props.language === 'en' ? externalLogoEn : externalLogo}
-      height={compactHeight}
-      alt="Skatteetaten logo"
-    />
-  );
-
-  return (
-    <header className={classnames(header, props.className)} id={props.id}>
-      <div className={headerMain}>
-        <div>
-          <div>
-            {props.logoLink ? (
-              <a href="https://www.skatteetaten.no">{imageElement}</a>
-            ) : (
-              imageElement
-            )}
-          </div>
-        </div>
-        <div className={contentWrapper}>
-          <ExternalHeaderContent styles={styles} {...props} />
-        </div>
-      </div>
-    </header>
-  );
-};
-
-export interface TopBannerProps {
-  /** Tittelen på banneren */
-  title?: string | JSX.Element;
-  /** Teksten som vises ved siden av home-knapp */
-  homeText?: string;
-  /** URLen på homeknappen */
-  homeUrl?: string;
-  /** Ikon på intern toppbanner */
-  icon?: string;
-  /** Om banneren er ment for en intern eller ekstern løsning */
-  external?: boolean;
-  /** Om banneren skal ta mindre plass vertikalt  */
-  compact?: boolean;
-  /** Overstyring av stiler */
-  className?: string;
-  /** Mulighet til å sette bredde på skrått område i toppen (kun intern) */
-  slantedAreaWidth?: number | string;
-  /** Global attributt som må være unik for hele HTML dokumentet */
-  id?: string;
-  /** Om logoen skal lenke til skatteetaten.no eller ikke (kun ekstern) */
-  logoLink?: boolean;
-  /** OnClick event som trigges av klikk på hjemlink */
-  onClick?: () => void;
-  /** Språk på logoen */
-  language?: 'nb' | 'nn' | 'en';
-}
-
-/**
- * @visibleName TopBanner (Topp)
+/*
+ * visibleName TopBanner (Topp)
  */
-const TopBanner: React.FC<TopBannerProps> = props => {
+export const TopBanner: React.FC<TopBannerTypes> = (props) => {
   const { external, ...rest } = props;
   return external ? <ExternalHeader {...rest} /> : <InternalHeader {...rest} />;
+};
+
+export const ExternalHeader: React.FC<TopBannerTypes> = (props) => {
+  const styles = getExternalClassNames(props, 'SKE');
+  // @ts-ignore
+  const { logo, headerMain, contentWrapper } = styles;
+  const compactHeight = props.compact ? 55 : 68;
+
+  const logoImageElement = (brand: string, showAltText = true) => {
+    switch (brand) {
+      case 'SKE':
+        return (
+          <Image
+            src={props.language === 'en' ? logoSKEen : logoSKE}
+            height={compactHeight}
+            alt={showAltText ? 'Skatteetaten logo' : ''}
+          />
+        );
+
+      case 'INK':
+        return (
+          <Image
+            src={props.language === 'en' ? logoINKen : logoINK}
+            height={compactHeight}
+            alt={showAltText ? 'Statens innkreving logo' : ''}
+          />
+        );
+
+      case 'LSO':
+        return (
+          <Image
+            src={logoLSO}
+            height={compactHeight}
+            alt={showAltText ? 'Lønnsstøtte logo' : ''}
+          />
+        );
+
+      default:
+        return {};
+    }
+  };
+
+  return (
+    <BrandContext.Consumer>
+      {({ tag }) => (
+        <header
+          className={classnames(
+            getExternalClassNames(props, tag).header,
+            props.className
+          )}
+          id={props.id}
+        >
+          {props.topStripe}
+          <div className={headerMain}>
+            <div>
+              <div className={logo}>
+                {props.logoLink ? (
+                  <a href={props.logoLinkUrl}>{logoImageElement(tag, false)}</a>
+                ) : (
+                  logoImageElement(tag)
+                )}
+              </div>
+            </div>
+            <div className={contentWrapper}>
+              <ExternalHeaderContent styles={styles} {...props} />
+            </div>
+          </div>
+        </header>
+      )}
+    </BrandContext.Consumer>
+  );
 };
 
 TopBanner.defaultProps = {
@@ -162,8 +178,7 @@ TopBanner.defaultProps = {
   icon: 'Home',
   external: false,
   compact: false,
-  logoLink: false,
-  language: undefined
+  logoLink: true,
+  logoLinkUrl: 'https://www.skatteetaten.no',
+  language: undefined,
 };
-
-export default TopBanner;

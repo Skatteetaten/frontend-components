@@ -1,15 +1,15 @@
 Venstre, kjerne og rutine:
 
 ```js
-import TopBanner from '@skatteetaten/frontend-components/TopBanner';
-import Card from '@skatteetaten/frontend-components/Card';
+import { Article } from '@skatteetaten/frontend-components/Article';
+import { Aside } from '@skatteetaten/frontend-components/Aside';
+import { Card } from '@skatteetaten/frontend-components/Card';
 
-const { Layout } = require('../components/Layout/Layout.js');
-const { Header } = require('../components/Layout/Header.js');
-const { Main } = require('../components/Layout/Main.js');
-const { Article } = require('../components/Layout/Article.js');
-const { Nav } = require('../components/Layout/Nav.js');
-const { Aside } = require('../components/Layout/Aside.js');
+import { Header } from '@skatteetaten/frontend-components/Header';
+import { Layout } from '@skatteetaten/frontend-components/Layout';
+import { Main } from '@skatteetaten/frontend-components/Main';
+import { Nav } from '@skatteetaten/frontend-components/Nav';
+import { TopBanner } from '@skatteetaten/frontend-components/TopBanner';
 
 <Layout>
   <Header hiddenXlUp>
@@ -41,15 +41,14 @@ const { Aside } = require('../components/Layout/Aside.js');
 Kjerne og rutine:
 
 ```js
-import TopBanner from '@skatteetaten/frontend-components/TopBanner';
-import Card from '@skatteetaten/frontend-components/Card';
-
-const { Layout } = require('../components/Layout/Layout.js');
-const { Header } = require('../components/Layout/Header.js');
-const { Main } = require('../components/Layout/Main.js');
-const { Article } = require('../components/Layout/Article.js');
-const { Nav } = require('../components/Layout/Nav.js');
-const { Aside } = require('../components/Layout/Aside.js');
+import { Article } from '@skatteetaten/frontend-components/Article';
+import { Aside } from '@skatteetaten/frontend-components/Aside';
+import { Card } from '@skatteetaten/frontend-components/Card';
+import { Header } from '@skatteetaten/frontend-components/Header';
+import { Layout } from '@skatteetaten/frontend-components/Layout';
+import { Main } from '@skatteetaten/frontend-components/Main';
+import { Nav } from '@skatteetaten/frontend-components/Nav';
+import { TopBanner } from '@skatteetaten/frontend-components/TopBanner';
 
 <Layout>
   <Header hiddenXlUp>
@@ -76,15 +75,16 @@ const { Aside } = require('../components/Layout/Aside.js');
 Venstre, kjerne:
 
 ```js
-import TopBanner from '@skatteetaten/frontend-components/TopBanner';
-import Card from '@skatteetaten/frontend-components/Card';
-
-const { Layout } = require('../components/Layout/Layout.js');
-const { Header } = require('../components/Layout/Header.js');
-const { Main } = require('../components/Layout/Main.js');
-const { Article } = require('../components/Layout/Article.js');
-const { Nav } = require('../components/Layout/Nav.js');
-const { Aside } = require('../components/Layout/Aside.js');
+import {
+  TopBanner,
+  Card,
+  Layout,
+  Header,
+  Main,
+  Article,
+  Nav,
+  Aside,
+} from '@skatteetaten/frontend-components';
 
 <Layout>
   <Header hiddenXlUp>

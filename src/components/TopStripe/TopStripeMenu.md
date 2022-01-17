@@ -1,7 +1,7 @@
-** TopStripeMenu en hjelpekomponent til TopStripe **
+**TopStripeMenu (Toppstripemeny): en hjelpekomponent til TopStripe**
 
 ```js noeditor
-import MessageBar from '@skatteetaten/frontend-components/MessageBar';
+import { MessageBar } from '@skatteetaten/frontend-components/MessageBar';
 
 <MessageBar>Det finnes ingen egne eksempler for TopStripeMenu.</MessageBar>;
 ```

@@ -2,29 +2,20 @@ import * as React from 'react';
 import { getClassNames } from './TopStripe.classNames';
 import classnames from 'classnames';
 import { TopStripeButton } from './TopStripeButton';
-
-interface TopStripeProps {
-  children?: JSX.Element | Array<JSX.Element | null | false>;
-  className?: string;
-  /** @ignore */
-  open?: number;
-  /** @ignore */
-  setOpen?: any;
-  /** @ignore */
-  closeMenu?: () => void;
-}
+import { TopStripeProps } from './TopStripe.types';
 
 export const TopStripeContext = React.createContext<TopStripeProps>({
-  open: -1
+  open: -1,
 });
-/**
- * @visibleName TopStripe (Toppstripe)
+
+/*
+ * visibleName TopStripe (Toppstripe)
  */
-const TopStripe: React.FC<TopStripeProps> = props => {
+export const TopStripe: React.FC<TopStripeProps> = (props) => {
   const notOpen = -1;
   const topRef = React.createRef<HTMLUListElement>();
   const [open, setOpenIndex] = React.useState(notOpen);
-  const setOpen = num => {
+  const setOpen = (num) => {
     if (open === num) {
       setOpenIndex(notOpen);
     } else {
@@ -36,8 +27,12 @@ const TopStripe: React.FC<TopStripeProps> = props => {
   const showOverlay = open !== notOpen ? styles.overlayShow : '';
 
   const handleClickOutside = (e: any) => {
+    const eventPaths: Array<EventTarget> = e.composedPath
+      ? e.composedPath()
+      : [];
+    const target = eventPaths.length > 0 ? eventPaths[0] : e.target;
     const node = topRef.current;
-    if (node && node.contains(e.target)) {
+    if (node && node.contains(target)) {
       // inside click
       return;
     }
@@ -68,7 +63,7 @@ const TopStripe: React.FC<TopStripeProps> = props => {
         value={{
           open: open,
           setOpen: setOpen,
-          closeMenu: () => setOpenIndex(notOpen)
+          closeMenu: () => setOpenIndex(notOpen),
         }}
       >
         <ul
@@ -81,7 +76,7 @@ const TopStripe: React.FC<TopStripeProps> = props => {
               return (
                 <li>
                   {React.cloneElement(child, {
-                    topStripeStyle: styles.plainButton
+                    topStripeStyle: styles.plainButton,
                   })}
                 </li>
               );
@@ -96,4 +91,3 @@ const TopStripe: React.FC<TopStripeProps> = props => {
     </>
   );
 };
-export default TopStripe;

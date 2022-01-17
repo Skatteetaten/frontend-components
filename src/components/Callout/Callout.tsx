@@ -1,42 +1,14 @@
 import classnames from 'classnames';
-import {
-  Callout as FabricCallout,
-  DirectionalHint,
-  ICalloutProps
-} from 'office-ui-fabric-react/lib-commonjs/Callout';
-import * as React from 'react';
-import IconButton from '../IconButton/IconButton';
+import { Callout as FabricCallout, DirectionalHint } from '@fluentui/react';
+import React, { PureComponent } from 'react';
+import { IconButton } from '../IconButton';
 import { getClassNames } from './Callout.classNames';
+import { CalloutColor, CalloutProps, CalloutState } from './Callout.types';
 
-export enum CalloutColor {
-  HELP = 'lightGreen',
-  INFO = 'beige',
-  ERROR = 'lightPink',
-  WARNING = 'beige',
-  BASIC = 'white'
-}
-export interface CalloutProps extends ICalloutProps {
-  /** Determine if the callout window will close automaticly when the area outside the window is clicked */
-  autoDismiss?: boolean;
-  /** There are four colors; lightGreen, beige, lightPink or white */
-  color?: CalloutColor;
-  /** Adds border around the callout box */
-  border?: boolean;
-  onClose?: () => void;
-  /** dir */
-}
-
-interface CalloutState {
-  isCalloutVisible: boolean;
-}
-
-/**
- * @visibleName Callout (Utropsboks)
+/*
+ * visibleName Callout (Utropsboks)
  */
-export default class Callout extends React.PureComponent<
-  CalloutProps,
-  CalloutState
-> {
+export class Callout extends PureComponent<CalloutProps, CalloutState> {
   static HELP = CalloutColor.HELP;
   static INFO = CalloutColor.INFO;
   static ERROR = CalloutColor.ERROR;
@@ -50,17 +22,49 @@ export default class Callout extends React.PureComponent<
   static POS_BOTTOM_RIGHT = DirectionalHint.bottomRightEdge;
 
   static defaultProps = {
-    autoDismiss: false,
+    autoDismiss: true,
     color: Callout.HELP,
     directionalHint: Callout.POS_TOP_CENTER,
     doNotLayer: true,
     role: undefined,
-    border: false
+    border: true,
   };
+  constructor(props) {
+    super(props);
+    this.state = {
+      widthBtnLabel: '',
+      target: undefined,
+      isCalloutVisible: props.isCalloutVisible,
+    };
+  }
 
   render() {
     const { children, className, id, ...props } = this.props;
-    const styles = getClassNames(props);
+    const styles = getClassNames(props, this.state.widthBtnLabel);
+
+    window.onclick = (e) => {
+      if (
+        (e.target &&
+          e.target.parentElement !== this.state.target &&
+          e.target.parentElement.className.indexOf('ms-Button-textContainer') >
+            -1) ||
+        e.target.className.indexOf('ms-Button-textContainer') > -1
+      ) {
+        this.setState({
+          target: e.target.parentElement,
+          widthBtnLabel: window.getComputedStyle(e.target.parentElement).width,
+        });
+      }
+    };
+
+    window.onresize = () => {
+      if (this.state.target) {
+        this.setState({
+          //@ts-ignore
+          widthBtnLabel: window.getComputedStyle(this.state.target).width,
+        });
+      }
+    };
 
     return (
       <div id={id} className={classnames(styles.calloutWrapper, className)}>
@@ -74,6 +78,7 @@ export default class Callout extends React.PureComponent<
             aria-label="Lukk"
             icon="Cancel"
             className={styles.closeButton}
+            buttonSize="small"
             onClick={props.onClose}
           />
         </FabricCallout>
@@ -83,7 +88,7 @@ export default class Callout extends React.PureComponent<
 
   _onDismiss() {
     this.setState({
-      isCalloutVisible: false
+      isCalloutVisible: false,
     });
 
     if (this.props.autoDismiss) {

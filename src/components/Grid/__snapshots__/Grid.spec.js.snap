@@ -5,20 +5,142 @@ exports[`Grid komponent matcher snapshot  1`] = `
   padding="0 8px"
 >
   <div
-    className="ske-Grid-33 "
+    className=
+        
+        {
+          box-sizing: border-box;
+          padding-bottom: 0;
+          padding-left: 8px;
+          padding-right: 8px;
+          padding-top: 0;
+          zoom: 1;
+        }
+        &::before {
+          content: "";
+          display: table;
+          line-height: 0;
+        }
+        &::after {
+          clear: both;
+          content: "";
+          display: table;
+          line-height: 0;
+        }
     dir="ltr"
   >
     <GridRow
       rowSpacing="24px"
     >
       <div
-        className="ske-Grid-row-36 "
+        className=
+            
+            {
+              box-sizing: border-box;
+              margin-bottom: 24px;
+              margin-left: 0;
+              margin-right: 0;
+              margin-top: 24px;
+              zoom: 1;
+            }
+            &::before {
+              content: "";
+              display: table;
+              line-height: 0;
+            }
+            &::after {
+              clear: both;
+              content: "";
+              display: table;
+              line-height: 0;
+            }
       >
         <GridCol
           lg={4}
         >
           <div
-            className="ske-Grid-col-37 "
+            className=
+                
+                {
+                  box-sizing: border-box;
+                  min-height: 1px;
+                  padding-left: 8px;
+                  padding-right: 8px;
+                  position: relative;
+                  width: 100%;
+                }
+                & $grid {
+                  padding-bottom: 0;
+                  padding-left: 0;
+                  padding-right: 0;
+                  padding-top: 0;
+                }
+                [dir='ltr'] & {
+                  float: left;
+                  left: NaN%;
+                  margin-bottom: 0;
+                  margin-left: 0;
+                  margin-right: 0;
+                  margin-top: 0;
+                  right: NaN%;
+                }
+                @media (min-width: 320px){[dir='ltr'] & {
+                  left: NaN%;
+                  right: NaN%;
+                  width: NaN%;
+                }
+                @media (min-width: 480px){[dir='ltr'] & {
+                  left: NaN%;
+                  right: NaN%;
+                  width: NaN%;
+                }
+                @media (min-width: 640px){[dir='ltr'] & {
+                  left: NaN%;
+                  right: NaN%;
+                  width: 33.333333333333336%;
+                }
+                @media (min-width: 1024px){[dir='ltr'] & {
+                  left: NaN%;
+                  right: NaN%;
+                  width: NaN%;
+                }
+                @media (min-width: 1366px){[dir='ltr'] & {
+                  left: NaN%;
+                  right: NaN%;
+                  width: NaN%;
+                }
+                [dir='rtl'] & {
+                  float: right;
+                  left: NaN%;
+                  right: NaN%;
+                }
+                @media (min-width: 320px){[dir='rtl'] & {
+                  left: NaN%;
+                  right: NaN%;
+                  width: NaN%;
+                }
+                @media (min-width: 480px){[dir='rtl'] & {
+                  left: NaN%;
+                  right: NaN%;
+                  width: NaN%;
+                }
+                @media (min-width: 640px){[dir='rtl'] & {
+                  left: NaN%;
+                  right: NaN%;
+                  width: 33.333333333333336%;
+                }
+                @media (min-width: 1024px){[dir='rtl'] & {
+                  left: NaN%;
+                  right: NaN%;
+                  width: NaN%;
+                }
+                @media (min-width: 1366px){[dir='rtl'] & {
+                  left: NaN%;
+                  right: NaN%;
+                  width: NaN%;
+                }
+                @media (min-width: 1920px){& {
+                  width: NaN%;
+                }
           >
             4
           </div>
@@ -27,14 +149,178 @@ exports[`Grid komponent matcher snapshot  1`] = `
           lg={4}
         >
           <div
-            className="ske-Grid-col-37 "
+            className=
+                
+                {
+                  box-sizing: border-box;
+                  min-height: 1px;
+                  padding-left: 8px;
+                  padding-right: 8px;
+                  position: relative;
+                  width: 100%;
+                }
+                & $grid {
+                  padding-bottom: 0;
+                  padding-left: 0;
+                  padding-right: 0;
+                  padding-top: 0;
+                }
+                [dir='ltr'] & {
+                  float: left;
+                  left: NaN%;
+                  margin-bottom: 0;
+                  margin-left: 0;
+                  margin-right: 0;
+                  margin-top: 0;
+                  right: NaN%;
+                }
+                @media (min-width: 320px){[dir='ltr'] & {
+                  left: NaN%;
+                  right: NaN%;
+                  width: NaN%;
+                }
+                @media (min-width: 480px){[dir='ltr'] & {
+                  left: NaN%;
+                  right: NaN%;
+                  width: NaN%;
+                }
+                @media (min-width: 640px){[dir='ltr'] & {
+                  left: NaN%;
+                  right: NaN%;
+                  width: 33.333333333333336%;
+                }
+                @media (min-width: 1024px){[dir='ltr'] & {
+                  left: NaN%;
+                  right: NaN%;
+                  width: NaN%;
+                }
+                @media (min-width: 1366px){[dir='ltr'] & {
+                  left: NaN%;
+                  right: NaN%;
+                  width: NaN%;
+                }
+                [dir='rtl'] & {
+                  float: right;
+                  left: NaN%;
+                  right: NaN%;
+                }
+                @media (min-width: 320px){[dir='rtl'] & {
+                  left: NaN%;
+                  right: NaN%;
+                  width: NaN%;
+                }
+                @media (min-width: 480px){[dir='rtl'] & {
+                  left: NaN%;
+                  right: NaN%;
+                  width: NaN%;
+                }
+                @media (min-width: 640px){[dir='rtl'] & {
+                  left: NaN%;
+                  right: NaN%;
+                  width: 33.333333333333336%;
+                }
+                @media (min-width: 1024px){[dir='rtl'] & {
+                  left: NaN%;
+                  right: NaN%;
+                  width: NaN%;
+                }
+                @media (min-width: 1366px){[dir='rtl'] & {
+                  left: NaN%;
+                  right: NaN%;
+                  width: NaN%;
+                }
+                @media (min-width: 1920px){& {
+                  width: NaN%;
+                }
           />
         </GridCol>
         <GridCol
           lg={4}
         >
           <div
-            className="ske-Grid-col-37 "
+            className=
+                
+                {
+                  box-sizing: border-box;
+                  min-height: 1px;
+                  padding-left: 8px;
+                  padding-right: 8px;
+                  position: relative;
+                  width: 100%;
+                }
+                & $grid {
+                  padding-bottom: 0;
+                  padding-left: 0;
+                  padding-right: 0;
+                  padding-top: 0;
+                }
+                [dir='ltr'] & {
+                  float: left;
+                  left: NaN%;
+                  margin-bottom: 0;
+                  margin-left: 0;
+                  margin-right: 0;
+                  margin-top: 0;
+                  right: NaN%;
+                }
+                @media (min-width: 320px){[dir='ltr'] & {
+                  left: NaN%;
+                  right: NaN%;
+                  width: NaN%;
+                }
+                @media (min-width: 480px){[dir='ltr'] & {
+                  left: NaN%;
+                  right: NaN%;
+                  width: NaN%;
+                }
+                @media (min-width: 640px){[dir='ltr'] & {
+                  left: NaN%;
+                  right: NaN%;
+                  width: 33.333333333333336%;
+                }
+                @media (min-width: 1024px){[dir='ltr'] & {
+                  left: NaN%;
+                  right: NaN%;
+                  width: NaN%;
+                }
+                @media (min-width: 1366px){[dir='ltr'] & {
+                  left: NaN%;
+                  right: NaN%;
+                  width: NaN%;
+                }
+                [dir='rtl'] & {
+                  float: right;
+                  left: NaN%;
+                  right: NaN%;
+                }
+                @media (min-width: 320px){[dir='rtl'] & {
+                  left: NaN%;
+                  right: NaN%;
+                  width: NaN%;
+                }
+                @media (min-width: 480px){[dir='rtl'] & {
+                  left: NaN%;
+                  right: NaN%;
+                  width: NaN%;
+                }
+                @media (min-width: 640px){[dir='rtl'] & {
+                  left: NaN%;
+                  right: NaN%;
+                  width: 33.333333333333336%;
+                }
+                @media (min-width: 1024px){[dir='rtl'] & {
+                  left: NaN%;
+                  right: NaN%;
+                  width: NaN%;
+                }
+                @media (min-width: 1366px){[dir='rtl'] & {
+                  left: NaN%;
+                  right: NaN%;
+                  width: NaN%;
+                }
+                @media (min-width: 1920px){& {
+                  width: NaN%;
+                }
           >
             4
           </div>
@@ -45,13 +331,115 @@ exports[`Grid komponent matcher snapshot  1`] = `
       rowSpacing="8px"
     >
       <div
-        className="ske-Grid-row-38 "
+        className=
+            
+            {
+              box-sizing: border-box;
+              margin-bottom: 8px;
+              margin-left: 0;
+              margin-right: 0;
+              margin-top: 8px;
+              zoom: 1;
+            }
+            &::before {
+              content: "";
+              display: table;
+              line-height: 0;
+            }
+            &::after {
+              clear: both;
+              content: "";
+              display: table;
+              line-height: 0;
+            }
       >
         <GridCol
           lg={4}
         >
           <div
-            className="ske-Grid-col-37 "
+            className=
+                
+                {
+                  box-sizing: border-box;
+                  min-height: 1px;
+                  padding-left: 8px;
+                  padding-right: 8px;
+                  position: relative;
+                  width: 100%;
+                }
+                & $grid {
+                  padding-bottom: 0;
+                  padding-left: 0;
+                  padding-right: 0;
+                  padding-top: 0;
+                }
+                [dir='ltr'] & {
+                  float: left;
+                  left: NaN%;
+                  margin-bottom: 0;
+                  margin-left: 0;
+                  margin-right: 0;
+                  margin-top: 0;
+                  right: NaN%;
+                }
+                @media (min-width: 320px){[dir='ltr'] & {
+                  left: NaN%;
+                  right: NaN%;
+                  width: NaN%;
+                }
+                @media (min-width: 480px){[dir='ltr'] & {
+                  left: NaN%;
+                  right: NaN%;
+                  width: NaN%;
+                }
+                @media (min-width: 640px){[dir='ltr'] & {
+                  left: NaN%;
+                  right: NaN%;
+                  width: 33.333333333333336%;
+                }
+                @media (min-width: 1024px){[dir='ltr'] & {
+                  left: NaN%;
+                  right: NaN%;
+                  width: NaN%;
+                }
+                @media (min-width: 1366px){[dir='ltr'] & {
+                  left: NaN%;
+                  right: NaN%;
+                  width: NaN%;
+                }
+                [dir='rtl'] & {
+                  float: right;
+                  left: NaN%;
+                  right: NaN%;
+                }
+                @media (min-width: 320px){[dir='rtl'] & {
+                  left: NaN%;
+                  right: NaN%;
+                  width: NaN%;
+                }
+                @media (min-width: 480px){[dir='rtl'] & {
+                  left: NaN%;
+                  right: NaN%;
+                  width: NaN%;
+                }
+                @media (min-width: 640px){[dir='rtl'] & {
+                  left: NaN%;
+                  right: NaN%;
+                  width: 33.333333333333336%;
+                }
+                @media (min-width: 1024px){[dir='rtl'] & {
+                  left: NaN%;
+                  right: NaN%;
+                  width: NaN%;
+                }
+                @media (min-width: 1366px){[dir='rtl'] & {
+                  left: NaN%;
+                  right: NaN%;
+                  width: NaN%;
+                }
+                @media (min-width: 1920px){& {
+                  width: NaN%;
+                }
           >
             4
           </div>
@@ -60,14 +448,178 @@ exports[`Grid komponent matcher snapshot  1`] = `
           lg={4}
         >
           <div
-            className="ske-Grid-col-37 "
+            className=
+                
+                {
+                  box-sizing: border-box;
+                  min-height: 1px;
+                  padding-left: 8px;
+                  padding-right: 8px;
+                  position: relative;
+                  width: 100%;
+                }
+                & $grid {
+                  padding-bottom: 0;
+                  padding-left: 0;
+                  padding-right: 0;
+                  padding-top: 0;
+                }
+                [dir='ltr'] & {
+                  float: left;
+                  left: NaN%;
+                  margin-bottom: 0;
+                  margin-left: 0;
+                  margin-right: 0;
+                  margin-top: 0;
+                  right: NaN%;
+                }
+                @media (min-width: 320px){[dir='ltr'] & {
+                  left: NaN%;
+                  right: NaN%;
+                  width: NaN%;
+                }
+                @media (min-width: 480px){[dir='ltr'] & {
+                  left: NaN%;
+                  right: NaN%;
+                  width: NaN%;
+                }
+                @media (min-width: 640px){[dir='ltr'] & {
+                  left: NaN%;
+                  right: NaN%;
+                  width: 33.333333333333336%;
+                }
+                @media (min-width: 1024px){[dir='ltr'] & {
+                  left: NaN%;
+                  right: NaN%;
+                  width: NaN%;
+                }
+                @media (min-width: 1366px){[dir='ltr'] & {
+                  left: NaN%;
+                  right: NaN%;
+                  width: NaN%;
+                }
+                [dir='rtl'] & {
+                  float: right;
+                  left: NaN%;
+                  right: NaN%;
+                }
+                @media (min-width: 320px){[dir='rtl'] & {
+                  left: NaN%;
+                  right: NaN%;
+                  width: NaN%;
+                }
+                @media (min-width: 480px){[dir='rtl'] & {
+                  left: NaN%;
+                  right: NaN%;
+                  width: NaN%;
+                }
+                @media (min-width: 640px){[dir='rtl'] & {
+                  left: NaN%;
+                  right: NaN%;
+                  width: 33.333333333333336%;
+                }
+                @media (min-width: 1024px){[dir='rtl'] & {
+                  left: NaN%;
+                  right: NaN%;
+                  width: NaN%;
+                }
+                @media (min-width: 1366px){[dir='rtl'] & {
+                  left: NaN%;
+                  right: NaN%;
+                  width: NaN%;
+                }
+                @media (min-width: 1920px){& {
+                  width: NaN%;
+                }
           />
         </GridCol>
         <GridCol
           lg={4}
         >
           <div
-            className="ske-Grid-col-37 "
+            className=
+                
+                {
+                  box-sizing: border-box;
+                  min-height: 1px;
+                  padding-left: 8px;
+                  padding-right: 8px;
+                  position: relative;
+                  width: 100%;
+                }
+                & $grid {
+                  padding-bottom: 0;
+                  padding-left: 0;
+                  padding-right: 0;
+                  padding-top: 0;
+                }
+                [dir='ltr'] & {
+                  float: left;
+                  left: NaN%;
+                  margin-bottom: 0;
+                  margin-left: 0;
+                  margin-right: 0;
+                  margin-top: 0;
+                  right: NaN%;
+                }
+                @media (min-width: 320px){[dir='ltr'] & {
+                  left: NaN%;
+                  right: NaN%;
+                  width: NaN%;
+                }
+                @media (min-width: 480px){[dir='ltr'] & {
+                  left: NaN%;
+                  right: NaN%;
+                  width: NaN%;
+                }
+                @media (min-width: 640px){[dir='ltr'] & {
+                  left: NaN%;
+                  right: NaN%;
+                  width: 33.333333333333336%;
+                }
+                @media (min-width: 1024px){[dir='ltr'] & {
+                  left: NaN%;
+                  right: NaN%;
+                  width: NaN%;
+                }
+                @media (min-width: 1366px){[dir='ltr'] & {
+                  left: NaN%;
+                  right: NaN%;
+                  width: NaN%;
+                }
+                [dir='rtl'] & {
+                  float: right;
+                  left: NaN%;
+                  right: NaN%;
+                }
+                @media (min-width: 320px){[dir='rtl'] & {
+                  left: NaN%;
+                  right: NaN%;
+                  width: NaN%;
+                }
+                @media (min-width: 480px){[dir='rtl'] & {
+                  left: NaN%;
+                  right: NaN%;
+                  width: NaN%;
+                }
+                @media (min-width: 640px){[dir='rtl'] & {
+                  left: NaN%;
+                  right: NaN%;
+                  width: 33.333333333333336%;
+                }
+                @media (min-width: 1024px){[dir='rtl'] & {
+                  left: NaN%;
+                  right: NaN%;
+                  width: NaN%;
+                }
+                @media (min-width: 1366px){[dir='rtl'] & {
+                  left: NaN%;
+                  right: NaN%;
+                  width: NaN%;
+                }
+                @media (min-width: 1920px){& {
+                  width: NaN%;
+                }
           >
             4
           </div>

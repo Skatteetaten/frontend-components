@@ -1,0 +1,30 @@
+import { IDropdownProps } from '@fluentui/react';
+import { calloutState, LabelWithCalloutProps } from '../LabelWithCallout';
+
+export interface DropdownProps extends IDropdownProps {
+  /** Hjelpetekst */
+  help?: string | JSX.Element;
+  /** Størrelse på inputfelt som skal benyttes */
+  inputSize?: 'normal' | 'large';
+  /** aria-label for knapp i label */
+  labelButtonAriaLabel?: string;
+  /** Overstyr label, se LabelWithCallout komponent */
+  labelWithCalloutProps?: LabelWithCalloutProps;
+  /** @ignore */
+  multiSelect?: IDropdownProps['multiSelect'];
+  /** @ignore */
+  multiSelectDelimiter?: IDropdownProps['multiSelectDelimiter'];
+  /** Brukerspesifisert event for callout */
+  onCalloutToggle?: (
+    oldCalloutState: calloutState,
+    newCalloutState: calloutState
+  ) => void;
+  /** doNotLayer prop både for Label og den nested Callout i Dropdown */
+  doNotLayer?: boolean;
+  /** Lesemodus. Kan brukes i sammenheng med selectedKey eller defaultSelectedKey for å vise verdi */
+  readOnly?: boolean;
+}
+
+export interface DropdownState {
+  isCalloutVisible: boolean;
+}

@@ -1,6 +1,6 @@
 import React from 'react';
 import { mount } from 'enzyme';
-import Icon from './Icon';
+import { Icon } from '.';
 
 function oppsettFullDOM(props) {
   return mount(<Icon {...props} />);
@@ -12,7 +12,7 @@ it('renderer Grid uten å kræsje ', () => {
 
 it('renderer Icon med riktig ikonnavn ', () => {
   const wrapper = oppsettFullDOM({
-    iconName: 'AttachFile'
+    iconName: 'AttachFile',
   });
 
   const icon = wrapper.find('IconBase');

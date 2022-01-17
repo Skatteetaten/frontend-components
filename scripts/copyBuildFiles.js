@@ -4,7 +4,7 @@ var {
   readFileSync,
   copyFileSync,
   writeFileSync,
-  mkdirSync
+  mkdirSync,
 } = require('fs');
 
 const libPath = resolve(__dirname, '../lib/');
@@ -15,11 +15,20 @@ if (!existsSync(libPath)) {
 
 const files = ['README.md', 'LICENSE'];
 
-files.forEach(file => {
+files.forEach((file) => {
   const filePath = resolve(libPath, basename(file));
   copyFileSync(file, filePath);
   console.log(`Copied ${file} to ${filePath}`);
 });
+
+const myArgs = process.argv.slice(2);
+const isExternal = myArgs.length > 0 && myArgs[0] === 'EXTERNAL';
+
+if (isExternal) {
+  const npmrcPath = resolve(libPath, '.npmrc');
+  writeFileSync(npmrcPath, '//registry.npmjs.org/:_authToken=${NPM_TOKEN}');
+  console.log(`Created .npmrc in ${npmrcPath}`);
+}
 
 const pkgjson = readFileSync(resolve(__dirname, '../package.json'), 'utf8');
 const {
@@ -37,7 +46,7 @@ const {
   peerDependencies,
   dependencies,
   types,
-  main
+  main,
 } = JSON.parse(pkgjson);
 
 const minimalPackage = {
@@ -45,7 +54,7 @@ const minimalPackage = {
   groupId,
   author,
   version,
-  publishConfig,
+  publishConfig: isExternal ? undefined : publishConfig,
   description,
   main,
   types,
@@ -55,7 +64,7 @@ const minimalPackage = {
   bugs,
   homepage,
   peerDependencies,
-  dependencies
+  dependencies,
 };
 
 const pkgJsonPath = resolve(libPath, 'package.json');

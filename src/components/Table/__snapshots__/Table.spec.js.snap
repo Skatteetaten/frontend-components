@@ -56,39 +56,245 @@ exports[`Table komponent matcher snapshot 1`] = `
   }
 >
   <div
-    className="SkeTable-85"
+    className=
+
+        {
+          overflow-x: auto;
+        }
   >
-    <table>
-      <thead>
-        <tr>
-          <th
-            className=""
-            key="month"
-            scope="col"
+    <table
+      className=
+
+          {
+            border-collapse: collapse;
+            display: table;
+            height: 1px;
+            text-align: left;
+          }
+    >
+      <thead
+        className=
+
+            {
+              display: table-header-group;
+            }
+      >
+        <tr
+          className=
+
+              {
+                vertical-align: middle;
+              }
+        >
+          <TableHeader
+            columns={
+              Array [
+                Object {
+                  "fieldName": "month",
+                  "name": "Måned",
+                },
+                Object {
+                  "alignment": "right",
+                  "fieldName": "amount",
+                  "name": "Beløp",
+                },
+                Object {
+                  "alignment": "right",
+                  "fieldName": "coverage",
+                  "name": "Dekningsgrad",
+                },
+                Object {
+                  "alignment": "right",
+                  "fieldName": "revenue",
+                  "name": "Avkastning",
+                },
+              ]
+            }
+            setSort={[Function]}
+            sort={
+              Object {
+                "ascending": false,
+                "columnFieldName": "",
+              }
+            }
           >
-            Måned
-          </th>
-          <th
-            className=""
-            key="amount"
-            scope="col"
-          >
-            Beløp
-          </th>
-          <th
-            className=""
-            key="coverage"
-            scope="col"
-          >
-            Dekningsgrad
-          </th>
-          <th
-            className=""
-            key="revenue"
-            scope="col"
-          >
-            Avkastning
-          </th>
+            <th
+              className=
+
+                  {
+                    border-bottom: 2px solid #1a1a1a;
+                    font-size: inherit;
+                    font-weight: 700;
+                    padding-bottom: 1rem;
+                    padding-left: 1rem;
+                    padding-right: 1rem;
+                    padding-top: 1rem;
+                    position: relative;
+                    vertical-align: bottom;
+                  }
+                  & i {
+                    color: #1362ae;
+                    cursor: pointer;
+                    padding-left: 0.125rem;
+                    position: absolute;
+                  }
+                  & i:hover {
+                    color: #093e61;
+                  }
+                  @media (min-width: 1024px){& [data-icon-name="ArrowUpDown"] {
+                    opacity: 0;
+                  }
+                  & .noAutoHide {
+                    opacity: 1;
+                  }
+                  & [data-icon-name="ArrowUpDown"]:hover {
+                    opacity: 1;
+                  }
+                  &:focus {
+                    color: #1362ae;
+                    outline: 0;
+                  }
+              key="month"
+              scope="col"
+            >
+              Måned
+            </th>
+            <th
+              className=
+
+                  {
+                    border-bottom: 2px solid #1a1a1a;
+                    font-size: inherit;
+                    font-weight: 700;
+                    padding-bottom: 1rem;
+                    padding-left: 1rem;
+                    padding-right: 1rem;
+                    padding-top: 1rem;
+                    position: relative;
+                    vertical-align: bottom;
+                  }
+                  & i {
+                    color: #1362ae;
+                    cursor: pointer;
+                    padding-left: 0.125rem;
+                    position: absolute;
+                  }
+                  & i:hover {
+                    color: #093e61;
+                  }
+                  @media (min-width: 1024px){& [data-icon-name="ArrowUpDown"] {
+                    opacity: 0;
+                  }
+                  & .noAutoHide {
+                    opacity: 1;
+                  }
+                  & [data-icon-name="ArrowUpDown"]:hover {
+                    opacity: 1;
+                  }
+                  &:focus {
+                    color: #1362ae;
+                    outline: 0;
+                  }
+                  {
+                    justify-content: flex-end;
+                    text-align: right;
+                  }
+              key="amount"
+              scope="col"
+            >
+              Beløp
+            </th>
+            <th
+              className=
+
+                  {
+                    border-bottom: 2px solid #1a1a1a;
+                    font-size: inherit;
+                    font-weight: 700;
+                    padding-bottom: 1rem;
+                    padding-left: 1rem;
+                    padding-right: 1rem;
+                    padding-top: 1rem;
+                    position: relative;
+                    vertical-align: bottom;
+                  }
+                  & i {
+                    color: #1362ae;
+                    cursor: pointer;
+                    padding-left: 0.125rem;
+                    position: absolute;
+                  }
+                  & i:hover {
+                    color: #093e61;
+                  }
+                  @media (min-width: 1024px){& [data-icon-name="ArrowUpDown"] {
+                    opacity: 0;
+                  }
+                  & .noAutoHide {
+                    opacity: 1;
+                  }
+                  & [data-icon-name="ArrowUpDown"]:hover {
+                    opacity: 1;
+                  }
+                  &:focus {
+                    color: #1362ae;
+                    outline: 0;
+                  }
+                  {
+                    justify-content: flex-end;
+                    text-align: right;
+                  }
+              key="coverage"
+              scope="col"
+            >
+              Dekningsgrad
+            </th>
+            <th
+              className=
+
+                  {
+                    border-bottom: 2px solid #1a1a1a;
+                    font-size: inherit;
+                    font-weight: 700;
+                    padding-bottom: 1rem;
+                    padding-left: 1rem;
+                    padding-right: 1rem;
+                    padding-top: 1rem;
+                    position: relative;
+                    vertical-align: bottom;
+                  }
+                  & i {
+                    color: #1362ae;
+                    cursor: pointer;
+                    padding-left: 0.125rem;
+                    position: absolute;
+                  }
+                  & i:hover {
+                    color: #093e61;
+                  }
+                  @media (min-width: 1024px){& [data-icon-name="ArrowUpDown"] {
+                    opacity: 0;
+                  }
+                  & .noAutoHide {
+                    opacity: 1;
+                  }
+                  & [data-icon-name="ArrowUpDown"]:hover {
+                    opacity: 1;
+                  }
+                  &:focus {
+                    color: #1362ae;
+                    outline: 0;
+                  }
+                  {
+                    justify-content: flex-end;
+                    text-align: right;
+                  }
+              key="revenue"
+              scope="col"
+            >
+              Avkastning
+            </th>
+          </TableHeader>
         </tr>
       </thead>
       <tbody>
@@ -137,44 +343,444 @@ exports[`Table komponent matcher snapshot 1`] = `
           rowIndex={0}
           showRowSeparators={true}
           tableHasScroll={false}
-          tableId="table-1"
+          tableId="table-123"
         >
           <tr
-            className="separator"
+            className=
+                tableRowHasSeparator
+                {
+                  border-box: box-sizing;
+                  vertical-align: middle;
+                }
+                &.tableRowIsClickable:hover {
+                  background-color: #cde1f9;
+                }
+                &.tableRowEditableAndOpen {
+                  display: table-row;
+                }
+                &.tableRowEditableAndClosed {
+                  display: none;
+                }
+                &.tableRowHasSeparator {
+                  border-bottom: 1px solid #b2b2b2;
+                }
             key="0"
           >
             <th
-              className="is-closed tableRow"
-              id="table-10_0"
-              key="table-10_0"
+              className=
+                  tableCellHasSeparator
+                  {
+                    font-weight: 400;
+                    padding-bottom: 0px;
+                    padding-left: 0px;
+                    padding-right: 0px;
+                    padding-top: 0px;
+                    vertical-align: middle;
+                  }
+                  &.tableCellAlignedRight {
+                    justify-content: flex-end;
+                    text-align: right;
+                  }
+                  &.tableCellAlignedCenter {
+                    justify-content: center;
+                    text-align: center;
+                  }
+                  &.tableCellIsSum {
+                    padding-bottom: 1rem;
+                    padding-left: 1rem;
+                    padding-right: 1rem;
+                    padding-top: 1rem;
+                    text-align: end;
+                  }
+                  &.tableCellForExpandCollapseButton {
+                    max-width: 1.5rem;
+                  }
+                  @media (min-width: 640px){&.tableCellForExpandCollapseButton {
+                    max-width: 3.125rem;
+                  }
+                  &.tableCellIsEditableRowClosed {
+                    border-bottom: none;
+                  }
+                  &.tableCellAboveExpandedArea {
+                    border-bottom: none;
+                    vertical-align: top;
+                  }
+                  &.tableCellHiddenOnMobile {
+                    display: none;
+                  }
+                  @media (min-width: 640px){&.tableCellHiddenOnMobile {
+                    display: table-cell;
+                  }
+                  &.tableCellHasSeparator {
+                    border-bottom: 1px solid #b2b2b2;
+                  }
+              id="table-1230_0"
+              key="table-1230_0"
+              rowSpan={1}
               scope="row"
             >
               <div
-                className="cellContent cellContentLarge"
+                className=
+                    cellContentLarge
+                    {
+                      box-sizing: border-box;
+                      display: block;
+                      font-size: inherit;
+                      padding-bottom: 0.5rem;
+                      padding-left: 1rem;
+                      padding-right: 1rem;
+                      padding-top: 0.5rem;
+                      text-align: inherit;
+                      vertical-align: middle;
+                      width: 100%;
+                    }
+                    &.cellContentSmall {
+                      padding-bottom: 0.125rem;
+                      padding-left: 1rem;
+                      padding-right: 1rem;
+                      padding-top: 0.125rem;
+                    }
+                    &.cellContentClickable {
+                      cursor: pointer;
+                      padding-bottom: 0.5rem;
+                      padding-top: 0.5rem;
+                    }
+                    &.cellContentLarge {
+                      padding-bottom: 1rem;
+                      padding-left: 1rem;
+                      padding-right: 1rem;
+                      padding-top: 1rem;
+                    }
+                    &.cellContentChildRow {
+                      padding-bottom: 1rem;
+                      padding-left: 1rem;
+                      padding-right: 1rem;
+                      padding-top: 0;
+                    }
+                    &.cellContentAlignedRight {
+                      text-align: right;
+                    }
+                    &.cellContentAlignedCenter {
+                      text-align: center;
+                    }
+                    &.cellContentAboveExpandedArea {
+                      align-items: start;
+                    }
+                    &.cellContentHideEdit {
+                      min-height: 4rem;
+                    }
               />
             </th>
             <td
-              className="is-closed right"
-              key="table-10_1"
+              className=
+                  tableCellAlignedRight
+                  tableCellHasSeparator
+                  {
+                    font-weight: 400;
+                    padding-bottom: 0px;
+                    padding-left: 0px;
+                    padding-right: 0px;
+                    padding-top: 0px;
+                    vertical-align: middle;
+                  }
+                  &.tableCellAlignedRight {
+                    justify-content: flex-end;
+                    text-align: right;
+                  }
+                  &.tableCellAlignedCenter {
+                    justify-content: center;
+                    text-align: center;
+                  }
+                  &.tableCellIsSum {
+                    padding-bottom: 1rem;
+                    padding-left: 1rem;
+                    padding-right: 1rem;
+                    padding-top: 1rem;
+                    text-align: end;
+                  }
+                  &.tableCellForExpandCollapseButton {
+                    max-width: 1.5rem;
+                  }
+                  @media (min-width: 640px){&.tableCellForExpandCollapseButton {
+                    max-width: 3.125rem;
+                  }
+                  &.tableCellIsEditableRowClosed {
+                    border-bottom: none;
+                  }
+                  &.tableCellAboveExpandedArea {
+                    border-bottom: none;
+                    vertical-align: top;
+                  }
+                  &.tableCellHiddenOnMobile {
+                    display: none;
+                  }
+                  @media (min-width: 640px){&.tableCellHiddenOnMobile {
+                    display: table-cell;
+                  }
+                  &.tableCellHasSeparator {
+                    border-bottom: 1px solid #b2b2b2;
+                  }
+              key="table-1230_1"
             >
               <div
-                className="cellContent cellContentLarge"
+                className=
+                    cellContentAlignedRight
+                    cellContentLarge
+                    {
+                      box-sizing: border-box;
+                      display: block;
+                      font-size: inherit;
+                      padding-bottom: 0.5rem;
+                      padding-left: 1rem;
+                      padding-right: 1rem;
+                      padding-top: 0.5rem;
+                      text-align: inherit;
+                      vertical-align: middle;
+                      width: 100%;
+                    }
+                    &.cellContentSmall {
+                      padding-bottom: 0.125rem;
+                      padding-left: 1rem;
+                      padding-right: 1rem;
+                      padding-top: 0.125rem;
+                    }
+                    &.cellContentClickable {
+                      cursor: pointer;
+                      padding-bottom: 0.5rem;
+                      padding-top: 0.5rem;
+                    }
+                    &.cellContentLarge {
+                      padding-bottom: 1rem;
+                      padding-left: 1rem;
+                      padding-right: 1rem;
+                      padding-top: 1rem;
+                    }
+                    &.cellContentChildRow {
+                      padding-bottom: 1rem;
+                      padding-left: 1rem;
+                      padding-right: 1rem;
+                      padding-top: 0;
+                    }
+                    &.cellContentAlignedRight {
+                      text-align: right;
+                    }
+                    &.cellContentAlignedCenter {
+                      text-align: center;
+                    }
+                    &.cellContentAboveExpandedArea {
+                      align-items: start;
+                    }
+                    &.cellContentHideEdit {
+                      min-height: 4rem;
+                    }
               />
             </td>
             <td
-              className="is-closed right"
-              key="table-10_2"
+              className=
+                  tableCellAlignedRight
+                  tableCellHasSeparator
+                  {
+                    font-weight: 400;
+                    padding-bottom: 0px;
+                    padding-left: 0px;
+                    padding-right: 0px;
+                    padding-top: 0px;
+                    vertical-align: middle;
+                  }
+                  &.tableCellAlignedRight {
+                    justify-content: flex-end;
+                    text-align: right;
+                  }
+                  &.tableCellAlignedCenter {
+                    justify-content: center;
+                    text-align: center;
+                  }
+                  &.tableCellIsSum {
+                    padding-bottom: 1rem;
+                    padding-left: 1rem;
+                    padding-right: 1rem;
+                    padding-top: 1rem;
+                    text-align: end;
+                  }
+                  &.tableCellForExpandCollapseButton {
+                    max-width: 1.5rem;
+                  }
+                  @media (min-width: 640px){&.tableCellForExpandCollapseButton {
+                    max-width: 3.125rem;
+                  }
+                  &.tableCellIsEditableRowClosed {
+                    border-bottom: none;
+                  }
+                  &.tableCellAboveExpandedArea {
+                    border-bottom: none;
+                    vertical-align: top;
+                  }
+                  &.tableCellHiddenOnMobile {
+                    display: none;
+                  }
+                  @media (min-width: 640px){&.tableCellHiddenOnMobile {
+                    display: table-cell;
+                  }
+                  &.tableCellHasSeparator {
+                    border-bottom: 1px solid #b2b2b2;
+                  }
+              key="table-1230_2"
             >
               <div
-                className="cellContent cellContentLarge"
+                className=
+                    cellContentAlignedRight
+                    cellContentLarge
+                    {
+                      box-sizing: border-box;
+                      display: block;
+                      font-size: inherit;
+                      padding-bottom: 0.5rem;
+                      padding-left: 1rem;
+                      padding-right: 1rem;
+                      padding-top: 0.5rem;
+                      text-align: inherit;
+                      vertical-align: middle;
+                      width: 100%;
+                    }
+                    &.cellContentSmall {
+                      padding-bottom: 0.125rem;
+                      padding-left: 1rem;
+                      padding-right: 1rem;
+                      padding-top: 0.125rem;
+                    }
+                    &.cellContentClickable {
+                      cursor: pointer;
+                      padding-bottom: 0.5rem;
+                      padding-top: 0.5rem;
+                    }
+                    &.cellContentLarge {
+                      padding-bottom: 1rem;
+                      padding-left: 1rem;
+                      padding-right: 1rem;
+                      padding-top: 1rem;
+                    }
+                    &.cellContentChildRow {
+                      padding-bottom: 1rem;
+                      padding-left: 1rem;
+                      padding-right: 1rem;
+                      padding-top: 0;
+                    }
+                    &.cellContentAlignedRight {
+                      text-align: right;
+                    }
+                    &.cellContentAlignedCenter {
+                      text-align: center;
+                    }
+                    &.cellContentAboveExpandedArea {
+                      align-items: start;
+                    }
+                    &.cellContentHideEdit {
+                      min-height: 4rem;
+                    }
               />
             </td>
             <td
-              className="is-closed right"
-              key="table-10_3"
+              className=
+                  tableCellAlignedRight
+                  tableCellHasSeparator
+                  {
+                    font-weight: 400;
+                    padding-bottom: 0px;
+                    padding-left: 0px;
+                    padding-right: 0px;
+                    padding-top: 0px;
+                    vertical-align: middle;
+                  }
+                  &.tableCellAlignedRight {
+                    justify-content: flex-end;
+                    text-align: right;
+                  }
+                  &.tableCellAlignedCenter {
+                    justify-content: center;
+                    text-align: center;
+                  }
+                  &.tableCellIsSum {
+                    padding-bottom: 1rem;
+                    padding-left: 1rem;
+                    padding-right: 1rem;
+                    padding-top: 1rem;
+                    text-align: end;
+                  }
+                  &.tableCellForExpandCollapseButton {
+                    max-width: 1.5rem;
+                  }
+                  @media (min-width: 640px){&.tableCellForExpandCollapseButton {
+                    max-width: 3.125rem;
+                  }
+                  &.tableCellIsEditableRowClosed {
+                    border-bottom: none;
+                  }
+                  &.tableCellAboveExpandedArea {
+                    border-bottom: none;
+                    vertical-align: top;
+                  }
+                  &.tableCellHiddenOnMobile {
+                    display: none;
+                  }
+                  @media (min-width: 640px){&.tableCellHiddenOnMobile {
+                    display: table-cell;
+                  }
+                  &.tableCellHasSeparator {
+                    border-bottom: 1px solid #b2b2b2;
+                  }
+              key="table-1230_3"
             >
               <div
-                className="cellContent cellContentLarge"
+                className=
+                    cellContentAlignedRight
+                    cellContentLarge
+                    {
+                      box-sizing: border-box;
+                      display: block;
+                      font-size: inherit;
+                      padding-bottom: 0.5rem;
+                      padding-left: 1rem;
+                      padding-right: 1rem;
+                      padding-top: 0.5rem;
+                      text-align: inherit;
+                      vertical-align: middle;
+                      width: 100%;
+                    }
+                    &.cellContentSmall {
+                      padding-bottom: 0.125rem;
+                      padding-left: 1rem;
+                      padding-right: 1rem;
+                      padding-top: 0.125rem;
+                    }
+                    &.cellContentClickable {
+                      cursor: pointer;
+                      padding-bottom: 0.5rem;
+                      padding-top: 0.5rem;
+                    }
+                    &.cellContentLarge {
+                      padding-bottom: 1rem;
+                      padding-left: 1rem;
+                      padding-right: 1rem;
+                      padding-top: 1rem;
+                    }
+                    &.cellContentChildRow {
+                      padding-bottom: 1rem;
+                      padding-left: 1rem;
+                      padding-right: 1rem;
+                      padding-top: 0;
+                    }
+                    &.cellContentAlignedRight {
+                      text-align: right;
+                    }
+                    &.cellContentAlignedCenter {
+                      text-align: center;
+                    }
+                    &.cellContentAboveExpandedArea {
+                      align-items: start;
+                    }
+                    &.cellContentHideEdit {
+                      min-height: 4rem;
+                    }
               />
             </td>
           </tr>
@@ -223,44 +829,444 @@ exports[`Table komponent matcher snapshot 1`] = `
           rowIndex={1}
           showRowSeparators={true}
           tableHasScroll={false}
-          tableId="table-1"
+          tableId="table-123"
         >
           <tr
-            className="separator"
+            className=
+                tableRowHasSeparator
+                {
+                  border-box: box-sizing;
+                  vertical-align: middle;
+                }
+                &.tableRowIsClickable:hover {
+                  background-color: #cde1f9;
+                }
+                &.tableRowEditableAndOpen {
+                  display: table-row;
+                }
+                &.tableRowEditableAndClosed {
+                  display: none;
+                }
+                &.tableRowHasSeparator {
+                  border-bottom: 1px solid #b2b2b2;
+                }
             key="1"
           >
             <th
-              className="is-closed tableRow"
-              id="table-11_0"
-              key="table-11_0"
+              className=
+                  tableCellHasSeparator
+                  {
+                    font-weight: 400;
+                    padding-bottom: 0px;
+                    padding-left: 0px;
+                    padding-right: 0px;
+                    padding-top: 0px;
+                    vertical-align: middle;
+                  }
+                  &.tableCellAlignedRight {
+                    justify-content: flex-end;
+                    text-align: right;
+                  }
+                  &.tableCellAlignedCenter {
+                    justify-content: center;
+                    text-align: center;
+                  }
+                  &.tableCellIsSum {
+                    padding-bottom: 1rem;
+                    padding-left: 1rem;
+                    padding-right: 1rem;
+                    padding-top: 1rem;
+                    text-align: end;
+                  }
+                  &.tableCellForExpandCollapseButton {
+                    max-width: 1.5rem;
+                  }
+                  @media (min-width: 640px){&.tableCellForExpandCollapseButton {
+                    max-width: 3.125rem;
+                  }
+                  &.tableCellIsEditableRowClosed {
+                    border-bottom: none;
+                  }
+                  &.tableCellAboveExpandedArea {
+                    border-bottom: none;
+                    vertical-align: top;
+                  }
+                  &.tableCellHiddenOnMobile {
+                    display: none;
+                  }
+                  @media (min-width: 640px){&.tableCellHiddenOnMobile {
+                    display: table-cell;
+                  }
+                  &.tableCellHasSeparator {
+                    border-bottom: 1px solid #b2b2b2;
+                  }
+              id="table-1231_0"
+              key="table-1231_0"
+              rowSpan={1}
               scope="row"
             >
               <div
-                className="cellContent cellContentLarge"
+                className=
+                    cellContentLarge
+                    {
+                      box-sizing: border-box;
+                      display: block;
+                      font-size: inherit;
+                      padding-bottom: 0.5rem;
+                      padding-left: 1rem;
+                      padding-right: 1rem;
+                      padding-top: 0.5rem;
+                      text-align: inherit;
+                      vertical-align: middle;
+                      width: 100%;
+                    }
+                    &.cellContentSmall {
+                      padding-bottom: 0.125rem;
+                      padding-left: 1rem;
+                      padding-right: 1rem;
+                      padding-top: 0.125rem;
+                    }
+                    &.cellContentClickable {
+                      cursor: pointer;
+                      padding-bottom: 0.5rem;
+                      padding-top: 0.5rem;
+                    }
+                    &.cellContentLarge {
+                      padding-bottom: 1rem;
+                      padding-left: 1rem;
+                      padding-right: 1rem;
+                      padding-top: 1rem;
+                    }
+                    &.cellContentChildRow {
+                      padding-bottom: 1rem;
+                      padding-left: 1rem;
+                      padding-right: 1rem;
+                      padding-top: 0;
+                    }
+                    &.cellContentAlignedRight {
+                      text-align: right;
+                    }
+                    &.cellContentAlignedCenter {
+                      text-align: center;
+                    }
+                    &.cellContentAboveExpandedArea {
+                      align-items: start;
+                    }
+                    &.cellContentHideEdit {
+                      min-height: 4rem;
+                    }
               />
             </th>
             <td
-              className="is-closed right"
-              key="table-11_1"
+              className=
+                  tableCellAlignedRight
+                  tableCellHasSeparator
+                  {
+                    font-weight: 400;
+                    padding-bottom: 0px;
+                    padding-left: 0px;
+                    padding-right: 0px;
+                    padding-top: 0px;
+                    vertical-align: middle;
+                  }
+                  &.tableCellAlignedRight {
+                    justify-content: flex-end;
+                    text-align: right;
+                  }
+                  &.tableCellAlignedCenter {
+                    justify-content: center;
+                    text-align: center;
+                  }
+                  &.tableCellIsSum {
+                    padding-bottom: 1rem;
+                    padding-left: 1rem;
+                    padding-right: 1rem;
+                    padding-top: 1rem;
+                    text-align: end;
+                  }
+                  &.tableCellForExpandCollapseButton {
+                    max-width: 1.5rem;
+                  }
+                  @media (min-width: 640px){&.tableCellForExpandCollapseButton {
+                    max-width: 3.125rem;
+                  }
+                  &.tableCellIsEditableRowClosed {
+                    border-bottom: none;
+                  }
+                  &.tableCellAboveExpandedArea {
+                    border-bottom: none;
+                    vertical-align: top;
+                  }
+                  &.tableCellHiddenOnMobile {
+                    display: none;
+                  }
+                  @media (min-width: 640px){&.tableCellHiddenOnMobile {
+                    display: table-cell;
+                  }
+                  &.tableCellHasSeparator {
+                    border-bottom: 1px solid #b2b2b2;
+                  }
+              key="table-1231_1"
             >
               <div
-                className="cellContent cellContentLarge"
+                className=
+                    cellContentAlignedRight
+                    cellContentLarge
+                    {
+                      box-sizing: border-box;
+                      display: block;
+                      font-size: inherit;
+                      padding-bottom: 0.5rem;
+                      padding-left: 1rem;
+                      padding-right: 1rem;
+                      padding-top: 0.5rem;
+                      text-align: inherit;
+                      vertical-align: middle;
+                      width: 100%;
+                    }
+                    &.cellContentSmall {
+                      padding-bottom: 0.125rem;
+                      padding-left: 1rem;
+                      padding-right: 1rem;
+                      padding-top: 0.125rem;
+                    }
+                    &.cellContentClickable {
+                      cursor: pointer;
+                      padding-bottom: 0.5rem;
+                      padding-top: 0.5rem;
+                    }
+                    &.cellContentLarge {
+                      padding-bottom: 1rem;
+                      padding-left: 1rem;
+                      padding-right: 1rem;
+                      padding-top: 1rem;
+                    }
+                    &.cellContentChildRow {
+                      padding-bottom: 1rem;
+                      padding-left: 1rem;
+                      padding-right: 1rem;
+                      padding-top: 0;
+                    }
+                    &.cellContentAlignedRight {
+                      text-align: right;
+                    }
+                    &.cellContentAlignedCenter {
+                      text-align: center;
+                    }
+                    &.cellContentAboveExpandedArea {
+                      align-items: start;
+                    }
+                    &.cellContentHideEdit {
+                      min-height: 4rem;
+                    }
               />
             </td>
             <td
-              className="is-closed right"
-              key="table-11_2"
+              className=
+                  tableCellAlignedRight
+                  tableCellHasSeparator
+                  {
+                    font-weight: 400;
+                    padding-bottom: 0px;
+                    padding-left: 0px;
+                    padding-right: 0px;
+                    padding-top: 0px;
+                    vertical-align: middle;
+                  }
+                  &.tableCellAlignedRight {
+                    justify-content: flex-end;
+                    text-align: right;
+                  }
+                  &.tableCellAlignedCenter {
+                    justify-content: center;
+                    text-align: center;
+                  }
+                  &.tableCellIsSum {
+                    padding-bottom: 1rem;
+                    padding-left: 1rem;
+                    padding-right: 1rem;
+                    padding-top: 1rem;
+                    text-align: end;
+                  }
+                  &.tableCellForExpandCollapseButton {
+                    max-width: 1.5rem;
+                  }
+                  @media (min-width: 640px){&.tableCellForExpandCollapseButton {
+                    max-width: 3.125rem;
+                  }
+                  &.tableCellIsEditableRowClosed {
+                    border-bottom: none;
+                  }
+                  &.tableCellAboveExpandedArea {
+                    border-bottom: none;
+                    vertical-align: top;
+                  }
+                  &.tableCellHiddenOnMobile {
+                    display: none;
+                  }
+                  @media (min-width: 640px){&.tableCellHiddenOnMobile {
+                    display: table-cell;
+                  }
+                  &.tableCellHasSeparator {
+                    border-bottom: 1px solid #b2b2b2;
+                  }
+              key="table-1231_2"
             >
               <div
-                className="cellContent cellContentLarge"
+                className=
+                    cellContentAlignedRight
+                    cellContentLarge
+                    {
+                      box-sizing: border-box;
+                      display: block;
+                      font-size: inherit;
+                      padding-bottom: 0.5rem;
+                      padding-left: 1rem;
+                      padding-right: 1rem;
+                      padding-top: 0.5rem;
+                      text-align: inherit;
+                      vertical-align: middle;
+                      width: 100%;
+                    }
+                    &.cellContentSmall {
+                      padding-bottom: 0.125rem;
+                      padding-left: 1rem;
+                      padding-right: 1rem;
+                      padding-top: 0.125rem;
+                    }
+                    &.cellContentClickable {
+                      cursor: pointer;
+                      padding-bottom: 0.5rem;
+                      padding-top: 0.5rem;
+                    }
+                    &.cellContentLarge {
+                      padding-bottom: 1rem;
+                      padding-left: 1rem;
+                      padding-right: 1rem;
+                      padding-top: 1rem;
+                    }
+                    &.cellContentChildRow {
+                      padding-bottom: 1rem;
+                      padding-left: 1rem;
+                      padding-right: 1rem;
+                      padding-top: 0;
+                    }
+                    &.cellContentAlignedRight {
+                      text-align: right;
+                    }
+                    &.cellContentAlignedCenter {
+                      text-align: center;
+                    }
+                    &.cellContentAboveExpandedArea {
+                      align-items: start;
+                    }
+                    &.cellContentHideEdit {
+                      min-height: 4rem;
+                    }
               />
             </td>
             <td
-              className="is-closed right"
-              key="table-11_3"
+              className=
+                  tableCellAlignedRight
+                  tableCellHasSeparator
+                  {
+                    font-weight: 400;
+                    padding-bottom: 0px;
+                    padding-left: 0px;
+                    padding-right: 0px;
+                    padding-top: 0px;
+                    vertical-align: middle;
+                  }
+                  &.tableCellAlignedRight {
+                    justify-content: flex-end;
+                    text-align: right;
+                  }
+                  &.tableCellAlignedCenter {
+                    justify-content: center;
+                    text-align: center;
+                  }
+                  &.tableCellIsSum {
+                    padding-bottom: 1rem;
+                    padding-left: 1rem;
+                    padding-right: 1rem;
+                    padding-top: 1rem;
+                    text-align: end;
+                  }
+                  &.tableCellForExpandCollapseButton {
+                    max-width: 1.5rem;
+                  }
+                  @media (min-width: 640px){&.tableCellForExpandCollapseButton {
+                    max-width: 3.125rem;
+                  }
+                  &.tableCellIsEditableRowClosed {
+                    border-bottom: none;
+                  }
+                  &.tableCellAboveExpandedArea {
+                    border-bottom: none;
+                    vertical-align: top;
+                  }
+                  &.tableCellHiddenOnMobile {
+                    display: none;
+                  }
+                  @media (min-width: 640px){&.tableCellHiddenOnMobile {
+                    display: table-cell;
+                  }
+                  &.tableCellHasSeparator {
+                    border-bottom: 1px solid #b2b2b2;
+                  }
+              key="table-1231_3"
             >
               <div
-                className="cellContent cellContentLarge"
+                className=
+                    cellContentAlignedRight
+                    cellContentLarge
+                    {
+                      box-sizing: border-box;
+                      display: block;
+                      font-size: inherit;
+                      padding-bottom: 0.5rem;
+                      padding-left: 1rem;
+                      padding-right: 1rem;
+                      padding-top: 0.5rem;
+                      text-align: inherit;
+                      vertical-align: middle;
+                      width: 100%;
+                    }
+                    &.cellContentSmall {
+                      padding-bottom: 0.125rem;
+                      padding-left: 1rem;
+                      padding-right: 1rem;
+                      padding-top: 0.125rem;
+                    }
+                    &.cellContentClickable {
+                      cursor: pointer;
+                      padding-bottom: 0.5rem;
+                      padding-top: 0.5rem;
+                    }
+                    &.cellContentLarge {
+                      padding-bottom: 1rem;
+                      padding-left: 1rem;
+                      padding-right: 1rem;
+                      padding-top: 1rem;
+                    }
+                    &.cellContentChildRow {
+                      padding-bottom: 1rem;
+                      padding-left: 1rem;
+                      padding-right: 1rem;
+                      padding-top: 0;
+                    }
+                    &.cellContentAlignedRight {
+                      text-align: right;
+                    }
+                    &.cellContentAlignedCenter {
+                      text-align: center;
+                    }
+                    &.cellContentAboveExpandedArea {
+                      align-items: start;
+                    }
+                    &.cellContentHideEdit {
+                      min-height: 4rem;
+                    }
               />
             </td>
           </tr>
@@ -309,44 +1315,444 @@ exports[`Table komponent matcher snapshot 1`] = `
           rowIndex={2}
           showRowSeparators={true}
           tableHasScroll={false}
-          tableId="table-1"
+          tableId="table-123"
         >
           <tr
-            className="separator"
+            className=
+                tableRowHasSeparator
+                {
+                  border-box: box-sizing;
+                  vertical-align: middle;
+                }
+                &.tableRowIsClickable:hover {
+                  background-color: #cde1f9;
+                }
+                &.tableRowEditableAndOpen {
+                  display: table-row;
+                }
+                &.tableRowEditableAndClosed {
+                  display: none;
+                }
+                &.tableRowHasSeparator {
+                  border-bottom: 1px solid #b2b2b2;
+                }
             key="2"
           >
             <th
-              className="is-closed tableRow"
-              id="table-12_0"
-              key="table-12_0"
+              className=
+                  tableCellHasSeparator
+                  {
+                    font-weight: 400;
+                    padding-bottom: 0px;
+                    padding-left: 0px;
+                    padding-right: 0px;
+                    padding-top: 0px;
+                    vertical-align: middle;
+                  }
+                  &.tableCellAlignedRight {
+                    justify-content: flex-end;
+                    text-align: right;
+                  }
+                  &.tableCellAlignedCenter {
+                    justify-content: center;
+                    text-align: center;
+                  }
+                  &.tableCellIsSum {
+                    padding-bottom: 1rem;
+                    padding-left: 1rem;
+                    padding-right: 1rem;
+                    padding-top: 1rem;
+                    text-align: end;
+                  }
+                  &.tableCellForExpandCollapseButton {
+                    max-width: 1.5rem;
+                  }
+                  @media (min-width: 640px){&.tableCellForExpandCollapseButton {
+                    max-width: 3.125rem;
+                  }
+                  &.tableCellIsEditableRowClosed {
+                    border-bottom: none;
+                  }
+                  &.tableCellAboveExpandedArea {
+                    border-bottom: none;
+                    vertical-align: top;
+                  }
+                  &.tableCellHiddenOnMobile {
+                    display: none;
+                  }
+                  @media (min-width: 640px){&.tableCellHiddenOnMobile {
+                    display: table-cell;
+                  }
+                  &.tableCellHasSeparator {
+                    border-bottom: 1px solid #b2b2b2;
+                  }
+              id="table-1232_0"
+              key="table-1232_0"
+              rowSpan={1}
               scope="row"
             >
               <div
-                className="cellContent cellContentLarge"
+                className=
+                    cellContentLarge
+                    {
+                      box-sizing: border-box;
+                      display: block;
+                      font-size: inherit;
+                      padding-bottom: 0.5rem;
+                      padding-left: 1rem;
+                      padding-right: 1rem;
+                      padding-top: 0.5rem;
+                      text-align: inherit;
+                      vertical-align: middle;
+                      width: 100%;
+                    }
+                    &.cellContentSmall {
+                      padding-bottom: 0.125rem;
+                      padding-left: 1rem;
+                      padding-right: 1rem;
+                      padding-top: 0.125rem;
+                    }
+                    &.cellContentClickable {
+                      cursor: pointer;
+                      padding-bottom: 0.5rem;
+                      padding-top: 0.5rem;
+                    }
+                    &.cellContentLarge {
+                      padding-bottom: 1rem;
+                      padding-left: 1rem;
+                      padding-right: 1rem;
+                      padding-top: 1rem;
+                    }
+                    &.cellContentChildRow {
+                      padding-bottom: 1rem;
+                      padding-left: 1rem;
+                      padding-right: 1rem;
+                      padding-top: 0;
+                    }
+                    &.cellContentAlignedRight {
+                      text-align: right;
+                    }
+                    &.cellContentAlignedCenter {
+                      text-align: center;
+                    }
+                    &.cellContentAboveExpandedArea {
+                      align-items: start;
+                    }
+                    &.cellContentHideEdit {
+                      min-height: 4rem;
+                    }
               />
             </th>
             <td
-              className="is-closed right"
-              key="table-12_1"
+              className=
+                  tableCellAlignedRight
+                  tableCellHasSeparator
+                  {
+                    font-weight: 400;
+                    padding-bottom: 0px;
+                    padding-left: 0px;
+                    padding-right: 0px;
+                    padding-top: 0px;
+                    vertical-align: middle;
+                  }
+                  &.tableCellAlignedRight {
+                    justify-content: flex-end;
+                    text-align: right;
+                  }
+                  &.tableCellAlignedCenter {
+                    justify-content: center;
+                    text-align: center;
+                  }
+                  &.tableCellIsSum {
+                    padding-bottom: 1rem;
+                    padding-left: 1rem;
+                    padding-right: 1rem;
+                    padding-top: 1rem;
+                    text-align: end;
+                  }
+                  &.tableCellForExpandCollapseButton {
+                    max-width: 1.5rem;
+                  }
+                  @media (min-width: 640px){&.tableCellForExpandCollapseButton {
+                    max-width: 3.125rem;
+                  }
+                  &.tableCellIsEditableRowClosed {
+                    border-bottom: none;
+                  }
+                  &.tableCellAboveExpandedArea {
+                    border-bottom: none;
+                    vertical-align: top;
+                  }
+                  &.tableCellHiddenOnMobile {
+                    display: none;
+                  }
+                  @media (min-width: 640px){&.tableCellHiddenOnMobile {
+                    display: table-cell;
+                  }
+                  &.tableCellHasSeparator {
+                    border-bottom: 1px solid #b2b2b2;
+                  }
+              key="table-1232_1"
             >
               <div
-                className="cellContent cellContentLarge"
+                className=
+                    cellContentAlignedRight
+                    cellContentLarge
+                    {
+                      box-sizing: border-box;
+                      display: block;
+                      font-size: inherit;
+                      padding-bottom: 0.5rem;
+                      padding-left: 1rem;
+                      padding-right: 1rem;
+                      padding-top: 0.5rem;
+                      text-align: inherit;
+                      vertical-align: middle;
+                      width: 100%;
+                    }
+                    &.cellContentSmall {
+                      padding-bottom: 0.125rem;
+                      padding-left: 1rem;
+                      padding-right: 1rem;
+                      padding-top: 0.125rem;
+                    }
+                    &.cellContentClickable {
+                      cursor: pointer;
+                      padding-bottom: 0.5rem;
+                      padding-top: 0.5rem;
+                    }
+                    &.cellContentLarge {
+                      padding-bottom: 1rem;
+                      padding-left: 1rem;
+                      padding-right: 1rem;
+                      padding-top: 1rem;
+                    }
+                    &.cellContentChildRow {
+                      padding-bottom: 1rem;
+                      padding-left: 1rem;
+                      padding-right: 1rem;
+                      padding-top: 0;
+                    }
+                    &.cellContentAlignedRight {
+                      text-align: right;
+                    }
+                    &.cellContentAlignedCenter {
+                      text-align: center;
+                    }
+                    &.cellContentAboveExpandedArea {
+                      align-items: start;
+                    }
+                    &.cellContentHideEdit {
+                      min-height: 4rem;
+                    }
               />
             </td>
             <td
-              className="is-closed right"
-              key="table-12_2"
+              className=
+                  tableCellAlignedRight
+                  tableCellHasSeparator
+                  {
+                    font-weight: 400;
+                    padding-bottom: 0px;
+                    padding-left: 0px;
+                    padding-right: 0px;
+                    padding-top: 0px;
+                    vertical-align: middle;
+                  }
+                  &.tableCellAlignedRight {
+                    justify-content: flex-end;
+                    text-align: right;
+                  }
+                  &.tableCellAlignedCenter {
+                    justify-content: center;
+                    text-align: center;
+                  }
+                  &.tableCellIsSum {
+                    padding-bottom: 1rem;
+                    padding-left: 1rem;
+                    padding-right: 1rem;
+                    padding-top: 1rem;
+                    text-align: end;
+                  }
+                  &.tableCellForExpandCollapseButton {
+                    max-width: 1.5rem;
+                  }
+                  @media (min-width: 640px){&.tableCellForExpandCollapseButton {
+                    max-width: 3.125rem;
+                  }
+                  &.tableCellIsEditableRowClosed {
+                    border-bottom: none;
+                  }
+                  &.tableCellAboveExpandedArea {
+                    border-bottom: none;
+                    vertical-align: top;
+                  }
+                  &.tableCellHiddenOnMobile {
+                    display: none;
+                  }
+                  @media (min-width: 640px){&.tableCellHiddenOnMobile {
+                    display: table-cell;
+                  }
+                  &.tableCellHasSeparator {
+                    border-bottom: 1px solid #b2b2b2;
+                  }
+              key="table-1232_2"
             >
               <div
-                className="cellContent cellContentLarge"
+                className=
+                    cellContentAlignedRight
+                    cellContentLarge
+                    {
+                      box-sizing: border-box;
+                      display: block;
+                      font-size: inherit;
+                      padding-bottom: 0.5rem;
+                      padding-left: 1rem;
+                      padding-right: 1rem;
+                      padding-top: 0.5rem;
+                      text-align: inherit;
+                      vertical-align: middle;
+                      width: 100%;
+                    }
+                    &.cellContentSmall {
+                      padding-bottom: 0.125rem;
+                      padding-left: 1rem;
+                      padding-right: 1rem;
+                      padding-top: 0.125rem;
+                    }
+                    &.cellContentClickable {
+                      cursor: pointer;
+                      padding-bottom: 0.5rem;
+                      padding-top: 0.5rem;
+                    }
+                    &.cellContentLarge {
+                      padding-bottom: 1rem;
+                      padding-left: 1rem;
+                      padding-right: 1rem;
+                      padding-top: 1rem;
+                    }
+                    &.cellContentChildRow {
+                      padding-bottom: 1rem;
+                      padding-left: 1rem;
+                      padding-right: 1rem;
+                      padding-top: 0;
+                    }
+                    &.cellContentAlignedRight {
+                      text-align: right;
+                    }
+                    &.cellContentAlignedCenter {
+                      text-align: center;
+                    }
+                    &.cellContentAboveExpandedArea {
+                      align-items: start;
+                    }
+                    &.cellContentHideEdit {
+                      min-height: 4rem;
+                    }
               />
             </td>
             <td
-              className="is-closed right"
-              key="table-12_3"
+              className=
+                  tableCellAlignedRight
+                  tableCellHasSeparator
+                  {
+                    font-weight: 400;
+                    padding-bottom: 0px;
+                    padding-left: 0px;
+                    padding-right: 0px;
+                    padding-top: 0px;
+                    vertical-align: middle;
+                  }
+                  &.tableCellAlignedRight {
+                    justify-content: flex-end;
+                    text-align: right;
+                  }
+                  &.tableCellAlignedCenter {
+                    justify-content: center;
+                    text-align: center;
+                  }
+                  &.tableCellIsSum {
+                    padding-bottom: 1rem;
+                    padding-left: 1rem;
+                    padding-right: 1rem;
+                    padding-top: 1rem;
+                    text-align: end;
+                  }
+                  &.tableCellForExpandCollapseButton {
+                    max-width: 1.5rem;
+                  }
+                  @media (min-width: 640px){&.tableCellForExpandCollapseButton {
+                    max-width: 3.125rem;
+                  }
+                  &.tableCellIsEditableRowClosed {
+                    border-bottom: none;
+                  }
+                  &.tableCellAboveExpandedArea {
+                    border-bottom: none;
+                    vertical-align: top;
+                  }
+                  &.tableCellHiddenOnMobile {
+                    display: none;
+                  }
+                  @media (min-width: 640px){&.tableCellHiddenOnMobile {
+                    display: table-cell;
+                  }
+                  &.tableCellHasSeparator {
+                    border-bottom: 1px solid #b2b2b2;
+                  }
+              key="table-1232_3"
             >
               <div
-                className="cellContent cellContentLarge"
+                className=
+                    cellContentAlignedRight
+                    cellContentLarge
+                    {
+                      box-sizing: border-box;
+                      display: block;
+                      font-size: inherit;
+                      padding-bottom: 0.5rem;
+                      padding-left: 1rem;
+                      padding-right: 1rem;
+                      padding-top: 0.5rem;
+                      text-align: inherit;
+                      vertical-align: middle;
+                      width: 100%;
+                    }
+                    &.cellContentSmall {
+                      padding-bottom: 0.125rem;
+                      padding-left: 1rem;
+                      padding-right: 1rem;
+                      padding-top: 0.125rem;
+                    }
+                    &.cellContentClickable {
+                      cursor: pointer;
+                      padding-bottom: 0.5rem;
+                      padding-top: 0.5rem;
+                    }
+                    &.cellContentLarge {
+                      padding-bottom: 1rem;
+                      padding-left: 1rem;
+                      padding-right: 1rem;
+                      padding-top: 1rem;
+                    }
+                    &.cellContentChildRow {
+                      padding-bottom: 1rem;
+                      padding-left: 1rem;
+                      padding-right: 1rem;
+                      padding-top: 0;
+                    }
+                    &.cellContentAlignedRight {
+                      text-align: right;
+                    }
+                    &.cellContentAlignedCenter {
+                      text-align: center;
+                    }
+                    &.cellContentAboveExpandedArea {
+                      align-items: start;
+                    }
+                    &.cellContentHideEdit {
+                      min-height: 4rem;
+                    }
               />
             </td>
           </tr>
@@ -395,44 +1801,444 @@ exports[`Table komponent matcher snapshot 1`] = `
           rowIndex={3}
           showRowSeparators={true}
           tableHasScroll={false}
-          tableId="table-1"
+          tableId="table-123"
         >
           <tr
-            className="separator"
+            className=
+                tableRowHasSeparator
+                {
+                  border-box: box-sizing;
+                  vertical-align: middle;
+                }
+                &.tableRowIsClickable:hover {
+                  background-color: #cde1f9;
+                }
+                &.tableRowEditableAndOpen {
+                  display: table-row;
+                }
+                &.tableRowEditableAndClosed {
+                  display: none;
+                }
+                &.tableRowHasSeparator {
+                  border-bottom: 1px solid #b2b2b2;
+                }
             key="3"
           >
             <th
-              className="is-closed tableRow"
-              id="table-13_0"
-              key="table-13_0"
+              className=
+                  tableCellHasSeparator
+                  {
+                    font-weight: 400;
+                    padding-bottom: 0px;
+                    padding-left: 0px;
+                    padding-right: 0px;
+                    padding-top: 0px;
+                    vertical-align: middle;
+                  }
+                  &.tableCellAlignedRight {
+                    justify-content: flex-end;
+                    text-align: right;
+                  }
+                  &.tableCellAlignedCenter {
+                    justify-content: center;
+                    text-align: center;
+                  }
+                  &.tableCellIsSum {
+                    padding-bottom: 1rem;
+                    padding-left: 1rem;
+                    padding-right: 1rem;
+                    padding-top: 1rem;
+                    text-align: end;
+                  }
+                  &.tableCellForExpandCollapseButton {
+                    max-width: 1.5rem;
+                  }
+                  @media (min-width: 640px){&.tableCellForExpandCollapseButton {
+                    max-width: 3.125rem;
+                  }
+                  &.tableCellIsEditableRowClosed {
+                    border-bottom: none;
+                  }
+                  &.tableCellAboveExpandedArea {
+                    border-bottom: none;
+                    vertical-align: top;
+                  }
+                  &.tableCellHiddenOnMobile {
+                    display: none;
+                  }
+                  @media (min-width: 640px){&.tableCellHiddenOnMobile {
+                    display: table-cell;
+                  }
+                  &.tableCellHasSeparator {
+                    border-bottom: 1px solid #b2b2b2;
+                  }
+              id="table-1233_0"
+              key="table-1233_0"
+              rowSpan={1}
               scope="row"
             >
               <div
-                className="cellContent cellContentLarge"
+                className=
+                    cellContentLarge
+                    {
+                      box-sizing: border-box;
+                      display: block;
+                      font-size: inherit;
+                      padding-bottom: 0.5rem;
+                      padding-left: 1rem;
+                      padding-right: 1rem;
+                      padding-top: 0.5rem;
+                      text-align: inherit;
+                      vertical-align: middle;
+                      width: 100%;
+                    }
+                    &.cellContentSmall {
+                      padding-bottom: 0.125rem;
+                      padding-left: 1rem;
+                      padding-right: 1rem;
+                      padding-top: 0.125rem;
+                    }
+                    &.cellContentClickable {
+                      cursor: pointer;
+                      padding-bottom: 0.5rem;
+                      padding-top: 0.5rem;
+                    }
+                    &.cellContentLarge {
+                      padding-bottom: 1rem;
+                      padding-left: 1rem;
+                      padding-right: 1rem;
+                      padding-top: 1rem;
+                    }
+                    &.cellContentChildRow {
+                      padding-bottom: 1rem;
+                      padding-left: 1rem;
+                      padding-right: 1rem;
+                      padding-top: 0;
+                    }
+                    &.cellContentAlignedRight {
+                      text-align: right;
+                    }
+                    &.cellContentAlignedCenter {
+                      text-align: center;
+                    }
+                    &.cellContentAboveExpandedArea {
+                      align-items: start;
+                    }
+                    &.cellContentHideEdit {
+                      min-height: 4rem;
+                    }
               />
             </th>
             <td
-              className="is-closed right"
-              key="table-13_1"
+              className=
+                  tableCellAlignedRight
+                  tableCellHasSeparator
+                  {
+                    font-weight: 400;
+                    padding-bottom: 0px;
+                    padding-left: 0px;
+                    padding-right: 0px;
+                    padding-top: 0px;
+                    vertical-align: middle;
+                  }
+                  &.tableCellAlignedRight {
+                    justify-content: flex-end;
+                    text-align: right;
+                  }
+                  &.tableCellAlignedCenter {
+                    justify-content: center;
+                    text-align: center;
+                  }
+                  &.tableCellIsSum {
+                    padding-bottom: 1rem;
+                    padding-left: 1rem;
+                    padding-right: 1rem;
+                    padding-top: 1rem;
+                    text-align: end;
+                  }
+                  &.tableCellForExpandCollapseButton {
+                    max-width: 1.5rem;
+                  }
+                  @media (min-width: 640px){&.tableCellForExpandCollapseButton {
+                    max-width: 3.125rem;
+                  }
+                  &.tableCellIsEditableRowClosed {
+                    border-bottom: none;
+                  }
+                  &.tableCellAboveExpandedArea {
+                    border-bottom: none;
+                    vertical-align: top;
+                  }
+                  &.tableCellHiddenOnMobile {
+                    display: none;
+                  }
+                  @media (min-width: 640px){&.tableCellHiddenOnMobile {
+                    display: table-cell;
+                  }
+                  &.tableCellHasSeparator {
+                    border-bottom: 1px solid #b2b2b2;
+                  }
+              key="table-1233_1"
             >
               <div
-                className="cellContent cellContentLarge"
+                className=
+                    cellContentAlignedRight
+                    cellContentLarge
+                    {
+                      box-sizing: border-box;
+                      display: block;
+                      font-size: inherit;
+                      padding-bottom: 0.5rem;
+                      padding-left: 1rem;
+                      padding-right: 1rem;
+                      padding-top: 0.5rem;
+                      text-align: inherit;
+                      vertical-align: middle;
+                      width: 100%;
+                    }
+                    &.cellContentSmall {
+                      padding-bottom: 0.125rem;
+                      padding-left: 1rem;
+                      padding-right: 1rem;
+                      padding-top: 0.125rem;
+                    }
+                    &.cellContentClickable {
+                      cursor: pointer;
+                      padding-bottom: 0.5rem;
+                      padding-top: 0.5rem;
+                    }
+                    &.cellContentLarge {
+                      padding-bottom: 1rem;
+                      padding-left: 1rem;
+                      padding-right: 1rem;
+                      padding-top: 1rem;
+                    }
+                    &.cellContentChildRow {
+                      padding-bottom: 1rem;
+                      padding-left: 1rem;
+                      padding-right: 1rem;
+                      padding-top: 0;
+                    }
+                    &.cellContentAlignedRight {
+                      text-align: right;
+                    }
+                    &.cellContentAlignedCenter {
+                      text-align: center;
+                    }
+                    &.cellContentAboveExpandedArea {
+                      align-items: start;
+                    }
+                    &.cellContentHideEdit {
+                      min-height: 4rem;
+                    }
               />
             </td>
             <td
-              className="is-closed right"
-              key="table-13_2"
+              className=
+                  tableCellAlignedRight
+                  tableCellHasSeparator
+                  {
+                    font-weight: 400;
+                    padding-bottom: 0px;
+                    padding-left: 0px;
+                    padding-right: 0px;
+                    padding-top: 0px;
+                    vertical-align: middle;
+                  }
+                  &.tableCellAlignedRight {
+                    justify-content: flex-end;
+                    text-align: right;
+                  }
+                  &.tableCellAlignedCenter {
+                    justify-content: center;
+                    text-align: center;
+                  }
+                  &.tableCellIsSum {
+                    padding-bottom: 1rem;
+                    padding-left: 1rem;
+                    padding-right: 1rem;
+                    padding-top: 1rem;
+                    text-align: end;
+                  }
+                  &.tableCellForExpandCollapseButton {
+                    max-width: 1.5rem;
+                  }
+                  @media (min-width: 640px){&.tableCellForExpandCollapseButton {
+                    max-width: 3.125rem;
+                  }
+                  &.tableCellIsEditableRowClosed {
+                    border-bottom: none;
+                  }
+                  &.tableCellAboveExpandedArea {
+                    border-bottom: none;
+                    vertical-align: top;
+                  }
+                  &.tableCellHiddenOnMobile {
+                    display: none;
+                  }
+                  @media (min-width: 640px){&.tableCellHiddenOnMobile {
+                    display: table-cell;
+                  }
+                  &.tableCellHasSeparator {
+                    border-bottom: 1px solid #b2b2b2;
+                  }
+              key="table-1233_2"
             >
               <div
-                className="cellContent cellContentLarge"
+                className=
+                    cellContentAlignedRight
+                    cellContentLarge
+                    {
+                      box-sizing: border-box;
+                      display: block;
+                      font-size: inherit;
+                      padding-bottom: 0.5rem;
+                      padding-left: 1rem;
+                      padding-right: 1rem;
+                      padding-top: 0.5rem;
+                      text-align: inherit;
+                      vertical-align: middle;
+                      width: 100%;
+                    }
+                    &.cellContentSmall {
+                      padding-bottom: 0.125rem;
+                      padding-left: 1rem;
+                      padding-right: 1rem;
+                      padding-top: 0.125rem;
+                    }
+                    &.cellContentClickable {
+                      cursor: pointer;
+                      padding-bottom: 0.5rem;
+                      padding-top: 0.5rem;
+                    }
+                    &.cellContentLarge {
+                      padding-bottom: 1rem;
+                      padding-left: 1rem;
+                      padding-right: 1rem;
+                      padding-top: 1rem;
+                    }
+                    &.cellContentChildRow {
+                      padding-bottom: 1rem;
+                      padding-left: 1rem;
+                      padding-right: 1rem;
+                      padding-top: 0;
+                    }
+                    &.cellContentAlignedRight {
+                      text-align: right;
+                    }
+                    &.cellContentAlignedCenter {
+                      text-align: center;
+                    }
+                    &.cellContentAboveExpandedArea {
+                      align-items: start;
+                    }
+                    &.cellContentHideEdit {
+                      min-height: 4rem;
+                    }
               />
             </td>
             <td
-              className="is-closed right"
-              key="table-13_3"
+              className=
+                  tableCellAlignedRight
+                  tableCellHasSeparator
+                  {
+                    font-weight: 400;
+                    padding-bottom: 0px;
+                    padding-left: 0px;
+                    padding-right: 0px;
+                    padding-top: 0px;
+                    vertical-align: middle;
+                  }
+                  &.tableCellAlignedRight {
+                    justify-content: flex-end;
+                    text-align: right;
+                  }
+                  &.tableCellAlignedCenter {
+                    justify-content: center;
+                    text-align: center;
+                  }
+                  &.tableCellIsSum {
+                    padding-bottom: 1rem;
+                    padding-left: 1rem;
+                    padding-right: 1rem;
+                    padding-top: 1rem;
+                    text-align: end;
+                  }
+                  &.tableCellForExpandCollapseButton {
+                    max-width: 1.5rem;
+                  }
+                  @media (min-width: 640px){&.tableCellForExpandCollapseButton {
+                    max-width: 3.125rem;
+                  }
+                  &.tableCellIsEditableRowClosed {
+                    border-bottom: none;
+                  }
+                  &.tableCellAboveExpandedArea {
+                    border-bottom: none;
+                    vertical-align: top;
+                  }
+                  &.tableCellHiddenOnMobile {
+                    display: none;
+                  }
+                  @media (min-width: 640px){&.tableCellHiddenOnMobile {
+                    display: table-cell;
+                  }
+                  &.tableCellHasSeparator {
+                    border-bottom: 1px solid #b2b2b2;
+                  }
+              key="table-1233_3"
             >
               <div
-                className="cellContent cellContentLarge"
+                className=
+                    cellContentAlignedRight
+                    cellContentLarge
+                    {
+                      box-sizing: border-box;
+                      display: block;
+                      font-size: inherit;
+                      padding-bottom: 0.5rem;
+                      padding-left: 1rem;
+                      padding-right: 1rem;
+                      padding-top: 0.5rem;
+                      text-align: inherit;
+                      vertical-align: middle;
+                      width: 100%;
+                    }
+                    &.cellContentSmall {
+                      padding-bottom: 0.125rem;
+                      padding-left: 1rem;
+                      padding-right: 1rem;
+                      padding-top: 0.125rem;
+                    }
+                    &.cellContentClickable {
+                      cursor: pointer;
+                      padding-bottom: 0.5rem;
+                      padding-top: 0.5rem;
+                    }
+                    &.cellContentLarge {
+                      padding-bottom: 1rem;
+                      padding-left: 1rem;
+                      padding-right: 1rem;
+                      padding-top: 1rem;
+                    }
+                    &.cellContentChildRow {
+                      padding-bottom: 1rem;
+                      padding-left: 1rem;
+                      padding-right: 1rem;
+                      padding-top: 0;
+                    }
+                    &.cellContentAlignedRight {
+                      text-align: right;
+                    }
+                    &.cellContentAlignedCenter {
+                      text-align: center;
+                    }
+                    &.cellContentAboveExpandedArea {
+                      align-items: start;
+                    }
+                    &.cellContentHideEdit {
+                      min-height: 4rem;
+                    }
               />
             </td>
           </tr>

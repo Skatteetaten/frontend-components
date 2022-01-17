@@ -10,8 +10,8 @@ npm start
 Når prosjektet har startet, vil nye endringer automatisk bli oppdatert i nettleseren.
 
 ```js noeditor beskrivelse
-import Accordion from '@skatteetaten/frontend-components/Accordion';
-import AccordionItem from '@skatteetaten/frontend-components/Accordion/AccordionItem';
+import { Accordion } from '@skatteetaten/frontend-components/Accordion';
+import { AccordionItem } from '@skatteetaten/frontend-components/Accordion/AccordionItem';
 
 <Accordion processList>
   <AccordionItem

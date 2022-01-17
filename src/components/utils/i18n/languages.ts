@@ -1,12 +1,13 @@
-const languages = {
+export const languages = {
   nb_NO: {
+    'modal.closebutton': 'Lukk',
     'datepicker.ariaLabel': 'Kalender',
     'datepicker.goToToday': 'I dag',
     'datepicker.invalidInputErrorMessage':
       'Datoen er ikke gyldig. (format: {{DEFAULT_DATE_FORMAT}})',
     'datepicker.isOutOfBoundsErrorMessage':
       'Datoen er ikke innenfor gyldig periode.',
-    'datepicker.isRequiredErrorMessage': 'Feltet er påkrevd',
+    'datepicker.isRequiredErrorMessage': 'Dato må fylles ut',
     'datepicker.nextMonthAriaLabel': 'Neste måned',
     'datepicker.nextYearAriaLabel': 'Neste år',
     'datepicker.prevMonthAriaLabel': 'Forrige måned',
@@ -23,6 +24,7 @@ const languages = {
     'fileuploader.error.upload.403':
       'Du har ikke rettigheter til å laste opp filer.',
     'fileuploader.error.upload.general': 'Kunne ikke laste opp fil',
+    'fileuploader.uploaded.sr_heading': 'Lastet opp:',
     'searchfield.sr.focus':
       'Bruk piltaster ned/opp for å velge forslag når de vises',
     'searchfield.sr.results': '{{ant}} forslag vises.',
@@ -30,16 +32,17 @@ const languages = {
     'table.sorted_ascending': 'sortert stigende',
     'table.sorted_descending': 'sortert synkende',
     'tablerow.editable.title': 'Rediger rad',
-    'tablerow.expandable.title': 'Mer informasjon'
+    'tablerow.expandable.title': 'Mer informasjon',
   },
   nn_NO: {
+    'modal.closebutton': 'Lukk',
     'datepicker.ariaLabel': 'Kalender',
     'datepicker.goToToday': 'I dag',
     'datepicker.invalidInputErrorMessage':
       'Datoen er ikkje gyldig. (format: {{DEFAULT_DATE_FORMAT}})',
     'datepicker.isOutOfBoundsErrorMessage':
       'Datoen er ikkje innanfor ein gyldig periode.',
-    'datepicker.isRequiredErrorMessage': 'Feltet er påkravd',
+    'datepicker.isRequiredErrorMessage': 'Dato må fyllast ut',
     'datepicker.nextMonthAriaLabel': 'Neste månad',
     'datepicker.nextYearAriaLabel': 'Neste år',
     'datepicker.prevMonthAriaLabel': 'Førre månad',
@@ -55,22 +58,24 @@ const languages = {
     'fileuploader.error.upload.403':
       'Du har ikkje rettar til å lasta opp filer.',
     'fileuploader.error.upload.general': 'Kunne ikkje lasta opp fil',
+    'fileuploader.uploaded.sr_heading': 'Lasta opp:',
     'searchfield.sr.focus': 'Bruk piltastane ned/opp for å velje',
     'searchfield.sr.results': '{{ant}} forslag visast.',
     'table.sortable': 'sorterbar',
     'table.sorted_ascending': 'sortert stigande',
     'table.sorted_descending': 'sortert søkkande',
     'tablerow.editable.title': 'Rediger rad',
-    'tablerow.expandable.title': 'Meir informasjon'
+    'tablerow.expandable.title': 'Meir informasjon',
   },
   en_GB: {
+    'modal.closebutton': 'Close',
     'datepicker.ariaLabel': 'Calendar',
     'datepicker.goToToday': 'Today',
     'datepicker.invalidInputErrorMessage':
       'Invalid date format. (format: {{DEFAULT_DATE_FORMAT}})',
     'datepicker.isOutOfBoundsErrorMessage':
       'The date is not within a valid period.',
-    'datepicker.isRequiredErrorMessage': 'Field is required',
+    'datepicker.isRequiredErrorMessage': 'Date is required',
     'datepicker.nextMonthAriaLabel': 'Next month',
     'datepicker.nextYearAriaLabel': 'Next year',
     'datepicker.prevMonthAriaLabel': 'Previous month',
@@ -87,14 +92,46 @@ const languages = {
     'fileuploader.error.upload.403':
       'You do not have permission to upload files',
     'fileuploader.error.upload.general': "Can't upload file",
+    'fileuploader.uploaded.sr_heading': 'Uploaded:',
     'searchfield.sr.focus': 'Use up/down to choose options when they are shown',
     'searchfield.sr.results': '{{ant}} items shown.',
     'table.sortable': 'sortable',
     'table.sorted_ascending': 'sorted ascending',
     'table.sorted_descending': 'sorted descending',
     'tablerow.editable.title': 'Edit row',
-    'tablerow.expandable.title': 'More information'
-  }
+    'tablerow.expandable.title': 'More information',
+  },
+  se_NO: {
+    'datepicker.ariaLabel': 'Kaleandar',
+    'datepicker.goToToday': 'Otne',
+    'datepicker.invalidInputErrorMessage':
+      'Dáhton ii leat gustovaš. (format: {{DEFAULT_DATE_FORMAT}})',
+    'datepicker.isOutOfBoundsErrorMessage':
+      'Dáhton ii leat gustovaš áigodagas.',
+    'datepicker.isRequiredErrorMessage': 'Fertet deavdit dáhtona',
+    'datepicker.nextMonthAriaLabel': 'Boahtte mánnu',
+    'datepicker.nextYearAriaLabel': 'Boahtte jahki',
+    'datepicker.prevMonthAriaLabel': 'Ovddit mánnu',
+    'datepicker.prevYearAriaLabel': 'Ovddit jahki',
+    'fileuploader.accepted_file_formats': 'Dohkkehuvvon fiilaformáhtat:',
+    'fileuploader.add.label': 'Lasit fiilla/fiillaid',
+    'fileuploader.delete.ariaLabel': 'Sihko fiilla',
+    'fileuploader.error.delete.403':
+      'Dus eai leat vuoigatvuođat sihkkot fiillaid.',
+    'fileuploader.error.delete.general': 'It sáhtán sihkkot fiilla',
+    'fileuploader.error.file_format': 'Fiilaformáhta ii leat dohkkehuvvon',
+    'fileuploader.error.file_size':
+      'Mii eat nagot vuostáiváldit fiilla. Fiillat eai sáhte leat stuorát go {{filstoerrelsegrense}} Mb. Sáhtát geahččalit juohkit fiilla eanet osiide, dahje geavahit formáhta mii geavaha unnit saji. ',
+    'fileuploader.error.upload.403':
+      'Dus ii leat vuoigatvuohta lasihit fiillaid.',
+    'fileuploader.error.upload.general': 'It sáhtán lasihit fiilla',
+    'fileuploader.uploaded.sr_heading': 'Lasihuvvon:',
+    'searchfield.sr.focus': 'Geavat vulos/bajás boaluid válljet evttohusaid',
+    'searchfield.sr.results': '{{ant}} evttohus/evttohusat.',
+    'table.sortable': 'sorterbar',
+    'table.sorted_ascending': 'sortert stigande',
+    'table.sorted_descending': 'sortert søkkande',
+    'tablerow.editable.title': 'Redigere ráiddu',
+    'tablerow.expandable.title': 'Eanet dieđut',
+  },
 };
-
-export default languages;

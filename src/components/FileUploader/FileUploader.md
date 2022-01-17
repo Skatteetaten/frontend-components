@@ -1,12 +1,13 @@
-** FileUploader **
+**FileUploader (Filopplaster): felt for å laste opp filer**
 
-Felt for å laste opp filer. Komponenten er basert på at du sender inn sti til API. Dersom ikke dette skulle passe er det mulighet for å bruke uploadFile og kjøre en egendefinert funksjon.
+Komponenten er basert på at du sender inn sti til API. Dersom ikke dette skulle passe er det mulighet for å bruke uploadFile og kjøre en egendefinert funksjon.
 
 ```js
 import { useState } from 'react';
 import { UseScreen } from '../utils/ScreenPlugin';
-import FileUploader, {
-  FileFormatTypes
+import {
+  FileUploader,
+  FileFormatTypes,
 } from '@skatteetaten/frontend-components/FileUploader';
 const [files, setFiles] = useState([]);
 const [spinner, setSpinner] = useState(false);
@@ -14,8 +15,8 @@ const size = UseScreen();
 
 const styles = {
   container: {
-    width: size.lt.md ? '100%' : '300px'
-  }
+    width: size.lt.md ? '100%' : '300px',
+  },
 };
 <div style={styles.container}>
   <FileUploader
@@ -25,10 +26,10 @@ const styles = {
     acceptedFileFormats={[
       FileFormatTypes.doc,
       FileFormatTypes.docx,
-      FileFormatTypes.txt
+      FileFormatTypes.txt,
     ]}
     files={files}
-    uploadFile={file => {
+    uploadFile={(file) => {
       setSpinner(true);
       setTimeout(() => {
         const newList = [...files];
@@ -37,11 +38,14 @@ const styles = {
         setSpinner(false);
       }, 2000);
     }}
-    deleteFile={file => {
-      const newList = files.filter(fileInList => fileInList !== file);
+    deleteFile={(file) => {
+      const newList = files.filter((fileInList) => fileInList !== file);
       setFiles(newList);
     }}
     loading={spinner}
+    labelWithCalloutProps={{
+      calloutProps: { autoDismiss: true },
+    }}
   />
 </div>;
 ```
@@ -50,17 +54,19 @@ Mulighet til å laste opp flere filer samtidig:
 
 ```js
 import { useState } from 'react';
-import { UseScreen } from '../utils/ScreenPlugin';
-import FileUploader, {
-  FileFormatTypes
+import { UseScreen } from '@skatteetaten/frontend-components/utils/ScreenPlugin';
+import {
+  FileUploader,
+  FileFormatTypes,
 } from '@skatteetaten/frontend-components/FileUploader';
-const [files, setFiles] = useState([]);
-const size = UseScreen();
 
+const [files, setFiles] = useState([]);
+const [spinner, setSpinner] = useState(false);
+const size = UseScreen();
 const styles = {
   container: {
-    width: size.lt.lg ? '100%' : '420px'
-  }
+    width: size.lt.lg ? '100%' : '420px',
+  },
 };
 
 <div style={styles.container}>
@@ -70,12 +76,12 @@ const styles = {
     acceptedFileFormats={[FileFormatTypes.png, FileFormatTypes.jpg]}
     files={files}
     multipleFiles={true}
-    uploadFile={file => {
+    uploadFile={(file) => {
       files.push(file);
       setFiles([...files]);
     }}
-    deleteFile={file => {
-      const newList = files.filter(fileInList => fileInList !== file);
+    deleteFile={(file) => {
+      const newList = files.filter((fileInList) => fileInList !== file);
       setFiles(newList);
     }}
     info={

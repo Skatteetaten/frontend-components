@@ -1,34 +1,19 @@
 import * as React from 'react';
 import classnames from 'classnames';
-import Icon from '../Icon/Icon';
+import { Icon } from '../Icon';
+import { Heading } from '../utils';
 import { getClassNames } from './OpenClose.classNames';
-import Heading from '../utils/Heading';
+import { OpenCloseProps } from './OpenClose.types';
 
-export interface OpenCloseProps {
-  /** Om innholdet skal være åpent fra start */
-  isOpen?: boolean;
-  /** Om man ønsker ytterligere aksjon når bruker åpner steget. Kalles KUN når steget åpnes, ikke når det lukkes. */
-  onClick?: (...args: any[]) => any;
-  /** Tittel på knappen */
-  title?: string;
-  /** Om man ønsker at tittelen skal være en del av heading tag-hierarkiet. Verdi 1-6.*/
-  headingLevel?: number;
-  /** By default er ikonet for åpning til venstre. Kan overstyres med iconRight: true. */
-  iconRight?: boolean;
-  /** Overstyring av stiler */
-  className?: string;
-  /** Elementene som vises/skjules når bruker ekspanderer/kollapser.*/
-  children?: JSX.Element;
-}
-
-const OpenClose: React.FC<OpenCloseProps> = props => {
+export const OpenClose: React.FC<OpenCloseProps> = (props) => {
   const {
     title,
-    className,
+    customClassNames,
     headingLevel,
     iconRight,
     onClick,
-    children
+    isOnClickOnlyFiredOnOpen = true,
+    children,
   } = props;
 
   const [isContentOpen, setContentOpen] = React.useState<boolean>(
@@ -38,36 +23,65 @@ const OpenClose: React.FC<OpenCloseProps> = props => {
   const toggleVisibility = () => setContentOpen(!isContentOpen);
 
   const clickHandler = () => {
-    if (onClick && !isContentOpen) {
-      onClick();
+    if (onClick) {
+      if (isOnClickOnlyFiredOnOpen) {
+        if (!isContentOpen) {
+          onClick();
+        }
+      } else {
+        onClick();
+      }
     }
     toggleVisibility();
   };
 
-  const styles = getClassNames();
+  const styles = getClassNames(props);
 
   return (
-    <div className={className}>
+    <div className={customClassNames?.wrapper}>
       <button
         className={
           isContentOpen
-            ? classnames(styles.toggleButton, styles.toggleButtonOpen)
-            : styles.toggleButton
+            ? classnames(
+                styles.toggleButton,
+                styles.toggleButtonOpen,
+                customClassNames?.button
+              )
+            : classnames(styles.toggleButton, customClassNames?.button)
         }
         aria-expanded={isContentOpen}
         onClick={clickHandler}
       >
         {!iconRight && <Icon iconName={'ChevronDown'} />}
-        {headingLevel && title ? (
-          <Heading text={title} level={headingLevel} />
-        ) : (
-          title
-        )}
+        <span
+          className={
+            iconRight
+              ? styles.toggleTitleSpan
+              : classnames(styles.toggleTitleSpan, styles.toggleTitleLeft)
+          }
+        >
+          {headingLevel && title ? (
+            <Heading
+              text={title}
+              level={headingLevel}
+              className="styledHeading"
+            />
+          ) : (
+            title
+          )}
+        </span>
         {iconRight && <Icon iconName={'ChevronDown'} />}
       </button>
       {isContentOpen && (
         <div
-          className={!iconRight ? styles.content : styles.contentWhenIconRight}
+          className={
+            !iconRight
+              ? classnames(styles.content, customClassNames?.content)
+              : classnames(
+                  styles.contentWhenIconRight,
+                  customClassNames?.content
+                )
+          }
         >
           {children}
         </div>
@@ -76,4 +90,7 @@ const OpenClose: React.FC<OpenCloseProps> = props => {
   );
 };
 
-export default OpenClose;
+OpenClose.defaultProps = {
+  underline: false,
+  iconRight: false,
+};

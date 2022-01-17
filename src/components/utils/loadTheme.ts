@@ -1,10 +1,24 @@
-import { registerIcons, loadTheme, createTheme } from '@uifabric/styling';
+import {
+  registerIcons,
+  loadTheme,
+  createTheme,
+} from '@fluentui/react/lib/Styling';
 
-import palette from './palette';
-import fonts from './fonts';
-import * as icons from './icons';
+import {
+  Palette as palette,
+  Fonts as fonts,
+  SkeIcons,
+  AliasIcons,
+  PaletteProps,
+} from '../utils/index';
 // @ts-ignore TODO
-const theme = createTheme({ palette, fonts, isInverted: false });
+const theme = createTheme({
+  palette: palette as PaletteProps,
+  fonts,
+  isInverted: false,
+});
 loadTheme(theme);
 // @ts-ignore TODO
-Object.keys(icons).forEach(key => registerIcons(icons[key]));
+registerIcons(SkeIcons);
+// @ts-ignore TODO
+registerIcons(AliasIcons);

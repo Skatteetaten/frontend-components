@@ -1,23 +1,23 @@
 ```js
-import Card from '@skatteetaten/frontend-components/Card';
-import Grid from '@skatteetaten/frontend-components/Grid';
-import DatePicker from '@skatteetaten/frontend-components/DatePicker';
-import Dropdown from '@skatteetaten/frontend-components/Dropdown';
-import RadioButtonGroup from '@skatteetaten/frontend-components/RadioButtonGroup';
-import Button from '@skatteetaten/frontend-components/Button';
+import { Button } from '@skatteetaten/frontend-components/Button';
+import { Card } from '@skatteetaten/frontend-components/Card';
+import { DatePicker } from '@skatteetaten/frontend-components/DatePicker';
+import { Dropdown } from '@skatteetaten/frontend-components/Dropdown';
+import { Grid } from '@skatteetaten/frontend-components/Grid';
+import { RadioButtonGroup } from '@skatteetaten/frontend-components/RadioButtonGroup';
 
-const initialState = {
+const [state, setState] = React.useState({
   options: [
     {
       key: 'A',
-      text: 'Valg A'
+      text: 'Valg A',
     },
     {
       key: 'B',
-      text: 'Valg B'
-    }
-  ]
-};
+      text: 'Valg B',
+    },
+  ],
+});
 
 <Card title="Skjema">
   <Grid>

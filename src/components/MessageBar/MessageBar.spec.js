@@ -1,7 +1,7 @@
 import React from 'react';
 import { mount } from 'enzyme';
 import { matches } from './../utils/test-utils';
-import { MessageBar } from './MessageBar';
+import { MessageBar } from '.';
 
 function oppsettFullDOM(props) {
   return mount(
@@ -27,7 +27,7 @@ describe('MessageBar komponent', () => {
 
   it('renderer "feil" MessageBar  ', () => {
     const wrapper = oppsettFullDOM({
-      type: MessageBar.Type.error
+      type: MessageBar.Type.error,
     });
 
     const icon = wrapper.find('IconBase');
@@ -37,7 +37,7 @@ describe('MessageBar komponent', () => {
 
   it('renderer "varsel" MessageBar  ', () => {
     const wrapper = oppsettFullDOM({
-      type: MessageBar.Type.warning
+      type: MessageBar.Type.warning,
     });
 
     const icon = wrapper.find('IconBase');
@@ -47,7 +47,7 @@ describe('MessageBar komponent', () => {
 
   it('renderer "strengt fortrolig" MessageBar  ', () => {
     const wrapper = oppsettFullDOM({
-      type: MessageBar.Type.severeWarning
+      type: MessageBar.Type.severeWarning,
     });
 
     const icon = wrapper.find('IconBase');
@@ -57,7 +57,7 @@ describe('MessageBar komponent', () => {
 
   it('renderer "ok/positiv" MessageBar  ', () => {
     const wrapper = oppsettFullDOM({
-      type: MessageBar.Type.success
+      type: MessageBar.Type.success,
     });
 
     const icon = wrapper.find('IconBase');
@@ -69,7 +69,7 @@ describe('MessageBar komponent', () => {
     const wrapper = oppsettFullDOM({
       id: 'messagebar-id',
       className: 'messagebar-class',
-      isMultiline: false
+      isMultiline: false,
     });
 
     expect(wrapper.prop('id')).toEqual('messagebar-id');

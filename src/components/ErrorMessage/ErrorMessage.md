@@ -1,7 +1,7 @@
-** ErrorMessage brukes til å vise feilmeldinger. **
+**ErrorMessage (Feilmelding): brukes til å vise feilmeldinger.**
 
 ```js
-import ErrorMessage from '@skatteetaten/frontend-components/ErrorMessage';
+import { ErrorMessage } from '@skatteetaten/frontend-components/ErrorMessage';
 
 <ErrorMessage>Skriv datoen slik: 17.05.2019</ErrorMessage>;
 ```
@@ -9,11 +9,12 @@ import ErrorMessage from '@skatteetaten/frontend-components/ErrorMessage';
 Feilmelding ved en komponent:
 
 ```js
-import ErrorMessage from '@skatteetaten/frontend-components/ErrorMessage';
-import Button from '@skatteetaten/frontend-components/Button';
-const initialState = {
-  hasError: false
-};
+import { Button } from '@skatteetaten/frontend-components/Button';
+import { ErrorMessage } from '@skatteetaten/frontend-components/ErrorMessage';
+
+const [state, setState] = React.useState({
+  hasError: false,
+});
 
 <>
   <Button

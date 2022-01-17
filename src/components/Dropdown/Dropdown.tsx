@@ -2,54 +2,23 @@ import classnames from 'classnames';
 import {
   Dropdown as FabricDropdown,
   DropdownMenuItemType,
-  IDropdownProps
-} from 'office-ui-fabric-react/lib-commonjs/Dropdown';
-import * as React from 'react';
-import Icon from '../Icon/Icon';
-import { getCalloutStyles, getClassNames } from './Dropdown.classNames';
-import LabelWithCallout, { calloutState } from '../LabelWithCallout';
-import { LabelWithCalloutProps } from '../LabelWithCallout/LabelWithCallout';
-import { useId } from '@reach/auto-id';
-import { IStyleFunctionOrObject } from '@uifabric/utilities';
-import {
   IDropdownStyleProps,
-  IDropdownStyles
-} from 'office-ui-fabric-react/lib-commonjs/Dropdown';
+  IDropdownStyles,
+} from '@fluentui/react';
+import * as React from 'react';
+import { getClassNames, getCalloutStyles } from './Dropdown.classNames';
+import { generateId } from '../utils';
+import { Icon } from '../Icon';
+import { LabelWithCallout } from '../LabelWithCallout';
+import { IStyleFunctionOrObject } from '@fluentui/utilities';
+import { DropdownProps } from './DropDown.types';
 
-export interface DropdownProps extends IDropdownProps {
-  /** Lukk callout på blur */
-  labelWithCalloutAutoDismiss?: boolean;
-  /** Hjelpetekst */
-  help?: string | JSX.Element;
-  /** Størrelse på inputfelt som skal benyttes */
-  inputSize?: 'normal' | 'large';
-  /** aria-label for knapp i label */
-  labelButtonAriaLabel?: string;
-  /** Overstyr label, se LabelWithCallout komponent */
-  labelCallout?: LabelWithCalloutProps;
-  /** @ignore */
-  multiSelect?: IDropdownProps['multiSelect'];
-  /** @ignore */
-  multiSelectDelimiter?: IDropdownProps['multiSelectDelimiter'];
-  /** Brukerspesifisert event for callout */
-  onCalloutToggle?: (
-    oldCalloutState: calloutState,
-    newCalloutState: calloutState
-  ) => void;
-  /** Lesemodus. Kan brukes i sammenheng med selectedKey eller defaultSelectedKey for å vise verdi */
-  readOnly?: boolean;
-}
-
-interface DropdownState {
-  isCalloutVisible: boolean;
-}
-/**
- * @visibleName Dropdown (Nedtrekksliste)
+/*
+ * visibleName Dropdown (Nedtrekksliste)
  */
-const Dropdown: React.FC<DropdownProps> = props => {
+export const Dropdown: React.FC<DropdownProps> = (props) => {
   const {
     children,
-    labelWithCalloutAutoDismiss,
     errorMessage,
     label,
     labelButtonAriaLabel,
@@ -57,14 +26,15 @@ const Dropdown: React.FC<DropdownProps> = props => {
     onRenderLabel,
     className,
     id,
-    labelCallout,
+    labelWithCalloutProps,
     onCalloutToggle,
+    doNotLayer,
     readOnly,
     ...rest
   } = props;
 
-  const genratedId = useId(id);
-  const mainId = id ? id : 'dropdown-' + genratedId;
+  const generatedId = generateId();
+  const mainId = id ? id : 'dropdown-' + generatedId;
   const inputId = mainId + '-input';
   const labelId = mainId + '-label';
   const styles = getClassNames(props);
@@ -82,8 +52,10 @@ const Dropdown: React.FC<DropdownProps> = props => {
         buttonAriaLabel={labelButtonAriaLabel}
         help={help}
         onCalloutToggle={onCalloutToggle}
-        autoDismiss={labelWithCalloutAutoDismiss}
-        {...labelCallout}
+        calloutProps={{
+          ...labelWithCalloutProps?.calloutProps,
+          doNotLayer,
+        }}
       />
       {readOnly ? (
         <input
@@ -94,7 +66,7 @@ const Dropdown: React.FC<DropdownProps> = props => {
           aria-invalid={errorMessage ? true : false}
           value={
             props.options.filter(
-              option =>
+              (option) =>
                 option.key === (props.selectedKey || props.defaultSelectedKey)
             )[0].text
           }
@@ -109,6 +81,9 @@ const Dropdown: React.FC<DropdownProps> = props => {
           styles={dropdownStyles}
           onRenderCaretDown={() => <Icon iconName={'ChevronDown'} />}
           errorMessage={errorMessage}
+          calloutProps={{
+            doNotLayer,
+          }}
         >
           {children}
         </FabricDropdown>
@@ -118,5 +93,3 @@ const Dropdown: React.FC<DropdownProps> = props => {
 };
 // @ts-ignore
 Dropdown.ItemType = DropdownMenuItemType;
-
-export default Dropdown;

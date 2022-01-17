@@ -5,19 +5,17 @@ import moment from 'moment';
 import 'moment/locale/nb';
 import {
   DatePicker as FabricDatePicker,
-  DatePickerBase,
   DayOfWeek,
-  IDatePickerProps
-} from 'office-ui-fabric-react/lib-commonjs/DatePicker';
-import { FirstWeekOfYear } from 'office-ui-fabric-react/lib-commonjs/utilities/dateValues/DateValues';
-import { getClassNames } from './DatePicker.classNames';
-import LabelWithCallout, { calloutState } from '../LabelWithCallout';
-import { LabelWithCalloutProps } from '../LabelWithCallout/LabelWithCallout';
-import { useId } from '@reach/auto-id';
-import ErrorMessage from '../ErrorMessage';
+  IDatePicker,
+  IDatePickerProps,
+} from '@fluentui/react';
+import { FirstWeekOfYear } from '@fluentui/react';
+import { generateId } from '../utils';
+import { LabelWithCallout } from '../LabelWithCallout';
+import { getClassNames, getCalendarClassNames } from './DatePicker.classNames';
+import { DatePickerProps } from './DatePicker.types';
 
 const DEFAULT_DATE_FORMAT = 'DD.MM.YYYY';
-
 const DEFAULTFORMATDATE = (date: Date | null | undefined): string => {
   if (date) {
     return moment(date).format(DEFAULT_DATE_FORMAT);
@@ -31,45 +29,9 @@ const DEFAULTPARSEDATEFROMSTRING = (date: string): Date | null => {
   }
   return null;
 };
-export interface DatePickerProps extends IDatePickerProps {
-  /** @ignore */
-  borderless?: IDatePickerProps['borderless'];
-  /** Bestemmer om hjelptekst/varseltekst skal legge seg mellom label og tekstfelt eller flytende over innhold */
-  calloutFloating?: LabelWithCalloutProps['calloutFloating'];
-  /** Benyttes når et readOnly felt skal være redigertbart */
-  editable?: boolean;
-  /** Tilhørende feilmelding */
-  errorMessage?: JSX.Element | string;
-  /** Hjelpetekst */
-  help?: JSX.Element | string;
-  /** Størrelse på inputfelt som skal benyttes */
-  inputSize?: 'normal' | 'large';
-  /** Kan overstyre standard feilmelding hvis ikke gyldig dato er satt */
-  invalidInputErrorMessage?: string;
-  /** Kan overstyre standard feilmelding hvis dato er satt utenfor gyldig periode */
-  isOutOfBoundsErrorMessage?: string;
-  /** Kan overstyre standard feilmelding hvis felt er påkrevd */
-  isRequiredErrorMessage?: string;
-  /** aria-label for knapp i label */
-  labelButtonAriaLabel?: string;
-  /** Overstyr label, se LabelWithCallout komponent */
-  labelCallout?: LabelWithCalloutProps;
-  /** Lukk callout på blur */
-  labelWithCalloutAutoDismiss?: boolean;
-  /** Språk vist i komponent. Default er norsk bokmål. */
-  language?: 'nb' | 'nn' | 'en';
-  /** Brukerspesifisert event for callout **/
-  onCalloutToggle?: (
-    oldCalloutState: calloutState,
-    newCalloutState: calloutState
-  ) => void;
-  /** Tilstand som kan benyttes når datovelger skal vises i lesemodus */
-  readonlyMode?: boolean;
-  /** @ignore */
-  underlined?: IDatePickerProps['underlined'];
-}
-/**
- * @visibleName DatePicker (Datovelger)
+
+/*
+ * visibleName DatePicker (Datovelger)
  */
 export const DatePicker: React.FC<DatePickerProps> = (
   props: DatePickerProps
@@ -77,6 +39,7 @@ export const DatePicker: React.FC<DatePickerProps> = (
   const {
     ariaLabel,
     calloutFloating,
+    datepickerCalloutProps,
     children,
     className,
     editable,
@@ -88,13 +51,13 @@ export const DatePicker: React.FC<DatePickerProps> = (
     help,
     label,
     labelButtonAriaLabel,
-    labelCallout,
-    labelWithCalloutAutoDismiss,
+    labelWithCalloutProps,
     language,
     onCalloutToggle,
     readonlyMode,
     ...rest
   } = props;
+
   const defaultValues = {
     allowTextInput: true,
     dateTimeFormatter: undefined,
@@ -110,14 +73,14 @@ export const DatePicker: React.FC<DatePickerProps> = (
     pickerAriaLabel: t('datepicker.ariaLabel'),
     showGoToToday: true,
     showMonthPickerAsOverlay: false,
-    showWeekNumbers: true
+    showWeekNumbers: true,
   };
-  const genratedId = useId(id);
-  const mainId = id ? id : 'datepicker-' + genratedId;
+  const generatedId = generateId();
+  const mainId = id ? id : 'datepicker-' + generatedId;
   const inputId = mainId + '-input';
   const labelId = mainId + '-label';
 
-  const datePicker = React.useRef<DatePickerBase | null>();
+  const datePickerRef = React.useRef<IDatePicker | null>();
   const [editMode, setEditMode] = React.useState<boolean>(false);
   const [readOnly, setReadOnly] = React.useState<boolean | undefined>(
     readonlyMode && !editMode
@@ -143,57 +106,72 @@ export const DatePicker: React.FC<DatePickerProps> = (
     prevYearAriaLabel: t('datepicker.prevYearAriaLabel'),
     nextYearAriaLabel: t('datepicker.nextYearAriaLabel'),
     invalidInputErrorMessage: i18n.t('datepicker.invalidInputErrorMessage', {
-      DEFAULT_DATE_FORMAT
+      DEFAULT_DATE_FORMAT,
     }),
     /** Automatisk utvide høyde (ved multiline) */
     isOutOfBoundsErrorMessage: 'Datoen er ikke innenfor gyldig periode',
-    isRequiredErrorMessage: t('datepicker.isRequiredErrorMessage')
+    isRequiredErrorMessage: t('datepicker.isRequiredErrorMessage'),
   };
 
   const onEdit = () => {
     if (!editMode) {
-      datePicker.current && datePicker.current.focus();
+      datePickerRef.current && datePickerRef.current.focus();
     }
     setEditMode(!editMode);
   };
 
-  const onBlur: IDatePickerProps['onBlur'] = e => {
+  const onBlur: IDatePickerProps['onBlur'] = (e) => {
     rest.onBlur && rest.onBlur(e);
-    if (editMode && !datePicker.current?.state.isDatePickerShown) {
-      setEditMode(!editMode);
-    }
+    // TO-DO datepicker er blitt en FunctionComponent. Det er ikke mulig å aksessere intern state på denne måten
+    // Filled out feature request here: https://github.com/microsoft/fluentui/issues/19512
+    // if (editMode && !datePickerRef.current?.state.isDatePickerShown) {
+    //   setEditMode(!editMode);
+    // }
   };
 
   return (
     <div id={id}>
       <LabelWithCallout
         id={labelId}
-        inputId={inputId}
+        inputId={inputId + '-label'}
         label={label}
         buttonAriaLabel={labelButtonAriaLabel}
         help={help}
         calloutFloating={calloutFloating}
-        autoDismiss={labelWithCalloutAutoDismiss}
         onCalloutToggle={onCalloutToggle}
         editable={editable}
         editFunction={onEdit}
         readOnly={readonlyMode}
-        {...labelCallout}
+        calloutProps={{
+          ...labelWithCalloutProps?.calloutProps,
+        }}
+        {...labelWithCalloutProps}
       />
+
       <FabricDatePicker
-        {...rest}
         {...defaultValues}
+        {...rest}
         id={inputId}
-        ariaLabel={ariaLabel ? ariaLabel : label}
+        ariaLabel={ariaLabel}
         className={classnames(
           getClassNames({ errorMessage, readonlyMode: readOnly, ...rest }),
           className
         )}
-        componentRef={ref => {
-          datePicker.current = ref as DatePickerBase;
+        componentRef={(ref) => {
+          datePickerRef.current = ref as IDatePicker;
+        }}
+        calloutProps={{
+          ...datepickerCalloutProps,
+          className: classnames(
+            getCalendarClassNames(props),
+            datepickerCalloutProps?.className
+          ),
         }}
         disabled={readOnly ? true : rest.disabled}
         onBlur={onBlur}
+        textField={{
+          errorMessage: errorMessage,
+        }}
         strings={{
           ...DEFAULT_STRINGS,
           isRequiredErrorMessage: isRequiredErrorMessage
@@ -204,12 +182,11 @@ export const DatePicker: React.FC<DatePickerProps> = (
             : DEFAULT_STRINGS.isOutOfBoundsErrorMessage,
           invalidInputErrorMessage: invalidInputErrorMessage
             ? invalidInputErrorMessage
-            : DEFAULT_STRINGS.invalidInputErrorMessage
+            : DEFAULT_STRINGS.invalidInputErrorMessage,
         }}
       >
         {children}
       </FabricDatePicker>
-      {errorMessage && <ErrorMessage>{errorMessage}</ErrorMessage>}
     </div>
   );
 };

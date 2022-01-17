@@ -1,10 +1,11 @@
 import React from 'react';
-import ActionButton from '../../ActionButton';
 import classnames from 'classnames';
-import Grid from '../../Grid/Grid';
-import Icon from '../../Icon';
+import { UseScreen } from '../../utils';
+import { ActionButton } from '../../ActionButton';
+import { Grid } from '../../Grid';
+import { Icon } from '../../Icon';
 import { getClassNames } from '../StepList.classNames';
-import { UseScreen } from '../../utils/ScreenPlugin';
+import { Heading } from '../../utils';
 
 const NumberIcon = (props: any) => {
   return (
@@ -21,33 +22,37 @@ const NumberIcon = (props: any) => {
     </div>
   );
 };
-/**
- * @visibleName Step (Enkeltsteg)
+/*
+ * visibleName Step (Enkeltsteg)
  */
 export interface StepProps extends React.HTMLAttributes<HTMLDivElement> {
-  /** Action Button for endre **/
+  /** Change-button for step **/
   actionBtn?: {
     icon?: string;
     event?: () => void;
     text: string;
     ariaLabel?: string;
   };
-  /** Overskrift for et steg */
+  /** Title displayed in the step  */
   stepTitle?: string;
-  /** Benyttes for å definere type steg som skal vises */
+  /** Type of step */
   stepType?: 'passive' | 'active' | 'result' | 'next';
-  /** Om et steg skal være synlig eller ikke */
+  /** If the step is visible or not */
   showStep?: boolean;
-  /**  Id som settes i aria-control på vise/skjule knapp som peker på innholdspanelet som knappen styrer */
+  /**  Id uses in aria-controls on show/hide button that points to content panel */
   stepId?: string;
-  /** Ikon som skal vises i resultat steg */
+  /** Icon in the result step */
   resultIcon?: string;
   className?: string;
   stepNumber?: number;
   children?: React.ReactElement;
+  /** If the step should have an outer grid for alignment to surrounding elements */
+  gridSpacing?: boolean;
+  /** Set title heading tag-hierarchy. Value 1-6.*/
+  headingLevel?: number;
 }
 
-const Step = (props: StepProps) => {
+export const Step = (props: StepProps) => {
   const {
     stepTitle,
     stepNumber,
@@ -56,17 +61,20 @@ const Step = (props: StepProps) => {
     resultIcon,
     className,
     stepType,
-    actionBtn
+    actionBtn,
+    gridSpacing,
+    headingLevel = 2,
   } = props;
   const [styles, setStyles] = React.useState(getClassNames(props));
   const size = UseScreen();
+  const headingId = stepId ? stepId + '-heading' : undefined;
 
   React.useEffect(() => {
     setStyles(
       getClassNames({
         ...props,
         showStep: typeof props.showStep === 'boolean' ? props.showStep : true,
-        stepType: props.stepType || 'passive'
+        stepType: props.stepType || 'passive',
       })
     );
   }, [props]);
@@ -76,17 +84,25 @@ const Step = (props: StepProps) => {
       <Grid.Row rowSpacing={Grid.SPACE_NONE}>
         <Grid.Col noSpacing={true}>
           <Grid.Row rowSpacing={Grid.SPACE_NONE}>
-            <Grid.Col sm={12}>
+            {gridSpacing && (
+              <Grid.Col noSpacing sm={0} lg={1} xxxl={2}></Grid.Col>
+            )}
+
+            <Grid.Col
+              sm={12}
+              lg={gridSpacing ? 10 : undefined}
+              xxxl={gridSpacing ? 8 : undefined}
+            >
               {stepNumber && stepNumber > 1 && (
                 <span className={classnames(styles.stepLineTop)} />
               )}
               <span className={classnames(styles.stepLine)} />
               <span
                 className={classnames({
-                  [styles.arrowLine]: stepType === 'next'
+                  [styles.arrowLine]: stepType === 'next',
                 })}
               />
-              {size.gt.sm && stepType !== 'next' && (
+              {stepType !== 'next' && (
                 <NumberIcon
                   styles={styles}
                   resultIcon={resultIcon}
@@ -100,7 +116,13 @@ const Step = (props: StepProps) => {
               <div id={stepId}>
                 <div className={styles.stepContent}>
                   {stepTitle && (
-                    <h2 className={styles.title}>
+                    <Heading
+                      id={headingId}
+                      text={stepTitle}
+                      level={headingLevel}
+                      tabIndex={stepId ? -1 : undefined}
+                      className={styles.title}
+                    >
                       {!size.gt.sm && stepType !== 'next' && (
                         <NumberIcon
                           styles={styles}
@@ -111,7 +133,7 @@ const Step = (props: StepProps) => {
                       <span className={classnames(styles.titleText)}>
                         {stepTitle}
                       </span>
-                    </h2>
+                    </Heading>
                   )}
                   <div className={styles.stepContentInner}>
                     {children}
@@ -129,10 +151,12 @@ const Step = (props: StepProps) => {
                 </div>
               </div>
             </Grid.Col>
+            {gridSpacing && (
+              <Grid.Col noSpacing sm={0} lg={1} xxxl={2}></Grid.Col>
+            )}
           </Grid.Row>
         </Grid.Col>
       </Grid.Row>
     </div>
   );
 };
-export default Step;

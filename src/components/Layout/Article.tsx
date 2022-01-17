@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import Grid from '../Grid/Grid';
+import { Grid } from '../Grid';
 
 // tag?: string,
 //   sm?: number,
@@ -38,12 +38,12 @@ export class Article extends Grid.Col {
     lgPull: PropTypes.number,
     xlPull: PropTypes.number,
     xxlPull: PropTypes.number,
-    xxxlPull: PropTypes.number
+    xxxlPull: PropTypes.number,
   };
   static defaultProps = {
     tag: 'article',
     lg: 10,
-    xl: 8
+    xl: 8,
     //lgPush: 2,
     //xlPush: 2
   };
@@ -51,5 +51,3 @@ export class Article extends Grid.Col {
     return super.render();
   }
 }
-
-export default Article;

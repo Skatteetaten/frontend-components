@@ -5,27 +5,27 @@ import Error from 'react-styleguidist/lib/client/rsg-components/Error';
 import Sections from '../Sections/Sections';
 import Context from 'react-styleguidist/lib/client/rsg-components/Context';
 import StyleGuideRenderer from './StyleGuideRenderer';
-import SkeBasis from '../../components/SkeBasis/SkeBasis';
+import { SkeBasis } from '../../components/SkeBasis';
 import { createHashHistory } from 'history';
 import { Router } from 'react-router';
 
 const history = createHashHistory({
   basename: '',
   hashType: 'noslash',
-  getUserConfirmation: (message, callback) => callback(window.confirm(message))
+  getUserConfirmation: (message, callback) => callback(window.confirm(message)),
 });
 
-export class StyleGuide extends React.Component<> {
+export class StyleGuide extends React.Component {
   static childContextTypes = {
     codeRevision: PropTypes.number.isRequired,
     config: PropTypes.object.isRequired,
     slots: PropTypes.object.isRequired,
-    displayMode: PropTypes.string
+    displayMode: PropTypes.string,
   };
 
   state = {
     error: false,
-    info: null
+    info: null,
   };
 
   getChildContext() {
@@ -33,13 +33,13 @@ export class StyleGuide extends React.Component<> {
       codeRevision: this.props.codeRevision,
       config: this.props.config,
       slots: this.props.slots,
-      displayMode: this.props.displayMode
+      displayMode: this.props.displayMode,
     };
   }
   componentDidCatch(error, info) {
     this.setState({
       error,
-      info
+      info,
     });
   }
 
@@ -51,7 +51,7 @@ export class StyleGuide extends React.Component<> {
       allSections,
       pagePerSection,
       codeRevision,
-      slots
+      slots,
     } = this.props;
     if (this.state.error) {
       return <Error error={this.state.error} info={this.state.info} />;
@@ -62,7 +62,7 @@ export class StyleGuide extends React.Component<> {
           codeRevision,
           config,
           slots,
-          displayMode
+          displayMode,
         }}
       >
         <SkeBasis>

@@ -1,5 +1,11 @@
 import React from 'react';
-import ActionButton from '../../components/ActionButton/ActionButton';
-const CodeTabButton = props => <ActionButton {...props}>Vis kode</ActionButton>;
+
+import { ActionButton } from '../../components/ActionButton';
+
+const CodeTabButton = (props) => (
+  <ActionButton {...props} border>
+    Vis kode
+  </ActionButton>
+);
 
 export default CodeTabButton;

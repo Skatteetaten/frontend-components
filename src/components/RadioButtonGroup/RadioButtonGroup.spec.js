@@ -1,27 +1,27 @@
 import React from 'react';
 import { mount } from 'enzyme';
 import { matches } from '../utils/test-utils';
-import RadioButtonGroup from './RadioButtonGroup';
+import { RadioButtonGroup } from '.';
 
 const options = [
   {
     key: 'A',
-    text: 'Valg A'
+    text: 'Valg A',
   },
   {
     key: 'B',
-    text: 'Valg B'
+    text: 'Valg B',
   },
   {
     key: 'C',
     text: 'Valg C',
-    disabled: true
+    disabled: true,
   },
   {
     key: 'D',
     text: 'Valg D',
-    disabled: true
-  }
+    disabled: true,
+  },
 ];
 
 function oppsettFullDOM(props) {
@@ -47,21 +47,18 @@ describe('RadioButtonGroup komponent', () => {
       className: 'radiobuttongroup-class',
       label: 'Velg en',
       defaultSelectedKey: 'B',
-      options: options
+      options: options,
     });
-    expect(
-      wrapper
-        .find(RadioButtonGroup)
-        .first()
-        .prop('id')
-    ).toEqual('radiobuttongroup-id');
-    expect(wrapper.prop('className')).toEqual('radiobuttongroup-class');
-    expect(
-      wrapper.find('StyledChoiceGroupBase').props().ariaLabelledBy
-    ).toEqual('radiobuttongroup-id-label');
-    expect(wrapper.find('StyledChoiceGroupBase').prop('required')).toEqual(
-      true
+    expect(wrapper.find(RadioButtonGroup).first().prop('id')).toEqual(
+      'radiobuttongroup-id'
     );
+    expect(wrapper.prop('className')).toEqual('radiobuttongroup-class');
+    expect(wrapper.find('StyledChoiceGroup').props().ariaLabelledBy).toEqual(
+      'radiobuttongroup-id-label'
+    );
+    expect(
+      wrapper.find('StyledChoiceGroupOption').first().prop('required')
+    ).toEqual(true);
     expect(wrapper.exists('#ChoiceGroup2-B')).toEqual(true);
     expect(wrapper.find('input#ChoiceGroup2-B').prop('checked')).toEqual(true);
     expect(wrapper.find('input#ChoiceGroup2-B').prop('disabled')).toEqual(
@@ -78,17 +75,14 @@ describe('RadioButtonGroup komponent', () => {
       className: 'radiobuttongroup-class',
       label: 'Velg en',
       defaultSelectedKey: 'B',
-      options: options
+      options: options,
     });
 
-    const radiobutton = wrapper.find('StyledChoiceGroupOptionBase');
-    expect(radiobutton).toHaveLength(4);
-    expect(
-      radiobutton
-        .at(2)
-        .find('.ms-ChoiceFieldLabel')
-        .html()
-    ).toContain('Valg C');
+    const radiobuttons = wrapper.find('StyledChoiceGroupOption');
+    expect(radiobuttons).toHaveLength(4);
+    expect(radiobuttons.at(2).find('.ms-ChoiceFieldLabel').html()).toContain(
+      'Valg C'
+    );
   });
   it('rendrer RadioButtonGroup med beskrivelse', () => {
     const wrapper = oppsettFullDOM({
@@ -101,29 +95,21 @@ describe('RadioButtonGroup komponent', () => {
         {
           key: 'A',
           text: 'Valg A',
-          description: 'Beskrivelse til A'
+          description: 'Beskrivelse til A',
         },
         {
           key: 'B',
           text: 'Valg B',
-          description: 'Beskrivelse til B'
-        }
-      ]
+          description: 'Beskrivelse til B',
+        },
+      ],
     });
-    const radiobutton = wrapper.find('StyledChoiceGroupOptionBase');
+    const radiobuttons = wrapper.find('StyledChoiceGroupOption');
     expect(
-      radiobutton
-        .at(1)
-        .find('.ms-ChoiceFieldLabel')
-        .first()
-        .html()
+      radiobuttons.at(1).find('.ms-ChoiceFieldLabel').first().html()
     ).toContain('Valg B');
     expect(
-      radiobutton
-        .at(1)
-        .find('.ms-ChoiceFieldLabel')
-        .last()
-        .html()
+      radiobuttons.at(1).find('.ms-ChoiceFieldLabel').last().html()
     ).toContain('Beskrivelse til B');
   });
 });

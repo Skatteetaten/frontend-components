@@ -1,6 +1,6 @@
 import React from 'react';
 import { matches } from '../utils/test-utils';
-import ButtonLink from './ButtonLink';
+import { ButtonLink } from '.';
 
 describe('ButtonLink-komponent', () => {
   it('matcher snapshot', () => {

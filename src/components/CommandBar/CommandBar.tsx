@@ -1,10 +1,10 @@
 import * as React from 'react';
 
 import {
+  CommandBarButton,
   CommandBar as FabricCommandBar,
-  ICommandBarItemProps
-} from 'office-ui-fabric-react/lib-commonjs/CommandBar';
-import { CommandBarButton } from 'office-ui-fabric-react/lib-commonjs/Button';
+  ICommandBarItemProps,
+} from '@fluentui/react';
 import { getClassNames } from './CommandBar.classNames';
 import classnames from 'classnames';
 
@@ -19,10 +19,10 @@ interface CommandBarItem extends ICommandBarItemProps {
   selected?: boolean;
   selectedColor?: string;
 }
-/**
- * @visibleName CommandBar (Menyknapper)
+/*
+ * visibleName CommandBar (Menyknapper)
  */
-const CommandBar: React.FC<CommandBarProps> = props => {
+const CommandBar: React.FC<CommandBarProps> = (props) => {
   const { items, farItems, ariaLabel, className, ...rest } = props;
   const { commandBar } = getClassNames(props);
 
@@ -43,7 +43,7 @@ CommandBar.defaultProps = {
   items: [],
   farItems: [],
   ariaLabel: '',
-  className: ''
+  className: '',
 };
 
 const Custom = (props: any) => {

@@ -1,7 +1,7 @@
 import React from 'react';
 import { matches } from '../utils/test-utils';
 import { shallow, mount } from 'enzyme';
-import ComboBox from './ComboBox';
+import { ComboBox } from '.';
 
 function oppsettShallow(props) {
   return shallow(<ComboBox {...props} />);
@@ -28,7 +28,7 @@ describe('Combobox komponent', () => {
   it('rendrer Cobobox med riktige props ', () => {
     const wrapper = oppsettFullDOM({
       id: 'Combobox-1',
-      disabled: true
+      disabled: true,
     });
     expect(wrapper.find(ComboBox).prop('disabled')).toEqual(true);
     expect(wrapper.first('div').prop('id')).toEqual('Combobox-1');
@@ -36,7 +36,7 @@ describe('Combobox komponent', () => {
 
   it('rendrer nedtrekksliste når Cobobox klikkes ', () => {
     const wrapper = oppsettFullDOM({
-      options: [{ key: 'A', text: 'alfa', value: 'Alfa' }]
+      options: [{ key: 'A', text: 'alfa', value: 'Alfa' }],
     });
 
     const button = wrapper.find('CustomizedIconButton');
@@ -46,7 +46,7 @@ describe('Combobox komponent', () => {
 
   it('rendrer feilmelding under Cobobox ', () => {
     const wrapper = oppsettFullDOM({
-      errorMessage: 'Feilmelding'
+      errorMessage: 'Feilmelding',
     });
 
     expect(wrapper.html()).toContain('Feilmelding');
@@ -57,12 +57,12 @@ describe('Combobox komponent', () => {
       { key: 'B', text: 'beta', value: 'Beta' },
       { key: 'C', text: 'gamma', value: 'Gamma' },
       { key: 'D', text: 'delta', value: 'Delta' },
-      { key: 'E', text: 'echo', value: 'Echo' }
+      { key: 'E', text: 'echo', value: 'Echo' },
     ];
     const wrapper = oppsettFullDOM({
       readOnly: true,
       options: options,
-      defaultSelectedKey: 'D'
+      defaultSelectedKey: 'D',
     });
     expect(wrapper.find('input').props().readOnly).toEqual(true);
   });

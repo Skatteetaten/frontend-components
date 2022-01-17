@@ -1,63 +1,29 @@
 import classnames from 'classnames';
-import {
-  ChoiceGroup as FabricChoiceGroup,
-  IChoiceGroupOption,
-  IChoiceGroupProps
-} from 'office-ui-fabric-react/lib-commonjs/ChoiceGroup';
+import { ChoiceGroup as FabricChoiceGroup } from '@fluentui/react';
 import * as React from 'react';
-import ErrorMessage from '../ErrorMessage/ErrorMessage';
 import { getClassNames } from './RadioButtonGroup.classNames';
-import LabelWithCallout, { calloutState } from '../LabelWithCallout';
-import { LabelWithCalloutProps } from '../LabelWithCallout/LabelWithCallout';
-import { useId } from '@reach/auto-id';
+import { generateId } from '../utils';
+import { LabelWithCallout } from '../LabelWithCallout';
+import { ErrorMessage } from '../ErrorMessage';
+import { RadioButtonGroupProps } from './RadioButtonGroup.types';
 
-export interface IRadioButtonGroupOptions extends IChoiceGroupOption {
-  description?: string;
-}
-
-export interface RadioButtonGroupProps extends IChoiceGroupProps {
-  calloutFloating?: boolean;
-  /** CSS class */
-  className?: string;
-  /** Feilmelding */
-  errorMessage?: JSX.Element | string;
-  /** Hjelpetekst */
-  help?: JSX.Element | string;
-  /** Horizontal layout */
-  horizontal?: boolean;
-  /** aria-label for knapp i label */
-  labelButtonAriaLabel?: string;
-  /** Overstyr label, se LabelWithCallout komponent */
-  labelCallout?: LabelWithCalloutProps;
-  /** Lukk callout på blur */
-  labelWithCalloutAutoDismiss?: boolean;
-  /** Brukerspesifisert event for callout **/
-  onCalloutToggle?: (
-    oldCalloutState: calloutState,
-    newCalloutState: calloutState
-  ) => void;
-  options: IRadioButtonGroupOptions[];
-  /** Callout warning */
-  warning?: JSX.Element | string;
-}
-
-/**
- * @visibleName RadioButtonGroup (Radioknapper)
+/*
+ * visibleName RadioButtonGroup (Radioknapper)
  */
 
-const RadioButtonGroup = (props: RadioButtonGroupProps) => {
+export const RadioButtonGroup = (props: RadioButtonGroupProps) => {
   const {
     calloutFloating,
     children,
     className,
-    labelWithCalloutAutoDismiss,
     errorMessage,
     help,
     warning,
     id,
     label,
+    labelSize,
     labelButtonAriaLabel,
-    labelCallout,
+    labelWithCalloutProps,
     onCalloutToggle,
     options,
     ...rest
@@ -65,7 +31,7 @@ const RadioButtonGroup = (props: RadioButtonGroupProps) => {
   let tempOptions = options;
 
   if (options) {
-    options.forEach(option => {
+    options.forEach((option) => {
       if (option.description) {
         option.onRenderLabel = DescriptionRender(option.description);
       }
@@ -75,7 +41,7 @@ const RadioButtonGroup = (props: RadioButtonGroupProps) => {
 
   const styles = getClassNames({ ...props });
 
-  const generatedId = useId(id);
+  const generatedId = generateId();
   const mainId = id ? id : 'radiogroup-' + generatedId;
   const groupId = mainId + '-group';
   const labelId = mainId + '-label';
@@ -87,12 +53,12 @@ const RadioButtonGroup = (props: RadioButtonGroupProps) => {
         label={label}
         buttonAriaLabel={labelButtonAriaLabel}
         help={help}
+        inputSize={labelSize}
         warning={warning}
         inFieldset={true}
         calloutFloating={calloutFloating}
         onCalloutToggle={onCalloutToggle}
-        autoDismiss={labelWithCalloutAutoDismiss}
-        {...labelCallout}
+        {...labelWithCalloutProps}
       />
       <FabricChoiceGroup
         id={groupId}
@@ -114,7 +80,7 @@ const DescriptionRender = (description: string) => (p: any) => {
     <div
       style={{
         display: 'flex',
-        flexDirection: 'column'
+        flexDirection: 'column',
       }}
     >
       <span id={p.labelId} className="ms-ChoiceFieldLabel">
@@ -128,5 +94,3 @@ const DescriptionRender = (description: string) => (p: any) => {
     </div>
   );
 };
-
-export default RadioButtonGroup;

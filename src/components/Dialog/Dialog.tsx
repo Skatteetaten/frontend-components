@@ -1,31 +1,16 @@
 import classnames from 'classnames';
 import * as React from 'react';
-import Callout from '../Callout/Callout';
+import { Callout } from '../Callout';
 import { getClassNames } from './Dialog.classNames';
 import {
   DialogType,
   DialogFooter,
   Dialog as FabricDialog,
-  IDialogProps
-} from 'office-ui-fabric-react/lib-commonjs/Dialog';
+} from '@fluentui/react';
+import { DialogProps, DialogState } from './Dialog.types';
+import { BrandContext } from '../SkeBasis';
 
-export interface DialogProps extends IDialogProps {
-  /** Om dialog skal ha mer padding for et luftigere uttrykk */
-  layoutStyle?: 'normal' | 'airy' | 'important';
-  /** Om det er så mye innhold at det går over flere "sider" (fikser scroll inni dialog på ipad) */
-  tabletContentOverflows?: boolean;
-  isModeless?: boolean;
-}
-type DialogState = {
-  isCalloutVisible: boolean;
-};
-/**
- * @visibleName Dialog (Dialogboks)
- */
-export default class Dialog extends React.PureComponent<
-  DialogProps,
-  DialogState
-> {
+export class Dialog extends React.PureComponent<DialogProps, DialogState> {
   static Footer = DialogFooter;
   static Type = DialogType;
 
@@ -35,14 +20,14 @@ export default class Dialog extends React.PureComponent<
     closeButtonAriaLabel: 'Lukk',
     tabletContentOverflows: false,
     isModeless: false,
-    isBlocking: undefined
+    isBlocking: undefined,
   };
   private readonly _iconButtonElement: React.RefObject<HTMLDivElement>;
 
   constructor(props: DialogProps) {
     super(props);
     this.state = {
-      isCalloutVisible: false
+      isCalloutVisible: false,
     };
     this._iconButtonElement = React.createRef();
     this._onClick = this._onClick.bind(this);
@@ -61,54 +46,61 @@ export default class Dialog extends React.PureComponent<
       layoutStyle,
       closeButtonAriaLabel,
       modalProps,
+      doNotLayer,
       ...props
     } = this.props;
-    const styles = getClassNames(this.props);
     const { isCalloutVisible } = this.state;
 
     return (
-      <div>
-        {/*
-        // @ts-ignore */}
-        <FabricDialog
-          {...props}
-          dialogContentProps={{
-            type: type,
-            title,
-            subText,
-            closeButtonAriaLabel: closeButtonAriaLabel
-          }}
-          modalProps={{
-            isBlocking,
-            isModeless,
-            className: classnames(styles.main, className),
-            ...modalProps
-          }}
-        >
-          {isCalloutVisible && (
-            <Callout
-              directionalHint={Callout.POS_TOP_LEFT}
-              color={Callout.HELP}
-              ariaLabel={'Hjelpetekst'}
-              target={this._iconButtonElement}
-              onClose={this._onDismiss}
-            />
-          )}
-          {children}
-        </FabricDialog>
-      </div>
+      <BrandContext.Consumer>
+        {({ tag }) => (
+          <div>
+            {/*
+       // @ts-ignore */}
+            <FabricDialog
+              {...props}
+              dialogContentProps={{
+                type: type,
+                title,
+                subText,
+                closeButtonAriaLabel: closeButtonAriaLabel,
+              }}
+              modalProps={{
+                isBlocking,
+                isModeless,
+                className: classnames(
+                  getClassNames(this.props, tag).main,
+                  className
+                ),
+                ...modalProps,
+              }}
+            >
+              {isCalloutVisible && (
+                <Callout
+                  directionalHint={Callout.POS_TOP_LEFT}
+                  color={Callout.HELP}
+                  ariaLabel={'Hjelpetekst'}
+                  target={this._iconButtonElement}
+                  onClose={this._onDismiss}
+                />
+              )}
+              {children}
+            </FabricDialog>
+          </div>
+        )}
+      </BrandContext.Consumer>
     );
   }
 
   _onClick() {
     this.setState({
-      isCalloutVisible: !this.state.isCalloutVisible
+      isCalloutVisible: !this.state.isCalloutVisible,
     });
   }
 
   _onDismiss() {
     this.setState({
-      isCalloutVisible: false
+      isCalloutVisible: false,
     });
   }
 }

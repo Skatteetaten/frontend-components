@@ -1,37 +1,21 @@
 import classnames from 'classnames';
-import { ActionButton as FabricActionButton } from 'office-ui-fabric-react/lib-commonjs/Button';
+import { ActionButton as FabricActionButton } from '@fluentui/react';
 import * as React from 'react';
 import { getClassNames } from './ActionButton.classNames';
-import { ButtonProps } from '../Button';
+import { ActionButtonProps } from './ActionButton.types';
 
-export interface ActionButtonProps extends ButtonProps {
-  /** Ikon som skal vises foran lenketeksten */
-  icon?: string;
-  /** Ikon størrelse, to tilgjengelige størrelser */
-  iconSize?: any;
-  /** Fire forhåndsdefinerte farger, se eksempler */
-  color?: 'blue' | 'black' | 'red' | 'green' | 'white';
-  /**  true hvis ikonet skal plasseres etter tekst, ellers rendres det foran. */
-  iconAfter?: boolean;
-  ariaLabel?: string;
-}
-/**
- * @visibleName ActionButton (Aksjonsknapp)
- */
-export default class ActionButton extends React.PureComponent<
-  ActionButtonProps,
-  {}
-> {
-  static NORMAL = 'icon';
-  static LARGE = 'xxLarge';
+export class ActionButton extends React.PureComponent<ActionButtonProps, {}> {
+  static NORMAL = 'large';
+  static LARGE = 'xlarge';
 
   static defaultProps = {
     color: 'blue',
     disabled: false,
+    border: false,
     icon: undefined,
     iconSize: ActionButton.NORMAL,
     onClick: undefined,
-    ariaLabel: ''
+    ariaLabel: '',
   };
 
   render() {
@@ -42,6 +26,7 @@ export default class ActionButton extends React.PureComponent<
       iconSize,
       color,
       className,
+      border,
       ...props
     } = this.props;
     return (
@@ -50,7 +35,7 @@ export default class ActionButton extends React.PureComponent<
         className={classnames(getClassNames(this.props), className)}
         color={color}
         iconProps={{
-          iconName: icon
+          iconName: icon,
         }}
         ariaLabel={ariaLabel}
       >

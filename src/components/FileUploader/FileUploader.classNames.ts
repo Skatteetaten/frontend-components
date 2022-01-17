@@ -1,23 +1,23 @@
-import { mergeStyleSets } from '@uifabric/merge-styles';
-import { FileUploaderProps } from './FileUploader';
-import { getTheme } from '@uifabric/styling';
-import { FontSizes, LineHeightSizes, PaletteProps } from '..';
+import { mergeStyleSets } from '@fluentui/merge-styles';
+import { getTheme } from '@fluentui/react/lib/Styling';
+import { FontSizes, LineHeightSizes, PaletteProps } from '../utils';
+import { FileUploaderProps } from './FileUploader.types';
 
 export const getClassNames = (props: FileUploaderProps) => {
   const palette = getTheme().palette as PaletteProps;
 
   return mergeStyleSets({
     acceptedFileFormats: {
-      fontWeight: 'bold'
+      fontWeight: 'bold',
     },
     informationWrapper: {
       marginTop: '8px',
       fontSize: FontSizes.xSmall,
       lineHeight: LineHeightSizes.xSmall,
-      color: palette.skeColor.darkGrey
+      color: palette.skeColor.darkGrey,
     },
     errorColor: {
-      color: `${palette.skeColor.error} !important`
+      color: `${palette.skeColor.error} !important`,
     },
     fileList: {
       listStyle: 'none !important',
@@ -25,16 +25,16 @@ export const getClassNames = (props: FileUploaderProps) => {
       selectors: {
         i: {
           color: palette.skeColor.blue,
-          float: 'right'
+          float: 'right',
         },
         li: {
           wordBreak: 'break-all',
-          display: 'block'
-        }
-      }
+          display: 'block',
+        },
+      },
     },
     fileListWrapper: {
-      display: 'grid'
+      display: 'grid',
     },
     fileListCancelBtn: {
       backgroundColor: 'transparent',
@@ -43,31 +43,34 @@ export const getClassNames = (props: FileUploaderProps) => {
       border: 0,
       borderStyle: 'none',
       cursor: 'pointer',
-      marginTop: 5
+      marginTop: 4,
+      fontSize: '20px',
     },
     fileIcon: {
-      fontSize: '20px'
+      fontSize: '20px',
     },
     fileName: {
       float: 'left',
       width: '90%',
       display: 'inline',
+      lineHeight: '1.4',
       selectors: {
         i: {
           float: 'left',
           marginRight: '8px',
-          color: palette.skeColor.grey
+          color: palette.skeColor.grey,
         },
         span: {
-          display: 'flex'
-        }
-      }
+          display: 'flex',
+          marginTop: '3px',
+        },
+      },
     },
     fileUploadInput: {
       opacity: 0,
       overflow: 'hidden',
       position: 'absolute',
-      zIndex: -1
+      zIndex: -1,
     },
     main: {},
     uploadArea: {
@@ -77,11 +80,29 @@ export const getClassNames = (props: FileUploaderProps) => {
       textAlign: 'center',
       marginTop: '8px',
       marginBottom: '8px',
-      cursor: 'pointer'
+      cursor: 'pointer',
+      transition: 'all 80ms ease-in-out 0s',
+      selectors: {
+        ':hover': {
+          border: `2px dashed ${palette.skeColor.blue}`,
+          transform: 'scale(1.02) translateY(-1px)',
+          boxShadow: 'rgba(0, 0, 0, 0.3) 0px 10px 6px -10px',
+        },
+        ':focus': {
+          border: `2px solid ${palette.skeColor.blue}`,
+          transform: 'scale(1.02) translateY(-1px)',
+          boxShadow: 'rgba(0, 0, 0, 0.3) 0px 10px 6px -10px',
+        },
+        ':active': {
+          border: `2px solid ${palette.skeColor.blue}`,
+          transform: 'scale(1) translateY(0)',
+          boxShadow: 'rgba(0, 0, 0, 0.0) 0px 0 0 0',
+        },
+      },
     },
     uploadAreaIcon: {
-      fontSize: '20px',
-      color: palette.skeColor.blue
-    }
+      fontSize: FontSizes.icon,
+      color: palette.skeColor.blue,
+    },
   });
 };

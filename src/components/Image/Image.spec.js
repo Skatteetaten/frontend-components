@@ -1,6 +1,6 @@
 import React from 'react';
 import { mount } from 'enzyme';
-import Image from './Image';
+import { Image } from '.';
 
 function oppsettFullDOM(props) {
   return mount(<Image {...props} />);
@@ -14,7 +14,7 @@ it('renderer Image med riktige props ', () => {
   const wrapper = oppsettFullDOM({
     imageFit: 'center',
     coverStyle: 'landscape',
-    alt: 'Bildetekst'
+    alt: 'Bildetekst',
   });
 
   expect(wrapper.prop('imageFit')).toEqual('center');

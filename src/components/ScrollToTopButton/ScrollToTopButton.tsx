@@ -1,34 +1,26 @@
 import classnames from 'classnames';
 import * as React from 'react';
-import ActionButton from '../ActionButton/ActionButton';
-import Icon from '../Icon/Icon';
+import { Icon } from '../Icon';
+import { ActionButton } from '../ActionButton';
 import { getClassNames } from './ScrollToTopButton.classNames';
+import {
+  ScrollToTopButtonProps,
+  ScrollToTopButtonState,
+} from './ScrollToTopButton.types';
 
-interface ScrollToTopButtonProps {
-  /** Tekst som vises sammen med icon som kan trykkes på for å scrolle til toppen */
-  label?: string;
-  /** Global attributt som må være unik for hele HTML dokumentet */
-  id?: string;
-  /** Overstyring av stiler */
-  className?: string;
-}
-
-interface ScrollToTopButtonState {
-  skjult: boolean;
-}
-/**
- * @visibleName ScrollToTopButton (Gå til toppen)
+/*
+ * visibleName ScrollToTopButton (Gå til toppen)
  */
 export class ScrollToTopButton extends React.PureComponent<
   ScrollToTopButtonProps,
   ScrollToTopButtonState
 > {
   static defaultProps = {
-    label: 'Til toppen'
+    label: 'Til toppen',
   };
 
   state = {
-    skjult: true
+    skjult: true,
   };
 
   sjekkSkjulKnapp = () => {
@@ -77,5 +69,3 @@ export class ScrollToTopButton extends React.PureComponent<
     );
   }
 }
-
-export default ScrollToTopButton;

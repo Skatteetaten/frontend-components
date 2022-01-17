@@ -1,45 +1,45 @@
 ```js noeditor
-import MessageBar from '@skatteetaten/frontend-components/MessageBar';
+import { MessageBar } from '@skatteetaten/frontend-components/MessageBar';
 
 <MessageBar type={MessageBar.Type.info}>
   Se tilhørende underkompoent <a href="/#step">Step</a> for komplett API.
 </MessageBar>;
 ```
 
-** Stegvis veiledning for brukeren **
+**Stegvis veiledning for brukeren**
 
 ```js
-import Button from '@skatteetaten/frontend-components/Button';
-import RadioButtonGroup from '@skatteetaten/frontend-components/RadioButtonGroup';
-import Step from '@skatteetaten/frontend-components/StepList/Step';
-import StepList from '@skatteetaten/frontend-components/StepList';
+import { Button } from '@skatteetaten/frontend-components/Button';
+import { Step } from '@skatteetaten/frontend-components/StepList/Step';
+import { StepList } from '@skatteetaten/frontend-components/StepList';
+import { RadioButtonGroup } from '@skatteetaten/frontend-components/RadioButtonGroup';
 
-const initialState = {
+const [state, setState] = React.useState({
   options: [
     {
       key: 'A',
-      text: 'Jeg bor i Norge'
+      text: 'Jeg bor i Norge',
     },
     {
       key: 'B',
-      text: 'Ikke i Norge'
-    }
-  ]
-};
+      text: 'Ikke i Norge',
+    },
+  ],
+});
 
 const titles = {
   step1: {
     no: 'Jobber du?',
-    en: 'Are you a wage earner doing paid work?'
+    en: 'Are you a wage earner doing paid work?',
   },
   step2: {
     no: 'Overnatting',
-    en: 'Spend the night somewhere else than at home?'
+    en: 'Spend the night somewhere else than at home?',
   },
   step3: {
     no: 'Bor i Norge',
-    en: 'Where is your home?'
-  }
+    en: 'Where is your home?',
+  },
 };
 const showFirstStep = true;
 const testFunc = () => {
@@ -53,8 +53,9 @@ const testFunc = () => {
       stepId={'step-1-1'}
       actionBtn={{
         text: 'Endre',
+        icon: 'edit',
         event: testFunc,
-        ariaLabel: 'Endre jobber du?'
+        ariaLabel: 'Endre jobber du?',
       }}
     >
       <div>
@@ -65,16 +66,17 @@ const testFunc = () => {
   <Step
     stepTitle={titles.step2.no}
     stepId={'step-1-2'}
-    actionBtn={{ text: 'Endre', ariaLabel: 'Endre overnatting' }}
+    actionBtn={{ text: 'Endre', icon: 'edit', ariaLabel: 'Endre overnatting' }}
   >
     <div>
       <p>Ja, jeg overnatter et annet sted enn hjemme på grunn av jobb</p>
     </div>
   </Step>
   <Step stepTitle={titles.step3.no} stepId={'step-1-3'} activeStep={true}>
-    <p style={{ marginBottom: '5px' }}>Hvor er hjemmet ditt?</p>
     <RadioButtonGroup
       required
+      label="Hvor er hjemmet ditt?"
+      options={state.options}
       defaultSelectedKey="A"
       options={state.options}
       id="RadiobuttonGroup"
@@ -90,43 +92,44 @@ const testFunc = () => {
 Oppsummering før innsending:
 
 ```js
-import Button from '@skatteetaten/frontend-components/Button';
-import RadioButtonGroup from '@skatteetaten/frontend-components/RadioButtonGroup';
-import Step from '@skatteetaten/frontend-components/StepList/Step';
-import StepList from '@skatteetaten/frontend-components/StepList';
-import CheckBox from '@skatteetaten/frontend-components/CheckBox';
-import Card from '@skatteetaten/frontend-components/Card';
+import { Button } from '@skatteetaten/frontend-components/Button';
+import { Step } from '@skatteetaten/frontend-components/StepList/Step';
+import { StepList } from '@skatteetaten/frontend-components/StepList';
+import { RadioButtonGroup } from '@skatteetaten/frontend-components/RadioButtonGroup';
+import { CheckBox } from '@skatteetaten/frontend-components/CheckBox';
+import { Typography } from '@skatteetaten/frontend-components/Typography';
+import { Card } from '@skatteetaten/frontend-components/Card';
 
-const initialState = {
+const [state, setState] = React.useState({
   options: [
     {
       key: 'A',
-      text: 'Jeg bor i Norge'
+      text: 'Jeg bor i Norge',
     },
     {
       key: 'B',
-      text: 'Ikke i Norge'
-    }
-  ]
-};
+      text: 'Ikke i Norge',
+    },
+  ],
+});
 
 const titles = {
   step1: {
     no: 'Jobber du?',
-    en: 'Are you a wage earner doing paid work?'
+    en: 'Are you a wage earner doing paid work?',
   },
   step2: {
     no: 'Overnatting',
-    en: 'Spend the night somewhere else than at home?'
+    en: 'Spend the night somewhere else than at home?',
   },
   step3: {
     no: 'Bor i Norge',
-    en: 'Where is your home?'
+    en: 'Where is your home?',
   },
   step4: {
     no: 'Oppsummering før innsending',
-    en: 'Summary before submit'
-  }
+    en: 'Summary before submit',
+  },
 };
 const showFirstStep = true;
 
@@ -142,7 +145,8 @@ const testFunc = () => {
       actionBtn={{
         text: 'Endre',
         event: testFunc,
-        ariaLabel: 'Endre jobber du?'
+        icon: 'edit',
+        ariaLabel: 'Endre jobber du?',
       }}
     >
       <div>
@@ -153,7 +157,7 @@ const testFunc = () => {
   <Step
     stepTitle={titles.step2.no}
     stepId={'step-1-2'}
-    actionBtn={{ text: 'Endre', ariaLabel: 'Endre overnatting' }}
+    actionBtn={{ text: 'Endre', icon: 'edit', ariaLabel: 'Endre overnatting' }}
   >
     <div>
       <p>Ja, jeg overnatter et annet sted enn hjemme på grunn av jobb</p>
@@ -163,21 +167,23 @@ const testFunc = () => {
     <p>Jeg bor i Norge</p>
   </Step>
   <Step stepTitle={titles.step4.no} stepId={'step-1-4'} activeStep={true}>
-    <Card color={Card.Color.BEIGE} margin={'large'}>
-      <p style={{ fontWeight: '700' }}>
-        Følgende opplysninger er klare til innsending:
-      </p>
-      <ul>
-        <li>Du jobber</li>
-        <li>Du overnatter et annet sted enn hjemme på grunn av jobb</li>
-        <li>Du bor i Norge</li>
-      </ul>
-      <CheckBox
-        boxSide={'start'}
-        label="Jeg bekrefter at opplysningene over stemmer."
-      />
-    </Card>
-    <br />
+    <div style={{ marginTop: '8px', marginBottom: '16px' }}>
+      <Card
+        title="Følgende opplysninger er klare til innsending:"
+        titlesize="medium"
+        color={Card.Color.BEIGE}
+      >
+        <ul style={{ marginTop: '0' }}>
+          <li>Du jobber</li>
+          <li>Du overnatter et annet sted enn hjemme på grunn av jobb</li>
+          <li>Du bor i Norge</li>
+        </ul>
+        <CheckBox
+          boxSide={'start'}
+          label="Jeg bekrefter at opplysningene over stemmer."
+        />
+      </Card>
+    </div>
   </Step>
   <Step stepType={'next'}>
     <Button buttonStyle="primary">Send inn</Button>
@@ -188,42 +194,44 @@ const testFunc = () => {
 StepList som er fullført og viser et resultat i i siste steg
 
 ```js
-import Button from '@skatteetaten/frontend-components/Button';
-import Step from '@skatteetaten/frontend-components/StepList/Step';
-import StepList from '@skatteetaten/frontend-components/StepList';
-import LinkGroup from '@skatteetaten/frontend-components/LinkGroup';
+import { Button } from '@skatteetaten/frontend-components/Button';
+import { Step } from '@skatteetaten/frontend-components/StepList/Step';
+import { StepList } from '@skatteetaten/frontend-components/StepList';
+import { Typography } from '@skatteetaten/frontend-components/Typography';
+import { LinkGroup } from '@skatteetaten/frontend-components/LinkGroup';
 
 const links = [
   {
     text: 'Beregn reisefradrag',
-    path: '#stepList'
+    path: '#stepList',
   },
   {
     text: 'Oversikt over alle fradrag',
-    path: '#stepList'
-  }
+    path: '#stepList',
+  },
 ];
 
 const titles = {
   step1: {
     no: 'Jobber du?',
-    en: 'Are you a wage earner doing paid work?'
+    en: 'Are you a wage earner doing paid work?',
   },
   step2: {
     no: 'Sommerjobb?',
-    en: 'Summerjob?'
+    en: 'Summerjob?',
   },
   step3: {
     no: 'Du er ikke pendler',
-    en: 'You are not a commuter.'
-  }
+    en: 'You are not a commuter.',
+  },
 };
 
 <StepList>
   <Step
     stepTitle={titles.step1.no}
     stepId={'step-1-1'}
-    actionBtn={{ text: 'Endre', ariaLabel: 'Endre jobber du?' }}
+    actionBtn={{ text: 'Endre', icon: 'edit', ariaLabel: 'Endre jobber du?' }}
+    gridSpacing
   >
     <div>
       <p>Jeg er fulltidsstudent eller vernepliktig i militæret </p>
@@ -233,18 +241,122 @@ const titles = {
     stepTitle={titles.step2.no}
     stepId={'step-1-2'}
     activeStep={false}
-    actionBtn={{ text: 'Endre', ariaLabel: 'Endre sommerjobb?' }}
+    actionBtn={{ text: 'Endre', icon: 'edit', ariaLabel: 'Endre sommerjobb?' }}
+    gridSpacing
   >
     <p>Nei</p>
   </Step>
-  <Step stepTitle={titles.step3.no} stepType={'result'} resultIcon={'Check'}>
-    <p>
-      Er du fulltidsstudent eller i militæret, regnes du ikke som pendler hvis
-      du ikke har sommerjobb. Hvis du har lang reisevei mellom hjem og
-      arbeidsplass, kan du ha krav på reisefradrag. Det kan du sjekke i
-      reisefradragskalkulatoren.
-    </p>
+  <Step
+    stepTitle={titles.step3.no}
+    stepType={'result'}
+    resultIcon={'Check'}
+    gridSpacing
+  >
+    <Typography>
+      <p>
+        Er du fulltidsstudent eller i militæret, regnes du ikke som pendler hvis
+        du ikke har sommerjobb. Hvis du har lang reisevei mellom hjem og
+        arbeidsplass, kan du ha krav på reisefradrag. Det kan du sjekke i
+        reisefradragskalkulatoren.
+      </p>
+    </Typography>
     <LinkGroup links={links} />
+  </Step>
+</StepList>;
+```
+
+**Viser ErrorSummary**
+<br />
+ErrorSummary vises når bruker trykker på "neste"
+
+```js
+import { Button } from '@skatteetaten/frontend-components/Button';
+import { ErrorSummary } from '@skatteetaten/frontend-components/ErrorSummary';
+import { Step } from '@skatteetaten/frontend-components/StepList/Step';
+import { StepList } from '@skatteetaten/frontend-components/StepList';
+import { TextField } from '@skatteetaten/frontend-components/TextField';
+
+const [showError, setShowError] = React.useState(false);
+
+const titles = {
+  step1: {
+    no: 'Jobber du?',
+    en: 'Are you a wage earner doing paid work?',
+  },
+  step2: {
+    no: 'Overnatting',
+    en: 'Spend the night somewhere else than at home?',
+  },
+  step3: {
+    no: 'Adresse',
+    en: 'Address',
+  },
+};
+const showFirstStep = true;
+
+<StepList ariaLabel="Liste med steg">
+  {showFirstStep && (
+    <Step
+      stepTitle={titles.step1.no}
+      stepId={'step-1-1'}
+      actionBtn={{
+        text: 'Endre',
+        icon: 'edit',
+        ariaLabel: 'Endre jobber du?',
+      }}
+    >
+      <div>
+        <p>Jeg jobber</p>
+      </div>
+    </Step>
+  )}
+  <Step
+    stepTitle={titles.step2.no}
+    stepId={'step-1-2'}
+    actionBtn={{ text: 'Endre', icon: 'edit', ariaLabel: 'Endre overnatting' }}
+  >
+    <div>
+      <p>Ja, jeg overnatter et annet sted enn hjemme på grunn av jobb</p>
+    </div>
+  </Step>
+  <Step stepTitle={titles.step3.no} stepId={'step-1-3'} activeStep={true}>
+    <div style={{ maxWidth: '386px', marginBottom: '16px', marginTop: '8px' }}>
+      <TextField
+        id={'input_adresse'}
+        label={'Adresse'}
+        errorMessage={showError ? 'Adresse må fylles ut.' : undefined}
+      />
+    </div>
+    <div style={{ maxWidth: '400px', display: 'flex' }}>
+      <div style={{ marginRight: '16px' }}>
+        <TextField
+          id={'input_postnummer'}
+          label={'Postnummer'}
+          errorMessage={showError ? 'Postnummer må fylles ut.' : undefined}
+        />
+      </div>
+    </div>
+    <br />
+  </Step>
+  <Step stepType={'next'}>
+    {showError && (
+      <div style={{ marginBottom: '8px' }}>
+        <ErrorSummary
+          title={'For å gå videre må du rette opp i følgende:'}
+          errors={[
+            { id: 'input_adresse-input', error: 'Adresse må fylles ut.' },
+
+            {
+              id: 'input_postnummer-input',
+              error: 'Postnummer må fylles ut.',
+            },
+          ]}
+        />
+      </div>
+    )}
+    <Button buttonStyle="primary" onClick={() => setShowError(true)}>
+      Neste
+    </Button>
   </Step>
 </StepList>;
 ```

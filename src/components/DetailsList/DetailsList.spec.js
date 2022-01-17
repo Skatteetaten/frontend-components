@@ -1,6 +1,6 @@
 import React from 'react';
 import toJson from 'enzyme-to-json';
-import DetailsList from './DetailsList';
+import { DetailsList } from '.';
 import { mount, shallow } from 'enzyme';
 
 /**
@@ -23,7 +23,7 @@ const columns = [
     fieldName: 'name',
     isSorted: true,
     isSortedDescending: false,
-    sortItems: sortStringItems
+    sortItems: sortStringItems,
   },
   {
     key: 'column2',
@@ -31,8 +31,8 @@ const columns = [
     fieldName: 'age',
     isSorted: false,
     isSortedDescending: false,
-    sortItems: sortStringItems
-  }
+    sortItems: sortStringItems,
+  },
 ];
 
 describe('DetailsList komponent', () => {
@@ -64,7 +64,7 @@ describe('DetailsList komponent', () => {
   it('should sort items when clicked on column', () => {
     const items = [
       { name: 'Foo', age: 21 },
-      { name: 'Bar', age: 22 }
+      { name: 'Bar', age: 22 },
     ];
 
     const wrapper = mount(
@@ -81,7 +81,7 @@ describe('DetailsList komponent', () => {
     });
 
     wrapper.setProps({
-      onSortUpdate: onSortUpdateMock
+      onSortUpdate: onSortUpdateMock,
     });
 
     const columnHeader = wrapper.find(`[data-item-key="${columns[0].key}"]`);

@@ -1,44 +1,44 @@
-** En ComboBox ser ut og fungerer i hovedsak som en som nedtrekksliste - men har den forskjellen brukeren kan skrive i feltet. Det er spesielt nyttig hvis listen over valg er lang. **
+**ComboBox (Nedtrekksliste med skriving): nedtrekksliste hvor du kan skrive i feltet - nyttig hvis listen med valg er lang.**
+
+Velge fra en fast liste (stor versjon):
 
 ```js
-import ComboBox from '@skatteetaten/frontend-components/ComboBox';
-import Grid from '@skatteetaten/frontend-components/Grid';
-
-const initialState = {
-  options: [
-    { key: 'A', text: 'alfa', value: 'Alfa' },
-    { key: 'B', text: 'beta', value: 'Beta' },
-    { key: 'C', text: 'gamma', value: 'Gamma' },
-    { key: 'D', text: 'delta', value: 'Delta' },
-    { key: 'E', text: 'echo', value: 'Echo' }
-  ]
-};
+import { ComboBox } from '@skatteetaten/frontend-components/ComboBox';
+import { Grid } from '@skatteetaten/frontend-components/Grid';
 
 <div>
   <Grid>
     <Grid.Row>
       <Grid.Col lg={4}>
         <ComboBox
-          label="Nedtrekksliste"
-          help="Tekst som hjelper brukeren til å fylle ut feltet."
-          placeHolder="Velg"
-          options={state.options}
+          label="Fylke"
+          help="Dette feltet foreslår en verdi når du begynner å skrive. Du kan også bla gjennom listen og velge på den måten."
+          placeholder="Velg eller begynn å skrive"
+          inputSize="large"
+          options={[
+            { key: 'A', text: 'Agder', value: 'Agder' },
+            { key: 'B', text: 'Innlandet', value: 'Innlandet' },
+            { key: 'C', text: 'Møre og Romsdal', value: 'Møre og Romsdal' },
+            { key: 'D', text: 'Nordland', value: 'Nordland' },
+            { key: 'E', text: 'Oslo', value: 'Oslo' },
+            { key: 'F', text: 'Rogaland', value: 'Rogaland' },
+            { key: 'G', text: 'Troms og Finnmark', value: 'Troms og Finnmark' },
+            { key: 'H', text: 'Trøndelag', value: 'Trøndelag' },
+            {
+              key: 'I',
+              text: 'Vestfold og Telemark',
+              value: 'Vestfold og Telemark',
+            },
+            { key: 'J', text: 'Vestland', value: 'Vestland' },
+            { key: 'K', text: 'Viken', value: 'Viken' },
+          ]}
           allowFreeform={false}
           ariaLabel="Eksempel ComboBox"
           useComboBoxAsMenuWidth
           calloutFloating={false}
-        />
-      </Grid.Col>
-      <Grid.Col lg={4}>
-        <ComboBox
-          label="Med autoutfylling"
-          help="Feltet foreslår en verdi når du begynner å skrive."
-          options={state.options}
-          allowFreeform={true}
-          autoComplete={'on'}
-          ariaLabel="Eksempel ComboBox"
-          useComboBoxAsMenuWidth
-          calloutFloating={false}
+          labelWithCalloutProps={{
+            calloutProps: { autoDismiss: true },
+          }}
         />
       </Grid.Col>
     </Grid.Row>
@@ -46,34 +46,35 @@ const initialState = {
 </div>;
 ```
 
-Stor versjon:
+Hvis brukeren skal kunne legge til egne elementer:
 
 ```js
-import ComboBox from '@skatteetaten/frontend-components/ComboBox';
-import Grid from '@skatteetaten/frontend-components/Grid';
-
-const initialState = {
-  options: [
-    { key: 'A', text: 'alfa', value: 'Alfa' },
-    { key: 'B', text: 'beta', value: 'Alfa' },
-    { key: 'C', text: 'gamma', value: 'Alfa' },
-    { key: 'D', text: 'delta', value: 'Alfa' },
-    { key: 'E', text: 'echo', value: 'Alfa' }
-  ]
-};
+import { ComboBox } from '@skatteetaten/frontend-components/ComboBox';
+import { Grid } from '@skatteetaten/frontend-components/Grid';
 
 <div>
   <Grid>
     <Grid.Row>
       <Grid.Col lg={4}>
         <ComboBox
-          label="Nedtrekksliste"
-          help="Tekst som hjelper brukeren til å fylle ut feltet."
-          inputSize="large"
-          placeHolder="Velg"
-          options={state.options}
-          allowFreeform={false}
-          ariaLabel="Eksempel ComboBox"
+          label="Bilmerke"
+          help="Dette feltet foreslår en verdi når du begynner å skrive. Det er også mulig å legge til egne verdier."
+          placeholder="Velg eller legg til"
+          options={[
+            { key: 'A', text: 'Audi', value: 'Audi' },
+            { key: 'A', text: 'BMW', value: 'BMW' },
+            { key: 'B', text: 'Hyundai', value: 'Hyundai' },
+            { key: 'C', text: 'Mercedes-Benz', value: 'Mercedes-Benz' },
+            { key: 'D', text: 'Nissan', value: 'Nissan' },
+            { key: 'E', text: 'MG', value: 'MG' },
+            { key: 'F', text: 'Mitsubishi', value: 'Rogaland' },
+            { key: 'G', text: 'Tesla', value: 'Troms og Finnmark' },
+            { key: 'H', text: 'Volkswagen', value: 'Trøndelag' },
+            { key: 'I', text: 'Volvo', value: 'Volvo' },
+          ]}
+          allowFreeform={true}
+          autoComplete={'on'}
+          ariaLabel="Eksempel på ComboBox"
           useComboBoxAsMenuWidth
           calloutFloating={false}
         />
@@ -86,8 +87,8 @@ const initialState = {
 Lesemodus:
 
 ```js
-import ComboBox from '@skatteetaten/frontend-components/ComboBox';
-import Grid from '@skatteetaten/frontend-components/Grid';
+import { ComboBox } from '@skatteetaten/frontend-components/ComboBox';
+import { Grid } from '@skatteetaten/frontend-components/Grid';
 
 <div>
   <Grid>
@@ -95,19 +96,27 @@ import Grid from '@skatteetaten/frontend-components/Grid';
       <Grid.Col lg={4}>
         <ComboBox
           readOnly
-          label="Lesemodus:"
-          placeHolder="Velg"
+          label="Fylke"
           options={[
-            { key: 'A', text: 'Alfa', value: 'Alfa' },
-            { key: 'B', text: 'Beta', value: 'Beta' },
-            { key: 'C', text: 'Gamma', value: 'Gamma' },
-            { key: 'D', text: 'Delta', value: 'Delta' },
-            { key: 'E', text: 'Echo', value: 'Echo' }
+            { key: 'A', text: 'Agder', value: 'Agder' },
+            { key: 'B', text: 'Innlandet', value: 'Innlandet' },
+            { key: 'C', text: 'Møre og Romsdal', value: 'Møre og Romsdal' },
+            { key: 'D', text: 'Nordland', value: 'Nordland' },
+            { key: 'E', text: 'Oslo', value: 'Oslo' },
+            { key: 'F', text: 'Rogaland', value: 'Rogaland' },
+            { key: 'G', text: 'Troms og Finnmark', value: 'Troms og Finnmark' },
+            { key: 'H', text: 'Trøndelag', value: 'Trøndelag' },
+            {
+              key: 'I',
+              text: 'Vestfold og Telemark',
+              value: 'Vestfold og Telemark',
+            },
+            { key: 'J', text: 'Vestland', value: 'Vestland' },
+            { key: 'K', text: 'Viken', value: 'Viken' },
           ]}
-          defaultSelectedKey="D"
+          defaultSelectedKey="A"
           allowFreeform={false}
-          ariaLabel="Eksempel ComboBox"
-          useComboBoxAsMenuWidth
+          ariaLabel="Eksempel med ComboBox i lesemodus"
         />
       </Grid.Col>
     </Grid.Row>
@@ -118,18 +127,9 @@ import Grid from '@skatteetaten/frontend-components/Grid';
 Med Feilmelding:
 
 ```js
-import ComboBox from '@skatteetaten/frontend-components/ComboBox';
-import Grid from '@skatteetaten/frontend-components/Grid';
+import { ComboBox } from '@skatteetaten/frontend-components/ComboBox';
+import { Grid } from '@skatteetaten/frontend-components/Grid';
 
-const initialState = {
-  options: [
-    { key: 'A', text: 'alfa', value: 'Alfa' },
-    { key: 'B', text: 'beta', value: 'Alfa' },
-    { key: 'C', text: 'gamma', value: 'Alfa' },
-    { key: 'D', text: 'delta', value: 'Alfa' },
-    { key: 'E', text: 'echo', value: 'Alfa' }
-  ]
-};
 let error = 'En feil';
 
 <div>
@@ -137,14 +137,33 @@ let error = 'En feil';
     <Grid.Row>
       <Grid.Col lg={4}>
         <ComboBox
-          label="Nedtrekksliste"
+          label="Fylke"
           help="Hjelpetekst"
           placeHolder="Velg"
-          options={state.options}
+          defaultSelectedKey="D"
+          options={[
+            { key: 'A', text: 'Agder', value: 'Agder' },
+            { key: 'B', text: 'Innlandet', value: 'Innlandet' },
+            { key: 'C', text: 'Møre og Romsdal', value: 'Møre og Romsdal' },
+            { key: 'D', text: 'Nordland', value: 'Nordland' },
+            { key: 'E', text: 'Oslo', value: 'Oslo' },
+            { key: 'F', text: 'Rogaland', value: 'Rogaland' },
+            { key: 'G', text: 'Troms og Finnmark', value: 'Troms og Finnmark' },
+            { key: 'H', text: 'Trøndelag', value: 'Trøndelag' },
+            {
+              key: 'I',
+              text: 'Vestfold og Telemark',
+              value: 'Vestfold og Telemark',
+            },
+            { key: 'J', text: 'Vestland', value: 'Vestland' },
+            { key: 'K', text: 'Viken', value: 'Viken' },
+          ]}
           allowFreeform={false}
           ariaLabel="Eksempel ComboBox"
           useComboBoxAsMenuWidth
-          errorMessage={'Vis med feil'}
+          errorMessage={
+            'Du kan ikke legge til dette fylket siden personen har finnmarksfradrag.'
+          }
         />
       </Grid.Col>
     </Grid.Row>

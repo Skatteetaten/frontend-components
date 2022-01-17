@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import { matches } from './../utils/test-utils';
-import Spinner from './Spinner';
+import { Spinner } from '.';
 
 function oppsettShallow(props) {
   return shallow(<Spinner {...props} />);
@@ -26,7 +26,7 @@ describe('Spinner komponent', () => {
       className: 'spinner-classname',
       id: 'spinner-id',
       spinnerColor: 'white',
-      size: Spinner.Size.large
+      size: Spinner.Size.large,
     });
 
     const StyledSpinnerBase = wrapper.find('StyledSpinnerBase');

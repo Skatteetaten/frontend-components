@@ -1,7 +1,7 @@
 import React from 'react';
 import { mount, shallow } from 'enzyme';
 import { matches } from './../utils/test-utils';
-import LabelWithCallout from './LabelWithCallout';
+import { LabelWithCallout } from '.';
 
 function oppsettFullDOM(props) {
   return mount(<LabelWithCallout {...props} />);
@@ -18,6 +18,18 @@ describe('LabelWithCallout komponent', () => {
         calloutFloating={false}
         help={'Dette er en mock-hjepetekst'}
         label={'Mock Label'}
+        customClassNames={{
+          wrapper: 'wrapper',
+          label: 'label',
+          legend: 'legend',
+          helpicon: 'helpicon',
+          helpPragraph: 'helpPragraph',
+          warningicon: 'warningicon',
+          warningPragraph: 'warningPragraph',
+          editicon: 'editicon',
+          readonlyarea: 'readonlyarea',
+          callout: 'callout',
+        }}
       />
     );
   });
@@ -26,14 +38,11 @@ describe('LabelWithCallout komponent', () => {
       id: 'LabelWithCallout_id',
       calloutFloating: false,
       help: 'Dette er en mock-hjepetekst',
-      label: 'Mock Label'
+      label: 'Mock Label',
     });
-    expect(
-      wrapper
-        .find('label')
-        .first()
-        .prop('id')
-    ).toEqual('LabelWithCallout_id');
+    expect(wrapper.find('label').first().prop('id')).toEqual(
+      'LabelWithCallout_id'
+    );
     const helpIcon = wrapper.find('.ms-Button--icon');
     const icon = helpIcon.find('i');
     expect(icon.prop('data-icon-name')).toEqual('HelpOutline');
@@ -48,14 +57,11 @@ describe('LabelWithCallout komponent', () => {
       id: 'LabelWithCallout_id',
       calloutFloating: false,
       warning: 'Dette er en mock-varselstekst',
-      label: 'Mock Label'
+      label: 'Mock Label',
     });
-    expect(
-      wrapper
-        .find('label')
-        .first()
-        .prop('id')
-    ).toEqual('LabelWithCallout_id');
+    expect(wrapper.find('label').first().prop('id')).toEqual(
+      'LabelWithCallout_id'
+    );
     const warningIcon = wrapper.find('.ms-Button--icon');
     const icon = warningIcon.find('i');
     expect(icon.prop('data-icon-name')).toEqual('WarningOutline');
@@ -70,7 +76,7 @@ describe('LabelWithCallout komponent', () => {
       id: 'LabelWithCallout_id',
       calloutFloating: false,
       help: 'Dette er en mock-hjepetekst',
-      label: 'Mock Label'
+      label: 'Mock Label',
     });
     const helpIcon = wrapper.find('.ms-Button--icon');
     helpIcon.simulate('click');
@@ -86,7 +92,7 @@ describe('LabelWithCallout komponent', () => {
       calloutFloating: false,
       help: 'Dette er en mock-hjepetekst',
       label: 'Mock Label',
-      onCalloutToggle: (gammel, ny) => mockFunksjon(gammel, ny)
+      onCalloutToggle: (gammel, ny) => mockFunksjon(gammel, ny),
     });
     const helpIcon = wrapper.find('.ms-Button--icon');
     expect(mockFunksjon).not.toHaveBeenCalled();
@@ -100,7 +106,7 @@ describe('LabelWithCallout komponent', () => {
       calloutFloating: false,
       help: 'Dette er en mock-hjepetekst',
       label: 'Mock Label',
-      inFieldset: true
+      inFieldset: true,
     });
     expect(wrapper.find('legend').exists()).toEqual(true);
     expect(wrapper.find('label').exists()).toEqual(false);

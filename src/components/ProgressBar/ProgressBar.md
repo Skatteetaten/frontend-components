@@ -1,13 +1,13 @@
-** Kan brukes for å vise for langt det er igjen for noe å laste **
+**ProgressBar (Fremdriftsvisning): brukes for å vise for langt det er igjen for noe å laste**
 
-```
-import ProgressBar from '@skatteetaten/frontend-components/ProgressBar';
+```js
+import { ProgressBar } from '@skatteetaten/frontend-components/ProgressBar';
 
 <ProgressBar
   label="Laster inn..."
   description="Vennligst vent mens vi laster inn litt data"
-  percentComplete={.33}
-/>
+  percentComplete={0.33}
+/>;
 ```
 
 ```js noeditor uu

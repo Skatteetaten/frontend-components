@@ -3,14 +3,41 @@
 exports[`StepList komponent matcher snapshot 1`] = `
 <StepList>
   <div
-    className="stepList-96"
+    className=
+
+        {
+          background-color: transparent;
+          counter-reset: step-counter;
+          margin-bottom: 20px;
+          position: relative;
+        }
     role="region"
   >
     <Grid
       padding="0"
     >
       <div
-        className="ske-Grid-101 "
+        className=
+            
+            {
+              box-sizing: border-box;
+              padding-bottom: 0;
+              padding-left: 0;
+              padding-right: 0;
+              padding-top: 0;
+              zoom: 1;
+            }
+            &::before {
+              content: "";
+              display: table;
+              line-height: 0;
+            }
+            &::after {
+              clear: both;
+              content: "";
+              display: table;
+              line-height: 0;
+            }
         dir="ltr"
       >
         <Step
@@ -18,35 +45,272 @@ exports[`StepList komponent matcher snapshot 1`] = `
           stepNumber={1}
         >
           <div
-            className="wrapperStep-108"
+            className=
+
+                {
+                  border: none;
+                  counter-increment: step-counter;
+                  display: block;
+                  padding-bottom: 0;
+                  padding-left: 20px;
+                  padding-right: 20px;
+                  padding-top: 0;
+                  position: relative;
+                }
+                @media  only screen and (max-width: 479px){& {
+                  border: 0 none;
+                  outline-offset: none;
+                  outline: none;
+                  padding-bottom: 0;
+                  padding-left: 2px;
+                  padding-right: 2px;
+                  padding-top: 0;
+                }
             key="1"
           >
             <GridRow
               rowSpacing="0px"
             >
               <div
-                className="ske-Grid-row-105 "
+                className=
+                    
+                    {
+                      box-sizing: border-box;
+                      margin-bottom: 0px;
+                      margin-left: 0;
+                      margin-right: 0;
+                      margin-top: 0px;
+                      zoom: 1;
+                    }
+                    &::before {
+                      content: "";
+                      display: table;
+                      line-height: 0;
+                    }
+                    &::after {
+                      clear: both;
+                      content: "";
+                      display: table;
+                      line-height: 0;
+                    }
               >
                 <GridCol
                   noSpacing={true}
                 >
                   <div
-                    className="ske-Grid-col-106 "
+                    className=
+                        
+                        {
+                          box-sizing: border-box;
+                          min-height: 1px;
+                          padding-left: false;
+                          padding-right: false;
+                          position: relative;
+                          width: 100%;
+                        }
+                        & $grid {
+                          padding-bottom: 0;
+                          padding-left: 0;
+                          padding-right: 0;
+                          padding-top: 0;
+                        }
+                        [dir='ltr'] & {
+                          float: left;
+                          left: NaN%;
+                          margin-bottom: 0;
+                          margin-left: 0;
+                          margin-right: 0;
+                          margin-top: 0;
+                          right: NaN%;
+                        }
+                        @media (min-width: 320px){[dir='ltr'] & {
+                          left: NaN%;
+                          right: NaN%;
+                          width: NaN%;
+                        }
+                        @media (min-width: 480px){[dir='ltr'] & {
+                          left: NaN%;
+                          right: NaN%;
+                          width: NaN%;
+                        }
+                        @media (min-width: 640px){[dir='ltr'] & {
+                          left: NaN%;
+                          right: NaN%;
+                          width: NaN%;
+                        }
+                        @media (min-width: 1024px){[dir='ltr'] & {
+                          left: NaN%;
+                          right: NaN%;
+                          width: NaN%;
+                        }
+                        @media (min-width: 1366px){[dir='ltr'] & {
+                          left: NaN%;
+                          right: NaN%;
+                          width: NaN%;
+                        }
+                        [dir='rtl'] & {
+                          float: right;
+                          left: NaN%;
+                          right: NaN%;
+                        }
+                        @media (min-width: 320px){[dir='rtl'] & {
+                          left: NaN%;
+                          right: NaN%;
+                          width: NaN%;
+                        }
+                        @media (min-width: 480px){[dir='rtl'] & {
+                          left: NaN%;
+                          right: NaN%;
+                          width: NaN%;
+                        }
+                        @media (min-width: 640px){[dir='rtl'] & {
+                          left: NaN%;
+                          right: NaN%;
+                          width: NaN%;
+                        }
+                        @media (min-width: 1024px){[dir='rtl'] & {
+                          left: NaN%;
+                          right: NaN%;
+                          width: NaN%;
+                        }
+                        @media (min-width: 1366px){[dir='rtl'] & {
+                          left: NaN%;
+                          right: NaN%;
+                          width: NaN%;
+                        }
+                        @media (min-width: 1920px){& {
+                          width: NaN%;
+                        }
                   >
                     <GridRow
                       rowSpacing="0px"
                     >
                       <div
-                        className="ske-Grid-row-105 "
+                        className=
+                            
+                            {
+                              box-sizing: border-box;
+                              margin-bottom: 0px;
+                              margin-left: 0;
+                              margin-right: 0;
+                              margin-top: 0px;
+                              zoom: 1;
+                            }
+                            &::before {
+                              content: "";
+                              display: table;
+                              line-height: 0;
+                            }
+                            &::after {
+                              clear: both;
+                              content: "";
+                              display: table;
+                              line-height: 0;
+                            }
                       >
                         <GridCol
                           sm={12}
                         >
                           <div
-                            className="ske-Grid-col-107 "
+                            className=
+                                
+                                {
+                                  box-sizing: border-box;
+                                  min-height: 1px;
+                                  padding-left: 8px;
+                                  padding-right: 8px;
+                                  position: relative;
+                                  width: 100%;
+                                }
+                                & $grid {
+                                  padding-bottom: 0;
+                                  padding-left: 0;
+                                  padding-right: 0;
+                                  padding-top: 0;
+                                }
+                                [dir='ltr'] & {
+                                  float: left;
+                                  left: NaN%;
+                                  margin-bottom: 0;
+                                  margin-left: 0;
+                                  margin-right: 0;
+                                  margin-top: 0;
+                                  right: NaN%;
+                                }
+                                @media (min-width: 320px){[dir='ltr'] & {
+                                  left: NaN%;
+                                  right: NaN%;
+                                  width: 100%;
+                                }
+                                @media (min-width: 480px){[dir='ltr'] & {
+                                  left: NaN%;
+                                  right: NaN%;
+                                  width: NaN%;
+                                }
+                                @media (min-width: 640px){[dir='ltr'] & {
+                                  left: NaN%;
+                                  right: NaN%;
+                                  width: NaN%;
+                                }
+                                @media (min-width: 1024px){[dir='ltr'] & {
+                                  left: NaN%;
+                                  right: NaN%;
+                                  width: NaN%;
+                                }
+                                @media (min-width: 1366px){[dir='ltr'] & {
+                                  left: NaN%;
+                                  right: NaN%;
+                                  width: NaN%;
+                                }
+                                [dir='rtl'] & {
+                                  float: right;
+                                  left: NaN%;
+                                  right: NaN%;
+                                }
+                                @media (min-width: 320px){[dir='rtl'] & {
+                                  left: NaN%;
+                                  right: NaN%;
+                                  width: 100%;
+                                }
+                                @media (min-width: 480px){[dir='rtl'] & {
+                                  left: NaN%;
+                                  right: NaN%;
+                                  width: NaN%;
+                                }
+                                @media (min-width: 640px){[dir='rtl'] & {
+                                  left: NaN%;
+                                  right: NaN%;
+                                  width: NaN%;
+                                }
+                                @media (min-width: 1024px){[dir='rtl'] & {
+                                  left: NaN%;
+                                  right: NaN%;
+                                  width: NaN%;
+                                }
+                                @media (min-width: 1366px){[dir='rtl'] & {
+                                  left: NaN%;
+                                  right: NaN%;
+                                  width: NaN%;
+                                }
+                                @media (min-width: 1920px){& {
+                                  width: NaN%;
+                                }
                           >
                             <span
-                              className="stepLine-94"
+                              className=
+
+                                  {
+                                    background-color: #b2b2b2;
+                                    bottom: 0px;
+                                    float: right;
+                                    margin-top: 10px;
+                                    position: absolute;
+                                    top: 0px;
+                                    width: 2px;
+                                  }
+                                  @media only screen and (max-width: 479px){& {
+                                    width: 1px;
+                                  }
                             />
                             <span
                               className=""
@@ -54,45 +318,394 @@ exports[`StepList komponent matcher snapshot 1`] = `
                             <NumberIcon
                               styles={
                                 Object {
-                                  "arrowLine": "arrowLine-85",
-                                  "containerStep": "containerStep-86",
-                                  "content": "content-87",
-                                  "divider": "divider-88",
-                                  "nextStep": "nextStep-89",
-                                  "numberWrapper": "numberWrapper-90",
-                                  "stepAction": "stepAction-91",
-                                  "stepContent": "stepContent-92",
-                                  "stepContentInner": "stepContentInner-93",
-                                  "stepLine": "stepLine-94",
-                                  "stepLineTop": "stepLineTop-95",
-                                  "stepList": "stepList-96",
-                                  "stepNumber": "stepNumber-97",
+                                  "arrowLine": 
+
+                                    {
+                                      background-color: #b2b2b2;
+                                      bottom: 34px;
+                                      float: right;
+                                      height: 2px;
+                                      position: absolute;
+                                      width: 21px;
+                                    }
+                                    @media only screen and (max-width: 479px){& {
+                                      height: 1px;
+                                      top: 35px;
+                                    },
+                                  "containerStep": 
+
+                                    {
+                                      margin-bottom: 0;
+                                      margin-left: auto;
+                                      margin-right: auto;
+                                      margin-top: 0;
+                                    },
+                                  "content": 
+
+                                    {
+                                      background-color: #ffffff;
+                                      padding-bottom: 15px;
+                                      padding-left: 10px;
+                                      padding-right: 0;
+                                      padding-top: 0;
+                                    },
+                                  "divider": 
+
+                                    {
+                                      border-width: 1px;
+                                      border: solid;
+                                      color: #b2b2b2;
+                                      margin-bottom: 0;
+                                      margin-left: 26px;
+                                      margin-right: 0;
+                                      margin-top: 0;
+                                    }
+                                    @media  only screen and (max-width: 479px){& {
+                                      margin-bottom: 0;
+                                      margin-left: 20px;
+                                      margin-right: 0;
+                                      margin-top: 0;
+                                    },
+                                  "nextStep": 
+
+                                    {
+                                      display: block;
+                                    },
+                                  "numberWrapper": 
+
+                                    {
+                                      bottom: 0px;
+                                      left: -8px;
+                                      padding-top: 10px;
+                                      position: absolute;
+                                      top: 0px;
+                                    }
+                                    @media only screen and (max-width: 479px){& {
+                                      left: -4px;
+                                      padding-top: 10px;
+                                    },
+                                  "stepAction": 
+
+                                    {
+                                      height: calc(100% - 21px);
+                                      margin-left: auto;
+                                    }
+                                    @media only screen and (max-width: 479px){& {
+                                      height: auto;
+                                      margin-bottom: 12px;
+                                      position: absolute;
+                                    },
+                                  "stepContent": 
+
+                                    {
+                                      display: flex;
+                                      flex-wrap: wrap;
+                                      margin-bottom: 0;
+                                      margin-left: 32px;
+                                      margin-right: 0;
+                                      margin-top: 0;
+                                      padding-bottom: 0;
+                                      padding-left: 0;
+                                      padding-right: 0;
+                                      padding-top: 0;
+                                      position: relative;
+                                    }
+                                    & p {
+                                      margin-bottom: 20px;
+                                      margin-left: 0;
+                                      margin-right: 0;
+                                      margin-top: 0;
+                                    }
+                                    @media only screen and (max-width: 479px){& p {
+                                      margin-bottom: 0;
+                                      margin-left: 0;
+                                      margin-right: 0;
+                                      margin-top: 0;
+                                    }
+                                    @media only screen and (max-width: 479px){& button {
+                                      font-size: 0.9375rem;
+                                    }
+                                    @media only screen and (max-width: 479px){& button i {
+                                      font-size: inherit !important;
+                                    }
+                                    @media only screen and (max-width: 479px){& {
+                                      margin-bottom: 0;
+                                      margin-left: 20px;
+                                      margin-right: 0;
+                                      margin-top: 0;
+                                      padding-bottom: 20px;
+                                      padding-left: 0;
+                                      padding-right: 0;
+                                      padding-top: 0;
+                                      position: initial;
+                                    },
+                                  "stepContentInner": 
+
+                                    {
+                                      display: flex;
+                                      margin-bottom: 8px;
+                                      margin-left: 0;
+                                      margin-right: 0;
+                                      margin-top: 0;
+                                      width: 100%;
+                                    }
+                                    & button {
+                                      bottom: 0px;
+                                      right: 0px;
+                                    },
+                                  "stepLine": 
+
+                                    {
+                                      background-color: #b2b2b2;
+                                      bottom: 0px;
+                                      float: right;
+                                      margin-top: 10px;
+                                      position: absolute;
+                                      top: 0px;
+                                      width: 2px;
+                                    }
+                                    @media only screen and (max-width: 479px){& {
+                                      width: 1px;
+                                    },
+                                  "stepLineTop": 
+
+                                    {
+                                      background-color: #b2b2b2;
+                                      float: right;
+                                      height: 10px;
+                                      position: absolute;
+                                      width: 2px;
+                                    }
+                                    @media only screen and (max-width: 479px){& {
+                                      width: 1px;
+                                    },
+                                  "stepList": 
+
+                                    {
+                                      background-color: transparent;
+                                      counter-reset: step-counter;
+                                      margin-bottom: 20px;
+                                      position: relative;
+                                    },
+                                  "stepNumber": 
+
+                                    {
+                                      align-items: center;
+                                      background-color: #ffffff;
+                                      border-color: #000000;
+                                      border-radius: 50%;
+                                      border-width: 2px;
+                                      border: solid;
+                                      display: flex;
+                                      font-size: 1.125rem;
+                                      font-weight: 700;
+                                      height: 30px;
+                                      justify-content: center;
+                                      width: 30px;
+                                    }
+                                    &::after {
+                                      color: #000;
+                                      content: counter(step-counter);
+                                    }
+                                    @media only screen and (max-width: 479px){&::after {
+                                      font-size: 0.875rem !important;
+                                    }
+                                    & i {
+                                      margin-top: 1px;
+                                    }
+                                    @media only screen and (max-width: 479px){& i {
+                                      font-size: 1.25rem !important;
+                                    }
+                                    @media only screen and (max-width: 479px){& {
+                                      font-size: 1rem;
+                                      height: 20px;
+                                      margin-top: 1px;
+                                      width: 20px;
+                                    },
                                   "subComponentStyles": Object {},
-                                  "title": "title-98",
-                                  "titleText": "titleText-99",
-                                  "wrapperStep": "wrapperStep-108",
+                                  "title": 
+
+                                    {
+                                      color: #1362ae;
+                                      flex: 0 0 100%;
+                                      font-size: 1.125rem;
+                                      margin-bottom: 0;
+                                      margin-left: 0;
+                                      margin-right: 0;
+                                      margin-top: 8px !important;
+                                    }
+                                    @media only screen and (max-width: 479px){& {
+                                      display: flex;
+                                      font-size: 1rem;
+                                      padding-top: 0;
+                                    },
+                                  "titleText": 
+
+                                    @media only screen and (max-width: 479px){& {
+                                      font-size: 1rem;
+                                      padding-top: 0;
+                                    },
+                                  "wrapperStep": 
+
+                                    {
+                                      border: none;
+                                      counter-increment: step-counter;
+                                      display: block;
+                                      padding-bottom: 0;
+                                      padding-left: 20px;
+                                      padding-right: 20px;
+                                      padding-top: 0;
+                                      position: relative;
+                                    }
+                                    @media  only screen and (max-width: 479px){& {
+                                      border: 0 none;
+                                      outline-offset: none;
+                                      outline: none;
+                                      padding-bottom: 0;
+                                      padding-left: 2px;
+                                      padding-right: 2px;
+                                      padding-top: 0;
+                                    },
                                 }
                               }
                             >
                               <div
-                                className="numberWrapper-90"
+                                className=
+
+                                    {
+                                      bottom: 0px;
+                                      left: -8px;
+                                      padding-top: 10px;
+                                      position: absolute;
+                                      top: 0px;
+                                    }
+                                    @media only screen and (max-width: 479px){& {
+                                      left: -4px;
+                                      padding-top: 10px;
+                                    }
                               >
                                 <div
-                                  className="stepNumber-97"
+                                  className=
+
+                                      {
+                                        align-items: center;
+                                        background-color: #ffffff;
+                                        border-color: #000000;
+                                        border-radius: 50%;
+                                        border-width: 2px;
+                                        border: solid;
+                                        display: flex;
+                                        font-size: 1.125rem;
+                                        font-weight: 700;
+                                        height: 30px;
+                                        justify-content: center;
+                                        width: 30px;
+                                      }
+                                      &::after {
+                                        color: #000;
+                                        content: counter(step-counter);
+                                      }
+                                      @media only screen and (max-width: 479px){&::after {
+                                        font-size: 0.875rem !important;
+                                      }
+                                      & i {
+                                        margin-top: 1px;
+                                      }
+                                      @media only screen and (max-width: 479px){& i {
+                                        font-size: 1.25rem !important;
+                                      }
+                                      @media only screen and (max-width: 479px){& {
+                                        font-size: 1rem;
+                                        height: 20px;
+                                        margin-top: 1px;
+                                        width: 20px;
+                                      }
                                 >
                                   <span />
                                 </div>
                               </div>
                             </NumberIcon>
                             <hr
-                              className="divider-88"
+                              className=
+
+                                  {
+                                    border-width: 1px;
+                                    border: solid;
+                                    color: #b2b2b2;
+                                    margin-bottom: 0;
+                                    margin-left: 26px;
+                                    margin-right: 0;
+                                    margin-top: 0;
+                                  }
+                                  @media  only screen and (max-width: 479px){& {
+                                    margin-bottom: 0;
+                                    margin-left: 20px;
+                                    margin-right: 0;
+                                    margin-top: 0;
+                                  }
                             />
                             <div>
                               <div
-                                className="stepContent-92"
+                                className=
+
+                                    {
+                                      display: flex;
+                                      flex-wrap: wrap;
+                                      margin-bottom: 0;
+                                      margin-left: 32px;
+                                      margin-right: 0;
+                                      margin-top: 0;
+                                      padding-bottom: 0;
+                                      padding-left: 0;
+                                      padding-right: 0;
+                                      padding-top: 0;
+                                      position: relative;
+                                    }
+                                    & p {
+                                      margin-bottom: 20px;
+                                      margin-left: 0;
+                                      margin-right: 0;
+                                      margin-top: 0;
+                                    }
+                                    @media only screen and (max-width: 479px){& p {
+                                      margin-bottom: 0;
+                                      margin-left: 0;
+                                      margin-right: 0;
+                                      margin-top: 0;
+                                    }
+                                    @media only screen and (max-width: 479px){& button {
+                                      font-size: 0.9375rem;
+                                    }
+                                    @media only screen and (max-width: 479px){& button i {
+                                      font-size: inherit !important;
+                                    }
+                                    @media only screen and (max-width: 479px){& {
+                                      margin-bottom: 0;
+                                      margin-left: 20px;
+                                      margin-right: 0;
+                                      margin-top: 0;
+                                      padding-bottom: 20px;
+                                      padding-left: 0;
+                                      padding-right: 0;
+                                      padding-top: 0;
+                                      position: initial;
+                                    }
                               >
                                 <div
-                                  className="stepContentInner-93"
+                                  className=
+
+                                      {
+                                        display: flex;
+                                        margin-bottom: 8px;
+                                        margin-left: 0;
+                                        margin-right: 0;
+                                        margin-top: 0;
+                                        width: 100%;
+                                      }
+                                      & button {
+                                        bottom: 0px;
+                                        right: 0px;
+                                      }
                                 />
                               </div>
                             </div>

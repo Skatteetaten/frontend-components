@@ -2,16 +2,201 @@
 
 exports[`Combobox komponent matcher med snapshot 1`] = `
 <div
-  id="combobox-1"
+  id="combobox-123"
 >
   <div
+    className=
+        
+        {
+          display: flex;
+        }
+  />
+  <div
     aria-invalid={false}
-    className="ms-ComboBox-container main-85"
-    id="combobox-1-input"
+    className=
+        ms-ComboBox-container
+        & .ms-ComboBox {
+          border-radius: 0px;
+          height: 32px;
+          padding-bottom: 1px;
+          padding-left: 8px;
+          padding-right: 32px;
+          padding-top: 0px;
+        }
+        & .ms-ComboBox:focus {
+          border-color: #1362ae;
+          outline: 2px solid #1362ae;
+        }
+        & .ms-ComboBox:after {
+          border-radius: 0px;
+        }
+        & .ms-ComboBox-Input.is-disabled {
+          background-color: #e5e5e5;
+        }
+        & .is-disabled .ms-ComboBox-Input:hover {
+          cursor: not-allowed;
+        }
+        & .ms-ComboBox.is-disabled {
+          border: 1px solid #b2b2b2;
+        }
+        & .ms-ComboBox.is-disabled button {
+          color: #808080;
+        }
+        & .ms-ComboBox-CaretDown-button {
+          color: #1362ae;
+          right: 0;
+          top: 0;
+        }
+        & div[role=region]::before {
+          font-family: "SkeIconfont";
+          font-size: 16px;
+          margin-right: 3px;
+        }
+        & div[role=region] {
+          font-size: 0.875rem;
+          font-weight: 500;
+        }
+        & .ms-ComboBox-Input {
+          font-size: 1rem;
+        }
+    id="combobox-123-input"
   >
     <div
-      className="ms-ComboBox css-95"
-      id="combobox-undefined-inputwrapper"
+      className=
+          ms-ComboBox
+          {
+            -moz-osx-font-smoothing: grayscale;
+            -webkit-font-smoothing: antialiased;
+            background-color: #ffffff;
+            box-shadow: none;
+            box-sizing: border-box;
+            color: rgba(0, 0, 0, 0.95);
+            cursor: text;
+            display: block;
+            font-family: 'Helvetica Neue', Helvetica , Arial, 'Liberation Sans', 'Nimbus Sans L', sans-serif;
+            font-size: 1rem;
+            font-weight: 400;
+            height: 32px;
+            margin-left: 0;
+            outline: 0;
+            padding-left: 9px;
+            padding-right: 32px;
+            position: relative;
+            text-overflow: ellipsis;
+            user-select: none;
+            white-space: nowrap;
+          }
+          & .ms-Label {
+            display: inline-block;
+            margin-bottom: 8px;
+          }
+          @media screen and (-ms-high-contrast: active), (forced-colors: active){&.is-open {
+            -ms-high-contrast-adjust: none;
+            background-color: Window;
+            color: HighlightText;
+            forced-color-adjust: none;
+          }
+          @media screen and (-ms-high-contrast: active), (forced-colors: active){&.is-open:after {
+            border-color: Highlight;
+          }
+          &:after {
+            border-color: rgba(55, 55, 55, 0.95);
+            border-radius: 2px;
+            border-style: solid;
+            border-width: 1px;
+            bottom: 0px;
+            content: '';
+            left: 0px;
+            pointer-events: none;
+            position: absolute;
+            right: 0px;
+            top: 0px;
+          }
+          &:hover:after {
+            border-color: rgba(0, 0, 0, 0.95);
+          }
+          &:hover .ms-ComboBox-Input {
+            color: rgba(21, 21, 21, 0.95);
+          }
+          &:hover .ms-ComboBox-Input::placeholder {
+            color: rgba(21, 21, 21, 0.95);
+          }
+          @media screen and (-ms-high-contrast: active), (forced-colors: active){&:hover .ms-ComboBox-Input::placeholder {
+            color: GrayText;
+          }
+          &:hover .ms-ComboBox-Input:-ms-input-placeholder {
+            color: rgba(21, 21, 21, 0.95);
+          }
+          @media screen and (-ms-high-contrast: active), (forced-colors: active){&:hover .ms-ComboBox-Input:-ms-input-placeholder {
+            color: GrayText;
+          }
+          &:hover .ms-ComboBox-Input::-ms-input-placeholder {
+            color: rgba(21, 21, 21, 0.95);
+          }
+          @media screen and (-ms-high-contrast: active), (forced-colors: active){&:hover .ms-ComboBox-Input::-ms-input-placeholder {
+            color: GrayText;
+          }
+          @media screen and (-ms-high-contrast: active), (forced-colors: active){&:hover .ms-ComboBox-Input {
+            -ms-high-contrast-adjust: none;
+            background-color: Window;
+            color: WindowText;
+            forced-color-adjust: none;
+          }
+          @media screen and (-ms-high-contrast: active), (forced-colors: active){&:hover {
+            -ms-high-contrast-adjust: none;
+            background-color: Window;
+            color: HighlightText;
+            forced-color-adjust: none;
+          }
+          @media screen and (-ms-high-contrast: active), (forced-colors: active){&:hover:after {
+            border-color: Highlight;
+          }
+          &:active {
+            position: relative;
+          }
+          @media screen and (-ms-high-contrast: active), (forced-colors: active){&:active {
+            -ms-high-contrast-adjust: none;
+            background-color: Window;
+            color: HighlightText;
+            forced-color-adjust: none;
+          }
+          @media screen and (-ms-high-contrast: active), (forced-colors: active){&:active:after {
+            border-color: Highlight;
+          }
+          &:focus {
+            border-color: #1362ae;
+          }
+          &:focus .ms-ComboBox-Input {
+            color: rgba(21, 21, 21, 0.95);
+          }
+          @media screen and (-ms-high-contrast: active), (forced-colors: active){&:focus .ms-ComboBox-Input {
+            -ms-high-contrast-adjust: none;
+            background-color: Window;
+            color: WindowText;
+            forced-color-adjust: none;
+          }
+          @media screen and (-ms-high-contrast: active), (forced-colors: active){&:focus {
+            -ms-high-contrast-adjust: none;
+            background-color: Window;
+            color: HighlightText;
+            forced-color-adjust: none;
+          }
+          @media screen and (-ms-high-contrast: active), (forced-colors: active){&:focus:after {
+            border-color: Highlight;
+          }
+          &:focus:after {
+            border-radius: 2px;
+            border: 2px solid #1362ae;
+            bottom: 0px;
+            content: '';
+            left: 0px;
+            pointer-events: none;
+            position: absolute;
+            right: 0px;
+            top: 0px;
+          }
+      data-ktp-target={true}
+      id="combobox-123-inputwrapper"
     >
       <input
         aria-autocomplete="both"
@@ -19,10 +204,54 @@ exports[`Combobox komponent matcher med snapshot 1`] = `
         aria-expanded={false}
         autoCapitalize="off"
         autoComplete="off"
-        className="ms-ComboBox-Input css-96"
+        className=
+            ms-ComboBox-Input
+            {
+              background-color: #ffffff;
+              border-style: none;
+              box-sizing: border-box;
+              color: rgba(0, 0, 0, 0.95);
+              font: inherit;
+              height: 100%;
+              outline: none;
+              padding-bottom: 0;
+              padding-left: 0;
+              padding-right: 0;
+              padding-top: 0;
+              text-overflow: ellipsis;
+              width: 100%;
+            }
+            &::placeholder {
+              color: rgba(55, 55, 55, 0.95);
+            }
+            @media screen and (-ms-high-contrast: active), (forced-colors: active){&::placeholder {
+              color: GrayText;
+            }
+            &:-ms-input-placeholder {
+              color: rgba(55, 55, 55, 0.95);
+            }
+            @media screen and (-ms-high-contrast: active), (forced-colors: active){&:-ms-input-placeholder {
+              color: GrayText;
+            }
+            &::-ms-input-placeholder {
+              color: rgba(55, 55, 55, 0.95);
+            }
+            @media screen and (-ms-high-contrast: active), (forced-colors: active){&::-ms-input-placeholder {
+              color: GrayText;
+            }
+            &::-ms-clear {
+              display: none;
+            }
+            @media screen and (-ms-high-contrast: active), (forced-colors: active){& {
+              -ms-high-contrast-adjust: none;
+              background-color: Window;
+              color: WindowText;
+              forced-color-adjust: none;
+            }
         data-is-interactable={true}
+        data-ktp-execute-target={true}
         data-lpignore={true}
-        id="combobox-undefined-input-input"
+        id="combobox-123-input-input"
         onBlur={[Function]}
         onChange={[Function]}
         onClick={[Function]}
@@ -34,15 +263,106 @@ exports[`Combobox komponent matcher med snapshot 1`] = `
         onKeyDown={[Function]}
         onKeyUp={[Function]}
         onTouchStart={[Function]}
-        readOnly={true}
+        readOnly={false}
         role="combobox"
         spellCheck={false}
+        style={
+          Object {
+            "fontFamily": "inherit",
+          }
+        }
         type="text"
         value=""
       />
       <button
         aria-hidden={true}
-        className="ms-Button ms-Button--icon ms-ComboBox-CaretDown-button root-103"
+        className=
+            ms-Button
+            ms-Button--icon
+            ms-ComboBox-CaretDown-button
+            {
+              -moz-osx-font-smoothing: grayscale;
+              -webkit-font-smoothing: antialiased;
+              background-color: transparent;
+              border-radius: 2px;
+              border: none;
+              box-sizing: border-box;
+              color: rgba(55, 55, 55, 0.95);
+              cursor: default;
+              display: inline-block;
+              font-family: 'Helvetica Neue', Helvetica , Arial, 'Liberation Sans', 'Nimbus Sans L', sans-serif;
+              font-size: 0.875rem;
+              font-weight: 400;
+              height: 100%;
+              line-height: 30px;
+              outline: transparent;
+              padding-bottom: 0;
+              padding-left: 4px;
+              padding-right: 4px;
+              padding-top: 0;
+              position: absolute;
+              text-align: center;
+              text-decoration: none;
+              top: 0px;
+              user-select: none;
+              width: 32px;
+            }
+            &::-moz-focus-inner {
+              border: 0;
+            }
+            .ms-Fabric--isFocusVisible &:focus:after {
+              border: 1px solid transparent;
+              bottom: 2px;
+              content: "";
+              left: 2px;
+              outline: 1px solid rgba(55, 55, 55, 0.95);
+              position: absolute;
+              right: 2px;
+              top: 2px;
+              z-index: 1;
+            }
+            @media screen and (-ms-high-contrast: active), (forced-colors: active){.ms-Fabric--isFocusVisible &:focus:after {
+              bottom: -2px;
+              left: -2px;
+              outline-color: ButtonText;
+              right: -2px;
+              top: -2px;
+            }
+            &:active > * {
+              left: 0px;
+              position: relative;
+              top: 0px;
+            }
+            @media screen and (-ms-high-contrast: active), (forced-colors: active){& {
+              -ms-high-contrast-adjust: none;
+              background-color: ButtonFace;
+              border-color: ButtonText;
+              color: ButtonText;
+              forced-color-adjust: none;
+            }
+            &:hover {
+              background-color: #f4f4f4;
+              color: rgba(21, 21, 21, 0.95);
+              cursor: pointer;
+            }
+            @media screen and (-ms-high-contrast: active), (forced-colors: active){&:hover {
+              -ms-high-contrast-adjust: none;
+              background-color: Highlight;
+              border-color: Highlight;
+              color: HighlightText;
+              forced-color-adjust: none;
+            }
+            &:active {
+              background-color: #eaeaea;
+              color: rgba(21, 21, 21, 0.95);
+            }
+            @media screen and (-ms-high-contrast: active), (forced-colors: active){&:active {
+              -ms-high-contrast-adjust: none;
+              background-color: Highlight;
+              border-color: Highlight;
+              color: HighlightText;
+              forced-color-adjust: none;
+            }
         data-is-focusable={false}
         onBlur={[Function]}
         onClick={[Function]}
@@ -56,30 +376,65 @@ exports[`Combobox komponent matcher med snapshot 1`] = `
         type="button"
       >
         <span
-          className="ms-Button-flexContainer flexContainer-104"
+          className=
+              ms-Button-flexContainer
+              {
+                align-items: center;
+                display: flex;
+                flex-wrap: nowrap;
+                height: 100%;
+                justify-content: center;
+              }
           data-automationid="splitbuttonprimary"
         >
           <i
             aria-hidden={true}
-            className="ms-Icon root-37 css-111 ms-Button-icon icon-106"
+            className=
+                ms-Icon
+                ms-Button-icon
+                {
+                  display: inline-block;
+                }
+                {
+                  -moz-osx-font-smoothing: grayscale;
+                  -webkit-font-smoothing: antialiased;
+                  display: inline-block;
+                  font-family: "SkeIconfont";
+                  font-size: inherit;
+                  font-style: normal;
+                  font-weight: normal;
+                  speak: none;
+                  text-rendering: auto;
+                  transform: translate(0, 0);
+                }
+                {
+                  flex-shrink: 0;
+                  font-size: 0.875rem;
+                  height: 16px;
+                  line-height: 16px;
+                  margin-bottom: 0;
+                  margin-left: 4px;
+                  margin-right: 4px;
+                  margin-top: 0;
+                  text-align: center;
+                }
             data-icon-name="ChevronDown"
-            role="presentation"
             style={
               Object {
-                "fontFamily": "\\"Material Icons\\"",
+                "fontFamily": "\\"SkeIconfont\\"",
               }
             }
           >
-            
+            
           </i>
         </span>
       </button>
     </div>
     <div
       aria-atomic="true"
+      aria-hidden={true}
       aria-live="polite"
-      className=""
-      id="combobox-undefined-input-error"
+      id="combobox-123-input-error"
       role="region"
     >
       

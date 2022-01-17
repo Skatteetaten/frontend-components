@@ -1,34 +1,31 @@
 import classnames from 'classnames';
-import {
-  Checkbox as FabricCheckBox,
-  ICheckboxProps
-} from 'office-ui-fabric-react/lib-commonjs/Checkbox';
+import { Checkbox as FabricCheckBox } from '@fluentui/react';
 import * as React from 'react';
 import { getClassNames } from './CheckBox.classNames';
+import { CheckBoxProps } from './CheckBox.types';
 
-interface CheckBoxProps extends ICheckboxProps {
-  /** Angir teknisk navn på elementet */
-  name?: string;
-  /** @ignore */
-  indeterminate?: ICheckboxProps['indeterminate'];
-  /** @ignore */
-  defaultIndeterminate?: ICheckboxProps['indeterminate'];
-}
-/**
- * @visibleName CheckBox (Avkrysningsboks)
+/*
+ * visibleName CheckBox (Avkrysningsboks)
  */
-export default class CheckBox extends React.PureComponent<CheckBoxProps, {}> {
+export class CheckBox extends React.PureComponent<CheckBoxProps, {}> {
   static defaultProps = {
-    boxSide: 'end'
+    boxSide: 'end',
   };
   render() {
-    const { checked, defaultChecked, className, ...props } = this.props;
+    const {
+      checked,
+      defaultChecked,
+      className,
+      inputProps,
+      ...props
+    } = this.props;
     const checkedProps = defaultChecked ? { defaultChecked } : { checked };
+    const inputPropsWithRole = { ...inputProps, role: 'checkbox' };
     return (
       <FabricCheckBox
         {...props}
         className={classnames(getClassNames(), className)}
-        role="checkbox"
+        inputProps={inputPropsWithRole}
         {...checkedProps}
       />
     );

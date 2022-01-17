@@ -1,8 +1,8 @@
-** NavigationTile brukes på navigasjonssider for å sende brukeren videre ned i sidestrukturen **
+**NavigationTile (Forsideknapp): brukes på navigasjonssider for å sende brukeren videre ned i sidestrukturen**
 
 ```js
-import NavigationTile from '@skatteetaten/frontend-components/NavigationTile';
-import NavigationContent from '@skatteetaten/frontend-components/NavigationTile/NavigationContent';
+import { NavigationTile } from '@skatteetaten/frontend-components/NavigationTile';
+import { NavigationContent } from '@skatteetaten/frontend-components/NavigationTile/NavigationContent';
 
 <NavigationTile ariaLabel="Velge person eller bedrift">
   <NavigationContent
@@ -22,8 +22,8 @@ import NavigationContent from '@skatteetaten/frontend-components/NavigationTile/
 Uten beskrivende tekst:
 
 ```js
-import NavigationTile from '@skatteetaten/frontend-components/NavigationTile';
-import NavigationContent from '@skatteetaten/frontend-components/NavigationTile/NavigationContent';
+import { NavigationTile } from '@skatteetaten/frontend-components/NavigationTile';
+import { NavigationContent } from '@skatteetaten/frontend-components/NavigationTile/NavigationContent';
 
 <NavigationTile
   ariaLabel="Velge person eller bedrift"
@@ -49,19 +49,19 @@ By default får tittelen som gis i hver navigation tile en <h2\>-tag.
 <br>Om dette ikke passer inn i din sidestruktur kan det overskrives. Eksempelvis gir _headingLevel_ 4 en <h4\>-tag.
 
 ```js
-import NavigationTile from '@skatteetaten/frontend-components/NavigationTile';
+import { NavigationTile } from '@skatteetaten/frontend-components/NavigationTile';
 
 const contents = [
   {
     to: '#navigationtile',
     heading: 'Lag kontonummer',
-    icon: 'ArrowForward'
+    icon: 'ArrowForward',
   },
   {
     to: '#navigationtile',
     heading: 'Lag KID-nummer',
-    icon: 'ArrowForward'
-  }
+    icon: 'ArrowForward',
+  },
 ];
 
 <NavigationTile
@@ -77,8 +77,9 @@ const contents = [
 Eksempel med bruk av JSON-format på dataene:
 
 ```js
-import NavigationTile from '@skatteetaten/frontend-components/NavigationTile';
-import NavigationContent from '@skatteetaten/frontend-components/NavigationTile/NavigationContent';
+import { NavigationTile } from '@skatteetaten/frontend-components/NavigationTile';
+import { NavigationContent } from '@skatteetaten/frontend-components/NavigationTile/NavigationContent';
+
 import { BrowserRouter, Link as RRLink } from 'react-router-dom';
 
 const contents = [
@@ -90,15 +91,15 @@ const contents = [
       'Skattekort, skattemelding (selvangivelse), skatteoppgjør, tema og fradrag som hjelper deg til få riktig skatt.',
     renderContent: (to, children) => {
       return <RRLink to={to}>{children}</RRLink>;
-    }
+    },
   },
   {
     to: '#navigationtile2',
     heading: 'Lag KID-nummer',
     icon: 'Calculator',
     description:
-      'Lag KID for forskuddsskatt, tilleggsforskudd, restskatt, kildeskatt på aksjeutbytte.'
-  }
+      'Lag KID for forskuddsskatt, tilleggsforskudd, restskatt, kildeskatt på aksjeutbytte.',
+  },
 ];
 
 <BrowserRouter>

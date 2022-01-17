@@ -1,4 +1,4 @@
-** Grid er en komponent som brukes til å plassere komponenter og annet innhold på siden, og hjelper til med å justere plasseringen for ulike skjermbredder. **
+**Grid (Rutenett): brukes til å plassere komponenter og annet innhold på siden, og hjelper til med å justere plasseringen for ulike skjermbredder.**
 
 ```js noeditor
 DemoBlock = ({ children }) => (
@@ -8,7 +8,7 @@ DemoBlock = ({ children }) => (
       backgroundColor: '#ddd',
       textAlign: 'center',
       marginBottom: '0',
-      padding: '8px 0'
+      padding: '8px 0',
     }}
   >
     {children}
@@ -19,7 +19,8 @@ DemoBlock = ({ children }) => (
 Grid med standard padding:
 
 ```js
-import Grid from '@skatteetaten/frontend-components/Grid';
+import { Grid } from '@skatteetaten/frontend-components/Grid';
+
 <Grid padding="0px">
   <Grid.Row>
     <Grid.Col lg={4}>
@@ -59,7 +60,7 @@ import Grid from '@skatteetaten/frontend-components/Grid';
 Grid uten padding:
 
 ```js
-import Grid from '@skatteetaten/frontend-components/Grid';
+import { Grid } from '@skatteetaten/frontend-components/Grid';
 
 <Grid padding="0">
   <Grid.Row rowSpacing={Grid.SPACE_NONE}>
@@ -130,7 +131,6 @@ import TextField from '@skatteetaten/frontend-components/TextField';
           title="Saksopplysninger"
           color={Card.Color.BEIGE}
           expand={true}
-          circleOnIcon={false}
           isExpanded={false}
         >
           <p>Ingen opplysninger registrert.</p>
@@ -143,7 +143,6 @@ import TextField from '@skatteetaten/frontend-components/TextField';
           title="Fra arbeidsgiver"
           color={Card.Color.BEIGE}
           expand={true}
-          circleOnIcon={false}
           isExpanded={false}
         >
           <p>Ingen opplysninger registrert.</p>
@@ -156,7 +155,6 @@ import TextField from '@skatteetaten/frontend-components/TextField';
           title="Fra skattemelding"
           color={Card.Color.BEIGE}
           expand={true}
-          circleOnIcon={false}
           isExpanded={false}
         >
           <p>Ingen opplysninger registrert.</p>
@@ -181,7 +179,6 @@ import TextField from '@skatteetaten/frontend-components/TextField';
           title="Skattemelding"
           color={Card.Color.BEIGE}
           expand={true}
-          circleOnIcon={false}
           isExpanded={false}
         >
           <Grid padding="0px">
@@ -214,16 +211,16 @@ import DatePicker from '@skatteetaten/frontend-components/DatePicker';
 <>
   <h3>Komponent for å plassere innhold på en nettside</h3>
   <p>
-   Et rutenett lar deg fordele og plassere komponenter og annet innhold på 
-   en nettside. 
+   Et rutenett lar deg fordele og plassere komponenter og annet innhold på
+   en nettside.
   </p>
 <h3>Hvorfor grid?</h3>
 <p>
     <ul>
-  <li>Grid er nyttig i utvikling av nettsiden fordi det hjelper oss å 
+  <li>Grid er nyttig i utvikling av nettsiden fordi det hjelper oss å
 planlegge hvordan vi enklest kan plassere komponentene.</li>
-    <li>Rutenettet sikrer responsivt design ved å fordele og gruppere innholdet 
-riktig. Det vil si at komponentene er på rett plass, selv om brukerne benytter 
+    <li>Rutenettet sikrer responsivt design ved å fordele og gruppere innholdet
+riktig. Det vil si at komponentene er på rett plass, selv om brukerne benytter
 forskjellige skjermbredder</li>
   </ul>
   </p>
@@ -231,13 +228,13 @@ forskjellige skjermbredder</li>
  <h3>Slik setter du opp rader og kolonner i rutenettet:</h3>
   <p>
   <ul>
-  <li>Et grid består av rader og kolonner. En rad kan maksimalt ha 12 
+  <li>Et grid består av rader og kolonner. En rad kan maksimalt ha 12
 kolonner, men du trenger ikke bruke alle 12.</li>
- <li>Sett opp rutenettet slik at tallet på kolonner som brukeren ser, er 
-avhengig av skjermstørrelsen. Da vil innholdet automatisk blir strekt, krympet 
-eller flyttet for å tilpasse seg den tilgjengelige skjermplassen.</li> 
- <li>I praksis må du forholde deg et sett av skjermstørrelser og hvordan rutenettet 
-skal se ut på hver av dem. Ved gitte skjermstørrelser kan rutenettet justere seg for eksempel, 
+ <li>Sett opp rutenettet slik at tallet på kolonner som brukeren ser, er
+avhengig av skjermstørrelsen. Da vil innholdet automatisk blir strekt, krympet
+eller flyttet for å tilpasse seg den tilgjengelige skjermplassen.</li>
+ <li>I praksis må du forholde deg et sett av skjermstørrelser og hvordan rutenettet
+skal se ut på hver av dem. Ved gitte skjermstørrelser kan rutenettet justere seg for eksempel,
 gå fra flere kolonner på desktop til én kolonne på mobil.</li>
   </ul>
   </p>

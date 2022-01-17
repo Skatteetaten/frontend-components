@@ -1,2 +1,2 @@
-export { default } from './ActionButton';
+export { ActionButton as default } from './ActionButton';
 export * from './ActionButton';

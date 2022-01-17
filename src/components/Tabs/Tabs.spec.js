@@ -1,8 +1,8 @@
 import React from 'react';
 import { mount } from 'enzyme';
 import { matches } from './../utils/test-utils';
-import Tabs from './Tabs';
-import TabItem from './Tabs';
+import { Tabs } from '.';
+import { TabItem } from './TabItem';
 
 function oppsettFullDOM(props) {
   return mount(

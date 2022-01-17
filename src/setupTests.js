@@ -1,6 +1,9 @@
 import { configure } from 'enzyme';
-import Adapter from 'enzyme-adapter-react-16';
+import Adapter from '@wojtekmaj/enzyme-adapter-react-17';
+import React from 'react';
 import './components/utils/loadTheme';
+React.useLayoutEffect = React.useEffect;
+jest.mock('./components/utils/generateId');
 
 configure({ adapter: new Adapter() });
 

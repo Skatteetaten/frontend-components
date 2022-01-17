@@ -1,5 +1,5 @@
 import React from 'react';
-import Link from './Link';
+import { Link } from '.';
 import { matches } from '../utils/test-utils';
 
 describe('Link komponent', () => {

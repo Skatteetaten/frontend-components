@@ -1,20 +1,20 @@
 import React from 'react';
-import Grid from '../Grid/Grid';
-import { mergeStyles } from '@uifabric/merge-styles';
+import { Grid } from '../Grid';
+import { mergeStyles } from '@fluentui/merge-styles';
 
 const getClassNames = () => {
   return mergeStyles({
     displayName: 'SkeFooter',
     paddingLeft: '0',
     paddingRight: '0',
-    marginTop: '16px'
+    marginTop: '16px',
   });
 };
 
 export class Footer extends React.Component {
   static displayName = 'Footer';
   static defaultProps = {
-    tag: 'footer'
+    tag: 'footer',
   };
   render() {
     // @ts-ignore TODO
@@ -30,5 +30,3 @@ export class Footer extends React.Component {
     );
   }
 }
-
-export default Footer;

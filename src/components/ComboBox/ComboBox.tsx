@@ -1,65 +1,38 @@
 import * as React from 'react';
-import {
-  VirtualizedComboBox,
-  IComboBoxProps
-} from 'office-ui-fabric-react/lib-commonjs/ComboBox';
+import { VirtualizedComboBox } from '@fluentui/react';
 import classnames from 'classnames';
 
 import { getClassNames, getOptionsClassNames } from './ComboBox.classNames';
-import LabelWithCallout, { calloutState } from '../LabelWithCallout';
-import { LabelWithCalloutProps } from '../LabelWithCallout/LabelWithCallout';
-import { useId } from '@reach/auto-id';
+import { generateId } from '../utils';
+import { LabelWithCallout } from '../LabelWithCallout';
+import { ComboBoxProps } from './ComboBox.types';
 
-export interface ComboboxProps extends IComboBoxProps {
-  /** Lukk callout på blur */
-  labelWithCalloutAutoDismiss?: boolean;
-  /** Egendefinert feilmelding */
-  errorMessage?: IComboBoxProps['errorMessage'];
-  /** Hjelpetekst */
-  help?: JSX.Element | string;
-  /** Størrelse på inputfelt som skal benyttes */
-  inputSize?: 'normal' | 'large';
-  /** aria-label for knapp i label */
-  labelButtonAriaLabel?: string;
-  /** Overstyr label, se LabelWithCallout komponent */
-  labelCallout?: LabelWithCalloutProps;
-  /** Brukerspesifisert event for callout */
-  onCalloutToggle?: (
-    oldCalloutState: calloutState,
-    newCalloutState: calloutState
-  ) => void;
-  /** Lesemodus. Kan brukes i sammenheng med text eller defaultSelectedKey for å vise verdi */
-  readOnly?: boolean;
-}
-
-/**
- * @visibleName ComboBox (Nedtrekksliste med skriving)
- */
-const Combobox: React.FC<ComboboxProps> = props => {
+export const ComboBox: React.FC<ComboBoxProps> = (props) => {
   const {
     children,
-    labelWithCalloutAutoDismiss,
     errorMessage,
     label,
     help,
     className,
     id,
     labelButtonAriaLabel,
-    labelCallout,
+    labelWithCalloutProps,
     onCalloutToggle,
+    calloutProps,
     readOnly,
+    ref,
     ...rest
   } = props;
 
-  const genratedId = useId(id);
-  const mainId = id ? id : 'combobox-' + genratedId;
+  const generatedId = generateId();
+  const mainId = id ? id : 'combobox-' + generatedId;
   const inputId = mainId + '-input';
   const labelId = mainId + '-label';
 
   const styles = getClassNames(props);
 
   return (
-    <div id={mainId}>
+    <div id={mainId} ref={ref}>
       <LabelWithCallout
         id={labelId}
         inputId={readOnly ? inputId : inputId + '-input'} //Fabric adds its own -input postfix
@@ -67,8 +40,7 @@ const Combobox: React.FC<ComboboxProps> = props => {
         buttonAriaLabel={labelButtonAriaLabel}
         help={help}
         onCalloutToggle={onCalloutToggle}
-        autoDismiss={labelWithCalloutAutoDismiss}
-        {...labelCallout}
+        {...labelWithCalloutProps}
       />
       {readOnly ? (
         <input
@@ -80,7 +52,7 @@ const Combobox: React.FC<ComboboxProps> = props => {
             props.text
               ? props.text
               : props.options.filter(
-                  option => option.key === props.defaultSelectedKey
+                  (option) => option.key === props.defaultSelectedKey
                 )[0].text
           }
         />
@@ -93,7 +65,8 @@ const Combobox: React.FC<ComboboxProps> = props => {
           errorMessage={errorMessage}
           aria-invalid={errorMessage ? true : false}
           calloutProps={{
-            className: getOptionsClassNames(props)
+            ...calloutProps,
+            className: getOptionsClassNames(props),
           }}
         >
           {children}
@@ -103,13 +76,11 @@ const Combobox: React.FC<ComboboxProps> = props => {
   );
 };
 
-Combobox.defaultProps = {
+ComboBox.defaultProps = {
   autoComplete: 'on',
   allowFreeform: false,
   label: undefined,
   errorMessage: undefined,
   help: undefined,
-  disabled: false
+  disabled: false,
 };
-
-export default Combobox;

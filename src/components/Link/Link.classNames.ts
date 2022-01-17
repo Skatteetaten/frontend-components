@@ -1,8 +1,7 @@
-import { mergeStyleSets } from '@uifabric/merge-styles';
-import { getTheme } from '@uifabric/styling';
-import { PaletteProps } from '..';
-import { LinkProps } from './Link';
-import { FontSizes, FontWeights } from '../utils/fonts';
+import { mergeStyleSets } from '@fluentui/merge-styles';
+import { getTheme } from '@fluentui/react/lib/Styling';
+import { PaletteProps, FontSizes, FontWeights } from '../utils';
+import { LinkProps } from './Link.types';
 
 export const getClassNames = (props: LinkProps) => {
   const palette = getTheme().palette as PaletteProps;
@@ -16,7 +15,7 @@ export const getClassNames = (props: LinkProps) => {
       verticalAlign: linkGroup ? 'bottom' : 'middle',
       paddingLeft: linkGroup ? '0px' : '4px',
       paddingRight: linkGroup ? '10px' : '4px',
-      borderBottom: 'none'
+      borderBottom: 'none',
     },
     linkContainer: {
       margin: '0px',
@@ -25,15 +24,12 @@ export const getClassNames = (props: LinkProps) => {
           color: linkGroup ? palette.skeColor.darkBlue : '',
           paddingLeft: '4px',
           paddingRight: linkGroup ? '6px' : '4px',
-          transition: linkGroup ? '0.1s' : ''
+          transition: linkGroup ? '0.1s' : '',
         },
         ':hover>a': {
-          color: linkGroup ? palette.skeColor.darkBlue : '',
-          borderBottom: linkGroup
-            ? '2px solid ' + palette.skeColor.darkBlue
-            : ''
-        }
-      }
+          backgroundColor: palette.skeColor.lightBlue,
+        },
+      },
     },
     skipLink: {
       left: '-999px',
@@ -54,33 +50,28 @@ export const getClassNames = (props: LinkProps) => {
           overflow: 'auto',
           padding: '5px',
           border: `4px solid ${palette.skeColor.pink}`,
-          textAlign: 'center'
-        }
-      }
+          textAlign: 'center',
+        },
+      },
     },
     iconLink: {
       color: palette.skeColor.blue,
       textDecoration: 'none',
-      fontWeight: 700,
-      borderBottom: '2px solid ' + hex2rgba(palette.skeColor.blue, 0.25),
+      fontWeight: linkGroup ? FontWeights.bold : FontWeights.medium,
+      borderBottom: `1px solid ${palette.skeColor.blue}`,
       selectors: {
         '&:hover': {
           color: palette.skeColor.darkBlue,
           borderBottom: '2px solid ' + palette.skeColor.darkBlue,
-          transition: 'border-bottom 0.3s'
+          backgroundColor: palette.skeColor.lightBlue,
         },
         '&:focus': {
           color: palette.skeColor.darkBlue,
           borderBottom: '2px solid ' + palette.skeColor.darkBlue,
           backgroundColor: palette.skeColor.lightBlue,
-          outline: 'none'
-        }
-      }
-    }
+          outline: 'none',
+        },
+      },
+    },
   });
-};
-
-export const hex2rgba = (hex, alpha = 1) => {
-  const [r, g, b] = hex.match(/\w\w/g).map(x => parseInt(x, 16));
-  return `rgba(${r},${g},${b},${alpha})`;
 };

@@ -5,7 +5,34 @@ exports[`ErrorMessage komponent Skjuler komponent hvis showError er false 1`] = 
 exports[`ErrorMessage komponent matcher snapshot 1`] = `
 <span
   aria-atomic="true"
-  className="css-34"
+  className=
+
+      {
+        -moz-osx-font-smoothing: grayscale;
+        -webkit-font-smoothing: antialiased;
+        animation-duration: 0.367s;
+        animation-fill-mode: both;
+        animation-name: keyframes from{opacity:0;}to{opacity:1;} keyframes from{transform:translate3d(0,-20px,0);pointer-events:none;}to{transform:translate3d(0,0,0);pointer-events:auto;};
+        animation-timing-function: cubic-bezier(.1,.9,.2,1);
+        color: #a82e39;
+        display: block;
+        font-family: 'Helvetica Neue', Helvetica , Arial, 'Liberation Sans', 'Nimbus Sans L', sans-serif;
+        font-size: 0.875rem;
+        font-weight: 500;
+        padding-top: 5px;
+      }
+      &:before {
+        content: '';
+        font-family: "SkeIconfont";
+        margin-right: 3px;
+      }
+      &:before fontSize {
+        -moz-osx-font-smoothing: grayscale;
+        -webkit-font-smoothing: antialiased;
+        font-family: 'Helvetica Neue', Helvetica , Arial, 'Liberation Sans', 'Nimbus Sans L', sans-serif;
+        font-size: 0.875rem;
+        font-weight: 400;
+      }
   role="alert"
 >
    FeilMelding 

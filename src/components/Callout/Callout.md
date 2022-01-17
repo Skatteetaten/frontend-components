@@ -1,35 +1,28 @@
-** Callout brukes når man ønsker å vise brukeren en tekst som er knyttet til element i skjermbildet. Et typisk eksempel er en ikon med spørsmåltegn, og en tilhørende hjelpetekst dukker opp når man trykker på det. **
-
-```js noeditor
-import MessageBar from '@skatteetaten/frontend-components/MessageBar';
-
-<MessageBar type={MessageBar.Type.warning}>
-  Denne komponenten skal kun brukes i interne løsninger på grunn av universell
-  utforming.
-</MessageBar>;
-```
+**Callout (Utropsboks): brukes når man ønsker å vise brukeren en tekst som er knyttet til element i skjermbildet.**
 
 ### Hjelpetekst
 
 ```js
-import Callout from '@skatteetaten/frontend-components/Callout';
-import Button from '@skatteetaten/frontend-components/Button';
+import { Button } from '@skatteetaten/frontend-components/Button';
+import { Callout } from '@skatteetaten/frontend-components/Callout';
 
-const initialState = {
-  isCalloutVisible: false
-};
+const [state, setState] = React.useState({
+  isCalloutVisible: false,
+});
+
+const visible = state.isCalloutVisible;
 
 function closeButton() {
   setState({
-    isCalloutVisible: false
+    isCalloutVisible: false,
   });
 }
 
 <div>
-  <span ref={spanElement => (buttonElement = spanElement)}>
+  <span ref={(spanElement) => (buttonElement = spanElement)}>
     <Button
       buttonStyle="secondary"
-      aria-haspopup="true"
+      aria-expanded={visible}
       icon="Info"
       onClick={() => setState({ isCalloutVisible: !state.isCalloutVisible })}
     >
@@ -45,13 +38,13 @@ function closeButton() {
       color={Callout.HELP}
       doNotLayer={true}
       onClose={() => closeButton()}
+      onDismiss={() => closeButton()}
     >
       <h3>Bolignummer</h3>
       <p>
-        Bolignummeret er et nummer som unikt identifiserer en leilighet.
-        Nummeret består at en bokstav etterfulgt av fire tall, f.eks. H0101.
-        Bolignummeret står som regel på et klistemerke i dørkarmen til
-        inngangsdøren.
+        {
+          'Bolignummeret er et nummer som unikt identifiserer en leilighet. Nummeret består at en bokstav etterfulgt av fire tall, f.eks. H0101.Bolignummeret står som regel på et klistemerke i dørkarmen tilinngangsdøren.'
+        }
       </p>
     </Callout>
   )}
@@ -61,22 +54,24 @@ function closeButton() {
 ### Infotekst
 
 ```js
-import Callout from '@skatteetaten/frontend-components/Callout';
-import Button from '@skatteetaten/frontend-components/Button';
+import { Button } from '@skatteetaten/frontend-components/Button';
+import { Callout } from '@skatteetaten/frontend-components/Callout';
 
-const initialState = { isCalloutVisible: false };
+const [state, setState] = React.useState({ isCalloutVisible: false });
+
+const visible = state.isCalloutVisible;
 
 function closeButton() {
   setState({
-    isCalloutVisible: false
+    isCalloutVisible: false,
   });
 }
 
 <div>
-  <span ref={spanElement => (buttonElement2 = spanElement)}>
+  <span ref={(spanElement) => (buttonElement2 = spanElement)}>
     <Button
       buttonStyle="secondary"
-      aria-haspopup="true"
+      aria-expanded={visible}
       icon="Info"
       onClick={() => setState({ isCalloutVisible: !state.isCalloutVisible })}
     >
@@ -90,6 +85,7 @@ function closeButton() {
       directionalHint={Callout.POS_BOTTOM_LEFT}
       color={Callout.INFO}
       onClose={() => closeButton()}
+      onDismiss={() => closeButton()}
     >
       <h3>Renter ikke inkludert</h3>
       <p>Dette beløpet inkluderer ikke avsavnsrenter.</p>
@@ -101,24 +97,28 @@ function closeButton() {
 ### Autolukking
 
 ```js
-import Callout from '@skatteetaten/frontend-components/Callout';
-import Button from '@skatteetaten/frontend-components/Button';
+import { Button } from '@skatteetaten/frontend-components/Button';
+import { Callout } from '@skatteetaten/frontend-components/Callout';
+
+const [state, setState] = React.useState({ isCalloutVisible: false });
+
+const visible = state.isCalloutVisible;
 
 function closeButton() {
   setState({
-    isCalloutVisible: false
+    isCalloutVisible: false,
   });
 }
 
 <div>
-  <span ref={spanElement => (buttonElement4 = spanElement)}>
+  <span ref={(spanElement) => (buttonElement4 = spanElement)}>
     <Button
       buttonStyle="secondary"
-      aria-haspopup="true"
+      aria-expanded={visible}
       icon="Info"
       onClick={() => setState({ isCalloutVisible: !state.isCalloutVisible })}
     >
-      Vis meldingsboks som lukkes automatisk
+      Vis meldingsboks som må lukkes manuelt
     </Button>
   </span>
 
@@ -128,14 +128,10 @@ function closeButton() {
       color={Callout.INFO}
       directionalHint={Callout.POS_TOP_LEFT}
       onClose={() => closeButton()}
-      autoDismiss={true}
-      onDismiss={() => closeButton()}
+      autoDismiss={false}
     >
       <h3>Meldingsboks informasjon </h3>
-      <p>
-        Denne meldingsboksen skal lukkes automatisk når området utenfor
-        meldingsboksen klikkes
-      </p>
+      <p>Denne meldingsboksen må lukkes ved lukkekrysset</p>
     </Callout>
   )}
 </div>;

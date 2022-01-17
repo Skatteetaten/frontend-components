@@ -1,7 +1,7 @@
-import { getTheme } from '@uifabric/styling';
-import { mergeStyles } from '@uifabric/merge-styles';
-import { PaletteProps } from '..';
-import { ChipProps, ChipType } from './Chip';
+import { getTheme } from '@fluentui/react/lib/Styling';
+import { mergeStyles } from '@fluentui/merge-styles';
+import { PaletteProps } from '../utils';
+import { ChipProps, ChipType } from './Chip.types';
 
 export const getClassNames = function getClassNames(props: ChipProps) {
   const palette = getTheme().palette as PaletteProps;
@@ -21,15 +21,15 @@ export const getClassNames = function getClassNames(props: ChipProps) {
       '& > div': {
         display: 'flex',
         justifyContent: 'center',
-        alignItems: 'center'
+        alignItems: 'center',
       },
       '& a': {
         textDecoration: 'underlined',
-        color: palette.skeColor.blackAlt
+        color: palette.skeColor.blackAlt,
       },
       '& i': {
-        verticalAlign: 'text-bottom'
-      }
-    }
+        verticalAlign: 'text-bottom',
+      },
+    },
   });
 };

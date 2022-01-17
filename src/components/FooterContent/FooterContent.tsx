@@ -1,9 +1,14 @@
 import * as React from 'react';
-import Image from '../Image/Image';
+import { Image } from '../Image';
 import { getClassNames, getLogoClassNames } from './FooterContent.classNames';
-import FooterDekor from './footerDekor';
+import footerDekor from './footerDekor';
+
 import logo from './assets/ske-logo.svg';
 import logoEn from './assets/ske-logo-en.svg';
+import logoInk from './assets/ink-logo.svg';
+
+import { FooterContentProps } from './FooterContent.types';
+import { BrandContext } from '../SkeBasis';
 
 const Logo = () => {
   return (
@@ -27,38 +32,47 @@ const LogoEn = () => {
   );
 };
 
-interface FooterContentProps extends React.HTMLAttributes<HTMLDivElement> {
-  children: React.ReactNode;
-  className?: string;
-  /** aria-label */
-  ariaLabel?: string;
-}
+const LogoInk = () => {
+  return (
+    <Image
+      src={logoInk}
+      className={getLogoClassNames()}
+      height="63px"
+      alt="Statens innkreving - en del av Skatteetaten, logo"
+    />
+  );
+};
 
-/**
- * @visibleName FooterContent (Bunn)
+/*
+ * visibleName FooterContent (Bunn)
  */
-class FooterContent extends React.PureComponent<FooterContentProps> {
+export class FooterContent extends React.PureComponent<FooterContentProps> {
   /** Engelsk logo */
   static LogoEn = LogoEn;
   /** Norsk Logo */
   static Logo = Logo;
 
+  /** Statens innkreving logo */
+  static LogoInk = LogoInk;
+
   render() {
     const { children, className, ariaLabel } = this.props;
     const styles = getClassNames();
-    //FooterContent.Logo = (this.props.language === 'en') ? LogoEn : Logo;
 
     return (
-      <div className={className} aria-label={ariaLabel}>
-        <div className={styles.footerDecorContainer} aria-hidden="true">
-          <FooterDekor />
-        </div>
-        <footer className={styles.footerWrapper}>
-          <div className={styles.footerContent}>{children}</div>
-        </footer>
-      </div>
+      <BrandContext.Consumer>
+        {({ tag, primaryColor, secondaryColor }) => (
+          <div className={className} aria-label={ariaLabel}>
+            <div className={styles.footerDecorContainer} aria-hidden="true">
+              {footerDekor(primaryColor, secondaryColor)}
+            </div>
+
+            <footer className={styles['footerWrapper' + tag]}>
+              <div className={styles['footerContent' + tag]}>{children}</div>
+            </footer>
+          </div>
+        )}
+      </BrandContext.Consumer>
     );
   }
 }
-
-export default FooterContent;

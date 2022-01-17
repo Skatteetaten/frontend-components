@@ -1,16 +1,20 @@
-** Brukes til å vise en label og tilhørende hjelpetekst **
+**LabelWithCallout (Merkelapp med utropsboks): Brukes til å vise en merkelapp og tilhørende hjelpetekst**
 
 ```js
-import LabelWithCallout from '@skatteetaten/frontend-components/LabelWithCallout';
-import Button from '@skatteetaten/frontend-components/Button';
+import { Button } from '@skatteetaten/frontend-components/Button';
+import { LabelWithCallout } from '@skatteetaten/frontend-components/LabelWithCallout';
 
-<div style={{ width: '400px' }}>
+const [state, setState] = React.useState({ warning: false });
+
+<div>
   <LabelWithCallout
+    id={'lwc1'}
     label={'Omregistreringsavgift'}
     help={'Avgiften du må betale for å registrere kjøretøyet på en ny person.'}
     warning={
       state.warning && 'Du ser ut til å være fritatt for omregistreringsavgift.'
     }
+    calloutProps={{ border: true }}
   />
   <br />
   <Button onClick={() => setState({ warning: !state.warning })}>
@@ -19,15 +23,19 @@ import Button from '@skatteetaten/frontend-components/Button';
 </div>;
 ```
 
-Brukt i kombinasjon med annen komponent.
+Brukt i kombinasjon med annen komponent, og veldig mye tekst.
 
 ```js
-import LabelWithCallout from '@skatteetaten/frontend-components/LabelWithCallout';
-import SearchField from '@skatteetaten/frontend-components/SearchField';
-<div style={{ width: '350px' }}>
+import { LabelWithCallout } from '@skatteetaten/frontend-components/LabelWithCallout';
+import { SearchField } from '@skatteetaten/frontend-components/SearchField';
+
+<div>
   <LabelWithCallout
+    id={'lwc2'}
     label={'Søk'}
-    help={'Her kan du søke etter personer og virksomheter'}
+    help={
+      'Her kan du søke etter personer og virksomheter. Dette søkefeltet er spesielt tilpasset for søk i befolkningen, og tar derfor hensyn til personvern. Det betyr at vi ikke kan vise noen resultater før du har bekreftet søket med enter, eller trykket på søkeikonet i feltet. Alle søk logges.'
+    }
   />
   <SearchField
     searchFieldSize="standard"
@@ -38,19 +46,69 @@ import SearchField from '@skatteetaten/frontend-components/SearchField';
 </div>;
 ```
 
+Brukt med calloutFloating prop og autoDismiss
+
+```js
+import { LabelWithCallout } from '@skatteetaten/frontend-components/LabelWithCallout';
+import { SearchField } from '@skatteetaten/frontend-components/SearchField';
+
+<div>
+  <LabelWithCallout
+    id={'lwc3'}
+    label={'Søk'}
+    help={'Her kan du søke etter personer og virksomheter.'}
+    calloutProps={{ autoDismiss: true }}
+    calloutFloating
+  />
+</div>;
+```
+
+Brukt med calloutFloating prop og autoDismiss, og veldig mye tekst
+
+```js
+import { LabelWithCallout } from '@skatteetaten/frontend-components/LabelWithCallout';
+import { SearchField } from '@skatteetaten/frontend-components/SearchField';
+
+<div>
+  <LabelWithCallout
+    id={'lwc4'}
+    label={'Søk'}
+    help={
+      <p style={{ width: '350px' }}>
+        'Her kan du søke etter personer og virksomheter. Dette søkefeltet er
+        spesielt tilpasset for søk i befolkningen, og tar derfor hensyn til
+        personvern. Det betyr at vi ikke kan vise noen resultater før du har
+        bekreftet søket med enter, eller trykket på søkeikonet i feltet. Alle
+        søk logges. Her kan du IGJEN søke etter personer og virksomheter. Dette
+        søkefeltet er spesielt tilpasset for søk i befolkningen, og tar derfor
+        hensyn til personvern. Det betyr at vi ikke kan vise noen resultater før
+        du har bekreftet søket med enter, eller trykket på søkeikonet i feltet.
+        Alle søk logges.'
+      </p>
+    }
+    calloutProps={{ autoDismiss: true }}
+    calloutFloating
+  />
+</div>;
+```
+
 LabelWithCallout brukt i tekstfelt med automatisk lukking av utropsboksen:
 
 ```js
-import TextField from '@skatteetaten/frontend-components/TextField';
+import { TextField } from '@skatteetaten/frontend-components/TextField';
+
+const [state, setState] = React.useState({ value1: '' });
 
 <>
-  <div style={{ width: '300px' }}>
+  <div>
     <TextField
       label="Fullt navn"
-      labelWithCalloutAutoDismiss={true}
       value={state.value1}
       onChange={(e, value) => setState({ value1: value })}
       help="Vi trenger å vite navnet ditt dersom vi skal kontakte deg senere."
+      labelWithCalloutProps={{
+        calloutProps: { autoDismiss: true },
+      }}
     />
   </div>
 </>;

@@ -1,7 +1,7 @@
 import React from 'react';
 import { mount } from 'enzyme';
 import { matches } from './../utils/test-utils';
-import ActionButton from './ActionButton';
+import { ActionButton } from '.';
 
 function oppsettMount(props) {
   return mount(<ActionButton {...props} />);
@@ -14,10 +14,10 @@ describe('ActionButton komponent', () => {
 
   it('rendrer actionbutton med standard props', () => {
     const wrapper = oppsettMount({
-      ariaLabel: 'Button label'
+      ariaLabel: 'Button label',
     });
 
-    expect(wrapper.prop('iconSize')).toEqual('icon');
+    expect(wrapper.prop('iconSize')).toEqual('large');
     expect(wrapper.prop('color')).toEqual('blue');
     expect(wrapper.prop('disabled')).toEqual(false);
   });
@@ -28,10 +28,10 @@ describe('ActionButton komponent', () => {
       color: 'green',
       icon: 'AddOutline',
       disabled: true,
-      ariaLabel: 'Button label'
+      ariaLabel: 'Button label',
     });
 
-    expect(wrapper.prop('iconSize')).toEqual('xxLarge');
+    expect(wrapper.prop('iconSize')).toEqual('xlarge');
     expect(wrapper.prop('color')).toEqual('green');
     expect(wrapper.prop('icon')).toEqual('AddOutline');
     expect(wrapper.prop('disabled')).toEqual(true);

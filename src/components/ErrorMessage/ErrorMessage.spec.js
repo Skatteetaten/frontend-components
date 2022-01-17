@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import ErrorMessage from './ErrorMessage';
+import { ErrorMessage } from '.';
 import { matches } from '../utils/test-utils';
 
 function oppsettShallow(props) {

@@ -1,7 +1,7 @@
 import React from 'react';
 import { mount } from 'enzyme';
-import FooterContent from './FooterContent';
-import Grid from '../Grid';
+import { FooterContent } from '.';
+import { Grid } from '../Grid';
 import { matches } from './../utils/test-utils';
 
 function oppsettFullDOM(props) {

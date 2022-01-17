@@ -1,8 +1,8 @@
-** Spinner brukes for å vise brukeren at data lastes. **
+**Spinner: brukes for å vise brukeren at data lastes.**
 
 ```js
-import Spinner from '@skatteetaten/frontend-components/Spinner';
-import Button from '@skatteetaten/frontend-components/Button';
+import { Button } from '@skatteetaten/frontend-components/Button';
+import { Spinner } from '@skatteetaten/frontend-components/Spinner';
 
 <div style={{ textAlign: 'center' }}>
   <Button ariaLabel="Laster" buttonStyle="primary">

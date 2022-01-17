@@ -1,32 +1,9 @@
 import * as React from 'react';
 import { getClassNames } from './Pagination.classNames';
 import classnames from 'classnames';
-import Icon from '../Icon';
+import { Icon } from '../Icon';
+import { PaginationProps } from './Pagination.types';
 
-interface PaginationProps {
-  /** Aria-label */
-  ariaLabel?: string;
-  /** Aria-label for sidelinker */
-  ariaLabelNavigationLink?: string;
-  /** Aria-label for aktiv sidelink */
-  ariaLabelNavigationLinkActive?: string;
-  /** CSS class */
-  className?: string;
-  /** Nåværende sidenummer */
-  currentPage: number;
-  /** Tekst neste-knapp */
-  nextLabel?: string;
-  /** Funksjon som trigges på sideendring */
-  onPageChange: (page: number) => void;
-  /** Antall sidetall som vises samtidig. Default er 3. */
-  pagesDisplayed?: number;
-  /** Total antall objekter i liste */
-  total: number;
-  /** Ant objekter som vises per side */
-  pageSize: number;
-  /** Tekst forrige-knapp */
-  previousLabel?: string;
-}
 const getNumberOfPages = (total: number, pageSize: number) => {
   return Math.ceil(total / pageSize);
 };
@@ -46,7 +23,7 @@ export const getSlidingWindowEdges = (
   if (numberOfPages <= pagesDisplayed) {
     return {
       startPage: 1,
-      endPage: numberOfPages
+      endPage: numberOfPages,
     };
   }
   let startPage = currentPage - (pagesDisplayed - 1);
@@ -66,146 +43,14 @@ export const getSlidingWindowEdges = (
   }
   return {
     startPage: startPage,
-    endPage: endPage
+    endPage: endPage,
   };
 };
 
-const NextPage: React.FC<{
-  currentPage: number;
-  total: number;
-  pageSize: number;
-  onClick: (newPage: number) => void;
-  label: string;
-}> = props => {
-  const styles = getClassNames();
-
-  return (
-    <li>
-      <button
-        onClick={evt => {
-          evt.preventDefault();
-          props.onClick(props.currentPage + 1);
-        }}
-        role="link"
-      >
-        <span>{props.label}</span>
-        <Icon iconName="ChevronRight" className={styles.linkIcons} />
-      </button>
-    </li>
-  );
-};
-
-const PreviousLink: React.FC<{
-  currentPage: number;
-  onClick: (newPage: number) => void;
-  label: string;
-}> = props => {
-  const styles = getClassNames();
-  return (
-    <li>
-      <button
-        onClick={evt => {
-          evt.preventDefault();
-          props.onClick(props.currentPage - 1);
-        }}
-        role="link"
-      >
-        <Icon iconName="ChevronLeft" className={styles.linkIcons} />
-        {props.label}
-      </button>
-    </li>
-  );
-};
-
-const Page: React.FC<{
-  page: number;
-  onClick: (page: number) => void;
-  isCurrent: boolean;
-  ariaLabelNavigationLink: string | undefined;
-  ariaLabelNavigationLinkActive: string | undefined;
-}> = props => {
-  const {
-    page,
-    onClick,
-    isCurrent,
-    ariaLabelNavigationLink,
-    ariaLabelNavigationLinkActive
-  } = props;
-  const styles = getClassNames();
-
-  const ariaLabel = () => {
-    if (isCurrent) {
-      return (
-        (ariaLabelNavigationLinkActive
-          ? ariaLabelNavigationLinkActive
-          : 'Side ') + page
-      );
-    }
-    return (ariaLabelNavigationLink ? ariaLabelNavigationLink : 'Side ') + page;
-  };
-
-  return (
-    <li>
-      <button
-        onClick={evt => {
-          evt.preventDefault();
-          onClick(page);
-        }}
-        className={isCurrent ? styles.activePage : styles.pageNumber}
-        aria-label={ariaLabel()}
-        aria-current={isCurrent}
-        aria-disabled={isCurrent}
-        role="link"
-      >
-        {page}
-      </button>
-    </li>
-  );
-};
-
-const Pages = (props: {
-  currentPage: number;
-  pagesDisplayed: number | undefined;
-  pageSize: number;
-  onPageChange: (newPage: number) => void;
-  total: number;
-  ariaLabelNavigationLink: string | undefined;
-  ariaLabelNavigationLinkActive: string | undefined;
-}) => {
-  const pagesDisplayed = props.pagesDisplayed || 3;
-  const windowEdges = getSlidingWindowEdges(
-    props.currentPage,
-    props.total,
-    props.pageSize,
-    pagesDisplayed
-  );
-
-  return (
-    <div>
-      {range(windowEdges.startPage, windowEdges.endPage, pagesDisplayed).map(
-        i => {
-          return (
-            <Page
-              key={i}
-              onClick={props.onPageChange}
-              page={i}
-              isCurrent={props.currentPage === i}
-              ariaLabelNavigationLink={props.ariaLabelNavigationLink}
-              ariaLabelNavigationLinkActive={
-                props.ariaLabelNavigationLinkActive
-              }
-            />
-          );
-        }
-      )}
-    </div>
-  );
-};
-
-/**
- * @visibleName Pagination (Sidevelger)
+/*
+ * visibleName Pagination (Sidevelger)
  */
-const Pagination: React.FC<PaginationProps> = props => {
+export const Pagination: React.FC<PaginationProps> = (props) => {
   const {
     ariaLabel,
     ariaLabelNavigationLink,
@@ -215,7 +60,7 @@ const Pagination: React.FC<PaginationProps> = props => {
     onPageChange,
     pagesDisplayed,
     previousLabel,
-    total
+    total,
   } = props;
   const styles = getClassNames();
   const [pageSize, setPageSize] = React.useState(props.pageSize);
@@ -277,4 +122,134 @@ const Pagination: React.FC<PaginationProps> = props => {
   );
 };
 
-export default Pagination;
+export const NextPage: React.FC<{
+  currentPage: number;
+  total: number;
+  pageSize: number;
+  onClick: (newPage: number) => void;
+  label: string;
+}> = (props) => {
+  const styles = getClassNames();
+
+  return (
+    <li>
+      <button
+        onClick={(evt) => {
+          evt.preventDefault();
+          props.onClick(props.currentPage + 1);
+        }}
+        role="link"
+      >
+        <span>{props.label}</span>
+        <Icon iconName="ChevronRight" className={styles.linkIcons} />
+      </button>
+    </li>
+  );
+};
+
+export const PreviousLink: React.FC<{
+  currentPage: number;
+  onClick: (newPage: number) => void;
+  label: string;
+}> = (props) => {
+  const styles = getClassNames();
+  return (
+    <li>
+      <button
+        onClick={(evt) => {
+          evt.preventDefault();
+          props.onClick(props.currentPage - 1);
+        }}
+        role="link"
+      >
+        <Icon iconName="ChevronLeft" className={styles.linkIcons} />
+        {props.label}
+      </button>
+    </li>
+  );
+};
+
+export const Page: React.FC<{
+  page: number;
+  onClick: (page: number) => void;
+  isCurrent: boolean;
+  ariaLabelNavigationLink: string | undefined;
+  ariaLabelNavigationLinkActive: string | undefined;
+}> = (props) => {
+  const {
+    page,
+    onClick,
+    isCurrent,
+    ariaLabelNavigationLink,
+    ariaLabelNavigationLinkActive,
+  } = props;
+  const styles = getClassNames();
+
+  const ariaLabel = () => {
+    if (isCurrent) {
+      return (
+        (ariaLabelNavigationLinkActive
+          ? ariaLabelNavigationLinkActive
+          : 'Side ') + page
+      );
+    }
+    return (ariaLabelNavigationLink ? ariaLabelNavigationLink : 'Side ') + page;
+  };
+
+  return (
+    <li>
+      <button
+        onClick={(evt) => {
+          evt.preventDefault();
+          onClick(page);
+        }}
+        className={isCurrent ? styles.activePage : styles.pageNumber}
+        aria-label={ariaLabel()}
+        aria-current={isCurrent}
+        aria-disabled={isCurrent}
+        role="link"
+      >
+        {page}
+      </button>
+    </li>
+  );
+};
+
+export const Pages = (props: {
+  currentPage: number;
+  pagesDisplayed: number | undefined;
+  pageSize: number;
+  onPageChange: (newPage: number) => void;
+  total: number;
+  ariaLabelNavigationLink: string | undefined;
+  ariaLabelNavigationLinkActive: string | undefined;
+}) => {
+  const pagesDisplayed = props.pagesDisplayed || 3;
+  const windowEdges = getSlidingWindowEdges(
+    props.currentPage,
+    props.total,
+    props.pageSize,
+    pagesDisplayed
+  );
+
+  return (
+    <div>
+      {range(windowEdges.startPage, windowEdges.endPage, pagesDisplayed).map(
+        (i) => {
+          return (
+            <Page
+              key={i}
+              onClick={props.onPageChange}
+              page={i}
+              isCurrent={props.currentPage === i}
+              ariaLabelNavigationLink={props.ariaLabelNavigationLink}
+              ariaLabelNavigationLinkActive={
+                props.ariaLabelNavigationLinkActive
+              }
+            />
+          );
+        }
+      )}
+    </div>
+  );
+};

@@ -1,17 +1,10 @@
 import * as React from 'react';
-import { IPivotItemProps } from 'office-ui-fabric-react/lib-commonjs/Pivot';
-import { BaseComponent } from '@uifabric/utilities';
+import { IPivotItemProps } from '@fluentui/react';
 
-/**
- * @visibleName TabItem (Enkeltfane)
+/*
+ * visibleName TabItem (Enkeltfane)
  */
-export default class TabItem extends BaseComponent<IPivotItemProps, {}> {
-  static defaultProps = {
-    itemIcon: undefined
-  };
-
-  render() {
-    const { children, ...props } = this.props;
-    return <div {...props}>{children}</div>;
-  }
-}
+export const TabItem: React.FC<IPivotItemProps> = (props) => {
+  const { children, ...rest } = props;
+  return <div {...rest}>{children}</div>;
+};

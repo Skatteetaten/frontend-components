@@ -1,12 +1,12 @@
-import { mergeStyleSets } from '@uifabric/merge-styles';
-import { getTheme } from '@uifabric/styling';
-import { FontSizes } from '../utils/fonts';
-import { MdIcons } from '../utils/icons/';
-import { PaletteProps } from '..';
-import { DropdownProps } from './Dropdown';
-import { IDropdownStyles } from 'office-ui-fabric-react';
+import { mergeStyleSets } from '@fluentui/merge-styles';
+import { getTheme } from '@fluentui/react/lib/Styling';
+import { FontSizes, SkeIcons, PaletteProps } from '../utils';
+import { DropdownProps } from './DropDown.types';
+import { IDropdownStyles } from '@fluentui/react';
 
 function getFieldTypeStyles(props: DropdownProps) {
+  const palette = getTheme().palette as PaletteProps;
+
   if (props.inputSize === 'large') {
     return {
       '.ms-Dropdown-title': {
@@ -14,62 +14,78 @@ function getFieldTypeStyles(props: DropdownProps) {
         padding: '5px 12px',
         borderRadius: '0px',
         fontSize: FontSizes.large,
-        height: '46px'
+        height: '46px',
       },
       '& span.ms-Dropdown-caretDownWrapper': {
         top: '8px',
-        fontSize: FontSizes.large
-      }
+        fontSize: FontSizes.large,
+        color: palette.skeColor.blue,
+      },
     };
   } else {
     return {
       '.ms-Dropdown-title': {
-        fontSize: FontSizes.small
-      }
+        fontSize: FontSizes.small,
+      },
+      '& span.ms-Dropdown-caretDownWrapper': {
+        color: palette.skeColor.blue,
+      },
     };
   }
 }
 
 export const getClassNames = (props: DropdownProps) => {
-  const { errorMessage } = props;
   const palette = getTheme().palette as PaletteProps;
-  const color = errorMessage
-    ? palette.skeColor.error
-    : palette.skeColor.blackAlt;
+  const { errorMessage } = props;
   const inset = 0;
   const radius = '0';
-  const errorIcon = "'" + MdIcons.icons.Error + "'";
+  const errorIcon = "'" + SkeIcons.icons.Error + "'";
 
   return mergeStyleSets({
     main: {
       selectors: {
         ...getFieldTypeStyles(props),
         '& .ms-TextField-errorMessage': {
-          fontSize: FontSizes.small
+          fontSize: FontSizes.small,
         },
         '::-moz-focus-inner': {
-          border: '0'
+          border: '0',
         },
         '& .ms-Dropdown-title': {
           borderColor: palette.skeColor.blackAlt,
-          borderRadius: '0px'
+          borderRadius: '0px',
+        },
+        '& .ms-Dropdown-titleIsPlaceHolder': {
+          borderColor: palette.skeColor.blackAlt,
         },
         '& .ms-Dropdown-title.ms-Dropdown-title': errorMessage && {
-          borderColor: color,
-          borderWidth: '2px'
+          borderColor: errorMessage
+            ? palette.skeColor.error
+            : palette.skeColor.blackAlt,
+          borderWidth: '2px',
         },
         // hack
         '&:focus .ms-Dropdown-title.ms-Dropdown-title': {
-          border: `2px solid ${palette.skeColor.blue}`
+          border: `2px solid ${palette.skeColor.blue}`,
         },
-        '&.is-disabled.is-disabled span.ms-Dropdown-title': {
-          borderColor: palette.skeColor.grey,
+        '& .is-disabled .ms-Dropdown': {
+          backgroundColor: 'red',
+        },
+        '& .is-disabled .ms-Dropdown-title': {
+          borderColor: palette.skeColor.lightGrey,
           borderStyle: 'solid',
           borderWidth: '1px',
-          backgroundColor: palette.skeColor.whiteGrey
+          backgroundColor: palette.skeColor.neutralGrey,
         },
-        '&.is-disabled.is-disabled span.ms-Dropdown-caretDownWrapper': {
-          color: palette.skeColor.grey
+        '& .is-disabled .ms-Dropdown-caretDownWrapper': {
+          color: palette.skeColor.grey,
+        },
+        '&:active .is-disabled .ms-Dropdown-title': {
+          borderColor: palette.skeColor.lightGrey,
+        },
+        '&:hover .is-disabled .ms-Dropdown-title': {
+          borderColor: palette.skeColor.lightGrey,
+          cursor: 'not-allowed',
         },
         '&:focus:after': !props.disabled && {
           content: '""',
@@ -80,23 +96,25 @@ export const getClassNames = (props: DropdownProps) => {
           right: inset + 1,
           borderRadius: radius,
           outline: 'transparent',
-          zIndex: 1
+          zIndex: 1,
         },
         '& div[role=alert]::before': {
-          fontFamily: MdIcons.fontFace.fontFamily,
+          fontFamily: SkeIcons.fontFace.fontFamily,
           fontSize: 16,
           content: errorIcon,
-          marginRight: '3px'
-        }
-      }
+          marginRight: '3px',
+        },
+      },
     },
     readOnly: {
       borderStyle: 'none',
       fontSize: FontSizes.medium,
       fontWeight: 700,
       display: 'block',
-      padding: 0
-    }
+      padding: 0,
+      marginLeft: 0,
+      marginRight: 0,
+    },
   });
 };
 
@@ -113,15 +131,15 @@ export const getCalloutStyles = (): Partial<IDropdownStyles> => {
       selectors: {
         '&:hover': {
           background: `${palette.skeColor.lightBlue} !important`,
-          textDecoration: 'underline'
+          textDecoration: 'underline',
         },
         '&:active': {
           background: palette.skeColor.lightBlue,
-          textDecoration: 'none'
+          textDecoration: 'none',
         },
         '&:focus': {
           background: palette.skeColor.lightBlue,
-          textDecoration: 'underline'
+          textDecoration: 'underline',
         },
         '&:hover:after, &:focus:after': {
           content: '""',
@@ -133,14 +151,14 @@ export const getCalloutStyles = (): Partial<IDropdownStyles> => {
           borderRadius: radius,
           outline: 'transparent',
           zIndex: 1,
-          color: palette.skeColor.blackAlt
-        }
-      }
+          color: palette.skeColor.blackAlt,
+        },
+      },
     },
     dropdownItemSelected: {
       color: palette.skeColor.blackAlt,
-      background: `${palette.skeColor.whiteGrey} !important`
+      background: `${palette.skeColor.whiteGrey} !important`,
     },
-    dropdownOptionText: { whiteSpace: 'normal !important' }
+    dropdownOptionText: { whiteSpace: 'normal !important' },
   };
 };

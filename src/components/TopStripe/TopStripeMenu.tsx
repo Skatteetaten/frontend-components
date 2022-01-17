@@ -1,12 +1,12 @@
 import * as React from 'react';
-import ActionButton from '../ActionButton';
 import { getClassNames } from './TopStripe.classNames';
 import classnames from 'classnames';
-import { LinkProps } from '../Link';
-import { TopStripeContext } from './TopStripe';
+import { UseScreen } from '../utils';
+import { Icon } from '../Icon';
+import { LinkProps } from '../Link/Link.types';
+import { ActionButton } from '../ActionButton';
 import { TopStripeButton } from './TopStripeButton';
-import { UseScreen } from '../utils/ScreenPlugin';
-import Icon from '../Icon/Icon';
+import { TopStripeContext } from './TopStripe';
 
 export interface TopStripeMenuProps extends LinkProps {
   /**
@@ -29,10 +29,11 @@ export interface TopStripeMenuProps extends LinkProps {
   /** Spesify if content is menu or not (changes wai-aria behaviour)  */
   contentIsMenu?: boolean;
 }
-/**
- * @visibleName TopStripeMenu (Toppstripe-meny)
+
+/*
+ * visibleName TopStripeMenu (ToppstripeMeny)
  */
-export const TopStripeMenu: React.FC<TopStripeMenuProps> = props => {
+export const TopStripeMenu: React.FC<TopStripeMenuProps> = (props) => {
   const styles = getClassNames();
   const {
     children,
@@ -45,7 +46,7 @@ export const TopStripeMenu: React.FC<TopStripeMenuProps> = props => {
     closeMenuAriaLabel = 'Lukk',
     closeOnClick = true,
     showChevron = true,
-    contentIsMenu = true
+    contentIsMenu = true,
   } = props;
   const { open, setOpen, closeMenu } = React.useContext(TopStripeContext);
 
@@ -83,7 +84,7 @@ export const TopStripeMenu: React.FC<TopStripeMenuProps> = props => {
         >
           {onRender
             ? onRender
-            : React.Children.map(children, child => {
+            : React.Children.map(children, (child) => {
                 if (React.isValidElement<LinkProps>(child)) {
                   return (
                     <li
@@ -104,7 +105,7 @@ export const TopStripeMenu: React.FC<TopStripeMenuProps> = props => {
                         role: 'menuitem',
                         'aria-current': child.props.icon ? 'true' : undefined,
                         icon: undefined,
-                        onClick: undefined
+                        onClick: undefined,
                       })}
                     </li>
                   );

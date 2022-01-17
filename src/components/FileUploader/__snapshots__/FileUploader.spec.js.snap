@@ -2,14 +2,52 @@
 
 exports[`FileUploader komponent matcher snapshot 1`] = `
 <div
-  className="main-94"
+  className=
+
+
 >
+  <div
+    className=
+        
+        {
+          display: flex;
+        }
+  />
   <label
-    id="buttonLabel"
+    id="fileupload123-label"
   >
     <div
-      aria-describedby="acceptedFileFormats"
-      className="uploadArea-95"
+      aria-describedby="fileupload123-label acceptedFileFormats123"
+      className=
+
+          {
+            background-color: #cde1f9;
+            border: 2px dashed #1362ae;
+            cursor: pointer;
+            margin-bottom: 8px;
+            margin-top: 8px;
+            padding-bottom: 16px;
+            padding-left: 16px;
+            padding-right: 16px;
+            padding-top: 16px;
+            text-align: center;
+            transition: all 80ms ease-in-out 0s;
+          }
+          &:hover {
+            border: 2px dashed #1362ae;
+            box-shadow: rgba(0, 0, 0, 0.3) 0px 10px 6px -10px;
+            transform: scale(1.02) translateY(-1px);
+          }
+          &:focus {
+            border: 2px solid #1362ae;
+            box-shadow: rgba(0, 0, 0, 0.3) 0px 10px 6px -10px;
+            transform: scale(1.02) translateY(-1px);
+          }
+          &:active {
+            border: 2px solid #1362ae;
+            box-shadow: rgba(0, 0, 0, 0.0) 0px 0 0 0;
+            transform: scale(1) translateY(0);
+          }
       onClick={[Function]}
       onDragEnter={[Function]}
       onDragLeave={[Function]}
@@ -21,10 +59,24 @@ exports[`FileUploader komponent matcher snapshot 1`] = `
     >
       <i
         aria-hidden={true}
-        className="uploadAreaIcon-105"
+        className=
+
+            {
+              -moz-osx-font-smoothing: grayscale;
+              -webkit-font-smoothing: antialiased;
+              color: #1362ae;
+              display: inline-block;
+              font-family: "SkeIconfont";
+              font-size: 1.25rem;
+              font-style: normal;
+              font-weight: normal;
+              speak: none;
+              text-rendering: auto;
+              transform: translate(0, 0);
+            }
         data-icon-name="AttachFile"
       >
-        
+        
       </i>
       <u>
         Legg til fil(er)
@@ -33,11 +85,27 @@ exports[`FileUploader komponent matcher snapshot 1`] = `
   </label>
   <input
     aria-hidden={true}
-    className="fileUploadInput-93"
+    className=
+
+        {
+          opacity: 0;
+          overflow: hidden;
+          position: absolute;
+          z-index: -1;
+        }
     id="fileupload-input"
     onChange={[Function]}
     tabIndex={-1}
     type="file"
+  />
+  <div
+    aria-atomic="true"
+    className=
+
+        {
+          display: grid;
+        }
+    role="alert"
   />
 </div>
 `;

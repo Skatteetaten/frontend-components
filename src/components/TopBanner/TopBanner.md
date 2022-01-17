@@ -1,11 +1,11 @@
-** Toppbanner vises på toppen i løsningene og skiller interne og eksterne løsninger fra hverandre **
+**TopBanner (Topp): vises på toppen i løsningene og skiller interne og eksterne løsninger fra hverandre**
 
 ### Publikumsløsninger
 
 Ikke-innlogget publikumsløsning:
 
 ```js
-import TopBanner from '@skatteetaten/frontend-components/TopBanner';
+import { TopBanner } from '@skatteetaten/frontend-components/TopBanner';
 
 <TopBanner
   external
@@ -18,61 +18,66 @@ import TopBanner from '@skatteetaten/frontend-components/TopBanner';
 Innlogget publikumsløsning:
 
 ```js
-import TopStripe, {
-  TopStripeMenu,
-  TopStripeButton
-} from '@skatteetaten/frontend-components/TopStripe';
-import TopBanner from '@skatteetaten/frontend-components/TopBanner';
-import Link from '@skatteetaten/frontend-components/Link';
-import Icon from '@skatteetaten/frontend-components/Icon';
+import { useState } from 'react';
+
+import { Icon } from '@skatteetaten/frontend-components/Icon';
+import { Link } from '@skatteetaten/frontend-components/Link';
+import { TopBanner } from '@skatteetaten/frontend-components/TopBanner';
+import { TopStripe } from '@skatteetaten/frontend-components/TopStripe';
+import { LanguagePicker } from '@skatteetaten/frontend-components/TopStripe/LanguagePicker';
+import { TopStripeButton } from '@skatteetaten/frontend-components/TopStripe/TopStripeButton';
+import { TopStripeMenu } from '@skatteetaten/frontend-components/TopStripe/TopStripeMenu';
+
+const [language, setLanguage] = useState('nb');
 
 <div>
-  <TopStripe>
-    <Link path={'#main-content-id'} text={'Hopp til hovedinnhold'} skipLink />
-
-    <Link
-      path={'https://www.skatteetaten.no/kontakt/'}
-      text={'Kontakt oss'}
-      placement="before"
-    />
-
-    <TopStripeMenu
-      showOnMobile={false}
-      closeMenuAriaLabel="Lukk endre skriftstørrelse"
-      title={'Endre skriftstørrelse'}
-    >
-      <div style={{ fontSize: '24px', marginTop: '8px' }}>
-        Hold Ctrl-tasten nede (Cmd-tasten på Mac). Trykk på + for å forstørre
-        eller - for å forminske.
-      </div>
-    </TopStripeMenu>
-    <TopStripeMenu
-      showOnMobile={false}
-      closeMenuAriaLabel="Lukk Language / Språk"
-      title={'Language / Språk'}
-    >
-      <TopStripeButton>Norsk</TopStripeButton>
-      <TopStripeButton icon={'check'}>Nynorsk</TopStripeButton>
-      <TopStripeButton>Engelsk</TopStripeButton>
-      <TopStripeButton>Sørsamisk</TopStripeButton>
-      <TopStripeButton ariaLabel={'Nordsamisk'}>Nordsamisk</TopStripeButton>
-    </TopStripeMenu>
-
-    <span>
-      <Icon
-        iconName="person"
-        style={{ fontSize: '20px', verticalAlign: 'sub' }}
-      />
-      Ola Normann
-    </span>
-
-    <Link path={'#topstripe'} text={'Logg ut'} placement="before" />
-  </TopStripe>
   <TopBanner
     external
     title={'Side for publikum'}
     homeText={'Tilbake til skatteetaten.no'}
     logoLink
+    topStripe={
+      <TopStripe>
+        <Link
+          path={'#main-content-id'}
+          text={'Hopp til hovedinnhold'}
+          skipLink
+        />
+
+        <Link
+          path={'https://www.skatteetaten.no/kontakt/'}
+          text={'Kontakt oss'}
+          placement="before"
+        />
+
+        <TopStripeMenu
+          showOnMobile={false}
+          closeMenuAriaLabel="Lukk endre skriftstørrelse"
+          title={'Endre skriftstørrelse'}
+        >
+          <div style={{ fontSize: '24px', marginTop: '8px' }}>
+            Hold Ctrl-tasten nede (Cmd-tasten på Mac). Trykk på + for å
+            forstørre eller - for å forminske.
+          </div>
+        </TopStripeMenu>
+        <LanguagePicker
+          selectedLanguage={language}
+          setLanguage={setLanguage}
+          showOnMobile={true}
+          showSami={true}
+        />
+
+        <span>
+          <Icon
+            iconName="person"
+            style={{ fontSize: '20px', verticalAlign: 'sub' }}
+          />
+          Ola Normann
+        </span>
+
+        <Link path={'#topstripe'} text={'Logg ut'} placement="before" />
+      </TopStripe>
+    }
   />
 </div>;
 ```
@@ -82,7 +87,7 @@ import Icon from '@skatteetaten/frontend-components/Icon';
 På startsiden i et fagsystem:
 
 ```js
-import TopBanner from '@skatteetaten/frontend-components/TopBanner';
+import { TopBanner } from '@skatteetaten/frontend-components/TopBanner';
 
 <div>
   <TopBanner compact homeText="Systemnavn" homeUrl="#topbanner">
@@ -94,7 +99,7 @@ import TopBanner from '@skatteetaten/frontend-components/TopBanner';
 På en underside i et fagsystem:
 
 ```js
-import TopBanner from '@skatteetaten/frontend-components/TopBanner';
+import { TopBanner } from '@skatteetaten/frontend-components/TopBanner';
 
 <div>
   <TopBanner
@@ -112,44 +117,53 @@ import TopBanner from '@skatteetaten/frontend-components/TopBanner';
 <>
   <h3>Forskjellig toppbanner på interne løsninger og på publikumsløsninger</h3>
   <p>
-    Alle løsningene våre har et toppbanner som visuelt skiller interne og eksterne nettløsninger
+    Alle løsningene våre har et toppbanner som visuelt skiller interne og
+    eksterne nettløsninger
   </p>
 
   <ul>
     <li>Interne løsninger bruker fylt toppbanner med skrå strek.</li>
     <li>
-      Eksterne løsninger bruker en smal lang strek, slik som på skatteetaten.no. Dette
-      lager en smidig overgang fra publikumsløsningen til en tilknyttet løsning.
+      Eksterne løsninger bruker en smal lang strek, slik som på skatteetaten.no.
+      Dette lager en smidig overgang fra publikumsløsningen til en tilknyttet
+      løsning.
     </li>
   </ul>
 
-<h3>Slik setter du opp TopBanner på interne løsninger</h3>
+  <h3>Slik setter du opp TopBanner på interne løsninger</h3>
 
-
-
- <p>Startsider: Interne fagsystemer har en startside der brukeren finner arbeidsoppgaver eller søker etter opplysninger. På startsiden gjelder følgende: </p>
+  <p>
+    Startsider: Interne fagsystemer har en startside der brukeren finner
+    arbeidsoppgaver eller søker etter opplysninger. På startsiden gjelder
+    følgende:{' '}
+  </p>
   <ul>
     <li>
-     Hold toppbanneret enkelt ved å kun ha navn på logo og tittel på applikasjonen.
+      Hold toppbanneret enkelt ved å kun ha navn på logo og tittel på
+      applikasjonen.
     </li>
 
     <li>
-      TopBanner kan inneholde meny til rapporter og enkeltstående sider eller personlige innstillinger. 
-    </li> 
-<li>
-    Unngå å skrive «Startside» eller «Velkommen» i toppbanneret.
+      TopBanner kan inneholde meny til rapporter og enkeltstående sider eller
+      personlige innstillinger.
     </li>
+    <li>Unngå å skrive «Startside» eller «Velkommen» i toppbanneret.</li>
   </ul>
 
-
-  <p>Undersider: På undersidene på interne fagsystemer viser vi gjerne sakstypen eller en arbeidsoppgaven. På undersider gjelder følgende:</p>
+  <p>
+    Undersider: På undersidene på interne fagsystemer viser vi gjerne sakstypen
+    eller en arbeidsoppgaven. På undersider gjelder følgende:
+  </p>
 
   <ul>
     <li>
-      Banneret skal ha en tittel som gjør innholdet relevant og enkelt å bruke, for eksempel hvilken sakstype eller arbeidsoppgave det gjelder.
+      Banneret skal ha en tittel som gjør innholdet relevant og enkelt å bruke,
+      for eksempel hvilken sakstype eller arbeidsoppgave det gjelder.
     </li>
     <li>
-      Hvis du velger å ha arbeidsoppgaven i toppbanneret, skal også arbeidsliste-funksjonene «Gjør tilgjengelig», «Sett på vent» og «Fordel» stå i umiddelbar nærhet.
+      Hvis du velger å ha arbeidsoppgaven i toppbanneret, skal også
+      arbeidsliste-funksjonene «Gjør tilgjengelig», «Sett på vent» og «Fordel»
+      stå i umiddelbar nærhet.
     </li>
   </ul>
 

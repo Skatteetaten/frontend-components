@@ -1,19 +1,16 @@
-Nedenfor har vi plukket ut de fargene fra Skatteetatens visuelle profil som fungerer best på digitale flater. 
-I tillegg har vi lagt til et sett med grå- og blåtoner fordi vi ofte bruker disse på nett.
 
-### Hovedfarger
-
-Vi bruker farger etter følgende regler:
-
-- Hovedfargen på en side er burgundy. Vi bruker denne fargen sammen med den lysere varianten burgundyLight i header og footer.
-- Bokser, rammer og visuelle elementer på en side har fargene, green, lightGreen, brown, beige, pink og lightPink. 
-- Vi bruker Pink og lightPink i hovedsak på feilmeldinger og markering av feil.
+Nedenfor har vi plukket ut de fargene fra Skatteetatens visuelle profil som fungerer best på digitale flater.
+I tillegg har vi lagt til et sett med blåtoner og statusfarger fordi vi ofte bruker disse på nett.
 
 ```js noeditor beskrivelse
 import TinyColor from '@ctrl/tinycolor';
-import SkeBasis from '@skatteetaten/frontend-components/SkeBasis';
+import { SkeBasis } from '@skatteetaten/frontend-components/SkeBasis';
+import { Icon } from '@skatteetaten/frontend-components/Icon';
+
 
 palette = Object(SkeBasis.PALETTE);
+
+
 
 function drawSwatch(colorCode) {
   const color = new TinyColor(palette.skeColor[colorCode]);
@@ -25,7 +22,7 @@ function drawSwatch(colorCode) {
         backgroundColor: palette.skeColor[colorCode],
         color: color.isDark()
           ? palette.skeColor.white
-          : palette.skeColor.blackAlt
+          : palette.skeColor.blackAlt,
       }}
     >
       <p>skeColor.{colorCode}</p>
@@ -35,103 +32,99 @@ function drawSwatch(colorCode) {
 }
 
 <div>
+<h3>Hovedfarger</h3>
   <div style={{ display: 'flex', flexFlow: 'row wrap' }}>
-    {drawSwatch('burgundy'), drawSwatch('burgundyLight')}
+    {drawSwatch('burgundy100'),
+     drawSwatch('burgundy70'), 
+     drawSwatch('burgundy50'), 
+     drawSwatch('burgundy30'), 
+     drawSwatch('burgundy10'), 
+     drawSwatch('burgundy5')}
   </div>
   <div style={{ display: 'flex', flexFlow: 'row wrap' }}>
-    {drawSwatch('green'), drawSwatch('lightGreen')}
+    {drawSwatch('green100'), 
+     drawSwatch('green70'),
+     drawSwatch('green50'), 
+     drawSwatch('green30'), 
+     drawSwatch('green10'), 
+     drawSwatch('green5')}  
   </div>
+
   <div style={{ display: 'flex', flexFlow: 'row wrap' }}>
-    {
-      drawSwatch('brown'),
-      drawSwatch('darkBeige'),
-      drawSwatch('beige'),
-      drawSwatch('lightBeige')
-    }
+    {drawSwatch('brown100'), 
+     drawSwatch('brown70'),
+     drawSwatch('brown50'), 
+     drawSwatch('brown30'), 
+     drawSwatch('brown10'), 
+     drawSwatch('brown5')}  
   </div>
+
   <div style={{ display: 'flex', flexFlow: 'row wrap' }}>
-    {
-      drawSwatch('pink'), 
-      drawSwatch('lightPink')
-    }
+    {drawSwatch('blue100'), 
+     drawSwatch('blue70'),
+     drawSwatch('blue50'), 
+     drawSwatch('blue30'), 
+     drawSwatch('blue10'), 
+     drawSwatch('blue5')}  
   </div>
-  <h3>Gråtoner</h3>
+
   <div style={{ display: 'flex', flexFlow: 'row wrap' }}>
-    {
-      drawSwatch('darkGrey'),
-      drawSwatch('grey'),
-      drawSwatch('lightGrey'),
-      drawSwatch('whiteGrey')
-    }
+    {drawSwatch('black100'), 
+     drawSwatch('grey70'),
+     drawSwatch('grey50'), 
+     drawSwatch('grey30'), 
+     drawSwatch('grey10'), 
+     drawSwatch('grey5')}  
   </div>
-</div>;
-```
 
-### Tekstfarge
+  <h3>Statusfarger</h3>
+  <div style={{ display: 'flex', flexFlow: 'row wrap' }}>
+    {drawSwatch('statusError'), 
+     drawSwatch('statusWarning'),
+     drawSwatch('statusOk')}  
+  </div>
 
-Vi bruker BlackAlt som farge på tekster der bakgrunnen er lys. Hvis det er tekst på mørk bakgrunn bruker vi White.
+  <h3>Interaksjonsfarger</h3>
+  <div style={{ display: 'flex', flexFlow: 'row wrap' }}>
+    {drawSwatch('interactive'), 
+     drawSwatch('interactiveLight'), 
+     drawSwatch('interactiveDark')}  
+  </div>
 
-```js noeditor beskrivelse
-import TinyColor from '@ctrl/tinycolor';
-import SkeBasis from '@skatteetaten/frontend-components/SkeBasis';
-palette = Object(SkeBasis.PALETTE);
-
-function drawSwatch(colorCode) {
-  const color = new TinyColor(palette.skeColor[colorCode]);
-
-  return (
-    <div
-      class="swatch"
-      style={{
-        backgroundColor: palette.skeColor[colorCode],
-        color: color.isDark()
-          ? palette.skeColor.white
-          : palette.skeColor.blackAlt
-      }}
-    >
-      <p>skeColor.{colorCode}</p>
-      <p>{palette.skeColor[colorCode]}</p>
+  <h3>Tips og retningslinjer</h3>
+  <p>100-fargene kan brukes med 30-fargene og lysere. Unngå å blande på tvers av hovedfarger.</p>
+  <div className="dodont">
+    <div className="do">
+      <p class="title">Gjør slik:</p>
+      <div style={{fontSize:"22px",padding:'0px 8px', color: palette.skeColor.green100, backgroundColor: palette.skeColor.green30}}>green100 på green30</div>
+      <div style={{fontSize:"22px", padding:'0px 8px', color: palette.skeColor.green100, backgroundColor: palette.skeColor.green10}}>green100 på green10</div>
+      <div style={{fontSize:"22px", padding:'0px 8px', color: palette.skeColor.green100, backgroundColor: palette.skeColor.green5}}>green100 på green5</div>
     </div>
-  );
-}
-
-<div style={{ display: 'flex', flexFlow: 'row wrap' }}>
-  {drawSwatch('blackAlt'), drawSwatch('white'), drawSwatch('error')}
-</div>;
-```
-
-### Interaksjonsfarge (det som er klikkbart)
-
-Vi bruker Blue på lenker og knapper som brukeren kan klikke på og som ligger på lys bakgrunn. 
-På lenker med mørk bakgrunn, bruker vi lightBlue. DarkBlue bruker vi for hover-effekt på knapper og andre klikkbare elementer som ikke er lenke.
-
-```js noeditor beskrivelse
-const { TinyColor } = require('@ctrl/tinycolor');
-import SkeBasis from '@skatteetaten/frontend-components/SkeBasis';
-
-palette = Object(SkeBasis.PALETTE);
-
-function drawSwatch(colorCode) {
-  const color = new TinyColor(palette.skeColor[colorCode]);
-
-  return (
-    <div
-      class="swatch"
-      style={{
-        backgroundColor: palette.skeColor[colorCode],
-        color: color.isDark()
-          ? palette.skeColor.white
-          : palette.skeColor.blackAlt
-      }}
-    >
-      <p>skeColor.{colorCode}</p>
-      <p>{palette.skeColor[colorCode]}</p>
+    
+    <div className="dont">
+      <p class="title">Ikke gjør slik:</p>
+      <div style={{fontSize:"22px", padding:'0px 8px', color: palette.skeColor.green100, backgroundColor: palette.skeColor.green50}}>green100 på green50 (3.88 i kontrast)</div>
+      <div style={{fontSize:"22px", padding:'0px 8px', color: palette.skeColor.green70, backgroundColor: palette.skeColor.green10}}>green70 på green10 (2.89 i kontrast)</div>
+      <div style={{fontSize:"22px", padding:'0px 8px', color: palette.skeColor.blue100, backgroundColor: palette.skeColor.brown50, border: `4px solid ${palette.skeColor.burgundy50}`}}>blue100 på brown50 + ramme (🤢)</div>
     </div>
-  );
-}
+  </div>
 
-<div style={{ display: 'flex', flexFlow: 'row wrap' }}>
-  {drawSwatch('darkBlue'), drawSwatch('blue'), drawSwatch('lightBlue') }
+  <p>Av statusfargene er den bare den røde som brukes til tekst:</p>
+
+  <div className="dodont">
+    <div className="do">
+      <p class="title">Gjør slik:</p>
+      <div style={{fontSize:"22px"}}><Icon iconName="Completed" style={{position: 'absolute', fontSize:"22px", color: palette.skeColor.statusOk}}/><span style={{marginLeft: '26px', marginTop: '4px'}}>Fullført</span></div>
+      <div style={{fontSize:"22px"}}><Icon iconName="Info" style={{position: 'absolute', fontSize:"22px", color: palette.skeColor.statusWarning}}/><span style={{marginLeft: '26px', marginTop: '4px'}}>Til oppfølging</span></div>
+      <div style={{fontSize:"22px", color: palette.skeColor.statusError}}><Icon iconName="Error" style={{position: 'absolute', fontSize:"22px", color: palette.skeColor.statusError}}/><span style={{marginLeft: '26px', marginTop: '4px'}}>Feil på siden</span></div>
+    </div>
+    <div className="dont">
+      <p class="title">Ikke gjør slik:</p>
+      <p style={{color: palette.skeColor.statusOk, backgroundColor: palette.skeColor.green5, fontSize:"22px"}}>Fullført</p>
+      <p style={{color: palette.skeColor.statusWarning, backgroundColor: palette.skeColor.brown5, fontSize:"22px"}}>Til oppfølging</p>
+    </div>
+  </div>
+
 </div>;
 ```
 

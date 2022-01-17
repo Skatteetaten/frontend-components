@@ -1,14 +1,5 @@
 const fontUrls: string[] = [];
-
-fontUrls.push('url("' + require('./SkeIconfont.eot') + '")');
-fontUrls.push(
-  'url("' +
-    require('./SkeIconfont.eot') +
-    '?#iefix") format("embedded-opentype")'
-);
-fontUrls.push('url("' + require('./SkeIconfont.woff2') + '") format("woff2")');
 fontUrls.push('url("' + require('./SkeIconfont.woff') + '") format("woff")');
-fontUrls.push('url("' + require('./SkeIconfont.ttf') + '") format("truetype")');
 
 export default {
   style: {
@@ -20,11 +11,11 @@ export default {
     display: 'inline-block',
     transform: 'translate(0, 0)',
     textRendering: 'auto',
-    fontSize: 'inherit'
+    fontSize: 'inherit',
   },
   fontFace: {
     fontFamily: '"SkeIconfont"',
-    src: fontUrls.join(', ')
+    src: fontUrls.join(', '),
   },
 
   icons: {
@@ -43,6 +34,6 @@ export default {
     Person: '\uea09',
     Skattetrekk: '\uea0a',
     WarningOutline: '\uea0b',
-    XMLFile: '\uea0c'
-  }
+    XMLFile: '\uea0c',
+  },
 };

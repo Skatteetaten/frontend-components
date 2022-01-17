@@ -1,16 +1,24 @@
-** Et område med kommandoer **
+**CommandBar (Menyknapper): et område med kommandoer**
+
+```js noeditor
+import { MessageBar } from '@skatteetaten/frontend-components/MessageBar';
+
+<MessageBar type={MessageBar.Type.info}>
+  Denne komponenten kan ikke brukes i micro frontends inntil videre.
+</MessageBar>;
+```
 
 ```js
-initialState = {
+const [state, setState] = React.useState({
   items: [
     {
       key: 'Add',
       name: 'Registrer ny opplysning',
       ariaLabel: 'Registrer ny opplysning',
       iconProps: {
-        iconName: 'AddOutline'
-      }
-    }
+        iconName: 'AddOutline',
+      },
+    },
   ],
   farItems: [
     {
@@ -21,8 +29,8 @@ initialState = {
         console.log('Klikk');
       },
       iconProps: {
-        iconName: 'File'
-      }
+        iconName: 'File',
+      },
     },
     {
       key: 'view2',
@@ -30,17 +38,17 @@ initialState = {
       ariaLabel: 'Vis XML',
       selected: true,
       iconProps: {
-        iconName: 'XMLFile'
-      }
+        iconName: 'XMLFile',
+      },
     },
     {
       key: 'view3',
       name: 'Excel',
       ariaLabel: 'Vis XML',
       iconProps: {
-        iconName: 'ExcelFile'
-      }
-    }
+        iconName: 'ExcelFile',
+      },
+    },
   ],
   overflowItems: [
     {
@@ -48,25 +56,25 @@ initialState = {
       name: 'Merk som bokmerke',
       ariaLabel: 'Merk som bokmerke',
       iconProps: {
-        iconName: 'Bookmark'
-      }
+        iconName: 'Bookmark',
+      },
     },
     {
       key: 'favorite',
       name: 'Merk som favoritt',
       ariaLabel: 'Merk som favoritt',
       iconProps: {
-        iconName: 'Favorite'
-      }
-    }
-  ]
-};
+        iconName: 'Favorite',
+      },
+    },
+  ],
+});
 
 <CommandBar items={state.items} farItems={state.farItems} />;
 ```
 
 ```js
-initialState = {
+const [state, setState] = React.useState({
   items: [
     {
       key: 'view1',
@@ -76,8 +84,8 @@ initialState = {
         console.log('og');
       },
       iconProps: {
-        iconName: 'PlayOutline'
-      }
+        iconName: 'PlayOutline',
+      },
     },
     {
       key: 'view2',
@@ -87,8 +95,8 @@ initialState = {
         console.log('hei');
       },
       iconProps: {
-        iconName: 'PauseOutline'
-      }
+        iconName: 'PauseOutline',
+      },
     },
 
     {
@@ -99,9 +107,9 @@ initialState = {
         console.log('og');
       },
       iconProps: {
-        iconName: 'PersonMoreOutline'
-      }
-    }
+        iconName: 'PersonMoreOutline',
+      },
+    },
   ],
 
   farItems: [
@@ -110,12 +118,12 @@ initialState = {
       name: 'Skriv ut',
       ariaLabel: 'Skriv ut',
       iconProps: {
-        iconName: 'Print'
+        iconName: 'Print',
       },
-      iconOnly: true
-    }
-  ]
-};
+      iconOnly: true,
+    },
+  ],
+});
 
 <CommandBar items={state.items} farItems={state.farItems} />;
 ```

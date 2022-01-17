@@ -1,21 +1,12 @@
 import * as React from 'react';
 import classnames from 'classnames';
 import { getClassNames } from './ButtonLink.classNames';
+import { ButtonLinkProps } from './ButtonLink.types';
 
-export interface ButtonLinkProps
-  extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
-  /** href-lenken */
-  path: string;
-  /** Tekst på knappen */
-  text: string;
-  /** Om lenken skal åpnes i nytt vindu (target=blank) */
-  openInNew?: boolean;
-}
-
-/**
- * @visibleName ButtonLink (Knappelenke)
+/*
+ * visibleName ButtonLink (Knappelenke)
  */
-const ButtonLink: React.FC<ButtonLinkProps> = props => {
+export const ButtonLink: React.FC<ButtonLinkProps> = (props) => {
   const { path, text, className, openInNew, ...htmlAttributes } = props;
   const styles = getClassNames();
   if (openInNew) {
@@ -45,5 +36,3 @@ const ButtonLink: React.FC<ButtonLinkProps> = props => {
 };
 
 ButtonLink.defaultProps = {};
-
-export default ButtonLink;

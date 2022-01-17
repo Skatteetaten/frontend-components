@@ -8,9 +8,13 @@ def config = [
     publishToNpm           : true,
     publishSnapshotToNpm	 : true,
     npmPublishFolder	     : 'lib',
-    nodeVersion            : '10',
-    versionStrategy        : [[ branch : 'master', versionHint:'3' ]],
+    nodeVersion            : '12',
+    versionStrategy        : [[ branch : 'master', versionHint:'4' ]],
     createBuildEnvs        : { props -> "REACT_APP_BUILD_VERSION=${props.version}" },
+    npmjs                    : [
+      publish              : env.BRANCH_NAME == "master",
+      prepareCmd           : "run build:copy-files-external"
+    ],
     github                 : [
       enabled              : true,
       push                 : env.BRANCH_NAME == "master",

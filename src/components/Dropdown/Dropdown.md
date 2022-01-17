@@ -1,22 +1,23 @@
-** Nedtrekkslister brukes når brukeren skal kunne velge et eller flere valg fra en liste. **
+**Dropdown (Nedtrekksliste): brukes når brukeren skal kunne velge et eller flere valg fra en liste.**
 
 ```js
-import Dropdown from '@skatteetaten/frontend-components/Dropdown';
+import { Dropdown } from '@skatteetaten/frontend-components/Dropdown';
 
-const initialState = {
+const [state, setState] = React.useState({
   options: [
     { key: null, text: 'Ingen' },
     { key: 'A', text: 'Banan' },
     { key: 'B', text: 'Eple' },
     { key: 'C', text: 'Kiwi' },
     { key: 'D', text: 'Pære' },
-    { key: 'E', text: 'Sitron' }
-  ]
-};
+    { key: 'E', text: 'Sitron' },
+  ],
+});
 
-<div style={{ width: '300px' }}>
+<div style={{ maxWidth: '300px' }}>
   <Dropdown
-    label="Velg favoritt"
+    label="Fruktsort"
+    placeholder="Velg"
     help="Tekst som hjelper brukeren å forstå eller få til."
     options={state.options}
     onChange={console.log}
@@ -27,22 +28,23 @@ const initialState = {
 Stor versjon:
 
 ```js
-import Dropdown from '@skatteetaten/frontend-components/Dropdown';
+import { Dropdown } from '@skatteetaten/frontend-components/Dropdown';
 
-const initialState = {
+const [state, setState] = React.useState({
   options: [
     { key: null, text: 'Ingen' },
     { key: 'A', text: 'Banan' },
     { key: 'B', text: 'Eple' },
     { key: 'C', text: 'Kiwi' },
     { key: 'D', text: 'Pære' },
-    { key: 'E', text: 'Sitron' }
-  ]
-};
+    { key: 'E', text: 'Sitron' },
+  ],
+});
 
-<div style={{ width: '300px' }}>
+<div style={{ maxWidth: '300px' }}>
   <Dropdown
-    label="Velg favoritt"
+    label="Fruktsort"
+    placeholder="Velg"
     help="Tekst som hjelper brukeren å forstå eller få til"
     inputSize="large"
     options={state.options}
@@ -56,17 +58,17 @@ Lesemodus:
 ```js
 import Dropdown from '@skatteetaten/frontend-components/Dropdown';
 
-<div style={{ width: '300px' }}>
+<div style={{ maxWidth: '300px' }}>
   <Dropdown
     readOnly
-    label="Lesemodus:"
-    inputSize="large"
+    label="Fruktsort"
     options={[
-      { key: 'A', text: 'Alfa', value: 'Alfa' },
-      { key: 'B', text: 'Beta', value: 'Beta' },
-      { key: 'C', text: 'Gamma', value: 'Gamma' },
-      { key: 'D', text: 'Delta', value: 'Delta' },
-      { key: 'E', text: 'Echo', value: 'Echo' }
+      { key: null, text: 'Ingen' },
+      { key: 'A', text: 'Banan' },
+      { key: 'B', text: 'Eple' },
+      { key: 'C', text: 'Kiwi' },
+      { key: 'D', text: 'Pære' },
+      { key: 'E', text: 'Sitron' },
     ]}
     selectedKey="D"
   />
@@ -117,7 +119,13 @@ import Dropdown from '@skatteetaten/frontend-components/Dropdown';
 ```
 
 ```js noeditor beskrivelse
+import { MessageBar } from '@skatteetaten/frontend-components/MessageBar';
+
 <>
+  <MessageBar type={MessageBar.Type.info}>
+    Merk at denne komponenten foreløpig ikke fungerer i micro frontends. Vurder
+    å bruke ComboBox i stedet.
+  </MessageBar>
   <h3>Nedtrekksliste som brukeren kan velge fra</h3>
   <p>
     Nedtrekkslister gjør det mulig for brukeren å velge ett eller flere valg fra
@@ -129,9 +137,7 @@ import Dropdown from '@skatteetaten/frontend-components/Dropdown';
     valg, kan du vurdere å bruke{' '}
     <a href="#radiobuttongroup"> RadioButtonGroup (radioknapper)</a> i stedet.
   </p>
-
   <h3>Tips til hvordan du lager en god nedtrekksliste</h3>
-
   <ul>
     <li>
       Sorter innholdet i nedtrekkslisten på en logisk måte, for eksempel
@@ -152,5 +158,5 @@ import Dropdown from '@skatteetaten/frontend-components/Dropdown';
       <a href="#combobox"> nedtrekksliste med skriving (ComboBox) </a>.
     </li>
   </ul>
-</>
+</>;
 ```

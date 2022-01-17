@@ -1,41 +1,32 @@
 import classnames from 'classnames';
-import {
-  IPivotItemProps,
-  IPivotProps,
-  Pivot,
-  PivotItem,
-  PivotLinkFormat,
-  PivotLinkSize
-} from 'office-ui-fabric-react/lib-commonjs/Pivot';
+import { IPivotItemProps, Pivot, PivotItem } from '@fluentui/react';
+
 import * as React from 'react';
 import { getClassNames } from './Tabs.classNames';
+import { TabProps } from './Tabs.types';
+import { BrandContext } from '../SkeBasis';
 
-export interface TabProps extends IPivotProps {
-  /** Border rundt tabs */
-  border?: boolean;
-  /** Underline for å fremheve tabs */
-  underline?: boolean;
-}
-
-/**
- * @visibleName Tabs (Arkfaner)
+/*
+ * visibleName Tabs (Arkfaner)
  */
 
-const Tabs: React.FC<TabProps> = props => {
+export const Tabs: React.FC<TabProps> = (props) => {
   const { children, className, ...rest } = props;
   return (
-    <Pivot
-      {...rest}
-      linkFormat={PivotLinkFormat.tabs}
-      linkSize={PivotLinkSize.large}
-      className={classnames(getClassNames(props), className)}
-    >
-      {React.Children.map(props.children, child => {
-        if (React.isValidElement<IPivotItemProps>(child))
-          return <PivotItem {...child.props} />;
-      })}
-    </Pivot>
+    <BrandContext.Consumer>
+      {({ tag }) => (
+        <Pivot
+          {...rest}
+          linkFormat={'tabs'}
+          linkSize={'large'}
+          className={classnames(getClassNames(props, tag), className)}
+        >
+          {React.Children.map(props.children, (child) => {
+            if (React.isValidElement<IPivotItemProps>(child))
+              return <PivotItem {...child.props} />;
+          })}
+        </Pivot>
+      )}
+    </BrandContext.Consumer>
   );
 };
-
-export default Tabs;

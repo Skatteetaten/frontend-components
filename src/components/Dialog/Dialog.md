@@ -1,11 +1,11 @@
-** Dialog brukes til å vise innhold midt på skjermen og tiltrekke seg brukerens oppmerksomhet. **
+**Dialog (Dialogboks): brukes til å vise innhold midt på skjermen og tiltrekke seg brukerens oppmerksomhet.**
 
 ```js
-import Dialog from '@skatteetaten/frontend-components/Dialog';
-import Button from '@skatteetaten/frontend-components/Button';
-import ActionButton from '@skatteetaten/frontend-components/ActionButton';
+import { ActionButton } from '@skatteetaten/frontend-components/ActionButton';
+import { Button } from '@skatteetaten/frontend-components/Button';
+import { Dialog } from '@skatteetaten/frontend-components/Dialog';
 
-const initialState = { hideDialog: true };
+const [state, setState] = React.useState({ hideDialog: true });
 
 function closeDialog() {
   setState({ hideDialog: true });
@@ -41,11 +41,11 @@ function closeDialog() {
 ```
 
 ```js
-import Dialog from '@skatteetaten/frontend-components/Dialog';
-import Button from '@skatteetaten/frontend-components/Button';
-import NavigationTile from '@skatteetaten/frontend-components/NavigationTile';
+import { Button } from '@skatteetaten/frontend-components/Button';
+import { Dialog } from '@skatteetaten/frontend-components/Dialog';
+import { NavigationTile } from '@skatteetaten/frontend-components/NavigationTile';
 
-const initialState = { hideDialog: true };
+const [state, setState] = React.useState({ hideDialog: true });
 
 function closeDialog() {
   setState({ hideDialog: true });
@@ -55,13 +55,13 @@ const content1 = [
   {
     to: '#',
     heading: 'Næringsrapport skatt AS',
-    icon: 'ArrowForward'
+    icon: 'ArrowForward',
   },
   {
     to: '#',
     heading: 'Næringsrapport skatt ENK',
-    icon: 'ArrowForward'
-  }
+    icon: 'ArrowForward',
+  },
 ];
 
 <div>
@@ -99,11 +99,11 @@ const content1 = [
 ```
 
 ```js
-import Dialog from '@skatteetaten/frontend-components/Dialog';
-import Button from '@skatteetaten/frontend-components/Button';
-import ActionButton from '@skatteetaten/frontend-components/ActionButton';
+import { ActionButton } from '@skatteetaten/frontend-components/ActionButton';
+import { Button } from '@skatteetaten/frontend-components/Button';
+import { Dialog } from '@skatteetaten/frontend-components/Dialog';
 
-const initialState = { hideDialog: true };
+const [state, setState] = React.useState({ hideDialog: true });
 
 function closeDialog() {
   setState({ hideDialog: true });
@@ -142,7 +142,7 @@ import Dialog from '@skatteetaten/frontend-components/Dialog';
 import Button from '@skatteetaten/frontend-components/Button';
 import ActionButton from '@skatteetaten/frontend-components/ActionButton';
 
-const initialState = { hideDialog: true };
+const [state, setState] = React.useState({ hideDialog: true });
 
 function closeDialog() {
   setState({ hideDialog: true });
@@ -219,7 +219,12 @@ function closeDialog() {
 ```
 
 ```js noeditor beskrivelse
+import { MessageBar } from '@skatteetaten/frontend-components/MessageBar';
+
 <div>
+  <MessageBar type={MessageBar.Type.info}>
+    Merk at denne komponenten foreløpig ikke fungerer i micro frontends.
+  </MessageBar>
   <h3>En dialogboks fremhever informasjon</h3>
   <p>
     Dialogboksen dukker opp midt på skjermen for å tiltrekke seg brukerens
@@ -245,5 +250,5 @@ function closeDialog() {
     </a>{' '}
     for hjelp til å skrive gode tekster.
   </p>
-</div>
+</div>;
 ```

@@ -1,118 +1,97 @@
-** Innholdskort brukes til å gruppere innhold som hører sammen. **
+**Card (Innholdskort): brukes til å gruppere innhold som hører sammen.**
 
 ```js
-import Card from '@skatteetaten/frontend-components/Card';
+import { Card } from '@skatteetaten/frontend-components/Card';
+import { Link } from '@skatteetaten/frontend-components/Link';
+import { Typography } from '@skatteetaten/frontend-components/Typography';
 
-const initialState = { title: 'Skatteoppgjøret for 2017' };
+const [state, setState] = React.useState({ title: 'Skatteoppgjøret for 2017' });
 
 <div>
-  <Card
-    color={Card.Color.BEIGE}
-    title={initialState.title}
-    circleOnIcon={false}
-    isExpanded={false}
-    expand
-  >
-    <p>
-      De fleste lønnsmottakere og pensjonister fikk skatteoppgjøret 27. juni.
-      Neste mulighet var 15. august, og heretter blir det løpende oppgjør frem
-      til 24. oktober. Vi kan dessverre ikke fortelle deg når du får
-      skatteoppgjøret ditt, hverken på telefon, chat eller på skattekontoret.
-    </p>
+  <Card title={'Skatteoppgjør'} isExpanded={false} expand>
+    <Typography>
+      <p style={{ marginTop: 0 }}>
+        Skatteoppgjøret er ikke klart ennå. Du finner flere opplysninger på{' '}
+        <Link path={'#'} text={'min side'} />.
+      </p>
+    </Typography>
   </Card>
-  <br />
-  <br />
-  <Card
-    color={Card.Color.GREEN}
-    title="Skatteoppgjøret for 2018"
-    circleOnIcon={false}
-    isExpanded={false}
-    expand
-  >
-    <p>
-      De fleste lønnsmottakere og pensjonister fikk skatteoppgjøret 27. juni.
-      Neste mulighet var 15. august, og heretter blir det løpende oppgjør frem
-      til 24. oktober. Vi kan dessverre ikke fortelle deg når du får
-      skatteoppgjøret ditt, hverken på telefon, chat eller på skattekontoret.
-    </p>
+  <Card title={'Saker'} isExpanded={false} expand>
+    <Typography>
+      <p style={{ marginTop: 0 }}>Ingen registrerte saker.</p>
+    </Typography>
   </Card>
 </div>;
 ```
 
-Du kan endre tittelen mellom åpen og lukket tilstand
+Vi viser gjerne konklusjoner og oppsummeringer i et kort grønn ramme:
 
 ```js
-import Card from '@skatteetaten/frontend-components/Card';
+import { Card } from '@skatteetaten/frontend-components/Card';
+import { Link } from '@skatteetaten/frontend-components/Link';
+import { Typography } from '@skatteetaten/frontend-components/Typography';
 
-const initialState = { title: 'Mine meldinger (2)' };
-
-function onChange(isExpanded) {
-  setState({
-    title: isExpanded ? 'Mine meldinger' : initialState.title
-  });
-}
-
-<div>
-  <Card
-    color={Card.Color.BEIGE}
-    title={state.title}
-    circleOnIcon={false}
-    isExpanded={false}
-    onChange={isExpanded => onChange(isExpanded)}
-    expand
-  >
-    <p>Melding 1</p>
-    <p>Melding 2</p>
-  </Card>
-</div>;
-```
-
-Hvitt kort med ramme:
-
-```js
-import Card from '@skatteetaten/frontend-components/Card';
-import Grid from '@skatteetaten/frontend-components/Grid';
-import TextField from '@skatteetaten/frontend-components/TextField';
+const [state, setState] = React.useState({ title: 'Skatteoppgjøret for 2017' });
 
 <div>
   <Card
     color={Card.Color.WHITE}
     border={Card.Border.GREEN_BORDER}
-    title="Du må betale omregistreringsavgift"
-    subtitle="Gjelder kjøretøyet PR 12345"
+    title={'Skatteoppgjør'}
+    titlesize="large"
   >
-    <Grid padding={'10px 5px 0px 1px'}>
-      <Grid.Row>
-        <Grid.Col noSpacing xl={2} md={8}>
-          <TextField
-            id={'my-readonlyfield-1'}
-            readOnly
-            label="Beløp"
-            value={'3600'}
-            inputSize={'large'}
-            boldText={true}
-          />
+    <Typography>
+      <p style={{ marginTop: 0 }}>
+        Skatteoppgjøret er ikke klart ennå. Du finner flere opplysninger på{' '}
+        <Link path={'#'} text={'min side'} />.
+      </p>
+    </Typography>
+  </Card>
+</div>;
+```
+
+Varsel i card:
+
+```js
+import { Card } from '@skatteetaten/frontend-components/Card';
+import { Grid } from '@skatteetaten/frontend-components/Grid';
+import { Icon } from '@skatteetaten/frontend-components/Icon';
+import { TextField } from '@skatteetaten/frontend-components/TextField';
+import { UseScreen } from '../../components/utils/ScreenPlugin';
+
+const screenSize = UseScreen();
+
+<div>
+  <Card color={Card.Color.BEIGE} margin={screenSize.gt.md ? 'small' : 'medium'}>
+    <Grid padding={'0px'}>
+      <Grid.Row rowSpacing={Grid.SPACE_LARGE}>
+        <Grid.Col noSpacing sm={0} lg={1} xl={2}>
+          <div
+            style={{
+              textAlign: 'right',
+              marginTop: '-4px',
+              marginRight: '16px',
+            }}
+          >
+            <Icon
+              iconName="Info"
+              style={{
+                fontSize: '36px',
+                display: screenSize.lt.xl ? 'none' : 'block',
+              }}
+            />
+          </div>
         </Grid.Col>
-        <Grid.Col noSpacing xl={4} md={8}>
-          <TextField
-            id={'my-readonlyfield-2'}
-            readOnly
-            label="KID"
-            value={'4432 1233 4324 5425'}
-            inputSize={'large'}
-            boldText={true}
-          />
+        <Grid.Col noSpacing sm={12} lg={10} xl={8}>
+          <h3 style={{ marginTop: '0px' }}>Varsel</h3>
+          <p style={{ margin: '0px' }}>
+            Dersom vi ønsker å tiltrekke brukerens oppmerksomhet kan vi legge
+            inn bokser (Card) og et passende ikon. Siden det er ønskelig at
+            innholdet inni boksen justeres pent med innholdet rundt, plasserer
+            vi det i et grid.
+          </p>
         </Grid.Col>
-        <Grid.Col noSpacing xl={3} md={8}>
-          <TextField
-            id={'my-readonlyfield-3'}
-            readOnly
-            label="Kontonummer"
-            value={'9484 12 31435'}
-            inputSize={'large'}
-            boldText={true}
-          />
-        </Grid.Col>
+        <Grid.Col noSpacing sm={0} lg={1} xl={2}></Grid.Col>
       </Grid.Row>
     </Grid>
   </Card>

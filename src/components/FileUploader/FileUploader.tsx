@@ -3,112 +3,18 @@ import axios, { AxiosResponse } from 'axios';
 import i18n, { t } from './../utils/i18n/i18n';
 import { getClassNames } from './FileUploader.classNames';
 import classnames from 'classnames';
-import Icon from '../Icon';
-import LabelWithCallout, {
-  calloutState,
-  LabelWithCalloutProps
-} from '../LabelWithCallout';
-import Spinner from '../Spinner';
-import ErrorMessage from '../ErrorMessage';
-import Link from '../Link';
-
-export enum Language {
-  en = 'en',
-  nb = 'nb',
-  nn = 'nn'
-}
-
-export enum FileFormatTypes {
-  doc = '.doc',
-  docx = '.docx',
-  jpeg = '.jpeg',
-  jpg = '.jpg',
-  pdf = '.pdf',
-  png = '.png',
-  tif = '.tif',
-  txt = '.txt',
-  xml = '.xml'
-}
-
-export interface AttachmentMetadata extends File {
-  id: string;
-}
-/**
- * @visibleName FileUploader (Filopplaster)
- */
-export interface FileUploaderProps {
-  /** Akksepterte filformater */
-  acceptedFileFormats?: Array<FileFormatTypes>;
-  /** Tekst for aksepeterte typer*/
-  acceptedFileFormatsLabel?: string;
-  /** Tekst for opplastingskomponenten */
-  addFileString?: string | JSX.Element;
-  /** Funksjon som kjøres etter opplasting */
-  afterUpload?: (uploadedFiles: any) => void;
-  /** aria-label @deprecated */
-  ariaLabel?: string;
-  /** string for Apikall */
-  axiosPath?: string;
-  /** CSS class */
-  className?: string;
-  /** Lukk callout på blur */
-  labelWithCalloutAutoDismiss?: boolean;
-  /** trigger funksjon til å slette alle filer */
-  deleteAllFiles?: boolean;
-  /** Aria-label for "fjern fil"-knapp */
-  deleteButtonAriaLabel?: string;
-  /** Funksjon for å slette opplastet fil */
-  deleteFile?: (file: AttachmentMetadata | File, errors: string[]) => void;
-  /**feilmelding for oversteget av filstørrelsesgrense*/
-  exceedFileSizeLimitErrorMessage?: string;
-  /** Opplastede filer */
-  files?: Array<any>;
-  /** Størrelsesgrense til en enkelt fil i bit*/
-  fileSizeLimit?: number;
-  /** Forsinkelse før opplasting i millisekunder*/
-  forsinkelse?: number;
-  /** Hjelpetekst */
-  help?: string | JSX.Element;
-  /** Id - should have a value so unique references to labels inside component can be made */
-  id?: string;
-  /** Tilleggsinformasjon */
-  info?: string | JSX.Element;
-  /** Definer ugyldige tegn som skal erstattes med "_". NormalizeFileName vil erstatte alle ugyldige tegn dersom denne verdien ikke er satt. */
-  invalidCharacterRegexp?: RegExp;
-  /**Funksjon som kjører dersom spinner forandrer state */
-  isLoading?: (loading: boolean) => void;
-  /** Beskrivende label for FileUploader */
-  label?: string;
-  /** aria-label for knapp i label */
-  labelButtonAriaLabel?: string;
-  /** Overstyr label, se LabelWithCallout komponent */
-  labelCallout?: LabelWithCalloutProps;
-  /** Language selection for what the screen reader reads out. Default is Norwegian Bokmål */
-  language?: Language;
-  /** Spinner når fil laster */
-  loading?: boolean;
-  /** Mulighet for å laste opp flere filer */
-  multipleFiles?: boolean;
-  /** Erstatter tegn som er ugyldige */
-  normalizeFileName?: boolean;
-  /** Brukerspesifisert event for callout */
-  onCalloutToggle?: (
-    oldCalloutState: calloutState,
-    newCalloutState: calloutState
-  ) => void;
-  /** Parametere for axioskall */
-  queryParams?: any;
-  /** Funksjon for filopplasting */
-  uploadFile?: (file: File) => void;
-  /** Gjør at DELETE operasjonen, ved slett av opplastet fil, fungerer når løsningen kjører bak WebSeal.
-   * Default implementasjon legger ved en tom body i DELETE requesten som er nødvendig for løsninger som kjører bak BigIp
-   *  **/
-  usesWebSealCompatibleDelete?: boolean;
-  /**
-   * Funksjon for filnedlasting
-   * */
-  downloadFile?: (file: File) => void;
-}
+import { ErrorMessage } from '../ErrorMessage';
+import { Spinner } from '../Spinner';
+import { Icon } from '../Icon';
+import { LabelWithCallout } from '../LabelWithCallout';
+import { Link } from '../Link';
+import {
+  AttachmentMetadata,
+  FileFormatTypes,
+  FileUploaderProps,
+} from './FileUploader.types';
+import { useEffect, useRef, useState } from 'react';
+import { generateId } from '../utils';
 
 export const isCorrectFileFormat = (
   file: File,
@@ -144,7 +50,7 @@ enum FilTyperNavn {
   WordFile = 'WordFile',
   PDFFile = 'PDFFile',
   XMLFile = 'XMLFile',
-  File = 'File'
+  File = 'File',
 }
 
 const filtypeMap = (() => {
@@ -164,7 +70,7 @@ const getFileIconName = (fil: AttachmentMetadata) => {
   return fileType ? fileType : FilTyperNavn.File;
 };
 
-const FileUploader: React.FC<FileUploaderProps> = props => {
+export const FileUploader: React.FC<FileUploaderProps> = (props) => {
   const {
     acceptedFileFormats,
     acceptedFileFormatsLabel,
@@ -185,8 +91,7 @@ const FileUploader: React.FC<FileUploaderProps> = props => {
     isLoading,
     label,
     labelButtonAriaLabel,
-    labelCallout,
-    labelWithCalloutAutoDismiss,
+    labelWithCalloutProps,
     language,
     loading,
     multipleFiles,
@@ -194,30 +99,36 @@ const FileUploader: React.FC<FileUploaderProps> = props => {
     onCalloutToggle,
     queryParams,
     uploadFile,
-    downloadFile
+    downloadFile,
   } = props;
   const styles = getClassNames(props);
-  const [internalFiles, setInternalFiles] = React.useState<Array<any>>(
+  const [internalFiles, setInternalFiles] = useState<Array<any>>(
     files ? files : []
   );
-  const [internalErrorMessages, setInternalErrorMessages] = React.useState<
-    string[]
-  >([]);
-  const [internalLoading, setInternalLoading] = React.useState<boolean>(false);
-  const inputRef = React.useRef<HTMLInputElement | null>(null);
+  const [internalErrorMessages, setInternalErrorMessages] = useState<string[]>(
+    []
+  );
+  const [internalLoading, setInternalLoading] = useState<boolean>(false);
+  const inputRef = useRef<HTMLInputElement | null>(null);
+  const uploadAreaRef = useRef<HTMLDivElement | null>(null);
+
+  const randomId = generateId();
+  const fileuploadLabelId = 'fileupload'.concat(randomId, '-label');
+  const acceptedFileFormatsId = 'acceptedFileFormats'.concat(randomId);
+  const informationId = 'information'.concat(randomId);
 
   if (language) {
     i18n.changeLanguage(language);
   }
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (files) {
       setInternalFiles(files);
     }
   }, [files]);
 
   const pushToInternalMessages = (msg: string) =>
-    setInternalErrorMessages(prevState => [...prevState, msg]);
+    setInternalErrorMessages((prevState) => [...prevState, msg]);
 
   const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     event.preventDefault();
@@ -231,7 +142,7 @@ const FileUploader: React.FC<FileUploaderProps> = props => {
 
   const triggerUpdateFiles = (validFiles: Array<File>) => {
     if (uploadFile) {
-      validFiles.forEach(file => {
+      validFiles.forEach((file) => {
         uploadFile(file);
       });
     }
@@ -263,7 +174,7 @@ const FileUploader: React.FC<FileUploaderProps> = props => {
     setInternalErrorMessages([]);
 
     const exceedSizeLimitFiles = fileSizeLimit
-      ? fileList.filter(file => file.size > fileSizeLimit)
+      ? fileList.filter((file) => file.size > fileSizeLimit)
       : [];
     if (fileSizeLimit && exceedSizeLimitFiles.length) {
       pushToInternalMessages(
@@ -273,13 +184,13 @@ const FileUploader: React.FC<FileUploaderProps> = props => {
     }
 
     const invalidFileFormatFiles = fileList.filter(
-      file => !isCorrectFileFormat(file, acceptedFileFormats)
+      (file) => !isCorrectFileFormat(file, acceptedFileFormats)
     );
     if (invalidFileFormatFiles.length) {
       pushToInternalMessages(t('fileuploader.error.file_format'));
     }
 
-    const validFiles = fileList.filter(file =>
+    const validFiles = fileList.filter((file) =>
       isValidFile(file, fileSizeLimit)
     );
 
@@ -298,17 +209,17 @@ const FileUploader: React.FC<FileUploaderProps> = props => {
       setTimeout(() => {
         axios
           .all(allPromises)
-          .then(responses => {
+          .then((responses) => {
             const updatedInternalFiles = [
               ...internalFiles,
-              ...responses.map(res => res.data)
+              ...responses.map((res) => res.data),
             ];
             setInternalFiles(updatedInternalFiles);
             if (afterUpload) {
               afterUpload(updatedInternalFiles);
             }
           })
-          .catch(error => {
+          .catch((error) => {
             //TODO: Det trenger design om flere feilmeldinger
             if (error.response && error.response.status === 403) {
               pushToInternalMessages(t('fileuploader.error.upload.403'));
@@ -330,7 +241,7 @@ const FileUploader: React.FC<FileUploaderProps> = props => {
     filstoerrelsegrense: number
   ) =>
     i18n.t('fileuploader.error.file_size', {
-      filstoerrelsegrense: bitToMegabyte(filstoerrelsegrense)
+      filstoerrelsegrense: bitToMegabyte(filstoerrelsegrense),
     });
 
   const bitToMegabyte = (size: number) => (size / (1024 * 1024)).toFixed(1);
@@ -379,16 +290,16 @@ const FileUploader: React.FC<FileUploaderProps> = props => {
       axios
         .delete(`${axiosPath}/${fileToBeDeleted.id}`, {
           params: queryParams,
-          data: props.usesWebSealCompatibleDelete === true ? null : {} // body kreves av BigIP
+          data: props.usesWebSealCompatibleDelete === true ? null : {}, // body kreves av BigIP
         })
         .then(() => {
           const newList = internalFiles.filter(
-            f => f.id !== fileToBeDeleted.id
+            (f) => f.id !== fileToBeDeleted.id
           );
           setInternalFiles(newList);
           triggerUpdateFiles(newList);
         })
-        .catch(error => {
+        .catch((error) => {
           if (error.response && error.response.status === 403) {
             pushToInternalMessages(t('fileuploader.error.delete.403'));
           } else {
@@ -405,20 +316,20 @@ const FileUploader: React.FC<FileUploaderProps> = props => {
         deleteFile(fileToBeDeleted, internalErrorMessages);
       }
     }
+    const ref = uploadAreaRef.current;
+    if (ref) {
+      ref.focus();
+    }
   };
   if (deleteAllFiles && files) {
-    files.forEach(file => {
+    files.forEach((file) => {
       deleteFromList(file);
     });
   }
 
-  if (isLoading) {
-    if (loading || internalLoading) {
-      isLoading(true);
-    } else {
-      isLoading(false);
-    }
-  }
+  useEffect(() => {
+    isLoading && isLoading(loading || internalLoading);
+  }, [loading, internalLoading, isLoading]);
 
   return (
     <div className={classnames(styles.main, className)}>
@@ -429,26 +340,30 @@ const FileUploader: React.FC<FileUploaderProps> = props => {
         buttonAriaLabel={labelButtonAriaLabel}
         help={help}
         onCalloutToggle={onCalloutToggle}
-        autoDismiss={labelWithCalloutAutoDismiss}
-        {...labelCallout}
+        {...labelWithCalloutProps}
       />
-      <label id="buttonLabel">
+      <label id={fileuploadLabelId}>
         <div
+          ref={uploadAreaRef}
           className={styles.uploadArea}
           role="button"
-          aria-describedby="acceptedFileFormats"
+          aria-describedby={fileuploadLabelId.concat(
+            ' ',
+            acceptedFileFormatsId,
+            info ? ' '.concat(informationId) : ''
+          )}
           tabIndex={0}
           onDragEnter={handleDragOverAndDragEnter}
           onDragLeave={handleDragLeave}
           onDragOver={handleDragOverAndDragEnter}
           onDrop={handleDrop}
-          onClick={event => {
+          onClick={(event) => {
             event.preventDefault();
             if (inputRef.current) {
               inputRef.current.click();
             }
           }}
-          onKeyPress={ev => {
+          onKeyPress={(ev) => {
             if (ev.keyCode === 0 && inputRef.current) {
               inputRef.current.click();
             }
@@ -478,7 +393,7 @@ const FileUploader: React.FC<FileUploaderProps> = props => {
       />
 
       {acceptedFileFormats && (
-        <span className={styles.informationWrapper} id="acceptedFileFormats">
+        <span className={styles.informationWrapper} id={acceptedFileFormatsId}>
           {acceptedFileFormatsLabel
             ? acceptedFileFormatsLabel
             : t('fileuploader.accepted_file_formats')}{' '}
@@ -496,50 +411,53 @@ const FileUploader: React.FC<FileUploaderProps> = props => {
         </span>
       )}
       {info && (
-        <div className={styles.informationWrapper} id="information">
+        <div className={styles.informationWrapper} id={informationId}>
           {info}
         </div>
       )}
       {internalErrorMessages &&
-        internalErrorMessages.map(msg => (
+        internalErrorMessages.map((msg) => (
           <div key={msg}>
             <ErrorMessage>{msg}</ErrorMessage>
           </div>
         ))}
-      {internalFiles.length > 0 && (
-        <div role="alert" className={styles.fileListWrapper}>
-          <ul className={styles.fileList}>
-            {internalFiles.map((file, index: number) => (
-              <li key={file.name.concat(index.toString())}>
-                <div className={styles.fileName}>
-                  <Icon
-                    className={styles.fileIcon}
-                    iconName={getFileIconName(file)}
-                  />
-                  {showFileName(file)}
-                </div>
-                {file.error ? (
-                  <Icon iconName={'Error'} className={styles.errorColor} />
-                ) : (
-                  <button
-                    className={styles.fileListCancelBtn}
-                    onClick={() => deleteFromList(file)}
-                    aria-label={
-                      deleteButtonAriaLabel
-                        ? deleteButtonAriaLabel
-                        : t('fileuploader.delete.ariaLabel')
-                    }
-                  >
-                    <Icon iconName={'Cancel'} />
-                  </button>
-                )}
-              </li>
-            ))}
-          </ul>
-        </div>
-      )}
+      <div role="alert" aria-atomic="true" className={styles.fileListWrapper}>
+        {internalFiles.length > 0 && (
+          <>
+            <span className="sr-only">
+              {t('fileuploader.uploaded.sr_heading')}
+            </span>
+            <ul className={styles.fileList}>
+              {internalFiles.map((file, index: number) => (
+                <li key={file.name.concat(index.toString())}>
+                  <div className={styles.fileName}>
+                    <Icon
+                      className={styles.fileIcon}
+                      iconName={getFileIconName(file)}
+                    />
+                    {showFileName(file)}
+                  </div>
+                  {file.error ? (
+                    <Icon iconName={'Error'} className={styles.errorColor} />
+                  ) : (
+                    <button
+                      className={styles.fileListCancelBtn}
+                      onClick={() => deleteFromList(file)}
+                      aria-label={
+                        deleteButtonAriaLabel
+                          ? deleteButtonAriaLabel
+                          : t('fileuploader.delete.ariaLabel')
+                      }
+                    >
+                      <Icon iconName={'Cancel'} />
+                    </button>
+                  )}
+                </li>
+              ))}
+            </ul>
+          </>
+        )}
+      </div>
     </div>
   );
 };
-
-export default FileUploader;

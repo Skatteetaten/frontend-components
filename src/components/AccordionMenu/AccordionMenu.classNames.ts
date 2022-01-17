@@ -1,6 +1,6 @@
-import { mergeStyleSets } from '@uifabric/merge-styles';
-import { getTheme } from '@uifabric/styling';
-import { PaletteProps } from '..';
+import { mergeStyleSets } from '@fluentui/merge-styles';
+import { getTheme } from '@fluentui/react/lib/Styling';
+import { PaletteProps, FontSizes, IconFontSizes } from '../utils';
 
 export function getClassNames(props): any {
   const palette = getTheme().palette as PaletteProps;
@@ -13,67 +13,91 @@ export function getClassNames(props): any {
       selectors: {
         li: {
           listStyle: 'none',
+          margin: '0 !important',
           selectors: {
             '&:last-child': {
-              borderBottom: `2px solid ${palette.skeColor.grey}`
-            }
-          }
-        }
-      }
+              borderBottom: `2px solid ${palette.skeColor.grey}`,
+            },
+          },
+        },
+      },
     },
     menuItem: {
+      backgroundColor: palette.skeColor.white,
       display: 'flex',
+      flexDirection: 'row',
+      justifyContent: 'space-between',
+      alignItems: 'center',
+      width: '100%',
+      border: 'none',
       borderTop: `2px solid ${palette.skeColor.grey}`,
+      textAlign: 'left',
       padding: '0 15px',
       selectors: {
         '&:hover': {
-          background: palette.skeColor.lightBlue
-        }
-      }
+          backgroundColor: palette.skeColor.backgroundHoverColor,
+          cursor: 'pointer',
+        },
+        '&:focus': {
+          backgroundColor: palette.skeColor.backgroundFocusColor,
+          outline: 'none',
+        },
+        '&:active': {
+          color: palette.skeColor.darkBlue,
+        },
+      },
     },
     menuItemIsOpen: {
-      borderBottom: `2px solid ${palette.skeColor.grey}`
+      borderTop: `2px solid ${palette.skeColor.grey} !important`,
     },
     menuItemTitle: {
       display: 'flex',
       alignItems: 'center',
-      flex: flex ? '1 1 auto' : undefined
+      flex: flex ? '1 1 auto' : undefined,
     },
     title: {
+      fontSize: FontSizes.medium,
       display: flex ? 'flex' : undefined,
       flex: flex ? '1 1 auto' : undefined,
       margin: '0 15px 0 15px',
-      padding: '10px 0'
+      padding: '10px 0',
     },
     iconWrapper: {
-      selectors: {
-        div: {
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          height: 40,
-          width: 40,
-          border: `2px solid ${palette.skeColor.blackAlt}`,
-          borderRadius: '50%'
-        }
-      }
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      flexGrow: '0',
+      flexShrink: '0',
+      height: 40,
+      width: 40,
+      border: `2px solid ${palette.skeColor.blackAlt}`,
+      borderRadius: '50%',
+      margin: '8px 0 8px 0',
+      fontSize: IconFontSizes.xlarge,
     },
     toggleButton: {
-      alignSelf: 'flex-start',
-      marginLeft: 'auto',
-      padding: '10px 0'
+      color: palette.skeColor.blue,
+      selectors: {
+        i: {
+          fontSize: IconFontSizes.xlarge,
+          paddingLeft: '1px',
+        },
+      },
     },
     toggleButtonOpen: {
+      color: palette.skeColor.blue,
       selectors: {
-        '& i': {
-          transform: 'rotate(180deg)'
-        }
-      }
+        i: {
+          transform: 'rotate(180deg)',
+          paddingLeft: '1px',
+        },
+      },
     },
     content: {
+      borderTop: `2px solid ${palette.skeColor.grey}`,
       padding: 15,
-      background: palette.skeColor.lightBeige,
-      display: 'block'
-    }
+      background: palette.skeColor.grey5,
+      display: 'block',
+    },
   });
 }

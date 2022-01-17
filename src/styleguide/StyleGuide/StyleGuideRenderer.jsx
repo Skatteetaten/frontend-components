@@ -1,11 +1,14 @@
 import { withRouter } from 'react-router';
-import TopBanner from '../../components/TopBanner';
-import FooterContent from '../../components/FooterContent';
-import Grid from '../../components/Grid';
-import Link from '../../components/Link';
-import ActionButton from '../../components/ActionButton';
+
 import { getClassNames } from './classNames';
 import React from 'react';
+
+import { ActionButton } from '../../components/ActionButton';
+import { FooterContent } from '../../components/FooterContent';
+import { Grid } from '../../components/Grid';
+import { Link } from '../../components/Link';
+import { TopBanner } from '../../components/TopBanner';
+
 import './style.css';
 
 const ScrollToTop = withRouter(
@@ -22,7 +25,7 @@ const ScrollToTop = withRouter(
   }
 );
 
-export class StyleGuideRenderer extends React.Component<> {
+export class StyleGuideRenderer extends React.Component {
   static displayName = 'StyleGuideRenderer';
 
   constructor(props) {
@@ -30,19 +33,19 @@ export class StyleGuideRenderer extends React.Component<> {
     this.state = {
       isHidden: true,
       showNavigation: false,
-      version: ''
+      version: '',
     };
   }
 
   _toggleMainNavigation() {
     this.setState({
-      showNavigation: !this.state.showNavigation
+      showNavigation: !this.state.showNavigation,
     });
   }
 
   _toggleComponentVisibility() {
     this.setState({
-      isHidden: !this.state.isHidden
+      isHidden: !this.state.isHidden,
     });
   }
 
@@ -146,7 +149,10 @@ export class StyleGuideRenderer extends React.Component<> {
           </div>
           <div className="footer">
             <FooterContent>
-              <p>Versjon {version}</p>
+              <div style={{ marginLeft: '30px' }}>
+                {' '}
+                <p>Versjon {version}</p>
+              </div>
             </FooterContent>
           </div>
         </div>

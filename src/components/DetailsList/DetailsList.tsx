@@ -7,30 +7,15 @@ import {
   ConstrainMode,
   CheckboxVisibility,
   Selection,
-  IDetailsListProps,
-  IColumn as FabricIColumn,
-  DetailsRow
-} from 'office-ui-fabric-react/lib-commonjs/DetailsList';
+  DetailsRow,
+} from '@fluentui/react';
 import { getClassNames } from './DetailsList.classNames';
+import { DetailsListProps, IColumn } from './DetailsList.types';
 
-export interface IColumn extends FabricIColumn {
-  sortItems?: any;
-}
+export { FabricDetailsList, DetailsRow };
 
-export { DetailsRow };
-
-export interface DetailsListProps extends IDetailsListProps {
-  background?: 'white' | 'transparent';
-  /**  Konfigurasjon for kolonnenavn og rekkefølge */
-  columns?: Array<IColumn>;
-  isSorted?: boolean;
-  isSortedDescending?: boolean;
-  /** Mulighet for å skru av hover-effekt dersom listeelement ikke er klikkbar. Kan ikke kombineres med checkbox */
-  noHover?: boolean;
-  onSortUpdate?: (...args: any[]) => any;
-}
-/**
- * @visibleName DetailsList (Sammensatt tabell)
+/*
+ * visibleName DetailsList (Sammensatt tabell)
  */
 export class DetailsList extends React.PureComponent<DetailsListProps, {}> {
   static ConstrainMode = ConstrainMode;
@@ -45,43 +30,43 @@ export class DetailsList extends React.PureComponent<DetailsListProps, {}> {
     constrainMode: DetailsList.ConstrainMode.unconstrained,
     items: [],
     layoutMode: DetailsList.DetailsListLayoutMode.justified,
-    selectionMode: DetailsList.SelectionMode.none
+    selectionMode: DetailsList.SelectionMode.none,
   };
 
-  sortColumn = sortItems => (ev, column) => {
+  sortColumn = (sortItems) => (ev, column) => {
     const { items, columns } = this.props;
     const currentColumn =
       columns &&
-      columns.filter(currCol => {
+      columns.filter((currCol) => {
         return currCol.key === column.key;
       })[0];
     const newColumns =
       columns &&
-      columns.map(newCol => {
+      columns.map((newCol) => {
         if (newCol === currentColumn) {
           return {
             ...newCol,
             isSorted: true,
-            isSortedDescending: !currentColumn.isSortedDescending
+            isSortedDescending: !currentColumn.isSortedDescending,
           };
         }
         return {
           ...newCol,
           isSorted: false,
-          isSortedDescending: true
+          isSortedDescending: true,
         };
       });
 
     const sortedItems = sortItems({
       isDescending: currentColumn && currentColumn.isSortedDescending,
       fieldName: currentColumn && currentColumn.fieldName,
-      items: items
+      items: items,
     });
 
     this.props.onSortUpdate &&
       this.props.onSortUpdate({
         columns: newColumns,
-        items: sortedItems
+        items: sortedItems,
       });
   };
 
@@ -94,7 +79,7 @@ export class DetailsList extends React.PureComponent<DetailsListProps, {}> {
           ? col
           : {
               ...col,
-              onColumnClick: this.sortColumn(col.sortItems)
+              onColumnClick: this.sortColumn(col.sortItems),
             }
       );
 
@@ -109,5 +94,3 @@ export class DetailsList extends React.PureComponent<DetailsListProps, {}> {
     );
   }
 }
-
-export default DetailsList;
