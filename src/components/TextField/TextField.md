@@ -71,6 +71,37 @@ const [children, setChildren] = React.useState('23');
 </>;
 ```
 
+Prefix og suffix i felt:
+
+```js
+import { TextField } from '@skatteetaten/frontend-components/TextField';
+
+const [state, setState] = React.useState({ value: '' });
+
+<div style={{ maxWidth: '300px', paddingBottom: '16px' }}>
+  <p style={{ margin: '0 0 8px 0' }}>
+    <em>Prefix:</em>
+  </p>
+  <TextField
+    id={'my-input'}
+    label={'Telefonnummer'}
+    prefix="+47"
+    value={state.value}
+    onChange={(e, value) => setState({ value: value })}
+  />
+  <p style={{ paddingTop: '16px', marginBottom: '8px' }}>
+    <em>Suffix:</em>
+  </p>
+  <TextField
+    id={'my-input'}
+    label={'Inntekt'}
+    suffix="NOK"
+    value={state.value}
+    onChange={(e, value) => setState({ value: value })}
+  />
+</div>;
+```
+
 Feilmelding vises i umiddelbar nærhet til feltet:
 
 ```js
@@ -110,7 +141,9 @@ const [state, setState] = React.useState({
     onChange={(e, value) => setState({ ...state, value })}
     boldText={true}
   />
-  <p>Med suffix:</p>
+  <p style={{ paddingTop: '16px', marginBottom: '8px' }}>
+    <em>Med suffix:</em>
+  </p>
   <TextField
     readOnly
     editable
@@ -120,7 +153,9 @@ const [state, setState] = React.useState({
     boldText={true}
     suffix={'kg'}
   />
-  <p>Rediger når tekstfeltet er tomt:</p>
+  <p style={{ paddingTop: '16px', marginBottom: '8px' }}>
+    <em>Rediger når tekstfeltet er tomt:</em>
+  </p>
   <TextField
     readOnly
     editable
