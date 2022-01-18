@@ -11,14 +11,14 @@ function getFieldTypeStyles(props: DropdownProps) {
     return {
       '.ms-Dropdown-title': {
         borderWidth: 2,
-        padding: '0.313rem 0,75rem',
+        padding: '0.325rem 0.75rem',
         borderRadius: '0rem',
         fontSize: designtokenFonts['ske-font-size-l'],
-        height: '2.875rem',
+        height: designtokenSpacing['ske-spacing-xxxl'],
       },
       '& span.ms-Dropdown-caretDownWrapper': {
         top: designtokenSpacing['ske-spacing-md'],
-        fontSize: designtokenFonts['ske-font-size-l'],
+        fontSize: designtokenFonts['ske-font-size-icon-l'],
         color: designtokenColors['ske-color-interactive'],
       },
     };
@@ -73,7 +73,7 @@ export const getClassNames = (props: DropdownProps) => {
         '& .is-disabled .ms-Dropdown-title': {
           borderColor: designtokenColors['ske-color-grey-50'],
           borderStyle: 'solid',
-          borderWidth: '0.063rem',
+          borderWidth: '0.075rem',
           backgroundColor: designtokenColors['ske-color-grey-5'],
         },
         '& .is-disabled .ms-Dropdown-caretDownWrapper': {
@@ -117,6 +117,7 @@ export const getClassNames = (props: DropdownProps) => {
       padding: 0,
       marginLeft: 0,
       marginRight: 0,
+      height: designtokenSpacing['ske-spacing-xxl'],
     },
   });
 };
