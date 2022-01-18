@@ -12,8 +12,8 @@ function getFieldTypeStyles(props: DatePickerProps) {
     return {
       '& .ms-TextField-fieldGroup': {
         borderWidth: designtokenSpacing['ske-spacing-xs'],
-        height: '2.875rem',
-        margin: '0.313rem 0',
+        height: designtokenSpacing['ske-spacing-xxxl'],
+        margin: '0.325rem 0',
         fontSize: designtokenFonts['ske-font-size-l'],
       },
       '& input.ms-TextField-field': {
@@ -118,7 +118,7 @@ export const getClassNames = (props: DatePickerProps) => {
         backgroundColor: readonlyMode ? 'transparent' : undefined,
         borderColor: designtokenColors['ske-color-grey-50'],
         borderStyle: 'solid',
-        borderWidth: '0.063rem',
+        borderWidth: '0.075rem',
       },
       '& .ms-TextField .ms-TextField-fieldGroup .ms-TextField-field': readonlyMode && {
         fontWeight: designtokenFonts['ske-font-weight-bold'],
@@ -130,10 +130,10 @@ export const getClassNames = (props: DatePickerProps) => {
       },
       // style customization for underlined mode
       '& .ms-TextField.ms-TextField--underlined .ms-TextField-wrapper': {
-        border: `0.063rem solid ${color}`,
+        border: `0.075rem solid ${color}`,
       },
       '& .ms-TextField.ms-TextField--underlined .ms-TextField-wrapper:hover': {
-        border: `0.063rem solid ${designtokenColors['ske-color-black-100']}`,
+        border: `0.075rem solid ${designtokenColors['ske-color-black-100']}`,
       },
       '& .ms-TextField-errorMessage': {
         color: designtokenColors['ske-color-status-error'],
