@@ -67,9 +67,6 @@ export const getCalendarClassNames = (props: DatePickerProps) => {
       '& .ms-DatePicker-monthOption:hover': {
         color: `${designtokenColors['ske-color-black-100']} !important`,
       },
-      '& .ms-DatePicker-goToday': {
-        right: '0.625rem',
-      },
       '& .ms-DatePicker-day--highlighted': {
         backgroundColor: designtokenColors['ske-color-interactive-light'],
         color: designtokenColors['ske-color-black-100'],
@@ -157,9 +154,6 @@ export const getClassNames = (props: DatePickerProps) => {
       '& .ms-TextField.is-active .ms-TextField-fieldGroup': errorMessage && {
         outlineColor: designtokenColors['ske-color-status-interactive'],
         borderColor: designtokenColors['ske-color-status-interactive'],
-      },
-      '& .ms-DatePicker-goToday ': {
-        right: '0.875rem;',
       },
       ...getFieldTypeStyles(props),
       ...getTextFieldStyles(props),
