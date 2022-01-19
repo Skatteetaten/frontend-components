@@ -13,16 +13,18 @@ function getFieldTypeStyles(props: DatePickerProps) {
       '& .ms-TextField-fieldGroup': {
         borderWidth: designtokenSpacing['ske-spacing-xs'],
         height: designtokenSpacing['ske-spacing-xxxl'],
-        margin: '0.325rem 0',
+        margin: `${designtokenSpacing['ske-spacing-sm']} 0`,
         fontSize: designtokenFonts['ske-font-size-l'],
       },
       '& input.ms-TextField-field': {
         fontSize: `${designtokenFonts['ske-font-size-l']} !important`,
       },
       'i.ms-DatePicker-event--without-label': {
-        marginTop: '0.375rem',
+        marginTop: designtokenSpacing['ske-spacing-xs'],
+        padding: designtokenSpacing['ske-spacing-sm'],
         fontSize: designtokenFonts['ske-font-size-xl'],
         color: designtokenColors['ske-color-interactive'],
+        lineHeight: designtokenSpacing['ske-spacing-xxl'],
       },
     };
   } else {
@@ -91,7 +93,7 @@ export const getClassNames = (props: DatePickerProps) => {
     position: 'relative',
     selectors: {
       '&& .ms-TextField-fieldGroup': {
-        borderRadius: '0rem',
+        borderRadius: 0,
         borderColor: designtokenColors['ske-color-black-100'],
       },
       '& .ms-TextField-field': {
@@ -103,7 +105,7 @@ export const getClassNames = (props: DatePickerProps) => {
       '& .ms-TextField.is-disabled': !readonlyMode && {
         borderColor: designtokenColors['ske-color-grey-50'],
         borderStyle: 'solid',
-        borderWidth: '0rem',
+        borderWidth: 0,
         backgroundColor: designtokenColors['ske-color-grey-5'],
       },
       '& .ms-TextField.is-disabled i': {
@@ -118,7 +120,7 @@ export const getClassNames = (props: DatePickerProps) => {
         backgroundColor: readonlyMode ? 'transparent' : undefined,
         borderColor: designtokenColors['ske-color-grey-50'],
         borderStyle: 'solid',
-        borderWidth: '0.075rem',
+        borderWidth: '1px',
       },
       '& .ms-TextField .ms-TextField-fieldGroup .ms-TextField-field': readonlyMode && {
         fontWeight: designtokenFonts['ske-font-weight-bold'],
@@ -130,10 +132,10 @@ export const getClassNames = (props: DatePickerProps) => {
       },
       // style customization for underlined mode
       '& .ms-TextField.ms-TextField--underlined .ms-TextField-wrapper': {
-        border: `0.075rem solid ${color}`,
+        border: `1px solid ${color}`,
       },
       '& .ms-TextField.ms-TextField--underlined .ms-TextField-wrapper:hover': {
-        border: `0.075rem solid ${designtokenColors['ske-color-black-100']}`,
+        border: `1px solid ${designtokenColors['ske-color-black-100']}`,
       },
       '& .ms-TextField-errorMessage': {
         color: designtokenColors['ske-color-status-error'],

@@ -11,10 +11,11 @@ function getFieldTypeStyles(props: DropdownProps) {
     return {
       '.ms-Dropdown-title': {
         borderWidth: 2,
-        padding: '0.325rem 0.75rem',
-        borderRadius: '0rem',
+        padding: `${designtokenSpacing['ske-spacing-sm']} ${designtokenSpacing['ske-spacing-md']}`,
+        borderRadius: '0',
         fontSize: designtokenFonts['ske-font-size-l'],
         height: designtokenSpacing['ske-spacing-xxxl'],
+        lineHeight: designtokenSpacing['ske-spacing-xxl'],
       },
       '& span.ms-Dropdown-caretDownWrapper': {
         top: designtokenSpacing['ske-spacing-md'],
@@ -52,7 +53,7 @@ export const getClassNames = (props: DropdownProps) => {
         },
         '& .ms-Dropdown-title': {
           borderColor: designtokenColors['ske-color-black-100'],
-          borderRadius: '0rem',
+          borderRadius: '0',
         },
         '& .ms-Dropdown-titleIsPlaceHolder': {
           borderColor: designtokenColors['ske-color-black-100'],
@@ -73,7 +74,7 @@ export const getClassNames = (props: DropdownProps) => {
         '& .is-disabled .ms-Dropdown-title': {
           borderColor: designtokenColors['ske-color-grey-50'],
           borderStyle: 'solid',
-          borderWidth: '0.075rem',
+          borderWidth: 1,
           backgroundColor: designtokenColors['ske-color-grey-5'],
         },
         '& .is-disabled .ms-Dropdown-caretDownWrapper': {
@@ -104,7 +105,7 @@ export const getClassNames = (props: DropdownProps) => {
           fontFamily: SkeIcons.fontFace.fontFamily,
           fontSize: designtokenFonts['ske-font-size-m'],
           content: errorIcon,
-          marginRight: '0.188rem',
+          marginRight: designtokenSpacing['ske-spacing-sm'],
           verticalAlign: 'text-bottom',
         },
       },
