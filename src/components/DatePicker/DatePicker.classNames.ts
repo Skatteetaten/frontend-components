@@ -143,7 +143,7 @@ export const getClassNames = (props: DatePickerProps) => {
             fontSize: designtokenFonts['ske-font-size-l'],
             display: 'block',
             content: errorIcon,
-            marginRight: 3,
+            marginRight: designtokenSpacing['ske-spacing-sm'],
           },
         },
       },

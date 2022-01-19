@@ -78,10 +78,7 @@ exports[`DatePicker komponent matcher snapshot 1`] = `
           display: block;
           font-family: "SkeIconfont";
           font-size: 1.125rem;
-          margin-right: 3px;
-        }
-        & .ms-DatePicker-goToday  {
-          right: 0.875rem;
+          margin-right: 0.25rem;
         }
         & .ms-TextField-fieldGroup {
           font-size: 0.875rem;

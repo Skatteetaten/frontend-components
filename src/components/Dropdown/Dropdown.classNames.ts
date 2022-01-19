@@ -10,7 +10,7 @@ function getFieldTypeStyles(props: DropdownProps) {
   if (props.inputSize === 'large') {
     return {
       '.ms-Dropdown-title': {
-        borderWidth: 2,
+        borderWidth: designtokenSpacing['ske-spacing-xs'],
         padding: `${designtokenSpacing['ske-spacing-sm']} ${designtokenSpacing['ske-spacing-md']}`,
         borderRadius: '0',
         fontSize: designtokenFonts['ske-font-size-l'],
@@ -69,7 +69,7 @@ export const getClassNames = (props: DropdownProps) => {
           border: `${designtokenSpacing['ske-spacing-xs']} solid ${designtokenColors['ske-color-interactive']}`,
         },
         '& .is-disabled .ms-Dropdown': {
-          backgroundColor: 'red',
+          backgroundColor: designtokenColors['ske-color-status-error'],
         },
         '& .is-disabled .ms-Dropdown-title': {
           borderColor: designtokenColors['ske-color-grey-50'],
