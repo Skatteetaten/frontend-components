@@ -3,7 +3,7 @@ import classnames from 'classnames';
 import React, { useEffect, useState } from 'react';
 import { getClassNames } from './Table.classNames';
 import { generateId, getSrOnlyStyle } from '../utils';
-import { TableRow } from './TableRow';
+import { RowData, TableRow } from './TableRow';
 import { SumRow } from './SumRow';
 import { TableProps } from './Table.types';
 
@@ -24,7 +24,7 @@ export const setScrollBarState = (
 /*
  * visibleName Table (Tabell)
  */
-export const Table = <P extends object>(props: TableProps<P>) => {
+export const Table = <P extends RowData>(props: TableProps<P>) => {
   const {
     id,
     customClassNames,
