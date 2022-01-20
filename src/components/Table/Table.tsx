@@ -3,9 +3,9 @@ import classnames from 'classnames';
 import React, { useEffect, useState } from 'react';
 import { getClassNames } from './Table.classNames';
 import { generateId, getSrOnlyStyle } from '../utils';
-import { RowData, TableRow } from './TableRow';
+import { TableRow } from './TableRow';
 import { SumRow } from './SumRow';
-import { TableProps } from './Table.types';
+import { RowData, TableProps } from './Table.types';
 
 import { TableHeader } from './TableHeader';
 
