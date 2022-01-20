@@ -76,7 +76,6 @@ Prefix og suffix i felt:
 ```js
 import { TextField } from '@skatteetaten/frontend-components/TextField';
 
-const [state, setState] = React.useState({ value: '' });
 
 <div style={{ maxWidth: '300px', paddingBottom: '16px' }}>
   <p style={{ margin: '0 0 8px 0' }}>
