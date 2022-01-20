@@ -3,14 +3,9 @@ import { IconButton } from '../../IconButton';
 import { getClassNames } from './TableRow.classNames';
 import classnames from 'classnames';
 import { t } from '../../utils';
+import { RowData } from '../Table.types';
 
-export interface RowData {
-  hideEdit?: boolean;
-  hideSeparator?: boolean;
-  customClassNames?: RowCustomClassNames;
-}
-
-interface RowCustomClassNames {
+export interface RowCustomClassNames {
   tableRow?: string;
   tableCell?: string;
   cellContent?: string;
