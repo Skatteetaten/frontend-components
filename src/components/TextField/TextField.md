@@ -96,7 +96,6 @@ const [state, setState] = React.useState({ value: '' });
     id={'my-input'}
     label={'Inntekt'}
     suffix="NOK"
-    value={state.value}
   />
 </div>;
 ```
