@@ -97,7 +97,6 @@ const [state, setState] = React.useState({ value: '' });
     label={'Inntekt'}
     suffix="NOK"
     value={state.value}
-    onChange={(e, value) => setState({ value: value })}
   />
 </div>;
 ```
