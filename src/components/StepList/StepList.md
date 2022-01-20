@@ -132,6 +132,7 @@ const titles = {
   },
 };
 const showFirstStep = true;
+const showConfirmError = false;
 
 const testFunc = () => {
   console.log('Hei fra ActionButton');
@@ -180,6 +181,8 @@ const testFunc = () => {
         </ul>
         <CheckBox
           boxSide={'start'}
+          required
+          error={showConfirmError}
           label="Jeg bekrefter at opplysningene over stemmer."
         />
       </Card>
