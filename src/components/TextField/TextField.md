@@ -87,7 +87,6 @@ const [state, setState] = React.useState({ value: '' });
     label={'Telefonnummer'}
     prefix="+47"
     value={state.value}
-    onChange={(e, value) => setState({ value: value })}
   />
   <p style={{ paddingTop: '16px', marginBottom: '8px' }}>
     <em>Suffix:</em>
