@@ -86,7 +86,6 @@ const [state, setState] = React.useState({ value: '' });
     id={'my-input'}
     label={'Telefonnummer'}
     prefix="+47"
-    value={state.value}
   />
   <p style={{ paddingTop: '16px', marginBottom: '8px' }}>
     <em>Suffix:</em>
