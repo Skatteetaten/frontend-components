@@ -120,7 +120,7 @@ export const TextField: React.FC<TextFieldProps> = ({
           getClassNames({ ...rest, editMode, readOnly }),
           className
         )}
-        required={required === true || requiredWithMark === true ? true : false}
+        required={required || requiredWithMark}
         errorMessage={errorMessage}
         onBlur={onBlur}
         componentRef={(ref) => {

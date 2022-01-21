@@ -80,9 +80,7 @@ export const Dropdown: React.FC<DropdownProps> = (props) => {
           ariaLabel={label}
           aria-invalid={errorMessage ? true : false}
           id={inputId}
-          required={
-            required === true || requiredWithMark === true ? true : false
-          }
+          required={required || requiredWithMark}
           className={classnames(styles.main, className)}
           styles={dropdownStyles}
           onRenderCaretDown={() => <Icon iconName={'ChevronDown'} />}

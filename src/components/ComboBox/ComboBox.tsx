@@ -64,9 +64,7 @@ export const ComboBox: React.FC<ComboBoxProps> = (props) => {
           {...rest}
           id={inputId}
           ariaLabel={label}
-          required={
-            required === true || requiredWithMark === true ? true : false
-          }
+          required={required || requiredWithMark}
           className={classnames(styles.main, className)}
           errorMessage={errorMessage}
           aria-invalid={errorMessage ? true : false}
