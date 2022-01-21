@@ -4,11 +4,10 @@ import { getFocusStyle } from '../utils';
 import designtokenColors from '../utils/designtokens/_colors.json';
 import designtokenFontSizes from '../utils/designtokens/_fontSizes.json';
 
-export const getClassNames = function getClassNames(props) {
+export const getClassNames = function getClassNames(error) {
   const theme = getTheme();
   const inset = -4;
   const radius = '0';
-  const error = props.error;
 
   return mergeStyles([
     getFocusStyle(theme, inset, 'relative', radius),
