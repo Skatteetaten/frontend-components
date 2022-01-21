@@ -11,7 +11,6 @@ const [state, setState] = React.useState({ value: '' });
   <TextField
     id={'my-input'}
     required
-    showRequiredMark
     label={'Navn'}
     value={state.value}
     onChange={(e, value) => setState({ value: value })}
@@ -29,6 +28,7 @@ const [state, setState] = React.useState({ value: '' });
 <div style={{ maxWidth: '300px' }}>
   <TextField
     label={'Navn'}
+    requiredWithMark
     inputSize={'large'}
     value={state.value}
     onChange={(e, value) => setState({ value })}

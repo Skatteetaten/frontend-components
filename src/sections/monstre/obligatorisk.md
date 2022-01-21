@@ -94,15 +94,13 @@ import { TextField } from '@skatteetaten/frontend-components/TextField';
             </Card>
             <br />
             <TextField
-              required
-              showRequiredMark
+              requiredWithMark
               label={'Navn på virksomhet'}
               inputSize="large"
             />
             <br />
             <RadioButtonGroup
-              required
-              showRequiredMark
+              requiredWithMark
               label="Type virksomhet"
               labelSize="large"
               options={[

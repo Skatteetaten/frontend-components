@@ -23,6 +23,6 @@ export interface ComboBoxProps extends IComboBoxProps {
   calloutProps?: ICalloutProps;
   /** Lesemodus. Kan brukes i sammenheng med text eller defaultSelectedKey for å vise verdi */
   readOnly?: boolean;
-  /** Om ledetekst for obligatoriske felt skal markeres med stjerne (*) */
-  showRequiredMark?: boolean;
+  /** Om feltet er obligatorisk og skal markeres med stjerne (*) */
+  requiredWithMark?: boolean;
 }

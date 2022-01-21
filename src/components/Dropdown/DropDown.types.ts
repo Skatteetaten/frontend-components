@@ -23,8 +23,8 @@ export interface DropdownProps extends IDropdownProps {
   doNotLayer?: boolean;
   /** Lesemodus. Kan brukes i sammenheng med selectedKey eller defaultSelectedKey for å vise verdi */
   readOnly?: boolean;
-  /** Om ledetekst for obligatoriske felt skal markeres med stjerne (*) */
-  showRequiredMark?: boolean;
+  /** Om feltet er obligatorisk og skal markeres med stjerne (*) */
+  requiredWithMark?: boolean;
 }
 
 export interface DropdownState {
