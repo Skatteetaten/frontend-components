@@ -56,7 +56,7 @@ export const DatePicker: React.FC<DatePickerProps> = (
     language,
     onCalloutToggle,
     readonlyMode,
-    showRequiredMark = false,
+    requiredWithMark,
     ...rest
   } = props;
 
@@ -76,7 +76,7 @@ export const DatePicker: React.FC<DatePickerProps> = (
     showGoToToday: true,
     showMonthPickerAsOverlay: false,
     showWeekNumbers: true,
-    showRequiredMark: true,
+    requiredWithMark: false,
   };
   const generatedId = generateId();
   const mainId = id ? id : 'datepicker-' + generatedId;
@@ -138,7 +138,7 @@ export const DatePicker: React.FC<DatePickerProps> = (
         id={labelId}
         inputId={inputId + '-label'}
         label={label}
-        requiredMark={showRequiredMark}
+        requiredMark={requiredWithMark}
         buttonAriaLabel={labelButtonAriaLabel}
         help={help}
         calloutFloating={calloutFloating}
@@ -161,7 +161,9 @@ export const DatePicker: React.FC<DatePickerProps> = (
           getClassNames({ errorMessage, readonlyMode: readOnly, ...rest }),
           className
         )}
-        isRequired={isRequired}
+        isRequired={
+          isRequired === true || requiredWithMark === true ? true : false
+        }
         componentRef={(ref) => {
           datePickerRef.current = ref as IDatePicker;
         }}

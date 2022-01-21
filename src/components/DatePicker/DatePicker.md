@@ -7,8 +7,7 @@ import { DatePicker } from '@skatteetaten/frontend-components/DatePicker';
   <div className="ExampleFlexContainer-200">
     <DatePicker
       id={'my-date'}
-      isRequired
-      showRequiredMark
+      requiredWithMark
       label={'Dato (dd.mm.åååå)'}
       placeholder="Skriv eller velg"
       help={'Denne datovelgeren viser ukenummer i kalender'}

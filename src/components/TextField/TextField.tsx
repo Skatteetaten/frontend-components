@@ -31,7 +31,7 @@ export const TextField: React.FC<TextFieldProps> = ({
   onRenderLabel,
   readOnly,
   value,
-  showRequiredMark = false,
+  requiredWithMark = false,
   ...rest
 }) => {
   rest.inputSize = rest.inputSize || 'normal';
@@ -99,7 +99,7 @@ export const TextField: React.FC<TextFieldProps> = ({
             ? labelButtonAriaLabel
             : setCustomButtonAriaLabel()
         }
-        requiredMark={showRequiredMark}
+        requiredMark={requiredWithMark}
         editFunction={onEdit}
         warning={rest.warning}
         help={rest.help}
@@ -120,7 +120,7 @@ export const TextField: React.FC<TextFieldProps> = ({
           getClassNames({ ...rest, editMode, readOnly }),
           className
         )}
-        required={required}
+        required={required === true || requiredWithMark === true ? true : false}
         errorMessage={errorMessage}
         onBlur={onBlur}
         componentRef={(ref) => {

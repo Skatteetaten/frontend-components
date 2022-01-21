@@ -27,8 +27,8 @@ export interface TextFieldProps extends IMaskedTextFieldProps {
   labelWithCalloutProps?: LabelWithCalloutProps;
   /** Tekst inni feltet som vises før man skriver */
   placeholder?: string;
-  /** Om ledetekst for obligatoriske felt skal markeres med stjerne (*) */
-  showRequiredMark?: boolean;
+  /** Om feltet er obligatorisk og skal markeres med stjerne (*) */
+  requiredWithMark?: boolean;
   /** Tilhørende varseltekst */
   warning?: JSX.Element | string;
   /** Antall rader som skal vises i feltet når multiline er satt */
