@@ -11,6 +11,8 @@ export interface ButtonProps extends IButtonProps {
     | 'secondary'
     | 'secondarySimple'
     | 'callToAction';
+  /** Om knappen skal ta full bredde på mindre skjermer */
+  mobileFullWidth?: boolean;
   /**
    * Skjulte props
    */
