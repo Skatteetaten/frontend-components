@@ -56,7 +56,7 @@ export const DatePicker: React.FC<DatePickerProps> = (
     language,
     onCalloutToggle,
     readonlyMode,
-    requiredWithMark,
+    requiredWithMark = false,
     ...rest
   } = props;
 
@@ -76,7 +76,6 @@ export const DatePicker: React.FC<DatePickerProps> = (
     showGoToToday: true,
     showMonthPickerAsOverlay: false,
     showWeekNumbers: true,
-    requiredWithMark: false,
   };
   const generatedId = generateId();
   const mainId = id ? id : 'datepicker-' + generatedId;
