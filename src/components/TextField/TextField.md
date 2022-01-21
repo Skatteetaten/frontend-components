@@ -76,23 +76,24 @@ Prefix og suffix i felt:
 ```js
 import { TextField } from '@skatteetaten/frontend-components/TextField';
 
-
 <div style={{ maxWidth: '300px', paddingBottom: '16px' }}>
   <p style={{ margin: '0 0 8px 0' }}>
     <em>Prefix:</em>
   </p>
   <TextField
-    id={'my-input'}
+    id={'my-input-tlf'}
     label={'Telefonnummer'}
     prefix="+47"
+    inputMode="tel"
   />
   <p style={{ paddingTop: '16px', marginBottom: '8px' }}>
     <em>Suffix:</em>
   </p>
   <TextField
-    id={'my-input'}
+    id={'my-input-ink'}
     label={'Inntekt'}
     suffix="NOK"
+    inputMode="numeric"
   />
 </div>;
 ```
@@ -109,6 +110,7 @@ const [state, setState] = React.useState({ value: '' });
     label="Inntektsår"
     value={state.value}
     onChange={(e, value) => setState({ value })}
+    inputMode="numeric"
     errorMessage={
       state.value !== '2008' ? 'Inntekståret må være etter 2008.' : null
     }
@@ -177,6 +179,7 @@ const [state, setState] = React.useState({ value: '' });
     label={'Org.nummer (9 siffer)'}
     mask={'999 999 999'}
     maskChar={''}
+    inputMode="numeric"
   />
 </div>;
 ```
