@@ -10,6 +10,8 @@ export interface ComboBoxProps extends IComboBoxProps {
   inputSize?: 'normal' | 'large';
   /** aria-label for knapp i label */
   labelButtonAriaLabel?: string;
+  /** Om feltet er obligatorisk */
+  required?: boolean;
   /** Overstyr label, se LabelWithCallout komponent */
   labelWithCalloutProps?: LabelWithCalloutProps;
   /** Brukerspesifisert event for callout */
@@ -21,4 +23,6 @@ export interface ComboBoxProps extends IComboBoxProps {
   calloutProps?: ICalloutProps;
   /** Lesemodus. Kan brukes i sammenheng med text eller defaultSelectedKey for å vise verdi */
   readOnly?: boolean;
+  /** Om feltet er obligatorisk og skal markeres med stjerne (*) */
+  requiredWithMark?: boolean;
 }

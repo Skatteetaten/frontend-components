@@ -20,12 +20,14 @@ export const RadioButtonGroup = (props: RadioButtonGroupProps) => {
     help,
     warning,
     id,
+    required = false,
     label,
     labelSize,
     labelButtonAriaLabel,
     labelWithCalloutProps,
     onCalloutToggle,
     options,
+    requiredWithMark = false,
     ...rest
   } = props;
   let tempOptions = options;
@@ -52,6 +54,7 @@ export const RadioButtonGroup = (props: RadioButtonGroupProps) => {
         id={labelId}
         label={label}
         buttonAriaLabel={labelButtonAriaLabel}
+        requiredMark={requiredWithMark}
         help={help}
         inputSize={labelSize}
         warning={warning}
@@ -67,6 +70,7 @@ export const RadioButtonGroup = (props: RadioButtonGroupProps) => {
         className={classnames(styles.radioButtons, className)}
         ariaLabelledBy={labelId}
         aria-invalid={errorMessage ? true : false}
+        required={required || requiredWithMark}
       >
         {children}
       </FabricChoiceGroup>

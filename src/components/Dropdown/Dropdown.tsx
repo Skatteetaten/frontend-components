@@ -24,12 +24,14 @@ export const Dropdown: React.FC<DropdownProps> = (props) => {
     labelButtonAriaLabel,
     help,
     onRenderLabel,
+    required = false,
     className,
     id,
     labelWithCalloutProps,
     onCalloutToggle,
     doNotLayer,
     readOnly,
+    requiredWithMark = false,
     ...rest
   } = props;
 
@@ -49,6 +51,7 @@ export const Dropdown: React.FC<DropdownProps> = (props) => {
         id={labelId}
         inputId={readOnly ? inputId : inputId + '-option'}
         label={label}
+        requiredMark={requiredWithMark}
         buttonAriaLabel={labelButtonAriaLabel}
         help={help}
         onCalloutToggle={onCalloutToggle}
@@ -77,6 +80,7 @@ export const Dropdown: React.FC<DropdownProps> = (props) => {
           ariaLabel={label}
           aria-invalid={errorMessage ? true : false}
           id={inputId}
+          required={required || requiredWithMark}
           className={classnames(styles.main, className)}
           styles={dropdownStyles}
           onRenderCaretDown={() => <Icon iconName={'ChevronDown'} />}

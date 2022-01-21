@@ -87,6 +87,7 @@ export const FileUploader: React.FC<FileUploaderProps> = (props) => {
     help,
     id = 'fileupload',
     info,
+    required = false,
     invalidCharacterRegexp,
     isLoading,
     label,
@@ -337,6 +338,7 @@ export const FileUploader: React.FC<FileUploaderProps> = (props) => {
         id={id + '-label'}
         inputId={id + '-input'}
         label={label}
+        requiredMark={required}
         buttonAriaLabel={labelButtonAriaLabel}
         help={help}
         onCalloutToggle={onCalloutToggle}
