@@ -41,7 +41,7 @@ export const getClassNames = (props) => {
     errorIcon: {
       fontSize: '2.4rem',
       color: designtokenColors['ske-color-white-100'],
-      padding: '6px 8px 8x 4px',
+      padding: '6px 8px 8px 4px',
       selectors: {
         [`@media (max-width: ${designtokenBreakpoints['ske-breakpoint-md']})`]: {
           fontSize: '1.4rem',
