@@ -1,0 +1,91 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LanguagePicker komponent matcher snapshot  1`] = `
+<button
+  aria-expanded={false}
+  aria-haspopup={true}
+  className=
+
+      {
+        background: inherit;
+        border: none;
+        color: #ffffff;
+        font-family: inherit;
+        font-size: 0.875rem;
+        margin-bottom: 0px;
+        margin-left: 0px;
+        margin-right: 0px;
+        margin-top: 0px;
+        padding-bottom: 0.75rem;
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+        padding-top: 0.75rem;
+        text-align: left;
+        text-decoration: underline;
+        transition: none;
+        white-space: nowrap;
+      }
+      &:hover {
+        background-color: #ffffff;
+        color: #1a1a1a;
+        outline: none;
+        transition: none;
+      }
+      &:focus {
+        background-color: #ffffff;
+        color: #1a1a1a;
+        outline: none;
+        transition: none;
+      }
+      {
+        padding-right: 1.375rem !important;
+      }
+  onClick={[Function]}
+  style={
+    Object {
+      "cursor": "pointer",
+    }
+  }
+>
+  
+  <div
+    className=
+
+        {
+          display: inline;
+          text-decoration: underline;
+        }
+  >
+    <span
+      className=
+
+          {
+            margin-right: 0.25rem;
+            vertical-align: middle;
+          }
+    />
+  </div>
+  <i
+    aria-hidden={true}
+    className=
+
+        {
+          -moz-osx-font-smoothing: grayscale;
+          -webkit-font-smoothing: antialiased;
+          bottom: 0.5rem;
+          display: inline-block;
+          font-family: "SkeIconfont";
+          font-size: 1.375rem;
+          font-style: normal;
+          font-weight: normal;
+          position: absolute;
+          speak: none;
+          text-rendering: auto;
+          transform: translate(0, 0);
+        }
+    data-icon-name="MenuDown"
+  >
+    
+  </i>
+</button>
+`;
