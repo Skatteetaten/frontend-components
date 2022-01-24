@@ -57,11 +57,10 @@ import { LabelWithCallout } from '@skatteetaten/frontend-components/LabelWithCal
 
 ```js noeditor beskrivelse
 <>
-  <h3>Avkrysningsboks for vilkårlig valg i en liste</h3>
+  <h3>Avkrysningsboks for ett eller flere valg</h3>
   <p>
-    En avkrysningsboks er ideell i en liste med valg der brukeren skal krysse av
-    og få bekreftet dette valget. Hver avkrysning er uavhengig av de andre i
-    listen, og det er også mulig å ikke krysse av.
+    En avkrysningsboks lar brukeren krysse av ett eller flere valg i en liste. 
+Hver avkrysning er uavhengig av de andre i listen, og det er også mulig å ikke krysse av.
   </p>
 
   <p>
