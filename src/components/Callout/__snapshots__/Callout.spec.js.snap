@@ -25,6 +25,7 @@ exports[`Callout komponent matcher snapshot 1`] = `
             border: 2px solid #1a1a1a;
             box-shadow: none !important;
             box-sizing: border-box;
+            display: flex;
             font-family: 'Helvetica Neue', Helvetica , Arial, 'Liberation Sans', 'Nimbus Sans L', sans-serif;
             font-size: 1rem;
             font-weight: 400;
@@ -82,13 +83,14 @@ exports[`Callout komponent matcher snapshot 1`] = `
               overflow-x: hidden;
               overflow-y: auto;
               position: relative;
+              width: 100%;
             }
         onKeyDown={[Function]}
         onMouseDown={[Function]}
         onMouseUp={[Function]}
         style={
           Object {
-            "maxHeight": undefined,
+            "maxHeight": "100%",
             "outline": "none",
             "overflowY": undefined,
           }
