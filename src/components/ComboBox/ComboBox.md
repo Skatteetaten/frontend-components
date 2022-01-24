@@ -215,7 +215,7 @@ Det er mulig å skrive inn nye ord eller bare de første bokstavene slik at det 
 Hvis listen over valg er lang er denne nedtrekkslisten spesielt nyttig.
   </p>
 
-  <h3>Tilpass ComboBoxen til ulike sitasjoner</h3>
+  <h3>Tilpass ComboBoxen til ulike sitasjoner:</h3>
 
   <p>Du kan velge å la brukeren</p>
   <p>
