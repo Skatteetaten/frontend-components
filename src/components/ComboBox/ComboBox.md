@@ -210,27 +210,28 @@ let error = 'En feil';
 <>
   <h3>Fleksibel nedtrekksliste med mulighet for å skrive</h3>
   <p>
-    En nedtrekksliste med skriving skiller seg fra en vanlig{' '}
-    <a href="https://skatteetaten.github.io/frontend-components/#dropdown">
-      nedtrekksliste (Dropdown)
-    </a>{' '}
-    ved at brukeren kan skrive i hovedfeltet. Det er mulig å skrive inn nye ord
-    eller bare de første bokstavene, slik at det automatisk kommer opp et ord
-    fra listen. Hvis listen over valg er lang er denne nedtrekkslisten spesielt
-    nyttig.
+    En nedtrekksliste med skriving lar brukeren skrive i hovedfeltet. 
+Det er mulig å skrive inn nye ord eller bare de første bokstavene slik at det automatisk kommer opp et ord fra listen. 
+Hvis listen over valg er lang er denne nedtrekkslisten spesielt nyttig.
   </p>
 
-  <h3>Tilpass listen etter situasjonen</h3>
-  <p>ComboBoxen er fleksibel og du kan tilpasse den til ulike sitasjoner.</p>
+  <h3>Tilpass ComboBoxen til ulike sitasjoner</h3>
 
   <p>Du kan velge å la brukeren</p>
   <p>
     <ul>
-      <li>velge blant et sett med verdier, eller skrive inn nye</li>
-      <li>kun å velge fra listen av gyldige verdier</li>
       <li>bare velge fra nedtrekkslisten</li>
-      <li>få opp menyen fra listen automatisk når feltet blir klikket på</li>
+<li>få opp menyen fra listen automatisk når feltet blir klikket på</li>
+      <li>velge blant ordene eller verdiene i listen eller skrive inn nye</li>
+      <li>kun å velge ord eller verdier fra listen</li>
     </ul>
   </p>
+  <h3>Relatert komponent </h3>
+<p>{' '}
+    <a href="https://skatteetaten.github.io/frontend-components/#dropdown">
+      Dropdown (Nedtrekksliste)
+    </a>{' '}
+ </p>
+
 </>
 ```
