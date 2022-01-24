@@ -100,9 +100,9 @@ Du kan sette opp skjemaet med datovelgeren flere måter. Du kan vise
   <p>
     Se {' '}
     <a href="https://www.skatteetaten.no/stilogtone/skrive/skriveregler/datoer/">
-      oppsett for hvordan vi skriver datoer i skrivereglene
+      oppsett for hvordan vi skriver datoer
     </a>{' '}
-    i Skatteetaten.
+    i skrivereglene i Skatteetaten.
   </p>
 </>
 ```
