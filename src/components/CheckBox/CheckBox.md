@@ -71,7 +71,7 @@ Hver avkrysning er uavhengig av de andre i listen, og det er også mulig å ikke
     </a>
     .
   </p>
-
+ <h3>Relatert komponent</h3>
   <p>
     Hvis brukeren kun skal velge ett valg, bruk
     <a href="https://skatteetaten.github.io/frontend-components/#radiobuttongroup">
