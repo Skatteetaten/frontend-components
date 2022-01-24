@@ -137,24 +137,23 @@ export const LanguagePicker: React.FC<LanguagePickerProps> = (props) => {
   }
 
   return (
-    <>
-      <TopStripeMenu
-        showOnMobile={showOnMobile}
-        title={generateLanguagePickerTitle(selectedLanguage)}
-        className={className}
-      >
-        {languages.map((language) => {
-          return (
-            <LanguagePickerButton
-              key={language}
-              buttonLanguage={language}
-              selectedLanguage={selectedLanguage}
-              setLanguage={setLanguage}
-              showOnMobile={showOnMobile}
-            />
-          );
-        })}
-      </TopStripeMenu>
-    </>
+    <TopStripeMenu
+      data-testid={'language-picker'}
+      showOnMobile={showOnMobile}
+      title={generateLanguagePickerTitle(selectedLanguage)}
+      className={className}
+    >
+      {languages.map((language) => {
+        return (
+          <LanguagePickerButton
+            key={language}
+            buttonLanguage={language}
+            selectedLanguage={selectedLanguage}
+            setLanguage={setLanguage}
+            showOnMobile={showOnMobile}
+          />
+        );
+      })}
+    </TopStripeMenu>
   );
 };

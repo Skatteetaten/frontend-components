@@ -20,7 +20,10 @@ export const TopStripeUser: FC<TopStripeUserProps> = (props) => {
   }
 
   return (
-    <div className={classnames(styles.topStripeUser, className)}>
+    <div
+      data-testid={'topstripe-user'}
+      className={classnames(styles.topStripeUser, className)}
+    >
       <Icon iconName="person" />
       <div>{name}</div>
     </div>

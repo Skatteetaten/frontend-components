@@ -1,6 +1,5 @@
 import React from 'react';
-import { mount, shallow } from 'enzyme';
-import { matches } from '../../utils/test-utils';
+import { mount } from 'enzyme';
 import { LanguagePicker } from '.';
 import { TopStripeContext } from '../TopStripe';
 
@@ -17,13 +16,32 @@ function oppsettFullDOM(props) {
   );
 }
 
-function oppsettShallow(props) {
-  return shallow(<LanguagePicker {...props} />);
-}
-
 describe('LanguagePicker komponent', () => {
-  it('matcher snapshot ', () => {
-    matches(<LanguagePicker />);
+  const setOpenMock = jest.fn();
+
+  it('matcher snapshot', () => {
+    const wrapper = oppsettFullDOM({
+      selectedLanguage: 'nb',
+      setLanguage: jest.fn(),
+    });
+    expect(wrapper.html()).toMatchSnapshot();
+  });
+
+  it('Når knappen trykkes på, kalles setOpen', () => {
+    const wrapper = mount(
+      <TopStripeContext.Provider
+        value={{
+          open: 0,
+          setOpen: setOpenMock,
+        }}
+      >
+        <LanguagePicker />
+      </TopStripeContext.Provider>
+    );
+    const button = wrapper.find('button');
+    button.simulate('click');
+    wrapper.update();
+    expect(setOpenMock).toHaveBeenCalled();
   });
 
   it.each([
@@ -36,7 +54,7 @@ describe('LanguagePicker komponent', () => {
     (selectedLanguageText, selectedLanguage) => {
       const wrapper = oppsettFullDOM({
         selectedLanguage: selectedLanguage,
-        setSelectedLanguage: jest.fn(),
+        setLanguage: jest.fn(),
       });
       const menuButton = wrapper.find('button');
       expect(menuButton.text().includes(selectedLanguageText)).toEqual(true);

@@ -16,7 +16,7 @@ exports[`TopStripe komponent matcher snapshot  1`] = `
           bottom: 0px;
           display: none;
           left: 0px;
-          min-height: 200px;
+          min-height: 12.5rem;
           position: fixed;
           right: 0px;
           top: 0px;
