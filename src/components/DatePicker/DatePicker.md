@@ -70,38 +70,37 @@ const [dato, setDato] = React.useState(new Date());
 
 ```js noeditor beskrivelse
 <>
-  <h3>Datovelgeren hjelper brukeren å fylle ut dato</h3>
+  <h3>Forenkler utfylling av datoer</h3>
 
   <p>
-    Datovelgeren i et skjema gjør det enklere for brukeren å oppgi riktig dato
-    ved å vise oversikt over dato, uke og måned.{' '}
+    Datovelgeren i et skjema gjør det enklere for brukeren å oppgi riktig dato. {' '}
   </p>
 
   <h3>Ulike oppsett for datovelger</h3>
   <p>
-    Når du setter opp datovelgeren må du ta hensyn til hvor langt frem eller
-    tilbake brukeren pleier å velge dato. Vurder om både månedsoversikt og
-    ukenummer trenger å vises.
-  </p>
-  <p>
-    Du kan sette opp skjemaet med datovelgeren flere måter:
+  Når du setter opp datovelgeren må du blant annet vurdere 
     <ul>
-      <li>Vise dagens dato i datofeltet og legge til mulighet for å endre.</li>
-      <li>
-        Vise en handligsrettet tekst i datofeltet, for eksempel «Velg en dato»
-        og deretter vise månedsvelger og ukenummer når brukeren klikker i
-        feltet.
+      <li>hvor langt frem eller tilbake brukeren pleier å velge datoer</li>
+      <li>om både månedsoversikt og ukenummer trenger å vises
       </li>
-      <li>
-        Vise både månedsoversikt og datoer med ukenummer, eller bare den ene,
-        når brukeren klikker i feltet eller på endre-ikonet.{' '}
+</ul>
+ </p>
+
+ <p>
+Du kan sette opp skjemaet med datovelgeren flere måter. Du kan vise
+<ul>
+<li>dagens dato i skjemaet og legge til mulighet for å endre{' '}
       </li>
+<li>en handligsrettet tekst, for eksempel «velg en dato» og deretter vise månedsvelger og ukenummer når brukeren klikker i feltet 
+      </li>
+<li>både månedsoversikt og datoer med ukenummer, eller bare den ene, når brukeren klikker i feltet eller på endre-ikonet
     </ul>
   </p>
+  <h3>Hvordan skriver vi datoer?</h3>
   <p>
-    Se{' '}
+    Se {' '}
     <a href="https://www.skatteetaten.no/stilogtone/skrive/skriveregler/datoer/">
-      oppsett for hvordan vi skriver datoer
+      oppsett for hvordan vi skriver datoer i skrivereglene
     </a>{' '}
     i Skatteetaten.
   </p>
