@@ -1,9 +1,11 @@
-import { getTheme } from '@fluentui/react/lib/Styling';
 import { mergeStyleSets } from '@fluentui/merge-styles';
-import { FontSizes, FontWeights, PaletteProps } from '../utils';
 import { DialogProps } from './Dialog.types';
 import dekor from './assets/footerDekor.svg';
 import logo from './assets/ske-logo.svg';
+
+import designtokenBreakpoints from '../utils/designtokens/_breakpoints.json';
+import designtokenColors from '../utils/designtokens/_colors.json';
+import designtokenFontSizes from '../utils/designtokens/_fontSizes.json';
 
 function setMinMaxWidth(props: DialogProps) {
   return {
@@ -13,8 +15,6 @@ function setMinMaxWidth(props: DialogProps) {
 }
 
 function getMainBackgroundStyle(props: DialogProps) {
-  const palette = getTheme().palette as PaletteProps;
-
   if (props.layoutStyle === 'important') {
     return {
       background: `url(${dekor})`,
@@ -22,7 +22,7 @@ function getMainBackgroundStyle(props: DialogProps) {
       backgroundRepeat: 'no-repeat',
       backgroundPosition: 'bottom left',
       paddingBottom: 30,
-      backgroundColor: palette.white,
+      backgroundColor: designtokenColors['ske-color-white-100'],
       border: 'none !important',
     };
   } else {
@@ -49,21 +49,19 @@ export const getClassNames = function getClassNames(
   props: DialogProps,
   tag = 'SKE'
 ) {
-  const palette = getTheme().palette as PaletteProps;
-
   let primaryColor;
 
   switch (tag) {
     case 'INK': {
-      primaryColor = palette.skeColor.green100;
+      primaryColor = designtokenColors['ske-color-green-100'];
       break;
     }
     case 'LSO': {
-      primaryColor = palette.skeColor.black100;
+      primaryColor = designtokenColors['ske-color-black-100'];
       break;
     }
     default: {
-      primaryColor = palette.skeColor.burgundy100;
+      primaryColor = designtokenColors['ske-color-burgundy-100'];
       break;
     }
   }
@@ -78,7 +76,7 @@ export const getClassNames = function getClassNames(
         '& .ms-Dialog-main': {
           height: overflows ? '100%' : '',
           selectors: {
-            '@media (min-width: 480px)': {
+            [`@media (min-width: ${designtokenBreakpoints['ske-breakpoint-sm']})`]: {
               ...setMinMaxWidth(props),
               borderColor: primaryColor,
               borderStyle: 'solid',
@@ -92,7 +90,7 @@ export const getClassNames = function getClassNames(
           overflowX: 'hidden',
           WebkitOverflowScrolling: 'touch',
           selectors: {
-            '@media only screen and (min-device-width: 768px) and (max-device-width: 1024px)': {
+            [`@media only screen and (min-device-width: 768px) and (max-device-width: ${'$ske-breakpoint-lg'})`]: {
               //iPad scrolling fix
               position: overflows ? 'absolute' : 'relative',
               top: 0,
@@ -106,26 +104,26 @@ export const getClassNames = function getClassNames(
           ...getHeaderBackgroundStyle(props),
         },
         '& .ms-Button.ms-Dialog-button--close i': {
-          fontWeight: FontWeights.bold,
-          fontSize: FontSizes.icon,
+          fontWeight: designtokenFontSizes['ske-font-weight-bold'],
+          fontSize: designtokenFontSizes['ske-font-size-icon-l'],
           opacity: 1,
         },
         '& .ms-Button.ms-Dialog-button--close:hover i': {
-          fontWeight: FontWeights.bold,
-          fontSize: FontSizes.icon,
+          fontWeight: designtokenFontSizes['ske-font-weight-bold'],
+          fontSize: designtokenFontSizes['ske-font-size-icon-l'],
           opacity: 0.7,
           transition: 'opacity 300ms ease-out',
         },
         '& .ms-Dialog-title': {
-          fontSize: FontSizes.xLarge,
-          fontWeight: FontWeights.semibold,
+          fontSize: designtokenFontSizes['ske-font-size-xl'],
+          fontWeight: designtokenFontSizes['ske-font-weight-semibold'],
           padding:
             props.layoutStyle === 'airy'
               ? '128px 64px 0 64px'
               : '20px 50px 20px 20px',
         },
         '& .ms-Dialog-subText': {
-          fontSize: FontSizes.medium,
+          fontSize: designtokenFontSizes['ske-font-size-m'],
         },
         '& .ms-Overlay': {
           backgroundColor: 'rgba(255, 255, 255, 0.8)',

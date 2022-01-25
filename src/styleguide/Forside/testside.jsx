@@ -686,6 +686,8 @@ function Testside(props) {
       <p>2. Hovedfunksjoner (knapperad)</p>
       <Button buttonStyle="primary">Send inn</Button>
       <Button buttonStyle="secondary">Avbryt</Button>
+      <Button buttonStyle="secondarySimple">Sett på vent</Button>
+
       <Button buttonStyle="warning">Slett</Button>
       <p>3. Mindre sekundærhandliner</p>
       <ActionButton icon="addOutline" border>

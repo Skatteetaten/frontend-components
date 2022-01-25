@@ -18,6 +18,7 @@ export const LabelWithCallout = (props: LabelWithCalloutProps) => {
     calloutFloating = false,
     customClassNames,
     editable,
+    requiredMark,
     editFunction,
     help,
     inFieldset,
@@ -43,6 +44,8 @@ export const LabelWithCallout = (props: LabelWithCalloutProps) => {
   ) : (
     <p className={customClassNames?.warningPragraph ?? ''}>{warning}</p>
   );
+
+  const requiredSymbol = requiredMark ? ' *' : '';
 
   const toggleEvent = () => {
     if (onCalloutToggle) {
@@ -74,7 +77,7 @@ export const LabelWithCallout = (props: LabelWithCalloutProps) => {
               }`}
               aria-label={ariaLabel}
             >
-              {label}
+              {label + requiredSymbol}
             </legend>
           ) : null
         ) : label ? (
@@ -84,7 +87,7 @@ export const LabelWithCallout = (props: LabelWithCalloutProps) => {
             className={`${styles.label} ${customClassNames?.label ?? ''}`}
             aria-label={ariaLabel}
           >
-            {label}
+            {label + requiredSymbol}
           </label>
         ) : null}
 

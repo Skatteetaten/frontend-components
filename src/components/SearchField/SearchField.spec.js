@@ -200,8 +200,7 @@ describe('SearchField komponent', () => {
     act(() => {
       wrapper
         .find('input.ms-SearchBox-field')
-        .props()
-        .onChange({ target: { value: 'e' } });
+        .simulate('change', { target: { value: 'e' } });
     });
     wrapper.update();
     expect(wrapper.find('li').exists()).toBeTruthy();

@@ -28,4 +28,5 @@ Button.defaultProps = {
   onClick: undefined,
   primary: false,
   buttonStyle: 'secondary',
+  mobileFullWidth: false,
 };

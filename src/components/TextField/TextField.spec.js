@@ -66,7 +66,7 @@ describe('TextField komponent', () => {
     helpButton.simulate('click');
     const callout = wrapper.find('StyledCalloutContentBase');
     expect(callout).toHaveLength(1);
-    expect(callout.prop('color')).toEqual('green10');
+    expect(callout.prop('color')).toEqual('ske-color-green-10');
     expect(callout.find('p').html()).toContain(
       'Vi trenger å vite navnet ditt dersom vi skal kontakte deg senere'
     );
@@ -103,7 +103,7 @@ describe('TextField komponent', () => {
     warningButton.simulate('click');
     const callout = wrapper.find('StyledCalloutContentBase');
     expect(callout).toHaveLength(1);
-    expect(callout.prop('color')).toEqual('brown10');
+    expect(callout.prop('color')).toEqual('ske-color-brown-10');
     expect(callout.find('p').html()).toContain(
       'Er du sikker på at antall barn er riktig?'
     );

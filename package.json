@@ -27,7 +27,7 @@
     "react-dom": ">=17.0.0"
   },
   "dependencies": {
-    "@fluentui/react": "8.29.1",
+    "@fluentui/react": "8.50.0",
     "axios": "0.24.0",
     "classnames": "2.2.6",
     "hotkeys-js": "3.8.1",

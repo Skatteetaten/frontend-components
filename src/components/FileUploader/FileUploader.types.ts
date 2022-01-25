@@ -94,6 +94,8 @@ export interface FileUploaderProps {
   ) => void;
   /** Parametere for axioskall */
   queryParams?: any;
+  /** Om merke for obligatorisk felt skal vises */
+  required?: boolean;
   /** Funksjon for filopplasting */
   uploadFile?: (file: File) => void;
   /** Gjør at DELETE operasjonen, ved slett av opplastet fil, fungerer når løsningen kjører bak WebSeal.
