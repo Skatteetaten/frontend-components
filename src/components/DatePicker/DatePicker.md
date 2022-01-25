@@ -73,32 +73,32 @@ const [dato, setDato] = React.useState(new Date());
   <h3>Forenkler utfylling av datoer</h3>
 
   <p>
-    Datovelgeren i et skjema gjør det enklere for brukeren å oppgi riktig dato. {' '}
+    Datovelgeren i et skjema gjør det enklere for brukeren å oppgi riktig dato.
   </p>
 
   <h3>Ulike oppsett for datovelger</h3>
-  <p>
-  Når du setter opp datovelgeren må du blant annet vurdere 
-    <ul>
-      <li>hvor langt frem eller tilbake brukeren pleier å velge datoer</li>
-      <li>om både månedsoversikt og ukenummer trenger å vises
-      </li>
-</ul>
- </p>
+  <p>Når du setter opp datovelgeren må du blant annet vurdere </p>
+  <ul>
+    <li>hvor langt frem eller tilbake brukeren pleier å velge datoer</li>
+    <li>om både månedsoversikt og ukenummer trenger å vises</li>
+  </ul>
 
- <p>
-Du kan sette opp skjemaet med datovelgeren flere måter. Du kan vise
-<ul>
-<li>dagens dato i skjemaet og legge til mulighet for å endre{' '}
-      </li>
-<li>en handligsrettet tekst, for eksempel «velg en dato» og deretter vise månedsvelger og ukenummer når brukeren klikker i feltet 
-      </li>
-<li>både månedsoversikt og datoer med ukenummer, eller bare den ene, når brukeren klikker i feltet eller på endre-ikonet
-    </ul>
-  </p>
+  <p>Du kan sette opp skjemaet med datovelgeren flere måter. Du kan vise </p>
+  <ul>
+    <li>dagens dato i skjemaet og legge til mulighet for å endre</li>
+    <li>
+      en handligsrettet tekst, for eksempel «velg en dato» og deretter vise
+      månedsvelger og ukenummer når brukeren klikker i feltet
+    </li>
+    <li>
+      både månedsoversikt og datoer med ukenummer, eller bare den ene, når
+      brukeren klikker i feltet eller på endre-ikonet
+    </li>
+  </ul>
+
   <h3>Hvordan skriver vi datoer?</h3>
   <p>
-    Se {' '}
+    Se{' '}
     <a href="https://www.skatteetaten.no/stilogtone/skrive/skriveregler/datoer/">
       oppsett for hvordan vi skriver datoer
     </a>{' '}
