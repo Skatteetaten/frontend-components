@@ -41,6 +41,7 @@ const paraStyle = {
   <br />
   <OpenClose
     compact
+    noBorder
     isOnClickOnlyFiredOnOpen={false}
     title={state.open ? 'Skjul detaljer' : 'Vis detaljer'}
     onClick={() => setState({ open: !state.open })}
@@ -50,7 +51,6 @@ const paraStyle = {
       content: 'myContentClass',
     }}
   >
-  <OpenClose compact noBorder title={'Vis flere detaljer'}>
     <Typography>
       <p style={paraStyle}>
         Arbeidsgiveren din/den som utbetaler skal trekke kildeskatt av følgende

@@ -62,34 +62,61 @@ exports[`Table komponent matcher snapshot 1`] = `
           overflow-x: auto;
         }
   >
-    <table>
-      <thead>
-        <tr>
-          <th
-            className=""
-            key="month"
-            scope="col"
-          >
-            Måned
-          </th>
-          <th
-            className="right "
-            key="amount"
-            scope="col"
-          >
-            Beløp
-          </th>
-          <th
-            className="right "
-            key="coverage"
-            scope="col"
-          >
-            Dekningsgrad
-          </th>
-          <th
-            className="right "
-            key="revenue"
-            scope="col"
+    <table
+      className=
+
+          {
+            border-collapse: collapse;
+            display: table;
+            height: 1px;
+            text-align: left;
+          }
+    >
+      <thead
+        className=
+
+            {
+              display: table-header-group;
+            }
+      >
+        <tr
+          className=
+
+              {
+                vertical-align: middle;
+              }
+        >
+          <TableHeader
+            columns={
+              Array [
+                Object {
+                  "fieldName": "month",
+                  "name": "Måned",
+                },
+                Object {
+                  "alignment": "right",
+                  "fieldName": "amount",
+                  "name": "Beløp",
+                },
+                Object {
+                  "alignment": "right",
+                  "fieldName": "coverage",
+                  "name": "Dekningsgrad",
+                },
+                Object {
+                  "alignment": "right",
+                  "fieldName": "revenue",
+                  "name": "Avkastning",
+                },
+              ]
+            }
+            setSort={[Function]}
+            sort={
+              Object {
+                "ascending": false,
+                "columnFieldName": "",
+              }
+            }
           >
             <th
               className=
