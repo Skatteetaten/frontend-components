@@ -21,7 +21,7 @@ export const setScrollBarState = (
   }
 };
 
-/*
+/**
  * visibleName Table (Tabell)
  */
 export const Table = <P extends RowData>(props: TableProps<P>) => {

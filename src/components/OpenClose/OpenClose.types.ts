@@ -17,7 +17,6 @@ export interface OpenCloseProps {
   /** Display as a compact version with smaller font size and margins */
   compact?: boolean;
   /** Custom classNames for å overskrive styling */
-
   customClassNames?: {
     wrapper?: string;
     button?: string;

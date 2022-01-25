@@ -23,7 +23,7 @@ const generateLanguagePickerText = (language: LanguageEnum): string => {
     case LanguageEnum.ENGLISH:
       return 'English';
     case LanguageEnum.SAMI:
-      return 'Sámigiella';
+      return 'Sámegiella';
   }
 };
 

@@ -50,6 +50,7 @@ const paraStyle = {
       content: 'myContentClass',
     }}
   >
+  <OpenClose compact noBorder title={'Vis flere detaljer'}>
     <Typography>
       <p style={paraStyle}>
         Arbeidsgiveren din/den som utbetaler skal trekke kildeskatt av følgende
