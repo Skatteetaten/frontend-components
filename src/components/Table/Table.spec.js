@@ -291,4 +291,37 @@ describe('Table komponent', () => {
     expect(wrapper.find('SumRow').text()).toEqual('Sum:4555');
     expect(wrapper.find('SumRow').find('td').length).toEqual(3);
   });
+
+  it('legger til riktig className på en rad', () => {
+    const dataMedCustomClassNames = [
+      {
+        Måned: 'Februar',
+        Beløp: 100,
+        Dekningsgrad: '50%',
+        Avkastning: '500',
+        customClassNames: {
+          tableRow: 'rowTestClass',
+          tableCell: 'cellTestClass',
+          cellContent: 'cellContentTestClass',
+        },
+      },
+    ];
+    const wrapper = oppsettMount({
+      data: dataMedCustomClassNames,
+      columns,
+      editableRows: true,
+      id: 'tableid',
+      className: 'tableClass',
+      editableContent: 'Editerbart innhold',
+    });
+    expect(wrapper.find('TableRow').length).toEqual(1);
+
+    const tableRow = wrapper.find('TableRow');
+    expect(tableRow.find('tr').hasClass('rowTestClass')).toBeTruthy();
+    expect(tableRow.find('td').at(0).hasClass('cellTestClass')).toBeTruthy();
+    expect(tableRow.find('th').at(0).hasClass('cellTestClass')).toBeTruthy();
+    expect(
+      tableRow.find('td > div').at(0).hasClass('cellContentTestClass')
+    ).toBeTruthy();
+  });
 });
