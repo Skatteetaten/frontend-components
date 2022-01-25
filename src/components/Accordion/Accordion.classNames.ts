@@ -2,6 +2,7 @@ import { mergeStyleSets } from '@fluentui/merge-styles';
 import { getTheme } from '@fluentui/react/lib/Styling';
 import { FontSizes, FontWeights, IconFontSizes, PaletteProps } from '../utils';
 import designtokenBreakpoints from '../utils/designtokens/_breakpoints.json';
+import designtokenSpacing from '../utils/designtokens/_spacing.json';
 
 export function getClassNames() {
   const palette = getTheme().palette as PaletteProps;
@@ -27,7 +28,7 @@ export function getClassNames() {
     },
     content: {
       backgroundColor: palette.skeColor.white,
-      padding: '0px 0 15px 10px',
+      padding: designtokenSpacing['ske-padding-accordion-content'],
       selectors: {
         '&:focus': {
           background: palette.skeColor.backgroundFocusColor,
@@ -67,13 +68,13 @@ export function getClassNames() {
       position: 'absolute',
       width: 2,
       backgroundColor: palette.skeColor.lightGrey,
-      top: 50,
-      left: 16,
+      top: designtokenSpacing['ske-spacing-xxl'],
+      left: '0.8rem',
       height: '100%',
       selectors: {
         [`@media (min-width: ${designtokenBreakpoints['ske-breakpoint-md']})`]: {
-          left: 50,
-          top: 16,
+          top: '1.5rem',
+          left: designtokenSpacing['ske-spacing-lg'],
         },
       },
     },
