@@ -75,9 +75,9 @@ export const TableRow = <P extends RowData>(props: TableRowProps<P>) => {
     showRowSeparators,
     compactTable,
   } = props;
-  const editableRow = !data['hideEdit'] && editableRows;
-  const showExtraCol = data['hideEdit'] && editableRows;
-  const showRowSeparator = !data['hideSeparator'] && showRowSeparators;
+  const editableRow = !data.hideEdit && editableRows;
+  const showExtraCol = data.hideEdit && editableRows;
+  const showRowSeparator = !data.hideSeparator && showRowSeparators;
   const numberOfColumns =
     columns.length + (editableRow || expandableRows || showExtraCol ? 1 : 0);
   const expandabledRowRef = React.useRef<HTMLTableRowElement>(null);
