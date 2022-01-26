@@ -12,21 +12,21 @@ export const getClassNames = () => {
         [`@media (min-width: ${designtokenBreakpoints['ske-breakpoint-sm']})`]: {
           paddingLeft: `${designtokenSpacing['ske-spacing-xl']} !important`,
         },
-        span: {
-          fontSize: designtokenFontSizes['ske-font-size-l'],
-          [`@media (min-width: ${designtokenBreakpoints['ske-breakpoint-sm']})`]: {
-            fontSize: `${designtokenFontSizes['ske-font-size-s']}`,
-          },
+      },
+    },
+    languageButtonContent: {
+      fontSize: designtokenFontSizes['ske-font-size-l'],
+      selectors: {
+        [`@media (min-width: ${designtokenBreakpoints['ske-breakpoint-sm']})`]: {
+          fontSize: `${designtokenFontSizes['ske-font-size-s']}`,
         },
       },
     },
     languageButtonIsNotSelected: {
+      fontWeight: ` ${designtokenFontSizes['ske-font-weight-bold']}`,
       selectors: {
-        span: {
-          fontWeight: ` ${designtokenFontSizes['ske-font-weight-bold']}`,
-          [`@media (min-width: ${designtokenBreakpoints['ske-breakpoint-sm']})`]: {
-            fontWeight: `${designtokenFontSizes['ske-font-weight-regular']}`,
-          },
+        [`@media (min-width: ${designtokenBreakpoints['ske-breakpoint-sm']})`]: {
+          fontWeight: `${designtokenFontSizes['ske-font-weight-regular']}`,
         },
       },
     },
@@ -47,11 +47,11 @@ export const getClassNames = () => {
         },
       },
     },
-    flag: {
+    languageButtonFlag: {
       marginRight: designtokenSpacing['ske-spacing-sm'],
       verticalAlign: 'middle',
     },
-    text: {
+    languageButtonText: {
       marginLeft: designtokenSpacing['ske-spacing-sm'],
     },
   });

@@ -45,7 +45,7 @@ const generateLanguagePickerTitle = (language: LanguageEnum): JSX.Element => {
   const styles = getClassNames();
   return (
     <>
-      <span className={styles.flag}>{displayFlag(language)}</span>
+      <span className={styles.languageButtonFlag}>{displayFlag(language)}</span>
       {generateLanguagePickerText(language)}
     </>
   );
@@ -63,17 +63,30 @@ const LanguagePickerButton = ({
     <TopStripeButton
       onClick={() => setLanguage(buttonLanguage)}
       showOnMobile={showOnMobile}
-      className={classnames(styles.languageButton, {
-        [styles.languageButtonIsNotSelected]: !isSelectedLanguage,
-      })}
+      className={styles.languageButton}
       role={'menuitem'}
       aria-current={isSelectedLanguage}
     >
       {isSelectedLanguage && (
         <Icon iconName={'Check'} className={styles.checkIcon} />
       )}
-      <span className={styles.flag}>{displayFlag(buttonLanguage)}</span>
-      <span className={styles.text}>
+      <span
+        className={classnames(
+          styles.languageButtonContent,
+          styles.languageButtonFlag
+        )}
+      >
+        {displayFlag(buttonLanguage)}
+      </span>
+      <span
+        className={classnames(
+          styles.languageButtonContent,
+          styles.languageButtonText,
+          {
+            [styles.languageButtonIsNotSelected]: !isSelectedLanguage,
+          }
+        )}
+      >
         {generateLanguagePickerText(buttonLanguage)}
       </span>
     </TopStripeButton>
