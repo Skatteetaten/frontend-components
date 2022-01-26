@@ -6,12 +6,14 @@ import designtokenFonts from '../utils/designtokens/_fontSizes.json';
 import designtokenColors from '../utils/designtokens/_colors.json';
 import designtokenSpacing from '../utils/designtokens/_spacing.json';
 
+const dropdownPaddingLarge = `0.375rem ${designtokenSpacing['ske-spacing-md']}`;
+
 function getFieldTypeStyles(props: DropdownProps) {
   if (props.inputSize === 'large') {
     return {
       '.ms-Dropdown-title': {
         borderWidth: designtokenSpacing['ske-spacing-xs'],
-        padding: `${designtokenSpacing['ske-spacing-sm']} ${designtokenSpacing['ske-spacing-md']}`,
+        padding: dropdownPaddingLarge,
         borderRadius: '0',
         fontSize: designtokenFonts['ske-font-size-l'],
         height: designtokenSpacing['ske-spacing-xxxl'],
