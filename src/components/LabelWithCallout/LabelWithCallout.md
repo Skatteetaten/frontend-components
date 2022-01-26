@@ -150,7 +150,7 @@ const [state, setState] = React.useState({ value1: '' });
   <ul>
     <li>Aria-expanded brukes på knappene som utvides/minimeres.</li>
     <li>Aria-label brukes for å navngi lukk-ikon i dialogen.</li>
-    <li>Aria-hidden brukes for skjule ikoner for skjermleser. </li>
+    <li>Aria-hidden brukes for å skjule ikoner for skjermleser. </li>
   </ul>
 </>
 ```
