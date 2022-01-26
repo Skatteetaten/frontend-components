@@ -114,7 +114,7 @@ const styles = {
   <h3>WAI-ARIA</h3>
   <ul>
     <li>
-      Role=alert og aria-atomic brukes på meldinger som skal leses av
+      Role="alert" og aria-atomic brukes på meldinger som skal leses av
       skjermleser.
     </li>
     <li>
