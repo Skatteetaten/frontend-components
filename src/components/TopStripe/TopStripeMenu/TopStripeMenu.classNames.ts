@@ -55,18 +55,16 @@ export const getClassNames = () => {
         },
       },
     },
-    topStripeMenuDropdownElement: {
+    topStripeMenuDropdownElementContainer: {
       position: 'relative',
-      selectors: {
-        'i, a, button': {
-          fontSize: designtokenFontSizes['ske-font-size-s'],
-          background: 'none',
-          border: 'none',
-          color: 'inherit',
-          textDecoration: 'none !important',
-          transition: 'none',
-        },
-      },
+    },
+    topStripeMenuDropdownElement: {
+      fontSize: designtokenFontSizes['ske-font-size-s'],
+      background: 'none',
+      border: 'none',
+      color: 'inherit',
+      textDecoration: 'none !important',
+      transition: 'none',
     },
     topStripeMenuDropdownElementIcon: {
       position: 'absolute',
@@ -82,7 +80,7 @@ export const getClassNames = () => {
           justifyContent: 'center',
         },
         ':hover, :focus, :hover i, :focus i': {
-          backgroundColor: designtokenColors['ske-color-white-100'],
+          backgroundColor: `${designtokenColors['ske-color-white-100']} !important`,
           color: `${designtokenColors['ske-color-black-100']} !important`,
           outline: 'none',
         },

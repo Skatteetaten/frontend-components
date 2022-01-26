@@ -101,7 +101,7 @@ export const TopStripeMenu: React.FC<TopStripeMenuProps> = (props) => {
                           child.props.onClick(e);
                         closeOnClick && closeMenu && closeMenu();
                       }}
-                      className={styles.topStripeMenuDropdownElement}
+                      className={styles.topStripeMenuDropdownElementContainer}
                     >
                       {child.props.icon ? (
                         <Icon
@@ -117,6 +117,10 @@ export const TopStripeMenu: React.FC<TopStripeMenuProps> = (props) => {
                         'aria-current': child.props.icon ? 'true' : undefined,
                         icon: undefined,
                         onClick: undefined,
+                        className: classnames(
+                          child.props.className,
+                          styles.topStripeMenuDropdownElement
+                        ),
                       })}
                     </li>
                   );

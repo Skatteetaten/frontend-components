@@ -1,3 +1,3 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`LanguagePicker komponent matcher snapshot 1`] = `"<button class=\\"topStripeButton-124 topStripeMenuShowChevron-116\\" style=\\"cursor: pointer;\\" aria-haspopup=\\"true\\" aria-expanded=\\"false\\"><div class=\\"topStripeMenuTitle-118\\"><span class=\\"flag-113\\"><img src=\\"NorwegianFlag.svg\\" alt=\\"\\"></span>Bokmål</div><i data-icon-name=\\"MenuDown\\" aria-hidden=\\"true\\" class=\\"topStripeMenuChevronIcon-127\\"></i></button>"`;
+exports[`LanguagePicker komponent matcher snapshot 1`] = `"<button class=\\"topStripeMenuShowChevron-116 topStripeButton-125\\" style=\\"cursor: pointer;\\" aria-haspopup=\\"true\\" aria-expanded=\\"false\\"><div class=\\"topStripeMenuTitle-118\\"><span class=\\"flag-113\\"><img src=\\"NorwegianFlag.svg\\" alt=\\"\\"></span>Bokmål</div><i data-icon-name=\\"MenuDown\\" aria-hidden=\\"true\\" class=\\"topStripeMenuChevronIcon-128\\"></i></button>"`;

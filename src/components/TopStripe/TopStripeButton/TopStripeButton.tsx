@@ -26,7 +26,7 @@ export const TopStripeButton: React.FC<TopStripeButtonProps> = (props) => {
   return (
     <button
       aria-label={ariaLabel}
-      className={classnames(styles.topStripeButton, topStripeStyle, className)}
+      className={classnames(className, styles.topStripeButton, topStripeStyle)}
       style={{ cursor: 'pointer' }}
       {...rest}
     >

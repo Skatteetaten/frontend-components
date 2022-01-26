@@ -8,19 +8,25 @@ export const getClassNames = () => {
     languageButton: {
       paddingLeft: '2.25rem !important',
       width: '100%',
-      fontSize: `${designtokenFontSizes['ske-font-size-l']} !important`,
       selectors: {
         [`@media (min-width: ${designtokenBreakpoints['ske-breakpoint-sm']})`]: {
-          fontSize: `${designtokenFontSizes['ske-font-size-s']} !important`,
           paddingLeft: `${designtokenSpacing['ske-spacing-xl']} !important`,
+        },
+        span: {
+          fontSize: designtokenFontSizes['ske-font-size-l'],
+          [`@media (min-width: ${designtokenBreakpoints['ske-breakpoint-sm']})`]: {
+            fontSize: `${designtokenFontSizes['ske-font-size-s']}`,
+          },
         },
       },
     },
     languageButtonIsNotSelected: {
-      fontWeight: ` ${designtokenFontSizes['ske-font-weight-bold']} !important`,
       selectors: {
-        [`@media (min-width: ${designtokenBreakpoints['ske-breakpoint-sm']})`]: {
-          fontWeight: `${designtokenFontSizes['ske-font-weight-regular']} !important`,
+        span: {
+          fontWeight: ` ${designtokenFontSizes['ske-font-weight-bold']}`,
+          [`@media (min-width: ${designtokenBreakpoints['ske-breakpoint-sm']})`]: {
+            fontWeight: `${designtokenFontSizes['ske-font-weight-regular']}`,
+          },
         },
       },
     },
@@ -28,12 +34,12 @@ export const getClassNames = () => {
       left: '0',
       width: '0.875rem',
       margin: `0 ${designtokenSpacing['ske-spacing-md']}`,
-      fontSize: `${designtokenFontSizes['ske-font-size-xl']} !important`,
+      fontSize: designtokenFontSizes['ske-font-size-xl'],
       display: 'inline',
       position: 'absolute',
       selectors: {
         [`@media (min-width: ${designtokenBreakpoints['ske-breakpoint-sm']})`]: {
-          fontSize: `${designtokenFontSizes['ske-font-size-m']} !important`,
+          fontSize: designtokenFontSizes['ske-font-size-m'],
           padding: `0 ${designtokenSpacing['ske-spacing-sm']}`,
           left: 'auto',
           width: 'auto',
