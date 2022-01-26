@@ -6,6 +6,7 @@ import designtokenSpacing from '../utils/designtokens/_spacing.json';
 
 export function getClassNames() {
   const palette = getTheme().palette as PaletteProps;
+  const paddingAccordionContent = `0 0 ${designtokenSpacing['ske-spacing-lg']} ${designtokenSpacing['ske-spacing-md']}`;
   return mergeStyleSets({
     containerStep: {
       margin: '0 auto',
@@ -28,7 +29,7 @@ export function getClassNames() {
     },
     content: {
       backgroundColor: palette.skeColor.white,
-      padding: designtokenSpacing['ske-padding-accordion-content'],
+      padding: paddingAccordionContent,
       selectors: {
         '&:focus': {
           background: palette.skeColor.backgroundFocusColor,
@@ -45,21 +46,21 @@ export function getClassNames() {
       justifyContent: 'center',
       backgroundColor: palette.skeColor.white,
       border: 'solid',
-      width: '30px',
-      height: '30px',
+      width: designtokenSpacing['ske-spacing-xxl'],
+      height: designtokenSpacing['ske-spacing-xxl'],
       borderRadius: '50%',
       borderWidth: '2px',
       borderColor: palette.skeColor.black,
       fontSize: FontSizes.large,
       fontWeight: FontWeights.bold,
       zIndex: 10,
-      marginTop: 18,
+      marginTop: designtokenSpacing['ske-spacing-lg'],
 
       selectors: {
         [`@media (max-width: ${designtokenBreakpoints['ske-breakpoint-md']})`]: {
           fontSize: FontSizes.medium,
-          width: '24px',
-          height: '24px',
+          width: designtokenSpacing['ske-spacing-xl'],
+          height: designtokenSpacing['ske-spacing-xl'],
         },
       },
     },
@@ -75,6 +76,7 @@ export function getClassNames() {
         [`@media (min-width: ${designtokenBreakpoints['ske-breakpoint-md']})`]: {
           top: '1.5rem',
           left: designtokenSpacing['ske-spacing-lg'],
+          marginLeft: 1,
         },
       },
     },
