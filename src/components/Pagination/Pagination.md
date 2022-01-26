@@ -174,6 +174,30 @@ const [currentPage, setCurrentPage] = React.useState(1);
 
 ```js noeditor uu
 <>
-  <p>Denne seksjonen er foreløpig tom.</p>
+<h3>Tips</h3>
+  <ul>
+    <li>
+      Pass på at tastatur- og skjermleserfokus beholdes på sidevalget ved bytte av side (med tastatur).
+    </li>
+    <li>Sjekk at valget du står på er inaktivt.</li>
+  </ul>
+
+  <h3>Mest relevante WCAG-krav</h3>
+
+  <ul>
+    <li>4.1.2 A, Navn, rolle, verdi</li>
+  </ul>
+
+  <h3>WAI-ARIA</h3>
+
+  <ul>
+    <li>Aria-hidden="true" brukes på ikon for skjule det for skjermleser.</li>
+    <li>
+      Aria-label brukes for å navngi nav-tag og tydeliggjøre sidevalg.
+    </li>
+<li>Aria-current="true/false" brukes for å annonsere gjeldende valg.</li>
+<li>Aria-disabled="true/false" brukes for inaktive/aktive funksjoner.</li>
+<li>Role="link" brukes fordi sidetallene visuelt ser ut som en lenker.</li>
+  </ul>
 </>
 ```
