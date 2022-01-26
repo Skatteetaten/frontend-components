@@ -50,10 +50,11 @@ import { TextField } from '@skatteetaten/frontend-components/TextField';
           <div style={{ padding: '2px' }}>
             <Card color={Card.Color.BEIGE}>Alle felt må fylles ut.</Card>
             <br />
-            <TextField label={'Bedriftens navn'} inputSize="large" />
+            <TextField required label={'Bedriftens navn'} inputSize="large" />
             <br />
             <RadioButtonGroup
               label="Type virksomhet"
+              required
               labelSize="large"
               options={[
                 {
@@ -92,10 +93,15 @@ import { TextField } from '@skatteetaten/frontend-components/TextField';
               Felt markert med * må fylles ut.
             </Card>
             <br />
-            <TextField label={'Navn på virksomhet *'} inputSize="large" />
+            <TextField
+              requiredWithMark
+              label={'Navn på virksomhet'}
+              inputSize="large"
+            />
             <br />
             <RadioButtonGroup
-              label="Type virksomhet *"
+              requiredWithMark
+              label="Type virksomhet"
               labelSize="large"
               options={[
                 {

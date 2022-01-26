@@ -5,21 +5,14 @@ exports[`Dropdown komponent matcher snapshot 1`] = `
   id="dropdown-123"
 >
   <LabelWithCallout
-    calloutProps={
-      Object {
-        "doNotLayer": undefined,
-      }
-    }
+    calloutProps={Object {}}
     id="dropdown-123-label"
     inputId="dropdown-123-input-option"
+    requiredMark={false}
   />
   <Dropdown
     aria-invalid={false}
-    calloutProps={
-      Object {
-        "doNotLayer": undefined,
-      }
-    }
+    calloutProps={Object {}}
     className=
 
         & .ms-Dropdown-title {
@@ -38,6 +31,9 @@ exports[`Dropdown komponent matcher snapshot 1`] = `
         }
         & .ms-Dropdown-titleIsPlaceHolder {
           border-color: #1a1a1a;
+        }
+        & .ms-Dropdown.is-required::before {
+          display: none;
         }
         &:focus .ms-Dropdown-title.ms-Dropdown-title {
           border: 2px solid #1362ae;
@@ -144,6 +140,7 @@ exports[`Dropdown komponent matcher snapshot 1`] = `
       ]
     }
     placeholder="Select an option"
+    required={false}
     styles={
       Object {
         "dropdownItem": Object {

@@ -15,11 +15,13 @@ export const ComboBox: React.FC<ComboBoxProps> = (props) => {
     help,
     className,
     id,
+    required = false,
     labelButtonAriaLabel,
     labelWithCalloutProps,
     onCalloutToggle,
     calloutProps,
     readOnly,
+    requiredWithMark = false,
     ref,
     ...rest
   } = props;
@@ -37,6 +39,7 @@ export const ComboBox: React.FC<ComboBoxProps> = (props) => {
         id={labelId}
         inputId={readOnly ? inputId : inputId + '-input'} //Fabric adds its own -input postfix
         label={label}
+        requiredMark={requiredWithMark}
         buttonAriaLabel={labelButtonAriaLabel}
         help={help}
         onCalloutToggle={onCalloutToggle}
@@ -61,6 +64,7 @@ export const ComboBox: React.FC<ComboBoxProps> = (props) => {
           {...rest}
           id={inputId}
           ariaLabel={label}
+          required={required || requiredWithMark}
           className={classnames(styles.main, className)}
           errorMessage={errorMessage}
           aria-invalid={errorMessage ? true : false}

@@ -6,37 +6,51 @@ Velge fra en fast liste (stor versjon):
 import { ComboBox } from '@skatteetaten/frontend-components/ComboBox';
 import { Grid } from '@skatteetaten/frontend-components/Grid';
 
-<div style={{ maxWidth: '300px' }}>
-  <ComboBox
-    label="Fylke"
-    help="Dette feltet foreslår en verdi når du begynner å skrive. Du kan også bla gjennom listen og velge på den måten."
-    placeholder="Velg eller begynn å skrive"
-    inputSize="large"
-    options={[
-      { key: 'A', text: 'Agder', value: 'Agder' },
-      { key: 'B', text: 'Innlandet', value: 'Innlandet' },
-      { key: 'C', text: 'Møre og Romsdal', value: 'Møre og Romsdal' },
-      { key: 'D', text: 'Nordland', value: 'Nordland' },
-      { key: 'E', text: 'Oslo', value: 'Oslo' },
-      { key: 'F', text: 'Rogaland', value: 'Rogaland' },
-      { key: 'G', text: 'Troms og Finnmark', value: 'Troms og Finnmark' },
-      { key: 'H', text: 'Trøndelag', value: 'Trøndelag' },
-      {
-        key: 'I',
-        text: 'Vestfold og Telemark',
-        value: 'Vestfold og Telemark',
-      },
-      { key: 'J', text: 'Vestland', value: 'Vestland' },
-      { key: 'K', text: 'Viken', value: 'Viken' },
-    ]}
-    allowFreeform={false}
-    ariaLabel="Eksempel ComboBox"
-    useComboBoxAsMenuWidth
-    calloutFloating={false}
-    labelWithCalloutProps={{
-      calloutProps: { autoDismiss: true },
-    }}
-  />
+const [selectedComboBoxOption, setSelectedComboBoxOption] = React.useState();
+
+const onChange = (event, option, index) => {
+  setSelectedComboBoxOption(option);
+};
+
+<div>
+  <Grid>
+    <Grid.Row>
+      <Grid.Col lg={4}>
+        <ComboBox
+          label="Fylke"
+          requiredWithMark
+          help="Dette feltet foreslår en verdi når du begynner å skrive. Du kan også bla gjennom listen og velge på den måten."
+          placeholder="Velg eller begynn å skrive"
+          inputSize="large"
+          options={[
+            { key: 'A', text: 'Agder', value: 'Agder' },
+            { key: 'B', text: 'Innlandet', value: 'Innlandet' },
+            { key: 'C', text: 'Møre og Romsdal', value: 'Møre og Romsdal' },
+            { key: 'D', text: 'Nordland', value: 'Nordland' },
+            { key: 'E', text: 'Oslo', value: 'Oslo' },
+            { key: 'F', text: 'Rogaland', value: 'Rogaland' },
+            { key: 'G', text: 'Troms og Finnmark', value: 'Troms og Finnmark' },
+            { key: 'H', text: 'Trøndelag', value: 'Trøndelag' },
+            {
+              key: 'I',
+              text: 'Vestfold og Telemark',
+              value: 'Vestfold og Telemark',
+            },
+            { key: 'J', text: 'Vestland', value: 'Vestland' },
+            { key: 'K', text: 'Viken', value: 'Viken' },
+          ]}
+          allowFreeform={false}
+          onChange={onChange}
+          ariaLabel="Eksempel ComboBox"
+          useComboBoxAsMenuWidth
+          calloutFloating={false}
+          labelWithCalloutProps={{
+            calloutProps: { autoDismiss: true },
+          }}
+        />
+      </Grid.Col>
+    </Grid.Row>
+  </Grid>
 </div>;
 ```
 
@@ -45,29 +59,42 @@ Hvis brukeren skal kunne legge til egne elementer:
 ```js
 import { ComboBox } from '@skatteetaten/frontend-components/ComboBox';
 
-<div style={{ maxWidth: '300px' }}>
-  <ComboBox
-    label="Bilmerke"
-    help="Dette feltet foreslår en verdi når du begynner å skrive. Det er også mulig å legge til egne verdier."
-    placeholder="Velg eller legg til"
-    options={[
-      { key: 'A', text: 'Audi', value: 'Audi' },
-      { key: 'A', text: 'BMW', value: 'BMW' },
-      { key: 'B', text: 'Hyundai', value: 'Hyundai' },
-      { key: 'C', text: 'Mercedes-Benz', value: 'Mercedes-Benz' },
-      { key: 'D', text: 'Nissan', value: 'Nissan' },
-      { key: 'E', text: 'MG', value: 'MG' },
-      { key: 'F', text: 'Mitsubishi', value: 'Rogaland' },
-      { key: 'G', text: 'Tesla', value: 'Troms og Finnmark' },
-      { key: 'H', text: 'Volkswagen', value: 'Trøndelag' },
-      { key: 'I', text: 'Volvo', value: 'Volvo' },
-    ]}
-    allowFreeform={true}
-    autoComplete={'on'}
-    ariaLabel="Eksempel på ComboBox"
-    useComboBoxAsMenuWidth
-    calloutFloating={false}
-  />
+const [selectedComboBoxOption, setSelectedComboBoxOption] = React.useState();
+
+const onChange = (event, option, index) => {
+  setSelectedComboBoxOption(option);
+};
+
+<div>
+  <Grid>
+    <Grid.Row>
+      <Grid.Col lg={4}>
+        <ComboBox
+          label="Bilmerke"
+          help="Dette feltet foreslår en verdi når du begynner å skrive. Det er også mulig å legge til egne verdier."
+          placeholder="Velg eller legg til"
+          options={[
+            { key: 'A', text: 'Audi', value: 'Audi' },
+            { key: 'A', text: 'BMW', value: 'BMW' },
+            { key: 'B', text: 'Hyundai', value: 'Hyundai' },
+            { key: 'C', text: 'Mercedes-Benz', value: 'Mercedes-Benz' },
+            { key: 'D', text: 'Nissan', value: 'Nissan' },
+            { key: 'E', text: 'MG', value: 'MG' },
+            { key: 'F', text: 'Mitsubishi', value: 'Rogaland' },
+            { key: 'G', text: 'Tesla', value: 'Troms og Finnmark' },
+            { key: 'H', text: 'Volkswagen', value: 'Trøndelag' },
+            { key: 'I', text: 'Volvo', value: 'Volvo' },
+          ]}
+          onChange={onChange}
+          allowFreeform={true}
+          autoComplete={'on'}
+          ariaLabel="Eksempel på ComboBox"
+          useComboBoxAsMenuWidth
+          calloutFloating={false}
+        />
+      </Grid.Col>
+    </Grid.Row>
+  </Grid>
 </div>;
 ```
 

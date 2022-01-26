@@ -10,6 +10,7 @@ const [state, setState] = React.useState({ value: '' });
 <div style={{ maxWidth: '300px' }}>
   <TextField
     id={'my-input'}
+    required
     label={'Navn'}
     value={state.value}
     onChange={(e, value) => setState({ value: value })}
@@ -27,6 +28,7 @@ const [state, setState] = React.useState({ value: '' });
 <div style={{ maxWidth: '300px' }}>
   <TextField
     label={'Navn'}
+    requiredWithMark
     inputSize={'large'}
     value={state.value}
     onChange={(e, value) => setState({ value })}
@@ -71,6 +73,33 @@ const [children, setChildren] = React.useState('23');
 </>;
 ```
 
+Prefix og suffix i felt:
+
+```js
+import { TextField } from '@skatteetaten/frontend-components/TextField';
+
+<div style={{ maxWidth: '300px', paddingBottom: '16px' }}>
+  <p style={{ margin: '0 0 8px 0' }}>
+    <em>Prefix:</em>
+  </p>
+  <TextField
+    id={'my-input-tlf'}
+    label={'Telefonnummer'}
+    prefix="+47"
+    inputMode="tel"
+  />
+  <p style={{ paddingTop: '16px', marginBottom: '8px' }}>
+    <em>Suffix:</em>
+  </p>
+  <TextField
+    id={'my-input-ink'}
+    label={'Inntekt'}
+    suffix="NOK"
+    inputMode="numeric"
+  />
+</div>;
+```
+
 Feilmelding vises i umiddelbar nærhet til feltet:
 
 ```js
@@ -83,6 +112,7 @@ const [state, setState] = React.useState({ value: '' });
     label="Inntektsår"
     value={state.value}
     onChange={(e, value) => setState({ value })}
+    inputMode="numeric"
     errorMessage={
       state.value !== '2008' ? 'Inntekståret må være etter 2008.' : null
     }
@@ -110,7 +140,9 @@ const [state, setState] = React.useState({
     onChange={(e, value) => setState({ ...state, value })}
     boldText={true}
   />
-  <p>Med suffix:</p>
+  <p style={{ paddingTop: '16px', marginBottom: '8px' }}>
+    <em>Med suffix:</em>
+  </p>
   <TextField
     readOnly
     editable
@@ -120,7 +152,9 @@ const [state, setState] = React.useState({
     boldText={true}
     suffix={'kg'}
   />
-  <p>Rediger når tekstfeltet er tomt:</p>
+  <p style={{ paddingTop: '16px', marginBottom: '8px' }}>
+    <em>Rediger når tekstfeltet er tomt:</em>
+  </p>
   <TextField
     readOnly
     editable
@@ -147,6 +181,7 @@ const [state, setState] = React.useState({ value: '' });
     label={'Org.nummer (9 siffer)'}
     mask={'999 999 999'}
     maskChar={''}
+    inputMode="numeric"
   />
 </div>;
 ```

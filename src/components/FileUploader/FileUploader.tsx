@@ -23,7 +23,7 @@ export const isCorrectFileFormat = (
   if (!acceptedFilformats) {
     return true;
   }
-  const fileExtention = file.name.match(/\.[0-9a-z]+$/i);
+  const fileExtention = file.name.toLowerCase().match(/\.[0-9a-z]+$/i);
   if (fileExtention && fileExtention[0]) {
     if (acceptedFilformats.indexOf(fileExtention[0] as FileFormatTypes) > -1) {
       return true;
@@ -65,7 +65,7 @@ const filtypeMap = (() => {
 })();
 
 const getFileIconName = (fil: AttachmentMetadata) => {
-  const filutvidelse = fil.name.split('.').pop();
+  const filutvidelse = fil.name.toLowerCase().split('.').pop();
   const fileType = filtypeMap.get(filutvidelse ? filutvidelse : '');
   return fileType ? fileType : FilTyperNavn.File;
 };
@@ -87,6 +87,7 @@ export const FileUploader: React.FC<FileUploaderProps> = (props) => {
     help,
     id = 'fileupload',
     info,
+    required = false,
     invalidCharacterRegexp,
     isLoading,
     label,
@@ -337,6 +338,7 @@ export const FileUploader: React.FC<FileUploaderProps> = (props) => {
         id={id + '-label'}
         inputId={id + '-input'}
         label={label}
+        requiredMark={required}
         buttonAriaLabel={labelButtonAriaLabel}
         help={help}
         onCalloutToggle={onCalloutToggle}

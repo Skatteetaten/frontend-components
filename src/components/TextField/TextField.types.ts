@@ -15,6 +15,8 @@ export interface TextFieldProps extends IMaskedTextFieldProps {
   id?: string;
   /** Størrelse på tekstfelt som skal benyttes */
   inputSize?: 'normal' | 'large';
+  /** Om feltet er obligatorisk */
+  required?: boolean;
   /** Setter inputmode (html 5) på tekstefeltet */
   inputMode?: IMaskedTextFieldProps['inputMode'];
   /** aria-label for knapp i label */
@@ -25,6 +27,8 @@ export interface TextFieldProps extends IMaskedTextFieldProps {
   labelWithCalloutProps?: LabelWithCalloutProps;
   /** Tekst inni feltet som vises før man skriver */
   placeholder?: string;
+  /** Om feltet er obligatorisk og skal markeres med stjerne (*) */
+  requiredWithMark?: boolean;
   /** Tilhørende varseltekst */
   warning?: JSX.Element | string;
   /** Antall rader som skal vises i feltet når multiline er satt */

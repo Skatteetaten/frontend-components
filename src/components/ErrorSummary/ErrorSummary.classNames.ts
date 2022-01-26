@@ -1,20 +1,21 @@
 import { mergeStyleSets } from '@fluentui/merge-styles';
-import { getTheme } from '@fluentui/react/lib/Styling';
-import { FontSizes, LineHeightSizes, PaletteProps } from '../utils';
+
+import designtokenColors from '../utils/designtokens/_colors.json';
+import designtokenFontSizes from '../utils/designtokens/_fontSizes.json';
+import designtokenSpacing from '../utils/designtokens/_spacing.json';
+import designtokenBreakpoints from '../utils/designtokens/_breakpoints.json';
 
 export const getClassNames = (props) => {
-  const palette = getTheme().palette as PaletteProps;
-
   return mergeStyleSets({
     mainContainer: {
-      border: '2px solid '.concat(palette.skeColor.error),
+      border: '2px solid '.concat(designtokenColors['ske-color-status-error']),
       display: 'flex',
-      backgroundColor: palette.skeColor.white,
+      backgroundColor: designtokenColors['ske-color-white-100'],
       justifyContent: 'flex-start',
       width: 'fit-content',
       selectors: {
         '& h1, h2, h3, h4, h5, h6': {
-          fontSize: FontSizes.large,
+          fontSize: designtokenFontSizes['ske-font-size-l'],
           margin: '0',
         },
       },
@@ -24,33 +25,33 @@ export const getClassNames = (props) => {
       li: {
         display: 'block',
         cursor: 'pointer',
-        lineHeight: LineHeightSizes.xLarge,
+        lineHeight: designtokenFontSizes['ske-line-height-xl'],
       },
     },
     iconArea: {
       width: '4rem',
-      backgroundColor: palette.skeColor.error,
+      backgroundColor: designtokenColors['ske-color-status-error'],
       textAlign: 'center',
       selectors: {
-        '@media (max-width: 639px)': {
+        [`@media (max-width: ${designtokenBreakpoints['ske-breakpoint-md']})`]: {
           width: '2rem',
         },
       },
     },
     errorIcon: {
       fontSize: '2.4rem',
-      color: palette.skeColor.white,
-      padding: '6px 8px 8x 4px',
+      color: designtokenColors['ske-color-white-100'],
+      padding: '6px 8px 8px 4px',
       selectors: {
-        '@media (max-width: 639px)': {
+        [`@media (max-width: ${designtokenBreakpoints['ske-breakpoint-md']})`]: {
           fontSize: '1.4rem',
         },
       },
     },
     errorListContainer: {
-      padding: '16px 24px',
+      padding: `${designtokenSpacing['ske-spacing-lg']} ${designtokenSpacing['ske-spacing-xl']}`,
       selectors: {
-        '@media (max-width: 639px)': {
+        [`@media (max-width: ${designtokenBreakpoints['ske-breakpoint-md']})`]: {
           padding: '8px 12px',
         },
       },

@@ -1,10 +1,17 @@
 import React from 'react';
+import { RowCustomClassNames } from './TableRow';
 
 export enum Language {
   en = 'en',
   nb = 'nb',
   nn = 'nn',
   se = 'se',
+}
+
+export interface RowData {
+  hideEdit?: boolean;
+  hideSeparator?: boolean;
+  customClassNames?: RowCustomClassNames;
 }
 
 export interface TableProps<P> extends React.HTMLAttributes<HTMLDivElement> {

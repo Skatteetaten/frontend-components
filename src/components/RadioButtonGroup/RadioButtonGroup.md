@@ -19,6 +19,7 @@ const [state, setState] = React.useState({
   <RadioButtonGroup
     label="Type virksomhet"
     options={state.options}
+    requiredWithMark
     onChange={(e, option) => console.log(option)}
     help="Type virksomhet vil påvirke hva du må rapportere til oss."
     id="radio"

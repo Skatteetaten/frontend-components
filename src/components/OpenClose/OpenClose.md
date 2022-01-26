@@ -41,6 +41,7 @@ const paraStyle = {
   <br />
   <OpenClose
     compact
+    noBorder
     isOnClickOnlyFiredOnOpen={false}
     title={state.open ? 'Skjul detaljer' : 'Vis detaljer'}
     onClick={() => setState({ open: !state.open })}

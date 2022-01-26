@@ -25,6 +25,7 @@ exports[`Callout komponent matcher snapshot 1`] = `
             border: 2px solid #1a1a1a;
             box-shadow: none !important;
             box-sizing: border-box;
+            display: flex;
             font-family: 'Helvetica Neue', Helvetica , Arial, 'Liberation Sans', 'Nimbus Sans L', sans-serif;
             font-size: 1rem;
             font-weight: 400;
@@ -46,18 +47,9 @@ exports[`Callout komponent matcher snapshot 1`] = `
             box-sizing: border-box;
             padding-bottom: 1rem;
             padding-left: 1rem;
-            padding-right: 2.5rem;
+            padding-right: 2rem;
             padding-top: 1rem;
             width: 100%;
-          }
-          @media  only screen and (max-width: 479px){& .ms-Callout-main {
-            max-width: 300px;
-          }
-          & .ms-Callout-main .callout-content {
-            padding-bottom: 10px;
-            padding-left: 10px;
-            padding-right: 20px;
-            padding-top: 10px;
           }
           & .ms-Callout-beak {
             background-color: #e3f5ea;
@@ -70,7 +62,7 @@ exports[`Callout komponent matcher snapshot 1`] = `
             margin-top: 0;
           }
           && h3 {
-            font-size: 1.125rem;
+            font-size: 1rem;
             margin-top: 0;
           }
       style={
@@ -91,13 +83,14 @@ exports[`Callout komponent matcher snapshot 1`] = `
               overflow-x: hidden;
               overflow-y: auto;
               position: relative;
+              width: 100%;
             }
         onKeyDown={[Function]}
         onMouseDown={[Function]}
         onMouseUp={[Function]}
         style={
           Object {
-            "maxHeight": undefined,
+            "maxHeight": "100%",
             "outline": "none",
             "overflowY": undefined,
           }
