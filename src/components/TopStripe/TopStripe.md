@@ -322,7 +322,7 @@ const [language, setLanguage] = useState('nb');
   <h3>WAI-ARIA</h3>
   <ul>
     <li>
-      Role=link brukes på Tilbake til skattetaten.no-knappen fordi den visuelt
+      Role="link" brukes på Tilbake til skattetaten.no-knappen fordi den visuelt
       ser ut som en lenke.
     </li>
     <li>
@@ -330,7 +330,7 @@ const [language, setLanguage] = useState('nb');
       skriftstørrelse.
     </li>
     <li>
-      Aria-haspopup, role=menu, role=menuitem brukes på f.eks. på språkmenyen.
+      Aria-haspopup, role="menu", role="menuitem" brukes på f.eks. på språkmenyen.
       Dette får skjermleser til å "bytte" modus og trigge menynavigering.
     </li>
     <li>Aria-hidden brukes for å skjule ikoner for skjermleser.</li>
