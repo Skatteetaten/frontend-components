@@ -33,9 +33,9 @@ import { Grid } from '@skatteetaten/frontend-components/Grid';
 <>
   <h3>Innhold i bunnen av siden</h3>
   <p>
-    I alle nettløsningene våre har vi en bunn som typisk inneholder
-    kontaktopplysninger, personvernopplysninger og lenker for deling.
-    Bunn-komponenten kan inneholde flere underelementer.
+    I alle publikumsløsningene våre har vi en bunn som typisk inneholder
+    kontaktopplysninger, personvernopplysninger og lenker for deling. Denne
+    bunn-komponenten kan inneholde flere underelementer.
   </p>
   <h3>Tilpass bunnen til ulike skjermstørrelser</h3>
   <p>
@@ -53,11 +53,11 @@ import { Grid } from '@skatteetaten/frontend-components/Grid';
   <h3>Tilpass bunnen til ulike skjermstørrelser</h3>
   <ul>
     <li>
-      Bruk grid-systemet når du setter opp bunnen fordi dette gjør at den
-      tilpasser seg ulike skjermstørrelser.
+      Bruk grid-systemet når du setter opp bunnen. Dette gjør at den tilpasser
+      seg ulike skjermstørrelser.
     </li>
   </ul>
-  <h3>Logo i bunnen</h3>
+  <h3>Plasser logo i bunnen</h3>
   <ul>
     <li>
       Bruk komponenten FooterContent.Logo i bunnen. Logoen blir midtstilt på

@@ -2,7 +2,7 @@
 
 ### Ikke innlogget
 
-Viser Kontakt oss, endre skriftsstørrelse, språk og logg inn.
+Viser kontakt oss, endre skriftsstørrelse, språk og logg inn.
 
 ```js
 import { useState } from 'react';
@@ -59,7 +59,7 @@ const [language, setLanguage] = useState('nb');
 
 ### Innlogget og kan kun representere seg selv
 
-Viser Kontakt oss, endre skriftsstørrelse, språk, partsvalg og logg ut.
+Viser kontakt oss, endre skriftsstørrelse, språk, partsvalg (velger for hvem de representerer) og logg ut.
 
 ```js
 import { useState } from 'react';
@@ -125,7 +125,7 @@ const [language, setLanguage] = useState('nb');
 
 ### Innlogget og kan representere flere
 
-Viser Kontakt oss, endre skriftsstørrelse, språk, partsvalg og logg ut.
+Viser kontakt oss, endre skriftsstørrelse, språk, partsvalg (velger for hvem de representerer) og logg ut.
 
 ```js
 import { useState } from 'react';
@@ -255,34 +255,41 @@ const [language, setLanguage] = useState('nb');
 ```
 
 ```js noeditor beskrivelse
-<>
-  <h3>Viser at brukeren er logget inn med MinID</h3>
+<div>
+  <h3>Toppstripen viser at brukeren er innlogget med MinID</h3>
   <p>
-    TopStripe er svart og ligger øverst på innloggede sider for publikum.
-    Digitaliseringsdirektoratet anbefaler at vi har en felles markering av
-    innloggede tjenester som benytter MinID. Alle innloggede publikumsløsninger
-    skal derfor ha en slik TopStripe. Den svarte stripen skal være identisk på
-    tvers av løsningene våre, slik at brukerne kjenner den igjen.
+    Alle innloggede publikumsløsninger skal ha en svart toppstripe som er
+    identisk på tvers av løsningene våre. Dette sikrer at brukerne kjenner den
+    igjen når de er innlogget med MinID, og er anbefalt av
+    Digitaliseringsdirektoratet.
   </p>
-  <h3>Overordnede lenker og funksjoner</h3>
+  <h3>Slik setter du opp toppstripen:</h3>
+  <ul>
+    <li>
+      Plasser de overordede funksjonene «Kontakt oss», «Language/Språk» og
+      «Endre skriftstørrelse» i <a href="#TopBanner">TopBanner</a>.
+    </li>
+    <li>
+      På mobil flytter du overordnede funksjoner ned til{' '}
+      <a href="#FooterContent">footeren</a>.
+    </li>
+  </ul>
+  <h3>Når brukeren representerer andre</h3>
   <p>
-    Legg de overordede funksjonene «Kontakt oss», «Language/Språk» og «Endre
-    skriftstørrelse» i TopStripen. På mobil flytter du «Kontakt oss» og «Endre
-    skriftstørrelse» ned til <a href="#FooterContent">footeren</a>, mens
-    «Language/Språk» legges inn i <a href="#TopBanner">TopBanner</a>.
+    Når den innloggende brukeren har fullmakt (rettighet) til å opptre på vegne
+    av andre personer, kan brukeren velge den de representerer i nedtrekksmenyen
+    under sitt eget navn. Velgeren er alltid synlig når brukeren er innlogget,
+    også på mobil.
   </p>
-  <h3>Endre bruker</h3>
-  <p>
-    Av og til kan den innloggende brukeren ha rettighet til å se eller sende inn
-    opplysninger på vegne av andre personer eller virksomheter. Mellom logg
-    ut-knappen og navnet på den som er logget inn, har vi derfor en «velger» med
-    nedtrekksliste. Her kan brukerne bytte til den de ønsker å representere.
-    Denne velgeren er alltid synlig når brukeren er innlogget, også på mobil.
-    Dersom en bruker har rettigheter til å handle på vegne av et stort antall
-    personer, lenker du til en side eller dialog som gir brukeren mulighet til å
-    bytte.
-  </p>
-</>
+  <p>Pass på:</p>
+  <ul>
+    <li>
+      Dersom en bruker har fullmakt (rettigheter) til å handle på vegne av et
+      stort antall personer, må du lenke til en side eller dialog som gir
+      brukeren mulighet til å bytte.
+    </li>
+  </ul>
+</div>
 ```
 
 ```js noeditor uu

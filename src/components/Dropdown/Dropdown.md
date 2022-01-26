@@ -129,10 +129,6 @@ const options = [
 import { MessageBar } from '@skatteetaten/frontend-components/MessageBar';
 
 <>
-  <MessageBar type={MessageBar.Type.info}>
-    Merk at denne komponenten foreløpig ikke fungerer i micro frontends. Vurder
-    å bruke ComboBox i stedet.
-  </MessageBar>
   <h3>Nedtrekksliste som brukeren kan velge fra</h3>
   <p>
     Nedtrekkslister gjør det mulig for brukeren å velge ett eller flere valg fra
