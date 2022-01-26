@@ -217,7 +217,7 @@ import { TopBanner } from '@skatteetaten/frontend-components/TopBanner';
   <h3>WAI-ARIA</h3>
   <ul>
     <li>
-      Role=link brukes på Tilbake til skattetaten.no-knappen fordi den visuelt
+      Role="link" brukes på Tilbake til skattetaten.no-knappen fordi den visuelt
       ser ut som en lenke.
     </li>
     <li>
@@ -225,8 +225,8 @@ import { TopBanner } from '@skatteetaten/frontend-components/TopBanner';
       skriftstørrelse.
     </li>
     <li>
-      Aria-expanded, aria-haspopup, aria-controls, aria-labelledby, role=menu,
-      role=menuitem brukes på f.eks. på språkmenyen. Dette får skjermleser til å
+      Aria-expanded, aria-haspopup, aria-controls, aria-labelledby, role="menu",
+      role="menuitem" brukes på f.eks. på språkmenyen. Dette får skjermleser til å
       «bytte» modus og trigge menynavigering.
     </li>
     <li>Aria-hidden brukes for å skjule ikoner for skjermleser.</li>
