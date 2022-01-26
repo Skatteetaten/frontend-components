@@ -74,7 +74,7 @@ import { Grid } from '@skatteetaten/frontend-components/Grid';
   <ul>
     <li>
       Footer-innhold bør ligge wrapped i en footer-tag (eller eventuelt en tag
-      med attributtet role=contentinfo).
+      med attributtet role="contentinfo").
     </li>
     <li>
       Tenk på struktur og overskriftshierarki. Det mest vanlige er å bruke
@@ -89,7 +89,7 @@ import { Grid } from '@skatteetaten/frontend-components/Grid';
 
   <h3>WAI-ARIA</h3>
   <ul>
-    <li>Aria-hidden brukes for skjule footer-grafikk for skjermleser. </li>
+    <li>Aria-hidden brukes for å skjule footer-grafikk for skjermleser. </li>
   </ul>
 </>
 ```
