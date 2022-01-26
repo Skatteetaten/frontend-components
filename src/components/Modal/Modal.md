@@ -46,3 +46,29 @@ const TestComponent = ({}) => {
   </ModalProvider>
 </div>;
 ```
+```js noeditor uu
+<>
+  <h3>Tips</h3>
+
+  <ul>
+    <li>
+      Sjekk at modalen får fokus etter at den åpnes. Dette gjør det enklere for en skjermleser å oppdage og lese opp innholdet.
+    </li>
+    <li>Test med tastatur at du ikke kan navigere ut av dialogen. Tastaturfokuset skal være på knappen som åpner dialogen etter lukking.</li>
+<li>Sjekk at alt innholdet bak dialogen "viskes" ut visuelt.</li>
+  </ul>
+
+  <h3>Mest relevante WCAG-krav</h3>
+
+  <ul>
+    <li>2.4.3 A, Fokusrekkefølge</li>
+    <li>4.1.2 A, Navn, rolle, verdi</li>
+  </ul>
+
+  <h3>WAI-ARIA</h3>
+
+  <ul>
+    <li>Aria-hidden="true" brukes for å skjule ikon(er) for skjermleser.</li>
+  </ul>
+</>
+```
