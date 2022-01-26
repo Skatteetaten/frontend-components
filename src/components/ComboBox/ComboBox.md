@@ -6,6 +6,12 @@ Velge fra en fast liste (stor versjon):
 import { ComboBox } from '@skatteetaten/frontend-components/ComboBox';
 import { Grid } from '@skatteetaten/frontend-components/Grid';
 
+const [selectedComboBoxOption, setSelectedComboBoxOption] = React.useState();
+
+const onChange = (event, option, index) => {
+  setSelectedComboBoxOption(option);
+};
+
 <div>
   <Grid>
     <Grid.Row>
@@ -34,6 +40,7 @@ import { Grid } from '@skatteetaten/frontend-components/Grid';
             { key: 'K', text: 'Viken', value: 'Viken' },
           ]}
           allowFreeform={false}
+          onChange={onChange}
           ariaLabel="Eksempel ComboBox"
           useComboBoxAsMenuWidth
           calloutFloating={false}
@@ -52,6 +59,12 @@ Hvis brukeren skal kunne legge til egne elementer:
 ```js
 import { ComboBox } from '@skatteetaten/frontend-components/ComboBox';
 import { Grid } from '@skatteetaten/frontend-components/Grid';
+
+const [selectedComboBoxOption, setSelectedComboBoxOption] = React.useState();
+
+const onChange = (event, option, index) => {
+  setSelectedComboBoxOption(option);
+};
 
 <div>
   <Grid>
@@ -73,6 +86,7 @@ import { Grid } from '@skatteetaten/frontend-components/Grid';
             { key: 'H', text: 'Volkswagen', value: 'Trøndelag' },
             { key: 'I', text: 'Volvo', value: 'Volvo' },
           ]}
+          onChange={onChange}
           allowFreeform={true}
           autoComplete={'on'}
           ariaLabel="Eksempel på ComboBox"

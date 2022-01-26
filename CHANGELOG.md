@@ -91,6 +91,31 @@ Variants have been reorganized/prioritized, with have new names and default valu
 - Added sami translations to
 - OpenClose: added ability to show underline
 
+### **v.4.2.2 - 12.01.2022**
+
+- Updated Axios to fix vulnerabilities.
+
+### **v.4.2.1 - 30.11.2021**
+
+- FileUploader: now supports UPPERCASE file types.
+- Removed dependency material-design-icons
+
+### **v.4.2.0 - 24.11.2021**
+
+- New ErrorSummary component.
+- OpenClose: Improvements to accessbility and reposiveness. Added ability to underline text.
+- Sketch-file updated and reorganized.
+- Checkbox: fixes styling for disabled state.
+- RadioButtonGroup improvements on a display issue when zooming.
+- Table header cells now reacts to alignment.
+- Deprecated: Button buttonStyle: primaryRounded, primaryRoundedFilled, primaryLarge. We are planning to simplyfy the button hierarchy, and in the next major release these variants will have new names.
+
+### **v.4.1.6 - 15.10.2021**
+
+- TopStripe: Added width to flag SVGs
+
+      <h3>v1.0.25 - Nov 7, 2018</h3>
+
 ### Se eldre versjoner:
 
 ```js noeditor
