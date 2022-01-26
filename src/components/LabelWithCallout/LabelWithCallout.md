@@ -29,7 +29,7 @@ Brukt i kombinasjon med annen komponent, og veldig mye tekst.
 import { LabelWithCallout } from '@skatteetaten/frontend-components/LabelWithCallout';
 import { SearchField } from '@skatteetaten/frontend-components/SearchField';
 
-<div>
+<div style={{ maxWidth: '400px' }}>
   <LabelWithCallout
     id={'lwc2'}
     label={'Søk'}
@@ -46,24 +46,7 @@ import { SearchField } from '@skatteetaten/frontend-components/SearchField';
 </div>;
 ```
 
-Brukt med calloutFloating prop og autoDismiss
-
-```js
-import { LabelWithCallout } from '@skatteetaten/frontend-components/LabelWithCallout';
-import { SearchField } from '@skatteetaten/frontend-components/SearchField';
-
-<div>
-  <LabelWithCallout
-    id={'lwc3'}
-    label={'Søk'}
-    help={'Her kan du søke etter personer og virksomheter.'}
-    calloutProps={{ autoDismiss: true }}
-    calloutFloating
-  />
-</div>;
-```
-
-Brukt med calloutFloating prop og autoDismiss, og veldig mye tekst
+Flytende, automatisk lukking og mye tekst:
 
 ```js
 import { LabelWithCallout } from '@skatteetaten/frontend-components/LabelWithCallout';
@@ -100,7 +83,7 @@ import { TextField } from '@skatteetaten/frontend-components/TextField';
 const [state, setState] = React.useState({ value1: '' });
 
 <>
-  <div>
+  <div style={{ maxWidth: '400px' }}>
     <TextField
       label="Fullt navn"
       value={state.value1}

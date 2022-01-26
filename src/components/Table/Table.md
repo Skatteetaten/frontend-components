@@ -215,7 +215,7 @@ const data = [
 />;
 ```
 
-Ekspanderbare rader
+Ekspanderbare rader med høyre-pil og nested tabell:
 
 ```js
 import { ActionButton } from '@skatteetaten/frontend-components/ActionButton';
@@ -370,7 +370,6 @@ const expandableContentLabelWithCallout = (data, close, rowIndex) => (
 );
 
 <>
-  <p>Ekspanderbare rader med høyre-pil og nested tabell</p>
   <Table
     data={data.map((d) => ({
       ...d,

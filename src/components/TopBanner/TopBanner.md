@@ -54,6 +54,7 @@ const [language, setLanguage] = useState('nb');
           showOnMobile={false}
           closeMenuAriaLabel="Lukk endre skriftstørrelse"
           title={'Endre skriftstørrelse'}
+          contentIsMenu={false}
         >
           <div style={{ fontSize: '24px', marginTop: '8px' }}>
             Hold Ctrl-tasten nede (Cmd-tasten på Mac). Trykk på + for å

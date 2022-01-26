@@ -1,4 +1,4 @@
-**Modal: Enkel modalboks**
+**Modal: Modalboks for enkle behov eller micro frontends**
 
 ```js
 import { Button } from '@skatteetaten/frontend-components/Button';
@@ -15,9 +15,7 @@ const TestComponent = ({}) => {
 
   return (
     <>
-      <Button onClick={toggleModal} aria-haspopup>
-        {'Åpne modal'}
-      </Button>
+      <Button onClick={toggleModal}>{'Åpne modal'}</Button>
 
       {modal && modal.isOpen('testModal') && (
         <Modal name={'testModal'}>
@@ -45,4 +43,26 @@ const TestComponent = ({}) => {
     <TestComponent />
   </ModalProvider>
 </div>;
+```
+
+```js noeditor beskrivelse
+<>
+  <p>
+    Modal har mange likhetstrekk med Dialog-komponenten, men vi anbefaler å
+    bruke Modal når:
+  </p>
+  <ul>
+    <li>
+      du har enkle bekreftelsesmeldinger, eller når innholdet inni boksen er
+      lite, og du er sikker på at du ikke må skrolle i innholdet.
+    </li>
+    <li>løsningen din har micro frontend-akitektur eller web components</li>
+  </ul>
+</>
+```
+
+```js noeditor uu
+<>
+  <p>Denne seksjonen er foreløpig tom.</p>
+</>
 ```

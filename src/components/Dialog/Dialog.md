@@ -235,7 +235,8 @@ import { MessageBar } from '@skatteetaten/frontend-components/MessageBar';
 
 <div>
   <MessageBar type={MessageBar.Type.info}>
-    Merk at denne komponenten foreløpig ikke fungerer i micro frontends.
+    Merk at denne komponenten foreløpig ikke fungerer i micro frontends. Bruk
+    Modal i det stedet.
   </MessageBar>
   <h3>En dialogboks fremhever informasjon</h3>
   <p>
