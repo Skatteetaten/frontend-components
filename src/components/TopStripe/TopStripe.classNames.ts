@@ -30,7 +30,6 @@ export const getClassNames = (contentWidth = '100%') => {
       display: 'block',
     },
     topStripeContainer: {
-      margin: `0 ${designtokenSpacing['ske-spacing-md']}`,
       zIndex: 150,
       position: 'relative',
       display: 'flex',
@@ -57,6 +56,7 @@ export const getClassNames = (contentWidth = '100%') => {
         },
         [`@media (min-width: ${designtokenBreakpoints['ske-breakpoint-sm']})`]: {
           justifyContent: 'flex-end',
+          margin: `0 ${designtokenSpacing['ske-spacing-md']}`,
         },
         [`@media (min-width: ${designtokenBreakpoints['ske-breakpoint-lg']})`]: {
           maxWidth: contentWidth,
