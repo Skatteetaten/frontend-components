@@ -65,36 +65,30 @@ const onChange = (event, option, index) => {
   setSelectedComboBoxOption(option);
 };
 
-<div>
-  <Grid>
-    <Grid.Row>
-      <Grid.Col lg={4}>
-        <ComboBox
-          label="Bilmerke"
-          help="Dette feltet foreslår en verdi når du begynner å skrive. Det er også mulig å legge til egne verdier."
-          placeholder="Velg eller legg til"
-          options={[
-            { key: 'A', text: 'Audi', value: 'Audi' },
-            { key: 'A', text: 'BMW', value: 'BMW' },
-            { key: 'B', text: 'Hyundai', value: 'Hyundai' },
-            { key: 'C', text: 'Mercedes-Benz', value: 'Mercedes-Benz' },
-            { key: 'D', text: 'Nissan', value: 'Nissan' },
-            { key: 'E', text: 'MG', value: 'MG' },
-            { key: 'F', text: 'Mitsubishi', value: 'Rogaland' },
-            { key: 'G', text: 'Tesla', value: 'Troms og Finnmark' },
-            { key: 'H', text: 'Volkswagen', value: 'Trøndelag' },
-            { key: 'I', text: 'Volvo', value: 'Volvo' },
-          ]}
-          onChange={onChange}
-          allowFreeform={true}
-          autoComplete={'on'}
-          ariaLabel="Eksempel på ComboBox"
-          useComboBoxAsMenuWidth
-          calloutFloating={false}
-        />
-      </Grid.Col>
-    </Grid.Row>
-  </Grid>
+<div style={{ maxWidth: '300px' }}>
+  <ComboBox
+    label="Bilmerke"
+    help="Dette feltet foreslår en verdi når du begynner å skrive. Det er også mulig å legge til egne verdier."
+    placeholder="Velg eller legg til"
+    options={[
+      { key: 'A', text: 'Audi', value: 'Audi' },
+      { key: 'A', text: 'BMW', value: 'BMW' },
+      { key: 'B', text: 'Hyundai', value: 'Hyundai' },
+      { key: 'C', text: 'Mercedes-Benz', value: 'Mercedes-Benz' },
+      { key: 'D', text: 'Nissan', value: 'Nissan' },
+      { key: 'E', text: 'MG', value: 'MG' },
+      { key: 'F', text: 'Mitsubishi', value: 'Rogaland' },
+      { key: 'G', text: 'Tesla', value: 'Troms og Finnmark' },
+      { key: 'H', text: 'Volkswagen', value: 'Trøndelag' },
+      { key: 'I', text: 'Volvo', value: 'Volvo' },
+    ]}
+    onChange={onChange}
+    allowFreeform={true}
+    autoComplete={'on'}
+    ariaLabel="Eksempel på ComboBox"
+    useComboBoxAsMenuWidth
+    calloutFloating={false}
+  />
 </div>;
 ```
 
