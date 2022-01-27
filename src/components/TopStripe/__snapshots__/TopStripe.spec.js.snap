@@ -44,10 +44,6 @@ exports[`TopStripe komponent matcher snapshot  1`] = `
             flex-wrap: wrap;
             font-size: 0.875rem;
             justify-content: space-between;
-            margin-bottom: 0;
-            margin-left: 0.5rem;
-            margin-right: 0.5rem;
-            margin-top: 0;
             padding-bottom: 0px;
             padding-left: 0px;
             padding-right: 0px;
@@ -73,6 +69,10 @@ exports[`TopStripe komponent matcher snapshot  1`] = `
           }
           @media (min-width: 480px){& {
             justify-content: flex-end;
+            margin-bottom: 0;
+            margin-left: 0.5rem;
+            margin-right: 0.5rem;
+            margin-top: 0;
           }
           @media (min-width: 1024px){& {
             max-width: 100%;
