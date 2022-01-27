@@ -26,11 +26,11 @@ export const TopStripe: React.FC<TopStripeProps> = (props) => {
   const notOpenIndex = -1;
   const topRef = React.createRef<HTMLUListElement>();
   const [openIndex, setOpenIndex] = React.useState(notOpenIndex);
-  const setOpen = (num: number) => {
-    if (openIndex === num) {
+  const setOpen = (index: number) => {
+    if (openIndex === index) {
       setOpenIndex(notOpenIndex);
     } else {
-      setOpenIndex(num);
+      setOpenIndex(index);
     }
   };
   const { children, className, contentWidth, ...rest } = props;
