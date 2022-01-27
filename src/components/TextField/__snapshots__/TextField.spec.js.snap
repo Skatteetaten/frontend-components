@@ -266,21 +266,36 @@ exports[`TextField komponent matcher snapshot 1`] = `
                 color: WindowText;
               }
               &::placeholder {
+                -moz-osx-font-smoothing: grayscale;
+                -webkit-font-smoothing: antialiased;
                 color: rgba(55, 55, 55, 0.95);
+                font-family: 'Helvetica Neue', Helvetica , Arial, 'Liberation Sans', 'Nimbus Sans L', sans-serif;
+                font-size: 1rem;
+                font-weight: 400;
                 opacity: 1;
               }
               @media screen and (-ms-high-contrast: active), (forced-colors: active){&::placeholder {
                 color: GrayText;
               }
               &:-ms-input-placeholder {
+                -moz-osx-font-smoothing: grayscale;
+                -webkit-font-smoothing: antialiased;
                 color: rgba(55, 55, 55, 0.95);
+                font-family: 'Helvetica Neue', Helvetica , Arial, 'Liberation Sans', 'Nimbus Sans L', sans-serif;
+                font-size: 1rem;
+                font-weight: 400;
                 opacity: 1;
               }
               @media screen and (-ms-high-contrast: active), (forced-colors: active){&:-ms-input-placeholder {
                 color: GrayText;
               }
               &::-ms-input-placeholder {
+                -moz-osx-font-smoothing: grayscale;
+                -webkit-font-smoothing: antialiased;
                 color: rgba(55, 55, 55, 0.95);
+                font-family: 'Helvetica Neue', Helvetica , Arial, 'Liberation Sans', 'Nimbus Sans L', sans-serif;
+                font-size: 1rem;
+                font-weight: 400;
                 opacity: 1;
               }
               @media screen and (-ms-high-contrast: active), (forced-colors: active){&::-ms-input-placeholder {

@@ -105,6 +105,7 @@ exports[`Checkbox komponent matcher snapshot 1`] = `
       }
 >
   <input
+    aria-checked="false"
     checked={false}
     className=
 

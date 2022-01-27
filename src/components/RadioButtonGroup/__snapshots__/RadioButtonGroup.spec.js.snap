@@ -147,7 +147,6 @@ exports[`RadioButtonGroup komponent matcher snapshot 1`] = `
   >
     <div
       aria-labelledby="radiogroup-123-label"
-      onFocus={[Function]}
       role="radiogroup"
     >
       <div
