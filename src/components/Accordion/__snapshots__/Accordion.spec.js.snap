@@ -10,7 +10,7 @@ exports[`Accordion komponent Sender videre html atributter 1`] = `
 
         {
           background-color: #ffffff;
-          margin-bottom: 20px;
+          margin-bottom: 1rem;
           position: relative;
         }
         & hr {
@@ -305,23 +305,23 @@ exports[`Accordion komponent Sender videre html atributter 1`] = `
                                   {
                                     align-items: center;
                                     background-color: #ffffff;
-                                    border-color: #000000;
+                                    border-color: #1a1a1a;
                                     border-radius: 50%;
                                     border-width: 2px;
                                     border: solid;
                                     display: flex;
                                     font-size: 1.125rem;
                                     font-weight: 700;
-                                    height: 30px;
+                                    height: 2rem;
                                     justify-content: center;
-                                    margin-top: 18px;
-                                    width: 30px;
+                                    margin-top: 1rem;
+                                    width: 2rem;
                                     z-index: 10;
                                   }
                                   @media (max-width: 640px){& {
                                     font-size: 1rem;
-                                    height: 24px;
-                                    width: 24px;
+                                    height: 1.5rem;
+                                    width: 1.5rem;
                                   }
                             >
                               <span
@@ -436,7 +436,7 @@ exports[`Accordion komponent Sender videre html atributter 1`] = `
 
                                     {
                                       background-color: #ffffff;
-                                      margin-bottom: 20px;
+                                      margin-bottom: 1rem;
                                       position: relative;
                                     }
                                     & hr {
@@ -460,10 +460,10 @@ exports[`Accordion komponent Sender videre html atributter 1`] = `
 
                                     {
                                       background-color: #ffffff;
-                                      padding-bottom: 15px;
-                                      padding-left: 10px;
+                                      padding-bottom: 1rem;
+                                      padding-left: 0.5rem;
                                       padding-right: 0;
-                                      padding-top: 0px;
+                                      padding-top: 0;
                                     }
                                     &:focus {
                                       background: #e2eaf7;
@@ -483,37 +483,38 @@ exports[`Accordion komponent Sender videre html atributter 1`] = `
                                       background-color: #b2b2b2;
                                       display: block;
                                       height: 100%;
-                                      left: 16px;
+                                      left: 0.8rem;
                                       position: absolute;
-                                      top: 50px;
+                                      top: 2rem;
                                       width: 2px;
                                     }
                                     @media (min-width: 640px){& {
-                                      left: 50px;
-                                      top: 16px;
+                                      left: 1rem;
+                                      margin-left: 1px;
+                                      top: 1.5rem;
                                     },
                                   "stepNumber": 
 
                                     {
                                       align-items: center;
                                       background-color: #ffffff;
-                                      border-color: #000000;
+                                      border-color: #1a1a1a;
                                       border-radius: 50%;
                                       border-width: 2px;
                                       border: solid;
                                       display: flex;
                                       font-size: 1.125rem;
                                       font-weight: 700;
-                                      height: 30px;
+                                      height: 2rem;
                                       justify-content: center;
-                                      margin-top: 18px;
-                                      width: 30px;
+                                      margin-top: 1rem;
+                                      width: 2rem;
                                       z-index: 10;
                                     }
                                     @media (max-width: 640px){& {
                                       font-size: 1rem;
-                                      height: 24px;
-                                      width: 24px;
+                                      height: 1.5rem;
+                                      width: 1.5rem;
                                     },
                                   "subComponentStyles": Object {},
                                   "subtitle": 
@@ -530,8 +531,8 @@ exports[`Accordion komponent Sender videre html atributter 1`] = `
                                       margin-top: 0px;
                                       padding-bottom: 0;
                                       padding-left: 0;
-                                      padding-right: 5px;
-                                      padding-top: 8px;
+                                      padding-right: 0.25rem;
+                                      padding-top: 0.5rem;
                                       text-align: left;
                                       width: 100%;
                                     },
@@ -546,10 +547,10 @@ exports[`Accordion komponent Sender videre html atributter 1`] = `
                                       font-weight: 700;
                                       margin-bottom: 0px;
                                       margin-top: 0px;
-                                      padding-bottom: 16px;
-                                      padding-left: 8px;
-                                      padding-right: 16px;
-                                      padding-top: 16px;
+                                      padding-bottom: 1rem;
+                                      padding-left: 0.5rem;
+                                      padding-right: 1rem;
+                                      padding-top: 1rem;
                                       position: relative;
                                       text-align: left;
                                       width: 100%;
@@ -641,10 +642,10 @@ exports[`Accordion komponent Sender videre html atributter 1`] = `
 
                                   {
                                     background-color: #ffffff;
-                                    padding-bottom: 15px;
-                                    padding-left: 10px;
+                                    padding-bottom: 1rem;
+                                    padding-left: 0.5rem;
                                     padding-right: 0;
-                                    padding-top: 0px;
+                                    padding-top: 0;
                                   }
                                   &:focus {
                                     background: #e2eaf7;
@@ -679,7 +680,7 @@ exports[`Accordion komponent matcher snapshot 1`] = `
 
         {
           background-color: #ffffff;
-          margin-bottom: 20px;
+          margin-bottom: 1rem;
           position: relative;
         }
         & hr {
@@ -973,7 +974,7 @@ exports[`Accordion komponent matcher snapshot 1`] = `
 
                                     {
                                       background-color: #ffffff;
-                                      margin-bottom: 20px;
+                                      margin-bottom: 1rem;
                                       position: relative;
                                     }
                                     & hr {
@@ -997,10 +998,10 @@ exports[`Accordion komponent matcher snapshot 1`] = `
 
                                     {
                                       background-color: #ffffff;
-                                      padding-bottom: 15px;
-                                      padding-left: 10px;
+                                      padding-bottom: 1rem;
+                                      padding-left: 0.5rem;
                                       padding-right: 0;
-                                      padding-top: 0px;
+                                      padding-top: 0;
                                     }
                                     &:focus {
                                       background: #e2eaf7;
@@ -1020,37 +1021,38 @@ exports[`Accordion komponent matcher snapshot 1`] = `
                                       background-color: #b2b2b2;
                                       display: block;
                                       height: 100%;
-                                      left: 16px;
+                                      left: 0.8rem;
                                       position: absolute;
-                                      top: 50px;
+                                      top: 2rem;
                                       width: 2px;
                                     }
                                     @media (min-width: 640px){& {
-                                      left: 50px;
-                                      top: 16px;
+                                      left: 1rem;
+                                      margin-left: 1px;
+                                      top: 1.5rem;
                                     },
                                   "stepNumber": 
 
                                     {
                                       align-items: center;
                                       background-color: #ffffff;
-                                      border-color: #000000;
+                                      border-color: #1a1a1a;
                                       border-radius: 50%;
                                       border-width: 2px;
                                       border: solid;
                                       display: flex;
                                       font-size: 1.125rem;
                                       font-weight: 700;
-                                      height: 30px;
+                                      height: 2rem;
                                       justify-content: center;
-                                      margin-top: 18px;
-                                      width: 30px;
+                                      margin-top: 1rem;
+                                      width: 2rem;
                                       z-index: 10;
                                     }
                                     @media (max-width: 640px){& {
                                       font-size: 1rem;
-                                      height: 24px;
-                                      width: 24px;
+                                      height: 1.5rem;
+                                      width: 1.5rem;
                                     },
                                   "subComponentStyles": Object {},
                                   "subtitle": 
@@ -1067,8 +1069,8 @@ exports[`Accordion komponent matcher snapshot 1`] = `
                                       margin-top: 0px;
                                       padding-bottom: 0;
                                       padding-left: 0;
-                                      padding-right: 5px;
-                                      padding-top: 8px;
+                                      padding-right: 0.25rem;
+                                      padding-top: 0.5rem;
                                       text-align: left;
                                       width: 100%;
                                     },
@@ -1083,10 +1085,10 @@ exports[`Accordion komponent matcher snapshot 1`] = `
                                       font-weight: 700;
                                       margin-bottom: 0px;
                                       margin-top: 0px;
-                                      padding-bottom: 16px;
-                                      padding-left: 8px;
-                                      padding-right: 16px;
-                                      padding-top: 16px;
+                                      padding-bottom: 1rem;
+                                      padding-left: 0.5rem;
+                                      padding-right: 1rem;
+                                      padding-top: 1rem;
                                       position: relative;
                                       text-align: left;
                                       width: 100%;
@@ -1178,10 +1180,10 @@ exports[`Accordion komponent matcher snapshot 1`] = `
 
                                   {
                                     background-color: #ffffff;
-                                    padding-bottom: 15px;
-                                    padding-left: 10px;
+                                    padding-bottom: 1rem;
+                                    padding-left: 0.5rem;
                                     padding-right: 0;
-                                    padding-top: 0px;
+                                    padding-top: 0;
                                   }
                                   &:focus {
                                     background: #e2eaf7;

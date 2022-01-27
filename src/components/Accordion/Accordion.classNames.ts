@@ -1,11 +1,10 @@
 import { mergeStyleSets } from '@fluentui/merge-styles';
-import { getTheme } from '@fluentui/react/lib/Styling';
-import { FontSizes, FontWeights, IconFontSizes, PaletteProps } from '../utils';
 import designtokenBreakpoints from '../utils/designtokens/_breakpoints.json';
 import designtokenSpacing from '../utils/designtokens/_spacing.json';
+import designtokenFontSizes from '../utils/designtokens/_fontSizes.json';
+import designtokenColors from '../utils/designtokens/_colors.json';
 
 export function getClassNames() {
-  const palette = getTheme().palette as PaletteProps;
   const paddingAccordionContent = `0 0 ${designtokenSpacing['ske-spacing-lg']} ${designtokenSpacing['ske-spacing-md']}`;
   return mergeStyleSets({
     containerStep: {
@@ -16,49 +15,49 @@ export function getClassNames() {
     },
     accordion: {
       position: 'relative',
-      backgroundColor: palette.skeColor.white,
-      marginBottom: 20,
+      backgroundColor: designtokenColors['ske-color-white-100'],
+      marginBottom: designtokenSpacing['ske-spacing-lg'],
       selectors: {
         '& hr': {
           margin: 0,
           border: 'solid',
           borderWidth: '1px',
-          color: palette.skeColor.lightGrey,
+          color: designtokenColors['ske-color-grey-30'],
         },
       },
     },
     content: {
-      backgroundColor: palette.skeColor.white,
+      backgroundColor: designtokenColors['ske-color-white-100'],
       padding: paddingAccordionContent,
       selectors: {
         '&:focus': {
-          background: palette.skeColor.backgroundFocusColor,
+          background: designtokenColors['ske-color-blue-10'],
         },
       },
     },
     heading: {
-      fontSize: FontSizes.largePlus,
+      fontSize: designtokenFontSizes['ske-font-size-icon-l'],
       margin: '0',
     },
     stepNumber: {
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'center',
-      backgroundColor: palette.skeColor.white,
+      backgroundColor: designtokenColors['ske-color-white-100'],
       border: 'solid',
       width: designtokenSpacing['ske-spacing-xxl'],
       height: designtokenSpacing['ske-spacing-xxl'],
       borderRadius: '50%',
       borderWidth: '2px',
-      borderColor: palette.skeColor.black,
-      fontSize: FontSizes.large,
-      fontWeight: FontWeights.bold,
+      borderColor: designtokenColors['ske-color-black-100'],
+      fontSize: designtokenFontSizes['ske-font-size-l'],
+      fontWeight: designtokenFontSizes['ske-font-weight-bold'],
       zIndex: 10,
       marginTop: designtokenSpacing['ske-spacing-lg'],
 
       selectors: {
         [`@media (max-width: ${designtokenBreakpoints['ske-breakpoint-md']})`]: {
-          fontSize: FontSizes.medium,
+          fontSize: designtokenFontSizes['ske-font-size-m'],
           width: designtokenSpacing['ske-spacing-xl'],
           height: designtokenSpacing['ske-spacing-xl'],
         },
@@ -68,13 +67,13 @@ export function getClassNames() {
       display: 'block',
       position: 'absolute',
       width: 2,
-      backgroundColor: palette.skeColor.lightGrey,
+      backgroundColor: designtokenColors['ske-color-grey-30'],
       top: designtokenSpacing['ske-spacing-xxl'],
       left: '0.8rem',
       height: '100%',
       selectors: {
         [`@media (min-width: ${designtokenBreakpoints['ske-breakpoint-md']})`]: {
-          top: '1.5rem',
+          top: designtokenSpacing['ske-spacing-xl'],
           left: designtokenSpacing['ske-spacing-lg'],
           marginLeft: 1,
         },
@@ -84,38 +83,38 @@ export function getClassNames() {
       width: '100%',
       border: 'none',
       textAlign: 'left',
-      color: palette.skeColor.blue,
-      fontSize: FontSizes.medium,
-      fontWeight: FontWeights.bold,
-      padding: '16px 16px 16px 8px',
+      color: designtokenColors['ske-color-interactive'],
+      fontSize: designtokenFontSizes['ske-font-size-m'],
+      fontWeight: designtokenFontSizes['ske-font-weight-bold'],
+      padding: `${designtokenSpacing['ske-spacing-lg']} ${designtokenSpacing['ske-spacing-lg']} ${designtokenSpacing['ske-spacing-lg']} ${designtokenSpacing['ske-spacing-md']}`,
       background: 'none',
       position: 'relative',
       cursor: 'pointer',
-      marginTop: '0px',
-      marginBottom: '0px',
+      marginTop: 0,
+      marginBottom: 0,
 
       selectors: {
         [`@media (min-width: ${designtokenBreakpoints['ske-breakpoint-md']})`]: {
-          fontSize: FontSizes.largePlus,
+          fontSize: designtokenFontSizes['ske-font-size-icon-l'],
         },
         '&:hover, &:focus': {
-          background: palette.skeColor.lightBlue,
+          background: designtokenColors['ske-color-interactive-light'],
         },
         '&:focus': {
           outline: 'none',
         },
         '& h1, h2, h3, h4, h5, h6': {
-          fontSize: FontSizes.largePlus,
+          fontSize: designtokenFontSizes['ske-font-size-icon-l'],
           margin: '0',
         },
         '& i': {
           alignSelf: 'flex-start',
           transition: '.2s',
           marginTop: '-2px',
-          fontSize: IconFontSizes.xlarge,
+          fontSize: designtokenFontSizes['ske-font-size-icon-xl'],
           selectors: {
             '@media (min-width: 640px)': {
-              fontSize: IconFontSizes.xxlarge,
+              fontSize: designtokenFontSizes['ske-font-size-icon-xxl'],
             },
           },
         },
@@ -136,14 +135,14 @@ export function getClassNames() {
     },
     subtitle: {
       display: 'block',
-      color: palette.skeColor.blackAlt,
+      color: designtokenColors['ske-color-black-100'],
       width: '100%',
       border: 'none',
       textAlign: 'left',
-      fontSize: FontSizes.large,
-      fontWeight: FontWeights.regular,
+      fontSize: designtokenFontSizes['ske-font-size-l'],
+      fontWeight: designtokenFontSizes['ske-font-weight-regular'],
       margin: 0,
-      padding: '8px 5px 0 0',
+      padding: `${designtokenSpacing['ske-spacing-md']} ${designtokenSpacing['ske-spacing-sm']} 0 0`,
     },
   });
 }
