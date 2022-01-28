@@ -80,7 +80,9 @@ exports[`Dropdown komponent matcher snapshot 1`] = `
           content: '';
           font-family: "SkeIconfont";
           font-size: 16px;
+          line-height: 1rem;
           margin-right: 3px;
+          vertical-align: text-bottom;
         }
     id="dropdown-123-input"
     onRenderCaretDown={[Function]}
