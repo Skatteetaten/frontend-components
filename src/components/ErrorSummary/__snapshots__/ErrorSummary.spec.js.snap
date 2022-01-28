@@ -63,7 +63,7 @@ exports[`ErrorSummary komponent matcher snapshot 1`] = `
       & li {
         cursor: pointer;
         display: block;
-        line-height: 1.636;
+        line-height: 1.75;
       }
   id="errorsummary"
   role="status"
