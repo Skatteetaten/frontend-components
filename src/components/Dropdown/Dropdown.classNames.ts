@@ -104,6 +104,8 @@ export const getClassNames = (props: DropdownProps) => {
         '& div[role=alert]::before': {
           fontFamily: SkeIcons.fontFace.fontFamily,
           fontSize: 16,
+          lineHeight: '1rem',
+          verticalAlign: 'text-bottom',
           content: errorIcon,
           marginRight: '3px',
         },
