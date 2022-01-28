@@ -114,7 +114,7 @@ Variants have been reorganized/prioritized, with have new names and default valu
 
 - TopStripe: Added width to flag SVGs
 
-### **v.4.1.5 - 01.10.2021**
+      <h3>v1.0.25 - Nov 7, 2018</h3>
 
 ### Se eldre versjoner:
 
