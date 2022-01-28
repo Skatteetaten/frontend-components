@@ -1,4 +1,4 @@
-### **v.5.0.0 - 1.2.2022 - Major release**
+### **v.5.0.0 - 1 February 2022 - Major release**
 
 #### **Breaking**
 
@@ -29,7 +29,7 @@
 
 ##### _Button_
 
-- Width is no longer set to 100 % width on mobile, unless mobileFullWidth prop is set.
+- Width is no longer defaults to 100 % width on mobile. Use mobileFullWidth to enable.
 
 Variants have been reorganized/prioritized, with new names and default value:
 
@@ -51,12 +51,12 @@ Variants have been reorganized/prioritized, with new names and default value:
 - New status colors: statusOk and statusWarning.
 - Both Button and ActionButton have upgraded styling, click and hover effects
 - ErrorMessage design upgraded to match the new ErrorSummary component.
-- ActionButton: the large icon is slightly smaller
+- ActionButton: the large icon is slightly smaller.
 - MessageBar now has colored icons and a left border.
 
 #### **Micro frontend support and building pipeline**
 
-- The components now better supports Micro Frontend; the styling information can be accessed from shadow DOM. (Note: Dialog does not fully support this yet.)
+- The components now better supports Micro Frontends; styling information can be accessed from shadow DOM. (Note: Dialog does not fully support this yet - use Modal instead)
 - Export has been changed from UMD to ESM.
 - Reorganized import and export to support modules.
 
@@ -77,26 +77,26 @@ Variants have been reorganized/prioritized, with new names and default value:
 - Fixes known accessibility issues with Commandbar, Dropdown and Combobox.
 - TopBanner: Added ability to change the url when clicking the logo.
 - Table: Updated styling and code for better reposiveness, alignment and performance.
-- TopStripe: Updated styling for better mobile supprt. Added ability to set content width for large screens.
+- TopStripe: Updated styling for better mobile support. Added ability to set content width for large screens.
 - Callout: Slightly changed styling for close button.
 - Added sami translations to components to DatePicker, FileUploader, SearchField and Table.
-- OpenClose: added ability to show underline
+- OpenClose: added ability to show underline.
 - TableRow: added custom styling and fixes a padding issue in SumRow
 - Input fields now has the ability to show required mark next to label.
-- Note: CheckBox has has a role="checkbox" instead of select type.
-- Note: now longer possible to access datepicker local state editMode.
+- CheckBox has has a role="checkbox" instead of select type.
+- It is no longer possible to access datepicker local state editMode.
 - Various updates to documentation
 
-### **v.4.2.2 - 12.01.2022**
+### **v.4.2.2 - 12 January 2022**
 
 - Updated Axios to fix vulnerabilities.
 
-### **v.4.2.1 - 30.11.2021**
+### **v.4.2.1 - 30 November 2021**
 
 - FileUploader: now supports UPPERCASE file types.
 - Removed dependency material-design-icons
 
-### **v.4.2.0 - 24.11.2021**
+### **v.4.2.0 - 24 November 2021**
 
 - New ErrorSummary component.
 - OpenClose: Improvements to accessbility and reposiveness. Added ability to underline text.
@@ -106,11 +106,13 @@ Variants have been reorganized/prioritized, with new names and default value:
 - Table header cells now reacts to alignment.
 - Deprecated: Button buttonStyle: primaryRounded, primaryRoundedFilled, primaryLarge. We are planning to simplyfy the button hierarchy, and in the next major release these variants will have new names.
 
-### **v.4.1.6 - 15.10.2021**
+### **v.4.1.6 - 15 October 2021**
 
 - TopStripe: Added width to flag SVGs
 
-### **v.4.1.5 - 01.10.2021**
+### **v.4.1.5 - 1 October 2021**
+
+- SearchField: fixed keyboard navigation when using a filtered list.
 
 ### Se eldre versjoner:
 

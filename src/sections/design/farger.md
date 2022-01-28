@@ -105,7 +105,7 @@ function drawSwatch(colorCode) {
       <p class="title">Ikke gjør slik:</p>
       <div style={{fontSize:"22px", padding:'0px 8px', color: palette.skeColor.green100, backgroundColor: palette.skeColor.green50}}>green100 på green50 (3.88 i kontrast)</div>
       <div style={{fontSize:"22px", padding:'0px 8px', color: palette.skeColor.green70, backgroundColor: palette.skeColor.green10}}>green70 på green10 (2.89 i kontrast)</div>
-      <div style={{fontSize:"22px", padding:'0px 8px', color: palette.skeColor.blue100, backgroundColor: palette.skeColor.brown50, border: `4px solid ${palette.skeColor.burgundy50}`}}>blue100 på brown50 + ramme (🤢)</div>
+      <div style={{fontSize:"22px", padding:'0px 8px', color: palette.skeColor.blue100, backgroundColor: palette.skeColor.brown50, border: `4px solid ${palette.skeColor.burgundy50}`}}>blue100 på brown50 + ramme (blande farger)</div>
     </div>
   </div>
 
