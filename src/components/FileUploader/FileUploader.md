@@ -1,7 +1,5 @@
 **FileUploader (Filopplaster): felt for å laste opp filer**
 
-Komponenten er basert på at du sender inn sti til API. Dersom ikke dette skulle passe er det mulighet for å bruke uploadFile og kjøre en egendefinert funksjon.
-
 ```js
 import { useState } from 'react';
 import { UseScreen } from '../utils/ScreenPlugin';
@@ -129,12 +127,16 @@ const styles = {
 
 ```js noeditor beskrivelse
 <>
-  <h3>Felt for å laste opp ett eller flere vedlegg</h3>
+  <h3>Felt for å laste opp vedlegg</h3>
   <p>
-    Bruk feltet filopplaster, når brukeren trenger å legge ved bilder eller
-    andre filer. Vi har to varianter – den ene for å laste opp én fil og den
-    andre for å laste opp flere. Vær nøye med å forklare i hjelpeteksten hvilke
-    type filer brukeren kan laste opp.
+    Flopplaster lar brukeren laste opp ett eller flere vedlegg – det kan være
+    bilder eller andre typer filer. Vær nøye med å forklare i hjelpeteksten
+    hvilke typer filer brukeren kan laste opp.
   </p>
+  <h3>To varianter:</h3>
+  <ul>
+    <li>Felt der brukeren kan laste opp én fil.</li>
+    <li>Felt der brukeren kan laste opp flere filer. </li>
+  </ul>
 </>
 ```

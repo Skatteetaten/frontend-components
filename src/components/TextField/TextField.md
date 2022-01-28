@@ -1,4 +1,4 @@
-**TextField (Tekstfelt): benyttes når vi ønsker at brukeren skrive inn informasjon av en bestemt type - som oftest i et skjema**
+**TextField (Tekstfelt): benyttes når vi ønsker at brukeren skal skrive inn informasjon av en bestemt type – som oftest i et skjema.**
 
 Standard tekstfelt:
 
@@ -281,9 +281,12 @@ const [lineBreak, setLineBreak] = React.useState(false);
   <h3>Mange varianter av tekstfelt</h3>
 
   <p>
-    I designsystemet finnes det mange ulike variasjoner av tekstfelt.
-    Tekstfeltene kan ha:
+    Tekstfelt er vanlig å bruke i skjema. Brukeren kan skrive i feltet og
+    feltnavnet over beskriver hvilken type informasjon som skal fylles ut. I
+    designsystemet har vi flere variasjoner av tekstfelt som vi viser under
+    fanen eksempler.
   </p>
+  <p>Tekstfeltene kan ha</p>
   <ul>
     <li>hjelpetekst eller være blanke</li>
     <li>feilmeldinger som varsler</li>

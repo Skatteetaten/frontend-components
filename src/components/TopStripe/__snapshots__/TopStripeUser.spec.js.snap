@@ -1,0 +1,46 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TopStripeUser komponent matcher snapshot  1`] = `
+<div
+  className=
+
+      {
+        align-items: center;
+        display: flex;
+        flex-direction: row;
+        padding-bottom: 0.5rem;
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+        padding-top: 0.5rem;
+      }
+      & > i {
+        align-self: start;
+        font-size: 1.25rem;
+      }
+  data-testid="topstripe-user"
+>
+  <i
+    aria-hidden={true}
+    className=
+
+        {
+          -moz-osx-font-smoothing: grayscale;
+          -webkit-font-smoothing: antialiased;
+          display: inline-block;
+          font-family: "SkeIconfont";
+          font-size: inherit;
+          font-style: normal;
+          font-weight: normal;
+          speak: none;
+          text-rendering: auto;
+          transform: translate(0, 0);
+        }
+    data-icon-name="person"
+  >
+    
+  </i>
+  <div>
+    Ola Nordmann
+  </div>
+</div>
+`;

@@ -1,41 +1,43 @@
 import { mergeStyleSets } from '@fluentui/merge-styles';
-import { getTheme } from '@fluentui/react/lib/Styling';
-import { FontSizes, SkeIcons, PaletteProps } from '../utils';
+import { SkeIcons } from '../utils';
 import { DropdownProps } from './DropDown.types';
 import { IDropdownStyles } from '@fluentui/react';
+import designtokenFonts from '../utils/designtokens/_fontSizes.json';
+import designtokenColors from '../utils/designtokens/_colors.json';
+import designtokenSpacing from '../utils/designtokens/_spacing.json';
+
+const dropdownPaddingLarge = `0.375rem ${designtokenSpacing['ske-spacing-md']}`;
 
 function getFieldTypeStyles(props: DropdownProps) {
-  const palette = getTheme().palette as PaletteProps;
-
   if (props.inputSize === 'large') {
     return {
       '.ms-Dropdown-title': {
-        borderWidth: 2,
-        padding: '5px 12px',
-        borderRadius: '0px',
-        fontSize: FontSizes.large,
-        height: '46px',
+        borderWidth: designtokenSpacing['ske-spacing-xs'],
+        padding: dropdownPaddingLarge,
+        borderRadius: '0',
+        fontSize: designtokenFonts['ske-font-size-l'],
+        height: designtokenSpacing['ske-spacing-xxxl'],
+        lineHeight: designtokenSpacing['ske-spacing-xxl'],
       },
       '& span.ms-Dropdown-caretDownWrapper': {
-        top: '8px',
-        fontSize: FontSizes.large,
-        color: palette.skeColor.blue,
+        top: designtokenSpacing['ske-spacing-md'],
+        fontSize: designtokenFonts['ske-font-size-icon-l'],
+        color: designtokenColors['ske-color-interactive'],
       },
     };
   } else {
     return {
       '.ms-Dropdown-title': {
-        fontSize: FontSizes.small,
+        fontSize: designtokenFonts['ske-font-size-s'],
       },
       '& span.ms-Dropdown-caretDownWrapper': {
-        color: palette.skeColor.blue,
+        color: designtokenColors['ske-color-interactive'],
       },
     };
   }
 }
 
 export const getClassNames = (props: DropdownProps) => {
-  const palette = getTheme().palette as PaletteProps;
   const { errorMessage } = props;
   const inset = 0;
   const radius = '0';
@@ -46,48 +48,48 @@ export const getClassNames = (props: DropdownProps) => {
       selectors: {
         ...getFieldTypeStyles(props),
         '& .ms-TextField-errorMessage': {
-          fontSize: FontSizes.small,
+          fontSize: designtokenFonts['ske-font-size-s'],
         },
         '::-moz-focus-inner': {
           border: '0',
         },
         '& .ms-Dropdown-title': {
-          borderColor: palette.skeColor.blackAlt,
-          borderRadius: '0px',
+          borderColor: designtokenColors['ske-color-black-100'],
+          borderRadius: '0',
         },
         '& .ms-Dropdown-titleIsPlaceHolder': {
-          borderColor: palette.skeColor.blackAlt,
+          borderColor: designtokenColors['ske-color-black-100'],
         },
         '& .ms-Dropdown-title.ms-Dropdown-title': errorMessage && {
           borderColor: errorMessage
-            ? palette.skeColor.error
-            : palette.skeColor.blackAlt,
-          borderWidth: '2px',
+            ? designtokenColors['ske-color-status-error']
+            : designtokenColors['ske-color-black-100'],
+          borderWidth: designtokenSpacing['ske-spacing-xs'],
         },
         '& .ms-Dropdown.is-required::before': {
           display: 'none',
         },
         // hack
         '&:focus .ms-Dropdown-title.ms-Dropdown-title': {
-          border: `2px solid ${palette.skeColor.blue}`,
+          border: `${designtokenSpacing['ske-spacing-xs']} solid ${designtokenColors['ske-color-interactive']}`,
         },
         '& .is-disabled .ms-Dropdown': {
-          backgroundColor: 'red',
+          backgroundColor: designtokenColors['ske-color-status-error'],
         },
         '& .is-disabled .ms-Dropdown-title': {
-          borderColor: palette.skeColor.lightGrey,
+          borderColor: designtokenColors['ske-color-grey-50'],
           borderStyle: 'solid',
-          borderWidth: '1px',
-          backgroundColor: palette.skeColor.neutralGrey,
+          borderWidth: 1,
+          backgroundColor: designtokenColors['ske-color-grey-5'],
         },
         '& .is-disabled .ms-Dropdown-caretDownWrapper': {
-          color: palette.skeColor.grey,
+          color: designtokenColors['ske-color-grey-50'],
         },
         '&:active .is-disabled .ms-Dropdown-title': {
-          borderColor: palette.skeColor.lightGrey,
+          borderColor: designtokenColors['ske-color-grey-50'],
         },
         '&:hover .is-disabled .ms-Dropdown-title': {
-          borderColor: palette.skeColor.lightGrey,
+          borderColor: designtokenColors['ske-color-grey-50'],
           cursor: 'not-allowed',
         },
         '&:focus:after': !props.disabled && {
@@ -101,49 +103,51 @@ export const getClassNames = (props: DropdownProps) => {
           outline: 'transparent',
           zIndex: 1,
         },
+        '& div[role=alert]': {
+          fontWeight: designtokenFonts['ske-font-weight-medium'],
+        },
         '& div[role=alert]::before': {
           fontFamily: SkeIcons.fontFace.fontFamily,
-          fontSize: 16,
-          lineHeight: '1rem',
-          verticalAlign: 'text-bottom',
+          fontSize: designtokenFonts['ske-font-size-m'],
           content: errorIcon,
-          marginRight: '3px',
+          marginRight: designtokenSpacing['ske-spacing-sm'],
+          verticalAlign: 'text-bottom',
         },
       },
     },
     readOnly: {
       borderStyle: 'none',
-      fontSize: FontSizes.medium,
-      fontWeight: 700,
+      fontSize: designtokenFonts['ske-font-size-m'],
+      fontWeight: designtokenFonts['ske-font-weight-bold'],
       display: 'block',
       padding: 0,
       marginLeft: 0,
       marginRight: 0,
+      height: designtokenSpacing['ske-spacing-xxl'],
     },
   });
 };
 
 export const getCalloutStyles = (): Partial<IDropdownStyles> => {
-  const palette = getTheme().palette as PaletteProps;
   const inset = 0;
   const radius = '0';
 
   return {
     dropdownItem: {
-      color: palette.skeColor.blackAlt,
-      marginTop: '4px',
-      marginBottom: '4px',
+      color: designtokenColors['ske-color-black-100'],
+      marginTop: designtokenSpacing['ske-spacing-sm'],
+      marginBottom: designtokenSpacing['ske-spacing-sm'],
       selectors: {
         '&:hover': {
-          background: `${palette.skeColor.lightBlue} !important`,
+          background: `${designtokenColors['ske-color-interactive-light']} !important`,
           textDecoration: 'underline',
         },
         '&:active': {
-          background: palette.skeColor.lightBlue,
+          background: designtokenColors['ske-color-interactive-light'],
           textDecoration: 'none',
         },
         '&:focus': {
-          background: palette.skeColor.lightBlue,
+          background: designtokenColors['ske-color-interactive-light'],
           textDecoration: 'underline',
         },
         '&:hover:after, &:focus:after': {
@@ -156,13 +160,13 @@ export const getCalloutStyles = (): Partial<IDropdownStyles> => {
           borderRadius: radius,
           outline: 'transparent',
           zIndex: 1,
-          color: palette.skeColor.blackAlt,
+          color: designtokenColors['ske-color-black-100'],
         },
       },
     },
     dropdownItemSelected: {
-      color: palette.skeColor.blackAlt,
-      background: `${palette.skeColor.whiteGrey} !important`,
+      color: designtokenColors['ske-color-black-100'],
+      background: `${designtokenColors['ske-color-grey-5']} !important`,
     },
     dropdownOptionText: { whiteSpace: 'normal !important' },
   };

@@ -88,6 +88,7 @@ describe('ErrorSummary komponent', () => {
         },
       ],
     });
+
     expect(wrapper.find('h3').text()).toEqual(
       'For å gå videre må du rette opp i følgende:'
     );
@@ -136,7 +137,6 @@ describe('ErrorSummary komponent', () => {
       </div>,
       { attachTo: holder }
     );
-
     wrapper.find('li').at(1).find('a').simulate('click');
     expect(element.shadowRoot.activeElement.id).toBe(
       wrapper.find('input').getDOMNode().id

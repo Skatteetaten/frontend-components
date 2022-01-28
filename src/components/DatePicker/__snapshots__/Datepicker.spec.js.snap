@@ -46,7 +46,7 @@ exports[`DatePicker komponent matcher snapshot 1`] = `
         }
         & .ms-TextField.is-disabled {
           background-color: #f4f4f4;
-          border-color: #b2b2b2;
+          border-color: #808080;
           border-style: solid;
           border-width: 0px;
         }
@@ -56,13 +56,13 @@ exports[`DatePicker komponent matcher snapshot 1`] = `
         & .ms-TextField.is-disabled input {
           color: #1a1a1a;
           cursor: not-allowed;
-          padding-bottom: 8px;
-          padding-left: 8px;
-          padding-right: 8px;
-          padding-top: 8px;
+          padding-bottom: 0.5rem;
+          padding-left: 0.5rem;
+          padding-right: 0.5rem;
+          padding-top: 0.5rem;
         }
         & .ms-TextField.is-disabled .ms-TextField-fieldGroup {
-          border-color: #b2b2b2;
+          border-color: #808080;
           border-style: solid;
           border-width: 1px;
         }
@@ -70,20 +70,18 @@ exports[`DatePicker komponent matcher snapshot 1`] = `
           border: 1px solid #1362ae;
         }
         & .ms-TextField.ms-TextField--underlined .ms-TextField-wrapper:hover {
-          border: 1px solid #000000;
+          border: 1px solid #1a1a1a;
         }
         & .ms-TextField-errorMessage {
           color: #a82e39;
+          font-weight: 500;
         }
         & .ms-TextField-errorMessage:before {
           content: '';
           display: block;
           font-family: "SkeIconfont";
-          font-size: 18px;
-          margin-right: 3px;
-        }
-        & .ms-DatePicker-goToday  {
-          right: 14px;
+          font-size: 1.125rem;
+          margin-right: 0.25rem;
         }
         & .ms-TextField-fieldGroup {
           font-size: 0.875rem;

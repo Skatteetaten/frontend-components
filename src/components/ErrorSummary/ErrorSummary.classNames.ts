@@ -25,7 +25,7 @@ export const getClassNames = (props) => {
       li: {
         display: 'block',
         cursor: 'pointer',
-        lineHeight: designtokenFontSizes['ske-line-height-xl'],
+        lineHeight: designtokenFontSizes['ske-line-height-s'],
       },
     },
     iconArea: {
