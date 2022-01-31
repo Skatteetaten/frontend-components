@@ -22,6 +22,7 @@ export const getClassNames = function getClassNames() {
       display: 'block',
       color: palette.skeColor.error,
       fontWeight: 500,
+      lineHeight: '1rem',
       paddingTop: 5,
       selectors: {
         ':before': {
@@ -29,6 +30,7 @@ export const getClassNames = function getClassNames() {
           fontSize: fonts.small,
           content: errorIcon,
           marginRight: 3,
+          verticalAlign: 'text-bottom',
         },
       },
     },

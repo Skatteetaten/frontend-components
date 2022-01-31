@@ -19,12 +19,14 @@ exports[`ErrorMessage komponent matcher snapshot 1`] = `
         font-family: 'Helvetica Neue', Helvetica , Arial, 'Liberation Sans', 'Nimbus Sans L', sans-serif;
         font-size: 0.875rem;
         font-weight: 500;
+        line-height: 1rem;
         padding-top: 5px;
       }
       &:before {
         content: '';
         font-family: "SkeIconfont";
         margin-right: 3px;
+        vertical-align: text-bottom;
       }
       &:before fontSize {
         -moz-osx-font-smoothing: grayscale;

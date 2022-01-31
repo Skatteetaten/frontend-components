@@ -100,13 +100,14 @@ export const getClassNames = (props: ComboBoxProps) => {
           top: '0',
           color: palette.skeColor.blue,
         },
-        '& div[role=region]::before': {
+        '& div[role=alert]::before': {
           fontFamily: SkeIcons.fontFace.fontFamily,
           fontSize: 16,
           content: errorMessage && errorIcon,
           marginRight: '3px',
+          verticalAlign: 'text-bottom',
         },
-        '& div[role=region]': {
+        '& div[role=alert]': {
           fontWeight: FontWeights.medium,
           fontSize: FontSizes.small,
         },
