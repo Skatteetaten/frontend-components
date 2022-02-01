@@ -2,9 +2,10 @@
   "name": "@skatteetaten/frontend-components",
   "groupId": "no.skatteetaten.aurora",
   "license": "Apache-2.0",
-  "version": "4.0.0",
+  "version": "5.0.0",
   "private": false,
   "main": "lib/index.js",
+  "sideEffects": false,
   "bin": {
     "skatteetaten-frontend-components-import-maps": "./lib/bin/importMaps/writeImportMaps.js"
   },
@@ -22,25 +23,19 @@
     "registry": "https://nexus.sits.no/repository/npm-internal/"
   },
   "peerDependencies": {
-    "react": ">=16.8.0 <17.0.0",
-    "react-dom": ">=16.8.0 <17.0.0"
+    "react": ">=17.0.0",
+    "react-dom": ">=17.0.0"
   },
   "dependencies": {
-    "@fluentui/react": "7.153.2",
-    "@uifabric/merge-styles": "7.19.1",
-    "@uifabric/styling": "7.16.18",
-    "@uifabric/utilities": "7.33.2",
+    "@fluentui/react": "8.50.0",
     "axios": "0.24.0",
     "classnames": "2.2.6",
     "hotkeys-js": "3.8.1",
-    "i18next": "20.3.1",
+    "i18next": "20.6.0",
     "moment": "2.29.1",
-    "node-fetch": "2.6.1",
     "prop-types": "15.7.2",
-    "react-i18next": "11.7.4",
-    "react-transition-group": "4.4.1",
-    "tslib": "2.0.3",
-    "uuid": "3.4.0"
+    "react-i18next": "11.11.4",
+    "react-transition-group": "4.4.2"
   },
   "devDependencies": {
     "@babel/cli": "7.13.14",
@@ -63,15 +58,17 @@
     "@svgr/rollup": "5.5.0",
     "@types/classnames": "2.2.11",
     "@types/node": "14.14.10",
-    "@types/react": "16.14.2",
-    "@types/react-dom": "16.9.10",
-    "@types/react-router": "5.1.8",
-    "@types/react-transition-group": "4.4.0",
+    "@types/react": "17.0.19",
+    "@types/react-dom": "17.0.9",
+    "@types/react-router": "5.1.16",
+    "@types/react-transition-group": "4.4.2",
+    "@uifabric/jest-serializer-merge-styles": "7.2.3",
+    "@wojtekmaj/enzyme-adapter-react-17": "0.6.3",
     "acorn": "6.4.2",
+    "coa": "2.0.2",
     "cpx": "1.5.0",
     "cross-env": "7.0.3",
     "enzyme": "3.11.0",
-    "enzyme-adapter-react-16": "1.15.5",
     "enzyme-to-json": "3.6.1",
     "es6-promise": "4.2.8",
     "eslint-plugin-prettier": "3.1.4",
@@ -85,25 +82,28 @@
     "npm-run-all": "4.1.5",
     "prettier": "2.2.1",
     "pretty-quick": "3.1.0",
-    "react": "16.14.0",
-    "react-docgen-typescript": "1.20.1",
-    "react-dom": "16.14.0",
+    "react": "17.0.2",
+    "react-docgen-typescript": "2.1.0",
+    "react-dom": "17.0.2",
     "react-router": "5.2.0",
     "react-router-dom": "5.2.0",
     "react-scripts": "4.0.3",
-    "react-styleguidist": "11.1.4",
-    "react-test-renderer": "16.14.0",
+    "react-styleguidist": "11.1.7",
+    "react-test-renderer": "17.0.2",
     "rimraf": "3.0.2",
     "rollup": "2.45.1",
     "rollup-plugin-bundle-size": "1.0.3",
     "rollup-plugin-inject-process-env": "1.3.1",
     "rollup-plugin-node-externals": "2.2.0",
     "rollup-plugin-node-globals": "1.4.0",
-    "rollup-plugin-node-polyfills": "0.2.1",
+    "rollup-plugin-polyfill-node": "0.7.0",
     "rollup-plugin-terser": "7.0.2",
+    "rollup-plugin-visualizer": "5.5.2",
     "sonar-scanner": "3.1.0",
-    "typescript": "3.9.7",
-    "webfont": "9.0.0"
+    "tslib": "2.3.1",
+    "typescript": "4.3.5",
+    "uuid": "8.3.2",
+    "webfont": "11.2.26"
   },
   "scripts": {
     "start": "REACT_APP_BUILD_VERSION=$(git rev-parse --abbrev-ref HEAD) FAST_REFRESH=false styleguidist server --verbose",
@@ -111,17 +111,20 @@
     "prebuild": "run-s clean generate:icons circularDeps lint",
     "build": "run-p build:lib build:docs",
     "build:docs": "styleguidist build",
-    "build:lib": "run-p build:types build:umds build:commonjs build:assets",
+    "build:lib": "run-p build:types build:esm build:cjs build:umd build:assets build:designtokens",
     "build:assets": "cpx \"./src/components/**/assets/**/*\" ./lib",
+    "build:designtokens": "cpx \"./src/components/utils/designtokens/**/*\" ./lib/utils/designtokens",
     "build:copy-files": "node scripts/copyBuildFiles.js",
     "build:copy-files-external": "node scripts/copyBuildFiles.js EXTERNAL",
-    "build:commonjs": "babel ./src/components --out-dir lib --extensions '.ts,.tsx' ",
-    "build:umd-warnings": "rollup -c -m",
-    "build:umds": "run-s build:umd build:umd-prod build:importmaps",
-    "build:umd": "rollup --silent -c -m || exit 1",
+    "build:esm": "BABEL_ENV=esm babel ./src/components --out-dir lib --extensions '.ts,.tsx' ",
+    "build:cjs": "BABEL_ENV=cjs babel ./src/components --out-dir lib/cjs --extensions '.ts,.tsx' ",
+    "build:umd": "run-s build:umd-dev build:umd-prod",
+    "build:umd-dev": "rollup --silent -c -m || exit 1",
     "build:umd-prod": "rollup --silent -c -m --mini --prod || exit 1",
+    "build:umd-warnings": "rollup -c -m",
     "build:importmaps": "mkdir -p lib/bin/importmaps || true && cp -R importmaps/* lib/bin/importmaps && node lib/bin/importmaps/writeImportMaps.js lib ../../../package.json",
     "build:types": "tsc --build tsconfig.types.json",
+    "postbuild": "rimraf lib/entry.*",
     "lint": "run-s -l lint:prettier lint:eslint",
     "lint:ci": "eslint src/**/*.{js,jsx} -f checkstyle -o target/checkstyle-result.xml",
     "lint:fix": "run-s -l lint:prettier-fix lint:eslint-fix",
@@ -151,6 +154,12 @@
     "destTemplate": "src/components/utils/icons"
   },
   "jest": {
+    "transformIgnorePatterns": [
+      "node_modules/(?!random-module-name)/"
+    ],
+    "snapshotSerializers": [
+      "@uifabric/jest-serializer-merge-styles"
+    ],
     "collectCoverageFrom": [
       "src/**/*.{ts,tsx}",
       "!src/**/index.js",
@@ -170,23 +179,46 @@
     "usePathForSuiteName": "true"
   },
   "babel": {
-    "presets": [
-      [
-        "@babel/preset-env",
-        {
-          "modules": "auto",
-          "targets": {
-            "node": true
-          }
-        }
-      ],
-      "@babel/preset-react",
-      "@babel/preset-typescript"
-    ],
-    "plugins": [
-      "@babel/plugin-proposal-class-properties",
-      "@babel/plugin-proposal-object-rest-spread"
-    ]
+    "env": {
+      "esm": {
+        "presets": [
+          [
+            "@babel/preset-env",
+            {
+              "modules": false,
+              "targets": {
+                "node": true
+              }
+            }
+          ],
+          "@babel/preset-react",
+          "@babel/preset-typescript"
+        ],
+        "plugins": [
+          "@babel/plugin-proposal-class-properties",
+          "@babel/plugin-proposal-object-rest-spread"
+        ]
+      },
+      "cjs": {
+        "presets": [
+          [
+            "@babel/preset-env",
+            {
+              "modules": "auto",
+              "targets": {
+                "node": true
+              }
+            }
+          ],
+          "@babel/preset-react",
+          "@babel/preset-typescript"
+        ],
+        "plugins": [
+          "@babel/plugin-proposal-class-properties",
+          "@babel/plugin-proposal-object-rest-spread"
+        ]
+      }
+    }
   },
   "eslintConfig": {
     "extends": [

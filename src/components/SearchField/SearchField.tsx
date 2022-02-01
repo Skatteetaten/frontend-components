@@ -36,18 +36,17 @@ const limitNumberOfResults = (list: Array<IDropdownOption>, limit?: number) => {
   return list;
 };
 
-/**
- * @visibleName SearchField (Søkefelt)
+/*
+ * visibleName SearchField (Søkefelt)
  */
 export const SearchField: React.FC<SearchFieldProps> = (props) => {
   const {
     className,
-    labelWithCalloutAutoDismiss,
     help,
     id,
     label,
     labelButtonAriaLabel,
-    labelCallout,
+    labelWithCalloutProps,
     language,
     onCalloutToggle,
     onChange,
@@ -239,8 +238,7 @@ export const SearchField: React.FC<SearchFieldProps> = (props) => {
         inputId={inputId}
         help={help}
         onCalloutToggle={onCalloutToggle}
-        autoDismiss={labelWithCalloutAutoDismiss}
-        {...labelCallout}
+        {...labelWithCalloutProps}
       />
       {options ? (
         <div ref={_searchBoxElement}>
@@ -269,7 +267,7 @@ export const SearchField: React.FC<SearchFieldProps> = (props) => {
               setValue(newValue);
             }}
             onKeyDown={(ev) => handleOnKeyDown(ev)}
-            value={value}
+            value={value !== undefined ? value : ''}
             componentRef={_componentRef}
             iconProps={{
               iconName: 'Filter',

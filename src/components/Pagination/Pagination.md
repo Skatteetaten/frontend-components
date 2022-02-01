@@ -1,7 +1,8 @@
-**Sidevelger for å bla i lange tabeller eller søkeresultater**
+**Pagination (Sidevelger): for å bla i lange tabeller eller søkeresultater**
 
 ```js
-import { Table, Pagination } from '@skatteetaten/frontend-components';
+import { Pagination } from '@skatteetaten/frontend-components/Pagination';
+import { Table } from '@skatteetaten/frontend-components/Table';
 
 const columns = [
   {
@@ -148,24 +149,29 @@ const [currentPage, setCurrentPage] = React.useState(1);
 
 ```js noeditor beskrivelse
 <>
-  <h3>Komponent som gjør at brukeren kan bla i lister og tabeller</h3>
+  <h3>Pagination lar brukeren bla i lister og tabeller</h3>
   <p>
-    Sidevelgeren hører alltid til annen komponent og har som funksjon at
-    brukeren skal kunne bla frem og tilbake i stedet for å måtte skrolle nedover
-    i lange lister og tabeller med opplysninger. Komponenten skal som hovedregel
-    henge under og være like bred som den tilhørende komponenten.
+    Sidevelgeren legger til rette for at brukeren kan bla i stedet for å måtte
+    skrolle nedover i lange lister og tabeller med opplysninger. Komponenten
+    hører alltid sammen med en annen komponent – som regel tabell eller
+    søkeresultat.
   </p>
 
-  <h3>Hvor mange sider skal vises i sidevelgeren?</h3>
-  <p>Du kan stille inn antallet sider i tallrekken der brukeren blar fra.</p>
+  <h3>Slik bruker du sidevelgeren:</h3>
+
   <ul>
     <li>
-      Ta hensyn til hvor mye data som vises og sannsynligheten for at brukeren
-      vil bla i opplysningene.
+      Komponenten skal henge under og være like bred som den tilhørende
+      komponenten (tabell eller søkeresultat).
     </li>
     <li>
-      På mobil anbefaler vi maksimum tre tall i tallrekken på grunn av plassen
-      på skjermen.
+      Når du stiller inn tallet på sider i tallrekken der brukeren blar fra,
+      skal du ta hensyn til hvor mye data som vises og sannsynligheten for at
+      brukeren vil bla i opplysningene
+    </li>
+    <li>
+      På mobil anbefaler vi å ikke ha flere enn tre tall synlig i tallrekken på
+      grunn av plassen på skjermen.
     </li>
   </ul>
 </>

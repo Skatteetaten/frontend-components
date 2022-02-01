@@ -1,5 +1,5 @@
-import { mergeStyleSets } from '@uifabric/merge-styles';
-import { getTheme } from '@uifabric/styling';
+import { mergeStyleSets } from '@fluentui/merge-styles';
+import { getTheme } from '@fluentui/react/lib/Styling';
 import { PaletteProps, FontSizes, FontWeights } from '../utils';
 import { LinkProps } from './Link.types';
 
@@ -35,22 +35,22 @@ export const getClassNames = (props: LinkProps) => {
       left: '-999px',
       position: 'absolute',
       top: 'auto',
-      width: '1px',
-      height: '1px',
+      opacity: 0,
       overflow: 'hidden',
       selectors: {
         '&:focus, &:active': {
-          color: palette.skeColor.blue,
+          display: 'block',
+          color: palette.skeColor.blackAlt,
           backgroundColor: '#fff',
           position: 'relative',
           left: 'auto',
           top: 'auto',
-          width: '100px',
           height: 'auto',
           overflow: 'auto',
-          padding: '5px',
-          border: `4px solid ${palette.skeColor.pink}`,
           textAlign: 'center',
+          opacity: 1,
+          padding: '12px 8px',
+          outline: 'none',
         },
       },
     },

@@ -5,12 +5,79 @@ exports[`Dropdown komponent matcher snapshot 1`] = `
   id="dropdown-123"
 >
   <LabelWithCallout
+    calloutProps={Object {}}
     id="dropdown-123-label"
     inputId="dropdown-123-input-option"
+    requiredMark={false}
   />
-  <StyledWithResponsiveMode
+  <Dropdown
     aria-invalid={false}
-    className="main-42"
+    calloutProps={Object {}}
+    className=
+
+        & .ms-Dropdown-title {
+          border-color: #1a1a1a;
+          border-radius: 0;
+          font-size: 0.875rem;
+        }
+        & span.ms-Dropdown-caretDownWrapper {
+          color: #1362ae;
+        }
+        & .ms-TextField-errorMessage {
+          font-size: 0.875rem;
+        }
+        &::-moz-focus-inner {
+          border: 0;
+        }
+        & .ms-Dropdown-titleIsPlaceHolder {
+          border-color: #1a1a1a;
+        }
+        & .ms-Dropdown.is-required::before {
+          display: none;
+        }
+        &:focus .ms-Dropdown-title.ms-Dropdown-title {
+          border: 0.125rem solid #1362ae;
+        }
+        & .is-disabled .ms-Dropdown {
+          background-color: #a82e39;
+        }
+        & .is-disabled .ms-Dropdown-title {
+          background-color: #f4f4f4;
+          border-color: #808080;
+          border-style: solid;
+          border-width: 1px;
+        }
+        & .is-disabled .ms-Dropdown-caretDownWrapper {
+          color: #808080;
+        }
+        &:active .is-disabled .ms-Dropdown-title {
+          border-color: #808080;
+        }
+        &:hover .is-disabled .ms-Dropdown-title {
+          border-color: #808080;
+          cursor: not-allowed;
+        }
+        &:focus:after {
+          border-radius: 0;
+          bottom: 1px;
+          content: "";
+          left: 1px;
+          outline: transparent;
+          position: absolute;
+          right: 1px;
+          top: 1px;
+          z-index: 1;
+        }
+        & div[role=alert] {
+          font-weight: 500;
+        }
+        & div[role=alert]::before {
+          content: '';
+          font-family: "SkeIconfont";
+          font-size: 1rem;
+          margin-right: 0.25rem;
+          vertical-align: text-bottom;
+        }
     id="dropdown-123-input"
     onRenderCaretDown={[Function]}
     options={
@@ -77,12 +144,13 @@ exports[`Dropdown komponent matcher snapshot 1`] = `
       ]
     }
     placeholder="Select an option"
+    required={false}
     styles={
       Object {
         "dropdownItem": Object {
-          "color": "#1d1d1d",
-          "marginBottom": "4px",
-          "marginTop": "4px",
+          "color": "#1a1a1a",
+          "marginBottom": "0.25rem",
+          "marginTop": "0.25rem",
           "selectors": Object {
             "&:active": Object {
               "background": "#cde1f9",
@@ -99,7 +167,7 @@ exports[`Dropdown komponent matcher snapshot 1`] = `
             "&:hover:after, &:focus:after": Object {
               "borderRadius": "0",
               "bottom": 1,
-              "color": "#1d1d1d",
+              "color": "#1a1a1a",
               "content": "\\"\\"",
               "left": 1,
               "outline": "transparent",
@@ -111,8 +179,8 @@ exports[`Dropdown komponent matcher snapshot 1`] = `
           },
         },
         "dropdownItemSelected": Object {
-          "background": "#e8e8e8 !important",
-          "color": "#1d1d1d",
+          "background": "#f4f4f4 !important",
+          "color": "#1a1a1a",
         },
         "dropdownOptionText": Object {
           "whiteSpace": "normal !important",

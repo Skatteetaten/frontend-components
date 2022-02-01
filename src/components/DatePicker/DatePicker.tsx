@@ -5,8 +5,8 @@ import moment from 'moment';
 import 'moment/locale/nb';
 import {
   DatePicker as FabricDatePicker,
-  DatePickerBase,
   DayOfWeek,
+  IDatePicker,
   IDatePickerProps,
 } from '@fluentui/react';
 import { FirstWeekOfYear } from '@fluentui/react';
@@ -30,8 +30,8 @@ const DEFAULTPARSEDATEFROMSTRING = (date: string): Date | null => {
   return null;
 };
 
-/**
- * @visibleName DatePicker (Datovelger)
+/*
+ * visibleName DatePicker (Datovelger)
  */
 export const DatePicker: React.FC<DatePickerProps> = (
   props: DatePickerProps
@@ -39,6 +39,7 @@ export const DatePicker: React.FC<DatePickerProps> = (
   const {
     ariaLabel,
     calloutFloating,
+    datepickerCalloutProps,
     children,
     className,
     editable,
@@ -46,17 +47,19 @@ export const DatePicker: React.FC<DatePickerProps> = (
     id,
     invalidInputErrorMessage,
     isOutOfBoundsErrorMessage,
+    isRequired,
     isRequiredErrorMessage,
     help,
     label,
     labelButtonAriaLabel,
-    labelCallout,
-    labelWithCalloutAutoDismiss,
+    labelWithCalloutProps,
     language,
     onCalloutToggle,
     readonlyMode,
+    requiredWithMark = false,
     ...rest
   } = props;
+
   const defaultValues = {
     allowTextInput: true,
     dateTimeFormatter: undefined,
@@ -79,7 +82,7 @@ export const DatePicker: React.FC<DatePickerProps> = (
   const inputId = mainId + '-input';
   const labelId = mainId + '-label';
 
-  const datePicker = React.useRef<DatePickerBase | null>();
+  const datePickerRef = React.useRef<IDatePicker | null>();
   const [editMode, setEditMode] = React.useState<boolean>(false);
   const [readOnly, setReadOnly] = React.useState<boolean | undefined>(
     readonlyMode && !editMode
@@ -114,16 +117,18 @@ export const DatePicker: React.FC<DatePickerProps> = (
 
   const onEdit = () => {
     if (!editMode) {
-      datePicker.current && datePicker.current.focus();
+      datePickerRef.current && datePickerRef.current.focus();
     }
     setEditMode(!editMode);
   };
 
   const onBlur: IDatePickerProps['onBlur'] = (e) => {
     rest.onBlur && rest.onBlur(e);
-    if (editMode && !datePicker.current?.state.isDatePickerShown) {
-      setEditMode(!editMode);
-    }
+    // TO-DO datepicker er blitt en FunctionComponent. Det er ikke mulig å aksessere intern state på denne måten
+    // Filled out feature request here: https://github.com/microsoft/fluentui/issues/19512
+    // if (editMode && !datePickerRef.current?.state.isDatePickerShown) {
+    //   setEditMode(!editMode);
+    // }
   };
 
   return (
@@ -132,16 +137,20 @@ export const DatePicker: React.FC<DatePickerProps> = (
         id={labelId}
         inputId={inputId + '-label'}
         label={label}
+        requiredMark={requiredWithMark}
         buttonAriaLabel={labelButtonAriaLabel}
         help={help}
         calloutFloating={calloutFloating}
-        autoDismiss={labelWithCalloutAutoDismiss}
         onCalloutToggle={onCalloutToggle}
         editable={editable}
         editFunction={onEdit}
         readOnly={readonlyMode}
-        {...labelCallout}
+        calloutProps={{
+          ...labelWithCalloutProps?.calloutProps,
+        }}
+        {...labelWithCalloutProps}
       />
+
       <FabricDatePicker
         {...defaultValues}
         {...rest}
@@ -151,11 +160,16 @@ export const DatePicker: React.FC<DatePickerProps> = (
           getClassNames({ errorMessage, readonlyMode: readOnly, ...rest }),
           className
         )}
+        isRequired={isRequired || requiredWithMark}
         componentRef={(ref) => {
-          datePicker.current = ref as DatePickerBase;
+          datePickerRef.current = ref as IDatePicker;
         }}
         calloutProps={{
-          className: getCalendarClassNames(props),
+          ...datepickerCalloutProps,
+          className: classnames(
+            getCalendarClassNames(props),
+            datepickerCalloutProps?.className
+          ),
         }}
         disabled={readOnly ? true : rest.disabled}
         onBlur={onBlur}

@@ -6,14 +6,49 @@ exports[`Accordion komponent Sender videre html atributter 1`] = `
   processList={true}
 >
   <div
-    className="accordion-44"
+    className=
+
+        {
+          background-color: #ffffff;
+          margin-bottom: 1rem;
+          position: relative;
+        }
+        & hr {
+          border-width: 1px;
+          border: solid;
+          color: #b2b2b2;
+          margin-bottom: 0px;
+          margin-left: 0px;
+          margin-right: 0px;
+          margin-top: 0px;
+        }
     data-testid="testidparent123"
   >
     <Grid
       padding="0px"
     >
       <div
-        className="ske-Grid-53 "
+        className=
+            
+            {
+              box-sizing: border-box;
+              padding-bottom: 0px;
+              padding-left: 0px;
+              padding-right: 0px;
+              padding-top: 0px;
+              zoom: 1;
+            }
+            &::before {
+              content: "";
+              display: table;
+              line-height: 0;
+            }
+            &::after {
+              clear: both;
+              content: "";
+              display: table;
+              line-height: 0;
+            }
         dir="ltr"
       >
         <AccordionItem
@@ -25,7 +60,11 @@ exports[`Accordion komponent Sender videre html atributter 1`] = `
           totalSteps={1}
         >
           <div
-            className="wrapperStep-43"
+            className=
+
+                {
+                  position: relative;
+                }
             data-testid="testid123"
             key="1"
           >
@@ -33,19 +72,141 @@ exports[`Accordion komponent Sender videre html atributter 1`] = `
               rowSpacing="0px"
             >
               <div
-                className="ske-Grid-row-57 "
+                className=
+                    
+                    {
+                      box-sizing: border-box;
+                      margin-bottom: 0px;
+                      margin-left: 0;
+                      margin-right: 0;
+                      margin-top: 0px;
+                      zoom: 1;
+                    }
+                    &::before {
+                      content: "";
+                      display: table;
+                      line-height: 0;
+                    }
+                    &::after {
+                      clear: both;
+                      content: "";
+                      display: table;
+                      line-height: 0;
+                    }
               >
                 <GridCol
                   noSpacing={true}
                 >
                   <div
-                    className="ske-Grid-col-58 "
+                    className=
+                        
+                        {
+                          box-sizing: border-box;
+                          min-height: 1px;
+                          padding-left: false;
+                          padding-right: false;
+                          position: relative;
+                          width: 100%;
+                        }
+                        & $grid {
+                          padding-bottom: 0;
+                          padding-left: 0;
+                          padding-right: 0;
+                          padding-top: 0;
+                        }
+                        [dir='ltr'] & {
+                          float: left;
+                          left: NaN%;
+                          margin-bottom: 0;
+                          margin-left: 0;
+                          margin-right: 0;
+                          margin-top: 0;
+                          right: NaN%;
+                        }
+                        @media (min-width: 320px){[dir='ltr'] & {
+                          left: NaN%;
+                          right: NaN%;
+                          width: NaN%;
+                        }
+                        @media (min-width: 480px){[dir='ltr'] & {
+                          left: NaN%;
+                          right: NaN%;
+                          width: NaN%;
+                        }
+                        @media (min-width: 640px){[dir='ltr'] & {
+                          left: NaN%;
+                          right: NaN%;
+                          width: NaN%;
+                        }
+                        @media (min-width: 1024px){[dir='ltr'] & {
+                          left: NaN%;
+                          right: NaN%;
+                          width: NaN%;
+                        }
+                        @media (min-width: 1366px){[dir='ltr'] & {
+                          left: NaN%;
+                          right: NaN%;
+                          width: NaN%;
+                        }
+                        [dir='rtl'] & {
+                          float: right;
+                          left: NaN%;
+                          right: NaN%;
+                        }
+                        @media (min-width: 320px){[dir='rtl'] & {
+                          left: NaN%;
+                          right: NaN%;
+                          width: NaN%;
+                        }
+                        @media (min-width: 480px){[dir='rtl'] & {
+                          left: NaN%;
+                          right: NaN%;
+                          width: NaN%;
+                        }
+                        @media (min-width: 640px){[dir='rtl'] & {
+                          left: NaN%;
+                          right: NaN%;
+                          width: NaN%;
+                        }
+                        @media (min-width: 1024px){[dir='rtl'] & {
+                          left: NaN%;
+                          right: NaN%;
+                          width: NaN%;
+                        }
+                        @media (min-width: 1366px){[dir='rtl'] & {
+                          left: NaN%;
+                          right: NaN%;
+                          width: NaN%;
+                        }
+                        @media (min-width: 1920px){& {
+                          width: NaN%;
+                        }
                   >
                     <GridRow
                       rowSpacing="0px"
                     >
                       <div
-                        className="ske-Grid-row-57 "
+                        className=
+                            
+                            {
+                              box-sizing: border-box;
+                              margin-bottom: 0px;
+                              margin-left: 0;
+                              margin-right: 0;
+                              margin-top: 0px;
+                              zoom: 1;
+                            }
+                            &::before {
+                              content: "";
+                              display: table;
+                              line-height: 0;
+                            }
+                            &::after {
+                              clear: both;
+                              content: "";
+                              display: table;
+                              line-height: 0;
+                            }
                       >
                         <GridCol
                           md={1}
@@ -54,10 +215,114 @@ exports[`Accordion komponent Sender videre html atributter 1`] = `
                           xl={1}
                         >
                           <div
-                            className="ske-Grid-col-60 "
+                            className=
+                                
+                                {
+                                  box-sizing: border-box;
+                                  min-height: 1px;
+                                  padding-left: false;
+                                  padding-right: false;
+                                  position: relative;
+                                  width: 100%;
+                                }
+                                & $grid {
+                                  padding-bottom: 0;
+                                  padding-left: 0;
+                                  padding-right: 0;
+                                  padding-top: 0;
+                                }
+                                [dir='ltr'] & {
+                                  float: left;
+                                  left: NaN%;
+                                  margin-bottom: 0;
+                                  margin-left: 0;
+                                  margin-right: 0;
+                                  margin-top: 0;
+                                  right: NaN%;
+                                }
+                                @media (min-width: 320px){[dir='ltr'] & {
+                                  left: NaN%;
+                                  right: NaN%;
+                                  width: 16.666666666666668%;
+                                }
+                                @media (min-width: 480px){[dir='ltr'] & {
+                                  left: NaN%;
+                                  right: NaN%;
+                                  width: 8.333333333333334%;
+                                }
+                                @media (min-width: 640px){[dir='ltr'] & {
+                                  left: NaN%;
+                                  right: NaN%;
+                                  width: NaN%;
+                                }
+                                @media (min-width: 1024px){[dir='ltr'] & {
+                                  left: NaN%;
+                                  right: NaN%;
+                                  width: 8.333333333333334%;
+                                }
+                                @media (min-width: 1366px){[dir='ltr'] & {
+                                  left: NaN%;
+                                  right: NaN%;
+                                  width: NaN%;
+                                }
+                                [dir='rtl'] & {
+                                  float: right;
+                                  left: NaN%;
+                                  right: NaN%;
+                                }
+                                @media (min-width: 320px){[dir='rtl'] & {
+                                  left: NaN%;
+                                  right: NaN%;
+                                  width: 16.666666666666668%;
+                                }
+                                @media (min-width: 480px){[dir='rtl'] & {
+                                  left: NaN%;
+                                  right: NaN%;
+                                  width: 8.333333333333334%;
+                                }
+                                @media (min-width: 640px){[dir='rtl'] & {
+                                  left: NaN%;
+                                  right: NaN%;
+                                  width: NaN%;
+                                }
+                                @media (min-width: 1024px){[dir='rtl'] & {
+                                  left: NaN%;
+                                  right: NaN%;
+                                  width: 8.333333333333334%;
+                                }
+                                @media (min-width: 1366px){[dir='rtl'] & {
+                                  left: NaN%;
+                                  right: NaN%;
+                                  width: NaN%;
+                                }
+                                @media (min-width: 1920px){& {
+                                  width: NaN%;
+                                }
                           >
                             <div
-                              className="stepNumber-47"
+                              className=
+
+                                  {
+                                    align-items: center;
+                                    background-color: #ffffff;
+                                    border-color: #1a1a1a;
+                                    border-radius: 50%;
+                                    border-width: 2px;
+                                    border: solid;
+                                    display: flex;
+                                    font-size: 1.125rem;
+                                    font-weight: 700;
+                                    height: 2rem;
+                                    justify-content: center;
+                                    margin-top: 1rem;
+                                    width: 2rem;
+                                    z-index: 10;
+                                  }
+                                  @media (max-width: 640px){& {
+                                    font-size: 1rem;
+                                    height: 1.5rem;
+                                    width: 1.5rem;
+                                  }
                             >
                               <span
                                 aria-label="Steg 1"
@@ -75,7 +340,89 @@ exports[`Accordion komponent Sender videre html atributter 1`] = `
                           xl={11}
                         >
                           <div
-                            className="ske-Grid-col-61 "
+                            className=
+                                
+                                {
+                                  box-sizing: border-box;
+                                  min-height: 1px;
+                                  padding-left: false;
+                                  padding-right: false;
+                                  position: relative;
+                                  width: 100%;
+                                }
+                                & $grid {
+                                  padding-bottom: 0;
+                                  padding-left: 0;
+                                  padding-right: 0;
+                                  padding-top: 0;
+                                }
+                                [dir='ltr'] & {
+                                  float: left;
+                                  left: NaN%;
+                                  margin-bottom: 0;
+                                  margin-left: 0;
+                                  margin-right: 0;
+                                  margin-top: 0;
+                                  right: NaN%;
+                                }
+                                @media (min-width: 320px){[dir='ltr'] & {
+                                  left: NaN%;
+                                  right: NaN%;
+                                  width: 75%;
+                                }
+                                @media (min-width: 480px){[dir='ltr'] & {
+                                  left: NaN%;
+                                  right: NaN%;
+                                  width: 83.33333333333334%;
+                                }
+                                @media (min-width: 640px){[dir='ltr'] & {
+                                  left: NaN%;
+                                  right: NaN%;
+                                  width: NaN%;
+                                }
+                                @media (min-width: 1024px){[dir='ltr'] & {
+                                  left: NaN%;
+                                  right: NaN%;
+                                  width: 91.66666666666667%;
+                                }
+                                @media (min-width: 1366px){[dir='ltr'] & {
+                                  left: NaN%;
+                                  right: NaN%;
+                                  width: NaN%;
+                                }
+                                [dir='rtl'] & {
+                                  float: right;
+                                  left: NaN%;
+                                  right: NaN%;
+                                }
+                                @media (min-width: 320px){[dir='rtl'] & {
+                                  left: NaN%;
+                                  right: NaN%;
+                                  width: 75%;
+                                }
+                                @media (min-width: 480px){[dir='rtl'] & {
+                                  left: NaN%;
+                                  right: NaN%;
+                                  width: 83.33333333333334%;
+                                }
+                                @media (min-width: 640px){[dir='rtl'] & {
+                                  left: NaN%;
+                                  right: NaN%;
+                                  width: NaN%;
+                                }
+                                @media (min-width: 1024px){[dir='rtl'] & {
+                                  left: NaN%;
+                                  right: NaN%;
+                                  width: 91.66666666666667%;
+                                }
+                                @media (min-width: 1366px){[dir='rtl'] & {
+                                  left: NaN%;
+                                  right: NaN%;
+                                  width: NaN%;
+                                }
+                                @media (min-width: 1920px){& {
+                                  width: NaN%;
+                                }
                           >
                             <hr />
                             <ToggleContent
@@ -85,23 +432,224 @@ exports[`Accordion komponent Sender videre html atributter 1`] = `
                               stepId="step-1-1"
                               styles={
                                 Object {
-                                  "accordion": "accordion-44",
-                                  "containerStep": "containerStep-42",
-                                  "content": "content-45",
-                                  "heading": "heading-46",
-                                  "stepLine": "stepLine-48",
-                                  "stepNumber": "stepNumber-47",
+                                  "accordion": 
+
+                                    {
+                                      background-color: #ffffff;
+                                      margin-bottom: 1rem;
+                                      position: relative;
+                                    }
+                                    & hr {
+                                      border-width: 1px;
+                                      border: solid;
+                                      color: #b2b2b2;
+                                      margin-bottom: 0px;
+                                      margin-left: 0px;
+                                      margin-right: 0px;
+                                      margin-top: 0px;
+                                    },
+                                  "containerStep": 
+
+                                    {
+                                      margin-bottom: 0;
+                                      margin-left: auto;
+                                      margin-right: auto;
+                                      margin-top: 0;
+                                    },
+                                  "content": 
+
+                                    {
+                                      background-color: #ffffff;
+                                      padding-bottom: 1rem;
+                                      padding-left: 0.5rem;
+                                      padding-right: 0;
+                                      padding-top: 0;
+                                    }
+                                    &:focus {
+                                      background: #e2eaf7;
+                                    },
+                                  "heading": 
+
+                                    {
+                                      font-size: 1.25rem;
+                                      margin-bottom: 0;
+                                      margin-left: 0;
+                                      margin-right: 0;
+                                      margin-top: 0;
+                                    },
+                                  "stepLine": 
+
+                                    {
+                                      background-color: #b2b2b2;
+                                      display: block;
+                                      height: 100%;
+                                      left: 0.8rem;
+                                      position: absolute;
+                                      top: 2rem;
+                                      width: 2px;
+                                    }
+                                    @media (min-width: 640px){& {
+                                      left: 1rem;
+                                      margin-left: 1px;
+                                      top: 1.5rem;
+                                    },
+                                  "stepNumber": 
+
+                                    {
+                                      align-items: center;
+                                      background-color: #ffffff;
+                                      border-color: #1a1a1a;
+                                      border-radius: 50%;
+                                      border-width: 2px;
+                                      border: solid;
+                                      display: flex;
+                                      font-size: 1.125rem;
+                                      font-weight: 700;
+                                      height: 2rem;
+                                      justify-content: center;
+                                      margin-top: 1rem;
+                                      width: 2rem;
+                                      z-index: 10;
+                                    }
+                                    @media (max-width: 640px){& {
+                                      font-size: 1rem;
+                                      height: 1.5rem;
+                                      width: 1.5rem;
+                                    },
                                   "subComponentStyles": Object {},
-                                  "subtitle": "subtitle-52",
-                                  "toggleButton": "toggleButton-49",
-                                  "toggleButtonContent": "toggleButtonContent-51",
-                                  "toggleButtonOpen": "toggleButtonOpen-50",
-                                  "wrapperStep": "wrapperStep-43",
+                                  "subtitle": 
+
+                                    {
+                                      border: none;
+                                      color: #1a1a1a;
+                                      display: block;
+                                      font-size: 1.125rem;
+                                      font-weight: 400;
+                                      margin-bottom: 0px;
+                                      margin-left: 0px;
+                                      margin-right: 0px;
+                                      margin-top: 0px;
+                                      padding-bottom: 0;
+                                      padding-left: 0;
+                                      padding-right: 0.25rem;
+                                      padding-top: 0.5rem;
+                                      text-align: left;
+                                      width: 100%;
+                                    },
+                                  "toggleButton": 
+
+                                    {
+                                      background: none;
+                                      border: none;
+                                      color: #1362ae;
+                                      cursor: pointer;
+                                      font-size: 1rem;
+                                      font-weight: 700;
+                                      margin-bottom: 0px;
+                                      margin-top: 0px;
+                                      padding-bottom: 1rem;
+                                      padding-left: 0.5rem;
+                                      padding-right: 1rem;
+                                      padding-top: 1rem;
+                                      position: relative;
+                                      text-align: left;
+                                      width: 100%;
+                                    }
+                                    @media (min-width: 640px){& {
+                                      font-size: 1.25rem;
+                                    }
+                                    &:hover {
+                                      background: #cde1f9;
+                                    }
+                                    &:focus {
+                                      background: #cde1f9;
+                                      outline: none;
+                                    }
+                                    & h1 {
+                                      font-size: 1.25rem;
+                                      margin-bottom: 0;
+                                      margin-left: 0;
+                                      margin-right: 0;
+                                      margin-top: 0;
+                                    }
+                                    & h2 {
+                                      font-size: 1.25rem;
+                                      margin-bottom: 0;
+                                      margin-left: 0;
+                                      margin-right: 0;
+                                      margin-top: 0;
+                                    }
+                                    & h3 {
+                                      font-size: 1.25rem;
+                                      margin-bottom: 0;
+                                      margin-left: 0;
+                                      margin-right: 0;
+                                      margin-top: 0;
+                                    }
+                                    & h4 {
+                                      font-size: 1.25rem;
+                                      margin-bottom: 0;
+                                      margin-left: 0;
+                                      margin-right: 0;
+                                      margin-top: 0;
+                                    }
+                                    & h5 {
+                                      font-size: 1.25rem;
+                                      margin-bottom: 0;
+                                      margin-left: 0;
+                                      margin-right: 0;
+                                      margin-top: 0;
+                                    }
+                                    & h6 {
+                                      font-size: 1.25rem;
+                                      margin-bottom: 0;
+                                      margin-left: 0;
+                                      margin-right: 0;
+                                      margin-top: 0;
+                                    }
+                                    & i {
+                                      align-self: flex-start;
+                                      font-size: 1.5rem;
+                                      margin-top: -2px;
+                                      transition: .2s;
+                                    }
+                                    @media (min-width: 640px){& i {
+                                      font-size: 2rem;
+                                    },
+                                  "toggleButtonContent": 
+
+                                    {
+                                      align-items: center;
+                                      display: flex;
+                                      flex-direction: row;
+                                      justify-content: space-between;
+                                    },
+                                  "toggleButtonOpen": 
+
+                                    & i {
+                                      transform: rotate(180deg);
+                                    },
+                                  "wrapperStep": 
+
+                                    {
+                                      position: relative;
+                                    },
                                 }
                               }
                             />
                             <div
-                              className="content-45"
+                              className=
+
+                                  {
+                                    background-color: #ffffff;
+                                    padding-bottom: 1rem;
+                                    padding-left: 0.5rem;
+                                    padding-right: 0;
+                                    padding-top: 0;
+                                  }
+                                  &:focus {
+                                    background: #e2eaf7;
+                                  }
                               id="step-1-1"
                             >
                               <p>
@@ -128,13 +676,48 @@ exports[`Accordion komponent Sender videre html atributter 1`] = `
 exports[`Accordion komponent matcher snapshot 1`] = `
 <Accordion>
   <div
-    className="accordion-44"
+    className=
+
+        {
+          background-color: #ffffff;
+          margin-bottom: 1rem;
+          position: relative;
+        }
+        & hr {
+          border-width: 1px;
+          border: solid;
+          color: #b2b2b2;
+          margin-bottom: 0px;
+          margin-left: 0px;
+          margin-right: 0px;
+          margin-top: 0px;
+        }
   >
     <Grid
       padding="0px"
     >
       <div
-        className="ske-Grid-53 "
+        className=
+            
+            {
+              box-sizing: border-box;
+              padding-bottom: 0px;
+              padding-left: 0px;
+              padding-right: 0px;
+              padding-top: 0px;
+              zoom: 1;
+            }
+            &::before {
+              content: "";
+              display: table;
+              line-height: 0;
+            }
+            &::after {
+              clear: both;
+              content: "";
+              display: table;
+              line-height: 0;
+            }
         dir="ltr"
       >
         <AccordionItem
@@ -143,26 +726,152 @@ exports[`Accordion komponent matcher snapshot 1`] = `
           totalSteps={1}
         >
           <div
-            className="wrapperStep-43"
+            className=
+
+                {
+                  position: relative;
+                }
             key="1"
           >
             <GridRow
               rowSpacing="0px"
             >
               <div
-                className="ske-Grid-row-57 "
+                className=
+                    
+                    {
+                      box-sizing: border-box;
+                      margin-bottom: 0px;
+                      margin-left: 0;
+                      margin-right: 0;
+                      margin-top: 0px;
+                      zoom: 1;
+                    }
+                    &::before {
+                      content: "";
+                      display: table;
+                      line-height: 0;
+                    }
+                    &::after {
+                      clear: both;
+                      content: "";
+                      display: table;
+                      line-height: 0;
+                    }
               >
                 <GridCol
                   noSpacing={true}
                 >
                   <div
-                    className="ske-Grid-col-58 "
+                    className=
+                        
+                        {
+                          box-sizing: border-box;
+                          min-height: 1px;
+                          padding-left: false;
+                          padding-right: false;
+                          position: relative;
+                          width: 100%;
+                        }
+                        & $grid {
+                          padding-bottom: 0;
+                          padding-left: 0;
+                          padding-right: 0;
+                          padding-top: 0;
+                        }
+                        [dir='ltr'] & {
+                          float: left;
+                          left: NaN%;
+                          margin-bottom: 0;
+                          margin-left: 0;
+                          margin-right: 0;
+                          margin-top: 0;
+                          right: NaN%;
+                        }
+                        @media (min-width: 320px){[dir='ltr'] & {
+                          left: NaN%;
+                          right: NaN%;
+                          width: NaN%;
+                        }
+                        @media (min-width: 480px){[dir='ltr'] & {
+                          left: NaN%;
+                          right: NaN%;
+                          width: NaN%;
+                        }
+                        @media (min-width: 640px){[dir='ltr'] & {
+                          left: NaN%;
+                          right: NaN%;
+                          width: NaN%;
+                        }
+                        @media (min-width: 1024px){[dir='ltr'] & {
+                          left: NaN%;
+                          right: NaN%;
+                          width: NaN%;
+                        }
+                        @media (min-width: 1366px){[dir='ltr'] & {
+                          left: NaN%;
+                          right: NaN%;
+                          width: NaN%;
+                        }
+                        [dir='rtl'] & {
+                          float: right;
+                          left: NaN%;
+                          right: NaN%;
+                        }
+                        @media (min-width: 320px){[dir='rtl'] & {
+                          left: NaN%;
+                          right: NaN%;
+                          width: NaN%;
+                        }
+                        @media (min-width: 480px){[dir='rtl'] & {
+                          left: NaN%;
+                          right: NaN%;
+                          width: NaN%;
+                        }
+                        @media (min-width: 640px){[dir='rtl'] & {
+                          left: NaN%;
+                          right: NaN%;
+                          width: NaN%;
+                        }
+                        @media (min-width: 1024px){[dir='rtl'] & {
+                          left: NaN%;
+                          right: NaN%;
+                          width: NaN%;
+                        }
+                        @media (min-width: 1366px){[dir='rtl'] & {
+                          left: NaN%;
+                          right: NaN%;
+                          width: NaN%;
+                        }
+                        @media (min-width: 1920px){& {
+                          width: NaN%;
+                        }
                   >
                     <GridRow
                       rowSpacing="0px"
                     >
                       <div
-                        className="ske-Grid-row-57 "
+                        className=
+                            
+                            {
+                              box-sizing: border-box;
+                              margin-bottom: 0px;
+                              margin-left: 0;
+                              margin-right: 0;
+                              margin-top: 0px;
+                              zoom: 1;
+                            }
+                            &::before {
+                              content: "";
+                              display: table;
+                              line-height: 0;
+                            }
+                            &::after {
+                              clear: both;
+                              content: "";
+                              display: table;
+                              line-height: 0;
+                            }
                       >
                         <GridCol
                           md={12}
@@ -171,7 +880,89 @@ exports[`Accordion komponent matcher snapshot 1`] = `
                           xl={12}
                         >
                           <div
-                            className="ske-Grid-col-59 "
+                            className=
+                                
+                                {
+                                  box-sizing: border-box;
+                                  min-height: 1px;
+                                  padding-left: false;
+                                  padding-right: false;
+                                  position: relative;
+                                  width: 100%;
+                                }
+                                & $grid {
+                                  padding-bottom: 0;
+                                  padding-left: 0;
+                                  padding-right: 0;
+                                  padding-top: 0;
+                                }
+                                [dir='ltr'] & {
+                                  float: left;
+                                  left: NaN%;
+                                  margin-bottom: 0;
+                                  margin-left: 0;
+                                  margin-right: 0;
+                                  margin-top: 0;
+                                  right: NaN%;
+                                }
+                                @media (min-width: 320px){[dir='ltr'] & {
+                                  left: NaN%;
+                                  right: NaN%;
+                                  width: 100%;
+                                }
+                                @media (min-width: 480px){[dir='ltr'] & {
+                                  left: NaN%;
+                                  right: NaN%;
+                                  width: 100%;
+                                }
+                                @media (min-width: 640px){[dir='ltr'] & {
+                                  left: NaN%;
+                                  right: NaN%;
+                                  width: NaN%;
+                                }
+                                @media (min-width: 1024px){[dir='ltr'] & {
+                                  left: NaN%;
+                                  right: NaN%;
+                                  width: 100%;
+                                }
+                                @media (min-width: 1366px){[dir='ltr'] & {
+                                  left: NaN%;
+                                  right: NaN%;
+                                  width: NaN%;
+                                }
+                                [dir='rtl'] & {
+                                  float: right;
+                                  left: NaN%;
+                                  right: NaN%;
+                                }
+                                @media (min-width: 320px){[dir='rtl'] & {
+                                  left: NaN%;
+                                  right: NaN%;
+                                  width: 100%;
+                                }
+                                @media (min-width: 480px){[dir='rtl'] & {
+                                  left: NaN%;
+                                  right: NaN%;
+                                  width: 100%;
+                                }
+                                @media (min-width: 640px){[dir='rtl'] & {
+                                  left: NaN%;
+                                  right: NaN%;
+                                  width: NaN%;
+                                }
+                                @media (min-width: 1024px){[dir='rtl'] & {
+                                  left: NaN%;
+                                  right: NaN%;
+                                  width: 100%;
+                                }
+                                @media (min-width: 1366px){[dir='rtl'] & {
+                                  left: NaN%;
+                                  right: NaN%;
+                                  width: NaN%;
+                                }
+                                @media (min-width: 1920px){& {
+                                  width: NaN%;
+                                }
                           >
                             <hr />
                             <ToggleContent
@@ -179,23 +970,224 @@ exports[`Accordion komponent matcher snapshot 1`] = `
                               onClick={[Function]}
                               styles={
                                 Object {
-                                  "accordion": "accordion-44",
-                                  "containerStep": "containerStep-42",
-                                  "content": "content-45",
-                                  "heading": "heading-46",
-                                  "stepLine": "stepLine-48",
-                                  "stepNumber": "stepNumber-47",
+                                  "accordion": 
+
+                                    {
+                                      background-color: #ffffff;
+                                      margin-bottom: 1rem;
+                                      position: relative;
+                                    }
+                                    & hr {
+                                      border-width: 1px;
+                                      border: solid;
+                                      color: #b2b2b2;
+                                      margin-bottom: 0px;
+                                      margin-left: 0px;
+                                      margin-right: 0px;
+                                      margin-top: 0px;
+                                    },
+                                  "containerStep": 
+
+                                    {
+                                      margin-bottom: 0;
+                                      margin-left: auto;
+                                      margin-right: auto;
+                                      margin-top: 0;
+                                    },
+                                  "content": 
+
+                                    {
+                                      background-color: #ffffff;
+                                      padding-bottom: 1rem;
+                                      padding-left: 0.5rem;
+                                      padding-right: 0;
+                                      padding-top: 0;
+                                    }
+                                    &:focus {
+                                      background: #e2eaf7;
+                                    },
+                                  "heading": 
+
+                                    {
+                                      font-size: 1.25rem;
+                                      margin-bottom: 0;
+                                      margin-left: 0;
+                                      margin-right: 0;
+                                      margin-top: 0;
+                                    },
+                                  "stepLine": 
+
+                                    {
+                                      background-color: #b2b2b2;
+                                      display: block;
+                                      height: 100%;
+                                      left: 0.8rem;
+                                      position: absolute;
+                                      top: 2rem;
+                                      width: 2px;
+                                    }
+                                    @media (min-width: 640px){& {
+                                      left: 1rem;
+                                      margin-left: 1px;
+                                      top: 1.5rem;
+                                    },
+                                  "stepNumber": 
+
+                                    {
+                                      align-items: center;
+                                      background-color: #ffffff;
+                                      border-color: #1a1a1a;
+                                      border-radius: 50%;
+                                      border-width: 2px;
+                                      border: solid;
+                                      display: flex;
+                                      font-size: 1.125rem;
+                                      font-weight: 700;
+                                      height: 2rem;
+                                      justify-content: center;
+                                      margin-top: 1rem;
+                                      width: 2rem;
+                                      z-index: 10;
+                                    }
+                                    @media (max-width: 640px){& {
+                                      font-size: 1rem;
+                                      height: 1.5rem;
+                                      width: 1.5rem;
+                                    },
                                   "subComponentStyles": Object {},
-                                  "subtitle": "subtitle-52",
-                                  "toggleButton": "toggleButton-49",
-                                  "toggleButtonContent": "toggleButtonContent-51",
-                                  "toggleButtonOpen": "toggleButtonOpen-50",
-                                  "wrapperStep": "wrapperStep-43",
+                                  "subtitle": 
+
+                                    {
+                                      border: none;
+                                      color: #1a1a1a;
+                                      display: block;
+                                      font-size: 1.125rem;
+                                      font-weight: 400;
+                                      margin-bottom: 0px;
+                                      margin-left: 0px;
+                                      margin-right: 0px;
+                                      margin-top: 0px;
+                                      padding-bottom: 0;
+                                      padding-left: 0;
+                                      padding-right: 0.25rem;
+                                      padding-top: 0.5rem;
+                                      text-align: left;
+                                      width: 100%;
+                                    },
+                                  "toggleButton": 
+
+                                    {
+                                      background: none;
+                                      border: none;
+                                      color: #1362ae;
+                                      cursor: pointer;
+                                      font-size: 1rem;
+                                      font-weight: 700;
+                                      margin-bottom: 0px;
+                                      margin-top: 0px;
+                                      padding-bottom: 1rem;
+                                      padding-left: 0.5rem;
+                                      padding-right: 1rem;
+                                      padding-top: 1rem;
+                                      position: relative;
+                                      text-align: left;
+                                      width: 100%;
+                                    }
+                                    @media (min-width: 640px){& {
+                                      font-size: 1.25rem;
+                                    }
+                                    &:hover {
+                                      background: #cde1f9;
+                                    }
+                                    &:focus {
+                                      background: #cde1f9;
+                                      outline: none;
+                                    }
+                                    & h1 {
+                                      font-size: 1.25rem;
+                                      margin-bottom: 0;
+                                      margin-left: 0;
+                                      margin-right: 0;
+                                      margin-top: 0;
+                                    }
+                                    & h2 {
+                                      font-size: 1.25rem;
+                                      margin-bottom: 0;
+                                      margin-left: 0;
+                                      margin-right: 0;
+                                      margin-top: 0;
+                                    }
+                                    & h3 {
+                                      font-size: 1.25rem;
+                                      margin-bottom: 0;
+                                      margin-left: 0;
+                                      margin-right: 0;
+                                      margin-top: 0;
+                                    }
+                                    & h4 {
+                                      font-size: 1.25rem;
+                                      margin-bottom: 0;
+                                      margin-left: 0;
+                                      margin-right: 0;
+                                      margin-top: 0;
+                                    }
+                                    & h5 {
+                                      font-size: 1.25rem;
+                                      margin-bottom: 0;
+                                      margin-left: 0;
+                                      margin-right: 0;
+                                      margin-top: 0;
+                                    }
+                                    & h6 {
+                                      font-size: 1.25rem;
+                                      margin-bottom: 0;
+                                      margin-left: 0;
+                                      margin-right: 0;
+                                      margin-top: 0;
+                                    }
+                                    & i {
+                                      align-self: flex-start;
+                                      font-size: 1.5rem;
+                                      margin-top: -2px;
+                                      transition: .2s;
+                                    }
+                                    @media (min-width: 640px){& i {
+                                      font-size: 2rem;
+                                    },
+                                  "toggleButtonContent": 
+
+                                    {
+                                      align-items: center;
+                                      display: flex;
+                                      flex-direction: row;
+                                      justify-content: space-between;
+                                    },
+                                  "toggleButtonOpen": 
+
+                                    & i {
+                                      transform: rotate(180deg);
+                                    },
+                                  "wrapperStep": 
+
+                                    {
+                                      position: relative;
+                                    },
                                 }
                               }
                             />
                             <div
-                              className="content-45"
+                              className=
+
+                                  {
+                                    background-color: #ffffff;
+                                    padding-bottom: 1rem;
+                                    padding-left: 0.5rem;
+                                    padding-right: 0;
+                                    padding-top: 0;
+                                  }
+                                  &:focus {
+                                    background: #e2eaf7;
+                                  }
                             >
                               <p>
                                 Her vises innhold

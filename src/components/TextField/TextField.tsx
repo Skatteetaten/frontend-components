@@ -3,7 +3,7 @@ import classnames from 'classnames';
 import { LabelWithCallout } from '../LabelWithCallout';
 import { generateId } from '../utils';
 import {
-  ITextFieldProps,
+  IMaskedTextFieldProps,
   MaskedTextField,
   TextField as FabricTextField,
   ITextField,
@@ -11,18 +11,19 @@ import {
 import { getClassNames } from './TextField.classNames';
 import { TextFieldProps } from './TextField.types';
 
-/**
- * @visibleName TextField (Tekstfelt)
+/*
+ * visibleName TextField (Tekstfelt)
  */
 export const TextField: React.FC<TextFieldProps> = ({
   calloutFloating,
   children,
   className,
-  labelWithCalloutAutoDismiss,
+  labelWithCalloutProps,
   editable,
   errorMessage,
   id,
   label,
+  required = false,
   labelButtonAriaLabel,
   mask,
   inputMode,
@@ -30,6 +31,7 @@ export const TextField: React.FC<TextFieldProps> = ({
   onRenderLabel,
   readOnly,
   value,
+  requiredWithMark = false,
   ...rest
 }) => {
   rest.inputSize = rest.inputSize || 'normal';
@@ -48,7 +50,7 @@ export const TextField: React.FC<TextFieldProps> = ({
     setEditMode(true);
   };
 
-  const onBlur: ITextFieldProps['onBlur'] = (e) => {
+  const onBlur: IMaskedTextFieldProps['onBlur'] = (e) => {
     rest.onBlur && rest.onBlur(e);
     if (editMode) {
       setEditMode(shouldEditWhenEmpty);
@@ -72,7 +74,7 @@ export const TextField: React.FC<TextFieldProps> = ({
     }
   };
 
-  let TextFieldType: React.ComponentType<ITextFieldProps>;
+  let TextFieldType: React.ComponentType<IMaskedTextFieldProps>;
   if (mask) {
     TextFieldType = MaskedTextField;
   } else {
@@ -88,6 +90,7 @@ export const TextField: React.FC<TextFieldProps> = ({
       )}
     >
       <LabelWithCallout
+        {...labelWithCalloutProps}
         id={labelId}
         inputId={inputId}
         label={label}
@@ -96,6 +99,7 @@ export const TextField: React.FC<TextFieldProps> = ({
             ? labelButtonAriaLabel
             : setCustomButtonAriaLabel()
         }
+        requiredMark={requiredWithMark}
         editFunction={onEdit}
         warning={rest.warning}
         help={rest.help}
@@ -103,7 +107,6 @@ export const TextField: React.FC<TextFieldProps> = ({
         editable={editable}
         inputSize={rest.inputSize}
         calloutFloating={calloutFloating}
-        autoDismiss={labelWithCalloutAutoDismiss}
         onRenderLabel={onRenderLabel}
         onCalloutToggle={onCalloutToggle}
       />
@@ -117,6 +120,7 @@ export const TextField: React.FC<TextFieldProps> = ({
           getClassNames({ ...rest, editMode, readOnly }),
           className
         )}
+        required={required || requiredWithMark}
         errorMessage={errorMessage}
         onBlur={onBlur}
         componentRef={(ref) => {

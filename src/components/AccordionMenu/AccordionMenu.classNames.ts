@@ -1,5 +1,5 @@
-import { mergeStyleSets } from '@uifabric/merge-styles';
-import { getTheme } from '@uifabric/styling';
+import { mergeStyleSets } from '@fluentui/merge-styles';
+import { getTheme } from '@fluentui/react/lib/Styling';
 import { PaletteProps, FontSizes, IconFontSizes } from '../utils';
 
 export function getClassNames(props): any {
@@ -35,11 +35,11 @@ export function getClassNames(props): any {
       padding: '0 15px',
       selectors: {
         '&:hover': {
-          backgroundColor: palette.skeColor.lightBlue,
+          backgroundColor: palette.skeColor.backgroundHoverColor,
           cursor: 'pointer',
         },
         '&:focus': {
-          backgroundColor: palette.skeColor.lightBlue,
+          backgroundColor: palette.skeColor.backgroundFocusColor,
           outline: 'none',
         },
         '&:active': {
@@ -66,6 +66,8 @@ export function getClassNames(props): any {
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'center',
+      flexGrow: '0',
+      flexShrink: '0',
       height: 40,
       width: 40,
       border: `2px solid ${palette.skeColor.blackAlt}`,
@@ -94,7 +96,7 @@ export function getClassNames(props): any {
     content: {
       borderTop: `2px solid ${palette.skeColor.grey}`,
       padding: 15,
-      background: palette.skeColor.lightBeige,
+      background: palette.skeColor.grey5,
       display: 'block',
     },
   });

@@ -1,4 +1,12 @@
-**Et område med kommandoer**
+**CommandBar (Menyknapper): et område med kommandoer**
+
+```js noeditor
+import { MessageBar } from '@skatteetaten/frontend-components/MessageBar';
+
+<MessageBar type={MessageBar.Type.info}>
+  Denne komponenten kan ikke brukes i micro frontends inntil videre.
+</MessageBar>;
+```
 
 ```js
 const [state, setState] = React.useState({

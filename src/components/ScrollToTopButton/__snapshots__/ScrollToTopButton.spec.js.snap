@@ -3,17 +3,187 @@
 exports[`ScrollToTopButton komponent matcher snapshot 1`] = `
 <div
   aria-hidden="true"
-  className="topcontainer-42"
+  className=
+
+      {
+        margin-top: 40px;
+        visibility: hidden;
+        width: 100%;
+        z-index: 2;
+      }
+      @media (min-width: 1024px){& {
+        position: fixed;
+        right: 0px;
+        top: 0px;
+      }
 >
   <div
-    className="container-43"
+    className=
+
+        {
+          margin-bottom: 0;
+          margin-left: auto;
+          margin-right: auto;
+          margin-top: 0;
+          opacity: 0;
+          position: relative !important;
+          transition: 0.2s;
+        }
+        @media (min-width: 1024px){& {
+          max-width: 1024px;
+        }
+        @media (min-width: 1366px){& {
+          max-width: 1366px;
+        }
+        @media (min-width: 1920px){& {
+          max-width: 1920px;
+        }
   >
     <div
-      className="box-44"
+      className=
+
+          {
+            margin-top: 0px;
+          }
+          @media (min-width: 1024px){& {
+            position: absolute;
+            right: 0px;
+            top: 80vh;
+          }
     >
       <button
         aria-label="Til toppen"
-        className="ms-Button ms-Button--action ms-Button--command actionButton-52"
+        className=
+            ms-Button
+            ms-Button--action
+            ms-Button--command
+            {
+              -moz-osx-font-smoothing: grayscale;
+              -webkit-font-smoothing: antialiased;
+              background-color: transparent;
+              border-radius: 2px;
+              border: 1px solid transparent;
+              box-sizing: border-box;
+              color: rgba(0, 0, 0, 0.95);
+              cursor: pointer;
+              display: block;
+              font-family: 'Helvetica Neue', Helvetica , Arial, 'Liberation Sans', 'Nimbus Sans L', sans-serif;
+              font-size: 1rem;
+              font-weight: 400;
+              height: 40px;
+              margin-bottom: 1.5rem;
+              margin-left: auto;
+              margin-right: auto;
+              margin-top: 1.5rem;
+              outline: transparent;
+              padding-bottom: 0;
+              padding-left: 4px;
+              padding-right: 4px;
+              padding-top: 0;
+              position: relative;
+              text-align: center;
+              text-decoration: none !important;
+              user-select: none;
+            }
+            &::-moz-focus-inner {
+              border: 0;
+            }
+            .ms-Fabric--isFocusVisible &:focus:after {
+              border-radius: 4px;
+              border: 2px solid #1362ae;
+              bottom: -2px;
+              content: "";
+              left: -2px;
+              outline: transparent;
+              position: absolute;
+              right: -2px;
+              top: -2px;
+              z-index: 1;
+            }
+            @media screen and (-ms-high-contrast: active), (forced-colors: active){.ms-Fabric--isFocusVisible &:focus:after {
+              bottom: -2px;
+              left: -2px;
+              outline-color: ButtonText;
+              right: -2px;
+              top: -2px;
+            }
+            &:active > * {
+              left: 0px;
+              position: relative;
+              top: 0px;
+            }
+            @media screen and (-ms-high-contrast: active), (forced-colors: active){& {
+              border-color: Window;
+            }
+            &:hover {
+              color: #1362ae;
+            }
+            @media screen and (-ms-high-contrast: active), (forced-colors: active){&:hover {
+              color: Highlight;
+            }
+            &:hover .ms-Button-icon {
+              color: #1362ae;
+            }
+            &:active {
+              color: #1a1a1a;
+            }
+            &:active .ms-Button-icon {
+              color: #0a365f;
+            }
+            &.ms-Button.ms-Button--action {
+              border-bottom: 2px solid transparent;
+              color: #1362ae;
+              font-weight: 500;
+              height: auto;
+              min-height: 32px;
+              padding-bottom: 3px;
+              padding-left: 4px;
+              padding-right: 4px;
+              padding-top: 3px;
+              text-align: left;
+            }
+            & span {
+              flex-direction: row;
+            }
+            &.ms-Button--action .ms-Button-icon {
+              color: #1362ae;
+              font-size: 1.25rem;
+              font-weight: 500;
+              margin-left: 0;
+              transform: translateY(4px);
+            }
+            & .ms-Button-flexContainer {
+              align-items: baseline;
+              flex-direction: initial;
+              justify-content: center;
+            }
+            &.ms-Button--action .ms-Button-label {
+              line-height: 1.5;
+            }
+            &.ms-Button--action:hover  {
+              background-color: #cde1f9;
+              transition: background 0.3s;
+            }
+            &.ms-Button--action:active  {
+              transform: translateY(2px);
+              transition-timing-function: ease;
+              transition: 0.15s;
+            }
+            &.ms-Button--action:active .ms-Button-label {
+              text-align: left;
+              text-decoration: none;
+            }
+            &.ms-Button--action:disabled {
+              color: #b2b2b2;
+              cursor: not-allowed;
+            }
+            &.ms-Button--action:disabled i {
+              color: #b2b2b2;
+              cursor: not-allowed;
+            }
+            &:hover .ms-Button-flexContainer > div {
+              background-color: #cde1f9;
+            }
         data-is-focusable={true}
         onClick={[Function]}
         onKeyDown={[Function]}
@@ -24,26 +194,81 @@ exports[`ScrollToTopButton komponent matcher snapshot 1`] = `
         type="button"
       >
         <span
-          className="ms-Button-flexContainer flexContainer-53"
+          className=
+              ms-Button-flexContainer
+              {
+                align-items: center;
+                display: flex;
+                flex-wrap: nowrap;
+                height: 100%;
+                justify-content: flex-start;
+              }
           data-automationid="splitbuttonprimary"
         >
           <div
-            className="iconFixateContainer-47"
+            className=
+
+                {
+                  background: #ffffff;
+                  border-color: #1362ae;
+                  border-radius: 50%;
+                  border-style: solid;
+                  border-width: 2px;
+                  height: 30px;
+                  position: absolute;
+                  width: 30px;
+                }
           >
             <div
-              className="iconFixate-48"
+              className=
+
+                  {
+                    left: 0.25em;
+                    position: absolute;
+                    top: 0.4em;
+                  }
             >
               <i
                 aria-hidden={true}
-                className="icon-61"
+                className=
+
+                    {
+                      -moz-osx-font-smoothing: grayscale;
+                      -webkit-font-smoothing: antialiased;
+                      color: #1362ae;
+                      display: inline;
+                      font-family: "SkeIconfont";
+                      font-size: 1.375rem;
+                      font-style: normal;
+                      font-weight: normal;
+                      line-height: 0.8;
+                      speak: none;
+                      text-rendering: auto;
+                      transform: translate(0, 0);
+                    }
                 data-icon-name="MoveUp"
               >
-                
+                
               </i>
             </div>
           </div>
           <div
-            className="label-49"
+            className=
+
+                {
+                  background-color: white !important;
+                  border-radius: 10px;
+                  color: #1362ae;
+                  font-size: 0.75rem;
+                  font-weight: 700;
+                  margin-top: 40px;
+                  padding-bottom: 2px;
+                  padding-left: 15px;
+                  padding-right: 15px;
+                  padding-top: 2px;
+                  text-align: center;
+                  z-index: 1;
+                }
           >
             Til toppen
           </div>

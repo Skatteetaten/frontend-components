@@ -1,7 +1,7 @@
-**Ikoner kan brukes direkte eller av de andre komponentene i Designsystemet.**
+**Icon (Ikon): kan brukes direkte eller av de andre komponentene i Designsystemet.**
 
 ```js
-import { Icon } from '@skatteetaten/frontend-components';
+import { Icon } from '@skatteetaten/frontend-components/Icon';
 
 <div>
   <Icon iconName="ArrowUp" style={{ fontSize: '32px', color: '#1362ae' }} />
@@ -18,15 +18,30 @@ import { Icon } from '@skatteetaten/frontend-components';
 </div>;
 ```
 
+<style>
+  .darkOnHover {
+    text-align: center;
+  }
+  .ms-DetailsRow-cell {
+    padding: 16px 8px 4px 8px !important;
+  }
+  .ms-FocusZone.ms-DetailsRow:hover .darkOnHover {
+    background-color: #093e61;
+    color: #ffffff;
+  }
+  .padLeftM {
+    padding-left: 16px !important;
+  }
+</style>
+
 ### Liste over alle ikoner
 
 ```js noeditor
-import {
-  Icon,
-  Accordion,
-  AccordionItem,
-  DetailsList,
-} from '@skatteetaten/frontend-components';
+import { Accordion } from '@skatteetaten/frontend-components/Accordion';
+import { AccordionItem } from '@skatteetaten/frontend-components/Accordion/AccordionItem';
+import { DetailsList } from '@skatteetaten/frontend-components/DetailsList';
+import { Icon } from '@skatteetaten/frontend-components/Icon';
+
 const columns = [
   {
     key: 'column1',
@@ -35,9 +50,10 @@ const columns = [
     minWidth: 50,
     maxWidth: 50,
     isResizable: false,
+    className: 'darkOnHover',
   },
   {
-    key: 'column2',
+    key: 'column3',
     name: 'Navn',
     fieldName: 'name',
     minWidth: 50,
@@ -45,7 +61,7 @@ const columns = [
     isResizable: true,
   },
   {
-    key: 'column3',
+    key: 'column4',
     name: 'Brukes til',
     fieldName: 'usage',
     minWidth: 50,
@@ -70,6 +86,14 @@ const iconGroup = {
     {
       name: 'ChevronDown',
       usage: 'Åpne område',
+    },
+    {
+      name: 'ChevronLeft',
+      usage: 'Paginering (forrige side)',
+    },
+    {
+      name: 'ChevronRight',
+      usage: 'Paginering (neste side)',
     },
     {
       name: 'ArrowUp',
@@ -142,6 +166,10 @@ const iconGroup = {
       usage: 'Informasjon, nyttig opplysning',
     },
     {
+      name: 'InfoSimple',
+      usage: 'Informasjon, nyttig opplysning',
+    },
+    {
       name: 'Warning',
       usage: 'Advarsel',
     },
@@ -180,8 +208,24 @@ const iconGroup = {
       usage: 'Last ned',
     },
     {
+      name: 'Send',
+      usage: 'Send inn skjema',
+    },
+    {
       name: 'Deploy',
       usage: 'Distribuere (deploye)',
+    },
+    {
+      name: 'ListAdd',
+      usage: 'Legg til rad',
+    },
+    {
+      name: 'ListRemove',
+      usage: 'Fjern rad',
+    },
+    {
+      name: 'ListReorder',
+      usage: 'Endre rekkefølge (rad)',
     },
   ],
   tags: [
@@ -216,6 +260,10 @@ const iconGroup = {
     {
       name: 'CircleFilled',
       usage: 'Markert',
+    },
+    {
+      name: 'CircleRing',
+      usage: 'Umarkert',
     },
     {
       name: 'Code',
@@ -276,6 +324,18 @@ const iconGroup = {
     {
       name: 'Menu',
       usage: 'Meny til smal skjerm',
+    },
+    {
+      name: 'VerticalDots',
+      usage: 'Vis sekundære knapper/funksjoner',
+    },
+    {
+      name: 'VerticalDotsCircle',
+      usage: 'Vis sekundære knapper/funksjoner',
+    },
+    {
+      name: 'VerticalDotsCircleSolid',
+      usage: 'Vis sekundære knapper/funksjoner',
     },
     {
       name: 'Person',
@@ -487,6 +547,14 @@ const iconGroup = {
       name: 'PinOff',
       usage: 'Ikke-festet element',
     },
+    {
+      name: 'EyeOutline',
+      usage: 'Vis',
+    },
+    {
+      name: 'EyeOff',
+      usage: 'Skjul',
+    },
   ],
   files: [
     {
@@ -580,12 +648,11 @@ Object.keys(iconGroup).forEach((name) => {
 Store og mer detaljerte temaikoner:
 
 ```js noeditor
-import {
-  Icon,
-  Accordion,
-  AccordionItem,
-  DetailsList,
-} from '@skatteetaten/frontend-components';
+import { Accordion } from '@skatteetaten/frontend-components/Accordion';
+import { AccordionItem } from '@skatteetaten/frontend-components/Accordion/AccordionItem';
+import { DetailsList } from '@skatteetaten/frontend-components/DetailsList';
+import { Icon } from '@skatteetaten/frontend-components/Icon';
+
 const columns = [
   {
     key: 'column1',
@@ -657,6 +724,50 @@ const iconGroup = {
     {
       name: 'TemaSelskapDeltakerfastsetting',
       usage: 'Deltakerfastsetting',
+    },
+    {
+      name: 'TemaVarelagerFordringer',
+      usage: 'Varelager og fordringer',
+    },
+    {
+      name: 'TemaDriftsmidler',
+      usage: 'Driftsmidler',
+    },
+    {
+      name: 'TemaDrosjeServering',
+      usage: 'Overnatting, servering og drosje',
+    },
+    {
+      name: 'TemaEiendelerEgenkapitalGjeld',
+      usage: 'Eiendeler, egenkapital og gjeld',
+    },
+    {
+      name: 'TemaInntekt',
+      usage: 'Inntekter',
+    },
+    {
+      name: 'TemaUtgift',
+      usage: 'Utgifter',
+    },
+    {
+      name: 'TemaPersoninntekt',
+      usage: 'Personinntekt',
+    },
+    {
+      name: 'TemaNaringsinntekt',
+      usage: 'Næringsinntekt',
+    },
+    {
+      name: 'TemaSkogfond',
+      usage: 'Skog',
+    },
+    {
+      name: 'TemaMvaRegistreringer',
+      usage: 'MVA-registrering',
+    },
+    {
+      name: 'TemaMvaFastsetting',
+      usage: 'MVA-fastsetting',
     },
   ],
 };

@@ -1,9 +1,8 @@
 import { IDropdownProps } from '@fluentui/react';
 import { calloutState, LabelWithCalloutProps } from '../LabelWithCallout';
+import { CalloutProps } from '../Callout/Callout.types';
 
 export interface DropdownProps extends IDropdownProps {
-  /** Lukk callout på blur */
-  labelWithCalloutAutoDismiss?: boolean;
   /** Hjelpetekst */
   help?: string | JSX.Element;
   /** Størrelse på inputfelt som skal benyttes */
@@ -11,7 +10,7 @@ export interface DropdownProps extends IDropdownProps {
   /** aria-label for knapp i label */
   labelButtonAriaLabel?: string;
   /** Overstyr label, se LabelWithCallout komponent */
-  labelCallout?: LabelWithCalloutProps;
+  labelWithCalloutProps?: LabelWithCalloutProps;
   /** @ignore */
   multiSelect?: IDropdownProps['multiSelect'];
   /** @ignore */
@@ -21,8 +20,12 @@ export interface DropdownProps extends IDropdownProps {
     oldCalloutState: calloutState,
     newCalloutState: calloutState
   ) => void;
+  /** Overstyr Datepicker Callout, se CalloutProps komponent */
+  calloutProps?: CalloutProps;
   /** Lesemodus. Kan brukes i sammenheng med selectedKey eller defaultSelectedKey for å vise verdi */
   readOnly?: boolean;
+  /** Om feltet er obligatorisk og skal markeres med stjerne (*) */
+  requiredWithMark?: boolean;
 }
 
 export interface DropdownState {

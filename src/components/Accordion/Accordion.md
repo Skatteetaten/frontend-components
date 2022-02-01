@@ -1,5 +1,5 @@
 ```js noeditor
-import { MessageBar } from '@skatteetaten/frontend-components';
+import { MessageBar } from '@skatteetaten/frontend-components/MessageBar';
 
 <MessageBar type={MessageBar.Type.info}>
   Se tilhørende underkompoent <a href="/#accordionitem">AccordionItem</a> for
@@ -7,10 +7,11 @@ import { MessageBar } from '@skatteetaten/frontend-components';
 </MessageBar>;
 ```
 
-**Accordion inneholder ett eller flere ekspanderende områder med en beskrivende tittel.**
+**Accordion (Trekkspill): ett eller flere ekspanderende områder med en beskrivende tittel.**
 
 ```js
-import { Accordion, AccordionItem } from '@skatteetaten/frontend-components';
+import { Accordion } from '@skatteetaten/frontend-components/Accordion';
+import { AccordionItem } from '@skatteetaten/frontend-components/Accordion/AccordionItem';
 
 <Accordion>
   <AccordionItem
@@ -92,7 +93,8 @@ import { Accordion, AccordionItem } from '@skatteetaten/frontend-components';
 En accordion som brukes for å veilede brukeren gjennom en sekvens av trinnvise steg.
 
 ```js
-import { Accordion, AccordionItem } from '@skatteetaten/frontend-components';
+import { Accordion } from '@skatteetaten/frontend-components/Accordion';
+import { AccordionItem } from '@skatteetaten/frontend-components/Accordion/AccordionItem';
 
 <Accordion processList>
   <AccordionItem
@@ -162,7 +164,8 @@ import { Accordion, AccordionItem } from '@skatteetaten/frontend-components';
 ```
 
 ```js uu
-import { Accordion, AccordionItem } from '@skatteetaten/frontend-components';
+import { Accordion } from '@skatteetaten/frontend-components/Accordion';
+import { AccordionItem } from '@skatteetaten/frontend-components/Accordion/AccordionItem';
 
 <Accordion headingLevel={3}>
   <AccordionItem

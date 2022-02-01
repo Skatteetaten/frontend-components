@@ -1,6 +1,6 @@
-import { mergeStyles } from '@uifabric/merge-styles';
-import { getTheme } from '@uifabric/styling';
-import { FontSizes, FontWeights, MdIcons, PaletteProps } from '../utils';
+import { mergeStyles } from '@fluentui/merge-styles';
+import { getTheme } from '@fluentui/react/lib/Styling';
+import { FontSizes, FontWeights, SkeIcons, PaletteProps } from '../utils';
 import { TextFieldProps } from './TextField.types';
 
 function getFieldTypeStyles(props: TextFieldProps) {
@@ -38,7 +38,7 @@ export const getClassNames = (props: TextFieldProps) => {
   } = props;
   const { semanticColors } = getTheme();
   const palette = getTheme().palette as PaletteProps;
-  const errorIcon = "'" + MdIcons.icons.Error + "'";
+  const errorIcon = "'" + SkeIcons.icons.Error + "'";
   const color = errorMessage
     ? palette.skeColor.error
     : palette.skeColor.blackAlt;
@@ -110,7 +110,7 @@ export const getClassNames = (props: TextFieldProps) => {
         paddingLeft: 20,
       },
       '& .ms-TextField-errorMessage::before': {
-        fontFamily: MdIcons.fontFace.fontFamily,
+        fontFamily: SkeIcons.fontFace.fontFamily,
         fontSize: 16,
         display: 'block',
         content: errorIcon,
@@ -118,6 +118,9 @@ export const getClassNames = (props: TextFieldProps) => {
         position: 'absolute',
         top: 6,
         left: 0,
+      },
+      '& .ms-TextField-fieldGroup::before': {
+        display: 'none',
       },
       'textarea.ms-TextField-field': {
         resize: 'none',

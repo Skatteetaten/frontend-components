@@ -8,15 +8,22 @@ const dataProd = require('./importmap-prod.json');
 const dataInternalDev = require('./importmap-internal.json');
 const dataInternalProd = require('./importmap-internal-prod.json');
 const destDir = process.argv[2] || 'build';
-const packageJsonPath = process.argv[3] || require.resolve('../../package.json');
+const packageJsonPath =
+  process.argv[3] || require.resolve('../../package.json');
 const packageJson = require(packageJsonPath);
 
 const findDependencyVersion = (dependency) => {
   if (packageJson.dependencies && packageJson.dependencies[dependency]) {
     return packageJson.dependencies[dependency];
-  } else if (packageJson.devDependencies && packageJson.devDependencies[dependency]) {
+  } else if (
+    packageJson.devDependencies &&
+    packageJson.devDependencies[dependency]
+  ) {
     return packageJson.devDependencies[dependency];
-  } else if (packageJson.peerDependencies && packageJson.peerDependencies[dependency]) {
+  } else if (
+    packageJson.peerDependencies &&
+    packageJson.peerDependencies[dependency]
+  ) {
     return packageJson.peerDependencies[dependency];
   } else {
     throw Error(`No dependency by name: ${dependency}!`);
@@ -30,7 +37,7 @@ const findOwnVersion = () => {
   const hash = uuidv4();
 
   return base.includes('SNAPSHOT') ? `${base}-${hash}` : base;
-}
+};
 
 const ownVersion = findOwnVersion();
 
@@ -39,7 +46,8 @@ const replaceImportVersions = (importMap) => {
     if (external === '@skatteetaten/frontend-components') {
       importMap[external] = importMap[external].replace(
         '<replace>',
-        ownVersion)
+        ownVersion
+      );
     } else {
       importMap[external] = importMap[external].replace(
         '<replace>',
@@ -53,18 +61,21 @@ const writeDependencies = async (data, path) => {
   for (const [key, value] of Object.entries(data.imports)) {
     if (!value.includes('frontend-components')) {
       const basePath = `${destDir}/umd/${path}`;
-      const itemPath = `${basePath}/${key}/${
-        value
-          .split('@')[1]
-      }`;
+      const itemPath = `${basePath}/${key}/${value.split('@')[1]}`;
       const makePath = itemPath.substring(0, itemPath.lastIndexOf('/'));
 
       writeDependencyFromUrl(makePath, itemPath, value);
     } else {
       if (value.includes('development')) {
-        writeDependencyFromFile(`${destDir}${dataInternalDev.imports[key]}`, 'development');
+        writeDependencyFromFile(
+          `${destDir}${dataInternalDev.imports[key]}`,
+          'development'
+        );
       } else {
-        writeDependencyFromFile(`${destDir}${dataInternalProd.imports[key]}`, 'production');
+        writeDependencyFromFile(
+          `${destDir}${dataInternalProd.imports[key]}`,
+          'production'
+        );
       }
     }
   }
@@ -82,7 +93,7 @@ const writeDependencyFromUrl = async (makePath, itemPath, value) => {
     console.log(error);
     return error;
   }
-}
+};
 
 const writeDependencyFromFile = async (itemPath, sub) => {
   const makePath = itemPath.substring(0, itemPath.lastIndexOf('/'));
@@ -90,8 +101,11 @@ const writeDependencyFromFile = async (itemPath, sub) => {
   if (!fs.existsSync(makePath)) fs.mkdirSync(makePath, { recursive: true });
 
   fs.copyFileSync(require.resolve(`../../umd/index.${sub}.js`), itemPath);
-  fs.copyFileSync(require.resolve(`../../umd/index.${sub}.js.map`), `${itemPath}.map`);
-}
+  fs.copyFileSync(
+    require.resolve(`../../umd/index.${sub}.js.map`),
+    `${itemPath}.map`
+  );
+};
 
 const writeImportmap = (mapsPath, data, path) => {
   const dataAsString = JSON.stringify(data, null, 2);
@@ -109,7 +123,8 @@ const writeImportmap = (mapsPath, data, path) => {
 const writeImportmaps = () => {
   const importMapsPath = `${destDir}/umd/importmaps/frontend-components`;
 
-  if (!fs.existsSync(importMapsPath)) fs.mkdirSync(importMapsPath, { recursive: true });
+  if (!fs.existsSync(importMapsPath))
+    fs.mkdirSync(importMapsPath, { recursive: true });
 
   writeImportmap(importMapsPath, dataDev, 'importmap');
   writeImportmap(importMapsPath, dataProd, 'importmap-prod');
@@ -132,8 +147,10 @@ const write = async () => {
   await writeDependencies(dataProd, 'deps');
 };
 
-write().catch((error) => {
-  console.error(error);
-}).then(() => {
-  console.log('Import maps complete!');
-});
+write()
+  .catch((error) => {
+    console.error(error);
+  })
+  .then(() => {
+    console.log('Import maps complete!');
+  });

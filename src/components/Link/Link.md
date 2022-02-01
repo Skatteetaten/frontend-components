@@ -1,11 +1,11 @@
-**Lenke til filer eller nettsider**
+**Link (Lenke): lenke til filer eller nettsider**
 
 Filer:
 
 ```js
-import { Link } from '@skatteetaten/frontend-components';
+import { Link } from '@skatteetaten/frontend-components/Link';
 
-<div className="ExampleSpacing8">
+<div>
   <Link
     path={'#link'}
     text={'Rettledning til RF-1167 Næringsoppgave 2 for 2020 (pdf)'}
@@ -17,9 +17,9 @@ import { Link } from '@skatteetaten/frontend-components';
 Eksterne sider:
 
 ```js
-import { Link } from '@skatteetaten/frontend-components';
+import { Link } from '@skatteetaten/frontend-components/Link';
 
-<div className="ExampleSpacing8">
+<div>
   <Link
     path={'#link'}
     text={'Kontakte Statens Vegvesen'}
@@ -39,8 +39,8 @@ import { Link } from '@skatteetaten/frontend-components';
 Åpne i ny fane:
 
 ```js
-import { Link } from '@skatteetaten/frontend-components';
-<div className="ExampleSpacing8">
+import { Link } from '@skatteetaten/frontend-components/Link';
+<div>
   <Link
     path={'https://www.skatteetaten.no/rettskilder/type/lover-og-forskrifter/'}
     text={'Se lover og forskrifter (åpnes i ny fane)'}
@@ -53,7 +53,7 @@ import { Link } from '@skatteetaten/frontend-components';
 Løpende tekst:
 
 ```js
-import { Link } from '@skatteetaten/frontend-components';
+import { Link } from '@skatteetaten/frontend-components/Link';
 <p>
   Det er også mulig å bruke en
   <Link path={'#link'} text={'link'} /> inni et avsnitt med tekst.

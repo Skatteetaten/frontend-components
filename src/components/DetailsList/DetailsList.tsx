@@ -14,8 +14,8 @@ import { DetailsListProps, IColumn } from './DetailsList.types';
 
 export { FabricDetailsList, DetailsRow };
 
-/**
- * @visibleName DetailsList (Sammensatt tabell)
+/*
+ * visibleName DetailsList (Sammensatt tabell)
  */
 export class DetailsList extends React.PureComponent<DetailsListProps, {}> {
   static ConstrainMode = ConstrainMode;

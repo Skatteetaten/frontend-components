@@ -3,7 +3,7 @@
 exports[`Card komponent matcher snapshot 1`] = `
 <Card
   buttonType="button"
-  color="beige"
+  color="brown10"
   expand={false}
   isExpanded={true}
   margin="medium"
@@ -12,10 +12,39 @@ exports[`Card komponent matcher snapshot 1`] = `
   titlesize="x-large"
 >
   <div
-    className="SkeCard-42"
+    className=
+
+        {
+          background-color: #f9ede2;
+          border: none;
+          box-sizing: border-box;
+          color: rgba(0, 0, 0, 0.95);
+          display: flow-root;
+          margin-bottom: 2px;
+          padding-bottom: 0px;
+          padding-left: 0px;
+          padding-right: 0px;
+          padding-top: 0px;
+        }
+        &:hover {
+          cursor: default;
+        }
+        &:focus {
+          outline: none;
+        }
   >
     <div
-      className="body-50"
+      className=
+
+          {
+            animation-name: keyframes from{opacity:0;}to{opacity:1;};
+            font-size: 1rem;
+            margin-bottom: 12px;
+            margin-left: 12px;
+            margin-right: 12px;
+            margin-top: 12px;
+            text-align: left;
+          }
     />
   </div>
 </Card>

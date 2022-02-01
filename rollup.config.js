@@ -1,22 +1,22 @@
 import babel from '@rollup/plugin-babel';
 import commonjs from '@rollup/plugin-commonjs';
-import resolve from '@rollup/plugin-node-resolve';
+import nodeResolve from '@rollup/plugin-node-resolve';
 import json from '@rollup/plugin-json';
 import image from '@rollup/plugin-image';
 import url from '@rollup/plugin-url';
 import svgr from '@svgr/rollup';
 import injectProcessEnv from 'rollup-plugin-inject-process-env';
 import externals from 'rollup-plugin-node-externals';
-import nodePolyfills from 'rollup-plugin-node-polyfills';
-import bundleSize from 'rollup-plugin-bundle-size';
+import nodePolyfills from 'rollup-plugin-polyfill-node';
 import { terser } from 'rollup-plugin-terser';
 import typescript from '@rollup/plugin-typescript';
 import globals from 'rollup-plugin-node-globals';
+import { visualizer } from 'rollup-plugin-visualizer';
 
 const extensions = ['.js', '.ts', '.tsx', '.jsx'];
 const outputDir = './lib/umd/';
 const urlConfig = {
-  include: ['**/*.woff', '**/*.woff2', '**/*.ttf', '**/*.eot', '**/*.svg'],
+  include: ['**/*.woff'],
   limit: Infinity,
 };
 export const externalsConfig = {
@@ -28,7 +28,6 @@ export const externalsConfig = {
     'classnames',
     'i18next',
     'axios',
-    'tslib',
     'react-i18next',
     'react-transition-group',
   ],
@@ -77,14 +76,14 @@ const getPluginsConfig = (prod, mini) => {
     image(),
     json(),
     externals(externalsConfig),
+    nodeResolve(resolveConfig),
     globals(),
     nodePolyfills(),
     injectProcessEnv(injectProcessEnvConfig),
-    resolve(resolveConfig),
     typescript(typescriptOptions),
     babel(babelConfig),
     commonjs(commonJsConfig),
-    bundleSize(),
+    visualizer(),
   ];
 
   if (mini) {
@@ -102,7 +101,7 @@ export default (CLIArgs) => {
   delete CLIArgs.mini;
 
   const bundle = {
-    input: 'src/components/index.ts',
+    input: 'src/components/entry.ts',
     output: {
       file: `${outputDir}index.${prod ? 'production' : 'development'}.js`,
       format: 'umd',
@@ -116,6 +115,7 @@ export default (CLIArgs) => {
         axios: 'axios',
       },
     },
+    preserveModules: false,
   };
 
   bundle.plugins = getPluginsConfig(prod, mini);

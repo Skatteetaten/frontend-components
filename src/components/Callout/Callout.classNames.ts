@@ -1,13 +1,13 @@
-import { getTheme } from '@uifabric/styling';
-import { mergeStyleSets } from '@uifabric/merge-styles';
-import { FontSizes, PaletteProps } from '../utils';
+import { mergeStyleSets } from '@fluentui/merge-styles';
 import { CalloutProps, CalloutColor } from './Callout.types';
+import designtokenColors from '../utils/designtokens/_colors.json';
+import designtokenFontSizes from '../utils/designtokens/_fontSizes.json';
+import designtokenSpacing from '../utils/designtokens/_spacing.json';
 
 function getCalloutBorder(props: CalloutProps) {
-  const palette = getTheme().palette as PaletteProps;
-  if (props.color === 'white' || props.border) {
+  if (props.color === 'ske-color-white-100' || props.border) {
     return {
-      border: `2px solid ${palette.skeColor.blackAlt}`,
+      border: `2px solid ${designtokenColors['ske-color-black-100']}`,
     };
   } else {
     return {
@@ -16,9 +16,6 @@ function getCalloutBorder(props: CalloutProps) {
   }
 }
 export const getClassNames = (props: CalloutProps, widthBtnLabel: string) => {
-  const theme = getTheme();
-  const palette = theme.palette as PaletteProps;
-
   return mergeStyleSets({
     main: {
       displayName: 'SkeCallout',
@@ -27,33 +24,22 @@ export const getClassNames = (props: CalloutProps, widthBtnLabel: string) => {
       ...getCalloutBorder(props),
       selectors: {
         '.ms-Callout-main': {
-          maxWidth: 600,
           width: '100%',
-          backgroundColor: palette.skeColor[props.color as CalloutColor],
+          backgroundColor: designtokenColors[props.color as CalloutColor],
           boxShadow: 'none',
-          selectors: {
-            '@media  only screen and (max-width: 479px)': {
-              maxWidth: 300,
-            },
-            '& h3': {
-              padding: '10px 10px 0 10px',
-            },
-            '& p': {
-              padding: '10px 10px 0 10px',
-            },
-            '.callout-content': {
-              padding: '10px 20px 10px 10px',
-            },
-          },
+          'box-sizing': 'border-box',
+          padding: `${designtokenSpacing['ske-spacing-lg']} ${designtokenSpacing['ske-spacing-xxl']} ${designtokenSpacing['ske-spacing-lg']} ${designtokenSpacing['ske-spacing-lg']}`, //'1rem 2.5rem 1rem 1rem',
         },
         '.ms-Callout-beak': {
-          backgroundColor: palette.skeColor[props.color as CalloutColor],
+          backgroundColor: designtokenColors[props.color as CalloutColor],
           left: 'calc('.concat(widthBtnLabel, '/2) !important'),
         },
+        '& p': {
+          margin: '0 ',
+        },
         '&& h3': {
-          marginTop: '5px',
-          marginBottom: '-12px',
-          fontSize: FontSizes.large,
+          marginTop: '0',
+          fontSize: designtokenFontSizes['ske-font-size-m'],
         },
       },
     },
@@ -64,28 +50,16 @@ export const getClassNames = (props: CalloutProps, widthBtnLabel: string) => {
       backgroundColor: 'transparent',
       border: 'none',
       position: 'absolute',
-      color: `${palette.skeColor.blackAlt} !important`,
-      right: 0,
-      top: 0,
+      color: `${designtokenColors['ske-color-black-100']} !important`,
+      right: '1px',
+      top: '1px',
       opacity: 1,
       selectors: {
         '&& i': {
-          fontWeight: 700,
+          fontWeight: designtokenFontSizes['ske-font-weight-bold'],
         },
         '&:hover i': {
           transition: 'opacity 300ms ease-out',
-          backgroundColor: palette.skeColor.lightBlue,
-        },
-        '&:focus i': {
-          backgroundColor: palette.skeColor.lightBlue,
-          borderRadius: 0,
-        },
-        '&& .ms-Button-icon': {
-          padding: '4px 4px 4px 4px',
-        },
-        '&.ms-Button': {
-          border: 'none !important',
-          backgroundColor: 'transparent !important',
         },
       },
     },

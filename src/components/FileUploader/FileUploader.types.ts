@@ -4,6 +4,7 @@ export enum Language {
   en = 'en',
   nb = 'nb',
   nn = 'nn',
+  se = 'se',
 }
 
 export enum FileFormatTypes {
@@ -17,18 +18,21 @@ export enum FileFormatTypes {
   txt = '.txt',
   xml = '.xml',
   csv = '.csv',
-  odt = '.odt',
-  ods = '.ods',
+  odf = '.odf',
   odp = '.odp',
+  ods = '.ods',
+  odt = '.odt',
+  ppt = '.ppt',
   pptx = '.pptx',
+  xls = '.xls',
   xlsx = '.xlsx',
 }
 
 export interface AttachmentMetadata extends File {
   id: string;
 }
-/**
- * @visibleName FileUploader (Filopplaster)
+/*
+ * visibleName FileUploader (Filopplaster)
  */
 export interface FileUploaderProps {
   /** Akksepterte filformater */
@@ -45,8 +49,6 @@ export interface FileUploaderProps {
   axiosPath?: string;
   /** CSS class */
   className?: string;
-  /** Lukk callout på blur */
-  labelWithCalloutAutoDismiss?: boolean;
   /** trigger funksjon til å slette alle filer */
   deleteAllFiles?: boolean;
   /** Aria-label for "fjern fil"-knapp */
@@ -76,7 +78,7 @@ export interface FileUploaderProps {
   /** aria-label for knapp i label */
   labelButtonAriaLabel?: string;
   /** Overstyr label, se LabelWithCallout komponent */
-  labelCallout?: LabelWithCalloutProps;
+  labelWithCalloutProps?: LabelWithCalloutProps;
   /** Language selection for what the screen reader reads out. Default is Norwegian Bokmål */
   language?: Language;
   /** Spinner når fil laster */
@@ -92,6 +94,8 @@ export interface FileUploaderProps {
   ) => void;
   /** Parametere for axioskall */
   queryParams?: any;
+  /** Om merke for obligatorisk felt skal vises */
+  required?: boolean;
   /** Funksjon for filopplasting */
   uploadFile?: (file: File) => void;
   /** Gjør at DELETE operasjonen, ved slett av opplastet fil, fungerer når løsningen kjører bak WebSeal.

@@ -1,15 +1,16 @@
-**Tekstfelt benyttes når vi ønsker at brukeren skrive inn informasjon av en bestemt type - som oftest i et skjema**
+**TextField (Tekstfelt): benyttes når vi ønsker at brukeren skal skrive inn informasjon av en bestemt type – som oftest i et skjema.**
 
 Standard tekstfelt:
 
 ```js
-import { TextField } from '@skatteetaten/frontend-components';
+import { TextField } from '@skatteetaten/frontend-components/TextField';
 
 const [state, setState] = React.useState({ value: '' });
 
-<div style={{ width: '300px' }}>
+<div style={{ maxWidth: '300px' }}>
   <TextField
     id={'my-input'}
+    required
     label={'Navn'}
     value={state.value}
     onChange={(e, value) => setState({ value: value })}
@@ -20,13 +21,14 @@ const [state, setState] = React.useState({ value: '' });
 Stor variant av tekstfelt:
 
 ```js
-import { TextField } from '@skatteetaten/frontend-components';
+import { TextField } from '@skatteetaten/frontend-components/TextField';
 
 const [state, setState] = React.useState({ value: '' });
 
-<div style={{ width: '300px' }}>
+<div style={{ maxWidth: '300px' }}>
   <TextField
     label={'Navn'}
+    requiredWithMark
     inputSize={'large'}
     value={state.value}
     onChange={(e, value) => setState({ value })}
@@ -34,25 +36,28 @@ const [state, setState] = React.useState({ value: '' });
 </div>;
 ```
 
-Hjelpetekster og advarsel:
+Hjelpetekster og advarsel med automatisk lukking:
 
 ```js
-import { TextField } from '@skatteetaten/frontend-components';
+import { TextField } from '@skatteetaten/frontend-components/TextField';
 
 const [name, setName] = React.useState('');
 const [children, setChildren] = React.useState('23');
 
 <>
-  <div style={{ width: '300px' }}>
+  <div style={{ maxWidth: '300px' }}>
     <TextField
       label="Fullt navn"
       value={name}
       onChange={(e, value) => setName(value)}
       help="Vi trenger å vite navnet ditt dersom vi skal kontakte deg senere."
+      labelWithCalloutProps={{
+        calloutProps: { autoDismiss: true },
+      }}
     />
   </div>
   <br />
-  <div style={{ width: '150px' }}>
+  <div style={{ maxWidth: '150px' }}>
     <TextField
       label="Antall barn"
       placeholder={''}
@@ -60,23 +65,54 @@ const [children, setChildren] = React.useState('23');
       value={children}
       warning="Er du sikker på at antall barn er riktig?"
       onChange={(e, value) => setChildren(value)}
+      labelWithCalloutProps={{
+        calloutProps: { autoDismiss: true },
+      }}
     />
   </div>
 </>;
 ```
 
+Prefix og suffix i felt:
+
+```js
+import { TextField } from '@skatteetaten/frontend-components/TextField';
+
+<div style={{ maxWidth: '300px', paddingBottom: '16px' }}>
+  <p style={{ margin: '0 0 8px 0' }}>
+    <em>Prefix:</em>
+  </p>
+  <TextField
+    id={'my-input-tlf'}
+    label={'Telefonnummer'}
+    prefix="+47"
+    inputMode="tel"
+  />
+  <p style={{ paddingTop: '16px', marginBottom: '8px' }}>
+    <em>Suffix:</em>
+  </p>
+  <TextField
+    id={'my-input-ink'}
+    label={'Inntekt'}
+    suffix="NOK"
+    inputMode="numeric"
+  />
+</div>;
+```
+
 Feilmelding vises i umiddelbar nærhet til feltet:
 
 ```js
-import { TextField } from '@skatteetaten/frontend-components';
+import { TextField } from '@skatteetaten/frontend-components/TextField';
 
 const [state, setState] = React.useState({ value: '' });
 
-<div style={{ width: '160px' }}>
+<div style={{ maxWidth: '160px' }}>
   <TextField
     label="Inntektsår"
     value={state.value}
     onChange={(e, value) => setState({ value })}
+    inputMode="numeric"
     errorMessage={
       state.value !== '2008' ? 'Inntekståret må være etter 2008.' : null
     }
@@ -87,7 +123,7 @@ const [state, setState] = React.useState({ value: '' });
 Av og til ønsker man å veksle mellom skrive og lesemodus. Da vises det som ren tekst med et blyant-ikon. Når man klikker, blir det skrivefelt:
 
 ```js
-import { TextField } from '@skatteetaten/frontend-components';
+import { TextField } from '@skatteetaten/frontend-components/TextField';
 
 const [state, setState] = React.useState({
   value: 'Siri Saksbehandler',
@@ -95,7 +131,7 @@ const [state, setState] = React.useState({
   empty: '',
 });
 
-<div style={{ width: '300px' }}>
+<div style={{ maxWidth: '300px' }}>
   <TextField
     readOnly
     editable
@@ -104,7 +140,9 @@ const [state, setState] = React.useState({
     onChange={(e, value) => setState({ ...state, value })}
     boldText={true}
   />
-  <p>Med suffix:</p>
+  <p style={{ paddingTop: '16px', marginBottom: '8px' }}>
+    <em>Med suffix:</em>
+  </p>
   <TextField
     readOnly
     editable
@@ -114,7 +152,9 @@ const [state, setState] = React.useState({
     boldText={true}
     suffix={'kg'}
   />
-  <p>Rediger når tekstfeltet er tomt:</p>
+  <p style={{ paddingTop: '16px', marginBottom: '8px' }}>
+    <em>Rediger når tekstfeltet er tomt:</em>
+  </p>
   <TextField
     readOnly
     editable
@@ -130,17 +170,18 @@ const [state, setState] = React.useState({
 Bestemt formatering:
 
 ```js
-import { TextField } from '@skatteetaten/frontend-components';
+import { TextField } from '@skatteetaten/frontend-components/TextField';
 
 const [state, setState] = React.useState({ value: '' });
 
-<div style={{ width: '300px' }}>
+<div style={{ maxWidth: '300px' }}>
   <TextField
     value={state.value}
     onChange={(e, value) => setState({ value })}
     label={'Org.nummer (9 siffer)'}
     mask={'999 999 999'}
     maskChar={''}
+    inputMode="numeric"
   />
 </div>;
 ```
@@ -148,11 +189,11 @@ const [state, setState] = React.useState({ value: '' });
 Multiline tekstfelt:
 
 ```js
-import { TextField } from '@skatteetaten/frontend-components';
+import { TextField } from '@skatteetaten/frontend-components/TextField';
 
 const [lineBreak, setLineBreak] = React.useState(false);
 
-<div style={{ width: '300px' }}>
+<div style={{ maxWidth: '300px' }}>
   <TextField
     label="Endres til multiline dersom teksten er lengre enn 50 tegn"
     multiline={lineBreak}
@@ -240,9 +281,12 @@ const [lineBreak, setLineBreak] = React.useState(false);
   <h3>Mange varianter av tekstfelt</h3>
 
   <p>
-    I designsystemet finnes det mange ulike variasjoner av tekstfelt.
-    Tekstfeltene kan ha:
+    Tekstfelt er vanlig å bruke i skjema. Brukeren kan skrive i feltet og
+    feltnavnet over beskriver hvilken type informasjon som skal fylles ut. I
+    designsystemet har vi flere variasjoner av tekstfelt som vi viser under
+    fanen eksempler.
   </p>
+  <p>Tekstfeltene kan ha</p>
   <ul>
     <li>hjelpetekst eller være blanke</li>
     <li>feilmeldinger som varsler</li>

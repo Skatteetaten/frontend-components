@@ -7,12 +7,14 @@ Som designer samarbeider du med utviklerne i prosjektet ditt for å best mulig f
 Vi har laget Sketch-varianter av komponentene, slik at skissene dine kan harmonere med de tekniske.
 
 ```js noeditor
-import { OpenClose, Link, Button } from '@skatteetaten/frontend-components';
+import { OpenClose } from '@skatteetaten/frontend-components/OpenClose';
+import { Link } from '@skatteetaten/frontend-components/Link';
+import { Button } from '@skatteetaten/frontend-components/Button';
 
 <div>
   <p>
     <Link
-      path={'./assets/sketch/designsystem-2.0.2.sketch'}
+      path={'./assets/sketch/designsystem-2.0.4.sketch'}
       text={'Last ned nyeste Sketch-fil'}
       icon={'Download'}
       placement="before"
@@ -24,7 +26,8 @@ import { OpenClose, Link, Button } from '@skatteetaten/frontend-components';
 ### Sette opp Sketch
 
 ```js noeditor
-import { Accordion, AccordionItem } from '@skatteetaten/frontend-components';
+import { Accordion } from '@skatteetaten/frontend-components/Accordion';
+import { AccordionItem } from '@skatteetaten/frontend-components/Accordion/AccordionItem';
 <div>
   <Accordion processList>
     <AccordionItem
@@ -67,7 +70,8 @@ import { Accordion, AccordionItem } from '@skatteetaten/frontend-components';
 Komponentene finnes også i Axure-versjon. Etter at du har fått tilgang til dem vil de automatisk dukke opp i widget-menyen din i Axure. Du kan også bla i komponentene:
 
 ```js noeditor
-import { OpenClose, Link } from '@skatteetaten/frontend-components';
+import { OpenClose } from '@skatteetaten/frontend-components/OpenClose';
+import { Link } from '@skatteetaten/frontend-components/Link';
 
 <div>
   <p>

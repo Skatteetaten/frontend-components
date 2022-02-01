@@ -1,5 +1,5 @@
-import { mergeStyleSets } from '@uifabric/merge-styles';
-import { getTheme } from '@uifabric/styling';
+import { mergeStyleSets } from '@fluentui/merge-styles';
+import { getTheme } from '@fluentui/react/lib/Styling';
 
 export const getClassNames = function getClassNames(props, state) {
   const palette = getTheme().palette;
@@ -35,7 +35,7 @@ export const getClassNames = function getClassNames(props, state) {
         ul: {
           listStyleType: 'square',
         },
-        'p > a': {
+        'p > a, li > a': {
           color: palette.skeColor.blue,
           textDecoration: 'none',
           fontWeight: 500,
@@ -45,6 +45,7 @@ export const getClassNames = function getClassNames(props, state) {
             ':hover': {
               color: palette.skeColor.darkBlue,
               borderBottom: '2px solid ' + palette.skeColor.darkBlue,
+              backgroundColor: palette.skeColor.lightBlue,
             },
             ':focus': {
               color: palette.skeColor.darkBlue,

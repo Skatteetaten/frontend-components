@@ -1,15 +1,10 @@
-import { mergeStyleSets } from '@uifabric/merge-styles';
-import { getTheme } from '@uifabric/styling';
-import {
-  FontSizes,
-  FontWeights,
-  LineHeightSizes,
-  IconFontSizes,
-  PaletteProps,
-} from '../utils';
+import { mergeStyleSets } from '@fluentui/merge-styles';
+
+import designtokenSpacing from '../utils/designtokens/_spacing.json';
+import designtokenFonts from '../utils/designtokens/_fontSizes.json';
+import designtokenColors from '../utils/designtokens/_colors.json';
 
 export function getClassNames(props) {
-  const palette = getTheme().palette as PaletteProps;
   const { compact, iconRight, underline } = props;
 
   return mergeStyleSets({
@@ -19,26 +14,25 @@ export function getClassNames(props) {
       justifyContent: 'space-between',
       alignItems: 'flex-start',
       border: 'none',
-      color: palette.skeColor.blue,
-      fontSize: FontSizes.medium,
-      fontWeight: FontWeights.bold,
+      color: designtokenColors['ske-color-interactive'],
+      fontSize: compact
+        ? designtokenFonts['ske-font-size-s']
+        : designtokenFonts['ske-font-size-l'],
+      fontWeight: designtokenFonts['ske-font-weight-bold'],
       padding: compact
-        ? '0.125rem 0.25rem 0.125rem 0.25rem'
-        : '0.25rem 0.5rem 0.375rem 0.5rem',
+        ? `${designtokenSpacing['ske-spacing-xs']} ${designtokenSpacing['ske-spacing-sm']}`
+        : `${designtokenSpacing['ske-spacing-sm']} ${designtokenSpacing['ske-spacing-md']}`,
       background: 'none',
-      marginLeft: '-0.5rem',
-      paddingLeft: '0.5rem',
-      marginRight: '-0.5rem',
-      paddingRight: '0.5rem',
+      marginLeft: `-${designtokenSpacing['ske-spacing-md']}`,
+      paddingLeft: designtokenSpacing['ske-spacing-md'],
+      marginRight: `-${designtokenSpacing['ske-spacing-md']}`,
+      paddingRight: designtokenSpacing['ske-spacing-md'],
       cursor: 'pointer',
-      borderBottom: `0.125rem solid transparent`,
+      borderBottom: `${designtokenSpacing['ske-spacing-xs']} solid transparent`,
       selectors: {
-        '@media (min-width: 640px)': {
-          fontSize: compact ? FontSizes.medium : FontSizes.largePlus,
-        },
         '&:hover, &:focus': {
-          background: palette.skeColor.lightBlue,
-          borderBottom: `0.125rem solid ${palette.skeColor.blue}`,
+          background: designtokenColors['ske-color-interactive-light'],
+          borderBottom: `${designtokenSpacing['ske-spacing-xs']} solid ${designtokenColors['ske-color-interactive']}`,
           span: {
             textDecoration: 'none',
           },
@@ -46,43 +40,43 @@ export function getClassNames(props) {
         '&:focus': {
           outline: 'none',
         },
-        '& h1, h2, h3, h4, h5, h6': {
-          fontSize: compact ? FontSizes.medium : FontSizes.largePlus,
+        '& h1.styledHeading, h2.styledHeading, h3.styledHeading, h4.styledHeading, h5.styledHeading, h6.styledHeading': {
+          fontSize: compact
+            ? designtokenFonts['ske-font-size-s']
+            : designtokenFonts['ske-font-size-l'],
           margin: '0',
         },
         '& i': {
           transition: '.2s',
-          padding: 0,
-          marginLeft: iconRight ? '0.125rem' : '-0.25rem',
-
-          fontSize: IconFontSizes.xlarge,
-          fontWeight: FontWeights.bold,
-          selectors: {
-            '@media (min-width: 640px)': {
-              fontSize: compact ? IconFontSizes.large : IconFontSizes.xxlarge,
-              padding: compact ? '0.125rem 0 0 0' : '0',
-            },
-          },
+          padding: compact
+            ? `${designtokenSpacing['ske-spacing-xs']} 0 0`
+            : '0',
+          marginLeft: iconRight ? designtokenSpacing['ske-spacing-sm'] : '0',
+          marginTop: compact ? '0' : designtokenSpacing['ske-spacing-xs'],
+          fontSize: compact
+            ? designtokenFonts['ske-font-size-icon-l']
+            : designtokenFonts['ske-font-size-icon-xl'],
         },
       },
     },
     content: {
-      padding: '0.5rem 0',
-      marginLeft: compact ? '1.125rem' : '1.75rem',
-      marginBottom: '0.5rem',
-      selectors: {
-        '@media (min-width: 640px)': {
-          marginLeft: compact ? '1.125rem' : '2.25rem',
-        },
-      },
+      padding: designtokenSpacing['ske-spacing-md'],
+      marginLeft: compact
+        ? designtokenSpacing['ske-spacing-lg']
+        : designtokenSpacing['ske-spacing-xl'],
+      marginBottom: designtokenSpacing['ske-spacing-md'],
     },
     contentWhenIconRight: {
-      padding: '0.5rem 0',
-      marginLeft: compact ? '1.125rem' : '1rem',
-      marginBottom: '0.5rem',
+      padding: `${designtokenSpacing['ske-spacing-md']} 0`,
+      marginLeft: compact
+        ? designtokenSpacing['ske-spacing-lg']
+        : designtokenSpacing['ske-spacing-xl'],
+      marginBottom: designtokenSpacing['ske-spacing-md'],
     },
     heading: {
-      fontSize: compact ? FontSizes.medium : FontSizes.largePlus,
+      fontSize: compact
+        ? designtokenFonts['ske-font-size-s']
+        : designtokenFonts['ske-font-size-l'],
       margin: '0',
     },
     toggleTitleSpan: {
@@ -90,11 +84,13 @@ export function getClassNames(props) {
       textDecorationColor: 'rgba(19, 98, 174, 0.4)',
       textUnderlineOffset: '0.3rem',
       textDecorationThickness: '0.125rem',
-      lineHeight: LineHeightSizes.large,
+      lineHeight: designtokenFonts['ske-line-height-l'],
       textAlign: 'left',
     },
     toggleTitleLeft: {
-      paddingLeft: compact ? '0.25rem' : '0.5rem',
+      paddingLeft: compact
+        ? designtokenSpacing['ske-spacing-sm']
+        : designtokenSpacing['ske-spacing-md'],
     },
     toggleButtonOpen: {
       selectors: {

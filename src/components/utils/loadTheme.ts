@@ -1,12 +1,16 @@
-import { registerIcons, loadTheme, createTheme } from '@uifabric/styling';
+import {
+  registerIcons,
+  loadTheme,
+  createTheme,
+} from '@fluentui/react/lib/Styling';
 
 import {
   Palette as palette,
   Fonts as fonts,
   SkeIcons,
-  MdIcons,
+  AliasIcons,
   PaletteProps,
-} from '../index';
+} from '../utils/index';
 // @ts-ignore TODO
 const theme = createTheme({
   palette: palette as PaletteProps,
@@ -17,4 +21,4 @@ loadTheme(theme);
 // @ts-ignore TODO
 registerIcons(SkeIcons);
 // @ts-ignore TODO
-registerIcons(MdIcons);
+registerIcons(AliasIcons);

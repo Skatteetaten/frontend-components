@@ -1,26 +1,31 @@
-**Nedtrekkslister brukes når brukeren skal kunne velge et eller flere valg fra en liste.**
+**Dropdown (Nedtrekksliste): brukes når brukeren skal kunne velge et eller flere valg fra en liste.**
 
 ```js
-import { Dropdown } from '@skatteetaten/frontend-components';
+import { Dropdown } from '@skatteetaten/frontend-components/Dropdown';
 
-const [state, setState] = React.useState({
-  options: [
-    { key: null, text: 'Ingen' },
-    { key: 'A', text: 'Banan' },
-    { key: 'B', text: 'Eple' },
-    { key: 'C', text: 'Kiwi' },
-    { key: 'D', text: 'Pære' },
-    { key: 'E', text: 'Sitron' },
-  ],
-});
+const [selectedOption, setSelectedOption] = React.useState();
 
-<div style={{ width: '300px' }}>
+const onChange = (event, option, index) => {
+  setSelectedOption(index);
+};
+
+const options = [
+  { key: '', text: 'Ingen', isSelected: selectedOption === 0 },
+  { key: 'A', text: 'Banan', isSelected: selectedOption === 1 },
+  { key: 'B', text: 'Eple', isSelected: selectedOption === 2 },
+  { key: 'C', text: 'Kiwi', isSelected: selectedOption === 3 },
+  { key: 'D', text: 'Pære', isSelected: selectedOption === 4 },
+  { key: 'E', text: 'Sitron', isSelected: selectedOption === 5 },
+];
+
+<div style={{ maxWidth: '300px' }}>
   <Dropdown
     label="Fruktsort"
+    required
     placeholder="Velg"
     help="Tekst som hjelper brukeren å forstå eller få til."
-    options={state.options}
-    onChange={console.log}
+    options={options}
+    onChange={onChange}
   />
 </div>;
 ```
@@ -28,27 +33,32 @@ const [state, setState] = React.useState({
 Stor versjon:
 
 ```js
-import { Dropdown } from '@skatteetaten/frontend-components';
+import { Dropdown } from '@skatteetaten/frontend-components/Dropdown';
 
-const [state, setState] = React.useState({
-  options: [
-    { key: null, text: 'Ingen' },
-    { key: 'A', text: 'Banan' },
-    { key: 'B', text: 'Eple' },
-    { key: 'C', text: 'Kiwi' },
-    { key: 'D', text: 'Pære' },
-    { key: 'E', text: 'Sitron' },
-  ],
-});
+const [selectedOption, setSelectedOption] = React.useState();
 
-<div style={{ width: '300px' }}>
+const onChange = (event, option, index) => {
+  setSelectedOption(index);
+};
+
+const options = [
+  { key: '', text: 'Ingen', isSelected: selectedOption === 0 },
+  { key: 'A', text: 'Banan', isSelected: selectedOption === 1 },
+  { key: 'B', text: 'Eple', isSelected: selectedOption === 2 },
+  { key: 'C', text: 'Kiwi', isSelected: selectedOption === 3 },
+  { key: 'D', text: 'Pære', isSelected: selectedOption === 4 },
+  { key: 'E', text: 'Sitron', isSelected: selectedOption === 5 },
+];
+
+<div style={{ maxWidth: '300px' }}>
   <Dropdown
     label="Fruktsort"
+    requiredWithMark
     placeholder="Velg"
     help="Tekst som hjelper brukeren å forstå eller få til"
     inputSize="large"
-    options={state.options}
-    onChange={console.log}
+    options={options}
+    onChange={onChange}
   />
 </div>;
 ```
@@ -58,20 +68,17 @@ Lesemodus:
 ```js
 import Dropdown from '@skatteetaten/frontend-components/Dropdown';
 
-<div style={{ width: '300px' }}>
-  <Dropdown
-    readOnly
-    label="Fruktsort"
-    options={[
-      { key: null, text: 'Ingen' },
-      { key: 'A', text: 'Banan' },
-      { key: 'B', text: 'Eple' },
-      { key: 'C', text: 'Kiwi' },
-      { key: 'D', text: 'Pære' },
-      { key: 'E', text: 'Sitron' },
-    ]}
-    selectedKey="D"
-  />
+const options = [
+  { key: '', text: 'Ingen' },
+  { key: 'A', text: 'Banan' },
+  { key: 'B', text: 'Eple' },
+  { key: 'C', text: 'Kiwi' },
+  { key: 'D', text: 'Pære' },
+  { key: 'E', text: 'Sitron' },
+];
+
+<div style={{ maxWidth: '300px' }}>
+  <Dropdown readOnly label="Fruktsort" options={options} selectedKey="D" />
 </div>;
 ```
 
@@ -119,6 +126,8 @@ import Dropdown from '@skatteetaten/frontend-components/Dropdown';
 ```
 
 ```js noeditor beskrivelse
+import { MessageBar } from '@skatteetaten/frontend-components/MessageBar';
+
 <>
   <h3>Nedtrekksliste som brukeren kan velge fra</h3>
   <p>
@@ -131,9 +140,7 @@ import Dropdown from '@skatteetaten/frontend-components/Dropdown';
     valg, kan du vurdere å bruke{' '}
     <a href="#radiobuttongroup"> RadioButtonGroup (radioknapper)</a> i stedet.
   </p>
-
   <h3>Tips til hvordan du lager en god nedtrekksliste</h3>
-
   <ul>
     <li>
       Sorter innholdet i nedtrekkslisten på en logisk måte, for eksempel
@@ -154,5 +161,5 @@ import Dropdown from '@skatteetaten/frontend-components/Dropdown';
       <a href="#combobox"> nedtrekksliste med skriving (ComboBox) </a>.
     </li>
   </ul>
-</>
+</>;
 ```

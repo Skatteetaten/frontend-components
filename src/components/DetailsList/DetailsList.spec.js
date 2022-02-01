@@ -1,6 +1,6 @@
 import React from 'react';
 import toJson from 'enzyme-to-json';
-import { DetailsList } from '../index';
+import { DetailsList } from '.';
 import { mount, shallow } from 'enzyme';
 
 /**

@@ -1,7 +1,9 @@
 import React from 'react';
 import { mount } from 'enzyme';
 import toJson from 'enzyme-to-json';
-import { Table, IconButton, Grid } from '../index';
+import { Table } from '.';
+import { IconButton } from '../IconButton';
+import { Grid } from '../Grid';
 
 const data = [
   {
@@ -109,7 +111,7 @@ describe('Table komponent', () => {
       columns,
       editableRows: true,
       id: 'tableid',
-      className: 'tableClass',
+      customClassNames: { wrapper: 'tableClass' },
       editableContent: 'Editerbart innhold',
     });
 
@@ -132,9 +134,9 @@ describe('Table komponent', () => {
     const wrapper = oppsettMount({ data, columns, editableRows: true });
     const tableRow = wrapper.find('TableRow');
 
-    expect(wrapper.find('thead').exists('button.editbutton')).toEqual(false);
-    expect(tableRow.at(1).exists('button.editButton')).toEqual(true);
-    expect(tableRow.at(2).exists('button.editButton')).toEqual(true);
+    expect(wrapper.find('thead').exists('button')).toEqual(false);
+    expect(tableRow.at(1).exists('button')).toEqual(true);
+    expect(tableRow.at(2).exists('button')).toEqual(true);
   });
 
   it('viser editerbart innhold når editeringsknapp for en tabellrad klikkes ', () => {
@@ -168,19 +170,21 @@ describe('Table komponent', () => {
     const klikkbarTabellCelle = wrapper
       .find('TableRow')
       .first()
-      .find('td .cellContent')
+      .find('[data-testid="openEditableOnRowClick-button"]')
       .first();
 
     expect(wrapper.html()).not.toContain('Her kommer redigerbart innhold');
     klikkbarTabellCelle.simulate('click');
-    expect(wrapper.html()).toContain('Her kommer redigerbart innhold');
+    expect(wrapper.find('TableRow').first().html()).toContain(
+      'Her kommer redigerbart innhold'
+    );
   });
 
   it('setter korrekt colspan på editerbart innhold sin kolonne', () => {
     const wrapper = mountMedEditerbartInnholdAapen();
 
     const editableContentColspan = wrapper
-      .find('.editableCell')
+      .find('[data-testid="editable-content"]')
       .getDOMNode()
       .getAttribute('colspan');
 
@@ -197,9 +201,9 @@ describe('Table komponent', () => {
   it('rendrer Table med ekspanderbare rader ', () => {
     const wrapper = oppsettMount({ data, columns, expandableRows: true });
     const tableRow = wrapper.find('TableRow');
-    expect(wrapper.find('thead').exists('button.expandButton')).toEqual(false);
-    expect(tableRow.at(1).exists('button.expandButton')).toEqual(true);
-    expect(tableRow.at(2).exists('button.expandButton')).toEqual(true);
+    expect(wrapper.find('thead').exists('button')).toEqual(false);
+    expect(tableRow.at(1).exists('button')).toEqual(true);
+    expect(tableRow.at(2).exists('button')).toEqual(true);
   });
   it('viser ekspanderbart innhold når ekspanderingsknapp for en tabellrad klikkes', () => {
     const mockContent = (mockdata, close, rowIndex) => (
@@ -286,5 +290,38 @@ describe('Table komponent', () => {
     });
     expect(wrapper.find('SumRow').text()).toEqual('Sum:4555');
     expect(wrapper.find('SumRow').find('td').length).toEqual(3);
+  });
+
+  it('legger til riktig className på en rad', () => {
+    const dataMedCustomClassNames = [
+      {
+        Måned: 'Februar',
+        Beløp: 100,
+        Dekningsgrad: '50%',
+        Avkastning: '500',
+        customClassNames: {
+          tableRow: 'rowTestClass',
+          tableCell: 'cellTestClass',
+          cellContent: 'cellContentTestClass',
+        },
+      },
+    ];
+    const wrapper = oppsettMount({
+      data: dataMedCustomClassNames,
+      columns,
+      editableRows: true,
+      id: 'tableid',
+      className: 'tableClass',
+      editableContent: 'Editerbart innhold',
+    });
+    expect(wrapper.find('TableRow').length).toEqual(1);
+
+    const tableRow = wrapper.find('TableRow');
+    expect(tableRow.find('tr').hasClass('rowTestClass')).toBeTruthy();
+    expect(tableRow.find('td').at(0).hasClass('cellTestClass')).toBeTruthy();
+    expect(tableRow.find('th').at(0).hasClass('cellTestClass')).toBeTruthy();
+    expect(
+      tableRow.find('td > div').at(0).hasClass('cellContentTestClass')
+    ).toBeTruthy();
   });
 });

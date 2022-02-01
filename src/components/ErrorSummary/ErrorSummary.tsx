@@ -8,19 +8,22 @@ import classnames from 'classnames';
 
 export const ErrorSummary: React.FC<ErrorSummaryProps> = (props) => {
   const {
-    children,
+    id = 'errorsummary',
+    shadowRootNode,
+    titleTagName = 'h3',
     className,
     errors,
-    id = 'errorsummary',
     onClick,
-    titleTagName = 'h3',
+    children,
   } = props;
   const styles = getClassNames(props);
   const TitleTag = titleTagName as keyof JSX.IntrinsicElements;
   const errorsExist = errors && errors.length;
 
   const scrollToId = (elementId: string) => {
-    const element = document.getElementById(elementId);
+    const element = shadowRootNode
+      ? shadowRootNode.getElementById(elementId)
+      : document.getElementById(elementId);
     if (element) {
       element.scrollIntoView({
         behavior: 'smooth',

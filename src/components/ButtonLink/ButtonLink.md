@@ -1,5 +1,5 @@
 ```js noeditor
-import { MessageBar } from '@skatteetaten/frontend-components';
+import { MessageBar } from '@skatteetaten/frontend-components/MessageBar';
 
 <MessageBar type={MessageBar.Type.info}>
   NB: Vær ekstra oppmerksom på kravene til universell utforming når du benytter
@@ -7,10 +7,10 @@ import { MessageBar } from '@skatteetaten/frontend-components';
 </MessageBar>;
 ```
 
-**Når hovedhandlingen er navigasjon til en annen side**
+**ButtonLink (Knappelenke): brukes når hovedhandlingen er navigasjon til en annen side**
 
 ```js
-import { ButtonLink } from '@skatteetaten/frontend-components';
+import { ButtonLink } from '@skatteetaten/frontend-components/ButtonLink';
 
 <ButtonLink path={'#'} text="Se og endre skattekort" />;
 ```
@@ -59,24 +59,28 @@ import { ButtonLink } from '@skatteetaten/frontend-components';
 <>
   <h3>Knapp eller lenke</h3>
   <p>
-   Hovedregelen er at vi skal bruke knapper og lenker til det de opprinnelig er laget for. Men knapper og lenker brukes en del overlappende. ButtonLink ser ut som en knapp, men er lenke funksjonelt. En blind person med skjermleser har mange måter å navigere på, f.eks. fra knapp til knapp, liste med lenker, internt tekstsøk på nettsiden osv. Hvis en skjermleserbruker får hjelp på nettsiden av en seende person vil den trolig omtales som en knapp. Fordi den kan bli enklere å finne i en veiledningssituasjon har vi derfor har vi valgt å bruke role=button . Vi tror allikevel at det er en god tekst på knappen som er mest avgjørende for brukeren, altså at det er tydelig hva som skjer hvis den velges.
+    Hovedregelen er at vi skal bruke knapper og lenker til det de opprinnelig er
+    laget for. Men knapper og lenker brukes en del overlappende. ButtonLink ser
+    ut som en knapp, men er lenke funksjonelt. En blind person med skjermleser
+    har mange måter å navigere på, f.eks. fra knapp til knapp, liste med lenker,
+    internt tekstsøk på nettsiden osv. Hvis en skjermleserbruker får hjelp på
+    nettsiden av en seende person vil den trolig omtales som en knapp. Fordi den
+    kan bli enklere å finne i en veiledningssituasjon har vi derfor har vi valgt
+    å bruke role=button . Vi tror allikevel at det er en god tekst på knappen
+    som er mest avgjørende for brukeren, altså at det er tydelig hva som skjer
+    hvis den velges.
   </p>
- 
-<h3>Mest relevante WCAG-krav</h3>
-  <ul>
-    <li>
-2.4.4 A, Formål med lenke (i kontekst)</li> 
-<li>4.1.2 A, Navn, rolle, verdi
-    </li>
-    <li>
 
-    </li>
+  <h3>Mest relevante WCAG-krav</h3>
+  <ul>
+    <li>2.4.4 A, Formål med lenke (i kontekst)</li>
+    <li>4.1.2 A, Navn, rolle, verdi</li>
+    <li></li>
   </ul>
 
   <h3>WAI-ARIA</h3>
   <ul>
-  <li>Role=button brukes fordi lenken visuelt ser ut en knapp.</li>
-</ul>
-
+    <li>Role=button brukes fordi lenken visuelt ser ut en knapp.</li>
+  </ul>
 </>
 ```

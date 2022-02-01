@@ -2,11 +2,88 @@
 
 exports[`Tabs komponent matcher snapshot 1`] = `
 <div
-  className="SkeTabs-42"
-  role="toolbar"
+  className=
+
+      & .ms-Pivot-link {
+        background: #f4f4f4;
+        border-bottom: none;
+        border: none;
+        display: inline-block;
+        margin-right: 10px;
+        max-width: 100%;
+        min-width: 10%;
+      }
+      & .ms-Pivot-link:focus {
+        outline: 2px solid #1362ae !important;
+      }
+      & .ms-Pivot-link:hover {
+        background: #cde1f9;
+        color: #1a1a1a;
+      }
+      & .ms-Pivot-link:active {
+        background: #093e61;
+        border: none;
+        color: #ffffff;
+      }
+      & .ms-Pivot-linkContent span {
+        text-decoration: none;
+      }
+      & .ms-Pivot-link .link:focus {
+        outline: none;
+      }
+      &.ms-Pivot-text .ms-Pivot-count {
+        color: #000000;
+      }
+      & .ms-Pivot {
+        border-bottom: 3px solid #6f2c3f;
+        display: inline-block;
+        width: 100%;
+      }
+      & .ms-Pivot-link.is-selected {
+        background: #6f2c3f;
+        border-bottom: none;
+        border: none;
+        font-weight: 400;
+      }
+      & .ms-Pivot-link.is-selected:before {
+        border-bottom: none;
+      }
+      & .ms-Pivot-link.is-selected:hover {
+        color: #ffffff;
+      }
+      & .ms-Pivot-link.is-selected .ms-Pivot-linkContent span {
+        text-decoration: none;
+      }
 >
   <div
-    className="ms-FocusZone css-50 ms-Pivot ms-Pivot--large ms-Pivot--tabs root-43"
+    className=
+        ms-FocusZone
+        ms-Pivot
+        ms-Pivot--large
+        ms-Pivot--tabs
+        &:focus {
+          outline: none;
+        }
+        {
+          -moz-osx-font-smoothing: grayscale;
+          -webkit-font-smoothing: antialiased;
+          box-shadow: none;
+          box-sizing: border-box;
+          color: #1362ae;
+          font-family: 'Helvetica Neue', Helvetica , Arial, 'Liberation Sans', 'Nimbus Sans L', sans-serif;
+          font-size: 1rem;
+          font-weight: 400;
+          margin-bottom: 0px;
+          margin-left: 0px;
+          margin-right: 0px;
+          margin-top: 0px;
+          padding-bottom: 0px;
+          padding-left: 0px;
+          padding-right: 0px;
+          padding-top: 0px;
+          position: relative;
+          white-space: nowrap;
+        }
     data-focuszone-id="FocusZone1"
     onFocus={[Function]}
     onKeyDown={[Function]}
@@ -15,7 +92,157 @@ exports[`Tabs komponent matcher snapshot 1`] = `
   >
     <button
       aria-selected={true}
-      className="ms-Button ms-Button--action ms-Button--command ms-Pivot-link is-selected linkIsSelected-51"
+      className=
+          ms-Button
+          ms-Button--action
+          ms-Button--command
+          ms-Pivot-link
+          is-selected
+          {
+            -moz-osx-font-smoothing: grayscale;
+            -webkit-font-smoothing: antialiased;
+            background-color: #ffffff;
+            border-radius: 0px;
+            border: 0px;
+            box-sizing: border-box;
+            color: rgba(0, 0, 0, 0.95);
+            cursor: pointer;
+            display: inline-block;
+            font-family: 'Helvetica Neue', Helvetica , Arial, 'Liberation Sans', 'Nimbus Sans L', sans-serif;
+            font-size: 1.125rem;
+            font-weight: 600;
+            height: 44px;
+            line-height: 44px;
+            margin-right: 0px;
+            outline: transparent;
+            padding-bottom: 0;
+            padding-left: 10px;
+            padding-right: 10px;
+            padding-top: 0;
+            position: relative;
+            text-align: center;
+            text-decoration: none;
+            user-select: none;
+            vertical-align: top;
+          }
+          &::-moz-focus-inner {
+            border: 0;
+          }
+          .ms-Fabric--isFocusVisible &:focus:after {
+            border: 0px;
+            bottom: 2px;
+            content: attr(data-content);
+            left: 2px;
+            outline: 1px solid rgba(55, 55, 55, 0.95);
+            position: relative;
+            right: 2px;
+            top: 2px;
+            z-index: 1;
+          }
+          @media screen and (-ms-high-contrast: active), (forced-colors: active){.ms-Fabric--isFocusVisible &:focus:after {
+            bottom: -2px;
+            left: -2px;
+            outline-color: ButtonText;
+            right: -2px;
+            top: -2px;
+          }
+          &:active > * {
+            left: 0px;
+            position: relative;
+            top: 0px;
+          }
+          @media screen and (-ms-high-contrast: active), (forced-colors: active){& {
+            border-color: Window;
+            color: Highlight;
+          }
+          &:hover {
+            background-color: #1362ae;
+            color: #ffffff;
+            cursor: pointer;
+          }
+          @media screen and (-ms-high-contrast: active), (forced-colors: active){&:hover {
+            color: Highlight;
+          }
+          &:hover .ms-Button-icon {
+            color: #1362ae;
+          }
+          &:focus {
+            color: #1a1a1a;
+            outline-offset: -1px;
+            outline: none;
+          }
+          &:active {
+            background-color: #0c3f6f;
+            color: #ffffff;
+          }
+          &:active .ms-Button-icon {
+            color: #0a365f;
+          }
+          .ms-Fabric--isFocusVisible &:focus {
+            outline: 1px solid rgba(55, 55, 55, 0.95);
+          }
+          &:before {
+            background-color: #1362ae;
+            bottom: 0px;
+            content: "";
+            height: 2px;
+            left: 8px;
+            position: absolute;
+            right: 8px;
+            transition: left 0.267s cubic-bezier(.1,.25,.75,.9),
+                                  right 0.267s cubic-bezier(.1,.25,.75,.9);
+          }
+          &:after {
+            color: transparent;
+            content: attr(data-content);
+            display: block;
+            font-weight: 700;
+            height: 1px;
+            overflow: hidden;
+            visibility: hidden;
+          }
+          .ms-Fabric--isFocusVisible &:focus::before {
+            background: transparent;
+            height: auto;
+            transition: none;
+          }
+          &.is-selected {
+            background-color: #1362ae;
+            color: #ffffff;
+            font-weight: 400;
+          }
+          &.is-selected:before {
+            background-color: transparent;
+            bottom: 0px;
+            content: "";
+            height: 0px;
+            left: 0px;
+            position: absolute;
+            right: 0px;
+            top: 0px;
+            transition: none;
+          }
+          &.is-selected:hover {
+            background-color: #11599c;
+            color: #ffffff;
+          }
+          @media screen and (-ms-high-contrast: active), (forced-colors: active){&.is-selected {
+            -ms-high-contrast-adjust: none;
+            background: Highlight;
+            color: HighlightText;
+            font-weight: 600;
+            forced-color-adjust: none;
+          }
+          &[data-is-overflowing='true'] {
+            display: none;
+          }
+          @media screen and (-ms-high-contrast: active), (forced-colors: active){&:before {
+            background-color: Highlight;
+          }
+          &:hover::before {
+            left: 0px;
+            right: 0px;
+          }
       data-content="Tilgjengelige oppgaver (23)"
       data-is-focusable={true}
       id="Pivot0-Tab0"
@@ -30,20 +257,48 @@ exports[`Tabs komponent matcher snapshot 1`] = `
       type="button"
     >
       <span
-        className="ms-Button-flexContainer flexContainer-52"
+        className=
+            ms-Button-flexContainer
+            {
+              align-items: center;
+              display: flex;
+              flex-wrap: nowrap;
+              height: 100%;
+              justify-content: flex-start;
+            }
         data-automationid="splitbuttonprimary"
       >
         <span
-          className="ms-Pivot-linkContent linkContent-47"
+          className=
+              ms-Pivot-linkContent
+              {
+                flex: 0 1 100%;
+              }
+              & > *  {
+                margin-left: 4px;
+              }
+              & > *:first-child {
+                margin-left: 0px;
+              }
         >
           <span
-            className="ms-Pivot-text text-48"
+            className=
+                ms-Pivot-text
+                {
+                  display: inline-block;
+                  vertical-align: top;
+                }
           >
              
             Tilgjengelige oppgaver
           </span>
           <span
-            className="ms-Pivot-count count-49"
+            className=
+                ms-Pivot-count
+                {
+                  display: inline-block;
+                  vertical-align: top;
+                }
           >
              (
             23
@@ -54,7 +309,148 @@ exports[`Tabs komponent matcher snapshot 1`] = `
     </button>
     <button
       aria-selected={false}
-      className="ms-Button ms-Button--action ms-Button--command ms-Pivot-link link-59"
+      className=
+          ms-Button
+          ms-Button--action
+          ms-Button--command
+          ms-Pivot-link
+          {
+            -moz-osx-font-smoothing: grayscale;
+            -webkit-font-smoothing: antialiased;
+            background-color: #ffffff;
+            border-radius: 0px;
+            border: 0px;
+            box-sizing: border-box;
+            color: rgba(0, 0, 0, 0.95);
+            cursor: pointer;
+            display: inline-block;
+            font-family: 'Helvetica Neue', Helvetica , Arial, 'Liberation Sans', 'Nimbus Sans L', sans-serif;
+            font-size: 1.125rem;
+            font-weight: 400;
+            height: 44px;
+            line-height: 44px;
+            margin-right: 0px;
+            outline: transparent;
+            padding-bottom: 0;
+            padding-left: 10px;
+            padding-right: 10px;
+            padding-top: 0;
+            position: relative;
+            text-align: center;
+            text-decoration: none;
+            user-select: none;
+            vertical-align: top;
+          }
+          &::-moz-focus-inner {
+            border: 0;
+          }
+          .ms-Fabric--isFocusVisible &:focus:after {
+            border: 0px;
+            bottom: 2px;
+            content: attr(data-content);
+            left: 2px;
+            outline: 1px solid rgba(55, 55, 55, 0.95);
+            position: relative;
+            right: 2px;
+            top: 2px;
+            z-index: 1;
+          }
+          @media screen and (-ms-high-contrast: active), (forced-colors: active){.ms-Fabric--isFocusVisible &:focus:after {
+            bottom: -2px;
+            left: -2px;
+            outline-color: ButtonText;
+            right: -2px;
+            top: -2px;
+          }
+          &:active > * {
+            left: 0px;
+            position: relative;
+            top: 0px;
+          }
+          @media screen and (-ms-high-contrast: active), (forced-colors: active){& {
+            border-color: Window;
+          }
+          &:hover {
+            background-color: #1362ae;
+            color: #ffffff;
+            cursor: pointer;
+          }
+          @media screen and (-ms-high-contrast: active), (forced-colors: active){&:hover {
+            color: Highlight;
+          }
+          &:hover .ms-Button-icon {
+            color: #1362ae;
+          }
+          &:focus {
+            color: #1a1a1a;
+            outline-offset: -1px;
+            outline: none;
+          }
+          &:active {
+            background-color: #0c3f6f;
+            color: #ffffff;
+          }
+          &:active .ms-Button-icon {
+            color: #0a365f;
+          }
+          .ms-Fabric--isFocusVisible &:focus {
+            outline: 1px solid rgba(55, 55, 55, 0.95);
+          }
+          &:before {
+            background-color: transparent;
+            bottom: 0px;
+            content: "";
+            height: 2px;
+            left: 8px;
+            position: absolute;
+            right: 8px;
+            transition: left 0.267s cubic-bezier(.1,.25,.75,.9),
+                                  right 0.267s cubic-bezier(.1,.25,.75,.9);
+          }
+          &:after {
+            color: transparent;
+            content: attr(data-content);
+            display: block;
+            font-weight: 700;
+            height: 1px;
+            overflow: hidden;
+            visibility: hidden;
+          }
+          .ms-Fabric--isFocusVisible &:focus::before {
+            background: transparent;
+            height: auto;
+            transition: none;
+          }
+          &.is-selected {
+            background-color: #1362ae;
+            color: #ffffff;
+            font-weight: 400;
+          }
+          &.is-selected:before {
+            background-color: transparent;
+            bottom: 0px;
+            content: "";
+            height: 0px;
+            left: 0px;
+            position: absolute;
+            right: 0px;
+            top: 0px;
+            transition: none;
+          }
+          &.is-selected:hover {
+            background-color: #11599c;
+            color: #ffffff;
+          }
+          @media screen and (-ms-high-contrast: active), (forced-colors: active){&.is-selected {
+            -ms-high-contrast-adjust: none;
+            background: Highlight;
+            color: HighlightText;
+            font-weight: 600;
+            forced-color-adjust: none;
+          }
+          &[data-is-overflowing='true'] {
+            display: none;
+          }
       data-content="Mine oppgaver (2)"
       data-is-focusable={true}
       id="Pivot0-Tab1"
@@ -69,20 +465,48 @@ exports[`Tabs komponent matcher snapshot 1`] = `
       type="button"
     >
       <span
-        className="ms-Button-flexContainer flexContainer-52"
+        className=
+            ms-Button-flexContainer
+            {
+              align-items: center;
+              display: flex;
+              flex-wrap: nowrap;
+              height: 100%;
+              justify-content: flex-start;
+            }
         data-automationid="splitbuttonprimary"
       >
         <span
-          className="ms-Pivot-linkContent linkContent-47"
+          className=
+              ms-Pivot-linkContent
+              {
+                flex: 0 1 100%;
+              }
+              & > *  {
+                margin-left: 4px;
+              }
+              & > *:first-child {
+                margin-left: 0px;
+              }
         >
           <span
-            className="ms-Pivot-text text-48"
+            className=
+                ms-Pivot-text
+                {
+                  display: inline-block;
+                  vertical-align: top;
+                }
           >
              
             Mine oppgaver
           </span>
           <span
-            className="ms-Pivot-count count-49"
+            className=
+                ms-Pivot-count
+                {
+                  display: inline-block;
+                  vertical-align: top;
+                }
           >
              (
             2
@@ -93,7 +517,148 @@ exports[`Tabs komponent matcher snapshot 1`] = `
     </button>
     <button
       aria-selected={false}
-      className="ms-Button ms-Button--action ms-Button--command ms-Pivot-link link-59"
+      className=
+          ms-Button
+          ms-Button--action
+          ms-Button--command
+          ms-Pivot-link
+          {
+            -moz-osx-font-smoothing: grayscale;
+            -webkit-font-smoothing: antialiased;
+            background-color: #ffffff;
+            border-radius: 0px;
+            border: 0px;
+            box-sizing: border-box;
+            color: rgba(0, 0, 0, 0.95);
+            cursor: pointer;
+            display: inline-block;
+            font-family: 'Helvetica Neue', Helvetica , Arial, 'Liberation Sans', 'Nimbus Sans L', sans-serif;
+            font-size: 1.125rem;
+            font-weight: 400;
+            height: 44px;
+            line-height: 44px;
+            margin-right: 0px;
+            outline: transparent;
+            padding-bottom: 0;
+            padding-left: 10px;
+            padding-right: 10px;
+            padding-top: 0;
+            position: relative;
+            text-align: center;
+            text-decoration: none;
+            user-select: none;
+            vertical-align: top;
+          }
+          &::-moz-focus-inner {
+            border: 0;
+          }
+          .ms-Fabric--isFocusVisible &:focus:after {
+            border: 0px;
+            bottom: 2px;
+            content: attr(data-content);
+            left: 2px;
+            outline: 1px solid rgba(55, 55, 55, 0.95);
+            position: relative;
+            right: 2px;
+            top: 2px;
+            z-index: 1;
+          }
+          @media screen and (-ms-high-contrast: active), (forced-colors: active){.ms-Fabric--isFocusVisible &:focus:after {
+            bottom: -2px;
+            left: -2px;
+            outline-color: ButtonText;
+            right: -2px;
+            top: -2px;
+          }
+          &:active > * {
+            left: 0px;
+            position: relative;
+            top: 0px;
+          }
+          @media screen and (-ms-high-contrast: active), (forced-colors: active){& {
+            border-color: Window;
+          }
+          &:hover {
+            background-color: #1362ae;
+            color: #ffffff;
+            cursor: pointer;
+          }
+          @media screen and (-ms-high-contrast: active), (forced-colors: active){&:hover {
+            color: Highlight;
+          }
+          &:hover .ms-Button-icon {
+            color: #1362ae;
+          }
+          &:focus {
+            color: #1a1a1a;
+            outline-offset: -1px;
+            outline: none;
+          }
+          &:active {
+            background-color: #0c3f6f;
+            color: #ffffff;
+          }
+          &:active .ms-Button-icon {
+            color: #0a365f;
+          }
+          .ms-Fabric--isFocusVisible &:focus {
+            outline: 1px solid rgba(55, 55, 55, 0.95);
+          }
+          &:before {
+            background-color: transparent;
+            bottom: 0px;
+            content: "";
+            height: 2px;
+            left: 8px;
+            position: absolute;
+            right: 8px;
+            transition: left 0.267s cubic-bezier(.1,.25,.75,.9),
+                                  right 0.267s cubic-bezier(.1,.25,.75,.9);
+          }
+          &:after {
+            color: transparent;
+            content: attr(data-content);
+            display: block;
+            font-weight: 700;
+            height: 1px;
+            overflow: hidden;
+            visibility: hidden;
+          }
+          .ms-Fabric--isFocusVisible &:focus::before {
+            background: transparent;
+            height: auto;
+            transition: none;
+          }
+          &.is-selected {
+            background-color: #1362ae;
+            color: #ffffff;
+            font-weight: 400;
+          }
+          &.is-selected:before {
+            background-color: transparent;
+            bottom: 0px;
+            content: "";
+            height: 0px;
+            left: 0px;
+            position: absolute;
+            right: 0px;
+            top: 0px;
+            transition: none;
+          }
+          &.is-selected:hover {
+            background-color: #11599c;
+            color: #ffffff;
+          }
+          @media screen and (-ms-high-contrast: active), (forced-colors: active){&.is-selected {
+            -ms-high-contrast-adjust: none;
+            background: Highlight;
+            color: HighlightText;
+            font-weight: 600;
+            forced-color-adjust: none;
+          }
+          &[data-is-overflowing='true'] {
+            display: none;
+          }
       data-content="Andres oppgaver xx"
       data-is-focusable={true}
       id="Pivot0-Tab2"
@@ -108,25 +673,61 @@ exports[`Tabs komponent matcher snapshot 1`] = `
       type="button"
     >
       <span
-        className="ms-Button-flexContainer flexContainer-52"
+        className=
+            ms-Button-flexContainer
+            {
+              align-items: center;
+              display: flex;
+              flex-wrap: nowrap;
+              height: 100%;
+              justify-content: flex-start;
+            }
         data-automationid="splitbuttonprimary"
       >
         <span
-          className="ms-Pivot-linkContent linkContent-47"
+          className=
+              ms-Pivot-linkContent
+              {
+                flex: 0 1 100%;
+              }
+              & > *  {
+                margin-left: 4px;
+              }
+              & > *:first-child {
+                margin-left: 0px;
+              }
         >
           <span
             className="ms-Pivot-icon"
           >
             <i
               aria-hidden={true}
-              className="root-61"
+              className=
+
+                  {
+                    -moz-osx-font-smoothing: grayscale;
+                    -webkit-font-smoothing: antialiased;
+                    display: inline-block;
+                    font-family: "SkeIconfont";
+                    font-size: inherit;
+                    font-style: normal;
+                    font-weight: normal;
+                    speak: none;
+                    text-rendering: auto;
+                    transform: translate(0, 0);
+                  }
               data-icon-name="Update"
             >
-              
+              
             </i>
           </span>
           <span
-            className="ms-Pivot-text text-48"
+            className=
+                ms-Pivot-text
+                {
+                  display: inline-block;
+                  vertical-align: top;
+                }
           >
              
             Andres oppgaver
@@ -138,7 +739,11 @@ exports[`Tabs komponent matcher snapshot 1`] = `
   <div
     aria-hidden={false}
     aria-labelledby="Pivot0-Tab0"
-    className="itemContainer-44"
+    className=
+
+        &[hidden] {
+          display: none;
+        }
     hidden={false}
     role="tabpanel"
   >

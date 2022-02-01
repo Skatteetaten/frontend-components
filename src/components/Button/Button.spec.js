@@ -1,7 +1,7 @@
 import React from 'react';
 import { matches } from './../utils/test-utils';
 import { mount } from 'enzyme';
-import { Button } from '../index';
+import { Button } from '.';
 
 function oppsettFullDOM(props) {
   return mount(<Button {...props}>Knappetekst</Button>);
@@ -16,7 +16,7 @@ describe('Button komponent ', () => {
     const wrapper = oppsettFullDOM();
     const label = wrapper.find('.ms-Button-label');
 
-    expect(wrapper.prop('buttonStyle')).toEqual('primaryRounded');
+    expect(wrapper.prop('buttonStyle')).toEqual('secondary');
     expect(wrapper.prop('disabled')).toEqual(false);
     expect(wrapper.prop('primary')).toEqual(false);
     expect(wrapper.prop('icon')).toEqual(undefined);

@@ -1,7 +1,7 @@
-**En valggruppe (med radioknapper) brukes i skjemaer for å velge ett alternativ blant flere gjensidig utelukkende valg.**
+**RadioButtonGroup (Radioknapper): en valggruppe (med radioknapper) brukes i skjemaer for å velge ett alternativ blant flere gjensidig utelukkende valg.**
 
 ```js
-import { RadioButtonGroup } from '@skatteetaten/frontend-components';
+import { RadioButtonGroup } from '@skatteetaten/frontend-components/RadioButtonGroup';
 
 const [state, setState] = React.useState({
   options: [
@@ -15,13 +15,17 @@ const [state, setState] = React.useState({
     },
   ],
 });
-<div style={{ width: '400px' }}>
+<div style={{ maxWidth: '400px' }}>
   <RadioButtonGroup
     label="Type virksomhet"
     options={state.options}
+    requiredWithMark
     onChange={(e, option) => console.log(option)}
     help="Type virksomhet vil påvirke hva du må rapportere til oss."
     id="radio"
+    labelWithCalloutProps={{
+      calloutProps: { autoDismiss: true },
+    }}
   />
 </div>;
 ```
@@ -29,7 +33,7 @@ const [state, setState] = React.useState({
 Med beskrivelse på hvert steg:
 
 ```js
-import { RadioButtonGroup } from '@skatteetaten/frontend-components';
+import { RadioButtonGroup } from '@skatteetaten/frontend-components/RadioButtonGroup';
 
 const [state, setState] = React.useState({
   options: [
@@ -95,32 +99,48 @@ const [state, setState] = React.useState({
 ```
 
 ```js noeditor beskrivelse
+import { Link } from '@skatteetaten/frontend-components/Link';
+
 <>
   <h3>Skjema der brukeren bare kan velge ett alternativ</h3>
 
-  <p>
-    Bruk radioknapper hvis brukeren bare kan velge ett alternativ i listen din.
-    Dersom brukeren skal kunne huke av for flere valg samtidig, bruker du også
-    nedtrekksliste.
-  </p>
+  <p>Radioknapper lar brukeren velge kun ett alternativ i listen din.</p>
   <h3>To oppsett for radioknapper:</h3>
 
   <ul>
     <li>
-      Ønsker du at brukeren skal ta et aktivt valg, setter du opp radioknappene
-      uten at de er avhuket.{' '}
+      Radioknappene kan settes opp uten at de er avhuket – da må brukeren ta et
+      aktivt valg.
     </li>
     <li>
-      Hvis brukeren ikke må ta et valg, kan du huke av et alternativ som
-      standard. Da kan brukeren enten la være å gjøre noe, eller fjerne krysset
-      om valget ikke er aktuelt.
+      Radioknappene kan ha ett alternativ ferdig avhuket. Da kan brukeren enten
+      la være å gjøre noe, eller huke av for andre alternativ.
     </li>
   </ul>
-  <h3>Bruk radioknapper når på korte lister</h3>
 
-  <p>
-    Hvis listen har mer enn 7 alternativer fremstår den litt lang, og vi
-    anbefaler da en nedtrekksliste (Dropdown) i stedet.
+  <h3>Relaterte komponenter:</h3>
+  <p className="mb0">
+    Dersom brukeren skal kunne huke av for flere valg samtidig:
   </p>
-</>
+  <p className="mt0">
+    <Link
+      path={'#checkbox'}
+      text={'CheckBox (Avkrysningsboks)'}
+      icon={'ArrowForward'}
+      placement="before"
+    />
+  </p>
+  <p className="mb0">
+    Når listen med valg har mer enn 7 alternativer, kan den bli litt lang og du
+    bør bruke:
+  </p>
+  <p className="mt0">
+    <Link
+      path={'#dropdown'}
+      text={'Dropdown (Nedtrekksliste)'}
+      icon={'ArrowForward'}
+      placement="before"
+    />
+  </p>
+</>;
 ```

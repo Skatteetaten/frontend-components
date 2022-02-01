@@ -1,11 +1,17 @@
-import { mergeStyles } from '@uifabric/merge-styles';
-import { getTheme } from '@uifabric/styling';
-import { FontSizes, FontWeights, PaletteProps, getFocusStyle } from '../utils';
+import { mergeStyles } from '@fluentui/merge-styles';
+import { getTheme } from '@fluentui/react/lib/Styling';
+import { getFocusStyle } from '../utils';
 import { ButtonProps } from './Button.types';
 
+import designtokenColors from '../utils/designtokens/_colors.json';
+import designtokenFontSizes from '../utils/designtokens/_fontSizes.json';
+import designtokenBreakpoints from '../utils/designtokens/_breakpoints.json';
+
 function getTypeColor(props: ButtonProps): object {
-  const palette = getTheme().palette as PaletteProps;
-  const radius = '100px';
+  const radius = '200px';
+
+  const interactiveColor = designtokenColors['ske-color-interactive'];
+  const whiteColor = designtokenColors['ske-color-white-100'];
 
   const sizeNormal = {
     height: 'auto',
@@ -14,117 +20,133 @@ function getTypeColor(props: ButtonProps): object {
   };
 
   switch (props.buttonStyle) {
-    case 'primary':
+    case 'primaryCornered':
       return {
-        borderRadius: '6px',
-        borderColor: palette.skeColor.blue,
-        background: palette.skeColor.blue,
-        color: palette.skeColor.white,
-        boxShadow: `0 8px 6px -6px ${palette.skeColor.lightGrey}`,
+        borderRadius: '7px',
+        borderColor: interactiveColor,
+        background: interactiveColor,
+        color: whiteColor,
         ...sizeNormal,
         selectors: {
-          '@media  only screen and (max-width: 479px)': {
-            width: '100%',
+          [`@media  only screen and (max-width: ${designtokenBreakpoints['ske-breakpoint-md']})`]: {
+            width: props.mobileFullWidth ? '100%' : 'auto',
           },
         },
       };
-    case 'primaryLarge':
+    case 'callToAction':
       return {
-        borderColor: palette.skeColor.blue,
-        background: palette.skeColor.blue,
-        color: palette.skeColor.white,
-        boxShadow: `0 8px 6px -6px ${palette.skeColor.lightGrey}`,
-        fontSize: FontSizes.largePlus,
+        borderColor: interactiveColor,
+        background: interactiveColor,
+        color: whiteColor,
+        boxShadow: `0 8px 6px -6px ${designtokenColors['ske-color-grey-30']}`,
+        fontSize: designtokenFontSizes['ske-font-size-xl'],
         borderWidth: '3px',
-        borderRadius: '7px',
-        fontWeight: FontWeights.semibold,
+        borderRadius: '8px',
+        fontWeight: designtokenFontSizes['ske-font-weight-semibold'],
         padding: '25px',
         height: '80px',
         maxWidth: 'calc((75*550px)/100)',
       };
-    case 'primaryRoundedFilled':
+    case 'primary':
       return {
         borderRadius: radius,
-        borderColor: palette.skeColor.blue,
-        background: palette.skeColor.blue,
-        color: palette.skeColor.white,
-        ...sizeNormal,
-      };
-    case 'warning':
-      return {
-        borderRadius: '6px',
-        borderColor: palette.skeColor.lightPink,
-        background: palette.skeColor.lightPink,
-        color: palette.bodyText,
+        borderColor: interactiveColor,
+        background: interactiveColor,
+        color: whiteColor,
         ...sizeNormal,
         selectors: {
-          '@media  only screen and (max-width: 479px)': {
-            width: '100%',
+          [`@media  only screen and (max-width: ${designtokenBreakpoints['ske-breakpoint-md']})`]: {
+            width: props.mobileFullWidth ? '100%' : undefined,
           },
         },
       };
-    case 'secondary':
-      return {
-        padding: 0,
-        borderWidth: 0,
-        background: 'none',
-        color: palette.skeColor.blue,
-        height: 'auto',
-      };
-    default:
-      // primaryRounded
+    case 'warning':
       return {
         borderRadius: radius,
-        borderColor: palette.skeColor.blue,
-        background: palette.skeColor.white,
-        color: palette.skeColor.blue,
+        borderColor: designtokenColors['ske-color-burgundy-50'],
+        background: designtokenColors['ske-color-burgundy-10'],
+        color: designtokenColors['ske-color-black-100'],
         ...sizeNormal,
+
+        selectors: {
+          [`@media  only screen and (max-width: ${designtokenBreakpoints['ske-breakpoint-md']})`]: {
+            width: props.mobileFullWidth ? '100%' : 'auto',
+          },
+        },
+      };
+    case 'secondarySimple':
+      return {
+        borderWidth: 3,
+        borderRadius: radius,
+        borderColor: 'transparent',
+        background: 'none',
+        color: interactiveColor,
+        ...sizeNormal,
+        selectors: {
+          [`@media  only screen and (max-width: ${designtokenBreakpoints['ske-breakpoint-md']})`]: {
+            width: props.mobileFullWidth ? '100%' : 'auto',
+          },
+          '.ms-Button-textContainer': {
+            textDecoration: 'underline',
+          },
+        },
+      };
+    default:
+      // secondary
+      return {
+        borderRadius: radius,
+        borderColor: interactiveColor,
+        background: whiteColor,
+        color: interactiveColor,
+        ...sizeNormal,
+        selectors: {
+          [`@media  only screen and (max-width: ${designtokenBreakpoints['ske-breakpoint-md']})`]: {
+            width: props.mobileFullWidth ? '100%' : 'auto',
+          },
+        },
       };
   }
 }
 
-function getTypeFocusColor(props: ButtonProps): object {
-  const palette = getTheme().palette as PaletteProps;
-  switch (props.buttonStyle) {
-    case 'warning':
-      return {
-        borderColor: palette.skeColor.blue,
-        background: palette.skeColor.lightPink,
-        color: palette.bodyText,
-      };
-    case 'secondary':
-      return {
-        background: 'none',
-        color: palette.skeColor.blue,
-      };
-    default:
-      return {
-        borderColor: palette.skeColor.blue,
-        background: palette.skeColor.lightBlue,
-        color: palette.skeColor.blue,
-      };
-  }
-}
+function getTypeHoverColor(props: ButtonProps): object {
+  const interactiveColor = designtokenColors['ske-color-interactive'];
+  const interactiveDarkColor = designtokenColors['ske-color-interactive-dark'];
+  const interactiveLightColor =
+    designtokenColors['ske-color-interactive-light'];
+  const errorColor = designtokenColors['ske-color-status-error'];
+  const whiteColor = designtokenColors['ske-color-white-100'];
 
-function getTypeActiveColor(props: ButtonProps) {
-  const palette = getTheme().palette as PaletteProps;
   switch (props.buttonStyle) {
     case 'warning':
       return {
-        borderColor: palette.skeColor.pink,
-        background: palette.skeColor.pink,
-        color: palette.skeColor.white,
+        borderColor: errorColor,
+        background: errorColor,
+        color: whiteColor,
       };
-    case 'secondary':
+    case 'secondarySimple':
       return {
-        background: 'none',
-        color: palette.skeColor.darkBlue,
+        borderColor: interactiveColor,
+        background: interactiveLightColor,
+        textDecoration: 'none',
+        selectors: {
+          '.ms-Button-textContainer': {
+            textDecoration: 'none',
+          },
+        },
+      };
+    case 'primaryCornered':
+    case 'primary':
+    case 'callToAction':
+      return {
+        borderColor: interactiveDarkColor,
+        background: interactiveDarkColor,
+        color: whiteColor,
       };
     default:
       return {
-        borderColor: palette.skeColor.darkBlue,
-        background: palette.skeColor.darkBlue,
-        color: palette.skeColor.white,
+        borderColor: interactiveColor,
+        background: interactiveLightColor,
+        color: interactiveColor,
       };
   }
 }
@@ -144,39 +166,21 @@ function getDisabledColor(props: ButtonProps) {
   }
 }
 
-function getLabelStyles(props: ButtonProps) {
-  if (props.buttonStyle === 'secondary') {
-    return {
-      textDecoration: 'underline',
-    };
-  } else {
-    return;
-  }
-}
-
 function setFocusRadius(props: ButtonProps) {
-  if (props.buttonStyle === 'primary' || props.buttonStyle === 'warning') {
-    return '6px';
+  if (props.buttonStyle === 'primaryCornered') {
+    return '8px';
   }
-  if (props.buttonStyle === 'primaryLarge') {
-    return '7px';
+  if (props.buttonStyle === 'callToAction') {
+    return '10px';
   } else {
-    return '20px';
-  }
-}
-
-function setInset(props: ButtonProps) {
-  if (props.buttonStyle === 'primary' || props.buttonStyle === 'warning') {
-    return -3;
-  } else {
-    return -4;
+    return '21px';
   }
 }
 
 export function getClassNames(props: ButtonProps): string {
   const theme = getTheme();
-  const palette = theme.palette as PaletteProps;
-  const inset = setInset(props);
+  const inset = props.buttonStyle === 'secondarySimple' ? -4 : -8;
+  const disabled = props.disabled;
   const radius = setFocusRadius(props);
   return mergeStyles([
     getFocusStyle(theme, inset, 'relative', radius),
@@ -187,28 +191,29 @@ export function getClassNames(props: ButtonProps): string {
           borderWidth: '3px',
           fontWeight: 'normal',
           padding: '15px',
-          transition: 'background 0.3s',
-          textAlign: props.icon ? 'left' : 'center',
+          transition: '0.2s',
+          textAlign: 'center',
           verticalAlign: 'top',
           ...getTypeColor(props),
         },
-        '&.ms-Button:hover, &.ms-Button:focus': {
-          ...getTypeFocusColor(props),
-        },
-        '&.ms-Button:hover .ms-Button-label': {
-          ...getLabelStyles(props),
+        '&.ms-Button:hover': {
+          ...getTypeHoverColor(props),
         },
         '&.ms-Button:active': {
-          ...getTypeActiveColor(props),
+          transition: '0.15s',
+          boxShadow: 'none',
+          transform: disabled ? 'none' : 'translateY(2px)',
+          transitionTimingFunction: 'ease',
         },
         '&.ms-Button:disabled': {
-          background: palette.skeColor.whiteGrey,
-          borderColor: palette.skeColor.lightGrey,
-          color: palette.skeColor.lightGrey,
+          background: designtokenColors['ske-color-grey-10'],
+          borderColor: designtokenColors['ske-color-grey-30'],
+          color: designtokenColors['ske-color-grey-30'],
+          cursor: 'not-allowed',
           ...getDisabledColor(props),
         },
         '&.ms-Button i': {
-          fontSize: FontSizes.icon,
+          fontSize: designtokenFontSizes['ske-font-size-icon-l'],
         },
       },
     },

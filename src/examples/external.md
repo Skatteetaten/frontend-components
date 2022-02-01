@@ -1,14 +1,12 @@
 ```js
-import {
-  Layout,
-  Header,
-  Main,
-  Article,
-  TopBanner,
-  Grid,
-  Card,
-  FooterContent,
-} from '@skatteetaten/frontend-components';
+import { Article } from '@skatteetaten/frontend-components/Article';
+import { Card } from '@skatteetaten/frontend-components/Card';
+import { FooterContent } from '@skatteetaten/frontend-components/FooterContent';
+import { Grid } from '@skatteetaten/frontend-components/Grid';
+import { Header } from '@skatteetaten/frontend-components/Header';
+import { Layout } from '@skatteetaten/frontend-components/Layout';
+import { Main } from '@skatteetaten/frontend-components/Main';
+import { TopBanner } from '@skatteetaten/frontend-components/TopBanner';
 
 const DemoBlock = ({ children }) => (
   <div

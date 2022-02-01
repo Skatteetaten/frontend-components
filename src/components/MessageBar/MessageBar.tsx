@@ -6,13 +6,10 @@ import {
 import * as React from 'react';
 // @ts-ignore TODO
 import { CSSTransition } from 'react-transition-group';
-import { Button as MessageBarButton } from '../Button';
+import { Button as MessageBarButton } from '../Button/Button';
 import { getClassNames } from './MessageBar.classNames';
 import { MessageBarProps, MessageBarState } from './MessageBar.types';
 
-/**
- * @visibleName MessageBar (Varsler)
- */
 export class MessageBar extends React.PureComponent<
   MessageBarProps,
   MessageBarState

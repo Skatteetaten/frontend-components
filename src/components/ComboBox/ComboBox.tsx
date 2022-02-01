@@ -7,22 +7,22 @@ import { generateId } from '../utils';
 import { LabelWithCallout } from '../LabelWithCallout';
 import { ComboBoxProps } from './ComboBox.types';
 
-/**
- * @visibleName ComboBox (Nedtrekksliste med skriving)
- */
 export const ComboBox: React.FC<ComboBoxProps> = (props) => {
   const {
     children,
-    labelWithCalloutAutoDismiss,
     errorMessage,
     label,
     help,
     className,
     id,
+    required = false,
     labelButtonAriaLabel,
-    labelCallout,
+    labelWithCalloutProps,
     onCalloutToggle,
+    calloutProps,
     readOnly,
+    requiredWithMark = false,
+    ref,
     ...rest
   } = props;
 
@@ -34,16 +34,16 @@ export const ComboBox: React.FC<ComboBoxProps> = (props) => {
   const styles = getClassNames(props);
 
   return (
-    <div id={mainId}>
+    <div id={mainId} ref={ref}>
       <LabelWithCallout
         id={labelId}
         inputId={readOnly ? inputId : inputId + '-input'} //Fabric adds its own -input postfix
         label={label}
+        requiredMark={requiredWithMark}
         buttonAriaLabel={labelButtonAriaLabel}
         help={help}
         onCalloutToggle={onCalloutToggle}
-        autoDismiss={labelWithCalloutAutoDismiss}
-        {...labelCallout}
+        {...labelWithCalloutProps}
       />
       {readOnly ? (
         <input
@@ -64,10 +64,12 @@ export const ComboBox: React.FC<ComboBoxProps> = (props) => {
           {...rest}
           id={inputId}
           ariaLabel={label}
+          required={required || requiredWithMark}
           className={classnames(styles.main, className)}
           errorMessage={errorMessage}
           aria-invalid={errorMessage ? true : false}
           calloutProps={{
+            ...calloutProps,
             className: getOptionsClassNames(props),
           }}
         >

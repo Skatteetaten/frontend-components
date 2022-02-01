@@ -1,16 +1,12 @@
-**Tabeller brukes til å liste ut strukturerte data.**
+**Table (Tabell): brukes til å liste ut strukturerte data.**
 
 ```js
-import {
-  Table,
-  Grid,
-  TextField,
-  IconButton,
-  Button,
-  LabelWithCallout,
-} from '@skatteetaten/frontend-components';
-
-import moment from 'moment';
+import { Button } from '@skatteetaten/frontend-components/Button';
+import { Grid } from '@skatteetaten/frontend-components/Grid';
+import { IconButton } from '@skatteetaten/frontend-components/IconButton';
+import { LabelWithCallout } from '@skatteetaten/frontend-components/LabelWithCallout';
+import { Table } from '@skatteetaten/frontend-components/Table';
+import { TextField } from '@skatteetaten/frontend-components/TextField';
 
 const wrapperStyle = {
   backgroundColor: '#f9ede2',
@@ -20,6 +16,10 @@ const wrapperStyle = {
 const blockRightStyle = {
   textAlign: 'right',
   marginTop: 20,
+};
+
+const buttonPaddingStyle = {
+  marginLeft: '8px',
 };
 
 const tableStyle = {
@@ -75,10 +75,18 @@ const editableContent = (data, close, rowIndex) => (
         <Grid.Col lg={6}></Grid.Col>
         <Grid.Col lg={6}>
           <div style={blockRightStyle}>
-            <Button>Slett</Button>
+            <Button onClick={close}>Slett</Button>
 
-            <Button>Avbryt</Button>
-            <Button buttonStyle="primaryRoundedFilled">Lagre</Button>
+            <Button onClick={close} style={buttonPaddingStyle}>
+              Avbryt
+            </Button>
+            <Button
+              onClick={close}
+              style={buttonPaddingStyle}
+              buttonStyle="primaryRoundedFilled"
+            >
+              Ok
+            </Button>
           </div>
         </Grid.Col>
       </Grid.Row>
@@ -86,16 +94,11 @@ const editableContent = (data, close, rowIndex) => (
   </div>
 );
 
-const sortMonths = (a, b) => moment(a, 'MMMM').diff(moment(b, 'MMMMM'));
-
-const formatPercent = (percent) => percent + ' %';
-
 const columns = [
   {
     name: 'Måned',
     fieldName: 'month',
     sortable: true,
-    sortingFunction: sortMonths,
     autohideSorting: false,
   },
   {
@@ -109,7 +112,6 @@ const columns = [
     name: 'Dekningsgrad',
     fieldName: 'coverage',
     alignment: 'right',
-    formatFunction: formatPercent,
   },
   {
     name: 'Avkastning',
@@ -122,25 +124,25 @@ const data = [
   {
     month: 'Januar',
     amount: 5426,
-    coverage: '100',
+    coverage: '100 %',
     revenue: '1000',
   },
   {
     month: 'Februar',
     amount: 5432,
-    coverage: '50',
+    coverage: '50 %',
     revenue: '500',
   },
   {
     month: 'Mars',
     amount: 4899,
-    coverage: '20',
+    coverage: '20 %',
     revenue: '2000',
   },
   {
     month: 'April',
     amount: 2344,
-    coverage: '30',
+    coverage: '30 %',
     revenue: '1055',
   },
 ];
@@ -158,7 +160,8 @@ const data = [
 **Man kan styre hvilke kolonner som skal vises på mobil med _hideOnMobile_-attributtet:**
 
 ```js
-import { Table, ActionButton } from '@skatteetaten/frontend-components';
+import { ActionButton } from '@skatteetaten/frontend-components/ActionButton';
+import { Table } from '@skatteetaten/frontend-components/Table';
 
 const columns = [
   {
@@ -212,10 +215,14 @@ const data = [
 />;
 ```
 
-Ekspanderbare rader
+Ekspanderbare rader med høyre-pil og nested tabell:
 
 ```js
-import { Grid, Table, ActionButton } from '@skatteetaten/frontend-components';
+import { ActionButton } from '@skatteetaten/frontend-components/ActionButton';
+import { IconButton } from '@skatteetaten/frontend-components/IconButton';
+import { Grid } from '@skatteetaten/frontend-components/Grid';
+import { Table } from '@skatteetaten/frontend-components/Table';
+import { LabelWithCallout } from '@skatteetaten/frontend-components/LabelWithCallout';
 
 const columns = [
   {
@@ -230,7 +237,19 @@ const columns = [
     name: 'Status',
     fieldName: 'status',
   },
-  { name: 'Forventet behandlet', fieldName: 'eta' },
+  {
+    name: (
+      <span>
+        <span>Forventet behandlet</span>
+        <IconButton
+          title={'Hjelp'}
+          icon={'HelpOutline'}
+          type="default"
+        ></IconButton>
+      </span>
+    ),
+    fieldName: 'eta',
+  },
 ];
 
 const data = [
@@ -298,7 +317,7 @@ const data = [
   },
 ];
 const expandableContent = (data, close, rowIndex) => (
-  <div style={{ width: 'max-content' }}>
+  <div>
     <Grid>
       <Grid.Row>
         <Grid.Col xl={12} sm={8}>
@@ -318,40 +337,92 @@ const expandableContent = (data, close, rowIndex) => (
   </div>
 );
 
-<Table
-  data={data.map((d) => ({
-    ...d,
-  }))}
-  columns={columns}
-  expandableRows
-  expandableContent={expandableContent}
-  expandIconPlacement={'before'}
-  caption="Firmaoversikt"
-  hideCaption={true}
-  expandIconPlacement={'after'}
-/>;
+const expandableContentLabelWithCallout = (data, close, rowIndex) => (
+  <div>
+    <Grid>
+      <Grid.Row>
+        <Grid.Col xl={12} sm={4}>
+          <p></p>
+        </Grid.Col>
+        <Grid.Col xl={12} sm={8}>
+          <LabelWithCallout
+            label={'Vil du vite mer?'}
+            help={'Oversikt over ansatte i perioden.'}
+          />
+        </Grid.Col>
+      </Grid.Row>
+      <Grid.Row>
+        <Grid.Col xl={12}>
+          <Table
+            data={data.ansatte}
+            showRowSeparators={false}
+            columns={[
+              { name: 'Ansatt', fieldName: 'navn' },
+              { name: 'Fødselsnr', fieldName: 'fnr' },
+              { name: 'Beskrivelse', fieldName: 'beskrivelse' },
+            ]}
+            fullWidth
+          />
+        </Grid.Col>
+      </Grid.Row>
+    </Grid>
+  </div>
+);
+
+<>
+  <Table
+    data={data.map((d) => ({
+      ...d,
+    }))}
+    columns={columns}
+    expandableContent={expandableContent}
+    expandIconPlacement={'before'}
+    caption="Firmaoversikt"
+    hideCaption={true}
+    expandIconPlacement={'after'}
+    expandableRows
+  />
+  <br />
+  <p>
+    Ekspanderbare rader med venstre-pil og bred innhold med nested
+    LabelWithCallout
+  </p>
+  <Table
+    data={data.map((d) => ({
+      ...d,
+    }))}
+    columns={columns}
+    expandableContent={expandableContentLabelWithCallout}
+    expandIconPlacement={'before'}
+    caption="Firmaoversikt"
+    sum={{ text: 'sum', colspan: 4, total: '30 500' }}
+    hideCaption={true}
+    expandableRows
+    fullWidth
+  />
+</>;
 ```
 
 Hele rader kan gjøres klikkbare med _openEditableOnRowClick_-attributtet, og tabeller kan gjøres kompakte med _compactTable_-atributtet.
 
 ```js
-import {
-  Table,
-  Grid,
-  TextField,
-  IconButton,
-} from '@skatteetaten/frontend-components';
-
-import moment from 'moment';
+import { Grid } from '@skatteetaten/frontend-components/Grid';
+import { Button } from '@skatteetaten/frontend-components/Button';
+import { Table } from '@skatteetaten/frontend-components/Table';
+import { TextField } from '@skatteetaten/frontend-components/TextField';
 
 const wrapperStyle = {
   backgroundColor: '#f9ede2',
   padding: 12,
 };
 
-const blockCenterStyle = {
-  textAlign: 'center',
+const blockRightStyle = {
+  textAlign: 'right',
   marginTop: 20,
+};
+
+const buttonPaddingStyle = {
+  marginLeft: '8px',
 };
 
 const tableStyle = {
@@ -367,7 +438,7 @@ const editableContent = (data, close, rowIndex) => (
 
     <Grid>
       <Grid.Row>
-        <Grid.Col lg={3}>
+        <Grid.Col lg={4}>
           <TextField
             id={'textfield-1'}
             box
@@ -378,7 +449,7 @@ const editableContent = (data, close, rowIndex) => (
             help="Hjelpetekst som omhandler beløp."
           />
         </Grid.Col>
-        <Grid.Col lg={3}>
+        <Grid.Col lg={4}>
           <TextField
             id={'textfield-2'}
             box
@@ -389,7 +460,7 @@ const editableContent = (data, close, rowIndex) => (
             help="Hjelpetekst som omhandler dekningsgrad"
           />
         </Grid.Col>
-        <Grid.Col lg={3}>
+        <Grid.Col lg={4}>
           <TextField
             id={'textfield-3'}
             box
@@ -400,17 +471,23 @@ const editableContent = (data, close, rowIndex) => (
             help="Hjelpetekst som omhandler avkastning"
           />
         </Grid.Col>
-        <Grid.Col lg={3}>
-          <div style={blockCenterStyle}>
-            <IconButton title="Lagre" circle icon="Check" />
-            {'  '}
-            <IconButton
+      </Grid.Row>
+      <Grid.Row>
+        <Grid.Col lg={6}></Grid.Col>
+        <Grid.Col lg={6}>
+          <div style={blockRightStyle}>
+            <Button onClick={close}>Slett</Button>
+
+            <Button onClick={close} style={buttonPaddingStyle}>
+              Avbryt
+            </Button>
+            <Button
               onClick={close}
-              title="Angre"
-              circle
-              icon="Cancel"
-            />{' '}
-            <IconButton title="Slett" circle icon="Delete" />{' '}
+              style={buttonPaddingStyle}
+              buttonStyle="primaryRoundedFilled"
+            >
+              Ok
+            </Button>
           </div>
         </Grid.Col>
       </Grid.Row>
@@ -418,14 +495,11 @@ const editableContent = (data, close, rowIndex) => (
   </div>
 );
 
-const sortMonths = (a, b) => moment(a, 'MMMM').diff(moment(b, 'MMMMM'));
-
 const columns = [
   {
-    name: 'Måned',
-    fieldName: 'month',
+    name: 'Dekningsgrad',
+    fieldName: 'coverage',
     sortable: true,
-    sortingFunction: sortMonths,
     autohideSorting: false,
   },
   {
@@ -436,10 +510,11 @@ const columns = [
     autohideSorting: false,
   },
   {
-    name: 'Dekningsgrad',
-    fieldName: 'coverage',
+    name: 'Måned',
+    fieldName: 'month',
     alignment: 'right',
   },
+
   {
     name: 'Avkastning',
     fieldName: 'revenue',
@@ -483,6 +558,7 @@ const data = [
   compactTable={true}
   caption="Månedoversikt"
   hideCaption={true}
+  sum={{ text: 'sum', colspan: 3, total: '30 500' }}
 />;
 ```
 
@@ -490,24 +566,24 @@ Tabellen kan ha bare noen linjer som er editerbare. Den kan også ha underlinjer
 hideEdit vil gjemme edit knappen. Underlinjer kan legges inn i children feltet. Underlinjer vil ikke vises i edit modus og har ikke egen edit knapp.
 
 ```js
-import {
-  Table,
-  Grid,
-  TextField,
-  IconButton,
-  LabelWithCallout,
-} from '@skatteetaten/frontend-components';
-
-import moment from 'moment';
+import { Grid } from '@skatteetaten/frontend-components/Grid';
+import { Button } from '@skatteetaten/frontend-components/Button';
+import { LabelWithCallout } from '@skatteetaten/frontend-components/LabelWithCallout';
+import { Table } from '@skatteetaten/frontend-components/Table';
+import { TextField } from '@skatteetaten/frontend-components/TextField';
 
 const wrapperStyle = {
   backgroundColor: '#f9ede2',
   padding: 12,
 };
 
-const blockCenterStyle = {
-  textAlign: 'center',
+const blockRightStyle = {
+  textAlign: 'right',
   marginTop: 20,
+};
+
+const buttonPaddingStyle = {
+  marginLeft: '8px',
 };
 
 const tableStyle = {
@@ -530,50 +606,57 @@ const editableContent = (data, close, rowIndex) => (
 
     <Grid>
       <Grid.Row>
-        <Grid.Col lg={3}>
+        <Grid.Col lg={5}>
           <TextField
             id={'textfield-1'}
             box
             calloutFloating={false}
             withLeadingIcon="search"
-            label="Beløp"
+            label="Grunnlag"
             placeholder={''}
-            help="Hjelpetekst som omhandler beløp."
+            help="Hjelpetekst som omhandler grunnlag."
           />
         </Grid.Col>
-        <Grid.Col lg={3}>
+        <Grid.Col lg={2}>
           <TextField
             id={'textfield-2'}
             box
             calloutFloating={false}
             withLeadingIcon="search"
-            label="Dekningsgrad"
+            label="Sats"
+            suffix="%"
             placeholder={''}
             help="Hjelpetekst som omhandler dekningsgrad"
           />
         </Grid.Col>
-        <Grid.Col lg={3}>
+        <Grid.Col lg={5}>
           <TextField
             id={'textfield-3'}
             box
             calloutFloating={false}
             withLeadingIcon="search"
-            label="Avkastning"
+            label="Mva"
             placeholder={''}
-            help="Hjelpetekst som omhandler avkastning"
+            help="Hjelpetekst som omhandler mva"
           />
         </Grid.Col>
-        <Grid.Col lg={3}>
-          <div style={blockCenterStyle}>
-            <IconButton title="Lagre" circle icon="Check" />
-            {'  '}
-            <IconButton
+      </Grid.Row>
+      <Grid.Row>
+        <Grid.Col lg={6}></Grid.Col>
+        <Grid.Col lg={6}>
+          <div style={blockRightStyle}>
+            <Button onClick={close}>Slett</Button>
+
+            <Button onClick={close} style={buttonPaddingStyle}>
+              Avbryt
+            </Button>
+            <Button
               onClick={close}
-              title="Angre"
-              circle
-              icon="Cancel"
-            />{' '}
-            <IconButton title="Slett" circle icon="Delete" />{' '}
+              style={buttonPaddingStyle}
+              buttonStyle="primaryRoundedFilled"
+            >
+              Ok
+            </Button>
           </div>
         </Grid.Col>
       </Grid.Row>
@@ -581,14 +664,14 @@ const editableContent = (data, close, rowIndex) => (
   </div>
 );
 
-const sortMonths = (a, b) => parseInt(a) - parseInt(b);
+const sortMva = (a, b) => parseInt(a) - parseInt(b);
 
 const columns = [
   {
     name: 'Mva-kode',
     fieldName: 'kode',
     sortable: true,
-    sortingFunction: sortMonths,
+    sortingFunction: sortMva,
     autohideSorting: false,
   },
   {
@@ -657,11 +740,9 @@ const data = [
 Tabeller med overskrifter legges som en _caption_:
 
 ```js
-import {
-  Table,
-  ActionButton,
-  LabelWithCallout,
-} from '@skatteetaten/frontend-components';
+import { ActionButton } from '@skatteetaten/frontend-components/ActionButton';
+import { LabelWithCallout } from '@skatteetaten/frontend-components/LabelWithCallout';
+import { Table } from '@skatteetaten/frontend-components/Table';
 
 const columns = [
   {

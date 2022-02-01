@@ -7,8 +7,8 @@ import { LabelWithCallout } from '../LabelWithCallout';
 import { ErrorMessage } from '../ErrorMessage';
 import { RadioButtonGroupProps } from './RadioButtonGroup.types';
 
-/**
- * @visibleName RadioButtonGroup (Radioknapper)
+/*
+ * visibleName RadioButtonGroup (Radioknapper)
  */
 
 export const RadioButtonGroup = (props: RadioButtonGroupProps) => {
@@ -16,17 +16,18 @@ export const RadioButtonGroup = (props: RadioButtonGroupProps) => {
     calloutFloating,
     children,
     className,
-    labelWithCalloutAutoDismiss,
     errorMessage,
     help,
     warning,
     id,
+    required = false,
     label,
     labelSize,
     labelButtonAriaLabel,
-    labelCallout,
+    labelWithCalloutProps,
     onCalloutToggle,
     options,
+    requiredWithMark = false,
     ...rest
   } = props;
   let tempOptions = options;
@@ -53,14 +54,14 @@ export const RadioButtonGroup = (props: RadioButtonGroupProps) => {
         id={labelId}
         label={label}
         buttonAriaLabel={labelButtonAriaLabel}
+        requiredMark={requiredWithMark}
         help={help}
         inputSize={labelSize}
         warning={warning}
         inFieldset={true}
         calloutFloating={calloutFloating}
         onCalloutToggle={onCalloutToggle}
-        autoDismiss={labelWithCalloutAutoDismiss}
-        {...labelCallout}
+        {...labelWithCalloutProps}
       />
       <FabricChoiceGroup
         id={groupId}
@@ -69,6 +70,7 @@ export const RadioButtonGroup = (props: RadioButtonGroupProps) => {
         className={classnames(styles.radioButtons, className)}
         ariaLabelledBy={labelId}
         aria-invalid={errorMessage ? true : false}
+        required={required || requiredWithMark}
       >
         {children}
       </FabricChoiceGroup>

@@ -3,21 +3,19 @@ For å evaluere brukeropplevelsen til en løsning er det brukervennlighetstestin
 Listen under inneholder ti generelle grunnprinsipper for design av brukergrensesnitt, som har vist seg å holde vann. Det finnes unntak, men de er sjeldne, så dersom du har en løsning som bryter med noen av disse, anbefaler vi å brukerteste ekstra grundig.
 
 ```js noeditor
-import {
-  Accordion,
-  AccordionItem,
-  Spinner,
-  Button,
-  Card,
-  TopBanner,
-  TextField,
-  Grid,
-  MessageBar,
-  LabelWithCallout,
-  ActionButton,
-  IconButton,
-  Link,
-} from '@skatteetaten/frontend-components';
+import { Accordion } from '@skatteetaten/frontend-components/Accordion';
+import { AccordionItem } from '@skatteetaten/frontend-components/Accordion/AccordionItem';
+import { ActionButton } from '@skatteetaten/frontend-components/ActionButton';
+import { Button } from '@skatteetaten/frontend-components/Button';
+import { Card } from '@skatteetaten/frontend-components/Card';
+import { Grid } from '@skatteetaten/frontend-components/Grid';
+import { IconButton } from '@skatteetaten/frontend-components/IconButton';
+import { LabelWithCallout } from '@skatteetaten/frontend-components/LabelWithCallout';
+import { Link } from '@skatteetaten/frontend-components/Link';
+import { MessageBar } from '@skatteetaten/frontend-components/MessageBar';
+import { TextField } from '@skatteetaten/frontend-components/TextField';
+import { TopBanner } from '@skatteetaten/frontend-components/TopBanner';
+import { Spinner } from '@skatteetaten/frontend-components/Spinner';
 
 const [state, setState] = React.useState({
   hasSpinner: false,
@@ -175,7 +173,7 @@ const titles = {
     <p>
       Her er det kun mulig å skrive inn siffer i feltet for organisasjonsnummer:
     </p>
-    <div style={{ width: '150px' }}>
+    <div style={{ maxWidth: '150px' }}>
       <TextField
         id={'my-input-1'}
         value={'987654321'}
@@ -186,7 +184,7 @@ const titles = {
       />
     </div>
     <p>Vi kan vise et varsel når en verdi virker høy:</p>
-    <div style={{ width: '150px', marginBottom: '8px' }}>
+    <div style={{ maxWidth: '150px', marginBottom: '8px' }}>
       <TextField
         id={'my-helpfield-2'}
         label="Antall barn"

@@ -1,9 +1,16 @@
-**En ComboBox ser ut og fungerer i hovedsak som en som nedtrekksliste - men har den forskjellen brukeren kan skrive i feltet. Det er spesielt nyttig hvis listen over valg er lang.**
+**ComboBox (Nedtrekksliste med skriving): nedtrekksliste hvor du kan skrive i feltet - nyttig hvis listen med valg er lang.**
 
 Velge fra en fast liste (stor versjon):
 
 ```js
-import { ComboBox, Grid } from '@skatteetaten/frontend-components';
+import { ComboBox } from '@skatteetaten/frontend-components/ComboBox';
+import { Grid } from '@skatteetaten/frontend-components/Grid';
+
+const [selectedComboBoxOption, setSelectedComboBoxOption] = React.useState();
+
+const onChange = (event, option, index) => {
+  setSelectedComboBoxOption(option);
+};
 
 <div>
   <Grid>
@@ -11,6 +18,7 @@ import { ComboBox, Grid } from '@skatteetaten/frontend-components';
       <Grid.Col lg={4}>
         <ComboBox
           label="Fylke"
+          requiredWithMark
           help="Dette feltet foreslår en verdi når du begynner å skrive. Du kan også bla gjennom listen og velge på den måten."
           placeholder="Velg eller begynn å skrive"
           inputSize="large"
@@ -32,9 +40,13 @@ import { ComboBox, Grid } from '@skatteetaten/frontend-components';
             { key: 'K', text: 'Viken', value: 'Viken' },
           ]}
           allowFreeform={false}
+          onChange={onChange}
           ariaLabel="Eksempel ComboBox"
           useComboBoxAsMenuWidth
           calloutFloating={false}
+          labelWithCalloutProps={{
+            calloutProps: { autoDismiss: true },
+          }}
         />
       </Grid.Col>
     </Grid.Row>
@@ -45,122 +57,109 @@ import { ComboBox, Grid } from '@skatteetaten/frontend-components';
 Hvis brukeren skal kunne legge til egne elementer:
 
 ```js
-import { ComboBox, Grid } from '@skatteetaten/frontend-components';
+import { ComboBox } from '@skatteetaten/frontend-components/ComboBox';
 
-<div>
-  <Grid>
-    <Grid.Row>
-      <Grid.Col lg={4}>
-        <ComboBox
-          label="Bilmerke"
-          help="Dette feltet foreslår en verdi når du begynner å skrive. Det er også mulig å legge til egne verdier."
-          placeholder="Velg eller legg til"
-          options={[
-            { key: 'A', text: 'Audi', value: 'Audi' },
-            { key: 'A', text: 'BMW', value: 'BMW' },
-            { key: 'B', text: 'Hyundai', value: 'Hyundai' },
-            { key: 'C', text: 'Mercedes-Benz', value: 'Mercedes-Benz' },
-            { key: 'D', text: 'Nissan', value: 'Nissan' },
-            { key: 'E', text: 'MG', value: 'MG' },
-            { key: 'F', text: 'Mitsubishi', value: 'Rogaland' },
-            { key: 'G', text: 'Tesla', value: 'Troms og Finnmark' },
-            { key: 'H', text: 'Volkswagen', value: 'Trøndelag' },
-            { key: 'I', text: 'Volvo', value: 'Volvo' },
-          ]}
-          allowFreeform={true}
-          autoComplete={'on'}
-          ariaLabel="Eksempel på ComboBox"
-          useComboBoxAsMenuWidth
-          calloutFloating={false}
-        />
-      </Grid.Col>
-    </Grid.Row>
-  </Grid>
+const [selectedComboBoxOption, setSelectedComboBoxOption] = React.useState();
+
+const onChange = (event, option, index) => {
+  setSelectedComboBoxOption(option);
+};
+
+<div style={{ maxWidth: '300px' }}>
+  <ComboBox
+    label="Bilmerke"
+    help="Dette feltet foreslår en verdi når du begynner å skrive. Det er også mulig å legge til egne verdier."
+    placeholder="Velg eller legg til"
+    options={[
+      { key: 'A', text: 'Audi', value: 'Audi' },
+      { key: 'A', text: 'BMW', value: 'BMW' },
+      { key: 'B', text: 'Hyundai', value: 'Hyundai' },
+      { key: 'C', text: 'Mercedes-Benz', value: 'Mercedes-Benz' },
+      { key: 'D', text: 'Nissan', value: 'Nissan' },
+      { key: 'E', text: 'MG', value: 'MG' },
+      { key: 'F', text: 'Mitsubishi', value: 'Rogaland' },
+      { key: 'G', text: 'Tesla', value: 'Troms og Finnmark' },
+      { key: 'H', text: 'Volkswagen', value: 'Trøndelag' },
+      { key: 'I', text: 'Volvo', value: 'Volvo' },
+    ]}
+    onChange={onChange}
+    allowFreeform={true}
+    autoComplete={'on'}
+    ariaLabel="Eksempel på ComboBox"
+    useComboBoxAsMenuWidth
+    calloutFloating={false}
+  />
 </div>;
 ```
 
 Lesemodus:
 
 ```js
-import { ComboBox, Grid } from '@skatteetaten/frontend-components';
+import { ComboBox } from '@skatteetaten/frontend-components/ComboBox';
 
-<div>
-  <Grid>
-    <Grid.Row>
-      <Grid.Col lg={4}>
-        <ComboBox
-          readOnly
-          label="Fylke"
-          options={[
-            { key: 'A', text: 'Agder', value: 'Agder' },
-            { key: 'B', text: 'Innlandet', value: 'Innlandet' },
-            { key: 'C', text: 'Møre og Romsdal', value: 'Møre og Romsdal' },
-            { key: 'D', text: 'Nordland', value: 'Nordland' },
-            { key: 'E', text: 'Oslo', value: 'Oslo' },
-            { key: 'F', text: 'Rogaland', value: 'Rogaland' },
-            { key: 'G', text: 'Troms og Finnmark', value: 'Troms og Finnmark' },
-            { key: 'H', text: 'Trøndelag', value: 'Trøndelag' },
-            {
-              key: 'I',
-              text: 'Vestfold og Telemark',
-              value: 'Vestfold og Telemark',
-            },
-            { key: 'J', text: 'Vestland', value: 'Vestland' },
-            { key: 'K', text: 'Viken', value: 'Viken' },
-          ]}
-          defaultSelectedKey="A"
-          allowFreeform={false}
-          ariaLabel="Eksempel med ComboBox i lesemodus"
-        />
-      </Grid.Col>
-    </Grid.Row>
-  </Grid>
+<div style={{ maxWidth: '300px' }}>
+  <ComboBox
+    readOnly
+    label="Fylke"
+    options={[
+      { key: 'A', text: 'Agder', value: 'Agder' },
+      { key: 'B', text: 'Innlandet', value: 'Innlandet' },
+      { key: 'C', text: 'Møre og Romsdal', value: 'Møre og Romsdal' },
+      { key: 'D', text: 'Nordland', value: 'Nordland' },
+      { key: 'E', text: 'Oslo', value: 'Oslo' },
+      { key: 'F', text: 'Rogaland', value: 'Rogaland' },
+      { key: 'G', text: 'Troms og Finnmark', value: 'Troms og Finnmark' },
+      { key: 'H', text: 'Trøndelag', value: 'Trøndelag' },
+      {
+        key: 'I',
+        text: 'Vestfold og Telemark',
+        value: 'Vestfold og Telemark',
+      },
+      { key: 'J', text: 'Vestland', value: 'Vestland' },
+      { key: 'K', text: 'Viken', value: 'Viken' },
+    ]}
+    defaultSelectedKey="A"
+    allowFreeform={false}
+    ariaLabel="Eksempel med ComboBox i lesemodus"
+  />
 </div>;
 ```
 
 Med Feilmelding:
 
 ```js
-import { ComboBox, Grid } from '@skatteetaten/frontend-components';
+import { ComboBox } from '@skatteetaten/frontend-components/ComboBox';
 
-let error = 'En feil';
-
-<div>
-  <Grid>
-    <Grid.Row>
-      <Grid.Col lg={4}>
-        <ComboBox
-          label="Fylke"
-          help="Hjelpetekst"
-          placeHolder="Velg"
-          defaultSelectedKey="D"
-          options={[
-            { key: 'A', text: 'Agder', value: 'Agder' },
-            { key: 'B', text: 'Innlandet', value: 'Innlandet' },
-            { key: 'C', text: 'Møre og Romsdal', value: 'Møre og Romsdal' },
-            { key: 'D', text: 'Nordland', value: 'Nordland' },
-            { key: 'E', text: 'Oslo', value: 'Oslo' },
-            { key: 'F', text: 'Rogaland', value: 'Rogaland' },
-            { key: 'G', text: 'Troms og Finnmark', value: 'Troms og Finnmark' },
-            { key: 'H', text: 'Trøndelag', value: 'Trøndelag' },
-            {
-              key: 'I',
-              text: 'Vestfold og Telemark',
-              value: 'Vestfold og Telemark',
-            },
-            { key: 'J', text: 'Vestland', value: 'Vestland' },
-            { key: 'K', text: 'Viken', value: 'Viken' },
-          ]}
-          allowFreeform={false}
-          ariaLabel="Eksempel ComboBox"
-          useComboBoxAsMenuWidth
-          errorMessage={
-            'Du kan ikke legge til dette fylket siden personen har finnmarksfradrag.'
-          }
-        />
-      </Grid.Col>
-    </Grid.Row>
-  </Grid>
+<div style={{ maxWidth: '300px' }}>
+  <ComboBox
+    label="Fylke"
+    help="Hjelpetekst"
+    placeHolder="Velg"
+    defaultSelectedKey="D"
+    options={[
+      { key: 'A', text: 'Agder', value: 'Agder' },
+      { key: 'B', text: 'Innlandet', value: 'Innlandet' },
+      { key: 'C', text: 'Møre og Romsdal', value: 'Møre og Romsdal' },
+      { key: 'D', text: 'Nordland', value: 'Nordland' },
+      { key: 'E', text: 'Oslo', value: 'Oslo' },
+      { key: 'F', text: 'Rogaland', value: 'Rogaland' },
+      { key: 'G', text: 'Troms og Finnmark', value: 'Troms og Finnmark' },
+      { key: 'H', text: 'Trøndelag', value: 'Trøndelag' },
+      {
+        key: 'I',
+        text: 'Vestfold og Telemark',
+        value: 'Vestfold og Telemark',
+      },
+      { key: 'J', text: 'Vestland', value: 'Vestland' },
+      { key: 'K', text: 'Viken', value: 'Viken' },
+    ]}
+    allowFreeform={false}
+    ariaLabel="Eksempel ComboBox"
+    useComboBoxAsMenuWidth
+    errorMessage={
+      'Du kan ikke legge til dette fylket siden personen har finnmarksfradrag.'
+    }
+  />
 </div>;
 ```
 
@@ -203,27 +202,26 @@ let error = 'En feil';
 <>
   <h3>Fleksibel nedtrekksliste med mulighet for å skrive</h3>
   <p>
-    En nedtrekksliste med skriving skiller seg fra en vanlig{' '}
-    <a href="https://skatteetaten.github.io/frontend-components/#dropdown">
-      nedtrekksliste (Dropdown)
-    </a>{' '}
-    ved at brukeren kan skrive i hovedfeltet. Det er mulig å skrive inn nye ord
-    eller bare de første bokstavene, slik at det automatisk kommer opp et ord
-    fra listen. Hvis listen over valg er lang er denne nedtrekkslisten spesielt
-    nyttig.
+    En nedtrekksliste med skriving lar brukeren skrive i hovedfeltet. Det er
+    mulig å skrive inn nye ord eller bare de første bokstavene slik at det
+    automatisk kommer opp et ord fra listen. Hvis listen over valg er lang er
+    denne nedtrekkslisten spesielt nyttig.
   </p>
 
-  <h3>Tilpass listen etter situasjonen</h3>
-  <p>ComboBoxen er fleksibel og du kan tilpasse den til ulike sitasjoner.</p>
+  <h3>Tilpass ComboBoxen til ulike sitasjoner:</h3>
 
   <p>Du kan velge å la brukeren</p>
   <p>
     <ul>
-      <li>velge blant et sett med verdier, eller skrive inn nye</li>
-      <li>kun å velge fra listen av gyldige verdier</li>
       <li>bare velge fra nedtrekkslisten</li>
       <li>få opp menyen fra listen automatisk når feltet blir klikket på</li>
+      <li>velge blant ordene eller verdiene i listen eller skrive inn nye</li>
+      <li>kun å velge ord eller verdier fra listen</li>
     </ul>
+  </p>
+  <h3>Relatert komponent </h3>
+  <p>
+    <a href="#dropdown">Dropdown (Nedtrekksliste)</a>
   </p>
 </>
 ```

@@ -1,14 +1,5 @@
 const fontUrls: string[] = [];
-
-fontUrls.push('url("' + require('./SkeIconfont.eot') + '")');
-fontUrls.push(
-  'url("' +
-    require('./SkeIconfont.eot') +
-    '?#iefix") format("embedded-opentype")'
-);
-fontUrls.push('url("' + require('./SkeIconfont.woff2') + '") format("woff2")');
 fontUrls.push('url("' + require('./SkeIconfont.woff') + '") format("woff")');
-fontUrls.push('url("' + require('./SkeIconfont.ttf') + '") format("truetype")');
 
 export default {
   style: {

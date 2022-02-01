@@ -10,26 +10,28 @@ import { getClassNames, getCalloutStyles } from './Dropdown.classNames';
 import { generateId } from '../utils';
 import { Icon } from '../Icon';
 import { LabelWithCallout } from '../LabelWithCallout';
-import { IStyleFunctionOrObject } from '@uifabric/utilities';
+import { IStyleFunctionOrObject } from '@fluentui/utilities';
 import { DropdownProps } from './DropDown.types';
 
-/**
- * @visibleName Dropdown (Nedtrekksliste)
+/*
+ * visibleName Dropdown (Nedtrekksliste)
  */
 export const Dropdown: React.FC<DropdownProps> = (props) => {
   const {
     children,
-    labelWithCalloutAutoDismiss,
     errorMessage,
     label,
     labelButtonAriaLabel,
     help,
     onRenderLabel,
+    required = false,
     className,
     id,
-    labelCallout,
+    labelWithCalloutProps,
     onCalloutToggle,
+    calloutProps,
     readOnly,
+    requiredWithMark = false,
     ...rest
   } = props;
 
@@ -49,11 +51,13 @@ export const Dropdown: React.FC<DropdownProps> = (props) => {
         id={labelId}
         inputId={readOnly ? inputId : inputId + '-option'}
         label={label}
+        requiredMark={requiredWithMark}
         buttonAriaLabel={labelButtonAriaLabel}
         help={help}
         onCalloutToggle={onCalloutToggle}
-        autoDismiss={labelWithCalloutAutoDismiss}
-        {...labelCallout}
+        calloutProps={{
+          ...labelWithCalloutProps?.calloutProps,
+        }}
       />
       {readOnly ? (
         <input
@@ -75,10 +79,14 @@ export const Dropdown: React.FC<DropdownProps> = (props) => {
           ariaLabel={label}
           aria-invalid={errorMessage ? true : false}
           id={inputId}
+          required={required || requiredWithMark}
           className={classnames(styles.main, className)}
           styles={dropdownStyles}
           onRenderCaretDown={() => <Icon iconName={'ChevronDown'} />}
           errorMessage={errorMessage}
+          calloutProps={{
+            ...calloutProps,
+          }}
         >
           {children}
         </FabricDropdown>

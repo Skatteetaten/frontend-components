@@ -1,24 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Dialog komponent matcher snapshot 1`] = `
-<div>
-  <Dialog
-    dialogContentProps={
-      Object {
-        "closeButtonAriaLabel": "Lukk",
-        "subText": undefined,
-        "title": undefined,
-        "type": 0,
-      }
-    }
-    modalProps={
-      Object {
-        "className": "SkeDialog-42",
-        "isBlocking": undefined,
-        "isModeless": false,
-      }
-    }
-    tabletContentOverflows={false}
-  />
-</div>
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;

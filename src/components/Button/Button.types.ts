@@ -6,11 +6,13 @@ export interface ButtonProps extends IButtonProps {
   /** Benyttes for å definere type knapp som skal benyttes */
   buttonStyle?:
     | 'primary'
-    | 'primaryRounded'
-    | 'primaryRoundedFilled'
+    | 'primaryCornered'
     | 'warning'
     | 'secondary'
-    | 'primaryLarge';
+    | 'secondarySimple'
+    | 'callToAction';
+  /** Om knappen skal ta full bredde på mindre skjermer */
+  mobileFullWidth?: boolean;
   /**
    * Skjulte props
    */

@@ -1,12 +1,10 @@
 ```js noeditor
-import {
-  Accordion,
-  AccordionItem,
-  Card,
-  TextField,
-  Button,
-  RadioButtonGroup,
-} from '@skatteetaten/frontend-components';
+import { Accordion } from '@skatteetaten/frontend-components/Accordion';
+import { AccordionItem } from '@skatteetaten/frontend-components/Accordion/AccordionItem';
+import { Button } from '@skatteetaten/frontend-components/Button';
+import { Card } from '@skatteetaten/frontend-components/Card';
+import { RadioButtonGroup } from '@skatteetaten/frontend-components/RadioButtonGroup';
+import { TextField } from '@skatteetaten/frontend-components/TextField';
 
 <div>
   <Card
@@ -52,10 +50,11 @@ import {
           <div style={{ padding: '2px' }}>
             <Card color={Card.Color.BEIGE}>Alle felt må fylles ut.</Card>
             <br />
-            <TextField label={'Bedriftens navn'} inputSize="large" />
+            <TextField required label={'Bedriftens navn'} inputSize="large" />
             <br />
             <RadioButtonGroup
               label="Type virksomhet"
+              required
               labelSize="large"
               options={[
                 {
@@ -94,10 +93,15 @@ import {
               Felt markert med * må fylles ut.
             </Card>
             <br />
-            <TextField label={'Navn på virksomhet *'} inputSize="large" />
+            <TextField
+              requiredWithMark
+              label={'Navn på virksomhet'}
+              inputSize="large"
+            />
             <br />
             <RadioButtonGroup
-              label="Type virksomhet *"
+              requiredWithMark
+              label="Type virksomhet"
               labelSize="large"
               options={[
                 {

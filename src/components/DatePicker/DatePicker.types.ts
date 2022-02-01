@@ -1,6 +1,8 @@
 import { IDatePickerProps } from '@fluentui/react';
 import { calloutState, LabelWithCalloutProps } from '../LabelWithCallout';
 
+import { CalloutProps } from '../Callout/Callout.types';
+
 export interface DatePickerProps extends IDatePickerProps {
   /** @ignore */
   borderless?: IDatePickerProps['borderless'];
@@ -23,11 +25,11 @@ export interface DatePickerProps extends IDatePickerProps {
   /** aria-label for knapp i label */
   labelButtonAriaLabel?: string;
   /** Overstyr label, se LabelWithCallout komponent */
-  labelCallout?: LabelWithCalloutProps;
-  /** Lukk callout på blur */
-  labelWithCalloutAutoDismiss?: boolean;
+  labelWithCalloutProps?: LabelWithCalloutProps;
+  /** Overstyr Datepicker Callout, se CalloutProps komponent */
+  datepickerCalloutProps?: CalloutProps;
   /** Språk vist i komponent. Default er norsk bokmål. */
-  language?: 'nb' | 'nn' | 'en';
+  language?: 'nb' | 'nn' | 'en' | 'se';
   /** Brukerspesifisert event for callout **/
   onCalloutToggle?: (
     oldCalloutState: calloutState,
@@ -35,6 +37,9 @@ export interface DatePickerProps extends IDatePickerProps {
   ) => void;
   /** Tilstand som kan benyttes når datovelger skal vises i lesemodus */
   readonlyMode?: boolean;
+  /** Om feltet er obligatorisk og skal markeres med stjerne (*) */
+  requiredWithMark?: boolean;
+
   /** @ignore */
   underlined?: IDatePickerProps['underlined'];
 }

@@ -1,10 +1,13 @@
-**OpenClose er enkelstående områder for å vise og skjule utdypende informasjon.**
+**OpenClose (Åpne og lukke): er enkelstående områder for å vise og skjule utdypende informasjon.**
 
 ```js
-import { OpenClose, Typography } from '@skatteetaten/frontend-components';
+import { OpenClose } from '@skatteetaten/frontend-components/OpenClose';
+import { Typography } from '@skatteetaten/frontend-components/Typography';
 
 // Inline styles are bad design https://reactjs.org/docs/faq-styling.html
 // Just for the purpose of the example
+
+const [state, setState] = React.useState({ open: false });
 
 const paraStyle = {
   marginBlockStart: '0',
@@ -23,7 +26,10 @@ const paraStyle = {
         </li>
         <li>godtgjørelser til direktør eller styremedlem i selskap i Norge</li>
         <li>gratiale, tantieme eller lignende ytelser fra norske selskap</li>
-        <li>lønn til utleid utenlandsk arbeidstaker, inkludert feriepenger</li>
+        <li>
+          lønn til utleid utenlandsk arbeidstaker, inkludert{' '}
+          <a href="#">feriepenger</a>
+        </li>
         <li>
           utgiftsgodtgjørelser, refusjoner og naturalytelser som er
           skattepliktige fordeler for deg, inkludert dekning av pendlerkostnader
@@ -33,7 +39,18 @@ const paraStyle = {
   </OpenClose>
 
   <br />
-  <OpenClose compact noBorder title={'Vis flere detaljer'}>
+  <OpenClose
+    compact
+    noBorder
+    isOnClickOnlyFiredOnOpen={false}
+    title={state.open ? 'Skjul detaljer' : 'Vis detaljer'}
+    onClick={() => setState({ open: !state.open })}
+    customClassNames={{
+      wrapper: 'myWrapperClass',
+      button: 'myButtonClass',
+      content: 'myContentClass',
+    }}
+  >
     <Typography>
       <p style={paraStyle}>
         Arbeidsgiveren din/den som utbetaler skal trekke kildeskatt av følgende
@@ -46,7 +63,10 @@ const paraStyle = {
         </li>
         <li>godtgjørelser til direktør eller styremedlem i selskap i Norge</li>
         <li>gratiale, tantieme eller lignende ytelser fra norske selskap</li>
-        <li>lønn til utleid utenlandsk arbeidstaker, inkludert feriepenger</li>
+        <li>
+          lønn til utleid utenlandsk arbeidstaker, inkludert{' '}
+          <a href="#">feriepenger</a>
+        </li>
         <li>
           utgiftsgodtgjørelser, refusjoner og naturalytelser som er
           skattepliktige fordeler for deg, inkludert dekning av pendlerkostnader
@@ -60,7 +80,8 @@ const paraStyle = {
 OpenClose som er åpen fra start:
 
 ```js
-import { OpenClose } from '@skatteetaten/frontend-components';
+import { OpenClose } from '@skatteetaten/frontend-components/OpenClose';
+import { Typography } from '@skatteetaten/frontend-components/Typography';
 
 // Inline styles are bad design https://reactjs.org/docs/faq-styling.html
 // Just for the purpose of the example
@@ -74,16 +95,19 @@ const paraStyle = {
   title={'Tilleggsmelding eller korrigert melding?'}
   headingLevel={2}
 >
-  <p style={paraStyle}>
-    Både tilleggsmelding og korrigert melding er endringsmeldinger. Forskjellen
-    er at tilleggsmelding kun inkluderer de endringene du skal gjøre, mens en
-    korrigert melding er en ny innlevering av hele mva-meldingen. Korrigert
-    melding skal kun brukes hvis du har ført mye av regnskapet feil.
-  </p>
-  <p>
-    Du kan gjøre endringer innen 3 år etter den opprinnelige innleveringsfristen
-    for mva-meldingen.
-  </p>
+  <Typography>
+    <p style={paraStyle}>
+      Både tilleggsmelding og korrigert melding er endringsmeldinger.
+      Forskjellen er at tilleggsmelding kun inkluderer de endringene du skal
+      gjøre, mens en korrigert melding er en ny innlevering av hele
+      mva-meldingen. Korrigert melding skal kun brukes hvis du har ført mye av
+      regnskapet feil.
+    </p>
+    <p>
+      Du kan gjøre endringer innen 3 år etter den opprinnelige
+      innleveringsfristen for mva-meldingen.
+    </p>
+  </Typography>
 </OpenClose>;
 ```
 

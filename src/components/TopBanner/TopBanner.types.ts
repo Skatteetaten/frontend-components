@@ -19,6 +19,8 @@ export interface TopBannerTypes {
   id?: string;
   /** Om logoen skal lenke til skatteetaten.no eller ikke (kun ekstern) */
   logoLink?: boolean;
+  /** Lenken når man klikker på logoen */
+  logoLinkUrl?: string;
   /** OnClick event som trigges av klikk på hjemlink */
   onClick?: () => void;
   /** Språk på logoen */

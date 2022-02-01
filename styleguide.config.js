@@ -51,6 +51,10 @@ module.exports = {
           content: 'src/sections/kom-i-gang/utviklere.md',
         },
         {
+          name: 'Designtokens',
+          content: 'src/sections/kom-i-gang/designtokens.md',
+        },
+        {
           name: 'Nettleserstøtte',
           content: 'src/sections/kom-i-gang/nettlesere.md',
         },
@@ -136,6 +140,7 @@ module.exports = {
     generateComponentsGroup('Varsler og meldinger', [
       'Callout',
       'Dialog',
+      'Modal',
       'MessageBar',
       'LabelWithCallout',
       'ErrorMessage',
@@ -184,8 +189,10 @@ module.exports = {
   ],
   getComponentPathLine(componentPath) {
     const name = path.basename(componentPath, '.tsx');
-
-    return `import { ${name} } from '${pkg.name}';`;
+    const dirname = path.dirname(componentPath);
+    const dirNameStriped = dirname.replace('src/components/', '');
+    // src/components/Accordion/AccordionItem/AccordionItem.tsx
+    return `import { ${name} } from '${pkg.name}/${dirNameStriped}';`;
   },
   theme: {
     color: {

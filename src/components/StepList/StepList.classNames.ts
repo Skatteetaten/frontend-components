@@ -1,5 +1,5 @@
-import { mergeStyleSets, IStyle } from '@uifabric/merge-styles';
-import { getTheme } from '@uifabric/styling';
+import { mergeStyleSets, IStyle } from '@fluentui/merge-styles';
+import { getTheme } from '@fluentui/react/lib/Styling';
 import { FontSizes, FontWeights, PaletteProps } from '../utils';
 
 const getStepContentPadding = (stepType: string): string => {
@@ -19,7 +19,7 @@ const getStepContentInner = (
 ): IStyle => {
   if (stepType !== 'result') {
     return {
-      display: activeStep ? 'block' : 'flex',
+      display: activeStep || stepType === 'next' ? 'block' : 'flex',
       width: '100%',
       margin: '0 0 8px 0',
       selectors:
@@ -37,8 +37,8 @@ const getStepContentInner = (
       selectors: {
         '@media  only screen and (max-width: 479px)': stepType === 'result' && {
           paddingBottom: '21px',
-          borderBottom: `3px solid ${palette.skeColor.green}`,
-          borderTop: `3px solid ${palette.skeColor.green}`,
+          borderBottom: 'none',
+          borderTop: 'none',
         },
       },
     };
@@ -55,7 +55,7 @@ export const getClassNames = (props) => {
       height: '2px',
       backgroundColor: palette.skeColor.lightGrey,
       position: 'absolute',
-      top: 40,
+      bottom: 34,
       selectors: {
         '@media only screen and (max-width: 479px)': {
           top: 35,
@@ -156,14 +156,10 @@ export const getClassNames = (props) => {
       backgroundColor: palette.skeColor.lightGrey,
       position: 'absolute',
       top: 0,
-      bottom: 0,
+      bottom: props.stepType === 'next' ? 34 : 0,
       left: props.stepType === 'result' ? '7px' : undefined,
-
       marginTop: '10px',
-      height:
-        props.stepType === 'next' || props.stepType === 'result'
-          ? '30px'
-          : undefined,
+      height: props.stepType === 'result' ? '30px' : undefined,
       selectors: {
         '&::after': props.stepType === 'next' && {
           border: 'solid ' + palette.skeColor.lightGrey,
@@ -173,8 +169,10 @@ export const getClassNames = (props) => {
           transform: 'rotate(-45deg)',
           width: '4px',
           height: '4px',
-          margin: '25px 0 0 10px',
           content: '""',
+          position: 'absolute',
+          bottom: '-5px',
+          left: '7px',
           selectors: {
             '@media only screen and (max-width: 479px)': {
               borderWidth: '0 1px 1px 0',
@@ -264,11 +262,6 @@ export const getClassNames = (props) => {
         '@media only screen and (max-width: 479px)': {
           display: 'flex',
           fontSize: FontSizes.medium,
-
-          borderTop:
-            props.stepType === 'result'
-              ? `4px solid ${palette.skeColor.green}`
-              : undefined,
           margin: props.stepType === 'result' ? 0 : undefined,
           paddingTop: props.stepType === 'result' ? '8px' : '0',
         },
@@ -286,14 +279,19 @@ export const getClassNames = (props) => {
       display: props.showStep ? 'block' : 'none',
       counterIncrement: 'step-counter',
       position: 'relative',
-      padding: props.stepType === 'result' ? '0 18px' : '0 20px',
+      padding: props.stepType === 'result' ? '0 17px' : '0 20px',
       border:
         props.stepType === 'result'
           ? `4px solid ${palette.skeColor.green}`
           : 'none',
       selectors: {
         '@media  only screen and (max-width: 479px)': {
-          border: 'none',
+          border: '0 none',
+          outline:
+            props.stepType === 'result'
+              ? `4px solid ${palette.skeColor.green}`
+              : 'none',
+          outlineOffset: props.stepType === 'result' ? '0.75rem' : 'none',
           padding: '0 2px',
         },
       },

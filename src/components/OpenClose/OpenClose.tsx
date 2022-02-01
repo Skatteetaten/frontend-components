@@ -8,10 +8,11 @@ import { OpenCloseProps } from './OpenClose.types';
 export const OpenClose: React.FC<OpenCloseProps> = (props) => {
   const {
     title,
-    className,
+    customClassNames,
     headingLevel,
     iconRight,
     onClick,
+    isOnClickOnlyFiredOnOpen = true,
     children,
   } = props;
 
@@ -22,8 +23,14 @@ export const OpenClose: React.FC<OpenCloseProps> = (props) => {
   const toggleVisibility = () => setContentOpen(!isContentOpen);
 
   const clickHandler = () => {
-    if (onClick && !isContentOpen) {
-      onClick();
+    if (onClick) {
+      if (isOnClickOnlyFiredOnOpen) {
+        if (!isContentOpen) {
+          onClick();
+        }
+      } else {
+        onClick();
+      }
     }
     toggleVisibility();
   };
@@ -31,12 +38,16 @@ export const OpenClose: React.FC<OpenCloseProps> = (props) => {
   const styles = getClassNames(props);
 
   return (
-    <div className={className}>
+    <div className={customClassNames?.wrapper}>
       <button
         className={
           isContentOpen
-            ? classnames(styles.toggleButton, styles.toggleButtonOpen)
-            : styles.toggleButton
+            ? classnames(
+                styles.toggleButton,
+                styles.toggleButtonOpen,
+                customClassNames?.button
+              )
+            : classnames(styles.toggleButton, customClassNames?.button)
         }
         aria-expanded={isContentOpen}
         onClick={clickHandler}
@@ -50,7 +61,11 @@ export const OpenClose: React.FC<OpenCloseProps> = (props) => {
           }
         >
           {headingLevel && title ? (
-            <Heading text={title} level={headingLevel} />
+            <Heading
+              text={title}
+              level={headingLevel}
+              className="styledHeading"
+            />
           ) : (
             title
           )}
@@ -59,7 +74,14 @@ export const OpenClose: React.FC<OpenCloseProps> = (props) => {
       </button>
       {isContentOpen && (
         <div
-          className={!iconRight ? styles.content : styles.contentWhenIconRight}
+          className={
+            !iconRight
+              ? classnames(styles.content, customClassNames?.content)
+              : classnames(
+                  styles.contentWhenIconRight,
+                  customClassNames?.content
+                )
+          }
         >
           {children}
         </div>
@@ -70,4 +92,5 @@ export const OpenClose: React.FC<OpenCloseProps> = (props) => {
 
 OpenClose.defaultProps = {
   underline: false,
+  iconRight: false,
 };

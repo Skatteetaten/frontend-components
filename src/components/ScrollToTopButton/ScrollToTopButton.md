@@ -1,13 +1,13 @@
-**ScrollToTopButton brukes til å gå til toppen av siden.**
+**ScrollToTopButton (Gå til toppen): brukes til å gå til toppen av siden.**
 
 ```js noeditor
-import { MessageBar } from '@skatteetaten/frontend-components';
+import { MessageBar } from '@skatteetaten/frontend-components/MessageBar';
 
 <MessageBar>Rull nedover på siden for å se knappen.</MessageBar>;
 ```
 
 ```js
-import { ScrollToTopButton } from '@skatteetaten/frontend-components';
+import { ScrollToTopButton } from '@skatteetaten/frontend-components/ScrollToTopButton';
 
 <div>
   <ScrollToTopButton label={'Til toppen'} />
@@ -19,11 +19,10 @@ import { ScrollToTopButton } from '@skatteetaten/frontend-components';
   <h3>Knapp for å navigere til toppen av siden</h3>
   <p>
     ScrollToTopButton bruker du på lange sider når det er nyttig for brukeren å
-    gå tilbake til toppen av siden. Dersom skjermbredden er større enn 1170px
-    skal du plassere symbolet nede til høyre, og er skjermbredden mindre skal
-    symbolet være sentrert. Brukeren vil se knappen som et overlag.
+    gå tilbake til toppen av siden. På store skjermer (1366px og opp) plasseres
+    knappen nede til venstre. Dersom knappen dekker annet innhold kan du
+    overstyre standardplasseringen.
   </p>
-  <p>Knappen må kunne brukes med tastatur, ikke bare rulle med mus.</p>
 </>
 ```
 

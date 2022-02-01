@@ -1,11 +1,11 @@
-**Toppbanner vises på toppen i løsningene og skiller interne og eksterne løsninger fra hverandre**
+**TopBanner (Topp): vises på toppen i løsningene og skiller interne og eksterne løsninger fra hverandre**
 
 ### Publikumsløsninger
 
 Ikke-innlogget publikumsløsning:
 
 ```js
-import { TopBanner } from '@skatteetaten/frontend-components';
+import { TopBanner } from '@skatteetaten/frontend-components/TopBanner';
 
 <TopBanner
   external
@@ -19,15 +19,14 @@ Innlogget publikumsløsning:
 
 ```js
 import { useState } from 'react';
-import {
-  TopStripe,
-  LanguagePicker,
-  TopStripeMenu,
-  TopStripeButton,
-  TopBanner,
-  Link,
-  Icon,
-} from '@skatteetaten/frontend-components';
+
+import { Icon } from '@skatteetaten/frontend-components/Icon';
+import { Link } from '@skatteetaten/frontend-components/Link';
+import { TopBanner } from '@skatteetaten/frontend-components/TopBanner';
+import { TopStripe } from '@skatteetaten/frontend-components/TopStripe';
+import { LanguagePicker } from '@skatteetaten/frontend-components/TopStripe/LanguagePicker';
+import { TopStripeButton } from '@skatteetaten/frontend-components/TopStripe/TopStripeButton';
+import { TopStripeMenu } from '@skatteetaten/frontend-components/TopStripe/TopStripeMenu';
 
 const [language, setLanguage] = useState('nb');
 
@@ -55,6 +54,7 @@ const [language, setLanguage] = useState('nb');
           showOnMobile={false}
           closeMenuAriaLabel="Lukk endre skriftstørrelse"
           title={'Endre skriftstørrelse'}
+          contentIsMenu={false}
         >
           <div style={{ fontSize: '24px', marginTop: '8px' }}>
             Hold Ctrl-tasten nede (Cmd-tasten på Mac). Trykk på + for å
@@ -88,7 +88,7 @@ const [language, setLanguage] = useState('nb');
 På startsiden i et fagsystem:
 
 ```js
-import { TopBanner } from '@skatteetaten/frontend-components';
+import { TopBanner } from '@skatteetaten/frontend-components/TopBanner';
 
 <div>
   <TopBanner compact homeText="Systemnavn" homeUrl="#topbanner">
@@ -100,7 +100,7 @@ import { TopBanner } from '@skatteetaten/frontend-components';
 På en underside i et fagsystem:
 
 ```js
-import { TopBanner } from '@skatteetaten/frontend-components';
+import { TopBanner } from '@skatteetaten/frontend-components/TopBanner';
 
 <div>
   <TopBanner
@@ -116,59 +116,59 @@ import { TopBanner } from '@skatteetaten/frontend-components';
 
 ```js noeditor beskrivelse
 <>
-  <h3>Forskjell på interne systemer og publikumsløsninger</h3>
+  <h3>Forskjellig toppbanner på interne løsninger og på publikumsløsninger</h3>
   <p>
     Alle løsningene våre har et toppbanner som visuelt skiller interne og
-    eksterne fra hverandre.
+    eksterne nettløsninger
   </p>
 
   <ul>
     <li>Interne løsninger bruker fylt toppbanner med skrå strek.</li>
     <li>
-      Eksterne bruker en smal lang strek, slik som på skatteetaten.no. Dette
-      lager en smidig overgang fra skatteetaten.no til en tilknyttet løsning.
+      Eksterne løsninger bruker en smal lang strek, slik som på skatteetaten.no.
+      Dette lager en smidig overgang fra publikumsløsningen til en tilknyttet
+      løsning.
     </li>
   </ul>
+
+  <h3>Slik setter du opp TopBanner på interne løsninger</h3>
+
   <p>
-    Det er valgfritt å bruke kompakt eller standard utgave av banneret, men du
-    må være konsekvent gjennom hele løsningen.
-  </p>
-  <h3>Startsider på interne løsninger</h3>
-  <p>
-    Interne fagsystemer har en hovedside der brukeren finner arbeidsoppgaver
-    eller søker etter opplysninger. På de interne løsningene gjelder følgende:
+    Startsider: Interne fagsystemer har en startside der brukeren finner
+    arbeidsoppgaver eller søker etter opplysninger. På startsiden gjelder
+    følgende:{' '}
   </p>
   <ul>
     <li>
-      TopBanner kan holdes enkel og kun inneholde navn på logo og tittel på
+      Hold toppbanneret enkelt ved å kun ha navn på logo og tittel på
       applikasjonen.
     </li>
+
     <li>
       TopBanner kan inneholde meny til rapporter og enkeltstående sider eller
       personlige innstillinger.
     </li>
-    <li>
-      Du trenger ikke skrive «Startside» eller «Velkommen» i toppbanneret.
-    </li>
+    <li>Unngå å skrive «Startside» eller «Velkommen» i toppbanneret.</li>
   </ul>
 
-  <h3>Undersider på interne løsinger</h3>
-  <p>De fleste interne systemer har en eller flere undersider.</p>
+  <p>
+    Undersider: På undersidene på interne fagsystemer viser vi gjerne sakstypen
+    eller en arbeidsoppgaven. På undersider gjelder følgende:
+  </p>
 
   <ul>
     <li>
-      Banneret på undersidene skal ha en tittel som formidler konteksten og gjør
-      innholdet relevant for brukeren, for eksempel en sakstype eller
-      arbeidsoppgave.
+      Banneret skal ha en tittel som gjør innholdet relevant og enkelt å bruke,
+      for eksempel hvilken sakstype eller arbeidsoppgave det gjelder.
     </li>
     <li>
-      Velger du å ha arbeidsoppgaven i toppbanneret, skal også
+      Hvis du velger å ha arbeidsoppgaven i toppbanneret, skal også
       arbeidsliste-funksjonene «Gjør tilgjengelig», «Sett på vent» og «Fordel»
       stå i umiddelbar nærhet.
     </li>
   </ul>
 
-  <h3>Klikkbar logo i publikumsløsninger</h3>
+  <h3>Pass på å ha klikkbar logo i publikumsløsninger</h3>
   <p>
     For alle publikumsløsninger skal logoen som hovedregel være klikkbar og ta
     brukeren til forsiden av{' '}

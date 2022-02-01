@@ -1,16 +1,30 @@
 import React from 'react';
+import { RowCustomClassNames } from './TableRow';
 
 export enum Language {
   en = 'en',
   nb = 'nb',
   nn = 'nn',
+  se = 'se',
+}
+
+export interface RowData {
+  hideEdit?: boolean;
+  hideSeparator?: boolean;
+  customClassNames?: RowCustomClassNames;
 }
 
 export interface TableProps<P> extends React.HTMLAttributes<HTMLDivElement> {
-  /** Possibility to enter your own class to override styling */
-  className?: string;
   /** Global attribute which must be unique for the whole HTML document*/
   id?: string;
+  /** Custom classNames for å overskrive styling */
+  customClassNames?: {
+    wrapper?: string;
+    table?: string;
+    caption?: string;
+    tabellThead?: string;
+    tabellTheadRow?: string;
+  };
   /** Content elements in the table */
   data: P[];
   /**  Allows you to edit rows in the table.
@@ -47,7 +61,7 @@ export interface TableProps<P> extends React.HTMLAttributes<HTMLDivElement> {
   /**  Configuration for column name and order*/
   columns?: {
     /** Column name */
-    name: string;
+    name: string | JSX.Element;
     /** Object key */
     fieldName: string;
     /** Override the left alignment inside the cell: 'right' or 'center'. */

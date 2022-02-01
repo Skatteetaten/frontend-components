@@ -1,11 +1,11 @@
-**Dialog brukes til å vise innhold midt på skjermen og tiltrekke seg brukerens oppmerksomhet.**
+**Dialog (Dialogboks): brukes til å vise innhold midt på skjermen og tiltrekke seg brukerens oppmerksomhet.**
 
 ```js
-import {
-  Dialog,
-  Button,
-  ActionButton,
-} from '@skatteetaten/frontend-components';
+import { ActionButton } from '@skatteetaten/frontend-components/ActionButton';
+import { Button } from '@skatteetaten/frontend-components/Button';
+import { Dialog } from '@skatteetaten/frontend-components/Dialog';
+
+import designtokenBreakpoints from '../../components/utils/designtokens/_breakpoints.json';
 
 const [state, setState] = React.useState({ hideDialog: true });
 
@@ -14,28 +14,31 @@ function closeDialog() {
 }
 
 <div>
-  <Button
-    buttonStyle="primaryRounded"
+  <ActionButton
+    buttonStyle="secondary"
+    icon="InfoOutline"
     onClick={() => setState({ hideDialog: false })}
   >
     Vis standard dialog
-  </Button>
+  </ActionButton>
   <Dialog
     hidden={state.hideDialog}
     type={Dialog.Type.normal}
     onDismiss={closeDialog}
-    title="Kansellere arbeidsoppgaven?"
+    title="Slette arbeidsoppgaven?"
     forceFocusInsideTrap
-    minWidth="400px"
-    maxWidth="600px"
+    minWidth={designtokenBreakpoints['ske-breakpoint-sm']}
+    maxWidth={designtokenBreakpoints['ske-breakpoint-md']}
   >
-    <p>Er du sikker på at du vil kansellere arbeidsoppgaven?</p>
+    <p>Er du sikker på at du vil slette arbeidsoppgaven?</p>
 
     <p>Handlingen kan ikke reverseres</p>
     <Dialog.Footer>
-      <ActionButton onClick={closeDialog}>Avbryt</ActionButton>
-      <Button onClick={closeDialog} hoved>
-        Kanseller
+      <Button buttonStyle="secondarySimple" onClick={closeDialog}>
+        Avbryt
+      </Button>
+      <Button buttonStyle="warning" onClick={closeDialog}>
+        Slett
       </Button>
     </Dialog.Footer>
   </Dialog>
@@ -43,11 +46,11 @@ function closeDialog() {
 ```
 
 ```js
-import {
-  Dialog,
-  Button,
-  NavigationTile,
-} from '@skatteetaten/frontend-components';
+import { ActionButton } from '@skatteetaten/frontend-components/ActionButton';
+import { Dialog } from '@skatteetaten/frontend-components/Dialog';
+import { NavigationTile } from '@skatteetaten/frontend-components/NavigationTile';
+
+import designtokenBreakpoints from '../../components/utils/designtokens/_breakpoints.json';
 
 const [state, setState] = React.useState({ hideDialog: true });
 
@@ -69,20 +72,21 @@ const content1 = [
 ];
 
 <div>
-  <Button
-    buttonStyle="primaryRounded"
+  <ActionButton
+    buttonStyle="secondary"
     onClick={() => setState({ hideDialog: false })}
+    icon="InfoOutline"
   >
     Vis luftig dialog
-  </Button>
+  </ActionButton>
   <Dialog
     hidden={state.hideDialog}
     type={Dialog.Type.normal}
     onDismiss={closeDialog}
     forceFocusInsideTrap
     title="Velg den inngangen som passer for deg"
-    minWidth="500px"
-    maxWidth="600px"
+    minWidth={designtokenBreakpoints['ske-breakpoint-sm']}
+    maxWidth={designtokenBreakpoints['ske-breakpoint-md']}
     layoutStyle={'airy'}
   >
     <p>
@@ -103,11 +107,9 @@ const content1 = [
 ```
 
 ```js
-import {
-  Dialog,
-  Button,
-  ActionButton,
-} from '@skatteetaten/frontend-components';
+import { ActionButton } from '@skatteetaten/frontend-components/ActionButton';
+import { Button } from '@skatteetaten/frontend-components/Button';
+import { Dialog } from '@skatteetaten/frontend-components/Dialog';
 
 const [state, setState] = React.useState({ hideDialog: true });
 
@@ -116,12 +118,13 @@ function closeDialog() {
 }
 
 <div>
-  <Button
-    buttonStyle="primaryRounded"
+  <ActionButton
+    buttonStyle="secondary"
     onClick={() => setState({ hideDialog: false })}
+    icon="InfoOutline"
   >
     Vis viktig dialog
-  </Button>
+  </ActionButton>
   <Dialog
     hidden={state.hideDialog}
     type={Dialog.Type.normal}
@@ -148,6 +151,8 @@ import Dialog from '@skatteetaten/frontend-components/Dialog';
 import Button from '@skatteetaten/frontend-components/Button';
 import ActionButton from '@skatteetaten/frontend-components/ActionButton';
 
+import designtokenBreakpoints from '../../components/utils/designtokens/_breakpoints.json';
+
 const [state, setState] = React.useState({ hideDialog: true });
 
 function closeDialog() {
@@ -155,12 +160,13 @@ function closeDialog() {
 }
 
 <div>
-  <Button
-    buttonStyle="primaryRounded"
+  <ActionButton
+    buttonStyle="secondary"
     onClick={() => setState({ hideDialog: false })}
+    icon="InfoOutline"
   >
     Vis dialog som lukkes aktivt
-  </Button>
+  </ActionButton>
   <Dialog
     hidden={state.hideDialog}
     type={Dialog.Type.normal}
@@ -168,8 +174,8 @@ function closeDialog() {
     modalProps={{ isBlocking: true, isModeless: false }}
     title="Meldinger"
     forceFocusInsideTrap
-    minWidth="400px"
-    maxWidth="600px"
+    minWidth={designtokenBreakpoints['ske-breakpoint-sm']}
+    maxWidth={designtokenBreakpoints['ske-breakpoint-md']}
   >
     <p>Du har ingen nye meldinger.</p>
 
@@ -225,7 +231,13 @@ function closeDialog() {
 ```
 
 ```js noeditor beskrivelse
+import { MessageBar } from '@skatteetaten/frontend-components/MessageBar';
+
 <div>
+  <MessageBar type={MessageBar.Type.info}>
+    Merk at denne komponenten foreløpig ikke fungerer i micro frontends. Bruk
+    Modal i det stedet.
+  </MessageBar>
   <h3>En dialogboks fremhever informasjon</h3>
   <p>
     Dialogboksen dukker opp midt på skjermen for å tiltrekke seg brukerens
@@ -251,5 +263,5 @@ function closeDialog() {
     </a>{' '}
     for hjelp til å skrive gode tekster.
   </p>
-</div>
+</div>;
 ```

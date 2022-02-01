@@ -1,4 +1,4 @@
-import { mergeStyleSets } from '@uifabric/merge-styles';
+import { mergeStyleSets } from '@fluentui/merge-styles';
 
 export const getClassNames = () => {
   return mergeStyleSets({

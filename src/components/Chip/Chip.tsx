@@ -3,8 +3,8 @@ import { getClassNames } from './Chip.classNames';
 import classnames from 'classnames';
 import { ChipProps, ChipType } from './Chip.types';
 
-/**
- * @visibleName Chip (Emneknagg)
+/*
+ * visibleName Chip (Emneknagg)
  */
 export class Chip extends React.PureComponent<ChipProps, {}> {
   static WARNING = ChipType.WARNING;

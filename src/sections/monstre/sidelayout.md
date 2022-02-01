@@ -1,5 +1,5 @@
 ```js noeditor
-import { Link, Card } from '@skatteetaten/frontend-components';
+import { Card } from '@skatteetaten/frontend-components/Card';
 
 <div>
   <Card
@@ -41,22 +41,20 @@ import { Link, Card } from '@skatteetaten/frontend-components';
 ```js
 import { useState } from 'react';
 
-import {
-  Link,
-  Card,
-  TextField,
-  TopStripe,
-  TopStripeMenu,
-  TopStripeButton,
-  TopBanner,
-  Typography,
-  LanguagePicker,
-  Icon,
-  StepList,
-  Step,
-  FooterContent,
-  Grid,
-} from '@skatteetaten/frontend-components';
+import { Card } from '@skatteetaten/frontend-components/Card';
+import { FooterContent } from '@skatteetaten/frontend-components/FooterContent';
+import { Grid } from '@skatteetaten/frontend-components/Grid';
+import { Icon } from '@skatteetaten/frontend-components/Icon';
+import { LanguagePicker } from '@skatteetaten/frontend-components/TopStripe/LanguagePicker';
+import { Link } from '@skatteetaten/frontend-components/Link';
+import { TextField } from '@skatteetaten/frontend-components/TextField';
+import { Step } from '@skatteetaten/frontend-components/StepList/Step';
+import { StepList } from '@skatteetaten/frontend-components/StepList/StepList';
+import { TopBanner } from '@skatteetaten/frontend-components/TopBanner';
+import { TopStripe } from '@skatteetaten/frontend-components/TopStripe';
+import { TopStripeMenu } from '@skatteetaten/frontend-components/TopStripe/TopStripeMenu';
+import { TopStripeButton } from '@skatteetaten/frontend-components/TopStripe/TopStripeButton';
+import { Typography } from '@skatteetaten/frontend-components/Typography';
 
 import { UseScreen } from '../../components/utils/ScreenPlugin';
 

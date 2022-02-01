@@ -1,5 +1,5 @@
 import React from 'react';
-import { Pagination, getSlidingWindowEdges } from '../index';
+import { Pagination, getSlidingWindowEdges } from '.';
 import { matches } from '../utils/test-utils';
 import { mount } from 'enzyme';
 

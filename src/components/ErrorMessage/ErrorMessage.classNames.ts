@@ -1,12 +1,12 @@
-import { mergeStyles } from '@uifabric/merge-styles';
+import { mergeStyles } from '@fluentui/merge-styles';
 import {
   getTheme,
   AnimationClassNames,
   getGlobalClassNames,
-} from '@uifabric/styling';
-import { MdIcons, PaletteProps } from '../utils';
+} from '@fluentui/react/lib/Styling';
+import { SkeIcons, PaletteProps } from '../utils';
 
-const errorIcon = "'" + MdIcons.icons.Error + "'";
+const errorIcon = "'" + SkeIcons.icons.Error + "'";
 export const getClassNames = function getClassNames() {
   const theme = getTheme();
   const { fonts } = theme;
@@ -22,13 +22,15 @@ export const getClassNames = function getClassNames() {
       display: 'block',
       color: palette.skeColor.error,
       fontWeight: 500,
+      lineHeight: '1rem',
       paddingTop: 5,
       selectors: {
         ':before': {
-          fontFamily: MdIcons.fontFace.fontFamily,
+          fontFamily: SkeIcons.fontFace.fontFamily,
           fontSize: fonts.small,
           content: errorIcon,
           marginRight: 3,
+          verticalAlign: 'text-bottom',
         },
       },
     },

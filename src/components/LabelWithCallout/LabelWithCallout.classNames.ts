@@ -1,7 +1,7 @@
 import { FontSizes, FontWeights, PaletteProps } from '../utils';
 import { LabelWithCalloutProps } from './LabelWithCallout.types';
-import { mergeStyleSets } from '@uifabric/merge-styles';
-import { getTheme } from '@uifabric/styling';
+import { mergeStyleSets } from '@fluentui/merge-styles';
+import { getTheme } from '@fluentui/react/lib/Styling';
 
 function getLabelSize(props: LabelWithCalloutProps) {
   switch (props.inputSize) {
@@ -107,8 +107,11 @@ export const getClassNames = (props: LabelWithCalloutProps) => {
         '& i': {
           fontSize: 'large',
         },
+        '&:focus': {
+          background: palette.skeColor.interactiveLight,
+        },
         '&:focus&:after': {
-          border: `2px solid ${palette.skeColor.blue}`,
+          border: `2px solid ${palette.skeColor.transparent}`,
           outline: 'none',
         },
       },

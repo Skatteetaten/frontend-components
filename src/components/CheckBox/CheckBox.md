@@ -1,9 +1,10 @@
-**Avkrysningsboks brukes for eksempel i skjemaer til å bekrefte ett eller flere valg.**
+**CheckBox (Avkrysningsboks): brukes for eksempel i skjemaer til å bekrefte ett eller flere valg.**
 
 ```js
-import { CheckBox, LabelWithCallout } from '@skatteetaten/frontend-components';
+import { CheckBox } from '@skatteetaten/frontend-components/CheckBox';
+import { LabelWithCallout } from '@skatteetaten/frontend-components/LabelWithCallout';
 
-<div style={{ width: '500px' }}>
+<div style={{ maxWidth: '500px' }}>
   <fieldset style={{ border: 'none', margin: '0', padding: '0' }}>
     <LabelWithCallout
       inFieldset
@@ -22,6 +23,14 @@ import { CheckBox, LabelWithCallout } from '@skatteetaten/frontend-components';
     />
     <CheckBox boxSide={'start'} label="Er enslig forsørger" />
   </fieldset>
+</div>;
+```
+
+```js
+import { CheckBox } from '@skatteetaten/frontend-components/CheckBox';
+
+<div style={{ maxWidth: '500px' }}>
+  <CheckBox boxSide={'start'} label="Jeg bekrefter at opplysningene stemmer" />
 </div>;
 ```
 
@@ -56,11 +65,11 @@ import { CheckBox, LabelWithCallout } from '@skatteetaten/frontend-components';
 
 ```js noeditor beskrivelse
 <>
-  <h3>Avkrysningsboks for vilkårlig valg i en liste</h3>
+  <h3>Avkrysningsboks for ett eller flere valg</h3>
   <p>
-    En avkrysningsboks er ideell i en liste med valg der brukeren skal krysse av
-    og få bekreftet dette valget. Hver avkrysning er uavhengig av de andre i
-    listen, og det er også mulig å ikke krysse av.
+    En avkrysningsboks lar brukeren krysse av ett eller flere valg i en liste.
+    Hver avkrysning er uavhengig av de andre i listen, og det er også mulig å
+    ikke krysse av.
   </p>
 
   <p>
@@ -71,13 +80,10 @@ import { CheckBox, LabelWithCallout } from '@skatteetaten/frontend-components';
     </a>
     .
   </p>
-
+  <h3>Relatert komponent</h3>
   <p>
     Hvis brukeren kun skal velge ett valg, bruk
-    <a href="https://skatteetaten.github.io/frontend-components/#radiobuttongroup">
-      {' '}
-      RadioButtonGroup
-    </a>.
+    <a href="#radiobuttongroup"> RadioButtonGroup</a>.
   </p>
 </>
 ```

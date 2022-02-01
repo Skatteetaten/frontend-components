@@ -8,8 +8,8 @@ import {
   ScrollToTopButtonState,
 } from './ScrollToTopButton.types';
 
-/**
- * @visibleName ScrollToTopButton (Gå til toppen)
+/*
+ * visibleName ScrollToTopButton (Gå til toppen)
  */
 export class ScrollToTopButton extends React.PureComponent<
   ScrollToTopButtonProps,
@@ -17,6 +17,7 @@ export class ScrollToTopButton extends React.PureComponent<
 > {
   static defaultProps = {
     label: 'Til toppen',
+    containerMaxWidth: undefined,
   };
 
   state = {
@@ -41,27 +42,55 @@ export class ScrollToTopButton extends React.PureComponent<
   }
 
   render() {
-    const { id, className, label } = this.props;
+    const { id, customClassNames, label } = this.props;
     // @ts-ignore TODO
     const styles = getClassNames(this.props);
 
     const visKlasse = this.state.skjult ? '' : styles.vis;
 
     return (
-      <div id={id} className={styles.topcontainer} aria-hidden="true">
-        <div className={classnames(styles.container, visKlasse, className)}>
-          <div className={styles.box}>
+      <div
+        id={id}
+        className={classnames(
+          styles.topcontainer,
+          customClassNames?.topContainer
+        )}
+        aria-hidden="true"
+      >
+        <div
+          className={classnames(
+            styles.container,
+            visKlasse,
+            customClassNames?.container
+          )}
+        >
+          <div className={classnames(styles.box, customClassNames?.box)}>
             <ActionButton
-              className={styles.actionButton}
+              className={classnames(
+                styles.actionButton,
+                customClassNames?.button
+              )}
               ariaLabel={label}
               onClick={() => window.scrollTo(0, 0)}
             >
-              <div className={styles.iconFixateContainer}>
+              <div
+                className={classnames(
+                  styles.iconFixateContainer,
+                  customClassNames?.iconContainer
+                )}
+              >
                 <div className={styles.iconFixate}>
-                  <Icon className={styles.icon} iconName={'MoveUp'} />
+                  <Icon
+                    className={classnames(styles.icon, customClassNames?.icon)}
+                    iconName={'MoveUp'}
+                  />
                 </div>
               </div>
-              <div className={styles.label}>{label}</div>
+              <div
+                className={classnames(styles.label, customClassNames?.label)}
+              >
+                {label}
+              </div>
             </ActionButton>
           </div>
         </div>

@@ -1,12 +1,83 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`TopStripe komponent matcher snapshot  1`] = `
-Array [
+<div
+  className=
+
+      {
+        position: relative;
+      }
+>
   <div
-    className="overlay-42"
-  />,
-  <ul
-    className="topStripeContainer-46"
-  />,
-]
+    className=
+
+        {
+          background-color: rgba(255, 255, 255, 0.8);
+          bottom: 0px;
+          display: none;
+          left: 0px;
+          min-height: 12.5rem;
+          position: fixed;
+          right: 0px;
+          top: 0px;
+          transition: 0.3s ease-out;
+          z-index: 100;
+        }
+  />
+  <div
+    className=
+
+        {
+          background-color: #1a1a1a;
+          position: relative;
+          z-index: 125;
+        }
+  >
+    <ul
+      className=
+
+          {
+            align-items: center;
+            background-color: #1a1a1a;
+            color: #ffffff;
+            display: flex;
+            flex-wrap: wrap;
+            font-size: 0.875rem;
+            justify-content: space-between;
+            padding-bottom: 0px;
+            padding-left: 0px;
+            padding-right: 0px;
+            padding-top: 0px;
+            position: relative;
+            z-index: 150;
+          }
+          & li {
+            list-style-type: none;
+            position: relative;
+          }
+          & a {
+            border: none;
+            color: #ffffff;
+            font-weight: 400;
+            text-decoration: underline;
+          }
+          & a:active {
+            color: #1a1a1a;
+          }
+          & a:active i {
+            color: #1a1a1a;
+          }
+          @media (min-width: 480px){& {
+            justify-content: flex-end;
+            margin-bottom: 0;
+            margin-left: 0.5rem;
+            margin-right: 0.5rem;
+            margin-top: 0;
+          }
+          @media (min-width: 1024px){& {
+            max-width: 100%;
+          }
+    />
+  </div>
+</div>
 `;

@@ -1,21 +1,19 @@
 ```js noeditor
-import {
-  Accordion,
-  AccordionItem,
-  Card,
-  Icon,
-  Grid,
-  LabelWithCallout,
-  ComboBox,
-  Button,
-  Link,
-  MessageBar,
-  TextField,
-  Typography,
-  Chip,
-  Image,
-  Callout,
-} from '@skatteetaten/frontend-components';
+import { Accordion } from '@skatteetaten/frontend-components/Accordion';
+import { AccordionItem } from '@skatteetaten/frontend-components/Accordion/AccordionItem';
+import { Button } from '@skatteetaten/frontend-components/Button';
+import { Callout } from '@skatteetaten/frontend-components/Callout';
+import { Card } from '@skatteetaten/frontend-components/Card';
+import { Chip } from '@skatteetaten/frontend-components/Chip';
+import { ComboBox } from '@skatteetaten/frontend-components/ComboBox';
+import { Grid } from '@skatteetaten/frontend-components/Grid';
+import { Icon } from '@skatteetaten/frontend-components/Icon';
+import { Image } from '@skatteetaten/frontend-components/Image';
+import { LabelWithCallout } from '@skatteetaten/frontend-components/LabelWithCallout';
+import { Link } from '@skatteetaten/frontend-components/Link';
+import { MessageBar } from '@skatteetaten/frontend-components/MessageBar';
+import { TextField } from '@skatteetaten/frontend-components/TextField';
+import { Typography } from '@skatteetaten/frontend-components/Typography';
 
 const [state, setState] = React.useState({
   isTitleCalloutVisible: false,
@@ -172,7 +170,7 @@ const eksempel = '[TODO eksempel]';
           </Grid.Row>
         </Grid>
         <div style={{ display: 'flex', alignItems: 'baseline' }}>
-          <div style={{ width: '180px', marginBottom: '16px' }}>
+          <div style={{ maxWidth: '180px', marginBottom: '16px' }}>
             <Card color={Card.Color.BEIGE}>Alle felt må fylles ut.</Card>{' '}
           </div>
           <div
@@ -364,7 +362,7 @@ const eksempel = '[TODO eksempel]';
         </h2>
 
         <div style={{ display: 'flex' }}>
-          <div style={{ width: '500px' }}>
+          <div style={{ maxWidth: '500px' }}>
             <ComboBox
               label="Velg type opplysninger du vil legge til"
               help="Dette feltet foreslår en verdi når du begynner å skrive. Du kan også bla gjennom listen og velge på den måten."

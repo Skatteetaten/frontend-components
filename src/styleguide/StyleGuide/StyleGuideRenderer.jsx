@@ -1,13 +1,14 @@
 import { withRouter } from 'react-router';
-import {
-  ActionButton,
-  Link,
-  Grid,
-  FooterContent,
-  TopBanner,
-} from '../../components/index';
+
 import { getClassNames } from './classNames';
 import React from 'react';
+
+import { ActionButton } from '../../components/ActionButton';
+import { FooterContent } from '../../components/FooterContent';
+import { Grid } from '../../components/Grid';
+import { Link } from '../../components/Link';
+import { TopBanner } from '../../components/TopBanner';
+
 import './style.css';
 
 const ScrollToTop = withRouter(

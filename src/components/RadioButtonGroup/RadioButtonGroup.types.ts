@@ -15,14 +15,14 @@ export interface RadioButtonGroupProps extends IChoiceGroupProps {
   help?: JSX.Element | string;
   /** Horizontal layout */
   horizontal?: boolean;
+  /** Om merke for obligatorisk felt skal vises */
+  required?: boolean;
   /** aria-label for knapp i label */
   labelButtonAriaLabel?: string;
   /** Størrelse på feltnavn over radioknappene */
   labelSize?: 'small' | 'normal' | 'large';
   /** Overstyr label, se LabelWithCallout komponent */
-  labelCallout?: LabelWithCalloutProps;
-  /** Lukk callout på blur */
-  labelWithCalloutAutoDismiss?: boolean;
+  labelWithCalloutProps?: LabelWithCalloutProps;
   /** Brukerspesifisert event for callout **/
   onCalloutToggle?: (
     oldCalloutState: calloutState,
@@ -31,4 +31,6 @@ export interface RadioButtonGroupProps extends IChoiceGroupProps {
   options: IRadioButtonGroupOptions[];
   /** Callout warning */
   warning?: JSX.Element | string;
+  /** Om feltet er obligatorisk og skal markeres med stjerne (*) */
+  requiredWithMark?: boolean;
 }

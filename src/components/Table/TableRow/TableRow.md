@@ -1,5 +1,5 @@
 ```js noeditor beskrivelse
-import { MessageBar } from '@skatteetaten/frontend-components';
+import { MessageBar } from '@skatteetaten/frontend-components/MessageBar';
 
 <MessageBar type={MessageBar.Type.info}>
   Det finnes ikke et eget eksempel på TableRow, se <a href="/#table">Table</a>{' '}

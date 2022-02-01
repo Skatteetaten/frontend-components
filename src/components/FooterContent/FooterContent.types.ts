@@ -6,4 +6,5 @@ export interface FooterContentProps
   className?: string;
   /** aria-label */
   ariaLabel?: string;
+  brand?: 'SKE' | 'INK' | 'LSO';
 }

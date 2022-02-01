@@ -3,29 +3,230 @@
 exports[`DatePicker komponent matcher snapshot 1`] = `
 <div>
   <div
-    className="calloutLabelWrapper-44"
+    className=
+        
+        {
+          display: flex;
+        }
   />
   <div
-    className="ms-DatePicker SkeDatePicker-52"
+    className=
+        ms-DatePicker
+        {
+          -moz-osx-font-smoothing: grayscale;
+          -webkit-font-smoothing: antialiased;
+          box-shadow: none;
+          box-sizing: border-box;
+          font-family: 'Helvetica Neue', Helvetica , Arial, 'Liberation Sans', 'Nimbus Sans L', sans-serif;
+          font-size: 1.125rem;
+          font-weight: 300;
+          margin-bottom: 0px;
+          margin-left: 0px;
+          margin-right: 0px;
+          margin-top: 0px;
+          outline: transparent;
+          padding-bottom: 0px;
+          padding-left: 0px;
+          padding-right: 0px;
+          padding-top: 0px;
+          position: relative;
+        }
+        && .ms-TextField-fieldGroup {
+          border-color: #1a1a1a;
+          border-radius: 0px;
+        }
+        & .ms-TextField-field {
+          font-size: 1rem;
+        }
+        && .ms-TextField-fieldGroup.ms-TextField-fieldGroup:after {
+          content: "";
+        }
+        & .ms-TextField-fieldGroup::before {
+          display: none;
+        }
+        & .ms-TextField.is-disabled {
+          background-color: #f4f4f4;
+          border-color: #808080;
+          border-style: solid;
+          border-width: 0px;
+        }
+        & .ms-TextField.is-disabled i {
+          color: #808080;
+        }
+        & .ms-TextField.is-disabled input {
+          color: #1a1a1a;
+          cursor: not-allowed;
+          padding-bottom: 0.5rem;
+          padding-left: 0.5rem;
+          padding-right: 0.5rem;
+          padding-top: 0.5rem;
+        }
+        & .ms-TextField.is-disabled .ms-TextField-fieldGroup {
+          border-color: #808080;
+          border-style: solid;
+          border-width: 1px;
+        }
+        & .ms-TextField.ms-TextField--underlined .ms-TextField-wrapper {
+          border: 1px solid #1362ae;
+        }
+        & .ms-TextField.ms-TextField--underlined .ms-TextField-wrapper:hover {
+          border: 1px solid #1a1a1a;
+        }
+        & .ms-TextField-errorMessage {
+          color: #a82e39;
+          font-weight: 500;
+        }
+        & .ms-TextField-errorMessage:before {
+          content: '';
+          display: block;
+          font-family: "SkeIconfont";
+          font-size: 1.125rem;
+          margin-right: 0.25rem;
+        }
+        & .ms-TextField-fieldGroup {
+          font-size: 0.875rem;
+        }
+        & i.ms-DatePicker-event--without-label {
+          color: #1362ae;
+        }
     id="datepicker-123-input"
     onBlur={[Function]}
   >
-    <div
-      aria-haspopup="true"
-    >
+    <div>
       <div
-        className="ms-TextField textField-56"
+        className=
+            ms-TextField
+            {
+              -moz-osx-font-smoothing: grayscale;
+              -webkit-font-smoothing: antialiased;
+              box-shadow: none;
+              box-sizing: border-box;
+              font-family: 'Helvetica Neue', Helvetica , Arial, 'Liberation Sans', 'Nimbus Sans L', sans-serif;
+              font-size: 1rem;
+              font-weight: 400;
+              margin-bottom: 0px;
+              margin-left: 0px;
+              margin-right: 0px;
+              margin-top: 0px;
+              padding-bottom: 0px;
+              padding-left: 0px;
+              padding-right: 0px;
+              padding-top: 0px;
+              position: relative;
+            }
+            & input[readonly] {
+              cursor: pointer;
+            }
+            & input::-ms-clear {
+              display: none;
+            }
       >
         <div
           className="ms-TextField-wrapper"
         >
           <div
-            className="ms-TextField-fieldGroup fieldGroup-57"
+            className=
+                ms-TextField-fieldGroup
+                {
+                  align-items: stretch;
+                  background: #ffffff;
+                  border-radius: 2px;
+                  border: 1px solid rgba(55, 55, 55, 0.95);
+                  box-shadow: none;
+                  box-sizing: border-box;
+                  cursor: text;
+                  display: flex;
+                  flex-direction: row;
+                  height: 32px;
+                  margin-bottom: 0px;
+                  margin-left: 0px;
+                  margin-right: 0px;
+                  margin-top: 0px;
+                  padding-bottom: 0px;
+                  padding-left: 0px;
+                  padding-right: 0px;
+                  padding-top: 0px;
+                  position: relative;
+                }
+                &:hover {
+                  border-color: rgba(0, 0, 0, 0.95);
+                }
+                @media screen and (-ms-high-contrast: active), (forced-colors: active){&:hover {
+                  -ms-high-contrast-adjust: none;
+                  border-color: Highlight;
+                  forced-color-adjust: none;
+                }
           >
             <input
+              aria-describedby="TextFieldDescription2"
               aria-expanded={false}
+              aria-haspopup="dialog"
               aria-invalid={false}
-              className="ms-TextField-field field-58"
+              className=
+                  ms-TextField-field
+                  {
+                    -moz-osx-font-smoothing: grayscale;
+                    -webkit-font-smoothing: antialiased;
+                    background-color: transparent;
+                    background: none;
+                    border-radius: 0px;
+                    border: none;
+                    box-shadow: none;
+                    box-sizing: border-box;
+                    color: rgba(0, 0, 0, 0.95);
+                    font-family: 'Helvetica Neue', Helvetica , Arial, 'Liberation Sans', 'Nimbus Sans L', sans-serif;
+                    font-size: 1rem;
+                    font-weight: 400;
+                    margin-bottom: 0px;
+                    margin-left: 0px;
+                    margin-right: 0px;
+                    margin-top: 0px;
+                    min-width: 0px;
+                    outline: 0px;
+                    padding-bottom: 0;
+                    padding-left: 8px;
+                    padding-right: 24px;
+                    padding-top: 0;
+                    text-overflow: ellipsis;
+                    width: 100%;
+                  }
+                  &:active {
+                    outline: 0px;
+                  }
+                  &:focus {
+                    outline: 0px;
+                  }
+                  &:hover {
+                    outline: 0px;
+                  }
+                  &::-ms-clear {
+                    display: none;
+                  }
+                  @media screen and (-ms-high-contrast: active), (forced-colors: active){& {
+                    background: Window;
+                    color: WindowText;
+                  }
+                  &::placeholder {
+                    color: rgba(55, 55, 55, 0.95);
+                    opacity: 1;
+                  }
+                  @media screen and (-ms-high-contrast: active), (forced-colors: active){&::placeholder {
+                    color: GrayText;
+                  }
+                  &:-ms-input-placeholder {
+                    color: rgba(55, 55, 55, 0.95);
+                    opacity: 1;
+                  }
+                  @media screen and (-ms-high-contrast: active), (forced-colors: active){&:-ms-input-placeholder {
+                    color: GrayText;
+                  }
+                  &::-ms-input-placeholder {
+                    color: rgba(55, 55, 55, 0.95);
+                    opacity: 1;
+                  }
+                  @media screen and (-ms-high-contrast: active), (forced-colors: active){&::-ms-input-placeholder {
+                    color: GrayText;
+                  }
               id="datepicker-123-input-label"
               onBlur={[Function]}
               onChange={[Function]}
@@ -41,14 +242,57 @@ exports[`DatePicker komponent matcher snapshot 1`] = `
             />
             <i
               aria-hidden={true}
-              className="ms-DatePicker-event--without-label msDatePickerDisabled icon-68"
+              className=
+                  ms-DatePicker-event--without-label
+                  msDatePickerDisabled
+                  {
+                    -moz-osx-font-smoothing: grayscale;
+                    -webkit-font-smoothing: antialiased;
+                    color: rgba(55, 55, 55, 0.95);
+                    cursor: pointer;
+                    display: inline-block;
+                    font-family: "SkeIconfont";
+                    font-size: 16px;
+                    font-style: normal;
+                    font-weight: normal;
+                    line-height: 18px;
+                    padding-bottom: 5px;
+                    padding-left: 5px;
+                    padding-right: 5px;
+                    padding-top: 7px;
+                    pointer-events: initial;
+                    position: absolute;
+                    right: 4px;
+                    speak: none;
+                    text-rendering: auto;
+                    transform: translate(0, 0);
+                  }
               data-icon-name="Calendar"
               onClick={[Function]}
             >
-              
+              
             </i>
           </div>
         </div>
+        <span
+          id="TextFieldDescription2"
+        >
+          <div
+            aria-live="assertive"
+            className=
+
+                {
+                  -moz-osx-font-smoothing: grayscale;
+                  -webkit-font-smoothing: antialiased;
+                  color: #a4262c;
+                  font-family: 'Helvetica Neue', Helvetica , Arial, 'Liberation Sans', 'Nimbus Sans L', sans-serif;
+                  font-size: 0.875rem;
+                  font-weight: 400;
+                  margin-top: 5px;
+                }
+          />
+          
+        </span>
       </div>
     </div>
   </div>

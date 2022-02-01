@@ -1,10 +1,8 @@
-**NavigationTile brukes på navigasjonssider for å sende brukeren videre ned i sidestrukturen**
+**NavigationTile (Forsideknapp): brukes på navigasjonssider for å sende brukeren videre ned i sidestrukturen**
 
 ```js
-import {
-  NavigationTile,
-  NavigationContent,
-} from '@skatteetaten/frontend-components';
+import { NavigationTile } from '@skatteetaten/frontend-components/NavigationTile';
+import { NavigationContent } from '@skatteetaten/frontend-components/NavigationTile/NavigationContent';
 
 <NavigationTile ariaLabel="Velge person eller bedrift">
   <NavigationContent
@@ -24,10 +22,8 @@ import {
 Uten beskrivende tekst:
 
 ```js
-import {
-  NavigationTile,
-  NavigationContent,
-} from '@skatteetaten/frontend-components';
+import { NavigationTile } from '@skatteetaten/frontend-components/NavigationTile';
+import { NavigationContent } from '@skatteetaten/frontend-components/NavigationTile/NavigationContent';
 
 <NavigationTile
   ariaLabel="Velge person eller bedrift"
@@ -53,7 +49,7 @@ By default får tittelen som gis i hver navigation tile en <h2\>-tag.
 <br>Om dette ikke passer inn i din sidestruktur kan det overskrives. Eksempelvis gir _headingLevel_ 4 en <h4\>-tag.
 
 ```js
-import { NavigationTile } from '@skatteetaten/frontend-components';
+import { NavigationTile } from '@skatteetaten/frontend-components/NavigationTile';
 
 const contents = [
   {
@@ -81,10 +77,9 @@ const contents = [
 Eksempel med bruk av JSON-format på dataene:
 
 ```js
-import {
-  NavigationTile,
-  NavigationContent,
-} from '@skatteetaten/frontend-components';
+import { NavigationTile } from '@skatteetaten/frontend-components/NavigationTile';
+import { NavigationContent } from '@skatteetaten/frontend-components/NavigationTile/NavigationContent';
+
 import { BrowserRouter, Link as RRLink } from 'react-router-dom';
 
 const contents = [

@@ -2,32 +2,31 @@ import * as React from 'react';
 import { getClassNames } from './LabelWithCallout.classNames';
 import { IconButton } from '@fluentui/react';
 import { Callout } from '../Callout';
-import classnames from 'classnames';
 import { calloutState, LabelWithCalloutProps } from './LabelWithCallout.types';
 
-/**
- * @visibleName LabelWithCallout (Merkelapp med utropsboks)
+/*
+ * visibleName LabelWithCallout (Merkelapp med utropsboks)
  */
 export const LabelWithCallout = (props: LabelWithCalloutProps) => {
   const {
+    id,
+    inputId,
+    label,
     ariaLabel,
-    autoDismiss,
-    border,
     buttonAriaLabel,
     buttonTitle,
     calloutFloating = false,
-    className,
+    customClassNames,
     editable,
+    requiredMark,
     editFunction,
     help,
-    id,
-    inputId,
     inFieldset,
-    label,
     readOnly,
     warning,
     onRenderLabel,
     onCalloutToggle,
+    calloutProps,
   } = props;
   const styles = getClassNames({ calloutFloating, ...props });
   const [isCalloutVisible, setIsCalloutVisible] = React.useState(false);
@@ -35,12 +34,18 @@ export const LabelWithCallout = (props: LabelWithCalloutProps) => {
     calloutState.CLOSED
   );
   const iconButtonElementRef = React.useRef<HTMLSpanElement>(null);
-  const helpElement = React.isValidElement(help) ? help : <p>{help}</p>;
+  const helpElement = React.isValidElement(help) ? (
+    help
+  ) : (
+    <p className={customClassNames?.helpPragraph ?? ''}>{help}</p>
+  );
   const warningElement = React.isValidElement(warning) ? (
     warning
   ) : (
-    <p>{warning}</p>
+    <p className={customClassNames?.warningPragraph ?? ''}>{warning}</p>
   );
+
+  const requiredSymbol = requiredMark ? ' *' : '';
 
   const toggleEvent = () => {
     if (onCalloutToggle) {
@@ -58,92 +63,110 @@ export const LabelWithCallout = (props: LabelWithCalloutProps) => {
     onRenderLabel
   ) : (
     <>
-      <div className={styles.calloutLabelWrapper}>
+      <div
+        className={`${styles.calloutLabelWrapper} ${
+          customClassNames?.wrapper ?? ''
+        }`}
+      >
         {inFieldset ? (
           label ? (
             <legend
-              aria-label={ariaLabel}
               id={id}
-              className={classnames(styles.labelAsLegend, className)}
+              className={`${styles.labelAsLegend} ${
+                customClassNames?.legend ?? ''
+              }`}
+              aria-label={ariaLabel}
             >
-              {label}
+              {label + requiredSymbol}
             </legend>
           ) : null
         ) : label ? (
           <label
             id={id}
             htmlFor={inputId}
+            className={`${styles.label} ${customClassNames?.label ?? ''}`}
             aria-label={ariaLabel}
-            className={classnames(styles.label, className)}
           >
-            {label}
+            {label + requiredSymbol}
           </label>
         ) : null}
 
         {help && !warning && (
           <span className={styles.labelIconArea} ref={iconButtonElementRef}>
             <IconButton
-              iconProps={{ iconName: 'HelpOutline' }}
               title={buttonTitle ? buttonTitle : 'Hjelp'}
-              aria-describedby={id}
-              ariaLabel={buttonAriaLabel ? buttonAriaLabel : 'Hjelp'}
-              aria-expanded={isCalloutVisible}
+              iconProps={{ iconName: 'HelpOutline' }}
+              className={`${styles.icon} ${customClassNames?.helpicon ?? ''}`}
               onClick={() => {
                 setIsCalloutVisible(!isCalloutVisible);
                 toggleEvent();
               }}
-              className={styles.icon}
+              aria-describedby={id}
+              ariaLabel={buttonAriaLabel ? buttonAriaLabel : 'Hjelp'}
+              aria-expanded={isCalloutVisible}
             />
           </span>
         )}
         {warning && (
           <span className={styles.labelIconArea} ref={iconButtonElementRef}>
             <IconButton
-              iconProps={{ iconName: 'WarningOutline' }}
               title={buttonTitle ? buttonTitle : 'Varsel'}
-              aria-describedby={id}
-              ariaLabel={buttonAriaLabel ? buttonAriaLabel : 'Varsel'}
-              aria-expanded={isCalloutVisible}
+              iconProps={{ iconName: 'WarningOutline' }}
+              className={`${styles.warningicon} ${
+                customClassNames?.warningicon ?? ''
+              }`}
               onClick={() => {
                 setIsCalloutVisible(!isCalloutVisible);
                 toggleEvent();
               }}
-              className={styles.warningicon}
+              aria-describedby={id}
+              ariaLabel={buttonAriaLabel ? buttonAriaLabel : 'Varsel'}
+              aria-expanded={isCalloutVisible}
             />
           </span>
         )}
         {readOnly && (
-          <span className={styles.labelIconArea}>
+          <span
+            className={`${styles.labelIconArea} ${
+              customClassNames?.readonlyarea ?? ''
+            }`}
+          >
             {editable && (
               <IconButton
-                iconProps={{ iconName: 'Edit' }}
                 title={buttonTitle ? buttonTitle : 'Rediger'}
+                iconProps={{ iconName: 'Edit' }}
+                className={`${styles.icon} ${customClassNames?.editicon ?? ''}`}
                 aria-describedby={id}
                 ariaLabel={buttonAriaLabel ? buttonAriaLabel : 'Rediger'}
                 aria-expanded={isCalloutVisible}
                 onClick={editFunction}
-                className={styles.icon}
               />
             )}
           </span>
         )}
       </div>
+
       {isCalloutVisible && (
         <Callout
-          className={styles.calloutContext}
-          border={border}
+          {...calloutProps}
+          ref={
+            calloutProps?.ref as React.RefObject<Callout> &
+              React.RefObject<HTMLDivElement>
+          }
+          className={`${styles.calloutContext} ${
+            customClassNames?.callout ?? ''
+          }`}
+          color={help && !warning ? Callout.HELP : Callout.WARNING}
+          target={iconButtonElementRef.current}
           directionalHint={
             calloutFloating ? Callout.POS_BOTTOM_LEFT : Callout.POS_TOP_LEFT
           }
-          color={help && !warning ? Callout.HELP : Callout.WARNING}
-          target={iconButtonElementRef.current}
           onClose={() => {
             setIsCalloutVisible(false);
             toggleEvent();
           }}
-          autoDismiss={autoDismiss}
           onDismiss={() => {
-            if (autoDismiss) {
+            if (calloutProps?.autoDismiss) {
               setIsCalloutVisible(false);
               toggleEvent();
             }
@@ -154,21 +177,4 @@ export const LabelWithCallout = (props: LabelWithCalloutProps) => {
       )}
     </>
   );
-
-  /*  return onRenderLabel ? (
-    onRenderLabel
-  ) : inFieldset ? (
-    <legend className={styles.labelArea}>{label}</legend>
-  ) : (
-    <div
-      
-      aria-label={ariaLabel}
-      className={classnames(styles.labelArea, className)}
-    >
-      <span className={styles.label}>
-        {label ? <Label>{label}</Label> : null}
-      </span>
-      
-    </div>
-  ); */
 };

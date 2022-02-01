@@ -1,17 +1,21 @@
-**Datovelger brukes i skjemaer når brukeren skal oppgi datoer.**
+**DatePicker (Datovelger): brukes i skjemaer når brukeren skal oppgi datoer.**
 
 ```js
-import { DatePicker } from '@skatteetaten/frontend-components';
+import { DatePicker } from '@skatteetaten/frontend-components/DatePicker';
 
 <div>
   <div className="ExampleFlexContainer-200">
     <DatePicker
       id={'my-date'}
+      requiredWithMark
       label={'Dato (dd.mm.åååå)'}
       placeholder="Skriv eller velg"
       help={'Denne datovelgeren viser ukenummer i kalender'}
       showMonthPickerAsOverlay={false}
-      showWeekNumbers={true}
+      labelWithCalloutProps={{
+        calloutProps: { autoDismiss: true },
+      }}
+      showWeekNumbers
     />
   </div>
 </div>;
@@ -69,30 +73,37 @@ const [dato, setDato] = React.useState(new Date());
 <>
   <h3>Forenkler utfylling av datoer</h3>
 
-  <p>Datovelger i et skjema gjør det enklere for brukeren å oppgi datoer.</p>
+  <p>
+    Datovelgeren i et skjema gjør det enklere for brukeren å oppgi riktig dato.
+  </p>
 
   <h3>Ulike oppsett for datovelger</h3>
+  <p>Når du setter opp datovelgeren må du blant annet vurdere </p>
+  <ul>
+    <li>hvor langt frem eller tilbake brukeren pleier å velge datoer</li>
+    <li>om både månedsoversikt og ukenummer trenger å vises</li>
+  </ul>
 
-  <p>
-    Du kan sette opp datovelgeren på mange måter. For eksempel kan du velge å
-    vise månedsvelger og ukenummer når brukeren klikker i feltet. Ta hensyn til
-    hvor langt frem eller tilbake brukeren pleier å velge dato. Hvis det er mest
-    aktuelt å føre opp en dato noen dager frem i tid, er det kanskje ikke
-    nødvendig å vise månedsoversikten. I andre tilfeller er det fornuftig å vise
-    både månedsoversikt og ukenummer samtidig.
-  </p>
+  <p>Du kan sette opp skjemaet med datovelgeren flere måter. Du kan vise </p>
+  <ul>
+    <li>dagens dato i skjemaet og legge til mulighet for å endre</li>
+    <li>
+      en handligsrettet tekst, for eksempel «velg en dato» og deretter vise
+      månedsvelger og ukenummer når brukeren klikker i feltet
+    </li>
+    <li>
+      både månedsoversikt og datoer med ukenummer, eller bare den ene, når
+      brukeren klikker i feltet eller på endre-ikonet
+    </li>
+  </ul>
 
-  <p>
-    Datofeltet kan også ha en lesemodus. Her kan vi enten vise dagens dato og
-    legge til mulighet for å endre, eller vi kan vise en handligsrettet tekst,
-    for eksempel «Velg en dato».
-  </p>
+  <h3>Hvordan skriver vi datoer?</h3>
   <p>
     Se{' '}
     <a href="https://www.skatteetaten.no/stilogtone/skrive/skriveregler/datoer/">
       oppsett for hvordan vi skriver datoer
     </a>{' '}
-    i Skatteetaten.
+    i skrivereglene i Skatteetaten.
   </p>
 </>
 ```

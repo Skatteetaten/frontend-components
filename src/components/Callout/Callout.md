@@ -1,9 +1,10 @@
-**Callout brukes når man ønsker å vise brukeren en tekst som er knyttet til element i skjermbildet. Et typisk eksempel er en ikon med spørsmåltegn, og en tilhørende hjelpetekst dukker opp når man trykker på det.**
+**Callout (Utropsboks): brukes når man ønsker å vise brukeren en tekst som er knyttet til element i skjermbildet.**
 
 ### Hjelpetekst
 
 ```js
-import { Callout, Button } from '@skatteetaten/frontend-components';
+import { ActionButton } from '@skatteetaten/frontend-components/ActionButton';
+import { Callout } from '@skatteetaten/frontend-components/Callout';
 
 const [state, setState] = React.useState({
   isCalloutVisible: false,
@@ -19,14 +20,14 @@ function closeButton() {
 
 <div>
   <span ref={(spanElement) => (buttonElement = spanElement)}>
-    <Button
+    <ActionButton
       buttonStyle="secondary"
       aria-expanded={visible}
-      icon="Info"
+      icon="HelpOutline"
       onClick={() => setState({ isCalloutVisible: !state.isCalloutVisible })}
     >
       Vis hjelpetekst
-    </Button>
+    </ActionButton>
   </span>
 
   {state.isCalloutVisible && (
@@ -41,10 +42,9 @@ function closeButton() {
     >
       <h3>Bolignummer</h3>
       <p>
-        Bolignummeret er et nummer som unikt identifiserer en leilighet.
-        Nummeret består at en bokstav etterfulgt av fire tall, f.eks. H0101.
-        Bolignummeret står som regel på et klistemerke i dørkarmen til
-        inngangsdøren.
+        {
+          'Bolignummeret er et nummer som unikt identifiserer en leilighet. Nummeret består at en bokstav etterfulgt av fire tall, f.eks. H0101.Bolignummeret står som regel på et klistemerke i dørkarmen tilinngangsdøren.'
+        }
       </p>
     </Callout>
   )}
@@ -54,7 +54,8 @@ function closeButton() {
 ### Infotekst
 
 ```js
-import { Callout, Button } from '@skatteetaten/frontend-components';
+import { ActionButton } from '@skatteetaten/frontend-components/ActionButton';
+import { Callout } from '@skatteetaten/frontend-components/Callout';
 
 const [state, setState] = React.useState({ isCalloutVisible: false });
 
@@ -68,14 +69,14 @@ function closeButton() {
 
 <div>
   <span ref={(spanElement) => (buttonElement2 = spanElement)}>
-    <Button
+    <ActionButton
       buttonStyle="secondary"
+      icon="InfoOutline"
       aria-expanded={visible}
-      icon="Info"
       onClick={() => setState({ isCalloutVisible: !state.isCalloutVisible })}
     >
       Vis infotekst
-    </Button>
+    </ActionButton>
   </span>
 
   {state.isCalloutVisible && (
@@ -86,17 +87,17 @@ function closeButton() {
       onClose={() => closeButton()}
       onDismiss={() => closeButton()}
     >
-      <h3>Renter ikke inkludert</h3>
       <p>Dette beløpet inkluderer ikke avsavnsrenter.</p>
     </Callout>
   )}
 </div>;
 ```
 
-### Autolukking
+### Manuell lukking
 
 ```js
-import { Callout, Button } from '@skatteetaten/frontend-components';
+import { ActionButton } from '@skatteetaten/frontend-components/ActionButton';
+import { Callout } from '@skatteetaten/frontend-components/Callout';
 
 const [state, setState] = React.useState({ isCalloutVisible: false });
 
@@ -110,25 +111,24 @@ function closeButton() {
 
 <div>
   <span ref={(spanElement) => (buttonElement4 = spanElement)}>
-    <Button
+    <ActionButton
       buttonStyle="secondary"
       aria-expanded={visible}
-      icon="Info"
+      icon="Warning"
       onClick={() => setState({ isCalloutVisible: !state.isCalloutVisible })}
     >
       Vis meldingsboks som må lukkes manuelt
-    </Button>
+    </ActionButton>
   </span>
 
   {state.isCalloutVisible && (
     <Callout
       target={buttonElement4}
-      color={Callout.INFO}
+      color={Callout.ERROR}
       directionalHint={Callout.POS_TOP_LEFT}
       onClose={() => closeButton()}
       autoDismiss={false}
     >
-      <h3>Meldingsboks informasjon </h3>
       <p>Denne meldingsboksen må lukkes ved lukkekrysset</p>
     </Callout>
   )}

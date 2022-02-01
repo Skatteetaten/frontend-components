@@ -19,8 +19,8 @@ interface CommandBarItem extends ICommandBarItemProps {
   selected?: boolean;
   selectedColor?: string;
 }
-/**
- * @visibleName CommandBar (Menyknapper)
+/*
+ * visibleName CommandBar (Menyknapper)
  */
 const CommandBar: React.FC<CommandBarProps> = (props) => {
   const { items, farItems, ariaLabel, className, ...rest } = props;

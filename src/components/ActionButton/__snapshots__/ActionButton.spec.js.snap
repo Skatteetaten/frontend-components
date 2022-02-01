@@ -3,7 +3,128 @@
 exports[`ActionButton komponent matcher snapshot 1`] = `
 <button
   aria-label="Button label"
-  className="ms-Button ms-Button--action ms-Button--command root-43"
+  className=
+      ms-Button
+      ms-Button--action
+      ms-Button--command
+      {
+        -moz-osx-font-smoothing: grayscale;
+        -webkit-font-smoothing: antialiased;
+        background-color: transparent;
+        border-radius: 2px;
+        border: 1px solid transparent;
+        box-sizing: border-box;
+        color: rgba(0, 0, 0, 0.95);
+        cursor: pointer;
+        display: inline-block;
+        font-family: 'Helvetica Neue', Helvetica , Arial, 'Liberation Sans', 'Nimbus Sans L', sans-serif;
+        font-size: 1rem;
+        font-weight: 400;
+        height: 40px;
+        outline: transparent;
+        padding-bottom: 0;
+        padding-left: 4px;
+        padding-right: 4px;
+        padding-top: 0;
+        position: relative;
+        text-align: center;
+        text-decoration: none;
+        user-select: none;
+      }
+      &::-moz-focus-inner {
+        border: 0;
+      }
+      .ms-Fabric--isFocusVisible &:focus:after {
+        border-radius: 4px;
+        border: 2px solid #1362ae;
+        bottom: -2px;
+        content: "";
+        left: -2px;
+        outline: transparent;
+        position: absolute;
+        right: -2px;
+        top: -2px;
+        z-index: 1;
+      }
+      @media screen and (-ms-high-contrast: active), (forced-colors: active){.ms-Fabric--isFocusVisible &:focus:after {
+        bottom: -2px;
+        left: -2px;
+        outline-color: ButtonText;
+        right: -2px;
+        top: -2px;
+      }
+      &:active > * {
+        left: 0px;
+        position: relative;
+        top: 0px;
+      }
+      @media screen and (-ms-high-contrast: active), (forced-colors: active){& {
+        border-color: Window;
+      }
+      &:hover {
+        color: #1362ae;
+      }
+      @media screen and (-ms-high-contrast: active), (forced-colors: active){&:hover {
+        color: Highlight;
+      }
+      &:hover .ms-Button-icon {
+        color: #1362ae;
+      }
+      &:active {
+        color: #1a1a1a;
+      }
+      &:active .ms-Button-icon {
+        color: #0a365f;
+      }
+      &.ms-Button.ms-Button--action {
+        border-bottom: 2px solid transparent;
+        color: #1362ae;
+        font-weight: 500;
+        height: auto;
+        min-height: 32px;
+        padding-bottom: 3px;
+        padding-left: 4px;
+        padding-right: 4px;
+        padding-top: 3px;
+        text-align: left;
+      }
+      & span {
+        flex-direction: row;
+      }
+      &.ms-Button--action .ms-Button-icon {
+        color: #1362ae;
+        font-size: 1.25rem;
+        font-weight: 500;
+        margin-left: 0;
+        transform: translateY(4px);
+      }
+      & .ms-Button-flexContainer {
+        align-items: baseline;
+      }
+      &.ms-Button--action .ms-Button-label {
+        line-height: 1.5;
+      }
+      &.ms-Button--action:hover  {
+        background-color: #cde1f9;
+        transition: background 0.3s;
+      }
+      &.ms-Button--action:active  {
+        transform: translateY(2px);
+        transition-timing-function: ease;
+        transition: 0.15s;
+      }
+      &.ms-Button--action:active .ms-Button-label {
+        text-align: left;
+        text-decoration: none;
+      }
+      &.ms-Button--action:disabled {
+        color: #b2b2b2;
+        cursor: not-allowed;
+      }
+      &.ms-Button--action:disabled i {
+        color: #b2b2b2;
+        cursor: not-allowed;
+      }
   data-is-focusable={true}
   onClick={[Function]}
   onKeyDown={[Function]}
@@ -14,7 +135,15 @@ exports[`ActionButton komponent matcher snapshot 1`] = `
   type="button"
 >
   <span
-    className="ms-Button-flexContainer flexContainer-44"
+    className=
+        ms-Button-flexContainer
+        {
+          align-items: center;
+          display: flex;
+          flex-wrap: nowrap;
+          height: 100%;
+          justify-content: flex-start;
+        }
     data-automationid="splitbuttonprimary"
   />
 </button>
