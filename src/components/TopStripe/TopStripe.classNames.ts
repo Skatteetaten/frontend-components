@@ -86,7 +86,6 @@ export const getClassNames = (contentWidth = '100%') => {
       maxHeight: '40px',
       selectors: {
         a: {
-          display: 'inline',
           padding: '0.75rem 0.5rem',
           borderBottom: 'none !important',
         },
