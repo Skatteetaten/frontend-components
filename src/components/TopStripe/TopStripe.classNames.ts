@@ -40,6 +40,7 @@ export const getClassNames = (contentWidth = '100%') => {
       color: designtokenColors['ske-color-white-100'],
       fontSize: designtokenFontSizes['ske-font-size-s'],
       padding: 0,
+      margin: 0,
       selectors: {
         li: {
           listStyleType: 'none',
@@ -85,7 +86,7 @@ export const getClassNames = (contentWidth = '100%') => {
       maxHeight: '40px',
       selectors: {
         a: {
-          display: 'block',
+          display: 'inline',
           padding: '0.75rem 0.5rem',
           borderBottom: 'none !important',
         },
