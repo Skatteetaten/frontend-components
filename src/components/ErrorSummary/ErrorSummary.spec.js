@@ -4,7 +4,7 @@ import { ErrorSummary } from '.';
 import { TextField } from '../TextField';
 import { matches, DummyWebComp } from '../utils/test-utils';
 
-function oppsettMount(props) {
+function oppsettMount(props, children) {
   window.HTMLElement.prototype.scrollIntoView = jest.fn();
   const holder = document.createElement('div');
   document.body.appendChild(holder);
@@ -25,7 +25,7 @@ function oppsettMount(props) {
         label={'Poststed'}
         errorMessage={'Du må legge til et poststed'}
       />
-      <ErrorSummary {...props} />
+      <ErrorSummary {...props}>{children}</ErrorSummary>
     </div>,
     { attachTo: holder }
   );
@@ -144,7 +144,7 @@ describe('ErrorSummary komponent', () => {
     global.document['body'] = original;
   });
 
-  it('Skal ikke vise ErrorSummary hvis ingen feil finnes', () => {
+  it('Skal ikke vise ErrorSummary hvis ingen feil eller children finnes', () => {
     const wrapper = oppsettMount({
       title: 'For å gå videre må du rette opp i følgende:',
       errors: [],
@@ -160,5 +160,17 @@ describe('ErrorSummary komponent', () => {
     });
     expect(wrapper.find('h3').exists()).toBeFalsy();
     expect(wrapper.find('li').exists()).toBeFalsy();
+  });
+
+  it('Skal vise children hvis de finnes', () => {
+    const wrapper = oppsettMount(
+      {
+        title: 'For å gå videre må du rette opp i følgende:',
+        errors: undefined,
+      },
+      <p>test child</p>
+    );
+
+    expect(wrapper.find('p').text()).toBe('test child');
   });
 });
