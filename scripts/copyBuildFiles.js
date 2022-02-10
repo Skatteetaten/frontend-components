@@ -47,6 +47,7 @@ const {
   dependencies,
   types,
   main,
+  exports: pkgExports,
 } = JSON.parse(pkgjson);
 
 const minimalPackage = {
@@ -65,6 +66,7 @@ const minimalPackage = {
   homepage,
   peerDependencies,
   dependencies,
+  exports: pkgExports,
 };
 
 const pkgJsonPath = resolve(libPath, 'package.json');
