@@ -116,14 +116,14 @@ const data = [
       <li>
         Gjør alltid en vurdering av om hjelpetekst faktisk er nødvendig. Kan
         ledeteksten justeres noe for å bli enklere å forstå og slik fjerne
-        behovet for ekstra forklaring?.
+        behovet for ekstra forklaring?
       </li>
       <li>
         Dersom du <i>må</i> bruke fagord skal det det alltid være hjelpetekst.
       </li>
       <li>
         Vær kortfattet og bruk ord som er lette å forstå for alle brukere. Det
-        innebærer å unngå stammespråk og vanskelige terminologi.
+        innebærer å unngå stammespråk og vanskelig terminologi.
       </li>
 
       <li>Test på en kollega eller andre som ikke kjenner løsningen.</li>
@@ -297,7 +297,7 @@ const data = [
             <Grid.Col sm={4} noSpacing>
               <span style={{ fontSize: '16px' }}>
                 <Chip size="standard" className="tipchip">
-                  Hjelpeteksten skyves
+                  Hjelpeteksten skyver
                 </Chip>
               </span>
             </Grid.Col>
