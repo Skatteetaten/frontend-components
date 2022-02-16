@@ -110,6 +110,9 @@ const [state, setState] = React.useState({ value1: '' });
     og funksjonalitet på label og hjelpetekst som for de øvrige
     inputkomponentene, for eksempel seksjoner eller knapperader.
   </p>
+  <p>
+    Flytende utropsboks brukes som hovedregel i interne løsninger og i tabeller.
+  </p>
 </>
 ```
 
