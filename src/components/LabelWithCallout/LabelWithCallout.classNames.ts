@@ -148,8 +148,8 @@ export const getClassNames = (props: LabelWithCalloutProps) => {
     },
     errorIcon: {
       position: 'absolute',
-      left: -25,
-      bottom: -30,
+      left: `-${designtokenSpacing['ske-spacing-xl']}`,
+      bottom: designtokenSpacing['ske-spacing-xxl'],
       selectors: {
         '& i': {
           color: designtokenColors['ske-color-status-error'],
