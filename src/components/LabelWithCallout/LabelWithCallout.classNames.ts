@@ -2,6 +2,7 @@ import { FontSizes, FontWeights, PaletteProps } from '../utils';
 import { LabelWithCalloutProps } from './LabelWithCallout.types';
 import { mergeStyleSets } from '@fluentui/merge-styles';
 import { getTheme } from '@fluentui/react/lib/Styling';
+import designtokenColors from '../utils/designtokens/_colors.json';
 
 function getLabelSize(props: LabelWithCalloutProps) {
   switch (props.inputSize) {
@@ -64,8 +65,9 @@ export const getClassNames = (props: LabelWithCalloutProps) => {
     label: {
       paddingBottom: 4,
       paddingLeft: 0,
+      lineHeight: '1.5',
       display: getDisplay(props),
-      color: palette.skeColor.blackAlt,
+      color: designtokenColors['ske-color-black-100'],
       fontWeight: FontWeights.regular,
       ...getLabelSize(props),
       selectors: {
@@ -78,7 +80,7 @@ export const getClassNames = (props: LabelWithCalloutProps) => {
       paddingLeft: 0,
       paddingBottom: 4,
       display: 'inline-block',
-      color: palette.skeColor.blackAlt,
+      color: designtokenColors['ske-color-black-100'],
       fontWeight: FontWeights.regular,
       ...getLabelSize(props),
       selectors: {
@@ -91,39 +93,44 @@ export const getClassNames = (props: LabelWithCalloutProps) => {
       },
     },
     labelIconArea: {
-      height: '22px',
+      height: '24px',
       display: 'inline-block',
 
       selectors: {
         '& button ': {
-          height: '22px',
-          marginTop: '-2px',
+          height: '24px',
+          width: '24px',
+          marginLeft: '2px',
+          borderRadius: '100%',
         },
       },
     },
     icon: {
-      color: palette.skeColor.blue,
+      color: designtokenColors['ske-color-interactive'],
       selectors: {
         '& i': {
           fontSize: 'large',
         },
+        '&:hover': {
+          background: designtokenColors['ske-color-grey-10'],
+        },
         '&:focus': {
-          background: palette.skeColor.interactiveLight,
+          background: designtokenColors['ske-color-interactive-light'],
         },
         '&:focus&:after': {
-          border: `2px solid ${palette.skeColor.transparent}`,
+          border: `2px solid transparent`,
           outline: 'none',
         },
       },
     },
     warningicon: {
-      color: palette.skeColor.blue,
+      color: designtokenColors['ske-color-interactive'],
       selectors: {
         '& i': {
           fontSize: 'large',
         },
         '&:focus&:after': {
-          border: `2px solid ${palette.skeColor.blue}`,
+          border: `2px solid ${designtokenColors['ske-color-interactive']}`,
           outline: 'none',
         },
       },
@@ -134,7 +141,7 @@ export const getClassNames = (props: LabelWithCalloutProps) => {
       bottom: -30,
       selectors: {
         '& i': {
-          color: palette.skeColor.pink,
+          color: designtokenColors['ske-color-status-error'],
           fontSize: 'large',
         },
       },
