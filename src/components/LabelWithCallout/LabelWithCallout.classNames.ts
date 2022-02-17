@@ -1,7 +1,7 @@
 import { FontSizes, FontWeights, PaletteProps } from '../utils';
 import { LabelWithCalloutProps } from './LabelWithCallout.types';
 import { mergeStyleSets } from '@fluentui/merge-styles';
-import { getTheme } from '@fluentui/react/lib/Styling';
+import { getTheme } from '@fluentui/react';
 
 function getLabelSize(props: LabelWithCalloutProps) {
   switch (props.inputSize) {

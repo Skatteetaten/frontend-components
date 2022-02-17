@@ -1,5 +1,5 @@
 import { mergeStyles } from '@fluentui/merge-styles';
-import { getTheme } from '@fluentui/react/lib/Styling';
+import { getTheme } from '@fluentui/react';
 import { getFocusStyle } from '../utils';
 import designtokenColors from '../utils/designtokens/_colors.json';
 import designtokenFontSizes from '../utils/designtokens/_fontSizes.json';

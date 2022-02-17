@@ -1,4 +1,4 @@
-import { IPalette } from '@fluentui/react/lib/Styling';
+import { IPalette } from '@fluentui/react';
 
 import colors from './designtokens/_colors.json';
 
