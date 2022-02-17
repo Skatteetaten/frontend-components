@@ -59,7 +59,6 @@ exports[`Modal modal med rootNode instansierer Modal komponent i shadow-domen i 
       >
         <div
           aria-hidden="true"
-          data-is-focus-trap-zone-bumper="true"
           data-is-visible="true"
           style="pointer-events: none; position: fixed;"
           tabindex="0"
@@ -228,7 +227,6 @@ exports[`Modal modal med rootNode instansierer Modal komponent i shadow-domen i 
         </div>
         <div
           aria-hidden="true"
-          data-is-focus-trap-zone-bumper="true"
           data-is-visible="true"
           style="pointer-events: none; position: fixed;"
           tabindex="0"
@@ -317,7 +315,6 @@ LoadedCheerio {
               Node {
                 "attribs": Object {
                   "aria-hidden": "true",
-                  "data-is-focus-trap-zone-bumper": "true",
                   "data-is-visible": "true",
                   "style": "pointer-events: none; position: fixed;",
                   "tabindex": "0",
@@ -549,7 +546,6 @@ LoadedCheerio {
                     "next": Node {
                       "attribs": Object {
                         "aria-hidden": "true",
-                        "data-is-focus-trap-zone-bumper": "true",
                         "data-is-visible": "true",
                         "style": "pointer-events: none; position: fixed;",
                         "tabindex": "0",
@@ -563,14 +559,12 @@ LoadedCheerio {
                       "type": "tag",
                       "x-attribsNamespace": Object {
                         "aria-hidden": undefined,
-                        "data-is-focus-trap-zone-bumper": undefined,
                         "data-is-visible": undefined,
                         "style": undefined,
                         "tabindex": undefined,
                       },
                       "x-attribsPrefix": Object {
                         "aria-hidden": undefined,
-                        "data-is-focus-trap-zone-bumper": undefined,
                         "data-is-visible": undefined,
                         "style": undefined,
                         "tabindex": undefined,
@@ -607,14 +601,12 @@ LoadedCheerio {
                 "type": "tag",
                 "x-attribsNamespace": Object {
                   "aria-hidden": undefined,
-                  "data-is-focus-trap-zone-bumper": undefined,
                   "data-is-visible": undefined,
                   "style": undefined,
                   "tabindex": undefined,
                 },
                 "x-attribsPrefix": Object {
                   "aria-hidden": undefined,
-                  "data-is-focus-trap-zone-bumper": undefined,
                   "data-is-visible": undefined,
                   "style": undefined,
                   "tabindex": undefined,
@@ -844,7 +836,6 @@ LoadedCheerio {
                   "next": Node {
                     "attribs": Object {
                       "aria-hidden": "true",
-                      "data-is-focus-trap-zone-bumper": "true",
                       "data-is-visible": "true",
                       "style": "pointer-events: none; position: fixed;",
                       "tabindex": "0",
@@ -858,14 +849,12 @@ LoadedCheerio {
                     "type": "tag",
                     "x-attribsNamespace": Object {
                       "aria-hidden": undefined,
-                      "data-is-focus-trap-zone-bumper": undefined,
                       "data-is-visible": undefined,
                       "style": undefined,
                       "tabindex": undefined,
                     },
                     "x-attribsPrefix": Object {
                       "aria-hidden": undefined,
-                      "data-is-focus-trap-zone-bumper": undefined,
                       "data-is-visible": undefined,
                       "style": undefined,
                       "tabindex": undefined,
@@ -885,7 +874,6 @@ LoadedCheerio {
                 "prev": Node {
                   "attribs": Object {
                     "aria-hidden": "true",
-                    "data-is-focus-trap-zone-bumper": "true",
                     "data-is-visible": "true",
                     "style": "pointer-events: none; position: fixed;",
                     "tabindex": "0",
@@ -899,14 +887,12 @@ LoadedCheerio {
                   "type": "tag",
                   "x-attribsNamespace": Object {
                     "aria-hidden": undefined,
-                    "data-is-focus-trap-zone-bumper": undefined,
                     "data-is-visible": undefined,
                     "style": undefined,
                     "tabindex": undefined,
                   },
                   "x-attribsPrefix": Object {
                     "aria-hidden": undefined,
-                    "data-is-focus-trap-zone-bumper": undefined,
                     "data-is-visible": undefined,
                     "style": undefined,
                     "tabindex": undefined,
@@ -944,7 +930,6 @@ LoadedCheerio {
                 "next": Node {
                   "attribs": Object {
                     "aria-hidden": "true",
-                    "data-is-focus-trap-zone-bumper": "true",
                     "data-is-visible": "true",
                     "style": "pointer-events: none; position: fixed;",
                     "tabindex": "0",
@@ -958,14 +943,12 @@ LoadedCheerio {
                   "type": "tag",
                   "x-attribsNamespace": Object {
                     "aria-hidden": undefined,
-                    "data-is-focus-trap-zone-bumper": undefined,
                     "data-is-visible": undefined,
                     "style": undefined,
                     "tabindex": undefined,
                   },
                   "x-attribsPrefix": Object {
                     "aria-hidden": undefined,
-                    "data-is-focus-trap-zone-bumper": undefined,
                     "data-is-visible": undefined,
                     "style": undefined,
                     "tabindex": undefined,
@@ -1183,7 +1166,6 @@ LoadedCheerio {
                   "prev": Node {
                     "attribs": Object {
                       "aria-hidden": "true",
-                      "data-is-focus-trap-zone-bumper": "true",
                       "data-is-visible": "true",
                       "style": "pointer-events: none; position: fixed;",
                       "tabindex": "0",
@@ -1197,14 +1179,12 @@ LoadedCheerio {
                     "type": "tag",
                     "x-attribsNamespace": Object {
                       "aria-hidden": undefined,
-                      "data-is-focus-trap-zone-bumper": undefined,
                       "data-is-visible": undefined,
                       "style": undefined,
                       "tabindex": undefined,
                     },
                     "x-attribsPrefix": Object {
                       "aria-hidden": undefined,
-                      "data-is-focus-trap-zone-bumper": undefined,
                       "data-is-visible": undefined,
                       "style": undefined,
                       "tabindex": undefined,
@@ -1235,7 +1215,6 @@ LoadedCheerio {
               Node {
                 "attribs": Object {
                   "aria-hidden": "true",
-                  "data-is-focus-trap-zone-bumper": "true",
                   "data-is-visible": "true",
                   "style": "pointer-events: none; position: fixed;",
                   "tabindex": "0",
@@ -1473,7 +1452,6 @@ LoadedCheerio {
                     "prev": Node {
                       "attribs": Object {
                         "aria-hidden": "true",
-                        "data-is-focus-trap-zone-bumper": "true",
                         "data-is-visible": "true",
                         "style": "pointer-events: none; position: fixed;",
                         "tabindex": "0",
@@ -1487,14 +1465,12 @@ LoadedCheerio {
                       "type": "tag",
                       "x-attribsNamespace": Object {
                         "aria-hidden": undefined,
-                        "data-is-focus-trap-zone-bumper": undefined,
                         "data-is-visible": undefined,
                         "style": undefined,
                         "tabindex": undefined,
                       },
                       "x-attribsPrefix": Object {
                         "aria-hidden": undefined,
-                        "data-is-focus-trap-zone-bumper": undefined,
                         "data-is-visible": undefined,
                         "style": undefined,
                         "tabindex": undefined,
@@ -1525,14 +1501,12 @@ LoadedCheerio {
                 "type": "tag",
                 "x-attribsNamespace": Object {
                   "aria-hidden": undefined,
-                  "data-is-focus-trap-zone-bumper": undefined,
                   "data-is-visible": undefined,
                   "style": undefined,
                   "tabindex": undefined,
                 },
                 "x-attribsPrefix": Object {
                   "aria-hidden": undefined,
-                  "data-is-focus-trap-zone-bumper": undefined,
                   "data-is-visible": undefined,
                   "style": undefined,
                   "tabindex": undefined,
@@ -1663,7 +1637,6 @@ LoadedCheerio {
                 Node {
                   "attribs": Object {
                     "aria-hidden": "true",
-                    "data-is-focus-trap-zone-bumper": "true",
                     "data-is-visible": "true",
                     "style": "pointer-events: none; position: fixed;",
                     "tabindex": "0",
@@ -1895,7 +1868,6 @@ LoadedCheerio {
                       "next": Node {
                         "attribs": Object {
                           "aria-hidden": "true",
-                          "data-is-focus-trap-zone-bumper": "true",
                           "data-is-visible": "true",
                           "style": "pointer-events: none; position: fixed;",
                           "tabindex": "0",
@@ -1909,14 +1881,12 @@ LoadedCheerio {
                         "type": "tag",
                         "x-attribsNamespace": Object {
                           "aria-hidden": undefined,
-                          "data-is-focus-trap-zone-bumper": undefined,
                           "data-is-visible": undefined,
                           "style": undefined,
                           "tabindex": undefined,
                         },
                         "x-attribsPrefix": Object {
                           "aria-hidden": undefined,
-                          "data-is-focus-trap-zone-bumper": undefined,
                           "data-is-visible": undefined,
                           "style": undefined,
                           "tabindex": undefined,
@@ -1953,14 +1923,12 @@ LoadedCheerio {
                   "type": "tag",
                   "x-attribsNamespace": Object {
                     "aria-hidden": undefined,
-                    "data-is-focus-trap-zone-bumper": undefined,
                     "data-is-visible": undefined,
                     "style": undefined,
                     "tabindex": undefined,
                   },
                   "x-attribsPrefix": Object {
                     "aria-hidden": undefined,
-                    "data-is-focus-trap-zone-bumper": undefined,
                     "data-is-visible": undefined,
                     "style": undefined,
                     "tabindex": undefined,
@@ -2190,7 +2158,6 @@ LoadedCheerio {
                     "next": Node {
                       "attribs": Object {
                         "aria-hidden": "true",
-                        "data-is-focus-trap-zone-bumper": "true",
                         "data-is-visible": "true",
                         "style": "pointer-events: none; position: fixed;",
                         "tabindex": "0",
@@ -2204,14 +2171,12 @@ LoadedCheerio {
                       "type": "tag",
                       "x-attribsNamespace": Object {
                         "aria-hidden": undefined,
-                        "data-is-focus-trap-zone-bumper": undefined,
                         "data-is-visible": undefined,
                         "style": undefined,
                         "tabindex": undefined,
                       },
                       "x-attribsPrefix": Object {
                         "aria-hidden": undefined,
-                        "data-is-focus-trap-zone-bumper": undefined,
                         "data-is-visible": undefined,
                         "style": undefined,
                         "tabindex": undefined,
@@ -2231,7 +2196,6 @@ LoadedCheerio {
                   "prev": Node {
                     "attribs": Object {
                       "aria-hidden": "true",
-                      "data-is-focus-trap-zone-bumper": "true",
                       "data-is-visible": "true",
                       "style": "pointer-events: none; position: fixed;",
                       "tabindex": "0",
@@ -2245,14 +2209,12 @@ LoadedCheerio {
                     "type": "tag",
                     "x-attribsNamespace": Object {
                       "aria-hidden": undefined,
-                      "data-is-focus-trap-zone-bumper": undefined,
                       "data-is-visible": undefined,
                       "style": undefined,
                       "tabindex": undefined,
                     },
                     "x-attribsPrefix": Object {
                       "aria-hidden": undefined,
-                      "data-is-focus-trap-zone-bumper": undefined,
                       "data-is-visible": undefined,
                       "style": undefined,
                       "tabindex": undefined,
@@ -2290,7 +2252,6 @@ LoadedCheerio {
                   "next": Node {
                     "attribs": Object {
                       "aria-hidden": "true",
-                      "data-is-focus-trap-zone-bumper": "true",
                       "data-is-visible": "true",
                       "style": "pointer-events: none; position: fixed;",
                       "tabindex": "0",
@@ -2304,14 +2265,12 @@ LoadedCheerio {
                     "type": "tag",
                     "x-attribsNamespace": Object {
                       "aria-hidden": undefined,
-                      "data-is-focus-trap-zone-bumper": undefined,
                       "data-is-visible": undefined,
                       "style": undefined,
                       "tabindex": undefined,
                     },
                     "x-attribsPrefix": Object {
                       "aria-hidden": undefined,
-                      "data-is-focus-trap-zone-bumper": undefined,
                       "data-is-visible": undefined,
                       "style": undefined,
                       "tabindex": undefined,
@@ -2529,7 +2488,6 @@ LoadedCheerio {
                     "prev": Node {
                       "attribs": Object {
                         "aria-hidden": "true",
-                        "data-is-focus-trap-zone-bumper": "true",
                         "data-is-visible": "true",
                         "style": "pointer-events: none; position: fixed;",
                         "tabindex": "0",
@@ -2543,14 +2501,12 @@ LoadedCheerio {
                       "type": "tag",
                       "x-attribsNamespace": Object {
                         "aria-hidden": undefined,
-                        "data-is-focus-trap-zone-bumper": undefined,
                         "data-is-visible": undefined,
                         "style": undefined,
                         "tabindex": undefined,
                       },
                       "x-attribsPrefix": Object {
                         "aria-hidden": undefined,
-                        "data-is-focus-trap-zone-bumper": undefined,
                         "data-is-visible": undefined,
                         "style": undefined,
                         "tabindex": undefined,
@@ -2581,7 +2537,6 @@ LoadedCheerio {
                 Node {
                   "attribs": Object {
                     "aria-hidden": "true",
-                    "data-is-focus-trap-zone-bumper": "true",
                     "data-is-visible": "true",
                     "style": "pointer-events: none; position: fixed;",
                     "tabindex": "0",
@@ -2819,7 +2774,6 @@ LoadedCheerio {
                       "prev": Node {
                         "attribs": Object {
                           "aria-hidden": "true",
-                          "data-is-focus-trap-zone-bumper": "true",
                           "data-is-visible": "true",
                           "style": "pointer-events: none; position: fixed;",
                           "tabindex": "0",
@@ -2833,14 +2787,12 @@ LoadedCheerio {
                         "type": "tag",
                         "x-attribsNamespace": Object {
                           "aria-hidden": undefined,
-                          "data-is-focus-trap-zone-bumper": undefined,
                           "data-is-visible": undefined,
                           "style": undefined,
                           "tabindex": undefined,
                         },
                         "x-attribsPrefix": Object {
                           "aria-hidden": undefined,
-                          "data-is-focus-trap-zone-bumper": undefined,
                           "data-is-visible": undefined,
                           "style": undefined,
                           "tabindex": undefined,
@@ -2871,14 +2823,12 @@ LoadedCheerio {
                   "type": "tag",
                   "x-attribsNamespace": Object {
                     "aria-hidden": undefined,
-                    "data-is-focus-trap-zone-bumper": undefined,
                     "data-is-visible": undefined,
                     "style": undefined,
                     "tabindex": undefined,
                   },
                   "x-attribsPrefix": Object {
                     "aria-hidden": undefined,
-                    "data-is-focus-trap-zone-bumper": undefined,
                     "data-is-visible": undefined,
                     "style": undefined,
                     "tabindex": undefined,
@@ -3096,7 +3046,6 @@ LoadedCheerio {
               Node {
                 "attribs": Object {
                   "aria-hidden": "true",
-                  "data-is-focus-trap-zone-bumper": "true",
                   "data-is-visible": "true",
                   "style": "pointer-events: none; position: fixed;",
                   "tabindex": "0",
@@ -3328,7 +3277,6 @@ LoadedCheerio {
                     "next": Node {
                       "attribs": Object {
                         "aria-hidden": "true",
-                        "data-is-focus-trap-zone-bumper": "true",
                         "data-is-visible": "true",
                         "style": "pointer-events: none; position: fixed;",
                         "tabindex": "0",
@@ -3342,14 +3290,12 @@ LoadedCheerio {
                       "type": "tag",
                       "x-attribsNamespace": Object {
                         "aria-hidden": undefined,
-                        "data-is-focus-trap-zone-bumper": undefined,
                         "data-is-visible": undefined,
                         "style": undefined,
                         "tabindex": undefined,
                       },
                       "x-attribsPrefix": Object {
                         "aria-hidden": undefined,
-                        "data-is-focus-trap-zone-bumper": undefined,
                         "data-is-visible": undefined,
                         "style": undefined,
                         "tabindex": undefined,
@@ -3386,14 +3332,12 @@ LoadedCheerio {
                 "type": "tag",
                 "x-attribsNamespace": Object {
                   "aria-hidden": undefined,
-                  "data-is-focus-trap-zone-bumper": undefined,
                   "data-is-visible": undefined,
                   "style": undefined,
                   "tabindex": undefined,
                 },
                 "x-attribsPrefix": Object {
                   "aria-hidden": undefined,
-                  "data-is-focus-trap-zone-bumper": undefined,
                   "data-is-visible": undefined,
                   "style": undefined,
                   "tabindex": undefined,
@@ -3623,7 +3567,6 @@ LoadedCheerio {
                   "next": Node {
                     "attribs": Object {
                       "aria-hidden": "true",
-                      "data-is-focus-trap-zone-bumper": "true",
                       "data-is-visible": "true",
                       "style": "pointer-events: none; position: fixed;",
                       "tabindex": "0",
@@ -3637,14 +3580,12 @@ LoadedCheerio {
                     "type": "tag",
                     "x-attribsNamespace": Object {
                       "aria-hidden": undefined,
-                      "data-is-focus-trap-zone-bumper": undefined,
                       "data-is-visible": undefined,
                       "style": undefined,
                       "tabindex": undefined,
                     },
                     "x-attribsPrefix": Object {
                       "aria-hidden": undefined,
-                      "data-is-focus-trap-zone-bumper": undefined,
                       "data-is-visible": undefined,
                       "style": undefined,
                       "tabindex": undefined,
@@ -3664,7 +3605,6 @@ LoadedCheerio {
                 "prev": Node {
                   "attribs": Object {
                     "aria-hidden": "true",
-                    "data-is-focus-trap-zone-bumper": "true",
                     "data-is-visible": "true",
                     "style": "pointer-events: none; position: fixed;",
                     "tabindex": "0",
@@ -3678,14 +3618,12 @@ LoadedCheerio {
                   "type": "tag",
                   "x-attribsNamespace": Object {
                     "aria-hidden": undefined,
-                    "data-is-focus-trap-zone-bumper": undefined,
                     "data-is-visible": undefined,
                     "style": undefined,
                     "tabindex": undefined,
                   },
                   "x-attribsPrefix": Object {
                     "aria-hidden": undefined,
-                    "data-is-focus-trap-zone-bumper": undefined,
                     "data-is-visible": undefined,
                     "style": undefined,
                     "tabindex": undefined,
@@ -3723,7 +3661,6 @@ LoadedCheerio {
                 "next": Node {
                   "attribs": Object {
                     "aria-hidden": "true",
-                    "data-is-focus-trap-zone-bumper": "true",
                     "data-is-visible": "true",
                     "style": "pointer-events: none; position: fixed;",
                     "tabindex": "0",
@@ -3737,14 +3674,12 @@ LoadedCheerio {
                   "type": "tag",
                   "x-attribsNamespace": Object {
                     "aria-hidden": undefined,
-                    "data-is-focus-trap-zone-bumper": undefined,
                     "data-is-visible": undefined,
                     "style": undefined,
                     "tabindex": undefined,
                   },
                   "x-attribsPrefix": Object {
                     "aria-hidden": undefined,
-                    "data-is-focus-trap-zone-bumper": undefined,
                     "data-is-visible": undefined,
                     "style": undefined,
                     "tabindex": undefined,
@@ -3962,7 +3897,6 @@ LoadedCheerio {
                   "prev": Node {
                     "attribs": Object {
                       "aria-hidden": "true",
-                      "data-is-focus-trap-zone-bumper": "true",
                       "data-is-visible": "true",
                       "style": "pointer-events: none; position: fixed;",
                       "tabindex": "0",
@@ -3976,14 +3910,12 @@ LoadedCheerio {
                     "type": "tag",
                     "x-attribsNamespace": Object {
                       "aria-hidden": undefined,
-                      "data-is-focus-trap-zone-bumper": undefined,
                       "data-is-visible": undefined,
                       "style": undefined,
                       "tabindex": undefined,
                     },
                     "x-attribsPrefix": Object {
                       "aria-hidden": undefined,
-                      "data-is-focus-trap-zone-bumper": undefined,
                       "data-is-visible": undefined,
                       "style": undefined,
                       "tabindex": undefined,
@@ -4014,7 +3946,6 @@ LoadedCheerio {
               Node {
                 "attribs": Object {
                   "aria-hidden": "true",
-                  "data-is-focus-trap-zone-bumper": "true",
                   "data-is-visible": "true",
                   "style": "pointer-events: none; position: fixed;",
                   "tabindex": "0",
@@ -4252,7 +4183,6 @@ LoadedCheerio {
                     "prev": Node {
                       "attribs": Object {
                         "aria-hidden": "true",
-                        "data-is-focus-trap-zone-bumper": "true",
                         "data-is-visible": "true",
                         "style": "pointer-events: none; position: fixed;",
                         "tabindex": "0",
@@ -4266,14 +4196,12 @@ LoadedCheerio {
                       "type": "tag",
                       "x-attribsNamespace": Object {
                         "aria-hidden": undefined,
-                        "data-is-focus-trap-zone-bumper": undefined,
                         "data-is-visible": undefined,
                         "style": undefined,
                         "tabindex": undefined,
                       },
                       "x-attribsPrefix": Object {
                         "aria-hidden": undefined,
-                        "data-is-focus-trap-zone-bumper": undefined,
                         "data-is-visible": undefined,
                         "style": undefined,
                         "tabindex": undefined,
@@ -4304,14 +4232,12 @@ LoadedCheerio {
                 "type": "tag",
                 "x-attribsNamespace": Object {
                   "aria-hidden": undefined,
-                  "data-is-focus-trap-zone-bumper": undefined,
                   "data-is-visible": undefined,
                   "style": undefined,
                   "tabindex": undefined,
                 },
                 "x-attribsPrefix": Object {
                   "aria-hidden": undefined,
-                  "data-is-focus-trap-zone-bumper": undefined,
                   "data-is-visible": undefined,
                   "style": undefined,
                   "tabindex": undefined,
@@ -4442,7 +4368,6 @@ LoadedCheerio {
                 Node {
                   "attribs": Object {
                     "aria-hidden": "true",
-                    "data-is-focus-trap-zone-bumper": "true",
                     "data-is-visible": "true",
                     "style": "pointer-events: none; position: fixed;",
                     "tabindex": "0",
@@ -4674,7 +4599,6 @@ LoadedCheerio {
                       "next": Node {
                         "attribs": Object {
                           "aria-hidden": "true",
-                          "data-is-focus-trap-zone-bumper": "true",
                           "data-is-visible": "true",
                           "style": "pointer-events: none; position: fixed;",
                           "tabindex": "0",
@@ -4688,14 +4612,12 @@ LoadedCheerio {
                         "type": "tag",
                         "x-attribsNamespace": Object {
                           "aria-hidden": undefined,
-                          "data-is-focus-trap-zone-bumper": undefined,
                           "data-is-visible": undefined,
                           "style": undefined,
                           "tabindex": undefined,
                         },
                         "x-attribsPrefix": Object {
                           "aria-hidden": undefined,
-                          "data-is-focus-trap-zone-bumper": undefined,
                           "data-is-visible": undefined,
                           "style": undefined,
                           "tabindex": undefined,
@@ -4732,14 +4654,12 @@ LoadedCheerio {
                   "type": "tag",
                   "x-attribsNamespace": Object {
                     "aria-hidden": undefined,
-                    "data-is-focus-trap-zone-bumper": undefined,
                     "data-is-visible": undefined,
                     "style": undefined,
                     "tabindex": undefined,
                   },
                   "x-attribsPrefix": Object {
                     "aria-hidden": undefined,
-                    "data-is-focus-trap-zone-bumper": undefined,
                     "data-is-visible": undefined,
                     "style": undefined,
                     "tabindex": undefined,
@@ -4969,7 +4889,6 @@ LoadedCheerio {
                     "next": Node {
                       "attribs": Object {
                         "aria-hidden": "true",
-                        "data-is-focus-trap-zone-bumper": "true",
                         "data-is-visible": "true",
                         "style": "pointer-events: none; position: fixed;",
                         "tabindex": "0",
@@ -4983,14 +4902,12 @@ LoadedCheerio {
                       "type": "tag",
                       "x-attribsNamespace": Object {
                         "aria-hidden": undefined,
-                        "data-is-focus-trap-zone-bumper": undefined,
                         "data-is-visible": undefined,
                         "style": undefined,
                         "tabindex": undefined,
                       },
                       "x-attribsPrefix": Object {
                         "aria-hidden": undefined,
-                        "data-is-focus-trap-zone-bumper": undefined,
                         "data-is-visible": undefined,
                         "style": undefined,
                         "tabindex": undefined,
@@ -5010,7 +4927,6 @@ LoadedCheerio {
                   "prev": Node {
                     "attribs": Object {
                       "aria-hidden": "true",
-                      "data-is-focus-trap-zone-bumper": "true",
                       "data-is-visible": "true",
                       "style": "pointer-events: none; position: fixed;",
                       "tabindex": "0",
@@ -5024,14 +4940,12 @@ LoadedCheerio {
                     "type": "tag",
                     "x-attribsNamespace": Object {
                       "aria-hidden": undefined,
-                      "data-is-focus-trap-zone-bumper": undefined,
                       "data-is-visible": undefined,
                       "style": undefined,
                       "tabindex": undefined,
                     },
                     "x-attribsPrefix": Object {
                       "aria-hidden": undefined,
-                      "data-is-focus-trap-zone-bumper": undefined,
                       "data-is-visible": undefined,
                       "style": undefined,
                       "tabindex": undefined,
@@ -5069,7 +4983,6 @@ LoadedCheerio {
                   "next": Node {
                     "attribs": Object {
                       "aria-hidden": "true",
-                      "data-is-focus-trap-zone-bumper": "true",
                       "data-is-visible": "true",
                       "style": "pointer-events: none; position: fixed;",
                       "tabindex": "0",
@@ -5083,14 +4996,12 @@ LoadedCheerio {
                     "type": "tag",
                     "x-attribsNamespace": Object {
                       "aria-hidden": undefined,
-                      "data-is-focus-trap-zone-bumper": undefined,
                       "data-is-visible": undefined,
                       "style": undefined,
                       "tabindex": undefined,
                     },
                     "x-attribsPrefix": Object {
                       "aria-hidden": undefined,
-                      "data-is-focus-trap-zone-bumper": undefined,
                       "data-is-visible": undefined,
                       "style": undefined,
                       "tabindex": undefined,
@@ -5308,7 +5219,6 @@ LoadedCheerio {
                     "prev": Node {
                       "attribs": Object {
                         "aria-hidden": "true",
-                        "data-is-focus-trap-zone-bumper": "true",
                         "data-is-visible": "true",
                         "style": "pointer-events: none; position: fixed;",
                         "tabindex": "0",
@@ -5322,14 +5232,12 @@ LoadedCheerio {
                       "type": "tag",
                       "x-attribsNamespace": Object {
                         "aria-hidden": undefined,
-                        "data-is-focus-trap-zone-bumper": undefined,
                         "data-is-visible": undefined,
                         "style": undefined,
                         "tabindex": undefined,
                       },
                       "x-attribsPrefix": Object {
                         "aria-hidden": undefined,
-                        "data-is-focus-trap-zone-bumper": undefined,
                         "data-is-visible": undefined,
                         "style": undefined,
                         "tabindex": undefined,
@@ -5360,7 +5268,6 @@ LoadedCheerio {
                 Node {
                   "attribs": Object {
                     "aria-hidden": "true",
-                    "data-is-focus-trap-zone-bumper": "true",
                     "data-is-visible": "true",
                     "style": "pointer-events: none; position: fixed;",
                     "tabindex": "0",
@@ -5598,7 +5505,6 @@ LoadedCheerio {
                       "prev": Node {
                         "attribs": Object {
                           "aria-hidden": "true",
-                          "data-is-focus-trap-zone-bumper": "true",
                           "data-is-visible": "true",
                           "style": "pointer-events: none; position: fixed;",
                           "tabindex": "0",
@@ -5612,14 +5518,12 @@ LoadedCheerio {
                         "type": "tag",
                         "x-attribsNamespace": Object {
                           "aria-hidden": undefined,
-                          "data-is-focus-trap-zone-bumper": undefined,
                           "data-is-visible": undefined,
                           "style": undefined,
                           "tabindex": undefined,
                         },
                         "x-attribsPrefix": Object {
                           "aria-hidden": undefined,
-                          "data-is-focus-trap-zone-bumper": undefined,
                           "data-is-visible": undefined,
                           "style": undefined,
                           "tabindex": undefined,
@@ -5650,14 +5554,12 @@ LoadedCheerio {
                   "type": "tag",
                   "x-attribsNamespace": Object {
                     "aria-hidden": undefined,
-                    "data-is-focus-trap-zone-bumper": undefined,
                     "data-is-visible": undefined,
                     "style": undefined,
                     "tabindex": undefined,
                   },
                   "x-attribsPrefix": Object {
                     "aria-hidden": undefined,
-                    "data-is-focus-trap-zone-bumper": undefined,
                     "data-is-visible": undefined,
                     "style": undefined,
                     "tabindex": undefined,
