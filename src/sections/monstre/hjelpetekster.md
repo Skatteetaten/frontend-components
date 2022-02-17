@@ -106,10 +106,10 @@ const data = [
       der ledeteksten ikke er tilstrekkelig forståelig. Vi skiller mellom
       fremskutt hjelpetekst hvor tekstsnutten vises uoppfordret, og selvvalgt
       hjelpetekst hvor brukeren selv velger å hente den fram ved å klikke på
-      spørsmålsikonet. Hvis vi må forklare mer utdypende kan hjelepeteksten
-      presenteres på en fordypningsside. Hjelpetekster kan også bli kalt
-      merknadstekster, og i denne sammenhengen fungerer de mer som
-      kontrolltekster der interne saksbehandlere blir gjort oppmerksom på noe.
+      spørsmålsikonet. Hvis vi må forklare mer utdypende kan hjelpeteksten
+      presenteres på en fordypningsside. I saksbehandlingsløsninger kan
+      hjelpetekster også bli kalt merknadstekster. De fungerer da som
+      kontrolltekster hvor saksbehandlere blir gjort oppmerksom på noe.
     </p>
 
     <ul>
@@ -119,11 +119,10 @@ const data = [
         behovet for ekstra forklaring?
       </li>
       <li>
-        Dersom du <i>må</i> bruke fagord skal det det alltid være hjelpetekst.
-      </li>
-      <li>
         Vær kortfattet og bruk ord som er lette å forstå for alle brukere. Det
-        innebærer å unngå stammespråk og vanskelig terminologi.
+        innebærer å unngå stammespråk og vanskelige ord. Dersom du <i>må</i>{' '}
+        bruke fagord (for eksempel forskuddsskatt) skal det det alltid være
+        hjelpetekst.
       </li>
 
       <li>Test på en kollega eller andre som ikke kjenner løsningen.</li>
@@ -212,7 +211,7 @@ const data = [
             <Grid.Row>
               <Grid.Col sm={5} noSpacing>
                 <TextField
-                  label="Tillatt totaltvekt med tilhenger"
+                  label="Tillatt totalvekt med tilhenger"
                   inputSize={'large'}
                   required
                   value={state.value}
@@ -262,8 +261,8 @@ const data = [
         </li>
         <li>
           Juster plasseringen av utropsboksen slik at den skyver resterende
-          innhold i skjemaet ditt nedover dersom dette er mulig. Boksen kan ikke
-          dekke tekst eller felt i skjemaer.
+          innhold i skjemaet ditt nedover dersom dette er mulig. Boksen skal
+          ikke dekke tekst eller felt i skjemaer.
         </li>
         <li>
           I toppraden i tabeller bør du legge utropsboksen over i stedet for
@@ -276,7 +275,7 @@ const data = [
         <li>Bruk autolukking.</li>
       </ul>
       <p>
-        I eksempelene under har vi grønn bakgrunnsfarge på utropsboksen som er
+        I eksemplene under har vi grønn bakgrunnsfarge på utropsboksen som er
         plassert over tabellen i stedet for under, slik at vi hindrer hopp i
         tabell og at boksen dekker over annen viktig informasjon.
       </p>
@@ -358,22 +357,20 @@ const data = [
           blir interaksjonen mer som en samtale og dermed mer intuitiv.
         </li>
         <li>
-          Bytt ut vanskelig terminologi i skjemaet framfor å skrive
-          hjelpetekster som foklarer den vanskelige terminologien. Klarspråk
-          gjelder for alle tekster.
+          Bytt ut vanskelige ord i skjemaet framfor å skrive hjelpetekster som
+          forklarer det vanskelige ordet. Klarspråk gjelder for alle tekster.
         </li>
         <li>
-          Bruk ord og utrykk som er kjente for brukeren og som gjerne relaterer
-          til skjematittelen. Vanskelig terminologi kan stå i parentes i
-          hjelpeteksten.
+          Bruk ord og uttrykk som er kjente for brukeren og som gjerne relaterer
+          til skjematittelen. Vanskelige ord kan stå i parentes i hjelpeteksten.
         </li>
         <li>
           Bruk gjerne eksempler. De er særlig nyttige i omfattende skjemaer
-          fordi brukeren da enklere kan forstå hva som forventes å fylle ut.{' '}
+          fordi brukeren da enklere kan forstå hva som forventes å fylle ut.
         </li>
         <li>
           Hjelpetekster i selve utfyllingsområdet må være svært kortfattet. Bruk
-          selvvalgt hjelpetekst hvis det er behov for utfyllende informasjon
+          selvvalgt hjelpetekst hvis det er behov for utfyllende informasjon.
         </li>
       </ul>
       <div className="dodont" style={{ marginLeft: '24px' }}>
@@ -498,7 +495,7 @@ const data = [
         <div className="do" style={{ maxWidth: '44%' }}>
           <p className="title">Ja</p>
           <h2>Verdipapirfond</h2>
-          <p>Hvis du sparer i fond skal du føre det opp her.</p>
+          <p>Hvis du sparer i fond, skal du føre det opp her.</p>
           <TextField label="Navn på bank eller forvaltningsselskap (selger)" />
         </div>
         <div className="dont" style={{ maxWidth: '44%' }}>
