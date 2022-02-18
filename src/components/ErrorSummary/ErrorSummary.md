@@ -102,3 +102,41 @@ const buttonStyle = {
   </p>
 </>
 ```
+
+```js noeditor uu
+<>
+  <h3>Tips</h3>
+
+  <ul>
+    <li>
+      Sjekk at tastatur- og skjermleserfokus settes til toppen av oppsummeringen
+      når den dukker opp.
+    </li>
+    <li>Sjekk at lenkene setter fokus til riktig felt.</li>
+    <li>
+      Test med skjermleser at innholdet i oppsummeringen leses opp når den
+      dukker opp.{' '}
+    </li>
+  </ul>
+
+  <h3>Mest relevante WCAG-krav</h3>
+
+  <ul>
+    <li>3.3.1 A, Identifikasjon av feil</li>
+    <li>4.1.2 A, Navn, rolle, verdi</li>
+  </ul>
+
+  <h3>WAI-ARIA</h3>
+
+  <ul>
+    <li>Aria-hidden="true" brukes for å skjule ikon(er) for skjermleser.</li>
+    <li>
+      Role="status" og aria-live="assertive" brukes for å sikre opplesing for
+      skjermleser.
+    </li>
+    <li>
+      Tabindex="0" brukes på lenkene for tabstopp pga. manglende href-attributt.
+    </li>
+  </ul>
+</>
+```

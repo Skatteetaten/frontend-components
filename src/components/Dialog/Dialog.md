@@ -210,16 +210,16 @@ function closeDialog() {
 
   <h3>WAI-ARIA</h3>
   <ul>
-    <li>Role=dialog identifiserer dialog-elementet for skjermlesere.</li>
+    <li>Role="dialog" identifiserer dialog-elementet for skjermlesere.</li>
     <li>
       Aria-modal gir beskjed til skjermlesere at det underliggende vinduet ikke
       er aktivt.
     </li>
     <li>
-      Aria-labelledby brukes for navngi dialogen med bruk av overskriften.
+      Aria-labelledby brukes for å navngi dialogen med bruk av overskriften.
     </li>
     <li>
-      Role=heading og aria-level brukes for å sette overskrift med riktig nivå
+      Role="heading" og aria-level brukes for å sette overskrift med riktig nivå
       for skjermlesere.
     </li>
     <li>

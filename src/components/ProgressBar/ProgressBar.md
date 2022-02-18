@@ -31,7 +31,7 @@ import { ProgressBar } from '@skatteetaten/frontend-components/ProgressBar';
   <h3>WAI-ARIA</h3>
   <ul>
     <li>
-      Role=progressbar brukes for identifisere statusindikatoren for
+      Role="progressbar" brukes for å identifisere statusindikatoren for
       skjermleser.
     </li>
     <li>

@@ -17,7 +17,7 @@ import { Image } from '@skatteetaten/frontend-components/Image';
     </li>
     <li>
       Bilder som er pynt bør skjules for skjermlesere, f.eks. med bruk av
-      aria-hidden eller role=presentation.
+      aria-hidden eller role="presentation".
     </li>
     <li> Unngå bilder av tekst.</li>
   </ul>

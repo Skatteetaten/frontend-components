@@ -77,16 +77,16 @@ import { TabItem } from '@skatteetaten/frontend-components/Tabs/TabItem';
   <h3>WAI-ARIA</h3>
   <ul>
     <li>
-      Role=tablist, role=tab og role=tabpanel brukes for å definere
+      Role="tablist", role="tab" og role="tabpanel" brukes for å definere
       faneelementene for skjermleser.
     </li>
-    <li>Aria-selected brukes for gi indikere valgt fane for skjermleser.</li>
+    <li>Aria-selected brukes for å gi indikere valgt fane for skjermleser.</li>
     <li>
-      Aria-controls brukes for noen skjermlesere enkelt kan hoppe til
+      Aria-controls brukes for at noen skjermlesere enkelt kan hoppe til
       faneinnholdet
     </li>
     <li>
-      Aria-labelledby brukes for gi faneinnholdet en relasjon til fanetittel.
+      Aria-labelledby brukes for å gi faneinnholdet en relasjon til fanetittel.
     </li>
   </ul>
 </>

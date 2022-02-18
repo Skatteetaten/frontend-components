@@ -32,7 +32,9 @@ import { ActionButton } from '@skatteetaten/frontend-components/ActionButton';
   <h3>WAI-ARIA</h3>
 
   <ul>
-    <li>Aria-hidden="true" brukes på ikonet for skjule det for skjermleser.</li>
+    <li>
+      Aria-hidden="true" brukes på ikonet for å skjule det for skjermleser.
+    </li>
     <li>
       Aria-label kan benyttes på button-tag hvis det er behov for å tydeliggjøre
       hva knappen gjør.

@@ -123,7 +123,7 @@ import { Typography } from '@skatteetaten/frontend-components/Typography';
   <ul>
     <li>
       Hvis ikke vanlig h-tag kan brukes, vurder om du bør kode det med
-      role=heading og aria-level (overskriftsnivå) for skjermleser.
+      role="heading" og aria-level (overskriftsnivå) for skjermleser.
     </li>
   </ul>
 </>

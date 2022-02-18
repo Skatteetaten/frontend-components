@@ -82,8 +82,8 @@ const afterDurationComponent = (resetDuration, setShowAlways) => (
   <ul>
     <li>Aria-label brukes for å navngi lukk-knapp for skjermlesere.</li>
     <li>
-      Role= brukes for å gi beskjed til skjermlesere at meldingen skal leses opp
-      (når den er synlig)
+      Role="status" og aria-live brukes for å gi beskjed til skjermlesere at
+      meldingen skal leses opp (når den er synlig)
     </li>
   </ul>
 </>

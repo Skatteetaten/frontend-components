@@ -130,7 +130,40 @@ const [state, setState] = React.useState({
 
 ```js noeditor uu
 <>
-  <p>Denne seksjonen er foreløpig tom.</p>
+  <h3>Tips</h3>
+
+  <ul>
+    <li>
+      Menyen skal kun ha ett tabstopp. Sjekk at du kan navigere med piltastene i
+      menyen.
+    </li>
+    <li>
+      Pass på at du beholder tastatur- og skjermleserfokus på det du velger.
+    </li>
+  </ul>
+
+  <h3>Mest relevante WCAG-krav</h3>
+
+  <ul>
+    <li>2.4.3 A, Fokusrekkefølge</li>
+    <li>4.1.2 A, Navn, rolle, verdi</li>
+  </ul>
+
+  <h3>WAI-ARIA</h3>
+
+  <ul>
+    <li>Aria-hidden="true" brukes på ikoner for skjule de for skjermleser.</li>
+    <li>Aria-label brukes for å navngi nav-tag og tydeliggjøre sidevalg.</li>
+    <li>Aria-current="true/false" brukes for å annonsere gjeldende valg.</li>
+    <li>Aria-disabled="true/false" brukes for inaktive/aktive funksjoner.</li>
+    <li>Role="group" brukes for å gruppere knapper.</li>
+    <li>
+      Role="menubar", role="menuitem" brukes typisk på en meny som presenteres
+      horisontalt og kan sammnlignes med lignende funksjonalitet i Windows, Mac
+      osv. OBS: Skal ikke brukes på vanlige menyer på web og er ikke vanlig i
+      publikumsløsninger.{' '}
+    </li>
+  </ul>
 </>
 ```
 

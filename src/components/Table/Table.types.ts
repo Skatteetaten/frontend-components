@@ -73,7 +73,7 @@ export interface TableProps<P> extends React.HTMLAttributes<HTMLDivElement> {
     /** Override the sort function */
     sortingFunction?: (...args: any[]) => any;
     /** Override the format function */
-    formatFunction?: (content: any) => string;
+    formatFunction?: (content: any) => string | JSX.Element;
     /** Show the sorting icon only at hover on column (it is always displayed for mobile) Default true,
      * set false if you want the sorting icon to always be displayed
      */

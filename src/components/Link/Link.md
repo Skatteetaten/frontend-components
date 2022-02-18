@@ -170,7 +170,7 @@ const links = [
   <h3>WAI-ARIA</h3>
 
   <ul>
-    <li>Aria-hidden="true" brukes for skjule ikonet for skjermleser.</li>
+    <li>Aria-hidden="true" brukes for å skjule ikonet for skjermleser.</li>
   </ul>
 </>
 ```
