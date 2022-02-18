@@ -54,7 +54,6 @@ exports[`Tabs komponent matcher snapshot 1`] = `
       & .ms-Pivot-link.is-selected .ms-Pivot-linkContent span {
         text-decoration: none;
       }
-  role="toolbar"
 >
   <div
     className=
