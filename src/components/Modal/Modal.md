@@ -84,10 +84,10 @@ const TestComponent = ({}) => {
   </p>
   <ul>
     <li>
-      du har enkle bekreftelsesmeldinger, eller når innholdet inni boksen er
-      lite, og du er sikker på at du ikke må skrolle i innholdet.
+      du har enkle bekreftelsesmeldinger med lite innhold inni boksen, og du er
+      sikker på at du ikke må skrolle i innholdet.
     </li>
-    <li>løsningen din har micro frontend-akitektur eller web components</li>
+    <li>løsningen din har micro frontend-arkitektur eller web components</li>
   </ul>
 </>
 ```
