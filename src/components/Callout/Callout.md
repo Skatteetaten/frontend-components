@@ -169,13 +169,17 @@ function closeButton() {
 
 ```js noeditor beskrivelse
 <>
-  <h3>Kun i interne løsninger</h3>
+  <h3>I interne løsninger og tabeller</h3>
   <p>
     Vi bruker callout normalt for å vise en hjelpetekst. Et typisk eksempel er
     et ikon med en «i», der en informasjons-tekst dukker opp når brukeren
-    trykker på ikonet. Merk at vi bare bruker callout i interne løsninger fordi
-    dette ikke støtter universell utforming. Se begrunnelse under fanen
-    universell utforming.
+    trykker på ikonet. Siden Callout flyter over innholdet brukes den som
+    hovedregel i interne løsninger og tabeller, hvor det er viktig at innholdet
+    på siden ikke forskyves.
+  </p>
+  <p>
+    Tips: Lange ord kan gjøre at callout-boksen blir bredere enn mobilskjermen.
+    Dette kan du løse ved å bruke myke linjeskift i teksten.
   </p>
   <h3>Vi bruker grønn og gul farge på boksene</h3>
   <ul>

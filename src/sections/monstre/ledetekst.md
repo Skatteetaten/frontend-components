@@ -34,8 +34,6 @@ function closeButton() {
   });
 }
 
-const eksempel = '[TODO eksempel]';
-
 <div>
   <Card
     title="Hovedregler for ledetekster (label, spørsmålstekst og instruks)"
@@ -98,7 +96,7 @@ const eksempel = '[TODO eksempel]';
                 })
               }
             >
-              <Button buttonStyle="secondary" aria-haspopup="true">
+              <Button buttonStyle="secondarySimple" aria-haspopup="true">
                 Skjematittel
               </Button>
             </Chip>
@@ -144,7 +142,7 @@ const eksempel = '[TODO eksempel]';
                     })
                   }
                 >
-                  <Button buttonStyle="secondary" aria-haspopup="true">
+                  <Button buttonStyle="secondarySimple" aria-haspopup="true">
                     Fremskutt hjelpetekst
                   </Button>
                 </Chip>
@@ -186,7 +184,7 @@ const eksempel = '[TODO eksempel]';
                 })
               }
             >
-              <Button buttonStyle="secondary" aria-haspopup="true">
+              <Button buttonStyle="secondarySimple" aria-haspopup="true">
                 Merkelapp for obligatoriske felt
               </Button>
             </Chip>
@@ -240,7 +238,7 @@ const eksempel = '[TODO eksempel]';
                   })
                 }
               >
-                <Button buttonStyle="secondary" aria-haspopup="true">
+                <Button buttonStyle="secondarySimple" aria-haspopup="true">
                   Feltnavn
                 </Button>
               </Chip>
@@ -297,7 +295,7 @@ const eksempel = '[TODO eksempel]';
                   })
                 }
               >
-                <Button buttonStyle="secondary" aria-haspopup="true">
+                <Button buttonStyle="secondarySimple" aria-haspopup="true">
                   Enhetsbenevnelse
                 </Button>
               </Chip>
@@ -402,7 +400,7 @@ const eksempel = '[TODO eksempel]';
                   })
                 }
               >
-                <Button buttonStyle="secondary" aria-haspopup="true">
+                <Button buttonStyle="secondarySimple" aria-haspopup="true">
                   Plassholder med instruks
                 </Button>
               </Chip>
