@@ -165,8 +165,8 @@ const contents = [
   <h3>WAI-ARIA</h3>
 
   <ul>
-    <li>Aria-hidden="true" brukes for skjule ikoner for skjermleser.</li>
-    <li>Aria-label="xxx" brukes for å navngi nav-tag.</li>
+    <li>Aria-hidden="true" brukes for å skjule ikoner for skjermleser.</li>
+    <li>Aria-label="..." brukes for å navngi nav-tag.</li>
   </ul>
 </>
 ```

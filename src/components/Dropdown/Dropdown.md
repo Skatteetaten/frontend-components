@@ -112,12 +112,12 @@ const options = [
   <h3>WAI-ARIA</h3>
   <ul>
     <li>
-      Role=button med aria-haspopup=listbox og aria-expanded brukes for å
+      Role="button" med aria-haspopup="listbox" og aria-expanded brukes for å
       definere element, indikere at den har en liste med valg og om listen er
       åpen eller ikke for skjermleser.{' '}
     </li>
     <li>
-      Role=option og aria-selected brukes på valgene i listen for å definere
+      Role="option" og aria-selected brukes på valgene i listen for å definere
       element og si om noe er valgt eller ikke.
     </li>
     <li>Aria-expanded brukes på info/hjelp-knappene som utvides/minimeres</li>

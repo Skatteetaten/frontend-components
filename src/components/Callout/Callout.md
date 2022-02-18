@@ -160,9 +160,9 @@ function closeButton() {
   <h3>WAI-ARIA</h3>
   <ul>
     <li>Aria-haspopup brukes på knappene som viser melding/varsel.</li>
-    <li>Role=dialog identifiserer dialogboksen for skjermleser</li>
+    <li>Role="dialog" identifiserer dialogboksen for skjermleser</li>
     <li>Aria-label brukes for å navngi lukk-ikon i dialogen.</li>
-    <li>Aria-hidden brukes for skjule ikoner for skjermleser. </li>
+    <li>Aria-hidden brukes for å skjule ikoner for skjermleser. </li>
   </ul>
 </>
 ```

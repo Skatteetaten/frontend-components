@@ -388,12 +388,12 @@ function chooseRow() {
   <h3>WAI-ARIA</h3>
   <ul>
     <li>
-      Role=grid med aria-rowcount og aria-colcount brukes for gi beskjed til
+      Role="grid" med aria-rowcount og aria-colcount brukes for å gi beskjed til
       skjermleser at listen vises som en tabell.
     </li>
-    <li>Role=row brukes for indikere tabellrad.</li>
+    <li>Role="row" brukes for å indikere tabellrad.</li>
     <li>
-      Role=columheader, og role=gridcell brukes for indikere kolonneoverskrifter
+      Role="columnheader", og role="gridcell" brukes for å indikere kolonneoverskrifter
       og celler.
     </li>
     <li>

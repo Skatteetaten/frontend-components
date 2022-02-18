@@ -56,7 +56,7 @@ import { ScrollToTopButton } from '@skatteetaten/frontend-components/ScrollToTop
 
   <ul>
     <li>
-      Aria-hidden="true" brukes for skjule funksjonaliteten for skjermlesere.
+      Aria-hidden="true" brukes for å skjule funksjonaliteten for skjermlesere.
     </li>
     <li>
       All annen aria-koding er overflødig pga. at hele knappen er skjult for

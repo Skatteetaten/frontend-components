@@ -111,18 +111,20 @@ const links = [
 
   <h3>WAI-ARIA</h3>
   <ul>
-    <li>Aria-hidden=true brukes for å skjule ikoner.</li>
+    <li>Aria-hidden="true" brukes for å skjule ikoner.</li>
     <li>Aria-expanded brukes på innhold som utvides/minimeres.</li>
     <li>
-      Aria-haspopup=true brukes på interaktivt popup-element, typisk meny.
+      Aria-haspopup="true" brukes på interaktivt popup-element, typisk meny.
       Annonseres som meny av skjermleser, derfor ikke hensiktsmessig å bruke på
       vanlig utvidbar funksjonalitet som f.eks. Endre skriftstørrelse.
     </li>
     <li>
-      Role=menu, menuitem brukes for å identifisere listeelementer som
+      Role="menu", menuitem brukes for å identifisere listeelementer som
       menyelementer.
     </li>
-    <li>Aria-current=true brukes for å annonsere gjeldene valg (avhukning)</li>
+    <li>
+      Aria-current="true" brukes for å annonsere gjeldende valg (avhukning)
+    </li>
   </ul>
 </>
 ```
