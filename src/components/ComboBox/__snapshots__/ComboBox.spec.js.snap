@@ -47,12 +47,13 @@ exports[`Combobox komponent matcher med snapshot 1`] = `
           right: 0;
           top: 0;
         }
-        & div[role=region]::before {
+        & div[role=alert]::before {
           font-family: "SkeIconfont";
           font-size: 16px;
           margin-right: 3px;
+          vertical-align: text-bottom;
         }
-        & div[role=region] {
+        & div[role=alert] {
           font-size: 0.875rem;
           font-weight: 500;
         }

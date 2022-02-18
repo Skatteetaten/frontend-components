@@ -1,4 +1,4 @@
-**Modal: Enkel modalboks**
+**Modal: Modalboks for enkle behov eller micro frontends**
 
 ```js
 import { Button } from '@skatteetaten/frontend-components/Button';
@@ -15,9 +15,7 @@ const TestComponent = ({}) => {
 
   return (
     <>
-      <Button onClick={toggleModal} aria-haspopup>
-        {'Åpne modal'}
-      </Button>
+      <Button onClick={toggleModal}>{'Åpne modal'}</Button>
 
       {modal && modal.isOpen('testModal') && (
         <Modal name={'testModal'}>
@@ -46,16 +44,21 @@ const TestComponent = ({}) => {
   </ModalProvider>
 </div>;
 ```
+
 ```js noeditor uu
 <>
   <h3>Tips</h3>
 
   <ul>
     <li>
-      Sjekk at modalen får fokus etter at den åpnes. Dette gjør det enklere for en skjermleser å oppdage og lese opp innholdet.
+      Sjekk at modalen får fokus etter at den åpnes. Dette gjør det enklere for
+      en skjermleser å oppdage og lese opp innholdet.
     </li>
-    <li>Test med tastatur at du ikke kan navigere ut av dialogen. Tastaturfokuset skal være på knappen som åpner dialogen etter lukking.</li>
-<li>Sjekk at alt innholdet bak dialogen "viskes" ut visuelt.</li>
+    <li>
+      Test med tastatur at du ikke kan navigere ut av dialogen. Tastaturfokuset
+      skal være på knappen som åpner dialogen etter lukking.
+    </li>
+    <li>Sjekk at alt innholdet bak dialogen "viskes" ut visuelt.</li>
   </ul>
 
   <h3>Mest relevante WCAG-krav</h3>
@@ -69,6 +72,22 @@ const TestComponent = ({}) => {
 
   <ul>
     <li>Aria-hidden="true" brukes for å skjule ikon(er) for skjermleser.</li>
+  </ul>
+</>
+```
+
+```js noeditor beskrivelse
+<>
+  <p>
+    Modal har mange likhetstrekk med Dialog-komponenten, men vi anbefaler å
+    bruke Modal når:
+  </p>
+  <ul>
+    <li>
+      du har enkle bekreftelsesmeldinger, eller når innholdet inni boksen er
+      lite, og du er sikker på at du ikke må skrolle i innholdet.
+    </li>
+    <li>løsningen din har micro frontend-akitektur eller web components</li>
   </ul>
 </>
 ```

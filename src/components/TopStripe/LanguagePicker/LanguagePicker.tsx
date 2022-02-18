@@ -1,11 +1,12 @@
 import * as React from 'react';
-import { TopStripeButton } from './TopStripeButton';
-import { TopStripeMenu } from './TopStripeMenu';
-import { EnglishFlag, NorwegianFlag, SamiFlag } from './assets';
-import { Icon } from '../Icon';
-import { UseScreen } from '../utils';
+import { TopStripeButton } from '../TopStripeButton';
+import { TopStripeMenu } from '../TopStripeMenu';
+import { EnglishFlag, NorwegianFlag, SamiFlag } from '../assets';
+import { Icon } from '../../Icon';
+import { UseScreen } from '../../utils';
 import { getClassNames } from './LanguagePicker.classNames';
 import { useEffect } from 'react';
+import classnames from 'classnames';
 
 export enum LanguageEnum {
   BOKMAAL = 'nb',
@@ -28,18 +29,26 @@ const generateLanguagePickerText = (language: LanguageEnum): string => {
 };
 
 const displayFlag = (language: LanguageEnum): JSX.Element => {
-  const altText: string = generateLanguagePickerText(language);
-
   switch (language) {
     case LanguageEnum.BOKMAAL:
-      return <img src={NorwegianFlag} alt={altText} />;
+      return <img src={NorwegianFlag} alt={''} />;
     case LanguageEnum.NYNORSK:
-      return <img src={NorwegianFlag} alt={altText} />;
+      return <img src={NorwegianFlag} alt={''} />;
     case LanguageEnum.ENGLISH:
-      return <img src={EnglishFlag} alt={altText} />;
+      return <img src={EnglishFlag} alt={''} />;
     case LanguageEnum.SAMI:
-      return <img src={SamiFlag} alt={altText} />;
+      return <img src={SamiFlag} alt={''} />;
   }
+};
+
+const generateLanguagePickerTitle = (language: LanguageEnum): JSX.Element => {
+  const styles = getClassNames();
+  return (
+    <>
+      <span className={styles.languageButtonFlag}>{displayFlag(language)}</span>
+      {generateLanguagePickerText(language)}
+    </>
+  );
 };
 
 const LanguagePickerButton = ({
@@ -49,19 +58,35 @@ const LanguagePickerButton = ({
   showOnMobile,
 }): JSX.Element => {
   const styles = getClassNames();
+  const isSelectedLanguage = buttonLanguage === selectedLanguage;
   return (
     <TopStripeButton
       onClick={() => setLanguage(buttonLanguage)}
       showOnMobile={showOnMobile}
       className={styles.languageButton}
       role={'menuitem'}
-      aria-current={buttonLanguage === selectedLanguage}
+      aria-current={isSelectedLanguage}
     >
-      {buttonLanguage === selectedLanguage && (
+      {isSelectedLanguage && (
         <Icon iconName={'Check'} className={styles.checkIcon} />
       )}
-      <span className={styles.flag}>{displayFlag(buttonLanguage)}</span>
-      <span className={styles.text}>
+      <span
+        className={classnames(
+          styles.languageButtonContent,
+          styles.languageButtonFlag
+        )}
+      >
+        {displayFlag(buttonLanguage)}
+      </span>
+      <span
+        className={classnames(
+          styles.languageButtonContent,
+          styles.languageButtonText,
+          {
+            [styles.languageButtonIsNotSelected]: !isSelectedLanguage,
+          }
+        )}
+      >
         {generateLanguagePickerText(buttonLanguage)}
       </span>
     </TopStripeButton>
@@ -119,32 +144,29 @@ export const LanguagePicker: React.FC<LanguagePickerProps> = (props) => {
     document.documentElement.lang = selectedLanguage;
   }, [selectedLanguage]);
 
-  const styles = getClassNames();
   const screenSize = UseScreen();
   if (screenSize.sm && !showOnMobile) {
     return null;
   }
 
   return (
-    <>
-      <span className={styles.flag}>{displayFlag(selectedLanguage)}</span>
-      <TopStripeMenu
-        showOnMobile={showOnMobile}
-        title={generateLanguagePickerText(selectedLanguage)}
-        className={className}
-      >
-        {languages.map((language) => {
-          return (
-            <LanguagePickerButton
-              key={language}
-              buttonLanguage={language}
-              selectedLanguage={selectedLanguage}
-              setLanguage={setLanguage}
-              showOnMobile={showOnMobile}
-            />
-          );
-        })}
-      </TopStripeMenu>
-    </>
+    <TopStripeMenu
+      data-testid={'language-picker'}
+      showOnMobile={showOnMobile}
+      title={generateLanguagePickerTitle(selectedLanguage)}
+      className={className}
+    >
+      {languages.map((language) => {
+        return (
+          <LanguagePickerButton
+            key={language}
+            buttonLanguage={language}
+            selectedLanguage={selectedLanguage}
+            setLanguage={setLanguage}
+            showOnMobile={showOnMobile}
+          />
+        );
+      })}
+    </TopStripeMenu>
   );
 };

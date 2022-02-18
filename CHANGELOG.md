@@ -1,13 +1,4 @@
-### **v.5.0.0 - 31.10.2021 - Major release**
-
-#### **Notes /Todo**
-
-- ivaretar breaking-change på role i checkbox
-- flytter ref på combobox til ytterste wrapper
-- datepicker oppdaterer ref - TO-DO: ikke mulig å aksessere lokal state for editMode
-- refaktorerer TabItem til FunctionComponent
-- oppdaterer types for TextField
-- Reorganisering av import/export til å fungere med moduler (//TO-DO alle doc-sidene må retestes) //TO-DO fjerne entry.ts i /lib etter compile
+### **v.5.0.0 - 1 February 2022 - Major release**
 
 #### **Breaking**
 
@@ -34,13 +25,13 @@
 
 ##### _Table_
 
-- className prop deprecated, use customClassnames instead
+- className prop deprecated, use customClassNames instead
 
 ##### _Button_
 
-- Width is no longer set to 100 % width on mobile, unless mobileFullWidth prop is set.
+- Width is no longer defaults to 100 % width on mobile. Use mobileFullWidth to enable.
 
-Variants have been reorganized/prioritized, with have new names and default value:
+Variants have been reorganized/prioritized, with new names and default value:
 
 - "primaryLarge" is now "callToAction",
 - "primaryRoundedFilled" is now "primary",
@@ -50,7 +41,7 @@ Variants have been reorganized/prioritized, with have new names and default valu
 
 ##### _ScrollToTopButton_
 
-- Now uses breakpoints from designtokens for vertical placement (also added with ability to change placement)
+- Now uses breakpoints from designtokens for vertical placement (also added ability to change placement)
 - 'className' prop -> replaced with customClassNames to target overrides to spesific element
 
 #### **Colors and design**
@@ -59,22 +50,21 @@ Variants have been reorganized/prioritized, with have new names and default valu
 - New colors brands (themes), which changes the main color in: TopBanner (external), FooterContent, Tabs, Dialog and ProgressBar. We have themes for Skatteetaten (default), Statens innkreving (INK), and Lønnsstøtteordningen (LSO).
 - New status colors: statusOk and statusWarning.
 - Both Button and ActionButton have upgraded styling, click and hover effects
-- New ErrorSummary component.
 - ErrorMessage design upgraded to match the new ErrorSummary component.
-- ActionButton: the large icon is slightly smaller
+- ActionButton: the large icon is slightly smaller.
 - MessageBar now has colored icons and a left border.
 
 #### **Micro frontend support and building pipeline**
 
-- The components now better supports Micro Frontend; the styling information can be accessed from shadow DOM. (Note: Dialog and Dropdown does not fully support this yet.)
-- We have changed from UMD to ESM-export.
+- The components now better supports Micro Frontends; styling information can be accessed from shadow DOM. (Note: Dialog does not fully support this yet - use Modal instead)
+- Export has been changed from UMD to ESM.
 - Reorganized import and export to support modules.
 
 #### **Upgrades and optimizations**
 
 - Upgraded to Fluent-UI v8:
   https://github.com/microsoft/fluentui/wiki/Version-8-release-notes (this upgrade requires React 17)
-- Upgraded dependencies: i18next og react-i18next and node-fetch
+- Upgraded dependencies: axios, i18next og react-i18next and node-fetch
 - Remove unnecessary dependencies: tslib (already included in Fluent UI) and fixes duplicate dependencies.
 - Moved uuid from dependency to devDependendy
 - Icons have been reorganized into a single, much smaller font file, using woff-format only.
@@ -87,20 +77,26 @@ Variants have been reorganized/prioritized, with have new names and default valu
 - Fixes known accessibility issues with Commandbar, Dropdown and Combobox.
 - TopBanner: Added ability to change the url when clicking the logo.
 - Table: Updated styling and code for better reposiveness, alignment and performance.
+- TopStripe: Updated styling for better mobile support. Added ability to set content width for large screens.
 - Callout: Slightly changed styling for close button.
-- Added sami translations to
-- OpenClose: added ability to show underline
+- Added sami translations to components to DatePicker, FileUploader, SearchField and Table.
+- OpenClose: added ability to show underline.
+- TableRow: added custom styling and fixes a padding issue in SumRow
+- Input fields now has the ability to show required mark next to label.
+- CheckBox has has a role="checkbox" instead of select type.
+- It is no longer possible to access datepicker local state editMode.
+- Various updates to documentation
 
-### **v.4.2.2 - 12.01.2022**
+### **v.4.2.2 - 12 January 2022**
 
 - Updated Axios to fix vulnerabilities.
 
-### **v.4.2.1 - 30.11.2021**
+### **v.4.2.1 - 30 November 2021**
 
 - FileUploader: now supports UPPERCASE file types.
 - Removed dependency material-design-icons
 
-### **v.4.2.0 - 24.11.2021**
+### **v.4.2.0 - 24 November 2021**
 
 - New ErrorSummary component.
 - OpenClose: Improvements to accessbility and reposiveness. Added ability to underline text.
@@ -110,11 +106,13 @@ Variants have been reorganized/prioritized, with have new names and default valu
 - Table header cells now reacts to alignment.
 - Deprecated: Button buttonStyle: primaryRounded, primaryRoundedFilled, primaryLarge. We are planning to simplyfy the button hierarchy, and in the next major release these variants will have new names.
 
-### **v.4.1.6 - 15.10.2021**
+### **v.4.1.6 - 15 October 2021**
 
 - TopStripe: Added width to flag SVGs
 
-### **v.4.1.5 - 01.10.2021**
+### **v.4.1.5 - 1 October 2021**
+
+- SearchField: fixed keyboard navigation when using a filtered list.
 
 ### Se eldre versjoner:
 

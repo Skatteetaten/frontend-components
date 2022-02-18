@@ -122,7 +122,9 @@ const links = [
       Role="menu", menuitem brukes for å identifisere listeelementer som
       menyelementer.
     </li>
-    <li>Aria-current="true" brukes for å annonsere gjeldende valg (avhukning)</li>
+    <li>
+      Aria-current="true" brukes for å annonsere gjeldende valg (avhukning)
+    </li>
   </ul>
 </>
 ```

@@ -1,23 +1,23 @@
 import * as React from 'react';
-import { getClassNames } from './TopStripe.classNames';
+import { getClassNames } from './TopStripeMenu.classNames';
 import classnames from 'classnames';
-import { UseScreen } from '../utils';
-import { Icon } from '../Icon';
-import { LinkProps } from '../Link/Link.types';
-import { ActionButton } from '../ActionButton';
-import { TopStripeButton } from './TopStripeButton';
-import { TopStripeContext } from './TopStripe';
+import { UseScreen } from '../../utils';
+import { Icon } from '../../Icon';
+import { LinkProps } from '../../Link/Link.types';
+import { ActionButton } from '../../ActionButton';
+import { TopStripeButton } from '../TopStripeButton';
+import { TopStripeContext } from '../TopStripe';
 
-export interface TopStripeMenuProps extends LinkProps {
+export interface TopStripeMenuProps extends Omit<LinkProps, 'title'> {
   /**
    * Close menu on item click
    * @default true
    */
   closeOnClick?: boolean;
   defaultSelected?: number;
-  showOnMobile?: boolean;
+  showOnMobile: boolean;
   onRender?: any;
-  title: string;
+  title: string | JSX.Element;
   className?: string;
   index?: number;
   /** Name of icon to display */
@@ -49,6 +49,7 @@ export const TopStripeMenu: React.FC<TopStripeMenuProps> = (props) => {
     contentIsMenu = true,
   } = props;
   const { open, setOpen, closeMenu } = React.useContext(TopStripeContext);
+  const isMenuOpen = open === index;
 
   const screenSize = UseScreen();
   if (screenSize.sm && !showOnMobile) {
@@ -57,29 +58,35 @@ export const TopStripeMenu: React.FC<TopStripeMenuProps> = (props) => {
 
   return (
     <>
-      {props.icon ? <Icon className={styles.menuIcon} iconName={icon} /> : ''}
-
       <TopStripeButton
         aria-haspopup={contentIsMenu}
-        aria-expanded={open === index}
-        className={classnames(styles.plainButton, className)}
+        aria-expanded={isMenuOpen}
+        className={classnames(className, {
+          [styles.topStripeMenuShowChevron]: showChevron,
+          [styles.topStripeMenuHasIcon]: icon,
+        })}
         onClick={() => setOpen(index)}
         showOnMobile={showOnMobile}
       >
-        {title}
+        {icon ? (
+          <Icon className={styles.topStripeMenuIcon} iconName={icon} />
+        ) : (
+          ''
+        )}
+        <div className={styles.topStripeMenuTitle}>{title}</div>
         {showChevron ? (
           <Icon
-            className={styles.chevronIcon}
+            className={styles.topStripeMenuChevronIcon}
             aria-hidden
-            iconName={'MenuDown'}
+            iconName={isMenuOpen ? 'MenuUp' : 'MenuDown'}
           />
         ) : (
           ''
         )}
       </TopStripeButton>
-      {open === index && (
+      {isMenuOpen && (
         <ul
-          className={styles.dropdownContainer}
+          className={styles.topStripeMenuDropdownContainer}
           role={contentIsMenu ? 'menu' : undefined}
         >
           {onRender
@@ -94,28 +101,40 @@ export const TopStripeMenu: React.FC<TopStripeMenuProps> = (props) => {
                           child.props.onClick(e);
                         closeOnClick && closeMenu && closeMenu();
                       }}
-                      className={styles.dropDownLink}
+                      className={styles.topStripeMenuDropdownElementContainer}
                     >
-                      <Icon
-                        iconName={child.props.icon || undefined}
-                        aria-hidden
-                        className={styles.icon}
-                      />
+                      {child.props.icon ? (
+                        <Icon
+                          iconName={child.props.icon || undefined}
+                          aria-hidden
+                          className={styles.topStripeMenuDropdownElementIcon}
+                        />
+                      ) : (
+                        ''
+                      )}
                       {React.cloneElement(child, {
                         role: 'menuitem',
                         'aria-current': child.props.icon ? 'true' : undefined,
                         icon: undefined,
                         onClick: undefined,
+                        className: classnames(
+                          child.props.className,
+                          styles.topStripeMenuDropdownElement
+                        ),
                       })}
                     </li>
                   );
                 } else {
-                  return <li className={styles.dropDownLink}>{children}</li>;
+                  return (
+                    <li className={styles.topStripeMenuDropdownElement}>
+                      {children}
+                    </li>
+                  );
                 }
               })}
           <li>
             <ActionButton
-              className={styles.menuCloseButton}
+              className={styles.topStripeMenuDropdownCloseButton}
               icon={'ChevronUp'}
               onClick={() => setOpen(index)}
               ariaLabel={closeMenuAriaLabel}

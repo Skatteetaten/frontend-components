@@ -1,8 +1,12 @@
 import * as React from 'react';
 import { getClassNames } from './TopStripe.classNames';
 import classnames from 'classnames';
-import { TopStripeButton } from './TopStripeButton';
 import { TopStripeProps } from './TopStripe.types';
+import { TopStripeMenu } from './TopStripeMenu';
+import { TopStripeButton } from './TopStripeButton';
+import { TopStripeLink } from './TopStripeLink';
+import { LanguagePicker } from './LanguagePicker';
+import { TopStripeUser } from './TopStripeUser';
 
 export const TopStripeContext = React.createContext<TopStripeProps>({
   open: -1,
@@ -12,19 +16,26 @@ export const TopStripeContext = React.createContext<TopStripeProps>({
  * visibleName TopStripe (Toppstripe)
  */
 export const TopStripe: React.FC<TopStripeProps> = (props) => {
-  const notOpen = -1;
+  const topStripeElements = [
+    TopStripeMenu,
+    TopStripeButton,
+    TopStripeLink,
+    TopStripeUser,
+    LanguagePicker,
+  ];
+  const notOpenIndex = -1;
   const topRef = React.createRef<HTMLUListElement>();
-  const [open, setOpenIndex] = React.useState(notOpen);
-  const setOpen = (num) => {
-    if (open === num) {
-      setOpenIndex(notOpen);
+  const [openIndex, setOpenIndex] = React.useState(notOpenIndex);
+  const setOpen = (index: number) => {
+    if (openIndex === index) {
+      setOpenIndex(notOpenIndex);
     } else {
-      setOpenIndex(num);
+      setOpenIndex(index);
     }
   };
-  const styles = getClassNames();
-  const { children, className, ...rest } = props;
-  const showOverlay = open !== notOpen ? styles.overlayShow : '';
+  const { children, className, contentWidth, ...rest } = props;
+  const styles = getClassNames(contentWidth);
+  const showOverlay = openIndex !== notOpenIndex ? styles.overlayShow : '';
 
   const handleClickOutside = (e: any) => {
     const eventPaths: Array<EventTarget> = e.composedPath
@@ -37,13 +48,13 @@ export const TopStripe: React.FC<TopStripeProps> = (props) => {
       return;
     }
     // outside click
-    setOpen(notOpen);
+    setOpen(notOpenIndex);
   };
 
   const handleEscape = (e: any) => {
     // Match escape key
     if (e.keyCode === 27) {
-      setOpen(notOpen);
+      setOpen(notOpenIndex);
     }
   };
 
@@ -57,37 +68,40 @@ export const TopStripe: React.FC<TopStripeProps> = (props) => {
   });
 
   return (
-    <>
+    <div className={styles.topStripe}>
       <div className={classnames(styles.overlay, showOverlay)} />
-      <TopStripeContext.Provider
-        value={{
-          open: open,
-          setOpen: setOpen,
-          closeMenu: () => setOpenIndex(notOpen),
-        }}
-      >
-        <ul
-          ref={topRef}
-          className={classnames(styles.topStripeContainer, className)}
-          {...rest}
+      <div className={styles.background}>
+        <TopStripeContext.Provider
+          value={{
+            open: openIndex,
+            setOpen: setOpen,
+            closeMenu: () => setOpenIndex(notOpenIndex),
+          }}
         >
-          {React.Children.map(children, (child: any, index) => {
-            if (child && child.type === TopStripeButton) {
-              return (
-                <li>
+          <ul
+            ref={topRef}
+            className={classnames(styles.topStripeContainer, className)}
+            {...rest}
+          >
+            {React.Children.map(children, (child: any, index) =>
+              child ? (
+                <li
+                  className={classnames(styles.topStripeElement, {
+                    [styles.loggedInUser]: child.type === TopStripeUser,
+                    [styles.hideOnMobile]:
+                      topStripeElements.includes(child.type) &&
+                      !child.props.showOnMobile,
+                  })}
+                >
                   {React.cloneElement(child, {
-                    topStripeStyle: styles.plainButton,
+                    index,
                   })}
                 </li>
-              );
-            } else {
-              return child ? (
-                <li>{React.cloneElement(child, { index })}</li>
-              ) : null;
-            }
-          })}
-        </ul>
-      </TopStripeContext.Provider>
-    </>
+              ) : null
+            )}
+          </ul>
+        </TopStripeContext.Provider>
+      </div>
+    </div>
   );
 };

@@ -149,24 +149,29 @@ const [currentPage, setCurrentPage] = React.useState(1);
 
 ```js noeditor beskrivelse
 <>
-  <h3>Komponent som gjør at brukeren kan bla i lister og tabeller</h3>
+  <h3>Pagination lar brukeren bla i lister og tabeller</h3>
   <p>
-    Sidevelgeren hører alltid til annen komponent og har som funksjon at
-    brukeren skal kunne bla frem og tilbake i stedet for å måtte skrolle nedover
-    i lange lister og tabeller med opplysninger. Komponenten skal som hovedregel
-    henge under og være like bred som den tilhørende komponenten.
+    Sidevelgeren legger til rette for at brukeren kan bla i stedet for å måtte
+    skrolle nedover i lange lister og tabeller med opplysninger. Komponenten
+    hører alltid sammen med en annen komponent – som regel tabell eller
+    søkeresultat.
   </p>
 
-  <h3>Hvor mange sider skal vises i sidevelgeren?</h3>
-  <p>Du kan stille inn antallet sider i tallrekken der brukeren blar fra.</p>
+  <h3>Slik bruker du sidevelgeren:</h3>
+
   <ul>
     <li>
-      Ta hensyn til hvor mye data som vises og sannsynligheten for at brukeren
-      vil bla i opplysningene.
+      Komponenten skal henge under og være like bred som den tilhørende
+      komponenten (tabell eller søkeresultat).
     </li>
     <li>
-      På mobil anbefaler vi maksimum tre tall i tallrekken på grunn av plassen
-      på skjermen.
+      Når du stiller inn tallet på sider i tallrekken der brukeren blar fra,
+      skal du ta hensyn til hvor mye data som vises og sannsynligheten for at
+      brukeren vil bla i opplysningene
+    </li>
+    <li>
+      På mobil anbefaler vi å ikke ha flere enn tre tall synlig i tallrekken på
+      grunn av plassen på skjermen.
     </li>
   </ul>
 </>
@@ -174,10 +179,11 @@ const [currentPage, setCurrentPage] = React.useState(1);
 
 ```js noeditor uu
 <>
-<h3>Tips</h3>
+  <h3>Tips</h3>
   <ul>
     <li>
-      Pass på at tastatur- og skjermleserfokus beholdes på sidevalget ved bytte av side (med tastatur).
+      Pass på at tastatur- og skjermleserfokus beholdes på sidevalget ved bytte
+      av side (med tastatur).
     </li>
     <li>Sjekk at valget du står på er inaktivt.</li>
   </ul>
@@ -192,12 +198,10 @@ const [currentPage, setCurrentPage] = React.useState(1);
 
   <ul>
     <li>Aria-hidden="true" brukes på ikon for skjule det for skjermleser.</li>
-    <li>
-      Aria-label brukes for å navngi nav-tag og tydeliggjøre sidevalg.
-    </li>
-<li>Aria-current="true/false" brukes for å annonsere gjeldende valg.</li>
-<li>Aria-disabled="true/false" brukes for inaktive/aktive funksjoner.</li>
-<li>Role="link" brukes fordi sidetallene visuelt ser ut som en lenker.</li>
+    <li>Aria-label brukes for å navngi nav-tag og tydeliggjøre sidevalg.</li>
+    <li>Aria-current="true/false" brukes for å annonsere gjeldende valg.</li>
+    <li>Aria-disabled="true/false" brukes for inaktive/aktive funksjoner.</li>
+    <li>Role="link" brukes fordi sidetallene visuelt ser ut som en lenker.</li>
   </ul>
 </>
 ```

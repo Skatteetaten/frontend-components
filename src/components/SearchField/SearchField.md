@@ -301,25 +301,19 @@ const [searchTerm, setSearchTerm] = React.useState('');
     Søkefeltet lar brukeren søke i nettløsningen. Feltet skal alltid være
     markert med et søkeikon eller en knapp med ordet «Søk».
   </p>
-  <h3>Plassering og bredde på søkefelt</h3>
-  <p>
-    Søkefeltet skal kun oppta en del av bredden på skjermen eller området for
-    tekst. Hvis feltet blir for stort, oppfatter brukeren det som et banner.
-  </p>
-  <p>
-    Søkefeltet kan legges inni en egen container, og størrelsen kan endres
-    deretter.
-  </p>
-  <p>
-    Du kan legge søkefeltet inni en egen ramme og du kan så endre størrelsen
-    deretter.
-  </p>
-  <h3>Legg til rette for tastatursnarvei i søkefeltet</h3>
-  <p>
-    Komponenten SearchField tillater at brukeren kan søke med tastatursnarvei
-    «ctrl+f» eller «command+f». For å slå dette på må du legge til prop
-    keyboardShortcut=&#123;true&#125;.
-  </p>
+  <h3>Tips når du setter opp søkefelt:</h3>
+  <ul>
+    <li>
+      Søkefeltet skal kun ta en del av bredden på skjermen eller området for
+      tekst. Hvis feltet blir for stort, kan brukeren oppfatte det som en
+      banner.
+    </li>
+    <li>
+      SearchField tillater tastatursnarvei for søk (ctrl+f eller command+f), og
+      vi anbefaler at du slår på dette ved å legge til prop
+      keyboardShortcut=&#123;true&#125;.
+    </li>
+  </ul>
 </>
 ```
 

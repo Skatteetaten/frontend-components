@@ -1,8 +1,8 @@
 import * as React from 'react';
 import classnames from 'classnames';
-import { getClassNames } from './TopStripe.classNames';
-import { UseScreen } from '../utils';
-import { TopStripeButtonProps } from './TopStripe.types';
+import { getClassNames } from './TopStripeButton.classNames';
+import { UseScreen } from '../../utils';
+import { TopStripeButtonProps } from '../TopStripe.types';
 
 /*
  * visibleName TopStripeButton (Toppstripe-knapp)
@@ -26,7 +26,7 @@ export const TopStripeButton: React.FC<TopStripeButtonProps> = (props) => {
   return (
     <button
       aria-label={ariaLabel}
-      className={classnames(styles.topStripeButton, className)}
+      className={classnames(className, styles.topStripeButton, topStripeStyle)}
       style={{ cursor: 'pointer' }}
       {...rest}
     >

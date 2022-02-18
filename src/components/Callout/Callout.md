@@ -93,7 +93,7 @@ function closeButton() {
 </div>;
 ```
 
-### Autolukking
+### Manuell lukking
 
 ```js
 import { ActionButton } from '@skatteetaten/frontend-components/ActionButton';
