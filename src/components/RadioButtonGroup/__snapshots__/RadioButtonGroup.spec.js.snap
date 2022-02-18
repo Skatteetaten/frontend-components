@@ -33,7 +33,7 @@ exports[`RadioButtonGroup komponent matcher snapshot 1`] = `
             display: inline-block;
             font-size: 1rem;
             font-weight: 400;
-            padding-bottom: 4px;
+            padding-bottom: 0.25rem;
             padding-left: 0px;
           }
           & .ms-Label {

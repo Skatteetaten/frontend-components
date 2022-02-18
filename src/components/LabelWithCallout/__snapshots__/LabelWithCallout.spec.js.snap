@@ -16,7 +16,8 @@ exports[`LabelWithCallout komponent matcher snapshot 1`] = `
           display: initial;
           font-size: 1rem;
           font-weight: 400;
-          padding-bottom: 4px;
+          line-height: 1.5;
+          padding-bottom: 0.25rem;
           padding-left: 0px;
         }
         & .ms-Label {
@@ -31,11 +32,13 @@ exports[`LabelWithCallout komponent matcher snapshot 1`] = `
 
         {
           display: inline-block;
-          height: 22px;
+          height: 1.5rem;
         }
         & button  {
-          height: 22px;
-          margin-top: -2px;
+          border-radius: 100%;
+          height: 1.5rem;
+          margin-left: 0.125rem;
+          width: 1.5rem;
         }
   >
     <button
@@ -99,24 +102,24 @@ exports[`LabelWithCallout komponent matcher snapshot 1`] = `
           }
           &:hover {
             background-color: #f4f4f4;
+            background: #cde1f9;
             color: #11599c;
           }
           @media screen and (-ms-high-contrast: active), (forced-colors: active){&:hover {
             border-color: Highlight;
             color: Highlight;
           }
-          &:focus {
-            background: #cde1f9;
-          }
           &:active {
             background-color: #eaeaea;
             color: #0c3f6f;
           }
           & i {
-            font-size: large;
+            font-size: 1.125rem;
           }
           &:focus&:after {
-            border: 2px solid transparent;
+            border-radius: 100%;
+            border: 2px solid #1362ae;
+            inset: -1px;
             outline: none;
           }
       data-is-focusable={true}

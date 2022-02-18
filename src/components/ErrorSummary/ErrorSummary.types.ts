@@ -10,7 +10,7 @@ export interface ErrorSummaryProps {
   /** Overstyring av stiler */
   className?: string;
   /** Feil */
-  errors: { id: string; error: string }[];
+  errors?: { id: string; error: string }[];
   /** Egendefinert funksjon som kjører istedenfor scrollToId */
   onClick?: (id: string) => void;
 }

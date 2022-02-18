@@ -32,7 +32,7 @@ export const ErrorSummary: React.FC<ErrorSummaryProps> = (props) => {
     }
   };
 
-  return errorsExist ? (
+  return errorsExist || children ? (
     <div
       className={classnames(className, styles.mainContainer)}
       id={id}
@@ -46,22 +46,24 @@ export const ErrorSummary: React.FC<ErrorSummaryProps> = (props) => {
       </div>
       <div className={styles.errorListContainer}>
         <TitleTag>{props.title}</TitleTag>
-        <ul>
-          {errors.map((error: { id: string; error: string }) => (
-            <li key={error.id}>
-              <SkeLink
-                linkGroup
-                tabIndex={0}
-                icon="ArrowForward"
-                placement="before"
-                text={error.error}
-                onClick={() => {
-                  onClick ? onClick(error.id) : scrollToId(error.id);
-                }}
-              />
-            </li>
-          ))}
-        </ul>
+        {errors && (
+          <ul>
+            {errors.map((error: { id: string; error: string }) => (
+              <li key={error.id}>
+                <SkeLink
+                  linkGroup
+                  tabIndex={0}
+                  icon="ArrowForward"
+                  placement="before"
+                  text={error.error}
+                  onClick={() => {
+                    onClick ? onClick(error.id) : scrollToId(error.id);
+                  }}
+                />
+              </li>
+            ))}
+          </ul>
+        )}
         {children}
       </div>
     </div>

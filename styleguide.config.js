@@ -80,6 +80,10 @@ module.exports = {
           content: 'src/sections/monstre/feil.md',
         },
         {
+          name: 'Hjelpetekster',
+          content: 'src/sections/monstre/hjelpetekster.md',
+        },
+        {
           name: 'Sidelayout',
           content: 'src/sections/monstre/sidelayout.md',
         },

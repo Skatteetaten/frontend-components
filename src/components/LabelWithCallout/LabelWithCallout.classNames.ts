@@ -1,21 +1,22 @@
-import { FontSizes, FontWeights, PaletteProps } from '../utils';
 import { LabelWithCalloutProps } from './LabelWithCallout.types';
 import { mergeStyleSets } from '@fluentui/merge-styles';
-import { getTheme } from '@fluentui/react/lib/Styling';
+import designtokenColors from '../utils/designtokens/_colors.json';
+import designtokenSpacing from '../utils/designtokens/_spacing.json';
+import designtokenFontSizes from '../utils/designtokens/_fontSizes.json';
 
 function getLabelSize(props: LabelWithCalloutProps) {
   switch (props.inputSize) {
     case 'small':
       return {
-        fontSize: FontSizes.small,
+        fontSize: designtokenFontSizes['ske-font-size-xs'],
       };
     case 'large':
       return {
-        fontSize: FontSizes.large,
+        fontSize: designtokenFontSizes['ske-font-size-icon-l'],
       };
     default:
       return {
-        fontSize: FontSizes.medium,
+        fontSize: designtokenFontSizes['ske-font-size-m'],
       };
   }
 }
@@ -28,7 +29,6 @@ function getDisplay(props: LabelWithCalloutProps) {
 }
 
 export const getClassNames = (props: LabelWithCalloutProps) => {
-  const palette = getTheme().palette as PaletteProps;
   const { calloutFloating } = props;
 
   return mergeStyleSets({
@@ -39,7 +39,9 @@ export const getClassNames = (props: LabelWithCalloutProps) => {
       selectors: {
         '& .ms-Callout-container': {
           position: !calloutFloating ? 'inherit' : undefined,
-          margin: !calloutFloating ? '10px 0' : 0,
+          margin: !calloutFloating
+            ? `${designtokenSpacing['ske-spacing-lg']} 0`
+            : 0,
           width: '100%',
         },
         '& .ms-Callout': !calloutFloating && {
@@ -53,8 +55,8 @@ export const getClassNames = (props: LabelWithCalloutProps) => {
           overflow: 'initial',
         },
         '& .ms-Callout-beak': !calloutFloating && {
-          left: '20px !important',
-          top: '-8px !important',
+          left: `${designtokenSpacing['ske-spacing-xl']} !important`,
+          top: `-${designtokenSpacing['ske-spacing-md']} !important`,
         },
         '& .ms-Callout-beakCurtain': {
           backgroundColor: 'transparent',
@@ -62,28 +64,29 @@ export const getClassNames = (props: LabelWithCalloutProps) => {
       },
     },
     label: {
-      paddingBottom: 4,
+      paddingBottom: designtokenSpacing['ske-spacing-sm'],
       paddingLeft: 0,
+      lineHeight: designtokenFontSizes['ske-line-height-m'],
       display: getDisplay(props),
-      color: palette.skeColor.blackAlt,
-      fontWeight: FontWeights.regular,
+      color: designtokenColors['ske-color-black-100'],
+      fontWeight: designtokenFontSizes['ske-font-weight-regular'],
       ...getLabelSize(props),
       selectors: {
         '& .ms-Label': {
-          fontWeight: FontWeights.regular,
+          fontWeight: designtokenFontSizes['ske-font-weight-regular'],
         },
       },
     },
     labelAsLegend: {
       paddingLeft: 0,
-      paddingBottom: 4,
+      paddingBottom: designtokenSpacing['ske-spacing-sm'],
       display: 'inline-block',
-      color: palette.skeColor.blackAlt,
-      fontWeight: FontWeights.regular,
+      color: designtokenColors['ske-color-black-100'],
+      fontWeight: designtokenFontSizes['ske-font-weight-regular'],
       ...getLabelSize(props),
       selectors: {
         '& .ms-Label': {
-          fontWeight: FontWeights.regular,
+          fontWeight: designtokenFontSizes['ske-font-weight-regular'],
         },
         '@supports (display: contents)': {
           display: 'contents',
@@ -91,51 +94,66 @@ export const getClassNames = (props: LabelWithCalloutProps) => {
       },
     },
     labelIconArea: {
-      height: '22px',
+      height: designtokenSpacing['ske-spacing-xl'],
       display: 'inline-block',
 
       selectors: {
         '& button ': {
-          height: '22px',
-          marginTop: '-2px',
+          height: designtokenSpacing['ske-spacing-xl'],
+          width: designtokenSpacing['ske-spacing-xl'],
+          marginLeft: designtokenSpacing['ske-spacing-xs'],
+          borderRadius: '100%',
         },
       },
     },
     icon: {
-      color: palette.skeColor.blue,
+      color: designtokenColors['ske-color-interactive'],
       selectors: {
         '& i': {
-          fontSize: 'large',
+          fontSize: designtokenFontSizes['ske-font-size-l'],
+        },
+        '&:hover': {
+          background: designtokenColors['ske-color-interactive-light'],
         },
         '&:focus': {
-          background: palette.skeColor.interactiveLight,
+          background: designtokenColors['ske-color-white'],
         },
         '&:focus&:after': {
-          border: `2px solid ${palette.skeColor.transparent}`,
+          border: `2px solid ${designtokenColors['ske-color-interactive']}`,
+          borderRadius: '100%',
+          inset: '-1px',
           outline: 'none',
         },
       },
     },
     warningicon: {
-      color: palette.skeColor.blue,
+      color: designtokenColors['ske-color-interactive'],
       selectors: {
         '& i': {
-          fontSize: 'large',
+          fontSize: designtokenFontSizes['ske-font-size-l'],
+        },
+        '&:hover': {
+          background: designtokenColors['ske-color-interactive-light'],
+        },
+        '&:focus': {
+          background: designtokenColors['ske-color-white'],
         },
         '&:focus&:after': {
-          border: `2px solid ${palette.skeColor.blue}`,
+          border: `2px solid ${designtokenColors['ske-color-interactive']}`,
+          borderRadius: '100%',
+          inset: '-1px',
           outline: 'none',
         },
       },
     },
     errorIcon: {
       position: 'absolute',
-      left: -25,
-      bottom: -30,
+      left: `-${designtokenSpacing['ske-spacing-xl']}`,
+      bottom: designtokenSpacing['ske-spacing-xxl'],
       selectors: {
         '& i': {
-          color: palette.skeColor.pink,
-          fontSize: 'large',
+          color: designtokenColors['ske-color-status-error'],
+          fontSize: designtokenFontSizes['ske-font-size-l'],
         },
       },
     },

@@ -5,13 +5,13 @@ export interface ScrollToTopButtonProps {
   id?: string;
   /** Overstyring av stiler */
   customClassNames?: {
-    topContainer: string;
-    container: string;
-    box: string;
-    button: string;
-    label: string;
-    icon: string;
-    iconContainer: string;
+    topContainer?: string;
+    container?: string;
+    box?: string;
+    button?: string;
+    label?: string;
+    icon?: string;
+    iconContainer?: string;
   };
   /** Overstyring av bredde/plassering for store skjermbredder*/
   containerMaxWidth?: string;

@@ -66,7 +66,7 @@ import { ButtonLink } from '@skatteetaten/frontend-components/ButtonLink';
     internt tekstsøk på nettsiden osv. Hvis en skjermleserbruker får hjelp på
     nettsiden av en seende person vil den trolig omtales som en knapp. Fordi den
     kan bli enklere å finne i en veiledningssituasjon har vi derfor har vi valgt
-    å bruke role=button . Vi tror allikevel at det er en god tekst på knappen
+    å bruke role="button". Vi tror allikevel at det er en god tekst på knappen
     som er mest avgjørende for brukeren, altså at det er tydelig hva som skjer
     hvis den velges.
   </p>
@@ -80,7 +80,7 @@ import { ButtonLink } from '@skatteetaten/frontend-components/ButtonLink';
 
   <h3>WAI-ARIA</h3>
   <ul>
-    <li>Role=button brukes fordi lenken visuelt ser ut en knapp.</li>
+    <li>Role="button" brukes fordi lenken visuelt ser ut en knapp.</li>
   </ul>
 </>
 ```

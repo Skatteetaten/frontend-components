@@ -804,7 +804,7 @@ Object.keys(iconGroup).forEach((name) => {
       kontrast mellom ikonfarge og bakgrunn. WCAG krever minst 3.0 i kontrast.
     </li>
     <li>
-      Ikoner som kun er pynt bør skjules for skjermleser. Ikoner som er
+      Ikoner som kun er pynt/dekor bør skjules for skjermleser. Ikoner som er
       meningsbærende må gis et tekstalternativ, f.eks. med attributtene
       aria-label eller alt.
     </li>

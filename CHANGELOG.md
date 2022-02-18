@@ -1,3 +1,12 @@
+### **v.5.0.1 - 18 February 2022**
+
+- New pattern for help text.
+- TopStripe fixes an alignment styling issue.
+- ErrorSummary: will no longer hide itself if it has children elements.
+- Tables formatFunction: Added JSX-element as valid response.
+- ScrollToTopButton: set classname prop to optional.
+- Card: Fixes prop for grey background-color.
+
 ### **v.5.0.0 - 1 February 2022 - Major release**
 
 #### **Breaking**
@@ -87,33 +96,6 @@ Variants have been reorganized/prioritized, with new names and default value:
 - It is no longer possible to access datepicker local state editMode.
 - Various updates to documentation
 
-### **v.4.2.2 - 12 January 2022**
-
-- Updated Axios to fix vulnerabilities.
-
-### **v.4.2.1 - 30 November 2021**
-
-- FileUploader: now supports UPPERCASE file types.
-- Removed dependency material-design-icons
-
-### **v.4.2.0 - 24 November 2021**
-
-- New ErrorSummary component.
-- OpenClose: Improvements to accessbility and reposiveness. Added ability to underline text.
-- Sketch-file updated and reorganized.
-- Checkbox: fixes styling for disabled state.
-- RadioButtonGroup improvements on a display issue when zooming.
-- Table header cells now reacts to alignment.
-- Deprecated: Button buttonStyle: primaryRounded, primaryRoundedFilled, primaryLarge. We are planning to simplyfy the button hierarchy, and in the next major release these variants will have new names.
-
-### **v.4.1.6 - 15 October 2021**
-
-- TopStripe: Added width to flag SVGs
-
-### **v.4.1.5 - 1 October 2021**
-
-- SearchField: fixed keyboard navigation when using a filtered list.
-
 ### Se eldre versjoner:
 
 ```js noeditor
@@ -127,6 +109,12 @@ import { AccordionItem } from '@skatteetaten/frontend-components/Accordion/Accor
     stepId={'step-1-1'}
   >
     <div>
+      <h3>v.4.2.2 - 12 January 2022</h3>
+
+      <ul>
+        <li>Updated Axios to fix vulnerabilities</li>
+      </ul>
+
       <h3>v.4.2.1 - 30.11.2021</h3>
 
       <ul>
