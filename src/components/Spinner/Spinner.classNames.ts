@@ -1,5 +1,5 @@
 import { mergeStyles } from '@fluentui/merge-styles';
-import { getTheme } from '@fluentui/react/lib/Styling';
+import { getTheme } from '@fluentui/react';
 import { PaletteProps } from '../utils';
 import { SpinnerProps } from './Spinner.types';
 

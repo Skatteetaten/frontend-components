@@ -1,7 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router';
-import { Nav } from '@fluentui/react';
-import { getTheme, FontSizes, FontWeights } from '@fluentui/react/lib/Styling';
+import { getTheme, FontSizes, FontWeights, Nav } from '@fluentui/react';
 import { mergeStyleSets } from '@fluentui/merge-styles';
 import find from 'lodash.find';
 

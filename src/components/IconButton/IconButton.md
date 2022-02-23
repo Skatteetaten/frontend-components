@@ -37,7 +37,9 @@ import { IconButton } from '@skatteetaten/frontend-components/IconButton';
   <h3>WAI-ARIA</h3>
 
   <ul>
-    <li>Aria-hidden="true" brukes på ikonet for å skjule det for skjermleser.</li>
+    <li>
+      Aria-hidden="true" brukes på ikonet for å skjule det for skjermleser.
+    </li>
   </ul>
 </>
 ```

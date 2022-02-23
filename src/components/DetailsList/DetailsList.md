@@ -393,8 +393,8 @@ function chooseRow() {
     </li>
     <li>Role="row" brukes for å indikere tabellrad.</li>
     <li>
-      Role="columnheader", og role="gridcell" brukes for å indikere kolonneoverskrifter
-      og celler.
+      Role="columnheader", og role="gridcell" brukes for å indikere
+      kolonneoverskrifter og celler.
     </li>
     <li>
       Aria-colindex og aria-rowindex gir beskjed om plasseringen av en celle i

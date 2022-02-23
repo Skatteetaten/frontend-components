@@ -1,5 +1,5 @@
 import { mergeStyles, mergeStyleSets } from '@fluentui/merge-styles';
-import { getTheme } from '@fluentui/react/lib/Styling';
+import { getTheme } from '@fluentui/react';
 import {
   FontSizes,
   FontWeights,

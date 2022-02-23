@@ -4,7 +4,7 @@ import {
   registerIcons,
   IIconSubset,
   getIcon,
-} from '@fluentui/react/lib/Styling';
+} from '@fluentui/react';
 import { ThemeProvider, IFabricProps } from '@fluentui/react';
 import * as React from 'react';
 import { Fonts, SkeIcons, AliasIcons, Palette, PaletteProps } from '../utils';
