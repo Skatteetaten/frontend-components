@@ -1,4 +1,4 @@
-import { getTheme } from '@fluentui/react/lib/Styling';
+import { getTheme } from '@fluentui/react';
 import { mergeStyles } from '@fluentui/merge-styles';
 import { PaletteProps } from '../utils';
 import { ChipProps, ChipType } from './Chip.types';

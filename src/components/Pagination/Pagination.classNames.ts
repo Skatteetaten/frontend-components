@@ -1,4 +1,4 @@
-import { getTheme } from '@fluentui/react/lib/Styling';
+import { getTheme } from '@fluentui/react';
 import { mergeStyleSets } from '@fluentui/merge-styles';
 import { FontSizes, PaletteProps } from '../utils';
 

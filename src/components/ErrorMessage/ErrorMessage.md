@@ -53,7 +53,8 @@ const [state, setState] = React.useState({
   <h3>WAI-ARIA</h3>
   <ul>
     <li>
-      Role="alert" brukes på feilmeldinger for at de skal leses opp av skjermleser
+      Role="alert" brukes på feilmeldinger for at de skal leses opp av
+      skjermleser
     </li>
     <li>
       Aria-atomic brukes på feilmeldinger for at hele innholdet skal leses av

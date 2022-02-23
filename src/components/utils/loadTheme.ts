@@ -1,8 +1,4 @@
-import {
-  registerIcons,
-  loadTheme,
-  createTheme,
-} from '@fluentui/react/lib/Styling';
+import { registerIcons, loadTheme, createTheme } from '@fluentui/react';
 
 import {
   Palette as palette,

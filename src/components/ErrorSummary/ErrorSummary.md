@@ -102,16 +102,21 @@ const buttonStyle = {
   </p>
 </>
 ```
+
 ```js noeditor uu
 <>
   <h3>Tips</h3>
 
   <ul>
-  <li>Sjekk at tastatur- og skjermleserfokus settes til toppen av oppsummeringen når den dukker opp.</li>
     <li>
-      Sjekk at lenkene setter fokus til riktig felt.
+      Sjekk at tastatur- og skjermleserfokus settes til toppen av oppsummeringen
+      når den dukker opp.
     </li>
-    <li>Test med skjermleser at innholdet i oppsummeringen leses opp når den dukker opp. </li>
+    <li>Sjekk at lenkene setter fokus til riktig felt.</li>
+    <li>
+      Test med skjermleser at innholdet i oppsummeringen leses opp når den
+      dukker opp.{' '}
+    </li>
   </ul>
 
   <h3>Mest relevante WCAG-krav</h3>
@@ -126,9 +131,12 @@ const buttonStyle = {
   <ul>
     <li>Aria-hidden="true" brukes for å skjule ikon(er) for skjermleser.</li>
     <li>
-   Role="status" og aria-live="assertive" brukes for å sikre opplesing for skjermleser. 
+      Role="status" og aria-live="assertive" brukes for å sikre opplesing for
+      skjermleser.
     </li>
-<li>Tabindex="0" brukes på lenkene for tabstopp pga. manglende href-attributt.</li>
+    <li>
+      Tabindex="0" brukes på lenkene for tabstopp pga. manglende href-attributt.
+    </li>
   </ul>
 </>
 ```

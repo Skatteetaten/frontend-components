@@ -1,5 +1,5 @@
 import { mergeStyleSets } from '@fluentui/merge-styles';
-import { getTheme } from '@fluentui/react/lib/Styling';
+import { getTheme } from '@fluentui/react';
 import { PaletteProps, FontSizes, IconFontSizes } from '../utils';
 
 export function getClassNames(props): any {

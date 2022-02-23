@@ -2,10 +2,7 @@ import * as React from 'react';
 import { createPortal } from 'react-dom';
 
 import { useId } from '@fluentui/react-hooks';
-import {
-  FocusTrapZone,
-  IFocusTrapZone,
-} from '@fluentui/react/lib/FocusTrapZone';
+import { FocusTrapZone, IFocusTrapZone } from '@fluentui/react';
 import { IconButton } from '../IconButton';
 import { BrandContext } from '../SkeBasis';
 import classnames from 'classnames';

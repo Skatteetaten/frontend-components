@@ -3,7 +3,7 @@ import {
   getTheme,
   AnimationClassNames,
   getGlobalClassNames,
-} from '@fluentui/react/lib/Styling';
+} from '@fluentui/react';
 import { SkeIcons, PaletteProps } from '../utils';
 
 const errorIcon = "'" + SkeIcons.icons.Error + "'";
