@@ -1,3 +1,7 @@
+### **v.5.0.2 - 23 February 2022**
+
+- Fixes CommonJS build process.
+
 ### **v.5.0.1 - 18 February 2022**
 
 - New pattern for help text.
