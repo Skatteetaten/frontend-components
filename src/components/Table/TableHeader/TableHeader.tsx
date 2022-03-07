@@ -40,6 +40,13 @@ export const TableHeader = (props: TableHeaderProps): JSX.Element => {
           <td key={key.fieldName} className={styles.tabellTheadCellIsEmpty} />
         );
       }
+      if (key.srOnly) {
+        return (
+          <th key={key.fieldName} className={styles.tabellTheadCellIsEmpty}>
+            <span className="sr-only">{key.name}</span>
+          </th>
+        );
+      }
       if (key.sortable) {
         const isSorted = sort.columnFieldName === key.fieldName;
         const iconName = getIconNameForTheadCell(isSorted, sort.ascending);

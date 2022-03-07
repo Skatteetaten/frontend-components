@@ -78,6 +78,8 @@ export interface TableProps<P> extends React.HTMLAttributes<HTMLDivElement> {
      * set false if you want the sorting icon to always be displayed
      */
     autohideSorting?: boolean;
+    /** Read column name only for screen reader */
+    srOnly?: boolean;
   }[];
   /** Language selection for what the screen reader reads out. Default is Norwegian Bokmål */
   language?: Language;
