@@ -5,7 +5,7 @@
   "version": "5.0.0",
   "private": false,
   "exports": {
-    ".": {
+    "./": {
       "import": "./",
       "require": "./cjs/",
       "default": "./"
