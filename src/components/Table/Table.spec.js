@@ -324,4 +324,37 @@ describe('Table komponent', () => {
       tableRow.find('td > div').at(0).hasClass('cellContentTestClass')
     ).toBeTruthy();
   });
+  it('skal skjule kolonnenavn dersom kolonnen har srOnly', () => {
+    const wrapper = oppsettMount({
+      data,
+      columns: [
+        {
+          name: 'Måned',
+          fieldName: 'month',
+        },
+        {
+          name: 'Beløp',
+          fieldName: 'amount',
+          alignment: 'right',
+        },
+        {
+          name: 'Dekningsgrad',
+          fieldName: 'coverage',
+          alignment: 'right',
+        },
+        {
+          name: 'Avkastning',
+          fieldName: 'revenue',
+          alignment: 'right',
+          srOnly: true,
+        },
+      ],
+      id: 'tableid',
+      className: 'tableClass',
+    });
+    expect(
+      wrapper.find('th').at(3).find('span').hasClass('sr-only')
+    ).toBeTruthy();
+    expect(wrapper.find('th').at(3).find('span').text()).toEqual('Avkastning');
+  });
 });
