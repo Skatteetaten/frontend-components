@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, Switch } from 'react-router';
+import { Route, Routes, useParams } from 'react-router';
 import { normalize, schema } from 'normalizr';
 import RSGSection from 'react-styleguidist/lib/client/rsg-components/Section/Section';
 import ReactComponent from '../ReactComponent/ReactComponent';
@@ -19,46 +19,45 @@ const mySchema = new schema.Entity(
   slugId
 );
 
-export class Sections extends React.Component {
-  renderSection = (props) => {
-    const params = props.match && props.match.params;
-    let slug = params && params.slug ? params.slug.toLowerCase() : '';
-    const { entities } = normalize(props.sections, [mySchema]);
+const RenderSection = (props) => {
+  const params = useParams();
+  let slug = params.slug ? params.slug.toLowerCase() : '';
+  const { entities } = normalize(props.sections, [mySchema]);
 
-    if (slug && entities.components && entities.components[slug]) {
-      return (
-        <ReactComponent
-          exampleMode={entities.components[slug].exampleMode || 'collapse'}
-          usageMode={entities.components[slug].usageMode || 'collapse'}
-          component={entities.components[slug]}
-          depth={2}
-        />
-      );
-    }
-    if (entities.sections && entities.sections[slug]) {
-      return <RSGSection section={entities.sections[slug]} depth={2} />;
-    }
-
-    if (slug === 'testside') {
-      return <Testside />;
-    }
-
-    if (!slug) {
-      return <Forside />;
-    }
-    return <div> Fant ikke siden du leter etter.</div>;
-  };
-
-  render() {
+  if (slug && entities.components && entities.components[slug]) {
     return (
-      <Switch>
-        <Route
-          path={'/:slug?'}
-          render={(props) => this.renderSection({ ...props, ...this.props })}
-        />
-      </Switch>
+      <ReactComponent
+        exampleMode={entities.components[slug].exampleMode || 'collapse'}
+        usageMode={entities.components[slug].usageMode || 'collapse'}
+        component={entities.components[slug]}
+        depth={2}
+      />
     );
   }
-}
+  if (entities.sections && entities.sections[slug]) {
+    return <RSGSection section={entities.sections[slug]} depth={2} />;
+  }
+
+  if (slug === 'testside') {
+    return <Testside />;
+  }
+
+  if (!slug) {
+    return <Forside />;
+  }
+  return <div> Fant ikke siden du leter etter.</div>;
+};
+
+const Sections = (props) => {
+  return (
+    <Routes>
+      <Route path={''} element={<RenderSection sections={props.sections} />} />
+      <Route
+        path={'/:slug'}
+        element={<RenderSection sections={props.sections} />}
+      />
+    </Routes>
+  );
+};
 
 export default Sections;

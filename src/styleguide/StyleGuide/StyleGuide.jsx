@@ -6,14 +6,7 @@ import Sections from '../Sections/Sections';
 import Context from 'react-styleguidist/lib/client/rsg-components/Context';
 import StyleGuideRenderer from './StyleGuideRenderer';
 import { SkeBasis } from '../../components/SkeBasis';
-import { createHashHistory } from 'history';
-import { Router } from 'react-router';
-
-const history = createHashHistory({
-  basename: '',
-  hashType: 'noslash',
-  getUserConfirmation: (message, callback) => callback(window.confirm(message)),
-});
+import { HashRouter } from 'react-router-dom';
 
 export class StyleGuide extends React.Component {
   static childContextTypes = {
@@ -66,7 +59,7 @@ export class StyleGuide extends React.Component {
         }}
       >
         <SkeBasis>
-          <Router history={history}>
+          <HashRouter>
             <StyleGuideRenderer
               title={config.title}
               homepageUrl={''}
@@ -83,7 +76,7 @@ export class StyleGuide extends React.Component {
                 <div>Not Found </div>
               )}
             </StyleGuideRenderer>
-          </Router>
+          </HashRouter>
         </SkeBasis>
       </Context.Provider>
     );

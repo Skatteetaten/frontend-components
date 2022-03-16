@@ -1,8 +1,8 @@
 import React from 'react';
-import { withRouter } from 'react-router';
 import { getTheme, FontSizes, FontWeights, Nav } from '@fluentui/react';
 import { mergeStyleSets } from '@fluentui/merge-styles';
 import find from 'lodash.find';
+import { useNavigate, useParams } from 'react-router';
 
 function createMenu(items, searchTerm) {
   return items.map(({ name, slug, components = [], sections = [] }) => {
@@ -49,27 +49,26 @@ const getStyles = () => {
   });
 };
 
-export class ComponentsListRenderer extends React.Component<> {
+export class ComponentsListRenderer extends React.Component {
   constructor(props) {
     super(props);
-    const {
-      match: { params },
-    } = this.props;
+    const { slug } = this.props;
 
     this.state = {
-      selectedKey: params.slug,
+      selectedKey: slug,
     };
   }
+
   componentDidUpdate(nextProps) {
-    if (nextProps.match.params.slug !== this.props.match.params.slug) {
+    if (nextProps.slug !== this.props.slug) {
       this.setState({
-        selectedKey: nextProps.match.params.slug || null,
+        selectedKey: nextProps.slug || null,
       });
     }
   }
 
   render() {
-    const { items, history, searchTerm } = this.props;
+    const { items, navigate, searchTerm } = this.props;
     const groups = createMenu(items, searchTerm);
     groups.forEach((group) => {
       if (group.name === 'Designe og utvikle') {
@@ -80,11 +79,18 @@ export class ComponentsListRenderer extends React.Component<> {
     return (
       <Nav
         styles={getStyles}
-        onLinkClick={(e, link) => history.push(link.key)}
+        onLinkClick={(e, link) => navigate(link.key)}
         groups={groups}
         selectedKey={this.state.selectedKey}
       />
     );
   }
 }
-export default withRouter(ComponentsListRenderer);
+
+const ComponentsListRendererWrapped = (props) => {
+  const navigate = useNavigate();
+  const { slug } = useParams();
+  return <ComponentsListRenderer navigate={navigate} slug={slug} {...props} />;
+};
+
+export default ComponentsListRendererWrapped;
