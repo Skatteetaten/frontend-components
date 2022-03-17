@@ -1,5 +1,5 @@
 import React from 'react';
-import ComponentsListRenderer from '../ComponentsList/ComponentsListRenderer';
+import { ComponentsListRenderer } from '../ComponentsList/ComponentsListRenderer';
 import { SearchField } from '../../components/SearchField';
 import getFilterRegExp from 'react-styleguidist/lib/client/utils/getFilterRegExp';
 import { UseScreen } from '../../components/utils/ScreenPlugin';
@@ -53,7 +53,7 @@ function filterSectionsByName(sections, query) {
     );
 }
 
-export class TableOfContent extends React.Component<> {
+export class TableOfContent extends React.Component {
   state = {
     searchTerm: '',
   };
