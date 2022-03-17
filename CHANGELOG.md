@@ -1,3 +1,8 @@
+### **v.5.0.3 - 10 March 2022**
+
+- Updated FluentUI dependencies.
+- Table: Added screen reader only header cells.
+
 ### **v.5.0.2 - 23 February 2022**
 
 - Fixes CommonJS build process.
