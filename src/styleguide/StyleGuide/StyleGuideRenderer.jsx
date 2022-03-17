@@ -9,7 +9,6 @@ import { TopBanner } from '../../components/TopBanner';
 
 import './style.css';
 import { useLocation } from 'react-router';
-import { useParams } from 'react-router';
 
 const ScrollToTopWrapped = (props) => {
   const location = useLocation();
