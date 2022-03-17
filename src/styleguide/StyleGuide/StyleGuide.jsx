@@ -6,7 +6,8 @@ import Sections from '../Sections/Sections';
 import Context from 'react-styleguidist/lib/client/rsg-components/Context';
 import StyleGuideRenderer from './StyleGuideRenderer';
 import { SkeBasis } from '../../components/SkeBasis';
-import { HashRouter } from 'react-router-dom';
+import { unstable_HistoryRouter as HistoryRouter } from 'react-router-dom';
+import { useHashHistory } from 'use-hash-history';
 
 export class StyleGuide extends React.Component {
   static childContextTypes = {
@@ -45,6 +46,7 @@ export class StyleGuide extends React.Component {
       pagePerSection,
       codeRevision,
       slots,
+      history,
     } = this.props;
     if (this.state.error) {
       return <Error error={this.state.error} info={this.state.info} />;
@@ -59,7 +61,7 @@ export class StyleGuide extends React.Component {
         }}
       >
         <SkeBasis>
-          <HashRouter>
+          <HistoryRouter history={history}>
             <StyleGuideRenderer
               title={config.title}
               homepageUrl={''}
@@ -76,10 +78,17 @@ export class StyleGuide extends React.Component {
                 <div>Not Found </div>
               )}
             </StyleGuideRenderer>
-          </HashRouter>
+          </HistoryRouter>
         </SkeBasis>
       </Context.Provider>
     );
   }
 }
-export default StyleGuide;
+
+const StyleGuideWrapped = (props, { hashRoot = '' }) => {
+  const history = useHashHistory({ hashRoot });
+
+  return <StyleGuide history={history} {...props} />;
+};
+
+export default StyleGuideWrapped;

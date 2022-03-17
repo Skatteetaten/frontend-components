@@ -49,24 +49,7 @@ const getStyles = () => {
   });
 };
 
-export class ComponentsListRenderer extends React.Component {
-  constructor(props) {
-    super(props);
-    const { slug } = this.props;
-
-    this.state = {
-      selectedKey: slug,
-    };
-  }
-
-  componentDidUpdate(nextProps) {
-    if (nextProps.slug !== this.props.slug) {
-      this.setState({
-        selectedKey: nextProps.slug || null,
-      });
-    }
-  }
-
+export class ComponentsListRenderer extends React.Component<> {
   render() {
     const { items, navigate, searchTerm } = this.props;
     const groups = createMenu(items, searchTerm);
@@ -81,7 +64,6 @@ export class ComponentsListRenderer extends React.Component {
         styles={getStyles}
         onLinkClick={(e, link) => navigate(link.key)}
         groups={groups}
-        selectedKey={this.state.selectedKey}
       />
     );
   }
@@ -89,8 +71,7 @@ export class ComponentsListRenderer extends React.Component {
 
 const ComponentsListRendererWrapped = (props) => {
   const navigate = useNavigate();
-  const { slug } = useParams();
-  return <ComponentsListRenderer navigate={navigate} slug={slug} {...props} />;
+  return <ComponentsListRenderer navigate={navigate} {...props} />;
 };
 
 export default ComponentsListRendererWrapped;
