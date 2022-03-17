@@ -1,5 +1,10 @@
 import React from 'react';
 import { unstable_HistoryRouter as HistoryRouter } from 'react-router-dom';
+/**
+ * hashType is no longer supported in react-router v6, and default slash is the only supported behavior.
+ * To still be able to use noslash as hashType, we need to use the package "use-hash-history".
+ * For more information see: https://github.com/remix-run/react-router/issues/7703
+ */
 import { useHashHistory } from 'use-hash-history';
 import PropTypes from 'prop-types';
 import Error from 'react-styleguidist/lib/client/rsg-components/Error';
