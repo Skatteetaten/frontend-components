@@ -2,7 +2,7 @@ import React from 'react';
 import { getTheme, FontSizes, FontWeights, Nav } from '@fluentui/react';
 import { mergeStyleSets } from '@fluentui/merge-styles';
 import find from 'lodash.find';
-import { useNavigate, useParams } from 'react-router';
+import { useNavigate } from 'react-router';
 
 function createMenu(items, searchTerm) {
   return items.map(({ name, slug, components = [], sections = [] }) => {

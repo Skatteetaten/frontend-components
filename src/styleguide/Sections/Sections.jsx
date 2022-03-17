@@ -48,16 +48,20 @@ const RenderSection = (props) => {
   return <div> Fant ikke siden du leter etter.</div>;
 };
 
-const Sections = (props) => {
-  return (
-    <Routes>
-      <Route path={''} element={<RenderSection sections={props.sections} />} />
-      <Route
-        path={'/:slug'}
-        element={<RenderSection sections={props.sections} />}
-      />
-    </Routes>
-  );
-};
+export class Sections extends React.Component {
+  render() {
+    const { sections } = this.props;
+
+    return (
+      <Routes>
+        <Route path={'/'} element={<RenderSection sections={sections} />} />
+        <Route
+          path={'/:slug'}
+          element={<RenderSection sections={sections} />}
+        />
+      </Routes>
+    );
+  }
+}
 
 export default Sections;
