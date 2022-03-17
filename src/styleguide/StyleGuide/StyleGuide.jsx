@@ -1,13 +1,14 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import TableOfContent from '../TableOfContents/TableOfContent';
-import Error from 'react-styleguidist/lib/client/rsg-components/Error';
-import Sections from '../Sections/Sections';
-import Context from 'react-styleguidist/lib/client/rsg-components/Context';
-import StyleGuideRenderer from './StyleGuideRenderer';
-import { SkeBasis } from '../../components/SkeBasis';
 import { unstable_HistoryRouter as HistoryRouter } from 'react-router-dom';
 import { useHashHistory } from 'use-hash-history';
+import PropTypes from 'prop-types';
+import Error from 'react-styleguidist/lib/client/rsg-components/Error';
+import Context from 'react-styleguidist/lib/client/rsg-components/Context';
+
+import { SkeBasis } from '../../components/SkeBasis';
+import TableOfContent from '../TableOfContents/TableOfContent';
+import Sections from '../Sections/Sections';
+import StyleGuideRenderer from './StyleGuideRenderer';
 
 export class StyleGuide extends React.Component {
   static childContextTypes = {

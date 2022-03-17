@@ -1,5 +1,5 @@
-import { getClassNames } from './classNames';
 import React from 'react';
+import { useLocation } from 'react-router-dom';
 
 import { ActionButton } from '../../components/ActionButton';
 import { FooterContent } from '../../components/FooterContent';
@@ -7,8 +7,8 @@ import { Grid } from '../../components/Grid';
 import { Link } from '../../components/Link';
 import { TopBanner } from '../../components/TopBanner';
 
+import { getClassNames } from './classNames';
 import './style.css';
-import { useLocation } from 'react-router';
 
 const ScrollToTopWrapped = (props) => {
   const location = useLocation();

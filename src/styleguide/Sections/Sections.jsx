@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, Routes, useParams } from 'react-router';
+import { Route, Routes, useParams } from 'react-router-dom';
 import { normalize, schema } from 'normalizr';
 import RSGSection from 'react-styleguidist/lib/client/rsg-components/Section/Section';
 import ReactComponent from '../ReactComponent/ReactComponent';
