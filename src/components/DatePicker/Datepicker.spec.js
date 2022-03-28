@@ -80,4 +80,14 @@ describe('DatePicker komponent', () => {
       'Saturday',
     ]);
   });
+  it('skal vise feilmelding dersom errorMessage er satt', () => {
+    const wrapper = oppsettMount({
+      label: 'Dato',
+      errorMessage: 'Datoen som er satt er feil',
+    });
+    expect(wrapper.find('[role="alert"]')).toHaveLength(1);
+    expect(wrapper.find('[role="alert"]').text()).toEqual(
+      'Datoen som er satt er feil'
+    );
+  });
 });

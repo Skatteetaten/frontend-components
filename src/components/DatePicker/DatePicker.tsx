@@ -14,6 +14,7 @@ import { generateId } from '../utils';
 import { LabelWithCallout } from '../LabelWithCallout';
 import { getClassNames, getCalendarClassNames } from './DatePicker.classNames';
 import { DatePickerProps } from './DatePicker.types';
+import { ErrorMessage } from '../ErrorMessage';
 
 const DEFAULT_DATE_FORMAT = 'DD.MM.YYYY';
 const DEFAULTFORMATDATE = (date: Date | null | undefined): string => {
@@ -173,9 +174,6 @@ export const DatePicker: React.FC<DatePickerProps> = (
         }}
         disabled={readOnly ? true : rest.disabled}
         onBlur={onBlur}
-        textField={{
-          errorMessage: errorMessage,
-        }}
         strings={{
           ...DEFAULT_STRINGS,
           isRequiredErrorMessage: isRequiredErrorMessage
@@ -191,6 +189,11 @@ export const DatePicker: React.FC<DatePickerProps> = (
       >
         {children}
       </FabricDatePicker>
+      {errorMessage && typeof errorMessage === 'string' ? (
+        <ErrorMessage>{errorMessage}</ErrorMessage>
+      ) : (
+        errorMessage
+      )}
     </div>
   );
 };
