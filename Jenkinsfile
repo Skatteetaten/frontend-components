@@ -7,8 +7,8 @@ def config = [
     sonarQube              : true,
     publishToNpm           : true,
     publishSnapshotToNpm	 : true,
-    npmPublishFolder	     : 'lib',
-    nodeVersion            : '12',
+    npmPublishFolder	     : './lib',
+    nodeVersion            : '16',
     versionStrategy        : [[ branch : 'master', versionHint:'5' ]],
     createBuildEnvs        : { props -> "REACT_APP_BUILD_VERSION=${props.version}" },
     npmjs                    : [
