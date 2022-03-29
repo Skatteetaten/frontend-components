@@ -104,6 +104,7 @@ export const ExternalHeader: React.FC<TopBannerTypes> = (props) => {
   // @ts-ignore
   const { logo, headerMain, contentWrapper } = styles;
   const compactHeight = props.compact ? 55 : 68;
+  const isLink = props.logoLink;
 
   const logoImageElement = (brand: string, showAltText = true) => {
     switch (brand) {
@@ -112,7 +113,13 @@ export const ExternalHeader: React.FC<TopBannerTypes> = (props) => {
           <Image
             src={props.language === 'en' ? logoSKEen : logoSKE}
             height={compactHeight}
-            alt={showAltText ? 'Skatteetaten logo' : ''}
+            alt={
+              isLink
+                ? props.language === 'en'
+                  ? 'Front page Skatteetaten'
+                  : 'Forside Skatteetaten'
+                : 'Skatteetaten logo'
+            }
           />
         );
 
@@ -121,7 +128,13 @@ export const ExternalHeader: React.FC<TopBannerTypes> = (props) => {
           <Image
             src={props.language === 'en' ? logoINKen : logoINK}
             height={compactHeight}
-            alt={showAltText ? 'Statens innkreving logo' : ''}
+            alt={
+              isLink
+                ? props.language === 'en'
+                  ? 'Front page Statens innkreving'
+                  : 'Forside Statens innkreving'
+                : 'Statens innkreving logo'
+            }
           />
         );
 
@@ -130,7 +143,13 @@ export const ExternalHeader: React.FC<TopBannerTypes> = (props) => {
           <Image
             src={logoLSO}
             height={compactHeight}
-            alt={showAltText ? 'Lønnsstøtte logo' : ''}
+            alt={
+              isLink
+                ? props.language === 'en'
+                  ? 'Front page Lønnsstøtte'
+                  : 'Forside Lønnsstøtte'
+                : 'Lønnsstøtte logo'
+            }
           />
         );
 
