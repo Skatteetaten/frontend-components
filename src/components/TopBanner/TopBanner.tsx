@@ -154,9 +154,9 @@ export const ExternalHeader: React.FC<TopBannerTypes> = (props) => {
             <div>
               <div className={logo}>
                 {props.logoLink ? (
-                  <a href={props.logoLinkUrl}>{logoImageElement(tag, false)}</a>
+                  <a href={props.logoLinkUrl}>{logoImageElement(tag, true)}</a>
                 ) : (
-                  logoImageElement(tag)
+                  logoImageElement(tag, true)
                 )}
               </div>
             </div>
