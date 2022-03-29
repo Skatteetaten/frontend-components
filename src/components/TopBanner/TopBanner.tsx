@@ -116,7 +116,7 @@ export const ExternalHeader: React.FC<TopBannerTypes> = (props) => {
             alt={
               isLink
                 ? props.language === 'en'
-                  ? 'Front page Skatteetaten'
+                  ? 'Front page The Norwegian Tax Administration'
                   : 'Forside Skatteetaten'
                 : 'Skatteetaten logo'
             }
@@ -131,7 +131,7 @@ export const ExternalHeader: React.FC<TopBannerTypes> = (props) => {
             alt={
               isLink
                 ? props.language === 'en'
-                  ? 'Front page Statens innkreving'
+                  ? 'Front page The Norwegian National Collection Agency'
                   : 'Forside Statens innkreving'
                 : 'Statens innkreving logo'
             }
@@ -146,7 +146,7 @@ export const ExternalHeader: React.FC<TopBannerTypes> = (props) => {
             alt={
               isLink
                 ? props.language === 'en'
-                  ? 'Front page Lønnsstøtte'
+                  ? 'Front page'
                   : 'Forside Lønnsstøtte'
                 : 'Lønnsstøtte logo'
             }
