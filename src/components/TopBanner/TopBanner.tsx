@@ -6,6 +6,7 @@ import { Image } from '../Image';
 import { ActionButton } from '../ActionButton';
 import { TopBannerTypes } from './TopBanner.types';
 import { BrandContext } from '../SkeBasis';
+import i18n, { t } from './../utils/i18n/i18n';
 
 // @ts-ignore TODO
 import logoSKE from './assets/logoSKE.svg';
@@ -75,6 +76,10 @@ const ExternalHeaderContent = ({ styles, ...props }) => {
     return <h1 className={styles.title}>{props.title}</h1>;
   }
 
+  if (props.language) {
+    i18n.changeLanguage(props.language);
+  }
+
   return (
     <>
       <ActionButton
@@ -113,13 +118,7 @@ export const ExternalHeader: React.FC<TopBannerTypes> = (props) => {
           <Image
             src={props.language === 'en' ? logoSKEen : logoSKE}
             height={compactHeight}
-            alt={
-              isLink
-                ? props.language === 'en'
-                  ? 'Front page The Norwegian Tax Administration'
-                  : 'Forside Skatteetaten'
-                : 'Skatteetaten logo'
-            }
+            alt={isLink ? t('topbanner.ske.logoLink') : t('topbanner.ske.logo')}
           />
         );
 
@@ -128,13 +127,7 @@ export const ExternalHeader: React.FC<TopBannerTypes> = (props) => {
           <Image
             src={props.language === 'en' ? logoINKen : logoINK}
             height={compactHeight}
-            alt={
-              isLink
-                ? props.language === 'en'
-                  ? 'Front page The Norwegian National Collection Agency'
-                  : 'Forside Statens innkreving'
-                : 'Statens innkreving logo'
-            }
+            alt={isLink ? t('topbanner.ink.logoLink') : t('topbanner.ink.logo')}
           />
         );
 
@@ -143,13 +136,7 @@ export const ExternalHeader: React.FC<TopBannerTypes> = (props) => {
           <Image
             src={logoLSO}
             height={compactHeight}
-            alt={
-              isLink
-                ? props.language === 'en'
-                  ? 'Front page'
-                  : 'Forside Lønnsstøtte'
-                : 'Lønnsstøtte logo'
-            }
+            alt={isLink ? t('topbanner.lso.logoLink') : t('topbanner.lso.logo')}
           />
         );
 
