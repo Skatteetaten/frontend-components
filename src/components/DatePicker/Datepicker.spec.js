@@ -145,4 +145,17 @@ describe('DatePicker komponent', () => {
       'Datoen er ikke innenfor gyldig periode i testen'
     );
   });
+  it('skal vise feilmelding onBlur dersom isRequired', () => {
+    const wrapper = oppsettMount({
+      label: 'Dato',
+      isRequired: true,
+    });
+    expect(wrapper.find('[role="alert"]')).toHaveLength(0);
+    const input = wrapper.find('input');
+    input.simulate('change', {
+      target: { name: 'change', value: '' },
+    });
+    input.simulate('blur');
+    expect(wrapper.find('[role="alert"]')).toHaveLength(1);
+  });
 });
