@@ -6,10 +6,10 @@ import 'moment/locale/nb';
 import {
   DatePicker as FabricDatePicker,
   DayOfWeek,
+  FirstWeekOfYear,
   IDatePicker,
   IDatePickerProps,
 } from '@fluentui/react';
-import { FirstWeekOfYear } from '@fluentui/react';
 import { generateId } from '../utils';
 import { LabelWithCallout } from '../LabelWithCallout';
 import { getClassNames, getCalendarClassNames } from './DatePicker.classNames';
