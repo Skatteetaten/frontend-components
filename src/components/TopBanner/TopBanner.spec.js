@@ -87,7 +87,7 @@ describe('TopBanner komponent', () => {
       'ArrowBack'
     );
     expect(wrapper.find('ImageBase').prop('height')).toEqual(68);
-    expect(wrapper.find('img').prop('alt')).toEqual('Bálkádoarjja dovdomearka');
+    expect(wrapper.find('img').prop('alt')).toEqual('Vearroetáhta dovdomearka');
   });
 
   it('rendrer TopBanner med kompakt visning for eksterne arbeidsflater ', () => {

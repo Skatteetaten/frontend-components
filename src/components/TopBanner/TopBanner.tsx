@@ -76,10 +76,6 @@ const ExternalHeaderContent = ({ styles, ...props }) => {
     return <h1 className={styles.title}>{props.title}</h1>;
   }
 
-  if (props.language) {
-    i18n.changeLanguage(props.language);
-  }
-
   return (
     <>
       <ActionButton
@@ -110,6 +106,10 @@ export const ExternalHeader: React.FC<TopBannerTypes> = (props) => {
   const { logo, headerMain, contentWrapper } = styles;
   const compactHeight = props.compact ? 55 : 68;
   const isLink = props.logoLink;
+
+  if (props.language) {
+    i18n.changeLanguage(props.language);
+  }
 
   const logoImageElement = (brand: string, showAltText = true) => {
     switch (brand) {
