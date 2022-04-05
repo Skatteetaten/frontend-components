@@ -152,5 +152,11 @@ export const languages = {
     'table.sorted_descending': 'sortert søkkande',
     'tablerow.editable.title': 'Redigere ráiddu',
     'tablerow.expandable.title': 'Eanet dieđut',
+    'topbanner.ske.logo': 'Vearroetáhta dovdomearka',
+    'topbanner.ske.logoLink': 'Vearroetáhta ovdasiidu',
+    'topbanner.ink.logo': 'Stáhta gáibideami dovdomearka',
+    'topbanner.ink.logoLink': 'Stáhta gáibideami ovdasiidu ',
+    'topbanner.lso.logo': 'Bálkádoarjja dovdomearka',
+    'topbanner.lso.logoLink': 'Bálkádoarjja ovdasiidu',
   },
 };
