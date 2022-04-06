@@ -6,14 +6,15 @@ import 'moment/locale/nb';
 import {
   DatePicker as FabricDatePicker,
   DayOfWeek,
+  FirstWeekOfYear,
   IDatePicker,
   IDatePickerProps,
 } from '@fluentui/react';
-import { FirstWeekOfYear } from '@fluentui/react';
 import { generateId } from '../utils';
 import { LabelWithCallout } from '../LabelWithCallout';
 import { getClassNames, getCalendarClassNames } from './DatePicker.classNames';
 import { DatePickerProps } from './DatePicker.types';
+import { ErrorMessage } from '../ErrorMessage';
 
 const DEFAULT_DATE_FORMAT = 'DD.MM.YYYY';
 const DEFAULTFORMATDATE = (date: Date | null | undefined): string => {
@@ -87,6 +88,10 @@ export const DatePicker: React.FC<DatePickerProps> = (
   const [readOnly, setReadOnly] = React.useState<boolean | undefined>(
     readonlyMode && !editMode
   );
+  const [
+    requiredInternalState,
+    setRequiredInternalState,
+  ] = React.useState<boolean>(false);
 
   React.useEffect(() => {
     setReadOnly(readonlyMode && !editMode);
@@ -124,6 +129,7 @@ export const DatePicker: React.FC<DatePickerProps> = (
 
   const onBlur: IDatePickerProps['onBlur'] = (e) => {
     rest.onBlur && rest.onBlur(e);
+    setRequiredInternalState(isRequired || requiredWithMark);
     // TO-DO datepicker er blitt en FunctionComponent. Det er ikke mulig å aksessere intern state på denne måten
     // Filled out feature request here: https://github.com/microsoft/fluentui/issues/19512
     // if (editMode && !datePickerRef.current?.state.isDatePickerShown) {
@@ -160,7 +166,7 @@ export const DatePicker: React.FC<DatePickerProps> = (
           getClassNames({ errorMessage, readonlyMode: readOnly, ...rest }),
           className
         )}
-        isRequired={isRequired || requiredWithMark}
+        isRequired={requiredInternalState}
         componentRef={(ref) => {
           datePickerRef.current = ref as IDatePicker;
         }}
@@ -173,9 +179,6 @@ export const DatePicker: React.FC<DatePickerProps> = (
         }}
         disabled={readOnly ? true : rest.disabled}
         onBlur={onBlur}
-        textField={{
-          errorMessage: errorMessage,
-        }}
         strings={{
           ...DEFAULT_STRINGS,
           isRequiredErrorMessage: isRequiredErrorMessage
@@ -191,6 +194,11 @@ export const DatePicker: React.FC<DatePickerProps> = (
       >
         {children}
       </FabricDatePicker>
+      {errorMessage && typeof errorMessage === 'string' ? (
+        <ErrorMessage>{errorMessage}</ErrorMessage>
+      ) : (
+        errorMessage
+      )}
     </div>
   );
 };

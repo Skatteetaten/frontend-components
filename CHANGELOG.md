@@ -1,3 +1,9 @@
+### **v.5.0.4 - 6 April 2022**
+
+- Support node version 16
+- Datepicker: fixes a bug where error messages (isOutOfBoundsErrorMessage) were not displayed correctly.
+- TopBanner: now sets alt-text on logo image based on brand, language and link/nolink (external only).
+
 ### **v.5.0.3 - 10 March 2022**
 
 - Updated FluentUI dependencies.

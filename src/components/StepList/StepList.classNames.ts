@@ -249,8 +249,7 @@ export const getClassNames = (props) => {
       },
     },
     title: {
-      fontSize:
-        props.stepType === 'result' ? FontSizes.medium : FontSizes.large,
+      fontSize: FontSizes.large,
       color:
         props.stepType === 'result'
           ? palette.skeColor.blackAlt

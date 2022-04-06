@@ -80,4 +80,82 @@ describe('DatePicker komponent', () => {
       'Saturday',
     ]);
   });
+  it('skal vise feilmelding dersom errorMessage er satt', () => {
+    let wrapper = oppsettMount({
+      label: 'Dato',
+      errorMessage: 'Datoen som er satt er feil',
+    });
+    expect(wrapper.find('[role="alert"]')).toHaveLength(1);
+    expect(wrapper.find('[role="alert"]').text()).toEqual(
+      'Datoen som er satt er feil'
+    );
+    wrapper = oppsettMount({
+      label: 'Dato',
+      errorMessage: (
+        <div>
+          <span id={'feilmelding'}>Dette er en feil</span>
+        </div>
+      ),
+    });
+    expect(wrapper.find('[role="alert"]')).toHaveLength(0);
+    expect(wrapper.find('#feilmelding').text()).toEqual('Dette er en feil');
+  });
+  it('skal vise isOutOfBoundsErrorMessage dersom dato er mindre enn minDate', async () => {
+    const wrapper = oppsettMount({
+      label: 'Dato',
+      minDate: new Date('01.01.2020'),
+      isOutOfBoundsErrorMessage:
+        'Datoen er ikke innenfor gyldig periode i testen',
+    });
+    const input = wrapper.find('input');
+
+    // setter dato < minDate
+    input.simulate('change', {
+      target: { name: 'change', value: '01.01.2000' },
+    });
+    input.simulate('blur');
+    await new Promise((r) => setTimeout(r, 10));
+    expect(wrapper.find('[role="alert"]')).toHaveLength(1);
+    expect(wrapper.find('[role="alert"]').text()).toEqual(
+      'Datoen er ikke innenfor gyldig periode i testen'
+    );
+
+    // setter gyldig dato
+    input.simulate('change', {
+      target: { name: 'change', value: '23.06.2020' },
+    });
+    input.simulate('blur');
+    expect(wrapper.find('[role="alert"]')).toHaveLength(0);
+  });
+  it('skal vise isOutOfBoundsErrorMessage dersom dato er større enn maxDate', async () => {
+    const wrapper = oppsettMount({
+      label: 'Dato',
+      maxDate: new Date('01.01.2020'),
+      isOutOfBoundsErrorMessage:
+        'Datoen er ikke innenfor gyldig periode i testen',
+    });
+    const input = wrapper.find('input');
+    input.simulate('change', {
+      target: { name: 'change', value: '01.01.2021' },
+    });
+    input.simulate('blur');
+    await new Promise((r) => setTimeout(r, 10));
+    expect(wrapper.find('[role="alert"]')).toHaveLength(1);
+    expect(wrapper.find('[role="alert"]').text()).toEqual(
+      'Datoen er ikke innenfor gyldig periode i testen'
+    );
+  });
+  it('skal vise feilmelding onBlur dersom isRequired', () => {
+    const wrapper = oppsettMount({
+      label: 'Dato',
+      isRequired: true,
+    });
+    expect(wrapper.find('[role="alert"]')).toHaveLength(0);
+    const input = wrapper.find('input');
+    input.simulate('change', {
+      target: { name: 'change', value: '' },
+    });
+    input.simulate('blur');
+    expect(wrapper.find('[role="alert"]')).toHaveLength(1);
+  });
 });

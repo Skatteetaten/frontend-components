@@ -24,7 +24,7 @@ export interface TopBannerTypes {
   /** OnClick event som trigges av klikk på hjemlink */
   onClick?: () => void;
   /** Språk på logoen */
-  language?: 'nb' | 'nn' | 'en';
+  language?: 'nb' | 'nn' | 'en' | 'se';
   /** Topstripe */
   topStripe?: JSX.Element;
 }
