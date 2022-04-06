@@ -1,9 +1,9 @@
 {
   "files": {
     "main.css": "/static/css/main.b7fdbf03.chunk.css",
-    "main.js": "/build/main.33a98064.js",
-    "runtime-main.js": "/build/bundle.eaded300.js",
-    "build/2.6d3a5037.js": "/build/2.6d3a5037.js",
+    "main.js": "/build/main.ca420d90.js",
+    "runtime-main.js": "/build/bundle.f88df48c.js",
+    "build/2.ff4c563c.js": "/build/2.ff4c563c.js",
     "assets/png/Byggeklosser.png": "/assets/png/Byggeklosser.png",
     "assets/png/Byggeklosser_skisse.png": "/assets/png/Byggeklosser_skisse.png",
     "assets/png/designer.png": "/assets/png/designer.png",
@@ -29,7 +29,7 @@
     "assets/svg/ske-logo-intern-kopi.svg": "/assets/svg/ske-logo-intern-kopi.svg",
     "assets/svg/ske-logo-intern.svg": "/assets/svg/ske-logo-intern.svg",
     "assets/svg/ske-logo.svg": "/assets/svg/ske-logo.svg",
-    "build/2.6d3a5037.js.LICENSE.txt": "/build/2.6d3a5037.js.LICENSE.txt",
+    "build/2.ff4c563c.js.LICENSE.txt": "/build/2.ff4c563c.js.LICENSE.txt",
     "favicon.ico": "/favicon.ico",
     "index.html": "/index.html",
     "manifest.json": "/manifest.json",
@@ -55,9 +55,9 @@
     "static/media/ske-logo.7f07b60a.svg": "/static/media/ske-logo.7f07b60a.svg"
   },
   "entrypoints": [
-    "build/bundle.eaded300.js",
-    "build/2.6d3a5037.js",
+    "build/bundle.f88df48c.js",
+    "build/2.ff4c563c.js",
     "static/css/main.b7fdbf03.chunk.css",
-    "build/main.33a98064.js"
+    "build/main.ca420d90.js"
   ]
 }
