@@ -1,19 +1,19 @@
 import React from 'react';
+import { unstable_HistoryRouter as HistoryRouter } from 'react-router-dom';
+/**
+ * hashType is no longer supported in react-router v6, and default slash is the only supported behavior.
+ * To still be able to use noslash as hashType, we need to use the package "use-hash-history".
+ * For more information see: https://github.com/remix-run/react-router/issues/7703
+ */
+import { useHashHistory } from 'use-hash-history';
 import PropTypes from 'prop-types';
-import TableOfContent from '../TableOfContents/TableOfContent';
 import Error from 'react-styleguidist/lib/client/rsg-components/Error';
-import Sections from '../Sections/Sections';
 import Context from 'react-styleguidist/lib/client/rsg-components/Context';
-import StyleGuideRenderer from './StyleGuideRenderer';
-import { SkeBasis } from '../../components/SkeBasis';
-import { createHashHistory } from 'history';
-import { Router } from 'react-router';
 
-const history = createHashHistory({
-  basename: '',
-  hashType: 'noslash',
-  getUserConfirmation: (message, callback) => callback(window.confirm(message)),
-});
+import { SkeBasis } from '../../components/SkeBasis';
+import TableOfContent from '../TableOfContents/TableOfContent';
+import Sections from '../Sections/Sections';
+import StyleGuideRenderer from './StyleGuideRenderer';
 
 export class StyleGuide extends React.Component {
   static childContextTypes = {
@@ -52,6 +52,7 @@ export class StyleGuide extends React.Component {
       pagePerSection,
       codeRevision,
       slots,
+      history,
     } = this.props;
     if (this.state.error) {
       return <Error error={this.state.error} info={this.state.info} />;
@@ -66,7 +67,7 @@ export class StyleGuide extends React.Component {
         }}
       >
         <SkeBasis>
-          <Router history={history}>
+          <HistoryRouter history={history}>
             <StyleGuideRenderer
               title={config.title}
               homepageUrl={''}
@@ -83,10 +84,17 @@ export class StyleGuide extends React.Component {
                 <div>Not Found </div>
               )}
             </StyleGuideRenderer>
-          </Router>
+          </HistoryRouter>
         </SkeBasis>
       </Context.Provider>
     );
   }
 }
-export default StyleGuide;
+
+const StyleGuideWrapped = (props, { hashRoot = '' }) => {
+  const history = useHashHistory({ hashRoot });
+
+  return <StyleGuide history={history} {...props} />;
+};
+
+export default StyleGuideWrapped;

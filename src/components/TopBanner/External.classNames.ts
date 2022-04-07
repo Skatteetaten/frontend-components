@@ -52,7 +52,6 @@ export function getClassNames(props: TopBannerTypes, tag) {
       height: 'auto',
       padding: compact ? '8px' : '16px 16px 4px 16px',
       display: 'flex',
-      //flexDirection: 'column',
       background: palette.skeColor.white,
       maxWidth: '1100px',
       selectors: {
@@ -60,6 +59,13 @@ export function getClassNames(props: TopBannerTypes, tag) {
           width: 'auto',
           minWidth: compact ? 'auto' : '500px',
           flexDirection: 'row',
+        },
+      },
+    },
+    logo: {
+      selectors: {
+        'a:focus div': {
+          boxShadow: `0 0 0 3px ${palette.skeColor.interactive}`,
         },
       },
     },

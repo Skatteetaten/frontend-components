@@ -34,7 +34,7 @@ const [language, setLanguage] = useState('nb');
   <TopBanner
     external
     title={'Side for publikum'}
-    homeText={'Tilbake til skatteetaten.no'}
+    homeText={'Tilbake til Min side'}
     logoLink
     topStripe={
       <TopStripe>
@@ -173,6 +173,12 @@ import { TopBanner } from '@skatteetaten/frontend-components/TopBanner';
     For alle publikumsløsninger skal logoen som hovedregel være klikkbar og ta
     brukeren til forsiden av{' '}
     <a href="https://www.skatteetaten.no">skatteetaten.no</a>.
+  </p>
+  <p>
+    Toppbanner på undersider bør ha en tilbakelenke, og da kan det være lurt å
+    tenke på denne som en lenke tilbake til et startpunkt eller en «trygg havn».
+    Eksempler på sider som vi gjerne lenker tilbake til er skatteetaten.no og
+    Min side.
   </p>
 
   <p>

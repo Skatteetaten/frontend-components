@@ -9,6 +9,7 @@ import { DatePicker } from '@skatteetaten/frontend-components/DatePicker';
       id={'my-date'}
       requiredWithMark
       label={'Dato (dd.mm.åååå)'}
+      ariaLabel={'Dato (dd.mm.åååå), må fylles ut'}
       placeholder="Skriv eller velg"
       help={'Denne datovelgeren viser ukenummer i kalender'}
       showMonthPickerAsOverlay={false}
@@ -63,6 +64,10 @@ const [dato, setDato] = React.useState(new Date());
 
   <h3>WAI-ARIA</h3>
   <ul>
+    <li>
+      Når dato er et obligatorisk felt, skal du legge til en aria-label som
+      beskriver dette, for eksempel 'Dato (dd.mm.ååå), må fylles ut'.
+    </li>
     <li>Aria-expanded brukes på hjelp/info knapp som utvides/minimeres.</li>
     <li>Aria-hidden brukes for å skjule hjelpeikon for skjermleser.</li>
   </ul>

@@ -1,16 +1,17 @@
 import React from 'react';
-import { withRouter } from 'react-router';
 import { getTheme, FontSizes, FontWeights, Nav } from '@fluentui/react';
 import { mergeStyleSets } from '@fluentui/merge-styles';
 import find from 'lodash.find';
+import { useNavigate, useLocation } from 'react-router-dom';
 
-function createMenu(items, searchTerm) {
+function createMenu(items, searchTerm, activeSlug) {
   return items.map(({ name, slug, components = [], sections = [] }) => {
     const links = [
-      ...createMenu(sections, null),
-      ...createMenu(components, null),
+      ...createMenu(sections, null, null),
+      ...createMenu(components, null, null),
     ];
-    const collapseByDefault = searchTerm === '';
+    const containsActiveSlug = find(links, (l) => l.key === activeSlug);
+    const collapseByDefault = searchTerm === '' && !containsActiveSlug;
     const mainLink = find(links, (l) => l.name === name);
     return {
       name,
@@ -49,42 +50,23 @@ const getStyles = () => {
   });
 };
 
-export class ComponentsListRenderer extends React.Component<> {
-  constructor(props) {
-    super(props);
-    const {
-      match: { params },
-    } = this.props;
-
-    this.state = {
-      selectedKey: params.slug,
-    };
-  }
-  componentDidUpdate(nextProps) {
-    if (nextProps.match.params.slug !== this.props.match.params.slug) {
-      this.setState({
-        selectedKey: nextProps.match.params.slug || null,
-      });
+export const ComponentsListRenderer = ({ items, searchTerm }) => {
+  const navigate = useNavigate();
+  const { pathname } = useLocation();
+  const activeSlug = pathname.replace('/', '');
+  const groups = createMenu(items, searchTerm, activeSlug);
+  groups.forEach((group) => {
+    if (group.name === 'Designe og utvikle') {
+      group.links.sort((l1, l2) => l1.name.localeCompare(l2.name));
     }
-  }
-
-  render() {
-    const { items, history, searchTerm } = this.props;
-    const groups = createMenu(items, searchTerm);
-    groups.forEach((group) => {
-      if (group.name === 'Designe og utvikle') {
-        group.links.sort((l1, l2) => l1.name.localeCompare(l2.name));
-      }
-    });
-    if (groups.length === 0) return <>Ingen treff på søk</>;
-    return (
-      <Nav
-        styles={getStyles}
-        onLinkClick={(e, link) => history.push(link.key)}
-        groups={groups}
-        selectedKey={this.state.selectedKey}
-      />
-    );
-  }
-}
-export default withRouter(ComponentsListRenderer);
+  });
+  if (groups.length === 0) return <>Ingen treff på søk</>;
+  return (
+    <Nav
+      styles={getStyles}
+      onLinkClick={(e, link) => navigate(link.key)}
+      groups={groups}
+      selectedKey={activeSlug}
+    />
+  );
+};

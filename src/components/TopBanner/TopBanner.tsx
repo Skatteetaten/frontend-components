@@ -6,6 +6,7 @@ import { Image } from '../Image';
 import { ActionButton } from '../ActionButton';
 import { TopBannerTypes } from './TopBanner.types';
 import { BrandContext } from '../SkeBasis';
+import i18n, { t } from './../utils/i18n/i18n';
 
 // @ts-ignore TODO
 import logoSKE from './assets/logoSKE.svg';
@@ -104,6 +105,11 @@ export const ExternalHeader: React.FC<TopBannerTypes> = (props) => {
   // @ts-ignore
   const { logo, headerMain, contentWrapper } = styles;
   const compactHeight = props.compact ? 55 : 68;
+  const isLink = props.logoLink;
+
+  if (props.language) {
+    i18n.changeLanguage(props.language);
+  }
 
   const logoImageElement = (brand: string, showAltText = true) => {
     switch (brand) {
@@ -112,7 +118,7 @@ export const ExternalHeader: React.FC<TopBannerTypes> = (props) => {
           <Image
             src={props.language === 'en' ? logoSKEen : logoSKE}
             height={compactHeight}
-            alt={showAltText ? 'Skatteetaten logo' : ''}
+            alt={isLink ? t('topbanner.ske.logoLink') : t('topbanner.ske.logo')}
           />
         );
 
@@ -121,7 +127,7 @@ export const ExternalHeader: React.FC<TopBannerTypes> = (props) => {
           <Image
             src={props.language === 'en' ? logoINKen : logoINK}
             height={compactHeight}
-            alt={showAltText ? 'Statens innkreving logo' : ''}
+            alt={isLink ? t('topbanner.ink.logoLink') : t('topbanner.ink.logo')}
           />
         );
 
@@ -130,7 +136,7 @@ export const ExternalHeader: React.FC<TopBannerTypes> = (props) => {
           <Image
             src={logoLSO}
             height={compactHeight}
-            alt={showAltText ? 'Lønnsstøtte logo' : ''}
+            alt={isLink ? t('topbanner.lso.logoLink') : t('topbanner.lso.logo')}
           />
         );
 
@@ -154,9 +160,9 @@ export const ExternalHeader: React.FC<TopBannerTypes> = (props) => {
             <div>
               <div className={logo}>
                 {props.logoLink ? (
-                  <a href={props.logoLinkUrl}>{logoImageElement(tag, false)}</a>
+                  <a href={props.logoLinkUrl}>{logoImageElement(tag, true)}</a>
                 ) : (
-                  logoImageElement(tag)
+                  logoImageElement(tag, true)
                 )}
               </div>
             </div>

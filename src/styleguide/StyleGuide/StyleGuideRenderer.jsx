@@ -1,7 +1,5 @@
-import { withRouter } from 'react-router';
-
-import { getClassNames } from './classNames';
 import React from 'react';
+import { useLocation } from 'react-router-dom';
 
 import { ActionButton } from '../../components/ActionButton';
 import { FooterContent } from '../../components/FooterContent';
@@ -9,21 +7,25 @@ import { Grid } from '../../components/Grid';
 import { Link } from '../../components/Link';
 import { TopBanner } from '../../components/TopBanner';
 
+import { getClassNames } from './classNames';
 import './style.css';
 
-const ScrollToTop = withRouter(
-  class ScrollToTop extends React.Component {
-    componentDidUpdate(prevProps) {
-      if (this.props.location !== prevProps.location) {
-        window.scrollTo(0, 0);
-      }
-    }
+const ScrollToTopWrapped = (props) => {
+  const location = useLocation();
+  return <ScrollToTop location={location} {...props} />;
+};
 
-    render() {
-      return this.props.children;
+class ScrollToTop extends React.Component {
+  componentDidUpdate(prevProps) {
+    if (this.props.location !== prevProps.location) {
+      window.scrollTo(0, 0);
     }
   }
-);
+
+  render() {
+    return this.props.children;
+  }
+}
 
 export class StyleGuideRenderer extends React.Component {
   static displayName = 'StyleGuideRenderer';
@@ -58,7 +60,7 @@ export class StyleGuideRenderer extends React.Component {
     const { version } = this.state;
     const styles = getClassNames(this.props, this.state);
     return (
-      <ScrollToTop>
+      <ScrollToTopWrapped>
         <div id="main">
           <div className="mainLayout">
             <TopBanner
@@ -156,7 +158,7 @@ export class StyleGuideRenderer extends React.Component {
             </FooterContent>
           </div>
         </div>
-      </ScrollToTop>
+      </ScrollToTopWrapped>
     );
   }
 }
