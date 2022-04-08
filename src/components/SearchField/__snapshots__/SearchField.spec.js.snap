@@ -51,6 +51,10 @@ exports[`SearchField komponent matcher snapshot 1`] = `
         }
         &:hover .ms-SearchBox-iconContainer {
           color: #0c3f6f;
+          width: 32px;
+        }
+        &:hover .ms-SearchBox-icon {
+          opacity: 1;
         }
         &.ms-SearchBox {
           border-radius: 0px;
@@ -113,6 +117,7 @@ exports[`SearchField komponent matcher snapshot 1`] = `
           font-size: 1rem;
           opacity: 1;
           outline: none;
+          pointer-events: all !important;
           position: absolute;
           right: 10px;
           top: 0px;

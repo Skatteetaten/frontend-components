@@ -148,6 +148,7 @@ export const getClassNames = (props: SearchFieldProps) => {
           opacity: 1,
           outline: 'none',
           cursor: onSearchIcon ? 'pointer' : 'default',
+          pointerEvents: 'all !important',
           selectors: {
             ':hover': {
               background: onSearchIcon && palette.skeColor.lightBlue,
