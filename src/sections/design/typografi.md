@@ -3,22 +3,22 @@ Derfor er skriftstørrelse, farge, linjeavstand og spaltebredde viktige element 
 
 ### Skriftstørrelse
 
-Standard fontstørrelse er 16px. Komponentene henter fontstørrelser fra en fil i biblioteket (components/utils/fonts). Disse størrelsene er:
+Fontstørrelsene er satt opp i REM-format. Det betyr at teksten kan forstørres og forminskes uten at man mister tilgang til innhold eller funksjoner. 1rem tilsvarer 16px størrelse på vanlig zoom.
+Komponentene henter fontstørrelser fra en token-fil i biblioteket (components/utils/designtokens). Disse størrelsene er:
 
-- mini: 10px
-- xSmall: 12px
-- small: 12px
-- medium: 16px
-- large: 18px
-- xLarge: 22px
-- xxLarge: 28px
-- superLarge: 42px
-- mega: 72px
+- xxs: 10px / 0.625rem
+- xs: 12px / 0.75rem
+- small: 14px / 0.875rem
+- medium: 16px / 1rem
+- large: 18px / 1.125rem
+- xl: 22px / 1.375rem
+- xxl: 30px / 1.875rem
+- xxxl: 42px / 2.625rem
+- mega: 68px / 4.25rem
 
 ### Avstander
 
-Avstander i Designsystemet er i hovedsak hopp på '8px'. Vi bruker 8px mellom to elementer som hører sammen, 16px mellom to elementer som ikke hører naturlig sammen,
-og 24px for avslutninger av seksjoner eller andre tydelige skiller. Rammer og streker har gjerne en tykkelse på 4px.
+Avstander i Designsystemet er i hovedsak hopp på '8px' (0.5rem). Vi bruker 8px mellom to elementer som hører sammen, 16px (1rem) mellom to elementer som ikke hører naturlig sammen, og 24px (1.5rem) for avslutninger av seksjoner eller andre tydelige skiller. Rammer og streker har gjerne en tykkelse på 4px.
 
 ### Farge
 
@@ -31,12 +31,13 @@ color: 'rgba(29,29,29');
 
 ### Linjeavstand
 
-Linjeavstanden bør være omkring 120–160 % av skriftstørrelsen. Generelt øker behovet for linjeasvtand når skriftstørrelsen blir mindre.
-Som en tommelfingerregel kan du sette line-height til fontstørrelse pluss 7 piksler. For standard brødtekst i artikkel blir dette: 16px + 7px = 23px.
+Linjeavstandene er satt opp som desimaler (f.eks. 1.5). Da kan man kan øke skriftstørrelsen med browser uten å miste tilgang til innhold. Generelt øker behovet for linjeavstand når skriftstørrelsen blir mindre. Store overskrifter trenger mindre linjehøyde. Disse linjehøydene er tilgjengelige i designsystemet, under components/utils/designtokens:
 
-```css
-line-height: 23px;
-```
+- xxs: 1.6
+- small: 1.75
+- medium: 1.5
+- large: 1.6666
+- xl: 1.333
 
 ### Spaltebredde
 
@@ -48,6 +49,6 @@ Helvetica er valgt som Skatteetatens profilfont, men på grunn av høye kostnade
 Det betyr at Designsystemet ikke inneholder noen font, men er satt opp slik at dersom Helvetica er installert hos brukeren, så vil denne bli brukt.
 Dersom Helvetica ikke er installert, vil Arial være neste beste alternativ, og i praksis den fonten de fleste brukere ser.
 
-### Komponent
+### Komponenter og design tokens
 
-Se også [Typography-komponenten](#typography) for hjelp til stiling av vanlige elementer.
+Størrelser, farger og linjehøyder er tilgjengelige som [Design tokens](#section-designtokens). Se også [Typography-komponenten](#typography) for hjelp til stiling av vanlige elementer.
