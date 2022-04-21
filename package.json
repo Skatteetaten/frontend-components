@@ -110,7 +110,7 @@
     "generate:icons": "webfont --normalize --fontHeight 600 src/webfont/**/*.svg -d src/components/utils/assets",
     "prebuild": "run-s clean generate:icons circularDeps lint",
     "build": "run-p build:lib build:docs",
-    "build:docs": "styleguidist build",
+    "build:docs": "PUBLIC_URL=/frontend-components styleguidist build",
     "build:lib": "run-p build:types build:esm build:cjs build:umd build:assets build:designtokens",
     "build:assets": "run-p build:assets:esm build:assets:cjs",
     "build:assets:esm": "cpx \"./src/components/**/assets/**/*\" ./lib",
