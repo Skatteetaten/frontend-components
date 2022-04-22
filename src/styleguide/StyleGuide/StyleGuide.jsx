@@ -91,11 +91,11 @@ export class StyleGuide extends React.Component {
   }
 }
 
-const StyleGuideWrapped = (
-  props,
-  { hashRoot = process.env.PUBLIC_URL ?? '' }
-) => {
-  const history = useHashHistory({ hashRoot });
+const StyleGuideWrapped = (props, { hashRoot = '' }) => {
+  const history = useHashHistory({
+    hashRoot,
+    defaultPath: { pathname: process.env.PUBLIC_URL ?? '' },
+  });
 
   return <StyleGuide history={history} {...props} />;
 };
