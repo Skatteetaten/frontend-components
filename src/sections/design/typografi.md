@@ -6,15 +6,78 @@ Derfor er skriftstørrelse, farge, linjeavstand og spaltebredde viktige element 
 Fontstørrelsene er satt opp i REM-format. Det betyr at teksten kan forstørres og forminskes uten at man mister tilgang til innhold eller funksjoner. 1rem tilsvarer 16px størrelse på vanlig zoom.
 Komponentene henter fontstørrelser fra en token-fil i biblioteket (components/utils/designtokens). Disse størrelsene er:
 
-- xxs: 10px / 0.625rem
-- xs: 12px / 0.75rem
-- small: 14px / 0.875rem
-- medium: 16px / 1rem
-- large: 18px / 1.125rem
-- xl: 22px / 1.375rem
-- xxl: 30px / 1.875rem
-- xxxl: 42px / 2.625rem
-- mega: 68px / 4.25rem
+```js noeditor
+import { Table } from '@skatteetaten/frontend-components/Table';
+import { IconButton } from '@skatteetaten/frontend-components/IconButton';
+import designtokenFontSizes from '../../components/utils/designtokens/_fontSizes.json';
+
+const columns = [
+  {
+    key: 'column1',
+    name: 'Navn',
+    fieldName: 'name',
+    minWidth: 50,
+    maxWidth: 200,
+    isResizable: true,
+  },
+  {
+    key: 'column2',
+    name: 'Verdi',
+    fieldName: 'valuerem',
+    isResizable: true,
+    alignment: 'right',
+  },
+  {
+    key: 'column2',
+    name: 'Verdi (PX)',
+    fieldName: 'valuepx',
+    isResizable: true,
+    alignment: 'right',
+  },
+  {
+    key: 'column4',
+    name: 'Kopier',
+    fieldName: 'kopierToken',
+    maxWidth: 50,
+    alignment: 'right',
+  },
+];
+
+const fontKeys = Object.keys(designtokenFontSizes);
+
+const designtokenTypographyData = [];
+fontKeys.forEach((item) => {
+  if (designtokenFontSizes[item].includes('rem')) {
+    var pxvalue = designtokenFontSizes[item].split('r')[0] * 16;
+  }
+  if (item.includes('font-size') && !item.includes('icon')) {
+    designtokenTypographyData.push({
+      name: `$${item}`,
+      valuerem: designtokenFontSizes[item],
+      valuepx: pxvalue,
+
+      kopierToken: (
+        <IconButton
+          title="Kopier"
+          buttonSize="small"
+          icon="Copy"
+          onClick={() => {
+            navigator.clipboard.writeText(`designtokenFontSizes['${item}']`);
+          }}
+        />
+      ),
+    });
+  }
+});
+
+const iconGroup = {
+  typography: designtokenTypographyData,
+};
+
+<div>
+  <Table columns={columns} data={iconGroup.typography} fullWidth />
+</div>;
+```
 
 ### Avstander
 
@@ -22,22 +85,78 @@ Avstander i Designsystemet er i hovedsak hopp på '8px' (0.5rem). Vi bruker 8px 
 
 ### Farge
 
-For å sikre god lesbarhet har vi valgt en tekstfarge er i nærheten av sort, som ikke er fullstendig sort. Denne fargen heter skeColor.blackAlt.
+For å sikre god lesbarhet har vi valgt en tekstfarge er i nærheten av sort, som ikke er fullstendig sort. Denne fargen heter skeColor.black100.
 
 ```css
-color: '#1d1d1d';
-color: 'rgba(29,29,29');
+color: '#1a1a1a';
+color: 'rgba(26,26,26');
 ```
 
 ### Linjeavstand
 
 Linjeavstandene er satt opp som desimaler (f.eks. 1.5). Da kan man kan øke skriftstørrelsen med browser uten å miste tilgang til innhold. Generelt øker behovet for linjeavstand når skriftstørrelsen blir mindre. Store overskrifter trenger mindre linjehøyde. Disse linjehøydene er tilgjengelige i designsystemet, under components/utils/designtokens:
 
-- xxs: 1.6
-- small: 1.75
-- medium: 1.5
-- large: 1.6666
-- xl: 1.333
+```js noeditor
+import { Table } from '@skatteetaten/frontend-components/Table';
+import { IconButton } from '@skatteetaten/frontend-components/IconButton';
+import designtokenFontSizes from '../../components/utils/designtokens/_fontSizes.json';
+
+const columns = [
+  {
+    key: 'column1',
+    name: 'Navn',
+    fieldName: 'name',
+    minWidth: 50,
+    maxWidth: 200,
+    isResizable: true,
+  },
+  {
+    key: 'column2',
+    name: 'Verdi',
+    fieldName: 'valuerem',
+    isResizable: true,
+    alignment: 'right',
+  },
+  {
+    key: 'column4',
+    name: 'Kopier',
+    fieldName: 'kopierToken',
+    maxWidth: 50,
+    alignment: 'right',
+  },
+];
+
+const fontKeys = Object.keys(designtokenFontSizes);
+
+const designtokenTypographyData = [];
+fontKeys.forEach((item) => {
+  if (item.includes('line-height')) {
+    designtokenTypographyData.push({
+      name: `$${item}`,
+      valuerem: designtokenFontSizes[item],
+
+      kopierToken: (
+        <IconButton
+          title="Kopier"
+          buttonSize="small"
+          icon="Copy"
+          onClick={() => {
+            navigator.clipboard.writeText(`designtokenFontSizes['${item}']`);
+          }}
+        />
+      ),
+    });
+  }
+});
+
+const iconGroup = {
+  typography: designtokenTypographyData,
+};
+
+<div>
+  <Table columns={columns} data={iconGroup.typography} fullWidth />
+</div>;
+```
 
 ### Spaltebredde
 
