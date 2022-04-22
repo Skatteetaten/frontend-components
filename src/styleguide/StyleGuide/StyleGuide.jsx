@@ -67,7 +67,10 @@ export class StyleGuide extends React.Component {
         }}
       >
         <SkeBasis>
-          <HistoryRouter history={history}>
+          <HistoryRouter
+            history={history}
+            basename={process.env.PUBLIC_URL ?? ''}
+          >
             <StyleGuideRenderer
               title={config.title}
               homepageUrl={''}
