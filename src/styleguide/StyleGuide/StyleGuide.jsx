@@ -94,7 +94,7 @@ export class StyleGuide extends React.Component {
 const StyleGuideWrapped = (props, { hashRoot = '' }) => {
   const history = useHashHistory({
     hashRoot,
-    defaultPath: { pathname: '/frontend-components/' },
+    defaultPath: { pathname: process.env.PUBLIC_URL ?? '' },
   });
 
   return <StyleGuide history={history} {...props} />;
