@@ -67,7 +67,7 @@ export class StyleGuide extends React.Component {
         }}
       >
         <SkeBasis>
-          <HistoryRouter history={history}>
+          <HistoryRouter history={history} basename="/">
             <StyleGuideRenderer
               title={config.title}
               homepageUrl={''}
@@ -95,7 +95,6 @@ const StyleGuideWrapped = (props, { hashRoot = '' }) => {
   const history = useHashHistory({
     hashRoot,
     defaultPath: { pathname: process.env.PUBLIC_URL ?? '' },
-    hashSlash: '/',
   });
 
   return <StyleGuide history={history} {...props} />;
