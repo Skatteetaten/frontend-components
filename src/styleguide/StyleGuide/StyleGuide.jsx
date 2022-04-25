@@ -94,14 +94,13 @@ export class StyleGuide extends React.Component {
 const resolveBasename = () => {
   let publicUrl = process.env.PUBLIC_URL;
 
-  if (publicUrl === '') {
+  if (publicUrl === undefined || publicUrl === '') {
+    return '';
+  } else if (!publicUrl.endsWith('/')) {
+    return publicUrl + '/';
+  } else {
     return publicUrl;
   }
-  const lastChar = publicUrl.slice(-1);
-  if (lastChar !== '/') {
-    return publicUrl + '/';
-  }
-  return publicUrl;
 };
 
 const StyleGuideWrapped = (props, { hashRoot = '' }) => {
