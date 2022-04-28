@@ -83,6 +83,7 @@ import { TopStripeButton } from '@skatteetaten/frontend-components/TopStripe/Top
             alt="Eksempel på systemfeil: Beklager – vi har systemfeil. Vi klarte ikke opprette forbindelse til en nødvendig tjeneste. Skal vi sende deg en melding når tjenesten er oppe igjen? "
             width="auto"
           />
+          <p>Eksempel: </p>
         </div>
         <div className="dont" style={{ maxWidth: '37%' }}>
           <p class="title">Nei</p>

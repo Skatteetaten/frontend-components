@@ -1,5 +1,7 @@
 **Dialog (Dialogboks): brukes til å vise innhold midt på skjermen og tiltrekke seg brukerens oppmerksomhet.**
 
+### Standard dialog
+
 ```js
 import { ActionButton } from '@skatteetaten/frontend-components/ActionButton';
 import { Button } from '@skatteetaten/frontend-components/Button';
@@ -12,38 +14,68 @@ const [state, setState] = React.useState({ hideDialog: true });
 function closeDialog() {
   setState({ hideDialog: true });
 }
+<>
+  <div>
+    <ActionButton
+      buttonStyle="secondary"
+      icon="InfoOutline"
+      onClick={() => setState({ hideDialog: false })}
+    >
+      Dialog med autolukking
+    </ActionButton>
+    <Dialog
+      hidden={state.hideDialog}
+      type={Dialog.Type.normal}
+      onDismiss={closeDialog}
+      title="Vil du erstatte nye opplysninger fra fil?"
+      forceFocusInsideTrap
+      minWidth={designtokenBreakpoints['ske-breakpoint-sm']}
+      maxWidth={designtokenBreakpoints['ske-breakpoint-md']}
+    >
+      <p style={{ marginBottom: '32px', maxWidth: '50ch' }}>
+        Du har valgt å laste opp nye opplysninger fra fil. Vil du at disse skal
+        gjelde fra nå av?
+      </p>
 
-<div>
-  <ActionButton
-    buttonStyle="secondary"
-    icon="InfoOutline"
-    onClick={() => setState({ hideDialog: false })}
-  >
-    Vis standard dialog
-  </ActionButton>
-  <Dialog
-    hidden={state.hideDialog}
-    type={Dialog.Type.normal}
-    onDismiss={closeDialog}
-    title="Slette arbeidsoppgaven?"
-    forceFocusInsideTrap
-    minWidth={designtokenBreakpoints['ske-breakpoint-sm']}
-    maxWidth={designtokenBreakpoints['ske-breakpoint-md']}
-  >
-    <p>Er du sikker på at du vil slette arbeidsoppgaven?</p>
+      <Dialog.Footer>
+        <Button buttonStyle="secondarySimple" onClick={closeDialog}>
+          Avbryt
+        </Button>
+        <Button buttonStyle="primary" onClick={closeDialog}>
+          Erstatt opplysninger
+        </Button>
+      </Dialog.Footer>
+    </Dialog>
+  </div>
+  <div>
+    <ActionButton
+      buttonStyle="secondary"
+      onClick={() => setState({ hideDialog: false })}
+      icon="InfoOutline"
+    >
+      Dialog som lukkes aktivt
+    </ActionButton>
+    <Dialog
+      hidden={state.hideDialog}
+      type={Dialog.Type.normal}
+      onDismiss={closeDialog}
+      modalProps={{ isBlocking: true, isModeless: false }}
+      title="Meldinger"
+      forceFocusInsideTrap
+      minWidth={designtokenBreakpoints['ske-breakpoint-sm']}
+      maxWidth={designtokenBreakpoints['ske-breakpoint-md']}
+    >
+      <p>Du har ingen nye meldinger.</p>
 
-    <p>Handlingen kan ikke reverseres</p>
-    <Dialog.Footer>
-      <Button buttonStyle="secondarySimple" onClick={closeDialog}>
-        Avbryt
-      </Button>
-      <Button buttonStyle="warning" onClick={closeDialog}>
-        Slett
-      </Button>
-    </Dialog.Footer>
-  </Dialog>
-</div>;
+      <Dialog.Footer>
+        <Button onClick={closeDialog}>Lukk</Button>
+      </Dialog.Footer>
+    </Dialog>
+  </div>
+</>;
 ```
+
+### Luftig dialog
 
 ```js
 import { ActionButton } from '@skatteetaten/frontend-components/ActionButton';
@@ -77,7 +109,7 @@ const content1 = [
     onClick={() => setState({ hideDialog: false })}
     icon="InfoOutline"
   >
-    Vis luftig dialog
+    Velg inngang i publikumsløsning
   </ActionButton>
   <Dialog
     hidden={state.hideDialog}
@@ -106,6 +138,8 @@ const content1 = [
 </div>;
 ```
 
+### Viktig dialog
+
 ```js
 import { ActionButton } from '@skatteetaten/frontend-components/ActionButton';
 import { Button } from '@skatteetaten/frontend-components/Button';
@@ -123,64 +157,24 @@ function closeDialog() {
     onClick={() => setState({ hideDialog: false })}
     icon="InfoOutline"
   >
-    Vis viktig dialog
+    Viktig driftsmelding
   </ActionButton>
   <Dialog
     hidden={state.hideDialog}
     type={Dialog.Type.normal}
     layoutStyle={'important'}
-    modalProps={{ isModeless: false }}
+    modalProps={{ isBlocking: true, isModeless: false }}
     forceFocusInsideTrap
     onDismiss={closeDialog}
     title="Viktig melding!"
     minWidth="400px"
     maxWidth="600px"
   >
-    <p>Løsning er ikke kommet i drift ennå eller tatt ned for vedlikehold</p>
+    <p>Løsningen er ikke kommet i drift ennå eller tatt ned for vedlikehold.</p>
     <Dialog.Footer>
       <ActionButton onClick={closeDialog}>
         Les mer på skatteetaten.no
       </ActionButton>
-    </Dialog.Footer>
-  </Dialog>
-</div>;
-```
-
-```js
-import Dialog from '@skatteetaten/frontend-components/Dialog';
-import Button from '@skatteetaten/frontend-components/Button';
-import ActionButton from '@skatteetaten/frontend-components/ActionButton';
-
-import designtokenBreakpoints from '../../components/utils/designtokens/_breakpoints.json';
-
-const [state, setState] = React.useState({ hideDialog: true });
-
-function closeDialog() {
-  setState({ hideDialog: true });
-}
-
-<div>
-  <ActionButton
-    buttonStyle="secondary"
-    onClick={() => setState({ hideDialog: false })}
-    icon="InfoOutline"
-  >
-    Vis dialog som lukkes aktivt
-  </ActionButton>
-  <Dialog
-    hidden={state.hideDialog}
-    type={Dialog.Type.normal}
-    onDismiss={closeDialog}
-    modalProps={{ isBlocking: true, isModeless: false }}
-    title="Meldinger"
-    forceFocusInsideTrap
-    minWidth={designtokenBreakpoints['ske-breakpoint-sm']}
-    maxWidth={designtokenBreakpoints['ske-breakpoint-md']}
-  >
-    <p>Du har ingen nye meldinger.</p>
-
-    <Dialog.Footer>
-      <Button onClick={closeDialog}>Lukk</Button>
     </Dialog.Footer>
   </Dialog>
 </div>;
