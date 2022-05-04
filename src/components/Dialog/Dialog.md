@@ -9,22 +9,26 @@ import { Dialog } from '@skatteetaten/frontend-components/Dialog';
 
 import designtokenBreakpoints from '../../components/utils/designtokens/_breakpoints.json';
 
-const [state, setState] = React.useState({ hideDialog: true });
+const [state, setState] = React.useState({
+  hideAutoDialog: true,
+  hideManualDialog: true,
+});
 
 function closeDialog() {
-  setState({ hideDialog: true });
+  setState({ hideAutoDialog: true });
+  setState({ hideManualDialog: true });
 }
 <>
   <div>
     <ActionButton
       buttonStyle="secondary"
       icon="InfoOutline"
-      onClick={() => setState({ hideDialog: false })}
+      onClick={() => setState({ hideAutoDialog: false })}
     >
       Dialog med autolukking
     </ActionButton>
     <Dialog
-      hidden={state.hideDialog}
+      hidden={state.hideAutoDialog}
       type={Dialog.Type.normal}
       onDismiss={closeDialog}
       title="Vil du erstatte nye opplysninger fra fil?"
@@ -50,13 +54,13 @@ function closeDialog() {
   <div>
     <ActionButton
       buttonStyle="secondary"
-      onClick={() => setState({ hideDialog: false })}
+      onClick={() => setState({ hideManualDialog: false })}
       icon="InfoOutline"
     >
       Dialog som lukkes aktivt
     </ActionButton>
     <Dialog
-      hidden={state.hideDialog}
+      hidden={state.hideManualDialog}
       type={Dialog.Type.normal}
       onDismiss={closeDialog}
       modalProps={{ isBlocking: true, isModeless: false }}
