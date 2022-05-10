@@ -1,3 +1,9 @@
+### **v.5.0.5 - 10 May 2022**
+
+- SearchField: fixes an issue where the search button was not clickable when focused.
+- FileUploader: fixes an issue where aria-describedby was not set correctly with no accepted file formats.
+- Documentation: Fixes an issue with the path where "frontend-components" was missing. Updated examples: Dialog, Modal, RadioButtonGroup, Table (editable rows), and error messages. Updated typography section.
+
 ### **v.5.0.4 - 6 April 2022**
 
 - Support node version 16
