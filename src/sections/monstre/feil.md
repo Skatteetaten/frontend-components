@@ -10,10 +10,15 @@ import { Icon } from '@skatteetaten/frontend-components/Icon';
 import { Image } from '@skatteetaten/frontend-components/Image';
 import { Link } from '@skatteetaten/frontend-components/Link';
 import { MessageBar } from '@skatteetaten/frontend-components/MessageBar';
+import { Typography } from '@skatteetaten/frontend-components/Typography';
 import { TextField } from '@skatteetaten/frontend-components/TextField';
 import { TopStripe } from '@skatteetaten/frontend-components/TopStripe';
+import { OpenClose } from '@skatteetaten/frontend-components/OpenClose';
 import { TopStripeMenu } from '@skatteetaten/frontend-components/TopStripe/TopStripeMenu';
 import { TopStripeButton } from '@skatteetaten/frontend-components/TopStripe/TopStripeButton';
+
+import designtokenSpacing from '../../components/utils/designtokens/_spacing.json';
+import designtokenFontSizes from '../../components/utils/designtokens/_fontSizes.json';
 
 <div>
   <Card
@@ -93,8 +98,27 @@ import { TopStripeButton } from '@skatteetaten/frontend-components/TopStripe/Top
           />
         </div>
       </div>
-      <br />
+
       <div className="dodont" style={{ marginLeft: '24px' }}>
+        <div className="do" style={{ maxWidth: '37%' }}>
+          <p class="title">Ja</p>
+          <Image
+            src="./assets/png/eks_systemfeil3.png"
+            alt="Eksempel på systemfeil: Vi prøver å rette feilen. Forsøk å laste siden på nytt eller prøve igjen om 10 minutter. Takk for tålmodigheten!"
+            width="auto"
+          />
+        </div>
+        <div className="do" style={{ maxWidth: '37%' }}>
+          <p class="title">Ja</p>
+          <Image
+            src="./assets/png/eks_systemfeil4.png"
+            alt="Eksempel på systemfeil: Liste med aksjonspunkter for å løse feilen."
+            width="auto"
+          />
+        </div>
+      </div>
+
+      <div className="dodont" style={{ marginLeft: '24px', marginTop: '24px' }}>
         <div className="do" style={{ maxWidth: '44%' }}>
           <p class="title">Ja</p>
           <MessageBar type={MessageBar.Type.warning}>
@@ -303,6 +327,50 @@ import { TopStripeButton } from '@skatteetaten/frontend-components/TopStripe/Top
         />
         <br />
         <Button buttonStyle="primary">Send inn</Button>
+      </div>
+    </AccordionItem>
+    <AccordionItem
+      toggleContent
+      toggleButtonText={'Siden finnes ikke (404)'}
+      headingLevel="3"
+      stepId={'step-5'}
+    >
+      <p>
+        Når sider ikke finnes (for eksempel ved ugyldig nettadresse) viser vi en
+        melding i kjerneområdet mellom topp og bunn:
+      </p>
+      <div style={{ margin: `${designtokenSpacing['ske-spacing-xl']}` }}>
+        <Typography>
+          <h2
+            style={{ marginBottom: `${designtokenSpacing['ske-spacing-xl']}` }}
+          >
+            Siden finnes ikke
+          </h2>
+          <p>Beklager, vi finner ikke siden du ba om.</p>
+          <p
+            style={{ marginBottom: `${designtokenSpacing['ske-spacing-xl']}` }}
+          >
+            Du kan prøve å{' '}
+            <Link
+              path="https://www.skatteetaten.no/sok/"
+              text="søke i innholdet"
+            />
+            , eller navigere deg frem ved å bruke toppmenyen.
+          </p>
+
+          <OpenClose title="Teknisk feilmelding" compact iconRight>
+            <Typography>
+              <p
+                style={{
+                  fontSize: `${designtokenFontSizes['ske-font-size-xs']}`,
+                  marginTop: 0,
+                }}
+              >
+                404: finner ikke siden
+              </p>
+            </Typography>
+          </OpenClose>
+        </Typography>
       </div>
     </AccordionItem>
   </Accordion>

@@ -3,22 +3,21 @@
 ```js
 import { RadioButtonGroup } from '@skatteetaten/frontend-components/RadioButtonGroup';
 
-const [state, setState] = React.useState({
-  options: [
-    {
-      key: 'A',
-      text: 'Enkeltpersonsforetak',
-    },
-    {
-      key: 'B',
-      text: 'Aksjeselskap',
-    },
-  ],
-});
+const options = [
+  {
+    key: 'A',
+    text: 'Enkeltpersonsforetak',
+  },
+  {
+    key: 'B',
+    text: 'Aksjeselskap',
+  },
+];
+
 <div style={{ maxWidth: '400px' }}>
   <RadioButtonGroup
     label="Type virksomhet"
-    options={state.options}
+    options={options}
     requiredWithMark
     onChange={(e, option) => console.log(option)}
     help="Type virksomhet vil påvirke hva du må rapportere til oss."
@@ -35,26 +34,25 @@ Med beskrivelse på hvert steg:
 ```js
 import { RadioButtonGroup } from '@skatteetaten/frontend-components/RadioButtonGroup';
 
-const [state, setState] = React.useState({
-  options: [
-    {
-      key: 'A',
-      text: 'Sparekonto',
-      description:
-        'Dette er egentlig bare en brukskonto, med et annet navn. Du har ubegrenset uttak i året',
-    },
-    {
-      key: 'B',
-      text: 'Sparekonto pluss',
-      description:
-        'Hvis du er veldig glad i å spare uten renter er dette kontoen for deg. Uttak fra denne kontoen kommer med gebyr',
-    },
-  ],
-});
+const options = [
+  {
+    key: 'A',
+    text: 'Sparekonto',
+    description:
+      'Dette er egentlig bare en brukskonto, med et annet navn. Du har ubegrenset uttak i året',
+  },
+  {
+    key: 'B',
+    text: 'Sparekonto pluss',
+    description:
+      'Hvis du er veldig glad i å spare uten renter er dette kontoen for deg. Uttak fra denne kontoen kommer med gebyr',
+  },
+];
+
 <>
   <RadioButtonGroup
     label="Type sparekonto"
-    options={state.options}
+    options={options}
     onChange={(e, option) => console.log(option)}
   />
 </>;

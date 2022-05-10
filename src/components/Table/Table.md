@@ -7,6 +7,7 @@ import { IconButton } from '@skatteetaten/frontend-components/IconButton';
 import { LabelWithCallout } from '@skatteetaten/frontend-components/LabelWithCallout';
 import { Table } from '@skatteetaten/frontend-components/Table';
 import { TextField } from '@skatteetaten/frontend-components/TextField';
+import { ActionButton } from '@skatteetaten/frontend-components/ActionButton';
 
 const wrapperStyle = {
   backgroundColor: '#f9ede2',
@@ -72,18 +73,28 @@ const editableContent = (data, close, rowIndex) => (
         </Grid.Col>
       </Grid.Row>
       <Grid.Row>
-        <Grid.Col lg={6}></Grid.Col>
-        <Grid.Col lg={6}>
+        <Grid.Col lg={5}></Grid.Col>
+        <Grid.Col lg={7}>
           <div style={blockRightStyle}>
-            <Button onClick={close}>Slett</Button>
-
-            <Button onClick={close} style={buttonPaddingStyle}>
+            <Button
+              onClick={close}
+              style={buttonPaddingStyle}
+              buttonStyle="secondarySimple"
+              icon="delete"
+            >
+              Slett
+            </Button>
+            <Button
+              onClick={close}
+              style={buttonPaddingStyle}
+              buttonStyle="secondary"
+            >
               Avbryt
             </Button>
             <Button
               onClick={close}
               style={buttonPaddingStyle}
-              buttonStyle="primaryRoundedFilled"
+              buttonStyle="primary"
             >
               Ok
             </Button>

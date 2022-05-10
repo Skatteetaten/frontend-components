@@ -91,8 +91,24 @@ export class StyleGuide extends React.Component {
   }
 }
 
+const resolveBasename = () => {
+  let publicUrl = process.env.PUBLIC_URL;
+
+  if (publicUrl === undefined || publicUrl === '') {
+    return '';
+  } else if (!publicUrl.endsWith('/')) {
+    return publicUrl + '/';
+  } else {
+    return publicUrl;
+  }
+};
+
 const StyleGuideWrapped = (props, { hashRoot = '' }) => {
-  const history = useHashHistory({ hashRoot });
+  const basename = resolveBasename();
+  const history = useHashHistory({
+    hashRoot,
+    defaultPath: { pathname: basename },
+  });
 
   return <StyleGuide history={history} {...props} />;
 };

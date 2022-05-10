@@ -350,8 +350,7 @@ export const FileUploader: React.FC<FileUploaderProps> = (props) => {
           className={styles.uploadArea}
           role="button"
           aria-describedby={fileuploadLabelId.concat(
-            ' ',
-            acceptedFileFormatsId,
+            acceptedFileFormats ? ' '.concat(acceptedFileFormatsId) : '',
             info ? ' '.concat(informationId) : ''
           )}
           tabIndex={0}
