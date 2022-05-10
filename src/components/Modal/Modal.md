@@ -19,16 +19,17 @@ const TestComponent = ({}) => {
 
       {modal && modal.isOpen('testModal') && (
         <Modal name={'testModal'}>
-          <h3 style={{ marginTop: '0px' }}>{'Kansellere arbeidsoppgaven?'}</h3>
-          <p>Er du sikker på at du vil kansellere arbeidsoppgaven?</p>
+          <h3 style={{ marginTop: '0px' }}>
+            {'Vil du erstatte nye opplysninger fra fil?'}
+          </h3>
+          <p>
+            Du har valgt å laste opp nye opplysninger fra fil. Vil du at disse
+            skal gjelde fra nå av?
+          </p>
 
           <div style={{ marginTop: '32px' }}>
-            <Button
-              buttonStyle="primary"
-              onClick={toggleModal}
-              style={{ marginRight: '16px' }}
-            >
-              {'Kanseller'}
+            <Button buttonStyle="primary" onClick={toggleModal}>
+              {'Erstatt opplysninger'}
             </Button>
             <Button onClick={toggleModal}>{'Avbryt'}</Button>
           </div>
@@ -87,7 +88,9 @@ const TestComponent = ({}) => {
       du har enkle bekreftelsesmeldinger med lite innhold inni boksen, og du er
       sikker på at du ikke må skrolle i innholdet.
     </li>
-    <li>løsningen din har micro frontend-arkitektur eller web components</li>
+    <li>
+      løsningen din har micro frontend-arkitektur eller bruker web components.
+    </li>
   </ul>
 </>
 ```
