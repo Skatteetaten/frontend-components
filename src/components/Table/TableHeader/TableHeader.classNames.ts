@@ -16,7 +16,9 @@ export const getClassNames = (props) => {
     },
     tabellTheadCell: {
       borderBottom: `2px solid ${palette.skeColor.blackAlt}`,
-      padding: designtokenSpacing['ske-spacing-lg'],
+      padding: compactTable
+        ? `${designtokenSpacing['ske-spacing-xs']}`
+        : `${designtokenSpacing['ske-spacing-md']}`,
       fontSize: compactTable
         ? designtokenFontSizes['ske-font-size-s']
         : 'inherit',
@@ -56,6 +58,7 @@ export const getClassNames = (props) => {
     },
     tabellTheadCellIsSortable: {
       cursor: 'pointer',
+      paddingRight: `${designtokenSpacing['ske-spacing-xl']} !important`,
       selectors: {
         ':hover [data-icon-name="ArrowUpDown"]': {
           opacity: 1,

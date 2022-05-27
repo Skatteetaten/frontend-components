@@ -197,6 +197,7 @@ export const Table = <P extends RowData>(props: TableProps<P>) => {
           >
             {(tableIsScrollable || expandIconPlacement === 'before') && emptyTd}
             <TableHeader
+              compactTable={compactTable}
               columns={columns}
               sort={sort}
               setSort={(value: {
