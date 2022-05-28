@@ -126,10 +126,10 @@ exports[`Table komponent matcher snapshot 1`] = `
                     border-bottom: 2px solid #1a1a1a;
                     font-size: inherit;
                     font-weight: 700;
-                    padding-bottom: 0.5rem;
-                    padding-left: 0.5rem;
-                    padding-right: 0.5rem;
-                    padding-top: 0.5rem;
+                    padding-bottom: 1rem;
+                    padding-left: 1rem;
+                    padding-right: 1rem;
+                    padding-top: 1rem;
                     position: relative;
                     vertical-align: bottom;
                   }
@@ -167,10 +167,10 @@ exports[`Table komponent matcher snapshot 1`] = `
                     border-bottom: 2px solid #1a1a1a;
                     font-size: inherit;
                     font-weight: 700;
-                    padding-bottom: 0.5rem;
-                    padding-left: 0.5rem;
-                    padding-right: 0.5rem;
-                    padding-top: 0.5rem;
+                    padding-bottom: 1rem;
+                    padding-left: 1rem;
+                    padding-right: 1rem;
+                    padding-top: 1rem;
                     position: relative;
                     vertical-align: bottom;
                   }
@@ -212,10 +212,10 @@ exports[`Table komponent matcher snapshot 1`] = `
                     border-bottom: 2px solid #1a1a1a;
                     font-size: inherit;
                     font-weight: 700;
-                    padding-bottom: 0.5rem;
-                    padding-left: 0.5rem;
-                    padding-right: 0.5rem;
-                    padding-top: 0.5rem;
+                    padding-bottom: 1rem;
+                    padding-left: 1rem;
+                    padding-right: 1rem;
+                    padding-top: 1rem;
                     position: relative;
                     vertical-align: bottom;
                   }
@@ -257,10 +257,10 @@ exports[`Table komponent matcher snapshot 1`] = `
                     border-bottom: 2px solid #1a1a1a;
                     font-size: inherit;
                     font-weight: 700;
-                    padding-bottom: 0.5rem;
-                    padding-left: 0.5rem;
-                    padding-right: 0.5rem;
-                    padding-top: 0.5rem;
+                    padding-bottom: 1rem;
+                    padding-left: 1rem;
+                    padding-right: 1rem;
+                    padding-top: 1rem;
                     position: relative;
                     vertical-align: bottom;
                   }

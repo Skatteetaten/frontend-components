@@ -17,8 +17,8 @@ export const getClassNames = (props) => {
     tabellTheadCell: {
       borderBottom: `2px solid ${palette.skeColor.blackAlt}`,
       padding: compactTable
-        ? `${designtokenSpacing['ske-spacing-xs']}`
-        : `${designtokenSpacing['ske-spacing-md']}`,
+        ? `${designtokenSpacing['ske-spacing-sm']}`
+        : `${designtokenSpacing['ske-spacing-lg']}`,
       fontSize: compactTable
         ? designtokenFontSizes['ske-font-size-s']
         : 'inherit',

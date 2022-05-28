@@ -41,7 +41,7 @@ export const getClassNames = (props, expandabledRowOpenWidth) => {
       width: expandabledRowOpenWidth ? expandabledRowOpenWidth - 5 + 'px' : '',
       padding: compactTable
         ? `${designtokenSpacing['ske-spacing-sm']}`
-        : `${designtokenSpacing['ske-spacing-md']}`,
+        : `${designtokenSpacing['ske-spacing-md']} 0`,
       boxSizing: 'border-box',
       position: 'relative',
       zIndex: 99,
