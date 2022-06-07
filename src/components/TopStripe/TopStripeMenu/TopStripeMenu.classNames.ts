@@ -10,15 +10,10 @@ export const getClassNames = () => {
     topStripeMenuIcon: {
       fontSize: designtokenFontSizes['ske-font-size-m'],
       verticalAlign: 'middle',
-      position: 'absolute',
-      bottom: '0.625rem',
-      left: '0.25rem',
+      marginRight: '0.05rem',
     },
     topStripeMenuShowChevron: {
       paddingRight: '1.375rem !important',
-    },
-    topStripeMenuHasIcon: {
-      paddingLeft: '1.375rem !important',
     },
     topStripeMenuTitle: {
       textDecoration: 'underline',
@@ -27,20 +22,22 @@ export const getClassNames = () => {
     topStripeMenuChevronIcon: {
       position: 'absolute',
       fontSize: designtokenFontSizes['ske-font-size-xl'],
-      bottom: '0.5rem',
+      top: '0.6rem',
     },
     topStripeMenuDropdownContainer: {
       zIndex: '200',
       position: 'absolute',
       top: '2.625rem',
-      marginLeft: designtokenSpacing['ske-spacing-md'],
       backgroundColor: designtokenColors['ske-color-black-100'],
       minWidth: '100vw',
-      padding: 0,
-      paddingInlineStart: 0,
-      paddingInlineEnd: 0,
-      margin: 0,
       selectors: {
+        ul: {
+          padding: 0,
+          margin: 0,
+          paddingInlineStart: 0,
+          paddingInlineEnd: 0,
+          marginLeft: designtokenSpacing['ske-spacing-md'],
+        },
         'a, i': {
           borderWidth: 0,
         },
