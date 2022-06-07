@@ -29,7 +29,7 @@ export const TopStripeMenuItems: React.FC<TopStripeMenuProps> = (props) => {
 
   return (
     <div className={styles.topStripeMenuDropdownContainer}>
-      {onRender && onRender}
+      {onRender}
       {contentIsMenu ? (
         <ul role={'menu'}>
           {React.Children.map(children, (child) => {
