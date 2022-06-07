@@ -63,9 +63,11 @@ export const TopStripeMenu: React.FC<TopStripeMenuProps> = (props) => {
         onClick={() => setOpen(index)}
         showOnMobile={showOnMobile}
       >
-        <span className={classnames(styles.topStripeMenuIcon)}>
-          <Icon iconName={icon} />
-        </span>
+        {icon && (
+          <span className={styles.topStripeMenuIcon}>
+            <Icon iconName={icon} />
+          </span>
+        )}
         <span>{title}</span>
         {showChevron && (
           <Icon

@@ -21,7 +21,7 @@ export const TopStripeMenuItems: React.FC<TopStripeMenuProps> = (props) => {
 
   const onChildClick = (
     child: React.ReactElement,
-    e: React.MouseEvent<any, MouseEvent>
+    e: React.MouseEvent<HTMLElement>
   ) => {
     child.props && child.props.onClick && child.props.onClick(e);
     closeOnClick && closeMenu && closeMenu();
@@ -29,48 +29,46 @@ export const TopStripeMenuItems: React.FC<TopStripeMenuProps> = (props) => {
 
   return (
     <div className={styles.topStripeMenuDropdownContainer}>
+      {onRender && onRender}
       {contentIsMenu ? (
         <ul role={'menu'}>
-          {onRender
-            ? onRender
-            : React.Children.map(children, (child) => {
-                if (React.isValidElement<LinkProps>(child)) {
-                  return (
-                    <li
-                      onClick={(e) => {
-                        onChildClick(child, e);
-                      }}
-                      className={styles.topStripeMenuDropdownElementContainer}
-                    >
-                      {child.props.icon ? (
-                        <Icon
-                          iconName={child.props.icon || undefined}
-                          aria-hidden
-                          className={styles.topStripeMenuDropdownElementIcon}
-                        />
-                      ) : (
-                        ''
-                      )}
-                      {React.cloneElement(child, {
-                        role: 'menuitem',
-                        'aria-current': child.props.icon ? 'true' : undefined,
-                        icon: undefined,
-                        onClick: undefined,
-                        className: classnames(
-                          child.props.className,
-                          styles.topStripeMenuDropdownElement
-                        ),
-                      })}
-                    </li>
-                  );
-                } else {
-                  return (
-                    <li className={styles.topStripeMenuDropdownElement}>
-                      {children}
-                    </li>
-                  );
-                }
-              })}
+          {React.Children.map(children, (child) => {
+            if (React.isValidElement<LinkProps>(child)) {
+              const { className, icon } = child.props;
+              return (
+                <li
+                  onClick={(e) => {
+                    onChildClick(child, e);
+                  }}
+                  className={styles.topStripeMenuDropdownElementContainer}
+                >
+                  {icon && (
+                    <Icon
+                      iconName={icon || undefined}
+                      aria-hidden
+                      className={styles.topStripeMenuDropdownElementIcon}
+                    />
+                  )}
+                  {React.cloneElement(child, {
+                    role: 'menuitem',
+                    'aria-current': icon ? 'true' : undefined,
+                    icon: undefined,
+                    onClick: undefined,
+                    className: classnames(
+                      className,
+                      styles.topStripeMenuDropdownElement
+                    ),
+                  })}
+                </li>
+              );
+            } else {
+              return (
+                <li className={styles.topStripeMenuDropdownElement}>
+                  {children}
+                </li>
+              );
+            }
+          })}
         </ul>
       ) : (
         <>
@@ -90,15 +88,12 @@ export const TopStripeMenuItems: React.FC<TopStripeMenuProps> = (props) => {
           })}
         </>
       )}
-
-      <span>
-        <ActionButton
-          className={styles.topStripeMenuDropdownCloseButton}
-          icon={'ChevronUp'}
-          onClick={() => setOpen(index)}
-          ariaLabel={closeMenuAriaLabel}
-        />
-      </span>
+      <ActionButton
+        className={styles.topStripeMenuDropdownCloseButton}
+        icon={'ChevronUp'}
+        onClick={() => setOpen(index)}
+        ariaLabel={closeMenuAriaLabel}
+      />
     </div>
   );
 };
