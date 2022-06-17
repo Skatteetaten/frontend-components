@@ -241,6 +241,21 @@ describe('Table komponent', () => {
     expect(tableRows.at(0).exists('#edit')).toEqual(true);
   });
 
+  it('håndterer openExpandableRowIndex fra props', () => {
+    const wrapper = mount(
+      <Table
+        data={data}
+        columns={columns}
+        expandableContent={() => <div id="expanded">{content.Måned}</div>}
+        expandableRows={true}
+        openExpandableRowIndex={0}
+      />
+    );
+
+    let tableRows = wrapper.find('TableRow');
+    expect(tableRows.at(0).exists('#expanded')).toEqual(true);
+  });
+
   it('tegner Table med en rad og en underrad', () => {
     const dataMedUnderlinjer = [
       {

@@ -40,6 +40,8 @@ export const Table = <P extends RowData>(props: TableProps<P>) => {
     hideCaption,
     openEditableRowIndex: OpenEditableRowIndexExternal,
     setOpenEditableRowIndex,
+    openExpandableRowIndex: openExpandableRowIndexExternal,
+    setOpenExpandableRowIndex,
     sum,
   } = props;
   const genratedId = generateId();
@@ -52,9 +54,10 @@ export const Table = <P extends RowData>(props: TableProps<P>) => {
     openEditableRowIndexInternal,
     setOpenEditableRowIndexInternal,
   ] = useState<number | undefined>(OpenEditableRowIndexExternal);
-  const [openExpandableRowIndex, setOpenExpandableIndex] = useState<
-    number | undefined
-  >();
+  const [
+    openExpandableRowIndexInternal,
+    setOpenExpandableIndexInternal,
+  ] = useState<number | undefined>();
   const [sort, setSort] = useState<{
     ascending: boolean;
     columnFieldName: string;
@@ -71,6 +74,16 @@ export const Table = <P extends RowData>(props: TableProps<P>) => {
   useEffect(() => {
     setOpenEditableRowIndexInternal(OpenEditableRowIndexExternal);
   }, [OpenEditableRowIndexExternal]);
+
+  useEffect(() => {
+    if (setOpenExpandableRowIndex) {
+      setOpenExpandableRowIndex(openEditableRowIndexInternal);
+    }
+  }, [openExpandableRowIndexInternal, setOpenExpandableRowIndex]);
+
+  useEffect(() => {
+    setOpenExpandableIndexInternal(openExpandableRowIndexExternal);
+  }, [openExpandableRowIndexExternal]);
 
   const updateDimensions = () => {
     const tableWidth = tableRef.current && tableRef.current.clientWidth;
@@ -111,11 +124,11 @@ export const Table = <P extends RowData>(props: TableProps<P>) => {
     setOpenEditableRowIndexInternal(index);
   };
   const handleExpandRow = (index: number) => {
-    setOpenExpandableIndex(index);
+    setOpenExpandableIndexInternal(index);
   };
   const handleCloseRow = () => {
     setOpenEditableRowIndexInternal(undefined);
-    setOpenExpandableIndex(undefined);
+    setOpenExpandableIndexInternal(undefined);
   };
 
   const getRowData = () => {
@@ -131,17 +144,17 @@ export const Table = <P extends RowData>(props: TableProps<P>) => {
           editableRows={props.editableRows}
           editModeActive={openEditableRowIndexInternal !== undefined}
           expandableContent={props.expandableContent}
-          expandableModeActive={openExpandableRowIndex !== undefined}
+          expandableModeActive={openExpandableRowIndexInternal !== undefined}
           expandableRows={props.expandableRows}
           expandIconPlacement={props.expandIconPlacement}
           tableHasScroll={tableIsScrollable}
           isEditableRowOpen={openEditableRowIndexInternal === index}
-          isExpandableRowOpen={openExpandableRowIndex === index}
+          isExpandableRowOpen={openExpandableRowIndexInternal === index}
           openEditableOnRowClick={openEditableOnRowClick}
           onEditRow={() => handleEditRow(index)}
           onExpandRow={() => handleExpandRow(index)}
           onCloseRow={handleCloseRow}
-          openExpandableRowIndex={openExpandableRowIndex}
+          openExpandableRowIndex={openExpandableRowIndexInternal}
           tableId={mainId}
           showRowSeparators={showRowSeparators}
           compactTable={compactTable}
