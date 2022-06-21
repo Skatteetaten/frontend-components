@@ -77,7 +77,7 @@ export const Table = <P extends RowData>(props: TableProps<P>) => {
 
   useEffect(() => {
     if (setOpenExpandableRowIndex) {
-      setOpenExpandableRowIndex(openExpandableRowIndexExternal);
+      setOpenExpandableRowIndex(openExpandableRowIndexInternal);
     }
   }, [openExpandableRowIndexInternal, setOpenExpandableRowIndex]);
 
