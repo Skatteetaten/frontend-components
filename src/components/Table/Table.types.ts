@@ -36,15 +36,13 @@ export interface TableProps<P> extends React.HTMLAttributes<HTMLDivElement> {
   expandIconPlacement?: 'after' | 'before';
   /** Allows you to expand a row */
   expandableRows?: boolean;
-  /** Whether the table should be in full width (100%) or not */
-
   /**  Index for the row that is to be expanded in edit mode */
   openExpandableRowIndex?: number;
   /** Called when opening or closing a row, if you want to control the 'openExpandableRowIndex' state from the outside.
    * In the case of 'undefined', the component controls this itself.
    */
   setOpenExpandableRowIndex?: (index?: number) => void;
-
+  /** Whether the table should be in full width (100%) or not */
   fullWidth?: boolean;
   /**  Index for the row that is to be opened in edit mode */
   openEditableRowIndex?: number;
