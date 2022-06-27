@@ -228,7 +228,7 @@ exports[`SearchField komponent matcher snapshot 1`] = `
           &::-ms-clear {
             display: none;
           }
-      id="SearchBox0"
+      id="searchfield-123-input"
       onBlur={[Function]}
       onChange={[Function]}
       onInput={[Function]}
