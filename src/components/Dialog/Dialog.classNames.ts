@@ -132,6 +132,12 @@ export const getClassNames = function getClassNames(
           padding:
             props.layoutStyle === 'airy' ? '0 64px 64px ' : '0 20px 20px 20px',
         },
+        '& .ventevarsel-svg': {
+          width: '290px',
+        },
+        '& .ventevarsel-btn': {
+          width: '100%',
+        },
       },
     },
     helpButton: {

@@ -39,4 +39,17 @@ describe('Dialog komponent', () => {
     expect(htmlElm.prop('minWidth')).toEqual('400px');
     expect(htmlElm.prop('maxWidth')).toEqual('600px');
   });
+  it('rendrer ventevarsel', () => {
+    const wrapper = oppsettFullDOM({
+      hidden: false,
+      waitingWarning: true,
+      waitingWarningBtnText: 'Ja',
+      children: <p>Er du fortsatt aktiv?</p>,
+    });
+    expect(wrapper.find('p').text()).toEqual('Er du fortsatt aktiv?');
+    expect(wrapper.find('button').text()).toEqual('Ja');
+    expect(wrapper.find('img').prop('alt')).toEqual(
+      'Illustrasjon av travel person med seks armer, opptatt med kontorarbeid.'
+    );
+  });
 });

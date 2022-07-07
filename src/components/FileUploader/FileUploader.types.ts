@@ -1,11 +1,5 @@
 import { calloutState, LabelWithCalloutProps } from '../LabelWithCallout';
-
-export enum Language {
-  en = 'en',
-  nb = 'nb',
-  nn = 'nn',
-  se = 'se',
-}
+import { Language } from '../utils/Language';
 
 export enum FileFormatTypes {
   doc = '.doc',

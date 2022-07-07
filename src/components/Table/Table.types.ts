@@ -1,12 +1,6 @@
 import React from 'react';
 import { RowCustomClassNames } from './TableRow';
-
-export enum Language {
-  en = 'en',
-  nb = 'nb',
-  nn = 'nn',
-  se = 'se',
-}
+import { Language } from '../utils/Language';
 
 export interface RowData {
   hideEdit?: boolean;

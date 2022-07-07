@@ -1,6 +1,6 @@
 import { IDropdownOption, ISearchBoxProps } from '@fluentui/react';
 import { calloutState, LabelWithCalloutProps } from '../LabelWithCallout';
-import { Language } from '../FileUploader';
+import { Language } from '../utils/Language';
 
 export interface SearchFieldProps extends ISearchBoxProps {
   /** Størrelsen på rammen */

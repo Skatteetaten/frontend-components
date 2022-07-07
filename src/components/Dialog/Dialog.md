@@ -184,6 +184,49 @@ function closeDialog() {
 </div>;
 ```
 
+### Ventevarel
+
+Varsel dukker opp av seg selv etter 30 sek.
+
+```js
+import { ActionButton } from '@skatteetaten/frontend-components/ActionButton';
+import { Button } from '@skatteetaten/frontend-components/Button';
+import { Dialog } from '@skatteetaten/frontend-components/Dialog';
+
+const [state, setState] = React.useState({ hideDialog: true });
+const [time, setTime] = React.useState(30);
+
+React.useEffect(() => {
+  if (time === 0) {
+    setState({ hideDialog: false });
+  }
+  const intervalId = setInterval(() => {
+    setTime((t) => t - 1);
+  }, 1000);
+  return () => clearInterval(intervalId);
+}, [time]);
+
+function closeDialog() {
+  setState({ hideDialog: true });
+}
+
+<div>
+  <ActionButton
+    buttonStyle="secondary"
+    onClick={() => setState({ hideDialog: false })}
+    icon="InfoOutline"
+  >
+    Vis ventevarsel
+  </ActionButton>
+  <Dialog
+    hidden={state.hideDialog}
+    type={Dialog.Type.normal}
+    onDismiss={closeDialog}
+    waitingWarning
+  ></Dialog>
+</div>;
+```
+
 ```js noeditor uu
 <>
   <h3>Tips</h3>
