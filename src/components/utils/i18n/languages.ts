@@ -150,7 +150,8 @@ export const languages = {
     'datepicker.nextYearAriaLabel': 'Boahtte jahki',
     'datepicker.prevMonthAriaLabel': 'Ovddit mánnu',
     'datepicker.prevYearAriaLabel': 'Ovddit jahki',
-    'dialog.waitingWarning.alt': '',
+    'dialog.waitingWarning.alt':
+      'Govvideapmi dilihis olbmo geas lea guhtta gieđa ja lea bargamin kánturbargguid.',
     'dialog.waitingWarning.button_text': 'Jo',
     'dialog.waitingWarning.paragraph':
       'Mii oaidnit ahte don it leat geavahan siiddu guhkes áigái. Leat go ain dás?',
