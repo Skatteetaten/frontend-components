@@ -14,10 +14,10 @@ exports[`FileUploader komponent matcher snapshot 1`] = `
         }
   />
   <label
-    id="fileupload123-label"
+    id="fileupload-123-label"
   >
     <div
-      aria-describedby="fileupload123-label"
+      aria-describedby="fileupload-123-label"
       className=
 
           {
@@ -93,7 +93,7 @@ exports[`FileUploader komponent matcher snapshot 1`] = `
           position: absolute;
           z-index: -1;
         }
-    id="fileupload-input"
+    id="fileupload-123-input"
     onChange={[Function]}
     tabIndex={-1}
     type="file"
