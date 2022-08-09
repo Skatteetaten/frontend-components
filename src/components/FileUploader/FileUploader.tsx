@@ -85,7 +85,7 @@ export const FileUploader: React.FC<FileUploaderProps> = (props) => {
     files,
     fileSizeLimit,
     help,
-    id = 'fileupload',
+    id,
     info,
     required = false,
     invalidCharacterRegexp,
@@ -114,9 +114,11 @@ export const FileUploader: React.FC<FileUploaderProps> = (props) => {
   const uploadAreaRef = useRef<HTMLDivElement | null>(null);
 
   const randomId = generateId();
-  const fileuploadLabelId = 'fileupload'.concat(randomId, '-label');
-  const acceptedFileFormatsId = 'acceptedFileFormats'.concat(randomId);
-  const informationId = 'information'.concat(randomId);
+  const mainId = id ?? 'fileupload-' + randomId;
+  const calloutId = mainId + '-callout';
+  const fileuploadLabelId = mainId + '-label';
+  const acceptedFileFormatsId = mainId + '-acceptedFileFormats';
+  const informationId = mainId + '-information';
 
   if (language) {
     i18n.changeLanguage(language);
@@ -335,8 +337,8 @@ export const FileUploader: React.FC<FileUploaderProps> = (props) => {
   return (
     <div className={classnames(styles.main, className)}>
       <LabelWithCallout
-        id={id + '-label'}
-        inputId={id + '-input'}
+        id={calloutId + '-label'}
+        inputId={calloutId + '-input'}
         label={label}
         requiredMark={required}
         buttonAriaLabel={labelButtonAriaLabel}
