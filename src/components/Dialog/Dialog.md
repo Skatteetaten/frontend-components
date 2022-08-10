@@ -186,7 +186,7 @@ function closeDialog() {
 
 ### Ventevarel
 
-Varsel dukker opp av seg selv etter 30 sek.
+Varsel dukker opp av seg selv etter 30 sek inaktivitet.
 
 ```js
 import { ActionButton } from '@skatteetaten/frontend-components/ActionButton';
@@ -206,9 +206,17 @@ React.useEffect(() => {
   return () => clearInterval(intervalId);
 }, [time]);
 
-function closeDialog() {
+const closeDialog = () => {
   setState({ hideDialog: true });
-}
+};
+const resettTimer = () => {
+  document.onmousemove = () => setTime(30);
+  document.onkeydown = () => setTime(30);
+};
+
+window.onload = () => {
+  resettTimer();
+};
 
 <div>
   <ActionButton
