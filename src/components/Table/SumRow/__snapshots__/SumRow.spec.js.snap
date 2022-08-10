@@ -1,445 +1,469 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`SumRow komponent Når SumRow består av 0 kolonner Så ser markupen riktig ut 1`] = `
-<SumRow
-  numberOfColumns={0}
-  sum={
-    Object {
-      "colspan": 2,
-      "text": "sumtext",
-      "total": 153,
-    }
-  }
->
-  <tr
-    className=
-
-        {
-          vertical-align: middle;
+<table>
+  <tbody>
+    <SumRow
+      numberOfColumns={0}
+      sum={
+        Object {
+          "colspan": 2,
+          "text": "sumtext",
+          "total": 153,
         }
-  >
-    <th
-      className=
-          sumCellIsText
-          {
-            font-size: inherit;
-            padding-bottom: 1rem;
-            padding-left: 1rem;
-            padding-right: 1rem;
-            padding-top: 1rem;
-            text-align: end;
-            vertical-align: inherit;
-          }
-          &.sumCellIsText {
-            font-weight: 700;
-          }
-          &.sumCellIsSum {
-            font-weight: 400;
-          }
-      colSpan={2}
-      scope="row"
+      }
     >
-      sumtext
-    </th>
-    <td
-      className=
-          sumCellIsSum
-          {
-            font-size: inherit;
-            padding-bottom: 1rem;
-            padding-left: 1rem;
-            padding-right: 1rem;
-            padding-top: 1rem;
-            text-align: end;
-            vertical-align: inherit;
-          }
-          &.sumCellIsText {
-            font-weight: 700;
-          }
-          &.sumCellIsSum {
-            font-weight: 400;
-          }
-    >
-      153
-    </td>
-  </tr>
-</SumRow>
+      <tr
+        className=
+
+            {
+              vertical-align: middle;
+            }
+      >
+        <th
+          className=
+              sumCellIsText
+              {
+                font-size: inherit;
+                padding-bottom: 1rem;
+                padding-left: 1rem;
+                padding-right: 1rem;
+                padding-top: 1rem;
+                text-align: end;
+                vertical-align: inherit;
+              }
+              &.sumCellIsText {
+                font-weight: 700;
+              }
+              &.sumCellIsSum {
+                font-weight: 400;
+              }
+          colSpan={2}
+          scope="row"
+        >
+          sumtext
+        </th>
+        <td
+          className=
+              sumCellIsSum
+              {
+                font-size: inherit;
+                padding-bottom: 1rem;
+                padding-left: 1rem;
+                padding-right: 1rem;
+                padding-top: 1rem;
+                text-align: end;
+                vertical-align: inherit;
+              }
+              &.sumCellIsText {
+                font-weight: 700;
+              }
+              &.sumCellIsSum {
+                font-weight: 400;
+              }
+        >
+          153
+        </td>
+      </tr>
+    </SumRow>
+  </tbody>
+</table>
 `;
 
 exports[`SumRow komponent Når SumRow består av f.eks 5 kolonner Så ser markupen riktig ut 1`] = `
-<SumRow
-  numberOfColumns={5}
-  sum={
-    Object {
-      "colspan": 2,
-      "text": "sumtext",
-      "total": 153,
-    }
-  }
->
-  <tr
-    className=
-
-        {
-          vertical-align: middle;
+<table>
+  <tbody>
+    <SumRow
+      numberOfColumns={5}
+      sum={
+        Object {
+          "colspan": 2,
+          "text": "sumtext",
+          "total": 153,
         }
-  >
-    <th
-      className=
-          sumCellIsText
-          {
-            font-size: inherit;
-            padding-bottom: 1rem;
-            padding-left: 1rem;
-            padding-right: 1rem;
-            padding-top: 1rem;
-            text-align: end;
-            vertical-align: inherit;
-          }
-          &.sumCellIsText {
-            font-weight: 700;
-          }
-          &.sumCellIsSum {
-            font-weight: 400;
-          }
-      colSpan={2}
-      scope="row"
+      }
     >
-      sumtext
-    </th>
-    <td
-      className=
-          sumCellIsSum
-          {
-            font-size: inherit;
-            padding-bottom: 1rem;
-            padding-left: 1rem;
-            padding-right: 1rem;
-            padding-top: 1rem;
-            text-align: end;
-            vertical-align: inherit;
-          }
-          &.sumCellIsText {
-            font-weight: 700;
-          }
-          &.sumCellIsSum {
-            font-weight: 400;
-          }
-    >
-      153
-    </td>
-    <td
-      className=
+      <tr
+        className=
 
-          {
-            font-size: inherit;
-            padding-bottom: 1rem;
-            padding-left: 1rem;
-            padding-right: 1rem;
-            padding-top: 1rem;
-            text-align: end;
-            vertical-align: inherit;
-          }
-          &.sumCellIsText {
-            font-weight: 700;
-          }
-          &.sumCellIsSum {
-            font-weight: 400;
-          }
-      key="0"
-    />
-    <td
-      className=
+            {
+              vertical-align: middle;
+            }
+      >
+        <th
+          className=
+              sumCellIsText
+              {
+                font-size: inherit;
+                padding-bottom: 1rem;
+                padding-left: 1rem;
+                padding-right: 1rem;
+                padding-top: 1rem;
+                text-align: end;
+                vertical-align: inherit;
+              }
+              &.sumCellIsText {
+                font-weight: 700;
+              }
+              &.sumCellIsSum {
+                font-weight: 400;
+              }
+          colSpan={2}
+          scope="row"
+        >
+          sumtext
+        </th>
+        <td
+          className=
+              sumCellIsSum
+              {
+                font-size: inherit;
+                padding-bottom: 1rem;
+                padding-left: 1rem;
+                padding-right: 1rem;
+                padding-top: 1rem;
+                text-align: end;
+                vertical-align: inherit;
+              }
+              &.sumCellIsText {
+                font-weight: 700;
+              }
+              &.sumCellIsSum {
+                font-weight: 400;
+              }
+        >
+          153
+        </td>
+        <td
+          className=
 
-          {
-            font-size: inherit;
-            padding-bottom: 1rem;
-            padding-left: 1rem;
-            padding-right: 1rem;
-            padding-top: 1rem;
-            text-align: end;
-            vertical-align: inherit;
-          }
-          &.sumCellIsText {
-            font-weight: 700;
-          }
-          &.sumCellIsSum {
-            font-weight: 400;
-          }
-      key="1"
-    />
-  </tr>
-</SumRow>
+              {
+                font-size: inherit;
+                padding-bottom: 1rem;
+                padding-left: 1rem;
+                padding-right: 1rem;
+                padding-top: 1rem;
+                text-align: end;
+                vertical-align: inherit;
+              }
+              &.sumCellIsText {
+                font-weight: 700;
+              }
+              &.sumCellIsSum {
+                font-weight: 400;
+              }
+          key="0"
+        />
+        <td
+          className=
+
+              {
+                font-size: inherit;
+                padding-bottom: 1rem;
+                padding-left: 1rem;
+                padding-right: 1rem;
+                padding-top: 1rem;
+                text-align: end;
+                vertical-align: inherit;
+              }
+              &.sumCellIsText {
+                font-weight: 700;
+              }
+              &.sumCellIsSum {
+                font-weight: 400;
+              }
+          key="1"
+        />
+      </tr>
+    </SumRow>
+  </tbody>
+</table>
 `;
 
 exports[`SumRow komponent Når SumRow har en editableRows i tillegg Så ser markupen riktig ut 1`] = `
-<SumRow
-  editableRows={true}
-  numberOfColumns={0}
-  sum={
-    Object {
-      "colspan": 2,
-      "text": "sumtext",
-      "total": 153,
-    }
-  }
->
-  <tr
-    className=
-
-        {
-          vertical-align: middle;
+<table>
+  <tbody>
+    <SumRow
+      editableRows={true}
+      numberOfColumns={0}
+      sum={
+        Object {
+          "colspan": 2,
+          "text": "sumtext",
+          "total": 153,
         }
-  >
-    <th
-      className=
-          sumCellIsText
-          {
-            font-size: inherit;
-            padding-bottom: 1rem;
-            padding-left: 1rem;
-            padding-right: 1rem;
-            padding-top: 1rem;
-            text-align: end;
-            vertical-align: inherit;
-          }
-          &.sumCellIsText {
-            font-weight: 700;
-          }
-          &.sumCellIsSum {
-            font-weight: 400;
-          }
-      colSpan={2}
-      scope="row"
+      }
     >
-      sumtext
-    </th>
-    <td
-      className=
-          sumCellIsSum
-          {
-            font-size: inherit;
-            padding-bottom: 1rem;
-            padding-left: 1rem;
-            padding-right: 1rem;
-            padding-top: 1rem;
-            text-align: end;
-            vertical-align: inherit;
-          }
-          &.sumCellIsText {
-            font-weight: 700;
-          }
-          &.sumCellIsSum {
-            font-weight: 400;
-          }
-    >
-      153
-    </td>
-    <td />
-  </tr>
-</SumRow>
+      <tr
+        className=
+
+            {
+              vertical-align: middle;
+            }
+      >
+        <th
+          className=
+              sumCellIsText
+              {
+                font-size: inherit;
+                padding-bottom: 1rem;
+                padding-left: 1rem;
+                padding-right: 1rem;
+                padding-top: 1rem;
+                text-align: end;
+                vertical-align: inherit;
+              }
+              &.sumCellIsText {
+                font-weight: 700;
+              }
+              &.sumCellIsSum {
+                font-weight: 400;
+              }
+          colSpan={2}
+          scope="row"
+        >
+          sumtext
+        </th>
+        <td
+          className=
+              sumCellIsSum
+              {
+                font-size: inherit;
+                padding-bottom: 1rem;
+                padding-left: 1rem;
+                padding-right: 1rem;
+                padding-top: 1rem;
+                text-align: end;
+                vertical-align: inherit;
+              }
+              &.sumCellIsText {
+                font-weight: 700;
+              }
+              &.sumCellIsSum {
+                font-weight: 400;
+              }
+        >
+          153
+        </td>
+        <td />
+      </tr>
+    </SumRow>
+  </tbody>
+</table>
 `;
 
 exports[`SumRow komponent Når SumRow har en expandableRows i tillegg Så ser markupen riktig ut med expandIconPlacement === after 1`] = `
-<SumRow
-  expandIconPlacement="after"
-  expandableRows={true}
-  numberOfColumns={0}
-  sum={
-    Object {
-      "colspan": 2,
-      "text": "sumtext",
-      "total": 153,
-    }
-  }
->
-  <tr
-    className=
-
-        {
-          vertical-align: middle;
+<table>
+  <tbody>
+    <SumRow
+      expandIconPlacement="after"
+      expandableRows={true}
+      numberOfColumns={0}
+      sum={
+        Object {
+          "colspan": 2,
+          "text": "sumtext",
+          "total": 153,
         }
-  >
-    <th
-      className=
-          sumCellIsText
-          {
-            font-size: inherit;
-            padding-bottom: 1rem;
-            padding-left: 1rem;
-            padding-right: 1rem;
-            padding-top: 1rem;
-            text-align: end;
-            vertical-align: inherit;
-          }
-          &.sumCellIsText {
-            font-weight: 700;
-          }
-          &.sumCellIsSum {
-            font-weight: 400;
-          }
-      colSpan={2}
-      scope="row"
+      }
     >
-      sumtext
-    </th>
-    <td
-      className=
-          sumCellIsSum
-          {
-            font-size: inherit;
-            padding-bottom: 1rem;
-            padding-left: 1rem;
-            padding-right: 1rem;
-            padding-top: 1rem;
-            text-align: end;
-            vertical-align: inherit;
-          }
-          &.sumCellIsText {
-            font-weight: 700;
-          }
-          &.sumCellIsSum {
-            font-weight: 400;
-          }
-    >
-      153
-    </td>
-    <td />
-  </tr>
-</SumRow>
+      <tr
+        className=
+
+            {
+              vertical-align: middle;
+            }
+      >
+        <th
+          className=
+              sumCellIsText
+              {
+                font-size: inherit;
+                padding-bottom: 1rem;
+                padding-left: 1rem;
+                padding-right: 1rem;
+                padding-top: 1rem;
+                text-align: end;
+                vertical-align: inherit;
+              }
+              &.sumCellIsText {
+                font-weight: 700;
+              }
+              &.sumCellIsSum {
+                font-weight: 400;
+              }
+          colSpan={2}
+          scope="row"
+        >
+          sumtext
+        </th>
+        <td
+          className=
+              sumCellIsSum
+              {
+                font-size: inherit;
+                padding-bottom: 1rem;
+                padding-left: 1rem;
+                padding-right: 1rem;
+                padding-top: 1rem;
+                text-align: end;
+                vertical-align: inherit;
+              }
+              &.sumCellIsText {
+                font-weight: 700;
+              }
+              &.sumCellIsSum {
+                font-weight: 400;
+              }
+        >
+          153
+        </td>
+        <td />
+      </tr>
+    </SumRow>
+  </tbody>
+</table>
 `;
 
 exports[`SumRow komponent Når SumRow har en expandableRows i tillegg Så ser markupen riktig ut med expandIconPlacement === before 1`] = `
-<SumRow
-  expandIconPlacement="before"
-  expandableRows={true}
-  numberOfColumns={0}
-  sum={
-    Object {
-      "colspan": 2,
-      "text": "sumtext",
-      "total": 153,
-    }
-  }
->
-  <tr
-    className=
-
-        {
-          vertical-align: middle;
+<table>
+  <tbody>
+    <SumRow
+      expandIconPlacement="before"
+      expandableRows={true}
+      numberOfColumns={0}
+      sum={
+        Object {
+          "colspan": 2,
+          "text": "sumtext",
+          "total": 153,
         }
-  >
-    <th
-      className=
-          sumCellIsText
-          {
-            font-size: inherit;
-            padding-bottom: 1rem;
-            padding-left: 1rem;
-            padding-right: 1rem;
-            padding-top: 1rem;
-            text-align: end;
-            vertical-align: inherit;
-          }
-          &.sumCellIsText {
-            font-weight: 700;
-          }
-          &.sumCellIsSum {
-            font-weight: 400;
-          }
-      colSpan={2}
-      scope="row"
+      }
     >
-      sumtext
-    </th>
-    <td
-      className=
-          sumCellIsSum
-          {
-            font-size: inherit;
-            padding-bottom: 1rem;
-            padding-left: 1rem;
-            padding-right: 1rem;
-            padding-top: 1rem;
-            text-align: end;
-            vertical-align: inherit;
-          }
-          &.sumCellIsText {
-            font-weight: 700;
-          }
-          &.sumCellIsSum {
-            font-weight: 400;
-          }
-    >
-      153
-    </td>
-  </tr>
-</SumRow>
+      <tr
+        className=
+
+            {
+              vertical-align: middle;
+            }
+      >
+        <th
+          className=
+              sumCellIsText
+              {
+                font-size: inherit;
+                padding-bottom: 1rem;
+                padding-left: 1rem;
+                padding-right: 1rem;
+                padding-top: 1rem;
+                text-align: end;
+                vertical-align: inherit;
+              }
+              &.sumCellIsText {
+                font-weight: 700;
+              }
+              &.sumCellIsSum {
+                font-weight: 400;
+              }
+          colSpan={2}
+          scope="row"
+        >
+          sumtext
+        </th>
+        <td
+          className=
+              sumCellIsSum
+              {
+                font-size: inherit;
+                padding-bottom: 1rem;
+                padding-left: 1rem;
+                padding-right: 1rem;
+                padding-top: 1rem;
+                text-align: end;
+                vertical-align: inherit;
+              }
+              &.sumCellIsText {
+                font-weight: 700;
+              }
+              &.sumCellIsSum {
+                font-weight: 400;
+              }
+        >
+          153
+        </td>
+      </tr>
+    </SumRow>
+  </tbody>
+</table>
 `;
 
 exports[`SumRow komponent Når SumRow har en expandableRows i tillegg Så ser markupen riktig ut uten expandableRows 1`] = `
-<SumRow
-  expandableRows={true}
-  numberOfColumns={0}
-  sum={
-    Object {
-      "colspan": 2,
-      "text": "sumtext",
-      "total": 153,
-    }
-  }
->
-  <tr
-    className=
-
-        {
-          vertical-align: middle;
+<table>
+  <tbody>
+    <SumRow
+      expandableRows={true}
+      numberOfColumns={0}
+      sum={
+        Object {
+          "colspan": 2,
+          "text": "sumtext",
+          "total": 153,
         }
-  >
-    <th
-      className=
-          sumCellIsText
-          {
-            font-size: inherit;
-            padding-bottom: 1rem;
-            padding-left: 1rem;
-            padding-right: 1rem;
-            padding-top: 1rem;
-            text-align: end;
-            vertical-align: inherit;
-          }
-          &.sumCellIsText {
-            font-weight: 700;
-          }
-          &.sumCellIsSum {
-            font-weight: 400;
-          }
-      colSpan={2}
-      scope="row"
+      }
     >
-      sumtext
-    </th>
-    <td
-      className=
-          sumCellIsSum
-          {
-            font-size: inherit;
-            padding-bottom: 1rem;
-            padding-left: 1rem;
-            padding-right: 1rem;
-            padding-top: 1rem;
-            text-align: end;
-            vertical-align: inherit;
-          }
-          &.sumCellIsText {
-            font-weight: 700;
-          }
-          &.sumCellIsSum {
-            font-weight: 400;
-          }
-    >
-      153
-    </td>
-  </tr>
-</SumRow>
+      <tr
+        className=
+
+            {
+              vertical-align: middle;
+            }
+      >
+        <th
+          className=
+              sumCellIsText
+              {
+                font-size: inherit;
+                padding-bottom: 1rem;
+                padding-left: 1rem;
+                padding-right: 1rem;
+                padding-top: 1rem;
+                text-align: end;
+                vertical-align: inherit;
+              }
+              &.sumCellIsText {
+                font-weight: 700;
+              }
+              &.sumCellIsSum {
+                font-weight: 400;
+              }
+          colSpan={2}
+          scope="row"
+        >
+          sumtext
+        </th>
+        <td
+          className=
+              sumCellIsSum
+              {
+                font-size: inherit;
+                padding-bottom: 1rem;
+                padding-left: 1rem;
+                padding-right: 1rem;
+                padding-top: 1rem;
+                text-align: end;
+                vertical-align: inherit;
+              }
+              &.sumCellIsText {
+                font-weight: 700;
+              }
+              &.sumCellIsSum {
+                font-weight: 400;
+              }
+        >
+          153
+        </td>
+      </tr>
+    </SumRow>
+  </tbody>
+</table>
 `;

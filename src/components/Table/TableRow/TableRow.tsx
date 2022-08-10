@@ -163,6 +163,7 @@ export const TableRow = <P extends RowData>(props: TableRowProps<P>) => {
         )}
       >
         <IconButton
+          id={`${tableId}-${rowIndex}-expand-button`}
           title={t('tablerow.expandable.title')}
           className={classnames(styles.expandButton, {
             [styles.expandButtonIsActive]: isExpandableRowOpen,

@@ -4,6 +4,8 @@ import { FileUploader } from './FileUploader';
 import { FileFormatTypes, Language } from './FileUploader.types';
 import { mount, shallow } from 'enzyme';
 
+jest.mock('axios');
+
 function oppsettShallow(props) {
   return shallow(<FileUploader {...props} />);
 }

@@ -1,3 +1,8 @@
+### **v.5.0.6 - 27 June 2022**
+
+- SearchField: Fixes an issue where id was not set correctly
+- Table: ability to open a table row with index
+
 ### **v.5.0.5 - 10 May 2022**
 
 - SearchField: fixes an issue where the search button was not clickable when focused.
