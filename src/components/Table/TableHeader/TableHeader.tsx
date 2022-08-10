@@ -13,6 +13,7 @@ interface TableHeaderProps {
   columns: TableProps<any>['columns'];
   sort: { ascending: boolean; columnFieldName: string };
   setSort: (sort: { ascending: boolean; columnFieldName: string }) => void;
+  compactTable: boolean;
 }
 
 export const TableHeader = (props: TableHeaderProps): JSX.Element => {

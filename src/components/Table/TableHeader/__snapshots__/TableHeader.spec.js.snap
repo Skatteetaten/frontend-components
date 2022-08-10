@@ -83,6 +83,7 @@ exports[`TableHeader komponent Når columns består av en kolonne uten "name", e
               }
               {
                 cursor: pointer;
+                padding-right: 1.5rem !important;
               }
               &:hover [data-icon-name="ArrowUpDown"] {
                 opacity: 1;
