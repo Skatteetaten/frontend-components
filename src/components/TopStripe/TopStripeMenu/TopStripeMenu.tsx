@@ -16,7 +16,6 @@ export interface TopStripeMenuProps extends Omit<LinkProps, 'title'> {
   closeOnClick?: boolean;
   defaultSelected?: number;
   showOnMobile: boolean;
-  onRender?: any;
   title: string | JSX.Element;
   className?: string;
   index?: number;

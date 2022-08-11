@@ -10,7 +10,6 @@ import { TopStripeContext } from '../TopStripe';
 export const TopStripeMenuItems: React.FC<TopStripeMenuProps> = (props) => {
   const {
     children,
-    onRender,
     index,
     closeMenuAriaLabel = 'Lukk',
     closeOnClick = true,
@@ -29,7 +28,6 @@ export const TopStripeMenuItems: React.FC<TopStripeMenuProps> = (props) => {
 
   return (
     <div className={styles.topStripeMenuDropdownContainer}>
-      {onRender}
       {contentIsMenu ? (
         <ul role={'menu'}>
           {React.Children.map(children, (child) => {
