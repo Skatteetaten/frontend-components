@@ -42,8 +42,8 @@ describe('Dialog komponent', () => {
   it('rendrer ventevarsel', () => {
     const wrapper = oppsettFullDOM({
       hidden: false,
-      waitingWarning: true,
-      waitingWarningBtnText: 'Ja',
+      waitAlert: true,
+      waitAlertBtnText: 'Ja',
       children: <p>Er du fortsatt aktiv?</p>,
     });
     expect(wrapper.find('p').text()).toEqual('Er du fortsatt aktiv?');

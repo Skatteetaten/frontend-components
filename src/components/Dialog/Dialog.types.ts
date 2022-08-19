@@ -12,9 +12,9 @@ export interface DialogProps extends IDialogProps {
   /** Om det er så mye innhold at det går over flere "sider" (fikser scroll inni dialog på ipad) */
   tabletContentOverflows?: boolean;
   /** Ventevarsel */
-  waitingWarning?: boolean;
+  waitAlert?: boolean;
   /** Ventevarsel knapp tekst */
-  waitingWarningBtnText?: string;
+  waitAlertBtnText?: string;
 }
 export type DialogState = {
   isCalloutVisible: boolean;

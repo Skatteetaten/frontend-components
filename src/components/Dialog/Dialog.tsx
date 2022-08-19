@@ -9,10 +9,8 @@ import {
 } from '@fluentui/react';
 import { DialogProps, DialogState } from './Dialog.types';
 import { BrandContext } from '../SkeBasis';
-import ventevarselSvg from './assets/shiva-optim.svg';
-import { Button } from '../Button';
-import { t } from '../utils';
 import i18n from '../utils/i18n/i18n';
+import WaitAlert from './WaitAlert';
 
 export class Dialog extends React.PureComponent<DialogProps, DialogState> {
   static Footer = DialogFooter;
@@ -25,7 +23,7 @@ export class Dialog extends React.PureComponent<DialogProps, DialogState> {
     tabletContentOverflows: false,
     isModeless: false,
     isBlocking: undefined,
-    waitingWarning: false,
+    waitAlert: false,
   };
   private readonly _iconButtonElement: React.RefObject<HTMLDivElement>;
 
@@ -88,6 +86,10 @@ export class Dialog extends React.PureComponent<DialogProps, DialogState> {
                 ),
                 ...modalProps,
               }}
+              ariaLabelledById={
+                props.waitAlert ? 'waitAlertHeading' : undefined
+              }
+              ariaDescribedById={props.waitAlert ? 'waitAlertText' : undefined}
             >
               {isCalloutVisible && (
                 <Callout
@@ -98,38 +100,13 @@ export class Dialog extends React.PureComponent<DialogProps, DialogState> {
                   onClose={this._onDismiss}
                 />
               )}
-              {props.waitingWarning ? (
-                <>
-                  <img
-                    className={'ventevarsel-svg'}
-                    src={ventevarselSvg}
-                    alt={t('dialog.waitingWarning.alt')}
-                  />
-                  {children ? (
-                    children
-                  ) : (
-                    <>
-                      <div
-                        role="heading"
-                        style={{ fontSize: '1.375rem', fontWeight: 'bold' }}
-                      >
-                        {t('dialog.waitingWarning.title')}
-                      </div>
-                      <p>{t('dialog.waitingWarning.paragraph')}</p>
-                    </>
-                  )}
-                  <Button
-                    buttonStyle="primary"
-                    className={'ventevarsel-btn'}
-                    onClick={() => {
-                      props.onDismiss && props.onDismiss();
-                    }}
-                  >
-                    {props.waitingWarningBtnText
-                      ? props.waitingWarningBtnText
-                      : t('dialog.waitingWarning.button_text')}
-                  </Button>
-                </>
+              {props.waitAlert ? (
+                <WaitAlert
+                  onDismiss={props.onDismiss}
+                  waitAlertBtnText={props.waitAlertBtnText}
+                >
+                  {children}
+                </WaitAlert>
               ) : (
                 children
               )}
