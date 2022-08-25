@@ -287,6 +287,7 @@ export const SearchField: React.FC<SearchFieldProps> = (props) => {
         <SearchBox
           type={'search'}
           {...props}
+          id={inputId}
           className={classnames(styles.main, className)}
           componentRef={_componentRef}
           showIcon={true}
