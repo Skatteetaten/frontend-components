@@ -83,7 +83,7 @@ const ExternalHeaderContent = ({ styles, ...props }) => {
         onClick={props.onClick}
         className={styles.linkButton}
         icon="ArrowBack"
-        role="link"
+        role={props.homeUrl ? undefined : 'link'}
       >
         {props.homeText}
       </ActionButton>

@@ -73,7 +73,7 @@ export const TopStripeMenu: React.FC<TopStripeMenuProps> = (props) => {
         ) : (
           ''
         )}
-        <div className={styles.topStripeMenuTitle}>{title}</div>
+        <span className={styles.topStripeMenuTitle}>{title}</span>
         {showChevron ? (
           <Icon
             className={styles.topStripeMenuChevronIcon}
