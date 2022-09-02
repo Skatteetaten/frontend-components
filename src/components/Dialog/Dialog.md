@@ -184,6 +184,59 @@ function closeDialog() {
 </div>;
 ```
 
+### Ventevarel
+
+Varsel dukker opp av seg selv etter 20 min inaktivitet.
+
+```js
+import { ActionButton } from '@skatteetaten/frontend-components/ActionButton';
+import { Button } from '@skatteetaten/frontend-components/Button';
+import { Dialog } from '@skatteetaten/frontend-components/Dialog';
+
+const twentyMin = 1200;
+const [state, setState] = React.useState({ hideDialog: true });
+const [time, setTime] = React.useState(twentyMin);
+
+React.useEffect(() => {
+  if (time === 0) {
+    setState({ hideDialog: false });
+  }
+  const intervalId = setInterval(() => {
+    setTime((t) => t - 1);
+  }, 1000);
+  return () => clearInterval(intervalId);
+}, [time]);
+
+const closeDialog = () => {
+  setState({ hideDialog: true });
+  setTime(twentyMin);
+};
+const resettTimer = () => {
+  document.onmousemove = () => setTime(twentyMin);
+  document.onkeydown = () => setTime(twentyMin);
+};
+
+window.onload = () => {
+  resettTimer();
+};
+
+<div>
+  <ActionButton
+    buttonStyle="secondary"
+    onClick={() => setState({ hideDialog: false })}
+    icon="InfoOutline"
+  >
+    Vis ventevarsel
+  </ActionButton>
+  <Dialog
+    hidden={state.hideDialog}
+    type={Dialog.Type.normal}
+    onDismiss={closeDialog}
+    waitAlert
+  ></Dialog>
+</div>;
+```
+
 ```js noeditor uu
 <>
   <h3>Tips</h3>

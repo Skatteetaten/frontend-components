@@ -17,6 +17,7 @@ export {
 export { omstrukturerFlatJSON, t } from './utils/i18n/i18n';
 export { getSrOnlyStyle } from './utils/getSrOnlyStyle';
 export { languages } from './utils/i18n/languages';
+export { Language } from './utils/Language';
 export type { FontSizeType } from './utils/fonts';
 export { getFocusStyle } from './utils/getFocusStyle';
 export { Heading } from './utils/Heading';
@@ -72,7 +73,7 @@ export type { ErrorMessageProps } from './ErrorMessage/ErrorMessage.types';
 export { ErrorSummary } from './ErrorSummary/ErrorSummary';
 export type { ErrorSummaryProps } from './ErrorSummary/ErrorSummary.types';
 export { FileUploader } from './FileUploader/FileUploader';
-export { Language, FileFormatTypes } from './FileUploader/FileUploader.types';
+export { FileFormatTypes } from './FileUploader/FileUploader.types';
 export type {
   FileUploaderProps,
   AttachmentMetadata,
