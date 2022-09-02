@@ -29,11 +29,17 @@ describe('TableHeader komponent', () => {
   describe('Når columns består av en kolonne uten "name", en kolonne "sortable" og vanlig kolonner', () => {
     const setSortMock = jest.fn();
     const wrapper = mount(
-      <TableHeader
-        columns={columns}
-        sort={{ ascending: true, columnFieldName: 'month' }}
-        setSort={setSortMock}
-      />
+      <table>
+        <tbody>
+          <tr>
+            <TableHeader
+              columns={columns}
+              sort={{ ascending: true, columnFieldName: 'month' }}
+              setSort={setSortMock}
+            />
+          </tr>
+        </tbody>
+      </table>
     );
 
     it('Så ser markupen riktig ut', () => {

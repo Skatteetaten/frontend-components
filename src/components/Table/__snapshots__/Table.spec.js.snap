@@ -110,6 +110,7 @@ exports[`Table komponent matcher snapshot 1`] = `
                 },
               ]
             }
+            compactTable={false}
             setSort={[Function]}
             sort={
               Object {
