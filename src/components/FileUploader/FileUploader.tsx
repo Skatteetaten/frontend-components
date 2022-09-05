@@ -387,7 +387,7 @@ export const FileUploader: React.FC<FileUploaderProps> = (props) => {
       <input
         className={styles.fileUploadInput}
         type="file"
-        id={mainId + '-input'}
+        id={calloutId + '-input'}
         ref={inputRef}
         multiple={multipleFiles}
         onChange={handleFileChange}
