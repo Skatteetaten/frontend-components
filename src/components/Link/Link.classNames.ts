@@ -32,7 +32,7 @@ export const getClassNames = (props: LinkProps) => {
       },
     },
     skipLink: {
-      left: '-999px',
+      left: '-9999px',
       position: 'absolute',
       top: 'auto',
       opacity: 0,
