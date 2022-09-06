@@ -164,7 +164,7 @@ const data = [
   editableRows
   columns={columns}
   caption={caption}
-  hideCaption={false}
+  hideCaption={true}
 />;
 ```
 
@@ -615,12 +615,7 @@ const tableStyle = {
   marginTop: 20,
 };
 
-const caption = (
-  <LabelWithCallout
-    label={'Månedsoversikt'}
-    help={'Oversikt over beløp og dekningsgrad i perioden.'}
-  />
-);
+const caption = 'Månedoversikt';
 
 const editableContent = (data, close, rowIndex) => (
   <div style={wrapperStyle}>
@@ -771,7 +766,7 @@ const data = [
 />;
 ```
 
-Tabeller med overskrifter legges som en _caption_:
+Tabeller skal ha en _caption_, men det er valgfritt å vise den:
 
 ```js
 import { ActionButton } from '@skatteetaten/frontend-components/ActionButton';
@@ -801,14 +796,7 @@ const data = [
   },
 ];
 
-const caption = (
-  <LabelWithCallout
-    label={'Personer med tilgang'}
-    help={
-      'Oversikt over personer som er gitt tilgang til å se statusen i dine saker.'
-    }
-  />
-);
+const caption = 'Personer med tilgang';
 
 <Table data={data} columns={columns} caption={caption} />;
 ```
