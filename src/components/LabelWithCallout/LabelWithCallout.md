@@ -16,7 +16,6 @@ const [state, setState] = React.useState({ warning: false });
     }
     calloutProps={{ border: true }}
   />
-  <br />
   <Button onClick={() => setState({ warning: !state.warning })}>
     {state.warning ? 'Vis med hjelpetekst' : 'Vis med varsel'}
   </Button>

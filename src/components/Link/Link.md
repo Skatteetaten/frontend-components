@@ -19,20 +19,27 @@ Eksterne sider:
 ```js
 import { Link } from '@skatteetaten/frontend-components/Link';
 
+const marginTopStyle = {
+  marginTop: '1rem',
+};
+
 <div>
-  <Link
-    path={'#link'}
-    text={'Kontakte Statens Vegvesen'}
-    icon={'OpenInNew'}
-    placement="after"
-  />
-  <br /> <br />
-  <Link
-    path={'#link'}
-    text={'Brukerveiledning for bilforhandlere'}
-    icon={'OpenInNew'}
-    placement="after"
-  />
+  <div>
+    <Link
+      path={'#link'}
+      text={'Kontakte Statens Vegvesen'}
+      icon={'OpenInNew'}
+      placement="after"
+    />
+  </div>
+  <div style={marginTopStyle}>
+    <Link
+      path={'#link'}
+      text={'Brukerveiledning for bilforhandlere'}
+      icon={'OpenInNew'}
+      placement="after"
+    />
+  </div>
 </div>;
 ```
 

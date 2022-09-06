@@ -263,6 +263,10 @@ const columns = [
   },
 ];
 
+const marginTopStyle = {
+  marginTop: '1rem',
+};
+
 const data = [
   {
     firma: 'Bluth Company',
@@ -393,8 +397,7 @@ const expandableContentLabelWithCallout = (data, close, rowIndex) => (
     expandIconPlacement={'after'}
     expandableRows
   />
-  <br />
-  <p>
+  <p style={marginTopStyle}>
     Ekspanderbare rader med venstre-pil og bred innhold med nested
     LabelWithCallout
   </p>

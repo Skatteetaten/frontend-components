@@ -41,6 +41,12 @@ const titles = {
     en: 'Where is your home?',
   },
 };
+
+const stepContainerStyle = {
+  marginTop: '1rem',
+  marginBottom: '1rem',
+};
+
 const showFirstStep = true;
 const testFunc = () => {
   console.log('Hei fra ActionButton');
@@ -73,15 +79,16 @@ const testFunc = () => {
     </div>
   </Step>
   <Step stepTitle={titles.step3.no} stepId={'step-1-3'} activeStep={true}>
-    <RadioButtonGroup
-      required
-      label="Hvor er hjemmet ditt?"
-      options={state.options}
-      defaultSelectedKey="A"
-      options={state.options}
-      id="RadiobuttonGroup"
-    />
-    <br />
+    <div style={stepContainerStyle}>
+      <RadioButtonGroup
+        required
+        label="Hvor er hjemmet ditt?"
+        options={state.options}
+        defaultSelectedKey="A"
+        options={state.options}
+        id="RadiobuttonGroup"
+      />
+    </div>
   </Step>
   <Step stepType={'next'}>
     <Button buttonStyle="primary">Neste</Button>
@@ -268,9 +275,7 @@ const titles = {
 </StepList>;
 ```
 
-**Viser ErrorSummary**
-<br />
-ErrorSummary vises når bruker trykker på "neste"
+ErrorSummary vises når bruker trykker på «neste»:
 
 ```js
 import { Button } from '@skatteetaten/frontend-components/Button';
@@ -330,7 +335,7 @@ const showFirstStep = true;
         errorMessage={showError ? 'Adresse må fylles ut.' : undefined}
       />
     </div>
-    <div style={{ maxWidth: '400px', display: 'flex' }}>
+    <div style={{ maxWidth: '400px', display: 'flex', marginBottom: '1rem' }}>
       <div style={{ marginRight: '16px' }}>
         <TextField
           id={'input_postnummer'}
@@ -339,7 +344,6 @@ const showFirstStep = true;
         />
       </div>
     </div>
-    <br />
   </Step>
   <Step stepType={'next'}>
     {showError && (

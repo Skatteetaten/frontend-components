@@ -47,6 +47,10 @@ const titles = {
   },
 };
 
+const marginTopStyle = {
+  marginTop: '1rem',
+};
+
 <Accordion processList>
   <AccordionItem
     toggleContent
@@ -68,17 +72,14 @@ const titles = {
       siden lastes:
     </p>
     <Card
-      margin="xLarge"
+      margin="xlarge"
       color={Card.Color.WHITE}
       border={Card.Border.GREEN_BORDER}
     >
-      <br />
-      <br />
       <Spinner />
       <p style={{ textAlign: 'center' }}>
         Vennligst vent mens vi henter opplysningene dine...
       </p>
-      <br />
     </Card>
   </AccordionItem>
   <AccordionItem
@@ -97,9 +98,12 @@ const titles = {
         <Grid padding="0px">
           <Grid.Row rowSpacing={Grid.SPACE_NONE}>
             <Grid.Col noSpacing lg={12}>
-              <LabelWithCallout label={'Mine saker'} />
-              <br />
-              <LabelWithCallout label={'Innsendte skjema'} />
+              <div>
+                <LabelWithCallout label={'Mine saker'} />
+              </div>
+              <div style={marginTopStyle}>
+                <LabelWithCallout label={'Innsendte skjema'} />
+              </div>
             </Grid.Col>
           </Grid.Row>
         </Grid>
@@ -109,13 +113,18 @@ const titles = {
         <Grid padding="0px">
           <Grid.Row rowSpacing={Grid.SPACE_NONE}>
             <Grid.Col noSpacing lg={12}>
-              <LabelWithCallout label={'Myndighetsfastsettinger'} />
-              <br />
-              <LabelWithCallout label={'Saksmappe'} />
-              <br />
-              <LabelWithCallout label={'Prosesser'} />
-              <br />
-              <LabelWithCallout label={'Mottaksmeldinger'} />
+              <div>
+                <LabelWithCallout label={'Myndighetsfastsettinger'} />
+              </div>
+              <div style={marginTopStyle}>
+                <LabelWithCallout label={'Saksmappe'} />
+              </div>
+              <div style={marginTopStyle}>
+                <LabelWithCallout label={'Prosesser'} />
+              </div>
+              <div style={marginTopStyle}>
+                <LabelWithCallout label={'Mottaksmeldinger'} />
+              </div>
             </Grid.Col>
           </Grid.Row>
         </Grid>

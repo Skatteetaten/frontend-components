@@ -56,8 +56,7 @@ const [children, setChildren] = React.useState('23');
       }}
     />
   </div>
-  <br />
-  <div style={{ maxWidth: '150px' }}>
+  <div style={{ maxWidth: '150px', marginTop: '1rem' }}>
     <TextField
       label="Antall barn"
       placeholder={''}
@@ -193,23 +192,34 @@ import { TextField } from '@skatteetaten/frontend-components/TextField';
 
 const [lineBreak, setLineBreak] = React.useState(false);
 
-<div style={{ maxWidth: '300px' }}>
-  <TextField
-    label="Endres til multiline dersom teksten er lengre enn 50 tegn"
-    multiline={lineBreak}
-    onChange={(e, value) => {
-      const shouldBreakLine = value.length > 50;
-      if (shouldBreakLine !== state.lineBreak) {
-        setLineBreak(shouldBreakLine);
-      }
-    }}
-  />
-  <br />
-  <TextField
-    label="Antall rader som vises i multiline modus kan settes"
-    multiline
-    rows={7}
-  />
+const marginTopStyle = {
+  marginTop: '1rem',
+};
+
+const maxWidthStyle = {
+  maxWidth: '300px',
+};
+
+<div style={maxWidthStyle}>
+  <div>
+    <TextField
+      label="Endres til multiline dersom teksten er lengre enn 50 tegn"
+      multiline={lineBreak}
+      onChange={(e, value) => {
+        const shouldBreakLine = value.length > 50;
+        if (shouldBreakLine !== state.lineBreak) {
+          setLineBreak(shouldBreakLine);
+        }
+      }}
+    />
+  </div>
+  <div style={marginTopStyle}>
+    <TextField
+      label="Antall rader som vises i multiline modus kan settes"
+      multiline
+      rows={7}
+    />
+  </div>
 </div>;
 ```
 
