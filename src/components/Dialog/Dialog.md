@@ -94,6 +94,10 @@ function closeDialog() {
   setState({ hideDialog: true });
 }
 
+const marginBottomStyle = {
+  marginBottom: '2rem',
+};
+
 const content1 = [
   {
     to: '#',
@@ -125,11 +129,10 @@ const content1 = [
     maxWidth={designtokenBreakpoints['ske-breakpoint-md']}
     layoutStyle={'airy'}
   >
-    <p>
+    <p style={marginBottomStyle}>
       Løsningen for aksjeselskap (AS) åpner i februar mens den blir tilgjengelig
       for enkeltpersonforetak (ENK) i april
     </p>
-    <br />
     <NavigationTile
       naviStyle="left"
       naviIcon="left"

@@ -6,6 +6,10 @@ import { Card } from '@skatteetaten/frontend-components/Card';
 import { RadioButtonGroup } from '@skatteetaten/frontend-components/RadioButtonGroup';
 import { TextField } from '@skatteetaten/frontend-components/TextField';
 
+const marginTopStyle = {
+  marginTop: '1.5rem',
+};
+
 <div>
   <Card
     title="Hovedregler for obligatoriske felt"
@@ -48,29 +52,33 @@ import { TextField } from '@skatteetaten/frontend-components/TextField';
         <div className="do" style={{ maxWidth: '30%' }}>
           <p class="title">Ja</p>
           <div style={{ padding: '2px' }}>
-            <Card color={Card.Color.BEIGE}>Alle felt må fylles ut.</Card>
-            <br />
-            <TextField required label={'Bedriftens navn'} inputSize="large" />
-            <br />
-            <RadioButtonGroup
-              label="Type virksomhet"
-              required
-              labelSize="large"
-              options={[
-                {
-                  key: 'A',
-                  text: 'Enkeltpersonsforetak',
-                },
-                {
-                  key: 'B',
-                  text: 'Aksjeselskap',
-                },
-              ]}
-              help="Type virksomhet vil påvirke hva du må rapportere til oss."
-              id="radio123"
-            />
-            <br />
-            <Button buttonStyle="primaryRoundedFilled">Send inn</Button>
+            <div>
+              <Card color={Card.Color.BEIGE}>Alle felt må fylles ut.</Card>
+            </div>
+            <div style={marginTopStyle}>
+              <TextField required label={'Bedriftens navn'} />
+            </div>
+            <div style={marginTopStyle}>
+              <RadioButtonGroup
+                label="Type virksomhet"
+                required
+                options={[
+                  {
+                    key: 'A',
+                    text: 'Enkeltpersonsforetak',
+                  },
+                  {
+                    key: 'B',
+                    text: 'Aksjeselskap',
+                  },
+                ]}
+                help="Type virksomhet vil påvirke hva du må rapportere til oss."
+                id="radio123"
+              />
+            </div>
+            <div style={marginTopStyle}>
+              <Button buttonStyle="primaryRoundedFilled">Send inn</Button>
+            </div>
           </div>
         </div>
       </div>
@@ -89,38 +97,38 @@ import { TextField } from '@skatteetaten/frontend-components/TextField';
         <div className="do" style={{ maxWidth: '30%' }}>
           <p class="title">Ja</p>
           <div style={{ padding: '2px' }}>
-            <Card color={Card.Color.BEIGE}>
-              Felt markert med * må fylles ut.
-            </Card>
-            <br />
-            <TextField
-              requiredWithMark
-              label={'Navn på virksomhet'}
-              inputSize="large"
-            />
-            <br />
-            <RadioButtonGroup
-              requiredWithMark
-              label="Type virksomhet"
-              labelSize="large"
-              options={[
-                {
-                  key: 'A',
-                  text: 'Enkeltpersonsforetak',
-                },
-                {
-                  key: 'B',
-                  text: 'Aksjeselskap',
-                },
-              ]}
-              help="Type virksomhet vil påvirke hva du må rapportere til oss."
-              id="radio321"
-            />
-            <br />
-            <TextField label={'Kontaktperson i bedriften'} inputSize="large" />
-
-            <br />
-            <Button buttonStyle="primaryRoundedFilled">Send inn</Button>
+            <div>
+              <Card color={Card.Color.BEIGE}>
+                Felt markert med * må fylles ut.
+              </Card>
+            </div>
+            <div style={marginTopStyle}>
+              <TextField requiredWithMark label={'Navn på virksomhet'} />
+            </div>
+            <div style={marginTopStyle}>
+              <RadioButtonGroup
+                requiredWithMark
+                label="Type virksomhet"
+                options={[
+                  {
+                    key: 'A',
+                    text: 'Enkeltpersonsforetak',
+                  },
+                  {
+                    key: 'B',
+                    text: 'Aksjeselskap',
+                  },
+                ]}
+                help="Type virksomhet vil påvirke hva du må rapportere til oss."
+                id="radio321"
+              />
+            </div>
+            <div style={marginTopStyle}>
+              <TextField label={'Kontaktperson i bedriften'} />
+            </div>
+            <div style={marginTopStyle}>
+              <Button buttonStyle="primaryRoundedFilled">Send inn</Button>
+            </div>
           </div>
         </div>
       </div>

@@ -93,7 +93,7 @@ exports[`FileUploader komponent matcher snapshot 1`] = `
           position: absolute;
           z-index: -1;
         }
-    id="fileupload-123-input"
+    id="fileupload-123-callout-input"
     onChange={[Function]}
     tabIndex={-1}
     type="file"

@@ -164,7 +164,7 @@ const data = [
   editableRows
   columns={columns}
   caption={caption}
-  hideCaption={false}
+  hideCaption
 />;
 ```
 
@@ -222,7 +222,7 @@ const data = [
   data={data}
   columns={columns}
   caption="Oversikt over brukere"
-  hideCaption={true}
+  hideCaption
 />;
 ```
 
@@ -262,6 +262,10 @@ const columns = [
     fieldName: 'eta',
   },
 ];
+
+const marginTopStyle = {
+  marginTop: '3rem',
+};
 
 const data = [
   {
@@ -389,14 +393,13 @@ const expandableContentLabelWithCallout = (data, close, rowIndex) => (
     expandableContent={expandableContent}
     expandIconPlacement={'before'}
     caption="Firmaoversikt"
-    hideCaption={true}
+    hideCaption
     expandIconPlacement={'after'}
     expandableRows
   />
-  <br />
-  <p>
+  <p style={marginTopStyle}>
     Ekspanderbare rader med venstre-pil og bred innhold med nested
-    LabelWithCallout
+    LabelWithCallout:
   </p>
   <Table
     data={data.map((d) => ({
@@ -407,7 +410,7 @@ const expandableContentLabelWithCallout = (data, close, rowIndex) => (
     expandIconPlacement={'before'}
     caption="Firmaoversikt"
     sum={{ text: 'sum', colspan: 4, total: '30 500' }}
-    hideCaption={true}
+    hideCaption
     expandableRows
     fullWidth
   />
@@ -578,7 +581,7 @@ const data = [
   openEditableOnRowClick
   compactTable={true}
   caption="Månedoversikt"
-  hideCaption={true}
+  hideCaption
   sum={{ text: 'sum', colspan: 3, total: '30 500' }}
 />;
 ```
@@ -612,12 +615,7 @@ const tableStyle = {
   marginTop: 20,
 };
 
-const caption = (
-  <LabelWithCallout
-    label={'Månedsoversikt'}
-    help={'Oversikt over beløp og dekningsgrad i perioden.'}
-  />
-);
+const caption = 'Månedoversikt';
 
 const editableContent = (data, close, rowIndex) => (
   <div style={wrapperStyle}>
@@ -763,12 +761,12 @@ const data = [
   editableRows={[0, 2]}
   columns={columns}
   caption={'Eksempel med sammenslåtte rader'}
-  hideCaption={true}
+  hideCaption
   sum={{ text: 'sum', colspan: 4, total: '30 500' }}
 />;
 ```
 
-Tabeller med overskrifter legges som en _caption_:
+Tabeller skal ha en _caption_, men det er valgfritt å skjule den:
 
 ```js
 import { ActionButton } from '@skatteetaten/frontend-components/ActionButton';
@@ -798,14 +796,7 @@ const data = [
   },
 ];
 
-const caption = (
-  <LabelWithCallout
-    label={'Personer med tilgang'}
-    help={
-      'Oversikt over personer som er gitt tilgang til å se statusen i dine saker.'
-    }
-  />
-);
+const caption = 'Personer med tilgang';
 
 <Table data={data} columns={columns} caption={caption} />;
 ```

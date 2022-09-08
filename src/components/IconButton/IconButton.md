@@ -4,11 +4,15 @@
 import { IconButton } from '@skatteetaten/frontend-components/IconButton';
 
 <div className="ExampleSpacing8">
-  <IconButton title="Skriv ut" circle buttonSize="large" icon="Print" />
-  <IconButton title="Skriv ut" buttonSize="large" icon="Print" />
-  <br />
-  <IconButton title="Skriv ut" circle buttonSize="default" icon="Print" />
-  <IconButton title="Skriv ut" buttonSize="default" icon="Print" />
+  <div>
+    <IconButton title="Skriv ut" circle icon="Print" />
+    <IconButton title="Skriv ut" icon="Print" />
+  </div>
+
+  <div>
+    <IconButton title="Skriv ut" circle buttonSize="large" icon="Print" />
+    <IconButton title="Skriv ut" buttonSize="large" icon="Print" />
+  </div>
 </div>;
 ```
 

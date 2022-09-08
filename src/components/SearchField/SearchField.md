@@ -3,25 +3,36 @@
 ```js
 import { SearchField } from '@skatteetaten/frontend-components/SearchField';
 
-<div style={{ maxWidth: '300px' }}>
-  <SearchField
-    searchFieldSize="standard"
-    border="slim"
-    placeholder="Skriv søkeord her"
-    ariaLabel="Søk"
-    keyboardShortcut={true}
-    onSearchIcon={() => alert('Vise treffliste')}
-    onSearch={() => alert('Vise treffliste')}
-    searchIconTitle="Start søk"
-  />
-  <br />
-  <SearchField
-    searchFieldSize="large"
-    placeholder="Skriv søkeord her"
-    ariaLabel="Søk"
-    onSearchIcon={() => alert('Vise treffliste')}
-    onSearch={() => alert('Vise treffliste')}
-  />
+const marginTopStyle = {
+  marginTop: '1rem',
+};
+
+const maxWidthStyle = {
+  maxWidth: '300px',
+};
+
+<div style={maxWidthStyle}>
+  <div>
+    <SearchField
+      searchFieldSize="standard"
+      border="slim"
+      placeholder="Skriv søkeord her"
+      ariaLabel="Søk"
+      keyboardShortcut={true}
+      onSearchIcon={() => alert('Vise treffliste')}
+      onSearch={() => alert('Vise treffliste')}
+      searchIconTitle="Start søk"
+    />
+  </div>
+  <div style={marginTopStyle}>
+    <SearchField
+      searchFieldSize="large"
+      placeholder="Skriv søkeord her"
+      ariaLabel="Søk"
+      onSearchIcon={() => alert('Vise treffliste')}
+      onSearch={() => alert('Vise treffliste')}
+    />
+  </div>
 </div>;
 ```
 
