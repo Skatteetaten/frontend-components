@@ -264,7 +264,7 @@ const columns = [
 ];
 
 const marginTopStyle = {
-  marginTop: '1rem',
+  marginTop: '3rem',
 };
 
 const data = [
@@ -399,7 +399,7 @@ const expandableContentLabelWithCallout = (data, close, rowIndex) => (
   />
   <p style={marginTopStyle}>
     Ekspanderbare rader med venstre-pil og bred innhold med nested
-    LabelWithCallout
+    LabelWithCallout:
   </p>
   <Table
     data={data.map((d) => ({

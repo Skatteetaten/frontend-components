@@ -95,7 +95,7 @@ function closeDialog() {
 }
 
 const marginBottomStyle = {
-  marginBottom: '1rem',
+  marginBottom: '2rem',
 };
 
 const content1 = [
