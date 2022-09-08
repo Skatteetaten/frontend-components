@@ -164,7 +164,7 @@ const data = [
   editableRows
   columns={columns}
   caption={caption}
-  hideCaption={true}
+  hideCaption
 />;
 ```
 
@@ -222,7 +222,7 @@ const data = [
   data={data}
   columns={columns}
   caption="Oversikt over brukere"
-  hideCaption={true}
+  hideCaption
 />;
 ```
 
@@ -393,7 +393,7 @@ const expandableContentLabelWithCallout = (data, close, rowIndex) => (
     expandableContent={expandableContent}
     expandIconPlacement={'before'}
     caption="Firmaoversikt"
-    hideCaption={true}
+    hideCaption
     expandIconPlacement={'after'}
     expandableRows
   />
@@ -410,7 +410,7 @@ const expandableContentLabelWithCallout = (data, close, rowIndex) => (
     expandIconPlacement={'before'}
     caption="Firmaoversikt"
     sum={{ text: 'sum', colspan: 4, total: '30 500' }}
-    hideCaption={true}
+    hideCaption
     expandableRows
     fullWidth
   />
@@ -581,7 +581,7 @@ const data = [
   openEditableOnRowClick
   compactTable={true}
   caption="Månedoversikt"
-  hideCaption={true}
+  hideCaption
   sum={{ text: 'sum', colspan: 3, total: '30 500' }}
 />;
 ```
@@ -761,12 +761,12 @@ const data = [
   editableRows={[0, 2]}
   columns={columns}
   caption={'Eksempel med sammenslåtte rader'}
-  hideCaption={true}
+  hideCaption
   sum={{ text: 'sum', colspan: 4, total: '30 500' }}
 />;
 ```
 
-Tabeller skal ha en _caption_, men det er valgfritt å vise den:
+Tabeller skal ha en _caption_, men det er valgfritt å skjule den:
 
 ```js
 import { ActionButton } from '@skatteetaten/frontend-components/ActionButton';
