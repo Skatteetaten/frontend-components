@@ -132,6 +132,22 @@ export const getClassNames = function getClassNames(
           padding:
             props.layoutStyle === 'airy' ? '0 64px 64px ' : '0 20px 20px 20px',
         },
+        '& .wait-alert-btn': {
+          width: '100%',
+        },
+        '& .wait-alert-content': {
+          overflowX: 'hidden',
+          overflowY: 'hidden',
+          maxWidth: '100%',
+          maxHeight: '100%',
+        },
+        '& .wait-alert-heading': {
+          fontSize: designtokenFontSizes['ske-font-size-xl'],
+          fontWeight: 'bold',
+        },
+        '& .wait-alert-svg': {
+          width: '290px',
+        },
       },
     },
     helpButton: {

@@ -3,13 +3,23 @@ import { mount } from 'enzyme';
 import toJson from 'enzyme-to-json';
 import { SumRow } from '.';
 
+const tableWrapper = (comp) => {
+  return (
+    <table>
+      <tbody>{comp}</tbody>
+    </table>
+  );
+};
+
 describe('SumRow komponent', () => {
   describe('Når SumRow består av 0 kolonner', () => {
     const wrapper = mount(
-      <SumRow
-        numberOfColumns={0}
-        sum={{ text: 'sumtext', colspan: 2, total: 153 }}
-      />
+      tableWrapper(
+        <SumRow
+          numberOfColumns={0}
+          sum={{ text: 'sumtext', colspan: 2, total: 153 }}
+        />
+      )
     );
 
     it('Så ser markupen riktig ut', () => {
@@ -22,10 +32,12 @@ describe('SumRow komponent', () => {
 
   describe('Når SumRow består av f.eks 5 kolonner', () => {
     const wrapper = mount(
-      <SumRow
-        numberOfColumns={5}
-        sum={{ text: 'sumtext', colspan: 2, total: 153 }}
-      />
+      tableWrapper(
+        <SumRow
+          numberOfColumns={5}
+          sum={{ text: 'sumtext', colspan: 2, total: 153 }}
+        />
+      )
     );
 
     it('Så ser markupen riktig ut', () => {
@@ -38,11 +50,13 @@ describe('SumRow komponent', () => {
 
   describe('Når SumRow har en editableRows i tillegg', () => {
     const wrapper = mount(
-      <SumRow
-        numberOfColumns={0}
-        editableRows
-        sum={{ text: 'sumtext', colspan: 2, total: 153 }}
-      />
+      tableWrapper(
+        <SumRow
+          numberOfColumns={0}
+          editableRows
+          sum={{ text: 'sumtext', colspan: 2, total: 153 }}
+        />
+      )
     );
     it('Så ser markupen riktig ut', () => {
       expect(toJson(wrapper)).toMatchSnapshot();
@@ -55,11 +69,13 @@ describe('SumRow komponent', () => {
   describe('Når SumRow har en expandableRows i tillegg', () => {
     it('Så ser markupen riktig ut uten expandableRows', () => {
       const wrapper = mount(
-        <SumRow
-          numberOfColumns={0}
-          expandableRows
-          sum={{ text: 'sumtext', colspan: 2, total: 153 }}
-        />
+        tableWrapper(
+          <SumRow
+            numberOfColumns={0}
+            expandableRows
+            sum={{ text: 'sumtext', colspan: 2, total: 153 }}
+          />
+        )
       );
       expect(toJson(wrapper)).toMatchSnapshot();
       // Det skal bare vises 1 for sumteksten og 1 td for summen
@@ -69,12 +85,14 @@ describe('SumRow komponent', () => {
 
     it('Så ser markupen riktig ut med expandIconPlacement === before', () => {
       const wrapper = mount(
-        <SumRow
-          numberOfColumns={0}
-          expandableRows
-          expandIconPlacement={'before'}
-          sum={{ text: 'sumtext', colspan: 2, total: 153 }}
-        />
+        tableWrapper(
+          <SumRow
+            numberOfColumns={0}
+            expandableRows
+            expandIconPlacement={'before'}
+            sum={{ text: 'sumtext', colspan: 2, total: 153 }}
+          />
+        )
       );
       expect(toJson(wrapper)).toMatchSnapshot();
       // Det skal bare vises 1 for sumteksten og 1 td for summen
@@ -84,12 +102,14 @@ describe('SumRow komponent', () => {
 
     it('Så ser markupen riktig ut med expandIconPlacement === after', () => {
       const wrapper = mount(
-        <SumRow
-          numberOfColumns={0}
-          expandableRows
-          expandIconPlacement={'after'}
-          sum={{ text: 'sumtext', colspan: 2, total: 153 }}
-        />
+        tableWrapper(
+          <SumRow
+            numberOfColumns={0}
+            expandableRows
+            expandIconPlacement={'after'}
+            sum={{ text: 'sumtext', colspan: 2, total: 153 }}
+          />
+        )
       );
       expect(toJson(wrapper)).toMatchSnapshot();
       // Det skal bare vises 1 for sumteksten og 2 td: én for summen og én for expandableRows

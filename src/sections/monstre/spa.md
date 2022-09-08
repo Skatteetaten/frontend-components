@@ -97,14 +97,16 @@ import { Typography } from '@skatteetaten/frontend-components/Typography';
             &lt;h1 id="heading_id1"&gt;Dynamisk overskrift&lt;/h1&gt;
           </code>{' '}
           og
-          <code>&lt;main aria-labelledby="heading_id1" tabindex="-1"&gt;</code>
+          <code>
+            &lt;main id="main-content" aria-labelledby="heading_id1"
+            tabindex="-1"&gt;
+          </code>
         </p>
         <p>
           Og deretter bruke et skript for å sette fokus når siden lastes: <br />
           <code>
-            window.setTimeout(function () &#123; const myTitle: HTMLElement |
-            null = document.getElementById(&#39;heading_id1&#39;); myTitle
-            &amp;&amp; myTitle.focus(); &#125;, 0);
+            window.setTimeout(() =&gt;
+            document.getElementById(&#39;main-content&#39;)?.focus() , 0);
           </code>
         </p>
 

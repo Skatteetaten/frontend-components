@@ -4,14 +4,20 @@
 import { Button } from '@skatteetaten/frontend-components/Button';
 import { Spinner } from '@skatteetaten/frontend-components/Spinner';
 
+const marginTopStyle = {
+  marginTop: '1rem',
+};
+
 <div style={{ textAlign: 'center' }}>
-  <Button ariaLabel="Laster" buttonStyle="primary">
-    {' '}
-    <Spinner spinnerColor="white" />{' '}
-  </Button>
-  <br />
-  <br />
-  <Spinner size={Spinner.Size.large} spinnerColor="black" />
+  <div>
+    <Button ariaLabel="Laster" buttonStyle="primary">
+      {' '}
+      <Spinner spinnerColor="white" />{' '}
+    </Button>
+  </div>
+  <div style={marginTopStyle}>
+    <Spinner size={Spinner.Size.large} spinnerColor="black" />
+  </div>
 </div>;
 ```
 

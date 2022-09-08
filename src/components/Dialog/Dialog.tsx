@@ -9,6 +9,8 @@ import {
 } from '@fluentui/react';
 import { DialogProps, DialogState } from './Dialog.types';
 import { BrandContext } from '../SkeBasis';
+import i18n from '../utils/i18n/i18n';
+import WaitAlert from './WaitAlert';
 
 export class Dialog extends React.PureComponent<DialogProps, DialogState> {
   static Footer = DialogFooter;
@@ -21,6 +23,7 @@ export class Dialog extends React.PureComponent<DialogProps, DialogState> {
     tabletContentOverflows: false,
     isModeless: false,
     isBlocking: undefined,
+    waitAlert: false,
   };
   private readonly _iconButtonElement: React.RefObject<HTMLDivElement>;
 
@@ -32,6 +35,15 @@ export class Dialog extends React.PureComponent<DialogProps, DialogState> {
     this._iconButtonElement = React.createRef();
     this._onClick = this._onClick.bind(this);
     this._onDismiss = this._onDismiss.bind(this);
+    if (props.language) {
+      i18n.changeLanguage(props.language);
+    }
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    if (prevProps.language !== this.props.language) {
+      i18n.changeLanguage(this.props.language);
+    }
   }
 
   render() {
@@ -74,6 +86,10 @@ export class Dialog extends React.PureComponent<DialogProps, DialogState> {
                 ),
                 ...modalProps,
               }}
+              ariaLabelledById={
+                props.waitAlert ? 'waitAlertHeading' : undefined
+              }
+              ariaDescribedById={props.waitAlert ? 'waitAlertText' : undefined}
             >
               {isCalloutVisible && (
                 <Callout
@@ -84,7 +100,16 @@ export class Dialog extends React.PureComponent<DialogProps, DialogState> {
                   onClose={this._onDismiss}
                 />
               )}
-              {children}
+              {props.waitAlert ? (
+                <WaitAlert
+                  onDismiss={props.onDismiss}
+                  waitAlertBtnText={props.waitAlertBtnText}
+                >
+                  {children}
+                </WaitAlert>
+              ) : (
+                children
+              )}
             </FabricDialog>
           </div>
         )}

@@ -261,8 +261,7 @@ function closeButton() {
             </span>
           </div>
         </div>
-        <br />
-        <div style={{ width: '600px', display: 'flex' }}>
+        <div style={{ width: '600px', display: 'flex', marginTop: '1rem' }}>
           <div>
             <TextField
               label="Tillatt totaltvekt med tilhenger"

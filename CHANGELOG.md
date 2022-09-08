@@ -1,3 +1,13 @@
+### **v.5.1.0 - 8 September 2022**
+
+- Dialog: new variant with waiting dialog.
+- Improved code example for single page application pattern.
+- Table: improved font size, alignment and padding in compact table header.
+- FileUploader: fixes an issue with an id that was not set correctly.
+- Link: Invisible links (Skip to content) are now placed further outside view to ensure they wont interfere with other content.
+- Updated moment dependency.
+- Updated docs, tests and other minor improvements.
+
 ### **v.5.0.6 - 27 June 2022**
 
 - SearchField: Fixes an issue where id was not set correctly

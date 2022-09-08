@@ -12,6 +12,12 @@ export const languages = {
     'datepicker.nextYearAriaLabel': 'Neste år',
     'datepicker.prevMonthAriaLabel': 'Forrige måned',
     'datepicker.prevYearAriaLabel': 'Forrige år',
+    'dialog.waitAlert.alt':
+      'Illustrasjon av travel person med seks armer, opptatt med kontorarbeid.',
+    'dialog.waitAlert.button_text': 'Ja',
+    'dialog.waitAlert.paragraph':
+      'Vi ser at du ikke har gjort noe på nettsiden på ei stund. Er du fortsatt her?',
+    'dialog.waitAlert.title': 'Hei!',
     'fileuploader.accepted_file_formats': 'Aksepterte filformater:',
     'fileuploader.add.label': 'Legg til fil(er)',
     'fileuploader.delete.ariaLabel': 'Fjern fil',
@@ -53,6 +59,12 @@ export const languages = {
     'datepicker.nextYearAriaLabel': 'Neste år',
     'datepicker.prevMonthAriaLabel': 'Førre månad',
     'datepicker.prevYearAriaLabel': 'Førre år',
+    'dialog.waitAlert.alt':
+      'Illustrasjon av travel person med seks armar, oppteken med kontorarbeid.',
+    'dialog.waitAlert.button_text': 'Ja',
+    'dialog.waitAlert.paragraph':
+      'Vi ser at du ikkje har gjort noko på nettsida på ei stund. Er du framleis her?',
+    'dialog.waitAlert.title': 'Hei!',
     'fileuploader.accepted_file_formats': 'Aksepterte filformater:',
     'fileuploader.add.label': 'Legg til fil(er)',
     'fileuploader.delete.ariaLabel': 'Fjern fil',
@@ -92,6 +104,12 @@ export const languages = {
     'datepicker.nextYearAriaLabel': 'Next year',
     'datepicker.prevMonthAriaLabel': 'Previous month',
     'datepicker.prevYearAriaLabel': 'Previous year',
+    'dialog.waitAlert.alt':
+      'Illustration of a busy person with six arms, occupied with office work.',
+    'dialog.waitAlert.button_text': 'Yes',
+    'dialog.waitAlert.paragraph':
+      'You have been inactive for a while, are you still here?',
+    'dialog.waitAlert.title': ' Hi!',
     'fileuploader.accepted_file_formats': 'Accepted file formats:',
     'fileuploader.add.label': 'Add file(s)',
     'fileuploader.delete.ariaLabel': 'Delete file',
@@ -132,6 +150,12 @@ export const languages = {
     'datepicker.nextYearAriaLabel': 'Boahtte jahki',
     'datepicker.prevMonthAriaLabel': 'Ovddit mánnu',
     'datepicker.prevYearAriaLabel': 'Ovddit jahki',
+    'dialog.waitAlert.alt':
+      'Govvideapmi dilihis olbmo geas lea guhtta gieđa ja lea bargamin kánturbargguid.',
+    'dialog.waitAlert.button_text': 'Jo',
+    'dialog.waitAlert.paragraph':
+      'Mii oaidnit ahte don it leat geavahan siiddu guhkes áigái. Leat go ain dás?',
+    'dialog.waitAlert.title': 'Hei!',
     'fileuploader.accepted_file_formats': 'Dohkkehuvvon fiilaformáhtat:',
     'fileuploader.add.label': 'Lasit fiilla/fiillaid',
     'fileuploader.delete.ariaLabel': 'Sihko fiilla',
