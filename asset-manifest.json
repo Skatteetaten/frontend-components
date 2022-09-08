@@ -1,9 +1,9 @@
 {
   "files": {
     "main.css": "/frontend-components/static/css/main.b7fdbf03.chunk.css",
-    "main.js": "/frontend-components/build/main.81f10ce0.js",
+    "main.js": "/frontend-components/build/main.f90ed04c.js",
     "runtime-main.js": "/frontend-components/build/bundle.f88df48c.js",
-    "build/2.ae276b62.js": "/frontend-components/build/2.ae276b62.js",
+    "build/2.62b97cac.js": "/frontend-components/build/2.62b97cac.js",
     "assets/png/Byggeklosser.png": "/frontend-components/assets/png/Byggeklosser.png",
     "assets/png/Byggeklosser_skisse.png": "/frontend-components/assets/png/Byggeklosser_skisse.png",
     "assets/png/designer.png": "/frontend-components/assets/png/designer.png",
@@ -31,7 +31,7 @@
     "assets/svg/ske-logo-intern-kopi.svg": "/frontend-components/assets/svg/ske-logo-intern-kopi.svg",
     "assets/svg/ske-logo-intern.svg": "/frontend-components/assets/svg/ske-logo-intern.svg",
     "assets/svg/ske-logo.svg": "/frontend-components/assets/svg/ske-logo.svg",
-    "build/2.ae276b62.js.LICENSE.txt": "/frontend-components/build/2.ae276b62.js.LICENSE.txt",
+    "build/2.62b97cac.js.LICENSE.txt": "/frontend-components/build/2.62b97cac.js.LICENSE.txt",
     "favicon.ico": "/frontend-components/favicon.ico",
     "index.html": "/frontend-components/index.html",
     "manifest.json": "/frontend-components/manifest.json",
@@ -54,12 +54,13 @@
     "static/media/ske-logo-intern-en.970efeaa.svg": "/frontend-components/static/media/ske-logo-intern-en.970efeaa.svg",
     "static/media/ske-logo-intern.18d37dae.svg": "/frontend-components/static/media/ske-logo-intern.18d37dae.svg",
     "static/media/ske-logo.48366cbf.svg": "/frontend-components/static/media/ske-logo.48366cbf.svg",
-    "static/media/ske-logo.7f07b60a.svg": "/frontend-components/static/media/ske-logo.7f07b60a.svg"
+    "static/media/ske-logo.7f07b60a.svg": "/frontend-components/static/media/ske-logo.7f07b60a.svg",
+    "static/media/wait_alert_illustration.603314cc.svg": "/frontend-components/static/media/wait_alert_illustration.603314cc.svg"
   },
   "entrypoints": [
     "build/bundle.f88df48c.js",
-    "build/2.ae276b62.js",
+    "build/2.62b97cac.js",
     "static/css/main.b7fdbf03.chunk.css",
-    "build/main.81f10ce0.js"
+    "build/main.f90ed04c.js"
   ]
 }
