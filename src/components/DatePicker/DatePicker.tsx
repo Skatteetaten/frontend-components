@@ -1,8 +1,6 @@
 import * as React from 'react';
 import i18n, { t } from './../utils/i18n/i18n';
 import classnames from 'classnames';
-import moment from 'moment';
-import 'moment/locale/nb';
 import {
   DatePicker as FabricDatePicker,
   DayOfWeek,
@@ -19,14 +17,25 @@ import { ErrorMessage } from '../ErrorMessage';
 const DEFAULT_DATE_FORMAT = 'DD.MM.YYYY';
 const DEFAULTFORMATDATE = (date: Date | null | undefined): string => {
   if (date) {
-    return moment(date).format(DEFAULT_DATE_FORMAT);
+    const day: string = getTwoDigits(date.getDate());
+    const month: string = getTwoDigits(date.getMonth() + 1);
+    const year: number = date.getFullYear();
+    return `${day}.${month}.${year}`;
   }
   return '';
 };
 
+const getTwoDigits = (number: number): string => {
+  return number.toString().padStart(2, '0');
+};
+
 const DEFAULTPARSEDATEFROMSTRING = (date: string): Date | null => {
-  if (date) {
-    return moment(date, DEFAULT_DATE_FORMAT).toDate();
+  if (date && date.length === 10) {
+    const day: number = parseInt(date.substring(0, 2));
+    const month: number = parseInt(date.substring(3, 5));
+    const year: number = parseInt(date.substring(6, 10));
+    const jsDate: Date = new Date(year, month - 1, day);
+    return jsDate;
   }
   return null;
 };
@@ -54,7 +63,7 @@ export const DatePicker: React.FC<DatePickerProps> = (
     label,
     labelButtonAriaLabel,
     labelWithCalloutProps,
-    language,
+    language = 'en',
     onCalloutToggle,
     readonlyMode,
     requiredWithMark = false,
@@ -97,16 +106,95 @@ export const DatePicker: React.FC<DatePickerProps> = (
     setReadOnly(readonlyMode && !editMode);
   }, [editMode, readonlyMode]);
 
-  if (language) {
-    i18n.changeLanguage(language);
-    moment.locale(language);
-  }
+  const monthsNorwegian = [
+    'januar',
+    'februar',
+    'mars',
+    'april',
+    'mai',
+    'juni',
+    'juli',
+    'august',
+    'september',
+    'oktober',
+    'november',
+    'desember',
+  ];
+
+  const shortMonthsNorwegian = [
+    'jan.',
+    'feb.',
+    'mars',
+    'apr.',
+    'mai',
+    'juni',
+    'juli',
+    'aug.',
+    'sep.',
+    'okt.',
+    'nov.',
+    'des.',
+  ];
+
+  const daysNorwegian = [
+    'søndag',
+    'mandag',
+    'tirsdag',
+    'onsdag',
+    'torsdag',
+    'fredag',
+    'lørdag',
+  ];
+
+  const shortDaysNorwegian = ['sø.', 'ma.', 'ti.', 'on.', 'to.', 'fr.', 'lø.'];
+
+  const monthsEnglish = [
+    'January',
+    'February',
+    'March',
+    'April',
+    'May',
+    'June',
+    'July',
+    'August',
+    'September',
+    'October',
+    'November',
+    'December',
+  ];
+
+  const shortMonthsEnglish = [
+    'Jan',
+    'Feb',
+    'Mar',
+    'Apr',
+    'May',
+    'Jun',
+    'Jul',
+    'Aug',
+    'Sep',
+    'Oct',
+    'Nov',
+    'Dec',
+  ];
+
+  const daysEnglish = [
+    'Sunday',
+    'Monday',
+    'Tuesday',
+    'Wednesday',
+    'Thursday',
+    'Friday',
+    'Saturday',
+  ];
+
+  const shortDaysEnglish = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
 
   const DEFAULT_STRINGS = {
-    months: moment.months(),
-    shortMonths: moment.monthsShort(),
-    days: moment.weekdays(),
-    shortDays: moment.weekdaysShort(),
+    months: language !== 'en' ? monthsNorwegian : monthsEnglish,
+    shortMonths: language !== 'en' ? shortMonthsNorwegian : shortMonthsEnglish,
+    days: language !== 'en' ? daysNorwegian : daysEnglish,
+    shortDays: language !== 'en' ? shortDaysNorwegian : shortDaysEnglish,
     goToToday: t('datepicker.goToToday'),
     prevMonthAriaLabel: t('datepicker.prevMonthAriaLabel'),
     nextMonthAriaLabel: t('datepicker.nextMonthAriaLabel'),
