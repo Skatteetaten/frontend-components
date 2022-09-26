@@ -63,7 +63,7 @@ export const DatePicker: React.FC<DatePickerProps> = (
     label,
     labelButtonAriaLabel,
     labelWithCalloutProps,
-    language = 'en',
+    language,
     onCalloutToggle,
     readonlyMode,
     requiredWithMark = false,
