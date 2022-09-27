@@ -226,7 +226,7 @@ const data = [
                         vognkortet på bilen.
                       </p>
                       <p style={{ marginTop: '1rem' }}>
-                        Les mer: <br />
+                        Les mer:
                         <Link
                           path={'#link'}
                           text={'Finn totalvekt for kjøretøyet ditt.'}

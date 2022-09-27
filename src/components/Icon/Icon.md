@@ -613,7 +613,7 @@ Object.keys(iconGroup).forEach((name) => {
   iconGroup[name] = addIcon(iconGroup[name]);
 });
 
-<div>
+<div style={{ marginBottom: '2rem' }}>
   <Accordion>
     <AccordionItem toggleContent toggleButtonText={'Piler'}>
       <DetailsList columns={columns} items={iconGroup.arrows} />
@@ -640,8 +640,6 @@ Object.keys(iconGroup).forEach((name) => {
       <DetailsList columns={columns} items={iconGroup.files} />
     </AccordionItem>
   </Accordion>
-  <br />
-  <br />
 </div>;
 ```
 
@@ -784,14 +782,12 @@ Object.keys(iconGroup).forEach((name) => {
   iconGroup[name] = addIcon(iconGroup[name]);
 });
 
-<div>
+<div style={{ marginBottom: '2rem' }}>
   <Accordion>
     <AccordionItem toggleContent toggleButtonText={'Tema'}>
       <DetailsList columns={columns} items={iconGroup.theme} />
     </AccordionItem>
   </Accordion>
-  <br />
-  <br />
 </div>;
 ```
 

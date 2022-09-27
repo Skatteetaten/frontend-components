@@ -20,6 +20,10 @@ import { TopStripeButton } from '@skatteetaten/frontend-components/TopStripe/Top
 import designtokenSpacing from '../../components/utils/designtokens/_spacing.json';
 import designtokenFontSizes from '../../components/utils/designtokens/_fontSizes.json';
 
+const marginTopStyle = {
+  marginTop: '1rem',
+};
+
 <div>
   <Card
     title="Hovedregler for feilmeldinger"
@@ -170,45 +174,53 @@ import designtokenFontSizes from '../../components/utils/designtokens/_fontSizes
       <div className="dodont" style={{ marginLeft: '24px' }}>
         <div className="do" style={{ maxWidth: '44%' }}>
           <p class="title">Ja</p>
-          <TextField
-            label="Inntektsår"
-            value="1009"
-            errorMessage={'Inntekståret må være etter 2008.'}
-          />
-          <br />
-          <TextField
-            label="E-post"
-            value="Ola.Normann.no"
-            errorMessage={
-              'E-posten ser ikke riktig ut. Skriv slik: ola.normann@norge.no'
-            }
-          />
-          <br />
-          <TextField
-            label="Antall dager i Norge i perioden/inntekståret"
-            value=""
-            errorMessage={'Antall dager må fylles ut.'}
-          />
+          <div>
+            <TextField
+              label="Inntektsår"
+              value="1009"
+              errorMessage={'Inntekståret må være etter 2008.'}
+            />
+          </div>
+          <div style={marginTopStyle}>
+            <TextField
+              label="E-post"
+              value="Ola.Normann.no"
+              errorMessage={
+                'E-posten ser ikke riktig ut. Skriv slik: ola.normann@norge.no'
+              }
+            />
+          </div>
+          <div style={marginTopStyle}>
+            <TextField
+              label="Antall dager i Norge i perioden/inntekståret"
+              value=""
+              errorMessage={'Antall dager må fylles ut.'}
+            />
+          </div>
         </div>
         <div className="dont" style={{ maxWidth: '44%' }}>
           <p class="title">Nei</p>
-          <TextField
-            label="Inntektsår"
-            value="20"
-            errorMessage={'Ugyldig år (YYYY)'}
-          />
-          <br />
-          <TextField
-            label="E-post"
-            value="Ola.Normann.no"
-            errorMessage={'Feil i e-postadressen.'}
-          />
-          <br />
-          <TextField
-            label="Antall dager i Norge i perioden/inntekståret"
-            value=""
-            errorMessage={'Feltet må fylles ut.'}
-          />
+          <div>
+            <TextField
+              label="Inntektsår"
+              value="20"
+              errorMessage={'Ugyldig år (YYYY)'}
+            />
+          </div>
+          <div style={marginTopStyle}>
+            <TextField
+              label="E-post"
+              value="Ola.Normann.no"
+              errorMessage={'Feil i e-postadressen.'}
+            />
+          </div>
+          <div style={marginTopStyle}>
+            <TextField
+              label="Antall dager i Norge i perioden/inntekståret"
+              value=""
+              errorMessage={'Feltet må fylles ut.'}
+            />
+          </div>
         </div>
       </div>
     </AccordionItem>
@@ -289,44 +301,53 @@ import designtokenFontSizes from '../../components/utils/designtokens/_fontSizes
       </ul>
       <div>
         <div style={{ maxWidth: '350px' }}>
-          <TextField
-            label="Inntektsår"
-            id="input-id1"
-            value="1009"
-            errorMessage={'Inntekståret må være etter 2008.'}
-          />
-          <br />
-          <TextField
-            label="E-post"
-            id="input-id2"
-            value="Ola.Normann.no"
-            errorMessage={
-              'E-posten ser ikke riktig ut. Skriv slik: ola.normann@norge.no'
-            }
-          />
-          <br />
-          <TextField
-            label="Antall dager i Norge i perioden/inntekståret"
-            id="input-id3"
-            value=""
-            errorMessage={'Antall dager må fylles ut.'}
+          <div>
+            <TextField
+              label="Inntektsår"
+              id="input-id1"
+              value="1009"
+              errorMessage={'Inntekståret må være etter 2008.'}
+            />
+          </div>
+          <div style={marginTopStyle}>
+            <TextField
+              label="E-post"
+              id="input-id2"
+              value="Ola.Normann.no"
+              errorMessage={
+                'E-posten ser ikke riktig ut. Skriv slik: ola.normann@norge.no'
+              }
+            />
+          </div>
+          <div style={marginTopStyle}>
+            <TextField
+              label="Antall dager i Norge i perioden/inntekståret"
+              id="input-id3"
+              value=""
+              errorMessage={'Antall dager må fylles ut.'}
+            />
+          </div>
+        </div>
+        <div style={marginTopStyle}>
+          <ErrorSummary
+            title={'For å gå videre må du rette opp i følgende:'}
+            errors={[
+              {
+                id: 'input_aar-input',
+                error: 'Inntekståret må være etter 2008',
+              },
+              {
+                id: 'input_epost-input',
+                error:
+                  'E-posten ser ikke riktig ut. Skriv slik: ola.normann@norge.no',
+              },
+              { id: 'input_dager-input', error: 'Antall dager må fylles ut.' },
+            ]}
           />
         </div>
-        <br />
-        <ErrorSummary
-          title={'For å gå videre må du rette opp i følgende:'}
-          errors={[
-            { id: 'input_aar-input', error: 'Inntekståret må være etter 2008' },
-            {
-              id: 'input_epost-input',
-              error:
-                'E-posten ser ikke riktig ut. Skriv slik: ola.normann@norge.no',
-            },
-            { id: 'input_dager-input', error: 'Antall dager må fylles ut.' },
-          ]}
-        />
-        <br />
-        <Button buttonStyle="primary">Send inn</Button>
+        <div style={marginTopStyle}>
+          <Button buttonStyle="primary">Send inn</Button>
+        </div>
       </div>
     </AccordionItem>
     <AccordionItem

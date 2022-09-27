@@ -94,6 +94,10 @@ function closeDialog() {
   setState({ hideDialog: true });
 }
 
+const marginBottomStyle = {
+  marginBottom: '2rem',
+};
+
 const content1 = [
   {
     to: '#',
@@ -125,11 +129,10 @@ const content1 = [
     maxWidth={designtokenBreakpoints['ske-breakpoint-md']}
     layoutStyle={'airy'}
   >
-    <p>
+    <p style={marginBottomStyle}>
       Løsningen for aksjeselskap (AS) åpner i februar mens den blir tilgjengelig
       for enkeltpersonforetak (ENK) i april
     </p>
-    <br />
     <NavigationTile
       naviStyle="left"
       naviIcon="left"
@@ -181,6 +184,59 @@ function closeDialog() {
       </ActionButton>
     </Dialog.Footer>
   </Dialog>
+</div>;
+```
+
+### Ventevarel
+
+Varsel dukker opp av seg selv etter 20 min inaktivitet.
+
+```js
+import { ActionButton } from '@skatteetaten/frontend-components/ActionButton';
+import { Button } from '@skatteetaten/frontend-components/Button';
+import { Dialog } from '@skatteetaten/frontend-components/Dialog';
+
+const twentyMin = 1200;
+const [state, setState] = React.useState({ hideDialog: true });
+const [time, setTime] = React.useState(twentyMin);
+
+React.useEffect(() => {
+  if (time === 0) {
+    setState({ hideDialog: false });
+  }
+  const intervalId = setInterval(() => {
+    setTime((t) => t - 1);
+  }, 1000);
+  return () => clearInterval(intervalId);
+}, [time]);
+
+const closeDialog = () => {
+  setState({ hideDialog: true });
+  setTime(twentyMin);
+};
+const resettTimer = () => {
+  document.onmousemove = () => setTime(twentyMin);
+  document.onkeydown = () => setTime(twentyMin);
+};
+
+window.onload = () => {
+  resettTimer();
+};
+
+<div>
+  <ActionButton
+    buttonStyle="secondary"
+    onClick={() => setState({ hideDialog: false })}
+    icon="InfoOutline"
+  >
+    Vis ventevarsel
+  </ActionButton>
+  <Dialog
+    hidden={state.hideDialog}
+    type={Dialog.Type.normal}
+    onDismiss={closeDialog}
+    waitAlert
+  ></Dialog>
 </div>;
 ```
 

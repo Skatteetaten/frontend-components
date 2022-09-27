@@ -12,69 +12,81 @@ const [state, setState] = React.useState({ open: false });
 const paraStyle = {
   marginBlockStart: '0',
 };
-<>
-  <OpenClose title={'Inntekter som skattlegges i ordningen'}>
-    <Typography>
-      <p style={paraStyle}>
-        Arbeidsgiveren din/den som utbetaler skal trekke kildeskatt av følgende
-        inntekter:
-      </p>
-      <ul>
-        <li>
-          lønn og andre godtgjørelser fra kilder i Norge for arbeid utført i
-          Norge, inkludert feriepenger
-        </li>
-        <li>godtgjørelser til direktør eller styremedlem i selskap i Norge</li>
-        <li>gratiale, tantieme eller lignende ytelser fra norske selskap</li>
-        <li>
-          lønn til utleid utenlandsk arbeidstaker, inkludert{' '}
-          <a href="#">feriepenger</a>
-        </li>
-        <li>
-          utgiftsgodtgjørelser, refusjoner og naturalytelser som er
-          skattepliktige fordeler for deg, inkludert dekning av pendlerkostnader
-        </li>
-      </ul>
-    </Typography>
-  </OpenClose>
+const marginTopStyle = {
+  marginTop: '1rem',
+};
 
-  <br />
-  <OpenClose
-    compact
-    noBorder
-    isOnClickOnlyFiredOnOpen={false}
-    title={state.open ? 'Skjul detaljer' : 'Vis detaljer'}
-    onClick={() => setState({ open: !state.open })}
-    customClassNames={{
-      wrapper: 'myWrapperClass',
-      button: 'myButtonClass',
-      content: 'myContentClass',
-    }}
-  >
-    <Typography>
-      <p style={paraStyle}>
-        Arbeidsgiveren din/den som utbetaler skal trekke kildeskatt av følgende
-        inntekter:
-      </p>
-      <ul>
-        <li>
-          lønn og andre godtgjørelser fra kilder i Norge for arbeid utført i
-          Norge, inkludert feriepenger
-        </li>
-        <li>godtgjørelser til direktør eller styremedlem i selskap i Norge</li>
-        <li>gratiale, tantieme eller lignende ytelser fra norske selskap</li>
-        <li>
-          lønn til utleid utenlandsk arbeidstaker, inkludert{' '}
-          <a href="#">feriepenger</a>
-        </li>
-        <li>
-          utgiftsgodtgjørelser, refusjoner og naturalytelser som er
-          skattepliktige fordeler for deg, inkludert dekning av pendlerkostnader
-        </li>
-      </ul>
-    </Typography>
-  </OpenClose>
-</>;
+<div>
+  <div>
+    <OpenClose title={'Inntekter som skattlegges i ordningen'}>
+      <Typography>
+        <p style={paraStyle}>
+          Arbeidsgiveren din/den som utbetaler skal trekke kildeskatt av
+          følgende inntekter:
+        </p>
+        <ul>
+          <li>
+            lønn og andre godtgjørelser fra kilder i Norge for arbeid utført i
+            Norge, inkludert feriepenger
+          </li>
+          <li>
+            godtgjørelser til direktør eller styremedlem i selskap i Norge
+          </li>
+          <li>gratiale, tantieme eller lignende ytelser fra norske selskap</li>
+          <li>
+            lønn til utleid utenlandsk arbeidstaker, inkludert{' '}
+            <a href="#">feriepenger</a>
+          </li>
+          <li>
+            utgiftsgodtgjørelser, refusjoner og naturalytelser som er
+            skattepliktige fordeler for deg, inkludert dekning av
+            pendlerkostnader
+          </li>
+        </ul>
+      </Typography>
+    </OpenClose>
+  </div>
+  <div style={marginTopStyle}>
+    <OpenClose
+      compact
+      noBorder
+      isOnClickOnlyFiredOnOpen={false}
+      title={state.open ? 'Skjul detaljer' : 'Vis detaljer'}
+      onClick={() => setState({ open: !state.open })}
+      customClassNames={{
+        wrapper: 'myWrapperClass',
+        button: 'myButtonClass',
+        content: 'myContentClass',
+      }}
+    >
+      <Typography>
+        <p style={paraStyle}>
+          Arbeidsgiveren din/den som utbetaler skal trekke kildeskatt av
+          følgende inntekter:
+        </p>
+        <ul>
+          <li>
+            lønn og andre godtgjørelser fra kilder i Norge for arbeid utført i
+            Norge, inkludert feriepenger
+          </li>
+          <li>
+            godtgjørelser til direktør eller styremedlem i selskap i Norge
+          </li>
+          <li>gratiale, tantieme eller lignende ytelser fra norske selskap</li>
+          <li>
+            lønn til utleid utenlandsk arbeidstaker, inkludert{' '}
+            <a href="#">feriepenger</a>
+          </li>
+          <li>
+            utgiftsgodtgjørelser, refusjoner og naturalytelser som er
+            skattepliktige fordeler for deg, inkludert dekning av
+            pendlerkostnader
+          </li>
+        </ul>
+      </Typography>
+    </OpenClose>
+  </div>
+</div>;
 ```
 
 OpenClose som er åpen fra start:

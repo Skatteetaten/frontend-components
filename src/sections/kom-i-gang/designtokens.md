@@ -142,21 +142,20 @@ const iconGroup = {
   typography: designtokenTypographyData,
 };
 
+const marginTopStyle = {
+  marginTop: '3rem',
+};
+
 <div>
   <Typography>
     <h3>Farger</h3>
     <Table columns={columns} data={iconGroup.colours} fullWidth />
-    <br />
-    <h3>Typografi</h3>
+    <h3 style={marginTopStyle}>Typografi</h3>
     <Table columns={columns} data={iconGroup.typography} fullWidth />
-    <br />
-    <h3>Luft / spacing</h3>
+    <h3 style={marginTopStyle}>Luft / spacing</h3>
     <Table columns={columns} data={iconGroup.spacings} fullWidth />
-    <br />
-    <h3>Brekkpunkter</h3>
+    <h3 style={marginTopStyle}>Brekkpunkter</h3>
     <Table columns={columns} data={iconGroup.breakpoints} fullWidth />
-    <br />
-    <br />
   </Typography>
 </div>;
 ```
