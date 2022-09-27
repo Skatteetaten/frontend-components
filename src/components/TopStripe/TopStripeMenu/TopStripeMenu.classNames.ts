@@ -22,7 +22,6 @@ export const getClassNames = () => {
     },
     topStripeMenuTitle: {
       textDecoration: 'underline',
-      display: 'inline',
     },
     topStripeMenuChevronIcon: {
       position: 'absolute',
