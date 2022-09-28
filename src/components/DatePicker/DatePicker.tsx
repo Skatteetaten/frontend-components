@@ -16,28 +16,54 @@ import { ErrorMessage } from '../ErrorMessage';
 
 const DEFAULT_DATE_FORMAT = 'DD.MM.YYYY';
 const DEFAULTFORMATDATE = (date: Date | null | undefined): string => {
-  if (date) {
-    const day: string = getTwoDigits(date.getDate());
-    const month: string = getTwoDigits(date.getMonth() + 1);
-    const year: number = date.getFullYear();
-    return `${day}.${month}.${year}`;
+  return date
+    ? Intl.DateTimeFormat('no', {
+        year: 'numeric',
+        month: '2-digit',
+        day: 'numeric',
+      }).format(date)
+    : '';
+};
+
+const DEFAULTPARSEDATEFROMSTRING = (date: string): Date | string => {
+  try {
+    if (date && date.length === 10) {
+      const day: number = parseInt(date.substring(0, 2));
+      const month: number = parseInt(date.substring(3, 5));
+      const year: number = parseInt(date.substring(6, 10));
+      const formattedDate: Date = new Date(year, month - 1, day);
+      return formattedDate;
+    }
+  } catch (error) {
+    console.log(error);
   }
   return '';
 };
 
-const getTwoDigits = (number: number): string => {
-  return number.toString().padStart(2, '0');
+const monthsForLocale = (
+  localeName = 'no',
+  monthFormat: 'long' | 'short' = 'long'
+) => {
+  const format = new Intl.DateTimeFormat(localeName, { month: monthFormat })
+    .format;
+  const months: string[] = [];
+  for (let month = 0; month < 12; month++) {
+    months.push(format(new Date(Date.UTC(2020, month))));
+  }
+  return months;
 };
 
-const DEFAULTPARSEDATEFROMSTRING = (date: string): Date | null => {
-  if (date && date.length === 10) {
-    const day: number = parseInt(date.substring(0, 2));
-    const month: number = parseInt(date.substring(3, 5));
-    const year: number = parseInt(date.substring(6, 10));
-    const jsDate: Date = new Date(year, month - 1, day);
-    return jsDate;
+const weekdaysForLocale = (
+  localeName = 'no',
+  dayFormat: 'long' | 'short' = 'long'
+) => {
+  const format = new Intl.DateTimeFormat(localeName, { weekday: dayFormat })
+    .format;
+  const weekdays: string[] = [];
+  for (let day = 0; day < 7; day++) {
+    weekdays.push(format(new Date(Date.UTC(2020, 7, day + 2)))); // add 2 days to let the week start on Sunday
   }
-  return null;
+  return weekdays;
 };
 
 /*
@@ -106,95 +132,11 @@ export const DatePicker: React.FC<DatePickerProps> = (
     setReadOnly(readonlyMode && !editMode);
   }, [editMode, readonlyMode]);
 
-  const monthsNorwegian = [
-    'januar',
-    'februar',
-    'mars',
-    'april',
-    'mai',
-    'juni',
-    'juli',
-    'august',
-    'september',
-    'oktober',
-    'november',
-    'desember',
-  ];
-
-  const shortMonthsNorwegian = [
-    'jan.',
-    'feb.',
-    'mars',
-    'apr.',
-    'mai',
-    'juni',
-    'juli',
-    'aug.',
-    'sep.',
-    'okt.',
-    'nov.',
-    'des.',
-  ];
-
-  const daysNorwegian = [
-    'søndag',
-    'mandag',
-    'tirsdag',
-    'onsdag',
-    'torsdag',
-    'fredag',
-    'lørdag',
-  ];
-
-  const shortDaysNorwegian = ['sø.', 'ma.', 'ti.', 'on.', 'to.', 'fr.', 'lø.'];
-
-  const monthsEnglish = [
-    'January',
-    'February',
-    'March',
-    'April',
-    'May',
-    'June',
-    'July',
-    'August',
-    'September',
-    'October',
-    'November',
-    'December',
-  ];
-
-  const shortMonthsEnglish = [
-    'Jan',
-    'Feb',
-    'Mar',
-    'Apr',
-    'May',
-    'Jun',
-    'Jul',
-    'Aug',
-    'Sep',
-    'Oct',
-    'Nov',
-    'Dec',
-  ];
-
-  const daysEnglish = [
-    'Sunday',
-    'Monday',
-    'Tuesday',
-    'Wednesday',
-    'Thursday',
-    'Friday',
-    'Saturday',
-  ];
-
-  const shortDaysEnglish = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
-
   const DEFAULT_STRINGS = {
-    months: language !== 'en' ? monthsNorwegian : monthsEnglish,
-    shortMonths: language !== 'en' ? shortMonthsNorwegian : shortMonthsEnglish,
-    days: language !== 'en' ? daysNorwegian : daysEnglish,
-    shortDays: language !== 'en' ? shortDaysNorwegian : shortDaysEnglish,
+    months: monthsForLocale(language !== 'en' ? 'no' : 'en', 'long'),
+    shortMonths: monthsForLocale(language !== 'en' ? 'no' : 'en', 'short'),
+    days: weekdaysForLocale(language !== 'en' ? 'no' : 'en', 'long'),
+    shortDays: weekdaysForLocale(language !== 'en' ? 'no' : 'en', 'short'),
     goToToday: t('datepicker.goToToday'),
     prevMonthAriaLabel: t('datepicker.prevMonthAriaLabel'),
     nextMonthAriaLabel: t('datepicker.nextMonthAriaLabel'),
