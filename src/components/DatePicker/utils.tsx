@@ -14,7 +14,7 @@ export const DEFAULTPARSEDATEFROMSTRING = (date: string): Date | null => {
       const day: number = parseInt(date.substring(0, 2));
       const month: number = parseInt(date.substring(3, 5));
       const year: number = parseInt(date.substring(6, 10));
-      const formattedDate: Date = new Date(year, month - 1, day);
+      const formattedDate: Date = new Date(Date.UTC(year, month - 1, day));
       return formattedDate;
     }
   } catch (error) {
