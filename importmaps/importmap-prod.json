@@ -5,7 +5,6 @@
     "react-i18next": "https://cdn.jsdelivr.net/npm/react-i18next@<replace>/dist/umd/react-i18next.min.js",
     "prop-types": "https://unpkg.com/prop-types@<replace>/prop-types.min.js",
     "classnames": "https://cdn.jsdelivr.net/npm/classnames@<replace>/index.min.js",
-    "moment": "https://cdn.jsdelivr.net/npm/moment@<replace>/min/moment.min.js",
     "axios": "https://cdn.jsdelivr.net/npm/axios@<replace>/dist/axios.min.js",
     "tslib": "https://unpkg.com/tslib@<replace>/tslib.js",
     "i18next": "https://unpkg.com/i18next@<replace>/dist/umd/i18next.min.js",
