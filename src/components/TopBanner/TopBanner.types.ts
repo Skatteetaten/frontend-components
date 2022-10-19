@@ -27,4 +27,6 @@ export interface TopBannerTypes {
   language?: 'nb' | 'nn' | 'en' | 'se';
   /** Topstripe */
   topStripe?: JSX.Element;
+  slantedAreaClassName?: string;
+  children?: JSX.Element;
 }
