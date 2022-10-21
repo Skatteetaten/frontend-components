@@ -1,6 +1,8 @@
 import { ButtonProps } from '../Button';
+import { ReactNode } from 'react';
 
 export interface ActionButtonProps extends ButtonProps {
+  children?: ReactNode;
   /** Ikon som skal vises foran lenketeksten */
   icon?: string;
   /** Ikon størrelse, to tilgjengelige størrelser */

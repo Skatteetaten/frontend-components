@@ -1,7 +1,9 @@
 import * as React from 'react';
 import { getClassNames } from './Grid.classNames';
+import { ReactNode } from 'react';
 
 export interface ColProps {
+  children?: ReactNode;
   noSpacing?: boolean;
   className?: string;
   tag?: string;

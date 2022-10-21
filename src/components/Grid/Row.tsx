@@ -2,6 +2,7 @@ import * as React from 'react';
 import { getClassNames } from './Grid.classNames';
 
 export interface RowProps {
+  children?: React.ReactNode;
   rowSpacing?: string;
   rowInset?: boolean;
   centered?: boolean;

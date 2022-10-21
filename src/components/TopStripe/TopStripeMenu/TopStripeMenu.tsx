@@ -9,6 +9,7 @@ import { TopStripeButton } from '../TopStripeButton';
 import { TopStripeContext } from '../TopStripe';
 
 export interface TopStripeMenuProps extends Omit<LinkProps, 'title'> {
+  children?: React.ReactNode;
   /**
    * Close menu on item click
    * @default true

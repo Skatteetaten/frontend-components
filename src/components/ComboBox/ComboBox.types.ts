@@ -1,7 +1,9 @@
 import { IComboBoxProps, ICalloutProps } from '@fluentui/react';
 import { calloutState, LabelWithCalloutProps } from '../LabelWithCallout';
+import { ReactNode } from 'react';
 
 export interface ComboBoxProps extends IComboBoxProps {
+  children?: ReactNode;
   /** Egendefinert feilmelding */
   errorMessage?: IComboBoxProps['errorMessage'];
   /** Hjelpetekst */

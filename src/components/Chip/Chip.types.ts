@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { ReactNode } from 'react';
 
 export enum ChipType {
   WARNING = 'lightPink',
@@ -7,6 +8,7 @@ export enum ChipType {
 }
 
 export interface ChipProps extends React.HTMLAttributes<HTMLDivElement> {
+  children?: ReactNode;
   /** Bruksområde som avgir hvilken farge chip-en får */
   type?: ChipType;
   /** Størrelse på Chip */

@@ -2,8 +2,10 @@ import { IDatePickerProps } from '@fluentui/react';
 import { calloutState, LabelWithCalloutProps } from '../LabelWithCallout';
 
 import { CalloutProps } from '../Callout/Callout.types';
+import { ReactNode } from 'react';
 
 export interface DatePickerProps extends IDatePickerProps {
+  children?: ReactNode;
   /** @ignore */
   borderless?: IDatePickerProps['borderless'];
   /** Bestemmer om hjelptekst/varseltekst skal legge seg mellom label og tekstfelt eller flytende over innhold */

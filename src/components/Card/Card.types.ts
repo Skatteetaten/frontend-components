@@ -17,6 +17,7 @@ export enum CardBorder {
 }
 
 export interface CardProps extends React.HTMLAttributes<HTMLDivElement> {
+  children?: React.ReactNode;
   /** Teksten som vises i kortet */
   title?: string;
   /** tagName for kort-tittel */

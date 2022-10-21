@@ -1,8 +1,10 @@
 import { IDropdownProps } from '@fluentui/react';
 import { calloutState, LabelWithCalloutProps } from '../LabelWithCallout';
 import { CalloutProps } from '../Callout/Callout.types';
+import { ReactNode } from 'react';
 
 export interface DropdownProps extends IDropdownProps {
+  children?: ReactNode;
   /** Hjelpetekst */
   help?: string | JSX.Element;
   /** Størrelse på inputfelt som skal benyttes */

@@ -1,4 +1,5 @@
 import { ICalloutProps } from '@fluentui/react';
+import { ReactNode } from 'react';
 
 export enum CalloutColor {
   HELP = 'ske-color-green-10',
@@ -8,6 +9,7 @@ export enum CalloutColor {
   BASIC = 'ske-color-white-100',
 }
 export interface CalloutProps extends Omit<ICalloutProps, 'backgroundColor'> {
+  children?: ReactNode;
   /** Determine if the callout window will close automaticly when the area outside the window is clicked */
   autoDismiss?: boolean;
   /** There are four colors; lightGreen, beige, lightPink or white */

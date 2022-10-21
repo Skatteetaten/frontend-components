@@ -1,11 +1,13 @@
 import { IChoiceGroupOption, IChoiceGroupProps } from '@fluentui/react';
 import { calloutState, LabelWithCalloutProps } from '../LabelWithCallout';
+import { ReactNode } from 'react';
 
 export interface IRadioButtonGroupOptions extends IChoiceGroupOption {
   description?: string;
 }
 
 export interface RadioButtonGroupProps extends IChoiceGroupProps {
+  children?: ReactNode;
   calloutFloating?: boolean;
   /** CSS class */
   className?: string;

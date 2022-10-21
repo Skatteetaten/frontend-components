@@ -1,6 +1,8 @@
 import { ContentProps } from './NavigationContent';
+import { ReactNode } from 'react';
 
 export interface NavigationTileProps {
+  children?: ReactNode;
   /**
    * (to: String, content: JSXElement) => JSXElement
    */
