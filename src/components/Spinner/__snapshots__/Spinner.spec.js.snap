@@ -43,7 +43,7 @@ exports[`Spinner komponent matcher snapshot 1`] = `
           height: 20px;
           width: 20px;
         }
-        @media screen and (-ms-high-contrast: active), (forced-colors: active){& {
+        @media screen and (-ms-high-contrast: active), screen and (forced-colors: active){& {
           -ms-high-contrast-adjust: none;
           border-top-color: Highlight;
           forced-color-adjust: none;

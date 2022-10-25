@@ -33,7 +33,7 @@ exports[`Callout komponent matcher snapshot 1`] = `
             position: absolute;
             z-index: 1000000;
           }
-          @media screen and (-ms-high-contrast: active), (forced-colors: active){& {
+          @media screen and (-ms-high-contrast: active), screen and (forced-colors: active){& {
             border-color: WindowText;
             border-style: solid;
             border-width: 1px;
@@ -115,6 +115,10 @@ exports[`Callout komponent matcher snapshot 1`] = `
                 font-size: 1rem;
                 font-weight: 400;
                 height: 32px;
+                margin-bottom: 0px;
+                margin-left: 0px;
+                margin-right: 0px;
+                margin-top: 0px;
                 opacity: 1;
                 outline: transparent;
                 padding-bottom: 0;
@@ -144,14 +148,14 @@ exports[`Callout komponent matcher snapshot 1`] = `
                 top: -3px;
                 z-index: 1;
               }
-              @media screen and (-ms-high-contrast: active), (forced-colors: active){.ms-Fabric--isFocusVisible &:focus:after {
+              @media screen and (-ms-high-contrast: active), screen and (forced-colors: active){.ms-Fabric--isFocusVisible &:focus:after {
                 bottom: -2px;
                 left: -2px;
                 outline-color: ButtonText;
                 right: -2px;
                 top: -2px;
               }
-              &:active > * {
+              &:active > span {
                 left: 0px;
                 position: relative;
                 top: 0px;
@@ -160,7 +164,7 @@ exports[`Callout komponent matcher snapshot 1`] = `
                 background-color: #f4f4f4;
                 color: #11599c;
               }
-              @media screen and (-ms-high-contrast: active), (forced-colors: active){&:hover {
+              @media screen and (-ms-high-contrast: active), screen and (forced-colors: active){&:hover {
                 border-color: Highlight;
                 color: Highlight;
               }
