@@ -14,6 +14,7 @@ export interface SkeBasisProps extends IFabricProps {
   fonts?: object;
   icons?: Array<IIconSubset>;
   brand?: string;
+  children?: React.ReactNode;
 }
 
 interface SkeBasisState {

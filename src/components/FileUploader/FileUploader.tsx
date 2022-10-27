@@ -182,7 +182,7 @@ export const FileUploader: React.FC<FileUploaderProps> = (props) => {
     if (fileSizeLimit && exceedSizeLimitFiles.length) {
       pushToInternalMessages(
         exceedFileSizeLimitErrorMessage ||
-          createDefaultOversizedFileErrorMessage(fileSizeLimit)
+          (createDefaultOversizedFileErrorMessage(fileSizeLimit) as string)
       );
     }
 
@@ -190,7 +190,7 @@ export const FileUploader: React.FC<FileUploaderProps> = (props) => {
       (file) => !isCorrectFileFormat(file, acceptedFileFormats)
     );
     if (invalidFileFormatFiles.length) {
-      pushToInternalMessages(t('fileuploader.error.file_format'));
+      pushToInternalMessages(t('fileuploader.error.file_format') as string);
     }
 
     const validFiles = fileList.filter((file) =>
@@ -225,9 +225,9 @@ export const FileUploader: React.FC<FileUploaderProps> = (props) => {
           .catch((error) => {
             //TODO: Det trenger design om flere feilmeldinger
             if (error.response && error.response.status === 403) {
-              pushToInternalMessages(t('fileuploader.error.upload.403'));
+              pushToInternalMessages(t('fileuploader.error.upload.403')!);
             } else {
-              pushToInternalMessages(t('fileuploader.error.upload.general'));
+              pushToInternalMessages(t('fileuploader.error.upload.general')!);
             }
             if (afterUpload) {
               afterUpload(internalFiles);
@@ -304,9 +304,9 @@ export const FileUploader: React.FC<FileUploaderProps> = (props) => {
         })
         .catch((error) => {
           if (error.response && error.response.status === 403) {
-            pushToInternalMessages(t('fileuploader.error.delete.403'));
+            pushToInternalMessages(t('fileuploader.error.delete.403')!);
           } else {
-            pushToInternalMessages(t('fileuploader.error.delete.general'));
+            pushToInternalMessages(t('fileuploader.error.delete.general')!);
           }
         })
         .finally(() => {

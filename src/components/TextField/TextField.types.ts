@@ -1,5 +1,6 @@
 import { IMaskedTextFieldProps } from '@fluentui/react';
 import { calloutState, LabelWithCalloutProps } from '../LabelWithCallout';
+import { ReactNode } from 'react';
 
 export interface TextFieldProps extends IMaskedTextFieldProps {
   /** Benyttes når teksten for et readOnly tekstfelt skal fremheves  */
@@ -44,4 +45,5 @@ export interface TextFieldProps extends IMaskedTextFieldProps {
     oldCalloutState: calloutState,
     newCalloutState: calloutState
   ) => void;
+  children?: ReactNode;
 }

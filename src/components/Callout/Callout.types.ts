@@ -1,4 +1,5 @@
 import { ICalloutProps } from '@fluentui/react';
+import { ReactNode } from 'react';
 
 export enum CalloutColor {
   HELP = 'ske-color-green-10',
@@ -15,6 +16,7 @@ export interface CalloutProps extends Omit<ICalloutProps, 'backgroundColor'> {
   /** Adds border around the callout box */
   border?: boolean;
   onClose?: () => void;
+  children?: ReactNode;
 }
 
 export interface CalloutState {

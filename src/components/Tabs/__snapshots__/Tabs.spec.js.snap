@@ -113,7 +113,10 @@ exports[`Tabs komponent matcher snapshot 1`] = `
             font-weight: 600;
             height: 44px;
             line-height: 44px;
+            margin-bottom: 0px;
+            margin-left: 0px;
             margin-right: 0px;
+            margin-top: 0px;
             outline: transparent;
             padding-bottom: 0;
             padding-left: 10px;
@@ -139,19 +142,19 @@ exports[`Tabs komponent matcher snapshot 1`] = `
             top: 2px;
             z-index: 1;
           }
-          @media screen and (-ms-high-contrast: active), (forced-colors: active){.ms-Fabric--isFocusVisible &:focus:after {
+          @media screen and (-ms-high-contrast: active), screen and (forced-colors: active){.ms-Fabric--isFocusVisible &:focus:after {
             bottom: -2px;
             left: -2px;
             outline-color: ButtonText;
             right: -2px;
             top: -2px;
           }
-          &:active > * {
+          &:active > span {
             left: 0px;
             position: relative;
             top: 0px;
           }
-          @media screen and (-ms-high-contrast: active), (forced-colors: active){& {
+          @media screen and (-ms-high-contrast: active), screen and (forced-colors: active){& {
             border-color: Window;
             color: Highlight;
           }
@@ -160,7 +163,7 @@ exports[`Tabs komponent matcher snapshot 1`] = `
             color: #ffffff;
             cursor: pointer;
           }
-          @media screen and (-ms-high-contrast: active), (forced-colors: active){&:hover {
+          @media screen and (-ms-high-contrast: active), screen and (forced-colors: active){&:hover {
             color: Highlight;
           }
           &:hover .ms-Button-icon {
@@ -226,7 +229,7 @@ exports[`Tabs komponent matcher snapshot 1`] = `
             background-color: #11599c;
             color: #ffffff;
           }
-          @media screen and (-ms-high-contrast: active), (forced-colors: active){&.is-selected {
+          @media screen and (-ms-high-contrast: active), screen and (forced-colors: active){&.is-selected {
             -ms-high-contrast-adjust: none;
             background: Highlight;
             color: HighlightText;
@@ -236,7 +239,7 @@ exports[`Tabs komponent matcher snapshot 1`] = `
           &[data-is-overflowing='true'] {
             display: none;
           }
-          @media screen and (-ms-high-contrast: active), (forced-colors: active){&:before {
+          @media screen and (-ms-high-contrast: active), screen and (forced-colors: active){&:before {
             background-color: Highlight;
           }
           &:hover::before {
@@ -329,7 +332,10 @@ exports[`Tabs komponent matcher snapshot 1`] = `
             font-weight: 400;
             height: 44px;
             line-height: 44px;
+            margin-bottom: 0px;
+            margin-left: 0px;
             margin-right: 0px;
+            margin-top: 0px;
             outline: transparent;
             padding-bottom: 0;
             padding-left: 10px;
@@ -355,19 +361,19 @@ exports[`Tabs komponent matcher snapshot 1`] = `
             top: 2px;
             z-index: 1;
           }
-          @media screen and (-ms-high-contrast: active), (forced-colors: active){.ms-Fabric--isFocusVisible &:focus:after {
+          @media screen and (-ms-high-contrast: active), screen and (forced-colors: active){.ms-Fabric--isFocusVisible &:focus:after {
             bottom: -2px;
             left: -2px;
             outline-color: ButtonText;
             right: -2px;
             top: -2px;
           }
-          &:active > * {
+          &:active > span {
             left: 0px;
             position: relative;
             top: 0px;
           }
-          @media screen and (-ms-high-contrast: active), (forced-colors: active){& {
+          @media screen and (-ms-high-contrast: active), screen and (forced-colors: active){& {
             border-color: Window;
           }
           &:hover {
@@ -375,7 +381,7 @@ exports[`Tabs komponent matcher snapshot 1`] = `
             color: #ffffff;
             cursor: pointer;
           }
-          @media screen and (-ms-high-contrast: active), (forced-colors: active){&:hover {
+          @media screen and (-ms-high-contrast: active), screen and (forced-colors: active){&:hover {
             color: Highlight;
           }
           &:hover .ms-Button-icon {
@@ -441,7 +447,7 @@ exports[`Tabs komponent matcher snapshot 1`] = `
             background-color: #11599c;
             color: #ffffff;
           }
-          @media screen and (-ms-high-contrast: active), (forced-colors: active){&.is-selected {
+          @media screen and (-ms-high-contrast: active), screen and (forced-colors: active){&.is-selected {
             -ms-high-contrast-adjust: none;
             background: Highlight;
             color: HighlightText;
@@ -537,7 +543,10 @@ exports[`Tabs komponent matcher snapshot 1`] = `
             font-weight: 400;
             height: 44px;
             line-height: 44px;
+            margin-bottom: 0px;
+            margin-left: 0px;
             margin-right: 0px;
+            margin-top: 0px;
             outline: transparent;
             padding-bottom: 0;
             padding-left: 10px;
@@ -563,19 +572,19 @@ exports[`Tabs komponent matcher snapshot 1`] = `
             top: 2px;
             z-index: 1;
           }
-          @media screen and (-ms-high-contrast: active), (forced-colors: active){.ms-Fabric--isFocusVisible &:focus:after {
+          @media screen and (-ms-high-contrast: active), screen and (forced-colors: active){.ms-Fabric--isFocusVisible &:focus:after {
             bottom: -2px;
             left: -2px;
             outline-color: ButtonText;
             right: -2px;
             top: -2px;
           }
-          &:active > * {
+          &:active > span {
             left: 0px;
             position: relative;
             top: 0px;
           }
-          @media screen and (-ms-high-contrast: active), (forced-colors: active){& {
+          @media screen and (-ms-high-contrast: active), screen and (forced-colors: active){& {
             border-color: Window;
           }
           &:hover {
@@ -583,7 +592,7 @@ exports[`Tabs komponent matcher snapshot 1`] = `
             color: #ffffff;
             cursor: pointer;
           }
-          @media screen and (-ms-high-contrast: active), (forced-colors: active){&:hover {
+          @media screen and (-ms-high-contrast: active), screen and (forced-colors: active){&:hover {
             color: Highlight;
           }
           &:hover .ms-Button-icon {
@@ -649,7 +658,7 @@ exports[`Tabs komponent matcher snapshot 1`] = `
             background-color: #11599c;
             color: #ffffff;
           }
-          @media screen and (-ms-high-contrast: active), (forced-colors: active){&.is-selected {
+          @media screen and (-ms-high-contrast: active), screen and (forced-colors: active){&.is-selected {
             -ms-high-contrast-adjust: none;
             background: Highlight;
             color: HighlightText;

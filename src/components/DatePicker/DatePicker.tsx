@@ -1,5 +1,5 @@
 import * as React from 'react';
-import i18n, { t } from './../utils/i18n/i18n';
+import { t } from './../utils/i18n/i18n';
 import classnames from 'classnames';
 import {
   DatePicker as FabricDatePicker,
@@ -93,12 +93,12 @@ export const DatePicker: React.FC<DatePickerProps> = (
     shortMonths: monthsForLocale(language !== 'en' ? 'no' : 'en', 'short'),
     days: weekdaysForLocale(language !== 'en' ? 'no' : 'en', 'long'),
     shortDays: weekdaysForLocale(language !== 'en' ? 'no' : 'en', 'short'),
-    goToToday: t('datepicker.goToToday'),
+    goToToday: t('datepicker.goToToday')!,
     prevMonthAriaLabel: t('datepicker.prevMonthAriaLabel'),
     nextMonthAriaLabel: t('datepicker.nextMonthAriaLabel'),
     prevYearAriaLabel: t('datepicker.prevYearAriaLabel'),
     nextYearAriaLabel: t('datepicker.nextYearAriaLabel'),
-    invalidInputErrorMessage: i18n.t('datepicker.invalidInputErrorMessage', {
+    invalidInputErrorMessage: t('datepicker.invalidInputErrorMessage', {
       DEFAULT_DATE_FORMAT,
     }),
     /** Automatisk utvide høyde (ved multiline) */

@@ -45,11 +45,11 @@ export interface StepProps extends React.HTMLAttributes<HTMLDivElement> {
   resultIcon?: string;
   className?: string;
   stepNumber?: number;
-  children?: React.ReactElement;
   /** If the step should have an outer grid for alignment to surrounding elements */
   gridSpacing?: boolean;
   /** Set title heading tag-hierarchy. Value 1-6.*/
   headingLevel?: number;
+  children?: React.ReactElement;
 }
 
 export const Step = (props: StepProps) => {

@@ -1,5 +1,6 @@
 import { IChoiceGroupOption, IChoiceGroupProps } from '@fluentui/react';
 import { calloutState, LabelWithCalloutProps } from '../LabelWithCallout';
+import { ReactNode } from 'react';
 
 export interface IRadioButtonGroupOptions extends IChoiceGroupOption {
   description?: string;
@@ -33,4 +34,5 @@ export interface RadioButtonGroupProps extends IChoiceGroupProps {
   warning?: JSX.Element | string;
   /** Om feltet er obligatorisk og skal markeres med stjerne (*) */
   requiredWithMark?: boolean;
+  children?: ReactNode;
 }

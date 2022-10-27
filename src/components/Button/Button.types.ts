@@ -1,4 +1,5 @@
 import { IButtonProps } from '@fluentui/react';
+import { ReactNode } from 'react';
 
 export interface ButtonProps extends IButtonProps {
   /** Ikon som skal vises foran teksten på knappen */
@@ -44,4 +45,5 @@ export interface ButtonProps extends IButtonProps {
   secondaryText?: IButtonProps['secondaryText'];
   /** @ignore */
   toggeled?: boolean;
+  children?: ReactNode;
 }

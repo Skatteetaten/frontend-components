@@ -26,13 +26,13 @@
     "react-dom": ">=17.0.0"
   },
   "dependencies": {
-    "@fluentui/react": "8.60.1",
+    "@fluentui/react": "8.98.6",
     "axios": "0.24.0",
     "classnames": "2.2.6",
     "hotkeys-js": "3.8.1",
-    "i18next": "20.6.0",
+    "i18next": "22.0.1",
     "prop-types": "15.7.2",
-    "react-i18next": "11.11.4",
+    "react-i18next": "12.0.0",
     "react-transition-group": "4.4.2"
   },
   "devDependencies": {
@@ -99,7 +99,7 @@
     "rollup-plugin-visualizer": "5.5.2",
     "sonarqube-scanner": "2.8.1",
     "tslib": "2.3.1",
-    "typescript": "4.3.5",
+    "typescript": "4.8.4",
     "use-hash-history": "1.3.4",
     "uuid": "8.3.2",
     "webfont": "11.2.26"
@@ -110,10 +110,13 @@
     "prebuild": "run-s clean generate:icons circularDeps lint",
     "build": "run-p build:lib build:docs",
     "build:docs": "PUBLIC_URL=/frontend-components/ styleguidist build",
-    "build:lib": "run-p build:types build:esm build:cjs build:umd build:assets",
+    "build:lib": "run-p build:types build:esm build:cjs build:umd build:assets build:designtokens",
     "build:assets": "run-p build:assets:esm build:assets:cjs",
     "build:assets:esm": "cpx \"./src/components/**/assets/**/*\" ./lib",
     "build:assets:cjs": "cpx \"./src/components/**/assets/**/*\" ./lib/cjs",
+    "build:designtokens": "run-p build:designtokens:esm build:designtokens:cjs",
+    "build:designtokens:esm": "cpx \"./src/components/utils/designtokens/**/*\" ./lib/utils/designtokens",
+    "build:designtokens:cjs": "cpx \"./src/components/utils/designtokens/**/*\" ./lib/cjs/utils/designtokens",
     "build:copy-files": "node scripts/copyBuildFiles.js",
     "build:copy-files-external": "node scripts/copyBuildFiles.js EXTERNAL",
     "build:esm": "BABEL_ENV=esm babel ./src/components --out-dir lib --extensions '.ts,.tsx' ",

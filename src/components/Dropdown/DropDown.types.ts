@@ -1,6 +1,7 @@
 import { IDropdownProps } from '@fluentui/react';
 import { calloutState, LabelWithCalloutProps } from '../LabelWithCallout';
 import { CalloutProps } from '../Callout/Callout.types';
+import { ReactNode } from 'react';
 
 export interface DropdownProps extends IDropdownProps {
   /** Hjelpetekst */
@@ -26,6 +27,7 @@ export interface DropdownProps extends IDropdownProps {
   readOnly?: boolean;
   /** Om feltet er obligatorisk og skal markeres med stjerne (*) */
   requiredWithMark?: boolean;
+  children?: ReactNode;
 }
 
 export interface DropdownState {

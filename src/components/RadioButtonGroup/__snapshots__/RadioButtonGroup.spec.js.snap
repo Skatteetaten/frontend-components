@@ -391,7 +391,7 @@ exports[`RadioButtonGroup komponent matcher snapshot 1`] = `
                     transition-timing-function: cubic-bezier(.4, 0, .23, 1);
                     width: 20px;
                   }
-                  @media screen and (-ms-high-contrast: active), (forced-colors: active){&:before {
+                  @media screen and (-ms-high-contrast: active), screen and (forced-colors: active){&:before {
                     background: Window;
                     border-color: Highlight;
                     forced-color-adjust: none;
@@ -414,7 +414,7 @@ exports[`RadioButtonGroup komponent matcher snapshot 1`] = `
                     transition-timing-function: cubic-bezier(.4, 0, .23, 1);
                     width: 10px;
                   }
-                  @media screen and (-ms-high-contrast: active), (forced-colors: active){&:after {
+                  @media screen and (-ms-high-contrast: active), screen and (forced-colors: active){&:after {
                     border-color: Highlight;
                     forced-color-adjust: none;
                   }
@@ -512,7 +512,7 @@ exports[`RadioButtonGroup komponent matcher snapshot 1`] = `
                     transition-timing-function: cubic-bezier(.4, 0, .23, 1);
                     width: 20px;
                   }
-                  @media screen and (-ms-high-contrast: active), (forced-colors: active){&:before {
+                  @media screen and (-ms-high-contrast: active), screen and (forced-colors: active){&:before {
                     -ms-high-contrast-adjust: none;
                     background: Window;
                     border-color: GrayText;
@@ -534,7 +534,7 @@ exports[`RadioButtonGroup komponent matcher snapshot 1`] = `
                   & .ms-ChoiceFieldLabel {
                     color: rgba(89, 89, 89, 0.95);
                   }
-                  @media screen and (-ms-high-contrast: active), (forced-colors: active){& .ms-ChoiceFieldLabel {
+                  @media screen and (-ms-high-contrast: active), screen and (forced-colors: active){& .ms-ChoiceFieldLabel {
                     -ms-high-contrast-adjust: none;
                     color: GrayText;
                     forced-color-adjust: none;
@@ -633,7 +633,7 @@ exports[`RadioButtonGroup komponent matcher snapshot 1`] = `
                     transition-timing-function: cubic-bezier(.4, 0, .23, 1);
                     width: 20px;
                   }
-                  @media screen and (-ms-high-contrast: active), (forced-colors: active){&:before {
+                  @media screen and (-ms-high-contrast: active), screen and (forced-colors: active){&:before {
                     -ms-high-contrast-adjust: none;
                     background: Window;
                     border-color: GrayText;
@@ -655,7 +655,7 @@ exports[`RadioButtonGroup komponent matcher snapshot 1`] = `
                   & .ms-ChoiceFieldLabel {
                     color: rgba(89, 89, 89, 0.95);
                   }
-                  @media screen and (-ms-high-contrast: active), (forced-colors: active){& .ms-ChoiceFieldLabel {
+                  @media screen and (-ms-high-contrast: active), screen and (forced-colors: active){& .ms-ChoiceFieldLabel {
                     -ms-high-contrast-adjust: none;
                     color: GrayText;
                     forced-color-adjust: none;

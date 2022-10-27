@@ -1,5 +1,6 @@
 import { IDialogProps } from '@fluentui/react';
 import { Language } from '../utils/Language';
+import { ReactNode } from 'react';
 
 export interface DialogProps extends IDialogProps {
   /** doNotLayer prop for den help-Callout */
@@ -15,6 +16,7 @@ export interface DialogProps extends IDialogProps {
   waitAlert?: boolean;
   /** Ventevarsel knapp tekst */
   waitAlertBtnText?: string;
+  children?: ReactNode;
 }
 export type DialogState = {
   isCalloutVisible: boolean;

@@ -82,6 +82,10 @@ exports[`Modal modal med rootNode instansierer Modal komponent i shadow-domen i 
                 font-size: 1rem;
                 font-weight: 400;
                 height: 1.875rem;
+                margin-bottom: 0px;
+                margin-left: 0px;
+                margin-right: 0px;
+                margin-top: 0px;
                 outline: transparent;
                 padding-bottom: 0;
                 padding-left: 4px;
@@ -110,14 +114,14 @@ exports[`Modal modal med rootNode instansierer Modal komponent i shadow-domen i 
                 top: -3px;
                 z-index: 1;
               }
-              @media screen and (-ms-high-contrast: active), (forced-colors: active){.ms-Fabric--isFocusVisible &:focus:after {
+              @media screen and (-ms-high-contrast: active), screen and (forced-colors: active){.ms-Fabric--isFocusVisible &:focus:after {
                 bottom: -2px;
                 left: -2px;
                 outline-color: ButtonText;
                 right: -2px;
                 top: -2px;
               }
-              &:active > * {
+              &:active > span {
                 left: 0px;
                 position: relative;
                 top: 0px;
@@ -126,7 +130,7 @@ exports[`Modal modal med rootNode instansierer Modal komponent i shadow-domen i 
                 background-color: #f4f4f4;
                 color: #11599c;
               }
-              @media screen and (-ms-high-contrast: active), (forced-colors: active){&:hover {
+              @media screen and (-ms-high-contrast: active), screen and (forced-colors: active){&:hover {
                 border-color: Highlight;
                 color: Highlight;
               }
@@ -345,6 +349,10 @@ LoadedCheerio {
                         font-size: 1rem;
                         font-weight: 400;
                         height: 1.875rem;
+                        margin-bottom: 0px;
+                        margin-left: 0px;
+                        margin-right: 0px;
+                        margin-top: 0px;
                         outline: transparent;
                         padding-bottom: 0;
                         padding-left: 4px;
@@ -373,14 +381,14 @@ LoadedCheerio {
                         top: -3px;
                         z-index: 1;
                       }
-                      @media screen and (-ms-high-contrast: active), (forced-colors: active){.ms-Fabric--isFocusVisible &:focus:after {
+                      @media screen and (-ms-high-contrast: active), screen and (forced-colors: active){.ms-Fabric--isFocusVisible &:focus:after {
                         bottom: -2px;
                         left: -2px;
                         outline-color: ButtonText;
                         right: -2px;
                         top: -2px;
                       }
-                      &:active > * {
+                      &:active > span {
                         left: 0px;
                         position: relative;
                         top: 0px;
@@ -389,7 +397,7 @@ LoadedCheerio {
                         background-color: #f4f4f4;
                         color: #11599c;
                       }
-                      @media screen and (-ms-high-contrast: active), (forced-colors: active){&:hover {
+                      @media screen and (-ms-high-contrast: active), screen and (forced-colors: active){&:hover {
                         border-color: Highlight;
                         color: Highlight;
                       }
@@ -640,6 +648,10 @@ LoadedCheerio {
                       font-size: 1rem;
                       font-weight: 400;
                       height: 1.875rem;
+                      margin-bottom: 0px;
+                      margin-left: 0px;
+                      margin-right: 0px;
+                      margin-top: 0px;
                       outline: transparent;
                       padding-bottom: 0;
                       padding-left: 4px;
@@ -668,14 +680,14 @@ LoadedCheerio {
                       top: -3px;
                       z-index: 1;
                     }
-                    @media screen and (-ms-high-contrast: active), (forced-colors: active){.ms-Fabric--isFocusVisible &:focus:after {
+                    @media screen and (-ms-high-contrast: active), screen and (forced-colors: active){.ms-Fabric--isFocusVisible &:focus:after {
                       bottom: -2px;
                       left: -2px;
                       outline-color: ButtonText;
                       right: -2px;
                       top: -2px;
                     }
-                    &:active > * {
+                    &:active > span {
                       left: 0px;
                       position: relative;
                       top: 0px;
@@ -684,7 +696,7 @@ LoadedCheerio {
                       background-color: #f4f4f4;
                       color: #11599c;
                     }
-                    @media screen and (-ms-high-contrast: active), (forced-colors: active){&:hover {
+                    @media screen and (-ms-high-contrast: active), screen and (forced-colors: active){&:hover {
                       border-color: Highlight;
                       color: Highlight;
                     }
@@ -992,6 +1004,10 @@ LoadedCheerio {
                         font-size: 1rem;
                         font-weight: 400;
                         height: 1.875rem;
+                        margin-bottom: 0px;
+                        margin-left: 0px;
+                        margin-right: 0px;
+                        margin-top: 0px;
                         outline: transparent;
                         padding-bottom: 0;
                         padding-left: 4px;
@@ -1020,14 +1036,14 @@ LoadedCheerio {
                         top: -3px;
                         z-index: 1;
                       }
-                      @media screen and (-ms-high-contrast: active), (forced-colors: active){.ms-Fabric--isFocusVisible &:focus:after {
+                      @media screen and (-ms-high-contrast: active), screen and (forced-colors: active){.ms-Fabric--isFocusVisible &:focus:after {
                         bottom: -2px;
                         left: -2px;
                         outline-color: ButtonText;
                         right: -2px;
                         top: -2px;
                       }
-                      &:active > * {
+                      &:active > span {
                         left: 0px;
                         position: relative;
                         top: 0px;
@@ -1036,7 +1052,7 @@ LoadedCheerio {
                         background-color: #f4f4f4;
                         color: #11599c;
                       }
-                      @media screen and (-ms-high-contrast: active), (forced-colors: active){&:hover {
+                      @media screen and (-ms-high-contrast: active), screen and (forced-colors: active){&:hover {
                         border-color: Highlight;
                         color: Highlight;
                       }
@@ -1282,6 +1298,10 @@ LoadedCheerio {
                           font-size: 1rem;
                           font-weight: 400;
                           height: 1.875rem;
+                          margin-bottom: 0px;
+                          margin-left: 0px;
+                          margin-right: 0px;
+                          margin-top: 0px;
                           outline: transparent;
                           padding-bottom: 0;
                           padding-left: 4px;
@@ -1310,14 +1330,14 @@ LoadedCheerio {
                           top: -3px;
                           z-index: 1;
                         }
-                        @media screen and (-ms-high-contrast: active), (forced-colors: active){.ms-Fabric--isFocusVisible &:focus:after {
+                        @media screen and (-ms-high-contrast: active), screen and (forced-colors: active){.ms-Fabric--isFocusVisible &:focus:after {
                           bottom: -2px;
                           left: -2px;
                           outline-color: ButtonText;
                           right: -2px;
                           top: -2px;
                         }
-                        &:active > * {
+                        &:active > span {
                           left: 0px;
                           position: relative;
                           top: 0px;
@@ -1326,7 +1346,7 @@ LoadedCheerio {
                           background-color: #f4f4f4;
                           color: #11599c;
                         }
-                        @media screen and (-ms-high-contrast: active), (forced-colors: active){&:hover {
+                        @media screen and (-ms-high-contrast: active), screen and (forced-colors: active){&:hover {
                           border-color: Highlight;
                           color: Highlight;
                         }
@@ -1691,6 +1711,10 @@ LoadedCheerio {
                           font-size: 1rem;
                           font-weight: 400;
                           height: 1.875rem;
+                          margin-bottom: 0px;
+                          margin-left: 0px;
+                          margin-right: 0px;
+                          margin-top: 0px;
                           outline: transparent;
                           padding-bottom: 0;
                           padding-left: 4px;
@@ -1719,14 +1743,14 @@ LoadedCheerio {
                           top: -3px;
                           z-index: 1;
                         }
-                        @media screen and (-ms-high-contrast: active), (forced-colors: active){.ms-Fabric--isFocusVisible &:focus:after {
+                        @media screen and (-ms-high-contrast: active), screen and (forced-colors: active){.ms-Fabric--isFocusVisible &:focus:after {
                           bottom: -2px;
                           left: -2px;
                           outline-color: ButtonText;
                           right: -2px;
                           top: -2px;
                         }
-                        &:active > * {
+                        &:active > span {
                           left: 0px;
                           position: relative;
                           top: 0px;
@@ -1735,7 +1759,7 @@ LoadedCheerio {
                           background-color: #f4f4f4;
                           color: #11599c;
                         }
-                        @media screen and (-ms-high-contrast: active), (forced-colors: active){&:hover {
+                        @media screen and (-ms-high-contrast: active), screen and (forced-colors: active){&:hover {
                           border-color: Highlight;
                           color: Highlight;
                         }
@@ -1986,6 +2010,10 @@ LoadedCheerio {
                         font-size: 1rem;
                         font-weight: 400;
                         height: 1.875rem;
+                        margin-bottom: 0px;
+                        margin-left: 0px;
+                        margin-right: 0px;
+                        margin-top: 0px;
                         outline: transparent;
                         padding-bottom: 0;
                         padding-left: 4px;
@@ -2014,14 +2042,14 @@ LoadedCheerio {
                         top: -3px;
                         z-index: 1;
                       }
-                      @media screen and (-ms-high-contrast: active), (forced-colors: active){.ms-Fabric--isFocusVisible &:focus:after {
+                      @media screen and (-ms-high-contrast: active), screen and (forced-colors: active){.ms-Fabric--isFocusVisible &:focus:after {
                         bottom: -2px;
                         left: -2px;
                         outline-color: ButtonText;
                         right: -2px;
                         top: -2px;
                       }
-                      &:active > * {
+                      &:active > span {
                         left: 0px;
                         position: relative;
                         top: 0px;
@@ -2030,7 +2058,7 @@ LoadedCheerio {
                         background-color: #f4f4f4;
                         color: #11599c;
                       }
-                      @media screen and (-ms-high-contrast: active), (forced-colors: active){&:hover {
+                      @media screen and (-ms-high-contrast: active), screen and (forced-colors: active){&:hover {
                         border-color: Highlight;
                         color: Highlight;
                       }
@@ -2338,6 +2366,10 @@ LoadedCheerio {
                           font-size: 1rem;
                           font-weight: 400;
                           height: 1.875rem;
+                          margin-bottom: 0px;
+                          margin-left: 0px;
+                          margin-right: 0px;
+                          margin-top: 0px;
                           outline: transparent;
                           padding-bottom: 0;
                           padding-left: 4px;
@@ -2366,14 +2398,14 @@ LoadedCheerio {
                           top: -3px;
                           z-index: 1;
                         }
-                        @media screen and (-ms-high-contrast: active), (forced-colors: active){.ms-Fabric--isFocusVisible &:focus:after {
+                        @media screen and (-ms-high-contrast: active), screen and (forced-colors: active){.ms-Fabric--isFocusVisible &:focus:after {
                           bottom: -2px;
                           left: -2px;
                           outline-color: ButtonText;
                           right: -2px;
                           top: -2px;
                         }
-                        &:active > * {
+                        &:active > span {
                           left: 0px;
                           position: relative;
                           top: 0px;
@@ -2382,7 +2414,7 @@ LoadedCheerio {
                           background-color: #f4f4f4;
                           color: #11599c;
                         }
-                        @media screen and (-ms-high-contrast: active), (forced-colors: active){&:hover {
+                        @media screen and (-ms-high-contrast: active), screen and (forced-colors: active){&:hover {
                           border-color: Highlight;
                           color: Highlight;
                         }
@@ -2628,6 +2660,10 @@ LoadedCheerio {
                             font-size: 1rem;
                             font-weight: 400;
                             height: 1.875rem;
+                            margin-bottom: 0px;
+                            margin-left: 0px;
+                            margin-right: 0px;
+                            margin-top: 0px;
                             outline: transparent;
                             padding-bottom: 0;
                             padding-left: 4px;
@@ -2656,14 +2692,14 @@ LoadedCheerio {
                             top: -3px;
                             z-index: 1;
                           }
-                          @media screen and (-ms-high-contrast: active), (forced-colors: active){.ms-Fabric--isFocusVisible &:focus:after {
+                          @media screen and (-ms-high-contrast: active), screen and (forced-colors: active){.ms-Fabric--isFocusVisible &:focus:after {
                             bottom: -2px;
                             left: -2px;
                             outline-color: ButtonText;
                             right: -2px;
                             top: -2px;
                           }
-                          &:active > * {
+                          &:active > span {
                             left: 0px;
                             position: relative;
                             top: 0px;
@@ -2672,7 +2708,7 @@ LoadedCheerio {
                             background-color: #f4f4f4;
                             color: #11599c;
                           }
-                          @media screen and (-ms-high-contrast: active), (forced-colors: active){&:hover {
+                          @media screen and (-ms-high-contrast: active), screen and (forced-colors: active){&:hover {
                             border-color: Highlight;
                             color: Highlight;
                           }
@@ -3124,6 +3160,10 @@ LoadedCheerio {
                         font-size: 1rem;
                         font-weight: 400;
                         height: 1.875rem;
+                        margin-bottom: 0px;
+                        margin-left: 0px;
+                        margin-right: 0px;
+                        margin-top: 0px;
                         outline: transparent;
                         padding-bottom: 0;
                         padding-left: 4px;
@@ -3152,14 +3192,14 @@ LoadedCheerio {
                         top: -3px;
                         z-index: 1;
                       }
-                      @media screen and (-ms-high-contrast: active), (forced-colors: active){.ms-Fabric--isFocusVisible &:focus:after {
+                      @media screen and (-ms-high-contrast: active), screen and (forced-colors: active){.ms-Fabric--isFocusVisible &:focus:after {
                         bottom: -2px;
                         left: -2px;
                         outline-color: ButtonText;
                         right: -2px;
                         top: -2px;
                       }
-                      &:active > * {
+                      &:active > span {
                         left: 0px;
                         position: relative;
                         top: 0px;
@@ -3168,7 +3208,7 @@ LoadedCheerio {
                         background-color: #f4f4f4;
                         color: #11599c;
                       }
-                      @media screen and (-ms-high-contrast: active), (forced-colors: active){&:hover {
+                      @media screen and (-ms-high-contrast: active), screen and (forced-colors: active){&:hover {
                         border-color: Highlight;
                         color: Highlight;
                       }
@@ -3419,6 +3459,10 @@ LoadedCheerio {
                       font-size: 1rem;
                       font-weight: 400;
                       height: 1.875rem;
+                      margin-bottom: 0px;
+                      margin-left: 0px;
+                      margin-right: 0px;
+                      margin-top: 0px;
                       outline: transparent;
                       padding-bottom: 0;
                       padding-left: 4px;
@@ -3447,14 +3491,14 @@ LoadedCheerio {
                       top: -3px;
                       z-index: 1;
                     }
-                    @media screen and (-ms-high-contrast: active), (forced-colors: active){.ms-Fabric--isFocusVisible &:focus:after {
+                    @media screen and (-ms-high-contrast: active), screen and (forced-colors: active){.ms-Fabric--isFocusVisible &:focus:after {
                       bottom: -2px;
                       left: -2px;
                       outline-color: ButtonText;
                       right: -2px;
                       top: -2px;
                     }
-                    &:active > * {
+                    &:active > span {
                       left: 0px;
                       position: relative;
                       top: 0px;
@@ -3463,7 +3507,7 @@ LoadedCheerio {
                       background-color: #f4f4f4;
                       color: #11599c;
                     }
-                    @media screen and (-ms-high-contrast: active), (forced-colors: active){&:hover {
+                    @media screen and (-ms-high-contrast: active), screen and (forced-colors: active){&:hover {
                       border-color: Highlight;
                       color: Highlight;
                     }
@@ -3771,6 +3815,10 @@ LoadedCheerio {
                         font-size: 1rem;
                         font-weight: 400;
                         height: 1.875rem;
+                        margin-bottom: 0px;
+                        margin-left: 0px;
+                        margin-right: 0px;
+                        margin-top: 0px;
                         outline: transparent;
                         padding-bottom: 0;
                         padding-left: 4px;
@@ -3799,14 +3847,14 @@ LoadedCheerio {
                         top: -3px;
                         z-index: 1;
                       }
-                      @media screen and (-ms-high-contrast: active), (forced-colors: active){.ms-Fabric--isFocusVisible &:focus:after {
+                      @media screen and (-ms-high-contrast: active), screen and (forced-colors: active){.ms-Fabric--isFocusVisible &:focus:after {
                         bottom: -2px;
                         left: -2px;
                         outline-color: ButtonText;
                         right: -2px;
                         top: -2px;
                       }
-                      &:active > * {
+                      &:active > span {
                         left: 0px;
                         position: relative;
                         top: 0px;
@@ -3815,7 +3863,7 @@ LoadedCheerio {
                         background-color: #f4f4f4;
                         color: #11599c;
                       }
-                      @media screen and (-ms-high-contrast: active), (forced-colors: active){&:hover {
+                      @media screen and (-ms-high-contrast: active), screen and (forced-colors: active){&:hover {
                         border-color: Highlight;
                         color: Highlight;
                       }
@@ -4061,6 +4109,10 @@ LoadedCheerio {
                           font-size: 1rem;
                           font-weight: 400;
                           height: 1.875rem;
+                          margin-bottom: 0px;
+                          margin-left: 0px;
+                          margin-right: 0px;
+                          margin-top: 0px;
                           outline: transparent;
                           padding-bottom: 0;
                           padding-left: 4px;
@@ -4089,14 +4141,14 @@ LoadedCheerio {
                           top: -3px;
                           z-index: 1;
                         }
-                        @media screen and (-ms-high-contrast: active), (forced-colors: active){.ms-Fabric--isFocusVisible &:focus:after {
+                        @media screen and (-ms-high-contrast: active), screen and (forced-colors: active){.ms-Fabric--isFocusVisible &:focus:after {
                           bottom: -2px;
                           left: -2px;
                           outline-color: ButtonText;
                           right: -2px;
                           top: -2px;
                         }
-                        &:active > * {
+                        &:active > span {
                           left: 0px;
                           position: relative;
                           top: 0px;
@@ -4105,7 +4157,7 @@ LoadedCheerio {
                           background-color: #f4f4f4;
                           color: #11599c;
                         }
-                        @media screen and (-ms-high-contrast: active), (forced-colors: active){&:hover {
+                        @media screen and (-ms-high-contrast: active), screen and (forced-colors: active){&:hover {
                           border-color: Highlight;
                           color: Highlight;
                         }
@@ -4470,6 +4522,10 @@ LoadedCheerio {
                           font-size: 1rem;
                           font-weight: 400;
                           height: 1.875rem;
+                          margin-bottom: 0px;
+                          margin-left: 0px;
+                          margin-right: 0px;
+                          margin-top: 0px;
                           outline: transparent;
                           padding-bottom: 0;
                           padding-left: 4px;
@@ -4498,14 +4554,14 @@ LoadedCheerio {
                           top: -3px;
                           z-index: 1;
                         }
-                        @media screen and (-ms-high-contrast: active), (forced-colors: active){.ms-Fabric--isFocusVisible &:focus:after {
+                        @media screen and (-ms-high-contrast: active), screen and (forced-colors: active){.ms-Fabric--isFocusVisible &:focus:after {
                           bottom: -2px;
                           left: -2px;
                           outline-color: ButtonText;
                           right: -2px;
                           top: -2px;
                         }
-                        &:active > * {
+                        &:active > span {
                           left: 0px;
                           position: relative;
                           top: 0px;
@@ -4514,7 +4570,7 @@ LoadedCheerio {
                           background-color: #f4f4f4;
                           color: #11599c;
                         }
-                        @media screen and (-ms-high-contrast: active), (forced-colors: active){&:hover {
+                        @media screen and (-ms-high-contrast: active), screen and (forced-colors: active){&:hover {
                           border-color: Highlight;
                           color: Highlight;
                         }
@@ -4765,6 +4821,10 @@ LoadedCheerio {
                         font-size: 1rem;
                         font-weight: 400;
                         height: 1.875rem;
+                        margin-bottom: 0px;
+                        margin-left: 0px;
+                        margin-right: 0px;
+                        margin-top: 0px;
                         outline: transparent;
                         padding-bottom: 0;
                         padding-left: 4px;
@@ -4793,14 +4853,14 @@ LoadedCheerio {
                         top: -3px;
                         z-index: 1;
                       }
-                      @media screen and (-ms-high-contrast: active), (forced-colors: active){.ms-Fabric--isFocusVisible &:focus:after {
+                      @media screen and (-ms-high-contrast: active), screen and (forced-colors: active){.ms-Fabric--isFocusVisible &:focus:after {
                         bottom: -2px;
                         left: -2px;
                         outline-color: ButtonText;
                         right: -2px;
                         top: -2px;
                       }
-                      &:active > * {
+                      &:active > span {
                         left: 0px;
                         position: relative;
                         top: 0px;
@@ -4809,7 +4869,7 @@ LoadedCheerio {
                         background-color: #f4f4f4;
                         color: #11599c;
                       }
-                      @media screen and (-ms-high-contrast: active), (forced-colors: active){&:hover {
+                      @media screen and (-ms-high-contrast: active), screen and (forced-colors: active){&:hover {
                         border-color: Highlight;
                         color: Highlight;
                       }
@@ -5117,6 +5177,10 @@ LoadedCheerio {
                           font-size: 1rem;
                           font-weight: 400;
                           height: 1.875rem;
+                          margin-bottom: 0px;
+                          margin-left: 0px;
+                          margin-right: 0px;
+                          margin-top: 0px;
                           outline: transparent;
                           padding-bottom: 0;
                           padding-left: 4px;
@@ -5145,14 +5209,14 @@ LoadedCheerio {
                           top: -3px;
                           z-index: 1;
                         }
-                        @media screen and (-ms-high-contrast: active), (forced-colors: active){.ms-Fabric--isFocusVisible &:focus:after {
+                        @media screen and (-ms-high-contrast: active), screen and (forced-colors: active){.ms-Fabric--isFocusVisible &:focus:after {
                           bottom: -2px;
                           left: -2px;
                           outline-color: ButtonText;
                           right: -2px;
                           top: -2px;
                         }
-                        &:active > * {
+                        &:active > span {
                           left: 0px;
                           position: relative;
                           top: 0px;
@@ -5161,7 +5225,7 @@ LoadedCheerio {
                           background-color: #f4f4f4;
                           color: #11599c;
                         }
-                        @media screen and (-ms-high-contrast: active), (forced-colors: active){&:hover {
+                        @media screen and (-ms-high-contrast: active), screen and (forced-colors: active){&:hover {
                           border-color: Highlight;
                           color: Highlight;
                         }
@@ -5407,6 +5471,10 @@ LoadedCheerio {
                             font-size: 1rem;
                             font-weight: 400;
                             height: 1.875rem;
+                            margin-bottom: 0px;
+                            margin-left: 0px;
+                            margin-right: 0px;
+                            margin-top: 0px;
                             outline: transparent;
                             padding-bottom: 0;
                             padding-left: 4px;
@@ -5435,14 +5503,14 @@ LoadedCheerio {
                             top: -3px;
                             z-index: 1;
                           }
-                          @media screen and (-ms-high-contrast: active), (forced-colors: active){.ms-Fabric--isFocusVisible &:focus:after {
+                          @media screen and (-ms-high-contrast: active), screen and (forced-colors: active){.ms-Fabric--isFocusVisible &:focus:after {
                             bottom: -2px;
                             left: -2px;
                             outline-color: ButtonText;
                             right: -2px;
                             top: -2px;
                           }
-                          &:active > * {
+                          &:active > span {
                             left: 0px;
                             position: relative;
                             top: 0px;
@@ -5451,7 +5519,7 @@ LoadedCheerio {
                             background-color: #f4f4f4;
                             color: #11599c;
                           }
-                          @media screen and (-ms-high-contrast: active), (forced-colors: active){&:hover {
+                          @media screen and (-ms-high-contrast: active), screen and (forced-colors: active){&:hover {
                             border-color: Highlight;
                             color: Highlight;
                           }
