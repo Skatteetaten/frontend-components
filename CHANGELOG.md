@@ -1,3 +1,8 @@
+### **v.6.0.0 - November 2022**
+
+- Upgraded dependencies: @fluentui/react, i18next, react-i18next, typescript
+- Add children prop explicitly for improved compatibility with React 18
+
 ### **v.5.1.0 - 8 September 2022**
 
 - Dialog: new variant with waiting dialog.
