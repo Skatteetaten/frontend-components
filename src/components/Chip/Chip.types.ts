@@ -8,7 +8,6 @@ export enum ChipType {
 }
 
 export interface ChipProps extends React.HTMLAttributes<HTMLDivElement> {
-  children?: ReactNode;
   /** Bruksområde som avgir hvilken farge chip-en får */
   type?: ChipType;
   /** Størrelse på Chip */
@@ -17,4 +16,5 @@ export interface ChipProps extends React.HTMLAttributes<HTMLDivElement> {
   ariaLabel?: string;
   /** Overstyring av stiler */
   className?: string;
+  children?: ReactNode;
 }

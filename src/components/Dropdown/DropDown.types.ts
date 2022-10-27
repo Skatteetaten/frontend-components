@@ -4,7 +4,6 @@ import { CalloutProps } from '../Callout/Callout.types';
 import { ReactNode } from 'react';
 
 export interface DropdownProps extends IDropdownProps {
-  children?: ReactNode;
   /** Hjelpetekst */
   help?: string | JSX.Element;
   /** Størrelse på inputfelt som skal benyttes */
@@ -28,6 +27,7 @@ export interface DropdownProps extends IDropdownProps {
   readOnly?: boolean;
   /** Om feltet er obligatorisk og skal markeres med stjerne (*) */
   requiredWithMark?: boolean;
+  children?: ReactNode;
 }
 
 export interface DropdownState {

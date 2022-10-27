@@ -5,10 +5,10 @@ import { Row } from './Row';
 import { ReactNode } from 'react';
 
 export interface GridProps {
-  children?: ReactNode;
   className?: string;
   tag?: string;
   padding?: string;
+  children?: ReactNode;
 }
 
 /*

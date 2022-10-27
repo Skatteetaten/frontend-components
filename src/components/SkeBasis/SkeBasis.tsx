@@ -10,11 +10,11 @@ import * as React from 'react';
 import { Fonts, SkeIcons, AliasIcons, Palette, PaletteProps } from '../utils';
 
 export interface SkeBasisProps extends IFabricProps {
-  children?: React.ReactNode;
   palette?: object;
   fonts?: object;
   icons?: Array<IIconSubset>;
   brand?: string;
+  children?: React.ReactNode;
 }
 
 interface SkeBasisState {

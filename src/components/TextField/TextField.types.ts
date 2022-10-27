@@ -3,7 +3,6 @@ import { calloutState, LabelWithCalloutProps } from '../LabelWithCallout';
 import { ReactNode } from 'react';
 
 export interface TextFieldProps extends IMaskedTextFieldProps {
-  children?: ReactNode;
   /** Benyttes når teksten for et readOnly tekstfelt skal fremheves  */
   boldText?: boolean;
   /** Bestemmer om hjelptekst/varseltekst skal legge seg mellom label og tekstfelt eller flytende over innhold */
@@ -46,4 +45,5 @@ export interface TextFieldProps extends IMaskedTextFieldProps {
     oldCalloutState: calloutState,
     newCalloutState: calloutState
   ) => void;
+  children?: ReactNode;
 }

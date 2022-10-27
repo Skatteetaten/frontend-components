@@ -17,7 +17,6 @@ export enum CardBorder {
 }
 
 export interface CardProps extends React.HTMLAttributes<HTMLDivElement> {
-  children?: React.ReactNode;
   /** Teksten som vises i kortet */
   title?: string;
   /** tagName for kort-tittel */
@@ -60,6 +59,7 @@ export interface CardProps extends React.HTMLAttributes<HTMLDivElement> {
   ariaLabel?: string;
   /** Button type (ex. submit, reset, button). Default is 'button' */
   buttonType?: 'button' | 'submit' | 'reset';
+  children?: React.ReactNode;
 }
 
 export interface CardState {

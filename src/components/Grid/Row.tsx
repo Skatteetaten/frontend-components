@@ -2,13 +2,13 @@ import * as React from 'react';
 import { getClassNames } from './Grid.classNames';
 
 export interface RowProps {
-  children?: React.ReactNode;
   rowSpacing?: string;
   rowInset?: boolean;
   centered?: boolean;
   className?: string;
   tag?: string;
   padding?: string;
+  children?: React.ReactNode;
 }
 
 export class Row extends React.Component<RowProps, {}> {

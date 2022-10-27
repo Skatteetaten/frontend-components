@@ -7,7 +7,6 @@ export interface IRadioButtonGroupOptions extends IChoiceGroupOption {
 }
 
 export interface RadioButtonGroupProps extends IChoiceGroupProps {
-  children?: ReactNode;
   calloutFloating?: boolean;
   /** CSS class */
   className?: string;
@@ -35,4 +34,5 @@ export interface RadioButtonGroupProps extends IChoiceGroupProps {
   warning?: JSX.Element | string;
   /** Om feltet er obligatorisk og skal markeres med stjerne (*) */
   requiredWithMark?: boolean;
+  children?: ReactNode;
 }

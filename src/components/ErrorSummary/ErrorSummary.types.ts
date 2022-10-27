@@ -1,3 +1,5 @@
+import { ReactNode } from 'react';
+
 export interface ErrorSummaryProps {
   /** Id */
   id?: string;
@@ -13,4 +15,5 @@ export interface ErrorSummaryProps {
   errors?: { id: string; error: string }[];
   /** Egendefinert funksjon som kjører istedenfor scrollToId */
   onClick?: (id: string) => void;
+  children?: ReactNode;
 }

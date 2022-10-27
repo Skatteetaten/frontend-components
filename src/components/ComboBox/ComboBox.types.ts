@@ -3,7 +3,6 @@ import { calloutState, LabelWithCalloutProps } from '../LabelWithCallout';
 import { ReactNode } from 'react';
 
 export interface ComboBoxProps extends IComboBoxProps {
-  children?: ReactNode;
   /** Egendefinert feilmelding */
   errorMessage?: IComboBoxProps['errorMessage'];
   /** Hjelpetekst */
@@ -27,4 +26,5 @@ export interface ComboBoxProps extends IComboBoxProps {
   readOnly?: boolean;
   /** Om feltet er obligatorisk og skal markeres med stjerne (*) */
   requiredWithMark?: boolean;
+  children?: ReactNode;
 }

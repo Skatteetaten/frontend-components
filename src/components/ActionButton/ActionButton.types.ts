@@ -2,7 +2,6 @@ import { ButtonProps } from '../Button';
 import { ReactNode } from 'react';
 
 export interface ActionButtonProps extends ButtonProps {
-  children?: ReactNode;
   /** Ikon som skal vises foran lenketeksten */
   icon?: string;
   /** Ikon størrelse, to tilgjengelige størrelser */
@@ -14,4 +13,5 @@ export interface ActionButtonProps extends ButtonProps {
   /** Om knappen skal ha strek under */
   border?: boolean;
   ariaLabel?: string;
+  children?: ReactNode;
 }

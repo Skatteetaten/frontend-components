@@ -2,7 +2,6 @@ import { LinkProps } from '../Link/Link.types';
 import * as React from 'react';
 
 export interface TopStripeProps {
-  children?: JSX.Element | Array<JSX.Element | null | false>;
   className?: string;
   /** @ignore */
   open?: number;
@@ -15,6 +14,7 @@ export interface TopStripeProps {
    * @default '100%''
    */
   contentWidth?: string;
+  children?: JSX.Element | Array<JSX.Element | null | false>;
 }
 
 export interface TopStripeButtonProps

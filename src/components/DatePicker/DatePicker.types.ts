@@ -5,7 +5,6 @@ import { CalloutProps } from '../Callout/Callout.types';
 import { ReactNode } from 'react';
 
 export interface DatePickerProps extends IDatePickerProps {
-  children?: ReactNode;
   /** @ignore */
   borderless?: IDatePickerProps['borderless'];
   /** Bestemmer om hjelptekst/varseltekst skal legge seg mellom label og tekstfelt eller flytende over innhold */
@@ -44,4 +43,5 @@ export interface DatePickerProps extends IDatePickerProps {
 
   /** @ignore */
   underlined?: IDatePickerProps['underlined'];
+  children?: ReactNode;
 }
