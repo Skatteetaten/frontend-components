@@ -2,6 +2,11 @@
 
 - Upgraded dependencies: @fluentui/react, i18next, react-i18next, typescript
 - Add children prop explicitly for improved compatibility with React 18
+- Moment: utfasing av moment som dependency
+- Deprecating komponenter:
+  - Designtokens og SkeBasis
+  - Button, ActionButton, IconButton og ButtonLink
+  - Icon
 
 ### **v.5.1.0 - 8 September 2022**
 

@@ -3,7 +3,8 @@ import classnames from 'classnames';
 import { getClassNames } from './ButtonLink.classNames';
 import { ButtonLinkProps } from './ButtonLink.types';
 
-/*
+/**
+ * @deprecated Komponenten er deprecated
  * visibleName ButtonLink (Knappelenke)
  */
 export const ButtonLink: React.FC<ButtonLinkProps> = (props) => {

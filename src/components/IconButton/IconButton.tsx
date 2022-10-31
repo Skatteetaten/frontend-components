@@ -4,8 +4,9 @@ import { IconButton as FabricIconButton } from '@fluentui/react';
 import { getClassNames } from './IconButton.classNames';
 import { IconButtonProps } from './IconButton.types';
 
-/*
- * visibleName IconButton (Ikonknapp)
+/**
+ * @deprecated Komponenten er deprecated
+ * visibleName IconButton (IkonKnapp)
  */
 export const IconButton: React.FC<IconButtonProps> = (props) => {
   const { icon, className, ...rest } = props;
