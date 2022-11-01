@@ -21,8 +21,7 @@
 <thead><tr><th>Tidligere Prop</th><th>Alternativ</th></tr></thead>
 <tbody>
 <tr>
-
-<td> 'componentRef' </td>
+<td>'componentRef'</td>
 <td>
 
 'ref'
@@ -31,7 +30,7 @@ Alle komponentene våre bruker forwardRef. For ikon-komponent sendes ref til &lt
 </td>
 </tr>
 <tr>
-<td> 'theme', 'styles', 'imageErrorAs', 'imageProps' </td>
+<td>'theme', 'styles', 'imageErrorAs', 'imageProps'</td>
 <td>
 
 Fluent-ui spesifikke props som er faset ut. Bruk className for å tilpasse komponenten.
@@ -40,7 +39,6 @@ Dvs at denne koden ikke skal brukes lenger:
 
 </td>
 </tr>
-
 </tbody>
 </table>
 </div>
