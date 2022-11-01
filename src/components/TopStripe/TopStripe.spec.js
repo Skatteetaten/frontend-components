@@ -1,7 +1,7 @@
 import React from 'react';
 import { mount } from 'enzyme';
 import { matches } from '../utils/test-utils';
-import { TopStripe, TopStripeUser, LanguagePicker } from '.';
+import { TopStripe, TopStripeUser, LanguagePicker, TopStripeMenu } from '.';
 
 describe('TopStripe komponent', () => {
   it('matcher snapshot ', () => {
@@ -50,6 +50,40 @@ describe('TopStripe komponent', () => {
       expect(topStripeUser.exists()).toEqual(showOnMobile);
     }
   );
+
+  it('har kun ett åpent meny-element om gangen', () => {
+    const menu1Content = 'menu 1 content';
+    const menu2Content = 'menu 2 content';
+    const wrapper = mount(
+      <TopStripe>
+        <TopStripeMenu
+          showOnMobile={true}
+          contentIsMenu={false}
+          title={'menu 1'}
+        >
+          <div>{menu1Content}</div>
+        </TopStripeMenu>
+        <TopStripeMenu
+          showOnMobile={true}
+          contentIsMenu={false}
+          title={'menu 2'}
+        >
+          <div>{menu2Content}</div>
+        </TopStripeMenu>
+      </TopStripe>
+    );
+
+    expect(wrapper.contains('button'));
+    const menu1 = wrapper.find('button').first();
+    const menu2 = wrapper.find('button').last();
+
+    menu1.simulate('click');
+    expect(wrapper.find({ children: menu1Content }).exists()).toBeTruthy();
+    expect(wrapper.find({ children: menu2Content }).exists()).toBeFalsy();
+    menu2.simulate('click');
+    expect(wrapper.find({ children: menu1Content }).exists()).toBeFalsy();
+    expect(wrapper.find({ children: menu2Content }).exists()).toBeTruthy();
+  });
 
   describe('LanguagePicker', () => {
     it('Hvis ikke showSami sendes med, vises forventede valg i menyen by default', () => {
