@@ -6,7 +6,7 @@ import { ActionButtonProps } from './ActionButton.types';
 
 /**
  * @deprecated Komponenten er deprecated
- * visibleName ActionButton
+ * visibleName ActionButton (Aksjonsknapp)
  */
 export class ActionButton extends React.PureComponent<ActionButtonProps, {}> {
   static NORMAL = 'large';

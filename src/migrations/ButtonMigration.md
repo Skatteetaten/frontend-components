@@ -18,7 +18,7 @@ For full API-dokumentasjon, vennligst se på [button komponent](https://breakdan
 <div className="migration-tabell">
 <table>
 <caption>Liste over endringer i komponent-api'et</caption>
-<thead><tr><td>Tidligere Prop</td><td>Alternativ</td></tr></thead>
+<thead><tr><th>Tidligere Prop</th><th>Alternativ</th></tr></thead>
 <tbody>
 <tr>
 

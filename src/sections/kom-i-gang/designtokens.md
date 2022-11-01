@@ -34,7 +34,7 @@ import '@skatteetaten/ds-core-designtokens/sizes.css';
 <div className="migration-tabell">
 <table>
 <caption>Liste over endringer i komponent-api'et</caption>
-<thead><tr><td>Tidligere designtoken</td><td>Alternativ</td></tr></thead>
+<thead><tr><th>Tidligere designtoken</th><th>Alternativ</th></tr></thead>
 <tbody>
 <tr>
 
