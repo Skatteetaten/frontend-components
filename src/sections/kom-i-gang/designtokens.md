@@ -1,15 +1,20 @@
+```js noeditor
+import { Icon } from '@skatteetaten/frontend-components/Icon';
+
 <span className="deprecatedLabel">
-<i className="deprecatedLabelIcon" data-icon-name="Error" aria-hidden="true"></i>
-<span>Deprecated</span>
-</span>
+  <Icon iconName="Error" />
+  <span>Deprecated</span>
+</span>;
+```
 
 Designtokens er ikke lenger eksponert som en del av denne pakken.
 Vennligst bruk @skatteetaten/ds-core-designtokens
 
 Designtokens leveres ferdig transpilert i .css og .json.
 Man kan velge å importere alle ressursene ved å legge en css import statement til index, eller ved å importere de ulike css ressursene hver for seg.
-Vennligst se på [ds-core-designtokens dokumentasjon](https://breakdance.github.io/breakdance/) for import og anbefalinger.
-( //TODO FRONT-917 Lenke til EPI dok)
+
+<!-- Vennligst se på [ds-core-designtokens dokumentasjon](https://breakdance.github.io/breakdance/) for import og anbefalinger.
+( //TODO FRONT-917 Lenke til EPI dok) -->
 
 ### Endringer i funksjonalitet:
 

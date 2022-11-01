@@ -1,4 +1,4 @@
-**Fra Designsystem-legacy v5 til Designsystemet v0.1.0**
+**Fra @skatteetaten/frontend-components v5 (designsystem-legacy) til Designsystemet v0.1.0**
 
 ### Endringer i funksjonalitet:
 
@@ -12,8 +12,8 @@
 
 ### Endringer i API:
 
-For full API-dokumentasjon, vennligst se på [button komponent](https://breakdance.github.io/breakdance/) på dokumentasjonssiden til designsystemet.
-( //TODO FRONT-917 Lenke til EPI dok)
+<!--For full API-dokumentasjon, vennligst se på [button komponent](https://breakdance.github.io/breakdance/) på dokumentasjonssiden til designsystemet.
+( //TODO FRONT-917 Lenke til EPI dok)-->
 
 <div className="migration-tabell">
 <table>
