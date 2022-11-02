@@ -4,6 +4,10 @@ import * as React from 'react';
 import { getClassNames } from './ActionButton.classNames';
 import { ActionButtonProps } from './ActionButton.types';
 
+/**
+ * @deprecated Komponenten er deprecated
+ * visibleName ActionButton (Aksjonsknapp)
+ */
 export class ActionButton extends React.PureComponent<ActionButtonProps, {}> {
   static NORMAL = 'large';
   static LARGE = 'xlarge';

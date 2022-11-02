@@ -18,7 +18,7 @@ export const DEFAULTPARSEDATEFROMSTRING = (date: string): Date | null => {
       return formattedDate;
     }
   } catch (error) {
-    console.log(error);
+    return null;
   }
   return null;
 };

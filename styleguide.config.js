@@ -51,7 +51,7 @@ module.exports = {
           content: 'src/sections/kom-i-gang/utviklere.md',
         },
         {
-          name: 'Designtokens',
+          name: 'Designtokens (deprecated)',
           content: 'src/sections/kom-i-gang/designtokens.md',
         },
         {

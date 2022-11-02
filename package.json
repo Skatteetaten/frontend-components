@@ -119,6 +119,7 @@
     "build:designtokens:cjs": "cpx \"./src/components/utils/designtokens/**/*\" ./lib/cjs/utils/designtokens",
     "build:copy-files": "node scripts/copyBuildFiles.js",
     "build:copy-files-external": "node scripts/copyBuildFiles.js EXTERNAL",
+    "generate:migrationGuidesIndexFile": "node scripts/createMigrationGuidesIndexFile.js",
     "build:esm": "BABEL_ENV=esm babel ./src/components --out-dir lib --extensions '.ts,.tsx' ",
     "build:cjs": "BABEL_ENV=cjs babel ./src/components --out-dir lib/cjs --extensions '.ts,.tsx' ",
     "build:umd": "run-s build:umd-dev build:umd-prod",
@@ -141,8 +142,7 @@
     "circularDeps": "node scripts/checkCircularDeps.js",
     "postversion": "npm run build:copy-files",
     "clean": "rimraf coverage lib docs *.tgz",
-    "deploy:gh-pages": "gh-pages -d docs -p 0 -r https://github.com/Skatteetaten/frontend-components.git",
-    "eject": "react-scripts eject"
+    "deploy:gh-pages": "gh-pages -d docs -p 0 -r https://github.com/Skatteetaten/frontend-components.git"
   },
   "engines": {
     "node": ">=16.0.0",

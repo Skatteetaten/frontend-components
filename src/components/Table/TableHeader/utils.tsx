@@ -16,7 +16,7 @@ export const getAriaLabelForTheadCell = (
   fieldName: string,
   isSorted: boolean,
   isSortedAscending: boolean,
-  t: TFunction<Array<string>>
+  t: TFunction
 ) => {
   let ariaLabel = fieldName;
   if (typeof name === 'string') {

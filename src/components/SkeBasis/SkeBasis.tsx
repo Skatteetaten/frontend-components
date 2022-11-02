@@ -43,7 +43,8 @@ export const BrandContext = React.createContext(
   brands.SKE //default brand
 );
 
-/*
+/**
+ * @deprecated Komponenten er deprecated
  * visibleName SkeBasis (Basiskomponent)
  */
 export class SkeBasis extends React.PureComponent<
