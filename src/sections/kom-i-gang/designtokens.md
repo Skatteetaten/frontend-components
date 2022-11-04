@@ -42,12 +42,13 @@ import '@skatteetaten/ds-core-designtokens/sizes.css';
 <thead><tr><th>Tidligere designtoken</th><th>Alternativ</th></tr></thead>
 <tbody>
 <tr>
-<td>Breakpoints</td>
+
+<td> Breakpoints </td>
 <td>
 
 Før:
 
-```static
+```js static
 import designtokenBreakpoints from '/utils/designtokens/_breakpoints.json';
 ```
 
@@ -70,8 +71,7 @@ import designtokenBreakpoints from '@skatteetaten/ds-core-designtokens/_breakpoi
 
 </td>
 </tr>
-<tr>
-<td> Font </td>
+<tr><td> Font </td>
 <td>
 
 Før:
@@ -154,8 +154,7 @@ import '@skatteetaten/ds-core-designtokens/sizes.css';
 
 </td>
 </tr>
-<tr>
-<td>Palette</td>
+<tr><td> Palette </td>
 <td>
 
 **Mapping av nye navn:**
