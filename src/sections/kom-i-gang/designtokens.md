@@ -47,7 +47,7 @@ import '@skatteetaten/ds-core-designtokens/sizes.css';
 
 Før:
 
-```static
+```javascript static
 import designtokenBreakpoints from '/utils/designtokens/_breakpoints.json';
 ```
 
@@ -76,7 +76,7 @@ import designtokenBreakpoints from '@skatteetaten/ds-core-designtokens/_breakpoi
 
 Før:
 
-```static
+```javascript static
 import designtokenFontSizes from '/utils/designtokens/_fontSizes.json';
 ```
 
