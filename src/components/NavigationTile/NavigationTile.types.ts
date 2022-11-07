@@ -1,4 +1,5 @@
 import { ContentProps } from './NavigationContent';
+import { ReactNode } from 'react';
 
 export interface NavigationTileProps {
   /**
@@ -22,4 +23,5 @@ export interface NavigationTileProps {
   /** Hvis NavigationTile brukes til noe utover det primære bruksområde (som er navigasjon videre nedover i sidestrukturen), bør det vurderes
    * om hver tile bør rendres som en knapp. Se avsnitt om universell utforming under.*/
   useButtons?: boolean;
+  children?: ReactNode;
 }

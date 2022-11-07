@@ -59,6 +59,7 @@ export interface CardProps extends React.HTMLAttributes<HTMLDivElement> {
   ariaLabel?: string;
   /** Button type (ex. submit, reset, button). Default is 'button' */
   buttonType?: 'button' | 'submit' | 'reset';
+  children?: React.ReactNode;
 }
 
 export interface CardState {

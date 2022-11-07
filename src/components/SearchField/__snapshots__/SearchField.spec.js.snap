@@ -40,13 +40,13 @@ exports[`SearchField komponent matcher snapshot 1`] = `
           padding-right: 0;
           padding-top: 1px;
         }
-        @media screen and (-ms-high-contrast: active), (forced-colors: active){& {
+        @media screen and (-ms-high-contrast: active), screen and (forced-colors: active){& {
           border-color: WindowText;
         }
         &:hover {
           border-color: rgba(0, 0, 0, 0.95);
         }
-        @media screen and (-ms-high-contrast: active), (forced-colors: active){&:hover {
+        @media screen and (-ms-high-contrast: active), screen and (forced-colors: active){&:hover {
           border-color: Highlight;
         }
         &:hover .ms-SearchBox-iconContainer {

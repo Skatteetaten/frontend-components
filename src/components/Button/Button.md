@@ -42,15 +42,18 @@ import { Link } from '@skatteetaten/frontend-components/Link';
 
   <ul>
     <li>
-      Bruk én linje med tekst inne i knappen. For mye tekst kan virke
-      forvirrende for skjermlesere.
+      <p>
+        Bruk én linje med tekst inne i knappen. For mye tekst kan virke
+        forvirrende for skjermlesere.
+      </p>
     </li>
     <li>
-      Ikke bruk knappen for å navigere videre til et annet område.
-      <br />
-      Til det skal <Link path="/#buttonlink" text="ButtonLink" />
-      -komponenten benyttes, og da <i>kun</i> hvis man er helt sikker på at man ønsker
-      å ha en lenke som ser ut som en knapp.
+      <p>
+        Ikke bruk knappen for å navigere videre til et annet område. Til det
+        skal <Link path="/#buttonlink" text="ButtonLink" />
+        -komponenten benyttes, og da <i>kun</i> hvis man er helt sikker på at man
+        ønsker å ha en lenke som ser ut som en knapp.
+      </p>
     </li>
     <li>Ikke putt et ikon inne i selve knappen. Bruk heller IconButton.</li>
     <li>
@@ -102,33 +105,33 @@ import { AccordionItem } from '@skatteetaten/frontend-components/Accordion/Accor
     <li>
       For ekstra fremtrendende hovedhandlinger der vi typisk oppfordrer til
       handling, bruker vi hovedhandlingsknappen (call-to-action):
-      <br /> <br />
-      <Button buttonStyle="callToAction">Send inn skattemeldingen</Button>
-      <br /> <br />
+      <div style={{ marginTop: '0.5rem', marginBottom: '1rem' }}>
+        <Button buttonStyle="callToAction">Send inn skattemeldingen</Button>
+      </div>
     </li>
     <li>
       Vi bruker primær- og sekundærknappene til viktige funksjoner på siden,
       f.eks. knapperader i bunnen av skjema.
-      <br /> <br />
-      <Button buttonStyle="primary">Send inn</Button>{' '}
-      <Button buttonStyle="secondary">Avbryt</Button>
-      <br /> <br />
+      <div style={{ marginTop: '0.5rem', marginBottom: '1rem' }}>
+        <Button buttonStyle="primary">Send inn</Button>{' '}
+        <Button buttonStyle="secondary">Avbryt</Button>
+      </div>
     </li>
 
     <li>
       Vi bruker aksjonsknapper (ActionButton) til mindre fremtredende handlinger
       på siden:
-      <br />
-      <ActionButton border icon="addOutline">
-        Legg til rad
-      </ActionButton>{' '}
-      <ActionButton border icon="edit">
-        Rediger
-      </ActionButton>
-      <ActionButton border icon="print">
-        Skriv ut
-      </ActionButton>
-      <br /> <br />
+      <div style={{ marginTop: '0.5rem', marginBottom: '1rem' }}>
+        <ActionButton border icon="addOutline">
+          Legg til rad
+        </ActionButton>{' '}
+        <ActionButton border icon="edit">
+          Rediger
+        </ActionButton>
+        <ActionButton border icon="print">
+          Skriv ut
+        </ActionButton>
+      </div>
     </li>
   </ol>
 
@@ -147,15 +150,18 @@ import { AccordionItem } from '@skatteetaten/frontend-components/Accordion/Accor
       <div className="dodont">
         <div className="do">
           <p class="title">Gjør slik:</p>
-          <Button buttonStyle="primary">Send inn</Button>
-          <Button className="ml8 pa8-imp" buttonStyle="secondary">
-            Avbryt
-          </Button>
-          <br />
-          <Button buttonStyle="primary">Send inn</Button>
-          <Button className="ml8 pa8-imp" buttonStyle="secondarySimple">
-            Avbryt
-          </Button>
+          <div>
+            <Button buttonStyle="primary">Send inn</Button>
+            <Button className="ml8 pa8-imp" buttonStyle="secondary">
+              Avbryt
+            </Button>
+          </div>
+          <div>
+            <Button buttonStyle="primary">Send inn</Button>
+            <Button className="ml8 pa8-imp" buttonStyle="secondarySimple">
+              Avbryt
+            </Button>
+          </div>
         </div>
         <div className="dont">
           <p class="title">Ikke gjør slik:</p>

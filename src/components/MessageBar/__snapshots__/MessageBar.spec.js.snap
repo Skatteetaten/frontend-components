@@ -27,7 +27,7 @@ exports[`MessageBar komponent matcher snapshot 1`] = `
         & .ms-Link:hover {
           color: #004578;
         }
-        @media screen and (-ms-high-contrast: active), (forced-colors: active){& {
+        @media screen and (-ms-high-contrast: active), screen and (forced-colors: active){& {
           -ms-high-contrast-adjust: none;
           background: Window;
           border: 1px solid WindowText;
@@ -164,7 +164,7 @@ exports[`MessageBar komponent matcher snapshot 1`] = `
                 text-rendering: auto;
                 transform: translate(0, 0);
               }
-              @media screen and (-ms-high-contrast: active), (forced-colors: active){& {
+              @media screen and (-ms-high-contrast: active), screen and (forced-colors: active){& {
                 -ms-high-contrast-adjust: none;
                 color: WindowText;
                 forced-color-adjust: none;
@@ -192,7 +192,7 @@ exports[`MessageBar komponent matcher snapshot 1`] = `
               margin-top: 8px;
               min-width: 0px;
             }
-            @media screen and (-ms-high-contrast: active), (forced-colors: active){& {
+            @media screen and (-ms-high-contrast: active), screen and (forced-colors: active){& {
               -ms-high-contrast-adjust: none;
               forced-color-adjust: none;
             }

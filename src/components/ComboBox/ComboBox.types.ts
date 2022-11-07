@@ -1,5 +1,6 @@
 import { IComboBoxProps, ICalloutProps } from '@fluentui/react';
 import { calloutState, LabelWithCalloutProps } from '../LabelWithCallout';
+import { ReactNode } from 'react';
 
 export interface ComboBoxProps extends IComboBoxProps {
   /** Egendefinert feilmelding */
@@ -25,4 +26,5 @@ export interface ComboBoxProps extends IComboBoxProps {
   readOnly?: boolean;
   /** Om feltet er obligatorisk og skal markeres med stjerne (*) */
   requiredWithMark?: boolean;
+  children?: ReactNode;
 }

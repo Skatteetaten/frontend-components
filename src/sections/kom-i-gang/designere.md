@@ -64,24 +64,3 @@ import { AccordionItem } from '@skatteetaten/frontend-components/Accordion/Accor
   </Accordion>
 </div>;
 ```
-
-### Axure-komponenter også tilgjengelig
-
-Komponentene finnes også i Axure-versjon. Etter at du har fått tilgang til dem vil de automatisk dukke opp i widget-menyen din i Axure. Du kan også bla i komponentene:
-
-```js noeditor
-import { OpenClose } from '@skatteetaten/frontend-components/OpenClose';
-import { Link } from '@skatteetaten/frontend-components/Link';
-
-<div>
-  <p>
-    <Link
-      path={'https://w2ble0.axshare.com'}
-      text={'Gå til Axure-komponenter'}
-      icon={'ArrowForward'}
-      placement="before"
-    />
-  </p>
-  <br />
-</div>;
-```

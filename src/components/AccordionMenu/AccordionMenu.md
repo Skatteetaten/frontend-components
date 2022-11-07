@@ -29,6 +29,10 @@ const removeMargin = {
   margin: '0',
 };
 
+const marginTopStyle = {
+  marginTop: '1rem',
+};
+
 const ulStyle = {
   padding: 0,
   margin: 0,
@@ -41,7 +45,8 @@ const centerAlignStyle = {
 
 const timeStampStyle = {
   paddingLeft: 26,
-  marginTop: '-10px',
+  marginTop: '0.3rem',
+  marginBottom: '1rem',
 };
 
 <div style={{ maxWidth: '400px' }}>
@@ -64,9 +69,7 @@ const timeStampStyle = {
       <span>
         <strong>Kontaktopplysninger</strong>
       </span>
-      <br />
-      <br />
-      <dl style={removeMargin}>
+      <dl style={marginTopStyle}>
         <dt style={dlStyle}>Navn</dt>
         <dd style={dlStyle}>Ola Nordmann</dd>
         <dt style={dlStyle}>Adresse</dt>
@@ -144,9 +147,7 @@ const timeStampStyle = {
             text="Vurder omberegning engangsavgift"
             path={'#accordionmenu'}
           />
-          <br /> <br />
           <div style={timeStampStyle}>Sist endret: 16.07.2019</div>
-          <br />
         </li>
         <li>
           <Link
@@ -156,9 +157,7 @@ const timeStampStyle = {
             text="Refusjon engangsavgift"
             path={'#accordionmenu'}
           />
-          <br /> <br />
           <div style={timeStampStyle}>Sist endret: 22.05.2019</div>
-          <br />
         </li>
         <li>
           <Link
@@ -168,8 +167,6 @@ const timeStampStyle = {
             text="Refusjon engangsavgift"
             path={'#accordionmenu'}
           />
-          <br />
-          <br />
           <div style={timeStampStyle}>Sist endret: 14.05.2019</div>
         </li>
       </ul>

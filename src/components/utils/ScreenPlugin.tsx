@@ -1,7 +1,35 @@
 import { useEffect, useState } from 'react';
 
-// @ts-ignore TODO
-const getValuesForComparison = (sizeObj) => ({
+type ScreenSizesWidth = {
+  sm: number;
+  md: number;
+  lg: number;
+  xl: number;
+  xxl: number;
+};
+type ScreenSizesSet = {
+  sm: boolean;
+  md: boolean;
+  lg: boolean;
+  xl: boolean;
+  xxl: boolean;
+  xxxl?: boolean;
+};
+type ScreenSizes = {
+  width: number;
+  height: number;
+  sizes?: ScreenSizesWidth;
+  lt: ScreenSizesSet;
+  gt: ScreenSizesSet;
+  sm: boolean;
+  md: boolean;
+  lg: boolean;
+  xl: boolean;
+  xxl?: boolean;
+  xxxl?: boolean;
+};
+
+const getValuesForComparison = (sizeObj: ScreenSizes) => ({
   gt: sizeObj.gt,
   lt: sizeObj.lt,
   sm: sizeObj.sm,
@@ -49,12 +77,7 @@ export const UseScreen = () => {
 
   useEffect(() => {
     const getSizes = () => {
-      const newSizes = {
-        gt: {},
-        lt: {},
-        height: 0,
-        width: 0,
-      };
+      const newSizes = {} as ScreenSizes;
       if (window.innerHeight !== size.height) {
         newSizes.height = window.innerHeight;
       }
@@ -66,39 +89,29 @@ export const UseScreen = () => {
       }
 
       const s = size.sizes;
-      // @ts-ignore TODO
-      newSizes.gt.sm = w >= s.sm;
-      // @ts-ignore TODO
-      newSizes.gt.md = w >= s.md;
-      // @ts-ignore TODO
-      newSizes.gt.lg = w >= s.lg;
-      // @ts-ignore TODO
-      newSizes.gt.xl = w >= s.xl;
-      // @ts-ignore TODO
-      newSizes.gt.xxl = w >= s.xxl;
-      // @ts-ignore TODO
-      newSizes.lt.sm = false;
-      // @ts-ignore TODO
-      newSizes.lt.md = w < s.sm;
-      // @ts-ignore TODO
-      newSizes.lt.lg = w < s.md;
-      // @ts-ignore TODO
-      newSizes.lt.xl = w < s.lg;
-      // @ts-ignore TODO
-      newSizes.lt.xxl = w < s.xl;
-      // @ts-ignore TODO
-      newSizes.lt.xxxl = w < s.xxl;
-      // @ts-ignore TODO
+
+      newSizes.gt = {
+        sm: w >= s.sm,
+        md: w >= s.md,
+        lg: w >= s.lg,
+        xl: w >= s.xl,
+        xxl: w >= s.xxl,
+      };
+
+      newSizes.lt = {
+        sm: false,
+        md: w < s.sm,
+        lg: w < s.md,
+        xl: w < s.lg,
+        xxl: w < s.xl,
+        xxxl: w < s.xxl,
+      };
+
       newSizes.sm = !newSizes.gt.sm;
-      // @ts-ignore TODO
       newSizes.md = newSizes.gt.sm && newSizes.lt.lg;
-      // @ts-ignore TODO
       newSizes.lg = newSizes.gt.md && newSizes.lt.xl;
-      // @ts-ignore TODO
       newSizes.xl = newSizes.gt.lg && newSizes.lt.xxl;
-      // @ts-ignore TODO
       newSizes.xxl = newSizes.gt.xl && newSizes.lt.xxxl;
-      // @ts-ignore TODO
       newSizes.xxxl = newSizes.gt.xxl;
 
       const sizeHasChanged =

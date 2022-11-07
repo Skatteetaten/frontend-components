@@ -1,3 +1,23 @@
+### **v.6.0.0 - November 2022**
+
+- Upgraded dependencies: @fluentui/react, i18next, react-i18next, typescript
+- Add children prop explicitly for improved compatibility with React 18
+- Moment: removal of moment as a dependency
+- Deprecating the following components:
+  - Designtokens and SkeBasis
+  - Button, ActionButton, IconButton and ButtonLink
+  - Icon
+
+### **v.5.1.0 - 8 September 2022**
+
+- Dialog: new variant with waiting dialog.
+- Improved code example for single page application pattern.
+- Table: improved font size, alignment and padding in compact table header.
+- FileUploader: fixes an issue with an id that was not set correctly.
+- Link: Invisible links (Skip to content) are now placed further outside view to ensure they wont interfere with other content.
+- Updated moment dependency.
+- Updated docs, tests and other minor improvements.
+
 ### **v.5.0.6 - 27 June 2022**
 
 - SearchField: Fixes an issue where id was not set correctly
@@ -7,7 +27,7 @@
 
 - SearchField: fixes an issue where the search button was not clickable when focused.
 - FileUploader: fixes an issue where aria-describedby was not set correctly with no accepted file formats.
-- Documentation: Fixes an issue with the path where "frontend-components" was missing. Updated examples: Dialog, Modal, RadioButtonGroup, Table (editable rows), and error messages. Updated typography section.
+- Documentation: fixes an issue with the path where "frontend-components" was missing. Updated examples: Dialog, Modal, RadioButtonGroup, Table (editable rows), and error messages. Updated typography section.
 
 ### **v.5.0.4 - 6 April 2022**
 

@@ -1,4 +1,4 @@
-import i18n from 'i18next';
+import i18n, { TOptions } from 'i18next';
 import { initReactI18next } from 'react-i18next';
 import { languages as languageFile } from './languages';
 
@@ -50,6 +50,6 @@ Object.keys(languages).forEach((language) => {
 });
 
 export default i18n;
-export const t = (tekst) => {
-  return i18n.t(tekst);
+export const t = (tekst, options?: TOptions): string | undefined => {
+  return i18n.t(tekst, options);
 };

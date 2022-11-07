@@ -1,10 +1,10 @@
-Designsystemet i Skatteetaten støtter nettlesere som blir brukt av mer enn 2 % på skatteetaten.no. Vi støtter nå følgende nettlesere (oppdatert oktober 2021):
+Designsystemet i Skatteetaten støtter nettlesere som blir brukt av mer enn 2 % på skatteetaten.no. Vi støtter nå følgende nettlesere:
 
-- Chrome (ca. 45,8 %)
-- Safari (ca. 36,1 %)
-- Edge (ca. 9,4 %)
-- Samsung Internet (ca. 4,1 %)
-- Firefox (ca. 2,1 %)
+- Chrome
+- Safari
+- Edge
+- Samsung Internet
+- Firefox
 
 Vi bør ikke uten videre anta at brukerne våre vet hva en nettleser er eller vet hvordan man installerer en. Det er også en mulighet at de ikke kan oppgradere på grunn av plattform eller fordi de bruker en løsning som krever en bestemt nettleser.
 
@@ -13,8 +13,8 @@ import { Accordion } from '@skatteetaten/frontend-components/Accordion';
 import { AccordionItem } from '@skatteetaten/frontend-components/Accordion/AccordionItem';
 import { Link } from '@skatteetaten/frontend-components/Link';
 import { MessageBar } from '@skatteetaten/frontend-components/MessageBar';
-<>
-  <br />
+
+<div style={{ marginTop: '2rem' }}>
   <Accordion>
     <AccordionItem
       toggleContent
@@ -57,5 +57,5 @@ import { MessageBar } from '@skatteetaten/frontend-components/MessageBar';
       </p>
     </AccordionItem>
   </Accordion>
-</>;
+</div>;
 ```

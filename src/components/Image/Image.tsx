@@ -1,7 +1,9 @@
 import * as React from 'react';
 import { Image as FabricImage, IImageProps } from '@fluentui/react';
 
-export interface ImageProps extends IImageProps {}
+export interface ImageProps extends IImageProps {
+  children?: React.ReactNode;
+}
 /*
  * visibleName Image (Bilde)
  */

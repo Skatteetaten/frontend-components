@@ -14,6 +14,7 @@ export interface SkeBasisProps extends IFabricProps {
   fonts?: object;
   icons?: Array<IIconSubset>;
   brand?: string;
+  children?: React.ReactNode;
 }
 
 interface SkeBasisState {
@@ -42,7 +43,8 @@ export const BrandContext = React.createContext(
   brands.SKE //default brand
 );
 
-/*
+/**
+ * @deprecated Komponenten er deprecated
  * visibleName SkeBasis (Basiskomponent)
  */
 export class SkeBasis extends React.PureComponent<

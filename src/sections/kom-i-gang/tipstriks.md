@@ -15,6 +15,10 @@
 ```js
 import { LabelWithCallout } from '@skatteetaten/frontend-components/LabelWithCallout';
 
+const marginTopStyle = {
+  marginTop: '0.5rem',
+};
+
 const date = new Date('2020-08-16');
 var options = {
   year: 'numeric',
@@ -41,21 +45,24 @@ const en_formatted_date = `${new Intl.DateTimeFormat(
 ).format(date)}`;
 
 <div style={{ maxWidth: '400px' }}>
-  <LabelWithCallout
-    label={no_formatted_date}
-    help="Standard måte å skrive norsk dato på. Vi skriver årstallet fullt ut, og to siffer i dag og måned."
-  />
-  <br />
-  <LabelWithCallout
-    label={no_formatted_long_date}
-    help="Hvis du har bedre plass kan du skrive måneden fullt ut. "
-  />
-
-  <br />
-  <LabelWithCallout
-    label={'På engelsk: ' + en_formatted_date}
-    help="For å unngå usikkerhet skriver du datoer ut i sin helhet på engelsk."
-  />
+  <div style={marginTopStyle}>
+    <LabelWithCallout
+      label={no_formatted_date}
+      help="Standard måte å skrive norsk dato på. Vi skriver årstallet fullt ut, og to siffer i dag og måned."
+    />
+  </div>
+  <div style={marginTopStyle}>
+    <LabelWithCallout
+      label={no_formatted_long_date}
+      help="Hvis du har bedre plass kan du skrive måneden fullt ut. "
+    />
+  </div>
+  <div style={marginTopStyle}>
+    <LabelWithCallout
+      label={'På engelsk: ' + en_formatted_date}
+      help="For å unngå usikkerhet skriver du datoer ut i sin helhet på engelsk."
+    />
+  </div>
 </div>;
 ```
 
@@ -89,21 +96,32 @@ const en_formatted_desimal = `${new Intl.NumberFormat('en-GB').format(
   count_persent
 )}`;
 
+const marginTopStyle = {
+  marginTop: '0.5rem',
+};
+
 <div style={{ maxWidth: '400px' }}>
-  <LabelWithCallout
-    label={'Norsk beløp: ' + no_formatted_number + '\u00A0kroner'}
-  />
-  <br />
-  <LabelWithCallout label={'Englesk beløp: NOK\u00A0' + en_formatted_number} />
-  <br />
-  <LabelWithCallout
-    label={'Norsk desimaltall: ' + no_formatted_desimal + '\u00A0%'}
-    help="Vi bruker hardt mellomrom mellom tallet og prosenttegnet"
-  />
-  <br />
-  <LabelWithCallout
-    label={'Englesk desimaltall: ' + en_formatted_desimal + '%'}
-  />
+  <div>
+    <LabelWithCallout
+      label={'Norsk beløp: ' + no_formatted_number + '\u00A0kroner'}
+    />
+  </div>
+  <div style={marginTopStyle}>
+    <LabelWithCallout
+      label={'Englesk beløp: NOK\u00A0' + en_formatted_number}
+    />
+  </div>
+  <div style={marginTopStyle}>
+    <LabelWithCallout
+      label={'Norsk desimaltall: ' + no_formatted_desimal + '\u00A0%'}
+      help="Vi bruker hardt mellomrom mellom tallet og prosenttegnet"
+    />
+  </div>
+  <div style={marginTopStyle}>
+    <LabelWithCallout
+      label={'Englesk desimaltall: ' + en_formatted_desimal + '%'}
+    />
+  </div>
 </div>;
 ```
 
@@ -119,15 +137,22 @@ const rtf = new Intl.RelativeTimeFormat('no', {
   numeric: 'always',
   style: 'long',
 });
+
+const marginTopStyle = {
+  marginTop: '0.5rem',
+};
 <div style={{ maxWidth: '300px' }}>
-  <LabelWithCallout
-    label={rtf.format(-3, 'day')}
-    help={'Tallene skrives alltid med siffer, også 1-10'}
-  />
-  <br />
-  <LabelWithCallout
-    label={rtf.format(3, 'day')}
-    help={'Tallene skrives alltid med siffer, også 1-10'}
-  />
+  <div>
+    <LabelWithCallout
+      label={rtf.format(-3, 'day')}
+      help={'Tallene skrives alltid med siffer, også 1-10'}
+    />
+  </div>
+  <div style={marginTopStyle}>
+    <LabelWithCallout
+      label={rtf.format(3, 'day')}
+      help={'Tallene skrives alltid med siffer, også 1-10'}
+    />
+  </div>
 </div>;
 ```

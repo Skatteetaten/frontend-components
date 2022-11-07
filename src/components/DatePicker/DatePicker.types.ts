@@ -2,6 +2,7 @@ import { IDatePickerProps } from '@fluentui/react';
 import { calloutState, LabelWithCalloutProps } from '../LabelWithCallout';
 
 import { CalloutProps } from '../Callout/Callout.types';
+import { ReactNode } from 'react';
 
 export interface DatePickerProps extends IDatePickerProps {
   /** @ignore */
@@ -42,4 +43,5 @@ export interface DatePickerProps extends IDatePickerProps {
 
   /** @ignore */
   underlined?: IDatePickerProps['underlined'];
+  children?: ReactNode;
 }

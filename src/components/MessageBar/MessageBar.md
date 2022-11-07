@@ -3,23 +3,32 @@
 ```js
 import { MessageBar } from '@skatteetaten/frontend-components/MessageBar';
 
+const marginTopStyle = {
+  marginTop: '1rem',
+};
+
 <>
-  <MessageBar type={MessageBar.Type.success} onDismiss={() => null}>
-    Filen ble lastet opp.
-  </MessageBar>
-  <br />
-  <MessageBar type={MessageBar.Type.warning}>
-    Det finnes feil i kjøretøydata. Sjekk at dette ikke har avgiftsmessige
-    konsekvenser.
-  </MessageBar>
-  <br />
-  <MessageBar type={MessageBar.Type.blocked}>
-    Disse feltene er låst for redigering fordi du har fått et varsel fra oss
-  </MessageBar>
-  <br />
-  <MessageBar type={MessageBar.Type.severeWarning}>
-    Strengt fortrolig (Kode 6)
-  </MessageBar>
+  <div>
+    <MessageBar type={MessageBar.Type.success} onDismiss={() => null}>
+      Filen ble lastet opp.
+    </MessageBar>
+  </div>
+  <div style={marginTopStyle}>
+    <MessageBar type={MessageBar.Type.warning}>
+      Det finnes feil i kjøretøydata. Sjekk at dette ikke har avgiftsmessige
+      konsekvenser.
+    </MessageBar>
+  </div>
+  <div style={marginTopStyle}>
+    <MessageBar type={MessageBar.Type.blocked}>
+      Disse feltene er låst for redigering fordi du har fått et varsel fra oss
+    </MessageBar>
+  </div>
+  <div style={marginTopStyle}>
+    <MessageBar type={MessageBar.Type.severeWarning}>
+      Strengt fortrolig (Kode 6)
+    </MessageBar>
+  </div>
 </>;
 ```
 

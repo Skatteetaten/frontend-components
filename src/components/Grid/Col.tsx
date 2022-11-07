@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { getClassNames } from './Grid.classNames';
+import { ReactNode } from 'react';
 
 export interface ColProps {
   noSpacing?: boolean;
@@ -23,6 +24,7 @@ export interface ColProps {
   xlPull?: number;
   xxlPull?: number;
   xxxlPull?: number;
+  children?: ReactNode;
 }
 
 export class Col extends React.Component<ColProps, {}> {

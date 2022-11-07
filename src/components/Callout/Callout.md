@@ -140,12 +140,6 @@ function closeButton() {
   <h3>Tips</h3>
   <ul>
     <li>
-      En Callout vil teknisk legges til slutt i koden. Dette betyr at eventuelle
-      hjelpeverktøy, som for eksempel skjermlesere, vil lese opp teksten inni
-      Callouten helt til slutt. Av denne grunn skal ikke komponenten brukes i
-      publikumsløsninger.
-    </li>
-    <li>
       Kontroller at det er mulig å åpne/lukke Callout-en både med mus og
       tastatur.
     </li>
