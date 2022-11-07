@@ -40,7 +40,7 @@ Sendes kun videre til &lt;svg&gt;-element når 'title' ikke er oppgitt.
 Se API-dokumentasjon for mer info.
 <br/>Nå:
 
-```javascript
+```javascript static
 import { Icon, InfoSVGpath } from '@skatteetaten/ds-icons';
 
 <Icon svgPath={<path d="M12.5 11a2 2 0 1 0-.09 3.998A />} ariaLabel={'my label'} />
@@ -66,7 +66,7 @@ Se avsnitt "Endringer i navn på ikoner" lengre ned for å migrere til riktig im
 
 Før:
 
-```javascript
+```javascript static
 import { Icon } from '@skatteetaten/frontend-components/Icon';
 
 <Icon iconName={'Info'} />;
@@ -74,7 +74,7 @@ import { Icon } from '@skatteetaten/frontend-components/Icon';
 
 Nå:
 
-```js
+```js static
 import { Icon, InfoSVGpath } from '@skatteetaten/ds-icons';
 
 <Icon svgPath={<InfoSVGpath />} />
@@ -99,7 +99,7 @@ Dvs at denne koden ikke skal brukes lenger:
 
 Før:
 
-```javascript
+```javascript static
 import { Icon } from '@skatteetaten/frontend-components/Icon';
 
 <Icon iconName={'Info'} style={{ fontSize: '24px', color: '#1362ae' }} />;
@@ -107,7 +107,7 @@ import { Icon } from '@skatteetaten/frontend-components/Icon';
 
 Vi må definere en ekstern css stil og bruke className for å tilordne stilen til komponenten:
 
-```js
+```js static
 import { Icon, InfoSVGpath } from '@skatteetaten/ds-icons';
 
 <Icon svgPath={<InfoSVGpath />} className="myCustomIconClassname" />;
@@ -130,24 +130,12 @@ I andre tilfeller må Icon wrappes. </td>
 </table>
 </div>
 
-Endringer i navn på ikoner:
+### Endringer i navn på ikoner
 
-<div className="migration-dllist">
-<dl>
-<dt>Tidligere Prop</dt>
-<dt>Alternativ</dt>
-<dt>OpenInNew</dt>
-<dd>External</dd>
-<dt>OpenInNew</dt>
-<dd>External</dd>
-<dt>OpenInNew</dt>
-<dd>External</dd>
-</dl>
-</div>
-
+<div className="migration-tabell-mini">
 <table>
-<caption>Liste over endringer i komponent-api'et</caption>
-<thead><tr><th>Tidligere Prop</th><th>Alternativ</th></tr></thead>
+<caption>Endringer i navn på ikoner ved overgang til nytt designsystem</caption>
+<thead><tr><th>Legacy</th><th>Nå</th></tr></thead>
 <tbody>
 <tr><td>OpenInNew</td>
 <td>External</td>
@@ -183,13 +171,14 @@ Endringer i navn på ikoner:
 <td>Family (ikke et temaikon lengre)</td>
 </tr>
 
-<tr><td>OpenInNew</td>
-<td>External</td>
+<tr>
+<td>TemaChatbot</td>
+<td>ChatbotDetailed</td>
 </tr>
 
 <tr>
-<td>Dupliser</td>
-<td>Duplicate</td>
+<td>TemaNaringsinntekt</td>
+<td>Naeringsinntekt</td>
 </tr>
 
 <tr>
@@ -197,15 +186,6 @@ Endringer i navn på ikoner:
 <td>De andre temaikonene har samme navn men uten prefiks Tema</td>
 </tr>
 
-<tr>
-<td>TemaChatbot</td>
-<td>ChatbotDetailed</td>
-</tr>
-
-<tr>
-<td>TaOppgave</td>
-<td>AccountBox</td>
-</tr>
-
 </tbody>
 </table>
+</div>

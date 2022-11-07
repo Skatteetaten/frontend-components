@@ -475,17 +475,8 @@ ul.navigation li.underline {
   border-color: #b9e1c8;
 }
 
-.migration-dllist dl + dt {
-  font-weight: bold;
-}
-.migration-dllist dt {
-  float: left;
-  width: 10em;
-}
-.migration-dllist dd {
-  margin-left: 0em;
-}
-
-.migration-dllist dd + dd {
-  margin-left: 5em;
+.migration-tabell-mini caption {
+  color: #808080;
+  font-size: 0.75rem;
+  text-align: left;
 }
