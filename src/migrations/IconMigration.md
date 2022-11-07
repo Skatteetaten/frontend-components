@@ -38,7 +38,8 @@ For ikon-komponent sendes ref til &lt;svg&gt;-elementet</td>
 <td>
 Sendes kun videre til &lt;svg&gt;-element når 'title' ikke er oppgitt.
 Se API-dokumentasjon for mer info.
-<br/>Nå:
+
+Nå:
 
 ```javascript static
 import { Icon, InfoSVGpath } from '@skatteetaten/ds-icons';
@@ -60,7 +61,7 @@ Dette beregnes internt i Icon-komponent.</td>
 <tr>
 <td>'iconName'</td>
 <td>
-Faset ut. Ikonet som tegnes defineres gjennom 'svgPath' prop som tar imot en <path>. Pathene kan importeres fra ds-icons pakke, eller man kan sende egen.
+Faset ut. Ikonet som tegnes defineres gjennom 'svgPath' prop som tar imot en &lt;path&gt;. Pathene kan importeres fra ds-icons pakke, eller man kan sende egen.
 Se (ny) API-dokumentasjon og IconGallery for mer info.
 Se avsnitt "Endringer i navn på ikoner" lengre ned for å migrere til riktig import navn når navnene har endret seg.
 
@@ -135,7 +136,7 @@ I andre tilfeller må Icon wrappes. </td>
 <div className="migration-tabell-mini">
 <table>
 <caption>Endringer i navn på ikoner ved overgang til nytt designsystem</caption>
-<thead><tr><th>Legacy</th><th>Nå</th></tr></thead>
+<thead><tr><th>Før</th><th>Nå</th></tr></thead>
 <tbody>
 <tr><td>OpenInNew</td>
 <td>External</td>
