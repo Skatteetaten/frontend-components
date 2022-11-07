@@ -42,13 +42,12 @@ import '@skatteetaten/ds-core-designtokens/sizes.css';
 <thead><tr><th>Tidligere designtoken</th><th>Alternativ</th></tr></thead>
 <tbody>
 <tr>
-
-<td> Breakpoints </td>
+<td>Breakpoints</td>
 <td>
 
 Før:
 
-```js static
+```javascript static
 import designtokenBreakpoints from '/utils/designtokens/_breakpoints.json';
 ```
 
@@ -76,7 +75,7 @@ import designtokenBreakpoints from '@skatteetaten/ds-core-designtokens/_breakpoi
 
 Før:
 
-```static
+```javascript static
 import designtokenFontSizes from '/utils/designtokens/_fontSizes.json';
 ```
 

@@ -83,7 +83,7 @@ export const TopStripe: React.FC<TopStripeProps> = (props) => {
             className={classnames(styles.topStripeContainer, className)}
             {...rest}
           >
-            {React.Children.map(children, (child: any) =>
+            {React.Children.map(children, (child: any, index) =>
               child ? (
                 <li
                   className={classnames(styles.topStripeElement, {
@@ -93,7 +93,7 @@ export const TopStripe: React.FC<TopStripeProps> = (props) => {
                       !child.props.showOnMobile,
                   })}
                 >
-                  {React.cloneElement(child)}
+                  {React.cloneElement(child, { index })}
                 </li>
               ) : null
             )}

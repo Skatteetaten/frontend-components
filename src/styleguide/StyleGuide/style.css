@@ -466,7 +466,7 @@ ul.navigation li.underline {
   border: 1px solid #e5e5e5;
   padding: 0.5rem;
 }
-.migration-tabell pre.lang-static {
+.migration-tabell pre.lang-javascript {
   background-color: #faf0f3;
   border-color: #f3a7b0;
 }

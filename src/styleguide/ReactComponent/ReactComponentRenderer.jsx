@@ -3,7 +3,7 @@ import Pathline from 'react-styleguidist/lib/client/rsg-components/Pathline';
 import Styled from 'react-styleguidist/lib/client/rsg-components/Styled';
 import Examples from 'react-styleguidist/lib/client/rsg-components/Examples';
 import { UseScreen } from '../../components/utils/ScreenPlugin';
-
+import chunkify from 'react-styleguidist/lib/loaders/utils/chunkify';
 import { MigrationGuides } from '../../migrations';
 
 import { Icon } from '../../components/Icon';
@@ -48,7 +48,7 @@ export function ReactComponentRenderer({
   tabBody,
   filepath,
 }) {
-  const [migrationGuide, setMigrationGuide] = useState('');
+  const [migrationGuideExamples, setMigrationGuideExamples] = useState([]);
 
   useEffect(() => {
     const findMigrationGuideWithName = (element) =>
@@ -63,13 +63,14 @@ export function ReactComponentRenderer({
           return res.text();
         })
         .then((text) => {
-          setMigrationGuide(text);
+          const chunkifiedExamples = chunkify(text);
+          setMigrationGuideExamples(chunkifiedExamples);
         })
         .catch((err) => {
           console.log(err);
         });
     } else {
-      setMigrationGuide('');
+      setMigrationGuideExamples([]);
     }
   }, [name]);
 
@@ -107,17 +108,11 @@ export function ReactComponentRenderer({
         </div>
       )}
       <Tabs>
-        {migrationGuide && (
+        {migrationGuideExamples.length > 0 && (
           <TabItem headerText={'Migration'} itemKey="migration">
             <div style={{ marginTop: '16px' }}>
               <Examples
-                examples={[
-                  {
-                    content: migrationGuide,
-                    settings: { noeditor: true },
-                    type: 'markdown',
-                  },
-                ]}
+                examples={migrationGuideExamples}
                 name={name}
                 exampleMode={exampleMode}
               />
