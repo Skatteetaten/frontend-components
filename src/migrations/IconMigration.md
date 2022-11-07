@@ -18,53 +18,58 @@
 <thead><tr><th>Tidligere Prop</th><th>Alternativ</th></tr></thead>
 <tbody>
 <tr>
-    <td>'componentRef'</td>
-    <td>
-    'ref'<br/>
-    Alle komponentene våre bruker forwardRef.<br/>
-    For ikon-komponent sendes ref til &lt;svg&gt;-elementet
-    </td>
+<td>'componentRef'</td>
+<td>
+'ref'
+
+Alle komponentene våre bruker forwardRef.
+For ikon-komponent sendes ref til &lt;svg&gt;-elementet</td>
+
 </tr>
 
 <tr>
-    <td>'ariaLabel'<br/>
-    'aria-label'</td>
-    <td>
-    Sendes kun videre til &lt;svg&gt;-element når 'title' ikke er oppgitt.
-    Se API-dokumentasjon for mer info.
+<td>
+'ariaLabel'
+
+'aria-label'
+
+</td>
+
+<td>
+Sendes kun videre til &lt;svg&gt;-element når 'title' ikke er oppgitt.
+Se API-dokumentasjon for mer info.
 <br/>Nå:
 
-```js
+```javascript
 import { Icon, InfoSVGpath } from '@skatteetaten/ds-icons';
 
-&lt;Icon svgPath={&lt;path d="M12.5 11a2 2 0 1 0-.09 3.998A /&gt;} ariaLabel={'my label'} /&gt;
+<Icon svgPath={<path d="M12.5 11a2 2 0 1 0-.09 3.998A />} ariaLabel={'my label'} />
 // ELLER
-&lt;Icon svgPath={&lt;InfoSVGpath /&gt;} title={'my title'} /&gt;
+<Icon svgPath={<InfoSVGpath />} title={'my title'} />
 ```
 
-    </td>
-
+</td>
 </tr>
 
 <tr>
-    <td>'aria-*'</td>
-    <td>Andre aria-* attributer som  f.eks aria-hidden og aria-labelledby settes automatisk opp på &lt;svg&gt;-elementet avhengig av andre props.
+<td>'aria-*'</td>
+<td>Andre aria-* attributer som  f.eks aria-hidden og aria-labelledby settes automatisk opp på &lt;svg&gt;-elementet avhengig av andre props.
 Dette beregnes internt i Icon-komponent.</td>
 </tr>
 
 <tr>
-    <td>'iconName'</td>
-    <td>
-    Faset ut. Ikonet som tegnes defineres gjennom 'svgPath' prop som tar imot en <path>. Pathene kan importeres fra ds-icons pakke, eller man kan sende egen.
+<td>'iconName'</td>
+<td>
+Faset ut. Ikonet som tegnes defineres gjennom 'svgPath' prop som tar imot en <path>. Pathene kan importeres fra ds-icons pakke, eller man kan sende egen.
 Se (ny) API-dokumentasjon og IconGallery for mer info.
 Se avsnitt "Endringer i navn på ikoner" lengre ned for å migrere til riktig import navn når navnene har endret seg.
 
 Før:
 
-```static
+```javascript
 import { Icon } from '@skatteetaten/frontend-components/Icon';
 
-&lt;Icon iconName={'Info'} /&gt;;
+<Icon iconName={'Info'} />;
 ```
 
 Nå:
@@ -72,9 +77,9 @@ Nå:
 ```js
 import { Icon, InfoSVGpath } from '@skatteetaten/ds-icons';
 
-&lt;Icon svgPath={&lt;InfoSVGpath /&gt;} /&gt;
+<Icon svgPath={<InfoSVGpath />} />
 // ELLER
-&lt;Icon svgPath={&lt;path d="M12.5 11a2 2 0 1 0-.09 3.998A" /&gt;} /&gt;
+<Icon svgPath={<path d="M12.5 11a2 2 0 1 0-.09 3.998A" />} />
 ```
 
 </td>
@@ -82,22 +87,22 @@ import { Icon, InfoSVGpath } from '@skatteetaten/ds-icons';
 </tr>
 
 <tr>
-    <td>'theme'<br/>
-'styles'<br/>
-'imageErrorAs'<br/>
+<td>'theme'
+'styles'
+'imageErrorAs'
 'imageProps'</td>
-    <td>Fluent-ui spesifikke props som er faset ut.
+<td>Fluent-ui spesifikke props som er faset ut.
 Bruk className for å tilpasse komponenten.
-<br/>
-Vi setter ikke stiler på komponenter ved hjelp av props. All definisjon av stil skal settes via className. 
+
+Vi setter ikke stiler på komponenter ved hjelp av props. All definisjon av stil skal settes via className.
 Dvs at denne koden ikke skal brukes lenger:
 
 Før:
 
-```static
+```javascript
 import { Icon } from '@skatteetaten/frontend-components/Icon';
 
-&lt;Icon iconName={'Info'} style={{ fontSize: '24px', color: '#1362ae' }} />;
+<Icon iconName={'Info'} style={{ fontSize: '24px', color: '#1362ae' }} />;
 ```
 
 Vi må definere en ekstern css stil og bruke className for å tilordne stilen til komponenten:
@@ -105,17 +110,20 @@ Vi må definere en ekstern css stil og bruke className for å tilordne stilen ti
 ```js
 import { Icon, InfoSVGpath } from '@skatteetaten/ds-icons';
 
-&lt;Icon svgPath={&lt;InfoSVGpath /&gt;} className="myCustomIconClassname" /&gt;;
+<Icon svgPath={<InfoSVGpath />} className="myCustomIconClassname" />;
 ```
 
 </td>
 </tr>
 
 <tr>
-    <td>'onClick'<br/>
-'onMouseOut'<br/>
+<td>'onClick'
+
+'onMouseOut'
+
 'onMouseOver'</td>
-    <td>Faset ut. Dersom konsumenten ønsker å legge klikk-event på et ikon kan det brukes komponenten IconButton.
+
+<td>Faset ut. Dersom konsumenten ønsker å legge klikk-event på et ikon kan det brukes komponenten IconButton.
 I andre tilfeller må Icon wrappes. </td>
 </tr>
 </tbody>
@@ -123,6 +131,19 @@ I andre tilfeller må Icon wrappes. </td>
 </div>
 
 Endringer i navn på ikoner:
+
+<div className="migration-dllist">
+<dl>
+<dt>Tidligere Prop</dt>
+<dt>Alternativ</dt>
+<dt>OpenInNew</dt>
+<dd>External</dd>
+<dt>OpenInNew</dt>
+<dd>External</dd>
+<dt>OpenInNew</dt>
+<dd>External</dd>
+</dl>
+</div>
 
 <table>
 <caption>Liste over endringer i komponent-api'et</caption>
