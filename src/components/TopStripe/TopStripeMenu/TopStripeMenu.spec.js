@@ -13,24 +13,33 @@ describe('TopStripeMenu komponent', () => {
     );
     expect(wrapper.find('ul').exists()).toEqual(true);
   });
-  it('skal vise menu som liste dersom contentIsMenu = true', () => {
+  it('skal vise menu som liste uten semantikk og korrekte role-attributter dersom contentIsMenu = true', () => {
     const wrapper = mount(
-      <TopStripeMenuItems title={'Se liste'}>
+      <TopStripeMenuItems showOnMobile title={'Se liste'}>
         <div>Listepunkt 1</div>
         <div>Listepunkt 2</div>
         <div>Listepunkt 3</div>
       </TopStripeMenuItems>
     );
-    expect(wrapper.find('ul').exists()).toEqual(true);
+
+    const expectedElements = 3;
+    expect(wrapper.find('ul[role="menu"]').exists()).toEqual(true);
+    expect(wrapper.find('li[role="presentation"]').length).toBe(
+      expectedElements
+    );
+    expect(wrapper.find('[role="menuitem"]').length).toBe(expectedElements);
   });
-  it('skal ikke vise menu som liste dersom contentIsMenu = false', () => {
+  it('skal ikke vise menu som liste og ingen role-attributter dersom contentIsMenu = false', () => {
     const wrapper = mount(
-      <TopStripeMenuItems title={'Se liste'} contentIsMenu={false}>
+      <TopStripeMenuItems showOnMobile title={'Se liste'} contentIsMenu={false}>
         <div>Listepunkt 1</div>
         <div>Listepunkt 2</div>
         <div>Listepunkt 3</div>
       </TopStripeMenuItems>
     );
     expect(wrapper.find('ul').exists()).toEqual(false);
+    expect(wrapper.find('[role="menu"]').exists()).toEqual(false);
+    expect(wrapper.find('[role="presentation"]').exists()).toEqual(false);
+    expect(wrapper.find('[role="menuitem"]').exists()).toEqual(false);
   });
 });

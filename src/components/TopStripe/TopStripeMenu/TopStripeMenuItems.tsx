@@ -35,6 +35,7 @@ export const TopStripeMenuItems: React.FC<TopStripeMenuProps> = (props) => {
               const { className, icon } = child.props;
               return (
                 <li
+                  role={'presentation'}
                   onClick={(e) => {
                     onChildClick(child, e);
                   }}
@@ -61,7 +62,10 @@ export const TopStripeMenuItems: React.FC<TopStripeMenuProps> = (props) => {
               );
             } else {
               return (
-                <li className={styles.topStripeMenuDropdownElement}>
+                <li
+                  role={'presentation'}
+                  className={styles.topStripeMenuDropdownElement}
+                >
                   {children}
                 </li>
               );
