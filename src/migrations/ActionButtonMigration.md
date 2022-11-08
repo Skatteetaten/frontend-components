@@ -36,6 +36,7 @@ ActionButton er blitt erstattet med InlineButton.
 <td>
 
 'ref'
+
 Alle komponentene våre bruker forwardRef. For komponent sendes ref til &lt;button&gt;-elementet
 
 </td>
@@ -45,6 +46,7 @@ Alle komponentene våre bruker forwardRef. For komponent sendes ref til &lt;butt
 <td>
 
 'svgPath'
+
 Forhåndsdefinert path kan importeres fra @skatteetaten/ds-icons pakke. Alternativt kan custom path sendes.
 
 Før:
@@ -77,6 +79,7 @@ import { AddSVGpath } from '@skatteetaten/ds-icons';
 <td>
 
 'iconPosition'
+
 Alternativer: 'left' | 'right'. 'left' er default.
 
 Før:
@@ -117,6 +120,7 @@ import { AddSVGpath } from '@skatteetaten/ds-icons';
 <td>
 
 'ariaDescribedby'
+
 Den inneholder en eller flere id-er til HTML-elementer (som inneholder tekst hvor teksten blir lest opp av hjelpemidler etter at knappeteksten er lest opp).
 
 Før:
