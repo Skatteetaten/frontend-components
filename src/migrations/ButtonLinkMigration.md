@@ -47,6 +47,7 @@ import { MegaButton } from '@skatteetaten/ds-buttons';
 <td>'text'</td>
 <td>
 Fluent-ui prop som er faset ut. Bruk 'children' for å gi komponenten en tekst (accessible name). Det kan ikke sendes inn markup lengre.
+
 Før:
 
 ```javascript static
