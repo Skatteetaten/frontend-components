@@ -474,3 +474,9 @@ ul.navigation li.underline {
   background-color: #f4faf5;
   border-color: #b9e1c8;
 }
+
+.migration-tabell-mini caption {
+  color: #808080;
+  font-size: 0.75rem;
+  text-align: left;
+}

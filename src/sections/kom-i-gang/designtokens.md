@@ -70,8 +70,7 @@ import designtokenBreakpoints from '@skatteetaten/ds-core-designtokens/_breakpoi
 
 </td>
 </tr>
-<tr>
-<td> Font </td>
+<tr><td> Font </td>
 <td>
 
 Før:
@@ -154,8 +153,7 @@ import '@skatteetaten/ds-core-designtokens/sizes.css';
 
 </td>
 </tr>
-<tr>
-<td>Palette</td>
+<tr><td> Palette </td>
 <td>
 
 **Mapping av nye navn:**
