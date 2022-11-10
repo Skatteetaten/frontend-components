@@ -1,5 +1,7 @@
 ### **v.6.0.0 - November 2022**
 
+The package '@skatteetaten/frontend-components@6.0.0' is released in parallel with '@skatteetaten/ds-core-designtokens', '@skatteetaten/ds-buttons' and '@skatteetaten/ds-icons'. The components in these packages replaces the ones marked 'deperecated' in the documentation. From now on this package (@skatteetaten/frontend-components/) will be called 'Designsystem legacy'.
+
 - Upgraded dependencies: @fluentui/react, i18next, react-i18next, typescript
 - Add children prop explicitly for improved compatibility with React 18
 - Moment: removal of moment as a dependency
