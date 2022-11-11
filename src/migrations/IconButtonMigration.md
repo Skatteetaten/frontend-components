@@ -92,7 +92,6 @@ import { AddSVGpath } from '@skatteetaten/ds-icons';
 
 </td>
 </tr>
-
 <tr>
 <td>'buttonSize'</td>
 <td>
