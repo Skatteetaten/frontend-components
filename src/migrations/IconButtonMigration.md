@@ -238,7 +238,6 @@ import { AddSVGpath } from '@skatteetaten/ds-icons';
 
 </td>
 </tr>
-
 <tr>
 <td>'href'</td>
 <td>
