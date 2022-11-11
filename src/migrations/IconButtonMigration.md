@@ -23,7 +23,6 @@
 <td>'id'
 </td>
 </tr>
-
 <tr>
 <td>'componentRef'</td>
 <td>
