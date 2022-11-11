@@ -267,7 +267,6 @@ Propsene til Icon komponent er forh√•ndsdefinert i knappen og kan ikke endres p√
 
 </td>
 </tr>
-
 <tr>
 <td>'keytipProps'</td>
 <td>
