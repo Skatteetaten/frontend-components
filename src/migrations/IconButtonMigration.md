@@ -34,7 +34,6 @@ Alle komponentene våre bruker forwardRef. For komponent sendes 'ref' til &lt;bu
 
 </td>
 </tr>
-
 <tr>
 <td>'icon'</td>
 <td>
