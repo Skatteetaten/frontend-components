@@ -71,7 +71,7 @@ function Forside(props) {
           to={'#section-kom-i-gang-for-designere'}
           key={'for-designere'}
         >
-          Kom i gang med sketch-prototyper og design
+          Kom i gang med Figma-prototyper og design
         </NavigationContent>
       </NavigationTile>
     </div>
