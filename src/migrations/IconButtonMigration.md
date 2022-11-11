@@ -153,7 +153,6 @@ import { AddSVGpath } from '@skatteetaten/ds-icons';
 
 </td>
 </tr>
-
 <tr>
 <td>'ariaDescription'</td>
 <td>
