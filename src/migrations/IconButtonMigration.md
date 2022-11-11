@@ -203,7 +203,6 @@ Faset ut. Erstattes ved bruk av egen css gjennom 'className'.
 
 </td>
 </tr>
-
 <tr>
 <td>'getClassNames'
 
