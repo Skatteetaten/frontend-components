@@ -294,7 +294,6 @@ Fluent-ui prop som er faset ut.
 
 </td>
 </tr>
-
 <tr>
 <td>'menuAs'
 
