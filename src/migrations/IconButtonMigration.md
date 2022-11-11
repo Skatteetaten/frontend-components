@@ -247,7 +247,6 @@ Fluent-ui prop som er faset ut. Dersom det er behov for 'href', se MegaButton el
 
 </td>
 </tr>
-
 <tr>
 <td>'text'</td>
 <td>
