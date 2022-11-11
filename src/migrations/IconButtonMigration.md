@@ -194,7 +194,6 @@ Faset ut. Det skal ikke være mulig å skjule knappen for hjelpemidler fordi kna
 
 </td>
 </tr>
-
 <tr>
 <td>'mobileFullWidth'</td>
 <td>
