@@ -125,7 +125,6 @@ import { AddSVGpath } from '@skatteetaten/ds-icons';
 
 </td>
 </tr>
-
 <tr>
 <td>'title'</td>
 <td>
