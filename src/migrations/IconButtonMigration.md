@@ -2,8 +2,9 @@
 
 ### Endringer i funksjonalitet:
 
-- Icon er nå svg-basert og ikke font-basert.
-- ikonet kan ikke endres på gjennom iconProps.
+- Icon er nå svg-basert og ikke font-basert
+- ikonet kan ikke endres på gjennom iconProps
+- ikonet har alltid en tooltip
 
 ### Styling:
 
@@ -55,9 +56,9 @@ Nå:
 import { IconButton } from '@skatteetaten/ds-buttons';
 import { AddSVGpath } from '@skatteetaten/ds-icons';
 
-<IconButton svgPath={<AddSVGpath />} ariaLabel='Legg til' />
+<IconButton svgPath={<AddSVGpath />} title='Legg til' />
 // ELLER
-<IconButton svgPath={<path d='M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2Z' />} ariaLabel='Legg til' />
+<IconButton svgPath={<path d='M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2Z' />} title='Legg til' />
 ```
 
 </td>
@@ -84,7 +85,7 @@ Nå:
 import { IconButton } from '@skatteetaten/ds-buttons';
 import { AddSVGpath } from '@skatteetaten/ds-icons';
 
-<IconButton svgPath={<AddSVGpath />} ariaLabel="Legg til" isOutlined />;
+<IconButton svgPath={<AddSVGpath />} title="Legg til" isOutlined />;
 ```
 
 </td>
@@ -116,25 +117,28 @@ Nå:
 import { IconButton } from '@skatteetaten/ds-buttons';
 import { AddSVGpath } from '@skatteetaten/ds-icons';
 
-<IconButton size={'large'} svgPath={<AddSVGpath />} ariaLabel="Legg til" />;
+<IconButton size={'large'} svgPath={<AddSVGpath />} title="Legg til" />;
 ```
 
 </td>
 </tr>
 <tr>
-<td>'title'</td>
+<td>'ariaLabel'
+
+'aria-label'</td>
+
 <td>
 
-Faset ut. Tilbyr ikke tooltip lengre.
+'title'
 
-En knapp med kun et ikon må ha et accessible name slik at hjelpemidler kan lese opp hva handlingen til knappen er. Tidligere så kunne 'title' og/eller 'ariaLabel' brukes, men nå er det kun den påkrevde propen 'ariaLabel' som skal brukes.
+En knapp med kun et ikon må ha et accessible name slik at hjelpemidler kan lese opp hva handlingen til knappen er. Tidligere så kunne 'title' og/eller 'ariaLabel'/'aria-label' brukes, men nå er det kun den påkrevde propen 'title' som skal brukes fordi IconButton skal alltid ha en tooltip.
 
 Før:
 
 ```javascript static
 import { IconButton } from '@skatteetaten/frontend-components/IconButton';
 
-<IconButton icon="Add" title="Skriv ut" />;
+<IconButton icon="Add" ariaLabel="Skriv ut" />;
 ```
 
 Nå:
@@ -143,7 +147,7 @@ Nå:
 import { IconButton } from '@skatteetaten/ds-buttons';
 import { AddSVGpath } from '@skatteetaten/ds-icons';
 
-<IconButton svgPath={<AddSVGpath />} ariaLabel={'Skriv ut'} />;
+<IconButton svgPath={<AddSVGpath />} title={'Skriv ut'} />;
 ```
 
 </td>
@@ -173,7 +177,7 @@ import { AddSVGpath } from '@skatteetaten/ds-icons';
 <IconButton
   svgPath={<AddSVGpath />}
   ariaDescribedby={'idTilElementMedTekst'}
-  ariaLabel="Legg til"
+  title="Legg til"
 />;
 ```
 
@@ -223,7 +227,7 @@ import { AddSVGpath } from '@skatteetaten/ds-icons';
 <IconButton
   className="myCustomClassname"
   svgPath={<AddSVGpath />}
-  ariaLabel="Legg til"
+  title="Legg til"
 />;
 ```
 
@@ -242,7 +246,7 @@ Fluent-ui prop som er faset ut. Dersom det er behov for 'href', se MegaButton el
 <td>
 
 Fluent-ui prop som er faset ut.
-Ønsker man å gi et accessible name slik at hjelpemidler kan lese opp hva handlingen til knappen er bruk heller 'ariaLabel'.
+Ønsker man å gi et accessible name slik at hjelpemidler kan lese opp hva handlingen til knappen er bruk heller 'title'.
 
 </td>
 </tr>
