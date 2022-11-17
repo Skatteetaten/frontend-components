@@ -5,7 +5,8 @@ import { getClassNames } from './IconButton.classNames';
 import { IconButtonProps } from './IconButton.types';
 
 /**
- * @deprecated Komponenten er deprecated
+ * @deprecated Komponenten er erstattet av IconButton fra @skatteetaten/ds-buttons
+ *
  * visibleName IconButton (IkonKnapp)
  */
 export const IconButton: React.FC<IconButtonProps> = (props) => {

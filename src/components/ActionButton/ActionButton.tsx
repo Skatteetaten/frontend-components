@@ -5,7 +5,8 @@ import { getClassNames } from './ActionButton.classNames';
 import { ActionButtonProps } from './ActionButton.types';
 
 /**
- * @deprecated Komponenten er deprecated
+ * @deprecated Komponenten er erstattet av InlineButton fra @skatteetaten/ds-buttons
+ *
  * visibleName ActionButton (Aksjonsknapp)
  */
 export class ActionButton extends React.PureComponent<ActionButtonProps, {}> {
