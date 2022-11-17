@@ -10,6 +10,7 @@ ButtonLink er blitt erstattet med MegaButton.
 
 ### Styling
 
+- De nye komponentene i designsystemet er avhengige av designtokens. Disse leveres nå som en separat pakke. Se [designtokens](/#section-designtokens-deprecated) for detaljer.
 - har nå mulighet til å vise et "eksternt lenke"-ikon etter lenketeksten for å indikere at man åpner en ekstern tjeneste
 - tekst er midtstilt dersom den går over flere linjer og er ikke venstrejustert lengre
 

@@ -9,6 +9,7 @@ ActionButton er blitt erstattet med InlineButton.
 
 ### Styling:
 
+- De nye komponentene i designsystemet er avhengige av designtokens. Disse leveres nå som en separat pakke. Se [designtokens](/#section-designtokens-deprecated) for detaljer.
 - tilbys ikke i ulike farger lengre
 - ikon tilbys ikke i forskjellig størrelser lengre
 - har ikke lengre mulighet til valgfri underline. Underline kommer automatisk dersom ikon ikke er valgt
