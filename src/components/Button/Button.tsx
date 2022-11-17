@@ -5,7 +5,7 @@ import { getClassNames as getStandardClassNames } from './Button.classNames';
 import { ButtonProps } from './Button.types';
 
 /**
- * @deprecated Komponenten er erstattet av Button fra @skatteetaten/ds-buttons
+ * @deprecated Komponenten er erstattet av Button fra "@skatteetaten/ds-buttons"
  *
  * visibleName Button (Knapp)
  */

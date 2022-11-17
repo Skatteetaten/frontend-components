@@ -5,7 +5,7 @@ import { getClassNames } from './ActionButton.classNames';
 import { ActionButtonProps } from './ActionButton.types';
 
 /**
- * @deprecated Komponenten er erstattet av InlineButton fra @skatteetaten/ds-buttons
+ * @deprecated Komponenten er erstattet av InlineButton fra "@skatteetaten/ds-buttons"
  *
  * visibleName ActionButton (Aksjonsknapp)
  */

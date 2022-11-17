@@ -44,7 +44,7 @@ export const BrandContext = React.createContext(
 );
 
 /**
- * @deprecated Funksjonaliteten tilbys nå gjennom designtokens fra @skatteetaten/ds-core-designtokens, men komponenter i legacy designsystem er fortsatt avhengige av SkeBasis, og den vil være tilgjengelig fram til alle komponenter i legacy designsystem er faset ut.
+ * @deprecated Funksjonaliteten tilbys nå gjennom designtokens fra "@skatteetaten/ds-core-designtokens", men komponenter i legacy designsystem er fortsatt avhengige av SkeBasis, og den vil være tilgjengelig fram til alle komponenter i legacy designsystem er faset ut.
  *
  * visibleName SkeBasis (Basiskomponent)
  */

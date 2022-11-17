@@ -2,7 +2,8 @@ import { Icon as FabricIcon, IIconProps } from '@fluentui/react';
 import * as React from 'react';
 
 /**
- * @deprecated Komponenten er deprecated
+ * @deprecated Komponenten er erstattet av Icon fra "@skatteetaten/ds-icons"
+ *
  * visibleName Icon (Ikon)
  */
 export const Icon: React.FC<IIconProps> = (props) => {
