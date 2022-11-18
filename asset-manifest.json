@@ -1,9 +1,9 @@
 {
   "files": {
-    "main.css": "/frontend-components/static/css/main.b7fdbf03.chunk.css",
-    "main.js": "/frontend-components/build/main.f90ed04c.js",
+    "main.css": "/frontend-components/static/css/main.a5be0546.chunk.css",
+    "main.js": "/frontend-components/build/main.4669c7d7.js",
     "runtime-main.js": "/frontend-components/build/bundle.f88df48c.js",
-    "build/2.62b97cac.js": "/frontend-components/build/2.62b97cac.js",
+    "build/2.210552f6.js": "/frontend-components/build/2.210552f6.js",
     "assets/png/Byggeklosser.png": "/frontend-components/assets/png/Byggeklosser.png",
     "assets/png/Byggeklosser_skisse.png": "/frontend-components/assets/png/Byggeklosser_skisse.png",
     "assets/png/designer.png": "/frontend-components/assets/png/designer.png",
@@ -12,6 +12,8 @@
     "assets/png/eks_systemfeil3.png": "/frontend-components/assets/png/eks_systemfeil3.png",
     "assets/png/eks_systemfeil4.png": "/frontend-components/assets/png/eks_systemfeil4.png",
     "assets/png/forside.png": "/frontend-components/assets/png/forside.png",
+    "assets/png/komigang_designer_1.png": "/frontend-components/assets/png/komigang_designer_1.png",
+    "assets/png/komigang_designer_2.png": "/frontend-components/assets/png/komigang_designer_2.png",
     "assets/png/utv_vs_designer.png": "/frontend-components/assets/png/utv_vs_designer.png",
     "assets/png/utv_vs_designer_alt.png": "/frontend-components/assets/png/utv_vs_designer_alt.png",
     "assets/png/utvikler.png": "/frontend-components/assets/png/utvikler.png",
@@ -31,14 +33,20 @@
     "assets/svg/ske-logo-intern-kopi.svg": "/frontend-components/assets/svg/ske-logo-intern-kopi.svg",
     "assets/svg/ske-logo-intern.svg": "/frontend-components/assets/svg/ske-logo-intern.svg",
     "assets/svg/ske-logo.svg": "/frontend-components/assets/svg/ske-logo.svg",
-    "build/2.62b97cac.js.LICENSE.txt": "/frontend-components/build/2.62b97cac.js.LICENSE.txt",
+    "build/2.210552f6.js.LICENSE.txt": "/frontend-components/build/2.210552f6.js.LICENSE.txt",
     "favicon.ico": "/frontend-components/favicon.ico",
     "index.html": "/frontend-components/index.html",
     "manifest.json": "/frontend-components/manifest.json",
-    "static/css/main.b7fdbf03.chunk.css.map": "/frontend-components/static/css/main.b7fdbf03.chunk.css.map",
+    "static/css/main.a5be0546.chunk.css.map": "/frontend-components/static/css/main.a5be0546.chunk.css.map",
+    "static/media/ActionButtonMigration.8d9e1922.md": "/frontend-components/static/media/ActionButtonMigration.8d9e1922.md",
+    "static/media/ButtonLinkMigration.1f114c7a.md": "/frontend-components/static/media/ButtonLinkMigration.1f114c7a.md",
+    "static/media/ButtonMigration.742640c6.md": "/frontend-components/static/media/ButtonMigration.742640c6.md",
     "static/media/EnglishFlag.714be210.svg": "/frontend-components/static/media/EnglishFlag.714be210.svg",
+    "static/media/IconButtonMigration.4de1c1c5.md": "/frontend-components/static/media/IconButtonMigration.4de1c1c5.md",
+    "static/media/IconMigration.3813a759.md": "/frontend-components/static/media/IconMigration.3813a759.md",
     "static/media/NorwegianFlag.e7fb117c.svg": "/frontend-components/static/media/NorwegianFlag.e7fb117c.svg",
     "static/media/SamiFlag.bc29c560.svg": "/frontend-components/static/media/SamiFlag.bc29c560.svg",
+    "static/media/SkeBasisMigration.4cb8a733.md": "/frontend-components/static/media/SkeBasisMigration.4cb8a733.md",
     "static/media/SkeIconfont.woff": "/frontend-components/static/media/SkeIconfont.cec7e241.woff",
     "static/media/footerDekor.416cfac2.svg": "/frontend-components/static/media/footerDekor.416cfac2.svg",
     "static/media/ink-logo.e22095aa.svg": "/frontend-components/static/media/ink-logo.e22095aa.svg",
@@ -59,8 +67,8 @@
   },
   "entrypoints": [
     "build/bundle.f88df48c.js",
-    "build/2.62b97cac.js",
-    "static/css/main.b7fdbf03.chunk.css",
-    "build/main.f90ed04c.js"
+    "build/2.210552f6.js",
+    "static/css/main.a5be0546.chunk.css",
+    "build/main.4669c7d7.js"
   ]
 }
