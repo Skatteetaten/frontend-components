@@ -1,3 +1,5 @@
+import { ReactNode } from 'react';
+
 export interface TopBannerTypes {
   /** Tittelen på banneren */
   title?: string | JSX.Element;
@@ -27,4 +29,6 @@ export interface TopBannerTypes {
   language?: 'nb' | 'nn' | 'en' | 'se';
   /** Topstripe */
   topStripe?: JSX.Element;
+  slantedAreaClassName?: string;
+  children?: ReactNode;
 }

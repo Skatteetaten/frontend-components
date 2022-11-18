@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { ReactNode } from 'react';
 
 export enum ChipType {
   WARNING = 'lightPink',
@@ -15,4 +16,5 @@ export interface ChipProps extends React.HTMLAttributes<HTMLDivElement> {
   ariaLabel?: string;
   /** Overstyring av stiler */
   className?: string;
+  children?: ReactNode;
 }

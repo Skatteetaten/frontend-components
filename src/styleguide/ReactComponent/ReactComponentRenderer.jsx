@@ -1,9 +1,12 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Pathline from 'react-styleguidist/lib/client/rsg-components/Pathline';
 import Styled from 'react-styleguidist/lib/client/rsg-components/Styled';
 import Examples from 'react-styleguidist/lib/client/rsg-components/Examples';
 import { UseScreen } from '../../components/utils/ScreenPlugin';
+import chunkify from 'react-styleguidist/lib/loaders/utils/chunkify';
+import { MigrationGuides } from '../../migrations';
 
+import { Icon } from '../../components/Icon';
 import { Tabs } from '../../components/Tabs';
 import { TabItem } from '../../components/Tabs/TabItem';
 
@@ -37,12 +40,40 @@ export function ReactComponentRenderer({
   heading,
   pathLine,
   description,
+  isDeprecated,
   docs,
   examples,
   exampleMode,
   tabButtons,
   tabBody,
+  filepath,
 }) {
+  const [migrationGuideExamples, setMigrationGuideExamples] = useState([]);
+
+  useEffect(() => {
+    const findMigrationGuideWithName = (element) =>
+      element.startsWith(`static/media/${name}Migration`);
+    const migrationGuideIndex = MigrationGuides.findIndex(
+      findMigrationGuideWithName
+    );
+
+    if (migrationGuideIndex !== -1) {
+      fetch(MigrationGuides[migrationGuideIndex])
+        .then((res) => {
+          return res.text();
+        })
+        .then((text) => {
+          const chunkifiedExamples = chunkify(text);
+          setMigrationGuideExamples(chunkifiedExamples);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    } else {
+      setMigrationGuideExamples([]);
+    }
+  }, [name]);
+
   // Splitter opp kode og beskrivelse
   const code = examples.filter(
     (item) =>
@@ -64,6 +95,12 @@ export function ReactComponentRenderer({
         {heading}
         {pathLine && <Pathline>{pathLine}</Pathline>}
       </header>
+      {isDeprecated && (
+        <span className="deprecatedLabel">
+          <Icon iconName="Error" />
+          <span>Deprecated</span>
+        </span>
+      )}
       {(description || docs) && (
         <div className={classes.docs}>
           {description}
@@ -71,6 +108,17 @@ export function ReactComponentRenderer({
         </div>
       )}
       <Tabs>
+        {migrationGuideExamples.length > 0 && (
+          <TabItem headerText={'Migration'} itemKey="migration">
+            <div style={{ marginTop: '16px' }}>
+              <Examples
+                examples={migrationGuideExamples}
+                name={name}
+                exampleMode={exampleMode}
+              />
+            </div>
+          </TabItem>
+        )}
         {code.length > 0 && (
           <TabItem itemKey="examples" headerText={'Eksempler'}>
             <div style={{ marginTop: '16px' }}>

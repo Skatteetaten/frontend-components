@@ -7,7 +7,6 @@ import { AccordionItemProps } from './AccordionItem/AccordionItem.types';
 export interface AccordionProps extends React.HTMLAttributes<HTMLDivElement> {
   /** aria-label */
   ariaLabel?: string;
-  children?: React.ReactNode;
   /** Custom styling */
   className?: string;
   /** Wraps the text in a heading-tag. Ie. headingLevel = 1 produces \<h1>{toggleButtonText}\</h1>.*/
@@ -15,6 +14,7 @@ export interface AccordionProps extends React.HTMLAttributes<HTMLDivElement> {
   /** List style with numbers or icons */
   processList?: boolean;
   stepId?: string;
+  children?: React.ReactNode;
 }
 
 /*

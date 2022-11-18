@@ -3,7 +3,9 @@ import classnames from 'classnames';
 import { getClassNames } from './ButtonLink.classNames';
 import { ButtonLinkProps } from './ButtonLink.types';
 
-/*
+/**
+ * @deprecated Komponenten er erstattet av MegaButton fra "@skatteetaten/ds-buttons"
+ *
  * visibleName ButtonLink (Knappelenke)
  */
 export const ButtonLink: React.FC<ButtonLinkProps> = (props) => {

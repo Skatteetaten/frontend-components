@@ -2,11 +2,13 @@ import * as React from 'react';
 import { getClassNames } from './Grid.classNames';
 import { Col } from './Col';
 import { Row } from './Row';
+import { ReactNode } from 'react';
 
 export interface GridProps {
   className?: string;
   tag?: string;
   padding?: string;
+  children?: ReactNode;
 }
 
 /*

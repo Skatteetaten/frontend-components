@@ -5,7 +5,6 @@
     "react-i18next": "/umd/deps/react-i18next/<replace>/dist/umd/react-i18next.min.js",
     "prop-types": "/umd/deps/prop-types/<replace>/prop-types.min.js",
     "classnames": "/umd/deps/classnames/<replace>/index.min.js",
-    "moment": "/umd/deps/moment/<replace>/min/moment.min.js",
     "axios": "/umd/deps/axios/<replace>/dist/axios.min.js",
     "tslib": "/umd/deps/tslib/<replace>/tslib.js",
     "i18next": "/umd/deps/i18next/<replace>/dist/umd/i18next.min.js",

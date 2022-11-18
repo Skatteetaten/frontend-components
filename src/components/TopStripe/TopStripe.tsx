@@ -93,9 +93,7 @@ export const TopStripe: React.FC<TopStripeProps> = (props) => {
                       !child.props.showOnMobile,
                   })}
                 >
-                  {React.cloneElement(child, {
-                    index,
-                  })}
+                  {React.cloneElement(child, { index })}
                 </li>
               ) : null
             )}

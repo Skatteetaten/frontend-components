@@ -89,26 +89,24 @@ import { Typography } from '@skatteetaten/frontend-components/Typography';
         </ul>
 
         <h4 style={{ marginBottom: '4px' }}>Sette fokus til overskrift</h4>
-        <p style={{ marginTop: '0' }}>
-          Måten vi gjør dette er å gi den beskrivende overskriften en id, og la
-          main-elementet henvise til denne:
-          <br />
-          <code>
-            &lt;h1 id="heading_id1"&gt;Dynamisk overskrift&lt;/h1&gt;
-          </code>{' '}
-          og
-          <code>
-            &lt;main id="main-content" aria-labelledby="heading_id1"
-            tabindex="-1"&gt;
-          </code>
+        <p style={{ margin: '0 0 5px' }}>
+          Måten vi gjør dette er å gi den beskrivende overskriften en id:
         </p>
-        <p>
-          Og deretter bruke et skript for å sette fokus når siden lastes: <br />
-          <code>
-            window.setTimeout(() =&gt;
-            document.getElementById(&#39;main-content&#39;)?.focus() , 0);
-          </code>
+        <code>&lt;h1 id="heading_id1"&gt;Dynamisk overskrift&lt;/h1&gt;</code>
+        <p style={{ marginBottom: '5px' }}>
+          Så må main-elementet henvise til denne overskrift id-en:
         </p>
+        <code>
+          &lt;main id="main-content" aria-labelledby="heading_id1"
+          tabindex="-1"&gt;
+        </code>
+        <p style={{ marginBottom: '5px' }}>
+          Og deretter bruke et skript for å sette fokus når siden lastes:
+        </p>
+        <code>
+          window.setTimeout(() =&gt;
+          document.getElementById(&#39;main-content&#39;)?.focus() , 0);
+        </code>
 
         <h4 style={{ marginBottom: '4px' }}>Bruk av tabindex</h4>
         <p style={{ marginTop: '0' }}>

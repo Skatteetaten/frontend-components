@@ -14,6 +14,7 @@ export interface SkeBasisProps extends IFabricProps {
   fonts?: object;
   icons?: Array<IIconSubset>;
   brand?: string;
+  children?: React.ReactNode;
 }
 
 interface SkeBasisState {
@@ -42,7 +43,9 @@ export const BrandContext = React.createContext(
   brands.SKE //default brand
 );
 
-/*
+/**
+ * @deprecated Funksjonaliteten tilbys nå gjennom designtokens fra "@skatteetaten/ds-core-designtokens", men komponenter i legacy designsystem er fortsatt avhengige av SkeBasis, og den vil være tilgjengelig fram til alle komponenter i legacy designsystem er faset ut.
+ *
  * visibleName SkeBasis (Basiskomponent)
  */
 export class SkeBasis extends React.PureComponent<

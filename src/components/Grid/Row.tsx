@@ -8,6 +8,7 @@ export interface RowProps {
   className?: string;
   tag?: string;
   padding?: string;
+  children?: React.ReactNode;
 }
 
 export class Row extends React.Component<RowProps, {}> {

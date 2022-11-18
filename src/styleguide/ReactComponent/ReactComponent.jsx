@@ -27,12 +27,15 @@ export default class ReactComponent extends Component {
       displayMode,
       config: { pagePerSection },
     } = this.context;
+
     const { component, depth, usageMode, exampleMode } = this.props;
     const { name, visibleName, slug, filepath, pathLine } = component;
     const { description, examples = [], tags = {} } = component.props;
+
     if (!name) {
       return null;
     }
+
     const showUsage = usageMode !== UsageModes.hide;
 
     return (
@@ -41,8 +44,9 @@ export default class ReactComponent extends Component {
         slug={slug}
         filepath={filepath}
         pathLine={pathLine}
-        docs={<JsDoc {...tags} />}
+        docs={<JsDoc tags={{ ...tags }} />}
         description={description && <Markdown text={description} />}
+        isDeprecated={!!tags.deprecated}
         heading={
           <SectionHeading
             id={slug}

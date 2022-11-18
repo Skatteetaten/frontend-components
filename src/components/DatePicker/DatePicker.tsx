@@ -1,8 +1,6 @@
 import * as React from 'react';
-import i18n, { t } from './../utils/i18n/i18n';
+import { t } from './../utils/i18n/i18n';
 import classnames from 'classnames';
-import moment from 'moment';
-import 'moment/locale/nb';
 import {
   DatePicker as FabricDatePicker,
   DayOfWeek,
@@ -15,21 +13,12 @@ import { LabelWithCallout } from '../LabelWithCallout';
 import { getClassNames, getCalendarClassNames } from './DatePicker.classNames';
 import { DatePickerProps } from './DatePicker.types';
 import { ErrorMessage } from '../ErrorMessage';
-
-const DEFAULT_DATE_FORMAT = 'DD.MM.YYYY';
-const DEFAULTFORMATDATE = (date: Date | null | undefined): string => {
-  if (date) {
-    return moment(date).format(DEFAULT_DATE_FORMAT);
-  }
-  return '';
-};
-
-const DEFAULTPARSEDATEFROMSTRING = (date: string): Date | null => {
-  if (date) {
-    return moment(date, DEFAULT_DATE_FORMAT).toDate();
-  }
-  return null;
-};
+import {
+  DEFAULTFORMATDATE,
+  DEFAULTPARSEDATEFROMSTRING,
+  monthsForLocale,
+  weekdaysForLocale,
+} from './utils';
 
 /*
  * visibleName DatePicker (Datovelger)
@@ -97,22 +86,19 @@ export const DatePicker: React.FC<DatePickerProps> = (
     setReadOnly(readonlyMode && !editMode);
   }, [editMode, readonlyMode]);
 
-  if (language) {
-    i18n.changeLanguage(language);
-    moment.locale(language);
-  }
+  const DEFAULT_DATE_FORMAT = 'DD.MM.YYYY';
 
   const DEFAULT_STRINGS = {
-    months: moment.months(),
-    shortMonths: moment.monthsShort(),
-    days: moment.weekdays(),
-    shortDays: moment.weekdaysShort(),
-    goToToday: t('datepicker.goToToday'),
+    months: monthsForLocale(language !== 'en' ? 'no' : 'en', 'long'),
+    shortMonths: monthsForLocale(language !== 'en' ? 'no' : 'en', 'short'),
+    days: weekdaysForLocale(language !== 'en' ? 'no' : 'en', 'long'),
+    shortDays: weekdaysForLocale(language !== 'en' ? 'no' : 'en', 'short'),
+    goToToday: t('datepicker.goToToday')!,
     prevMonthAriaLabel: t('datepicker.prevMonthAriaLabel'),
     nextMonthAriaLabel: t('datepicker.nextMonthAriaLabel'),
     prevYearAriaLabel: t('datepicker.prevYearAriaLabel'),
     nextYearAriaLabel: t('datepicker.nextYearAriaLabel'),
-    invalidInputErrorMessage: i18n.t('datepicker.invalidInputErrorMessage', {
+    invalidInputErrorMessage: t('datepicker.invalidInputErrorMessage', {
       DEFAULT_DATE_FORMAT,
     }),
     /** Automatisk utvide høyde (ved multiline) */

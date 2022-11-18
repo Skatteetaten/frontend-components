@@ -90,6 +90,10 @@
   margin-top: 0;
 }
 
+pre.lang-JavaScript {
+  white-space: pre-wrap;
+}
+
 .pl8 {
   padding-left: 8px;
 }
@@ -385,6 +389,30 @@ ul.navigation li.underline {
   border-width: 0;
 }
 
+.deprecatedLabel {
+  padding: 0.5rem;
+  font-size: 0.9rem;
+  background-color: #a82e39;
+  color: white;
+  border-radius: 0.25rem;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.deprecatedLabel i {
+  font-family: SkeIconfont;
+  font-size: 1rem;
+  display: inline-block;
+  vertical-align: middle;
+  margin-top: -3px;
+  margin-right: 0.25rem;
+  font-style: normal;
+  font-weight: normal;
+  transform: translate(0px, 0px);
+  text-rendering: auto;
+}
+
 /* TipChip */
 .tipchip {
   display: inline-block;
@@ -411,4 +439,44 @@ ul.navigation li.underline {
   border-right: 12px solid #cde1f9;
   border-bottom: 12px solid transparent;
   border-left: 12px solid transparent;
+}
+
+.migration-tabell,
+.migration-tabell table {
+  width: 100%;
+  border-spacing: 2px;
+  border-collapse: separate;
+}
+.migration-tabell caption {
+  color: #808080;
+  font-size: 0.75rem;
+  text-align: left;
+}
+.migration-tabell td:nth-child(1) {
+  background-color: #eff3f9;
+}
+.migration-tabell thead td,
+.migration-tabell thead td:nth-child(1) {
+  font-weight: bold;
+  padding: 0.75rem 0;
+  text-align: center;
+}
+.migration-tabell td,
+.migration-tabell th {
+  border: 1px solid #e5e5e5;
+  padding: 0.5rem;
+}
+.migration-tabell pre.lang-javascript {
+  background-color: #faf0f3;
+  border-color: #f3a7b0;
+}
+.migration-tabell pre.lang-js {
+  background-color: #f4faf5;
+  border-color: #b9e1c8;
+}
+
+.migration-tabell-mini caption {
+  color: #808080;
+  font-size: 0.75rem;
+  text-align: left;
 }

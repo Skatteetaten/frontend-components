@@ -1,3 +1,5 @@
+import { ReactNode } from 'react';
+
 export interface TypographyProps {
   /** Mulighet for egen overstyring av css */
   className?: string;
@@ -11,4 +13,5 @@ export interface TypographyProps {
   noSize?: string[];
   /** Tar bort definisjon av ramme for spesifikke tagger ('a') */
   noBorder?: string[];
+  children?: ReactNode;
 }

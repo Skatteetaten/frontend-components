@@ -8,6 +8,7 @@ import { getClassNames } from './TableHeader.classNames';
 import { t } from '../../utils';
 
 import { getIconNameForTheadCell, getAriaLabelForTheadCell } from './utils';
+import { TFunction } from 'i18next';
 
 interface TableHeaderProps {
   columns: TableProps<any>['columns'];
@@ -57,7 +58,7 @@ export const TableHeader = (props: TableHeaderProps): JSX.Element => {
           key.fieldName,
           isSorted,
           sort.ascending,
-          t
+          t as TFunction
         );
 
         return (

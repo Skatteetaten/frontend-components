@@ -1,4 +1,4 @@
-import { TFunction } from 'react-i18next';
+import { TFunction } from 'i18next';
 
 export const getIconNameForTheadCell = (
   isSorted: boolean,
@@ -16,7 +16,7 @@ export const getAriaLabelForTheadCell = (
   fieldName: string,
   isSorted: boolean,
   isSortedAscending: boolean,
-  t: TFunction<Array<string>>
+  t: TFunction
 ) => {
   let ariaLabel = fieldName;
   if (typeof name === 'string') {

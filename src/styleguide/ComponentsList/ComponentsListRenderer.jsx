@@ -5,22 +5,26 @@ import find from 'lodash.find';
 import { useNavigate, useLocation } from 'react-router-dom';
 
 function createMenu(items, searchTerm, activeSlug) {
-  return items.map(({ name, slug, components = [], sections = [] }) => {
-    const links = [
-      ...createMenu(sections, null, null),
-      ...createMenu(components, null, null),
-    ];
-    const containsActiveSlug = find(links, (l) => l.key === activeSlug);
-    const collapseByDefault = searchTerm === '' && !containsActiveSlug;
-    const mainLink = find(links, (l) => l.name === name);
-    return {
-      name,
-      url: undefined,
-      key: (mainLink && mainLink.key) || slug,
-      links: links.filter((l) => l.name !== name),
-      collapseByDefault,
-    };
-  });
+  return items.map(
+    ({ name, slug, components = [], sections = [], props = [] }) => {
+      const links = [
+        ...createMenu(sections, null, null),
+        ...createMenu(components, null, null),
+      ];
+
+      const isDeprecated = !!props?.tags?.deprecated;
+      const containsActiveSlug = find(links, (l) => l.key === activeSlug);
+      const collapseByDefault = searchTerm === '' && !containsActiveSlug;
+      const mainLink = find(links, (l) => l.name === name);
+      return {
+        name: isDeprecated ? `${name} (deprecated)` : name,
+        url: undefined,
+        key: (mainLink && mainLink.key) || slug,
+        links: links.filter((l) => l.name !== name),
+        collapseByDefault,
+      };
+    }
+  );
 }
 
 const getStyles = () => {

@@ -8,7 +8,6 @@ import { TopBannerTypes } from './TopBanner.types';
 import { BrandContext } from '../SkeBasis';
 import i18n, { t } from './../utils/i18n/i18n';
 
-// @ts-ignore TODO
 import logoSKE from './assets/logoSKE.svg';
 import logoSKEen from './assets/logoSKEen.svg';
 import logoLSO from './assets/logoLSO.svg';
@@ -20,8 +19,7 @@ import internLogoEn from './assets/ske-logo-intern-en.svg';
 import { getClassNames as getExternalClassNames } from './External.classNames';
 import { getClassNames as getInternalClassNames } from './Internal.classNames';
 
-// @ts-ignore TODO
-const InternalHeader = (props) => {
+const InternalHeader = (props: Partial<TopBannerTypes>) => {
   const styles = getInternalClassNames(props);
   const size = UseScreen();
 
@@ -83,7 +81,7 @@ const ExternalHeaderContent = ({ styles, ...props }) => {
         onClick={props.onClick}
         className={styles.linkButton}
         icon="ArrowBack"
-        role="link"
+        role={!props.homeUrl ? 'link' : undefined}
       >
         {props.homeText}
       </ActionButton>

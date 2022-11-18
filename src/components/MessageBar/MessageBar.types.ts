@@ -17,6 +17,7 @@ export interface MessageBarProps extends IMessageBarProps {
   onRenderAfterDuration?: (...args: any[]) => any;
   /** Callback for klikk på knappen */
   onClick?: (...args: any[]) => any;
+  children?: React.ReactNode;
 }
 
 export interface MessageBarState extends React.HTMLAttributes<HTMLDivElement> {
