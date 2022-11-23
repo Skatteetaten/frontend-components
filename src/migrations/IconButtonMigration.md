@@ -97,12 +97,13 @@ import { AddSVGpath } from '@skatteetaten/ds-icons';
 
 'size'
 
-Alternativer: 'small' | 'medium' | 'large'. 'medium' er default.
+Alternativer: 'extraSmall' | 'small' | 'medium' | 'large'. 'medium' er default.
 
-- Tidligere "xSmall" (knapp 26px, ikon 20px) er nå "small" (knapp 18px, ikon 12px).
-- Tidligere "small" (knapp 35px, ikon 29px) er nå "medium" (knapp 24px, ikon 16px).
-- Tidligere "medium" (knapp 40px, ikon 34px) er nå "large" (knapp 40px, ikon 20px).
-- Tidligere "large" (knapp 50px, ikon 44px) og "xLarge" (knapp 60px, ikon 54px) er faset ut
+- tidligere "xSmall" (knapp 26px, ikon 20px) heter nå "extraSmall" (knapp 22px, ikon 16px).
+- "small" (knapp 35px, ikon 29px) er nå 26px stor (ikon 16px).
+- "medium" (knapp 40px, ikon 34px) er nå 32px stor (ikon 20px).
+- "large" (knapp 50px, ikon 44px) er nå 44px stor (ikon 24px).
+- "xLarge" (knapp 60px, ikon 54px) er faset ut.
 
 Før:
 

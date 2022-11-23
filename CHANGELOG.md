@@ -1,4 +1,8 @@
-### **v.6.0.0 - November 2022**
+### **v.6.0.1 - 23 November 2022**
+
+- IconButton: slight adjustment to migration guide (added size)
+
+### **v.6.0.0 - 18 November 2022**
 
 The package '@skatteetaten/frontend-components@6.0.0' is released in parallel with '@skatteetaten/ds-core-designtokens', '@skatteetaten/ds-buttons' and '@skatteetaten/ds-icons'. The components in these packages replace the ones marked 'deprecated' in the documentation. From now on this package (@skatteetaten/frontend-components/) will be called 'Designsystem legacy'.
 
