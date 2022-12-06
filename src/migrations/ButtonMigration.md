@@ -6,7 +6,7 @@
 
 ### Styling:
 
-- De nye komponentene i designsystemet er avhengige av designtokens. Disse leveres nå som en separat pakke. Se [designtokens](/#section-designtokens-deprecated) for detaljer.
+- De nye komponentene i designsystemet er avhengige av designtokens. Disse leveres nå som en separat pakke. Se [designtokens](#section-designtokens-deprecated) for detaljer.
 - hovedhandlings-knappen ("call to action") er ikke videre ført. Dersom du ønsker et tilsvarende utseende se MegaButton.
 
 ### Endringer i API:

@@ -7,9 +7,10 @@
 
 ### Styling
 
-- De nye komponentene i designsystemet er avhengige av designtokens. Disse leveres nå som en separat pakke. Se [designtokens](/#section-designtokens-deprecated) for detaljer.
+- De nye komponentene i designsystemet er avhengige av designtokens. Disse leveres nå som en separat pakke. Se [designtokens](#section-designtokens-deprecated) for detaljer.
 - størrelse på selve ikonet og luft er endret. Default verdier er også justert og ikonet er noe større ut av boksen (20px nå, vs. 16px før). Se kombinasjon av 'variant' og 'size' props for å få til riktig visning.
 - markup er endret og custom styling vil muligens ikke fungere lenger (migrasjon fra font properties til svg properties).
+- Alle ikoner vises i [Icon Gallery](https://designsystem-playground-spidermonkey.amutv.skead.no/web/designsystemet/?path=/story/design-system-icon-icon-gallery--page)
 
 ### Endringer i API
 
@@ -42,7 +43,7 @@ Se API-dokumentasjon for mer info.
 
 Nå:
 
-```javascript static
+```js static
 import { Icon, InfoSVGpath } from '@skatteetaten/ds-icons';
 
 <Icon svgPath={<path d="M12.5 11a2 2 0 1 0-.09 3.998A />} ariaLabel={'my label'} />
