@@ -1,4 +1,4 @@
-### **v.6.0.1 - 9 Desember 2022**
+### **v.6.0.1 - 7 Desember 2022**
 
 - IconButton: slight adjustment to migration guide (added size)
 - Various minor updates to documentation
