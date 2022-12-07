@@ -30,8 +30,8 @@ Man kan velge å importere alle ressursene ved å legge en css import statement 
 import '@skatteetaten/ds-core-designtokens/index.css';
 
 // Alternativt kan importeres slik
-import '@skatteetaten/ds-core-designtokens/containers.css';
-import '@skatteetaten/ds-core-designtokens/sizes.css';
+import '@skatteetaten/ds-core-designtokens/designtokens/containers.css';
+import '@skatteetaten/ds-core-designtokens/designtokens/sizes.css';
 ```
 
 ### Endringer i API:
@@ -55,7 +55,7 @@ Nå:
 
 ```js static
 // I .scss fil
-@import '@skatteetaten/ds-core-designtokens/breakpoints.scss';
+@import '@skatteetaten/ds-core-designtokens/designtokens/breakpoints.scss';
 // Eller - med json loader
 import designtokenBreakpoints from '@skatteetaten/ds-core-designtokens/_breakpoints.json';
 ```
@@ -87,7 +87,7 @@ Nå:
 import '@skatteetaten/ds-core-designtokens/index.css';
 
 // Alternativt kan importeres slik
-import '@skatteetaten/ds-core-designtokens/font.css';
+import '@skatteetaten/ds-core-designtokens/designtokens/font.css';
 ```
 
 **Mapping av nye navn:**
@@ -138,7 +138,7 @@ Størrelser til ikoner settes ikke gjennom font-sizes lenger. Verdiene kan impor
 import '@skatteetaten/ds-core-designtokens/index.css';
 
 // Alternativt kan importeres slik
-import '@skatteetaten/ds-core-designtokens/sizes.css';
+import '@skatteetaten/ds-core-designtokens/designtokens/sizes.css';
 ```
 
 **Mapping av nye navn:**

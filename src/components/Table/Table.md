@@ -345,6 +345,7 @@ const expandableContent = (data, close, rowIndex) => (
               { name: 'Beskrivelse', fieldName: 'beskrivelse' },
             ]}
             fullWidth
+            caption={'Oversikt over ansatte'}
           />
         </Grid.Col>
       </Grid.Row>
@@ -377,6 +378,7 @@ const expandableContentLabelWithCallout = (data, close, rowIndex) => (
               { name: 'Beskrivelse', fieldName: 'beskrivelse' },
             ]}
             fullWidth
+            caption={'Oversikt over ansatte'}
           />
         </Grid.Col>
       </Grid.Row>
