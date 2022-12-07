@@ -5,10 +5,12 @@
 - Icon er nå svg-basert og ikke font-basert
 - ikonet kan ikke endres på gjennom iconProps
 - ikonet har alltid en tooltip
+- I legacy desigsystem hadde komponenten type="button". Nå er type ikke satt. Dette fører til at komponenten får type=submit som er standard fra nettleser.
+  Vi planlegger å innføre en prop for å styre type og holder på med en vurdering av hva som skal være default verdi.
 
 ### Styling:
 
-- De nye komponentene i designsystemet er avhengige av designtokens. Disse leveres nå som en separat pakke. Se [designtokens](/#section-designtokens-deprecated) for detaljer.
+- De nye komponentene i designsystemet er avhengige av designtokens. Disse leveres nå som en separat pakke. Se [designtokens](#section-designtokens-deprecated) for detaljer.
 - størrelse på selve ikonet og luft er endret og default verdier er justert
   (se migrering under API → "buttonSize" / "size")
 - knappens ramme er tynnere (1px/2px nå vs 3px før)
@@ -97,12 +99,13 @@ import { AddSVGpath } from '@skatteetaten/ds-icons';
 
 'size'
 
-Alternativer: 'small' | 'medium' | 'large'. 'medium' er default.
+Alternativer: 'extraSmall' | 'small' | 'medium' | 'large'. 'medium' er default.
 
-- Tidligere "xSmall" (knapp 26px, ikon 20px) er nå "small" (knapp 18px, ikon 12px).
-- Tidligere "small" (knapp 35px, ikon 29px) er nå "medium" (knapp 24px, ikon 16px).
-- Tidligere "medium" (knapp 40px, ikon 34px) er nå "large" (knapp 40px, ikon 20px).
-- Tidligere "large" (knapp 50px, ikon 44px) og "xLarge" (knapp 60px, ikon 54px) er faset ut
+- tidligere "xSmall" (knapp 26px, ikon 20px) heter nå "extraSmall" (knapp 22px, ikon 16px).
+- "small" (knapp 35px, ikon 29px) er nå 26px stor (ikon 16px).
+- "medium" (knapp 40px, ikon 34px) er nå 32px stor (ikon 20px).
+- "large" (knapp 50px, ikon 44px) er nå 44px stor (ikon 24px).
+- "xLarge" (knapp 60px, ikon 54px) er faset ut.
 
 Før:
 

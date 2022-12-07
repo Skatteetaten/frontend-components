@@ -6,10 +6,12 @@ ActionButton er blitt erstattet med InlineButton.
 
 - det kan ikke sendes inn markup lengre
 - har ikke lengre anker-funksjonalitet
+- I legacy desigsystem hadde komponenten type="button". Nå er type ikke satt. Dette fører til at komponenten får type=submit som er standard fra nettleser.
+  Vi planlegger å innføre en prop for å styre type og holder på med en vurdering av hva som skal være default verdi.
 
 ### Styling:
 
-- De nye komponentene i designsystemet er avhengige av designtokens. Disse leveres nå som en separat pakke. Se [designtokens](/#section-designtokens-deprecated) for detaljer.
+- De nye komponentene i designsystemet er avhengige av designtokens. Disse leveres nå som en separat pakke. Se [designtokens](#section-designtokens-deprecated) for detaljer.
 - tilbys ikke i ulike farger lengre
 - ikon tilbys ikke i forskjellig størrelser lengre
 - har ikke lengre mulighet til valgfri underline. Underline kommer automatisk dersom ikon ikke er valgt
