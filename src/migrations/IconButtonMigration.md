@@ -59,7 +59,7 @@ Nå:
 import { IconButton } from '@skatteetaten/ds-buttons';
 import { AddSVGpath } from '@skatteetaten/ds-icons';
 
-<IconButton svgPath={<AddSVGpath />} title='Legg til' />
+<IconButton svgPath={AddSVGpath} title='Legg til' />
 // ELLER
 <IconButton svgPath={<path d='M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2Z' />} title='Legg til' />
 ```
@@ -88,7 +88,7 @@ Nå:
 import { IconButton } from '@skatteetaten/ds-buttons';
 import { AddSVGpath } from '@skatteetaten/ds-icons';
 
-<IconButton svgPath={<AddSVGpath />} title="Legg til" isOutlined />;
+<IconButton svgPath={AddSVGpath} title="Legg til" isOutlined />;
 ```
 
 </td>
@@ -121,7 +121,7 @@ Nå:
 import { IconButton } from '@skatteetaten/ds-buttons';
 import { AddSVGpath } from '@skatteetaten/ds-icons';
 
-<IconButton size={'large'} svgPath={<AddSVGpath />} title="Legg til" />;
+<IconButton size={'large'} svgPath={AddSVGpath} title="Legg til" />;
 ```
 
 </td>
@@ -151,7 +151,7 @@ Nå:
 import { IconButton } from '@skatteetaten/ds-buttons';
 import { AddSVGpath } from '@skatteetaten/ds-icons';
 
-<IconButton svgPath={<AddSVGpath />} title={'Skriv ut'} />;
+<IconButton svgPath={AddSVGpath} title={'Skriv ut'} />;
 ```
 
 </td>
@@ -179,7 +179,7 @@ import { IconButton } from '@skatteetaten/ds-buttons';
 import { AddSVGpath } from '@skatteetaten/ds-icons';
 
 <IconButton
-  svgPath={<AddSVGpath />}
+  svgPath={AddSVGpath}
   ariaDescribedby={'idTilElementMedTekst'}
   title="Legg til"
 />;
@@ -230,7 +230,7 @@ import { AddSVGpath } from '@skatteetaten/ds-icons';
 
 <IconButton
   className="myCustomClassname"
-  svgPath={<AddSVGpath />}
+  svgPath={AddSVGpath}
   title="Legg til"
 />;
 ```
