@@ -55,7 +55,7 @@ Nå:
 import { Button } from '@skatteetaten/ds-buttons';
 import { SendSVGpath } from '@skatteetaten/ds-icons';
 
-<Button svgPath={<SendSVGpath />}>
+<Button svgPath={SendSVGpath}>
 Send inn skattemeldingen
 </Button>
 // ELLER
@@ -263,7 +263,7 @@ Nå:
 import { Button } from '@skatteetaten/ds-buttons';
 import { SendSVGpath } from '@skatteetaten/ds-icons';
 
-<Button svgPath={<SendSVGpath />}>Send inn skattemeldingen</Button>;
+<Button svgPath={SendSVGpath}>Send inn skattemeldingen</Button>;
 ```
 
 </td>

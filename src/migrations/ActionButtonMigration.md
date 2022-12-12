@@ -66,7 +66,7 @@ Nå:
 import { InlineButton } from '@skatteetaten/ds-buttons';
 import { AddSVGpath } from '@skatteetaten/ds-icons';
 
-<InlineButton svgPath={<AddSVGpath />}>
+<InlineButton svgPath={AddSVGpath}>
     Legg til
 </InlineButton>
 // ELLER
@@ -103,15 +103,15 @@ Nå:
 import { InlineButton } from '@skatteetaten/ds-buttons';
 import { AddSVGpath } from '@skatteetaten/ds-icons';
 
-<InlineButton svgPath={<AddSVGpath />}>
+<InlineButton svgPath={AddSVGpath}>
     Legg til
 </InlineButton>
  // ELLER
-<InlineButton iconPosition='left' svgPath={<AddSVGpath />}>
+<InlineButton iconPosition='left' svgPath={AddSVGpath}>
     Legg til
 </InlineButton>
 // ELLER
-<InlineButton iconPosition='right' svgPath={<AddSVGpath />}>
+<InlineButton iconPosition='right' svgPath={AddSVGpath}>
     Legg til
 </InlineButton>
 ```

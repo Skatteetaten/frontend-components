@@ -48,7 +48,7 @@ import { Icon, InfoSVGpath } from '@skatteetaten/ds-icons';
 
 <Icon svgPath={<path d="M12.5 11a2 2 0 1 0-.09 3.998A />} ariaLabel={'my label'} />
 // ELLER
-<Icon svgPath={<InfoSVGpath />} title={'my title'} />
+<Icon svgPath={InfoSVGpath} title={'my title'} />
 ```
 
 </td>
@@ -80,7 +80,7 @@ Nå:
 ```js static
 import { Icon, InfoSVGpath } from '@skatteetaten/ds-icons';
 
-<Icon svgPath={<InfoSVGpath />} />
+<Icon svgPath={InfoSVGpath} />
 // ELLER
 <Icon svgPath={<path d="M12.5 11a2 2 0 1 0-.09 3.998A" />} />
 ```
@@ -113,7 +113,7 @@ Vi må definere en ekstern css stil og bruke className for å tilordne stilen ti
 ```js static
 import { Icon, InfoSVGpath } from '@skatteetaten/ds-icons';
 
-<Icon svgPath={<InfoSVGpath />} className="myCustomIconClassname" />;
+<Icon svgPath={InfoSVGpath} className="myCustomIconClassname" />;
 ```
 
 </td>
