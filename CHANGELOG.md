@@ -1,4 +1,9 @@
-### **v.6.0.1 - 7 Desember 2022**
+### **v.6.0.2 - December 2022**
+
+- Pagination: fixed WCAG 4.1.1 violation
+- Some small adjustement to migration guides
+
+### **v.6.0.1 - 7 December 2022**
 
 - IconButton: slight adjustment to migration guide (added size)
 - Various minor updates to documentation
