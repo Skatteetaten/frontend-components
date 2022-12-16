@@ -84,67 +84,64 @@ exports[`Pagination komponent matcher snapshot 1`] = `
     <ul>
       <li>
         <ul>
-          <div>
-            <li>
-              <button
-                aria-current={true}
-                aria-disabled={true}
-                aria-label="Side 1"
-                className=
+          <li>
+            <button
+              aria-current={true}
+              aria-disabled={true}
+              aria-label="Side 1"
+              className=
 
-                    {
-                      border-bottom: none !important;
-                      color: #4d4d4d !important;
-                      padding-bottom: 6px !important;
-                      padding-top: 3px !important;
-                    }
-                onClick={[Function]}
-                role="link"
-              >
-                1
-              </button>
-            </li>
-            <li>
-              <button
-                aria-current={false}
-                aria-disabled={false}
-                aria-label="Side 2"
-                className=
+                  {
+                    border-bottom: none !important;
+                    color: #4d4d4d !important;
+                    padding-bottom: 6px !important;
+                    padding-top: 3px !important;
+                  }
+              onClick={[Function]}
+              role="link"
+            >
+              1
+            </button>
+          </li>
+          <li>
+            <button
+              aria-current={false}
+              aria-disabled={false}
+              aria-label="Side 2"
+              className=
 
-                    {
-                      border-bottom: 2px solid #cde1f9 !important;
-                      padding-top: 3px !important;
-                    }
-                onClick={[Function]}
-                role="link"
-              >
-                2
-              </button>
-            </li>
-            <li>
-              <button
-                aria-current={false}
-                aria-disabled={false}
-                aria-label="Side 3"
-                className=
+                  {
+                    border-bottom: 2px solid #cde1f9 !important;
+                    padding-top: 3px !important;
+                  }
+              onClick={[Function]}
+              role="link"
+            >
+              2
+            </button>
+          </li>
+          <li>
+            <button
+              aria-current={false}
+              aria-disabled={false}
+              aria-label="Side 3"
+              className=
 
-                    {
-                      border-bottom: 2px solid #cde1f9 !important;
-                      padding-top: 3px !important;
-                    }
-                onClick={[Function]}
-                role="link"
-              >
-                3
-              </button>
-            </li>
-          </div>
+                  {
+                    border-bottom: 2px solid #cde1f9 !important;
+                    padding-top: 3px !important;
+                  }
+              onClick={[Function]}
+              role="link"
+            >
+              3
+            </button>
+          </li>
         </ul>
       </li>
       <li>
         <button
           onClick={[Function]}
-          role="link"
         >
           <span>
             Neste
