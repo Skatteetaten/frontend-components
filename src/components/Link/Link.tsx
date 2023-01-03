@@ -4,7 +4,9 @@ import { Icon } from '../Icon';
 import { getClassNames } from './Link.classNames';
 import { LinkProps } from './Link.types';
 
-/*
+/**
+ * @deprecated Komponenten er erstattet av Link fra "@skatteetaten/ds-buttons"
+ *
  * visibleName Link (Lenke)
  */
 

@@ -5,6 +5,7 @@ import ButtonLinkMigration from './ButtonLinkMigration.md';
 import ButtonMigration from './ButtonMigration.md';
 import IconButtonMigration from './IconButtonMigration.md';
 import IconMigration from './IconMigration.md';
+import LinkMigration from './LinkMigration.md';
 import ScrollToTopButtonMigration from './ScrollToTopButtonMigration.md';
 import LinkGroupMigration from './LinkGroupMigration.md';
 import SkeBasisMigration from './SkeBasisMigration.md';
@@ -15,6 +16,7 @@ export const MigrationGuides = [
   ButtonMigration,
   IconButtonMigration,
   IconMigration,
+  LinkMigration,
   ScrollToTopButtonMigration,
   LinkGroupMigration,
   SkeBasisMigration,
