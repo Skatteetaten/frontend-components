@@ -3,8 +3,7 @@
 ### Endringer i funksjonalitet:
 
 - det kan ikke sendes inn markup lengre
-- I legacy desigsystem hadde komponenten type="button". Nå er type ikke satt. Dette fører til at komponenten får type=submit som er standard fra nettleser.
-  Vi planlegger å innføre en prop for å styre type og holder på med en vurdering av hva som skal være default verdi.
+- v6.0.2: knappen har igjen fått type="button" som default slik som i legacy designsystem. I tillegg er type gjeninnført som prop.
 
 ### Styling:
 
