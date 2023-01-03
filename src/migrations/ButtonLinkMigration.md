@@ -7,7 +7,7 @@ ButtonLink er blitt erstattet med MegaButton.
 - det kan ikke sendes inn markup lengre
 - før var komponenten et &lt;a&gt;-element mens den er nå et &lt;button&gt;-element som default. 'href' property styrer om det blir tegnet opp som et &lt;a&gt;- eller &lt;button&gt;-element
 - viderefører ikke muligheten til å bestemme om en lenke skal kunne åpnes i nytt vindu
-- v6.0.2: Når komponenten tegnes opp som et &lt;button&gt;-element så den igjen fått type="button" som default slik som i legacy designsystem. I tillegg er type gjeninnført som prop.
+- v6.0.2: Når komponenten tegnes opp som et &lt;button&gt;-element så har den igjen fått type="button" som default slik som i legacy designsystem. I tillegg er type gjeninnført som prop.
 
 ### Styling
 
