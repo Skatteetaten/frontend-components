@@ -138,7 +138,6 @@ export const NextPage: React.FC<{
           evt.preventDefault();
           props.onClick(props.currentPage + 1);
         }}
-        role="link"
       >
         <span>{props.label}</span>
         <Icon iconName="ChevronRight" className={styles.linkIcons} />
@@ -160,7 +159,6 @@ export const PreviousLink: React.FC<{
           evt.preventDefault();
           props.onClick(props.currentPage - 1);
         }}
-        role="link"
       >
         <Icon iconName="ChevronLeft" className={styles.linkIcons} />
         {props.label}
@@ -233,7 +231,7 @@ export const Pages = (props: {
   );
 
   return (
-    <div>
+    <>
       {range(windowEdges.startPage, windowEdges.endPage, pagesDisplayed).map(
         (i) => {
           return (
@@ -250,6 +248,6 @@ export const Pages = (props: {
           );
         }
       )}
-    </div>
+    </>
   );
 };

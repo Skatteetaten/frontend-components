@@ -21,7 +21,7 @@ Man kan velge å importere alle ressursene ved å legge en css import statement 
 - Container er ny funksjonalitet. Det er et sett med css custom properties som distribueres gjennom containers.css (også tilgjengelig i json: containers.json)
   containers er automatisk en del av hoved-importen som er den anbefalte måten å konsumere tokens på: (se eksempel under)
 
-- Sizes er ny funksjonalitet. Det er et sett med css custom properties som distribueres gjennom sizes.css (også tilgjengelig i json: spacing.json)
+- Sizes er ny funksjonalitet. Det er et sett med css custom properties som distribueres gjennom sizes.css (også tilgjengelig i json: sizes.json)
   Sizes er automatisk en del av hoved-importen som er den anbefalte måten å konsumere tokens på:
 
 ```js static
@@ -32,6 +32,22 @@ import '@skatteetaten/ds-core-designtokens/index.css';
 // Alternativt kan importeres slik
 import '@skatteetaten/ds-core-designtokens/designtokens/containers.css';
 import '@skatteetaten/ds-core-designtokens/designtokens/sizes.css';
+```
+
+Ved import av alle css-ressurser fra designtoken i nytt designsystem i kombinasjon med bruk av legacy designsystem så kan det oppstå uønsket overskriving av css-verdier på root-nivå. Dette gjelder bla line-heigh som nå blir satt til 1.5. En mulig løsning for å hindre at ny line-height verdi blir satt er å bruke følgende kodesnutt:
+
+```js static
+import '@skatteetaten/ds-core-designtokens/index.css';
+import './_reset-default.css';
+```
+
+I filen `_reset-default.css` legger man inn følgende kode:
+
+```css
+:root,
+:host {
+  line-height: normal;
+}
 ```
 
 ### Endringer i API:
@@ -200,6 +216,39 @@ import '@skatteetaten/ds-core-designtokens/designtokens/sizes.css';
 
 - --semantic-divider 30
 - --semantic-divider-50
+
+</td>
+</tr>
+<tr><td> Spacing </td>
+<td>
+
+Før:
+
+```javascript static
+import designtokenSpacing from '/utils/designtokens/_spacing.json';
+```
+
+Nå:
+
+```js static
+// Eksempel på import av alle ressursene. Man får reset stylesheet, alle designtokens, og SKE theme som default.
+// Dette gjøres bare én gang i hoved index.tsx
+import '@skatteetaten/ds-core-designtokens/index.css';
+
+// Alternativt kan importeres slik
+import '@skatteetaten/ds-core-designtokens/designtokens/spacing.css';
+```
+
+**Mapping av nye navn:**
+
+- $ske-spacing-xs → --spacing-xxs
+- $ske-spacing-sm → --spacing-xs
+- $ske-spacing-md → --spacing-s
+- $ske-spacing-lg → --spacing-m
+- $ske-spacing-xl → --spacing-l
+- $ske-spacing-xxl → --spacing-xl
+- $ske-spacing-xxxl → --spacing-xxl
+- $ske-spacing-mega → --spacing-mega
 
 </td>
 </tr>

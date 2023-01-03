@@ -6,8 +6,7 @@ ActionButton er blitt erstattet med InlineButton.
 
 - det kan ikke sendes inn markup lengre
 - har ikke lengre anker-funksjonalitet
-- I legacy desigsystem hadde komponenten type="button". Nå er type ikke satt. Dette fører til at komponenten får type=submit som er standard fra nettleser.
-  Vi planlegger å innføre en prop for å styre type og holder på med en vurdering av hva som skal være default verdi.
+- v6.0.2: knappen har igjen fått type="button" som default slik som i legacy designsystem. I tillegg er type gjeninnført som prop.
 
 ### Styling:
 
@@ -66,7 +65,7 @@ Nå:
 import { InlineButton } from '@skatteetaten/ds-buttons';
 import { AddSVGpath } from '@skatteetaten/ds-icons';
 
-<InlineButton svgPath={<AddSVGpath />}>
+<InlineButton svgPath={AddSVGpath}>
     Legg til
 </InlineButton>
 // ELLER
@@ -103,15 +102,15 @@ Nå:
 import { InlineButton } from '@skatteetaten/ds-buttons';
 import { AddSVGpath } from '@skatteetaten/ds-icons';
 
-<InlineButton svgPath={<AddSVGpath />}>
+<InlineButton svgPath={AddSVGpath}>
     Legg til
 </InlineButton>
  // ELLER
-<InlineButton iconPosition='left' svgPath={<AddSVGpath />}>
+<InlineButton iconPosition='left' svgPath={AddSVGpath}>
     Legg til
 </InlineButton>
 // ELLER
-<InlineButton iconPosition='right' svgPath={<AddSVGpath />}>
+<InlineButton iconPosition='right' svgPath={AddSVGpath}>
     Legg til
 </InlineButton>
 ```
