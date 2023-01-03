@@ -1,7 +1,8 @@
-### **v.6.0.2 - December 2022**
+### **v.6.0.2 - January 2023**
 
 - Pagination: fixed WCAG 4.1.1 violation
 - Some small adjustement to migration guides
+- Datepicker: fikset feil datoformatering (fra D.MM.YYYY til DD.MM.YYYY)
 
 ### **v.6.0.1 - 7 December 2022**
 
