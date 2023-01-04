@@ -16,6 +16,7 @@ The package '@skatteetaten/frontend-components' is released in parallel with '@s
 - Upgraded dependencies: @fluentui/react, i18next, react-i18next, typescript
 - Add children prop explicitly for improved compatibility with React 18
 - Moment: removal of moment as a dependency
+  - Automatic conversion from DDMM to DD.MM.YYYY is not included any longer (ie. typing 0404 + Enter does not automatically lead to 04.04.2022). Instead, dates need to be written manually in the format DD.MM.YYYY or chosen from the calendar.
 - Deprecating the following components:
   - Designtokens and SkeBasis
   - Button, ActionButton, IconButton and ButtonLink
