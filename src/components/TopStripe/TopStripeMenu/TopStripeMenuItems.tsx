@@ -94,6 +94,12 @@ export const TopStripeMenuItems: React.FC<TopStripeMenuProps> = (props) => {
         className={styles.topStripeMenuDropdownCloseButton}
         icon={'ChevronUp'}
         onClick={() => setOpen(index)}
+        onKeyDown={(e: any) => {
+          e.stopPropagation();
+          if (!e.shiftKey && e.key === 'Tab') {
+            setOpen(index);
+          }
+        }}
         ariaLabel={closeMenuAriaLabel}
       />
     </div>

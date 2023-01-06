@@ -61,6 +61,12 @@ export const TopStripeMenu: React.FC<TopStripeMenuProps> = (props) => {
           [styles.topStripeMenuShowChevron]: showChevron,
         })}
         onClick={() => setOpen(index)}
+        onKeyDown={(e: any) => {
+          e.stopPropagation();
+          if (e.shiftKey && e.key === 'Tab' && isMenuOpen) {
+            setOpen(index);
+          }
+        }}
         showOnMobile={showOnMobile}
       >
         {icon && (
