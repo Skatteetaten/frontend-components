@@ -126,6 +126,7 @@ import { TextField } from '@skatteetaten/frontend-components/TextField';
 
 const [state, setState] = React.useState({
   value: 'Siri Saksbehandler',
+  telefonnummer: '12345678',
   vekt: '4',
   empty: '',
 });
@@ -138,6 +139,18 @@ const [state, setState] = React.useState({
     value={state.value}
     onChange={(e, value) => setState({ ...state, value })}
     boldText={true}
+  />
+  <p style={{ paddingTop: '16px', marginBottom: '8px' }}>
+    <em>Med prefix:</em>
+  </p>
+  <TextField
+    readOnly
+    editable
+    label="Telefonnummer"
+    value={state.telefonnummer}
+    onChange={(e, value) => setState({ ...state, telefonnummer: value })}
+    boldText={true}
+    prefix={'+47'}
   />
   <p style={{ paddingTop: '16px', marginBottom: '8px' }}>
     <em>Med suffix:</em>

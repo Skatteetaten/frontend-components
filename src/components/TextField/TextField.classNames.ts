@@ -133,6 +133,13 @@ export const getClassNames = (props: TextFieldProps) => {
         !calloutFloating && {
           display: 'inline-block',
         },
+      '.ms-TextField-wrapper > .ms-Label': (props.prefix || props.suffix) && {
+        display: 'none',
+      },
+      '.ms-TextField-prefix': !props.editMode &&
+        props.readOnly && {
+          display: 'none',
+        },
       '.ms-TextField-suffix': !props.editMode &&
         props.readOnly && {
           display: 'none',
