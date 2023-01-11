@@ -7,6 +7,7 @@ import {
   ScrollToTopButtonProps,
   ScrollToTopButtonState,
 } from './ScrollToTopButton.types';
+import { t } from 'i18next';
 
 /*
  * visibleName ScrollToTopButton (Gå til toppen)
@@ -16,7 +17,7 @@ export class ScrollToTopButton extends React.PureComponent<
   ScrollToTopButtonState
 > {
   static defaultProps = {
-    label: 'Til toppen',
+    label: t('scrollToTopButton.backToTop'),
     containerMaxWidth: undefined,
   };
 

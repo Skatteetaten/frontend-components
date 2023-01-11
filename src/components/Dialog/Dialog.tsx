@@ -9,7 +9,7 @@ import {
 } from '@fluentui/react';
 import { DialogProps, DialogState } from './Dialog.types';
 import { BrandContext } from '../SkeBasis';
-import i18n from '../utils/i18n/i18n';
+import i18n, { t } from '../utils/i18n/i18n';
 import WaitAlert from './WaitAlert';
 
 export class Dialog extends React.PureComponent<DialogProps, DialogState> {
@@ -19,7 +19,7 @@ export class Dialog extends React.PureComponent<DialogProps, DialogState> {
   static defaultProps = {
     layoutStyle: 'normal',
     type: Dialog.Type.normal,
-    closeButtonAriaLabel: 'Lukk',
+    closeButtonAriaLabel: t('felles.close'),
     tabletContentOverflows: false,
     isModeless: false,
     isBlocking: undefined,
@@ -95,7 +95,7 @@ export class Dialog extends React.PureComponent<DialogProps, DialogState> {
                 <Callout
                   directionalHint={Callout.POS_TOP_LEFT}
                   color={Callout.HELP}
-                  ariaLabel={'Hjelpetekst'}
+                  ariaLabel={t('felles.helpText')}
                   target={this._iconButtonElement}
                   onClose={this._onDismiss}
                 />

@@ -8,6 +8,7 @@ import {
   AccordionItemProps,
   ToggleContentInterface,
 } from './AccordionItem.types';
+import { t } from 'i18next';
 
 const ToggleContent: React.FC<ToggleContentInterface> = (props) => {
   const {
@@ -43,14 +44,7 @@ const ToggleContent: React.FC<ToggleContentInterface> = (props) => {
           ) : (
             <span>{toggleButtonText}</span>
           )}
-          {subtitle &&
-            (typeof subtitle === 'object' ? (
-              <span className={styles.subtitle}>{subtitle}</span>
-            ) : (
-              <span className={styles.subtitle} aria-label={subtitle}>
-                {subtitle}
-              </span>
-            ))}
+          {subtitle && <span className={styles.subtitle}>{subtitle}</span>}
         </span>
         <Icon iconName={'ChevronDown'} />
       </span>
@@ -120,7 +114,11 @@ export const AccordionItem: React.FC<AccordionItemProps> = (props) => {
                 <div className={styles.stepNumber}>
                   <span
                     id={'StepId' + stepId}
-                    aria-label={ariaLabel ? ariaLabel : 'Steg ' + stepNumber}
+                    aria-label={
+                      ariaLabel
+                        ? ariaLabel
+                        : t('accordionItem.step') + ' ' + stepNumber
+                    }
                   >
                     {icon ? <Icon iconName={icon} /> : stepNumber}
                   </span>

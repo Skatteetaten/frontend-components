@@ -4,6 +4,7 @@ import React, { PureComponent } from 'react';
 import { IconButton } from '../IconButton';
 import { getClassNames } from './Callout.classNames';
 import { CalloutColor, CalloutProps, CalloutState } from './Callout.types';
+import { t } from 'i18next';
 
 /*
  * visibleName Callout (Utropsboks)
@@ -75,7 +76,7 @@ export class Callout extends PureComponent<CalloutProps, CalloutState> {
         >
           {children}
           <IconButton
-            aria-label="Lukk"
+            aria-label={t('felles.close')}
             icon="Cancel"
             className={styles.closeButton}
             buttonSize="small"

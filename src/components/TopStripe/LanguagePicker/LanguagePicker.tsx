@@ -66,6 +66,7 @@ const LanguagePickerButton = ({
       className={styles.languageButton}
       role={'menuitem'}
       aria-current={isSelectedLanguage}
+      lang={buttonLanguage}
     >
       {isSelectedLanguage && (
         <Icon iconName={'Check'} className={styles.checkIcon} />

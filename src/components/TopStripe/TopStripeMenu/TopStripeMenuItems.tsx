@@ -6,12 +6,13 @@ import { ActionButton } from '../../ActionButton';
 import { getClassNames } from './TopStripeMenu.classNames';
 import { TopStripeMenuProps } from './TopStripeMenu';
 import { TopStripeContext } from '../TopStripe';
+import { t } from 'i18next';
 
 export const TopStripeMenuItems: React.FC<TopStripeMenuProps> = (props) => {
   const {
     children,
     index,
-    closeMenuAriaLabel = 'Lukk',
+    closeMenuAriaLabel = t('felles.close'),
     closeOnClick = true,
     contentIsMenu = true,
   } = props;

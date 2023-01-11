@@ -3,6 +3,7 @@ import { getClassNames } from './LabelWithCallout.classNames';
 import { IconButton } from '@fluentui/react';
 import { Callout } from '../Callout';
 import { calloutState, LabelWithCalloutProps } from './LabelWithCallout.types';
+import { t } from 'i18next';
 
 /*
  * visibleName LabelWithCallout (Merkelapp med utropsboks)
@@ -94,7 +95,7 @@ export const LabelWithCallout = (props: LabelWithCalloutProps) => {
         {help && !warning && (
           <span className={styles.labelIconArea} ref={iconButtonElementRef}>
             <IconButton
-              title={buttonTitle ? buttonTitle : 'Hjelp'}
+              title={buttonTitle ? buttonTitle : t('felles.help')}
               iconProps={{ iconName: 'HelpOutline' }}
               className={`${styles.icon} ${customClassNames?.helpicon ?? ''}`}
               onClick={() => {
@@ -102,7 +103,7 @@ export const LabelWithCallout = (props: LabelWithCalloutProps) => {
                 toggleEvent();
               }}
               aria-describedby={id}
-              ariaLabel={buttonAriaLabel ? buttonAriaLabel : 'Hjelp'}
+              ariaLabel={buttonAriaLabel ? buttonAriaLabel : t('felles.help')}
               aria-expanded={isCalloutVisible}
             />
           </span>
@@ -110,7 +111,7 @@ export const LabelWithCallout = (props: LabelWithCalloutProps) => {
         {warning && (
           <span className={styles.labelIconArea} ref={iconButtonElementRef}>
             <IconButton
-              title={buttonTitle ? buttonTitle : 'Varsel'}
+              title={buttonTitle ? buttonTitle : t('felles.warning')}
               iconProps={{ iconName: 'WarningOutline' }}
               className={`${styles.warningicon} ${
                 customClassNames?.warningicon ?? ''
@@ -120,7 +121,9 @@ export const LabelWithCallout = (props: LabelWithCalloutProps) => {
                 toggleEvent();
               }}
               aria-describedby={id}
-              ariaLabel={buttonAriaLabel ? buttonAriaLabel : 'Varsel'}
+              ariaLabel={
+                buttonAriaLabel ? buttonAriaLabel : t('felles.warning')
+              }
               aria-expanded={isCalloutVisible}
             />
           </span>
@@ -133,11 +136,11 @@ export const LabelWithCallout = (props: LabelWithCalloutProps) => {
           >
             {editable && (
               <IconButton
-                title={buttonTitle ? buttonTitle : 'Rediger'}
+                title={buttonTitle ? buttonTitle : t('felles.edit')}
                 iconProps={{ iconName: 'Edit' }}
                 className={`${styles.icon} ${customClassNames?.editicon ?? ''}`}
                 aria-describedby={id}
-                ariaLabel={buttonAriaLabel ? buttonAriaLabel : 'Rediger'}
+                ariaLabel={buttonAriaLabel ? buttonAriaLabel : t('felles.edit')}
                 aria-expanded={isCalloutVisible}
                 onClick={editFunction}
               />

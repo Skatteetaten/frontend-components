@@ -56,7 +56,7 @@ export const SearchField: React.FC<SearchFieldProps> = (props) => {
     keyboardShortcut = false,
     searchShortcutKeys = 'ctrl+f',
     onSearchIcon,
-    searchIconTitle = 'Søk',
+    searchIconTitle = t('searchfield.iconTitle'),
     ...rest
   } = props;
   const _searchBoxElement = createRef<HTMLDivElement>();
@@ -243,7 +243,7 @@ export const SearchField: React.FC<SearchFieldProps> = (props) => {
       {options ? (
         <div ref={_searchBoxElement}>
           <span id={srFocus} className={styles.srOnly}>
-            {t('searchfield.sr.focus')}
+            {t('searchfield.focus')}
           </span>
           <SearchBox
             {...rest}
@@ -276,7 +276,7 @@ export const SearchField: React.FC<SearchFieldProps> = (props) => {
           />
           <span aria-live="assertive" className={styles.srOnly}>
             {dropdownVisible
-              ? i18n.t('searchfield.sr.results', {
+              ? t('searchfield.results', {
                   ant: searchResultList ? searchResultList.length : 0,
                 })
               : ''}

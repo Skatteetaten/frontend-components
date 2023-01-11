@@ -3,6 +3,7 @@ import { getClassNames } from './Pagination.classNames';
 import classnames from 'classnames';
 import { Icon } from '../Icon';
 import { PaginationProps } from './Pagination.types';
+import { t } from 'i18next';
 
 const getNumberOfPages = (total: number, pageSize: number) => {
   return Math.ceil(total / pageSize);
@@ -85,13 +86,13 @@ export const Pagination: React.FC<PaginationProps> = (props) => {
   return (
     <div className={classnames(styles.paginationContainer, className)}>
       <p data-testid="pagination-oppsummering">{`Viser ${view} av ${total}`}</p>
-      <nav aria-label={ariaLabel ? ariaLabel : 'Sidenavigering'}>
+      <nav aria-label={ariaLabel ? ariaLabel : t('pagination.pageNavigation')}>
         <ul>
           {currentPage > 1 && (
             <PreviousLink
               currentPage={currentPage}
               onClick={(page: number) => onPageChange(page)}
-              label={previousLabel ? previousLabel : 'Forrige'}
+              label={previousLabel ? previousLabel : t('pagination.previous')}
             />
           )}
           <li>
@@ -113,7 +114,7 @@ export const Pagination: React.FC<PaginationProps> = (props) => {
               total={total}
               pageSize={pageSize}
               onClick={onPageChange}
-              label={nextLabel ? nextLabel : 'Neste'}
+              label={nextLabel ? nextLabel : t('pagination.next')}
             />
           )}
         </ul>
@@ -188,10 +189,14 @@ export const Page: React.FC<{
       return (
         (ariaLabelNavigationLinkActive
           ? ariaLabelNavigationLinkActive
-          : 'Side ') + page
+          : t('pagination.page') + ' ') + page
       );
     }
-    return (ariaLabelNavigationLink ? ariaLabelNavigationLink : 'Side ') + page;
+    return (
+      (ariaLabelNavigationLink
+        ? ariaLabelNavigationLink
+        : t('pagination.page') + ' ') + page
+    );
   };
 
   return (

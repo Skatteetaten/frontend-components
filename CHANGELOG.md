@@ -1,3 +1,10 @@
+### **v.6.0.4 - January 2023**
+
+- Rettelser av uu-brudd på WCAG 3.1.2(Språk på deler av innhold)
+  - språkmeny-elementene har fått lang attributt
+  - hardkodet alt-tekster for logoer har fått lang attributt
+  - hardkodet tekster er byttet ut med tekstvariabler
+
 ### **v.6.0.3 - January 2023**
 
 - TopStrip/TopStripMenuItem: når en tasturbruker går ut av en undermeny med tab-tasten så lukkes den nå av seg selv (tilsvarende som om bruker trykket enter/space på lukk-knappen i undermenyen)
