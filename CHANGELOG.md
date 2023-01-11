@@ -3,6 +3,7 @@
 - TopStrip/TopStripMenuItem: når en tasturbruker går ut av en undermeny med tab-tasten så lukkes den nå av seg selv (tilsvarende som om bruker trykket enter/space på lukk-knappen i undermenyen)
 - TopStripMenu: når en tasturbruker har åpnet en undermeny og så går tilbake med shift+tab dvs ut av den, så lukkes undermenyen nå bruker forlater selve meny-elementet
 - TextField: inputfelter med prefix og/eller suffix får nå også lest opp ledeteksten (label) av en skjermleser og ikke bare affiks-verdier
+- FooterContent: nytt eksempel med og litt info om tilgjengelighetserklæringen
 
 ### **v.6.0.2 - January 2023**
 

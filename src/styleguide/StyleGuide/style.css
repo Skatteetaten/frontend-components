@@ -480,3 +480,25 @@ ul.navigation li.underline {
   font-size: 0.75rem;
   text-align: left;
 }
+
+.brodtekst-link {
+  color: #1362ae !important;
+  text-decoration: none !important;
+  padding-bottom: 1px !important;
+  border-bottom: 1px solid #1362ae !important;
+}
+.footer-linkgroup ul {
+  margin-top: 0;
+}
+.footer-linkgroup li a {
+  color: #fff !important;
+  border-bottom: none !important;
+}
+.footer-linkgroup li a:hover,
+.footer-linkgroup li a:focus {
+  color: #6f2c3f !important;
+  background-color: #fff !important;
+}
+.footer-linkgroup li i {
+  color: #fff !important;
+}
