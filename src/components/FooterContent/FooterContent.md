@@ -1,28 +1,41 @@
 **FooterContent (Bunn): brukes i publikumsløsninger for å markere bunnen av siden.**
 
+Lenken til tilgjengelighetserklæring er **en unik url pr løsning** og skal ha fast plassering i footer.
+
+Tilgjengelighetserklæring opprettes og fylles ut på <a class="brodtekst-link" href="https://uustatus.no/nb">uustatus.no</a> hvor det blir generert en unik url til erklæring.
+Les mer <a class="brodtekst-link" href="https://www.uutilsynet.no/veiledning/tilgjengelighetserklaering/1127">om tilgjengelighetserklæringen på uutilsynet sine sider</a>.
+
 ```js
 import { FooterContent } from '@skatteetaten/frontend-components/FooterContent';
 import { Grid } from '@skatteetaten/frontend-components/Grid';
+import { LinkGroup } from '@skatteetaten/frontend-components/LinkGroup';
+
+const links = [
+  {
+    text: 'Kontakt oss',
+    path: '#path1',
+  },
+  {
+    text: 'Sikkerhet og personvern',
+    path: '#path2',
+  },
+  {
+    text: 'Tilgjengelighetserklæring',
+    path: '#unikpathforhverloesning',
+  },
+];
 
 <div>
   <FooterContent>
     <Grid>
       <Grid.Row>
-        <Grid.Col sm={0} lg={1} xl={2}></Grid.Col>
-        <Grid.Col noSpacing sm={12} lg={10} xl={8}>
-          <Grid>
-            <Grid.Row>
-              <Grid.Col noSpacing sm={0} lg={1} xl={2}>
-                <FooterContent.Logo />
-              </Grid.Col>
-              <Grid.Col noSpacing sm={12} lg={10} xl={8}>
-                <p>Innhold i footer</p>
-              </Grid.Col>
-              <Grid.Col noSpacing sm={0} lg={1} xl={2}></Grid.Col>
-            </Grid.Row>
-          </Grid>
+        <Grid.Col lg={1} />
+        <Grid.Col lg={2}>
+          <FooterContent.Logo />
         </Grid.Col>
-        <Grid.Col noSpacing sm={0} lg={1} xl={2}></Grid.Col>
+        <Grid.Col lg={6} className="footer-linkgroup">
+          <LinkGroup links={links} />
+        </Grid.Col>
       </Grid.Row>
     </Grid>
   </FooterContent>

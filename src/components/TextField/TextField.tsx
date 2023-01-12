@@ -58,8 +58,15 @@ export const TextField: React.FC<TextFieldProps> = ({
   };
 
   const setValue = () => {
-    if (rest.suffix && readOnly && !editMode) {
-      return value + ' ' + rest.suffix;
+    if (readOnly && !editMode) {
+      let readOnlyValue = value;
+      if (rest.suffix) {
+        readOnlyValue = readOnlyValue + ' ' + rest.suffix;
+      }
+      if (rest.prefix) {
+        readOnlyValue = rest.prefix + ' ' + readOnlyValue;
+      }
+      return readOnlyValue;
     } else if (value === null) {
       return undefined;
     }
@@ -80,6 +87,9 @@ export const TextField: React.FC<TextFieldProps> = ({
   } else {
     TextFieldType = FabricTextField;
   }
+
+  const fluentuiLabelNaarHarAffikser =
+    rest.prefix || rest.suffix ? label : undefined;
 
   return (
     <div
@@ -130,6 +140,7 @@ export const TextField: React.FC<TextFieldProps> = ({
           textField.current = ref;
         }}
         mask={mask}
+        label={fluentuiLabelNaarHarAffikser}
       >
         {children}
       </TextFieldType>
