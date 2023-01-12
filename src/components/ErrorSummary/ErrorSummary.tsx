@@ -52,11 +52,16 @@ export const ErrorSummary: React.FC<ErrorSummaryProps> = (props) => {
               <li key={error.id}>
                 <SkeLink
                   linkGroup
-                  tabIndex={0}
                   icon="ArrowForward"
+                  /* NB! Må ha en path som legger på attributtet href slik at det går å bruke Enter for tastaturbruker.
+                   *  Uten href så vil ikke a-elementet få fokus og heller ikke kunne brukes med tastatur selv om
+                   * attributtet tabIndex legges på eksplisitt.
+                   * */
+                  path={'#'}
                   placement="before"
                   text={error.error}
-                  onClick={() => {
+                  onClick={(e) => {
+                    e.preventDefault();
                     onClick ? onClick(error.id) : scrollToId(error.id);
                   }}
                 />
