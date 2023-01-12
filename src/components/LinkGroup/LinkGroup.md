@@ -2,7 +2,6 @@
 
 ```js
 import { LinkGroup } from '@skatteetaten/frontend-components/LinkGroup';
-import { Link as RRLink, BrowserRouter as Router } from 'react-router-dom';
 
 const links = [
   {
