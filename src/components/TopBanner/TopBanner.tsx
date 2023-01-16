@@ -43,8 +43,7 @@ const InternalHeader = (props: Partial<TopBannerTypes>) => {
             <Image
               className={styles.headerLogo}
               src={props.language === 'en' ? internLogoEn : internLogo}
-              alt="Skatteetaten logo"
-              lang="nb"
+              alt={t('topbanner.ske.logo')}
             />
           )}
           <Icon className={styles.headerIcon} iconName={props.icon} />
