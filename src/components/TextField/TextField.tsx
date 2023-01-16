@@ -76,7 +76,7 @@ export const TextField: React.FC<TextFieldProps> = ({
 
   const setCustomButtonAriaLabel = () => {
     if (rest.suffix && readOnly) {
-      return t('felles.edit') + ' ' + label + ' (' + rest.suffix + ')';
+      return `${t('felles.edit')} ${label} (${rest.suffix})`;
     } else {
       return undefined;
     }
