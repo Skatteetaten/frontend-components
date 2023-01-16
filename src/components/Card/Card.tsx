@@ -70,7 +70,7 @@ export class Card extends React.PureComponent<CardProps, CardState> {
       >
         <div className={styles.titlecontainer}>
           <TitleTag className={styles.titleExpand}>{title}</TitleTag>
-          {<div className={styles.subtitle}>{subtitle}</div>}
+          {subtitle && <div className={styles.subtitle}>{subtitle}</div>}
         </div>
         <div className={styles.expandIcon}>
           <Icon iconName={'ChevronDown'} />
