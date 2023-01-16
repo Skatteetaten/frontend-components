@@ -82,7 +82,7 @@ export class Card extends React.PureComponent<CardProps, CardState> {
       <div className={styles.header}>
         <div className={styles.titlecontainer}>
           <TitleTag className={styles.title}>{title}</TitleTag>
-          {<div className={styles.subtitle}>{subtitle}</div>}
+          {subtitle && <div className={styles.subtitle}>{subtitle}</div>}
         </div>
       </div>
     );
