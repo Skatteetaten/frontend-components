@@ -105,6 +105,7 @@ describe('TopBanner komponent', () => {
       external: false,
       compact: true,
       title: 'Intern løsning',
+      language: 'nb',
     });
 
     expect(wrapper.find('header'));
@@ -120,6 +121,7 @@ describe('TopBanner komponent', () => {
       external: false,
       icon: 'ArrowBack',
       title: 'Intern løsning',
+      language: 'nb',
     });
 
     expect(wrapper.find('header'));
@@ -134,6 +136,7 @@ describe('TopBanner komponent', () => {
     const wrapper = oppsettFullDOM({
       external: false,
       title: 'Intern løsning',
+      language: 'nb',
     });
 
     expect(wrapper.find('header'));

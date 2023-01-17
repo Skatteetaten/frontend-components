@@ -23,6 +23,10 @@ const InternalHeader = (props: Partial<TopBannerTypes>) => {
   const styles = getInternalClassNames(props);
   const size = UseScreen();
 
+  if (props.language) {
+    i18n.changeLanguage(props.language);
+  }
+
   return (
     <header
       className={classnames(styles.header, props.className)}

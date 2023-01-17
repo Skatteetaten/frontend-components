@@ -52,7 +52,6 @@ exports[`ScrollToTopButton komponent matcher snapshot 1`] = `
           }
     >
       <button
-        aria-label="Til toppen"
         className=
             ms-Button
             ms-Button--action
