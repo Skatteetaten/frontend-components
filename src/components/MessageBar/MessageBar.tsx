@@ -9,6 +9,7 @@ import { CSSTransition } from 'react-transition-group';
 import { Button as MessageBarButton } from '../Button/Button';
 import { getClassNames } from './MessageBar.classNames';
 import { MessageBarProps, MessageBarState } from './MessageBar.types';
+import { t } from 'i18next';
 
 export class MessageBar extends React.PureComponent<
   MessageBarProps,
@@ -22,7 +23,6 @@ export class MessageBar extends React.PureComponent<
     onClick: undefined,
     size: 'default',
     type: MessageBar.Type.info,
-    dismissButtonAriaLabel: 'Lukk',
   };
 
   state = {
@@ -108,7 +108,11 @@ export class MessageBar extends React.PureComponent<
                 isMultiline={isMultiline}
                 aria-describedby={id}
                 role="status"
-                dismissButtonAriaLabel={dismissButtonAriaLabel}
+                dismissButtonAriaLabel={
+                  dismissButtonAriaLabel
+                    ? dismissButtonAriaLabel
+                    : t('felles.close')
+                }
               >
                 {children}
               </FabricMessageBar>

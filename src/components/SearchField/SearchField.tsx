@@ -56,7 +56,7 @@ export const SearchField: React.FC<SearchFieldProps> = (props) => {
     keyboardShortcut = false,
     searchShortcutKeys = 'ctrl+f',
     onSearchIcon,
-    searchIconTitle = t('searchfield.iconTitle'),
+    searchIconTitle,
     ...rest
   } = props;
   const _searchBoxElement = createRef<HTMLDivElement>();
@@ -293,7 +293,7 @@ export const SearchField: React.FC<SearchFieldProps> = (props) => {
           showIcon={true}
           iconProps={{
             onClick: (ev) => (onSearchIcon ? onSearchIcon(ev) : null),
-            title: onSearchIcon ? searchIconTitle : '',
+            title: searchIconTitle ? searchIconTitle : t('searchfield.sok'),
           }}
         />
       )}

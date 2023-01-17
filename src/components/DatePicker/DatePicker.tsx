@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { t } from './../utils/i18n/i18n';
+import { t } from '../utils';
 import classnames from 'classnames';
 import {
   DatePicker as FabricDatePicker,
@@ -62,7 +62,7 @@ export const DatePicker: React.FC<DatePickerProps> = (
     isRequired: false,
     highlightCurrentMonth: true,
     parseDateFromString: DEFAULTPARSEDATEFROMSTRING,
-    pickerAriaLabel: t('datepicker.ariaLabel'),
+    pickerAriaLabel: t('datepicker.kalender'),
     showGoToToday: true,
     showMonthPickerAsOverlay: false,
     showWeekNumbers: true,
@@ -102,7 +102,7 @@ export const DatePicker: React.FC<DatePickerProps> = (
       DEFAULT_DATE_FORMAT,
     }),
     /** Automatisk utvide høyde (ved multiline) */
-    isOutOfBoundsErrorMessage: 'Datoen er ikke innenfor gyldig periode',
+    isOutOfBoundsErrorMessage: t('datepicker.isOutOfBoundsErrorMessage'),
     isRequiredErrorMessage: t('datepicker.isRequiredErrorMessage'),
   };
 

@@ -19,7 +19,6 @@ export class Dialog extends React.PureComponent<DialogProps, DialogState> {
   static defaultProps = {
     layoutStyle: 'normal',
     type: Dialog.Type.normal,
-    closeButtonAriaLabel: t('felles.close'),
     tabletContentOverflows: false,
     isModeless: false,
     isBlocking: undefined,
@@ -75,7 +74,9 @@ export class Dialog extends React.PureComponent<DialogProps, DialogState> {
                 type: type,
                 title,
                 subText,
-                closeButtonAriaLabel: closeButtonAriaLabel,
+                closeButtonAriaLabel: closeButtonAriaLabel
+                  ? closeButtonAriaLabel
+                  : t('felles.close'),
               }}
               modalProps={{
                 isBlocking,

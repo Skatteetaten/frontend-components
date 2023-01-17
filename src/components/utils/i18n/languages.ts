@@ -1,7 +1,7 @@
 export const languages = {
   nb_NO: {
     'accordionItem.step': 'Steg',
-    'datepicker.ariaLabel': 'Kalender',
+    'datepicker.kalender': 'Kalender',
     'datepicker.goToToday': 'I dag',
     'datepicker.invalidInputErrorMessage':
       'Datoen er ikke gyldig. (format: {{DEFAULT_DATE_FORMAT}})',
@@ -41,7 +41,7 @@ export const languages = {
     'pagination.pageNavigation': 'Sidenavigering',
     'pagination.previous': 'Forrige',
     'scrollToTopButton.backToTop': 'Til toppen',
-    'searchfield.iconTitle': 'Søk',
+    'searchfield.sok': 'Søk',
     'searchfield.focus':
       'Bruk piltaster ned/opp for å velge forslag når de vises',
     'searchfield.results': '{{ant}} forslag vises.',
@@ -59,7 +59,7 @@ export const languages = {
   },
   nn_NO: {
     'accordionItem.step': 'Steg',
-    'datepicker.ariaLabel': 'Kalender',
+    'datepicker.kalender': 'Kalender',
     'datepicker.goToToday': 'I dag',
     'datepicker.invalidInputErrorMessage':
       'Datoen er ikkje gyldig. (format: {{DEFAULT_DATE_FORMAT}})',
@@ -98,7 +98,7 @@ export const languages = {
     'pagination.pageNavigation': 'Sidenavigering',
     'pagination.previous': 'Førre',
     'scrollToTopButton.backToTop': 'Til toppen',
-    'searchfield.iconTitle': 'Søk',
+    'searchfield.sok': 'Søk',
     'searchfield.focus': 'Bruk piltastane ned/opp for å velje',
     'searchfield.results': '{{ant}} forslag visast.',
     'table.sortable': 'sorterbar',
@@ -115,7 +115,7 @@ export const languages = {
   },
   en_GB: {
     'accordionItem.step': 'Step',
-    'datepicker.ariaLabel': 'Calendar',
+    'datepicker.kalender': 'Calendar',
     'datepicker.goToToday': 'Today',
     'datepicker.invalidInputErrorMessage':
       'Invalid date format. (format: {{DEFAULT_DATE_FORMAT}})',
@@ -155,7 +155,7 @@ export const languages = {
     'pagination.pageNavigation': 'Page navigation',
     'pagination.previous': 'Previous',
     'scrollToTopButton.backToTop': 'Back to top',
-    'searchfield.iconTitle': 'Search',
+    'searchfield.sok': 'Search',
     'searchfield.focus': 'Use up/down to choose options when they are shown',
     'searchfield.results': '{{ant}} items shown.',
     'table.sortable': 'sortable',
@@ -173,7 +173,7 @@ export const languages = {
   },
   se_NO: {
     'accordionItem.step': 'Lávki',
-    'datepicker.ariaLabel': 'Kaleandar',
+    'datepicker.kalender': 'Kaleandar',
     'datepicker.goToToday': 'Otne',
     'datepicker.invalidInputErrorMessage':
       'Dáhton ii leat gustovaš. (format: {{DEFAULT_DATE_FORMAT}})',
@@ -213,7 +213,7 @@ export const languages = {
     'pagination.pageNavigation': 'Doaris navigering',
     'pagination.previous': 'Ovddit',
     'scrollToTopButton.backToTop': 'I le pito i luga',
-    'searchfield.iconTitle': 'Ohcan',
+    'searchfield.sok': 'Ohcan',
     'searchfield.focus': 'Geavat vulos/bajás boaluid válljet evttohusaid',
     'searchfield.results': '{{ant}} evttohus/evttohusat.',
     'table.sortable': 'sorterbar',

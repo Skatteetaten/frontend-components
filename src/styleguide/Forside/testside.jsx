@@ -48,6 +48,8 @@ import Spinner from '@skatteetaten/frontend-components/Spinner';
 import DetailsList from '@skatteetaten/frontend-components/DetailsList';
 import Table from '@skatteetaten/frontend-components/Table';
 import ErrorSummary from '@skatteetaten/frontend-components/ErrorSummary';
+import { Dialog } from '@skatteetaten/frontend-components/Dialog';
+import designtokenBreakpoints from '../../components/utils/designtokens/_breakpoints.json';
 
 function Testside(props) {
   const pageSize = 8;
@@ -112,7 +114,7 @@ function Testside(props) {
   const showFirstStep = true;
   const editableContent = (data, close, rowIndex) => (
     <div>
-      <p>Editerbart innhold</p>
+      <p>Redigerbart innhold</p>
     </div>
   );
 
@@ -676,11 +678,98 @@ function Testside(props) {
     ));
   };
 
+  const [state, setState] = React.useState({
+    hideAutoDialog: true,
+    hideManualDialog: true,
+  });
+
+  function closeDialog() {
+    setState({ hideAutoDialog: true });
+    setState({ hideManualDialog: true });
+  }
+
   const [language, setLanguage] = useState('nb');
 
   return (
     <>
       <h1>Testside for komponenter</h1>
+
+      <h2>TopStripe, TopBanner</h2>
+      <TopBanner
+        language={language}
+        topStripe={
+          <TopStripe>
+            <Link
+              path={'https://www.skatteetaten.no/kontakt/'}
+              text={'Kontakt oss'}
+              placement="before"
+            />
+
+            <TopStripeMenu title={'Endre skriftstørrelse'}>
+              <div style={{ fontSize: '24px', marginTop: '8px' }}>
+                Hold Ctrl-tasten nede (Cmd-tasten på Mac). Trykk på + for å
+                forstørre eller - for å forminske.
+              </div>
+            </TopStripeMenu>
+            <LanguagePicker
+              selectedLanguage={language}
+              setLanguage={setLanguage}
+              showOnMobile={true}
+              showSami={true}
+            />
+
+            <span>
+              <Icon iconName="person" /> Vegard Sandli
+            </span>
+
+            <Link path={'#topstripe'} text={'Logg ut'} placement="before" />
+          </TopStripe>
+        }
+        external
+        title={'Side for publikum'}
+        homeText={'Tilbake til skatteetaten.no'}
+      />
+      <div style={{ margin: '20px 0' }}>
+        <TopBanner
+          compact
+          homeText="Systemnavn"
+          title="Sak eller arbeidsoppgave"
+          homeUrl="#topbanner"
+        >
+          <div>test</div>
+        </TopBanner>
+      </div>
+
+      <h2>FooterContent</h2>
+      <FooterContent />
+
+      <h2>Dialog</h2>
+      <div>
+        <ActionButton
+          buttonStyle="secondary"
+          onClick={() => setState({ hideManualDialog: false })}
+          icon="InfoOutline"
+        >
+          Dialog som lukkes aktivt
+        </ActionButton>
+        <Dialog
+          hidden={state.hideManualDialog}
+          type={Dialog.Type.normal}
+          onDismiss={closeDialog}
+          modalProps={{ isBlocking: true, isModeless: false }}
+          title="Meldinger"
+          forceFocusInsideTrap
+          minWidth={designtokenBreakpoints['ske-breakpoint-sm']}
+          maxWidth={designtokenBreakpoints['ske-breakpoint-md']}
+        >
+          <p>Du har ingen nye meldinger.</p>
+
+          <Dialog.Footer>
+            <Button onClick={closeDialog}>Lukk</Button>
+          </Dialog.Footer>
+        </Dialog>
+      </div>
+
       <h2>Knapperhierarki</h2>
       <p>1. Call to Action - kun én på siden:</p>
       <Button buttonStyle="callToAction">Send inn skjema</Button>
@@ -703,6 +792,7 @@ function Testside(props) {
         icon={'OpenInNew'}
         placement="after"
       />
+
       <h2>ActionButton</h2>
       <ActionButton icon="AddOutline">Legg til</ActionButton>
       <ActionButton>Standard</ActionButton>
@@ -737,6 +827,7 @@ function Testside(props) {
       <Button buttonStyle="primaryCornered">Primary cornered</Button>
       <Button buttonStyle="secondarySimple">Secondary simple</Button>
       <Button buttonStyle="warning">Avvis</Button>
+
       <h2>ButtonLink</h2>
       <ButtonLink path={'#'} text="Se og endre skattekort" />
       <h2>IconButton</h2>
@@ -751,12 +842,14 @@ function Testside(props) {
         icon={'Download'}
         placement="before"
       />
-      <Link
-        path={'#link'}
-        text={'Gå til oversikt'}
-        icon={'ArrowForward'}
-        placement="before"
-      />
+      <div>
+        <Link
+          path={'#link'}
+          text={'Gå til oversikt'}
+          icon={'ArrowForward'}
+          placement="before"
+        />
+      </div>
       <Link
         path={'#link'}
         text={'Åpne i nytt vindu'}
@@ -767,6 +860,7 @@ function Testside(props) {
       <p>
         En <Link path={'#link'} text={'link'} /> inni et avsnitt med tekst.
       </p>
+
       <h2>LinkGroup</h2>
       <LinkGroup
         links={[
@@ -815,65 +909,7 @@ function Testside(props) {
           icon={'arrowForward'}
         />
       </NavigationTile>
-      <h2>FooterContent</h2>
-      <ScrollToTopButton label={'Til toppen'} />
-      <FooterContent />
-      <h2>Pagination</h2>
-      <Pagination
-        currentPage={currentPage}
-        onPageChange={(page) => {
-          const index = (page - 1) * pageSize;
-          setDisplayedData([...10].splice(index, pageSize));
-          setCurrentPage(page);
-        }}
-        total={10}
-        pageSize={pageSize}
-      />
-      <div style={{ marginTop: '60px', marginBottom: '20px' }}>
-        <h2>TopStripe, TopBanner</h2>
 
-        <TopBanner
-          topStripe={
-            <TopStripe>
-              <Link
-                path={'https://www.skatteetaten.no/kontakt/'}
-                text={'Kontakt oss'}
-                placement="before"
-              />
-
-              <TopStripeMenu title={'Endre skriftstørrelse'}>
-                <div style={{ fontSize: '24px', marginTop: '8px' }}>
-                  Hold Ctrl-tasten nede (Cmd-tasten på Mac). Trykk på + for å
-                  forstørre eller - for å forminske.
-                </div>
-              </TopStripeMenu>
-              <LanguagePicker
-                selectedLanguage={language}
-                setLanguage={setLanguage}
-                showOnMobile={true}
-                showSami={true}
-              />
-
-              <span>
-                <Icon iconName="person" /> Vegard Sandli
-              </span>
-
-              <Link path={'#topstripe'} text={'Logg ut'} placement="before" />
-            </TopStripe>
-          }
-          external
-          title={'Side for publikum'}
-          homeText={'Tilbake til skatteetaten.no'}
-        />
-      </div>
-      <TopBanner
-        compact
-        homeText="Systemnavn"
-        title="Sak eller arbeidsoppgave"
-        homeUrl="#topbanner"
-      >
-        <div>test</div>
-      </TopBanner>
       <h2>Typography</h2>
       <Typography>
         <h1>Overskriftsnivå 1</h1>
@@ -913,6 +949,7 @@ function Testside(props) {
           <li>Evaluere</li>
         </ol>
       </Typography>
+
       <h2>FileUploader</h2>
       <FileUploader
         addFileString={'Last opp fil'}
@@ -1018,14 +1055,22 @@ function Testside(props) {
         useComboBoxAsMenuWidth
       />
       <h2>Datepicker</h2>
+      <p>
+        Når en DatePicker har en prop language som følger endring av språk fra
+        TopBanner så blir kalendermånedene og -dagene endrer til språket som er
+        valgt (bortsett fra samisk og nynorsk). (Feilmeldingen vises også med
+        riktig språk under her siden teksten ikke er fra hentet fra prop help
+        slik som med de andre DatePicker.)
+      </p>
       <DatePicker
+        language={language}
         id={'my-date1'}
         label={'Velg en dato'}
         help={
           'Du kan skrive inn dato i feltet, eller velge en dato ved hjelp av datovelgeren, enten med mus eller bruk tastaturet'
         }
         value={date}
-        isRequiredErrorMessage={'Dato må fylles ut'}
+        isRequired
       />
       <DatePicker
         id={'my-date2'}
@@ -1034,7 +1079,6 @@ function Testside(props) {
         help={
           'Du kan skrive inn dato i feltet, eller velge en dato ved hjelp av datovelgeren, enten med mus eller bruk tastaturet'
         }
-        isRequiredErrorMessage={'Dato må fylles ut'}
       />
       <DatePicker
         id={'my-date3'}
@@ -1042,7 +1086,6 @@ function Testside(props) {
         help={
           'Du kan skrive inn dato i feltet, eller velge en dato ved hjelp av datovelgeren, enten med mus eller bruk tastaturet'
         }
-        isRequiredErrorMessage={'Dato må fylles ut'}
         errorMessage={'Vis med feil'}
       />
       <h2>Dropdown</h2>
@@ -1704,6 +1747,7 @@ function Testside(props) {
       <MessageBar size="large" onDismiss={() => null}>
         Satsene for denne avgiftstypen ble oppdatert 01.01.2017.
       </MessageBar>
+
       <h2>LabelWithCallout</h2>
       <LabelWithCallout
         label={'Omregistreringsavgift'}
@@ -1711,6 +1755,12 @@ function Testside(props) {
           'Avgiften du må betale for å registrere kjøretøyet på en ny person.'
         }
       />
+      <LabelWithCallout
+        label={'Warning'}
+        help={'Warning ikonet skal ha aria-label tekst om warning'}
+        warning
+      />
+
       <h2>ErrorMessage</h2>
       <ErrorMessage>Skriv datoen slik: 17.05.2019</ErrorMessage>
 
@@ -1991,16 +2041,34 @@ function Testside(props) {
         editableRows
         columns={columns}
       />
-      <h2>Icons</h2>
-      {printIcons(iconGroup.arrows)}
-      {printIcons(iconGroup.addremove)}
-      {printIcons(iconGroup.files)}
-      {printIcons(iconGroup.info)}
-      {printIcons(iconGroup.manipulate)}
-      {printIcons(iconGroup.sections)}
-      {printIcons(iconGroup.tags)}
-      {printIcons(iconGroup.time)}
-      {printIcons(iconGroup.theme)}
+
+      <h2>Pagination</h2>
+
+      <Pagination
+        currentPage={currentPage}
+        onPageChange={(page) => {
+          const index = (page - 1) * pageSize;
+          setDisplayedData([...10].splice(index, pageSize));
+          setCurrentPage(page);
+        }}
+        total={10}
+        pageSize={pageSize}
+      />
+
+      <div style={{ marginTop: '60px', marginBottom: '20px' }}>
+        <h2>Icons</h2>
+        {printIcons(iconGroup.arrows)}
+        {printIcons(iconGroup.addremove)}
+        {printIcons(iconGroup.files)}
+        {printIcons(iconGroup.info)}
+        {printIcons(iconGroup.manipulate)}
+        {printIcons(iconGroup.sections)}
+        {printIcons(iconGroup.tags)}
+        {printIcons(iconGroup.time)}
+        {printIcons(iconGroup.theme)}
+      </div>
+
+      <ScrollToTopButton />
     </>
   );
 }
