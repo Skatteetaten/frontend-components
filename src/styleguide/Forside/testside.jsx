@@ -1054,13 +1054,15 @@ function Testside(props) {
         ariaLabel="Eksempel ComboBox"
         useComboBoxAsMenuWidth
       />
-      <h2>Datepicker</h2>
+      <h2>DatePicker</h2>
       <p>
-        Når en DatePicker har en prop language som følger endring av språk fra
-        TopBanner så blir kalendermånedene og -dagene endrer til språket som er
-        valgt (bortsett fra samisk og nynorsk). (Feilmeldingen vises også med
-        riktig språk under her siden teksten ikke er fra hentet fra prop help
-        slik som med de andre DatePicker.)
+        NB! Når en DatePicker har en prop language som følger endring av språk
+        fra TopBanner så blir kalendermånedene og -dagene endrer til språket som
+        er valgt og feilmelding også med det valgte språket siden teksten kommer
+        fra komponenten.
+      </p>
+      <p>
+        Den første DatePicker eksemplet har prop language men ikke de andre.
       </p>
       <DatePicker
         language={language}
@@ -1173,7 +1175,7 @@ function Testside(props) {
       <br />
       <DatePicker
         id={'my-date3'}
-        label={'Datepicker med dato'}
+        label={'DatePicker med dato'}
         value={date}
         disabled
         help={
@@ -1182,7 +1184,7 @@ function Testside(props) {
       />
       <DatePicker
         id={'my-date3'}
-        label={'Stor datepicker '}
+        label={'Stor DatePicker '}
         disabled
         inputSize="large"
         value={date}

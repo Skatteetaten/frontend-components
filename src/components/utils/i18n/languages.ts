@@ -171,6 +171,7 @@ export const languages = {
     'topbanner.lso.logo': 'Salary subsidy logo',
     'topbanner.lso.logoLink': 'Front page Salary subsidy',
   },
+  // TODO FRONT-1072 oppdatere med riktige samiske tekster
   se_NO: {
     'accordionItem.step': 'Lávki',
     'datepicker.kalender': 'Kaleandar',
@@ -212,7 +213,7 @@ export const languages = {
     'pagination.page': 'Doaris',
     'pagination.pageNavigation': 'Doaris navigering',
     'pagination.previous': 'Ovddit',
-    'scrollToTopButton.backToTop': 'I le pito i luga',
+    'scrollToTopButton.backToTop': 'Bajás fas',
     'searchfield.sok': 'Ohcan',
     'searchfield.focus': 'Geavat vulos/bajás boaluid válljet evttohusaid',
     'searchfield.results': '{{ant}} evttohus/evttohusat.',
