@@ -102,7 +102,9 @@ export class StyleGuideRenderer extends React.Component {
                       </a>
                     </li>
                     <li className="underline">
-                      <a href="/">Designe og utvikle</a>
+                      <a href="/" aria-current={true}>
+                        Designe og utvikle
+                      </a>
                     </li>
                     <li>
                       <a href="https://www.skatteetaten.no/stilogtone/universell-utforming/">
