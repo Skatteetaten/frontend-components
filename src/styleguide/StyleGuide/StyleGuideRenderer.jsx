@@ -118,7 +118,7 @@ export class StyleGuideRenderer extends React.Component {
                 </div>
               </nav>
             </TopBanner>
-            <div className="mainContent">
+            <main className="mainContent">
               <Grid className={styles.main}>
                 <Grid.Row>
                   <Grid.Col md={12} xl={3}>
@@ -147,7 +147,7 @@ export class StyleGuideRenderer extends React.Component {
                   </Grid.Col>
                 </Grid.Row>
               </Grid>
-            </div>
+            </main>
           </div>
           <div className="footer">
             <FooterContent>
