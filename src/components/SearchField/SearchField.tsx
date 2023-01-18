@@ -293,7 +293,9 @@ export const SearchField: React.FC<SearchFieldProps> = (props) => {
           showIcon={true}
           iconProps={{
             onClick: (ev) => (onSearchIcon ? onSearchIcon(ev) : null),
-            title: searchIconTitle ? searchIconTitle : t('searchfield.sok'),
+            title:
+              onSearchIcon &&
+              (searchIconTitle ? searchIconTitle : t('searchfield.sok')),
           }}
         />
       )}

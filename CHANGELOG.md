@@ -4,6 +4,7 @@
   - have added long attribute on language menu items
   - have added long attribute on hardcoded alt texts
   - hardcoded texts have been replaced by text variables
+  - DatePicker: nynorsk and sami texts for months and days (for this to work, the prop language must have a value)
 - ErrorSummary: fixed WCAG 2.1.1 (Keyboard) violation
 - Added the accessibilty statement to the GitHub footer for the design system
 

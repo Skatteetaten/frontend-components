@@ -163,7 +163,7 @@ exports[`SearchField komponent matcher snapshot 1`] = `
       onClick={[Function]}
     >
       <i
-        aria-label="Søk"
+        aria-hidden={true}
         className=
             ms-SearchBox-icon
             {
@@ -182,8 +182,6 @@ exports[`SearchField komponent matcher snapshot 1`] = `
             }
         data-icon-name="Search"
         onClick={[Function]}
-        role="img"
-        title="Søk"
       >
         
       </i>

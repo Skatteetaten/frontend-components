@@ -1665,6 +1665,7 @@ function Testside(props) {
             actionBtn={{
               text: 'Endre',
               ariaLabel: 'Endre jobber du?',
+              icon: 'edit',
             }}
           >
             <div>
@@ -1675,7 +1676,11 @@ function Testside(props) {
         <Step
           stepTitle={titles.step2.no}
           stepId={'step-1-2'}
-          actionBtn={{ text: 'Endre', ariaLabel: 'Endre overnatting' }}
+          actionBtn={{
+            text: 'Endre',
+            ariaLabel: 'Endre overnatting',
+            icon: 'edit',
+          }}
         >
           <div>
             <p>Ja, jeg overnatter et annet sted enn hjemme på grunn av jobb</p>
