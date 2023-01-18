@@ -8,7 +8,7 @@ import classnames from 'classnames';
 
 export const ErrorSummary: React.FC<ErrorSummaryProps> = (props) => {
   const {
-    id = 'errorsummary',
+    id,
     shadowRootNode,
     titleTagName = 'h3',
     className,
