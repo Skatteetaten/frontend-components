@@ -103,7 +103,7 @@ export const LabelWithCallout = (props: LabelWithCalloutProps) => {
                 toggleEvent();
               }}
               aria-describedby={id}
-              ariaLabel={buttonAriaLabel ? buttonAriaLabel : t('felles.help')}
+              ariaLabel={buttonAriaLabel}
               aria-expanded={isCalloutVisible}
             />
           </span>
@@ -121,9 +121,7 @@ export const LabelWithCallout = (props: LabelWithCalloutProps) => {
                 toggleEvent();
               }}
               aria-describedby={id}
-              ariaLabel={
-                buttonAriaLabel ? buttonAriaLabel : t('felles.warning')
-              }
+              ariaLabel={buttonAriaLabel}
               aria-expanded={isCalloutVisible}
             />
           </span>
@@ -140,7 +138,7 @@ export const LabelWithCallout = (props: LabelWithCalloutProps) => {
                 iconProps={{ iconName: 'Edit' }}
                 className={`${styles.icon} ${customClassNames?.editicon ?? ''}`}
                 aria-describedby={id}
-                ariaLabel={buttonAriaLabel ? buttonAriaLabel : t('felles.edit')}
+                ariaLabel={buttonAriaLabel}
                 aria-expanded={isCalloutVisible}
                 onClick={editFunction}
               />
