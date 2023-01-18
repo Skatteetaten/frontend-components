@@ -74,8 +74,16 @@ const iconGroup = {
   typography: designtokenTypographyData,
 };
 
+const caption = 'Liste over skriftstørrelser';
+
 <div>
-  <Table columns={columns} data={iconGroup.typography} fullWidth />
+  <Table
+    caption={caption}
+    hideCaption
+    columns={columns}
+    data={iconGroup.typography}
+    fullWidth
+  />
 </div>;
 ```
 
@@ -153,8 +161,16 @@ const iconGroup = {
   typography: designtokenTypographyData,
 };
 
+const caption = 'Liste over linjeavstander';
+
 <div>
-  <Table columns={columns} data={iconGroup.typography} fullWidth />
+  <Table
+    caption={caption}
+    hideCaption
+    columns={columns}
+    data={iconGroup.typography}
+    fullWidth
+  />
 </div>;
 ```
 
