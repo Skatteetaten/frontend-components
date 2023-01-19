@@ -389,6 +389,14 @@ ul.navigation li.underline {
   border-width: 0;
 }
 
+.pathline {
+  display: flex;
+  align-items: center;
+  font-family: Consolas, 'Liberation Mono', Menlo, monospace;
+  color: rgb(118, 118, 118);
+  word-break: break-all;
+}
+
 .deprecatedLabel {
   padding: 0.5rem;
   font-size: 0.9rem;

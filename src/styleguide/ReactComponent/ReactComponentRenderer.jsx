@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import Pathline from 'react-styleguidist/lib/client/rsg-components/Pathline';
 import Styled from 'react-styleguidist/lib/client/rsg-components/Styled';
 import Examples from 'react-styleguidist/lib/client/rsg-components/Examples';
 import { UseScreen } from '../../components/utils/ScreenPlugin';
@@ -9,6 +8,7 @@ import { MigrationGuides } from '../../migrations';
 import { Icon } from '../../components/Icon';
 import { Tabs } from '../../components/Tabs';
 import { TabItem } from '../../components/Tabs/TabItem';
+import { IconButton } from '@skatteetaten/frontend-components/IconButton';
 
 const styles = ({ color, fontSize, space }) => ({
   root: {
@@ -93,7 +93,18 @@ export function ReactComponentRenderer({
     <div className={classes.root} data-testid={`${name}-container`}>
       <header className={classes.header}>
         {heading}
-        {pathLine && <Pathline>{pathLine}</Pathline>}
+        {pathLine && (
+          <div className={'pathline'}>
+            {pathLine}
+            <IconButton
+              title="Kopier"
+              icon="Copy"
+              onClick={() => {
+                navigator.clipboard.writeText(`${pathLine}`);
+              }}
+            />
+          </div>
+        )}
       </header>
       {isDeprecated && (
         <span className="deprecatedLabel">
