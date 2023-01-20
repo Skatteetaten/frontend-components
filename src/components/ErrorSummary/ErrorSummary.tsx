@@ -10,7 +10,7 @@ export const ErrorSummary: React.FC<ErrorSummaryProps> = (props) => {
   const {
     id,
     shadowRootNode,
-    titleTagName = 'h3',
+    titleTagName = 'h2',
     className,
     errors,
     onClick,

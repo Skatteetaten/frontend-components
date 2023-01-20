@@ -83,7 +83,7 @@ const screenSize = UseScreen();
           </div>
         </Grid.Col>
         <Grid.Col noSpacing sm={12} lg={10} xl={8}>
-          <h3 style={{ marginTop: '0px' }}>Varsel</h3>
+          <h2 style={{ marginTop: '0px' }}>Varsel</h2>
           <p style={{ margin: '0px' }}>
             Dersom vi ønsker å tiltrekke brukerens oppmerksomhet kan vi legge
             inn bokser (Card) og et passende ikon. Siden det er ønskelig at

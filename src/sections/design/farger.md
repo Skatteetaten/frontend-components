@@ -32,7 +32,7 @@ function drawSwatch(colorCode) {
 }
 
 <div>
-<h3>Hovedfarger</h3>
+<h2>Hovedfarger</h2>
   <div style={{ display: 'flex', flexFlow: 'row wrap' }}>
     {drawSwatch('burgundy100'),
      drawSwatch('burgundy70'), 
@@ -77,21 +77,21 @@ function drawSwatch(colorCode) {
      drawSwatch('grey5')}  
   </div>
 
-  <h3>Statusfarger</h3>
+  <h2>Statusfarger</h2>
   <div style={{ display: 'flex', flexFlow: 'row wrap' }}>
     {drawSwatch('statusError'), 
      drawSwatch('statusWarning'),
      drawSwatch('statusOk')}  
   </div>
 
-  <h3>Interaksjonsfarger</h3>
+  <h2>Interaksjonsfarger</h2>
   <div style={{ display: 'flex', flexFlow: 'row wrap' }}>
     {drawSwatch('interactive'), 
      drawSwatch('interactiveLight'), 
      drawSwatch('interactiveDark')}  
   </div>
 
-  <h3>Tips og retningslinjer</h3>
+  <h2>Tips og retningslinjer</h2>
   <p>100-fargene kan brukes med 30-fargene og lysere. Unngå å blande på tvers av hovedfarger.</p>
   <div className="dodont">
     <div className="do">

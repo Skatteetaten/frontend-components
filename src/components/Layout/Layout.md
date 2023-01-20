@@ -1,6 +1,6 @@
 Vår Layout er basert på et grid oppbygd av 12 responsive kolonner med fast 16 px gutter og 32px margins
 
-### Brekkpunkter
+## Brekkpunkter
 
 Vi benytter oss av seks sett med brekkpunkter:
 
@@ -51,7 +51,7 @@ DemoBlock = ({ children }) => (
 </Layout>;
 ```
 
-### Push and pull
+## Push and pull
 
 Noen ganger kan det være aktuelt at rekkefølgen på kolonnene visuelt er forskjellig fra rekkefølgen i koden. Push og pull-mekanismen gjør dette mulig. Push flytter en kolonne til høyre, pull flytter en kolonne til venstre.
 
@@ -76,7 +76,7 @@ Noen ganger kan det være aktuelt at rekkefølgen på kolonnene visuelt er forsk
 </Grid>
 ```
 
-### Visibility
+## Visibility
 
 Noen ganger ønsker en å vise og skjule innehold avhengig av skjermstørrelsen. I designsystemet kan vi slå av eller på kolonner over et bredt spekter av skjermstørrelser.
 
