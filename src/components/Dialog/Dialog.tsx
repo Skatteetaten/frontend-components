@@ -74,9 +74,7 @@ export class Dialog extends React.PureComponent<DialogProps, DialogState> {
                 type: type,
                 title,
                 subText,
-                closeButtonAriaLabel: closeButtonAriaLabel
-                  ? closeButtonAriaLabel
-                  : t('felles.close'),
+                closeButtonAriaLabel: closeButtonAriaLabel || t('common.close'),
               }}
               modalProps={{
                 isBlocking,
@@ -96,7 +94,7 @@ export class Dialog extends React.PureComponent<DialogProps, DialogState> {
                 <Callout
                   directionalHint={Callout.POS_TOP_LEFT}
                   color={Callout.HELP}
-                  ariaLabel={t('felles.helpText')}
+                  ariaLabel={t('common.helpText')}
                   target={this._iconButtonElement}
                   onClose={this._onDismiss}
                 />

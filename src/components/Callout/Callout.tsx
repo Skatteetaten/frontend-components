@@ -76,7 +76,7 @@ export class Callout extends PureComponent<CalloutProps, CalloutState> {
         >
           {children}
           <IconButton
-            aria-label={t('felles.close')}
+            aria-label={t('common.close')}
             icon="Cancel"
             className={styles.closeButton}
             buttonSize="small"

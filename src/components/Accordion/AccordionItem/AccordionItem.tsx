@@ -115,9 +115,7 @@ export const AccordionItem: React.FC<AccordionItemProps> = (props) => {
                   <span
                     id={'StepId' + stepId}
                     aria-label={
-                      ariaLabel
-                        ? ariaLabel
-                        : t('accordionItem.step') + ' ' + stepNumber
+                      ariaLabel || t('accordionItem.step') + ' ' + stepNumber
                     }
                   >
                     {icon ? <Icon iconName={icon} /> : stepNumber}

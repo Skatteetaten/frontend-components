@@ -109,9 +109,7 @@ export class MessageBar extends React.PureComponent<
                 aria-describedby={id}
                 role="status"
                 dismissButtonAriaLabel={
-                  dismissButtonAriaLabel
-                    ? dismissButtonAriaLabel
-                    : t('felles.close')
+                  dismissButtonAriaLabel || t('common.close')
                 }
               >
                 {children}

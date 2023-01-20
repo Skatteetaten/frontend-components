@@ -95,7 +95,7 @@ export const LabelWithCallout = (props: LabelWithCalloutProps) => {
         {help && !warning && (
           <span className={styles.labelIconArea} ref={iconButtonElementRef}>
             <IconButton
-              title={buttonTitle ? buttonTitle : t('felles.help')}
+              title={buttonTitle || t('common.help')}
               iconProps={{ iconName: 'HelpOutline' }}
               className={`${styles.icon} ${customClassNames?.helpicon ?? ''}`}
               onClick={() => {
@@ -111,7 +111,7 @@ export const LabelWithCallout = (props: LabelWithCalloutProps) => {
         {warning && (
           <span className={styles.labelIconArea} ref={iconButtonElementRef}>
             <IconButton
-              title={buttonTitle ? buttonTitle : t('felles.warning')}
+              title={buttonTitle || t('common.warning')}
               iconProps={{ iconName: 'WarningOutline' }}
               className={`${styles.warningicon} ${
                 customClassNames?.warningicon ?? ''
@@ -134,7 +134,7 @@ export const LabelWithCallout = (props: LabelWithCalloutProps) => {
           >
             {editable && (
               <IconButton
-                title={buttonTitle ? buttonTitle : t('felles.edit')}
+                title={buttonTitle || t('common.edit')}
                 iconProps={{ iconName: 'Edit' }}
                 className={`${styles.icon} ${customClassNames?.editicon ?? ''}`}
                 aria-describedby={id}

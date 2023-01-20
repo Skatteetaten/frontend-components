@@ -29,17 +29,11 @@ const buttonStyle = {
   marginTop: '8px',
 };
 
-const [state, setState] = React.useState({
-  aar: '1009',
-  epost: 'Ola.Normann.no',
-  dager: '',
-});
-
 <div>
   <div style={{ maxWidth: '350px', marginBottom: '16px' }}>
     <TextField
       id={'input_aar'}
-      value={state.aar}
+      value="1009"
       label={'År'}
       errorMessage="Inntekståret må være etter 2008"
       onChange={(e, value) => setState({ ...state, aar: value })}
@@ -48,7 +42,7 @@ const [state, setState] = React.useState({
   <div style={{ maxWidth: '350px', marginBottom: '16px' }}>
     <TextField
       id={'input_epost'}
-      value={state.epost}
+      value={'Ola.Normann.no'}
       label={'E-post'}
       errorMessage="E-posten ser ikke riktig ut. Skriv slik: ola.normann@norge.no"
       onChange={(e, value) => setState({ ...state, epost: value })}
@@ -57,7 +51,7 @@ const [state, setState] = React.useState({
   <div style={{ maxWidth: '350px', marginBottom: '16px' }}>
     <TextField
       id={'input_dager'}
-      value={state.dager}
+      value={''}
       label={'Antall dager i Norge i perioden/inntekståret'}
       errorMessage="Antall dager må fylles ut"
       onChange={(e, value) => setState({ ...state, dager: value })}

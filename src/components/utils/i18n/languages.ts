@@ -1,7 +1,7 @@
 export const languages = {
   nb_NO: {
     'accordionItem.step': 'Steg',
-    'datepicker.kalender': 'Kalender',
+    'datepicker.calendar': 'Kalender',
     'datepicker.goToToday': 'I dag',
     'datepicker.invalidInputErrorMessage':
       'Datoen er ikke gyldig. (format: {{DEFAULT_DATE_FORMAT}})',
@@ -18,11 +18,11 @@ export const languages = {
     'dialog.waitAlert.paragraph':
       'Vi ser at du ikke har gjort noe på nettsiden på ei stund. Er du fortsatt her?',
     'dialog.waitAlert.title': 'Hei!',
-    'felles.close': 'Lukk',
-    'felles.edit': 'Rediger',
-    'felles.help': 'Hjelp',
-    'felles.helpText': 'Hjelptekst',
-    'felles.warning': 'Varsel',
+    'common.close': 'Lukk',
+    'common.edit': 'Rediger',
+    'common.help': 'Hjelp',
+    'common.helpText': 'Hjelptekst',
+    'common.warning': 'Varsel',
     'fileuploader.accepted_file_formats': 'Aksepterte filformater:',
     'fileuploader.add.label': 'Legg til fil(er)',
     'fileuploader.delete.ariaLabel': 'Fjern fil',
@@ -38,7 +38,7 @@ export const languages = {
     'fileuploader.uploaded.sr_heading': 'Lastet opp:',
     'pagination.next': 'Neste',
     'pagination.page': 'Side',
-    'pagination.pageNavigation': 'Sidenavigering',
+    'pagination.pageNavigation': 'Sidevelger',
     'pagination.previous': 'Forrige',
     'scrollToTopButton.backToTop': 'Til toppen',
     'searchfield.sok': 'Søk',
@@ -59,7 +59,7 @@ export const languages = {
   },
   nn_NO: {
     'accordionItem.step': 'Steg',
-    'datepicker.kalender': 'Kalender',
+    'datepicker.calendar': 'Kalender',
     'datepicker.goToToday': 'I dag',
     'datepicker.invalidInputErrorMessage':
       'Datoen er ikkje gyldig. (format: {{DEFAULT_DATE_FORMAT}})',
@@ -76,11 +76,11 @@ export const languages = {
     'dialog.waitAlert.paragraph':
       'Vi ser at du ikkje har gjort noko på nettsida på ei stund. Er du framleis her?',
     'dialog.waitAlert.title': 'Hei!',
-    'felles.close': 'Lukk',
-    'felles.edit': 'Rediger',
-    'felles.help': 'Hjelp',
-    'felles.helpText': 'Hjelptekst',
-    'felles.warning': 'Varsel',
+    'common.close': 'Lukk',
+    'common.edit': 'Rediger',
+    'common.help': 'Hjelp',
+    'common.helpText': 'Hjelptekst',
+    'common.warning': 'Varsel',
     'fileuploader.accepted_file_formats': 'Aksepterte filformater:',
     'fileuploader.add.label': 'Legg til fil(er)',
     'fileuploader.delete.ariaLabel': 'Fjern fil',
@@ -95,7 +95,7 @@ export const languages = {
     'fileuploader.uploaded.sr_heading': 'Lasta opp:',
     'pagination.next': 'Neste',
     'pagination.page': 'Side',
-    'pagination.pageNavigation': 'Sidenavigering',
+    'pagination.pageNavigation': 'Sideveljar',
     'pagination.previous': 'Førre',
     'scrollToTopButton.backToTop': 'Til toppen',
     'searchfield.sok': 'Søk',
@@ -115,7 +115,7 @@ export const languages = {
   },
   en_GB: {
     'accordionItem.step': 'Step',
-    'datepicker.kalender': 'Calendar',
+    'datepicker.calendar': 'Calendar',
     'datepicker.goToToday': 'Today',
     'datepicker.invalidInputErrorMessage':
       'Invalid date format. (format: {{DEFAULT_DATE_FORMAT}})',
@@ -132,11 +132,11 @@ export const languages = {
     'dialog.waitAlert.paragraph':
       'You have been inactive for a while, are you still here?',
     'dialog.waitAlert.title': ' Hi!',
-    'felles.close': 'Close',
-    'felles.edit': 'Edit',
-    'felles.help': 'Help',
-    'felles.helpText': 'Help text',
-    'felles.warning': 'Warning',
+    'common.close': 'Close',
+    'common.edit': 'Edit',
+    'common.help': 'Help',
+    'common.helpText': 'Help text',
+    'common.warning': 'Warning',
     'fileuploader.accepted_file_formats': 'Accepted file formats:',
     'fileuploader.add.label': 'Add file(s)',
     'fileuploader.delete.ariaLabel': 'Delete file',
@@ -174,7 +174,7 @@ export const languages = {
   // TODO FRONT-1072 oppdatere med riktige samiske tekster
   se_NO: {
     'accordionItem.step': 'Lávki',
-    'datepicker.kalender': 'Kaleandar',
+    'datepicker.calendar': 'Kaleandar',
     'datepicker.goToToday': 'Otne',
     'datepicker.invalidInputErrorMessage':
       'Dáhton ii leat gustovaš. (format: {{DEFAULT_DATE_FORMAT}})',
@@ -191,11 +191,11 @@ export const languages = {
     'dialog.waitAlert.paragraph':
       'Mii oaidnit ahte don it leat geavahan siiddu guhkes áigái. Leat go ain dás?',
     'dialog.waitAlert.title': 'Hei!',
-    'felles.close': 'Dahppat',
-    'felles.edit': 'Divodit',
-    'felles.help': 'Veahkki',
-    'felles.helpText': 'Veahkki teaksta',
-    'felles.warning': 'Várrehus',
+    'common.close': 'Dahppat',
+    'common.edit': 'Divodit',
+    'common.help': 'Veahkki',
+    'common.helpText': 'Veahkki teaksta',
+    'common.warning': 'Várrehus',
     'fileuploader.accepted_file_formats': 'Dohkkehuvvon fiilaformáhtat:',
     'fileuploader.add.label': 'Lasit fiilla/fiillaid',
     'fileuploader.delete.ariaLabel': 'Sihko fiilla',

@@ -43,7 +43,7 @@ export const DatePicker: React.FC<DatePickerProps> = (
     label,
     labelButtonAriaLabel,
     labelWithCalloutProps,
-    language,
+    language = 'no',
     onCalloutToggle,
     readonlyMode,
     requiredWithMark = false,
@@ -62,7 +62,7 @@ export const DatePicker: React.FC<DatePickerProps> = (
     isRequired: false,
     highlightCurrentMonth: true,
     parseDateFromString: DEFAULTPARSEDATEFROMSTRING,
-    pickerAriaLabel: t('datepicker.kalender'),
+    pickerAriaLabel: t('datepicker.calendar'),
     showGoToToday: true,
     showMonthPickerAsOverlay: false,
     showWeekNumbers: true,
@@ -88,116 +88,11 @@ export const DatePicker: React.FC<DatePickerProps> = (
 
   const DEFAULT_DATE_FORMAT = 'DD.MM.YYYY';
 
-  const monthsNynorsk = [
-    'januar',
-    'februar',
-    'mars',
-    'april',
-    'mai',
-    'juni',
-    'juli',
-    'august',
-    'september',
-    'oktober',
-    'november',
-    'desember',
-  ];
-
-  const shortMonthsNynorsk = [
-    'jan.',
-    'feb.',
-    'mars',
-    'apr.',
-    'mai',
-    'juni',
-    'juli',
-    'aug.',
-    'sep.',
-    'okt.',
-    'nov.',
-    'des.',
-  ];
-
-  const daysNynorsk = [
-    'søndag',
-    'måndag',
-    'tysdag',
-    'onsdag',
-    'torsdag',
-    'fredag',
-    'laurdag',
-  ];
-
-  const shortDaysNynorsk = ['sø.', 'må.', 'ty.', 'on.', 'to.', 'fr.', 'la.'];
-
-  const monthsSamisk = [
-    'Ođđajagemánnu',
-    'Guovvamánnu',
-    'Njukčamánnu',
-    'Cuoŋománnu',
-    'Miessemánnu',
-    'Geassemánnu',
-    'Suoidnemánnu',
-    'Borgemánnu',
-    'Čakčamánnu',
-    'Golggotmánnu',
-    'Skábmamánnu',
-    'Juovlamánnu',
-  ];
-
-  const shortMonthsSamisk = [
-    'Ođđ',
-    'Guo',
-    'Nju',
-    'Cuo',
-    'Mie',
-    'Gea',
-    'Suo',
-    'Bor',
-    'Čak',
-    'Gol',
-    'Ská',
-    'Juo',
-  ];
-
-  const daysSamisk = [
-    'Sotnabeaivi',
-    'Mánnodat',
-    'Disdat',
-    'Gaskavahkku',
-    'Duorastat',
-    'Bearjadat',
-    'Lávvardat',
-  ];
-
-  const shortDaysSamisk = ['Sot', 'Mán', 'Dis', 'Gas', 'Duo', 'Bea', 'Láv'];
-
-  const locale = language != undefined ? language : 'no';
-  const isLocaleBokmalOrEnglish =
-    locale === 'no' || locale === 'nb' || locale === 'en';
-  const isLocaleNynorsk = language === 'nn';
-
   const DEFAULT_STRINGS = {
-    months: isLocaleBokmalOrEnglish
-      ? monthsForLocale(language, 'long')
-      : isLocaleNynorsk
-      ? monthsNynorsk
-      : monthsSamisk,
-    shortMonths: isLocaleBokmalOrEnglish
-      ? monthsForLocale(language, 'short')
-      : isLocaleNynorsk
-      ? shortMonthsNynorsk
-      : shortMonthsSamisk,
-    days: isLocaleBokmalOrEnglish
-      ? weekdaysForLocale(language, 'long')
-      : isLocaleNynorsk
-      ? daysNynorsk
-      : daysSamisk,
-    shortDays: isLocaleBokmalOrEnglish
-      ? weekdaysForLocale(language, 'short')
-      : isLocaleNynorsk
-      ? shortDaysNynorsk
-      : shortDaysSamisk,
+    months: monthsForLocale(language, 'long'),
+    shortMonths: monthsForLocale(language, 'short'),
+    days: weekdaysForLocale(language, 'long'),
+    shortDays: weekdaysForLocale(language, 'short'),
     goToToday: t('datepicker.goToToday')!,
     prevMonthAriaLabel: t('datepicker.prevMonthAriaLabel'),
     nextMonthAriaLabel: t('datepicker.nextMonthAriaLabel'),

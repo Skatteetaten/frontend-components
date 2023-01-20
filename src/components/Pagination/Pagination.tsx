@@ -86,13 +86,13 @@ export const Pagination: React.FC<PaginationProps> = (props) => {
   return (
     <div className={classnames(styles.paginationContainer, className)}>
       <p data-testid="pagination-oppsummering">{`Viser ${view} av ${total}`}</p>
-      <nav aria-label={ariaLabel ? ariaLabel : t('pagination.pageNavigation')}>
+      <nav aria-label={ariaLabel || t('pagination.pageNavigation')}>
         <ul>
           {currentPage > 1 && (
             <PreviousLink
               currentPage={currentPage}
               onClick={(page: number) => onPageChange(page)}
-              label={previousLabel ? previousLabel : t('pagination.previous')}
+              label={previousLabel || t('pagination.previous')}
             />
           )}
           <li>
@@ -114,7 +114,7 @@ export const Pagination: React.FC<PaginationProps> = (props) => {
               total={total}
               pageSize={pageSize}
               onClick={onPageChange}
-              label={nextLabel ? nextLabel : t('pagination.next')}
+              label={nextLabel || t('pagination.next')}
             />
           )}
         </ul>
@@ -187,16 +187,10 @@ export const Page: React.FC<{
   const ariaLabel = () => {
     if (isCurrent) {
       return (
-        (ariaLabelNavigationLinkActive
-          ? ariaLabelNavigationLinkActive
-          : t('pagination.page') + ' ') + page
+        (ariaLabelNavigationLinkActive || t('pagination.page') + ' ') + page
       );
     }
-    return (
-      (ariaLabelNavigationLink
-        ? ariaLabelNavigationLink
-        : t('pagination.page') + ' ') + page
-    );
+    return (ariaLabelNavigationLink || t('pagination.page') + ' ') + page;
   };
 
   return (

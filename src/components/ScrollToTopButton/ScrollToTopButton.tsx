@@ -88,7 +88,7 @@ export class ScrollToTopButton extends React.PureComponent<
               <div
                 className={classnames(styles.label, customClassNames?.label)}
               >
-                {label ? label : t('scrollToTopButton.backToTop')}
+                {label || t('scrollToTopButton.backToTop')}
               </div>
             </ActionButton>
           </div>

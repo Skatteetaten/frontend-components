@@ -12,7 +12,7 @@ export const TopStripeMenuItems: React.FC<TopStripeMenuProps> = (props) => {
   const {
     children,
     index,
-    closeMenuAriaLabel = t('felles.close'),
+    closeMenuAriaLabel = t('common.close'),
     closeOnClick = true,
     contentIsMenu = true,
   } = props;
