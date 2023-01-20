@@ -72,6 +72,11 @@ export class StyleGuideRenderer extends React.Component {
             >
               <div className="slogan">
                 <Link
+                  path={'#main-content-id'}
+                  text={'Hopp til hovedinnhold'}
+                  skipLink
+                />
+                <Link
                   path={'https://www.skatteetaten.no/stilogtone/'}
                   text={'Språk, design og utvikling i Skatteetaten'}
                   icon={'ArrowBack'}
@@ -120,7 +125,7 @@ export class StyleGuideRenderer extends React.Component {
                 </div>
               </nav>
             </TopBanner>
-            <main className="mainContent">
+            <main id="main-content-id" className="mainContent">
               <Grid className={styles.main}>
                 <Grid.Row>
                   <Grid.Col md={12} xl={3}>
