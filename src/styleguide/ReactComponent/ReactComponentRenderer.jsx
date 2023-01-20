@@ -9,6 +9,7 @@ import { Icon } from '../../components/Icon';
 import { Tabs } from '../../components/Tabs';
 import { TabItem } from '../../components/Tabs/TabItem';
 import { IconButton } from '@skatteetaten/frontend-components/IconButton';
+import { Table } from '@skatteetaten/frontend-components/Table';
 
 const styles = ({ color, fontSize, space }) => ({
   root: {
@@ -89,6 +90,34 @@ export function ReactComponentRenderer({
 
   const size = UseScreen();
 
+  const apiColumns = [
+    {
+      name: 'Prop name',
+      fieldName: 'name',
+    },
+    {
+      name: 'Type',
+      fieldName: 'type',
+    },
+    {
+      name: 'Default',
+      fieldName: 'defaultValue',
+    },
+    {
+      name: 'Description',
+      fieldName: 'description',
+    },
+  ];
+
+  const apiData = tabBody.props.props.props.props.map((prop) => {
+    return {
+      name: prop.name,
+      type: prop.type.name,
+      defaultValue: prop.required ? 'Required' : prop.defaultValue?.value,
+      description: prop.description,
+    };
+  });
+
   return (
     <div className={classes.root} data-testid={`${name}-container`}>
       <header className={classes.header}>
@@ -167,9 +196,15 @@ export function ReactComponentRenderer({
         )}
         <TabItem headerText="API" itemKey="api">
           <div style={{ marginTop: '16px' }}>
-            <div className={classes.tabs}>
-              <div className={classes.tabBody}>{tabBody}</div>
-            </div>
+            <Table
+              data={apiData}
+              columns={apiColumns}
+              caption={'Liste over prop names'}
+              hideCaption
+              customClassNames={{
+                table: 'apiTable',
+              }}
+            />
           </div>
         </TabItem>
       </Tabs>

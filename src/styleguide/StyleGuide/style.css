@@ -510,3 +510,20 @@ ul.navigation li.underline {
 .footer-linkgroup li i {
   color: #fff !important;
 }
+
+.apiTable > tbody > tr > th {
+  font-family: Consolas, 'Liberation Mono', Menlo, monospace;
+  font-size: 13px;
+  color: rgb(79, 35, 48);
+}
+
+.apiTable > tbody > tr > td:first-of-type {
+  font-family: Consolas, 'Liberation Mono', Menlo, monospace;
+  font-size: 13px;
+  color: rgb(153, 0, 85);
+}
+
+.apiTable > tbody > tr > td:nth-of-type(2) {
+  font-family: Consolas, 'Liberation Mono', Menlo, monospace;
+  font-size: 13px;
+}
