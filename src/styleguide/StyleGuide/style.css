@@ -456,7 +456,7 @@ ul.navigation li.underline {
   border-collapse: separate;
 }
 .migration-tabell caption {
-  color: #808080;
+  color: #4d4d4d;
   font-size: 0.75rem;
   text-align: left;
 }
@@ -477,6 +477,15 @@ ul.navigation li.underline {
 .migration-tabell pre.lang-javascript {
   background-color: #faf0f3;
   border-color: #f3a7b0;
+}
+.migration-tabell pre .token.string {
+  color: #027211;
+}
+.migration-tabell pre .token.operator {
+  color: #833417;
+}
+.migration-tabell pre .token.punctuation {
+  color: #6d6867;
 }
 .migration-tabell pre.lang-js {
   background-color: #f4faf5;
