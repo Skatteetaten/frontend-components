@@ -22,6 +22,8 @@ function createMenu(items, searchTerm, activeSlug) {
         key: (mainLink && mainLink.key) || slug,
         links: links.filter((l) => l.name !== name),
         collapseByDefault,
+        title: null,
+        ariaCurrent: 'true',
       };
     }
   );
