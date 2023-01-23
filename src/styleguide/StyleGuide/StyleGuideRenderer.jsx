@@ -84,40 +84,48 @@ export class StyleGuideRenderer extends React.Component {
                 />
               </div>
               <nav>
-                <div
-                  aria-expanded={
-                    this.state.showNavigation === true ? 'true' : 'false'
-                  }
-                  className={styles.navMobileButton}
-                >
+                <div className={styles.navMobileButton}>
                   <ActionButton
                     onClick={() => this._toggleMainNavigation()}
                     iconSize={ActionButton.LARGE}
                     color="black"
                     icon={'Menu'}
+                    aria-haspopup="true"
+                    aria-expanded={
+                      this.state.showNavigation === true ? 'true' : 'false'
+                    }
                   >
                     Meny
                   </ActionButton>
                 </div>
                 <div className={styles.mainNav}>
-                  <ul className="navigation">
-                    <li>
-                      <a href="https://www.skatteetaten.no/stilogtone/skrive/">
+                  <ul role="menu" className="navigation">
+                    <li role="presentation">
+                      <a
+                        role="menuitem"
+                        href="https://www.skatteetaten.no/stilogtone/skrive/"
+                      >
                         Skrive
                       </a>
                     </li>
-                    <li className="underline">
-                      <a href="/" aria-current={true}>
+                    <li role="presentation" className="underline">
+                      <a role="menuitem" href="/" aria-current={true}>
                         Designe og utvikle
                       </a>
                     </li>
-                    <li>
-                      <a href="https://www.skatteetaten.no/stilogtone/universell-utforming/">
+                    <li role="presentation">
+                      <a
+                        role="menuitem"
+                        href="https://www.skatteetaten.no/stilogtone/universell-utforming/"
+                      >
                         Universell utforming
                       </a>
                     </li>
-                    <li>
-                      <a href="https://www.skatteetaten.no/stilogtone/visuell-identitet/">
+                    <li role="presentation">
+                      <a
+                        role="menuitem"
+                        href="https://www.skatteetaten.no/stilogtone/visuell-identitet/"
+                      >
                         Visuell identitet
                       </a>
                     </li>
