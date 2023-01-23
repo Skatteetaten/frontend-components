@@ -84,7 +84,7 @@ export class StyleGuideRenderer extends React.Component {
                 />
               </div>
               <nav>
-                <div className={styles.navMobileButton}>
+                <div className={styles.navSmallScreenButton}>
                   <ActionButton
                     onClick={() => this._toggleMainNavigation()}
                     iconSize={ActionButton.LARGE}
@@ -98,8 +98,8 @@ export class StyleGuideRenderer extends React.Component {
                     Meny
                   </ActionButton>
                 </div>
-                <div className={styles.mainNav}>
-                  <ul role="menu" className="navigation">
+                <div className={styles.navSmallScreen}>
+                  <ul role="menu" class="navigation">
                     <li role="presentation">
                       <a
                         role="menuitem"
@@ -126,6 +126,30 @@ export class StyleGuideRenderer extends React.Component {
                         role="menuitem"
                         href="https://www.skatteetaten.no/stilogtone/visuell-identitet/"
                       >
+                        Visuell identitet
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+                <div className={styles.navDesktop}>
+                  <ul className="navigation">
+                    <li>
+                      <a href="https://www.skatteetaten.no/stilogtone/skrive/">
+                        Skrive
+                      </a>
+                    </li>
+                    <li className="underline">
+                      <a href="/" aria-current={true}>
+                        Designe og utvikle
+                      </a>
+                    </li>
+                    <li role="presentation">
+                      <a href="https://www.skatteetaten.no/stilogtone/universell-utforming/">
+                        Universell utforming
+                      </a>
+                    </li>
+                    <li>
+                      <a href="https://www.skatteetaten.no/stilogtone/visuell-identitet/">
                         Visuell identitet
                       </a>
                     </li>
