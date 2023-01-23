@@ -66,13 +66,18 @@ export const ComponentsListRenderer = ({ items, searchTerm }) => {
       group.links.sort((l1, l2) => l1.name.localeCompare(l2.name));
     }
   });
-  if (groups.length === 0) return <>Ingen treff på søk</>;
+  if (groups.length === 0) return <div role="alert">Ingen treff på søk</div>;
   return (
-    <Nav
-      styles={getStyles}
-      onLinkClick={(e, link) => navigate(link.key)}
-      groups={groups}
-      selectedKey={activeSlug}
-    />
+    <>
+      <div role="alert" class="sr-only">
+        Treff vises
+      </div>
+      <Nav
+        styles={getStyles}
+        onLinkClick={(e, link) => navigate(link.key)}
+        groups={groups}
+        selectedKey={activeSlug}
+      />
+    </>
   );
 };
