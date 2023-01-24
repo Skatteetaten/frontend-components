@@ -1,12 +1,13 @@
-**Fra @skatteetaten/frontend-components v5 (designsystem-legacy) til Designsystemet v0.2.0**
+**Fra @skatteetaten/frontend-components v5+ (designsystem-legacy) til Designsystemet v0.2.0**
 
 ### Endringer i funksjonalitet
 
-- Typography som komponent fases ut og brytes ned i mindre komponenter (Heading, Ingress, Paragraph, Blockquote og List).
+- Typography som komponent fases ut og brytes ned i mindre komponenter (Heading, Paragraph/Ingress, Blockquote og List).
 
 ### Styling
 
-- Noen endringer i line-height og avstander mellom elementer.
+- Noen endringer i line-height og avstand mellom elementer.
+- De nye komponentene i designsystemet er avhengige av designtokens. Disse leveres nå som en separat pakke. Se [designtokens](#section-designtokens-deprecated) for detaljer.
 
 ### Endringer i API
 
@@ -103,17 +104,17 @@ import { Heading, Paragraph, Blockquote, List } from '@skatteetaten/ds-typograph
 
 <Paragraph>{'Hvordan lage god interaksjonsdesign:'}</Paragraph>
 <List>
-    <List.Element>Kjenner du behovet til brukeren?</List.Element>
-    <List.Element>Er du sikker på at du kjenner behovet til brukeren?</List.Element>
-    <List.Element>Snakk med andre</List.Element>
+    <List.Element>{'Kjenner du behovet til brukeren?'}</List.Element>
+    <List.Element>{'Er du sikker på at du kjenner behovet til brukeren?'}</List.Element>
+    <List.Element>{'Snakk med andre'}</List.Element>
 </List>
 
 <Paragraph>{'Skatteetatens brukskvalitetsmetode:'}</Paragraph>
 <List as={'ol'}>
-    <List.Element>Beskrive konteksten</List.Element>
-    <List.Element>Forstå behov og krav</List.Element>
-    <List.Element>Designe brukeropplevelsen</List.Element>
-    <List.Element>Evaluere</List.Element>
+    <List.Element>{'Beskrive konteksten'}</List.Element>
+    <List.Element>{'Forstå behov og krav'}</List.Element>
+    <List.Element>{'Designe brukeropplevelsen'}</List.Element>
+    <List.Element>{'Evaluere'}</List.Element>
 </List>
 
 ```
