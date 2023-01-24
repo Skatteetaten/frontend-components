@@ -32,6 +32,34 @@ Alle komponentene våre bruker forwardRef. For komponent sendes ref til &lt;a&gt
 </td>
 </tr>
 <tr>
+<td>'openInNew'</td>
+<td>'target'
+
+Før:
+
+```javascript static
+import { Link } from '@skatteetaten/frontend-components/Link';
+
+<Link
+  openInNew={true}
+  path={'#path'}
+  text={'Er du pendler? (åpnes i ny fane)'}
+/>;
+```
+
+Nå:
+
+```js static
+import { Link } from '@skatteetaten/ds-buttons';
+
+<Link target={'_blank'} href={'#path'}>
+  Er du pendler? (åpnes i ny fane)
+</Link>;
+```
+
+</td>
+</tr>
+<tr>
 <td>'text'</td>
 <td>
 'children'
