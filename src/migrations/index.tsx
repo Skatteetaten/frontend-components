@@ -9,6 +9,7 @@ import LinkGroupMigration from './LinkGroupMigration.md';
 import LinkMigration from './LinkMigration.md';
 import ScrollToTopButtonMigration from './ScrollToTopButtonMigration.md';
 import SkeBasisMigration from './SkeBasisMigration.md';
+import TypographyMigration from './TypographyMigration.md';
 
 export const MigrationGuides = [
   ActionButtonMigration,
@@ -20,4 +21,5 @@ export const MigrationGuides = [
   LinkMigration,
   ScrollToTopButtonMigration,
   SkeBasisMigration,
+  TypographyMigration,
 ];

@@ -3,7 +3,9 @@ import classnames from 'classnames';
 import { getClassNames } from './Typography.classNames';
 import { TypographyProps } from './Typography.types';
 
-/*
+/**
+ * @deprecated Komponenten er erstattet av "@skatteetaten/ds-typography"
+ *
  * visibleName Typography (Typografi)
  */
 export const Typography: React.FC<TypographyProps> = (props) => {
