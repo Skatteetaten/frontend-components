@@ -89,7 +89,7 @@ describe('ErrorSummary komponent', () => {
       ],
     });
 
-    expect(wrapper.find('h2').text()).toEqual(
+    expect(wrapper.find('h3').text()).toEqual(
       'For å gå videre må du rette opp i følgende:'
     );
     wrapper.find('li').at(1).find('a').simulate('click');
@@ -149,7 +149,7 @@ describe('ErrorSummary komponent', () => {
       title: 'For å gå videre må du rette opp i følgende:',
       errors: [],
     });
-    expect(wrapper.find('h2').exists()).toBeFalsy();
+    expect(wrapper.find('h3').exists()).toBeFalsy();
     expect(wrapper.find('li').exists()).toBeFalsy();
   });
 
@@ -158,7 +158,7 @@ describe('ErrorSummary komponent', () => {
       title: 'For å gå videre må du rette opp i følgende:',
       errors: undefined,
     });
-    expect(wrapper.find('h2').exists()).toBeFalsy();
+    expect(wrapper.find('h3').exists()).toBeFalsy();
     expect(wrapper.find('li').exists()).toBeFalsy();
   });
 

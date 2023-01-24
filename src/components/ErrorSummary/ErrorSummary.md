@@ -7,6 +7,7 @@ import { ErrorSummary } from '@skatteetaten/frontend-components/ErrorSummary';
   <ErrorSummary
     id={'errorsummary_example1'}
     title={'For å gå videre må du rette opp i følgende:'}
+    titleTagName={'h2'}
     errors={[
       { id: 'input_aar-input', error: 'Inntekståret må være etter 2008' },
       {
@@ -57,6 +58,7 @@ const buttonStyle = {
   <ErrorSummary
     id={'errorsummary_example2'}
     title={'For å gå videre må du rette opp i følgende:'}
+    titleTagName={'h2'}
     errors={[
       { id: 'input_aar-input', error: 'Inntekståret må være etter 2008' },
       {
