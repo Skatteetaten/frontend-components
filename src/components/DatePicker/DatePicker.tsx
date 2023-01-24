@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { t } from '../utils';
+import { generateId, t } from '../utils';
 import classnames from 'classnames';
 import {
   DatePicker as FabricDatePicker,
@@ -8,7 +8,6 @@ import {
   IDatePicker,
   IDatePickerProps,
 } from '@fluentui/react';
-import { generateId } from '../utils';
 import { LabelWithCallout } from '../LabelWithCallout';
 import { getClassNames, getCalendarClassNames } from './DatePicker.classNames';
 import { DatePickerProps } from './DatePicker.types';
