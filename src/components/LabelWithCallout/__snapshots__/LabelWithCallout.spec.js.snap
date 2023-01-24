@@ -44,7 +44,6 @@ exports[`LabelWithCallout komponent matcher snapshot 1`] = `
     <button
       aria-describedby="LabelWithCallout_id"
       aria-expanded={false}
-      aria-label="Hjelp"
       className=
           ms-Button
           ms-Button--icon

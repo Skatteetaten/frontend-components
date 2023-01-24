@@ -10,6 +10,7 @@ import {
 } from '@fluentui/react';
 import { getClassNames } from './TextField.classNames';
 import { TextFieldProps } from './TextField.types';
+import { t } from 'i18next';
 
 /*
  * visibleName TextField (Tekstfelt)
@@ -75,7 +76,7 @@ export const TextField: React.FC<TextFieldProps> = ({
 
   const setCustomButtonAriaLabel = () => {
     if (rest.suffix && readOnly) {
-      return 'Rediger ' + label + ' (' + rest.suffix + ')';
+      return `${t('common.edit')} ${label} (${rest.suffix})`;
     } else {
       return undefined;
     }

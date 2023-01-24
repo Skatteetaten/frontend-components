@@ -23,6 +23,10 @@ const InternalHeader = (props: Partial<TopBannerTypes>) => {
   const styles = getInternalClassNames(props);
   const size = UseScreen();
 
+  if (props.language) {
+    i18n.changeLanguage(props.language);
+  }
+
   return (
     <header
       className={classnames(styles.header, props.className)}
@@ -43,7 +47,7 @@ const InternalHeader = (props: Partial<TopBannerTypes>) => {
             <Image
               className={styles.headerLogo}
               src={props.language === 'en' ? internLogoEn : internLogo}
-              alt="Skatteetaten logo"
+              alt={t('topbanner.ske.logo')}
             />
           )}
           <Icon className={styles.headerIcon} iconName={props.icon} />

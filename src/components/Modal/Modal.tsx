@@ -95,7 +95,7 @@ const ModalBase: React.FC<ModalProps> = (props: ModalProps) => {
               {!hideCloseButton && (
                 <IconButton
                   uniqueId={'modal-closebutton'}
-                  title={t('modal.closebutton')}
+                  title={t('common.close')}
                   className={classnames(
                     getClassNames(props, tag).closeButton,
                     customClassNames?.closebutton
