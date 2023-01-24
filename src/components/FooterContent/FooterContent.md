@@ -42,6 +42,33 @@ const links = [
 </div>;
 ```
 
+<div class="lenke-tabell">
+<table>
+<caption>Lenktekster og url-er</caption>
+<thead><tr><th>Bokmål</th><th>Nynorsk</th><th>Engelsk</th><th>Samisk</th></tr></thead>
+<tbody>
+<tr>
+<td>Kontakt oss - https://www.skatteetaten.no/kontakt/</td>
+<td lang='nn'>Kontakt oss - https://www.skatteetaten.no/nn/kontakt-oss/</td>
+<td lang='en'>Contact us - https://www.skatteetaten.no/en/contact/</td>
+<td>Kommer snart! <!-- TODO FRONT-1072 samisk tekst--></td>
+</tr>
+<tr>
+<td>Sikkerhet og personvern - https://www.skatteetaten.no/om-skatteetaten/sikkerhet/</td>
+<td lang='nn'>Sikkerheit og personvern - https://www.skatteetaten.no/nn/om-skatteetaten/sikkerhet/</td>
+<td lang='en'>Security and privacy - https://www.skatteetaten.no/en/about-tde-tax-administration/security-and-privacy/</td>
+<td>Kommer snart! <!-- TODO FRONT-1072 samisk tekst--></td>
+</tr>
+<tr>
+<td>Tilgjengelighetserklæring</td>
+<td lang='nn'>Tilgjengelegheitserklæring</td>
+<td><p lang='en'>Accessibility statement</p> (lenke til bokmålsversjonen da Digdir ikke støtter engelsk)</td>
+<td>Kommer snart! <!-- TODO FRONT-1072 samisk tekst--></td>
+</tr>
+</tbody>
+</table>
+</div>
+
 ```js noeditor beskrivelse
 <>
   <h3>Innhold i bunnen av siden</h3>
