@@ -65,7 +65,6 @@ exports[`ErrorSummary komponent matcher snapshot 1`] = `
         display: block;
         line-height: 1.75;
       }
-  id="errorsummary"
   role="status"
 >
   <div
@@ -133,9 +132,9 @@ exports[`ErrorSummary komponent matcher snapshot 1`] = `
           padding-top: 8px;
         }
   >
-    <h3>
+    <h2>
       For å gå videre må du rette opp i følgende:
-    </h3>
+    </h2>
     <ul>
       <li>
         <span

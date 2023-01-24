@@ -37,7 +37,7 @@ export const getClassNames = (props: CalloutProps, widthBtnLabel: string) => {
         '& p': {
           margin: '0 ',
         },
-        '&& h2': {
+        '&& h3': {
           marginTop: '0',
           fontSize: designtokenFontSizes['ske-font-size-m'],
         },
