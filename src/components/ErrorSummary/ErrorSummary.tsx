@@ -52,11 +52,12 @@ export const ErrorSummary: React.FC<ErrorSummaryProps> = (props) => {
               <li key={error.id}>
                 <SkeLink
                   linkGroup
-                  tabIndex={0}
                   icon="ArrowForward"
+                  path={'#'}
                   placement="before"
                   text={error.error}
-                  onClick={() => {
+                  onClick={(e) => {
+                    e.preventDefault();
                     onClick ? onClick(error.id) : scrollToId(error.id);
                   }}
                 />

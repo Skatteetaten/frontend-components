@@ -1,15 +1,25 @@
-## **v.6.0.3 - January 2023**
+### **v.6.0.4 - January 2023**
 
-- TopStrip/TopStripMenuItem: når en tasturbruker går ut av en undermeny med tab-tasten så lukkes den nå av seg selv (tilsvarende som om bruker trykket enter/space på lukk-knappen i undermenyen)
-- TopStripMenu: når en tasturbruker har åpnet en undermeny og så går tilbake med shift+tab dvs ut av den, så lukkes undermenyen nå bruker forlater selve meny-elementet
-- TextField: inputfelter med prefix og/eller suffix får nå også lest opp ledeteksten (label) av en skjermleser og ikke bare affiks-verdier
-- FooterContent: nytt eksempel med og litt info om tilgjengelighetserklæringen
+- Fixed violations on WCAG 3.1.2(Language of Parts)
+  - have added long attribute on language menu items
+  - have added long attribute on hardcoded alt texts
+  - hardcoded texts have been replaced by text variables
+  - DatePicker: nynorsk and sami texts for months and days (for this to work, the prop language must have a value)
+- ErrorSummary: fixed WCAG 2.1.1 (Keyboard) violation
+- Added the accessibilty statement to the GitHub footer for the design system
+
+### **v.6.0.3 - January 2023**
+
+- TopStrip/TopStripMenuItem: when a keyboard user exits a submenu with the tab key, it is now closed by itself (similar to if the user pressed enter/space on the close button in the submenu)
+- TopStripMenu: when a keyboard-user has opened a submenu and then use shift+tab, the submenu will now be closed when the user leaves the actual menu item
+- TextField: input-fields with prefix and/or suffix have the label read out by a screen reader now and not just the affix values
+- FooterContent: extended existing example with an accessibilty statement and some info about it
 
 ## **v.6.0.2 - January 2023**
 
 - Pagination: fixed WCAG 4.1.1 violation
 - Some small adjustments to migration guides
-- Datepicker: fikset feil datoformatering (fra D.MM.YYYY til DD.MM.YYYY)
+- Datepicker: fixed incorrect date formatting (from D.MM.YYYY to DD.MM.YYYY)
 
 ## **v.6.0.1 - 7 December 2022**
 

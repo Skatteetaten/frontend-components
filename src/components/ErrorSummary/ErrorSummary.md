@@ -38,21 +38,25 @@ const buttonStyle = {
       value="1009"
       label={'År'}
       errorMessage="Inntekståret må være etter 2008"
-      onChange={() => {}}
+      onChange={(e, value) => setState({ ...state, aar: value })}
     />
   </div>
   <div style={{ maxWidth: '350px', marginBottom: '16px' }}>
     <TextField
       id={'input_epost'}
+      value={'Ola.Normann.no'}
       label={'E-post'}
       errorMessage="E-posten ser ikke riktig ut. Skriv slik: ola.normann@norge.no"
+      onChange={(e, value) => setState({ ...state, epost: value })}
     />
   </div>
   <div style={{ maxWidth: '350px', marginBottom: '16px' }}>
     <TextField
       id={'input_dager'}
+      value={''}
       label={'Antall dager i Norge i perioden/inntekståret'}
       errorMessage="Antall dager må fylles ut"
+      onChange={(e, value) => setState({ ...state, dager: value })}
     />
   </div>
   <ErrorSummary

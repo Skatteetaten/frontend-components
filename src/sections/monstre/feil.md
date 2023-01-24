@@ -333,15 +333,15 @@ const marginTopStyle = {
             title={'For å gå videre må du rette opp i følgende:'}
             errors={[
               {
-                id: 'input_aar-input',
+                id: 'input-id1-input',
                 error: 'Inntekståret må være etter 2008',
               },
               {
-                id: 'input_epost-input',
+                id: 'input-id2-input',
                 error:
                   'E-posten ser ikke riktig ut. Skriv slik: ola.normann@norge.no',
               },
-              { id: 'input_dager-input', error: 'Antall dager må fylles ut.' },
+              { id: 'input-id3-input', error: 'Antall dager må fylles ut.' },
             ]}
           />
         </div>

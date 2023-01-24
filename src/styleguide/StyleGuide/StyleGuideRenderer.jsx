@@ -6,6 +6,7 @@ import { FooterContent } from '../../components/FooterContent';
 import { Grid } from '../../components/Grid';
 import { Link } from '../../components/Link';
 import { TopBanner } from '../../components/TopBanner';
+import { LinkGroup } from '@skatteetaten/frontend-components/LinkGroup';
 
 import { getClassNames } from './classNames';
 import './style.css';
@@ -190,10 +191,33 @@ export class StyleGuideRenderer extends React.Component {
           </div>
           <div className="footer">
             <FooterContent>
-              <div style={{ marginLeft: '30px' }}>
-                {' '}
-                <p>Versjon {version}</p>
-              </div>
+              <Grid>
+                <Grid.Row>
+                  <Grid.Col lg={1} xl={1} />
+                  <Grid.Col md={3} lg={2} xl={1}>
+                    <FooterContent.Logo />
+                  </Grid.Col>
+                  <Grid.Col md={9} lg={8} xl={3} className="footer-linkgroup">
+                    <LinkGroup
+                      links={[
+                        {
+                          text: 'Tilgjengelighetserklæring',
+                          path:
+                            'https://uustatus.no/nb/erklaringer/publisert/90be03a3-13e4-4979-8c88-f38727fb77e0',
+                        },
+                      ]}
+                    />
+                  </Grid.Col>
+                </Grid.Row>
+                <Grid.Row>
+                  <Grid.Col lg={8} />
+                </Grid.Row>
+                <Grid.Row>
+                  <Grid.Col lg={8}>
+                    <p>Versjon {version}</p>
+                  </Grid.Col>
+                </Grid.Row>
+              </Grid>
             </FooterContent>
           </div>
         </div>

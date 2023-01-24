@@ -17,6 +17,7 @@ const Logo = () => {
       className={getLogoClassNames()}
       height="74px"
       alt="Skatteetaten logo"
+      lang="nb"
     />
   );
 };
@@ -28,6 +29,7 @@ const LogoEn = () => {
       className={getLogoClassNames()}
       height="74px"
       alt="Norwegian Tax Authorities logo"
+      lang="en"
     />
   );
 };
@@ -39,6 +41,7 @@ const LogoInk = () => {
       className={getLogoClassNames()}
       height="63px"
       alt="Statens innkreving - en del av Skatteetaten, logo"
+      lang="nb"
     />
   );
 };

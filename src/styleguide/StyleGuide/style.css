@@ -525,14 +525,31 @@ ul.navigation li.underline {
   font-size: 13px;
   color: rgb(79, 35, 48);
 }
-
 .apiTable > tbody > tr > td:first-of-type {
   font-family: Consolas, 'Liberation Mono', Menlo, monospace;
   font-size: 13px;
   color: rgb(153, 0, 85);
 }
-
 .apiTable > tbody > tr > td:nth-of-type(2) {
   font-family: Consolas, 'Liberation Mono', Menlo, monospace;
   font-size: 13px;
+}
+
+.lenke-tabell table {
+  border-spacing: 2px;
+  border-collapse: separate;
+}
+.lenke-tabell caption {
+  text-align: left;
+}
+.lenke-tabell thead td,
+.lenke-tabell thead td:nth-child(1) {
+  font-weight: bold;
+  padding: 0.75rem 0;
+  text-align: center;
+}
+.lenke-tabell td,
+.lenke-tabell th {
+  border: 1px solid #e5e5e5;
+  padding: 0.5rem;
 }
