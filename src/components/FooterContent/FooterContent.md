@@ -51,23 +51,24 @@ const links = [
 <td>Kontakt oss - https://www.skatteetaten.no/kontakt/</td>
 <td lang='nn'>Kontakt oss - https://www.skatteetaten.no/nn/kontakt-oss/</td>
 <td lang='en'>Contact us - https://www.skatteetaten.no/en/contact/</td>
-<td>Kommer snart! <!-- TODO FRONT-1072 samisk tekst--></td>
+<td lang='se'>Váldde oktavuođa minguin</td>
 </tr>
 <tr>
 <td>Sikkerhet og personvern - https://www.skatteetaten.no/om-skatteetaten/sikkerhet/</td>
 <td lang='nn'>Sikkerheit og personvern - https://www.skatteetaten.no/nn/om-skatteetaten/sikkerhet/</td>
 <td lang='en'>Security and privacy - https://www.skatteetaten.no/en/about-tde-tax-administration/security-and-privacy/</td>
-<td>Kommer snart! <!-- TODO FRONT-1072 samisk tekst--></td>
+<td lang='se'>Sihkarvuohta ja persovdnasuodjaleapmi</td>
 </tr>
 <tr>
 <td>Tilgjengelighetserklæring</td>
 <td lang='nn'>Tilgjengelegheitserklæring</td>
-<td><p lang='en'>Accessibility statement</p> (lenke til bokmålsversjonen da Digdir ikke støtter engelsk)</td>
-<td>Kommer snart! <!-- TODO FRONT-1072 samisk tekst--></td>
+<td lang='en'>Accessibility statement</td>
+<td lang='se'>Almmusjulggaštus</td>
 </tr>
 </tbody>
 </table>
 </div>
+<p>Tilgjengelighetserklæringer er kun på bokmål.</p>
 
 ```js noeditor beskrivelse
 <>

@@ -41,7 +41,7 @@ const daysNynorsk = [
 const shortDaysNynorsk = ['sø.', 'må.', 'ty.', 'on.', 'to.', 'fr.', 'la.'];
 
 const monthsSamisk = [
-  'Ođđajagemánnu',
+  'Ođđajagimánnu',
   'Guovvamánnu',
   'Njukčamánnu',
   'Cuoŋománnu',
@@ -72,12 +72,12 @@ const shortMonthsSamisk = [
 
 const daysSamisk = [
   'Sotnabeaivi',
-  'Mánnodat',
-  'Disdat',
+  'Vuossárga',
+  'Maŋŋebárga',
   'Gaskavahkku',
   'Duorastat',
   'Bearjadat',
-  'Lávvardat',
+  'Lávvordat',
 ];
 
 const shortDaysSamisk = ['Sot', 'Mán', 'Dis', 'Gas', 'Duo', 'Bea', 'Láv'];

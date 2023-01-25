@@ -508,6 +508,7 @@ ul.navigation li.underline {
   border-collapse: separate;
 }
 .lenke-tabell caption {
+  font-weight: bold;
   text-align: left;
 }
 .lenke-tabell thead td,
