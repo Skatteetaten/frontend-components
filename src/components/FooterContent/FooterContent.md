@@ -44,7 +44,7 @@ const links = [
 
 <div class="lenke-tabell">
 <table>
-<caption>Lenktekster og url-er</caption>
+<caption>Lenketekster og url-er</caption>
 <thead><tr><th>Bokmål</th><th>Nynorsk</th><th>Engelsk</th><th>Samisk</th></tr></thead>
 <tbody>
 <tr>
