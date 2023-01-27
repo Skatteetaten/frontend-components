@@ -69,8 +69,8 @@ export const ComponentsListRenderer = ({ items, searchTerm }) => {
   if (groups.length === 0) return <div role="alert">Ingen treff på søk</div>;
   return (
     <>
-      <div role="alert" class="sr-only">
-        Treff vises
+      <div role="alert" className="sr-only">
+        {searchTerm && `Antall treff ${groups.length}`}
       </div>
       <Nav
         styles={getStyles}
