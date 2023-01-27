@@ -553,3 +553,9 @@ ul.navigation li.underline {
   border: 1px solid #e5e5e5;
   padding: 0.5rem;
 }
+
+.skipToMainLink a:focus {
+  border: 2px solid #1d1d1d;
+  display: inline-block;
+  font-size: 18px;
+}

@@ -45,7 +45,7 @@ const RenderSection = (props) => {
   if (!slug) {
     return <Forside />;
   }
-  return <div> Fant ikke siden du leter etter.</div>;
+  return <p>Fant ikke siden du leter etter.</p>;
 };
 
 export class Sections extends React.Component {

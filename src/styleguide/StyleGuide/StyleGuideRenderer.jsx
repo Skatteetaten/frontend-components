@@ -38,6 +38,7 @@ export class StyleGuideRenderer extends React.Component {
       showNavigation: false,
       version: '',
     };
+    this.mainContentRef = React.createRef();
   }
 
   _toggleMainNavigation() {
@@ -63,6 +64,16 @@ export class StyleGuideRenderer extends React.Component {
     return (
       <ScrollToTopWrapped>
         <div id="main">
+          <Link
+            className={'skipToMainLink'}
+            path={'#main-content-id'}
+            text={'Hopp til hovedinnhold'}
+            skipLink
+            onClick={(e) => {
+              e.preventDefault();
+              this.mainContentRef && this.mainContentRef.current.focus();
+            }}
+          />
           <div className="mainLayout">
             <TopBanner
               homeUrl="/"
@@ -72,11 +83,6 @@ export class StyleGuideRenderer extends React.Component {
               className="banner"
             >
               <div className="slogan">
-                <Link
-                  path={'#main-content-id'}
-                  text={'Hopp til hovedinnhold'}
-                  skipLink
-                />
                 <Link
                   path={'https://www.skatteetaten.no/stilogtone/'}
                   text={'Språk, design og utvikling i Skatteetaten'}
@@ -100,7 +106,7 @@ export class StyleGuideRenderer extends React.Component {
                   </ActionButton>
                 </div>
                 <div className={styles.navSmallScreen}>
-                  <ul role="menu" class="navigation">
+                  <ul role="menu" className="navigation">
                     <li role="presentation">
                       <a
                         role="menuitem"
@@ -158,7 +164,8 @@ export class StyleGuideRenderer extends React.Component {
                 </div>
               </nav>
             </TopBanner>
-            <main id="main-content-id" className="mainContent">
+            <main className="mainContent">
+              <a id="main-content-id" tabIndex="-1" ref={this.mainContentRef} />
               <Grid className={styles.main}>
                 <Grid.Row>
                   <Grid.Col md={12} xl={3}>
