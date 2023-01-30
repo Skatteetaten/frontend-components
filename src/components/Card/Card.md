@@ -112,7 +112,10 @@ const screenSize = UseScreen();
   <p>
     Er innholdet handlingsrettet, altså at brukeren skal gjøre noe, skal du
     beskrive handlingen i toppen av boksen. Les nærmere i språkprofilen om{' '}
-    <a href="https://www.skatteetaten.no/stilogtone/skrive/sprakprofil/aktivt-sprak/">
+    <a
+      class="brodtekst-link"
+      href="https://www.skatteetaten.no/stilogtone/skrive/sprakprofil/aktivt-sprak/"
+    >
       hvordan du skriver gode handlingstitler
     </a>
     .

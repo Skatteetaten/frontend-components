@@ -135,10 +135,18 @@ import { MessageBar } from '@skatteetaten/frontend-components/MessageBar';
     en liste. De fungerer særlig godt når det er lite plass på skjermen og når
     brukeren skal velge fra en liste med mindre enn 10 alternativer. Hvis det er
     flere enn ti elementer i nedtrekkslisten bør du velge{' '}
-    <a href="#combobox"> nedtrekksliste med skriving (ComboBox)</a>. Hvis
-    brukeren bare skal huke av ett av alternativene og listen har færre enn 8
-    valg, kan du vurdere å bruke{' '}
-    <a href="#radiobuttongroup"> RadioButtonGroup (radioknapper)</a> i stedet.
+    <a class="brodtekst-link" href="#combobox">
+      {' '}
+      nedtrekksliste med skriving (ComboBox)
+    </a>
+    . Hvis brukeren bare skal huke av ett av alternativene og listen har færre enn
+    8 valg, kan du vurdere å bruke <a
+      class="brodtekst-link"
+      href="#radiobuttongroup"
+    >
+      {' '}
+      RadioButtonGroup (radioknapper)
+    </a> i stedet.
   </p>
   <h3>Tips til hvordan du lager en god nedtrekksliste</h3>
   <ul>
@@ -158,7 +166,11 @@ import { MessageBar } from '@skatteetaten/frontend-components/MessageBar';
     </li>
     <li>
       Hvis det er flere enn ti elementer i nedtrekkslisten bør du velge{' '}
-      <a href="#combobox"> nedtrekksliste med skriving (ComboBox) </a>.
+      <a class="brodtekst-link" href="#combobox">
+        {' '}
+        nedtrekksliste med skriving (ComboBox){' '}
+      </a>
+      .
     </li>
   </ul>
 </>;

@@ -172,7 +172,10 @@ import { TopBanner } from '@skatteetaten/frontend-components/TopBanner';
   <p>
     For alle publikumsløsninger skal logoen som hovedregel være klikkbar og ta
     brukeren til forsiden av{' '}
-    <a href="https://www.skatteetaten.no">skatteetaten.no</a>.
+    <a class="brodtekst-link" href="https://www.skatteetaten.no">
+      skatteetaten.no
+    </a>
+    .
   </p>
   <p>
     Toppbanner på undersider bør ha en tilbakelenke, og da kan det være lurt å
@@ -182,11 +185,12 @@ import { TopBanner } from '@skatteetaten/frontend-components/TopBanner';
   </p>
 
   <p>
-    Se også{' '}
-    <a href="https://www.skatteetaten.no/stilogtone/visuelt/logo/">
-      visuell identitet
+    <a
+      class="brodtekst-link"
+      href="https://www.skatteetaten.no/stilogtone/visuelt/logo/"
+    >
+      Se også visuell identitet for detaljer rundt bruk av logoen.
     </a>{' '}
-    for detaljer rundt bruk av logoen.
   </p>
 </>
 ```

@@ -11,7 +11,7 @@ Designsystemet blir publisert med semantisk versjonering. Denne retningslinjen i
 - MINOR-versjon når du legger til ny funksjonalitet på en bakoverkompatibel måte.
 - MAJOR-versjon når vi har API-endringer som ikke er bakoverkompatible.
 
-Les mer om [semantisk versjonering](https://semver.org/).
+<p><a class="brodtekst-link" href="https://semver.org/">Les mer om semantisk versjonering.</a></p>
 
 ## Tidspunkt for nye versjoner
 

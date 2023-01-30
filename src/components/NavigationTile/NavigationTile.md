@@ -116,15 +116,20 @@ const contents = [
     NavigationTile bruker du for å veilede brukeren til å velge et spor i
     sidestrukturen for å komme videre. Knappen er vanlig å bruke på
     landings-sider. Et eksempel er{' '}
-    <a href="https://www.skatteetaten.no/person">skatteetaten.no/person</a> hvor
-    brukeren velger mellom skatt, avgifter, folkeregister, utenlandsk og så
+    <a class="brodtekst-link" href="https://www.skatteetaten.no/person">
+      skatteetaten.no/person
+    </a>{' '}
+    hvor brukeren velger mellom skatt, avgifter, folkeregister, utenlandsk og så
     videre.
   </p>
   <h3>Knappen har alltid tittel og kan også ha ikon og beskrivende tekst</h3>
   <p>
     Du kan velge mellom å midtstille, høyre- eller venstre-justere innholdet på
     knappen. For å stille opp innholdet på denne forsideknappen må du bruke{' '}
-    <a href="#navigationcontent">NavigationContent</a>.
+    <a class="brodtekst-link" href="#navigationcontent">
+      NavigationContent
+    </a>
+    .
   </p>
   <p>
     Det er viktig at tekst og symbol på NavigationTile gjør målet med knappen

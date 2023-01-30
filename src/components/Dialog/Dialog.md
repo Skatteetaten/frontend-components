@@ -312,7 +312,10 @@ import { MessageBar } from '@skatteetaten/frontend-components/MessageBar';
   <p>Dialogen kan inneholde tekst, inputfelt, hjelpeikoner osv.</p>
   <p>
     Se{' '}
-    <a href="https://www.skatteetaten.no/stilogtone/skrive/">
+    <a
+      class="brodtekst-link"
+      href="https://www.skatteetaten.no/stilogtone/skrive/"
+    >
       Skatteetatens stil og tone
     </a>{' '}
     for hjelp til å skrive gode tekster.

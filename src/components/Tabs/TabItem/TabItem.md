@@ -4,7 +4,10 @@
 import { MessageBar } from '@skatteetaten/frontend-components/MessageBar';
 
 <MessageBar>
-  Det finnes ingen egne eksempler for TabItem. Gå til <a href="/#tabs">Tabs</a>{' '}
+  Det finnes ingen egne eksempler for TabItem. Gå til{' '}
+  <a class="brodtekst-link" href="/#tabs">
+    Tabs
+  </a>{' '}
   for å se eksempler på hvordan denne komponenten brukes.
 </MessageBar>;
 ```

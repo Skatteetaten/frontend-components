@@ -148,8 +148,8 @@ Variants have been reorganized/prioritized, with new names and default value:
 
 ## **Upgrades and optimizations**
 
-- Upgraded to Fluent-UI v8:
-  https://github.com/microsoft/fluentui/wiki/Version-8-release-notes (this upgrade requires React 17)
+- Upgraded to Fluent-UI v8 (this upgrade requires React 17):
+  <a class="brodtekst-link" href="https://github.com/microsoft/fluentui/wiki/Version-8-release-notes">Version 8 release notes</a>
 - Upgraded dependencies: axios, i18next og react-i18next and node-fetch
 - Remove unnecessary dependencies: tslib (already included in Fluent UI) and fixes duplicate dependencies.
 - Moved uuid from dependency to devDependendy
@@ -185,7 +185,7 @@ import { AccordionItem } from '@skatteetaten/frontend-components/Accordion/Accor
     toggleButtonText={'Versjon 4.x.x'}
     stepId={'step-1-1'}
   >
-    <div>
+    <div lang="en">
       <h3>v.4.2.2 - 12 January 2022</h3>
 
       <ul>
@@ -362,7 +362,12 @@ import { AccordionItem } from '@skatteetaten/frontend-components/Accordion/Accor
         <li>
           Changed import for Fabric React Components from office-ui-fabric-react
           to @fluentui/react.
-          https://github.com/microsoft/fluentui#looking-for-office-ui-fabric-react
+          <a
+            class="brodtekst-link"
+            href="https://github.com/microsoft/fluentui#looking-for-office-ui-fabric-react"
+          >
+            Looking for Office UI Fabric React?
+          </a>
         </li>
         <li>New import statement for all components (due to UMD build)</li>
         <li>
@@ -415,7 +420,7 @@ import { AccordionItem } from '@skatteetaten/frontend-components/Accordion/Accor
     toggleButtonText={'Versjon 3.x.x'}
     stepId={'step-1-2'}
   >
-    <div>
+    <div lang="en">
       <h3>v.3.8.1 - 10.03.2021</h3>
 
       <ul>
@@ -939,7 +944,7 @@ import { AccordionItem } from '@skatteetaten/frontend-components/Accordion/Accor
     <div>
       <h3>v.2.1.0 - November 7, 2019</h3>
 
-      <ul>
+      <ul lang="en">
         <li>New components; Link and LinkGroup</li>
         <li>Fixed an issue when displaying help text in a wide TextField</li>
         <li>
@@ -961,7 +966,7 @@ import { AccordionItem } from '@skatteetaten/frontend-components/Accordion/Accor
         <li>Minor updates to Sketch-components</li>
       </ul>
 
-      <p>
+      <p lang="en">
         NOTE: The code behind this version is not yet made visble in the
         github-repo, due to a process of moving between repositories. The
         changes will be made available in the next release.
@@ -1347,6 +1352,7 @@ import { AccordionItem } from '@skatteetaten/frontend-components/Accordion/Accor
         <li>
           – Lagt til utility{' '}
           <a
+            class="brodtekst-link"
             href="https://github.com/JedWatson/classnames#readme"
             target="_blank"
           >
@@ -1557,8 +1563,13 @@ import { AccordionItem } from '@skatteetaten/frontend-components/Accordion/Accor
         <li>Endret navn på komponenter og props fra norsk til engelsk</li>
         <li>Fjernet komponentene: Nett/Sokefelt/Tekst/Tittel</li>
         <li>
-          Oppgradert Fabric fra versjon 5 til 6 [Release
-          NOTES](https://github.com/OfficeDev/office-ui-fabric-react/blob/master/6.0_RELEASE_NOTES.md)
+          Oppgradert Fabric fra versjon 5 til 6{' '}
+          <a
+            class="brodtekst-link"
+            href="https://github.com/OfficeDev/office-ui-fabric-react/blob/master/6.0_RELEASE_NOTES.md"
+          >
+            Release NOTES
+          </a>
         </li>
         <li>Endret mappestrukturen under src/components</li>
         <li>

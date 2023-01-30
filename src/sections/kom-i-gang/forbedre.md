@@ -53,7 +53,9 @@ import { AccordionItem } from '@skatteetaten/frontend-components/Accordion/Accor
       Alle som har tilgang til utviklingmiljø og intern versjonhåndtering vil
       også ha tilgang til å bidra. Hvis du ikke har tilgang, og likevel ønsker å
       bidra kan du sende e-post til{' '}
-      <a href="mailto:designsystem@skatteetaten.no">designsystem-teamet</a>
+      <a class="brodtekst-link" href="mailto:designsystem@skatteetaten.no">
+        designsystem-teamet
+      </a>
     </p>
   </AccordionItem>
   <AccordionItem
@@ -97,4 +99,4 @@ import { AccordionItem } from '@skatteetaten/frontend-components/Accordion/Accor
 
 ## Ønsker og bugs
 
-- Andre kommentarer kan sendes til [Designsystem-teamet](mailto:designsystem@skatteetaten.no).
+- Andre kommentarer kan sendes til <a class="brodtekst-link" href="mailto:designsystem@skatteetaten.no">Designsystem-teamet</a>.

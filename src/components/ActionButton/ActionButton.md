@@ -64,11 +64,12 @@ import { ActionButton } from '@skatteetaten/frontend-components/ActionButton';
     for godkjenn eller rød for avvis.
   </p>
   <p>
-    Se{' '}
-    <a href="https://www.skatteetaten.no/stilogtone/skrive/skriveregler/knapper/">
-      skrivereglene
-    </a>{' '}
-    for hvordan skrive på knapper.
+    <a
+      class="brodtekst-link"
+      href="https://www.skatteetaten.no/stilogtone/skrive/skriveregler/knapper/"
+    >
+      Se skrivereglene for hvordan skrive på knapper.
+    </a>
   </p>
 </>
 ```

@@ -267,7 +267,11 @@ import DatePicker from '@skatteetaten/frontend-components/DatePicker';
   <p>
     Vi anbefaler at du bruker luft eller ulike anstander til å vise i hvor stor
     grad en seksjon med innhold er knyttet til en annen, slik som du tydelig ser
-    i bunnen på <a href="https://www.skatteetaten.no">skatteetaten.no</a>.
+    i bunnen på{' '}
+    <a class="brodtekst-link" href="https://www.skatteetaten.no">
+      skatteetaten.no
+    </a>
+    .
   </p>
   <p>
     Slik bruker du avstander mellom radene i rutenettet for å skille eller samle
