@@ -1,4 +1,4 @@
-### **v.6.0.4 - January 2023**
+## **v.6.0.4 - January 2023**
 
 - Fixed violations on WCAG 3.1.2(Language of Parts)
   - have added long attribute on language menu items
@@ -8,7 +8,7 @@
 - ErrorSummary: fixed WCAG 2.1.1 (Keyboard) violation
 - Added the accessibilty statement to the GitHub footer for the design system
 
-### **v.6.0.3 - January 2023**
+## **v.6.0.3 - January 2023**
 
 - TopStrip/TopStripMenuItem: when a keyboard user exits a submenu with the tab key, it is now closed by itself (similar to if the user pressed enter/space on the close button in the submenu)
 - TopStripMenu: when a keyboard-user has opened a submenu and then use shift+tab, the submenu will now be closed when the user leaves the actual menu item
@@ -86,34 +86,34 @@ The package '@skatteetaten/frontend-components' is released in parallel with '@s
 
 ## **v.5.0.0 - 1 February 2022 - Major release**
 
-## **Breaking**
+### **Breaking**
 
 - React 17 is now required
 - global imports from root is no longer supported:
   import { CardBorder } from '@skatteetaten/frontend-components'; must now be changed to
   more specific imports: imports import { CardBorder } from '@skatteetaten/frontend-components/Card';
 
-## **Breaking per component**
+### **Breaking per component**
 
-## _LabelWithCallout_
+#### _LabelWithCallout_
 
 - 'className' prop -> replaced with customClassNames to target overrides to spesific element
 - 'autoDismiss', 'border' deprecated, use the same keys within 'calloutProps' prop instead
 
-## _SearchField, ComboBox, DatePicker, Dropdown, FileUploader, RadioButtonGroup_
+#### _SearchField, ComboBox, DatePicker, Dropdown, FileUploader, RadioButtonGroup_
 
 - 'labelCallout' prop renamed to 'labelWithCalloutProps'
 - 'labelWithCalloutAutoDismiss', use 'autodismiss' key under 'labelWithCalloutProps.calloutProps' prop instead
 
-## _DatePicker_
+#### _DatePicker_
 
 - 'labelCallout' og 'labelWithCalloutAutoDismiss' prop deprecated, use CalloutProps exposed under labelWithCalloutProps and datepickerCalloutProps instead
 
-## _Table_
+#### _Table_
 
 - className prop deprecated, use customClassNames instead
 
-## _Button_
+#### _Button_
 
 - Width is no longer defaults to 100 % width on mobile. Use mobileFullWidth to enable.
 
@@ -125,12 +125,12 @@ Variants have been reorganized/prioritized, with new names and default value:
 - "primary" is now "primaryCornered",
 - "primaryRounded" is now "secondary" (default)
 
-## _ScrollToTopButton_
+#### _ScrollToTopButton_
 
 - Now uses breakpoints from designtokens for vertical placement (also added ability to change placement)
 - 'className' prop -> replaced with customClassNames to target overrides to spesific element
 
-## **Colors and design**
+### **Colors and design**
 
 - Colors updated with new names and values. Colors are now accessible via design tokens. Added design tokens for spacing and typography as well.
 - New colors brands (themes), which changes the main color in: TopBanner (external), FooterContent, Tabs, Dialog and ProgressBar. We have themes for Skatteetaten (default), Statens innkreving (INK), and Lønnsstøtteordningen (LSO).
@@ -140,13 +140,13 @@ Variants have been reorganized/prioritized, with new names and default value:
 - ActionButton: the large icon is slightly smaller.
 - MessageBar now has colored icons and a left border.
 
-## **Micro frontend support and building pipeline**
+### **Micro frontend support and building pipeline**
 
 - The components now better supports Micro Frontends; styling information can be accessed from shadow DOM. (Note: Dialog does not fully support this yet - use Modal instead)
 - Export has been changed from UMD to ESM.
 - Reorganized import and export to support modules.
 
-## **Upgrades and optimizations**
+### **Upgrades and optimizations**
 
 - Upgraded to Fluent-UI v8 (this upgrade requires React 17):
   <a class="brodtekst-link" href="https://github.com/microsoft/fluentui/wiki/Version-8-release-notes">Version 8 release notes</a>
@@ -155,7 +155,7 @@ Variants have been reorganized/prioritized, with new names and default value:
 - Moved uuid from dependency to devDependendy
 - Icons have been reorganized into a single, much smaller font file, using woff-format only.
 
-## **Additional**
+### **Additional**
 
 - Modal: New component for simpler modal boxes.
 - Sketch-file updated and reorganized.
