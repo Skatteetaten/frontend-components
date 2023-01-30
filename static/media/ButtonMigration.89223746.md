@@ -1,16 +1,16 @@
 **Fra @skatteetaten/frontend-components v5 (designsystem-legacy) til Designsystemet v0.1.0**
 
-### Endringer i funksjonalitet:
+## Endringer i funksjonalitet:
 
 - det kan ikke sendes inn markup lengre
 - v6.0.2: knappen har igjen fått type="button" som default slik som i legacy designsystem. I tillegg er type gjeninnført som prop.
 
-### Styling:
+## Styling:
 
 - De nye komponentene i designsystemet er avhengige av designtokens. Disse leveres nå som en separat pakke. Se [designtokens](#section-designtokens-deprecated) for detaljer.
 - hovedhandlings-knappen ("call to action") er ikke videre ført. Dersom du ønsker et tilsvarende utseende se MegaButton.
 
-### Endringer i API:
+## Endringer i API:
 
 <!--For full API-dokumentasjon, vennligst se på [button komponent](https://breakdance.github.io/breakdance/) på dokumentasjonssiden til designsystemet.
 ( //TODO FRONT-917 Lenke til EPI dok)-->

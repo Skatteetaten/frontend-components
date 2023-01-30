@@ -1,9 +1,9 @@
 {
   "files": {
-    "main.css": "/frontend-components/static/css/main.ceb6a6b3.chunk.css",
-    "main.js": "/frontend-components/build/main.5af1cb04.js",
+    "main.css": "/frontend-components/static/css/main.cd5f9240.chunk.css",
+    "main.js": "/frontend-components/build/main.ad01df40.js",
     "runtime-main.js": "/frontend-components/build/bundle.f88df48c.js",
-    "build/2.a7bf0a96.js": "/frontend-components/build/2.a7bf0a96.js",
+    "build/2.b730087f.js": "/frontend-components/build/2.b730087f.js",
     "assets/png/Byggeklosser.png": "/frontend-components/assets/png/Byggeklosser.png",
     "assets/png/Byggeklosser_skisse.png": "/frontend-components/assets/png/Byggeklosser_skisse.png",
     "assets/png/designer.png": "/frontend-components/assets/png/designer.png",
@@ -33,20 +33,20 @@
     "assets/svg/ske-logo-intern-kopi.svg": "/frontend-components/assets/svg/ske-logo-intern-kopi.svg",
     "assets/svg/ske-logo-intern.svg": "/frontend-components/assets/svg/ske-logo-intern.svg",
     "assets/svg/ske-logo.svg": "/frontend-components/assets/svg/ske-logo.svg",
-    "build/2.a7bf0a96.js.LICENSE.txt": "/frontend-components/build/2.a7bf0a96.js.LICENSE.txt",
+    "build/2.b730087f.js.LICENSE.txt": "/frontend-components/build/2.b730087f.js.LICENSE.txt",
     "favicon.ico": "/frontend-components/favicon.ico",
     "index.html": "/frontend-components/index.html",
     "manifest.json": "/frontend-components/manifest.json",
-    "static/css/main.ceb6a6b3.chunk.css.map": "/frontend-components/static/css/main.ceb6a6b3.chunk.css.map",
-    "static/media/ActionButtonMigration.9ef7c6e4.md": "/frontend-components/static/media/ActionButtonMigration.9ef7c6e4.md",
-    "static/media/ButtonLinkMigration.89c93159.md": "/frontend-components/static/media/ButtonLinkMigration.89c93159.md",
-    "static/media/ButtonMigration.73ccc5b2.md": "/frontend-components/static/media/ButtonMigration.73ccc5b2.md",
+    "static/css/main.cd5f9240.chunk.css.map": "/frontend-components/static/css/main.cd5f9240.chunk.css.map",
+    "static/media/ActionButtonMigration.c1bbebe5.md": "/frontend-components/static/media/ActionButtonMigration.c1bbebe5.md",
+    "static/media/ButtonLinkMigration.00678493.md": "/frontend-components/static/media/ButtonLinkMigration.00678493.md",
+    "static/media/ButtonMigration.89223746.md": "/frontend-components/static/media/ButtonMigration.89223746.md",
     "static/media/EnglishFlag.714be210.svg": "/frontend-components/static/media/EnglishFlag.714be210.svg",
-    "static/media/IconButtonMigration.454f6119.md": "/frontend-components/static/media/IconButtonMigration.454f6119.md",
-    "static/media/IconMigration.8be7e175.md": "/frontend-components/static/media/IconMigration.8be7e175.md",
+    "static/media/IconButtonMigration.ada8613a.md": "/frontend-components/static/media/IconButtonMigration.ada8613a.md",
+    "static/media/IconMigration.4d0c0341.md": "/frontend-components/static/media/IconMigration.4d0c0341.md",
     "static/media/NorwegianFlag.e7fb117c.svg": "/frontend-components/static/media/NorwegianFlag.e7fb117c.svg",
     "static/media/SamiFlag.bc29c560.svg": "/frontend-components/static/media/SamiFlag.bc29c560.svg",
-    "static/media/SkeBasisMigration.4cb8a733.md": "/frontend-components/static/media/SkeBasisMigration.4cb8a733.md",
+    "static/media/SkeBasisMigration.ea71ee14.md": "/frontend-components/static/media/SkeBasisMigration.ea71ee14.md",
     "static/media/SkeIconfont.woff": "/frontend-components/static/media/SkeIconfont.cec7e241.woff",
     "static/media/footerDekor.416cfac2.svg": "/frontend-components/static/media/footerDekor.416cfac2.svg",
     "static/media/ink-logo.e22095aa.svg": "/frontend-components/static/media/ink-logo.e22095aa.svg",
@@ -67,8 +67,8 @@
   },
   "entrypoints": [
     "build/bundle.f88df48c.js",
-    "build/2.a7bf0a96.js",
-    "static/css/main.ceb6a6b3.chunk.css",
-    "build/main.5af1cb04.js"
+    "build/2.b730087f.js",
+    "static/css/main.cd5f9240.chunk.css",
+    "build/main.ad01df40.js"
   ]
 }
