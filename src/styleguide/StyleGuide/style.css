@@ -393,7 +393,7 @@ ul.navigation li.underline {
   display: flex;
   align-items: center;
   font-family: Consolas, 'Liberation Mono', Menlo, monospace;
-  color: rgb(118, 118, 118);
+  color: #767676;
   word-break: break-all;
 }
 
@@ -523,12 +523,12 @@ ul.navigation li.underline {
 .apiTable > tbody > tr > th {
   font-family: Consolas, 'Liberation Mono', Menlo, monospace;
   font-size: 13px;
-  color: rgb(79, 35, 48);
+  color: #4f2330;
 }
 .apiTable > tbody > tr > td:first-of-type {
   font-family: Consolas, 'Liberation Mono', Menlo, monospace;
   font-size: 13px;
-  color: rgb(153, 0, 85);
+  color: #990055;
 }
 .apiTable > tbody > tr > td:nth-of-type(2) {
   font-family: Consolas, 'Liberation Mono', Menlo, monospace;
