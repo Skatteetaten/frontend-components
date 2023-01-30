@@ -95,6 +95,6 @@ import { AccordionItem } from '@skatteetaten/frontend-components/Accordion/Accor
 </Accordion>;
 ```
 
-### Ønsker og bugs
+## Ønsker og bugs
 
 - Andre kommentarer kan sendes til [Designsystem-teamet](mailto:designsystem@skatteetaten.no).

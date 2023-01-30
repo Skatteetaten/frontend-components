@@ -1,6 +1,6 @@
 ```js noeditor
 <div style={{ maxWidth: '500px' }}>
-  <h3>Formatering av datoer</h3>
+  <h2>Formatering av datoer</h2>
   <p>
     Vi skriver 16.08.2020 eller 16. august 2020. Husk at vi alltid skriver
     årstallet helt ut for å unngå misforståelser. Se{' '}
@@ -68,7 +68,7 @@ const en_formatted_date = `${new Intl.DateTimeFormat(
 
 ```js noeditor
 <div style={{ maxWidth: '500px' }}>
-  <h3>Formatering av tall</h3>
+  <h2>Formatering av tall</h2>
   <p>
     Tall skrives med siffer. Vi skriver 4 og 104, ikke fire og hundreogfire. Se{' '}
     <a href="https://www.skatteetaten.no/stilogtone/skrive/skriveregler/tall/">
@@ -126,7 +126,7 @@ const marginTopStyle = {
 ```
 
 ```js noeditor
-<h3>Relativ tid</h3>
+<h2>Relativ tid</h2>
 ```
 
 ```js

@@ -38,6 +38,7 @@ export class StyleGuideRenderer extends React.Component {
       showNavigation: false,
       version: '',
     };
+    this.mainContentRef = React.createRef();
   }
 
   _toggleMainNavigation() {
@@ -63,6 +64,16 @@ export class StyleGuideRenderer extends React.Component {
     return (
       <ScrollToTopWrapped>
         <div id="main">
+          <Link
+            className={'skipToMainLink'}
+            path={'#main-content-id'}
+            text={'Hopp til hovedinnhold'}
+            skipLink
+            onClick={(e) => {
+              e.preventDefault();
+              this.mainContentRef && this.mainContentRef.current.focus();
+            }}
+          />
           <div className="mainLayout">
             <TopBanner
               homeUrl="/"
@@ -80,22 +91,54 @@ export class StyleGuideRenderer extends React.Component {
                 />
               </div>
               <nav>
-                <div
-                  aria-expanded={
-                    this.state.showNavigation === true ? 'true' : 'false'
-                  }
-                  className={styles.navMobileButton}
-                >
+                <div className={styles.navSmallScreenButton}>
                   <ActionButton
                     onClick={() => this._toggleMainNavigation()}
                     iconSize={ActionButton.LARGE}
                     color="black"
                     icon={'Menu'}
+                    aria-haspopup="true"
+                    aria-expanded={
+                      this.state.showNavigation === true ? 'true' : 'false'
+                    }
                   >
                     Meny
                   </ActionButton>
                 </div>
-                <div className={styles.mainNav}>
+                <div className={styles.navSmallScreen}>
+                  <ul role="menu" className="navigation">
+                    <li role="presentation">
+                      <a
+                        role="menuitem"
+                        href="https://www.skatteetaten.no/stilogtone/skrive/"
+                      >
+                        Skrive
+                      </a>
+                    </li>
+                    <li role="presentation" className="underline">
+                      <a role="menuitem" href="/" aria-current={true}>
+                        Designe og utvikle
+                      </a>
+                    </li>
+                    <li role="presentation">
+                      <a
+                        role="menuitem"
+                        href="https://www.skatteetaten.no/stilogtone/universell-utforming/"
+                      >
+                        Universell utforming
+                      </a>
+                    </li>
+                    <li role="presentation">
+                      <a
+                        role="menuitem"
+                        href="https://www.skatteetaten.no/stilogtone/visuell-identitet/"
+                      >
+                        Visuell identitet
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+                <div className={styles.navDesktop}>
                   <ul className="navigation">
                     <li>
                       <a href="https://www.skatteetaten.no/stilogtone/skrive/">
@@ -103,9 +146,11 @@ export class StyleGuideRenderer extends React.Component {
                       </a>
                     </li>
                     <li className="underline">
-                      <a href="/">Designe og utvikle</a>
+                      <a href="/" aria-current={true}>
+                        Designe og utvikle
+                      </a>
                     </li>
-                    <li>
+                    <li role="presentation">
                       <a href="https://www.skatteetaten.no/stilogtone/universell-utforming/">
                         Universell utforming
                       </a>
@@ -119,7 +164,8 @@ export class StyleGuideRenderer extends React.Component {
                 </div>
               </nav>
             </TopBanner>
-            <div className="mainContent">
+            <main className="mainContent">
+              <a id="main-content-id" tabIndex="-1" ref={this.mainContentRef} />
               <Grid className={styles.main}>
                 <Grid.Row>
                   <Grid.Col md={12} xl={3}>
@@ -148,7 +194,7 @@ export class StyleGuideRenderer extends React.Component {
                   </Grid.Col>
                 </Grid.Row>
               </Grid>
-            </div>
+            </main>
           </div>
           <div className="footer">
             <FooterContent>

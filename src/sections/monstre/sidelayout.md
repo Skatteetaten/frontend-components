@@ -36,7 +36,7 @@ import { Card } from '@skatteetaten/frontend-components/Card';
 </div>;
 ```
 
-### Eksempel på sidelayout for publikumsløsning
+## Eksempel på sidelayout for publikumsløsning
 
 ```js
 import { useState } from 'react';

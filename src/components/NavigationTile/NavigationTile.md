@@ -44,8 +44,8 @@ import { NavigationContent } from '@skatteetaten/frontend-components/NavigationT
 </NavigationTile>;
 ```
 
-<h4>Overskriftsnivå inni NavigationTile</h4>
-By default får tittelen som gis i hver navigation tile en <h2\>-tag. Om dette ikke passer inn i din sidestruktur kan det overskrives. Eksempelvis gir _headingLevel_ 4 en <h4\>-tag.
+<h2>Overskriftsnivå inni NavigationTile</h2>
+By default får tittelen som gis i hver navigation tile en <h2\>-tag. Om dette ikke passer inn i din sidestruktur kan det overskrives. Eksempelvis gir _headingLevel_ 3 en <h3\>-tag.
 
 ```js
 import { NavigationTile } from '@skatteetaten/frontend-components/NavigationTile';
@@ -69,7 +69,7 @@ const contents = [
   alignTitle="left"
   alignIcon="right"
   contents={contents}
-  headingLevel={4}
+  headingLevel={3}
 />;
 ```
 

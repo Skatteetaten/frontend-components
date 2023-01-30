@@ -15,18 +15,18 @@
 - TextField: input-fields with prefix and/or suffix have the label read out by a screen reader now and not just the affix values
 - FooterContent: extended existing example with an accessibilty statement and some info about it
 
-### **v.6.0.2 - January 2023**
+## **v.6.0.2 - January 2023**
 
 - Pagination: fixed WCAG 4.1.1 violation
 - Some small adjustments to migration guides
 - Datepicker: fixed incorrect date formatting (from D.MM.YYYY to DD.MM.YYYY)
 
-### **v.6.0.1 - 7 December 2022**
+## **v.6.0.1 - 7 December 2022**
 
 - IconButton: slight adjustment to migration guide (added size)
 - Various minor updates to documentation
 
-### **v.6.0.0 - 18 November 2022**
+## **v.6.0.0 - 18 November 2022**
 
 The package '@skatteetaten/frontend-components' is released in parallel with '@skatteetaten/ds-core-designtokens', '@skatteetaten/ds-buttons' and '@skatteetaten/ds-icons'. The components in these packages replace the ones marked 'deprecated' in the documentation. From now on this package (@skatteetaten/frontend-components/) will be called 'Designsystem legacy'.
 
@@ -39,7 +39,7 @@ The package '@skatteetaten/frontend-components' is released in parallel with '@s
   - Button, ActionButton, IconButton and ButtonLink
   - Icon
 
-### **v.5.1.0 - 8 September 2022**
+## **v.5.1.0 - 8 September 2022**
 
 - Dialog: new variant with waiting dialog.
 - Improved code example for single page application pattern.
@@ -49,33 +49,33 @@ The package '@skatteetaten/frontend-components' is released in parallel with '@s
 - Updated moment dependency.
 - Updated docs, tests and other minor improvements.
 
-### **v.5.0.6 - 27 June 2022**
+## **v.5.0.6 - 27 June 2022**
 
 - SearchField: Fixes an issue where id was not set correctly
 - Table: ability to open a table row with index
 
-### **v.5.0.5 - 10 May 2022**
+## **v.5.0.5 - 10 May 2022**
 
 - SearchField: fixes an issue where the search button was not clickable when focused.
 - FileUploader: fixes an issue where aria-describedby was not set correctly with no accepted file formats.
 - Documentation: fixes an issue with the path where "frontend-components" was missing. Updated examples: Dialog, Modal, RadioButtonGroup, Table (editable rows), and error messages. Updated typography section.
 
-### **v.5.0.4 - 6 April 2022**
+## **v.5.0.4 - 6 April 2022**
 
 - Support node version 16
 - Datepicker: fixes a bug where error messages (isOutOfBoundsErrorMessage) were not displayed correctly.
 - TopBanner: now sets alt-text on logo image based on brand, language and link/nolink (external only).
 
-### **v.5.0.3 - 10 March 2022**
+## **v.5.0.3 - 10 March 2022**
 
 - Updated FluentUI dependencies.
 - Table: Added screen reader only header cells.
 
-### **v.5.0.2 - 23 February 2022**
+## **v.5.0.2 - 23 February 2022**
 
 - Fixes CommonJS build process.
 
-### **v.5.0.1 - 18 February 2022**
+## **v.5.0.1 - 18 February 2022**
 
 - New pattern for help text.
 - TopStripe fixes an alignment styling issue.
@@ -84,36 +84,36 @@ The package '@skatteetaten/frontend-components' is released in parallel with '@s
 - ScrollToTopButton: set classname prop to optional.
 - Card: Fixes prop for grey background-color.
 
-### **v.5.0.0 - 1 February 2022 - Major release**
+## **v.5.0.0 - 1 February 2022 - Major release**
 
-#### **Breaking**
+## **Breaking**
 
 - React 17 is now required
 - global imports from root is no longer supported:
   import { CardBorder } from '@skatteetaten/frontend-components'; must now be changed to
   more specific imports: imports import { CardBorder } from '@skatteetaten/frontend-components/Card';
 
-#### **Breaking per component**
+## **Breaking per component**
 
-##### _LabelWithCallout_
+## _LabelWithCallout_
 
 - 'className' prop -> replaced with customClassNames to target overrides to spesific element
 - 'autoDismiss', 'border' deprecated, use the same keys within 'calloutProps' prop instead
 
-##### _SearchField, ComboBox, DatePicker, Dropdown, FileUploader, RadioButtonGroup_
+## _SearchField, ComboBox, DatePicker, Dropdown, FileUploader, RadioButtonGroup_
 
 - 'labelCallout' prop renamed to 'labelWithCalloutProps'
 - 'labelWithCalloutAutoDismiss', use 'autodismiss' key under 'labelWithCalloutProps.calloutProps' prop instead
 
-##### _DatePicker_
+## _DatePicker_
 
 - 'labelCallout' og 'labelWithCalloutAutoDismiss' prop deprecated, use CalloutProps exposed under labelWithCalloutProps and datepickerCalloutProps instead
 
-##### _Table_
+## _Table_
 
 - className prop deprecated, use customClassNames instead
 
-##### _Button_
+## _Button_
 
 - Width is no longer defaults to 100 % width on mobile. Use mobileFullWidth to enable.
 
@@ -125,12 +125,12 @@ Variants have been reorganized/prioritized, with new names and default value:
 - "primary" is now "primaryCornered",
 - "primaryRounded" is now "secondary" (default)
 
-##### _ScrollToTopButton_
+## _ScrollToTopButton_
 
 - Now uses breakpoints from designtokens for vertical placement (also added ability to change placement)
 - 'className' prop -> replaced with customClassNames to target overrides to spesific element
 
-#### **Colors and design**
+## **Colors and design**
 
 - Colors updated with new names and values. Colors are now accessible via design tokens. Added design tokens for spacing and typography as well.
 - New colors brands (themes), which changes the main color in: TopBanner (external), FooterContent, Tabs, Dialog and ProgressBar. We have themes for Skatteetaten (default), Statens innkreving (INK), and Lønnsstøtteordningen (LSO).
@@ -140,13 +140,13 @@ Variants have been reorganized/prioritized, with new names and default value:
 - ActionButton: the large icon is slightly smaller.
 - MessageBar now has colored icons and a left border.
 
-#### **Micro frontend support and building pipeline**
+## **Micro frontend support and building pipeline**
 
 - The components now better supports Micro Frontends; styling information can be accessed from shadow DOM. (Note: Dialog does not fully support this yet - use Modal instead)
 - Export has been changed from UMD to ESM.
 - Reorganized import and export to support modules.
 
-#### **Upgrades and optimizations**
+## **Upgrades and optimizations**
 
 - Upgraded to Fluent-UI v8:
   https://github.com/microsoft/fluentui/wiki/Version-8-release-notes (this upgrade requires React 17)
@@ -155,7 +155,7 @@ Variants have been reorganized/prioritized, with new names and default value:
 - Moved uuid from dependency to devDependendy
 - Icons have been reorganized into a single, much smaller font file, using woff-format only.
 
-#### **Additional**
+## **Additional**
 
 - Modal: New component for simpler modal boxes.
 - Sketch-file updated and reorganized.
@@ -173,7 +173,7 @@ Variants have been reorganized/prioritized, with new names and default value:
 - It is no longer possible to access datepicker local state editMode.
 - Various updates to documentation
 
-### Se eldre versjoner:
+## Se eldre versjoner:
 
 ```js noeditor
 import { Accordion } from '@skatteetaten/frontend-components/Accordion';

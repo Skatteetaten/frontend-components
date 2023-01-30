@@ -2,7 +2,7 @@ Brukerne våre skal ha en enhetlig opplevelse på tvers av løsningene våre. Sk
 
 Som designer samarbeider du med utviklerne i prosjektet ditt for å best mulig følge prinsippene i designsystemet. Videre ser du hvordan du kommer i gang for å bruke designsystemet når du jobber.
 
-### Figma
+## Figma
 
 Vi bruker Figma til å designe løsninger og produkter. Alle i Skatteetaten har mulighet til å se på skisser, men man må søke om tilgang for å kunne lage egne design. Som del av Skatteetatens Figma-organisasjon har du tilgang til komponentbiblioteket som del av vårt «Team Library».
 
@@ -25,7 +25,7 @@ import { Button } from '@skatteetaten/frontend-components/Button';
 </div>;
 ```
 
-### Sette opp Figma
+## Sette opp Figma
 
 ```js noeditor
 import { Accordion } from '@skatteetaten/frontend-components/Accordion';

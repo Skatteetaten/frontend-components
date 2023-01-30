@@ -1,6 +1,6 @@
 **TopBanner (Topp): vises på toppen i løsningene og skiller interne og eksterne løsninger fra hverandre**
 
-### Publikumsløsninger
+## Publikumsløsninger
 
 Ikke-innlogget publikumsløsning:
 
@@ -83,7 +83,7 @@ const [language, setLanguage] = useState('nb');
 </div>;
 ```
 
-### Interne løsninger
+## Interne løsninger
 
 På startsiden i et fagsystem:
 

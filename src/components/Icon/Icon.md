@@ -34,7 +34,7 @@ import { Icon } from '@skatteetaten/frontend-components/Icon';
   }
 </style>
 
-### Liste over alle ikoner
+## Liste over alle ikoner
 
 ```js noeditor
 import { Accordion } from '@skatteetaten/frontend-components/Accordion';

@@ -57,7 +57,7 @@ export const getClassNames = function getClassNames(props, state) {
         },
       },
     },
-    navMobileButton: {
+    navSmallScreenButton: {
       marginBottom: '24px',
       textAlign: 'right',
       selectors: {
@@ -66,8 +66,16 @@ export const getClassNames = function getClassNames(props, state) {
         },
       },
     },
-    mainNav: {
+    navSmallScreen: {
       display: state.showNavigation === true ? 'block' : 'none',
+      selectors: {
+        '@media (min-width: 1024px)': {
+          display: 'none',
+        },
+      },
+    },
+    navDesktop: {
+      display: 'none',
       selectors: {
         '@media (min-width: 1024px)': {
           display: 'block',
