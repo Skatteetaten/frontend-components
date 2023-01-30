@@ -1,6 +1,6 @@
 **Dialog (Dialogboks): brukes til å vise innhold midt på skjermen og tiltrekke seg brukerens oppmerksomhet.**
 
-### Standard dialog
+## Standard dialog
 
 ```js
 import { ActionButton } from '@skatteetaten/frontend-components/ActionButton';
@@ -79,7 +79,7 @@ function closeDialog() {
 </>;
 ```
 
-### Luftig dialog
+## Luftig dialog
 
 ```js
 import { ActionButton } from '@skatteetaten/frontend-components/ActionButton';
@@ -145,7 +145,7 @@ const content1 = [
 </div>;
 ```
 
-### Viktig dialog
+## Viktig dialog
 
 ```js
 import { ActionButton } from '@skatteetaten/frontend-components/ActionButton';
@@ -187,7 +187,7 @@ function closeDialog() {
 </div>;
 ```
 
-### Ventevarel
+## Ventevarel
 
 Varsel dukker opp av seg selv etter 20 min inaktivitet.
 

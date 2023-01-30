@@ -1,6 +1,6 @@
 **Callout (Utropsboks): brukes når man ønsker å vise brukeren en tekst som er knyttet til element i skjermbildet.**
 
-### Hjelpetekst
+## Hjelpetekst
 
 ```js
 import { ActionButton } from '@skatteetaten/frontend-components/ActionButton';
@@ -51,7 +51,7 @@ function closeButton() {
 </div>;
 ```
 
-### Infotekst
+## Infotekst
 
 ```js
 import { ActionButton } from '@skatteetaten/frontend-components/ActionButton';
@@ -93,7 +93,7 @@ function closeButton() {
 </div>;
 ```
 
-### Manuell lukking
+## Manuell lukking
 
 ```js
 import { ActionButton } from '@skatteetaten/frontend-components/ActionButton';

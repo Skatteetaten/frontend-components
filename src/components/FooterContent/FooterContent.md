@@ -42,6 +42,34 @@ const links = [
 </div>;
 ```
 
+<div class="lenke-tabell">
+<table>
+<caption>Lenketekster og url-er</caption>
+<thead><tr><th>Bokmål</th><th>Nynorsk</th><th>Engelsk</th><th>Samisk</th></tr></thead>
+<tbody>
+<tr>
+<td>Kontakt oss - https://www.skatteetaten.no/kontakt/</td>
+<td lang='nn'>Kontakt oss - https://www.skatteetaten.no/nn/kontakt-oss/</td>
+<td lang='en'>Contact us - https://www.skatteetaten.no/en/contact/</td>
+<td lang='se'>Váldde oktavuođa minguin</td>
+</tr>
+<tr>
+<td>Sikkerhet og personvern - https://www.skatteetaten.no/om-skatteetaten/sikkerhet/</td>
+<td lang='nn'>Sikkerheit og personvern - https://www.skatteetaten.no/nn/om-skatteetaten/sikkerhet/</td>
+<td lang='en'>Security and privacy - https://www.skatteetaten.no/en/about-tde-tax-administration/security-and-privacy/</td>
+<td lang='se'>Sihkarvuohta ja persovdnasuodjaleapmi</td>
+</tr>
+<tr>
+<td>Tilgjengelighetserklæring</td>
+<td lang='nn'>Tilgjengelegheitserklæring</td>
+<td lang='en'>Accessibility statement</td>
+<td lang='se'>Almmusjulggaštus</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Tilgjengelighetserklæringer er kun på bokmål.</p>
+
 ```js noeditor beskrivelse
 <>
   <h3>Innhold i bunnen av siden</h3>

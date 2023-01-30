@@ -16,7 +16,7 @@ Man kan velge å importere alle ressursene ved å legge en css import statement 
 <!-- Vennligst se på [ds-core-designtokens dokumentasjon](https://breakdance.github.io/breakdance/) for import og anbefalinger.
 ( //TODO FRONT-917 Lenke til EPI dok) -->
 
-### Endringer i funksjonalitet:
+## Endringer i funksjonalitet:
 
 - Container er ny funksjonalitet. Det er et sett med css custom properties som distribueres gjennom containers.css (også tilgjengelig i json: containers.json)
   containers er automatisk en del av hoved-importen som er den anbefalte måten å konsumere tokens på: (se eksempel under)
@@ -50,7 +50,7 @@ I filen `_reset-default.css` legger man inn følgende kode:
 }
 ```
 
-### Endringer i API:
+## Endringer i API:
 
 <div className="migration-tabell">
 <table>

@@ -30,12 +30,12 @@ const RenderSection = (props) => {
         exampleMode={entities.components[slug].exampleMode || 'collapse'}
         usageMode={entities.components[slug].usageMode || 'collapse'}
         component={entities.components[slug]}
-        depth={2}
+        depth={1}
       />
     );
   }
   if (entities.sections && entities.sections[slug]) {
-    return <RSGSection section={entities.sections[slug]} depth={2} />;
+    return <RSGSection section={entities.sections[slug]} depth={1} />;
   }
 
   if (slug === 'testside') {
@@ -45,7 +45,7 @@ const RenderSection = (props) => {
   if (!slug) {
     return <Forside />;
   }
-  return <div> Fant ikke siden du leter etter.</div>;
+  return <p>Fant ikke siden du leter etter.</p>;
 };
 
 export class Sections extends React.Component {

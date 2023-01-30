@@ -1,3 +1,87 @@
+const monthsNynorsk = [
+  'januar',
+  'februar',
+  'mars',
+  'april',
+  'mai',
+  'juni',
+  'juli',
+  'august',
+  'september',
+  'oktober',
+  'november',
+  'desember',
+];
+
+const shortMonthsNynorsk = [
+  'jan.',
+  'feb.',
+  'mars',
+  'apr.',
+  'mai',
+  'juni',
+  'juli',
+  'aug.',
+  'sep.',
+  'okt.',
+  'nov.',
+  'des.',
+];
+
+const daysNynorsk = [
+  'søndag',
+  'måndag',
+  'tysdag',
+  'onsdag',
+  'torsdag',
+  'fredag',
+  'laurdag',
+];
+
+const shortDaysNynorsk = ['sø.', 'må.', 'ty.', 'on.', 'to.', 'fr.', 'la.'];
+
+const monthsSamisk = [
+  'Ođđajagimánnu',
+  'Guovvamánnu',
+  'Njukčamánnu',
+  'Cuoŋománnu',
+  'Miessemánnu',
+  'Geassemánnu',
+  'Suoidnemánnu',
+  'Borgemánnu',
+  'Čakčamánnu',
+  'Golggotmánnu',
+  'Skábmamánnu',
+  'Juovlamánnu',
+];
+
+const shortMonthsSamisk = [
+  'Ođđ',
+  'Guo',
+  'Nju',
+  'Cuo',
+  'Mie',
+  'Gea',
+  'Suo',
+  'Bor',
+  'Čak',
+  'Gol',
+  'Ská',
+  'Juo',
+];
+
+const daysSamisk = [
+  'Sotnabeaivi',
+  'Vuossárga',
+  'Maŋŋebárga',
+  'Gaskavahkku',
+  'Duorastat',
+  'Bearjadat',
+  'Lávvordat',
+];
+
+const shortDaysSamisk = ['Sot', 'Mán', 'Dis', 'Gas', 'Duo', 'Bea', 'Láv'];
+
 export const DEFAULTFORMATDATE = (date: Date | null | undefined): string => {
   return date
     ? Intl.DateTimeFormat('no', {
@@ -27,6 +111,24 @@ export const monthsForLocale = (
   localeName = 'no',
   monthFormat: 'long' | 'short' = 'long'
 ) => {
+  if (localeName === 'nn') {
+    if (monthFormat === 'long') {
+      return monthsNynorsk;
+    }
+    if (monthFormat === 'short') {
+      return shortMonthsNynorsk;
+    }
+  }
+
+  if (localeName === 'se') {
+    if (monthFormat === 'long') {
+      return monthsSamisk;
+    }
+    if (monthFormat === 'short') {
+      return shortMonthsSamisk;
+    }
+  }
+
   const format = new Intl.DateTimeFormat(localeName, { month: monthFormat })
     .format;
   const months: string[] = [];
@@ -40,6 +142,24 @@ export const weekdaysForLocale = (
   localeName = 'no',
   dayFormat: 'long' | 'short' = 'long'
 ) => {
+  if (localeName === 'nn') {
+    if (dayFormat === 'long') {
+      return daysNynorsk;
+    }
+    if (dayFormat === 'short') {
+      return shortDaysNynorsk;
+    }
+  }
+
+  if (localeName === 'se') {
+    if (dayFormat === 'long') {
+      return daysSamisk;
+    }
+    if (dayFormat === 'short') {
+      return shortDaysSamisk;
+    }
+  }
+
   const format = new Intl.DateTimeFormat(localeName, { weekday: dayFormat })
     .format;
   const weekdays: string[] = [];

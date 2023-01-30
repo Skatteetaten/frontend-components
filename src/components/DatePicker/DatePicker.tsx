@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { t } from './../utils/i18n/i18n';
+import { generateId, t } from '../utils';
 import classnames from 'classnames';
 import {
   DatePicker as FabricDatePicker,
@@ -8,7 +8,6 @@ import {
   IDatePicker,
   IDatePickerProps,
 } from '@fluentui/react';
-import { generateId } from '../utils';
 import { LabelWithCallout } from '../LabelWithCallout';
 import { getClassNames, getCalendarClassNames } from './DatePicker.classNames';
 import { DatePickerProps } from './DatePicker.types';
@@ -43,7 +42,7 @@ export const DatePicker: React.FC<DatePickerProps> = (
     label,
     labelButtonAriaLabel,
     labelWithCalloutProps,
-    language,
+    language = 'no',
     onCalloutToggle,
     readonlyMode,
     requiredWithMark = false,
@@ -62,7 +61,7 @@ export const DatePicker: React.FC<DatePickerProps> = (
     isRequired: false,
     highlightCurrentMonth: true,
     parseDateFromString: DEFAULTPARSEDATEFROMSTRING,
-    pickerAriaLabel: t('datepicker.ariaLabel'),
+    pickerAriaLabel: t('datepicker.calendar'),
     showGoToToday: true,
     showMonthPickerAsOverlay: false,
     showWeekNumbers: true,
@@ -89,10 +88,10 @@ export const DatePicker: React.FC<DatePickerProps> = (
   const DEFAULT_DATE_FORMAT = 'DD.MM.YYYY';
 
   const DEFAULT_STRINGS = {
-    months: monthsForLocale(language !== 'en' ? 'no' : 'en', 'long'),
-    shortMonths: monthsForLocale(language !== 'en' ? 'no' : 'en', 'short'),
-    days: weekdaysForLocale(language !== 'en' ? 'no' : 'en', 'long'),
-    shortDays: weekdaysForLocale(language !== 'en' ? 'no' : 'en', 'short'),
+    months: monthsForLocale(language, 'long'),
+    shortMonths: monthsForLocale(language, 'short'),
+    days: weekdaysForLocale(language, 'long'),
+    shortDays: weekdaysForLocale(language, 'short'),
     goToToday: t('datepicker.goToToday')!,
     prevMonthAriaLabel: t('datepicker.prevMonthAriaLabel'),
     nextMonthAriaLabel: t('datepicker.nextMonthAriaLabel'),
@@ -102,7 +101,7 @@ export const DatePicker: React.FC<DatePickerProps> = (
       DEFAULT_DATE_FORMAT,
     }),
     /** Automatisk utvide høyde (ved multiline) */
-    isOutOfBoundsErrorMessage: 'Datoen er ikke innenfor gyldig periode',
+    isOutOfBoundsErrorMessage: t('datepicker.isOutOfBoundsErrorMessage'),
     isRequiredErrorMessage: t('datepicker.isRequiredErrorMessage'),
   };
 

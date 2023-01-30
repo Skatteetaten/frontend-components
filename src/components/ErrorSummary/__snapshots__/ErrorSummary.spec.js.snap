@@ -203,8 +203,8 @@ exports[`ErrorSummary komponent matcher snapshot 1`] = `
                   color: #093e61;
                   outline: none;
                 }
+            href="#"
             onClick={[Function]}
-            tabIndex={0}
           >
             Du må legge til en adresse
           </a>
@@ -276,8 +276,8 @@ exports[`ErrorSummary komponent matcher snapshot 1`] = `
                   color: #093e61;
                   outline: none;
                 }
+            href="#"
             onClick={[Function]}
-            tabIndex={0}
           >
             Du må legge til en postkode
           </a>
@@ -349,8 +349,8 @@ exports[`ErrorSummary komponent matcher snapshot 1`] = `
                   color: #093e61;
                   outline: none;
                 }
+            href="#"
             onClick={[Function]}
-            tabIndex={0}
           >
             Du må legge til et poststed
           </a>

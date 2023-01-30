@@ -68,10 +68,10 @@ describe('Card komponent', () => {
   it('kan definere tagName på title', () => {
     const wrapper = oppsettFullDOM({
       title: 'tittel',
-      titleTagName: 'h3',
+      titleTagName: 'h2',
     });
 
-    expect(wrapper.html()).toContain('tittel</h3>');
+    expect(wrapper.html()).toContain('tittel</h2>');
   });
 
   it('rendrer ikke attributter definert i CardProps', () => {

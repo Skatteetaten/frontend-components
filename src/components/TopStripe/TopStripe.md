@@ -1,6 +1,6 @@
 **TopStripe (Toppstripe): er en svart menystripe øverst på innloggede sider for publikum.**
 
-### Ikke innlogget
+## Ikke innlogget
 
 Viser kontakt oss, endre skriftsstørrelse, språk og logg inn.
 
@@ -66,7 +66,7 @@ const [language, setLanguage] = useState('nb');
 </div>;
 ```
 
-### Innlogget og kan kun representere seg selv
+## Innlogget og kan kun representere seg selv
 
 Viser kontakt oss, endre skriftsstørrelse, språk, partsvalg (velger for hvem de representerer) og logg ut.
 
@@ -134,7 +134,7 @@ const [language, setLanguage] = useState('nb');
 </div>;
 ```
 
-### Innlogget og kan representere flere
+## Innlogget og kan representere flere
 
 Viser kontakt oss, endre skriftsstørrelse, språk, partsvalg (velger for hvem de representerer) og logg ut.
 
@@ -215,7 +215,7 @@ const [language, setLanguage] = useState('nb');
 </div>;
 ```
 
-### På mobil
+## På mobil
 
 På mobil flyttes valgene for kontakt oss og skriftsstørrelse til footeren.
 
@@ -267,7 +267,7 @@ const [language, setLanguage] = useState('nb');
 </div>;
 ```
 
-### Begrense bredden på store skjermer
+## Begrense bredden på store skjermer
 
 For svært brede skjermer kan det er være nyttig å begrense bredden som toppstripens innhold kan vises i, for eksempel 80 %:
 

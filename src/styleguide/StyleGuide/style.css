@@ -389,6 +389,14 @@ ul.navigation li.underline {
   border-width: 0;
 }
 
+.pathline {
+  display: flex;
+  align-items: center;
+  font-family: Consolas, 'Liberation Mono', Menlo, monospace;
+  color: #767676;
+  word-break: break-all;
+}
+
 .deprecatedLabel {
   padding: 0.5rem;
   font-size: 0.9rem;
@@ -448,7 +456,7 @@ ul.navigation li.underline {
   border-collapse: separate;
 }
 .migration-tabell caption {
-  color: #808080;
+  color: #4d4d4d;
   font-size: 0.75rem;
   text-align: left;
 }
@@ -469,6 +477,15 @@ ul.navigation li.underline {
 .migration-tabell pre.lang-javascript {
   background-color: #faf0f3;
   border-color: #f3a7b0;
+}
+.migration-tabell pre .token.string {
+  color: #027211;
+}
+.migration-tabell pre .token.operator {
+  color: #833417;
+}
+.migration-tabell pre .token.punctuation {
+  color: #6d6867;
 }
 .migration-tabell pre.lang-js {
   background-color: #f4faf5;
@@ -501,4 +518,45 @@ ul.navigation li.underline {
 }
 .footer-linkgroup li i {
   color: #fff !important;
+}
+
+.apiTable > tbody > tr > th {
+  font-family: Consolas, 'Liberation Mono', Menlo, monospace;
+  font-size: 13px;
+  color: #4f2330;
+}
+.apiTable > tbody > tr > td:first-of-type {
+  font-family: Consolas, 'Liberation Mono', Menlo, monospace;
+  font-size: 13px;
+  color: #990055;
+}
+.apiTable > tbody > tr > td:nth-of-type(2) {
+  font-family: Consolas, 'Liberation Mono', Menlo, monospace;
+  font-size: 13px;
+}
+
+.lenke-tabell table {
+  border-spacing: 2px;
+  border-collapse: separate;
+}
+.lenke-tabell caption {
+  font-weight: bold;
+  text-align: left;
+}
+.lenke-tabell thead td,
+.lenke-tabell thead td:nth-child(1) {
+  font-weight: bold;
+  padding: 0.75rem 0;
+  text-align: center;
+}
+.lenke-tabell td,
+.lenke-tabell th {
+  border: 1px solid #e5e5e5;
+  padding: 0.5rem;
+}
+
+.skipToMainLink a:focus {
+  border: 2px solid #1d1d1d;
+  display: inline-block;
+  font-size: 18px;
 }

@@ -21,7 +21,7 @@ Eksempel på bruk i tekst:
 import { Chip } from '@skatteetaten/frontend-components/Chip';
 
 <div>
-  <h3>Dekning av saksomkostninger</h3>
+  <h2>Dekning av saksomkostninger</h2>
   <p>
     Klage på avslag om dekning av saksomkostninger etter lov av 13. juni 1980
     nr. 24 om ligningsforvalgning (likningsloven) §9-11 etter at skattekontoret
