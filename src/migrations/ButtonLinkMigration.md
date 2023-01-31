@@ -2,20 +2,20 @@
 
 ButtonLink er blitt erstattet med MegaButton.
 
-### Endringer i funksjonalitet
+## Endringer i funksjonalitet
 
 - det kan ikke sendes inn markup lengre
 - før var komponenten et &lt;a&gt;-element mens den er nå et &lt;button&gt;-element som default. 'href' property styrer om det blir tegnet opp som et &lt;a&gt;- eller &lt;button&gt;-element
 - viderefører ikke muligheten til å bestemme om en lenke skal kunne åpnes i nytt vindu
 - v6.0.2: Når komponenten tegnes opp som et &lt;button&gt;-element så har den igjen fått type="button" som default slik som i legacy designsystem. I tillegg er type gjeninnført som prop.
 
-### Styling
+## Styling
 
 - De nye komponentene i designsystemet er avhengige av designtokens. Disse leveres nå som en separat pakke. Se [designtokens](#section-designtokens-deprecated) for detaljer.
 - har nå mulighet til å vise et "eksternt lenke"-ikon etter lenketeksten for å indikere at man åpner en ekstern tjeneste
 - tekst er midtstilt dersom den går over flere linjer og er ikke venstrejustert lengre
 
-### Endringer i API
+## Endringer i API
 
 <div className="migration-tabell">
 <table>

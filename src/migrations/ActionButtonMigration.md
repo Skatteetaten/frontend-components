@@ -2,20 +2,20 @@
 
 ActionButton er blitt erstattet med InlineButton.
 
-### Endringer i funksjonalitet:
+## Endringer i funksjonalitet:
 
 - det kan ikke sendes inn markup lengre
 - har ikke lengre anker-funksjonalitet
 - v6.0.2: knappen har igjen fått type="button" som default slik som i legacy designsystem. I tillegg er type gjeninnført som prop.
 
-### Styling:
+## Styling:
 
 - De nye komponentene i designsystemet er avhengige av designtokens. Disse leveres nå som en separat pakke. Se [designtokens](#section-designtokens-deprecated) for detaljer.
 - tilbys ikke i ulike farger lengre
 - ikon tilbys ikke i forskjellig størrelser lengre
 - har ikke lengre mulighet til valgfri underline. Underline kommer automatisk dersom ikon ikke er valgt
 
-### Endringer i API:
+## Endringer i API:
 
 <!--For full API-dokumentasjon, vennligst se på [InlineButton komponent](https://breakdance.github.io/breakdance/) på dokumentasjonssiden til designsystemet.
 ( //TODO FRONT-917 Lenke til EPI dok)-->

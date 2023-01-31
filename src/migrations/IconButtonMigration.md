@@ -1,20 +1,20 @@
 **Fra @skatteetaten/frontend-components v5 (designsystem-legacy) til Designsystemet v0.1.0**
 
-### Endringer i funksjonalitet:
+## Endringer i funksjonalitet:
 
 - Icon er nå svg-basert og ikke font-basert
 - ikonet kan ikke endres på gjennom iconProps
 - ikonet har alltid en tooltip
 - v6.0.2: knappen har igjen fått type="button" som default slik som i legacy designsystem. I tillegg er type gjeninnført som prop.
 
-### Styling:
+## Styling:
 
 - De nye komponentene i designsystemet er avhengige av designtokens. Disse leveres nå som en separat pakke. Se [designtokens](#section-designtokens-deprecated) for detaljer.
 - størrelse på selve ikonet og luft er endret og default verdier er justert
   (se migrering under API → "buttonSize" / "size")
 - knappens ramme er tynnere (1px/2px nå vs 3px før)
 
-### Endringer i API
+## Endringer i API
 
 <div className="migration-tabell">
 <table>

@@ -69,14 +69,8 @@ export class Card extends React.PureComponent<CardProps, CardState> {
         type={buttonType}
       >
         <div className={styles.titlecontainer}>
-          <TitleTag aria-label={title} className={styles.titleExpand}>
-            {title}
-          </TitleTag>
-          {
-            <div className={styles.subtitle} aria-label={subtitle}>
-              {subtitle}
-            </div>
-          }
+          <TitleTag className={styles.titleExpand}>{title}</TitleTag>
+          {subtitle && <div className={styles.subtitle}>{subtitle}</div>}
         </div>
         <div className={styles.expandIcon}>
           <Icon iconName={'ChevronDown'} />
@@ -87,14 +81,8 @@ export class Card extends React.PureComponent<CardProps, CardState> {
     const regularCard = (
       <div className={styles.header}>
         <div className={styles.titlecontainer}>
-          <TitleTag className={styles.title} aria-label={title}>
-            {title}
-          </TitleTag>
-          {
-            <div className={styles.subtitle} aria-label={subtitle}>
-              {subtitle}
-            </div>
-          }
+          <TitleTag className={styles.title}>{title}</TitleTag>
+          {subtitle && <div className={styles.subtitle}>{subtitle}</div>}
         </div>
       </div>
     );

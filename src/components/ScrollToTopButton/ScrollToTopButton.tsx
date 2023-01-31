@@ -7,6 +7,7 @@ import {
   ScrollToTopButtonProps,
   ScrollToTopButtonState,
 } from './ScrollToTopButton.types';
+import { t } from 'i18next';
 
 /**
  * @deprecated Komponenten er erstattet av ScrollToTopButton fra "@skatteetaten/ds-buttons"
@@ -18,7 +19,6 @@ export class ScrollToTopButton extends React.PureComponent<
   ScrollToTopButtonState
 > {
   static defaultProps = {
-    label: 'Til toppen',
     containerMaxWidth: undefined,
   };
 
@@ -72,7 +72,6 @@ export class ScrollToTopButton extends React.PureComponent<
                 styles.actionButton,
                 customClassNames?.button
               )}
-              ariaLabel={label}
               onClick={() => window.scrollTo(0, 0)}
             >
               <div
@@ -91,7 +90,7 @@ export class ScrollToTopButton extends React.PureComponent<
               <div
                 className={classnames(styles.label, customClassNames?.label)}
               >
-                {label}
+                {label || t('scrollToTopButton.backToTop')}
               </div>
             </ActionButton>
           </div>

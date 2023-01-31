@@ -223,15 +223,10 @@ const marginTopStyle = {
         <Grid padding="0px">
           <Grid.Row rowSpacing={Grid.SPACE_NONE}>
             <Grid.Col noSpacing lg={12}>
-              <ActionButton
-                ariaLabel={'Legg til skatteplikt'}
-                icon="AddOutline"
-              >
+              <ActionButton icon="AddOutline">
                 Legg til skatteplikt
               </ActionButton>
-              <ActionButton ariaLabel={'Legg til skatteplikt'} icon="Upload">
-                Last opp fil
-              </ActionButton>
+              <ActionButton icon="Upload">Last opp fil</ActionButton>
             </Grid.Col>
           </Grid.Row>
           <Grid.Row rowSpacing={Grid.SPACE_NONE}>
