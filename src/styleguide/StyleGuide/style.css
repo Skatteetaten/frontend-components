@@ -535,6 +535,10 @@ ul.navigation li.underline {
   font-family: Consolas, 'Liberation Mono', Menlo, monospace;
   font-size: 13px;
   color: #4f2330;
+  vertical-align: top;
+}
+.apiTable > tbody > tr > td {
+  vertical-align: top;
 }
 .apiTable > tbody > tr > td:first-of-type {
   font-family: Consolas, 'Liberation Mono', Menlo, monospace;
