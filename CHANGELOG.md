@@ -39,140 +39,6 @@ The package '@skatteetaten/frontend-components' is released in parallel with '@s
   - Button, ActionButton, IconButton and ButtonLink
   - Icon
 
-## **v.5.1.0 - 8 September 2022**
-
-- Dialog: new variant with waiting dialog.
-- Improved code example for single page application pattern.
-- Table: improved font size, alignment and padding in compact table header.
-- FileUploader: fixes an issue with an id that was not set correctly.
-- Link: Invisible links (Skip to content) are now placed further outside view to ensure they wont interfere with other content.
-- Updated moment dependency.
-- Updated docs, tests and other minor improvements.
-
-## **v.5.0.6 - 27 June 2022**
-
-- SearchField: Fixes an issue where id was not set correctly
-- Table: ability to open a table row with index
-
-## **v.5.0.5 - 10 May 2022**
-
-- SearchField: fixes an issue where the search button was not clickable when focused.
-- FileUploader: fixes an issue where aria-describedby was not set correctly with no accepted file formats.
-- Documentation: fixes an issue with the path where "frontend-components" was missing. Updated examples: Dialog, Modal, RadioButtonGroup, Table (editable rows), and error messages. Updated typography section.
-
-## **v.5.0.4 - 6 April 2022**
-
-- Support node version 16
-- Datepicker: fixes a bug where error messages (isOutOfBoundsErrorMessage) were not displayed correctly.
-- TopBanner: now sets alt-text on logo image based on brand, language and link/nolink (external only).
-
-## **v.5.0.3 - 10 March 2022**
-
-- Updated FluentUI dependencies.
-- Table: Added screen reader only header cells.
-
-## **v.5.0.2 - 23 February 2022**
-
-- Fixes CommonJS build process.
-
-## **v.5.0.1 - 18 February 2022**
-
-- New pattern for help text.
-- TopStripe fixes an alignment styling issue.
-- ErrorSummary: will no longer hide itself if it has children elements.
-- Tables formatFunction: Added JSX-element as valid response.
-- ScrollToTopButton: set classname prop to optional.
-- Card: Fixes prop for grey background-color.
-
-## **v.5.0.0 - 1 February 2022 - Major release**
-
-### **Breaking**
-
-- React 17 is now required
-- global imports from root is no longer supported:
-  import { CardBorder } from '@skatteetaten/frontend-components'; must now be changed to
-  more specific imports: imports import { CardBorder } from '@skatteetaten/frontend-components/Card';
-
-### **Breaking per component**
-
-#### _LabelWithCallout_
-
-- 'className' prop -> replaced with customClassNames to target overrides to spesific element
-- 'autoDismiss', 'border' deprecated, use the same keys within 'calloutProps' prop instead
-
-#### _SearchField, ComboBox, DatePicker, Dropdown, FileUploader, RadioButtonGroup_
-
-- 'labelCallout' prop renamed to 'labelWithCalloutProps'
-- 'labelWithCalloutAutoDismiss', use 'autodismiss' key under 'labelWithCalloutProps.calloutProps' prop instead
-
-#### _DatePicker_
-
-- 'labelCallout' og 'labelWithCalloutAutoDismiss' prop deprecated, use CalloutProps exposed under labelWithCalloutProps and datepickerCalloutProps instead
-
-#### _Table_
-
-- className prop deprecated, use customClassNames instead
-
-#### _Button_
-
-- Width is no longer defaults to 100 % width on mobile. Use mobileFullWidth to enable.
-
-Variants have been reorganized/prioritized, with new names and default value:
-
-- "primaryLarge" is now "callToAction",
-- "primaryRoundedFilled" is now "primary",
-- "secondary" is now "secondarySimple",
-- "primary" is now "primaryCornered",
-- "primaryRounded" is now "secondary" (default)
-
-#### _ScrollToTopButton_
-
-- Now uses breakpoints from designtokens for vertical placement (also added ability to change placement)
-- 'className' prop -> replaced with customClassNames to target overrides to spesific element
-
-### **Colors and design**
-
-- Colors updated with new names and values. Colors are now accessible via design tokens. Added design tokens for spacing and typography as well.
-- New colors brands (themes), which changes the main color in: TopBanner (external), FooterContent, Tabs, Dialog and ProgressBar. We have themes for Skatteetaten (default), Statens innkreving (INK), and Lønnsstøtteordningen (LSO).
-- New status colors: statusOk and statusWarning.
-- Both Button and ActionButton have upgraded styling, click and hover effects
-- ErrorMessage design upgraded to match the new ErrorSummary component.
-- ActionButton: the large icon is slightly smaller.
-- MessageBar now has colored icons and a left border.
-
-### **Micro frontend support and building pipeline**
-
-- The components now better supports Micro Frontends; styling information can be accessed from shadow DOM. (Note: Dialog does not fully support this yet - use Modal instead)
-- Export has been changed from UMD to ESM.
-- Reorganized import and export to support modules.
-
-### **Upgrades and optimizations**
-
-- Upgraded to Fluent-UI v8 (this upgrade requires React 17):
-  <a class="brodtekst-link" href="https://github.com/microsoft/fluentui/wiki/Version-8-release-notes">Version 8 release notes</a>
-- Upgraded dependencies: axios, i18next og react-i18next and node-fetch
-- Remove unnecessary dependencies: tslib (already included in Fluent UI) and fixes duplicate dependencies.
-- Moved uuid from dependency to devDependendy
-- Icons have been reorganized into a single, much smaller font file, using woff-format only.
-
-### **Additional**
-
-- Modal: New component for simpler modal boxes.
-- Sketch-file updated and reorganized.
-- Added new page with design tokens.
-- Fixes known accessibility issues with Commandbar, Dropdown and Combobox.
-- TopBanner: Added ability to change the url when clicking the logo.
-- Table: Updated styling and code for better reposiveness, alignment and performance.
-- TopStripe: Updated styling for better mobile support. Added ability to set content width for large screens.
-- Callout: Slightly changed styling for close button.
-- Added sami translations to components to DatePicker, FileUploader, SearchField and Table.
-- OpenClose: added ability to show underline.
-- TableRow: added custom styling and fixes a padding issue in SumRow
-- Input fields now has the ability to show required mark next to label.
-- CheckBox has has a role="checkbox" instead of select type.
-- It is no longer possible to access datepicker local state editMode.
-- Various updates to documentation
-
 ## Se eldre versjoner:
 
 ```js noeditor
@@ -182,8 +48,276 @@ import { AccordionItem } from '@skatteetaten/frontend-components/Accordion/Accor
 <Accordion>
   <AccordionItem
     toggleContent
-    toggleButtonText={'Versjon 4.x.x'}
+    toggleButtonText={'Versjon 5.x.x'}
     stepId={'step-1-1'}
+  >
+    <div lang="en">
+      <h3>v.5.1.0 - 8 September 2022</h3>
+      <ul>
+        <li>Dialog: new variant with waiting dialog.</li>
+        <li>Improved code example for single page application pattern.</li>
+        <li>
+          Table: improved font size, alignment and padding in compact table
+          header.
+        </li>
+        <li>
+          FileUploader: fixes an issue with an id that was not set correctly.
+        </li>
+        <li>
+          Link: Invisible links (Skip to content) are now placed further outside
+          view to ensure they wont interfere with other content.
+        </li>
+        <li>Updated moment dependency.</li>
+        <li>Updated docs, tests and other minor improvements.</li>
+      </ul>
+
+      <h3>v.5.0.6 - 27 June 2022</h3>
+      <ul>
+        <li>SearchField: Fixes an issue where id was not set correctly</li>
+        <li>Table: ability to open a table row with index</li>
+      </ul>
+
+      <h3>v.5.0.5 - 10 May 2022</h3>
+      <ul>
+        <li>
+          SearchField: fixes an issue where the search button was not clickable
+          when focused.
+        </li>
+        <li>
+          FileUploader: fixes an issue where aria-describedby was not set
+          correctly with no accepted file formats.
+        </li>
+        <li>
+          Documentation: fixes an issue with the path where
+          "frontend-components" was missing. Updated examples: Dialog, Modal,
+          RadioButtonGroup, Table (editable rows), and error messages. Updated
+          typography section.
+        </li>
+      </ul>
+
+      <h3>v.5.0.4 - 6 April 2022</h3>
+      <ul>
+        <li>Support node version 16</li>
+        <li>
+          Datepicker: fixes a bug where error messages
+          (isOutOfBoundsErrorMessage) were not displayed correctly.
+        </li>
+        <li>
+          TopBanner: now sets alt-text on logo image based on brand, language
+          and link/nolink (external only).
+        </li>
+      </ul>
+
+      <h3>v.5.0.3 - 10 March 2022</h3>
+      <ul>
+        <li>Updated FluentUI dependencies.</li>
+        <li>Table: Added screen reader only header cells.</li>
+      </ul>
+
+      <h3>v.5.0.2 - 23 February 2022</h3>
+      <ul>
+        <li>Fixes CommonJS build process.</li>
+      </ul>
+
+      <h3>v.5.0.1 - 18 February 2022</h3>
+      <ul>
+        <li>New pattern for help text.</li>
+        <li>TopStripe fixes an alignment styling issue.</li>
+        <li>
+          ErrorSummary: will no longer hide itself if it has children elements.
+        </li>
+        <li>Tables formatFunction: Added JSX-element as valid response.</li>
+        <li>ScrollToTopButton: set classname prop to optional.</li>
+        <li>Card: Fixes prop for grey background-color.</li>
+      </ul>
+
+      <h3>v.5.0.0 - 1 February 2022 - Major release</h3>
+      <h4>Breaking</h4>
+      <ul>
+        <li>React 17 is now required</li>
+        <li>
+          global imports from root is no longer supported:{' '}
+          <code>
+            import &#123; CardBorder &#125; from
+            '@skatteetaten/frontend-components';
+          </code>{' '}
+          must now be changed to more specific imports:{' '}
+          <code>
+            import &#123; CardBorder &#125; from
+            '@skatteetaten/frontend-components/Card';
+          </code>
+        </li>
+      </ul>
+
+      <h4>Breaking per component</h4>
+      <h5>LabelWithCallout</h5>
+      <ul>
+        <li>
+          'className' prop replaced with customClassNames to target overrides to
+          spesific element
+        </li>
+        <li>
+          'autoDismiss', 'border' deprecated, use the same keys within
+          'calloutProps' prop instead
+        </li>
+      </ul>
+
+      <h5>
+        SearchField, ComboBox, DatePicker, Dropdown, FileUploader,
+        RadioButtonGroup
+      </h5>
+      <ul>
+        <li>'labelCallout' prop renamed to 'labelWithCalloutProps'</li>
+        <li>
+          'labelWithCalloutAutoDismiss', use 'autodismiss' key under
+          'labelWithCalloutProps.calloutProps' prop instead
+        </li>
+      </ul>
+
+      <h5>DatePicker</h5>
+      <p>
+        Prop 'labelCallout' og 'labelWithCalloutAutoDismiss' deprecated, use
+        CalloutProps exposed under labelWithCalloutProps and
+        datepickerCalloutProps instead
+      </p>
+
+      <h5>Table</h5>
+      <p>Prop className deprecated, use customClassNames instead</p>
+
+      <h5>Button</h5>
+      <p>
+        Width is no longer defaults to 100 % width on mobile. Use
+        mobileFullWidth to enable.
+      </p>
+      <p>
+        Variants have been reorganized/prioritized, with new names and default
+        value:
+      </p>
+      <ul>
+        <li>"primaryLarge" is now "callToAction"</li>
+        <li>"primaryRoundedFilled" is now "primary"</li>
+        <li>"secondary" is now "secondarySimple"</li>
+        <li>"primary" is now "primaryCornered"</li>
+        <li>"primaryRounded" is now "secondary" (default)</li>
+      </ul>
+
+      <h5>ScrollToTopButton</h5>
+      <ul>
+        <li>
+          Now uses breakpoints from designtokens for vertical placement (also
+          added ability to change placement)
+        </li>
+        <li>
+          'className' prop replaced with customClassNames to target overrides to
+          spesific element
+        </li>
+      </ul>
+
+      <h4>Colors and design</h4>
+      <ul>
+        <li>
+          Colors updated with new names and values. Colors are now accessible
+          via design tokens. Added design tokens for spacing and typography as
+          well.
+        </li>
+        <li>
+          New colors brands (themes), which changes the main color in: TopBanner
+          (external), FooterContent, Tabs, Dialog and ProgressBar. We have
+          themes for Skatteetaten (default), Statens innkreving (INK), and
+          Lønnsstøtteordningen (LSO).
+        </li>
+        <li>New status colors: statusOk and statusWarning.</li>
+        <li>
+          Both Button and ActionButton have upgraded styling, click and hover
+          effects
+        </li>
+        <li>
+          ErrorMessage design upgraded to match the new ErrorSummary component.
+        </li>
+        <li>ActionButton: the large icon is slightly smaller.</li>
+        <li>MessageBar now has colored icons and a left border.</li>
+      </ul>
+
+      <h4>Micro frontend support and building pipeline</h4>
+      <ul>
+        <li>
+          The components now better supports Micro Frontends; styling
+          information can be accessed from shadow DOM. (Note: Dialog does not
+          fully support this yet - use Modal instead)
+        </li>
+        <li>Export has been changed from UMD to ESM.</li>
+        <li>Reorganized import and export to support modules.</li>
+      </ul>
+
+      <h4>Upgrades and optimizations</h4>
+      <ul>
+        <li>
+          <a
+            class="brodtekst-link"
+            href="https://github.com/microsoft/fluentui/wiki/Version-8-release-notes"
+          >
+            Upgraded to Fluent-UI v8
+          </a>{' '}
+          (this upgrade requires React 17)
+        </li>
+        <li>
+          Upgraded dependencies: axios, i18next og react-i18next and node-fetch
+        </li>
+        <li>
+          Remove unnecessary dependencies: tslib (already included in Fluent UI)
+          and fixes duplicate dependencies.
+        </li>
+        <li>Moved uuid from dependency to devDependendy</li>
+        <li>
+          Icons have been reorganized into a single, much smaller font file,
+          using woff-format only.
+        </li>
+      </ul>
+
+      <h4>Additional</h4>
+      <ul>
+        <li>Modal: New component for simpler modal boxes.</li>
+        <li>Sketch-file updated and reorganized.</li>
+        <li>Added new page with design tokens.</li>
+        <li>
+          Fixes known accessibility issues with Commandbar, Dropdown and
+          Combobox.
+        </li>
+        <li>
+          TopBanner: Added ability to change the url when clicking the logo.
+        </li>
+        <li>
+          Table: Updated styling and code for better reposiveness, alignment and
+          performance.
+        </li>
+        <li>
+          TopStripe: Updated styling for better mobile support. Added ability to
+          set content width for large screens.
+        </li>
+        <li>Callout: Slightly changed styling for close button.</li>
+        <li>
+          Added sami translations to components to DatePicker, FileUploader,
+          SearchField and Table.
+        </li>
+        <li>OpenClose: added ability to show underline.</li>
+        <li>
+          TableRow: added custom styling and fixes a padding issue in SumRow
+        </li>
+        <li>
+          Input fields now has the ability to show required mark next to label.
+        </li>
+        <li>CheckBox has has a role="checkbox" instead of select type.</li>
+        <li>
+          It is no longer possible to access datepicker local state editMode.
+        </li>
+        <li>Various updates to documentation</li>
+      </ul>
+    </div>
+  </AccordionItem>
+  <AccordionItem
+    toggleContent
+    toggleButtonText={'Versjon 4.x.x'}
+    stepId={'step-1-2'}
   >
     <div lang="en">
       <h3>v.4.2.2 - 12 January 2022</h3>
@@ -418,7 +552,7 @@ import { AccordionItem } from '@skatteetaten/frontend-components/Accordion/Accor
   <AccordionItem
     toggleContent
     toggleButtonText={'Versjon 3.x.x'}
-    stepId={'step-1-2'}
+    stepId={'step-1-3'}
   >
     <div lang="en">
       <h3>v.3.8.1 - 10.03.2021</h3>
@@ -939,7 +1073,7 @@ import { AccordionItem } from '@skatteetaten/frontend-components/Accordion/Accor
   <AccordionItem
     toggleContent
     toggleButtonText={'Versjon 2.x.x'}
-    stepId={'step-1-3'}
+    stepId={'step-1-4'}
   >
     <div>
       <h3>v.2.1.0 - November 7, 2019</h3>
@@ -1016,7 +1150,7 @@ import { AccordionItem } from '@skatteetaten/frontend-components/Accordion/Accor
   <AccordionItem
     toggleContent
     toggleButtonText={'Versjon 1.x.x'}
-    stepId={'step-1-4'}
+    stepId={'step-1-5'}
   >
     <div>
       <h3>v.1.8.0 - September 17, 2019</h3>
