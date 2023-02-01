@@ -542,10 +542,20 @@ function closeButton() {
     >
       <ul>
         <li>
-          I <a href="#searchfield">Searchfield</a> (søkefelt),{' '}
-          <a href="#dropdown">Dropdown</a> (nedtrekksliste) og{' '}
-          <a href="#combobox">Combobox</a> (nedtrekksliste med skriving), skal
-          vi ha med plassholdertekst i tillegg til riktig ikon.
+          I{' '}
+          <a class="brodtekst-link" href="#searchfield">
+            Searchfield
+          </a>{' '}
+          (søkefelt),{' '}
+          <a class="brodtekst-link" href="#dropdown">
+            Dropdown
+          </a>{' '}
+          (nedtrekksliste) og{' '}
+          <a class="brodtekst-link" href="#combobox">
+            Combobox
+          </a>{' '}
+          (nedtrekksliste med skriving), skal vi ha med plassholdertekst i
+          tillegg til riktig ikon.
         </li>
         <li>
           Searchfield: Bruk forstørrelsesglass og teksten «skriv søkeord her»

@@ -839,9 +839,11 @@ Object.keys(iconGroup).forEach((name) => {
 
   <p>
     Ikonene i Skatteetatens designsystem er basert på standardikoner fra
-    <a href="https://materialdesignicons.com/"> Material Design Icons</a>, i tillegg
-    til utvidet med noen egendesignede ikoner (i SVG). Vi bruker ikoner direkte eller
-    i en av de andre komponentene i designsystemet.
+    <a class="brodtekst-link" href="https://materialdesignicons.com/">
+      {' '}
+      Material Design Icons
+    </a>, i tillegg til utvidet med noen egendesignede ikoner (i SVG). Vi bruker
+    ikoner direkte eller i en av de andre komponentene i designsystemet.
   </p>
 
   <h3>Retningslinjer for temaikoner</h3>

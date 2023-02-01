@@ -246,7 +246,10 @@ import { AccordionItem } from '@skatteetaten/frontend-components/Accordion/Accor
         Noen ganger er hovedhandlingen til knappen kun at bruker skal videre til
         ny side, og ikke navigere ned i egen sidestruktur. For å sikre best
         mulig brukskvalitet for flest mulig brukergrupper, skal du da bruke{' '}
-        <a href="https://skatteetaten.github.io/frontend-components/#buttonlink">
+        <a
+          class="brodtekst-link"
+          href="https://skatteetaten.github.io/frontend-components/#buttonlink"
+        >
           ButtonLink
         </a>{' '}
         . Denne komponenten har en a-tag med role=button, som gjør at den

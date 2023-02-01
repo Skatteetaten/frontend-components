@@ -35,7 +35,9 @@ const marginTopStyle = {
           <li>gratiale, tantieme eller lignende ytelser fra norske selskap</li>
           <li>
             lønn til utleid utenlandsk arbeidstaker, inkludert{' '}
-            <a href="#">feriepenger</a>
+            <a class="brodtekst-link" href="#">
+              feriepenger
+            </a>
           </li>
           <li>
             utgiftsgodtgjørelser, refusjoner og naturalytelser som er
@@ -75,7 +77,9 @@ const marginTopStyle = {
           <li>gratiale, tantieme eller lignende ytelser fra norske selskap</li>
           <li>
             lønn til utleid utenlandsk arbeidstaker, inkludert{' '}
-            <a href="#">feriepenger</a>
+            <a class="brodtekst-link" href="#">
+              feriepenger
+            </a>
           </li>
           <li>
             utgiftsgodtgjørelser, refusjoner og naturalytelser som er
@@ -170,7 +174,10 @@ const paraStyle = {
   </p>
   <p>
     Se også{' '}
-    <a href="https://www.skatteetaten.no/stilogtone/skrive/skriveregler/tittel/">
+    <a
+      class="brodtekst-link"
+      href="https://www.skatteetaten.no/stilogtone/skrive/skriveregler/tittel/"
+    >
       Skatteetatens skriveregler
     </a>{' '}
     for hjelp til å skrive gode overskrifter.{' '}

@@ -83,4 +83,5 @@ import '@skatteetaten/frontend-components/utils/loadTheme';
 
 ## Rammeverk basert på Fluent UI
 
-Mange av komponentene i Designsystemet er basert på rammeverket Fluent UI. Du kan se nærmere på hvilke komponenter som er tilgjengelig og hvilke egenskaper de har på [Microsofts side for utviklere](https://developer.microsoft.com/en-us/fluentui#/controls/web).
+Mange av komponentene i Designsystemet er basert på rammeverket Fluent UI. Du kan se nærmere på hvilke komponenter som er
+tilgjengelig og hvilke egenskaper de har på <a class="brodtekst-link" href="https://developer.microsoft.com/en-us/fluentui#/controls/web">Microsofts side for utviklere</a>.

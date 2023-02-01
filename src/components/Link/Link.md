@@ -91,9 +91,16 @@ const links = [
     Hvis lenken er en handling som påvirker siden brukeren er på, som for
     eksempel «Lagre» eller «Send inn», skal du normalt bruke en knapp i stedet.
     Se
-    <a href="#actionbutton">aksjonsknapp</a>, <a href="#button">knapp</a> og <a href="#iconbutton">
+    <a class="brodtekst-link" href="#actionbutton">
+      aksjonsknapp
+    </a>, <a class="brodtekst-link" href="#button">
+      knapp
+    </a> og <a class="brodtekst-link" href="#iconbutton">
       ikonknapp
-    </a> for eksempler på knapper. Se også <a href="https://www.skatteetaten.no/stilogtone/produkt/skatteetatenno/lenker/">
+    </a> for eksempler på knapper. Se også <a
+      class="brodtekst-link"
+      href="https://www.skatteetaten.no/stilogtone/produkt/skatteetatenno/lenker/"
+    >
       Skatteetatens skriveregler
     </a> for hjelp til å lage gode lenketekster.
   </p>

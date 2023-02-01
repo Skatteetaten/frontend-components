@@ -2,8 +2,11 @@
 import { MessageBar } from '@skatteetaten/frontend-components/MessageBar';
 
 <MessageBar type={MessageBar.Type.info}>
-  Se tilhørende underkompoent <a href="/#accordionitem">AccordionItem</a> for
-  komplett API.
+  Se tilhørende underkompoent{' '}
+  <a class="brodtekst-link" href="/#accordionitem">
+    AccordionItem
+  </a>{' '}
+  for komplett API.
 </MessageBar>;
 ```
 
@@ -42,8 +45,10 @@ import { AccordionItem } from '@skatteetaten/frontend-components/Accordion/Accor
 
     <p>
       Du må betale restskatten selv om du har{' '}
-      <a href="#">endret etter fristen for skattemeldingen eller klaget</a>.
-      Hvis du ikke betaler restskatten i tide, løper det forsinkelsesrenter ved
+      <a class="brodtekst-link" href="#">
+        endret etter fristen for skattemeldingen eller klaget
+      </a>
+      . Hvis du ikke betaler restskatten i tide, løper det forsinkelsesrenter ved
       forfall frem til du betaler.
     </p>
 
@@ -80,8 +85,10 @@ import { AccordionItem } from '@skatteetaten/frontend-components/Accordion/Accor
 
     <p>
       Du må betale restskatten selv om du har{' '}
-      <a href="#">endret etter fristen for skattemeldingen eller klaget</a>.
-      Hvis du ikke betaler restskatten i tide, løper det forsinkelsesrenter ved
+      <a class="brodtekst-link" href="#">
+        endret etter fristen for skattemeldingen eller klaget
+      </a>
+      . Hvis du ikke betaler restskatten i tide, løper det forsinkelsesrenter ved
       forfall frem til du betaler.
     </p>
 
@@ -236,7 +243,10 @@ import { AccordionItem } from '@skatteetaten/frontend-components/Accordion/Accor
     <li>Aria-hidden brukes for å skjule ikoner for skjermlesere.</li>
   </ul>
   <p>
-    <a href="https://www.w3.org/TR/wai-aria-practices-1.1/#accordion">
+    <a
+      class="brodtekst-link"
+      href="https://www.w3.org/TR/wai-aria-practices-1.1/#accordion"
+    >
       Mer om WAI-ARIA for accordion.
     </a>
   </p>

@@ -3,7 +3,10 @@ import { MessageBar } from '@skatteetaten/frontend-components/MessageBar';
 
 <MessageBar type={MessageBar.Type.info}>
   Se tilhørende underkomponent{' '}
-  <a href="/#accordionmenuitem">AccordionMenuItem</a> for komplett API.
+  <a class="brodtekst-link" href="/#accordionmenuitem">
+    AccordionMenuItem
+  </a>{' '}
+  for komplett API.
 </MessageBar>;
 ```
 
@@ -201,7 +204,10 @@ const timeStampStyle = {
     <li>Aria-hidden brukes for å skjule ikoner for skjermlesere.</li>
   </ul>
   <p>
-    <a href="https://www.w3.org/TR/wai-aria-practices-1.1/#accordion">
+    <a
+      class="brodtekst-link"
+      href="https://www.w3.org/TR/wai-aria-practices-1.1/#accordion"
+    >
       Mer om WAI-ARIA for accordion.
     </a>
   </p>

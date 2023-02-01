@@ -105,8 +105,11 @@ const buttonStyle = {
   <p>
     Designsystemet genererer id-er for de forskjellige komponentene. For at
     scrolling og fokus skal fungere er det viktig at man setter seg inn i hva
-    den relevante id'en heter. For <a href={'/#textfield'}>TextField</a> er feks
-    id'en "id" + "-input".
+    den relevante id'en heter. For{' '}
+    <a class="brodtekst-link" href={'/#textfield'}>
+      TextField
+    </a>{' '}
+    er feks id'en "id" + "-input".
   </p>
 </>
 ```
