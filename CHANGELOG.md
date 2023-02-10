@@ -4,9 +4,10 @@ import { AccordionItem } from '@skatteetaten/frontend-components/Accordion/Accor
 
 <div>
   <div lang="en">
-    <h2>v.6.0.5 - January 2023</h2>
+    <h2>v.6.0.5 - February 2023</h2>
     <ul>
       <li>Fixed WCAG violations on GitHub documentation</li>
+      <li>NavigtionTile: fixed WCAG 4.1.1 (parsing) violation</li>
     </ul>
 
     <h2>v.6.0.4 - January 2023</h2>
