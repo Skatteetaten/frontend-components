@@ -490,6 +490,9 @@ ul.navigation li.underline {
 .migration-tabell pre .token.function {
   color: #c90c33;
 }
+.migration-tabell pre .token.comment {
+  color: #765b5b;
+}
 .migration-tabell pre.lang-js {
   background-color: #f4faf5;
   border-color: #b9e1c8;
