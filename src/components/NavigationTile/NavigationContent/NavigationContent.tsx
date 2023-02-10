@@ -82,9 +82,11 @@ export const NavigationContent: React.FC<NavigationContentProps> = (props) => {
   if (typeof props.to === 'function') {
     if (useButtons) {
       return (
-        <button onClick={props.to}>
-          <Content {...contentProps} />
-        </button>
+        <li id={id} className={className}>
+          <button onClick={props.to}>
+            <Content {...contentProps} />
+          </button>
+        </li>
       );
     } else {
       throw new Error(
