@@ -186,4 +186,4 @@ Dersom Helvetica ikke er installert, vil Arial være neste beste alternativ, og 
 
 ## Komponenter og design tokens
 
-Størrelser, farger og linjehøyder er tilgjengelige som [Design tokens](#section-designtokens). Se også [Typography-komponenten](#typography) for hjelp til stiling av vanlige elementer.
+Størrelser, farger og linjehøyder er tilgjengelige som <a class="brodtekst-link" href="#section-designtokens">Design tokens</a>. Se også <a class="brodtekst-link" href="#typography">Typography-komponenten</a> for hjelp til stiling av vanlige elementer.

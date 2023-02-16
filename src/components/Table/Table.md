@@ -857,7 +857,10 @@ const caption = 'Personer med tilgang';
     Table-komponenten fungerer godt når du har mindre datamengder. Har du
     derimot store mengder data og/eller behov for avansert funksjonalitet – bør
     du vurdere{' '}
-    <a href="https://skatteetaten.github.io/frontend-components/#detailslist">
+    <a
+      class="brodtekst-link"
+      href="https://skatteetaten.github.io/frontend-components/#detailslist"
+    >
       {' '}
       Detailslist (sammensatt tabell)
     </a>{' '}

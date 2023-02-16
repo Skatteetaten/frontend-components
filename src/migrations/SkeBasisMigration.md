@@ -4,7 +4,7 @@
 
 Legacy komponenter som er avhengig av SkeBasis for styling eller branding må fortsatt være wrappet i en SkeBasis komponent. SkeBasis som komponent er deprecated i sin helhet. Ingen av de nye komponentene er avhengig av den.
 
-<!--For å importere Theme, vennligst se på [dokumentasjonssiden til designsystemet](https://breakdance.github.io/breakdance/).
+<!--For å importere Theme, vennligst se på <a class="brodtekst-link" href="https://breakdance.github.io/breakdance/">dokumentasjonssiden til designsystemet</a>.
 (//TODO FRONT-917 Lenke til EPI dok)-->
 
 ## Styling

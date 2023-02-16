@@ -336,11 +336,18 @@ import { TopStripeLink } from '@skatteetaten/frontend-components/TopStripe/TopSt
   <ul>
     <li>
       Plasser de overordede funksjonene «Kontakt oss», «Language/Språk» og
-      «Endre skriftstørrelse» i <a href="#TopBanner">TopBanner</a>.
+      «Endre skriftstørrelse» i{' '}
+      <a class="brodtekst-link" href="#TopBanner">
+        TopBanner
+      </a>
+      .
     </li>
     <li>
       På mobil flytter du overordnede funksjoner ned til{' '}
-      <a href="#FooterContent">footeren</a>.
+      <a class="brodtekst-link" href="#FooterContent">
+        footeren
+      </a>
+      .
     </li>
   </ul>
   <h3>Når brukeren representerer andre</h3>

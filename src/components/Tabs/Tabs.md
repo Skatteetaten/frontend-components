@@ -2,8 +2,11 @@
 import { MessageBar } from '@skatteetaten/frontend-components/MessageBar';
 
 <MessageBar>
-  Se også <a href="#tabitem">TabItem</a> som beskriver hver enkelt fane og
-  innholdet i den.
+  Se også{' '}
+  <a class="brodtekst-link" href="#tabitem">
+    TabItem
+  </a>{' '}
+  som beskriver hver enkelt fane og innholdet i den.
 </MessageBar>;
 ```
 

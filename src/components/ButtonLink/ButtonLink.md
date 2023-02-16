@@ -39,11 +39,12 @@ import { ButtonLink } from '@skatteetaten/frontend-components/ButtonLink';
     viktig at knappeteksten tydelig forteller hva knappen gjør.
   </p>
   <p>
-    Se{' '}
-    <a href="https://www.skatteetaten.no/stilogtone/skrive/skriveregler/knapper/">
-      skrivereglene
-    </a>{' '}
-    for hvordan skrive på knapper.
+    <a
+      class="brodtekst-link"
+      href="https://www.skatteetaten.no/stilogtone/skrive/skriveregler/knapper/"
+    >
+      Se skrivereglene for hvordan skrive på knapper.
+    </a>
   </p>
 
   <h3>En lenke som ser ut som en knapp</h3>

@@ -70,7 +70,7 @@ export class Card extends React.PureComponent<CardProps, CardState> {
       >
         <div className={styles.titlecontainer}>
           <TitleTag className={styles.titleExpand}>{title}</TitleTag>
-          {subtitle && <div className={styles.subtitle}>{subtitle}</div>}
+          {<div className={styles.subtitle}>{subtitle}</div>}
         </div>
         <div className={styles.expandIcon}>
           <Icon iconName={'ChevronDown'} />
@@ -82,7 +82,7 @@ export class Card extends React.PureComponent<CardProps, CardState> {
       <div className={styles.header}>
         <div className={styles.titlecontainer}>
           <TitleTag className={styles.title}>{title}</TitleTag>
-          {subtitle && <div className={styles.subtitle}>{subtitle}</div>}
+          {<div className={styles.subtitle}>{subtitle}</div>}
         </div>
       </div>
     );

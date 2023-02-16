@@ -75,7 +75,10 @@ const [state, setState] = React.useState({
   </p>
   <p>
     For varsler eller feil som gjelder hele siden, skal du bruke
-    <a href="https://skatteetaten.github.io/frontend-components/#messagebar">
+    <a
+      class="brodtekst-link"
+      href="https://skatteetaten.github.io/frontend-components/#messagebar"
+    >
       MessageBar (varsler)
     </a>
   </p>
@@ -88,7 +91,10 @@ const [state, setState] = React.useState({
   </p>
   <p>
     {' '}
-    Se <a href="https://www.skatteetaten.no/stilogtone/skrive/">
+    Se <a
+      class="brodtekst-link"
+      href="https://www.skatteetaten.no/stilogtone/skrive/"
+    >
       Skatteetatens skriveregler{' '}
     </a> for hjelp til å skrive gode tekster inni boksen.
   </p>

@@ -2,7 +2,11 @@
 import { MessageBar } from '@skatteetaten/frontend-components/MessageBar';
 
 <MessageBar type={MessageBar.Type.info}>
-  Se tilhørende underkompoent <a href="/#step">Step</a> for komplett API.
+  Se tilhørende underkomponet{' '}
+  <a class="brodtekst-link" href="/#step">
+    Step
+  </a>{' '}
+  for komplett API.
 </MessageBar>;
 ```
 

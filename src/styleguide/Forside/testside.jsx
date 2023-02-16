@@ -931,7 +931,10 @@ function Testside(props) {
           bare litt ekstra tekst for å få litt innhold, men normalt vil en ønske
           å skrive så konsentrert som mulig. Mange brukere leser bare de første
           ordene i en tekst, eller hopper ganske enkelt over den. Dette er en{' '}
-          <a href="#testside">lenke</a>.
+          <a class="brodtekst-link" href="#testside">
+            lenke
+          </a>
+          .
         </p>
 
         <p>Hvordan lage god interaksjonsdesign:</p>
@@ -1293,7 +1296,7 @@ function Testside(props) {
 
           <p>
             Du må betale restskatten selv om du har{' '}
-            <a href="#testside">
+            <a class="brodtekst-link" href="#testside">
               endret etter fristen for skattemeldingen eller klaget
             </a>
             . Hvis du ikke betaler restskatten i tide, løper det
@@ -1333,7 +1336,7 @@ function Testside(props) {
 
           <p>
             Du må betale restskatten selv om du har{' '}
-            <a href="#testside">
+            <a class="brodtekst-link" href="#testside">
               endret etter fristen for skattemeldingen eller klaget
             </a>
             . Hvis du ikke betaler restskatten i tide, løper det

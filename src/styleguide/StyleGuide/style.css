@@ -147,7 +147,7 @@ dd {
   display: block;
   min-width: 300px;
   border-left: 4px solid #91d6ac;
-  padding: 0px 16px 24px 16px;
+  padding: 0 16px 24px 16px;
   margin-right: 16px;
   margin-bottom: 16px;
   flex-grow: 1;
@@ -157,7 +157,7 @@ dd {
   display: block;
   min-width: 300px;
   border-left: 4px solid #f06b78;
-  padding: 0px 16px 24px 16px;
+  padding: 0 16px 24px 16px;
   margin-right: 16px;
   margin-bottom: 16px;
   flex-grow: 1;
@@ -175,7 +175,7 @@ q {
 .swatch {
   min-width: 138px;
   padding: 8px 8px 8px 8px;
-  margin: 0px 8px 8px 0;
+  margin: 0 8px 8px 0;
 }
 
 .swatch p {
@@ -349,7 +349,7 @@ ul.navigation li.underline {
   ul.navigation li {
     list-style-type: none;
     display: block;
-    margin-bottom: 0px;
+    margin-bottom: 0;
     margin-right: 30px;
     line-height: 30px;
     word-break: keep-all;
@@ -417,7 +417,7 @@ ul.navigation li.underline {
   margin-right: 0.25rem;
   font-style: normal;
   font-weight: normal;
-  transform: translate(0px, 0px);
+  transform: translate(0, 0);
   text-rendering: auto;
 }
 
@@ -487,13 +487,19 @@ ul.navigation li.underline {
 .migration-tabell pre .token.punctuation {
   color: #6d6867;
 }
+.migration-tabell pre .token.function {
+  color: #c90c33;
+}
+.migration-tabell pre .token.comment {
+  color: #765b5b;
+}
 .migration-tabell pre.lang-js {
   background-color: #f4faf5;
   border-color: #b9e1c8;
 }
 
 .migration-tabell-mini caption {
-  color: #808080;
+  color: #4d4d4d;
   font-size: 0.75rem;
   text-align: left;
 }
@@ -503,6 +509,17 @@ ul.navigation li.underline {
   text-decoration: none !important;
   padding-bottom: 1px !important;
   border-bottom: 1px solid #1362ae !important;
+}
+.brodtekst-link:focus {
+  color: #093e61 !important;
+  border-bottom: 2px solid #093e61 !important;
+  background-color: #cde1f9 !important;
+  outline: none !important;
+}
+.brodtekst-link:hover {
+  color: #093e61 !important;
+  border-bottom: 2px solid #093e61 !important;
+  background-color: #cde1f9 !important;
 }
 .footer-linkgroup ul {
   margin-top: 0;
@@ -524,6 +541,10 @@ ul.navigation li.underline {
   font-family: Consolas, 'Liberation Mono', Menlo, monospace;
   font-size: 13px;
   color: #4f2330;
+  vertical-align: top;
+}
+.apiTable > tbody > tr > td {
+  vertical-align: top;
 }
 .apiTable > tbody > tr > td:first-of-type {
   font-family: Consolas, 'Liberation Mono', Menlo, monospace;

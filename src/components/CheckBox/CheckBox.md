@@ -74,7 +74,10 @@ import { CheckBox } from '@skatteetaten/frontend-components/CheckBox';
 
   <p>
     Se eksempel på bruk av avkrysningsbokser i
-    <a href="https://www.skatteetaten.no/person/skatt/hjelp-til-riktig-skatt/fradragsveilederen/">
+    <a
+      class="brodtekst-link"
+      href="https://www.skatteetaten.no/person/skatt/hjelp-til-riktig-skatt/fradragsveilederen/"
+    >
       {' '}
       fradragsveilederen på Skattetaten.no
     </a>
@@ -83,7 +86,10 @@ import { CheckBox } from '@skatteetaten/frontend-components/CheckBox';
   <h3>Relatert komponent</h3>
   <p>
     Hvis brukeren kun skal velge ett valg, bruk
-    <a href="#radiobuttongroup"> RadioButtonGroup</a>.
+    <a class="brodtekst-link" href="#radiobuttongroup">
+      {' '}
+      RadioButtonGroup
+    </a>.
   </p>
 </>
 ```

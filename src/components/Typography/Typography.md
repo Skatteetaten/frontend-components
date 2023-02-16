@@ -22,7 +22,10 @@ import { Typography } from '@skatteetaten/frontend-components/Typography';
     litt ekstra tekst for å få litt innhold, men normalt vil en ønske å skrive
     så konsentrert som mulig. Mange brukere leser bare de første ordene i en
     tekst, eller hopper ganske enkelt over den. Dette er en{' '}
-    <a href="#testhg">lenke</a>.
+    <a class="brodtekst-link" href="#testhg">
+      lenke
+    </a>
+    .
   </p>
 
   <p>Hvordan lage god interaksjonsdesign:</p>
@@ -74,8 +77,9 @@ import { Typography } from '@skatteetaten/frontend-components/Typography';
     </li>
   </ul>
   <p>
-    Se <a href="#section-skrifttype">«skrifttype»</a> for detaljer rundt
-    skriftstørrelse.
+    <a class="brodtekst-link" href="#section-skrifttype">
+      Se «skrifttype» for detaljer rundt skriftstørrelse.
+    </a>
   </p>
 </>
 ```
