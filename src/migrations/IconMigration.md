@@ -7,10 +7,10 @@
 
 ## Styling
 
-- De nye komponentene i designsystemet er avhengige av designtokens. Disse leveres nå som en separat pakke. Se [designtokens](#section-designtokens-deprecated) for detaljer.
+- De nye komponentene i designsystemet er avhengige av designtokens. Disse leveres nå som en separat pakke. <a class="brodtekst-link" href="#section-designtokens-deprecated">Se designtokens for detaljer.</a>
 - størrelse på selve ikonet og luft er endret. Default verdier er også justert og ikonet er noe større ut av boksen (20px nå, vs. 16px før). Se kombinasjon av 'variant' og 'size' props for å få til riktig visning.
 - markup er endret og custom styling vil muligens ikke fungere lenger (migrasjon fra font properties til svg properties).
-- Alle ikoner vises i [Icon Gallery](https://designsystem-playground-spidermonkey.amutv.skead.no/web/designsystemet/?path=/story/design-system-icon-icon-gallery--page)
+- Alle ikoner vises i <a class="brodtekst-link" href="https://designsystem-playground-spidermonkey.amutv.skead.no/web/designsystemet/?path=/story/design-system-icon-icon-gallery--page">Icon Gallery</a>
 
 ## Endringer i API
 

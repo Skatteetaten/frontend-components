@@ -208,7 +208,15 @@ module.exports = {
       link: '#1362ae',
       name: '#4f2330',
       tyoe: '#6F2C3F',
-      error: '#df4661',
+      error: '#e12143',
+      /* "Vis kode" må oppfylle kontrastkravet i WCAG */
+      codeComment: '#bfaeae',
+      codePunctuation: '#6a6565',
+      codeString: '#4e661d',
+      codeInserted: '#4e661d',
+      codeOperator: '#9d5808',
+      codeFunction: '#af1d3a',
+      codeVariable: '#99660b',
     },
     fontFamily: {
       base: '"Helvetica Neue", Helvetica, Arial, sans-serif',

@@ -96,7 +96,10 @@ const links = [
     Når brukeren har flere mulige etterfølgende valg på en nettside, kan du
     benytte en lenkegruppe, for å gjøre det lettere for brukeren å navigere
     videre. Hvis du trenger enkeltstående lenke eller ikon, bruker du{' '}
-    <a href="#link">Link</a> i stedet.
+    <a class="brodtekst-link" href="#link">
+      Link
+    </a>{' '}
+    i stedet.
   </p>
   <h3>Blå tekst og understreking er standard</h3>
   <p>
@@ -109,7 +112,10 @@ const links = [
   <h3>Lenketeksten skal beskrive målet</h3>
   <p>
     Lenketeksten skal tydeliggjøre hva som er målet til lenken. Se også{' '}
-    <a href="https://www.skatteetaten.no/stilogtone/produkt/skatteetatenno/lenker/">
+    <a
+      class="brodtekst-link"
+      href="https://www.skatteetaten.no/stilogtone/produkt/skatteetatenno/lenker/"
+    >
       Skatteetatens skriveregler
     </a>{' '}
     for hjelp til å lage gode lenketekster.

@@ -105,7 +105,10 @@ const [dato, setDato] = React.useState(new Date());
   <h3>Hvordan skriver vi datoer?</h3>
   <p>
     Se{' '}
-    <a href="https://www.skatteetaten.no/stilogtone/skrive/skriveregler/datoer/">
+    <a
+      class="brodtekst-link"
+      href="https://www.skatteetaten.no/stilogtone/skrive/skriveregler/datoer/"
+    >
       oppsett for hvordan vi skriver datoer
     </a>{' '}
     i skrivereglene i Skatteetaten.

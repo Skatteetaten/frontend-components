@@ -115,7 +115,10 @@ const afterDurationComponent = (resetDuration, setShowAlways) => (
   </p>
   <p>
     Se{' '}
-    <a href="https://www.skatteetaten.no/stilogtone/skrive/">
+    <a
+      class="brodtekst-link"
+      href="https://www.skatteetaten.no/stilogtone/skrive/"
+    >
       Skatteetatens skriveregler
     </a>{' '}
     for hjelp til å skrive gode tekster inni boksen.

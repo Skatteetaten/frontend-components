@@ -221,7 +221,9 @@ import { ComboBox } from '@skatteetaten/frontend-components/ComboBox';
   </p>
   <h3>Relatert komponent </h3>
   <p>
-    <a href="#dropdown">Dropdown (Nedtrekksliste)</a>
+    <a class="brodtekst-link" href="#dropdown">
+      Dropdown (Nedtrekksliste)
+    </a>
   </p>
 </>
 ```

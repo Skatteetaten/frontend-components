@@ -7,12 +7,12 @@
 
 ## Styling:
 
-- De nye komponentene i designsystemet er avhengige av designtokens. Disse leveres nå som en separat pakke. Se [designtokens](#section-designtokens-deprecated) for detaljer.
+- De nye komponentene i designsystemet er avhengige av designtokens. Disse leveres nå som en separat pakke. <a class="brodtekst-link" href="#section-designtokens-deprecated">Se designtokens for detaljer.</a>
 - hovedhandlings-knappen ("call to action") er ikke videre ført. Dersom du ønsker et tilsvarende utseende se MegaButton.
 
 ## Endringer i API:
 
-<!--For full API-dokumentasjon, vennligst se på [button komponent](https://breakdance.github.io/breakdance/) på dokumentasjonssiden til designsystemet.
+<!--For full API-dokumentasjon, vennligst se på <a class="brodtekst-link" href="https://breakdance.github.io/breakdance/">button komponent</a> på dokumentasjonssiden til designsystemet.
 ( //TODO FRONT-917 Lenke til EPI dok)-->
 
 <div className="migration-tabell">

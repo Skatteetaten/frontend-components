@@ -394,4 +394,4 @@ const marginTopStyle = {
 </Accordion>;
 ```
 
-Tommelfingerreglene på denne siden er kraftig inspirert av Norman Nielsens ti designprinsipper (https://www.nngroup.com/articles/ten-usability-heuristics/).
+Tommelfingerreglene på denne siden er kraftig <a class="brodtekst-link" href="https://www.nngroup.com/articles/ten-usability-heuristics/">inspirert av Norman Nielsens ti designprinsipper</a>.
