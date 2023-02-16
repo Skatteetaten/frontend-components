@@ -9,7 +9,7 @@
 
 ## Styling:
 
-- De nye komponentene i designsystemet er avhengige av designtokens. Disse leveres nå som en separat pakke. Se [designtokens](#section-designtokens-deprecated) for detaljer.
+- De nye komponentene i designsystemet er avhengige av designtokens. Disse leveres nå som en separat pakke. <a class="brodtekst-link" href="#section-designtokens-deprecated">Se designtokens for detaljer.</a>
 - størrelse på selve ikonet og luft er endret og default verdier er justert
   (se migrering under API → "buttonSize" / "size")
 - knappens ramme er tynnere (1px/2px nå vs 3px før)
