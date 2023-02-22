@@ -1,6 +1,12 @@
-import i18n, { TOptions } from 'i18next';
+import i18n, { DefaultTFuncReturn, TOptions } from 'i18next';
 import { initReactI18next } from 'react-i18next';
 import { languages as languageFile } from './languages';
+
+declare module 'i18next' {
+  interface CustomTypeOptions {
+    returnNull: false;
+  }
+}
 
 export const omstrukturerFlatJSON = (data) => {
   if (Object(data) !== data || Array.isArray(data)) return data;
@@ -41,6 +47,7 @@ i18n.use(initReactI18next).init({
     // escapeValue not needed for react as it escapes by default
     escapeValue: false,
   },
+  returnNull: false,
 });
 
 const languages = { nb, nn, en, se };
@@ -50,6 +57,6 @@ Object.keys(languages).forEach((language) => {
 });
 
 export default i18n;
-export const t = (tekst, options?: TOptions): string | undefined => {
+export const t = (tekst, options: TOptions = {}): DefaultTFuncReturn => {
   return i18n.t(tekst, options);
 };
