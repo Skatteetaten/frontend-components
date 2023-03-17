@@ -34,7 +34,7 @@ import '@skatteetaten/ds-core-designtokens/designtokens/containers.css';
 import '@skatteetaten/ds-core-designtokens/designtokens/sizes.css';
 ```
 
-Ved import av alle css-ressurser fra designtoken i nytt designsystem i kombinasjon med bruk av legacy designsystem så kan det oppstå uønsket overskriving av css-verdier på root-nivå. Dette gjelder bla line-heigh som nå blir satt til 1.5. En mulig løsning for å hindre at ny line-height verdi blir satt er å bruke følgende kodesnutt:
+Ved import av alle css-ressurser fra designtoken i nytt designsystem i kombinasjon med bruk av legacy designsystem så kan det oppstå uønsket overskriving av css-verdier på root-nivå. Dette gjelder bla line-height som nå blir satt til 1.5. En mulig løsning for å hindre at ny line-height verdi blir satt er å bruke følgende kodesnutt:
 
 ```js static
 import '@skatteetaten/ds-core-designtokens/index.css';
@@ -214,8 +214,12 @@ import '@skatteetaten/ds-core-designtokens/designtokens/sizes.css';
 
 **Nye tokens:**
 
-- --semantic-divider 30
+- --semantic-divider-30
 - --semantic-divider-50
+- --semantic-disabled-foreground
+- --semantic-disabled-background
+- --semantic-page-foreground
+- --semantic-page-background
 
 </td>
 </tr>

@@ -4,7 +4,9 @@ import { getClassNames } from './LinkGroup.classNames';
 import { Link as SkeLink } from '../Link';
 import { LinkGroupProps } from './LinkGroup.types';
 
-/*
+/**
+ * @deprecated Komponenten er erstattet av LinkGroup fra "@skatteetaten/ds-buttons"
+ *
  * visibleName LinkGroup (Lenkegruppe)
  */
 export const LinkGroup: React.FC<LinkGroupProps> = (props) => {

@@ -9,7 +9,9 @@ import {
 } from './ScrollToTopButton.types';
 import { t } from 'i18next';
 
-/*
+/**
+ * @deprecated Komponenten er erstattet av ScrollToTopButton fra "@skatteetaten/ds-buttons"
+ *
  * visibleName ScrollToTopButton (Gå til toppen)
  */
 export class ScrollToTopButton extends React.PureComponent<

@@ -4,6 +4,15 @@ import { AccordionItem } from '@skatteetaten/frontend-components/Accordion/Accor
 
 <div>
   <div lang="en">
+    <h2>v.7.0.0 - March 2023</h2>
+    <ul>
+      <li>Migration guide: Link, LinkGroup</li>
+      <li>Migration guide: ScrollToTopButton</li>
+      <li>Migration guide: Typography components</li>
+      <li>Migration guide: Language (i18next)</li>
+      <li>Added support for zip files in FileUpload component</li>
+    </ul>
+
     <h2>v.6.0.5 - February 2023</h2>
     <ul>
       <li>Fixed WCAG violations on GitHub documentation</li>

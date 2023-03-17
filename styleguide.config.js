@@ -55,6 +55,10 @@ module.exports = {
           content: 'src/sections/kom-i-gang/designtokens.md',
         },
         {
+          name: 'i18next og språkstøtte',
+          content: 'src/sections/kom-i-gang/i18next.md',
+        },
+        {
           name: 'Nettleserstøtte',
           content: 'src/sections/kom-i-gang/nettlesere.md',
         },
