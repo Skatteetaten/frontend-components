@@ -176,7 +176,33 @@ Icon vises alltid med variant 'systemIcon'
 <td>'color'</td>
 <td>
 
-Faset ut. Tilbys ikke i ulike farger lengre.
+Faset ut. Tilbys ikke i ulike farger lengre. Bruk 'className' for å gi InlineButton en annen farge.
+
+Før:
+
+```javascript static
+import { ActionButton } from '@skatteetaten/frontend-components/ActionButton';
+
+<ActionButton icon="delete" color="red" iconAfter={true}>
+  Slett
+</ActionButton>;
+```
+
+Nå:
+
+```js static
+import { InlineButton } from '@skatteetaten/ds-buttons';
+import { DeleteSVGpath } from '@skatteetaten/ds-icons';
+
+<InlineButton className='customColor' iconPosition='right' svgPath={DeleteSVGpath}>
+    Slett
+</InlineButton>
+
+// Legg dette i css-filen
+.customColor {
+  --semantic-interactive-main: red;
+}
+```
 
 </td>
 </tr>
