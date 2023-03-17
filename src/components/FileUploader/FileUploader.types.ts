@@ -20,6 +20,7 @@ export enum FileFormatTypes {
   pptx = '.pptx',
   xls = '.xls',
   xlsx = '.xlsx',
+  zip = '.zip',
 }
 
 export interface AttachmentMetadata extends File {
