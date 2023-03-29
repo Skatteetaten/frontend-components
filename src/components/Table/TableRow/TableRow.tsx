@@ -75,6 +75,7 @@ export const TableRow = <P extends RowData>(props: TableRowProps<P>) => {
     showRowSeparators,
     compactTable,
   } = props;
+  const showExpandCollapseButton = !data.hideExpand && expandableRows;
   const editableRow = !data.hideEdit && editableRows;
   const showExtraCol = data.hideEdit && editableRows;
   const showRowSeparator = !data.hideSeparator && showRowSeparators;
@@ -208,7 +209,7 @@ export const TableRow = <P extends RowData>(props: TableRowProps<P>) => {
             {editButton}
           </td>
         )}
-        {expandableRows && (
+        {showExpandCollapseButton && (
           <ExpandCollapseButton
             isOpen={isExpandableRowOpen}
             shouldRenderCellContent={expandIconPlacement === 'before'}
@@ -403,14 +404,14 @@ export const TableRow = <P extends RowData>(props: TableRowProps<P>) => {
                 }
               )}
             >
-              {expandIconPlacement === 'before' && (
+              {showExpandCollapseButton && expandIconPlacement === 'before' && (
                 <ExpandCollapseButton
                   isOpen={true}
                   shouldRenderCellContent={true}
                 />
               )}
               {renderRow(data, columns, rowIndex, true)}
-              {expandIconPlacement !== 'before' && (
+              {showExpandCollapseButton && expandIconPlacement !== 'before' && (
                 <ExpandCollapseButton
                   isOpen={true}
                   shouldRenderCellContent={false}
