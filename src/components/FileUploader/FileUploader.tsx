@@ -427,7 +427,7 @@ export const FileUploader: React.FC<FileUploaderProps> = (props) => {
       <div role="alert" aria-atomic="true" className={styles.fileListWrapper}>
         {internalFiles.length > 0 && (
           <>
-            <span className="sr-only">
+            <span className={styles.srOnly}>
               {t('fileuploader.uploaded.sr_heading')}
             </span>
             <ul className={styles.fileList}>

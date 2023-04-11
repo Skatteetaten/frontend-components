@@ -45,7 +45,7 @@ export const TableHeader = (props: TableHeaderProps): JSX.Element => {
       if (key.srOnly) {
         return (
           <th key={key.fieldName} className={styles.tabellTheadCellIsEmpty}>
-            <span className="sr-only">{key.name}</span>
+            <span className={styles.srOnly}>{key.name}</span>
           </th>
         );
       }
