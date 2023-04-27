@@ -16,6 +16,17 @@ export interface TableRowProps<P> {
   rowIndex: number;
   /** Custom classNames for å overskrive styling */
   customClassNames?: RowCustomClassNames;
+  /**
+   * hideExpand; expandable is disabled for row,
+   * hideEdit: edit is disalbed for row,
+   * hideSeparator: hides separator for row 
+   *
+   * @type P & {
+    hideExpand?: boolean;
+    hideEdit?: boolean;
+    hideSeparator?: boolean;
+  }
+   * */
   data: P;
   editableContent?: (
     data: P,
