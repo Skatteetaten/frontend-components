@@ -66,7 +66,8 @@ Alle nødvendige avhengigheter i tillegg til selv designsystemet kommer fra et i
 ## Tester
 
 Ved testing av komponenter som bruker @skatteetaten/frontend-components må temaet til Skatteetaten
-lastes inn før testene kjøres. Dette bør gjøres en gang før alle testene starter. Det er mulig du må legge til følgende i package.json for å få jest-tester til å kjøre korrekt:
+lastes inn før testene kjøres. Dette gjøres per nå [før hver testfil i testsuiten kjøres](https://jestjs.io/docs/configuration#setupfilesafterenv-array).
+Det er mulig du må legge til følgende i package.json for å få jest-tester til å kjøre korrekt:
 
 ```js static
 "jest": {
