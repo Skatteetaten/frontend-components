@@ -1,9 +1,9 @@
 {
   "files": {
     "main.css": "/frontend-components/static/css/main.e8a68816.chunk.css",
-    "main.js": "/frontend-components/build/main.82eb1804.js",
+    "main.js": "/frontend-components/build/main.29dcb2da.js",
     "runtime-main.js": "/frontend-components/build/bundle.f88df48c.js",
-    "build/2.52782bb7.js": "/frontend-components/build/2.52782bb7.js",
+    "build/2.499cdc8d.js": "/frontend-components/build/2.499cdc8d.js",
     "assets/png/Byggeklosser.png": "/frontend-components/assets/png/Byggeklosser.png",
     "assets/png/Byggeklosser_skisse.png": "/frontend-components/assets/png/Byggeklosser_skisse.png",
     "assets/png/designer.png": "/frontend-components/assets/png/designer.png",
@@ -33,7 +33,7 @@
     "assets/svg/ske-logo-intern-kopi.svg": "/frontend-components/assets/svg/ske-logo-intern-kopi.svg",
     "assets/svg/ske-logo-intern.svg": "/frontend-components/assets/svg/ske-logo-intern.svg",
     "assets/svg/ske-logo.svg": "/frontend-components/assets/svg/ske-logo.svg",
-    "build/2.52782bb7.js.LICENSE.txt": "/frontend-components/build/2.52782bb7.js.LICENSE.txt",
+    "build/2.499cdc8d.js.LICENSE.txt": "/frontend-components/build/2.499cdc8d.js.LICENSE.txt",
     "favicon.ico": "/frontend-components/favicon.ico",
     "index.html": "/frontend-components/index.html",
     "manifest.json": "/frontend-components/manifest.json",
@@ -53,8 +53,8 @@
     "static/media/SkeIconfont.woff": "/frontend-components/static/media/SkeIconfont.cec7e241.woff",
     "static/media/TypographyMigration.93e1627a.md": "/frontend-components/static/media/TypographyMigration.93e1627a.md",
     "static/media/footerDekor.416cfac2.svg": "/frontend-components/static/media/footerDekor.416cfac2.svg",
-    "static/media/ink-logo.e22095aa.svg": "/frontend-components/static/media/ink-logo.e22095aa.svg",
-    "static/media/logoINK.a651227c.svg": "/frontend-components/static/media/logoINK.a651227c.svg",
+    "static/media/ink-logo.bc3cf2aa.svg": "/frontend-components/static/media/ink-logo.bc3cf2aa.svg",
+    "static/media/logoINK.416e73a7.svg": "/frontend-components/static/media/logoINK.416e73a7.svg",
     "static/media/logoINKen.30ec85b3.svg": "/frontend-components/static/media/logoINKen.30ec85b3.svg",
     "static/media/logoLSO.a7b47317.svg": "/frontend-components/static/media/logoLSO.a7b47317.svg",
     "static/media/logoSKE.35b85e4b.svg": "/frontend-components/static/media/logoSKE.35b85e4b.svg",
@@ -71,8 +71,8 @@
   },
   "entrypoints": [
     "build/bundle.f88df48c.js",
-    "build/2.52782bb7.js",
+    "build/2.499cdc8d.js",
     "static/css/main.e8a68816.chunk.css",
-    "build/main.82eb1804.js"
+    "build/main.29dcb2da.js"
   ]
 }
