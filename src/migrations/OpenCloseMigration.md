@@ -1,0 +1,81 @@
+**Fra @skatteetaten/frontend-components v5+ (designsystem-legacy) til Designsystemet v0.3.0**
+
+## Endringer i funksjonalitet:
+
+- onClick kalles nå både ved åpne og lukke. isOnClickOnlyFiredOnOpen er default "false" og må settes til "true" dersom man ønsker at onClick bare skal kalles ved åpning.
+
+## Styling:
+
+- de nye komponentene i designsystemet er avhengige av designtokens. Disse leveres nå som en separat pakke. <a class="brodtekst-link" href="#section-designtokens-deprecated">Se designtokens for detaljer.</a>
+- justert utseende på underline og fokus pga. av konsistens med andre komponenter.
+
+## Endringer i API
+
+<div className="migration-tabell">
+<table>
+<caption>Liste over endringer i komponent-api'et</caption>
+<thead><tr><th>Tidligere Prop</th><th>Alternativ</th></tr></thead>
+<tbody>
+<tr>
+<td>'customClassNames'</td>
+<td>
+Faset ut. Bruk 'className' for å style komponenten. All definisjon av stil skal settes via 'className'
+</td>
+</tr>
+<tr>
+<td>'headingLevel'</td>
+<td>
+Erstattet av "titleAs" pga. konsistens med andre komponenter.
+
+Før:
+
+```javascript static
+import { OpenClose } from '@skatteetaten/frontend-components/OpenClose';
+
+<OpenClose headingLevel={1} title={'Åpne lukke'}>
+  {'Innhold'}
+</OpenClose>;
+```
+
+Nå:
+
+```js static
+import { OpenClose } from '@skatteetaten/ds-collections';
+
+<OpenClose titleAs={'h1'} title={'Åpne lukke'}>
+  {'Innhold'}
+</OpenClose>;
+```
+
+</td>
+</tr>
+<tr>
+<td>'isOpen'</td>
+<td>
+Erstattet av "isExpanded" pga. konsistens med andre komponenter.
+
+Før:
+
+```javascript static
+import { OpenClose } from '@skatteetaten/frontend-components/OpenClose';
+
+<OpenClose title={'Åpne lukke'} isOpen>
+  {'Innhold'}
+</OpenClose>;
+```
+
+Nå:
+
+```js static
+import { OpenClose } from '@skatteetaten/ds-collections';
+
+<OpenClose title={'Åpne lukke'} isExpanded>
+  {'Innhold'}
+</OpenClose>;
+```
+
+</td>
+</tr>
+</tbody>
+</table>
+</div>
