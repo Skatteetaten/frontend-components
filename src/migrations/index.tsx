@@ -9,6 +9,7 @@ import IconMigration from './IconMigration.md';
 import LinkGroupMigration from './LinkGroupMigration.md';
 import LinkMigration from './LinkMigration.md';
 import OpenCloseMigration from './OpenCloseMigration.md';
+import RadioButtonGroupMigration from './RadioButtonGroupMigration.md';
 import ScrollToTopButtonMigration from './ScrollToTopButtonMigration.md';
 import SkeBasisMigration from './SkeBasisMigration.md';
 import TypographyMigration from './TypographyMigration.md';
@@ -23,6 +24,7 @@ export const MigrationGuides = [
   LinkGroupMigration,
   LinkMigration,
   OpenCloseMigration,
+  RadioButtonGroupMigration,
   ScrollToTopButtonMigration,
   SkeBasisMigration,
   TypographyMigration,
