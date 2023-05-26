@@ -79,7 +79,7 @@ import { OpenClose } from '@skatteetaten/ds-collections';
 <tr>
 <td>'iconRight'</td>
 <td>
-Erstattet av "iconPosition" pga. konsistens med andre komponenter.
+Erstattet av "iconPosition" pga. konsistens med andre komponenter. Default er "left".
 
 Før:
 
