@@ -1,15 +1,15 @@
 **Fra @skatteetaten/frontend-components v5+ (designsystem-legacy) til Designsystemet v0.2.0**
 
-### Endringer i funksjonalitet
+## Endringer i funksjonalitet:
 
 - Typography som komponent fases ut og brytes ned i mindre komponenter (Heading, Paragraph/Ingress, Blockquote og List).
 
-### Styling
+## Styling:
 
 - Noen endringer i line-height og avstand mellom elementer.
 - De nye komponentene i designsystemet er avhengige av designtokens. Disse leveres nå som en separat pakke. Se [designtokens](#section-designtokens-deprecated) for detaljer.
 
-### Endringer i API
+## Endringer i API:
 
 <div className="migration-tabell">
 <table>
