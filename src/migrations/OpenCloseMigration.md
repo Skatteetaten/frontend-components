@@ -17,6 +17,33 @@
 <thead><tr><th>Tidligere Prop</th><th>Alternativ</th></tr></thead>
 <tbody>
 <tr>
+<td>'compact'</td>
+<td>
+Erstattet av "variant" pga. konsistens med andre komponenter.
+
+Før:
+
+```javascript static
+import { OpenClose } from '@skatteetaten/frontend-components/OpenClose';
+
+<OpenClose title={'Åpne lukke'} compact>
+  {'Innhold'}
+</OpenClose>;
+```
+
+Nå:
+
+```js static
+import { OpenClose } from '@skatteetaten/ds-collections';
+
+<OpenClose title={'Åpne lukke'} variant={'compact'}>
+  {'Innhold'}
+</OpenClose>;
+```
+
+</td>
+</tr>
+<tr>
 <td>'customClassNames'</td>
 <td>
 Faset ut. Bruk 'className' for å style komponenten. All definisjon av stil skal settes via 'className'
@@ -50,6 +77,33 @@ import { OpenClose } from '@skatteetaten/ds-collections';
 </td>
 </tr>
 <tr>
+<td>'iconRight'</td>
+<td>
+Erstattet av "iconPosition" pga. konsistens med andre komponenter.
+
+Før:
+
+```javascript static
+import { OpenClose } from '@skatteetaten/frontend-components/OpenClose';
+
+<OpenClose title={'Åpne lukke'} iconRight>
+  {'Innhold'}
+</OpenClose>;
+```
+
+Nå:
+
+```js static
+import { OpenClose } from '@skatteetaten/ds-collections';
+
+<OpenClose title={'Åpne lukke'} iconPosition={'right'}>
+  {'Innhold'}
+</OpenClose>;
+```
+
+</td>
+</tr>
+<tr>
 <td>'isOpen'</td>
 <td>
 Erstattet av "isExpanded" pga. konsistens med andre komponenter.
@@ -70,6 +124,33 @@ Nå:
 import { OpenClose } from '@skatteetaten/ds-collections';
 
 <OpenClose title={'Åpne lukke'} isExpanded>
+  {'Innhold'}
+</OpenClose>;
+```
+
+</td>
+</tr>
+<tr>
+<td>'underline'</td>
+<td>
+Erstattet av "showUnderline" pga. konsistens med andre komponenter.
+
+Før:
+
+```javascript static
+import { OpenClose } from '@skatteetaten/frontend-components/OpenClose';
+
+<OpenClose title={'Åpne lukke'} underline>
+  {'Innhold'}
+</OpenClose>;
+```
+
+Nå:
+
+```js static
+import { OpenClose } from '@skatteetaten/ds-collections';
+
+<OpenClose title={'Åpne lukke'} showUnderline>
   {'Innhold'}
 </OpenClose>;
 ```
