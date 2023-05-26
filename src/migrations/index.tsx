@@ -3,6 +3,7 @@
 import ActionButtonMigration from './ActionButtonMigration.md';
 import ButtonLinkMigration from './ButtonLinkMigration.md';
 import ButtonMigration from './ButtonMigration.md';
+import CardMigration from './CardMigration.md';
 import ErrorMessageMigration from './ErrorMessageMigration.md';
 import IconButtonMigration from './IconButtonMigration.md';
 import IconMigration from './IconMigration.md';
@@ -16,6 +17,7 @@ export const MigrationGuides = [
   ActionButtonMigration,
   ButtonLinkMigration,
   ButtonMigration,
+  CardMigration,
   ErrorMessageMigration,
   IconButtonMigration,
   IconMigration,
