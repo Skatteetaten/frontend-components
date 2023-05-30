@@ -19,7 +19,7 @@
 <tr>
 <td>'compact'</td>
 <td>
-Erstattet av "variant" pga. konsistens med andre komponenter.
+Erstattet av 'variant'. Alternativer er 'standard' og 'compact'. Default er 'standard'.
 
 Før:
 
@@ -52,7 +52,7 @@ Faset ut. Bruk 'className' for å style komponenten. All definisjon av stil skal
 <tr>
 <td>'headingLevel'</td>
 <td>
-Erstattet av "titleAs" pga. konsistens med andre komponenter.
+Erstattet av 'titleAs'. Alterativer: 'h1', 'h2', 'h3', 'h4', 'h5' og 'h6'. Default er ingen headingnivå.
 
 Før:
 
@@ -79,7 +79,7 @@ import { OpenClose } from '@skatteetaten/ds-collections';
 <tr>
 <td>'iconRight'</td>
 <td>
-Erstattet av "iconPosition" pga. konsistens med andre komponenter. Default er "left".
+Erstattet av 'iconPosition'. Alternativer: 'right' og 'left'. Default er 'left'.
 
 Før:
 
@@ -106,7 +106,7 @@ import { OpenClose } from '@skatteetaten/ds-collections';
 <tr>
 <td>'isOpen'</td>
 <td>
-Erstattet av "isExpanded" pga. konsistens med andre komponenter.
+Erstattet av 'isExpanded'. Default er 'false'.
 
 Før:
 
@@ -133,7 +133,7 @@ import { OpenClose } from '@skatteetaten/ds-collections';
 <tr>
 <td>'underline'</td>
 <td>
-Erstattet av "showUnderline" pga. konsistens med andre komponenter.
+Erstattet av 'showUnderline'. Default er 'false'.
 
 Før:
 
