@@ -5,6 +5,12 @@ import { Heading } from '../utils';
 import { getClassNames } from './OpenClose.classNames';
 import { OpenCloseProps } from './OpenClose.types';
 
+/**
+ * @deprecated Komponenten er erstattet av OpenClose fra "@skatteetaten/ds-collections"
+ *
+ * visibleName OpenClose
+ */
+
 export const OpenClose: React.FC<OpenCloseProps> = (props) => {
   const {
     title,
