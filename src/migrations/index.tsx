@@ -15,6 +15,7 @@ import OpenCloseMigration from './OpenCloseMigration.md';
 import RadioButtonGroupMigration from './RadioButtonGroupMigration.md';
 import ScrollToTopButtonMigration from './ScrollToTopButtonMigration.md';
 import SkeBasisMigration from './SkeBasisMigration.md';
+import TableMigration from './TableMigration.md';
 import TypographyMigration from './TypographyMigration.md';
 
 export const MigrationGuides = [
@@ -33,5 +34,6 @@ export const MigrationGuides = [
   RadioButtonGroupMigration,
   ScrollToTopButtonMigration,
   SkeBasisMigration,
+  TableMigration,
   TypographyMigration,
 ];
