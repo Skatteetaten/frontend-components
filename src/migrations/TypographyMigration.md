@@ -87,11 +87,11 @@ Nå:
 ```js static
 import { Heading, Paragraph, Blockquote, List } from '@skatteetaten/ds-typography';
 
-<Heading as={'h1'} level={'1'}>{'Overskriftsnivå 1'}</Heading>
-<Heading as={'h2'} level={'2'}>{'Overskriftsnivå 2'}</Heading>
-<Heading as={'h3'} level={'3'}>{'Overskriftsnivå 3'}</Heading>
-<Heading as={'h4'} level={'4'}>{'Overskriftsnivå 4'}</Heading>
-<Heading as={'h5'} level={'5'}>{'Overskriftsnivå 5'}</Heading>
+<Heading as={'h1'} level={1}>{'Overskriftsnivå 1'}</Heading>
+<Heading as={'h2'} level={2}>{'Overskriftsnivå 2'}</Heading>
+<Heading as={'h3'} level={3}>{'Overskriftsnivå 3'}</Heading>
+<Heading as={'h4'} level={4}>{'Overskriftsnivå 4'}</Heading>
+<Heading as={'h5'} level={5}>{'Overskriftsnivå 5'}</Heading>
 <Paragraph>
     {'Tekstavsnitt som kan inneholde en lengre tekst. Husk å følge ' +
     'klarspråkprinsippene når en skriver tekster. I dette tilfellet skriver bare ' +
