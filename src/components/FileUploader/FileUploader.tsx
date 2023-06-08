@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { useEffect, useRef, useState } from 'react';
 import axios, { AxiosResponse } from 'axios';
 import i18n, { t } from './../utils/i18n/i18n';
 import { getClassNames } from './FileUploader.classNames';
@@ -13,7 +14,6 @@ import {
   FileFormatTypes,
   FileUploaderProps,
 } from './FileUploader.types';
-import { useEffect, useRef, useState } from 'react';
 import { generateId } from '../utils';
 
 export const isCorrectFileFormat = (
@@ -98,6 +98,7 @@ export const FileUploader: React.FC<FileUploaderProps> = (props) => {
     multipleFiles,
     normalizeFileName,
     onCalloutToggle,
+    onError,
     queryParams,
     uploadFile,
     downloadFile,
@@ -231,6 +232,9 @@ export const FileUploader: React.FC<FileUploaderProps> = (props) => {
             }
             if (afterUpload) {
               afterUpload(internalFiles);
+            }
+            if (onError) {
+              onError(error);
             }
           })
           .finally(() => {
