@@ -230,11 +230,11 @@ export const FileUploader: React.FC<FileUploaderProps> = (props) => {
             } else {
               pushToInternalMessages(t('fileuploader.error.upload.general')!);
             }
-            if (afterUpload) {
-              afterUpload(internalFiles);
-            }
             if (onError) {
               onError(error);
+            }
+            if (afterUpload) {
+              afterUpload(internalFiles);
             }
           })
           .finally(() => {
