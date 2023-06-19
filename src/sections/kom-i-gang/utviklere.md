@@ -1,3 +1,15 @@
+```js noeditor
+import { MessageBar } from '@skatteetaten/frontend-components/MessageBar';
+import { Link } from '@skatteetaten/frontend-components/Link';
+
+<MessageBar>
+  <p style={{ margin: 0 }}>
+    Denne siden er utdatert. Vi henviser til Ofte stilte spørsmål i Teams
+    (FAG-Brukeropplevelse) i stedet.
+  </p>
+</MessageBar>;
+```
+
 ## Må du bruke designsystemet i alle løsninger?
 
 Du skal ha veldig gode grunner for å prioritere å lage alt i løsningene selv. Det er et krav å følge Skatteetatens visuelle profil og UX-standarder, og sikre universell utforming. Designsystemet vil oftest være den sikreste og mest effektive måten for å ivareta dette. I tillegg vil prosjektene bli vurdert ut ifra om de bruker designsystemet gjennom de ikke-funkjonelle kravene (UT-UX-EXT-03).  
