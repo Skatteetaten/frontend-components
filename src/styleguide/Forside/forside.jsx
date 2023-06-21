@@ -3,7 +3,6 @@ import React from 'react';
 import { Card } from '../../components/Card';
 import { Grid } from '../../components/Grid';
 import { Link } from '../../components/Link';
-import { Typography } from '../../components/Typography';
 
 import { Icon } from '../../components/Icon';
 import { NavigationTile } from '../../components/NavigationTile';
@@ -18,7 +17,7 @@ function Forside(props) {
       <Card color={Card.Color.YELLOW} border={Card.Border.YELLOW_BORDER}>
         <Grid padding={'0px'}>
           <Grid.Row rowSpacing={Grid.SPACE_LARGE}>
-            <Grid.Col noSpacing sm={0} lg={1} xl={2}>
+            <Grid.Col noSpacing hiddenLgDown sm={0} lg={1} xl={2}>
               <div
                 style={{
                   textAlign: 'right',
