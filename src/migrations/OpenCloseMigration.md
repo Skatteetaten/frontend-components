@@ -46,13 +46,13 @@ import { OpenClose } from '@skatteetaten/ds-collections';
 <tr>
 <td>'customClassNames'</td>
 <td>
-Faset ut. Bruk 'className' for å style komponenten. All definisjon av stil skal settes via 'className'
+Faset ut. Bruk 'className' for å style komponenten. All definisjon av stil skal settes via 'className'.
 </td>
 </tr>
 <tr>
 <td>'headingLevel'</td>
 <td>
-Erstattet av 'titleAs'. Alterativer: 'h1', 'h2', 'h3', 'h4', 'h5' og 'h6'. Default er ingen headingnivå.
+Erstattet av 'titleAs'. Alternativer: 'h1', 'h2', 'h3', 'h4', 'h5' og 'h6'. Default er ingen headingnivå.
 
 Før:
 
