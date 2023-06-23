@@ -6,6 +6,7 @@
 - feilmelding og påkrevd felter har endret logikk
 - prefix og suffix er ikke videreført
 - veksle mellom skrive og lesemodus med blyant-knapp er ikke videreført
+- TODO si noe om bare type=text og ikke annet....
 
 ## Styling:
 
@@ -51,37 +52,30 @@ import { TextField } from '@skatteetaten/ds-forms';
 </td>
 </tr>
 <tr>
-<td>'errorMessage'</td>
-<td>'errorMessage' må brukes sammen med ny prop 'hasError' som styrer om feilmeldingen skal vises eller ikke.
-
-Før:
-
-```javascript static
-import { TextField } from '@skatteetaten/frontend-components/TextField';
-
-<TextField errorMessage={'Type virksomhet er påkrevd.'} />;
-```
-
-Nå:
-
-```js static
-import { TextField } from '@skatteetaten/ds-forms';
-
-<TextField hasError errorMessage={'Type virksomhet er påkrevd.'} />;
-```
-
-</tr>
-<tr>
 <td>'onGetErrorMessage'</td>
-<td>'onFocus', 'onBlur'
+<td>'errorMessage', 'onFocus', 'onBlur'
 
-TODO - eksempel bare kopiert nå fra beskrivelse av prop errorMessage
+'errorMessage' må brukes sammen med ny prop 'hasError' som styrer om feilmeldingen skal vises eller ikke.
+
 Før:
 
 ```javascript static
 import { TextField } from '@skatteetaten/frontend-components/TextField';
 
-<TextField errorMessage={'Type virksomhet er påkrevd.'} />;
+const [userInput, setUserInput] = React.useState('');
+
+<TextField
+  label={'Navn'}
+  value={userInput}
+  required
+  onChange={(e, value) => setUserInput(value)}
+  onGetErrorMessage={(value) => {
+    if (!value || value.trim().length === 0) {
+      return 'Navn er påkrevd';
+    }
+    return undefined;
+  }}
+/>;
 ```
 
 Nå:
@@ -89,18 +83,30 @@ Nå:
 ```js static
 import { TextField } from '@skatteetaten/ds-forms';
 
-<TextField hasError errorMessage={'Type virksomhet er påkrevd.'} />;
+const [userInput, setUserInput] = React.useState('');
+const [error, setError] = React.useState(false);
+
+<TextField
+  label={'Navn'}
+  value={userInput}
+  hasError={error}
+  errorMessage={'Navn er påkrevd.'}
+  required
+  onChange={(e): void => {
+    if (error && !e.target.validity.valueMissing) {
+      setError(false);
+    }
+    setUserInput(e.target.value);
+  }}
+  onBlur={(e): void => {
+    if (e.target.validity.valueMissing) {
+      setError(true);
+    }
+  }}
+/>;
 ```
 
 </td>
-</tr>
-
-<tr>
-<td>'invalid'</td>
-<td>Fases ut.
-
-Hvis ny prop 'hasError' er true, så blir aria-invalid satt automatisk.</td>
-
 </tr>
 <tr>
 <td>'ariaLabel'</td>
@@ -132,12 +138,14 @@ import { TextField } from '@skatteetaten/ds-forms';
 <td>Faset ut. Komponenten vil bli utvidet med mulighet for hjelpetekst på et senere tidspunkt.</td>
 </tr>
 <tr>
-<tr>
 <td>'warning'</td>
 <td>Fases ut.</td>
 </tr>
+<tr>
 <td>'inputClassName'
+
 'styles'
+
 </td>
 <td>Fluent-UI spesifikke props som er faset ut. Bruk 'className' for å style komponenten.
 
@@ -174,6 +182,13 @@ import { TextField } from '@skatteetaten/ds-forms';
 Erstattes vel med pattern...
 TODO - eksempel
 </td>
+</tr>
+<tr>
+<td>'invalid'</td>
+<td>Fases ut.
+
+Hvis ny prop 'hasError' er true, så blir aria-invalid satt automatisk.</td>
+
 </tr>
 <tr>
 <td>'editable' 
@@ -237,8 +252,11 @@ TODO - eksempel
 <td>???</td>
 </tr>
 <tr>
-<td>''</td>
-<td></td>
+<td>'validateOnFocusIn'
+'validateOnFocusOut'
+'validateOnLoad'
+</td>
+<td>Fases ut.</td>
 </tr>
 </tbody>
 </table>
