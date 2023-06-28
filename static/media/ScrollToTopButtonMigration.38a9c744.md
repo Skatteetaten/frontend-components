@@ -1,15 +1,15 @@
 **Fra @skatteetaten/frontend-components v5+ (designsystem-legacy) til Designsystemet v0.2.0**
 
-### Endringer i funksjonalitet:
+## Endringer i funksjonalitet:
 
 - Standardtekst kommer nå med oversettelser på bokmål, nynorsk, engelsk og samisk.
 - Fokus settes nå automatisk til main når knappen klikkes.
 
-### Styling:
+## Styling:
 
 - De nye komponentene i designsystemet er avhengige av designtokens. Disse leveres nå som en separat pakke. Se [designtokens](#section-designtokens-deprecated) for detaljer.
 
-### Endringer i API:
+## Endringer i API:
 
 <!--For full API-dokumentasjon, vennligst se på [ScrollToTopButton komponent](https://breakdance.github.io/breakdance/) på dokumentasjonssiden til designsystemet.
 ( //TODO FRONT-917 Lenke til EPI dok)-->
