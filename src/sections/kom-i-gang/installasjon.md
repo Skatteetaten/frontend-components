@@ -1,3 +1,18 @@
+```js noeditor
+import { MessageBar } from '@skatteetaten/frontend-components/MessageBar';
+import { Link } from '@skatteetaten/frontend-components/Link';
+
+<MessageBar>
+  <p style={{ margin: 0 }}>
+    Denne siden er utdatert. Sjekk
+    <Link
+      path="https://www.skatteetaten.no/stilogtone/designsystemet/kom-i-gang/for-utviklere/"
+      text="ny kom-i-gang for utviklere"
+    /> i stedet.
+  </p>
+</MessageBar>;
+```
+
 Brukerne våre skal ha en enhetlig opplevelse på tvers av løsningene våre. Skal vi få til dette, må alle løsninger i Skatteetaten bruke designsystemet. Gjennom designsystemet sikrer vi også høye standarder for gode brukeropplevelser og universell utforming og ikke minst, at vi følger den visuelle profilen vår.
 
 Som utvikler, samarbeider du med designer for å best mulig sikre at dere følger prinsippene i designsystemet. Videre ser du hvordan du kommer i gang for å bruke designsystemet når du jobber.
@@ -66,7 +81,8 @@ Alle nødvendige avhengigheter i tillegg til selv designsystemet kommer fra et i
 ## Tester
 
 Ved testing av komponenter som bruker @skatteetaten/frontend-components må temaet til Skatteetaten
-lastes inn før testene kjøres. Dette bør gjøres en gang før alle testene starter. Det er mulig du må legge til følgende i package.json for å få jest-tester til å kjøre korrekt:
+lastes inn før testene kjøres. Dette gjøres per nå [før hver testfil i testsuiten kjøres](https://jestjs.io/docs/configuration#setupfilesafterenv-array).
+Det er mulig du må legge til følgende i package.json for å få jest-tester til å kjøre korrekt:
 
 ```js static
 "jest": {

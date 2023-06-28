@@ -7,7 +7,9 @@ import { LabelWithCallout } from '../LabelWithCallout';
 import { ErrorMessage } from '../ErrorMessage';
 import { RadioButtonGroupProps } from './RadioButtonGroup.types';
 
-/*
+/**
+ * @deprecated Komponenten er erstattet av RadioGroup fra "@skatteetaten/ds-forms"
+ *
  * visibleName RadioButtonGroup (Radioknapper)
  */
 

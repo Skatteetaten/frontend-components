@@ -1,12 +1,12 @@
 **Fra @skatteetaten/frontend-components v5+ (designsystem-legacy) til Designsystemet v0.2.0**
 
-### Styling:
+## Styling:
 
 - de nye komponentene i designsystemet er avhengige av designtokens. Disse leveres nå som en separat pakke. Se [designtokens](#section-designtokens-deprecated) for detaljer.
 - fontvekten var tidligere i _bold_ mens nå er den i _font-weight-medium_
 - kulepunkter ble tidligere vist kun med ikonet _forwardArrow_ mens nå kan også velge å bruke ikonet _downArrow_
 
-### Endringer i API:
+## Endringer i API:
 
 <div class="migration-tabell">
 <table>

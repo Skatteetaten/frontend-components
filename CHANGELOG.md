@@ -4,6 +4,20 @@ import { AccordionItem } from '@skatteetaten/frontend-components/Accordion/Accor
 
 <div>
   <div lang="en">
+    <h2>v.8.0.0 - June 2023</h2>
+    <ul>
+      <li>Migration guide: Card</li>
+      <li>Migration guide: Checkbox</li>
+      <li>Migration guide: Errormessage</li>
+      <li>Migration guide: MessageBar</li>
+      <li>Migration guide: OpenClose</li>
+      <li>Migration guide: RadioButtonGroup</li>
+      <li>Migration guide: Table</li>
+      <li>Add new logo statens innkreving</li>
+      <li>Fix typo installasjon.md</li>
+      <li>Remove deprecated props in Dialog</li>
+    </ul>
+
     <h2>v.7.0.0 - March 2023</h2>
     <ul>
       <li>Migration guide: Link, LinkGroup</li>

@@ -217,7 +217,7 @@ const [state, setState] = React.useState({
 />;
 ```
 
-Brukeren kan velge en eller flere rader vha av sjekkbokser.
+Brukeren kan velge en eller flere rader vha av sjekkbokser (kan kun brukes i interne løsninger).
 
 ```js
 import { DetailsList } from '@skatteetaten/frontend-components/DetailsList';

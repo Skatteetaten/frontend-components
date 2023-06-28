@@ -3,7 +3,9 @@ import { getClassNames } from './ErrorMessage.classNames';
 import classnames from 'classnames';
 import { ErrorMessageProps } from './ErrorMessage.types';
 
-/*
+/**
+ * @deprecated Komponenten er erstattet av ErrorMessage fra "@skatteetaten/ds-forms"
+ *
  * visibleName ErrorMessage (Feilmelding)
  */
 export const ErrorMessage: React.FC<ErrorMessageProps> = (props) => {

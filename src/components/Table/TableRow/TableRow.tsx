@@ -47,7 +47,9 @@ export interface TableRowProps<P> {
   sum: { text: string; colspan: number; total: number | string } | undefined;
 }
 
-/*
+/**
+ * @deprecated Komponenten er erstattet av Table.Row fra "@skatteetaten/ds-table"
+ *
  * visibleName TableRow (Tabellrad)
  */
 export const TableRow = <P extends RowData>(props: TableRowProps<P>) => {
