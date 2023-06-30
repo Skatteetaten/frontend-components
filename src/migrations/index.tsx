@@ -6,6 +6,7 @@ import ButtonMigration from './ButtonMigration.md';
 import CardMigration from './CardMigration.md';
 import CheckBoxMigration from './CheckBoxMigration.md';
 import ErrorMessageMigration from './ErrorMessageMigration.md';
+import ErrorSummaryMigration from './ErrorSummaryMigration.md';
 import IconButtonMigration from './IconButtonMigration.md';
 import IconMigration from './IconMigration.md';
 import LinkGroupMigration from './LinkGroupMigration.md';
@@ -25,6 +26,7 @@ export const MigrationGuides = [
   CardMigration,
   CheckBoxMigration,
   ErrorMessageMigration,
+  ErrorSummaryMigration,
   IconButtonMigration,
   IconMigration,
   LinkGroupMigration,
