@@ -26,6 +26,7 @@ export enum FileFormatTypes {
 export interface AttachmentMetadata extends File {
   id: string;
 }
+
 /*
  * visibleName FileUploader (Filopplaster)
  */
@@ -87,6 +88,8 @@ export interface FileUploaderProps {
     oldCalloutState: calloutState,
     newCalloutState: calloutState
   ) => void;
+  /** Brukerspesifisert event for error */
+  onError?: (error: any) => void;
   /** Parametere for axioskall */
   queryParams?: any;
   /** Om merke for obligatorisk felt skal vises */

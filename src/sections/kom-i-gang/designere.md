@@ -1,3 +1,18 @@
+```js noeditor
+import { MessageBar } from '@skatteetaten/frontend-components/MessageBar';
+import { Link } from '@skatteetaten/frontend-components/Link';
+
+<MessageBar>
+  <p style={{ margin: 0 }}>
+    Denne siden er utdatert. Sjekk
+    <Link
+      path="https://www.skatteetaten.no/stilogtone/designsystemet/kom-i-gang/for-designere/"
+      text="ny kom-i-gang for designere"
+    /> i stedet.
+  </p>
+</MessageBar>;
+```
+
 Brukerne våre skal ha en enhetlig opplevelse på tvers av løsningene våre. Skal vi få til dette, må alle løsninger i Skatteetaten bruke designsystemet. Gjennom designsystemet sikrer vi også høye standarder for gode brukeropplevelser og universell utforming, og ikke minst, at vi følger den visuelle profilen vår.
 
 Som designer samarbeider du med utviklerne i prosjektet ditt for å best mulig følge prinsippene i designsystemet. Videre ser du hvordan du kommer i gang for å bruke designsystemet når du jobber.

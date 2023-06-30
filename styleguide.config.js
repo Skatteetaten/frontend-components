@@ -35,10 +35,6 @@ module.exports = {
           content: 'src/sections/kom-i-gang/designere.md',
         },
         {
-          name: 'Bidra',
-          content: 'src/sections/kom-i-gang/forbedre.md',
-        },
-        {
           name: 'Tommelfingerregler for design',
           content: 'src/sections/kom-i-gang/tommelfinger.md',
         },
