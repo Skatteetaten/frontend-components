@@ -2,15 +2,17 @@
 
 ## Endringer i funksjonalitet:
 
-- det er ikke mulig med hjelpetekst i denne versjonen av komponenten
-- feilmelding og påkrevd felter har endret logikk
 - prefix og suffix er ikke videreført
+- formatering med mask-props er ikke videreført men tilbyr tusenskille-formatering og det skal planlegges mer i forhold til formatering
 - veksle mellom skrive og lesemodus med blyant-knapp er ikke videreført
-- TODO si noe om bare type=text og ikke annet....
+- feilmelding og påkrevd felter har endret logikk
+- tilleggstekst vises rett etter selve ledeteksten og er en del av label-elementet
+- html attributtet type er hardkodet med verdien 'text' og andre verdier tilbys ikke fordi det finnes egne komponenter med noen av disse verdiene
 
 ## Styling:
 
 - de nye komponentene i designsystemet er avhengige av designtokens. Disse leveres nå som en separat pakke. <a class="brodtekst-link" href="#section-designtokens-deprecated">Se designtokens for detaljer.</a>
+- stor variant har endret noe på utseende og blitt tonet ned
 
 ## Endringer i API
 
@@ -29,9 +31,9 @@ Alle komponentene våre bruker forwardRef. For komponent sendes ref til div-elem
 </tr>
 <tr>
 <td>'multiline'</td>
-<td>'variant'
+<td>'as'
 
-Alternativer: 'normal' og 'multiline'. Default er 'normal'.
+Alternativer: 'input' og 'textarea'. Default er 'input'.
 
 Før:
 
@@ -46,7 +48,29 @@ Nå:
 ```js static
 import { TextField } from '@skatteetaten/ds-forms';
 
-<TextField variant={'multiline'} label={'Navn'} />;
+<TextField as={'textarea'} label={'Navn'} />;
+```
+
+</td>
+</tr>
+<tr>
+<td>'autoAdjustHeight'</td>
+<td>'autosize'
+
+Før:
+
+```javascript static
+import { TextField } from '@skatteetaten/frontend-components/TextField';
+
+<TextField label={'Navn'} multiline autoAdjustHeight />;
+```
+
+Nå:
+
+```js static
+import { TextField } from '@skatteetaten/ds-forms';
+
+<TextField label={'Navn'} as={'textarea'} autosize />;
 ```
 
 </td>
@@ -92,13 +116,13 @@ const [error, setError] = React.useState(false);
   hasError={error}
   errorMessage={'Navn er påkrevd.'}
   required
-  onChange={(e): void => {
+  onChange={(e: React.ChangeEvent<HTMLInputElement>): void => {
     if (error && !e.target.validity.valueMissing) {
       setError(false);
     }
     setUserInput(e.target.value);
   }}
-  onBlur={(e): void => {
+  onBlur={(e: React.ChangeEvent<HTMLInputElement>): void => {
     if (e.target.validity.valueMissing) {
       setError(true);
     }
@@ -113,7 +137,8 @@ const [error, setError] = React.useState(false);
 <td>'hideLabel'
 
 Hvis det er behov for å ikke vise ledetekst, så brukes 'label' sammen med ny prop 'hideLabel' som skjuler
-label-elementet visuelt men er fortsatt synlig for skjermleser.
+label-elementet visuelt men er fortsatt synlig for skjermleser. Hvis det finnes en tilleggstekst
+så vil også den bli visuelt skjult (fordi den er en del av label-elementet).
 
 Før:
 
@@ -129,25 +154,47 @@ Nå:
 import { TextField } from '@skatteetaten/ds-forms';
 
 <TextField label={'Navn'} hideLabel />;
+
+<TextField
+  label={'Navn'}
+  descripton={'Skriv inn både for- og etternavn.'}
+  hideLabel
+/>;
 ```
 
 </td>
 </tr>
 <tr>
-<td>'help'</td>
-<td>Faset ut. Komponenten vil bli utvidet med mulighet for hjelpetekst på et senere tidspunkt.</td>
-</tr>
-<tr>
-<td>'warning'</td>
-<td>Fases ut.</td>
-</tr>
-<tr>
-<td>'inputClassName'
+<td>'inputSize'</td>
+<td>'isLarge'
 
-'styles'
+Før:
+
+```javascript static
+import { TextField } from '@skatteetaten/frontend-components/TextField';
+
+<TextField label={'Navn'} inputSize={'large'} />;
+```
+
+Nå:
+
+```js static
+import { TextField } from '@skatteetaten/ds-forms';
+
+<TextField label={'Navn'} isLarge />;
+```
 
 </td>
-<td>Fluent-UI spesifikke props som er faset ut. Bruk 'className' for å style komponenten.
+</tr>
+<tr>
+<td>'styles'
+
+'theme'
+
+'inputClassName'
+
+</td>
+<td>Fluent-ui props som er faset ut. Bruk 'className' for å style komponenten.
 
 Før:
 
@@ -155,7 +202,7 @@ Før:
 import { TextField } from '@skatteetaten/frontend-components/TextField';
 
 <TextField
-  inputClassName={'myCustomClassname'}
+  inputClassName={'myInputCustomClassname'}
   style={{ fontSize: '24px', color: '#1362ae' }}
   label={'Navn'}
 />;
@@ -172,30 +219,147 @@ import { TextField } from '@skatteetaten/ds-forms';
 </td>
 </tr>
 <tr>
+<td>'help'
+
+'warning'
+
+</td>
+<td>Fases ut.
+
+Komponenten vil bli utvidet med mulighet for hjelpetekst på et senere tidspunkt.</td>
+
+</tr>
+<tr>
 <td>'mask'
 
 'maskChar'
 
 'maskFormat'</td>
 
-<td>Fases ut. 
-Erstattes vel med pattern...
-TODO - eksempel
+<td>Fluent-ui props som er faset ut. Det skal planlegges mer i forhold til formatering som skal tilbys.
+
+Bruk ny prop 'thousandSeparator' for å formatere heltall med tusenskille. (Komma bruks som adskiller for engelsk mens mellomrom for andre språk.)
+
+Andre muligheter er å bruke 'pattern', 'maxLength' og 'minLenght'.
+
+Før:
+
+```javascript static
+import { TextField } from '@skatteetaten/frontend-components/TextField';
+
+const [userInput, setUserInput] = React.useState('');
+const [error, setError] = React.useState(false);
+const [errorMessage, setErrorMessage] = React.useState('');
+
+<TextField
+  label={'Fødselsår'}
+  value={userInput}
+  mask={'9999'}
+  maskChar={''}
+  errorMessage={errorMessage}
+  onChange={(e) => {
+    setError(false);
+    setErrorMessage('');
+    if (e.target.value.length > 0 && isNaN(Number(e.target.value))) {
+      setError(true);
+      setErrorMessage('Fødselsår kan kun inneholde tall.');
+    }
+    setUserInput(e.target.value);
+  }}
+  onBlur={(e) => {
+    if (e.target.value.length < 5) {
+      setError(true);
+      setErrorMessage('Fødselsår må inneholde fire tall.');
+    }
+  }}
+/>;
+/>;
+```
+
+Nå:
+
+```js static
+import { TextField } from '@skatteetaten/ds-forms';
+
+const [userInput, setUserInput] = React.useState('');
+const [error, setError] = React.useState(false);
+const [errorMessage, setErrorMessage] = React.useState('');
+
+<TextField
+  label={'Fødselsår'}
+  value={userInput}
+  maxLength={4}
+  pattern={'\\d{4}'}
+  errorMessage={errorMessage}
+  onChange={(e: React.ChangeEvent<HTMLInputElement>): void => {
+    setError(false);
+    setErrorMessage('');
+    if (e.target.value.length > 0 && isNaN(Number(e.target.value))) {
+      setError(true);
+      setErrorMessage('Fødselsår kan kun inneholde tall.');
+    }
+    setUserInput(e.target.value);
+  }}
+  onBlur={(e: React.ChangeEvent<HTMLInputElement>): void => {
+    if (e.target.validity.patternMismatch) {
+      setError(true);
+      setErrorMessage('Fødselsår må inneholde fire tall.');
+    }
+  }}
+/>;
+```
+
+Nå:
+
+```js static
+import { TextField } from '@skatteetaten/ds-forms';
+
+<TextField label={'Beløp'} thousandSeparator />;
+```
+
+</td>
+</tr>
+<tr>
+<td>'editable'
+
+'editableWhenEmpty'
+
+'boldText'
+
+</td>
+<td>Fases ut.</td>
+</tr>
+<tr>
+<td>'labelButtonAriaLabel'
+
+'labelWithCalloutProps'
+
+'labelSize'
+
+'onCalloutToggle'
+
+'calloutFloating'
+
+</td>
+<td>Fases ut.</td>
+</tr>
+<tr>
+<td>'resizable'</td>
+<td>Fluent-ui prop som er faset ut.
+
+Når prop 'as' er lik 'textarea'
+
+- uten 'autosize' følges default browser oppførsel
+- med 'autosize' er resizing disabled
+
 </td>
 </tr>
 <tr>
 <td>'invalid'</td>
-<td>Fases ut.
+<td>Fluent-ui prop som er faset ut.
 
 Hvis ny prop 'hasError' er true, så blir aria-invalid satt automatisk.</td>
 
-</tr>
-<tr>
-<td>'editable' 
-'editableWhenEmpty'
-'boldText'
-</td>
-<td>Fases ut.</td>
 </tr>
 <tr>
 <td>'prefix'
@@ -207,56 +371,35 @@ Hvis ny prop 'hasError' er true, så blir aria-invalid satt automatisk.</td>
 'onRenderSuffix'
 
 </td>
-<td>Fases ut.</td>
+<td>Fluent-ui props som er faset ut.</td>
 </tr>
 <tr>
-<td>'labelButtonAriaLabel'</td>
-<td>Fases ut.</td>
-</tr>
-<tr>
-<td>'labelWithCalloutProps'</td>
-<td>Fases ut.</td>
-</tr>
-<tr>
-<td>'onCalloutToggle'</td>
-<td>Fases ut.</td>
-</tr>
-<tr>
-<td>'autoAdjustHeight'</td>
-<td>Fases ut.</td>
-</tr>
-<tr>
-<td>'calloutFloating'</td>
-<td></td>
-</tr>
-<tr>
-<td>'iconProps'</td>
-<td>Fluent-ui prop som er faset ut. </td>
-</tr>
-<tr>
-<td>'canRevealPassword'
+<td>'iconProps'
+
+'elementRef'
+
+'onRenderLabel'
+
+'canRevealPassword'
+
 'revealPasswordAriaLabel'
-</td>
-<td>Fases ut.</td>
-</tr>
-<tr>
-<td>'deferredValidationTime'</td>
-<td>Fases ut.</td>
-</tr>
-<tr>
-<td>'elementRef'</td>
-<td>Fases ut.</td>
-</tr>
-<tr>
-<td>'resizable'</td>
-<td>???</td>
-</tr>
-<tr>
-<td>'validateOnFocusIn'
+
+'deferredValidationTime'
+
+'validateOnFocusIn'
+
 'validateOnFocusOut'
+
 'validateOnLoad'
+
+'onNotifyValidationResult'
+
+'onRenderDescription'
+
+'onRenderInput'
+
 </td>
-<td>Fases ut.</td>
+<td>Fluent-ui props som er faset ut. </td>
 </tr>
 </tbody>
 </table>
