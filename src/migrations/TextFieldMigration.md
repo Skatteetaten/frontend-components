@@ -5,7 +5,8 @@
 - prefix og suffix er ikke videreført
 - formatering med mask-props er ikke videreført men tilbyr tusenskille-formatering og det skal planlegges mer i forhold til formatering
 - veksle mellom skrive og lesemodus med blyant-knapp er ikke videreført
-- feilmelding og påkrevd felter har endret logikk
+- feilmelding har endret logikk
+- visning av påkrevd felt har endret logikk
 - tilleggstekst vises rett etter selve ledeteksten og er en del av label-elementet
 - html attributtet type er hardkodet med verdien 'text' og andre verdier tilbys ikke fordi det finnes egne komponenter med noen av disse verdiene
 
@@ -40,7 +41,7 @@ Før:
 ```javascript static
 import { TextField } from '@skatteetaten/frontend-components/TextField';
 
-<TextField multiline label={'Navn'} />;
+<TextField label={'Navn'} multiline />;
 ```
 
 Nå:
@@ -48,7 +49,32 @@ Nå:
 ```js static
 import { TextField } from '@skatteetaten/ds-forms';
 
-<TextField as={'textarea'} label={'Navn'} />;
+<TextField label={'Navn'} as={'textarea'} />;
+```
+
+</td>
+</tr>
+<tr>
+<td>'requiredWithMark'
+</td>
+<td>'showRequiredMark'
+
+Forutsetter at prop 'required' er tatt i bruk.
+
+Før:
+
+```javascript static
+import { TextField } from '@skatteetaten/frontend-components/TextField';
+
+<TextField label={'Navn'} requiredWithMark />;
+```
+
+Nå:
+
+```js static
+import { TextField } from '@skatteetaten/ds-forms';
+
+<TextField label={'Navn'} required showRequiredMark />;
 ```
 
 </td>
