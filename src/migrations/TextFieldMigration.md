@@ -244,7 +244,7 @@ import { TextField } from '@skatteetaten/ds-forms';
 
 </td>
 </tr>
-<!-- TODO Prop 'help' og tekst om hjelpetekst senere må fjernes hvis FRONT-1292 (Tekst over skjemakomponenter) blir ferdig før vi releaser 0.4.0 -->
+<!-- TODO 'help', 'warning' og tekst om hjelpetekst senere må fjernes og ev. erstattes med beskrivelse som passer hvis FRONT-1292 (Tekst over skjemakomponenter) blir ferdig før vi releaser 0.4.0 -->
 <tr>
 <td>'help'
 
@@ -253,7 +253,7 @@ import { TextField } from '@skatteetaten/ds-forms';
 </td>
 <td>Fases ut.
 
-Komponenten vil bli utvidet med mulighet for hjelpetekst på et senere tidspunkt.</td>
+Komponenten vil bli utvidet med mulighet for hjelpetekst og valg av ikon på et senere tidspunkt.</td>
 
 </tr>
 <tr>
