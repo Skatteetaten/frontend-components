@@ -4,6 +4,11 @@ import { AccordionItem } from '@skatteetaten/frontend-components/Accordion/Accor
 
 <div>
   <div lang="en">
+    <h2>v.8.0.1 - August 2023</h2>
+    <ul>
+      <li>Added id to button in FileUpload component</li>
+    </ul>
+
     <h2>v.8.0.0 - June 2023</h2>
     <ul>
       <li>Migration guide: Card</li>
