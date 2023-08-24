@@ -12,7 +12,9 @@ import { getClassNames } from './TextField.classNames';
 import { TextFieldProps } from './TextField.types';
 import { t } from 'i18next';
 
-/*
+/**
+ * @deprecated Komponenten er erstattet av TextField fra "@skatteetaten/ds-forms"
+ *
  * visibleName TextField (Tekstfelt)
  */
 export const TextField: React.FC<TextFieldProps> = ({
