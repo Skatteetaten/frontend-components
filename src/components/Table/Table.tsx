@@ -21,7 +21,9 @@ export const setScrollBarState = (
   }
 };
 
-/*
+/**
+ * @deprecated Komponenten er erstattet av Table fra "@skatteetaten/ds-table"
+ *
  * visibleName Table (Tabell)
  */
 export const Table = <P extends RowData>(props: TableProps<P>) => {

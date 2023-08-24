@@ -6,6 +6,11 @@ import { Icon } from '../Icon';
 
 import classnames from 'classnames';
 
+/**
+ * @deprecated Komponenten er erstattet av ErrorSummary fra "@skatteetaten/ds-forms"
+ *
+ * visibleName ErrorSummary
+ */
 export const ErrorSummary: React.FC<ErrorSummaryProps> = (props) => {
   const {
     id = 'errorsummary',

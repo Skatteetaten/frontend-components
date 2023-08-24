@@ -2,6 +2,8 @@ import React from 'react';
 
 import { Card } from '../../components/Card';
 import { Grid } from '../../components/Grid';
+import { Link } from '../../components/Link';
+
 import { Icon } from '../../components/Icon';
 import { NavigationTile } from '../../components/NavigationTile';
 import { NavigationContent } from '../../components/NavigationTile/NavigationContent';
@@ -12,50 +14,52 @@ function Forside(props) {
       <h1 style={{ textAlign: 'center', marginBottom: '56px' }}>
         Designe og utvikle
       </h1>
-      <Card margin="large" color={Card.Color.BEIGE}>
-        <Grid>
-          <Grid.Row>
-            <Grid.Col lg={1} />
-            <Grid.Col hiddenLgDown lg={1}>
-              <Icon
-                iconName="Forum"
-                ariaLabel="Ikon med snakkebobler"
+      <Card color={Card.Color.YELLOW} border={Card.Border.YELLOW_BORDER}>
+        <Grid padding={'0px'}>
+          <Grid.Row rowSpacing={Grid.SPACE_LARGE}>
+            <Grid.Col noSpacing hiddenLgDown sm={0} lg={1} xl={2}>
+              <div
                 style={{
-                  color: '#1d1d1d',
-                  fontSize: '40px',
-                  marginTop: '10px',
-                }}
-              />
-            </Grid.Col>
-            <Grid.Col lg={9}>
-              <p
-                style={{
-                  marginBottom: '10px',
-                  fontStyle: 'italic',
-                  color: '#1d1d1d',
-                  fontWeight: '400',
-                  fontSize: '18px',
-                }}
-              >
-                Med Designsystemet slipper vi å tenke så mye på designreglene
-                til Skatteetaten, og utviklingsjobben vår blir mye lettere.{' '}
-              </p>
-              <p
-                style={{
-                  marginBottom: '10px',
-                  color: '#1d1d1d',
-                  fontWeight: '400',
-                  fontSize: '18px',
                   textAlign: 'right',
+                  marginTop: '-4px',
+                  marginRight: '16px',
                 }}
               >
-                – utvikler i Skatteetaten
+                <Icon
+                  iconName="Info"
+                  style={{
+                    fontSize: '36px',
+                  }}
+                />
+              </div>
+            </Grid.Col>
+            <Grid.Col noSpacing sm={12} lg={10} xl={8}>
+              <h2 style={{ marginTop: '0px' }}>
+                Vi bygger et nytt designsystem
+              </h2>
+              <p>
+                Vi holder på med{' '}
+                <Link
+                  path={
+                    'https://www.skatteetaten.no/stilogtone/designsystemet/'
+                  }
+                  text={'nye sider for designsystemet vårt'}
+                />{' '}
+                og vil fortløpende henvise til nye komponenter og mønstre etter
+                hvert som de blir klare.
+              </p>
+
+              <p>
+                Ha litt tålmodighet, så jobber vi så raskt vi kan med å få
+                orden. Hvis du lurer på noe, kan du alltid spørre oss i
+                Designsystem-kanalen i Teams (FAG-Brukeropplevelse).
               </p>
             </Grid.Col>
-            <Grid.Col sm={1} lg={2} />
+            <Grid.Col noSpacing sm={0} lg={1} xl={2}></Grid.Col>
           </Grid.Row>
         </Grid>
       </Card>
+
       <NavigationTile>
         <NavigationContent
           icon={'hammer'}

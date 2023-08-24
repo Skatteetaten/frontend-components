@@ -48,6 +48,7 @@ exports[`FileUploader komponent matcher snapshot 1`] = `
             box-shadow: rgba(0, 0, 0, 0.0) 0px 0 0 0;
             transform: scale(1) translateY(0);
           }
+      id="fileupload-123"
       onClick={[Function]}
       onDragEnter={[Function]}
       onDragLeave={[Function]}

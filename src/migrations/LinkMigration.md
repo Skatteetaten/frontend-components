@@ -1,17 +1,17 @@
 **Fra @skatteetaten/frontend-components v5+ (designsystem-legacy) til Designsystemet v0.2.0**
 
-### Endringer i funksjonalitet:
+## Endringer i funksjonalitet:
 
 - det kan ikke sendes inn markup lengre
 - har ikke lenger skipLink-mekansimen
 - kun valgfritt ikon på venstre side
 
-### Styling:
+## Styling:
 
 - de nye komponentene i designsystemet er avhengige av designtokens. Disse leveres nå som en separat pakke. Se [designtokens](#section-designtokens-deprecated) for detaljer.
 - noen små endringer hovedsakelig for hover og fokus
 
-### Endringer i API:
+## Endringer i API:
 
 <div class="migration-tabell">
 <table>

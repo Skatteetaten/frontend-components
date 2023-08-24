@@ -83,12 +83,10 @@ export class Dialog extends React.PureComponent<DialogProps, DialogState> {
                   getClassNames(this.props, tag).main,
                   className
                 ),
+                titleAriaId: props.waitAlert ? 'waitAlertHeading' : undefined,
+                subtitleAriaId: props.waitAlert ? 'waitAlertText' : undefined,
                 ...modalProps,
               }}
-              ariaLabelledById={
-                props.waitAlert ? 'waitAlertHeading' : undefined
-              }
-              ariaDescribedById={props.waitAlert ? 'waitAlertText' : undefined}
             >
               {isCalloutVisible && (
                 <Callout
