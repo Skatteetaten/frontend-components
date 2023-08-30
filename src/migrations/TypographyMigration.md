@@ -11,6 +11,8 @@
 
 ## Endringer i API:
 
+For full API-dokumentasjon, vennligst se på [Typografi komponenter](https://www.skatteetaten.no/stilogtone/designsystemet/komponenter/typography/) på dokumentasjonssiden til designsystemet.
+
 <div className="migration-tabell">
 <table>
 <caption>Liste over endringer i komponent-api'et</caption>

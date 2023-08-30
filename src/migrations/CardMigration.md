@@ -13,6 +13,8 @@
 
 ## Endringer i API
 
+For full API-dokumentasjon, vennligst se på [Panel komponent](https://www.skatteetaten.no/stilogtone/designsystemet/komponenter/panel/) på dokumentasjonssiden til designsystemet.
+
 <div class="migration-tabell">
 <table>
 <caption>Liste over endringer i komponent-api'et</caption>

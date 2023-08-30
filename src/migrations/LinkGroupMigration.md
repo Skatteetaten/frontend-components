@@ -8,6 +8,8 @@
 
 ## Endringer i API:
 
+For full API-dokumentasjon, vennligst se på [LinkGroup komponent](https://www.skatteetaten.no/stilogtone/designsystemet/komponenter/linkgroup/) på dokumentasjonssiden til designsystemet.
+
 <div class="migration-tabell">
 <table>
 <caption>Liste over endringer i komponent-api'et</caption>

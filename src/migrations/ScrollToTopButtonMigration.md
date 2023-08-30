@@ -11,8 +11,7 @@
 
 ## Endringer i API:
 
-<!--For full API-dokumentasjon, vennligst se på [ScrollToTopButton komponent](https://breakdance.github.io/breakdance/) på dokumentasjonssiden til designsystemet.
-( //TODO FRONT-917 Lenke til EPI dok)-->
+For full API-dokumentasjon, vennligst se på [ScrollToTopButton komponent](https://www.skatteetaten.no/stilogtone/designsystemet/komponenter/scrolltotopbutton/) på dokumentasjonssiden til designsystemet.
 
 <div className="migration-tabell">
 <table>
@@ -37,7 +36,7 @@ Nå:
 ```js static
 import { ScrollToTopButton } from '@skatteetaten/ds-buttons';
 
-<ScrollToTopButton classNames={{ button: 'myClassname' }} />;
+<ScrollToTopButton classNames={{ button: 'myCustomClassname' }} />;
 ```
 
 </td>
@@ -70,7 +69,7 @@ Nå:
 ```js static
 import { ScrollToTopButton } from '@skatteetaten/ds-buttons';
 
-<ScrollToTopButton className='myClassname' />;
+<ScrollToTopButton className="myCustomClassname" />;
 
 // Eller
 
@@ -82,7 +81,7 @@ import { ScrollToTopButton } from '@skatteetaten/ds-buttons';
     icon: 'myIcon',
     label: 'myLabel',
   }}
-
+/>;
 ```
 
 </td>

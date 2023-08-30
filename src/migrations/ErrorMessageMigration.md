@@ -11,4 +11,6 @@
 
 ## Endringer i API
 
+For full API-dokumentasjon, vennligst se på [ErrorMessage komponent](https://www.skatteetaten.no/stilogtone/designsystemet/komponenter/errormessage/) på dokumentasjonssiden til designsystemet.
+
 Det er ingen endringer i API'et.

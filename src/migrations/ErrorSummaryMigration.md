@@ -10,6 +10,9 @@
 
 ## Endringer i API
 
+<!-- For full API-dokumentasjon, vennligst se på [ErrorMessage komponent](https://www.skatteetaten.no/stilogtone/designsystemet/komponenter/errormessage/) på dokumentasjonssiden til designsystemet.
+// TODO FRONT-1308 EPI-dokumentasjon -->
+
 <div class="migration-tabell">
 <table>
 <caption>Liste over endringer i komponent-api'et</caption>

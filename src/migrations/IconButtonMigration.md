@@ -16,6 +16,8 @@
 
 ## Endringer i API
 
+For full API-dokumentasjon, vennligst se på [IconButton komponent](https://www.skatteetaten.no/stilogtone/designsystemet/komponenter/iconbutton/) på dokumentasjonssiden til designsystemet.
+
 <div className="migration-tabell">
 <table>
 <caption>Liste over endringer i komponent-api'et</caption>
