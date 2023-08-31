@@ -7,13 +7,13 @@
 
 ## Styling:
 
-- De nye komponentene i designsystemet er avhengige av designtokens. Disse leveres nå som en separat pakke. Se [designtokens](#section-designtokens-deprecated) for detaljer.
+- De nye komponentene i designsystemet er avhengige av designtokens. Disse leveres nå som en separat pakke. <a class="brodtekst-link" href="#section-designtokens-deprecated">Se designtokens for detaljer.</a>
 
 ## Endringer i API:
 
-For full API-dokumentasjon, vennligst se på [ScrollToTopButton komponent](https://www.skatteetaten.no/stilogtone/designsystemet/komponenter/scrolltotopbutton/) på dokumentasjonssiden til designsystemet.
+For full API-dokumentasjon, vennligst se på <a class="brodtekst-link" href="https://www.skatteetaten.no/stilogtone/designsystemet/komponenter/scrolltotopbutton/">ScrollToTopButton komponent</a> på dokumentasjonssiden til designsystemet.
 
-<div className="migration-tabell">
+<div class="migration-tabell">
 <table>
 <caption>Liste over endringer i komponent-api'et</caption>
 <thead><tr><th>Tidligere Prop</th><th>Alternativ</th></tr></thead>

@@ -10,7 +10,7 @@
 
 ## Endringer i API
 
-<!-- For full API-dokumentasjon, vennligst se på [ErrorMessage komponent](https://www.skatteetaten.no/stilogtone/designsystemet/komponenter/errormessage/) på dokumentasjonssiden til designsystemet.
+<!-- For full API-dokumentasjon, vennligst se på <a class="brodtekst-link" href="https://www.skatteetaten.no/stilogtone/designsystemet/komponenter/errormessage/">ErrorMessage komponent</a> på dokumentasjonssiden til designsystemet.
 // TODO FRONT-1308 EPI-dokumentasjon -->
 
 <div class="migration-tabell">

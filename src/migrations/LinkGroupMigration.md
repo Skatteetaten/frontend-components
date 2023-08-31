@@ -2,13 +2,13 @@
 
 ## Styling:
 
-- de nye komponentene i designsystemet er avhengige av designtokens. Disse leveres nå som en separat pakke. Se [designtokens](#section-designtokens-deprecated) for detaljer.
+- de nye komponentene i designsystemet er avhengige av designtokens. Disse leveres nå som en separat pakke. <a class="brodtekst-link" href="#section-designtokens-deprecated">Se designtokens for detaljer.</a>
 - fontvekten var tidligere i _bold_ mens nå er den i _font-weight-medium_
 - kulepunkter ble tidligere vist kun med ikonet _forwardArrow_ mens nå kan også velge å bruke ikonet _downArrow_
 
 ## Endringer i API:
 
-For full API-dokumentasjon, vennligst se på [LinkGroup komponent](https://www.skatteetaten.no/stilogtone/designsystemet/komponenter/linkgroup/) på dokumentasjonssiden til designsystemet.
+For full API-dokumentasjon, vennligst se på <a class="brodtekst-link" href="https://www.skatteetaten.no/stilogtone/designsystemet/komponenter/linkgroup/">LinkGroup komponent</a> på dokumentasjonssiden til designsystemet.
 
 <div class="migration-tabell">
 <table>

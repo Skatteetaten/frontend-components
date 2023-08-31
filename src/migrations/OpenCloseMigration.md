@@ -11,9 +11,9 @@
 
 ## Endringer i API
 
-For full API-dokumentasjon, vennligst se på [OpenClose komponent](https://www.skatteetaten.no/stilogtone/designsystemet/komponenter/openclose/) på dokumentasjonssiden til designsystemet.
+For full API-dokumentasjon, vennligst se på <a class="brodtekst-link" href="https://www.skatteetaten.no/stilogtone/designsystemet/komponenter/openclose/">OpenClose komponent</a> på dokumentasjonssiden til designsystemet.
 
-<div className="migration-tabell">
+<div class="migration-tabell">
 <table>
 <caption>Liste over endringer i komponent-api'et</caption>
 <thead><tr><th>Tidligere Prop</th><th>Alternativ</th></tr></thead>
