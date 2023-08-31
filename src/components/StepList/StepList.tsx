@@ -5,7 +5,8 @@ import { Grid } from '../Grid';
 import { getClassNames } from './StepList.classNames';
 import { StepListProps } from './StepList.types';
 
-/*
+/**
+ * @deprecated Komponenten er erstattet av StepList fra "@skatteetaten/ds-collections"
  * visibleName StepList (Stegliste)
  */
 
