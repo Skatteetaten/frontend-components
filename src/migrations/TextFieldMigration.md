@@ -7,7 +7,7 @@
 - veksle mellom skrive og lesemodus med blyant-knapp er ikke videreført
 - visning av påkrevd felt har endret logikk
 - tilleggstekst vises etter selve ledeteksten eller etter hjelpeteksten hvis den finnes
-- hjelpe- og advarseltekst er slått sammen til en prop og mulig å ha et valgfritt ikon istedenfor default sprøsmålteg-ikon
+- hjelpe- og advarseltekst er slått sammen til en prop og det er mulig å ha et valgfritt ikon istedenfor default spørsmålstegn-ikon
 - html attributtet type er hardkodet med verdien 'text' og andre verdier tilbys ikke fordi det finnes egne komponenter med noen av disse verdiene
 
 ## Styling:
@@ -317,7 +317,7 @@ import { WarningSVGPath } from '@skatteetaten/ds-icons';
 
 <td>Fluent-ui props som er faset ut. Det skal planlegges mer i forhold til formatering som skal tilbys.
 
-Bruk ny prop 'thousandSeparator' for å formatere heltall med tusenskille. (Komma bruks som adskiller for engelsk mens mellomrom for andre språk.)
+Bruk ny prop 'thousandSeparator' for å formatere heltall med tusenskille. (Komma brukes som adskiller for engelsk mens mellomrom for andre språk.)
 
 Andre muligheter er å bruke 'pattern', 'maxLength' og 'minLenght'.
 
