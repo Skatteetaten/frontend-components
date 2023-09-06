@@ -5,9 +5,9 @@
 - prefix og suffix er ikke videreført
 - formatering med mask-props er ikke videreført men tilbyr tusenskille-formatering og det skal planlegges mer i forhold til formatering
 - veksle mellom skrive og lesemodus med blyant-knapp er ikke videreført
-- feilmelding har endret logikk
 - visning av påkrevd felt har endret logikk
-- tilleggstekst vises rett etter selve ledeteksten og er en del av label-elementet
+- tilleggstekst vises etter selve ledeteksten eller etter hjelpeteksten hvis den finnes
+- hjelpe- og advarseltekst er slått sammen til en prop og det er mulig å ha et valgfritt ikon istedenfor default spørsmålstegn-ikon
 - html attributtet type er hardkodet med verdien 'text' og andre verdier tilbys ikke fordi det finnes egne komponenter med noen av disse verdiene
 
 ## Styling:
@@ -16,6 +16,9 @@
 - stor variant har endret noe på utseende og blitt tonet ned
 
 ## Endringer i API
+
+<!-- For full API-dokumentasjon, vennligst se på <a class="brodtekst-link" href="https://www.skatteetaten.no/stilogtone/designsystemet/komponenter/textfield/">TextField komponent</a> på dokumentasjonssiden til designsystemet.
+// TODO FRONT-1304 EPI-dokumentasjon -->
 
 <div class="migration-tabell">
 <table>
@@ -163,8 +166,8 @@ const [error, setError] = React.useState(false);
 <td>'hideLabel'
 
 Hvis det er behov for å ikke vise ledetekst, så brukes 'label' sammen med ny prop 'hideLabel' som skjuler
-label-elementet visuelt men er fortsatt synlig for skjermleser. Hvis det finnes en tilleggstekst
-så vil også den bli visuelt skjult (fordi den er en del av label-elementet).
+label-elementet visuelt men er fortsatt synlig for skjermleser. Hvis det finnes en tilleggstekst (og hjelpetekst)
+så vil også dette bli visuelt skjult.
 
 Før:
 
@@ -217,10 +220,14 @@ import { TextField } from '@skatteetaten/ds-forms';
 
 'theme'
 
+'borderless'
+
+'underline'
+
 'inputClassName'
 
 </td>
-<td>Fluent-ui props som er faset ut. Bruk 'className' for å style komponenten.
+<td>Fluent-ui props som er faset ut. Bruk 'className' eller 'classNames' for å style komponenten.
 
 Før:
 
@@ -228,9 +235,9 @@ Før:
 import { TextField } from '@skatteetaten/frontend-components/TextField';
 
 <TextField
+  label={'Navn'}
   inputClassName={'myInputCustomClassname'}
   style={{ fontSize: '24px', color: '#1362ae' }}
-  label={'Navn'}
 />;
 ```
 
@@ -239,22 +246,67 @@ Nå:
 ```js static
 import { TextField } from '@skatteetaten/ds-forms';
 
-<TextField className={'myCustomClassname'} label={'Navn'} />;
+<TextField label={'Navn'} className={'myCustomClassname'} />;
+
+// ELLER
+
+<TextField
+  label={'Navn'}
+  classNames={{
+    label: 'myLabelClassname',
+    textbox: 'myTextboxClassname',
+    errorMessage: 'myErrorMessageClassname',
+  }}
+/>;
 ```
 
 </td>
 </tr>
-<!-- TODO 'help', 'warning' og tekst om hjelpetekst senere må fjernes og ev. erstattes med beskrivelse som passer hvis FRONT-1292 (Tekst over skjemakomponenter) blir ferdig før vi releaser 0.4.0 -->
 <tr>
 <td>'help'
 
 'warning'
 
 </td>
-<td>Fases ut.
+<td>'helpText', 'helpSvgPath', 'titleHelpSvg'
 
-Komponenten vil bli utvidet med mulighet for hjelpetekst og valg av ikon på et senere tidspunkt.</td>
+Før:
 
+```javascript static
+import { TextField } from '@skatteetaten/frontend-components/TextField';
+
+<TextField
+  label={'Navn'}
+  help={'Vi trenger å vite navnet ditt dersom vi skal kontakte deg senere.'}
+/>;
+
+<TextField
+  label={'Antall barn'}
+  warning={'Er du sikker på at antall barn er riktig?'}
+/>;
+```
+
+Nå:
+
+```js static
+import { TextField } from '@skatteetaten/ds-forms';
+import { WarningSVGPath } from '@skatteetaten/ds-icons';
+
+<TextField
+  label={'Navn'}
+  helpText={'Vi trenger å vite navnet ditt dersom vi skal kontakte deg senere.'}
+/>;
+
+// ELLER
+
+<TextField
+  label={'Antall barn'}
+  helpText={'Er du sikker på at antall barn er riktig?'}
+  helpSvgPath={WarningSVGPath}
+/>;
+```
+
+</td>
 </tr>
 <tr>
 <td>'mask'
@@ -265,7 +317,7 @@ Komponenten vil bli utvidet med mulighet for hjelpetekst og valg av ikon på et 
 
 <td>Fluent-ui props som er faset ut. Det skal planlegges mer i forhold til formatering som skal tilbys.
 
-Bruk ny prop 'thousandSeparator' for å formatere heltall med tusenskille. (Komma bruks som adskiller for engelsk mens mellomrom for andre språk.)
+Bruk ny prop 'thousandSeparator' for å formatere heltall med tusenskille. (Komma brukes som adskiller for engelsk mens mellomrom for andre språk.)
 
 Andre muligheter er å bruke 'pattern', 'maxLength' og 'minLenght'.
 

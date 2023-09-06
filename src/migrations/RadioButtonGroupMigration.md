@@ -14,6 +14,8 @@
 
 ## Endringer i API
 
+For full API-dokumentasjon, vennligst se på <a class="brodtekst-link" href="https://www.skatteetaten.no/stilogtone/designsystemet/komponenter/radiogroup/">RadioGroup komponent</a> på dokumentasjonssiden til designsystemet.
+
 <div class="migration-tabell">
 <table>
 <caption>Liste over endringer i komponent-api'et</caption>
