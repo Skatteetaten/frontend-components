@@ -52,13 +52,13 @@ import { ErrorSummary } from '@skatteetaten/ds-forms';
   title={'For å gå videre må du rette opp i følgende:'}
   showErrorSummary
 >
-  <ErrorSummary.Error id={'input_aar-input'}>
+  <ErrorSummary.Error referenceId={'input_aar-input'}>
     {'Inntekståret må være etter 2008'}
   </ErrorSummary.Error>
-  <ErrorSummary.Error id={'input_epost-input'}>
+  <ErrorSummary.Error referenceId={'input_epost-input'}>
     {'E-posten ser ikke riktig ut. Skriv slik: ola.normann@norge.no'}
   </ErrorSummary.Error>
-  <ErrorSummary.Error id={'input_dager-input'}>
+  <ErrorSummary.Error referenceId={'input_dager-input'}>
     {'Antall dager må fylles ut.'}
   </ErrorSummary.Error>
 </ErrorSummary>;
