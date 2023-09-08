@@ -22,9 +22,6 @@ const NumberIcon = (props: any) => {
     </div>
   );
 };
-/*
- * visibleName Step (Enkeltsteg)
- */
 export interface StepProps extends React.HTMLAttributes<HTMLDivElement> {
   /** Change-button for step **/
   actionBtn?: {
@@ -52,6 +49,10 @@ export interface StepProps extends React.HTMLAttributes<HTMLDivElement> {
   children?: React.ReactElement;
 }
 
+/**
+ * @deprecated Komponenten er erstattet av StepList.Step fra "@skatteetaten/ds-collections"
+ * visibleName Step (Enkeltsteg)
+ */
 export const Step = (props: StepProps) => {
   const {
     stepTitle,
