@@ -46,7 +46,8 @@ const LogoInk = () => {
   );
 };
 
-/*
+/**
+ * @deprecated Komponenten er erstattet av Footer fra "@skatteetaten/ds-layout"
  * visibleName FooterContent (Bunn)
  */
 export class FooterContent extends React.PureComponent<FooterContentProps> {
