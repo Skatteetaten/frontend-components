@@ -104,10 +104,10 @@
     "webfont": "11.2.26"
   },
   "scripts": {
-    "start": "REACT_APP_BUILD_VERSION=$(git rev-parse --abbrev-ref HEAD) FAST_REFRESH=false styleguidist server --verbose",
+    "start": "NODE_OPTIONS=--openssl-legacy-provider REACT_APP_BUILD_VERSION=$(git rev-parse --abbrev-ref HEAD) FAST_REFRESH=false styleguidist server --verbose",
     "generate:icons": "webfont --normalize --fontHeight 600 src/webfont/**/*.svg -d src/components/utils/assets",
     "prebuild": "run-s clean generate:icons circularDeps lint",
-    "build": "run-p build:lib build:docs",
+    "build": "NODE_OPTIONS=--openssl-legacy-provider run-p build:lib build:docs",
     "build:docs": "PUBLIC_URL=/frontend-components/ styleguidist build",
     "build:lib": "run-p build:types build:esm build:cjs build:umd build:assets build:designtokens",
     "build:assets": "run-p build:assets:esm build:assets:cjs",
