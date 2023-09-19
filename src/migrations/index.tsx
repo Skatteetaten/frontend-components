@@ -5,6 +5,7 @@ import ButtonLinkMigration from './ButtonLinkMigration.md';
 import ButtonMigration from './ButtonMigration.md';
 import CardMigration from './CardMigration.md';
 import CheckBoxMigration from './CheckBoxMigration.md';
+import DropdownMigration from './DropdownMigration.md';
 import ErrorMessageMigration from './ErrorMessageMigration.md';
 import ErrorSummaryMigration from './ErrorSummaryMigration.md';
 import FooterContentMigration from './FooterContentMigration.md';
@@ -29,6 +30,7 @@ export const MigrationGuides = [
   ButtonMigration,
   CardMigration,
   CheckBoxMigration,
+  DropdownMigration,
   ErrorMessageMigration,
   ErrorSummaryMigration,
   FooterContentMigration,
