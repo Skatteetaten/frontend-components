@@ -11,7 +11,6 @@ import { AccordionItem } from '@skatteetaten/frontend-components/Accordion/Accor
       <li>Migration guide: StepList / Step</li>
       <li>Migration guide: LabelWithCallout</li>
       <li>Migration guide: ErrorSummary</li>
-      <li>Migration guide: Callout</li>
       <li>
         Added prop hideExpand to rowData to control which rows are expandable
       </li>
