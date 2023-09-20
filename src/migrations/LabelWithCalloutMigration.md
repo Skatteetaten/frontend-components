@@ -1,45 +1,13 @@
 **Fra @skatteetaten/frontend-components v5+ (designsystem-legacy) til Designsystemet v0.4.0**
 
-LabelWithCallout er deprecated i sin helhet og er ikke tilgjengelig som en egen komponent i det nye designsystemet siden <strong>label- og legend-element må brukes i kombinasjon med skjemaelementer</strong> og ikke alene.
+LabelWithCallout er deprecated i sin helhet og er ikke tilgjengelig som en egen komponent i det nye designsystemet siden <strong>label- og legend-element må brukes i kombinasjon med skjemaelementer og ikke alene.</strong>
 
-Alle våre nye form-elementer som bruker label eller legend har hjelp-funksjonalitet innebygd. I tillegg har vi fått en ny komponent Fieldset som må brukes dersom skjemaelementer hører til en gruppe som deler samme ledetekst, se eksempel 2 under "Som et legend-element".
+Alle våre nye form-komponenter som bruker label eller legend har hjelp-funksjonalitet innebygd. I tillegg har vi fått en <!-- TODO byttet ut teksten "ny komponent Fieldset" med dette og sjekket at url-en er riktig: <a class="brodtekst-link" href="https://www.skatteetaten.no/stilogtone/designsystemet/komponenter/fieldset">ny komponent Fieldset</a>-->
+ny komponent Fieldset som må brukes dersom skjemaelementer hører til en gruppe som deler samme ledetekst, se eksempel 2 under Nå.
 
-Dersom du trenger en hjelp-funksjonalitet som ikke er knyttet til skjemaelementer, så kan legacy Callout-komponent brukes inntil videre. 
+Dersom du trenger en hjelp-funksjonalitet som ikke er knyttet til skjemaelementer, så kan <a class="brodtekst-link" href="https://skatteetaten.github.io/frontend-components/#callout">legacy Callout-komponent</a> brukes inntil videre.
 
 For full API-dokumentasjon over Fieldset-komponenten og form-komponentene, vennligst se på <a class="brodtekst-link" href="https://www.skatteetaten.no/stilogtone/designsystemet/komponenter/">dokumentasjonssiden til det nye designsystemet</a>.
-
-## Som et label-element
-
-Før:
-
-```javascript static
-import { TextField } from '@skatteetaten/frontend-components/TextField';
-
-<TextField
-  value={state.value1}
-  onChange={(e, value) => setState({ value1: value })}
-  help='Vi trenger å vite navnet ditt dersom vi skal kontakte deg senere.'
-  labelWithCalloutProps={{
-    label: 'Fullt navn',
-    calloutProps: { autoDismiss: true },
-  }}
-/>;
-```
-
-Nå:
-
-```js static
-import { TextField } from '@skatteetaten/ds-forms';
-
-<TextField
-  label={'Fullt navn'}
-  value={state.value1}
-  onChange={(e, value) => setState({ value1: value })}
-  helpText={'Vi trenger å vite navnet ditt dersom vi skal kontakte deg senere.'}
-/>;
-```
-
-## Som et legend-element
 
 Før:
 
@@ -63,7 +31,7 @@ import { LabelWithCallout } from '@skatteetaten/frontend-components/LabelWithCal
   <CheckBox boxSide={'start'} label='Er enslig forsørger' />
 </fieldset>;
 
-// Eksempel 2
+// Eksempel 2 - en gruppe skjemaelementer som deler ledetekst (inFieldset og label)
 <fieldset>
   <LabelWithCallout
     inFieldset
@@ -97,7 +65,7 @@ import { CheckboxGroup, Fieldset } from '@skatteetaten/ds-forms';
   <CheckboxGroup.Checkbox>{'Er enslig forsørger'}</CheckboxGroup.Checkbox>
 </CheckboxGroup>;
 
-// Eksempel 2
+// Eksempel 2 - en gruppe skjemaelementer som deler ledetekst (legend)
 <Fieldset
   legend={'Hvilken periode trenger du bekreftelse for?'}
   helpText={'Legg inn hvilke datoer du trenger bekreftelse for.'}
