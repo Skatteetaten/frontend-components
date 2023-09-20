@@ -2,7 +2,7 @@
   "name": "@skatteetaten/frontend-components",
   "groupId": "no.skatteetaten.aurora",
   "license": "Apache-2.0",
-  "version": "8.0.0",
+  "version": "9.0.0",
   "private": false,
   "sideEffects": false,
   "bin": {
