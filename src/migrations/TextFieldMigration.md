@@ -195,7 +195,9 @@ import { TextField } from '@skatteetaten/ds-forms';
 </tr>
 <tr>
 <td>'inputSize'</td>
-<td>'isLarge'
+<td>'variant'
+
+Alternativer for 'variant': 'medium' og 'large'. 'medium' er default.
 
 Før:
 
@@ -210,7 +212,7 @@ Nå:
 ```js static
 import { TextField } from '@skatteetaten/ds-forms';
 
-<TextField label={'Navn'} isLarge />;
+<TextField label={'Navn'} variant={'large'} />;
 ```
 
 </td>
