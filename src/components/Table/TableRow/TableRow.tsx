@@ -16,6 +16,17 @@ export interface TableRowProps<P> {
   rowIndex: number;
   /** Custom classNames for å overskrive styling */
   customClassNames?: RowCustomClassNames;
+  /**
+   * hideExpand; expandable is disabled for row,
+   * hideEdit: edit is disalbed for row,
+   * hideSeparator: hides separator for row 
+   *
+   * @type P & {
+    hideExpand?: boolean;
+    hideEdit?: boolean;
+    hideSeparator?: boolean;
+  }
+   * */
   data: P;
   editableContent?: (
     data: P,
@@ -77,6 +88,7 @@ export const TableRow = <P extends RowData>(props: TableRowProps<P>) => {
     showRowSeparators,
     compactTable,
   } = props;
+  const showExpandCollapseButton = !data.hideExpand && expandableRows;
   const editableRow = !data.hideEdit && editableRows;
   const showExtraCol = data.hideEdit && editableRows;
   const showRowSeparator = !data.hideSeparator && showRowSeparators;
@@ -210,7 +222,7 @@ export const TableRow = <P extends RowData>(props: TableRowProps<P>) => {
             {editButton}
           </td>
         )}
-        {expandableRows && (
+        {showExpandCollapseButton && (
           <ExpandCollapseButton
             isOpen={isExpandableRowOpen}
             shouldRenderCellContent={expandIconPlacement === 'before'}
@@ -405,14 +417,14 @@ export const TableRow = <P extends RowData>(props: TableRowProps<P>) => {
                 }
               )}
             >
-              {expandIconPlacement === 'before' && (
+              {showExpandCollapseButton && expandIconPlacement === 'before' && (
                 <ExpandCollapseButton
                   isOpen={true}
                   shouldRenderCellContent={true}
                 />
               )}
               {renderRow(data, columns, rowIndex, true)}
-              {expandIconPlacement !== 'before' && (
+              {showExpandCollapseButton && expandIconPlacement !== 'before' && (
                 <ExpandCollapseButton
                   isOpen={true}
                   shouldRenderCellContent={false}

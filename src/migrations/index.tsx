@@ -6,8 +6,11 @@ import ButtonMigration from './ButtonMigration.md';
 import CardMigration from './CardMigration.md';
 import CheckBoxMigration from './CheckBoxMigration.md';
 import ErrorMessageMigration from './ErrorMessageMigration.md';
+import ErrorSummaryMigration from './ErrorSummaryMigration.md';
+import FooterContentMigration from './FooterContentMigration.md';
 import IconButtonMigration from './IconButtonMigration.md';
 import IconMigration from './IconMigration.md';
+import LabelWithCalloutMigration from './LabelWithCalloutMigration.md';
 import LinkGroupMigration from './LinkGroupMigration.md';
 import LinkMigration from './LinkMigration.md';
 import MessageBarMigration from './MessageBarMigration.md';
@@ -15,7 +18,10 @@ import OpenCloseMigration from './OpenCloseMigration.md';
 import RadioButtonGroupMigration from './RadioButtonGroupMigration.md';
 import ScrollToTopButtonMigration from './ScrollToTopButtonMigration.md';
 import SkeBasisMigration from './SkeBasisMigration.md';
+import StepListMigration from './StepListMigration.md';
+import StepMigration from './StepMigration.md';
 import TableMigration from './TableMigration.md';
+import TextFieldMigration from './TextFieldMigration.md';
 import TypographyMigration from './TypographyMigration.md';
 
 export const MigrationGuides = [
@@ -25,8 +31,11 @@ export const MigrationGuides = [
   CardMigration,
   CheckBoxMigration,
   ErrorMessageMigration,
+  ErrorSummaryMigration,
+  FooterContentMigration,
   IconButtonMigration,
   IconMigration,
+  LabelWithCalloutMigration,
   LinkGroupMigration,
   LinkMigration,
   MessageBarMigration,
@@ -34,6 +43,9 @@ export const MigrationGuides = [
   RadioButtonGroupMigration,
   ScrollToTopButtonMigration,
   SkeBasisMigration,
+  StepListMigration,
+  StepMigration,
   TableMigration,
+  TextFieldMigration,
   TypographyMigration,
 ];

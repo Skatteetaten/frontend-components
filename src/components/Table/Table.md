@@ -331,6 +331,43 @@ const data = [
     ],
   },
 ];
+
+const dataWithHideExpand = [
+  {
+    hideExpand: true,
+    firma: 'Bluth Company',
+    timestamp: '08.04.2020 11:31:57',
+    status: 'Under behandling',
+    eta: 'Mer enn 1 dag',
+    ansatte: [
+      {
+        navn: 'Per Olsen',
+        fnr: '01012020 99999',
+        beskrivelse: 'Ingen flere opplysninger',
+      },
+    ],
+  },
+  {
+    hideExpand: false,
+    firma: 'Business Engros',
+    timestamp: '08.04.2020 11:32:16',
+    status: 'Under behandling',
+    eta: '23 min',
+    ansatte: [
+      {
+        navn: 'Bryce Navnesen',
+        fnr: '02012020 99999',
+        beskrivelse: 'Ingen flere opplysninger',
+      },
+      {
+        navn: 'Alice Middleman',
+        fnr: '03012020 99999',
+        beskrivelse: 'Ingen flere opplysninger',
+      },
+    ],
+  },
+];
+
 const expandableContent = (data, close, rowIndex) => (
   <div>
     <Grid>
@@ -415,6 +452,23 @@ const expandableContentLabelWithCallout = (data, close, rowIndex) => (
     hideCaption
     expandableRows
     fullWidth
+  />
+
+  <p style={marginTopStyle}>
+    Tabellen kan ha bare noen linjer som er ekspanderbare. Dette er styrt av
+    felt på selve rad dataen. hideExpand vil gjemme pil-knappen.
+  </p>
+  <Table
+    data={dataWithHideExpand.map((d) => ({
+      ...d,
+    }))}
+    columns={columns}
+    expandableContent={expandableContent}
+    expandIconPlacement={'before'}
+    caption="Firmaoversikt"
+    hideCaption
+    expandIconPlacement={'after'}
+    expandableRows
   />
 </>;
 ```

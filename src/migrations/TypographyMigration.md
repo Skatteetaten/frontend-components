@@ -7,11 +7,13 @@
 ## Styling:
 
 - Noen endringer i line-height og avstand mellom elementer.
-- De nye komponentene i designsystemet er avhengige av designtokens. Disse leveres nå som en separat pakke. Se [designtokens](#section-designtokens-deprecated) for detaljer.
+- De nye komponentene i designsystemet er avhengige av designtokens. Disse leveres nå som en separat pakke. <a class="brodtekst-link" href="#section-designtokens-deprecated">Se designtokens for detaljer.</a>
 
 ## Endringer i API:
 
-<div className="migration-tabell">
+For full API-dokumentasjon, vennligst se på <a class="brodtekst-link" href="https://www.skatteetaten.no/stilogtone/designsystemet/komponenter/typography/">Typografi-komponenter</a> på dokumentasjonssiden til designsystemet.
+
+<div class="migration-tabell">
 <table>
 <caption>Liste over endringer i komponent-api'et</caption>
 <thead><tr><th>Tidligere Prop</th><th>Alternativ</th></tr></thead>

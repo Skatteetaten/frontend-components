@@ -3,6 +3,7 @@ import { RowCustomClassNames } from './TableRow';
 import { Language } from '../utils/Language';
 
 export interface RowData {
+  hideExpand?: boolean;
   hideEdit?: boolean;
   hideSeparator?: boolean;
   customClassNames?: RowCustomClassNames;

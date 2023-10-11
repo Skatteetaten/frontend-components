@@ -5,7 +5,8 @@ import { Callout } from '../Callout';
 import { calloutState, LabelWithCalloutProps } from './LabelWithCallout.types';
 import { t } from 'i18next';
 
-/*
+/**
+ * @deprecated Komponenten er blitt innebygd i hver form-komponent i og delvis erstattet av Fieldset fra "@skatteetaten/ds-forms"
  * visibleName LabelWithCallout (Merkelapp med utropsboks)
  */
 export const LabelWithCallout = (props: LabelWithCalloutProps) => {
