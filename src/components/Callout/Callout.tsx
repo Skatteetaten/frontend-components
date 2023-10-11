@@ -37,35 +37,50 @@ export class Callout extends PureComponent<CalloutProps, CalloutState> {
       target: undefined,
       isCalloutVisible: props.isCalloutVisible,
     };
+
+    this.onClick = this.onClick.bind(this);
+    this.onResize = this.onResize.bind(this);
+  }
+
+  onClick(e: any): void {
+    if (
+      (e.target &&
+        e.target.parentElement !== this.state.target &&
+        e.target.parentElement.className.indexOf &&
+        e.target.parentElement.className.indexOf('ms-Button-textContainer') >
+          -1) ||
+      (e.target.className.indexOf &&
+        e.target.className.indexOf('ms-Button-textContainer') > -1)
+    ) {
+      this.setState({
+        target: e.target.parentElement,
+        widthBtnLabel: window.getComputedStyle(e.target.parentElement).width,
+      });
+    }
+  }
+
+  onResize(): void {
+    if (this.state.target) {
+      this.setState({
+        //@ts-ignore
+        widthBtnLabel: window.getComputedStyle(this.state.target).width,
+      });
+    }
+  }
+
+  componentDidMount(): void {
+    window.addEventListener('click', this.onClick);
+    window.addEventListener('resize', this.onResize);
+  }
+
+  componentWillUnmount(): void {
+    window.removeEventListener('click', this.onClick);
+    window.removeEventListener('resize', this.onResize);
   }
 
   render() {
     const { children, className, id, ...props } = this.props;
     const styles = getClassNames(props, this.state.widthBtnLabel);
-
-    window.onclick = (e) => {
-      if (
-        (e.target &&
-          e.target.parentElement !== this.state.target &&
-          e.target.parentElement.className.indexOf('ms-Button-textContainer') >
-            -1) ||
-        e.target.className.indexOf('ms-Button-textContainer') > -1
-      ) {
-        this.setState({
-          target: e.target.parentElement,
-          widthBtnLabel: window.getComputedStyle(e.target.parentElement).width,
-        });
-      }
-    };
-
-    window.onresize = () => {
-      if (this.state.target) {
-        this.setState({
-          //@ts-ignore
-          widthBtnLabel: window.getComputedStyle(this.state.target).width,
-        });
-      }
-    };
 
     return (
       <div id={id} className={classnames(styles.calloutWrapper, className)}>

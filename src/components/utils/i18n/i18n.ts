@@ -1,4 +1,4 @@
-import i18n, { DefaultTFuncReturn, TOptions } from 'i18next';
+import i18n, { TOptions } from 'i18next';
 import { initReactI18next } from 'react-i18next';
 import { languages as languageFile } from './languages';
 
@@ -57,6 +57,6 @@ Object.keys(languages).forEach((language) => {
 });
 
 export default i18n;
-export const t = (tekst, options: TOptions = {}): DefaultTFuncReturn => {
+export const t = (tekst, options: TOptions = {}) => {
   return i18n.t(tekst, options);
 };
