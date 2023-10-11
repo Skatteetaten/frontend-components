@@ -281,6 +281,8 @@ import { TextField } from '@skatteetaten/frontend-components/TextField';
   help={'Vi trenger å vite navnet ditt dersom vi skal kontakte deg senere.'}
 />;
 
+// ELLER
+
 <TextField
   label={'Antall barn'}
   warning={'Er du sikker på at antall barn er riktig?'}
