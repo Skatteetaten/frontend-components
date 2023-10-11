@@ -15,7 +15,9 @@ MessageBar er blitt erstattet med Alert.
 
 ## Endringer i API
 
-<div className="migration-tabell">
+For full API-dokumentasjon, vennligst se på <a class="brodtekst-link" href="https://www.skatteetaten.no/stilogtone/designsystemet/komponenter/messagebar/">Alert komponent</a> på dokumentasjonssiden til designsystemet.
+
+<div class="migration-tabell">
 <table>
 <caption>Liste over endringer i komponent-api'et</caption>
 <thead><tr><th>Tidligere Prop</th><th>Alternativ</th></tr></thead>

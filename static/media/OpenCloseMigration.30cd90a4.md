@@ -11,7 +11,9 @@
 
 ## Endringer i API
 
-<div className="migration-tabell">
+For full API-dokumentasjon, vennligst se på <a class="brodtekst-link" href="https://www.skatteetaten.no/stilogtone/designsystemet/komponenter/openclose/">OpenClose komponent</a> på dokumentasjonssiden til designsystemet.
+
+<div class="migration-tabell">
 <table>
 <caption>Liste over endringer i komponent-api'et</caption>
 <thead><tr><th>Tidligere Prop</th><th>Alternativ</th></tr></thead>
@@ -46,13 +48,13 @@ import { OpenClose } from '@skatteetaten/ds-collections';
 <tr>
 <td>'customClassNames'</td>
 <td>
-Faset ut. Bruk 'className' for å style komponenten. All definisjon av stil skal settes via 'className'
+Faset ut. Bruk 'className' for å style komponenten. All definisjon av stil skal settes via 'className'.
 </td>
 </tr>
 <tr>
 <td>'headingLevel'</td>
 <td>
-Erstattet av 'titleAs'. Alterativer: 'h1', 'h2', 'h3', 'h4', 'h5' og 'h6'. Default er ingen headingnivå.
+Erstattet av 'titleAs'. Alternativer: 'h1', 'h2', 'h3', 'h4', 'h5' og 'h6'. Default er ingen headingnivå.
 
 Før:
 
