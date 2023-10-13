@@ -11,6 +11,7 @@ import ErrorSummaryMigration from './ErrorSummaryMigration.md';
 import FooterContentMigration from './FooterContentMigration.md';
 import IconButtonMigration from './IconButtonMigration.md';
 import IconMigration from './IconMigration.md';
+import LabelWithCalloutMigration from './LabelWithCalloutMigration.md';
 import LinkGroupMigration from './LinkGroupMigration.md';
 import LinkMigration from './LinkMigration.md';
 import MessageBarMigration from './MessageBarMigration.md';
@@ -36,6 +37,7 @@ export const MigrationGuides = [
   FooterContentMigration,
   IconButtonMigration,
   IconMigration,
+  LabelWithCalloutMigration,
   LinkGroupMigration,
   LinkMigration,
   MessageBarMigration,

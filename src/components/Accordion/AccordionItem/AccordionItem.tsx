@@ -30,7 +30,7 @@ const ToggleContent: React.FC<ToggleContentInterface> = (props) => {
     <button
       className={
         isContentOpen
-          ? classnames.default(styles.toggleButton, styles.toggleButtonOpen)
+          ? classnames(styles.toggleButton, styles.toggleButtonOpen)
           : styles.toggleButton
       }
       aria-expanded={isContentOpen}

@@ -9,6 +9,20 @@ import { AccordionItem } from '@skatteetaten/frontend-components/Accordion/Accor
       <li>Migration guide: Dropdown</li>
     </ul>
 
+    <h2>v.9.0.0 - September 2023</h2>
+    <ul>
+      <li>Migration guide: FooterContent</li>
+      <li>Migration guide: TextField</li>
+      <li>Migration guide: StepList / Step</li>
+      <li>Migration guide: LabelWithCallout</li>
+      <li>Migration guide: ErrorSummary</li>
+      <li>
+        Added prop hideExpand to rowData to control which rows are expandable
+      </li>
+      <li>Fileuploader - added id-prop</li>
+      <li>Changed logo for Statens Innkreving</li>
+    </ul>
+
     <h2>v.8.0.1 - August 2023</h2>
     <ul>
       <li>Added id to button in FileUpload component</li>
