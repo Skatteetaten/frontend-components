@@ -254,6 +254,7 @@ import { TextField } from '@skatteetaten/ds-forms';
 <TextField
   label={'Navn'}
   classNames={{
+    container: 'myContainerClassname',
     label: 'myLabelClassname',
     textbox: 'myTextboxClassname',
     errorMessage: 'myErrorMessageClassname',
