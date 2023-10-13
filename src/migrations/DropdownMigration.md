@@ -9,6 +9,7 @@ Dropdown er blitt erstattet med Select.
 - default er at placeholder vises
 - readonly er ikke videreført
 - visning av påkrevd felt har endret logikk
+- ikke mulig å disable enkeltvis option
 
 ## Styling:
 
