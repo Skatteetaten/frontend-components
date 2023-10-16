@@ -17,8 +17,7 @@
 
 ## Endringer i API
 
-<!-- For full API-dokumentasjon, vennligst se på <a class="brodtekst-link" href="https://www.skatteetaten.no/stilogtone/designsystemet/komponenter/textfield/">TextField komponent</a> på dokumentasjonssiden til designsystemet.
-// TODO FRONT-1304 EPI-dokumentasjon -->
+For full API-dokumentasjon, vennligst se på <a class="brodtekst-link" href="https://www.skatteetaten.no/stilogtone/designsystemet/komponenter/textfield/">TextField komponent</a> på dokumentasjonssiden til designsystemet.
 
 <div class="migration-tabell">
 <table>
@@ -255,6 +254,7 @@ import { TextField } from '@skatteetaten/ds-forms';
 <TextField
   label={'Navn'}
   classNames={{
+    container: 'myContainerClassname',
     label: 'myLabelClassname',
     textbox: 'myTextboxClassname',
     errorMessage: 'myErrorMessageClassname',
@@ -281,6 +281,8 @@ import { TextField } from '@skatteetaten/frontend-components/TextField';
   label={'Navn'}
   help={'Vi trenger å vite navnet ditt dersom vi skal kontakte deg senere.'}
 />;
+
+// ELLER
 
 <TextField
   label={'Antall barn'}
