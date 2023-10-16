@@ -333,7 +333,7 @@ import { WarningSVGPath } from '@skatteetaten/ds-icons';
   ...
 </Select>
 
-// ELLER
+// ELLER hvis du ønsker å bruke et valgfritt ikon istedenfor default ikon (spørsmåltegn)
 
 <Select
   label={'Fruktsort'}
