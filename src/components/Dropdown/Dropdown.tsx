@@ -13,7 +13,9 @@ import { LabelWithCallout } from '../LabelWithCallout';
 import { IStyleFunctionOrObject } from '@fluentui/utilities';
 import { DropdownProps } from './DropDown.types';
 
-/*
+/**
+ * @deprecated Komponenten er erstattet av Dropdown fra "@skatteetaten/ds-forms"
+ *
  * visibleName Dropdown (Nedtrekksliste)
  */
 export const Dropdown: React.FC<DropdownProps> = (props) => {
