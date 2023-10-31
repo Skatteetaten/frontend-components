@@ -71,14 +71,14 @@ import { Select } from '@skatteetaten/ds-forms';
 
 // Med placeholder option
 <Select label={'Fruktsort'}>
-  <Select.SelectOption value={'A'}>{'Banan'}</Select.SelectOption>
-  <Select.SelectOption value={'B'}>{'Eple'}</Select.SelectOption>
+  <Select.Option value={'A'}>{'Banan'}</Select.Option>
+  <Select.Option value={'B'}>{'Eple'}</Select.Option>
 </Select>;
 
 // Uten placeholder option
 <Select label={'Fruktsort'} hidePlaceholder>
-  <Select.SelectOption value={'A'}>{'Banan'}</Select.SelectOption>
-  <Select.SelectOption value={'B'}>{'Eple'}</Select.SelectOption>
+  <Select.Option value={'A'}>{'Banan'}</Select.Option>
+  <Select.Option value={'B'}>{'Eple'}</Select.Option>
 </Select>;
 ```
 
@@ -116,22 +116,22 @@ import { Select } from '@skatteetaten/ds-forms';
 
 // Default placeholder-tekst Velg (ingen prop må settes)
 <Select label={'Fruktsort'}>
-  <Select.SelectOption value={'A'}>
+  <Select.Option value={'A'}>
     {'Banan'}
-  </Select.SelectOption>
-  <Select.SelectOption value={'B'}>
+  </Select.Option>
+  <Select.Option value={'B'}>
     {'Eple'}
-  </Select.SelectOption>
+  </Select.Option>
 </Select>
 
 // Egendefinert placeholder-tekst
 <Select label={'Fruktsort'} placeholder={'Velg en fruktsort'}>
-  <Select.SelectOption value={'A'}>
+  <Select.Option value={'A'}>
     {'Banan'}
-  </Select.SelectOption>
-  <Select.SelectOption value={'B'}>
+  </Select.Option>
+  <Select.Option value={'B'}>
     {'Eple'}
-  </Select.SelectOption>
+  </Select.Option>
 </Select>
 ```
 
@@ -176,8 +176,8 @@ const handleChange = (e: ChangeEvent<HTMLSelectElement>): void => {
 };
 
 <Select label={'Fruktsort'} value={selectedOption} onChange={handleChange}>
-  <Select.SelectOption value={'A'}>{'Banan'}</Select.SelectOption>
-  <Select.SelectOption value={'B'}>{'Eple'}</Select.SelectOption>
+  <Select.Option value={'A'}>{'Banan'}</Select.Option>
+  <Select.Option value={'B'}>{'Eple'}</Select.Option>
 </Select>;
 ```
 
@@ -208,8 +208,8 @@ import { Select } from '@skatteetaten/ds-forms';
 import { WarningSVGPath } from '@skatteetaten/ds-icons';
 
 <Select label={'Fruktsort'} defaultValue={'B'}>
-  <Select.SelectOption value={'A'}>{'Banan'}</Select.SelectOption>
-  <Select.SelectOption value={'B'}>{'Eple'}</Select.SelectOption>
+  <Select.Option value={'A'}>{'Banan'}</Select.Option>
+  <Select.Option value={'B'}>{'Eple'}</Select.Option>
 </Select>;
 ```
 
