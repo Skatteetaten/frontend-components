@@ -371,7 +371,6 @@ import { Select } from '@skatteetaten/ds-forms';
     container: 'myContainerClassname',
     label: 'myLabelClassname',
     selectContainer: 'mySelectContainerClassname',
-    select: 'mySelectClassname',
     errorMessage: 'myErrorMessageClassname',
   }}
 >
