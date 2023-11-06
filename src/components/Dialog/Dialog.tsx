@@ -12,6 +12,12 @@ import { BrandContext } from '../SkeBasis';
 import i18n, { t } from '../utils/i18n/i18n';
 import WaitAlert from './WaitAlert';
 
+/**
+ * @deprecated Komponenten er erstattet av Modal fra "@skatteetaten/ds-overlays"
+ *
+ * visibleName Dialog
+ */
+
 export class Dialog extends React.PureComponent<DialogProps, DialogState> {
   static Footer = DialogFooter;
   static Type = DialogType;
