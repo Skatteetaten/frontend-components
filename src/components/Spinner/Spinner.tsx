@@ -4,7 +4,9 @@ import * as React from 'react';
 import { getClassNames } from './Spinner.classNames';
 import { SpinnerProps } from './Spinner.types';
 
-/*
+/**
+ * @deprecated Komponenten er erstattet av Spinner fra "@skatteetaten/ds-status"
+ *
  * visibleName Spinner (Spinner)
  */
 export class Spinner extends React.PureComponent<SpinnerProps> {

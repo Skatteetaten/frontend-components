@@ -19,6 +19,7 @@ import OpenCloseMigration from './OpenCloseMigration.md';
 import RadioButtonGroupMigration from './RadioButtonGroupMigration.md';
 import ScrollToTopButtonMigration from './ScrollToTopButtonMigration.md';
 import SkeBasisMigration from './SkeBasisMigration.md';
+import SpinnerMigration from './SpinnerMigration.md';
 import StepListMigration from './StepListMigration.md';
 import StepMigration from './StepMigration.md';
 import TableMigration from './TableMigration.md';
@@ -45,6 +46,7 @@ export const MigrationGuides = [
   RadioButtonGroupMigration,
   ScrollToTopButtonMigration,
   SkeBasisMigration,
+  SpinnerMigration,
   StepListMigration,
   StepMigration,
   TableMigration,
