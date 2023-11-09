@@ -34,6 +34,15 @@ Fluent-UI props som er faset ut.
 </td>
 </tr>
 <tr>
+<td>'componentRef'</td>
+<td>
+'ref'
+
+Alle komponentene våre bruker forwardRef. For komponent sendes 'ref' til &lt;dialog&gt;-elementet.
+
+</td>
+</tr>
+<tr>
 <td>
 'containerClassName'
 
