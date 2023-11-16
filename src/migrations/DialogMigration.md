@@ -263,8 +263,8 @@ const ref = React.useRef<HTMLDialogElement>(null);
     onClick={(): void => ref.current?.showModal()}
     svgPath={InfoOutlineSVGPath}
   >
-    Vis ventevarsel
-  </ActionButton>
+    {'Vis ventevarsel'}
+  </Button>
   <Modal
         ref={ref}
         title={'Hei, er du fortsatt her?'}

@@ -2,7 +2,7 @@
 
 ## Endringer i funksjonalitet:
 
-- tittel er obligatorisk
+- tittel er obligatorisk.
 
 ## Styling:
 
@@ -55,4 +55,92 @@ Faset ut.
 </tr>
 </tbody>
 </table>
+
+ModalProvider og ModalContext tilbys ikke lenger og Modalen åpnes/lukkes gjennom ref.
+
+Før:
+
+```javascript static
+import { Button } from '@skatteetaten/frontend-components/Button';
+import { ModalProvider } from '@skatteetaten/frontend-components/Modal/ModalProvider';
+import { useModalContext } from '@skatteetaten/frontend-components/Modal//ModalContext';
+import { Modal } from '@skatteetaten/frontend-components/Modal';
+
+const TestComponent = ({}) => {
+  const modal = useModalContext();
+
+  const toggleModal = () => {
+    modal && modal.toggle('testModal');
+  };
+
+  return (
+    <>
+      <Button onClick={toggleModal}>{'Åpne modal'}</Button>
+
+      {modal && modal.isOpen('testModal') && (
+        <Modal name={'testModal'}>
+          <h3 style={{ marginTop: '0px' }}>
+            {'Vil du erstatte nye opplysninger fra fil?'}
+          </h3>
+          <p>
+            Du har valgt å laste opp nye opplysninger fra fil. Vil du at disse
+            skal gjelde fra nå av?
+          </p>
+
+          <div style={{ marginTop: '32px' }}>
+            <Button buttonStyle="primary" onClick={toggleModal}>
+              {'Erstatt opplysninger'}
+            </Button>
+            <Button onClick={toggleModal}>{'Avbryt'}</Button>
+          </div>
+        </Modal>
+      )}
+    </>
+  );
+};
+
+<div>
+  <ModalProvider>
+    <TestComponent />
+  </ModalProvider>
+</div>;
+```
+
+Nå:
+
+```js static
+import { Modal } from '@skatteetaten/ds-overlays';
+import { Button } from '@skatteetaten/ds-buttons';
+
+const ref = React.useRef<HTMLDialogElement>(null);
+
+<Button
+  variant={'secondary'}
+  onClick={(): void => ref.current?.showModal()}
+>
+  {'Åpne modal'}
+</Button>
+<Modal
+    ref={ref}
+    title={'Vil du erstatte nye opplysninger fra fil?'}
+>
+    <Paragraph hasSpacing>
+        {
+        'Du har valgt å laste opp nye opplysninger fra fil. Vil du at disse skal gjelde fra nå av?'
+        }
+    </Paragraph>
+    <Button
+        onClick={(): void => ref.current?.close()}
+    >
+        {'Erstatt opplysninger'}
+    </Button>
+    <Button
+        variant={'secondary'}
+        onClick={(): void => ref.current?.close()}
+    >
+        {'Avbryt'}
+    </Button>
+</Modal>
+```
+
 </div>
