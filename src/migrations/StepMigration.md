@@ -11,8 +11,7 @@
 
 ## Endringer i API:
 
-<!--For full API-dokumentasjon, vennligst se på <a class="brodtekst-link" href="https://breakdance.github.io/breakdance/">button komponent</a> på dokumentasjonssiden til designsystemet.
-( //TODO FRONT-1268 Lenke til EPI dok)-->
+For full API-dokumentasjon, vennligst se på <a class="brodtekst-link" href="https://www.skatteetaten.no/stilogtone/designsystemet/komponenter/steplist/">StepList komponent</a> på dokumentasjonssiden til designsystemet.
 
 <div class="migration-tabell">
 <table>

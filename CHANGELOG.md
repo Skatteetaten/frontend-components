@@ -9,6 +9,12 @@ import { AccordionItem } from '@skatteetaten/frontend-components/Accordion/Accor
       <li>Migration guide: Dropdown</li>
       <li>Migration guide: Dialog</li>
       <li>Migration guide: Modal</li>
+      <li>Migration guide: Spinner</li>
+    </ul>
+
+    <h2>v.9.0.1 - October 2023</h2>
+    <ul>
+      <li>Add EPI documentation links to migration guides</li>
     </ul>
 
     <h2>v.9.0.0 - September 2023</h2>

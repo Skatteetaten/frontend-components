@@ -17,8 +17,7 @@
 
 ## Endringer i API
 
-<!-- For full API-dokumentasjon, vennligst se på <a class="brodtekst-link" href="https://www.skatteetaten.no/stilogtone/designsystemet/komponenter/textfield/">TextField komponent</a> på dokumentasjonssiden til designsystemet.
-// TODO FRONT-1304 EPI-dokumentasjon -->
+For full API-dokumentasjon, vennligst se på <a class="brodtekst-link" href="https://www.skatteetaten.no/stilogtone/designsystemet/komponenter/textfield/">TextField komponent</a> på dokumentasjonssiden til designsystemet.
 
 <div class="migration-tabell">
 <table>
