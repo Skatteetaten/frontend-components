@@ -115,7 +115,7 @@ Fluent-UI prop som er faset ut.
 <tr>
 <td>'isBlocking'</td>
 <td>
-Modalen lukkes ved klikk utenfor modalen by default. Bruk 'hideAutoClose' for å skru av autolukking.
+Modalen lukkes ved klikk utenfor modalen by default. Sett 'dismissOnOutsideClick' til false for å skru av autolukking.
 </td>
 </tr>
 <tr>
