@@ -26,6 +26,13 @@ import StepListMigration from './StepListMigration.md';
 import StepMigration from './StepMigration.md';
 import TableMigration from './TableMigration.md';
 import TextFieldMigration from './TextFieldMigration.md';
+import TopBannerMigration from './TopBannerMigration.md';
+import TopStripeButtonMigration from './TopStripeButtonMigration.md';
+import TopStripeLinkMigration from './TopStripeLinkMigration.md';
+import TopStripeMenuItemsMigration from './TopStripeMenuItemsMigration.md';
+import TopStripeMenuMigration from './TopStripeMenuMigration.md';
+import TopStripeMigration from './TopStripeMigration.md';
+import TopStripeUserMigration from './TopStripeUserMigration.md';
 import TypographyMigration from './TypographyMigration.md';
 
 export const MigrationGuides = [
@@ -55,5 +62,12 @@ export const MigrationGuides = [
   StepMigration,
   TableMigration,
   TextFieldMigration,
+  TopBannerMigration,
+  TopStripeButtonMigration,
+  TopStripeLinkMigration,
+  TopStripeMenuItemsMigration,
+  TopStripeMenuMigration,
+  TopStripeMigration,
+  TopStripeUserMigration,
   TypographyMigration,
 ];
