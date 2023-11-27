@@ -29,7 +29,7 @@ import { Spinner } from '@skatteetaten/frontend-components/Spinner';
 Nå:
 
 ```js static
-import { Spinner } from '@skatteetaten/ds-status';
+import { Spinner } from '@skatteetaten/ds-progress';
 
 <Spinner>{'Laster data'}</Spinner>;
 ```
@@ -84,7 +84,7 @@ Alternativer: 'black', 'white', 'blue'
 Nå:
 
 ```js static
-import { Spinner } from '@skatteetaten/ds-status';
+import { Spinner } from '@skatteetaten/ds-progress';
 
 <Spinner className={'customClassName'}>{'Laster data'}</Spinner>;
 ```

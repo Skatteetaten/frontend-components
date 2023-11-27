@@ -1,4 +1,4 @@
-**Fra @skatteetaten/frontend-components v5+ (designsystem-legacy) til Designsystemet v0.4.0**
+**Fra @skatteetaten/frontend-components v5+ (designsystem-legacy) til Designsystemet v0.5.0**
 
 Dropdown er blitt erstattet med Select.
 

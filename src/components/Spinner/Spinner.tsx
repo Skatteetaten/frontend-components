@@ -5,7 +5,7 @@ import { getClassNames } from './Spinner.classNames';
 import { SpinnerProps } from './Spinner.types';
 
 /**
- * @deprecated Komponenten er erstattet av Spinner fra "@skatteetaten/ds-status"
+ * @deprecated Komponenten er erstattet av Spinner fra "@skatteetaten/ds-progress"
  *
  * visibleName Spinner (Spinner)
  */
