@@ -10,6 +10,7 @@ import { AccordionItem } from '@skatteetaten/frontend-components/Accordion/Accor
       <li>Migration guide: Dialog</li>
       <li>Migration guide: Modal</li>
       <li>Migration guide: Spinner</li>
+      <li>Upgraded dependency: axios </li>
     </ul>
 
     <h2>v.9.0.1 - October 2023</h2>
