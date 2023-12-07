@@ -122,4 +122,10 @@ const ModalBase: React.FC<ModalProps> = (props: ModalProps) => {
   );
 };
 
+/**
+ * @deprecated Komponenten er erstattet av Modal fra "@skatteetaten/ds-overlays"
+ *
+ * visibleName Modal
+ */
+
 export const Modal = React.memo(ModalBase);

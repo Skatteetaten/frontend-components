@@ -6,6 +6,9 @@ type ModalProviderTypes = {
   children?: React.ReactNode;
 };
 
+/**
+ * @deprecated Komponenten er erstattet av Modal fra "@skatteetaten/ds-overlays"
+ */
 export const ModalProvider: React.FC<ModalProviderTypes> = ({ children }) => {
   const [modalList, setModalList] = useState<string[]>([]);
 
