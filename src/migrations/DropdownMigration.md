@@ -1,4 +1,4 @@
-**Fra @skatteetaten/frontend-components v5+ (designsystem-legacy) til Designsystemet v0.4.0**
+**Fra @skatteetaten/frontend-components v5+ (designsystem-legacy) til Designsystemet v0.5.0**
 
 Dropdown er blitt erstattet med Select.
 
@@ -18,8 +18,7 @@ Dropdown er blitt erstattet med Select.
 
 ## Endringer i API
 
-<!-- For full API-dokumentasjon, vennligst se på <a class="brodtekst-link" href="https://www.skatteetaten.no/stilogtone/designsystemet/komponenter/dropdown/">Dropdown komponent</a> på dokumentasjonssiden til designsystemet.
-// TODO FRONT-1210 EPI-dokumentasjon -->
+For full API-dokumentasjon, vennligst se på <a class="brodtekst-link" href="https://www.skatteetaten.no/stilogtone/designsystemet/komponenter/select/">Select komponent</a> på dokumentasjonssiden til designsystemet.
 
 <div class="migration-tabell">
 <table>
