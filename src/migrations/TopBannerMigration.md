@@ -173,6 +173,18 @@ const [language, setLanguage] = useState('nb');
 Nå:
 
 ```js static
+
+import { useRef, useState, ChangeEvent, MouseEvent } from 'react';
+
+import { Button, LinkGroup } from '@skatteetaten/ds-buttons';
+import { RadioGroup } from '@skatteetaten/ds-forms';
+import {
+  TopBannerExternal,
+  TopBannerExternalHandle,
+  User,
+} from '@skatteetaten/ds-layout';
+import { Modal } from '@skatteetaten/ds-overlays';
+
 () => {
   const modalRef = useRef<HTMLDialogElement>(null);
   const topBannerRef = useRef<TopBannerExternalHandle>(null);
