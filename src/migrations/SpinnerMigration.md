@@ -6,7 +6,7 @@
 
 ## Endringer i API:
 
-<!-- For full API-dokumentasjon, vennligst se på <a class="brodtekst-link" href="https://www.skatteetaten.no/stilogtone/designsystemet/komponenter/spinner/">Spinner komponent</a> på dokumentasjonssiden til designsystemet. -->
+For full API-dokumentasjon, vennligst se på <a class="brodtekst-link" href="https://www.skatteetaten.no/stilogtone/designsystemet/komponenter/spinner/">Spinner komponent</a> på dokumentasjonssiden til designsystemet.
 
 <div class="migration-tabell">
 <table>
@@ -29,7 +29,7 @@ import { Spinner } from '@skatteetaten/frontend-components/Spinner';
 Nå:
 
 ```js static
-import { Spinner } from '@skatteetaten/ds-status';
+import { Spinner } from '@skatteetaten/ds-progress';
 
 <Spinner>{'Laster data'}</Spinner>;
 ```
@@ -84,7 +84,7 @@ Alternativer: 'black', 'white', 'blue'
 Nå:
 
 ```js static
-import { Spinner } from '@skatteetaten/ds-status';
+import { Spinner } from '@skatteetaten/ds-progress';
 
 <Spinner className={'customClassName'}>{'Laster data'}</Spinner>;
 ```

@@ -2,7 +2,7 @@
   "name": "@skatteetaten/frontend-components",
   "groupId": "no.skatteetaten.aurora",
   "license": "Apache-2.0",
-  "version": "9.0.1",
+  "version": "10.0.0",
   "private": false,
   "sideEffects": false,
   "bin": {
@@ -27,7 +27,7 @@
   },
   "dependencies": {
     "@fluentui/react": "8.98.6",
-    "axios": "1.5.0",
+    "axios": "1.6.2",
     "classnames": "2.3.2",
     "hotkeys-js": "3.8.1",
     "i18next": "23.5.1",
