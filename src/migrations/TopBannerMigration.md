@@ -105,40 +105,138 @@ Faset ut.
 Før:
 
 ```javascript static
-import { ErrorSummary } from '@skatteetaten/frontend-components/ErrorSummary';
+import { useState } from 'react';
 
-<ErrorSummary
-  id={'errorsummary_example1'}
-  title={'For å gå videre må du rette opp i følgende:'}
-  titleTagName={'h2'}
-  errors={[
-    { id: 'input_aar-input', error: 'Inntekståret må være etter 2008' },
-    {
-      id: 'input_epost-input',
-      error: 'E-posten ser ikke riktig ut. Skriv slik: ola.normann@norge.no',
-    },
-    { id: 'input_dager-input', error: 'Antall dager må fylles ut.' },
-  ]}
-/>;
+import { Icon } from '@skatteetaten/frontend-components/Icon';
+import { Link } from '@skatteetaten/frontend-components/Link';
+import { TopBanner } from '@skatteetaten/frontend-components/TopBanner';
+import { TopStripe } from '@skatteetaten/frontend-components/TopStripe';
+import { LanguagePicker } from '@skatteetaten/frontend-components/TopStripe/LanguagePicker';
+import { TopStripeButton } from '@skatteetaten/frontend-components/TopStripe/TopStripeButton';
+import { TopStripeMenu } from '@skatteetaten/frontend-components/TopStripe/TopStripeMenu';
+
+const [language, setLanguage] = useState('nb');
+
+<div>
+  <TopBanner
+    external
+    title={'Side for publikum'}
+    homeText={'Tilbake til Min side'}
+    logoLink
+    topStripe={
+      <TopStripe>
+        <Link
+          path={'#main-content-id'}
+          text={'Hopp til hovedinnhold'}
+          skipLink
+        />
+
+        <Link
+          path={'https://www.skatteetaten.no/kontakt/'}
+          text={'Kontakt oss'}
+          placement="before"
+        />
+
+        <TopStripeMenu
+          showOnMobile={false}
+          closeMenuAriaLabel="Lukk endre skriftstørrelse"
+          title={'Endre skriftstørrelse'}
+          contentIsMenu={false}
+        >
+          <div style={{ fontSize: '24px', marginTop: '8px' }}>
+            Hold Ctrl-tasten nede (Cmd-tasten på Mac). Trykk på + for å
+            forstørre eller - for å forminske.
+          </div>
+        </TopStripeMenu>
+        <LanguagePicker
+          selectedLanguage={language}
+          setLanguage={setLanguage}
+          showOnMobile={true}
+          showSami={true}
+        />
+
+        <span>
+          <Icon
+            iconName="person"
+            style={{ fontSize: '20px', verticalAlign: 'sub' }}
+          />
+          Ola Normann
+        </span>
+
+        <Link path={'#topstripe'} text={'Logg ut'} placement="before" />
+      </TopStripe>
+    }
+  />
+</div>;
 ```
 
 Nå:
 
 ```js static
-import { ErrorSummary } from '@skatteetaten/ds-forms';
+() => {
+  const modalRef = useRef<HTMLDialogElement>(null);
+  const topBannerRef = useRef<TopBannerExternalHandle>(null);
+  const [user, setUser] = useState<User>();
+  const [isLoggedIn, setIsLoggedIn] = useState<boolean>(false);
+  const handleLanguageClick = (e: MouseEvent<HTMLButtonElement>): void => {
+    const lang = e.currentTarget.lang;
+    dsI18n.changeLanguage(langToLocale[lang]);
+  };
+  const handleLogOut = (): void => {
+    setUser(undefined);
+    setIsLoggedIn(false);
+  };
+  const handleLogIn = (): void => {
+    modalRef.current?.showModal();
+  };
+  const handleChangeRole = (e: ChangeEvent<HTMLInputElement>): void => {
+    setIsLoggedIn(true);
+    const role = (e.target.value as UserRole);
+    if (role === 'meg') {
+      setUser({
+        role
+      });
+    } else {
+      setUser({
+        role,
+        name: 'Knotten, Gudleik'
+      });
+    }
+  };
+  const links = [{
+    href: '#storybook-root',
+    text: 'Skatt'
+  }, {
+    href: '#storybook-root',
+    text: 'Avgift'
+  }, {
+    href: '#storybook-root',
+    text: 'Folkeregisteret'
+  }];
+  return <>
+      <TopBannerExternal ref={topBannerRef} firstColumn={<LinkGroup>
+            {links.map((link, index) => <LinkGroup.Link key={index} href={link.href} onClick={(e): void => {
+        e.preventDefault();
+        topBannerRef.current?.closeMenu?.();
+      }}>
+                {link.text}
+              </LinkGroup.Link>)}
+          </LinkGroup>} secondColumn={isLoggedIn ? 'Second column' : ''} thirdColumn={isLoggedIn ? 'Third column' : ''} user={user} onLanguageClick={handleLanguageClick} onLogInClick={handleLogIn} onLogOutClick={handleLogOut} onUserClick={(): void => modalRef.current?.showModal()} />
+      <Modal ref={modalRef} title={'Dette er dine roller'}>
+        <RadioGroup legend={'Velge en rolle'} selectedValue={user?.role ?? ''} onChange={handleChangeRole}>
+          <RadioGroup.Radio value={'meg'}>
+            {'Innlogget som meg selv'}
+          </RadioGroup.Radio>
+          <RadioGroup.Radio value={'andre'}>
+            {'Innlogget som annen person'}
+          </RadioGroup.Radio>
+          <RadioGroup.Radio value={'virksomhet'}>
+            {'Innlogget som virksomhet'}
+          </RadioGroup.Radio>
+        </RadioGroup>
+        <Button onClick={(): void => modalRef.current?.close()}>{'Ok'}</Button>
+      </Modal>
+    </>;
+}
 
-<ErrorSummary
-  title={'For å gå videre må du rette opp i følgende:'}
-  showErrorSummary
->
-  <ErrorSummary.Error referenceId={'input_aar-input'}>
-    {'Inntekståret må være etter 2008'}
-  </ErrorSummary.Error>
-  <ErrorSummary.Error referenceId={'input_epost-input'}>
-    {'E-posten ser ikke riktig ut. Skriv slik: ola.normann@norge.no'}
-  </ErrorSummary.Error>
-  <ErrorSummary.Error referenceId={'input_dager-input'}>
-    {'Antall dager må fylles ut.'}
-  </ErrorSummary.Error>
-</ErrorSummary>;
 ```
