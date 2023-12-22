@@ -2,7 +2,7 @@
 
 ## Endringer i funksjonalitet:
 
-- TopStripeMenu er innebygd i TopBannerExternal.
+- LanguagePicker er innebygd i TopBannerExternal.
 
 ## Styling:
 
@@ -18,17 +18,19 @@ For full API-dokumentasjon, vennligst se på <a class="brodtekst-link" href="htt
 <thead><tr><th>Tidligere Prop</th><th>Alternativ</th></tr></thead>
 <tbody>
 <tr>
-<td>'showOnMobile'</td>
+<td>'selectedLanguage'</td>
 <td>
 Faset ut.
 </td>
 </tr>
 <tr>
-<td>'title'</td>
+<tr>
+<td>'setLanguage'</td>
 <td>
 Faset ut.
 </td>
 </tr>
+<tr>
 <tr>
 <td>'className'</td>
 <td>
@@ -36,79 +38,15 @@ Faset ut.
 </td>
 </tr>
 <tr>
-<td>'closeMenuAriaLabel'</td>
+<tr>
+<td>'showOnMobile'</td>
 <td>
 Faset ut.
 </td>
 </tr>
 <tr>
-<td>'closeOnClick'</td>
-<td>
-Faset ut.
-</td>
-</tr>
 <tr>
-<td>'contentIsMenu'</td>
-<td>
-Faset ut.
-</td>
-</tr>
-<tr>
-<td>'defaultSelected'</td>
-<td>
-Faset ut.
-</td>
-</tr>
-<tr>
-<td>'icon'</td>
-<td>
-Faset ut.
-</td>
-</tr>
-<tr>
-<td>'index'</td>
-<td>
-Faset ut.
-</td>
-</tr>
-<tr>
-<td>'openInNew'</td>
-<td>
-Faset ut.
-</td>
-</tr>
-<tr>
-<td>'path'</td>
-<td>
-Faset ut.
-</td>
-</tr>
-<tr>
-<td>'placement'</td>
-<td>
-Faset ut.
-</td>
-</tr>
-<tr>
-<td>'renderContent'</td>
-<td>
-Faset ut.
-</td>
-</tr>
-<tr>
-<td>'showChevron'</td>
-<td>
-Faset ut.
-</td>
-</tr>
-<tr>
-<td>'skipLink'</td>
-<td>
-Faset ut.
-</td>
-</tr>
-<tr>
-<td>'text'</td>
+<td>'showSami'</td>
 <td>
 Faset ut.
 </td>

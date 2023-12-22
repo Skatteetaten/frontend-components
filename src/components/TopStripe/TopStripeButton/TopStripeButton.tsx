@@ -4,8 +4,8 @@ import { getClassNames } from './TopStripeButton.classNames';
 import { UseScreen } from '../../utils';
 import { TopStripeButtonProps } from '../TopStripe.types';
 
-/*
- * visibleName TopStripeButton (Toppstripe-knapp)
+/**
+ * @deprecated Komponenten er erstattet av innebygget funksjonalitet i TopBannerExternal fra "@skatteetaten/ds-layout"
  */
 export const TopStripeButton: React.FC<TopStripeButtonProps> = (props) => {
   const {

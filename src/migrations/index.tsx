@@ -5,14 +5,16 @@ import ButtonLinkMigration from './ButtonLinkMigration.md';
 import ButtonMigration from './ButtonMigration.md';
 import CardMigration from './CardMigration.md';
 import CheckBoxMigration from './CheckBoxMigration.md';
-import DropdownMigration from './DropdownMigration.md';
 import DialogMigration from './DialogMigration.md';
+import DropdownMigration from './DropdownMigration.md';
 import ErrorMessageMigration from './ErrorMessageMigration.md';
 import ErrorSummaryMigration from './ErrorSummaryMigration.md';
+import FileUploaderMigration from './FileUploaderMigration.md';
 import FooterContentMigration from './FooterContentMigration.md';
 import IconButtonMigration from './IconButtonMigration.md';
 import IconMigration from './IconMigration.md';
 import LabelWithCalloutMigration from './LabelWithCalloutMigration.md';
+import LanguagePickerMigration from './LanguagePickerMigration.md';
 import LinkGroupMigration from './LinkGroupMigration.md';
 import LinkMigration from './LinkMigration.md';
 import MessageBarMigration from './MessageBarMigration.md';
@@ -45,10 +47,12 @@ export const MigrationGuides = [
   DropdownMigration,
   ErrorMessageMigration,
   ErrorSummaryMigration,
+  FileUploaderMigration,
   FooterContentMigration,
   IconButtonMigration,
   IconMigration,
   LabelWithCalloutMigration,
+  LanguagePickerMigration,
   LinkGroupMigration,
   LinkMigration,
   MessageBarMigration,

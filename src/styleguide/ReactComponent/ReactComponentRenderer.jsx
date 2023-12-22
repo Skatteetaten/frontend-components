@@ -68,7 +68,7 @@ export function ReactComponentRenderer({
           setMigrationGuideExamples(chunkifiedExamples);
         })
         .catch((err) => {
-          console.log(err);
+          console.error(err);
         });
     } else {
       setMigrationGuideExamples([]);

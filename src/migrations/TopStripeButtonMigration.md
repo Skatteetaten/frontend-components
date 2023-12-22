@@ -1,8 +1,8 @@
-**Fra @skatteetaten/frontend-components v5+ (designsystem-legacy) til Designsystemet v0.6.0**
+**Fra @skatteetaten/frontend-components v11+ (designsystem-legacy) til Designsystemet v0.6.0**
 
 ## Endringer i funksjonalitet:
 
-- TopStripeButton er innebygd i TopBanner.
+- TopStripeButton er innebygd i TopBannerExternal.
 
 ## Styling:
 
@@ -10,7 +10,7 @@
 
 ## Endringer i API
 
-<!-- For full API-dokumentasjon, vennligst se på <a class="brodtekst-link" href="https://www.skatteetaten.no/stilogtone/designsystemet/komponenter/topbanner/">TopBannerExternal komponent</a> på dokumentasjonssiden til designsystemet. -->
+For full API-dokumentasjon, vennligst se på <a class="brodtekst-link" href="https://www.skatteetaten.no/stilogtone/designsystemet/under-arbeid/topbanner/">TopBannerExternal komponent</a> på dokumentasjonssiden til designsystemet.
 
 <div class="migration-tabell">
 <table>

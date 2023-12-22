@@ -87,7 +87,6 @@ module.exports = {
           name: 'Sidelayout',
           content: 'src/sections/monstre/sidelayout.md',
         },
-        ,
         {
           name: 'Ledetekst',
           content: 'src/sections/monstre/ledetekst.md',
@@ -114,6 +113,7 @@ module.exports = {
       'Pagination',
       'SkeBasis',
       'TopBanner',
+      'LanguagePicker',
       'TopStripe',
       'TopStripeMenu',
       'TopStripeButton',

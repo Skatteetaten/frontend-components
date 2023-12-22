@@ -1,8 +1,8 @@
-**Fra @skatteetaten/frontend-components v5+ (designsystem-legacy) til Designsystemet v0.6.0**
+**Fra @skatteetaten/frontend-components v11+ (designsystem-legacy) til Designsystemet v0.6.0**
 
 ## Endringer i funksjonalitet:
 
-- TopStripeMenuItems er innebygd i TopBanner.
+- TopStripeMenuItems er innebygd i TopBannerExternal.
 
 ## Styling:
 
