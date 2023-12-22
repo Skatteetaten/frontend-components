@@ -10,7 +10,7 @@ Det er fortsatt bevegelse i bruk og navngiving av props på ny FileUploader. Se 
 
 ## Endringer i API
 
-For full API-dokumentasjon, vennligst se på <a class="brodtekst-link" href="https://www.skatteetaten.no/stilogtone/designsystemet/under-arbeid/fileuploader/">TopBannerExternal komponent</a> på dokumentasjonssiden til designsystemet.
+For full API-dokumentasjon, vennligst se på <a class="brodtekst-link" href="https://www.skatteetaten.no/stilogtone/designsystemet/under-arbeid/fileuploader/">FileUploader komponent</a> på dokumentasjonssiden til designsystemet.
 
 <div class="migration-tabell">
 <table>
