@@ -55,19 +55,86 @@ Denne gjelder intern TopBanner.
 <tr>
 <td>'language'</td>
 <td>
-'lang'
+'defaultLocale' 
+Språk på logen vil automatisk endres ut i fra hvilket språk som er valgt. 'defaultLocale' styrer
+hvilket språk som er forhåndsvalgt.
 </td>
 </tr>
 <tr>
 <td>'logoLink'</td>
 <td>
-'Legg inn nytt navn'
+'logo.as'
+
+Alternativer: 'a' | 'div'. 'a' er default.
+
+Før:
+
+```javascript static
+import { TopBanner } from '@skatteetaten/frontend-components/TopBanner';
+
+<TopBanner
+  external
+  title={'Side for publikum'}
+  homeText={'Tilbake til Min side'}
+  logoLink={false}
+/>;
+```
+
+Nå:
+
+```js static
+import { useRef, useState, ChangeEvent, MouseEvent } from 'react';
+
+import { TopBannerExternal } from '@skatteetaten/ds-layout';
+
+() => <TopBannerExternal logo={{ as: 'div' }} />;
+```
+
 </td>
 </tr>
 <tr>
 <td>'logoLinkUrl'</td>
 <td>
-'Legg inn nytt navn'
+'logo.href'
+
+For å kunne overstyre standard url må man også overstyre standard logo.
+
+Før:
+
+```javascript static
+import { TopBanner } from '@skatteetaten/frontend-components/TopBanner';
+
+<TopBanner
+  external
+  title={'Side for publikum'}
+  homeText={'Tilbake til Min side'}
+  logoLinkUrl={
+    'https://www.skatteetaten.no/stilogtone/designsystemet/kom-i-gang/'
+  }
+/>;
+```
+
+Nå:
+
+```js static
+import { useRef, useState, ChangeEvent, MouseEvent } from 'react';
+import customLogo from '../../assets/custom-logo.svg';
+import customMobileLogo from '../../assets/custom-mobile-logo.svg';
+
+import { TopBannerExternal } from '@skatteetaten/ds-layout';
+
+() => (
+  <TopBannerExternal
+    logo={{
+      logo: customLogo,
+      mobileLogo: 'customMobileLogo',
+      href: 'https://www.skatteetaten.no/stilogtone/designsystemet/kom-i-gang/',
+      alt: 'beskrivende tekst',
+    }}
+  />
+);
+```
+
 </td>
 </tr>
 <tr>
@@ -205,7 +272,7 @@ import { Modal } from '@skatteetaten/ds-overlays';
   };
   const handleChangeRole = (e: ChangeEvent<HTMLInputElement>): void => {
     setIsLoggedIn(true);
-    const role = (e.target.value as UserRole);
+    const role = (e.target.value as User["role"]);
     if (role === 'meg') {
       setUser({
         role
