@@ -55,7 +55,7 @@ Denne gjelder intern TopBanner.
 <tr>
 <td>'language'</td>
 <td>
-'defaultLocale' 
+'Faset ut' 
 Språk på logen vil automatisk endres ut i fra hvilket språk som er valgt. 'defaultLocale' styrer
 hvilket språk som er forhåndsvalgt.
 </td>
@@ -87,7 +87,7 @@ import { useRef, useState, ChangeEvent, MouseEvent } from 'react';
 
 import { TopBannerExternal } from '@skatteetaten/ds-layout';
 
-() => <TopBannerExternal logo={{ as: 'div' }} />;
+<TopBannerExternal logo={{ as: 'div' }} />;
 ```
 
 </td>
@@ -117,22 +117,19 @@ import { TopBanner } from '@skatteetaten/frontend-components/TopBanner';
 Nå:
 
 ```js static
-import { useRef, useState, ChangeEvent, MouseEvent } from 'react';
 import customLogo from '../../assets/custom-logo.svg';
 import customMobileLogo from '../../assets/custom-mobile-logo.svg';
 
 import { TopBannerExternal } from '@skatteetaten/ds-layout';
 
-() => (
-  <TopBannerExternal
-    logo={{
-      logo: customLogo,
-      mobileLogo: 'customMobileLogo',
-      href: 'https://www.skatteetaten.no/stilogtone/designsystemet/kom-i-gang/',
-      alt: 'beskrivende tekst',
-    }}
-  />
-);
+<TopBannerExternal
+  logo={{
+    logo: customLogo,
+    mobileLogo: 'customMobileLogo',
+    href: 'https://www.skatteetaten.no/stilogtone/designsystemet/kom-i-gang/',
+    alt: 'beskrivende tekst',
+  }}
+/>;
 ```
 
 </td>
@@ -253,8 +250,8 @@ import {
   User,
 } from '@skatteetaten/ds-layout';
 import { Modal } from '@skatteetaten/ds-overlays';
+import { dsI18n, langToLocale } from "@skatteetaten/ds-core-utils";
 
-() => {
   const modalRef = useRef<HTMLDialogElement>(null);
   const topBannerRef = useRef<TopBannerExternalHandle>(null);
   const [user, setUser] = useState<User>();
@@ -285,13 +282,13 @@ import { Modal } from '@skatteetaten/ds-overlays';
     }
   };
   const links = [{
-    href: '#storybook-root',
+    href: '#',
     text: 'Skatt'
   }, {
-    href: '#storybook-root',
+    href: '#',
     text: 'Avgift'
   }, {
-    href: '#storybook-root',
+    href: '#',
     text: 'Folkeregisteret'
   }];
   return <>
@@ -318,6 +315,4 @@ import { Modal } from '@skatteetaten/ds-overlays';
         <Button onClick={(): void => modalRef.current?.close()}>{'Ok'}</Button>
       </Modal>
     </>;
-}
-
 ```
