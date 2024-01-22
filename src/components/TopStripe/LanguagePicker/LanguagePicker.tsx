@@ -116,6 +116,9 @@ export interface LanguagePickerProps {
   showSami?: boolean;
 }
 
+/**
+ * @deprecated Komponenten er erstattet av innebygget funksjonalitet i TopBannerExternal fra "@skatteetaten/ds-layout"
+ */
 export const LanguagePicker: React.FC<LanguagePickerProps> = (props) => {
   const {
     className,
