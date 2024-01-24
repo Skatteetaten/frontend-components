@@ -122,12 +122,6 @@ Faset ut.
 </td>
 </tr>
 <tr>
-<td>'label'</td>
-<td>
-'label'
-</td>
-</tr>
-<tr>
 <td>'labelButtonAriaLabel'</td>
 <td>
 Faset ut.
@@ -136,7 +130,7 @@ Faset ut.
 <tr>
 <td>'labelWithCalloutProps'</td>
 <td>
-'labelWithHelpProps'
+Faset ut.
 </td>
 </tr>
 <tr>
