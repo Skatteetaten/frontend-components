@@ -2,20 +2,26 @@
 
 ## Endringer i funksjonalitet:
 
-Det er fortsatt bevegelse i bruk og navngiving av props på ny FileUploader. Se Storybook for tilgjengelige props og eksemplene nederst på denne siden.
+Det er fortsatt bevegelse i bruk og navngiving av props på ny FileUploader. Se Storybook for tilgjengelige props og
+eksemplene nederst på denne siden.
 
 - Ny FileUploader håndterer ikke HTTP-kall og har ikke avhengiget til axios. 'onFileChange' kan brukes til å fange opp
   filer som ble lagt til av bruker og til å håndtere HTTP-kall for opplastning.
-- Fordi ny komponent legger opp til at HTTP-kall håndteres utenfor komponenten har den ikke lenger intern tilstandshåndtering av filer og feilmeldinger.
-  Det vil si at man får full kontrol til å håndtere tilstanden selv. Alternativt kan man benytte hook useFileUploader som eksporterer metoder som kan brukes til tilstandshåndtering.
+- Fordi ny komponent legger opp til at HTTP-kall håndteres utenfor komponenten har den ikke lenger intern
+  tilstandshåndtering av filer og feilmeldinger.
+  Det vil si at man får full kontrol til å håndtere tilstanden selv. Alternativt kan man benytte hook useFileUploader
+  som eksporterer metoder som kan brukes til tilstandshåndtering.
 
 ## Styling:
 
-- de nye komponentene i designsystemet er avhengige av designtokens. Disse leveres nå som en separat pakke. <a class="brodtekst-link" href="#section-designtokens-deprecated">Se designtokens for detaljer.</a>
+- de nye komponentene i designsystemet er avhengige av designtokens. Disse leveres nå som en separat
+  pakke. <a class="brodtekst-link" href="#section-designtokens-deprecated">Se designtokens for detaljer.</a>
 
 ## Endringer i API
 
-For full API-dokumentasjon, vennligst se på <a class="brodtekst-link" href="https://www.skatteetaten.no/stilogtone/designsystemet/under-arbeid/fileuploader/">FileUploader komponent</a> på dokumentasjonssiden til designsystemet.
+For full API-dokumentasjon, vennligst se
+på <a class="brodtekst-link" href="https://www.skatteetaten.no/stilogtone/designsystemet/under-arbeid/fileuploader/">
+FileUploader komponent</a> på dokumentasjonssiden til designsystemet.
 
 <div class="migration-tabell">
 <table>
@@ -240,98 +246,105 @@ Nå:
 
 ```javascript static
 import { useState } from 'react';
-import { FileUploader } from '@skatteetaten/ds-forms';
+import { FileUploader, UploadedFile } from '@skatteetaten/ds-forms';
 
 
 const [fileUploaderState, setSuccess, setLoading, setFailure, remove] =
   FileUploader.useFileUploader();
 
-const [error, setError] = useState<string>();
+const [error, setError] = useState < string > ();
 const uploadUrl = 'http://localhost:9090/test';
 
-return (
-    <FileUploader
-      label={'Dokumentasjon og grunnlag'}
-      helpText={'Trenger du hjelp?'}
-      acceptedFileFormats={['.pdf', '.jpeg', '.png']}
-      invalidCharacterRegexp={/e/g}
-      shouldNormalizeFileName
-      {...fileUploaderState}
-      errorMessage={error ?? ''}
-      hasError={!!error}
-      multiple
-      onFileDelete={(file: string): boolean => {
-        let deleteStatus = true;
+return (<FileUploader
+    label={'Dokumentasjon og grunnlag'}
+    helpText={'Trenger du hjelp?'}
+    acceptedFileFormats={['.pdf', '.jpeg', '.png']}
+    invalidCharacterRegexp={/e/g}
+    shouldNormalizeFileName
+    {...fileUploaderState}
+    errorMessage={error ?? ''}
+    hasError={!!error}
+    multiple
+    onFileDelete={(file): boolean => {
+      let deleteStatus = true;
 
-        fetch(uploadUrl, {
-        method: 'DELETE',
-      }).then((response) => {
-        if (!response.ok) {
-        deleteStatus = false;
-      } else {
-        remove(file);
-      }
-      });
-        return deleteStatus;
-      }}
-      onFileChange={async (files: File[]): Promise<void> => {
-        setLoading();
-        setError('');
-        if (files.some((file) => file.size > 900_000)) {
-        setError('Filen er for stor eller noe');
-        return;
-      }
+      fetch(uploadUrl, {
+      method: 'DELETE',
+    }).then((response) => {
+      if (!response.ok) {
+      deleteStatus = false;
+    } else {
+      remove(file);
+    }
+    });
+      return deleteStatus;
+    }}
+    onFileChange={async(files: File[]): Promise<void> => {
+      setLoading();
+      setError('');
+      if (files.some((file) => file.size > 900_000)) {
+      setError('Filen er for stor eller noe');
+      return;
+    }
 
-        const succeeded: Array<{ name: string; href?: string }> = [];
-        const failed: Array<{ name: string; reason: string }> = [];
+      const succeeded: Array<UploadedFile> = [];
+      const failed: Array<{name: string; reason: string; id?: string}> =
+      [];
 
-        let uploadPromises: Promise<{ name: string; href?: string }>[] = [];
+      let uploadPromises: Promise<{name: string, href?: string}>[] = [];
 
-        uploadPromises = files.map((file) =>
-        fetch(uploadUrl, {
-        method: 'POST',
-        body: file,
-      }).then((response) => {
-        if (!response.ok) {
-        return Promise.reject(response);
-      }
-        return response.json();
-      })
-        );
+      uploadPromises = files.map((file) =>
+      fetch(uploadUrl, {
+      method: 'POST',
+      body: file,
+    }).then((response) => {
+      if (!response.ok) {
+      return Promise.reject(response);
+    }
+      return response.json();
+    })
+      );
 
-        const results = await Promise.allSettled(uploadPromises);
+      const results = await Promise.allSettled(uploadPromises);
 
-        results.forEach((result, index) => {
-        if (result.status === 'fulfilled') {
-        succeeded.push({
-        name: files[index].name,
-        href: result.value.href,
-      });
-      } else if (result.status === 'rejected') {
-        failed.push({
-        name: files[index].name,
-        reason: result.reason.statusText,
-      });
-      }
-      });
+      results.forEach((result, index) => {
+      if (result.status === 'fulfilled') {
+      succeeded.push({
+      name: files[index].name,
+      href: result.value.href,
+      id: Math.random().toString(36).substring(2, 10),
+    });
+    } else if (result.status === 'rejected') {
+      failed.push({
+      name: files[index].name,
+      reason: result.reason.statusText,
+      id: Math.random().toString(36).substring(2, 10),
+    });
+    }
+    });
 
-        if (failed.length) {
-        const error = `${failed.length} av ${files.length} filer ble ikke lastet Opp`;
-        setFailure(
-        failed.map(({ name, reason }) => ({
-        name,
-        errorMessage: reason,
-      })),
-        [{ error, files: failed.map((file) => file.name) }],
-        succeeded
-        );
-      } else {
-        setSuccess(succeeded);
-      }
-      }}
-    ></FileUploader>
-);
-
-
+      if (failed.length) {
+      const error = `${failed.length} av ${files.length} filer ble ikke lastet Opp`;
+      setFailure(
+      failed.map(({name, reason}) => ({
+      name,
+      errorMessage: reason,
+    })),
+      [
+        {
+          error,
+          files: failed.map(({name, id}) => ({
+          name,
+          id,
+        })),
+        },
+      ],
+      succeeded
+      );
+    } else {
+      setSuccess(succeeded);
+    }
+    }}
+  ></FileUploader>
 );
 ```
