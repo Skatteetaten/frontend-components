@@ -10,6 +10,9 @@ interface TopStripeUserProps {
   className?: string;
 }
 
+/**
+ * @deprecated Komponenten er erstattet av innebygget funksjonalitet i TopBannerExternal fra "@skatteetaten/ds-layout"
+ */
 export const TopStripeUser: FC<TopStripeUserProps> = (props) => {
   const styles = getClassNames();
   const { name, showOnMobile = true, className } = props;

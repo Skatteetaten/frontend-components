@@ -30,8 +30,8 @@ export interface TopStripeMenuProps extends Omit<LinkProps, 'title'> {
   contentIsMenu?: boolean;
 }
 
-/*
- * visibleName TopStripeMenu (ToppstripeMeny)
+/**
+ * @deprecated Komponenten er erstattet av innebygget funksjonalitet i TopBannerExternal fra "@skatteetaten/ds-layout"
  */
 export const TopStripeMenu: React.FC<TopStripeMenuProps> = (props) => {
   const styles = getClassNames();
