@@ -70,6 +70,9 @@ const getFileIconName = (fil: AttachmentMetadata) => {
   return fileType ? fileType : FilTyperNavn.File;
 };
 
+/**
+ * @deprecated FileUploader er erstattet av FileUploader fra "@skatteetaten/ds-forms"
+ */
 export const FileUploader: React.FC<FileUploaderProps> = (props) => {
   const {
     acceptedFileFormats,
