@@ -4,7 +4,7 @@ import { AccordionItem } from '@skatteetaten/frontend-components/Accordion/Accor
 
 <div>
   <div lang="en">
-    <h2>v11.0.0 - February 2024</h2>
+    <h2>v.11.0.0 - February 2024</h2>
     <ul>
       <li>Migration guide: TopBanner</li>
       <li>Migration guide: FileUploader</li>
