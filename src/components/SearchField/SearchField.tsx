@@ -36,7 +36,8 @@ const limitNumberOfResults = (list: Array<IDropdownOption>, limit?: number) => {
   return list;
 };
 
-/*
+/**
+ * @deprecated Komponenten er erstattet av SearchField fra "@skatteetaten/ds-forms"
  * visibleName SearchField (Søkefelt)
  */
 export const SearchField: React.FC<SearchFieldProps> = (props) => {
