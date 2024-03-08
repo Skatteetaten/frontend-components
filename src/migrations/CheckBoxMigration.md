@@ -6,7 +6,8 @@
 - checkboksen vises alltid foran labelen
 - kan legge til beskrivelse 'description' under labelen
 - kan legge til stjerne bak labelen 'showRequiredMark' for å vise at checkboksen er obligatorisk
-- bruk CheckboxGroup ved en gruppe checkbokser og bruk 'legend' for å erstatte LabelWithCallOut (se nederst i tabellen)
+- for en gruppe checkbokser bruk CheckboxGroup som tilbyr 'legend' og innebygd hjelpe-funksjonalitet ('helpText', 'helpSvgPath' og 'titleHelpSvg') som erstatter LabelWithCallOut (se nederst i tabellen)
+  - hjelpe- og advarseltekst er slått sammen til en prop og det er mulig å ha et valgfritt ikon istedenfor default spørsmålstegn-ikon
 
 ## Styling:
 
@@ -55,7 +56,7 @@ Før:
 ```javascript static
 import { CheckBox } from '@skatteetaten/frontend-components/CheckBox';
 
-<CheckBox boxSide="start" label="Jeg bekrefter at opplysningene stemmer" />;
+<CheckBox boxSide={'start'} label={'Jeg bekrefter at opplysningene stemmer'} />;
 ```
 
 Nå:
@@ -92,7 +93,6 @@ Alle komponentene våre bruker forwardRef. For komponent sendes 'ref' til &lt;in
 
 ```js static
 import { Checkbox } from '@skatteetaten/ds-forms';
-
 <Checkbox
   errorMessage={'Du må lese og forstå innholdet for å gå videre'}
   hasError
@@ -139,7 +139,7 @@ import { CheckBox } from '@skatteetaten/frontend-components/CheckBox';
 
 <CheckBox
   style={{ fontSize: '24px', color: '#1362ae' }}
-  label="Jeg bekrefter at opplysningene stemmer"
+  label={'Jeg bekrefter at opplysningene stemmer'}
 />;
 ```
 
@@ -148,7 +148,7 @@ Nå:
 ```js static
 import { Checkbox } from '@skatteetaten/ds-forms';
 
-<Checkbox className="myCustomClassname">
+<Checkbox className={'myCustomClassname'}>
   {'Jeg bekrefter at opplysningene stemmer'}
 </Checkbox>;
 ```
@@ -171,26 +171,27 @@ Før:
 import { CheckBox } from '@skatteetaten/frontend-components/CheckBox';
 import { LabelWithCallout } from '@skatteetaten/frontend-components/LabelWithCallout';
 
-<div style={{ maxWidth: '500px' }}>
-  <fieldset style={{ border: 'none', margin: '0', padding: '0' }}>
-    <LabelWithCallout
-      inFieldset
-      label="Velg det som gjelder deg"
-      help="Du kan få fradrag for enkelte ting om helse og familie. Velg deg som gjelder for deg."
-    />
-    <div style={{ height: '8px' }} />
-    <CheckBox boxSide={'start'} label="Har barn under 12 år" />
-    <CheckBox
-      boxSide={'start'}
-      label="Får ekstra reisevei til jobb på grunn av levering til barnehage eller skolefritidsordning"
-    />
-    <CheckBox
-      boxSide={'start'}
-      label="Har barn som er 12 år eller eldre og som har særskilt omsorgsbehov"
-    />
-    <CheckBox boxSide={'start'} label="Er enslig forsørger" />
-  </fieldset>
-</div>;
+<fieldset>
+  <LabelWithCallout
+    inFieldset
+    label={'Velg det som gjelder deg'}
+    help={
+      'Du kan få fradrag for enkelte ting om helse og familie. Velg deg som gjelder for deg.'
+    }
+  />
+  <CheckBox boxSide={'start'} label={'Har barn under 12 år'} />
+  <CheckBox
+    boxSide={'start'}
+    label={
+      'Får ekstra reisevei til jobb på grunn av levering til barnehage eller skolefritidsordning'
+    }
+  />
+  <CheckBox
+    boxSide={'start'}
+    label={'Har barn som er 12 år eller eldre og som har særskilt omsorgsbehov'}
+  />
+  <CheckBox boxSide={'start'} label={'Er enslig forsørger'} />
+</fieldset>;
 ```
 
 Nå:
@@ -198,7 +199,12 @@ Nå:
 ```js static
 import { CheckboxGroup } from '@skatteetaten/ds-forms';
 
-<CheckboxGroup legend={'Velg det som gjelder deg'}>
+<CheckboxGroup
+  legend={'Velg det som gjelder deg'}
+  helpText={
+    'Du kan få fradrag for enkelte ting om helse og familie. Velg deg som gjelder for deg.'
+  }
+>
   <CheckboxGroup.Checkbox>{'Har barn under 12 år'}</CheckboxGroup.Checkbox>
   <CheckboxGroup.Checkbox>
     {

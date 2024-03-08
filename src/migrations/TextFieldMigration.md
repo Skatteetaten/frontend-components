@@ -254,6 +254,7 @@ import { TextField } from '@skatteetaten/ds-forms';
 <TextField
   label={'Navn'}
   classNames={{
+    container: 'myContainerClassname',
     label: 'myLabelClassname',
     textbox: 'myTextboxClassname',
     errorMessage: 'myErrorMessageClassname',
@@ -280,6 +281,8 @@ import { TextField } from '@skatteetaten/frontend-components/TextField';
   label={'Navn'}
   help={'Vi trenger å vite navnet ditt dersom vi skal kontakte deg senere.'}
 />;
+
+// ELLER
 
 <TextField
   label={'Antall barn'}

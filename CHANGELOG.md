@@ -26,6 +26,10 @@ import { AccordionItem } from '@skatteetaten/frontend-components/Accordion/Accor
     <h2>v.9.0.1 - October 2023</h2>
     <ul>
       <li>Add EPI documentation links to migration guides</li>
+      <li>
+        Update migration guides (Checkbox- and RadioGroup) with help
+        functionality
+      </li>
     </ul>
 
     <h2>v.9.0.0 - September 2023</h2>

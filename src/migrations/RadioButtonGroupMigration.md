@@ -3,8 +3,8 @@
 ## Endringer i funksjonalitet:
 
 - RadioButtonGroup har endret navn til RadioGroup
-- det er ikke mulig med hjelpetekst i denne versjonen av komponenten
 - feilmelding og påkrevd felter har endret logikk
+- hjelpe- og advarseltekst er slått sammen til en prop og det er mulig å ha et valgfritt ikon istedenfor default spørsmålstegn-ikon
 - beskrivelse til en ledetekst er blitt en egen prop 'description', se eksempel for prop 'options' i tabell over endringer i komponent-API'et.
 
 ## Styling:
@@ -296,6 +296,61 @@ import { RadioGroup } from '@skatteetaten/ds-forms';
 </td>
 </tr>
 <tr>
+<td>'help'
+
+'warning'
+
+</td>
+<td>'helpText', 'helpSvgPath', 'titleHelpSvg'
+
+Før:
+
+```javascript static
+import { RadioButtonGroup } from '@skatteetaten/frontend-components/RadioButtonGroup';
+
+<RadioButtonGroup
+  label={'Type virksomhet'}
+  options={...}
+  help={'Type virksomhet vil påvirke hva du må rapportere til oss.'}
+/>;
+
+// ELLER
+
+<RadioButtonGroup
+  label={'Type virksomhet'}
+  options={...}
+  warning={'Er du sikker på at riktig type virksomhet er oppgitt?'}
+/>;
+
+```
+
+Nå:
+
+```js static
+import { RadioGroup } from '@skatteetaten/ds-forms';
+import { WarningSVGPath } from '@skatteetaten/ds-icons';
+
+<RadioGroup
+  legend={'Type virksomhet'}
+  helpText={'Type virksomhet vil påvirke hva du må rapportere til oss.'}
+>
+  ...
+</RadioGroup>;
+
+// ELLER
+
+<RadioGroup
+  legend={'Type virksomhet'}
+  helpText={'Er du sikker på at riktig type virksomhet er oppgitt?'}
+  helpSvgPath={WarningSVGPath}
+>
+  ...
+</RadioGroup>;
+```
+
+</td>
+</tr>
+<tr>
 <td>'styles'
 
 'theme'
@@ -334,18 +389,14 @@ import { RadioGroup } from '@skatteetaten/ds-forms';
 <tr>
 <td>'calloutFloating'
 
-'help'
-
 'labelButtonAriaLabel'
 
 'labelWithCalloutProps'
 
 'onCalloutToggle'
 
-'warning'
-
 </td>
-<td>Faset ut. Komponenten vil bli utvidet med mulighet for hjelpetekst på et senere tidspunkt. </td>
+<td>Faset ut.</td>
 </tr>
 </table>
 </div>
