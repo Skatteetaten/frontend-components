@@ -20,17 +20,6 @@ For full API-dokumentasjon, vennligst se på <a class="brodtekst-link" href="htt
 <thead><tr><th>Tidligere Prop</th><th>Alternativ</th></tr></thead>
 <tbody>
 <tr>
-<td>'componentRef'</td>
-<td>
-'ref'
-
-Alle komponentene våre bruker forwardRef.
-
-</td>
-
-</tr>
-
-<tr>
 <td>
 'ariaLabel'
 
