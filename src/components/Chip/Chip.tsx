@@ -3,7 +3,8 @@ import { getClassNames } from './Chip.classNames';
 import classnames from 'classnames';
 import { ChipProps, ChipType } from './Chip.types';
 
-/*
+/**
+ * @deprecated Komponenten er erstattet av Chip fra "@skatteetaten/ds-status"
  * visibleName Chip (Emneknagg)
  */
 export class Chip extends React.PureComponent<ChipProps, {}> {
