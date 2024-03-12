@@ -49,8 +49,9 @@ export const TextField: React.FC<TextFieldProps> = ({
   const [editMode, setEditMode] = React.useState(shouldEditWhenEmpty);
 
   const onEdit = () => {
-    textField.current && textField.current.focus();
     setEditMode(true);
+    // useState er ikke synkron, la den rerendre før vi setter focus
+    setTimeout(() => textField.current && textField.current.focus(), 10);
   };
 
   const onBlur: IMaskedTextFieldProps['onBlur'] = (e) => {

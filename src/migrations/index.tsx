@@ -23,6 +23,7 @@ import ModalMigration from './ModalMigration.md';
 import OpenCloseMigration from './OpenCloseMigration.md';
 import RadioButtonGroupMigration from './RadioButtonGroupMigration.md';
 import ScrollToTopButtonMigration from './ScrollToTopButtonMigration.md';
+import SearchFieldMigration from './SearchFieldMigration.md';
 import SkeBasisMigration from './SkeBasisMigration.md';
 import SpinnerMigration from './SpinnerMigration.md';
 import StepListMigration from './StepListMigration.md';
@@ -62,6 +63,7 @@ export const MigrationGuides = [
   OpenCloseMigration,
   RadioButtonGroupMigration,
   ScrollToTopButtonMigration,
+  SearchFieldMigration,
   SkeBasisMigration,
   SpinnerMigration,
   StepListMigration,
