@@ -19,7 +19,9 @@ import {
   weekdaysForLocale,
 } from './utils';
 
-/*
+/**
+ * @deprecated Komponenten er erstattet av DatePicker fra "@skatteetaten/ds-forms"
+ *
  * visibleName DatePicker (Datovelger)
  */
 export const DatePicker: React.FC<DatePickerProps> = (

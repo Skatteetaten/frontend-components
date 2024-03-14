@@ -6,6 +6,7 @@ import ButtonMigration from './ButtonMigration.md';
 import CardMigration from './CardMigration.md';
 import CheckBoxMigration from './CheckBoxMigration.md';
 import ChipMigration from './ChipMigration.md';
+import DatePickerMigration from './DatePickerMigration.md';
 import DialogMigration from './DialogMigration.md';
 import DropdownMigration from './DropdownMigration.md';
 import ErrorMessageMigration from './ErrorMessageMigration.md';
@@ -46,6 +47,7 @@ export const MigrationGuides = [
   CardMigration,
   CheckBoxMigration,
   ChipMigration,
+  DatePickerMigration,
   DialogMigration,
   DropdownMigration,
   ErrorMessageMigration,
