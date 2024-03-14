@@ -48,8 +48,10 @@ export const getSlidingWindowEdges = (
   };
 };
 
-/*
- * visibleName Pagination (Sidevelger)
+/**
+ * @deprecated Komponenten er erstattet av Pagination fra "@skatteetaten/ds-navigation"
+ *
+ * visibleName Pagination
  */
 export const Pagination: React.FC<PaginationProps> = (props) => {
   const {

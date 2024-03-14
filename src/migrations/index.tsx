@@ -21,6 +21,7 @@ import LinkMigration from './LinkMigration.md';
 import MessageBarMigration from './MessageBarMigration.md';
 import ModalMigration from './ModalMigration.md';
 import OpenCloseMigration from './OpenCloseMigration.md';
+import PaginationMigration from './PaginationMigration.md';
 import RadioButtonGroupMigration from './RadioButtonGroupMigration.md';
 import ScrollToTopButtonMigration from './ScrollToTopButtonMigration.md';
 import SearchFieldMigration from './SearchFieldMigration.md';
@@ -61,6 +62,7 @@ export const MigrationGuides = [
   MessageBarMigration,
   ModalMigration,
   OpenCloseMigration,
+  PaginationMigration,
   RadioButtonGroupMigration,
   ScrollToTopButtonMigration,
   SearchFieldMigration,
