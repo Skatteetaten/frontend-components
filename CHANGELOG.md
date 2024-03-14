@@ -4,6 +4,12 @@ import { AccordionItem } from '@skatteetaten/frontend-components/Accordion/Accor
 
 <div>
   <div lang="en">
+    <h2>v.12.0.0 - April 2024</h2>
+    <ul>
+      <li>Migration guide: Chip</li>
+      <li>Migration guide: DatePicker</li>
+      <li>Migration guide: SearchField</li>
+    </ul>
     <h2>v.11.0.0 - February 2024</h2>
     <ul>
       <li>Migration guide: TopBanner</li>
