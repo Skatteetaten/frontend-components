@@ -24,7 +24,6 @@
 <caption>Liste over endringer i komponent-api'et</caption>
 <thead><tr><th>Tidligere Prop</th><th>Alternativ</th></tr></thead>
 <tbody>
-
 <tr>
 <td>'componentRef'</td>
 <td>'ref'
@@ -222,7 +221,7 @@ import { DatePicker } from '@skatteetaten/ds-forms';
 <td>'formatDate'</td>
 <td>
 
-Faset ut. Bruk ny prop dateFormat for å overskrive default format dd.MM.yyyy.
+Faset ut. Bruk ny prop dateFormat for å overskrive default format dd.MM.yyyy. Formater som kan brukes: https://date-fns.org/v3.3.1/docs/parse.
 
 Før:
 
