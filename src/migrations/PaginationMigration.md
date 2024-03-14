@@ -2,7 +2,7 @@
 
 ## Endringer i funksjonalitet:
 
-Komponenten kan brukes controlled og uncontrolled. Dvs at den kan være controlled med onChange / currentPage eller ved å sette en initiell verdi med defaultCurrentPage og deretter kun lytting på event med onChange-handleren.
+Komponenten kan brukes controlled og uncontrolled. Dvs at den kan være controlled med onChange / currentPage eller ved å sette en initiell verdi med defaultCurrentPage.
 
 ## Styling:
 
