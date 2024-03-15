@@ -12,7 +12,7 @@
 
 ## Endringer i API
 
-For full API-dokumentasjon, vennligst se på <a class="brodtekst-link" href="https://www.skatteetaten.no/stilogtone/designsystemet/komponenter/chip/">Chip komponent</a> på dokumentasjonssiden til designsystemet.
+For full API-dokumentasjon, vennligst se på <a class="brodtekst-link" href="https://www.skatteetaten.no/stilogtone/designsystemet/komponenter/tag/">Tag komponent</a> på dokumentasjonssiden til designsystemet.
 
 <div class="migration-tabell">
 <table>
