@@ -33,16 +33,9 @@ onChange
 </tr>
 
 <tr>
-<td>'pageSize'</td>
-<td>
-listLength
-</td>
-</tr>
-
-<tr>
 <td>'total'</td>
 <td>
-listTotalLength
+totalItems
 </td>
 </tr>
 
