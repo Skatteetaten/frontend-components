@@ -5,7 +5,7 @@ import { Icon } from '../../Icon';
 import { TableProps } from '../Table.types';
 
 import { getClassNames } from './TableHeader.classNames';
-import { t } from '../../utils';
+import { getSrOnlyStyle, t } from '../../utils';
 
 import { getIconNameForTheadCell, getAriaLabelForTheadCell } from './utils';
 import { TFunction } from 'i18next';
@@ -45,7 +45,7 @@ export const TableHeader = (props: TableHeaderProps): JSX.Element => {
       if (key.srOnly) {
         return (
           <th key={key.fieldName} className={styles.tabellTheadCellIsEmpty}>
-            <span className={styles.srOnly}>{key.name}</span>
+            <span style={getSrOnlyStyle()}>{key.name}</span>
           </th>
         );
       }

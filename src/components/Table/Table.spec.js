@@ -367,9 +367,6 @@ describe('Table komponent', () => {
       id: 'tableid',
       className: 'tableClass',
     });
-    expect(
-      wrapper.find('th').at(3).find('span').prop('className').includes('srOnly')
-    ).toBeTruthy();
     expect(wrapper.find('th').at(3).find('span').text()).toEqual('Avkastning');
   });
 });

@@ -14,7 +14,7 @@ import {
   FileUploaderProps,
 } from './FileUploader.types';
 import { useEffect, useRef, useState } from 'react';
-import { generateId } from '../utils';
+import { generateId, getSrOnlyStyle } from '../utils';
 
 export const isCorrectFileFormat = (
   file: File,
@@ -427,7 +427,7 @@ export const FileUploader: React.FC<FileUploaderProps> = (props) => {
       <div role="alert" aria-atomic="true" className={styles.fileListWrapper}>
         {internalFiles.length > 0 && (
           <>
-            <span className={styles.srOnly}>
+            <span style={getSrOnlyStyle()}>
               {t('fileuploader.uploaded.sr_heading')}
             </span>
             <ul className={styles.fileList}>
