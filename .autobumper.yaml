@@ -1,0 +1,7 @@
+---
+autoBumpEnabled: false
+autoMergeEnable: false
+bumpParent: true
+allowMajorUpgrades: true
+pullRequestType: 'ONE_PR'
+ignoreList: []

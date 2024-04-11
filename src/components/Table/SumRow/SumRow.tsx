@@ -3,6 +3,10 @@ import React from 'react';
 import classnames from 'classnames';
 import { getClassNames } from './SumRow.classNames';
 
+/**
+ * @deprecated Komponenten er erstattet av Table.Sum fra "@skatteetaten/ds-table"
+ *
+ */
 export const SumRow = (props: {
   compactTable: boolean;
   numberOfColumns: number;

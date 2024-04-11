@@ -36,6 +36,10 @@ export default class ReactComponent extends Component {
       return null;
     }
 
+    if (name === 'ModalContext' || name === 'ModalProvider') {
+      tags.deprecated = true;
+    }
+
     const showUsage = usageMode !== UsageModes.hide;
 
     return (

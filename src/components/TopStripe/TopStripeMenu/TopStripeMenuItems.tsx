@@ -8,6 +8,9 @@ import { TopStripeMenuProps } from './TopStripeMenu';
 import { TopStripeContext } from '../TopStripe';
 import { t } from 'i18next';
 
+/**
+ * @deprecated Komponenten er erstattet av innebygget funksjonalitet i TopBannerExternal fra "@skatteetaten/ds-layout"
+ */
 export const TopStripeMenuItems: React.FC<TopStripeMenuProps> = (props) => {
   const {
     children,

@@ -205,6 +205,23 @@ describe('Table komponent', () => {
     expect(tableRow.at(1).exists('button')).toEqual(true);
     expect(tableRow.at(2).exists('button')).toEqual(true);
   });
+  it('ekspander-knapp vise ikke for rader med hideExpand', () => {
+    const dataWithHideExpand = [...data];
+    dataWithHideExpand[0].hideExpand = false;
+    dataWithHideExpand[1].hideExpand = true;
+    const wrapper = oppsettMount({
+      data: dataWithHideExpand,
+      columns,
+      expandableRows: true,
+    });
+    const tableRow = wrapper.find('TableRow');
+    expect(wrapper.find('thead').exists('button')).toEqual(false);
+    expect(tableRow.at(0).exists('button')).toEqual(true);
+    expect(tableRow.at(1).exists('button')).toEqual(false);
+    expect(tableRow.at(2).exists('button')).toEqual(true);
+    expect(tableRow.at(3).exists('button')).toEqual(true);
+  });
+
   it('viser ekspanderbart innhold når ekspanderingsknapp for en tabellrad klikkes', () => {
     const mockContent = (mockdata, close, rowIndex) => (
       <div className={'mockDiv'}>

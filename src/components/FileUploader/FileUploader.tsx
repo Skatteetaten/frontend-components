@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { useEffect, useRef, useState } from 'react';
 import axios, { AxiosResponse } from 'axios';
 import i18n, { t } from './../utils/i18n/i18n';
 import { getClassNames } from './FileUploader.classNames';
@@ -70,6 +71,9 @@ const getFileIconName = (fil: AttachmentMetadata) => {
   return fileType ? fileType : FilTyperNavn.File;
 };
 
+/**
+ * @deprecated FileUploader er erstattet av FileUploader fra "@skatteetaten/ds-forms"
+ */
 export const FileUploader: React.FC<FileUploaderProps> = (props) => {
   const {
     acceptedFileFormats,
@@ -98,6 +102,7 @@ export const FileUploader: React.FC<FileUploaderProps> = (props) => {
     multipleFiles,
     normalizeFileName,
     onCalloutToggle,
+    onError,
     queryParams,
     uploadFile,
     downloadFile,
@@ -229,6 +234,9 @@ export const FileUploader: React.FC<FileUploaderProps> = (props) => {
             } else {
               pushToInternalMessages(t('fileuploader.error.upload.general')!);
             }
+            if (onError) {
+              onError(error);
+            }
             if (afterUpload) {
               afterUpload(internalFiles);
             }
@@ -350,6 +358,7 @@ export const FileUploader: React.FC<FileUploaderProps> = (props) => {
         <div
           ref={uploadAreaRef}
           className={styles.uploadArea}
+          id={mainId}
           role="button"
           aria-describedby={fileuploadLabelId.concat(
             acceptedFileFormats ? ' '.concat(acceptedFileFormatsId) : '',

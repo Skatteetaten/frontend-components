@@ -2,7 +2,7 @@
   "name": "@skatteetaten/frontend-components",
   "groupId": "no.skatteetaten.aurora",
   "license": "Apache-2.0",
-  "version": "7.0.0",
+  "version": "12.0.0",
   "private": false,
   "sideEffects": false,
   "bin": {
@@ -27,13 +27,13 @@
   },
   "dependencies": {
     "@fluentui/react": "8.98.6",
-    "axios": "0.24.0",
-    "classnames": "2.2.6",
+    "axios": "1.6.4",
+    "classnames": "2.3.2",
     "hotkeys-js": "3.8.1",
-    "i18next": "22.4.8",
+    "i18next": "23.5.1",
     "prop-types": "15.7.2",
-    "react-i18next": "12.1.1",
-    "react-transition-group": "4.4.2"
+    "react-i18next": "13.2.2",
+    "react-transition-group": "4.4.5"
   },
   "devDependencies": {
     "@babel/cli": "7.13.14",
@@ -54,7 +54,6 @@
     "@rollup/plugin-url": "6.0.0",
     "@skatteetaten/ci-scripts": "2.0.5",
     "@svgr/rollup": "5.5.0",
-    "@types/classnames": "2.2.11",
     "@types/node": "14.14.10",
     "@types/react": "17.0.19",
     "@types/react-dom": "17.0.13",
@@ -105,10 +104,10 @@
     "webfont": "11.2.26"
   },
   "scripts": {
-    "start": "REACT_APP_BUILD_VERSION=$(git rev-parse --abbrev-ref HEAD) FAST_REFRESH=false styleguidist server --verbose",
+    "start": "NODE_OPTIONS=--openssl-legacy-provider REACT_APP_BUILD_VERSION=$(git rev-parse --abbrev-ref HEAD) FAST_REFRESH=false styleguidist server --verbose",
     "generate:icons": "webfont --normalize --fontHeight 600 src/webfont/**/*.svg -d src/components/utils/assets",
     "prebuild": "run-s clean generate:icons circularDeps lint",
-    "build": "run-p build:lib build:docs",
+    "build": "NODE_OPTIONS=--openssl-legacy-provider run-p build:lib build:docs",
     "build:docs": "PUBLIC_URL=/frontend-components/ styleguidist build",
     "build:lib": "run-p build:types build:esm build:cjs build:umd build:assets build:designtokens",
     "build:assets": "run-p build:assets:esm build:assets:cjs",

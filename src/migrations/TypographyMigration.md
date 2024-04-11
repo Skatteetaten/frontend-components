@@ -1,17 +1,19 @@
 **Fra @skatteetaten/frontend-components v5+ (designsystem-legacy) til Designsystemet v0.2.0**
 
-### Endringer i funksjonalitet
+## Endringer i funksjonalitet:
 
 - Typography som komponent fases ut og brytes ned i mindre komponenter (Heading, Paragraph/Ingress, Blockquote og List).
 
-### Styling
+## Styling:
 
 - Noen endringer i line-height og avstand mellom elementer.
-- De nye komponentene i designsystemet er avhengige av designtokens. Disse leveres nå som en separat pakke. Se [designtokens](#section-designtokens-deprecated) for detaljer.
+- De nye komponentene i designsystemet er avhengige av designtokens. Disse leveres nå som en separat pakke. <a class="brodtekst-link" href="#section-designtokens-deprecated">Se designtokens for detaljer.</a>
 
-### Endringer i API
+## Endringer i API:
 
-<div className="migration-tabell">
+For full API-dokumentasjon, vennligst se på <a class="brodtekst-link" href="https://www.skatteetaten.no/stilogtone/designsystemet/komponenter/typography/">Typografi-komponenter</a> på dokumentasjonssiden til designsystemet.
+
+<div class="migration-tabell">
 <table>
 <caption>Liste over endringer i komponent-api'et</caption>
 <thead><tr><th>Tidligere Prop</th><th>Alternativ</th></tr></thead>
@@ -87,11 +89,11 @@ Nå:
 ```js static
 import { Heading, Paragraph, Blockquote, List } from '@skatteetaten/ds-typography';
 
-<Heading as={'h1'} level={'1'}>{'Overskriftsnivå 1'}</Heading>
-<Heading as={'h2'} level={'2'}>{'Overskriftsnivå 2'}</Heading>
-<Heading as={'h3'} level={'3'}>{'Overskriftsnivå 3'}</Heading>
-<Heading as={'h4'} level={'4'}>{'Overskriftsnivå 4'}</Heading>
-<Heading as={'h5'} level={'5'}>{'Overskriftsnivå 5'}</Heading>
+<Heading as={'h1'} level={1}>{'Overskriftsnivå 1'}</Heading>
+<Heading as={'h2'} level={2}>{'Overskriftsnivå 2'}</Heading>
+<Heading as={'h3'} level={3}>{'Overskriftsnivå 3'}</Heading>
+<Heading as={'h4'} level={4}>{'Overskriftsnivå 4'}</Heading>
+<Heading as={'h5'} level={5}>{'Overskriftsnivå 5'}</Heading>
 <Paragraph>
     {'Tekstavsnitt som kan inneholde en lengre tekst. Husk å følge ' +
     'klarspråkprinsippene når en skriver tekster. I dette tilfellet skriver bare ' +

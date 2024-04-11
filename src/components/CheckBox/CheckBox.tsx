@@ -4,7 +4,9 @@ import * as React from 'react';
 import { getClassNames } from './CheckBox.classNames';
 import { CheckBoxProps } from './CheckBox.types';
 
-/*
+/**
+ * @deprecated Komponenten er erstattet av Checkbox fra "@skatteetaten/ds-forms"
+ *
  * visibleName CheckBox (Avkrysningsboks)
  */
 export class CheckBox extends React.PureComponent<CheckBoxProps, {}> {

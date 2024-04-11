@@ -11,6 +11,11 @@ import { getClassNames } from './MessageBar.classNames';
 import { MessageBarProps, MessageBarState } from './MessageBar.types';
 import { t } from 'i18next';
 
+/**
+ * @deprecated Komponenten er erstattet av Alert fra "@skatteetaten/ds-status"
+ *
+ * visibleName MessageBar
+ */
 export class MessageBar extends React.PureComponent<
   MessageBarProps,
   MessageBarState

@@ -4,6 +4,74 @@ import { AccordionItem } from '@skatteetaten/frontend-components/Accordion/Accor
 
 <div>
   <div lang="en">
+    <h2>v.12.0.0 - April 2024</h2>
+    <ul>
+      <li>Migration guide: DatePicker</li>
+      <li>Migration guide: Pagination</li>
+      <li>Migration guide: SearchField</li>
+      <li>Migration guide: Tag</li>
+    </ul>
+    <h2>v.11.0.0 - February 2024</h2>
+    <ul>
+      <li>Migration guide: TopBanner</li>
+      <li>Migration guide: FileUploader</li>
+    </ul>
+    <h2>v.10.0.1 - January 2024</h2>
+    <ul>
+      <li>Upgraded dependency: axios </li>
+    </ul>
+
+    <h2>v.10.0.0 - November 2023</h2>
+    <ul>
+      <li>Migration guide: Dropdown</li>
+      <li>Migration guide: Dialog</li>
+      <li>Migration guide: Modal</li>
+      <li>Migration guide: Spinner</li>
+      <li>Upgraded dependency: axios </li>
+    </ul>
+
+    <h2>v.9.0.1 - October 2023</h2>
+    <ul>
+      <li>Add EPI documentation links to migration guides</li>
+      <li>
+        Update migration guides (Checkbox- and RadioGroup) with help
+        functionality
+      </li>
+    </ul>
+
+    <h2>v.9.0.0 - September 2023</h2>
+    <ul>
+      <li>Migration guide: FooterContent</li>
+      <li>Migration guide: TextField</li>
+      <li>Migration guide: StepList / Step</li>
+      <li>Migration guide: LabelWithCallout</li>
+      <li>Migration guide: ErrorSummary</li>
+      <li>
+        Added prop hideExpand to rowData to control which rows are expandable
+      </li>
+      <li>Fileuploader - added id-prop</li>
+      <li>Changed logo for Statens Innkreving</li>
+    </ul>
+
+    <h2>v.8.0.1 - August 2023</h2>
+    <ul>
+      <li>Added id to button in FileUpload component</li>
+    </ul>
+
+    <h2>v.8.0.0 - June 2023</h2>
+    <ul>
+      <li>Migration guide: Card</li>
+      <li>Migration guide: Checkbox</li>
+      <li>Migration guide: Errormessage</li>
+      <li>Migration guide: MessageBar</li>
+      <li>Migration guide: OpenClose</li>
+      <li>Migration guide: RadioButtonGroup</li>
+      <li>Migration guide: Table</li>
+      <li>Add new logo statens innkreving</li>
+      <li>Fix typo installasjon.md</li>
+      <li>Remove deprecated props in Dialog</li>
+    </ul>
+
     <h2>v.7.0.0 - March 2023</h2>
     <ul>
       <li>Migration guide: Link, LinkGroup</li>

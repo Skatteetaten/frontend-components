@@ -17,6 +17,11 @@ interface TableHeaderProps {
   compactTable: boolean;
 }
 
+/**
+ * @deprecated Komponenten er erstattet av Table.Header fra "@skatteetaten/ds-table"
+ *
+ * visibleName TableHeader (TabellHeader)
+ */
 export const TableHeader = (props: TableHeaderProps): JSX.Element => {
   const { columns, sort, setSort } = props;
 

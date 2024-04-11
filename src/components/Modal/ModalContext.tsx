@@ -9,6 +9,10 @@ export interface ModalInstance {
   isClose: (name: string) => boolean;
   list: Array<string>;
 }
+
+/**
+ * @deprecated Komponenten er erstattet av Modal fra "@skatteetaten/ds-overlays"
+ */
 export const ModalContext = React.createContext<ModalInstance | undefined>(
   undefined
 );

@@ -12,7 +12,10 @@ function createMenu(items, searchTerm, activeSlug) {
         ...createMenu(components, null, null),
       ];
 
-      const isDeprecated = !!props?.tags?.deprecated;
+      let isDeprecated = !!props?.tags?.deprecated;
+      if (name === 'ModalContext' || name === 'ModalProvider') {
+        isDeprecated = true;
+      }
       const containsActiveSlug = find(links, (l) => l.key === activeSlug);
       const collapseByDefault = searchTerm === '' && !containsActiveSlug;
       const mainLink = find(links, (l) => l.name === name);

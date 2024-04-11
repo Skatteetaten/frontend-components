@@ -1,17 +1,19 @@
 **Fra @skatteetaten/frontend-components v5+ (designsystem-legacy) til Designsystemet v0.2.0**
 
-### Endringer i funksjonalitet:
+## Endringer i funksjonalitet:
 
 - det kan ikke sendes inn markup lengre
 - har ikke lenger skipLink-mekansimen
 - kun valgfritt ikon på venstre side
 
-### Styling:
+## Styling:
 
-- de nye komponentene i designsystemet er avhengige av designtokens. Disse leveres nå som en separat pakke. Se [designtokens](#section-designtokens-deprecated) for detaljer.
+- de nye komponentene i designsystemet er avhengige av designtokens. Disse leveres nå som en separat pakke. <a class="brodtekst-link" href="#section-designtokens-deprecated">Se designtokens for detaljer.</a>
 - noen små endringer hovedsakelig for hover og fokus
 
-### Endringer i API:
+## Endringer i API:
+
+For full API-dokumentasjon, vennligst se på <a class="brodtekst-link" href="https://www.skatteetaten.no/stilogtone/designsystemet/komponenter/link/">Link komponent</a> på dokumentasjonssiden til designsystemet.
 
 <div class="migration-tabell">
 <table>

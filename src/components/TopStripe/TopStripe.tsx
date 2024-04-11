@@ -11,8 +11,9 @@ import { TopStripeUser } from './TopStripeUser';
 export const TopStripeContext = React.createContext<TopStripeProps>({
   open: -1,
 });
-
-/*
+/**
+ * @deprecated Komponenten er erstattet av innebygget funksjonalitet i TopBannerExternal fra "@skatteetaten/ds-layout"
+ *
  * visibleName TopStripe (Toppstripe)
  */
 export const TopStripe: React.FC<TopStripeProps> = (props) => {
