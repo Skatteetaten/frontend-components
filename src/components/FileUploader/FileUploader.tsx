@@ -14,7 +14,6 @@ import {
   FileFormatTypes,
   FileUploaderProps,
 } from './FileUploader.types';
-import { useEffect, useRef, useState } from 'react';
 import { generateId, getSrOnlyStyle } from '../utils';
 
 export const isCorrectFileFormat = (
