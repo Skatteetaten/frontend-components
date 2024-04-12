@@ -1,9 +1,9 @@
 {
   "files": {
     "main.css": "/frontend-components/static/css/main.34762217.chunk.css",
-    "main.js": "/frontend-components/build/main.1d5ede62.js",
+    "main.js": "/frontend-components/build/main.bf63f0fd.js",
     "runtime-main.js": "/frontend-components/build/bundle.f88df48c.js",
-    "build/2.1f4fb9cd.js": "/frontend-components/build/2.1f4fb9cd.js",
+    "build/2.59e6dc0f.js": "/frontend-components/build/2.59e6dc0f.js",
     "assets/png/Byggeklosser.png": "/frontend-components/assets/png/Byggeklosser.png",
     "assets/png/Byggeklosser_skisse.png": "/frontend-components/assets/png/Byggeklosser_skisse.png",
     "assets/png/designer.png": "/frontend-components/assets/png/designer.png",
@@ -33,7 +33,7 @@
     "assets/svg/ske-logo-intern-kopi.svg": "/frontend-components/assets/svg/ske-logo-intern-kopi.svg",
     "assets/svg/ske-logo-intern.svg": "/frontend-components/assets/svg/ske-logo-intern.svg",
     "assets/svg/ske-logo.svg": "/frontend-components/assets/svg/ske-logo.svg",
-    "build/2.1f4fb9cd.js.LICENSE.txt": "/frontend-components/build/2.1f4fb9cd.js.LICENSE.txt",
+    "build/2.59e6dc0f.js.LICENSE.txt": "/frontend-components/build/2.59e6dc0f.js.LICENSE.txt",
     "favicon.ico": "/frontend-components/favicon.ico",
     "index.html": "/frontend-components/index.html",
     "manifest.json": "/frontend-components/manifest.json",
@@ -43,6 +43,8 @@
     "static/media/ButtonMigration.fec2aa87.md": "/frontend-components/static/media/ButtonMigration.fec2aa87.md",
     "static/media/CardMigration.60114318.md": "/frontend-components/static/media/CardMigration.60114318.md",
     "static/media/CheckBoxMigration.b721754f.md": "/frontend-components/static/media/CheckBoxMigration.b721754f.md",
+    "static/media/ChipMigration.3686313d.md": "/frontend-components/static/media/ChipMigration.3686313d.md",
+    "static/media/DatePickerMigration.57354ead.md": "/frontend-components/static/media/DatePickerMigration.57354ead.md",
     "static/media/DialogMigration.0679e025.md": "/frontend-components/static/media/DialogMigration.0679e025.md",
     "static/media/DropdownMigration.4836adc1.md": "/frontend-components/static/media/DropdownMigration.4836adc1.md",
     "static/media/EnglishFlag.714be210.svg": "/frontend-components/static/media/EnglishFlag.714be210.svg",
@@ -60,9 +62,11 @@
     "static/media/ModalMigration.7a5d00ef.md": "/frontend-components/static/media/ModalMigration.7a5d00ef.md",
     "static/media/NorwegianFlag.e7fb117c.svg": "/frontend-components/static/media/NorwegianFlag.e7fb117c.svg",
     "static/media/OpenCloseMigration.30cd90a4.md": "/frontend-components/static/media/OpenCloseMigration.30cd90a4.md",
+    "static/media/PaginationMigration.7c6d69bb.md": "/frontend-components/static/media/PaginationMigration.7c6d69bb.md",
     "static/media/RadioButtonGroupMigration.5ca98680.md": "/frontend-components/static/media/RadioButtonGroupMigration.5ca98680.md",
     "static/media/SamiFlag.bc29c560.svg": "/frontend-components/static/media/SamiFlag.bc29c560.svg",
     "static/media/ScrollToTopButtonMigration.dde01159.md": "/frontend-components/static/media/ScrollToTopButtonMigration.dde01159.md",
+    "static/media/SearchFieldMigration.d077ed49.md": "/frontend-components/static/media/SearchFieldMigration.d077ed49.md",
     "static/media/SkeBasisMigration.572d40e1.md": "/frontend-components/static/media/SkeBasisMigration.572d40e1.md",
     "static/media/SkeIconfont.woff": "/frontend-components/static/media/SkeIconfont.cec7e241.woff",
     "static/media/SpinnerMigration.3a69c466.md": "/frontend-components/static/media/SpinnerMigration.3a69c466.md",
@@ -97,8 +101,8 @@
   },
   "entrypoints": [
     "build/bundle.f88df48c.js",
-    "build/2.1f4fb9cd.js",
+    "build/2.59e6dc0f.js",
     "static/css/main.34762217.chunk.css",
-    "build/main.1d5ede62.js"
+    "build/main.bf63f0fd.js"
   ]
 }
