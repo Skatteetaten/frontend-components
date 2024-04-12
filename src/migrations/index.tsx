@@ -5,6 +5,8 @@ import ButtonLinkMigration from './ButtonLinkMigration.md';
 import ButtonMigration from './ButtonMigration.md';
 import CardMigration from './CardMigration.md';
 import CheckBoxMigration from './CheckBoxMigration.md';
+import ChipMigration from './ChipMigration.md';
+import DatePickerMigration from './DatePickerMigration.md';
 import DialogMigration from './DialogMigration.md';
 import DropdownMigration from './DropdownMigration.md';
 import ErrorMessageMigration from './ErrorMessageMigration.md';
@@ -20,8 +22,10 @@ import LinkMigration from './LinkMigration.md';
 import MessageBarMigration from './MessageBarMigration.md';
 import ModalMigration from './ModalMigration.md';
 import OpenCloseMigration from './OpenCloseMigration.md';
+import PaginationMigration from './PaginationMigration.md';
 import RadioButtonGroupMigration from './RadioButtonGroupMigration.md';
 import ScrollToTopButtonMigration from './ScrollToTopButtonMigration.md';
+import SearchFieldMigration from './SearchFieldMigration.md';
 import SkeBasisMigration from './SkeBasisMigration.md';
 import SpinnerMigration from './SpinnerMigration.md';
 import StepListMigration from './StepListMigration.md';
@@ -43,6 +47,8 @@ export const MigrationGuides = [
   ButtonMigration,
   CardMigration,
   CheckBoxMigration,
+  ChipMigration,
+  DatePickerMigration,
   DialogMigration,
   DropdownMigration,
   ErrorMessageMigration,
@@ -58,8 +64,10 @@ export const MigrationGuides = [
   MessageBarMigration,
   ModalMigration,
   OpenCloseMigration,
+  PaginationMigration,
   RadioButtonGroupMigration,
   ScrollToTopButtonMigration,
+  SearchFieldMigration,
   SkeBasisMigration,
   SpinnerMigration,
   StepListMigration,
