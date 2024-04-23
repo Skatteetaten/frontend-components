@@ -6,7 +6,8 @@ import { getClassNames } from './Callout.classNames';
 import { CalloutColor, CalloutProps, CalloutState } from './Callout.types';
 import { t } from 'i18next';
 
-/*
+/**
+ * @deprecated Callout er  erstattet av Popover fra "@skatteetaten/ds-overlays"
  * visibleName Callout (Utropsboks)
  */
 export class Callout extends PureComponent<CalloutProps, CalloutState> {
