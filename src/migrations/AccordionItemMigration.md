@@ -81,7 +81,7 @@ Faset ut.
 </td>
 </tr>
 <tr>
-<td>'prcessList'</td>
+<td>'processList'</td>
 <td>
 Faset ut.
 </td>
