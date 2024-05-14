@@ -5,7 +5,8 @@ import { getClassNames } from './AccordionMenu.classNames';
 import { AccordionItemProps } from '../Accordion/AccordionItem/AccordionItem.types';
 import { AccordionMenuProps } from './AccordionMenu.types';
 
-/*
+/**
+ * @deprecated AccordionMenu er erstattet av Accordion fra "@skatteetaten/ds-collections"
  * visibleName AccordionMenu (Trekkspillmeny)
  */
 export const AccordionMenu: React.FC<AccordionMenuProps> = ({
