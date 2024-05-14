@@ -4,7 +4,8 @@ import { NavigationContent, ContentProps } from './NavigationContent';
 import { getClassNames } from './NavigationTile.classNames';
 import { NavigationTileProps } from './NavigationTile.types';
 
-/*
+/**
+ * @deprecated Komponenten er erstattet av NavigationTile fra "@skatteetaten/ds-navigation"
  * visibleName NavigationTile (Forsideknapp)
  */
 export const NavigationTile: React.FC<NavigationTileProps> = (props) => {

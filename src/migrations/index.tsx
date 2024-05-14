@@ -22,6 +22,8 @@ import LinkGroupMigration from './LinkGroupMigration.md';
 import LinkMigration from './LinkMigration.md';
 import MessageBarMigration from './MessageBarMigration.md';
 import ModalMigration from './ModalMigration.md';
+import NavigationContentMigration from './NavigationContentMigration.md';
+import NavigationTileMigration from './NavigationTileMigration.md';
 import OpenCloseMigration from './OpenCloseMigration.md';
 import PaginationMigration from './PaginationMigration.md';
 import RadioButtonGroupMigration from './RadioButtonGroupMigration.md';
@@ -65,6 +67,8 @@ export const MigrationGuides = [
   LinkMigration,
   MessageBarMigration,
   ModalMigration,
+  NavigationContentMigration,
+  NavigationTileMigration,
   OpenCloseMigration,
   PaginationMigration,
   RadioButtonGroupMigration,
