@@ -136,7 +136,6 @@ Erstattet av 'titleAs'.
 </td>
 </tr>
 <tr>
-
 <td>'icon'</td>
 <td>
 Erstattet av 'svgPath'. 
