@@ -130,6 +130,13 @@ Erstattet av 'title'.
 </td>
 </tr>
 <tr>
+<td>'headingLevel'</td>
+<td>
+Erstattet av 'titleAs'.
+</td>
+</tr>
+<tr>
+
 <td>'icon'</td>
 <td>
 Erstattet av 'svgPath'. 
