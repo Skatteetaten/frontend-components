@@ -5,6 +5,7 @@
 - NavigationTile og NavigationContent er slått sammen til èn komponent.
 - èn eller flere NavigationTile-komponenter legges nå som children til et nav-element med beskrivende aria-label.
 
+<div class="migration-tabell">
 Før:
 
 ```javascript static
@@ -53,6 +54,8 @@ import { NavigationTile } from '@skatteetaten/ds-navigation';
   />
 </nav>;
 ```
+
+</div>
 
 ## Styling:
 
