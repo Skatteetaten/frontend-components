@@ -1,5 +1,9 @@
 /* NB! Dette er en autogenerert fil, vennligst ikke gjør manuelle endringer i den.
    Kjør kommandonavn generate:migrationGuidesIndexFile for å generere exports. */
+import AccordionItemMigration from './AccordionItemMigration.md';
+import AccordionMenuItemMigration from './AccordionMenuItemMigration.md';
+import AccordionMenuMigration from './AccordionMenuMigration.md';
+import AccordionMigration from './AccordionMigration.md';
 import ActionButtonMigration from './ActionButtonMigration.md';
 import ButtonLinkMigration from './ButtonLinkMigration.md';
 import ButtonMigration from './ButtonMigration.md';
@@ -43,6 +47,10 @@ import TopStripeUserMigration from './TopStripeUserMigration.md';
 import TypographyMigration from './TypographyMigration.md';
 
 export const MigrationGuides = [
+  AccordionItemMigration,
+  AccordionMenuItemMigration,
+  AccordionMenuMigration,
+  AccordionMigration,
   ActionButtonMigration,
   ButtonLinkMigration,
   ButtonMigration,

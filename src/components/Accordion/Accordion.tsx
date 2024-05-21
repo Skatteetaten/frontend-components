@@ -16,8 +16,8 @@ export interface AccordionProps extends React.HTMLAttributes<HTMLDivElement> {
   stepId?: string;
   children?: React.ReactNode;
 }
-
-/*
+/**
+ * @deprecated Accordion er erstattet av Accordion fra "@skatteetaten/ds-collections"
  * visibleName Accordion (Trekkspill)
  */
 
