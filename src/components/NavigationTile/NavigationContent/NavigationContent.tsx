@@ -54,7 +54,8 @@ const Content = (props: _InternalContentProps) => {
   );
 };
 
-/*
+/**
+ * @deprecated Komponenten er erstattet av NavigationTile fra "@skatteetaten/ds-navigation"
  * visibleName NavigationContent (Innhold til forsideknapp)
  */
 export const NavigationContent: React.FC<NavigationContentProps> = (props) => {
