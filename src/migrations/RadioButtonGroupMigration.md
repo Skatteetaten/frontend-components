@@ -398,5 +398,6 @@ import { RadioGroup } from '@skatteetaten/ds-forms';
 </td>
 <td>Faset ut.</td>
 </tr>
+</tbody>
 </table>
 </div>

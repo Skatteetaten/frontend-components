@@ -1,13 +1,13 @@
 **Fra @skatteetaten/frontend-components v11+ (designsystem-legacy) til Designsystemet v0.6.0**
 
-Guide for migrering fra TopBanner til TopBannerExternal.
-Denne TopBanner komponenten er splittet opp i to, og denne migrasjonsguiden er laget for TopBannerExternal.
-For internløsninger skal man foreløpig fortsatt benytte denne TopBanner-komponenten.
+TopBanner komponenten er splittet opp i to. For publikumsløsninger skal man benytte
+TopBannerExternal og for internløsninger skal man benytte TopBannerInternal.
 
 ## Endringer i funksjonalitet:
 
 - TopStripe er faset ut.
 - Kontakt oss og Endre skriftstørrelse er ikke inkludert i TopBanner lenger.
+- Prop 'external' er faset ut og komponenten er i stedet splittet til TopBannerInternal og TopBannerExternal.
 
 ## Styling:
 
@@ -16,6 +16,8 @@ For internløsninger skal man foreløpig fortsatt benytte denne TopBanner-kompon
 ## Endringer i API
 
 For full API-dokumentasjon, vennligst se på <a class="brodtekst-link" href="https://www.skatteetaten.no/stilogtone/designsystemet/under-arbeid/topbanner/">TopBannerExternal komponent</a> på dokumentasjonssiden til designsystemet.
+
+### Endringer til TopBannerExternal
 
 <div class="migration-tabell">
 <table>
@@ -55,7 +57,7 @@ Denne gjelder intern TopBanner.
 <tr>
 <td>'language'</td>
 <td>
-'Faset ut' 
+Faset ut 
 Språk på logen vil automatisk endres ut i fra hvilket språk som er valgt. 'defaultLocale' styrer
 hvilket språk som er forhåndsvalgt.
 </td>
@@ -168,6 +170,7 @@ Faset ut.
 </table>
 </div>
 
+<div class="migration-tabell">
 Før:
 
 ```javascript static
@@ -316,3 +319,141 @@ import { dsI18n, langToLocale } from "@skatteetaten/ds-core-utils";
       </Modal>
     </>;
 ```
+
+</div>
+
+### Endringer til TopBannerInternal
+
+- Propen title er videreført, men ikke lenger koden som en h1.
+
+<div class="migration-tabell">
+<table>
+<caption>Liste over endringer i komponent-api'et</caption>
+<thead><tr><th>Tidligere Prop</th><th>Alternativ</th></tr></thead>
+<tbody>
+<tr>
+<td>'compact'</td>
+<td>
+Faset ut. Det finnes kun én størrelse.
+</td>
+</tr>
+<tr>
+<td>'external'</td>
+<td>
+Faset ut som prop. Bruk TopBannerExternal-komponenten.
+</td>
+</tr>
+<tr>
+<td>'homeText'</td>
+<td>
+Faset ut. Komponenten har ikke lenger en home-knapp. Bruk 'LogoHref' for å lenke til
+hjemsiden og eventuelt 'description' for en ekstra beskrivelse som kommer i tillegg til
+'title'.
+
+Før:
+
+```javascript static
+import { TopBanner } from '@skatteetaten/frontend-components/TopBanner';
+
+<TopBanner
+  homeUrl="/home"
+  homeText="Systemnavn"
+  title="Sak eller arbeidsoppgave"
+/>;
+```
+
+Nå:
+
+```js static
+import { TopBannerInternal } from '@skatteetaten/ds-layout';
+
+<TopBannerInternal
+  title="Systemnavn"
+  description="Sak eller arbeidsoppgave"
+  logoHref="/home"
+/>;
+```
+
+</td>
+</tr>
+<tr>
+<td>'homeUrl'</td>
+<td>
+Faset ut. Bruk logo som link til hjemsiden av løsningen.
+</td>
+</tr>
+<tr>
+<td>'icon'</td>
+<td>
+Faset ut.
+</td>
+</tr>
+<tr>
+<td>'language'</td>
+<td>
+Faset ut.
+</td>
+</tr>
+<tr>
+<td>'logoLink'</td>
+<td>
+Faset ut. Logo er alltid en lenke i TopBannerInternal.
+</td>
+</tr>
+<tr>
+<td>'logoLinkUrl'</td>
+<td>
+'logoHref'
+
+Før:
+
+```javascript static
+import { TopBanner } from '@skatteetaten/frontend-components/TopBanner';
+
+<TopBanner
+  logoLinkUrl={
+    'https://www.skatteetaten.no/stilogtone/designsystemet/kom-i-gang/'
+  }
+/>;
+```
+
+Nå:
+
+```js static
+import { TopBannerInternal } from '@skatteetaten/ds-layout';
+
+<TopBannerInternal
+  logoHref={'https://www.skatteetaten.no/stilogtone/designsystemet/kom-i-gang/'}
+/>;
+```
+
+</td>
+</tr>
+<tr>
+<td>'onClick'</td>
+<td>
+Faset ut. Logo kan brukes som lenke til hjemsiden og 'onLogoClick' kan brukes til å fange
+click event på logo.
+</td>
+</tr>
+<tr>
+<td>'slantedAreaClassName'</td>
+<td>
+Faset ut.
+</td>
+</tr>
+<tr>
+<td>'slantedAreaWidth'</td>
+<td>
+Faset ut.
+</td>
+</tr>
+<tr>
+<td>'topStripe'</td>
+<td>
+Faset ut.
+</td>
+</tr>
+</tbody>
+</table>
+</div>
