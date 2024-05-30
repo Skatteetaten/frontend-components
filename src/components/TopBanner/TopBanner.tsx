@@ -94,8 +94,8 @@ const ExternalHeaderContent = ({ styles, ...props }) => {
   );
 };
 
-/*
- * visibleName TopBanner (Topp)
+/**
+ * @deprecated visibleName TopBanner (Topp) er erstattet av TopBannerExternal og TopBannerInternal fra "@skatteetaten/ds-layout".
  */
 export const TopBanner: React.FC<TopBannerTypes> = (props) => {
   const { external, ...rest } = props;
