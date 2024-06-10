@@ -38,6 +38,7 @@ import SpinnerMigration from './SpinnerMigration.md';
 import StepListMigration from './StepListMigration.md';
 import StepMigration from './StepMigration.md';
 import TableMigration from './TableMigration.md';
+import TabsMigration from './TabsMigration.md';
 import TextFieldMigration from './TextFieldMigration.md';
 import TopBannerMigration from './TopBannerMigration.md';
 import TopStripeButtonMigration from './TopStripeButtonMigration.md';
@@ -87,6 +88,7 @@ export const MigrationGuides = [
   StepListMigration,
   StepMigration,
   TableMigration,
+  TabsMigration,
   TextFieldMigration,
   TopBannerMigration,
   TopStripeButtonMigration,
