@@ -17,7 +17,6 @@ For full API-dokumentasjon, vennligst se på <a class="brodtekst-link" href="htt
 <caption>Liste over endringer i komponent-api'et</caption>
 <thead><tr><th>Tidligere Prop</th><th>Alternativ</th></tr></thead>
 <tbody>
-
 <tr>
 <td>'border'</td>
 <td>
