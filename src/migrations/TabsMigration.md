@@ -97,7 +97,7 @@ value - Hvis brukt som controlled komponent
 </td>
 </tr>
 <tr>
-<td>'style'</td>
+<td>'styles'</td>
 <td>
 className
 </td>
