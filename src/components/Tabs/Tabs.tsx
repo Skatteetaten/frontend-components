@@ -6,10 +6,11 @@ import { getClassNames } from './Tabs.classNames';
 import { TabProps } from './Tabs.types';
 import { BrandContext } from '../SkeBasis';
 
-/*
+/**
+ * @deprecated Komponenten er erstattet av Tabs fra "@skatteetaten/ds-collections"
+ *
  * visibleName Tabs (Arkfaner)
  */
-
 export const Tabs: React.FC<TabProps> = (props) => {
   const { children, className, ...rest } = props;
   return (

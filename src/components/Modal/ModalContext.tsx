@@ -20,6 +20,9 @@ export const ModalContext = React.createContext<ModalInstance | undefined>(
 export const useModalContext = (): ModalInstance | undefined =>
   useContext<ModalInstance | undefined>(ModalContext);
 
+/**
+ * @deprecated Komponenten er erstattet av Modal fra "@skatteetaten/ds-overlays"
+ */
 export const ModalConsumer: React.FC<{
   children: React.ReactNode;
 }> = ({ children }) => (

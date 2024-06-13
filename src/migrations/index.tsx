@@ -1,8 +1,13 @@
 /* NB! Dette er en autogenerert fil, vennligst ikke gjør manuelle endringer i den.
    Kjør kommandonavn generate:migrationGuidesIndexFile for å generere exports. */
+import AccordionItemMigration from './AccordionItemMigration.md';
+import AccordionMenuItemMigration from './AccordionMenuItemMigration.md';
+import AccordionMenuMigration from './AccordionMenuMigration.md';
+import AccordionMigration from './AccordionMigration.md';
 import ActionButtonMigration from './ActionButtonMigration.md';
 import ButtonLinkMigration from './ButtonLinkMigration.md';
 import ButtonMigration from './ButtonMigration.md';
+import CalloutMigration from './CalloutMigration.md';
 import CardMigration from './CardMigration.md';
 import CheckBoxMigration from './CheckBoxMigration.md';
 import ChipMigration from './ChipMigration.md';
@@ -21,6 +26,8 @@ import LinkGroupMigration from './LinkGroupMigration.md';
 import LinkMigration from './LinkMigration.md';
 import MessageBarMigration from './MessageBarMigration.md';
 import ModalMigration from './ModalMigration.md';
+import NavigationContentMigration from './NavigationContentMigration.md';
+import NavigationTileMigration from './NavigationTileMigration.md';
 import OpenCloseMigration from './OpenCloseMigration.md';
 import PaginationMigration from './PaginationMigration.md';
 import RadioButtonGroupMigration from './RadioButtonGroupMigration.md';
@@ -31,6 +38,7 @@ import SpinnerMigration from './SpinnerMigration.md';
 import StepListMigration from './StepListMigration.md';
 import StepMigration from './StepMigration.md';
 import TableMigration from './TableMigration.md';
+import TabsMigration from './TabsMigration.md';
 import TextFieldMigration from './TextFieldMigration.md';
 import TopBannerMigration from './TopBannerMigration.md';
 import TopStripeButtonMigration from './TopStripeButtonMigration.md';
@@ -42,9 +50,14 @@ import TopStripeUserMigration from './TopStripeUserMigration.md';
 import TypographyMigration from './TypographyMigration.md';
 
 export const MigrationGuides = [
+  AccordionItemMigration,
+  AccordionMenuItemMigration,
+  AccordionMenuMigration,
+  AccordionMigration,
   ActionButtonMigration,
   ButtonLinkMigration,
   ButtonMigration,
+  CalloutMigration,
   CardMigration,
   CheckBoxMigration,
   ChipMigration,
@@ -63,6 +76,8 @@ export const MigrationGuides = [
   LinkMigration,
   MessageBarMigration,
   ModalMigration,
+  NavigationContentMigration,
+  NavigationTileMigration,
   OpenCloseMigration,
   PaginationMigration,
   RadioButtonGroupMigration,
@@ -73,6 +88,7 @@ export const MigrationGuides = [
   StepListMigration,
   StepMigration,
   TableMigration,
+  TabsMigration,
   TextFieldMigration,
   TopBannerMigration,
   TopStripeButtonMigration,

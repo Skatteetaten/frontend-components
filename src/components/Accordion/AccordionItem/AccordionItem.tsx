@@ -52,7 +52,8 @@ const ToggleContent: React.FC<ToggleContentInterface> = (props) => {
   );
 };
 
-/*
+/**
+ * @deprecated AccordionItem er erstattet av Accordion.Item fra "@skatteetaten/ds-collections"
  * visibleName AccordionItem (Rad i trekkspill)
  */
 export const AccordionItem: React.FC<AccordionItemProps> = (props) => {

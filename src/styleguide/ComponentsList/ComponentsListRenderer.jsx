@@ -59,7 +59,24 @@ const getStyles = () => {
   });
 };
 
+const getClassNames = () => {
+  return mergeStyleSets({
+    srOnly: {
+      position: 'absolute',
+      width: '1px',
+      height: '1px',
+      padding: '0',
+      margin: '-1px',
+      overflow: 'hidden',
+      clip: 'rect(0, 0, 0, 0)',
+      whiteSpace: 'nowrap',
+      borderWidth: '0',
+    },
+  });
+};
+
 export const ComponentsListRenderer = ({ items, searchTerm }) => {
+  const styles = getClassNames();
   const navigate = useNavigate();
   const { pathname } = useLocation();
   const activeSlug = pathname.replace('/', '');
@@ -72,7 +89,7 @@ export const ComponentsListRenderer = ({ items, searchTerm }) => {
   if (groups.length === 0) return <div role="alert">Ingen treff på søk</div>;
   return (
     <>
-      <div role="alert" className="sr-only">
+      <div role="alert" className={styles.srOnly}>
         {searchTerm && `Antall treff ${groups.length}`}
       </div>
       <Nav

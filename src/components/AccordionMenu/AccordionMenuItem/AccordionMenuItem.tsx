@@ -4,7 +4,8 @@ import classnames from 'classnames';
 import { getClassNames } from '../AccordionMenu.classNames';
 import { AccordionMenuItemProps } from './AccordionMenuItem.types';
 
-/*
+/**
+ * @deprecated AccordionMenuItem er erstattet av Accordion.Item fra "@skatteetaten/ds-collections"
  * visibleName AccordionMenuItem (Element i trekkspillmeny)
  */
 export const AccordionMenuItem = (props: AccordionMenuItemProps) => {
