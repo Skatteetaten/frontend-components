@@ -67,7 +67,7 @@ Bruk 'children' og 'hideTitle'</td>
 
 'color'
 
-Alternativer: 'black', 'white', 'blue'
+Alternativer: 'black', 'white', 'blue'.
 'black' er default
 
 </td>
