@@ -27,12 +27,12 @@
   },
   "dependencies": {
     "@fluentui/react": "8.98.6",
-    "axios": "1.6.4",
-    "classnames": "2.3.2",
-    "hotkeys-js": "3.8.1",
-    "i18next": "23.5.1",
-    "prop-types": "15.7.2",
-    "react-i18next": "13.2.2",
+    "axios": "1.7.2",
+    "classnames": "2.5.1",
+    "hotkeys-js": "3.13.7",
+    "i18next": "23.11.5",
+    "prop-types": "15.8.1",
+    "react-i18next": "14.1.2",
     "react-transition-group": "4.4.5"
   },
   "devDependencies": {
