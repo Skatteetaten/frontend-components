@@ -15,7 +15,7 @@ TopBannerExternal og for internløsninger skal man benytte TopBannerInternal.
 
 ## Endringer i API
 
-For full API-dokumentasjon, vennligst se på <a class="brodtekst-link" href="https://www.skatteetaten.no/stilogtone/designsystemet/under-arbeid/topbanner/">TopBannerExternal komponent</a> på dokumentasjonssiden til designsystemet.
+For full API-dokumentasjon, vennligst se på <a class="brodtekst-link" href="https://www.skatteetaten.no/stilogtone/designsystemet/komponenter/topbannerexternal/">TopBannerExternal komponent</a> på dokumentasjonssiden til designsystemet.
 
 ### Endringer til TopBannerExternal
 
@@ -323,6 +323,8 @@ import { dsI18n, langToLocale } from "@skatteetaten/ds-core-utils";
 </div>
 
 ### Endringer til TopBannerInternal
+
+For full API-dokumentasjon, vennligst se på <a class="brodtekst-link" href="https://www.skatteetaten.no/stilogtone/designsystemet/komponenter/topbanner-internal/">TopBannerInternal komponent</a> på dokumentasjonssiden til designsystemet.
 
 - Propen title er videreført, men ikke lenger koden som en h1.
 

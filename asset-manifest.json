@@ -1,9 +1,9 @@
 {
   "files": {
     "main.css": "/frontend-components/static/css/main.34762217.chunk.css",
-    "main.js": "/frontend-components/build/main.258e451d.js",
+    "main.js": "/frontend-components/build/main.3b122686.js",
     "runtime-main.js": "/frontend-components/build/bundle.f88df48c.js",
-    "build/2.8063322d.js": "/frontend-components/build/2.8063322d.js",
+    "build/2.2371d97f.js": "/frontend-components/build/2.2371d97f.js",
     "assets/png/Byggeklosser.png": "/frontend-components/assets/png/Byggeklosser.png",
     "assets/png/Byggeklosser_skisse.png": "/frontend-components/assets/png/Byggeklosser_skisse.png",
     "assets/png/designer.png": "/frontend-components/assets/png/designer.png",
@@ -33,7 +33,7 @@
     "assets/svg/ske-logo-intern-kopi.svg": "/frontend-components/assets/svg/ske-logo-intern-kopi.svg",
     "assets/svg/ske-logo-intern.svg": "/frontend-components/assets/svg/ske-logo-intern.svg",
     "assets/svg/ske-logo.svg": "/frontend-components/assets/svg/ske-logo.svg",
-    "build/2.8063322d.js.LICENSE.txt": "/frontend-components/build/2.8063322d.js.LICENSE.txt",
+    "build/2.2371d97f.js.LICENSE.txt": "/frontend-components/build/2.2371d97f.js.LICENSE.txt",
     "favicon.ico": "/frontend-components/favicon.ico",
     "index.html": "/frontend-components/index.html",
     "manifest.json": "/frontend-components/manifest.json",
@@ -82,7 +82,7 @@
     "static/media/TableMigration.f4863b25.md": "/frontend-components/static/media/TableMigration.f4863b25.md",
     "static/media/TabsMigration.12403e7b.md": "/frontend-components/static/media/TabsMigration.12403e7b.md",
     "static/media/TextFieldMigration.239e0143.md": "/frontend-components/static/media/TextFieldMigration.239e0143.md",
-    "static/media/TopBannerMigration.7854dba9.md": "/frontend-components/static/media/TopBannerMigration.7854dba9.md",
+    "static/media/TopBannerMigration.3923d8ec.md": "/frontend-components/static/media/TopBannerMigration.3923d8ec.md",
     "static/media/TopStripeButtonMigration.7bf282ea.md": "/frontend-components/static/media/TopStripeButtonMigration.7bf282ea.md",
     "static/media/TopStripeLinkMigration.4562b04c.md": "/frontend-components/static/media/TopStripeLinkMigration.4562b04c.md",
     "static/media/TopStripeMenuItemsMigration.002b9d8b.md": "/frontend-components/static/media/TopStripeMenuItemsMigration.002b9d8b.md",
@@ -109,8 +109,8 @@
   },
   "entrypoints": [
     "build/bundle.f88df48c.js",
-    "build/2.8063322d.js",
+    "build/2.2371d97f.js",
     "static/css/main.34762217.chunk.css",
-    "build/main.258e451d.js"
+    "build/main.3b122686.js"
   ]
 }
