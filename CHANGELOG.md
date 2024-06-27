@@ -4,6 +4,15 @@ import { AccordionItem } from '@skatteetaten/frontend-components/Accordion/Accor
 
 <div>
   <div lang="en">
+    <h2>v.14.0.0 - June 2024</h2>
+    <ul>
+      <li>Upgraded dependency: axios</li>
+      <li>Upgraded dependency: classnames</li>
+      <li>Upgraded dependency: hotkeys-js</li>
+      <li>Upgraded dependency: i18next</li>
+      <li>Upgraded dependency: prop-types</li>
+      <li>Upgraded dependency: react-i18next</li>
+    </ul>
     <h2>v.13.0.0 - June 2024</h2>
     <ul>
       <li>Migration guide: Callout</li>
