@@ -10,7 +10,7 @@ def config = [
     publishSnapshotToNpm	 : true,
     npmPublishFolder	     : './lib',
     nodeVersion            : '20',
-    versionStrategy        : [[ branch : 'master', versionHint:'13' ]],
+    versionStrategy        : [[ branch : 'master', versionHint:'14' ]],
     createBuildEnvs        : { props -> "REACT_APP_BUILD_VERSION=${props.version}" },
     npmjs                    : [
       publish              : env.BRANCH_NAME == "master",
