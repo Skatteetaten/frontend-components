@@ -1,9 +1,9 @@
 {
   "files": {
     "main.css": "/frontend-components/static/css/main.34762217.chunk.css",
-    "main.js": "/frontend-components/build/main.3b122686.js",
+    "main.js": "/frontend-components/build/main.f8ca1a6f.js",
     "runtime-main.js": "/frontend-components/build/bundle.f88df48c.js",
-    "build/2.2371d97f.js": "/frontend-components/build/2.2371d97f.js",
+    "build/2.d7e08962.js": "/frontend-components/build/2.d7e08962.js",
     "assets/png/Byggeklosser.png": "/frontend-components/assets/png/Byggeklosser.png",
     "assets/png/Byggeklosser_skisse.png": "/frontend-components/assets/png/Byggeklosser_skisse.png",
     "assets/png/designer.png": "/frontend-components/assets/png/designer.png",
@@ -33,7 +33,7 @@
     "assets/svg/ske-logo-intern-kopi.svg": "/frontend-components/assets/svg/ske-logo-intern-kopi.svg",
     "assets/svg/ske-logo-intern.svg": "/frontend-components/assets/svg/ske-logo-intern.svg",
     "assets/svg/ske-logo.svg": "/frontend-components/assets/svg/ske-logo.svg",
-    "build/2.2371d97f.js.LICENSE.txt": "/frontend-components/build/2.2371d97f.js.LICENSE.txt",
+    "build/2.d7e08962.js.LICENSE.txt": "/frontend-components/build/2.d7e08962.js.LICENSE.txt",
     "favicon.ico": "/frontend-components/favicon.ico",
     "index.html": "/frontend-components/index.html",
     "manifest.json": "/frontend-components/manifest.json",
@@ -109,8 +109,8 @@
   },
   "entrypoints": [
     "build/bundle.f88df48c.js",
-    "build/2.2371d97f.js",
+    "build/2.d7e08962.js",
     "static/css/main.34762217.chunk.css",
-    "build/main.3b122686.js"
+    "build/main.f8ca1a6f.js"
   ]
 }
