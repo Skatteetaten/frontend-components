@@ -20,6 +20,7 @@ import FileUploaderMigration from './FileUploaderMigration.md';
 import FooterContentMigration from './FooterContentMigration.md';
 import IconButtonMigration from './IconButtonMigration.md';
 import IconMigration from './IconMigration.md';
+import ImageMigration from './ImageMigration.md';
 import LabelWithCalloutMigration from './LabelWithCalloutMigration.md';
 import LanguagePickerMigration from './LanguagePickerMigration.md';
 import LinkGroupMigration from './LinkGroupMigration.md';
@@ -70,6 +71,7 @@ export const MigrationGuides = [
   FooterContentMigration,
   IconButtonMigration,
   IconMigration,
+  ImageMigration,
   LabelWithCalloutMigration,
   LanguagePickerMigration,
   LinkGroupMigration,
