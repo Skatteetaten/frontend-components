@@ -4,7 +4,9 @@ import { getClassNames } from './Card.classNames';
 import { Icon } from '../Icon';
 import { CardBorder, CardColor, CardProps, CardState } from './Card.types';
 
-/*
+/**
+ * @deprecated Card har ingen en-til-en erstatter. Panel, Alert, OpenClose eller
+ * Accordion kan benyttes avhengig av hvilken funskjonalitet man trenger fra Card.
  * visibleName Card (Innholdskort)
  */
 export class Card extends React.PureComponent<CardProps, CardState> {
