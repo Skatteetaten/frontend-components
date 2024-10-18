@@ -49,6 +49,7 @@ import TopStripeMenuMigration from './TopStripeMenuMigration.md';
 import TopStripeMigration from './TopStripeMigration.md';
 import TopStripeUserMigration from './TopStripeUserMigration.md';
 import TypographyMigration from './TypographyMigration.md';
+import WaitAlertMigration from './WaitAlertMigration.md';
 
 export const MigrationGuides = [
   AccordionItemMigration,
@@ -100,4 +101,5 @@ export const MigrationGuides = [
   TopStripeMigration,
   TopStripeUserMigration,
   TypographyMigration,
+  WaitAlertMigration,
 ];

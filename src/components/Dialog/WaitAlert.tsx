@@ -3,6 +3,11 @@ import waitAlertSvg from './assets/wait_alert_illustration.svg';
 import { t } from '../utils';
 import { Button } from '../Button';
 
+/**
+ * @deprecated Komponenten er erstattet av Modal fra "@skatteetaten/ds-overlays"
+ *
+ * visibleName WaitAlert
+ */
 const WaitAlert: React.FC<{
   onDismiss?: (ev?: React.MouseEvent<HTMLButtonElement>) => any;
   waitAlertBtnText?: string;
