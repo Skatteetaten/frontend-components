@@ -14,8 +14,10 @@ import { DetailsListProps, IColumn } from './DetailsList.types';
 
 export { FabricDetailsList, DetailsRow };
 
-/*
- * visibleName DetailsList (Sammensatt tabell)
+/**
+ * @deprecated Komponenten er erstattet av Table fra "@skatteetaten/ds-table"
+ *
+ * visibleName  DetailsList (Sammensatt tabell)
  */
 export class DetailsList extends React.PureComponent<DetailsListProps, {}> {
   static ConstrainMode = ConstrainMode;
