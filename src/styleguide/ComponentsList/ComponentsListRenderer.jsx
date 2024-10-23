@@ -13,7 +13,11 @@ function createMenu(items, searchTerm, activeSlug) {
       ];
 
       let isDeprecated = !!props?.tags?.deprecated;
-      if (name === 'ModalContext' || name === 'ModalProvider') {
+      if (
+        name === 'ModalContext' ||
+        name === 'ModalProvider' ||
+        name === 'DetailsList'
+      ) {
         isDeprecated = true;
       }
       const containsActiveSlug = find(links, (l) => l.key === activeSlug);
