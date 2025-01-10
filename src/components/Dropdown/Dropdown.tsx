@@ -14,7 +14,7 @@ import { IStyleFunctionOrObject } from '@fluentui/utilities';
 import { DropdownProps } from './DropDown.types';
 
 /**
- * @deprecated Komponenten er erstattet av Dropdown fra "@skatteetaten/ds-forms"
+ * @deprecated Komponenten er erstattet av Select fra "@skatteetaten/ds-forms"
  *
  * visibleName Dropdown (Nedtrekksliste)
  */
