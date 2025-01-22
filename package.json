@@ -137,7 +137,7 @@
     "lint:prettier-fix": "prettier --loglevel warn --write src/**/*{.ts,.tsx,.js,.jsx,.css,.md}",
     "sonarqube": "sonar-scanner",
     "test": "react-scripts test --env=jsdom --verbose=true",
-    "test:coverage": "CI=true react-scripts test --env=jsdom --coverage --testResultsProcessor jest-junit",
+    "test:coverage": "CI=true react-scripts test --env=jsdom --coverage --testResultsProcessor jest-junit --maxWorkers=7",
     "circularDeps": "node scripts/checkCircularDeps.js",
     "postversion": "npm run build:copy-files",
     "clean": "rimraf coverage lib docs *.tgz",
