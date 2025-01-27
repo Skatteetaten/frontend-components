@@ -14,7 +14,7 @@ function Forside(props) {
       <h1 style={{ textAlign: 'center', marginBottom: '56px' }}>
         Designe og utvikle
       </h1>
-      <Card color={Card.Color.YELLOW} border={Card.Border.YELLOW_BORDER}>
+      <Card color={Card.Color.RED}>
         <Grid padding={'0px'}>
           <Grid.Row rowSpacing={Grid.SPACE_LARGE}>
             <Grid.Col noSpacing hiddenLgDown sm={0} lg={1} xl={2}>
@@ -35,24 +35,23 @@ function Forside(props) {
             </Grid.Col>
             <Grid.Col noSpacing sm={12} lg={10} xl={8}>
               <h2 style={{ marginTop: '0px' }}>
-                Vi bygger et nytt designsystem
+                Komponentene på disse sidene er utdaterte
               </h2>
               <p>
-                Vi holder på med{' '}
+                Vi har laget et nytt designsystem som erstatter innholdet på
+                disse sidene. Du bør heller gå til{' '}
                 <Link
                   path={
                     'https://www.skatteetaten.no/stilogtone/designsystemet/'
                   }
-                  text={'nye sider for designsystemet vårt'}
+                  text={'de nye sidene til designsystemet'}
                 />{' '}
-                og vil fortløpende henvise til nye komponenter og mønstre etter
-                hvert som de blir klare.
+                og velge komponenter derfra.
               </p>
 
               <p>
-                Ha litt tålmodighet, så jobber vi så raskt vi kan med å få
-                orden. Hvis du lurer på noe, kan du alltid spørre oss i
-                Designsystem-kanalen i Teams (FAG-Brukeropplevelse).
+                Hvis du lurer på noe kan du alltid spørre oss i
+                Designsystem-kanalen i Teams.
               </p>
             </Grid.Col>
             <Grid.Col noSpacing sm={0} lg={1} xl={2}></Grid.Col>
