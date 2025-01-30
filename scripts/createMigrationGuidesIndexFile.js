@@ -34,6 +34,9 @@ function createIndexFile() {
     throw err;
   }
 }
+console.log(
+  'NOTE: Hvis komponenten fortsatt ikke vises som deprecated etter at den er tagget i jsdoc så kan den hardkodes i ComponentsListRenderer.jsx.'
+);
 
 createIndexFile('SystemIcons');
 createIndexFile('ThemeIcons');

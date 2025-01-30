@@ -4,6 +4,15 @@ import { AccordionItem } from '@skatteetaten/frontend-components/Accordion/Accor
 
 <div>
   <div lang="en">
+    <h2>v.15.0.0 - January 2025</h2>
+    <ul>
+      <li>Migration guide: WaitALert</li>
+      <li>Migration guide: DetailsList</li>
+      <li>Migration guide: Card</li>
+      <li>Migration guide: Image</li>
+      <li>Fixed typo in depreceation warning for Dropdown</li>
+      <li>Updated documentation to point to the current design system.</li>
+    </ul>
     <h2>v.14.0.1 - August 2024</h2>
     <ul>
       <li>Upgraded dependency: axios</li>

@@ -12,6 +12,7 @@ import CardMigration from './CardMigration.md';
 import CheckBoxMigration from './CheckBoxMigration.md';
 import ChipMigration from './ChipMigration.md';
 import DatePickerMigration from './DatePickerMigration.md';
+import DetailsListMigration from './DetailsListMigration.md';
 import DialogMigration from './DialogMigration.md';
 import DropdownMigration from './DropdownMigration.md';
 import ErrorMessageMigration from './ErrorMessageMigration.md';
@@ -20,6 +21,7 @@ import FileUploaderMigration from './FileUploaderMigration.md';
 import FooterContentMigration from './FooterContentMigration.md';
 import IconButtonMigration from './IconButtonMigration.md';
 import IconMigration from './IconMigration.md';
+import ImageMigration from './ImageMigration.md';
 import LabelWithCalloutMigration from './LabelWithCalloutMigration.md';
 import LanguagePickerMigration from './LanguagePickerMigration.md';
 import LinkGroupMigration from './LinkGroupMigration.md';
@@ -48,6 +50,7 @@ import TopStripeMenuMigration from './TopStripeMenuMigration.md';
 import TopStripeMigration from './TopStripeMigration.md';
 import TopStripeUserMigration from './TopStripeUserMigration.md';
 import TypographyMigration from './TypographyMigration.md';
+import WaitAlertMigration from './WaitAlertMigration.md';
 
 export const MigrationGuides = [
   AccordionItemMigration,
@@ -62,6 +65,7 @@ export const MigrationGuides = [
   CheckBoxMigration,
   ChipMigration,
   DatePickerMigration,
+  DetailsListMigration,
   DialogMigration,
   DropdownMigration,
   ErrorMessageMigration,
@@ -70,6 +74,7 @@ export const MigrationGuides = [
   FooterContentMigration,
   IconButtonMigration,
   IconMigration,
+  ImageMigration,
   LabelWithCalloutMigration,
   LanguagePickerMigration,
   LinkGroupMigration,
@@ -98,4 +103,5 @@ export const MigrationGuides = [
   TopStripeMigration,
   TopStripeUserMigration,
   TypographyMigration,
+  WaitAlertMigration,
 ];

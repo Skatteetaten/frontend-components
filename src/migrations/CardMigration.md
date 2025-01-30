@@ -1,10 +1,12 @@
-**Fra @skatteetaten/frontend-components v5+ (designsystem-legacy) til Designsystemet v0.3.0**
+**Fra @skatteetaten/frontend-components v5+ (designsystem-legacy) til Designsystemet v1.2.0**
 
 ## Endringer i funksjonalitet:
 
 - deler av Card er blitt gjort om til en ny komponent Panel uten åpne/lukke-funksjonalitet
-- du kan fortsatt bruke Card hvis du trenger åpne/lukke-funksjonalitet til det kommer ny komponent for dette
+- hvis du trenger åpne/lukke-funksjonalitet kan du bruke OpenClose fra @skatteetaten/ds-collections
+- hvis du trenger flere ettefølgende bokser som kan åpnes og lukkes så kan du bruke Accordion fra @skatteetaten/ds-collections
 - overskrift er kodet som heading element
+- bruk Alert hvis du trenger dynamisk varsel
 
 ## Styling:
 
@@ -191,6 +193,58 @@ import { Panel } from '@skatteetaten/ds-content';
 <td>'expand'
 
 'isExpanded'
+
+</td>
+<td>
+
+Før:
+
+```javascript static
+import { Card } from '@skatteetaten/frontend-components/Card';
+
+<div>
+  <Card title={'Skatteoppgjør'} isExpanded={false} expand>
+    Skatteoppgjøret er ikke klart ennå. Du finner flere opplysninger på{' '}
+    <Link path={'#'} text={'min side'} />.
+  </Card>
+  <Card title={'Saker'} isExpanded={false} expand>
+    Ingen registrerte saker.
+  </Card>
+</div>;
+```
+
+Nå:
+
+```js static
+import { Accordion } from '@skatteetaten/ds-collections';
+
+
+
+<Accordion color={'ochre'} size={'small'}>
+  <Accordion.Item title={'Skatteoppgjør'}>
+    {
+      'Skatteoppgjøret er ikke klart ennå. Du finner flere opplysninger på'
+    }
+    <Link href={'#'}>{'min side'}</Link>
+    {'.'}
+  </Accordion.Item>
+  <Accordion.Item title={'Saker'}>
+    {'Ingen registrerte saker.'}
+  </Accordion.Item>
+</Accordion>
+
+<Panel color={'forest'}>{'Innhold'}</Panel>;
+// ELLER
+<Panel variant={'outline'} color={'forest'}>
+  {'Innhold'}
+</Panel>;
+```
+
+</td>
+</tr>
+
+<tr>
+<td>
 
 'buttonType'
 
