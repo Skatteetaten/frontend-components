@@ -1,4 +1,4 @@
-**Fra @skatteetaten/frontend-components v5+ (designsystem-legacy) til Designsystemet v1.3.0**
+**Fra @skatteetaten/frontend-components v15+ (designsystem-legacy) til Designsystemet v1.5.0**
 
 ## Endringer i funksjonalitet:
 
