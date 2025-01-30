@@ -5,7 +5,7 @@ import { Icon } from '../Icon';
 import { CardBorder, CardColor, CardProps, CardState } from './Card.types';
 
 /**
- * @deprecated Card har ingen en-til-en erstatter. Panel, Alert, OpenClose eller
+ * @deprecated Card har ingen en-til-en erstatter. Panel, Card, Alert, OpenClose eller
  * Accordion kan benyttes avhengig av hvilken funskjonalitet man trenger fra Card.
  * visibleName Card (Innholdskort)
  */
