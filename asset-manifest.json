@@ -1,9 +1,9 @@
 {
   "files": {
     "main.css": "/frontend-components/static/css/main.34762217.chunk.css",
-    "main.js": "/frontend-components/build/main.f8ca1a6f.js",
+    "main.js": "/frontend-components/build/main.2855d227.js",
     "runtime-main.js": "/frontend-components/build/bundle.f88df48c.js",
-    "build/2.d7e08962.js": "/frontend-components/build/2.d7e08962.js",
+    "build/2.469798f8.js": "/frontend-components/build/2.469798f8.js",
     "assets/png/Byggeklosser.png": "/frontend-components/assets/png/Byggeklosser.png",
     "assets/png/Byggeklosser_skisse.png": "/frontend-components/assets/png/Byggeklosser_skisse.png",
     "assets/png/designer.png": "/frontend-components/assets/png/designer.png",
@@ -33,7 +33,7 @@
     "assets/svg/ske-logo-intern-kopi.svg": "/frontend-components/assets/svg/ske-logo-intern-kopi.svg",
     "assets/svg/ske-logo-intern.svg": "/frontend-components/assets/svg/ske-logo-intern.svg",
     "assets/svg/ske-logo.svg": "/frontend-components/assets/svg/ske-logo.svg",
-    "build/2.d7e08962.js.LICENSE.txt": "/frontend-components/build/2.d7e08962.js.LICENSE.txt",
+    "build/2.469798f8.js.LICENSE.txt": "/frontend-components/build/2.469798f8.js.LICENSE.txt",
     "favicon.ico": "/frontend-components/favicon.ico",
     "index.html": "/frontend-components/index.html",
     "manifest.json": "/frontend-components/manifest.json",
@@ -46,10 +46,11 @@
     "static/media/ButtonLinkMigration.486d811d.md": "/frontend-components/static/media/ButtonLinkMigration.486d811d.md",
     "static/media/ButtonMigration.fec2aa87.md": "/frontend-components/static/media/ButtonMigration.fec2aa87.md",
     "static/media/CalloutMigration.77220bab.md": "/frontend-components/static/media/CalloutMigration.77220bab.md",
-    "static/media/CardMigration.60114318.md": "/frontend-components/static/media/CardMigration.60114318.md",
+    "static/media/CardMigration.1fc08a68.md": "/frontend-components/static/media/CardMigration.1fc08a68.md",
     "static/media/CheckBoxMigration.b721754f.md": "/frontend-components/static/media/CheckBoxMigration.b721754f.md",
     "static/media/ChipMigration.3686313d.md": "/frontend-components/static/media/ChipMigration.3686313d.md",
     "static/media/DatePickerMigration.57354ead.md": "/frontend-components/static/media/DatePickerMigration.57354ead.md",
+    "static/media/DetailsListMigration.7c1bf30d.md": "/frontend-components/static/media/DetailsListMigration.7c1bf30d.md",
     "static/media/DialogMigration.0679e025.md": "/frontend-components/static/media/DialogMigration.0679e025.md",
     "static/media/DropdownMigration.4836adc1.md": "/frontend-components/static/media/DropdownMigration.4836adc1.md",
     "static/media/EnglishFlag.714be210.svg": "/frontend-components/static/media/EnglishFlag.714be210.svg",
@@ -59,6 +60,7 @@
     "static/media/FooterContentMigration.999a6419.md": "/frontend-components/static/media/FooterContentMigration.999a6419.md",
     "static/media/IconButtonMigration.82c00809.md": "/frontend-components/static/media/IconButtonMigration.82c00809.md",
     "static/media/IconMigration.1f90c8e1.md": "/frontend-components/static/media/IconMigration.1f90c8e1.md",
+    "static/media/ImageMigration.18a8d4c4.md": "/frontend-components/static/media/ImageMigration.18a8d4c4.md",
     "static/media/LabelWithCalloutMigration.a6e4a69c.md": "/frontend-components/static/media/LabelWithCalloutMigration.a6e4a69c.md",
     "static/media/LanguagePickerMigration.db85acd8.md": "/frontend-components/static/media/LanguagePickerMigration.db85acd8.md",
     "static/media/LinkGroupMigration.8c39e8cd.md": "/frontend-components/static/media/LinkGroupMigration.8c39e8cd.md",
@@ -90,6 +92,7 @@
     "static/media/TopStripeMigration.e6bed995.md": "/frontend-components/static/media/TopStripeMigration.e6bed995.md",
     "static/media/TopStripeUserMigration.2c403b36.md": "/frontend-components/static/media/TopStripeUserMigration.2c403b36.md",
     "static/media/TypographyMigration.27c3cc4a.md": "/frontend-components/static/media/TypographyMigration.27c3cc4a.md",
+    "static/media/WaitAlertMigration.a3b37f55.md": "/frontend-components/static/media/WaitAlertMigration.a3b37f55.md",
     "static/media/footerDekor.416cfac2.svg": "/frontend-components/static/media/footerDekor.416cfac2.svg",
     "static/media/ink-logo.0736fbe9.svg": "/frontend-components/static/media/ink-logo.0736fbe9.svg",
     "static/media/logoINK.d1a7e087.svg": "/frontend-components/static/media/logoINK.d1a7e087.svg",
@@ -109,8 +112,8 @@
   },
   "entrypoints": [
     "build/bundle.f88df48c.js",
-    "build/2.d7e08962.js",
+    "build/2.469798f8.js",
     "static/css/main.34762217.chunk.css",
-    "build/main.f8ca1a6f.js"
+    "build/main.2855d227.js"
   ]
 }
