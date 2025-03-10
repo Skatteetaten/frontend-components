@@ -32,6 +32,7 @@ import NavigationContentMigration from './NavigationContentMigration.md';
 import NavigationTileMigration from './NavigationTileMigration.md';
 import OpenCloseMigration from './OpenCloseMigration.md';
 import PaginationMigration from './PaginationMigration.md';
+import ProgressBarMigration from './ProgressBarMigration.md';
 import RadioButtonGroupMigration from './RadioButtonGroupMigration.md';
 import ScrollToTopButtonMigration from './ScrollToTopButtonMigration.md';
 import SearchFieldMigration from './SearchFieldMigration.md';
@@ -85,6 +86,7 @@ export const MigrationGuides = [
   NavigationTileMigration,
   OpenCloseMigration,
   PaginationMigration,
+  ProgressBarMigration,
   RadioButtonGroupMigration,
   ScrollToTopButtonMigration,
   SearchFieldMigration,

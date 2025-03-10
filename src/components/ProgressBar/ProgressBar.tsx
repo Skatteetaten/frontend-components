@@ -4,7 +4,8 @@ import React from 'react';
 import { getClassNames } from './ProgressBar.classNames';
 import { BrandContext } from '../SkeBasis';
 
-/*
+/**
+ * @deprecated Komponenten er erstattet av Spinner fra "@skatteetaten/ds-progress"
  * visibleName ProgressBar (Fremdriftsvisning)
  */
 export const ProgressBar: React.FC<IProgressIndicatorProps> = (props) => {
