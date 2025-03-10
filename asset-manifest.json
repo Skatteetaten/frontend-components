@@ -1,9 +1,9 @@
 {
   "files": {
     "main.css": "/frontend-components/static/css/main.34762217.chunk.css",
-    "main.js": "/frontend-components/build/main.2855d227.js",
+    "main.js": "/frontend-components/build/main.1db04d55.js",
     "runtime-main.js": "/frontend-components/build/bundle.f88df48c.js",
-    "build/2.469798f8.js": "/frontend-components/build/2.469798f8.js",
+    "build/2.bde9fd35.js": "/frontend-components/build/2.bde9fd35.js",
     "assets/png/Byggeklosser.png": "/frontend-components/assets/png/Byggeklosser.png",
     "assets/png/Byggeklosser_skisse.png": "/frontend-components/assets/png/Byggeklosser_skisse.png",
     "assets/png/designer.png": "/frontend-components/assets/png/designer.png",
@@ -33,7 +33,7 @@
     "assets/svg/ske-logo-intern-kopi.svg": "/frontend-components/assets/svg/ske-logo-intern-kopi.svg",
     "assets/svg/ske-logo-intern.svg": "/frontend-components/assets/svg/ske-logo-intern.svg",
     "assets/svg/ske-logo.svg": "/frontend-components/assets/svg/ske-logo.svg",
-    "build/2.469798f8.js.LICENSE.txt": "/frontend-components/build/2.469798f8.js.LICENSE.txt",
+    "build/2.bde9fd35.js.LICENSE.txt": "/frontend-components/build/2.bde9fd35.js.LICENSE.txt",
     "favicon.ico": "/frontend-components/favicon.ico",
     "index.html": "/frontend-components/index.html",
     "manifest.json": "/frontend-components/manifest.json",
@@ -72,6 +72,7 @@
     "static/media/NorwegianFlag.e7fb117c.svg": "/frontend-components/static/media/NorwegianFlag.e7fb117c.svg",
     "static/media/OpenCloseMigration.30cd90a4.md": "/frontend-components/static/media/OpenCloseMigration.30cd90a4.md",
     "static/media/PaginationMigration.7c6d69bb.md": "/frontend-components/static/media/PaginationMigration.7c6d69bb.md",
+    "static/media/ProgressBarMigration.f01334f2.md": "/frontend-components/static/media/ProgressBarMigration.f01334f2.md",
     "static/media/RadioButtonGroupMigration.b7dd8536.md": "/frontend-components/static/media/RadioButtonGroupMigration.b7dd8536.md",
     "static/media/SamiFlag.bc29c560.svg": "/frontend-components/static/media/SamiFlag.bc29c560.svg",
     "static/media/ScrollToTopButtonMigration.dde01159.md": "/frontend-components/static/media/ScrollToTopButtonMigration.dde01159.md",
@@ -112,8 +113,8 @@
   },
   "entrypoints": [
     "build/bundle.f88df48c.js",
-    "build/2.469798f8.js",
+    "build/2.bde9fd35.js",
     "static/css/main.34762217.chunk.css",
-    "build/main.2855d227.js"
+    "build/main.1db04d55.js"
   ]
 }
