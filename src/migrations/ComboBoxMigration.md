@@ -391,11 +391,11 @@ import { Combobox } from '@skatteetaten/ds-forms';
 <Combobox
   label={'Fruktsort'}
   classNames={{
-    container: 'myContainerClassname',
-    input: 'myInputClassname',
     options: 'myOptionsClassname',
-    chips: 'myChipsClassname',
     errorMessage: 'myErrorMessageClassname',
+    label: 'myLabelClassname',
+    helpText: 'myHelpTextClassname',
+    description: 'myDescriptionClassname',
   }}
   options={...}
 />
