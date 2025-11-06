@@ -11,6 +11,7 @@ import CalloutMigration from './CalloutMigration.md';
 import CardMigration from './CardMigration.md';
 import CheckBoxMigration from './CheckBoxMigration.md';
 import ChipMigration from './ChipMigration.md';
+import ComboBoxMigration from './ComboBoxMigration.md';
 import DatePickerMigration from './DatePickerMigration.md';
 import DetailsListMigration from './DetailsListMigration.md';
 import DialogMigration from './DialogMigration.md';
@@ -65,6 +66,7 @@ export const MigrationGuides = [
   CardMigration,
   CheckBoxMigration,
   ChipMigration,
+  ComboBoxMigration,
   DatePickerMigration,
   DetailsListMigration,
   DialogMigration,
