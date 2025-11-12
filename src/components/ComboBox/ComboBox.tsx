@@ -7,6 +7,10 @@ import { generateId } from '../utils';
 import { LabelWithCallout } from '../LabelWithCallout';
 import { ComboBoxProps } from './ComboBox.types';
 
+/**
+ * @deprecated Komponenten er erstattet av Combobox fra "@skatteetaten/ds-forms"
+ * visibleName  ComboBox (Nedtrekksliste med skriving)
+ */
 export const ComboBox: React.FC<ComboBoxProps> = (props) => {
   const {
     children,
