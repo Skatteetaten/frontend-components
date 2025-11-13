@@ -1,9 +1,9 @@
 {
   "files": {
     "main.css": "/frontend-components/static/css/main.34762217.chunk.css",
-    "main.js": "/frontend-components/build/main.4e8f8f67.js",
+    "main.js": "/frontend-components/build/main.8a1942a4.js",
     "runtime-main.js": "/frontend-components/build/bundle.f88df48c.js",
-    "build/2.a302bc9b.js": "/frontend-components/build/2.a302bc9b.js",
+    "build/2.ba1b779a.js": "/frontend-components/build/2.ba1b779a.js",
     "assets/png/Byggeklosser.png": "/frontend-components/assets/png/Byggeklosser.png",
     "assets/png/Byggeklosser_skisse.png": "/frontend-components/assets/png/Byggeklosser_skisse.png",
     "assets/png/designer.png": "/frontend-components/assets/png/designer.png",
@@ -33,7 +33,7 @@
     "assets/svg/ske-logo-intern-kopi.svg": "/frontend-components/assets/svg/ske-logo-intern-kopi.svg",
     "assets/svg/ske-logo-intern.svg": "/frontend-components/assets/svg/ske-logo-intern.svg",
     "assets/svg/ske-logo.svg": "/frontend-components/assets/svg/ske-logo.svg",
-    "build/2.a302bc9b.js.LICENSE.txt": "/frontend-components/build/2.a302bc9b.js.LICENSE.txt",
+    "build/2.ba1b779a.js.LICENSE.txt": "/frontend-components/build/2.ba1b779a.js.LICENSE.txt",
     "favicon.ico": "/frontend-components/favicon.ico",
     "index.html": "/frontend-components/index.html",
     "manifest.json": "/frontend-components/manifest.json",
@@ -49,6 +49,7 @@
     "static/media/CardMigration.1fc08a68.md": "/frontend-components/static/media/CardMigration.1fc08a68.md",
     "static/media/CheckBoxMigration.b721754f.md": "/frontend-components/static/media/CheckBoxMigration.b721754f.md",
     "static/media/ChipMigration.3686313d.md": "/frontend-components/static/media/ChipMigration.3686313d.md",
+    "static/media/ComboBoxMigration.123dfd3b.md": "/frontend-components/static/media/ComboBoxMigration.123dfd3b.md",
     "static/media/DatePickerMigration.57354ead.md": "/frontend-components/static/media/DatePickerMigration.57354ead.md",
     "static/media/DetailsListMigration.7c1bf30d.md": "/frontend-components/static/media/DetailsListMigration.7c1bf30d.md",
     "static/media/DialogMigration.0679e025.md": "/frontend-components/static/media/DialogMigration.0679e025.md",
@@ -113,8 +114,8 @@
   },
   "entrypoints": [
     "build/bundle.f88df48c.js",
-    "build/2.a302bc9b.js",
+    "build/2.ba1b779a.js",
     "static/css/main.34762217.chunk.css",
-    "build/main.4e8f8f67.js"
+    "build/main.8a1942a4.js"
   ]
 }
