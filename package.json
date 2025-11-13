@@ -2,7 +2,7 @@
   "name": "@skatteetaten/frontend-components",
   "groupId": "no.skatteetaten.aurora",
   "license": "Apache-2.0",
-  "version": "16.0.0",
+  "version": "17.0.0",
   "private": false,
   "sideEffects": false,
   "bin": {
@@ -96,7 +96,7 @@
     "rollup-plugin-polyfill-node": "0.7.0",
     "rollup-plugin-terser": "7.0.2",
     "rollup-plugin-visualizer": "5.5.2",
-    "sonarqube-scanner": "2.8.1",
+    "sonarqube-scanner": "4.2.6",
     "tslib": "2.3.1",
     "typescript": "4.8.4",
     "use-hash-history": "1.3.4",
