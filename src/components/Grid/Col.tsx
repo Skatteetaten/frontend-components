@@ -27,6 +27,9 @@ export interface ColProps {
   children?: ReactNode;
 }
 
+/**
+ *  @deprecated Komponenten vil ikke bli erstattet.
+ */
 export class Col extends React.Component<ColProps, {}> {
   static displayName = 'GridCol';
   render() {

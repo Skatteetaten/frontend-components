@@ -10,7 +10,9 @@ export interface RowProps {
   padding?: string;
   children?: React.ReactNode;
 }
-
+/**
+ *  @deprecated Komponenten vil ikke bli erstattet.
+ */
 export class Row extends React.Component<RowProps, {}> {
   static displayName = 'GridRow';
 

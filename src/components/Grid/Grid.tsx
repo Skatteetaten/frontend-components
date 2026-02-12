@@ -11,9 +11,11 @@ export interface GridProps {
   children?: ReactNode;
 }
 
-/*
- * visibleName Grid (Rutenett)
+/**
+ *  @deprecated Komponenten vil ikke bli erstattet.
+ *  visibleName Grid (Rutenett)
  */
+
 export class Grid extends React.Component<GridProps, {}> {
   static Col = Col;
   static Row = Row;
