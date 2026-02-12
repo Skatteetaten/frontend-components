@@ -55,7 +55,7 @@ import { Link } from '@skatteetaten/frontend-components/Link';
   - sider som påvirkes
   - avstander, tilstander, UU
 - Sett opp:
-  - [installer nytt komponentbiliotek](https://www.skatteetaten.no/stilogtone/designsystemet/kom-i-gang/for-utviklere/) i prosjektet (npm install):
+  - [installer nytt komponentbibliotek](https://www.skatteetaten.no/stilogtone/designsystemet/kom-i-gang/for-utviklere/) i prosjektet (npm install):
   - [sett opp tokens](https://www.skatteetaten.no/stilogtone/designsystemet/kom-i-gang/for-utviklere/) for bruk med legacy og nytt ds:
 
 ### **Når du står fast**
@@ -105,8 +105,8 @@ Nytt designsystem prioriterer:
   - [CSS Grid](https://www.w3schools.com/css/css_grid.asp)
   - [Flexbox](https://www.w3schools.com/css/css3_flexbox.asp)
 - Se sidetyper i Storybook for kodeeksempler,
-  - Ekstern: [Sentrert sidelayot](https://skatteetaten.github.io/designsystemet/?path=/story/sidetyper-ekstern-layout--standard-layout)
-  - Intern: [Arbeidliste](https://skatteetaten.github.io/designsystemet/?path=/story/sidetyper-intern-arbeidsliste--arbeidsliste) eller[Saksvisning](https://skatteetaten.github.io/designsystemet/?path=/story/sidetyper-intern-saksvisning--saksvisning)
+  - Ekstern: [Sentrert sidelayout](https://skatteetaten.github.io/designsystemet/?path=/story/sidetyper-ekstern-layout--standard-layout)
+  - Intern: [Arbeidliste](https://skatteetaten.github.io/designsystemet/?path=/story/sidetyper-intern-arbeidsliste--arbeidsliste) eller [Saksvisning](https://skatteetaten.github.io/designsystemet/?path=/story/sidetyper-intern-saksvisning--saksvisning)
 
 ### **Viktige mønstre**
 
@@ -115,7 +115,7 @@ Nytt designsystem prioriterer:
 - **Disablede elementer**
   - unngå; vurder skjuling, forklaring eller readonly. Se [mønster for inaktive felt](https://www.skatteetaten.no/stilogtone/monster/interaksjon/inaktive-felt/)
 - **Feilmeldinger**
-  - skille mellom [brukerutløste feil](https://www.skatteetaten.no/stilogtone/monster/interaksjon/brukerutlost/) og [systemvarsler}(https://www.skatteetaten.no/stilogtone/monster/interaksjon/systemvarsler/)
+  - skille mellom [brukerutløste feil](https://www.skatteetaten.no/stilogtone/monster/interaksjon/brukerutlost/) og [systemvarsler](https://www.skatteetaten.no/stilogtone/monster/interaksjon/systemvarsler/)
 - **Overskriftsnivåer**
   - bruk `<Heading level="" as="">` aktivt for å styre visuelt og semantisk nivå.
   - unngå [hopp i overskriftnivå](https://www.uutilsynet.no/veiledning/tekst-og-struktur/226#overskriftsniver)

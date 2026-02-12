@@ -19,7 +19,8 @@ interface CommandBarItem extends ICommandBarItemProps {
   selected?: boolean;
   selectedColor?: string;
 }
-/*
+/**
+ * @deprecated Komponenten er fastet ut
  * visibleName CommandBar (Menyknapper)
  */
 const CommandBar: React.FC<CommandBarProps> = (props) => {
