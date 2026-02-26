@@ -85,7 +85,7 @@ export class StyleGuideRenderer extends React.Component {
               <div className="slogan">
                 <Link
                   path={'https://www.skatteetaten.no/stilogtone/'}
-                  text={'Språk, design og utvikling i Skatteetaten'}
+                  text={'Til stil og tone'}
                   icon={'ArrowBack'}
                   placement="before"
                 />

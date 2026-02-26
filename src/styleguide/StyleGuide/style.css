@@ -256,6 +256,34 @@ button.ms-Nav-chevronButton:not(:hover) {
   background: none !important;
 }
 
+@keyframes blurEffect {
+  0% {
+    filter: blur(0px);
+  }
+  50% {
+    filter: blur(5px);
+  }
+  100% {
+    filter: blur(0px);
+  }
+}
+
+@keyframes gentleSwing {
+  0%,
+  100% {
+    transform: rotate(4deg);
+  }
+  50% {
+    transform: rotate(1deg);
+  }
+}
+
+.deprecated-card {
+  transform: rotate(-3deg);
+  transform-origin: top center;
+  animation: gentleSwing 3s ease-in-out infinite;
+}
+
 #main {
   display: flex;
   flex-direction: column;
