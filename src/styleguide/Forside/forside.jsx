@@ -38,7 +38,7 @@ function Forside(props) {
               <p>
                 Vi har laget et nytt designsystem som erstatter innholdet på
                 disse sidene. Komponentene blir ikke aktivt vedlikeholdt. Gå
-                heller gå til{' '}
+                heller til{' '}
                 <Link
                   path={
                     'https://www.skatteetaten.no/stilogtone/designsystemet/'
