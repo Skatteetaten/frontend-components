@@ -12,9 +12,9 @@ function Forside(props) {
   return (
     <div style={{ marginBottom: '56px', marginTop: '30px' }}>
       <h1 style={{ textAlign: 'center', marginBottom: '56px' }}>
-        Designe og utvikle
+        Legacy designkomponenter
       </h1>
-      <Card color={Card.Color.RED}>
+      <Card color={Card.Color.RED} className="deprecated-card">
         <Grid padding={'0px'}>
           <Grid.Row rowSpacing={Grid.SPACE_LARGE}>
             <Grid.Col noSpacing hiddenLgDown sm={0} lg={1} xl={2}>
@@ -34,24 +34,23 @@ function Forside(props) {
               </div>
             </Grid.Col>
             <Grid.Col noSpacing sm={12} lg={10} xl={8}>
-              <h2 style={{ marginTop: '0px' }}>
-                Komponentene på disse sidene er utdaterte
-              </h2>
+              <h2 style={{ marginTop: '0px' }}>Komponentene er utgått</h2>
               <p>
                 Vi har laget et nytt designsystem som erstatter innholdet på
-                disse sidene. Du bør heller gå til{' '}
+                disse sidene. Komponentene blir ikke aktivt vedlikeholdt. Gå
+                heller til{' '}
                 <Link
                   path={
                     'https://www.skatteetaten.no/stilogtone/designsystemet/'
                   }
-                  text={'de nye sidene til designsystemet'}
+                  text={'designsystemet på stil og tone'}
                 />{' '}
-                og velge komponenter derfra.
+                og bruk komponenter derfra.
               </p>
 
               <p>
                 Hvis du lurer på noe kan du alltid spørre oss i
-                Designsystem-kanalen i Teams.
+                Designsystem-kanalen.
               </p>
             </Grid.Col>
             <Grid.Col noSpacing sm={0} lg={1} xl={2}></Grid.Col>
@@ -61,20 +60,20 @@ function Forside(props) {
 
       <NavigationTile>
         <NavigationContent
-          icon={'hammer'}
-          heading={'For utviklere'}
-          to={'#section-kom-i-gang-for-utviklere'}
-          key={'for-utviklere'}
+          icon={'bookOpen'}
+          heading={'Kom i gang med migrering'}
+          to={'#section-kom-i-gang-med-migrering'}
+          key={'migrering'}
         >
-          Kom i gang med designsystemet i din løsning
+          Overordnet om hvordan du migrerer til nytt designsystem
         </NavigationContent>
         <NavigationContent
-          icon={'bookOpen'}
-          heading={'For designere'}
-          to={'#section-kom-i-gang-for-designere'}
-          key={'for-designere'}
+          icon={'hammer'}
+          heading={'Installasjon'}
+          to={'#section-installasjon'}
+          key={'for-utviklere'}
         >
-          Kom i gang med Figma-prototyper og design
+          Kommandoer for å installere legacy-komponeter
         </NavigationContent>
       </NavigationTile>
     </div>

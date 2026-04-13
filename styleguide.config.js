@@ -27,25 +27,14 @@ module.exports = {
       name: 'Designe og utvikle',
       sections: [
         {
-          name: 'Kom i gang for utviklere',
+          name: 'Kom i gang med migrering',
+          content: 'src/sections/kom-i-gang/migrering.md',
+        },
+        {
+          name: 'Installasjon',
           content: 'src/sections/kom-i-gang/installasjon.md',
         },
-        {
-          name: 'Kom i gang for designere',
-          content: 'src/sections/kom-i-gang/designere.md',
-        },
-        {
-          name: 'Tommelfingerregler for design',
-          content: 'src/sections/kom-i-gang/tommelfinger.md',
-        },
-        {
-          name: 'Tips og triks',
-          content: 'src/sections/kom-i-gang/tipstriks.md',
-        },
-        {
-          name: 'Krav og versjoner',
-          content: 'src/sections/kom-i-gang/utviklere.md',
-        },
+
         {
           name: 'Designtokens (deprecated)',
           content: 'src/sections/kom-i-gang/designtokens.md',
@@ -54,49 +43,14 @@ module.exports = {
           name: 'i18next og språkstøtte',
           content: 'src/sections/kom-i-gang/i18next.md',
         },
-        {
-          name: 'Nettleserstøtte',
-          content: 'src/sections/kom-i-gang/nettlesere.md',
-        },
+
         {
           name: 'Versjonshistorikk',
           content: 'CHANGELOG.md',
         },
       ],
     },
-    {
-      name: 'Anbefalte mønstre',
-      sections: [
-        {
-          name: 'Obligatoriske felt',
-          content: 'src/sections/monstre/obligatorisk.md',
-        },
-        {
-          name: 'Store tabeller',
-          content: 'src/sections/monstre/tabell-kompleks.md',
-        },
-        {
-          name: 'Feilmeldinger',
-          content: 'src/sections/monstre/feil.md',
-        },
-        {
-          name: 'Hjelpetekster',
-          content: 'src/sections/monstre/hjelpetekster.md',
-        },
-        {
-          name: 'Sidelayout',
-          content: 'src/sections/monstre/sidelayout.md',
-        },
-        {
-          name: 'Ledetekst',
-          content: 'src/sections/monstre/ledetekst.md',
-        },
-        {
-          name: 'Single page-applikasjon (SPA)',
-          content: 'src/sections/monstre/spa.md',
-        },
-      ],
-    },
+
     generateComponentsGroup('Knapper og lenker', [
       'ActionButton',
       'Button',
@@ -157,11 +111,11 @@ module.exports = {
       name: 'Font og farge',
       sections: [
         {
-          name: 'Skrifttype',
+          name: 'Skrifttype (deprecated)',
           content: 'src/sections/design/typografi.md',
         },
         {
-          name: 'Farger',
+          name: 'Farger (deprecated)',
           content: 'src/sections/design/farger.md',
         },
       ],

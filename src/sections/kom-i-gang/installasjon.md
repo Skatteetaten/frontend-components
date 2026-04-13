@@ -4,18 +4,14 @@ import { Link } from '@skatteetaten/frontend-components/Link';
 
 <MessageBar>
   <p style={{ margin: 0 }}>
-    Denne siden er utdatert. Sjekk
+    Før du begynner. Sjekk om du kan
     <Link
       path="https://www.skatteetaten.no/stilogtone/designsystemet/kom-i-gang/for-utviklere/"
-      text="ny kom-i-gang for utviklere"
+      text="installere komponenter fra det nye designsystemet"
     /> i stedet.
   </p>
 </MessageBar>;
 ```
-
-Brukerne våre skal ha en enhetlig opplevelse på tvers av løsningene våre. Skal vi få til dette, må alle løsninger i Skatteetaten bruke designsystemet. Gjennom designsystemet sikrer vi også høye standarder for gode brukeropplevelser og universell utforming og ikke minst, at vi følger den visuelle profilen vår.
-
-Som utvikler, samarbeider du med designer for å best mulig sikre at dere følger prinsippene i designsystemet. Videre ser du hvordan du kommer i gang for å bruke designsystemet når du jobber.
 
 ## Legg til komponentbiblioteket i prosjektet:
 
@@ -58,11 +54,7 @@ class App extends Component {
 export default App;
 ```
 
-## Bruke komponentene som UMD-pakke (Micro Frontend)
-
-// TO-DO følges opp - hva har umd med micro-frontend å gjøre?
-Dersom løsningen din følger prinippene til «Micro Frontend», kan du importere komponentene (i SystemJS) som UMD pakke.
-Alle nødvendige avhengigheter i tillegg til selv designsystemet kommer fra et importmap:
+## Bruke komponentene som UMD-pakke
 
 ```html
 <% if (isLocal) { %>
@@ -99,5 +91,5 @@ import '@skatteetaten/frontend-components/utils/loadTheme';
 
 ## Rammeverk basert på Fluent UI
 
-Mange av komponentene i Designsystemet er basert på rammeverket Fluent UI. Du kan se nærmere på hvilke komponenter som er
+Mange av komponentene i legacy er basert på rammeverket Fluent UI. Du kan se nærmere på hvilke komponenter som er
 tilgjengelig og hvilke egenskaper de har på <a class="brodtekst-link" href="https://developer.microsoft.com/en-us/fluentui#/controls/web">Microsofts side for utviklere</a>.

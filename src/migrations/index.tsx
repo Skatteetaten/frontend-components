@@ -11,6 +11,7 @@ import CalloutMigration from './CalloutMigration.md';
 import CardMigration from './CardMigration.md';
 import CheckBoxMigration from './CheckBoxMigration.md';
 import ChipMigration from './ChipMigration.md';
+import CommandBarMigration from './CommandBarMigration.md';
 import ComboBoxMigration from './ComboBoxMigration.md';
 import DatePickerMigration from './DatePickerMigration.md';
 import DetailsListMigration from './DetailsListMigration.md';
@@ -20,6 +21,7 @@ import ErrorMessageMigration from './ErrorMessageMigration.md';
 import ErrorSummaryMigration from './ErrorSummaryMigration.md';
 import FileUploaderMigration from './FileUploaderMigration.md';
 import FooterContentMigration from './FooterContentMigration.md';
+import GridMigration from './GridMigration.md';
 import IconButtonMigration from './IconButtonMigration.md';
 import IconMigration from './IconMigration.md';
 import ImageMigration from './ImageMigration.md';
@@ -66,6 +68,7 @@ export const MigrationGuides = [
   CardMigration,
   CheckBoxMigration,
   ChipMigration,
+  CommandBarMigration,
   ComboBoxMigration,
   DatePickerMigration,
   DetailsListMigration,
@@ -75,6 +78,7 @@ export const MigrationGuides = [
   ErrorSummaryMigration,
   FileUploaderMigration,
   FooterContentMigration,
+  GridMigration,
   IconButtonMigration,
   IconMigration,
   ImageMigration,
