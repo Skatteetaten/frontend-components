@@ -1,9 +1,9 @@
 {
   "files": {
-    "main.css": "/frontend-components/static/css/main.34762217.chunk.css",
-    "main.js": "/frontend-components/build/main.9deefb23.js",
+    "main.css": "/frontend-components/static/css/main.ddf60d4e.chunk.css",
+    "main.js": "/frontend-components/build/main.eef4191f.js",
     "runtime-main.js": "/frontend-components/build/bundle.f88df48c.js",
-    "build/2.3eeef3b5.js": "/frontend-components/build/2.3eeef3b5.js",
+    "build/2.9bfc2339.js": "/frontend-components/build/2.9bfc2339.js",
     "assets/png/Byggeklosser.png": "/frontend-components/assets/png/Byggeklosser.png",
     "assets/png/Byggeklosser_skisse.png": "/frontend-components/assets/png/Byggeklosser_skisse.png",
     "assets/png/designer.png": "/frontend-components/assets/png/designer.png",
@@ -33,11 +33,11 @@
     "assets/svg/ske-logo-intern-kopi.svg": "/frontend-components/assets/svg/ske-logo-intern-kopi.svg",
     "assets/svg/ske-logo-intern.svg": "/frontend-components/assets/svg/ske-logo-intern.svg",
     "assets/svg/ske-logo.svg": "/frontend-components/assets/svg/ske-logo.svg",
-    "build/2.3eeef3b5.js.LICENSE.txt": "/frontend-components/build/2.3eeef3b5.js.LICENSE.txt",
+    "build/2.9bfc2339.js.LICENSE.txt": "/frontend-components/build/2.9bfc2339.js.LICENSE.txt",
     "favicon.ico": "/frontend-components/favicon.ico",
     "index.html": "/frontend-components/index.html",
     "manifest.json": "/frontend-components/manifest.json",
-    "static/css/main.34762217.chunk.css.map": "/frontend-components/static/css/main.34762217.chunk.css.map",
+    "static/css/main.ddf60d4e.chunk.css.map": "/frontend-components/static/css/main.ddf60d4e.chunk.css.map",
     "static/media/AccordionItemMigration.6242633e.md": "/frontend-components/static/media/AccordionItemMigration.6242633e.md",
     "static/media/AccordionMenuItemMigration.a547795b.md": "/frontend-components/static/media/AccordionMenuItemMigration.a547795b.md",
     "static/media/AccordionMenuMigration.4372122f.md": "/frontend-components/static/media/AccordionMenuMigration.4372122f.md",
@@ -50,6 +50,7 @@
     "static/media/CheckBoxMigration.b721754f.md": "/frontend-components/static/media/CheckBoxMigration.b721754f.md",
     "static/media/ChipMigration.3686313d.md": "/frontend-components/static/media/ChipMigration.3686313d.md",
     "static/media/ComboBoxMigration.123dfd3b.md": "/frontend-components/static/media/ComboBoxMigration.123dfd3b.md",
+    "static/media/CommandBarMigration.f089ba5b.md": "/frontend-components/static/media/CommandBarMigration.f089ba5b.md",
     "static/media/DatePickerMigration.57354ead.md": "/frontend-components/static/media/DatePickerMigration.57354ead.md",
     "static/media/DetailsListMigration.7c1bf30d.md": "/frontend-components/static/media/DetailsListMigration.7c1bf30d.md",
     "static/media/DialogMigration.0679e025.md": "/frontend-components/static/media/DialogMigration.0679e025.md",
@@ -59,6 +60,7 @@
     "static/media/ErrorSummaryMigration.795f71ae.md": "/frontend-components/static/media/ErrorSummaryMigration.795f71ae.md",
     "static/media/FileUploaderMigration.1ceac94e.md": "/frontend-components/static/media/FileUploaderMigration.1ceac94e.md",
     "static/media/FooterContentMigration.999a6419.md": "/frontend-components/static/media/FooterContentMigration.999a6419.md",
+    "static/media/GridMigration.a4f6b50c.md": "/frontend-components/static/media/GridMigration.a4f6b50c.md",
     "static/media/IconButtonMigration.82c00809.md": "/frontend-components/static/media/IconButtonMigration.82c00809.md",
     "static/media/IconMigration.1f90c8e1.md": "/frontend-components/static/media/IconMigration.1f90c8e1.md",
     "static/media/ImageMigration.18a8d4c4.md": "/frontend-components/static/media/ImageMigration.18a8d4c4.md",
@@ -114,8 +116,8 @@
   },
   "entrypoints": [
     "build/bundle.f88df48c.js",
-    "build/2.3eeef3b5.js",
-    "static/css/main.34762217.chunk.css",
-    "build/main.9deefb23.js"
+    "build/2.9bfc2339.js",
+    "static/css/main.ddf60d4e.chunk.css",
+    "build/main.eef4191f.js"
   ]
 }
