@@ -4,7 +4,7 @@ import { Link } from '@skatteetaten/frontend-components/Link';
 
 <MessageBar>
   <p style={{ margin: 0 }}>
-    Før du begynner. Sjekk som du kan
+    Før du begynner. Sjekk om du kan
     <Link
       path="https://www.skatteetaten.no/stilogtone/designsystemet/kom-i-gang/for-utviklere/"
       text="installere komponenter fra det nye designsystemet"
