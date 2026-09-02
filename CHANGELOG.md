@@ -4,6 +4,10 @@ import { AccordionItem } from '@skatteetaten/frontend-components/Accordion/Accor
 
 <div>
   <div lang="en">
+    <h2>v.18.1.2 - September 2026</h2>
+    <ul>
+      <li>Upgraded dependency: Axios</li>
+    </ul>
     <h2>v.18.1.1 - June 2026</h2>
     <ul>
       <li>Upgraded dependency: Axios</li>
